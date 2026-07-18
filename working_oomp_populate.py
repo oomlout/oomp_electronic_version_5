@@ -11,34 +11,22 @@ def main(**kwargs):
     
     options = []
     
-    
+    kwargs["options"] = options
 
-    if True:
-        option = {}
-        option["width"] = "1"
-        option["height"] = "1"
-        option["name"] = "test"
-        options.append(copy.deepcopy(option))
-        
-    
-    #load from working_manual.yaml
-    if False:
-        with open("working_manual.yaml", 'r', encoding='utf-8') as file:
-            import yaml
-            data = yaml.safe_load(file)
-            options_yaml = data.get("options", [])
-            for option_yaml in options_yaml:
-                options.append(option_yaml)
+    import working_oomp_populate_wire
+    working_oomp_populate_wire.main(**kwargs)
+    import working_oomp_populate_prototyping
+    working_oomp_populate_prototyping.main(**kwargs)
 
-    
+
     ###### populate taxonomy details and oobb details
     if True:
         for option in options:       
-            option["taxonomy_1"] = f"first_item"  
-            option["taxonomy_2"] = f"second_item"             
-            value_name = "code"
-            value = option.get(value_name, None)
-            option["taxonomy_3"] = f"{value}_{value_name}"
+            option["taxonomy_1"] = f"electronic"  
+            #option["taxonomy_2"] = f"electronic"             
+            #value_name = "code"
+            #value = option.get(value_name, None)
+            #option["taxonomy_3"] = f"{value}_{value_name}"
             #oobb details
             if False:
                 pass
