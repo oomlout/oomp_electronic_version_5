@@ -13,6 +13,8 @@ def main(**kwargs):
     
     kwargs["options"] = options
 
+    import working_oomp_populate_display
+    working_oomp_populate_display.main(**kwargs)
     import working_oomp_populate_wire
     working_oomp_populate_wire.main(**kwargs)
     import working_oomp_populate_prototyping
