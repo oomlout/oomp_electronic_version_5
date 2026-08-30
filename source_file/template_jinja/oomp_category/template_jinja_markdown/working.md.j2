@@ -1,0 +1,69 @@
+# {{ name_short | default(name_proper, true) }}
+
+![{{ name_short | default(name_proper, true) }} outline](working_svg_outline.svg)
+
+`{{ name }}`
+
+## Diagrams
+
+| Diagram | Preview |
+| --- | --- |
+{% for diagram in part_page.diagrams %}
+| {{ diagram.title }} | [![{{ diagram.title }}]({{ diagram.png }})]({{ diagram.svg }}) |
+{% endfor %}
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+{% for taxonomy in part_page.taxonomy %}
+| {{ taxonomy.level }} | `{{ taxonomy.value }}` |
+{% endfor %}
+
+{% if dimensions_mm is defined and dimensions_mm %}
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+{% for dimension_name, dimension_value in dimensions_mm.items() %}
+| {{ dimension_name | replace('_', ' ') | title }} | {{ dimension_value }} mm |
+{% endfor %}
+{% endif %}
+
+{% if part_page.identifiers %}
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+{% for identifier in part_page.identifiers %}
+| {{ identifier.title }} | `{{ identifier.value }}` |
+{% endfor %}
+{% endif %}
+
+{% if part_page.pins %}
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+{% for pin in part_page.pins %}
+| {{ pin.number }} | {{ pin.name }} | {{ pin.type }} |
+{% endfor %}
+{% endif %}
+
+## Files
+
+- [Square summary](working_svg_square.svg)
+- [Square summary with pins](working_svg_square_pins.svg)
+- [Dimensioned drawing](working_svg_dimensioned_titles.svg)
+{% if part_page.has_datasheet %}
+- [Datasheet](datasheet.pdf)
+{% endif %}
+- [Structured definition](working.yaml)
+
+{% if part_page.repository_url %}
+[View this part on GitHub]({{ part_page.repository_url }})
+{% endif %}
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

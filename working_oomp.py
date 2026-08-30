@@ -3,6 +3,126 @@ import oomp_helper
 import copy
 import oomlout_roboclick
 
+
+def add_part_page_details(part):
+    """Prepare small, explicit arrays used by the part Markdown template."""
+    taxonomy = []
+    for taxonomy_number in range(1, 16):
+        taxonomy_key = f"taxonomy_{taxonomy_number}"
+        taxonomy_value = str(part.get(taxonomy_key, "")).strip()
+        if taxonomy_value != "":
+            taxonomy.append({"level": taxonomy_number, "value": taxonomy_value})
+
+    pins = []
+    pins_dictionary = part.get("pins", {})
+    if isinstance(pins_dictionary, dict):
+        used_pin_keys = []
+        for pin_number in range(0, 100):
+            pin_key = f"pin_{pin_number}"
+            if pin_key in pins_dictionary:
+                pin = pins_dictionary[pin_key]
+                pins.append(
+                    {
+                        "number": str(pin.get("number", pin_number)),
+                        "name": str(pin.get("name", f"pin {pin_number}")),
+                        "type": str(pin.get("type", "")),
+                    }
+                )
+                used_pin_keys.append(pin_key)
+        for pin_key in pins_dictionary:
+            if pin_key not in used_pin_keys:
+                pin = pins_dictionary[pin_key]
+                pins.append(
+                    {
+                        "number": str(pin.get("number", "")),
+                        "name": str(pin.get("name", pin_key)),
+                        "type": str(pin.get("type", "")),
+                    }
+                )
+
+    identifiers = []
+    identifier_fields = [
+        ["Manufacturer part number", "part_number_manufacturer"],
+        ["LCSC", "part_number_lcsc"],
+        ["MD5 alpha", "md5_6_alpha_upper"],
+    ]
+    for identifier_field in identifier_fields:
+        identifier_value = str(part.get(identifier_field[1], "")).strip()
+        if identifier_value != "":
+            identifiers.append({"title": identifier_field[0], "value": identifier_value})
+
+    diagrams = [
+        {"title": "Outline", "svg": "working_svg_outline.svg", "png": "working_svg_outline.png"},
+        {"title": "Part ID", "svg": "working_svg_part_id.svg", "png": "working_svg_part_id.png"},
+        {"title": "MD5 alpha", "svg": "working_svg_md5_6_alpha.svg", "png": "working_svg_md5_6_alpha.png"},
+        {"title": "Square summary", "svg": "working_svg_square.svg", "png": "working_svg_square.png"},
+        {"title": "Pin summary", "svg": "working_svg_square_pins.svg", "png": "working_svg_square_pins.png"},
+        {"title": "Dimensions", "svg": "working_svg_dimensioned_titles.svg", "png": "working_svg_dimensioned_titles.png"},
+    ]
+
+    part_name = part.get("name", "")
+    part["part_page"] = {
+        "taxonomy": taxonomy,
+        "pins": pins,
+        "identifiers": identifiers,
+        "diagrams": diagrams,
+        "has_datasheet": len(part.get("file_copy", [])) > 0,
+        "repository_url": f"https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/{part_name}",
+    }
+    return part
+
+
+def add_project_actions(part, count):
+    """Add the two deterministic, always-run actions used by project parts."""
+    project_action_fields = [
+        "project_github_user",
+        "project_github_repository",
+        "project_github_url",
+        "project_git_url",
+        "project_git_ref",
+        "project_version",
+        "project_file_folder",
+        "project_file_basename",
+        "project_file_path",
+        "project_file_extensions",
+        "project_match_overrides",
+    ]
+
+    git_action = {
+        "command": "run_python",
+        "file_python": "kicad_agents/project_git_action.py",
+        "description": "Clone or update the Git project and copy its selected KiCad files into the project part.",
+        "timeout": "600",
+    }
+    for project_action_field in project_action_fields:
+        git_action[project_action_field] = copy.deepcopy(part.get(project_action_field, ""))
+
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [git_action],
+        "file_test": "",
+        "retries_until_complete": 0,
+    }
+
+    readme_action = {
+        "command": "run_python",
+        "file_python": "kicad_agents/project_readme_action.py",
+        "file_output": "README.md",
+        "description": "Extract KiCad data and rebuild the deterministic project README and local image bundle.",
+        "parts_directory": "parts",
+        "timeout": "1200",
+    }
+    for project_action_field in project_action_fields:
+        readme_action[project_action_field] = copy.deepcopy(part.get(project_action_field, ""))
+
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [readme_action],
+        "file_test": "",
+        "retries_until_complete": 0,
+    }
+    return count
+
 def main(**kwargs):
     load_parts(**kwargs)
 
@@ -53,6 +173,17 @@ def create_generic(**kwargs):
         part["name_proper"] = part["name_space"].title()
         name_proper = part["name_proper"]
         part["name_upper"] = part["name_space"].upper()
+
+        is_project_part = (
+            part.get("taxonomy_1", "") == "oomp"
+            and part.get("taxonomy_2", "") == "project"
+        )
+        if not is_project_part:
+            import working_oomp_populate_svg
+            working_oomp_populate_svg.add_svg_details(part)
+            add_part_page_details(part)
+        else:
+            part["name_short"] = f"{part.get('project_github_user', '')}/{part.get('project_github_repository', '')} {part.get('project_version', 'current')}"
         
         folder = oomlout_roboclick.get_directory(part)   
         part["directory"] = folder  
@@ -81,14 +212,14 @@ def create_generic(**kwargs):
                 part["content_string"] = content_string
 
         #icon
-        if True:
+        if False:
             count += 1     
             icon_detail = f"make {name_proper} cute"
             oomp_helper.add_icon(part=part, count=count, mode_ai_wait=mode_ai_wait, icon_detail=icon_detail)
 
         
         #image chibi
-        test_image_chibi = True
+        test_image_chibi = False
         if test_image_chibi:
             content_string = part.get("content_string", "")    
             count += 1
@@ -114,13 +245,26 @@ def create_generic(**kwargs):
         #folder_project = "helen_personal_chart_bribe_bank"
 
         #jinja_template replace
-        if True:
+        if not is_project_part:
             templates = []
             templates.append({"template_folder": "default"})
+            templates.append(
+                {
+                    "template_folder": "source_file\\template_jinja\\oomp_category\\template_jinja_markdown",
+                    "template_file": "working.md.j2",
+                    "output_filename": "README.md",
+                    "file_test": "",
+                    "convert_to_pdf": False,
+                    "convert_to_png": False,
+                }
+            )
             #templates.append({"template_folder": "source_file\\template_jinja\\template_jinja_postcard_image_main_oomlout_152_4_mm_101_6_mm", "output_filename": "postcard_oomp.svg"})
             convert_to_pdf = False
             convert_to_png = False
             count = oomp_helper.add_jinja_template(part=part, templates=templates, mode_ai_wait=mode_ai_wait, count=count, convert_to_pdf=convert_to_pdf, convert_to_png=convert_to_png)
+
+        if is_project_part:
+            count = add_project_actions(part, count)
         #prompt bubble letter        
         if False:
             count = oomp_helper.add_image(

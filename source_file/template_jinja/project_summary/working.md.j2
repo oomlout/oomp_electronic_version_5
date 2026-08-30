@@ -1,0 +1,78 @@
+# {{ project.display_name }}
+
+[View the project on GitHub]({{ project.github_url }})
+
+![PCB component placement]({{ repository_links.board_raw }})
+
+{{ generated_text.overview }}
+
+## Project snapshot
+
+| Item | Count |
+| --- | ---: |
+| Components | {{ summary.component_count }} |
+| PCB footprints | {{ summary.pcb_footprint_count }} |
+| Schematic symbols | {{ summary.schematic_symbol_count }} |
+| Matched OOMP components | {{ summary.matched_component_count }} |
+| Unmatched physical components | {{ summary.unmatched_physical_component_count }} |
+| Front-side placements | {{ placement.front_count }} |
+| Back-side placements | {{ placement.back_count }} |
+| Project version | `{{ project.version }}` |
+| Git ref | `{{ project.git_ref }}` |
+
+## Board
+
+{% if board.available %}
+- Approximate size: **{{ board.width_mm }} mm × {{ board.height_mm }} mm**
+- Outline source: `{{ board.bounds_source }}`
+- Placement drawing: [view `board.svg`]({{ repository_links.board }})
+{% else %}
+No PCB outline or placed-footprint bounds were available.
+{% endif %}
+
+## Bill of materials
+
+| Quantity | Description | Value | Footprint | OOMP part | References |
+| ---: | --- | --- | --- | --- | --- |
+{% for row in bom %}
+| {{ row.quantity }} | {{ row.description }} | {{ row.value }} | `{{ row.footprint }}` | {% if row.oomp_id %}[`{{ row.oomp_id }}`]({{ row.oomp_link }}){% else %}unmatched{% endif %} | {{ row.references | join(', ') }} |
+{% endfor %}
+
+## Main nets
+
+| Net | Pads | Components |
+| --- | ---: | --- |
+{% for net in nets %}
+| `{{ net.name }}` | {{ net.pad_count }} | {{ net.references | join(', ') }} |
+{% endfor %}
+
+## Design notes
+
+{% for note in generated_text.design_notes %}
+- {{ note }}
+{% endfor %}
+
+## Review notes
+
+{% for note in generated_text.review_notes %}
+- {{ note }}
+{% endfor %}
+
+## Generated source bundle
+
+- Project image assets: [`generated_data/src`]({{ repository_links.generated_source }})
+- Copied component source manifest: `project_source/manifest.yaml` (generated locally and ignored by Git)
+- Matched OOMP source parts copied: {{ source_manifest.parts | length }}
+
+## Source files
+
+{% for source_file in project.schematic_files %}
+- Schematic: `{{ source_file }}`
+{% endfor %}
+{% for source_file in project.pcb_files %}
+- PCB: `{{ source_file }}`
+{% endfor %}
+
+---
+
+Generated deterministically by `kicad_agents.project_summary_agent`; no LLM-authored content is used.

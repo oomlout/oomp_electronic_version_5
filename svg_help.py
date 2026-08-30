@@ -80,7 +80,8 @@ def make_parts(**kwargs):
         for part in parts:
             oobb_name = part.get("oobb_name", "default")
             extra = part["kwargs"].get("extra", "")
-            if filter in oobb_name or filter in extra:
+            part_id = part.get("id", "")
+            if filter in oobb_name or filter in extra or filter in part_id:
                 print(f"making {part['oobb_name']}")
                 make_svg_generic(part)
             else:
@@ -88,117 +89,166 @@ def make_parts(**kwargs):
 
 
 def make_svg_generic(part):
+    # These keys control output routing and do not belong in builder kwargs.
+    svg_details_meta = {
+        "svg_name",
+        "filename_extra",
+        "output_formats",
+        "png_dpi",
+        "padding",
+        "make_a4",
+        "write_yaml",
+    }
 
-    # fetching variables
-    oobb_name    = part.get("oobb_name", "default")
+    oobb_name = part.get("oobb_name", "default")
     project_name = part.get("project_name", "default")
+    kwargs_base = part.get("kwargs", {})
+    save_type = kwargs_base.get("save_type", "all")
+    overwrite = kwargs_base.get("overwrite", True)
+    kwargs_base["type"] = f"{project_name}_{oobb_name}"
 
-    kwargs = part.get("kwargs", {})
-
-    save_type      = kwargs.get("save_type",      "all")
-    overwrite      = kwargs.get("overwrite",       True)
-
-    kwargs["type"] = f"{project_name}_{oobb_name}"
-
-    thing = get_default_thing(**kwargs)
-    thing.update(part)
-
-    import working_svg
-    svg_name = part.get("svg_details", {}).get("svg_name", oobb_name)
-    try:
-        func = getattr(working_svg, f"get_{svg_name}")
-    except AttributeError:
-        func = None
-    if callable(func):
-        func(thing, **kwargs)
-    else:
-        working_svg.get_base(thing, **kwargs)
-
-    oomp_mode = kwargs.get("oomp_mode", "project")
-
-    if oomp_mode == "project":
-        descmain = ""
-        current_description_main = thing.get("description_main", "default")
-        current_size = thing.get("size", "default")
-        new_size = current_size.replace(f"{project_name}_", "")
-        descmain = f"{new_size}_{current_description_main}"
-        kwargs["oomp_description_main"] = f"{descmain}"
-        descextra = ""
-        current_description_extra = thing.get("description_extra", "")
-        descextra = f"{current_description_extra}"
-        kwargs["oomp_description_extra"] = f"{descextra}"
-    elif oomp_mode == "oobb":
-        current_description_main = thing.get("description_main", "default")
-        descmain = f"{current_description_main}"
-        descextra = thing.get("extra", "")
-        if descextra != "":
-            descextra = f"{descextra}_extra"
-        kwargs["oomp_description_main"] = f"{current_description_main}"
-        kwargs["oomp_description_extra"] = f"{descextra}"
-        kwargs["oomp_size"] = f"{part['oobb_name']}"
-
-    oomp_keys = ["classification", "type", "size", "color", "description_main", "description_extra"]
-    oomp_id = part.get("id", "")
-    if oomp_id == "":
-        for key in oomp_keys:
-            deet = part.get(key, "")
-            deet = deet.replace(".", "_")
-            if deet != "":
-                oomp_id += f"{deet}_"
-        oomp_id = oomp_id[:-1]
-    if oomp_id == "":
-        oomp_id = oobb_name
+    oomp_id = id_from_part(part)
     part["id"] = oomp_id
     folder = f"parts/{oomp_id}"
 
+    raw_svg_details = part.get("svg_details", {})
+    if isinstance(raw_svg_details, list):
+        svg_details_list = raw_svg_details
+    else:
+        svg_details_list = [raw_svg_details]
+
     if save_type != "all":
         print(f"  dry-run — would write to {folder}/")
-        return thing
+        return get_default_thing(**kwargs_base)
 
     if not os.path.isdir(folder):
         os.makedirs(folder)
 
-    # svg
-    svg_path = os.path.join(folder, "working_svg.svg")
-    opsvg.opsvg_make_object(svg_path, thing["svg_components"], overwrite=overwrite)
+    import working_svg
 
-    # a4 presentation sheet
-    svg_a4.make_a4_sheet(svg_path, folder, part, thing)
+    last_thing = None
+    for svg_detail in svg_details_list:
+        if not isinstance(svg_detail, dict):
+            continue
 
-    # working.yaml — partial dump (mirrors scad_help)
-    yaml_file = f"{folder}/working.yaml"
-    with open(yaml_file, "w", encoding="utf-8") as file:
-        part_new = copy.deepcopy(part)
-        kwargs_new = part_new.get("kwargs", {})
-        kwargs_new.pop("save_type", "")
-        part_new["kwargs"] = kwargs_new
-        part_new["project_name"] = os.getcwd()
-        part_new["id_svg"] = thing.get("id", oomp_id)
-        # svg_details lets get_parts() reload this part from disk.
-        svg_details = {}
-        svg_details["svg_name"] = part.get("svg_details", {}).get("svg_name", oobb_name)
-        for k in ["width", "height", "depth", "extra", "radius_name"]:
-            v = kwargs.get(k, "")
-            if v != "" and v != 0:
-                svg_details[k] = v
-        part_new["svg_details"] = svg_details
-        part_new.pop("thing", "")
-        yaml.dump(part_new, file, allow_unicode=True)
+        kwargs = copy.deepcopy(kwargs_base)
+        for key, value in svg_detail.items():
+            if key not in svg_details_meta:
+                kwargs[key] = copy.deepcopy(value)
 
-    # thing.yaml — full dump (mirrors scad_help)
-    yaml_file = f"{folder}/thing.yaml"
-    with open(yaml_file, "w", encoding="utf-8") as file:
-        part_new = copy.deepcopy(part)
-        kwargs_new = part_new.get("kwargs", {})
-        kwargs_new.pop("save_type", "")
-        part_new["kwargs"] = kwargs_new
-        part_new["project_name"] = os.getcwd()
-        part_new["id_svg"] = thing.get("id", oomp_id)
-        part_new["thing"] = _serialisable(thing)
-        yaml.dump(part_new, file, allow_unicode=True)
+        thing = get_default_thing(**kwargs)
+        thing.update(part)
+
+        svg_name = svg_detail.get("svg_name", oobb_name)
+        func = getattr(working_svg, f"get_{svg_name}", None)
+        if callable(func):
+            func(thing, **kwargs)
+        else:
+            working_svg.get_base(thing, **kwargs)
+
+        filename_extra = svg_detail.get("filename_extra", "")
+        suffix = f"_{filename_extra}" if filename_extra else ""
+        svg_path = os.path.join(folder, f"working_svg{suffix}.svg")
+        padding = svg_detail.get("padding", 1.0)
+        opsvg.opsvg_make_object(
+            svg_path,
+            thing["svg_components"],
+            overwrite=overwrite,
+            padding=padding,
+        )
+
+        # The line primitive carries an invisible default fill even though
+        # only its stroke is rendered.  Normalize that attribute as well so
+        # style_oomp SVG source contains black and white values only.
+        if kwargs.get("stylesheet", "") == "style_oomp":
+            with open(svg_path, "r", encoding="utf-8") as svg_file:
+                svg_contents = svg_file.read()
+            svg_contents = svg_contents.replace("#333333", "#000000")
+            with open(svg_path, "w", encoding="utf-8") as svg_file:
+                svg_file.write(svg_contents)
+
+        output_formats = svg_detail.get("output_formats", ["svg"])
+        if "png" in output_formats:
+            png_path = os.path.join(folder, f"working_svg{suffix}.png")
+            png_dpi = int(svg_detail.get("png_dpi", 150))
+            svg_to_png(svg_path, png_path, dpi=png_dpi)
+
+        if svg_detail.get("make_a4", True):
+            svg_a4.make_a4_sheet(
+                svg_path,
+                folder,
+                part,
+                thing,
+                filename_extra=filename_extra,
+            )
+
+        last_thing = thing
+
+    if last_thing is None:
+        return None
+
+    # The new diagram definitions originate in working_oomp_populate_*.py.
+    # They can opt out of YAML write-back so rendering never changes metadata.
+    write_yaml = False
+    for svg_detail in svg_details_list:
+        if isinstance(svg_detail, dict) and svg_detail.get("write_yaml", True):
+            write_yaml = True
+
+    if write_yaml:
+        yaml_file = f"{folder}/working.yaml"
+        with open(yaml_file, "w", encoding="utf-8") as file:
+            part_new = copy.deepcopy(part)
+            kwargs_new = part_new.get("kwargs", {})
+            kwargs_new.pop("save_type", "")
+            part_new["kwargs"] = kwargs_new
+            part_new["project_name"] = os.getcwd()
+            part_new["id_svg"] = last_thing.get("id", oomp_id)
+            part_new["svg_details"] = copy.deepcopy(raw_svg_details)
+            part_new.pop("thing", "")
+            yaml.dump(part_new, file, allow_unicode=True)
+
+        yaml_file = f"{folder}/thing.yaml"
+        with open(yaml_file, "w", encoding="utf-8") as file:
+            part_new = copy.deepcopy(part)
+            kwargs_new = part_new.get("kwargs", {})
+            kwargs_new.pop("save_type", "")
+            part_new["kwargs"] = kwargs_new
+            part_new["project_name"] = os.getcwd()
+            part_new["id_svg"] = last_thing.get("id", oomp_id)
+            part_new["thing"] = _serialisable(last_thing)
+            yaml.dump(part_new, file, allow_unicode=True)
 
     print(f"done {oomp_id}")
-    return thing
+    return last_thing
+
+
+def svg_to_png(svg_path, png_path, dpi=150):
+    """Render an SVG to PNG using CairoSVG."""
+    try:
+        import cairosvg
+    except ImportError:
+        print("[svg_help] PNG export skipped; install cairosvg")
+        return
+
+    # OOMP component renders use a deliberate white page.  Setting the Cairo
+    # background also removes the transparent padding around cropped SVGs.
+    cairosvg.svg2png(
+        url=svg_path,
+        write_to=png_path,
+        dpi=dpi,
+        background_color="#FFFFFF",
+    )
+    # Cairo can use coloured sub-pixel antialiasing around otherwise black
+    # text.  Flatten to grayscale so the PNG contains no accidental hues.
+    try:
+        from PIL import Image
+
+        with Image.open(png_path) as rendered_image:
+            monochrome_image = rendered_image.convert("L").convert("RGB")
+            monochrome_image.save(png_path)
+    except ImportError:
+        pass
+    print(f"saved png: {png_path}")
 
 
 def generate_navigation(folder="parts", sort=["oobb_name", "width", "height"]):

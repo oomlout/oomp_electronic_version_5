@@ -19,12 +19,34 @@ def main(**kwargs):
     working_oomp_populate_wire.main(**kwargs)
     import working_oomp_populate_prototyping
     working_oomp_populate_prototyping.main(**kwargs)
+    import working_oomp_populate_led
+    working_oomp_populate_led.main(**kwargs)
+    import working_oomp_populate_resistor
+    working_oomp_populate_resistor.main(**kwargs)
+    import working_oomp_populate_capacitor
+    working_oomp_populate_capacitor.main(**kwargs)
+    import working_oomp_populate_crystal
+    working_oomp_populate_crystal.main(**kwargs)
+    import working_oomp_populate_ferrite_bead
+    working_oomp_populate_ferrite_bead.main(**kwargs)
+    import working_oomp_populate_connector
+    working_oomp_populate_connector.main(**kwargs)
+    import working_oomp_populate_diode
+    working_oomp_populate_diode.main(**kwargs)
+    import working_oomp_populate_ic
+    working_oomp_populate_ic.main(**kwargs)
+    import working_oomp_populate_project
+    working_oomp_populate_project.main(**kwargs)
 
 
     ###### populate taxonomy details and oobb details
     if True:
+        import working_oomp_populate_svg
         for option in options:       
-            option["taxonomy_1"] = f"electronic"  
+            if option.get("taxonomy_1", "") == "":
+                option["taxonomy_1"] = "electronic"
+            if option.get("taxonomy_1", "") == "electronic":
+                working_oomp_populate_svg.add_svg_details(option)
             #option["taxonomy_2"] = f"electronic"             
             #value_name = "code"
             #value = option.get(value_name, None)
