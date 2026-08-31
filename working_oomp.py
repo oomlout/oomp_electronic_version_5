@@ -340,7 +340,7 @@ def create_generic(**kwargs):
 
         
         #image chibi
-        test_image_chibi = False
+        test_image_chibi = True
         if test_image_chibi:
             content_string = part.get("content_string", "")    
             count += 1
