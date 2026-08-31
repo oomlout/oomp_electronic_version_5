@@ -1,16 +1,10 @@
-# IC Sop 16 Controller USB Hub Controller 4 Port SL2.1A
+# IC Sop 16 Controller USB Hub Controller 4 Port SL21A
 
 `electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a`
 
-IC Sop 16 Controller USB Hub Controller 4 Port SL2.1A is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 3.9 mm. The definition includes 16 documented pins.
+IC Sop 16 Controller USB Hub Controller 4 Port SL21A is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 10.0 × 3.9 mm. The definition includes 16 documented pins.
 
-<p align="center">
-  <a href="working_svg_square_pins.svg">
-    <img src="working_svg_square_pins.svg" alt="IC Sop 16 Controller USB Hub Controller 4 Port SL2.1A pinout" width="620">
-  </a>
-  <br>
-  <strong>Pinout</strong> · click for the full-size SVG
-</p>
+![IC Sop 16 Controller USB Hub Controller 4 Port SL21A pinout](working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -19,69 +13,8 @@ IC Sop 16 Controller USB Hub Controller 4 Port SL2.1A is an OOMP electronic ic d
 | OOMP ID | `electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a` |
 | Type | Ic |
 | Package / style | sop 16 |
-| Nominal size | 10.0 &#x00D7; 3.9 mm |
+| Nominal size | 10.0 × 3.9 mm |
 | Documented pins | 16 |
-
-
-## Diagram gallery
-
-<table>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_assembly.svg"><img src="working_svg_assembly.svg" alt="Assembly" width="220"></a><br>
-      <strong>Assembly</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_outline.svg"><img src="working_svg_outline_300.png" alt="Outline" width="220"></a><br>
-      <strong>Outline</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_part_id.svg"><img src="working_svg_part_id_300.png" alt="Part ID" width="220"></a><br>
-      <strong>Part ID</strong>
-    </td>
-  
-  </tr>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_md5_6_alpha.svg"><img src="working_svg_md5_6_alpha_300.png" alt="MD5 alpha" width="220"></a><br>
-      <strong>MD5 alpha</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_bip_39_3_word.svg"><img src="working_svg_bip_39_3_word_300.png" alt="BIP 39 words" width="220"></a><br>
-      <strong>BIP 39 words</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_square.svg"><img src="working_svg_square_300.png" alt="Square summary" width="220"></a><br>
-      <strong>Square summary</strong>
-    </td>
-  
-  </tr>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_dimensioned.svg"><img src="working_svg_dimensioned_300.png" alt="Dimensions" width="220"></a><br>
-      <strong>Dimensions</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_dimensioned_titles.svg"><img src="working_svg_dimensioned_titles_300.png" alt="Dimensions with labels" width="220"></a><br>
-      <strong>Dimensions with labels</strong>
-    </td>
-  
-  </tr>
-
-</table>
-
-Each preview links to its full-size vector drawing.
 
 ## Classification
 
@@ -95,8 +28,6 @@ Each preview links to its full-size vector drawing.
 | 14 | `corechips` |
 | 15 | `sl21a` |
 
-
-
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -104,18 +35,12 @@ Each preview links to its full-size vector drawing.
 | Length | 10.0 mm |
 | Width | 3.9 mm |
 
-
-
-
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SL2.1A` |
 | LCSC | `C192893` |
-
-
-
 
 ## Pins
 
@@ -138,26 +63,30 @@ Each preview links to its full-size vector drawing.
 | 15 | xout | signal |
 | 16 | xin | signal |
 
+## Datasheet
 
+[View the datasheet](datasheet.pdf)
 
 ## Files
 
-- [Pinout drawing](working_svg_square_pins.svg)
-- [Assembly drawing](working_svg_assembly.svg)
-- [Outline drawing](working_svg_outline.svg)
-- [Part ID drawing](working_svg_part_id.svg)
-- [MD5 alpha drawing](working_svg_md5_6_alpha.svg)
-- [BIP 39 words drawing](working_svg_bip_39_3_word.svg)
-- [Square summary](working_svg_square.svg)
-- [Dimensioned drawing](working_svg_dimensioned_titles.svg)
+![Pinout drawing](working_svg_square_pins_300.png)
 
-- [Datasheet](datasheet.pdf)
+![Outline](working_svg_outline_300.png)
 
-- [Structured definition](working.yaml)
+![Part ID](working_svg_part_id_300.png)
+
+![MD5 alpha](working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](working_svg_bip_39_3_word_300.png)
+
+![Square summary](working_svg_square_300.png)
+
+![Dimensions](working_svg_dimensioned_300.png)
+
+![Dimensions with labels](working_svg_dimensioned_titles_300.png)
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a)
-
 
 ---
 

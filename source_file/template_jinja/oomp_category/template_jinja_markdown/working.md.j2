@@ -4,13 +4,7 @@
 
 {{ p.part_page.summary }}
 
-<p align="center">
-  <a href="{{ p.part_page.main_image.svg }}">
-    <img src="{{ p.part_page.main_image.svg }}" alt="{{ p.name_short | default(p.name_proper, true) }} pinout" width="620">
-  </a>
-  <br>
-  <strong>{{ p.part_page.main_image.title }}</strong> · click for the full-size SVG
-</p>
+![{{ p.name_short | default(p.name_proper, true) }} pinout]({{ p.part_page.main_image.svg }})
 
 ## At a glance
 
@@ -19,23 +13,6 @@
 {% for fact in p.part_page.quick_facts -%}
 | {{ fact.title }} | {% if fact.title == 'OOMP ID' %}`{{ fact.value }}`{% else %}{{ fact.value }}{% endif %} |
 {% endfor %}
-
-## Diagram gallery
-
-<table>
-{% for preview_row in p.part_page.preview_rows %}
-  <tr>
-  {% for diagram in preview_row %}
-    <td align="center" width="33%">
-      <a href="{{ diagram.svg }}"><img src="{{ diagram.preview }}" alt="{{ diagram.title }}" width="220"></a><br>
-      <strong>{{ diagram.title }}</strong>
-    </td>
-  {% endfor %}
-  </tr>
-{% endfor %}
-</table>
-
-Each preview links to its full-size vector drawing.
 
 ## Classification
 
@@ -75,20 +52,18 @@ Each preview links to its full-size vector drawing.
 {% endfor %}
 {% endif %}
 
+{% if p.part_page.has_datasheet %}
+## Datasheet
+
+[View the datasheet](datasheet.pdf)
+{% endif %}
+
 ## Files
 
-- [Pinout drawing](working_svg_square_pins.svg)
-- [Assembly drawing](working_svg_assembly.svg)
-- [Outline drawing](working_svg_outline.svg)
-- [Part ID drawing](working_svg_part_id.svg)
-- [MD5 alpha drawing](working_svg_md5_6_alpha.svg)
-- [BIP 39 words drawing](working_svg_bip_39_3_word.svg)
-- [Square summary](working_svg_square.svg)
-- [Dimensioned drawing](working_svg_dimensioned_titles.svg)
-{% if p.part_page.has_datasheet %}
-- [Datasheet](datasheet.pdf)
-{% endif %}
-- [Structured definition](working.yaml)
+{% for file_preview in p.part_page.file_previews -%}
+![{{ file_preview.title }}]({{ file_preview.preview }})
+
+{% endfor %}
 
 {% if p.part_page.repository_url %}
 [View this part on GitHub]({{ p.part_page.repository_url }})

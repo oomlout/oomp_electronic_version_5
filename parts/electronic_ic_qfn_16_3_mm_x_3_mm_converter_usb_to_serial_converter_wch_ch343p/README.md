@@ -2,15 +2,9 @@
 
 `electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p`
 
-IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P is an OOMP electronic ic definition. It uses the qfn 16 3 mm x 3 mm package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 17 documented pins.
+IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P is an OOMP electronic ic definition. It uses the qfn 16 3 mm x 3 mm package or form factor. Its nominal drawing size is 3.0 × 3.0 mm. The definition includes 17 documented pins.
 
-<p align="center">
-  <a href="working_svg_square_pins.svg">
-    <img src="working_svg_square_pins.svg" alt="IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P pinout" width="620">
-  </a>
-  <br>
-  <strong>Pinout</strong> · click for the full-size SVG
-</p>
+![IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P pinout](working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -19,69 +13,8 @@ IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P is an OOMP electr
 | OOMP ID | `electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p` |
 | Type | Ic |
 | Package / style | qfn 16 3 mm x 3 mm |
-| Nominal size | 3.0 &#x00D7; 3.0 mm |
+| Nominal size | 3.0 × 3.0 mm |
 | Documented pins | 17 |
-
-
-## Diagram gallery
-
-<table>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_assembly.svg"><img src="working_svg_assembly.svg" alt="Assembly" width="220"></a><br>
-      <strong>Assembly</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_outline.svg"><img src="working_svg_outline_300.png" alt="Outline" width="220"></a><br>
-      <strong>Outline</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_part_id.svg"><img src="working_svg_part_id_300.png" alt="Part ID" width="220"></a><br>
-      <strong>Part ID</strong>
-    </td>
-  
-  </tr>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_md5_6_alpha.svg"><img src="working_svg_md5_6_alpha_300.png" alt="MD5 alpha" width="220"></a><br>
-      <strong>MD5 alpha</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_bip_39_3_word.svg"><img src="working_svg_bip_39_3_word_300.png" alt="BIP 39 words" width="220"></a><br>
-      <strong>BIP 39 words</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_square.svg"><img src="working_svg_square_300.png" alt="Square summary" width="220"></a><br>
-      <strong>Square summary</strong>
-    </td>
-  
-  </tr>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_dimensioned.svg"><img src="working_svg_dimensioned_300.png" alt="Dimensions" width="220"></a><br>
-      <strong>Dimensions</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_dimensioned_titles.svg"><img src="working_svg_dimensioned_titles_300.png" alt="Dimensions with labels" width="220"></a><br>
-      <strong>Dimensions with labels</strong>
-    </td>
-  
-  </tr>
-
-</table>
-
-Each preview links to its full-size vector drawing.
 
 ## Classification
 
@@ -95,8 +28,6 @@ Each preview links to its full-size vector drawing.
 | 14 | `wch` |
 | 15 | `ch343p` |
 
-
-
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -104,18 +35,12 @@ Each preview links to its full-size vector drawing.
 | Length | 3.0 mm |
 | Width | 3.0 mm |
 
-
-
-
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `CH343P` |
 | LCSC | `C2846043` |
-
-
-
 
 ## Pins
 
@@ -139,26 +64,30 @@ Each preview links to its full-size vector drawing.
 | 15 | cts | signal |
 | 16 | ri | signal |
 
+## Datasheet
 
+[View the datasheet](datasheet.pdf)
 
 ## Files
 
-- [Pinout drawing](working_svg_square_pins.svg)
-- [Assembly drawing](working_svg_assembly.svg)
-- [Outline drawing](working_svg_outline.svg)
-- [Part ID drawing](working_svg_part_id.svg)
-- [MD5 alpha drawing](working_svg_md5_6_alpha.svg)
-- [BIP 39 words drawing](working_svg_bip_39_3_word.svg)
-- [Square summary](working_svg_square.svg)
-- [Dimensioned drawing](working_svg_dimensioned_titles.svg)
+![Pinout drawing](working_svg_square_pins_300.png)
 
-- [Datasheet](datasheet.pdf)
+![Outline](working_svg_outline_300.png)
 
-- [Structured definition](working.yaml)
+![Part ID](working_svg_part_id_300.png)
+
+![MD5 alpha](working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](working_svg_bip_39_3_word_300.png)
+
+![Square summary](working_svg_square_300.png)
+
+![Dimensions](working_svg_dimensioned_300.png)
+
+![Dimensions with labels](working_svg_dimensioned_titles_300.png)
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p)
-
 
 ---
 

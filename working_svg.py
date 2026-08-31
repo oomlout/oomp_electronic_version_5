@@ -235,8 +235,10 @@ def _add_resistor_outline(
         # changing the physical aspect ratio of the finished SVG.
         terminal_width = max(0.6, body_width * 0.18)
     # Two explicit sides keep this easy to edit for other two-pin parts.
+    thing["diagram_pin_positions"] = []
     sides = [-1, 1]
-    for side in sides:
+    for side_index in range(len(sides)):
+        side = sides[side_index]
         terminal_pos = copy.deepcopy(pos)
         terminal_pos[0] += side * (body_width / 2 - terminal_width / 2)
         opsvg.se(
@@ -245,6 +247,14 @@ def _add_resistor_outline(
             style="component.terminal",
             size=[terminal_width, body_height, 0],
             pos=terminal_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": str(side_index + 1),
+                "side": "left" if side < 0 else "right",
+                "pos": copy.deepcopy(terminal_pos),
+                "size": [terminal_width, body_height, 0],
+            }
         )
 
     return body_width, body_height
@@ -436,7 +446,10 @@ def _add_crystal_outline(thing, width=24, height=14, pos=None):
         [width / 2 - 2, -height / 2 + 2],
         [width / 2 - 2, height / 2 - 2],
     ]
-    for pad_position in pad_positions:
+    pad_numbers = ["1", "4", "2", "3"]
+    thing["diagram_pin_positions"] = []
+    for pad_index in range(len(pad_positions)):
+        pad_position = pad_positions[pad_index]
         pad_pos = copy.deepcopy(pos)
         pad_pos[0] += pad_position[0]
         pad_pos[1] += pad_position[1]
@@ -446,6 +459,14 @@ def _add_crystal_outline(thing, width=24, height=14, pos=None):
             style="component.pad",
             size=[4, 3, 0],
             pos=pad_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": pad_numbers[pad_index],
+                "side": "corner",
+                "pos": copy.deepcopy(pad_pos),
+                "size": [4, 3, 0],
+            }
         )
     crystal_pin_one_pos = copy.deepcopy(pos)
     crystal_pin_one_pos[0] += pad_positions[0][0]
@@ -489,8 +510,10 @@ def _add_usb_a_connector_outline(thing, width=30, height=16, pos=None):
 
     # The two side ears represent the two shell retention legs in the PCB
     # layout.  They stay inside the 14.30 mm overall envelope.
+    thing["diagram_pin_positions"] = []
     shell_mount_positions = [-1, 1]
-    for side in shell_mount_positions:
+    for mount_index in range(len(shell_mount_positions)):
+        side = shell_mount_positions[mount_index]
         mount_pos = copy.deepcopy(pos)
         mount_width = width - shell_width
         mount_pos[0] += side * (width / 2 - mount_width / 2)
@@ -500,6 +523,14 @@ def _add_usb_a_connector_outline(thing, width=30, height=16, pos=None):
             style="component.pad",
             size=[mount_width, shell_height * 0.34, 0],
             pos=mount_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": str(mount_index + 5),
+                "side": "shell",
+                "pos": copy.deepcopy(mount_pos),
+                "size": [mount_width, shell_height * 0.34, 0],
+            }
         )
 
     # Four 1.00 mm contacts on 2.00 mm pitch leave the rear of the shell.
@@ -516,6 +547,14 @@ def _add_usb_a_connector_outline(thing, width=30, height=16, pos=None):
             style="component.pad",
             size=[shell_width * contact_width_ratio, shell_height * 0.14, 0],
             pos=contact_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": str(contact_index + 1),
+                "side": "contact",
+                "pos": copy.deepcopy(contact_pos),
+                "size": [shell_width * contact_width_ratio, shell_height * 0.14, 0],
+            }
         )
 
     # The two spring windows are the strongest identifying feature in the
@@ -607,6 +646,8 @@ def _add_usb_c_connector_outline(thing, width=30, height=16, pos=None):
     shell_width_mm = float(dimensions.get("shell_width", 8.94))
     contact_pitch = shell_width * contact_pitch_mm / shell_width_mm
     contact_width = shell_width * contact_width_mm / shell_width_mm
+    thing["diagram_pin_positions"] = []
+    pins = thing.get("pins", {})
     for contact_index in range(contact_count):
         contact_pos = copy.deepcopy(pos)
         contact_pos[0] += (contact_index - (contact_count - 1) / 2) * contact_pitch
@@ -617,6 +658,18 @@ def _add_usb_c_connector_outline(thing, width=30, height=16, pos=None):
             style="component.pad",
             size=[contact_width, shell_height * 0.12, 0],
             pos=contact_pos,
+        )
+        contact_number = str(contact_index + 1)
+        pin_key = f"pin_{contact_index + 1}"
+        if isinstance(pins, dict) and pin_key in pins:
+            contact_number = str(pins[pin_key].get("number", contact_number))
+        thing["diagram_pin_positions"].append(
+            {
+                "number": contact_number,
+                "side": "contact",
+                "pos": copy.deepcopy(contact_pos),
+                "size": [contact_width, shell_height * 0.12, 0],
+            }
         )
 
     # Four shell tabs follow the recommended PCB layout: two toward the rear
@@ -736,9 +789,16 @@ def _add_connector_outline(thing, width=30, height=16, pos=None):
                 size=[pin_square, pin_square, 0],
                 pos=pin_pos,
             )
-            diagram_pin_positions.append(copy.deepcopy(pin_pos))
+            diagram_pin_positions.append(
+                {
+                    "number": str(pin_index + 1),
+                    "side": "header",
+                    "pos": copy.deepcopy(pin_pos),
+                    "size": [pin_square, pin_square, 0],
+                }
+            )
         if len(diagram_pin_positions) > 0:
-            pin_one_marker_pos = copy.deepcopy(diagram_pin_positions[0])
+            pin_one_marker_pos = copy.deepcopy(diagram_pin_positions[0]["pos"])
             pin_one_marker_pos[0] -= header_width * 0.30
             opsvg.se(
                 thing,
@@ -936,7 +996,12 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
             pos=copy.deepcopy(pos),
         )
         thing["diagram_pin_positions"].append(
-            {"number": "0", "side": "center", "pos": copy.deepcopy(pos), "size": [0, 0, 0]}
+            {
+                "number": "0",
+                "side": "center",
+                "pos": copy.deepcopy(pos),
+                "size": [body_width * 0.44, body_height * 0.44, 0],
+            }
         )
         _add_ic_pin_one_marker(thing, package, body_width, body_height, pos)
         thing["diagram_outline_width"] = body_width + pad_length
@@ -1199,6 +1264,71 @@ def _get_pin_label_map(thing):
     return pin_label_map
 
 
+def _shorten_pin_name(pin_name):
+    """Keep common electrical names compact enough for physical pad labels."""
+    pin_name = str(pin_name).strip()
+    replacements = [
+        ["usb_negative", "D-"],
+        ["usb_positive", "D+"],
+        ["ground", "GND"],
+    ]
+    for replacement in replacements:
+        pin_name = pin_name.replace(replacement[0], replacement[1])
+    return pin_name
+
+
+def _add_assembly_pin_labels(thing):
+    """Put each pin name inside its recorded physical pad rectangle."""
+    pin_label_map = _get_pin_label_map(thing)
+    diagram_pin_positions = thing.get("diagram_pin_positions", [])
+
+    for pin_record in diagram_pin_positions:
+        if not isinstance(pin_record, dict):
+            continue
+
+        pin_number = str(pin_record.get("number", "")).strip()
+        pin_name = pin_label_map.get(pin_number, f"pin {pin_number}")
+        pin_name = _shorten_pin_name(pin_name)
+        if pin_name == "":
+            pin_name = f"pin {pin_number}"
+
+        pin_pos = pin_record.get("pos", [0, 0, 0])
+        pin_size = pin_record.get("size", [0, 0, 0])
+        if not isinstance(pin_pos, list) or len(pin_pos) < 2:
+            continue
+        if not isinstance(pin_size, list) or len(pin_size) < 2:
+            continue
+
+        pin_width = abs(float(pin_size[0]))
+        pin_height = abs(float(pin_size[1]))
+        if pin_width <= 0 or pin_height <= 0:
+            continue
+
+        rotation = 0
+        text_length_space = pin_width
+        text_height_space = pin_height
+        if pin_height > pin_width:
+            rotation = 90
+            text_length_space = pin_height
+            text_height_space = pin_width
+
+        # The estimates are intentionally simple constants so a maintainer can
+        # easily make labels looser or tighter later.  No label is allowed to
+        # extend past the rectangle merely to enforce a minimum font size.
+        height_limited_size = text_height_space * 0.70
+        length_limited_size = text_length_space * 0.88 / max(1, len(pin_name)) / 0.56
+        label_size = min(height_limited_size, length_limited_size)
+
+        _add_text(
+            thing,
+            pin_name,
+            "label.pin_inside",
+            copy.deepcopy(pin_pos),
+            size=label_size,
+            rot=[0, 0, rotation],
+        )
+
+
 def _get_component_text_color(thing):
     # style_oomp is intentionally monochrome: white parts, black outlines/text.
     return "#000000"
@@ -1238,6 +1368,8 @@ def _add_square_pin_labels(thing):
         label_x = float(thing.get("diagram_outline_width", 4)) / 2 + 2
         for index in range(min(len(pin_labels), len(diagram_pin_positions))):
             pin_position = diagram_pin_positions[index]
+            if isinstance(pin_position, dict):
+                pin_position = pin_position.get("pos", [0, 0, 0])
             _add_text(
                 thing,
                 pin_labels[index],
@@ -1535,8 +1667,14 @@ def _add_header_dimensions(thing, show_titles=False):
     pin_positions = thing.get("diagram_pin_positions", [])
     if len(pin_positions) >= 2:
         pitch_x = top_view_right + 5
-        first_pin_y = pin_positions[0][1]
-        second_pin_y = pin_positions[1][1]
+        first_pin_position = pin_positions[0]
+        second_pin_position = pin_positions[1]
+        if isinstance(first_pin_position, dict):
+            first_pin_position = first_pin_position.get("pos", [0, 0, 0])
+        if isinstance(second_pin_position, dict):
+            second_pin_position = second_pin_position.get("pos", [0, 0, 0])
+        first_pin_y = first_pin_position[1]
+        second_pin_y = second_pin_position[1]
         _add_dimension_line(thing, [top_view_right, first_pin_y], [pitch_x, first_pin_y])
         _add_dimension_line(thing, [top_view_right, second_pin_y], [pitch_x, second_pin_y])
         _add_vertical_dimension(
@@ -1796,6 +1934,12 @@ def get_oomp_component_assembly(thing, **kwargs):
             "y": (dimensions["canvas_height"] / 2 - float(pin_one_position[1])) * output_scale,
             "identifiers": pin_one_identifiers,
         }
+
+
+def get_oomp_component_assembly_pins(thing, **kwargs):
+    """Physical assembly drawing with every available pin name in its pad."""
+    get_oomp_component_assembly(thing, **kwargs)
+    _add_assembly_pin_labels(thing)
 
 
 def get_oomp_component_outline(thing, **kwargs):

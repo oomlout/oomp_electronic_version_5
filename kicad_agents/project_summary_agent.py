@@ -8,6 +8,7 @@ import json
 import math
 import re
 import shutil
+import time
 from pathlib import Path
 
 import yaml
@@ -48,8 +49,18 @@ def _write_json(path, data):
 
 def _write_text(path, text):
     path.parent.mkdir(parents=True, exist_ok=True)
-    with path.open("w", encoding="utf-8", newline="\n") as output_file:
-        output_file.write(text)
+    for attempt in range(5):
+        try:
+            with path.open("w", encoding="utf-8", newline="\n") as output_file:
+                output_file.write(text)
+            return
+        except OSError as error:
+            if error.errno != 22 or attempt == 4:
+                raise
+            # Windows can briefly return EINVAL while a freshly replaced SVG
+            # or README is being inspected by another local process.  The
+            # action is deterministic, so retry the same write unchanged.
+            time.sleep(0.1)
 
 
 def _merge_dicts(base, extra):
@@ -436,8 +447,8 @@ def _orientation_rotation(svg_width, svg_height, local_bounds_record, pads, pin_
     return best_rotation
 
 
-def _inline_svg(svg_path, local_bounds_record, pads):
-    """Place a part SVG at its native millimetre size without stretching it."""
+def _read_assembly_svg(svg_path):
+    """Read the small set of assembly SVG fields used by board placement."""
     svg_text = svg_path.read_text(encoding="utf-8")
     view_box_match = re.search(r'viewBox\s*=\s*"([^"]+)"', svg_text)
     width_match = re.search(r'width\s*=\s*"([0-9.]+)mm"', svg_text)
@@ -453,13 +464,10 @@ def _inline_svg(svg_path, local_bounds_record, pads):
         or opening_end < 0
         or closing_start < 0
     ):
-        return ""
+        return {}
 
     svg_width = float(width_match.group(1))
     svg_height = float(height_match.group(1))
-    local_center_x = (local_bounds_record["min_x"] + local_bounds_record["max_x"]) / 2
-    local_center_y = (local_bounds_record["min_y"] + local_bounds_record["max_y"]) / 2
-
     pin_one_x_match = re.search(r'data-pin-one-x\s*=\s*"([0-9.-]+)"', svg_text)
     pin_one_y_match = re.search(r'data-pin-one-y\s*=\s*"([0-9.-]+)"', svg_text)
     pin_one_svg = None
@@ -471,25 +479,89 @@ def _inline_svg(svg_path, local_bounds_record, pads):
         identifiers_match = re.search(r'data-pin-one-identifiers\s*=\s*"([^"]+)"', svg_text)
         if identifiers_match is not None:
             pin_one_svg["identifiers"] = identifiers_match.group(1).split("|")
+
+    return {
+        "width": svg_width,
+        "height": svg_height,
+        "view_box": view_box_match.group(1),
+        "inner_svg": svg_text[opening_end + 1 : closing_start].strip(),
+        "pin_one": pin_one_svg,
+    }
+
+
+def _inline_svg(svg_path, local_bounds_record, pads):
+    """Place a part SVG at its native millimetre size without stretching it."""
+    svg_details = _read_assembly_svg(svg_path)
+    if svg_details == {}:
+        return ""
+
+    svg_width = svg_details["width"]
+    svg_height = svg_details["height"]
+    local_center_x = (local_bounds_record["min_x"] + local_bounds_record["max_x"]) / 2
+    local_center_y = (local_bounds_record["min_y"] + local_bounds_record["max_y"]) / 2
     orientation_rotation = _orientation_rotation(
         svg_width,
         svg_height,
         local_bounds_record,
         pads,
-        pin_one_svg,
+        svg_details["pin_one"],
     )
 
-    inner_svg = svg_text[opening_end + 1 : closing_start].strip()
     return (
         f'<g transform="translate({local_center_x:.4f} {local_center_y:.4f}) rotate({orientation_rotation})">'
         f'<svg x="{-svg_width / 2:.4f}" y="{-svg_height / 2:.4f}" '
         f'width="{svg_width:.4f}" height="{svg_height:.4f}" '
-        f'viewBox="{html.escape(view_box_match.group(1))}" preserveAspectRatio="xMidYMid meet">'
-        f'{inner_svg}</svg></g>'
+        f'viewBox="{html.escape(svg_details["view_box"])}" preserveAspectRatio="xMidYMid meet">'
+        f'{svg_details["inner_svg"]}</svg></g>'
     )
 
 
-def _make_board_svg(output_path, project_directory, project_data, components, style, component_asset_directory):
+def _designator_bounds(svg_path, local_bounds_record, pads, board_rotation, fallback_width, fallback_height):
+    """Return a conservative centred box that remains inside the part SVG."""
+    if svg_path is None or not svg_path.is_file() or local_bounds_record is None:
+        return fallback_width, fallback_height
+
+    svg_details = _read_assembly_svg(svg_path)
+    if svg_details == {}:
+        return fallback_width, fallback_height
+
+    designator_width = float(svg_details["width"])
+    designator_height = float(svg_details["height"])
+    orientation_rotation = _orientation_rotation(
+        designator_width,
+        designator_height,
+        local_bounds_record,
+        pads,
+        svg_details["pin_one"],
+    )
+    if abs(orientation_rotation) % 180 == 90:
+        designator_width, designator_height = designator_height, designator_width
+
+    rotation_radians = math.radians(float(board_rotation) % 180)
+    cosine = abs(math.cos(rotation_radians))
+    sine = abs(math.sin(rotation_radians))
+    if sine < 0.0001:
+        return designator_width, designator_height
+    if cosine < 0.0001:
+        return designator_height, designator_width
+
+    # A centred square of this size is fully inside the rotated component for
+    # any non-right-angle placement.  The conservative result is intentional:
+    # the reference must never protrude from a component merely to stay large.
+    square_size = min(designator_width, designator_height) / (cosine + sine)
+    return square_size, square_size
+
+
+def _make_board_svg(
+    output_path,
+    project_directory,
+    project_data,
+    components,
+    style,
+    component_asset_directory,
+    component_svg_filename="working_svg_assembly.svg",
+    image_file="generated_data/src/board.svg",
+):
     pcb_files = project_data.get("project", {}).get("pcb_files", [])
     edge_shapes, edge_points = _edge_cut_shapes(project_directory, pcb_files)
     bounds = _bounds_from_points(edge_points)
@@ -499,7 +571,7 @@ def _make_board_svg(output_path, project_directory, project_data, components, st
         bounds_source = "placed component extents"
     if bounds is None:
         _write_text(output_path, '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320"><rect width="100%" height="100%" fill="#FFFFFF"/><text x="20" y="40">No PCB placement data available</text></svg>\n')
-        return {"available": False, "image_file": "generated_data/src/board.svg", "bounds_source": "none"}
+        return {"available": False, "image_file": image_file, "bounds_source": "none"}
 
     svg_style = style["board_svg"]
     colors = style["colors"]
@@ -561,7 +633,7 @@ def _make_board_svg(output_path, project_directory, project_data, components, st
         mirror = " scale(-1 1)" if row["side"] == "back" else ""
         lines.append(f'<g transform="translate({x:.4f} {y:.4f}) rotate({rotation:.4f}){mirror}">')
         oomp_id = row["oomp_id"]
-        svg_part_path = component_asset_directory / oomp_id / "working_svg_assembly.svg" if oomp_id else None
+        svg_part_path = component_asset_directory / oomp_id / component_svg_filename if oomp_id else None
         if svg_part_path is not None and svg_part_path.is_file() and local_bounds_record is not None:
             inline_svg = _inline_svg(svg_part_path, local_bounds_record, row["pads"])
             if inline_svg != "":
@@ -574,22 +646,26 @@ def _make_board_svg(output_path, project_directory, project_data, components, st
 
         indicator_x = x
         indicator_y = y
-        placed_width = width
-        placed_height = height
+        placed_width, placed_height = _designator_bounds(
+            svg_part_path,
+            local_bounds_record,
+            row["pads"],
+            rotation,
+            width,
+            height,
+        )
         if placed_bounds_record is not None:
             indicator_x = (placed_bounds_record["min_x"] + placed_bounds_record["max_x"]) / 2
             indicator_y = (placed_bounds_record["min_y"] + placed_bounds_record["max_y"]) / 2
-            placed_width = placed_bounds_record["max_x"] - placed_bounds_record["min_x"]
-            placed_height = placed_bounds_record["max_y"] - placed_bounds_record["min_y"]
 
         reference = str(row["reference"])
         maximum_reference_size = float(typography["reference_size_mm"])
-        width_reference_size = placed_width * 0.82 / max(1.0, len(reference) * 0.58)
-        height_reference_size = placed_height * 0.55
-        reference_size = max(0.22, min(maximum_reference_size, width_reference_size, height_reference_size))
+        width_reference_size = placed_width * 0.72 / max(1.0, len(reference) * 0.68)
+        height_reference_size = placed_height * 0.42
+        reference_size = min(maximum_reference_size, width_reference_size, height_reference_size)
         reference_baseline = reference_size * 0.34
-        indicator_width = min(placed_width * 0.9, len(reference) * reference_size * 0.62 + 0.24)
-        indicator_height = reference_size * 1.28
+        indicator_width = min(placed_width * 0.82, len(reference) * reference_size * 0.68 + reference_size * 0.5)
+        indicator_height = min(placed_height * 0.60, reference_size * 1.35)
         reference_lines.append(
             f'<g class="indicator" transform="translate({indicator_x:.4f} {indicator_y:.4f})">'
             f'<rect x="{-indicator_width / 2:.4f}" y="{-indicator_height / 2:.4f}" width="{indicator_width:.4f}" '
@@ -604,7 +680,7 @@ def _make_board_svg(output_path, project_directory, project_data, components, st
     _write_text(output_path, "\n".join(lines) + "\n")
     return {
         "available": True,
-        "image_file": "generated_data/src/board.svg",
+        "image_file": image_file,
         "bounds_source": bounds_source,
         "min_x": round(bounds["min_x"], 4),
         "min_y": round(bounds["min_y"], 4),
@@ -616,16 +692,55 @@ def _make_board_svg(output_path, project_directory, project_data, components, st
     }
 
 
+def _make_board_png(svg_path, png_path, maximum_dimension=1600):
+    """Render one board SVG to a PNG with a predictable longest side."""
+    import cairosvg
+
+    svg_text = svg_path.read_text(encoding="utf-8")
+    view_box_match = re.search(r'viewBox\s*=\s*"([^"]+)"', svg_text)
+    if view_box_match is None:
+        return {"available": False, "image_file": ""}
+
+    view_box_values = view_box_match.group(1).split()
+    if len(view_box_values) != 4:
+        return {"available": False, "image_file": ""}
+
+    view_width = float(view_box_values[2])
+    view_height = float(view_box_values[3])
+    png_path.parent.mkdir(parents=True, exist_ok=True)
+    if view_width >= view_height:
+        output_width = int(maximum_dimension)
+        output_height = max(1, round(maximum_dimension * view_height / view_width))
+    else:
+        output_height = int(maximum_dimension)
+        output_width = max(1, round(maximum_dimension * view_width / view_height))
+
+    cairosvg.svg2png(
+        url=str(svg_path),
+        write_to=str(png_path),
+        output_width=output_width,
+        output_height=output_height,
+    )
+    return {
+        "available": True,
+        "image_file": "generated_data/src/board_pins.png",
+        "width_px": output_width,
+        "height_px": output_height,
+    }
+
+
 def _copy_project_sources(components, parts_directory, project_source_directory, component_asset_directory):
     # These short arrays are intentionally explicit.  Add another filename
     # here when the project compiler begins consuming another part asset.
     source_filenames = [
         "working.yaml",
         "working_svg_assembly.svg",
+        "working_svg_assembly_pins.svg",
         "working_svg_outline.svg",
     ]
     image_filenames = [
         "working_svg_assembly.svg",
+        "working_svg_assembly_pins.svg",
     ]
 
     oomp_ids = []
@@ -788,6 +903,10 @@ def generate_project_summary(
         "generated_source": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src",
         "board": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
         "board_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
+        "board_pins": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.svg",
+        "board_pins_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.svg",
+        "board_pins_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.png",
+        "board_pins_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.png",
         "parts": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/parts",
     }
     source_manifest = _copy_project_sources(
@@ -803,6 +922,21 @@ def generate_project_summary(
         components,
         style,
         component_asset_directory,
+    )
+    board_pins = _make_board_svg(
+        asset_directory / "board_pins.svg",
+        project_directory,
+        project_data,
+        components,
+        style,
+        component_asset_directory,
+        component_svg_filename="working_svg_assembly_pins.svg",
+        image_file="generated_data/src/board_pins.svg",
+    )
+    board_pins_png = _make_board_png(
+        asset_directory / "board_pins.svg",
+        asset_directory / "board_pins.png",
+        maximum_dimension=int(style["board_svg"].get("png_maximum_dimension", 1600)),
     )
     component_rows = _component_rows(components)
     placement = {
@@ -831,6 +965,8 @@ def generate_project_summary(
         "summary": summary,
         "placement": placement,
         "board": board,
+        "board_pins": board_pins,
+        "board_pins_png": board_pins_png,
         "bom": _bom_rows(components, oomp_link_prefix=repository_links["parts"]),
         "nets": _net_rows(components),
         "generated_text": generated_text,

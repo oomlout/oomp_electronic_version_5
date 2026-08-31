@@ -2,15 +2,9 @@
 
 `electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100`
 
-Connector USB A Surface Mount 4 Pin is an OOMP electronic connector definition. It uses the usb a package or form factor. Its nominal drawing size is 14.3 &#x00D7; 10.6 mm. The definition includes 6 documented pins.
+Connector USB A Surface Mount 4 Pin is an OOMP electronic connector definition. It uses the usb a package or form factor. Its nominal drawing size is 14.3 × 10.6 mm. The definition includes 6 documented pins.
 
-<p align="center">
-  <a href="working_svg_square_pins.svg">
-    <img src="working_svg_square_pins.svg" alt="Connector USB A Surface Mount 4 Pin pinout" width="620">
-  </a>
-  <br>
-  <strong>Pinout</strong> · click for the full-size SVG
-</p>
+![Connector USB A Surface Mount 4 Pin pinout](working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -19,69 +13,8 @@ Connector USB A Surface Mount 4 Pin is an OOMP electronic connector definition. 
 | OOMP ID | `electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100` |
 | Type | Connector |
 | Package / style | usb a |
-| Nominal size | 14.3 &#x00D7; 10.6 mm |
+| Nominal size | 14.3 × 10.6 mm |
 | Documented pins | 6 |
-
-
-## Diagram gallery
-
-<table>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_assembly.svg"><img src="working_svg_assembly.svg" alt="Assembly" width="220"></a><br>
-      <strong>Assembly</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_outline.svg"><img src="working_svg_outline_300.png" alt="Outline" width="220"></a><br>
-      <strong>Outline</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_part_id.svg"><img src="working_svg_part_id_300.png" alt="Part ID" width="220"></a><br>
-      <strong>Part ID</strong>
-    </td>
-  
-  </tr>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_md5_6_alpha.svg"><img src="working_svg_md5_6_alpha_300.png" alt="MD5 alpha" width="220"></a><br>
-      <strong>MD5 alpha</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_bip_39_3_word.svg"><img src="working_svg_bip_39_3_word_300.png" alt="BIP 39 words" width="220"></a><br>
-      <strong>BIP 39 words</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_square.svg"><img src="working_svg_square_300.png" alt="Square summary" width="220"></a><br>
-      <strong>Square summary</strong>
-    </td>
-  
-  </tr>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_dimensioned.svg"><img src="working_svg_dimensioned_300.png" alt="Dimensions" width="220"></a><br>
-      <strong>Dimensions</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_dimensioned_titles.svg"><img src="working_svg_dimensioned_titles_300.png" alt="Dimensions with labels" width="220"></a><br>
-      <strong>Dimensions with labels</strong>
-    </td>
-  
-  </tr>
-
-</table>
-
-Each preview links to its full-size vector drawing.
 
 ## Classification
 
@@ -95,8 +28,6 @@ Each preview links to its full-size vector drawing.
 | 14 | `shenzhen_jing_tuo_jin_electronics` |
 | 15 | `912121a2023s10100` |
 
-
-
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -104,18 +35,12 @@ Each preview links to its full-size vector drawing.
 | Length | 14.3 mm |
 | Width | 10.6 mm |
 
-
-
-
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `912-121A2023S10100` |
 | LCSC | `C42428` |
-
-
-
 
 ## Pins
 
@@ -128,26 +53,30 @@ Each preview links to its full-size vector drawing.
 | 5 | shield | shield |
 | 6 | shield | shield |
 
+## Datasheet
 
+[View the datasheet](datasheet.pdf)
 
 ## Files
 
-- [Pinout drawing](working_svg_square_pins.svg)
-- [Assembly drawing](working_svg_assembly.svg)
-- [Outline drawing](working_svg_outline.svg)
-- [Part ID drawing](working_svg_part_id.svg)
-- [MD5 alpha drawing](working_svg_md5_6_alpha.svg)
-- [BIP 39 words drawing](working_svg_bip_39_3_word.svg)
-- [Square summary](working_svg_square.svg)
-- [Dimensioned drawing](working_svg_dimensioned_titles.svg)
+![Pinout drawing](working_svg_square_pins_300.png)
 
-- [Datasheet](datasheet.pdf)
+![Outline](working_svg_outline_300.png)
 
-- [Structured definition](working.yaml)
+![Part ID](working_svg_part_id_300.png)
+
+![MD5 alpha](working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](working_svg_bip_39_3_word_300.png)
+
+![Square summary](working_svg_square_300.png)
+
+![Dimensions](working_svg_dimensioned_300.png)
+
+![Dimensions with labels](working_svg_dimensioned_titles_300.png)
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100)
-
 
 ---
 

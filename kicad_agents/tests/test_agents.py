@@ -1,4 +1,5 @@
 import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
@@ -175,6 +176,10 @@ class ProjectPartTests(unittest.TestCase):
         self.assertEqual(second_action["file_test"], "")
         self.assertEqual(first_action["actions"][0]["command"], "run_python")
         self.assertEqual(second_action["actions"][0]["command"], "run_python")
+        self.assertEqual(
+            second_action["actions"][0]["file_output"],
+            "generated_data/src/board_pins.png",
+        )
 
         readme = (PROJECT_PART / "README.md").read_text(encoding="utf-8")
         self.assertIn("https://github.com/electrolama/pt1", readme)
@@ -194,6 +199,18 @@ class ProjectPartTests(unittest.TestCase):
         )
         self.assertNotIn("/parts/electronic_capacitor_0402_10_nano_farad/README.md", readme)
         self.assertTrue((PROJECT_PART / "generated_data" / "src" / "board.svg").is_file())
+        self.assertTrue((PROJECT_PART / "generated_data" / "src" / "board_pins.svg").is_file())
+        board_pins_png_path = PROJECT_PART / "generated_data" / "src" / "board_pins.png"
+        self.assertTrue(board_pins_png_path.is_file())
+        self.assertIn("## Board with pins", readme)
+        self.assertIn(
+            "![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.png)",
+            readme,
+        )
+        from PIL import Image
+
+        with Image.open(board_pins_png_path) as board_pins_image:
+            self.assertEqual(max(board_pins_image.size), 1600)
         self.assertFalse(any((PROJECT_PART / "generated_data").glob("*llm*")))
 
         assembly_svg_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "working_svg_assembly.svg"
@@ -204,6 +221,13 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIn('stroke-width="0.22"', assembly_svg)
         self.assertNotIn('stroke-width="0.18"', assembly_svg)
         self.assertNotIn('stroke-width="0.8"', assembly_svg)
+
+        assembly_pins_svg_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "working_svg_assembly_pins.svg"
+        self.assertTrue(assembly_pins_svg_path.is_file())
+        assembly_pins_svg = assembly_pins_svg_path.read_text(encoding="utf-8")
+        self.assertIn(">pin 1</text>", assembly_pins_svg)
+        self.assertIn(">pin 2</text>", assembly_pins_svg)
+        self.assertIn('transform="rotate(-90.000', assembly_pins_svg)
 
         board_svg = (PROJECT_PART / "generated_data" / "src" / "board.svg").read_text(encoding="utf-8")
         self.assertIn('transform="translate(155.8761 106.1286) rotate(-90.0000)"', board_svg)
@@ -217,6 +241,15 @@ class ProjectPartTests(unittest.TestCase):
         )
         self.assertNotIn(">SJ1</text>", board_svg)
         self.assertNotIn("UNK_HOLE", board_svg)
+
+        board_pins_svg = (PROJECT_PART / "generated_data" / "src" / "board_pins.svg").read_text(encoding="utf-8")
+        self.assertIn(">vbus</text>", board_pins_svg)
+        self.assertIn(">pin 1</text>", board_pins_svg)
+        self.assertNotIn(">SJ1</text>", board_pins_svg)
+        self.assertNotIn("UNK_HOLE", board_pins_svg)
+        small_reference = re.search(r'font-size="([0-9.]+)"[^>]*>R1</text>', board_pins_svg)
+        self.assertIsNotNone(small_reference)
+        self.assertLess(float(small_reference.group(1)), 0.22)
 
     def test_j1_orientation_uses_footprint_pad_one(self):
         local_bounds = {
@@ -278,10 +311,15 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         self.assertTrue(all(action["allow_upscale"] is False for action in preview_actions))
 
         readme = (part_directory / "README.md").read_text(encoding="utf-8")
-        self.assertIn('<img src="working_svg_square_pins.svg"', readme)
+        self.assertIn("![Resistor 0402 2200 Ohm pinout](working_svg_square_pins.svg)", readme)
         self.assertIn("## At a glance", readme)
-        self.assertIn("## Diagram gallery", readme)
-        self.assertIn("working_svg_outline_300.png", readme)
+        self.assertNotIn("## Diagram gallery", readme)
+        self.assertNotIn("<img", readme)
+        self.assertIn("## Files", readme)
+        self.assertIn("![Pinout drawing](working_svg_square_pins_300.png)", readme)
+        self.assertIn("![Outline](working_svg_outline_300.png)", readme)
+        self.assertNotIn("[Outline drawing](working_svg_outline.svg)", readme)
+        self.assertNotIn("[View the datasheet](datasheet.pdf)", readme)
 
         from PIL import Image
 
@@ -333,6 +371,10 @@ class UsbConnectorDiagramTests(unittest.TestCase):
         self.assertEqual(working["pins"]["pin_1"], {"name": "gnd", "number": "A1", "type": "power"})
         self.assertEqual(working["pins"]["pin_16"], {"name": "gnd", "number": "B1", "type": "power"})
 
+        readme = (USB_C_PART / "README.md").read_text(encoding="utf-8")
+        self.assertIn("## Datasheet", readme)
+        self.assertIn("[View the datasheet](datasheet.pdf)", readme)
+
         pinout_svg = (USB_C_PART / "working_svg_square_pins.svg").read_text(encoding="utf-8")
         self.assertIn("Connector USB C", pinout_svg)
         self.assertIn("A1 gnd", pinout_svg)
@@ -341,6 +383,13 @@ class UsbConnectorDiagramTests(unittest.TestCase):
 
         assembly_svg = (USB_C_PART / "working_svg_assembly.svg").read_text(encoding="utf-8")
         self.assertIn('width="8.9400mm" height="7.3500mm"', assembly_svg)
+
+        assembly_pins_svg = (USB_C_PART / "working_svg_assembly_pins.svg").read_text(encoding="utf-8")
+        self.assertEqual(assembly_pins_svg.count("</text>"), 16)
+        self.assertIn(">gnd</text>", assembly_pins_svg)
+        self.assertIn(">vbus</text>", assembly_pins_svg)
+        self.assertIn(">cc1</text>", assembly_pins_svg)
+        self.assertIn('transform="rotate(-90.000', assembly_pins_svg)
 
 
 if __name__ == "__main__":

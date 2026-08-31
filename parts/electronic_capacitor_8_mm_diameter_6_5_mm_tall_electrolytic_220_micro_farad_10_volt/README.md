@@ -2,15 +2,9 @@
 
 `electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt`
 
-Capacitor 8 mm Diameter 6 5 mm Tall Electrolytic 220 Micro Farad 10 Volt is an OOMP electronic capacitor definition. It uses the 8 mm diameter 6 5 mm tall package or form factor. Its nominal drawing size is 8.0 &#x00D7; 8.0 mm.
+Capacitor 8 mm Diameter 6 5 mm Tall Electrolytic 220 Micro Farad 10 Volt is an OOMP electronic capacitor definition. It uses the 8 mm diameter 6 5 mm tall package or form factor. Its nominal drawing size is 8.0 × 8.0 mm.
 
-<p align="center">
-  <a href="working_svg_square_pins.svg">
-    <img src="working_svg_square_pins.svg" alt="Capacitor 8 mm Diameter 6 5 mm Tall Electrolytic 220 Micro Farad 10 Volt pinout" width="620">
-  </a>
-  <br>
-  <strong>Pinout</strong> · click for the full-size SVG
-</p>
+![Capacitor 8 mm Diameter 6 5 mm Tall Electrolytic 220 Micro Farad 10 Volt pinout](working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -19,68 +13,7 @@ Capacitor 8 mm Diameter 6 5 mm Tall Electrolytic 220 Micro Farad 10 Volt is an O
 | OOMP ID | `electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt` |
 | Type | Capacitor |
 | Package / style | 8 mm diameter 6 5 mm tall |
-| Nominal size | 8.0 &#x00D7; 8.0 mm |
-
-
-## Diagram gallery
-
-<table>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_assembly.svg"><img src="working_svg_assembly.svg" alt="Assembly" width="220"></a><br>
-      <strong>Assembly</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_outline.svg"><img src="working_svg_outline_300.png" alt="Outline" width="220"></a><br>
-      <strong>Outline</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_part_id.svg"><img src="working_svg_part_id_300.png" alt="Part ID" width="220"></a><br>
-      <strong>Part ID</strong>
-    </td>
-  
-  </tr>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_md5_6_alpha.svg"><img src="working_svg_md5_6_alpha_300.png" alt="MD5 alpha" width="220"></a><br>
-      <strong>MD5 alpha</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_bip_39_3_word.svg"><img src="working_svg_bip_39_3_word_300.png" alt="BIP 39 words" width="220"></a><br>
-      <strong>BIP 39 words</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_square.svg"><img src="working_svg_square_300.png" alt="Square summary" width="220"></a><br>
-      <strong>Square summary</strong>
-    </td>
-  
-  </tr>
-
-  <tr>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_dimensioned.svg"><img src="working_svg_dimensioned_300.png" alt="Dimensions" width="220"></a><br>
-      <strong>Dimensions</strong>
-    </td>
-  
-    <td align="center" width="33%">
-      <a href="working_svg_dimensioned_titles.svg"><img src="working_svg_dimensioned_titles_300.png" alt="Dimensions with labels" width="220"></a><br>
-      <strong>Dimensions with labels</strong>
-    </td>
-  
-  </tr>
-
-</table>
-
-Each preview links to its full-size vector drawing.
+| Nominal size | 8.0 × 8.0 mm |
 
 ## Classification
 
@@ -93,8 +26,6 @@ Each preview links to its full-size vector drawing.
 | 5 | `220_micro_farad` |
 | 6 | `10_volt` |
 
-
-
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -105,25 +36,26 @@ Each preview links to its full-size vector drawing.
 
 
 
-
-
-
 ## Files
 
-- [Pinout drawing](working_svg_square_pins.svg)
-- [Assembly drawing](working_svg_assembly.svg)
-- [Outline drawing](working_svg_outline.svg)
-- [Part ID drawing](working_svg_part_id.svg)
-- [MD5 alpha drawing](working_svg_md5_6_alpha.svg)
-- [BIP 39 words drawing](working_svg_bip_39_3_word.svg)
-- [Square summary](working_svg_square.svg)
-- [Dimensioned drawing](working_svg_dimensioned_titles.svg)
+![Pinout drawing](working_svg_square_pins_300.png)
 
-- [Structured definition](working.yaml)
+![Outline](working_svg_outline_300.png)
+
+![Part ID](working_svg_part_id_300.png)
+
+![MD5 alpha](working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](working_svg_bip_39_3_word_300.png)
+
+![Square summary](working_svg_square_300.png)
+
+![Dimensions](working_svg_dimensioned_300.png)
+
+![Dimensions with labels](working_svg_dimensioned_titles_300.png)
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt)
-
 
 ---
 

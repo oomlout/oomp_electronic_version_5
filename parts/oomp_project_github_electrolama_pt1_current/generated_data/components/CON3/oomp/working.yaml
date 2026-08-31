@@ -28,9 +28,20 @@ bip_39_full_no_space: addreducebridgeharvestunhappywinpersonblastvacuumflatleftc
 bip_39_full_space: add reduce bridge harvest unhappy win person blast vacuum flat
     left curtain
 bip_39_full_underscore: add_reduce_bridge_harvest_unhappy_win_person_blast_vacuum_flat_left_curtain
+connector_dimensions_mm:
+    body_depth: 10.6
+    contact_count: 4
+    contact_pitch: 2.0
+    contact_span: 7.0
+    contact_width: 1.0
+    overall_width: 14.3
+    port_height: 5.7
+    shell_mount_count: 2
+    shell_mount_width: 1.45
+    shell_width: 13.1
 dimensions_mm:
-    length: 14.5
-    width: 13.1
+    length: 14.3
+    width: 10.6
 directory: parts/electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
 file_copy:
 -   file_destination: datasheet.pdf
@@ -68,13 +79,77 @@ name_upper: ELECTRONIC CONNECTOR USB A SURFACE MOUNT 4 PIN SHENZHEN JING TUO JIN
     912121A2023S10100
 oomlout_ai_roboclick_1:
     actions:
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_square_pins_300.png
+        file_source: working_svg_square_pins.png
+        maximum_dimension: 300
+        resample: lanczos
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_outline_300.png
+        file_source: working_svg_outline.png
+        maximum_dimension: 300
+        resample: lanczos
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_part_id_300.png
+        file_source: working_svg_part_id.png
+        maximum_dimension: 300
+        resample: lanczos
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_md5_6_alpha_300.png
+        file_source: working_svg_md5_6_alpha.png
+        maximum_dimension: 300
+        resample: lanczos
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_bip_39_3_word_300.png
+        file_source: working_svg_bip_39_3_word.png
+        maximum_dimension: 300
+        resample: lanczos
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_square_300.png
+        file_source: working_svg_square.png
+        maximum_dimension: 300
+        resample: lanczos
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_dimensioned_300.png
+        file_source: working_svg_dimensioned.png
+        maximum_dimension: 300
+        resample: lanczos
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_dimensioned_titles_300.png
+        file_source: working_svg_dimensioned_titles.png
+        maximum_dimension: 300
+        resample: lanczos
+    description: Build proportional 300-pixel previews for the generated part README.
+    file_test: ''
+    retries_until_complete: 0
+oomlout_ai_roboclick_2:
+    actions:
     -   command: text_jinja_template
         convert_to_pdf: false
         convert_to_png: false
         dict_data:
+            connector_dimensions_mm:
+                body_depth: 10.6
+                contact_count: 4
+                contact_pitch: 2.0
+                contact_span: 7.0
+                contact_width: 1.0
+                overall_width: 14.3
+                port_height: 5.7
+                shell_mount_count: 2
+                shell_mount_width: 1.45
+                shell_width: 13.1
             dimensions_mm:
-                length: 14.5
-                width: 13.1
+                length: 14.3
+                width: 10.6
             directory: parts\electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
             file_copy:
             -   file_destination: datasheet.pdf
@@ -87,38 +162,126 @@ oomlout_ai_roboclick_1:
                 tuo jin electronics 912121a2023s10100
             name_upper: ELECTRONIC CONNECTOR USB A SURFACE MOUNT 4 PIN SHENZHEN JING
                 TUO JIN ELECTRONICS 912121A2023S10100
+            oomlout_ai_roboclick_1:
+                actions:
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_square_pins_300.png
+                    file_source: working_svg_square_pins.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_outline_300.png
+                    file_source: working_svg_outline.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_part_id_300.png
+                    file_source: working_svg_part_id.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_md5_6_alpha_300.png
+                    file_source: working_svg_md5_6_alpha.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_bip_39_3_word_300.png
+                    file_source: working_svg_bip_39_3_word.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_square_300.png
+                    file_source: working_svg_square.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_dimensioned_300.png
+                    file_source: working_svg_dimensioned.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_dimensioned_titles_300.png
+                    file_source: working_svg_dimensioned_titles.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                description: Build proportional 300-pixel previews for the generated
+                    part README.
+                file_test: ''
+                retries_until_complete: 0
             part_id: J1
             part_number_lcsc: C42428
             part_number_manufacturer: 912-121A2023S10100
             part_page:
                 diagrams:
                 -   png: ''
+                    preview: working_svg_assembly.svg
                     svg: working_svg_assembly.svg
                     title: Assembly
                 -   png: working_svg_outline.png
+                    preview: working_svg_outline_300.png
                     svg: working_svg_outline.svg
                     title: Outline
                 -   png: working_svg_part_id.png
+                    preview: working_svg_part_id_300.png
                     svg: working_svg_part_id.svg
                     title: Part ID
                 -   png: working_svg_md5_6_alpha.png
+                    preview: working_svg_md5_6_alpha_300.png
                     svg: working_svg_md5_6_alpha.svg
                     title: MD5 alpha
+                -   png: working_svg_bip_39_3_word.png
+                    preview: working_svg_bip_39_3_word_300.png
+                    svg: working_svg_bip_39_3_word.svg
+                    title: BIP 39 words
                 -   png: working_svg_square.png
+                    preview: working_svg_square_300.png
                     svg: working_svg_square.svg
                     title: Square summary
-                -   png: working_svg_square_pins.png
-                    svg: working_svg_square_pins.svg
-                    title: Pin summary
-                -   png: working_svg_dimensioned_titles.png
-                    svg: working_svg_dimensioned_titles.svg
+                -   png: working_svg_dimensioned.png
+                    preview: working_svg_dimensioned_300.png
+                    svg: working_svg_dimensioned.svg
                     title: Dimensions
+                -   png: working_svg_dimensioned_titles.png
+                    preview: working_svg_dimensioned_titles_300.png
+                    svg: working_svg_dimensioned_titles.svg
+                    title: Dimensions with labels
+                file_previews:
+                -   preview: working_svg_square_pins_300.png
+                    title: Pinout drawing
+                -   preview: working_svg_outline_300.png
+                    title: Outline
+                -   preview: working_svg_part_id_300.png
+                    title: Part ID
+                -   preview: working_svg_md5_6_alpha_300.png
+                    title: MD5 alpha
+                -   preview: working_svg_bip_39_3_word_300.png
+                    title: BIP 39 words
+                -   preview: working_svg_square_300.png
+                    title: Square summary
+                -   preview: working_svg_dimensioned_300.png
+                    title: Dimensions
+                -   preview: working_svg_dimensioned_titles_300.png
+                    title: Dimensions with labels
                 has_datasheet: true
                 identifiers:
                 -   title: Manufacturer part number
                     value: 912-121A2023S10100
                 -   title: LCSC
                     value: C42428
+                main_image:
+                    png: working_svg_square_pins.png
+                    preview: working_svg_square_pins_300.png
+                    svg: working_svg_square_pins.svg
+                    title: Pinout
+                oomp_id: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
                 pins:
                 -   name: vbus
                     number: '1'
@@ -131,14 +294,29 @@ oomlout_ai_roboclick_1:
                     type: signal
                 -   name: gnd
                     number: '4'
-                    type: signal
+                    type: power
                 -   name: shield
                     number: '5'
-                    type: signal
+                    type: shield
                 -   name: shield
                     number: '6'
-                    type: signal
+                    type: shield
+                quick_facts:
+                -   title: OOMP ID
+                    value: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+                -   title: Type
+                    value: Connector
+                -   title: Package / style
+                    value: usb a
+                -   title: Nominal size
+                    value: "14.3 \xD7 10.6 mm"
+                -   title: Documented pins
+                    value: 6
                 repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+                summary: "Connector USB A Surface Mount 4 Pin is an OOMP electronic\
+                    \ connector definition. It uses the usb a package or form factor.\
+                    \ Its nominal drawing size is 14.3 \xD7 10.6 mm. The definition\
+                    \ includes 6 documented pins."
                 taxonomy:
                 -   level: 1
                     value: electronic
@@ -170,15 +348,15 @@ oomlout_ai_roboclick_1:
                 pin_4:
                     name: gnd
                     number: '4'
-                    type: signal
+                    type: power
                 pin_5:
                     name: shield
                     number: '5'
-                    type: signal
+                    type: shield
                 pin_6:
                     name: shield
                     number: '6'
-                    type: signal
+                    type: shield
             svg_details:
             -   filename_extra: assembly
                 make_a4: false
@@ -187,6 +365,14 @@ oomlout_ai_roboclick_1:
                 padding: 0
                 stylesheet: style_oomp_assembly
                 svg_name: oomp_component_assembly
+                write_yaml: false
+            -   filename_extra: assembly_pins
+                make_a4: false
+                output_formats:
+                - svg
+                padding: 0
+                stylesheet: style_oomp_assembly
+                svg_name: oomp_component_assembly_pins
                 write_yaml: false
             -   filename_extra: outline
                 make_a4: false
@@ -283,15 +469,26 @@ oomlout_ai_roboclick_1:
         search_and_replace: []
     file_test: label_oomp.pdf
     retries_until_complete: 0
-oomlout_ai_roboclick_2:
+oomlout_ai_roboclick_3:
     actions:
     -   command: text_jinja_template
         convert_to_pdf: false
         convert_to_png: false
         dict_data:
+            connector_dimensions_mm:
+                body_depth: 10.6
+                contact_count: 4
+                contact_pitch: 2.0
+                contact_span: 7.0
+                contact_width: 1.0
+                overall_width: 14.3
+                port_height: 5.7
+                shell_mount_count: 2
+                shell_mount_width: 1.45
+                shell_width: 13.1
             dimensions_mm:
-                length: 14.5
-                width: 13.1
+                length: 14.3
+                width: 10.6
             directory: parts\electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
             file_copy:
             -   file_destination: datasheet.pdf
@@ -306,13 +503,78 @@ oomlout_ai_roboclick_2:
                 TUO JIN ELECTRONICS 912121A2023S10100
             oomlout_ai_roboclick_1:
                 actions:
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_square_pins_300.png
+                    file_source: working_svg_square_pins.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_outline_300.png
+                    file_source: working_svg_outline.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_part_id_300.png
+                    file_source: working_svg_part_id.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_md5_6_alpha_300.png
+                    file_source: working_svg_md5_6_alpha.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_bip_39_3_word_300.png
+                    file_source: working_svg_bip_39_3_word.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_square_300.png
+                    file_source: working_svg_square.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_dimensioned_300.png
+                    file_source: working_svg_dimensioned.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_dimensioned_titles_300.png
+                    file_source: working_svg_dimensioned_titles.png
+                    maximum_dimension: 300
+                    resample: lanczos
+                description: Build proportional 300-pixel previews for the generated
+                    part README.
+                file_test: ''
+                retries_until_complete: 0
+            oomlout_ai_roboclick_2:
+                actions:
                 -   command: text_jinja_template
                     convert_to_pdf: false
                     convert_to_png: false
                     dict_data:
+                        connector_dimensions_mm:
+                            body_depth: 10.6
+                            contact_count: 4
+                            contact_pitch: 2.0
+                            contact_span: 7.0
+                            contact_width: 1.0
+                            overall_width: 14.3
+                            port_height: 5.7
+                            shell_mount_count: 2
+                            shell_mount_width: 1.45
+                            shell_width: 13.1
                         dimensions_mm:
-                            length: 14.5
-                            width: 13.1
+                            length: 14.3
+                            width: 10.6
                         directory: parts\electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
                         file_copy:
                         -   file_destination: datasheet.pdf
@@ -325,38 +587,126 @@ oomlout_ai_roboclick_2:
                             shenzhen jing tuo jin electronics 912121a2023s10100
                         name_upper: ELECTRONIC CONNECTOR USB A SURFACE MOUNT 4 PIN
                             SHENZHEN JING TUO JIN ELECTRONICS 912121A2023S10100
+                        oomlout_ai_roboclick_1:
+                            actions:
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_square_pins_300.png
+                                file_source: working_svg_square_pins.png
+                                maximum_dimension: 300
+                                resample: lanczos
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_outline_300.png
+                                file_source: working_svg_outline.png
+                                maximum_dimension: 300
+                                resample: lanczos
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_part_id_300.png
+                                file_source: working_svg_part_id.png
+                                maximum_dimension: 300
+                                resample: lanczos
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_md5_6_alpha_300.png
+                                file_source: working_svg_md5_6_alpha.png
+                                maximum_dimension: 300
+                                resample: lanczos
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_bip_39_3_word_300.png
+                                file_source: working_svg_bip_39_3_word.png
+                                maximum_dimension: 300
+                                resample: lanczos
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_square_300.png
+                                file_source: working_svg_square.png
+                                maximum_dimension: 300
+                                resample: lanczos
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_dimensioned_300.png
+                                file_source: working_svg_dimensioned.png
+                                maximum_dimension: 300
+                                resample: lanczos
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_dimensioned_titles_300.png
+                                file_source: working_svg_dimensioned_titles.png
+                                maximum_dimension: 300
+                                resample: lanczos
+                            description: Build proportional 300-pixel previews for
+                                the generated part README.
+                            file_test: ''
+                            retries_until_complete: 0
                         part_id: J1
                         part_number_lcsc: C42428
                         part_number_manufacturer: 912-121A2023S10100
                         part_page:
                             diagrams:
                             -   png: ''
+                                preview: working_svg_assembly.svg
                                 svg: working_svg_assembly.svg
                                 title: Assembly
                             -   png: working_svg_outline.png
+                                preview: working_svg_outline_300.png
                                 svg: working_svg_outline.svg
                                 title: Outline
                             -   png: working_svg_part_id.png
+                                preview: working_svg_part_id_300.png
                                 svg: working_svg_part_id.svg
                                 title: Part ID
                             -   png: working_svg_md5_6_alpha.png
+                                preview: working_svg_md5_6_alpha_300.png
                                 svg: working_svg_md5_6_alpha.svg
                                 title: MD5 alpha
+                            -   png: working_svg_bip_39_3_word.png
+                                preview: working_svg_bip_39_3_word_300.png
+                                svg: working_svg_bip_39_3_word.svg
+                                title: BIP 39 words
                             -   png: working_svg_square.png
+                                preview: working_svg_square_300.png
                                 svg: working_svg_square.svg
                                 title: Square summary
-                            -   png: working_svg_square_pins.png
-                                svg: working_svg_square_pins.svg
-                                title: Pin summary
-                            -   png: working_svg_dimensioned_titles.png
-                                svg: working_svg_dimensioned_titles.svg
+                            -   png: working_svg_dimensioned.png
+                                preview: working_svg_dimensioned_300.png
+                                svg: working_svg_dimensioned.svg
                                 title: Dimensions
+                            -   png: working_svg_dimensioned_titles.png
+                                preview: working_svg_dimensioned_titles_300.png
+                                svg: working_svg_dimensioned_titles.svg
+                                title: Dimensions with labels
+                            file_previews:
+                            -   preview: working_svg_square_pins_300.png
+                                title: Pinout drawing
+                            -   preview: working_svg_outline_300.png
+                                title: Outline
+                            -   preview: working_svg_part_id_300.png
+                                title: Part ID
+                            -   preview: working_svg_md5_6_alpha_300.png
+                                title: MD5 alpha
+                            -   preview: working_svg_bip_39_3_word_300.png
+                                title: BIP 39 words
+                            -   preview: working_svg_square_300.png
+                                title: Square summary
+                            -   preview: working_svg_dimensioned_300.png
+                                title: Dimensions
+                            -   preview: working_svg_dimensioned_titles_300.png
+                                title: Dimensions with labels
                             has_datasheet: true
                             identifiers:
                             -   title: Manufacturer part number
                                 value: 912-121A2023S10100
                             -   title: LCSC
                                 value: C42428
+                            main_image:
+                                png: working_svg_square_pins.png
+                                preview: working_svg_square_pins_300.png
+                                svg: working_svg_square_pins.svg
+                                title: Pinout
+                            oomp_id: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
                             pins:
                             -   name: vbus
                                 number: '1'
@@ -369,14 +719,30 @@ oomlout_ai_roboclick_2:
                                 type: signal
                             -   name: gnd
                                 number: '4'
-                                type: signal
+                                type: power
                             -   name: shield
                                 number: '5'
-                                type: signal
+                                type: shield
                             -   name: shield
                                 number: '6'
-                                type: signal
+                                type: shield
+                            quick_facts:
+                            -   title: OOMP ID
+                                value: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+                            -   title: Type
+                                value: Connector
+                            -   title: Package / style
+                                value: usb a
+                            -   title: Nominal size
+                                value: "14.3 \xD7 10.6 mm"
+                            -   title: Documented pins
+                                value: 6
                             repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+                            summary: "Connector USB A Surface Mount 4 Pin is an OOMP\
+                                \ electronic connector definition. It uses the usb\
+                                \ a package or form factor. Its nominal drawing size\
+                                \ is 14.3 \xD7 10.6 mm. The definition includes 6\
+                                \ documented pins."
                             taxonomy:
                             -   level: 1
                                 value: electronic
@@ -408,15 +774,15 @@ oomlout_ai_roboclick_2:
                             pin_4:
                                 name: gnd
                                 number: '4'
-                                type: signal
+                                type: power
                             pin_5:
                                 name: shield
                                 number: '5'
-                                type: signal
+                                type: shield
                             pin_6:
                                 name: shield
                                 number: '6'
-                                type: signal
+                                type: shield
                         svg_details:
                         -   filename_extra: assembly
                             make_a4: false
@@ -425,6 +791,14 @@ oomlout_ai_roboclick_2:
                             padding: 0
                             stylesheet: style_oomp_assembly
                             svg_name: oomp_component_assembly
+                            write_yaml: false
+                        -   filename_extra: assembly_pins
+                            make_a4: false
+                            output_formats:
+                            - svg
+                            padding: 0
+                            stylesheet: style_oomp_assembly
+                            svg_name: oomp_component_assembly_pins
                             write_yaml: false
                         -   filename_extra: outline
                             make_a4: false
@@ -527,32 +901,66 @@ oomlout_ai_roboclick_2:
             part_page:
                 diagrams:
                 -   png: ''
+                    preview: working_svg_assembly.svg
                     svg: working_svg_assembly.svg
                     title: Assembly
                 -   png: working_svg_outline.png
+                    preview: working_svg_outline_300.png
                     svg: working_svg_outline.svg
                     title: Outline
                 -   png: working_svg_part_id.png
+                    preview: working_svg_part_id_300.png
                     svg: working_svg_part_id.svg
                     title: Part ID
                 -   png: working_svg_md5_6_alpha.png
+                    preview: working_svg_md5_6_alpha_300.png
                     svg: working_svg_md5_6_alpha.svg
                     title: MD5 alpha
+                -   png: working_svg_bip_39_3_word.png
+                    preview: working_svg_bip_39_3_word_300.png
+                    svg: working_svg_bip_39_3_word.svg
+                    title: BIP 39 words
                 -   png: working_svg_square.png
+                    preview: working_svg_square_300.png
                     svg: working_svg_square.svg
                     title: Square summary
-                -   png: working_svg_square_pins.png
-                    svg: working_svg_square_pins.svg
-                    title: Pin summary
-                -   png: working_svg_dimensioned_titles.png
-                    svg: working_svg_dimensioned_titles.svg
+                -   png: working_svg_dimensioned.png
+                    preview: working_svg_dimensioned_300.png
+                    svg: working_svg_dimensioned.svg
                     title: Dimensions
+                -   png: working_svg_dimensioned_titles.png
+                    preview: working_svg_dimensioned_titles_300.png
+                    svg: working_svg_dimensioned_titles.svg
+                    title: Dimensions with labels
+                file_previews:
+                -   preview: working_svg_square_pins_300.png
+                    title: Pinout drawing
+                -   preview: working_svg_outline_300.png
+                    title: Outline
+                -   preview: working_svg_part_id_300.png
+                    title: Part ID
+                -   preview: working_svg_md5_6_alpha_300.png
+                    title: MD5 alpha
+                -   preview: working_svg_bip_39_3_word_300.png
+                    title: BIP 39 words
+                -   preview: working_svg_square_300.png
+                    title: Square summary
+                -   preview: working_svg_dimensioned_300.png
+                    title: Dimensions
+                -   preview: working_svg_dimensioned_titles_300.png
+                    title: Dimensions with labels
                 has_datasheet: true
                 identifiers:
                 -   title: Manufacturer part number
                     value: 912-121A2023S10100
                 -   title: LCSC
                     value: C42428
+                main_image:
+                    png: working_svg_square_pins.png
+                    preview: working_svg_square_pins_300.png
+                    svg: working_svg_square_pins.svg
+                    title: Pinout
+                oomp_id: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
                 pins:
                 -   name: vbus
                     number: '1'
@@ -565,14 +973,29 @@ oomlout_ai_roboclick_2:
                     type: signal
                 -   name: gnd
                     number: '4'
-                    type: signal
+                    type: power
                 -   name: shield
                     number: '5'
-                    type: signal
+                    type: shield
                 -   name: shield
                     number: '6'
-                    type: signal
+                    type: shield
+                quick_facts:
+                -   title: OOMP ID
+                    value: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+                -   title: Type
+                    value: Connector
+                -   title: Package / style
+                    value: usb a
+                -   title: Nominal size
+                    value: "14.3 \xD7 10.6 mm"
+                -   title: Documented pins
+                    value: 6
                 repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+                summary: "Connector USB A Surface Mount 4 Pin is an OOMP electronic\
+                    \ connector definition. It uses the usb a package or form factor.\
+                    \ Its nominal drawing size is 14.3 \xD7 10.6 mm. The definition\
+                    \ includes 6 documented pins."
                 taxonomy:
                 -   level: 1
                     value: electronic
@@ -604,15 +1027,15 @@ oomlout_ai_roboclick_2:
                 pin_4:
                     name: gnd
                     number: '4'
-                    type: signal
+                    type: power
                 pin_5:
                     name: shield
                     number: '5'
-                    type: signal
+                    type: shield
                 pin_6:
                     name: shield
                     number: '6'
-                    type: signal
+                    type: shield
             svg_details:
             -   filename_extra: assembly
                 make_a4: false
@@ -621,6 +1044,14 @@ oomlout_ai_roboclick_2:
                 padding: 0
                 stylesheet: style_oomp_assembly
                 svg_name: oomp_component_assembly
+                write_yaml: false
+            -   filename_extra: assembly_pins
+                make_a4: false
+                output_formats:
+                - svg
+                padding: 0
+                stylesheet: style_oomp_assembly
+                svg_name: oomp_component_assembly_pins
                 write_yaml: false
             -   filename_extra: outline
                 make_a4: false
@@ -724,32 +1155,66 @@ part_number_manufacturer: 912-121A2023S10100
 part_page:
     diagrams:
     -   png: ''
+        preview: working_svg_assembly.svg
         svg: working_svg_assembly.svg
         title: Assembly
     -   png: working_svg_outline.png
+        preview: working_svg_outline_300.png
         svg: working_svg_outline.svg
         title: Outline
     -   png: working_svg_part_id.png
+        preview: working_svg_part_id_300.png
         svg: working_svg_part_id.svg
         title: Part ID
     -   png: working_svg_md5_6_alpha.png
+        preview: working_svg_md5_6_alpha_300.png
         svg: working_svg_md5_6_alpha.svg
         title: MD5 alpha
+    -   png: working_svg_bip_39_3_word.png
+        preview: working_svg_bip_39_3_word_300.png
+        svg: working_svg_bip_39_3_word.svg
+        title: BIP 39 words
     -   png: working_svg_square.png
+        preview: working_svg_square_300.png
         svg: working_svg_square.svg
         title: Square summary
-    -   png: working_svg_square_pins.png
-        svg: working_svg_square_pins.svg
-        title: Pin summary
-    -   png: working_svg_dimensioned_titles.png
-        svg: working_svg_dimensioned_titles.svg
+    -   png: working_svg_dimensioned.png
+        preview: working_svg_dimensioned_300.png
+        svg: working_svg_dimensioned.svg
         title: Dimensions
+    -   png: working_svg_dimensioned_titles.png
+        preview: working_svg_dimensioned_titles_300.png
+        svg: working_svg_dimensioned_titles.svg
+        title: Dimensions with labels
+    file_previews:
+    -   preview: working_svg_square_pins_300.png
+        title: Pinout drawing
+    -   preview: working_svg_outline_300.png
+        title: Outline
+    -   preview: working_svg_part_id_300.png
+        title: Part ID
+    -   preview: working_svg_md5_6_alpha_300.png
+        title: MD5 alpha
+    -   preview: working_svg_bip_39_3_word_300.png
+        title: BIP 39 words
+    -   preview: working_svg_square_300.png
+        title: Square summary
+    -   preview: working_svg_dimensioned_300.png
+        title: Dimensions
+    -   preview: working_svg_dimensioned_titles_300.png
+        title: Dimensions with labels
     has_datasheet: true
     identifiers:
     -   title: Manufacturer part number
         value: 912-121A2023S10100
     -   title: LCSC
         value: C42428
+    main_image:
+        png: working_svg_square_pins.png
+        preview: working_svg_square_pins_300.png
+        svg: working_svg_square_pins.svg
+        title: Pinout
+    oomp_id: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
     pins:
     -   name: vbus
         number: '1'
@@ -762,14 +1227,28 @@ part_page:
         type: signal
     -   name: gnd
         number: '4'
-        type: signal
+        type: power
     -   name: shield
         number: '5'
-        type: signal
+        type: shield
     -   name: shield
         number: '6'
-        type: signal
+        type: shield
+    quick_facts:
+    -   title: OOMP ID
+        value: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+    -   title: Type
+        value: Connector
+    -   title: Package / style
+        value: usb a
+    -   title: Nominal size
+        value: "14.3 \xD7 10.6 mm"
+    -   title: Documented pins
+        value: 6
     repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+    summary: "Connector USB A Surface Mount 4 Pin is an OOMP electronic connector\
+        \ definition. It uses the usb a package or form factor. Its nominal drawing\
+        \ size is 14.3 \xD7 10.6 mm. The definition includes 6 documented pins."
     taxonomy:
     -   level: 1
         value: electronic
@@ -801,15 +1280,15 @@ pins:
     pin_4:
         name: gnd
         number: '4'
-        type: signal
+        type: power
     pin_5:
         name: shield
         number: '5'
-        type: signal
+        type: shield
     pin_6:
         name: shield
         number: '6'
-        type: signal
+        type: shield
 svg_details:
 -   filename_extra: assembly
     make_a4: false
@@ -818,6 +1297,14 @@ svg_details:
     padding: 0
     stylesheet: style_oomp_assembly
     svg_name: oomp_component_assembly
+    write_yaml: false
+-   filename_extra: assembly_pins
+    make_a4: false
+    output_formats:
+    - svg
+    padding: 0
+    stylesheet: style_oomp_assembly
+    svg_name: oomp_component_assembly_pins
     write_yaml: false
 -   filename_extra: outline
     make_a4: false

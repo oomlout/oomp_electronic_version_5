@@ -25,6 +25,12 @@ pt1-RevA2 is a KiCad project containing 67 extracted component records. The cata
 - Approximate size: **18.0 mm × 46.0 mm**
 - Outline source: `KiCad Edge.Cuts`
 - Placement drawing: [view `board.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.svg)
+- Placement drawing with pin names: [view `board_pins.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.svg)
+- PNG drawing with pin names: [view `board_pins.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.png)
+
+## Board with pins
+
+![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.png)
 
 ## Bill of materials
 

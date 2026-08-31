@@ -2,6 +2,7 @@ import oomp
 import oomp_helper
 import copy
 import oomlout_roboclick
+import os
 
 
 def add_part_page_details(part):
@@ -69,15 +70,18 @@ def add_part_page_details(part):
         else:
             diagram["preview"] = diagram["svg"]
 
-    preview_rows = []
-    preview_row = []
+    file_previews = [
+        {"title": "Pinout drawing", "preview": "working_svg_square_pins_300.png"},
+    ]
     for diagram in diagrams:
-        preview_row.append(diagram)
-        if len(preview_row) == 3:
-            preview_rows.append(preview_row)
-            preview_row = []
-    if len(preview_row) > 0:
-        preview_rows.append(preview_row)
+        preview_filename = diagram.get("preview", "")
+        if preview_filename.endswith("_300.png"):
+            file_previews.append(
+                {
+                    "title": diagram["title"],
+                    "preview": preview_filename,
+                }
+            )
 
     component_type = str(part.get("taxonomy_2", "component")).replace("_", " ")
     package_name = str(part.get("taxonomy_3", "")).replace("_", " ")
@@ -111,13 +115,25 @@ def add_part_page_details(part):
         quick_facts.append({"title": "Documented pins", "value": len(pins)})
 
     part_name = part.get("name", "")
+    has_datasheet = os.path.isfile(
+        os.path.join(os.path.dirname(__file__), "parts", part_name, "datasheet.pdf")
+    )
+    file_copies = part.get("file_copy", [])
+    if isinstance(file_copies, list):
+        for file_copy in file_copies:
+            if not isinstance(file_copy, dict):
+                continue
+            file_destination = str(file_copy.get("file_destination", "")).replace("\\", "/")
+            if file_destination.lower().endswith("datasheet.pdf"):
+                has_datasheet = True
+
     part["part_page"] = {
         "oomp_id": part_name,
         "taxonomy": taxonomy,
         "pins": pins,
         "identifiers": identifiers,
         "diagrams": diagrams,
-        "preview_rows": preview_rows,
+        "file_previews": file_previews,
         "main_image": {
             "title": "Pinout",
             "svg": "working_svg_square_pins.svg",
@@ -126,7 +142,7 @@ def add_part_page_details(part):
         },
         "summary": " ".join(summary_sentences),
         "quick_facts": quick_facts,
-        "has_datasheet": len(part.get("file_copy", [])) > 0,
+        "has_datasheet": has_datasheet,
         "repository_url": f"https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/{part_name}",
     }
     return part
@@ -178,7 +194,7 @@ def add_part_preview_actions(part, count):
 
 
 def add_project_actions(part, count):
-    """Add the two deterministic, always-run actions used by project parts."""
+    """Add the deterministic, always-run source and diagram project actions."""
     project_action_fields = [
         "project_github_user",
         "project_github_repository",
@@ -209,20 +225,20 @@ def add_project_actions(part, count):
         "retries_until_complete": 0,
     }
 
-    readme_action = {
+    project_compile_action = {
         "command": "run_python",
         "file_python": "kicad_agents/project_readme_action.py",
-        "file_output": "README.md",
-        "description": "Extract KiCad data and rebuild the deterministic project README and local image bundle.",
+        "file_output": "generated_data/src/board_pins.png",
+        "description": "Extract KiCad data and rebuild the project README, board SVGs, and pin-labelled board PNG.",
         "parts_directory": "parts",
         "timeout": "1200",
     }
     for project_action_field in project_action_fields:
-        readme_action[project_action_field] = copy.deepcopy(part.get(project_action_field, ""))
+        project_compile_action[project_action_field] = copy.deepcopy(part.get(project_action_field, ""))
 
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
-        "actions": [readme_action],
+        "actions": [project_compile_action],
         "file_test": "",
         "retries_until_complete": 0,
     }

@@ -26,8 +26,18 @@
 - Approximate size: **{{ board.width_mm }} mm × {{ board.height_mm }} mm**
 - Outline source: `{{ board.bounds_source }}`
 - Placement drawing: [view `board.svg`]({{ repository_links.board }})
+- Placement drawing with pin names: [view `board_pins.svg`]({{ repository_links.board_pins }})
+- PNG drawing with pin names: [view `board_pins.png`]({{ repository_links.board_pins_png }})
 {% else %}
 No PCB outline or placed-footprint bounds were available.
+{% endif %}
+
+## Board with pins
+
+{% if board_pins.available %}
+![PCB component placement with pin names]({{ repository_links.board_pins_png_raw }})
+{% else %}
+No pin-labelled PCB drawing was available.
 {% endif %}
 
 ## Bill of materials

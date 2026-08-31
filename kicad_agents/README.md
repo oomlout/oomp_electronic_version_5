@@ -24,6 +24,8 @@ overrides. A missing version definition defaults to `current`.
    sources, draw the board, and rebuild the project part's `README.md`.
 
 Both blocks use an empty `file_test`, so they run every time actions are run.
+The second block verifies `generated_data/src/board_pins.png` as its declared
+output while also rebuilding the SVG boards and project README.
 
 ## Generated structure
 
@@ -38,9 +40,12 @@ generated_data/
   match_overrides.yaml
   src/
     board.svg                   # self-contained board placement drawing
+    board_pins.svg              # same board with names inside component pads
+    board_pins.png              # 1600-pixel preview of the pin-labelled board
     components/
       <oomp-id>/
-        working_svg_outline.svg # local board-use image copy
+        working_svg_assembly.svg
+        working_svg_assembly_pins.svg
       manifest.yaml
   project_style.yaml
   project_style_override.yaml   # optional, human-created style overrides
@@ -64,8 +69,8 @@ generated_data/
 Every schematic symbol is retained. Power symbols and other non-physical entries receive `not_applicable` match status. Every PCB footprint and every physical schematic component is sent to the matcher. Uncertain physical items are written to both unmatched-parts files.
 
 The project part also has an ignored `project_source/<oomp-id>/` tree. It
-contains `working.yaml` and `working_svg_outline.svg` copied from every matched
-OOMP part, plus a manifest.
+contains `working.yaml`, the assembly SVG variants, and
+`working_svg_outline.svg` copied from every matched OOMP part, plus a manifest.
 
 ## Deterministic project summary
 
@@ -77,15 +82,17 @@ python -m kicad_agents.project_summary_agent parts\oomp_project_github_electrola
 ```
 
 Python compiles the BOM, principal nets, placement statistics, GitHub link,
-board dimensions, and `board.svg`. The board drawing reads the KiCad
-`Edge.Cuts` geometry and places the matched `working_svg_outline.svg` diagram
-for each component using its local footprint bounds, PCB coordinates, and one
-application of its PCB rotation. Reference indicators are dynamically sized
-and centred on the placed component bounds. Assembly drawings come from each
-part's `working_svg_assembly.svg`, which is generated through the standard
-OOMP SVG pipeline with a shared 0.18 mm non-scaling stroke. Component diagrams are
-inlined into `board.svg` for reliable rendering, while their local copies stay
-in `generated_data/src/components`.
+board dimensions, `board.svg`, and `board_pins.svg`. Both board drawings read
+the KiCad `Edge.Cuts` geometry and place each matched component using its local
+footprint bounds, PCB coordinates, and one application of its PCB rotation.
+Reference indicators are dynamically sized and centred on the placed component
+bounds. Clean assembly drawings use `working_svg_assembly.svg`; the pin version
+uses `working_svg_assembly_pins.svg`, with each available pin name fitted inside
+its recorded pad rectangle and rotated 90 degrees for tall pads. Both are
+generated through the standard OOMP SVG pipeline with the shared 0.22 mm
+non-scaling stroke. Component diagrams are inlined into the board SVGs for
+reliable rendering, while their local copies stay in
+`generated_data/src/components`.
 
 All README prose and facts are compiled by Python; there is no LLM prompt or
 LLM-authored sidecar. Optional visual changes belong in

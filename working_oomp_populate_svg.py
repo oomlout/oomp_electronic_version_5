@@ -14,6 +14,15 @@ def get_svg_details():
             "write_yaml": False,
         },
         {
+            "svg_name": "oomp_component_assembly_pins",
+            "filename_extra": "assembly_pins",
+            "stylesheet": "style_oomp_assembly",
+            "output_formats": ["svg"],
+            "padding": 0,
+            "make_a4": False,
+            "write_yaml": False,
+        },
+        {
             "svg_name": "oomp_component_outline",
             "filename_extra": "outline",
             "stylesheet": "style_oomp",
