@@ -52,24 +52,129 @@ def add_part_page_details(part):
             identifiers.append({"title": identifier_field[0], "value": identifier_value})
 
     diagrams = [
+        {"title": "Assembly", "svg": "working_svg_assembly.svg", "png": ""},
         {"title": "Outline", "svg": "working_svg_outline.svg", "png": "working_svg_outline.png"},
         {"title": "Part ID", "svg": "working_svg_part_id.svg", "png": "working_svg_part_id.png"},
         {"title": "MD5 alpha", "svg": "working_svg_md5_6_alpha.svg", "png": "working_svg_md5_6_alpha.png"},
+        {"title": "BIP 39 words", "svg": "working_svg_bip_39_3_word.svg", "png": "working_svg_bip_39_3_word.png"},
         {"title": "Square summary", "svg": "working_svg_square.svg", "png": "working_svg_square.png"},
-        {"title": "Pin summary", "svg": "working_svg_square_pins.svg", "png": "working_svg_square_pins.png"},
-        {"title": "Dimensions", "svg": "working_svg_dimensioned_titles.svg", "png": "working_svg_dimensioned_titles.png"},
+        {"title": "Dimensions", "svg": "working_svg_dimensioned.svg", "png": "working_svg_dimensioned.png"},
+        {"title": "Dimensions with labels", "svg": "working_svg_dimensioned_titles.svg", "png": "working_svg_dimensioned_titles.png"},
     ]
+
+    for diagram in diagrams:
+        png_filename = diagram.get("png", "")
+        if png_filename != "":
+            diagram["preview"] = png_filename.replace(".png", "_300.png")
+        else:
+            diagram["preview"] = diagram["svg"]
+
+    preview_rows = []
+    preview_row = []
+    for diagram in diagrams:
+        preview_row.append(diagram)
+        if len(preview_row) == 3:
+            preview_rows.append(preview_row)
+            preview_row = []
+    if len(preview_row) > 0:
+        preview_rows.append(preview_row)
+
+    component_type = str(part.get("taxonomy_2", "component")).replace("_", " ")
+    package_name = str(part.get("taxonomy_3", "")).replace("_", " ")
+    dimensions = part.get("dimensions_mm", {})
+    dimension_text = ""
+    if isinstance(dimensions, dict):
+        length = dimensions.get("length", "")
+        width = dimensions.get("width", "")
+        if length != "" and width != "":
+            dimension_text = f"{length} × {width} mm"
+
+    summary_sentences = [
+        f"{part.get('name_short', part.get('name_proper', 'This part'))} is an OOMP electronic {component_type} definition."
+    ]
+    if package_name != "":
+        summary_sentences.append(f"It uses the {package_name} package or form factor.")
+    if dimension_text != "":
+        summary_sentences.append(f"Its nominal drawing size is {dimension_text}.")
+    if len(pins) > 0:
+        summary_sentences.append(f"The definition includes {len(pins)} documented pins.")
+
+    quick_facts = [
+        {"title": "OOMP ID", "value": part.get("name", "")},
+        {"title": "Type", "value": component_type.title()},
+    ]
+    if package_name != "":
+        quick_facts.append({"title": "Package / style", "value": package_name})
+    if dimension_text != "":
+        quick_facts.append({"title": "Nominal size", "value": dimension_text})
+    if len(pins) > 0:
+        quick_facts.append({"title": "Documented pins", "value": len(pins)})
 
     part_name = part.get("name", "")
     part["part_page"] = {
+        "oomp_id": part_name,
         "taxonomy": taxonomy,
         "pins": pins,
         "identifiers": identifiers,
         "diagrams": diagrams,
+        "preview_rows": preview_rows,
+        "main_image": {
+            "title": "Pinout",
+            "svg": "working_svg_square_pins.svg",
+            "png": "working_svg_square_pins.png",
+            "preview": "working_svg_square_pins_300.png",
+        },
+        "summary": " ".join(summary_sentences),
+        "quick_facts": quick_facts,
         "has_datasheet": len(part.get("file_copy", [])) > 0,
         "repository_url": f"https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/{part_name}",
     }
     return part
+
+
+def add_part_preview_actions(part, count):
+    """Add one always-run block that makes 300-pixel README previews."""
+    actions = []
+    main_image = part.get("part_page", {}).get("main_image", {})
+    main_png = main_image.get("png", "")
+    main_preview = main_image.get("preview", "")
+    if main_png != "" and main_preview != "":
+        actions.append(
+            {
+                "command": "image_resize",
+                "file_source": main_png,
+                "file_destination": main_preview,
+                "maximum_dimension": 300,
+                "allow_upscale": False,
+                "resample": "lanczos",
+            }
+        )
+
+    diagrams = part.get("part_page", {}).get("diagrams", [])
+    for diagram in diagrams:
+        png_filename = diagram.get("png", "")
+        preview_filename = diagram.get("preview", "")
+        if png_filename != "" and preview_filename != "":
+            actions.append(
+                {
+                    "command": "image_resize",
+                    "file_source": png_filename,
+                    "file_destination": preview_filename,
+                    "maximum_dimension": 300,
+                    "allow_upscale": False,
+                    "resample": "lanczos",
+                }
+            )
+
+    if len(actions) > 0:
+        count += 1
+        part[f"oomlout_ai_roboclick_{count}"] = {
+            "actions": actions,
+            "description": "Build proportional 300-pixel previews for the generated part README.",
+            "file_test": "",
+            "retries_until_complete": 0,
+        }
+    return count
 
 
 def add_project_actions(part, count):
@@ -246,6 +351,7 @@ def create_generic(**kwargs):
 
         #jinja_template replace
         if not is_project_part:
+            count = add_part_preview_actions(part, count)
             templates = []
             templates.append({"template_folder": "default"})
             templates.append(

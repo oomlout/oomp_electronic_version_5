@@ -1,67 +1,97 @@
-# {{ name_short | default(name_proper, true) }}
+# {{ p.name_short | default(p.name_proper, true) }}
 
-![{{ name_short | default(name_proper, true) }} outline](working_svg_outline.svg)
+`{{ p.part_page.oomp_id }}`
 
-`{{ name }}`
+{{ p.part_page.summary }}
 
-## Diagrams
+<p align="center">
+  <a href="{{ p.part_page.main_image.svg }}">
+    <img src="{{ p.part_page.main_image.svg }}" alt="{{ p.name_short | default(p.name_proper, true) }} pinout" width="620">
+  </a>
+  <br>
+  <strong>{{ p.part_page.main_image.title }}</strong> · click for the full-size SVG
+</p>
 
-| Diagram | Preview |
+## At a glance
+
+| Detail | Value |
 | --- | --- |
-{% for diagram in part_page.diagrams %}
-| {{ diagram.title }} | [![{{ diagram.title }}]({{ diagram.png }})]({{ diagram.svg }}) |
+{% for fact in p.part_page.quick_facts -%}
+| {{ fact.title }} | {% if fact.title == 'OOMP ID' %}`{{ fact.value }}`{% else %}{{ fact.value }}{% endif %} |
 {% endfor %}
+
+## Diagram gallery
+
+<table>
+{% for preview_row in p.part_page.preview_rows %}
+  <tr>
+  {% for diagram in preview_row %}
+    <td align="center" width="33%">
+      <a href="{{ diagram.svg }}"><img src="{{ diagram.preview }}" alt="{{ diagram.title }}" width="220"></a><br>
+      <strong>{{ diagram.title }}</strong>
+    </td>
+  {% endfor %}
+  </tr>
+{% endfor %}
+</table>
+
+Each preview links to its full-size vector drawing.
 
 ## Classification
 
 | Level | Value |
 | --- | --- |
-{% for taxonomy in part_page.taxonomy %}
+{% for taxonomy in p.part_page.taxonomy -%}
 | {{ taxonomy.level }} | `{{ taxonomy.value }}` |
 {% endfor %}
 
-{% if dimensions_mm is defined and dimensions_mm %}
+{% if p.dimensions_mm is defined and p.dimensions_mm %}
 ## Nominal dimensions
 
 | Measurement | Value |
 | --- | ---: |
-{% for dimension_name, dimension_value in dimensions_mm.items() %}
+{% for dimension_name, dimension_value in p.dimensions_mm.items() -%}
 | {{ dimension_name | replace('_', ' ') | title }} | {{ dimension_value }} mm |
 {% endfor %}
 {% endif %}
 
-{% if part_page.identifiers %}
+{% if p.part_page.identifiers %}
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
-{% for identifier in part_page.identifiers %}
+{% for identifier in p.part_page.identifiers -%}
 | {{ identifier.title }} | `{{ identifier.value }}` |
 {% endfor %}
 {% endif %}
 
-{% if part_page.pins %}
+{% if p.part_page.pins %}
 ## Pins
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-{% for pin in part_page.pins %}
+{% for pin in p.part_page.pins -%}
 | {{ pin.number }} | {{ pin.name }} | {{ pin.type }} |
 {% endfor %}
 {% endif %}
 
 ## Files
 
+- [Pinout drawing](working_svg_square_pins.svg)
+- [Assembly drawing](working_svg_assembly.svg)
+- [Outline drawing](working_svg_outline.svg)
+- [Part ID drawing](working_svg_part_id.svg)
+- [MD5 alpha drawing](working_svg_md5_6_alpha.svg)
+- [BIP 39 words drawing](working_svg_bip_39_3_word.svg)
 - [Square summary](working_svg_square.svg)
-- [Square summary with pins](working_svg_square_pins.svg)
 - [Dimensioned drawing](working_svg_dimensioned_titles.svg)
-{% if part_page.has_datasheet %}
+{% if p.part_page.has_datasheet %}
 - [Datasheet](datasheet.pdf)
 {% endif %}
 - [Structured definition](working.yaml)
 
-{% if part_page.repository_url %}
-[View this part on GitHub]({{ part_page.repository_url }})
+{% if p.part_page.repository_url %}
+[View this part on GitHub]({{ p.part_page.repository_url }})
 {% endif %}
 
 ---

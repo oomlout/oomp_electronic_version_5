@@ -79,7 +79,11 @@ python -m kicad_agents.project_summary_agent parts\oomp_project_github_electrola
 Python compiles the BOM, principal nets, placement statistics, GitHub link,
 board dimensions, and `board.svg`. The board drawing reads the KiCad
 `Edge.Cuts` geometry and places the matched `working_svg_outline.svg` diagram
-for each component at its PCB coordinates and rotation. Component diagrams are
+for each component using its local footprint bounds, PCB coordinates, and one
+application of its PCB rotation. Reference indicators are dynamically sized
+and centred on the placed component bounds. Assembly drawings come from each
+part's `working_svg_assembly.svg`, which is generated through the standard
+OOMP SVG pipeline with a shared 0.18 mm non-scaling stroke. Component diagrams are
 inlined into `board.svg` for reliable rendering, while their local copies stay
 in `generated_data/src/components`.
 

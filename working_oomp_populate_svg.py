@@ -5,6 +5,15 @@ def get_svg_details():
     """Return the standard OOMP component diagram set."""
     svg_details = [
         {
+            "svg_name": "oomp_component_assembly",
+            "filename_extra": "assembly",
+            "stylesheet": "style_oomp_assembly",
+            "output_formats": ["svg"],
+            "padding": 0,
+            "make_a4": False,
+            "write_yaml": False,
+        },
+        {
             "svg_name": "oomp_component_outline",
             "filename_extra": "outline",
             "stylesheet": "style_oomp",
@@ -204,7 +213,7 @@ def get_dimensions_mm(option):
     if component_type == "connector" and size == "usb_c":
         return {"length": 8.94, "width": 7.35}
     if component_type == "connector" and size == "usb_a":
-        return {"length": 14.5, "width": 13.1}
+        return {"length": 14.3, "width": 10.6}
 
     package_dimensions = {
         "qfn_16_3_mm_x_3_mm": [3.0, 3.0],
@@ -271,6 +280,35 @@ def add_svg_details(option):
             "pin_length_total": 10.92,
             "pin_length_post": 5.84,
             "pin_length_tail": 2.54,
+        }
+
+    if component_type == "connector" and option.get("taxonomy_3", "") == "usb_a":
+        option["connector_dimensions_mm"] = {
+            # Shenzhen Jing Tuo Jin 912-121A2023S10100 mechanical drawing.
+            "overall_width": 14.3,
+            "shell_width": 13.1,
+            "body_depth": 10.6,
+            "port_height": 5.7,
+            "contact_count": 4,
+            "contact_pitch": 2.0,
+            "contact_width": 1.0,
+            "contact_span": 7.0,
+            "shell_mount_count": 2,
+            "shell_mount_width": 1.45,
+        }
+
+    if component_type == "connector" and option.get("taxonomy_3", "") == "usb_c":
+        option["connector_dimensions_mm"] = {
+            # Korean Hroparts TYPE-C-31-M-12 mechanical drawing.
+            "shell_width": 8.94,
+            "body_depth": 7.35,
+            "receptacle_width": 8.34,
+            "receptacle_height": 2.56,
+            "contact_count": 16,
+            "contact_pitch": 0.5,
+            "contact_width": 0.2,
+            "shell_mount_count": 4,
+            "shell_mount_width": 0.6,
         }
 
     if component_type == "ic":

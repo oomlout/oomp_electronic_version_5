@@ -19,6 +19,8 @@ from .sexpr import as_float, child, children, load, tag, value
 ROOT_DIRECTORY = Path(__file__).resolve().parents[1]
 SUMMARY_TEMPLATE = ROOT_DIRECTORY / "source_file" / "template_jinja" / "project_summary" / "working.md.j2"
 STYLE_TEMPLATE = ROOT_DIRECTORY / "styles" / "style_project_summary.yaml"
+OOMP_REPOSITORY_URL = "https://github.com/oomlout/oomp_electronic_version_5"
+OOMP_REPOSITORY_BRANCH = "main"
 
 
 def _read_yaml(path, default=None):
@@ -130,6 +132,20 @@ def _component_bbox(component):
         x = float(position["x"])
         y = float(position["y"])
         return {"min_x": x - 0.5, "min_y": y - 0.5, "max_x": x + 0.5, "max_y": y + 0.5, "source": "position"}
+    return None
+
+
+def _component_local_bbox(component):
+    pcb = component.get("pcb")
+    if not isinstance(pcb, dict):
+        return None
+    size = pcb.get("size", {})
+    preferred_names = ["overall_local", "courtyard_local", "pads_local"]
+    for preferred_name in preferred_names:
+        available = _available_bbox(size.get(preferred_name, {}))
+        if available is not None:
+            available["source"] = preferred_name
+            return available
     return None
 
 
@@ -319,6 +335,9 @@ def _net_rows(components):
 def _component_rows(components):
     rows = []
     for component in components:
+        match_status = component.get("oomp", {}).get("status", "")
+        if match_status == "not_applicable":
+            continue
         pcb = component.get("pcb")
         if not isinstance(pcb, dict):
             continue
@@ -334,6 +353,8 @@ def _component_rows(components):
                 "rotation": float(position.get("rotation", 0)),
                 "oomp_id": _oomp_description(component),
                 "bounds": _component_bbox(component),
+                "local_bounds": _component_local_bbox(component),
+                "pads": pcb.get("pads", []),
             }
         )
     rows.sort(key=lambda row: _natural_reference_key(row["reference"]))
@@ -345,19 +366,111 @@ def _svg_polyline(points, css_class):
     return f'<polyline class="{css_class}" points="{points_text}" />'
 
 
-def _inline_svg(svg_path, x, y, width, height):
-    """Place a copied part SVG inline so GitHub and rasterizers need no file fetch."""
+def _rotate_point(x, y, rotation):
+    """Rotate one point using the same clockwise-positive SVG convention."""
+    radians = math.radians(rotation)
+    rotated_x = x * math.cos(radians) - y * math.sin(radians)
+    rotated_y = x * math.sin(radians) + y * math.cos(radians)
+    return rotated_x, rotated_y
+
+
+def _orientation_rotation(svg_width, svg_height, local_bounds_record, pads, pin_one_svg):
+    """Choose the aspect-matching rotation whose pin-one end meets PCB pad 1."""
+    local_width = local_bounds_record["max_x"] - local_bounds_record["min_x"]
+    local_height = local_bounds_record["max_y"] - local_bounds_record["min_y"]
+    svg_is_wide = svg_width >= svg_height
+    footprint_is_wide = local_width >= local_height
+    rotations = [0, 180]
+    if svg_is_wide != footprint_is_wide:
+        rotations = [90, -90]
+
+    if (
+        not isinstance(pin_one_svg, dict)
+        or "x" not in pin_one_svg
+        or "y" not in pin_one_svg
+    ):
+        return rotations[0]
+
+    pad_one = None
+    for pad in pads:
+        if str(pad.get("number", "")) == "1":
+            pad_one = pad.get("local_position", {})
+            break
+    if not isinstance(pad_one, dict):
+        return rotations[0]
+
+    source_x = float(pin_one_svg["x"]) - svg_width / 2
+    source_y = float(pin_one_svg["y"]) - svg_height / 2
+    local_center_x = (local_bounds_record["min_x"] + local_bounds_record["max_x"]) / 2
+    local_center_y = (local_bounds_record["min_y"] + local_bounds_record["max_y"]) / 2
+    target_x = float(pad_one.get("x", local_center_x)) - local_center_x
+    target_y = float(pad_one.get("y", local_center_y)) - local_center_y
+
+    source_length = (source_x * source_x + source_y * source_y) ** 0.5
+    target_length = (target_x * target_x + target_y * target_y) ** 0.5
+    if source_length < 0.0001 or target_length < 0.0001:
+        return rotations[0]
+
+    best_rotation = rotations[0]
+    best_score = -2.0
+    for rotation in rotations:
+        rotated_x, rotated_y = _rotate_point(source_x, source_y, rotation)
+        score = (
+            rotated_x * target_x + rotated_y * target_y
+        ) / (source_length * target_length)
+        if score > best_score:
+            best_score = score
+            best_rotation = rotation
+    return best_rotation
+
+
+def _inline_svg(svg_path, local_bounds_record, pads):
+    """Place a part SVG at its native millimetre size without stretching it."""
     svg_text = svg_path.read_text(encoding="utf-8")
     view_box_match = re.search(r'viewBox\s*=\s*"([^"]+)"', svg_text)
+    width_match = re.search(r'width\s*=\s*"([0-9.]+)mm"', svg_text)
+    height_match = re.search(r'height\s*=\s*"([0-9.]+)mm"', svg_text)
     svg_start = svg_text.find("<svg")
     opening_end = svg_text.find(">", svg_start)
     closing_start = svg_text.rfind("</svg>")
-    if view_box_match is None or svg_start < 0 or opening_end < 0 or closing_start < 0:
+    if (
+        view_box_match is None
+        or width_match is None
+        or height_match is None
+        or svg_start < 0
+        or opening_end < 0
+        or closing_start < 0
+    ):
         return ""
+
+    svg_width = float(width_match.group(1))
+    svg_height = float(height_match.group(1))
+    local_center_x = (local_bounds_record["min_x"] + local_bounds_record["max_x"]) / 2
+    local_center_y = (local_bounds_record["min_y"] + local_bounds_record["max_y"]) / 2
+
+    pin_one_x_match = re.search(r'data-pin-one-x\s*=\s*"([0-9.-]+)"', svg_text)
+    pin_one_y_match = re.search(r'data-pin-one-y\s*=\s*"([0-9.-]+)"', svg_text)
+    pin_one_svg = None
+    if pin_one_x_match is not None and pin_one_y_match is not None:
+        pin_one_svg = {
+            "x": float(pin_one_x_match.group(1)),
+            "y": float(pin_one_y_match.group(1)),
+        }
+    orientation_rotation = _orientation_rotation(
+        svg_width,
+        svg_height,
+        local_bounds_record,
+        pads,
+        pin_one_svg,
+    )
+
     inner_svg = svg_text[opening_end + 1 : closing_start].strip()
     return (
-        f'<svg x="{x:.4f}" y="{y:.4f}" width="{width:.4f}" height="{height:.4f}" '
-        f'viewBox="{html.escape(view_box_match.group(1))}" preserveAspectRatio="none">{inner_svg}</svg>'
+        f'<g transform="translate({local_center_x:.4f} {local_center_y:.4f}) rotate({orientation_rotation})">'
+        f'<svg x="{-svg_width / 2:.4f}" y="{-svg_height / 2:.4f}" '
+        f'width="{svg_width:.4f}" height="{svg_height:.4f}" '
+        f'viewBox="{html.escape(view_box_match.group(1))}" preserveAspectRatio="xMidYMid meet">'
+        f'{inner_svg}</svg></g>'
     )
 
 
@@ -415,35 +528,60 @@ def _make_board_svg(output_path, project_directory, project_data, components, st
 
     reference_lines = []
     for area, row in rows_by_area:
-        bounds_record = row.get("bounds")
-        if bounds_record is None:
+        local_bounds_record = row.get("local_bounds")
+        placed_bounds_record = row.get("bounds")
+        if local_bounds_record is None:
             width = float(svg_style["minimum_component_width_mm"])
             height = float(svg_style["minimum_component_height_mm"])
+            drawing_x = -width / 2
+            drawing_y = -height / 2
         else:
-            width = bounds_record["max_x"] - bounds_record["min_x"]
-            height = bounds_record["max_y"] - bounds_record["min_y"]
-            width = max(width, float(svg_style["minimum_component_width_mm"]))
-            height = max(height, float(svg_style["minimum_component_height_mm"]))
+            width = local_bounds_record["max_x"] - local_bounds_record["min_x"]
+            height = local_bounds_record["max_y"] - local_bounds_record["min_y"]
+            drawing_x = local_bounds_record["min_x"]
+            drawing_y = local_bounds_record["min_y"]
         x = row["x"]
         y = row["y"]
         rotation = row["rotation"]
         mirror = " scale(-1 1)" if row["side"] == "back" else ""
         lines.append(f'<g transform="translate({x:.4f} {y:.4f}) rotate({rotation:.4f}){mirror}">')
         oomp_id = row["oomp_id"]
-        svg_part_path = component_asset_directory / oomp_id / "working_svg_outline.svg" if oomp_id else None
-        if svg_part_path is not None and svg_part_path.is_file():
-            inline_svg = _inline_svg(svg_part_path, -width / 2, -height / 2, width, height)
+        svg_part_path = component_asset_directory / oomp_id / "working_svg_assembly.svg" if oomp_id else None
+        if svg_part_path is not None and svg_part_path.is_file() and local_bounds_record is not None:
+            inline_svg = _inline_svg(svg_part_path, local_bounds_record, row["pads"])
             if inline_svg != "":
                 lines.append(inline_svg)
             else:
-                lines.append(f'<rect class="component" x="{-width / 2:.4f}" y="{-height / 2:.4f}" width="{width:.4f}" height="{height:.4f}" rx="0.2" />')
+                lines.append(f'<rect class="component" x="{drawing_x:.4f}" y="{drawing_y:.4f}" width="{width:.4f}" height="{height:.4f}" rx="0.2" />')
         else:
-            lines.append(f'<rect class="component" x="{-width / 2:.4f}" y="{-height / 2:.4f}" width="{width:.4f}" height="{height:.4f}" rx="0.2" />')
+            lines.append(f'<rect class="component" x="{drawing_x:.4f}" y="{drawing_y:.4f}" width="{width:.4f}" height="{height:.4f}" rx="0.2" />')
         lines.append("</g>")
-        label_y = y - height / 2 - 0.45
+
+        indicator_x = x
+        indicator_y = y
+        placed_width = width
+        placed_height = height
+        if placed_bounds_record is not None:
+            indicator_x = (placed_bounds_record["min_x"] + placed_bounds_record["max_x"]) / 2
+            indicator_y = (placed_bounds_record["min_y"] + placed_bounds_record["max_y"]) / 2
+            placed_width = placed_bounds_record["max_x"] - placed_bounds_record["min_x"]
+            placed_height = placed_bounds_record["max_y"] - placed_bounds_record["min_y"]
+
+        reference = str(row["reference"])
+        maximum_reference_size = float(typography["reference_size_mm"])
+        width_reference_size = placed_width * 0.82 / max(1.0, len(reference) * 0.58)
+        height_reference_size = placed_height * 0.55
+        reference_size = max(0.22, min(maximum_reference_size, width_reference_size, height_reference_size))
+        reference_baseline = reference_size * 0.34
+        indicator_width = min(placed_width * 0.9, len(reference) * reference_size * 0.62 + 0.24)
+        indicator_height = reference_size * 1.28
         reference_lines.append(
-            f'<text x="{x:.4f}" y="{label_y:.4f}" fill="#000000" font-family="Arial, sans-serif" '
-            f'font-size="{typography["reference_size_mm"]}" font-weight="bold" text-anchor="middle">{html.escape(row["reference"])}</text>'
+            f'<g class="indicator" transform="translate({indicator_x:.4f} {indicator_y:.4f})">'
+            f'<rect x="{-indicator_width / 2:.4f}" y="{-indicator_height / 2:.4f}" width="{indicator_width:.4f}" '
+            f'height="{indicator_height:.4f}" rx="{reference_size * 0.12:.4f}" fill="#FFFFFF" stroke="none" />'
+            f'<text x="0" y="{reference_baseline:.4f}" fill="#000000" font-family="Arial, sans-serif" '
+            f'font-size="{reference_size:.4f}" font-weight="bold" '
+            f'text-anchor="middle">{html.escape(reference)}</text></g>'
         )
     for reference_line in reference_lines:
         lines.append(reference_line)
@@ -468,10 +606,11 @@ def _copy_project_sources(components, parts_directory, project_source_directory,
     # here when the project compiler begins consuming another part asset.
     source_filenames = [
         "working.yaml",
+        "working_svg_assembly.svg",
         "working_svg_outline.svg",
     ]
     image_filenames = [
-        "working_svg_outline.svg",
+        "working_svg_assembly.svg",
     ]
 
     oomp_ids = []
@@ -626,6 +765,16 @@ def generate_project_summary(
 
     raw_project = project_data.get("project", {})
     display_name = raw_project.get("name", identity["repository"])
+    part_id = project_directory.name
+    repository_part_path = f"parts/{part_id}"
+    repository_links = {
+        "repository": OOMP_REPOSITORY_URL,
+        "part": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}",
+        "generated_source": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src",
+        "board": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
+        "board_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
+        "parts": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/parts",
+    }
     source_manifest = _copy_project_sources(
         components,
         parts_directory,
@@ -667,11 +816,12 @@ def generate_project_summary(
         "summary": summary,
         "placement": placement,
         "board": board,
-        "bom": _bom_rows(components, oomp_link_prefix=".."),
+        "bom": _bom_rows(components, oomp_link_prefix=repository_links["parts"]),
         "nets": _net_rows(components),
         "generated_text": generated_text,
         "style": style,
         "source_manifest": source_manifest,
+        "repository_links": repository_links,
     }
     _write_json(output_directory / "project_summary_data.json", summary_data)
     _write_yaml(output_directory / "project_summary_data.yaml", summary_data)

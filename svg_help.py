@@ -131,6 +131,13 @@ def make_svg_generic(part):
         if not isinstance(svg_detail, dict):
             continue
 
+        svg_detail_filter = str(kwargs_base.get("svg_detail_filter", "")).strip()
+        if svg_detail_filter != "":
+            filename_extra_filter = str(svg_detail.get("filename_extra", ""))
+            svg_name_filter = str(svg_detail.get("svg_name", ""))
+            if svg_detail_filter not in [filename_extra_filter, svg_name_filter]:
+                continue
+
         kwargs = copy.deepcopy(kwargs_base)
         for key, value in svg_detail.items():
             if key not in svg_details_meta:
@@ -155,15 +162,29 @@ def make_svg_generic(part):
             thing["svg_components"],
             overwrite=overwrite,
             padding=padding,
+            scale=float(thing.get("svg_output_scale", 1.0)),
         )
 
         # The line primitive carries an invisible default fill even though
         # only its stroke is rendered.  Normalize that attribute as well so
         # style_oomp SVG source contains black and white values only.
-        if kwargs.get("stylesheet", "") == "style_oomp":
+        stylesheet = kwargs.get("stylesheet", "")
+        if stylesheet in ["style_oomp", "style_oomp_assembly"]:
             with open(svg_path, "r", encoding="utf-8") as svg_file:
                 svg_contents = svg_file.read()
             svg_contents = svg_contents.replace("#333333", "#000000")
+            if stylesheet == "style_oomp_assembly":
+                svg_contents = svg_contents.replace(
+                    " stroke-width=",
+                    ' vector-effect="non-scaling-stroke" stroke-width=',
+                )
+                pin_one_svg = thing.get("assembly_pin_one_svg", {})
+                if isinstance(pin_one_svg, dict) and "x" in pin_one_svg and "y" in pin_one_svg:
+                    pin_one_attributes = (
+                        f'data-pin-one-x="{float(pin_one_svg["x"]):.4f}" '
+                        f'data-pin-one-y="{float(pin_one_svg["y"]):.4f}" '
+                    )
+                    svg_contents = svg_contents.replace("<svg ", f"<svg {pin_one_attributes}", 1)
             with open(svg_path, "w", encoding="utf-8") as svg_file:
                 svg_file.write(svg_contents)
 

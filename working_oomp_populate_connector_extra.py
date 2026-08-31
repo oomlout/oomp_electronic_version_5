@@ -5,6 +5,32 @@ def main(**kwargs):
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "TYPE-C-31-M-12"
         extras_dict[current]["part_number_lcsc"] = "C165948"
+        extras_dict[current]["pins"] = {}
+        usb_c_pins = [
+            ["A1", "gnd", "power"],
+            ["B12", "gnd", "power"],
+            ["A4", "vbus", "power"],
+            ["B9", "vbus", "power"],
+            ["A5", "cc1", "signal"],
+            ["B8", "sbu2", "signal"],
+            ["A6", "dp1", "signal"],
+            ["B7", "dn2", "signal"],
+            ["A7", "dn1", "signal"],
+            ["B6", "dp2", "signal"],
+            ["A8", "sbu1", "signal"],
+            ["B5", "cc2", "signal"],
+            ["A9", "vbus", "power"],
+            ["B4", "vbus", "power"],
+            ["A12", "gnd", "power"],
+            ["B1", "gnd", "power"],
+        ]
+        for pin_index in range(len(usb_c_pins)):
+            pin = usb_c_pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
         extras_dict[current]["file_copy"] = [
             {
                 "file_source": f"parts_source/{current}/datasheet.pdf",
@@ -35,17 +61,17 @@ def main(**kwargs):
         extras_dict[current]["pins"]["pin_4"] = {
             "name": "gnd",
             "number": "4",
-            "type": "signal",
+            "type": "power",
         }
         extras_dict[current]["pins"]["pin_5"] = {
             "name": "shield",
             "number": "5",
-            "type": "signal",
+            "type": "shield",
         }
         extras_dict[current]["pins"]["pin_6"] = {
             "name": "shield",
             "number": "6",
-            "type": "signal",
+            "type": "shield",
         }
         extras_dict[current]["file_copy"] = [
             {

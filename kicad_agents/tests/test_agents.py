@@ -12,6 +12,7 @@ from kicad_agents.oomp_matching_agent import (
     match_component,
     parse_resistance_ohms,
 )
+from kicad_agents.project_summary_agent import _orientation_rotation
 from kicad_agents.sexpr import children, load, tag, value
 import working_oomp_populate_project
 
@@ -21,6 +22,10 @@ SAMPLE_PROJECT = REPOSITORY_ROOT / "project" / "electrolama" / "pt1"
 SAMPLE_SCHEMATIC = SAMPLE_PROJECT / "git" / "pt1" / "pcba" / "Rev A2" / "pt1-RevA2.kicad_sch"
 PARTS_DIRECTORY = REPOSITORY_ROOT / "parts"
 PROJECT_PART = PARTS_DIRECTORY / "oomp_project_github_electrolama_pt1_current"
+USB_A_PART = PARTS_DIRECTORY / "electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100"
+USB_C_PART = PARTS_DIRECTORY / "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12"
+USB_A_SOURCE = REPOSITORY_ROOT / "parts_source" / USB_A_PART.name
+USB_C_SOURCE = REPOSITORY_ROOT / "parts_source" / USB_C_PART.name
 
 
 class SExpressionTests(unittest.TestCase):
@@ -173,10 +178,117 @@ class ProjectPartTests(unittest.TestCase):
 
         readme = (PROJECT_PART / "README.md").read_text(encoding="utf-8")
         self.assertIn("https://github.com/electrolama/pt1", readme)
-        self.assertIn("![PCB component placement](generated_data/src/board.svg)", readme)
+        self.assertIn(
+            "![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.svg)",
+            readme,
+        )
+        self.assertNotIn("](../", readme)
         self.assertNotIn("project_summary_llm", readme)
+        self.assertIn(
+            "| References | Quantity | Description | Value | Footprint | OOMP part |",
+            readme,
+        )
         self.assertTrue((PROJECT_PART / "generated_data" / "src" / "board.svg").is_file())
         self.assertFalse(any((PROJECT_PART / "generated_data").glob("*llm*")))
+
+        assembly_svg_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "working_svg_assembly.svg"
+        self.assertTrue(assembly_svg_path.is_file())
+        assembly_svg = assembly_svg_path.read_text(encoding="utf-8")
+        self.assertIn('width="1.0000mm" height="0.5000mm"', assembly_svg)
+        self.assertIn('vector-effect="non-scaling-stroke"', assembly_svg)
+        self.assertNotIn('stroke-width="0.8"', assembly_svg)
+
+        board_svg = (PROJECT_PART / "generated_data" / "src" / "board.svg").read_text(encoding="utf-8")
+        self.assertIn('transform="translate(155.8761 106.1286) rotate(-90.0000)"', board_svg)
+        self.assertIn('width="2.4800" height="15.2400"', board_svg)
+        self.assertIn('preserveAspectRatio="xMidYMid meet"', board_svg)
+        self.assertNotIn('preserveAspectRatio="none"', board_svg)
+        self.assertIn('class="indicator" transform="translate(156.0031 99.7786)"', board_svg)
+        self.assertIn(
+            '<g transform="translate(6.3500 0.1270) rotate(-90)">',
+            board_svg,
+        )
+        self.assertNotIn(">SJ1</text>", board_svg)
+        self.assertNotIn("UNK_HOLE", board_svg)
+
+    def test_j1_orientation_uses_footprint_pad_one(self):
+        local_bounds = {
+            "min_x": -1.3716,
+            "min_y": -1.2446,
+            "max_x": 14.0716,
+            "max_y": 1.4986,
+        }
+        pads = [
+            {
+                "number": "1",
+                "local_position": {"x": 0.0, "y": 0.0},
+            }
+        ]
+        pin_one_svg = {"x": 1.24, "y": 1.27}
+        rotation = _orientation_rotation(
+            2.48,
+            15.24,
+            local_bounds,
+            pads,
+            pin_one_svg,
+        )
+        self.assertEqual(rotation, -90)
+
+
+class ElectronicPartReadmeTests(unittest.TestCase):
+    def test_part_readme_uses_pinout_hero_and_small_previews(self):
+        part_directory = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm"
+        working = yaml.safe_load((part_directory / "working.yaml").read_text(encoding="utf-8"))
+        preview_action = working["oomlout_ai_roboclick_1"]
+        preview_actions = preview_action["actions"]
+
+        self.assertEqual(len(preview_actions), 8)
+        self.assertTrue(all(action["command"] == "image_resize" for action in preview_actions))
+        self.assertTrue(all(action["maximum_dimension"] == 300 for action in preview_actions))
+        self.assertTrue(all(action["allow_upscale"] is False for action in preview_actions))
+
+        readme = (part_directory / "README.md").read_text(encoding="utf-8")
+        self.assertIn('<img src="working_svg_square_pins.svg"', readme)
+        self.assertIn("## At a glance", readme)
+        self.assertIn("## Diagram gallery", readme)
+        self.assertIn("working_svg_outline_300.png", readme)
+
+        from PIL import Image
+
+        preview_files = sorted(part_directory.glob("working_svg*_300.png"))
+        self.assertEqual(len(preview_files), 8)
+        for preview_file in preview_files:
+            with Image.open(preview_file) as preview_image:
+                self.assertLessEqual(max(preview_image.size), 300)
+
+
+class UsbConnectorDiagramTests(unittest.TestCase):
+    def test_usb_a_uses_datasheet_dimensions_and_named_pins(self):
+        working = yaml.safe_load((USB_A_SOURCE / "working.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(working["dimensions_mm"], {"length": 14.3, "width": 10.6})
+        self.assertEqual(working["connector_dimensions_mm"]["contact_count"], 4)
+        self.assertEqual(working["connector_dimensions_mm"]["contact_pitch"], 2.0)
+        self.assertEqual(working["pins"]["pin_2"]["name"], "usb_negative")
+        self.assertEqual(working["pins"]["pin_5"]["type"], "shield")
+
+        assembly_svg = (USB_A_PART / "working_svg_assembly.svg").read_text(encoding="utf-8")
+        self.assertIn('width="14.3000mm" height="10.6000mm"', assembly_svg)
+
+    def test_usb_c_uses_datasheet_pinout_and_physical_size(self):
+        working = yaml.safe_load((USB_C_SOURCE / "working.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(working["dimensions_mm"], {"length": 8.94, "width": 7.35})
+        self.assertEqual(len(working["pins"]), 16)
+        self.assertEqual(working["pins"]["pin_1"], {"name": "gnd", "number": "A1", "type": "power"})
+        self.assertEqual(working["pins"]["pin_16"], {"name": "gnd", "number": "B1", "type": "power"})
+
+        pinout_svg = (USB_C_PART / "working_svg_square_pins.svg").read_text(encoding="utf-8")
+        self.assertIn("Connector USB C", pinout_svg)
+        self.assertIn("A1 gnd", pinout_svg)
+        self.assertIn("B1 gnd", pinout_svg)
+        self.assertNotIn(">pin 1<", pinout_svg)
+
+        assembly_svg = (USB_C_PART / "working_svg_assembly.svg").read_text(encoding="utf-8")
+        self.assertIn('width="8.9400mm" height="7.3500mm"', assembly_svg)
 
 
 if __name__ == "__main__":

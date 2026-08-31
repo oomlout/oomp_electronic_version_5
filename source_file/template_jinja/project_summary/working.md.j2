@@ -32,10 +32,10 @@ No PCB outline or placed-footprint bounds were available.
 
 ## Bill of materials
 
-| Quantity | Description | Value | Footprint | OOMP part | References |
-| ---: | --- | --- | --- | --- | --- |
+| References | Quantity | Description | Value | Footprint | OOMP part |
+| --- | ---: | --- | --- | --- | --- |
 {% for row in bom %}
-| {{ row.quantity }} | {{ row.description }} | {{ row.value }} | `{{ row.footprint }}` | {% if row.oomp_id %}[`{{ row.oomp_id }}`]({{ row.oomp_link }}){% else %}unmatched{% endif %} | {{ row.references | join(', ') }} |
+| {{ row.references | join(', ') }} | {{ row.quantity }} | {{ row.description }} | {{ row.value }} | `{{ row.footprint }}` | {% if row.oomp_id %}[`{{ row.oomp_id }}`]({{ row.oomp_link }}){% else %}unmatched{% endif %} |
 {% endfor %}
 
 ## Main nets

@@ -56,6 +56,8 @@ def get_parts(kwargs, oomp_mode):
 
         if not isinstance(loaded_part, dict):
             continue
+        if loaded_part.get("taxonomy_1", "") != "electronic":
+            continue
 
         # Apply the shared population definition to existing generated parts.
         # Future population runs write the same values into working.yaml.
@@ -184,6 +186,17 @@ def _add_diagram_bounds(thing, width, height):
     )
 
 
+def _add_assembly_bounds(thing, width, height):
+    """Retain predictable SVG bounds without adding an opaque page."""
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="canvas.transparent",
+        size=[width, height, 0],
+        pos=[0, 0, 0],
+    )
+
+
 def _add_square_background(thing, size=64):
     """Add the white square required by the square PNG diagrams."""
     opsvg.se(
@@ -216,6 +229,11 @@ def _add_resistor_outline(
     )
 
     terminal_width = 3
+    if thing.get("assembly_mode", False):
+        # Assembly drawings use a ten-times drawing grid.  Keeping this as a
+        # simple proportion makes small package terminals readable without
+        # changing the physical aspect ratio of the finished SVG.
+        terminal_width = max(0.6, body_width * 0.18)
     # Two explicit sides keep this easy to edit for other two-pin parts.
     sides = [-1, 1]
     for side in sides:
@@ -438,16 +456,243 @@ def _get_number_from_taxonomy(thing, taxonomy_names):
     return 0
 
 
+def _add_usb_a_connector_outline(thing, width=30, height=16, pos=None):
+    """Draw the 912-121A2023S10100 top view from its mechanical sheet."""
+    if pos is None:
+        pos = [0, 0, 0]
+
+    dimensions = thing.get("connector_dimensions_mm", {})
+    overall_width = float(dimensions.get("overall_width", 14.3))
+    shell_width_mm = float(dimensions.get("shell_width", 13.1))
+    shell_width = width * shell_width_mm / overall_width
+    shell_height = height
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[shell_width, shell_height, 0],
+        r=min(shell_width * 0.035, shell_height * 0.08),
+        pos=copy.deepcopy(pos),
+    )
+
+    # The two side ears represent the two shell retention legs in the PCB
+    # layout.  They stay inside the 14.30 mm overall envelope.
+    shell_mount_positions = [-1, 1]
+    for side in shell_mount_positions:
+        mount_pos = copy.deepcopy(pos)
+        mount_width = width - shell_width
+        mount_pos[0] += side * (width / 2 - mount_width / 2)
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            size=[mount_width, shell_height * 0.34, 0],
+            pos=mount_pos,
+        )
+
+    # Four 1.00 mm contacts on 2.00 mm pitch leave the rear of the shell.
+    contact_count = int(dimensions.get("contact_count", 4))
+    contact_pitch_ratio = float(dimensions.get("contact_pitch", 2.0)) / shell_width_mm
+    contact_width_ratio = float(dimensions.get("contact_width", 1.0)) / shell_width_mm
+    for contact_index in range(contact_count):
+        contact_pos = copy.deepcopy(pos)
+        contact_pos[0] += (contact_index - (contact_count - 1) / 2) * shell_width * contact_pitch_ratio
+        contact_pos[1] += shell_height * 0.43
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            size=[shell_width * contact_width_ratio, shell_height * 0.14, 0],
+            pos=contact_pos,
+        )
+
+    # The two spring windows are the strongest identifying feature in the
+    # datasheet top view.  Each has two simple retaining bars.
+    window_x_positions = [-shell_width * 0.24, shell_width * 0.24]
+    for window_x in window_x_positions:
+        window_pos = copy.deepcopy(pos)
+        window_pos[0] += window_x
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.hole",
+            size=[shell_width * 0.22, shell_height * 0.30, 0],
+            r=min(shell_width, shell_height) * 0.04,
+            pos=window_pos,
+        )
+        bar_y_positions = [-shell_height * 0.035, shell_height * 0.035]
+        for bar_y in bar_y_positions:
+            bar_pos = copy.deepcopy(window_pos)
+            bar_pos[1] += bar_y
+            opsvg.se(
+                thing,
+                shape="line",
+                style="component.pin",
+                p1=[-shell_width * 0.075, 0],
+                p2=[shell_width * 0.075, 0],
+                pos=bar_pos,
+            )
+
+    # Front opening and tongue make the outline read as a USB-A receptacle.
+    opening_pos = copy.deepcopy(pos)
+    opening_pos[1] -= shell_height * 0.28
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.hole",
+        size=[shell_width * 0.78, shell_height * 0.20, 0],
+        r=shell_height * 0.06,
+        pos=opening_pos,
+    )
+    tongue_pos = copy.deepcopy(opening_pos)
+    tongue_pos[1] -= shell_height * 0.015
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[shell_width * 0.62, shell_height * 0.075, 0],
+        r=shell_height * 0.025,
+        pos=tongue_pos,
+    )
+
+    pin_one_pos = copy.deepcopy(pos)
+    pin_one_pos[0] -= shell_width * 0.34
+    pin_one_pos[1] += shell_height * 0.30
+    opsvg.se(thing, shape="circle", style="component.pin_one", r=min(width, height) * 0.035, pos=pin_one_pos)
+
+    thing["connector_drawing"] = "usb_a"
+    thing["diagram_contact_count"] = contact_count
+    thing["diagram_outline_width"] = width
+    thing["diagram_outline_height"] = shell_height
+    return width, shell_height
+
+
+def _add_usb_c_connector_outline(thing, width=30, height=16, pos=None):
+    """Draw the TYPE-C-31-M-12 shell, rear contacts, tabs, and port."""
+    if pos is None:
+        pos = [0, 0, 0]
+
+    dimensions = thing.get("connector_dimensions_mm", {})
+    shell_width = width
+    shell_height = height
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[shell_width, shell_height, 0],
+        r=min(shell_width * 0.07, shell_height * 0.10),
+        pos=copy.deepcopy(pos),
+    )
+
+    contact_count = int(dimensions.get("contact_count", 16))
+    contact_pitch_mm = float(dimensions.get("contact_pitch", 0.5))
+    contact_width_mm = float(dimensions.get("contact_width", 0.2))
+    shell_width_mm = float(dimensions.get("shell_width", 8.94))
+    contact_pitch = shell_width * contact_pitch_mm / shell_width_mm
+    contact_width = shell_width * contact_width_mm / shell_width_mm
+    for contact_index in range(contact_count):
+        contact_pos = copy.deepcopy(pos)
+        contact_pos[0] += (contact_index - (contact_count - 1) / 2) * contact_pitch
+        contact_pos[1] += shell_height * 0.44
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            size=[contact_width, shell_height * 0.12, 0],
+            pos=contact_pos,
+        )
+
+    # Four shell tabs follow the recommended PCB layout: two toward the rear
+    # and two toward the front, mirrored about the connector centreline.
+    mount_y_positions = [shell_height * 0.28, -shell_height * 0.28]
+    for side in [-1, 1]:
+        for mount_y in mount_y_positions:
+            mount_pos = copy.deepcopy(pos)
+            mount_pos[0] += side * shell_width * 0.43
+            mount_pos[1] += mount_y
+            opsvg.se(
+                thing,
+                shape="rounded_rectangle",
+                style="component.pad",
+                size=[shell_width * 0.09, shell_height * 0.18, 0],
+                r=min(shell_width, shell_height) * 0.025,
+                pos=mount_pos,
+            )
+
+    # Two latch windows and the central shell seam match the top view.
+    window_x_positions = [-shell_width * 0.25, shell_width * 0.25]
+    for window_x in window_x_positions:
+        window_pos = copy.deepcopy(pos)
+        window_pos[0] += window_x
+        window_pos[1] += shell_height * 0.13
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.hole",
+            size=[shell_width * 0.17, shell_height * 0.12, 0],
+            r=min(shell_width, shell_height) * 0.025,
+            pos=window_pos,
+        )
+    opsvg.se(
+        thing,
+        shape="line",
+        style="component.pin",
+        p1=[0, -shell_height * 0.08],
+        p2=[0, shell_height * 0.30],
+        pos=copy.deepcopy(pos),
+    )
+
+    opening_pos = copy.deepcopy(pos)
+    opening_pos[1] -= shell_height * 0.27
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.hole",
+        size=[shell_width * 0.80, shell_height * 0.22, 0],
+        r=shell_height * 0.09,
+        pos=opening_pos,
+    )
+    tongue_pos = copy.deepcopy(opening_pos)
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[shell_width * 0.55, shell_height * 0.065, 0],
+        r=shell_height * 0.02,
+        pos=tongue_pos,
+    )
+
+    pin_one_pos = copy.deepcopy(pos)
+    pin_one_pos[0] -= shell_width * 0.39
+    pin_one_pos[1] += shell_height * 0.34
+    opsvg.se(thing, shape="circle", style="component.pin_one", r=min(width, height) * 0.035, pos=pin_one_pos)
+
+    thing["connector_drawing"] = "usb_c"
+    thing["diagram_contact_count"] = contact_count
+    thing["diagram_outline_width"] = shell_width
+    thing["diagram_outline_height"] = shell_height
+    return shell_width, shell_height
+
+
 def _add_connector_outline(thing, width=30, height=16, pos=None):
     if pos is None:
         pos = [0, 0, 0]
     connector_type = str(thing.get("taxonomy_3", ""))
     pin_count = _get_number_from_taxonomy(thing, ["taxonomy_5", "taxonomy_6"])
 
+    if connector_type == "usb_a":
+        return _add_usb_a_connector_outline(thing, width=width, height=height, pos=pos)
+    if connector_type == "usb_c":
+        return _add_usb_c_connector_outline(thing, width=width, height=height, pos=pos)
+
     if connector_type == "header":
         pin_count = max(pin_count, 1)
         header_height = width
         header_width = min(8, max(4, height * 0.35))
+        if thing.get("assembly_mode", False):
+            header_width = height
         opsvg.se(
             thing,
             shape="rounded_rectangle",
@@ -461,14 +706,28 @@ def _add_connector_outline(thing, width=30, height=16, pos=None):
         for pin_index in range(pin_count):
             pin_pos = copy.deepcopy(pos)
             pin_pos[1] += header_height / 2 - pin_spacing / 2 - pin_index * pin_spacing
+            pin_square = min(1.8, pin_spacing * 0.5)
+            if thing.get("assembly_mode", False):
+                header_dimensions = thing.get("header_dimensions_mm", {})
+                pin_square = float(header_dimensions.get("pin_square", 0.64)) * 10
             opsvg.se(
                 thing,
                 shape="rect",
                 style="component.hole",
-                size=[min(1.8, pin_spacing * 0.5), min(1.8, pin_spacing * 0.5), 0],
+                size=[pin_square, pin_square, 0],
                 pos=pin_pos,
             )
             diagram_pin_positions.append(copy.deepcopy(pin_pos))
+        if len(diagram_pin_positions) > 0:
+            pin_one_marker_pos = copy.deepcopy(diagram_pin_positions[0])
+            pin_one_marker_pos[0] -= header_width * 0.30
+            opsvg.se(
+                thing,
+                shape="circle",
+                style="component.pin_one",
+                r=min(header_width, pin_spacing) * 0.06,
+                pos=pin_one_marker_pos,
+            )
         thing["diagram_pin_positions"] = diagram_pin_positions
         thing["diagram_outline_width"] = header_width
         return header_width, header_height
@@ -603,6 +862,8 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
     if pos is None:
         pos = [0, 0, 0]
     package = str(thing.get("taxonomy_3", ""))
+    if thing.get("taxonomy_2", "") == "diode":
+        package = str(thing.get("taxonomy_4", package))
     thing["diagram_pin_positions"] = []
 
     if package.startswith("qfn"):
@@ -931,6 +1192,27 @@ def _add_square_pin_labels(thing):
 
     component_type = str(thing.get("taxonomy_2", ""))
     component_size = str(thing.get("taxonomy_3", ""))
+
+    if component_type == "connector" and component_size in ["usb_a", "usb_c"]:
+        connector_labels = []
+        pins = thing.get("pins", {})
+        if isinstance(pins, dict):
+            for pin_index in range(1, 100):
+                pin_key = f"pin_{pin_index}"
+                if pin_key in pins:
+                    pin = pins[pin_key]
+                    pin_number = str(pin.get("number", pin_index))
+                    pin_name = str(pin.get("name", f"pin {pin_number}"))
+                    name_replacements = [
+                        ["usb_negative", "D-"],
+                        ["usb_positive", "D+"],
+                    ]
+                    for replacement in name_replacements:
+                        pin_name = pin_name.replace(replacement[0], replacement[1])
+                    connector_labels.append(f"{pin_number} {pin_name}")
+        if len(connector_labels) > 0:
+            pin_labels = connector_labels
+
     diagram_pin_positions = thing.get("diagram_pin_positions", [])
     if component_type == "connector" and component_size == "header" and diagram_pin_positions:
         label_size = min(2.2, max(0.7, 16.0 / len(pin_labels)))
@@ -1090,7 +1372,7 @@ def _get_name_lines(thing, maximum_characters=29):
 
 
 def _add_square_name(thing):
-    name_lines = _get_name_lines(thing)
+    name_lines = _get_name_lines(thing, maximum_characters=22)
     y_positions = [27, 23, 19]
     for index in range(len(name_lines)):
         _add_text(
@@ -1404,6 +1686,90 @@ def _add_component_dimensions(thing, body_width, body_height, show_titles=False)
     )
 
 
+def _get_assembly_drawing_dimensions(thing):
+    """Return canvas and outline sizes on a simple ten-times millimetre grid."""
+    dimensions = thing.get("dimensions_mm", {})
+    physical_length = float(dimensions.get("length", 10))
+    physical_width = float(dimensions.get("width", 5))
+
+    canvas_width = physical_length * 10
+    canvas_height = physical_width * 10
+    outline_width = canvas_width
+    outline_height = canvas_height
+
+    component_type = str(thing.get("taxonomy_2", ""))
+    package = str(thing.get("taxonomy_3", ""))
+    if component_type == "diode":
+        package = str(thing.get("taxonomy_4", package))
+
+    # Header drawings are vertical.  The board assembler can rotate the
+    # unchanged SVG by 90 degrees when the KiCad footprint is horizontal.
+    if component_type == "connector" and package == "header":
+        canvas_width = physical_width * 10
+        canvas_height = physical_length * 10
+        outline_width = physical_length * 10
+        outline_height = physical_width * 10
+
+    # These package drawers follow the orientation used in their datasheets:
+    # pins left/right for SOP and SOT, pins above/below for TSOT.
+    if component_type in ["ic", "diode"]:
+        ic_dimensions = thing.get("ic_dimensions_mm", {})
+        if package in ["sop_16", "sot_23_6"]:
+            canvas_width = float(ic_dimensions.get("overall_width", physical_width)) * 10
+            canvas_height = float(ic_dimensions.get("body_length", physical_length)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+        elif package == "tsot_23_5":
+            canvas_width = float(ic_dimensions.get("body_length", physical_length)) * 10
+            canvas_height = float(ic_dimensions.get("overall_width", physical_width)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+
+    return {
+        "canvas_width": canvas_width,
+        "canvas_height": canvas_height,
+        "outline_width": outline_width,
+        "outline_height": outline_height,
+    }
+
+
+def get_oomp_component_assembly(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    dimensions = _get_assembly_drawing_dimensions(thing)
+    thing["assembly_mode"] = True
+    thing["svg_output_scale"] = 0.1
+    _add_assembly_bounds(
+        thing,
+        dimensions["canvas_width"],
+        dimensions["canvas_height"],
+    )
+    _add_component_outline(
+        thing,
+        width=dimensions["outline_width"],
+        height=dimensions["outline_height"],
+    )
+
+    # Keep the native pin-one point with the assembly SVG.  The project board
+    # compiler uses it to choose between otherwise ambiguous 90/180 degree
+    # orientations when matching the drawing to a KiCad footprint.
+    pin_one_position = None
+    diagram_pin_positions = thing.get("diagram_pin_positions", [])
+    for pin_position in diagram_pin_positions:
+        if isinstance(pin_position, dict):
+            if str(pin_position.get("number", "")) == "1":
+                pin_one_position = pin_position.get("pos")
+                break
+        elif isinstance(pin_position, list) and pin_one_position is None:
+            pin_one_position = pin_position
+
+    if isinstance(pin_one_position, list) and len(pin_one_position) >= 2:
+        output_scale = float(thing.get("svg_output_scale", 1.0))
+        thing["assembly_pin_one_svg"] = {
+            "x": (float(pin_one_position[0]) + dimensions["canvas_width"] / 2) * output_scale,
+            "y": (dimensions["canvas_height"] / 2 - float(pin_one_position[1])) * output_scale,
+        }
+
+
 def get_oomp_component_outline(thing, **kwargs):
     _use_style_oomp(thing, **kwargs)
     _add_diagram_bounds(thing, 34, 20)
@@ -1481,6 +1847,9 @@ def get_oomp_component_square_pins(thing, **kwargs):
     _add_square_name(thing)
     component_width = 18
     component_height = 9
+    if thing.get("taxonomy_2", "") == "connector" and thing.get("taxonomy_3", "") in ["usb_a", "usb_c"]:
+        component_width = 22
+        component_height = 13
     if thing.get("taxonomy_2", "") == "connector" and thing.get("taxonomy_3", "") == "header":
         component_width = 22
         component_height = 10
