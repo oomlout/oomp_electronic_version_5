@@ -188,6 +188,11 @@ class ProjectPartTests(unittest.TestCase):
             "| References | Quantity | Description | Value | Footprint | OOMP part |",
             readme,
         )
+        self.assertIn(
+            "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_10_nano_farad",
+            readme,
+        )
+        self.assertNotIn("/parts/electronic_capacitor_0402_10_nano_farad/README.md", readme)
         self.assertTrue((PROJECT_PART / "generated_data" / "src" / "board.svg").is_file())
         self.assertFalse(any((PROJECT_PART / "generated_data").glob("*llm*")))
 
@@ -196,6 +201,8 @@ class ProjectPartTests(unittest.TestCase):
         assembly_svg = assembly_svg_path.read_text(encoding="utf-8")
         self.assertIn('width="1.0000mm" height="0.5000mm"', assembly_svg)
         self.assertIn('vector-effect="non-scaling-stroke"', assembly_svg)
+        self.assertIn('stroke-width="0.22"', assembly_svg)
+        self.assertNotIn('stroke-width="0.18"', assembly_svg)
         self.assertNotIn('stroke-width="0.8"', assembly_svg)
 
         board_svg = (PROJECT_PART / "generated_data" / "src" / "board.svg").read_text(encoding="utf-8")
@@ -233,6 +240,29 @@ class ProjectPartTests(unittest.TestCase):
             pin_one_svg,
         )
         self.assertEqual(rotation, -90)
+
+    def test_nearly_square_ic_orientation_is_not_forced_by_pad_extents(self):
+        local_bounds = {
+            "min_x": -2.125,
+            "min_y": -1.8,
+            "max_x": 2.125,
+            "max_y": 1.8,
+        }
+        pads = [
+            {
+                "number": "1",
+                "local_position": {"x": -1.25, "y": -0.95},
+            }
+        ]
+        pin_one_svg = {"x": 0.3759, "y": 0.5657}
+        rotation = _orientation_rotation(
+            2.8,
+            2.9,
+            local_bounds,
+            pads,
+            pin_one_svg,
+        )
+        self.assertEqual(rotation, 0)
 
 
 class ElectronicPartReadmeTests(unittest.TestCase):
@@ -273,6 +303,28 @@ class UsbConnectorDiagramTests(unittest.TestCase):
 
         assembly_svg = (USB_A_PART / "working_svg_assembly.svg").read_text(encoding="utf-8")
         self.assertIn('width="14.3000mm" height="10.6000mm"', assembly_svg)
+        self.assertIn('data-pin-one-identifiers="VBUS|1"', assembly_svg)
+
+        local_bounds = {
+            "min_x": -7.15,
+            "min_y": -4.575,
+            "max_x": 7.15,
+            "max_y": 6.025,
+        }
+        pads = [
+            {
+                "number": "VBUS",
+                "local_position": {"x": 3.5, "y": 5.3},
+            }
+        ]
+        rotation = _orientation_rotation(
+            14.3,
+            10.6,
+            local_bounds,
+            pads,
+            {"x": 2.696, "y": 2.12, "identifiers": ["VBUS", "1"]},
+        )
+        self.assertEqual(rotation, 180)
 
     def test_usb_c_uses_datasheet_pinout_and_physical_size(self):
         working = yaml.safe_load((USB_C_SOURCE / "working.yaml").read_text(encoding="utf-8"))

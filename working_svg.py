@@ -364,6 +364,10 @@ def _add_led_outline(thing, width=22, height=12, pos=None):
         p2=[0, height * 0.3],
         pos=polarity_pos,
     )
+    thing["diagram_orientation_anchor"] = {
+        "pos": copy.deepcopy(polarity_pos),
+        "identifiers": ["C"],
+    }
     return width, height
 
 
@@ -443,6 +447,13 @@ def _add_crystal_outline(thing, width=24, height=14, pos=None):
             size=[4, 3, 0],
             pos=pad_pos,
         )
+    crystal_pin_one_pos = copy.deepcopy(pos)
+    crystal_pin_one_pos[0] += pad_positions[0][0]
+    crystal_pin_one_pos[1] += pad_positions[0][1]
+    thing["diagram_orientation_anchor"] = {
+        "pos": crystal_pin_one_pos,
+        "identifiers": ["1"],
+    }
     return width, height
 
 
@@ -560,6 +571,10 @@ def _add_usb_a_connector_outline(thing, width=30, height=16, pos=None):
     pin_one_pos[0] -= shell_width * 0.34
     pin_one_pos[1] += shell_height * 0.30
     opsvg.se(thing, shape="circle", style="component.pin_one", r=min(width, height) * 0.035, pos=pin_one_pos)
+    thing["diagram_orientation_anchor"] = {
+        "pos": copy.deepcopy(pin_one_pos),
+        "identifiers": ["VBUS", "1"],
+    }
 
     thing["connector_drawing"] = "usb_a"
     thing["diagram_contact_count"] = contact_count
@@ -668,6 +683,10 @@ def _add_usb_c_connector_outline(thing, width=30, height=16, pos=None):
     pin_one_pos[0] -= shell_width * 0.39
     pin_one_pos[1] += shell_height * 0.34
     opsvg.se(thing, shape="circle", style="component.pin_one", r=min(width, height) * 0.035, pos=pin_one_pos)
+    thing["diagram_orientation_anchor"] = {
+        "pos": copy.deepcopy(pin_one_pos),
+        "identifiers": ["GND@1", "A1", "GND"],
+    }
 
     thing["connector_drawing"] = "usb_c"
     thing["diagram_contact_count"] = contact_count
@@ -1753,20 +1772,29 @@ def get_oomp_component_assembly(thing, **kwargs):
     # compiler uses it to choose between otherwise ambiguous 90/180 degree
     # orientations when matching the drawing to a KiCad footprint.
     pin_one_position = None
+    pin_one_identifiers = ["1"]
+    orientation_anchor = thing.get("diagram_orientation_anchor", {})
+    if isinstance(orientation_anchor, dict):
+        pin_one_position = orientation_anchor.get("pos")
+        anchor_identifiers = orientation_anchor.get("identifiers", [])
+        if isinstance(anchor_identifiers, list) and len(anchor_identifiers) > 0:
+            pin_one_identifiers = [str(identifier) for identifier in anchor_identifiers]
     diagram_pin_positions = thing.get("diagram_pin_positions", [])
-    for pin_position in diagram_pin_positions:
-        if isinstance(pin_position, dict):
-            if str(pin_position.get("number", "")) == "1":
-                pin_one_position = pin_position.get("pos")
-                break
-        elif isinstance(pin_position, list) and pin_one_position is None:
-            pin_one_position = pin_position
+    if pin_one_position is None:
+        for pin_position in diagram_pin_positions:
+            if isinstance(pin_position, dict):
+                if str(pin_position.get("number", "")) == "1":
+                    pin_one_position = pin_position.get("pos")
+                    break
+            elif isinstance(pin_position, list) and pin_one_position is None:
+                pin_one_position = pin_position
 
     if isinstance(pin_one_position, list) and len(pin_one_position) >= 2:
         output_scale = float(thing.get("svg_output_scale", 1.0))
         thing["assembly_pin_one_svg"] = {
             "x": (float(pin_one_position[0]) + dimensions["canvas_width"] / 2) * output_scale,
             "y": (dimensions["canvas_height"] / 2 - float(pin_one_position[1])) * output_scale,
+            "identifiers": pin_one_identifiers,
         }
 
 

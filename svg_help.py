@@ -184,6 +184,16 @@ def make_svg_generic(part):
                         f'data-pin-one-x="{float(pin_one_svg["x"]):.4f}" '
                         f'data-pin-one-y="{float(pin_one_svg["y"]):.4f}" '
                     )
+                    pin_one_identifiers = pin_one_svg.get("identifiers", [])
+                    if isinstance(pin_one_identifiers, list):
+                        safe_identifiers = []
+                        for identifier in pin_one_identifiers:
+                            safe_identifier = str(identifier).replace('"', "").replace("|", "")
+                            if safe_identifier != "":
+                                safe_identifiers.append(safe_identifier)
+                        if len(safe_identifiers) > 0:
+                            identifiers_text = "|".join(safe_identifiers)
+                            pin_one_attributes += f'data-pin-one-identifiers="{identifiers_text}" '
                     svg_contents = svg_contents.replace("<svg ", f"<svg {pin_one_attributes}", 1)
             with open(svg_path, "w", encoding="utf-8") as svg_file:
                 svg_file.write(svg_contents)

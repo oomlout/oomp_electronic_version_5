@@ -296,7 +296,7 @@ def _bom_rows(components, oomp_link_prefix="../../../../parts"):
                 "value": value_text,
                 "footprint": footprint,
                 "oomp_id": oomp_id,
-                "oomp_link": f"{oomp_link_prefix}/{oomp_id}/README.md" if oomp_id else "",
+                "oomp_link": f"{oomp_link_prefix}/{oomp_id}" if oomp_id else "",
                 "references": [],
             }
         groups[key]["references"].append(component["reference"])
@@ -375,7 +375,7 @@ def _rotate_point(x, y, rotation):
 
 
 def _orientation_rotation(svg_width, svg_height, local_bounds_record, pads, pin_one_svg):
-    """Choose the aspect-matching rotation whose pin-one end meets PCB pad 1."""
+    """Choose the rotation whose SVG pin-one direction meets PCB pad 1."""
     local_width = local_bounds_record["max_x"] - local_bounds_record["min_x"]
     local_height = local_bounds_record["max_y"] - local_bounds_record["min_y"]
     svg_is_wide = svg_width >= svg_height
@@ -392,12 +392,24 @@ def _orientation_rotation(svg_width, svg_height, local_bounds_record, pads, pin_
         return rotations[0]
 
     pad_one = None
-    for pad in pads:
-        if str(pad.get("number", "")) == "1":
-            pad_one = pad.get("local_position", {})
+    identifiers = pin_one_svg.get("identifiers", ["1"])
+    if not isinstance(identifiers, list) or len(identifiers) == 0:
+        identifiers = ["1"]
+    for identifier in identifiers:
+        for pad in pads:
+            pad_number = str(pad.get("number", "")).strip().upper()
+            if pad_number == str(identifier).strip().upper():
+                pad_one = pad.get("local_position", {})
+                break
+        if pad_one is not None:
             break
     if not isinstance(pad_one, dict):
         return rotations[0]
+
+    # Pad extents can make small, nearly-square packages appear to have the
+    # opposite aspect ratio.  Once both pin-one points are known, evaluate all
+    # four simple rotations and let the pin direction resolve the package.
+    rotations = [0, 90, 180, -90]
 
     source_x = float(pin_one_svg["x"]) - svg_width / 2
     source_y = float(pin_one_svg["y"]) - svg_height / 2
@@ -456,6 +468,9 @@ def _inline_svg(svg_path, local_bounds_record, pads):
             "x": float(pin_one_x_match.group(1)),
             "y": float(pin_one_y_match.group(1)),
         }
+        identifiers_match = re.search(r'data-pin-one-identifiers\s*=\s*"([^"]+)"', svg_text)
+        if identifiers_match is not None:
+            pin_one_svg["identifiers"] = identifiers_match.group(1).split("|")
     orientation_rotation = _orientation_rotation(
         svg_width,
         svg_height,
@@ -773,7 +788,7 @@ def generate_project_summary(
         "generated_source": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src",
         "board": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
         "board_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
-        "parts": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/parts",
+        "parts": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/parts",
     }
     source_manifest = _copy_project_sources(
         components,
