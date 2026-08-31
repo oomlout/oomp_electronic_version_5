@@ -2285,5 +2285,18 @@ def get_internal_label_sheet(thing, **kwargs):
 
 
 if __name__ == '__main__':
-    kwargs = {}
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate OOMP component SVG and PNG diagrams.")
+    parser.add_argument("--filter", default="", help="Only generate parts containing this text in their ID.")
+    parser.add_argument(
+        "--regenerate-pngs",
+        action="store_true",
+        help="Replace existing PNG files. Without this option existing PNGs are kept.",
+    )
+    arguments = parser.parse_args()
+    kwargs = {
+        "filter": arguments.filter,
+        "regenerate_pngs": arguments.regenerate_pngs,
+    }
     main(**kwargs)

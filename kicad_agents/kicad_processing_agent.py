@@ -527,7 +527,19 @@ def _pad_record(pad_node, footprint_position):
 
 def _footprint_record(footprint_node, pcb_path, project_directory):
     properties = _properties(footprint_node)
-    footprint_position = _position(footprint_node)
+    footprint_position_kicad = _position(footprint_node)
+    # KiCad stores PCB coordinates in a Y-down coordinate system.  SVG also
+    # displays Y down, but its rotate() direction is opposite KiCad's board
+    # angle convention.  Keep the source angle for traceability and use the
+    # negated angle for every placed point, bound, and assembly drawing.
+    footprint_rotation_svg = -footprint_position_kicad["rotation"]
+    if footprint_rotation_svg == 0:
+        footprint_rotation_svg = 0.0
+    footprint_position = {
+        "x": footprint_position_kicad["x"],
+        "y": footprint_position_kicad["y"],
+        "rotation": footprint_rotation_svg,
+    }
     layer = value(footprint_node, "layer", "")
     pads = [_pad_record(pad_node, footprint_position) for pad_node in children(footprint_node, "pad")]
 
@@ -570,6 +582,7 @@ def _footprint_record(footprint_node, pcb_path, project_directory):
             "x": _rounded(footprint_position["x"]),
             "y": _rounded(footprint_position["y"]),
             "rotation": _rounded(footprint_position["rotation"]),
+            "rotation_kicad": _rounded(footprint_position_kicad["rotation"]),
             "units": "mm",
         },
         "properties": properties,

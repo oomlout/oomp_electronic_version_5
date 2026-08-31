@@ -131,6 +131,18 @@ class ProcessingAgentTests(unittest.TestCase):
         self.assertEqual(component["pcb"]["position"]["y"], 119.1286)
         self.assertEqual(component["oomp"]["oomp_id"], "electronic_capacitor_0402_10_nano_farad")
 
+    def test_pcb_rotation_is_converted_from_kicad_to_svg_coordinates(self):
+        j1_position = self.components["J1"]["pcb"]["position"]
+        con2_position = self.components["CON2"]["pcb"]["position"]
+        self.assertEqual(j1_position["rotation_kicad"], -90.0)
+        self.assertEqual(j1_position["rotation"], 90.0)
+        self.assertEqual(con2_position["rotation_kicad"], -90.0)
+        self.assertEqual(con2_position["rotation"], 90.0)
+
+        con2_pads = self.components["CON2"]["pcb"]["pads"]
+        con2_ground = next(pad for pad in con2_pads if pad["number"] == "GND@1")
+        self.assertEqual(con2_ground["position"], {"x": 145.7561, "y": 96.7536})
+
     def test_component_folder_contract_and_oomp_copy(self):
         component_directory = self.output_directory / "components" / "C1"
         expected_files = [
@@ -176,6 +188,7 @@ class ProjectPartTests(unittest.TestCase):
         self.assertEqual(second_action["file_test"], "")
         self.assertEqual(first_action["actions"][0]["command"], "run_python")
         self.assertEqual(second_action["actions"][0]["command"], "run_python")
+        self.assertIs(second_action["actions"][0]["regenerate_pngs"], False)
         self.assertEqual(
             second_action["actions"][0]["file_output"],
             "generated_data/src/board_pins.png",
@@ -230,11 +243,11 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIn('transform="rotate(-90.000', assembly_pins_svg)
 
         board_svg = (PROJECT_PART / "generated_data" / "src" / "board.svg").read_text(encoding="utf-8")
-        self.assertIn('transform="translate(155.8761 106.1286) rotate(-90.0000)"', board_svg)
+        self.assertIn('transform="translate(155.8761 106.1286) rotate(90.0000)"', board_svg)
         self.assertIn('width="2.4800" height="15.2400"', board_svg)
         self.assertIn('preserveAspectRatio="xMidYMid meet"', board_svg)
         self.assertNotIn('preserveAspectRatio="none"', board_svg)
-        self.assertIn('class="indicator" transform="translate(156.0031 99.7786)"', board_svg)
+        self.assertIn('class="indicator" transform="translate(155.7491 112.4786)"', board_svg)
         self.assertIn(
             '<g transform="translate(6.3500 0.1270) rotate(-90)">',
             board_svg,
@@ -309,6 +322,7 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         self.assertTrue(all(action["command"] == "image_resize" for action in preview_actions))
         self.assertTrue(all(action["maximum_dimension"] == 300 for action in preview_actions))
         self.assertTrue(all(action["allow_upscale"] is False for action in preview_actions))
+        self.assertTrue(all(action["regenerate_pngs"] is False for action in preview_actions))
 
         readme = (part_directory / "README.md").read_text(encoding="utf-8")
         self.assertIn("![Resistor 0402 2200 Ohm pinout](working_svg_square_pins.svg)", readme)

@@ -27,6 +27,18 @@ Both blocks use an empty `file_test`, so they run every time actions are run.
 The second block verifies `generated_data/src/board_pins.png` as its declared
 output while also rebuilding the SVG boards and project README.
 
+Existing PNG files are preserved by default so routine runs do not rewrite
+binary files. To deliberately rebuild the project board PNG, run:
+
+```powershell
+python -m kicad_agents.project_summary_agent parts/oomp_project_github_electrolama_pt1_current --regenerate-pngs
+```
+
+Component diagram PNGs follow the same rule. Use
+`python working_svg.py --regenerate-pngs` when every component PNG should be
+rebuilt. Roboclick image-resize and project actions also accept the explicit
+`regenerate_pngs: true` option for a forced action run.
+
 ## Generated structure
 
 ```text

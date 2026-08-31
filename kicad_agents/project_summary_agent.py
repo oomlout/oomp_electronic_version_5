@@ -692,8 +692,21 @@ def _make_board_svg(
     }
 
 
-def _make_board_png(svg_path, png_path, maximum_dimension=1600):
-    """Render one board SVG to a PNG with a predictable longest side."""
+def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=False):
+    """Render one board PNG, preserving an existing file unless requested."""
+    if png_path.is_file() and not regenerate_pngs:
+        from PIL import Image
+
+        with Image.open(png_path) as existing_image:
+            output_width, output_height = existing_image.size
+        return {
+            "available": True,
+            "image_file": "generated_data/src/board_pins.png",
+            "width_px": output_width,
+            "height_px": output_height,
+            "skipped_existing": True,
+        }
+
     import cairosvg
 
     svg_text = svg_path.read_text(encoding="utf-8")
@@ -854,6 +867,7 @@ def generate_project_summary(
     project_data=None,
     part_metadata=None,
     readme_output=None,
+    regenerate_pngs=False,
 ):
     project_directory = Path(project_directory).resolve()
     if parts_directory is None:
@@ -937,6 +951,7 @@ def generate_project_summary(
         asset_directory / "board_pins.svg",
         asset_directory / "board_pins.png",
         maximum_dimension=int(style["board_svg"].get("png_maximum_dimension", 1600)),
+        regenerate_pngs=regenerate_pngs,
     )
     component_rows = _component_rows(components)
     placement = {
@@ -1000,11 +1015,17 @@ def main():
     parser.add_argument("project_directory", help="Project part directory containing copied kicad_file.* files")
     parser.add_argument("--parts-dir", default="parts", help="OOMP parts directory")
     parser.add_argument("--output-dir", help="Output directory; defaults to PROJECT/generated_data")
+    parser.add_argument(
+        "--regenerate-pngs",
+        action="store_true",
+        help="Replace existing PNG files instead of preserving them.",
+    )
     arguments = parser.parse_args()
     summary_data = generate_project_summary(
         arguments.project_directory,
         parts_directory=arguments.parts_dir,
         output_directory=arguments.output_dir,
+        regenerate_pngs=arguments.regenerate_pngs,
     )
     print(f"Generated: {Path(arguments.output_dir).resolve() if arguments.output_dir else Path(arguments.project_directory).resolve() / 'generated_data'}")
     print(f"GitHub: {summary_data['project']['github_url']}")

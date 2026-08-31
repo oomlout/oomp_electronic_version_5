@@ -5,6 +5,12 @@ import oomlout_roboclick
 import os
 
 
+def as_boolean(value):
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in ["1", "true", "yes", "on"]
+
+
 def add_part_page_details(part):
     """Prepare small, explicit arrays used by the part Markdown template."""
     taxonomy = []
@@ -151,6 +157,7 @@ def add_part_page_details(part):
 def add_part_preview_actions(part, count):
     """Add one always-run block that makes 300-pixel README previews."""
     actions = []
+    regenerate_pngs = as_boolean(part.get("regenerate_pngs", False))
     main_image = part.get("part_page", {}).get("main_image", {})
     main_png = main_image.get("png", "")
     main_preview = main_image.get("preview", "")
@@ -163,6 +170,7 @@ def add_part_preview_actions(part, count):
                 "maximum_dimension": 300,
                 "allow_upscale": False,
                 "resample": "lanczos",
+                "regenerate_pngs": regenerate_pngs,
             }
         )
 
@@ -179,6 +187,7 @@ def add_part_preview_actions(part, count):
                     "maximum_dimension": 300,
                     "allow_upscale": False,
                     "resample": "lanczos",
+                    "regenerate_pngs": regenerate_pngs,
                 }
             )
 
@@ -195,6 +204,7 @@ def add_part_preview_actions(part, count):
 
 def add_project_actions(part, count):
     """Add the deterministic, always-run source and diagram project actions."""
+    regenerate_pngs = as_boolean(part.get("regenerate_pngs", False))
     project_action_fields = [
         "project_github_user",
         "project_github_repository",
@@ -231,6 +241,7 @@ def add_project_actions(part, count):
         "file_output": "generated_data/src/board_pins.png",
         "description": "Extract KiCad data and rebuild the project README, board SVGs, and pin-labelled board PNG.",
         "parts_directory": "parts",
+        "regenerate_pngs": regenerate_pngs,
         "timeout": "1200",
     }
     for project_action_field in project_action_fields:

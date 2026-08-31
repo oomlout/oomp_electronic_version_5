@@ -15,12 +15,19 @@ from kicad_agents.kicad_processing_agent import process_project
 from kicad_agents.project_summary_agent import generate_project_summary
 
 
+def _as_boolean(value):
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in ["1", "true", "yes", "on"]
+
+
 def compile_project_part(details):
     part_directory = Path(details["directory"]).resolve()
     parts_directory_value = details.get("parts_directory", "parts")
     parts_directory = Path(parts_directory_value).resolve()
     output_directory = part_directory / "generated_data"
     output_directory.mkdir(parents=True, exist_ok=True)
+    regenerate_pngs = _as_boolean(details.get("regenerate_pngs", False))
 
     match_overrides = details.get("project_match_overrides", {})
     match_override_data = {
@@ -42,6 +49,7 @@ def compile_project_part(details):
         project_data=project_data,
         part_metadata=details,
         readme_output=part_directory / "README.md",
+        regenerate_pngs=regenerate_pngs,
     )
     print(f"compiled {summary_data['project']['display_name']}")
     print(f"README: {part_directory / 'README.md'}")

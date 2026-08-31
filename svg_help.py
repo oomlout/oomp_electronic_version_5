@@ -64,6 +64,12 @@ def get_navigation_sort(oobb_style=False):
     return sort
 
 
+def as_boolean(value):
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in ["1", "true", "yes", "on"]
+
+
 def prepare_base_for_print(thing, pos, **kwargs):
     # SVG is a flat 2-D format — there is no Z axis to flip for printing.
     # This stub exists so builder functions that call it remain compatible
@@ -202,7 +208,11 @@ def make_svg_generic(part):
         if "png" in output_formats:
             png_path = os.path.join(folder, f"working_svg{suffix}.png")
             png_dpi = int(svg_detail.get("png_dpi", 150))
-            svg_to_png(svg_path, png_path, dpi=png_dpi)
+            regenerate_pngs = as_boolean(kwargs.get("regenerate_pngs", False))
+            if os.path.isfile(png_path) and not regenerate_pngs:
+                print(f"kept existing png: {png_path}")
+            else:
+                svg_to_png(svg_path, png_path, dpi=png_dpi)
 
         if svg_detail.get("make_a4", True):
             svg_a4.make_a4_sheet(
