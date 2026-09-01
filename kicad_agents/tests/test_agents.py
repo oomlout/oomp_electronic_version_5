@@ -24,6 +24,8 @@ import working_oomp_populate_project
 import working_oomp_populate_mounting_hole
 import working_oomp_populate_diode
 import working_oomp_populate_diode_extra
+import working_oomp_populate_connector
+import working_oomp_populate_connector_extra
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
@@ -112,6 +114,27 @@ class MatchingAgentTests(unittest.TestCase):
         self.assertEqual(extras[part_id]["part_number_manufacturer"], "BAS40T-05")
         self.assertNotIn("part_number_lcsc", extras[part_id])
         self.assertEqual(extras[part_id]["pins"]["pin_3"]["name"], "common_cathode")
+
+    def test_kinghelm_three_pin_socket_has_exact_mpn_and_lcsc_code(self):
+        options = []
+        working_oomp_populate_connector.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "kh_2_54fh_1x3p_h8_5"
+        )
+        self.assertEqual(option["taxonomy_3"], "header")
+        self.assertEqual(option["taxonomy_6"], "3_pin")
+        self.assertEqual(option["taxonomy_7"], "socket")
+        self.assertEqual(option["taxonomy_14"], "kinghelm")
+
+        part_id = "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_connector_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "KH-2.54FH-1X3P-H8.5")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C2932670")
+        self.assertEqual(extras[part_id]["connector_dimensions_mm"]["body_length"], 7.62)
+        self.assertEqual(extras[part_id]["pins"]["pin_3"]["number"], "3")
 
     def test_board_features_and_mounting_holes_are_classified_separately(self):
         index = OompPartIndex(PARTS_DIRECTORY)

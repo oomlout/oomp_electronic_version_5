@@ -4,7 +4,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board.svg)
 
-REV10a is a KiCad project containing 220 extracted component records. The catalogue matcher linked 182 physical placements to OOMP parts.
+REV10a is a KiCad project containing 220 extracted component records. The catalogue matcher linked 188 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -15,8 +15,8 @@ REV10a is a KiCad project containing 220 extracted component records. The catalo
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 10 |
-| Matched OOMP components | 182 |
-| Unmatched physical components | 38 |
+| Matched OOMP components | 188 |
+| Unmatched physical components | 32 |
 | Front-side placements | 205 |
 | Back-side placements | 3 |
 | Project version | `5_rev10a` |
@@ -78,9 +78,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C201, C202, C401, C402, C404, C407 | 6 | electronic capacitor 0402 4 7 micro farad | 4.7uF | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_4_7_micro_farad) |
 | C408 | 1 | electronic capacitor 0402 120 pico farad | 120pF | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_120_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_120_pico_farad) |
 | D401, D601, D602, D603 | 4 | electronic diode switching sod 523f onsemi 1n4148wt | 1N4148WT | `Diode_SMD:D_SOD-523` | [`electronic_diode_switching_sod_523f_onsemi_1n4148wt`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_523f_onsemi_1n4148wt) |
-| D500, D501, D502, D503, D504 | 5 | BAS40T-05 | BAS40T-05 | `Package_TO_SOT_SMD:SOT-523` | unmatched |
+| D500, D501, D502, D503, D504 | 5 | electronic diode schottky dual common cathode sot 523 diodes incorporated bas40t 05 | BAS40T-05 | `Package_TO_SOT_SMD:SOT-523` | [`electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05) |
 | FID1, FID2, FID3, FID4, FID5 | 5 | Fiducial | Fiducial | `Fiducial:Fiducial_1mm_Mask2mm` | unmatched |
-| J201 | 1 | Conn_01x03 | Conn_01x03 | `Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical` | unmatched |
+| J201 | 1 | electronic connector header 2 54 mm pitch through hole 3 pin socket kinghelm kh 2 54fh 1x3p h8 5 | Conn_01x03 | `Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5) |
 | J202 | 1 | electronic connector usb c surface mount 16 pin korean hroparts elec typec31m12 | TYPE-C-31-M-12 | `usb-c:HRO_TYPE-C-31-M-12` | [`electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12) |
 | J301 | 1 | electronic connector header 2 54 mm pitch through hole 10 pin | Conn_01x10 | `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_10_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_10_pin) |
 | J302 | 1 | electronic connector jst sh 1 mm pitch surface mount right angle 9 pin jst sm09b srss tb | Conn_01x09 | `Connector_JST:JST_SH_SM09B-SRSS-TB_1x09-1MP_P1.00mm_Horizontal` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb) |
@@ -159,7 +159,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 38 physical component records are not yet matched to an OOMP part.
+- 32 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/browser_research_queue.md)
@@ -168,7 +168,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src)
 - Copied component source manifest: `project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 39
+- Matched OOMP source parts copied: 41
 
 ## Source files
 

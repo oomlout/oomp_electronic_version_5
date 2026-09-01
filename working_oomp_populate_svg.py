@@ -293,24 +293,47 @@ def add_svg_details(option):
 
     if component_type == "connector" and option.get("taxonomy_3", "") == "header":
         pin_count = _get_number(option.get("taxonomy_6", ""), "pin")
-        option["dimension_reference"] = {
-            "manufacturer": "samtec",
-            "series": "tsw",
-            "sample_part_number": "tsw_110_07_t_s",
-            "datasheet_url": "https://suddendocs.samtec.com/catalog_english/a-tsw-htsw.pdf",
-            "product_url": "https://www.samtec.com/products/tsw-110-07-t-s",
-        }
-        option["header_dimensions_mm"] = {
-            # Samtec TSW-1XX-07 single-row vertical header dimensions.
-            "plastic_length": max(pin_count, 1) * 2.54,
-            "plastic_width": 2.48,
-            "plastic_height": 2.54,
-            "pin_pitch": 2.54,
-            "pin_square": 0.64,
-            "pin_length_total": 10.92,
-            "pin_length_post": 5.84,
-            "pin_length_tail": 2.54,
-        }
+        if option.get("taxonomy_7", "") == "socket":
+            option["dimension_reference"] = {
+                "manufacturer": "kinghelm",
+                "part_number": "kh_2_54fh_1x3p_h8_5",
+                "lcsc": "C2932670",
+                "datasheet_url": "https://www.lcsc.com/datasheet/C2932670.pdf",
+            }
+            option["header_dimensions_mm"] = {
+                # Kinghelm KH-2.54FH-1X3P-H8.5 drawing, three positions.
+                "plastic_length": 7.62,
+                "plastic_width": 2.5,
+                "plastic_height": 8.5,
+                "pin_pitch": 2.54,
+                "pin_square": 0.64,
+                "pin_thickness": 0.4,
+                "recommended_hole_diameter": 1.02,
+                # The drawing's code table identifies the 30 terminal option
+                # as 3.0 mm.  No mating post protrudes above a female socket.
+                "pin_length_total": 11.5,
+                "pin_length_post": 0.0,
+                "pin_length_tail": 3.0,
+            }
+        else:
+            option["dimension_reference"] = {
+                "manufacturer": "samtec",
+                "series": "tsw",
+                "sample_part_number": "tsw_110_07_t_s",
+                "datasheet_url": "https://suddendocs.samtec.com/catalog_english/a-tsw-htsw.pdf",
+                "product_url": "https://www.samtec.com/products/tsw-110-07-t-s",
+            }
+            option["header_dimensions_mm"] = {
+                # Samtec TSW-1XX-07 single-row vertical header dimensions.
+                "plastic_length": max(pin_count, 1) * 2.54,
+                "plastic_width": 2.48,
+                "plastic_height": 2.54,
+                "pin_pitch": 2.54,
+                "pin_square": 0.64,
+                "pin_length_total": 10.92,
+                "pin_length_post": 5.84,
+                "pin_length_tail": 2.54,
+            }
 
     if component_type == "connector" and option.get("taxonomy_3", "") == "usb_a":
         option["connector_dimensions_mm"] = {

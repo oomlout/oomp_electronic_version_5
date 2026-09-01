@@ -1545,7 +1545,7 @@ def _add_square_pin_labels(thing):
             )
         return
 
-    if component_type == "ic" and diagram_pin_positions:
+    if component_type in ["ic", "diode"] and diagram_pin_positions:
         pin_label_map = _get_pin_label_map(thing)
 
         # SOP16 has eight pins on each long edge.  Directly adjacent text would
@@ -1587,6 +1587,12 @@ def _add_square_pin_labels(thing):
                 label_size = 1.45
             if component_size == "tsot_23_5":
                 label_size = 1.9
+            if component_type == "diode":
+                # Small diode packages have very little space between a pad and
+                # the square diagram edge.  A simple character-count rule keeps
+                # long names such as common_cathode visible and easy to adjust.
+                character_count = max(1, len(pin_name))
+                label_size = min(1.8, max(1.0, 17.0 / character_count))
 
             if side == "left":
                 label_pos = [pin_pos[0] - pin_size[0] / 2 - 0.6, pin_pos[1], 0]
@@ -1782,6 +1788,7 @@ def _add_header_dimensions(thing, show_titles=False):
     plastic_height = dimensions.get("plastic_height", 2.54)
     pin_pitch = dimensions.get("pin_pitch", 2.54)
     pin_square = dimensions.get("pin_square", 0.64)
+    pin_thickness = dimensions.get("pin_thickness", pin_square)
     pin_length_total = dimensions.get("pin_length_total", 10.92)
     pin_length_post = dimensions.get("pin_length_post", 5.84)
     pin_length_tail = dimensions.get("pin_length_tail", 2.54)
@@ -1852,21 +1859,27 @@ def _add_header_dimensions(thing, show_titles=False):
         )
 
     # Enlarged square pin detail.
-    pin_detail_pos = [12, 21, 0]
+    pin_detail_pos = [27, 22, 0]
+    pin_detail_height = 5 * pin_thickness / pin_square
     opsvg.se(
         thing,
         shape="rect",
         style="component.pad",
-        size=[5, 5, 0],
+        size=[5, pin_detail_height, 0],
         pos=pin_detail_pos,
     )
+    pin_dimension_title = "pin square"
+    pin_dimension_value = pin_square
+    if pin_thickness != pin_square:
+        pin_dimension_title = "pin"
+        pin_dimension_value = f"{pin_square:g} x {pin_thickness:g}"
     _add_horizontal_dimension(
         thing,
         pin_detail_pos[0] - 2.5,
         pin_detail_pos[0] + 2.5,
-        16.5,
-        _get_dimension_label("pin square", pin_square, show_titles),
-        text_y=13,
+        17.5,
+        _get_dimension_label(pin_dimension_title, pin_dimension_value, show_titles),
+        text_y=14,
     )
 
     # Side view: full pin, plastic body, post, and PCB tail.
@@ -1903,14 +1916,15 @@ def _add_header_dimensions(thing, show_titles=False):
         _get_dimension_label("pin total", pin_length_total, show_titles),
         text_x=35,
     )
-    _add_vertical_dimension(
-        thing,
-        11,
-        plastic_top,
-        side_top,
-        _get_dimension_label("post", pin_length_post, show_titles),
-        text_x=8,
-    )
+    if pin_length_post > 0:
+        _add_vertical_dimension(
+            thing,
+            11,
+            plastic_top,
+            side_top,
+            _get_dimension_label("post", pin_length_post, show_titles),
+            text_x=8,
+        )
     _add_vertical_dimension(
         thing,
         11,

@@ -57,6 +57,7 @@ def main(**kwargs):
                         "D502": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
                         "D503": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
                         "D504": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
+                        "J201": "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5",
                         "J202": "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12",
                         "J301": "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin",
                         "J302": "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb",

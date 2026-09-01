@@ -101,6 +101,31 @@ def main(**kwargs):
                     option["taxonomy_6"] = pin_count
                     options.append(option)
 
+    # Exact vertical female socket used as the purchasable match for the
+    # Bus Pirate J201 generic 1x3 KiCad socket footprint.
+    sockets = [
+        {
+            "type": "header",
+            "pitch": "2_54_mm_pitch",
+            "mounting": "through_hole",
+            "pins": "3_pin",
+            "style": "socket",
+            "manufacturer": "kinghelm",
+            "part_number": "kh_2_54fh_1x3p_h8_5",
+        },
+    ]
+    for socket in sockets:
+        option = {}
+        option["taxonomy_2"] = "connector"
+        option["taxonomy_3"] = socket["type"]
+        option["taxonomy_4"] = socket["pitch"]
+        option["taxonomy_5"] = socket["mounting"]
+        option["taxonomy_6"] = socket["pins"]
+        option["taxonomy_7"] = socket["style"]
+        option["taxonomy_14"] = socket["manufacturer"]
+        option["taxonomy_15"] = socket["part_number"]
+        options.append(option)
+
     connector_types = ["usb_a"]
     mounting_types = ["surface_mount"]
     pin_counts = ["4_pin"]

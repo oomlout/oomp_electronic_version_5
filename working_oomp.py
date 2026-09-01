@@ -578,7 +578,11 @@ def create_generic(**kwargs):
     # Keep filtered population runs small enough for one component family.
     # The shared OOMP helper reads this simple string before writing files.
     oomp.add_part_filter = kwargs.get("filter", "")
-    oomp.add_parts(parts, **kwargs)
+    add_parts_kwargs = copy.deepcopy(kwargs)
+    # filter controls which records are written; it is not component data.
+    # Removing it here prevents the shared helper from copying it into YAML.
+    add_parts_kwargs.pop("filter", None)
+    oomp.add_parts(parts, **add_parts_kwargs)
 
     import time
     time.sleep(2)
