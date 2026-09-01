@@ -21,7 +21,7 @@ def main(**kwargs):
     resistance_values.append(10000000)
 
     # Additional project values can be added directly to this simple list.
-    additional_resistance_values = [5100, 510000]
+    additional_resistance_values = [200, 510, 5100, 102000, 133000, 510000]
     for additional_resistance_value in additional_resistance_values:
         resistance_values.append(additional_resistance_value)
 
@@ -33,6 +33,19 @@ def main(**kwargs):
             option["taxonomy_4"] = f"{resistance_value}_ohm"
 
             options.append(option)
+
+    # The Bus Pirate current shunt is a low-value 2512 resistor.  Keep this
+    # separate from the broad value grid so we do not create hundreds of
+    # unlikely 2512 variants.
+    low_value_resistors = [
+        ["2512", "0_2_ohm"],
+    ]
+    for low_value_resistor in low_value_resistors:
+        option = {}
+        option["taxonomy_2"] = "resistor"
+        option["taxonomy_3"] = low_value_resistor[0]
+        option["taxonomy_4"] = low_value_resistor[1]
+        options.append(option)
 
 
 if __name__ == "__main__":

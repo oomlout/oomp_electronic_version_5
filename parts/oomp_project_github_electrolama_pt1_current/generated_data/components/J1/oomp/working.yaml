@@ -73,55 +73,86 @@ name_space: electronic connector header 2 54 mm pitch through hole 6 pin
 name_upper: ELECTRONIC CONNECTOR HEADER 2 54 MM PITCH THROUGH HOLE 6 PIN
 oomlout_ai_roboclick_1:
     actions:
+    -   command: run_python
+        description: Generate this component's standard SVG and PNG diagrams with
+            working_svg.py.
+        file_output: working_svg_assembly.svg
+        file_python: kicad_agents/component_svg_action.py
+        part_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
+        regenerate_pngs: false
+        timeout: '600'
     -   allow_upscale: false
         command: image_resize
-        file_destination: working_svg_square_pins_300.png
-        file_source: working_svg_square_pins.png
+        file_destination: working_svg_top_300.png
+        file_source: working_svg_top.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_outline_300.png
         file_source: working_svg_outline.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_part_id_300.png
         file_source: working_svg_part_id.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_md5_6_alpha_300.png
         file_source: working_svg_md5_6_alpha.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_bip_39_3_word_300.png
         file_source: working_svg_bip_39_3_word.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_square_300.png
         file_source: working_svg_square.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_dimensioned_300.png
         file_source: working_svg_dimensioned.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_dimensioned_titles_300.png
         file_source: working_svg_dimensioned_titles.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
-    description: Build proportional 300-pixel previews for the generated part README.
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_bottom_300.png
+        file_source: working_svg_bottom.png
+        maximum_dimension: 300
+        regenerate_pngs: false
+        resample: lanczos
+    -   allow_upscale: false
+        command: image_resize
+        file_destination: working_svg_side_300.png
+        file_source: working_svg_side.png
+        maximum_dimension: 300
+        regenerate_pngs: false
+        resample: lanczos
+    description: Build component diagrams and proportional 300-pixel README previews
+        with deterministic Python actions.
     file_test: ''
     retries_until_complete: 0
 oomlout_ai_roboclick_2:
@@ -157,56 +188,86 @@ oomlout_ai_roboclick_2:
             name_upper: ELECTRONIC CONNECTOR HEADER 2 54 MM PITCH THROUGH HOLE 6 PIN
             oomlout_ai_roboclick_1:
                 actions:
+                -   command: run_python
+                    description: Generate this component's standard SVG and PNG diagrams
+                        with working_svg.py.
+                    file_output: working_svg_assembly.svg
+                    file_python: kicad_agents/component_svg_action.py
+                    part_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
+                    regenerate_pngs: false
+                    timeout: '600'
                 -   allow_upscale: false
                     command: image_resize
-                    file_destination: working_svg_square_pins_300.png
-                    file_source: working_svg_square_pins.png
+                    file_destination: working_svg_top_300.png
+                    file_source: working_svg_top.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_outline_300.png
                     file_source: working_svg_outline.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_part_id_300.png
                     file_source: working_svg_part_id.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_md5_6_alpha_300.png
                     file_source: working_svg_md5_6_alpha.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_bip_39_3_word_300.png
                     file_source: working_svg_bip_39_3_word.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_300.png
                     file_source: working_svg_square.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_300.png
                     file_source: working_svg_dimensioned.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_titles_300.png
                     file_source: working_svg_dimensioned_titles.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
-                description: Build proportional 300-pixel previews for the generated
-                    part README.
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_bottom_300.png
+                    file_source: working_svg_bottom.png
+                    maximum_dimension: 300
+                    regenerate_pngs: false
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_side_300.png
+                    file_source: working_svg_side.png
+                    maximum_dimension: 300
+                    regenerate_pngs: false
+                    resample: lanczos
+                description: Build component diagrams and proportional 300-pixel README
+                    previews with deterministic Python actions.
                 file_test: ''
                 retries_until_complete: 0
             part_id: J1
@@ -244,6 +305,18 @@ oomlout_ai_roboclick_2:
                     preview: working_svg_dimensioned_titles_300.png
                     svg: working_svg_dimensioned_titles.svg
                     title: Dimensions with labels
+                -   png: working_svg_top.png
+                    preview: working_svg_top_300.png
+                    svg: working_svg_top.svg
+                    title: Top view
+                -   png: working_svg_bottom.png
+                    preview: working_svg_bottom_300.png
+                    svg: working_svg_bottom.svg
+                    title: Bottom view
+                -   png: working_svg_side.png
+                    preview: working_svg_side_300.png
+                    svg: working_svg_side.svg
+                    title: Side view
                 file_previews:
                 -   preview: working_svg_square_pins_300.png
                     title: Pinout drawing
@@ -261,13 +334,19 @@ oomlout_ai_roboclick_2:
                     title: Dimensions
                 -   preview: working_svg_dimensioned_titles_300.png
                     title: Dimensions with labels
+                -   preview: working_svg_top_300.png
+                    title: Top view
+                -   preview: working_svg_bottom_300.png
+                    title: Bottom view
+                -   preview: working_svg_side_300.png
+                    title: Side view
                 has_datasheet: false
                 identifiers: []
                 main_image:
-                    png: working_svg_square_pins.png
-                    preview: working_svg_square_pins_300.png
-                    svg: working_svg_square_pins.svg
-                    title: Pinout
+                    png: working_svg_top.png
+                    preview: working_svg_top_300.png
+                    svg: working_svg_top.svg
+                    title: Top view
                 oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
                 pins: []
                 quick_facts:
@@ -297,6 +376,7 @@ oomlout_ai_roboclick_2:
                     value: through_hole
                 -   level: 6
                     value: 6_pin
+            regenerate_pngs: false
             svg_details:
             -   filename_extra: assembly
                 make_a4: false
@@ -386,6 +466,33 @@ oomlout_ai_roboclick_2:
                 stylesheet: style_oomp
                 svg_name: oomp_component_dimensioned_titles
                 write_yaml: false
+            -   filename_extra: top
+                make_a4: false
+                output_formats:
+                - svg
+                - png
+                padding: 0
+                stylesheet: style_oomp
+                svg_name: oomp_component_top
+                write_yaml: false
+            -   filename_extra: bottom
+                make_a4: false
+                output_formats:
+                - svg
+                - png
+                padding: 0
+                stylesheet: style_oomp
+                svg_name: oomp_component_bottom
+                write_yaml: false
+            -   filename_extra: side
+                make_a4: false
+                output_formats:
+                - svg
+                - png
+                padding: 0
+                stylesheet: style_oomp
+                svg_name: oomp_component_side
+                write_yaml: false
             taxonomy_1: electronic
             taxonomy_10: ''
             taxonomy_11: ''
@@ -442,56 +549,86 @@ oomlout_ai_roboclick_3:
             name_upper: ELECTRONIC CONNECTOR HEADER 2 54 MM PITCH THROUGH HOLE 6 PIN
             oomlout_ai_roboclick_1:
                 actions:
+                -   command: run_python
+                    description: Generate this component's standard SVG and PNG diagrams
+                        with working_svg.py.
+                    file_output: working_svg_assembly.svg
+                    file_python: kicad_agents/component_svg_action.py
+                    part_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
+                    regenerate_pngs: false
+                    timeout: '600'
                 -   allow_upscale: false
                     command: image_resize
-                    file_destination: working_svg_square_pins_300.png
-                    file_source: working_svg_square_pins.png
+                    file_destination: working_svg_top_300.png
+                    file_source: working_svg_top.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_outline_300.png
                     file_source: working_svg_outline.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_part_id_300.png
                     file_source: working_svg_part_id.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_md5_6_alpha_300.png
                     file_source: working_svg_md5_6_alpha.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_bip_39_3_word_300.png
                     file_source: working_svg_bip_39_3_word.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_300.png
                     file_source: working_svg_square.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_300.png
                     file_source: working_svg_dimensioned.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_titles_300.png
                     file_source: working_svg_dimensioned_titles.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
-                description: Build proportional 300-pixel previews for the generated
-                    part README.
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_bottom_300.png
+                    file_source: working_svg_bottom.png
+                    maximum_dimension: 300
+                    regenerate_pngs: false
+                    resample: lanczos
+                -   allow_upscale: false
+                    command: image_resize
+                    file_destination: working_svg_side_300.png
+                    file_source: working_svg_side.png
+                    maximum_dimension: 300
+                    regenerate_pngs: false
+                    resample: lanczos
+                description: Build component diagrams and proportional 300-pixel README
+                    previews with deterministic Python actions.
                 file_test: ''
                 retries_until_complete: 0
             oomlout_ai_roboclick_2:
@@ -530,56 +667,87 @@ oomlout_ai_roboclick_3:
                             HOLE 6 PIN
                         oomlout_ai_roboclick_1:
                             actions:
+                            -   command: run_python
+                                description: Generate this component's standard SVG
+                                    and PNG diagrams with working_svg.py.
+                                file_output: working_svg_assembly.svg
+                                file_python: kicad_agents/component_svg_action.py
+                                part_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
+                                regenerate_pngs: false
+                                timeout: '600'
                             -   allow_upscale: false
                                 command: image_resize
-                                file_destination: working_svg_square_pins_300.png
-                                file_source: working_svg_square_pins.png
+                                file_destination: working_svg_top_300.png
+                                file_source: working_svg_top.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_outline_300.png
                                 file_source: working_svg_outline.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_part_id_300.png
                                 file_source: working_svg_part_id.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_md5_6_alpha_300.png
                                 file_source: working_svg_md5_6_alpha.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_bip_39_3_word_300.png
                                 file_source: working_svg_bip_39_3_word.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_square_300.png
                                 file_source: working_svg_square.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_dimensioned_300.png
                                 file_source: working_svg_dimensioned.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_dimensioned_titles_300.png
                                 file_source: working_svg_dimensioned_titles.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
-                            description: Build proportional 300-pixel previews for
-                                the generated part README.
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_bottom_300.png
+                                file_source: working_svg_bottom.png
+                                maximum_dimension: 300
+                                regenerate_pngs: false
+                                resample: lanczos
+                            -   allow_upscale: false
+                                command: image_resize
+                                file_destination: working_svg_side_300.png
+                                file_source: working_svg_side.png
+                                maximum_dimension: 300
+                                regenerate_pngs: false
+                                resample: lanczos
+                            description: Build component diagrams and proportional
+                                300-pixel README previews with deterministic Python
+                                actions.
                             file_test: ''
                             retries_until_complete: 0
                         part_id: J1
@@ -617,6 +785,18 @@ oomlout_ai_roboclick_3:
                                 preview: working_svg_dimensioned_titles_300.png
                                 svg: working_svg_dimensioned_titles.svg
                                 title: Dimensions with labels
+                            -   png: working_svg_top.png
+                                preview: working_svg_top_300.png
+                                svg: working_svg_top.svg
+                                title: Top view
+                            -   png: working_svg_bottom.png
+                                preview: working_svg_bottom_300.png
+                                svg: working_svg_bottom.svg
+                                title: Bottom view
+                            -   png: working_svg_side.png
+                                preview: working_svg_side_300.png
+                                svg: working_svg_side.svg
+                                title: Side view
                             file_previews:
                             -   preview: working_svg_square_pins_300.png
                                 title: Pinout drawing
@@ -634,13 +814,19 @@ oomlout_ai_roboclick_3:
                                 title: Dimensions
                             -   preview: working_svg_dimensioned_titles_300.png
                                 title: Dimensions with labels
+                            -   preview: working_svg_top_300.png
+                                title: Top view
+                            -   preview: working_svg_bottom_300.png
+                                title: Bottom view
+                            -   preview: working_svg_side_300.png
+                                title: Side view
                             has_datasheet: false
                             identifiers: []
                             main_image:
-                                png: working_svg_square_pins.png
-                                preview: working_svg_square_pins_300.png
-                                svg: working_svg_square_pins.svg
-                                title: Pinout
+                                png: working_svg_top.png
+                                preview: working_svg_top_300.png
+                                svg: working_svg_top.svg
+                                title: Top view
                             oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
                             pins: []
                             quick_facts:
@@ -670,6 +856,7 @@ oomlout_ai_roboclick_3:
                                 value: through_hole
                             -   level: 6
                                 value: 6_pin
+                        regenerate_pngs: false
                         svg_details:
                         -   filename_extra: assembly
                             make_a4: false
@@ -759,6 +946,33 @@ oomlout_ai_roboclick_3:
                             stylesheet: style_oomp
                             svg_name: oomp_component_dimensioned_titles
                             write_yaml: false
+                        -   filename_extra: top
+                            make_a4: false
+                            output_formats:
+                            - svg
+                            - png
+                            padding: 0
+                            stylesheet: style_oomp
+                            svg_name: oomp_component_top
+                            write_yaml: false
+                        -   filename_extra: bottom
+                            make_a4: false
+                            output_formats:
+                            - svg
+                            - png
+                            padding: 0
+                            stylesheet: style_oomp
+                            svg_name: oomp_component_bottom
+                            write_yaml: false
+                        -   filename_extra: side
+                            make_a4: false
+                            output_formats:
+                            - svg
+                            - png
+                            padding: 0
+                            stylesheet: style_oomp
+                            svg_name: oomp_component_side
+                            write_yaml: false
                         taxonomy_1: electronic
                         taxonomy_10: ''
                         taxonomy_11: ''
@@ -817,6 +1031,18 @@ oomlout_ai_roboclick_3:
                     preview: working_svg_dimensioned_titles_300.png
                     svg: working_svg_dimensioned_titles.svg
                     title: Dimensions with labels
+                -   png: working_svg_top.png
+                    preview: working_svg_top_300.png
+                    svg: working_svg_top.svg
+                    title: Top view
+                -   png: working_svg_bottom.png
+                    preview: working_svg_bottom_300.png
+                    svg: working_svg_bottom.svg
+                    title: Bottom view
+                -   png: working_svg_side.png
+                    preview: working_svg_side_300.png
+                    svg: working_svg_side.svg
+                    title: Side view
                 file_previews:
                 -   preview: working_svg_square_pins_300.png
                     title: Pinout drawing
@@ -834,13 +1060,19 @@ oomlout_ai_roboclick_3:
                     title: Dimensions
                 -   preview: working_svg_dimensioned_titles_300.png
                     title: Dimensions with labels
+                -   preview: working_svg_top_300.png
+                    title: Top view
+                -   preview: working_svg_bottom_300.png
+                    title: Bottom view
+                -   preview: working_svg_side_300.png
+                    title: Side view
                 has_datasheet: false
                 identifiers: []
                 main_image:
-                    png: working_svg_square_pins.png
-                    preview: working_svg_square_pins_300.png
-                    svg: working_svg_square_pins.svg
-                    title: Pinout
+                    png: working_svg_top.png
+                    preview: working_svg_top_300.png
+                    svg: working_svg_top.svg
+                    title: Top view
                 oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
                 pins: []
                 quick_facts:
@@ -870,6 +1102,7 @@ oomlout_ai_roboclick_3:
                     value: through_hole
                 -   level: 6
                     value: 6_pin
+            regenerate_pngs: false
             svg_details:
             -   filename_extra: assembly
                 make_a4: false
@@ -959,6 +1192,33 @@ oomlout_ai_roboclick_3:
                 stylesheet: style_oomp
                 svg_name: oomp_component_dimensioned_titles
                 write_yaml: false
+            -   filename_extra: top
+                make_a4: false
+                output_formats:
+                - svg
+                - png
+                padding: 0
+                stylesheet: style_oomp
+                svg_name: oomp_component_top
+                write_yaml: false
+            -   filename_extra: bottom
+                make_a4: false
+                output_formats:
+                - svg
+                - png
+                padding: 0
+                stylesheet: style_oomp
+                svg_name: oomp_component_bottom
+                write_yaml: false
+            -   filename_extra: side
+                make_a4: false
+                output_formats:
+                - svg
+                - png
+                padding: 0
+                stylesheet: style_oomp
+                svg_name: oomp_component_side
+                write_yaml: false
             taxonomy_1: electronic
             taxonomy_10: ''
             taxonomy_11: ''
@@ -1018,6 +1278,18 @@ part_page:
         preview: working_svg_dimensioned_titles_300.png
         svg: working_svg_dimensioned_titles.svg
         title: Dimensions with labels
+    -   png: working_svg_top.png
+        preview: working_svg_top_300.png
+        svg: working_svg_top.svg
+        title: Top view
+    -   png: working_svg_bottom.png
+        preview: working_svg_bottom_300.png
+        svg: working_svg_bottom.svg
+        title: Bottom view
+    -   png: working_svg_side.png
+        preview: working_svg_side_300.png
+        svg: working_svg_side.svg
+        title: Side view
     file_previews:
     -   preview: working_svg_square_pins_300.png
         title: Pinout drawing
@@ -1035,13 +1307,19 @@ part_page:
         title: Dimensions
     -   preview: working_svg_dimensioned_titles_300.png
         title: Dimensions with labels
+    -   preview: working_svg_top_300.png
+        title: Top view
+    -   preview: working_svg_bottom_300.png
+        title: Bottom view
+    -   preview: working_svg_side_300.png
+        title: Side view
     has_datasheet: false
     identifiers: []
     main_image:
-        png: working_svg_square_pins.png
-        preview: working_svg_square_pins_300.png
-        svg: working_svg_square_pins.svg
-        title: Pinout
+        png: working_svg_top.png
+        preview: working_svg_top_300.png
+        svg: working_svg_top.svg
+        title: Top view
     oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
     pins: []
     quick_facts:
@@ -1070,6 +1348,7 @@ part_page:
         value: through_hole
     -   level: 6
         value: 6_pin
+regenerate_pngs: false
 svg_details:
 -   filename_extra: assembly
     make_a4: false
@@ -1158,6 +1437,33 @@ svg_details:
     padding: 0
     stylesheet: style_oomp
     svg_name: oomp_component_dimensioned_titles
+    write_yaml: false
+-   filename_extra: top
+    make_a4: false
+    output_formats:
+    - svg
+    - png
+    padding: 0
+    stylesheet: style_oomp
+    svg_name: oomp_component_top
+    write_yaml: false
+-   filename_extra: bottom
+    make_a4: false
+    output_formats:
+    - svg
+    - png
+    padding: 0
+    stylesheet: style_oomp
+    svg_name: oomp_component_bottom
+    write_yaml: false
+-   filename_extra: side
+    make_a4: false
+    output_formats:
+    - svg
+    - png
+    padding: 0
+    stylesheet: style_oomp
+    svg_name: oomp_component_side
     write_yaml: false
 taxonomy_1: electronic
 taxonomy_10: ''

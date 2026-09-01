@@ -273,12 +273,21 @@ def svg_to_png(svg_path, png_path, dpi=150):
 
     # OOMP component renders use a deliberate white page.  Setting the Cairo
     # background also removes the transparent padding around cropped SVGs.
-    cairosvg.svg2png(
-        url=svg_path,
-        write_to=png_path,
-        dpi=dpi,
-        background_color="#FFFFFF",
-    )
+    import time
+
+    for attempt_number in range(5):
+        try:
+            cairosvg.svg2png(
+                url=svg_path,
+                write_to=png_path,
+                dpi=dpi,
+                background_color="#FFFFFF",
+            )
+            break
+        except OSError:
+            if attempt_number == 4:
+                raise
+            time.sleep(0.1)
     # Cairo can use coloured sub-pixel antialiasing around otherwise black
     # text.  Flatten to grayscale so the PNG contains no accidental hues.
     try:
@@ -286,7 +295,16 @@ def svg_to_png(svg_path, png_path, dpi=150):
 
         with Image.open(png_path) as rendered_image:
             monochrome_image = rendered_image.convert("L").convert("RGB")
-            monochrome_image.save(png_path)
+        # Close the source file before overwriting it.  Windows will
+        # intermittently reject a save to a PNG that Pillow still has open.
+        for attempt_number in range(10):
+            try:
+                monochrome_image.save(png_path)
+                break
+            except OSError:
+                if attempt_number == 9:
+                    raise
+                time.sleep(0.1)
     except ImportError:
         pass
     print(f"saved png: {png_path}")

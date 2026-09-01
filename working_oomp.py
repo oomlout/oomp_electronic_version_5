@@ -68,6 +68,15 @@ def add_part_page_details(part):
         {"title": "Dimensions", "svg": "working_svg_dimensioned.svg", "png": "working_svg_dimensioned.png"},
         {"title": "Dimensions with labels", "svg": "working_svg_dimensioned_titles.svg", "png": "working_svg_dimensioned_titles.png"},
     ]
+    is_connector = part.get("taxonomy_2", "") == "connector"
+    if is_connector:
+        connector_view_diagrams = [
+            {"title": "Top view", "svg": "working_svg_top.svg", "png": "working_svg_top.png"},
+            {"title": "Bottom view", "svg": "working_svg_bottom.svg", "png": "working_svg_bottom.png"},
+            {"title": "Side view", "svg": "working_svg_side.svg", "png": "working_svg_side.png"},
+        ]
+        for connector_view_diagram in connector_view_diagrams:
+            diagrams.append(connector_view_diagram)
 
     for diagram in diagrams:
         png_filename = diagram.get("png", "")
@@ -91,6 +100,8 @@ def add_part_page_details(part):
 
     component_type = str(part.get("taxonomy_2", "component")).replace("_", " ")
     package_name = str(part.get("taxonomy_3", "")).replace("_", " ")
+    if part.get("taxonomy_2", "") == "diode":
+        package_name = str(part.get("taxonomy_4", "")).replace("_", " ")
     dimensions = part.get("dimensions_mm", {})
     dimension_text = ""
     if isinstance(dimensions, dict):
@@ -99,8 +110,9 @@ def add_part_page_details(part):
         if length != "" and width != "":
             dimension_text = f"{length} × {width} mm"
 
+    taxonomy_family = str(part.get("taxonomy_1", "electronic")).replace("_", " ")
     summary_sentences = [
-        f"{part.get('name_short', part.get('name_proper', 'This part'))} is an OOMP electronic {component_type} definition."
+        f"{part.get('name_short', part.get('name_proper', 'This part'))} is an OOMP {taxonomy_family} {component_type} definition."
     ]
     if package_name != "":
         summary_sentences.append(f"It uses the {package_name} package or form factor.")
@@ -133,6 +145,27 @@ def add_part_page_details(part):
             if file_destination.lower().endswith("datasheet.pdf"):
                 has_datasheet = True
 
+    main_image = {
+        "title": "Pinout",
+        "svg": "working_svg_square_pins.svg",
+        "png": "working_svg_square_pins.png",
+        "preview": "working_svg_square_pins_300.png",
+    }
+    if is_connector:
+        main_image = {
+            "title": "Top view",
+            "svg": "working_svg_top.svg",
+            "png": "working_svg_top.png",
+            "preview": "working_svg_top_300.png",
+        }
+    if part.get("taxonomy_2", "") == "mounting_hole":
+        main_image = {
+            "title": "Mounting hole",
+            "svg": "working_svg_outline.svg",
+            "png": "working_svg_outline.png",
+            "preview": "working_svg_outline_300.png",
+        }
+
     part["part_page"] = {
         "oomp_id": part_name,
         "taxonomy": taxonomy,
@@ -140,12 +173,7 @@ def add_part_page_details(part):
         "identifiers": identifiers,
         "diagrams": diagrams,
         "file_previews": file_previews,
-        "main_image": {
-            "title": "Pinout",
-            "svg": "working_svg_square_pins.svg",
-            "png": "working_svg_square_pins.png",
-            "preview": "working_svg_square_pins_300.png",
-        },
+        "main_image": main_image,
         "summary": " ".join(summary_sentences),
         "quick_facts": quick_facts,
         "has_datasheet": has_datasheet,
@@ -154,9 +182,36 @@ def add_part_page_details(part):
     return part
 
 
-def add_part_preview_actions(part, count):
-    """Add one always-run block that makes 300-pixel README previews."""
+def add_part_build_actions(part, count):
+    """Add the deterministic SVG, PNG-preview, and README preparation block."""
     actions = []
+    file_copies = part.get("file_copy", [])
+    if isinstance(file_copies, list):
+        for file_copy in file_copies:
+            if not isinstance(file_copy, dict):
+                continue
+            actions.append(
+                {
+                    "command": "file_copy",
+                    "file_source": file_copy.get("file_source", ""),
+                    "file_destination": file_copy.get("file_destination", ""),
+                    "exit_on_missing": True,
+                    "delete_before_copy": True,
+                }
+            )
+
+    actions.append(
+        {
+            "command": "run_python",
+            "file_python": "kicad_agents/component_svg_action.py",
+            "file_output": "working_svg_assembly.svg",
+            "description": "Generate this component's standard SVG and PNG diagrams with working_svg.py.",
+            "part_id": part.get("name", ""),
+            "regenerate_pngs": as_boolean(part.get("regenerate_pngs", False)),
+            "timeout": "600",
+        }
+    )
+    used_destinations = []
     regenerate_pngs = as_boolean(part.get("regenerate_pngs", False))
     main_image = part.get("part_page", {}).get("main_image", {})
     main_png = main_image.get("png", "")
@@ -173,12 +228,13 @@ def add_part_preview_actions(part, count):
                 "regenerate_pngs": regenerate_pngs,
             }
         )
+        used_destinations.append(main_preview)
 
     diagrams = part.get("part_page", {}).get("diagrams", [])
     for diagram in diagrams:
         png_filename = diagram.get("png", "")
         preview_filename = diagram.get("preview", "")
-        if png_filename != "" and preview_filename != "":
+        if png_filename != "" and preview_filename != "" and preview_filename not in used_destinations:
             actions.append(
                 {
                     "command": "image_resize",
@@ -190,12 +246,13 @@ def add_part_preview_actions(part, count):
                     "regenerate_pngs": regenerate_pngs,
                 }
             )
+            used_destinations.append(preview_filename)
 
     if len(actions) > 0:
         count += 1
         part[f"oomlout_ai_roboclick_{count}"] = {
             "actions": actions,
-            "description": "Build proportional 300-pixel previews for the generated part README.",
+            "description": "Build component diagrams and proportional 300-pixel README previews with deterministic Python actions.",
             "file_test": "",
             "retries_until_complete": 0,
         }
@@ -211,6 +268,7 @@ def add_project_actions(part, count):
         "project_github_url",
         "project_git_url",
         "project_git_ref",
+        "project_sparse_checkout",
         "project_version",
         "project_file_folder",
         "project_file_basename",
@@ -239,7 +297,7 @@ def add_project_actions(part, count):
         "command": "run_python",
         "file_python": "kicad_agents/project_readme_action.py",
         "file_output": "generated_data/src/board_pins.png",
-        "description": "Extract KiCad data and rebuild the project README, board SVGs, and pin-labelled board PNG.",
+        "description": "Extract KiCad data and rebuild the project README, board SVGs, pin-labelled PNG, and mechanical layer.",
         "parts_directory": "parts",
         "regenerate_pngs": regenerate_pngs,
         "timeout": "1200",
@@ -247,9 +305,30 @@ def add_project_actions(part, count):
     for project_action_field in project_action_fields:
         project_compile_action[project_action_field] = copy.deepcopy(part.get(project_action_field, ""))
 
+    board_preview_actions = []
+    board_png_names = [
+        "board",
+        "board_pins",
+        "board_bottom",
+        "board_pins_bottom",
+        "board_mechanical",
+    ]
+    for board_png_name in board_png_names:
+        board_preview_actions.append(
+            {
+                "command": "image_resize",
+                "file_source": f"generated_data/src/{board_png_name}.png",
+                "file_destination": f"generated_data/src/{board_png_name}_300.png",
+                "maximum_dimension": 300,
+                "allow_upscale": False,
+                "resample": "lanczos",
+                "regenerate_pngs": regenerate_pngs,
+            }
+        )
+
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
-        "actions": [project_compile_action],
+        "actions": [project_compile_action] + board_preview_actions,
         "file_test": "",
         "retries_until_complete": 0,
     }
@@ -299,6 +378,7 @@ def create_generic(**kwargs):
         current = things[thing]                
         #name stuff        
         part = copy.deepcopy(current)
+        part["regenerate_pngs"] = as_boolean(kwargs.get("regenerate_pngs", False))
         
         part["name"] = thing
         part["name_space"] = thing.replace("_", " ")
@@ -350,9 +430,10 @@ def create_generic(**kwargs):
             oomp_helper.add_icon(part=part, count=count, mode_ai_wait=mode_ai_wait, icon_detail=icon_detail)
 
         
-        #image chibi
-        test_image_chibi = True
-        if test_image_chibi:
+        # Optional illustrative artwork is deliberately opt-in.  Core OOMP
+        # records, diagrams, previews, and documentation never require an LLM.
+        test_image_chibi = as_boolean(kwargs.get("enable_ai_assets", False))
+        if test_image_chibi and not is_project_part:
             content_string = part.get("content_string", "")    
             count += 1
             chibi_detail = f"make {name_proper} cute"
@@ -378,9 +459,8 @@ def create_generic(**kwargs):
 
         #jinja_template replace
         if not is_project_part:
-            count = add_part_preview_actions(part, count)
+            count = add_part_build_actions(part, count)
             templates = []
-            templates.append({"template_folder": "default"})
             templates.append(
                 {
                     "template_folder": "source_file\\template_jinja\\oomp_category\\template_jinja_markdown",
@@ -495,23 +575,10 @@ def create_generic(**kwargs):
 
 
 
+    # Keep filtered population runs small enough for one component family.
+    # The shared OOMP helper reads this simple string before writing files.
+    oomp.add_part_filter = kwargs.get("filter", "")
     oomp.add_parts(parts, **kwargs)
-
-    #dd file copy
-    for part in parts:
-        file_copies = part.get("file_copy", [])
-        if file_copies != []:
-            for file_copy in file_copies:
-                directory = part.get("directory", "")
-                if directory != "":
-                    file_source = f'{file_copy["file_source"]}'
-                    file_destination = f'{directory}\\{file_copy["file_destination"]}'
-                    import shutil
-                    print(f"      copying {file_source} to {file_destination}")
-                    try:
-                        shutil.copyfile(file_source, file_destination)
-                    except Exception as e:
-                        print(f"      error copying file: {e}") 
 
     import time
     time.sleep(2)

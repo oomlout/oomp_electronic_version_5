@@ -21,6 +21,29 @@ def main(**kwargs):
                         option["taxonomy_15"] = part_number
                         options.append(option)
 
+    # Exact Bus Pirate 5 devices.  Keep each row independent so package,
+    # function, manufacturer, or suffix changes are easy to edit later.
+    bus_pirate_ics = [
+        ["tssop_16", "logic", "serial_in_parallel_out_shift_register", "wuxi_i_core_elec", "aip74hc595ta16_tr"],
+        ["tssop_20", "logic", "octal_bus_transceiver", "wuxi_i_core_elec", "aip74hct245ta20_tr"],
+        ["sot_363_6", "logic", "single_bit_dual_supply_transceiver", "wuxi_i_core_elec", "aip74lvc1t45gc363_tr"],
+        ["sot_23_5", "power_management", "linear_voltage_regulator_3_3_volt", "diodes", "ap2127k_3_3trg1"],
+        ["sot_89_3", "power_management", "linear_voltage_regulator_3_3_volt", "microne", "me6211a33pg_n"],
+        ["sop_8_5_28_mm_x_5_23_mm", "memory", "spi_nor_flash_128_mbit", "winbond", "w25q128jvsiq"],
+        ["updfn_8", "memory", "spi_nand_flash_1_gbit", "micron", "mt29f1g01abafdwb"],
+        ["qfn_56_7_mm_x_7_mm", "microcontroller", "dual_core_arm_cortex_m0_plus", "raspberry_pi", "rp2040"],
+        ["tssop_24", "logic", "16_channel_analog_multiplexer", "nexperia", "74hct4067pw118"],
+    ]
+    for bus_pirate_ic in bus_pirate_ics:
+        option = {}
+        option["taxonomy_2"] = "ic"
+        option["taxonomy_3"] = bus_pirate_ic[0]
+        option["taxonomy_4"] = bus_pirate_ic[1]
+        option["taxonomy_5"] = bus_pirate_ic[2]
+        option["taxonomy_14"] = bus_pirate_ic[3]
+        option["taxonomy_15"] = bus_pirate_ic[4]
+        options.append(option)
+
     packages = ["sot_23_6"]
     ic_types = ["logic"]
     functions = ["configurable_multi_function_gate"]

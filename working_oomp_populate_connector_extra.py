@@ -38,6 +38,28 @@ def main(**kwargs):
             }
         ]
 
+    current = "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb"
+    if current in extras_dict:
+        extras_dict[current]["part_number_manufacturer"] = "SM09B-SRSS-TB"
+        extras_dict[current]["part_number_lcsc"] = "C160408"
+        extras_dict[current]["pins"] = {}
+        connector_pins = [
+            ["1", "pin_1"], ["2", "pin_2"], ["3", "pin_3"],
+            ["4", "pin_4"], ["5", "pin_5"], ["6", "pin_6"],
+            ["7", "pin_7"], ["8", "pin_8"], ["9", "gnd"],
+        ]
+        for pin_index in range(len(connector_pins)):
+            pin = connector_pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0], "name": pin[1], "type": "signal"
+            }
+        extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
     current = "electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "912-121A2023S10100"

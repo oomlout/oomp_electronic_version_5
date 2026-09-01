@@ -116,6 +116,7 @@ def get_part_id_default(component_type):
         "ferrite_bead": "FB1",
         "ic": "U1",
         "led": "D1",
+        "mounting_hole": "MH1",
         "prototyping": "BB1",
         "resistor": "R1",
         "wire": "W1",
@@ -173,6 +174,7 @@ def get_dimensions_mm(option):
         "0805": [2.0, 1.25],
         "1010": [1.0, 1.0],
         "1206": [3.2, 1.6],
+        "2512": [6.3, 3.2],
         "3225": [3.2, 2.5],
         "5050": [5.0, 5.0],
     }
@@ -229,6 +231,18 @@ def get_dimensions_mm(option):
         "sop_16": [10.0, 3.9],
         "sot_23_6": [2.9, 1.6],
         "tsot_23_5": [2.9, 1.6],
+        "sot_23_5": [2.9, 1.6],
+        "sot_89_3": [4.5, 2.5],
+        "sot_363_6": [2.0, 1.25],
+        "tssop_14": [5.0, 4.4],
+        "tssop_16": [5.0, 4.4],
+        "tssop_20": [6.5, 4.4],
+        "tssop_24": [7.8, 4.4],
+        "sop_8_5_28_mm_x_5_23_mm": [5.28, 5.23],
+        "updfn_8": [6.0, 5.0],
+        "qfn_56_7_mm_x_7_mm": [7.0, 7.0],
+        "sod_523f": [1.6, 0.8],
+        "sot_523": [1.6, 0.8],
     }
     package = size
     if component_type == "diode":
@@ -236,6 +250,9 @@ def get_dimensions_mm(option):
     if package in package_dimensions:
         values = package_dimensions[package]
         return {"length": values[0], "width": values[1]}
+
+    if component_type == "resistor_array" and size == "4_x_0402_convex":
+        return {"length": 3.2, "width": 1.6}
 
     if component_type == "display":
         return {"length": 80.0, "width": 36.0}
@@ -269,6 +286,10 @@ def add_svg_details(option):
         "dimensions_mm",
         get_dimensions_mm(option),
     )
+
+    if component_type == "mounting_hole":
+        option["hole_style"] = option.get("hole_style", option.get("taxonomy_4", "round"))
+        option["hole_plating"] = option.get("hole_plating", option.get("taxonomy_5", "unplated"))
 
     if component_type == "connector" and option.get("taxonomy_3", "") == "header":
         pin_count = _get_number(option.get("taxonomy_6", ""), "pin")
@@ -304,6 +325,9 @@ def add_svg_details(option):
             "contact_span": 7.0,
             "shell_mount_count": 2,
             "shell_mount_width": 1.45,
+            "overall_height": 6.9,
+            "shell_height": 5.7,
+            "mounting_tail_length": 1.0,
         }
 
     if component_type == "connector" and option.get("taxonomy_3", "") == "usb_c":
@@ -316,8 +340,17 @@ def add_svg_details(option):
             "contact_count": 16,
             "contact_pitch": 0.5,
             "contact_width": 0.2,
+            "pcb_pad_count": 12,
+            "pcb_signal_pad_count": 8,
+            "pcb_signal_pad_width": 0.3,
+            "pcb_power_pad_count": 4,
+            "pcb_power_pad_width": 0.6,
+            "pcb_pad_length": 1.5,
             "shell_mount_count": 4,
             "shell_mount_width": 0.6,
+            "overall_height": 3.26,
+            "side_depth": 6.77,
+            "bottom_body_depth": 6.28,
         }
 
     if component_type == "ic":
@@ -377,5 +410,24 @@ def add_svg_details(option):
         }
         if package in ic_dimensions:
             option["ic_dimensions_mm"] = copy.deepcopy(ic_dimensions[package])
-    option["svg_details"] = get_svg_details()
+    svg_details = get_svg_details()
+    if component_type == "connector":
+        connector_views = [
+            ["oomp_component_top", "top"],
+            ["oomp_component_bottom", "bottom"],
+            ["oomp_component_side", "side"],
+        ]
+        for connector_view in connector_views:
+            svg_details.append(
+                {
+                    "svg_name": connector_view[0],
+                    "filename_extra": connector_view[1],
+                    "stylesheet": "style_oomp",
+                    "output_formats": ["svg", "png"],
+                    "padding": 0,
+                    "make_a4": False,
+                    "write_yaml": False,
+                }
+            )
+    option["svg_details"] = svg_details
     return option

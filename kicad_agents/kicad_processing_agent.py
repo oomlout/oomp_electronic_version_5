@@ -469,6 +469,166 @@ def _footprint_layer_bbox(footprint_node, layer_filter=None):
     return bbox
 
 
+def _measurement_token(value_number):
+    value_text = f"{float(value_number):g}"
+    return value_text.replace(".", "_")
+
+
+def _drill_record(pad_node):
+    """Read KiCad's drill independently from the copper pad dimensions."""
+    drill_node = child(pad_node, "drill")
+    if drill_node is None:
+        return {
+            "available": False,
+            "shape": None,
+            "x": None,
+            "y": None,
+            "diameter": None,
+            "units": "mm",
+        }
+
+    drill_shape = "round"
+    drill_values = []
+    for drill_item in drill_node[1:]:
+        if isinstance(drill_item, list):
+            continue
+        drill_item_text = str(drill_item).strip().lower()
+        if drill_item_text in ["oval", "slot"]:
+            drill_shape = "slot"
+            continue
+        try:
+            drill_values.append(float(drill_item))
+        except (TypeError, ValueError):
+            continue
+
+    drill_x = drill_values[0] if len(drill_values) >= 1 else 0.0
+    drill_y = drill_values[1] if len(drill_values) >= 2 else drill_x
+    if abs(drill_x - drill_y) > 0.000001:
+        drill_shape = "slot"
+
+    drill_offset = {"x": 0.0, "y": 0.0}
+    offset_node = child(drill_node, "offset")
+    if offset_node is not None:
+        if len(offset_node) > 1:
+            drill_offset["x"] = _rounded(as_float(offset_node[1]))
+        if len(offset_node) > 2:
+            drill_offset["y"] = _rounded(as_float(offset_node[2]))
+
+    drill_diameter = None
+    if drill_shape == "round":
+        drill_diameter = _rounded(drill_x)
+    return {
+        "available": True,
+        "shape": drill_shape,
+        "x": _rounded(drill_x),
+        "y": _rounded(drill_y),
+        "diameter": drill_diameter,
+        "offset": drill_offset,
+        "units": "mm",
+    }
+
+
+def _mounting_hole_oomp_id(drill, plating):
+    drill_x = float(drill.get("x", 0.0))
+    drill_y = float(drill.get("y", drill_x))
+    if drill.get("shape") == "slot" or abs(drill_x - drill_y) > 0.000001:
+        hole_width = min(drill_x, drill_y)
+        hole_length = max(drill_x, drill_y)
+        width_token = _measurement_token(hole_width)
+        length_token = _measurement_token(hole_length)
+        return f"mechanical_mounting_hole_{width_token}_mm_x_{length_token}_mm_slot_{plating}"
+    diameter_token = _measurement_token(drill_x)
+    return f"mechanical_mounting_hole_{diameter_token}_mm_round_{plating}"
+
+
+def _mounting_hole_records(pads, reference, library_id):
+    """Classify physical mounting/locating holes without treating signal pins as holes."""
+    reference_upper = str(reference).upper()
+    footprint_text = str(library_id).lower().replace("-", "_")
+    dedicated_footprint = (
+        reference_upper.startswith("UNK_HOLE")
+        or "mounting_hole" in footprint_text
+        or "mountinghole" in footprint_text
+        or footprint_text.startswith("dummyfp")
+    )
+    mechanical_pad_prefixes = [
+        "MP",
+        "MH",
+        "MOUNT",
+        "SHIELD",
+        "CASE",
+        "P$",
+    ]
+
+    mounting_holes = []
+    for pad_index in range(len(pads)):
+        pad = pads[pad_index]
+        drill = pad.get("drill", {})
+        pad_type = str(pad.get("type", ""))
+        pad_number = str(pad.get("number", ""))
+        pad_number_upper = pad_number.upper()
+        has_mechanical_number = False
+        for mechanical_pad_prefix in mechanical_pad_prefixes:
+            if pad_number_upper.startswith(mechanical_pad_prefix):
+                has_mechanical_number = True
+
+        is_mounting_hole = False
+        mounting_reason = ""
+        if drill.get("available", False) and pad_type == "np_thru_hole":
+            is_mounting_hole = True
+            mounting_reason = "KiCad non-plated through-hole pad"
+        elif drill.get("available", False) and pad_type == "thru_hole" and dedicated_footprint:
+            is_mounting_hole = True
+            mounting_reason = "drilled pad in a dedicated mounting-hole footprint"
+        elif drill.get("available", False) and pad_type == "thru_hole" and has_mechanical_number:
+            is_mounting_hole = True
+            mounting_reason = "plated pad uses a mechanical mounting/shield identifier"
+
+        plating = None
+        if pad_type == "np_thru_hole":
+            plating = "unplated"
+        elif drill.get("available", False):
+            plating = "plated"
+        pad["plating"] = plating
+        pad["is_mounting_hole"] = is_mounting_hole
+
+        if not is_mounting_hole:
+            continue
+
+        role = "mounting"
+        if not dedicated_footprint and plating == "unplated":
+            role = "locating"
+        if not dedicated_footprint and plating == "plated":
+            role = "shield_mount"
+
+        mounting_holes.append(
+            {
+                "id": f"{reference}_hole_{len(mounting_holes) + 1}",
+                "reference": reference,
+                "pad_number": pad_number,
+                "role": role,
+                "plating": plating,
+                "style": drill.get("shape", "round"),
+                "drill_size": {
+                    "x": drill.get("x"),
+                    "y": drill.get("y"),
+                    "diameter": drill.get("diameter"),
+                    "units": "mm",
+                },
+                "pad_size": pad.get("size", {}),
+                "pad_shape": pad.get("shape", ""),
+                "local_position": pad.get("local_position", {}),
+                "position": pad.get("position", {}),
+                "rotation": pad.get("placed_rotation", 0.0),
+                "layers": pad.get("layers", []),
+                "net": pad.get("net"),
+                "classification_reason": mounting_reason,
+                "oomp_id": _mounting_hole_oomp_id(drill, plating),
+            }
+        )
+    return mounting_holes
+
+
 def _pad_record(pad_node, footprint_position):
     pad_position = _position(pad_node)
     size_node = child(pad_node, "size")
@@ -500,6 +660,7 @@ def _pad_record(pad_node, footprint_position):
         elif len(net_node) >= 3:
             net_number = as_int(net_node[1], None)
             net_name = net_node[2]
+    drill = _drill_record(pad_node)
     return {
         "number": pad_node[1] if len(pad_node) > 1 else "",
         "type": pad_node[2] if len(pad_node) > 2 else "",
@@ -510,7 +671,9 @@ def _pad_record(pad_node, footprint_position):
             "rotation": _rounded(pad_position["rotation"]),
         },
         "position": {"x": _rounded(placed_center[0]), "y": _rounded(placed_center[1])},
+        "placed_rotation": _rounded(pad_position["rotation"] + footprint_position["rotation"]),
         "size": {"x": _rounded(pad_size[0]), "y": _rounded(pad_size[1]), "units": "mm"},
+        "drill": drill,
         "layers": values(pad_node, "layers"),
         "net": net_name,
         "net_number": net_number,
@@ -527,6 +690,18 @@ def _pad_record(pad_node, footprint_position):
 
 def _footprint_record(footprint_node, pcb_path, project_directory):
     properties = _properties(footprint_node)
+
+    # Older modern KiCad boards keep Reference and Value as fp_text records
+    # instead of footprint properties.  Preserve the richer property map, but
+    # fall back to those two plainly named text fields when needed.
+    for fp_text_node in children(footprint_node, "fp_text"):
+        if len(fp_text_node) < 3:
+            continue
+        fp_text_kind = str(fp_text_node[1])
+        if fp_text_kind == "reference" and properties.get("Reference", "") == "":
+            properties["Reference"] = str(fp_text_node[2])
+        if fp_text_kind == "value" and properties.get("Value", "") == "":
+            properties["Value"] = str(fp_text_node[2])
     footprint_position_kicad = _position(footprint_node)
     # KiCad stores PCB coordinates in a Y-down coordinate system.  SVG also
     # displays Y down, but its rotate() direction is opposite KiCad's board
@@ -567,11 +742,14 @@ def _footprint_record(footprint_node, pcb_path, project_directory):
     attributes_node = child(footprint_node, "attr")
     attributes = [item for item in attributes_node[1:] if isinstance(item, str)] if attributes_node else []
     library_id = footprint_node[1] if len(footprint_node) > 1 and isinstance(footprint_node[1], str) else ""
+    reference = properties.get("Reference", "")
+    mounting_holes = _mounting_hole_records(pads, reference, library_id)
+    is_mounting_hole = len(mounting_holes) > 0 and len(mounting_holes) == len(pads)
     for pad in pads:
         pad.pop("_local_bbox", None)
         pad.pop("_placed_bbox", None)
     return {
-        "reference": properties.get("Reference", ""),
+        "reference": reference,
         "value": properties.get("Value", ""),
         "source_file": relative_source,
         "uuid": value(footprint_node, "uuid", "") or value(footprint_node, "tstamp", ""),
@@ -590,6 +768,8 @@ def _footprint_record(footprint_node, pcb_path, project_directory):
         "exclude_from_bom": "exclude_from_bom" in attributes,
         "exclude_from_position_files": "exclude_from_pos_files" in attributes,
         "pads": pads,
+        "mounting_holes": mounting_holes,
+        "is_mounting_hole": is_mounting_hole,
         "size": {
             "pads_local": bbox_record(pads_bbox, "all footprint pads in footprint-local coordinates"),
             "pads_placed": bbox_record(placed(pads_bbox), "all pads after PCB placement and rotation"),
@@ -882,6 +1062,173 @@ def _write_component_tree(output_directory, components, part_index):
     )
 
 
+def _mounting_hole_name(mounting_hole):
+    drill_size = mounting_hole.get("drill_size", {})
+    drill_x = float(drill_size.get("x", 0.0))
+    drill_y = float(drill_size.get("y", drill_x))
+    style = str(mounting_hole.get("style", "round"))
+    plating = str(mounting_hole.get("plating", "unplated"))
+    if style == "round":
+        size_name = f"{drill_x:g} mm"
+    else:
+        hole_width = min(drill_x, drill_y)
+        hole_length = max(drill_x, drill_y)
+        size_name = f"{hole_width:g} mm x {hole_length:g} mm"
+    return f"Mounting Hole {size_name} {style.title()} {plating.title()}"
+
+
+def _mounting_hole_classification(mounting_hole, part_index):
+    oomp_id = str(mounting_hole.get("oomp_id", ""))
+    taxonomy = []
+    name = _mounting_hole_name(mounting_hole)
+    matched_part = part_index.by_id.get(oomp_id)
+    if matched_part is not None:
+        working_path = Path(matched_part["working_yaml"])
+        try:
+            working = yaml.safe_load(working_path.read_text(encoding="utf-8")) or {}
+        except (OSError, yaml.YAMLError):
+            working = {}
+        name = str(working.get("name_short") or working.get("name_proper") or name)
+        for taxonomy_number in range(1, 16):
+            taxonomy_key = f"taxonomy_{taxonomy_number}"
+            taxonomy_value = str(working.get(taxonomy_key, "")).strip()
+            if taxonomy_value != "":
+                taxonomy.append(
+                    {
+                        "level": taxonomy_number,
+                        "key": taxonomy_key,
+                        "value": taxonomy_value,
+                    }
+                )
+    return {
+        "name": name,
+        "class": "mechanical",
+        "type": "mounting_hole",
+        "taxonomy": taxonomy,
+        "taxonomy_path": [taxonomy_item["value"] for taxonomy_item in taxonomy],
+    }
+
+
+def _mounting_hole_match(mounting_hole, part_index):
+    oomp_id = str(mounting_hole.get("oomp_id", ""))
+    matched = oomp_id in part_index.by_id
+    return {
+        "status": "matched" if matched else "unmatched",
+        "accepted": matched,
+        "oomp_id": oomp_id if matched else "",
+        "confidence": 1.0 if matched else 0.0,
+        "proposed_oomp_id": oomp_id,
+        "inferred": {
+            "kind": "mounting_hole",
+            "style": mounting_hole.get("style", ""),
+            "plating": mounting_hole.get("plating", ""),
+            "drill_size": mounting_hole.get("drill_size", {}),
+        },
+        "reasons": [
+            "Exact mechanical mounting-hole OOMP ID constructed from drill size, style, and plating."
+        ],
+        "candidates": [],
+    }
+
+
+def _project_mounting_holes(components, part_index):
+    mounting_holes = []
+    for component in components:
+        pcb = component.get("pcb") or {}
+        component_mounting_holes = pcb.get("mounting_holes") or []
+        for component_mounting_hole in component_mounting_holes:
+            mounting_hole = dict(component_mounting_hole)
+            mounting_hole["_source_record"] = component_mounting_hole
+            mounting_hole["component_reference"] = component.get("reference", "")
+            mounting_hole["component_oomp_id"] = component.get("oomp", {}).get("oomp_id")
+            mounting_hole["component_footprint"] = pcb.get("library_id", "")
+            mounting_hole["component_side"] = pcb.get("side", "")
+            mounting_hole["dedicated_footprint"] = bool(pcb.get("is_mounting_hole", False))
+            mounting_holes.append(mounting_hole)
+    mounting_holes.sort(
+        key=lambda mounting_hole: (
+            _natural_reference_key(mounting_hole.get("component_reference", "")),
+            mounting_hole.get("id", ""),
+        )
+    )
+    for mounting_hole_index in range(len(mounting_holes)):
+        mounting_hole = mounting_holes[mounting_hole_index]
+        mounting_hole["oomp_reference"] = f"MH{mounting_hole_index + 1}"
+        mounting_hole["classification"] = _mounting_hole_classification(mounting_hole, part_index)
+        mounting_hole["name"] = mounting_hole["classification"]["name"]
+        mounting_hole["oomp"] = _mounting_hole_match(mounting_hole, part_index)
+        source_record = mounting_hole.pop("_source_record")
+        source_record["oomp_reference"] = mounting_hole["oomp_reference"]
+        source_record["classification"] = mounting_hole["classification"]
+        source_record["name"] = mounting_hole["name"]
+        source_record["oomp"] = mounting_hole["oomp"]
+    return mounting_holes
+
+
+def _mounting_hole_items(mounting_holes):
+    items = []
+    for mounting_hole in mounting_holes:
+        drill_size = mounting_hole.get("drill_size", {})
+        position = mounting_hole.get("position", {})
+        drill_x = float(drill_size.get("x", 0.0))
+        drill_y = float(drill_size.get("y", drill_x))
+        reference = mounting_hole["oomp_reference"]
+        item = {
+            "reference": reference,
+            "name": mounting_hole["name"],
+            "item_type": "mounting_hole",
+            "source": {
+                "reference": mounting_hole.get("component_reference", ""),
+                "hole_id": mounting_hole.get("id", ""),
+                "footprint": mounting_hole.get("component_footprint", ""),
+                "dedicated_footprint": mounting_hole.get("dedicated_footprint", False),
+            },
+            "classification": mounting_hole["classification"],
+            "schematic": {
+                "available": False,
+                "units": [],
+                "connected_components": [],
+            },
+            "pcb": {
+                "available": True,
+                "reference": reference,
+                "value": mounting_hole["name"],
+                "library_id": mounting_hole.get("component_footprint", ""),
+                "side": "mechanical",
+                "position": {
+                    "x": float(position.get("x", 0.0)),
+                    "y": float(position.get("y", 0.0)),
+                    "rotation": float(mounting_hole.get("rotation", 0.0)),
+                    "units": "mm",
+                },
+                "pads": [],
+                "mounting_holes": [mounting_hole],
+                "is_mounting_hole": True,
+                "size": {
+                    "drill": {
+                        "measurement": "mounting-hole drill dimensions",
+                        "units": "mm",
+                        "available": True,
+                        "width": drill_x,
+                        "height": drill_y,
+                        "center": {"x": 0.0, "y": 0.0},
+                    }
+                },
+                "connected_components": [],
+            },
+            "oomp": mounting_hole["oomp"],
+            "connectivity_cross_check": {
+                "available": False,
+                "comparisons": [],
+                "agree_count": 0,
+                "disagree_count": 0,
+                "incomplete_count": 0,
+            },
+        }
+        items.append(item)
+    return items
+
+
 def process_project(project_directory, parts_directory, output_directory=None):
     project_directory = Path(project_directory).resolve()
     parts_directory = Path(parts_directory).resolve()
@@ -934,6 +1281,8 @@ def process_project(project_directory, parts_directory, output_directory=None):
     unmatched = [component for component in components if component["oomp"]["status"] in {"unmatched", "ambiguous"}]
     not_applicable = [component for component in components if component["oomp"]["status"] == "not_applicable"]
     matched = [component for component in components if component["oomp"]["status"] == "matched"]
+    mounting_holes = _project_mounting_holes(components, part_index)
+    mounting_hole_items = _mounting_hole_items(mounting_holes)
 
     project_files = sorted(project_directory.rglob("*.kicad_pro"))
     project_name = project_files[0].stem if project_files else project_directory.name
@@ -954,6 +1303,16 @@ def process_project(project_directory, parts_directory, output_directory=None):
             "matched_component_count": len(matched),
             "unmatched_physical_component_count": len(unmatched),
             "non_physical_symbol_count": len(not_applicable),
+            "mounting_hole_count": len(mounting_holes),
+            "dedicated_mounting_hole_count": sum(
+                1 for mounting_hole in mounting_holes if mounting_hole["dedicated_footprint"]
+            ),
+            "mounting_hole_oomp_item_count": sum(
+                1 for mounting_hole in mounting_holes if mounting_hole["oomp"]["status"] == "matched"
+            ),
+            "unmatched_mounting_hole_oomp_item_count": sum(
+                1 for mounting_hole in mounting_holes if mounting_hole["oomp"]["status"] != "matched"
+            ),
             "connectivity_named_net_agreement_count": sum(
                 component["connectivity_cross_check"]["agree_count"] for component in components
             ),
@@ -970,9 +1329,13 @@ def process_project(project_directory, parts_directory, output_directory=None):
             for file_data in parsed_pcbs
         ],
         "components": components,
+        "mounting_holes": mounting_holes,
+        "mounting_hole_items": mounting_hole_items,
     }
 
-    _write_component_tree(output_directory, components, part_index)
+    component_tree_items = list(components)
+    component_tree_items.extend(mounting_hole_items)
+    _write_component_tree(output_directory, component_tree_items, part_index)
     unmatched_data = {
         "count": len(unmatched),
         "components": [
@@ -990,6 +1353,15 @@ def process_project(project_directory, parts_directory, output_directory=None):
     _write_json(output_directory / "project.json", project_data)
     _write_yaml(output_directory / "project.yaml", project_data)
     _write_yaml(output_directory / "summary.yaml", project_data["summary"])
+    mounting_hole_data = {
+        "format_version": 1,
+        "generated_by": "kicad_agents.kicad_processing_agent",
+        "count": len(mounting_holes),
+        "mounting_holes": mounting_holes,
+        "items": mounting_hole_items,
+    }
+    _write_json(output_directory / "mounting_holes.json", mounting_hole_data)
+    _write_yaml(output_directory / "mounting_holes.yaml", mounting_hole_data)
 
     return project_data, output_directory
 

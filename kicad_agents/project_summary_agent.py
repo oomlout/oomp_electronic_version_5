@@ -296,6 +296,12 @@ def _bom_rows(components, oomp_link_prefix="../../../../parts"):
         pcb = component.get("pcb")
         if not isinstance(pcb, dict):
             continue
+        if component.get("oomp", {}).get("status", "") == "not_applicable":
+            continue
+        if pcb.get("exclude_from_bom", False) or str(pcb.get("value", "")).strip().upper() == "DNF":
+            continue
+        if pcb.get("is_mounting_hole", False):
+            continue
         oomp_id = _oomp_description(component)
         value_text = str(pcb.get("value", ""))
         footprint = str(pcb.get("library_id", ""))
@@ -327,8 +333,13 @@ def _net_rows(components):
         pcb = component.get("pcb")
         if not isinstance(pcb, dict):
             continue
+        if pcb.get("exclude_from_bom", False) or str(pcb.get("value", "")).strip().upper() == "DNF":
+            continue
         for pad in pcb.get("pads", []):
-            net_name = str(pad.get("net", "")).strip()
+            raw_net_name = pad.get("net")
+            if raw_net_name is None:
+                continue
+            net_name = str(raw_net_name).strip()
             if net_name == "":
                 continue
             if net_name not in nets:
@@ -346,16 +357,27 @@ def _net_rows(components):
 def _component_rows(components):
     rows = []
     for component in components:
+        reference = str(component.get("reference", ""))
+        reference_upper = reference.upper()
+        if reference_upper.startswith("SJ") or reference_upper.startswith("FID") or reference.lower().startswith("logo"):
+            continue
         match_status = component.get("oomp", {}).get("status", "")
         if match_status == "not_applicable":
             continue
         pcb = component.get("pcb")
         if not isinstance(pcb, dict):
             continue
+        if pcb.get("exclude_from_bom", False) or str(pcb.get("value", "")).strip().upper() == "DNF":
+            continue
+        # Dedicated mounting-hole footprints are rendered by the mechanical
+        # overlay, not as labelled BOM components.  Their holes still appear
+        # on both normal board drawings and on the mechanical layer.
+        if pcb.get("is_mounting_hole", False):
+            continue
         position = pcb.get("position", {})
         rows.append(
             {
-                "reference": component["reference"],
+                "reference": reference,
                 "value": pcb.get("value", ""),
                 "footprint": pcb.get("library_id", ""),
                 "side": pcb.get("side", "front"),
@@ -372,9 +394,138 @@ def _component_rows(components):
     return rows
 
 
+def _mounting_hole_rows(components, board_bounds):
+    rows = []
+    origin_x = float(board_bounds.get("min_x", 0.0))
+    origin_y = float(board_bounds.get("min_y", 0.0))
+
+    for component in components:
+        pcb = component.get("pcb")
+        if not isinstance(pcb, dict):
+            continue
+        mounting_holes = pcb.get("mounting_holes") or []
+        for mounting_hole in mounting_holes:
+            position = mounting_hole.get("position", {})
+            drill_size = mounting_hole.get("drill_size", {})
+            pad_size = mounting_hole.get("pad_size", {})
+            position_x = float(position.get("x", 0.0))
+            position_y = float(position.get("y", 0.0))
+            drill_x = float(drill_size.get("x", 0.0))
+            drill_y = float(drill_size.get("y", drill_x))
+            diameter = drill_size.get("diameter")
+            style = str(mounting_hole.get("style", "round"))
+            if style == "round" and diameter is not None:
+                size_text = f"diameter {float(diameter):g} mm"
+            else:
+                size_text = f"{drill_x:g} mm x {drill_y:g} mm slot"
+
+            rows.append(
+                {
+                    "id": mounting_hole.get("oomp_reference", ""),
+                    "source_id": mounting_hole.get("id", ""),
+                    "reference": component.get("reference", ""),
+                    "name": mounting_hole.get("name", "Mounting hole"),
+                    "pad_number": mounting_hole.get("pad_number", ""),
+                    "role": mounting_hole.get("role", "mounting"),
+                    "plating": mounting_hole.get("plating", "unplated"),
+                    "style": style,
+                    "size_text": size_text,
+                    "drill_size_mm": {
+                        "x": round(drill_x, 6),
+                        "y": round(drill_y, 6),
+                        "diameter": diameter,
+                    },
+                    "pad_size_mm": {
+                        "x": float(pad_size.get("x", 0.0)),
+                        "y": float(pad_size.get("y", 0.0)),
+                    },
+                    "pad_shape": mounting_hole.get("pad_shape", ""),
+                    "rotation": float(mounting_hole.get("rotation", 0.0)),
+                    "position_kicad_mm": {
+                        "x": round(position_x, 6),
+                        "y": round(position_y, 6),
+                    },
+                    "position_board_mm": {
+                        "x": round(position_x - origin_x, 6),
+                        "y": round(position_y - origin_y, 6),
+                    },
+                    "oomp_id": mounting_hole.get("oomp_id", ""),
+                    "oomp_status": mounting_hole.get("oomp", {}).get("status", "unmatched"),
+                    "classification": mounting_hole.get("classification", {}),
+                    "dedicated_footprint": bool(pcb.get("is_mounting_hole", False)),
+                }
+            )
+
+    rows.sort(
+        key=lambda row: (
+            _natural_reference_key(row["reference"]),
+            row["position_kicad_mm"]["x"],
+            row["position_kicad_mm"]["y"],
+        )
+    )
+    for row_index in range(len(rows)):
+        if rows[row_index]["id"] == "":
+            rows[row_index]["id"] = f"MH{row_index + 1}"
+    return rows
+
+
+def _mounting_hole_coordinate_system(board_bounds):
+    return {
+        "name": "board_edge_origin",
+        "description": "Board-relative coordinates use the minimum X/Y point of the KiCad Edge.Cuts bounds as 0,0.",
+        "units": "mm",
+        "x_direction": "right",
+        "y_direction": "down",
+        "origin_kicad_mm": {
+            "x": round(float(board_bounds.get("min_x", 0.0)), 6),
+            "y": round(float(board_bounds.get("min_y", 0.0)), 6),
+        },
+        "origin_board_mm": {"x": 0.0, "y": 0.0},
+    }
+
+
 def _svg_polyline(points, css_class):
     points_text = " ".join(f"{point[0]:.4f},{point[1]:.4f}" for point in points)
     return f'<polyline class="{css_class}" points="{points_text}" />'
+
+
+def _svg_mounting_hole(row, x, y):
+    """Return the monochrome pad/drill shapes for one extracted hole."""
+    lines = []
+    rotation = float(row.get("rotation", 0.0))
+    pad_size = row.get("pad_size_mm", {})
+    drill_size = row.get("drill_size_mm", {})
+    pad_x = float(pad_size.get("x", 0.0))
+    pad_y = float(pad_size.get("y", 0.0))
+    drill_x = float(drill_size.get("x", 0.0))
+    drill_y = float(drill_size.get("y", drill_x))
+
+    if row.get("plating") == "plated" and pad_x > 0 and pad_y > 0:
+        lines.append(
+            f'<ellipse class="mechanical-pad" cx="{x:.4f}" cy="{y:.4f}" '
+            f'rx="{pad_x / 2:.4f}" ry="{pad_y / 2:.4f}" '
+            f'transform="rotate({rotation:.4f} {x:.4f} {y:.4f})" />'
+        )
+
+    if row.get("style") == "slot" or abs(drill_x - drill_y) > 0.000001:
+        corner_radius = min(drill_x, drill_y) / 2
+        lines.append(
+            f'<rect class="mounting-hole" x="{x - drill_x / 2:.4f}" y="{y - drill_y / 2:.4f}" '
+            f'width="{drill_x:.4f}" height="{drill_y:.4f}" rx="{corner_radius:.4f}" '
+            f'transform="rotate({rotation:.4f} {x:.4f} {y:.4f})" />'
+        )
+    else:
+        lines.append(
+            f'<circle class="mounting-hole" cx="{x:.4f}" cy="{y:.4f}" r="{drill_x / 2:.4f}" />'
+        )
+    return lines
+
+
+def _mirrored_mounting_hole(row, x, y):
+    """Draw a hole in a horizontally mirrored board view."""
+    mirrored_row = dict(row)
+    mirrored_row["rotation"] = -float(row.get("rotation", 0.0))
+    return _svg_mounting_hole(mirrored_row, x, y)
 
 
 def _rotate_point(x, y, rotation):
@@ -561,6 +712,8 @@ def _make_board_svg(
     component_asset_directory,
     component_svg_filename="working_svg_assembly.svg",
     image_file="generated_data/src/board.svg",
+    board_side="front",
+    mirror_view=False,
 ):
     pcb_files = project_data.get("project", {}).get("pcb_files", [])
     edge_shapes, edge_points = _edge_cut_shapes(project_directory, pcb_files)
@@ -583,7 +736,12 @@ def _make_board_svg(
     view_min_y = bounds["min_y"] - margin
     view_width = board_width + margin * 2
     view_height = board_height + margin * 2
-    component_rows = _component_rows(components)
+    component_rows = []
+    for component_row in _component_rows(components):
+        if component_row["side"] == board_side:
+            component_rows.append(component_row)
+    mounting_hole_rows = _mounting_hole_rows(components, bounds)
+    mirror_axis = bounds["min_x"] + bounds["max_x"]
 
     lines = [
         '<?xml version="1.0" encoding="utf-8"?>',
@@ -594,6 +752,8 @@ def _make_board_svg(
         f'.board {{ fill: {colors["board_fill"]}; stroke: {colors["board_outline"]}; stroke-width: {svg_style["board_stroke_width_mm"]}; }}',
         f'.edge-cut {{ fill: none; stroke: {colors["board_outline"]}; stroke-width: {svg_style["edge_cut_stroke_width_mm"]}; }}',
         f'.component {{ fill: {colors["component_fill"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["component_stroke_width_mm"]}; }}',
+        f'.mechanical-pad {{ fill: {colors["background"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["mechanical_pad_stroke_width_mm"]}; }}',
+        f'.mounting-hole {{ fill: {colors["background"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["mounting_hole_stroke_width_mm"]}; }}',
         f'.reference {{ fill: {colors["text"]}; font-family: {typography["family"]}; font-size: {typography["reference_size_mm"]}px; text-anchor: middle; paint-order: stroke; stroke: {colors["background"]}; stroke-width: 0.35px; }}',
         "</style>",
         "</defs>",
@@ -601,7 +761,14 @@ def _make_board_svg(
         f'<rect class="board" x="{bounds["min_x"]:.4f}" y="{bounds["min_y"]:.4f}" width="{board_width:.4f}" height="{board_height:.4f}" rx="{svg_style["board_corner_radius_mm"]}" />',
     ]
     for edge_shape in edge_shapes:
-        lines.append(_svg_polyline(edge_shape["points"], "edge-cut"))
+        edge_points_for_view = []
+        for edge_point in edge_shape["points"]:
+            edge_x = edge_point[0]
+            edge_y = edge_point[1]
+            if mirror_view:
+                edge_x = mirror_axis - edge_x
+            edge_points_for_view.append([edge_x, edge_y])
+        lines.append(_svg_polyline(edge_points_for_view, "edge-cut"))
 
     rows_by_area = []
     for row in component_rows:
@@ -630,9 +797,17 @@ def _make_board_svg(
         x = row["x"]
         y = row["y"]
         rotation = row["rotation"]
-        mirror = " scale(-1 1)" if row["side"] == "back" else ""
-        lines.append(f'<g transform="translate({x:.4f} {y:.4f}) rotate({rotation:.4f}){mirror}">')
+        if mirror_view:
+            x = mirror_axis - x
+            rotation = -rotation
         oomp_id = row["oomp_id"]
+        reference_attribute = html.escape(str(row["reference"]), quote=True)
+        oomp_attribute = html.escape(str(oomp_id or ""), quote=True)
+        lines.append(
+            f'<g class="board-component" data-reference="{reference_attribute}" '
+            f'data-oomp-id="{oomp_attribute}" tabindex="0" '
+            f'transform="translate({x:.4f} {y:.4f}) rotate({rotation:.4f})">'
+        )
         svg_part_path = component_asset_directory / oomp_id / component_svg_filename if oomp_id else None
         if svg_part_path is not None and svg_part_path.is_file() and local_bounds_record is not None:
             inline_svg = _inline_svg(svg_part_path, local_bounds_record, row["pads"])
@@ -657,6 +832,8 @@ def _make_board_svg(
         if placed_bounds_record is not None:
             indicator_x = (placed_bounds_record["min_x"] + placed_bounds_record["max_x"]) / 2
             indicator_y = (placed_bounds_record["min_y"] + placed_bounds_record["max_y"]) / 2
+            if mirror_view:
+                indicator_x = mirror_axis - indicator_x
 
         reference = str(row["reference"])
         maximum_reference_size = float(typography["reference_size_mm"])
@@ -674,6 +851,19 @@ def _make_board_svg(
             f'font-size="{reference_size:.4f}" font-weight="bold" '
             f'text-anchor="middle">{html.escape(reference)}</text></g>'
         )
+    # Holes are physical removals, so keep them above component artwork.  This
+    # prevents connector bodies from obscuring small locating holes.
+    for mounting_hole_row in mounting_hole_rows:
+        position = mounting_hole_row["position_kicad_mm"]
+        hole_x = float(position["x"])
+        hole_y = float(position["y"])
+        if mirror_view:
+            hole_x = mirror_axis - hole_x
+            hole_lines = _mirrored_mounting_hole(mounting_hole_row, hole_x, hole_y)
+        else:
+            hole_lines = _svg_mounting_hole(mounting_hole_row, hole_x, hole_y)
+        for hole_line in hole_lines:
+            lines.append(hole_line)
     for reference_line in reference_lines:
         lines.append(reference_line)
     lines.append("</svg>")
@@ -689,11 +879,173 @@ def _make_board_svg(
         "width_mm": round(board_width, 4),
         "height_mm": round(board_height, 4),
         "edge_shape_count": len(edge_shapes),
+        "mounting_hole_count": len(mounting_hole_rows),
+        "side": board_side,
+        "mirrored": bool(mirror_view),
+        "component_count": len(component_rows),
+    }
+
+
+def _make_mechanical_svg(
+    output_path,
+    project_directory,
+    project_data,
+    components,
+    style,
+    image_file="generated_data/src/board_mechanical.svg",
+):
+    """Draw Edge.Cuts, mounting holes, and a board-relative 0,0 origin."""
+    pcb_files = project_data.get("project", {}).get("pcb_files", [])
+    edge_shapes, edge_points = _edge_cut_shapes(project_directory, pcb_files)
+    bounds = _bounds_from_points(edge_points)
+    bounds_source = "KiCad Edge.Cuts"
+    if bounds is None:
+        bounds = _bounds_from_components(components)
+        bounds_source = "placed component extents"
+    if bounds is None:
+        _write_text(output_path, '<svg xmlns="http://www.w3.org/2000/svg" width="640" height="320"><rect width="100%" height="100%" fill="#FFFFFF"/><text x="20" y="40">No PCB mechanical data available</text></svg>\n')
+        return {"available": False, "image_file": image_file, "bounds_source": "none"}
+
+    svg_style = style["board_svg"]
+    colors = style["colors"]
+    typography = style["typography"]
+    margin = float(svg_style.get("mechanical_margin_mm", svg_style["margin_mm"]))
+    board_width = bounds["max_x"] - bounds["min_x"]
+    board_height = bounds["max_y"] - bounds["min_y"]
+    view_min_x = -margin
+    view_min_y = -margin
+    view_width = board_width + margin * 2
+    view_height = board_height + margin * 2
+    mounting_hole_rows = _mounting_hole_rows(components, bounds)
+
+    local_edge_shapes = []
+    for edge_shape in edge_shapes:
+        local_points = []
+        for edge_point in edge_shape["points"]:
+            local_points.append(
+                [edge_point[0] - bounds["min_x"], edge_point[1] - bounds["min_y"]]
+            )
+        local_edge_shapes.append({"type": edge_shape["type"], "points": local_points})
+
+    lines = [
+        '<?xml version="1.0" encoding="utf-8"?>',
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{view_min_x:.4f} {view_min_y:.4f} {view_width:.4f} {view_height:.4f}">',
+        "<defs>",
+        "<style>",
+        f'.page {{ fill: {colors["background"]}; }}',
+        f'.board {{ fill: {colors["board_fill"]}; stroke: {colors["board_outline"]}; stroke-width: {svg_style["board_stroke_width_mm"]}; }}',
+        f'.edge-cut {{ fill: none; stroke: {colors["board_outline"]}; stroke-width: {svg_style["edge_cut_stroke_width_mm"]}; }}',
+        f'.mechanical-pad {{ fill: {colors["background"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["mechanical_pad_stroke_width_mm"]}; }}',
+        f'.mounting-hole {{ fill: {colors["background"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["mounting_hole_stroke_width_mm"]}; }}',
+        f'.origin {{ fill: none; stroke: {colors["text"]}; stroke-width: {svg_style["origin_stroke_width_mm"]}; }}',
+        f'.leader {{ fill: none; stroke: {colors["text"]}; stroke-width: {svg_style["leader_stroke_width_mm"]}; }}',
+        f'.mechanical-text {{ fill: {colors["text"]}; font-family: {typography["family"]}; font-size: {typography["mechanical_size_mm"]}px; }}',
+        "</style>",
+        "</defs>",
+        f'<rect class="page" x="{view_min_x:.4f}" y="{view_min_y:.4f}" width="{view_width:.4f}" height="{view_height:.4f}" />',
+        f'<rect class="board" x="0" y="0" width="{board_width:.4f}" height="{board_height:.4f}" rx="{svg_style["board_corner_radius_mm"]}" />',
+    ]
+    for edge_shape in local_edge_shapes:
+        lines.append(_svg_polyline(edge_shape["points"], "edge-cut"))
+
+    # The upper-left Edge.Cuts bound is deliberately visible as the local
+    # origin.  X grows right and Y grows down, matching KiCad/SVG placement.
+    origin_axis_length = float(svg_style.get("origin_axis_length_mm", 5.0))
+    lines.extend(
+        [
+            f'<line class="origin" x1="{-1.2:.4f}" y1="0" x2="{origin_axis_length:.4f}" y2="0" />',
+            f'<line class="origin" x1="0" y1="{-1.2:.4f}" x2="0" y2="{origin_axis_length:.4f}" />',
+            '<circle class="origin" cx="0" cy="0" r="0.55" />',
+            '<text class="mechanical-text" x="0.8" y="-0.8">0,0</text>',
+            f'<text class="mechanical-text" x="{origin_axis_length + 0.4:.4f}" y="-0.55">+X</text>',
+            f'<text class="mechanical-text" x="0.4" y="{origin_axis_length + 0.8:.4f}">+Y</text>',
+        ]
+    )
+
+    # Put callouts in two outside columns.  The small spacing loop is easier
+    # to tune than collision/packing machinery and keeps every label readable.
+    left_label_rows = []
+    right_label_rows = []
+    for row_index in range(len(mounting_hole_rows)):
+        mounting_hole_row = mounting_hole_rows[row_index]
+        position = mounting_hole_row["position_board_mm"]
+        x = float(position["x"])
+        y = float(position["y"])
+        label_record = {"row_index": row_index, "hole_y": y, "label_y": y}
+        if x <= board_width / 2:
+            left_label_rows.append(label_record)
+        else:
+            right_label_rows.append(label_record)
+
+    label_columns = [left_label_rows, right_label_rows]
+    label_positions = {}
+    minimum_label_y = 1.4
+    maximum_label_y = max(minimum_label_y, board_height - 2.0)
+    label_spacing = 3.0
+    for column_index in range(len(label_columns)):
+        label_column = label_columns[column_index]
+        label_column.sort(key=lambda label_record: label_record["hole_y"])
+        next_label_y = minimum_label_y
+        for label_record in label_column:
+            label_y = max(label_record["hole_y"], next_label_y)
+            label_record["label_y"] = label_y
+            next_label_y = label_y + label_spacing
+        if len(label_column) > 0 and label_column[-1]["label_y"] > maximum_label_y:
+            shift_up = label_column[-1]["label_y"] - maximum_label_y
+            for label_record in label_column:
+                label_record["label_y"] -= shift_up
+        for label_record in label_column:
+            label_positions[label_record["row_index"]] = {
+                "x": -1.0 if column_index == 0 else board_width + 1.0,
+                "y": label_record["label_y"],
+                "anchor": "end" if column_index == 0 else "start",
+            }
+
+    for row_index in range(len(mounting_hole_rows)):
+        mounting_hole_row = mounting_hole_rows[row_index]
+        position = mounting_hole_row["position_board_mm"]
+        x = float(position["x"])
+        y = float(position["y"])
+        for hole_line in _svg_mounting_hole(mounting_hole_row, x, y):
+            lines.append(hole_line)
+
+        label_position = label_positions[row_index]
+        label_x = label_position["x"]
+        label_y = label_position["y"]
+        text_anchor = label_position["anchor"]
+        plating_short = "PTH" if mounting_hole_row["plating"] == "plated" else "NPTH"
+        drill = mounting_hole_row["drill_size_mm"]
+        if mounting_hole_row["style"] == "round" and drill.get("diameter") is not None:
+            drill_text = f'dia {float(drill["diameter"]):g}'
+        else:
+            drill_text = f'{float(drill["x"]):g} x {float(drill["y"]):g}'
+        lines.append(
+            f'<line class="leader" x1="{x:.4f}" y1="{y:.4f}" x2="{label_x:.4f}" y2="{label_y:.4f}" />'
+        )
+        lines.append(
+            f'<text class="mechanical-text" x="{label_x:.4f}" y="{label_y:.4f}" text-anchor="{text_anchor}">'
+            f'<tspan x="{label_x:.4f}" dy="0">{html.escape(mounting_hole_row["id"])} {html.escape(mounting_hole_row["reference"])}</tspan>'
+            f'<tspan x="{label_x:.4f}" dy="0.85">x {x:.3f} y {y:.3f}</tspan>'
+            f'<tspan x="{label_x:.4f}" dy="0.85">{html.escape(drill_text)} mm {plating_short}</tspan>'
+            '</text>'
+        )
+
+    lines.append("</svg>")
+    _write_text(output_path, "\n".join(lines) + "\n")
+    return {
+        "available": True,
+        "image_file": image_file,
+        "bounds_source": bounds_source,
+        "width_mm": round(board_width, 4),
+        "height_mm": round(board_height, 4),
+        "mounting_hole_count": len(mounting_hole_rows),
+        "coordinate_system": _mounting_hole_coordinate_system(bounds),
     }
 
 
 def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=False):
     """Render one board PNG, preserving an existing file unless requested."""
+    image_file = f"generated_data/src/{png_path.name}"
     if png_path.is_file() and not regenerate_pngs:
         from PIL import Image
 
@@ -701,7 +1053,7 @@ def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=
             output_width, output_height = existing_image.size
         return {
             "available": True,
-            "image_file": "generated_data/src/board_pins.png",
+            "image_file": image_file,
             "width_px": output_width,
             "height_px": output_height,
             "skipped_existing": True,
@@ -728,15 +1080,22 @@ def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=
         output_height = int(maximum_dimension)
         output_width = max(1, round(maximum_dimension * view_width / view_height))
 
-    cairosvg.svg2png(
-        url=str(svg_path),
-        write_to=str(png_path),
-        output_width=output_width,
-        output_height=output_height,
-    )
+    for attempt_number in range(10):
+        try:
+            cairosvg.svg2png(
+                url=str(svg_path),
+                write_to=str(png_path),
+                output_width=output_width,
+                output_height=output_height,
+            )
+            break
+        except OSError:
+            if attempt_number == 9:
+                raise
+            time.sleep(0.1)
     return {
         "available": True,
-        "image_file": "generated_data/src/board_pins.png",
+        "image_file": image_file,
         "width_px": output_width,
         "height_px": output_height,
     }
@@ -749,11 +1108,13 @@ def _copy_project_sources(components, parts_directory, project_source_directory,
         "working.yaml",
         "working_svg_assembly.svg",
         "working_svg_assembly_pins.svg",
+        "working_svg_square_pins.svg",
         "working_svg_outline.svg",
     ]
     image_filenames = [
         "working_svg_assembly.svg",
         "working_svg_assembly_pins.svg",
+        "working_svg_square_pins.svg",
     ]
 
     oomp_ids = []
@@ -917,11 +1278,33 @@ def generate_project_summary(
         "generated_source": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src",
         "board": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
         "board_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
+        "board_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.png",
+        "board_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.png",
+        "board_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_300.png",
         "board_pins": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.svg",
         "board_pins_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.svg",
         "board_pins_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.png",
         "board_pins_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.png",
+        "board_pins_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_300.png",
+        "board_bottom": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom.svg",
+        "board_bottom_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom.svg",
+        "board_bottom_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom.png",
+        "board_bottom_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom.png",
+        "board_bottom_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom_300.png",
+        "board_pins_bottom": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom.svg",
+        "board_pins_bottom_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom.svg",
+        "board_pins_bottom_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom.png",
+        "board_pins_bottom_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom.png",
+        "board_pins_bottom_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom_300.png",
+        "board_mechanical": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical.svg",
+        "board_mechanical_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical.svg",
+        "board_mechanical_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical.png",
+        "board_mechanical_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical.png",
+        "board_mechanical_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical_300.png",
         "parts": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/parts",
+        "explorer": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/board_explorer.html",
+        "lcsc_review": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/lcsc_review.yaml",
+        "browser_research_queue": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/browser_research_queue.md",
     }
     source_manifest = _copy_project_sources(
         components,
@@ -947,12 +1330,81 @@ def generate_project_summary(
         component_svg_filename="working_svg_assembly_pins.svg",
         image_file="generated_data/src/board_pins.svg",
     )
+    board_bottom = _make_board_svg(
+        asset_directory / "board_bottom.svg",
+        project_directory,
+        project_data,
+        components,
+        style,
+        component_asset_directory,
+        image_file="generated_data/src/board_bottom.svg",
+        board_side="back",
+        mirror_view=True,
+    )
+    board_pins_bottom = _make_board_svg(
+        asset_directory / "board_pins_bottom.svg",
+        project_directory,
+        project_data,
+        components,
+        style,
+        component_asset_directory,
+        component_svg_filename="working_svg_assembly_pins.svg",
+        image_file="generated_data/src/board_pins_bottom.svg",
+        board_side="back",
+        mirror_view=True,
+    )
+    board_mechanical = _make_mechanical_svg(
+        asset_directory / "board_mechanical.svg",
+        project_directory,
+        project_data,
+        components,
+        style,
+    )
+    board_png = _make_board_png(
+        asset_directory / "board.svg",
+        asset_directory / "board.png",
+        maximum_dimension=int(style["board_svg"].get("png_maximum_dimension", 1600)),
+        regenerate_pngs=regenerate_pngs,
+    )
     board_pins_png = _make_board_png(
         asset_directory / "board_pins.svg",
         asset_directory / "board_pins.png",
         maximum_dimension=int(style["board_svg"].get("png_maximum_dimension", 1600)),
         regenerate_pngs=regenerate_pngs,
     )
+    board_bottom_png = _make_board_png(
+        asset_directory / "board_bottom.svg",
+        asset_directory / "board_bottom.png",
+        maximum_dimension=int(style["board_svg"].get("png_maximum_dimension", 1600)),
+        regenerate_pngs=regenerate_pngs,
+    )
+    board_pins_bottom_png = _make_board_png(
+        asset_directory / "board_pins_bottom.svg",
+        asset_directory / "board_pins_bottom.png",
+        maximum_dimension=int(style["board_svg"].get("png_maximum_dimension", 1600)),
+        regenerate_pngs=regenerate_pngs,
+    )
+    board_mechanical_png = _make_board_png(
+        asset_directory / "board_mechanical.svg",
+        asset_directory / "board_mechanical.png",
+        maximum_dimension=int(style["board_svg"].get("png_maximum_dimension", 1600)),
+        regenerate_pngs=regenerate_pngs,
+    )
+    board_bounds = {
+        "min_x": board.get("min_x", 0.0),
+        "min_y": board.get("min_y", 0.0),
+        "max_x": board.get("max_x", 0.0),
+        "max_y": board.get("max_y", 0.0),
+    }
+    mounting_hole_rows = _mounting_hole_rows(components, board_bounds)
+    mounting_holes = {
+        "format_version": 1,
+        "coordinate_system": _mounting_hole_coordinate_system(board_bounds),
+        "count": len(mounting_hole_rows),
+        "holes": mounting_hole_rows,
+    }
+    _write_json(output_directory / "mounting_hole_summary.json", mounting_holes)
+    _write_yaml(output_directory / "mounting_hole_summary.yaml", mounting_holes)
     component_rows = _component_rows(components)
     placement = {
         "component_count": len(component_rows),
@@ -980,8 +1432,16 @@ def generate_project_summary(
         "summary": summary,
         "placement": placement,
         "board": board,
+        "board_png": board_png,
         "board_pins": board_pins,
         "board_pins_png": board_pins_png,
+        "board_bottom": board_bottom,
+        "board_bottom_png": board_bottom_png,
+        "board_pins_bottom": board_pins_bottom,
+        "board_pins_bottom_png": board_pins_bottom_png,
+        "board_mechanical": board_mechanical,
+        "board_mechanical_png": board_mechanical_png,
+        "mounting_holes": mounting_holes,
         "bom": _bom_rows(components, oomp_link_prefix=repository_links["parts"]),
         "nets": _net_rows(components),
         "generated_text": generated_text,

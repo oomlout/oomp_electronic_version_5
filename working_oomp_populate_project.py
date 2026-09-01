@@ -32,7 +32,74 @@ def main(**kwargs):
                     },
                 }
             ],
-        }
+        },
+        {
+            "github_user": "dangerousprototypes",
+            "github_repository": "buspirate5_hardware",
+            "github_url": "https://github.com/DangerousPrototypes/BusPirate5-hardware",
+            "repository_url": "https://github.com/DangerousPrototypes/BusPirate5-hardware.git",
+            "versions": [
+                {
+                    "version": "5_rev10a",
+                    "git_ref": "main",
+                    "sparse_checkout": True,
+                    "project_file_folder": "bus_pirate_pcb/5-REV10A",
+                    "project_file_basename": "REV10a",
+                    "project_file_path": "bus_pirate_pcb/5-REV10A/REV10a",
+                    "project_file_path_original": "",
+                    "match_overrides": {
+                        "D401": "electronic_diode_switching_sod_523f_onsemi_1n4148wt",
+                        "D601": "electronic_diode_switching_sod_523f_onsemi_1n4148wt",
+                        "D602": "electronic_diode_switching_sod_523f_onsemi_1n4148wt",
+                        "D603": "electronic_diode_switching_sod_523f_onsemi_1n4148wt",
+                        "D500": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
+                        "D501": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
+                        "D502": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
+                        "D503": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
+                        "D504": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
+                        "J202": "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12",
+                        "J301": "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin",
+                        "J302": "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb",
+                        "Y101": "electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf",
+                        "LED701": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+                        "LED702": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED703": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED704": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+                        "LED705": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED706": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED707": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+                        "LED708": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+                        "LED710": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED712": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+                        "LED713": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED714": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED715": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED716": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+                        "LED717": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+                        "LED718": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED719": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+                        "LED720": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+                        "U102": "electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq",
+                        "U103": "electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040",
+                        "U105": "electronic_ic_updfn_8_memory_spi_nand_flash_1_gbit_micron_mt29f1g01abafdwb",
+                        "U301": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+                        "U302": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+                        "U303": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+                        "U304": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+                        "U305": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+                        "U306": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+                        "U307": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+                        "U308": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+                        "U401": "electronic_ic_sot_89_3_power_management_linear_voltage_regulator_3_3_volt_microne_me6211a33pg_n",
+                        "U402": "electronic_ic_tssop_24_logic_16_channel_analog_multiplexer_nexperia_74hct4067pw118",
+                        "U403": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_diodes_ap2127k_3_3trg1",
+                        "U501": "electronic_ic_tssop_16_logic_serial_in_parallel_out_shift_register_wuxi_i_core_elec_aip74hc595ta16_tr",
+                        "U502": "electronic_ic_tssop_16_logic_serial_in_parallel_out_shift_register_wuxi_i_core_elec_aip74hc595ta16_tr",
+                        "U503": "electronic_ic_tssop_20_logic_octal_bus_transceiver_wuxi_i_core_elec_aip74hct245ta20_tr",
+                    },
+                }
+            ],
+        },
     ]
 
     project_file_extensions = [
@@ -57,9 +124,13 @@ def main(**kwargs):
 
             option["project_github_user"] = project["github_user"]
             option["project_github_repository"] = project["github_repository"]
-            option["project_github_url"] = f"https://github.com/{project['github_user']}/{project['github_repository']}"
+            option["project_github_url"] = project.get(
+                "github_url",
+                f"https://github.com/{project['github_user']}/{project['github_repository']}",
+            )
             option["project_git_url"] = project["repository_url"]
             option["project_git_ref"] = version_details.get("git_ref", "main")
+            option["project_sparse_checkout"] = bool(version_details.get("sparse_checkout", False))
             option["project_version"] = version_details.get("version", "current")
             option["project_file_folder"] = version_details.get("project_file_folder", "")
             option["project_file_basename"] = version_details.get("project_file_basename", "")

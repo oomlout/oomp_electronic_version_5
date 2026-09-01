@@ -31,6 +31,7 @@ def refresh_project_files(details):
     git_reference = str(details.get("project_git_ref", "main")).strip()
     project_version = str(details.get("project_version", "current")).strip()
     source_folder = str(details.get("project_file_folder", "")).strip()
+    sparse_checkout = bool(details.get("project_sparse_checkout", False))
     source_basename = str(details.get("project_file_basename", "")).strip()
     extensions = details.get("project_file_extensions", [])
 
@@ -48,9 +49,21 @@ def refresh_project_files(details):
         if repository_directory.exists() and any(repository_directory.iterdir()):
             raise RuntimeError(f"Refusing to clone over non-empty directory: {repository_directory}")
         git_parent.mkdir(parents=True, exist_ok=True)
-        _run_git(["clone", repository_url, repository_directory])
+        clone_arguments = ["clone"]
+        if sparse_checkout:
+            clone_arguments.extend(["--filter=blob:none", "--no-checkout"])
+        clone_arguments.extend([repository_url, repository_directory])
+        _run_git(clone_arguments)
     else:
         _run_git(["-C", repository_directory, "fetch", "--all", "--tags", "--prune"])
+
+    # Windows can reject unrelated repository paths before Git reaches the
+    # selected KiCad directory.  Sparse checkout keeps the working tree small
+    # and, importantly, makes the chosen project folder explicit and editable.
+    if sparse_checkout:
+        _run_git(["-C", repository_directory, "config", "core.longpaths", "true"])
+        _run_git(["-C", repository_directory, "sparse-checkout", "init", "--cone"])
+        _run_git(["-C", repository_directory, "sparse-checkout", "set", source_folder])
 
     if project_version == "current":
         _run_git(["-C", repository_directory, "checkout", git_reference])
@@ -75,6 +88,26 @@ def refresh_project_files(details):
             }
         )
         print(f"copied {source_file.name} -> {destination_file.name}")
+
+    # Hierarchical KiCad projects keep the component-bearing sheets beside the
+    # root schematic.  Copy them into a stable nested directory so the parser
+    # can digest the complete design without depending on the ignored clone.
+    sheet_directory = part_directory / "kicad_file_sheets"
+    source_project_directory = repository_directory / source_folder
+    schematic_files = sorted(source_project_directory.glob("*.kicad_sch"))
+    for schematic_file in schematic_files:
+        if schematic_file.name.lower() == f"{source_basename}.kicad_sch".lower():
+            continue
+        sheet_directory.mkdir(parents=True, exist_ok=True)
+        destination_file = sheet_directory / schematic_file.name
+        shutil.copy2(schematic_file, destination_file)
+        copied_files.append(
+            {
+                "source": str(schematic_file),
+                "destination": str(destination_file),
+            }
+        )
+        print(f"copied sheet {schematic_file.name} -> kicad_file_sheets/{schematic_file.name}")
 
     return copied_files
 

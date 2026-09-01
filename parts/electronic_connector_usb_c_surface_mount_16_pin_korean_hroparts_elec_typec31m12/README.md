@@ -2,9 +2,9 @@
 
 `electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12`
 
-Connector USB C Surface Mount 16 Pin is an OOMP electronic connector definition. It uses the usb c package or form factor. Its nominal drawing size is 8.94 × 7.35 mm. The definition includes 16 documented pins.
+Connector USB C Surface Mount 16 Pin is an OOMP electronic connector definition. It uses the usb c package or form factor. Its nominal drawing size is 8.94 &#x00D7; 7.35 mm. The definition includes 16 documented pins.
 
-![Connector USB C Surface Mount 16 Pin pinout](working_svg_square_pins.svg)
+![Connector USB C Surface Mount 16 Pin pinout](working_svg_top.svg)
 
 ## At a glance
 
@@ -13,8 +13,9 @@ Connector USB C Surface Mount 16 Pin is an OOMP electronic connector definition.
 | OOMP ID | `electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12` |
 | Type | Connector |
 | Package / style | usb c |
-| Nominal size | 8.94 × 7.35 mm |
+| Nominal size | 8.94 &#x00D7; 7.35 mm |
 | Documented pins | 16 |
+
 
 ## Classification
 
@@ -28,6 +29,8 @@ Connector USB C Surface Mount 16 Pin is an OOMP electronic connector definition.
 | 14 | `korean_hroparts_elec` |
 | 15 | `typec31m12` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -35,12 +38,18 @@ Connector USB C Surface Mount 16 Pin is an OOMP electronic connector definition.
 | Length | 8.94 mm |
 | Width | 7.35 mm |
 
+
+
+
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `TYPE-C-31-M-12` |
 | LCSC | `C165948` |
+
+
+
 
 ## Pins
 
@@ -63,9 +72,13 @@ Connector USB C Surface Mount 16 Pin is an OOMP electronic connector definition.
 | A12 | gnd | power |
 | B1 | gnd | power |
 
+
+
+
 ## Datasheet
 
 [View the datasheet](datasheet.pdf)
+
 
 ## Files
 
@@ -85,8 +98,17 @@ Connector USB C Surface Mount 16 Pin is an OOMP electronic connector definition.
 
 ![Dimensions with labels](working_svg_dimensioned_titles_300.png)
 
+![Top view](working_svg_top_300.png)
+
+![Bottom view](working_svg_bottom_300.png)
+
+![Side view](working_svg_side_300.png)
+
+
+
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12)
+
 
 ---
 

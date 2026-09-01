@@ -42,6 +42,32 @@ def main(**kwargs):
         option["taxonomy_7"] = addressable_led["part_number"]
         options.append(option)
 
+    bus_pirate_leds = [
+        {
+            "size": "3535",
+            "color": "rgb",
+            "controller": "sk6812",
+            "manufacturer": "opsco_optoelectronics",
+            "part_number": "sk6812mini_e",
+        },
+        {
+            "size": "4020_side_view",
+            "color": "rgb",
+            "controller": "sk6812",
+            "manufacturer": "opsco_optoelectronics",
+            "part_number": "sk6812side_a",
+        },
+    ]
+    for bus_pirate_led in bus_pirate_leds:
+        option = {}
+        option["taxonomy_2"] = "led"
+        option["taxonomy_3"] = bus_pirate_led["size"]
+        option["taxonomy_4"] = bus_pirate_led["color"]
+        option["taxonomy_5"] = bus_pirate_led["controller"]
+        option["taxonomy_6"] = bus_pirate_led["manufacturer"]
+        option["taxonomy_7"] = bus_pirate_led["part_number"]
+        options.append(option)
+
     colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]
     lengths = [
         "38_mm_length",

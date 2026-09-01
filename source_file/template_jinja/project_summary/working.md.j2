@@ -12,6 +12,8 @@
 | --- | ---: |
 | Components | {{ summary.component_count }} |
 | PCB footprints | {{ summary.pcb_footprint_count }} |
+| Mounting and locating holes | {{ mounting_holes.count }} |
+| Matched OOMP mounting-hole items | {{ summary.mounting_hole_oomp_item_count }} |
 | Schematic symbols | {{ summary.schematic_symbol_count }} |
 | Matched OOMP components | {{ summary.matched_component_count }} |
 | Unmatched physical components | {{ summary.unmatched_physical_component_count }} |
@@ -26,8 +28,21 @@
 - Approximate size: **{{ board.width_mm }} mm × {{ board.height_mm }} mm**
 - Outline source: `{{ board.bounds_source }}`
 - Placement drawing: [view `board.svg`]({{ repository_links.board }})
+- PNG placement drawing: [view `board.png`]({{ repository_links.board_png }})
+- 300-pixel placement preview: [view `board_300.png`]({{ repository_links.board_300_png }})
 - Placement drawing with pin names: [view `board_pins.svg`]({{ repository_links.board_pins }})
 - PNG drawing with pin names: [view `board_pins.png`]({{ repository_links.board_pins_png }})
+- 300-pixel pin preview: [view `board_pins_300.png`]({{ repository_links.board_pins_300_png }})
+- Bottom placement drawing: [view `board_bottom.svg`]({{ repository_links.board_bottom }})
+- Bottom PNG placement drawing: [view `board_bottom.png`]({{ repository_links.board_bottom_png }})
+- 300-pixel bottom preview: [view `board_bottom_300.png`]({{ repository_links.board_bottom_300_png }})
+- Bottom placement drawing with pin names: [view `board_pins_bottom.svg`]({{ repository_links.board_pins_bottom }})
+- Bottom PNG drawing with pin names: [view `board_pins_bottom.png`]({{ repository_links.board_pins_bottom_png }})
+- 300-pixel bottom pin preview: [view `board_pins_bottom_300.png`]({{ repository_links.board_pins_bottom_300_png }})
+- Mechanical drawing: [view `board_mechanical.svg`]({{ repository_links.board_mechanical }})
+- Mechanical PNG: [view `board_mechanical.png`]({{ repository_links.board_mechanical_png }})
+- 300-pixel mechanical preview: [view `board_mechanical_300.png`]({{ repository_links.board_mechanical_300_png }})
+- Self-contained interactive explorer: [download `board_explorer.html`]({{ repository_links.explorer }})
 {% else %}
 No PCB outline or placed-footprint bounds were available.
 {% endif %}
@@ -38,6 +53,32 @@ No PCB outline or placed-footprint bounds were available.
 ![PCB component placement with pin names]({{ repository_links.board_pins_png_raw }})
 {% else %}
 No pin-labelled PCB drawing was available.
+{% endif %}
+
+## Bottom board with pins
+
+{% if board_pins_bottom.available %}
+The bottom view is mirrored horizontally so it is shown as viewed from beneath the assembled board.
+
+![Bottom PCB component placement with pin names]({{ repository_links.board_pins_bottom_png_raw }})
+{% else %}
+No bottom-side PCB drawing was available.
+{% endif %}
+
+## Mechanical layer
+
+{% if board_mechanical.available %}
+![PCB mechanical layer with mounting holes]({{ repository_links.board_mechanical_png_raw }})
+
+The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. This point is shown as **0,0** in the mechanical drawing; X increases right and Y increases down. Original KiCad coordinates are retained alongside it.
+
+| OOMP reference | Source | Name | Classification | Role | Drill size | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | --- | ---: | ---: | --- |
+{% for hole in mounting_holes.holes %}
+| `{{ hole.id }}` | `{{ hole.reference }}` | {{ hole.name }} | `{{ hole.classification.taxonomy_path | join(' / ') }}` | {{ hole.role }} | {{ hole.size_text }} | {{ '%.3f' | format(hole.position_board_mm.x) }} | {{ '%.3f' | format(hole.position_board_mm.y) }} | {% if hole.oomp_status == 'matched' %}[`{{ hole.oomp_id }}`]({{ repository_links.parts }}/{{ hole.oomp_id }}){% else %}unmatched (`{{ hole.oomp_id }}` proposed){% endif %} |
+{% endfor %}
+{% else %}
+No PCB mechanical drawing was available.
 {% endif %}
 
 ## Bill of materials
@@ -67,6 +108,9 @@ No pin-labelled PCB drawing was available.
 {% for note in generated_text.review_notes %}
 - {{ note }}
 {% endfor %}
+
+- Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`]({{ repository_links.lcsc_review }})
+- Browser-only research and datasheet queue: [`browser_research_queue.md`]({{ repository_links.browser_research_queue }})
 
 ## Generated source bundle
 

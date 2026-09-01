@@ -10,7 +10,7 @@ from pathlib import Path
 import yaml
 
 
-PACKAGE_SIZES = ["0201", "0402", "0603", "0805", "1206", "1010", "5050"]
+PACKAGE_SIZES = ["0201", "0402", "0603", "0805", "1206", "2512", "1010", "5050"]
 LED_COLORS = ["warm_white", "white", "yellow", "green", "blue", "pink", "red", "rgb"]
 
 
@@ -43,7 +43,18 @@ def parse_resistance_ohms(value):
     parsed = _engineering_number(value, {"": 1, "r": 1, "k": 1000, "m": 1000000})
     if parsed is None:
         return None
-    return int(round(parsed))
+    if abs(parsed - round(parsed)) < 1e-9:
+        return int(round(parsed))
+    return round(parsed, 6)
+
+
+def resistance_taxonomy(value):
+    resistance = parse_resistance_ohms(value)
+    if resistance is None:
+        return ""
+    if isinstance(resistance, int):
+        return str(resistance)
+    return ("%.6f" % resistance).rstrip("0").rstrip(".").replace(".", "_")
 
 
 def parse_capacitance_farads(value):
@@ -105,6 +116,8 @@ def infer_kind(fields):
     )
     if reference.startswith("LED") or "led" in evidence or "ws2812" in evidence:
         return "led"
+    if "r_array" in evidence or reference.startswith("RN"):
+        return "resistor_array"
     if reference.startswith("R") and not reference.startswith("REF"):
         return "resistor"
     if reference.startswith("C") and not reference.startswith("CON"):
@@ -135,10 +148,20 @@ def proposed_oomp_id(component):
     kind = infer_kind(fields)
     package_size = infer_package_size(fields)
 
+    pcb = component.get("pcb") or {}
+    mounting_holes = pcb.get("mounting_holes") or []
+    if pcb.get("is_mounting_hole", False) and len(mounting_holes) > 0:
+        return str(mounting_holes[0].get("oomp_id", ""))
+
     if kind == "resistor":
-        resistance = parse_resistance_ohms(fields["value"])
-        if package_size and resistance is not None:
+        resistance = resistance_taxonomy(fields["value"])
+        if package_size and resistance != "":
             return f"electronic_resistor_{package_size}_{resistance}_ohm"
+
+    if kind == "resistor_array":
+        resistance = resistance_taxonomy(fields["value"])
+        if resistance != "":
+            return f"electronic_resistor_array_4_x_0402_convex_{resistance}_ohm_8_pin"
 
     if kind == "capacitor":
         capacitance = capacitance_taxonomy(fields["value"])
@@ -187,6 +210,8 @@ class OompPartIndex:
     def candidate_parts(self, kind):
         if kind:
             prefix = f"electronic_{kind}_"
+            if kind == "mounting_hole":
+                prefix = "mechanical_mounting_hole_"
             return [part for part in self.parts if part["oomp_id"].startswith(prefix)]
         return []
 
@@ -196,6 +221,10 @@ def _is_physical_component(component):
     reference_upper = reference.upper()
     fields = component_fields(component)
     footprint = normalize_text(fields["footprint"])
+
+    pcb = component.get("pcb") or {}
+    if pcb.get("is_mounting_hole", False):
+        return True
 
     if reference_upper.startswith("SJ"):
         return False
@@ -231,8 +260,8 @@ def _rank_candidates(index, component, proposed_id, kind, maximum=5):
 
     def candidate_numeric_value(part_id):
         if kind == "resistor":
-            match = re.search(r"_([0-9]+)_ohm$", part_id)
-            return float(match.group(1)) if match else None
+            match = re.search(r"_([0-9]+(?:_[0-9]+)?)_ohm$", part_id)
+            return float(match.group(1).replace("_", ".")) if match else None
         if kind == "capacitor":
             match = re.search(r"_([0-9]+(?:_[0-9]+)?)_(pico|nano|micro|milli)_farad(?:_|$)", part_id)
             if not match:
@@ -275,6 +304,9 @@ def match_component(index, component, overrides=None):
     reference = component.get("reference", "")
     fields = component_fields(component)
     kind = infer_kind(fields)
+    pcb = component.get("pcb") or {}
+    if pcb.get("is_mounting_hole", False):
+        kind = "mounting_hole"
     package_size = infer_package_size(fields)
     proposed_id = proposed_oomp_id(component)
 

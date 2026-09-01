@@ -41,7 +41,9 @@ def main(**kwargs):
     if True:
         working_oomp.main(**kwargs)
 
-    #run roboclick_ai
+    # Run the legacy Roboclick "ai" namespace.  The name is historical: the
+    # default OOMP actions in this repository are deterministic Python, image
+    # resize, file-copy, and Jinja actions.  LLM actions are opt-in only.
     if True:
         directory = "parts"
         kwargs["directory"] = directory

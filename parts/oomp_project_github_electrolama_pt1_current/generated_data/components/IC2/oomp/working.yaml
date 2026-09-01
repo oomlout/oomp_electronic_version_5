@@ -77,55 +77,77 @@ name_space: electronic ic sop 16 controller usb hub controller 4 port corechips 
 name_upper: ELECTRONIC IC SOP 16 CONTROLLER USB HUB CONTROLLER 4 PORT CORECHIPS SL21A
 oomlout_ai_roboclick_1:
     actions:
+    -   command: file_copy
+        delete_before_copy: true
+        exit_on_missing: true
+        file_destination: datasheet.pdf
+        file_source: parts_source/electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a/datasheet.pdf
+    -   command: run_python
+        description: Generate this component's standard SVG and PNG diagrams with
+            working_svg.py.
+        file_output: working_svg_assembly.svg
+        file_python: kicad_agents/component_svg_action.py
+        part_id: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
+        regenerate_pngs: false
+        timeout: '600'
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_square_pins_300.png
         file_source: working_svg_square_pins.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_outline_300.png
         file_source: working_svg_outline.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_part_id_300.png
         file_source: working_svg_part_id.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_md5_6_alpha_300.png
         file_source: working_svg_md5_6_alpha.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_bip_39_3_word_300.png
         file_source: working_svg_bip_39_3_word.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_square_300.png
         file_source: working_svg_square.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_dimensioned_300.png
         file_source: working_svg_dimensioned.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_dimensioned_titles_300.png
         file_source: working_svg_dimensioned_titles.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
-    description: Build proportional 300-pixel previews for the generated part README.
+    description: Build component diagrams and proportional 300-pixel README previews
+        with deterministic Python actions.
     file_test: ''
     retries_until_complete: 0
 oomlout_ai_roboclick_2:
@@ -164,56 +186,77 @@ oomlout_ai_roboclick_2:
                 CORECHIPS SL21A
             oomlout_ai_roboclick_1:
                 actions:
+                -   command: file_copy
+                    delete_before_copy: true
+                    exit_on_missing: true
+                    file_destination: datasheet.pdf
+                    file_source: parts_source/electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a/datasheet.pdf
+                -   command: run_python
+                    description: Generate this component's standard SVG and PNG diagrams
+                        with working_svg.py.
+                    file_output: working_svg_assembly.svg
+                    file_python: kicad_agents/component_svg_action.py
+                    part_id: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
+                    regenerate_pngs: false
+                    timeout: '600'
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_pins_300.png
                     file_source: working_svg_square_pins.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_outline_300.png
                     file_source: working_svg_outline.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_part_id_300.png
                     file_source: working_svg_part_id.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_md5_6_alpha_300.png
                     file_source: working_svg_md5_6_alpha.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_bip_39_3_word_300.png
                     file_source: working_svg_bip_39_3_word.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_300.png
                     file_source: working_svg_square.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_300.png
                     file_source: working_svg_dimensioned.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_titles_300.png
                     file_source: working_svg_dimensioned_titles.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
-                description: Build proportional 300-pixel previews for the generated
-                    part README.
+                description: Build component diagrams and proportional 300-pixel README
+                    previews with deterministic Python actions.
                 file_test: ''
                 retries_until_complete: 0
             part_id: U1
@@ -427,6 +470,7 @@ oomlout_ai_roboclick_2:
                     name: udm
                     number: '9'
                     type: signal
+            regenerate_pngs: false
             svg_details:
             -   filename_extra: assembly
                 make_a4: false
@@ -575,56 +619,77 @@ oomlout_ai_roboclick_3:
                 CORECHIPS SL21A
             oomlout_ai_roboclick_1:
                 actions:
+                -   command: file_copy
+                    delete_before_copy: true
+                    exit_on_missing: true
+                    file_destination: datasheet.pdf
+                    file_source: parts_source/electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a/datasheet.pdf
+                -   command: run_python
+                    description: Generate this component's standard SVG and PNG diagrams
+                        with working_svg.py.
+                    file_output: working_svg_assembly.svg
+                    file_python: kicad_agents/component_svg_action.py
+                    part_id: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
+                    regenerate_pngs: false
+                    timeout: '600'
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_pins_300.png
                     file_source: working_svg_square_pins.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_outline_300.png
                     file_source: working_svg_outline.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_part_id_300.png
                     file_source: working_svg_part_id.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_md5_6_alpha_300.png
                     file_source: working_svg_md5_6_alpha.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_bip_39_3_word_300.png
                     file_source: working_svg_bip_39_3_word.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_300.png
                     file_source: working_svg_square.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_300.png
                     file_source: working_svg_dimensioned.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_titles_300.png
                     file_source: working_svg_dimensioned_titles.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
-                description: Build proportional 300-pixel previews for the generated
-                    part README.
+                description: Build component diagrams and proportional 300-pixel README
+                    previews with deterministic Python actions.
                 file_test: ''
                 retries_until_complete: 0
             oomlout_ai_roboclick_2:
@@ -664,56 +729,78 @@ oomlout_ai_roboclick_3:
                             4 PORT CORECHIPS SL21A
                         oomlout_ai_roboclick_1:
                             actions:
+                            -   command: file_copy
+                                delete_before_copy: true
+                                exit_on_missing: true
+                                file_destination: datasheet.pdf
+                                file_source: parts_source/electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a/datasheet.pdf
+                            -   command: run_python
+                                description: Generate this component's standard SVG
+                                    and PNG diagrams with working_svg.py.
+                                file_output: working_svg_assembly.svg
+                                file_python: kicad_agents/component_svg_action.py
+                                part_id: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
+                                regenerate_pngs: false
+                                timeout: '600'
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_square_pins_300.png
                                 file_source: working_svg_square_pins.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_outline_300.png
                                 file_source: working_svg_outline.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_part_id_300.png
                                 file_source: working_svg_part_id.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_md5_6_alpha_300.png
                                 file_source: working_svg_md5_6_alpha.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_bip_39_3_word_300.png
                                 file_source: working_svg_bip_39_3_word.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_square_300.png
                                 file_source: working_svg_square.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_dimensioned_300.png
                                 file_source: working_svg_dimensioned.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_dimensioned_titles_300.png
                                 file_source: working_svg_dimensioned_titles.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
-                            description: Build proportional 300-pixel previews for
-                                the generated part README.
+                            description: Build component diagrams and proportional
+                                300-pixel README previews with deterministic Python
+                                actions.
                             file_test: ''
                             retries_until_complete: 0
                         part_id: U1
@@ -928,6 +1015,7 @@ oomlout_ai_roboclick_3:
                                 name: udm
                                 number: '9'
                                 type: signal
+                        regenerate_pngs: false
                         svg_details:
                         -   filename_extra: assembly
                             make_a4: false
@@ -1251,6 +1339,7 @@ oomlout_ai_roboclick_3:
                     name: udm
                     number: '9'
                     type: signal
+            regenerate_pngs: false
             svg_details:
             -   filename_extra: assembly
                 make_a4: false
@@ -1574,6 +1663,7 @@ pins:
         name: udm
         number: '9'
         type: signal
+regenerate_pngs: false
 svg_details:
 -   filename_extra: assembly
     make_a4: false

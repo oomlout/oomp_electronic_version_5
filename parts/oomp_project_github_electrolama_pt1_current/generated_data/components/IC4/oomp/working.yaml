@@ -81,55 +81,77 @@ name_upper: ELECTRONIC IC TSOT 23 5 POWER MANAGEMENT HIGH SIDE POWER SWITCH WITH
     RICHTEK RT9742CGJ5
 oomlout_ai_roboclick_1:
     actions:
+    -   command: file_copy
+        delete_before_copy: true
+        exit_on_missing: true
+        file_destination: datasheet.pdf
+        file_source: parts_source/electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5/datasheet.pdf
+    -   command: run_python
+        description: Generate this component's standard SVG and PNG diagrams with
+            working_svg.py.
+        file_output: working_svg_assembly.svg
+        file_python: kicad_agents/component_svg_action.py
+        part_id: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
+        regenerate_pngs: false
+        timeout: '600'
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_square_pins_300.png
         file_source: working_svg_square_pins.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_outline_300.png
         file_source: working_svg_outline.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_part_id_300.png
         file_source: working_svg_part_id.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_md5_6_alpha_300.png
         file_source: working_svg_md5_6_alpha.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_bip_39_3_word_300.png
         file_source: working_svg_bip_39_3_word.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_square_300.png
         file_source: working_svg_square.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_dimensioned_300.png
         file_source: working_svg_dimensioned.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
     -   allow_upscale: false
         command: image_resize
         file_destination: working_svg_dimensioned_titles_300.png
         file_source: working_svg_dimensioned_titles.png
         maximum_dimension: 300
+        regenerate_pngs: false
         resample: lanczos
-    description: Build proportional 300-pixel previews for the generated part README.
+    description: Build component diagrams and proportional 300-pixel README previews
+        with deterministic Python actions.
     file_test: ''
     retries_until_complete: 0
 oomlout_ai_roboclick_2:
@@ -169,56 +191,77 @@ oomlout_ai_roboclick_2:
                 WITH FLAG RICHTEK RT9742CGJ5
             oomlout_ai_roboclick_1:
                 actions:
+                -   command: file_copy
+                    delete_before_copy: true
+                    exit_on_missing: true
+                    file_destination: datasheet.pdf
+                    file_source: parts_source/electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5/datasheet.pdf
+                -   command: run_python
+                    description: Generate this component's standard SVG and PNG diagrams
+                        with working_svg.py.
+                    file_output: working_svg_assembly.svg
+                    file_python: kicad_agents/component_svg_action.py
+                    part_id: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
+                    regenerate_pngs: false
+                    timeout: '600'
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_pins_300.png
                     file_source: working_svg_square_pins.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_outline_300.png
                     file_source: working_svg_outline.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_part_id_300.png
                     file_source: working_svg_part_id.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_md5_6_alpha_300.png
                     file_source: working_svg_md5_6_alpha.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_bip_39_3_word_300.png
                     file_source: working_svg_bip_39_3_word.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_300.png
                     file_source: working_svg_square.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_300.png
                     file_source: working_svg_dimensioned.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_titles_300.png
                     file_source: working_svg_dimensioned_titles.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
-                description: Build proportional 300-pixel previews for the generated
-                    part README.
+                description: Build component diagrams and proportional 300-pixel README
+                    previews with deterministic Python actions.
                 file_test: ''
                 retries_until_complete: 0
             part_id: U1
@@ -355,6 +398,7 @@ oomlout_ai_roboclick_2:
                     name: vin
                     number: '5'
                     type: power
+            regenerate_pngs: false
             svg_details:
             -   filename_extra: assembly
                 make_a4: false
@@ -504,56 +548,77 @@ oomlout_ai_roboclick_3:
                 WITH FLAG RICHTEK RT9742CGJ5
             oomlout_ai_roboclick_1:
                 actions:
+                -   command: file_copy
+                    delete_before_copy: true
+                    exit_on_missing: true
+                    file_destination: datasheet.pdf
+                    file_source: parts_source/electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5/datasheet.pdf
+                -   command: run_python
+                    description: Generate this component's standard SVG and PNG diagrams
+                        with working_svg.py.
+                    file_output: working_svg_assembly.svg
+                    file_python: kicad_agents/component_svg_action.py
+                    part_id: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
+                    regenerate_pngs: false
+                    timeout: '600'
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_pins_300.png
                     file_source: working_svg_square_pins.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_outline_300.png
                     file_source: working_svg_outline.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_part_id_300.png
                     file_source: working_svg_part_id.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_md5_6_alpha_300.png
                     file_source: working_svg_md5_6_alpha.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_bip_39_3_word_300.png
                     file_source: working_svg_bip_39_3_word.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_square_300.png
                     file_source: working_svg_square.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_300.png
                     file_source: working_svg_dimensioned.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
                 -   allow_upscale: false
                     command: image_resize
                     file_destination: working_svg_dimensioned_titles_300.png
                     file_source: working_svg_dimensioned_titles.png
                     maximum_dimension: 300
+                    regenerate_pngs: false
                     resample: lanczos
-                description: Build proportional 300-pixel previews for the generated
-                    part README.
+                description: Build component diagrams and proportional 300-pixel README
+                    previews with deterministic Python actions.
                 file_test: ''
                 retries_until_complete: 0
             oomlout_ai_roboclick_2:
@@ -593,56 +658,78 @@ oomlout_ai_roboclick_3:
                             SIDE POWER SWITCH WITH FLAG RICHTEK RT9742CGJ5
                         oomlout_ai_roboclick_1:
                             actions:
+                            -   command: file_copy
+                                delete_before_copy: true
+                                exit_on_missing: true
+                                file_destination: datasheet.pdf
+                                file_source: parts_source/electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5/datasheet.pdf
+                            -   command: run_python
+                                description: Generate this component's standard SVG
+                                    and PNG diagrams with working_svg.py.
+                                file_output: working_svg_assembly.svg
+                                file_python: kicad_agents/component_svg_action.py
+                                part_id: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
+                                regenerate_pngs: false
+                                timeout: '600'
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_square_pins_300.png
                                 file_source: working_svg_square_pins.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_outline_300.png
                                 file_source: working_svg_outline.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_part_id_300.png
                                 file_source: working_svg_part_id.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_md5_6_alpha_300.png
                                 file_source: working_svg_md5_6_alpha.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_bip_39_3_word_300.png
                                 file_source: working_svg_bip_39_3_word.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_square_300.png
                                 file_source: working_svg_square.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_dimensioned_300.png
                                 file_source: working_svg_dimensioned.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
                             -   allow_upscale: false
                                 command: image_resize
                                 file_destination: working_svg_dimensioned_titles_300.png
                                 file_source: working_svg_dimensioned_titles.png
                                 maximum_dimension: 300
+                                regenerate_pngs: false
                                 resample: lanczos
-                            description: Build proportional 300-pixel previews for
-                                the generated part README.
+                            description: Build component diagrams and proportional
+                                300-pixel README previews with deterministic Python
+                                actions.
                             file_test: ''
                             retries_until_complete: 0
                         part_id: U1
@@ -780,6 +867,7 @@ oomlout_ai_roboclick_3:
                                 name: vin
                                 number: '5'
                                 type: power
+                        regenerate_pngs: false
                         svg_details:
                         -   filename_extra: assembly
                             make_a4: false
@@ -1026,6 +1114,7 @@ oomlout_ai_roboclick_3:
                     name: vin
                     number: '5'
                     type: power
+            regenerate_pngs: false
             svg_details:
             -   filename_extra: assembly
                 make_a4: false
@@ -1273,6 +1362,7 @@ pins:
         name: vin
         number: '5'
         type: power
+regenerate_pngs: false
 svg_details:
 -   filename_extra: assembly
     make_a4: false

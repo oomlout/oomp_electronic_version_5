@@ -1,22 +1,42 @@
 def main(**kwargs):
     options = kwargs.get("options", [])
 
-    diode_types = ["tvs_array"]
-    packages = ["sot_23_6"]
-    manufacturers = ["protek"]
-    part_numbers = ["srv054pt7"]
+    # Keep exact diode definitions as a plain array.  Diode families do not
+    # share every package/manufacturer combination, so a cross-product of four
+    # separate lists would create invalid parts that do not exist.
+    diodes = [
+        {
+            "diode_type": "tvs_array",
+            "package": "sot_23_6",
+            "manufacturer": "protek",
+            "part_number": "srv054pt7",
+        },
+        {
+            "diode_type": "switching",
+            "package": "sod_523f",
+            "manufacturer": "onsemi",
+            "part_number": "1n4148wt",
+            "name_short": "Switching Diode 1N4148WT",
+        },
+        {
+            "diode_type": "schottky_dual_common_cathode",
+            "package": "sot_523",
+            "manufacturer": "diodes_incorporated",
+            "part_number": "bas40t_05",
+            "name_short": "Dual Schottky Diode BAS40T-05",
+        },
+    ]
 
-    for diode_type in diode_types:
-        for package in packages:
-            for manufacturer in manufacturers:
-                for part_number in part_numbers:
-                    option = {}
-                    option["taxonomy_2"] = "diode"
-                    option["taxonomy_3"] = diode_type
-                    option["taxonomy_4"] = package
-                    option["taxonomy_14"] = manufacturer
-                    option["taxonomy_15"] = part_number
-                    options.append(option)
+    for diode in diodes:
+        option = {}
+        option["taxonomy_2"] = "diode"
+        option["taxonomy_3"] = diode["diode_type"]
+        option["taxonomy_4"] = diode["package"]
+        option["taxonomy_14"] = diode["manufacturer"]
+        option["taxonomy_15"] = diode["part_number"]
+        if "name_short" in diode:
+            option["name_short"] = diode["name_short"]
+        options.append(option)
 
 
 if __name__ == "__main__":

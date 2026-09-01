@@ -30,9 +30,17 @@ pads:
   position:
     x: 149.5011
     y: 91.1786
+  placed_rotation: 90.0
   size:
     x: 3.0
     y: 1.3
+    units: mm
+  drill:
+    available: false
+    shape: null
+    x: null
+    y: null
+    diameter: null
     units: mm
   layers:
   - F.Cu
@@ -73,6 +81,8 @@ pads:
       center:
         x: 149.5011
         y: 91.1786
+  plating: null
+  is_mounting_hole: false
   connected_to:
   - reference: D1
     pad_number: '1'
@@ -88,9 +98,17 @@ pads:
   position:
     x: 147.5011
     y: 91.1786
+  placed_rotation: 90.0
   size:
     x: 3.0
     y: 1.3
+    units: mm
+  drill:
+    available: false
+    shape: null
+    x: null
+    y: null
+    diameter: null
     units: mm
   layers:
   - F.Cu
@@ -131,6 +149,8 @@ pads:
       center:
         x: 147.5011
         y: 91.1786
+  plating: null
+  is_mounting_hole: false
   connected_to:
   - reference: D1
     pad_number: '3'
@@ -146,9 +166,17 @@ pads:
   position:
     x: 145.0011
     y: 91.1786
+  placed_rotation: 90.0
   size:
     x: 3.0
     y: 1.3
+    units: mm
+  drill:
+    available: false
+    shape: null
+    x: null
+    y: null
+    diameter: null
     units: mm
   layers:
   - F.Cu
@@ -189,6 +217,8 @@ pads:
       center:
         x: 145.0011
         y: 91.1786
+  plating: null
+  is_mounting_hole: false
   connected_to:
   - reference: C1
     pad_number: '1'
@@ -300,9 +330,20 @@ pads:
   position:
     x: 142.1011
     y: 83.6386
+  placed_rotation: 90.0
   size:
     x: 2.616
     y: 1.308
+    units: mm
+  drill:
+    available: true
+    shape: round
+    x: 0.8
+    y: 0.8
+    diameter: 0.8
+    offset:
+      x: 0.0
+      y: 0.0
     units: mm
   layers:
   - '*.Cu'
@@ -342,6 +383,8 @@ pads:
       center:
         x: 142.1011
         y: 83.6386
+  plating: plated
+  is_mounting_hole: true
   connected_to:
   - reference: C1
     pad_number: '1'
@@ -453,9 +496,20 @@ pads:
   position:
     x: 154.9011
     y: 83.6386
+  placed_rotation: 90.0
   size:
     x: 2.616
     y: 1.308
+    units: mm
+  drill:
+    available: true
+    shape: round
+    x: 0.8
+    y: 0.8
+    diameter: 0.8
+    offset:
+      x: 0.0
+      y: 0.0
     units: mm
   layers:
   - '*.Cu'
@@ -495,6 +549,8 @@ pads:
       center:
         x: 154.9011
         y: 83.6386
+  plating: plated
+  is_mounting_hole: true
   connected_to:
   - reference: C1
     pad_number: '1'
@@ -606,9 +662,17 @@ pads:
   position:
     x: 152.0011
     y: 91.1786
+  placed_rotation: 90.0
   size:
     x: 3.0
     y: 1.3
+    units: mm
+  drill:
+    available: false
+    shape: null
+    x: null
+    y: null
+    diameter: null
     units: mm
   layers:
   - F.Cu
@@ -649,6 +713,8 @@ pads:
       center:
         x: 152.0011
         y: 91.1786
+  plating: null
+  is_mounting_hole: false
   connected_to:
   - reference: C7
     pad_number: '2'
@@ -664,6 +730,160 @@ pads:
     pad_number: '2'
   - reference: SJ1
     pad_number: '1'
+mounting_holes:
+- id: CON3_hole_1
+  reference: CON3
+  pad_number: P$5
+  role: shield_mount
+  plating: plated
+  style: round
+  drill_size:
+    x: 0.8
+    y: 0.8
+    diameter: 0.8
+    units: mm
+  pad_size:
+    x: 2.616
+    y: 1.308
+    units: mm
+  pad_shape: oval
+  local_position:
+    x: -6.4
+    y: -2.24
+    rotation: 90.0
+  position:
+    x: 142.1011
+    y: 83.6386
+  rotation: 90.0
+  layers:
+  - '*.Cu'
+  - '*.Mask'
+  net: GND
+  classification_reason: plated pad uses a mechanical mounting/shield identifier
+  oomp_id: mechanical_mounting_hole_0_8_mm_round_plated
+  oomp_reference: MH5
+  classification:
+    name: Mounting Hole 0.8 mm Round Plated
+    class: mechanical
+    type: mounting_hole
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 0_8_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: plated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 0_8_mm
+    - round
+    - plated
+  name: Mounting Hole 0.8 mm Round Plated
+  oomp:
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_0_8_mm_round_plated
+    confidence: 1.0
+    proposed_oomp_id: mechanical_mounting_hole_0_8_mm_round_plated
+    inferred:
+      kind: mounting_hole
+      style: round
+      plating: plated
+      drill_size:
+        x: 0.8
+        y: 0.8
+        diameter: 0.8
+        units: mm
+    reasons:
+    - Exact mechanical mounting-hole OOMP ID constructed from drill size, style, and plating.
+    candidates: []
+- id: CON3_hole_2
+  reference: CON3
+  pad_number: P$6
+  role: shield_mount
+  plating: plated
+  style: round
+  drill_size:
+    x: 0.8
+    y: 0.8
+    diameter: 0.8
+    units: mm
+  pad_size:
+    x: 2.616
+    y: 1.308
+    units: mm
+  pad_shape: oval
+  local_position:
+    x: 6.4
+    y: -2.24
+    rotation: 90.0
+  position:
+    x: 154.9011
+    y: 83.6386
+  rotation: 90.0
+  layers:
+  - '*.Cu'
+  - '*.Mask'
+  net: GND
+  classification_reason: plated pad uses a mechanical mounting/shield identifier
+  oomp_id: mechanical_mounting_hole_0_8_mm_round_plated
+  oomp_reference: MH6
+  classification:
+    name: Mounting Hole 0.8 mm Round Plated
+    class: mechanical
+    type: mounting_hole
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 0_8_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: plated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 0_8_mm
+    - round
+    - plated
+  name: Mounting Hole 0.8 mm Round Plated
+  oomp:
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_0_8_mm_round_plated
+    confidence: 1.0
+    proposed_oomp_id: mechanical_mounting_hole_0_8_mm_round_plated
+    inferred:
+      kind: mounting_hole
+      style: round
+      plating: plated
+      drill_size:
+        x: 0.8
+        y: 0.8
+        diameter: 0.8
+        units: mm
+    reasons:
+    - Exact mechanical mounting-hole OOMP ID constructed from drill size, style, and plating.
+    candidates: []
+is_mounting_hole: false
 size:
   pads_local:
     measurement: all footprint pads in footprint-local coordinates

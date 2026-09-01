@@ -8,11 +8,16 @@ from pathlib import Path
 import yaml
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
-if str(REPOSITORY_ROOT) not in sys.path:
-    sys.path.insert(0, str(REPOSITORY_ROOT))
+repository_root_text = str(REPOSITORY_ROOT)
+if repository_root_text in sys.path:
+    sys.path.remove(repository_root_text)
+sys.path.insert(0, repository_root_text)
 
 from kicad_agents.kicad_processing_agent import process_project
 from kicad_agents.project_summary_agent import generate_project_summary
+from kicad_agents.project_html_agent import generate_board_explorer
+from kicad_agents.project_review_agent import write_lcsc_review
+from kicad_agents.browser_research_agent import write_browser_research_queue
 
 
 def _as_boolean(value):
@@ -42,6 +47,8 @@ def compile_project_part(details):
         parts_directory,
         output_directory=output_directory,
     )
+    write_lcsc_review(project_data, output_directory)
+    write_browser_research_queue(project_data, output_directory)
     summary_data = generate_project_summary(
         part_directory,
         parts_directory=parts_directory,
@@ -51,9 +58,16 @@ def compile_project_part(details):
         readme_output=part_directory / "README.md",
         regenerate_pngs=regenerate_pngs,
     )
+    explorer_path = generate_board_explorer(
+        part_directory,
+        project_data,
+        summary_data,
+        output_directory=output_directory,
+    )
     print(f"compiled {summary_data['project']['display_name']}")
     print(f"README: {part_directory / 'README.md'}")
     print(f"assets: {output_directory / 'src'}")
+    print(f"explorer: {explorer_path}")
 
 
 def main():

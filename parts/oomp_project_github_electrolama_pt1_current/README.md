@@ -4,7 +4,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.svg)
 
-pt1-RevA2 is a KiCad project containing 67 extracted component records. The catalogue matcher linked 33 physical placements to OOMP parts.
+pt1-RevA2 is a KiCad project containing 67 extracted component records. The catalogue matcher linked 36 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -12,8 +12,10 @@ pt1-RevA2 is a KiCad project containing 67 extracted component records. The cata
 | --- | ---: |
 | Components | 67 |
 | PCB footprints | 37 |
+| Mounting and locating holes | 9 |
+| Matched OOMP mounting-hole items | 9 |
 | Schematic symbols | 64 |
-| Matched OOMP components | 33 |
+| Matched OOMP components | 36 |
 | Unmatched physical components | 0 |
 | Front-side placements | 33 |
 | Back-side placements | 0 |
@@ -25,12 +27,49 @@ pt1-RevA2 is a KiCad project containing 67 extracted component records. The cata
 - Approximate size: **18.0 mm × 46.0 mm**
 - Outline source: `KiCad Edge.Cuts`
 - Placement drawing: [view `board.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.svg)
+- PNG placement drawing: [view `board.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.png)
+- 300-pixel placement preview: [view `board_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_300.png)
 - Placement drawing with pin names: [view `board_pins.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.svg)
 - PNG drawing with pin names: [view `board_pins.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.png)
+- 300-pixel pin preview: [view `board_pins_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_300.png)
+- Bottom placement drawing: [view `board_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_bottom.svg)
+- Bottom PNG placement drawing: [view `board_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_bottom.png)
+- 300-pixel bottom preview: [view `board_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_bottom_300.png)
+- Bottom placement drawing with pin names: [view `board_pins_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_bottom.svg)
+- Bottom PNG drawing with pin names: [view `board_pins_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_bottom.png)
+- 300-pixel bottom pin preview: [view `board_pins_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_bottom_300.png)
+- Mechanical drawing: [view `board_mechanical.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_mechanical.svg)
+- Mechanical PNG: [view `board_mechanical.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_mechanical.png)
+- 300-pixel mechanical preview: [view `board_mechanical_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_mechanical_300.png)
+- Self-contained interactive explorer: [download `board_explorer.html`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/board_explorer.html)
 
 ## Board with pins
 
 ![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.png)
+
+## Bottom board with pins
+
+The bottom view is mirrored horizontally so it is shown as viewed from beneath the assembled board.
+
+![Bottom PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_bottom.png)
+
+## Mechanical layer
+
+![PCB mechanical layer with mounting holes](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_mechanical.png)
+
+The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. This point is shown as **0,0** in the mechanical drawing; X increases right and Y increases down. Original KiCad coordinates are retained alongside it.
+
+| OOMP reference | Source | Name | Classification | Role | Drill size | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | --- | ---: | ---: | --- |
+| `MH1` | `CON1` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | diameter 0.65 mm | 6.110 | 41.190 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
+| `MH2` | `CON1` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | diameter 0.65 mm | 11.890 | 41.190 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
+| `MH3` | `CON2` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | diameter 0.65 mm | 4.810 | 15.110 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
+| `MH4` | `CON2` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | diameter 0.65 mm | 4.810 | 20.890 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
+| `MH5` | `CON3` | Mounting Hole 0.8 mm Round Plated | `mechanical / mounting_hole / 0_8_mm / round / plated` | shield_mount | diameter 0.8 mm | 2.600 | 1.635 | [`mechanical_mounting_hole_0_8_mm_round_plated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_8_mm_round_plated) |
+| `MH6` | `CON3` | Mounting Hole 0.8 mm Round Plated | `mechanical / mounting_hole / 0_8_mm / round / plated` | shield_mount | diameter 0.8 mm | 15.400 | 1.635 | [`mechanical_mounting_hole_0_8_mm_round_plated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_8_mm_round_plated) |
+| `MH7` | `UNK_HOLE_0` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | diameter 2 mm | 2.250 | 11.375 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
+| `MH8` | `UNK_HOLE_1` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | diameter 2 mm | 15.750 | 42.500 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
+| `MH9` | `UNK_HOLE_2` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | diameter 2 mm | 2.250 | 42.500 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
 
 ## Bill of materials
 
@@ -54,10 +93,6 @@ pt1-RevA2 is a KiCad project containing 67 extracted component records. The cata
 | R3 | 1 | electronic resistor 0402 510000 ohm | 510k | `_PKG_R_0402` | [`electronic_resistor_0402_510000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_510000_ohm) |
 | R4 | 1 | electronic resistor 0402 2200 ohm | 2k2 | `_PKG_R_0402` | [`electronic_resistor_0402_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) |
 | R5, R6 | 2 | electronic resistor 0402 100000 ohm | 100k | `_PKG_R_0402` | [`electronic_resistor_0402_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_100000_ohm) |
-| SJ1 | 1 | SJ_2 |  | `SJ_2` | unmatched |
-| UNK_HOLE_0 | 1 | dummyfp0 |  | `dummyfp0` | unmatched |
-| UNK_HOLE_1 | 1 | dummyfp1 |  | `dummyfp1` | unmatched |
-| UNK_HOLE_2 | 1 | dummyfp2 |  | `dummyfp2` | unmatched |
 | XT1 | 1 | electronic crystal 3225 surface mount 4 pin 12 mhz 20 pf | 12MHz | `XTAL-4P-3225` | [`electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf) |
 
 ## Main nets
@@ -65,7 +100,6 @@ pt1-RevA2 is a KiCad project containing 67 extracted component records. The cata
 | Net | Pads | Components |
 | --- | ---: | --- |
 | `GND` | 51 | C1, C2, C3, C4, C5, C6, C7, C8, C9, C10, C11, C12, C13, C14, CON1, CON2, CON3, D1, D2, IC1, IC2, IC3, IC4, J1, LED1, R1, R2, R5, XT1 |
-| `None` | 18 | CON1, CON2, IC1, UNK_HOLE_0, UNK_HOLE_1, UNK_HOLE_2 |
 | `VUSB` | 17 | C2, C3, C4, C6, C10, C13, D1, D2, IC1, IC2, IC3, IC4, L1, R3, SJ1 |
 | `VUSB_SW_OUT` | 8 | C7, C8, C9, CON3, IC4, J1, R4, SJ1 |
 | `SER_3V3` | 4 | C14, IC1, R6 |
@@ -84,6 +118,7 @@ pt1-RevA2 is a KiCad project containing 67 extracted component records. The cata
 | `USB3_P` | 3 | D2, IC2, J1 |
 | `N$1` | 2 | IC2, XT1 |
 | `N$13` | 2 | C11, IC2 |
+| `N$14` | 2 | C12, IC2 |
 
 ## Design notes
 
@@ -94,11 +129,14 @@ pt1-RevA2 is a KiCad project containing 67 extracted component records. The cata
 
 - The extractor reports 21 named-net comparisons that differ between schematic and PCB data.
 
+- Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/lcsc_review.yaml)
+- Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/browser_research_queue.md)
+
 ## Generated source bundle
 
 - Project image assets: [`generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src)
 - Copied component source manifest: `project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 19
+- Matched OOMP source parts copied: 20
 
 ## Source files
 

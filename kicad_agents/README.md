@@ -2,6 +2,12 @@
 
 These Python agents digest modern KiCad projects (`.kicad_sch` and `.kicad_pcb`) and create a reviewable component dataset. They do not call an AI API. Instead, the matching agent is an explainable command-line tool that an external AI agent can run, inspect, and override.
 
+See [`AGENT_GUIDE.md`](AGENT_GUIDE.md) for the complete component and project
+pipeline, browser-only research workflow, and command reference. The prioritized
+component backlog is in [`RECOMMENDED_COMPONENTS.md`](RECOMMENDED_COMPONENTS.md).
+The strict one-at-a-time implementation sequence and current progress are in
+[`COMPONENT_EXPANSION_LEDGER.md`](COMPONENT_EXPANSION_LEDGER.md).
+
 ## Project parts and Roboclick actions
 
 Projects use this taxonomy:
@@ -49,11 +55,22 @@ generated_data/
   generated_manifest.json
   unmatched_parts.json
   unmatched_parts.yaml
+  mounting_holes.json
+  mounting_holes.yaml
   match_overrides.yaml
   src/
-    board.svg                   # self-contained board placement drawing
-    board_pins.svg              # same board with names inside component pads
-    board_pins.png              # 1600-pixel preview of the pin-labelled board
+    board.svg                   # self-contained top placement drawing
+    board.png                   # 1600-pixel top drawing
+    board_300.png               # 300-pixel top preview
+    board_pins.svg              # top board with names inside component pads
+    board_pins.png              # 1600-pixel pin-labelled top board
+    board_pins_300.png          # 300-pixel pin-labelled top preview
+    board_bottom.svg            # mirrored bottom placement drawing
+    board_bottom.png            # 1600-pixel bottom drawing
+    board_bottom_300.png        # 300-pixel bottom preview
+    board_pins_bottom.svg       # bottom board with names inside component pads
+    board_pins_bottom.png       # 1600-pixel pin-labelled bottom board
+    board_pins_bottom_300.png   # 300-pixel pin-labelled bottom preview
     components/
       <oomp-id>/
         working_svg_assembly.svg
@@ -76,9 +93,28 @@ generated_data/
       oomp/
         match.yaml
         working.yaml        # exact copy from parts/<matched-id>/working.yaml when matched
+    MH1/                    # first-class mechanical OOMP item
+      component.json
+      component.yaml
+      schematic/
+        working.yaml        # explicitly records that no electrical symbol is present
+        size.yaml
+      pcb/
+        working.yaml        # drill, position, source footprint, style, and plating
+        size.yaml
+      oomp/
+        match.yaml
+        working.yaml        # matched mechanical_mounting_hole_* definition
 ```
 
 Every schematic symbol is retained. Power symbols and other non-physical entries receive `not_applicable` match status. Every PCB footprint and every physical schematic component is sent to the matcher. Uncertain physical items are written to both unmatched-parts files.
+
+Every extracted mounting or locating hole is also assigned a stable `MH1`,
+`MH2`, ... OOMP reference. Its generated component record keeps the original
+footprint reference and hole ID, while its classification uses the mechanical
+mounting-hole taxonomy: drill size, round or slot style, and plated or
+unplated. These mechanical items remain separate from the electrical BOM and
+the component assembly views.
 
 The project part also has an ignored `project_source/<oomp-id>/` tree. It
 contains `working.yaml`, the assembly SVG variants, and
@@ -94,7 +130,8 @@ python -m kicad_agents.project_summary_agent parts\oomp_project_github_electrola
 ```
 
 Python compiles the BOM, principal nets, placement statistics, GitHub link,
-board dimensions, `board.svg`, and `board_pins.svg`. Both board drawings read
+board dimensions, top-side `board.svg` and `board_pins.svg`, plus mirrored
+`board_bottom.svg` and `board_pins_bottom.svg` drawings. The board drawings read
 the KiCad `Edge.Cuts` geometry and place each matched component using its local
 footprint bounds, PCB coordinates, and one application of its PCB rotation.
 Reference indicators are dynamically sized and centred on the placed component

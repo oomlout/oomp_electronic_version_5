@@ -3,11 +3,15 @@ def main(**kwargs):
 
     sizes = ["0402"]
     capacitance_values = [
+        "15_pico_farad",
         "22_pico_farad",
+        "120_pico_farad",
         "10_nano_farad",
         "22_nano_farad",
         "100_nano_farad",
         "1_micro_farad",
+        "2_2_micro_farad",
+        "4_7_micro_farad",
         "10_micro_farad",
     ]
     for size in sizes:

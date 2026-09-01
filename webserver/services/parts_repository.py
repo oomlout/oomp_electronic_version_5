@@ -427,7 +427,8 @@ def _print_load_progress(current: int, total: int, start_time: float) -> None:
     bar_width = 40
     pct = current / total if total > 0 else 0
     filled = int(bar_width * pct)
-    bar = "█" * filled + "░" * (bar_width - filled)
+    # Keep progress output compatible with the default Windows cp1252 console.
+    bar = "#" * filled + "-" * (bar_width - filled)
     elapsed = time.monotonic() - start_time
     if current > 0 and elapsed >= 0.5:
         rate = current / elapsed

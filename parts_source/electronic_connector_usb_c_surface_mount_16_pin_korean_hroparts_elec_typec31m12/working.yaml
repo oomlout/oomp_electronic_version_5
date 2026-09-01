@@ -1,13 +1,22 @@
 connector_dimensions_mm:
   body_depth: 7.35
+  bottom_body_depth: 6.28
   contact_count: 16
   contact_pitch: 0.5
   contact_width: 0.2
+  overall_height: 3.26
+  pcb_pad_count: 12
+  pcb_pad_length: 1.5
+  pcb_power_pad_count: 4
+  pcb_power_pad_width: 0.6
+  pcb_signal_pad_count: 8
+  pcb_signal_pad_width: 0.3
   receptacle_height: 2.56
   receptacle_width: 8.34
   shell_mount_count: 4
   shell_mount_width: 0.6
   shell_width: 8.94
+  side_depth: 6.77
 dimensions_mm:
   length: 8.94
   width: 7.35
@@ -92,6 +101,14 @@ svg_details:
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly
   write_yaml: false
+- filename_extra: assembly_pins
+  make_a4: false
+  output_formats:
+  - svg
+  padding: 0
+  stylesheet: style_oomp_assembly
+  svg_name: oomp_component_assembly_pins
+  write_yaml: false
 - filename_extra: outline
   make_a4: false
   output_formats:
@@ -163,6 +180,33 @@ svg_details:
   padding: 0
   stylesheet: style_oomp
   svg_name: oomp_component_dimensioned_titles
+  write_yaml: false
+- filename_extra: top
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_top
+  write_yaml: false
+- filename_extra: bottom
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_bottom
+  write_yaml: false
+- filename_extra: side
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_side
   write_yaml: false
 taxonomy_1: electronic
 taxonomy_10: ''

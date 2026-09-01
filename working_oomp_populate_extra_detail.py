@@ -17,6 +17,8 @@ def main(**kwargs):
     working_oomp_populate_ferrite_bead_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_resistor_extra
     working_oomp_populate_resistor_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_led_extra
+    working_oomp_populate_led_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_crystal_extra
     working_oomp_populate_crystal_extra.main(extras_dict=extras_dict)
 

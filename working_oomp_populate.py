@@ -2,8 +2,6 @@
 import copy
 import itertools
 
-from requests import options
-
 from oomp_populate_helper import build_oomp_id, write_extras
 
 
@@ -23,6 +21,8 @@ def main(**kwargs):
     working_oomp_populate_led.main(**kwargs)
     import working_oomp_populate_resistor
     working_oomp_populate_resistor.main(**kwargs)
+    import working_oomp_populate_resistor_array
+    working_oomp_populate_resistor_array.main(**kwargs)
     import working_oomp_populate_capacitor
     working_oomp_populate_capacitor.main(**kwargs)
     import working_oomp_populate_crystal
@@ -37,6 +37,8 @@ def main(**kwargs):
     working_oomp_populate_ic.main(**kwargs)
     import working_oomp_populate_project
     working_oomp_populate_project.main(**kwargs)
+    import working_oomp_populate_mounting_hole
+    working_oomp_populate_mounting_hole.main(**kwargs)
 
 
     ###### populate taxonomy details and oobb details
