@@ -4,7 +4,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board.svg)
 
-REV10a is a KiCad project containing 220 extracted component records. The catalogue matcher linked 188 physical placements to OOMP parts.
+REV10a is a KiCad project containing 220 extracted component records. The catalogue matcher linked 189 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -15,8 +15,8 @@ REV10a is a KiCad project containing 220 extracted component records. The catalo
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 10 |
-| Matched OOMP components | 188 |
-| Unmatched physical components | 32 |
+| Matched OOMP components | 189 |
+| Unmatched physical components | 31 |
 | Front-side placements | 205 |
 | Back-side placements | 3 |
 | Project version | `5_rev10a` |
@@ -84,7 +84,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J202 | 1 | electronic connector usb c surface mount 16 pin korean hroparts elec typec31m12 | TYPE-C-31-M-12 | `usb-c:HRO_TYPE-C-31-M-12` | [`electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12) |
 | J301 | 1 | electronic connector header 2 54 mm pitch through hole 10 pin | Conn_01x10 | `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_10_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_10_pin) |
 | J302 | 1 | electronic connector jst sh 1 mm pitch surface mount right angle 9 pin jst sm09b srss tb | Conn_01x09 | `Connector_JST:JST_SH_SM09B-SRSS-TB_1x09-1MP_P1.00mm_Horizontal` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb) |
-| L201 | 1 | 1.5A | 1.5A | `Inductor_SMD:L_0805_2012Metric` | unmatched |
+| L201 | 1 | electronic ferrite bead 0805 15 ohm 1 5 amp tdk mmz2012r150at000 | 1.5A | `Inductor_SMD:L_0805_2012Metric` | [`electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000) |
 | LCD201 | 1 | TFT_20_QT200H1201 | TFT_20_QT200H1201 | `dp-lcd:TFT_20_QT200H1201` | unmatched |
 | LED701, LED704, LED707, LED708, LED712, LED716, LED717, LED720 | 8 | electronic led 4020 side view rgb sk6812 opsco optoelectronics sk6812side a | SK6812-side-a_b | `dp-LED:SK6812-side-a_b` | [`electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a) |
 | LED702, LED703, LED705, LED706, LED710, LED713, LED714, LED715, LED718, LED719 | 10 | electronic led 3535 rgb sk6812 opsco optoelectronics sk6812mini e | SK6812-mini-e | `dp-LED:SK6812-mini-e` | [`electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e) |
@@ -159,7 +159,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 32 physical component records are not yet matched to an OOMP part.
+- 31 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/browser_research_queue.md)
@@ -168,7 +168,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src)
 - Copied component source manifest: `project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 41
+- Matched OOMP source parts copied: 42
 
 ## Source files
 

@@ -30,6 +30,7 @@ DETERMINISTIC_SOURCE_FILES = [
     "working_oomp.py",
     "working_svg.py",
     "kicad_agents/component_svg_action.py",
+    "kicad_agents/component_addition_agent.py",
     "kicad_agents/browser_research_agent.py",
     "kicad_agents/kicad_processing_agent.py",
     "kicad_agents/oomp_matching_agent.py",

@@ -176,6 +176,346 @@ def main(**kwargs):
             }
         ]
 
+    current = "electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr"
+    if current in extras_dict:
+        extras_dict[current]["part_number_manufacturer"] = "LMV321-TR"
+        extras_dict[current]["part_number_manufacturer_gainsil"] = "LMV321-TR"
+        extras_dict[current]["part_number_lcsc"] = "C362273"
+        extras_dict[current]["manufacturer"] = "Gainsil"
+        extras_dict[current]["product_url"] = "https://www.lcsc.com/product-detail/C362273.html"
+        extras_dict[current]["datasheet_url"] = "https://www.lcsc.com/datasheet/C362273.pdf"
+        extras_dict[current]["package_name_manufacturer"] = "SOT23-5"
+        extras_dict[current]["marking_code"] = "321"
+        extras_dict[current]["name_short"] = "IC LMV321-TR SOT-23-5 Single Rail To Rail Input Output Op Amp"
+        extras_dict[current]["electrical"] = {
+            "amplifier_count": 1,
+            "input_output_style": "rail-to-rail input and output",
+            "minimum_supply_voltage": "2.1 V",
+            "maximum_supply_voltage": "5.5 V",
+            "typical_gain_bandwidth_product": "1 MHz",
+            "typical_slew_rate": "0.6 V/us",
+            "typical_quiescent_current_per_amplifier": "40 uA",
+            "maximum_input_offset_voltage": "3.5 mV",
+            "typical_input_bias_current": "1 pA",
+            "operating_temperature": "-40 to +125 C",
+            "input_filter": "embedded RF anti-EMI filter",
+        }
+        extras_dict[current]["ic_dimensions_mm"] = {
+            "body_length": 2.92,
+            "body_length_min": 2.82,
+            "body_length_max": 3.02,
+            "body_width": 1.6,
+            "body_width_min": 1.5,
+            "body_width_max": 1.7,
+            "overall_width": 2.8,
+            "overall_width_min": 2.65,
+            "overall_width_max": 2.95,
+            "body_height": 1.15,
+            "body_height_min": 1.05,
+            "body_height_max": 1.25,
+            "pin_pitch": 0.95,
+            "pin_width": 0.4,
+            "pin_width_min": 0.3,
+            "pin_width_max": 0.5,
+            "pin_length": 0.45,
+            "pin_length_min": 0.3,
+            "pin_length_max": 0.6,
+        }
+        extras_dict[current]["package_dimensions_manufacturer_mm"] = {
+            "A_minimum": 1.05,
+            "A_maximum": 1.25,
+            "A1_minimum": 0.0,
+            "A1_maximum": 0.1,
+            "A2_minimum": 1.05,
+            "A2_maximum": 1.15,
+            "b_minimum": 0.3,
+            "b_maximum": 0.5,
+            "c_minimum": 0.1,
+            "c_maximum": 0.2,
+            "D_minimum": 2.82,
+            "D_maximum": 3.02,
+            "E_minimum": 1.5,
+            "E_maximum": 1.7,
+            "E1_minimum": 2.65,
+            "E1_maximum": 2.95,
+            "e_basic": 0.95,
+            "e1_basic": 1.9,
+            "L_minimum": 0.3,
+            "L_maximum": 0.6,
+            "theta_minimum_degrees": 0,
+            "theta_maximum_degrees": 8,
+        }
+        extras_dict[current]["dimensions_mm"] = {
+            "length": 2.92,
+            "width": 2.8,
+        }
+        extras_dict[current]["pins"] = {}
+        amplifier_pins = [
+            ["1", "in_positive", "input"],
+            ["2", "vss", "power"],
+            ["3", "in_negative", "input"],
+            ["4", "output", "output"],
+            ["5", "vdd", "power"],
+        ]
+        for pin_index in range(len(amplifier_pins)):
+            pin = amplifier_pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        extras_dict[current]["research_notes"] = [
+            "The Bus Pirate analogue component page identifies U404, U506 and U603 as Gainsil LMV321 devices in SOT-23-5.",
+            "The exact supplier listing resolves to Gainsil LMV321-TR, LCSC C362273.",
+            "The Gainsil datasheet confirms the five-pin assignment, rail-to-rail input and output, 2.1 V to 5.5 V supply range and package dimensions.",
+        ]
+        extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    current = "electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr"
+    if current in extras_dict:
+        extras_dict[current]["part_number_manufacturer"] = "GS321A-TR"
+        extras_dict[current]["part_number_manufacturer_gainsil"] = "GS321A-TR"
+        extras_dict[current]["part_number_lcsc"] = "C431318"
+        extras_dict[current]["manufacturer"] = "Gainsil"
+        extras_dict[current]["product_url"] = "https://www.lcsc.com/product-detail/C431318.html"
+        extras_dict[current]["datasheet_url"] = "https://www.lcsc.com/datasheet/C431318.pdf"
+        extras_dict[current]["package_name_manufacturer"] = "SOT23-5"
+        extras_dict[current]["marking_code"] = "321"
+        extras_dict[current]["name_short"] = "IC GS321A-TR SOT-23-5 Precision Rail To Rail Input Output Op Amp"
+        extras_dict[current]["electrical"] = {
+            "amplifier_count": 1,
+            "input_output_style": "rail-to-rail input and output",
+            "minimum_supply_voltage": "2.1 V",
+            "maximum_supply_voltage": "5.5 V",
+            "typical_gain_bandwidth_product": "1 MHz",
+            "typical_slew_rate": "0.6 V/us",
+            "typical_quiescent_current_per_amplifier": "40 uA",
+            "maximum_input_offset_voltage": "0.4 mV",
+            "typical_input_bias_current": "1 pA",
+            "operating_temperature": "-40 to +125 C",
+            "input_filter": "embedded RF anti-EMI filter",
+        }
+        extras_dict[current]["ic_dimensions_mm"] = {
+            "body_length": 2.92,
+            "body_length_min": 2.82,
+            "body_length_max": 3.02,
+            "body_width": 1.6,
+            "body_width_min": 1.5,
+            "body_width_max": 1.7,
+            "overall_width": 2.8,
+            "overall_width_min": 2.65,
+            "overall_width_max": 2.95,
+            "body_height": 1.15,
+            "body_height_min": 1.05,
+            "body_height_max": 1.25,
+            "pin_pitch": 0.95,
+            "pin_width": 0.4,
+            "pin_width_min": 0.3,
+            "pin_width_max": 0.5,
+            "pin_length": 0.45,
+            "pin_length_min": 0.3,
+            "pin_length_max": 0.6,
+        }
+        extras_dict[current]["dimensions_mm"] = {
+            "length": 2.92,
+            "width": 2.8,
+        }
+        extras_dict[current]["pins"] = {}
+        amplifier_pins = [
+            ["1", "in_positive", "input"],
+            ["2", "vss", "power"],
+            ["3", "in_negative", "input"],
+            ["4", "output", "output"],
+            ["5", "vdd", "power"],
+        ]
+        for pin_index in range(len(amplifier_pins)):
+            pin = amplifier_pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        extras_dict[current]["research_notes"] = [
+            "The Bus Pirate analogue page calls for an A-grade LMV321-class device at U601 and links Gainsil GS321A as an example.",
+            "The exact active supplier listing resolves to Gainsil GS321A-TR, LCSC C431318.",
+            "The Gainsil datasheet confirms 0.4 mV maximum input offset voltage, rail-to-rail input and output, the five-pin assignment and package dimensions.",
+            "The discontinued Onsemi LMV321AS5X example was not selected because its listed offset specification does not meet the project's stated A-grade target.",
+        ]
+        extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    current = "electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr"
+    if current in extras_dict:
+        extras_dict[current]["part_number_manufacturer"] = "LMV331IDBVR"
+        extras_dict[current]["part_number_manufacturer_texas_instruments"] = "LMV331IDBVR"
+        extras_dict[current]["part_number_lcsc"] = "C34731"
+        extras_dict[current]["manufacturer"] = "Texas Instruments"
+        extras_dict[current]["product_url"] = "https://www.lcsc.com/product-detail/C34731.html"
+        extras_dict[current]["datasheet_url"] = "https://www.lcsc.com/datasheet/C34731.pdf"
+        extras_dict[current]["package_name_manufacturer"] = "DBV SOT-23-5"
+        extras_dict[current]["name_short"] = "IC LMV331IDBVR SOT-23-5 Single Open Collector Comparator"
+        extras_dict[current]["electrical"] = {
+            "comparator_count": 1,
+            "output_style": "open collector",
+            "input_common_mode": "includes ground",
+            "minimum_supply_voltage": "2.7 V",
+            "maximum_supply_voltage": "5.5 V",
+            "maximum_input_offset_voltage": "7 mV",
+            "typical_input_bias_current": "250 nA",
+            "typical_supply_current": "40 uA",
+            "typical_output_saturation_voltage": "200 mV",
+            "minimum_output_sink_current_at_5_v": "10 mA",
+            "typical_high_to_low_propagation_delay_at_5_v": "600 ns",
+            "typical_low_to_high_propagation_delay_at_5_v": "450 ns",
+            "operating_temperature": "-40 to +125 C",
+        }
+        extras_dict[current]["ic_dimensions_mm"] = {
+            "body_length": 2.9,
+            "body_length_min": 2.75,
+            "body_length_max": 3.05,
+            "body_width": 1.6,
+            "body_width_min": 1.45,
+            "body_width_max": 1.75,
+            "overall_width": 2.8,
+            "overall_width_min": 2.6,
+            "overall_width_max": 3.0,
+            "body_height_max": 1.45,
+            "pin_pitch": 0.95,
+            "pin_width": 0.4,
+            "pin_width_min": 0.3,
+            "pin_width_max": 0.5,
+            "pin_length": 0.45,
+            "pin_length_min": 0.3,
+            "pin_length_max": 0.6,
+        }
+        extras_dict[current]["dimensions_mm"] = {
+            "length": 2.9,
+            "width": 2.8,
+        }
+        extras_dict[current]["pins"] = {}
+        comparator_pins = [
+            ["1", "in_positive", "input"],
+            ["2", "gnd", "power"],
+            ["3", "in_negative", "input"],
+            ["4", "output", "open_collector_output"],
+            ["5", "vcc", "power"],
+        ]
+        for pin_index in range(len(comparator_pins)):
+            pin = comparator_pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        extras_dict[current]["research_notes"] = [
+            "The Bus Pirate analogue page identifies U602 as an LMV331 comparator in SOT-23-5 and links this exact TI example.",
+            "The supplier listing resolves to Texas Instruments LMV331IDBVR, LCSC C34731.",
+            "The TI datasheet confirms the open-collector output, 2.7 V to 5.5 V supply range, five-pin assignment and DBV package dimensions.",
+        ]
+        extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    current = "electronic_ic_tssop_14_amplifier_operational_quad_rail_to_rail_output_texas_instruments_lmv324ipwr"
+    if current in extras_dict:
+        extras_dict[current]["part_number_manufacturer"] = "LMV324IPWR"
+        extras_dict[current]["part_number_manufacturer_texas_instruments"] = "LMV324IPWR"
+        extras_dict[current]["part_number_lcsc"] = "C398929"
+        extras_dict[current]["manufacturer"] = "Texas Instruments"
+        extras_dict[current]["product_url"] = "https://www.lcsc.com/product-detail/C398929.html"
+        extras_dict[current]["datasheet_url"] = "https://www.lcsc.com/datasheet/C398929.pdf"
+        extras_dict[current]["package_name_manufacturer"] = "PW TSSOP-14"
+        extras_dict[current]["package_drawing_url"] = "https://www.ti.com/lit/pdf/mpds360a"
+        extras_dict[current]["marking_code"] = "MV324I"
+        extras_dict[current]["name_short"] = "IC LMV324IPWR TSSOP-14 Quad Rail To Rail Output Op Amp"
+        extras_dict[current]["electrical"] = {
+            "amplifier_count": 4,
+            "output_style": "rail-to-rail output",
+            "minimum_supply_voltage": "2.7 V",
+            "maximum_supply_voltage": "5.5 V",
+            "typical_gain_bandwidth_product": "1 MHz",
+            "typical_slew_rate": "1 V/us",
+            "typical_total_quiescent_current": "410 uA",
+            "maximum_input_offset_voltage": "7 mV",
+            "typical_input_bias_current": "250 nA",
+            "typical_output_current": "60 mA",
+            "operating_temperature": "-40 to +125 C",
+        }
+        extras_dict[current]["ic_dimensions_mm"] = {
+            "body_length": 5.0,
+            "body_length_min": 4.9,
+            "body_length_max": 5.1,
+            "body_width": 4.4,
+            "body_width_min": 4.3,
+            "body_width_max": 4.5,
+            "overall_width": 6.4,
+            "overall_width_min": 6.2,
+            "overall_width_max": 6.6,
+            "body_height_max": 1.2,
+            "pin_pitch": 0.65,
+            "pin_width": 0.235,
+            "pin_width_min": 0.17,
+            "pin_width_max": 0.3,
+            "pin_length": 0.625,
+            "pin_length_min": 0.5,
+            "pin_length_max": 0.75,
+            "lead_thickness": 0.1,
+            "lead_thickness_min": 0.05,
+            "lead_thickness_max": 0.15,
+        }
+        extras_dict[current]["dimensions_mm"] = {
+            "length": 5.0,
+            "width": 6.4,
+        }
+        extras_dict[current]["pins"] = {}
+        amplifier_pins = [
+            ["1", "1out", "output"],
+            ["2", "1in-", "input"],
+            ["3", "1in+", "input"],
+            ["4", "vcc+", "power"],
+            ["5", "2in+", "input"],
+            ["6", "2in-", "input"],
+            ["7", "2out", "output"],
+            ["8", "3out", "output"],
+            ["9", "3in-", "input"],
+            ["10", "3in+", "input"],
+            ["11", "gnd", "power"],
+            ["12", "4in+", "input"],
+            ["13", "4in-", "input"],
+            ["14", "4out", "output"],
+        ]
+        for pin_index in range(len(amplifier_pins)):
+            pin = amplifier_pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        extras_dict[current]["research_notes"] = [
+            "The Bus Pirate analogue component page identifies U504 and U505 as LMV324 devices in TSSOP-14 and links this TI orderable example.",
+            "The exact supplier page resolves to Texas Instruments LMV324IPWR, LCSC C398929.",
+            "The TI datasheet confirms this variant is a quad 2.7 V to 5.5 V operational amplifier with rail-to-rail output and the complete fourteen-pin assignment.",
+            "The official TI PW0014A package drawing supplies the dimensions used by the physical diagrams.",
+        ]
+        extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
     current = "electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "SL2.1A"

@@ -8,6 +8,7 @@ download can then be validated and imported into ``parts_source``.
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import shutil
 from pathlib import Path
@@ -183,6 +184,17 @@ def write_browser_research_queue(project_data, output_directory):
     return queue
 
 
+def _sha256(path):
+    digest = hashlib.sha256()
+    with Path(path).open("rb") as input_file:
+        while True:
+            block = input_file.read(1024 * 1024)
+            if block == b"":
+                break
+            digest.update(block)
+    return digest.hexdigest()
+
+
 def import_browser_datasheet(part_id, downloaded_file, source_url, parts_source_directory, replace=False):
     downloaded_file = Path(downloaded_file).resolve()
     parts_source_directory = Path(parts_source_directory).resolve()
@@ -197,13 +209,21 @@ def import_browser_datasheet(part_id, downloaded_file, source_url, parts_source_
     destination_directory = parts_source_directory / part_id
     destination_directory.mkdir(parents=True, exist_ok=True)
     destination = destination_directory / "datasheet.pdf"
+    downloaded_sha256 = _sha256(downloaded_file)
     if destination.exists() and not replace:
-        raise FileExistsError(f"Datasheet already exists: {destination}; pass --replace to update it.")
-    shutil.copyfile(downloaded_file, destination)
+        if _sha256(destination) != downloaded_sha256:
+            raise FileExistsError(f"Datasheet already exists: {destination}; pass --replace to update it.")
+        # Re-importing the same browser download is safe and useful when an
+        # earlier manual copy omitted provenance.
+    else:
+        shutil.copyfile(downloaded_file, destination)
     provenance = {
         "source_url": source_url,
         "acquisition_method": "interactive_browser",
         "file": "datasheet.pdf",
+        "original_filename": downloaded_file.name,
+        "file_size_bytes": destination.stat().st_size,
+        "sha256": downloaded_sha256,
         "validated_pdf_header": True,
     }
     _write_yaml(destination_directory / "datasheet_source.yaml", provenance)

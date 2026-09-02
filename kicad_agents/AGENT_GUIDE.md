@@ -101,6 +101,57 @@ YAML.
 
 ## Add or change a component
 
+### Fast one-component workflow
+
+The preferred route is `component_addition_agent.py`. It turns the repeated
+local steps into one command and prevents accidental project-page churn while
+the missing-component list is in progress.
+
+1. Copy the short example from `component_records/README.md` to
+   `component_records/<ledger-id>.yaml` and fill it from browser-verified
+   evidence.
+2. Add the editable array row and explicit populate-extra block as described
+   below.
+3. Import the browser-downloaded PDF. Re-importing the identical PDF is
+   idempotent and repairs missing provenance:
+
+   ```powershell
+   python -m kicad_agents.browser_research_agent import-datasheet `
+     <oomp-id> <browser-download.pdf> --source-url <verified-url>
+   ```
+
+4. Run the preflight check, then the targeted build:
+
+   ```powershell
+   python -m kicad_agents.component_addition_agent check `
+     kicad_agents/component_records/E0000.yaml
+   python -m kicad_agents.component_addition_agent build `
+     kicad_agents/component_records/E0000.yaml --regenerate-pngs
+   ```
+
+The build runs population, writes only the selected part, executes only that
+part's Roboclick actions, restores `regenerate_pngs: false`, validates the
+result and writes a compact report under
+`kicad_agents/generated/component_additions/`. It hashes project README,
+explorer and board-image outputs before and after the run and fails if a
+component build changed them.
+
+### Why this route is faster
+
+The E0005–E0007 additions showed that exact browser research, readable
+populate arrays, explicit extra-data blocks and the SVG/Roboclick pipeline all
+work well. The expensive failures were procedural: supplier base-number
+matches sometimes hid a different package, browser download controls did not
+always behave as direct downloads, datasheets were occasionally copied by hand
+without provenance, several commands were needed to build one part, and every
+new component received a bespoke test.
+
+The research record now preserves the accepted and rejected identity decision;
+the importer makes provenance reliable; and the one-component agent performs
+the reusable structural tests automatically. Add a bespoke unit test only for
+a genuinely special rule, such as deliberately rejecting a tempting but
+incompatible LCSC package.
+
 1. Put common combinations in a short array in
    `working_oomp_populate_<type>.py`. Use ordinary nested loops so adding a size
    or value is a one-line edit.

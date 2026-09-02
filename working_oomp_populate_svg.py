@@ -119,6 +119,7 @@ def get_part_id_default(component_type):
         "mounting_hole": "MH1",
         "prototyping": "BB1",
         "resistor": "R1",
+        "transistor": "Q1",
         "wire": "W1",
     }
     return part_ids.get(component_type, "P1")
@@ -232,6 +233,7 @@ def get_dimensions_mm(option):
         "sot_23_6": [2.9, 1.6],
         "tsot_23_5": [2.9, 1.6],
         "sot_23_5": [2.9, 1.6],
+        "sot_23": [2.9, 2.6],
         "sot_89_3": [4.5, 2.5],
         "sot_363_6": [2.0, 1.25],
         "tssop_14": [5.0, 4.4],
@@ -414,6 +416,36 @@ def add_svg_details(option):
                 "pin_pitch": 0.95,
                 "pin_width": 0.375,
                 "pin_length": 0.45,
+            },
+            "sot_23_5": {
+                # Gainsil LMV321 SOT23-5 package table, nominal values from ranges.
+                "body_length": 2.92,
+                "body_width": 1.6,
+                "body_length_min": 2.82,
+                "body_length_max": 3.02,
+                "body_width_min": 1.5,
+                "body_width_max": 1.7,
+                "overall_width": 2.8,
+                "overall_width_min": 2.65,
+                "overall_width_max": 2.95,
+                "pin_pitch": 0.95,
+                "pin_width": 0.4,
+                "pin_length": 0.45,
+            },
+            "tssop_14": {
+                # TI PW0014A TSSOP-14 outline, nominal values from ranges.
+                "body_length": 5.0,
+                "body_width": 4.4,
+                "body_length_min": 4.9,
+                "body_length_max": 5.1,
+                "body_width_min": 4.3,
+                "body_width_max": 4.5,
+                "overall_width": 6.4,
+                "overall_width_min": 6.2,
+                "overall_width_max": 6.6,
+                "pin_pitch": 0.65,
+                "pin_width": 0.235,
+                "pin_length": 0.625,
             },
             "tsot_23_5": {
                 # Richtek TSOT-23-5 outline, midpoints of published limits.

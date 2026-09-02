@@ -33,6 +33,8 @@ def main(**kwargs):
     working_oomp_populate_connector.main(**kwargs)
     import working_oomp_populate_diode
     working_oomp_populate_diode.main(**kwargs)
+    import working_oomp_populate_transistor
+    working_oomp_populate_transistor.main(**kwargs)
     import working_oomp_populate_ic
     working_oomp_populate_ic.main(**kwargs)
     import working_oomp_populate_project

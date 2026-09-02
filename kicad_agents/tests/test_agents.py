@@ -18,6 +18,7 @@ from kicad_agents.browser_research_agent import (
     build_browser_research_queue,
     import_browser_datasheet,
 )
+from kicad_agents.component_addition_agent import validate_record
 from kicad_agents.pipeline_audit_agent import run_audit
 from kicad_agents.sexpr import children, load, tag, value
 import working_oomp_populate_project
@@ -26,6 +27,14 @@ import working_oomp_populate_diode
 import working_oomp_populate_diode_extra
 import working_oomp_populate_connector
 import working_oomp_populate_connector_extra
+import working_oomp_populate_ferrite_bead
+import working_oomp_populate_ferrite_bead_extra
+import working_oomp_populate_display
+import working_oomp_populate_display_extra
+import working_oomp_populate_transistor
+import working_oomp_populate_transistor_extra
+import working_oomp_populate_ic
+import working_oomp_populate_ic_extra
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
@@ -135,6 +144,237 @@ class MatchingAgentTests(unittest.TestCase):
         self.assertEqual(extras[part_id]["part_number_lcsc"], "C2932670")
         self.assertEqual(extras[part_id]["connector_dimensions_mm"]["body_length"], 7.62)
         self.assertEqual(extras[part_id]["pins"]["pin_3"]["number"], "3")
+
+    def test_tdk_mmz2012_ferrite_bead_has_exact_mpn_and_lcsc_code(self):
+        options = []
+        working_oomp_populate_ferrite_bead.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "mmz2012r150at000"
+        )
+        self.assertEqual(option["taxonomy_3"], "0805")
+        self.assertEqual(option["taxonomy_4"], "15_ohm")
+        self.assertEqual(option["taxonomy_5"], "1_5_amp")
+        self.assertEqual(option["taxonomy_14"], "tdk")
+
+        part_id = "electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_ferrite_bead_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "MMZ2012R150AT000")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C275464")
+        self.assertEqual(extras[part_id]["electrical"]["maximum_dc_resistance"], "0.05 ohm")
+        self.assertEqual(extras[part_id]["pins"]["pin_2"]["number"], "2")
+
+    def test_qt200h1201_display_has_exact_mpn_and_no_invented_lcsc_code(self):
+        options = []
+        working_oomp_populate_display.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "qt200h1201"
+        )
+        self.assertEqual(option["taxonomy_3"], "tft")
+        self.assertEqual(option["taxonomy_4"], "2_inch")
+        self.assertEqual(option["taxonomy_8"], "12_pin")
+        self.assertEqual(option["taxonomy_14"], "szhtc")
+
+        part_id = "electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_display_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "QT200H1201")
+        self.assertNotIn("part_number_lcsc", extras[part_id])
+        self.assertEqual(extras[part_id]["controller"], "ST7789V")
+        self.assertEqual(extras[part_id]["pins"]["pin_12"]["name"], "gnd")
+        self.assertEqual(extras[part_id]["display_dimensions_mm"]["active_width"], 30.6)
+
+    def test_cbi_mmbt7002k_has_exact_identity_limits_and_pinout(self):
+        options = []
+        working_oomp_populate_transistor.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "mmbt7002k"
+        )
+        self.assertEqual(option["taxonomy_3"], "sot_23")
+        self.assertEqual(option["taxonomy_5"], "n_channel")
+        self.assertEqual(option["taxonomy_14"], "cbi")
+
+        part_id = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "MMBT7002K")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C2879714")
+        self.assertEqual(extras[part_id]["electrical"]["maximum_drain_source_voltage"], "60 V")
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "gate")
+        self.assertEqual(extras[part_id]["pins"]["pin_2"]["name"], "source")
+        self.assertEqual(extras[part_id]["pins"]["pin_3"]["name"], "drain")
+
+    def test_cbi_bc2301t_uses_special_order_sot_523_without_wrong_lcsc_code(self):
+        options = []
+        working_oomp_populate_transistor.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "bc2301t_2_8a"
+        )
+        self.assertEqual(option["taxonomy_3"], "sot_523")
+        self.assertEqual(option["taxonomy_5"], "p_channel")
+        self.assertEqual(option["taxonomy_14"], "cbi")
+
+        part_id = "electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "BC2301T-2.8A")
+        self.assertNotIn("part_number_lcsc", extras[part_id])
+        self.assertEqual(extras[part_id]["electrical"]["maximum_continuous_drain_current"], "-2.8 A")
+        self.assertEqual(extras[part_id]["transistor_dimensions_mm"]["body_length_maximum"], 1.7)
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "gate")
+        self.assertEqual(extras[part_id]["pins"]["pin_2"]["name"], "source")
+        self.assertEqual(extras[part_id]["pins"]["pin_3"]["name"], "drain")
+
+    def test_diodes_bcm857bs_is_exact_matched_pair_with_ebcebc_pinout(self):
+        options = []
+        working_oomp_populate_transistor.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "bcm857bs_7_f"
+        )
+        self.assertEqual(option["taxonomy_3"], "sot_363_6")
+        self.assertEqual(option["taxonomy_4"], "bipolar")
+        self.assertEqual(option["taxonomy_5"], "pnp")
+        self.assertEqual(option["taxonomy_6"], "dual_matched_pair")
+        self.assertEqual(option["taxonomy_14"], "diodes_incorporated")
+
+        part_id = "electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "BCM857BS-7-F")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C105896")
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "emitter_1")
+        self.assertEqual(extras[part_id]["pins"]["pin_2"]["name"], "base_1")
+        self.assertEqual(extras[part_id]["pins"]["pin_3"]["name"], "collector_2")
+        self.assertEqual(extras[part_id]["pins"]["pin_4"]["name"], "emitter_2")
+        self.assertEqual(extras[part_id]["pins"]["pin_5"]["name"], "base_2")
+        self.assertEqual(extras[part_id]["pins"]["pin_6"]["name"], "collector_1")
+        self.assertEqual(extras[part_id]["electrical"]["maximum_base_emitter_voltage_difference"], "2 mV")
+
+    def test_cbi_mmdt3906dw_is_exact_general_purpose_dual_pnp(self):
+        options = []
+        working_oomp_populate_transistor.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "mmdt3906dw"
+        )
+        self.assertEqual(option["taxonomy_3"], "sot_363_6")
+        self.assertEqual(option["taxonomy_5"], "pnp")
+        self.assertEqual(option["taxonomy_6"], "dual_general_purpose")
+        self.assertEqual(option["taxonomy_14"], "cbi")
+
+        part_id = "electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "MMDT3906DW")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C2836075")
+        self.assertEqual(extras[part_id]["marking_code"], "K3N")
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "emitter_1")
+        self.assertEqual(extras[part_id]["pins"]["pin_6"]["name"], "collector_1")
+        self.assertEqual(extras[part_id]["electrical"]["maximum_continuous_collector_current"], "-200 mA")
+
+    def test_gainsil_lmv321_tr_has_exact_identity_pinout_and_dimensions(self):
+        options = []
+        working_oomp_populate_ic.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "lmv321_tr"
+        )
+        self.assertEqual(option["taxonomy_3"], "sot_23_5")
+        self.assertEqual(option["taxonomy_4"], "amplifier")
+        self.assertEqual(option["taxonomy_14"], "gainsil")
+
+        part_id = "electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_ic_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "LMV321-TR")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C362273")
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "in_positive")
+        self.assertEqual(extras[part_id]["pins"]["pin_2"]["name"], "vss")
+        self.assertEqual(extras[part_id]["pins"]["pin_3"]["name"], "in_negative")
+        self.assertEqual(extras[part_id]["pins"]["pin_4"]["name"], "output")
+        self.assertEqual(extras[part_id]["pins"]["pin_5"]["name"], "vdd")
+        self.assertEqual(extras[part_id]["ic_dimensions_mm"]["body_length_max"], 3.02)
+        self.assertEqual(extras[part_id]["electrical"]["maximum_supply_voltage"], "5.5 V")
+
+    def test_ti_lmv324ipwr_has_exact_identity_pinout_and_dimensions(self):
+        options = []
+        working_oomp_populate_ic.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "lmv324ipwr"
+        )
+        self.assertEqual(option["taxonomy_3"], "tssop_14")
+        self.assertEqual(option["taxonomy_4"], "amplifier")
+        self.assertEqual(option["taxonomy_14"], "texas_instruments")
+
+        part_id = "electronic_ic_tssop_14_amplifier_operational_quad_rail_to_rail_output_texas_instruments_lmv324ipwr"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_ic_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "LMV324IPWR")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C398929")
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "1out")
+        self.assertEqual(extras[part_id]["pins"]["pin_4"]["name"], "vcc+")
+        self.assertEqual(extras[part_id]["pins"]["pin_11"]["name"], "gnd")
+        self.assertEqual(extras[part_id]["pins"]["pin_14"]["name"], "4out")
+        self.assertEqual(extras[part_id]["ic_dimensions_mm"]["pin_pitch"], 0.65)
+        self.assertEqual(extras[part_id]["electrical"]["output_style"], "rail-to-rail output")
+
+    def test_gainsil_gs321a_tr_meets_precision_offset_target(self):
+        options = []
+        working_oomp_populate_ic.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "gs321a_tr"
+        )
+        self.assertEqual(option["taxonomy_3"], "sot_23_5")
+        self.assertEqual(option["taxonomy_5"], "operational_single_precision_rail_to_rail_input_output")
+        self.assertEqual(option["taxonomy_14"], "gainsil")
+
+        part_id = "electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_ic_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "GS321A-TR")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C431318")
+        self.assertEqual(extras[part_id]["electrical"]["maximum_input_offset_voltage"], "0.4 mV")
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "in_positive")
+        self.assertEqual(extras[part_id]["pins"]["pin_5"]["name"], "vdd")
+
+    def test_ti_lmv331idbvr_has_open_collector_output_and_exact_pinout(self):
+        options = []
+        working_oomp_populate_ic.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "lmv331idbvr"
+        )
+        self.assertEqual(option["taxonomy_3"], "sot_23_5")
+        self.assertEqual(option["taxonomy_4"], "comparator")
+        self.assertEqual(option["taxonomy_5"], "single_open_collector")
+
+        part_id = "electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_ic_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_manufacturer"], "LMV331IDBVR")
+        self.assertEqual(extras[part_id]["part_number_lcsc"], "C34731")
+        self.assertEqual(extras[part_id]["electrical"]["output_style"], "open collector")
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "in_positive")
+        self.assertEqual(extras[part_id]["pins"]["pin_2"]["name"], "gnd")
+        self.assertEqual(extras[part_id]["pins"]["pin_4"]["type"], "open_collector_output")
+        self.assertEqual(extras[part_id]["pins"]["pin_5"]["name"], "vcc")
 
     def test_board_features_and_mounting_holes_are_classified_separately(self):
         index = OompPartIndex(PARTS_DIRECTORY)
@@ -331,6 +571,36 @@ class ProjectPartTests(unittest.TestCase):
             self.assertTrue(destination.is_file())
             provenance = yaml.safe_load((destination.parent / "datasheet_source.yaml").read_text(encoding="utf-8"))
             self.assertEqual(provenance["acquisition_method"], "interactive_browser")
+            self.assertEqual(provenance["file_size_bytes"], len(b"%PDF-1.7\nexample"))
+            self.assertEqual(len(provenance["sha256"]), 64)
+            # Re-importing the exact same browser download is deliberately
+            # idempotent so provenance can be repaired after a manual copy.
+            second_destination = import_browser_datasheet(
+                "electronic_ic_test",
+                downloaded_file,
+                "https://example.com/datasheet.pdf",
+                parts_source_directory,
+            )
+            self.assertEqual(second_destination, destination)
+
+    def test_component_addition_record_rejects_ambiguous_identity_fields(self):
+        record = {
+            "ledger_id": "E9999",
+            "family": "transistor",
+            "part_id": "Electronic Bad Part",
+            "package": "sot_23",
+            "exact_identity": True,
+            "research": {
+                "manufacturer": "",
+                "manufacturer_part_number": "",
+                "lcsc_part_number": "105896",
+                "browser_sources": [],
+                "evidence_notes": [],
+            },
+        }
+        errors, warnings = validate_record(record)
+        self.assertGreaterEqual(len(errors), 6)
+        self.assertEqual(warnings, [])
 
     def test_mounting_hole_populator_uses_editable_size_and_style_arrays(self):
         options = []

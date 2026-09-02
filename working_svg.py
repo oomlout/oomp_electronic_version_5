@@ -883,7 +883,7 @@ def _get_package_pin_count(thing):
         pin_count = _get_number_from_taxonomy(thing, ["taxonomy_5", "taxonomy_6"])
         if pin_count > 0:
             return pin_count
-    if component_type in ["diode", "ic"]:
+    if component_type in ["diode", "ic", "transistor"]:
         pin_count = _get_number_from_taxonomy(thing, ["taxonomy_3", "taxonomy_4"])
         if pin_count > 0:
             return pin_count
@@ -925,6 +925,13 @@ def _add_ic_pin_one_marker(thing, package, body_width, body_height, pos):
     """Use the same basic pin-1 cue shown by each source datasheet."""
     marker_x = pos[0] - body_width / 2 + 1.1
     marker_y = pos[1] + body_height / 2 - 1.1
+
+    if package in ["sot_23", "sot_523", "sot_363_6"]:
+        # The CBI SOT-23 outline numbers pin 1 at the lower-left lead when the
+        # single drain lead is on the right.  A small circle keeps that anchor
+        # visible in every monochrome diagram.
+        marker_x = pos[0] - body_width / 2 + 0.8
+        marker_y = pos[1] - body_height / 2 + 0.8
 
     if package == "tsot_23_5":
         # Richtek uses a triangular corner mark beside pin 1.
@@ -1016,7 +1023,90 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
         thing["diagram_outline_height"] = body_height
         return body_width, body_height
 
-    if thing.get("taxonomy_2", "") == "diode" and package == "sot_523":
+    if package == "sot_23":
+        body_height = max(8, height - 2)
+        if thing.get("assembly_mode", False):
+            body_height = height
+        body_width = body_height * 1.425 / 2.9
+        overall_width = body_height * 2.6 / 2.9
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(1.0, body_height * 0.425 / 2.9)
+        pin_rows = [
+            ["1", "left", -0.3275],
+            ["2", "left", 0.3275],
+            ["3", "right", 0.0],
+        ]
+        for pin_row in pin_rows:
+            side_sign = -1
+            if pin_row[1] == "right":
+                side_sign = 1
+            pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+            pin_y = pos[1] + body_height * pin_row[2]
+            _add_ic_pin(
+                thing,
+                pin_row[0],
+                pin_row[1],
+                [pin_x, pin_y, 0],
+                [pad_length, pad_width, 0],
+            )
+
+    elif package == "sot_523" and thing.get("taxonomy_2", "") == "transistor":
+        body_height = max(8, height - 2)
+        if thing.get("assembly_mode", False):
+            body_height = height
+        body_width = body_height * 0.775 / 1.6
+        overall_width = body_height
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(0.8, body_height * 0.33 / 1.6)
+        pin_rows = [
+            ["1", "left", -0.30],
+            ["2", "left", 0.30],
+            ["3", "right", 0.0],
+        ]
+        for pin_row in pin_rows:
+            side_sign = -1
+            if pin_row[1] == "right":
+                side_sign = 1
+            pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+            pin_y = pos[1] + body_height * pin_row[2]
+            _add_ic_pin(
+                thing,
+                pin_row[0],
+                pin_row[1],
+                [pin_x, pin_y, 0],
+                [pad_length, pad_width, 0],
+            )
+
+    elif package == "sot_363_6" and thing.get("taxonomy_2", "") == "transistor":
+        # Diodes Incorporated shows the SOT363 top view with pins 1, 2, 3
+        # along the bottom edge and 6, 5, 4 along the top edge.  Keep that
+        # physical orientation and its 0.65 mm pitch explicit here.
+        body_width = max(10, width - 2)
+        if thing.get("assembly_mode", False):
+            body_width = width
+        body_height = body_width * 1.3 / 2.15
+        overall_height = body_width * 2.1 / 2.15
+        pad_length = (overall_height - body_height) / 2 + 0.5
+        pad_width = max(0.7, body_width * 0.25 / 2.15)
+        bottom_numbers = ["1", "2", "3"]
+        top_numbers = ["6", "5", "4"]
+        pin_offsets = [-0.65, 0.0, 0.65]
+        for side_index in range(2):
+            side = ["bottom", "top"][side_index]
+            numbers = [bottom_numbers, top_numbers][side_index]
+            side_sign = [-1, 1][side_index]
+            for pin_index in range(3):
+                pin_x = pos[0] + body_width * pin_offsets[pin_index] / 2.15
+                pin_y = pos[1] + side_sign * (body_height / 2 + pad_length / 2 - 0.25)
+                _add_ic_pin(
+                    thing,
+                    numbers[pin_index],
+                    side,
+                    [pin_x, pin_y, 0],
+                    [pad_width, pad_length, 0],
+                )
+
+    elif thing.get("taxonomy_2", "") == "diode" and package == "sot_523":
         body_height = max(8, height - 2)
         body_width = body_height * 0.8 / 1.6
         overall_width = body_height
@@ -1104,6 +1194,35 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
         thing["diagram_outline_height"] = body_height + pad_length
         return body_width, body_height
 
+    elif package.startswith("tssop_"):
+        pin_count = max(_get_package_pin_count(thing), 2)
+        pins_per_side = pin_count // 2
+        ic_dimensions = thing.get("ic_dimensions_mm", {})
+        package_body_length = float(ic_dimensions.get("body_length", 5.0))
+        package_body_width = float(ic_dimensions.get("body_width", 4.4))
+        package_overall_width = float(ic_dimensions.get("overall_width", 6.4))
+        package_pin_width = float(ic_dimensions.get("pin_width", 0.235))
+        body_height = max(8, height - 2)
+        if thing.get("assembly_mode", False):
+            body_height = height
+        body_width = body_height * package_body_width / package_body_length
+        overall_width = body_height * package_overall_width / package_body_length
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(0.45, body_height * package_pin_width / package_body_length)
+        left_numbers = []
+        right_numbers = []
+        for pin_index in range(pins_per_side):
+            left_numbers.append(pin_index + 1)
+            right_numbers.append(pin_count - pin_index)
+        for side_index in range(2):
+            side = ["left", "right"][side_index]
+            numbers = [left_numbers, right_numbers][side_index]
+            side_sign = [-1, 1][side_index]
+            for pin_index in range(len(numbers)):
+                pin_y = pos[1] + body_height * (0.5 - (pin_index + 0.5) / pins_per_side)
+                pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+                _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_width, 0])
+
     elif package == "sop_16":
         body_height = max(8, height - 2)
         body_width = body_height * 3.9 / 9.9
@@ -1121,20 +1240,30 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
                 pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
                 _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_width, 0])
 
-    elif package == "sot_23_6":
+    elif package in ["sot_23_5", "sot_23_6"]:
         body_height = max(8, height - 2)
-        body_width = body_height * 1.6 / 2.9
-        overall_width = body_height * 2.8 / 2.9
+        ic_dimensions = thing.get("ic_dimensions_mm", {})
+        package_body_length = float(ic_dimensions.get("body_length", 2.9))
+        package_body_width = float(ic_dimensions.get("body_width", 1.6))
+        package_overall_width = float(ic_dimensions.get("overall_width", 2.8))
+        package_pin_width = float(ic_dimensions.get("pin_width", 0.375))
+        body_width = body_height * package_body_width / package_body_length
+        overall_width = body_height * package_overall_width / package_body_length
         pad_length = (overall_width - body_width) / 2 + 0.5
-        pad_width = body_height * 0.375 / 2.9
+        pad_width = body_height * package_pin_width / package_body_length
         left_numbers = [1, 2, 3]
         right_numbers = [6, 5, 4]
+        if package == "sot_23_5":
+            right_numbers = [5, 4]
         for side_index in range(2):
             side = ["left", "right"][side_index]
             numbers = [left_numbers, right_numbers][side_index]
             side_sign = [-1, 1][side_index]
-            for pin_index in range(3):
-                pin_y = pos[1] + body_height * (0.3275 - pin_index * 0.3275)
+            for pin_index in range(len(numbers)):
+                if len(numbers) == 3:
+                    pin_y = pos[1] + body_height * (0.3275 - pin_index * 0.3275)
+                else:
+                    pin_y = pos[1] + body_height * [0.3275, -0.3275][pin_index]
                 pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
                 _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_width, 0])
 
@@ -1187,14 +1316,119 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
     if package == "tsot_23_5":
         thing["diagram_outline_width"] = body_width
         thing["diagram_outline_height"] = body_height + 2 * pad_length
+    if package == "sot_363_6" and thing.get("taxonomy_2", "") == "transistor":
+        thing["diagram_outline_width"] = body_width
+        thing["diagram_outline_height"] = body_height + 2 * pad_length
     return body_width, body_height
 
 
 def _add_display_outline(thing, width=30, height=16, pos=None):
     if pos is None:
         pos = [0, 0, 0]
-    opsvg.se(thing, shape="rounded_rectangle", style="component.body", size=[width, height, 0], r=1.5, pos=copy.deepcopy(pos))
-    opsvg.se(thing, shape="rounded_rectangle", style="component.screen", size=[width - 6, height - 6, 0], r=1, pos=copy.deepcopy(pos))
+
+    display_type = str(thing.get("taxonomy_3", ""))
+    dimensions = thing.get("display_dimensions_mm", {})
+    if display_type == "tft" and isinstance(dimensions, dict) and len(dimensions) > 0:
+        body_width_mm = float(dimensions.get("body_width", 34.6))
+        body_height_mm = float(dimensions.get("body_height", 47.8))
+
+        # The ordinary part diagrams fit the real portrait outline inside the
+        # supplied box.  Assembly mode already supplies a physical 10x mm box,
+        # so it must remain exactly one-to-one with the board footprint.
+        drawing_width = float(width)
+        drawing_height = float(height)
+        if not thing.get("assembly_mode", False):
+            scale = min(
+                float(width) / max(body_width_mm, 0.01),
+                float(height) / max(body_height_mm, 0.01),
+            )
+            drawing_width = body_width_mm * scale
+            drawing_height = body_height_mm * scale
+
+        scale_x = drawing_width / max(body_width_mm, 0.01)
+        scale_y = drawing_height / max(body_height_mm, 0.01)
+        corner_radius = min(drawing_width, drawing_height) * 0.035
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.body",
+            size=[drawing_width, drawing_height, 0],
+            r=corner_radius,
+            pos=copy.deepcopy(pos),
+        )
+
+        active_width = float(dimensions.get("active_width", 30.6)) * scale_x
+        active_height = float(dimensions.get("active_height", 40.8)) * scale_y
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.screen",
+            size=[active_width, active_height, 0],
+            r=corner_radius * 0.6,
+            pos=copy.deepcopy(pos),
+        )
+
+        # QT200H1201 flex contacts, in the same local coordinate system as the
+        # KiCad footprint.  Keeping these simple constants visible makes later
+        # display variants straightforward to edit from their datasheets.
+        pin_pitch_mm = float(dimensions.get("fpc_pin_pitch", 0.8))
+        pad_width_mm = float(dimensions.get("fpc_pad_width", 0.6))
+        pad_length_mm = float(dimensions.get("fpc_pad_length", 2.55))
+        pin_one_x_mm = 6.3
+        pin_y_mm = -7.825
+        pin_labels = _get_pin_label_map(thing)
+        thing["diagram_pin_positions"] = []
+        for pin_index in range(12):
+            pin_number = str(pin_index + 1)
+            pin_x_mm = pin_one_x_mm - pin_index * pin_pitch_mm
+            pin_pos = [
+                pos[0] + pin_x_mm * scale_x,
+                pos[1] + pin_y_mm * scale_y,
+                0,
+            ]
+            pin_size = [pad_width_mm * scale_x, pad_length_mm * scale_y, 0]
+            opsvg.se(
+                thing,
+                shape="rect",
+                style="component.pad",
+                size=copy.deepcopy(pin_size),
+                pos=copy.deepcopy(pin_pos),
+            )
+            thing["diagram_pin_positions"].append(
+                {
+                    "number": pin_number,
+                    "label": pin_labels.get(pin_number, f"pin {pin_number}"),
+                    "side": "bottom",
+                    "pos": copy.deepcopy(pin_pos),
+                    "size": copy.deepcopy(pin_size),
+                }
+            )
+
+        pin_one_pos = copy.deepcopy(thing["diagram_pin_positions"][0]["pos"])
+        thing["diagram_orientation_anchor"] = {
+            "pos": pin_one_pos,
+            "identifiers": ["1"],
+        }
+        thing["diagram_outline_width"] = drawing_width
+        thing["diagram_outline_height"] = drawing_height
+        return drawing_width, drawing_height
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[width, height, 0],
+        r=1.5,
+        pos=copy.deepcopy(pos),
+    )
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.screen",
+        size=[width - 6, height - 6, 0],
+        r=1,
+        pos=copy.deepcopy(pos),
+    )
     return width, height
 
 
@@ -1322,7 +1556,7 @@ def _add_component_outline(thing, width=22, height=10, pos=None):
         return _add_resistor_outline(thing, body_width=width, body_height=height, pos=pos, body_style="component.body_dark")
     if component_type == "connector":
         return _add_connector_outline(thing, width=width, height=height, pos=pos)
-    if component_type in ["diode", "ic"]:
+    if component_type in ["diode", "ic", "transistor"]:
         return _add_ic_outline(thing, width=width, height=height, pos=pos)
     if component_type == "display":
         return _add_display_outline(thing, width=width, height=height, pos=pos)
@@ -1545,12 +1779,13 @@ def _add_square_pin_labels(thing):
             )
         return
 
-    if component_type in ["ic", "diode"] and diagram_pin_positions:
+    if component_type in ["ic", "diode", "transistor"] and diagram_pin_positions:
         pin_label_map = _get_pin_label_map(thing)
 
-        # SOP16 has eight pins on each long edge.  Directly adjacent text would
-        # overlap, so keep its two readable banks as the requested exception.
-        if component_size == "sop_16":
+        # SOP and TSSOP packages have dense long-edge pins.  Directly adjacent
+        # text would overlap, so keep their two readable banks as the requested
+        # close-pitch exception.
+        if component_size == "sop_16" or component_size.startswith("tssop_"):
             side_details = [
                 {"side": "left", "x": -12.5, "halign": "right"},
                 {"side": "right", "x": 12.5, "halign": "left"},
@@ -1570,7 +1805,7 @@ def _add_square_pin_labels(thing):
                         pin_name,
                         "label.pin",
                         [side_detail["x"], label_y, 0],
-                        size=1.8,
+                        size=1.6,
                         halign=side_detail["halign"],
                     )
             return
@@ -1593,6 +1828,13 @@ def _add_square_pin_labels(thing):
                 # long names such as common_cathode visible and easy to adjust.
                 character_count = max(1, len(pin_name))
                 label_size = min(1.8, max(1.0, 17.0 / character_count))
+            if component_type == "transistor":
+                label_size = 2.0
+                if component_size == "sot_363_6":
+                    # Six long EBCEBC names share two very short package
+                    # edges.  A direct character-count rule keeps every label
+                    # beside its pad without colliding with the summary code.
+                    label_size = min(1.4, max(0.85, 11.0 / max(1, len(pin_name))))
 
             if side == "left":
                 label_pos = [pin_pos[0] - pin_size[0] / 2 - 0.6, pin_pos[1], 0]
@@ -1988,22 +2230,54 @@ def _add_component_dimensions(thing, body_width, body_height, show_titles=False)
         )
 
         # SOP and TI SOT are displayed in the datasheet's portrait top view.
-        if package in ["sop_16", "sot_23_6"]:
+        if package in ["sop_16", "sot_23_5", "sot_23_6"] or package.startswith("tssop_"):
             length_text, width_text = width_text, length_text
+    if component_type == "transistor" and package in ["sot_23", "sot_523"]:
+        transistor_dimensions = thing.get("transistor_dimensions_mm", {})
+        length_text = _format_dimension_range_mm(
+            transistor_dimensions.get("overall_width_minimum"),
+            transistor_dimensions.get("overall_width_maximum"),
+            transistor_dimensions.get("overall_width_nominal", dimensions_mm.get("width", 2.6)),
+        )
+        width_text = _format_dimension_range_mm(
+            transistor_dimensions.get("body_length_minimum"),
+            transistor_dimensions.get("body_length_maximum"),
+            transistor_dimensions.get("body_length_nominal", dimensions_mm.get("length", 2.9)),
+        )
+    if component_type == "transistor" and package == "sot_363_6":
+        transistor_dimensions = thing.get("transistor_dimensions_mm", {})
+        length_text = _format_dimension_range_mm(
+            transistor_dimensions.get("body_length_minimum"),
+            transistor_dimensions.get("body_length_maximum"),
+            transistor_dimensions.get("body_length_nominal", dimensions_mm.get("length", 2.15)),
+        )
+        width_text = _format_dimension_range_mm(
+            transistor_dimensions.get("overall_width_minimum"),
+            transistor_dimensions.get("overall_width_maximum"),
+            transistor_dimensions.get("overall_width_nominal", dimensions_mm.get("width", 2.1)),
+        )
     if show_titles:
-        if component_type == "ic" and package in ["sop_16", "sot_23_6"]:
+        if component_type == "ic" and (package in ["sop_16", "sot_23_5", "sot_23_6"] or package.startswith("tssop_")):
             length_text = f"body width {length_text}"
             width_text = f"body length {width_text}"
         elif component_type == "ic":
             length_text = f"body length {length_text}"
             width_text = f"body width {width_text}"
+        elif component_type == "transistor" and package in ["sot_23", "sot_523"]:
+            length_text = f"overall width {length_text}"
+            width_text = f"body length {width_text}"
+        elif component_type == "transistor" and package == "sot_363_6":
+            length_text = f"body length {length_text}"
+            width_text = f"overall width {width_text}"
         else:
             length_text = f"length {length_text}"
             width_text = f"width {width_text}"
 
     dimension_text_size = None
-    if component_type == "ic":
+    if component_type in ["ic", "transistor"]:
         dimension_text_size = 2.3
+    if component_type == "ic" and package == "sot_23_5":
+        dimension_text_size = 1.8
 
     _add_text(
         thing,
@@ -2048,15 +2322,27 @@ def _get_assembly_drawing_dimensions(thing):
 
     # These package drawers follow the orientation used in their datasheets:
     # pins left/right for SOP and SOT, pins above/below for TSOT.
-    if component_type in ["ic", "diode"]:
+    if component_type in ["ic", "diode", "transistor"]:
         ic_dimensions = thing.get("ic_dimensions_mm", {})
-        if component_type == "diode" and package == "sot_523":
+        if component_type == "transistor" and package in ["sot_23", "sot_523"]:
+            transistor_dimensions = thing.get("transistor_dimensions_mm", {})
+            canvas_width = float(transistor_dimensions.get("overall_width_nominal", physical_width)) * 10
+            canvas_height = float(transistor_dimensions.get("body_length_nominal", physical_length)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+        elif component_type == "transistor" and package == "sot_363_6":
+            transistor_dimensions = thing.get("transistor_dimensions_mm", {})
+            canvas_width = float(transistor_dimensions.get("body_length_nominal", physical_length)) * 10
+            canvas_height = float(transistor_dimensions.get("overall_width_nominal", physical_width)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+        elif component_type == "diode" and package == "sot_523":
             diode_dimensions = thing.get("diode_dimensions_mm", {})
             canvas_width = float(diode_dimensions.get("overall_width", physical_length)) * 10
             canvas_height = float(diode_dimensions.get("body_length", physical_length)) * 10
             outline_width = canvas_width
             outline_height = canvas_height
-        elif package in ["sop_16", "sot_23_6"]:
+        elif package in ["sop_16", "sot_23_5", "sot_23_6"] or package.startswith("tssop_"):
             canvas_width = float(ic_dimensions.get("overall_width", physical_width)) * 10
             canvas_height = float(ic_dimensions.get("body_length", physical_length)) * 10
             outline_width = canvas_width
@@ -2426,10 +2712,15 @@ def get_oomp_component_square(thing, **kwargs):
     _use_style_oomp(thing, **kwargs)
     _add_square_background(thing)
     _add_square_name(thing)
+    component_width = 22
+    component_height = 10
+    if thing.get("taxonomy_2", "") == "display" and thing.get("taxonomy_3", "") == "tft":
+        component_width = 16
+        component_height = 20
     _add_component_outline(
         thing,
-        width=22,
-        height=10,
+        width=component_width,
+        height=component_height,
         pos=[0, 3, 0],
     )
     _add_square_codes(thing)
@@ -2447,6 +2738,9 @@ def get_oomp_component_square_pins(thing, **kwargs):
     if thing.get("taxonomy_2", "") == "connector" and thing.get("taxonomy_3", "") == "header":
         component_width = 22
         component_height = 10
+    if thing.get("taxonomy_2", "") == "display" and thing.get("taxonomy_3", "") == "tft":
+        component_width = 16
+        component_height = 20
     if thing.get("taxonomy_2", "") == "ic":
         package = thing.get("taxonomy_3", "")
         package_sizes = {

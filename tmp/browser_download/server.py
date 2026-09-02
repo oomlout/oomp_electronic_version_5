@@ -7,7 +7,7 @@ class RedirectHandler(SimpleHTTPRequestHandler):
             self.send_response(302)
             self.send_header(
                 "Location",
-                "https://product.tdk.com/en/system/files/dam/doc/product/emc/emc/beads/catalog/beads_commercial_signal_mmz2012_en.pdf",
+                "https://www.lcsc.com/datasheet/C2879714.pdf",
             )
             self.end_headers()
             return

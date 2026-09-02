@@ -11,6 +11,8 @@ def main(**kwargs):
     working_oomp_populate_connector_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_diode_extra
     working_oomp_populate_diode_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_transistor_extra
+    working_oomp_populate_transistor_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_ic_extra
     working_oomp_populate_ic_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_ferrite_bead_extra
@@ -21,6 +23,8 @@ def main(**kwargs):
     working_oomp_populate_led_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_crystal_extra
     working_oomp_populate_crystal_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_display_extra
+    working_oomp_populate_display_extra.main(extras_dict=extras_dict)
 
     ######add notes here
     current = "warehouse_storage_kallax_front_room_location_d_column_3_row"
