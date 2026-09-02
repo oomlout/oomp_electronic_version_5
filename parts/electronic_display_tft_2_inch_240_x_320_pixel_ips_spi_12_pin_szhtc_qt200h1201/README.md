@@ -1,10 +1,10 @@
-# 2 Inch IPS TFT 240 x 320
+# Display QT200H1201 TFT
 
 `electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201`
 
-2 Inch IPS TFT 240 x 320 is an OOMP electronic display definition. It uses the tft package or form factor. Its nominal drawing size is 34.6 &#x00D7; 47.8 mm. The definition includes 12 documented pins.
+Display QT200H1201 TFT is an OOMP electronic display definition. It uses the tft package or form factor. Its nominal drawing size is 34.6 &#x00D7; 47.8 mm. The definition includes 12 documented pins.
 
-![2 Inch IPS TFT 240 x 320 pinout](working_svg_square_pins.svg)
+![Display QT200H1201 TFT pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -75,31 +75,35 @@
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201)
+
+
+
+[Browse this category](../../navigation/electronic/display/tft/2_inch/240_x_320_pixel/ips/spi/12_pin/szhtc/README.md)
 
 
 ---

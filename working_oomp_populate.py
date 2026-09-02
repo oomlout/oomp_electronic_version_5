@@ -85,6 +85,13 @@ def main(**kwargs):
     import working_oomp_populate_extra_detail
     working_oomp_populate_extra_detail.main(extras=extras)
 
+    # Display names, distributor links, and navigation are deterministic
+    # population data.  Keeping them here means every downstream README and
+    # action receives the same editable metadata without an LLM pass.
+    import working_oomp_metadata
+    working_oomp_metadata.add_readable_metadata(extras)
+    working_oomp_metadata.add_navigation_parts(extras)
+
 
     write_extras(extras)
 

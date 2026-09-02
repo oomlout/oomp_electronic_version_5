@@ -1,10 +1,10 @@
-# IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P
+# IC CH343P QFN_16_3_MM_X_3_MM
 
 `electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p`
 
-IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P is an OOMP electronic ic definition. It uses the qfn 16 3 mm x 3 mm package or form factor. Its nominal drawing size is 3.0 × 3.0 mm. The definition includes 17 documented pins.
+IC CH343P QFN_16_3_MM_X_3_MM is an OOMP electronic ic definition. It uses the qfn 16 3 mm x 3 mm package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 17 documented pins.
 
-![IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P pinout](working_svg_square_pins.svg)
+![IC CH343P QFN_16_3_MM_X_3_MM pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,8 +13,9 @@ IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P is an OOMP electr
 | OOMP ID | `electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p` |
 | Type | Ic |
 | Package / style | qfn 16 3 mm x 3 mm |
-| Nominal size | 3.0 × 3.0 mm |
+| Nominal size | 3.0 &#x00D7; 3.0 mm |
 | Documented pins | 17 |
+
 
 ## Classification
 
@@ -28,6 +29,8 @@ IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P is an OOMP electr
 | 14 | `wch` |
 | 15 | `ch343p` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -35,12 +38,18 @@ IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P is an OOMP electr
 | Length | 3.0 mm |
 | Width | 3.0 mm |
 
+
+
+
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `CH343P` |
-| LCSC | `C2846043` |
+| LCSC | [`C2846043`](https://www.lcsc.com/product-detail/C2846043.html) |
+
+
+
 
 ## Pins
 
@@ -64,30 +73,41 @@ IC Qfn 16 3 mm X 3 mm Converter USB To Serial Converter CH343P is an OOMP electr
 | 15 | cts | signal |
 | 16 | ri | signal |
 
+
+
+
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
+
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p)
+
+
+
+[Browse this category](../../navigation/electronic/ic/qfn_16_3_mm_x_3_mm/converter/usb_to_serial_converter/wch/README.md)
+
 
 ---
 

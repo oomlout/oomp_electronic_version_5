@@ -1,10 +1,12 @@
-# pt1-RevA2
+# Project electrolama/pt1 current
 
 [View the project on GitHub](https://github.com/electrolama/pt1)
 
-![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.svg)
+[Browse this project category](../../navigation/oomp/project/github/electrolama/pt1/README.md)
 
-pt1-RevA2 is a KiCad project containing 67 extracted component records. The catalogue matcher linked 36 physical placements to OOMP parts.
+![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_300.png)
+
+Project electrolama/pt1 current is a KiCad project containing 67 extracted component records. The catalogue matcher linked 36 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -26,50 +28,64 @@ pt1-RevA2 is a KiCad project containing 67 extracted component records. The cata
 
 - Approximate size: **18.0 mm × 46.0 mm**
 - Outline source: `KiCad Edge.Cuts`
-- Placement drawing: [view `board.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.svg)
-- PNG placement drawing: [view `board.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.png)
-- 300-pixel placement preview: [view `board_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_300.png)
-- Placement drawing with pin names: [view `board_pins.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.svg)
-- PNG drawing with pin names: [view `board_pins.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.png)
-- 300-pixel pin preview: [view `board_pins_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_300.png)
-- Bottom placement drawing: [view `board_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_bottom.svg)
-- Bottom PNG placement drawing: [view `board_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_bottom.png)
-- 300-pixel bottom preview: [view `board_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_bottom_300.png)
-- Bottom placement drawing with pin names: [view `board_pins_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_bottom.svg)
-- Bottom PNG drawing with pin names: [view `board_pins_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_bottom.png)
-- 300-pixel bottom pin preview: [view `board_pins_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_bottom_300.png)
-- Mechanical drawing: [view `board_mechanical.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_mechanical.svg)
-- Mechanical PNG: [view `board_mechanical.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_mechanical.png)
-- 300-pixel mechanical preview: [view `board_mechanical_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_mechanical_300.png)
-- Self-contained interactive explorer: [download `board_explorer.html`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/board_explorer.html)
+- Placement drawing: [view `board.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board.svg)
+- PNG placement drawing: [view `board.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board.png)
+- 300-pixel placement preview: [view `board_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_300.png)
+- Placement drawing with pin names: [view `board_pins.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins.svg)
+- PNG drawing with pin names: [view `board_pins.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins.png)
+- 300-pixel pin preview: [view `board_pins_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins_300.png)
+- Bottom placement drawing: [view `board_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_bottom.svg)
+- Bottom PNG placement drawing: [view `board_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_bottom.png)
+- 300-pixel bottom preview: [view `board_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_bottom_300.png)
+- Bottom placement drawing with pin names: [view `board_pins_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins_bottom.svg)
+- Bottom PNG drawing with pin names: [view `board_pins_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins_bottom.png)
+- 300-pixel bottom pin preview: [view `board_pins_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins_bottom_300.png)
+- Mechanical drawing: [view `board_mechanical.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_mechanical.svg)
+- Mechanical PNG: [view `board_mechanical.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_mechanical.png)
+- 300-pixel mechanical preview: [view `board_mechanical_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_mechanical_300.png)
+- Open the board explorer on GitHub Pages: [explore this board](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/board_explorer.html)
+- InteractiveHtmlBom: [open the interactive BOM](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_electrolama_pt1_current/data/interactivehtmlbom/ibom.html)
 
 ## Board with pins
 
-![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.png)
+![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins_300.png)
 
 ## Bottom board with pins
 
 The bottom view is mirrored horizontally so it is shown as viewed from beneath the assembled board.
 
-![Bottom PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins_bottom.png)
+![Bottom PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins_bottom_300.png)
 
 ## Mechanical layer
 
-![PCB mechanical layer with mounting holes](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_mechanical.png)
+![PCB mechanical layer with mounting holes](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_mechanical_300.png)
 
 The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. This point is shown as **0,0** in the mechanical drawing; X increases right and Y increases down. Original KiCad coordinates are retained alongside it.
 
-| OOMP reference | Source | Name | Classification | Role | Drill size | Board X (mm) | Board Y (mm) | OOMP part |
-| --- | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH1` | `CON1` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | diameter 0.65 mm | 6.110 | 41.190 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
-| `MH2` | `CON1` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | diameter 0.65 mm | 11.890 | 41.190 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
-| `MH3` | `CON2` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | diameter 0.65 mm | 4.810 | 15.110 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
-| `MH4` | `CON2` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | diameter 0.65 mm | 4.810 | 20.890 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
-| `MH5` | `CON3` | Mounting Hole 0.8 mm Round Plated | `mechanical / mounting_hole / 0_8_mm / round / plated` | shield_mount | diameter 0.8 mm | 2.600 | 1.635 | [`mechanical_mounting_hole_0_8_mm_round_plated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_8_mm_round_plated) |
-| `MH6` | `CON3` | Mounting Hole 0.8 mm Round Plated | `mechanical / mounting_hole / 0_8_mm / round / plated` | shield_mount | diameter 0.8 mm | 15.400 | 1.635 | [`mechanical_mounting_hole_0_8_mm_round_plated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_8_mm_round_plated) |
-| `MH7` | `UNK_HOLE_0` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | diameter 2 mm | 2.250 | 11.375 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
-| `MH8` | `UNK_HOLE_1` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | diameter 2 mm | 15.750 | 42.500 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
-| `MH9` | `UNK_HOLE_2` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | diameter 2 mm | 2.250 | 42.500 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
+### Diameter 0.65 mm holes
+
+| OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | ---: | ---: | --- |
+| `MH1` | `CON1` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | 6.110 | 41.190 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
+| `MH2` | `CON1` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | 11.890 | 41.190 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
+| `MH3` | `CON2` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | 4.810 | 15.110 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
+| `MH4` | `CON2` | Mounting Hole 0.65 mm Round Unplated | `mechanical / mounting_hole / 0_65_mm / round / unplated` | locating | 4.810 | 20.890 | [`mechanical_mounting_hole_0_65_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_65_mm_round_unplated) |
+
+### Diameter 0.8 mm holes
+
+| OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | ---: | ---: | --- |
+| `MH5` | `CON3` | Mounting Hole 0.8 mm Round Plated | `mechanical / mounting_hole / 0_8_mm / round / plated` | shield_mount | 2.600 | 1.635 | [`mechanical_mounting_hole_0_8_mm_round_plated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_8_mm_round_plated) |
+| `MH6` | `CON3` | Mounting Hole 0.8 mm Round Plated | `mechanical / mounting_hole / 0_8_mm / round / plated` | shield_mount | 15.400 | 1.635 | [`mechanical_mounting_hole_0_8_mm_round_plated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_8_mm_round_plated) |
+
+### Diameter 2 mm holes
+
+| OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | ---: | ---: | --- |
+| `MH7` | `UNK_HOLE_0` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | 2.250 | 11.375 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
+| `MH8` | `UNK_HOLE_1` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | 15.750 | 42.500 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
+| `MH9` | `UNK_HOLE_2` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | 2.250 | 42.500 | [`mechanical_mounting_hole_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_mm_round_unplated) |
+
 
 ## Bill of materials
 
@@ -129,19 +145,19 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - The extractor reports 21 named-net comparisons that differ between schematic and PCB data.
 
-- Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/lcsc_review.yaml)
-- Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/browser_research_queue.md)
+- Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/lcsc_review.yaml)
+- Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/browser_research_queue.md)
 
 ## Generated source bundle
 
-- Project image assets: [`generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src)
-- Copied component source manifest: `project_source/manifest.yaml` (generated locally and ignored by Git)
+- Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src)
+- Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
 - Matched OOMP source parts copied: 20
 
 ## Source files
 
-- Schematic: `kicad_file.kicad_sch`
-- PCB: `kicad_file.kicad_pcb`
+- Schematic: `data/kicad_file.kicad_sch`
+- PCB: `data/kicad_file.kicad_pcb`
 
 ---
 

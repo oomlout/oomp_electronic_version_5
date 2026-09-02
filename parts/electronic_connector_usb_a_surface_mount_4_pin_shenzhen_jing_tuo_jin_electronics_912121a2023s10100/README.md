@@ -1,10 +1,10 @@
-# Connector USB A Surface Mount 4 Pin
+# Connector USB-A 912-121A2023S10100
 
 `electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100`
 
-Connector USB A Surface Mount 4 Pin is an OOMP electronic connector definition. It uses the usb a package or form factor. Its nominal drawing size is 14.3 &#x00D7; 10.6 mm. The definition includes 6 documented pins.
+Connector USB-A 912-121A2023S10100 is an OOMP electronic connector definition. It uses the usb a package or form factor. Its nominal drawing size is 14.3 &#x00D7; 10.6 mm. The definition includes 6 documented pins.
 
-![Connector USB A Surface Mount 4 Pin pinout](working_svg_top.svg)
+![Connector USB-A 912-121A2023S10100 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -46,7 +46,7 @@ Connector USB A Surface Mount 4 Pin is an OOMP electronic connector definition. 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `912-121A2023S10100` |
-| LCSC | `C42428` |
+| LCSC | [`C42428`](https://www.lcsc.com/product-detail/C42428.html) |
 
 
 
@@ -67,37 +67,41 @@ Connector USB A Surface Mount 4 Pin is an OOMP electronic connector definition. 
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
-![Top view](working_svg_top_300.png)
+![Top view](data/working_svg_top_300.png)
 
-![Bottom view](working_svg_bottom_300.png)
+![Bottom view](data/working_svg_bottom_300.png)
 
-![Side view](working_svg_side_300.png)
+![Side view](data/working_svg_side_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100)
+
+
+
+[Browse this category](../../navigation/electronic/connector/usb_a/surface_mount/4_pin/shenzhen_jing_tuo_jin_electronics/README.md)
 
 
 ---

@@ -20,17 +20,20 @@ oomp / project / github / user / repository / version
 KiCad source folder, file basename, extensions, and project-specific match
 overrides. A missing version definition defaults to `current`.
 
-`working_oomp.py` adds two project-only `run_python` action blocks:
+`working_oomp.py` adds three project-only `run_python` action blocks:
 
-1. Clone into the part's ignored `git/` folder, or fetch and `git pull
+1. Clone into the part's ignored `data/git/` folder, or fetch and `git pull
    --ff-only` when it already exists, using the system Git executable. The
-   selected source files are copied to `kicad_file.kicad_pcb`,
-   `kicad_file.kicad_sch`, and `kicad_file.kicad_pro`.
+   selected source files are copied to `data/kicad_file.kicad_pcb`,
+   `data/kicad_file.kicad_sch`, and `data/kicad_file.kicad_pro`.
 2. Parse those canonical files, match components, copy required OOMP component
    sources, draw the board, and rebuild the project part's `README.md`.
+3. Run the vendored InteractiveHtmlBom generator without opening a browser.
+   Its result is placed in `data/interactivehtmlbom/`; KiCad's Python runtime
+   is required because InteractiveHtmlBom imports `pcbnew`.
 
 Both blocks use an empty `file_test`, so they run every time actions are run.
-The second block verifies `generated_data/src/board_pins.png` as its declared
+The second block verifies `data/generated_data/src/board_pins.png` as its declared
 output while also rebuilding the SVG boards and project README.
 
 Existing PNG files are preserved by default so routine runs do not rewrite
@@ -45,10 +48,26 @@ Component diagram PNGs follow the same rule. Use
 rebuilt. Roboclick image-resize and project actions also accept the explicit
 `regenerate_pngs: true` option for a forced action run.
 
+For a complete deterministic rebuild, run `action_regenerate_all.bat` from the
+repository root. It forces SVG/PNG and preview regeneration, but deliberately
+skips actions that operate an interactive browser.
+
+## Part navigation and file layout
+
+Population creates an OOMP navigation part for every populated taxonomy
+category. Roboclick renders those parts and copies their canonical Markdown to
+the top-level `navigation/` tree. Navigation uses relative parent/child links;
+links to real parts use absolute GitHub repository URLs.
+
+Generated part folders keep only `README.md`, `working.yaml`, and `data/` at
+their root. Diagrams, PNG previews, datasheets, project source files, reports,
+and explorer files all belong under `data/`. Run
+`python -m kicad_agents.migrate_part_data_layout` to migrate legacy roots.
+
 ## Generated structure
 
 ```text
-generated_data/
+parts/<project-id>/data/generated_data/
   project.json
   project.yaml
   summary.yaml
@@ -116,7 +135,7 @@ mounting-hole taxonomy: drill size, round or slot style, and plated or
 unplated. These mechanical items remain separate from the electrical BOM and
 the component assembly views.
 
-The project part also has an ignored `project_source/<oomp-id>/` tree. It
+The project part also has an ignored `data/project_source/<oomp-id>/` tree. It
 contains `working.yaml`, the assembly SVG variants, and
 `working_svg_outline.svg` copied from every matched OOMP part, plus a manifest.
 
@@ -141,7 +160,7 @@ its recorded pad rectangle and rotated 90 degrees for tall pads. Both are
 generated through the standard OOMP SVG pipeline with the shared 0.22 mm
 non-scaling stroke. Component diagrams are inlined into the board SVGs for
 reliable rendering, while their local copies stay in
-`generated_data/src/components`.
+`data/generated_data/src/components`.
 
 All README prose and facts are compiled by Python; there is no LLM prompt or
 LLM-authored sidecar. Optional visual changes belong in
@@ -151,16 +170,16 @@ LLM-authored sidecar. Optional visual changes belong in
 ## AI-assisted matching workflow
 
 1. Run the processing agent.
-2. Read `generated_data/unmatched_parts.json` or `.yaml`.
+2. Read `data/generated_data/unmatched_parts.json` or `.yaml`.
 3. Ask the matching agent for a fresh ranked result for an individual `component.json`:
 
    ```powershell
    python -m kicad_agents.oomp_matching_agent `
-     parts\oomp_project_github_electrolama_pt1_current\generated_data\components\R1\component.json `
+     parts\oomp_project_github_electrolama_pt1_current\data\generated_data\components\R1\component.json `
      --parts-dir parts
    ```
 
-4. When the AI can justify a match, add it to `generated_data/match_overrides.yaml`:
+4. When the AI can justify a match, add it to `data/generated_data/match_overrides.yaml`:
 
    ```yaml
    matches:

@@ -711,7 +711,7 @@ def _make_board_svg(
     style,
     component_asset_directory,
     component_svg_filename="working_svg_assembly.svg",
-    image_file="generated_data/src/board.svg",
+    image_file="data/generated_data/src/board.svg",
     board_side="front",
     mirror_view=False,
 ):
@@ -892,7 +892,7 @@ def _make_mechanical_svg(
     project_data,
     components,
     style,
-    image_file="generated_data/src/board_mechanical.svg",
+    image_file="data/generated_data/src/board_mechanical.svg",
 ):
     """Draw Edge.Cuts, mounting holes, and a board-relative 0,0 origin."""
     pcb_files = project_data.get("project", {}).get("pcb_files", [])
@@ -1025,6 +1025,7 @@ def _make_mechanical_svg(
         lines.append(
             f'<text class="mechanical-text" x="{label_x:.4f}" y="{label_y:.4f}" text-anchor="{text_anchor}">'
             f'<tspan x="{label_x:.4f}" dy="0">{html.escape(mounting_hole_row["id"])} {html.escape(mounting_hole_row["reference"])}</tspan>'
+            f'<tspan x="{label_x:.4f}" dy="0.85">{html.escape(mounting_hole_row["name"])}</tspan>'
             f'<tspan x="{label_x:.4f}" dy="0.85">x {x:.3f} y {y:.3f}</tspan>'
             f'<tspan x="{label_x:.4f}" dy="0.85">{html.escape(drill_text)} mm {plating_short}</tspan>'
             '</text>'
@@ -1045,7 +1046,7 @@ def _make_mechanical_svg(
 
 def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=False):
     """Render one board PNG, preserving an existing file unless requested."""
-    image_file = f"generated_data/src/{png_path.name}"
+    image_file = f"data/generated_data/src/{png_path.name}"
     if png_path.is_file() and not regenerate_pngs:
         from PIL import Image
 
@@ -1131,7 +1132,10 @@ def _copy_project_sources(components, parts_directory, project_source_directory,
         copied_image_files = []
 
         for source_filename in source_filenames:
-            source_file = source_part_directory / source_filename
+            if source_filename == "working.yaml":
+                source_file = source_part_directory / source_filename
+            else:
+                source_file = source_part_directory / "data" / source_filename
             if source_file.is_file():
                 destination_file = project_source_directory / oomp_id / source_filename
                 destination_file.parent.mkdir(parents=True, exist_ok=True)
@@ -1139,7 +1143,7 @@ def _copy_project_sources(components, parts_directory, project_source_directory,
                 copied_source_files.append(source_filename)
 
         for image_filename in image_filenames:
-            source_file = source_part_directory / image_filename
+            source_file = source_part_directory / "data" / image_filename
             if source_file.is_file():
                 destination_file = component_asset_directory / oomp_id / image_filename
                 destination_file.parent.mkdir(parents=True, exist_ok=True)
@@ -1236,13 +1240,13 @@ def generate_project_summary(
     else:
         parts_directory = Path(parts_directory).resolve()
     if output_directory is None:
-        output_directory = project_directory / "generated_data"
+        output_directory = project_directory / "data" / "generated_data"
     else:
         output_directory = Path(output_directory).resolve()
     output_directory.mkdir(parents=True, exist_ok=True)
     asset_directory = output_directory / "src"
     component_asset_directory = asset_directory / "components"
-    project_source_directory = project_directory / "project_source"
+    project_source_directory = project_directory / "data" / "project_source"
     asset_directory.mkdir(parents=True, exist_ok=True)
     component_asset_directory.mkdir(parents=True, exist_ok=True)
     project_source_directory.mkdir(parents=True, exist_ok=True)
@@ -1269,42 +1273,60 @@ def generate_project_summary(
         identity["github_url"] = f"https://github.com/{identity['owner']}/{identity['repository']}"
 
     raw_project = project_data.get("project", {})
-    display_name = raw_project.get("name", identity["repository"])
+    display_name = str(part_metadata.get("name_readable", "")).strip()
+    if display_name == "":
+        display_name = raw_project.get("name", identity["repository"])
     part_id = project_directory.name
     repository_part_path = f"parts/{part_id}"
+    taxonomy_values = []
+    for taxonomy_number in range(1, 16):
+        taxonomy_value = str(part_metadata.get(f"taxonomy_{taxonomy_number}", "")).strip()
+        if taxonomy_value != "":
+            taxonomy_values.append(taxonomy_value)
+    navigation_category_path = taxonomy_values[:-1]
+    navigation_relative = "../../navigation/README.md"
+    if navigation_category_path != []:
+        navigation_relative = "../../navigation/" + "/".join(navigation_category_path) + "/README.md"
     repository_links = {
         "repository": OOMP_REPOSITORY_URL,
         "part": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}",
-        "generated_source": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src",
-        "board": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
-        "board_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.svg",
-        "board_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.png",
-        "board_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board.png",
-        "board_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_300.png",
-        "board_pins": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.svg",
-        "board_pins_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.svg",
-        "board_pins_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.png",
-        "board_pins_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins.png",
-        "board_pins_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_300.png",
-        "board_bottom": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom.svg",
-        "board_bottom_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom.svg",
-        "board_bottom_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom.png",
-        "board_bottom_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom.png",
-        "board_bottom_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_bottom_300.png",
-        "board_pins_bottom": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom.svg",
-        "board_pins_bottom_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom.svg",
-        "board_pins_bottom_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom.png",
-        "board_pins_bottom_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom.png",
-        "board_pins_bottom_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_pins_bottom_300.png",
-        "board_mechanical": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical.svg",
-        "board_mechanical_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical.svg",
-        "board_mechanical_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical.png",
-        "board_mechanical_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical.png",
-        "board_mechanical_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/src/board_mechanical_300.png",
+        "generated_source": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src",
+        "board": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board.svg",
+        "board_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board.svg",
+        "board_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board.png",
+        "board_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board.png",
+        "board_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_300.png",
+        "board_300_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_300.png",
+        "board_pins": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins.svg",
+        "board_pins_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins.svg",
+        "board_pins_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins.png",
+        "board_pins_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins.png",
+        "board_pins_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins_300.png",
+        "board_pins_300_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins_300.png",
+        "board_bottom": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_bottom.svg",
+        "board_bottom_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_bottom.svg",
+        "board_bottom_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_bottom.png",
+        "board_bottom_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_bottom.png",
+        "board_bottom_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_bottom_300.png",
+        "board_bottom_300_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_bottom_300.png",
+        "board_pins_bottom": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins_bottom.svg",
+        "board_pins_bottom_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins_bottom.svg",
+        "board_pins_bottom_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins_bottom.png",
+        "board_pins_bottom_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins_bottom.png",
+        "board_pins_bottom_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins_bottom_300.png",
+        "board_pins_bottom_300_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_pins_bottom_300.png",
+        "board_mechanical": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical.svg",
+        "board_mechanical_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical.svg",
+        "board_mechanical_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical.png",
+        "board_mechanical_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical.png",
+        "board_mechanical_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical_300.png",
+        "board_mechanical_300_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical_300.png",
         "parts": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/parts",
-        "explorer": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/board_explorer.html",
-        "lcsc_review": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/lcsc_review.yaml",
-        "browser_research_queue": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/generated_data/browser_research_queue.md",
+        "explorer": f"https://oomlout.github.io/oomp_electronic_version_5/{repository_part_path}/data/generated_data/board_explorer.html",
+        "interactivehtmlbom": f"https://oomlout.github.io/oomp_electronic_version_5/{repository_part_path}/data/interactivehtmlbom/ibom.html",
+        "lcsc_review": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/lcsc_review.yaml",
+        "browser_research_queue": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/browser_research_queue.md",
+        "navigation": navigation_relative,
     }
     source_manifest = _copy_project_sources(
         components,
@@ -1328,7 +1350,7 @@ def generate_project_summary(
         style,
         component_asset_directory,
         component_svg_filename="working_svg_assembly_pins.svg",
-        image_file="generated_data/src/board_pins.svg",
+        image_file="data/generated_data/src/board_pins.svg",
     )
     board_bottom = _make_board_svg(
         asset_directory / "board_bottom.svg",
@@ -1337,7 +1359,7 @@ def generate_project_summary(
         components,
         style,
         component_asset_directory,
-        image_file="generated_data/src/board_bottom.svg",
+        image_file="data/generated_data/src/board_bottom.svg",
         board_side="back",
         mirror_view=True,
     )
@@ -1349,7 +1371,7 @@ def generate_project_summary(
         style,
         component_asset_directory,
         component_svg_filename="working_svg_assembly_pins.svg",
-        image_file="generated_data/src/board_pins_bottom.svg",
+        image_file="data/generated_data/src/board_pins_bottom.svg",
         board_side="back",
         mirror_view=True,
     )
@@ -1397,11 +1419,24 @@ def generate_project_summary(
         "max_y": board.get("max_y", 0.0),
     }
     mounting_hole_rows = _mounting_hole_rows(components, board_bounds)
+    mounting_hole_groups = []
+    mounting_hole_group_names = []
+    for mounting_hole_row in mounting_hole_rows:
+        group_name = mounting_hole_row["size_text"]
+        if group_name not in mounting_hole_group_names:
+            mounting_hole_group_names.append(group_name)
+            group_title = group_name[:1].upper() + group_name[1:]
+            mounting_hole_groups.append(
+                {"size_text": group_name, "title": group_title, "holes": []}
+            )
+        group_index = mounting_hole_group_names.index(group_name)
+        mounting_hole_groups[group_index]["holes"].append(mounting_hole_row)
     mounting_holes = {
         "format_version": 1,
         "coordinate_system": _mounting_hole_coordinate_system(board_bounds),
         "count": len(mounting_hole_rows),
         "holes": mounting_hole_rows,
+        "groups": mounting_hole_groups,
     }
     _write_json(output_directory / "mounting_hole_summary.json", mounting_holes)
     _write_yaml(output_directory / "mounting_hole_summary.yaml", mounting_holes)
@@ -1474,7 +1509,7 @@ def main():
     parser = argparse.ArgumentParser(description="Build a styled project summary and PCB placement SVG.")
     parser.add_argument("project_directory", help="Project part directory containing copied kicad_file.* files")
     parser.add_argument("--parts-dir", default="parts", help="OOMP parts directory")
-    parser.add_argument("--output-dir", help="Output directory; defaults to PROJECT/generated_data")
+    parser.add_argument("--output-dir", help="Output directory; defaults to PROJECT/data/generated_data")
     parser.add_argument(
         "--regenerate-pngs",
         action="store_true",
@@ -1487,7 +1522,7 @@ def main():
         output_directory=arguments.output_dir,
         regenerate_pngs=arguments.regenerate_pngs,
     )
-    print(f"Generated: {Path(arguments.output_dir).resolve() if arguments.output_dir else Path(arguments.project_directory).resolve() / 'generated_data'}")
+    print(f"Generated: {Path(arguments.output_dir).resolve() if arguments.output_dir else Path(arguments.project_directory).resolve() / 'data' / 'generated_data'}")
     print(f"GitHub: {summary_data['project']['github_url']}")
     print(f"Board: {summary_data['board'].get('width_mm', 0)} mm x {summary_data['board'].get('height_mm', 0)} mm")
 

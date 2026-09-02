@@ -1,10 +1,10 @@
-# Connector Jst Sh 1 mm Pitch Surface Mount Right Angle 9 Pin
+# Connector JST Sh SM09B-SRSS-TB
 
 `electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb`
 
-Connector Jst Sh 1 mm Pitch Surface Mount Right Angle 9 Pin is an OOMP electronic connector definition. It uses the jst sh package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 9 documented pins.
+Connector JST Sh SM09B-SRSS-TB is an OOMP electronic connector definition. It uses the jst sh package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 9 documented pins.
 
-![Connector Jst Sh 1 mm Pitch Surface Mount Right Angle 9 Pin pinout](working_svg_top.svg)
+![Connector JST Sh SM09B-SRSS-TB pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -47,7 +47,7 @@ Connector Jst Sh 1 mm Pitch Surface Mount Right Angle 9 Pin is an OOMP electroni
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SM09B-SRSS-TB` |
-| LCSC | `C160408` |
+| LCSC | [`C160408`](https://www.lcsc.com/product-detail/C160408.html) |
 
 
 
@@ -71,37 +71,41 @@ Connector Jst Sh 1 mm Pitch Surface Mount Right Angle 9 Pin is an OOMP electroni
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
-![Top view](working_svg_top_300.png)
+![Top view](data/working_svg_top_300.png)
 
-![Bottom view](working_svg_bottom_300.png)
+![Bottom view](data/working_svg_bottom_300.png)
 
-![Side view](working_svg_side_300.png)
+![Side view](data/working_svg_side_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb)
+
+
+
+[Browse this category](../../navigation/electronic/connector/jst_sh/1_mm_pitch/surface_mount_right_angle/9_pin/jst/README.md)
 
 
 ---

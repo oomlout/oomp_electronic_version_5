@@ -30,9 +30,17 @@ def compile_project_part(details):
     part_directory = Path(details["directory"]).resolve()
     parts_directory_value = details.get("parts_directory", "parts")
     parts_directory = Path(parts_directory_value).resolve()
-    output_directory = part_directory / "generated_data"
+    output_directory = part_directory / "data" / "generated_data"
     output_directory.mkdir(parents=True, exist_ok=True)
     regenerate_pngs = _as_boolean(details.get("regenerate_pngs", False))
+
+    part_metadata = {}
+    working_yaml = part_directory / "working.yaml"
+    if working_yaml.is_file():
+        loaded_metadata = yaml.safe_load(working_yaml.read_text(encoding="utf-8")) or {}
+        if isinstance(loaded_metadata, dict):
+            part_metadata.update(loaded_metadata)
+    part_metadata.update(details)
 
     match_overrides = details.get("project_match_overrides", {})
     match_override_data = {
@@ -54,7 +62,7 @@ def compile_project_part(details):
         parts_directory=parts_directory,
         output_directory=output_directory,
         project_data=project_data,
-        part_metadata=details,
+        part_metadata=part_metadata,
         readme_output=part_directory / "README.md",
         regenerate_pngs=regenerate_pngs,
     )

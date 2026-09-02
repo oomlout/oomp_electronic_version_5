@@ -1,10 +1,10 @@
-# Resistor Quarter Watt Through Hole 1000000 Ohm
+# Resistor 1e+06 Ohm QUARTER_WATT_THROUGH_HOLE
 
 `electronic_resistor_quarter_watt_through_hole_1000000_ohm`
 
-Resistor Quarter Watt Through Hole 1000000 Ohm is an OOMP electronic resistor definition. It uses the quarter watt through hole package or form factor. Its nominal drawing size is 6.5 × 2.5 mm.
+Resistor 1e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definition. It uses the quarter watt through hole package or form factor. Its nominal drawing size is 6.5 &#x00D7; 2.5 mm.
 
-![Resistor Quarter Watt Through Hole 1000000 Ohm pinout](working_svg_square_pins.svg)
+![Resistor 1e+06 Ohm QUARTER_WATT_THROUGH_HOLE pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ Resistor Quarter Watt Through Hole 1000000 Ohm is an OOMP electronic resistor de
 | OOMP ID | `electronic_resistor_quarter_watt_through_hole_1000000_ohm` |
 | Type | Resistor |
 | Package / style | quarter watt through hole |
-| Nominal size | 6.5 × 2.5 mm |
+| Nominal size | 6.5 &#x00D7; 2.5 mm |
+
 
 ## Classification
 
@@ -23,6 +24,8 @@ Resistor Quarter Watt Through Hole 1000000 Ohm is an OOMP electronic resistor de
 | 2 | `resistor` |
 | 3 | `quarter_watt_through_hole` |
 | 4 | `1000000_ohm` |
+
+
 
 ## Nominal dimensions
 
@@ -34,26 +37,38 @@ Resistor Quarter Watt Through Hole 1000000 Ohm is an OOMP electronic resistor de
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_1000000_ohm)
+
+
+
+[Browse this category](../../navigation/electronic/resistor/quarter_watt_through_hole/README.md)
+
 
 ---
 

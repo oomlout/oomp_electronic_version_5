@@ -1,10 +1,10 @@
-# LED 5050 Rgb Ws2812B Worldsemi Ws2812B B W
+# LED RGB WS2812B Worldsemi 5050
 
 `electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w`
 
-LED 5050 Rgb Ws2812B Worldsemi Ws2812B B W is an OOMP electronic led definition. It uses the 5050 package or form factor. Its nominal drawing size is 5.0 × 5.0 mm.
+LED RGB WS2812B Worldsemi 5050 is an OOMP electronic led definition. It uses the 5050 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 5.0 mm.
 
-![LED 5050 Rgb Ws2812B Worldsemi Ws2812B B W pinout](working_svg_square_pins.svg)
+![LED RGB WS2812B Worldsemi 5050 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ LED 5050 Rgb Ws2812B Worldsemi Ws2812B B W is an OOMP electronic led definition.
 | OOMP ID | `electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w` |
 | Type | Led |
 | Package / style | 5050 |
-| Nominal size | 5.0 × 5.0 mm |
+| Nominal size | 5.0 &#x00D7; 5.0 mm |
+
 
 ## Classification
 
@@ -27,6 +28,8 @@ LED 5050 Rgb Ws2812B Worldsemi Ws2812B B W is an OOMP electronic led definition.
 | 6 | `worldsemi` |
 | 7 | `ws2812b_b_w` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -37,26 +40,38 @@ LED 5050 Rgb Ws2812B Worldsemi Ws2812B B W is an OOMP electronic led definition.
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w)
+
+
+
+[Browse this category](../../navigation/electronic/led/5050/rgb/ws2812b/worldsemi/README.md)
+
 
 ---
 

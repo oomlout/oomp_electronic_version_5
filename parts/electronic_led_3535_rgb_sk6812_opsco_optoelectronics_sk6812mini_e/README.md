@@ -1,10 +1,10 @@
-# LED 3535 Rgb Sk6812 Opsco Optoelectronics Sk6812Mini E
+# LED RGB SK6812 Opsco Optoelectronics 3535
 
 `electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e`
 
-LED 3535 Rgb Sk6812 Opsco Optoelectronics Sk6812Mini E is an OOMP electronic led definition. It uses the 3535 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 4 documented pins.
+LED RGB SK6812 Opsco Optoelectronics 3535 is an OOMP electronic led definition. It uses the 3535 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 4 documented pins.
 
-![LED 3535 Rgb Sk6812 Opsco Optoelectronics Sk6812Mini E pinout](working_svg_square_pins.svg)
+![LED RGB SK6812 Opsco Optoelectronics 3535 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -46,7 +46,7 @@ LED 3535 Rgb Sk6812 Opsco Optoelectronics Sk6812Mini E is an OOMP electronic led
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SK6812MINI-E` |
-| LCSC | `C5149201` |
+| LCSC | [`C5149201`](https://www.lcsc.com/product-detail/C5149201.html) |
 
 
 
@@ -66,26 +66,30 @@ LED 3535 Rgb Sk6812 Opsco Optoelectronics Sk6812Mini E is an OOMP electronic led
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e)
+
+
+
+[Browse this category](../../navigation/electronic/led/3535/rgb/sk6812/opsco_optoelectronics/README.md)
 
 
 ---

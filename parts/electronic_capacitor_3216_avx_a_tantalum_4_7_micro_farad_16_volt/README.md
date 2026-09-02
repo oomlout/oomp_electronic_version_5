@@ -1,10 +1,10 @@
-# Capacitor 3216 Avx A Tantalum 4 7 Micro Farad 16 Volt
+# Capacitor Tantalum 3216_AVX_A
 
 `electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt`
 
-Capacitor 3216 Avx A Tantalum 4 7 Micro Farad 16 Volt is an OOMP electronic capacitor definition. It uses the 3216 avx a package or form factor. Its nominal drawing size is 3.2 × 1.6 mm.
+Capacitor Tantalum 3216_AVX_A is an OOMP electronic capacitor definition. It uses the 3216 avx a package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
 
-![Capacitor 3216 Avx A Tantalum 4 7 Micro Farad 16 Volt pinout](working_svg_square_pins.svg)
+![Capacitor Tantalum 3216_AVX_A pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ Capacitor 3216 Avx A Tantalum 4 7 Micro Farad 16 Volt is an OOMP electronic capa
 | OOMP ID | `electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt` |
 | Type | Capacitor |
 | Package / style | 3216 avx a |
-| Nominal size | 3.2 × 1.6 mm |
+| Nominal size | 3.2 &#x00D7; 1.6 mm |
+
 
 ## Classification
 
@@ -26,6 +27,8 @@ Capacitor 3216 Avx A Tantalum 4 7 Micro Farad 16 Volt is an OOMP electronic capa
 | 5 | `4_7_micro_farad` |
 | 6 | `16_volt` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -36,26 +39,38 @@ Capacitor 3216 Avx A Tantalum 4 7 Micro Farad 16 Volt is an OOMP electronic capa
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt)
+
+
+
+[Browse this category](../../navigation/electronic/capacitor/3216_avx_a/tantalum/4_7_micro_farad/README.md)
+
 
 ---
 

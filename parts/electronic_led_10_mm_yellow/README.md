@@ -1,10 +1,10 @@
-# LED 10 mm Yellow
+# LED Yellow 10_MM
 
 `electronic_led_10_mm_yellow`
 
-LED 10 mm Yellow is an OOMP electronic led definition. It uses the 10 mm package or form factor. Its nominal drawing size is 10.0 × 10.0 mm.
+LED Yellow 10_MM is an OOMP electronic led definition. It uses the 10 mm package or form factor. Its nominal drawing size is 10.0 &#x00D7; 10.0 mm.
 
-![LED 10 mm Yellow pinout](working_svg_square_pins.svg)
+![LED Yellow 10_MM pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ LED 10 mm Yellow is an OOMP electronic led definition. It uses the 10 mm package
 | OOMP ID | `electronic_led_10_mm_yellow` |
 | Type | Led |
 | Package / style | 10 mm |
-| Nominal size | 10.0 × 10.0 mm |
+| Nominal size | 10.0 &#x00D7; 10.0 mm |
+
 
 ## Classification
 
@@ -23,6 +24,8 @@ LED 10 mm Yellow is an OOMP electronic led definition. It uses the 10 mm package
 | 2 | `led` |
 | 3 | `10_mm` |
 | 4 | `yellow` |
+
+
 
 ## Nominal dimensions
 
@@ -34,26 +37,38 @@ LED 10 mm Yellow is an OOMP electronic led definition. It uses the 10 mm package
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_10_mm_yellow)
+
+
+
+[Browse this category](../../navigation/electronic/led/10_mm/README.md)
+
 
 ---
 

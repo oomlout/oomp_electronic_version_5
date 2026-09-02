@@ -1,10 +1,10 @@
-# LED 1206
+# LED  1206
 
 `electronic_led_1206`
 
-LED 1206 is an OOMP electronic led definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 × 1.6 mm.
+LED  1206 is an OOMP electronic led definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
 
-![LED 1206 pinout](working_svg_square_pins.svg)
+![LED  1206 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ LED 1206 is an OOMP electronic led definition. It uses the 1206 package or form 
 | OOMP ID | `electronic_led_1206` |
 | Type | Led |
 | Package / style | 1206 |
-| Nominal size | 3.2 × 1.6 mm |
+| Nominal size | 3.2 &#x00D7; 1.6 mm |
+
 
 ## Classification
 
@@ -22,6 +23,8 @@ LED 1206 is an OOMP electronic led definition. It uses the 1206 package or form 
 | 1 | `electronic` |
 | 2 | `led` |
 | 3 | `1206` |
+
+
 
 ## Nominal dimensions
 
@@ -33,26 +36,38 @@ LED 1206 is an OOMP electronic led definition. It uses the 1206 package or form 
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_1206)
+
+
+
+[Browse this category](../../navigation/electronic/led/README.md)
+
 
 ---
 

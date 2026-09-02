@@ -1,10 +1,10 @@
-# LED 4020 Side View Rgb Sk6812 Opsco Optoelectronics Sk6812Side A
+# LED RGB SK6812 Opsco Optoelectronics 4020_SIDE_VIEW
 
 `electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a`
 
-LED 4020 Side View Rgb Sk6812 Opsco Optoelectronics Sk6812Side A is an OOMP electronic led definition. It uses the 4020 side view package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 4 documented pins.
+LED RGB SK6812 Opsco Optoelectronics 4020_SIDE_VIEW is an OOMP electronic led definition. It uses the 4020 side view package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 4 documented pins.
 
-![LED 4020 Side View Rgb Sk6812 Opsco Optoelectronics Sk6812Side A pinout](working_svg_square_pins.svg)
+![LED RGB SK6812 Opsco Optoelectronics 4020_SIDE_VIEW pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -46,7 +46,7 @@ LED 4020 Side View Rgb Sk6812 Opsco Optoelectronics Sk6812Side A is an OOMP elec
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SK6812SIDE-A` |
-| LCSC | `C5378721` |
+| LCSC | [`C5378721`](https://www.lcsc.com/product-detail/C5378721.html) |
 
 
 
@@ -66,26 +66,30 @@ LED 4020 Side View Rgb Sk6812 Opsco Optoelectronics Sk6812Side A is an OOMP elec
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a)
+
+
+
+[Browse this category](../../navigation/electronic/led/4020_side_view/rgb/sk6812/opsco_optoelectronics/README.md)
 
 
 ---

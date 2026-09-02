@@ -1233,13 +1233,13 @@ def process_project(project_directory, parts_directory, output_directory=None):
     project_directory = Path(project_directory).resolve()
     parts_directory = Path(parts_directory).resolve()
     if output_directory is None:
-        output_directory = project_directory / "generated_data"
+        output_directory = project_directory / "data" / "generated_data"
     else:
         output_directory = Path(output_directory).resolve()
     output_directory.mkdir(parents=True, exist_ok=True)
 
-    canonical_schematic_path = project_directory / "kicad_file.kicad_sch"
-    canonical_pcb_path = project_directory / "kicad_file.kicad_pcb"
+    canonical_schematic_path = project_directory / "data" / "kicad_file.kicad_sch"
+    canonical_pcb_path = project_directory / "data" / "kicad_file.kicad_pcb"
     if canonical_schematic_path.is_file():
         schematic_paths = [canonical_schematic_path]
     else:
@@ -1284,7 +1284,8 @@ def process_project(project_directory, parts_directory, output_directory=None):
     mounting_holes = _project_mounting_holes(components, part_index)
     mounting_hole_items = _mounting_hole_items(mounting_holes)
 
-    project_files = sorted(project_directory.rglob("*.kicad_pro"))
+    canonical_project_file = project_directory / "data" / "kicad_file.kicad_pro"
+    project_files = [canonical_project_file] if canonical_project_file.is_file() else []
     project_name = project_files[0].stem if project_files else project_directory.name
     project_data = {
         "format_version": OUTPUT_FORMAT_VERSION,
@@ -1372,7 +1373,7 @@ def main():
     )
     parser.add_argument("project_directory", help="Project directory to scan recursively")
     parser.add_argument("--parts-dir", default="parts", help="OOMP parts directory")
-    parser.add_argument("--output-dir", help="Output directory; defaults to PROJECT/generated_data")
+    parser.add_argument("--output-dir", help="Output directory; defaults to PROJECT/data/generated_data")
     arguments = parser.parse_args()
 
     project_data, output_directory = process_project(

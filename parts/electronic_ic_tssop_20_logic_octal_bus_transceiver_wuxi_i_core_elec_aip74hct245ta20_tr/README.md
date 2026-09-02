@@ -1,10 +1,10 @@
-# IC Tssop 20 Logic Octal Bus Transceiver AIP74HCT245TA20_TR
+# IC AiP74HCT245TA20.TR TSSOP_20
 
 `electronic_ic_tssop_20_logic_octal_bus_transceiver_wuxi_i_core_elec_aip74hct245ta20_tr`
 
-IC Tssop 20 Logic Octal Bus Transceiver AIP74HCT245TA20_TR is an OOMP electronic ic definition. It uses the tssop 20 package or form factor. Its nominal drawing size is 6.5 &#x00D7; 4.4 mm. The definition includes 20 documented pins.
+IC AiP74HCT245TA20.TR TSSOP_20 is an OOMP electronic ic definition. It uses the tssop 20 package or form factor. Its nominal drawing size is 6.5 &#x00D7; 4.4 mm. The definition includes 20 documented pins.
 
-![IC Tssop 20 Logic Octal Bus Transceiver AIP74HCT245TA20_TR pinout](working_svg_square_pins.svg)
+![IC AiP74HCT245TA20.TR TSSOP_20 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -46,7 +46,7 @@ IC Tssop 20 Logic Octal Bus Transceiver AIP74HCT245TA20_TR is an OOMP electronic
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `AiP74HCT245TA20.TR` |
-| LCSC | `C5354847` |
+| LCSC | [`C5354847`](https://www.lcsc.com/product-detail/C5354847.html) |
 
 
 
@@ -81,31 +81,35 @@ IC Tssop 20 Logic Octal Bus Transceiver AIP74HCT245TA20_TR is an OOMP electronic
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_tssop_20_logic_octal_bus_transceiver_wuxi_i_core_elec_aip74hct245ta20_tr)
+
+
+
+[Browse this category](../../navigation/electronic/ic/tssop_20/logic/octal_bus_transceiver/wuxi_i_core_elec/README.md)
 
 
 ---

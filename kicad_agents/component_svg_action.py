@@ -40,7 +40,7 @@ def build_component_diagrams(details):
         filter="",
         regenerate_pngs=_as_boolean(details.get("regenerate_pngs", False)),
     )
-    assembly_svg = part_directory / "working_svg_assembly.svg"
+    assembly_svg = part_directory / "data" / "working_svg_assembly.svg"
     if not assembly_svg.is_file():
         raise RuntimeError(f"SVG pipeline did not create {assembly_svg}")
     print(f"generated component diagrams for {part_id}")

@@ -26,6 +26,7 @@ def _run_git(arguments, working_directory=None):
 
 def refresh_project_files(details):
     part_directory = Path(details["directory"]).resolve()
+    data_directory = part_directory / "data"
     repository_url = str(details.get("project_git_url", "")).strip()
     repository_name = str(details.get("project_github_repository", "")).strip()
     git_reference = str(details.get("project_git_ref", "main")).strip()
@@ -41,7 +42,7 @@ def refresh_project_files(details):
     if not isinstance(extensions, list) or extensions == []:
         raise ValueError("project_file_extensions must be a non-empty list")
 
-    git_parent = part_directory / "git"
+    git_parent = data_directory / "git"
     repository_directory = git_parent / repository_name
     git_metadata = repository_directory / ".git"
 
@@ -77,7 +78,8 @@ def refresh_project_files(details):
         if not extension_text.startswith("."):
             extension_text = f".{extension_text}"
         source_file = repository_directory / source_folder / f"{source_basename}{extension_text}"
-        destination_file = part_directory / f"kicad_file{extension_text}"
+        destination_file = data_directory / f"kicad_file{extension_text}"
+        destination_file.parent.mkdir(parents=True, exist_ok=True)
         if not source_file.is_file():
             raise FileNotFoundError(f"Required KiCad source file not found: {source_file}")
         shutil.copy2(source_file, destination_file)
@@ -92,7 +94,7 @@ def refresh_project_files(details):
     # Hierarchical KiCad projects keep the component-bearing sheets beside the
     # root schematic.  Copy them into a stable nested directory so the parser
     # can digest the complete design without depending on the ignored clone.
-    sheet_directory = part_directory / "kicad_file_sheets"
+    sheet_directory = data_directory / "kicad_file_sheets"
     source_project_directory = repository_directory / source_folder
     schematic_files = sorted(source_project_directory.glob("*.kicad_sch"))
     for schematic_file in schematic_files:

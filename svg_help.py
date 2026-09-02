@@ -115,7 +115,7 @@ def make_svg_generic(part):
 
     oomp_id = id_from_part(part)
     part["id"] = oomp_id
-    folder = f"parts/{oomp_id}"
+    folder = f"parts/{oomp_id}/data"
 
     raw_svg_details = part.get("svg_details", {})
     if isinstance(raw_svg_details, list):
@@ -236,7 +236,7 @@ def make_svg_generic(part):
             write_yaml = True
 
     if write_yaml:
-        yaml_file = f"{folder}/working.yaml"
+        yaml_file = f"parts/{oomp_id}/working.yaml"
         with open(yaml_file, "w", encoding="utf-8") as file:
             part_new = copy.deepcopy(part)
             kwargs_new = part_new.get("kwargs", {})

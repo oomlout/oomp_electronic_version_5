@@ -3,6 +3,12 @@ import oomp_helper
 import copy
 import oomlout_roboclick
 import os
+import yaml
+
+import working_oomp_metadata
+
+
+DATA_DIRECTORY = "data"
 
 
 def as_boolean(value):
@@ -50,30 +56,41 @@ def add_part_page_details(part):
     identifiers = []
     identifier_fields = [
         ["Manufacturer part number", "part_number_manufacturer"],
-        ["LCSC", "part_number_lcsc"],
         ["MD5 alpha", "md5_6_alpha_upper"],
     ]
     for identifier_field in identifier_fields:
         identifier_value = str(part.get(identifier_field[1], "")).strip()
         if identifier_value != "":
-            identifiers.append({"title": identifier_field[0], "value": identifier_value})
+            identifiers.append({"title": identifier_field[0], "value": identifier_value, "url": ""})
+    distributors = part.get("distributors", [])
+    if isinstance(distributors, list):
+        for distributor in distributors:
+            if not isinstance(distributor, dict):
+                continue
+            identifiers.append(
+                {
+                    "title": distributor.get("title", "Distributor"),
+                    "value": distributor.get("part_number", ""),
+                    "url": distributor.get("url", ""),
+                }
+            )
 
     diagrams = [
-        {"title": "Assembly", "svg": "working_svg_assembly.svg", "png": ""},
-        {"title": "Outline", "svg": "working_svg_outline.svg", "png": "working_svg_outline.png"},
-        {"title": "Part ID", "svg": "working_svg_part_id.svg", "png": "working_svg_part_id.png"},
-        {"title": "MD5 alpha", "svg": "working_svg_md5_6_alpha.svg", "png": "working_svg_md5_6_alpha.png"},
-        {"title": "BIP 39 words", "svg": "working_svg_bip_39_3_word.svg", "png": "working_svg_bip_39_3_word.png"},
-        {"title": "Square summary", "svg": "working_svg_square.svg", "png": "working_svg_square.png"},
-        {"title": "Dimensions", "svg": "working_svg_dimensioned.svg", "png": "working_svg_dimensioned.png"},
-        {"title": "Dimensions with labels", "svg": "working_svg_dimensioned_titles.svg", "png": "working_svg_dimensioned_titles.png"},
+        {"title": "Assembly", "svg": f"{DATA_DIRECTORY}/working_svg_assembly.svg", "png": ""},
+        {"title": "Outline", "svg": f"{DATA_DIRECTORY}/working_svg_outline.svg", "png": f"{DATA_DIRECTORY}/working_svg_outline.png"},
+        {"title": "Part ID", "svg": f"{DATA_DIRECTORY}/working_svg_part_id.svg", "png": f"{DATA_DIRECTORY}/working_svg_part_id.png"},
+        {"title": "MD5 alpha", "svg": f"{DATA_DIRECTORY}/working_svg_md5_6_alpha.svg", "png": f"{DATA_DIRECTORY}/working_svg_md5_6_alpha.png"},
+        {"title": "BIP 39 words", "svg": f"{DATA_DIRECTORY}/working_svg_bip_39_3_word.svg", "png": f"{DATA_DIRECTORY}/working_svg_bip_39_3_word.png"},
+        {"title": "Square summary", "svg": f"{DATA_DIRECTORY}/working_svg_square.svg", "png": f"{DATA_DIRECTORY}/working_svg_square.png"},
+        {"title": "Dimensions", "svg": f"{DATA_DIRECTORY}/working_svg_dimensioned.svg", "png": f"{DATA_DIRECTORY}/working_svg_dimensioned.png"},
+        {"title": "Dimensions with labels", "svg": f"{DATA_DIRECTORY}/working_svg_dimensioned_titles.svg", "png": f"{DATA_DIRECTORY}/working_svg_dimensioned_titles.png"},
     ]
     is_connector = part.get("taxonomy_2", "") == "connector"
     if is_connector:
         connector_view_diagrams = [
-            {"title": "Top view", "svg": "working_svg_top.svg", "png": "working_svg_top.png"},
-            {"title": "Bottom view", "svg": "working_svg_bottom.svg", "png": "working_svg_bottom.png"},
-            {"title": "Side view", "svg": "working_svg_side.svg", "png": "working_svg_side.png"},
+            {"title": "Top view", "svg": f"{DATA_DIRECTORY}/working_svg_top.svg", "png": f"{DATA_DIRECTORY}/working_svg_top.png"},
+            {"title": "Bottom view", "svg": f"{DATA_DIRECTORY}/working_svg_bottom.svg", "png": f"{DATA_DIRECTORY}/working_svg_bottom.png"},
+            {"title": "Side view", "svg": f"{DATA_DIRECTORY}/working_svg_side.svg", "png": f"{DATA_DIRECTORY}/working_svg_side.png"},
         ]
         for connector_view_diagram in connector_view_diagrams:
             diagrams.append(connector_view_diagram)
@@ -86,7 +103,7 @@ def add_part_page_details(part):
             diagram["preview"] = diagram["svg"]
 
     file_previews = [
-        {"title": "Pinout drawing", "preview": "working_svg_square_pins_300.png"},
+        {"title": "Pinout drawing", "preview": f"{DATA_DIRECTORY}/working_svg_square_pins_300.png"},
     ]
     for diagram in diagrams:
         preview_filename = diagram.get("preview", "")
@@ -134,7 +151,7 @@ def add_part_page_details(part):
 
     part_name = part.get("name", "")
     has_datasheet = os.path.isfile(
-        os.path.join(os.path.dirname(__file__), "parts", part_name, "datasheet.pdf")
+        os.path.join(os.path.dirname(__file__), "parts", part_name, DATA_DIRECTORY, "datasheet.pdf")
     )
     file_copies = part.get("file_copy", [])
     if isinstance(file_copies, list):
@@ -147,23 +164,23 @@ def add_part_page_details(part):
 
     main_image = {
         "title": "Pinout",
-        "svg": "working_svg_square_pins.svg",
-        "png": "working_svg_square_pins.png",
-        "preview": "working_svg_square_pins_300.png",
+        "svg": f"{DATA_DIRECTORY}/working_svg_square_pins.svg",
+        "png": f"{DATA_DIRECTORY}/working_svg_square_pins.png",
+        "preview": f"{DATA_DIRECTORY}/working_svg_square_pins_300.png",
     }
     if is_connector:
         main_image = {
             "title": "Top view",
-            "svg": "working_svg_top.svg",
-            "png": "working_svg_top.png",
-            "preview": "working_svg_top_300.png",
+            "svg": f"{DATA_DIRECTORY}/working_svg_top.svg",
+            "png": f"{DATA_DIRECTORY}/working_svg_top.png",
+            "preview": f"{DATA_DIRECTORY}/working_svg_top_300.png",
         }
     if part.get("taxonomy_2", "") == "mounting_hole":
         main_image = {
             "title": "Mounting hole",
-            "svg": "working_svg_outline.svg",
-            "png": "working_svg_outline.png",
-            "preview": "working_svg_outline_300.png",
+            "svg": f"{DATA_DIRECTORY}/working_svg_outline.svg",
+            "png": f"{DATA_DIRECTORY}/working_svg_outline.png",
+            "preview": f"{DATA_DIRECTORY}/working_svg_outline_300.png",
         }
 
     part["part_page"] = {
@@ -178,6 +195,8 @@ def add_part_page_details(part):
         "quick_facts": quick_facts,
         "has_datasheet": has_datasheet,
         "repository_url": f"https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/{part_name}",
+        "navigation_link": working_oomp_metadata.navigation_link_for_part(part),
+        "datasheet_path": f"{DATA_DIRECTORY}/datasheet.pdf",
     }
     return part
 
@@ -194,7 +213,10 @@ def add_part_build_actions(part, count):
                 {
                     "command": "file_copy",
                     "file_source": file_copy.get("file_source", ""),
-                    "file_destination": file_copy.get("file_destination", ""),
+                    "file_destination": os.path.join(
+                        DATA_DIRECTORY,
+                        os.path.basename(str(file_copy.get("file_destination", ""))),
+                    ).replace("\\", "/"),
                     "exit_on_missing": True,
                     "delete_before_copy": True,
                 }
@@ -204,7 +226,7 @@ def add_part_build_actions(part, count):
         {
             "command": "run_python",
             "file_python": "kicad_agents/component_svg_action.py",
-            "file_output": "working_svg_assembly.svg",
+            "file_output": f"{DATA_DIRECTORY}/working_svg_assembly.svg",
             "description": "Generate this component's standard SVG and PNG diagrams with working_svg.py.",
             "part_id": part.get("name", ""),
             "regenerate_pngs": as_boolean(part.get("regenerate_pngs", False)),
@@ -296,7 +318,7 @@ def add_project_actions(part, count):
     project_compile_action = {
         "command": "run_python",
         "file_python": "kicad_agents/project_readme_action.py",
-        "file_output": "generated_data/src/board_pins.png",
+        "file_output": f"{DATA_DIRECTORY}/generated_data/src/board_pins.png",
         "description": "Extract KiCad data and rebuild the project README, board SVGs, pin-labelled PNG, and mechanical layer.",
         "parts_directory": "parts",
         "regenerate_pngs": regenerate_pngs,
@@ -317,8 +339,8 @@ def add_project_actions(part, count):
         board_preview_actions.append(
             {
                 "command": "image_resize",
-                "file_source": f"generated_data/src/{board_png_name}.png",
-                "file_destination": f"generated_data/src/{board_png_name}_300.png",
+                "file_source": f"{DATA_DIRECTORY}/generated_data/src/{board_png_name}.png",
+                "file_destination": f"{DATA_DIRECTORY}/generated_data/src/{board_png_name}_300.png",
                 "maximum_dimension": 300,
                 "allow_upscale": False,
                 "resample": "lanczos",
@@ -329,6 +351,20 @@ def add_project_actions(part, count):
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
         "actions": [project_compile_action] + board_preview_actions,
+        "file_test": "",
+        "retries_until_complete": 0,
+    }
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [
+            {
+                "command": "run_python",
+                "file_python": "kicad_agents/interactive_html_bom_action.py",
+                "file_output": f"{DATA_DIRECTORY}/interactivehtmlbom/generation_status.yaml",
+                "description": "Generate a self-contained InteractiveHtmlBom page without opening a browser.",
+                "timeout": "1200",
+            }
+        ],
         "file_test": "",
         "retries_until_complete": 0,
     }
@@ -345,6 +381,7 @@ def load_parts(**kwargs):
 
 def create_generic(**kwargs):
     print(f"  loading parts from part_source")
+    make_files = kwargs.get("make_files", True)
     things = {}    
     
     #load parts from parts_source directory
@@ -385,17 +422,19 @@ def create_generic(**kwargs):
         part["name_proper"] = part["name_space"].title()
         name_proper = part["name_proper"]
         part["name_upper"] = part["name_space"].upper()
+        working_oomp_metadata.add_readable_metadata([part])
 
         is_project_part = (
             part.get("taxonomy_1", "") == "oomp"
             and part.get("taxonomy_2", "") == "project"
         )
-        if not is_project_part:
+        is_navigation_part = part.get("taxonomy_1", "") == "navigation"
+        if not is_project_part and not is_navigation_part:
             import working_oomp_populate_svg
             working_oomp_populate_svg.add_svg_details(part)
             add_part_page_details(part)
         else:
-            part["name_short"] = f"{part.get('project_github_user', '')}/{part.get('project_github_repository', '')} {part.get('project_version', 'current')}"
+            part["name_short"] = part.get("name_readable", part.get("name_proper", thing))
         
         folder = oomlout_roboclick.get_directory(part)   
         part["directory"] = folder  
@@ -458,7 +497,7 @@ def create_generic(**kwargs):
         #folder_project = "helen_personal_chart_bribe_bank"
 
         #jinja_template replace
-        if not is_project_part:
+        if not is_project_part and not is_navigation_part:
             count = add_part_build_actions(part, count)
             templates = []
             templates.append(
@@ -475,6 +514,36 @@ def create_generic(**kwargs):
             convert_to_pdf = False
             convert_to_png = False
             count = oomp_helper.add_jinja_template(part=part, templates=templates, mode_ai_wait=mode_ai_wait, count=count, convert_to_pdf=convert_to_pdf, convert_to_png=convert_to_png)
+
+        if is_navigation_part:
+            navigation_templates = [
+                {
+                    "template_folder": "source_file\\template_jinja\\navigation",
+                    "template_file": "part.md.j2",
+                    "output_filename": "README.md",
+                    "file_test": "",
+                    "convert_to_pdf": False,
+                    "convert_to_png": False,
+                },
+                {
+                    "template_folder": "source_file\\template_jinja\\navigation",
+                    "template_file": "canonical.md.j2",
+                    "output_filename": part.get("navigation", {}).get(
+                        "canonical_output_from_part", "../../navigation/README.md"
+                    ),
+                    "file_test": "",
+                    "convert_to_pdf": False,
+                    "convert_to_png": False,
+                },
+            ]
+            count = oomp_helper.add_jinja_template(
+                part=part,
+                templates=navigation_templates,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+                convert_to_pdf=False,
+                convert_to_png=False,
+            )
 
         if is_project_part:
             count = add_project_actions(part, count)
@@ -582,10 +651,43 @@ def create_generic(**kwargs):
     # filter controls which records are written; it is not component data.
     # Removing it here prevents the shared helper from copying it into YAML.
     add_parts_kwargs.pop("filter", None)
-    oomp.add_parts(parts, **add_parts_kwargs)
-
-    import time
-    time.sleep(2)
+    # Keep generation linear and deterministic.  The upstream helper starts a
+    # thread per item and returns before all working.yaml files are complete,
+    # which made full-regeneration actions race their own output.
+    for part in parts:
+        part_details = copy.deepcopy(part)
+        part_details.update(copy.deepcopy(add_parts_kwargs))
+        generated_part = oomp.add_part(**part_details)
+        if generated_part is None:
+            continue
+        generated_id = generated_part.get("id", "")
+        if generated_id == "":
+            continue
+        repository_url = (
+            "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/"
+            + generated_id
+        )
+        generated_part["link_github"] = repository_url
+        generated_part["link_main"] = repository_url
+        generated_part["link_redirect"] = repository_url
+        if make_files:
+            generated_parts_directory = "parts" if make_files is True else str(make_files)
+            generated_working_file = os.path.join(
+                generated_parts_directory, generated_id, "working.yaml"
+            )
+            if os.path.isfile(generated_working_file):
+                with open(generated_working_file, "r", encoding="utf-8") as working_file:
+                    generated_working = yaml.safe_load(working_file) or {}
+                generated_working["link_github"] = repository_url
+                generated_working["link_main"] = repository_url
+                generated_working["link_redirect"] = repository_url
+                with open(generated_working_file, "w", encoding="utf-8") as working_file:
+                    yaml.safe_dump(
+                        generated_working,
+                        working_file,
+                        sort_keys=False,
+                        allow_unicode=True,
+                    )
 
 
 

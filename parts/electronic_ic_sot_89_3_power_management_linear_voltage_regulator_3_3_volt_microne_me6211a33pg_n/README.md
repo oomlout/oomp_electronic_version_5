@@ -1,10 +1,10 @@
-# IC Sot 89 3 Power Management Linear Voltage Regulator 3 3 Volt ME6211A33PG_N
+# IC ME6211A33PG-N SOT_89_3
 
 `electronic_ic_sot_89_3_power_management_linear_voltage_regulator_3_3_volt_microne_me6211a33pg_n`
 
-IC Sot 89 3 Power Management Linear Voltage Regulator 3 3 Volt ME6211A33PG_N is an OOMP electronic ic definition. It uses the sot 89 3 package or form factor. Its nominal drawing size is 4.5 &#x00D7; 2.5 mm. The definition includes 3 documented pins.
+IC ME6211A33PG-N SOT_89_3 is an OOMP electronic ic definition. It uses the sot 89 3 package or form factor. Its nominal drawing size is 4.5 &#x00D7; 2.5 mm. The definition includes 3 documented pins.
 
-![IC Sot 89 3 Power Management Linear Voltage Regulator 3 3 Volt ME6211A33PG_N pinout](working_svg_square_pins.svg)
+![IC ME6211A33PG-N SOT_89_3 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -46,7 +46,7 @@ IC Sot 89 3 Power Management Linear Voltage Regulator 3 3 Volt ME6211A33PG_N is 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `ME6211A33PG-N` |
-| LCSC | `C236673` |
+| LCSC | [`C236673`](https://www.lcsc.com/product-detail/C236673.html) |
 
 
 
@@ -64,31 +64,35 @@ IC Sot 89 3 Power Management Linear Voltage Regulator 3 3 Volt ME6211A33PG_N is 
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_89_3_power_management_linear_voltage_regulator_3_3_volt_microne_me6211a33pg_n)
+
+
+
+[Browse this category](../../navigation/electronic/ic/sot_89_3/power_management/linear_voltage_regulator_3_3_volt/microne/README.md)
 
 
 ---

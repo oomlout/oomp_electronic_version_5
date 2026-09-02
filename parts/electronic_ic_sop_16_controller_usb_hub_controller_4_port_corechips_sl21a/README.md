@@ -1,10 +1,10 @@
-# IC Sop 16 Controller USB Hub Controller 4 Port SL21A
+# IC SL2.1A SOP_16
 
 `electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a`
 
-IC Sop 16 Controller USB Hub Controller 4 Port SL21A is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 10.0 × 3.9 mm. The definition includes 16 documented pins.
+IC SL2.1A SOP_16 is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 3.9 mm. The definition includes 16 documented pins.
 
-![IC Sop 16 Controller USB Hub Controller 4 Port SL21A pinout](working_svg_square_pins.svg)
+![IC SL2.1A SOP_16 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,8 +13,9 @@ IC Sop 16 Controller USB Hub Controller 4 Port SL21A is an OOMP electronic ic de
 | OOMP ID | `electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a` |
 | Type | Ic |
 | Package / style | sop 16 |
-| Nominal size | 10.0 × 3.9 mm |
+| Nominal size | 10.0 &#x00D7; 3.9 mm |
 | Documented pins | 16 |
+
 
 ## Classification
 
@@ -28,6 +29,8 @@ IC Sop 16 Controller USB Hub Controller 4 Port SL21A is an OOMP electronic ic de
 | 14 | `corechips` |
 | 15 | `sl21a` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -35,12 +38,18 @@ IC Sop 16 Controller USB Hub Controller 4 Port SL21A is an OOMP electronic ic de
 | Length | 10.0 mm |
 | Width | 3.9 mm |
 
+
+
+
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SL2.1A` |
-| LCSC | `C192893` |
+| LCSC | [`C192893`](https://www.lcsc.com/product-detail/C192893.html) |
+
+
+
 
 ## Pins
 
@@ -63,30 +72,41 @@ IC Sop 16 Controller USB Hub Controller 4 Port SL21A is an OOMP electronic ic de
 | 15 | xout | signal |
 | 16 | xin | signal |
 
+
+
+
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
+
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a)
+
+
+
+[Browse this category](../../navigation/electronic/ic/sop_16/controller/usb_hub_controller_4_port/corechips/README.md)
+
 
 ---
 

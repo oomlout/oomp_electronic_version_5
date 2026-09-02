@@ -2,7 +2,9 @@
 
 [View the project on GitHub]({{ project.github_url }})
 
-![PCB component placement]({{ repository_links.board_raw }})
+[Browse this project category]({{ repository_links.navigation }})
+
+![PCB component placement]({{ repository_links.board_300_png_raw }})
 
 {{ generated_text.overview }}
 
@@ -42,7 +44,8 @@
 - Mechanical drawing: [view `board_mechanical.svg`]({{ repository_links.board_mechanical }})
 - Mechanical PNG: [view `board_mechanical.png`]({{ repository_links.board_mechanical_png }})
 - 300-pixel mechanical preview: [view `board_mechanical_300.png`]({{ repository_links.board_mechanical_300_png }})
-- Self-contained interactive explorer: [download `board_explorer.html`]({{ repository_links.explorer }})
+- Open the board explorer on GitHub Pages: [explore this board]({{ repository_links.explorer }})
+- InteractiveHtmlBom: [open the interactive BOM]({{ repository_links.interactivehtmlbom }})
 {% else %}
 No PCB outline or placed-footprint bounds were available.
 {% endif %}
@@ -50,7 +53,7 @@ No PCB outline or placed-footprint bounds were available.
 ## Board with pins
 
 {% if board_pins.available %}
-![PCB component placement with pin names]({{ repository_links.board_pins_png_raw }})
+![PCB component placement with pin names]({{ repository_links.board_pins_300_png_raw }})
 {% else %}
 No pin-labelled PCB drawing was available.
 {% endif %}
@@ -60,7 +63,7 @@ No pin-labelled PCB drawing was available.
 {% if board_pins_bottom.available %}
 The bottom view is mirrored horizontally so it is shown as viewed from beneath the assembled board.
 
-![Bottom PCB component placement with pin names]({{ repository_links.board_pins_bottom_png_raw }})
+![Bottom PCB component placement with pin names]({{ repository_links.board_pins_bottom_300_png_raw }})
 {% else %}
 No bottom-side PCB drawing was available.
 {% endif %}
@@ -68,14 +71,19 @@ No bottom-side PCB drawing was available.
 ## Mechanical layer
 
 {% if board_mechanical.available %}
-![PCB mechanical layer with mounting holes]({{ repository_links.board_mechanical_png_raw }})
+![PCB mechanical layer with mounting holes]({{ repository_links.board_mechanical_300_png_raw }})
 
 The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. This point is shown as **0,0** in the mechanical drawing; X increases right and Y increases down. Original KiCad coordinates are retained alongside it.
 
-| OOMP reference | Source | Name | Classification | Role | Drill size | Board X (mm) | Board Y (mm) | OOMP part |
-| --- | --- | --- | --- | --- | --- | ---: | ---: | --- |
-{% for hole in mounting_holes.holes %}
-| `{{ hole.id }}` | `{{ hole.reference }}` | {{ hole.name }} | `{{ hole.classification.taxonomy_path | join(' / ') }}` | {{ hole.role }} | {{ hole.size_text }} | {{ '%.3f' | format(hole.position_board_mm.x) }} | {{ '%.3f' | format(hole.position_board_mm.y) }} | {% if hole.oomp_status == 'matched' %}[`{{ hole.oomp_id }}`]({{ repository_links.parts }}/{{ hole.oomp_id }}){% else %}unmatched (`{{ hole.oomp_id }}` proposed){% endif %} |
+{% for group in mounting_holes.groups %}
+### {{ group.title }} holes
+
+| OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | ---: | ---: | --- |
+{% for hole in group.holes %}
+| `{{ hole.id }}` | `{{ hole.reference }}` | {{ hole.name }} | `{{ hole.classification.taxonomy_path | join(' / ') }}` | {{ hole.role }} | {{ '%.3f' | format(hole.position_board_mm.x) }} | {{ '%.3f' | format(hole.position_board_mm.y) }} | {% if hole.oomp_status == 'matched' %}[`{{ hole.oomp_id }}`]({{ repository_links.parts }}/{{ hole.oomp_id }}){% else %}unmatched (`{{ hole.oomp_id }}` proposed){% endif %} |
+{% endfor %}
+
 {% endfor %}
 {% else %}
 No PCB mechanical drawing was available.
@@ -114,8 +122,8 @@ No PCB mechanical drawing was available.
 
 ## Generated source bundle
 
-- Project image assets: [`generated_data/src`]({{ repository_links.generated_source }})
-- Copied component source manifest: `project_source/manifest.yaml` (generated locally and ignored by Git)
+- Project image assets: [`data/generated_data/src`]({{ repository_links.generated_source }})
+- Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
 - Matched OOMP source parts copied: {{ source_manifest.parts | length }}
 
 ## Source files

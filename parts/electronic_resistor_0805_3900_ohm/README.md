@@ -1,10 +1,10 @@
-# Resistor 0805 3900 Ohm
+# Resistor 3900 Ohm 0805
 
 `electronic_resistor_0805_3900_ohm`
 
-Resistor 0805 3900 Ohm is an OOMP electronic resistor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 × 1.25 mm.
+Resistor 3900 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
 
-![Resistor 0805 3900 Ohm pinout](working_svg_square_pins.svg)
+![Resistor 3900 Ohm 0805 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ Resistor 0805 3900 Ohm is an OOMP electronic resistor definition. It uses the 08
 | OOMP ID | `electronic_resistor_0805_3900_ohm` |
 | Type | Resistor |
 | Package / style | 0805 |
-| Nominal size | 2.0 × 1.25 mm |
+| Nominal size | 2.0 &#x00D7; 1.25 mm |
+
 
 ## Classification
 
@@ -23,6 +24,8 @@ Resistor 0805 3900 Ohm is an OOMP electronic resistor definition. It uses the 08
 | 2 | `resistor` |
 | 3 | `0805` |
 | 4 | `3900_ohm` |
+
+
 
 ## Nominal dimensions
 
@@ -34,26 +37,38 @@ Resistor 0805 3900 Ohm is an OOMP electronic resistor definition. It uses the 08
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_3900_ohm)
+
+
+
+[Browse this category](../../navigation/electronic/resistor/0805/README.md)
+
 
 ---
 

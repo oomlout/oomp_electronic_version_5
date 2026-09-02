@@ -1,10 +1,10 @@
-# Capacitor 1206 47 Micro Farad
+# Capacitor 47 uF 1206
 
 `electronic_capacitor_1206_47_micro_farad`
 
-Capacitor 1206 47 Micro Farad is an OOMP electronic capacitor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 × 1.6 mm.
+Capacitor 47 uF 1206 is an OOMP electronic capacitor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
 
-![Capacitor 1206 47 Micro Farad pinout](working_svg_square_pins.svg)
+![Capacitor 47 uF 1206 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ Capacitor 1206 47 Micro Farad is an OOMP electronic capacitor definition. It use
 | OOMP ID | `electronic_capacitor_1206_47_micro_farad` |
 | Type | Capacitor |
 | Package / style | 1206 |
-| Nominal size | 3.2 × 1.6 mm |
+| Nominal size | 3.2 &#x00D7; 1.6 mm |
+
 
 ## Classification
 
@@ -23,6 +24,8 @@ Capacitor 1206 47 Micro Farad is an OOMP electronic capacitor definition. It use
 | 2 | `capacitor` |
 | 3 | `1206` |
 | 4 | `47_micro_farad` |
+
+
 
 ## Nominal dimensions
 
@@ -34,26 +37,38 @@ Capacitor 1206 47 Micro Farad is an OOMP electronic capacitor definition. It use
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_47_micro_farad)
+
+
+
+[Browse this category](../../navigation/electronic/capacitor/1206/README.md)
+
 
 ---
 

@@ -1,10 +1,10 @@
-# Display LCD Character 16 By 2 Backlight Yellow
+# Display Character 16 By 2 Backlight Yellow LCD
 
 `electronic_display_lcd_character_16_by_2_backlight_yellow`
 
-Display LCD Character 16 By 2 Backlight Yellow is an OOMP electronic display definition. It uses the lcd package or form factor. Its nominal drawing size is 80.0 × 36.0 mm.
+Display Character 16 By 2 Backlight Yellow LCD is an OOMP electronic display definition. It uses the lcd package or form factor. Its nominal drawing size is 80.0 &#x00D7; 36.0 mm.
 
-![Display LCD Character 16 By 2 Backlight Yellow pinout](working_svg_square_pins.svg)
+![Display Character 16 By 2 Backlight Yellow LCD pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ Display LCD Character 16 By 2 Backlight Yellow is an OOMP electronic display def
 | OOMP ID | `electronic_display_lcd_character_16_by_2_backlight_yellow` |
 | Type | Display |
 | Package / style | lcd |
-| Nominal size | 80.0 × 36.0 mm |
+| Nominal size | 80.0 &#x00D7; 36.0 mm |
+
 
 ## Classification
 
@@ -26,6 +27,8 @@ Display LCD Character 16 By 2 Backlight Yellow is an OOMP electronic display def
 | 5 | `16_by_2` |
 | 6 | `backlight_yellow` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -36,26 +39,38 @@ Display LCD Character 16 By 2 Backlight Yellow is an OOMP electronic display def
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_lcd_character_16_by_2_backlight_yellow)
+
+
+
+[Browse this category](../../navigation/electronic/display/lcd/character/16_by_2/README.md)
+
 
 ---
 

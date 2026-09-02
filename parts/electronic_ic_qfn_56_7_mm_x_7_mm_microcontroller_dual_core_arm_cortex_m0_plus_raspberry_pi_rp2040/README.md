@@ -1,10 +1,10 @@
-# IC Qfn 56 7 mm X 7 mm Microcontroller Dual Core Arm Cortex M0 Plus RP2040
+# IC RP2040 QFN_56_7_MM_X_7_MM
 
 `electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040`
 
-IC Qfn 56 7 mm X 7 mm Microcontroller Dual Core Arm Cortex M0 Plus RP2040 is an OOMP electronic ic definition. It uses the qfn 56 7 mm x 7 mm package or form factor. Its nominal drawing size is 7.0 &#x00D7; 7.0 mm. The definition includes 57 documented pins.
+IC RP2040 QFN_56_7_MM_X_7_MM is an OOMP electronic ic definition. It uses the qfn 56 7 mm x 7 mm package or form factor. Its nominal drawing size is 7.0 &#x00D7; 7.0 mm. The definition includes 57 documented pins.
 
-![IC Qfn 56 7 mm X 7 mm Microcontroller Dual Core Arm Cortex M0 Plus RP2040 pinout](working_svg_square_pins.svg)
+![IC RP2040 QFN_56_7_MM_X_7_MM pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -46,7 +46,7 @@ IC Qfn 56 7 mm X 7 mm Microcontroller Dual Core Arm Cortex M0 Plus RP2040 is an 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `RP2040` |
-| LCSC | `C2040` |
+| LCSC | [`C2040`](https://www.lcsc.com/product-detail/C2040.html) |
 
 
 
@@ -118,31 +118,35 @@ IC Qfn 56 7 mm X 7 mm Microcontroller Dual Core Arm Cortex M0 Plus RP2040 is an 
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040)
+
+
+
+[Browse this category](../../navigation/electronic/ic/qfn_56_7_mm_x_7_mm/microcontroller/dual_core_arm_cortex_m0_plus/raspberry_pi/README.md)
 
 
 ---

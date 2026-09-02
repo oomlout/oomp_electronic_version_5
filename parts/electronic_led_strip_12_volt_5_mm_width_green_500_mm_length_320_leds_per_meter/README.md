@@ -1,10 +1,10 @@
-# LED Strip 12 Volt 5 mm Width Green 500 mm Length 320 Leds Per Meter
+# LED Green 500 Mm Length 320 Leds Per Meter STRIP_12_VOLT_5_MM_WIDTH
 
 `electronic_led_strip_12_volt_5_mm_width_green_500_mm_length_320_leds_per_meter`
 
-LED Strip 12 Volt 5 mm Width Green 500 mm Length 320 Leds Per Meter is an OOMP electronic led definition. It uses the strip 12 volt 5 mm width package or form factor. Its nominal drawing size is 500 × 5 mm.
+LED Green 500 Mm Length 320 Leds Per Meter STRIP_12_VOLT_5_MM_WIDTH is an OOMP electronic led definition. It uses the strip 12 volt 5 mm width package or form factor. Its nominal drawing size is 500 &#x00D7; 5 mm.
 
-![LED Strip 12 Volt 5 mm Width Green 500 mm Length 320 Leds Per Meter pinout](working_svg_square_pins.svg)
+![LED Green 500 Mm Length 320 Leds Per Meter STRIP_12_VOLT_5_MM_WIDTH pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ LED Strip 12 Volt 5 mm Width Green 500 mm Length 320 Leds Per Meter is an OOMP e
 | OOMP ID | `electronic_led_strip_12_volt_5_mm_width_green_500_mm_length_320_leds_per_meter` |
 | Type | Led |
 | Package / style | strip 12 volt 5 mm width |
-| Nominal size | 500 × 5 mm |
+| Nominal size | 500 &#x00D7; 5 mm |
+
 
 ## Classification
 
@@ -26,6 +27,8 @@ LED Strip 12 Volt 5 mm Width Green 500 mm Length 320 Leds Per Meter is an OOMP e
 | 5 | `500_mm_length` |
 | 6 | `320_leds_per_meter` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -36,26 +39,38 @@ LED Strip 12 Volt 5 mm Width Green 500 mm Length 320 Leds Per Meter is an OOMP e
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_12_volt_5_mm_width_green_500_mm_length_320_leds_per_meter)
+
+
+
+[Browse this category](../../navigation/electronic/led/strip_12_volt_5_mm_width/green/500_mm_length/README.md)
+
 
 ---
 

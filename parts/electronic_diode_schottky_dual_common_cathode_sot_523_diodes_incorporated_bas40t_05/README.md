@@ -1,10 +1,10 @@
-# Dual Schottky Diode BAS40T-05
+# Diode BAS40T-05 SCHOTTKY_DUAL_COMMON_CATHODE
 
 `electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05`
 
-Dual Schottky Diode BAS40T-05 is an OOMP electronic diode definition. It uses the sot 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 3 documented pins.
+Diode BAS40T-05 SCHOTTKY_DUAL_COMMON_CATHODE is an OOMP electronic diode definition. It uses the sot 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 3 documented pins.
 
-![Dual Schottky Diode BAS40T-05 pinout](working_svg_square_pins.svg)
+![Diode BAS40T-05 SCHOTTKY_DUAL_COMMON_CATHODE pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -63,26 +63,30 @@ Dual Schottky Diode BAS40T-05 is an OOMP electronic diode definition. It uses th
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05)
+
+
+
+[Browse this category](../../navigation/electronic/diode/schottky_dual_common_cathode/sot_523/diodes_incorporated/README.md)
 
 
 ---

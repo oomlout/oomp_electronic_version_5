@@ -1,10 +1,10 @@
-# IC Sop 8 5 28 mm X 5 23 mm Memory Spi Nor Flash 128 Mbit W25Q128JVSIQ
+# IC W25Q128JVSIQ SOP_8_5_28_MM_X_5_23_MM
 
 `electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq`
 
-IC Sop 8 5 28 mm X 5 23 mm Memory Spi Nor Flash 128 Mbit W25Q128JVSIQ is an OOMP electronic ic definition. It uses the sop 8 5 28 mm x 5 23 mm package or form factor. Its nominal drawing size is 5.28 &#x00D7; 5.23 mm. The definition includes 8 documented pins.
+IC W25Q128JVSIQ SOP_8_5_28_MM_X_5_23_MM is an OOMP electronic ic definition. It uses the sop 8 5 28 mm x 5 23 mm package or form factor. Its nominal drawing size is 5.28 &#x00D7; 5.23 mm. The definition includes 8 documented pins.
 
-![IC Sop 8 5 28 mm X 5 23 mm Memory Spi Nor Flash 128 Mbit W25Q128JVSIQ pinout](working_svg_square_pins.svg)
+![IC W25Q128JVSIQ SOP_8_5_28_MM_X_5_23_MM pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -46,7 +46,7 @@ IC Sop 8 5 28 mm X 5 23 mm Memory Spi Nor Flash 128 Mbit W25Q128JVSIQ is an OOMP
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `W25Q128JVSIQ` |
-| LCSC | `C97521` |
+| LCSC | [`C97521`](https://www.lcsc.com/product-detail/C97521.html) |
 
 
 
@@ -69,31 +69,35 @@ IC Sop 8 5 28 mm X 5 23 mm Memory Spi Nor Flash 128 Mbit W25Q128JVSIQ is an OOMP
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq)
+
+
+
+[Browse this category](../../navigation/electronic/ic/sop_8_5_28_mm_x_5_23_mm/memory/spi_nor_flash_128_mbit/winbond/README.md)
 
 
 ---

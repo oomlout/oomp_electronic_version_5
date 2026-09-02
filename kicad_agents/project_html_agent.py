@@ -97,22 +97,31 @@ header p { margin: 2px 0 0; color: #cfcfcf; font-size: 13px; }
 .list-panel { display: grid; grid-template-rows: auto 1fr; }
 .search-wrap { padding: 14px; border-bottom: 1px solid var(--line); }
 input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font: inherit; }
-.part-list { overflow: auto; padding: 7px; }
-.part-button { width: 100%; display: grid; grid-template-columns: 50px 1fr; gap: 8px; padding: 9px; border: 0; border-radius: 10px; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.part-list { min-width: 0; overflow: auto; padding: 7px; }
+.part-row { position: relative; min-width: 0; }
+.part-button { width: 100%; min-width: 0; display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 3px 8px; padding: 9px 32px 9px 9px; border: 0; border-radius: 10px; background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .part-button:hover, .part-button.active { background: var(--accent-soft); }
 .part-button strong { font-size: 13px; }
 .part-button span { overflow: hidden; color: var(--muted); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.part-button .oomp-id { grid-column: 1 / -1; overflow-wrap: anywhere; text-overflow: clip; white-space: normal; }
+.part-link { position: absolute; top: 8px; right: 7px; display: grid; width: 24px; height: 24px; place-items: center; border-radius: 7px; color: var(--ink); text-decoration: none; }
+.part-link:hover { background: var(--ink); color: white; }
 .board-panel { position: relative; display: grid; place-items: center; overflow: auto; padding: 18px; background: var(--board); }
 .board-toolbar { position: absolute; z-index: 10; top: 12px; left: 12px; display: flex; gap: 5px; padding: 5px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.94); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
 .side-button { padding: 7px 11px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
 .side-button:hover, .side-button.active { background: var(--ink); color: white; }
-.board-stage { width: min(100%, 1050px); min-width: 560px; }
-.board-view { width: 100%; }
+.zoom-divider { width: 1px; margin: 4px 2px; background: var(--line); }
+.zoom-button { width: 31px; padding: 7px 0; border: 0; border-radius: 8px; background: transparent; color: var(--ink); font: inherit; font-weight: 850; cursor: pointer; }
+.zoom-button:hover { background: var(--accent-soft); }
+.zoom-label { min-width: 43px; align-self: center; color: var(--muted); font-size: 11px; text-align: center; }
+.board-stage { width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; }
+.board-view { width: 100%; height: 100%; min-width: 0; min-height: 0; }
 .board-view[hidden] { display: none; }
-.board-view > svg { display: block; width: 100%; height: auto; filter: drop-shadow(0 9px 13px rgba(0,0,0,.12)); }
+.board-view > svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; margin: auto; filter: drop-shadow(0 9px 13px rgba(0,0,0,.12)); }
 .board-stage .board-component { cursor: pointer; outline: none; transition: opacity .13s ease; }
-.board-stage .board-component:hover, .board-stage .board-component:focus, .board-stage .board-component.is-active { filter: drop-shadow(0 0 1.5px var(--accent)) drop-shadow(0 0 3px var(--accent)); }
-.board-stage.has-selection .board-component:not(.is-active) { opacity: .38; }
+.board-stage .board-component:hover > *, .board-stage .board-component:focus > * { stroke: var(--accent) !important; }
+.board-stage.has-selection .board-component:not(.is-active) { opacity: .55; }
+.selection-box { fill: none; stroke: var(--accent); stroke-width: 1.2; vector-effect: non-scaling-stroke; pointer-events: none; }
 .board-stage .indicator { pointer-events: none; }
 .detail { overflow: auto; padding: 18px; }
 .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
@@ -134,7 +143,7 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .hover-card strong { display: block; }
 .hover-card span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
 @media (max-width: 920px) { .layout { grid-template-columns: 190px minmax(0, 1fr); } .detail.panel { grid-column: 1 / -1; min-height: 360px; } }
-@media (max-width: 640px) { html, body { height: auto; min-height: 100%; } body { display: block; overflow: auto; } .layout { display: block; height: auto; overflow: visible; } .panel { margin-bottom: 12px; } .list-panel { height: 240px; } .board-panel { height: 62vh; } .board-stage { min-width: 500px; } }
+@media (max-width: 640px) { html, body { height: auto; min-height: 100%; } body { display: block; overflow: auto; } .layout { display: block; height: auto; overflow: visible; } .panel { margin-bottom: 12px; } .list-panel { height: 240px; } .board-panel { height: 62vh; } }
 """
 
 
@@ -149,6 +158,7 @@ const stage = document.getElementById('board-stage');
 const hoverCard = document.getElementById('hover-card');
 let activeReference = '';
 let activeSide = 'front';
+let zoomScale = 1;
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>'"]/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[character]));
@@ -161,12 +171,25 @@ function renderList(filterText = '') {
     const haystack = [component.reference, component.value, component.oomp_id, component.footprint].join(' ').toLowerCase();
     return component.side === activeSide && haystack.includes(filter);
   }).forEach(component => {
+    const row = document.createElement('div');
+    row.className = 'part-row';
     const button = document.createElement('button');
     button.className = 'part-button' + (component.reference === activeReference ? ' active' : '');
     button.dataset.reference = component.reference;
-    button.innerHTML = `<strong>${escapeHtml(component.reference)}</strong><span>${escapeHtml(component.value || 'unlabelled')}</span>`;
+    button.innerHTML = `<strong>${escapeHtml(component.reference)}</strong><span>${escapeHtml(component.value || 'unlabelled')}</span><span class="oomp-id">${escapeHtml(component.oomp_id || 'unmatched')}</span>`;
     button.addEventListener('click', () => selectComponent(component.reference));
-    list.appendChild(button);
+    row.appendChild(button);
+    if (component.part_url) {
+      const link = document.createElement('a');
+      link.className = 'part-link';
+      link.href = component.part_url;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.title = `Open ${component.oomp_id}`;
+      link.textContent = '↗';
+      row.appendChild(link);
+    }
+    list.appendChild(row);
   });
 }
 
@@ -206,8 +229,31 @@ function selectComponent(reference) {
   activeReference = reference;
   stage.classList.add('has-selection');
   document.querySelectorAll('.board-component').forEach(element => element.classList.toggle('is-active', element.dataset.reference === reference));
+  updateSelectionBoxes(reference);
   renderDetail(component);
   renderList(search.value);
+}
+
+function updateSelectionBoxes(reference) {
+  document.querySelectorAll('.selection-box').forEach(element => element.remove());
+  document.querySelectorAll(`.board-component[data-reference="${CSS.escape(reference)}"]`).forEach(element => {
+    const bounds = element.getBBox();
+    const pad = Math.max(0.7, Math.min(bounds.width, bounds.height) * 0.18);
+    const box = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    box.setAttribute('class', 'selection-box');
+    box.setAttribute('x', bounds.x - pad);
+    box.setAttribute('y', bounds.y - pad);
+    box.setAttribute('width', Math.max(bounds.width + pad * 2, 2.4));
+    box.setAttribute('height', Math.max(bounds.height + pad * 2, 2.4));
+    element.insertBefore(box, element.firstChild);
+  });
+}
+
+function setZoom(nextZoom) {
+  zoomScale = Math.max(0.5, Math.min(4, nextZoom));
+  stage.style.width = `${zoomScale * 100}%`;
+  stage.style.height = `${zoomScale * 100}%`;
+  document.getElementById('zoom-label').textContent = `${Math.round(zoomScale * 100)}%`;
 }
 
 function setSide(side, selectFirst = true) {
@@ -251,6 +297,10 @@ document.querySelectorAll('.board-component').forEach(element => {
 });
 search.addEventListener('input', () => renderList(search.value));
 document.querySelectorAll('.side-button').forEach(button => button.addEventListener('click', () => setSide(button.dataset.side)));
+document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoomScale + 0.25));
+document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoomScale - 0.25));
+document.getElementById('zoom-fit').addEventListener('click', () => setZoom(1));
+setZoom(1);
 setSide('front', false);
 const firstFrontComponent = components.find(component => component.side === 'front');
 if (firstFrontComponent) selectComponent(firstFrontComponent.reference);
@@ -260,7 +310,7 @@ if (firstFrontComponent) selectComponent(firstFrontComponent.reference);
 def generate_board_explorer(project_directory, project_data, summary_data, output_directory=None):
     project_directory = Path(project_directory).resolve()
     if output_directory is None:
-        output_directory = project_directory / "generated_data"
+        output_directory = project_directory / "data" / "generated_data"
     output_directory = Path(output_directory).resolve()
     asset_directory = output_directory / "src"
     board_path = asset_directory / "board_pins.svg"
@@ -316,6 +366,10 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
     <div class="board-toolbar" aria-label="Board side">
       <button class="side-button active" type="button" data-side="front">Top · {front_count}</button>
       <button class="side-button" type="button" data-side="back">Bottom · {back_count}</button>
+      <span class="zoom-divider"></span>
+      <button id="zoom-out" class="zoom-button" type="button" aria-label="Zoom out">−</button>
+      <button id="zoom-fit" class="zoom-label side-button" type="button" aria-label="Fit board"><span id="zoom-label">100%</span></button>
+      <button id="zoom-in" class="zoom-button" type="button" aria-label="Zoom in">+</button>
     </div>
     <div id="board-stage" class="board-stage">
       <div class="board-view" data-side="front">{board_svg}</div>

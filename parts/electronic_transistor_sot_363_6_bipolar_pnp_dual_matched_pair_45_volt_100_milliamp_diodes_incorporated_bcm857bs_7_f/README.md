@@ -1,10 +1,10 @@
-# Dual matched PNP BCM857BS-7-F
+# Transistor BCM857BS-7-F SOT_363_6
 
 `electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f`
 
-Dual matched PNP BCM857BS-7-F is an OOMP electronic transistor definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.15 &#x00D7; 2.1 mm. The definition includes 6 documented pins.
+Transistor BCM857BS-7-F SOT_363_6 is an OOMP electronic transistor definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.15 &#x00D7; 2.1 mm. The definition includes 6 documented pins.
 
-![Dual matched PNP BCM857BS-7-F pinout](working_svg_square_pins.svg)
+![Transistor BCM857BS-7-F SOT_363_6 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -49,7 +49,7 @@ Dual matched PNP BCM857BS-7-F is an OOMP electronic transistor definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BCM857BS-7-F` |
-| LCSC | `C105896` |
+| LCSC | [`C105896`](https://www.lcsc.com/product-detail/C105896.html) |
 
 
 
@@ -70,31 +70,35 @@ Dual matched PNP BCM857BS-7-F is an OOMP electronic transistor definition. It us
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f)
+
+
+
+[Browse this category](../../navigation/electronic/transistor/sot_363_6/bipolar/pnp/dual_matched_pair/45_volt/100_milliamp/diodes_incorporated/README.md)
 
 
 ---

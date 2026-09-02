@@ -67,7 +67,7 @@ Population files are the source of truth. Do not fix generated
 | --- | --- | --- |
 | `working_oomp.py` | Compiles `parts_source` into full OOMP parts and defines Roboclick action groups. | Datasheet copies are declared as Roboclick `file_copy` actions. AI illustration actions are disabled unless `enable_ai_assets=True` is deliberately supplied. |
 | `kicad_agents/component_svg_action.py` | Roboclick adapter that builds exactly one component's diagrams. | Checks that the action part ID equals the current part folder. |
-| `working_svg.py` | Draws all standard SVG variants and their normal PNG versions. | Uses `working_svg_assembly.svg` and a shared assembly line style for board composition. |
+| `working_svg.py` | Draws all standard SVG variants and their normal PNG versions. | Writes under `parts/<id>/data/`; uses `working_svg_assembly.svg` and a shared assembly line style for board composition. |
 | `source_file/template_jinja/oomp_category/template_jinja_markdown/working.md.j2` | Deterministic part-page template. | Receives facts prepared by `working_oomp.add_part_page_details`. |
 | Roboclick `image_resize` actions | Build 300-pixel previews without distorting aspect ratio. | Existing PNGs are retained unless `regenerate_pngs` is true. |
 
@@ -75,7 +75,7 @@ Population files are the source of truth. Do not fix generated
 
 | Agent | Role | Main files |
 | --- | --- | --- |
-| `project_git_action.py` | Uses the installed `git` executable to clone/pull a project and copies the selected modern KiCad files to canonical names. | `git/`, `kicad_file.kicad_pcb`, `.kicad_sch`, `.kicad_pro` |
+| `project_git_action.py` | Uses the installed `git` executable to clone/pull a project and copies the selected modern KiCad files to canonical names. | `data/git/`, `data/kicad_file.kicad_pcb`, `.kicad_sch`, `.kicad_pro` |
 | `sexpr.py` | Small modern KiCad S-expression reader. | Parsed lists used by the processing agent |
 | `geometry.py` | Shared bounds, rotation, transform, and arc helpers. | Deterministic geometry records |
 | `kicad_processing_agent.py` | Extracts schematic graphics, pins, connectivity, footprints, pads, placement, board side, mounting holes, and sizes. | `project.json/yaml`, `components/<ref>/...`, mounting-hole files |
@@ -84,7 +84,8 @@ Population files are the source of truth. Do not fix generated
 | `browser_research_agent.py` | Produces browser search tasks and validates browser-downloaded PDFs before importing them. It never performs HTTP requests. | `browser_research_queue.json/yaml/md`, `datasheet_source.yaml` |
 | `project_summary_agent.py` | Compiles the BOM, nets, board views, mechanical layer, project-source copies, summary data, and Jinja README. | `project_summary_data.*`, board SVG/PNG files, `README.md` |
 | `project_html_agent.py` | Embeds board SVGs, component metadata, pinouts, CSS, and JavaScript into a standalone explorer. | `board_explorer.html` |
-| `project_readme_action.py` | Roboclick coordinator for processing, review queues, summary generation, and the explorer. | Complete `generated_data` project bundle |
+| `project_readme_action.py` | Roboclick coordinator for processing, review queues, summary generation, and the explorer. | Complete `data/generated_data` project bundle |
+| `interactive_html_bom_action.py` | Runs the vendored InteractiveHtmlBom generator headlessly with KiCad's Python runtime. | `data/interactivehtmlbom/ibom.html` and generation status |
 
 ### Verification agent
 
@@ -195,13 +196,13 @@ inside the OOMP part.
    the deterministic project compiler.
 6. Inspect:
 
-   - `generated_data/unmatched_parts.yaml`
-   - `generated_data/lcsc_review.yaml`
-   - `generated_data/browser_research_queue.md`
-   - `generated_data/mounting_holes.yaml`
-   - `generated_data/project_summary_data.yaml`
-   - `generated_data/src/board*.svg`
-   - `generated_data/board_explorer.html`
+   - `data/generated_data/unmatched_parts.yaml`
+   - `data/generated_data/lcsc_review.yaml`
+   - `data/generated_data/browser_research_queue.md`
+   - `data/generated_data/mounting_holes.yaml`
+   - `data/generated_data/project_summary_data.yaml`
+   - `data/generated_data/src/board*.svg`
+   - `data/generated_data/board_explorer.html`
 
 The PNG policy is conservative: existing PNGs are kept by default. Set
 `regenerate_pngs=True` only for a deliberate full image refresh.
@@ -212,7 +213,7 @@ Generate or refresh a queue manually when needed:
 
 ```powershell
 python -m kicad_agents.browser_research_agent queue `
-  parts\<project-id>\generated_data\project.json
+  parts\<project-id>\data\generated_data\project.json
 ```
 
 For every task:

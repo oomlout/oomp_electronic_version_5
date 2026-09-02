@@ -5,8 +5,8 @@ Status: **PASS**
 | Check | Count |
 | --- | ---: |
 | Pipeline source files | 13 |
-| Generated parts checked | 1397 |
-| Component parts | 1395 |
+| Generated parts checked | 2045 |
+| Component parts | 1400 |
 | Project parts | 2 |
 | Errors | 0 |
 | Warnings | 0 |

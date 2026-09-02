@@ -72,7 +72,7 @@ def _project_file_state():
         if not project_directory.is_dir() or not project_directory.name.startswith(PROJECT_PART_PREFIX):
             continue
         candidates = [project_directory / "README.md"]
-        generated_directory = project_directory / "generated_data"
+        generated_directory = project_directory / "data" / "generated_data"
         if generated_directory.is_dir():
             for pattern in ["board_explorer.html", "src/board*.svg", "src/board*.png"]:
                 candidates.extend(generated_directory.glob(pattern))
@@ -257,6 +257,8 @@ def validate_implementation(record, require_generated=False):
         required_files = [
             "working.yaml",
             "README.md",
+        ]
+        data_files = [
             "working_svg_outline.svg",
             "working_svg_outline.png",
             "working_svg_outline_300.png",
@@ -266,11 +268,14 @@ def validate_implementation(record, require_generated=False):
             "working_svg_square_pins_300.png",
         ]
         if datasheet_required:
-            required_files.append("datasheet.pdf")
+            data_files.append("datasheet.pdf")
         missing_files = []
         for required_file in required_files:
             if not (part_directory / required_file).is_file():
                 missing_files.append(required_file)
+        for data_file in data_files:
+            if not (part_directory / "data" / data_file).is_file():
+                missing_files.append(f"data/{data_file}")
         if missing_files != []:
             errors.append("generated part is missing: " + ", ".join(missing_files))
         else:

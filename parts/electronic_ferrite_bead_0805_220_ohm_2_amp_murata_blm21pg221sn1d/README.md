@@ -1,10 +1,10 @@
-# Ferrite Bead 0805 220 Ohm 2 Amp
+# Ferrite Bead BLM21PG221SN1D 0805
 
 `electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d`
 
-Ferrite Bead 0805 220 Ohm 2 Amp is an OOMP electronic ferrite bead definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 × 1.25 mm.
+Ferrite Bead BLM21PG221SN1D 0805 is an OOMP electronic ferrite bead definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
 
-![Ferrite Bead 0805 220 Ohm 2 Amp pinout](working_svg_square_pins.svg)
+![Ferrite Bead BLM21PG221SN1D 0805 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ Ferrite Bead 0805 220 Ohm 2 Amp is an OOMP electronic ferrite bead definition. I
 | OOMP ID | `electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d` |
 | Type | Ferrite Bead |
 | Package / style | 0805 |
-| Nominal size | 2.0 × 1.25 mm |
+| Nominal size | 2.0 &#x00D7; 1.25 mm |
+
 
 ## Classification
 
@@ -27,6 +28,8 @@ Ferrite Bead 0805 220 Ohm 2 Amp is an OOMP electronic ferrite bead definition. I
 | 14 | `murata` |
 | 15 | `blm21pg221sn1d` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -34,35 +37,49 @@ Ferrite Bead 0805 220 Ohm 2 Amp is an OOMP electronic ferrite bead definition. I
 | Length | 2.0 mm |
 | Width | 1.25 mm |
 
+
+
+
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BLM21PG221SN1D` |
-| LCSC | `C85840` |
+| LCSC | [`C85840`](https://www.lcsc.com/product-detail/C85840.html) |
+
+
+
+
 
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d)
+
+
+
+[Browse this category](../../navigation/electronic/ferrite_bead/0805/220_ohm/2_amp/murata/README.md)
+
 
 ---
 

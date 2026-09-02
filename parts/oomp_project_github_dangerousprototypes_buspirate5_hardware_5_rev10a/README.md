@@ -1,10 +1,12 @@
-# REV10a
+# Project dangerousprototypes/buspirate5_hardware 5_rev10a
 
 [View the project on GitHub](https://github.com/DangerousPrototypes/BusPirate5-hardware)
 
-![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board.svg)
+[Browse this project category](../../navigation/oomp/project/github/dangerousprototypes/buspirate5_hardware/README.md)
 
-REV10a is a KiCad project containing 220 extracted component records. The catalogue matcher linked 189 physical placements to OOMP parts.
+![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_300.png)
+
+Project dangerousprototypes/buspirate5_hardware 5_rev10a is a KiCad project containing 220 extracted component records. The catalogue matcher linked 210 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -15,8 +17,8 @@ REV10a is a KiCad project containing 220 extracted component records. The catalo
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 10 |
-| Matched OOMP components | 189 |
-| Unmatched physical components | 31 |
+| Matched OOMP components | 210 |
+| Unmatched physical components | 10 |
 | Front-side placements | 205 |
 | Back-side placements | 3 |
 | Project version | `5_rev10a` |
@@ -26,47 +28,56 @@ REV10a is a KiCad project containing 220 extracted component records. The catalo
 
 - Approximate size: **80.0 mm × 80.1539 mm**
 - Outline source: `KiCad Edge.Cuts`
-- Placement drawing: [view `board.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board.svg)
-- PNG placement drawing: [view `board.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board.png)
-- 300-pixel placement preview: [view `board_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_300.png)
-- Placement drawing with pin names: [view `board_pins.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_pins.svg)
-- PNG drawing with pin names: [view `board_pins.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_pins.png)
-- 300-pixel pin preview: [view `board_pins_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_pins_300.png)
-- Bottom placement drawing: [view `board_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_bottom.svg)
-- Bottom PNG placement drawing: [view `board_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_bottom.png)
-- 300-pixel bottom preview: [view `board_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_bottom_300.png)
-- Bottom placement drawing with pin names: [view `board_pins_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_pins_bottom.svg)
-- Bottom PNG drawing with pin names: [view `board_pins_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_pins_bottom.png)
-- 300-pixel bottom pin preview: [view `board_pins_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_pins_bottom_300.png)
-- Mechanical drawing: [view `board_mechanical.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_mechanical.svg)
-- Mechanical PNG: [view `board_mechanical.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_mechanical.png)
-- 300-pixel mechanical preview: [view `board_mechanical_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_mechanical_300.png)
-- Self-contained interactive explorer: [download `board_explorer.html`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/board_explorer.html)
+- Placement drawing: [view `board.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board.svg)
+- PNG placement drawing: [view `board.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board.png)
+- 300-pixel placement preview: [view `board_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_300.png)
+- Placement drawing with pin names: [view `board_pins.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_pins.svg)
+- PNG drawing with pin names: [view `board_pins.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_pins.png)
+- 300-pixel pin preview: [view `board_pins_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_pins_300.png)
+- Bottom placement drawing: [view `board_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_bottom.svg)
+- Bottom PNG placement drawing: [view `board_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_bottom.png)
+- 300-pixel bottom preview: [view `board_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_bottom_300.png)
+- Bottom placement drawing with pin names: [view `board_pins_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_pins_bottom.svg)
+- Bottom PNG drawing with pin names: [view `board_pins_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_pins_bottom.png)
+- 300-pixel bottom pin preview: [view `board_pins_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_pins_bottom_300.png)
+- Mechanical drawing: [view `board_mechanical.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_mechanical.svg)
+- Mechanical PNG: [view `board_mechanical.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_mechanical.png)
+- 300-pixel mechanical preview: [view `board_mechanical_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_mechanical_300.png)
+- Open the board explorer on GitHub Pages: [explore this board](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/board_explorer.html)
+- InteractiveHtmlBom: [open the interactive BOM](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/interactivehtmlbom/ibom.html)
 
 ## Board with pins
 
-![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_pins.png)
+![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_pins_300.png)
 
 ## Bottom board with pins
 
 The bottom view is mirrored horizontally so it is shown as viewed from beneath the assembled board.
 
-![Bottom PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_pins_bottom.png)
+![Bottom PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_pins_bottom_300.png)
 
 ## Mechanical layer
 
-![PCB mechanical layer with mounting holes](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src/board_mechanical.png)
+![PCB mechanical layer with mounting holes](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board_mechanical_300.png)
 
 The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. This point is shown as **0,0** in the mechanical drawing; X increases right and Y increases down. Original KiCad coordinates are retained alongside it.
 
-| OOMP reference | Source | Name | Classification | Role | Drill size | Board X (mm) | Board Y (mm) | OOMP part |
-| --- | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH1` | `H1` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | mounting | diameter 3.2 mm | 14.000 | 14.004 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
-| `MH2` | `H2` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | mounting | diameter 3.2 mm | 66.000 | 14.004 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
-| `MH3` | `H3` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | mounting | diameter 3.2 mm | 66.000 | 66.004 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
-| `MH4` | `H4` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | mounting | diameter 3.2 mm | 14.000 | 66.004 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
-| `MH6` | `J202` | Mounting Hole 0.7 mm Round Unplated | `mechanical / mounting_hole / 0_7_mm / round / unplated` | locating | diameter 0.7 mm | 37.110 | 15.054 | [`mechanical_mounting_hole_0_7_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_7_mm_round_unplated) |
-| `MH5` | `J202` | Mounting Hole 0.7 mm Round Unplated | `mechanical / mounting_hole / 0_7_mm / round / unplated` | locating | diameter 0.7 mm | 42.890 | 15.054 | [`mechanical_mounting_hole_0_7_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_7_mm_round_unplated) |
+### Diameter 3.2 mm holes
+
+| OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | ---: | ---: | --- |
+| `MH1` | `H1` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | mounting | 14.000 | 14.004 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
+| `MH2` | `H2` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | mounting | 66.000 | 14.004 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
+| `MH3` | `H3` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | mounting | 66.000 | 66.004 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
+| `MH4` | `H4` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | mounting | 14.000 | 66.004 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
+
+### Diameter 0.7 mm holes
+
+| OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | ---: | ---: | --- |
+| `MH6` | `J202` | Mounting Hole 0.7 mm Round Unplated | `mechanical / mounting_hole / 0_7_mm / round / unplated` | locating | 37.110 | 15.054 | [`mechanical_mounting_hole_0_7_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_7_mm_round_unplated) |
+| `MH5` | `J202` | Mounting Hole 0.7 mm Round Unplated | `mechanical / mounting_hole / 0_7_mm / round / unplated` | locating | 42.890 | 15.054 | [`mechanical_mounting_hole_0_7_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_0_7_mm_round_unplated) |
+
 
 ## Bill of materials
 
@@ -85,14 +96,14 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J301 | 1 | electronic connector header 2 54 mm pitch through hole 10 pin | Conn_01x10 | `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_10_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_10_pin) |
 | J302 | 1 | electronic connector jst sh 1 mm pitch surface mount right angle 9 pin jst sm09b srss tb | Conn_01x09 | `Connector_JST:JST_SH_SM09B-SRSS-TB_1x09-1MP_P1.00mm_Horizontal` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb) |
 | L201 | 1 | electronic ferrite bead 0805 15 ohm 1 5 amp tdk mmz2012r150at000 | 1.5A | `Inductor_SMD:L_0805_2012Metric` | [`electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000) |
-| LCD201 | 1 | TFT_20_QT200H1201 | TFT_20_QT200H1201 | `dp-lcd:TFT_20_QT200H1201` | unmatched |
+| LCD201 | 1 | electronic display tft 2 inch 240 x 320 pixel ips spi 12 pin szhtc qt200h1201 | TFT_20_QT200H1201 | `dp-lcd:TFT_20_QT200H1201` | [`electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201) |
 | LED701, LED704, LED707, LED708, LED712, LED716, LED717, LED720 | 8 | electronic led 4020 side view rgb sk6812 opsco optoelectronics sk6812side a | SK6812-side-a_b | `dp-LED:SK6812-side-a_b` | [`electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a) |
 | LED702, LED703, LED705, LED706, LED710, LED713, LED714, LED715, LED718, LED719 | 10 | electronic led 3535 rgb sk6812 opsco optoelectronics sk6812mini e | SK6812-mini-e | `dp-LED:SK6812-mini-e` | [`electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e) |
 | logo1 | 1 | fcc_logo | fcc_logo | `dp-logo:logo_fcc` | unmatched |
-| Q202 | 1 | MMBT7002K | MMBT7002K | `Package_TO_SOT_SMD:SOT-23` | unmatched |
-| Q300, Q301, Q302, Q303, Q304, Q305, Q306, Q307, Q402, Q602 | 10 | SI2301 | SI2301 | `Package_TO_SOT_SMD:SOT-523` | unmatched |
-| Q401 | 1 | BCM857 | BCM857 | `Package_TO_SOT_SMD:SOT-363_SC-70-6` | unmatched |
-| Q601 | 1 | MMDT3906 | MMDT3906 | `Package_TO_SOT_SMD:SOT-363_SC-70-6` | unmatched |
+| Q202 | 1 | electronic transistor sot 23 mosfet n channel enhancement mode 60 volt 300 milliamp cbi mmbt7002k | MMBT7002K | `Package_TO_SOT_SMD:SOT-23` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k) |
+| Q300, Q301, Q302, Q303, Q304, Q305, Q306, Q307, Q402, Q602 | 10 | electronic transistor sot 523 mosfet p channel enhancement mode 20 volt 2 8 amp cbi bc2301t 2 8a | SI2301 | `Package_TO_SOT_SMD:SOT-523` | [`electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a) |
+| Q401 | 1 | electronic transistor sot 363 6 bipolar pnp dual matched pair 45 volt 100 milliamp diodes incorporated bcm857bs 7 f | BCM857 | `Package_TO_SOT_SMD:SOT-363_SC-70-6` | [`electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f) |
+| Q601 | 1 | electronic transistor sot 363 6 bipolar pnp dual general purpose 40 volt 200 milliamp cbi mmdt3906dw | MMDT3906 | `Package_TO_SOT_SMD:SOT-363_SC-70-6` | [`electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw) |
 | R101, R502, R602, R603 | 4 | electronic resistor 0402 1000 ohm | 1K | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1000_ohm) |
 | R103, R208, R608, R612 | 4 | electronic resistor 0402 200 ohm | 200R | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_200_ohm) |
 | R201, R204 | 2 | electronic resistor 0402 5100 ohm | 5.1K | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_5100_ohm) |
@@ -119,12 +130,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | U401 | 1 | electronic ic sot 89 3 power management linear voltage regulator 3 3 volt microne me6211a33pg n | ME6211A33PG-N | `Package_TO_SOT_SMD:SOT-89-3` | [`electronic_ic_sot_89_3_power_management_linear_voltage_regulator_3_3_volt_microne_me6211a33pg_n`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_89_3_power_management_linear_voltage_regulator_3_3_volt_microne_me6211a33pg_n) |
 | U402 | 1 | electronic ic tssop 24 logic 16 channel analog multiplexer nexperia 74hct4067pw118 | CD4067 | `Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm` | [`electronic_ic_tssop_24_logic_16_channel_analog_multiplexer_nexperia_74hct4067pw118`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_tssop_24_logic_16_channel_analog_multiplexer_nexperia_74hct4067pw118) |
 | U403 | 1 | electronic ic sot 23 5 power management linear voltage regulator 3 3 volt diodes ap2127k 3 3trg1 | AP2127 | `Package_TO_SOT_SMD:SOT-23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_diodes_ap2127k_3_3trg1`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_diodes_ap2127k_3_3trg1) |
-| U404, U506, U603 | 3 | LMV321 | LMV321 | `Package_TO_SOT_SMD:SOT-23-5` | unmatched |
+| U404, U506, U603 | 3 | electronic ic sot 23 5 amplifier operational single rail to rail input output gainsil lmv321 tr | LMV321 | `Package_TO_SOT_SMD:SOT-23-5` | [`electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr) |
 | U501, U502 | 2 | electronic ic tssop 16 logic serial in parallel out shift register wuxi i core elec aip74hc595ta16 tr | AIP74HC595TA | `Package_SO:TSSOP-16_4.4x5mm_P0.65mm` | [`electronic_ic_tssop_16_logic_serial_in_parallel_out_shift_register_wuxi_i_core_elec_aip74hc595ta16_tr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_tssop_16_logic_serial_in_parallel_out_shift_register_wuxi_i_core_elec_aip74hc595ta16_tr) |
 | U503 | 1 | electronic ic tssop 20 logic octal bus transceiver wuxi i core elec aip74hct245ta20 tr | AIP74HCT245TA | `Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm` | [`electronic_ic_tssop_20_logic_octal_bus_transceiver_wuxi_i_core_elec_aip74hct245ta20_tr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_tssop_20_logic_octal_bus_transceiver_wuxi_i_core_elec_aip74hct245ta20_tr) |
-| U504, U505 | 2 | LMV324 | LMV324 | `Package_SO:TSSOP-14_4.4x5mm_P0.65mm` | unmatched |
-| U601 | 1 | LMV321A | LMV321A | `Package_TO_SOT_SMD:SOT-23-5` | unmatched |
-| U602 | 1 | LMV331 | LMV331 | `Package_TO_SOT_SMD:SOT-23-5` | unmatched |
+| U504, U505 | 2 | electronic ic tssop 14 amplifier operational quad rail to rail output texas instruments lmv324ipwr | LMV324 | `Package_SO:TSSOP-14_4.4x5mm_P0.65mm` | [`electronic_ic_tssop_14_amplifier_operational_quad_rail_to_rail_output_texas_instruments_lmv324ipwr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_tssop_14_amplifier_operational_quad_rail_to_rail_output_texas_instruments_lmv324ipwr) |
+| U601 | 1 | electronic ic sot 23 5 amplifier operational single precision rail to rail input output gainsil gs321a tr | LMV321A | `Package_TO_SOT_SMD:SOT-23-5` | [`electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr) |
+| U602 | 1 | electronic ic sot 23 5 comparator single open collector texas instruments lmv331idbvr | LMV331 | `Package_TO_SOT_SMD:SOT-23-5` | [`electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr) |
 | Y101 | 1 | electronic crystal 3225 surface mount 4 pin 12 mhz 20 pf | 12Mhz | `Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm` | [`electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf) |
 
 ## Main nets
@@ -159,21 +170,21 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 31 physical component records are not yet matched to an OOMP part.
+- 10 physical component records are not yet matched to an OOMP part.
 
-- Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/lcsc_review.yaml)
-- Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/browser_research_queue.md)
+- Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/lcsc_review.yaml)
+- Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/browser_research_queue.md)
 
 ## Generated source bundle
 
-- Project image assets: [`generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/generated_data/src)
-- Copied component source manifest: `project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 42
+- Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src)
+- Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
+- Matched OOMP source parts copied: 51
 
 ## Source files
 
-- Schematic: `kicad_file.kicad_sch`
-- PCB: `kicad_file.kicad_pcb`
+- Schematic: `data/kicad_file.kicad_sch`
+- PCB: `data/kicad_file.kicad_pcb`
 
 ---
 

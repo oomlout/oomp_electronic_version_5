@@ -1,10 +1,10 @@
-# N-channel MOSFET MMBT7002K
+# Transistor MMBT7002K SOT_23
 
 `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k`
 
-N-channel MOSFET MMBT7002K is an OOMP electronic transistor definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.6 mm. The definition includes 3 documented pins.
+Transistor MMBT7002K SOT_23 is an OOMP electronic transistor definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.6 mm. The definition includes 3 documented pins.
 
-![N-channel MOSFET MMBT7002K pinout](working_svg_square_pins.svg)
+![Transistor MMBT7002K SOT_23 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -49,7 +49,7 @@ N-channel MOSFET MMBT7002K is an OOMP electronic transistor definition. It uses 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `MMBT7002K` |
-| LCSC | `C2879714` |
+| LCSC | [`C2879714`](https://www.lcsc.com/product-detail/C2879714.html) |
 
 
 
@@ -67,31 +67,35 @@ N-channel MOSFET MMBT7002K is an OOMP electronic transistor definition. It uses 
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k)
+
+
+
+[Browse this category](../../navigation/electronic/transistor/sot_23/mosfet/n_channel/enhancement_mode/60_volt/300_milliamp/cbi/README.md)
 
 
 ---

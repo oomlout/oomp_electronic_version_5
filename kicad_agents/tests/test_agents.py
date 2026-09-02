@@ -21,6 +21,7 @@ from kicad_agents.browser_research_agent import (
 from kicad_agents.component_addition_agent import validate_record
 from kicad_agents.pipeline_audit_agent import run_audit
 from kicad_agents.sexpr import children, load, tag, value
+from action_regenerate_all import _is_browser_action
 import working_oomp_populate_project
 import working_oomp_populate_mounting_hole
 import working_oomp_populate_diode
@@ -38,11 +39,11 @@ import working_oomp_populate_ic_extra
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
-SAMPLE_PROJECT = REPOSITORY_ROOT / "project" / "electrolama" / "pt1"
-SAMPLE_SCHEMATIC = SAMPLE_PROJECT / "git" / "pt1" / "pcba" / "Rev A2" / "pt1-RevA2.kicad_sch"
 PARTS_DIRECTORY = REPOSITORY_ROOT / "parts"
 PROJECT_PART = PARTS_DIRECTORY / "oomp_project_github_electrolama_pt1_current"
 BUS_PIRATE_PART = PARTS_DIRECTORY / "oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a"
+SAMPLE_PROJECT = PROJECT_PART
+SAMPLE_SCHEMATIC = SAMPLE_PROJECT / "data" / "kicad_file.kicad_sch"
 USB_A_PART = PARTS_DIRECTORY / "electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100"
 USB_C_PART = PARTS_DIRECTORY / "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12"
 USB_A_SOURCE = REPOSITORY_ROOT / "parts_source" / USB_A_PART.name
@@ -645,23 +646,27 @@ class ProjectPartTests(unittest.TestCase):
         self.assertEqual(second_action["actions"][0]["command"], "run_python")
         self.assertIs(second_action["actions"][0]["regenerate_pngs"], False)
         self.assertEqual(len(second_action["actions"]), 6)
-        self.assertEqual(second_action["actions"][1]["file_destination"], "generated_data/src/board_300.png")
-        self.assertEqual(second_action["actions"][2]["file_destination"], "generated_data/src/board_pins_300.png")
-        self.assertEqual(second_action["actions"][3]["file_destination"], "generated_data/src/board_bottom_300.png")
-        self.assertEqual(second_action["actions"][4]["file_destination"], "generated_data/src/board_pins_bottom_300.png")
-        self.assertEqual(second_action["actions"][5]["file_destination"], "generated_data/src/board_mechanical_300.png")
+        self.assertEqual(second_action["actions"][1]["file_destination"], "data/generated_data/src/board_300.png")
+        self.assertEqual(second_action["actions"][2]["file_destination"], "data/generated_data/src/board_pins_300.png")
+        self.assertEqual(second_action["actions"][3]["file_destination"], "data/generated_data/src/board_bottom_300.png")
+        self.assertEqual(second_action["actions"][4]["file_destination"], "data/generated_data/src/board_pins_bottom_300.png")
+        self.assertEqual(second_action["actions"][5]["file_destination"], "data/generated_data/src/board_mechanical_300.png")
         self.assertEqual(
             second_action["actions"][0]["file_output"],
-            "generated_data/src/board_pins.png",
+            "data/generated_data/src/board_pins.png",
         )
 
         readme = (PROJECT_PART / "README.md").read_text(encoding="utf-8")
         self.assertIn("https://github.com/electrolama/pt1", readme)
         self.assertIn(
-            "![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board.svg)",
+            "![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_300.png)",
             readme,
         )
-        self.assertNotIn("](../", readme)
+        self.assertIn(
+            "[Browse this project category](../../navigation/oomp/project/github/electrolama/pt1/README.md)",
+            readme,
+        )
+        self.assertNotIn("](../generated_data", readme)
         self.assertNotIn("project_summary_llm", readme)
         self.assertIn(
             "| References | Quantity | Description | Value | Footprint | OOMP part |",
@@ -672,20 +677,21 @@ class ProjectPartTests(unittest.TestCase):
             readme,
         )
         self.assertNotIn("/parts/electronic_capacitor_0402_10_nano_farad/README.md", readme)
-        self.assertTrue((PROJECT_PART / "generated_data" / "src" / "board.svg").is_file())
-        self.assertTrue((PROJECT_PART / "generated_data" / "src" / "board_pins.svg").is_file())
-        self.assertTrue((PROJECT_PART / "generated_data" / "src" / "board_bottom.svg").is_file())
-        self.assertTrue((PROJECT_PART / "generated_data" / "src" / "board_pins_bottom.svg").is_file())
-        board_png_path = PROJECT_PART / "generated_data" / "src" / "board.png"
-        board_300_png_path = PROJECT_PART / "generated_data" / "src" / "board_300.png"
-        board_pins_png_path = PROJECT_PART / "generated_data" / "src" / "board_pins.png"
-        board_pins_300_png_path = PROJECT_PART / "generated_data" / "src" / "board_pins_300.png"
-        board_bottom_png_path = PROJECT_PART / "generated_data" / "src" / "board_bottom.png"
-        board_bottom_300_png_path = PROJECT_PART / "generated_data" / "src" / "board_bottom_300.png"
-        board_pins_bottom_png_path = PROJECT_PART / "generated_data" / "src" / "board_pins_bottom.png"
-        board_pins_bottom_300_png_path = PROJECT_PART / "generated_data" / "src" / "board_pins_bottom_300.png"
-        board_mechanical_png_path = PROJECT_PART / "generated_data" / "src" / "board_mechanical.png"
-        board_mechanical_300_png_path = PROJECT_PART / "generated_data" / "src" / "board_mechanical_300.png"
+        generated_data = PROJECT_PART / "data" / "generated_data"
+        self.assertTrue((generated_data / "src" / "board.svg").is_file())
+        self.assertTrue((generated_data / "src" / "board_pins.svg").is_file())
+        self.assertTrue((generated_data / "src" / "board_bottom.svg").is_file())
+        self.assertTrue((generated_data / "src" / "board_pins_bottom.svg").is_file())
+        board_png_path = generated_data / "src" / "board.png"
+        board_300_png_path = generated_data / "src" / "board_300.png"
+        board_pins_png_path = generated_data / "src" / "board_pins.png"
+        board_pins_300_png_path = generated_data / "src" / "board_pins_300.png"
+        board_bottom_png_path = generated_data / "src" / "board_bottom.png"
+        board_bottom_300_png_path = generated_data / "src" / "board_bottom_300.png"
+        board_pins_bottom_png_path = generated_data / "src" / "board_pins_bottom.png"
+        board_pins_bottom_300_png_path = generated_data / "src" / "board_pins_bottom_300.png"
+        board_mechanical_png_path = generated_data / "src" / "board_mechanical.png"
+        board_mechanical_300_png_path = generated_data / "src" / "board_mechanical_300.png"
         self.assertTrue(board_png_path.is_file())
         self.assertTrue(board_300_png_path.is_file())
         self.assertTrue(board_pins_png_path.is_file())
@@ -699,7 +705,7 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIn("## Board with pins", readme)
         self.assertIn("## Bottom board with pins", readme)
         self.assertIn(
-            "![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/generated_data/src/board_pins.png)",
+            "![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_electrolama_pt1_current/data/generated_data/src/board_pins_300.png)",
             readme,
         )
         from PIL import Image
@@ -720,9 +726,9 @@ class ProjectPartTests(unittest.TestCase):
             self.assertEqual(max(board_mechanical_image.size), 1600)
         with Image.open(board_mechanical_300_png_path) as board_mechanical_300_image:
             self.assertEqual(max(board_mechanical_300_image.size), 300)
-        self.assertFalse(any((PROJECT_PART / "generated_data").glob("*llm*")))
+        self.assertFalse(any(generated_data.glob("*llm*")))
 
-        assembly_svg_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "working_svg_assembly.svg"
+        assembly_svg_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "data" / "working_svg_assembly.svg"
         self.assertTrue(assembly_svg_path.is_file())
         assembly_svg = assembly_svg_path.read_text(encoding="utf-8")
         self.assertIn('width="1.0000mm" height="0.5000mm"', assembly_svg)
@@ -731,14 +737,14 @@ class ProjectPartTests(unittest.TestCase):
         self.assertNotIn('stroke-width="0.18"', assembly_svg)
         self.assertNotIn('stroke-width="0.8"', assembly_svg)
 
-        assembly_pins_svg_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "working_svg_assembly_pins.svg"
+        assembly_pins_svg_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "data" / "working_svg_assembly_pins.svg"
         self.assertTrue(assembly_pins_svg_path.is_file())
         assembly_pins_svg = assembly_pins_svg_path.read_text(encoding="utf-8")
         self.assertIn(">pin 1</text>", assembly_pins_svg)
         self.assertIn(">pin 2</text>", assembly_pins_svg)
         self.assertIn('transform="rotate(-90.000', assembly_pins_svg)
 
-        board_svg = (PROJECT_PART / "generated_data" / "src" / "board.svg").read_text(encoding="utf-8")
+        board_svg = (generated_data / "src" / "board.svg").read_text(encoding="utf-8")
         self.assertIn('transform="translate(155.8761 106.1286) rotate(90.0000)"', board_svg)
         self.assertIn('width="2.4800" height="15.2400"', board_svg)
         self.assertIn('preserveAspectRatio="xMidYMid meet"', board_svg)
@@ -749,7 +755,7 @@ class ProjectPartTests(unittest.TestCase):
         self.assertNotIn("UNK_HOLE", board_svg)
         self.assertEqual(board_svg.count('class="mounting-hole"'), 9)
 
-        board_pins_svg = (PROJECT_PART / "generated_data" / "src" / "board_pins.svg").read_text(encoding="utf-8")
+        board_pins_svg = (generated_data / "src" / "board_pins.svg").read_text(encoding="utf-8")
         self.assertIn(">vbus</text>", board_pins_svg)
         self.assertIn(">pin 1</text>", board_pins_svg)
         self.assertNotIn(">SJ1</text>", board_pins_svg)
@@ -758,27 +764,28 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIsNotNone(small_reference)
         self.assertLess(float(small_reference.group(1)), 0.22)
 
-        mechanical_svg = (PROJECT_PART / "generated_data" / "src" / "board_mechanical.svg").read_text(encoding="utf-8")
+        mechanical_svg = (generated_data / "src" / "board_mechanical.svg").read_text(encoding="utf-8")
         self.assertIn(">0,0</text>", mechanical_svg)
         self.assertIn(">MH1 CON1</tspan>", mechanical_svg)
         self.assertEqual(mechanical_svg.count('class="mounting-hole"'), 9)
         self.assertIn(
-            "| `MH7` | `UNK_HOLE_0` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | diameter 2 mm |",
+            "| `MH7` | `UNK_HOLE_0` | Mounting Hole 2 mm Round Unplated | `mechanical / mounting_hole / 2_mm / round / unplated` | mounting | 2.250 | 11.375 |",
             readme,
         )
-        self.assertTrue((PROJECT_PART / "generated_data" / "mounting_hole_summary.json").is_file())
-        self.assertTrue((PROJECT_PART / "generated_data" / "mounting_hole_summary.yaml").is_file())
-        self.assertTrue((PROJECT_PART / "generated_data" / "components" / "MH7" / "component.yaml").is_file())
-        self.assertTrue((PROJECT_PART / "generated_data" / "components" / "MH7" / "oomp" / "working.yaml").is_file())
+        self.assertTrue((generated_data / "mounting_hole_summary.json").is_file())
+        self.assertTrue((generated_data / "mounting_hole_summary.yaml").is_file())
+        self.assertTrue((generated_data / "components" / "MH7" / "component.yaml").is_file())
+        self.assertTrue((generated_data / "components" / "MH7" / "oomp" / "working.yaml").is_file())
         mounting_hole_item = yaml.safe_load(
-            (PROJECT_PART / "generated_data" / "components" / "MH7" / "component.yaml").read_text(encoding="utf-8")
+            (generated_data / "components" / "MH7" / "component.yaml").read_text(encoding="utf-8")
         )
         self.assertEqual(mounting_hole_item["oomp"]["status"], "matched")
         self.assertEqual(mounting_hole_item["classification"]["taxonomy_path"][0:2], ["mechanical", "mounting_hole"])
 
     def test_bus_pirate_explorer_is_self_contained_and_linked_to_oomp_parts(self):
-        explorer_path = BUS_PIRATE_PART / "generated_data" / "board_explorer.html"
-        review_path = BUS_PIRATE_PART / "generated_data" / "lcsc_review.yaml"
+        generated_data = BUS_PIRATE_PART / "data" / "generated_data"
+        explorer_path = generated_data / "board_explorer.html"
+        review_path = generated_data / "lcsc_review.yaml"
         self.assertTrue(explorer_path.is_file())
         self.assertTrue(review_path.is_file())
         explorer = explorer_path.read_text(encoding="utf-8")
@@ -788,19 +795,25 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIn('class="board-view" data-side="front"', explorer)
         self.assertIn('class="board-view" data-side="back"', explorer)
         self.assertIn('class="side-button" type="button" data-side="back"', explorer)
-        self.assertIn("working_svg_square_pins", (BUS_PIRATE_PART / "generated_data" / "src" / "components" / "manifest.yaml").read_text(encoding="utf-8"))
+        self.assertIn('id="zoom-out"', explorer)
+        self.assertIn('id="zoom-in"', explorer)
+        self.assertIn('class="oomp-id"', explorer)
+        self.assertIn("link.className = 'part-link'", explorer)
+        self.assertIn("box.setAttribute('class', 'selection-box')", explorer)
+        self.assertNotIn("linear-gradient", explorer)
+        self.assertIn("working_svg_square_pins", (generated_data / "src" / "components" / "manifest.yaml").read_text(encoding="utf-8"))
         self.assertIn("https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040", explorer)
         self.assertNotRegex(explorer, r'<script[^>]+src=')
         self.assertNotRegex(explorer, r'<link[^>]+stylesheet')
 
-        bus_project = json.loads((BUS_PIRATE_PART / "generated_data" / "project.json").read_text(encoding="utf-8"))
+        bus_project = json.loads((generated_data / "project.json").read_text(encoding="utf-8"))
         self.assertEqual(len(bus_project["mounting_hole_items"]), 6)
         self.assertTrue(all(item["oomp"]["status"] == "matched" for item in bus_project["mounting_hole_items"]))
         self.assertEqual(bus_project["mounting_hole_items"][0]["reference"], "MH1")
         self.assertTrue((PARTS_DIRECTORY / "mechanical_mounting_hole_0_7_mm_round_unplated" / "working.yaml").is_file())
 
-        board_top = (BUS_PIRATE_PART / "generated_data" / "src" / "board.svg").read_text(encoding="utf-8")
-        board_bottom = (BUS_PIRATE_PART / "generated_data" / "src" / "board_bottom.svg").read_text(encoding="utf-8")
+        board_top = (generated_data / "src" / "board.svg").read_text(encoding="utf-8")
+        board_bottom = (generated_data / "src" / "board_bottom.svg").read_text(encoding="utf-8")
         self.assertNotIn('data-reference="J301"', board_top)
         self.assertIn('data-reference="J301"', board_bottom)
         self.assertNotIn('data-reference="U103"', board_bottom)
@@ -871,19 +884,19 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         self.assertTrue(all(action["regenerate_pngs"] is False for action in resize_actions))
 
         readme = (part_directory / "README.md").read_text(encoding="utf-8")
-        self.assertIn("![Resistor 0402 2200 Ohm pinout](working_svg_square_pins.svg)", readme)
+        self.assertIn("![Resistor 2200 Ohm 0402 pinout](data/working_svg_square_pins.svg)", readme)
         self.assertIn("## At a glance", readme)
         self.assertNotIn("## Diagram gallery", readme)
         self.assertNotIn("<img", readme)
         self.assertIn("## Files", readme)
-        self.assertIn("![Pinout drawing](working_svg_square_pins_300.png)", readme)
-        self.assertIn("![Outline](working_svg_outline_300.png)", readme)
-        self.assertNotIn("[Outline drawing](working_svg_outline.svg)", readme)
-        self.assertNotIn("[View the datasheet](datasheet.pdf)", readme)
+        self.assertIn("![Pinout drawing](data/working_svg_square_pins_300.png)", readme)
+        self.assertIn("![Outline](data/working_svg_outline_300.png)", readme)
+        self.assertNotIn("[Outline drawing](data/working_svg_outline.svg)", readme)
+        self.assertNotIn("[View the datasheet](data/datasheet.pdf)", readme)
 
         from PIL import Image
 
-        preview_files = sorted(part_directory.glob("working_svg*_300.png"))
+        preview_files = sorted((part_directory / "data").glob("working_svg*_300.png"))
         self.assertEqual(len(preview_files), 8)
         for preview_file in preview_files:
             with Image.open(preview_file) as preview_image:
@@ -892,6 +905,68 @@ class ElectronicPartReadmeTests(unittest.TestCase):
     def test_default_generated_pipeline_has_no_llm_actions_or_direct_http_clients(self):
         audit = run_audit(REPOSITORY_ROOT)
         self.assertEqual(audit["status"], "pass", audit["findings"])
+
+
+class RepositoryOrganizationTests(unittest.TestCase):
+    def test_part_roots_only_contain_readme_working_and_data(self):
+        allowed_names = ["README.md", "working.yaml", "data"]
+        violations = []
+        for part_directory in PARTS_DIRECTORY.iterdir():
+            if not part_directory.is_dir():
+                continue
+            for child in part_directory.iterdir():
+                if child.name not in allowed_names:
+                    violations.append(str(child.relative_to(REPOSITORY_ROOT)))
+        self.assertEqual(violations, [])
+
+    def test_navigation_has_parent_children_and_absolute_part_links(self):
+        root_navigation = (REPOSITORY_ROOT / "navigation" / "README.md").read_text(encoding="utf-8")
+        capacitor_navigation = (
+            REPOSITORY_ROOT / "navigation" / "electronic" / "capacitor" / "0402" / "README.md"
+        ).read_text(encoding="utf-8")
+        self.assertIn("[Electronic](electronic/README.md)", root_navigation)
+        self.assertIn("[Up one level](../README.md)", capacitor_navigation)
+        self.assertIn(
+            "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_100_nano_farad",
+            capacitor_navigation,
+        )
+
+    def test_readable_name_and_extensible_distributor_link_are_generated(self):
+        capacitor = PARTS_DIRECTORY / "electronic_capacitor_0402_100_nano_farad"
+        usb_connector = PARTS_DIRECTORY / "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12"
+        capacitor_working = yaml.safe_load((capacitor / "working.yaml").read_text(encoding="utf-8"))
+        usb_working = yaml.safe_load((usb_connector / "working.yaml").read_text(encoding="utf-8"))
+        self.assertEqual(capacitor_working["name_readable"], "Capacitor 100 nF 0402")
+        self.assertEqual(usb_working["name_readable"], "Connector USB-C TYPE-C-31-M-12")
+        self.assertEqual(
+            usb_working["link_github"],
+            "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/"
+            + usb_connector.name,
+        )
+        lcsc = next(row for row in usb_working["distributors"] if row["key"] == "lcsc")
+        self.assertEqual(lcsc["part_number"], "C165948")
+        self.assertEqual(lcsc["url"], "https://www.lcsc.com/product-detail/C165948.html")
+        self.assertIn("[`C165948`](https://www.lcsc.com/product-detail/C165948.html)", (usb_connector / "README.md").read_text(encoding="utf-8"))
+
+    def test_full_regeneration_entrypoint_skips_only_browser_actions(self):
+        self.assertTrue((REPOSITORY_ROOT / "action_regenerate_all.bat").is_file())
+        self.assertTrue(_is_browser_action({"command": "run_python", "file_python": "browser_research_agent.py"}))
+        self.assertFalse(_is_browser_action({"command": "run_python", "file_python": "kicad_agents/interactive_html_bom_action.py"}))
+
+    def test_interactive_html_bom_is_vendored_and_has_a_headless_action(self):
+        generator = REPOSITORY_ROOT / "tools" / "interactive_html_bom" / "InteractiveHtmlBom" / "generate_interactive_bom.py"
+        self.assertTrue(generator.is_file())
+        working = yaml.safe_load((PROJECT_PART / "working.yaml").read_text(encoding="utf-8"))
+        actions = []
+        for mode_name, mode_details in working.items():
+            if str(mode_name).startswith("oomlout_") and isinstance(mode_details, dict):
+                actions.extend(mode_details.get("actions", []))
+        action = next(row for row in actions if row.get("file_python") == "kicad_agents/interactive_html_bom_action.py")
+        self.assertEqual(action["file_output"], "data/interactivehtmlbom/generation_status.yaml")
+        status = yaml.safe_load(
+            (PROJECT_PART / "data" / "interactivehtmlbom" / "generation_status.yaml").read_text(encoding="utf-8")
+        )
+        self.assertIn(status["status"], ["generated", "waiting_for_kicad_python"])
 
 
 class UsbConnectorDiagramTests(unittest.TestCase):
@@ -903,7 +978,7 @@ class UsbConnectorDiagramTests(unittest.TestCase):
         self.assertEqual(working["pins"]["pin_2"]["name"], "usb_negative")
         self.assertEqual(working["pins"]["pin_5"]["type"], "shield")
 
-        assembly_svg = (USB_A_PART / "working_svg_assembly.svg").read_text(encoding="utf-8")
+        assembly_svg = (USB_A_PART / "data" / "working_svg_assembly.svg").read_text(encoding="utf-8")
         self.assertIn('width="14.3000mm" height="10.6000mm"', assembly_svg)
         self.assertIn('data-pin-one-identifiers="VBUS|1"', assembly_svg)
 
@@ -942,24 +1017,24 @@ class UsbConnectorDiagramTests(unittest.TestCase):
 
         readme = (USB_C_PART / "README.md").read_text(encoding="utf-8")
         self.assertIn("## Datasheet", readme)
-        self.assertIn("[View the datasheet](datasheet.pdf)", readme)
-        self.assertIn("(working_svg_top.svg)", readme)
-        self.assertIn("(working_svg_top_300.png)", readme)
-        self.assertIn("(working_svg_bottom_300.png)", readme)
-        self.assertIn("(working_svg_side_300.png)", readme)
+        self.assertIn("[View the datasheet](data/datasheet.pdf)", readme)
+        self.assertIn("(data/working_svg_top.svg)", readme)
+        self.assertIn("(data/working_svg_top_300.png)", readme)
+        self.assertIn("(data/working_svg_bottom_300.png)", readme)
+        self.assertIn("(data/working_svg_side_300.png)", readme)
 
-        pinout_svg = (USB_C_PART / "working_svg_square_pins.svg").read_text(encoding="utf-8")
+        pinout_svg = (USB_C_PART / "data" / "working_svg_square_pins.svg").read_text(encoding="utf-8")
         self.assertIn("Connector USB C", pinout_svg)
         self.assertIn("A1 gnd", pinout_svg)
         self.assertIn("B1 gnd", pinout_svg)
         self.assertNotIn(">pin 1<", pinout_svg)
 
-        assembly_svg = (USB_C_PART / "working_svg_assembly.svg").read_text(encoding="utf-8")
+        assembly_svg = (USB_C_PART / "data" / "working_svg_assembly.svg").read_text(encoding="utf-8")
         self.assertIn('width="8.9400" height="7.3500"', assembly_svg)
         self.assertEqual(assembly_svg.count('width="0.6000"'), 4)
         self.assertEqual(assembly_svg.count('width="0.3000"'), 8)
 
-        assembly_pins_svg = (USB_C_PART / "working_svg_assembly_pins.svg").read_text(encoding="utf-8")
+        assembly_pins_svg = (USB_C_PART / "data" / "working_svg_assembly_pins.svg").read_text(encoding="utf-8")
         self.assertEqual(assembly_pins_svg.count("</text>"), 12)
         self.assertIn(">gnd</text>", assembly_pins_svg)
         self.assertIn(">vbus</text>", assembly_pins_svg)
@@ -968,8 +1043,8 @@ class UsbConnectorDiagramTests(unittest.TestCase):
 
         connector_view_names = ["top", "bottom", "side"]
         for connector_view_name in connector_view_names:
-            self.assertTrue((USB_C_PART / f"working_svg_{connector_view_name}.svg").is_file())
-            self.assertTrue((USB_C_PART / f"working_svg_{connector_view_name}.png").is_file())
+            self.assertTrue((USB_C_PART / "data" / f"working_svg_{connector_view_name}.svg").is_file())
+            self.assertTrue((USB_C_PART / "data" / f"working_svg_{connector_view_name}.png").is_file())
 
 
 if __name__ == "__main__":

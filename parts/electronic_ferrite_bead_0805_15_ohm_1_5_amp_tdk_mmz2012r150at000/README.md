@@ -1,10 +1,10 @@
-# Ferrite Bead 15 Ohm 1.5 A
+# Ferrite Bead MMZ2012R150AT000 0805
 
 `electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000`
 
-Ferrite Bead 15 Ohm 1.5 A is an OOMP electronic ferrite bead definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
+Ferrite Bead MMZ2012R150AT000 0805 is an OOMP electronic ferrite bead definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
 
-![Ferrite Bead 15 Ohm 1.5 A pinout](working_svg_square_pins.svg)
+![Ferrite Bead MMZ2012R150AT000 0805 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -46,7 +46,7 @@ Ferrite Bead 15 Ohm 1.5 A is an OOMP electronic ferrite bead definition. It uses
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `MMZ2012R150AT000` |
-| LCSC | `C275464` |
+| LCSC | [`C275464`](https://www.lcsc.com/product-detail/C275464.html) |
 
 
 
@@ -63,31 +63,35 @@ Ferrite Bead 15 Ohm 1.5 A is an OOMP electronic ferrite bead definition. It uses
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000)
+
+
+
+[Browse this category](../../navigation/electronic/ferrite_bead/0805/15_ohm/1_5_amp/tdk/README.md)
 
 
 ---

@@ -1,10 +1,10 @@
-# Diode Tvs Array Sot 23 6
+# Diode SRV05-4-P-T7 TVS_ARRAY
 
 `electronic_diode_tvs_array_sot_23_6_protek_srv054pt7`
 
-Diode Tvs Array Sot 23 6 is an OOMP electronic diode definition. It uses the tvs array package or form factor. Its nominal drawing size is 2.9 × 1.6 mm.
+Diode SRV05-4-P-T7 TVS_ARRAY is an OOMP electronic diode definition. It uses the sot 23 6 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm.
 
-![Diode Tvs Array Sot 23 6 pinout](working_svg_square_pins.svg)
+![Diode SRV05-4-P-T7 TVS_ARRAY pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -12,8 +12,9 @@ Diode Tvs Array Sot 23 6 is an OOMP electronic diode definition. It uses the tvs
 | --- | --- |
 | OOMP ID | `electronic_diode_tvs_array_sot_23_6_protek_srv054pt7` |
 | Type | Diode |
-| Package / style | tvs array |
-| Nominal size | 2.9 × 1.6 mm |
+| Package / style | sot 23 6 |
+| Nominal size | 2.9 &#x00D7; 1.6 mm |
+
 
 ## Classification
 
@@ -26,6 +27,8 @@ Diode Tvs Array Sot 23 6 is an OOMP electronic diode definition. It uses the tvs
 | 14 | `protek` |
 | 15 | `srv054pt7` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -33,35 +36,49 @@ Diode Tvs Array Sot 23 6 is an OOMP electronic diode definition. It uses the tvs
 | Length | 2.9 mm |
 | Width | 1.6 mm |
 
+
+
+
 ## Identifiers
 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SRV05-4-P-T7` |
-| LCSC | `C85364` |
+| LCSC | [`C85364`](https://www.lcsc.com/product-detail/C85364.html) |
+
+
+
+
 
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_array_sot_23_6_protek_srv054pt7)
+
+
+
+[Browse this category](../../navigation/electronic/diode/tvs_array/sot_23_6/protek/README.md)
+
 
 ---
 

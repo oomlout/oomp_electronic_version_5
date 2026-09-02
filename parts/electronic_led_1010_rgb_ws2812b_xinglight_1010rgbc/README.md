@@ -1,10 +1,10 @@
-# LED 1010 Rgb Ws2812B Xinglight 1010Rgbc
+# LED RGB WS2812B Xinglight 1010
 
 `electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc`
 
-LED 1010 Rgb Ws2812B Xinglight 1010Rgbc is an OOMP electronic led definition. It uses the 1010 package or form factor. Its nominal drawing size is 1.0 × 1.0 mm.
+LED RGB WS2812B Xinglight 1010 is an OOMP electronic led definition. It uses the 1010 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 1.0 mm.
 
-![LED 1010 Rgb Ws2812B Xinglight 1010Rgbc pinout](working_svg_square_pins.svg)
+![LED RGB WS2812B Xinglight 1010 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ LED 1010 Rgb Ws2812B Xinglight 1010Rgbc is an OOMP electronic led definition. It
 | OOMP ID | `electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc` |
 | Type | Led |
 | Package / style | 1010 |
-| Nominal size | 1.0 × 1.0 mm |
+| Nominal size | 1.0 &#x00D7; 1.0 mm |
+
 
 ## Classification
 
@@ -27,6 +28,8 @@ LED 1010 Rgb Ws2812B Xinglight 1010Rgbc is an OOMP electronic led definition. It
 | 6 | `xinglight` |
 | 7 | `1010rgbc` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -37,26 +40,38 @@ LED 1010 Rgb Ws2812B Xinglight 1010Rgbc is an OOMP electronic led definition. It
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc)
+
+
+
+[Browse this category](../../navigation/electronic/led/1010/rgb/ws2812b/xinglight/README.md)
+
 
 ---
 

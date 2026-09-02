@@ -1,10 +1,10 @@
-# Resistor 1206 680 Ohm
+# Resistor 680 Ohm 1206
 
 `electronic_resistor_1206_680_ohm`
 
-Resistor 1206 680 Ohm is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 × 1.6 mm.
+Resistor 680 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
 
-![Resistor 1206 680 Ohm pinout](working_svg_square_pins.svg)
+![Resistor 680 Ohm 1206 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ Resistor 1206 680 Ohm is an OOMP electronic resistor definition. It uses the 120
 | OOMP ID | `electronic_resistor_1206_680_ohm` |
 | Type | Resistor |
 | Package / style | 1206 |
-| Nominal size | 3.2 × 1.6 mm |
+| Nominal size | 3.2 &#x00D7; 1.6 mm |
+
 
 ## Classification
 
@@ -23,6 +24,8 @@ Resistor 1206 680 Ohm is an OOMP electronic resistor definition. It uses the 120
 | 2 | `resistor` |
 | 3 | `1206` |
 | 4 | `680_ohm` |
+
+
 
 ## Nominal dimensions
 
@@ -34,26 +37,38 @@ Resistor 1206 680 Ohm is an OOMP electronic resistor definition. It uses the 120
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_680_ohm)
+
+
+
+[Browse this category](../../navigation/electronic/resistor/1206/README.md)
+
 
 ---
 

@@ -1,10 +1,10 @@
-# Resistor 0201 470000 Ohm
+# Resistor 470000 Ohm 0201
 
 `electronic_resistor_0201_470000_ohm`
 
-Resistor 0201 470000 Ohm is an OOMP electronic resistor definition. It uses the 0201 package or form factor. Its nominal drawing size is 0.6 × 0.3 mm.
+Resistor 470000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201 package or form factor. Its nominal drawing size is 0.6 &#x00D7; 0.3 mm.
 
-![Resistor 0201 470000 Ohm pinout](working_svg_square_pins.svg)
+![Resistor 470000 Ohm 0201 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ Resistor 0201 470000 Ohm is an OOMP electronic resistor definition. It uses the 
 | OOMP ID | `electronic_resistor_0201_470000_ohm` |
 | Type | Resistor |
 | Package / style | 0201 |
-| Nominal size | 0.6 × 0.3 mm |
+| Nominal size | 0.6 &#x00D7; 0.3 mm |
+
 
 ## Classification
 
@@ -23,6 +24,8 @@ Resistor 0201 470000 Ohm is an OOMP electronic resistor definition. It uses the 
 | 2 | `resistor` |
 | 3 | `0201` |
 | 4 | `470000_ohm` |
+
+
 
 ## Nominal dimensions
 
@@ -34,26 +37,38 @@ Resistor 0201 470000 Ohm is an OOMP electronic resistor definition. It uses the 
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_470000_ohm)
+
+
+
+[Browse this category](../../navigation/electronic/resistor/0201/README.md)
+
 
 ---
 

@@ -38,7 +38,7 @@
 | Identifier | Value |
 | --- | --- |
 {% for identifier in p.part_page.identifiers -%}
-| {{ identifier.title }} | `{{ identifier.value }}` |
+| {{ identifier.title }} | {% if identifier.url %}[`{{ identifier.value }}`]({{ identifier.url }}){% else %}`{{ identifier.value }}`{% endif %} |
 {% endfor %}
 {% endif %}
 
@@ -55,7 +55,7 @@
 {% if p.part_page.has_datasheet %}
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet]({{ p.part_page.datasheet_path }})
 {% endif %}
 
 ## Files
@@ -67,6 +67,10 @@
 
 {% if p.part_page.repository_url %}
 [View this part on GitHub]({{ p.part_page.repository_url }})
+{% endif %}
+
+{% if p.part_page.navigation_link %}
+[Browse this category]({{ p.part_page.navigation_link }})
 {% endif %}
 
 ---

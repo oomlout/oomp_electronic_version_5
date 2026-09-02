@@ -1,10 +1,10 @@
-# Female Socket 3 Pin
+# Connector Header KH-2.54FH-1X3P-H8.5
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5`
 
-Female Socket 3 Pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 7.62 &#x00D7; 2.48 mm. The definition includes 3 documented pins.
+Connector Header KH-2.54FH-1X3P-H8.5 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 7.62 &#x00D7; 2.48 mm. The definition includes 3 documented pins.
 
-![Female Socket 3 Pin pinout](working_svg_top.svg)
+![Connector Header KH-2.54FH-1X3P-H8.5 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -48,7 +48,7 @@ Female Socket 3 Pin is an OOMP electronic connector definition. It uses the head
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `KH-2.54FH-1X3P-H8.5` |
-| LCSC | `C2932670` |
+| LCSC | [`C2932670`](https://www.lcsc.com/product-detail/C2932670.html) |
 
 
 
@@ -66,37 +66,41 @@ Female Socket 3 Pin is an OOMP electronic connector definition. It uses the head
 
 ## Datasheet
 
-[View the datasheet](datasheet.pdf)
+[View the datasheet](data/datasheet.pdf)
 
 
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
 
-![Top view](working_svg_top_300.png)
+![Top view](data/working_svg_top_300.png)
 
-![Bottom view](working_svg_bottom_300.png)
+![Bottom view](data/working_svg_bottom_300.png)
 
-![Side view](working_svg_side_300.png)
+![Side view](data/working_svg_side_300.png)
 
 
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5)
+
+
+
+[Browse this category](../../navigation/electronic/connector/header/2_54_mm_pitch/through_hole/3_pin/socket/kinghelm/README.md)
 
 
 ---

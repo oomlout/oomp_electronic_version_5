@@ -1,10 +1,10 @@
-# LED 0603 Yellow Tint
+# LED Yellow Tint 0603
 
 `electronic_led_0603_yellow_tint`
 
-LED 0603 Yellow Tint is an OOMP electronic led definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm.
+LED Yellow Tint 0603 is an OOMP electronic led definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm.
 
-![LED 0603 Yellow Tint pinout](working_svg_square_pins.svg)
+![LED Yellow Tint 0603 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -13,7 +13,8 @@ LED 0603 Yellow Tint is an OOMP electronic led definition. It uses the 0603 pack
 | OOMP ID | `electronic_led_0603_yellow_tint` |
 | Type | Led |
 | Package / style | 0603 |
-| Nominal size | 1.6 × 0.8 mm |
+| Nominal size | 1.6 &#x00D7; 0.8 mm |
+
 
 ## Classification
 
@@ -25,6 +26,8 @@ LED 0603 Yellow Tint is an OOMP electronic led definition. It uses the 0603 pack
 | 4 | `yellow` |
 | 5 | `tint` |
 
+
+
 ## Nominal dimensions
 
 | Measurement | Value |
@@ -35,26 +38,38 @@ LED 0603 Yellow Tint is an OOMP electronic led definition. It uses the 0603 pack
 
 
 
+
+
+
+
+
 ## Files
 
-![Pinout drawing](working_svg_square_pins_300.png)
+![Pinout drawing](data/working_svg_square_pins_300.png)
 
-![Outline](working_svg_outline_300.png)
+![Outline](data/working_svg_outline_300.png)
 
-![Part ID](working_svg_part_id_300.png)
+![Part ID](data/working_svg_part_id_300.png)
 
-![MD5 alpha](working_svg_md5_6_alpha_300.png)
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
 
-![BIP 39 words](working_svg_bip_39_3_word_300.png)
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
-![Square summary](working_svg_square_300.png)
+![Square summary](data/working_svg_square_300.png)
 
-![Dimensions](working_svg_dimensioned_300.png)
+![Dimensions](data/working_svg_dimensioned_300.png)
 
-![Dimensions with labels](working_svg_dimensioned_titles_300.png)
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_yellow_tint)
+
+
+
+[Browse this category](../../navigation/electronic/led/0603/yellow/README.md)
+
 
 ---
 
