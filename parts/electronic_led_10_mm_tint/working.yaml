@@ -28,6 +28,8 @@ bip_39_full_no_space: printfrogtowardhabitrenderimitatemelodymonthdefenseattitud
 bip_39_full_space: print frog toward habit render imitate melody month defense attitude
   winner eternal
 bip_39_full_underscore: print_frog_toward_habit_render_imitate_melody_month_defense_attitude_winner_eternal
+category: led
+category_name: LED
 dimensions_mm:
   length: 10.0
   width: 10.0
@@ -37,6 +39,10 @@ id: electronic_led_10_mm_tint
 id_no_class: electronic_led_10_mm_tint
 id_no_size: electronic_led_10_mm_tint
 id_no_type: electronic_led_10_mm_tint
+kicad:
+  hand_solder: LED_THT:LED_D10.0mm
+  machine_solder: LED_THT:LED_D10.0mm
+  symbol: Device:LED
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_10_mm_tint
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_10_mm_tint
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_10_mm_tint
@@ -60,6 +66,12 @@ name_space: electronic led 10 mm tint
 name_upper: ELECTRONIC LED 10 MM TINT
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 10.0
         width: 10.0
       directory: parts\electronic_led_10_mm_tint
       distributors: []
+      kicad:
+        hand_solder: LED_THT:LED_D10.0mm
+        machine_solder: LED_THT:LED_D10.0mm
+        symbol: Device:LED
       name: electronic_led_10_mm_tint
       name_proper: LED Tint 10_MM
       name_readable: LED Tint 10_MM
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC LED 10 MM TINT
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

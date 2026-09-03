@@ -1,3 +1,118 @@
-available: false
-units: []
-connected_components: []
+available: true
+units:
+- reference: R101
+  source_file: data/kicad_file_sheets/micro-rp2040.kicad_sch
+  uuid: 00000000-0000-0000-0000-000060f5d7b1
+  library_id: Device:R_Small
+  unit: 1
+  body_style: 1
+  position:
+    x: 68.58
+    y: 107.95
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R101
+    Value: 1K
+    Footprint: Resistor_SMD:R_0402_1005Metric
+    Datasheet: '~'
+    RMB: '0.006373'
+    Supplier: https://item.szlcsc.com/116008.html
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 0.762
+    position:
+      x: 68.58
+      y: 105.41
+    net: QSPI_SS
+    net_aliases:
+    - QSPI_SS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R102
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U102
+      pin_number: '1'
+      pin_name: CS
+    - reference: U103
+      pin_number: '56'
+      pin_name: QSPI_SS
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 0.762
+    position:
+      x: 68.58
+      y: 110.49
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: SW101
+      pin_number: '1'
+      pin_name: A
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.8636
+        y: -1.8796
+      max:
+        x: 0.8636
+        y: 1.8796
+      width: 1.7272
+      height: 3.7592
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 67.7164
+        y: 106.0704
+      max:
+        x: 69.4436
+        y: 109.8296
+      width: 1.7272
+      height: 3.7592
+      center:
+        x: 68.58
+        y: 107.95
+  warnings: []
+connected_components:
+- reference: R102
+  pin_number: '2'
+  pin_name: '~'
+- reference: SW101
+  pin_number: '1'
+  pin_name: A
+- reference: U102
+  pin_number: '1'
+  pin_name: CS
+- reference: U103
+  pin_number: '56'
+  pin_name: QSPI_SS

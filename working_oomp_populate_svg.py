@@ -278,6 +278,12 @@ def get_dimensions_mm(option):
 
 
 def add_svg_details(option):
+    # Family defaults may be applied twice (populate and working_oomp). Keep
+    # explicit datasheet dimensions from the populate-extra definition.
+    explicit_geometry = {}
+    for key in ["ic_dimensions_mm", "connector_dimensions_mm", "header_dimensions_mm", "dimension_reference"]:
+        if isinstance(option.get(key), dict):
+            explicit_geometry[key] = copy.deepcopy(option[key])
     component_type = option.get("taxonomy_2", "")
     option["name_short"] = option.get("name_short", get_name_short(option))
     option["part_id"] = option.get(
@@ -484,5 +490,7 @@ def add_svg_details(option):
                     "write_yaml": False,
                 }
             )
+    for key, details in explicit_geometry.items():
+        option.setdefault(key, {}).update(details)
     option["svg_details"] = svg_details
     return option

@@ -28,6 +28,8 @@ bip_39_full_no_space: bundlebirthsentenceexistcouchlessonscreensaytopictreeimpos
 bip_39_full_space: bundle birth sentence exist couch lesson screen say topic tree
   impose sword
 bip_39_full_underscore: bundle_birth_sentence_exist_couch_lesson_screen_say_topic_tree_impose_sword
+category: led
+category_name: LED
 dimensions_mm:
   length: 2.0
   width: 1.25
@@ -37,6 +39,10 @@ id: electronic_led_0805_green_tint
 id_no_class: electronic_led_0805_green_tint
 id_no_size: electronic_led_0805_green_tint
 id_no_type: electronic_led_0805_green_tint
+kicad:
+  hand_solder: ''
+  machine_solder: LED_SMD:LED_0805_2012Metric
+  symbol: Device:LED
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_green_tint
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_green_tint
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_green_tint
@@ -60,6 +66,12 @@ name_space: electronic led 0805 green tint
 name_upper: ELECTRONIC LED 0805 GREEN TINT
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 2.0
         width: 1.25
       directory: parts\electronic_led_0805_green_tint
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: LED_SMD:LED_0805_2012Metric
+        symbol: Device:LED
       name: electronic_led_0805_green_tint
       name_proper: LED Green Tint 0805
       name_readable: LED Green Tint 0805
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC LED 0805 GREEN TINT
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

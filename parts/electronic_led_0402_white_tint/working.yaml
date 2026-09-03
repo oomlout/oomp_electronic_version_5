@@ -28,6 +28,8 @@ bip_39_full_no_space: leaderentireblackjuicegreenleopardrebuildrenewbroccolishri
 bip_39_full_space: leader entire black juice green leopard rebuild renew broccoli
   shrimp bundle trust
 bip_39_full_underscore: leader_entire_black_juice_green_leopard_rebuild_renew_broccoli_shrimp_bundle_trust
+category: led
+category_name: LED
 dimensions_mm:
   length: 1.0
   width: 0.5
@@ -37,6 +39,10 @@ id: electronic_led_0402_white_tint
 id_no_class: electronic_led_0402_white_tint
 id_no_size: electronic_led_0402_white_tint
 id_no_type: electronic_led_0402_white_tint
+kicad:
+  hand_solder: ''
+  machine_solder: LED_SMD:LED_0402_1005Metric
+  symbol: Device:LED
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_white_tint
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_white_tint
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_white_tint
@@ -60,6 +66,12 @@ name_space: electronic led 0402 white tint
 name_upper: ELECTRONIC LED 0402 WHITE TINT
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 1.0
         width: 0.5
       directory: parts\electronic_led_0402_white_tint
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: LED_SMD:LED_0402_1005Metric
+        symbol: Device:LED
       name: electronic_led_0402_white_tint
       name_proper: LED White Tint 0402
       name_readable: LED White Tint 0402
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC LED 0402 WHITE TINT
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

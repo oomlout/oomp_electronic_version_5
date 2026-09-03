@@ -1,10 +1,10 @@
-# IC AiP74HCT245TA20.TR TSSOP_20
+# IC AiP74HCT245TA20.TR TSSOP 20
 
 `electronic_ic_tssop_20_logic_octal_bus_transceiver_wuxi_i_core_elec_aip74hct245ta20_tr`
 
-IC AiP74HCT245TA20.TR TSSOP_20 is an OOMP electronic ic definition. It uses the tssop 20 package or form factor. Its nominal drawing size is 6.5 &#x00D7; 4.4 mm. The definition includes 20 documented pins.
+IC AiP74HCT245TA20.TR TSSOP 20 is an OOMP electronic ic definition. It uses the tssop 20 package or form factor. Its nominal drawing size is 6.5 &#x00D7; 4.4 mm. The definition includes 20 documented pins.
 
-![IC AiP74HCT245TA20.TR TSSOP_20 pinout](data/working_svg_square_pins.svg)
+![IC AiP74HCT245TA20.TR TSSOP 20 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -85,6 +85,10 @@ IC AiP74HCT245TA20.TR TSSOP_20 is an OOMP electronic ic definition. It uses the 
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

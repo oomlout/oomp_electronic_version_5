@@ -1,10 +1,10 @@
-# Wire Jumper Breadboard Plug To Breadboard Plug PROTOTYPING
+# Wire Jumper Breadboard Plug To Breadboard Plug Mixed Length Bundle Rainbow 75 Pieces PROTOTYPING
 
 `electronic_wire_prototyping_jumper_breadboard_plug_to_breadboard_plug_mixed_length_bundle_rainbow_75_pieces`
 
-Wire Jumper Breadboard Plug To Breadboard Plug PROTOTYPING is an OOMP electronic wire definition. It uses the prototyping package or form factor. Its nominal drawing size is 150 &#x00D7; 2.0 mm.
+Wire Jumper Breadboard Plug To Breadboard Plug Mixed Length Bundle Rainbow 75 Pieces PROTOTYPING is an OOMP electronic wire definition. It uses the prototyping package or form factor. Its nominal drawing size is 150 &#x00D7; 2.0 mm.
 
-![Wire Jumper Breadboard Plug To Breadboard Plug PROTOTYPING pinout](data/working_svg_square_pins.svg)
+![Wire Jumper Breadboard Plug To Breadboard Plug Mixed Length Bundle Rainbow 75 Pieces PROTOTYPING pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -47,6 +47,10 @@ Wire Jumper Breadboard Plug To Breadboard Plug PROTOTYPING is an OOMP electronic
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

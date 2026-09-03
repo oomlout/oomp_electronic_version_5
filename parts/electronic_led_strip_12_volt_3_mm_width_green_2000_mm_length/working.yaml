@@ -28,6 +28,8 @@ bip_39_full_no_space: repairbelowsizeanimalwondertrophytypicalrenewdawnanchorawe
 bip_39_full_space: repair below size animal wonder trophy typical renew dawn anchor
   awesome era
 bip_39_full_underscore: repair_below_size_animal_wonder_trophy_typical_renew_dawn_anchor_awesome_era
+category: led
+category_name: LED
 dimensions_mm:
   length: 2000
   width: 3
@@ -37,6 +39,10 @@ id: electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
 id_no_class: electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
 id_no_size: electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
 id_no_type: electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
+kicad:
+  hand_solder: ''
+  machine_solder: ''
+  symbol: ''
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
@@ -60,6 +66,12 @@ name_space: electronic led strip 12 volt 3 mm width green 2000 mm length
 name_upper: ELECTRONIC LED STRIP 12 VOLT 3 MM WIDTH GREEN 2000 MM LENGTH
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 2000
         width: 3
       directory: parts\electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: ''
+        symbol: ''
       name: electronic_led_strip_12_volt_3_mm_width_green_2000_mm_length
       name_proper: LED Green 2000 Mm Length STRIP_12_VOLT_3_MM_WIDTH
       name_readable: LED Green 2000 Mm Length STRIP_12_VOLT_3_MM_WIDTH
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC LED STRIP 12 VOLT 3 MM WIDTH GREEN 2000 MM LENGTH
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

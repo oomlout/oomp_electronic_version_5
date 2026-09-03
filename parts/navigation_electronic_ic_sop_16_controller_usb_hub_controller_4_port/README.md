@@ -5,6 +5,19 @@ This OOMP navigation part publishes the category index at
 
 It contains 1 descendant parts.
 
+
+[Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/ic/sop_16/controller)
+
+
+
+## Categories
+
+- [Corechips](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/ic/sop_16/controller/usb_hub_controller_4_port/corechips)
+
+
+
+
+
 ---
 
 Generated from the populated OOMP taxonomy by Roboclick and Jinja.

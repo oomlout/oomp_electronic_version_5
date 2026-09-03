@@ -1,10 +1,10 @@
-# Transistor MMBT7002K SOT_23
+# Transistor MMBT7002K SOT 23
 
 `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k`
 
-Transistor MMBT7002K SOT_23 is an OOMP electronic transistor definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.6 mm. The definition includes 3 documented pins.
+Transistor MMBT7002K SOT 23 is an OOMP electronic transistor definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.6 mm. The definition includes 3 documented pins.
 
-![Transistor MMBT7002K SOT_23 pinout](data/working_svg_square_pins.svg)
+![Transistor MMBT7002K SOT 23 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -71,6 +71,10 @@ Transistor MMBT7002K SOT_23 is an OOMP electronic transistor definition. It uses
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

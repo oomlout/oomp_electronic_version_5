@@ -160,7 +160,11 @@ def add_part_page_details(part):
                 continue
             file_destination = str(file_copy.get("file_destination", "")).replace("\\", "/")
             if file_destination.lower().endswith("datasheet.pdf"):
-                has_datasheet = True
+                source_file = str(file_copy.get("file_source", ""))
+                if not os.path.isabs(source_file):
+                    source_file = os.path.join(os.path.dirname(__file__), source_file)
+                if os.path.isfile(source_file):
+                    has_datasheet = True
 
     main_image = {
         "title": "Pinout",
@@ -204,6 +208,13 @@ def add_part_page_details(part):
 def add_part_build_actions(part, count):
     """Add the deterministic SVG, PNG-preview, and README preparation block."""
     actions = []
+    actions.append({
+        "command": "run_python",
+        "file_python": "kicad_agents/kicad_library_agent.py",
+        "file_output": f"{DATA_DIRECTORY}/kicad/manifest.yaml",
+        "description": "Copy official KiCad masters into per-part OOMP symbols and verified soldering footprint variants.",
+        "timeout": "600",
+    })
     file_copies = part.get("file_copy", [])
     if isinstance(file_copies, list):
         for file_copy in file_copies:
@@ -252,7 +263,13 @@ def add_part_build_actions(part, count):
         )
         used_destinations.append(main_preview)
 
-    diagrams = part.get("part_page", {}).get("diagrams", [])
+    diagrams = list(part.get("part_page", {}).get("diagrams", []))
+    # The pinout is also offered in Files when a connector top view or a
+    # mounting-hole outline is the hero. Always generate that preview too.
+    diagrams.append({
+        "png": f"{DATA_DIRECTORY}/working_svg_square_pins.png",
+        "preview": f"{DATA_DIRECTORY}/working_svg_square_pins_300.png",
+    })
     for diagram in diagrams:
         png_filename = diagram.get("png", "")
         preview_filename = diagram.get("preview", "")
@@ -292,11 +309,16 @@ def add_project_actions(part, count):
         "project_git_ref",
         "project_sparse_checkout",
         "project_version",
+        "project_board",
+        "project_board_name",
+        "project_board_url",
         "project_file_folder",
         "project_file_basename",
         "project_file_path",
         "project_file_extensions",
         "project_match_overrides",
+        "project_match_blocked",
+        "project_review_notes",
     ]
 
     git_action = {
@@ -350,12 +372,6 @@ def add_project_actions(part, count):
 
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
-        "actions": [project_compile_action] + board_preview_actions,
-        "file_test": "",
-        "retries_until_complete": 0,
-    }
-    count += 1
-    part[f"oomlout_ai_roboclick_{count}"] = {
         "actions": [
             {
                 "command": "run_python",
@@ -367,6 +383,26 @@ def add_project_actions(part, count):
         ],
         "file_test": "",
         "retries_until_complete": 0,
+    }
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [project_compile_action] + board_preview_actions,
+        "file_test": "",
+        "retries_until_complete": 0,
+    }
+    count += 1
+    conversion_action = {
+        "command": "run_python",
+        "file_python": "kicad_agents/kicad_project_action.py",
+        "file_output": f"{DATA_DIRECTORY}/oomp_design/conversion_report.yaml",
+        "description": "Preserve original KiCad files, package local libraries, and replace only verified unchanged defaults in an OOMP design copy.",
+        "parts_directory": "parts",
+        "project_match_overrides": copy.deepcopy(part.get("project_match_overrides", {})),
+        "project_file_basename": part.get("project_file_basename", ""),
+        "timeout": "1200",
+    }
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [conversion_action], "file_test": "", "retries_until_complete": 0,
     }
     return count
 
@@ -432,6 +468,8 @@ def create_generic(**kwargs):
         if not is_project_part and not is_navigation_part:
             import working_oomp_populate_svg
             working_oomp_populate_svg.add_svg_details(part)
+            import working_oomp_populate_kicad
+            working_oomp_populate_kicad.add_kicad_details(part)
             add_part_page_details(part)
         else:
             part["name_short"] = part.get("name_readable", part.get("name_proper", thing))
@@ -655,8 +693,21 @@ def create_generic(**kwargs):
     # thread per item and returns before all working.yaml files are complete,
     # which made full-regeneration actions race their own output.
     for part in parts:
+        part_filters = kwargs.get("filter", "")
+        if not isinstance(part_filters, list):
+            part_filters = [part_filters]
+        include_part = False
+        for part_filter in part_filters:
+            if part_filter in part["name"]:
+                include_part = True
+        if not include_part:
+            continue
         part_details = copy.deepcopy(part)
         part_details.update(copy.deepcopy(add_parts_kwargs))
+        # The shared helper still supplies IDs and hashes, but its repository
+        # links are from v1. Normalize the returned record before writing once.
+        part_details["make_files"] = False
+        oomp.add_part_filter = ""  # Filtering is handled explicitly above.
         generated_part = oomp.add_part(**part_details)
         if generated_part is None:
             continue
@@ -675,19 +726,17 @@ def create_generic(**kwargs):
             generated_working_file = os.path.join(
                 generated_parts_directory, generated_id, "working.yaml"
             )
-            if os.path.isfile(generated_working_file):
-                with open(generated_working_file, "r", encoding="utf-8") as working_file:
-                    generated_working = yaml.safe_load(working_file) or {}
-                generated_working["link_github"] = repository_url
-                generated_working["link_main"] = repository_url
-                generated_working["link_redirect"] = repository_url
-                with open(generated_working_file, "w", encoding="utf-8") as working_file:
-                    yaml.safe_dump(
-                        generated_working,
-                        working_file,
-                        sort_keys=False,
-                        allow_unicode=True,
-                    )
+            generated_working = copy.deepcopy(generated_part)
+            generated_working.pop("make_files", None)
+            generated_working.pop("counter", None)
+            os.makedirs(os.path.dirname(generated_working_file), exist_ok=True)
+            with open(generated_working_file, "w", encoding="utf-8") as working_file:
+                yaml.safe_dump(
+                    generated_working,
+                    working_file,
+                    sort_keys=True,
+                    allow_unicode=True,
+                )
 
 
 

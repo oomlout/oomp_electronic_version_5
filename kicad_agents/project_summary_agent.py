@@ -49,13 +49,15 @@ def _write_json(path, data):
 
 def _write_text(path, text):
     path.parent.mkdir(parents=True, exist_ok=True)
-    for attempt in range(5):
+    for attempt in range(20):
         try:
+            if path.is_file() and path.read_text(encoding="utf-8") == text:
+                return
             with path.open("w", encoding="utf-8", newline="\n") as output_file:
                 output_file.write(text)
             return
         except OSError as error:
-            if error.errno != 22 or attempt == 4:
+            if error.errno not in [13, 22] or attempt == 19:
                 raise
             # Windows can briefly return EINVAL while a freshly replaced SVG
             # or README is being inspected by another local process.  The
@@ -290,7 +292,7 @@ def _oomp_description(component):
     return ""
 
 
-def _bom_rows(components, oomp_link_prefix="../../../../parts"):
+def _bom_rows(components, oomp_link_prefix="../../../../parts", parts_directory=None):
     groups = {}
     for component in components:
         pcb = component.get("pcb")
@@ -308,6 +310,9 @@ def _bom_rows(components, oomp_link_prefix="../../../../parts"):
         key = (oomp_id, value_text, footprint)
         if key not in groups:
             description = oomp_id.replace("_", " ") if oomp_id else value_text or footprint or "Unmatched component"
+            if oomp_id and parts_directory is not None:
+                part_metadata = _read_yaml(Path(parts_directory) / oomp_id / "working.yaml")
+                description = part_metadata.get("name_readable", description)
             groups[key] = {
                 "description": description,
                 "value": value_text,
@@ -489,6 +494,35 @@ def _svg_polyline(points, css_class):
     return f'<polyline class="{css_class}" points="{points_text}" />'
 
 
+def _svg_slot(css_class, x, y, width, height, rotation=0):
+    """Draw circular end caps and straight joining sides at the true size."""
+    radius = min(width, height) / 2
+    centre_spacing = max(width, height) - 2 * radius
+    left = x - centre_spacing / 2
+    right = x + centre_spacing / 2
+    if height > width:
+        rotation += 90
+    path = (
+        f"M {left:.4f} {y - radius:.4f} "
+        f"A {radius:.4f} {radius:.4f} 0 0 0 {left:.4f} {y + radius:.4f} "
+        f"L {right:.4f} {y + radius:.4f} "
+        f"A {radius:.4f} {radius:.4f} 0 0 0 {right:.4f} {y - radius:.4f} Z"
+    )
+    shapes = [f'<path class="{css_class}" d="{path}" />']
+    if css_class == "mounting-hole" and centre_spacing > 0:
+        # Keep the actual cutout boundary and show the two circular ends
+        # explicitly; these outlines are a drawing cue, not separate drills.
+        for centre_x in [left, right]:
+            shapes.append(
+                f'<circle class="{css_class}" cx="{centre_x:.4f}" cy="{y:.4f}" '
+                f'r="{radius:.4f}" style="fill: none" />'
+            )
+    return (
+        f'<g transform="rotate({rotation:.4f} {x:.4f} {y:.4f})">'
+        + "".join(shapes) + '</g>'
+    )
+
+
 def _svg_mounting_hole(row, x, y):
     """Return the monochrome pad/drill shapes for one extracted hole."""
     lines = []
@@ -501,19 +535,22 @@ def _svg_mounting_hole(row, x, y):
     drill_y = float(drill_size.get("y", drill_x))
 
     if row.get("plating") == "plated" and pad_x > 0 and pad_y > 0:
-        lines.append(
-            f'<ellipse class="mechanical-pad" cx="{x:.4f}" cy="{y:.4f}" '
-            f'rx="{pad_x / 2:.4f}" ry="{pad_y / 2:.4f}" '
-            f'transform="rotate({rotation:.4f} {x:.4f} {y:.4f})" />'
-        )
+        pad_shape = row.get("pad_shape", "")
+        if pad_shape == "rect":
+            lines.append(
+                f'<rect class="mechanical-pad" x="{x - pad_x / 2:.4f}" y="{y - pad_y / 2:.4f}" '
+                f'width="{pad_x:.4f}" height="{pad_y:.4f}" '
+                f'transform="rotate({rotation:.4f} {x:.4f} {y:.4f})" />'
+            )
+        elif abs(pad_x - pad_y) < 0.000001:
+            lines.append(
+                f'<circle class="mechanical-pad" cx="{x:.4f}" cy="{y:.4f}" r="{pad_x / 2:.4f}" />'
+            )
+        else:
+            lines.append(_svg_slot("mechanical-pad", x, y, pad_x, pad_y, rotation))
 
     if row.get("style") == "slot" or abs(drill_x - drill_y) > 0.000001:
-        corner_radius = min(drill_x, drill_y) / 2
-        lines.append(
-            f'<rect class="mounting-hole" x="{x - drill_x / 2:.4f}" y="{y - drill_y / 2:.4f}" '
-            f'width="{drill_x:.4f}" height="{drill_y:.4f}" rx="{corner_radius:.4f}" '
-            f'transform="rotate({rotation:.4f} {x:.4f} {y:.4f})" />'
-        )
+        lines.append(_svg_slot("mounting-hole", x, y, drill_x, drill_y, rotation))
     else:
         lines.append(
             f'<circle class="mounting-hole" cx="{x:.4f}" cy="{y:.4f}" r="{drill_x / 2:.4f}" />'
@@ -910,13 +947,20 @@ def _make_mechanical_svg(
     colors = style["colors"]
     typography = style["typography"]
     margin = float(svg_style.get("mechanical_margin_mm", svg_style["margin_mm"]))
+    mounting_hole_rows = _mounting_hole_rows(components, bounds)
+    # Leave room for the complete names in the two outside callout columns.
+    # The factor is deliberately generous for the editable display font.
+    horizontal_margin = margin
+    text_size = float(typography["mechanical_size_mm"])
+    for hole_row in mounting_hole_rows:
+        label_width = len(hole_row["name"]) * text_size * 0.7 + 3.0
+        horizontal_margin = max(horizontal_margin, label_width)
     board_width = bounds["max_x"] - bounds["min_x"]
     board_height = bounds["max_y"] - bounds["min_y"]
-    view_min_x = -margin
+    view_min_x = -horizontal_margin
     view_min_y = -margin
-    view_width = board_width + margin * 2
+    view_width = board_width + horizontal_margin * 2
     view_height = board_height + margin * 2
-    mounting_hole_rows = _mounting_hole_rows(components, bounds)
 
     local_edge_shapes = []
     for edge_shape in edge_shapes:
@@ -979,9 +1023,10 @@ def _make_mechanical_svg(
 
     label_columns = [left_label_rows, right_label_rows]
     label_positions = {}
-    minimum_label_y = 1.4
-    maximum_label_y = max(minimum_label_y, board_height - 2.0)
-    label_spacing = 3.0
+    line_height = text_size * 1.35
+    minimum_label_y = text_size * 2
+    maximum_label_y = max(minimum_label_y, board_height - line_height * 3)
+    label_spacing = line_height * 4 + text_size
     for column_index in range(len(label_columns)):
         label_column = label_columns[column_index]
         label_column.sort(key=lambda label_record: label_record["hole_y"])
@@ -991,9 +1036,13 @@ def _make_mechanical_svg(
             label_record["label_y"] = label_y
             next_label_y = label_y + label_spacing
         if len(label_column) > 0 and label_column[-1]["label_y"] > maximum_label_y:
-            shift_up = label_column[-1]["label_y"] - maximum_label_y
-            for label_record in label_column:
-                label_record["label_y"] -= shift_up
+            # Pull only the crowded bottom labels upward. Moving the whole
+            # column would push the first callout into the 0,0 origin.
+            next_label_y = maximum_label_y
+            for label_index in range(len(label_column) - 1, -1, -1):
+                label_record = label_column[label_index]
+                label_record["label_y"] = min(label_record["label_y"], next_label_y)
+                next_label_y = label_record["label_y"] - label_spacing
         for label_record in label_column:
             label_positions[label_record["row_index"]] = {
                 "x": -1.0 if column_index == 0 else board_width + 1.0,
@@ -1025,9 +1074,9 @@ def _make_mechanical_svg(
         lines.append(
             f'<text class="mechanical-text" x="{label_x:.4f}" y="{label_y:.4f}" text-anchor="{text_anchor}">'
             f'<tspan x="{label_x:.4f}" dy="0">{html.escape(mounting_hole_row["id"])} {html.escape(mounting_hole_row["reference"])}</tspan>'
-            f'<tspan x="{label_x:.4f}" dy="0.85">{html.escape(mounting_hole_row["name"])}</tspan>'
-            f'<tspan x="{label_x:.4f}" dy="0.85">x {x:.3f} y {y:.3f}</tspan>'
-            f'<tspan x="{label_x:.4f}" dy="0.85">{html.escape(drill_text)} mm {plating_short}</tspan>'
+            f'<tspan x="{label_x:.4f}" dy="{line_height:.4f}">{html.escape(mounting_hole_row["name"])}</tspan>'
+            f'<tspan x="{label_x:.4f}" dy="{line_height:.4f}">x {x:.3f} y {y:.3f}</tspan>'
+            f'<tspan x="{label_x:.4f}" dy="{line_height:.4f}">{html.escape(drill_text)} mm {plating_short}</tspan>'
             '</text>'
         )
 
@@ -1271,6 +1320,8 @@ def generate_project_summary(
         identity["github_url"] = part_metadata["project_github_url"]
     else:
         identity["github_url"] = f"https://github.com/{identity['owner']}/{identity['repository']}"
+    if part_metadata.get("project_board_url", ""):
+        identity["github_url"] = part_metadata["project_board_url"]
 
     raw_project = project_data.get("project", {})
     display_name = str(part_metadata.get("name_readable", "")).strip()
@@ -1290,6 +1341,9 @@ def generate_project_summary(
     repository_links = {
         "repository": OOMP_REPOSITORY_URL,
         "part": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}",
+        "kicad_original": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/original",
+        "kicad_oomp": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/oomp_design",
+        "kicad_conversion_report": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/oomp_design/conversion_report.yaml",
         "generated_source": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src",
         "board": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board.svg",
         "board_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board.svg",
@@ -1449,6 +1503,9 @@ def generate_project_summary(
     }
     summary = project_data.get("summary", {})
     generated_text = _deterministic_text(display_name, summary, board, placement)
+    generated_text["review_notes"].extend(project_data.get("review_notes", []))
+    for reference, reason in project_data.get("blocked_matches", {}).items():
+        generated_text["review_notes"].append(f"{reference}: {reason}")
     summary_data = {
         "format_version": 1,
         "generated_by": "kicad_agents.project_summary_agent",
@@ -1477,7 +1534,10 @@ def generate_project_summary(
         "board_mechanical": board_mechanical,
         "board_mechanical_png": board_mechanical_png,
         "mounting_holes": mounting_holes,
-        "bom": _bom_rows(components, oomp_link_prefix=repository_links["parts"]),
+        "interactivehtmlbom": {
+            "available": (project_directory / "data" / "interactivehtmlbom" / "ibom.html").is_file(),
+        },
+        "bom": _bom_rows(components, oomp_link_prefix=repository_links["parts"], parts_directory=parts_directory),
         "nets": _net_rows(components),
         "generated_text": generated_text,
         "style": style,

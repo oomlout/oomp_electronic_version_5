@@ -1,3 +1,226 @@
-available: false
-units: []
-connected_components: []
+available: true
+units:
+- reference: Q402
+  source_file: data/kicad_file_sheets/bpu-current_limiter.kicad_sch
+  uuid: 00000000-0000-0000-0000-00005e9f69fe
+  library_id: Transistor_FET:BSS84
+  unit: 1
+  body_style: 1
+  position:
+    x: 146.05
+    y: 107.95
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q402
+    Value: SI2301
+    Footprint: Package_TO_SOT_SMD:SOT-523
+    Datasheet: http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf
+    RMB: '0.232494'
+    Supplier: https://item.szlcsc.com/76686.html
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: G
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 146.05
+      y: 113.03
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q401
+      pin_number: '6'
+      pin_name: C1
+    - reference: R412
+      pin_number: '1'
+      pin_name: '~'
+  - number: '2'
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 151.13
+      y: 105.41
+    net: VREF_VOUT
+    net_aliases:
+    - VREF_VOUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: Q300
+      pin_number: '2'
+      pin_name: S
+    - reference: Q301
+      pin_number: '2'
+      pin_name: S
+    - reference: Q302
+      pin_number: '2'
+      pin_name: S
+    - reference: Q303
+      pin_number: '2'
+      pin_name: S
+    - reference: Q304
+      pin_number: '2'
+      pin_name: S
+    - reference: Q305
+      pin_number: '2'
+      pin_name: S
+    - reference: Q306
+      pin_number: '2'
+      pin_name: S
+    - reference: Q307
+      pin_number: '2'
+      pin_name: S
+    - reference: Q401
+      pin_number: '1'
+      pin_name: E1
+    - reference: R319
+      pin_number: '2'
+      pin_name: '~'
+  - number: '3'
+    name: D
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 140.97
+      y: 105.41
+    net: VREG_OUT
+    net_aliases:
+    - VREG_OUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C407
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C408
+      pin_number: '1'
+      pin_name: '~'
+    - reference: D401
+      pin_number: '1'
+      pin_name: K
+    - reference: Q401
+      pin_number: '4'
+      pin_name: E2
+    - reference: R404
+      pin_number: '1'
+      pin_name: '~'
+    - reference: RN402
+      pin_number: '7'
+      pin_name: R1.8
+    - reference: U403
+      pin_number: '5'
+      pin_name: OUT
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -2.921
+      max:
+        x: 4.572
+        y: 2.921
+      width: 7.112
+      height: 5.842
+      center:
+        x: 1.016
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 143.129
+        y: 103.378
+      max:
+        x: 148.971
+        y: 110.49
+      width: 5.842
+      height: 7.112
+      center:
+        x: 146.05
+        y: 106.934
+  warnings: []
+connected_components:
+- reference: C407
+  pin_number: '1'
+  pin_name: '~'
+- reference: C408
+  pin_number: '1'
+  pin_name: '~'
+- reference: D401
+  pin_number: '1'
+  pin_name: K
+- reference: Q300
+  pin_number: '2'
+  pin_name: S
+- reference: Q301
+  pin_number: '2'
+  pin_name: S
+- reference: Q302
+  pin_number: '2'
+  pin_name: S
+- reference: Q303
+  pin_number: '2'
+  pin_name: S
+- reference: Q304
+  pin_number: '2'
+  pin_name: S
+- reference: Q305
+  pin_number: '2'
+  pin_name: S
+- reference: Q306
+  pin_number: '2'
+  pin_name: S
+- reference: Q307
+  pin_number: '2'
+  pin_name: S
+- reference: Q401
+  pin_number: '1'
+  pin_name: E1
+- reference: Q401
+  pin_number: '4'
+  pin_name: E2
+- reference: Q401
+  pin_number: '6'
+  pin_name: C1
+- reference: R319
+  pin_number: '2'
+  pin_name: '~'
+- reference: R404
+  pin_number: '1'
+  pin_name: '~'
+- reference: R412
+  pin_number: '1'
+  pin_name: '~'
+- reference: RN402
+  pin_number: '7'
+  pin_name: R1.8
+- reference: U403
+  pin_number: '5'
+  pin_name: OUT

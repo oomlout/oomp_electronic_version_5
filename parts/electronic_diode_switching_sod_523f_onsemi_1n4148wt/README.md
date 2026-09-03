@@ -1,10 +1,10 @@
-# Diode 1N4148WT SWITCHING
+# Diode 1N4148WT SOD-523F
 
 `electronic_diode_switching_sod_523f_onsemi_1n4148wt`
 
-Diode 1N4148WT SWITCHING is an OOMP electronic diode definition. It uses the sod 523f package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
+Diode 1N4148WT SOD-523F is an OOMP electronic diode definition. It uses the sod 523f package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
-![Diode 1N4148WT SWITCHING pinout](data/working_svg_square_pins.svg)
+![Diode 1N4148WT SOD-523F pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -62,6 +62,10 @@ Diode 1N4148WT SWITCHING is an OOMP electronic diode definition. It uses the sod
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

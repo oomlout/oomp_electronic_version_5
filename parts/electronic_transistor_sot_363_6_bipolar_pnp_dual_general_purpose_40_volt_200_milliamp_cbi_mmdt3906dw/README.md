@@ -1,10 +1,10 @@
-# Transistor MMDT3906DW SOT_363_6
+# Transistor MMDT3906DW SOT 363 6
 
 `electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw`
 
-Transistor MMDT3906DW SOT_363_6 is an OOMP electronic transistor definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.1 &#x00D7; 2.3 mm. The definition includes 6 documented pins.
+Transistor MMDT3906DW SOT 363 6 is an OOMP electronic transistor definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.1 &#x00D7; 2.3 mm. The definition includes 6 documented pins.
 
-![Transistor MMDT3906DW SOT_363_6 pinout](data/working_svg_square_pins.svg)
+![Transistor MMDT3906DW SOT 363 6 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -74,6 +74,10 @@ Transistor MMDT3906DW SOT_363_6 is an OOMP electronic transistor definition. It 
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

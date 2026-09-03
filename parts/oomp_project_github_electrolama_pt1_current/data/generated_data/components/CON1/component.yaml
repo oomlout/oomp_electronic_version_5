@@ -38,12 +38,15 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 73.66
+        y: 48.26
       net: null
       net_aliases: []
       net_scope: sheet
       no_connect: false
-      connected_to: []
+      connected_to:
+      - reference: R2
+        pin_number: '1'
+        pin_name: '1'
     - number: CC2
       name: CC2
       electrical_type: bidirectional
@@ -55,12 +58,15 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 71.12
+        y: 50.8
       net: null
       net_aliases: []
       net_scope: sheet
       no_connect: false
-      connected_to: []
+      connected_to:
+      - reference: R1
+        pin_number: '1'
+        pin_name: '1'
     - number: DN1
       name: DN1
       electrical_type: bidirectional
@@ -72,28 +78,22 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 86.36
-      net: VUSB
+        y: 35.56
+      net: USB_UP_N
       net_aliases:
-      - VUSB
+      - USB_UP_N
       net_scope: global
       no_connect: false
       connected_to:
-      - reference: C10
-        pin_number: '1'
-        pin_name: '1'
-      - reference: C13
-        pin_number: '2'
-        pin_name: '2'
-      - reference: IC1
-        pin_number: '2'
-        pin_name: GND
+      - reference: CON1
+        pin_number: DN2
+        pin_name: DN2
+      - reference: D2
+        pin_number: '6'
+        pin_name: I/O_4
       - reference: IC2
-        pin_number: '11'
-        pin_name: VDD5
-      - reference: SJ1
-        pin_number: '1'
-        pin_name: '1'
+        pin_number: '9'
+        pin_name: DM
     - number: DN2
       name: DN2
       electrical_type: bidirectional
@@ -105,12 +105,22 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 81.28
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 40.64
+      net: USB_UP_N
+      net_aliases:
+      - USB_UP_N
+      net_scope: global
       no_connect: false
-      connected_to: []
+      connected_to:
+      - reference: CON1
+        pin_number: DN1
+        pin_name: DN1
+      - reference: D2
+        pin_number: '6'
+        pin_name: I/O_4
+      - reference: IC2
+        pin_number: '9'
+        pin_name: DM
     - number: DP1
       name: DP1
       electrical_type: bidirectional
@@ -122,12 +132,22 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 88.9
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 33.02
+      net: USB_UP_P
+      net_aliases:
+      - USB_UP_P
+      net_scope: global
       no_connect: false
-      connected_to: []
+      connected_to:
+      - reference: CON1
+        pin_number: DP2
+        pin_name: DP2
+      - reference: D2
+        pin_number: '4'
+        pin_name: I/O_3
+      - reference: IC2
+        pin_number: '10'
+        pin_name: DP
     - number: DP2
       name: DP2
       electrical_type: bidirectional
@@ -139,12 +159,22 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 83.82
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 38.1
+      net: USB_UP_P
+      net_aliases:
+      - USB_UP_P
+      net_scope: global
       no_connect: false
-      connected_to: []
+      connected_to:
+      - reference: CON1
+        pin_number: DP1
+        pin_name: DP1
+      - reference: D2
+        pin_number: '4'
+        pin_name: I/O_3
+      - reference: IC2
+        pin_number: '10'
+        pin_name: DP
     - number: GND@1
       name: GND
       electrical_type: bidirectional
@@ -156,15 +186,253 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 66.04
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 55.88
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
       - reference: CON1
         pin_number: GND@2
         pin_name: GND
+      - reference: CON1
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: GND@2
       name: GND
       electrical_type: bidirectional
@@ -176,15 +444,253 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 66.04
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 55.88
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
       - reference: CON1
         pin_number: GND@1
         pin_name: GND
+      - reference: CON1
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON1
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: P$1
       name: CHASSIS
       electrical_type: bidirectional
@@ -196,12 +702,151 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 63.5
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 58.42
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON1
+        pin_number: GND@2
+        pin_name: GND
       - reference: CON1
         pin_number: P$2
         pin_name: CHASSIS
@@ -223,6 +868,87 @@ schematic:
       - reference: CON1
         pin_number: P$8
         pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: P$2
       name: CHASSIS
       electrical_type: bidirectional
@@ -234,12 +960,151 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 63.5
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 58.42
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON1
+        pin_number: GND@2
+        pin_name: GND
       - reference: CON1
         pin_number: P$1
         pin_name: CHASSIS
@@ -261,6 +1126,87 @@ schematic:
       - reference: CON1
         pin_number: P$8
         pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: P$3
       name: CHASSIS
       electrical_type: bidirectional
@@ -272,12 +1218,151 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 63.5
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 58.42
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON1
+        pin_number: GND@2
+        pin_name: GND
       - reference: CON1
         pin_number: P$1
         pin_name: CHASSIS
@@ -299,6 +1384,87 @@ schematic:
       - reference: CON1
         pin_number: P$8
         pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: P$4
       name: CHASSIS
       electrical_type: bidirectional
@@ -310,12 +1476,151 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 63.5
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 58.42
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON1
+        pin_number: GND@2
+        pin_name: GND
       - reference: CON1
         pin_number: P$1
         pin_name: CHASSIS
@@ -337,6 +1642,87 @@ schematic:
       - reference: CON1
         pin_number: P$8
         pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: P$5
       name: CHASSIS
       electrical_type: bidirectional
@@ -348,12 +1734,151 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 63.5
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 58.42
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON1
+        pin_number: GND@2
+        pin_name: GND
       - reference: CON1
         pin_number: P$1
         pin_name: CHASSIS
@@ -375,6 +1900,87 @@ schematic:
       - reference: CON1
         pin_number: P$8
         pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: P$6
       name: CHASSIS
       electrical_type: bidirectional
@@ -386,12 +1992,151 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 63.5
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 58.42
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON1
+        pin_number: GND@2
+        pin_name: GND
       - reference: CON1
         pin_number: P$1
         pin_name: CHASSIS
@@ -413,6 +2158,87 @@ schematic:
       - reference: CON1
         pin_number: P$8
         pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: P$7
       name: CHASSIS
       electrical_type: bidirectional
@@ -424,12 +2250,151 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 63.5
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 58.42
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON1
+        pin_number: GND@2
+        pin_name: GND
       - reference: CON1
         pin_number: P$1
         pin_name: CHASSIS
@@ -451,6 +2416,87 @@ schematic:
       - reference: CON1
         pin_number: P$8
         pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: P$8
       name: CHASSIS
       electrical_type: bidirectional
@@ -462,12 +2508,151 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 63.5
-      net: null
-      net_aliases: []
-      net_scope: sheet
+        y: 58.42
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
       no_connect: false
       connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND20'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND21'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND28'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND37'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND38'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND41'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C9
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C13
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON1
+        pin_number: GND@2
+        pin_name: GND
       - reference: CON1
         pin_number: P$1
         pin_name: CHASSIS
@@ -489,6 +2674,87 @@ schematic:
       - reference: CON1
         pin_number: P$7
         pin_name: CHASSIS
+      - reference: CON2
+        pin_number: GND@1
+        pin_name: GND
+      - reference: CON2
+        pin_number: GND@2
+        pin_name: GND
+      - reference: CON2
+        pin_number: P$1
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$2
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$3
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$4
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$5
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$6
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$7
+        pin_name: CHASSIS
+      - reference: CON2
+        pin_number: P$8
+        pin_name: CHASSIS
+      - reference: CON3
+        pin_number: GND
+        pin_name: G
+      - reference: CON3
+        pin_number: P$5
+        pin_name: SHIELD1
+      - reference: CON3
+        pin_number: P$6
+        pin_name: SHIELD2
+      - reference: D1
+        pin_number: '2'
+        pin_name: GND
+      - reference: D2
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '0'
+        pin_name: EP(GND)
+      - reference: IC1
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC2
+        pin_number: '12'
+        pin_name: GND
+      - reference: IC3
+        pin_number: '2'
+        pin_name: GND
+      - reference: IC4
+        pin_number: '2'
+        pin_name: GND
+      - reference: J1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: LED1
+        pin_number: C
+        pin_name: C
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: XT1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: XT1
+        pin_number: '4'
+        pin_name: '4'
     - number: SBU1
       name: SBU1
       electrical_type: bidirectional
@@ -500,7 +2766,7 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 78.74
+        y: 43.18
       net: null
       net_aliases: []
       net_scope: sheet
@@ -517,7 +2783,7 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 76.2
+        y: 45.72
       net: null
       net_aliases: []
       net_scope: sheet
@@ -534,15 +2800,22 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 93.98
-      net: null
-      net_aliases: []
+        y: 27.94
+      net: VUSB_IN
+      net_aliases:
+      - VUSB_IN
       net_scope: sheet
       no_connect: false
       connected_to:
+      - reference: C1
+        pin_number: '2'
+        pin_name: '2'
       - reference: CON1
         pin_number: VBUS@2
         pin_name: VBUS
+      - reference: L1
+        pin_number: '1'
+        pin_name: '1'
     - number: VBUS@2
       name: VBUS
       electrical_type: bidirectional
@@ -554,15 +2827,22 @@ schematic:
       length: 2.54
       position:
         x: 40.64
-        y: 93.98
-      net: null
-      net_aliases: []
+        y: 27.94
+      net: VUSB_IN
+      net_aliases:
+      - VUSB_IN
       net_scope: sheet
       no_connect: false
       connected_to:
+      - reference: C1
+        pin_number: '2'
+        pin_name: '2'
       - reference: CON1
         pin_number: VBUS@1
         pin_name: VBUS
+      - reference: L1
+        pin_number: '1'
+        pin_name: '1'
     size:
       local_graphics:
         measurement: symbol graphics only; excludes pins, properties, and text
@@ -585,23 +2865,164 @@ schematic:
         available: true
         min:
           x: 22.733
-          y: 60.833
+          y: 25.273
         max:
           x: 38.227
-          y: 96.647
+          y: 61.087
         width: 15.494
         height: 35.814
         center:
           x: 30.48
-          y: 78.74
+          y: 43.18
     warnings: []
   connected_components:
+  - reference: '#GND1'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND2'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND3'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND4'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND5'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND6'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND7'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND8'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND9'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND10'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND11'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND12'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND13'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND15'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND16'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND17'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND18'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND19'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND20'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND21'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND22'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND23'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND24'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND25'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND26'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND27'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND28'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND37'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND38'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND41'
+    pin_number: '1'
+    pin_name: GND
+  - reference: C1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C2
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C4
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C5
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C6
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C7
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C8
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C9
+    pin_number: '1'
+    pin_name: '1'
   - reference: C10
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C11
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C12
     pin_number: '1'
     pin_name: '1'
   - reference: C13
     pin_number: '2'
     pin_name: '2'
+  - reference: C14
+    pin_number: '2'
+    pin_name: '2'
+  - reference: CON1
+    pin_number: DN1
+    pin_name: DN1
+  - reference: CON1
+    pin_number: DN2
+    pin_name: DN2
+  - reference: CON1
+    pin_number: DP1
+    pin_name: DP1
+  - reference: CON1
+    pin_number: DP2
+    pin_name: DP2
   - reference: CON1
     pin_number: GND@1
     pin_name: GND
@@ -638,15 +3059,108 @@ schematic:
   - reference: CON1
     pin_number: VBUS@2
     pin_name: VBUS
+  - reference: CON2
+    pin_number: GND@1
+    pin_name: GND
+  - reference: CON2
+    pin_number: GND@2
+    pin_name: GND
+  - reference: CON2
+    pin_number: P$1
+    pin_name: CHASSIS
+  - reference: CON2
+    pin_number: P$2
+    pin_name: CHASSIS
+  - reference: CON2
+    pin_number: P$3
+    pin_name: CHASSIS
+  - reference: CON2
+    pin_number: P$4
+    pin_name: CHASSIS
+  - reference: CON2
+    pin_number: P$5
+    pin_name: CHASSIS
+  - reference: CON2
+    pin_number: P$6
+    pin_name: CHASSIS
+  - reference: CON2
+    pin_number: P$7
+    pin_name: CHASSIS
+  - reference: CON2
+    pin_number: P$8
+    pin_name: CHASSIS
+  - reference: CON3
+    pin_number: GND
+    pin_name: G
+  - reference: CON3
+    pin_number: P$5
+    pin_name: SHIELD1
+  - reference: CON3
+    pin_number: P$6
+    pin_name: SHIELD2
+  - reference: D1
+    pin_number: '2'
+    pin_name: GND
+  - reference: D2
+    pin_number: '2'
+    pin_name: GND
+  - reference: D2
+    pin_number: '4'
+    pin_name: I/O_3
+  - reference: D2
+    pin_number: '6'
+    pin_name: I/O_4
+  - reference: IC1
+    pin_number: '0'
+    pin_name: EP(GND)
   - reference: IC1
     pin_number: '2'
     pin_name: GND
   - reference: IC2
-    pin_number: '11'
-    pin_name: VDD5
-  - reference: SJ1
+    pin_number: '10'
+    pin_name: DP
+  - reference: IC2
+    pin_number: '12'
+    pin_name: GND
+  - reference: IC2
+    pin_number: '9'
+    pin_name: DM
+  - reference: IC3
+    pin_number: '2'
+    pin_name: GND
+  - reference: IC4
+    pin_number: '2'
+    pin_name: GND
+  - reference: J1
+    pin_number: '6'
+    pin_name: '6'
+  - reference: L1
     pin_number: '1'
     pin_name: '1'
+  - reference: LED1
+    pin_number: C
+    pin_name: C
+  - reference: R1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R2
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R5
+    pin_number: '1'
+    pin_name: '1'
+  - reference: XT1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: XT1
+    pin_number: '4'
+    pin_name: '4'
 pcb:
   reference: CON1
   value: USB-C
@@ -3432,7 +5946,8 @@ pcb:
   - XT1
 connectivity_cross_check:
   available: true
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: ''
     schematic_nets: []
@@ -3450,75 +5965,88 @@ connectivity_cross_check:
     status: incomplete
   - pin_or_pad_number: DN1
     schematic_nets:
-    - VUSB
+    - USB_UP_N
     pcb_nets:
     - USB_UP_N
-    status: disagree
+    status: agree
   - pin_or_pad_number: DN2
-    schematic_nets: []
+    schematic_nets:
+    - USB_UP_N
     pcb_nets:
     - USB_UP_N
-    status: incomplete
+    status: agree
   - pin_or_pad_number: DP1
-    schematic_nets: []
+    schematic_nets:
+    - USB_UP_P
     pcb_nets:
     - USB_UP_P
-    status: incomplete
+    status: agree
   - pin_or_pad_number: DP2
-    schematic_nets: []
+    schematic_nets:
+    - USB_UP_P
     pcb_nets:
     - USB_UP_P
-    status: incomplete
+    status: agree
   - pin_or_pad_number: GND@1
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: GND@2
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: P$1
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: P$2
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: P$3
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: P$4
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: P$5
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: P$6
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: P$7
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: P$8
-    schematic_nets: []
+    schematic_nets:
+    - GND
     pcb_nets:
     - GND
-    status: incomplete
+    status: agree
   - pin_or_pad_number: SBU1
     schematic_nets: []
     pcb_nets: []
@@ -3528,18 +6056,20 @@ connectivity_cross_check:
     pcb_nets: []
     status: no_named_net
   - pin_or_pad_number: VBUS@1
-    schematic_nets: []
+    schematic_nets:
+    - VUSB_IN
     pcb_nets:
     - VUSB_IN
-    status: incomplete
+    status: agree
   - pin_or_pad_number: VBUS@2
-    schematic_nets: []
+    schematic_nets:
+    - VUSB_IN
     pcb_nets:
     - VUSB_IN
-    status: incomplete
-  agree_count: 0
-  disagree_count: 1
-  incomplete_count: 17
+    status: agree
+  agree_count: 16
+  disagree_count: 0
+  incomplete_count: 2
 oomp:
   status: matched
   accepted: true
@@ -3554,4 +6084,7 @@ oomp:
   reasons:
   - Accepted from the AI/human match override file.
   candidates: []
+category: connector
+category_source: oomp_populate
+category_name: Connector
 generated_directory: components/CON1

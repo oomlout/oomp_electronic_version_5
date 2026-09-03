@@ -5,6 +5,19 @@ This OOMP navigation part publishes the category index at
 
 It contains 1 descendant parts.
 
+
+[Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/capacitor)
+
+
+
+## Categories
+
+- [Tantalum](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/capacitor/3216_avx_a/tantalum)
+
+
+
+
+
 ---
 
 Generated from the populated OOMP taxonomy by Roboclick and Jinja.

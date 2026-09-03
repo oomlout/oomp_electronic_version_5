@@ -28,6 +28,8 @@ bip_39_full_no_space: popularmenusurgealarmsubmitoakurgeouterpeasantinchdoordive
 bip_39_full_space: popular menu surge alarm submit oak urge outer peasant inch door
   divert
 bip_39_full_underscore: popular_menu_surge_alarm_submit_oak_urge_outer_peasant_inch_door_divert
+category: capacitor
+category_name: Capacitor
 dimensions_mm:
   length: 3.2
   width: 1.6
@@ -37,6 +39,10 @@ id: electronic_capacitor_1206_47_micro_farad
 id_no_class: electronic_capacitor_1206_47_micro_farad
 id_no_size: electronic_capacitor_1206_47_micro_farad
 id_no_type: electronic_capacitor_1206_47_micro_farad
+kicad:
+  hand_solder: ''
+  machine_solder: Capacitor_SMD:C_1206_3216Metric
+  symbol: Device:C_Small
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_47_micro_farad
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_47_micro_farad
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_47_micro_farad
@@ -60,6 +66,12 @@ name_space: electronic capacitor 1206 47 micro farad
 name_upper: ELECTRONIC CAPACITOR 1206 47 MICRO FARAD
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: capacitor
+      category_name: Capacitor
       dimensions_mm:
         length: 3.2
         width: 1.6
       directory: parts\electronic_capacitor_1206_47_micro_farad
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: Capacitor_SMD:C_1206_3216Metric
+        symbol: Device:C_Small
       name: electronic_capacitor_1206_47_micro_farad
       name_proper: Capacitor 47 uF 1206
       name_readable: Capacitor 47 uF 1206
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC CAPACITOR 1206 47 MICRO FARAD
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

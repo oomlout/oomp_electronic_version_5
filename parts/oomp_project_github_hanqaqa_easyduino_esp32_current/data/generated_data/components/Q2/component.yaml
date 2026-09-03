@@ -1,0 +1,591 @@
+reference: Q2
+schematic:
+  available: true
+  units:
+  - reference: Q2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 06e6fcaf-4a4b-4ee6-be4d-93267a37422a
+    library_id: Device:Q_NPN_BCE
+    unit: 1
+    body_style: 1
+    position:
+      x: 85.09
+      y: 101.6
+      rotation: 0.0
+      mirror: x
+      units: mm
+    properties:
+      Reference: Q2
+      Value: SS8050
+      Footprint: Package_TO_SOT_SMD:SOT-23W
+      Datasheet: ''
+      Description: ''
+      LCSC: C916392
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: B
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 5.715
+      position:
+        x: 80.01
+        y: 101.6
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R5
+        pin_number: '2'
+        pin_name: ''
+    - number: '2'
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 87.63
+        y: 106.68
+      net: GPIO0
+      net_aliases:
+      - GPIO0
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C10
+        pin_number: '1'
+        pin_name: ''
+      - reference: SW2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: U2
+        pin_number: '25'
+        pin_name: GPIO0/BOOT/ADC2_CH1
+      - reference: U4
+        pin_number: '25'
+        pin_name: '*GPIO0/BOOT/ADC2_CH1'
+    - number: '3'
+      name: E
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 87.63
+        y: 96.52
+      net: ~{DTR}
+      net_aliases:
+      - ~{DTR}
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R4
+        pin_number: '1'
+        pin_name: ''
+      - reference: U1
+        pin_number: '28'
+        pin_name: ~{DTR}
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.6764
+          y: -2.9464
+        max:
+          x: 4.2164
+          y: 2.9464
+        width: 5.8928
+        height: 5.8928
+        center:
+          x: 1.27
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 83.4136
+          y: 98.6536
+        max:
+          x: 89.3064
+          y: 104.5464
+        width: 5.8928
+        height: 5.8928
+        center:
+          x: 86.36
+          y: 101.6
+    warnings: []
+  connected_components:
+  - reference: C10
+    pin_number: '1'
+    pin_name: ''
+  - reference: R4
+    pin_number: '1'
+    pin_name: ''
+  - reference: R5
+    pin_number: '2'
+    pin_name: ''
+  - reference: SW2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: U1
+    pin_number: '28'
+    pin_name: ~{DTR}
+  - reference: U2
+    pin_number: '25'
+    pin_name: GPIO0/BOOT/ADC2_CH1
+  - reference: U4
+    pin_number: '25'
+    pin_name: '*GPIO0/BOOT/ADC2_CH1'
+pcb:
+  reference: Q2
+  value: SS8050
+  source_file: data/kicad_file.kicad_pcb
+  uuid: d3a998f3-3258-4715-9cba-1a0ee26ddb1f
+  library_id: Package_TO_SOT_SMD:SOT-23W
+  layer: F.Cu
+  side: front
+  position:
+    x: 139.3
+    y: 105.6
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: Q2
+    Value: SS8050
+    Datasheet: ''
+    Description: ''
+    LCSC: C916392
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -1.2
+      y: -0.95
+      rotation: 90.0
+    position:
+      x: 138.35
+      y: 106.8
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 0.7
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: Net-(Q2-B)
+    net_number: null
+    pin_function: B_1
+    pin_type: input
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.55
+          y: -1.45
+        max:
+          x: -0.85
+          y: -0.45
+        width: 0.7
+        height: 1.0
+        center:
+          x: -1.2
+          y: -0.95
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 137.85
+          y: 106.45
+        max:
+          x: 138.85
+          y: 107.15
+        width: 1.0
+        height: 0.7
+        center:
+          x: 138.35
+          y: 106.8
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R5
+      pad_number: '2'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -1.2
+      y: 0.95
+      rotation: 90.0
+    position:
+      x: 140.25
+      y: 106.8
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 0.7
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: /GPIO0
+    net_number: null
+    pin_function: C_2
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.55
+          y: 0.45
+        max:
+          x: -0.85
+          y: 1.45
+        width: 0.7
+        height: 1.0
+        center:
+          x: -1.2
+          y: 0.95
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 139.75
+          y: 106.45
+        max:
+          x: 140.75
+          y: 107.15
+        width: 1.0
+        height: 0.7
+        center:
+          x: 140.25
+          y: 106.8
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C10
+      pad_number: '1'
+    - reference: SW2
+      pad_number: '2'
+    - reference: U2
+      pad_number: '25'
+    - reference: U4
+      pad_number: '25'
+  - number: '3'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 1.2
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 139.3
+      y: 104.4
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 0.7
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: /~{DTR}
+    net_number: null
+    pin_function: E_3
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.85
+          y: -0.5
+        max:
+          x: 1.55
+          y: 0.5
+        width: 0.7
+        height: 1.0
+        center:
+          x: 1.2
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 138.8
+          y: 104.05
+        max:
+          x: 139.8
+          y: 104.75
+        width: 1.0
+        height: 0.7
+        center:
+          x: 139.3
+          y: 104.4
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R4
+      pad_number: '1'
+    - reference: U1
+      pad_number: '28'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.55
+        y: -1.45
+      max:
+        x: 1.55
+        y: 1.45
+      width: 3.1
+      height: 2.9
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 137.85
+        y: 104.05
+      max:
+        x: 140.75
+        y: 107.15
+      width: 2.9
+      height: 3.1
+      center:
+        x: 139.3
+        y: 105.6
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.975
+        y: -1.765
+      max:
+        x: 1.975
+        y: 1.765
+      width: 3.95
+      height: 3.53
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 137.535
+        y: 103.625
+      max:
+        x: 141.065
+        y: 107.575
+      width: 3.53
+      height: 3.95
+      center:
+        x: 139.3
+        y: 105.6
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.005
+        y: -1.54
+      max:
+        x: 1.005
+        y: 1.54
+      width: 2.01
+      height: 3.08
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 137.76
+        y: 104.595
+      max:
+        x: 140.84
+        y: 106.605
+      width: 3.08
+      height: 2.01
+      center:
+        x: 139.3
+        y: 105.6
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.325
+        y: -1.95
+      max:
+        x: 1.135
+        y: 1.67
+      width: 2.46
+      height: 3.62
+      center:
+        x: -0.095
+        y: -0.14
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 137.35
+        y: 104.465
+      max:
+        x: 140.97
+        y: 106.925
+      width: 3.62
+      height: 2.46
+      center:
+        x: 139.16
+        y: 105.695
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.975
+        y: -1.95
+      max:
+        x: 1.975
+        y: 1.765
+      width: 3.95
+      height: 3.715
+      center:
+        x: 0.0
+        y: -0.0925
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 137.35
+        y: 103.625
+      max:
+        x: 141.065
+        y: 107.575
+      width: 3.715
+      height: 3.95
+      center:
+        x: 139.2075
+        y: 105.6
+  connected_components:
+  - C10
+  - R4
+  - R5
+  - SW2
+  - U1
+  - U2
+  - U4
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(Q2-B)
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - GPIO0
+    pcb_nets:
+    - /GPIO0
+    status: agree
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - ~{DTR}
+    pcb_nets:
+    - /~{DTR}
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: SS8050
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: transistor
+category_source: unmatched_kicad_hint
+category_name: Transistor
+generated_directory: components/Q2

@@ -1,10 +1,10 @@
-# IC LMV331IDBVR SOT_23_5
+# IC LMV331IDBVR SOT 23 5
 
 `electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr`
 
-IC LMV331IDBVR SOT_23_5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.8 mm. The definition includes 5 documented pins.
+IC LMV331IDBVR SOT 23 5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.8 mm. The definition includes 5 documented pins.
 
-![IC LMV331IDBVR SOT_23_5 pinout](data/working_svg_square_pins.svg)
+![IC LMV331IDBVR SOT 23 5 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -70,6 +70,10 @@ IC LMV331IDBVR SOT_23_5 is an OOMP electronic ic definition. It uses the sot 23 
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

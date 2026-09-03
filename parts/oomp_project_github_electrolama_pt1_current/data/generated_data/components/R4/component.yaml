@@ -66,20 +66,26 @@ schematic:
       no_connect: false
       connected_to:
       - reference: C7
-        pin_number: '1'
-        pin_name: '1'
+        pin_number: '2'
+        pin_name: '2'
       - reference: C8
-        pin_number: '1'
-        pin_name: '1'
+        pin_number: '2'
+        pin_name: '2'
       - reference: C9
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON3
+        pin_number: VBUS
+        pin_name: V
+      - reference: IC4
+        pin_number: '1'
+        pin_name: VOUT
+      - reference: J1
         pin_number: '1'
         pin_name: '1'
-      - reference: J1
-        pin_number: '5'
-        pin_name: '5'
       - reference: SJ1
-        pin_number: '3'
-        pin_name: '3'
+        pin_number: '1'
+        pin_name: '1'
     size:
       local_graphics:
         measurement: symbol graphics only; excludes pins, properties, and text
@@ -114,23 +120,29 @@ schematic:
     warnings: []
   connected_components:
   - reference: C7
-    pin_number: '1'
-    pin_name: '1'
+    pin_number: '2'
+    pin_name: '2'
   - reference: C8
-    pin_number: '1'
-    pin_name: '1'
+    pin_number: '2'
+    pin_name: '2'
   - reference: C9
+    pin_number: '2'
+    pin_name: '2'
+  - reference: CON3
+    pin_number: VBUS
+    pin_name: V
+  - reference: IC4
+    pin_number: '1'
+    pin_name: VOUT
+  - reference: J1
     pin_number: '1'
     pin_name: '1'
-  - reference: J1
-    pin_number: '5'
-    pin_name: '5'
   - reference: LED1
     pin_number: A
     pin_name: A
   - reference: SJ1
-    pin_number: '3'
-    pin_name: '3'
+    pin_number: '1'
+    pin_name: '1'
 pcb:
   reference: R4
   value: 2k2
@@ -450,7 +462,8 @@ pcb:
   - SJ1
 connectivity_cross_check:
   available: true
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: '1'
     schematic_nets: []
@@ -480,4 +493,7 @@ oomp:
   reasons:
   - Exact OOMP ID constructed from component type, package size, and normalized value.
   candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
 generated_directory: components/R4

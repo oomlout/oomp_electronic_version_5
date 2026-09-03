@@ -1,9 +1,155 @@
 {
   "reference": "R414",
   "schematic": {
-    "available": false,
-    "units": [],
-    "connected_components": []
+    "available": true,
+    "units": [
+      {
+        "reference": "R414",
+        "source_file": "data/kicad_file_sheets/bpu-current_limiter.kicad_sch",
+        "uuid": "00000000-0000-0000-0000-00006394f9d8",
+        "library_id": "Device:R_Small",
+        "unit": 1,
+        "body_style": 1,
+        "position": {
+          "x": 226.06,
+          "y": 39.37,
+          "rotation": 270.0,
+          "mirror": null,
+          "units": "mm"
+        },
+        "properties": {
+          "Reference": "R414",
+          "Value": "10K",
+          "Footprint": "Resistor_SMD:R_0402_1005Metric",
+          "Datasheet": "~"
+        },
+        "in_bom": true,
+        "on_board": true,
+        "in_position_files": true,
+        "dnp": false,
+        "pins": [
+          {
+            "number": "1",
+            "name": "~",
+            "electrical_type": "passive",
+            "graphic_style": "line",
+            "local_position": {
+              "x": 0.0,
+              "y": 2.54,
+              "rotation": 270.0
+            },
+            "length": 0.762,
+            "position": {
+              "x": 228.6,
+              "y": 39.37
+            },
+            "net": null,
+            "net_aliases": [],
+            "net_scope": "sheet",
+            "no_connect": false,
+            "connected_to": [
+              {
+                "reference": "C415",
+                "pin_number": "2",
+                "pin_name": "~"
+              },
+              {
+                "reference": "U603",
+                "pin_number": "1",
+                "pin_name": "+"
+              }
+            ]
+          },
+          {
+            "number": "2",
+            "name": "~",
+            "electrical_type": "passive",
+            "graphic_style": "line",
+            "local_position": {
+              "x": 0.0,
+              "y": -2.54,
+              "rotation": 90.0
+            },
+            "length": 0.762,
+            "position": {
+              "x": 223.52,
+              "y": 39.37
+            },
+            "net": "VREG_ADJ_MCU",
+            "net_aliases": [
+              "VREG_ADJ_MCU"
+            ],
+            "net_scope": "global",
+            "no_connect": false,
+            "connected_to": [
+              {
+                "reference": "U103",
+                "pin_number": "35",
+                "pin_name": "GPIO23"
+              }
+            ]
+          }
+        ],
+        "size": {
+          "local_graphics": {
+            "measurement": "symbol graphics only; excludes pins, properties, and text",
+            "units": "mm",
+            "available": true,
+            "min": {
+              "x": -0.8636,
+              "y": -1.8796
+            },
+            "max": {
+              "x": 0.8636,
+              "y": 1.8796
+            },
+            "width": 1.7272,
+            "height": 3.7592,
+            "center": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          },
+          "placed_graphics": {
+            "measurement": "axis-aligned bounds after schematic placement, rotation, and mirroring",
+            "units": "mm",
+            "available": true,
+            "min": {
+              "x": 224.1804,
+              "y": 38.5064
+            },
+            "max": {
+              "x": 227.9396,
+              "y": 40.2336
+            },
+            "width": 3.7592,
+            "height": 1.7272,
+            "center": {
+              "x": 226.06,
+              "y": 39.37
+            }
+          }
+        },
+        "warnings": []
+      }
+    ],
+    "connected_components": [
+      {
+        "reference": "C415",
+        "pin_number": "2",
+        "pin_name": "~"
+      },
+      {
+        "reference": "U103",
+        "pin_number": "35",
+        "pin_name": "GPIO23"
+      },
+      {
+        "reference": "U603",
+        "pin_number": "1",
+        "pin_name": "+"
+      }
+    ]
   },
   "pcb": {
     "reference": "R414",
@@ -410,8 +556,8 @@
     ]
   },
   "connectivity_cross_check": {
-    "available": false,
-    "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.",
+    "available": true,
+    "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also allow KiCad's leading '/' prefix.",
     "comparisons": [
       {
         "pin_or_pad_number": "1",
@@ -423,16 +569,18 @@
       },
       {
         "pin_or_pad_number": "2",
-        "schematic_nets": [],
+        "schematic_nets": [
+          "VREG_ADJ_MCU"
+        ],
         "pcb_nets": [
           "VREG_ADJ_MCU"
         ],
-        "status": "incomplete"
+        "status": "agree"
       }
     ],
-    "agree_count": 0,
+    "agree_count": 1,
     "disagree_count": 0,
-    "incomplete_count": 2
+    "incomplete_count": 1
   },
   "oomp": {
     "status": "matched",
@@ -451,5 +599,8 @@
     ],
     "candidates": []
   },
+  "category": "resistor",
+  "category_source": "oomp_populate",
+  "category_name": "Resistor",
   "generated_directory": "components/R414"
 }

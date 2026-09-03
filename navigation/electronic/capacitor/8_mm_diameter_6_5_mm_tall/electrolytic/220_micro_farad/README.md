@@ -9,7 +9,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [Capacitor Electrolytic 8_MM_DIAMETER_6_5_MM_TALL](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt) — `electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt`
+- [Capacitor 220 uF 10 V Electrolytic 8 mm diameter x 6.5 mm tall](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt) — `electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt`
 
 
 

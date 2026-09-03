@@ -85,6 +85,15 @@ def main(**kwargs):
                     option["taxonomy_6"] = voltage
                     options.append(option)
 
+    # Easyduino ESP32: keep the value/voltage pair explicit, not a cross-product.
+    options.append({
+        "taxonomy_2": "capacitor",
+        "taxonomy_3": "3216_avx_a",
+        "taxonomy_4": "tantalum",
+        "taxonomy_5": "22_micro_farad",
+        "taxonomy_6": "10_volt",
+    })
+
 
 if __name__ == "__main__":
     main()

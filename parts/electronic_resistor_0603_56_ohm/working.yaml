@@ -28,6 +28,8 @@ bip_39_full_no_space: beachironissuelifeexampledeclinetailinitialtrayspringexhau
 bip_39_full_space: beach iron issue life example decline tail initial tray spring
   exhaust any
 bip_39_full_underscore: beach_iron_issue_life_example_decline_tail_initial_tray_spring_exhaust_any
+category: resistor
+category_name: Resistor
 dimensions_mm:
   length: 1.6
   width: 0.8
@@ -37,6 +39,10 @@ id: electronic_resistor_0603_56_ohm
 id_no_class: electronic_resistor_0603_56_ohm
 id_no_size: electronic_resistor_0603_56_ohm
 id_no_type: electronic_resistor_0603_56_ohm
+kicad:
+  hand_solder: ''
+  machine_solder: Resistor_SMD:R_0603_1608Metric
+  symbol: Device:R_Small
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_56_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_56_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_56_ohm
@@ -60,6 +66,12 @@ name_space: electronic resistor 0603 56 ohm
 name_upper: ELECTRONIC RESISTOR 0603 56 OHM
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: resistor
+      category_name: Resistor
       dimensions_mm:
         length: 1.6
         width: 0.8
       directory: parts\electronic_resistor_0603_56_ohm
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: Resistor_SMD:R_0603_1608Metric
+        symbol: Device:R_Small
       name: electronic_resistor_0603_56_ohm
       name_proper: Resistor 56 Ohm 0603
       name_readable: Resistor 56 Ohm 0603
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC RESISTOR 0603 56 OHM
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

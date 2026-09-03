@@ -1,10 +1,10 @@
-# Connector Header 2 54 Mm Pitch Through Hole 28 Pin
+# Connector Header 2.54 mm pitch through-hole 28 pin
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_28_pin`
 
-Connector Header 2 54 Mm Pitch Through Hole 28 Pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 71.12 &#x00D7; 2.48 mm.
+Connector Header 2.54 mm pitch through-hole 28 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 71.12 &#x00D7; 2.48 mm.
 
-![Connector Header 2 54 Mm Pitch Through Hole 28 Pin pinout](data/working_svg_top.svg)
+![Connector Header 2.54 mm pitch through-hole 28 pin pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -45,6 +45,10 @@ Connector Header 2 54 Mm Pitch Through Hole 28 Pin is an OOMP electronic connect
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

@@ -28,6 +28,8 @@ bip_39_full_no_space: statehintmeanfringebasketregretflowerdividesoftcatdreamcak
 bip_39_full_space: state hint mean fringe basket regret flower divide soft cat dream
   cake
 bip_39_full_underscore: state_hint_mean_fringe_basket_regret_flower_divide_soft_cat_dream_cake
+category: resistor
+category_name: Resistor
 dimensions_mm:
   length: 3.2
   width: 1.6
@@ -37,6 +39,10 @@ id: electronic_resistor_1206_1200_ohm
 id_no_class: electronic_resistor_1206_1200_ohm
 id_no_size: electronic_resistor_1206_1200_ohm
 id_no_type: electronic_resistor_1206_1200_ohm
+kicad:
+  hand_solder: ''
+  machine_solder: Resistor_SMD:R_1206_3216Metric
+  symbol: Device:R_Small
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1200_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1200_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1200_ohm
@@ -60,6 +66,12 @@ name_space: electronic resistor 1206 1200 ohm
 name_upper: ELECTRONIC RESISTOR 1206 1200 OHM
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: resistor
+      category_name: Resistor
       dimensions_mm:
         length: 3.2
         width: 1.6
       directory: parts\electronic_resistor_1206_1200_ohm
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: Resistor_SMD:R_1206_3216Metric
+        symbol: Device:R_Small
       name: electronic_resistor_1206_1200_ohm
       name_proper: Resistor 1200 Ohm 1206
       name_readable: Resistor 1200 Ohm 1206
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC RESISTOR 1206 1200 OHM
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

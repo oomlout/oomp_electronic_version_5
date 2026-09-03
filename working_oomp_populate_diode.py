@@ -5,6 +5,8 @@ def main(**kwargs):
     # share every package/manufacturer combination, so a cross-product of four
     # separate lists would create invalid parts that do not exist.
     diodes = [
+        {"diode_type": "tvs_array", "package": "sot_143", "manufacturer": "littelfuse",
+         "part_number": "sp0503bahtg", "name_short": "ESD Array SP0503BAHTG"},
         {
             "diode_type": "tvs_array",
             "package": "sot_23_6",

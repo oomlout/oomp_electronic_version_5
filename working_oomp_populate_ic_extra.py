@@ -1,6 +1,111 @@
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
 
+    current = "electronic_ic_esp32_wroom_32e_microcontroller_wifi_bluetooth_8_mb_flash_espressif_esp32_wroom_32e_n8"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Espressif"
+        part["part_number_manufacturer"] = "ESP32-WROOM-32E-N8"
+        part["file_copy"] = [{"file_source": f"parts_source/{current}/datasheet.pdf", "file_destination": "datasheet.pdf"}]
+        part["part_number_lcsc"] = "C701342"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C701342.html"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C701342.pdf"
+        part["category"] = "mcu"
+        part["dimensions_mm"] = {"length": 18.0, "width": 25.5, "height": 3.1}
+        part["dimension_reference"] = {"document": "ESP32-WROOM-32E/32UE v1.6", "pages": [3, 10, 11, 12, 25], "notes": "Top view: 0.45x0.9mm castellations on 1.27mm pitch. Exposed underside GND pad is not shown through the shield."}
+        names = ["gnd", "3v3", "en", "sensor_vp", "sensor_vn", "io34", "io35", "io32", "io33",
+                 "io25", "io26", "io27", "io14", "io12", "gnd", "io13", "nc", "nc", "nc",
+                 "nc", "nc", "nc", "io15", "io2", "io0", "io4", "io16", "io17", "io5",
+                 "io18", "io19", "nc", "io21", "rxd0", "txd0", "io22", "io23", "gnd", "gnd_ep"]
+        part["pins"] = {}
+        for index, name in enumerate(names):
+            number = str(index + 1)
+            pin_type = "signal"
+            if name == "nc":
+                pin_type = "no_connect"
+            if name in ["gnd", "gnd_ep"]:
+                pin_type = "gnd"
+            if name == "3v3":
+                pin_type = "power"
+            part["pins"]["pin_" + number] = {"number": number, "name": name, "type": pin_type}
+        pads = []
+        for index in range(14):
+            pads.append([str(index + 1), "left", -8.775, 5.26 - index * 1.27, .45, .9])
+            pads.append([str(38 - index), "right", 8.775, 5.26 - index * 1.27, .45, .9])
+        for index in range(10):
+            pads.append([str(15 + index), "bottom", -5.715 + index * 1.27, -12.525, .9, .45])
+        part["package_drawing"] = {
+            "overall": [18, 25.5], "body": [18, 25.5], "pins": pads,
+            "boxes": [[0, -2.9, 15.8, 17.6], [0, 9.655, 18, 6.19]],
+        }
+        part["kicad"] = {"symbol": "RF_Module:ESP32-WROOM-32E", "machine_solder": "RF_Module:ESP32-WROOM-32E", "hand_solder": ""}
+        part["electrical"] = {"flash": "8 MB", "supply": "3.0 to 3.6 V", "antenna": "PCB"}
+
+    current = "electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Advanced Monolithic Systems"
+        part["part_number_manufacturer"] = "AMS1117-3.3"
+        part["file_copy"] = [{"file_source": f"parts_source/{current}/datasheet.pdf", "file_destination": "datasheet.pdf"}]
+        part["part_number_lcsc"] = "C6186"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C6186.html"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C6186.pdf"
+        part["name_readable_override"] = "Regulator AMS1117-3.3 3.3V SOT-223"
+        part["name_short"] = "Regulator AMS1117-3.3"
+        part["category"] = "power_management"
+        part["dimensions_mm"] = {"length": 6.5, "width": 7.0}
+        part["dimension_reference"] = {"document": "AMS1117 datasheet", "pages": [1, 7], "notes": "Nominal SOT-223 dimensions; tab is VOUT, pin 2."}
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "gnd", "type": "gnd"},
+            "pin_2": {"number": "2", "name": "vout", "type": "power"},
+            "pin_3": {"number": "3", "name": "vin", "type": "power"},
+        }
+        part["package_drawing"] = {
+            "overall": [6.5, 7.0], "body": [6.5, 3.5],
+            "pins": [["1", "bottom", -2.29, -2.625, .74, 1.75],
+                     ["2", "bottom", 0, -2.625, .74, 1.75],
+                     ["3", "bottom", 2.29, -2.625, .74, 1.75],
+                     ["2", "top", 0, 2.625, 3.05, 1.75]],
+        }
+        part["kicad"] = {"symbol": "Regulator_Linear:AMS1117-3.3", "machine_solder": "Package_TO_SOT_SMD:SOT-223-3_TabPin2", "hand_solder": ""}
+
+    current = "electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102_gmr"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Silicon Labs"
+        part["part_number_manufacturer"] = "CP2102-GMR"
+        part["file_copy"] = [{"file_source": f"parts_source/{current}/datasheet.pdf", "file_destination": "datasheet.pdf"}]
+        part["name_short"] = "USB Serial CP2102-GMR"
+        part["part_number_lcsc"] = "C6568"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C6568.html"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C6568.pdf"
+        part["category"] = "interface"
+        part["dimensions_mm"] = {"length": 5.0, "width": 5.0}
+        part["dimension_reference"] = {"document": "CP2102/9 Rev. 1.8", "pages": [11, 12, 13]}
+        part["ic_dimensions_mm"] = {"body_length": 5.0, "body_width": 5.0, "body_height": .9,
+                                     "pin_pitch": .5, "pin_width": .23, "pin_length": .55}
+        names = ["dcd", "ri", "gnd", "usb_d_plus", "usb_d_minus", "vdd", "regin",
+                 "vbus", "reset_n", "nc", "suspend_n", "suspend", "nc", "nc",
+                 "nc", "nc", "nc", "nc", "nc", "nc", "nc", "nc",
+                 "cts", "rts", "rxd", "txd", "dsr", "dtr", "gnd_ep"]
+        part["pins"] = {}
+        for index, name in enumerate(names):
+            number = str(index + 1)
+            part["pins"][f"pin_{number}"] = {"number": number, "name": name, "type": "no_connect" if name == "nc" else "signal"}
+        pads = []
+        offsets = [1.5, 1.0, .5, 0, -.5, -1.0, -1.5]
+        for index, offset in enumerate(offsets):
+            pads.append([str(index + 1), "left", -2.225, offset, .55, .23])
+            pads.append([str(index + 8), "bottom", -offset, -2.225, .23, .55])
+            pads.append([str(index + 15), "right", 2.225, -offset, .55, .23])
+            pads.append([str(index + 22), "top", offset, 2.225, .23, .55])
+        pads.append(["29", "center", 0, 0, 3.15, 3.15])
+        part["package_drawing"] = {"overall": [5, 5], "body": [5, 5], "pins": pads, "pin_one": [-2.1, 2.1]}
+        part["kicad"] = {"symbol": "", "machine_solder": "Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm", "hand_solder": ""}
+        part["research_notes"] = ["This is CP2102, not CP2102N. Easyduino U1 has conflicting symbol/value and LCSC identity; do not auto-match it.",
+                                  "Exposed GND pad uses KiCad identifier 29; it is unnumbered in the datasheet.",
+                                  "Installed KiCad 10 masters do not contain the original CP2102 symbol. CP2102N is not substituted; symbol selection is pending."]
+
     current = "electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "CH343P"

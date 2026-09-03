@@ -1,10 +1,10 @@
-# IC AP2127K-3.3TRG1 SOT_23_5
+# IC AP2127K-3.3TRG1 SOT 23 5
 
 `electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_diodes_ap2127k_3_3trg1`
 
-IC AP2127K-3.3TRG1 SOT_23_5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 5 documented pins.
+IC AP2127K-3.3TRG1 SOT 23 5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 5 documented pins.
 
-![IC AP2127K-3.3TRG1 SOT_23_5 pinout](data/working_svg_square_pins.svg)
+![IC AP2127K-3.3TRG1 SOT 23 5 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -70,6 +70,10 @@ IC AP2127K-3.3TRG1 SOT_23_5 is an OOMP electronic ic definition. It uses the sot
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

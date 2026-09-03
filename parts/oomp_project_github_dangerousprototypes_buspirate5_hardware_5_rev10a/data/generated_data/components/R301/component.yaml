@@ -891,7 +891,8 @@ pcb:
   - Y101
 connectivity_cross_check:
   available: false
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: '1'
     schematic_nets: []
@@ -920,4 +921,7 @@ oomp:
   reasons:
   - Exact OOMP ID constructed from component type, package size, and normalized value.
   candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
 generated_directory: components/R301

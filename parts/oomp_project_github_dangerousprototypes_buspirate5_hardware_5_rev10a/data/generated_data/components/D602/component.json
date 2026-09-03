@@ -1,9 +1,156 @@
 {
   "reference": "D602",
   "schematic": {
-    "available": false,
-    "units": [],
-    "connected_components": []
+    "available": true,
+    "units": [
+      {
+        "reference": "D602",
+        "source_file": "data/kicad_file_sheets/bpu-current_limiter.kicad_sch",
+        "uuid": "00000000-0000-0000-0000-0000636c9796",
+        "library_id": "Diode:1N4148WS",
+        "unit": 1,
+        "body_style": 1,
+        "position": {
+          "x": 168.91,
+          "y": 43.18,
+          "rotation": 270.0,
+          "mirror": null,
+          "units": "mm"
+        },
+        "properties": {
+          "Reference": "D602",
+          "Value": "1N4148WT",
+          "Footprint": "Diode_SMD:D_SOD-523",
+          "Datasheet": "https://www.vishay.com/docs/85751/1n4148ws.pdf",
+          "RMB": "0.182079",
+          "Supplier": "https://item.szlcsc.com/120141.html"
+        },
+        "in_bom": true,
+        "on_board": true,
+        "in_position_files": true,
+        "dnp": false,
+        "pins": [
+          {
+            "number": "1",
+            "name": "K",
+            "electrical_type": "passive",
+            "graphic_style": "line",
+            "local_position": {
+              "x": -3.81,
+              "y": 0.0,
+              "rotation": 0.0
+            },
+            "length": 2.54,
+            "position": {
+              "x": 168.91,
+              "y": 39.37
+            },
+            "net": "VREG_EN",
+            "net_aliases": [
+              "VREG_EN"
+            ],
+            "net_scope": "global",
+            "no_connect": false,
+            "connected_to": [
+              {
+                "reference": "D603",
+                "pin_number": "1",
+                "pin_name": "K"
+              },
+              {
+                "reference": "R401",
+                "pin_number": "1",
+                "pin_name": "~"
+              },
+              {
+                "reference": "U403",
+                "pin_number": "3",
+                "pin_name": "SHUTDOWN"
+              }
+            ]
+          },
+          {
+            "number": "2",
+            "name": "A",
+            "electrical_type": "passive",
+            "graphic_style": "line",
+            "local_position": {
+              "x": 3.81,
+              "y": 0.0,
+              "rotation": 180.0
+            },
+            "length": 2.54,
+            "position": {
+              "x": 168.91,
+              "y": 46.99
+            },
+            "net": null,
+            "net_aliases": [],
+            "net_scope": "sheet",
+            "no_connect": false,
+            "connected_to": []
+          }
+        ],
+        "size": {
+          "local_graphics": {
+            "measurement": "symbol graphics only; excludes pins, properties, and text",
+            "units": "mm",
+            "available": true,
+            "min": {
+              "x": -1.397,
+              "y": -1.397
+            },
+            "max": {
+              "x": 1.397,
+              "y": 1.397
+            },
+            "width": 2.794,
+            "height": 2.794,
+            "center": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          },
+          "placed_graphics": {
+            "measurement": "axis-aligned bounds after schematic placement, rotation, and mirroring",
+            "units": "mm",
+            "available": true,
+            "min": {
+              "x": 167.513,
+              "y": 41.783
+            },
+            "max": {
+              "x": 170.307,
+              "y": 44.577
+            },
+            "width": 2.794,
+            "height": 2.794,
+            "center": {
+              "x": 168.91,
+              "y": 43.18
+            }
+          }
+        },
+        "warnings": []
+      }
+    ],
+    "connected_components": [
+      {
+        "reference": "D603",
+        "pin_number": "1",
+        "pin_name": "K"
+      },
+      {
+        "reference": "R401",
+        "pin_number": "1",
+        "pin_name": "~"
+      },
+      {
+        "reference": "U403",
+        "pin_number": "3",
+        "pin_name": "SHUTDOWN"
+      }
+    ]
   },
   "pcb": {
     "reference": "D602",
@@ -417,16 +564,18 @@
     ]
   },
   "connectivity_cross_check": {
-    "available": false,
-    "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.",
+    "available": true,
+    "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also allow KiCad's leading '/' prefix.",
     "comparisons": [
       {
         "pin_or_pad_number": "1",
-        "schematic_nets": [],
+        "schematic_nets": [
+          "VREG_EN"
+        ],
         "pcb_nets": [
           "VREG_EN"
         ],
-        "status": "incomplete"
+        "status": "agree"
       },
       {
         "pin_or_pad_number": "2",
@@ -437,9 +586,9 @@
         "status": "incomplete"
       }
     ],
-    "agree_count": 0,
+    "agree_count": 1,
     "disagree_count": 0,
-    "incomplete_count": 2
+    "incomplete_count": 1
   },
   "oomp": {
     "status": "matched",
@@ -458,5 +607,8 @@
     ],
     "candidates": []
   },
+  "category": "diode",
+  "category_source": "oomp_populate",
+  "category_name": "Diode",
   "generated_directory": "components/D602"
 }

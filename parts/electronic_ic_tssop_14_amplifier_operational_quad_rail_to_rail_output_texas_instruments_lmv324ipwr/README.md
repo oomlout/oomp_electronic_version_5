@@ -1,10 +1,10 @@
-# IC LMV324IPWR TSSOP_14
+# IC LMV324IPWR TSSOP 14
 
 `electronic_ic_tssop_14_amplifier_operational_quad_rail_to_rail_output_texas_instruments_lmv324ipwr`
 
-IC LMV324IPWR TSSOP_14 is an OOMP electronic ic definition. It uses the tssop 14 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 6.4 mm. The definition includes 14 documented pins.
+IC LMV324IPWR TSSOP 14 is an OOMP electronic ic definition. It uses the tssop 14 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 6.4 mm. The definition includes 14 documented pins.
 
-![IC LMV324IPWR TSSOP_14 pinout](data/working_svg_square_pins.svg)
+![IC LMV324IPWR TSSOP 14 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -79,6 +79,10 @@ IC LMV324IPWR TSSOP_14 is an OOMP electronic ic definition. It uses the tssop 14
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

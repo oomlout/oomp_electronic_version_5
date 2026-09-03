@@ -36,31 +36,18 @@ units:
     length: 0.0
     position:
       x: 129.54
-      y: 38.1
-    net: VUSB
-    net_aliases:
-    - VUSB
+      y: 43.18
+    net: null
+    net_aliases: []
     net_scope: sheet
     no_connect: false
     connected_to:
-    - reference: C2
+    - reference: C5
       pin_number: '1'
       pin_name: '1'
-    - reference: C3
-      pin_number: '2'
-      pin_name: '2'
-    - reference: C4
-      pin_number: '2'
-      pin_name: '2'
-    - reference: C6
+    - reference: IC3
       pin_number: '1'
-      pin_name: '1'
-    - reference: IC4
-      pin_number: '2'
-      pin_name: GND
-    - reference: L1
-      pin_number: '2'
-      pin_name: '2'
+      pin_name: IN1
   - number: '2'
     name: '2'
     electrical_type: passive
@@ -72,18 +59,37 @@ units:
     length: 0.0
     position:
       x: 129.54
-      y: 43.18
-    net: null
-    net_aliases: []
+      y: 38.1
+    net: VUSB
+    net_aliases:
+    - VUSB
     net_scope: sheet
     no_connect: false
     connected_to:
-    - reference: C5
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C4
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C6
       pin_number: '2'
       pin_name: '2'
     - reference: IC3
-      pin_number: '1'
-      pin_name: IN1
+      pin_number: '3'
+      pin_name: IN0
+    - reference: IC3
+      pin_number: '5'
+      pin_name: VCC
+    - reference: IC4
+      pin_number: '5'
+      pin_name: VIN
+    - reference: L1
+      pin_number: '2'
+      pin_name: '2'
   size:
     local_graphics:
       measurement: symbol graphics only; excludes pins, properties, and text
@@ -118,26 +124,32 @@ units:
   warnings: []
 connected_components:
 - reference: C2
-  pin_number: '1'
-  pin_name: '1'
+  pin_number: '2'
+  pin_name: '2'
 - reference: C3
-  pin_number: '2'
-  pin_name: '2'
-- reference: C4
-  pin_number: '2'
-  pin_name: '2'
-- reference: C5
-  pin_number: '2'
-  pin_name: '2'
-- reference: C6
   pin_number: '1'
   pin_name: '1'
+- reference: C4
+  pin_number: '1'
+  pin_name: '1'
+- reference: C5
+  pin_number: '1'
+  pin_name: '1'
+- reference: C6
+  pin_number: '2'
+  pin_name: '2'
 - reference: IC3
   pin_number: '1'
   pin_name: IN1
+- reference: IC3
+  pin_number: '3'
+  pin_name: IN0
+- reference: IC3
+  pin_number: '5'
+  pin_name: VCC
 - reference: IC4
-  pin_number: '2'
-  pin_name: GND
+  pin_number: '5'
+  pin_name: VIN
 - reference: L1
   pin_number: '2'
   pin_name: '2'

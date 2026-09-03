@@ -28,6 +28,8 @@ bip_39_full_no_space: shiftruralwagecaughtstemlistblamerotateharvestshoulderbusy
 bip_39_full_space: shift rural wage caught stem list blame rotate harvest shoulder
   busy flower
 bip_39_full_underscore: shift_rural_wage_caught_stem_list_blame_rotate_harvest_shoulder_busy_flower
+category: connector
+category_name: Connector
 dimension_reference:
   datasheet_url: https://suddendocs.samtec.com/catalog_english/a-tsw-htsw.pdf
   manufacturer: samtec
@@ -52,6 +54,10 @@ id: electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
 id_no_class: electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
 id_no_size: electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
 id_no_type: electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
+kicad:
+  hand_solder: Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical
+  machine_solder: Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical
+  symbol: Connector_Generic:Conn_01x40
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
@@ -68,13 +74,19 @@ name: Electronic Connector Header 2 54 Mm Pitch Through Hole 40 Pin
 name_no_class: Electronic Connector Header 2 54 Mm Pitch Through Hole 40 Pin
 name_no_size: Electronic Connector Header 2 54 Mm Pitch Through Hole 40 Pin
 name_no_type: Electronic Connector Header 2 54 Mm Pitch Through Hole 40 Pin
-name_proper: Connector Header 2 54 Mm Pitch Through Hole 40 Pin
-name_readable: Connector Header 2 54 Mm Pitch Through Hole 40 Pin
-name_short: Connector Header 2 54 Mm Pitch Through Hole 40 Pin
+name_proper: Connector Header 2.54 mm pitch through-hole 40 pin
+name_readable: Connector Header 2.54 mm pitch through-hole 40 pin
+name_short: Connector Header 2.54 mm pitch through-hole 40 pin
 name_space: electronic connector header 2 54 mm pitch through hole 40 pin
 name_upper: ELECTRONIC CONNECTOR HEADER 2 54 MM PITCH THROUGH HOLE 40 PIN
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -152,6 +164,13 @@ oomlout_ai_roboclick_1:
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_square_pins_300.png
+    file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
   description: Build component diagrams and proportional 300-pixel README previews
     with deterministic Python actions.
   file_test: ''
@@ -162,6 +181,8 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: connector
+      category_name: Connector
       dimension_reference:
         datasheet_url: https://suddendocs.samtec.com/catalog_english/a-tsw-htsw.pdf
         manufacturer: samtec
@@ -182,14 +203,24 @@ oomlout_ai_roboclick_2:
         plastic_height: 2.54
         plastic_length: 101.6
         plastic_width: 2.48
+      kicad:
+        hand_solder: Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical
+        machine_solder: Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Vertical
+        symbol: Connector_Generic:Conn_01x40
       name: electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
-      name_proper: Connector Header 2 54 Mm Pitch Through Hole 40 Pin
-      name_readable: Connector Header 2 54 Mm Pitch Through Hole 40 Pin
-      name_short: Connector Header 2 54 Mm Pitch Through Hole 40 Pin
+      name_proper: Connector Header 2.54 mm pitch through-hole 40 pin
+      name_readable: Connector Header 2.54 mm pitch through-hole 40 pin
+      name_short: Connector Header 2.54 mm pitch through-hole 40 pin
       name_space: electronic connector header 2 54 mm pitch through hole 40 pin
       name_upper: ELECTRONIC CONNECTOR HEADER 2 54 MM PITCH THROUGH HOLE 40 PIN
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.
@@ -265,6 +296,13 @@ oomlout_ai_roboclick_2:
           command: image_resize
           file_destination: data/working_svg_side_300.png
           file_source: data/working_svg_side.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_square_pins_300.png
+          file_source: data/working_svg_square_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos
@@ -363,7 +401,7 @@ oomlout_ai_roboclick_2:
         - title: Nominal size
           value: 101.6 × 2.48 mm
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
-        summary: Connector Header 2 54 Mm Pitch Through Hole 40 Pin is an OOMP electronic
+        summary: Connector Header 2.54 mm pitch through-hole 40 pin is an OOMP electronic
           connector definition. It uses the header package or form factor. Its nominal
           drawing size is 101.6 × 2.48 mm.
         taxonomy:
@@ -611,7 +649,7 @@ part_page:
   - title: Nominal size
     value: 101.6 × 2.48 mm
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_40_pin
-  summary: Connector Header 2 54 Mm Pitch Through Hole 40 Pin is an OOMP electronic
+  summary: Connector Header 2.54 mm pitch through-hole 40 pin is an OOMP electronic
     connector definition. It uses the header package or form factor. Its nominal drawing
     size is 101.6 × 2.48 mm.
   taxonomy:

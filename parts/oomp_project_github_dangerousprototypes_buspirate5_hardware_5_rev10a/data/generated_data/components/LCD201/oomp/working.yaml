@@ -28,6 +28,8 @@ bip_39_full_no_space: someonedutchchalkagreegoodactsilkonlinetooldebategenuinech
 bip_39_full_space: someone dutch chalk agree good act silk online tool debate genuine
   chase
 bip_39_full_underscore: someone_dutch_chalk_agree_good_act_silk_online_tool_debate_genuine_chase
+category: display
+category_name: Display
 controller: ST7789V
 datasheet_publisher: Shenzhen Surenoo Technology Co., Ltd.
 datasheet_url: https://device.report/m/07680e0977a46bb493db9b7bf791be435de59b37345e7119556ab12e3b367f61.pdf
@@ -67,6 +69,10 @@ id: electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h120
 id_no_class: electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201
 id_no_size: electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201
 id_no_type: electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201
+kicad:
+  hand_solder: ''
+  machine_solder: ''
+  symbol: ''
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201
@@ -92,6 +98,12 @@ name_space: electronic display tft 2 inch 240 x 320 pixel ips spi 12 pin szhtc q
 name_upper: ELECTRONIC DISPLAY TFT 2 INCH 240 X 320 PIXEL IPS SPI 12 PIN SZHTC QT200H1201
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: file_copy
     delete_before_copy: true
     exit_on_missing: true
@@ -170,6 +182,8 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: display
+      category_name: Display
       controller: ST7789V
       datasheet_publisher: Shenzhen Surenoo Technology Co., Ltd.
       datasheet_url: https://device.report/m/07680e0977a46bb493db9b7bf791be435de59b37345e7119556ab12e3b367f61.pdf
@@ -205,6 +219,10 @@ oomlout_ai_roboclick_2:
       file_copy:
       - file_destination: datasheet.pdf
         file_source: parts_source/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201/datasheet.pdf
+      kicad:
+        hand_solder: ''
+        machine_solder: ''
+        symbol: ''
       manufacturer: SZHTC
       name: electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201
       name_proper: Display QT200H1201 TFT
@@ -216,6 +234,12 @@ oomlout_ai_roboclick_2:
         QT200H1201
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: file_copy
           delete_before_copy: true
           exit_on_missing: true

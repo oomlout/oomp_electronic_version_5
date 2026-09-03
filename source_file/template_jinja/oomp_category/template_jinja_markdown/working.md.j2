@@ -60,6 +60,10 @@
 
 ## Files
 
+{% if p.kicad is defined %}
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+{% endif %}
 {% for file_preview in p.part_page.file_previews -%}
 ![{{ file_preview.title }}]({{ file_preview.preview }})
 

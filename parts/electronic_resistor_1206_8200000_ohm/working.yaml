@@ -28,6 +28,8 @@ bip_39_full_no_space: rabbitevilfirstpunchimagepointbluepurposesorrypistolreadyd
 bip_39_full_space: rabbit evil first punch image point blue purpose sorry pistol ready
   dizzy
 bip_39_full_underscore: rabbit_evil_first_punch_image_point_blue_purpose_sorry_pistol_ready_dizzy
+category: resistor
+category_name: Resistor
 dimensions_mm:
   length: 3.2
   width: 1.6
@@ -37,6 +39,10 @@ id: electronic_resistor_1206_8200000_ohm
 id_no_class: electronic_resistor_1206_8200000_ohm
 id_no_size: electronic_resistor_1206_8200000_ohm
 id_no_type: electronic_resistor_1206_8200000_ohm
+kicad:
+  hand_solder: ''
+  machine_solder: Resistor_SMD:R_1206_3216Metric
+  symbol: Device:R_Small
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_8200000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_8200000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_8200000_ohm
@@ -60,6 +66,12 @@ name_space: electronic resistor 1206 8200000 ohm
 name_upper: ELECTRONIC RESISTOR 1206 8200000 OHM
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: resistor
+      category_name: Resistor
       dimensions_mm:
         length: 3.2
         width: 1.6
       directory: parts\electronic_resistor_1206_8200000_ohm
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: Resistor_SMD:R_1206_3216Metric
+        symbol: Device:R_Small
       name: electronic_resistor_1206_8200000_ohm
       name_proper: Resistor 8.2e+06 Ohm 1206
       name_readable: Resistor 8.2e+06 Ohm 1206
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC RESISTOR 1206 8200000 OHM
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

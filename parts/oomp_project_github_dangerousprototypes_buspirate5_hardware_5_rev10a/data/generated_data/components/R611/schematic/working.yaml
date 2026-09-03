@@ -1,3 +1,104 @@
-available: false
-units: []
-connected_components: []
+available: true
+units:
+- reference: R611
+  source_file: data/kicad_file_sheets/bpu-current_limiter.kicad_sch
+  uuid: 00000000-0000-0000-0000-000061365a70
+  library_id: Device:R_Small
+  unit: 1
+  body_style: 1
+  position:
+    x: 156.21
+    y: 26.67
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R611
+    Value: 10K
+    Footprint: Resistor_SMD:R_0402_1005Metric
+    Datasheet: '~'
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 0.762
+    position:
+      x: 158.75
+      y: 26.67
+    net: CURRENT_RESET
+    net_aliases:
+    - CURRENT_RESET
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U502
+      pin_number: '3'
+      pin_name: QD
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 0.762
+    position:
+      x: 153.67
+      y: 26.67
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q601
+      pin_number: '2'
+      pin_name: B1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.8636
+        y: -1.8796
+      max:
+        x: 0.8636
+        y: 1.8796
+      width: 1.7272
+      height: 3.7592
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 154.3304
+        y: 25.8064
+      max:
+        x: 158.0896
+        y: 27.5336
+      width: 3.7592
+      height: 1.7272
+      center:
+        x: 156.21
+        y: 26.67
+  warnings: []
+connected_components:
+- reference: Q601
+  pin_number: '2'
+  pin_name: B1
+- reference: U502
+  pin_number: '3'
+  pin_name: QD

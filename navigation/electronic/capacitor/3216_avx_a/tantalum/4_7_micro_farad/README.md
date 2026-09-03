@@ -9,7 +9,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [Capacitor Tantalum 3216_AVX_A](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt) — `electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt`
+- [Capacitor 4.7 uF 16 V Tantalum 3216 AVX A](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt) — `electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt`
 
 
 

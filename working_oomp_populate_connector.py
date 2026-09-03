@@ -1,5 +1,10 @@
 def main(**kwargs):
     options = kwargs.get("options", [])
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_c", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "16_pin", "taxonomy_14": "shou_han", "taxonomy_15": "type_c_16pin_2md_073",
+        "name_short": "USB-C TYPE-C 16PIN 2MD(073)",
+    })
 
     connector_types = ["usb_c"]
     mounting_types = ["surface_mount"]

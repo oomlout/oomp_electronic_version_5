@@ -1,10 +1,10 @@
-# Connector Header 2 54 Mm Pitch Through Hole 32 Pin
+# Connector Header 2.54 mm pitch through-hole 32 pin
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_32_pin`
 
-Connector Header 2 54 Mm Pitch Through Hole 32 Pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 81.28 &#x00D7; 2.48 mm.
+Connector Header 2.54 mm pitch through-hole 32 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 81.28 &#x00D7; 2.48 mm.
 
-![Connector Header 2 54 Mm Pitch Through Hole 32 Pin pinout](data/working_svg_top.svg)
+![Connector Header 2.54 mm pitch through-hole 32 pin pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -45,6 +45,10 @@ Connector Header 2 54 Mm Pitch Through Hole 32 Pin is an OOMP electronic connect
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

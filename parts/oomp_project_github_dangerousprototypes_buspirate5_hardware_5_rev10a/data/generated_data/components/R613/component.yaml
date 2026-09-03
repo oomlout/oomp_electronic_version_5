@@ -1,8 +1,188 @@
 reference: R613
 schematic:
-  available: false
-  units: []
-  connected_components: []
+  available: true
+  units:
+  - reference: R613
+    source_file: data/kicad_file_sheets/bpu-current_limiter.kicad_sch
+    uuid: 00000000-0000-0000-0000-00006135e936
+    library_id: Device:R_Small
+    unit: 1
+    body_style: 1
+    position:
+      x: 165.1
+      y: 54.61
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R613
+      Value: 10K
+      Footprint: Resistor_SMD:R_0402_1005Metric
+      Datasheet: '~'
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 270.0
+      length: 0.762
+      position:
+        x: 165.1
+        y: 52.07
+      net: +3.3V
+      net_aliases:
+      - +3.3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#PWR0133'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#PWR0609'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#PWR0612'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#PWR0613'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: C413
+        pin_number: '1'
+        pin_name: '~'
+      - reference: C414
+        pin_number: '2'
+        pin_name: '~'
+      - reference: C605
+        pin_number: '1'
+        pin_name: '~'
+      - reference: D601
+        pin_number: '1'
+        pin_name: K
+      - reference: Q601
+        pin_number: '1'
+        pin_name: E1
+      - reference: Q601
+        pin_number: '4'
+        pin_name: E2
+      - reference: R609
+        pin_number: '1'
+        pin_name: '~'
+      - reference: U602
+        pin_number: '5'
+        pin_name: V+
+      - reference: U603
+        pin_number: '5'
+        pin_name: V+
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -2.54
+        rotation: 90.0
+      length: 0.762
+      position:
+        x: 165.1
+        y: 57.15
+      net: CURRENT_EN
+      net_aliases:
+      - CURRENT_EN
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: R612
+        pin_number: '2'
+        pin_name: '~'
+      - reference: U502
+        pin_number: '1'
+        pin_name: QB
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.8636
+          y: -1.8796
+        max:
+          x: 0.8636
+          y: 1.8796
+        width: 1.7272
+        height: 3.7592
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 164.2364
+          y: 52.7304
+        max:
+          x: 165.9636
+          y: 56.4896
+        width: 1.7272
+        height: 3.7592
+        center:
+          x: 165.1
+          y: 54.61
+    warnings: []
+  connected_components:
+  - reference: '#PWR0133'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#PWR0609'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#PWR0612'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#PWR0613'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: C413
+    pin_number: '1'
+    pin_name: '~'
+  - reference: C414
+    pin_number: '2'
+    pin_name: '~'
+  - reference: C605
+    pin_number: '1'
+    pin_name: '~'
+  - reference: D601
+    pin_number: '1'
+    pin_name: K
+  - reference: Q601
+    pin_number: '1'
+    pin_name: E1
+  - reference: Q601
+    pin_number: '4'
+    pin_name: E2
+  - reference: R609
+    pin_number: '1'
+    pin_name: '~'
+  - reference: R612
+    pin_number: '2'
+    pin_name: '~'
+  - reference: U502
+    pin_number: '1'
+    pin_name: QB
+  - reference: U602
+    pin_number: '5'
+    pin_name: V+
+  - reference: U603
+    pin_number: '5'
+    pin_name: V+
 pcb:
   reference: R613
   value: 10K
@@ -490,22 +670,25 @@ pcb:
   - U602
   - U603
 connectivity_cross_check:
-  available: false
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: '1'
-    schematic_nets: []
+    schematic_nets:
+    - +3.3V
     pcb_nets:
     - +3V3
-    status: incomplete
+    status: disagree
   - pin_or_pad_number: '2'
-    schematic_nets: []
+    schematic_nets:
+    - CURRENT_EN
     pcb_nets:
     - CURRENT_EN
-    status: incomplete
-  agree_count: 0
-  disagree_count: 0
-  incomplete_count: 2
+    status: agree
+  agree_count: 1
+  disagree_count: 1
+  incomplete_count: 0
 oomp:
   status: matched
   accepted: true
@@ -520,4 +703,7 @@ oomp:
   reasons:
   - Exact OOMP ID constructed from component type, package size, and normalized value.
   candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
 generated_directory: components/R613

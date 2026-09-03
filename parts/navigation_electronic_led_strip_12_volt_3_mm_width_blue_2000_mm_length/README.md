@@ -5,6 +5,19 @@ This OOMP navigation part publishes the category index at
 
 It contains 2 descendant parts.
 
+
+[Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_12_volt_3_mm_width/blue)
+
+
+
+
+
+## Parts
+
+- [LED Blue 2000 Mm Length 320 Leds Per Meter STRIP_12_VOLT_3_MM_WIDTH](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_12_volt_3_mm_width_blue_2000_mm_length_320_leds_per_meter) — `electronic_led_strip_12_volt_3_mm_width_blue_2000_mm_length_320_leds_per_meter`
+
+
+
 ---
 
 Generated from the populated OOMP taxonomy by Roboclick and Jinja.

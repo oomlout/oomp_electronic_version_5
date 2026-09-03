@@ -1,10 +1,10 @@
-# IC CH343P QFN_16_3_MM_X_3_MM
+# IC CH343P QFN 16 3 MM X 3 MM
 
 `electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p`
 
-IC CH343P QFN_16_3_MM_X_3_MM is an OOMP electronic ic definition. It uses the qfn 16 3 mm x 3 mm package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 17 documented pins.
+IC CH343P QFN 16 3 MM X 3 MM is an OOMP electronic ic definition. It uses the qfn 16 3 mm x 3 mm package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 17 documented pins.
 
-![IC CH343P QFN_16_3_MM_X_3_MM pinout](data/working_svg_square_pins.svg)
+![IC CH343P QFN 16 3 MM X 3 MM pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -82,6 +82,10 @@ IC CH343P QFN_16_3_MM_X_3_MM is an OOMP electronic ic definition. It uses the qf
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

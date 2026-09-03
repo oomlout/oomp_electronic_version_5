@@ -28,6 +28,8 @@ bip_39_full_no_space: validsociallockriskhairfaintolivecapablewritewitnessdispla
 bip_39_full_space: valid social lock risk hair faint olive capable write witness display
   tissue
 bip_39_full_underscore: valid_social_lock_risk_hair_faint_olive_capable_write_witness_display_tissue
+category: led
+category_name: LED
 dimensions_mm:
   length: 5.0
   width: 5.0
@@ -37,6 +39,10 @@ id: electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
 id_no_class: electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
 id_no_size: electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
 id_no_type: electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
+kicad:
+  hand_solder: ''
+  machine_solder: ''
+  symbol: ''
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
@@ -60,6 +66,12 @@ name_space: electronic led 5050 rgb ws2812b worldsemi ws2812b b w
 name_upper: ELECTRONIC LED 5050 RGB WS2812B WORLDSEMI WS2812B B W
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 5.0
         width: 5.0
       directory: parts\electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: ''
+        symbol: ''
       name: electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
       name_proper: LED RGB WS2812B Worldsemi 5050
       name_readable: LED RGB WS2812B Worldsemi 5050
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC LED 5050 RGB WS2812B WORLDSEMI WS2812B B W
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

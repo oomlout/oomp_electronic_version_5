@@ -28,6 +28,8 @@ bip_39_full_no_space: stickfencetaskcleverathletebiologycattlesignamazingagelake
 bip_39_full_space: stick fence task clever athlete biology cattle sign amazing age
   lake dwarf
 bip_39_full_underscore: stick_fence_task_clever_athlete_biology_cattle_sign_amazing_age_lake_dwarf
+category: connector
+category_name: Connector
 connector_dimensions_mm:
   body_length: 7.62
   body_width: 2.5
@@ -74,6 +76,10 @@ id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm
 id_no_class: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5
 id_no_size: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5
 id_no_type: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5
+kicad:
+  hand_solder: Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical
+  machine_solder: Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical
+  symbol: Connector_Generic:Conn_01x03
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5
@@ -104,6 +110,12 @@ name_upper: ELECTRONIC CONNECTOR HEADER 2 54 MM PITCH THROUGH HOLE 3 PIN SOCKET 
   KH 2 54FH 1X3P H8 5
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: file_copy
     delete_before_copy: true
     exit_on_missing: true
@@ -186,6 +198,13 @@ oomlout_ai_roboclick_1:
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_square_pins_300.png
+    file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
   description: Build component diagrams and proportional 300-pixel README previews
     with deterministic Python actions.
   file_test: ''
@@ -196,6 +215,8 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: connector
+      category_name: Connector
       connector_dimensions_mm:
         body_length: 7.62
         body_width: 2.5
@@ -238,6 +259,10 @@ oomlout_ai_roboclick_2:
         plastic_length: 7.62
         plastic_width: 2.5
         recommended_hole_diameter: 1.02
+      kicad:
+        hand_solder: Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical
+        machine_solder: Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical
+        symbol: Connector_Generic:Conn_01x03
       manufacturer: Kinghelm
       name: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5
       name_proper: Connector Header KH-2.54FH-1X3P-H8.5
@@ -249,6 +274,12 @@ oomlout_ai_roboclick_2:
         KINGHELM KH 2 54FH 1X3P H8 5
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: file_copy
           delete_before_copy: true
           exit_on_missing: true
@@ -329,6 +360,13 @@ oomlout_ai_roboclick_2:
           command: image_resize
           file_destination: data/working_svg_side_300.png
           file_source: data/working_svg_side.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_square_pins_300.png
+          file_source: data/working_svg_square_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos

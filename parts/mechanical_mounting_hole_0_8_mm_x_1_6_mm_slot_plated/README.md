@@ -45,6 +45,10 @@ Mounting Hole 0.8 mm x 1.6 mm Slot Plated is an OOMP mechanical mounting hole de
 
 ## Files
 
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)

@@ -44,44 +44,22 @@
             "length": 0.0,
             "position": {
               "x": 129.54,
-              "y": 38.1
+              "y": 43.18
             },
-            "net": "VUSB",
-            "net_aliases": [
-              "VUSB"
-            ],
+            "net": null,
+            "net_aliases": [],
             "net_scope": "sheet",
             "no_connect": false,
             "connected_to": [
               {
-                "reference": "C2",
+                "reference": "C5",
                 "pin_number": "1",
                 "pin_name": "1"
               },
               {
-                "reference": "C3",
-                "pin_number": "2",
-                "pin_name": "2"
-              },
-              {
-                "reference": "C4",
-                "pin_number": "2",
-                "pin_name": "2"
-              },
-              {
-                "reference": "C6",
+                "reference": "IC3",
                 "pin_number": "1",
-                "pin_name": "1"
-              },
-              {
-                "reference": "IC4",
-                "pin_number": "2",
-                "pin_name": "GND"
-              },
-              {
-                "reference": "L1",
-                "pin_number": "2",
-                "pin_name": "2"
+                "pin_name": "IN1"
               }
             ]
           },
@@ -98,22 +76,54 @@
             "length": 0.0,
             "position": {
               "x": 129.54,
-              "y": 43.18
+              "y": 38.1
             },
-            "net": null,
-            "net_aliases": [],
+            "net": "VUSB",
+            "net_aliases": [
+              "VUSB"
+            ],
             "net_scope": "sheet",
             "no_connect": false,
             "connected_to": [
               {
-                "reference": "C5",
+                "reference": "C2",
+                "pin_number": "2",
+                "pin_name": "2"
+              },
+              {
+                "reference": "C3",
+                "pin_number": "1",
+                "pin_name": "1"
+              },
+              {
+                "reference": "C4",
+                "pin_number": "1",
+                "pin_name": "1"
+              },
+              {
+                "reference": "C6",
                 "pin_number": "2",
                 "pin_name": "2"
               },
               {
                 "reference": "IC3",
-                "pin_number": "1",
-                "pin_name": "IN1"
+                "pin_number": "3",
+                "pin_name": "IN0"
+              },
+              {
+                "reference": "IC3",
+                "pin_number": "5",
+                "pin_name": "VCC"
+              },
+              {
+                "reference": "IC4",
+                "pin_number": "5",
+                "pin_name": "VIN"
+              },
+              {
+                "reference": "L1",
+                "pin_number": "2",
+                "pin_name": "2"
               }
             ]
           }
@@ -164,28 +174,28 @@
     "connected_components": [
       {
         "reference": "C2",
-        "pin_number": "1",
-        "pin_name": "1"
+        "pin_number": "2",
+        "pin_name": "2"
       },
       {
         "reference": "C3",
-        "pin_number": "2",
-        "pin_name": "2"
+        "pin_number": "1",
+        "pin_name": "1"
       },
       {
         "reference": "C4",
-        "pin_number": "2",
-        "pin_name": "2"
+        "pin_number": "1",
+        "pin_name": "1"
       },
       {
         "reference": "C5",
-        "pin_number": "2",
-        "pin_name": "2"
+        "pin_number": "1",
+        "pin_name": "1"
       },
       {
         "reference": "C6",
-        "pin_number": "1",
-        "pin_name": "1"
+        "pin_number": "2",
+        "pin_name": "2"
       },
       {
         "reference": "IC3",
@@ -193,9 +203,19 @@
         "pin_name": "IN1"
       },
       {
+        "reference": "IC3",
+        "pin_number": "3",
+        "pin_name": "IN0"
+      },
+      {
+        "reference": "IC3",
+        "pin_number": "5",
+        "pin_name": "VCC"
+      },
+      {
         "reference": "IC4",
-        "pin_number": "2",
-        "pin_name": "GND"
+        "pin_number": "5",
+        "pin_name": "VIN"
       },
       {
         "reference": "L1",
@@ -660,29 +680,29 @@
   },
   "connectivity_cross_check": {
     "available": true,
-    "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.",
+    "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also allow KiCad's leading '/' prefix.",
     "comparisons": [
       {
         "pin_or_pad_number": "1",
+        "schematic_nets": [],
+        "pcb_nets": [
+          "VUSB"
+        ],
+        "status": "incomplete"
+      },
+      {
+        "pin_or_pad_number": "2",
         "schematic_nets": [
           "VUSB"
         ],
         "pcb_nets": [
-          "VUSB"
-        ],
-        "status": "agree"
-      },
-      {
-        "pin_or_pad_number": "2",
-        "schematic_nets": [],
-        "pcb_nets": [
           "N$6"
         ],
-        "status": "incomplete"
+        "status": "disagree"
       }
     ],
-    "agree_count": 1,
-    "disagree_count": 0,
+    "agree_count": 0,
+    "disagree_count": 1,
     "incomplete_count": 1
   },
   "oomp": {
@@ -702,5 +722,8 @@
     ],
     "candidates": []
   },
+  "category": "resistor",
+  "category_source": "oomp_populate",
+  "category_name": "Resistor",
   "generated_directory": "components/R3"
 }

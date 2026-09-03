@@ -9,6 +9,8 @@ from pathlib import Path
 
 import yaml
 
+from kicad_agents.pcb_copper import add_copper_svg, copper_svg, explorer_copper
+
 
 OOMP_PARTS_URL = "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts"
 
@@ -54,10 +56,14 @@ def _component_record(component, asset_directory):
         pads.append({"number": pin_number, "name": pin_name, "net": net_name, "type": str(pad.get("pin_type") or pad.get("type") or "")})
     return {
         "reference": str(component.get("reference") or ""),
+        "category": str(component.get("category") or "other"),
+        "category_name": str(component.get("category_name") or "Other"),
+        "category_source": str(component.get("category_source") or ""),
         "value": str(pcb.get("value") or properties.get("Value") or ""),
         "footprint": str(pcb.get("library_id") or ""),
         "side": str(pcb.get("side") or ""),
         "position": pcb.get("position") or {},
+        "source_file": pcb.get("source_file") or "",
         "oomp_id": oomp_id,
         "match_status": str(oomp.get("status") or "unmatched"),
         "confidence": oomp.get("confidence", 0),
@@ -81,6 +87,14 @@ def _style():
   --accent: #ff5c35;
   --accent-soft: #ffe4db;
   --board: #f8f8f5;
+  --copper: #7a8790;
+  --net: #d9480f;
+  --selected-pin: #007d8a;
+  --copper-front: #d9480f;
+  --copper-back: #2563eb;
+  --copper-inner-1: #9333ea;
+  --copper-inner-2: #16803c;
+  --copper-multilayer: #674b26;
   --shadow: 0 18px 50px rgba(20, 20, 20, .14);
   --radius: 18px;
   --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -94,20 +108,35 @@ header p { margin: 2px 0 0; color: #cfcfcf; font-size: 13px; }
 .badge { margin-left: auto; border: 1px solid #555; border-radius: 999px; padding: 7px 11px; font-size: 12px; white-space: nowrap; }
 .layout { height: 100%; min-height: 0; display: grid; grid-template-columns: minmax(190px, 260px) minmax(0, 1fr) minmax(260px, 360px); gap: 14px; padding: 14px; overflow: hidden; }
 .panel { min-height: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.05); }
-.list-panel { display: grid; grid-template-rows: auto 1fr; }
+.list-panel { display: grid; grid-template-rows: auto auto minmax(0, 1fr); min-width: 0; }
 .search-wrap { padding: 14px; border-bottom: 1px solid var(--line); }
 input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font: inherit; }
 .part-list { min-width: 0; overflow: auto; padding: 7px; }
 .part-row { position: relative; min-width: 0; }
+.category-group { border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+.category-group > summary { display: flex; align-items: center; gap: 7px; padding: 10px 3px; cursor: pointer; font-size: 12px; font-weight: 750; }
+.category-group > summary::before { content: '▸'; }
+.category-group[open] > summary::before { content: '▾'; }
+.category-group > summary span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.category-group > summary small { color: var(--muted); font-weight: 400; }
+.category-select, .part-select { width: 14px; height: 14px; margin: 0; padding: 0; flex: 0 0 auto; cursor: pointer; accent-color: var(--accent); }
+.part-select { position: absolute; left: 5px; top: 12px; }
+.part-row > .part-button { padding-left: 25px; }
+.part-button.selected { background: var(--accent-soft); }
+.selection-tools { margin-top: 7px; font-size: 11px; color: var(--muted); }
+.selection-tools button { border: 0; background: transparent; color: var(--ink); text-decoration: underline; cursor: pointer; font: inherit; }
+.selection-nets { margin-top: 8px; display: flex !important; gap: 7px; align-items: flex-start; line-height: 1.35; }
+.selection-nets input { width: auto; margin: 2px 0 0; }
 .part-button { width: 100%; min-width: 0; display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 3px 8px; padding: 9px 32px 9px 9px; border: 0; border-radius: 10px; background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .part-button:hover, .part-button.active { background: var(--accent-soft); }
+.part-button.active:not(.selected) { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
 .part-button strong { font-size: 13px; }
 .part-button span { overflow: hidden; color: var(--muted); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .part-button .oomp-id { grid-column: 1 / -1; overflow-wrap: anywhere; text-overflow: clip; white-space: normal; }
 .part-link { position: absolute; top: 8px; right: 7px; display: grid; width: 24px; height: 24px; place-items: center; border-radius: 7px; color: var(--ink); text-decoration: none; }
 .part-link:hover { background: var(--ink); color: white; }
 .board-panel { position: relative; display: grid; place-items: center; overflow: auto; padding: 18px; background: var(--board); }
-.board-toolbar { position: absolute; z-index: 10; top: 12px; left: 12px; display: flex; gap: 5px; padding: 5px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.94); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+.board-toolbar { position: absolute; z-index: 10; top: 12px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 5px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.94); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
 .side-button { padding: 7px 11px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
 .side-button:hover, .side-button.active { background: var(--ink); color: white; }
 .zoom-divider { width: 1px; margin: 4px 2px; background: var(--line); }
@@ -119,6 +148,10 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .board-view[hidden] { display: none; }
 .board-view > svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; margin: auto; filter: drop-shadow(0 9px 13px rgba(0,0,0,.12)); }
 .board-stage .board-component { cursor: pointer; outline: none; transition: opacity .13s ease; }
+.board-stage .board-component > .component { fill: none; }
+/* Only the explorer makes white assembly geometry transparent. Labels and
+   black outlines stay above the actual pad/track shapes; source SVGs stay white. */
+.board-stage .board-component :is(rect, path, polygon, circle, ellipse):is([fill="#FFFFFF"], [fill="#ffffff"], [fill="#fff"], [fill="white"]) { fill: none; }
 .board-stage .board-component:hover > *, .board-stage .board-component:focus > * { stroke: var(--accent) !important; }
 .board-stage.has-selection .board-component:not(.is-active) { opacity: .55; }
 .selection-box { fill: none; stroke: var(--accent); stroke-width: 1.2; vector-effect: non-scaling-stroke; pointer-events: none; }
@@ -134,6 +167,48 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .pinout svg { width: 100%; max-height: 300px; }
 .pin-table { width: 100%; border-collapse: collapse; font-size: 12px; }
 .pin-table th, .pin-table td { padding: 6px; border-bottom: 1px solid #e5e2da; text-align: left; }
+.pin-table { table-layout: fixed; overflow-wrap: anywhere; }
+.pin-table th:first-child { width: 45px; }
+.pin-menu { margin: 0 7px 9px; font-size: 12px; }
+.pin-menu summary { cursor: pointer; padding: 5px; color: var(--muted); }
+.pin-menu-body { max-height: 260px; overflow: auto; }
+.pin-button, .net-link { font: inherit; text-align: left; cursor: pointer; border: 0; border-radius: 5px; color: inherit; background: transparent; overflow-wrap: anywhere; }
+.pin-button { display: block; width: 100%; padding: 6px; border-left: 3px solid transparent; }
+.pin-button small { display: block; color: var(--muted); overflow-wrap: anywhere; }
+.pin-button:hover, .net-link:hover { background: var(--accent-soft); }
+.pin-button.on-net, .net-link.on-net { background: var(--accent-soft); }
+.pin-button.selected-pin { border-left-color: var(--selected-pin); color: var(--selected-pin); font-weight: 750; }
+.net-link { color: var(--net); padding: 3px; text-decoration: underline; }
+.net-picker { padding: 0 14px 12px; border-bottom: 1px solid var(--line); font-size: 12px; max-height: 300px; overflow: auto; }
+.net-picker label { display: block; margin-bottom: 6px; }
+.net-picker select, .board-toolbar select { width: 100%; min-width: 0; max-width: 100%; padding: 6px; border: 1px solid var(--line); border-radius: 6px; background: white; font: inherit; }
+.net-status { max-height: 165px; overflow: auto; margin-top: 8px; overflow-wrap: anywhere; line-height: 1.5; }
+.net-status button { font-size: 11px; }
+.board-toolbar select { width: auto; max-width: 155px; font-size: 11px; }
+.board-toolbar label { font-size: 11px; white-space: nowrap; }
+.board-toolbar input { width: auto; }
+.copper-feature { color: var(--copper); cursor: pointer; shape-rendering: geometricPrecision; }
+.copper-segment, .copper-arc, .copper-via { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.copper-pad, .copper-zone { fill: currentColor; stroke: none; }
+.copper-base .copper-feature { opacity: .48; }
+.copper-base .copper-zone { opacity: .10; pointer-events: none; }
+.copper-base .copper-pad { opacity: .28; }
+.copper-feature.layer-hidden, .copper-feature.fill-hidden { display: none; }
+.board-stage.hide-traces .copper-base { display: none; }
+.board-stage.has-net .copper-base .copper-feature { opacity: .10; }
+.board-stage.has-net .board-component { opacity: .25; }
+.board-stage.has-net .board-component.on-net { opacity: 1; }
+.board-stage.has-net .board-component.is-active { opacity: 1; }
+.copper-overlay .copper-feature { color: var(--layer-color, var(--net)); opacity: 1; }
+.copper-overlay .copper-zone { opacity: .18; pointer-events: none; }
+/* Use the exact native circle/rounded-rectangle/custom pad boundary. The old
+   pixel-width white border caused jagged seams, especially on custom pads. */
+.copper-overlay .copper-pad .pad-anchor { stroke: none; }
+.copper-overlay .selected-pin { color: var(--selected-pin); }
+.net-note { font-size: 11px; color: var(--muted); }
+.layer-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11px; margin-top: 6px; }
+.layer-key { display: inline-flex; align-items: center; gap: 4px; }
+.layer-swatch { width: 10px; height: 10px; border-radius: 50%; background: var(--layer-color); }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
 .actions a { display: inline-block; padding: 9px 12px; border-radius: 10px; background: var(--ink); color: white; text-decoration: none; font-size: 12px; }
 .actions a.secondary { background: var(--accent-soft); color: var(--ink); }
@@ -142,14 +217,16 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .hover-card.visible { display: block; }
 .hover-card strong { display: block; }
 .hover-card span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
-@media (max-width: 920px) { .layout { grid-template-columns: 190px minmax(0, 1fr); } .detail.panel { grid-column: 1 / -1; min-height: 360px; } }
-@media (max-width: 640px) { html, body { height: auto; min-height: 100%; } body { display: block; overflow: auto; } .layout { display: block; height: auto; overflow: visible; } .panel { margin-bottom: 12px; } .list-panel { height: 240px; } .board-panel { height: 62vh; } }
+@media (max-width: 920px) { html, body { height: auto; min-height: 100%; } body { overflow: auto; } .layout { height: auto; overflow: visible; grid-template-columns: 190px minmax(0, 1fr); grid-template-rows: minmax(560px, 75vh) auto; } .detail.panel { grid-column: 1 / -1; min-height: 360px; } }
+@media (max-width: 640px) { body { display: block; } header { flex-wrap: wrap; } .layout { display: block; } .panel { margin-bottom: 12px; } .list-panel { height: 520px; } .board-panel { height: 70vh; min-height: 400px; } }
 """
 
 
 def _script():
     return r"""
 const components = JSON.parse(document.getElementById('component-data').textContent);
+const copper = JSON.parse(document.getElementById('copper-data').textContent);
+const byNet = new Map(copper.nets.map(net => [net.id, net]));
 const byReference = new Map(components.map(component => [component.reference, component]));
 const list = document.getElementById('part-list');
 const detail = document.getElementById('detail');
@@ -159,6 +236,52 @@ const hoverCard = document.getElementById('hover-card');
 let activeReference = '';
 let activeSide = 'front';
 let zoomScale = 1;
+let activeNet = '';
+let activePin = null;
+const selectedReferences = new Set();
+const collapsedCategories = new Set(components.map(component => component.category));
+const highlightSelectedNets = document.getElementById('highlight-selected-nets');
+const expandedReferences = new Set();
+const netSelect = document.getElementById('net-select');
+const netSearch = document.getElementById('net-search');
+const layerSelect = document.getElementById('copper-layer');
+const baseFeatures = [...document.querySelectorAll('.copper-base .copper-feature')];
+const boardViewports = new Map();
+document.querySelectorAll('.board-view > svg').forEach(svg => {
+  const original = svg.getAttribute('viewBox').split(/\s+/).map(Number);
+  boardViewports.set(svg, {original, target: [...original]});
+});
+// Explicit editable colours for the common stack; additional internal layers
+// get evenly spaced hues without changing the familiar front/back colours.
+const layerColors = {'F.Cu': 'var(--copper-front)', 'B.Cu': 'var(--copper-back)',
+  'In1.Cu': 'var(--copper-inner-1)', 'In2.Cu': 'var(--copper-inner-2)'};
+copper.layers.forEach((layer, index) => {
+  if (!layerColors[layer]) layerColors[layer] = `hsl(${(index * 137.5) % 360} 65% 38%)`;
+});
+
+function layerColor(element) {
+  const layers = element.dataset.layers.split(' ');
+  const requested = layerSelect.value === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layerSelect.value;
+  if (requested !== 'all' && layers.includes(requested)) return layerColors[requested];
+  return layers.length === 1 ? layerColors[layers[0]] : 'var(--copper-multilayer)';
+}
+
+function renderLayerLegend() {
+  const legend = document.getElementById('layer-legend');
+  legend.replaceChildren();
+  const items = copper.layers.map(layer => [layer, layerColors[layer]]);
+  items.push(['Via / through-hole', 'var(--copper-multilayer)']);
+  items.push(['Selected pin', 'var(--selected-pin)']);
+  for (const [label, color] of items) {
+    const key = document.createElement('span');
+    key.className = 'layer-key';
+    key.style.setProperty('--layer-color', color);
+    const swatch = document.createElement('span');
+    swatch.className = 'layer-swatch';
+    key.append(swatch, document.createTextNode(label));
+    legend.appendChild(key);
+  }
+}
 
 function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>'"]/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[character]));
@@ -166,15 +289,71 @@ function escapeHtml(value) {
 
 function renderList(filterText = '') {
   const filter = filterText.trim().toLowerCase();
+  const scrollTop = list.scrollTop;
   list.innerHTML = '';
-  components.filter(component => {
-    const haystack = [component.reference, component.value, component.oomp_id, component.footprint].join(' ').toLowerCase();
+  const groups = new Map();
+  const visible = components.filter(component => {
+    const haystack = [component.reference, component.value, component.category, component.category_name, component.oomp_id, component.footprint, ...component.pads.map(pin => `${pin.number} ${pin.name} ${pin.net}`)].join(' ').toLowerCase();
     return component.side === activeSide && haystack.includes(filter);
-  }).forEach(component => {
+  });
+  for (const component of visible) {
+    if (!groups.has(component.category)) groups.set(component.category, []);
+    groups.get(component.category).push(component);
+  }
+  for (const [category, members] of [...groups].sort((a, b) => a[0].localeCompare(b[0]))) {
+    const allMembers = components.filter(component => component.category === category);
+    const selectedCount = allMembers.filter(component => selectedReferences.has(component.reference)).length;
+    const group = document.createElement('details');
+    group.className = 'category-group';
+    group.dataset.category = category;
+    group.open = !!filter || !collapsedCategories.has(category);
+    const heading = document.createElement('summary');
+    const select = document.createElement('input');
+    select.type = 'checkbox';
+    select.className = 'category-select';
+    select.dataset.category = category;
+    select.checked = selectedCount === allMembers.length;
+    select.indeterminate = selectedCount > 0 && selectedCount < allMembers.length;
+    select.setAttribute('aria-label', `Select all ${members[0].category_name} components on both sides`);
+    select.addEventListener('click', event => event.stopPropagation());
+    select.addEventListener('change', () => {
+      for (const component of allMembers) {
+        if (select.checked) selectedReferences.add(component.reference);
+        else selectedReferences.delete(component.reference);
+      }
+      selectionChanged();
+    });
+    heading.appendChild(select);
+    const title = document.createElement('span');
+    title.textContent = members[0].category_name;
+    heading.appendChild(title);
+    const count = document.createElement('small');
+    count.textContent = `${selectedCount}/${allMembers.length}`;
+    count.title = `${selectedCount} selected of ${allMembers.length} on both sides; ${members.length} visible`;
+    heading.appendChild(count);
+    group.appendChild(heading);
+    group.addEventListener('toggle', () => {
+      if (filter) return;
+      if (group.open) collapsedCategories.delete(category);
+      else collapsedCategories.add(category);
+    });
+    for (const component of members) {
     const row = document.createElement('div');
     row.className = 'part-row';
+    const selectPart = document.createElement('input');
+    selectPart.type = 'checkbox';
+    selectPart.className = 'part-select';
+    selectPart.dataset.reference = component.reference;
+    selectPart.checked = selectedReferences.has(component.reference);
+    selectPart.setAttribute('aria-label', `Select ${component.reference}`);
+    selectPart.addEventListener('change', () => {
+      if (selectPart.checked) selectedReferences.add(component.reference);
+      else selectedReferences.delete(component.reference);
+      selectionChanged();
+    });
+    row.appendChild(selectPart);
     const button = document.createElement('button');
-    button.className = 'part-button' + (component.reference === activeReference ? ' active' : '');
+    button.className = 'part-button' + (component.reference === activeReference ? ' active' : '') + (selectedReferences.has(component.reference) ? ' selected' : '');
     button.dataset.reference = component.reference;
     button.innerHTML = `<strong>${escapeHtml(component.reference)}</strong><span>${escapeHtml(component.value || 'unlabelled')}</span><span class="oomp-id">${escapeHtml(component.oomp_id || 'unmatched')}</span>`;
     button.addEventListener('click', () => selectComponent(component.reference));
@@ -189,13 +368,68 @@ function renderList(filterText = '') {
       link.textContent = '↗';
       row.appendChild(link);
     }
-    list.appendChild(row);
-  });
+    const menu = document.createElement('details');
+    menu.className = 'pin-menu';
+    menu.open = expandedReferences.has(component.reference);
+    const summary = document.createElement('summary');
+    summary.textContent = `Pins · ${component.pads.length}`;
+    menu.appendChild(summary);
+    const body = document.createElement('div');
+    body.className = 'pin-menu-body';
+    component.pads.forEach(pin => {
+      const pinButton = document.createElement('button');
+      pinButton.type = 'button';
+      pinButton.className = pinClass(component, pin);
+      pinButton.dataset.pin = pin.number;
+      pinButton.dataset.reference = component.reference;
+      pinButton.innerHTML = `${escapeHtml(pin.number || 'Pad')} · ${escapeHtml(pin.name || 'unnamed')}<small>${escapeHtml(pin.net || 'No assigned net')}</small>`;
+      pinButton.addEventListener('click', () => selectPin(component.reference, pin.number, pin.net_id));
+      body.appendChild(pinButton);
+    });
+    menu.appendChild(body);
+    menu.addEventListener('toggle', () => {
+      if (menu.open) expandedReferences.add(component.reference);
+      else expandedReferences.delete(component.reference);
+    });
+    row.appendChild(menu);
+    group.appendChild(row);
+    }
+    list.appendChild(group);
+  }
+  list.scrollTop = scrollTop;
+  document.getElementById('selection-count').textContent = `${selectedReferences.size} selected · both sides`;
+}
+
+function highlightedNetIds() {
+  const ids = new Set();
+  if (highlightSelectedNets.checked) {
+    for (const reference of selectedReferences) {
+      for (const pin of byReference.get(reference).pads) {
+        if (pin.net_id && byNet.has(pin.net_id)) ids.add(pin.net_id);
+      }
+    }
+  } else if (byNet.has(activeNet)) ids.add(activeNet);
+  return ids;
+}
+
+function selectionChanged() {
+  activeNet = '';
+  activePin = null;
+  updateSelectionBoxes();
+  updateNetHighlight();
+  renderList(search.value);
+  const component = byReference.get(activeReference);
+  if (component) renderDetail(component);
+}
+
+function pinClass(component, pin) {
+  const selected = activePin && activePin.reference === component.reference && activePin.number === pin.number && activePin.net_id === pin.net_id;
+  return 'pin-button' + (highlightedNetIds().has(pin.net_id) ? ' on-net' : '') + (selected ? ' selected-pin' : '');
 }
 
 function pinRows(component) {
   if (!component.pads.length) return '<p class="empty">No PCB pads were extracted for this item.</p>';
-  return `<table class="pin-table"><thead><tr><th>Pin</th><th>Name</th><th>Net</th></tr></thead><tbody>${component.pads.map(pin => `<tr><td>${escapeHtml(pin.number)}</td><td>${escapeHtml(pin.name || '—')}</td><td>${escapeHtml(pin.net || '—')}</td></tr>`).join('')}</tbody></table>`;
+  return `<table class="pin-table"><thead><tr><th>Pin</th><th>Name</th><th>Net</th></tr></thead><tbody>${component.pads.map((pin, index) => `<tr><td><button class="${pinClass(component, pin)}" data-pin-index="${index}">${escapeHtml(pin.number || 'Pad')}</button></td><td>${escapeHtml(pin.name || '—')}</td><td>${pin.net_id ? `<button class="net-link${activeNet === pin.net_id ? ' on-net' : ''}" data-net-id="${escapeHtml(pin.net_id)}">${escapeHtml(pin.net)}</button>` : 'No net'}</td></tr>`).join('')}</tbody></table>`;
 }
 
 function renderDetail(component) {
@@ -211,6 +445,7 @@ function renderDetail(component) {
     <div class="value">${escapeHtml(component.value || 'No value')}</div>
     <dl class="facts">
       <dt>OOMP</dt><dd>${escapeHtml(component.oomp_id || 'unmatched')}</dd>
+      <dt>Category</dt><dd>${escapeHtml(component.category_name)}${component.category_source === 'unmatched_kicad_hint' ? ' (KiCad hint)' : ''}</dd>
       <dt>Footprint</dt><dd>${escapeHtml(component.footprint || '—')}</dd>
       <dt>Side</dt><dd>${escapeHtml(component.side || '—')}</dd>
       <dt>Position</dt><dd>${escapeHtml(position.x ?? '—')}, ${escapeHtml(position.y ?? '—')} mm</dd>
@@ -222,50 +457,172 @@ function renderDetail(component) {
     ${pinRows(component)}`;
 }
 
-function selectComponent(reference) {
+function selectComponent(reference, preserveNet = false) {
   const component = byReference.get(reference);
   if (!component) return;
   if (component.side && component.side !== activeSide) setSide(component.side, false);
   activeReference = reference;
-  stage.classList.add('has-selection');
-  document.querySelectorAll('.board-component').forEach(element => element.classList.toggle('is-active', element.dataset.reference === reference));
-  updateSelectionBoxes(reference);
+  collapsedCategories.delete(component.category);
+  if (!selectedReferences.has(reference)) {
+    selectedReferences.clear();
+    selectedReferences.add(reference);
+  }
+  if (!preserveNet) { activeNet = ''; activePin = null; }
+  updateSelectionBoxes();
   renderDetail(component);
   renderList(search.value);
+  updateNetHighlight();
 }
 
-function updateSelectionBoxes(reference) {
+function selectPin(reference, number, netId) {
+  highlightSelectedNets.checked = false;
+  activePin = {reference, number, net_id: netId || ''};
+  activeNet = netId || '';
+  expandedReferences.add(reference);
+  selectComponent(reference, true);
+}
+
+function selectNet(netId) {
+  highlightSelectedNets.checked = false;
+  activeNet = byNet.has(netId) ? netId : '';
+  activePin = null;
+  updateNetHighlight();
+  renderList(search.value);
+  const component = byReference.get(activeReference);
+  if (component) renderDetail(component);
+}
+
+function renderNetOptions() {
+  const filter = netSearch.value.trim().toLowerCase();
+  netSelect.innerHTML = '<option value="">Choose a net…</option>';
+  copper.nets.forEach(net => {
+    if (net.id !== activeNet && !net.name.toLowerCase().includes(filter)) return;
+    const option = document.createElement('option');
+    option.value = net.id;
+    option.textContent = `${net.name} · ${net.pins.length} pins`;
+    netSelect.appendChild(option);
+  });
+  netSelect.value = activeNet;
+}
+
+function featureVisible(element) {
+  const layer = layerSelect.value;
+  const selectedLayer = layer === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layer;
+  return layer === 'all' || element.dataset.layers.split(' ').includes(selectedLayer);
+}
+
+function updateNetHighlight() {
+  const net = byNet.get(activeNet);
+  const netIds = highlightedNetIds();
+  const connectedReferences = new Set();
+  for (const id of netIds) {
+    for (const pin of byNet.get(id).pins) connectedReferences.add(pin.reference);
+  }
+  const fills = document.getElementById('show-fills').checked;
+  stage.classList.toggle('has-net', netIds.size > 0);
+  stage.classList.toggle('hide-traces', !document.getElementById('show-traces').checked);
+  baseFeatures.forEach(element => {
+    element.classList.toggle('layer-hidden', !featureVisible(element));
+    element.classList.toggle('fill-hidden', element.classList.contains('copper-zone') && !fills);
+  });
+  document.querySelectorAll('.copper-overlay').forEach(overlay => {
+    overlay.replaceChildren();
+    const base = overlay.closest('svg').querySelector('.copper-base');
+    base.querySelectorAll('.copper-feature').forEach(element => {
+      const selectedPin = activePin && element.classList.contains('copper-pad') && element.dataset.reference === activePin.reference && element.dataset.pin === activePin.number && element.dataset.netId === activePin.net_id;
+      if (!netIds.has(element.dataset.netId) && !selectedPin) return;
+      const clone = element.cloneNode(true);
+      clone.style.setProperty('--layer-color', layerColor(element));
+      clone.classList.toggle('selected-pin', !!selectedPin);
+      overlay.appendChild(clone);
+    });
+  });
+  document.querySelectorAll('.board-component').forEach(element => {
+    element.classList.toggle('on-net', connectedReferences.has(element.dataset.reference));
+  });
+  const status = document.getElementById('net-status');
+  if (highlightSelectedNets.checked) {
+    status.innerHTML = `<strong>${selectedReferences.size} selected components · ${netIds.size} nets</strong><br><span class="net-note">All connected pins and copper on the shown layers. Click a net below to follow it alone.</span><div>${[...netIds].map(id => `<button class="net-link" data-net-id="${escapeHtml(id)}">${escapeHtml(byNet.get(id).name)}</button>`).join(' ')}</div>`;
+  } else if (net) {
+    const visiblePins = net.pins.filter(pin => layerSelect.value === 'all' || pin.layers.includes(layerSelect.value === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layerSelect.value));
+    status.innerHTML = `<strong>${escapeHtml(net.name)}</strong><br>${net.track_count} traces · ${net.via_count} vias · ${net.fill_count} saved fills<br>${visiblePins.length} / ${net.pins.length} pins on shown layers<br><span class="net-note">${escapeHtml(net.layers.join(' · '))}</span><div>${net.pins.map(pin => byReference.has(pin.reference) ? `<button class="net-link" data-reference="${escapeHtml(pin.reference)}" data-pin="${escapeHtml(pin.number)}">${escapeHtml(pin.reference)}.${escapeHtml(pin.number || 'pad')}</button>` : `<span>${escapeHtml(pin.reference)}.${escapeHtml(pin.number)} (not in BOM) </span>`).join('')}</div>`;
+  } else {
+    status.textContent = activePin ? `${activePin.reference}.${activePin.number}: no assigned net; only this pin is highlighted.` : 'Expand Pins or choose a net. Highlight colours identify copper layers; teal marks the selected pin. Escape clears.';
+  }
+  renderNetOptions();
+  if (document.getElementById('zoom-to-net').checked) fitSelectedNet();
+}
+
+function updateSelectionBoxes() {
   document.querySelectorAll('.selection-box').forEach(element => element.remove());
-  document.querySelectorAll(`.board-component[data-reference="${CSS.escape(reference)}"]`).forEach(element => {
+  stage.classList.toggle('has-selection', selectedReferences.size > 0);
+  document.querySelectorAll('.board-component').forEach(element => {
+    const selected = selectedReferences.has(element.dataset.reference);
+    element.classList.toggle('is-active', selected);
+    if (!selected) return;
     const bounds = element.getBBox();
     const pad = Math.max(0.7, Math.min(bounds.width, bounds.height) * 0.18);
+    const boxWidth = Math.max(bounds.width + pad * 2, 2.4);
+    const boxHeight = Math.max(bounds.height + pad * 2, 2.4);
     const box = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     box.setAttribute('class', 'selection-box');
-    box.setAttribute('x', bounds.x - pad);
-    box.setAttribute('y', bounds.y - pad);
-    box.setAttribute('width', Math.max(bounds.width + pad * 2, 2.4));
-    box.setAttribute('height', Math.max(bounds.height + pad * 2, 2.4));
+    box.setAttribute('x', bounds.x + bounds.width / 2 - boxWidth / 2);
+    box.setAttribute('y', bounds.y + bounds.height / 2 - boxHeight / 2);
+    box.setAttribute('width', boxWidth);
+    box.setAttribute('height', boxHeight);
     element.insertBefore(box, element.firstChild);
   });
 }
 
 function setZoom(nextZoom) {
-  zoomScale = Math.max(0.5, Math.min(4, nextZoom));
-  stage.style.width = `${zoomScale * 100}%`;
-  stage.style.height = `${zoomScale * 100}%`;
+  zoomScale = Math.max(0.5, Math.min(12, nextZoom));
+  // Keep the SVG sized to the panel. Changing its viewBox zooms around the
+  // selected region without growing the grid or moving the toolbar away.
+  boardViewports.forEach((viewport, svg) => {
+    const [x, y, width, height] = viewport.target;
+    const w = width / zoomScale;
+    const h = height / zoomScale;
+    svg.setAttribute('viewBox', [x + (width - w) / 2, y + (height - h) / 2, w, h].join(' '));
+  });
   document.getElementById('zoom-label').textContent = `${Math.round(zoomScale * 100)}%`;
 }
 
-function setSide(side, selectFirst = true) {
+function fitBoard() {
+  boardViewports.forEach(viewport => { viewport.target = [...viewport.original]; });
+  setZoom(1);
+}
+
+function fitSelectedNet() {
+  if (!highlightedNetIds().size) { fitBoard(); return; }
+  const view = document.querySelector('.board-view:not([hidden])');
+  const svg = view.querySelector(':scope > svg');
+  const elements = view.querySelectorAll('.copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden)');
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  for (const element of elements) {
+    const box = element.getBBox();
+    // Convert through the SVG matrices so the bottom reflection is included,
+    // but current screen size and zoom never contaminate PCB millimetres.
+    const matrix = svg.getCTM().inverse().multiply(element.getCTM());
+    const corners = [[box.x, box.y], [box.x + box.width, box.y],
+      [box.x, box.y + box.height], [box.x + box.width, box.y + box.height]];
+    for (const [x, y] of corners) {
+      const p = new DOMPoint(x, y).matrixTransform(matrix);
+      minX = Math.min(minX, p.x); minY = Math.min(minY, p.y);
+      maxX = Math.max(maxX, p.x); maxY = Math.max(maxY, p.y);
+    }
+  }
+  if (!Number.isFinite(minX)) { fitBoard(); return; }
+  const pad = Math.max(.8, Math.max(maxX - minX, maxY - minY) * .12);
+  boardViewports.get(svg).target = [minX - pad, minY - pad, maxX - minX + pad * 2, maxY - minY + pad * 2];
+  setZoom(1);
+}
+
+function setSide(side) {
   activeSide = side === 'back' ? 'back' : 'front';
   document.querySelectorAll('.board-view').forEach(view => { view.hidden = view.dataset.side !== activeSide; });
-  document.querySelectorAll('.side-button').forEach(button => button.classList.toggle('active', button.dataset.side === activeSide));
+  document.querySelectorAll('.side-button[data-side]').forEach(button => button.classList.toggle('active', button.dataset.side === activeSide));
   renderList(search.value);
-  const selected = byReference.get(activeReference);
-  if (selectFirst && (!selected || selected.side !== activeSide)) {
-    const first = components.find(component => component.side === activeSide);
-    if (first) selectComponent(first.reference);
-  }
+  updateNetHighlight();
 }
 
 function showHover(event, reference) {
@@ -296,10 +653,51 @@ document.querySelectorAll('.board-component').forEach(element => {
   element.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') selectComponent(reference); });
 });
 search.addEventListener('input', () => renderList(search.value));
-document.querySelectorAll('.side-button').forEach(button => button.addEventListener('click', () => setSide(button.dataset.side)));
+detail.addEventListener('click', event => {
+  const pinButton = event.target.closest('[data-pin-index]');
+  const netButton = event.target.closest('.net-link[data-net-id]');
+  if (pinButton) {
+    const component = byReference.get(activeReference);
+    const pin = component.pads[Number(pinButton.dataset.pinIndex)];
+    selectPin(component.reference, pin.number, pin.net_id);
+  } else if (netButton) selectNet(netButton.dataset.netId);
+});
+stage.addEventListener('click', event => {
+  const feature = event.target.closest('.copper-feature');
+  if (!feature) return;
+  if (feature.classList.contains('copper-pad') && byReference.has(feature.dataset.reference)) {
+    selectPin(feature.dataset.reference, feature.dataset.pin, feature.dataset.netId);
+  } else selectNet(feature.dataset.netId);
+});
+document.getElementById('net-status').addEventListener('click', event => {
+  const netButton = event.target.closest('button[data-net-id]');
+  if (netButton) { selectNet(netButton.dataset.netId); return; }
+  const button = event.target.closest('button[data-reference]');
+  if (button) selectPin(button.dataset.reference, button.dataset.pin, activeNet);
+});
+netSearch.addEventListener('input', renderNetOptions);
+netSelect.addEventListener('change', () => selectNet(netSelect.value));
+document.getElementById('clear-net').addEventListener('click', () => selectNet(''));
+document.getElementById('clear-selection').addEventListener('click', () => {
+  selectedReferences.clear();
+  activeReference = '';
+  detail.innerHTML = '<p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p>';
+  selectionChanged();
+});
+highlightSelectedNets.addEventListener('change', selectionChanged);
+document.addEventListener('keydown', event => { if (event.key === 'Escape') selectNet(''); });
+for (const id of ['copper-layer', 'show-traces', 'show-fills']) {
+  document.getElementById(id).addEventListener('change', updateNetHighlight);
+}
+document.getElementById('zoom-to-net').addEventListener('change', event => {
+  if (event.target.checked) fitSelectedNet();
+  else fitBoard();
+});
+document.querySelectorAll('.side-button[data-side]').forEach(button => button.addEventListener('click', () => setSide(button.dataset.side)));
 document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoomScale + 0.25));
 document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoomScale - 0.25));
-document.getElementById('zoom-fit').addEventListener('click', () => setZoom(1));
+document.getElementById('zoom-fit').addEventListener('click', fitBoard);
+renderLayerLegend();
 setZoom(1);
 setSide('front', false);
 const firstFrontComponent = components.find(component => component.side === 'front');
@@ -340,6 +738,20 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
             continue
         component_records.append(_component_record(component, asset_directory))
 
+    copper = explorer_copper(project_data)
+    for component in component_records:
+        for pin in component["pads"]:
+            pin["net_id"] = ""
+            for net in copper["nets"]:
+                if net["name"] == pin["net"] and net["source_file"] == component["source_file"]:
+                    pin["net_id"] = net["id"]
+                    break
+    copper_drawing = copper_svg(copper["features"])
+    board_svg = add_copper_svg(board_svg, copper_drawing)
+    board_bottom_svg = add_copper_svg(board_bottom_svg, copper_drawing, mirror=True)
+    copper_json = json.dumps({key: copper[key] for key in ["nets", "layers", "warnings"]}, ensure_ascii=False).replace("</", "<\\/")
+    layer_options = "".join(f'<option value="{html.escape(layer, quote=True)}">{html.escape(layer)}</option>' for layer in copper["layers"])
+    warning_html = "".join(f'<p class="net-note">{html.escape(warning)}</p>' for warning in copper["warnings"])
     project = summary_data.get("project") or {}
     title = str(project.get("display_name") or project_directory.name)
     front_count = 0
@@ -359,9 +771,21 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
 <style id="oomp-board-style">{_style()}</style>
 </head>
 <body>
-<header><div><h1>{html.escape(title)}</h1><p>Offline OOMP board explorer · hover or click a component</p></div><div class="badge">{len(component_records)} placed items</div></header>
+<header><div><h1>{html.escape(title)}</h1><p>Offline OOMP board explorer · components, pins &amp; routed nets</p></div><div class="badge">{len(component_records)} items · {len(copper['nets'])} nets</div></header>
 <main class="layout">
-  <section class="panel list-panel"><div class="search-wrap"><input id="search" type="search" placeholder="Filter reference, value or part…" aria-label="Filter components"></div><div id="part-list" class="part-list"></div></section>
+  <section class="panel list-panel">
+    <div class="search-wrap"><input id="search" type="search" placeholder="Filter categories, components or pins…" aria-label="Filter components"><div class="selection-tools"><span id="selection-count">0 selected · both sides</span> · <button id="clear-selection" type="button">Clear selection</button></div></div>
+    <div class="net-picker">
+      <label for="net-search">Follow a net</label>
+      <input id="net-search" type="search" placeholder="Find net by name…" aria-label="Filter nets">
+      <select id="net-select" aria-label="Select net"></select>
+      <button id="clear-net" class="net-link" type="button">Clear highlight</button>
+      <label class="selection-nets"><input id="highlight-selected-nets" type="checkbox"> Highlight all selected nets</label>
+      <div id="net-status" class="net-status" role="status" aria-live="polite"></div>
+      <div id="layer-legend" class="layer-legend" aria-label="Highlighted copper layer colours"></div>
+    </div>
+    <div id="part-list" class="part-list"></div>
+  </section>
   <section class="panel board-panel">
     <div class="board-toolbar" aria-label="Board side">
       <button class="side-button active" type="button" data-side="front">Top · {front_count}</button>
@@ -370,16 +794,22 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
       <button id="zoom-out" class="zoom-button" type="button" aria-label="Zoom out">−</button>
       <button id="zoom-fit" class="zoom-label side-button" type="button" aria-label="Fit board"><span id="zoom-label">100%</span></button>
       <button id="zoom-in" class="zoom-button" type="button" aria-label="Zoom in">+</button>
+      <span class="zoom-divider"></span>
+      <select id="copper-layer" aria-label="Copper layers"><option value="side">Visible side copper</option><option value="all" selected>All copper layers</option>{layer_options}</select>
+      <label><input id="show-traces" type="checkbox" checked> Traces</label>
+      <label><input id="show-fills" type="checkbox" checked> Fills</label>
+      <label><input id="zoom-to-net" type="checkbox"> Zoom to net</label>
     </div>
     <div id="board-stage" class="board-stage">
       <div class="board-view" data-side="front">{board_svg}</div>
       <div class="board-view" data-side="back" hidden>{board_bottom_svg}</div>
     </div>
   </section>
-  <aside id="detail" class="panel detail"><p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p></aside>
+  <aside class="panel detail"><div id="detail"><p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p></div>{warning_html}</aside>
 </main>
 <div id="hover-card" class="hover-card" role="status"></div>
 <script id="component-data" type="application/json">{data_json}</script>
+<script id="copper-data" type="application/json">{copper_json}</script>
 <script>{_script()}</script>
 </body>
 </html>

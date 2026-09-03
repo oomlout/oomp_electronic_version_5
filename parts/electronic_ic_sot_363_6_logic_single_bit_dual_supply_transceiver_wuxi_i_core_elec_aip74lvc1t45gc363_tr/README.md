@@ -1,10 +1,10 @@
-# IC AiP74LVC1T45GC363.TR SOT_363_6
+# IC AiP74LVC1T45GC363.TR SOT 363 6
 
 `electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr`
 
-IC AiP74LVC1T45GC363.TR SOT_363_6 is an OOMP electronic ic definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 6 documented pins.
+IC AiP74LVC1T45GC363.TR SOT 363 6 is an OOMP electronic ic definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 6 documented pins.
 
-![IC AiP74LVC1T45GC363.TR SOT_363_6 pinout](data/working_svg_square_pins.svg)
+![IC AiP74LVC1T45GC363.TR SOT 363 6 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -71,6 +71,10 @@ IC AiP74LVC1T45GC363.TR SOT_363_6 is an OOMP electronic ic definition. It uses t
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

@@ -28,6 +28,8 @@ bip_39_full_no_space: sightvalveaccuseovalclaythrivebooktwosnapdolphinoctoberspr
 bip_39_full_space: sight valve accuse oval clay thrive book two snap dolphin october
   spray
 bip_39_full_underscore: sight_valve_accuse_oval_clay_thrive_book_two_snap_dolphin_october_spray
+category: capacitor
+category_name: Capacitor
 dimensions_mm:
   length: 1.0
   width: 0.5
@@ -37,6 +39,10 @@ id: electronic_capacitor_0402_15_pico_farad
 id_no_class: electronic_capacitor_0402_15_pico_farad
 id_no_size: electronic_capacitor_0402_15_pico_farad
 id_no_type: electronic_capacitor_0402_15_pico_farad
+kicad:
+  hand_solder: ''
+  machine_solder: Capacitor_SMD:C_0402_1005Metric
+  symbol: Device:C_Small
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_15_pico_farad
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_15_pico_farad
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_15_pico_farad
@@ -60,6 +66,12 @@ name_space: electronic capacitor 0402 15 pico farad
 name_upper: ELECTRONIC CAPACITOR 0402 15 PICO FARAD
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: capacitor
+      category_name: Capacitor
       dimensions_mm:
         length: 1.0
         width: 0.5
       directory: parts\electronic_capacitor_0402_15_pico_farad
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: Capacitor_SMD:C_0402_1005Metric
+        symbol: Device:C_Small
       name: electronic_capacitor_0402_15_pico_farad
       name_proper: Capacitor 15 pF 0402
       name_readable: Capacitor 15 pF 0402
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC CAPACITOR 0402 15 PICO FARAD
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

@@ -1,5 +1,20 @@
 def main(**kwargs):
     options = kwargs.get("options", [])
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "esp32_wroom_32e", "taxonomy_4": "microcontroller",
+        "taxonomy_5": "wifi_bluetooth_8_mb_flash", "taxonomy_14": "espressif",
+        "taxonomy_15": "esp32_wroom_32e_n8", "name_short": "ESP32-WROOM-32E-N8 8MB",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_223_3",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_3_3_volt",
+        "taxonomy_14": "advanced_monolithic_systems", "taxonomy_15": "ams1117_3_3",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "qfn_28_5_mm_x_5_mm",
+        "taxonomy_4": "converter", "taxonomy_5": "usb_to_serial_converter",
+        "taxonomy_14": "silicon_labs", "taxonomy_15": "cp2102_gmr",
+    })
 
     packages = ["qfn_16_3_mm_x_3_mm"]
     ic_types = ["converter"]

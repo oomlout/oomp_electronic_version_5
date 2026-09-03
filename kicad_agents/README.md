@@ -26,14 +26,14 @@ overrides. A missing version definition defaults to `current`.
    --ff-only` when it already exists, using the system Git executable. The
    selected source files are copied to `data/kicad_file.kicad_pcb`,
    `data/kicad_file.kicad_sch`, and `data/kicad_file.kicad_pro`.
-2. Parse those canonical files, match components, copy required OOMP component
-   sources, draw the board, and rebuild the project part's `README.md`.
-3. Run the vendored InteractiveHtmlBom generator without opening a browser.
+2. Run the vendored InteractiveHtmlBom generator without opening a browser.
    Its result is placed in `data/interactivehtmlbom/`; KiCad's Python runtime
    is required because InteractiveHtmlBom imports `pcbnew`.
+3. Parse those canonical files, match components, copy required OOMP component
+   sources, draw the board, and rebuild the project part's `README.md`.
 
-Both blocks use an empty `file_test`, so they run every time actions are run.
-The second block verifies `data/generated_data/src/board_pins.png` as its declared
+All blocks use an empty `file_test`, so they run every time actions are run.
+The third block verifies `data/generated_data/src/board_pins.png` as its declared
 output while also rebuilding the SVG boards and project README.
 
 Existing PNG files are preserved by default so routine runs do not rewrite
@@ -51,6 +51,8 @@ rebuilt. Roboclick image-resize and project actions also accept the explicit
 For a complete deterministic rebuild, run `action_regenerate_all.bat` from the
 repository root. It forces SVG/PNG and preview regeneration, but deliberately
 skips actions that operate an interactive browser.
+The force flag is applied only in memory; saved definitions remain in the
+normal conservative PNG mode after the full rebuild.
 
 ## Part navigation and file layout
 
@@ -63,6 +65,16 @@ Generated part folders keep only `README.md`, `working.yaml`, and `data/` at
 their root. Diagrams, PNG previews, datasheets, project source files, reports,
 and explorer files all belong under `data/`. Run
 `python -m kicad_agents.migrate_part_data_layout` to migrate legacy roots.
+
+Project explorer links use GitHub Pages at
+`https://oomlout.github.io/oomp_electronic_version_5/parts/<project-id>/data/generated_data/board_explorer.html`.
+
+The explorer includes expandable component pins and clickable routed nets,
+top/bottom/internal copper layers, vias and optional saved fills. See the
+[board explorer guide](BOARD_EXPLORER_GUIDE.md) for usage, generation and tests.
+Enable GitHub Pages for the repository's `main` branch and `/ (root)` folder
+after publishing these changes. The root `.nojekyll` file keeps the generated
+HTML/SVG assets unprocessed. These self-contained HTML files also work locally.
 
 ## Generated structure
 

@@ -108,8 +108,10 @@ def generate_interactive_html_bom(details):
     completed = subprocess.run(
         command,
         cwd=str(data_directory),
+        env={**os.environ, "INTERACTIVE_HTML_BOM_NO_DISPLAY": "1"},
         capture_output=True,
         text=True,
+        timeout=1100,
     )
     if completed.stdout.strip() != "":
         print(completed.stdout.strip())

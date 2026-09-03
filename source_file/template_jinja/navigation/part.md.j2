@@ -5,6 +5,26 @@ This OOMP navigation part publishes the category index at
 
 It contains {{ p.navigation.descendant_part_count }} descendant parts.
 
+{% if p.navigation.parent_url %}
+[Up one level]({{ p.navigation.parent_url }})
+{% endif %}
+
+{% if p.navigation.child_categories %}
+## Categories
+
+{% for category in p.navigation.child_categories -%}
+- [{{ category.name }}]({{ category.url }})
+{% endfor %}
+{% endif %}
+
+{% if p.navigation.parts %}
+## Parts
+
+{% for part in p.navigation.parts -%}
+- [{{ part.name }}]({{ part.url }}) — `{{ part.id }}`
+{% endfor %}
+{% endif %}
+
 ---
 
 Generated from the populated OOMP taxonomy by Roboclick and Jinja.

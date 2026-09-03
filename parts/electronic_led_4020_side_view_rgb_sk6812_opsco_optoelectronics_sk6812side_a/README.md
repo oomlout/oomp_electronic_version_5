@@ -1,10 +1,10 @@
-# LED RGB SK6812 Opsco Optoelectronics 4020_SIDE_VIEW
+# LED SK6812SIDE-A 4020 SIDE VIEW
 
 `electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a`
 
-LED RGB SK6812 Opsco Optoelectronics 4020_SIDE_VIEW is an OOMP electronic led definition. It uses the 4020 side view package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 4 documented pins.
+LED SK6812SIDE-A 4020 SIDE VIEW is an OOMP electronic led definition. It uses the 4020 side view package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 4 documented pins.
 
-![LED RGB SK6812 Opsco Optoelectronics 4020_SIDE_VIEW pinout](data/working_svg_square_pins.svg)
+![LED SK6812SIDE-A 4020 SIDE VIEW pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -65,6 +65,10 @@ LED RGB SK6812 Opsco Optoelectronics 4020_SIDE_VIEW is an OOMP electronic led de
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

@@ -1,10 +1,10 @@
-# Wire Jumper Dupont Plug To Dupont Socket PROTOTYPING
+# Wire Jumper Dupont Plug To Dupont Socket 150 Mm Length Ribbon Cable Rainbow 40 PROTOTYPING
 
 `electronic_wire_prototyping_jumper_dupont_plug_to_dupont_socket_150_mm_length_ribbon_cable_rainbow_40`
 
-Wire Jumper Dupont Plug To Dupont Socket PROTOTYPING is an OOMP electronic wire definition. It uses the prototyping package or form factor. Its nominal drawing size is 150 &#x00D7; 2.0 mm.
+Wire Jumper Dupont Plug To Dupont Socket 150 Mm Length Ribbon Cable Rainbow 40 PROTOTYPING is an OOMP electronic wire definition. It uses the prototyping package or form factor. Its nominal drawing size is 150 &#x00D7; 2.0 mm.
 
-![Wire Jumper Dupont Plug To Dupont Socket PROTOTYPING pinout](data/working_svg_square_pins.svg)
+![Wire Jumper Dupont Plug To Dupont Socket 150 Mm Length Ribbon Cable Rainbow 40 PROTOTYPING pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -47,6 +47,10 @@ Wire Jumper Dupont Plug To Dupont Socket PROTOTYPING is an OOMP electronic wire 
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

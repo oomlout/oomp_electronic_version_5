@@ -9,12 +9,16 @@ def main(**kwargs):
 
     import working_oomp_populate_connector_extra
     working_oomp_populate_connector_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_capacitor_extra
+    working_oomp_populate_capacitor_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_diode_extra
     working_oomp_populate_diode_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_transistor_extra
     working_oomp_populate_transistor_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_ic_extra
     working_oomp_populate_ic_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_switch_extra
+    working_oomp_populate_switch_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_ferrite_bead_extra
     working_oomp_populate_ferrite_bead_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_resistor_extra

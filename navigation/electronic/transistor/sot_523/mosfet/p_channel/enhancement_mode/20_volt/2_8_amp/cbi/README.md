@@ -9,7 +9,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [Transistor BC2301T-2.8A SOT_523](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a) — `electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a`
+- [Transistor BC2301T-2.8A SOT 523](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a) — `electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a`
 
 
 

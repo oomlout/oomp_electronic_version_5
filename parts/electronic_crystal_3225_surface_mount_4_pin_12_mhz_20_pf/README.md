@@ -1,10 +1,10 @@
-# Crystal Surface Mount 4 Pin 12 Mhz 3225
+# Crystal 12 MHz 20 pF 3225 4-pin
 
 `electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf`
 
-Crystal Surface Mount 4 Pin 12 Mhz 3225 is an OOMP electronic crystal definition. It uses the 3225 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 2.5 mm.
+Crystal 12 MHz 20 pF 3225 4-pin is an OOMP electronic crystal definition. It uses the 3225 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 2.5 mm.
 
-![Crystal Surface Mount 4 Pin 12 Mhz 3225 pinout](data/working_svg_square_pins.svg)
+![Crystal 12 MHz 20 pF 3225 4-pin pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -46,6 +46,10 @@ Crystal Surface Mount 4 Pin 12 Mhz 3225 is an OOMP electronic crystal definition
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

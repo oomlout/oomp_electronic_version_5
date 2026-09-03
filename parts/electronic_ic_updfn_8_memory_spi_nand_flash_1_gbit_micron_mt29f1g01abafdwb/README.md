@@ -1,10 +1,10 @@
-# IC MT29F1G01ABAFDWB UPDFN_8
+# IC MT29F1G01ABAFDWB UPDFN 8
 
 `electronic_ic_updfn_8_memory_spi_nand_flash_1_gbit_micron_mt29f1g01abafdwb`
 
-IC MT29F1G01ABAFDWB UPDFN_8 is an OOMP electronic ic definition. It uses the updfn 8 package or form factor. Its nominal drawing size is 6.0 &#x00D7; 5.0 mm. The definition includes 8 documented pins.
+IC MT29F1G01ABAFDWB UPDFN 8 is an OOMP electronic ic definition. It uses the updfn 8 package or form factor. Its nominal drawing size is 6.0 &#x00D7; 5.0 mm. The definition includes 8 documented pins.
 
-![IC MT29F1G01ABAFDWB UPDFN_8 pinout](data/working_svg_square_pins.svg)
+![IC MT29F1G01ABAFDWB UPDFN 8 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -73,6 +73,10 @@ IC MT29F1G01ABAFDWB UPDFN_8 is an OOMP electronic ic definition. It uses the upd
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

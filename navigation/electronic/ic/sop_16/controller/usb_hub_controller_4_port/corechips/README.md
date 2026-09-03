@@ -9,7 +9,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [IC SL2.1A SOP_16](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a) — `electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a`
+- [IC SL2.1A SOP 16](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a) — `electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a`
 
 
 

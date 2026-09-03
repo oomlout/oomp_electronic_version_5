@@ -46,8 +46,14 @@ schematic:
       no_connect: false
       connected_to:
       - reference: C1
-        pin_number: '1'
-        pin_name: '1'
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CON1
+        pin_number: VBUS@1
+        pin_name: VBUS
+      - reference: CON1
+        pin_number: VBUS@2
+        pin_name: VBUS
     - number: '2'
       name: '2'
       electrical_type: passive
@@ -67,23 +73,29 @@ schematic:
       no_connect: false
       connected_to:
       - reference: C2
-        pin_number: '1'
-        pin_name: '1'
+        pin_number: '2'
+        pin_name: '2'
       - reference: C3
-        pin_number: '2'
-        pin_name: '2'
+        pin_number: '1'
+        pin_name: '1'
       - reference: C4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C6
         pin_number: '2'
         pin_name: '2'
-      - reference: C6
-        pin_number: '1'
-        pin_name: '1'
+      - reference: IC3
+        pin_number: '3'
+        pin_name: IN0
+      - reference: IC3
+        pin_number: '5'
+        pin_name: VCC
       - reference: IC4
-        pin_number: '2'
-        pin_name: GND
+        pin_number: '5'
+        pin_name: VIN
       - reference: R3
-        pin_number: '1'
-        pin_name: '1'
+        pin_number: '2'
+        pin_name: '2'
     size:
       local_graphics:
         measurement: symbol graphics only; excludes pins, properties, and text
@@ -106,38 +118,50 @@ schematic:
         available: true
         min:
           x: 76.1238
-          y: 32.9438
+          y: 32.3088
         max:
           x: 81.3562
-          y: 33.7312
+          y: 33.0962
         width: 5.2324
         height: 0.7874
         center:
           x: 78.74
-          y: 33.3375
+          y: 32.7025
     warnings: []
   connected_components:
   - reference: C1
-    pin_number: '1'
-    pin_name: '1'
+    pin_number: '2'
+    pin_name: '2'
   - reference: C2
-    pin_number: '1'
-    pin_name: '1'
+    pin_number: '2'
+    pin_name: '2'
   - reference: C3
-    pin_number: '2'
-    pin_name: '2'
+    pin_number: '1'
+    pin_name: '1'
   - reference: C4
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C6
     pin_number: '2'
     pin_name: '2'
-  - reference: C6
-    pin_number: '1'
-    pin_name: '1'
+  - reference: CON1
+    pin_number: VBUS@1
+    pin_name: VBUS
+  - reference: CON1
+    pin_number: VBUS@2
+    pin_name: VBUS
+  - reference: IC3
+    pin_number: '3'
+    pin_name: IN0
+  - reference: IC3
+    pin_number: '5'
+    pin_name: VCC
   - reference: IC4
-    pin_number: '2'
-    pin_name: GND
+    pin_number: '5'
+    pin_name: VIN
   - reference: R3
-    pin_number: '1'
-    pin_name: '1'
+    pin_number: '2'
+    pin_name: '2'
 pcb:
   reference: L1
   value: FB, 2A
@@ -499,7 +523,8 @@ pcb:
   - SJ1
 connectivity_cross_check:
   available: true
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: '1'
     schematic_nets:
@@ -530,4 +555,7 @@ oomp:
   reasons:
   - Accepted from the AI/human match override file.
   candidates: []
+category: ferrite_bead
+category_source: oomp_populate
+category_name: Ferrite bead
 generated_directory: components/L1

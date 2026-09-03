@@ -26,6 +26,10 @@
 
 ## Board
 
+[Original KiCad files]({{ repository_links.kicad_original }}) · [OOMP KiCad design and local libraries]({{ repository_links.kicad_oomp }}) · [Conversion / skipped-item report]({{ repository_links.kicad_conversion_report }})
+
+The OOMP design is a separate copy. Only symbols and footprints verified against unchanged installed KiCad masters are replaced; custom and modified items are retained.
+
 {% if board.available %}
 - Approximate size: **{{ board.width_mm }} mm × {{ board.height_mm }} mm**
 - Outline source: `{{ board.bounds_source }}`
@@ -45,7 +49,11 @@
 - Mechanical PNG: [view `board_mechanical.png`]({{ repository_links.board_mechanical_png }})
 - 300-pixel mechanical preview: [view `board_mechanical_300.png`]({{ repository_links.board_mechanical_300_png }})
 - Open the board explorer on GitHub Pages: [explore this board]({{ repository_links.explorer }})
+{% if interactivehtmlbom.available %}
 - InteractiveHtmlBom: [open the interactive BOM]({{ repository_links.interactivehtmlbom }})
+{% else %}
+- InteractiveHtmlBom generation is configured; install KiCad or set `KICAD_PYTHON` to its bundled Python to build `data/interactivehtmlbom/ibom.html`.
+{% endif %}
 {% else %}
 No PCB outline or placed-footprint bounds were available.
 {% endif %}

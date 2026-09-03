@@ -1,10 +1,10 @@
-# IC RP2040 QFN_56_7_MM_X_7_MM
+# IC RP2040 QFN 56 7 MM X 7 MM
 
 `electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040`
 
-IC RP2040 QFN_56_7_MM_X_7_MM is an OOMP electronic ic definition. It uses the qfn 56 7 mm x 7 mm package or form factor. Its nominal drawing size is 7.0 &#x00D7; 7.0 mm. The definition includes 57 documented pins.
+IC RP2040 QFN 56 7 MM X 7 MM is an OOMP electronic ic definition. It uses the qfn 56 7 mm x 7 mm package or form factor. Its nominal drawing size is 7.0 &#x00D7; 7.0 mm. The definition includes 57 documented pins.
 
-![IC RP2040 QFN_56_7_MM_X_7_MM pinout](data/working_svg_square_pins.svg)
+![IC RP2040 QFN 56 7 MM X 7 MM pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -122,6 +122,10 @@ IC RP2040 QFN_56_7_MM_X_7_MM is an OOMP electronic ic definition. It uses the qf
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

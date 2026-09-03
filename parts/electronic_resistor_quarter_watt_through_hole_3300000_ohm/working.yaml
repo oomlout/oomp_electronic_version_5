@@ -28,6 +28,8 @@ bip_39_full_no_space: boattellmaidincreasecoilabsorbbriskhedgehogeldertopmoonexi
 bip_39_full_space: boat tell maid increase coil absorb brisk hedgehog elder top moon
   exist
 bip_39_full_underscore: boat_tell_maid_increase_coil_absorb_brisk_hedgehog_elder_top_moon_exist
+category: resistor
+category_name: Resistor
 dimensions_mm:
   length: 6.5
   width: 2.5
@@ -37,6 +39,10 @@ id: electronic_resistor_quarter_watt_through_hole_3300000_ohm
 id_no_class: electronic_resistor_quarter_watt_through_hole_3300000_ohm
 id_no_size: electronic_resistor_quarter_watt_through_hole_3300000_ohm
 id_no_type: electronic_resistor_quarter_watt_through_hole_3300000_ohm
+kicad:
+  hand_solder: Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+  machine_solder: Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+  symbol: Device:R_Small
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_3300000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_3300000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_3300000_ohm
@@ -60,6 +66,12 @@ name_space: electronic resistor quarter watt through hole 3300000 ohm
 name_upper: ELECTRONIC RESISTOR QUARTER WATT THROUGH HOLE 3300000 OHM
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: resistor
+      category_name: Resistor
       dimensions_mm:
         length: 6.5
         width: 2.5
       directory: parts\electronic_resistor_quarter_watt_through_hole_3300000_ohm
       distributors: []
+      kicad:
+        hand_solder: Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+        machine_solder: Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal
+        symbol: Device:R_Small
       name: electronic_resistor_quarter_watt_through_hole_3300000_ohm
       name_proper: Resistor 3.3e+06 Ohm QUARTER_WATT_THROUGH_HOLE
       name_readable: Resistor 3.3e+06 Ohm QUARTER_WATT_THROUGH_HOLE
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC RESISTOR QUARTER WATT THROUGH HOLE 3300000 OHM
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

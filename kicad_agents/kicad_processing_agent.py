@@ -29,6 +29,7 @@ from kicad_agents.oomp_matching_agent import (
     load_overrides,
     match_component,
 )
+from kicad_agents.pcb_copper import extract_copper
 from kicad_agents.sexpr import (
     as_bool,
     as_float,
@@ -47,7 +48,7 @@ GRAPHIC_TAGS = {"arc", "bezier", "circle", "polyline", "rectangle"}
 FOOTPRINT_GRAPHIC_TAGS = {"fp_arc", "fp_circle", "fp_curve", "fp_line", "fp_poly", "fp_rect"}
 
 
-class NoAliasSafeDumper(yaml.SafeDumper):
+class NoAliasSafeDumper(getattr(yaml, "CSafeDumper", yaml.SafeDumper)):
     def ignore_aliases(self, data):
         return True
 
@@ -196,17 +197,20 @@ def _mirror(symbol_node):
     return ""
 
 
-def _reference(symbol_node):
+def _reference(symbol_node, project_uuid=""):
     properties = _properties(symbol_node)
-    if properties.get("Reference"):
-        return properties["Reference"]
+    instance_references = []
     for instances_node in children(symbol_node, "instances"):
         for project_node in children(instances_node, "project"):
             for path_node in children(project_node, "path"):
+                if project_uuid and not str(path_node[1]).startswith(f"/{project_uuid}"):
+                    continue
                 instance_reference = value(path_node, "reference", "")
-                if instance_reference:
-                    return instance_reference
-    return ""
+                if instance_reference and "?" not in instance_reference and instance_reference not in instance_references:
+                    instance_references.append(instance_reference)
+    if len(instance_references) == 1:
+        return instance_references[0]
+    return properties.get("Reference", "")
 
 
 class UnionFind:
@@ -238,8 +242,8 @@ def _coordinate_key(point):
     return round(point[0], 4), round(point[1], 4)
 
 
-def _symbol_record(symbol_node, library_symbols, schematic_path, project_directory):
-    reference = _reference(symbol_node)
+def _symbol_record(symbol_node, library_symbols, schematic_path, project_directory, project_uuid=""):
+    reference = _reference(symbol_node, project_uuid)
     library_id = _placed_library_id(symbol_node)
     library_symbol = library_symbols.get(library_id)
     position = _position(symbol_node)
@@ -262,11 +266,13 @@ def _symbol_record(symbol_node, library_symbols, schematic_path, project_directo
     for pin in library_pins:
         if placed_pin_numbers and pin["number"] not in placed_pin_numbers:
             continue
-        local_point = (pin["local_position"]["x"], pin["local_position"]["y"])
+        # Library symbol coordinates are Y-up; schematic sheet coordinates
+        # are Y-down. Rotate in the sheet convention after reflecting Y.
+        local_point = (pin["local_position"]["x"], -pin["local_position"]["y"])
         placed_point = transform_point(
             local_point,
             origin=(position["x"], position["y"]),
-            angle_degrees=position["rotation"],
+            angle_degrees=-position["rotation"],
             mirror=mirror,
         )
         placed_pin = dict(pin)
@@ -275,9 +281,9 @@ def _symbol_record(symbol_node, library_symbols, schematic_path, project_directo
 
     relative_source = str(schematic_path.relative_to(project_directory)).replace("\\", "/")
     placed_bbox = transform_bbox(
-        local_bbox,
+        transform_bbox(local_bbox, mirror="x"),
         origin=(position["x"], position["y"]),
-        angle_degrees=position["rotation"],
+        angle_degrees=-position["rotation"],
         mirror=mirror,
     )
     return {
@@ -314,7 +320,7 @@ def _symbol_record(symbol_node, library_symbols, schematic_path, project_directo
     }
 
 
-def _parse_schematic(schematic_path, project_directory):
+def _parse_schematic(schematic_path, project_directory, project_uuid=""):
     root = load(schematic_path)
     if tag(root) != "kicad_sch":
         raise ValueError(f"Not a modern .kicad_sch file: {schematic_path}")
@@ -327,7 +333,7 @@ def _parse_schematic(schematic_path, project_directory):
                 library_symbols[library_symbol[1]] = library_symbol
 
     symbols = [
-        _symbol_record(symbol_node, library_symbols, schematic_path, project_directory)
+        _symbol_record(symbol_node, library_symbols, schematic_path, project_directory, project_uuid)
         for symbol_node in children(root, "symbol")
     ]
 
@@ -545,12 +551,14 @@ def _mounting_hole_records(pads, reference, library_id):
     """Classify physical mounting/locating holes without treating signal pins as holes."""
     reference_upper = str(reference).upper()
     footprint_text = str(library_id).lower().replace("-", "_")
+    footprint_name = footprint_text.split(":")[-1]
     dedicated_footprint = (
         reference_upper.startswith("UNK_HOLE")
-        or "mounting_hole" in footprint_text
-        or "mountinghole" in footprint_text
+        or footprint_name.startswith("mounting_hole")
+        or footprint_name.startswith("mountinghole")
         or footprint_text.startswith("dummyfp")
     )
+    integrated_mounting_holes = "withmountingholes" in footprint_name or "with_mounting_holes" in footprint_name
     mechanical_pad_prefixes = [
         "MP",
         "MH",
@@ -596,7 +604,7 @@ def _mounting_hole_records(pads, reference, library_id):
             continue
 
         role = "mounting"
-        if not dedicated_footprint and plating == "unplated":
+        if not dedicated_footprint and not integrated_mounting_holes and plating == "unplated":
             role = "locating"
         if not dedicated_footprint and plating == "plated":
             role = "shield_mount"
@@ -800,6 +808,7 @@ def _parse_pcb(pcb_path, project_directory):
             _footprint_record(footprint_node, pcb_path, project_directory)
             for footprint_node in children(root, "footprint")
         ],
+        "copper": extract_copper(root),
     }
 
 
@@ -909,12 +918,20 @@ def _enrich_pcb_connections(components):
         )
 
 
-def _add_connectivity_cross_checks(components):
+def _add_connectivity_cross_checks(components, root_schematic=""):
     for component in components:
         schematic_pins = {}
+        board_net_names = defaultdict(set)
         for unit in component["schematic"]["units"]:
             for pin in unit["pins"]:
                 schematic_pins.setdefault(pin["number"], []).append(pin)
+                if pin.get("net"):
+                    board_net_names[pin["number"]].add(pin["net"])
+                    # KiCad prefixes local labels on the root sheet with '/'
+                    # in the PCB net name. Do not strip hierarchy from child
+                    # sheet labels or equate different sheet-local names.
+                    if root_schematic and unit.get("source_file") == root_schematic:
+                        board_net_names[pin["number"]].add("/" + pin["net"])
 
         pcb_pads = defaultdict(list)
         if component.get("pcb"):
@@ -928,7 +945,7 @@ def _add_connectivity_cross_checks(components):
             )
             pcb_nets = sorted({pad.get("net") for pad in pcb_pads.get(pin_number, []) if pad.get("net")})
             if schematic_nets and pcb_nets:
-                status = "agree" if set(schematic_nets) & set(pcb_nets) else "disagree"
+                status = "agree" if board_net_names[pin_number] & set(pcb_nets) else "disagree"
             elif schematic_nets or pcb_nets:
                 status = "incomplete"
             else:
@@ -943,7 +960,7 @@ def _add_connectivity_cross_checks(components):
             )
         component["connectivity_cross_check"] = {
             "available": bool(schematic_pins and pcb_pads),
-            "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.",
+            "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also allow KiCad's leading '/' prefix.",
             "comparisons": comparisons,
             "agree_count": sum(item["status"] == "agree" for item in comparisons),
             "disagree_count": sum(item["status"] == "disagree" for item in comparisons),
@@ -1242,27 +1259,39 @@ def process_project(project_directory, parts_directory, output_directory=None):
     canonical_pcb_path = project_directory / "data" / "kicad_file.kicad_pcb"
     if canonical_schematic_path.is_file():
         schematic_paths = [canonical_schematic_path]
+        sheet_directory = project_directory / "data" / "kicad_file_sheets"
+        if sheet_directory.is_dir():
+            schematic_paths.extend(sorted(sheet_directory.rglob("*.kicad_sch")))
     else:
         schematic_paths = sorted(
-            path for path in project_directory.rglob("*.kicad_sch") if output_directory not in path.parents
+            path for path in project_directory.rglob("*.kicad_sch")
+            if output_directory not in path.parents and not any(
+                folder in path.relative_to(project_directory).parts
+                for folder in ["original", "oomp_design", "git", "libraries", "previous_generated", "revisions"]
+            )
         )
     if canonical_pcb_path.is_file():
         pcb_paths = [canonical_pcb_path]
     else:
         pcb_paths = sorted(
-            path for path in project_directory.rglob("*.kicad_pcb") if output_directory not in path.parents
+            path for path in project_directory.rglob("*.kicad_pcb")
+            if output_directory not in path.parents and not any(
+                folder in path.relative_to(project_directory).parts
+                for folder in ["original", "oomp_design", "git", "libraries", "previous_generated", "revisions"]
+            )
         )
     if not schematic_paths:
         raise FileNotFoundError(f"No modern .kicad_sch files found under {project_directory}")
     if not pcb_paths:
         raise FileNotFoundError(f"No modern .kicad_pcb files found under {project_directory}")
 
-    parsed_schematics = [_parse_schematic(path, project_directory) for path in schematic_paths]
+    project_uuid = value(load(schematic_paths[0]), "uuid", "")
+    parsed_schematics = [_parse_schematic(path, project_directory, project_uuid) for path in schematic_paths]
     parsed_pcbs = [_parse_pcb(path, project_directory) for path in pcb_paths]
     components = _build_components(parsed_schematics, parsed_pcbs)
     _enrich_schematic_connections(components)
     _enrich_pcb_connections(components)
-    _add_connectivity_cross_checks(components)
+    _add_connectivity_cross_checks(components, root_schematic=parsed_schematics[0]["source_file"])
 
     overrides_path = output_directory / "match_overrides.yaml"
     if not overrides_path.exists():
@@ -1274,9 +1303,26 @@ def process_project(project_directory, parts_directory, output_directory=None):
             },
         )
     overrides = load_overrides(overrides_path)
+    override_details = yaml.safe_load(overrides_path.read_text(encoding="utf-8")) or {}
+    blocked = override_details.get("blocked", {})
+    review_notes = list(override_details.get("review_notes", []))
     part_index = OompPartIndex(parts_directory)
+    from working_oomp_populate_category import category_name, unmatched_category
+    category_metadata = {}
     for component in components:
-        component["oomp"] = match_component(part_index, component, overrides=overrides)
+        component["oomp"] = match_component(part_index, component, overrides=overrides, blocked=blocked)
+        matched_id = component["oomp"].get("oomp_id")
+        if matched_id in part_index.by_id:
+            if matched_id not in category_metadata:
+                working_path = Path(part_index.by_id[matched_id]["working_yaml"])
+                category_metadata[matched_id] = yaml.safe_load(working_path.read_text(encoding="utf-8")) or {}
+            component["category"] = category_metadata[matched_id].get("category", "other")
+            component["category_source"] = "oomp_populate"
+        else:
+            units = (component.get("schematic") or {}).get("units") or [{}]
+            component["category"] = unmatched_category(component["reference"], units[0].get("library_id", ""))
+            component["category_source"] = "unmatched_kicad_hint"
+        component["category_name"] = category_name(component["category"])
 
     unmatched = [component for component in components if component["oomp"]["status"] in {"unmatched", "ambiguous"}]
     not_applicable = [component for component in components if component["oomp"]["status"] == "not_applicable"]
@@ -1330,6 +1376,8 @@ def process_project(project_directory, parts_directory, output_directory=None):
             for file_data in parsed_pcbs
         ],
         "components": components,
+        "review_notes": review_notes,
+        "blocked_matches": blocked,
         "mounting_holes": mounting_holes,
         "mounting_hole_items": mounting_hole_items,
     }
@@ -1351,6 +1399,17 @@ def process_project(project_directory, parts_directory, output_directory=None):
     }
     _write_json(output_directory / "unmatched_parts.json", unmatched_data)
     _write_yaml(output_directory / "unmatched_parts.yaml", unmatched_data)
+    if review_notes or blocked:
+        review = {"blocked_matches": blocked, "notes": review_notes}
+        _write_json(output_directory / "component_review.json", review)
+        _write_yaml(output_directory / "component_review.yaml", review)
+        lines = ["# Component review", "", "Generated from working_oomp_populate_project.py. Edit the populate definitions, then regenerate.", "", "## Needs confirmation", ""]
+        for reference, reason in blocked.items():
+            lines.append(f"- **{reference}**: {reason}")
+        lines.extend(["", "## Verified identities and remaining footprint caveats", ""])
+        for note in review_notes:
+            lines.append(f"- {note}")
+        (output_directory / "COMPONENT_REVIEW.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     _write_json(output_directory / "project.json", project_data)
     _write_yaml(output_directory / "project.yaml", project_data)
     _write_yaml(output_directory / "summary.yaml", project_data["summary"])

@@ -444,12 +444,21 @@ class ProcessingAgentTests(unittest.TestCase):
 
     def test_c1_positions_connectivity_size_and_match(self):
         component = self.components["C1"]
+        self.assertEqual(component["category"], "capacitor")
+        self.assertEqual(component["category_name"], "Capacitor")
+        self.assertEqual(component["category_source"], "oomp_populate")
         schematic_unit = component["schematic"]["units"][0]
         self.assertEqual(schematic_unit["position"]["x"], 73.66)
         self.assertEqual(schematic_unit["position"]["y"], 40.64)
         self.assertEqual(schematic_unit["position"]["rotation"], 90.0)
-        self.assertEqual(schematic_unit["pins"][0]["position"], {"x": 73.66, "y": 38.1})
-        self.assertEqual(schematic_unit["pins"][0]["net"], "VUSB_IN")
+        # Library pin 1 is at (-2.54, 0); the 90-degree sheet placement puts
+        # it below the origin, on GND, matching PCB pad 1.
+        self.assertEqual(schematic_unit["pins"][0]["number"], "1")
+        self.assertEqual(schematic_unit["pins"][0]["position"], {"x": 73.66, "y": 43.18})
+        self.assertEqual(schematic_unit["pins"][0]["net"], "GND")
+        self.assertEqual(schematic_unit["pins"][1]["number"], "2")
+        self.assertEqual(schematic_unit["pins"][1]["position"], {"x": 73.66, "y": 38.1})
+        self.assertEqual(schematic_unit["pins"][1]["net"], "VUSB_IN")
         self.assertEqual(schematic_unit["size"]["local_graphics"]["width"], 5.2324)
         self.assertEqual(component["pcb"]["position"]["x"], 149.7511)
         self.assertEqual(component["pcb"]["position"]["y"], 119.1286)
@@ -621,7 +630,7 @@ class ProjectPartTests(unittest.TestCase):
     def test_project_populator_defaults_to_current_and_allows_version_records(self):
         options = []
         working_oomp_populate_project.main(options=options)
-        self.assertEqual(len(options), 2)
+        self.assertEqual(len(options), 3)
         project = next(option for option in options if option["project_github_repository"] == "pt1")
         taxonomy = [project[f"taxonomy_{number}"] for number in range(1, 7)]
         self.assertEqual(taxonomy, ["oomp", "project", "github", "electrolama", "pt1", "current"])
@@ -635,11 +644,16 @@ class ProjectPartTests(unittest.TestCase):
         )
         self.assertIs(bus_pirate["project_sparse_checkout"], True)
         self.assertEqual(bus_pirate["project_file_folder"], "bus_pirate_pcb/5-REV10A")
+        easyduino = next(option for option in options if option["project_github_repository"] == "easyduino")
+        self.assertEqual([easyduino[f"taxonomy_{n}"] for n in range(1, 8)],
+                         ["oomp", "project", "github", "hanqaqa", "easyduino", "atmega328p_arduino_uno", "current"])
+        self.assertEqual(easyduino["project_git_ref"], "master")
+        self.assertEqual(easyduino["project_file_basename"], "Easyduino_Atmega")
 
     def test_generated_project_part_has_always_run_actions_and_local_assets(self):
         working = yaml.safe_load((PROJECT_PART / "working.yaml").read_text(encoding="utf-8"))
         first_action = working["oomlout_ai_roboclick_1"]
-        second_action = working["oomlout_ai_roboclick_2"]
+        second_action = working["oomlout_ai_roboclick_3"]
         self.assertEqual(first_action["file_test"], "")
         self.assertEqual(second_action["file_test"], "")
         self.assertEqual(first_action["actions"][0]["command"], "run_python")
@@ -873,11 +887,13 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         preview_action = working["oomlout_ai_roboclick_1"]
         preview_actions = preview_action["actions"]
 
-        self.assertEqual(len(preview_actions), 9)
-        self.assertEqual(preview_actions[0]["command"], "run_python")
-        self.assertEqual(preview_actions[0]["file_python"], "kicad_agents/component_svg_action.py")
-        self.assertEqual(preview_actions[0]["part_id"], part_directory.name)
-        resize_actions = preview_actions[1:]
+        library_action = next(action for action in preview_actions if action.get("file_python") == "kicad_agents/kicad_library_agent.py")
+        self.assertEqual(library_action["file_output"], "data/kicad/manifest.yaml")
+        svg_action = next(action for action in preview_actions if action.get("file_python") == "kicad_agents/component_svg_action.py")
+        self.assertEqual(svg_action["command"], "run_python")
+        self.assertEqual(svg_action["part_id"], part_directory.name)
+        resize_actions = [action for action in preview_actions if action["command"] == "image_resize"]
+        self.assertEqual(len(resize_actions), 8)
         self.assertTrue(all(action["command"] == "image_resize" for action in resize_actions))
         self.assertTrue(all(action["maximum_dimension"] == 300 for action in resize_actions))
         self.assertTrue(all(action["allow_upscale"] is False for action in resize_actions))
@@ -908,6 +924,62 @@ class ElectronicPartReadmeTests(unittest.TestCase):
 
 
 class RepositoryOrganizationTests(unittest.TestCase):
+    def test_readme_local_links_resolve(self):
+        from urllib.parse import unquote
+
+        pages = list(PARTS_DIRECTORY.glob("*/README.md"))
+        pages.append(REPOSITORY_ROOT / "README.md")
+        pages.extend((REPOSITORY_ROOT / "navigation").rglob("README.md"))
+        missing = []
+        for page in pages:
+            for target in re.findall(r"\]\(([^)]+)\)", page.read_text(encoding="utf-8")):
+                if target.startswith(("http:", "https:", "#", "mailto:")):
+                    continue
+                relative = unquote(target.split("#")[0])
+                if relative and not (page.parent / relative).exists():
+                    missing.append((str(page.relative_to(REPOSITORY_ROOT)), target))
+        self.assertEqual(missing, [])
+
+    def test_pinout_preview_action_exists_with_non_pinout_hero(self):
+        for part_id in [USB_C_PART.name, "mechanical_mounting_hole_3_2_mm_round_unplated"]:
+            working = yaml.safe_load((PARTS_DIRECTORY / part_id / "working.yaml").read_text(encoding="utf-8"))
+            destinations = []
+            for key, block in working.items():
+                if str(key).startswith("oomlout_") and isinstance(block, dict):
+                    for action in block.get("actions", []):
+                        if action.get("command") == "image_resize":
+                            destinations.append(action.get("file_destination"))
+            self.assertIn("data/working_svg_square_pins_300.png", destinations)
+
+    def test_migration_preserves_conflicting_files(self):
+        from kicad_agents.migrate_part_data_layout import migrate_part_directory
+
+        with tempfile.TemporaryDirectory() as temporary:
+            part = Path(temporary) / "sample_part"
+            source = part / "generated_data" / "notes.txt"
+            destination = part / "data" / "generated_data" / "notes.txt"
+            source.parent.mkdir(parents=True)
+            destination.parent.mkdir(parents=True)
+            source.write_text("legacy notes", encoding="utf-8")
+            destination.write_text("new notes", encoding="utf-8")
+            with self.assertRaises(FileExistsError):
+                migrate_part_directory(part)
+            self.assertEqual(source.read_text(encoding="utf-8"), "legacy notes")
+            self.assertEqual(destination.read_text(encoding="utf-8"), "new notes")
+
+    def test_force_regeneration_does_not_persist_force_flag(self):
+        from unittest.mock import patch
+        import action_regenerate_all
+
+        with patch.object(action_regenerate_all.working_oomp_populate, "main") as populate:
+            with patch.object(action_regenerate_all.working_oomp, "main") as define:
+                with patch.object(action_regenerate_all, "migrate_parts", return_value={"items": 0}):
+                    with patch.object(action_regenerate_all, "run_actions", return_value=(1, 0)):
+                        with patch("kicad_agents.kicad_library_agent.package_libraries"):
+                            action_regenerate_all.regenerate_all(filter_text="sample")
+        populate.assert_called_once_with(regenerate_pngs=False, filter="sample")
+        define.assert_called_once_with(regenerate_pngs=False, filter="sample")
+
     def test_part_roots_only_contain_readme_working_and_data(self):
         allowed_names = ["README.md", "working.yaml", "data"]
         violations = []
@@ -952,6 +1024,23 @@ class RepositoryOrganizationTests(unittest.TestCase):
         self.assertTrue((REPOSITORY_ROOT / "action_regenerate_all.bat").is_file())
         self.assertTrue(_is_browser_action({"command": "run_python", "file_python": "browser_research_agent.py"}))
         self.assertFalse(_is_browser_action({"command": "run_python", "file_python": "kicad_agents/interactive_html_bom_action.py"}))
+        for command in ["new_chat", "query", "add_image", "ai_file_save"]:
+            self.assertTrue(_is_browser_action({"command": command}))
+
+    def test_readable_names_keep_capacitance_voltage_and_crystal_load(self):
+        from working_oomp_metadata import readable_name
+
+        examples = [
+            [["electronic", "capacitor", "6_3_mm_diameter_5_4_mm_tall", "electrolytic", "220_micro_farad", "10_volt"], "Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall"],
+            [["electronic", "capacitor", "3216_avx_a", "tantalum", "4_7_micro_farad", "16_volt"], "Capacitor 4.7 uF 16 V Tantalum 3216 AVX A"],
+            [["electronic", "crystal", "3225", "12_mhz", "20_pf", "4_pin"], "Crystal 12 MHz 20 pF 3225 4-pin"],
+            [["electronic", "connector", "header", "2_54_mm_pitch", "through_hole", "10_pin"], "Connector Header 2.54 mm pitch through-hole 10 pin"],
+        ]
+        for taxonomy, expected in examples:
+            part = {}
+            for index in range(len(taxonomy)):
+                part[f"taxonomy_{index + 1}"] = taxonomy[index]
+            self.assertEqual(readable_name(part), expected)
 
     def test_interactive_html_bom_is_vendored_and_has_a_headless_action(self):
         generator = REPOSITORY_ROOT / "tools" / "interactive_html_bom" / "InteractiveHtmlBom" / "generate_interactive_bom.py"
@@ -1024,7 +1113,8 @@ class UsbConnectorDiagramTests(unittest.TestCase):
         self.assertIn("(data/working_svg_side_300.png)", readme)
 
         pinout_svg = (USB_C_PART / "data" / "working_svg_square_pins.svg").read_text(encoding="utf-8")
-        self.assertIn("Connector USB C", pinout_svg)
+        self.assertIn("Connector USB-C", pinout_svg)
+        self.assertIn("TYPE-C-31-M-12", pinout_svg)
         self.assertIn("A1 gnd", pinout_svg)
         self.assertIn("B1 gnd", pinout_svg)
         self.assertNotIn(">pin 1<", pinout_svg)

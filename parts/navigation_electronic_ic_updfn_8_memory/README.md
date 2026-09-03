@@ -5,6 +5,19 @@ This OOMP navigation part publishes the category index at
 
 It contains 1 descendant parts.
 
+
+[Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/ic/updfn_8)
+
+
+
+## Categories
+
+- [SPI Nand Flash 1 Gbit](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/ic/updfn_8/memory/spi_nand_flash_1_gbit)
+
+
+
+
+
 ---
 
 Generated from the populated OOMP taxonomy by Roboclick and Jinja.

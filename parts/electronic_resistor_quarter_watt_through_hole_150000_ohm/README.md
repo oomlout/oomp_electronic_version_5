@@ -44,6 +44,10 @@ Resistor 150000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor def
 
 ## Files
 
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)

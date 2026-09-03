@@ -1,10 +1,10 @@
-# IC ME6211A33PG-N SOT_89_3
+# IC ME6211A33PG-N SOT 89 3
 
 `electronic_ic_sot_89_3_power_management_linear_voltage_regulator_3_3_volt_microne_me6211a33pg_n`
 
-IC ME6211A33PG-N SOT_89_3 is an OOMP electronic ic definition. It uses the sot 89 3 package or form factor. Its nominal drawing size is 4.5 &#x00D7; 2.5 mm. The definition includes 3 documented pins.
+IC ME6211A33PG-N SOT 89 3 is an OOMP electronic ic definition. It uses the sot 89 3 package or form factor. Its nominal drawing size is 4.5 &#x00D7; 2.5 mm. The definition includes 3 documented pins.
 
-![IC ME6211A33PG-N SOT_89_3 pinout](data/working_svg_square_pins.svg)
+![IC ME6211A33PG-N SOT 89 3 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -68,6 +68,10 @@ IC ME6211A33PG-N SOT_89_3 is an OOMP electronic ic definition. It uses the sot 8
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

@@ -299,7 +299,7 @@ def _rank_candidates(index, component, proposed_id, kind, maximum=5):
     return candidates[:maximum]
 
 
-def match_component(index, component, overrides=None):
+def match_component(index, component, overrides=None, blocked=None):
     overrides = overrides or {}
     reference = component.get("reference", "")
     fields = component_fields(component)
@@ -338,6 +338,10 @@ def match_component(index, component, overrides=None):
             result["reasons"].append("The symbol has no physical PCB/OOMP part requirement.")
         return result
 
+    if reference in (blocked or {}):
+        result["reasons"].append(str(blocked[reference]))
+        return result
+
     override_id = overrides.get(reference)
     if override_id:
         if override_id in index.by_id:
@@ -352,6 +356,21 @@ def match_component(index, component, overrides=None):
             )
         else:
             result["reasons"].append(f"Override refers to missing OOMP part: {override_id}")
+        return result
+
+    explicit_ids = []
+    for library_id in [fields.get("footprint", ""), fields.get("library_id", "")]:
+        if ":" not in library_id:
+            continue
+        nickname, entry = library_id.split(":", 1)
+        if nickname in ["OOMP", "OOMP_MachineSolder", "OOMP_HandSolder"] and entry not in explicit_ids:
+            explicit_ids.append(entry)
+    if explicit_ids:
+        if len(explicit_ids) == 1 and explicit_ids[0] in index.by_id:
+            result.update(status="matched", accepted=True, oomp_id=explicit_ids[0], confidence=1.0,
+                          reasons=["Explicit OOMP KiCad library identifier."])
+        else:
+            result.update(status="ambiguous", reasons=["Conflicting or unavailable explicit OOMP library identifiers."])
         return result
 
     if proposed_id and proposed_id in index.by_id:

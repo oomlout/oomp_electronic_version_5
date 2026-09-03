@@ -4,6 +4,8 @@ def main(**kwargs):
     # Keep exact transistor definitions in a plain array.  Adding another
     # fitted device should only require copying and editing one dictionary.
     transistors = [
+        {"taxonomy": ["transistor", "sot_23", "bipolar", "npn", "25_volt", "1_5_amp"],
+         "manufacturer": "jsmsemi", "part_number": "ss8050", "name_short": "NPN Transistor SS8050"},
         {
             "taxonomy": [
                 "transistor",

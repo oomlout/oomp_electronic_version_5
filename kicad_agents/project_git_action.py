@@ -4,8 +4,36 @@ import argparse
 import json
 import shutil
 import subprocess
+import sys
 from pathlib import Path
 
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+
+def referenced_sheets(root_file):
+    """Follow actual hierarchical references, retaining their relative folders."""
+    from kicad_agents import kicad_sexpr as sx
+    root_file = Path(root_file).resolve()
+    base = root_file.parent
+    pending = [root_file]
+    found = []
+    while pending:
+        source = pending.pop(0)
+        if source in found:
+            continue
+        found.append(source)
+        root = sx.parse(source.read_text(encoding='utf-8'))
+        for sheet in sx.children(root, 'sheet'):
+            filename = sx.property_value(sheet, 'Sheetfile') or sx.property_value(sheet, 'Sheet file')
+            target = (source.parent / filename).resolve()
+            if not filename or not target.is_relative_to(base):
+                raise ValueError(f'External or invalid hierarchical sheet reference: {filename}')
+            if not target.is_file():
+                raise FileNotFoundError(f'Missing hierarchical sheet: {target}')
+            pending.append(target)
+    return found[1:]
 
 def _run_git(arguments, working_directory=None):
     command = ["git"]
@@ -96,12 +124,13 @@ def refresh_project_files(details):
     # can digest the complete design without depending on the ignored clone.
     sheet_directory = data_directory / "kicad_file_sheets"
     source_project_directory = repository_directory / source_folder
-    schematic_files = sorted(source_project_directory.glob("*.kicad_sch"))
+    schematic_files = referenced_sheets(source_project_directory / f"{source_basename}.kicad_sch")
     for schematic_file in schematic_files:
         if schematic_file.name.lower() == f"{source_basename}.kicad_sch".lower():
             continue
         sheet_directory.mkdir(parents=True, exist_ok=True)
-        destination_file = sheet_directory / schematic_file.name
+        destination_file = sheet_directory / schematic_file.relative_to(source_project_directory)
+        destination_file.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy2(schematic_file, destination_file)
         copied_files.append(
             {
@@ -111,6 +140,13 @@ def refresh_project_files(details):
         )
         print(f"copied sheet {schematic_file.name} -> kicad_file_sheets/{schematic_file.name}")
 
+    # Preserve the untouched input set before any downstream OOMP action.
+    from kicad_agents.kicad_project_action import preserve_originals
+    for table_name in ['sym-lib-table', 'fp-lib-table']:
+        table = source_project_directory / table_name
+        if table.is_file():
+            shutil.copy2(table, data_directory / table_name)
+    preserve_originals(data_directory)
     return copied_files
 
 

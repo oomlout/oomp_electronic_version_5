@@ -9,7 +9,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [Resistor array 510 Ohm 4_X_0402_CONVEX](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin) — `electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin`
+- [Resistor array 510 Ohm 4 X 0402 Convex](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin) — `electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin`
 
 
 

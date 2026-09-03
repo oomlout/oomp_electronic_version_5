@@ -28,6 +28,8 @@ bip_39_full_no_space: boatdesignnearbuyersubjectsmartlevelnegativetattoomouseope
 bip_39_full_space: boat design near buyer subject smart level negative tattoo mouse
   opera civil
 bip_39_full_underscore: boat_design_near_buyer_subject_smart_level_negative_tattoo_mouse_opera_civil
+category: led
+category_name: LED
 dimensions_mm:
   length: 2.0
   width: 1.25
@@ -37,6 +39,10 @@ id: electronic_led_0805_white_clear
 id_no_class: electronic_led_0805_white_clear
 id_no_size: electronic_led_0805_white_clear
 id_no_type: electronic_led_0805_white_clear
+kicad:
+  hand_solder: ''
+  machine_solder: LED_SMD:LED_0805_2012Metric
+  symbol: Device:LED
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_white_clear
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_white_clear
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_white_clear
@@ -60,6 +66,12 @@ name_space: electronic led 0805 white clear
 name_upper: ELECTRONIC LED 0805 WHITE CLEAR
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 2.0
         width: 1.25
       directory: parts\electronic_led_0805_white_clear
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: LED_SMD:LED_0805_2012Metric
+        symbol: Device:LED
       name: electronic_led_0805_white_clear
       name_proper: LED White Clear 0805
       name_readable: LED White Clear 0805
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC LED 0805 WHITE CLEAR
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

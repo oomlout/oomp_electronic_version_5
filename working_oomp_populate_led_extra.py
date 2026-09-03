@@ -1,5 +1,14 @@
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
+    current = "electronic_led_0402_blue"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Yongyu Photoelectric"
+        part["part_number_manufacturer"] = "SZYY0402B"
+        part["part_number_manufacturer_yongyu_photoelectric"] = "SZYY0402B"
+        part["part_number_lcsc"] = "C434447"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C434447.html"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C434447.pdf"
 
     led_parts = [
         [

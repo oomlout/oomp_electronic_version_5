@@ -28,6 +28,8 @@ bip_39_full_no_space: prospercityheadpassfaithcottonexactvaultchoicebroomdropfir
 bip_39_full_space: prosper city head pass faith cotton exact vault choice broom drop
   first
 bip_39_full_underscore: prosper_city_head_pass_faith_cotton_exact_vault_choice_broom_drop_first
+category: mounting_hole
+category_name: Mounting hole
 dimensions_mm:
   length: 3.0
   width: 3.0
@@ -43,6 +45,10 @@ id: mechanical_mounting_hole_3_mm_round_unplated
 id_no_class: mechanical_mounting_hole_3_mm_round_unplated
 id_no_size: mechanical_mounting_hole_3_mm_round_unplated
 id_no_type: mechanical_mounting_hole_3_mm_round_unplated
+kicad:
+  hand_solder: MountingHole:MountingHole_3mm
+  machine_solder: MountingHole:MountingHole_3mm
+  symbol: Mechanical:MountingHole
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_mm_round_unplated
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_mm_round_unplated
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_mm_round_unplated
@@ -66,6 +72,12 @@ name_space: mechanical mounting hole 3 mm round unplated
 name_upper: MECHANICAL MOUNTING HOLE 3 MM ROUND UNPLATED
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -122,6 +134,13 @@ oomlout_ai_roboclick_1:
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_square_pins_300.png
+    file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
   description: Build component diagrams and proportional 300-pixel README previews
     with deterministic Python actions.
   file_test: ''
@@ -132,6 +151,8 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: mounting_hole
+      category_name: Mounting hole
       dimensions_mm:
         length: 3.0
         width: 3.0
@@ -143,6 +164,10 @@ oomlout_ai_roboclick_2:
         x: 3.0
         y: 3.0
       hole_style: round
+      kicad:
+        hand_solder: MountingHole:MountingHole_3mm
+        machine_solder: MountingHole:MountingHole_3mm
+        symbol: Mechanical:MountingHole
       name: mechanical_mounting_hole_3_mm_round_unplated
       name_proper: Mounting Hole 3 mm Round Unplated
       name_readable: Mounting Hole 3 mm Round Unplated
@@ -151,6 +176,12 @@ oomlout_ai_roboclick_2:
       name_upper: MECHANICAL MOUNTING HOLE 3 MM ROUND UNPLATED
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.
@@ -205,6 +236,13 @@ oomlout_ai_roboclick_2:
           command: image_resize
           file_destination: data/working_svg_dimensioned_titles_300.png
           file_source: data/working_svg_dimensioned_titles.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_square_pins_300.png
+          file_source: data/working_svg_square_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos

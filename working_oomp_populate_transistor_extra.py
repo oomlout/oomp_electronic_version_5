@@ -1,6 +1,28 @@
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
 
+    current = "electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "JSMSEMI"
+        part["part_number_manufacturer"] = "SS8050"
+        part["file_copy"] = [{"file_source": f"parts_source/{current}/datasheet.pdf", "file_destination": "datasheet.pdf"}]
+        part["part_number_lcsc"] = "C916392"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C916392.html"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C916392.pdf"
+        part["dimensions_mm"] = {"length": 2.9, "width": 2.4}
+        part["dimension_reference"] = {"document": "JSMICRO SS8050", "pages": [1, 4]}
+        part["pins"] = {}
+        for number, name in [["1", "base"], ["2", "emitter"], ["3", "collector"]]:
+            part["pins"]["pin_" + number] = {"number": number, "name": name, "type": "signal"}
+        part["package_drawing"] = {
+            "overall": [2.9, 2.4], "body": [2.9, 1.3],
+            "pins": [["1", "bottom", -.95, -.925, .4, .55],
+                     ["2", "bottom", .95, -.925, .4, .55],
+                     ["3", "top", 0, .925, .4, .55]],
+        }
+        part["kicad"] = {"symbol": "Transistor_BJT:SS8050", "machine_solder": "Package_TO_SOT_SMD:SOT-23W", "hand_solder": "Package_TO_SOT_SMD:SOT-23W_Handsoldering"}
+
     current = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "MMBT7002K"

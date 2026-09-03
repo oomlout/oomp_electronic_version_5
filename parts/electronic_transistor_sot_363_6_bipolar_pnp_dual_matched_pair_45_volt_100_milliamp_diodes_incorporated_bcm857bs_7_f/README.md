@@ -1,10 +1,10 @@
-# Transistor BCM857BS-7-F SOT_363_6
+# Transistor BCM857BS-7-F SOT 363 6
 
 `electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f`
 
-Transistor BCM857BS-7-F SOT_363_6 is an OOMP electronic transistor definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.15 &#x00D7; 2.1 mm. The definition includes 6 documented pins.
+Transistor BCM857BS-7-F SOT 363 6 is an OOMP electronic transistor definition. It uses the sot 363 6 package or form factor. Its nominal drawing size is 2.15 &#x00D7; 2.1 mm. The definition includes 6 documented pins.
 
-![Transistor BCM857BS-7-F SOT_363_6 pinout](data/working_svg_square_pins.svg)
+![Transistor BCM857BS-7-F SOT 363 6 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -74,6 +74,10 @@ Transistor BCM857BS-7-F SOT_363_6 is an OOMP electronic transistor definition. I
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

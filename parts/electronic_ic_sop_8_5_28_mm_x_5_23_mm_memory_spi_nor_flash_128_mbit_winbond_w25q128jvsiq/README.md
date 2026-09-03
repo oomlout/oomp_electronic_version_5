@@ -1,10 +1,10 @@
-# IC W25Q128JVSIQ SOP_8_5_28_MM_X_5_23_MM
+# IC W25Q128JVSIQ SOP 8 5 28 MM X 5 23 MM
 
 `electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq`
 
-IC W25Q128JVSIQ SOP_8_5_28_MM_X_5_23_MM is an OOMP electronic ic definition. It uses the sop 8 5 28 mm x 5 23 mm package or form factor. Its nominal drawing size is 5.28 &#x00D7; 5.23 mm. The definition includes 8 documented pins.
+IC W25Q128JVSIQ SOP 8 5 28 MM X 5 23 MM is an OOMP electronic ic definition. It uses the sop 8 5 28 mm x 5 23 mm package or form factor. Its nominal drawing size is 5.28 &#x00D7; 5.23 mm. The definition includes 8 documented pins.
 
-![IC W25Q128JVSIQ SOP_8_5_28_MM_X_5_23_MM pinout](data/working_svg_square_pins.svg)
+![IC W25Q128JVSIQ SOP 8 5 28 MM X 5 23 MM pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -73,6 +73,10 @@ IC W25Q128JVSIQ SOP_8_5_28_MM_X_5_23_MM is an OOMP electronic ic definition. It 
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

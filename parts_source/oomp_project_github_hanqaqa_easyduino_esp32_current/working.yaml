@@ -1,0 +1,69 @@
+distributors: []
+name_proper: Project hanqaqa/easyduino ESP32 current
+name_readable: Project hanqaqa/easyduino ESP32 current
+name_short: Project hanqaqa/easyduino ESP32 current
+project_board: esp32
+project_board_name: ESP32
+project_board_url: https://github.com/Hanqaqa/Easyduino/tree/master/ESP32
+project_file_basename: Easyduino_ESP32
+project_file_extensions:
+- .kicad_pcb
+- .kicad_sch
+- .kicad_pro
+project_file_folder: ESP32
+project_file_path: ESP32/Easyduino_ESP32
+project_file_path_original: ''
+project_git_ref: master
+project_git_url: https://github.com/Hanqaqa/Easyduino.git
+project_github_repository: easyduino
+project_github_url: https://github.com/Hanqaqa/Easyduino
+project_github_user: hanqaqa
+project_match_blocked:
+  U1: BOM C6568, upstream PDF and README identify CP2102-GMR, but the actual schematic
+    symbol is CP2102N-Axx-xQFN28. CP2102-GMR has been added to OOMP; confirm which
+    chip is intended before accepting a match.
+  U4: 'ESP32-DevKitC is a combined 38-pad carrier/header footprint, not an additional
+    DevKit board: the source photo shows two 19-pin male headers. Both headers already
+    exist as electronic_connector_header_2_54_mm_pitch_through_hole_19_pin, but a
+    one-footprint-to-two-parts mapping needs confirmation. Do not buy another DevKitC.'
+project_match_overrides:
+  C5: electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  C7: electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  C8: electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  D1: electronic_diode_tvs_array_sot_143_littelfuse_sp0503bahtg
+  D2: electronic_led_0402_blue
+  J1: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
+  Q1: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
+  Q2: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
+  SW1: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
+  SW2: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
+  U2: electronic_ic_esp32_wroom_32e_microcontroller_wifi_bluetooth_8_mb_flash_espressif_esp32_wroom_32e_n8
+  U3: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3
+project_review_notes:
+- 'J1: C2765186 and the supplied USBC.pdf identify SHOU HAN TYPE-C 16PIN 2MD(073),
+  while the footprint is named G-Switch GT-USB-7010ASV. OOMP follows the BOM/PDF identity;
+  the original footprint remains unchanged pending land-pattern verification.'
+- 'D1: C7074 is Littelfuse SP0503BAHTG. The upstream ESD_Protection.pdf is TECH PUBLIC,
+  so OOMP uses the downloaded Littelfuse datasheet instead.'
+- 'C5/C7/C8: C11366 is AVX TAJA226K010RNJ, 22uF 10V, A-case 3216-18. The upstream
+  Kemet-I footprint name specifies a lower 1.0mm body; verify clearance for the actual
+  1.8mm capacitor.'
+- 'SW1/SW2: C720477 is XUNPU TS-1088-AR02016, not Alps. The original Alps_SKRK footprint
+  is retained; exact master compatibility has not been certified.'
+project_sparse_checkout: true
+project_version: current
+taxonomy_1: oomp
+taxonomy_10: ''
+taxonomy_11: ''
+taxonomy_12: ''
+taxonomy_13: ''
+taxonomy_14: ''
+taxonomy_15: ''
+taxonomy_2: project
+taxonomy_3: github
+taxonomy_4: hanqaqa
+taxonomy_5: easyduino
+taxonomy_6: esp32
+taxonomy_7: current
+taxonomy_8: ''
+taxonomy_9: ''

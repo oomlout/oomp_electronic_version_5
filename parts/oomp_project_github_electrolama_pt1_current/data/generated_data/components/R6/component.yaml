@@ -46,11 +46,14 @@ schematic:
       no_connect: false
       connected_to:
       - reference: C14
-        pin_number: '2'
-        pin_name: '2'
+        pin_number: '1'
+        pin_name: '1'
       - reference: IC1
-        pin_number: '7'
-        pin_name: UD+
+        pin_number: '1'
+        pin_name: VIO
+      - reference: IC1
+        pin_number: '6'
+        pin_name: V3
     - number: '2'
       name: '2'
       electrical_type: passive
@@ -106,11 +109,14 @@ schematic:
     warnings: []
   connected_components:
   - reference: C14
-    pin_number: '2'
-    pin_name: '2'
+    pin_number: '1'
+    pin_name: '1'
   - reference: IC1
-    pin_number: '7'
-    pin_name: UD+
+    pin_number: '1'
+    pin_name: VIO
+  - reference: IC1
+    pin_number: '6'
+    pin_name: V3
   - reference: IC4
     pin_number: '3'
     pin_name: ~{FLG}
@@ -422,7 +428,8 @@ pcb:
   - IC4
 connectivity_cross_check:
   available: true
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: '1'
     schematic_nets:
@@ -453,4 +460,7 @@ oomp:
   reasons:
   - Exact OOMP ID constructed from component type, package size, and normalized value.
   candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
 generated_directory: components/R6

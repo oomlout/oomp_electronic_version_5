@@ -1,6 +1,44 @@
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
 
+    current = "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "SHOU HAN"
+        part["part_number_manufacturer"] = "TYPE-C 16PIN 2MD(073)"
+        part["file_copy"] = [{"file_source": f"parts_source/{current}/datasheet.pdf", "file_destination": "datasheet.pdf"}]
+        part["part_number_lcsc"] = "C2765186"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2765186.html"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C2765186.pdf"
+        part["dimensions_mm"] = {"length": 8.94, "width": 7.35, "height": 3.16}
+        part["dimension_reference"] = {"document": "SHOU HAN TYPE-C 16PIN 2MD(073)", "pages": [6], "notes": "Top view with solder tails visible; shell 8.94x7.35mm, rear tails extend 0.3mm. Not a fabrication land pattern."}
+        contacts = [
+            ["A1", "gnd", -3.325], ["B12", "gnd", -3.075],
+            ["A4", "vbus", -2.525], ["B9", "vbus", -2.275],
+            ["B8", "sbu2", -1.75], ["A5", "cc1", -1.25],
+            ["B7", "usb_d_minus", -.75], ["A6", "usb_d_plus", -.25],
+            ["A7", "usb_d_minus", .25], ["B6", "usb_d_plus", .75],
+            ["A8", "sbu1", 1.25], ["B5", "cc2", 1.75],
+            ["B4", "vbus", 2.275], ["A9", "vbus", 2.525],
+            ["B1", "gnd", 3.075], ["A12", "gnd", 3.325],
+        ]
+        part["pins"] = {}
+        pads = []
+        for number, name, x in contacts:
+            part["pins"]["pin_" + number] = {"number": number, "name": name, "type": "power" if name in ["gnd", "vbus"] else "signal"}
+            pads.append([number, "top", x, 3.825, .25, .3])
+        part["pins"]["pin_S1"] = {"number": "S1", "name": "shield", "type": "passive"}
+        for x in [-4.32, 4.32]:
+            pads.append(["S1", "left" if x < 0 else "right", x, 3.025, .3, 1.1])
+            pads.append(["S1", "left" if x < 0 else "right", x, -1.475, .3, .8])
+        part["package_drawing"] = {
+            "overall": [8.94, 7.95], "body": [8.94, 7.35], "pins": pads,
+            "boxes": [[-1.7, 1.4, 1.0, .5], [1.7, 1.4, 1.0, .5]],
+            "side": {"overall": [7.35, 3.16], "body": [7.35, 3.16], "pins": []},
+        }
+        part["kicad"] = {"symbol": "Connector:USB_C_Receptacle_USB2.0_16P", "machine_solder": "", "hand_solder": ""}
+        part["research_notes"] = ["LCSC C2765186 and the upstream USBC.pdf identify SHOU HAN, not G-Switch GT-USB-7010ASV. The original footprint is preserved; exact master/land-pattern equivalence has not been established."]
+
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5"
     if current in extras_dict:
         extras_dict[current]["name_short"] = "Female Socket 3 Pin"

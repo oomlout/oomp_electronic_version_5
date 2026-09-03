@@ -1,10 +1,10 @@
-# Wire Jumper Aligator Clip To Aligator Clip PROTOTYPING
+# Wire Jumper Aligator Clip To Aligator Clip 300 Mm Length Bundle Of 7 PROTOTYPING
 
 `electronic_wire_prototyping_jumper_aligator_clip_to_aligator_clip_300_mm_length_bundle_of_7`
 
-Wire Jumper Aligator Clip To Aligator Clip PROTOTYPING is an OOMP electronic wire definition. It uses the prototyping package or form factor. Its nominal drawing size is 300 &#x00D7; 2.0 mm.
+Wire Jumper Aligator Clip To Aligator Clip 300 Mm Length Bundle Of 7 PROTOTYPING is an OOMP electronic wire definition. It uses the prototyping package or form factor. Its nominal drawing size is 300 &#x00D7; 2.0 mm.
 
-![Wire Jumper Aligator Clip To Aligator Clip PROTOTYPING pinout](data/working_svg_square_pins.svg)
+![Wire Jumper Aligator Clip To Aligator Clip 300 Mm Length Bundle Of 7 PROTOTYPING pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -47,6 +47,10 @@ Wire Jumper Aligator Clip To Aligator Clip PROTOTYPING is an OOMP electronic wir
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

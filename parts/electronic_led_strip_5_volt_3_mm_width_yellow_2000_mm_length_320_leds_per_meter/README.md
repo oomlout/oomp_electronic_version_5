@@ -46,6 +46,10 @@ LED Yellow 2000 Mm Length 320 Leds Per Meter STRIP_5_VOLT_3_MM_WIDTH is an OOMP 
 
 ## Files
 
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)

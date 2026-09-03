@@ -27,6 +27,8 @@ bip_39_full_array:
 bip_39_full_no_space: locallumberboringverbwillbonecupbulbrobotbirdfevergossip
 bip_39_full_space: local lumber boring verb will bone cup bulb robot bird fever gossip
 bip_39_full_underscore: local_lumber_boring_verb_will_bone_cup_bulb_robot_bird_fever_gossip
+category: led
+category_name: LED
 dimensions_mm:
   length: 3000
   width: 3
@@ -36,6 +38,10 @@ id: electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_me
 id_no_class: electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_meter
 id_no_size: electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_meter
 id_no_type: electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_meter
+kicad:
+  hand_solder: ''
+  machine_solder: ''
+  symbol: ''
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_meter
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_meter
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_meter
@@ -64,6 +70,12 @@ name_upper: ELECTRONIC LED STRIP 24 VOLT 3 MM WIDTH GREEN 3000 MM LENGTH 320 LED
   PER METER
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -137,11 +149,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 3000
         width: 3
       directory: parts\electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_meter
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: ''
+        symbol: ''
       name: electronic_led_strip_24_volt_3_mm_width_green_3000_mm_length_320_leds_per_meter
       name_proper: LED Green 3000 Mm Length 320 Leds Per Meter STRIP_24_VOLT_3_MM_WIDTH
       name_readable: LED Green 3000 Mm Length 320 Leds Per Meter STRIP_24_VOLT_3_MM_WIDTH
@@ -152,6 +170,12 @@ oomlout_ai_roboclick_2:
         LEDS PER METER
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

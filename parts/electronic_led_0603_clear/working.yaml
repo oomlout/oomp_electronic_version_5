@@ -28,6 +28,8 @@ bip_39_full_no_space: throwbattlestrategycastleshadownoseinstallchargebrownresou
 bip_39_full_space: throw battle strategy castle shadow nose install charge brown resource
   orange vault
 bip_39_full_underscore: throw_battle_strategy_castle_shadow_nose_install_charge_brown_resource_orange_vault
+category: led
+category_name: LED
 dimensions_mm:
   length: 1.6
   width: 0.8
@@ -37,6 +39,10 @@ id: electronic_led_0603_clear
 id_no_class: electronic_led_0603_clear
 id_no_size: electronic_led_0603_clear
 id_no_type: electronic_led_0603_clear
+kicad:
+  hand_solder: ''
+  machine_solder: LED_SMD:LED_0603_1608Metric
+  symbol: Device:LED
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_clear
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_clear
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_clear
@@ -60,6 +66,12 @@ name_space: electronic led 0603 clear
 name_upper: ELECTRONIC LED 0603 CLEAR
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 1.6
         width: 0.8
       directory: parts\electronic_led_0603_clear
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: LED_SMD:LED_0603_1608Metric
+        symbol: Device:LED
       name: electronic_led_0603_clear
       name_proper: LED Clear 0603
       name_readable: LED Clear 0603
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC LED 0603 CLEAR
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

@@ -28,6 +28,8 @@ bip_39_full_no_space: orbitinsectgesturetouristauditsoulissuevacuumrejectupdateg
 bip_39_full_space: orbit insect gesture tourist audit soul issue vacuum reject update
   gold cook
 bip_39_full_underscore: orbit_insect_gesture_tourist_audit_soul_issue_vacuum_reject_update_gold_cook
+category: ferrite_bead
+category_name: Ferrite bead
 datasheet_url: https://product.tdk.com/en/system/files/dam/doc/product/emc/emc/beads/catalog/beads_commercial_signal_mmz2012_en.pdf
 datasheet_url_lcsc: https://www.lcsc.com/datasheet/C275464.pdf
 dimensions_mm:
@@ -64,6 +66,10 @@ id: electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000
 id_no_class: electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000
 id_no_size: electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000
 id_no_type: electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000
+kicad:
+  hand_solder: ''
+  machine_solder: Inductor_SMD:L_0805_2012Metric
+  symbol: Device:FerriteBead_Small
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000
@@ -88,6 +94,12 @@ name_space: electronic ferrite bead 0805 15 ohm 1 5 amp tdk mmz2012r150at000
 name_upper: ELECTRONIC FERRITE BEAD 0805 15 OHM 1 5 AMP TDK MMZ2012R150AT000
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: file_copy
     delete_before_copy: true
     exit_on_missing: true
@@ -166,6 +178,8 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: ferrite_bead
+      category_name: Ferrite bead
       datasheet_url: https://product.tdk.com/en/system/files/dam/doc/product/emc/emc/beads/catalog/beads_commercial_signal_mmz2012_en.pdf
       datasheet_url_lcsc: https://www.lcsc.com/datasheet/C275464.pdf
       dimensions_mm:
@@ -198,6 +212,10 @@ oomlout_ai_roboclick_2:
       file_copy:
       - file_destination: datasheet.pdf
         file_source: parts_source/electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000/datasheet.pdf
+      kicad:
+        hand_solder: ''
+        machine_solder: Inductor_SMD:L_0805_2012Metric
+        symbol: Device:FerriteBead_Small
       manufacturer: TDK
       name: electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000
       name_proper: Ferrite Bead MMZ2012R150AT000 0805
@@ -207,6 +225,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC FERRITE BEAD 0805 15 OHM 1 5 AMP TDK MMZ2012R150AT000
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: file_copy
           delete_before_copy: true
           exit_on_missing: true

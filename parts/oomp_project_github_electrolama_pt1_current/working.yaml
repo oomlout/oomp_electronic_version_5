@@ -61,6 +61,9 @@ oomlout_ai_roboclick_1:
     description: Clone or update the Git project and copy its selected KiCad files
       into the project part.
     file_python: kicad_agents/project_git_action.py
+    project_board: ''
+    project_board_name: ''
+    project_board_url: ''
     project_file_basename: pt1-RevA2
     project_file_extensions:
     - .kicad_pcb
@@ -94,11 +97,24 @@ oomlout_ai_roboclick_1:
 oomlout_ai_roboclick_2:
   actions:
   - command: run_python
+    description: Generate a self-contained InteractiveHtmlBom page without opening
+      a browser.
+    file_output: data/interactivehtmlbom/generation_status.yaml
+    file_python: kicad_agents/interactive_html_bom_action.py
+    timeout: '1200'
+  file_test: ''
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
+  actions:
+  - command: run_python
     description: Extract KiCad data and rebuild the project README, board SVGs, pin-labelled
       PNG, and mechanical layer.
     file_output: data/generated_data/src/board_pins.png
     file_python: kicad_agents/project_readme_action.py
     parts_directory: parts
+    project_board: ''
+    project_board_name: ''
+    project_board_url: ''
     project_file_basename: pt1-RevA2
     project_file_extensions:
     - .kicad_pcb
@@ -165,13 +181,28 @@ oomlout_ai_roboclick_2:
     resample: lanczos
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
-    description: Generate a self-contained InteractiveHtmlBom page without opening
-      a browser.
-    file_output: data/interactivehtmlbom/generation_status.yaml
-    file_python: kicad_agents/interactive_html_bom_action.py
+    description: Preserve original KiCad files, package local libraries, and replace
+      only verified unchanged defaults in an OOMP design copy.
+    file_output: data/oomp_design/conversion_report.yaml
+    file_python: kicad_agents/kicad_project_action.py
+    parts_directory: parts
+    project_file_basename: pt1-RevA2
+    project_match_overrides:
+      CON1: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
+      CON2: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
+      CON3: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
+      D1: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
+      D2: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
+      IC1: electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p
+      IC2: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
+      IC3: electronic_ic_sot_23_6_logic_configurable_multi_function_gate_texas_instruments_sn74lvc1g57dbvr
+      IC4: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
+      J1: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
+      L1: electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d
+      XT1: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
     timeout: '1200'
   file_test: ''
   retries_until_complete: 0

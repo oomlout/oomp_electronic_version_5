@@ -1,8 +1,235 @@
 reference: Q305
 schematic:
-  available: false
-  units: []
-  connected_components: []
+  available: true
+  units:
+  - reference: Q305
+    source_file: data/kicad_file_sheets/IO-expand-595-mux.kicad_sch
+    uuid: 00000000-0000-0000-0000-0000652523fe
+    library_id: Transistor_FET:BSS84
+    unit: 1
+    body_style: 1
+    position:
+      x: 246.38
+      y: 78.74
+      rotation: 0.0
+      mirror: x
+      units: mm
+    properties:
+      Reference: Q305
+      Value: SI2301
+      Footprint: Package_TO_SOT_SMD:SOT-523
+      Datasheet: http://assets.nexperia.com/documents/data-sheet/BSS84.pdf
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: G
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 241.3
+        y: 78.74
+      net: PULLUP_EN
+      net_aliases:
+      - PULLUP_EN
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: Q300
+        pin_number: '1'
+        pin_name: G
+      - reference: Q301
+        pin_number: '1'
+        pin_name: G
+      - reference: Q302
+        pin_number: '1'
+        pin_name: G
+      - reference: Q303
+        pin_number: '1'
+        pin_name: G
+      - reference: Q304
+        pin_number: '1'
+        pin_name: G
+      - reference: Q306
+        pin_number: '1'
+        pin_name: G
+      - reference: Q307
+        pin_number: '1'
+        pin_name: G
+      - reference: R313
+        pin_number: '1'
+        pin_name: '~'
+      - reference: U503
+        pin_number: '11'
+        pin_name: B7
+    - number: '2'
+      name: S
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 248.92
+        y: 73.66
+      net: VREF_VOUT
+      net_aliases:
+      - VREF_VOUT
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: Q300
+        pin_number: '2'
+        pin_name: S
+      - reference: Q301
+        pin_number: '2'
+        pin_name: S
+      - reference: Q302
+        pin_number: '2'
+        pin_name: S
+      - reference: Q303
+        pin_number: '2'
+        pin_name: S
+      - reference: Q304
+        pin_number: '2'
+        pin_name: S
+      - reference: Q306
+        pin_number: '2'
+        pin_name: S
+      - reference: Q307
+        pin_number: '2'
+        pin_name: S
+      - reference: Q401
+        pin_number: '1'
+        pin_name: E1
+      - reference: Q402
+        pin_number: '2'
+        pin_name: S
+      - reference: R319
+        pin_number: '2'
+        pin_name: '~'
+    - number: '3'
+      name: D
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 248.92
+        y: 83.82
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: RN312
+        pin_number: '8'
+        pin_name: R1.8
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.54
+          y: -2.921
+        max:
+          x: 4.572
+          y: 2.921
+        width: 7.112
+        height: 5.842
+        center:
+          x: 1.016
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 243.84
+          y: 75.819
+        max:
+          x: 250.952
+          y: 81.661
+        width: 7.112
+        height: 5.842
+        center:
+          x: 247.396
+          y: 78.74
+    warnings: []
+  connected_components:
+  - reference: Q300
+    pin_number: '1'
+    pin_name: G
+  - reference: Q300
+    pin_number: '2'
+    pin_name: S
+  - reference: Q301
+    pin_number: '1'
+    pin_name: G
+  - reference: Q301
+    pin_number: '2'
+    pin_name: S
+  - reference: Q302
+    pin_number: '1'
+    pin_name: G
+  - reference: Q302
+    pin_number: '2'
+    pin_name: S
+  - reference: Q303
+    pin_number: '1'
+    pin_name: G
+  - reference: Q303
+    pin_number: '2'
+    pin_name: S
+  - reference: Q304
+    pin_number: '1'
+    pin_name: G
+  - reference: Q304
+    pin_number: '2'
+    pin_name: S
+  - reference: Q306
+    pin_number: '1'
+    pin_name: G
+  - reference: Q306
+    pin_number: '2'
+    pin_name: S
+  - reference: Q307
+    pin_number: '1'
+    pin_name: G
+  - reference: Q307
+    pin_number: '2'
+    pin_name: S
+  - reference: Q401
+    pin_number: '1'
+    pin_name: E1
+  - reference: Q402
+    pin_number: '2'
+    pin_name: S
+  - reference: R313
+    pin_number: '1'
+    pin_name: '~'
+  - reference: R319
+    pin_number: '2'
+    pin_name: '~'
+  - reference: RN312
+    pin_number: '8'
+    pin_name: R1.8
+  - reference: U503
+    pin_number: '11'
+    pin_name: B7
 pcb:
   reference: Q305
   value: SI2301
@@ -483,27 +710,30 @@ pcb:
   - U308
   - U503
 connectivity_cross_check:
-  available: false
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: '1'
-    schematic_nets: []
+    schematic_nets:
+    - PULLUP_EN
     pcb_nets:
     - PULLUP_EN
-    status: incomplete
+    status: agree
   - pin_or_pad_number: '2'
-    schematic_nets: []
+    schematic_nets:
+    - VREF_VOUT
     pcb_nets:
     - VREF_VOUT
-    status: incomplete
+    status: agree
   - pin_or_pad_number: '3'
     schematic_nets: []
     pcb_nets:
     - Net-(Q305-D)
     status: incomplete
-  agree_count: 0
+  agree_count: 2
   disagree_count: 0
-  incomplete_count: 3
+  incomplete_count: 1
 oomp:
   status: matched
   accepted: true
@@ -518,4 +748,7 @@ oomp:
   reasons:
   - Accepted from the AI/human match override file.
   candidates: []
+category: transistor
+category_source: oomp_populate
+category_name: Transistor
 generated_directory: components/Q305

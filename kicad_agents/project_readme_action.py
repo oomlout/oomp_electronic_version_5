@@ -45,6 +45,8 @@ def compile_project_part(details):
     match_overrides = details.get("project_match_overrides", {})
     match_override_data = {
         "matches": match_overrides if isinstance(match_overrides, dict) else {},
+        "blocked": part_metadata.get("project_match_blocked", {}),
+        "review_notes": part_metadata.get("project_review_notes", []),
         "help": "Project-specific mappings are defined in working_oomp_populate_project.py.",
     }
     with (output_directory / "match_overrides.yaml").open("w", encoding="utf-8") as output_file:

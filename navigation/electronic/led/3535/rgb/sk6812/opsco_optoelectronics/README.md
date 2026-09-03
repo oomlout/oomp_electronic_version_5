@@ -9,7 +9,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [LED RGB SK6812 Opsco Optoelectronics 3535](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e) — `electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e`
+- [LED SK6812MINI-E 3535](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e) — `electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e`
 
 
 

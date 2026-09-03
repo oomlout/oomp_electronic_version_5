@@ -37,6 +37,8 @@ def main(**kwargs):
     working_oomp_populate_transistor.main(**kwargs)
     import working_oomp_populate_ic
     working_oomp_populate_ic.main(**kwargs)
+    import working_oomp_populate_switch
+    working_oomp_populate_switch.main(**kwargs)
     import working_oomp_populate_project
     working_oomp_populate_project.main(**kwargs)
     import working_oomp_populate_mounting_hole
@@ -84,6 +86,14 @@ def main(**kwargs):
     ######### add notes from an id string
     import working_oomp_populate_extra_detail
     working_oomp_populate_extra_detail.main(extras=extras)
+
+    import working_oomp_populate_category
+    for extra in extras:
+        working_oomp_populate_category.add_category(extra)
+
+    import working_oomp_populate_kicad
+    for extra in extras:
+        working_oomp_populate_kicad.add_kicad_details(extra)
 
     # Display names, distributor links, and navigation are deterministic
     # population data.  Keeping them here means every downstream README and

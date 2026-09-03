@@ -1,10 +1,10 @@
-# Connector Header 2 54 Mm Pitch Through Hole 8 Pin
+# Connector Header 2.54 mm pitch through-hole 8 pin
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`
 
-Connector Header 2 54 Mm Pitch Through Hole 8 Pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 20.32 &#x00D7; 2.48 mm.
+Connector Header 2.54 mm pitch through-hole 8 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 20.32 &#x00D7; 2.48 mm.
 
-![Connector Header 2 54 Mm Pitch Through Hole 8 Pin pinout](data/working_svg_top.svg)
+![Connector Header 2.54 mm pitch through-hole 8 pin pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -45,6 +45,10 @@ Connector Header 2 54 Mm Pitch Through Hole 8 Pin is an OOMP electronic connecto
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

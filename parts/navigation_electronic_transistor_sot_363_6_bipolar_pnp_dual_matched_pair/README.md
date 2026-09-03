@@ -5,6 +5,19 @@ This OOMP navigation part publishes the category index at
 
 It contains 1 descendant parts.
 
+
+[Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor/sot_363_6/bipolar/pnp)
+
+
+
+## Categories
+
+- [45 Volt](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor/sot_363_6/bipolar/pnp/dual_matched_pair/45_volt)
+
+
+
+
+
 ---
 
 Generated from the populated OOMP taxonomy by Roboclick and Jinja.

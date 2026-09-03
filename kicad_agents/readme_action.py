@@ -24,13 +24,15 @@ def regenerate_readmes(parts_directory="parts", filter_text=""):
             for action in mode_details.get("actions", []):
                 if not isinstance(action, dict) or action.get("command") != "text_jinja_template":
                     continue
-                oomlout_roboclick.run_single_action(
+                result = oomlout_roboclick.run_single_action(
                     action=action,
                     directory=str(part_directory),
                     directory_absolute=str(part_directory),
                     file_action=str(working_file),
                     _discovered_actions=discovered_actions,
                 )
+                if result in ["exit", "exit_no_tab"]:
+                    raise RuntimeError(f"README action failed for {part_directory.name}: {result}")
                 rendered += 1
     print(f"rendered {rendered} README/navigation files")
     return rendered

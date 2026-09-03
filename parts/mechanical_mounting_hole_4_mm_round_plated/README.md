@@ -45,6 +45,10 @@ Mounting Hole 4 mm Round Plated is an OOMP mechanical mounting hole definition. 
 
 ## Files
 
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)

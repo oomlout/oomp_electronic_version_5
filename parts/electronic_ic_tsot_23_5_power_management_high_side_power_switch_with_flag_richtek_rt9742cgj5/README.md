@@ -1,10 +1,10 @@
-# IC RT9742CGJ5 TSOT_23_5
+# IC RT9742CGJ5 TSOT 23 5
 
 `electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5`
 
-IC RT9742CGJ5 TSOT_23_5 is an OOMP electronic ic definition. It uses the tsot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 5 documented pins.
+IC RT9742CGJ5 TSOT 23 5 is an OOMP electronic ic definition. It uses the tsot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 5 documented pins.
 
-![IC RT9742CGJ5 TSOT_23_5 pinout](data/working_svg_square_pins.svg)
+![IC RT9742CGJ5 TSOT 23 5 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -70,6 +70,10 @@ IC RT9742CGJ5 TSOT_23_5 is an OOMP electronic ic definition. It uses the tsot 23
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

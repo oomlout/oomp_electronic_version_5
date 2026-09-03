@@ -1,8 +1,127 @@
 reference: R610
 schematic:
-  available: false
-  units: []
-  connected_components: []
+  available: true
+  units:
+  - reference: R610
+    source_file: data/kicad_file_sheets/bpu-current_limiter.kicad_sch
+    uuid: 00000000-0000-0000-0000-00006133bc71
+    library_id: Device:R_Small
+    unit: 1
+    body_style: 1
+    position:
+      x: 143.51
+      y: 41.91
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R610
+      Value: 10K
+      Footprint: Resistor_SMD:R_0402_1005Metric
+      Datasheet: '~'
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 270.0
+      length: 0.762
+      position:
+        x: 143.51
+        y: 39.37
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: Q601
+        pin_number: '6'
+        pin_name: C1
+      - reference: R608
+        pin_number: '2'
+        pin_name: '~'
+      - reference: R609
+        pin_number: '2'
+        pin_name: '~'
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -2.54
+        rotation: 90.0
+      length: 0.762
+      position:
+        x: 143.51
+        y: 44.45
+      net: CURRENT_DETECT
+      net_aliases:
+      - CURRENT_DETECT
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: RN402
+        pin_number: '5'
+        pin_name: R1.8
+      - reference: U602
+        pin_number: '4'
+        pin_name: '~'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.8636
+          y: -1.8796
+        max:
+          x: 0.8636
+          y: 1.8796
+        width: 1.7272
+        height: 3.7592
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 142.6464
+          y: 40.0304
+        max:
+          x: 144.3736
+          y: 43.7896
+        width: 1.7272
+        height: 3.7592
+        center:
+          x: 143.51
+          y: 41.91
+    warnings: []
+  connected_components:
+  - reference: Q601
+    pin_number: '6'
+    pin_name: C1
+  - reference: R608
+    pin_number: '2'
+    pin_name: '~'
+  - reference: R609
+    pin_number: '2'
+    pin_name: '~'
+  - reference: RN402
+    pin_number: '5'
+    pin_name: R1.8
+  - reference: U602
+    pin_number: '4'
+    pin_name: '~'
 pcb:
   reference: R610
   value: 10K
@@ -330,8 +449,9 @@ pcb:
   - RN402
   - U602
 connectivity_cross_check:
-  available: false
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: '1'
     schematic_nets: []
@@ -339,13 +459,14 @@ connectivity_cross_check:
     - Net-(Q601A-C1)
     status: incomplete
   - pin_or_pad_number: '2'
-    schematic_nets: []
+    schematic_nets:
+    - CURRENT_DETECT
     pcb_nets:
     - CURRENT_DETECT
-    status: incomplete
-  agree_count: 0
+    status: agree
+  agree_count: 1
   disagree_count: 0
-  incomplete_count: 2
+  incomplete_count: 1
 oomp:
   status: matched
   accepted: true
@@ -360,4 +481,7 @@ oomp:
   reasons:
   - Exact OOMP ID constructed from component type, package size, and normalized value.
   candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
 generated_directory: components/R610

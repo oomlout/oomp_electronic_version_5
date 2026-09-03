@@ -1,10 +1,10 @@
-# Diode BAS40T-05 SCHOTTKY_DUAL_COMMON_CATHODE
+# Diode BAS40T-05 SOT-523
 
 `electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05`
 
-Diode BAS40T-05 SCHOTTKY_DUAL_COMMON_CATHODE is an OOMP electronic diode definition. It uses the sot 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 3 documented pins.
+Diode BAS40T-05 SOT-523 is an OOMP electronic diode definition. It uses the sot 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 3 documented pins.
 
-![Diode BAS40T-05 SCHOTTKY_DUAL_COMMON_CATHODE pinout](data/working_svg_square_pins.svg)
+![Diode BAS40T-05 SOT-523 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -62,6 +62,10 @@ Diode BAS40T-05 SCHOTTKY_DUAL_COMMON_CATHODE is an OOMP electronic diode definit
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

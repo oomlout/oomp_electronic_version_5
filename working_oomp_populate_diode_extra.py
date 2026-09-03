@@ -1,6 +1,31 @@
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
 
+    current = "electronic_diode_tvs_array_sot_143_littelfuse_sp0503bahtg"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Littelfuse"
+        part["part_number_manufacturer"] = "SP0503BAHTG"
+        part["file_copy"] = [{"file_source": f"parts_source/{current}/datasheet.pdf", "file_destination": "datasheet.pdf"}]
+        part["part_number_lcsc"] = "C7074"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C7074.html"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C7074.pdf"
+        part["dimensions_mm"] = {"length": 2.92, "width": 2.37}
+        part["dimension_reference"] = {"document": "Littelfuse SP05 Series, revised 08/12/15", "pages": [1, 3]}
+        part["pins"] = {}
+        for number, name in [["1", "gnd"], ["2", "io_1"], ["3", "io_2"], ["4", "io_3"]]:
+            part["pins"]["pin_" + number] = {"number": number, "name": name, "type": "gnd" if number == "1" else "signal"}
+        part["package_drawing"] = {
+            "overall": [2.92, 2.37], "body": [2.92, 1.3],
+            "pins": [["1", "bottom", -.76, -.9175, .825, .535],
+                     ["2", "bottom", .96, -.9175, .4, .535],
+                     ["3", "top", .96, .9175, .4, .535],
+                     ["4", "top", -.96, .9175, .4, .535]],
+            "pin_one": [-1.0, -.35],
+        }
+        part["kicad"] = {"symbol": "Power_Protection:SP0503BAHT", "machine_solder": "Package_TO_SOT_SMD:SOT-143", "hand_solder": "Package_TO_SOT_SMD:SOT-143_Handsoldering"}
+        part["research_notes"] = ["Upstream ESD_Protection.pdf is a TECH PUBLIC document, not the Littelfuse BOM device; do not use that PDF as this part's datasheet."]
+
     current = "electronic_diode_tvs_array_sot_23_6_protek_srv054pt7"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "SRV05-4-P-T7"

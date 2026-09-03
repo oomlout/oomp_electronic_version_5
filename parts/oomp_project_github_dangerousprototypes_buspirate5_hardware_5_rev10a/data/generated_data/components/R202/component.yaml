@@ -1,8 +1,106 @@
 reference: R202
 schematic:
-  available: false
-  units: []
-  connected_components: []
+  available: true
+  units:
+  - reference: R202
+    source_file: data/kicad_file_sheets/micro-rp2040.kicad_sch
+    uuid: 00000000-0000-0000-0000-00005e9fbff1
+    library_id: Device:R_Small
+    unit: 1
+    body_style: 1
+    position:
+      x: 36.83
+      y: 40.64
+      rotation: 90.0
+      mirror: x
+      units: mm
+    properties:
+      Reference: R202
+      Value: 22R
+      Footprint: Resistor_SMD:R_0402_1005Metric
+      Datasheet: '~'
+      RMB: '0.006505'
+      Supplier: https://item.szlcsc.com/116009.html
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 270.0
+      length: 0.762
+      position:
+        x: 39.37
+        y: 40.64
+      net: USB_N
+      net_aliases:
+      - USB_N
+      net_scope: global
+      no_connect: false
+      connected_to: []
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -2.54
+        rotation: 90.0
+      length: 0.762
+      position:
+        x: 34.29
+        y: 40.64
+      net: USB_D-
+      net_aliases:
+      - USB_D-
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U103
+        pin_number: '46'
+        pin_name: USB_DM
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.8636
+          y: -1.8796
+        max:
+          x: 0.8636
+          y: 1.8796
+        width: 1.7272
+        height: 3.7592
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 34.9504
+          y: 39.7764
+        max:
+          x: 38.7096
+          y: 41.5036
+        width: 3.7592
+        height: 1.7272
+        center:
+          x: 36.83
+          y: 40.64
+    warnings: []
+  connected_components:
+  - reference: U103
+    pin_number: '46'
+    pin_name: USB_DM
 pcb:
   reference: R202
   value: 22R
@@ -310,22 +408,25 @@ pcb:
   - J202
   - U103
 connectivity_cross_check:
-  available: false
-  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
   comparisons:
   - pin_or_pad_number: '1'
-    schematic_nets: []
+    schematic_nets:
+    - USB_N
     pcb_nets:
     - USB_D-
-    status: incomplete
+    status: disagree
   - pin_or_pad_number: '2'
-    schematic_nets: []
+    schematic_nets:
+    - USB_D-
     pcb_nets:
     - USB_N
-    status: incomplete
+    status: disagree
   agree_count: 0
-  disagree_count: 0
-  incomplete_count: 2
+  disagree_count: 2
+  incomplete_count: 0
 oomp:
   status: matched
   accepted: true
@@ -340,4 +441,7 @@ oomp:
   reasons:
   - Exact OOMP ID constructed from component type, package size, and normalized value.
   candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
 generated_directory: components/R202

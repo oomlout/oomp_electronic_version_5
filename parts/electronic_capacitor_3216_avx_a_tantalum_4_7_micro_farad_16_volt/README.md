@@ -1,10 +1,10 @@
-# Capacitor Tantalum 3216_AVX_A
+# Capacitor 4.7 uF 16 V Tantalum 3216 AVX A
 
 `electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt`
 
-Capacitor Tantalum 3216_AVX_A is an OOMP electronic capacitor definition. It uses the 3216 avx a package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Capacitor 4.7 uF 16 V Tantalum 3216 AVX A is an OOMP electronic capacitor definition. It uses the 3216 avx a package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
 
-![Capacitor Tantalum 3216_AVX_A pinout](data/working_svg_square_pins.svg)
+![Capacitor 4.7 uF 16 V Tantalum 3216 AVX A pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -45,6 +45,10 @@ Capacitor Tantalum 3216_AVX_A is an OOMP electronic capacitor definition. It use
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

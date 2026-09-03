@@ -1,10 +1,10 @@
-# Transistor BC2301T-2.8A SOT_523
+# Transistor BC2301T-2.8A SOT 523
 
 `electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a`
 
-Transistor BC2301T-2.8A SOT_523 is an OOMP electronic transistor definition. It uses the sot 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 1.6 mm. The definition includes 3 documented pins.
+Transistor BC2301T-2.8A SOT 523 is an OOMP electronic transistor definition. It uses the sot 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 1.6 mm. The definition includes 3 documented pins.
 
-![Transistor BC2301T-2.8A SOT_523 pinout](data/working_svg_square_pins.svg)
+![Transistor BC2301T-2.8A SOT 523 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -70,6 +70,10 @@ Transistor BC2301T-2.8A SOT_523 is an OOMP electronic transistor definition. It 
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

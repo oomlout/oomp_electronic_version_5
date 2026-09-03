@@ -44,6 +44,10 @@ LED Tint 5_MM is an OOMP electronic led definition. It uses the 5 mm package or 
 
 ## Files
 
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)

@@ -1,10 +1,10 @@
-# IC SN74LVC1G57DBVR SOT_23_6
+# IC SN74LVC1G57DBVR SOT 23 6
 
 `electronic_ic_sot_23_6_logic_configurable_multi_function_gate_texas_instruments_sn74lvc1g57dbvr`
 
-IC SN74LVC1G57DBVR SOT_23_6 is an OOMP electronic ic definition. It uses the sot 23 6 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 6 documented pins.
+IC SN74LVC1G57DBVR SOT 23 6 is an OOMP electronic ic definition. It uses the sot 23 6 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 6 documented pins.
 
-![IC SN74LVC1G57DBVR SOT_23_6 pinout](data/working_svg_square_pins.svg)
+![IC SN74LVC1G57DBVR SOT 23 6 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -71,6 +71,10 @@ IC SN74LVC1G57DBVR SOT_23_6 is an OOMP electronic ic definition. It uses the sot
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

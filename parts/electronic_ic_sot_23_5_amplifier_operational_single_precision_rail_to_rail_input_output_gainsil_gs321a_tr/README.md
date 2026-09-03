@@ -1,10 +1,10 @@
-# IC GS321A-TR SOT_23_5
+# IC GS321A-TR SOT 23 5
 
 `electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr`
 
-IC GS321A-TR SOT_23_5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.92 &#x00D7; 2.8 mm. The definition includes 5 documented pins.
+IC GS321A-TR SOT 23 5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.92 &#x00D7; 2.8 mm. The definition includes 5 documented pins.
 
-![IC GS321A-TR SOT_23_5 pinout](data/working_svg_square_pins.svg)
+![IC GS321A-TR SOT 23 5 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -70,6 +70,10 @@ IC GS321A-TR SOT_23_5 is an OOMP electronic ic definition. It uses the sot 23 5 
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

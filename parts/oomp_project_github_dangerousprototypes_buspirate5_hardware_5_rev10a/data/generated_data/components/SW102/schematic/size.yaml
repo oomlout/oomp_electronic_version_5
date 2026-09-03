@@ -1,3 +1,36 @@
 reference: SW102
 measurement_policy: Only embedded symbol graphics are measured; pins, properties, and text are excluded.
-units: []
+units:
+- unit: 1
+  body_style: 1
+  source_file: data/kicad_file_sheets/micro-rp2040.kicad_sch
+  local_graphics:
+    measurement: symbol graphics only; excludes pins, properties, and text
+    units: mm
+    available: true
+    min:
+      x: -2.54
+      y: -1.27
+    max:
+      x: 2.54
+      y: 4.318
+    width: 5.08
+    height: 5.588
+    center:
+      x: 0.0
+      y: 1.524
+  placed_graphics:
+    measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+    units: mm
+    available: true
+    min:
+      x: 266.7
+      y: 139.192
+    max:
+      x: 271.78
+      y: 144.78
+    width: 5.08
+    height: 5.588
+    center:
+      x: 269.24
+      y: 141.986

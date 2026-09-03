@@ -1,10 +1,10 @@
-# Resistor array 100000 Ohm 4_X_0402_CONVEX
+# Resistor array 100000 Ohm 4 X 0402 Convex
 
 `electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin`
 
-Resistor array 100000 Ohm 4_X_0402_CONVEX is an OOMP electronic resistor array definition. It uses the 4 x 0402 convex package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Resistor array 100000 Ohm 4 X 0402 Convex is an OOMP electronic resistor array definition. It uses the 4 x 0402 convex package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
 
-![Resistor array 100000 Ohm 4_X_0402_CONVEX pinout](data/working_svg_square_pins.svg)
+![Resistor array 100000 Ohm 4 X 0402 Convex pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -44,6 +44,10 @@ Resistor array 100000 Ohm 4_X_0402_CONVEX is an OOMP electronic resistor array d
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

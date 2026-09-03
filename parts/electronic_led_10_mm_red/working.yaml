@@ -28,6 +28,8 @@ bip_39_full_no_space: viewimmunealterobjectcarbondebristribetortoiselegalcluster
 bip_39_full_space: view immune alter object carbon debris tribe tortoise legal cluster
   surge slot
 bip_39_full_underscore: view_immune_alter_object_carbon_debris_tribe_tortoise_legal_cluster_surge_slot
+category: led
+category_name: LED
 dimensions_mm:
   length: 10.0
   width: 10.0
@@ -37,6 +39,10 @@ id: electronic_led_10_mm_red
 id_no_class: electronic_led_10_mm_red
 id_no_size: electronic_led_10_mm_red
 id_no_type: electronic_led_10_mm_red
+kicad:
+  hand_solder: LED_THT:LED_D10.0mm
+  machine_solder: LED_THT:LED_D10.0mm
+  symbol: Device:LED
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_10_mm_red
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_10_mm_red
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_10_mm_red
@@ -60,6 +66,12 @@ name_space: electronic led 10 mm red
 name_upper: ELECTRONIC LED 10 MM RED
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -133,11 +145,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 10.0
         width: 10.0
       directory: parts\electronic_led_10_mm_red
       distributors: []
+      kicad:
+        hand_solder: LED_THT:LED_D10.0mm
+        machine_solder: LED_THT:LED_D10.0mm
+        symbol: Device:LED
       name: electronic_led_10_mm_red
       name_proper: LED Red 10_MM
       name_readable: LED Red 10_MM
@@ -146,6 +164,12 @@ oomlout_ai_roboclick_2:
       name_upper: ELECTRONIC LED 10 MM RED
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

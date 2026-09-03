@@ -1,10 +1,10 @@
-# Capacitor Electrolytic 6_3_MM_DIAMETER_5_4_MM_TALL
+# Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall
 
 `electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt`
 
-Capacitor Electrolytic 6_3_MM_DIAMETER_5_4_MM_TALL is an OOMP electronic capacitor definition. It uses the 6 3 mm diameter 5 4 mm tall package or form factor. Its nominal drawing size is 6.3 &#x00D7; 6.3 mm.
+Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall is an OOMP electronic capacitor definition. It uses the 6 3 mm diameter 5 4 mm tall package or form factor. Its nominal drawing size is 6.3 &#x00D7; 6.3 mm.
 
-![Capacitor Electrolytic 6_3_MM_DIAMETER_5_4_MM_TALL pinout](data/working_svg_square_pins.svg)
+![Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -45,6 +45,10 @@ Capacitor Electrolytic 6_3_MM_DIAMETER_5_4_MM_TALL is an OOMP electronic capacit
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

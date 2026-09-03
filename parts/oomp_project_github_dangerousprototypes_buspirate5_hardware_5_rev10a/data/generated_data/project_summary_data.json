@@ -11,25 +11,30 @@
     "git_ref": "main",
     "directory": "C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a",
     "schematic_files": [
-      "data/kicad_file.kicad_sch"
+      "data/kicad_file.kicad_sch",
+      "data/kicad_file_sheets/bpu-current_limiter.kicad_sch",
+      "data/kicad_file_sheets/bpu-iobufffer.kicad_sch",
+      "data/kicad_file_sheets/IO-expand-595-mux.kicad_sch",
+      "data/kicad_file_sheets/leds.kicad_sch",
+      "data/kicad_file_sheets/micro-rp2040.kicad_sch"
     ],
     "pcb_files": [
       "data/kicad_file.kicad_pcb"
     ]
   },
   "summary": {
-    "component_count": 220,
-    "schematic_symbol_count": 10,
+    "component_count": 440,
+    "schematic_symbol_count": 504,
     "pcb_footprint_count": 220,
     "matched_component_count": 210,
     "unmatched_physical_component_count": 10,
-    "non_physical_symbol_count": 0,
+    "non_physical_symbol_count": 220,
     "mounting_hole_count": 6,
     "dedicated_mounting_hole_count": 4,
     "mounting_hole_oomp_item_count": 6,
     "unmatched_mounting_hole_oomp_item_count": 0,
-    "connectivity_named_net_agreement_count": 0,
-    "connectivity_named_net_disagreement_count": 0
+    "connectivity_named_net_agreement_count": 525,
+    "connectivity_named_net_disagreement_count": 41
   },
   "placement": {
     "component_count": 208,
@@ -253396,8 +253401,8 @@
   "board_mechanical_png": {
     "available": true,
     "image_file": "data/generated_data/src/board_mechanical.png",
-    "width_px": 1597,
-    "height_px": 1600,
+    "width_px": 1600,
+    "height_px": 1140,
     "skipped_existing": true
   },
   "mounting_holes": {
@@ -254299,9 +254304,12 @@
       }
     ]
   },
+  "interactivehtmlbom": {
+    "available": true
+  },
   "bom": [
     {
-      "description": "electronic capacitor 0402 100 nano farad",
+      "description": "Capacitor 100 nF 0402",
       "value": "0.1uF",
       "footprint": "Capacitor_SMD:C_0402_1005Metric",
       "oomp_id": "electronic_capacitor_0402_100_nano_farad",
@@ -254369,7 +254377,7 @@
       "quantity": 58
     },
     {
-      "description": "electronic capacitor 0402 2 2 micro farad",
+      "description": "Capacitor 2.2 uF 0402",
       "value": "2.2uF",
       "footprint": "Capacitor_SMD:C_0402_1005Metric",
       "oomp_id": "electronic_capacitor_0402_2_2_micro_farad",
@@ -254389,7 +254397,7 @@
       "quantity": 10
     },
     {
-      "description": "electronic capacitor 0402 15 pico farad",
+      "description": "Capacitor 15 pF 0402",
       "value": "15pF",
       "footprint": "Capacitor_SMD:C_0402_1005Metric",
       "oomp_id": "electronic_capacitor_0402_15_pico_farad",
@@ -254401,7 +254409,7 @@
       "quantity": 2
     },
     {
-      "description": "electronic capacitor 0402 4 7 micro farad",
+      "description": "Capacitor 4.7 uF 0402",
       "value": "4.7uF",
       "footprint": "Capacitor_SMD:C_0402_1005Metric",
       "oomp_id": "electronic_capacitor_0402_4_7_micro_farad",
@@ -254417,7 +254425,7 @@
       "quantity": 6
     },
     {
-      "description": "electronic capacitor 0402 120 pico farad",
+      "description": "Capacitor 120 pF 0402",
       "value": "120pF",
       "footprint": "Capacitor_SMD:C_0402_1005Metric",
       "oomp_id": "electronic_capacitor_0402_120_pico_farad",
@@ -254428,7 +254436,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic diode switching sod 523f onsemi 1n4148wt",
+      "description": "Diode 1N4148WT SOD-523F",
       "value": "1N4148WT",
       "footprint": "Diode_SMD:D_SOD-523",
       "oomp_id": "electronic_diode_switching_sod_523f_onsemi_1n4148wt",
@@ -254442,7 +254450,7 @@
       "quantity": 4
     },
     {
-      "description": "electronic diode schottky dual common cathode sot 523 diodes incorporated bas40t 05",
+      "description": "Diode BAS40T-05 SOT-523",
       "value": "BAS40T-05",
       "footprint": "Package_TO_SOT_SMD:SOT-523",
       "oomp_id": "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
@@ -254472,7 +254480,7 @@
       "quantity": 5
     },
     {
-      "description": "electronic connector header 2 54 mm pitch through hole 3 pin socket kinghelm kh 2 54fh 1x3p h8 5",
+      "description": "Connector Header KH-2.54FH-1X3P-H8.5",
       "value": "Conn_01x03",
       "footprint": "Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical",
       "oomp_id": "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5",
@@ -254483,7 +254491,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic connector usb c surface mount 16 pin korean hroparts elec typec31m12",
+      "description": "Connector USB-C TYPE-C-31-M-12",
       "value": "TYPE-C-31-M-12",
       "footprint": "usb-c:HRO_TYPE-C-31-M-12",
       "oomp_id": "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12",
@@ -254494,7 +254502,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic connector header 2 54 mm pitch through hole 10 pin",
+      "description": "Connector Header 2.54 mm pitch through-hole 10 pin",
       "value": "Conn_01x10",
       "footprint": "Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical",
       "oomp_id": "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin",
@@ -254505,7 +254513,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic connector jst sh 1 mm pitch surface mount right angle 9 pin jst sm09b srss tb",
+      "description": "Connector JST Sh SM09B-SRSS-TB",
       "value": "Conn_01x09",
       "footprint": "Connector_JST:JST_SH_SM09B-SRSS-TB_1x09-1MP_P1.00mm_Horizontal",
       "oomp_id": "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb",
@@ -254516,7 +254524,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ferrite bead 0805 15 ohm 1 5 amp tdk mmz2012r150at000",
+      "description": "Ferrite Bead MMZ2012R150AT000 0805",
       "value": "1.5A",
       "footprint": "Inductor_SMD:L_0805_2012Metric",
       "oomp_id": "electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000",
@@ -254527,7 +254535,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic display tft 2 inch 240 x 320 pixel ips spi 12 pin szhtc qt200h1201",
+      "description": "Display QT200H1201 TFT",
       "value": "TFT_20_QT200H1201",
       "footprint": "dp-lcd:TFT_20_QT200H1201",
       "oomp_id": "electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201",
@@ -254538,7 +254546,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic led 4020 side view rgb sk6812 opsco optoelectronics sk6812side a",
+      "description": "LED SK6812SIDE-A 4020 SIDE VIEW",
       "value": "SK6812-side-a_b",
       "footprint": "dp-LED:SK6812-side-a_b",
       "oomp_id": "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
@@ -254556,7 +254564,7 @@
       "quantity": 8
     },
     {
-      "description": "electronic led 3535 rgb sk6812 opsco optoelectronics sk6812mini e",
+      "description": "LED SK6812MINI-E 3535",
       "value": "SK6812-mini-e",
       "footprint": "dp-LED:SK6812-mini-e",
       "oomp_id": "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
@@ -254587,7 +254595,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic transistor sot 23 mosfet n channel enhancement mode 60 volt 300 milliamp cbi mmbt7002k",
+      "description": "Transistor MMBT7002K SOT 23",
       "value": "MMBT7002K",
       "footprint": "Package_TO_SOT_SMD:SOT-23",
       "oomp_id": "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k",
@@ -254598,7 +254606,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic transistor sot 523 mosfet p channel enhancement mode 20 volt 2 8 amp cbi bc2301t 2 8a",
+      "description": "Transistor BC2301T-2.8A SOT 523",
       "value": "SI2301",
       "footprint": "Package_TO_SOT_SMD:SOT-523",
       "oomp_id": "electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a",
@@ -254618,7 +254626,7 @@
       "quantity": 10
     },
     {
-      "description": "electronic transistor sot 363 6 bipolar pnp dual matched pair 45 volt 100 milliamp diodes incorporated bcm857bs 7 f",
+      "description": "Transistor BCM857BS-7-F SOT 363 6",
       "value": "BCM857",
       "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
       "oomp_id": "electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f",
@@ -254629,7 +254637,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic transistor sot 363 6 bipolar pnp dual general purpose 40 volt 200 milliamp cbi mmdt3906dw",
+      "description": "Transistor MMDT3906DW SOT 363 6",
       "value": "MMDT3906",
       "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
       "oomp_id": "electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw",
@@ -254640,7 +254648,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic resistor 0402 1000 ohm",
+      "description": "Resistor 1000 Ohm 0402",
       "value": "1K",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_1000_ohm",
@@ -254654,7 +254662,7 @@
       "quantity": 4
     },
     {
-      "description": "electronic resistor 0402 200 ohm",
+      "description": "Resistor 200 Ohm 0402",
       "value": "200R",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_200_ohm",
@@ -254668,7 +254676,7 @@
       "quantity": 4
     },
     {
-      "description": "electronic resistor 0402 5100 ohm",
+      "description": "Resistor 5100 Ohm 0402",
       "value": "5.1K",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_5100_ohm",
@@ -254680,7 +254688,7 @@
       "quantity": 2
     },
     {
-      "description": "electronic resistor 0402 22 ohm",
+      "description": "Resistor 22 Ohm 0402",
       "value": "22R",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_22_ohm",
@@ -254692,7 +254700,7 @@
       "quantity": 2
     },
     {
-      "description": "electronic resistor 0805 33 ohm",
+      "description": "Resistor 33 Ohm 0805",
       "value": "33R",
       "footprint": "Resistor_SMD:R_0805_2012Metric",
       "oomp_id": "electronic_resistor_0805_33_ohm",
@@ -254703,7 +254711,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic resistor 0402 10000 ohm",
+      "description": "Resistor 10000 Ohm 0402",
       "value": "10K",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_10000_ohm",
@@ -254727,7 +254735,7 @@
       "quantity": 14
     },
     {
-      "description": "electronic resistor 0402 510 ohm",
+      "description": "Resistor 510 Ohm 0402",
       "value": "510R",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_510_ohm",
@@ -254739,7 +254747,7 @@
       "quantity": 2
     },
     {
-      "description": "electronic resistor 0402 100000 ohm",
+      "description": "Resistor 100000 Ohm 0402",
       "value": "100K",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_100000_ohm",
@@ -254752,7 +254760,7 @@
       "quantity": 3
     },
     {
-      "description": "electronic resistor 0402 102000 ohm",
+      "description": "Resistor 102000 Ohm 0402",
       "value": "102K",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_102000_ohm",
@@ -254763,7 +254771,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic resistor 0402 133000 ohm",
+      "description": "Resistor 133000 Ohm 0402",
       "value": "133K",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_133000_ohm",
@@ -254774,7 +254782,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic resistor 0402 33000 ohm",
+      "description": "Resistor 33000 Ohm 0402",
       "value": "33K",
       "footprint": "Resistor_SMD:R_0402_1005Metric",
       "oomp_id": "electronic_resistor_0402_33000_ohm",
@@ -254789,7 +254797,7 @@
       "quantity": 5
     },
     {
-      "description": "electronic resistor 2512 0 2 ohm",
+      "description": "Resistor 0.2 Ohm 2512",
       "value": "0R2",
       "footprint": "Resistor_SMD:R_2512_6332Metric_Pad1.40x3.35mm_HandSolder",
       "oomp_id": "electronic_resistor_2512_0_2_ohm",
@@ -254800,7 +254808,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic resistor array 4 x 0402 convex 330 ohm 8 pin",
+      "description": "Resistor array 330 Ohm 4 X 0402 Convex",
       "value": "330R",
       "footprint": "Resistor_SMD:R_Array_Convex_4x0402",
       "oomp_id": "electronic_resistor_array_4_x_0402_convex_330_ohm_8_pin",
@@ -254814,7 +254822,7 @@
       "quantity": 4
     },
     {
-      "description": "electronic resistor array 4 x 0402 convex 1000000 ohm 8 pin",
+      "description": "Resistor array 1e+06 Ohm 4 X 0402 Convex",
       "value": "1M",
       "footprint": "Resistor_SMD:R_Array_Convex_4x0402",
       "oomp_id": "electronic_resistor_array_4_x_0402_convex_1000000_ohm_8_pin",
@@ -254828,7 +254836,7 @@
       "quantity": 4
     },
     {
-      "description": "electronic resistor array 4 x 0402 convex 100000 ohm 8 pin",
+      "description": "Resistor array 100000 Ohm 4 X 0402 Convex",
       "value": "100K",
       "footprint": "Resistor_SMD:R_Array_Convex_4x0402",
       "oomp_id": "electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin",
@@ -254842,7 +254850,7 @@
       "quantity": 4
     },
     {
-      "description": "electronic resistor array 4 x 0402 convex 10000 ohm 8 pin",
+      "description": "Resistor array 10000 Ohm 4 X 0402 Convex",
       "value": "10K",
       "footprint": "Resistor_SMD:R_Array_Convex_4x0402",
       "oomp_id": "electronic_resistor_array_4_x_0402_convex_10000_ohm_8_pin",
@@ -254854,7 +254862,7 @@
       "quantity": 2
     },
     {
-      "description": "electronic resistor array 4 x 0402 convex 510 ohm 8 pin",
+      "description": "Resistor array 510 Ohm 4 X 0402 Convex",
       "value": "510R",
       "footprint": "Resistor_SMD:R_Array_Convex_4x0402",
       "oomp_id": "electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin",
@@ -254890,7 +254898,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic sop 8 5 28 mm x 5 23 mm memory spi nor flash 128 mbit winbond w25q128jvsiq",
+      "description": "IC W25Q128JVSIQ SOP 8 5 28 MM X 5 23 MM",
       "value": "W25Q128JVSIQ",
       "footprint": "Package_SO:SOP-8_5.28x5.23mm_P1.27mm",
       "oomp_id": "electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq",
@@ -254901,7 +254909,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic qfn 56 7 mm x 7 mm microcontroller dual core arm cortex m0 plus raspberry pi rp2040",
+      "description": "IC RP2040 QFN 56 7 MM X 7 MM",
       "value": "RP2040",
       "footprint": "RP_Silicon:RP2040-QFN-56",
       "oomp_id": "electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040",
@@ -254912,7 +254920,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic updfn 8 memory spi nand flash 1 gbit micron mt29f1g01abafdwb",
+      "description": "IC MT29F1G01ABAFDWB UPDFN 8",
       "value": "MT29F1G01ABAFDWB",
       "footprint": "dp-memory:U-PDFN-8",
       "oomp_id": "electronic_ic_updfn_8_memory_spi_nand_flash_1_gbit_micron_mt29f1g01abafdwb",
@@ -254923,7 +254931,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic sot 363 6 logic single bit dual supply transceiver wuxi i core elec aip74lvc1t45gc363 tr",
+      "description": "IC AiP74LVC1T45GC363.TR SOT 363 6",
       "value": "AiP74LVC1T45GC363.TR",
       "footprint": "Package_TO_SOT_SMD:SOT-363_SC-70-6",
       "oomp_id": "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
@@ -254941,7 +254949,7 @@
       "quantity": 8
     },
     {
-      "description": "electronic ic sot 89 3 power management linear voltage regulator 3 3 volt microne me6211a33pg n",
+      "description": "IC ME6211A33PG-N SOT 89 3",
       "value": "ME6211A33PG-N",
       "footprint": "Package_TO_SOT_SMD:SOT-89-3",
       "oomp_id": "electronic_ic_sot_89_3_power_management_linear_voltage_regulator_3_3_volt_microne_me6211a33pg_n",
@@ -254952,7 +254960,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic tssop 24 logic 16 channel analog multiplexer nexperia 74hct4067pw118",
+      "description": "IC 74HCT4067PW,118 TSSOP 24",
       "value": "CD4067",
       "footprint": "Package_SO:TSSOP-24_4.4x7.8mm_P0.65mm",
       "oomp_id": "electronic_ic_tssop_24_logic_16_channel_analog_multiplexer_nexperia_74hct4067pw118",
@@ -254963,7 +254971,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic sot 23 5 power management linear voltage regulator 3 3 volt diodes ap2127k 3 3trg1",
+      "description": "IC AP2127K-3.3TRG1 SOT 23 5",
       "value": "AP2127",
       "footprint": "Package_TO_SOT_SMD:SOT-23-5",
       "oomp_id": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_diodes_ap2127k_3_3trg1",
@@ -254974,7 +254982,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic sot 23 5 amplifier operational single rail to rail input output gainsil lmv321 tr",
+      "description": "IC LMV321-TR SOT 23 5",
       "value": "LMV321",
       "footprint": "Package_TO_SOT_SMD:SOT-23-5",
       "oomp_id": "electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr",
@@ -254987,7 +254995,7 @@
       "quantity": 3
     },
     {
-      "description": "electronic ic tssop 16 logic serial in parallel out shift register wuxi i core elec aip74hc595ta16 tr",
+      "description": "IC AiP74HC595TA16.TR TSSOP 16",
       "value": "AIP74HC595TA",
       "footprint": "Package_SO:TSSOP-16_4.4x5mm_P0.65mm",
       "oomp_id": "electronic_ic_tssop_16_logic_serial_in_parallel_out_shift_register_wuxi_i_core_elec_aip74hc595ta16_tr",
@@ -254999,7 +255007,7 @@
       "quantity": 2
     },
     {
-      "description": "electronic ic tssop 20 logic octal bus transceiver wuxi i core elec aip74hct245ta20 tr",
+      "description": "IC AiP74HCT245TA20.TR TSSOP 20",
       "value": "AIP74HCT245TA",
       "footprint": "Package_SO:TSSOP-20_4.4x6.5mm_P0.65mm",
       "oomp_id": "electronic_ic_tssop_20_logic_octal_bus_transceiver_wuxi_i_core_elec_aip74hct245ta20_tr",
@@ -255010,7 +255018,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic tssop 14 amplifier operational quad rail to rail output texas instruments lmv324ipwr",
+      "description": "IC LMV324IPWR TSSOP 14",
       "value": "LMV324",
       "footprint": "Package_SO:TSSOP-14_4.4x5mm_P0.65mm",
       "oomp_id": "electronic_ic_tssop_14_amplifier_operational_quad_rail_to_rail_output_texas_instruments_lmv324ipwr",
@@ -255022,7 +255030,7 @@
       "quantity": 2
     },
     {
-      "description": "electronic ic sot 23 5 amplifier operational single precision rail to rail input output gainsil gs321a tr",
+      "description": "IC GS321A-TR SOT 23 5",
       "value": "LMV321A",
       "footprint": "Package_TO_SOT_SMD:SOT-23-5",
       "oomp_id": "electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr",
@@ -255033,7 +255041,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic ic sot 23 5 comparator single open collector texas instruments lmv331idbvr",
+      "description": "IC LMV331IDBVR SOT 23 5",
       "value": "LMV331",
       "footprint": "Package_TO_SOT_SMD:SOT-23-5",
       "oomp_id": "electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr",
@@ -255044,7 +255052,7 @@
       "quantity": 1
     },
     {
-      "description": "electronic crystal 3225 surface mount 4 pin 12 mhz 20 pf",
+      "description": "Crystal 12 MHz 20 pF 3225 4-pin",
       "value": "12Mhz",
       "footprint": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
       "oomp_id": "electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf",
@@ -255553,13 +255561,14 @@
     }
   ],
   "generated_text": {
-    "overview": "Project dangerousprototypes/buspirate5_hardware 5_rev10a is a KiCad project containing 220 extracted component records. The catalogue matcher linked 210 physical placements to OOMP parts.",
+    "overview": "Project dangerousprototypes/buspirate5_hardware 5_rev10a is a KiCad project containing 440 extracted component records. The catalogue matcher linked 210 physical placements to OOMP parts.",
     "design_notes": [
       "The extracted board outline is approximately 80.0 mm by 80.1539 mm.",
       "Placement data contains 205 front-side and 3 back-side components."
     ],
     "review_notes": [
-      "10 physical component records are not yet matched to an OOMP part."
+      "10 physical component records are not yet matched to an OOMP part.",
+      "The extractor reports 41 named-net comparisons that differ between schematic and PCB data."
     ]
   },
   "style": {
@@ -255579,7 +255588,7 @@
       "family": "Arial, sans-serif",
       "reference_size_mm": 0.72,
       "title_size_mm": 2.4,
-      "mechanical_size_mm": 0.62
+      "mechanical_size_mm": 1.0
     },
     "board_svg": {
       "margin_mm": 6.0,
@@ -255886,9 +255895,17 @@
       {
         "oomp_id": "electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr",
         "project_source_files": [
-          "working.yaml"
+          "working.yaml",
+          "working_svg_assembly.svg",
+          "working_svg_assembly_pins.svg",
+          "working_svg_square_pins.svg",
+          "working_svg_outline.svg"
         ],
-        "generated_image_files": []
+        "generated_image_files": [
+          "working_svg_assembly.svg",
+          "working_svg_assembly_pins.svg",
+          "working_svg_square_pins.svg"
+        ]
       },
       {
         "oomp_id": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_diodes_ap2127k_3_3trg1",
@@ -256375,6 +256392,9 @@
   "repository_links": {
     "repository": "https://github.com/oomlout/oomp_electronic_version_5",
     "part": "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a",
+    "kicad_original": "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/original",
+    "kicad_oomp": "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/oomp_design",
+    "kicad_conversion_report": "https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/oomp_design/conversion_report.yaml",
     "generated_source": "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src",
     "board": "https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board.svg",
     "board_raw": "https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/src/board.svg",

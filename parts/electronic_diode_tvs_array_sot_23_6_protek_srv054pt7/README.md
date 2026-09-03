@@ -1,10 +1,10 @@
-# Diode SRV05-4-P-T7 TVS_ARRAY
+# Diode SRV05-4-P-T7 SOT-23-6
 
 `electronic_diode_tvs_array_sot_23_6_protek_srv054pt7`
 
-Diode SRV05-4-P-T7 TVS_ARRAY is an OOMP electronic diode definition. It uses the sot 23 6 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm.
+Diode SRV05-4-P-T7 SOT-23-6 is an OOMP electronic diode definition. It uses the sot 23 6 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm.
 
-![Diode SRV05-4-P-T7 TVS_ARRAY pinout](data/working_svg_square_pins.svg)
+![Diode SRV05-4-P-T7 SOT-23-6 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -53,6 +53,10 @@ Diode SRV05-4-P-T7 TVS_ARRAY is an OOMP electronic diode definition. It uses the
 
 
 ## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 

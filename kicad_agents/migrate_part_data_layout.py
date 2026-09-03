@@ -22,8 +22,10 @@ def _merge_directory(source_directory, destination_directory):
                 if source_item.read_bytes() == destination_item.read_bytes():
                     source_item.unlink()
                 else:
-                    destination_item.unlink()
-                    shutil.move(str(source_item), str(destination_item))
+                    raise FileExistsError(
+                        f"Different files exist at {source_item} and {destination_item}; "
+                        "both were preserved for review."
+                    )
             else:
                 shutil.move(str(source_item), str(destination_item))
     if source_directory.exists() and not any(source_directory.iterdir()):

@@ -1,9 +1,147 @@
 {
   "reference": "R502",
   "schematic": {
-    "available": false,
-    "units": [],
-    "connected_components": []
+    "available": true,
+    "units": [
+      {
+        "reference": "R502",
+        "source_file": "data/kicad_file_sheets/leds.kicad_sch",
+        "uuid": "00000000-0000-0000-0000-000061b54215",
+        "library_id": "Device:R_Small",
+        "unit": 1,
+        "body_style": 1,
+        "position": {
+          "x": 137.16,
+          "y": 38.1,
+          "rotation": 90.0,
+          "mirror": null,
+          "units": "mm"
+        },
+        "properties": {
+          "Reference": "R?",
+          "Value": "1K",
+          "Footprint": "Resistor_SMD:R_0402_1005Metric",
+          "Datasheet": "~",
+          "RMB": "0.005622",
+          "Supplier": "https://item.szlcsc.com/107450.html"
+        },
+        "in_bom": true,
+        "on_board": true,
+        "in_position_files": true,
+        "dnp": false,
+        "pins": [
+          {
+            "number": "1",
+            "name": "~",
+            "electrical_type": "passive",
+            "graphic_style": "line",
+            "local_position": {
+              "x": 0.0,
+              "y": 2.54,
+              "rotation": 270.0
+            },
+            "length": 0.762,
+            "position": {
+              "x": 134.62,
+              "y": 38.1
+            },
+            "net": "LEDS_CDO",
+            "net_aliases": [
+              "LEDS_CDO"
+            ],
+            "net_scope": "global",
+            "no_connect": false,
+            "connected_to": [
+              {
+                "reference": "U503",
+                "pin_number": "13",
+                "pin_name": "B5"
+              }
+            ]
+          },
+          {
+            "number": "2",
+            "name": "~",
+            "electrical_type": "passive",
+            "graphic_style": "line",
+            "local_position": {
+              "x": 0.0,
+              "y": -2.54,
+              "rotation": 90.0
+            },
+            "length": 0.762,
+            "position": {
+              "x": 139.7,
+              "y": 38.1
+            },
+            "net": null,
+            "net_aliases": [],
+            "net_scope": "sheet",
+            "no_connect": false,
+            "connected_to": [
+              {
+                "reference": "LED719",
+                "pin_number": "4",
+                "pin_name": "DI"
+              }
+            ]
+          }
+        ],
+        "size": {
+          "local_graphics": {
+            "measurement": "symbol graphics only; excludes pins, properties, and text",
+            "units": "mm",
+            "available": true,
+            "min": {
+              "x": -0.8636,
+              "y": -1.8796
+            },
+            "max": {
+              "x": 0.8636,
+              "y": 1.8796
+            },
+            "width": 1.7272,
+            "height": 3.7592,
+            "center": {
+              "x": 0.0,
+              "y": 0.0
+            }
+          },
+          "placed_graphics": {
+            "measurement": "axis-aligned bounds after schematic placement, rotation, and mirroring",
+            "units": "mm",
+            "available": true,
+            "min": {
+              "x": 135.2804,
+              "y": 37.2364
+            },
+            "max": {
+              "x": 139.0396,
+              "y": 38.9636
+            },
+            "width": 3.7592,
+            "height": 1.7272,
+            "center": {
+              "x": 137.16,
+              "y": 38.1
+            }
+          }
+        },
+        "warnings": []
+      }
+    ],
+    "connected_components": [
+      {
+        "reference": "LED719",
+        "pin_number": "4",
+        "pin_name": "DI"
+      },
+      {
+        "reference": "U503",
+        "pin_number": "13",
+        "pin_name": "B5"
+      }
+    ]
   },
   "pcb": {
     "reference": "R502",
@@ -407,16 +545,18 @@
     ]
   },
   "connectivity_cross_check": {
-    "available": false,
-    "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers.",
+    "available": true,
+    "policy": "Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also allow KiCad's leading '/' prefix.",
     "comparisons": [
       {
         "pin_or_pad_number": "1",
-        "schematic_nets": [],
+        "schematic_nets": [
+          "LEDS_CDO"
+        ],
         "pcb_nets": [
           "LEDS_CDO"
         ],
-        "status": "incomplete"
+        "status": "agree"
       },
       {
         "pin_or_pad_number": "2",
@@ -427,9 +567,9 @@
         "status": "incomplete"
       }
     ],
-    "agree_count": 0,
+    "agree_count": 1,
     "disagree_count": 0,
-    "incomplete_count": 2
+    "incomplete_count": 1
   },
   "oomp": {
     "status": "matched",
@@ -448,5 +588,8 @@
     ],
     "candidates": []
   },
+  "category": "resistor",
+  "category_source": "oomp_populate",
+  "category_name": "Resistor",
   "generated_directory": "components/R502"
 }

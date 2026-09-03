@@ -2,13 +2,14 @@
 
 [Up one level](../README.md)
 
-This category contains 2 parts in total.
+This category contains 4 parts in total.
 
 
 ## Categories
 
 - [Dangerousprototypes](dangerousprototypes/README.md)
 - [Electrolama](electrolama/README.md)
+- [Hanqaqa](hanqaqa/README.md)
 
 
 

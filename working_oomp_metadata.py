@@ -70,6 +70,9 @@ def _format_value(value_token):
         ["_mhz", "MHz"],
         ["_khz", "kHz"],
         ["_hz", "Hz"],
+        ["_pf", "pF"],
+        ["_volt", "V"],
+        ["_amp", "A"],
     ]
     for suffix, unit in unit_rows:
         if value_text.endswith(suffix):
@@ -78,7 +81,25 @@ def _format_value(value_token):
     return _pretty_token(value_text)
 
 
+def _connector_detail(value):
+    if value.endswith("_mm_pitch"):
+        return f"{_format_number(value[:-len('_mm_pitch')])} mm pitch"
+    replacements = {
+        "through_hole": "through-hole",
+        "surface_mount": "surface-mount",
+        "right_angle": "right-angle",
+    }
+    if value in replacements:
+        return replacements[value]
+    if value.endswith("_pin") or value.endswith("_pin_dual_row"):
+        return value.replace("_", " ")
+    return _pretty_token(value)
+
+
 def readable_name(part):
+    override = str(part.get("name_readable_override", "")).strip()
+    if override:
+        return override
     taxonomy = taxonomy_values(part)
     if taxonomy == []:
         return "OOMP part"
@@ -97,30 +118,61 @@ def readable_name(part):
         owner = str(part.get("project_github_user", "")).strip()
         repository = str(part.get("project_github_repository", "")).strip()
         version = str(part.get("project_version", "current")).strip()
+        board = str(part.get("project_board_name", "")).strip()
+        if board:
+            return f"Project {owner}/{repository} {board} {version}".strip()
         return f"Project {owner}/{repository} {version}".strip()
 
     if component_type == "capacitor":
-        return f"Capacitor {_format_value(value)} {package.upper()}".strip()
+        details = []
+        for taxonomy_value in taxonomy[3:]:
+            if taxonomy_value.endswith("_farad") or taxonomy_value.endswith("_volt"):
+                details.append(_format_value(taxonomy_value))
+        if value in ["electrolytic", "tantalum"]:
+            details.append(_pretty_token(value))
+        if "_mm_diameter_" in package:
+            diameter, height = package.split("_mm_diameter_", 1)
+            height = height.replace("_mm_tall", "")
+            details.append(f"{_format_number(diameter)} mm diameter x {_format_number(height)} mm tall")
+        else:
+            details.append(package.replace("_", " ").upper())
+        return "Capacitor " + " ".join(details)
     if component_type == "resistor":
         return f"Resistor {_format_value(value)} {package.upper()}".strip()
     if component_type == "resistor_array":
-        return f"Resistor array {_format_value(value)} {package.upper()}".strip()
+        return f"Resistor array {_format_value(value)} {_pretty_token(package)}".strip()
     if component_type == "connector":
         connector_type = _pretty_token(package)
         if manufacturer_part_number != "":
             return f"Connector {connector_type} {manufacturer_part_number}".strip()
         details = []
         for taxonomy_value in taxonomy[3:7]:
-            details.append(_pretty_token(taxonomy_value))
+            details.append(_connector_detail(taxonomy_value))
         return f"Connector {connector_type} {' '.join(details)}".strip()
     if component_type == "ic":
         if manufacturer_part_number != "":
-            return f"IC {manufacturer_part_number} {package.upper()}".strip()
+            return f"IC {manufacturer_part_number} {package.replace('_', ' ').upper()}".strip()
         details = [_pretty_token(value_text) for value_text in taxonomy[3:6]]
         return f"IC {' '.join(details)} {package.upper()}".strip()
     if component_type == "led":
+        if manufacturer_part_number != "":
+            return f"LED {manufacturer_part_number} {package.replace('_', ' ').upper()}"
         details = [_pretty_token(value_text) for value_text in taxonomy[3:6]]
         return f"LED {' '.join(details)} {package.upper()}".strip()
+    if component_type == "diode":
+        diode_package = value.replace("_", "-").upper()
+        identity = manufacturer_part_number or _pretty_token(package)
+        return f"Diode {identity} {diode_package}".strip()
+    if component_type == "crystal":
+        details = []
+        for taxonomy_value in taxonomy[3:]:
+            if taxonomy_value.endswith(("_hz", "_mhz", "_khz", "_pf")):
+                details.append(_format_value(taxonomy_value))
+        details.append(package.upper())
+        for taxonomy_value in taxonomy[3:]:
+            if taxonomy_value.endswith("_pin"):
+                details.append(taxonomy_value.replace("_", "-"))
+        return "Crystal " + " ".join(details)
     if component_type == "mounting_hole":
         size_text = package.replace("_mm_x_", " mm x ")
         size_text = size_text.replace("_mm", " mm")
@@ -134,10 +186,10 @@ def readable_name(part):
     if manufacturer_part_number != "":
         details.append(manufacturer_part_number)
     else:
-        for taxonomy_value in taxonomy[3:6]:
+        for taxonomy_value in taxonomy[3:]:
             details.append(_pretty_token(taxonomy_value))
     if package != "":
-        details.append(package.upper())
+        details.append(package.replace("_", " ").upper())
     return f"{title} {' '.join(details)}".strip()
 
 

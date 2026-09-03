@@ -45,6 +45,10 @@ LED Pink 1000 Mm Length STRIP_12_VOLT_3_MM_WIDTH is an OOMP electronic led defin
 
 ## Files
 
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)

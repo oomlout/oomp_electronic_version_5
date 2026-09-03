@@ -28,6 +28,8 @@ bip_39_full_no_space: cannonsimilarruleblastpovertykickfleeacousticsparebrickmix
 bip_39_full_space: cannon similar rule blast poverty kick flee acoustic spare brick
   mixed govern
 bip_39_full_underscore: cannon_similar_rule_blast_poverty_kick_flee_acoustic_spare_brick_mixed_govern
+category: led
+category_name: LED
 dimensions_mm:
   length: 3000
   width: 8
@@ -37,6 +39,10 @@ id: electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_met
 id_no_class: electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_meter
 id_no_size: electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_meter
 id_no_type: electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_meter
+kicad:
+  hand_solder: ''
+  machine_solder: ''
+  symbol: ''
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_meter
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_meter
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_meter
@@ -65,6 +71,12 @@ name_upper: ELECTRONIC LED STRIP 24 VOLT 8 MM WIDTH BLUE 3000 MM LENGTH 320 LEDS
   METER
 oomlout_ai_roboclick_1:
   actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -138,11 +150,17 @@ oomlout_ai_roboclick_2:
     convert_to_pdf: false
     convert_to_png: false
     dict_data:
+      category: led
+      category_name: LED
       dimensions_mm:
         length: 3000
         width: 8
       directory: parts\electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_meter
       distributors: []
+      kicad:
+        hand_solder: ''
+        machine_solder: ''
+        symbol: ''
       name: electronic_led_strip_24_volt_8_mm_width_blue_3000_mm_length_320_leds_per_meter
       name_proper: LED Blue 3000 Mm Length 320 Leds Per Meter STRIP_24_VOLT_8_MM_WIDTH
       name_readable: LED Blue 3000 Mm Length 320 Leds Per Meter STRIP_24_VOLT_8_MM_WIDTH
@@ -153,6 +171,12 @@ oomlout_ai_roboclick_2:
         LEDS PER METER
       oomlout_ai_roboclick_1:
         actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.

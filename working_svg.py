@@ -1472,6 +1472,38 @@ def _add_wire_outline(thing, width=32, height=10, pos=None):
     return width, height
 
 
+def _add_slot_outline(thing, width, height, style, pos):
+    """Two visible end circles joined by straight sides, never an ellipse.
+
+    The SVG framework's slot width is the distance BETWEEN circle centres;
+    our hole sizes are the full outside dimensions, including both caps.
+    """
+    diameter = min(width, height)
+    centre_spacing = max(width, height) - diameter
+    rotation = 90 if height > width else 0
+    opsvg.se(
+        thing,
+        shape="slot",
+        style=style,
+        r=diameter / 2,
+        w=centre_spacing,
+        rot=[0, 0, rotation],
+        pos=copy.deepcopy(pos),
+    )
+    # The continuous slot is the cutout boundary. Show its two generating
+    # circles as well, so an elongated hole doesn't read as a stretched oval.
+    # Only the drill gets these construction outlines, not the plating ring.
+    if style == "component.hole" and centre_spacing > 0:
+        for direction in [-1, 1]:
+            circle_pos = copy.deepcopy(pos)
+            axis = 1 if height > width else 0
+            circle_pos[axis] += direction * centre_spacing / 2
+            opsvg.se(
+                thing, shape="circle", style=style,
+                r=diameter / 2, pos=circle_pos, color="none",
+            )
+
+
 def _add_mounting_hole_outline(thing, width=16, height=16, pos=None):
     """Draw a mounting hole using its explicit round/slot and plating style."""
     if pos is None:
@@ -1493,14 +1525,7 @@ def _add_mounting_hole_outline(thing, width=16, height=16, pos=None):
 
     if hole_plating == "plated":
         if hole_style == "slot":
-            opsvg.se(
-                thing,
-                shape="rounded_rectangle",
-                style="component.body",
-                size=[drawing_x, drawing_y, 0],
-                r=min(drawing_x, drawing_y) / 2,
-                pos=copy.deepcopy(pos),
-            )
+            _add_slot_outline(thing, drawing_x, drawing_y, "component.body", pos)
         else:
             opsvg.se(
                 thing,
@@ -1516,14 +1541,7 @@ def _add_mounting_hole_outline(thing, width=16, height=16, pos=None):
         drawing_y *= 0.72
 
     if hole_style == "slot":
-        opsvg.se(
-            thing,
-            shape="rounded_rectangle",
-            style="component.hole",
-            size=[drawing_x, drawing_y, 0],
-            r=min(drawing_x, drawing_y) / 2,
-            pos=copy.deepcopy(pos),
-        )
+        _add_slot_outline(thing, drawing_x, drawing_y, "component.hole", pos)
     else:
         opsvg.se(
             thing,
@@ -1535,10 +1553,45 @@ def _add_mounting_hole_outline(thing, width=16, height=16, pos=None):
     return width, height
 
 
+def _add_populated_package_outline(thing, width, height, pos=None):
+    """Draw verified millimetre geometry from plain populate rows, at one scale."""
+    pos = pos or [0, 0, 0]
+    drawing = thing["package_drawing"]
+    overall_width, overall_height = drawing["overall"]
+    scale = min(width / overall_width, height / overall_height)
+    body_width, body_height = drawing["body"]
+    thing["diagram_pin_positions"] = []
+    opsvg.se(thing, shape="rect", style="component.body",
+             size=[body_width * scale, body_height * scale, 0], pos=copy.deepcopy(pos))
+    # Optional shield/actuator outlines: x, y, width, height in physical mm.
+    for x, y, w, h in drawing.get("boxes", []):
+        opsvg.se(thing, shape="rect", style="component.body",
+                 size=[w * scale, h * scale, 0], pos=[pos[0] + x * scale, pos[1] + y * scale, 0])
+    for x, y, radius in drawing.get("circles", []):
+        opsvg.se(thing, shape="circle", style="component.body", r=radius * scale,
+                 pos=[pos[0] + x * scale, pos[1] + y * scale, 0])
+    for number, side, x, y, w, h in drawing["pins"]:
+        _add_ic_pin(thing, number, side,
+                    [pos[0] + x * scale, pos[1] + y * scale, 0], [w * scale, h * scale, 0])
+    if thing["diagram_pin_positions"]:
+        first_pin = thing["diagram_pin_positions"][0]
+        thing["diagram_orientation_anchor"] = {"pos": copy.deepcopy(first_pin["pos"]),
+                                               "identifiers": [str(first_pin["number"])]}
+    if drawing.get("pin_one"):
+        x, y = drawing["pin_one"]
+        opsvg.se(thing, shape="circle", style="component.pin_one",
+                 r=.12 * scale, pos=[pos[0] + x * scale, pos[1] + y * scale, 0])
+    thing["diagram_outline_width"] = overall_width * scale
+    thing["diagram_outline_height"] = overall_height * scale
+    return body_width * scale, body_height * scale
+
+
 def _add_component_outline(thing, width=22, height=10, pos=None):
     """Dispatch to a simple physical outline for each populated component type."""
     component_type = str(thing.get("taxonomy_2", ""))
     size = str(thing.get("taxonomy_3", ""))
+    if thing.get("package_drawing"):
+        return _add_populated_package_outline(thing, width, height, pos)
 
     if component_type == "resistor":
         if size == "quarter_watt_through_hole":
@@ -1779,7 +1832,7 @@ def _add_square_pin_labels(thing):
             )
         return
 
-    if component_type in ["ic", "diode", "transistor"] and diagram_pin_positions:
+    if (component_type in ["ic", "diode", "transistor"] or thing.get("package_drawing")) and diagram_pin_positions:
         pin_label_map = _get_pin_label_map(thing)
 
         # SOP and TSSOP packages have dense long-edge pins.  Directly adjacent
@@ -2256,7 +2309,13 @@ def _add_component_dimensions(thing, body_width, body_height, show_titles=False)
             transistor_dimensions.get("overall_width_maximum"),
             transistor_dimensions.get("overall_width_nominal", dimensions_mm.get("width", 2.1)),
         )
-    if show_titles:
+    if thing.get("package_drawing"):
+        length_text = _format_dimension_mm(thing["package_drawing"]["body"][0])
+        width_text = _format_dimension_mm(thing["package_drawing"]["body"][1])
+        if show_titles:
+            length_text = "body width " + length_text
+            width_text = "body depth " + width_text
+    elif show_titles:
         if component_type == "ic" and (package in ["sop_16", "sot_23_5", "sot_23_6"] or package.startswith("tssop_")):
             length_text = f"body width {length_text}"
             width_text = f"body length {width_text}"
@@ -2298,6 +2357,10 @@ def _add_component_dimensions(thing, body_width, body_height, show_titles=False)
 
 def _get_assembly_drawing_dimensions(thing):
     """Return canvas and outline sizes on a simple ten-times millimetre grid."""
+    if thing.get("package_drawing"):
+        width, height = thing["package_drawing"]["overall"]
+        return {"canvas_width": width * 10, "canvas_height": height * 10,
+                "outline_width": width * 10, "outline_height": height * 10}
     dimensions = thing.get("dimensions_mm", {})
     physical_length = float(dimensions.get("length", 10))
     physical_width = float(dimensions.get("width", 5))
@@ -2625,7 +2688,7 @@ def get_oomp_component_top(thing, **kwargs):
     _use_style_oomp(thing, **kwargs)
     view_size = _get_connector_view_size(thing, "top")
     _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
-    _add_connector_outline(thing, width=view_size[0], height=view_size[1])
+    _add_component_outline(thing, width=view_size[0], height=view_size[1])
 
 
 def get_oomp_component_bottom(thing, **kwargs):
@@ -2634,7 +2697,17 @@ def get_oomp_component_bottom(thing, **kwargs):
     connector_type = str(thing.get("taxonomy_3", ""))
     view_size = _get_connector_view_size(thing, "bottom")
     _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
-    if connector_type == "usb_c":
+    if thing.get("package_drawing"):
+        drawing = copy.deepcopy(thing["package_drawing"])
+        bottom = copy.deepcopy(drawing.get("bottom", drawing))
+        for pin in bottom["pins"]:
+            pin[2] = -pin[2]
+        for box in bottom.get("boxes", []):
+            box[0] = -box[0]
+        thing["package_drawing"] = bottom
+        _add_populated_package_outline(thing, view_size[0], view_size[1])
+        thing["package_drawing"] = drawing
+    elif connector_type == "usb_c":
         _add_usb_c_bottom_view(thing, view_size[0], view_size[1])
     elif connector_type == "usb_a":
         _add_usb_a_bottom_view(thing, view_size[0], view_size[1])
@@ -2647,7 +2720,13 @@ def get_oomp_component_side(thing, **kwargs):
     _use_style_oomp(thing, **kwargs)
     view_size = _get_connector_view_size(thing, "side")
     _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
-    _add_connector_side_view(thing, view_size[0], view_size[1])
+    if thing.get("package_drawing", {}).get("side"):
+        drawing = thing["package_drawing"]
+        thing["package_drawing"] = drawing["side"]
+        _add_populated_package_outline(thing, view_size[0], view_size[1])
+        thing["package_drawing"] = drawing
+    else:
+        _add_connector_side_view(thing, view_size[0], view_size[1])
 
 
 def get_oomp_component_outline(thing, **kwargs):

@@ -5,6 +5,19 @@ This OOMP navigation part publishes the category index at
 
 It contains 1 descendant parts.
 
+
+[Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor/sot_523/mosfet/p_channel/enhancement_mode/20_volt)
+
+
+
+## Categories
+
+- [Cbi](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor/sot_523/mosfet/p_channel/enhancement_mode/20_volt/2_8_amp/cbi)
+
+
+
+
+
 ---
 
 Generated from the populated OOMP taxonomy by Roboclick and Jinja.

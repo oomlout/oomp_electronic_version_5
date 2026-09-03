@@ -5,6 +5,19 @@ This OOMP navigation part publishes the category index at
 
 It contains 1 descendant parts.
 
+
+[Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/crystal/3225/surface_mount/4_pin)
+
+
+
+
+
+## Parts
+
+- [Crystal 12 MHz 20 pF 3225 4-pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf) — `electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf`
+
+
+
 ---
 
 Generated from the populated OOMP taxonomy by Roboclick and Jinja.

@@ -18,6 +18,12 @@ REPOSITORY_ROOT = Path(__file__).resolve().parent
 def _is_browser_action(action):
     command = str(action.get("command", "")).lower()
     python_file = str(action.get("file_python", "")).lower()
+    browser_commands = [
+        "new_chat", "close_tab", "query", "add_image", "add_file", "ai_save_image",
+        "save_image_search_result",
+    ]
+    if command in browser_commands:
+        return True
     browser_terms = [
         "browser",
         "chrome",
@@ -29,6 +35,12 @@ def _is_browser_action(action):
         "ai_continue_chat",
         "ai_new_chat",
         "ai_from_directory",
+        "ai_image_",
+        "ai_file_",
+        "ai_save_text",
+        "ai_set_mode",
+        "ai_text_",
+        "google_doc_",
     ]
     combined_text = " ".join([command, python_file])
     for browser_term in browser_terms:
@@ -38,12 +50,17 @@ def _is_browser_action(action):
 
 
 def _matches_filter(part_id, filter_text):
+    if isinstance(filter_text, list):
+        for entry in filter_text:
+            if _matches_filter(part_id, entry):
+                return True
+        return False
     if filter_text == "":
         return True
     return filter_text in part_id
 
 
-def run_actions(filter_text=""):
+def run_actions(filter_text="", regenerate_pngs=True):
     discovered_actions = oomlout_roboclick.build_action_lookup()
     parts_directory = REPOSITORY_ROOT / "parts"
     action_count = 0
@@ -69,26 +86,35 @@ def run_actions(filter_text=""):
                     print(f"skipping browser action for {part_directory.name}: {action.get('command', '')}")
                     continue
                 action_to_run = copy.deepcopy(action)
-                action_to_run["regenerate_pngs"] = True
-                oomlout_roboclick.run_single_action(
+                action_to_run["regenerate_pngs"] = regenerate_pngs
+                result = oomlout_roboclick.run_single_action(
                     action=action_to_run,
                     directory=str(part_directory.resolve()),
                     directory_absolute=str(part_directory.resolve()),
                     file_action=str(working_file.resolve()),
                     _discovered_actions=discovered_actions,
                 )
+                if result in ["exit", "exit_no_tab"]:
+                    raise RuntimeError(
+                        f"Regeneration stopped for {part_directory.name}: "
+                        f"{action.get('command', '')} returned {result}"
+                    )
                 action_count += 1
     return action_count, skipped_browser_count
 
 
 def regenerate_all(filter_text=""):
-    populate_kwargs = {"regenerate_pngs": True}
+    # Force images only for this run, not for every future routine action.
+    # run_actions applies the force flag to an in-memory action copy.
+    populate_kwargs = {"regenerate_pngs": False}
     if filter_text != "":
         populate_kwargs["filter"] = filter_text
     working_oomp_populate.main(**populate_kwargs)
     working_oomp.main(**populate_kwargs)
     migration = migrate_parts(REPOSITORY_ROOT / "parts")
     action_count, skipped_browser_count = run_actions(filter_text=filter_text)
+    from kicad_agents.kicad_library_agent import package_libraries
+    package_libraries(REPOSITORY_ROOT / "parts", REPOSITORY_ROOT / "kicad_libraries")
     print(
         f"Full regeneration complete: {action_count} deterministic actions, "
         f"{skipped_browser_count} browser actions skipped, "
