@@ -2,15 +2,18 @@
 
 [Up one level](../README.md)
 
-This category contains 17 parts in total.
+This category contains 20 parts in total.
 
 
 ## Categories
 
+- [ESP32 Wroom 32E](esp32_wroom_32e/README.md)
 - [Qfn 16 3 Mm X 3 Mm](qfn_16_3_mm_x_3_mm/README.md)
+- [Qfn 28 5 Mm X 5 Mm](qfn_28_5_mm_x_5_mm/README.md)
 - [Qfn 56 7 Mm X 7 Mm](qfn_56_7_mm_x_7_mm/README.md)
 - [Sop 16](sop_16/README.md)
 - [Sop 8 5 28 Mm X 5 23 Mm](sop_8_5_28_mm_x_5_23_mm/README.md)
+- [Sot 223 3](sot_223_3/README.md)
 - [Sot 23 5](sot_23_5/README.md)
 - [Sot 23 6](sot_23_6/README.md)
 - [Sot 363 6](sot_363_6/README.md)

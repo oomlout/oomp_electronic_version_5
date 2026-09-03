@@ -71,7 +71,7 @@ def _project_file_state():
     for project_directory in PARTS_DIRECTORY.iterdir():
         if not project_directory.is_dir() or not project_directory.name.startswith(PROJECT_PART_PREFIX):
             continue
-        candidates = [project_directory / "README.md"]
+        candidates = [project_directory / "README.md", project_directory / "board_explorer.html"]
         generated_directory = project_directory / "data" / "generated_data"
         if generated_directory.is_dir():
             for pattern in ["board_explorer.html", "src/board*.svg", "src/board*.png"]:

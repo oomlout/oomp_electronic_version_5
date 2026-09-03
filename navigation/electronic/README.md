@@ -2,7 +2,7 @@
 
 [Up one level](../README.md)
 
-This category contains 1372 parts in total.
+This category contains 786 parts in total.
 
 
 ## Categories
@@ -18,6 +18,7 @@ This category contains 1372 parts in total.
 - [Prototyping](prototyping/README.md)
 - [Resistor](resistor/README.md)
 - [Resistor Array](resistor_array/README.md)
+- [Switch](switch/README.md)
 - [Transistor](transistor/README.md)
 - [Wire](wire/README.md)
 

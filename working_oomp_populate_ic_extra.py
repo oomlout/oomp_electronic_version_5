@@ -101,7 +101,7 @@ def main(**kwargs):
             pads.append([str(index + 22), "top", offset, 2.225, .23, .55])
         pads.append(["29", "center", 0, 0, 3.15, 3.15])
         part["package_drawing"] = {"overall": [5, 5], "body": [5, 5], "pins": pads, "pin_one": [-2.1, 2.1]}
-        part["kicad"] = {"symbol": "", "machine_solder": "Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm", "hand_solder": ""}
+        part["kicad"] = {"symbol": "", "machine_solder": "Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm", "hand_solder": "", "allow_project_fallback": False}
         part["research_notes"] = ["This is CP2102, not CP2102N. Easyduino U1 has conflicting symbol/value and LCSC identity; do not auto-match it.",
                                   "Exposed GND pad uses KiCad identifier 29; it is unnumbered in the datasheet.",
                                   "Installed KiCad 10 masters do not contain the original CP2102 symbol. CP2102N is not substituted; symbol selection is pending."]

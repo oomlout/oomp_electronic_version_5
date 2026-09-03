@@ -208,6 +208,9 @@ def select_sources(part, masters, candidates):
     for field, candidate_key in [['symbol', 'symbols'], ['machine_solder', 'footprints']]:
         if selections.get(field):
             continue
+        if selections.get('allow_project_fallback', True) is False:
+            issues.append(f'{field}: project footprint/symbol fallback disabled by populate; exact master verification is pending.')
+            continue
         available = []
         for candidate in candidates.get(candidate_key, []):
             try:

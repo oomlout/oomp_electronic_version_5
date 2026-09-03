@@ -7,12 +7,14 @@ import oomlout_roboclick
 import yaml
 
 
-def regenerate_readmes(parts_directory="parts", filter_text=""):
+def regenerate_readmes(parts_directory="parts", filter_text="", part_ids=None):
     parts_directory = Path(parts_directory).resolve()
     discovered_actions = oomlout_roboclick.build_action_lookup()
     rendered = 0
     for part_directory in sorted(parts_directory.iterdir(), key=lambda path: path.name.lower()):
         if not part_directory.is_dir() or filter_text not in part_directory.name:
+            continue
+        if part_ids is not None and part_directory.name not in part_ids:
             continue
         working_file = part_directory / "working.yaml"
         if not working_file.is_file():

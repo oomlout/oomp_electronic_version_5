@@ -7,6 +7,7 @@ import action_generate
 import working_oomp_populate_svg
 import working_oomp_populate_category
 import working_oomp_populate
+import working_oomp_populate_led
 from working_oomp_metadata import readable_name
 from kicad_agents.kicad_processing_agent import _footprint_record, _symbol_record, _add_connectivity_cross_checks
 from kicad_agents.sexpr import loads
@@ -14,6 +15,16 @@ from pathlib import Path
 
 
 class PopulateWorkflowTests(unittest.TestCase):
+    def test_led_strips_and_filaments_are_not_populated(self):
+        options = []
+        working_oomp_populate_led.main(options=options)
+        retired_families = []
+        for option in options:
+            led_style = str(option.get('taxonomy_3', ''))
+            if led_style == 'filament_3_volt' or led_style.startswith('strip_'):
+                retired_families.append(led_style)
+        self.assertEqual(retired_families, [])
+
     def test_categories_are_populated_and_overrides_persist(self):
         examples = [
             ['resistor', '', 'resistor'], ['resistor_array', '', 'resistor'],

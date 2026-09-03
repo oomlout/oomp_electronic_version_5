@@ -1560,6 +1560,11 @@ def _add_populated_package_outline(thing, width, height, pos=None):
     overall_width, overall_height = drawing["overall"]
     scale = min(width / overall_width, height / overall_height)
     body_width, body_height = drawing["body"]
+    # Dense physical pins need a fine display outline. Assembly drawings keep
+    # the shared assembly stylesheet unchanged (common line thickness in mm).
+    if not thing.get("assembly_mode") and "styles" in thing:
+        for style_name in ["component.body", "component.pad", "component.pin_one"]:
+            thing["styles"][style_name]["stroke_width"] = min(.3, .08 * scale)
     thing["diagram_pin_positions"] = []
     opsvg.se(thing, shape="rect", style="component.body",
              size=[body_width * scale, body_height * scale, 0], pos=copy.deepcopy(pos))
@@ -1888,6 +1893,25 @@ def _add_square_pin_labels(thing):
                     # edges.  A direct character-count rule keeps every label
                     # beside its pad without colliding with the summary code.
                     label_size = min(1.4, max(0.85, 11.0 / max(1, len(pin_name))))
+
+            if thing.get("package_drawing"):
+                # Fit each label within its neighbours' pitch and the square's
+                # title/code margins. Rows remain directly beside their pins.
+                axis = 1 if side in ["left", "right"] else 0
+                for neighbour in diagram_pin_positions:
+                    if neighbour is pin_record or neighbour.get("side") != side:
+                        continue
+                    gap = abs(neighbour["pos"][axis] - pin_pos[axis])
+                    if gap > .001:
+                        label_size = min(label_size, gap * .65)
+                available = 8.0
+                if side == "top":
+                    available = max(.1, 17 - pin_pos[1] - pin_size[1] / 2 - .7)
+                elif side == "bottom":
+                    available = max(.1, pin_pos[1] - pin_size[1] / 2 + 10 - .7)
+                else:
+                    available = max(.1, 30 - abs(pin_pos[0]) - pin_size[0] / 2 - .6)
+                label_size = min(label_size, available / max(1, len(pin_name) * .65))
 
             if side == "left":
                 label_pos = [pin_pos[0] - pin_size[0] / 2 - 0.6, pin_pos[1], 0]
@@ -2831,6 +2855,9 @@ def get_oomp_component_square_pins(thing, **kwargs):
         if package in package_sizes:
             component_width = package_sizes[package][0]
             component_height = package_sizes[package][1]
+    if thing.get("package_drawing"):
+        component_width = 24
+        component_height = 18
     _add_component_outline(
         thing,
         width=component_width,

@@ -124,7 +124,7 @@ another part, rather than overwriting `current`.
 ### Generate and check the board
 
 1. Run `action_generate.bat --filter <full-project-id>`.
-2. Open `parts/<id>/README.md` and `data/generated_data/board_explorer.html`.
+2. Open `parts/<id>/README.md` and `parts/<id>/board_explorer.html`. The prominent explorer link uses GitHub Pages to serve the HTML, not GitHub's source-file view.
 3. Review `data/generated_data/unmatched_parts.yaml` (or JSON) and the browser
    research queue. Do not accept a near match just to remove a warning.
 4. Add any missing components through their populate files. Build those
@@ -143,6 +143,22 @@ Overrides are declarations of an exact match, not search hints. Never force an
 IC, USB connector or crystal onto a similar-looking but electrically different
 part. Unknown parts still appear in structured data and the explorer with their
 actual PCB pads; they do not get an invented OOMP definition.
+
+For conflicting source records, keep the reason in the same version dictionary:
+
+```python
+"match_blocked": {
+    "U1": "The schematic says CP2102N, but the BOM orders CP2102-GMR. Confirm the intended chip.",
+},
+"review_notes": [
+    "J1: distributor identity is verified; original footprint equivalence still needs checking.",
+],
+```
+
+Blocked references stay unmatched even if an override is also present. Remove
+the block when the conflict is resolved. These notes persist in project JSON/YAML,
+the project README and `data/generated_data/COMPONENT_REVIEW.md`; the reasons
+also appear in each blocked component's OOMP data.
 
 The action also generates InteractiveHtmlBom and a guarded OOMP KiCad design
 copy. Read `data/oomp_design/conversion_report.yaml` and `validation.yaml`.
@@ -269,6 +285,28 @@ example. The drawing code remains in `working_svg.py`, not in the extra file.
 
 ### MPNs, distributors and datasheets
 
+For a package without an existing drawing, `package_drawing` supports simple
+physical-millimetre rows in the family extra block. The drawing implementation
+stays in `working_svg.py`; no SVG paths need to be typed into the population file.
+
+```python
+part["package_drawing"] = {
+    "overall": [4.8, 3.0],       # centred drawing envelope, including terminals
+    "body": [4.0, 3.0],
+    # number, side, x, y, width, height; x right, y UP; body centre is 0,0
+    "pins": [["1", "left", -2.2, 0, .4, 1.3],
+             ["2", "right", 2.2, 0, .4, 1.3]],
+    "circles": [[0, 0, .85]],   # optional actuator: x, y, radius
+    "boxes": [],               # optional shield: x, y, width, height
+}
+```
+
+Use the first pin row as the orientation anchor. Assembly scale is one physical
+millimetre per SVG millimetre, using the common assembly stylesheet. This is an
+illustration, not a fabrication footprint: solder-land geometry still comes from
+verified KiCad masters. Keep the datasheet identity and page numbers in
+`dimension_reference`.
+
 - Preserve the real manufacturer's spelling/punctuation in
   `part_number_manufacturer`. Normalize only taxonomy tokens.
 - Add `part_number_lcsc = "C..."` when verified. The link is generated for you.
@@ -300,6 +338,11 @@ the more rigorous expansion-ledger workflow is optional and documented in the
 [agent guide](kicad_agents/AGENT_GUIDE.md).
 
 ### KiCad symbol and footprint selections
+
+For a known source/BOM mismatch, set `part["kicad"]["allow_project_fallback"] = False`.
+Explicit verified masters still work, but blank selections will not silently
+adopt a different manufacturer's footprint from a matched project. Missing
+assets stay listed in `data/kicad/manifest.yaml` for review.
 
 Passives and common headers have defaults in `working_oomp_populate_kicad.py`.
 To override them, add `part["kicad"]` in the same extra block with these fields:
@@ -383,6 +426,32 @@ action_regenerate_all.bat --filter YOUR_OOMP_ID
 Omit the filter only for a deliberate full-repository rebuild. This regenerates
 existing PNGs and previews as well as other outputs; browser actions are still
 skipped. Normal `action_generate.bat` keeps the low-churn PNG default.
+
+## Part usage and project links
+
+Project actions automatically rebuild a `used_in_projects` array in every
+confirmed component's `parts/<id>/working.yaml`. Each entry has the project ID,
+name/version, quantity, references, source GitHub URL, OOMP project URL, and a
+GitHub Pages URL for the standalone board explorer. Classified mounting holes
+are included; unresolved matches and excluded BOM items are not.
+
+To refresh these links and the **Used in projects** README sections without
+rebuilding boards or images:
+
+```powershell
+python -m kicad_agents.project_usage_action
+```
+
+Use `--no-readmes` for a metadata-only refresh. Entries are recomputed, not
+appended, so rerunning does not duplicate them. Removed usage is cleared; a
+temporarily missing project extraction preserves the previous entries and is
+reported. Ordinary `working_oomp` generation also reloads this derived metadata,
+so it does not disappear when a part definition is rebuilt.
+
+The project README's **Open the interactive board explorer** link and each
+part's **Board explorer** links use GitHub Pages, not GitHub's HTML source view.
+The repository must be published with Pages enabled for `main` at `/ (root)`;
+the single-file explorer also works locally without hosting.
 
 ## Final checks and limits
 

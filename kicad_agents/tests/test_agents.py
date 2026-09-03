@@ -630,7 +630,7 @@ class ProjectPartTests(unittest.TestCase):
     def test_project_populator_defaults_to_current_and_allows_version_records(self):
         options = []
         working_oomp_populate_project.main(options=options)
-        self.assertEqual(len(options), 3)
+        self.assertEqual(len(options), 4)
         project = next(option for option in options if option["project_github_repository"] == "pt1")
         taxonomy = [project[f"taxonomy_{number}"] for number in range(1, 7)]
         self.assertEqual(taxonomy, ["oomp", "project", "github", "electrolama", "pt1", "current"])
@@ -659,7 +659,8 @@ class ProjectPartTests(unittest.TestCase):
         self.assertEqual(first_action["actions"][0]["command"], "run_python")
         self.assertEqual(second_action["actions"][0]["command"], "run_python")
         self.assertIs(second_action["actions"][0]["regenerate_pngs"], False)
-        self.assertEqual(len(second_action["actions"]), 6)
+        self.assertEqual(len(second_action["actions"]), 7)
+        self.assertEqual(second_action["actions"][-1]["file_python"], "kicad_agents/project_usage_action.py")
         self.assertEqual(second_action["actions"][1]["file_destination"], "data/generated_data/src/board_300.png")
         self.assertEqual(second_action["actions"][2]["file_destination"], "data/generated_data/src/board_pins_300.png")
         self.assertEqual(second_action["actions"][3]["file_destination"], "data/generated_data/src/board_bottom_300.png")
@@ -798,9 +799,14 @@ class ProjectPartTests(unittest.TestCase):
 
     def test_bus_pirate_explorer_is_self_contained_and_linked_to_oomp_parts(self):
         generated_data = BUS_PIRATE_PART / "data" / "generated_data"
-        explorer_path = generated_data / "board_explorer.html"
+        explorer_path = BUS_PIRATE_PART / "board_explorer.html"
         review_path = generated_data / "lcsc_review.yaml"
         self.assertTrue(explorer_path.is_file())
+        self.assertFalse((generated_data / "board_explorer.html").exists())
+        self.assertIn(
+            f"https://oomlout.github.io/oomp_electronic_version_5/parts/{BUS_PIRATE_PART.name}/board_explorer.html",
+            (BUS_PIRATE_PART / "README.md").read_text(encoding="utf-8"),
+        )
         self.assertTrue(review_path.is_file())
         explorer = explorer_path.read_text(encoding="utf-8")
         self.assertIn('<style id="oomp-board-style">', explorer)
@@ -813,7 +819,8 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIn('id="zoom-in"', explorer)
         self.assertIn('class="oomp-id"', explorer)
         self.assertIn("link.className = 'part-link'", explorer)
-        self.assertIn("box.setAttribute('class', 'selection-box')", explorer)
+        self.assertIn("box.setAttribute('class', selected ? 'selection-box' : 'hover-box')", explorer)
+        self.assertIn('class="component-highlights"', explorer)
         self.assertNotIn("linear-gradient", explorer)
         self.assertIn("working_svg_square_pins", (generated_data / "src" / "components" / "manifest.yaml").read_text(encoding="utf-8"))
         self.assertIn("https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040", explorer)
@@ -980,8 +987,18 @@ class RepositoryOrganizationTests(unittest.TestCase):
         populate.assert_called_once_with(regenerate_pngs=False, filter="sample")
         define.assert_called_once_with(regenerate_pngs=False, filter="sample")
 
-    def test_part_roots_only_contain_readme_working_and_data(self):
-        allowed_names = ["README.md", "working.yaml", "data"]
+    def test_migration_keeps_root_board_explorer(self):
+        from kicad_agents.migrate_part_data_layout import migrate_part_directory
+
+        with tempfile.TemporaryDirectory() as temporary:
+            part = Path(temporary)
+            explorer = part / "board_explorer.html"
+            explorer.write_text("standalone explorer", encoding="utf-8")
+            self.assertEqual(migrate_part_directory(part), [])
+            self.assertEqual(explorer.read_text(encoding="utf-8"), "standalone explorer")
+
+    def test_part_roots_only_contain_readme_working_explorer_and_data(self):
+        allowed_names = ["README.md", "working.yaml", "board_explorer.html", "data"]
         violations = []
         for part_directory in PARTS_DIRECTORY.iterdir():
             if not part_directory.is_dir():

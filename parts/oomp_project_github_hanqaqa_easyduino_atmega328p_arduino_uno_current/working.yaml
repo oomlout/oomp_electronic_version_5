@@ -76,8 +76,10 @@ oomlout_ai_roboclick_1:
     project_github_repository: easyduino
     project_github_url: https://github.com/Hanqaqa/Easyduino
     project_github_user: hanqaqa
+    project_match_blocked: {}
     project_match_overrides:
       J2: electronic_connector_header_2_54_mm_pitch_through_hole_2_pin
+    project_review_notes: []
     project_sparse_checkout: true
     project_version: current
     timeout: '600'
@@ -116,8 +118,10 @@ oomlout_ai_roboclick_3:
     project_github_repository: easyduino
     project_github_url: https://github.com/Hanqaqa/Easyduino
     project_github_user: hanqaqa
+    project_match_blocked: {}
     project_match_overrides:
       J2: electronic_connector_header_2_54_mm_pitch_through_hole_2_pin
+    project_review_notes: []
     project_sparse_checkout: true
     project_version: current
     regenerate_pngs: false
@@ -157,6 +161,12 @@ oomlout_ai_roboclick_3:
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
+  - command: run_python
+    description: Refresh Used in projects metadata and part README links from all
+      confirmed project matches.
+    file_python: kicad_agents/project_usage_action.py
+    parts_directory: parts
+    timeout: '600'
   file_test: ''
   retries_until_complete: 0
 oomlout_ai_roboclick_4:
@@ -190,8 +200,10 @@ project_git_url: https://github.com/Hanqaqa/Easyduino.git
 project_github_repository: easyduino
 project_github_url: https://github.com/Hanqaqa/Easyduino
 project_github_user: hanqaqa
+project_match_blocked: {}
 project_match_overrides:
   J2: electronic_connector_header_2_54_mm_pitch_through_hole_2_pin
+project_review_notes: []
 project_sparse_checkout: true
 project_version: current
 regenerate_pngs: false

@@ -5,7 +5,7 @@ import shutil
 from pathlib import Path
 
 
-ROOT_FILES = ["README.md", "working.yaml"]
+ROOT_FILES = ["README.md", "working.yaml", "board_explorer.html"]
 
 
 def _merge_directory(source_directory, destination_directory):

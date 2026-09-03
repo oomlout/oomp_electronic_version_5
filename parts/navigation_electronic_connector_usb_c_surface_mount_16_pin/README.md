@@ -3,7 +3,7 @@
 This OOMP navigation part publishes the category index at
 [the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/connector/usb_c/surface_mount/16_pin).
 
-It contains 1 descendant parts.
+It contains 2 descendant parts.
 
 
 [Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/connector/usb_c/surface_mount)
@@ -13,6 +13,7 @@ It contains 1 descendant parts.
 ## Categories
 
 - [Korean Hroparts Elec](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/connector/usb_c/surface_mount/16_pin/korean_hroparts_elec)
+- [Shou Han](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/connector/usb_c/surface_mount/16_pin/shou_han)
 
 
 

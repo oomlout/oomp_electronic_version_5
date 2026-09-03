@@ -3,7 +3,7 @@
 This OOMP navigation part publishes the category index at
 [the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/diode/tvs_array).
 
-It contains 1 descendant parts.
+It contains 2 descendant parts.
 
 
 [Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/diode)
@@ -12,6 +12,7 @@ It contains 1 descendant parts.
 
 ## Categories
 
+- [Sot 143](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/diode/tvs_array/sot_143)
 - [Sot 23 6](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/diode/tvs_array/sot_23_6)
 
 

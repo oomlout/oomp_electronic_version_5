@@ -2,6 +2,8 @@
 
 [View the project on GitHub](https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Uno)
 
+[Open the interactive board explorer (GitHub Pages)](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/board_explorer.html)
+
 [Browse this project category](../../navigation/oomp/project/github/hanqaqa/easyduino/atmega328p_arduino_uno/README.md)
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/generated_data/src/board_300.png)
@@ -47,7 +49,7 @@ The OOMP design is a separate copy. Only symbols and footprints verified against
 - Mechanical drawing: [view `board_mechanical.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/generated_data/src/board_mechanical.svg)
 - Mechanical PNG: [view `board_mechanical.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/generated_data/src/board_mechanical.png)
 - 300-pixel mechanical preview: [view `board_mechanical_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/generated_data/src/board_mechanical_300.png)
-- Open the board explorer on GitHub Pages: [explore this board](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/generated_data/board_explorer.html)
+- Open the board explorer on GitHub Pages: [explore this board](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/board_explorer.html)
 - InteractiveHtmlBom: [open the interactive BOM](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/interactivehtmlbom/ibom.html)
 
 ## Board with pins

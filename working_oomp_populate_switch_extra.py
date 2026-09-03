@@ -21,5 +21,5 @@ def main(**kwargs):
             "pins": [["1", "left", -2.2, 0, .4, 1.3], ["2", "right", 2.2, 0, .4, 1.3]],
             "circles": [[0, 0, .85]],
         }
-        part["kicad"] = {"symbol": "Switch:SW_Push", "machine_solder": "", "hand_solder": ""}
+        part["kicad"] = {"symbol": "Switch:SW_Push", "machine_solder": "", "hand_solder": "", "allow_project_fallback": False}
         part["research_notes"] = ["Nonpolar contacts numbered 1/2 using schematic convention. No exact XUNPU master footprint verified; the upstream Alps_SKRK footprint is retained, not certified interchangeable."]

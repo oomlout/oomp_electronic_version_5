@@ -76,6 +76,7 @@ oomlout_ai_roboclick_1:
     project_github_repository: buspirate5_hardware
     project_github_url: https://github.com/DangerousPrototypes/BusPirate5-hardware
     project_github_user: dangerousprototypes
+    project_match_blocked: {}
     project_match_overrides:
       D401: electronic_diode_switching_sod_523f_onsemi_1n4148wt
       D500: electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05
@@ -148,6 +149,7 @@ oomlout_ai_roboclick_1:
       U602: electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr
       U603: electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr
       Y101: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+    project_review_notes: []
     project_sparse_checkout: true
     project_version: 5_rev10a
     timeout: '600'
@@ -186,6 +188,7 @@ oomlout_ai_roboclick_3:
     project_github_repository: buspirate5_hardware
     project_github_url: https://github.com/DangerousPrototypes/BusPirate5-hardware
     project_github_user: dangerousprototypes
+    project_match_blocked: {}
     project_match_overrides:
       D401: electronic_diode_switching_sod_523f_onsemi_1n4148wt
       D500: electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05
@@ -258,6 +261,7 @@ oomlout_ai_roboclick_3:
       U602: electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr
       U603: electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr
       Y101: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+    project_review_notes: []
     project_sparse_checkout: true
     project_version: 5_rev10a
     regenerate_pngs: false
@@ -297,6 +301,12 @@ oomlout_ai_roboclick_3:
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
+  - command: run_python
+    description: Refresh Used in projects metadata and part README links from all
+      confirmed project matches.
+    file_python: kicad_agents/project_usage_action.py
+    parts_directory: parts
+    timeout: '600'
   file_test: ''
   retries_until_complete: 0
 oomlout_ai_roboclick_4:
@@ -397,6 +407,7 @@ project_git_url: https://github.com/DangerousPrototypes/BusPirate5-hardware.git
 project_github_repository: buspirate5_hardware
 project_github_url: https://github.com/DangerousPrototypes/BusPirate5-hardware
 project_github_user: dangerousprototypes
+project_match_blocked: {}
 project_match_overrides:
   D401: electronic_diode_switching_sod_523f_onsemi_1n4148wt
   D500: electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05
@@ -469,6 +480,7 @@ project_match_overrides:
   U602: electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr
   U603: electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr
   Y101: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+project_review_notes: []
 project_sparse_checkout: true
 project_version: 5_rev10a
 regenerate_pngs: false

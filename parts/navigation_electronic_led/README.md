@@ -3,7 +3,7 @@
 This OOMP navigation part publishes the category index at
 [the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led).
 
-It contains 742 descendant parts.
+It contains 148 descendant parts.
 
 
 [Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic)
@@ -24,16 +24,6 @@ It contains 742 descendant parts.
 - [4020 Side View](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/4020_side_view)
 - [5 Mm](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/5_mm)
 - [5050](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/5050)
-- [Filament 3 Volt](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/filament_3_volt)
-- [Strip 12 Volt 3 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_12_volt_3_mm_width)
-- [Strip 12 Volt 5 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_12_volt_5_mm_width)
-- [Strip 12 Volt 8 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_12_volt_8_mm_width)
-- [Strip 24 Volt 3 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_24_volt_3_mm_width)
-- [Strip 24 Volt 5 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_24_volt_5_mm_width)
-- [Strip 24 Volt 8 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_24_volt_8_mm_width)
-- [Strip 5 Volt 3 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_5_volt_3_mm_width)
-- [Strip 5 Volt 5 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_5_volt_5_mm_width)
-- [Strip 5 Volt 8 Mm Width](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/led/strip_5_volt_8_mm_width)
 
 
 

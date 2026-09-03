@@ -2,7 +2,7 @@
 
 [Up one level](../README.md)
 
-This category contains 742 parts in total.
+This category contains 148 parts in total.
 
 
 ## Categories
@@ -19,16 +19,6 @@ This category contains 742 parts in total.
 - [4020 Side View](4020_side_view/README.md)
 - [5 Mm](5_mm/README.md)
 - [5050](5050/README.md)
-- [Filament 3 Volt](filament_3_volt/README.md)
-- [Strip 12 Volt 3 Mm Width](strip_12_volt_3_mm_width/README.md)
-- [Strip 12 Volt 5 Mm Width](strip_12_volt_5_mm_width/README.md)
-- [Strip 12 Volt 8 Mm Width](strip_12_volt_8_mm_width/README.md)
-- [Strip 24 Volt 3 Mm Width](strip_24_volt_3_mm_width/README.md)
-- [Strip 24 Volt 5 Mm Width](strip_24_volt_5_mm_width/README.md)
-- [Strip 24 Volt 8 Mm Width](strip_24_volt_8_mm_width/README.md)
-- [Strip 5 Volt 3 Mm Width](strip_5_volt_3_mm_width/README.md)
-- [Strip 5 Volt 5 Mm Width](strip_5_volt_5_mm_width/README.md)
-- [Strip 5 Volt 8 Mm Width](strip_5_volt_8_mm_width/README.md)
 
 
 

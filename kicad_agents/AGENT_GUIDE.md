@@ -89,6 +89,7 @@ Population files are the source of truth. Do not fix generated
 | `browser_research_agent.py` | Produces browser search tasks and validates browser-downloaded PDFs before importing them. It never performs HTTP requests. | `browser_research_queue.json/yaml/md`, `datasheet_source.yaml` |
 | `project_summary_agent.py` | Compiles the BOM, nets, board views, mechanical layer, project-source copies, summary data, and Jinja README. | `project_summary_data.*`, board SVG/PNG files, `README.md` |
 | `project_html_agent.py` | Embeds board SVGs, component metadata, pinouts and routed-net controls into a standalone explorer. See [explorer guide](BOARD_EXPLORER_GUIDE.md). | `board_explorer.html` |
+| `project_usage_action.py` | Scans all saved project matches, updates reverse usage in part YAML and renders the Used in projects Jinja section. Runs after the project compile action. | `used_in_projects` in each used part's `working.yaml`, and its `README.md` |
 | `pcb_copper.py` | Extracts saved traces, vias, copper pads and fills; builds named-net indices and correctly mirrored SVG overlays. | `pcb_files[].copper` in project JSON/YAML; inline explorer copper |
 | `project_readme_action.py` | Roboclick coordinator for processing, review queues, summary generation, and the explorer. | Complete `data/generated_data` project bundle |
 | `interactive_html_bom_action.py` | Runs the vendored InteractiveHtmlBom generator headlessly with KiCad's Python runtime. | `data/interactivehtmlbom/ibom.html` and generation status |
@@ -208,7 +209,7 @@ inside the OOMP part.
    - `data/generated_data/mounting_holes.yaml`
    - `data/generated_data/project_summary_data.yaml`
    - `data/generated_data/src/board*.svg`
-   - `data/generated_data/board_explorer.html`
+   - `board_explorer.html` (in the project part's root folder)
 
 The PNG policy is conservative: existing PNGs are kept by default. Set
 `regenerate_pngs=True` only for a deliberate full image refresh.

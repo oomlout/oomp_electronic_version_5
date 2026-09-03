@@ -69,6 +69,15 @@ IC RT9742CGJ5 TSOT 23 5 is an OOMP electronic ic definition. It uses the tsot 23
 [View the datasheet](data/datasheet.pdf)
 
 
+
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project electrolama/pt1 current](https://github.com/electrolama/pt1) | 1 | IC4 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_electrolama_pt1_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_electrolama_pt1_current) |
+
+
+
 ## Files
 
 

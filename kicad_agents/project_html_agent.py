@@ -36,11 +36,38 @@ def _part_pinout_svg(asset_directory, oomp_id):
     return ""
 
 
-def _component_record(component, asset_directory):
+def _lcsc_part_number(component, part_metadata):
+    """Prefer the matched catalogue number; fall back to explicit BOM fields."""
+    match = component.get("oomp") or {}
+    if match.get("status") != "matched" or not match.get("oomp_id"):
+        return ""
+    candidates = [part_metadata.get("part_number_lcsc", "")]
+    for distributor in part_metadata.get("distributors") or []:
+        if distributor.get("key") == "lcsc":
+            candidates.append(distributor.get("part_number", ""))
+    property_sets = [(component.get("pcb") or {}).get("properties") or {}]
+    for unit in (component.get("schematic") or {}).get("units") or []:
+        property_sets.append(unit.get("properties") or {})
+    for properties in property_sets:
+        for key, value in properties.items():
+            field = re.sub(r"[^a-z0-9]", "", str(key).lower())
+            if field in ["partnumberlcsc", "lcsc", "lcscpartnumber", "lcscpart"]:
+                candidates.append(value)
+    for candidate in candidates:
+        number = str(candidate or "").strip().upper()
+        if number.isascii() and number.isdigit():
+            number = "C" + number
+        if re.fullmatch(r"C[0-9]+", number):
+            return number
+    return ""
+
+
+def _component_record(component, asset_directory, part_metadata=None):
     pcb = component.get("pcb") or {}
     oomp = component.get("oomp") or {}
     oomp_id = str(oomp.get("oomp_id") or "")
     properties = pcb.get("properties") or {}
+    lcsc_number = _lcsc_part_number(component, part_metadata or {})
     pads = []
     pad_keys = []
     for pad in pcb.get("pads") or []:
@@ -68,6 +95,8 @@ def _component_record(component, asset_directory):
         "match_status": str(oomp.get("status") or "unmatched"),
         "confidence": oomp.get("confidence", 0),
         "part_url": f"{OOMP_PARTS_URL}/{oomp_id}" if oomp_id else "",
+        "lcsc_part_number": lcsc_number,
+        "lcsc_url": f"https://www.lcsc.com/product-detail/{lcsc_number}.html" if lcsc_number else "",
         "supplier": str(properties.get("Supplier") or "").strip(),
         "pads": pads,
         "pinout_svg": _part_pinout_svg(asset_directory, oomp_id),
@@ -97,6 +126,7 @@ def _style():
   --copper-multilayer: #674b26;
   --shadow: 0 18px 50px rgba(20, 20, 20, .14);
   --radius: 18px;
+  --selection-status-height: 180px;
   --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 }
 * { box-sizing: border-box; }
@@ -107,7 +137,7 @@ header h1 { margin: 0; font-size: clamp(18px, 2.1vw, 30px); letter-spacing: -.03
 header p { margin: 2px 0 0; color: #cfcfcf; font-size: 13px; }
 .badge { margin-left: auto; border: 1px solid #555; border-radius: 999px; padding: 7px 11px; font-size: 12px; white-space: nowrap; }
 .layout { height: 100%; min-height: 0; display: grid; grid-template-columns: minmax(190px, 260px) minmax(0, 1fr) minmax(260px, 360px); gap: 14px; padding: 14px; overflow: hidden; }
-.panel { min-height: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.05); }
+.panel { min-width: 0; min-height: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.05); }
 .list-panel { display: grid; grid-template-rows: auto auto minmax(0, 1fr); min-width: 0; }
 .search-wrap { padding: 14px; border-bottom: 1px solid var(--line); }
 input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font: inherit; }
@@ -125,8 +155,6 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .part-button.selected { background: var(--accent-soft); }
 .selection-tools { margin-top: 7px; font-size: 11px; color: var(--muted); }
 .selection-tools button { border: 0; background: transparent; color: var(--ink); text-decoration: underline; cursor: pointer; font: inherit; }
-.selection-nets { margin-top: 8px; display: flex !important; gap: 7px; align-items: flex-start; line-height: 1.35; }
-.selection-nets input { width: auto; margin: 2px 0 0; }
 .part-button { width: 100%; min-width: 0; display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 3px 8px; padding: 9px 32px 9px 9px; border: 0; border-radius: 10px; background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .part-button:hover, .part-button.active { background: var(--accent-soft); }
 .part-button.active:not(.selected) { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
@@ -147,20 +175,26 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .board-view { width: 100%; height: 100%; min-width: 0; min-height: 0; }
 .board-view[hidden] { display: none; }
 .board-view > svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; margin: auto; filter: drop-shadow(0 9px 13px rgba(0,0,0,.12)); }
-.board-stage .board-component { cursor: pointer; outline: none; transition: opacity .13s ease; }
+.board-stage .board-component { cursor: pointer; outline: none; transition: opacity .13s ease; shape-rendering: geometricPrecision; }
 .board-stage .board-component > .component { fill: none; }
 /* Only the explorer makes white assembly geometry transparent. Labels and
    black outlines stay above the actual pad/track shapes; source SVGs stay white. */
 .board-stage .board-component :is(rect, path, polygon, circle, ellipse):is([fill="#FFFFFF"], [fill="#ffffff"], [fill="#fff"], [fill="white"]) { fill: none; }
-.board-stage .board-component:hover > *, .board-stage .board-component:focus > * { stroke: var(--accent) !important; }
+/* Never stroke an ancestor of the pin labels: SVG text inherits that stroke,
+   which can be several times wider than the letters at physical board scale. */
+.board-stage .board-component text { stroke: none; }
 .board-stage.has-selection .board-component:not(.is-active) { opacity: .55; }
-.selection-box { fill: none; stroke: var(--accent); stroke-width: 1.2; vector-effect: non-scaling-stroke; pointer-events: none; }
+.component-highlights { pointer-events: none; }
+.selection-box, .hover-box { fill: none; stroke: var(--accent); stroke-width: 1.2; stroke-linejoin: round; stroke-linecap: round; shape-rendering: geometricPrecision; vector-effect: non-scaling-stroke; pointer-events: none; }
+.hover-box { opacity: .65; }
 .board-stage .indicator { pointer-events: none; }
-.detail { overflow: auto; padding: 18px; }
+.detail { display: grid; grid-template-rows: minmax(0, 1fr) var(--selection-status-height); gap: 14px; padding: 18px; }
+.part-detail-scroll { min-width: 0; min-height: 0; overflow: auto; overflow-wrap: anywhere; scrollbar-gutter: stable; }
+.selection-status { min-width: 0; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
 .eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
 .detail h2 { margin: 5px 0 0; font-size: 30px; letter-spacing: -.04em; }
 .value { margin: 4px 0 18px; color: var(--muted); }
-.facts { display: grid; grid-template-columns: 92px 1fr; gap: 7px 10px; margin: 0 0 18px; font-size: 13px; }
+.facts { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 7px 10px; margin: 0 0 18px; font-size: 13px; }
 .facts dt { color: var(--muted); }
 .facts dd { margin: 0; overflow-wrap: anywhere; }
 .pinout { min-height: 120px; display: grid; place-items: center; margin: 12px 0; padding: 10px; border: 1px solid var(--line); border-radius: 14px; background: white; overflow: hidden; }
@@ -182,11 +216,12 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .net-picker { padding: 0 14px 12px; border-bottom: 1px solid var(--line); font-size: 12px; max-height: 300px; overflow: auto; }
 .net-picker label { display: block; margin-bottom: 6px; }
 .net-picker select, .board-toolbar select { width: 100%; min-width: 0; max-width: 100%; padding: 6px; border: 1px solid var(--line); border-radius: 6px; background: white; font: inherit; }
-.net-status { max-height: 165px; overflow: auto; margin-top: 8px; overflow-wrap: anywhere; line-height: 1.5; }
+.net-status { min-width: 0; min-height: 0; overflow: auto; overflow-wrap: anywhere; font-size: 12px; line-height: 1.5; scrollbar-gutter: stable; }
 .net-status button { font-size: 11px; }
 .board-toolbar select { width: auto; max-width: 155px; font-size: 11px; }
 .board-toolbar label { font-size: 11px; white-space: nowrap; }
 .board-toolbar input { width: auto; }
+.net-selection-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; max-width: 100%; }
 .copper-feature { color: var(--copper); cursor: pointer; shape-rendering: geometricPrecision; }
 .copper-segment, .copper-arc, .copper-via { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 .copper-pad, .copper-zone { fill: currentColor; stroke: none; }
@@ -217,7 +252,7 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .hover-card.visible { display: block; }
 .hover-card strong { display: block; }
 .hover-card span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
-@media (max-width: 920px) { html, body { height: auto; min-height: 100%; } body { overflow: auto; } .layout { height: auto; overflow: visible; grid-template-columns: 190px minmax(0, 1fr); grid-template-rows: minmax(560px, 75vh) auto; } .detail.panel { grid-column: 1 / -1; min-height: 360px; } }
+@media (max-width: 920px) { html, body { height: auto; min-height: 100%; } body { overflow: auto; } .layout { height: auto; overflow: visible; grid-template-columns: 190px minmax(0, 1fr); grid-template-rows: minmax(560px, 75vh) auto; } .detail.panel { grid-column: 1 / -1; height: min(680px, 80vh); min-height: 360px; } }
 @media (max-width: 640px) { body { display: block; } header { flex-wrap: wrap; } .layout { display: block; } .panel { margin-bottom: 12px; } .list-panel { height: 520px; } .board-panel { height: 70vh; min-height: 400px; } }
 """
 
@@ -239,6 +274,7 @@ let zoomScale = 1;
 let activeNet = '';
 let activePin = null;
 const selectedReferences = new Set();
+const selectedPins = [];
 const collapsedCategories = new Set(components.map(component => component.category));
 const highlightSelectedNets = document.getElementById('highlight-selected-nets');
 const expandedReferences = new Set();
@@ -287,6 +323,40 @@ function escapeHtml(value) {
   return String(value ?? '').replace(/[&<>'"]/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[character]));
 }
 
+function additiveClick(event) {
+  return event.ctrlKey || event.metaKey;
+}
+
+function selectedPinIndex(reference, number, netId) {
+  for (let index = 0; index < selectedPins.length; index++) {
+    const pin = selectedPins[index];
+    if (pin.reference === reference && pin.number === number && pin.net_id === (netId || '')) return index;
+  }
+  return -1;
+}
+
+function syncActivePin() {
+  activePin = selectedPins.length ? selectedPins[selectedPins.length - 1] : null;
+  activeNet = selectedPins.length === 1 ? selectedPins[0].net_id : '';
+}
+
+function toggleCategory(category) {
+  const members = components.filter(component => component.category === category);
+  const deselect = members.every(component => selectedReferences.has(component.reference));
+  for (const component of members) {
+    if (deselect) selectedReferences.delete(component.reference);
+    else selectedReferences.add(component.reference);
+  }
+  selectionChanged(true);
+}
+
+function toggleComponent(reference) {
+  if (selectedReferences.has(reference)) selectedReferences.delete(reference);
+  else selectedReferences.add(reference);
+  activeReference = reference;
+  selectionChanged(true);
+}
+
 function renderList(filterText = '') {
   const filter = filterText.trim().toLowerCase();
   const scrollTop = list.scrollTop;
@@ -308,6 +378,12 @@ function renderList(filterText = '') {
     group.dataset.category = category;
     group.open = !!filter || !collapsedCategories.has(category);
     const heading = document.createElement('summary');
+    heading.title = 'Click to expand; Ctrl-click to select or deselect this category';
+    heading.addEventListener('click', event => {
+      if (!additiveClick(event)) return;
+      event.preventDefault();
+      toggleCategory(category);
+    });
     const select = document.createElement('input');
     select.type = 'checkbox';
     select.className = 'category-select';
@@ -321,7 +397,7 @@ function renderList(filterText = '') {
         if (select.checked) selectedReferences.add(component.reference);
         else selectedReferences.delete(component.reference);
       }
-      selectionChanged();
+      selectionChanged(true);
     });
     heading.appendChild(select);
     const title = document.createElement('span');
@@ -349,14 +425,18 @@ function renderList(filterText = '') {
     selectPart.addEventListener('change', () => {
       if (selectPart.checked) selectedReferences.add(component.reference);
       else selectedReferences.delete(component.reference);
-      selectionChanged();
+      selectionChanged(true);
     });
     row.appendChild(selectPart);
     const button = document.createElement('button');
     button.className = 'part-button' + (component.reference === activeReference ? ' active' : '') + (selectedReferences.has(component.reference) ? ' selected' : '');
     button.dataset.reference = component.reference;
     button.innerHTML = `<strong>${escapeHtml(component.reference)}</strong><span>${escapeHtml(component.value || 'unlabelled')}</span><span class="oomp-id">${escapeHtml(component.oomp_id || 'unmatched')}</span>`;
-    button.addEventListener('click', () => selectComponent(component.reference));
+    button.setAttribute('aria-pressed', selectedReferences.has(component.reference));
+    button.addEventListener('click', event => {
+      if (additiveClick(event)) toggleComponent(component.reference);
+      else selectComponent(component.reference);
+    });
     row.appendChild(button);
     if (component.part_url) {
       const link = document.createElement('a');
@@ -373,6 +453,12 @@ function renderList(filterText = '') {
     menu.open = expandedReferences.has(component.reference);
     const summary = document.createElement('summary');
     summary.textContent = `Pins · ${component.pads.length}`;
+    summary.title = 'Click to expand; Ctrl-click to select or deselect all pins';
+    summary.addEventListener('click', event => {
+      if (!additiveClick(event)) return;
+      event.preventDefault();
+      toggleComponentPins(component.reference);
+    });
     menu.appendChild(summary);
     const body = document.createElement('div');
     body.className = 'pin-menu-body';
@@ -383,7 +469,8 @@ function renderList(filterText = '') {
       pinButton.dataset.pin = pin.number;
       pinButton.dataset.reference = component.reference;
       pinButton.innerHTML = `${escapeHtml(pin.number || 'Pad')} · ${escapeHtml(pin.name || 'unnamed')}<small>${escapeHtml(pin.net || 'No assigned net')}</small>`;
-      pinButton.addEventListener('click', () => selectPin(component.reference, pin.number, pin.net_id));
+      pinButton.setAttribute('aria-pressed', selectedPinIndex(component.reference, pin.number, pin.net_id) >= 0);
+      pinButton.addEventListener('click', event => selectPin(component.reference, pin.number, pin.net_id, additiveClick(event)));
       body.appendChild(pinButton);
     });
     menu.appendChild(body);
@@ -397,7 +484,7 @@ function renderList(filterText = '') {
     list.appendChild(group);
   }
   list.scrollTop = scrollTop;
-  document.getElementById('selection-count').textContent = `${selectedReferences.size} selected · both sides`;
+  document.getElementById('selection-count').textContent = `${selectedReferences.size} components · ${selectedPins.length} pins · both sides`;
 }
 
 function highlightedNetIds() {
@@ -409,12 +496,18 @@ function highlightedNetIds() {
       }
     }
   } else if (byNet.has(activeNet)) ids.add(activeNet);
+  for (const pin of selectedPins) {
+    if (byNet.has(pin.net_id)) ids.add(pin.net_id);
+  }
   return ids;
 }
 
-function selectionChanged() {
-  activeNet = '';
-  activePin = null;
+function selectionChanged(preservePins = false) {
+  if (!preservePins) {
+    selectedPins.length = 0;
+    activeNet = '';
+    activePin = null;
+  }
   updateSelectionBoxes();
   updateNetHighlight();
   renderList(search.value);
@@ -423,7 +516,7 @@ function selectionChanged() {
 }
 
 function pinClass(component, pin) {
-  const selected = activePin && activePin.reference === component.reference && activePin.number === pin.number && activePin.net_id === pin.net_id;
+  const selected = selectedPinIndex(component.reference, pin.number, pin.net_id) >= 0;
   return 'pin-button' + (highlightedNetIds().has(pin.net_id) ? ' on-net' : '') + (selected ? ' selected-pin' : '');
 }
 
@@ -437,6 +530,7 @@ function renderDetail(component) {
   const match = component.oomp_id ? 'Matched OOMP part' : 'Needs OOMP match';
   const actions = [
     component.part_url ? `<a href="${escapeHtml(component.part_url)}" target="_blank" rel="noopener">Open OOMP part</a>` : '',
+    component.lcsc_url ? `<a class="secondary lcsc-link" href="${escapeHtml(component.lcsc_url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(component.lcsc_part_number)}">Open LCSC</a>` : '',
     component.supplier ? `<a class="secondary" href="${escapeHtml(component.supplier)}" target="_blank" rel="noopener">Supplier source</a>` : ''
   ].join('');
   detail.innerHTML = `
@@ -457,35 +551,60 @@ function renderDetail(component) {
     ${pinRows(component)}`;
 }
 
-function selectComponent(reference, preserveNet = false) {
+function selectComponent(reference, preserveNet = false, expandCategory = true) {
   const component = byReference.get(reference);
   if (!component) return;
   if (component.side && component.side !== activeSide) setSide(component.side, false);
   activeReference = reference;
-  collapsedCategories.delete(component.category);
+  if (expandCategory) collapsedCategories.delete(component.category);
   if (!selectedReferences.has(reference)) {
     selectedReferences.clear();
     selectedReferences.add(reference);
   }
-  if (!preserveNet) { activeNet = ''; activePin = null; }
+  if (!preserveNet) { activeNet = ''; activePin = null; selectedPins.length = 0; }
   updateSelectionBoxes();
   renderDetail(component);
   renderList(search.value);
   updateNetHighlight();
 }
 
-function selectPin(reference, number, netId) {
-  highlightSelectedNets.checked = false;
-  activePin = {reference, number, net_id: netId || ''};
-  activeNet = netId || '';
+function selectPin(reference, number, netId, additive = false) {
+  if (!additive) {
+    highlightSelectedNets.checked = false;
+    selectedPins.length = 0;
+  }
+  const index = selectedPinIndex(reference, number, netId);
+  if (index >= 0) selectedPins.splice(index, 1);
+  else selectedPins.push({reference, number, net_id: netId || ''});
+  syncActivePin();
   expandedReferences.add(reference);
-  selectComponent(reference, true);
+  if (additive) {
+    const component = byReference.get(reference);
+    activeReference = reference;
+    collapsedCategories.delete(component.category);
+    if (component.side !== activeSide) setSide(component.side);
+    selectionChanged(true);
+  } else selectComponent(reference, true);
+}
+
+function toggleComponentPins(reference) {
+  const component = byReference.get(reference);
+  const deselect = component.pads.every(pin => selectedPinIndex(reference, pin.number, pin.net_id) >= 0);
+  for (const pin of component.pads) {
+    const index = selectedPinIndex(reference, pin.number, pin.net_id);
+    if (deselect && index >= 0) selectedPins.splice(index, 1);
+    else if (!deselect && index < 0) selectedPins.push({reference, number: pin.number, net_id: pin.net_id || ''});
+  }
+  syncActivePin();
+  activeReference = reference;
+  selectionChanged(true);
 }
 
 function selectNet(netId) {
   highlightSelectedNets.checked = false;
   activeNet = byNet.has(netId) ? netId : '';
   activePin = null;
+  selectedPins.length = 0;
   updateNetHighlight();
   renderList(search.value);
   const component = byReference.get(activeReference);
@@ -529,7 +648,7 @@ function updateNetHighlight() {
     overlay.replaceChildren();
     const base = overlay.closest('svg').querySelector('.copper-base');
     base.querySelectorAll('.copper-feature').forEach(element => {
-      const selectedPin = activePin && element.classList.contains('copper-pad') && element.dataset.reference === activePin.reference && element.dataset.pin === activePin.number && element.dataset.netId === activePin.net_id;
+      const selectedPin = element.classList.contains('copper-pad') && selectedPinIndex(element.dataset.reference, element.dataset.pin, element.dataset.netId) >= 0;
       if (!netIds.has(element.dataset.netId) && !selectedPin) return;
       const clone = element.cloneNode(true);
       clone.style.setProperty('--layer-color', layerColor(element));
@@ -541,8 +660,9 @@ function updateNetHighlight() {
     element.classList.toggle('on-net', connectedReferences.has(element.dataset.reference));
   });
   const status = document.getElementById('net-status');
-  if (highlightSelectedNets.checked) {
-    status.innerHTML = `<strong>${selectedReferences.size} selected components · ${netIds.size} nets</strong><br><span class="net-note">All connected pins and copper on the shown layers. Click a net below to follow it alone.</span><div>${[...netIds].map(id => `<button class="net-link" data-net-id="${escapeHtml(id)}">${escapeHtml(byNet.get(id).name)}</button>`).join(' ')}</div>`;
+  if (highlightSelectedNets.checked || selectedPins.length > 1) {
+    const selectionLabel = highlightSelectedNets.checked ? `${selectedReferences.size} components · ${selectedPins.length} pins` : `${selectedPins.length} selected pins`;
+    status.innerHTML = `<strong>${selectionLabel} · ${netIds.size} nets</strong><br><span class="net-note">All connected pins and copper on the shown layers. Click a net below to follow it alone.</span><div>${[...netIds].map(id => `<button class="net-link" data-net-id="${escapeHtml(id)}">${escapeHtml(byNet.get(id).name)}</button>`).join(' ')}</div>`;
   } else if (net) {
     const visiblePins = net.pins.filter(pin => layerSelect.value === 'all' || pin.layers.includes(layerSelect.value === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layerSelect.value));
     status.innerHTML = `<strong>${escapeHtml(net.name)}</strong><br>${net.track_count} traces · ${net.via_count} vias · ${net.fill_count} saved fills<br>${visiblePins.length} / ${net.pins.length} pins on shown layers<br><span class="net-note">${escapeHtml(net.layers.join(' · '))}</span><div>${net.pins.map(pin => byReference.has(pin.reference) ? `<button class="net-link" data-reference="${escapeHtml(pin.reference)}" data-pin="${escapeHtml(pin.number)}">${escapeHtml(pin.reference)}.${escapeHtml(pin.number || 'pad')}</button>` : `<span>${escapeHtml(pin.reference)}.${escapeHtml(pin.number)} (not in BOM) </span>`).join('')}</div>`;
@@ -554,23 +674,30 @@ function updateNetHighlight() {
 }
 
 function updateSelectionBoxes() {
-  document.querySelectorAll('.selection-box').forEach(element => element.remove());
+  document.querySelectorAll('.component-highlights').forEach(layer => layer.replaceChildren());
   stage.classList.toggle('has-selection', selectedReferences.size > 0);
   document.querySelectorAll('.board-component').forEach(element => {
     const selected = selectedReferences.has(element.dataset.reference);
     element.classList.toggle('is-active', selected);
-    if (!selected) return;
+    if (!selected && !element.matches(':hover') && !element.matches(':focus')) return;
+    const layer = element.closest('.board-view').querySelector('.component-highlights');
+    if (!layer) return;
     const bounds = element.getBBox();
     const pad = Math.max(0.7, Math.min(bounds.width, bounds.height) * 0.18);
     const boxWidth = Math.max(bounds.width + pad * 2, 2.4);
     const boxHeight = Math.max(bounds.height + pad * 2, 2.4);
     const box = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    box.setAttribute('class', 'selection-box');
+    box.setAttribute('class', selected ? 'selection-box' : 'hover-box');
+    box.dataset.reference = element.dataset.reference;
+    // The generator emits each component and this underlay in board coordinates.
+    // Copy its placement, including the bottom-side position and rotation.
+    box.setAttribute('transform', element.getAttribute('transform') || '');
     box.setAttribute('x', bounds.x + bounds.width / 2 - boxWidth / 2);
     box.setAttribute('y', bounds.y + bounds.height / 2 - boxHeight / 2);
     box.setAttribute('width', boxWidth);
     box.setAttribute('height', boxHeight);
-    element.insertBefore(box, element.firstChild);
+    box.setAttribute('rx', '0.15');
+    layer.appendChild(box);
   });
 }
 
@@ -646,11 +773,21 @@ function moveHover(event) {
 
 document.querySelectorAll('.board-component').forEach(element => {
   const reference = element.dataset.reference;
-  element.addEventListener('mouseenter', event => showHover(event, reference));
+  element.addEventListener('mouseenter', event => { showHover(event, reference); updateSelectionBoxes(); });
   element.addEventListener('mousemove', moveHover);
-  element.addEventListener('mouseleave', () => hoverCard.classList.remove('visible'));
-  element.addEventListener('click', () => selectComponent(reference));
-  element.addEventListener('keydown', event => { if (event.key === 'Enter' || event.key === ' ') selectComponent(reference); });
+  element.addEventListener('mouseleave', () => { hoverCard.classList.remove('visible'); updateSelectionBoxes(); });
+  element.addEventListener('focus', updateSelectionBoxes);
+  element.addEventListener('blur', updateSelectionBoxes);
+  element.addEventListener('click', event => {
+    if (additiveClick(event)) toggleComponent(reference);
+    else selectComponent(reference);
+  });
+  element.addEventListener('keydown', event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    if (additiveClick(event)) toggleComponent(reference);
+    else selectComponent(reference);
+  });
 });
 search.addEventListener('input', () => renderList(search.value));
 detail.addEventListener('click', event => {
@@ -659,21 +796,21 @@ detail.addEventListener('click', event => {
   if (pinButton) {
     const component = byReference.get(activeReference);
     const pin = component.pads[Number(pinButton.dataset.pinIndex)];
-    selectPin(component.reference, pin.number, pin.net_id);
+    selectPin(component.reference, pin.number, pin.net_id, additiveClick(event));
   } else if (netButton) selectNet(netButton.dataset.netId);
 });
 stage.addEventListener('click', event => {
   const feature = event.target.closest('.copper-feature');
   if (!feature) return;
   if (feature.classList.contains('copper-pad') && byReference.has(feature.dataset.reference)) {
-    selectPin(feature.dataset.reference, feature.dataset.pin, feature.dataset.netId);
+    selectPin(feature.dataset.reference, feature.dataset.pin, feature.dataset.netId, additiveClick(event));
   } else selectNet(feature.dataset.netId);
 });
 document.getElementById('net-status').addEventListener('click', event => {
   const netButton = event.target.closest('button[data-net-id]');
   if (netButton) { selectNet(netButton.dataset.netId); return; }
   const button = event.target.closest('button[data-reference]');
-  if (button) selectPin(button.dataset.reference, button.dataset.pin, activeNet);
+  if (button) selectPin(button.dataset.reference, button.dataset.pin, activeNet, additiveClick(event));
 });
 netSearch.addEventListener('input', renderNetOptions);
 netSelect.addEventListener('change', () => selectNet(netSelect.value));
@@ -684,7 +821,7 @@ document.getElementById('clear-selection').addEventListener('click', () => {
   detail.innerHTML = '<p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p>';
   selectionChanged();
 });
-highlightSelectedNets.addEventListener('change', selectionChanged);
+highlightSelectedNets.addEventListener('change', () => selectionChanged(true));
 document.addEventListener('keydown', event => { if (event.key === 'Escape') selectNet(''); });
 for (const id of ['copper-layer', 'show-traces', 'show-fills']) {
   document.getElementById(id).addEventListener('change', updateNetHighlight);
@@ -701,11 +838,13 @@ renderLayerLegend();
 setZoom(1);
 setSide('front', false);
 const firstFrontComponent = components.find(component => component.side === 'front');
-if (firstFrontComponent) selectComponent(firstFrontComponent.reference);
+// Show the initial part details without opening its category in the tree.
+if (firstFrontComponent) selectComponent(firstFrontComponent.reference, false, false);
 """
 
 
 def generate_board_explorer(project_directory, project_data, summary_data, output_directory=None):
+    """Embed generated assets into the project part's root-level explorer."""
     project_directory = Path(project_directory).resolve()
     if output_directory is None:
         output_directory = project_directory / "data" / "generated_data"
@@ -724,6 +863,7 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
         board_bottom_svg = board_svg
 
     component_records = []
+    part_metadata_cache = {}
     for component in project_data.get("components", []):
         pcb = component.get("pcb") or {}
         if pcb == {} or pcb.get("exclude_from_bom", False):
@@ -736,7 +876,15 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
         reference_upper = reference.upper()
         if reference_upper.startswith("SJ") or reference_upper.startswith("FID") or reference.lower().startswith("logo"):
             continue
-        component_records.append(_component_record(component, asset_directory))
+        oomp_id = str((component.get("oomp") or {}).get("oomp_id") or "")
+        if oomp_id and oomp_id not in part_metadata_cache:
+            # The summary action copies canonical OOMP metadata here before
+            # generating the explorer. Read once per part, not once per ref.
+            metadata_path = project_directory / "data" / "project_source" / oomp_id / "working.yaml"
+            part_metadata_cache[oomp_id] = {}
+            if metadata_path.is_file():
+                part_metadata_cache[oomp_id] = yaml.safe_load(_read_text(metadata_path)) or {}
+        component_records.append(_component_record(component, asset_directory, part_metadata_cache.get(oomp_id, {})))
 
     copper = explorer_copper(project_data)
     for component in component_records:
@@ -774,14 +922,12 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
 <header><div><h1>{html.escape(title)}</h1><p>Offline OOMP board explorer · components, pins &amp; routed nets</p></div><div class="badge">{len(component_records)} items · {len(copper['nets'])} nets</div></header>
 <main class="layout">
   <section class="panel list-panel">
-    <div class="search-wrap"><input id="search" type="search" placeholder="Filter categories, components or pins…" aria-label="Filter components"><div class="selection-tools"><span id="selection-count">0 selected · both sides</span> · <button id="clear-selection" type="button">Clear selection</button></div></div>
+    <div class="search-wrap"><input id="search" type="search" placeholder="Filter categories, components or pins…" aria-label="Filter components"><div class="selection-tools"><span id="selection-count">0 selected · both sides</span> · <button id="clear-selection" type="button">Clear selection</button><br>Ctrl-click categories, components or pins to toggle multiple selections.</div></div>
     <div class="net-picker">
       <label for="net-search">Follow a net</label>
       <input id="net-search" type="search" placeholder="Find net by name…" aria-label="Filter nets">
       <select id="net-select" aria-label="Select net"></select>
       <button id="clear-net" class="net-link" type="button">Clear highlight</button>
-      <label class="selection-nets"><input id="highlight-selected-nets" type="checkbox"> Highlight all selected nets</label>
-      <div id="net-status" class="net-status" role="status" aria-live="polite"></div>
       <div id="layer-legend" class="layer-legend" aria-label="Highlighted copper layer colours"></div>
     </div>
     <div id="part-list" class="part-list"></div>
@@ -798,14 +944,23 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
       <select id="copper-layer" aria-label="Copper layers"><option value="side">Visible side copper</option><option value="all" selected>All copper layers</option>{layer_options}</select>
       <label><input id="show-traces" type="checkbox" checked> Traces</label>
       <label><input id="show-fills" type="checkbox" checked> Fills</label>
-      <label><input id="zoom-to-net" type="checkbox"> Zoom to net</label>
+      <span class="net-selection-controls">
+        <label><input id="zoom-to-net" type="checkbox"> Zoom to net</label>
+        <label><input id="highlight-selected-nets" type="checkbox"> Highlight all selected nets</label>
+      </span>
     </div>
     <div id="board-stage" class="board-stage">
       <div class="board-view" data-side="front">{board_svg}</div>
       <div class="board-view" data-side="back" hidden>{board_bottom_svg}</div>
     </div>
   </section>
-  <aside class="panel detail"><div id="detail"><p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p></div>{warning_html}</aside>
+  <aside class="panel detail">
+    <div class="part-detail-scroll"><div id="detail"><p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p></div>{warning_html}</div>
+    <section class="selection-status" aria-labelledby="selection-status-title">
+      <div id="selection-status-title" class="eyebrow">Selection status</div>
+      <div id="net-status" class="net-status" role="status" aria-live="polite"></div>
+    </section>
+  </aside>
 </main>
 <div id="hover-card" class="hover-card" role="status"></div>
 <script id="component-data" type="application/json">{data_json}</script>
@@ -814,8 +969,12 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
 </body>
 </html>
 """
-    output_path = output_directory / "board_explorer.html"
+    output_path = project_directory / "board_explorer.html"
     output_path.write_text(document, encoding="utf-8")
+    # Remove the old generated copy only after its replacement is written.
+    legacy_path = output_directory / "board_explorer.html"
+    if legacy_path != output_path and legacy_path.is_file():
+        legacy_path.unlink()
     return output_path
 
 

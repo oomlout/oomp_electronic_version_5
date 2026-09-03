@@ -1376,7 +1376,7 @@ def generate_project_summary(
         "board_mechanical_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical_300.png",
         "board_mechanical_300_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical_300.png",
         "parts": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/parts",
-        "explorer": f"https://oomlout.github.io/oomp_electronic_version_5/{repository_part_path}/data/generated_data/board_explorer.html",
+        "explorer": f"https://oomlout.github.io/oomp_electronic_version_5/{repository_part_path}/board_explorer.html",
         "interactivehtmlbom": f"https://oomlout.github.io/oomp_electronic_version_5/{repository_part_path}/data/interactivehtmlbom/ibom.html",
         "lcsc_review": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/lcsc_review.yaml",
         "browser_research_queue": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/browser_research_queue.md",

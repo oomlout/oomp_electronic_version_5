@@ -61,13 +61,13 @@ category. Roboclick renders those parts and copies their canonical Markdown to
 the top-level `navigation/` tree. Navigation uses relative parent/child links;
 links to real parts use absolute GitHub repository URLs.
 
-Generated part folders keep only `README.md`, `working.yaml`, and `data/` at
-their root. Diagrams, PNG previews, datasheets, project source files, reports,
-and explorer files all belong under `data/`. Run
+Generated part folders keep `README.md`, `working.yaml`, and `data/` at
+their root; project parts also keep their standalone `board_explorer.html` there.
+Diagrams, PNG previews, datasheets, project source files, and reports belong under `data/`. Run
 `python -m kicad_agents.migrate_part_data_layout` to migrate legacy roots.
 
 Project explorer links use GitHub Pages at
-`https://oomlout.github.io/oomp_electronic_version_5/parts/<project-id>/data/generated_data/board_explorer.html`.
+`https://oomlout.github.io/oomp_electronic_version_5/parts/<project-id>/board_explorer.html`.
 
 The explorer includes expandable component pins and clickable routed nets,
 top/bottom/internal copper layers, vias and optional saved fills. See the

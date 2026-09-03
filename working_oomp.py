@@ -386,7 +386,13 @@ def add_project_actions(part, count):
     }
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
-        "actions": [project_compile_action] + board_preview_actions,
+        "actions": [project_compile_action] + board_preview_actions + [{
+            "command": "run_python",
+            "file_python": "kicad_agents/project_usage_action.py",
+            "description": "Refresh Used in projects metadata and part README links from all confirmed project matches.",
+            "parts_directory": "parts",
+            "timeout": "600",
+        }],
         "file_test": "",
         "retries_until_complete": 0,
     }
@@ -446,6 +452,9 @@ def create_generic(**kwargs):
     
     
     parts = []
+    from kicad_agents.project_usage_action import build_usage_index, usage_for_part, apply_usage
+    usage_parts_directory = "parts" if make_files is True or make_files is False else str(make_files)
+    usage_index, unavailable_projects = build_usage_index(usage_parts_directory)
 
     for thing in things:
         current = things[thing]                
@@ -466,6 +475,12 @@ def create_generic(**kwargs):
         )
         is_navigation_part = part.get("taxonomy_1", "") == "navigation"
         if not is_project_part and not is_navigation_part:
+            previous_usage = {}
+            previous_file = os.path.join(usage_parts_directory, thing, "working.yaml")
+            if unavailable_projects and os.path.isfile(previous_file):
+                with open(previous_file, encoding="utf-8") as previous_input:
+                    previous_usage = yaml.safe_load(previous_input) or {}
+            apply_usage(part, usage_for_part(thing, previous_usage, usage_index, unavailable_projects))
             import working_oomp_populate_svg
             working_oomp_populate_svg.add_svg_details(part)
             import working_oomp_populate_kicad

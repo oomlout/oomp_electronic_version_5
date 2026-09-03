@@ -68,50 +68,54 @@ def main(**kwargs):
         option["taxonomy_7"] = bus_pirate_led["part_number"]
         options.append(option)
 
-    colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]
-    lengths = [
-        "38_mm_length",
-        "60_mm_length",
-        "80_mm_length",
-        "95_mm_length",
-        "130_mm_length",
-        "145_mm_length",
-        "185_mm_length",
-        "260_mm_length",
-        "300_mm_length",
-    ]
-    for color in colors:
-        for length in lengths:
-            option = {}
-            option["taxonomy_2"] = "led"
-            option["taxonomy_3"] = "filament_3_volt"
-            option["taxonomy_4"] = color
-            option["taxonomy_5"] = length
-            options.append(option)
+    # LED filaments are intentionally disabled. Keep this simple declaration
+    # commented so the family can be restored later without reconstructing it.
+    # colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]
+    # lengths = [
+    #     "38_mm_length",
+    #     "60_mm_length",
+    #     "80_mm_length",
+    #     "95_mm_length",
+    #     "130_mm_length",
+    #     "145_mm_length",
+    #     "185_mm_length",
+    #     "260_mm_length",
+    #     "300_mm_length",
+    # ]
+    # for color in colors:
+    #     for length in lengths:
+    #         option = {}
+    #         option["taxonomy_2"] = "led"
+    #         option["taxonomy_3"] = "filament_3_volt"
+    #         option["taxonomy_4"] = color
+    #         option["taxonomy_5"] = length
+    #         options.append(option)
 
-    voltages = [5, 12, 24]
-    widths = [3, 5, 8]
-    colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]
-    lengths = [
-        "500_mm_length",
-        "1000_mm_length",
-        "2000_mm_length",
-        "3000_mm_length",
-        "5000_mm_length",
-    ]
-    led_densities = ["", "320_leds_per_meter"]
-    for voltage in voltages:
-        for width in widths:
-            for color in colors:
-                for length in lengths:
-                    for led_density in led_densities:
-                        option = {}
-                        option["taxonomy_2"] = "led"
-                        option["taxonomy_3"] = f"strip_{voltage}_volt_{width}_mm_width"
-                        option["taxonomy_4"] = color
-                        option["taxonomy_5"] = length
-                        option["taxonomy_6"] = led_density
-                        options.append(option)
+    # LED strips are intentionally disabled. The editable arrays and nested
+    # loops remain here in comments so this family can be restored later.
+    # voltages = [5, 12, 24]
+    # widths = [3, 5, 8]
+    # colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]
+    # lengths = [
+    #     "500_mm_length",
+    #     "1000_mm_length",
+    #     "2000_mm_length",
+    #     "3000_mm_length",
+    #     "5000_mm_length",
+    # ]
+    # led_densities = ["", "320_leds_per_meter"]
+    # for voltage in voltages:
+    #     for width in widths:
+    #         for color in colors:
+    #             for length in lengths:
+    #                 for led_density in led_densities:
+    #                     option = {}
+    #                     option["taxonomy_2"] = "led"
+    #                     option["taxonomy_3"] = f"strip_{voltage}_volt_{width}_mm_width"
+    #                     option["taxonomy_4"] = color
+    #                     option["taxonomy_5"] = length
+    #                     option["taxonomy_6"] = led_density
+    #                     options.append(option)
 
 
 if __name__ == "__main__":

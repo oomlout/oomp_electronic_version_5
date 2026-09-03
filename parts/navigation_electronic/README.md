@@ -3,7 +3,7 @@
 This OOMP navigation part publishes the category index at
 [the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic).
 
-It contains 1372 descendant parts.
+It contains 786 descendant parts.
 
 
 [Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation)
@@ -23,6 +23,7 @@ It contains 1372 descendant parts.
 - [Prototyping](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/prototyping)
 - [Resistor](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/resistor)
 - [Resistor Array](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/resistor_array)
+- [Switch](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/switch)
 - [Transistor](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor)
 - [Wire](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/wire)
 

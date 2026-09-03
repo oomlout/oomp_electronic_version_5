@@ -1,10 +1,10 @@
-# LED Blue 0402
+# LED SZYY0402B 0402
 
 `electronic_led_0402_blue`
 
-LED Blue 0402 is an OOMP electronic led definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm.
+LED SZYY0402B 0402 is an OOMP electronic led definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm.
 
-![LED Blue 0402 pinout](data/working_svg_square_pins.svg)
+![LED SZYY0402B 0402 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -37,8 +37,25 @@ LED Blue 0402 is an OOMP electronic led definition. It uses the 0402 package or 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `SZYY0402B` |
+| LCSC | [`C434447`](https://www.lcsc.com/product-detail/C434447.html) |
 
 
+
+
+
+
+
+
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project hanqaqa/easyduino ESP32 current](https://github.com/Hanqaqa/Easyduino/tree/master/ESP32) | 1 | D2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_esp32_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_esp32_current) |
 
 
 

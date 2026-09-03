@@ -1,7 +1,7 @@
 # Board explorer: pins and routed nets
 
 The existing project action generates a self-contained, offline page at
-`parts/<project-id>/data/generated_data/board_explorer.html`. It embeds the
+`parts/<project-id>/board_explorer.html`, alongside `README.md` and `working.yaml`. It embeds the
 assembly SVGs, actual PCB copper, part pinouts, metadata, styles and JavaScript.
 There are no external fonts, scripts, image requests or services. GitHub and
 supplier links are only opened when the reader clicks them.
@@ -30,17 +30,28 @@ supplier links are only opened when the reader clicks them.
    of side/layer; disabling it or pressing Fit restores the full board.
 8. The left hierarchy groups components by **category**. Its checkbox selects
    every member on **both sides**, even while searching. Counts show selected /
-   total. Expand/collapse a category to show its components and pin submenus.
+   total. Categories start collapsed. Expand a category to show its components and pin submenus.
    Individual component checkboxes refine the selection; multiple categories
    can be selected together. Switching sides preserves selections.
-9. **Highlight all selected nets** starts off. When checked, it highlights the
+   Hold **Ctrl** (or **Cmd** on macOS) and click category titles, components,
+   individual pins, or a **Pins** heading to add/remove them without clearing
+   other selections. Ctrl-clicking a category toggles all its components on
+   both sides; Ctrl-clicking **Pins** toggles that component's whole pin group.
+   Multiple selected pins highlight the union of their nets. Normal pin clicks
+   return to a single pin/net; Escape clears pin/net highlights.
+9. **Highlight all selected nets**, beside **Zoom to net** in the board toolbar,
+   starts off. When checked, it highlights the
    union of the selected components' nets, their copper and all connected pins.
    Layer colours, fill visibility and optional zoom apply to this union too.
    Click a pin or named net to follow just that net again. Escape or **Clear
    highlight** turns bulk-net mode off but keeps the component selection.
    **Clear selection** removes component selections and net highlights.
 
-The pin list and selected-net connections scroll within the sidebar. Filtering
+The pin list scrolls within the left sidebar. Selection status and selected-net
+connections sit below the matched-part details on the right. Both right-hand
+sections scroll independently without resizing the panels or board; adjust
+`--selection-status-height` in the embedded stylesheet to change the status
+box's fixed height. Filtering
 components searches categories, references, values, OOMP IDs, footprint IDs, pin names and
 net names. Unassigned pads highlight only the selected pin: they are never
 grouped into a fictitious shared net. Duplicate physical pads with the same
@@ -73,6 +84,9 @@ pad centres and shapes are not scaled to the OOMP assembly artwork.
 Pad centres are transformed from footprint-local coordinates; a pad's saved
 angle is already absolute and must not be added to the footprint angle again.
 Bottom overlays use the same horizontal reflection axis as the assembly view.
+Hover, focus and selection outlines have their own layer below all component
+artwork and labels. They never recolour or add a stroke to the pin-label text;
+native pad/net highlights remain below the artwork as well.
 Nets are identified by name and source PCB, not by proximity or visual contact.
 The exporter handles both older numeric net codes and newer named-net tokens.
 

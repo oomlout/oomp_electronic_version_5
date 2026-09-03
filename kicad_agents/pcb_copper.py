@@ -311,7 +311,8 @@ def add_copper_svg(board_svg, drawing, mirror=False):
     transform = f'translate({2*x + width:.6f} 0) scale(-1 1)' if mirror else ""
     base = f'<g class="copper-base" transform="{transform}">{drawing}</g>'
     overlay = f'<g class="copper-overlay" transform="{transform}"></g>'
+    highlights = '<g class="component-highlights" pointer-events="none"></g>'
     first_part = board_svg.find('<g class="board-component"')
     if first_part < 0:
         first_part = board_svg.rfind("</svg>")
-    return board_svg[:first_part] + base + overlay + board_svg[first_part:]
+    return board_svg[:first_part] + base + overlay + highlights + board_svg[first_part:]

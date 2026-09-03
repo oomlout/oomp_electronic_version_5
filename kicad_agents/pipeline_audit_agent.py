@@ -39,6 +39,7 @@ DETERMINISTIC_SOURCE_FILES = [
     "kicad_agents/project_review_agent.py",
     "kicad_agents/project_summary_agent.py",
     "kicad_agents/project_html_agent.py",
+    "kicad_agents/project_usage_action.py",
 ]
 
 

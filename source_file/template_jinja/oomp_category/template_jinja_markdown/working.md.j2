@@ -58,6 +58,16 @@
 [View the datasheet]({{ p.part_page.datasheet_path }})
 {% endif %}
 
+{% if p.used_in_projects is defined and p.used_in_projects %}
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+{% for project in p.used_in_projects -%}
+| [{{ project.name }}]({{ project.board_url }}) | {{ project.quantity }} | {{ project.references | join(', ') }} | [Board explorer]({{ project.board_explorer_url }}) · [OOMP project]({{ project.oomp_url }}) |
+{% endfor %}
+
+{% endif %}
 ## Files
 
 {% if p.kicad is defined %}

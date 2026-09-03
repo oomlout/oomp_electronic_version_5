@@ -18,10 +18,20 @@ const path = require('node:path');
     // Category headings stay visible while their component rows start collapsed.
     await page.waitForSelector('.category-select');
     await page.waitForSelector('.part-button', {state: 'attached'});
+    assert.equal(await page.locator('.category-group[open]').count(), 0, 'All categories start collapsed');
+    assert.equal(await page.locator('.part-button:visible').count(), 0, 'Component rows start hidden');
+    const firstCategory = page.locator('.category-group').first();
+    await firstCategory.locator(':scope > summary span').click();
+    assert(await firstCategory.getAttribute('open') !== null, 'Categories can be opened manually');
+    assert(await firstCategory.locator('.part-button:visible').count() > 0);
+    await firstCategory.locator(':scope > summary span').click();
+    assert.equal(await page.locator('.category-group[open]').count(), 0, 'Categories can be collapsed again');
     assert.equal(await page.locator('#copper-layer').inputValue(), 'all');
     assert(await page.locator('#show-fills').isChecked(), 'Fills default on');
     assert(!(await page.locator('#zoom-to-net').isChecked()), 'Automatic zoom defaults off');
     assert(!(await page.locator('#highlight-selected-nets').isChecked()), 'Bulk nets default off');
+    assert.equal(await page.locator('.net-picker #highlight-selected-nets').count(), 0);
+    assert.deepEqual(await page.locator('.board-toolbar .net-selection-controls input').evaluateAll(inputs => inputs.map(input => input.id)), ['zoom-to-net', 'highlight-selected-nets'], 'Net controls are grouped together in the board toolbar');
     const initialViewBox = await page.locator('.board-view[data-side="front"] > svg').getAttribute('viewBox');
     const candidate = await page.evaluate(() => {
       for (const component of components) {
@@ -198,6 +208,24 @@ const path = require('node:path');
     assert(!(await page.locator('#highlight-selected-nets').isChecked()));
     assert.equal(await page.locator('.copper-overlay .copper-feature').count(), 0);
     await page.locator('#clear-selection').click();
+    const distributorExamples = await page.evaluate(() => ({
+      linked: components.find(c => c.lcsc_url),
+      unlinked: components.find(c => !c.lcsc_url),
+    }));
+    assert(distributorExamples.linked, 'This board has a matched part with an LCSC number');
+    await page.evaluate(reference => selectComponent(reference), distributorExamples.linked.reference);
+    const lcscLink = page.locator('.actions .lcsc-link');
+    assert.equal(await lcscLink.getAttribute('href'), distributorExamples.linked.lcsc_url);
+    assert.equal(await lcscLink.getAttribute('target'), '_blank');
+    assert((await lcscLink.getAttribute('rel')).includes('noopener'));
+    assert.deepEqual(await page.locator('.actions a').allTextContents().then(labels => labels.slice(0, 2)), ['Open OOMP part', 'Open LCSC']);
+    if (distributorExamples.unlinked) {
+      await page.evaluate(reference => selectComponent(reference), distributorExamples.unlinked.reference);
+      assert.equal(await page.locator('.actions .lcsc-link').count(), 0);
+    }
+    await require('./board_explorer_multi_select.cjs')(page);
+    await require('./board_explorer_selection_rendering.cjs')(page);
+    await require('./board_explorer_status_layout.cjs')(page);
     await page.setViewportSize({width: 390, height: 844});
     const mobile = await page.evaluate(() => ({
       listHeight: document.getElementById('part-list').clientHeight,

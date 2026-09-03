@@ -36,7 +36,7 @@ def main(**kwargs):
             "boxes": [[-1.7, 1.4, 1.0, .5], [1.7, 1.4, 1.0, .5]],
             "side": {"overall": [7.35, 3.16], "body": [7.35, 3.16], "pins": []},
         }
-        part["kicad"] = {"symbol": "Connector:USB_C_Receptacle_USB2.0_16P", "machine_solder": "", "hand_solder": ""}
+        part["kicad"] = {"symbol": "Connector:USB_C_Receptacle_USB2.0_16P", "machine_solder": "", "hand_solder": "", "allow_project_fallback": False}
         part["research_notes"] = ["LCSC C2765186 and the upstream USBC.pdf identify SHOU HAN, not G-Switch GT-USB-7010ASV. The original footprint is preserved; exact master/land-pattern equivalence has not been established."]
 
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5"

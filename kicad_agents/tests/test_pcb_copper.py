@@ -99,6 +99,9 @@ class CopperTests(unittest.TestCase):
         self.assertLess(top.index('class="copper-base"'), top.index('class="board-component"'))
         self.assertLess(top.index('class="copper-overlay"'), top.index('class="board-component"'))
         self.assertGreater(top.index('class="copper-overlay"'), top.index('class="copper-base"'))
+        for drawing in [top, back]:
+            self.assertLess(drawing.index('class="component-highlights"'), drawing.index('class="board-component"'))
+            self.assertGreater(drawing.index('class="component-highlights"'), drawing.index('class="copper-overlay"'))
         self.assertIn('translate(30.000000 0) scale(-1 1)', back)
         ET.fromstring(back)
 
@@ -117,12 +120,21 @@ class CopperTests(unittest.TestCase):
             data = {"pcb_files": [{"source_file": "board", "copper": self.copper}], "components": [{
                 "reference": "U1", "pcb": {"side": "front", "source_file": "board", "pads": [{
                     "number": "1", "net": '</script><script>alert(1)</script>'}]}, "oomp": {}}]}
+            legacy_path = output / 'board_explorer.html'
+            legacy_path.write_text('Old generated explorer', encoding='utf-8')
             path = generate_board_explorer(project, data, {})
+            self.assertEqual(path, project / 'board_explorer.html')
+            self.assertFalse(legacy_path.exists())
+            self.assertTrue((output / 'src' / 'board.svg').is_file())
             text = path.read_text(encoding='utf-8')
             self.assertNotIn('</script><script>alert(1)', text)
             for control in ['copper-data', 'net-select', 'net-search', 'copper-layer', 'show-fills', 'show-traces']:
                 self.assertIn(f'id="{control}"', text)
             self.assertIn("menu.className = 'pin-menu'", text)
+            self.assertEqual(text.count('id="net-status"'), 1)
+            right_panel = text.split('<aside class="panel detail">', 1)[1].split('</aside>', 1)[0]
+            self.assertIn('class="part-detail-scroll"', right_panel)
+            self.assertIn('id="net-status"', right_panel)
             self.assertNotRegex(text, r'<script[^>]+src=')
             embedded = re.search(r'<script id="component-data" type="application/json">(.*?)</script>', text, re.S).group(1)
             self.assertTrue(json.loads(embedded)[0]["pads"][0]["net_id"])

@@ -70,6 +70,15 @@ IC SN74LVC1G57DBVR SOT 23 6 is an OOMP electronic ic definition. It uses the sot
 [View the datasheet](data/datasheet.pdf)
 
 
+
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project electrolama/pt1 current](https://github.com/electrolama/pt1) | 1 | IC3 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_electrolama_pt1_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_electrolama_pt1_current) |
+
+
+
 ## Files
 
 
