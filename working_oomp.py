@@ -213,6 +213,7 @@ def add_part_build_actions(part, count):
         "command": "run_python",
         "file_python": "kicad_agents/kicad_library_agent.py",
         "file_output": f"{DATA_DIRECTORY}/kicad/manifest.yaml",
+        "file_test": f"{DATA_DIRECTORY}/kicad/manifest.yaml",
         "description": "Copy official KiCad masters into per-part OOMP symbols and verified soldering footprint variants.",
         "timeout": "600",
     })
