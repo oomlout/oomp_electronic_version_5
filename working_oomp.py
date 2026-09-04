@@ -208,34 +208,53 @@ def add_part_page_details(part):
 
 def add_part_build_actions(part, count):
     """Add the deterministic SVG, PNG-preview, and README preparation block."""
-    actions = []
-    actions.append({
-        "command": "run_python",
-        "file_python": "kicad_agents/kicad_library_agent.py",
-        "file_output": f"{DATA_DIRECTORY}/kicad/manifest.yaml",
+    library_actions = [
+        {
+            "command": "run_python",
+            "file_python": "kicad_agents/kicad_library_agent.py",
+            "file_output": f"{DATA_DIRECTORY}/kicad/manifest.yaml",
+            "description": "Copy official KiCad masters into per-part OOMP symbols and verified soldering footprint variants.",
+            "timeout": "600",
+        }
+    ]
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": library_actions,
+        "description": "Install KiCad master data for this part.",
         "file_test": f"{DATA_DIRECTORY}/kicad/manifest.yaml",
-        "description": "Copy official KiCad masters into per-part OOMP symbols and verified soldering footprint variants.",
-        "timeout": "600",
-    })
+        "retries_until_complete": 0,
+    }
     file_copies = part.get("file_copy", [])
-    if isinstance(file_copies, list):
+    if len(file_copies) > 0:
+        copy_actions = []
+        last_copy_destination = ""
         for file_copy in file_copies:
             if not isinstance(file_copy, dict):
                 continue
-            actions.append(
+            file_destination = os.path.join(
+                DATA_DIRECTORY,
+                os.path.basename(str(file_copy.get("file_destination", ""))),
+            ).replace("\\", "/")
+            copy_actions.append(
                 {
                     "command": "file_copy",
                     "file_source": file_copy.get("file_source", ""),
-                    "file_destination": os.path.join(
-                        DATA_DIRECTORY,
-                        os.path.basename(str(file_copy.get("file_destination", ""))),
-                    ).replace("\\", "/"),
+                    "file_destination": file_destination,
                     "exit_on_missing": True,
                     "delete_before_copy": True,
                 }
             )
+            last_copy_destination = file_destination
+        if len(copy_actions) > 0:
+            count += 1
+            part[f"oomlout_ai_roboclick_{count}"] = {
+                "actions": copy_actions,
+                "description": "Copy part-specific source files into the working data directory.",
+                "file_test": last_copy_destination,
+                "retries_until_complete": 0,
+            }
 
-    actions.append(
+    component_actions = [
         {
             "command": "run_python",
             "file_python": "kicad_agents/component_svg_action.py",
@@ -245,14 +264,14 @@ def add_part_build_actions(part, count):
             "regenerate_pngs": as_boolean(part.get("regenerate_pngs", False)),
             "timeout": "600",
         }
-    )
+    ]
     used_destinations = []
     regenerate_pngs = as_boolean(part.get("regenerate_pngs", False))
     main_image = part.get("part_page", {}).get("main_image", {})
     main_png = main_image.get("png", "")
     main_preview = main_image.get("preview", "")
     if main_png != "" and main_preview != "":
-        actions.append(
+        component_actions.append(
             {
                 "command": "image_resize",
                 "file_source": main_png,
@@ -276,7 +295,7 @@ def add_part_build_actions(part, count):
         png_filename = diagram.get("png", "")
         preview_filename = diagram.get("preview", "")
         if png_filename != "" and preview_filename != "" and preview_filename not in used_destinations:
-            actions.append(
+            component_actions.append(
                 {
                     "command": "image_resize",
                     "file_source": png_filename,
@@ -289,12 +308,12 @@ def add_part_build_actions(part, count):
             )
             used_destinations.append(preview_filename)
 
-    if len(actions) > 0:
+    if len(component_actions) > 0:
         count += 1
         part[f"oomlout_ai_roboclick_{count}"] = {
-            "actions": actions,
+            "actions": component_actions,
             "description": "Build component diagrams and proportional 300-pixel README previews with deterministic Python actions.",
-            "file_test": "",
+            "file_test": f"{DATA_DIRECTORY}/working_svg_square_pins_300.png",
             "retries_until_complete": 0,
         }
     return count
@@ -335,7 +354,7 @@ def add_project_actions(part, count):
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
         "actions": [git_action],
-        "file_test": "",
+        "file_test": f"{DATA_DIRECTORY}/original/manifest.yaml",
         "retries_until_complete": 0,
     }
 
@@ -383,12 +402,18 @@ def add_project_actions(part, count):
                 "timeout": "1200",
             }
         ],
-        "file_test": "",
+        "file_test": f"{DATA_DIRECTORY}/interactivehtmlbom/generation_status.yaml",
         "retries_until_complete": 0,
     }
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
-        "actions": [project_compile_action] + board_preview_actions + [{
+        "actions": [project_compile_action] + board_preview_actions,
+        "file_test": f"{DATA_DIRECTORY}/generated_data/src/board_mechanical_300.png",
+        "retries_until_complete": 0,
+    }
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [{
             "command": "run_python",
             "file_python": "kicad_agents/project_usage_action.py",
             "description": "Refresh Used in projects metadata and part README links from all confirmed project matches.",

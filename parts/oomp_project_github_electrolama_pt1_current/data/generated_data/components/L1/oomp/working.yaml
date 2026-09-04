@@ -76,6 +76,11 @@ oomlout_ai_roboclick_1:
     file_output: data/kicad/manifest.yaml
     file_python: kicad_agents/kicad_library_agent.py
     timeout: '600'
+  description: Install KiCad master data for this part.
+  file_test: data/kicad/manifest.yaml
+  retries_until_complete: 0
+oomlout_ai_roboclick_2:
+  actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -141,9 +146,9 @@ oomlout_ai_roboclick_1:
     resample: lanczos
   description: Build component diagrams and proportional 300-pixel README previews
     with deterministic Python actions.
-  file_test: ''
+  file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_2:
+oomlout_ai_roboclick_3:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -178,6 +183,11 @@ oomlout_ai_roboclick_2:
           file_output: data/kicad/manifest.yaml
           file_python: kicad_agents/kicad_library_agent.py
           timeout: '600'
+        description: Install KiCad master data for this part.
+        file_test: data/kicad/manifest.yaml
+        retries_until_complete: 0
+      oomlout_ai_roboclick_2:
+        actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.
@@ -244,7 +254,7 @@ oomlout_ai_roboclick_2:
           resample: lanczos
         description: Build component diagrams and proportional 300-pixel README previews
           with deterministic Python actions.
-        file_test: ''
+        file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
       part_id: FB1
       part_number_lcsc: C85840

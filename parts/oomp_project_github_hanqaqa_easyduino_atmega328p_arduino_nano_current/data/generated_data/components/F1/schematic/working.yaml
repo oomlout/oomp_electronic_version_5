@@ -1,0 +1,156 @@
+available: true
+units:
+- reference: F1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 9af07d9d-0a6c-440b-90a5-ed949f805f15
+  library_id: Device:Polyfuse
+  unit: 1
+  body_style: 1
+  position:
+    x: 67.31
+    y: 45.72
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: F1
+    Value: Polyfuse
+    Footprint: Fuse:Fuse_0402_1005Metric
+    Datasheet: ''
+    Description: ''
+    LCSC: C914087
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 3.81
+      rotation: 270.0
+    length: 1.27
+    position:
+      x: 63.5
+      y: 45.72
+    net: Vbus
+    net_aliases:
+    - Vbus
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: A4
+      pin_name: VBUS
+    - reference: J1
+      pin_number: A9
+      pin_name: VBUS
+    - reference: J1
+      pin_number: B4
+      pin_name: VBUS
+    - reference: J1
+      pin_number: B9
+      pin_name: VBUS
+  - number: '2'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -3.81
+      rotation: 90.0
+    length: 1.27
+    position:
+      x: 71.12
+      y: 45.72
+    net: Vbus_f
+    net_aliases:
+    - Vbus_f
+    - Vbus_f
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#FLG01'
+      pin_number: '1'
+      pin_name: ''
+    - reference: C1
+      pin_number: '1'
+      pin_name: ''
+    - reference: C2
+      pin_number: '1'
+      pin_name: ''
+    - reference: D2
+      pin_number: '2'
+      pin_name: A
+    - reference: U3
+      pin_number: '7'
+      pin_name: VREGIN
+    - reference: U3
+      pin_number: '8'
+      pin_name: VBUS
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.524
+        y: -2.667
+      max:
+        x: 1.524
+        y: 2.667
+      width: 3.048
+      height: 5.334
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 64.643
+        y: 44.196
+      max:
+        x: 69.977
+        y: 47.244
+      width: 5.334
+      height: 3.048
+      center:
+        x: 67.31
+        y: 45.72
+  warnings: []
+connected_components:
+- reference: '#FLG01'
+  pin_number: '1'
+  pin_name: ''
+- reference: C1
+  pin_number: '1'
+  pin_name: ''
+- reference: C2
+  pin_number: '1'
+  pin_name: ''
+- reference: D2
+  pin_number: '2'
+  pin_name: A
+- reference: J1
+  pin_number: A4
+  pin_name: VBUS
+- reference: J1
+  pin_number: A9
+  pin_name: VBUS
+- reference: J1
+  pin_number: B4
+  pin_name: VBUS
+- reference: J1
+  pin_number: B9
+  pin_name: VBUS
+- reference: U3
+  pin_number: '7'
+  pin_name: VREGIN
+- reference: U3
+  pin_number: '8'
+  pin_name: VBUS

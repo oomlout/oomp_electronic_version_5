@@ -2,7 +2,7 @@
 
 [Up one level](../README.md)
 
-This category contains 4 parts in total.
+This category contains 109 parts in total.
 
 
 ## Categories
@@ -10,6 +10,8 @@ This category contains 4 parts in total.
 - [Dangerousprototypes](dangerousprototypes/README.md)
 - [Electrolama](electrolama/README.md)
 - [Hanqaqa](hanqaqa/README.md)
+- [Soldered Electronics](soldered_electronics/README.md)
+- [Sparkfun](sparkfun/README.md)
 
 
 

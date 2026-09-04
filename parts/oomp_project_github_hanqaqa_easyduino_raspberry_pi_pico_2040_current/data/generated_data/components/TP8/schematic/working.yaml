@@ -1,0 +1,100 @@
+available: true
+units:
+- reference: TP8
+  source_file: data/kicad_file.kicad_sch
+  uuid: 3495e2fc-1888-43ba-b809-f6a96381cd3d
+  library_id: rp2040_lib:TestPoint
+  unit: 1
+  body_style: 1
+  position:
+    x: 29.21
+    y: 140.97
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: TP8
+    Value: ''
+    Footprint: rp2040_lib:TestPoint_pad
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -3.81
+      rotation: 90.0
+    length: 0.0
+    position:
+      x: 29.21
+      y: 144.78
+    net: QSPI_SS
+    net_aliases:
+    - QSPI_SS
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R10
+      pin_number: '2'
+      pin_name: ''
+    - reference: R15
+      pin_number: '1'
+      pin_name: ''
+    - reference: U2
+      pin_number: '56'
+      pin_name: QSPI_SS
+    - reference: U3
+      pin_number: '1'
+      pin_name: ~{CS}
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.127
+        y: -3.937
+      max:
+        x: 2.921
+        y: -1.905
+      width: 3.048
+      height: 2.032
+      center:
+        x: 1.397
+        y: -2.921
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 26.289
+        y: 142.875
+      max:
+        x: 29.337
+        y: 144.907
+      width: 3.048
+      height: 2.032
+      center:
+        x: 27.813
+        y: 143.891
+  warnings: []
+connected_components:
+- reference: R10
+  pin_number: '2'
+  pin_name: ''
+- reference: R15
+  pin_number: '1'
+  pin_name: ''
+- reference: U2
+  pin_number: '56'
+  pin_name: QSPI_SS
+- reference: U3
+  pin_number: '1'
+  pin_name: ~{CS}

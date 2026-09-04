@@ -1,0 +1,18 @@
+# Oomp / Project / Github / Soldered Electronics / Gnss Gps L86 M33 Breakout With Easy C Hardware Design / Sensor Gnss L86M33 Easyc
+
+[Up one level](../README.md)
+
+This category contains 1 parts in total.
+
+
+
+
+## Parts
+
+- [Project soldered_electronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design L86-M33 GNSS easyC current](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current) — `oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current`
+
+
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

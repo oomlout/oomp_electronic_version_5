@@ -1,3 +1,17 @@
+import re
+
+
+def _normalize_project_slug(value):
+    if value is None:
+        return ""
+    normalized = str(value).strip()
+    normalized = re.sub(r"(?<=[a-z0-9])(?=[A-Z])", "_", normalized)
+    normalized = normalized.lower()
+    normalized = re.sub(r"[^a-z0-9]+", "_", normalized)
+    normalized = re.sub(r"_+", "_", normalized).strip("_")
+    return normalized
+
+
 def main(**kwargs):
     options = kwargs.get("options", [])
 
@@ -130,6 +144,17 @@ def main(**kwargs):
             "repository_url": "https://github.com/Hanqaqa/Easyduino.git",
             "versions": [
                 {
+                    "board": "atmega328p_arduino_nano",
+                    "board_name": "ATmega328P Arduino Nano",
+                    "board_url": "https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Nano",
+                    "version": "current",
+                    "git_ref": "master",
+                    "sparse_checkout": True,
+                    "project_file_folder": "Atmega328p Arduino Nano",
+                    "project_file_basename": "Easyduino_Atmega_Nano",
+                    "project_file_path": "Atmega328p Arduino Nano/Easyduino_Atmega_Nano",
+                },
+                {
                     "board": "atmega328p_arduino_uno",
                     "board_name": "ATmega328P Arduino Uno",
                     "board_url": "https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Uno",
@@ -179,6 +204,17 @@ def main(**kwargs):
                     ],
                 },
                 {
+                    "board": "esp32s3",
+                    "board_name": "ESP32S3",
+                    "board_url": "https://github.com/Hanqaqa/Easyduino/tree/master/ESP32S3",
+                    "version": "current",
+                    "git_ref": "master",
+                    "sparse_checkout": True,
+                    "project_file_folder": "ESP32S3",
+                    "project_file_basename": "Easyduino_ESP32S3",
+                    "project_file_path": "ESP32S3/Easyduino_ESP32S3",
+                },
+                {
                     "board": "raspberry_pi_pico_2040",
                     "board_name": "Raspberry Pi Pico 2040",
                     "board_url": "https://github.com/Hanqaqa/Easyduino/tree/master/Raspberry%20Pi%20Pico%202040",
@@ -189,9 +225,517 @@ def main(**kwargs):
                     "project_file_basename": "Easyduino_RP2040",
                     "project_file_path": "Raspberry Pi Pico 2040/Easyduino_RP2040",
                 },
+                {
+                    "board": "stm32f103_bluepill",
+                    "board_name": "STM32F103 Bluepill",
+                    "board_url": "https://github.com/Hanqaqa/Easyduino/tree/master/STM32F103%20Bluepill",
+                    "version": "current",
+                    "git_ref": "master",
+                    "sparse_checkout": True,
+                    "project_file_folder": "STM32F103 Bluepill",
+                    "project_file_basename": "Easyduino_STM32F103",
+                    "project_file_path": "STM32F103 Bluepill/Easyduino_STM32F103",
+                },
             ],
         },
     ]
+
+    def add_soldered_project(
+        repo_slug,
+        board_slug,
+        board_name,
+        project_file_folder,
+        project_file_basename,
+        version_folder,
+        git_ref="main",
+    ):
+        repo_url = f"https://github.com/SolderedElectronics/{repo_slug}"
+        projects.append(
+            {
+                "github_user": "SolderedElectronics",
+                "github_repository": repo_slug,
+                "github_url": repo_url,
+                "repository_url": f"{repo_url}.git",
+                "versions": [
+                    {
+                        "board": board_slug,
+                        "board_name": board_name,
+                        "board_url": repo_url,
+                        "version": "current",
+                        "git_ref": git_ref,
+                        "sparse_checkout": True,
+                        "project_file_folder": project_file_folder,
+                        "project_file_basename": project_file_basename,
+                        "project_file_path": f"{project_file_folder}/{project_file_basename}",
+                    }
+                ],
+            }
+        )
+
+    def add_variant_family(base_repo_slug, base_board_slug, base_board_name, project_file_basename, version_folder, variants):
+        for repo_suffix, board_suffix, name_suffix in variants:
+            add_soldered_project(
+                f"{base_repo_slug}{repo_suffix}",
+                f"{base_board_slug}{board_suffix}",
+                f"{base_board_name}{name_suffix}",
+                f"CAD/{version_folder}",
+                project_file_basename,
+                version_folder,
+            )
+
+    # Soldered Electronics sensor boards.
+    for mq_number, repo_slug, qwiic, easyc in [
+        (2, "Butane--LPG---Smoke-sensor-MQ2-breakout-hardware-design", True, True),
+        (3, "Alcohol--Ethanol-sensor-MQ3-breakout-hardware-design", True, True),
+        (4, "Methane.-CNG-sensor-MQ4-breakout-hardware-design", True, True),
+        (5, "Natural-gas--LPG-sensor-MQ5-breakout-hardware-design", True, True),
+        (6, "LPG--Butane-sensor-MQ6-breakout-hardware-design", True, True),
+        (7, "CO-sensor-MQ7-breakout-hardware-design", True, True),
+        (8, "Hydrogen-sensor-MQ8-breakout-hardware-design", True, True),
+        (9, "CO--flammable-gasses-sensor-MQ9-breakout-hardware-design", True, True),
+        (131, "Ozone-sensor-MQ131-breakout-hardware-design", True, True),
+        (135, "Air-quality-sensor-MQ135-breakout-hardware-design", True, True),
+        (136, "Hydrogen-Sulfide-sensor-MQ136-breakout-hardware-design", False, True),
+        (137, "Ammonia-sensor-MQ137-breakout-hardware-design", True, True),
+        (138, "VOC-sensor-MQ138-breakout-hardware-design", False, False),
+        (214, "Methane--Natural-gas-sensor-MQ214-breakout-hardware-design", False, True),
+    ]:
+        base_name = f"MQ{mq_number} Breakout"
+        add_soldered_project(
+            repo_slug,
+            f"sensor_gas_mq{mq_number}_breakout",
+            base_name,
+            f"CAD/V1.1.1",
+            "MQ Breakout",
+            "V1.1.1",
+        )
+        if qwiic:
+            add_soldered_project(
+                repo_slug.replace("-hardware-design", "-qwiic-hardware-design"),
+                f"sensor_gas_mq{mq_number}_qwiic",
+                f"{base_name} qwiic",
+                f"CAD/V1.1.1",
+                "MQ Breakout",
+                "V1.1.1",
+            )
+        if easyc:
+            add_soldered_project(
+                repo_slug.replace("-hardware-design", "-with-easyC-hardware-design"),
+                f"sensor_gas_mq{mq_number}_easyc",
+                f"{base_name} easyC",
+                f"CAD/V1.1.1",
+                "MQ Breakout",
+                "V1.1.1",
+            )
+
+    add_soldered_project(
+        "Benzene--Toluene--Acetone--Formaldehyde-sensor-MQ138-breakout-hardware-design",
+        "sensor_gas_mq138_breakout",
+        "MQ138 Breakout",
+        "CAD/V1.1.1",
+        "MQ Breakout",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Benzene--Toluene--Acetone--Formaldehyde-sensor-MQ138-breakout-with-easyC-hardware-design",
+        "sensor_gas_mq138_easyc",
+        "MQ138 Breakout easyC",
+        "CAD/V1.1.1",
+        "MQ Breakout",
+        "V1.1.1",
+    )
+
+    add_soldered_project(
+        "Air-quality-sensor-CCS811-breakout-hardware-design",
+        "sensor_air_quality_ccs811",
+        "CCS811 Breakout",
+        "CAD/V1.1.1",
+        "CCS811_breakout",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Pressure---temperature-sensor-BMP388-breakout-hardware-design",
+        "sensor_pressure_temp_bmp388",
+        "BMP388 Breakout",
+        "CAD/V1.0.0",
+        "Pressure & temperature sensor BMP388 breakout",
+        "V1.0.0",
+    )
+    add_soldered_project(
+        "Thermocouple-sensor-AD8495-breakout-hardware-design",
+        "sensor_thermocouple_ad8495",
+        "AD8495 Breakout",
+        "CAD/V1.1.1",
+        "Thermocouple sensor AD8495 breakout",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Capacitive-soil-sensor-hardware-design",
+        "sensor_capacitive_soil",
+        "Capacitive Soil Sensor",
+        "CAD/V1.1.1",
+        "Capacitive_soil_sensor",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design",
+        "sensor_light_ltr507als",
+        "LTR-507ALS Breakout",
+        "CAD/V1.1.1",
+        "Digital light proximity sensor LTR 507ALS breakout",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Color-and-gesture-sensor-APDS-9960-breakout-hardware-design",
+        "sensor_color_gesture_apds9960",
+        "APDS-9960 Breakout",
+        "CAD/V1.1.1",
+        "APDS9960_breakout",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Color---gesture-sensor-APDS-9960-breakout-hardware-design",
+        "sensor_color_gesture_apds9960",
+        "APDS-9960 Breakout",
+        "CAD/V1.1.1",
+        "APDS9960_breakout",
+        "V1.1.1",
+    )
+
+    add_variant_family(
+        "Simple-light-sensor-board",
+        "sensor_light_simple",
+        "Simple Light Sensor",
+        "Simple_sensor",
+        "V1.1.1",
+        [("-hardware-design", "", ""), ("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+    add_variant_family(
+        "Simple-fire-sensor-board",
+        "sensor_fire_simple",
+        "Simple Fire Sensor",
+        "Simple_sensor",
+        "V1.1.1",
+        [("-hardware-design", "", ""), ("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+    add_variant_family(
+        "PIR-Movement-sensor-board",
+        "sensor_pir_movement",
+        "PIR Movement Sensor",
+        "PIR_movement_sensor",
+        "V1.1.1",
+        [("-hardware-design", "", ""), ("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+    add_variant_family(
+        "Obstacle-sensor",
+        "sensor_obstacle",
+        "Obstacle Sensor",
+        "Obstacle_sensor",
+        "V1.1.1",
+        [("-TCRT5000-breakout-hardware-design", "_tcrt5000", " TCRT5000"), ("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+    add_variant_family(
+        "Ultrasonic-sensor",
+        "sensor_ultrasonic",
+        "Ultrasonic Sensor",
+        "Ultrasonic_sensor",
+        "V1.1.1",
+        [("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+    add_variant_family(
+        "Hall-effect-sensor-breakout-with-analog-output",
+        "sensor_hall_analog",
+        "Hall Effect Analog Output",
+        "Hall_effect_sensor_analog",
+        "V1.1.1",
+        [("-hardware-design", "", ""), ("---easyC-hardware-design", "_easyc", " easyC"), ("---qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+    add_variant_family(
+        "Hall-effect-sensor-breakout-with-digital-output",
+        "sensor_hall_digital",
+        "Hall Effect Digital Output",
+        "Hall_effect_sensor_digital",
+        "V1.1.1",
+        [("-hardware-design", "", ""), ("---easyC-hardware-design", "_easyc", " easyC"), ("---qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+
+    add_soldered_project(
+        "Voltage---current-sensor-INA219-breakout-hardware-design",
+        "sensor_power_ina219",
+        "INA219 Breakout",
+        "CAD/V1.1.1",
+        "INA219_breakout",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Current-sensor-30A-ACS712-breakout-hardware-design",
+        "sensor_current_acs712_30a",
+        "ACS712 30A",
+        "CAD/V1.1.1",
+        "ACS712_breakout",
+        "V1.1.1",
+    )
+    add_variant_family(
+        "Load-cell-ampfilier-HX711-board",
+        "sensor_load_cell_hx711",
+        "HX711 Load Cell",
+        "Load_cell_amplifier_HX711_board",
+        "V1.1.1",
+        [("-hardware-design", "", ""), ("-with-easy-C-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+
+    add_soldered_project(
+        "Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design",
+        "sensor_imu_lsm9ds1tr",
+        "LSM9DS1TR IMU",
+        "CAD/V1.2.2",
+        "Accelerometer_Gyroscope_Magnetometer LSM9DS1TR breakout",
+        "V1.2.2",
+    )
+    add_soldered_project(
+        "GNSS-GPS-L86-M33-breakout-hardware-design",
+        "sensor_gnss_l86m33",
+        "L86-M33 GNSS",
+        "CAD/V1.2.0",
+        "GNSS_breakout_L86-M33",
+        "V1.2.0",
+    )
+    add_soldered_project(
+        "GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design",
+        "sensor_gnss_l86m33_easyc",
+        "L86-M33 GNSS easyC",
+        "CAD/V1.1.1",
+        "GNSS_breakout_L86-M33",
+        "V1.1.1",
+    )
+
+    add_soldered_project(
+        "PMS7003-sensor-adapter-hardware-design",
+        "sensor_pms7003_adapter",
+        "PMS7003 Adapter",
+        "CAD/V1.1.1",
+        "PMS7003_adapter",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Slider-potentiometer-breakout-hardware-design",
+        "input_slider_potentiometer",
+        "Slider Potentiometer",
+        "CAD/V1.1.1",
+        "Slider_potentiometer",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Slider-potentiometer-breakout-with-easyC-hardware-design",
+        "input_slider_potentiometer_easyc",
+        "Slider Potentiometer easyC",
+        "CAD/V1.1.1",
+        "Slider_potentiometer",
+        "V1.1.1",
+    )
+    add_soldered_project(
+        "Rotary-encoder-board-with-easyC-hardware-design",
+        "input_rotary_encoder_easyc",
+        "Rotary Encoder easyC",
+        "CAD/V1.1.0",
+        "Rotary encoder with easyC",
+        "V1.1.0",
+    )
+
+    sparkfun_projects = [
+        {
+            "github_repository": "SparkFun_Particulate_Matter_Sensor_Breakout_BMV080",
+            "board": "particulate_matter_bmv080",
+            "board_name": "Particulate Matter Sensor BMV080",
+            "project_file_basename": "SparkFun_BMV080",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_BMV080",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+                {"version": "v1.0.0", "git_ref": "v1.0.0"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102",
+            "board": "capacitive_soil_moisture_cy8cmbr3102",
+            "board_name": "Capacitive Soil Moisture Sensor CY8CMBR3102",
+            "project_file_basename": "SparkFun_Capacitive_Soil_Moisture_Sensor",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_Capacitive_Soil_Moisture_Sensor",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+                {"version": "v1.0.0", "git_ref": "v1.0.0"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Qwiic_Current_Sensor_INA2XX",
+            "board": "qwiic_current_sensor_ina2xx",
+            "board_name": "Qwiic Current Sensor INA2XX",
+            "project_file_basename": "SparkFun_Qwiic_Current_Sensor_INA2XX",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_Qwiic_Current_Sensor_INA2XX",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+                {"version": "v1.0.0", "git_ref": "v1.0.0"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Qwiic_Current_Sensor_ADE7953",
+            "board": "qwiic_current_sensor_ade7953",
+            "board_name": "Qwiic Current Sensor ADE7953",
+            "project_file_basename": "SparkFun_Qwiic_Current_Sensor_ADE7953",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_Qwiic_Current_Sensor_ADE7953",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+                {"version": "v1.0.0", "git_ref": "v1.0.0"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Qwiic_ADC_ADS1219",
+            "board": "qwiic_adc_ads1219",
+            "board_name": "Qwiic ADC ADS1219",
+            "project_file_basename": "Qwiic_ADC_ADS1219",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/Qwiic_ADC_ADS1219",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+                {"version": "v1.0.0", "git_ref": "v1.0.0"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Qwiic_Navigation_Switch",
+            "board": "qwiic_navigation_switch",
+            "board_name": "Qwiic Navigation Switch",
+            "project_file_basename": "SparkFun_Qwiic_Navigation",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_Qwiic_Navigation",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Qwiic_Navigation_Switch",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Qwiic_Directional_Pad",
+            "board": "qwiic_directional_pad",
+            "board_name": "Qwiic Directional Pad",
+            "project_file_basename": "SparkFun_Qwiic_Directional_Pad",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_Qwiic_Directional_Pad",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Qwiic_Directional_Pad",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Roller_Encoder_Breakout",
+            "board": "roller_encoder_breakout",
+            "board_name": "Roller Encoder Breakout",
+            "project_file_basename": "SparkFun_Roller_Encoder_Breakout",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_Roller_Encoder_Breakout",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Roller_Encoder_Breakout",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Audio_Player_Breakout_MY1690X-16S",
+            "board": "audio_player_breakout_my1690x_16s",
+            "board_name": "Audio Player Breakout MY1690X-16S",
+            "project_file_basename": "SparkFun_Audio_Player_Breakout_MY1690X-16S",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_Audio_Player_Breakout_MY1690X-16S",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_Qwiic_GNSS_SAM-M8Q",
+            "board": "qwiic_gnss_sam_m8q",
+            "board_name": "Qwiic GNSS SAM-M8Q",
+            "project_file_basename": "SparkFun_Qwiic_GNSS_SAM-M8Q",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_Qwiic_GNSS_SAM-M8Q",
+            "repo_url": "https://github.com/sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+                {"version": "v0.1", "git_ref": "v01"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_GNSS_DAN-F10N",
+            "board": "gnss_dan_f10n",
+            "board_name": "GNSS DAN-F10N",
+            "project_file_basename": "SparkFun_GNSS_DAN-F10N",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_GNSS_DAN-F10N",
+            "repo_url": "https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+                {"version": "v1.0", "git_ref": "v10"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_u-blox_NEO-F10N",
+            "board": "ublox_neo_f10n",
+            "board_name": "u-blox NEO-F10N",
+            "project_file_basename": "SparkFun_NEO-F10N",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_NEO-F10N",
+            "repo_url": "https://github.com/sparkfun/SparkFun_u-blox_NEO-F10N",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+            ],
+        },
+        {
+            "github_repository": "SparkFun_GNSS_Flex_Breakout",
+            "board": "gnss_flex_breakout",
+            "board_name": "GNSS Flex Breakout",
+            "project_file_basename": "SparkFun_GNSS_Flex_Breakout",
+            "project_file_folder": "Hardware",
+            "project_file_path": "Hardware/SparkFun_GNSS_Flex_Breakout",
+            "repo_url": "https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout",
+            "versions": [
+                {"version": "current", "git_ref": "main"},
+                {"version": "v1.0", "git_ref": "v10"},
+                {"version": "v1.1", "git_ref": "v11"},
+            ],
+        },
+    ]
+
+    for sparkfun_project in sparkfun_projects:
+        projects.append(
+            {
+                "github_user": "sparkfun",
+                "github_repository": sparkfun_project["github_repository"],
+                "github_url": sparkfun_project["repo_url"],
+                "repository_url": f"{sparkfun_project['repo_url']}.git",
+                "versions": [
+                    {
+                        "board": sparkfun_project["board"],
+                        "board_name": sparkfun_project["board_name"],
+                        "board_url": sparkfun_project["repo_url"],
+                        "version": version_details["version"],
+                        "git_ref": version_details["git_ref"],
+                        "sparse_checkout": True,
+                        "project_file_folder": sparkfun_project["project_file_folder"],
+                        "project_file_basename": sparkfun_project["project_file_basename"],
+                        "project_file_path": sparkfun_project["project_file_path"],
+                    }
+                    for version_details in sparkfun_project.get(
+                        "versions",
+                        [{"version": "current", "git_ref": "main"}],
+                    )
+                ],
+            }
+        )
 
     project_file_extensions = [
         ".kicad_pcb",
@@ -209,21 +753,21 @@ def main(**kwargs):
             option["taxonomy_1"] = "oomp"
             option["taxonomy_2"] = "project"
             option["taxonomy_3"] = "github"
-            option["taxonomy_4"] = project["github_user"]
-            option["taxonomy_5"] = project["github_repository"]
+            option["taxonomy_4"] = _normalize_project_slug(project["github_user"])
+            option["taxonomy_5"] = _normalize_project_slug(project["github_repository"])
             # Optional board level distinguishes several boards in one repo.
             # Omit it for single-board projects so existing IDs stay unchanged.
-            board = version_details.get("board", "").strip().lower().replace("-", "_").replace(" ", "_")
+            board = _normalize_project_slug(version_details.get("board", ""))
             if board:
                 option["taxonomy_6"] = board
-                option["taxonomy_7"] = version_details.get("version", "current")
+                option["taxonomy_7"] = _normalize_project_slug(version_details.get("version", "current"))
                 option["project_board"] = board
                 option["project_board_name"] = version_details.get("board_name", board.replace("_", " "))
                 option["project_board_url"] = version_details.get("board_url", "")
             else:
-                option["taxonomy_6"] = version_details.get("version", "current")
+                option["taxonomy_6"] = _normalize_project_slug(version_details.get("version", "current"))
 
-            option["project_github_user"] = project["github_user"]
+            option["project_github_user"] = _normalize_project_slug(project["github_user"])
             option["project_github_repository"] = project["github_repository"]
             option["project_github_url"] = project.get(
                 "github_url",

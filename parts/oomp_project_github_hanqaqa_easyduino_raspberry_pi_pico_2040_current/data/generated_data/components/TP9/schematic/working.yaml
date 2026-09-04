@@ -1,0 +1,88 @@
+available: true
+units:
+- reference: TP9
+  source_file: data/kicad_file.kicad_sch
+  uuid: ae0a1018-3924-49ea-a279-0505fe485825
+  library_id: rp2040_lib:TestPoint
+  unit: 1
+  body_style: 1
+  position:
+    x: 29.21
+    y: 143.51
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: TP9
+    Value: ''
+    Footprint: rp2040_lib:TestPoint_pad
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -3.81
+      rotation: 90.0
+    length: 0.0
+    position:
+      x: 29.21
+      y: 147.32
+    net: QSPI_SCLK
+    net_aliases:
+    - QSPI_SCLK
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '52'
+      pin_name: QSPI_SCLK
+    - reference: U3
+      pin_number: '6'
+      pin_name: CLK
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.127
+        y: -3.937
+      max:
+        x: 2.921
+        y: -1.905
+      width: 3.048
+      height: 2.032
+      center:
+        x: 1.397
+        y: -2.921
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 26.289
+        y: 145.415
+      max:
+        x: 29.337
+        y: 147.447
+      width: 3.048
+      height: 2.032
+      center:
+        x: 27.813
+        y: 146.431
+  warnings: []
+connected_components:
+- reference: U2
+  pin_number: '52'
+  pin_name: QSPI_SCLK
+- reference: U3
+  pin_number: '6'
+  pin_name: CLK

@@ -94,7 +94,7 @@ oomlout_ai_roboclick_1:
     project_sparse_checkout: false
     project_version: current
     timeout: '600'
-  file_test: ''
+  file_test: data/original/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
   actions:
@@ -104,7 +104,7 @@ oomlout_ai_roboclick_2:
     file_output: data/interactivehtmlbom/generation_status.yaml
     file_python: kicad_agents/interactive_html_bom_action.py
     timeout: '1200'
-  file_test: ''
+  file_test: data/interactivehtmlbom/generation_status.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
@@ -183,6 +183,10 @@ oomlout_ai_roboclick_3:
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
+  file_test: data/generated_data/src/board_mechanical_300.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: run_python
     description: Refresh Used in projects metadata and part README links from all
       confirmed project matches.
@@ -191,7 +195,7 @@ oomlout_ai_roboclick_3:
     timeout: '600'
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Preserve original KiCad files, package local libraries, and replace

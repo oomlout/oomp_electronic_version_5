@@ -103,13 +103,22 @@ oomlout_ai_roboclick_1:
       soldering footprint variants.
     file_output: data/kicad/manifest.yaml
     file_python: kicad_agents/kicad_library_agent.py
-    file_test: data/kicad/manifest.yaml
     timeout: '600'
+  description: Install KiCad master data for this part.
+  file_test: data/kicad/manifest.yaml
+  retries_until_complete: 0
+oomlout_ai_roboclick_2:
+  actions:
   - command: file_copy
     delete_before_copy: true
     exit_on_missing: true
     file_destination: data/datasheet.pdf
     file_source: parts_source/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
+  actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -175,9 +184,9 @@ oomlout_ai_roboclick_1:
     resample: lanczos
   description: Build component diagrams and proportional 300-pixel README previews
     with deterministic Python actions.
-  file_test: ''
+  file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_2:
+oomlout_ai_roboclick_4:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -240,13 +249,22 @@ oomlout_ai_roboclick_2:
             verified soldering footprint variants.
           file_output: data/kicad/manifest.yaml
           file_python: kicad_agents/kicad_library_agent.py
-          file_test: data/kicad/manifest.yaml
           timeout: '600'
+        description: Install KiCad master data for this part.
+        file_test: data/kicad/manifest.yaml
+        retries_until_complete: 0
+      oomlout_ai_roboclick_2:
+        actions:
         - command: file_copy
           delete_before_copy: true
           exit_on_missing: true
           file_destination: data/datasheet.pdf
           file_source: parts_source/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.
@@ -313,7 +331,7 @@ oomlout_ai_roboclick_2:
           resample: lanczos
         description: Build component diagrams and proportional 300-pixel README previews
           with deterministic Python actions.
-        file_test: ''
+        file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
       part_id: DS1
       part_number_manufacturer: QT200H1201

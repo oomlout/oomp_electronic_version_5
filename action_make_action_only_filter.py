@@ -2,7 +2,7 @@ import copy
 import working_scad
 
 def main(**kwargs):
-    filter = ["food_baking_flour_white"]
+    filter = ["hanqaqa_easyduino_raspberry_pi_pico_2040_current"]
     kwargs["filter"] = filter
     kwargs["run_oomp_populate"] = True
 

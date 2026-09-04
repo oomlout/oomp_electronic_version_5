@@ -1,0 +1,257 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 10
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - R9
+  value: 2.4k
+  footprint: Resistor_SMD:R_0402_1005Metric
+  query: 2.4k Resistor_SMD:R_0402_1005Metric
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=2.4k+Resistor_SMD%3AR_0402_1005Metric
+    datasheet_search: https://www.google.com/search?q=2.4k+Resistor_SMD%3AR_0402_1005Metric+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0402_2400_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_quarter_watt_through_hole_2200_ohm
+  - electronic_resistor_quarter_watt_through_hole_2700_ohm
+  - electronic_resistor_quarter_watt_through_hole_2000_ohm
+  - electronic_resistor_quarter_watt_through_hole_1800_ohm
+  - electronic_resistor_quarter_watt_through_hole_3300_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - C10
+  - C6
+  - C7
+  value: 22u
+  footprint: Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I
+  query: 22u Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=22u+Capacitor_Tantalum_SMD%3ACP_EIA-3216-10_Kemet-I
+    datasheet_search: https://www.google.com/search?q=22u+Capacitor_Tantalum_SMD%3ACP_EIA-3216-10_Kemet-I+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  - electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt
+  - electronic_capacitor_0402_4_7_micro_farad
+  - electronic_capacitor_0603_4_7_micro_farad
+  - electronic_capacitor_0402_22_nano_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - U5
+  value: AMS1117-3.3
+  footprint: Package_TO_SOT_SMD:SOT-223-3_TabPin2
+  query: AMS1117-3.3 Package_TO_SOT_SMD:SOT-223-3_TabPin2
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=AMS1117-3.3+Package_TO_SOT_SMD%3ASOT-223-3_TabPin2
+    datasheet_search: https://www.google.com/search?q=AMS1117-3.3+Package_TO_SOT_SMD%3ASOT-223-3_TabPin2+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - U3
+  value: CP2102N-Axx-xQFN28
+  footprint: Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm
+  query: CP2102N-Axx-xQFN28 Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=CP2102N-Axx-xQFN28+Package_DFN_QFN%3AQFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm
+    datasheet_search: https://www.google.com/search?q=CP2102N-Axx-xQFN28+Package_DFN_QFN%3AQFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - D2
+  - D3
+  value: D_Schottky
+  footprint: Diode_SMD:D_0402_1005Metric
+  query: D_Schottky Diode_SMD:D_0402_1005Metric
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=D_Schottky+Diode_SMD%3AD_0402_1005Metric
+    datasheet_search: https://www.google.com/search?q=D_Schottky+Diode_SMD%3AD_0402_1005Metric+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_6
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: ESP32-S3-DevKitC
+  footprint: Espressif:ESP32-S3-DevKitC
+  query: ESP32-S3-DevKitC Espressif:ESP32-S3-DevKitC
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=ESP32-S3-DevKitC+Espressif%3AESP32-S3-DevKitC
+    datasheet_search: https://www.google.com/search?q=ESP32-S3-DevKitC+Espressif%3AESP32-S3-DevKitC+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_7
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: ESP32-S3-WROOM-1
+  footprint: Espressif:ESP32-S3-WROOM-1
+  query: ESP32-S3-WROOM-1 Espressif:ESP32-S3-WROOM-1
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=ESP32-S3-WROOM-1+Espressif%3AESP32-S3-WROOM-1
+    datasheet_search: https://www.google.com/search?q=ESP32-S3-WROOM-1+Espressif%3AESP32-S3-WROOM-1+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_8
+  status: needs_browser_research
+  priority: high
+  references:
+  - Q1
+  - Q2
+  value: Q_NPN_BCE
+  footprint: Package_TO_SOT_SMD:SOT-23W
+  query: Q_NPN_BCE Package_TO_SOT_SMD:SOT-23W
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=Q_NPN_BCE+Package_TO_SOT_SMD%3ASOT-23W
+    datasheet_search: https://www.google.com/search?q=Q_NPN_BCE+Package_TO_SOT_SMD%3ASOT-23W+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
+  - electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_9
+  status: needs_browser_research
+  priority: high
+  references:
+  - SW1
+  - SW2
+  value: SW_Push
+  footprint: Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK
+  query: SW_Push Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=SW_Push+Button_Switch_SMD%3ASW_Push_SPST_NO_Alps_SKRK
+    datasheet_search: https://www.google.com/search?q=SW_Push+Button_Switch_SMD%3ASW_Push_SPST_NO_Alps_SKRK+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_10
+  status: needs_browser_research
+  priority: high
+  references:
+  - J1
+  - J2
+  value: USB_C_Receptacle_USB2.0
+  footprint: Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV
+  query: USB_C_Receptacle_USB2.0 Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=USB_C_Receptacle_USB2.0+Connector_USB%3AUSB_C_Receptacle_G-Switch_GT-USB-7010ASV
+    datasheet_search: https://www.google.com/search?q=USB_C_Receptacle_USB2.0+Connector_USB%3AUSB_C_Receptacle_G-Switch_GT-USB-7010ASV+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

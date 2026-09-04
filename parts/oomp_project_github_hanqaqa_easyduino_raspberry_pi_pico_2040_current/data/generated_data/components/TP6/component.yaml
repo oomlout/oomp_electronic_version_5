@@ -1,0 +1,342 @@
+reference: TP6
+schematic:
+  available: true
+  units:
+  - reference: TP6
+    source_file: data/kicad_file.kicad_sch
+    uuid: 559b5fa2-822a-4afe-8336-69d68040911f
+    library_id: rp2040_lib:TestPoint
+    unit: 1
+    body_style: 1
+    position:
+      x: 259.08
+      y: 125.73
+      rotation: 0.0
+      mirror: y
+      units: mm
+    properties:
+      Reference: TP6
+      Value: ''
+      Footprint: rp2040_lib:TestPoint_pad
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -3.81
+        rotation: 90.0
+      length: 0.0
+      position:
+        x: 259.08
+        y: 129.54
+      net: SWD
+      net_aliases:
+      - SWD
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: J5
+        pin_number: '3'
+        pin_name: Pin_3
+      - reference: J6
+        pin_number: '3'
+        pin_name: Pin_3
+      - reference: U2
+        pin_number: '25'
+        pin_name: SWD
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.127
+          y: -3.937
+        max:
+          x: 2.921
+          y: -1.905
+        width: 3.048
+        height: 2.032
+        center:
+          x: 1.397
+          y: -2.921
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 256.159
+          y: 127.635
+        max:
+          x: 259.207
+          y: 129.667
+        width: 3.048
+        height: 2.032
+        center:
+          x: 257.683
+          y: 128.651
+    warnings: []
+  connected_components:
+  - reference: J5
+    pin_number: '3'
+    pin_name: Pin_3
+  - reference: J6
+    pin_number: '3'
+    pin_name: Pin_3
+  - reference: U2
+    pin_number: '25'
+    pin_name: SWD
+pcb:
+  reference: TP6
+  value: '~'
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 2bb5ab1d-699c-4599-8a07-04e6b7fdb440
+  library_id: rp2040_lib:TestPoint_pad
+  layer: B.Cu
+  side: back
+  position:
+    x: 146.45
+    y: 107.3
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: TP6
+    Value: '~'
+    Datasheet: ''
+    Description: ''
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: circle
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 146.45
+      y: 107.3
+    placed_rotation: 0.0
+    size:
+      x: 0.5
+      y: 0.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    net: /SWD
+    net_number: null
+    pin_function: '1_1'
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.25
+          y: -0.25
+        max:
+          x: 0.25
+          y: 0.25
+        width: 0.5
+        height: 0.5
+        center:
+          x: 0.0
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 146.2
+          y: 107.05
+        max:
+          x: 146.7
+          y: 107.55
+        width: 0.5
+        height: 0.5
+        center:
+          x: 146.45
+          y: 107.3
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: J5
+      pad_number: '3'
+    - reference: J6
+      pad_number: '3'
+    - reference: U2
+      pad_number: '25'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.25
+        y: -0.25
+      max:
+        x: 0.25
+        y: 0.25
+      width: 0.5
+      height: 0.5
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 146.2
+        y: 107.05
+      max:
+        x: 146.7
+        y: 107.55
+      width: 0.5
+      height: 0.5
+      center:
+        x: 146.45
+        y: 107.3
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.25
+        y: -0.25
+      max:
+        x: 0.25
+        y: 0.25
+      width: 0.5
+      height: 0.5
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 146.2
+        y: 107.05
+      max:
+        x: 146.7
+        y: 107.55
+      width: 0.5
+      height: 0.5
+      center:
+        x: 146.45
+        y: 107.3
+  connected_components:
+  - J5
+  - J6
+  - U2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - SWD
+    pcb_nets:
+    - /SWD
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: '~'
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: test_point
+category_source: unmatched_kicad_hint
+category_name: Test point
+generated_directory: components/TP6

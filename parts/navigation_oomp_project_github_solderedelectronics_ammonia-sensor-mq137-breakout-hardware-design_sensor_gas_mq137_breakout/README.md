@@ -1,0 +1,23 @@
+# Oomp / Project / Github / Solderedelectronics / AMMONIA-SENSOR-MQ137-BREAKOUT-HARDWARE-DESIGN / Sensor Gas MQ137 Breakout
+
+This OOMP navigation part publishes the category index at
+[the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/oomp/project/github/SolderedElectronics/Ammonia-sensor-MQ137-breakout-hardware-design/sensor_gas_mq137_breakout).
+
+It contains 1 descendant parts.
+
+
+[Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/oomp/project/github/SolderedElectronics/Ammonia-sensor-MQ137-breakout-hardware-design)
+
+
+
+
+
+## Parts
+
+- [Project SolderedElectronics/Ammonia-sensor-MQ137-breakout-hardware-design MQ137 Breakout current](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_SolderedElectronics_Ammonia-sensor-MQ137-breakout-hardware-design_sensor_gas_mq137_breakout_current) — `oomp_project_github_SolderedElectronics_Ammonia-sensor-MQ137-breakout-hardware-design_sensor_gas_mq137_breakout_current`
+
+
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

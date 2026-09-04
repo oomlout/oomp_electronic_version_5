@@ -1,0 +1,351 @@
+reference: TP4
+schematic:
+  available: true
+  units:
+  - reference: TP4
+    source_file: data/kicad_file.kicad_sch
+    uuid: c58d3f3b-8ca6-4771-b80e-d09ac25a852f
+    library_id: rp2040_lib:TestPoint
+    unit: 1
+    body_style: 1
+    position:
+      x: 236.22
+      y: 120.65
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: TP4
+      Value: ''
+      Footprint: rp2040_lib:TestPoint_pad
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -3.81
+        rotation: 90.0
+      length: 0.0
+      position:
+        x: 236.22
+        y: 124.46
+      net: XoutR
+      net_aliases:
+      - XoutR
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C17
+        pin_number: '1'
+        pin_name: ''
+      - reference: R8
+        pin_number: '2'
+        pin_name: ''
+      - reference: R9
+        pin_number: '1'
+        pin_name: ''
+      - reference: Y1
+        pin_number: '3'
+        pin_name: '3'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.127
+          y: -3.937
+        max:
+          x: 2.921
+          y: -1.905
+        width: 3.048
+        height: 2.032
+        center:
+          x: 1.397
+          y: -2.921
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 236.093
+          y: 122.555
+        max:
+          x: 239.141
+          y: 124.587
+        width: 3.048
+        height: 2.032
+        center:
+          x: 237.617
+          y: 123.571
+    warnings: []
+  connected_components:
+  - reference: C17
+    pin_number: '1'
+    pin_name: ''
+  - reference: R8
+    pin_number: '2'
+    pin_name: ''
+  - reference: R9
+    pin_number: '1'
+    pin_name: ''
+  - reference: Y1
+    pin_number: '3'
+    pin_name: '3'
+pcb:
+  reference: TP4
+  value: '~'
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 13967980-bffb-4f12-b315-5f03ef6c2b96
+  library_id: rp2040_lib:TestPoint_pad
+  layer: F.Cu
+  side: front
+  position:
+    x: 143.7
+    y: 110.3
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: TP4
+    Value: '~'
+    Datasheet: ''
+    Description: ''
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: circle
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 143.7
+      y: 110.3
+    placed_rotation: 0.0
+    size:
+      x: 0.5
+      y: 0.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    net: /XoutR
+    net_number: null
+    pin_function: '1_1'
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.25
+          y: -0.25
+        max:
+          x: 0.25
+          y: 0.25
+        width: 0.5
+        height: 0.5
+        center:
+          x: 0.0
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 143.45
+          y: 110.05
+        max:
+          x: 143.95
+          y: 110.55
+        width: 0.5
+        height: 0.5
+        center:
+          x: 143.7
+          y: 110.3
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C17
+      pad_number: '1'
+    - reference: R8
+      pad_number: '2'
+    - reference: R9
+      pad_number: '1'
+    - reference: Y1
+      pad_number: '3'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.25
+        y: -0.25
+      max:
+        x: 0.25
+        y: 0.25
+      width: 0.5
+      height: 0.5
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 143.45
+        y: 110.05
+      max:
+        x: 143.95
+        y: 110.55
+      width: 0.5
+      height: 0.5
+      center:
+        x: 143.7
+        y: 110.3
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.25
+        y: -0.25
+      max:
+        x: 0.25
+        y: 0.25
+      width: 0.5
+      height: 0.5
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 143.45
+        y: 110.05
+      max:
+        x: 143.95
+        y: 110.55
+      width: 0.5
+      height: 0.5
+      center:
+        x: 143.7
+        y: 110.3
+  connected_components:
+  - C17
+  - R8
+  - R9
+  - Y1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - XoutR
+    pcb_nets:
+    - /XoutR
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: '~'
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: test_point
+category_source: unmatched_kicad_hint
+category_name: Test point
+generated_directory: components/TP4

@@ -72,6 +72,11 @@ oomlout_ai_roboclick_1:
     file_output: data/kicad/manifest.yaml
     file_python: kicad_agents/kicad_library_agent.py
     timeout: '600'
+  description: Install KiCad master data for this part.
+  file_test: data/kicad/manifest.yaml
+  retries_until_complete: 0
+oomlout_ai_roboclick_2:
+  actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
     file_output: data/working_svg_assembly.svg
@@ -137,9 +142,9 @@ oomlout_ai_roboclick_1:
     resample: lanczos
   description: Build component diagrams and proportional 300-pixel README previews
     with deterministic Python actions.
-  file_test: ''
+  file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_2:
+oomlout_ai_roboclick_3:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -170,6 +175,11 @@ oomlout_ai_roboclick_2:
           file_output: data/kicad/manifest.yaml
           file_python: kicad_agents/kicad_library_agent.py
           timeout: '600'
+        description: Install KiCad master data for this part.
+        file_test: data/kicad/manifest.yaml
+        retries_until_complete: 0
+      oomlout_ai_roboclick_2:
+        actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
             working_svg.py.
@@ -236,7 +246,7 @@ oomlout_ai_roboclick_2:
           resample: lanczos
         description: Build component diagrams and proportional 300-pixel README previews
           with deterministic Python actions.
-        file_test: ''
+        file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
       part_id: C1
       part_page:
@@ -511,6 +521,22 @@ oomlout_ai_roboclick_2:
         - C10
         - C14
         version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current/board_explorer.html
+        board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Nano
+        github_url: https://github.com/Hanqaqa/Easyduino
+        name: Project hanqaqa/easyduino ATmega328P Arduino Nano current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current
+        project_id: oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current
+        quantity: 7
+        references:
+        - C2
+        - C3
+        - C4
+        - C5
+        - C6
+        - C7
+        - C8
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_esp32_current/board_explorer.html
         board_url: https://github.com/Hanqaqa/Easyduino/tree/master/ESP32
         github_url: https://github.com/Hanqaqa/Easyduino
@@ -525,6 +551,26 @@ oomlout_ai_roboclick_2:
         - C6
         - C9
         - C10
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current/board_explorer.html
+        board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Raspberry%20Pi%20Pico%202040
+        github_url: https://github.com/Hanqaqa/Easyduino
+        name: Project hanqaqa/easyduino Raspberry Pi Pico 2040 current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current
+        project_id: oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current
+        quantity: 11
+        references:
+        - C1
+        - C2
+        - C5
+        - C6
+        - C7
+        - C8
+        - C9
+        - C10
+        - C11
+        - C12
+        - C15
         version: current
     dict_data_files: {}
     dict_data_files_exists: {}
@@ -862,6 +908,22 @@ used_in_projects:
   - C10
   - C14
   version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current/board_explorer.html
+  board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Nano
+  github_url: https://github.com/Hanqaqa/Easyduino
+  name: Project hanqaqa/easyduino ATmega328P Arduino Nano current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current
+  project_id: oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current
+  quantity: 7
+  references:
+  - C2
+  - C3
+  - C4
+  - C5
+  - C6
+  - C7
+  - C8
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_esp32_current/board_explorer.html
   board_url: https://github.com/Hanqaqa/Easyduino/tree/master/ESP32
   github_url: https://github.com/Hanqaqa/Easyduino
@@ -876,4 +938,24 @@ used_in_projects:
   - C6
   - C9
   - C10
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current/board_explorer.html
+  board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Raspberry%20Pi%20Pico%202040
+  github_url: https://github.com/Hanqaqa/Easyduino
+  name: Project hanqaqa/easyduino Raspberry Pi Pico 2040 current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current
+  project_id: oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current
+  quantity: 11
+  references:
+  - C1
+  - C2
+  - C5
+  - C6
+  - C7
+  - C8
+  - C9
+  - C10
+  - C11
+  - C12
+  - C15
   version: current

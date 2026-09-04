@@ -20,6 +20,7 @@ from kicad_agents.browser_research_agent import (
 )
 from kicad_agents.component_addition_agent import validate_record
 from kicad_agents.pipeline_audit_agent import run_audit
+from kicad_agents.project_git_action import refresh_project_files
 from kicad_agents.sexpr import children, load, tag, value
 from action_regenerate_all import _is_browser_action
 import working_oomp_populate_project
@@ -759,7 +760,7 @@ class ProjectPartTests(unittest.TestCase):
     def test_project_populator_defaults_to_current_and_allows_version_records(self):
         options = []
         working_oomp_populate_project.main(options=options)
-        self.assertEqual(len(options), 4)
+        self.assertGreater(len(options), 8)
         project = next(option for option in options if option["project_github_repository"] == "pt1")
         taxonomy = [project[f"taxonomy_{number}"] for number in range(1, 7)]
         self.assertEqual(taxonomy, ["oomp", "project", "github", "electrolama", "pt1", "current"])
@@ -773,23 +774,99 @@ class ProjectPartTests(unittest.TestCase):
         )
         self.assertIs(bus_pirate["project_sparse_checkout"], True)
         self.assertEqual(bus_pirate["project_file_folder"], "bus_pirate_pcb/5-REV10A")
-        easyduino = next(option for option in options if option["project_github_repository"] == "easyduino")
+        easyduino_nano = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "easyduino"
+            and option["project_board"] == "atmega328p_arduino_nano"
+        )
+        self.assertEqual(
+            [easyduino_nano[f"taxonomy_{n}"] for n in range(1, 8)],
+            ["oomp", "project", "github", "hanqaqa", "easyduino", "atmega328p_arduino_nano", "current"],
+        )
+        self.assertEqual(easyduino_nano["project_git_ref"], "master")
+        self.assertEqual(easyduino_nano["project_file_basename"], "Easyduino_Atmega_Nano")
+        easyduino = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "easyduino"
+            and option["project_board"] == "atmega328p_arduino_uno"
+        )
         self.assertEqual([easyduino[f"taxonomy_{n}"] for n in range(1, 8)],
                          ["oomp", "project", "github", "hanqaqa", "easyduino", "atmega328p_arduino_uno", "current"])
         self.assertEqual(easyduino["project_git_ref"], "master")
         self.assertEqual(easyduino["project_file_basename"], "Easyduino_Atmega")
+        easyduino_esp32s3 = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "easyduino"
+            and option["project_board"] == "esp32s3"
+        )
+        self.assertEqual(easyduino_esp32s3["project_file_basename"], "Easyduino_ESP32S3")
+        easyduino_pico = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "easyduino"
+            and option["project_board"] == "raspberry_pi_pico_2040"
+        )
+        self.assertEqual(easyduino_pico["project_file_basename"], "Easyduino_RP2040")
+        easyduino_bluepill = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "easyduino"
+            and option["project_board"] == "stm32f103_bluepill"
+        )
+        self.assertEqual(easyduino_bluepill["project_file_basename"], "Easyduino_STM32F103")
+
+    def test_project_populator_normalizes_taxonomy_and_github_user_ids(self):
+        options = []
+        working_oomp_populate_project.main(options=options)
+        project = next(
+            option
+            for option in options
+            if option["project_github_user"] == "soldered_electronics"
+            and option["project_github_repository"] == "Butane--LPG---Smoke-sensor-MQ2-breakout-hardware-design"
+        )
+        self.assertEqual(project["taxonomy_4"], "soldered_electronics")
+        self.assertEqual(project["taxonomy_5"], "butane_lpg_smoke_sensor_mq2_breakout_hardware_design")
+        self.assertEqual(project["project_github_user"], "soldered_electronics")
+
+    def test_project_git_action_writes_error_file_when_fetch_fails(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            part_directory = Path(temporary_directory) / "test_project"
+            part_directory.mkdir()
+            details = {
+                "directory": str(part_directory),
+                "project_git_url": "https://example.invalid/not_real_repo.git",
+                "project_github_repository": "not_real_repo",
+                "project_file_basename": "BrokenBoard",
+                "project_file_folder": "CAD/V1",
+                "project_file_extensions": [".kicad_pcb", ".kicad_sch", ".kicad_pro"],
+                "project_sparse_checkout": True,
+                "project_git_ref": "main",
+            }
+            with self.assertRaises((RuntimeError, OSError, ValueError)):
+                refresh_project_files(details)
+            error_file = part_directory / "data" / "error.txt"
+            self.assertTrue(error_file.is_file())
+            error_text = error_file.read_text(encoding="utf-8")
+            self.assertIn("Project data fetch failed.", error_text)
+            self.assertIn("Repository URL", error_text)
+            self.assertIn("BrokenBoard", error_text)
 
     def test_generated_project_part_has_always_run_actions_and_local_assets(self):
         working = yaml.safe_load((PROJECT_PART / "working.yaml").read_text(encoding="utf-8"))
         first_action = working["oomlout_ai_roboclick_1"]
         second_action = working["oomlout_ai_roboclick_3"]
-        self.assertEqual(first_action["file_test"], "")
-        self.assertEqual(second_action["file_test"], "")
+        usage_action = working["oomlout_ai_roboclick_4"]
+        self.assertEqual(first_action["file_test"], "data/original/manifest.yaml")
+        self.assertEqual(second_action["file_test"], "data/generated_data/src/board_mechanical_300.png")
+        self.assertEqual(usage_action["file_test"], "")
         self.assertEqual(first_action["actions"][0]["command"], "run_python")
         self.assertEqual(second_action["actions"][0]["command"], "run_python")
         self.assertIs(second_action["actions"][0]["regenerate_pngs"], False)
-        self.assertEqual(len(second_action["actions"]), 7)
-        self.assertEqual(second_action["actions"][-1]["file_python"], "kicad_agents/project_usage_action.py")
+        self.assertEqual(len(second_action["actions"]), 6)
+        self.assertEqual(usage_action["actions"][0]["file_python"], "kicad_agents/project_usage_action.py")
         self.assertEqual(second_action["actions"][1]["file_destination"], "data/generated_data/src/board_300.png")
         self.assertEqual(second_action["actions"][2]["file_destination"], "data/generated_data/src/board_pins_300.png")
         self.assertEqual(second_action["actions"][3]["file_destination"], "data/generated_data/src/board_bottom_300.png")
@@ -1027,11 +1104,12 @@ class ElectronicPartReadmeTests(unittest.TestCase):
     def test_part_readme_uses_pinout_hero_and_small_previews(self):
         part_directory = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm"
         working = yaml.safe_load((part_directory / "working.yaml").read_text(encoding="utf-8"))
-        preview_action = working["oomlout_ai_roboclick_1"]
-        preview_actions = preview_action["actions"]
-
-        library_action = next(action for action in preview_actions if action.get("file_python") == "kicad_agents/kicad_library_agent.py")
+        library_action = working["oomlout_ai_roboclick_1"]["actions"][0]
         self.assertEqual(library_action["file_output"], "data/kicad/manifest.yaml")
+        self.assertEqual(working["oomlout_ai_roboclick_1"]["file_test"], "data/kicad/manifest.yaml")
+        preview_action = working["oomlout_ai_roboclick_2"]
+        preview_actions = preview_action["actions"]
+        self.assertEqual(preview_action["file_test"], "data/working_svg_square_pins_300.png")
         svg_action = next(action for action in preview_actions if action.get("file_python") == "kicad_agents/component_svg_action.py")
         self.assertEqual(svg_action["command"], "run_python")
         self.assertEqual(svg_action["part_id"], part_directory.name)

@@ -1,0 +1,119 @@
+available: true
+units:
+- reference: Y1
+  source_file: data/kicad_file.kicad_sch
+  uuid: b31c3c8e-1bdb-4670-ac00-ea9b85a4ab4e
+  library_id: Device:Crystal
+  unit: 1
+  body_style: 1
+  position:
+    x: 194.31
+    y: 67.31
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Y1
+    Value: 8MHz
+    Footprint: Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm
+    Datasheet: ''
+    Description: ''
+    LCSC: C115962
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 190.5
+      y: 67.31
+    net: PD0
+    net_aliases:
+    - PD0
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C7
+      pin_number: '1'
+      pin_name: ''
+    - reference: U2
+      pin_number: '5'
+      pin_name: PD0
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 198.12
+      y: 67.31
+    net: PD1
+    net_aliases:
+    - PD1
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C8
+      pin_number: '1'
+      pin_name: ''
+    - reference: U2
+      pin_number: '6'
+      pin_name: PD1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -2.6924
+      max:
+        x: 2.54
+        y: 2.6924
+      width: 5.08
+      height: 5.3848
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 191.77
+        y: 64.6176
+      max:
+        x: 196.85
+        y: 70.0024
+      width: 5.08
+      height: 5.3848
+      center:
+        x: 194.31
+        y: 67.31
+  warnings: []
+connected_components:
+- reference: C7
+  pin_number: '1'
+  pin_name: ''
+- reference: C8
+  pin_number: '1'
+  pin_name: ''
+- reference: U2
+  pin_number: '5'
+  pin_name: PD0
+- reference: U2
+  pin_number: '6'
+  pin_name: PD1
