@@ -73,6 +73,7 @@ IC W25Q128JVSIQ SOP 8 5 28 MM X 5 23 MM is an OOMP electronic ic definition. It 
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |

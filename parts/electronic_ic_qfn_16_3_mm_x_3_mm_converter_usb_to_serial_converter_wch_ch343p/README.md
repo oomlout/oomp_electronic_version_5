@@ -82,6 +82,7 @@ IC CH343P QFN 16 3 MM X 3 MM is an OOMP electronic ic definition. It uses the qf
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |

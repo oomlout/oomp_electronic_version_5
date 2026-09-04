@@ -93,6 +93,8 @@ IC CP2102-GMR QFN 28 5 MM X 5 MM is an OOMP electronic ic definition. It uses th
 [View the datasheet](data/datasheet.pdf)
 
 
+
+
 ## Files
 
 

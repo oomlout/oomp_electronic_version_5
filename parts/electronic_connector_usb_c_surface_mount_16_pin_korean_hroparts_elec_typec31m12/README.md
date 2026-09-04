@@ -81,6 +81,7 @@ Connector USB-C TYPE-C-31-M-12 is an OOMP electronic connector definition. It us
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |

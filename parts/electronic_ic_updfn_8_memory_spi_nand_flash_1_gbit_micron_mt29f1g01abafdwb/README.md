@@ -73,6 +73,7 @@ IC MT29F1G01ABAFDWB UPDFN 8 is an OOMP electronic ic definition. It uses the upd
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |

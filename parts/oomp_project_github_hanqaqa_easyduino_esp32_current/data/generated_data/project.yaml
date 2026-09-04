@@ -73044,7 +73044,7 @@ components:
     confidence: 1.0
     proposed_oomp_id: null
     inferred:
-      kind: null
+      kind: transistor
       package_size: null
       value: SS8050
       mpn: null
@@ -73635,7 +73635,7 @@ components:
     confidence: 1.0
     proposed_oomp_id: null
     inferred:
-      kind: null
+      kind: transistor
       package_size: null
       value: SS8050
       mpn: null
@@ -85255,8 +85255,7 @@ components:
       value: CP2102N-Axx-xQFN28
       mpn: null
     reasons:
-    - BOM C6568, upstream PDF and README identify CP2102-GMR, but the actual schematic symbol is CP2102N-Axx-xQFN28. CP2102-GMR
-      has been added to OOMP; confirm which chip is intended before accepting a match.
+    - No supported OOMP component family could be inferred.
     candidates: []
   category: interface
   category_source: unmatched_kicad_hint
@@ -97887,29 +97886,14 @@ components:
       value: ESP32-DevKitC
       mpn: null
     reasons:
-    - 'ESP32-DevKitC is a combined 38-pad carrier/header footprint, not an additional DevKit board: the source photo shows
-      two 19-pin male headers. Both headers already exist as electronic_connector_header_2_54_mm_pitch_through_hole_19_pin,
-      but a one-footprint-to-two-parts mapping needs confirmation. Do not buy another DevKitC.'
+    - No supported OOMP component family could be inferred.
     candidates: []
   category: ic
   category_source: unmatched_kicad_hint
   category_name: IC
   generated_directory: components/U4
-review_notes:
-- 'J1: C2765186 and the supplied USBC.pdf identify SHOU HAN TYPE-C 16PIN 2MD(073), while the footprint is named G-Switch GT-USB-7010ASV.
-  OOMP follows the BOM/PDF identity; the original footprint remains unchanged pending land-pattern verification.'
-- 'D1: C7074 is Littelfuse SP0503BAHTG. The upstream ESD_Protection.pdf is TECH PUBLIC, so OOMP uses the downloaded Littelfuse
-  datasheet instead.'
-- 'C5/C7/C8: C11366 is AVX TAJA226K010RNJ, 22uF 10V, A-case 3216-18. The upstream Kemet-I footprint name specifies a lower
-  1.0mm body; verify clearance for the actual 1.8mm capacitor.'
-- 'SW1/SW2: C720477 is XUNPU TS-1088-AR02016, not Alps. The original Alps_SKRK footprint is retained; exact master compatibility
-  has not been certified.'
-blocked_matches:
-  U1: BOM C6568, upstream PDF and README identify CP2102-GMR, but the actual schematic symbol is CP2102N-Axx-xQFN28. CP2102-GMR
-    has been added to OOMP; confirm which chip is intended before accepting a match.
-  U4: 'ESP32-DevKitC is a combined 38-pad carrier/header footprint, not an additional DevKit board: the source photo shows
-    two 19-pin male headers. Both headers already exist as electronic_connector_header_2_54_mm_pitch_through_hole_19_pin,
-    but a one-footprint-to-two-parts mapping needs confirmation. Do not buy another DevKitC.'
+review_notes: []
+blocked_matches: {}
 mounting_holes:
 - id: J1_hole_1
   reference: J1

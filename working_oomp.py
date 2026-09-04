@@ -526,7 +526,7 @@ def create_generic(**kwargs):
         # Optional illustrative artwork is deliberately opt-in.  Core OOMP
         # records, diagrams, previews, and documentation never require an LLM.
         test_image_chibi = as_boolean(kwargs.get("enable_ai_assets", False))
-        if test_image_chibi and not is_project_part:
+        if test_image_chibi and not is_navigation_part:
             content_string = part.get("content_string", "")    
             count += 1
             chibi_detail = f"make {name_proper} cute"

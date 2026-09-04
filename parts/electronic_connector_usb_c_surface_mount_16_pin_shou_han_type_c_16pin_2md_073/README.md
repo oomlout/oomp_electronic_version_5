@@ -83,6 +83,7 @@ Connector USB-C TYPE-C 16PIN 2MD(073) is an OOMP electronic connector definition
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |

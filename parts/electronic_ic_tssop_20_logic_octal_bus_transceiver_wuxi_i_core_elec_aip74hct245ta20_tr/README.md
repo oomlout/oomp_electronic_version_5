@@ -85,6 +85,7 @@ IC AiP74HCT245TA20.TR TSSOP 20 is an OOMP electronic ic definition. It uses the 
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |

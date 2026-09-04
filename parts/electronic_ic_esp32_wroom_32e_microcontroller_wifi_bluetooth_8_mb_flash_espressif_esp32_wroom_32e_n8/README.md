@@ -105,6 +105,7 @@ IC ESP32-WROOM-32E-N8 ESP32 WROOM 32E is an OOMP electronic ic definition. It us
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |

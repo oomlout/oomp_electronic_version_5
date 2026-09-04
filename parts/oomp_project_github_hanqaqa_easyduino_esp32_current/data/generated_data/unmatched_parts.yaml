@@ -7,6 +7,7 @@ components:
     footprint: Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm
     library_id: Interface_USB:CP2102N-Axx-xQFN28
     mpn: ''
+    manufacturer: ''
   match:
     status: unmatched
     accepted: false
@@ -19,8 +20,7 @@ components:
       value: CP2102N-Axx-xQFN28
       mpn: null
     reasons:
-    - BOM C6568, upstream PDF and README identify CP2102-GMR, but the actual schematic symbol is CP2102N-Axx-xQFN28. CP2102-GMR
-      has been added to OOMP; confirm which chip is intended before accepting a match.
+    - No supported OOMP component family could be inferred.
     candidates: []
   generated_directory: components/U1
 - reference: U4
@@ -30,6 +30,7 @@ components:
     footprint: Espressif:ESP32-DevKitC
     library_id: Espressif:ESP32-DevKitC
     mpn: ''
+    manufacturer: ''
   match:
     status: unmatched
     accepted: false
@@ -42,8 +43,6 @@ components:
       value: ESP32-DevKitC
       mpn: null
     reasons:
-    - 'ESP32-DevKitC is a combined 38-pad carrier/header footprint, not an additional DevKit board: the source photo shows
-      two 19-pin male headers. Both headers already exist as electronic_connector_header_2_54_mm_pitch_through_hole_19_pin,
-      but a one-footprint-to-two-parts mapping needs confirmation. Do not buy another DevKitC.'
+    - No supported OOMP component family could be inferred.
     candidates: []
   generated_directory: components/U4

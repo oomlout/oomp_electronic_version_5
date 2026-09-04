@@ -79,6 +79,7 @@ IC LMV324IPWR TSSOP 14 is an OOMP electronic ic definition. It uses the tssop 14
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |

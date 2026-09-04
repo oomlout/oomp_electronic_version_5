@@ -67,6 +67,7 @@ Switch TS-1088-AR02016 TACTILE is an OOMP electronic switch definition. It uses 
 
 
 
+
 ## Used in projects
 
 | Project | Quantity | References | Explore |
