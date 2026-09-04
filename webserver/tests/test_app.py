@@ -2113,6 +2113,7 @@ class WebserverAppTests(unittest.TestCase):
                 },
             )
             write_image(part_dir / "preview.png", size=(400, 240))
+            (part_dir / "nested").mkdir(parents=True, exist_ok=True)
             (part_dir / "nested" / "notes.txt").write_text("hello", encoding="utf-8")
 
             app = create_app(
