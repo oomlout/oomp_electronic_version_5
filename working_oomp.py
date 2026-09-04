@@ -56,6 +56,7 @@ def add_part_page_details(part):
     identifiers = []
     identifier_fields = [
         ["Manufacturer part number", "part_number_manufacturer"],
+        ["Generic part number", "part_number_generic"],
         ["MD5 alpha", "md5_6_alpha_upper"],
     ]
     for identifier_field in identifier_fields:

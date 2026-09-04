@@ -128,8 +128,12 @@ class CopperTests(unittest.TestCase):
             self.assertTrue((output / 'src' / 'board.svg').is_file())
             text = path.read_text(encoding='utf-8')
             self.assertNotIn('</script><script>alert(1)', text)
-            for control in ['copper-data', 'net-select', 'net-search', 'copper-layer', 'show-fills', 'show-traces']:
+            for control in ['copper-data', 'net-select', 'net-search', 'copper-layer', 'show-fills', 'show-traces', 'zoom-reset']:
                 self.assertIn(f'id="{control}"', text)
+            self.assertIn("setZoom(zoomScale * Math.exp(exponent), event.clientX, event.clientY)", text)
+            self.assertIn("stage.setPointerCapture(event.pointerId)", text)
+            self.assertIn("activePointers.size === 2", text)
+            self.assertIn("touch-action: none", text)
             self.assertIn("menu.className = 'pin-menu'", text)
             self.assertEqual(text.count('id="net-status"'), 1)
             right_panel = text.split('<aside class="panel detail">', 1)[1].split('</aside>', 1)[0]

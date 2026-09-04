@@ -38,3 +38,13 @@ research:
 If no exact LCSC listing exists, leave `lcsc_part_number` blank and explain the
 rejected candidate in `lcsc_decision`. Never use a code for a different suffix
 or package merely because the base part number matches.
+
+For a generic device family, use `exact_identity: false` and record its common
+number as `research.generic_part_number` (and `part_number_generic` in populate
+extra). Keep the manufacturer part number and LCSC number blank. If a supplier
+datasheet is used as a representative reference, add a plain `datasheet_note`
+in populate extra explaining that its manufacturer-specific limits are not a
+guarantee for every member of the generic family.
+
+The build also refreshes this part's navigation ancestors and repackages the
+KiCad library. It does not rebuild any project README, board image, or explorer.

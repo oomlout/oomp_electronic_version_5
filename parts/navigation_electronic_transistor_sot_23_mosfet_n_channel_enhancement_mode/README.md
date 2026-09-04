@@ -3,7 +3,7 @@
 This OOMP navigation part publishes the category index at
 [the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor/sot_23/mosfet/n_channel/enhancement_mode).
 
-It contains 1 descendant parts.
+It contains 5 descendant parts.
 
 
 [Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor/sot_23/mosfet/n_channel)
@@ -12,6 +12,7 @@ It contains 1 descendant parts.
 
 ## Categories
 
+- [50 Volt](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor/sot_23/mosfet/n_channel/enhancement_mode/50_volt)
 - [60 Volt](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/transistor/sot_23/mosfet/n_channel/enhancement_mode/60_volt)
 
 

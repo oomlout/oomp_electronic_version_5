@@ -137,12 +137,20 @@ the missing-component list is in progress.
      kicad_agents/component_records/E0000.yaml --regenerate-pngs
    ```
 
-The build runs population, writes only the selected part, executes only that
-part's Roboclick actions, restores `regenerate_pngs: false`, validates the
-result and writes a compact report under
+The build runs population, generates the selected component, refreshes its
+navigation ancestors, and repackages the KiCad library. Only the component and
+its ancestor READMEs run Roboclick actions; other components and all projects
+are not rebuilt. It restores `regenerate_pngs: false`, validates the result and
+writes a compact report under
 `kicad_agents/generated/component_additions/`. It hashes project README,
 explorer and board-image outputs before and after the run and fails if a
 component build changed them.
+
+Generic device families can define `part_number_generic`, a representative
+`datasheet_note`, and a `generic_match` dictionary in populate extra. Its plain
+`values`, `symbols`, and `footprints` arrays must all agree before the matcher
+accepts a generic family. Explicit manufacturer or MPN fields prevent this
+fallback, and the result records `identity_scope: generic_family`.
 
 ### Why this route is faster
 
@@ -232,7 +240,12 @@ For every task:
    datasheet link, but the exact manufacturer suffix still matters.
 3. Verify package, pin count/names, footprint dimensions, electrical role, and
    order suffix. Mark uncertain results unresolved.
-4. Download the PDF with the browser.
+4. Download the PDF with the browser. If its PDF toolbar appears to do nothing,
+   inspect the current UI before retrying. With an API that supports download
+   events, start `waitForEvent("download")` before clicking the observed Download
+   control, then await that event. Verify the actual downloaded filename on disk
+   (the browser may add a suffix such as `(1)`) before importing it. An unchanged
+   PDF view or a successful click alone does not prove that the file was saved.
 5. Import the browser download through the validating Python boundary:
 
    ```powershell

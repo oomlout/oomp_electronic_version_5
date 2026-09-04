@@ -15,6 +15,23 @@ from pathlib import Path
 
 
 class PopulateWorkflowTests(unittest.TestCase):
+    def test_component_navigation_refresh_only_selects_ancestors(self):
+        from kicad_agents.component_addition_agent import navigation_part_ids
+
+        definition = {
+            'taxonomy_1': 'electronic',
+            'taxonomy_2': 'transistor',
+            'taxonomy_3': 'sot_23',
+            'taxonomy_14': '',
+            'taxonomy_15': '2n7002',
+        }
+        self.assertEqual(navigation_part_ids(definition), [
+            'navigation',
+            'navigation_electronic',
+            'navigation_electronic_transistor',
+            'navigation_electronic_transistor_sot_23',
+        ])
+
     def test_led_strips_and_filaments_are_not_populated(self):
         options = []
         working_oomp_populate_led.main(options=options)

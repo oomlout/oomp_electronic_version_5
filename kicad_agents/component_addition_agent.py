@@ -8,6 +8,7 @@ single deterministic entry point for the repetitive local work:
 * verify that the family populate and populate-extra files contain the part;
 * regenerate only the selected OOMP part;
 * run only that part's Roboclick actions;
+* refresh its navigation ancestors and repackage the KiCad library;
 * confirm identifiers, pins, dimensions, datasheet provenance, project match
   overrides, README, diagrams and conservative PNG state;
 * confirm that deferred project pages were not changed by the component build.
@@ -27,6 +28,7 @@ from pathlib import Path
 import yaml
 
 from oomp_populate_helper import build_oomp_id
+from working_oomp_metadata import taxonomy_values
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
@@ -185,6 +187,13 @@ def validate_implementation(record, require_generated=False):
         else:
             checks["manufacturer_part_number"] = "pass"
 
+    generic_part_number = str(research.get("generic_part_number") or "").strip()
+    if generic_part_number != "":
+        if definition.get("part_number_generic") != generic_part_number:
+            errors.append("populate-extra generic part number does not match the research record")
+        else:
+            checks["generic_part_number"] = "pass"
+
     lcsc_part_number = str(research.get("lcsc_part_number") or "").strip()
     if lcsc_part_number != "":
         if definition.get("part_number_lcsc") != lcsc_part_number:
@@ -306,6 +315,43 @@ def write_report(report):
     return report_path
 
 
+def navigation_part_ids(definition):
+    """Return only this part's navigation ancestors, in root-to-leaf order."""
+    identifiers = ["navigation"]
+    current = "navigation"
+    for value in taxonomy_values(definition)[:-1]:
+        current += "_" + value
+        identifiers.append(current)
+    return identifiers
+
+
+def _action_modes(working):
+    modes = []
+    for key, value in working.items():
+        if str(key).startswith("oomlout_ai_roboclick_") and isinstance(value, dict):
+            if isinstance(value.get("actions"), list):
+                modes.append(str(key))
+    return sorted(modes)
+
+
+def _refresh_component_indexes(record):
+    """Refresh ancestor READMEs and the library package without rebuilding boards."""
+    import working_oomp
+    import oomlout_roboclick
+    from kicad_agents.kicad_library_agent import package_libraries
+
+    # Definitions are lightweight; only the affected ancestors run actions.
+    with contextlib.redirect_stdout(io.StringIO()):
+        working_oomp.load_parts(filter="navigation", regenerate_pngs=False)
+    identifiers = navigation_part_ids(_load_populated_definition(record))
+    for identifier in identifiers:
+        directory = PARTS_DIRECTORY / identifier
+        working = _read_yaml(directory / "working.yaml")
+        oomlout_roboclick.run_folder(folder=str(directory), mode=_action_modes(working))
+    library_report = package_libraries(PARTS_DIRECTORY, REPOSITORY_ROOT / "kicad_libraries")
+    return identifiers, library_report
+
+
 def build_component(record, regenerate_pngs=False):
     initial_report = validate_implementation(record, require_generated=False)
     if initial_report["status"] != "pass":
@@ -325,19 +371,15 @@ def build_component(record, regenerate_pngs=False):
         working_oomp.load_parts(filter=part_id, regenerate_pngs=regenerate_pngs)
     part_directory = PARTS_DIRECTORY / part_id
     generated_working = _read_yaml(part_directory / "working.yaml")
-    action_modes = []
-    for key in generated_working:
-        value = generated_working.get(key)
-        if str(key).startswith("oomlout_ai_roboclick_") and isinstance(value, dict):
-            if isinstance(value.get("actions"), list):
-                action_modes.append(str(key))
-    action_modes.sort()
+    action_modes = _action_modes(generated_working)
     if action_modes == []:
         raise ValueError(f"No deterministic component Roboclick actions found for {part_id}.")
     oomlout_roboclick.run_folder(folder=str(part_directory), mode=action_modes)
     # Always return generated YAML to the normal conservative PNG state.
     with contextlib.redirect_stdout(population_output):
         working_oomp.load_parts(filter=part_id, regenerate_pngs=False)
+
+    navigation_ids, library_report = _refresh_component_indexes(record)
 
     project_state_after = _project_file_state()
     if project_state_before != project_state_after:
@@ -352,6 +394,8 @@ def build_component(record, regenerate_pngs=False):
 
     report = validate_implementation(record, require_generated=True)
     report["project_output_guard"] = "pass"
+    report["navigation_ancestors_refreshed"] = navigation_ids
+    report["kicad_library_package"] = library_report
     report_path = write_report(report)
     if report["status"] != "pass":
         raise ValueError("Component validation failed after build: " + "; ".join(report["errors"]))

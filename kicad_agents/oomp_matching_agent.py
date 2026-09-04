@@ -105,6 +105,7 @@ def component_fields(component):
         "footprint": properties.get("Footprint") or pcb.get("library_id") or "",
         "library_id": unit.get("library_id", ""),
         "mpn": properties.get("MPN") or properties.get("Manufacturer Part Number") or "",
+        "manufacturer": properties.get("Manufacturer") or properties.get("Manufacturer Name") or "",
     }
 
 
@@ -122,6 +123,8 @@ def infer_kind(fields):
         return "resistor"
     if reference.startswith("C") and not reference.startswith("CON"):
         return "capacitor"
+    if reference.startswith("Q") or "transistor" in evidence or "mosfet" in evidence:
+        return "transistor"
     return ""
 
 
@@ -189,6 +192,7 @@ class OompPartIndex:
         self.parts_directory = Path(parts_directory).resolve()
         self.parts = []
         self.by_id = {}
+        self.generic_parts = []
         self._load()
 
     def _load(self):
@@ -206,6 +210,41 @@ class OompPartIndex:
             }
             self.parts.append(part)
             self.by_id[part["oomp_id"]] = part
+            # Generic family matching is opt-in population data, never a guess
+            # from a similar suffix. The C loader keeps the metadata pass small.
+            if part_directory.name.startswith("electronic_"):
+                loader = getattr(yaml, "CSafeLoader", yaml.SafeLoader)
+                metadata = yaml.load(working_yaml.read_text(encoding="utf-8"), Loader=loader) or {}
+                rules = metadata.get("generic_match") or {}
+                if rules:
+                    self.generic_parts.append({
+                        "oomp_id": part_directory.name,
+                        "kind": metadata.get("taxonomy_2", ""),
+                        "package": metadata.get("taxonomy_3", ""),
+                        "rules": rules,
+                    })
+
+    def generic_matches(self, fields):
+        if fields.get("mpn") or fields.get("manufacturer"):
+            return []
+        matches = []
+        for part in self.generic_parts:
+            rules = part["rules"]
+            checks = [
+                ["value", "values"],
+                ["library_id", "symbols"],
+                ["footprint", "footprints"],
+            ]
+            agrees = True
+            for field_name, rule_name in checks:
+                accepted_values = []
+                for accepted_value in rules.get(rule_name, []):
+                    accepted_values.append(normalize_text(accepted_value))
+                if normalize_text(fields.get(field_name, "")) not in accepted_values:
+                    agrees = False
+            if agrees:
+                matches.append(part)
+        return matches
 
     def candidate_parts(self, kind):
         if kind:
@@ -385,6 +424,24 @@ def match_component(index, component, overrides=None, blocked=None):
                 ],
             }
         )
+        return result
+
+    generic_matches = index.generic_matches(fields)
+    if len(generic_matches) == 1:
+        generic_part = generic_matches[0]
+        result.update(
+            status="matched",
+            accepted=True,
+            oomp_id=generic_part["oomp_id"],
+            confidence=1.0,
+            identity_scope="generic_family",
+            reasons=["Generic value, symbol and footprint agree with the populated matching rule; no manufacturer or MPN was supplied."],
+        )
+        result["inferred"]["kind"] = generic_part["kind"]
+        result["inferred"]["package_size"] = generic_part["package"]
+        return result
+    if len(generic_matches) > 1:
+        result.update(status="ambiguous", reasons=["More than one populated generic family rule matches this component."])
         return result
 
     result["candidates"] = _rank_candidates(index, component, proposed_id, kind)

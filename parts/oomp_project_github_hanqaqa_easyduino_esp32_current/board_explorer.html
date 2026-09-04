@@ -69,7 +69,9 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .zoom-button { width: 31px; padding: 7px 0; border: 0; border-radius: 8px; background: transparent; color: var(--ink); font: inherit; font-weight: 850; cursor: pointer; }
 .zoom-button:hover { background: var(--accent-soft); }
 .zoom-label { min-width: 43px; align-self: center; color: var(--muted); font-size: 11px; text-align: center; }
-.board-stage { width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; }
+.zoom-reset { width: auto; min-width: 47px; padding-inline: 7px; font-size: 11px; }
+.board-stage { width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; cursor: grab; touch-action: none; user-select: none; }
+.board-stage.is-panning { cursor: grabbing; }
 .board-view { width: 100%; height: 100%; min-width: 0; min-height: 0; }
 .board-view[hidden] { display: none; }
 .board-view > svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; margin: auto; filter: drop-shadow(0 9px 13px rgba(0,0,0,.12)); }
@@ -176,6 +178,7 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
       <button id="zoom-out" class="zoom-button" type="button" aria-label="Zoom out">−</button>
       <button id="zoom-fit" class="zoom-label side-button" type="button" aria-label="Fit board"><span id="zoom-label">100%</span></button>
       <button id="zoom-in" class="zoom-button" type="button" aria-label="Zoom in">+</button>
+      <button id="zoom-reset" class="zoom-button zoom-reset" type="button" aria-label="Reset board zoom to 100%">100%</button>
       <span class="zoom-divider"></span>
       <select id="copper-layer" aria-label="Copper layers"><option value="side">Visible side copper</option><option value="all" selected>All copper layers</option><option value="F.Cu">F.Cu</option><option value="In1.Cu">In1.Cu</option><option value="In2.Cu">In2.Cu</option><option value="B.Cu">B.Cu</option></select>
       <label><input id="show-traces" type="checkbox" checked> Traces</label>
@@ -1907,6 +1910,10 @@ const hoverCard = document.getElementById('hover-card');
 let activeReference = '';
 let activeSide = 'front';
 let zoomScale = 1;
+let mousePan = null;
+let touchPan = null;
+let suppressBoardClick = false;
+const activePointers = new Map();
 let activeNet = '';
 let activePin = null;
 const selectedReferences = new Set();
@@ -1921,7 +1928,7 @@ const baseFeatures = [...document.querySelectorAll('.copper-base .copper-feature
 const boardViewports = new Map();
 document.querySelectorAll('.board-view > svg').forEach(svg => {
   const original = svg.getAttribute('viewBox').split(/\s+/).map(Number);
-  boardViewports.set(svg, {original, target: [...original]});
+  boardViewports.set(svg, {original, target: [...original], box: [...original], scale: 1});
 });
 // Explicit editable colours for the common stack; additional internal layers
 // get evenly spaced hues without changing the familiar front/back colours.
@@ -2337,22 +2344,80 @@ function updateSelectionBoxes() {
   });
 }
 
-function setZoom(nextZoom) {
-  zoomScale = Math.max(0.5, Math.min(12, nextZoom));
-  // Keep the SVG sized to the panel. Changing its viewBox zooms around the
-  // selected region without growing the grid or moving the toolbar away.
-  boardViewports.forEach((viewport, svg) => {
-    const [x, y, width, height] = viewport.target;
-    const w = width / zoomScale;
-    const h = height / zoomScale;
-    svg.setAttribute('viewBox', [x + (width - w) / 2, y + (height - h) / 2, w, h].join(' '));
-  });
+function activeBoardSvg() {
+  return document.querySelector('.board-view:not([hidden]) > svg');
+}
+
+function applyViewport(svg, viewport) {
+  svg.setAttribute('viewBox', viewport.box.join(' '));
+}
+
+function updateZoomLabel() {
   document.getElementById('zoom-label').textContent = `${Math.round(zoomScale * 100)}%`;
 }
 
+function clientPointInSvg(svg, clientX, clientY) {
+  const matrix = svg.getScreenCTM();
+  if (!matrix) return null;
+  return new DOMPoint(clientX, clientY).matrixTransform(matrix.inverse());
+}
+
+function setZoom(nextZoom, clientX = null, clientY = null) {
+  const svg = activeBoardSvg();
+  if (!svg) return;
+  const viewport = boardViewports.get(svg);
+  const next = Math.max(0.5, Math.min(12, nextZoom));
+  const previous = viewport.scale || 1;
+  if (Math.abs(next - previous) < 0.0001) return;
+  let anchor = null;
+  if (Number.isFinite(clientX) && Number.isFinite(clientY)) {
+    anchor = clientPointInSvg(svg, clientX, clientY);
+  }
+  const [x, y, width, height] = viewport.box;
+  if (!anchor) anchor = new DOMPoint(x + width / 2, y + height / 2);
+  const ratio = previous / next;
+  viewport.box = [
+    anchor.x - (anchor.x - x) * ratio,
+    anchor.y - (anchor.y - y) * ratio,
+    width * ratio,
+    height * ratio,
+  ];
+  viewport.scale = next;
+  zoomScale = next;
+  applyViewport(svg, viewport);
+  updateZoomLabel();
+}
+
 function fitBoard() {
-  boardViewports.forEach(viewport => { viewport.target = [...viewport.original]; });
-  setZoom(1);
+  boardViewports.forEach((viewport, svg) => {
+    viewport.target = [...viewport.original];
+    viewport.box = [...viewport.original];
+    viewport.scale = 1;
+    applyViewport(svg, viewport);
+  });
+  zoomScale = 1;
+  updateZoomLabel();
+}
+
+function panActiveBoard(fromX, fromY, toX, toY) {
+  const svg = activeBoardSvg();
+  if (!svg) return;
+  const start = clientPointInSvg(svg, fromX, fromY);
+  const end = clientPointInSvg(svg, toX, toY);
+  if (!start || !end) return;
+  const viewport = boardViewports.get(svg);
+  viewport.box[0] -= end.x - start.x;
+  viewport.box[1] -= end.y - start.y;
+  applyViewport(svg, viewport);
+}
+
+function touchCentroid() {
+  const points = [...activePointers.values()];
+  if (points.length < 2) return null;
+  return {
+    x: (points[0].x + points[1].x) / 2,
+    y: (points[0].y + points[1].y) / 2,
+  };
 }
 
 function fitSelectedNet() {
@@ -2376,14 +2441,22 @@ function fitSelectedNet() {
   }
   if (!Number.isFinite(minX)) { fitBoard(); return; }
   const pad = Math.max(.8, Math.max(maxX - minX, maxY - minY) * .12);
-  boardViewports.get(svg).target = [minX - pad, minY - pad, maxX - minX + pad * 2, maxY - minY + pad * 2];
-  setZoom(1);
+  const viewport = boardViewports.get(svg);
+  viewport.target = [minX - pad, minY - pad, maxX - minX + pad * 2, maxY - minY + pad * 2];
+  viewport.box = [...viewport.target];
+  viewport.scale = 1;
+  zoomScale = 1;
+  applyViewport(svg, viewport);
+  updateZoomLabel();
 }
 
 function setSide(side) {
   activeSide = side === 'back' ? 'back' : 'front';
   document.querySelectorAll('.board-view').forEach(view => { view.hidden = view.dataset.side !== activeSide; });
   document.querySelectorAll('.side-button[data-side]').forEach(button => button.classList.toggle('active', button.dataset.side === activeSide));
+  const viewport = boardViewports.get(activeBoardSvg());
+  zoomScale = viewport ? viewport.scale || 1 : 1;
+  updateZoomLabel();
   renderList(search.value);
   updateNetHighlight();
 }
@@ -2406,6 +2479,83 @@ function moveHover(event) {
   hoverCard.style.left = `${Math.max(8, x)}px`;
   hoverCard.style.top = `${Math.max(8, y)}px`;
 }
+
+stage.addEventListener('wheel', event => {
+  event.preventDefault();
+  const deltaUnit = event.deltaMode === 1 ? 16 : (event.deltaMode === 2 ? stage.clientHeight : 1);
+  const exponent = Math.max(-1, Math.min(1, -event.deltaY * deltaUnit * 0.0015));
+  setZoom(zoomScale * Math.exp(exponent), event.clientX, event.clientY);
+}, {passive: false});
+
+stage.addEventListener('pointerdown', event => {
+  if (event.pointerType === 'touch') {
+    activePointers.set(event.pointerId, {x: event.clientX, y: event.clientY});
+    if (activePointers.size === 2) {
+      touchPan = {last: touchCentroid(), moved: false};
+      stage.classList.add('is-panning');
+      hoverCard.classList.remove('visible');
+    }
+    stage.setPointerCapture(event.pointerId);
+    return;
+  }
+  if (event.button !== 0) return;
+  mousePan = {pointerId: event.pointerId, lastX: event.clientX, lastY: event.clientY, distance: 0};
+  stage.setPointerCapture(event.pointerId);
+  stage.classList.add('is-panning');
+  hoverCard.classList.remove('visible');
+});
+
+stage.addEventListener('pointermove', event => {
+  if (event.pointerType === 'touch') {
+    if (!activePointers.has(event.pointerId)) return;
+    activePointers.set(event.pointerId, {x: event.clientX, y: event.clientY});
+    if (!touchPan || activePointers.size !== 2) return;
+    const next = touchCentroid();
+    const distance = Math.hypot(next.x - touchPan.last.x, next.y - touchPan.last.y);
+    if (distance > 0) {
+      panActiveBoard(touchPan.last.x, touchPan.last.y, next.x, next.y);
+      touchPan.last = next;
+      touchPan.moved = touchPan.moved || distance > 1;
+    }
+    event.preventDefault();
+    return;
+  }
+  if (!mousePan || mousePan.pointerId !== event.pointerId) return;
+  const delta = Math.hypot(event.clientX - mousePan.lastX, event.clientY - mousePan.lastY);
+  if (delta > 0) {
+    panActiveBoard(mousePan.lastX, mousePan.lastY, event.clientX, event.clientY);
+    mousePan.lastX = event.clientX;
+    mousePan.lastY = event.clientY;
+    mousePan.distance += delta;
+  }
+  event.preventDefault();
+});
+
+function finishPointerPan(event) {
+  if (event.pointerType === 'touch') {
+    activePointers.delete(event.pointerId);
+    if (touchPan && touchPan.moved) suppressBoardClick = true;
+    if (activePointers.size < 2) {
+      touchPan = null;
+      stage.classList.remove('is-panning');
+    }
+  } else if (mousePan && mousePan.pointerId === event.pointerId) {
+    if (mousePan.distance > 3) suppressBoardClick = true;
+    mousePan = null;
+    stage.classList.remove('is-panning');
+  }
+  if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
+  if (suppressBoardClick) setTimeout(() => { suppressBoardClick = false; }, 0);
+}
+
+stage.addEventListener('pointerup', finishPointerPan);
+stage.addEventListener('pointercancel', finishPointerPan);
+stage.addEventListener('click', event => {
+  if (!suppressBoardClick) return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  suppressBoardClick = false;
+}, true);
 
 document.querySelectorAll('.board-component').forEach(element => {
   const reference = element.dataset.reference;
@@ -2470,6 +2620,7 @@ document.querySelectorAll('.side-button[data-side]').forEach(button => button.ad
 document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoomScale + 0.25));
 document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoomScale - 0.25));
 document.getElementById('zoom-fit').addEventListener('click', fitBoard);
+document.getElementById('zoom-reset').addEventListener('click', fitBoard);
 renderLayerLegend();
 setZoom(1);
 setSide('front', false);

@@ -2,11 +2,12 @@
 
 [Up one level](../README.md)
 
-This category contains 1 parts in total.
+This category contains 5 parts in total.
 
 
 ## Categories
 
+- [50 Volt](50_volt/README.md)
 - [60 Volt](60_volt/README.md)
 
 

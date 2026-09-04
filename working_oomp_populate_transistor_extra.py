@@ -23,6 +23,371 @@ def main(**kwargs):
         }
         part["kicad"] = {"symbol": "Transistor_BJT:SS8050", "machine_solder": "Package_TO_SOT_SMD:SOT-23W", "hand_solder": "Package_TO_SOT_SMD:SOT-23W_Handsoldering"}
 
+    current = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Generic"
+        part["part_number"] = "2N7002"
+        part["part_number_generic"] = "2N7002"
+        part["generic_match"] = {
+            "values": ["2N7002"],
+            "symbols": ["Transistor_FET:2N7002"],
+            "footprints": [
+                "Package_TO_SOT_SMD:SOT-23",
+                "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+                "SOT-23",
+                "SOT-23_Handsoldering",
+            ],
+        }
+        part["product_url"] = "https://www.nexperia.com/product/2N7002"
+        part["datasheet_url"] = "https://assets.nexperia.com/documents/data-sheet/2N7002.pdf"
+        part["datasheet_note"] = "Representative Nexperia datasheet for this generic family. Check the exact manufacturer variant before relying on electrical or thermal limits."
+        part["package_name"] = "SOT-23 / TO-236AB"
+        part["electrical"] = {
+            "device_type": "N-channel enhancement-mode MOSFET",
+            "maximum_drain_source_voltage": "60 V",
+            "representative_maximum_drain_current": "300 mA",
+            "representative_maximum_gate_source_voltage": "+/-30 V",
+            "representative_maximum_power_dissipation": "830 mW",
+            "representative_gate_threshold_voltage": "1.0 to 2.5 V",
+            "reference_device": "Nexperia 2N7002 Rev. 7",
+        }
+        part["transistor_dimensions_mm"] = {
+            "body_length_nominal": 2.9,
+            "body_length_minimum": 2.8,
+            "body_length_maximum": 3.0,
+            "body_width_nominal": 1.3,
+            "body_width_minimum": 1.2,
+            "body_width_maximum": 1.4,
+            "overall_width_nominal": 2.3,
+            "overall_width_minimum": 2.1,
+            "overall_width_maximum": 2.5,
+            "body_height_nominal": 1.0,
+            "body_height_minimum": 0.9,
+            "body_height_maximum": 1.1,
+            "lead_width_nominal": 0.43,
+            "lead_width_minimum": 0.38,
+            "lead_width_maximum": 0.48,
+            "lead_length_nominal": 0.3,
+            "lead_length_minimum": 0.15,
+            "lead_length_maximum": 0.45,
+            "terminal_projection_nominal": 0.5,
+            "pin_pitch": 0.95,
+            "outer_pin_pitch": 1.9,
+        }
+        part["dimensions_mm"] = {"length": 2.9, "width": 2.3}
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "gate", "input"],
+            ["2", "source", "passive"],
+            ["3", "drain", "passive"],
+        ]
+        for pin in transistor_pins:
+            part["pins"]["pin_" + pin[0]] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        part["package_drawing"] = {
+            "overall": [2.9, 2.3],
+            "body": [2.9, 1.3],
+            "pins": [
+                ["1", "bottom", -0.95, -0.9, 0.43, 0.5],
+                ["2", "bottom", 0.95, -0.9, 0.43, 0.5],
+                ["3", "top", 0, 0.9, 0.43, 0.5],
+            ],
+            "pin_one": [-1.1, -0.42],
+        }
+        part["dimension_reference"] = {
+            "document": "Nexperia 2N7002 Rev. 7",
+            "pages": [1, 2, 8, 9],
+        }
+        part["research_notes"] = [
+            "This is a generic 2N7002 family entry, not an exact orderable manufacturer variant.",
+            "The Nexperia sheet is retained as the representative browser-verified source for the standard SOT-23 outline and pins 1 gate, 2 source and 3 drain.",
+            "Current, gate-voltage, resistance and thermal limits vary between manufacturers; representative Nexperia values are labelled as such and must not replace an exact design choice.",
+            "No LCSC number is attached because an LCSC code identifies one exact manufacturer variant; the following ledger item selects one separately.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+        part["kicad"] = {
+            "symbol": "Transistor_FET:2N7002",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+        }
+
+    current = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Nexperia"
+        part["part_number_manufacturer"] = "2N7002,215"
+        part["part_number_manufacturer_nexperia"] = "2N7002,215"
+        part["part_number_lcsc"] = "C65189"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C65189.html"
+        part["manufacturer_product_url"] = "https://www.nexperia.com/product/2N7002"
+        part["datasheet_url"] = "https://assets.nexperia.com/documents/data-sheet/2N7002.pdf"
+        part["package_name_manufacturer"] = "SOT23 / TO-236AB"
+        part["marking_code"] = "12%"
+        part["marking_note"] = "% is the manufacturing-site code, not a literal package marking."
+        part["electrical"] = {
+            "device_type": "N-channel enhancement-mode Trench MOSFET",
+            "maximum_drain_source_voltage": "60 V at Tj 25 to 150 C",
+            "maximum_continuous_drain_current": "300 mA at VGS 10 V, solder point 25 C",
+            "maximum_gate_source_voltage": "+/-30 V",
+            "maximum_power_dissipation": "830 mW at solder point 25 C; derate with temperature",
+            "gate_threshold_voltage": "1.0 to 2.5 V at ID 250 uA, Tj 25 C",
+            "maximum_on_resistance_at_10_v": "5 ohm at ID 500 mA, Tj 25 C",
+            "maximum_on_resistance_at_4_5_v": "5.3 ohm at ID 75 mA, Tj 25 C",
+            "operating_junction_temperature": "-65 to +150 C",
+        }
+        part["transistor_dimensions_mm"] = {
+            "body_length_nominal": 2.9,
+            "body_length_minimum": 2.8,
+            "body_length_maximum": 3.0,
+            "body_width_nominal": 1.3,
+            "body_width_minimum": 1.2,
+            "body_width_maximum": 1.4,
+            "overall_width_nominal": 2.3,
+            "overall_width_minimum": 2.1,
+            "overall_width_maximum": 2.5,
+            "body_height_nominal": 1.0,
+            "body_height_minimum": 0.9,
+            "body_height_maximum": 1.1,
+            "lead_width_nominal": 0.43,
+            "lead_width_minimum": 0.38,
+            "lead_width_maximum": 0.48,
+            "lead_length_nominal": 0.3,
+            "lead_length_minimum": 0.15,
+            "lead_length_maximum": 0.45,
+            "terminal_projection_nominal": 0.5,
+            "pin_pitch": 0.95,
+            "outer_pin_pitch": 1.9,
+        }
+        part["dimensions_mm"] = {"length": 2.9, "width": 2.3}
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "gate", "input"],
+            ["2", "source", "passive"],
+            ["3", "drain", "passive"],
+        ]
+        for pin in transistor_pins:
+            part["pins"]["pin_" + pin[0]] = {
+                "number": pin[0], "name": pin[1], "type": pin[2],
+            }
+        part["package_drawing"] = {
+            "overall": [2.9, 2.3],
+            "body": [2.9, 1.3],
+            "pins": [
+                ["1", "bottom", -0.95, -0.9, 0.43, 0.5],
+                ["2", "bottom", 0.95, -0.9, 0.43, 0.5],
+                ["3", "top", 0, 0.9, 0.43, 0.5],
+            ],
+            "pin_one": [-1.1, -0.42],
+        }
+        part["dimension_reference"] = {
+            "document": "Nexperia 2N7002 Rev. 7",
+            "pages": [1, 2, 5, 8],
+        }
+        part["research_notes"] = [
+            "LCSC C65189 explicitly identifies Nexperia 2N7002,215 in SOT-23; 560,000 pieces were in stock at browser verification on 2026-09-03, not a permanent availability guarantee.",
+            "Nexperia lists 2N7002,215 as an active orderable part, 12NC 934003470215, supplied on a 3,000-piece reel.",
+            "C551410 is the different 2N7002,235 packing suffix and was out of stock at verification; it is not assigned to this part.",
+            "The datasheet confirms pins 1 gate, 2 source, 3 drain and the SOT23 outline. Solder-point ratings must not be interpreted as ambient-temperature ratings.",
+        ]
+        part["file_copy"] = [{
+            "file_source": f"parts_source/{current}/datasheet.pdf",
+            "file_destination": "datasheet.pdf",
+        }]
+        part["kicad"] = {
+            "symbol": "Transistor_FET:2N7002",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+        }
+
+    current = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Generic"
+        part["part_number"] = "BSS138"
+        part["part_number_generic"] = "BSS138"
+        part["generic_match"] = {
+            "values": ["BSS138"],
+            "symbols": ["Transistor_FET:BSS138"],
+            "footprints": [
+                "Package_TO_SOT_SMD:SOT-23",
+                "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+                "SOT-23",
+                "SOT-23_Handsoldering",
+            ],
+        }
+        part["datasheet_url"] = "https://www.onsemi.com/pdf/datasheet/bss138-d.pdf"
+        part["datasheet_note"] = "Representative onsemi datasheet for this generic family. Check the exact manufacturer variant before relying on electrical, thermal or package tolerance limits."
+        part["package_name"] = "SOT-23 / TO-236"
+        part["electrical"] = {
+            "device_type": "N-channel enhancement-mode MOSFET",
+            "maximum_drain_source_voltage": "50 V",
+            "representative_maximum_drain_current": "220 mA at ambient 25 C; subject to PCB thermal conditions",
+            "representative_maximum_gate_source_voltage": "+/-20 V",
+            "representative_maximum_power_dissipation": "360 mW at ambient 25 C; subject to PCB thermal conditions",
+            "representative_gate_threshold_voltage": "0.8 to 1.5 V at ID 1 mA",
+            "reference_device": "onsemi BSS138 Rev. 7, April 2024",
+        }
+        part["transistor_dimensions_mm"] = {
+            "body_length_nominal": 2.9,
+            "body_length_minimum": 2.8,
+            "body_length_maximum": 3.04,
+            "body_width_nominal": 1.3,
+            "body_width_minimum": 1.2,
+            "body_width_maximum": 1.4,
+            "overall_width_nominal": 2.4,
+            "overall_width_minimum": 2.1,
+            "overall_width_maximum": 2.64,
+            "body_height_nominal": 1.0,
+            "body_height_minimum": 0.89,
+            "body_height_maximum": 1.11,
+            "lead_width_nominal": 0.44,
+            "lead_width_minimum": 0.37,
+            "lead_width_maximum": 0.50,
+            "lead_length_nominal": 0.43,
+            "lead_length_minimum": 0.30,
+            "lead_length_maximum": 0.55,
+            "terminal_projection_nominal": 0.55,
+            "pin_pitch": 0.95,
+            "outer_pin_pitch": 1.9,
+        }
+        part["dimensions_mm"] = {"length": 2.9, "width": 2.4}
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "gate", "input"],
+            ["2", "source", "passive"],
+            ["3", "drain", "passive"],
+        ]
+        for pin in transistor_pins:
+            part["pins"]["pin_" + pin[0]] = {
+                "number": pin[0], "name": pin[1], "type": pin[2],
+            }
+        part["package_drawing"] = {
+            "overall": [2.9, 2.4],
+            "body": [2.9, 1.3],
+            "pins": [
+                ["1", "bottom", -0.95, -0.925, 0.44, 0.55],
+                ["2", "bottom", 0.95, -0.925, 0.44, 0.55],
+                ["3", "top", 0, 0.925, 0.44, 0.55],
+            ],
+            "pin_one": [-1.1, -0.42],
+        }
+        part["dimension_reference"] = {
+            "document": "onsemi BSS138 Rev. 7; CASE 318 Issue AU, 14 August 2024",
+            "pages": [1, 2, 6],
+        }
+        part["research_notes"] = [
+            "Generic BSS138 family identity; no manufacturer or supplier code is implied.",
+            "The onsemi datasheet linked by KiCad's official BSS138 symbol is the representative reference, with pins 1 gate, 2 source and 3 drain.",
+            "The actual CASE 318 drawing gives 2.90 by 1.30 mm body, 2.40 mm overall width and 0.44 mm nominal lead width; these are not copied from a different manufacturer's SOT-23 outline.",
+            "No LCSC number is attached to the generic family; the following ledger row selects an exact manufacturer and ordering suffix separately.",
+        ]
+        part["file_copy"] = [{
+            "file_source": f"parts_source/{current}/datasheet.pdf",
+            "file_destination": "datasheet.pdf",
+        }]
+        part["kicad"] = {
+            "symbol": "Transistor_FET:BSS138",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+        }
+
+    current = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "onsemi"
+        part["part_number_manufacturer"] = "BSS138"
+        part["part_number_manufacturer_onsemi"] = "BSS138"
+        part["part_number_lcsc"] = "C52895"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C52895.html"
+        part["datasheet_url"] = "https://www.onsemi.com/pdf/datasheet/bss138-d.pdf"
+        part["package_name_manufacturer"] = "SOT-23-3 / CASE 318"
+        part["marking_code"] = "SS"
+        part["marking_note"] = "SS is the device code; the additional M denotes a date code and the microdot denotes the Pb-free package."
+        part["electrical"] = {
+            "device_type": "N-channel enhancement-mode MOSFET",
+            "maximum_drain_source_voltage": "50 V",
+            "maximum_continuous_drain_current": "220 mA at ambient 25 C; subject to PCB thermal conditions",
+            "maximum_gate_source_voltage": "+/-20 V",
+            "maximum_power_dissipation": "360 mW at ambient 25 C; derate 2.8 mW/C above 25 C",
+            "thermal_resistance_junction_to_ambient": "350 C/W on a minimum pad",
+            "gate_threshold_voltage": "0.8 to 1.5 V at ID 1 mA, ambient 25 C",
+            "maximum_on_resistance_at_10_v": "3.5 ohm at ID 220 mA, ambient 25 C",
+            "maximum_on_resistance_at_4_5_v": "6.0 ohm at ID 220 mA, ambient 25 C",
+            "operating_junction_temperature": "-55 to +150 C",
+        }
+        part["transistor_dimensions_mm"] = {
+            "body_length_nominal": 2.9,
+            "body_length_minimum": 2.8,
+            "body_length_maximum": 3.04,
+            "body_width_nominal": 1.3,
+            "body_width_minimum": 1.2,
+            "body_width_maximum": 1.4,
+            "overall_width_nominal": 2.4,
+            "overall_width_minimum": 2.1,
+            "overall_width_maximum": 2.64,
+            "body_height_nominal": 1.0,
+            "body_height_minimum": 0.89,
+            "body_height_maximum": 1.11,
+            "lead_width_nominal": 0.44,
+            "lead_width_minimum": 0.37,
+            "lead_width_maximum": 0.50,
+            "lead_length_nominal": 0.43,
+            "lead_length_minimum": 0.30,
+            "lead_length_maximum": 0.55,
+            "terminal_projection_nominal": 0.55,
+            "pin_pitch": 0.95,
+            "outer_pin_pitch": 1.9,
+        }
+        part["dimensions_mm"] = {"length": 2.9, "width": 2.4}
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "gate", "input"],
+            ["2", "source", "passive"],
+            ["3", "drain", "passive"],
+        ]
+        for pin in transistor_pins:
+            part["pins"]["pin_" + pin[0]] = {
+                "number": pin[0], "name": pin[1], "type": pin[2],
+            }
+        part["package_drawing"] = {
+            "overall": [2.9, 2.4],
+            "body": [2.9, 1.3],
+            "pins": [
+                ["1", "bottom", -0.95, -0.925, 0.44, 0.55],
+                ["2", "bottom", 0.95, -0.925, 0.44, 0.55],
+                ["3", "top", 0, 0.925, 0.44, 0.55],
+            ],
+            "pin_one": [-1.1, -0.42],
+        }
+        part["dimension_reference"] = {
+            "document": "onsemi BSS138 Rev. 7; CASE 318 Issue AU, 14 August 2024",
+            "pages": [1, 2, 3, 6],
+        }
+        part["research_notes"] = [
+            "LCSC C52895 identifies onsemi BSS138 in SOT-23, with 42,980 pieces in stock at browser verification on 2026-09-03; stock is not a permanent guarantee.",
+            "The manufacturer ordering table explicitly lists BSS138 as well as BSS138-G. This part is the bare BSS138 orderable device from the supplier listing, not an assumed suffix variant.",
+            "The manufacturer sheet confirms 50 V, 220 mA and pins 1 gate, 2 source, 3 drain; its minimum-pad thermal conditions qualify the current and power limits.",
+            "The downloaded CASE 318 outline is the same verified manufacturer drawing used as the reference for the separate generic BSS138 entry.",
+        ]
+        part["file_copy"] = [{
+            "file_source": f"parts_source/{current}/datasheet.pdf",
+            "file_destination": "datasheet.pdf",
+        }]
+        part["kicad"] = {
+            "symbol": "Transistor_FET:BSS138",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+        }
+
     current = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "MMBT7002K"

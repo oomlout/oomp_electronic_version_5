@@ -56,6 +56,10 @@
 ## Datasheet
 
 [View the datasheet]({{ p.part_page.datasheet_path }})
+{% if p.datasheet_note is defined and p.datasheet_note %}
+
+{{ p.datasheet_note }}
+{% endif %}
 {% endif %}
 
 {% if p.used_in_projects is defined and p.used_in_projects %}

@@ -211,6 +211,135 @@ class MatchingAgentTests(unittest.TestCase):
         self.assertEqual(extras[part_id]["pins"]["pin_2"]["name"], "source")
         self.assertEqual(extras[part_id]["pins"]["pin_3"]["name"], "drain")
 
+    def test_generic_2n7002_is_separate_from_exact_supplier_variants(self):
+        options = []
+        working_oomp_populate_transistor.main(options=options)
+        option = next(
+            option
+            for option in options
+            if option.get("taxonomy_15") == "2n7002"
+        )
+        self.assertEqual(option["taxonomy_3"], "sot_23")
+        self.assertEqual(option["taxonomy_5"], "n_channel")
+        self.assertEqual(option["taxonomy_14"], "")
+
+        part_id = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        self.assertEqual(extras[part_id]["part_number_generic"], "2N7002")
+        self.assertNotIn("part_number_lcsc", extras[part_id])
+        self.assertNotIn("part_number_manufacturer", extras[part_id])
+        self.assertEqual(extras[part_id]["pins"]["pin_1"]["name"], "gate")
+        self.assertEqual(extras[part_id]["pins"]["pin_2"]["name"], "source")
+        self.assertEqual(extras[part_id]["pins"]["pin_3"]["name"], "drain")
+        self.assertEqual(extras[part_id]["transistor_dimensions_mm"]["body_length_maximum"], 3.0)
+        self.assertEqual(extras[part_id]["transistor_dimensions_mm"]["lead_length_maximum"], 0.45)
+        self.assertIn("generic", extras[part_id]["name_readable_override"])
+        self.assertIn("Representative", extras[part_id]["datasheet_note"])
+
+    def test_nexperia_2n7002_preserves_exact_ordering_suffix(self):
+        options = []
+        working_oomp_populate_transistor.main(options=options)
+        option = next(option for option in options if option.get("taxonomy_15") == "2n7002_215")
+        self.assertEqual(option["taxonomy_14"], "nexperia")
+        part_id = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        part = extras[part_id]
+        self.assertEqual(part["part_number_manufacturer"], "2N7002,215")
+        self.assertEqual(part["part_number_manufacturer_nexperia"], "2N7002,215")
+        self.assertEqual(part["part_number_lcsc"], "C65189")
+        self.assertNotIn("generic_match", part)
+        self.assertNotIn("part_number_generic", part)
+        for number, name in [["1", "gate"], ["2", "source"], ["3", "drain"]]:
+            self.assertEqual(part["pins"]["pin_" + number]["name"], name)
+        self.assertEqual(part["transistor_dimensions_mm"]["body_length_maximum"], 3.0)
+        self.assertEqual(part["transistor_dimensions_mm"]["lead_length_maximum"], 0.45)
+        self.assertIn("solder point 25 C", part["electrical"]["maximum_power_dissipation"])
+        self.assertEqual(part["kicad"]["symbol"], "Transistor_FET:2N7002")
+        self.assertNotEqual(part["kicad"]["machine_solder"], part["kicad"]["hand_solder"])
+
+    def test_generic_bss138_has_its_own_reference_dimensions(self):
+        options = []
+        working_oomp_populate_transistor.main(options=options)
+        option = next(option for option in options if option.get("taxonomy_15") == "bss138")
+        self.assertEqual(option["taxonomy_14"], "")
+        part_id = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        part = extras[part_id]
+        self.assertEqual(part["part_number_generic"], "BSS138")
+        self.assertNotIn("part_number_manufacturer", part)
+        self.assertNotIn("part_number_lcsc", part)
+        self.assertIn("Representative onsemi", part["datasheet_note"])
+        self.assertEqual(part["package_drawing"]["overall"], [2.9, 2.4])
+        self.assertEqual(part["transistor_dimensions_mm"]["lead_width_nominal"], .44)
+        self.assertEqual(part["transistor_dimensions_mm"]["body_length_maximum"], 3.04)
+        for number, name in [["1", "gate"], ["2", "source"], ["3", "drain"]]:
+            self.assertEqual(part["pins"]["pin_" + number]["name"], name)
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary) / part_id
+            directory.mkdir()
+            (directory / "working.yaml").write_text(yaml.safe_dump(part), encoding="utf-8")
+            index = OompPartIndex(temporary)
+            properties = {"Value": "BSS138", "Footprint": "Package_TO_SOT_SMD:SOT-23"}
+            unit = {"library_id": "Transistor_FET:BSS138", "on_board": True, "properties": properties}
+            component = {"reference": "Q1", "schematic": {"units": [unit]}}
+            self.assertEqual(match_component(index, component)["oomp_id"], part_id)
+            properties["MPN"] = "BSS138-13-F"
+            self.assertFalse(match_component(index, component)["accepted"])
+
+    def test_onsemi_bss138_keeps_exact_identity_separate_from_generic(self):
+        options = []
+        working_oomp_populate_transistor.main(options=options)
+        option = next(option for option in options
+                      if option.get("taxonomy_15") == "bss138" and option.get("taxonomy_14") == "onsemi")
+        part_id = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138"
+        extras = {part_id: dict(option)}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        part = extras[part_id]
+        self.assertEqual(part["manufacturer"], "onsemi")
+        self.assertEqual(part["part_number_manufacturer"], "BSS138")
+        self.assertEqual(part["part_number_manufacturer_onsemi"], "BSS138")
+        self.assertEqual(part["part_number_lcsc"], "C52895")
+        self.assertNotIn("generic_match", part)
+        self.assertNotIn("part_number_generic", part)
+        self.assertEqual(part["package_drawing"]["overall"], [2.9, 2.4])
+        self.assertEqual(part["transistor_dimensions_mm"]["lead_width_nominal"], .44)
+        for number, name in [["1", "gate"], ["2", "source"], ["3", "drain"]]:
+            self.assertEqual(part["pins"]["pin_" + number]["name"], name)
+        self.assertIn("ambient 25 C", part["electrical"]["maximum_continuous_drain_current"])
+        self.assertEqual(part["kicad"]["symbol"], "Transistor_FET:BSS138")
+
+    def test_generic_match_requires_value_symbol_package_and_no_exact_identity(self):
+        part_id = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002"
+        extras = {part_id: {"taxonomy_2": "transistor", "taxonomy_3": "sot_23"}}
+        working_oomp_populate_transistor_extra.main(extras_dict=extras)
+        with tempfile.TemporaryDirectory() as temporary:
+            directory = Path(temporary) / part_id
+            directory.mkdir()
+            (directory / "working.yaml").write_text(yaml.safe_dump(extras[part_id]), encoding="utf-8")
+            index = OompPartIndex(temporary)
+            properties = {"Value": "2N7002", "Footprint": "Package_TO_SOT_SMD:SOT-23"}
+            unit = {"library_id": "Transistor_FET:2N7002", "on_board": True, "properties": properties}
+            component = {"reference": "Q1", "schematic": {"units": [unit]}, "pcb": {"value": "2N7002"}}
+            result = match_component(index, component)
+            self.assertEqual(result["oomp_id"], part_id)
+            self.assertEqual(result["identity_scope"], "generic_family")
+            for field_name, value in [
+                ["MPN", "2N7002,215"],
+                ["Manufacturer", "Nexperia"],
+                ["Value", "2N7002K"],
+                ["Footprint", "Package_TO_SOT_SMD:SOT-23-5"],
+            ]:
+                original = dict(properties)
+                properties[field_name] = value
+                self.assertFalse(match_component(index, component)["accepted"])
+                properties.clear()
+                properties.update(original)
+            unit["library_id"] = "Device:Q_NMOS_DGS"
+            self.assertFalse(match_component(index, component)["accepted"])
+
     def test_cbi_bc2301t_uses_special_order_sot_523_without_wrong_lcsc_code(self):
         options = []
         working_oomp_populate_transistor.main(options=options)
@@ -817,6 +946,13 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIn('class="side-button" type="button" data-side="back"', explorer)
         self.assertIn('id="zoom-out"', explorer)
         self.assertIn('id="zoom-in"', explorer)
+        self.assertIn('id="zoom-reset"', explorer)
+        self.assertIn("stage.addEventListener('wheel'", explorer)
+        self.assertIn("stage.addEventListener('pointerdown'", explorer)
+        self.assertIn("stage.addEventListener('pointermove'", explorer)
+        self.assertIn("activePointers.size === 2", explorer)
+        self.assertIn("touch-action: none", explorer)
+        self.assertIn("{passive: false}", explorer)
         self.assertIn('class="oomp-id"', explorer)
         self.assertIn("link.className = 'part-link'", explorer)
         self.assertIn("box.setAttribute('class', selected ? 'selection-box' : 'hover-box')", explorer)

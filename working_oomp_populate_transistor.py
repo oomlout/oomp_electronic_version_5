@@ -1,11 +1,55 @@
 def main(**kwargs):
     options = kwargs.get("options", [])
 
-    # Keep exact transistor definitions in a plain array.  Adding another
-    # fitted device should only require copying and editing one dictionary.
+    # Keep transistor definitions in a plain array. Adding another generic or
+    # exact device should only require copying and editing one dictionary.
     transistors = [
         {"taxonomy": ["transistor", "sot_23", "bipolar", "npn", "25_volt", "1_5_amp"],
          "manufacturer": "jsmsemi", "part_number": "ss8050", "name_short": "NPN Transistor SS8050"},
+        {
+            "taxonomy": [
+                "transistor",
+                "sot_23",
+                "mosfet",
+                "n_channel",
+                "enhancement_mode",
+                "60_volt",
+            ],
+            "manufacturer": "",
+            "part_number": "2n7002",
+            "name_short": "N-channel MOSFET 2N7002",
+            "name_readable_override": "N-channel MOSFET 2N7002 SOT-23 (generic)",
+        },
+        {
+            "taxonomy": [
+                "transistor", "sot_23", "mosfet", "n_channel",
+                "enhancement_mode", "60_volt", "300_milliamp",
+            ],
+            "manufacturer": "nexperia",
+            "part_number": "2n7002_215",
+            "name_short": "N-channel MOSFET 2N7002,215",
+            "name_readable_override": "N-channel MOSFET 2N7002,215 SOT-23",
+        },
+        {
+            "taxonomy": [
+                "transistor", "sot_23", "mosfet", "n_channel",
+                "enhancement_mode", "50_volt",
+            ],
+            "manufacturer": "",
+            "part_number": "bss138",
+            "name_short": "N-channel MOSFET BSS138",
+            "name_readable_override": "N-channel MOSFET BSS138 SOT-23 (generic)",
+        },
+        {
+            "taxonomy": [
+                "transistor", "sot_23", "mosfet", "n_channel",
+                "enhancement_mode", "50_volt", "220_milliamp",
+            ],
+            "manufacturer": "onsemi",
+            "part_number": "bss138",
+            "name_short": "N-channel MOSFET BSS138",
+            "name_readable_override": "N-channel MOSFET BSS138 SOT-23",
+        },
         {
             "taxonomy": [
                 "transistor",
@@ -72,6 +116,8 @@ def main(**kwargs):
         option["taxonomy_14"] = transistor["manufacturer"]
         option["taxonomy_15"] = transistor["part_number"]
         option["name_short"] = transistor["name_short"]
+        if "name_readable_override" in transistor:
+            option["name_readable_override"] = transistor["name_readable_override"]
         options.append(option)
 
 

@@ -23,7 +23,10 @@ supplier links are only opened when the reader clicks them.
 5. **Traces** hides/shows background copper; the selected net stays visible.
    **Fills** adds the saved zone-fill polygons, including selected-net fills.
    Fills start enabled; turn them off when a large plane obscures traces.
-6. **+**, **−** and the percentage button zoom in, out and fit the board.
+6. **+** and **−** zoom in and out. The changing percentage button fits the
+   full board, while the fixed **100%** button restores the original view.
+   The mouse wheel zooms around the pointer. Click and drag the drawing to pan;
+   on a touch screen, drag with two fingers to pan without selecting a part.
    **Clear highlight** or Escape clears the selected pin/net.
 7. **Zoom to net** starts off. Enable it to fit each selected net to the window,
    including the pads, traces, vias and any visible fills. It follows changes
