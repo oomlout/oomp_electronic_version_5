@@ -178,6 +178,17 @@ def main(**kwargs):
                         "SW1/SW2: C720477 is XUNPU TS-1088-AR02016, not Alps. The original Alps_SKRK footprint is retained; exact master compatibility has not been certified.",
                     ],
                 },
+                {
+                    "board": "raspberry_pi_pico_2040",
+                    "board_name": "Raspberry Pi Pico 2040",
+                    "board_url": "https://github.com/Hanqaqa/Easyduino/tree/master/Raspberry%20Pi%20Pico%202040",
+                    "version": "current",
+                    "git_ref": "master",
+                    "sparse_checkout": True,
+                    "project_file_folder": "Raspberry Pi Pico 2040",
+                    "project_file_basename": "Easyduino_RP2040",
+                    "project_file_path": "Raspberry Pi Pico 2040/Easyduino_RP2040",
+                },
             ],
         },
     ]
