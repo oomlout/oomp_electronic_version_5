@@ -56,7 +56,7 @@ def run(**kwargs):
 
     if kwargs.get("run_action", False):
         import working_action
-        working_action.main(**kwargs)    
+        working_action.main(**kwargs_2)    
 
 
 
