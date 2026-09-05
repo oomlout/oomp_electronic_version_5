@@ -1,0 +1,481 @@
+reference: RTK1
+schematic:
+  available: true
+  units:
+  - reference: RTK1
+    source_file: data/kicad_file.kicad_sch
+    uuid: f9b613b9-324d-4d85-9744-894e183e8028
+    library_id: SparkFun-Jumper:SolderJumper_2_Bridged
+    unit: 1
+    body_style: 1
+    position:
+      x: 124.46
+      y: 175.26
+      rotation: 90.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: RTK1
+      Value: '~'
+      Footprint: SparkFun-Jumper:Jumper_2_NC_Trace
+      Datasheet: '~'
+      Description: Solder Jumper, 2-pole, closed/bridged
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 1.27
+      position:
+        x: 124.46
+        y: 177.8
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R11
+        pin_number: '2'
+        pin_name: '~'
+    - number: '2'
+      name: B
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 1.27
+      position:
+        x: 124.46
+        y: 172.72
+      net: RTK_LED
+      net_aliases:
+      - RTK_LED
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: D8
+        pin_number: '4'
+        pin_name: K3
+      - reference: J3
+        pin_number: '10'
+        pin_name: Pin_10
+      - reference: J11
+        pin_number: '7'
+        pin_name: Pin_7
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.2656
+          y: -1.016
+        max:
+          x: 1.2656
+          y: 1.016
+        width: 2.5312
+        height: 2.032
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 123.444
+          y: 173.9944
+        max:
+          x: 125.476
+          y: 176.5256
+        width: 2.032
+        height: 2.5312
+        center:
+          x: 124.46
+          y: 175.26
+    warnings: []
+  connected_components:
+  - reference: D8
+    pin_number: '4'
+    pin_name: K3
+  - reference: J3
+    pin_number: '10'
+    pin_name: Pin_10
+  - reference: J11
+    pin_number: '7'
+    pin_name: Pin_7
+  - reference: R11
+    pin_number: '2'
+    pin_name: '~'
+pcb:
+  reference: RTK1
+  value: '~'
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 44ae6ef6-6990-4565-89f4-29f3889f4efe
+  library_id: SparkFun-Jumper:Jumper_2_NC_Trace
+  layer: B.Cu
+  side: back
+  position:
+    x: 165.6207
+    y: 80.899
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: RTK1
+    Value: '~'
+    Datasheet: ''
+    Description: Solder Jumper, 2-pole, closed/bridged
+    ki_fp_filters: SolderJumper*Bridged*
+  attributes:
+  - allow_soldermask_bridges
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.5207
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 165.1
+      y: 80.899
+    placed_rotation: 0.0
+    size:
+      x: 0.6604
+      y: 1.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    net: Net-(RTK1-A)
+    net_number: 53
+    pin_function: A
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.8509
+          y: -0.635
+        max:
+          x: -0.1905
+          y: 0.635
+        width: 0.6604
+        height: 1.27
+        center:
+          x: -0.5207
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 164.7698
+          y: 80.264
+        max:
+          x: 165.4302
+          y: 81.534
+        width: 0.6604
+        height: 1.27
+        center:
+          x: 165.1
+          y: 80.899
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R11
+      pad_number: '2'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.5207
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 166.1414
+      y: 80.899
+    placed_rotation: 0.0
+    size:
+      x: 0.6604
+      y: 1.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    net: RTK_LED
+    net_number: 17
+    pin_function: B
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.1905
+          y: -0.635
+        max:
+          x: 0.8509
+          y: 0.635
+        width: 0.6604
+        height: 1.27
+        center:
+          x: 0.5207
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 165.8112
+          y: 80.264
+        max:
+          x: 166.4716
+          y: 81.534
+        width: 0.6604
+        height: 1.27
+        center:
+          x: 166.1414
+          y: 80.899
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: D8
+      pad_number: '4'
+    - reference: J3
+      pad_number: '10'
+    - reference: J11
+      pad_number: '7'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.8509
+        y: -0.635
+      max:
+        x: 0.8509
+        y: 0.635
+      width: 1.7018
+      height: 1.27
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 164.7698
+        y: 80.264
+      max:
+        x: 166.4716
+        y: 81.534
+      width: 1.7018
+      height: 1.27
+      center:
+        x: 165.6207
+        y: 80.899
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.15
+        y: -0.95
+      max:
+        x: 1.15
+        y: 0.95
+      width: 2.3
+      height: 1.9
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 164.4707
+        y: 79.949
+      max:
+        x: 166.7707
+        y: 81.849
+      width: 2.3
+      height: 1.9
+      center:
+        x: 165.6207
+        y: 80.899
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.2954
+        y: -1.0922
+      max:
+        x: 1.2954
+        y: 1.0922
+      width: 2.5908
+      height: 2.1844
+      center:
+        x: 0.0
+        y: -0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 164.3253
+        y: 79.8068
+      max:
+        x: 166.9161
+        y: 81.9912
+      width: 2.5908
+      height: 2.1844
+      center:
+        x: 165.6207
+        y: 80.899
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.2954
+        y: -1.0922
+      max:
+        x: 1.2954
+        y: 1.0922
+      width: 2.5908
+      height: 2.1844
+      center:
+        x: 0.0
+        y: -0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 164.3253
+        y: 79.8068
+      max:
+        x: 166.9161
+        y: 81.9912
+      width: 2.5908
+      height: 2.1844
+      center:
+        x: 165.6207
+        y: 80.899
+  connected_components:
+  - D8
+  - J3
+  - J11
+  - R11
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(RTK1-A)
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - RTK_LED
+    pcb_nets:
+    - RTK_LED
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: resistor
+    package_size: null
+    value: '~'
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_resistor_2512_0_2_ohm
+    score: 0.1083
+    reasons:
+    - same component family
+  - oomp_id: electronic_resistor_0201_0_ohm
+    score: 0.0542
+    reasons:
+    - same component family
+  - oomp_id: electronic_resistor_0201_10000000_ohm
+    score: 0.0542
+    reasons:
+    - same component family
+  - oomp_id: electronic_resistor_0201_1000000_ohm
+    score: 0.0542
+    reasons:
+    - same component family
+  - oomp_id: electronic_resistor_0201_100000_ohm
+    score: 0.0542
+    reasons:
+    - same component family
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/RTK1

@@ -21,7 +21,7 @@
   },
   "output_sha256": {
     "Easyduino_Atmega.kicad_pcb": "0d87a2c79514219adfd3ed1b496d3a3f3748f5f2784e5f3ffd2a94340bca776f",
-    "Easyduino_Atmega.kicad_sch": "050752e2a18e46ebbdf37eb19d7148d0a38f743b285d475ccc35f28c621072b9",
+    "Easyduino_Atmega.kicad_sch": "17b15f686ec8d34903884c8d74843a007dd40cede2c5f3cbb391416e5f5b9d3a",
     "Easyduino_Atmega.kicad_pro": "a22013888eb493fb6c91475ea60f69eee2b19923a4679d9e735d1182e14a38a2",
     "References.kicad_sch": "adcf11aeec114f8f430dfbbb405b21dc7aa93c5d9c61d0142d859fede0f0f991",
     "sym-lib-table": "21866594f2adf0f962fad1f4c2490478f63373c892f02e5291f0ca136dc6c786",
@@ -30,8 +30,8 @@
   "summary": {
     "footprints_converted": 17,
     "footprints_skipped": 21,
-    "symbols_converted": 2,
-    "symbols_skipped": 78
+    "symbols_converted": 3,
+    "symbols_skipped": 77
   },
   "footprints": [
     {
@@ -246,7 +246,11 @@
       "reference": "Y1",
       "source": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf",
+      "reason": "Footprint differs from the installed master; geometry/overrides left untouched.",
+      "differing_fields": [
+        "fp_text"
+      ]
     },
     {
       "reference": "C2",
@@ -871,8 +875,9 @@
         "Y1"
       ],
       "source": "Device:Crystal_GND24",
-      "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "status": "converted",
+      "oomp_id": "electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf",
+      "target": "OOMP:electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf",
       "file": "kicad_file.kicad_sch"
     },
     {

@@ -16,6 +16,8 @@ from urllib.parse import quote_plus
 
 import yaml
 
+from kicad_agents.run_error_report import log_run_error
+
 
 def _component_value(component):
     pcb = component.get("pcb") or {}
@@ -199,7 +201,10 @@ def import_browser_datasheet(part_id, downloaded_file, source_url, parts_source_
     downloaded_file = Path(downloaded_file).resolve()
     parts_source_directory = Path(parts_source_directory).resolve()
     if not downloaded_file.is_file():
-        raise FileNotFoundError(f"Browser download not found: {downloaded_file}")
+        message = f"Browser download not found: {downloaded_file}"
+        log_run_error("browser_research_agent", FileNotFoundError(message))
+        print(message)
+        return None
     if downloaded_file.suffix.lower() != ".pdf":
         raise ValueError("Datasheet imports must be PDF files.")
     with downloaded_file.open("rb") as input_file:
@@ -246,21 +251,26 @@ def main():
     import_parser.add_argument("--replace", action="store_true")
 
     arguments = parser.parse_args()
-    if arguments.command == "queue":
-        project_json = Path(arguments.project_json).resolve()
-        project_data = json.loads(project_json.read_text(encoding="utf-8"))
-        output_directory = Path(arguments.output_dir).resolve() if arguments.output_dir else project_json.parent
-        queue = write_browser_research_queue(project_data, output_directory)
-        print(f"wrote {queue['task_count']} browser research tasks to {output_directory}")
-    if arguments.command == "import-datasheet":
-        destination = import_browser_datasheet(
-            arguments.part_id,
-            arguments.downloaded_file,
-            arguments.source_url,
-            arguments.parts_source_dir,
-            replace=arguments.replace,
-        )
-        print(f"imported browser datasheet to {destination}")
+    try:
+        if arguments.command == "queue":
+            project_json = Path(arguments.project_json).resolve()
+            project_data = json.loads(project_json.read_text(encoding="utf-8"))
+            output_directory = Path(arguments.output_dir).resolve() if arguments.output_dir else project_json.parent
+            queue = write_browser_research_queue(project_data, output_directory)
+            print(f"wrote {queue['task_count']} browser research tasks to {output_directory}")
+        if arguments.command == "import-datasheet":
+            destination = import_browser_datasheet(
+                arguments.part_id,
+                arguments.downloaded_file,
+                arguments.source_url,
+                arguments.parts_source_dir,
+                replace=arguments.replace,
+            )
+            print(f"imported browser datasheet to {destination}")
+    except Exception as error:
+        log_run_error("browser_research_agent", error)
+        print(error)
+        return
 
 
 if __name__ == "__main__":

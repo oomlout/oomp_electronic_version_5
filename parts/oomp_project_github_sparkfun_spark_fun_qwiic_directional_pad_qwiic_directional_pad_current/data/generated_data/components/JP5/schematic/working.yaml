@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: JP5
+  source_file: data/kicad_file.kicad_sch
+  uuid: 8b13458d-1b60-4323-9bf7-42fd847dc599
+  library_id: SparkFun-Jumper:SolderJumper_2_Bridged
+  unit: 1
+  body_style: 1
+  position:
+    x: 229.87
+    y: 137.16
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP5
+    Value: '5'
+    Footprint: SparkFun-Jumper:Jumper_2_NC_Trace
+    Datasheet: '~'
+    Description: Solder Jumper, 2-pole, closed/bridged
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 229.87
+      y: 133.35
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R6
+      pin_number: '1'
+      pin_name: '~'
+  - number: '2'
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 229.87
+      y: 140.97
+    net: IO5{slash}Blue
+    net_aliases:
+    - IO5{slash}Blue
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: U4
+      pin_number: '10'
+      pin_name: IO5
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.2656
+        y: -1.016
+      max:
+        x: 1.2656
+        y: 1.016
+      width: 2.5312
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 228.854
+        y: 135.8944
+      max:
+        x: 230.886
+        y: 138.4256
+      width: 2.032
+      height: 2.5312
+      center:
+        x: 229.87
+        y: 137.16
+  warnings: []
+connected_components:
+- reference: J2
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: R6
+  pin_number: '1'
+  pin_name: '~'
+- reference: U4
+  pin_number: '10'
+  pin_name: IO5

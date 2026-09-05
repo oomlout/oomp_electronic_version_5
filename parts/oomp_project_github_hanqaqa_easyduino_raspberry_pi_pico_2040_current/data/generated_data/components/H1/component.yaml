@@ -186,14 +186,34 @@ pcb:
       name: Mounting Hole 2.2 mm Round Unplated
       class: mechanical
       type: mounting_hole
-      taxonomy: []
-      taxonomy_path: []
+      taxonomy:
+      - level: 1
+        key: taxonomy_1
+        value: mechanical
+      - level: 2
+        key: taxonomy_2
+        value: mounting_hole
+      - level: 3
+        key: taxonomy_3
+        value: 2_2_mm
+      - level: 4
+        key: taxonomy_4
+        value: round
+      - level: 5
+        key: taxonomy_5
+        value: unplated
+      taxonomy_path:
+      - mechanical
+      - mounting_hole
+      - 2_2_mm
+      - round
+      - unplated
     name: Mounting Hole 2.2 mm Round Unplated
     oomp:
-      status: unmatched
-      accepted: false
-      oomp_id: ''
-      confidence: 0.0
+      status: matched
+      accepted: true
+      oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+      confidence: 1.0
       proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       inferred:
         kind: mounting_hole
@@ -349,10 +369,10 @@ connectivity_cross_check:
   disagree_count: 0
   incomplete_count: 0
 oomp:
-  status: unmatched
-  accepted: false
-  oomp_id: null
-  confidence: 0.0
+  status: matched
+  accepted: true
+  oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+  confidence: 1.0
   proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   inferred:
     kind: mounting_hole
@@ -360,29 +380,9 @@ oomp:
     value: MountingHole
     mpn: null
   reasons:
-  - Component family was inferred, but package size was not.
-  candidates:
-  - oomp_id: mechanical_mounting_hole_2_mm_round_unplated
-    score: 0.6022
-    reasons:
-    - same component family
-  - oomp_id: mechanical_mounting_hole_2_mm_round_plated
-    score: 0.5941
-    reasons:
-    - same component family
-  - oomp_id: mechanical_mounting_hole_2_5_mm_round_unplated
-    score: 0.5788
-    reasons:
-    - same component family
-  - oomp_id: mechanical_mounting_hole_3_2_mm_round_unplated
-    score: 0.5788
-    reasons:
-    - same component family
-  - oomp_id: mechanical_mounting_hole_2_5_mm_round_plated
-    score: 0.5708
-    reasons:
-    - same component family
-category: other
-category_source: unmatched_kicad_hint
-category_name: Other
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: mounting_hole
+category_source: oomp_populate
+category_name: Mounting hole
 generated_directory: components/H1

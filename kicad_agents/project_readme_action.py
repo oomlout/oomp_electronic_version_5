@@ -6,6 +6,7 @@ import sys
 from pathlib import Path
 
 import yaml
+from kicad_agents.run_error_report import log_run_error
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 repository_root_text = str(REPOSITORY_ROOT)
@@ -57,6 +58,9 @@ def compile_project_part(details):
         parts_directory,
         output_directory=output_directory,
     )
+    if project_data is None:
+        print(f"Skipped README compilation for {part_directory}; no modern KiCad source files were found.")
+        return
     write_lcsc_review(project_data, output_directory)
     write_browser_research_queue(project_data, output_directory)
     summary_data = generate_project_summary(
@@ -85,7 +89,12 @@ def main():
     parser.add_argument("--kwargs", required=True, help="JSON action details supplied by Roboclick")
     arguments = parser.parse_args()
     details = json.loads(arguments.kwargs)
-    compile_project_part(details)
+    try:
+        compile_project_part(details)
+    except Exception as error:
+        log_run_error("project_readme_action", error)
+        print(error)
+        return
 
 
 if __name__ == "__main__":

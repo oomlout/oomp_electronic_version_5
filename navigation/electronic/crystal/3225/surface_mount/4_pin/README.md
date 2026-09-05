@@ -2,12 +2,13 @@
 
 [Up one level](../README.md)
 
-This category contains 1 parts in total.
+This category contains 2 parts in total.
 
 
 ## Categories
 
 - [12 Mhz](12_mhz/README.md)
+- [16 Mhz](16_mhz/README.md)
 
 
 

@@ -2,7 +2,7 @@
 
 [Up one level](../README.md)
 
-This category contains 34 parts in total.
+This category contains 36 parts in total.
 
 
 ## Categories
@@ -15,6 +15,7 @@ This category contains 34 parts in total.
 - [1 5 Mm](1_5_mm/README.md)
 - [1 Mm](1_mm/README.md)
 - [1 Mm X 2 Mm](1_mm_x_2_mm/README.md)
+- [2 2 Mm](2_2_mm/README.md)
 - [2 5 Mm](2_5_mm/README.md)
 - [2 Mm](2_mm/README.md)
 - [2 Mm X 4 Mm](2_mm_x_4_mm/README.md)

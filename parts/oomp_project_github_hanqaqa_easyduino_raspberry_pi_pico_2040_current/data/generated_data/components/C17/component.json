@@ -1695,10 +1695,10 @@
     "incomplete_count": 0
   },
   "oomp": {
-    "status": "unmatched",
-    "accepted": false,
-    "oomp_id": null,
-    "confidence": 0.0,
+    "status": "matched",
+    "accepted": true,
+    "oomp_id": "electronic_capacitor_0402_27_pico_farad",
+    "confidence": 1.0,
     "proposed_oomp_id": "electronic_capacitor_0402_27_pico_farad",
     "inferred": {
       "kind": "capacitor",
@@ -1707,58 +1707,12 @@
       "mpn": null
     },
     "reasons": [
-      "The exact normalized component is not present in the OOMP parts directory."
+      "Exact OOMP ID constructed from component type, package size, and normalized value."
     ],
-    "candidates": [
-      {
-        "oomp_id": "electronic_capacitor_0402_22_pico_farad",
-        "score": 0.2987,
-        "reasons": [
-          "same component family",
-          "same package size",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_capacitor_0402_120_pico_farad",
-        "score": 0.2981,
-        "reasons": [
-          "same component family",
-          "same package size",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_capacitor_0402_15_pico_farad",
-        "score": 0.2974,
-        "reasons": [
-          "same component family",
-          "same package size",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_capacitor_0402_2_2_micro_farad",
-        "score": 0.2963,
-        "reasons": [
-          "same component family",
-          "same package size",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_capacitor_0402_4_7_micro_farad",
-        "score": 0.2963,
-        "reasons": [
-          "same component family",
-          "same package size",
-          "nearby normalized value"
-        ]
-      }
-    ]
+    "candidates": []
   },
   "category": "capacitor",
-  "category_source": "unmatched_kicad_hint",
+  "category_source": "oomp_populate",
   "category_name": "Capacitor",
   "generated_directory": "components/C17"
 }

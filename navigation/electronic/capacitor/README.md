@@ -2,7 +2,7 @@
 
 [Up one level](../README.md)
 
-This category contains 22 parts in total.
+This category contains 28 parts in total.
 
 
 ## Categories

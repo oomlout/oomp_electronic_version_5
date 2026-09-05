@@ -17,8 +17,8 @@
     "component_count": 77,
     "schematic_symbol_count": 77,
     "pcb_footprint_count": 35,
-    "matched_component_count": 19,
-    "unmatched_physical_component_count": 16,
+    "matched_component_count": 20,
+    "unmatched_physical_component_count": 15,
     "non_physical_symbol_count": 42,
     "mounting_hole_count": 4,
     "dedicated_mounting_hole_count": 0,
@@ -199764,10 +199764,10 @@
         "incomplete_count": 1
       },
       "oomp": {
-        "status": "unmatched",
-        "accepted": false,
-        "oomp_id": null,
-        "confidence": 0.0,
+        "status": "matched",
+        "accepted": true,
+        "oomp_id": "electronic_resistor_0402_2400_ohm",
+        "confidence": 1.0,
         "proposed_oomp_id": "electronic_resistor_0402_2400_ohm",
         "inferred": {
           "kind": "resistor",
@@ -199776,53 +199776,12 @@
           "mpn": null
         },
         "reasons": [
-          "The exact normalized component is not present in the OOMP parts directory."
+          "Exact OOMP ID constructed from component type, package size, and normalized value."
         ],
-        "candidates": [
-          {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_2200_ohm",
-            "score": 0.7057,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_2700_ohm",
-            "score": 0.6964,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_2000_ohm",
-            "score": 0.6768,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_1800_ohm",
-            "score": 0.6436,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_3300_ohm",
-            "score": 0.6342,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          }
-        ]
+        "candidates": []
       },
       "category": "resistor",
-      "category_source": "unmatched_kicad_hint",
+      "category_source": "oomp_populate",
       "category_name": "Resistor",
       "generated_directory": "components/R9"
     },

@@ -1,0 +1,133 @@
+available: true
+units:
+- reference: D19
+  source_file: data/kicad_file_sheets/Power.kicad_sch
+  uuid: 6b27d0f8-b039-4181-bf1e-d49b0205d9be
+  library_id: SparkFun-DiscreteSemi:D_Schottky_3A_10V_0.28V
+  unit: 1
+  body_style: 1
+  position:
+    x: 33.02
+    y: 55.88
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: D19
+    Value: BAT60A
+    Footprint: SparkFun-Semiconductor-Standard:SOD-323
+    Datasheet: https://www.infineon.com/dgdl/bat60aseries.pdf?folderId=db3a304313d846880113def5812204a1&fileId=db3a304313d846880113def70c9304a9
+    Description: Schottky diode
+    PROD_ID: DIO-14072
+    IMax: 3A
+    VDrop: 0.28V
+    VMax: 10V
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: K
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 1.778
+    position:
+      x: 35.56
+      y: 55.88
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D18
+      pin_number: '1'
+      pin_name: K
+    - reference: D22
+      pin_number: '1'
+      pin_name: K
+    - reference: F1
+      pin_number: '1'
+      pin_name: '~'
+  - number: '2'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 1.778
+    position:
+      x: 30.48
+      y: 55.88
+    net: VIN
+    net_aliases:
+    - VIN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR051'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: '#PWR084'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: J3
+      pin_number: '9'
+      pin_name: Pin_9
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -1.143
+      max:
+        x: 0.889
+        y: 1.143
+      width: 2.286
+      height: 2.286
+      center:
+        x: -0.254
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 32.131
+        y: 54.737
+      max:
+        x: 34.417
+        y: 57.023
+      width: 2.286
+      height: 2.286
+      center:
+        x: 33.274
+        y: 55.88
+  warnings: []
+connected_components:
+- reference: '#PWR051'
+  pin_number: '1'
+  pin_name: VIN
+- reference: '#PWR084'
+  pin_number: '1'
+  pin_name: VIN
+- reference: D18
+  pin_number: '1'
+  pin_name: K
+- reference: D22
+  pin_number: '1'
+  pin_name: K
+- reference: F1
+  pin_number: '1'
+  pin_name: '~'
+- reference: J3
+  pin_number: '9'
+  pin_name: Pin_9

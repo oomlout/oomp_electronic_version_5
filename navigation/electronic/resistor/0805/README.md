@@ -2,7 +2,7 @@
 
 [Up one level](../README.md)
 
-This category contains 87 parts in total.
+This category contains 88 parts in total.
 
 
 
@@ -46,6 +46,7 @@ This category contains 87 parts in total.
 - [Resistor 2200 Ohm 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_2200_ohm) — `electronic_resistor_0805_2200_ohm`
 - [Resistor 22000 Ohm 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_22000_ohm) — `electronic_resistor_0805_22000_ohm`
 - [Resistor 220000 Ohm 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_220000_ohm) — `electronic_resistor_0805_220000_ohm`
+- [Resistor 2400 Ohm 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_2400_ohm) — `electronic_resistor_0805_2400_ohm`
 - [Resistor 27 Ohm 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_27_ohm) — `electronic_resistor_0805_27_ohm`
 - [Resistor 270 Ohm 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_270_ohm) — `electronic_resistor_0805_270_ohm`
 - [Resistor 2700 Ohm 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_2700_ohm) — `electronic_resistor_0805_2700_ohm`

@@ -27,6 +27,27 @@ def main(**kwargs):
             "part_number": "bas40t_05",
             "name_short": "Dual Schottky Diode BAS40T-05",
         },
+        {
+            "diode_type": "schottky",
+            "package": "sod_123",
+            "manufacturer": "generic",
+            "part_number": "ss14",
+            "name_short": "Schottky Diode SOD-123",
+        },
+        {
+            "diode_type": "schottky",
+            "package": "sod_323",
+            "manufacturer": "generic",
+            "part_number": "bat54w",
+            "name_short": "Schottky Diode SOD-323",
+        },
+        {
+            "diode_type": "schottky",
+            "package": "0402",
+            "manufacturer": "generic",
+            "part_number": "1ss400",
+            "name_short": "Schottky Diode 0402",
+        },
     ]
 
     for diode in diodes:

@@ -13,13 +13,13 @@ summary:
   component_count: 115
   schematic_symbol_count: 115
   pcb_footprint_count: 65
-  matched_component_count: 33
-  unmatched_physical_component_count: 32
+  matched_component_count: 43
+  unmatched_physical_component_count: 22
   non_physical_symbol_count: 50
   mounting_hole_count: 6
   dedicated_mounting_hole_count: 4
-  mounting_hole_oomp_item_count: 2
-  unmatched_mounting_hole_oomp_item_count: 4
+  mounting_hole_oomp_item_count: 6
+  unmatched_mounting_hole_oomp_item_count: 0
   connectivity_named_net_agreement_count: 210
   connectivity_named_net_disagreement_count: 14
 schematic_files:
@@ -108406,10 +108406,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: electronic_capacitor_0402_27_pico_farad
+    confidence: 1.0
     proposed_oomp_id: electronic_capacitor_0402_27_pico_farad
     inferred:
       kind: capacitor
@@ -108417,40 +108417,10 @@ components:
       value: 27p
       mpn: null
     reasons:
-    - The exact normalized component is not present in the OOMP parts directory.
-    candidates:
-    - oomp_id: electronic_capacitor_0402_22_pico_farad
-      score: 0.2987
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_120_pico_farad
-      score: 0.2981
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_15_pico_farad
-      score: 0.2974
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_2_2_micro_farad
-      score: 0.2963
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_4_7_micro_farad
-      score: 0.2963
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: capacitor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Capacitor
   generated_directory: components/C16
 - reference: C17
@@ -109562,10 +109532,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: electronic_capacitor_0402_27_pico_farad
+    confidence: 1.0
     proposed_oomp_id: electronic_capacitor_0402_27_pico_farad
     inferred:
       kind: capacitor
@@ -109573,40 +109543,10 @@ components:
       value: 27p
       mpn: null
     reasons:
-    - The exact normalized component is not present in the OOMP parts directory.
-    candidates:
-    - oomp_id: electronic_capacitor_0402_22_pico_farad
-      score: 0.2987
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_120_pico_farad
-      score: 0.2981
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_15_pico_farad
-      score: 0.2974
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_2_2_micro_farad
-      score: 0.2963
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_4_7_micro_farad
-      score: 0.2963
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: capacitor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Capacitor
   generated_directory: components/C17
 - reference: D1
@@ -113688,14 +113628,34 @@ components:
         name: Mounting Hole 2.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 2_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 2_2_mm
+        - round
+        - unplated
       name: Mounting Hole 2.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -113851,10 +113811,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -113862,31 +113822,11 @@ components:
       value: MountingHole
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: mechanical_mounting_hole_2_mm_round_unplated
-      score: 0.6022
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_mm_round_plated
-      score: 0.5941
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_5_mm_round_unplated
-      score: 0.5788
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_3_2_mm_round_unplated
-      score: 0.5788
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_5_mm_round_plated
-      score: 0.5708
-      reasons:
-      - same component family
-  category: other
-  category_source: unmatched_kicad_hint
-  category_name: Other
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
+  category: mounting_hole
+  category_source: oomp_populate
+  category_name: Mounting hole
   generated_directory: components/H1
 - reference: H2
   schematic:
@@ -114076,14 +114016,34 @@ components:
         name: Mounting Hole 2.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 2_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 2_2_mm
+        - round
+        - unplated
       name: Mounting Hole 2.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -114239,10 +114199,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -114250,31 +114210,11 @@ components:
       value: MountingHole
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: mechanical_mounting_hole_2_mm_round_unplated
-      score: 0.6022
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_mm_round_plated
-      score: 0.5941
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_5_mm_round_unplated
-      score: 0.5788
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_3_2_mm_round_unplated
-      score: 0.5788
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_5_mm_round_plated
-      score: 0.5708
-      reasons:
-      - same component family
-  category: other
-  category_source: unmatched_kicad_hint
-  category_name: Other
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
+  category: mounting_hole
+  category_source: oomp_populate
+  category_name: Mounting hole
   generated_directory: components/H2
 - reference: H3
   schematic:
@@ -114464,14 +114404,34 @@ components:
         name: Mounting Hole 2.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 2_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 2_2_mm
+        - round
+        - unplated
       name: Mounting Hole 2.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -114627,10 +114587,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -114638,31 +114598,11 @@ components:
       value: MountingHole
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: mechanical_mounting_hole_2_mm_round_unplated
-      score: 0.6022
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_mm_round_plated
-      score: 0.5941
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_5_mm_round_unplated
-      score: 0.5788
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_3_2_mm_round_unplated
-      score: 0.5788
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_5_mm_round_plated
-      score: 0.5708
-      reasons:
-      - same component family
-  category: other
-  category_source: unmatched_kicad_hint
-  category_name: Other
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
+  category: mounting_hole
+  category_source: oomp_populate
+  category_name: Mounting hole
   generated_directory: components/H3
 - reference: H4
   schematic:
@@ -114852,14 +114792,34 @@ components:
         name: Mounting Hole 2.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 2_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 2_2_mm
+        - round
+        - unplated
       name: Mounting Hole 2.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -115015,10 +114975,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -115026,31 +114986,11 @@ components:
       value: MountingHole
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: mechanical_mounting_hole_2_mm_round_unplated
-      score: 0.6022
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_mm_round_plated
-      score: 0.5941
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_5_mm_round_unplated
-      score: 0.5788
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_3_2_mm_round_unplated
-      score: 0.5788
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_5_mm_round_plated
-      score: 0.5708
-      reasons:
-      - same component family
-  category: other
-  category_source: unmatched_kicad_hint
-  category_name: Other
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
+  category: mounting_hole
+  category_source: oomp_populate
+  category_name: Mounting hole
   generated_directory: components/H4
 - reference: J1
   schematic:
@@ -123930,21 +123870,21 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_20_pin
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_20_pin
     inferred:
-      kind: null
+      kind: connector_header
       package_size: null
       value: Conn_01x20
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J3
 - reference: J4
@@ -128447,21 +128387,21 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_20_pin
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_20_pin
     inferred:
-      kind: null
+      kind: connector_header
       package_size: null
       value: Conn_01x20
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J4
 - reference: J5
@@ -129684,21 +129624,21 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
     inferred:
-      kind: null
+      kind: connector_header
       package_size: null
       value: Conn_01x03
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J5
 - reference: J6
@@ -164454,21 +164394,21 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+    confidence: 1.0
+    proposed_oomp_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
     inferred:
-      kind: null
+      kind: crystal
       package_size: null
       value: 12MHz
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: crystal
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Crystal
   generated_directory: components/Y1
 review_notes: []
@@ -164505,7 +164445,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   component_reference: H1
-  component_oomp_id: null
+  component_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   component_footprint: MountingHole:MountingHole_2.2mm_M2
   component_side: front
   dedicated_footprint: true
@@ -164514,14 +164454,34 @@ mounting_holes:
     name: Mounting Hole 2.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 2_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 2_2_mm
+    - round
+    - unplated
   name: Mounting Hole 2.2 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -164566,7 +164526,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   component_reference: H2
-  component_oomp_id: null
+  component_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   component_footprint: MountingHole:MountingHole_2.2mm_M2
   component_side: front
   dedicated_footprint: true
@@ -164575,14 +164535,34 @@ mounting_holes:
     name: Mounting Hole 2.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 2_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 2_2_mm
+    - round
+    - unplated
   name: Mounting Hole 2.2 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -164627,7 +164607,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   component_reference: H3
-  component_oomp_id: null
+  component_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   component_footprint: MountingHole:MountingHole_2.2mm_M2
   component_side: front
   dedicated_footprint: true
@@ -164636,14 +164616,34 @@ mounting_holes:
     name: Mounting Hole 2.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 2_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 2_2_mm
+    - round
+    - unplated
   name: Mounting Hole 2.2 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -164688,7 +164688,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   component_reference: H4
-  component_oomp_id: null
+  component_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
   component_footprint: MountingHole:MountingHole_2.2mm_M2
   component_side: front
   dedicated_footprint: true
@@ -164697,14 +164697,34 @@ mounting_holes:
     name: Mounting Hole 2.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 2_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 2_2_mm
+    - round
+    - unplated
   name: Mounting Hole 2.2 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -164893,8 +164913,28 @@ mounting_hole_items:
     name: Mounting Hole 2.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 2_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 2_2_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -164943,7 +164983,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       component_reference: H1
-      component_oomp_id: null
+      component_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       component_footprint: MountingHole:MountingHole_2.2mm_M2
       component_side: front
       dedicated_footprint: true
@@ -164952,14 +164992,34 @@ mounting_hole_items:
         name: Mounting Hole 2.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 2_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 2_2_mm
+        - round
+        - unplated
       name: Mounting Hole 2.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -164986,10 +165046,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -165022,8 +165082,28 @@ mounting_hole_items:
     name: Mounting Hole 2.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 2_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 2_2_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -165072,7 +165152,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       component_reference: H2
-      component_oomp_id: null
+      component_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       component_footprint: MountingHole:MountingHole_2.2mm_M2
       component_side: front
       dedicated_footprint: true
@@ -165081,14 +165161,34 @@ mounting_hole_items:
         name: Mounting Hole 2.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 2_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 2_2_mm
+        - round
+        - unplated
       name: Mounting Hole 2.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -165115,10 +165215,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -165151,8 +165251,28 @@ mounting_hole_items:
     name: Mounting Hole 2.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 2_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 2_2_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -165201,7 +165321,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       component_reference: H3
-      component_oomp_id: null
+      component_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       component_footprint: MountingHole:MountingHole_2.2mm_M2
       component_side: front
       dedicated_footprint: true
@@ -165210,14 +165330,34 @@ mounting_hole_items:
         name: Mounting Hole 2.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 2_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 2_2_mm
+        - round
+        - unplated
       name: Mounting Hole 2.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -165244,10 +165384,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -165280,8 +165420,28 @@ mounting_hole_items:
     name: Mounting Hole 2.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 2_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 2_2_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -165330,7 +165490,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       component_reference: H4
-      component_oomp_id: null
+      component_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
       component_footprint: MountingHole:MountingHole_2.2mm_M2
       component_side: front
       dedicated_footprint: true
@@ -165339,14 +165499,34 @@ mounting_hole_items:
         name: Mounting Hole 2.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 2_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 2_2_mm
+        - round
+        - unplated
       name: Mounting Hole 2.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -165373,10 +165553,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
     inferred:
       kind: mounting_hole

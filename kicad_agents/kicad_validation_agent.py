@@ -11,6 +11,7 @@ from xml.etree import ElementTree
 
 from kicad_agents import kicad_sexpr as sx
 from kicad_agents.kicad_library_agent import Masters, write_report
+from kicad_agents.run_error_report import log_run_error
 
 
 def netlist_snapshot(path):
@@ -83,8 +84,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('project_directory', type=Path)
     parser.add_argument('--basename', required=True)
-    args = parser.parse_args()
-    print(validate_design(args.project_directory, args.basename))
+    arguments = parser.parse_args()
+    try:
+        print(validate_design(arguments.project_directory, arguments.basename))
+    except Exception as error:
+        log_run_error("kicad_validation_agent", error)
+        print(error)
+        return
 
 
 if __name__ == '__main__':

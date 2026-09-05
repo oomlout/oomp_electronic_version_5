@@ -3,7 +3,7 @@
 This OOMP navigation part publishes the category index at
 [the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical/mounting_hole).
 
-It contains 34 descendant parts.
+It contains 36 descendant parts.
 
 
 [Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical)
@@ -20,6 +20,7 @@ It contains 34 descendant parts.
 - [1 5 Mm](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical/mounting_hole/1_5_mm)
 - [1 Mm](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical/mounting_hole/1_mm)
 - [1 Mm X 2 Mm](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical/mounting_hole/1_mm_x_2_mm)
+- [2 2 Mm](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical/mounting_hole/2_2_mm)
 - [2 5 Mm](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical/mounting_hole/2_5_mm)
 - [2 Mm](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical/mounting_hole/2_mm)
 - [2 Mm X 4 Mm](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/mechanical/mounting_hole/2_mm_x_4_mm)

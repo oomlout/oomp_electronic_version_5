@@ -2,7 +2,7 @@
 
 [Up one level](../README.md)
 
-This category contains 87 parts in total.
+This category contains 88 parts in total.
 
 
 
@@ -46,6 +46,7 @@ This category contains 87 parts in total.
 - [Resistor 2200 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_2200_ohm) — `electronic_resistor_quarter_watt_through_hole_2200_ohm`
 - [Resistor 22000 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_22000_ohm) — `electronic_resistor_quarter_watt_through_hole_22000_ohm`
 - [Resistor 220000 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_220000_ohm) — `electronic_resistor_quarter_watt_through_hole_220000_ohm`
+- [Resistor 2400 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_2400_ohm) — `electronic_resistor_quarter_watt_through_hole_2400_ohm`
 - [Resistor 27 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_27_ohm) — `electronic_resistor_quarter_watt_through_hole_27_ohm`
 - [Resistor 270 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_270_ohm) — `electronic_resistor_quarter_watt_through_hole_270_ohm`
 - [Resistor 2700 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_2700_ohm) — `electronic_resistor_quarter_watt_through_hole_2700_ohm`

@@ -28,18 +28,18 @@
     }
   },
   "output_sha256": {
-    "Easyduino_RP2040.kicad_pcb": "e9f4baece95ff6e8720e2988bb05edd66f1664fb6d7062bcee2aec9ae1d05dcd",
-    "Easyduino_RP2040.kicad_sch": "eb63345efc95dceabfc3f486d29ae23cbd6d7cff01c550ac0be6487b8d478d37",
+    "Easyduino_RP2040.kicad_pcb": "a76e62381449e642fb00f877fcf8ca3926cd37426b273992ae4b7c1c397553dd",
+    "Easyduino_RP2040.kicad_sch": "6265507762c164f4f2c0c8c078d40684d87eff7d9912b1f1343367d694311f16",
     "Easyduino_RP2040.kicad_pro": "47e495b7fd488aa4ce518e6183da764244a8c4241341296d7565723e56e96515",
     "References.kicad_sch": "53ed9614120c5778df6723de6140f3d67de4a1ac1c6f12ad15364239440cff1d",
     "sym-lib-table": "80b040b8ef3f467aa66a2ab1ce2e2b42b8d4a01e482f055c4248271cae0a98cd",
     "fp-lib-table": "e87beada278e26f8186b83ea5936c251e6004b01c61889e938f473816b24379b"
   },
   "summary": {
-    "footprints_converted": 33,
-    "footprints_skipped": 32,
-    "symbols_converted": 3,
-    "symbols_skipped": 112
+    "footprints_converted": 37,
+    "footprints_skipped": 28,
+    "symbols_converted": 6,
+    "symbols_skipped": 109
   },
   "footprints": [
     {
@@ -125,13 +125,18 @@
       "reference": "H3",
       "source": "MountingHole:MountingHole_2.2mm_M2",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "mechanical_mounting_hole_2_2_mm_round_unplated",
+      "reason": "Footprint differs from the installed master; geometry/overrides left untouched.",
+      "differing_fields": [
+        "attr"
+      ]
     },
     {
       "reference": "Y1",
       "source": "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm",
-      "status": "skipped",
-      "reason": "No approved OOMP match."
+      "status": "converted",
+      "oomp_id": "electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf",
+      "target": "OOMP_MachineSolder:electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf"
     },
     {
       "reference": "TP9",
@@ -193,8 +198,9 @@
     {
       "reference": "C16",
       "source": "Capacitor_SMD:C_0402_1005Metric",
-      "status": "skipped",
-      "reason": "No approved OOMP match."
+      "status": "converted",
+      "oomp_id": "electronic_capacitor_0402_27_pico_farad",
+      "target": "OOMP_MachineSolder:electronic_capacitor_0402_27_pico_farad"
     },
     {
       "reference": "TP14",
@@ -218,8 +224,9 @@
     {
       "reference": "J5",
       "source": "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical",
-      "status": "skipped",
-      "reason": "No approved OOMP match."
+      "status": "converted",
+      "oomp_id": "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin",
+      "target": "OOMP_MachineSolder:electronic_connector_header_2_54_mm_pitch_through_hole_3_pin"
     },
     {
       "reference": "SW1",
@@ -318,14 +325,19 @@
     {
       "reference": "C17",
       "source": "Capacitor_SMD:C_0402_1005Metric",
-      "status": "skipped",
-      "reason": "No approved OOMP match."
+      "status": "converted",
+      "oomp_id": "electronic_capacitor_0402_27_pico_farad",
+      "target": "OOMP_MachineSolder:electronic_capacitor_0402_27_pico_farad"
     },
     {
       "reference": "H1",
       "source": "MountingHole:MountingHole_2.2mm_M2",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "mechanical_mounting_hole_2_2_mm_round_unplated",
+      "reason": "Footprint differs from the installed master; geometry/overrides left untouched.",
+      "differing_fields": [
+        "attr"
+      ]
     },
     {
       "reference": "R9",
@@ -345,7 +357,11 @@
       "reference": "H2",
       "source": "MountingHole:MountingHole_2.2mm_M2",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "mechanical_mounting_hole_2_2_mm_round_unplated",
+      "reason": "Footprint differs from the installed master; geometry/overrides left untouched.",
+      "differing_fields": [
+        "attr"
+      ]
     },
     {
       "reference": "TP2",
@@ -419,7 +435,11 @@
       "reference": "H4",
       "source": "MountingHole:MountingHole_2.2mm_M2",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "mechanical_mounting_hole_2_2_mm_round_unplated",
+      "reason": "Footprint differs from the installed master; geometry/overrides left untouched.",
+      "differing_fields": [
+        "attr"
+      ]
     },
     {
       "reference": "C13",
@@ -445,7 +465,11 @@
       "reference": "J4",
       "source": "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "electronic_connector_header_2_54_mm_pitch_through_hole_20_pin",
+      "reason": "Footprint differs from the installed master; geometry/overrides left untouched.",
+      "differing_fields": [
+        "pad"
+      ]
     },
     {
       "reference": "TP5",
@@ -463,7 +487,11 @@
       "reference": "J3",
       "source": "Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "electronic_connector_header_2_54_mm_pitch_through_hole_20_pin",
+      "reason": "Footprint differs from the installed master; geometry/overrides left untouched.",
+      "differing_fields": [
+        "pad"
+      ]
     }
   ],
   "symbols": [
@@ -510,8 +538,9 @@
         "J5"
       ],
       "source": "Connector_Generic:Conn_01x03",
-      "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "status": "converted",
+      "oomp_id": "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin",
+      "target": "OOMP:electronic_connector_header_2_54_mm_pitch_through_hole_3_pin",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -584,8 +613,9 @@
         "J3"
       ],
       "source": "Connector_Generic:Conn_01x20",
-      "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "status": "converted",
+      "oomp_id": "electronic_connector_header_2_54_mm_pitch_through_hole_20_pin",
+      "target": "OOMP:electronic_connector_header_2_54_mm_pitch_through_hole_20_pin",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -956,7 +986,8 @@
       ],
       "source": "Mechanical:MountingHole",
       "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "oomp_id": "mechanical_mounting_hole_2_2_mm_round_unplated",
+      "reason": "Embedded symbol differs from the installed KiCad master.",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -985,7 +1016,8 @@
       ],
       "source": "Mechanical:MountingHole",
       "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "oomp_id": "mechanical_mounting_hole_2_2_mm_round_unplated",
+      "reason": "Embedded symbol differs from the installed KiCad master.",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -1115,7 +1147,8 @@
       ],
       "source": "Mechanical:MountingHole",
       "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "oomp_id": "mechanical_mounting_hole_2_2_mm_round_unplated",
+      "reason": "Embedded symbol differs from the installed KiCad master.",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -1133,7 +1166,8 @@
       ],
       "source": "Device:C",
       "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "oomp_id": "electronic_capacitor_0402_27_pico_farad",
+      "reason": "OOMP canonical symbol differs in graphics, pins or units.",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -1265,7 +1299,8 @@
       ],
       "source": "Mechanical:MountingHole",
       "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "oomp_id": "mechanical_mounting_hole_2_2_mm_round_unplated",
+      "reason": "Embedded symbol differs from the installed KiCad master.",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -1421,7 +1456,8 @@
       ],
       "source": "Device:Crystal_GND24",
       "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "oomp_id": "electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf",
+      "reason": "OOMP symbol master unavailable.",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -1430,7 +1466,8 @@
       ],
       "source": "Device:C",
       "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "oomp_id": "electronic_capacitor_0402_27_pico_farad",
+      "reason": "OOMP canonical symbol differs in graphics, pins or units.",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -1522,8 +1559,9 @@
         "J4"
       ],
       "source": "Connector_Generic:Conn_01x20",
-      "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "status": "converted",
+      "oomp_id": "electronic_connector_header_2_54_mm_pitch_through_hole_20_pin",
+      "target": "OOMP:electronic_connector_header_2_54_mm_pitch_through_hole_20_pin",
       "file": "kicad_file.kicad_sch"
     },
     {

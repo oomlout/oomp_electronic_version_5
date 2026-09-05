@@ -12,6 +12,46 @@ def _normalize_project_slug(value):
     return normalized
 
 
+def _select_active_version(versions):
+    if not versions:
+        return {"version": "current", "git_ref": "main"}
+
+    current_versions = [
+        details
+        for details in versions
+        if str(details.get("version", "current")).strip().lower() == "current"
+    ]
+    if current_versions:
+        return current_versions[0]
+
+    numeric_versions = []
+    for details in versions:
+        raw_version = str(details.get("version", "current")).strip()
+        version_string = raw_version.lower().removeprefix("v")
+        digits = [int(part) for part in re.findall(r"\d+", version_string)]
+        numeric_versions.append((digits, details))
+    if numeric_versions:
+        _, selected = max(numeric_versions, key=lambda item: (item[0] or [0],))
+        return selected
+    return versions[0]
+
+
+def _collapse_historial_versions(versions):
+    if not versions:
+        return [{"version": "current"}]
+
+    version_labels = []
+    for details in versions:
+        label = str(details.get("version", "current")).strip()
+        if label:
+            version_labels.append(label)
+
+    if len(set(version_labels)) <= 1:
+        return list(versions)
+
+    return [_select_active_version(versions)]
+
+
 def main(**kwargs):
     options = kwargs.get("options", [])
 
@@ -365,24 +405,24 @@ def main(**kwargs):
         "Thermocouple-sensor-AD8495-breakout-hardware-design",
         "sensor_thermocouple_ad8495",
         "AD8495 Breakout",
-        "CAD/V1.1.1",
-        "Thermocouple sensor AD8495 breakout",
-        "V1.1.1",
+        "CAD/V1.0.0",
+        "K-pair-adapter",
+        "V1.0.0",
     )
     add_soldered_project(
         "Capacitive-soil-sensor-hardware-design",
         "sensor_capacitive_soil",
         "Capacitive Soil Sensor",
-        "CAD/V1.1.1",
-        "Capacitive_soil_sensor",
-        "V1.1.1",
+        "CAD/V2.0.0",
+        "Capacitive soil sensor",
+        "V2.0.0",
     )
     add_soldered_project(
         "Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design",
         "sensor_light_ltr507als",
         "LTR-507ALS Breakout",
         "CAD/V1.1.1",
-        "Digital light proximity sensor LTR 507ALS breakout",
+        "Light_sensor_LTR-507ALS-01",
         "V1.1.1",
     )
     add_soldered_project(
@@ -402,21 +442,53 @@ def main(**kwargs):
         "V1.1.1",
     )
 
-    add_variant_family(
-        "Simple-light-sensor-board",
+    add_soldered_project(
+        "Simple-light-sensor-board-hardware-design",
         "sensor_light_simple",
         "Simple Light Sensor",
+        "CAD/V1.1.1",
         "Simple_sensor",
         "V1.1.1",
-        [("-hardware-design", "", ""), ("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
     )
-    add_variant_family(
-        "Simple-fire-sensor-board",
+    add_soldered_project(
+        "Simple-light-sensor-board-with-easyC-hardware-design",
+        "sensor_light_simple_easyc",
+        "Simple Light Sensor easyC",
+        "CAD/V1.1.2",
+        "Simple_sensor_easyC",
+        "V1.1.2",
+    )
+    add_soldered_project(
+        "Simple-light-sensor-board-qwiic-hardware-design",
+        "sensor_light_simple_qwiic",
+        "Simple Light Sensor qwiic",
+        "CAD/V1.1.2",
+        "Simple_sensor_easyC",
+        "V1.1.2",
+    )
+    add_soldered_project(
+        "Simple-fire-sensor-board-hardware-design",
         "sensor_fire_simple",
         "Simple Fire Sensor",
+        "CAD/V1.1.1",
         "Simple_sensor",
         "V1.1.1",
-        [("-hardware-design", "", ""), ("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+    add_soldered_project(
+        "Simple-fire-sensor-board-with-easyC-hardware-design",
+        "sensor_fire_simple_easyc",
+        "Simple Fire Sensor easyC",
+        "CAD/V1.1.2",
+        "Simple_sensor_easyC",
+        "V1.1.2",
+    )
+    add_soldered_project(
+        "Simple-fire-sensor-board-qwiic-hardware-design",
+        "sensor_fire_simple_qwiic",
+        "Simple Fire Sensor qwiic",
+        "CAD/V1.1.2",
+        "Simple_sensor_easyC",
+        "V1.1.2",
     )
     add_variant_family(
         "PIR-Movement-sensor-board",
@@ -463,25 +535,33 @@ def main(**kwargs):
         "Voltage---current-sensor-INA219-breakout-hardware-design",
         "sensor_power_ina219",
         "INA219 Breakout",
-        "CAD/V1.1.1",
+        "CAD/V1.0.0",
         "INA219_breakout",
-        "V1.1.1",
+        "V1.0.0",
     )
     add_soldered_project(
         "Current-sensor-30A-ACS712-breakout-hardware-design",
         "sensor_current_acs712_30a",
         "ACS712 30A",
-        "CAD/V1.1.1",
+        "CAD/V2.0.0",
         "ACS712_breakout",
-        "V1.1.1",
+        "V2.0.0",
     )
-    add_variant_family(
-        "Load-cell-ampfilier-HX711-board",
+    add_soldered_project(
+        "Load-cell-ampfilier-HX711-board-hardware-design",
         "sensor_load_cell_hx711",
         "HX711 Load Cell",
-        "Load_cell_amplifier_HX711_board",
+        "CAD/V1.1.1",
+        "HX711",
         "V1.1.1",
-        [("-hardware-design", "", ""), ("-with-easy-C-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+    )
+    add_soldered_project(
+        "Load-cell-ampfilier-HX711-board-with-easy-C-hardware-design",
+        "sensor_load_cell_hx711_easyc",
+        "HX711 Load Cell easyC",
+        "CAD/V1.1.1",
+        "HX711_breakout_easyC",
+        "V1.1.1",
     )
 
     add_soldered_project(
@@ -504,9 +584,9 @@ def main(**kwargs):
         "GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design",
         "sensor_gnss_l86m33_easyc",
         "L86-M33 GNSS easyC",
-        "CAD/V1.1.1",
-        "GNSS_breakout_L86-M33",
-        "V1.1.1",
+        "CAD/V1.1.0",
+        "GNSS GPS L86-M33 breakout with easyC",
+        "V1.1.0",
     )
 
     add_soldered_project(
@@ -514,7 +594,7 @@ def main(**kwargs):
         "sensor_pms7003_adapter",
         "PMS7003 Adapter",
         "CAD/V1.1.1",
-        "PMS7003_adapter",
+        "PMS7003_sensor_adapter",
         "V1.1.1",
     )
     add_soldered_project(
@@ -711,6 +791,7 @@ def main(**kwargs):
     ]
 
     for sparkfun_project in sparkfun_projects:
+        active_version = _select_active_version(sparkfun_project.get("versions", [{"version": "current", "git_ref": "main"}]))
         projects.append(
             {
                 "github_user": "sparkfun",
@@ -722,17 +803,13 @@ def main(**kwargs):
                         "board": sparkfun_project["board"],
                         "board_name": sparkfun_project["board_name"],
                         "board_url": sparkfun_project["repo_url"],
-                        "version": version_details["version"],
-                        "git_ref": version_details["git_ref"],
+                        "version": active_version.get("version", "current"),
+                        "git_ref": active_version.get("git_ref", "main"),
                         "sparse_checkout": True,
                         "project_file_folder": sparkfun_project["project_file_folder"],
                         "project_file_basename": sparkfun_project["project_file_basename"],
                         "project_file_path": sparkfun_project["project_file_path"],
                     }
-                    for version_details in sparkfun_project.get(
-                        "versions",
-                        [{"version": "current", "git_ref": "main"}],
-                    )
                 ],
             }
         )
@@ -745,10 +822,10 @@ def main(**kwargs):
 
     for project in projects:
         versions = project.get("versions", [])
-        if versions == []:
-            versions = [{"version": "current"}]
+        versions = _collapse_historial_versions(versions)
 
         for version_details in versions:
+            version_details = dict(version_details)
             option = {}
             option["taxonomy_1"] = "oomp"
             option["taxonomy_2"] = "project"

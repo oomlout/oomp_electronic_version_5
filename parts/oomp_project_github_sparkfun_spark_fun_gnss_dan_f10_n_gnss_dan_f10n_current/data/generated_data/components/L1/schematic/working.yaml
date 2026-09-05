@@ -1,0 +1,131 @@
+available: true
+units:
+- reference: L1
+  source_file: data/kicad_file.kicad_sch
+  uuid: cea7eac4-d9fd-49ab-bebe-7ca023bec9c6
+  library_id: SparkFun-Coil:33nH_0603_0.3A
+  unit: 1
+  body_style: 1
+  position:
+    x: 294.64
+    y: 116.84
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: L1
+    Value: 33nH
+    Footprint: SparkFun-Capacitor:C_0603_1608Metric
+    Datasheet: https://www.bourns.com/docs/Product-Datasheets/CI160808.pdf
+    Description: Inductor with ferrite core 30 ohm
+    PROD_ID: NDUC-13805
+    Frequency: 100MHz
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.508
+    position:
+      x: 294.64
+      y: 119.38
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C2
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R6
+      pin_number: '2'
+      pin_name: '~'
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.508
+    position:
+      x: 294.64
+      y: 114.3
+    net: ANT_IN
+    net_aliases:
+    - ANT_IN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D4
+      pin_number: '2'
+      pin_name: A2
+    - reference: J4
+      pin_number: '1'
+      pin_name: In
+    - reference: U6
+      pin_number: '34'
+      pin_name: EXT_RF_IN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.032
+        y: 0.0
+      max:
+        x: 2.032
+        y: 1.016
+      width: 4.064
+      height: 1.016
+      center:
+        x: 0.0
+        y: 0.508
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 293.624
+        y: 114.808
+      max:
+        x: 294.64
+        y: 118.872
+      width: 1.016
+      height: 4.064
+      center:
+        x: 294.132
+        y: 116.84
+  warnings: []
+connected_components:
+- reference: C1
+  pin_number: '1'
+  pin_name: '~'
+- reference: C2
+  pin_number: '1'
+  pin_name: '~'
+- reference: D4
+  pin_number: '2'
+  pin_name: A2
+- reference: J4
+  pin_number: '1'
+  pin_name: In
+- reference: R6
+  pin_number: '2'
+  pin_name: '~'
+- reference: U6
+  pin_number: '34'
+  pin_name: EXT_RF_IN

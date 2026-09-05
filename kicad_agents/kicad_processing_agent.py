@@ -5,7 +5,9 @@ import json
 import math
 import re
 import shutil
+import traceback
 from collections import defaultdict
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
@@ -29,6 +31,7 @@ from kicad_agents.oomp_matching_agent import (
     load_overrides,
     match_component,
 )
+from kicad_agents.run_error_report import log_run_error
 from kicad_agents.pcb_copper import extract_copper
 from kicad_agents.sexpr import (
     as_bool,
@@ -46,6 +49,26 @@ from kicad_agents.sexpr import (
 OUTPUT_FORMAT_VERSION = 1
 GRAPHIC_TAGS = {"arc", "bezier", "circle", "polyline", "rectangle"}
 FOOTPRINT_GRAPHIC_TAGS = {"fp_arc", "fp_circle", "fp_curve", "fp_line", "fp_poly", "fp_rect"}
+REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+
+
+def _run_error_log_path():
+    return REPOSITORY_ROOT / "report" / "errors_during_run.txt"
+
+
+def _log_run_error(stage, message):
+    run_error_log = _run_error_log_path()
+    run_error_log.parent.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now(timezone.utc).isoformat()
+    entry = [
+        f"[{timestamp}] {stage}",
+        f"Message: {message}",
+        "Traceback:",
+        traceback.format_exc(),
+        "",
+    ]
+    with run_error_log.open("a", encoding="utf-8") as output_file:
+        output_file.write("\n".join(entry))
 
 
 class NoAliasSafeDumper(getattr(yaml, "CSafeDumper", yaml.SafeDumper)):
@@ -1281,9 +1304,15 @@ def process_project(project_directory, parts_directory, output_directory=None):
             )
         )
     if not schematic_paths:
-        raise FileNotFoundError(f"No modern .kicad_sch files found under {project_directory}")
+        message = f"No modern .kicad_sch files found under {project_directory}"
+        _log_run_error("kicad_processing_agent", message)
+        print(message)
+        return None, output_directory
     if not pcb_paths:
-        raise FileNotFoundError(f"No modern .kicad_pcb files found under {project_directory}")
+        message = f"No modern .kicad_pcb files found under {project_directory}"
+        _log_run_error("kicad_processing_agent", message)
+        print(message)
+        return None, output_directory
 
     project_uuid = value(load(schematic_paths[0]), "uuid", "")
     parsed_schematics = [_parse_schematic(path, project_directory, project_uuid) for path in schematic_paths]
@@ -1435,17 +1464,24 @@ def main():
     parser.add_argument("--output-dir", help="Output directory; defaults to PROJECT/data/generated_data")
     arguments = parser.parse_args()
 
-    project_data, output_directory = process_project(
-        arguments.project_directory,
-        arguments.parts_dir,
-        output_directory=arguments.output_dir,
-    )
-    summary = project_data["summary"]
-    print(f"Generated: {output_directory}")
-    print(f"Components: {summary['component_count']}")
-    print(f"Matched: {summary['matched_component_count']}")
-    print(f"Unmatched physical: {summary['unmatched_physical_component_count']}")
-    print(f"Non-physical symbols: {summary['non_physical_symbol_count']}")
+    try:
+        project_data, output_directory = process_project(
+            arguments.project_directory,
+            arguments.parts_dir,
+            output_directory=arguments.output_dir,
+        )
+        if project_data is None:
+            return
+        summary = project_data["summary"]
+        print(f"Generated: {output_directory}")
+        print(f"Components: {summary['component_count']}")
+        print(f"Matched: {summary['matched_component_count']}")
+        print(f"Unmatched physical: {summary['unmatched_physical_component_count']}")
+        print(f"Non-physical symbols: {summary['non_physical_symbol_count']}")
+    except Exception as error:
+        log_run_error("kicad_processing_agent", error)
+        print(error)
+        return
 
 
 if __name__ == "__main__":

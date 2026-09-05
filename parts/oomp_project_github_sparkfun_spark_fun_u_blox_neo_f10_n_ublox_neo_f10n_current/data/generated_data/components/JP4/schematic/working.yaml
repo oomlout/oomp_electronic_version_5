@@ -1,0 +1,123 @@
+available: true
+units:
+- reference: JP4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 67116941-a527-4fcd-be50-d97d7a0c8705
+  library_id: SparkFun-Jumper:SolderJumper_2_Bridged
+  unit: 1
+  body_style: 1
+  position:
+    x: 110.49
+    y: 36.83
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP4
+    Value: '~'
+    Footprint: SparkFun-Jumper:Jumper_2_NC_Trace
+    Datasheet: '~'
+    Description: Solder Jumper, 2-pole, closed/bridged
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 106.68
+      y: 36.83
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U8
+      pin_number: '3'
+      pin_name: RXD
+  - number: '2'
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 114.3
+      y: 36.83
+    net: TXD
+    net_aliases:
+    - TXD
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D2
+      pin_number: '4'
+      pin_name: K3
+    - reference: J2
+      pin_number: '6'
+      pin_name: Pin_6
+    - reference: J4
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: R15
+      pin_number: '2'
+      pin_name: '~'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.2656
+        y: -1.016
+      max:
+        x: 1.2656
+        y: 1.016
+      width: 2.5312
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 109.2244
+        y: 35.814
+      max:
+        x: 111.7556
+        y: 37.846
+      width: 2.5312
+      height: 2.032
+      center:
+        x: 110.49
+        y: 36.83
+  warnings: []
+connected_components:
+- reference: D2
+  pin_number: '4'
+  pin_name: K3
+- reference: J2
+  pin_number: '6'
+  pin_name: Pin_6
+- reference: J4
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: R15
+  pin_number: '2'
+  pin_name: '~'
+- reference: U8
+  pin_number: '3'
+  pin_name: RXD

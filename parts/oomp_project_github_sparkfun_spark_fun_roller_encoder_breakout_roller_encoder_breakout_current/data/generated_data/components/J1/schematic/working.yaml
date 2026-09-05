@@ -1,0 +1,178 @@
+available: true
+units:
+- reference: J1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 502c6482-91c8-4cb3-9e41-f0ba9b5ac277
+  library_id: SparkFun-Connector:Conn_01x04
+  unit: 1
+  body_style: 1
+  position:
+    x: 165.1
+    y: 97.79
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: J1
+    Value: Conn_01x04
+    Footprint: SparkFun-Connector:1x04
+    Datasheet: '~'
+    Description: Generic connector, single row, 01x04, script generated (kicad-library-utils/schlib/autogen/connector/)
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: Pin_1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 2.54
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 160.02
+      y: 95.25
+    net: B
+    net_aliases:
+    - B
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: SW1
+      pin_number: B
+      pin_name: B
+  - number: '2'
+    name: Pin_2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 160.02
+      y: 97.79
+    net: A
+    net_aliases:
+    - A
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: SW1
+      pin_number: A
+      pin_name: A
+  - number: '3'
+    name: Pin_3
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 160.02
+      y: 100.33
+    net: SWITCH
+    net_aliases:
+    - SWITCH
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: SW1
+      pin_number: S1
+      pin_name: S1
+  - number: '4'
+    name: Pin_4
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -5.08
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 160.02
+      y: 102.87
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR01'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR02'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: GND
+    - reference: SW1
+      pin_number: C
+      pin_name: C
+    - reference: SW1
+      pin_number: S2
+      pin_name: S2
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -6.477
+      max:
+        x: 1.397
+        y: 3.937
+      width: 2.794
+      height: 10.414
+      center:
+        x: 0.0
+        y: -1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 163.703
+        y: 93.853
+      max:
+        x: 166.497
+        y: 104.267
+      width: 2.794
+      height: 10.414
+      center:
+        x: 165.1
+        y: 99.06
+  warnings: []
+connected_components:
+- reference: '#PWR01'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR02'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR03'
+  pin_number: '1'
+  pin_name: GND
+- reference: SW1
+  pin_number: A
+  pin_name: A
+- reference: SW1
+  pin_number: B
+  pin_name: B
+- reference: SW1
+  pin_number: C
+  pin_name: C
+- reference: SW1
+  pin_number: S1
+  pin_name: S1
+- reference: SW1
+  pin_number: S2
+  pin_name: S2

@@ -2,7 +2,7 @@
 
 [Up one level](../README.md)
 
-This category contains 6 parts in total.
+This category contains 10 parts in total.
 
 
 
@@ -13,8 +13,12 @@ This category contains 6 parts in total.
 - [Capacitor 10 nF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_nano_farad) — `electronic_capacitor_0603_10_nano_farad`
 - [Capacitor 10 uF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_micro_farad) — `electronic_capacitor_0603_10_micro_farad`
 - [Capacitor 100 nF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) — `electronic_capacitor_0603_100_nano_farad`
+- [Capacitor 18 pF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_18_pico_farad) — `electronic_capacitor_0603_18_pico_farad`
 - [Capacitor 22 pF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_22_pico_farad) — `electronic_capacitor_0603_22_pico_farad`
+- [Capacitor 27 pF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_27_pico_farad) — `electronic_capacitor_0603_27_pico_farad`
+- [Capacitor 33 pF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_33_pico_farad) — `electronic_capacitor_0603_33_pico_farad`
 - [Capacitor 4.7 uF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_4_7_micro_farad) — `electronic_capacitor_0603_4_7_micro_farad`
+- [Capacitor 47 pF 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_47_pico_farad) — `electronic_capacitor_0603_47_pico_farad`
 
 
 

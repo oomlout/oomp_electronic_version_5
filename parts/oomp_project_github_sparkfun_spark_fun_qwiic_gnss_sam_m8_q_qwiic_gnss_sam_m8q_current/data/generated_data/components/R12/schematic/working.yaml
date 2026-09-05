@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: R12
+  source_file: data/kicad_file.kicad_sch
+  uuid: 49818684-2ae9-4e4a-b3e4-24aaeb9f3154
+  library_id: SparkFun-Resistor:470_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 205.74
+    y: 48.26
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R12
+    Value: '470'
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-07869
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 1.016
+    position:
+      x: 203.2
+      y: 48.26
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '13'
+      pin_name: TXD
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 1.016
+    position:
+      x: 208.28
+      y: 48.26
+    net: TX
+    net_aliases:
+    - TX
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J7
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: JP5
+      pin_number: '2'
+      pin_name: B
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.524
+        y: -1.016
+      max:
+        x: 1.524
+        y: 1.016
+      width: 3.048
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 204.216
+        y: 47.244
+      max:
+        x: 207.264
+        y: 49.276
+      width: 3.048
+      height: 2.032
+      center:
+        x: 205.74
+        y: 48.26
+  warnings: []
+connected_components:
+- reference: J7
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: JP5
+  pin_number: '2'
+  pin_name: B
+- reference: U1
+  pin_number: '13'
+  pin_name: TXD

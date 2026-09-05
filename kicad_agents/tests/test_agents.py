@@ -2,6 +2,7 @@ import json
 import re
 import tempfile
 import unittest
+from unittest import mock
 from pathlib import Path
 
 import yaml
@@ -18,9 +19,12 @@ from kicad_agents.browser_research_agent import (
     build_browser_research_queue,
     import_browser_datasheet,
 )
+import kicad_agents.kicad_processing_agent as kicad_processing_agent
+from kicad_agents import interactive_html_bom_action
 from kicad_agents.component_addition_agent import validate_record
 from kicad_agents.pipeline_audit_agent import run_audit
 from kicad_agents.project_git_action import refresh_project_files
+import kicad_agents.project_git_action as project_git_action
 from kicad_agents.sexpr import children, load, tag, value
 from action_regenerate_all import _is_browser_action
 import working_oomp_populate_project
@@ -543,6 +547,43 @@ class MatchingAgentTests(unittest.TestCase):
             "mechanical_mounting_hole_2_mm_round_unplated",
         )
 
+        dnf_component = {
+            "reference": "R102",
+            "schematic": {
+                "units": [
+                    {
+                        "on_board": True,
+                        "properties": {"Value": "DNF", "Footprint": "Resistor_SMD:R_0402_1005Metric"},
+                    }
+                ]
+            },
+            "pcb": {"library_id": "Device:R_Small", "value": "DNF"},
+        }
+        dnf_result = match_component(index, dnf_component)
+        self.assertEqual(dnf_result["status"], "not_applicable")
+        self.assertIn("do-not-fit", dnf_result["reasons"][0])
+
+        dnp_component = {
+            "reference": "C603",
+            "schematic": {
+                "units": [
+                    {
+                        "on_board": True,
+                        "properties": {"Value": "DNP", "Footprint": "Capacitor_SMD:C_0402_1005Metric"},
+                    }
+                ]
+            },
+            "pcb": {"library_id": "Device:C_Small", "value": "DNP"},
+        }
+        dnp_result = match_component(index, dnp_component)
+        self.assertEqual(dnp_result["status"], "not_applicable")
+        self.assertIn("do-not-populate", dnp_result["reasons"][0])
+        self.assertEqual(mounting_hole_result["status"], "matched")
+        self.assertEqual(
+            mounting_hole_result["oomp_id"],
+            "mechanical_mounting_hole_2_mm_round_unplated",
+        )
+
 
 class ProcessingAgentTests(unittest.TestCase):
     @classmethod
@@ -723,6 +764,26 @@ class ProjectPartTests(unittest.TestCase):
             )
             self.assertEqual(second_destination, destination)
 
+    def test_process_project_logs_missing_modern_source_files(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            project_directory = temporary_path / "part"
+            output_directory = project_directory / "data" / "generated_data"
+            output_directory.mkdir(parents=True)
+
+            with mock.patch.object(kicad_processing_agent, "REPOSITORY_ROOT", temporary_path):
+                project_data, returned_output_directory = process_project(
+                    project_directory,
+                    PARTS_DIRECTORY,
+                    output_directory=output_directory,
+                )
+
+            self.assertIsNone(project_data)
+            self.assertEqual(returned_output_directory, output_directory.resolve())
+            log_path = temporary_path / "report" / "errors_during_run.txt"
+            self.assertTrue(log_path.is_file())
+            self.assertIn("No modern .kicad_sch files found", log_path.read_text(encoding="utf-8"))
+
     def test_component_addition_record_rejects_ambiguous_identity_fields(self):
         record = {
             "ledger_id": "E9999",
@@ -818,6 +879,60 @@ class ProjectPartTests(unittest.TestCase):
         )
         self.assertEqual(easyduino_bluepill["project_file_basename"], "Easyduino_STM32F103")
 
+        thermocouple = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Thermocouple-sensor-AD8495-breakout-hardware-design"
+        )
+        self.assertEqual(thermocouple["project_file_folder"], "CAD/V1.0.0")
+        self.assertEqual(thermocouple["project_file_basename"], "K-pair-adapter")
+
+        capacitive_soil = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Capacitive-soil-sensor-hardware-design"
+        )
+        self.assertEqual(capacitive_soil["project_file_folder"], "CAD/V2.0.0")
+        self.assertEqual(capacitive_soil["project_file_basename"], "Capacitive soil sensor")
+
+        ltr507als = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design"
+        )
+        self.assertEqual(ltr507als["project_file_basename"], "Light_sensor_LTR-507ALS-01")
+
+        ina219 = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Voltage---current-sensor-INA219-breakout-hardware-design"
+        )
+        self.assertEqual(ina219["project_file_folder"], "CAD/V1.0.0")
+        self.assertEqual(ina219["project_file_basename"], "INA219_breakout")
+
+        acs712 = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Current-sensor-30A-ACS712-breakout-hardware-design"
+        )
+        self.assertEqual(acs712["project_file_folder"], "CAD/V2.0.0")
+        self.assertEqual(acs712["project_file_basename"], "ACS712_breakout")
+
+        gnss_easyc = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design"
+        )
+        self.assertEqual(gnss_easyc["project_file_folder"], "CAD/V1.1.0")
+        self.assertEqual(gnss_easyc["project_file_basename"], "GNSS GPS L86-M33 breakout with easyC")
+
+        pms7003 = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "PMS7003-sensor-adapter-hardware-design"
+        )
+        self.assertEqual(pms7003["project_file_basename"], "PMS7003_sensor_adapter")
+
     def test_project_populator_normalizes_taxonomy_and_github_user_ids(self):
         options = []
         working_oomp_populate_project.main(options=options)
@@ -853,6 +968,36 @@ class ProjectPartTests(unittest.TestCase):
             self.assertIn("Project data fetch failed.", error_text)
             self.assertIn("Repository URL", error_text)
             self.assertIn("BrokenBoard", error_text)
+
+    def test_project_git_action_uses_short_temp_workspace(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            part_directory = Path(temporary_directory) / "a" / "very" / "long" / "part" / "path"
+            details = {
+                "directory": str(part_directory),
+                "project_git_url": "https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953.git",
+                "project_github_repository": "SparkFun_Qwiic_Current_Sensor_ADE7953",
+                "project_file_basename": "CurrentSensor",
+                "project_file_folder": "CAD/V1",
+                "project_file_extensions": [".kicad_pcb"],
+                "project_sparse_checkout": False,
+                "project_git_ref": "main",
+            }
+            repository_directory = project_git_action._repository_workspace_directory(details)
+            self.assertTrue(str(repository_directory).startswith(str(Path(tempfile.gettempdir()))))
+            self.assertIn("oomp_git_cache", str(repository_directory))
+            self.assertNotIn(str(part_directory), str(repository_directory))
+
+    def test_project_populator_keeps_only_current_version_records(self):
+        options = []
+        working_oomp_populate_project.main(options=options)
+        current_sensor = [
+            option
+            for option in options
+            if option["project_github_repository"] == "SparkFun_Qwiic_Current_Sensor_ADE7953"
+        ]
+        self.assertEqual(len(current_sensor), 1)
+        self.assertEqual(current_sensor[0]["project_version"], "current")
+        self.assertNotIn("v1.0.0", [option["project_version"] for option in current_sensor])
 
     def test_generated_project_part_has_always_run_actions_and_local_assets(self):
         working = yaml.safe_load((PROJECT_PART / "working.yaml").read_text(encoding="utf-8"))
@@ -1222,6 +1367,61 @@ class RepositoryOrganizationTests(unittest.TestCase):
                     violations.append(str(child.relative_to(REPOSITORY_ROOT)))
         self.assertEqual(violations, [])
 
+        simple_light = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Simple-light-sensor-board-hardware-design"
+        )
+        self.assertEqual(simple_light["project_file_folder"], "CAD/V1.1.1")
+        self.assertEqual(simple_light["project_file_basename"], "Simple_sensor")
+
+        simple_light_easyc = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Simple-light-sensor-board-with-easyC-hardware-design"
+        )
+        self.assertEqual(simple_light_easyc["project_file_folder"], "CAD/V1.1.2")
+        self.assertEqual(simple_light_easyc["project_file_basename"], "Simple_sensor_easyC")
+
+        simple_light_qwiic = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Simple-light-sensor-board-qwiic-hardware-design"
+        )
+        self.assertEqual(simple_light_qwiic["project_file_folder"], "CAD/V1.1.2")
+        self.assertEqual(simple_light_qwiic["project_file_basename"], "Simple_sensor_easyC")
+
+        simple_fire = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Simple-fire-sensor-board-hardware-design"
+        )
+        self.assertEqual(simple_fire["project_file_folder"], "CAD/V1.1.1")
+        self.assertEqual(simple_fire["project_file_basename"], "Simple_sensor")
+
+        simple_fire_easyc = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Simple-fire-sensor-board-with-easyC-hardware-design"
+        )
+        self.assertEqual(simple_fire_easyc["project_file_folder"], "CAD/V1.1.2")
+        self.assertEqual(simple_fire_easyc["project_file_basename"], "Simple_sensor_easyC")
+
+        hx711 = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Load-cell-ampfilier-HX711-board-hardware-design"
+        )
+        self.assertEqual(hx711["project_file_folder"], "CAD/V1.1.1")
+        self.assertEqual(hx711["project_file_basename"], "HX711")
+
+        hx711_easyc = next(
+            option
+            for option in options
+            if option["project_github_repository"] == "Load-cell-ampfilier-HX711-board-with-easy-C-hardware-design"
+        )
+        self.assertEqual(hx711_easyc["project_file_folder"], "CAD/V1.1.1")
+        self.assertEqual(hx711_easyc["project_file_basename"], "HX711_breakout_easyC")
     def test_navigation_has_parent_children_and_absolute_part_links(self):
         root_navigation = (REPOSITORY_ROOT / "navigation" / "README.md").read_text(encoding="utf-8")
         capacitor_navigation = (
@@ -1287,6 +1487,29 @@ class RepositoryOrganizationTests(unittest.TestCase):
             (PROJECT_PART / "data" / "interactivehtmlbom" / "generation_status.yaml").read_text(encoding="utf-8")
         )
         self.assertIn(status["status"], ["generated", "waiting_for_kicad_python"])
+
+    def test_interactive_html_bom_logs_missing_python_to_run_report(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            root = Path(temporary_directory)
+            part_directory = root / "parts" / "demo_part"
+            data_directory = part_directory / "data"
+            data_directory.mkdir(parents=True)
+            (data_directory / "kicad_file.kicad_pcb").write_text("(kicad_pcb)", encoding="utf-8")
+            script_directory = root / "tools" / "interactive_html_bom" / "InteractiveHtmlBom"
+            script_directory.mkdir(parents=True)
+            (script_directory / "generate_interactive_bom.py").write_text("# stub", encoding="utf-8")
+
+            with mock.patch.object(interactive_html_bom_action, "REPOSITORY_ROOT", root), mock.patch.object(
+                interactive_html_bom_action,
+                "INTERACTIVE_HTML_BOM_SCRIPT",
+                script_directory / "generate_interactive_bom.py",
+            ), mock.patch.object(interactive_html_bom_action, "_candidate_python_executables", return_value=[]):
+                result = interactive_html_bom_action.generate_interactive_html_bom({"directory": str(part_directory)})
+
+            self.assertIsNone(result)
+            log_path = root / "report" / "errors_during_run.txt"
+            self.assertTrue(log_path.is_file())
+            self.assertIn("InteractiveHtmlBom requires KiCad's bundled Python", log_path.read_text(encoding="utf-8"))
 
 
 class UsbConnectorDiagramTests(unittest.TestCase):

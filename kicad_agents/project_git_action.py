@@ -1,12 +1,16 @@
 """Roboclick run_python action: refresh a project repository and copy KiCad files."""
 
 import argparse
+import hashlib
 import json
 import shutil
 import subprocess
 import sys
 import traceback
+import tempfile
 from pathlib import Path
+
+from kicad_agents.run_error_report import log_run_error
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -86,6 +90,14 @@ def _write_error_file(details, error):
     print(f"Wrote project fetch error details to {error_path}")
 
 
+def _repository_workspace_directory(details):
+    repository_name = str(details.get("project_github_repository", "")).strip()
+    repository_url = str(details.get("project_git_url", "")).strip()
+    cache_root = Path(tempfile.gettempdir()) / "oomp_git_cache"
+    cache_key = hashlib.sha256(repository_url.encode("utf-8")).hexdigest()[:12]
+    return cache_root / f"{repository_name}_{cache_key}"
+
+
 def refresh_project_files(details):
     try:
         part_directory = Path(details["directory"]).resolve()
@@ -105,14 +117,13 @@ def refresh_project_files(details):
         if not isinstance(extensions, list) or extensions == []:
             raise ValueError("project_file_extensions must be a non-empty list")
 
-        git_parent = data_directory / "git"
-        repository_directory = git_parent / repository_name
+        repository_directory = _repository_workspace_directory(details)
         git_metadata = repository_directory / ".git"
 
         if not git_metadata.is_dir():
             if repository_directory.exists() and any(repository_directory.iterdir()):
                 raise RuntimeError(f"Refusing to clone over non-empty directory: {repository_directory}")
-            git_parent.mkdir(parents=True, exist_ok=True)
+            repository_directory.parent.mkdir(parents=True, exist_ok=True)
             clone_arguments = ["clone"]
             if sparse_checkout:
                 clone_arguments.extend(["--filter=blob:none", "--no-checkout"])
@@ -183,6 +194,10 @@ def refresh_project_files(details):
                 shutil.copy2(table, data_directory / table_name)
         preserve_originals(data_directory)
         return copied_files
+    except FileNotFoundError as error:
+        _write_error_file(details, error)
+        print(error)
+        return None
     except Exception as error:
         _write_error_file(details, error)
         raise
@@ -195,8 +210,10 @@ def main():
     details = json.loads(arguments.kwargs)
     try:
         refresh_project_files(details)
-    except Exception:
-        raise
+    except Exception as error:
+        log_run_error("project_git_action", error)
+        print(error)
+        return
 
 
 if __name__ == "__main__":

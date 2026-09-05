@@ -1,0 +1,491 @@
+reference: D2
+schematic:
+  available: true
+  units:
+  - reference: D2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 178a85c9-e81b-4cd9-b860-6fc24b901a11
+    library_id: SparkFun-DiscreteSemi:D_Schottky_3A_10V_0.28V
+    unit: 1
+    body_style: 1
+    position:
+      x: 234.95
+      y: 41.91
+      rotation: 270.0
+      mirror: x
+      units: mm
+    properties:
+      Reference: D2
+      Value: BAT60A
+      Footprint: SparkFun-Semiconductor-Standard:SOD-323
+      Datasheet: https://www.infineon.com/dgdl/bat60aseries.pdf?folderId=db3a304313d846880113def5812204a1&fileId=db3a304313d846880113def70c9304a9
+      Description: Schottky diode
+      PROD_ID: DIO-14072
+      IMax: 3A
+      VDrop: 0.28V
+      VMax: 10V
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: K
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 1.778
+      position:
+        x: 234.95
+        y: 39.37
+      net: VBUS
+      net_aliases:
+      - VBUS
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#PWR03'
+        pin_number: '1'
+        pin_name: VBUS
+      - reference: '#PWR06'
+        pin_number: '1'
+        pin_name: VBUS
+      - reference: '#PWR08'
+        pin_number: '1'
+        pin_name: VBUS
+      - reference: F1
+        pin_number: '1'
+        pin_name: '~'
+      - reference: U1
+        pin_number: '5'
+        pin_name: VCC
+    - number: '2'
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 1.778
+      position:
+        x: 234.95
+        y: 44.45
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: D3
+        pin_number: '2'
+        pin_name: A
+      - reference: JP11
+        pin_number: '1'
+        pin_name: A
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.397
+          y: -1.143
+        max:
+          x: 0.889
+          y: 1.143
+        width: 2.286
+        height: 2.286
+        center:
+          x: -0.254
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 233.807
+          y: 40.513
+        max:
+          x: 236.093
+          y: 42.799
+        width: 2.286
+        height: 2.286
+        center:
+          x: 234.95
+          y: 41.656
+    warnings: []
+  connected_components:
+  - reference: '#PWR03'
+    pin_number: '1'
+    pin_name: VBUS
+  - reference: '#PWR06'
+    pin_number: '1'
+    pin_name: VBUS
+  - reference: '#PWR08'
+    pin_number: '1'
+    pin_name: VBUS
+  - reference: D3
+    pin_number: '2'
+    pin_name: A
+  - reference: F1
+    pin_number: '1'
+    pin_name: '~'
+  - reference: JP11
+    pin_number: '1'
+    pin_name: A
+  - reference: U1
+    pin_number: '5'
+    pin_name: VCC
+pcb:
+  reference: D2
+  value: BAT60A
+  source_file: data/kicad_file.kicad_pcb
+  uuid: ca27c4fb-db0b-4bf4-8d22-2baff3c2412a
+  library_id: SparkFun-Semiconductor-Standard:SOD-323
+  layer: F.Cu
+  side: front
+  position:
+    x: 144.145
+    y: 104.775
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: D2
+    Value: BAT60A
+    Datasheet: https://www.infineon.com/dgdl/bat60aseries.pdf?folderId=db3a304313d846880113def5812204a1&fileId=db3a304313d846880113def70c9304a9
+    Description: Schottky diode
+    PROD_ID: DIO-14072
+    IMax: 3A
+    VDrop: 0.28V
+    VMax: 10V
+    ki_fp_filters: TO-???* *_Diode_* *SingleDiode* D_*
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.15
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 144.145
+      y: 105.925
+    placed_rotation: 0.0
+    size:
+      x: 0.63
+      y: 0.83
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: Net-(D2-K)
+    net_number: 5
+    pin_function: K
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.565
+          y: -0.315
+        max:
+          x: -0.735
+          y: 0.315
+        width: 0.83
+        height: 0.63
+        center:
+          x: -1.15
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 143.83
+          y: 105.51
+        max:
+          x: 144.46
+          y: 106.34
+        width: 0.63
+        height: 0.83
+        center:
+          x: 144.145
+          y: 105.925
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: D3
+      pad_number: '1'
+    - reference: JP11
+      pad_number: '1'
+    - reference: JP11
+      pad_number: '1'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.15
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 144.145
+      y: 103.625
+    placed_rotation: 0.0
+    size:
+      x: 0.63
+      y: 0.83
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VBUS
+    net_number: 17
+    pin_function: A
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.735
+          y: -0.315
+        max:
+          x: 1.565
+          y: 0.315
+        width: 0.83
+        height: 0.63
+        center:
+          x: 1.15
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 143.83
+          y: 103.21
+        max:
+          x: 144.46
+          y: 104.04
+        width: 0.63
+        height: 0.83
+        center:
+          x: 144.145
+          y: 103.625
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: F1
+      pad_number: '1'
+    - reference: U1
+      pad_number: '5'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.565
+        y: -0.315
+      max:
+        x: 1.565
+        y: 0.315
+      width: 3.13
+      height: 0.63
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 143.83
+        y: 103.21
+      max:
+        x: 144.46
+        y: 106.34
+      width: 0.63
+      height: 3.13
+      center:
+        x: 144.145
+        y: 104.775
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.625
+        y: -0.825
+      max:
+        x: 1.625
+        y: 0.825
+      width: 3.25
+      height: 1.65
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 143.32
+        y: 103.15
+      max:
+        x: 144.97
+        y: 106.4
+      width: 1.65
+      height: 3.25
+      center:
+        x: 144.145
+        y: 104.775
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.8716
+        y: -0.7266
+      max:
+        x: 1.0016
+        y: 0.7266
+      width: 2.8732
+      height: 1.4532
+      center:
+        x: -0.435
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 143.4184
+        y: 103.7734
+      max:
+        x: 144.8716
+        y: 106.6466
+      width: 1.4532
+      height: 2.8732
+      center:
+        x: 144.145
+        y: 105.21
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.8716
+        y: -0.825
+      max:
+        x: 1.625
+        y: 0.825
+      width: 3.4966
+      height: 1.65
+      center:
+        x: -0.1233
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 143.32
+        y: 103.15
+      max:
+        x: 144.97
+        y: 106.6466
+      width: 1.65
+      height: 3.4966
+      center:
+        x: 144.145
+        y: 104.8983
+  connected_components:
+  - D3
+  - F1
+  - JP11
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - VBUS
+    pcb_nets:
+    - Net-(D2-K)
+    status: disagree
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - VBUS
+    status: incomplete
+  agree_count: 0
+  disagree_count: 1
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: BAT60A
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: diode
+category_source: unmatched_kicad_hint
+category_name: Diode
+generated_directory: components/D2

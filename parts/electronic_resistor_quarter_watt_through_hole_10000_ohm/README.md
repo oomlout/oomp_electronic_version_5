@@ -43,6 +43,14 @@ Resistor 10000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX Qwiic Current Sensor INA2XX v1.0.0](https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX) | 1 | R8 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_v1_0_0/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_v1_0_0) |
+
+
+
 ## Files
 
 

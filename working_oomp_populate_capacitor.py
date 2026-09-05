@@ -4,7 +4,9 @@ def main(**kwargs):
     sizes = ["0402"]
     capacitance_values = [
         "15_pico_farad",
+        "18_pico_farad",
         "22_pico_farad",
+        "27_pico_farad",
         "120_pico_farad",
         "10_nano_farad",
         "22_nano_farad",
@@ -24,7 +26,11 @@ def main(**kwargs):
 
     sizes = ["0603"]
     capacitance_values = [
+        "18_pico_farad",
         "22_pico_farad",
+        "27_pico_farad",
+        "33_pico_farad",
+        "47_pico_farad",
         "10_nano_farad",
         "100_nano_farad",
         "1_micro_farad",

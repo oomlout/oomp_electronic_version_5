@@ -3,7 +3,7 @@
 This OOMP navigation part publishes the category index at
 [the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/resistor/1206).
 
-It contains 87 descendant parts.
+It contains 88 descendant parts.
 
 
 [Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/resistor)
@@ -51,6 +51,7 @@ It contains 87 descendant parts.
 - [Resistor 2200 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2200_ohm) — `electronic_resistor_1206_2200_ohm`
 - [Resistor 22000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_22000_ohm) — `electronic_resistor_1206_22000_ohm`
 - [Resistor 220000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_220000_ohm) — `electronic_resistor_1206_220000_ohm`
+- [Resistor 2400 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2400_ohm) — `electronic_resistor_1206_2400_ohm`
 - [Resistor 27 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_27_ohm) — `electronic_resistor_1206_27_ohm`
 - [Resistor 270 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_270_ohm) — `electronic_resistor_1206_270_ohm`
 - [Resistor 2700 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2700_ohm) — `electronic_resistor_1206_2700_ohm`

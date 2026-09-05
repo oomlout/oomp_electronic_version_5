@@ -5,6 +5,8 @@ import json
 import sys
 from pathlib import Path
 
+from kicad_agents.run_error_report import log_run_error
+
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 repository_root_text = str(REPOSITORY_ROOT)
@@ -33,7 +35,10 @@ def build_component_diagrams(details):
 
     working_yaml = part_directory / "working.yaml"
     if not working_yaml.is_file():
-        raise FileNotFoundError(f"Missing generated part definition: {working_yaml}")
+        message = f"Missing generated part definition: {working_yaml}"
+        log_run_error("component_svg_action", FileNotFoundError(message))
+        print(message)
+        return None
 
     working_svg.main(
         part_id=part_id,
@@ -42,7 +47,10 @@ def build_component_diagrams(details):
     )
     assembly_svg = part_directory / "data" / "working_svg_assembly.svg"
     if not assembly_svg.is_file():
-        raise RuntimeError(f"SVG pipeline did not create {assembly_svg}")
+        message = f"SVG pipeline did not create {assembly_svg}"
+        log_run_error("component_svg_action", RuntimeError(message))
+        print(message)
+        return None
     print(f"generated component diagrams for {part_id}")
 
 
@@ -52,7 +60,12 @@ def main():
     )
     parser.add_argument("--kwargs", required=True, help="JSON action details supplied by Roboclick")
     arguments = parser.parse_args()
-    build_component_diagrams(json.loads(arguments.kwargs))
+    try:
+        build_component_diagrams(json.loads(arguments.kwargs))
+    except Exception as error:
+        log_run_error("component_svg_action", error)
+        print(error)
+        return
 
 
 if __name__ == "__main__":

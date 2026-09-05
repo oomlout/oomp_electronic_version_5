@@ -22,6 +22,7 @@ if str(ROOT) not in sys.path:
 import yaml
 
 from kicad_agents import kicad_sexpr as sx
+from kicad_agents.run_error_report import log_run_error
 from working_oomp_populate_kicad import add_kicad_details
 
 
@@ -416,22 +417,27 @@ def main():
     parser.add_argument('--package-only', action='store_true')
     parser.add_argument('--kwargs', help='Roboclick action JSON')
     args = parser.parse_args()
-    if args.kwargs:
-        details = json.loads(args.kwargs)
-        args.part = Path(details['directory'])
-    if args.part:
-        result = build_part(args.part)
-        print(json.dumps(result, indent=2))
+    try:
+        if args.kwargs:
+            details = json.loads(args.kwargs)
+            args.part = Path(details['directory'])
+        if args.part:
+            result = build_part(args.part)
+            print(json.dumps(result, indent=2))
+            return
+        if not args.package_only:
+            masters = Masters()
+            candidates = project_candidates(args.parts)
+            for directory in sorted(args.parts.iterdir()):
+                if (directory / 'working.yaml').is_file():
+                    result = build_part(directory, masters, candidates)
+                    if result:
+                        print(f"{directory.name}: {result['status']}", flush=True)
+        print(package_libraries(args.parts, args.output))
+    except Exception as error:
+        log_run_error("kicad_library_agent", error)
+        print(error)
         return
-    if not args.package_only:
-        masters = Masters()
-        candidates = project_candidates(args.parts)
-        for directory in sorted(args.parts.iterdir()):
-            if (directory / 'working.yaml').is_file():
-                result = build_part(directory, masters, candidates)
-                if result:
-                    print(f"{directory.name}: {result['status']}", flush=True)
-    print(package_libraries(args.parts, args.output))
 
 
 if __name__ == '__main__':

@@ -20,15 +20,15 @@ originals:
     sha256: ca28d750ca294eab98c7df3fe641ef8becc91ceb80b013d77ed4ebb2f1dac77e
     source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_hanqaqa_easyduino_esp32s3_current\data\fp-lib-table
 output_sha256:
-  Easyduino_ESP32S3.kicad_pcb: 3f9be42ed90d0d596ddd631fb2206b0fe2fa834582c9ebbb9399bba2883fb075
+  Easyduino_ESP32S3.kicad_pcb: 131ef43a033cf0c6ea44d1ae35801542b50c80c5df8130e8373b64108a200345
   Easyduino_ESP32S3.kicad_sch: 27783d5887a5f43088f67d7ca27696d103a98f75b6033824103c863cfd0e65d3
   Easyduino_ESP32S3.kicad_pro: 013dc3400769f6fcefdc0f6d1ea8515dca9b9a15eee4c9386e0a22190aa4d9b7
   References.kicad_sch: 8806959db409d638a434d44a76c134d74ef676ae1532101da8058db177629cc9
   sym-lib-table: 23a7026c3531971c1b7dfd9d5d31683548283847e292c2d7f04438b6cf951861
   fp-lib-table: 59296c733dba872a213313d50135520c09c39fc60a82bed157d48dc5cf2a5a40
 summary:
-  footprints_converted: 18
-  footprints_skipped: 17
+  footprints_converted: 19
+  footprints_skipped: 16
   symbols_converted: 2
   symbols_skipped: 75
 footprints:
@@ -53,8 +53,9 @@ footprints:
   target: OOMP_MachineSolder:electronic_capacitor_0402_100_nano_farad
 - reference: R9
   source: Resistor_SMD:R_0402_1005Metric
-  status: skipped
-  reason: No approved OOMP match.
+  status: converted
+  oomp_id: electronic_resistor_0402_2400_ohm
+  target: OOMP_MachineSolder:electronic_resistor_0402_2400_ohm
 - reference: C2
   source: Capacitor_SMD:C_0402_1005Metric
   status: converted
@@ -218,7 +219,8 @@ symbols:
   - R9
   source: Device:R
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_resistor_0402_2400_ohm
+  reason: OOMP canonical symbol differs in graphics, pins or units.
   file: kicad_file.kicad_sch
 - references:
   - '#PWR036'

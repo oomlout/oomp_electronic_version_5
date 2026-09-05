@@ -3,7 +3,7 @@
 This OOMP navigation part publishes the category index at
 [the canonical navigation location](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/capacitor/0402).
 
-It contains 10 descendant parts.
+It contains 12 descendant parts.
 
 
 [Up one level](https://github.com/oomlout/oomp_electronic_version_5/tree/main/navigation/electronic/capacitor)
@@ -20,9 +20,11 @@ It contains 10 descendant parts.
 - [Capacitor 100 nF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_100_nano_farad) — `electronic_capacitor_0402_100_nano_farad`
 - [Capacitor 120 pF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_120_pico_farad) — `electronic_capacitor_0402_120_pico_farad`
 - [Capacitor 15 pF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_15_pico_farad) — `electronic_capacitor_0402_15_pico_farad`
+- [Capacitor 18 pF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_18_pico_farad) — `electronic_capacitor_0402_18_pico_farad`
 - [Capacitor 2.2 uF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_2_2_micro_farad) — `electronic_capacitor_0402_2_2_micro_farad`
 - [Capacitor 22 nF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_22_nano_farad) — `electronic_capacitor_0402_22_nano_farad`
 - [Capacitor 22 pF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_22_pico_farad) — `electronic_capacitor_0402_22_pico_farad`
+- [Capacitor 27 pF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_27_pico_farad) — `electronic_capacitor_0402_27_pico_farad`
 - [Capacitor 4.7 uF 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_4_7_micro_farad) — `electronic_capacitor_0402_4_7_micro_farad`
 
 

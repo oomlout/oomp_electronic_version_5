@@ -8,6 +8,7 @@ import subprocess
 import sys
 import uuid as uuid_module
 from pathlib import Path
+from kicad_agents.run_error_report import log_run_error
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -228,6 +229,9 @@ def convert_project(details):
     if isinstance(details.get('project_match_overrides'), dict):
         write_changed(output_data / 'match_overrides.yaml', yaml.safe_dump({'matches': details['project_match_overrides']}))
     project, _ = process_project(directory, parts_directory, output_directory=output_data)
+    if project is None:
+        print(f"Skipped OOMP conversion for {directory}; no modern KiCad source files were found.")
+        return None
     parts_by_reference = {}
     for component in project['components']:
         match = component.get('oomp', {})
@@ -386,7 +390,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--kwargs', required=True)
     args = parser.parse_args()
-    convert_project(json.loads(args.kwargs))
+    details = json.loads(args.kwargs)
+    try:
+        convert_project(details)
+    except Exception as error:
+        log_run_error("kicad_project_action", error)
+        print(error)
+        return
 
 
 if __name__ == '__main__':

@@ -6,6 +6,7 @@ import json
 import os
 import subprocess
 import sys
+from datetime import datetime, timezone
 from pathlib import Path
 
 import yaml
@@ -19,6 +20,10 @@ INTERACTIVE_HTML_BOM_SCRIPT = (
     / "InteractiveHtmlBom"
     / "generate_interactive_bom.py"
 )
+
+
+def _run_error_log_path():
+    return REPOSITORY_ROOT / "report" / "errors_during_run.txt"
 
 
 def _candidate_python_executables():
@@ -64,6 +69,21 @@ def _write_status(output_directory, status, message, command=None):
     return status_path
 
 
+def _write_run_error(stage, message, command=None):
+    run_error_log = _run_error_log_path()
+    run_error_log.parent.mkdir(parents=True, exist_ok=True)
+    timestamp = datetime.now(timezone.utc).isoformat()
+    entry = [
+        f"[{timestamp}] {stage}",
+        f"Message: {message}",
+    ]
+    if command is not None:
+        entry.append(f"Command: {' '.join(str(value) for value in command)}")
+    entry.append("")
+    with run_error_log.open("a", encoding="utf-8") as handle:
+        handle.write("\n".join(entry))
+
+
 def generate_interactive_html_bom(details):
     part_directory = Path(details["directory"]).resolve()
     data_directory = part_directory / "data"
@@ -72,12 +92,20 @@ def generate_interactive_html_bom(details):
     output_file = output_directory / "ibom.html"
 
     if not pcb_file.is_file():
-        raise FileNotFoundError(f"KiCad PCB file is missing: {pcb_file}")
+        message = f"KiCad PCB file is missing: {pcb_file}"
+        _write_run_error("interactive_html_bom_action", message)
+        _write_status(output_directory, "failed", message)
+        print(message)
+        return None
     if not INTERACTIVE_HTML_BOM_SCRIPT.is_file():
-        raise FileNotFoundError(
+        message = (
             "InteractiveHtmlBom is not set up. Expected "
             f"{INTERACTIVE_HTML_BOM_SCRIPT}"
         )
+        _write_run_error("interactive_html_bom_action", message)
+        _write_status(output_directory, "failed", message)
+        print(message)
+        return None
 
     python_executable = None
     for candidate in _candidate_python_executables():
@@ -90,6 +118,7 @@ def generate_interactive_html_bom(details):
             "InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. "
             "Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action."
         )
+        _write_run_error("interactive_html_bom_action", message)
         _write_status(output_directory, "waiting_for_kicad_python", message)
         print(message)
         return None
@@ -118,15 +147,15 @@ def generate_interactive_html_bom(details):
     if completed.returncode != 0:
         message = completed.stderr.strip() or "InteractiveHtmlBom generation failed"
         _write_status(output_directory, "failed", message, command=command)
-        raise RuntimeError(message)
+        _write_run_error("interactive_html_bom_action", message, command=command)
+        print(message)
+        return None
     if not output_file.is_file():
-        _write_status(
-            output_directory,
-            "failed",
-            f"InteractiveHtmlBom exited successfully but did not create {output_file}",
-            command=command,
-        )
-        raise RuntimeError(f"InteractiveHtmlBom output is missing: {output_file}")
+        message = f"InteractiveHtmlBom exited successfully but did not create {output_file}"
+        _write_status(output_directory, "failed", message, command=command)
+        _write_run_error("interactive_html_bom_action", message, command=command)
+        print(message)
+        return None
 
     _write_status(output_directory, "generated", "InteractiveHtmlBom generated successfully.", command=command)
     print(f"InteractiveHtmlBom: {output_file}")

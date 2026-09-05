@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: R31
+  source_file: data/kicad_file.kicad_sch
+  uuid: fbea56f9-a62e-4650-b1a7-033da68acbe0
+  library_id: SparkFun-Resistor:33_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 100.33
+    y: 163.83
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R31
+    Value: '33'
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-08270
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 96.52
+      y: 163.83
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: '4'
+      pin_name: EXTINT
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 104.14
+      y: 163.83
+    net: EVENT
+    net_aliases:
+    - EVENT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D3
+      pin_number: '5'
+      pin_name: K4
+    - reference: J2
+      pin_number: '2'
+      pin_name: Pin_2
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -1.016
+      max:
+        x: 2.54
+        y: 1.016
+      width: 5.08
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 97.79
+        y: 162.814
+      max:
+        x: 102.87
+        y: 164.846
+      width: 5.08
+      height: 2.032
+      center:
+        x: 100.33
+        y: 163.83
+  warnings: []
+connected_components:
+- reference: D3
+  pin_number: '5'
+  pin_name: K4
+- reference: J2
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: U3
+  pin_number: '4'
+  pin_name: EXTINT

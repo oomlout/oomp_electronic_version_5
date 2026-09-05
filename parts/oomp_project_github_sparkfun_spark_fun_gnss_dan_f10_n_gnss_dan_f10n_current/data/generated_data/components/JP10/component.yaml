@@ -1,0 +1,452 @@
+reference: JP10
+schematic:
+  available: true
+  units:
+  - reference: JP10
+    source_file: data/kicad_file.kicad_sch
+    uuid: fa612770-7490-4eef-b551-d9d7145b89a7
+    library_id: SparkFun-Jumper:SolderJumper_2_Bridged
+    unit: 1
+    body_style: 1
+    position:
+      x: 115.57
+      y: 40.64
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: JP10
+      Value: '~'
+      Footprint: SparkFun-Jumper:Jumper_2_NC_Trace
+      Datasheet: '~'
+      Description: Solder Jumper, 2-pole, closed/bridged
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 1.27
+      position:
+        x: 113.03
+        y: 40.64
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U4
+        pin_number: '3'
+        pin_name: RXD
+    - number: '2'
+      name: B
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 1.27
+      position:
+        x: 118.11
+        y: 40.64
+      net: TXD
+      net_aliases:
+      - TXD
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: J2
+        pin_number: '2'
+        pin_name: Pin_2
+      - reference: U6
+        pin_number: '10'
+        pin_name: TXD
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.2656
+          y: -1.016
+        max:
+          x: 1.2656
+          y: 1.016
+        width: 2.5312
+        height: 2.032
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 114.3044
+          y: 39.624
+        max:
+          x: 116.8356
+          y: 41.656
+        width: 2.5312
+        height: 2.032
+        center:
+          x: 115.57
+          y: 40.64
+    warnings: []
+  connected_components:
+  - reference: J2
+    pin_number: '2'
+    pin_name: Pin_2
+  - reference: U4
+    pin_number: '3'
+    pin_name: RXD
+  - reference: U6
+    pin_number: '10'
+    pin_name: TXD
+pcb:
+  reference: JP10
+  value: '~'
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 83226ccd-0580-4fee-9684-f19600f7b5c5
+  library_id: SparkFun-Jumper:Jumper_2_NC_Trace
+  layer: F.Cu
+  side: front
+  position:
+    x: 145.415
+    y: 88.5825
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: JP10
+    Value: '~'
+    Datasheet: ''
+    Description: Solder Jumper, 2-pole, closed/bridged
+    ki_fp_filters: SolderJumper*Bridged*
+  attributes:
+  - allow_soldermask_bridges
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.5207
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 145.9357
+      y: 88.5825
+    placed_rotation: 0.0
+    size:
+      x: 0.6604
+      y: 1.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    net: Net-(JP10-A)
+    net_number: 28
+    pin_function: A
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.8509
+          y: -0.635
+        max:
+          x: -0.1905
+          y: 0.635
+        width: 0.6604
+        height: 1.27
+        center:
+          x: -0.5207
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 145.6055
+          y: 87.9475
+        max:
+          x: 146.2659
+          y: 89.2175
+        width: 0.6604
+        height: 1.27
+        center:
+          x: 145.9357
+          y: 88.5825
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U4
+      pad_number: '3'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.5207
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 144.8943
+      y: 88.5825
+    placed_rotation: 0.0
+    size:
+      x: 0.6604
+      y: 1.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    net: TXD
+    net_number: 43
+    pin_function: B
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.1905
+          y: -0.635
+        max:
+          x: 0.8509
+          y: 0.635
+        width: 0.6604
+        height: 1.27
+        center:
+          x: 0.5207
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 144.5641
+          y: 87.9475
+        max:
+          x: 145.2245
+          y: 89.2175
+        width: 0.6604
+        height: 1.27
+        center:
+          x: 144.8943
+          y: 88.5825
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: J2
+      pad_number: '2'
+    - reference: U6
+      pad_number: '10'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.8509
+        y: -0.635
+      max:
+        x: 0.8509
+        y: 0.635
+      width: 1.7018
+      height: 1.27
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 144.5641
+        y: 87.9475
+      max:
+        x: 146.2659
+        y: 89.2175
+      width: 1.7018
+      height: 1.27
+      center:
+        x: 145.415
+        y: 88.5825
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.15
+        y: -0.95
+      max:
+        x: 1.15
+        y: 0.95
+      width: 2.3
+      height: 1.9
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 144.265
+        y: 87.6325
+      max:
+        x: 146.565
+        y: 89.5325
+      width: 2.3
+      height: 1.9
+      center:
+        x: 145.415
+        y: 88.5825
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.2954
+        y: -1.0922
+      max:
+        x: 1.2954
+        y: 1.0922
+      width: 2.5908
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 144.1196
+        y: 87.4903
+      max:
+        x: 146.7104
+        y: 89.6747
+      width: 2.5908
+      height: 2.1844
+      center:
+        x: 145.415
+        y: 88.5825
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.2954
+        y: -1.0922
+      max:
+        x: 1.2954
+        y: 1.0922
+      width: 2.5908
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 144.1196
+        y: 87.4903
+      max:
+        x: 146.7104
+        y: 89.6747
+      width: 2.5908
+      height: 2.1844
+      center:
+        x: 145.415
+        y: 88.5825
+  connected_components:
+  - J2
+  - U4
+  - U6
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(JP10-A)
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - TXD
+    pcb_nets:
+    - TXD
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: '~'
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/JP10

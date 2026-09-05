@@ -1,0 +1,124 @@
+available: true
+units:
+- reference: R8
+  source_file: data/kicad_file.kicad_sch
+  uuid: 8acdb925-66f6-47f2-8867-8ceccf3056ab
+  library_id: SparkFun-Resistor:2.2k_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 184.15
+    y: 127.0
+    rotation: 270.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: R8
+    Value: 2.2k
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-08272
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 1.016
+    position:
+      x: 184.15
+      y: 124.46
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '3'
+      pin_name: C
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 1.016
+    position:
+      x: 184.15
+      y: 129.54
+    net: SDA
+    net_aliases:
+    - SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: J2
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: J6
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: U1
+      pin_number: '9'
+      pin_name: SDA
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.524
+        y: -1.016
+      max:
+        x: 1.524
+        y: 1.016
+      width: 3.048
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 183.134
+        y: 125.476
+      max:
+        x: 185.166
+        y: 128.524
+      width: 2.032
+      height: 3.048
+      center:
+        x: 184.15
+        y: 127.0
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J2
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J6
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: JP2
+  pin_number: '3'
+  pin_name: C
+- reference: U1
+  pin_number: '9'
+  pin_name: SDA

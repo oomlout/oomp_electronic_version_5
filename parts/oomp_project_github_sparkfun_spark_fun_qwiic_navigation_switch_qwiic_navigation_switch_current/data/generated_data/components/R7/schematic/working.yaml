@@ -1,0 +1,124 @@
+available: true
+units:
+- reference: R7
+  source_file: data/kicad_file.kicad_sch
+  uuid: f4b1a47a-884f-4c19-93e4-2d4d21246aea
+  library_id: SparkFun-Resistor:2.2k_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 21.59
+    y: 175.26
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R7
+    Value: 2.2k
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-08272
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 21.59
+      y: 171.45
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP6
+      pin_number: '3'
+      pin_name: B
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 21.59
+      y: 179.07
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: J3
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: J5
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: U4
+      pin_number: '14'
+      pin_name: SCL
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -1.016
+      max:
+        x: 2.54
+        y: 1.016
+      width: 5.08
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 20.574
+        y: 172.72
+      max:
+        x: 22.606
+        y: 177.8
+      width: 2.032
+      height: 5.08
+      center:
+        x: 21.59
+        y: 175.26
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: J3
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: J5
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: JP6
+  pin_number: '3'
+  pin_name: B
+- reference: U4
+  pin_number: '14'
+  pin_name: SCL
