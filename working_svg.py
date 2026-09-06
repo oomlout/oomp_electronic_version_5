@@ -1032,6 +1032,14 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
         pad_length = (overall_width - body_width) / 2 + 0.5
         pad_width = max(1.0, body_height * 0.425 / 2.9)
         pin_rows = [
+            ["1", "left", 0.3275],
+            ["2", "left", -0.3275],
+            ["3", "right", 0.0],
+        ]
+        overall_width = body_height * 2.6 / 2.9
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(1.0, body_height * 0.425 / 2.9)
+        pin_rows = [
             ["1", "left", -0.3275],
             ["2", "left", 0.3275],
             ["3", "right", 0.0],
@@ -1055,6 +1063,14 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
         if thing.get("assembly_mode", False):
             body_height = height
         body_width = body_height * 0.775 / 1.6
+        overall_width = body_height
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(0.8, body_height * 0.33 / 1.6)
+        pin_rows = [
+            ["1", "left", 0.30],
+            ["2", "left", -0.30],
+            ["3", "right", 0.0],
+        ]
         overall_width = body_height
         pad_length = (overall_width - body_width) / 2 + 0.5
         pad_width = max(0.8, body_height * 0.33 / 1.6)

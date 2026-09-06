@@ -1,9 +1,7 @@
 # Oomp / Project / Github / Soldered Electronics
 
 [Up one level](../README.md)
-
 This category contains 79 parts in total.
-
 
 ## Categories
 
@@ -86,9 +84,6 @@ This category contains 79 parts in total.
 - [Ultrasonic Sensor With Easy C Hardware Design](ultrasonic_sensor_with_easy_c_hardware_design/README.md)
 - [Voc Sensor MQ138 Breakout Hardware Design](voc_sensor_mq138_breakout_hardware_design/README.md)
 - [Voltage Current Sensor INA219 Breakout Hardware Design](voltage_current_sensor_ina219_breakout_hardware_design/README.md)
-
-
-
 
 
 ---

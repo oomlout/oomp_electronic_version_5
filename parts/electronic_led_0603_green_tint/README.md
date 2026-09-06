@@ -52,6 +52,10 @@ LED Green Tint 0603 is an OOMP electronic led definition. It uses the 0603 packa
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
 ![Outline](data/working_svg_outline_300.png)
 
 ![Part ID](data/working_svg_part_id_300.png)

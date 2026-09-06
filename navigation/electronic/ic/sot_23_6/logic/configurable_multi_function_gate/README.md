@@ -1,16 +1,11 @@
 # Electronic / IC / Sot 23 6 / Logic / Configurable Multi Function Gate
 
 [Up one level](../README.md)
-
 This category contains 1 parts in total.
-
 
 ## Categories
 
 - [Texas Instruments](texas_instruments/README.md)
-
-
-
 
 
 ---

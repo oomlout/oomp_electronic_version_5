@@ -130,8 +130,22 @@ def infer_kind(fields):
         return "diode"
     if any(d in evidence for d in ["d_schottky", "d_tvs", "d_rectifier", "d_zener", "d_zener_sod"]):
         return "diode"
-    # Generic through-hole pin headers: Conn_01xNN value + PinHeader_1xNN_P2.54mm evidence
-    if "conn_01x" in evidence and "pinheader" in evidence and "2_54mm" in evidence:
+    # Generic through-hole 2.54 mm pin headers: KiCad's Conn_01xNN symbols on
+    # PinHeader_1xNN_P2.54mm footprints, and SparkFun's 1xNN footprints (2.54 mm
+    # with or without an explicit _P2.54mm suffix). A SparkFun 1xNN footprint is
+    # a 2.54 mm header whatever symbol sits on it -- SparkFun also uses
+    # I2C_01xNN and friends on the same footprints -- so the footprint alone is
+    # sufficient there. JST and other finer-pitch Conn_01xNN symbols stay
+    # excluded from the symbol-driven branch.
+    sparkfun_header_footprint = bool(
+        re.fullmatch(r"sparkfun_connector_1x\d+(_p2_54mm)?", normalize_text(fields["footprint"]))
+    )
+    if sparkfun_header_footprint or (
+        "conn_01x" in evidence
+        and "jst" not in evidence
+        and "pinheader" in evidence
+        and "2_54mm" in evidence
+    ):
         return "connector_header"
     if reference.startswith("Y") and "crystal" in evidence:
         return "crystal"
@@ -207,7 +221,9 @@ def proposed_oomp_id(component):
         if m:
             pin_count = int(m.group(1))
         else:
-            m = re.search(r"pinheader_1x(\d+)_p2_54mm", footprint_text)
+            m = re.search(r"pinheader_1x(\d+)_p2_54mm", footprint_text) or re.fullmatch(
+                r"sparkfun_connector_1x(\d+)(?:_p2_54mm)?", footprint_text
+            )
             if m:
                 pin_count = int(m.group(1))
         if pin_count:
@@ -478,16 +494,6 @@ def match_component(index, component, overrides=None, blocked=None):
         if value_upper in ("DNF", "DNP"):
             result["reasons"].append("Component is marked do-not-fit / do-not-populate and has no purchased OOMP part requirement.")
         elif reference_upper.startswith("SJ"):
-            result["reasons"].append("PCB solder jumpers are board features, not purchased OOMP parts.")
-        elif reference_upper.startswith("UNK_HOLE") or footprint.startswith("dummyfp"):
-            result["reasons"].append("Mechanical or dummy mounting holes do not require OOMP parts.")
-        else:
-            result["reasons"].append("The symbol has no physical PCB/OOMP part requirement.")
-        return result
-        result["status"] = "not_applicable"
-        reference_upper = reference.upper()
-        footprint = normalize_text(fields["footprint"])
-        if reference_upper.startswith("SJ"):
             result["reasons"].append("PCB solder jumpers are board features, not purchased OOMP parts.")
         elif reference_upper.startswith("UNK_HOLE") or footprint.startswith("dummyfp"):
             result["reasons"].append("Mechanical or dummy mounting holes do not require OOMP parts.")

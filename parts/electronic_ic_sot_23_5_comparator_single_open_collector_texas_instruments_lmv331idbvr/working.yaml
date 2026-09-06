@@ -83,10 +83,14 @@ kicad:
   hand_solder: ''
   machine_solder: ''
   symbol: ''
+lcsc_search: LMV331IDBVR
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr
 manufacturer: Texas Instruments
+manufacturers:
+- manufacturer: Texas Instruments
+  part_number: LMV331IDBVR
 md5: 41efe0e9f74adc38fef02d8b7c920646
 md5_10: 41efe0e9f7
 md5_10_upper: 41EFE0E9F7
@@ -144,6 +148,20 @@ oomlout_ai_roboclick_3:
     command: image_resize
     file_destination: data/working_svg_square_pins_300.png
     file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_300.png
+    file_source: data/working_svg_assembly.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_pins_300.png
+    file_source: data/working_svg_assembly_pins.png
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
@@ -257,7 +275,11 @@ oomlout_ai_roboclick_4:
         hand_solder: ''
         machine_solder: ''
         symbol: ''
+      lcsc_search: LMV331IDBVR
       manufacturer: Texas Instruments
+      manufacturers:
+      - manufacturer: Texas Instruments
+        part_number: LMV331IDBVR
       name: electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr
       name_proper: IC LMV331IDBVR SOT 23 5
       name_readable: IC LMV331IDBVR SOT 23 5
@@ -301,6 +323,20 @@ oomlout_ai_roboclick_4:
           command: image_resize
           file_destination: data/working_svg_square_pins_300.png
           file_source: data/working_svg_square_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_300.png
+          file_source: data/working_svg_assembly.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_pins_300.png
+          file_source: data/working_svg_assembly_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos
@@ -365,10 +401,14 @@ oomlout_ai_roboclick_4:
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
-        - png: ''
-          preview: data/working_svg_assembly.svg
+        - png: data/working_svg_assembly.png
+          preview: data/working_svg_assembly_300.png
           svg: data/working_svg_assembly.svg
           title: Assembly
+        - png: data/working_svg_assembly_pins.png
+          preview: data/working_svg_assembly_pins_300.png
+          svg: data/working_svg_assembly_pins.svg
+          title: Assembly pinout
         - png: data/working_svg_outline.png
           preview: data/working_svg_outline_300.png
           svg: data/working_svg_outline.svg
@@ -400,6 +440,10 @@ oomlout_ai_roboclick_4:
         file_previews:
         - preview: data/working_svg_square_pins_300.png
           title: Pinout drawing
+        - preview: data/working_svg_assembly_300.png
+          title: Assembly
+        - preview: data/working_svg_assembly_pins_300.png
+          title: Assembly pinout
         - preview: data/working_svg_outline_300.png
           title: Outline
         - preview: data/working_svg_part_id_300.png
@@ -509,7 +553,9 @@ oomlout_ai_roboclick_4:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly
         write_yaml: false
@@ -517,7 +563,9 @@ oomlout_ai_roboclick_4:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly_pins
         write_yaml: false
@@ -636,10 +684,14 @@ part_number_manufacturer_texas_instruments: LMV331IDBVR
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
-  - png: ''
-    preview: data/working_svg_assembly.svg
+  - png: data/working_svg_assembly.png
+    preview: data/working_svg_assembly_300.png
     svg: data/working_svg_assembly.svg
     title: Assembly
+  - png: data/working_svg_assembly_pins.png
+    preview: data/working_svg_assembly_pins_300.png
+    svg: data/working_svg_assembly_pins.svg
+    title: Assembly pinout
   - png: data/working_svg_outline.png
     preview: data/working_svg_outline_300.png
     svg: data/working_svg_outline.svg
@@ -671,6 +723,10 @@ part_page:
   file_previews:
   - preview: data/working_svg_square_pins_300.png
     title: Pinout drawing
+  - preview: data/working_svg_assembly_300.png
+    title: Assembly
+  - preview: data/working_svg_assembly_pins_300.png
+    title: Assembly pinout
   - preview: data/working_svg_outline_300.png
     title: Outline
   - preview: data/working_svg_part_id_300.png
@@ -780,7 +836,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly
   write_yaml: false
@@ -788,7 +846,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly_pins
   write_yaml: false

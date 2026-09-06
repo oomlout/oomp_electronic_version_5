@@ -1,7 +1,9 @@
 Project data fetch failed.
 Error type: RuntimeError
-Error message: fatal: could not create work tree dir 'C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_with_easy_c_hardware_design_sensor_gas_mq2_easyc_current\data\git\Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design': Filename too long
-Command: git clone --filter=blob:none --no-checkout https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_with_easy_c_hardware_design_sensor_gas_mq2_easyc_current\data\git\Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design
+Error message: Cloning into 'C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design_21743f7586c8'...
+remote: Repository not found.
+fatal: repository 'https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git/' not found
+Command: git clone --filter=blob:none --no-checkout https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design_21743f7586c8
 Repository URL: https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git
 Repository name: Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design
 Source folder: CAD/V1.1.1
@@ -10,9 +12,11 @@ Extensions: ['.kicad_pcb', '.kicad_sch', '.kicad_pro']
 
 Traceback:
 Traceback (most recent call last):
-  File "kicad_agents/project_git_action.py", line 122, in refresh_project_files
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\project_git_action.py", line 131, in refresh_project_files
     _run_git(clone_arguments)
-  File "kicad_agents/project_git_action.py", line 55, in _run_git
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\project_git_action.py", line 57, in _run_git
     raise RuntimeError(f"{message}\nCommand: {' '.join(command)}")
-RuntimeError: fatal: could not create work tree dir 'C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_with_easy_c_hardware_design_sensor_gas_mq2_easyc_current\data\git\Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design': Filename too long
-Command: git clone --filter=blob:none --no-checkout https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_with_easy_c_hardware_design_sensor_gas_mq2_easyc_current\data\git\Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design
+RuntimeError: Cloning into 'C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design_21743f7586c8'...
+remote: Repository not found.
+fatal: repository 'https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git/' not found
+Command: git clone --filter=blob:none --no-checkout https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design_21743f7586c8

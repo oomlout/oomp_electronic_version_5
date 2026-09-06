@@ -66,11 +66,15 @@ kicad:
   hand_solder: ''
   machine_solder: ''
   symbol: ''
+lcsc_search: MMBT7002K
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k
 manufacturer: CBI
 manufacturer_full: China Base International
+manufacturers:
+- manufacturer: CBI
+  part_number: MMBT7002K
 md5: 352cb014036cf4adf5ec30c335e3ad59
 md5_10: 352cb01403
 md5_10_upper: 352CB01403
@@ -129,6 +133,20 @@ oomlout_ai_roboclick_3:
     command: image_resize
     file_destination: data/working_svg_square_pins_300.png
     file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_300.png
+    file_source: data/working_svg_assembly.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_pins_300.png
+    file_source: data/working_svg_assembly_pins.png
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
@@ -225,8 +243,12 @@ oomlout_ai_roboclick_4:
         hand_solder: ''
         machine_solder: ''
         symbol: ''
+      lcsc_search: MMBT7002K
       manufacturer: CBI
       manufacturer_full: China Base International
+      manufacturers:
+      - manufacturer: CBI
+        part_number: MMBT7002K
       name: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k
       name_proper: Transistor MMBT7002K SOT 23
       name_readable: Transistor MMBT7002K SOT 23
@@ -270,6 +292,20 @@ oomlout_ai_roboclick_4:
           command: image_resize
           file_destination: data/working_svg_square_pins_300.png
           file_source: data/working_svg_square_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_300.png
+          file_source: data/working_svg_assembly.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_pins_300.png
+          file_source: data/working_svg_assembly_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos
@@ -334,10 +370,14 @@ oomlout_ai_roboclick_4:
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
-        - png: ''
-          preview: data/working_svg_assembly.svg
+        - png: data/working_svg_assembly.png
+          preview: data/working_svg_assembly_300.png
           svg: data/working_svg_assembly.svg
           title: Assembly
+        - png: data/working_svg_assembly_pins.png
+          preview: data/working_svg_assembly_pins_300.png
+          svg: data/working_svg_assembly_pins.svg
+          title: Assembly pinout
         - png: data/working_svg_outline.png
           preview: data/working_svg_outline_300.png
           svg: data/working_svg_outline.svg
@@ -369,6 +409,10 @@ oomlout_ai_roboclick_4:
         file_previews:
         - preview: data/working_svg_square_pins_300.png
           title: Pinout drawing
+        - preview: data/working_svg_assembly_300.png
+          title: Assembly
+        - preview: data/working_svg_assembly_pins_300.png
+          title: Assembly pinout
         - preview: data/working_svg_outline_300.png
           title: Outline
         - preview: data/working_svg_part_id_300.png
@@ -474,7 +518,9 @@ oomlout_ai_roboclick_4:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly
         write_yaml: false
@@ -482,7 +528,9 @@ oomlout_ai_roboclick_4:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly_pins
         write_yaml: false
@@ -617,10 +665,14 @@ part_number_manufacturer_cbi: MMBT7002K
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
-  - png: ''
-    preview: data/working_svg_assembly.svg
+  - png: data/working_svg_assembly.png
+    preview: data/working_svg_assembly_300.png
     svg: data/working_svg_assembly.svg
     title: Assembly
+  - png: data/working_svg_assembly_pins.png
+    preview: data/working_svg_assembly_pins_300.png
+    svg: data/working_svg_assembly_pins.svg
+    title: Assembly pinout
   - png: data/working_svg_outline.png
     preview: data/working_svg_outline_300.png
     svg: data/working_svg_outline.svg
@@ -652,6 +704,10 @@ part_page:
   file_previews:
   - preview: data/working_svg_square_pins_300.png
     title: Pinout drawing
+  - preview: data/working_svg_assembly_300.png
+    title: Assembly
+  - preview: data/working_svg_assembly_pins_300.png
+    title: Assembly pinout
   - preview: data/working_svg_outline_300.png
     title: Outline
   - preview: data/working_svg_part_id_300.png
@@ -756,7 +812,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly
   write_yaml: false
@@ -764,7 +822,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly_pins
   write_yaml: false

@@ -68,11 +68,15 @@ kicad:
   hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
   machine_solder: Package_TO_SOT_SMD:SOT-23
   symbol: Transistor_FET:2N7002
+lcsc_search: 2N7002,215
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
 manufacturer: Nexperia
 manufacturer_product_url: https://www.nexperia.com/product/2N7002
+manufacturers:
+- manufacturer: Nexperia
+  part_number: 2N7002,215
 marking_code: 12%
 marking_note: '% is the manufacturing-site code, not a literal package marking.'
 md5: d7c07498aa2a020f7cf42b2520541e4e
@@ -134,6 +138,20 @@ oomlout_ai_roboclick_3:
     command: image_resize
     file_destination: data/working_svg_square_pins_300.png
     file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_300.png
+    file_source: data/working_svg_assembly.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_pins_300.png
+    file_source: data/working_svg_assembly_pins.png
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
@@ -232,8 +250,12 @@ oomlout_ai_roboclick_4:
         hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
         machine_solder: Package_TO_SOT_SMD:SOT-23
         symbol: Transistor_FET:2N7002
+      lcsc_search: 2N7002,215
       manufacturer: Nexperia
       manufacturer_product_url: https://www.nexperia.com/product/2N7002
+      manufacturers:
+      - manufacturer: Nexperia
+        part_number: 2N7002,215
       marking_code: 12%
       marking_note: '% is the manufacturing-site code, not a literal package marking.'
       name: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
@@ -280,6 +302,20 @@ oomlout_ai_roboclick_4:
           command: image_resize
           file_destination: data/working_svg_square_pins_300.png
           file_source: data/working_svg_square_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_300.png
+          file_source: data/working_svg_assembly.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_pins_300.png
+          file_source: data/working_svg_assembly_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos
@@ -373,10 +409,14 @@ oomlout_ai_roboclick_4:
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
-        - png: ''
-          preview: data/working_svg_assembly.svg
+        - png: data/working_svg_assembly.png
+          preview: data/working_svg_assembly_300.png
           svg: data/working_svg_assembly.svg
           title: Assembly
+        - png: data/working_svg_assembly_pins.png
+          preview: data/working_svg_assembly_pins_300.png
+          svg: data/working_svg_assembly_pins.svg
+          title: Assembly pinout
         - png: data/working_svg_outline.png
           preview: data/working_svg_outline_300.png
           svg: data/working_svg_outline.svg
@@ -408,6 +448,10 @@ oomlout_ai_roboclick_4:
         file_previews:
         - preview: data/working_svg_square_pins_300.png
           title: Pinout drawing
+        - preview: data/working_svg_assembly_300.png
+          title: Assembly
+        - preview: data/working_svg_assembly_pins_300.png
+          title: Assembly pinout
         - preview: data/working_svg_outline_300.png
           title: Outline
         - preview: data/working_svg_part_id_300.png
@@ -513,7 +557,9 @@ oomlout_ai_roboclick_4:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly
         write_yaml: false
@@ -521,7 +567,9 @@ oomlout_ai_roboclick_4:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly_pins
         write_yaml: false
@@ -680,10 +728,14 @@ part_number_manufacturer_nexperia: 2N7002,215
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
-  - png: ''
-    preview: data/working_svg_assembly.svg
+  - png: data/working_svg_assembly.png
+    preview: data/working_svg_assembly_300.png
     svg: data/working_svg_assembly.svg
     title: Assembly
+  - png: data/working_svg_assembly_pins.png
+    preview: data/working_svg_assembly_pins_300.png
+    svg: data/working_svg_assembly_pins.svg
+    title: Assembly pinout
   - png: data/working_svg_outline.png
     preview: data/working_svg_outline_300.png
     svg: data/working_svg_outline.svg
@@ -715,6 +767,10 @@ part_page:
   file_previews:
   - preview: data/working_svg_square_pins_300.png
     title: Pinout drawing
+  - preview: data/working_svg_assembly_300.png
+    title: Assembly
+  - preview: data/working_svg_assembly_pins_300.png
+    title: Assembly pinout
   - preview: data/working_svg_outline_300.png
     title: Outline
   - preview: data/working_svg_part_id_300.png
@@ -820,7 +876,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly
   write_yaml: false
@@ -828,7 +886,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly_pins
   write_yaml: false

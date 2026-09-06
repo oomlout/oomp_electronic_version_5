@@ -2,9 +2,9 @@
 const assert = require('node:assert/strict');
 
 module.exports = async function checkStatusLayout(page) {
-  assert.equal(await page.locator('.net-picker #net-status').count(), 0);
+  assert.equal(await page.locator('#net-status').count(), 1);
   assert.equal(await page.locator('.detail .selection-status #net-status').count(), 1);
-  const targets = ['.list-panel', '.net-picker', '.part-list', '.board-panel', '.detail.panel', '.part-detail-scroll', '.selection-status', '#net-status'];
+  const targets = ['.list-panel', '.search-wrap', '.part-list', '.board-panel', '.detail.panel', '.part-detail-scroll', '.selection-status', '#net-status'];
   async function sizes() {
     return page.evaluate(selectors => {
       const result = {};

@@ -2,7 +2,7 @@
 
 `electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb`
 
-Connector JST Sh SM09B-SRSS-TB is an OOMP electronic connector definition. It uses the jst sh package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 9 documented pins.
+Connector JST Sh SM09B-SRSS-TB is an OOMP electronic connector definition. It uses the jst sh package or form factor. Its nominal drawing size is 11.0 &#x00D7; 4.25 mm. The definition includes 9 documented pins.
 
 ![Connector JST Sh SM09B-SRSS-TB pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector JST Sh SM09B-SRSS-TB is an OOMP electronic connector definition. It us
 | OOMP ID | `electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb` |
 | Type | Connector |
 | Package / style | jst sh |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 11.0 &#x00D7; 4.25 mm |
 | Documented pins | 9 |
 
 
@@ -36,8 +36,8 @@ Connector JST Sh SM09B-SRSS-TB is an OOMP electronic connector definition. It us
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 11.0 mm |
+| Width | 4.25 mm |
 
 
 
@@ -64,7 +64,7 @@ Connector JST Sh SM09B-SRSS-TB is an OOMP electronic connector definition. It us
 | 6 | pin_6 | signal |
 | 7 | pin_7 | signal |
 | 8 | pin_8 | signal |
-| 9 | gnd | signal |
+| 9 | pin_9 | signal |
 
 
 
@@ -91,6 +91,10 @@ Connector JST Sh SM09B-SRSS-TB is an OOMP electronic connector definition. It us
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

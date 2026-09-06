@@ -1,9 +1,7 @@
 # Electronic / LED / 0603
 
 [Up one level](../README.md)
-
 This category contains 18 parts in total.
-
 
 ## Categories
 
@@ -12,9 +10,6 @@ This category contains 18 parts in total.
 - [Red](red/README.md)
 - [White](white/README.md)
 - [Yellow](yellow/README.md)
-
-
-
 
 ## Parts
 
@@ -25,8 +20,6 @@ This category contains 18 parts in total.
 - [LED Tint 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_tint) — `electronic_led_0603_tint`
 - [LED White 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_white) — `electronic_led_0603_white`
 - [LED Yellow 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_yellow) — `electronic_led_0603_yellow`
-
-
 
 ---
 

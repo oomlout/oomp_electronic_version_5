@@ -257,18 +257,26 @@ def _pad_shape(pad):
             if len(pts) == 4:
                 drawing += f'<path d="M {pts[0][0]} {pts[0][1]} C {_polygon(pts[1:])}" {style}/>'
     # Keep drilled holes clear in both the base and selected copper layers.
+    # Pads render white-backed, so the drill shows as a board-coloured void.
     if pad.get("drill"):
         drill_width, drill_height = pad["drill"]["size"]
         offset_x, offset_y = pad["drill"]["offset"]
         drawing += (f'<rect class="pad-drill" x="{offset_x - drill_width / 2}" '
                     f'y="{offset_y - drill_height / 2}" width="{drill_width}" '
                     f'height="{drill_height}" rx="{min(drill_width, drill_height) / 2}" '
-                    'style="fill: white; stroke: none"/>')
+                    'style="fill: var(--board, white); stroke: #000000; stroke-width: 0.05"/>')
     return drawing
 
 
-def copper_svg(features):
-    lines = []
+def copper_drawings(features):
+    """Render copper as (traces_drawing, pads_drawing).
+
+    Pads are kept separate so the explorer can lift them above the component
+    artwork: at true scale the pads sit under part bodies and outlines, and
+    traces or fills drawn later would otherwise cut straight through them.
+    """
+    base_lines = []
+    pad_lines = []
     for feature in features:
         kind = feature["kind"]
         reference = html.escape(str(feature.get("reference", "")), quote=True)
@@ -293,12 +301,13 @@ def copper_svg(features):
         elif kind == "pad":
             x, y = feature["position"]
             drawing = f'<g transform="translate({x} {y}) rotate({feature["rotation"]})">{_pad_shape(feature)}</g>'
+        lines = pad_lines if kind == "pad" else base_lines
         lines.append(f'<g {attrs}><title>{title}</title>{drawing}</g>')
-    return "\n".join(lines)
+    return "\n".join(base_lines), "\n".join(pad_lines)
 
 
-def add_copper_svg(board_svg, drawing, mirror=False):
-    """Insert base and selected copper below the component artwork and labels.
+def add_copper_svg(board_svg, drawing, pads_drawing="", mirror=False):
+    """Insert copper below the component artwork, pads above everything else.
 
     The assembly viewBox is in PCB mm with symmetric margins. Reflect about
     its centre for the bottom view, exactly as the existing board generator.
@@ -309,10 +318,21 @@ def add_copper_svg(board_svg, drawing, mirror=False):
         return board_svg
     x, y, width, height = [float(item) for item in viewbox.group(1).split()]
     transform = f'translate({2*x + width:.6f} 0) scale(-1 1)' if mirror else ""
-    base = f'<g class="copper-base" transform="{transform}">{drawing}</g>'
+    # The invisible .copper-pad-hits copy keeps the original interaction
+    # contract (component artwork wins clicks over its own pads) while the
+    # visible .copper-pads copy renders above everything, uncut by traces.
+    base = (f'<g class="copper-base" transform="{transform}">{drawing}'
+            f'<g class="copper-pad-hits">{pads_drawing}</g></g>')
     overlay = f'<g class="copper-overlay" transform="{transform}"></g>'
     highlights = '<g class="component-highlights" pointer-events="none"></g>'
+    pads = f'<g class="copper-pads" transform="{transform}">{pads_drawing}</g>'
     first_part = board_svg.find('<g class="board-component"')
     if first_part < 0:
         first_part = board_svg.rfind("</svg>")
-    return board_svg[:first_part] + base + overlay + highlights + board_svg[first_part:]
+    board_svg = board_svg[:first_part] + base + overlay + highlights + board_svg[first_part:]
+    # Pads go above the component artwork but below the designator labels, so
+    # traces never cut through them and the reference tags stay readable.
+    first_indicator = board_svg.find('<g class="indicator"')
+    if first_indicator < 0:
+        first_indicator = board_svg.rfind("</svg>")
+    return board_svg[:first_indicator] + pads + board_svg[first_indicator:]

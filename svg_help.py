@@ -1,5 +1,7 @@
 import copy
+import math
 import os
+import re
 import sys
 import yaml
 
@@ -180,10 +182,7 @@ def make_svg_generic(part):
                 svg_contents = svg_file.read()
             svg_contents = svg_contents.replace("#333333", "#000000")
             if stylesheet == "style_oomp_assembly":
-                svg_contents = svg_contents.replace(
-                    " stroke-width=",
-                    ' vector-effect="non-scaling-stroke" stroke-width=',
-                )
+                svg_contents = _scale_assembly_strokes(svg_contents)
                 pin_one_svg = thing.get("assembly_pin_one_svg", {})
                 if isinstance(pin_one_svg, dict) and "x" in pin_one_svg and "y" in pin_one_svg:
                     pin_one_attributes = (
@@ -208,11 +207,17 @@ def make_svg_generic(part):
         if "png" in output_formats:
             png_path = os.path.join(folder, f"working_svg{suffix}.png")
             png_dpi = int(svg_detail.get("png_dpi", 150))
+            png_minimum_size_px = svg_detail.get("png_minimum_size_px")
             regenerate_pngs = as_boolean(kwargs.get("regenerate_pngs", False))
             if os.path.isfile(png_path) and not regenerate_pngs:
                 print(f"kept existing png: {png_path}")
             else:
-                svg_to_png(svg_path, png_path, dpi=png_dpi)
+                svg_to_png(
+                    svg_path,
+                    png_path,
+                    dpi=png_dpi,
+                    minimum_size_px=png_minimum_size_px,
+                )
 
         if svg_detail.get("make_a4", True):
             svg_a4.make_a4_sheet(
@@ -263,8 +268,34 @@ def make_svg_generic(part):
     return last_thing
 
 
-def svg_to_png(svg_path, png_path, dpi=150):
-    """Render an SVG to PNG using CairoSVG."""
+# Assembly drawings keep true-scale millimetre geometry (the project board
+# compiler places them by their width/height attributes), so a
+# canvas-proportional line weight made large parts draw much thicker outlines
+# than small ones.  Every assembly drawing therefore uses one constant
+# absolute line weight, chosen to match the small TSOT-23-5 part (IC4) on the
+# pt1 reference board: its canvas diagonal was 4.0247 mm inside the 38 x 24 mm
+# BIP reference, i.e. a 0.0913 stroke fraction.
+_ASSEMBLY_LINE_REFERENCE_MM = 4.0247
+_BIP_REFERENCE_DIAGONAL_MM = math.hypot(38.0, 24.0)
+
+
+def _scale_assembly_strokes(svg_contents):
+    """Rewrite stroke widths to the shared constant absolute line weight."""
+    factor = _ASSEMBLY_LINE_REFERENCE_MM / _BIP_REFERENCE_DIAGONAL_MM
+
+    def scale_stroke(match):
+        return f'stroke-width="{float(match.group(1)) * factor:.4f}"'
+
+    return re.sub(r'stroke-width="([0-9.eE+-]+)"', scale_stroke, svg_contents)
+
+
+def svg_to_png(svg_path, png_path, dpi=150, minimum_size_px=None):
+    """Render an SVG to PNG using CairoSVG.
+
+    minimum_size_px re-renders small drawings so their longest side reaches at
+    least that many pixels; true-scale diagrams would otherwise rasterise to a
+    handful of pixels at 150 dpi.
+    """
     try:
         import cairosvg
     except ImportError:
@@ -275,12 +306,31 @@ def svg_to_png(svg_path, png_path, dpi=150):
     # background also removes the transparent padding around cropped SVGs.
     import time
 
+    output_width = None
+    output_height = None
+    if minimum_size_px is not None:
+        with open(svg_path, "r", encoding="utf-8") as svg_file:
+            svg_contents = svg_file.read()
+        view_box_match = re.search(
+            r'viewBox="([0-9.eE+-]+) ([0-9.eE+-]+) ([0-9.eE+-]+) ([0-9.eE+-]+)', svg_contents
+        )
+        if view_box_match is not None:
+            view_width = float(view_box_match.group(3))
+            view_height = float(view_box_match.group(4))
+            natural_long_side_px = max(view_width, view_height) * dpi / 25.4
+            if natural_long_side_px < minimum_size_px:
+                factor = minimum_size_px / natural_long_side_px
+                output_width = max(1, round(view_width * dpi / 25.4 * factor))
+                output_height = max(1, round(view_height * dpi / 25.4 * factor))
+
     for attempt_number in range(5):
         try:
             cairosvg.svg2png(
                 url=svg_path,
                 write_to=png_path,
                 dpi=dpi,
+                output_width=output_width,
+                output_height=output_height,
                 background_color="#FFFFFF",
             )
             break

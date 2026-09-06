@@ -23,3 +23,18 @@ def main(**kwargs):
         }
         part["kicad"] = {"symbol": "Switch:SW_Push", "machine_solder": "", "hand_solder": "", "allow_project_fallback": False}
         part["research_notes"] = ["Nonpolar contacts numbered 1/2 using schematic convention. No exact XUNPU master footprint verified; the upstream Alps_SKRK footprint is retained, not certified interchangeable."]
+
+    # Generic match for SW_Push tactile switches used in Easyduino and SparkFun projects
+    current = "electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_match"] = {
+            "values": ["SW_Push", "SW_SPST", "SW_Tactile"],
+            "symbols": ["Switch:SW_Push", "Switch:SW_SPST"],
+            "footprints": [
+                "Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS",
+                "Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK",
+                "Bluepill_Library:ALPSALPINE_SKRPACE010",
+                "RP2040:ALPSALPINE_SKRPACE010",
+            ],
+        }

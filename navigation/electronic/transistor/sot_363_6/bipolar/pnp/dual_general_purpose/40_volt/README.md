@@ -1,16 +1,11 @@
 # Electronic / Transistor / Sot 363 6 / Bipolar / Pnp / Dual General Purpose / 40 Volt
 
 [Up one level](../README.md)
-
 This category contains 1 parts in total.
-
 
 ## Categories
 
 - [200 Milliamp](200_milliamp/README.md)
-
-
-
 
 
 ---

@@ -37,6 +37,16 @@ Resistor 5100 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF5101TCE` |
+| LCSC | [`C25905`](https://www.lcsc.com/product-detail/C25905.html) |
+| LCSC | [`C2906874`](https://www.lcsc.com/product-detail/C2906874.html) |
+| LCSC | [`C105872`](https://www.lcsc.com/product-detail/C105872.html) |
+
+
 
 
 
@@ -64,6 +74,10 @@ Resistor 5100 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

@@ -313,21 +313,36 @@ def main(**kwargs):
         )
 
     def add_variant_family(base_repo_slug, base_board_slug, base_board_name, project_file_basename, version_folder, variants):
-        for repo_suffix, board_suffix, name_suffix in variants:
+        for variant in variants:
+            repo_suffix, board_suffix, name_suffix = variant[:3]
+            # Repos in a family do not necessarily mirror the base board's
+            # version folder or file name; an optional fourth element overrides
+            # either the basename alone ("X_easyC") or both as a tuple
+            # (("V1.1.0", "Board with easyC")).
+            file_folder = f"CAD/{version_folder}"
+            file_basename = project_file_basename
+            if len(variant) > 3:
+                override = variant[3]
+                if isinstance(override, tuple):
+                    file_folder, file_basename = f"CAD/{override[0]}", override[1]
+                else:
+                    file_basename = override
             add_soldered_project(
                 f"{base_repo_slug}{repo_suffix}",
                 f"{base_board_slug}{board_suffix}",
                 f"{base_board_name}{name_suffix}",
-                f"CAD/{version_folder}",
-                project_file_basename,
+                file_folder,
+                file_basename,
                 version_folder,
             )
 
-    # Soldered Electronics sensor boards.
+    # Soldered Electronics sensor boards.  The qwiic/easyc flags follow the
+    # repositories that actually exist upstream — SolderedElectronics never
+    # published MQ2 "with easyC" or MQ4 qwiic/easyC variants.
     for mq_number, repo_slug, qwiic, easyc in [
-        (2, "Butane--LPG---Smoke-sensor-MQ2-breakout-hardware-design", True, True),
+        (2, "Butane--LPG---Smoke-sensor-MQ2-breakout-hardware-design", True, False),
         (3, "Alcohol--Ethanol-sensor-MQ3-breakout-hardware-design", True, True),
-        (4, "Methane.-CNG-sensor-MQ4-breakout-hardware-design", True, True),
+        (4, "Methane.-CNG-sensor-MQ4-breakout-hardware-design", False, False),
         (5, "Natural-gas--LPG-sensor-MQ5-breakout-hardware-design", True, True),
         (6, "LPG--Butane-sensor-MQ6-breakout-hardware-design", True, True),
         (7, "CO-sensor-MQ7-breakout-hardware-design", True, True),
@@ -496,7 +511,14 @@ def main(**kwargs):
         "PIR Movement Sensor",
         "PIR_movement_sensor",
         "V1.1.1",
-        [("-hardware-design", "", ""), ("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+        [
+            # The base repository only publishes V2.2.0 and names the files
+            # "PIR Movement sensor board"; the qwiic/easyC repositories stop
+            # at V1.1.0 and name them "PIR Movement sensor board with easyC".
+            ("-hardware-design", "", "", ("V2.2.0", "PIR Movement sensor board")),
+            ("-with-easyC-hardware-design", "_easyc", " easyC", ("V1.1.0", "PIR Movement sensor board with easyC")),
+            ("-qwiic-hardware-design", "_qwiic", " qwiic", ("V1.1.0", "PIR Movement sensor board with easyC")),
+        ],
     )
     add_variant_family(
         "Obstacle-sensor",
@@ -504,7 +526,13 @@ def main(**kwargs):
         "Obstacle Sensor",
         "Obstacle_sensor",
         "V1.1.1",
-        [("-TCRT5000-breakout-hardware-design", "_tcrt5000", " TCRT5000"), ("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+        [
+            # The TCRT5000 repository keeps the Croatian project name, and the
+            # qwiic/easyC repositories name the project Obstacle_sensor_easyC.
+            ("-TCRT5000-breakout-hardware-design", "_tcrt5000", " TCRT5000", "Senzor_prepreke_TCRT5000L"),
+            ("-with-easyC-hardware-design", "_easyc", " easyC", "Obstacle_sensor_easyC"),
+            ("-qwiic-hardware-design", "_qwiic", " qwiic", "Obstacle_sensor_easyC"),
+        ],
     )
     add_variant_family(
         "Ultrasonic-sensor",
@@ -512,7 +540,10 @@ def main(**kwargs):
         "Ultrasonic Sensor",
         "Ultrasonic_sensor",
         "V1.1.1",
-        [("-with-easyC-hardware-design", "_easyc", " easyC"), ("-qwiic-hardware-design", "_qwiic", " qwiic")],
+        [
+            ("-with-easyC-hardware-design", "_easyc", " easyC", "Ultrasonic sensor with easyC"),
+            ("-qwiic-hardware-design", "_qwiic", " qwiic", "Ultrasonic sensor with easyC"),
+        ],
     )
     add_variant_family(
         "Hall-effect-sensor-breakout-with-analog-output",
@@ -520,7 +551,11 @@ def main(**kwargs):
         "Hall Effect Analog Output",
         "Hall_effect_sensor_analog",
         "V1.1.1",
-        [("-hardware-design", "", ""), ("---easyC-hardware-design", "_easyc", " easyC"), ("---qwiic-hardware-design", "_qwiic", " qwiic")],
+        [
+            ("-hardware-design", "", ""),
+            ("---easyC-hardware-design", "_easyc", " easyC", "Hall_effect_sensor_easyC_analog"),
+            ("---qwiic-hardware-design", "_qwiic", " qwiic", "Hall_effect_sensor_easyC_analog"),
+        ],
     )
     add_variant_family(
         "Hall-effect-sensor-breakout-with-digital-output",
@@ -528,7 +563,11 @@ def main(**kwargs):
         "Hall Effect Digital Output",
         "Hall_effect_sensor_digital",
         "V1.1.1",
-        [("-hardware-design", "", ""), ("---easyC-hardware-design", "_easyc", " easyC"), ("---qwiic-hardware-design", "_qwiic", " qwiic")],
+        [
+            ("-hardware-design", "", ""),
+            ("---easyC-hardware-design", "_easyc", " easyC", "Hall_effect_sensor_easyC_digital"),
+            ("---qwiic-hardware-design", "_qwiic", " qwiic", "Hall_effect_sensor_easyC_digital"),
+        ],
     )
 
     add_soldered_project(
@@ -544,7 +583,7 @@ def main(**kwargs):
         "sensor_current_acs712_30a",
         "ACS712 30A",
         "CAD/V2.0.0",
-        "ACS712_breakout",
+        "Current_sensor_ACS712",
         "V2.0.0",
     )
     add_soldered_project(
@@ -610,7 +649,7 @@ def main(**kwargs):
         "input_slider_potentiometer_easyc",
         "Slider Potentiometer easyC",
         "CAD/V1.1.1",
-        "Slider_potentiometer",
+        "Slider_pot_easyC",
         "V1.1.1",
     )
     add_soldered_project(

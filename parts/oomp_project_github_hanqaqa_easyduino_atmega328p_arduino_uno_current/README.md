@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/generated_data/src/board_300.png)
 
-Project hanqaqa/easyduino ATmega328P Arduino Uno current is a KiCad project containing 80 extracted component records. The catalogue matcher linked 19 physical placements to OOMP parts.
+Project hanqaqa/easyduino ATmega328P Arduino Uno current is a KiCad project containing 80 extracted component records. The catalogue matcher linked 27 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project hanqaqa/easyduino ATmega328P Arduino Uno current is a KiCad project cont
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 80 |
-| Matched OOMP components | 19 |
-| Unmatched physical components | 19 |
+| Matched OOMP components | 27 |
+| Unmatched physical components | 11 |
 | Front-side placements | 37 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -92,12 +92,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | A1 | 1 | Arduino_UNO_Connects | Arduino_UNO_Connects | `Module:Arduino_UNO_R3_WithMountingHoles` | unmatched |
 | C1, C2, C3, C4, C5, C6, C7 | 7 | Capacitor 100 nF 0603 | 100n | `Capacitor_SMD:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C8, C9 | 2 | Capacitor 22 pF 0603 | 22p | `Capacitor_SMD:C_0603_1608Metric` | [`electronic_capacitor_0603_22_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_22_pico_farad) |
-| C10, C11, C12 | 3 | 22u | 22u | `Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I` | unmatched |
+| C10, C11, C12 | 3 | Capacitor 22 uF 10 V Tantalum 3216 AVX A | 22u | `Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I` | [`electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt) |
 | D1 | 1 | PRTR5V0U2X | PRTR5V0U2X | `Package_TO_SOT_SMD:SOT-143` | unmatched |
-| D2, D3 | 2 | D_Schottky | D_Schottky | `Diode_SMD:D_SOD-123` | unmatched |
+| D2, D3 | 2 | Diode Schottky SOD-123 | D_Schottky | `Diode_SMD:D_SOD-123` | [`electronic_diode_schottky_sod_123_ss14`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_123_ss14) |
 | D4, D5 | 2 | LED  0603 | LED | `Diode_SMD:D_0603_1608Metric` | [`electronic_led_0603`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603) |
-| F1 | 1 | Polyfuse | Polyfuse | `Fuse:Fuse_1206_3216Metric` | unmatched |
-| J1 | 1 | USB_C_Receptacle_USB2.0 | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | unmatched |
+| F1 | 1 | Fuse Resettable 1206 | Polyfuse | `Fuse:Fuse_1206_3216Metric` | [`electronic_fuse_1206_resettable`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_fuse_1206_resettable) |
+| J1 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
 | J2 | 1 | Connector Header 2.54 mm pitch through-hole 2 pin | Conn_01x02_Pin | `Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_2_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_2_pin) |
 | J3 | 1 | ICSP | ICSP | `Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical` | unmatched |
 | L1 | 1 | 10uH | 10uH | `Inductor_SMD:L_0603_1608Metric` | unmatched |
@@ -110,7 +110,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | U2 | 1 | ATmega328P-A | ATmega328P-A | `Package_QFP:TQFP-32_7x7mm_P0.8mm` | unmatched |
 | U3 | 1 | AMS1117-5V | AMS1117-5V | `Package_TO_SOT_SMD:SOT-223-3_TabPin2` | unmatched |
 | U4 | 1 | AMS1117-3.3V | AMS1117-3.3V | `Package_TO_SOT_SMD:SOT-223-3_TabPin2` | unmatched |
-| Y1 | 1 | 16MHz | 16MHz | `Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm` | unmatched |
+| Y1 | 1 | Crystal 16 MHz 20 pF 3225 4-pin | 16MHz | `Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm` | [`electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf) |
 
 ## Main nets
 
@@ -144,7 +144,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 19 physical component records are not yet matched to an OOMP part.
+- 11 physical component records are not yet matched to an OOMP part.
 - The extractor reports 3 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/generated_data/lcsc_review.yaml)
@@ -154,7 +154,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 12
 
 ## Source files
 

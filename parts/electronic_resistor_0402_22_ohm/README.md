@@ -37,6 +37,16 @@ Resistor 22 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-0722RL` |
+| LCSC | [`C114765`](https://www.lcsc.com/product-detail/C114765.html) |
+| LCSC | [`C25092`](https://www.lcsc.com/product-detail/C25092.html) |
+| LCSC | [`C2929994`](https://www.lcsc.com/product-detail/C2929994.html) |
+
+
 
 
 
@@ -58,6 +68,10 @@ Resistor 22 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

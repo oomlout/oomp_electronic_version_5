@@ -43,9 +43,11 @@ kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0402_1005Metric
   symbol: Device:R_Small
+lcsc_search: 0402 22kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_22000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_22000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_22000_ohm
+manufacturers: []
 md5: 74ff819e3dbb5c9d5b36eac9b1607055
 md5_10: 74ff819e3d
 md5_10_upper: 74FF819E3D
@@ -88,6 +90,20 @@ oomlout_ai_roboclick_2:
     command: image_resize
     file_destination: data/working_svg_square_pins_300.png
     file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_300.png
+    file_source: data/working_svg_assembly.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_pins_300.png
+    file_source: data/working_svg_assembly_pins.png
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
@@ -161,6 +177,8 @@ oomlout_ai_roboclick_3:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0402_1005Metric
         symbol: Device:R_Small
+      lcsc_search: 0402 22kΩ
+      manufacturers: []
       name: electronic_resistor_0402_22000_ohm
       name_proper: Resistor 22000 Ohm 0402
       name_readable: Resistor 22000 Ohm 0402
@@ -192,6 +210,20 @@ oomlout_ai_roboclick_3:
           command: image_resize
           file_destination: data/working_svg_square_pins_300.png
           file_source: data/working_svg_square_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_300.png
+          file_source: data/working_svg_assembly.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_pins_300.png
+          file_source: data/working_svg_assembly_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos
@@ -252,10 +284,14 @@ oomlout_ai_roboclick_3:
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
-        - png: ''
-          preview: data/working_svg_assembly.svg
+        - png: data/working_svg_assembly.png
+          preview: data/working_svg_assembly_300.png
           svg: data/working_svg_assembly.svg
           title: Assembly
+        - png: data/working_svg_assembly_pins.png
+          preview: data/working_svg_assembly_pins_300.png
+          svg: data/working_svg_assembly_pins.svg
+          title: Assembly pinout
         - png: data/working_svg_outline.png
           preview: data/working_svg_outline_300.png
           svg: data/working_svg_outline.svg
@@ -287,6 +323,10 @@ oomlout_ai_roboclick_3:
         file_previews:
         - preview: data/working_svg_square_pins_300.png
           title: Pinout drawing
+        - preview: data/working_svg_assembly_300.png
+          title: Assembly
+        - preview: data/working_svg_assembly_pins_300.png
+          title: Assembly pinout
         - preview: data/working_svg_outline_300.png
           title: Outline
         - preview: data/working_svg_part_id_300.png
@@ -339,7 +379,9 @@ oomlout_ai_roboclick_3:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly
         write_yaml: false
@@ -347,7 +389,9 @@ oomlout_ai_roboclick_3:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly_pins
         write_yaml: false
@@ -451,10 +495,14 @@ part_id: R1
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
-  - png: ''
-    preview: data/working_svg_assembly.svg
+  - png: data/working_svg_assembly.png
+    preview: data/working_svg_assembly_300.png
     svg: data/working_svg_assembly.svg
     title: Assembly
+  - png: data/working_svg_assembly_pins.png
+    preview: data/working_svg_assembly_pins_300.png
+    svg: data/working_svg_assembly_pins.svg
+    title: Assembly pinout
   - png: data/working_svg_outline.png
     preview: data/working_svg_outline_300.png
     svg: data/working_svg_outline.svg
@@ -486,6 +534,10 @@ part_page:
   file_previews:
   - preview: data/working_svg_square_pins_300.png
     title: Pinout drawing
+  - preview: data/working_svg_assembly_300.png
+    title: Assembly
+  - preview: data/working_svg_assembly_pins_300.png
+    title: Assembly pinout
   - preview: data/working_svg_outline_300.png
     title: Outline
   - preview: data/working_svg_part_id_300.png
@@ -537,7 +589,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly
   write_yaml: false
@@ -545,7 +599,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly_pins
   write_yaml: false

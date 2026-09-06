@@ -87,6 +87,10 @@ IC RT9742CGJ5 TSOT 23 5 is an OOMP electronic ic definition. It uses the tsot 23
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
 ![Outline](data/working_svg_outline_300.png)
 
 ![Part ID](data/working_svg_part_id_300.png)

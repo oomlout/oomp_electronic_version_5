@@ -1,9 +1,7 @@
 # Electronic / Connector
 
 [Up one level](../README.md)
-
 This category contains 45 parts in total.
-
 
 ## Categories
 
@@ -11,9 +9,6 @@ This category contains 45 parts in total.
 - [JST Sh](jst_sh/README.md)
 - [USB-A](usb_a/README.md)
 - [USB-C](usb_c/README.md)
-
-
-
 
 
 ---

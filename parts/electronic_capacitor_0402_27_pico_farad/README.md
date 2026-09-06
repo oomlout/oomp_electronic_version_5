@@ -37,6 +37,16 @@ Capacitor 27 pF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CC0402JRNPO9BN270` |
+| LCSC | [`C107002`](https://www.lcsc.com/product-detail/C107002.html) |
+| LCSC | [`C466227`](https://www.lcsc.com/product-detail/C466227.html) |
+| LCSC | [`C1557`](https://www.lcsc.com/product-detail/C1557.html) |
+
+
 
 
 
@@ -58,6 +68,10 @@ Capacitor 27 pF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

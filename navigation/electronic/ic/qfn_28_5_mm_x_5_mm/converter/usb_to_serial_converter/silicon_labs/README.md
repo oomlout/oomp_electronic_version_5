@@ -1,17 +1,13 @@
 # Electronic / IC / Qfn 28 5 Mm X 5 Mm / Converter / Usb To Serial Converter / Silicon Labs
 
 [Up one level](../README.md)
-
-This category contains 1 parts in total.
-
-
+This category contains 2 parts in total.
 
 
 ## Parts
 
 - [IC CP2102-GMR QFN 28 5 MM X 5 MM](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102_gmr) — `electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102_gmr`
-
-
+- [USB-Serial CP2102N-A01-GQFN28R](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r) — `electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r`
 
 ---
 

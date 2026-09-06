@@ -37,6 +37,16 @@ Resistor 10000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F1002TS` |
+| LCSC | [`C2906861`](https://www.lcsc.com/product-detail/C2906861.html) |
+| LCSC | [`C25744`](https://www.lcsc.com/product-detail/C25744.html) |
+| LCSC | [`C60490`](https://www.lcsc.com/product-detail/C60490.html) |
+
+
 
 
 
@@ -61,6 +71,10 @@ Resistor 10000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

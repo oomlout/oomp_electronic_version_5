@@ -1,10 +1,7 @@
 # Electronic / Resistor / 0603
 
 [Up one level](../README.md)
-
 This category contains 88 parts in total.
-
-
 
 
 ## Parts
@@ -97,8 +94,6 @@ This category contains 88 parts in total.
 - [Resistor 8200 Ohm 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_8200_ohm) — `electronic_resistor_0603_8200_ohm`
 - [Resistor 82000 Ohm 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_82000_ohm) — `electronic_resistor_0603_82000_ohm`
 - [Resistor 820000 Ohm 0603](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_820000_ohm) — `electronic_resistor_0603_820000_ohm`
-
-
 
 ---
 

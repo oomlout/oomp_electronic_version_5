@@ -17,7 +17,14 @@ module.exports = async function checkSelectionRendering(page) {
     const x = Math.min(...points.map(p=>p.x)), y = Math.min(...points.map(p=>p.y));
     const w = Math.max(...points.map(p=>p.x))-x, h = Math.max(...points.map(p=>p.y))-y;
     boardViewports.get(svg).target = [x-2,y-2,w+4,h+4];
-    setZoom(1);
+    // setZoom(1) would early-return at the initial 100% zoom, so apply the
+    // target viewport directly the way fitSelectedNet() does; otherwise the
+    // labels stay sub-pixel small and pointer events land on neighbours.
+    const viewport = boardViewports.get(svg);
+    viewport.box = [...viewport.target];
+    viewport.scale = 1;
+    zoomScale = 1;
+    applyViewport(svg, viewport);
     return part.dataset.reference;
   });
   const part = page.locator(`.board-view[data-side="front"] .board-component[data-reference="${reference}"]`);
@@ -38,11 +45,21 @@ module.exports = async function checkSelectionRendering(page) {
   await label.click();
   assert(await part.evaluate(element => element.matches(':focus')), 'Native board click focuses the SVG part');
   assert.deepEqual(await labelStyles(), before, 'Click/focus must not stroke/recolour pin labels');
+  assert(await page.evaluate(ref => selectedReferences.has(ref), reference), 'First board click selects the part');
   await page.mouse.move(0, 0);
   await part.press('Enter');
   assert.deepEqual(await labelStyles(), before, 'Keyboard selection keeps labels clean');
+  assert.equal(await page.evaluate(ref => selectedReferences.has(ref), reference), false, 'Enter on the selected part deselects it');
+  await part.press('Enter');
+  assert.equal(await page.evaluate(ref => selectedReferences.has(ref), reference), true, 'Enter on a deselected part selects it again');
+  assert.deepEqual(await labelStyles(), before, 'Re-selection keeps labels clean');
+  await label.click();
+  assert.equal(await page.evaluate(ref => selectedReferences.has(ref), reference), false, 'A second plain click on the selected part deselects it');
+  assert.deepEqual(await labelStyles(), before, 'Plain deselection keeps focused labels clean');
   await label.click({modifiers: ['Control']});
-  assert.equal(await page.evaluate(ref => selectedReferences.has(ref), reference), false);
+  assert.equal(await page.evaluate(ref => selectedReferences.has(ref), reference), true, 'Ctrl-click on a deselected part selects it');
+  await label.click({modifiers: ['Control']});
+  assert.equal(await page.evaluate(ref => selectedReferences.has(ref), reference), false, 'Ctrl-click toggles it back off');
   assert.deepEqual(await labelStyles(), before, 'Ctrl-deselection keeps focused labels clean');
   assert.equal(await part.locator('.selection-box, .hover-box').count(), 0, 'No highlight geometry is embedded in component artwork');
 

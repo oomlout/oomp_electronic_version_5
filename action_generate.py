@@ -4,6 +4,7 @@ import argparse
 import os
 
 from action_regenerate_all import REPOSITORY_ROOT, run_actions
+import action_generate_navigation
 import working_oomp
 import working_oomp_populate
 
@@ -12,10 +13,10 @@ def generate(filter_text):
     if not filter_text.strip():
         raise ValueError("Give a part ID or family prefix; use action_regenerate_all.bat for a full rebuild.")
     os.chdir(REPOSITORY_ROOT)
-    # Navigation is lightweight and must include new parts and all ancestors.
-    filters = [filter_text, "navigation"]
+    filters = [filter_text]
     working_oomp_populate.main()
     working_oomp.main(filter=filters, regenerate_pngs=False)
+    action_generate_navigation.generate(filter_text=filter_text)
     action_count, skipped = run_actions(filter_text=filters, regenerate_pngs=False)
     from kicad_agents.kicad_library_agent import package_libraries
     package_libraries(REPOSITORY_ROOT / "parts", REPOSITORY_ROOT / "kicad_libraries")

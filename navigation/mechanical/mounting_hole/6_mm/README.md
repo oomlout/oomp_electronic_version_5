@@ -1,16 +1,11 @@
 # Mechanical / Mounting Hole / 6 Mm
 
 [Up one level](../README.md)
-
 This category contains 2 parts in total.
-
 
 ## Categories
 
 - [Round](round/README.md)
-
-
-
 
 
 ---

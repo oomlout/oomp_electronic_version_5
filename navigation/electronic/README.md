@@ -1,9 +1,7 @@
 # Electronic
 
 [Up one level](../README.md)
-
-This category contains 805 parts in total.
-
+This category contains 825 parts in total.
 
 ## Categories
 
@@ -13,7 +11,9 @@ This category contains 805 parts in total.
 - [Diode](diode/README.md)
 - [Display](display/README.md)
 - [Ferrite Bead](ferrite_bead/README.md)
+- [Fuse](fuse/README.md)
 - [IC](ic/README.md)
+- [Inductor](inductor/README.md)
 - [LED](led/README.md)
 - [Prototyping](prototyping/README.md)
 - [Resistor](resistor/README.md)
@@ -21,9 +21,6 @@ This category contains 805 parts in total.
 - [Switch](switch/README.md)
 - [Transistor](transistor/README.md)
 - [Wire](wire/README.md)
-
-
-
 
 
 ---

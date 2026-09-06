@@ -34,11 +34,12 @@ def main(**kwargs):
 
             options.append(option)
 
-    # The Bus Pirate current shunt is a low-value 2512 resistor.  Keep this
-    # separate from the broad value grid so we do not create hundreds of
-    # unlikely 2512 variants.
+    # Project-specific 2512 resistors (the Bus Pirate current shunt, the GNSS
+    # DAN F10N 13.3 ohm termination).  Keep this separate from the broad value
+    # grid so we do not create hundreds of unlikely 2512 variants.
     low_value_resistors = [
         ["2512", "0_2_ohm"],
+        ["2512", "13_3_ohm"],
     ]
     for low_value_resistor in low_value_resistors:
         option = {}

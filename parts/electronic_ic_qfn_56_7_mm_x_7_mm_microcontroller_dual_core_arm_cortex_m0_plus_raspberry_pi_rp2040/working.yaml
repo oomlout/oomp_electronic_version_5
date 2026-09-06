@@ -50,9 +50,13 @@ kicad:
   hand_solder: ''
   machine_solder: ''
   symbol: ''
+lcsc_search: RP2040
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040
+manufacturers:
+- manufacturer: ''
+  part_number: RP2040
 md5: 490a5f3fdc777fe31ab88c62ebccef95
 md5_10: 490a5f3fdc
 md5_10_upper: 490A5F3FDC
@@ -111,6 +115,20 @@ oomlout_ai_roboclick_3:
     command: image_resize
     file_destination: data/working_svg_square_pins_300.png
     file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_300.png
+    file_source: data/working_svg_assembly.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_pins_300.png
+    file_source: data/working_svg_assembly_pins.png
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
@@ -191,6 +209,10 @@ oomlout_ai_roboclick_4:
         hand_solder: ''
         machine_solder: ''
         symbol: ''
+      lcsc_search: RP2040
+      manufacturers:
+      - manufacturer: ''
+        part_number: RP2040
       name: electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040
       name_proper: IC RP2040 QFN 56 7 MM X 7 MM
       name_readable: IC RP2040 QFN 56 7 MM X 7 MM
@@ -234,6 +256,20 @@ oomlout_ai_roboclick_4:
           command: image_resize
           file_destination: data/working_svg_square_pins_300.png
           file_source: data/working_svg_square_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_300.png
+          file_source: data/working_svg_assembly.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_pins_300.png
+          file_source: data/working_svg_assembly_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos
@@ -296,10 +332,14 @@ oomlout_ai_roboclick_4:
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
-        - png: ''
-          preview: data/working_svg_assembly.svg
+        - png: data/working_svg_assembly.png
+          preview: data/working_svg_assembly_300.png
           svg: data/working_svg_assembly.svg
           title: Assembly
+        - png: data/working_svg_assembly_pins.png
+          preview: data/working_svg_assembly_pins_300.png
+          svg: data/working_svg_assembly_pins.svg
+          title: Assembly pinout
         - png: data/working_svg_outline.png
           preview: data/working_svg_outline_300.png
           svg: data/working_svg_outline.svg
@@ -331,6 +371,10 @@ oomlout_ai_roboclick_4:
         file_previews:
         - preview: data/working_svg_square_pins_300.png
           title: Pinout drawing
+        - preview: data/working_svg_assembly_300.png
+          title: Assembly
+        - preview: data/working_svg_assembly_pins_300.png
+          title: Assembly pinout
         - preview: data/working_svg_outline_300.png
           title: Outline
         - preview: data/working_svg_part_id_300.png
@@ -797,7 +841,9 @@ oomlout_ai_roboclick_4:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly
         write_yaml: false
@@ -805,7 +851,9 @@ oomlout_ai_roboclick_4:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly_pins
         write_yaml: false
@@ -922,10 +970,14 @@ part_number_manufacturer: RP2040
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
-  - png: ''
-    preview: data/working_svg_assembly.svg
+  - png: data/working_svg_assembly.png
+    preview: data/working_svg_assembly_300.png
     svg: data/working_svg_assembly.svg
     title: Assembly
+  - png: data/working_svg_assembly_pins.png
+    preview: data/working_svg_assembly_pins_300.png
+    svg: data/working_svg_assembly_pins.svg
+    title: Assembly pinout
   - png: data/working_svg_outline.png
     preview: data/working_svg_outline_300.png
     svg: data/working_svg_outline.svg
@@ -957,6 +1009,10 @@ part_page:
   file_previews:
   - preview: data/working_svg_square_pins_300.png
     title: Pinout drawing
+  - preview: data/working_svg_assembly_300.png
+    title: Assembly
+  - preview: data/working_svg_assembly_pins_300.png
+    title: Assembly pinout
   - preview: data/working_svg_outline_300.png
     title: Outline
   - preview: data/working_svg_part_id_300.png
@@ -1423,7 +1479,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly
   write_yaml: false
@@ -1431,7 +1489,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly_pins
   write_yaml: false

@@ -1,9 +1,7 @@
 # Oomp / Project / Github / Sparkfun
 
 [Up one level](../README.md)
-
-This category contains 22 parts in total.
-
+This category contains 14 parts in total.
 
 ## Categories
 
@@ -20,9 +18,6 @@ This category contains 22 parts in total.
 - [Spark Fun Qwiic Navigation Switch](spark_fun_qwiic_navigation_switch/README.md)
 - [Spark Fun Roller Encoder Breakout](spark_fun_roller_encoder_breakout/README.md)
 - [Spark Fun U Blox Neo F10 N](spark_fun_u_blox_neo_f10_n/README.md)
-
-
-
 
 
 ---

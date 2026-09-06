@@ -1,16 +1,11 @@
 # Oomp / Project
 
 [Up one level](../README.md)
-
-This category contains 109 parts in total.
-
+This category contains 101 parts in total.
 
 ## Categories
 
 - [Github](github/README.md)
-
-
-
 
 
 ---

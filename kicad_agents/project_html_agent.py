@@ -9,7 +9,7 @@ from pathlib import Path
 
 import yaml
 
-from kicad_agents.pcb_copper import add_copper_svg, copper_svg, explorer_copper
+from kicad_agents.pcb_copper import add_copper_svg, copper_drawings, explorer_copper
 
 
 OOMP_PARTS_URL = "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts"
@@ -36,15 +36,37 @@ def _part_pinout_svg(asset_directory, oomp_id):
     return ""
 
 
-def _lcsc_part_number(component, part_metadata):
-    """Prefer the matched catalogue number; fall back to explicit BOM fields."""
+def _lcsc_options(component, part_metadata):
+    """Ordered, de-duplicated LCSC purchase options for the matched part.
+
+    The part's distributors list carries every catalogue option (with product
+    names when populated); explicit BOM properties are the last fallback.  An
+    unmatched component has no catalogue to point at, matching the old
+    single-number behaviour.
+    """
     match = component.get("oomp") or {}
     if match.get("status") != "matched" or not match.get("oomp_id"):
-        return ""
-    candidates = [part_metadata.get("part_number_lcsc", "")]
+        return []
+    options = []
+    seen = set()
+
+    def add_option(candidate, product_name=""):
+        number = str(candidate or "").strip().upper()
+        if number.isascii() and number.isdigit():
+            number = "C" + number
+        if not re.fullmatch(r"C[0-9]+", number) or number in seen:
+            return
+        seen.add(number)
+        options.append({
+            "part_number": number,
+            "product_name": str(product_name or "").strip(),
+            "url": f"https://www.lcsc.com/product-detail/{number}.html",
+        })
+
     for distributor in part_metadata.get("distributors") or []:
         if distributor.get("key") == "lcsc":
-            candidates.append(distributor.get("part_number", ""))
+            add_option(distributor.get("part_number"), distributor.get("product_name", ""))
+    add_option(part_metadata.get("part_number_lcsc", ""))
     property_sets = [(component.get("pcb") or {}).get("properties") or {}]
     for unit in (component.get("schematic") or {}).get("units") or []:
         property_sets.append(unit.get("properties") or {})
@@ -52,14 +74,49 @@ def _lcsc_part_number(component, part_metadata):
         for key, value in properties.items():
             field = re.sub(r"[^a-z0-9]", "", str(key).lower())
             if field in ["partnumberlcsc", "lcsc", "lcscpartnumber", "lcscpart"]:
-                candidates.append(value)
-    for candidate in candidates:
-        number = str(candidate or "").strip().upper()
-        if number.isascii() and number.isdigit():
-            number = "C" + number
-        if re.fullmatch(r"C[0-9]+", number):
-            return number
-    return ""
+                add_option(value)
+    return options
+
+
+def _lcsc_part_number(component, part_metadata):
+    """Prefer the matched catalogue number; fall back to explicit BOM fields."""
+    options = _lcsc_options(component, part_metadata)
+    return options[0]["part_number"] if options else ""
+
+
+def _lcsc_value_shorthand(value):
+    """Expand KiCad shorthand values ("100n", "10k", "4R7") for LCSC search."""
+    if re.fullmatch(r"\d+(?:\.\d+)?[pnu]", value, re.IGNORECASE):
+        return f"{value[:-1]}{value[-1].lower()}F"
+    if re.fullmatch(r"\d+R\d+", value):
+        return f"{value.replace('R', '.')}Ω"
+    if re.fullmatch(r"\d+(?:\.\d+)?[kKmM]", value):
+        return f"{value}Ω"
+    if value == "0":
+        return "0Ω"
+    return value
+
+
+def _lcsc_search_value(component, part_metadata):
+    """Search string that finds this part's options on LCSC.
+
+    Matched parts declare their value in working.yaml (lcsc_search, built by
+    the metadata normaliser); unmatched components fall back to the footprint
+    size plus the schematic value, which is how a human would search.
+    """
+    explicit = str((part_metadata or {}).get("lcsc_search", "") or "").strip()
+    if explicit:
+        return explicit
+    pcb = component.get("pcb") or {}
+    value = _lcsc_value_shorthand(str(pcb.get("value") or "").strip())
+    footprint = str(pcb.get("library_id") or "")
+    if not value:
+        return footprint
+    sizes = re.search(r"(?:^|[^0-9])(0201|0402|0603|0805|1206|1210|2010|2512)(?:[^0-9]|$)", footprint)
+    passive = re.fullmatch(r"\d+(?:\.\d+)?(?:p|n|u|µ)?F|\d+(?:\.\d+)?(?:k|K|M|m)?Ω", value)
+    if sizes and passive:
+        return f"{sizes.group(1)} {value}"
+    return value
 
 
 def _component_record(component, asset_directory, part_metadata=None):
@@ -67,7 +124,8 @@ def _component_record(component, asset_directory, part_metadata=None):
     oomp = component.get("oomp") or {}
     oomp_id = str(oomp.get("oomp_id") or "")
     properties = pcb.get("properties") or {}
-    lcsc_number = _lcsc_part_number(component, part_metadata or {})
+    lcsc_options = _lcsc_options(component, part_metadata or {})
+    lcsc_number = lcsc_options[0]["part_number"] if lcsc_options else ""
     pads = []
     pad_keys = []
     for pad in pcb.get("pads") or []:
@@ -97,6 +155,8 @@ def _component_record(component, asset_directory, part_metadata=None):
         "part_url": f"{OOMP_PARTS_URL}/{oomp_id}" if oomp_id else "",
         "lcsc_part_number": lcsc_number,
         "lcsc_url": f"https://www.lcsc.com/product-detail/{lcsc_number}.html" if lcsc_number else "",
+        "lcsc_options": lcsc_options,
+        "lcsc_search": _lcsc_search_value(component, part_metadata or {}),
         "supplier": str(properties.get("Supplier") or "").strip(),
         "pads": pads,
         "pinout_svg": _part_pinout_svg(asset_directory, oomp_id),
@@ -136,6 +196,24 @@ header { display: flex; align-items: center; gap: 18px; padding: 16px 22px; back
 header h1 { margin: 0; font-size: clamp(18px, 2.1vw, 30px); letter-spacing: -.03em; }
 header p { margin: 2px 0 0; color: #cfcfcf; font-size: 13px; }
 .badge { margin-left: auto; border: 1px solid #555; border-radius: 999px; padding: 7px 11px; font-size: 12px; white-space: nowrap; }
+.github-link { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid #555; border-radius: 999px; color: white; flex: none; }
+.github-link:hover { border-color: white; background: #2a2a2a; }
+.github-link svg { fill: currentColor; }
+.project-card { padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 12px; }
+.project-card-title { font-weight: 650; font-size: 13px; letter-spacing: -.01em; }
+.project-card-meta { color: var(--muted); margin-top: 3px; overflow-wrap: anywhere; }
+.project-card-link { display: inline-block; margin-top: 7px; color: var(--accent); text-decoration: none; font-weight: 600; }
+.project-card-link:hover { text-decoration: underline; }
+.popup-overlay { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 20px; background: rgba(23, 23, 23, .45); }
+.popup-overlay[hidden] { display: none; }
+.popup-card { width: min(440px, 100%); display: grid; gap: 8px; padding: 16px 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.popup-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; }
+.popup-close { width: auto; padding: 0 6px; border: none; background: none; font-size: 20px; line-height: 1; cursor: pointer; color: var(--muted); }
+.popup-close:hover { color: var(--ink); }
+.popup-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 10px; color: inherit; text-decoration: none; font-size: 12px; }
+.popup-row:hover { border-color: var(--accent); background: var(--accent-soft); }
+.popup-name { min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
+.popup-number { flex: none; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; color: var(--muted); }
 .layout { height: 100%; min-height: 0; display: grid; grid-template-columns: minmax(190px, 260px) minmax(0, 1fr) minmax(260px, 360px); gap: 14px; padding: 14px; overflow: hidden; }
 .panel { min-width: 0; min-height: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.05); }
 .list-panel { display: grid; grid-template-rows: auto auto minmax(0, 1fr); min-width: 0; }
@@ -153,8 +231,15 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .part-select { position: absolute; left: 5px; top: 12px; }
 .part-row > .part-button { padding-left: 25px; }
 .part-button.selected { background: var(--accent-soft); }
-.selection-tools { margin-top: 7px; font-size: 11px; color: var(--muted); }
-.selection-tools button { border: 0; background: transparent; color: var(--ink); text-decoration: underline; cursor: pointer; font: inherit; }
+.selection-status-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.selection-status-header button { border: 0; background: transparent; color: var(--ink); text-decoration: underline; cursor: pointer; font: inherit; font-size: 11px; }
+.match-rows { display: flex; flex-wrap: wrap; gap: 3px 12px; margin-top: 4px; }
+.match-rows span { font-size: 11px; color: var(--muted); }
+.match-rows b { color: var(--ink); font-weight: 650; }
+.net-results { display: flex; flex-direction: column; gap: 2px; padding: 2px 3px 6px; }
+.net-results .net-link { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border: 0; border-radius: 8px; background: transparent; text-align: left; cursor: pointer; font-size: 12px; }
+.net-results .net-link:hover { background: var(--accent-soft); }
+.net-results .net-link small { color: var(--muted); font-size: 10px; }
 .part-button { width: 100%; min-width: 0; display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 3px 8px; padding: 9px 32px 9px 9px; border: 0; border-radius: 10px; background: transparent; color: inherit; text-align: left; cursor: pointer; }
 .part-button:hover, .part-button.active { background: var(--accent-soft); }
 .part-button.active:not(.selected) { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
@@ -215,9 +300,7 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .pin-button.on-net, .net-link.on-net { background: var(--accent-soft); }
 .pin-button.selected-pin { border-left-color: var(--selected-pin); color: var(--selected-pin); font-weight: 750; }
 .net-link { color: var(--net); padding: 3px; text-decoration: underline; }
-.net-picker { padding: 0 14px 12px; border-bottom: 1px solid var(--line); font-size: 12px; max-height: 300px; overflow: auto; }
-.net-picker label { display: block; margin-bottom: 6px; }
-.net-picker select, .board-toolbar select { width: 100%; min-width: 0; max-width: 100%; padding: 6px; border: 1px solid var(--line); border-radius: 6px; background: white; font: inherit; }
+.board-toolbar select { width: 100%; min-width: 0; max-width: 100%; padding: 6px; border: 1px solid var(--line); border-radius: 6px; background: white; font: inherit; }
 .net-status { min-width: 0; min-height: 0; overflow: auto; overflow-wrap: anywhere; font-size: 12px; line-height: 1.5; scrollbar-gutter: stable; }
 .net-status button { font-size: 11px; }
 .board-toolbar select { width: auto; max-width: 155px; font-size: 11px; }
@@ -225,6 +308,7 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .board-toolbar input { width: auto; }
 .net-selection-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; max-width: 100%; }
 .copper-feature { color: var(--copper); cursor: pointer; shape-rendering: geometricPrecision; }
+.component-hitbox { fill: none; stroke: none; pointer-events: all; cursor: pointer; }
 .copper-segment, .copper-arc, .copper-via { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 .copper-pad, .copper-zone { fill: currentColor; stroke: none; }
 .copper-base .copper-feature { opacity: .48; }
@@ -242,13 +326,28 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
    pixel-width white border caused jagged seams, especially on custom pads. */
 .copper-overlay .copper-pad .pad-anchor { stroke: none; }
 .copper-overlay .selected-pin { color: var(--selected-pin); }
+/* Pads are lifted above the component artwork in .copper-pads and drawn
+   white-backed with a black outline so fills and traces never cut through
+   them; highlighting happens in place (they are not cloned into the overlay).
+   The visible copy never intercepts the pointer — the invisible
+   .copper-pad-hits copy inside .copper-base keeps pad clicks working
+   wherever the component artwork does not cover them. */
+.copper-pads { pointer-events: none; }
+.copper-pads .copper-feature { color: #FFFFFF; }
+.copper-pads .copper-pad { fill: currentColor; stroke: #000000; stroke-width: 0.05; }
+.copper-pads .copper-feature.on-net { color: var(--net); }
+.copper-pads .copper-feature.selected-pin { color: var(--selected-pin); }
+.copper-pads .copper-feature.net-dim { opacity: .25; }
+.copper-pad-hits .copper-feature { fill: none; stroke: none; pointer-events: all; }
+.copper-pad-hits .pad-drill { fill: none !important; stroke: none !important; }
 .net-note { font-size: 11px; color: var(--muted); }
 .layer-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11px; margin-top: 6px; }
 .layer-key { display: inline-flex; align-items: center; gap: 4px; }
 .layer-swatch { width: 10px; height: 10px; border-radius: 50%; background: var(--layer-color); }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
 .actions a { display: inline-block; padding: 9px 12px; border-radius: 10px; background: var(--ink); color: white; text-decoration: none; font-size: 12px; }
-.actions a.secondary { background: var(--accent-soft); color: var(--ink); }
+.actions a.secondary, .actions button.secondary { border: 0; cursor: pointer; font: inherit; background: var(--accent-soft); color: var(--ink); }
+.actions a.secondary, .actions button.secondary { padding: 9px 12px; border-radius: 10px; font-size: 12px; }
 .empty { color: var(--muted); line-height: 1.55; }
 .hover-card { position: fixed; z-index: 20; display: none; width: 245px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.97); box-shadow: var(--shadow); pointer-events: none; }
 .hover-card.visible { display: block; }
@@ -276,6 +375,7 @@ let zoomScale = 1;
 let mousePan = null;
 let touchPan = null;
 let suppressBoardClick = false;
+let hoveredReference = '';
 const activePointers = new Map();
 let activeNet = '';
 let activePin = null;
@@ -284,14 +384,13 @@ const selectedPins = [];
 const collapsedCategories = new Set(components.map(component => component.category));
 const highlightSelectedNets = document.getElementById('highlight-selected-nets');
 const expandedReferences = new Set();
-const netSelect = document.getElementById('net-select');
-const netSearch = document.getElementById('net-search');
 const layerSelect = document.getElementById('copper-layer');
-const baseFeatures = [...document.querySelectorAll('.copper-base .copper-feature')];
+const baseFeatures = [...document.querySelectorAll('.copper-base .copper-feature, .copper-pads .copper-feature')];
 const boardViewports = new Map();
 document.querySelectorAll('.board-view > svg').forEach(svg => {
-  const original = svg.getAttribute('viewBox').split(/\s+/).map(Number);
-  boardViewports.set(svg, {original, target: [...original], box: [...original], scale: 1});
+  const originalText = svg.getAttribute('viewBox');
+  const original = originalText.split(/\s+/).map(Number);
+  boardViewports.set(svg, {original, originalText, target: [...original], box: [...original], scale: 1});
 });
 // Explicit editable colours for the common stack; additional internal layers
 // get evenly spaced hues without changing the familiar front/back colours.
@@ -367,6 +466,36 @@ function renderList(filterText = '') {
   const filter = filterText.trim().toLowerCase();
   const scrollTop = list.scrollTop;
   list.innerHTML = '';
+  // Net names are searchable in the main box; matching nets lead the results
+  // so a typed name can be followed straight from the list.
+  if (filter) {
+    const matchingNets = copper.nets.filter(net => net.name.toLowerCase().includes(filter));
+    if (matchingNets.length) {
+      const group = document.createElement('details');
+      group.className = 'category-group net-group';
+      group.open = true;
+      const heading = document.createElement('summary');
+      const title = document.createElement('span');
+      title.textContent = 'Nets';
+      const count = document.createElement('small');
+      count.textContent = `${matchingNets.length}`;
+      heading.append(title, count);
+      group.appendChild(heading);
+      const body = document.createElement('div');
+      body.className = 'net-results';
+      for (const net of matchingNets) {
+        const netButton = document.createElement('button');
+        netButton.type = 'button';
+        netButton.className = 'net-link' + (net.id === activeNet ? ' on-net' : '');
+        netButton.dataset.netId = net.id;
+        netButton.innerHTML = `${escapeHtml(net.name)}<small>${net.pins.length} pins · ${net.track_count} traces</small>`;
+        netButton.addEventListener('click', () => toggleNet(net.id));
+        body.appendChild(netButton);
+      }
+      group.appendChild(body);
+      list.appendChild(group);
+    }
+  }
   const groups = new Map();
   const visible = components.filter(component => {
     const haystack = [component.reference, component.value, component.category, component.category_name, component.oomp_id, component.footprint, ...component.pads.map(pin => `${pin.number} ${pin.name} ${pin.net}`)].join(' ').toLowerCase();
@@ -490,7 +619,6 @@ function renderList(filterText = '') {
     list.appendChild(group);
   }
   list.scrollTop = scrollTop;
-  document.getElementById('selection-count').textContent = `${selectedReferences.size} components · ${selectedPins.length} pins · both sides`;
 }
 
 function highlightedNetIds() {
@@ -508,6 +636,16 @@ function highlightedNetIds() {
   return ids;
 }
 
+function renderInitialDetail() {
+  detail.innerHTML = '<p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p>';
+}
+
+function refreshDetail() {
+  const component = byReference.get(activeReference);
+  if (component) renderDetail(component);
+  else renderInitialDetail();
+}
+
 function selectionChanged(preservePins = false) {
   if (!preservePins) {
     selectedPins.length = 0;
@@ -517,8 +655,7 @@ function selectionChanged(preservePins = false) {
   updateSelectionBoxes();
   updateNetHighlight();
   renderList(search.value);
-  const component = byReference.get(activeReference);
-  if (component) renderDetail(component);
+  refreshDetail();
 }
 
 function pinClass(component, pin) {
@@ -534,9 +671,16 @@ function pinRows(component) {
 function renderDetail(component) {
   const position = component.position || {};
   const match = component.oomp_id ? 'Matched OOMP part' : 'Needs OOMP match';
+  const lcscAction = component.lcsc_options && component.lcsc_options.length > 1
+    ? `<button class="secondary lcsc-link" type="button" data-reference="${escapeHtml(component.reference)}" title="Choose between ${component.lcsc_options.length} LCSC options">LCSC options (${component.lcsc_options.length})</button>`
+    : component.lcsc_url ? `<a class="secondary lcsc-link" href="${escapeHtml(component.lcsc_url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(component.lcsc_part_number)}">Open LCSC</a>` : '';
+  const lcscSearch = component.lcsc_search || '';
+  const searchAction = lcscSearch
+    ? `<a class="secondary" href="https://www.lcsc.com/search?q=${encodeURIComponent(lcscSearch)}" target="_blank" rel="noopener noreferrer" title="LCSC search: ${escapeHtml(lcscSearch)}">Search LCSC</a>` : '';
   const actions = [
     component.part_url ? `<a href="${escapeHtml(component.part_url)}" target="_blank" rel="noopener">Open OOMP part</a>` : '',
-    component.lcsc_url ? `<a class="secondary lcsc-link" href="${escapeHtml(component.lcsc_url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(component.lcsc_part_number)}">Open LCSC</a>` : '',
+    lcscAction,
+    searchAction,
     component.supplier ? `<a class="secondary" href="${escapeHtml(component.supplier)}" target="_blank" rel="noopener">Supplier source</a>` : ''
   ].join('');
   detail.innerHTML = `
@@ -547,6 +691,7 @@ function renderDetail(component) {
       <dt>OOMP</dt><dd>${escapeHtml(component.oomp_id || 'unmatched')}</dd>
       <dt>Category</dt><dd>${escapeHtml(component.category_name)}${component.category_source === 'unmatched_kicad_hint' ? ' (KiCad hint)' : ''}</dd>
       <dt>Footprint</dt><dd>${escapeHtml(component.footprint || '—')}</dd>
+      <dt>LCSC search</dt><dd>${escapeHtml(lcscSearch || '—')}</dd>
       <dt>Side</dt><dd>${escapeHtml(component.side || '—')}</dd>
       <dt>Position</dt><dd>${escapeHtml(position.x ?? '—')}, ${escapeHtml(position.y ?? '—')} mm</dd>
       <dt>Rotation</dt><dd>${escapeHtml(position.rotation_kicad ?? position.rotation ?? '—')}°</dd>
@@ -557,10 +702,47 @@ function renderDetail(component) {
     ${pinRows(component)}`;
 }
 
+const lcscPopup = document.getElementById('lcsc-popup');
+
+function openLcscPopup(component) {
+  const rows = (component.lcsc_options || []).map(option =>
+    `<a class="popup-row" href="${escapeHtml(option.url)}" target="_blank" rel="noopener noreferrer">` +
+    `<span class="popup-name">${escapeHtml(option.product_name || 'LCSC option')}</span>` +
+    `<span class="popup-number">${escapeHtml(option.part_number)}</span></a>`).join('');
+  lcscPopup.innerHTML = `<div class="popup-card" role="dialog" aria-label="LCSC options">` +
+    `<div class="popup-head"><strong>LCSC options · ${escapeHtml(component.reference)}</strong>` +
+    `<button class="popup-close" type="button" aria-label="Close">&times;</button></div>${rows}</div>`;
+  lcscPopup.hidden = false;
+}
+
+function closeLcscPopup() {
+  lcscPopup.hidden = true;
+}
+
+lcscPopup.addEventListener('click', event => {
+  if (event.target === lcscPopup || event.target.closest('.popup-close')) closeLcscPopup();
+});
+
+detail.addEventListener('click', event => {
+  const button = event.target.closest('button.lcsc-link');
+  if (!button) return;
+  const component = byReference.get(button.dataset.reference);
+  if (component && (component.lcsc_options || []).length > 1) openLcscPopup(component);
+});
+
 function selectComponent(reference, preserveNet = false, expandCategory = true) {
   const component = byReference.get(reference);
   if (!component) return;
-  if (component.side && component.side !== activeSide) setSide(component.side, false);
+  // Selection never flips the board view; components on the hidden side stay
+  // reachable through the side buttons instead.
+  // Clicking a selected component (list button, board artwork or Enter)
+  // deselects it, keeping any other selections intact.
+  if (!preserveNet && selectedReferences.has(reference)) {
+    selectedReferences.delete(reference);
+    if (activeReference === reference) activeReference = [...selectedReferences][0] || '';
+    selectionChanged();
+    return;
+  }
   activeReference = reference;
   if (expandCategory) collapsedCategories.delete(component.category);
   if (!selectedReferences.has(reference)) {
@@ -575,22 +757,35 @@ function selectComponent(reference, preserveNet = false, expandCategory = true) 
 }
 
 function selectPin(reference, number, netId, additive = false) {
+  // Clicking a pin that is already selected deselects it again, whichever
+  // surface the click came from; its part stays populated in the detail pane.
+  const index = selectedPinIndex(reference, number, netId);
+  if (index >= 0) {
+    selectedPins.splice(index, 1);
+    syncActivePin();
+    selectionChanged(true);
+    return;
+  }
   if (!additive) {
     highlightSelectedNets.checked = false;
     selectedPins.length = 0;
   }
-  const index = selectedPinIndex(reference, number, netId);
-  if (index >= 0) selectedPins.splice(index, 1);
-  else selectedPins.push({reference, number, net_id: netId || ''});
+  selectedPins.push({reference, number, net_id: netId || ''});
   syncActivePin();
   expandedReferences.add(reference);
-  if (additive) {
-    const component = byReference.get(reference);
+  // A pin selection always populates its owning part in the detail pane.
+  const component = byReference.get(reference);
+  if (component) {
     activeReference = reference;
     collapsedCategories.delete(component.category);
-    if (component.side !== activeSide) setSide(component.side);
-    selectionChanged(true);
-  } else selectComponent(reference, true);
+    // Additive clicks only borrow the detail pane; the component selection
+    // itself is untouched so grouped selections survive.
+    if (!additive && !selectedReferences.has(reference)) {
+      selectedReferences.clear();
+      selectedReferences.add(reference);
+    }
+  }
+  selectionChanged(true);
 }
 
 function toggleComponentPins(reference) {
@@ -606,28 +801,57 @@ function toggleComponentPins(reference) {
   selectionChanged(true);
 }
 
+function toggleNet(netId) {
+  selectNet(activeNet === netId ? '' : netId);
+}
+
 function selectNet(netId) {
   highlightSelectedNets.checked = false;
   activeNet = byNet.has(netId) ? netId : '';
   activePin = null;
   selectedPins.length = 0;
+  if (activeNet) {
+    // Following copper keeps the selected part when it sits on that net and
+    // otherwise shows one of the parts the copper connects to.
+    const net = byNet.get(activeNet);
+    const current = byReference.get(activeReference);
+    const connected = current && net.pins.some(pin => pin.reference === current.reference);
+    if (!connected) {
+      // Prefer a part on the shown side so the detail pane follows copper to a
+      // part that is actually visible; the board view itself never flips.
+      const pins = net.pins.filter(pin => byReference.has(pin.reference));
+      const candidate = pins.find(pin => byReference.get(pin.reference).side === activeSide) || pins[0];
+      if (candidate) {
+        const component = byReference.get(candidate.reference);
+        activeReference = candidate.reference;
+        selectedReferences.clear();
+        selectedReferences.add(candidate.reference);
+        collapsedCategories.delete(component.category);
+      }
+    }
+  }
+  updateSelectionBoxes();
   updateNetHighlight();
   renderList(search.value);
-  const component = byReference.get(activeReference);
-  if (component) renderDetail(component);
+  refreshDetail();
 }
 
-function renderNetOptions() {
-  const filter = netSearch.value.trim().toLowerCase();
-  netSelect.innerHTML = '<option value="">Choose a net…</option>';
-  copper.nets.forEach(net => {
-    if (net.id !== activeNet && !net.name.toLowerCase().includes(filter)) return;
-    const option = document.createElement('option');
-    option.value = net.id;
-    option.textContent = `${net.name} · ${net.pins.length} pins`;
-    netSelect.appendChild(option);
-  });
-  netSelect.value = activeNet;
+function matchingSummary() {
+  // The catch-all "other" bucket says nothing about matching progress, so the
+  // summary counts real component categories only.
+  const counted = components.filter(component => component.category !== 'other');
+  const categories = new Map();
+  for (const component of counted) {
+    if (!categories.has(component.category_name)) categories.set(component.category_name, {total: 0, matched: 0});
+    const entry = categories.get(component.category_name);
+    entry.total += 1;
+    if (component.oomp_id) entry.matched += 1;
+  }
+  const rows = [...categories.entries()].sort((a, b) => b[1].total - a[1].total || a[0].localeCompare(b[0]));
+  const total = counted.length;
+  const matched = counted.filter(component => component.oomp_id).length;
+  const percent = total ? Math.round((matched / total) * 100) : 0;
+  return `<strong>OOMP matching</strong> ${matched}/${total} matched · ${percent}%<div class="match-rows">${rows.map(([name, entry]) => `<span>${escapeHtml(name)} <b>${entry.matched}/${entry.total}</b></span>`).join('')}</div><span class="net-note">Filter and click a component to inspect it; search a net name to follow its copper.</span>`;
 }
 
 function featureVisible(element) {
@@ -650,15 +874,23 @@ function updateNetHighlight() {
     element.classList.toggle('layer-hidden', !featureVisible(element));
     element.classList.toggle('fill-hidden', element.classList.contains('copper-zone') && !fills);
   });
+  // Pads live in the top-level .copper-pads group, so they are highlighted in
+  // place instead of being cloned into the overlay that sits under the parts.
+  document.querySelectorAll('.copper-pads .copper-feature').forEach(element => {
+    const selectedPin = element.classList.contains('copper-pad') && selectedPinIndex(element.dataset.reference, element.dataset.pin, element.dataset.netId) >= 0;
+    const onNet = netIds.has(element.dataset.netId);
+    element.classList.toggle('on-net', onNet);
+    element.classList.toggle('selected-pin', !!selectedPin);
+    element.classList.toggle('net-dim', (netIds.size > 0 || selectedPins.length > 0) && !onNet && !selectedPin);
+  });
   document.querySelectorAll('.copper-overlay').forEach(overlay => {
     overlay.replaceChildren();
     const base = overlay.closest('svg').querySelector('.copper-base');
     base.querySelectorAll('.copper-feature').forEach(element => {
-      const selectedPin = element.classList.contains('copper-pad') && selectedPinIndex(element.dataset.reference, element.dataset.pin, element.dataset.netId) >= 0;
-      if (!netIds.has(element.dataset.netId) && !selectedPin) return;
+      if (element.classList.contains('copper-pad')) return;
+      if (!netIds.has(element.dataset.netId)) return;
       const clone = element.cloneNode(true);
       clone.style.setProperty('--layer-color', layerColor(element));
-      clone.classList.toggle('selected-pin', !!selectedPin);
       overlay.appendChild(clone);
     });
   });
@@ -672,10 +904,14 @@ function updateNetHighlight() {
   } else if (net) {
     const visiblePins = net.pins.filter(pin => layerSelect.value === 'all' || pin.layers.includes(layerSelect.value === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layerSelect.value));
     status.innerHTML = `<strong>${escapeHtml(net.name)}</strong><br>${net.track_count} traces · ${net.via_count} vias · ${net.fill_count} saved fills<br>${visiblePins.length} / ${net.pins.length} pins on shown layers<br><span class="net-note">${escapeHtml(net.layers.join(' · '))}</span><div>${net.pins.map(pin => byReference.has(pin.reference) ? `<button class="net-link" data-reference="${escapeHtml(pin.reference)}" data-pin="${escapeHtml(pin.number)}">${escapeHtml(pin.reference)}.${escapeHtml(pin.number || 'pad')}</button>` : `<span>${escapeHtml(pin.reference)}.${escapeHtml(pin.number)} (not in BOM) </span>`).join('')}</div>`;
+  } else if (activePin) {
+    status.textContent = `${activePin.reference}.${activePin.number}: no assigned net; only this pin is highlighted.`;
+  } else if (activeReference && byReference.has(activeReference)) {
+    const component = byReference.get(activeReference);
+    status.innerHTML = `<strong>${escapeHtml(component.reference)}</strong> selected · ${escapeHtml(component.oomp_id || 'no OOMP match yet')}<br><span class="net-note">Expand Pins or click a net name to follow its copper. Click the component again to deselect it.</span>`;
   } else {
-    status.textContent = activePin ? `${activePin.reference}.${activePin.number}: no assigned net; only this pin is highlighted.` : 'Expand Pins or choose a net. Highlight colours identify copper layers; teal marks the selected pin. Escape clears.';
+    status.innerHTML = matchingSummary();
   }
-  renderNetOptions();
   if (document.getElementById('zoom-to-net').checked) fitSelectedNet();
 }
 
@@ -685,7 +921,7 @@ function updateSelectionBoxes() {
   document.querySelectorAll('.board-component').forEach(element => {
     const selected = selectedReferences.has(element.dataset.reference);
     element.classList.toggle('is-active', selected);
-    if (!selected && !element.matches(':hover') && !element.matches(':focus')) return;
+    if (!selected && !element.matches(':hover') && !element.matches(':focus') && element.dataset.reference !== hoveredReference) return;
     const layer = element.closest('.board-view').querySelector('.component-highlights');
     if (!layer) return;
     const bounds = element.getBBox();
@@ -711,8 +947,44 @@ function activeBoardSvg() {
   return document.querySelector('.board-view:not([hidden]) > svg');
 }
 
+function installComponentHitboxes() {
+  // A transparent hit rectangle per part turns its whole bounding box into a
+  // click target. The layer sits below the copper groups so traces and pads
+  // inside a part box are still clicked instead of the part itself.
+  for (const svg of document.querySelectorAll('.board-view > svg')) {
+    const base = svg.querySelector('.copper-base');
+    if (!base || svg.querySelector('.component-hits')) continue;
+    const layer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    layer.setAttribute('class', 'component-hits');
+    for (const element of svg.querySelectorAll('.board-component')) {
+      const bounds = element.getBBox();
+      if (!(bounds.width > 0) && !(bounds.height > 0)) continue;
+      const reference = element.dataset.reference;
+      const hit = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      hit.setAttribute('class', 'component-hitbox');
+      hit.dataset.reference = reference;
+      // The generator emits each part and its underlay in board coordinates;
+      // copying the placement transform keeps the box on rotated and
+      // bottom-side parts too.
+      hit.setAttribute('transform', element.getAttribute('transform') || '');
+      hit.setAttribute('x', bounds.x.toFixed(4));
+      hit.setAttribute('y', bounds.y.toFixed(4));
+      hit.setAttribute('width', bounds.width.toFixed(4));
+      hit.setAttribute('height', bounds.height.toFixed(4));
+      hit.addEventListener('mouseenter', event => { hoveredReference = reference; showHover(event, reference); updateSelectionBoxes(); });
+      hit.addEventListener('mousemove', moveHover);
+      hit.addEventListener('mouseleave', () => { hoveredReference = ''; hoverCard.classList.remove('visible'); updateSelectionBoxes(); });
+      layer.appendChild(hit);
+    }
+    svg.insertBefore(layer, base);
+  }
+}
+
 function applyViewport(svg, viewport) {
-  svg.setAttribute('viewBox', viewport.box.join(' '));
+  // Restoring the fit view reuses the source viewBox text so regeneration
+  // stays byte-identical; Number formatting would drop trailing zeros.
+  const isOriginal = viewport.box.every((value, index) => value === viewport.original[index]);
+  svg.setAttribute('viewBox', isOriginal ? viewport.originalText : viewport.box.join(' '));
 }
 
 function updateZoomLabel() {
@@ -787,7 +1059,7 @@ function fitSelectedNet() {
   if (!highlightedNetIds().size) { fitBoard(); return; }
   const view = document.querySelector('.board-view:not([hidden])');
   const svg = view.querySelector(':scope > svg');
-  const elements = view.querySelectorAll('.copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden)');
+  const elements = view.querySelectorAll('.copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden), .copper-pads .copper-feature.on-net:not(.layer-hidden)');
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   for (const element of elements) {
     const box = element.getBBox();
@@ -833,6 +1105,7 @@ function showHover(event, reference) {
 }
 
 function moveHover(event) {
+  if (mousePan) return;
   const gap = 15;
   const width = 245;
   let x = event.clientX + gap;
@@ -857,18 +1130,23 @@ stage.addEventListener('pointerdown', event => {
       touchPan = {last: touchCentroid(), moved: false};
       stage.classList.add('is-panning');
       hoverCard.classList.remove('visible');
+      // Capture only once a two-finger pan really starts; capturing every
+      // touch would retarget the tap's click to the stage and break selection.
+      for (const pointerId of activePointers.keys()) {
+        try { stage.setPointerCapture(pointerId); } catch (error) {}
+      }
     }
-    stage.setPointerCapture(event.pointerId);
     return;
   }
   if (event.button !== 0) return;
+  // Deliberately no pointer capture for the mouse: capturing here retargets
+  // the compat mouseup/click to the stage, so component artwork and copper
+  // features would never receive clicks. Window listeners track the drag.
   mousePan = {pointerId: event.pointerId, lastX: event.clientX, lastY: event.clientY, distance: 0};
-  stage.setPointerCapture(event.pointerId);
-  stage.classList.add('is-panning');
   hoverCard.classList.remove('visible');
 });
 
-stage.addEventListener('pointermove', event => {
+window.addEventListener('pointermove', event => {
   if (event.pointerType === 'touch') {
     if (!activePointers.has(event.pointerId)) return;
     activePointers.set(event.pointerId, {x: event.clientX, y: event.clientY});
@@ -886,6 +1164,7 @@ stage.addEventListener('pointermove', event => {
   if (!mousePan || mousePan.pointerId !== event.pointerId) return;
   const delta = Math.hypot(event.clientX - mousePan.lastX, event.clientY - mousePan.lastY);
   if (delta > 0) {
+    if (mousePan.distance === 0) stage.classList.add('is-panning');
     panActiveBoard(mousePan.lastX, mousePan.lastY, event.clientX, event.clientY);
     mousePan.lastX = event.clientX;
     mousePan.lastY = event.clientY;
@@ -911,8 +1190,8 @@ function finishPointerPan(event) {
   if (suppressBoardClick) setTimeout(() => { suppressBoardClick = false; }, 0);
 }
 
-stage.addEventListener('pointerup', finishPointerPan);
-stage.addEventListener('pointercancel', finishPointerPan);
+window.addEventListener('pointerup', finishPointerPan);
+window.addEventListener('pointercancel', finishPointerPan);
 stage.addEventListener('click', event => {
   if (!suppressBoardClick) return;
   event.preventDefault();
@@ -922,9 +1201,9 @@ stage.addEventListener('click', event => {
 
 document.querySelectorAll('.board-component').forEach(element => {
   const reference = element.dataset.reference;
-  element.addEventListener('mouseenter', event => { showHover(event, reference); updateSelectionBoxes(); });
+  element.addEventListener('mouseenter', event => { hoveredReference = reference; showHover(event, reference); updateSelectionBoxes(); });
   element.addEventListener('mousemove', moveHover);
-  element.addEventListener('mouseleave', () => { hoverCard.classList.remove('visible'); updateSelectionBoxes(); });
+  element.addEventListener('mouseleave', () => { hoveredReference = ''; hoverCard.classList.remove('visible'); updateSelectionBoxes(); });
   element.addEventListener('focus', updateSelectionBoxes);
   element.addEventListener('blur', updateSelectionBoxes);
   element.addEventListener('click', event => {
@@ -946,7 +1225,7 @@ detail.addEventListener('click', event => {
     const component = byReference.get(activeReference);
     const pin = component.pads[Number(pinButton.dataset.pinIndex)];
     selectPin(component.reference, pin.number, pin.net_id, additiveClick(event));
-  } else if (netButton) selectNet(netButton.dataset.netId);
+  } else if (netButton) toggleNet(netButton.dataset.netId);
 });
 stage.addEventListener('click', event => {
   const feature = event.target.closest('.copper-feature');
@@ -955,23 +1234,38 @@ stage.addEventListener('click', event => {
     selectPin(feature.dataset.reference, feature.dataset.pin, feature.dataset.netId, additiveClick(event));
   } else selectNet(feature.dataset.netId);
 });
+stage.addEventListener('click', event => {
+  const hit = event.target.closest('.component-hitbox');
+  if (!hit) return;
+  if (additiveClick(event)) toggleComponent(hit.dataset.reference);
+  else selectComponent(hit.dataset.reference);
+});
 document.getElementById('net-status').addEventListener('click', event => {
   const netButton = event.target.closest('button[data-net-id]');
-  if (netButton) { selectNet(netButton.dataset.netId); return; }
+  if (netButton) { toggleNet(netButton.dataset.netId); return; }
   const button = event.target.closest('button[data-reference]');
-  if (button) selectPin(button.dataset.reference, button.dataset.pin, activeNet, additiveClick(event));
+  if (!button) return;
+  // Resolve the pad's real net instead of assuming the currently shown one.
+  const component = byReference.get(button.dataset.reference);
+  const pad = component && component.pads.find(pin => String(pin.number) === button.dataset.pin);
+  selectPin(button.dataset.reference, button.dataset.pin, pad ? pad.net_id : activeNet, additiveClick(event));
 });
-netSearch.addEventListener('input', renderNetOptions);
-netSelect.addEventListener('change', () => selectNet(netSelect.value));
-document.getElementById('clear-net').addEventListener('click', () => selectNet(''));
 document.getElementById('clear-selection').addEventListener('click', () => {
   selectedReferences.clear();
   activeReference = '';
-  detail.innerHTML = '<p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p>';
   selectionChanged();
 });
 highlightSelectedNets.addEventListener('change', () => selectionChanged(true));
-document.addEventListener('keydown', event => { if (event.key === 'Escape') selectNet(''); });
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  // Escape closes the LCSC options popup first; only then does it clear the
+  // pin/net selection.
+  if (!lcscPopup.hidden) {
+    closeLcscPopup();
+    return;
+  }
+  selectNet('');
+});
 for (const id of ['copper-layer', 'show-traces', 'show-fills']) {
   document.getElementById(id).addEventListener('change', updateNetHighlight);
 }
@@ -985,11 +1279,11 @@ document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoom
 document.getElementById('zoom-fit').addEventListener('click', fitBoard);
 document.getElementById('zoom-reset').addEventListener('click', fitBoard);
 renderLayerLegend();
+installComponentHitboxes();
 setZoom(1);
+// Starting unselected also means setSide's first render opens with the OOMP
+// matching summary in the status box and the empty prompt in the detail pane.
 setSide('front', false);
-const firstFrontComponent = components.find(component => component.side === 'front');
-// Show the initial part details without opening its category in the tree.
-if (firstFrontComponent) selectComponent(firstFrontComponent.reference, false, false);
 """
 
 
@@ -1044,14 +1338,37 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
                 if net["name"] == pin["net"] and net["source_file"] == component["source_file"]:
                     pin["net_id"] = net["id"]
                     break
-    copper_drawing = copper_svg(copper["features"])
-    board_svg = add_copper_svg(board_svg, copper_drawing)
-    board_bottom_svg = add_copper_svg(board_bottom_svg, copper_drawing, mirror=True)
+    base_drawing, pads_drawing = copper_drawings(copper["features"])
+    board_svg = add_copper_svg(board_svg, base_drawing, pads_drawing)
+    board_bottom_svg = add_copper_svg(board_bottom_svg, base_drawing, pads_drawing, mirror=True)
     copper_json = json.dumps({key: copper[key] for key in ["nets", "layers", "warnings"]}, ensure_ascii=False).replace("</", "<\\/")
     layer_options = "".join(f'<option value="{html.escape(layer, quote=True)}">{html.escape(layer)}</option>' for layer in copper["layers"])
     warning_html = "".join(f'<p class="net-note">{html.escape(warning)}</p>' for warning in copper["warnings"])
     project = summary_data.get("project") or {}
     title = str(project.get("display_name") or project_directory.name)
+    github_url = str(project.get("github_url") or "").strip()
+    github_icon = (
+        f'<a class="github-link" href="{html.escape(github_url)}" target="_blank" rel="noopener" '
+        f'aria-label="Open the project repository on GitHub" title="{html.escape(github_url)}">'
+        '<svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38'
+        ' 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a>'
+        if github_url else ""
+    )
+    project_owner = str(project.get("owner") or "").strip()
+    project_repository = str(project.get("repository") or "").strip()
+    project_version = str(project.get("version") or "").strip()
+    project_slug = "/".join(part for part in [project_owner, project_repository] if part)
+    project_meta = " · ".join(
+        part for part in [project_slug, project_version, f"{len(component_records)} items", f"{len(copper['nets'])} nets"] if part
+    )
+    project_link = (
+        f'<a class="project-card-link" href="{html.escape(github_url)}" target="_blank" rel="noopener">View project on GitHub ↗</a>'
+        if github_url else ""
+    )
+    project_card = (
+        f'<div class="project-card"><div class="project-card-title">{html.escape(title)}</div>'
+        f'<div class="project-card-meta">{html.escape(project_meta)}</div>{project_link}</div>'
+    )
     front_count = 0
     back_count = 0
     for component_record in component_records:
@@ -1069,17 +1386,11 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
 <style id="oomp-board-style">{_style()}</style>
 </head>
 <body>
-<header><div><h1>{html.escape(title)}</h1><p>Offline OOMP board explorer · components, pins &amp; routed nets</p></div><div class="badge">{len(component_records)} items · {len(copper['nets'])} nets</div></header>
+<header><div><h1>{html.escape(title)}</h1><p>Offline OOMP board explorer · components, pins &amp; routed nets</p></div><div class="badge">{len(component_records)} items · {len(copper['nets'])} nets</div>{github_icon}</header>
 <main class="layout">
   <section class="panel list-panel">
-    <div class="search-wrap"><input id="search" type="search" placeholder="Filter categories, components or pins…" aria-label="Filter components"><div class="selection-tools"><span id="selection-count">0 selected · both sides</span> · <button id="clear-selection" type="button">Clear selection</button><br>Ctrl-click categories, components or pins to toggle multiple selections.</div></div>
-    <div class="net-picker">
-      <label for="net-search">Follow a net</label>
-      <input id="net-search" type="search" placeholder="Find net by name…" aria-label="Filter nets">
-      <select id="net-select" aria-label="Select net"></select>
-      <button id="clear-net" class="net-link" type="button">Clear highlight</button>
-      <div id="layer-legend" class="layer-legend" aria-label="Highlighted copper layer colours"></div>
-    </div>
+    {project_card}
+    <div class="search-wrap"><input id="search" type="search" placeholder="Filter components, pins or nets…" aria-label="Filter components and nets"><div id="layer-legend" class="layer-legend" aria-label="Highlighted copper layer colours"></div></div>
     <div id="part-list" class="part-list"></div>
   </section>
   <section class="panel board-panel">
@@ -1108,12 +1419,13 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
   <aside class="panel detail">
     <div class="part-detail-scroll"><div id="detail"><p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p></div>{warning_html}</div>
     <section class="selection-status" aria-labelledby="selection-status-title">
-      <div id="selection-status-title" class="eyebrow">Selection status</div>
+      <div class="selection-status-header"><div id="selection-status-title" class="eyebrow">Selection status</div><button id="clear-selection" type="button">Clear</button></div>
       <div id="net-status" class="net-status" role="status" aria-live="polite"></div>
     </section>
   </aside>
 </main>
 <div id="hover-card" class="hover-card" role="status"></div>
+<div id="lcsc-popup" class="popup-overlay" hidden></div>
 <script id="component-data" type="application/json">{data_json}</script>
 <script id="copper-data" type="application/json">{copper_json}</script>
 <script>{_script()}</script>

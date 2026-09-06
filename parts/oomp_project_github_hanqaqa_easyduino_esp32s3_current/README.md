@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_hanqaqa_easyduino_esp32s3_current/data/generated_data/src/board_300.png)
 
-Project hanqaqa/easyduino ESP32S3 current is a KiCad project containing 77 extracted component records. The catalogue matcher linked 19 physical placements to OOMP parts.
+Project hanqaqa/easyduino ESP32S3 current is a KiCad project containing 77 extracted component records. The catalogue matcher linked 27 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project hanqaqa/easyduino ESP32S3 current is a KiCad project containing 77 extra
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 77 |
-| Matched OOMP components | 19 |
-| Unmatched physical components | 16 |
+| Matched OOMP components | 27 |
+| Unmatched physical components | 8 |
 | Front-side placements | 35 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -84,15 +84,15 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1 | 1 | Capacitor 1 uF 0402 | 1u | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_1_micro_farad) |
 | C2, C3, C4, C5, C8, C9 | 6 | Capacitor 100 nF 0402 | 100n | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_100_nano_farad) |
-| C6, C7, C10 | 3 | 22u | 22u | `Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I` | unmatched |
+| C6, C7, C10 | 3 | Capacitor 22 uF 10 V Tantalum 3216 AVX A | 22u | `Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I` | [`electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt) |
 | D1, D4 | 2 | LED  0402 | LED | `LED_SMD:LED_0402_1005Metric` | [`electronic_led_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402) |
 | D2, D3 | 2 | D_Schottky | D_Schottky | `Diode_SMD:D_0402_1005Metric` | unmatched |
-| J1, J2 | 2 | USB_C_Receptacle_USB2.0 | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | unmatched |
+| J1, J2 | 2 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
 | Q1, Q2 | 2 | Q_NPN_BCE | Q_NPN_BCE | `Package_TO_SOT_SMD:SOT-23W` | unmatched |
 | R1, R4, R5, R10 | 4 | Resistor 10000 Ohm 0402 | 10k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_10000_ohm) |
 | R2, R3, R6, R7, R8, R11 | 6 | Resistor 5100 Ohm 0402 | 5.1k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_5100_ohm) |
-| R9 | 1 | 2.4k | 2.4k | `Resistor_SMD:R_0402_1005Metric` | unmatched |
-| SW1, SW2 | 2 | SW_Push | SW_Push | `Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK` | unmatched |
+| R9 | 1 | Resistor 2400 Ohm 0402 | 2.4k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_2400_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2400_ohm) |
+| SW1, SW2 | 2 | Switch TS-1088-AR02016 TACTILE | SW_Push | `Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK` | [`electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016) |
 | U1 | 1 | ESP32-S3-WROOM-1 | ESP32-S3-WROOM-1 | `Espressif:ESP32-S3-WROOM-1` | unmatched |
 | U2 | 1 | ESP32-S3-DevKitC | ESP32-S3-DevKitC | `Espressif:ESP32-S3-DevKitC` | unmatched |
 | U3 | 1 | CP2102N-Axx-xQFN28 | CP2102N-Axx-xQFN28 | `Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm` | unmatched |
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 16 physical component records are not yet matched to an OOMP part.
+- 8 physical component records are not yet matched to an OOMP part.
 - The extractor reports 2 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_esp32s3_current/data/generated_data/lcsc_review.yaml)
@@ -140,7 +140,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_esp32s3_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

@@ -120,28 +120,6 @@ def main(**kwargs):
             }
         ]
 
-    current = "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb"
-    if current in extras_dict:
-        extras_dict[current]["part_number_manufacturer"] = "SM09B-SRSS-TB"
-        extras_dict[current]["part_number_lcsc"] = "C160408"
-        extras_dict[current]["pins"] = {}
-        connector_pins = [
-            ["1", "pin_1"], ["2", "pin_2"], ["3", "pin_3"],
-            ["4", "pin_4"], ["5", "pin_5"], ["6", "pin_6"],
-            ["7", "pin_7"], ["8", "pin_8"], ["9", "gnd"],
-        ]
-        for pin_index in range(len(connector_pins)):
-            pin = connector_pins[pin_index]
-            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
-                "number": pin[0], "name": pin[1], "type": "signal"
-            }
-        extras_dict[current]["file_copy"] = [
-            {
-                "file_source": f"parts_source/{current}/datasheet.pdf",
-                "file_destination": "datasheet.pdf",
-            }
-        ]
-
     current = "electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "912-121A2023S10100"
@@ -184,13 +162,83 @@ def main(**kwargs):
             }
         ]
 
+    # JST header families (SH/PH/XH and the SparkFun black Qwiic connectors):
+    # shared extras come from the editable data table so pin counts, drawings
+    # and KiCad masters stay in one place.
+    import working_oomp_populate
+    import working_oomp_populate_connector_jst_data
+
+    datasheet_urls = {
+        "eSH": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+        "ePH": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+        "eXH": "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf",
+    }
+    for jst_part in working_oomp_populate_connector_jst_data.JST_HEADERS:
+        current = working_oomp_populate.build_oomp_id(
+            {"taxonomy_1": "electronic", "taxonomy_2": "connector", **jst_part["taxonomy"]}
+        )
+        if current not in extras_dict:
+            continue
+        part = extras_dict[current]
+        part["manufacturer"] = "JST"
+        part["part_number_manufacturer"] = jst_part["part_number_manufacturer"]
+        part["part_numbers_manufacturer"] = jst_part["part_numbers_manufacturer"]
+        part["name_short"] = jst_part["name_short"]
+        part["part_numbers_lcsc"] = jst_part["part_numbers_lcsc"]
+        if jst_part["part_number_lcsc"]:
+            part["part_number_lcsc"] = jst_part["part_number_lcsc"]
+            part["product_url"] = f"https://www.lcsc.com/product-detail/{jst_part['part_number_lcsc']}.html"
+        elif jst_part["product_url"]:
+            part["product_url"] = jst_part["product_url"]
+        part["datasheet_url"] = datasheet_urls[jst_part["datasheet"]]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+        pins = {}
+        for index in range(1, jst_part["pin_count"] + 1):
+            pins[f"pin_{index}"] = {"number": str(index), "name": f"pin_{index}", "type": "signal"}
+        part["pins"] = pins
+        drawing = jst_part["package_drawing"]
+        part["package_drawing"] = drawing
+        part["dimensions_mm"] = {"length": drawing["body"][0], "width": drawing["body"][1]}
+        footprint_name = jst_part["kicad_footprint"].split(":")[-1] or "BM15B master (BM16B extrapolated)"
+        part["dimension_reference"] = {
+            "document": f"KiCad Connector_JST {footprint_name} F.Fab outline",
+            "pages": [],
+            "notes": jst_part["note"],
+        }
+        part["kicad"] = {
+            "symbol": jst_part["kicad_symbol"],
+            "machine_solder": jst_part["kicad_footprint"],
+            "hand_solder": "",
+        }
+        notes = [jst_part["note"]]
+        if jst_part["part_number_lcsc"]:
+            notes.append(
+                f"LCSC {jst_part['part_number_lcsc']} lists the JST {jst_part['part_number_manufacturer']}(LF)(SN)."
+            )
+        if jst_part["generic_match"]:
+            part["generic_match"] = jst_part["generic_match"]
+            notes.append(
+                "Generic match targets the SparkFun Qwiic symbols and footprints; "
+                "SparkFun's Qwiic connectors are custom black-insulator JST SH headers."
+            )
+        part["research_notes"] = notes
+
     # Generic match for USB-C receptacle used in Easyduino projects
     current = "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073"
     if current in extras_dict:
         part = extras_dict[current]
         part["generic_match"] = {
             "values": ["USB_C_Receptacle_USB2.0", "USB_C_Receptacle"],
-            "symbols": ["Connector:USB_C_Receptacle_USB2.0", "Connector:USB_C_Receptacle_USB2.0_16P"],
+            "symbols": [
+                "Connector:USB_C_Receptacle_USB2.0",
+                "Connector:USB_C_Receptacle_USB2.0_16P",
+                "SparkFun-Connector:USB_C_Receptacle",
+            ],
             "footprints": [
                 "Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV",
                 "SparkFun-Connector:USB-C_16",

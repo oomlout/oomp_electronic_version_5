@@ -1,9 +1,7 @@
 # Electronic / LED / 0402
 
 [Up one level](../README.md)
-
 This category contains 18 parts in total.
-
 
 ## Categories
 
@@ -12,9 +10,6 @@ This category contains 18 parts in total.
 - [Red](red/README.md)
 - [White](white/README.md)
 - [Yellow](yellow/README.md)
-
-
-
 
 ## Parts
 
@@ -25,8 +20,6 @@ This category contains 18 parts in total.
 - [LED Tint 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_tint) — `electronic_led_0402_tint`
 - [LED White 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_white) — `electronic_led_0402_white`
 - [LED Yellow 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_yellow) — `electronic_led_0402_yellow`
-
-
 
 ---
 

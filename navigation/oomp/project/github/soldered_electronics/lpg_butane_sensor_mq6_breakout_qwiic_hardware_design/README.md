@@ -1,16 +1,11 @@
 # Oomp / Project / Github / Soldered Electronics / Lpg Butane Sensor MQ6 Breakout Qwiic Hardware Design
 
 [Up one level](../README.md)
-
 This category contains 1 parts in total.
-
 
 ## Categories
 
 - [Sensor Gas MQ6 Qwiic](sensor_gas_mq6_qwiic/README.md)
-
-
-
 
 
 ---

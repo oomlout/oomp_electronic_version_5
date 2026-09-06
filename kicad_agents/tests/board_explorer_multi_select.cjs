@@ -71,7 +71,8 @@ module.exports = async function checkMultiSelect(page) {
   assert.deepEqual(await netIds(), examples.pins.map(p => p.net_id).sort(), 'Both pin nets are highlighted');
   const highlighted = await page.evaluate(() => {
     const pins = new Set();
-    for (const element of document.querySelectorAll('.copper-overlay .copper-pad.selected-pin')) {
+    // Pads are lifted into .copper-pads and highlighted in place.
+    for (const element of document.querySelectorAll('.copper-pads .copper-pad.selected-pin')) {
       pins.add(`${element.dataset.reference}.${element.dataset.pin}`);
     }
     return [...pins].sort();
@@ -114,6 +115,11 @@ module.exports = async function checkMultiSelect(page) {
   assert.equal((await selected()).length, 0);
 
   for (const pin of examples.pins) await clickPin(pin);
+  await clickPin(examples.pins[0], {});
+  assert.deepEqual(await selected(), [examples.pins[1]], 'Ordinary re-click on a selected pin deselects it');
+  assert.equal(await page.locator('#detail h2').textContent(), examples.pins[1].reference, 'The pin part stays populated in the detail pane');
+  await clickPin(examples.pins[1], {});
+  assert.deepEqual(await selected(), [], 'Re-clicking the remaining selected pin deselects it too');
   await clickPin(examples.pins[0], {});
   assert.deepEqual(await selected(), [examples.pins[0]], 'Ordinary pin click returns to one pin/net');
   await page.keyboard.press('Escape');

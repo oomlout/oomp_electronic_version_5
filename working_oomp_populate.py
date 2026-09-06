@@ -29,6 +29,10 @@ def main(**kwargs):
     working_oomp_populate_crystal.main(**kwargs)
     import working_oomp_populate_ferrite_bead
     working_oomp_populate_ferrite_bead.main(**kwargs)
+    import working_oomp_populate_inductor
+    working_oomp_populate_inductor.main(**kwargs)
+    import working_oomp_populate_fuse
+    working_oomp_populate_fuse.main(**kwargs)
     import working_oomp_populate_connector
     working_oomp_populate_connector.main(**kwargs)
     import working_oomp_populate_diode
@@ -95,12 +99,11 @@ def main(**kwargs):
     for extra in extras:
         working_oomp_populate_kicad.add_kicad_details(extra)
 
-    # Display names, distributor links, and navigation are deterministic
-    # population data.  Keeping them here means every downstream README and
-    # action receives the same editable metadata without an LLM pass.
+    # Display names and distributor links are deterministic population data.
+    # Navigation is generated in a dedicated action so it is no longer stored as
+    # synthetic OOMP part folders under parts/ or parts_source/.
     import working_oomp_metadata
     working_oomp_metadata.add_readable_metadata(extras)
-    working_oomp_metadata.add_navigation_parts(extras)
 
 
     write_extras(extras)

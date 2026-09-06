@@ -1,9 +1,7 @@
 # Electronic / Capacitor
 
 [Up one level](../README.md)
-
-This category contains 28 parts in total.
-
+This category contains 29 parts in total.
 
 ## Categories
 
@@ -14,9 +12,6 @@ This category contains 28 parts in total.
 - [6 3 Mm Diameter 5 4 Mm Tall](6_3_mm_diameter_5_4_mm_tall/README.md)
 - [6 3 Mm Diameter 7 7 Mm Tall](6_3_mm_diameter_7_7_mm_tall/README.md)
 - [8 Mm Diameter 6 5 Mm Tall](8_mm_diameter_6_5_mm_tall/README.md)
-
-
-
 
 
 ---

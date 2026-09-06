@@ -41,6 +41,10 @@ import working_oomp_populate_transistor
 import working_oomp_populate_transistor_extra
 import working_oomp_populate_ic
 import working_oomp_populate_ic_extra
+import working_oomp_metadata
+import svg_help
+from kicad_agents.pcb_copper import add_copper_svg, copper_drawings
+from kicad_agents.project_html_agent import _lcsc_search_value
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[2]
@@ -53,6 +57,133 @@ USB_A_PART = PARTS_DIRECTORY / "electronic_connector_usb_a_surface_mount_4_pin_s
 USB_C_PART = PARTS_DIRECTORY / "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12"
 USB_A_SOURCE = REPOSITORY_ROOT / "parts_source" / USB_A_PART.name
 USB_C_SOURCE = REPOSITORY_ROOT / "parts_source" / USB_C_PART.name
+
+
+class DistributorMetadataTests(unittest.TestCase):
+    def test_multiple_lcsc_and_manufacturer_numbers_normalise(self):
+        part = {
+            "manufacturer": "JST",
+            "part_number_manufacturer": "SM04B-SRSS-TB",
+            "part_number_lcsc": "C160404",
+            "product_url": "https://www.lcsc.com/product-detail/C160404.html",
+            "part_numbers_lcsc": [
+                {"part_number": "C160404", "product_name": "SM04B-SRSS-TB(LF)(SN)"},
+                {"part_number": "160404", "product_name": "duplicate should be dropped"},
+                {"part_number": "C999999"},
+            ],
+            "part_numbers_manufacturer": [
+                {"manufacturer": "SparkFun", "part_number": "PRT-14417"},
+                {"manufacturer": "JST", "part_number": "SM04B-SRSS-TB"},
+            ],
+        }
+        working_oomp_metadata.add_readable_metadata([part])
+        lcsc_entries = [entry for entry in part["distributors"] if entry["key"] == "lcsc"]
+        self.assertEqual(
+            [(entry["part_number"], entry.get("product_name", "")) for entry in lcsc_entries],
+            [("C160404", "SM04B-SRSS-TB(LF)(SN)"), ("C999999", "")],
+        )
+        self.assertEqual(lcsc_entries[0]["url"], "https://www.lcsc.com/product-detail/C160404.html")
+        self.assertEqual(lcsc_entries[1]["url"], "https://www.lcsc.com/product-detail/C999999.html")
+        self.assertEqual(
+            part["manufacturers"],
+            [
+                {"manufacturer": "SparkFun", "part_number": "PRT-14417"},
+                {"manufacturer": "JST", "part_number": "SM04B-SRSS-TB"},
+            ],
+        )
+
+    def test_singular_fields_become_primary_entries(self):
+        part = {"part_number_lcsc": "C2765186", "part_number_manufacturer": "TYPE-C 16PIN 2MD(073)"}
+        working_oomp_metadata.add_readable_metadata([part])
+        self.assertEqual(part["distributors"][0]["key"], "lcsc")
+        self.assertEqual(part["distributors"][0]["part_number"], "C2765186")
+        self.assertEqual(
+            part["manufacturers"],
+            [{"manufacturer": "", "part_number": "TYPE-C 16PIN 2MD(073)"}],
+        )
+        empty = {}
+        working_oomp_metadata.add_readable_metadata([empty])
+        self.assertEqual(empty["distributors"], [])
+        self.assertEqual(empty["manufacturers"], [])
+
+
+class LcscSearchTests(unittest.TestCase):
+    def test_passive_search_values_use_package_and_compact_value(self):
+        resistor = {"taxonomy_1": "electronic", "taxonomy_2": "resistor", "taxonomy_3": "0402", "taxonomy_4": "10000_ohm"}
+        working_oomp_metadata.add_lcsc_search(resistor)
+        self.assertEqual(resistor["lcsc_search"], "0402 10kΩ")
+        through_hole = {"taxonomy_1": "electronic", "taxonomy_2": "resistor", "taxonomy_3": "quarter_watt_through_hole", "taxonomy_4": "10000_ohm"}
+        working_oomp_metadata.add_lcsc_search(through_hole)
+        self.assertEqual(through_hole["lcsc_search"], "10kΩ through hole")
+        capacitor = {"taxonomy_1": "electronic", "taxonomy_2": "capacitor", "taxonomy_3": "1206", "taxonomy_4": "47_micro_farad"}
+        working_oomp_metadata.add_lcsc_search(capacitor)
+        self.assertEqual(capacitor["lcsc_search"], "1206 47uF")
+        electrolytic = {"taxonomy_1": "electronic", "taxonomy_2": "capacitor", "taxonomy_3": "6_3_mm_diameter_5_4_mm_tall",
+                        "taxonomy_4": "electrolytic", "taxonomy_5": "220_micro_farad", "taxonomy_6": "10_volt"}
+        working_oomp_metadata.add_lcsc_search(electrolytic)
+        self.assertEqual(electrolytic["lcsc_search"], "220uF 10V electrolytic")
+        header = {"taxonomy_1": "electronic", "taxonomy_2": "connector", "taxonomy_3": "header",
+                  "taxonomy_4": "2_54_mm_pitch", "taxonomy_5": "through_hole", "taxonomy_6": "10_pin"}
+        working_oomp_metadata.add_lcsc_search(header)
+        self.assertEqual(header["lcsc_search"], "2.54mm header 10 pin through hole")
+
+    def test_part_numbers_and_explicit_values_win(self):
+        ic = {"taxonomy_1": "electronic", "taxonomy_2": "ic", "taxonomy_3": "tsot_23_5",
+              "taxonomy_4": "power_management", "part_number_manufacturer": "RT9742CGJ5"}
+        working_oomp_metadata.add_lcsc_search(ic)
+        self.assertEqual(ic["lcsc_search"], "RT9742CGJ5")
+        explicit = {"taxonomy_1": "electronic", "taxonomy_2": "resistor", "taxonomy_3": "0402",
+                    "taxonomy_4": "10000_ohm", "lcsc_search": "0402 10k 1%"}
+        working_oomp_metadata.add_lcsc_search(explicit)
+        self.assertEqual(explicit["lcsc_search"], "0402 10k 1%")
+
+    def test_unmatched_components_fall_back_to_footprint_size_and_value(self):
+        capacitor = {"pcb": {"value": "100n", "library_id": "Capacitor_SMD:C_0402_1005Metric"}}
+        self.assertEqual(_lcsc_search_value(capacitor, {}), "0402 100nF")
+        resistor = {"pcb": {"value": "10k", "library_id": "Resistor_SMD:R_0603_1608Metric"}}
+        self.assertEqual(_lcsc_search_value(resistor, {}), "0603 10kΩ")
+        part_number = {"pcb": {"value": "RT9742CGJ5", "library_id": "Package_TO_SOT_SMD:SOT-23-5"}}
+        self.assertEqual(_lcsc_search_value(part_number, {}), "RT9742CGJ5")
+        declared = {"lcsc_search": "custom query"}
+        self.assertEqual(_lcsc_search_value({"pcb": {"value": "10k"}}, declared), "custom query")
+
+
+class CopperPadLayeringTests(unittest.TestCase):
+    def test_pads_render_above_component_artwork_as_white_shapes(self):
+        features = [
+            {"kind": "segment", "start": [0, 0], "end": [1, 0], "width": 0.2, "layers": ["F.Cu"],
+             "net": "GND", "net_id": "net_0_0", "reference": "", "number": ""},
+            {"kind": "pad", "position": [1, 1], "rotation": 0, "size": [1, 0.6], "shape": "rect",
+             "layers": ["F.Cu"], "net": "GND", "net_id": "net_0_0", "reference": "R1", "number": "1",
+             "roundrect_rratio": 0, "anchor": "rect", "primitives": [],
+             "drill": {"size": [0.3, 0.3], "offset": [0, 0]}},
+        ]
+        base_drawing, pads_drawing = copper_drawings(features)
+        self.assertIn("copper-segment", base_drawing)
+        self.assertNotIn("copper-pad", base_drawing)
+        self.assertIn("copper-pad", pads_drawing)
+        self.assertIn("var(--board", pads_drawing)
+        board = ('<svg viewBox="0 0 10 10">'
+                 '<g class="board-component" data-reference="R1"><rect class="component" x="1" y="1" width="2" height="1"/></g>'
+                 '<g class="indicator"><rect/></g></svg>')
+        composed = add_copper_svg(board, base_drawing, pads_drawing)
+        self.assertLess(composed.find('class="copper-base"'), composed.find('class="board-component"'))
+        pads_index = composed.find('class="copper-pads"')
+        self.assertGreater(pads_index, composed.find('class="board-component"'))
+        self.assertLess(pads_index, composed.find('class="indicator"'))
+        mirrored = add_copper_svg(board, base_drawing, pads_drawing, mirror=True)
+        self.assertIn('class="copper-pads" transform="translate(', mirrored)
+
+
+class AssemblyStrokeTests(unittest.TestCase):
+    def test_stroke_widths_are_constant_regardless_of_canvas_size(self):
+        small = '<svg viewBox="0 0 3 3"><rect stroke-width="0.8"/><rect stroke-width="0.6"/></svg>'
+        large = '<svg viewBox="0 0 30 30"><rect stroke-width="0.8"/><rect stroke-width="0.6"/></svg>'
+        small_widths = re.findall(r'stroke-width="[^"]+"', svg_help._scale_assembly_strokes(small))
+        large_widths = re.findall(r'stroke-width="[^"]+"', svg_help._scale_assembly_strokes(large))
+        self.assertEqual(small_widths, large_widths)
+        # The shared weight matches IC4 (TSOT-23-5) on the pt1 reference board.
+        self.assertEqual(small_widths, ['stroke-width="0.0716"', 'stroke-width="0.0537"'])
 
 
 class SExpressionTests(unittest.TestCase):
@@ -1098,10 +1229,17 @@ class ProjectPartTests(unittest.TestCase):
         self.assertTrue(assembly_svg_path.is_file())
         assembly_svg = assembly_svg_path.read_text(encoding="utf-8")
         self.assertIn('width="1.0000mm" height="0.5000mm"', assembly_svg)
-        self.assertIn('vector-effect="non-scaling-stroke"', assembly_svg)
-        self.assertIn('stroke-width="0.22"', assembly_svg)
-        self.assertNotIn('stroke-width="0.18"', assembly_svg)
+        # Assembly strokes use one constant absolute line weight (the IC4
+        # TSOT-23-5 reference): 0.8/0.6 mm times 4.0247 over 44.9444, so a
+        # 1 mm test piece and a large connector draw the same line width.
+        self.assertNotIn("vector-effect", assembly_svg)
+        self.assertIn('stroke-width="0.0716"', assembly_svg)
+        self.assertIn('stroke-width="0.0537"', assembly_svg)
         self.assertNotIn('stroke-width="0.8"', assembly_svg)
+        assembly_png_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "data" / "working_svg_assembly.png"
+        self.assertTrue(assembly_png_path.is_file())
+        with Image.open(assembly_png_path) as assembly_png_image:
+            self.assertEqual(max(assembly_png_image.size), 600)
 
         assembly_pins_svg_path = PARTS_DIRECTORY / "electronic_resistor_0402_2200_ohm" / "data" / "working_svg_assembly_pins.svg"
         self.assertTrue(assembly_pins_svg_path.is_file())
@@ -1171,7 +1309,10 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIn('id="zoom-reset"', explorer)
         self.assertIn("stage.addEventListener('wheel'", explorer)
         self.assertIn("stage.addEventListener('pointerdown'", explorer)
-        self.assertIn("stage.addEventListener('pointermove'", explorer)
+        # Pan tracking listens on the window: capturing the pointer on the
+        # stage would retarget clicks to the stage and break part selection.
+        self.assertIn("window.addEventListener('pointermove'", explorer)
+        self.assertIn("window.addEventListener('pointerup'", explorer)
         self.assertIn("activePointers.size === 2", explorer)
         self.assertIn("touch-action: none", explorer)
         self.assertIn("{passive: false}", explorer)
@@ -1259,7 +1400,7 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         self.assertEqual(svg_action["command"], "run_python")
         self.assertEqual(svg_action["part_id"], part_directory.name)
         resize_actions = [action for action in preview_actions if action["command"] == "image_resize"]
-        self.assertEqual(len(resize_actions), 8)
+        self.assertEqual(len(resize_actions), 10)
         self.assertTrue(all(action["command"] == "image_resize" for action in resize_actions))
         self.assertTrue(all(action["maximum_dimension"] == 300 for action in resize_actions))
         self.assertTrue(all(action["allow_upscale"] is False for action in resize_actions))
@@ -1272,6 +1413,8 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         self.assertNotIn("<img", readme)
         self.assertIn("## Files", readme)
         self.assertIn("![Pinout drawing](data/working_svg_square_pins_300.png)", readme)
+        self.assertIn("![Assembly](data/working_svg_assembly_300.png)", readme)
+        self.assertIn("![Assembly pinout](data/working_svg_assembly_pins_300.png)", readme)
         self.assertIn("![Outline](data/working_svg_outline_300.png)", readme)
         self.assertNotIn("[Outline drawing](data/working_svg_outline.svg)", readme)
         self.assertNotIn("[View the datasheet](data/datasheet.pdf)", readme)
@@ -1279,7 +1422,7 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         from PIL import Image
 
         preview_files = sorted((part_directory / "data").glob("working_svg*_300.png"))
-        self.assertEqual(len(preview_files), 8)
+        self.assertEqual(len(preview_files), 10)
         for preview_file in preview_files:
             with Image.open(preview_file) as preview_image:
                 self.assertLessEqual(max(preview_image.size), 300)

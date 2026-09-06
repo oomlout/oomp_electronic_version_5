@@ -1,9 +1,7 @@
 # Mechanical / Mounting Hole
 
 [Up one level](../README.md)
-
 This category contains 36 parts in total.
-
 
 ## Categories
 
@@ -25,9 +23,6 @@ This category contains 36 parts in total.
 - [4 Mm](4_mm/README.md)
 - [5 Mm](5_mm/README.md)
 - [6 Mm](6_mm/README.md)
-
-
-
 
 
 ---

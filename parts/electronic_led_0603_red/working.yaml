@@ -43,9 +43,11 @@ kicad:
   hand_solder: ''
   machine_solder: LED_SMD:LED_0603_1608Metric
   symbol: Device:LED
+lcsc_search: 0603 led
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red
+manufacturers: []
 md5: 255611ec8565e66dea88d4fba9421c6d
 md5_10: 255611ec85
 md5_10_upper: 255611EC85
@@ -88,6 +90,20 @@ oomlout_ai_roboclick_2:
     command: image_resize
     file_destination: data/working_svg_square_pins_300.png
     file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_300.png
+    file_source: data/working_svg_assembly.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_pins_300.png
+    file_source: data/working_svg_assembly_pins.png
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
@@ -161,6 +177,8 @@ oomlout_ai_roboclick_3:
         hand_solder: ''
         machine_solder: LED_SMD:LED_0603_1608Metric
         symbol: Device:LED
+      lcsc_search: 0603 led
+      manufacturers: []
       name: electronic_led_0603_red
       name_proper: LED Red 0603
       name_readable: LED Red 0603
@@ -192,6 +210,20 @@ oomlout_ai_roboclick_3:
           command: image_resize
           file_destination: data/working_svg_square_pins_300.png
           file_source: data/working_svg_square_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_300.png
+          file_source: data/working_svg_assembly.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_pins_300.png
+          file_source: data/working_svg_assembly_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos
@@ -252,10 +284,14 @@ oomlout_ai_roboclick_3:
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
-        - png: ''
-          preview: data/working_svg_assembly.svg
+        - png: data/working_svg_assembly.png
+          preview: data/working_svg_assembly_300.png
           svg: data/working_svg_assembly.svg
           title: Assembly
+        - png: data/working_svg_assembly_pins.png
+          preview: data/working_svg_assembly_pins_300.png
+          svg: data/working_svg_assembly_pins.svg
+          title: Assembly pinout
         - png: data/working_svg_outline.png
           preview: data/working_svg_outline_300.png
           svg: data/working_svg_outline.svg
@@ -287,6 +323,10 @@ oomlout_ai_roboclick_3:
         file_previews:
         - preview: data/working_svg_square_pins_300.png
           title: Pinout drawing
+        - preview: data/working_svg_assembly_300.png
+          title: Assembly
+        - preview: data/working_svg_assembly_pins_300.png
+          title: Assembly pinout
         - preview: data/working_svg_outline_300.png
           title: Outline
         - preview: data/working_svg_part_id_300.png
@@ -338,7 +378,9 @@ oomlout_ai_roboclick_3:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly
         write_yaml: false
@@ -346,7 +388,9 @@ oomlout_ai_roboclick_3:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly_pins
         write_yaml: false
@@ -459,26 +503,6 @@ oomlout_ai_roboclick_3:
         references:
         - D2
         version: current
-      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_0/board_explorer.html
-        board_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
-        github_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
-        name: Project sparkfun/SparkFun_GNSS_Flex_Breakout GNSS Flex Breakout v1.0
-        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_0
-        project_id: oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_0
-        quantity: 1
-        references:
-        - D2
-        version: v1.0
-      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_1/board_explorer.html
-        board_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
-        github_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
-        name: Project sparkfun/SparkFun_GNSS_Flex_Breakout GNSS Flex Breakout v1.1
-        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_1
-        project_id: oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_1
-        quantity: 1
-        references:
-        - D2
-        version: v1.1
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
         github_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
@@ -489,17 +513,6 @@ oomlout_ai_roboclick_3:
         references:
         - D1
         version: current
-      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_v1_0_0/board_explorer.html
-        board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
-        github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
-        name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX Qwiic Current
-          Sensor INA2XX v1.0.0
-        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_v1_0_0
-        project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_v1_0_0
-        quantity: 1
-        references:
-        - D1
-        version: v1.0.0
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_directional_pad_qwiic_directional_pad_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_Qwiic_Directional_Pad
         github_url: https://github.com/sparkfun/SparkFun_Qwiic_Directional_Pad
@@ -564,10 +577,14 @@ part_id: D1
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
-  - png: ''
-    preview: data/working_svg_assembly.svg
+  - png: data/working_svg_assembly.png
+    preview: data/working_svg_assembly_300.png
     svg: data/working_svg_assembly.svg
     title: Assembly
+  - png: data/working_svg_assembly_pins.png
+    preview: data/working_svg_assembly_pins_300.png
+    svg: data/working_svg_assembly_pins.svg
+    title: Assembly pinout
   - png: data/working_svg_outline.png
     preview: data/working_svg_outline_300.png
     svg: data/working_svg_outline.svg
@@ -599,6 +616,10 @@ part_page:
   file_previews:
   - preview: data/working_svg_square_pins_300.png
     title: Pinout drawing
+  - preview: data/working_svg_assembly_300.png
+    title: Assembly
+  - preview: data/working_svg_assembly_pins_300.png
+    title: Assembly pinout
   - preview: data/working_svg_outline_300.png
     title: Outline
   - preview: data/working_svg_part_id_300.png
@@ -650,7 +671,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly
   write_yaml: false
@@ -658,7 +681,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly_pins
   write_yaml: false
@@ -827,26 +852,6 @@ used_in_projects:
   references:
   - D2
   version: current
-- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_0/board_explorer.html
-  board_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
-  github_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
-  name: Project sparkfun/SparkFun_GNSS_Flex_Breakout GNSS Flex Breakout v1.0
-  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_0
-  project_id: oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_0
-  quantity: 1
-  references:
-  - D2
-  version: v1.0
-- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_1/board_explorer.html
-  board_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
-  github_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
-  name: Project sparkfun/SparkFun_GNSS_Flex_Breakout GNSS Flex Breakout v1.1
-  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_1
-  project_id: oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_v1_1
-  quantity: 1
-  references:
-  - D2
-  version: v1.1
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
   github_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
@@ -857,17 +862,6 @@ used_in_projects:
   references:
   - D1
   version: current
-- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_v1_0_0/board_explorer.html
-  board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
-  github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
-  name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX Qwiic Current Sensor
-    INA2XX v1.0.0
-  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_v1_0_0
-  project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_v1_0_0
-  quantity: 1
-  references:
-  - D1
-  version: v1.0.0
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_directional_pad_qwiic_directional_pad_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_Qwiic_Directional_Pad
   github_url: https://github.com/sparkfun/SparkFun_Qwiic_Directional_Pad

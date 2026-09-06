@@ -12,8 +12,8 @@ summary:
   component_count: 106
   schematic_symbol_count: 82
   pcb_footprint_count: 73
-  matched_component_count: 17
-  unmatched_physical_component_count: 52
+  matched_component_count: 23
+  unmatched_physical_component_count: 46
   non_physical_symbol_count: 37
   mounting_hole_count: 7
   dedicated_mounting_hole_count: 4
@@ -54518,13 +54518,34 @@ components:
     confidence: 0.0
     proposed_oomp_id: null
     inferred:
-      kind: null
+      kind: diode
       package_size: '0402'
       value: PESD0402
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
-    candidates: []
+    - The component value could not be normalized into an OOMP ID.
+    candidates:
+    - oomp_id: electronic_diode_esd_0402_littelfuse_pesd0402
+      score: 0.2449
+      reasons:
+      - same component family
+      - same package size
+    - oomp_id: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
+      score: 0.1306
+      reasons:
+      - same component family
+    - oomp_id: electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so
+      score: 0.126
+      reasons:
+      - same component family
+    - oomp_id: electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu
+      score: 0.1147
+      reasons:
+      - same component family
+    - oomp_id: electronic_diode_schottky_sod_523_1ss400
+      score: 0.1135
+      reasons:
+      - same component family
   category: diode
   category_source: unmatched_kicad_hint
   category_name: Diode
@@ -55108,21 +55129,22 @@ components:
     disagree_count: 0
     incomplete_count: 1
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_diode_schottky_sod_323_bat54w
+    confidence: 1.0
+    proposed_oomp_id: electronic_diode_schottky_sod_323
     inferred:
-      kind: null
-      package_size: null
+      kind: diode
+      package_size: schottky
       value: PMEG4005EJ
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Generic value, symbol and footprint agree with the populated matching rule; no manufacturer or MPN was supplied.
     candidates: []
+    identity_scope: generic_family
   category: diode
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Diode
   generated_directory: components/D5
 - reference: D7
@@ -56370,13 +56392,33 @@ components:
     confidence: 0.0
     proposed_oomp_id: null
     inferred:
-      kind: null
+      kind: diode
       package_size: null
       value: PESD3V3L4UG
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
-    candidates: []
+    - Component family was inferred, but package size was not.
+    candidates:
+    - oomp_id: electronic_diode_esd_array_sot_353_nexperia_pesd3v3l4ug
+      score: 0.3078
+      reasons:
+      - same component family
+    - oomp_id: electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu
+      score: 0.2048
+      reasons:
+      - same component family
+    - oomp_id: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
+      score: 0.1531
+      reasons:
+      - same component family
+    - oomp_id: electronic_diode_esd_0402_littelfuse_pesd0402
+      score: 0.1347
+      reasons:
+      - same component family
+    - oomp_id: electronic_diode_tvs_array_sot_143_littelfuse_sp0503bahtg
+      score: 0.1335
+      reasons:
+      - same component family
   category: diode
   category_source: unmatched_kicad_hint
   category_name: Diode
@@ -59921,21 +59963,22 @@ components:
     disagree_count: 0
     incomplete_count: 2
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb
+    confidence: 1.0
     proposed_oomp_id: null
     inferred:
-      kind: null
-      package_size: null
+      kind: connector
+      package_size: jst_sh
       value: Qwiic_RA
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Generic value, symbol and footprint agree with the populated matching rule; no manufacturer or MPN was supplied.
     candidates: []
+    identity_scope: generic_family
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J1
 - reference: J2
@@ -61276,21 +61319,22 @@ components:
     disagree_count: 0
     incomplete_count: 2
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb
+    confidence: 1.0
     proposed_oomp_id: null
     inferred:
-      kind: null
-      package_size: null
+      kind: connector
+      package_size: jst_sh
       value: Qwiic_RA
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Generic value, symbol and footprint agree with the populated matching rule; no manufacturer or MPN was supplied.
     candidates: []
+    identity_scope: generic_family
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J2
 - reference: J4
@@ -63954,21 +63998,22 @@ components:
     disagree_count: 0
     incomplete_count: 11
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_usb_c_surface_mount_16_pin
     inferred:
-      kind: null
-      package_size: null
+      kind: connector
+      package_size: usb_c
       value: USB_C_Receptacle
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Generic value, symbol and footprint agree with the populated matching rule; no manufacturer or MPN was supplied.
     candidates: []
+    identity_scope: generic_family
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J4
 - reference: J6
@@ -64866,21 +64911,21 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
     inferred:
-      kind: null
+      kind: connector_header
       package_size: null
       value: Conn_01x06
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J6
 - reference: J7
@@ -66407,21 +66452,21 @@ components:
     disagree_count: 0
     incomplete_count: 1
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
     inferred:
-      kind: null
+      kind: connector_header
       package_size: null
       value: Conn_01x06
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J7
 - reference: JP1
@@ -93389,7 +93434,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_0_65_mm_round_unplated
   component_reference: J4
-  component_oomp_id: null
+  component_oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
   component_footprint: SparkFun-Connector:USB-C_16
   component_side: front
   dedicated_footprint: false
@@ -93470,7 +93515,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_0_65_mm_round_unplated
   component_reference: J4
-  component_oomp_id: null
+  component_oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
   component_footprint: SparkFun-Connector:USB-C_16
   component_side: front
   dedicated_footprint: false
@@ -93976,7 +94021,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_0_65_mm_round_unplated
       component_reference: J4
-      component_oomp_id: null
+      component_oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
       component_footprint: SparkFun-Connector:USB-C_16
       component_side: front
       dedicated_footprint: false
@@ -94145,7 +94190,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_0_65_mm_round_unplated
       component_reference: J4
-      component_oomp_id: null
+      component_oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
       component_footprint: SparkFun-Connector:USB-C_16
       component_side: front
       dedicated_footprint: false

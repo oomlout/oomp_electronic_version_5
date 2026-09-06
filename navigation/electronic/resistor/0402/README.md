@@ -1,10 +1,7 @@
 # Electronic / Resistor / 0402
 
 [Up one level](../README.md)
-
 This category contains 88 parts in total.
-
-
 
 
 ## Parts
@@ -97,8 +94,6 @@ This category contains 88 parts in total.
 - [Resistor 8200 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_8200_ohm) — `electronic_resistor_0402_8200_ohm`
 - [Resistor 82000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_82000_ohm) — `electronic_resistor_0402_82000_ohm`
 - [Resistor 820000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_820000_ohm) — `electronic_resistor_0402_820000_ohm`
-
-
 
 ---
 

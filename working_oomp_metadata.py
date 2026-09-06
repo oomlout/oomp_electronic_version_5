@@ -1,5 +1,6 @@
 """Shared, deterministic display names, distributor links, and navigation data."""
 
+import re
 from pathlib import PurePosixPath
 
 
@@ -194,30 +195,212 @@ def readable_name(part):
 
 
 def add_distributor_links(part):
-    """Add an editable list of distributor identities and URLs."""
+    """Add an editable list of distributor identities and URLs.
+
+    A part can carry several purchasable options per distributor: the singular
+    ``part_number_lcsc`` stays the primary catalogue number, while
+    ``part_numbers_lcsc`` holds extra options, each with an optional product
+    name and URL.  Manufacturer identities work the same way: the singular
+    ``manufacturer`` / ``part_number_manufacturer`` pair is primary and
+    ``part_numbers_manufacturer`` lists further name/number pairs.
+    """
     distributor_definitions = [
-        ["lcsc", "LCSC", "part_number_lcsc", "https://www.lcsc.com/product-detail/{part_number}.html"],
-        ["digikey", "DigiKey", "part_number_digikey", "https://www.digikey.com/en/products/result?keywords={part_number}"],
-        ["mouser", "Mouser", "part_number_mouser", "https://www.mouser.com/c/?q={part_number}"],
-        ["farnell", "Farnell", "part_number_farnell", "https://uk.farnell.com/search?st={part_number}"],
+        ["lcsc", "LCSC", "part_number_lcsc", "part_numbers_lcsc", "https://www.lcsc.com/product-detail/{part_number}.html"],
+        ["digikey", "DigiKey", "part_number_digikey", "part_numbers_digikey", "https://www.digikey.com/en/products/result?keywords={part_number}"],
+        ["mouser", "Mouser", "part_number_mouser", "part_numbers_mouser", "https://www.mouser.com/c/?q={part_number}"],
+        ["farnell", "Farnell", "part_number_farnell", "part_numbers_farnell", "https://uk.farnell.com/search?st={part_number}"],
     ]
     distributors = []
-    for distributor_key, distributor_title, field_name, url_template in distributor_definitions:
-        part_number = str(part.get(field_name, "")).strip()
+    seen = set()
+
+    def add_distributor(key, title, part_number, url, product_name=""):
+        part_number = str(part_number or "").strip()
         if part_number == "":
-            continue
-        explicit_url = str(part.get(f"{field_name}_url", "")).strip()
-        if explicit_url == "":
-            explicit_url = url_template.format(part_number=part_number)
-        distributors.append(
-            {
-                "key": distributor_key,
-                "title": distributor_title,
-                "part_number": part_number,
-                "url": explicit_url,
-            }
-        )
+            return
+        if part_number.isascii() and part_number.isdigit():
+            part_number = "C" + part_number
+        identity = (key, part_number.upper())
+        product_name = str(product_name or "").strip()
+        if identity in seen:
+            # A repeated number that names the product enriches the first
+            # entry instead of creating a look-alike second option.
+            if product_name:
+                for entry in distributors:
+                    if (entry["key"], entry["part_number"].upper()) == identity and not entry.get("product_name"):
+                        entry["product_name"] = product_name
+            return
+        seen.add(identity)
+        entry = {
+            "key": key,
+            "title": title,
+            "part_number": part_number,
+            "url": url,
+        }
+        if product_name:
+            entry["product_name"] = product_name
+        distributors.append(entry)
+
+    for distributor_key, distributor_title, field_name, options_field, url_template in distributor_definitions:
+        part_number = str(part.get(field_name, "")).strip()
+        if part_number != "":
+            explicit_url = str(part.get(f"{field_name}_url", "")).strip()
+            if explicit_url == "":
+                explicit_url = url_template.format(part_number=part_number)
+            add_distributor(distributor_key, distributor_title, part_number, explicit_url)
+        for option in part.get(options_field) or []:
+            if not isinstance(option, dict):
+                continue
+            option_number = str(option.get("part_number", "")).strip()
+            if option_number == "":
+                continue
+            option_url = str(option.get("url", "")).strip()
+            if option_url == "":
+                option_url = url_template.format(part_number=option_number)
+            add_distributor(distributor_key, distributor_title, option_number, option_url,
+                            option.get("product_name", ""))
     part["distributors"] = distributors
+
+    manufacturers = []
+    seen_manufacturers = set()
+
+    def add_manufacturer(name, part_number):
+        name = str(name or "").strip()
+        part_number = str(part_number or "").strip()
+        if name == "" and part_number == "":
+            return
+        identity = (name.lower(), part_number.upper())
+        if identity in seen_manufacturers:
+            return
+        seen_manufacturers.add(identity)
+        manufacturers.append({"manufacturer": name, "part_number": part_number})
+
+    for option in part.get("part_numbers_manufacturer") or []:
+        if isinstance(option, dict):
+            add_manufacturer(option.get("manufacturer", ""), option.get("part_number", ""))
+    add_manufacturer(part.get("manufacturer", ""), part.get("part_number_manufacturer", ""))
+    part["manufacturers"] = manufacturers
+    return part
+
+
+_LCSC_UNIT_SUFFIXES = [
+    ("_pico_farad", "pF"),
+    ("_nano_farad", "nF"),
+    ("_micro_farad", "uF"),
+    ("_milli_farad", "mF"),
+    ("_farad", "F"),
+    ("_micro_henry", "uH"),
+    ("_milli_henry", "mH"),
+    ("_henry", "H"),
+    ("_mega_ohm", "MΩ"),
+    ("_kilo_ohm", "kΩ"),
+    ("_milliohm", "mΩ"),
+    ("_ohm", "Ω"),
+    ("_mhz", "MHz"),
+    ("_khz", "kHz"),
+    ("_hz", "Hz"),
+    ("_volt", "V"),
+    ("_amp", "A"),
+    ("_watt", "W"),
+]
+
+
+def _trim_number(number):
+    return f"{number:g}"
+
+
+def _lcsc_value_text(value_token):
+    """Compact LCSC-style value: "10000_ohm" reads "10kΩ", "47_micro_farad" "47uF"."""
+    value_text = str(value_token or "").strip().lower()
+    if value_text == "":
+        return ""
+    for suffix, unit in _LCSC_UNIT_SUFFIXES:
+        if value_text.endswith(suffix):
+            number_text = value_text[: -len(suffix)].replace("_", ".")
+            try:
+                number = float(number_text)
+            except ValueError:
+                return number_text + unit
+            if unit == "Ω" and number >= 1000:
+                for factor, prefix in ((1e9, "G"), (1e6, "M"), (1e3, "k")):
+                    if number >= factor:
+                        return f"{_trim_number(number / factor)}{prefix}{unit}"
+            return f"{_trim_number(number)}{unit}"
+    return _pretty_token(str(value_token))
+
+
+def _lcsc_search_for_part(part):
+    """Derive the string to type into LCSC search to find this part.
+
+    Package plus value for passives (the same words a human would search),
+    manufacturer part number for everything catalogued by number.
+    """
+    taxonomy = taxonomy_values(part)
+    component_type = taxonomy[1] if len(taxonomy) > 1 else ""
+    package = taxonomy[2] if len(taxonomy) > 2 else ""
+    values = taxonomy[3:]
+    manufacturer_part_number = str(part.get("part_number_manufacturer", "")).strip()
+
+    def value_with(suffixes):
+        for value_token in values:
+            if value_token.endswith(suffixes):
+                return _lcsc_value_text(value_token)
+        return ""
+
+    if component_type == "resistor":
+        value = value_with(("_ohm",))
+        if re.fullmatch(r"(0201|0402|0603|0805|1206|1210|2010|2512)", package):
+            return f"{package} {value}".strip()
+        return f"{value} through hole".strip()
+    if component_type == "resistor_array":
+        array_match = re.search(r"(0201|0402|0603|0805|1206)", package + " " + " ".join(values))
+        array_size = array_match.group(1) if array_match else package
+        return f"{array_size} {value_with(('_ohm',))} resistor array".strip()
+    if component_type == "capacitor":
+        if re.fullmatch(r"(0201|0402|0603|0805|1206|1210|2010|2512)", package):
+            return f"{package} {value_with(('_farad',))}".strip()
+        if values and values[0] in ("electrolytic", "tantalum"):
+            return " ".join(part for part in [
+                value_with(("_farad",)), value_with(("_volt",)), values[0]] if part)
+        return value_with(("_farad",))
+    if component_type in ("ferrite_bead", "inductor"):
+        return f"{package} {value_with(('_ohm', '_henry'))}".strip()
+    if component_type == "fuse":
+        return f"{package} {' '.join(v.replace('_', ' ') for v in values)} fuse".strip()
+    if component_type == "led":
+        return f"{package.replace('_mm', 'mm')} led"
+    if component_type == "crystal":
+        return f"{package} {value_with(('_hz', '_mhz', '_khz'))}".strip()
+    if component_type == "wire":
+        return f"{_pretty_token(package)} wire"
+    if component_type == "connector" and manufacturer_part_number == "":
+        pitch_token = next((v for v in values if v.endswith("_mm_pitch")), "")
+        pitch = pitch_token[: -len("_mm_pitch")].replace("_", ".") + "mm" if pitch_token else ""
+        mount = "smd" if "surface_mount" in values else ("through hole" if "through_hole" in values else "")
+        pins = next((v.replace("_pin_dual_row", " pin dual row").replace("_pin", " pin")
+                     for v in values if v.endswith(("_pin", "_pin_dual_row"))), "")
+        return " ".join(part for part in [pitch, "header", pins, mount] if part)
+    if manufacturer_part_number != "":
+        return manufacturer_part_number
+    if component_type in ("", "project", "mounting_hole", "navigation"):
+        return ""
+    tokens = [v.replace("_", " ") for v in values if v not in ("surface_mount", "through_hole")]
+    words = [package.replace("_", " ")] + tokens
+    if component_type not in ("prototyping",) and package != component_type:
+        words.append(component_type)
+    return " ".join(word for word in words if word).strip()
+
+
+def add_lcsc_search(part):
+    """Declare each part's ``lcsc_search`` value; explicit settings win.
+
+    Only purchasable electronic parts get a derived value — navigation,
+    project and mechanical records stay clean.
+    """
+    search = str(part.get("lcsc_search", "") or "").strip()
+    if search == "" and str(part.get("taxonomy_1", "")) == "electronic":
+        search = _lcsc_search_for_part(part)
+    if search != "":
+        part["lcsc_search"] = search
     return part
 
 
@@ -227,6 +410,7 @@ def add_readable_metadata(parts):
         part["name_short"] = part["name_readable"]
         part["name_proper"] = part["name_readable"]
         add_distributor_links(part)
+        add_lcsc_search(part)
 
 
 def _navigation_file_path(category_path):

@@ -78,6 +78,10 @@ Diode BAS40T-05 SOT-523 is an OOMP electronic diode definition. It uses the sot 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
 ![Outline](data/working_svg_outline_300.png)
 
 ![Part ID](data/working_svg_part_id_300.png)

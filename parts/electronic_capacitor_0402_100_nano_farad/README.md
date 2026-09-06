@@ -37,6 +37,16 @@ Capacitor 100 nF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CC0402KRX7R7BB104` |
+| LCSC | [`C60474`](https://www.lcsc.com/product-detail/C60474.html) |
+| LCSC | [`C1525`](https://www.lcsc.com/product-detail/C1525.html) |
+| LCSC | [`C131394`](https://www.lcsc.com/product-detail/C131394.html) |
+
+
 
 
 
@@ -64,6 +74,10 @@ Capacitor 100 nF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

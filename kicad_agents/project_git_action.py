@@ -98,6 +98,18 @@ def _repository_workspace_directory(details):
     return cache_root / f"{repository_name}_{cache_key}"
 
 
+def _git_repository_is_usable(repository_directory):
+    """A .git directory can exist yet be unusable after an interrupted clone."""
+    if not (repository_directory / ".git").is_dir():
+        return False
+    completed = subprocess.run(
+        ["git", "-C", str(repository_directory), "rev-parse", "--git-dir"],
+        capture_output=True,
+        text=True,
+    )
+    return completed.returncode == 0
+
+
 def refresh_project_files(details):
     try:
         part_directory = Path(details["directory"]).resolve()
@@ -120,9 +132,13 @@ def refresh_project_files(details):
         repository_directory = _repository_workspace_directory(details)
         git_metadata = repository_directory / ".git"
 
-        if not git_metadata.is_dir():
-            if repository_directory.exists() and any(repository_directory.iterdir()):
-                raise RuntimeError(f"Refusing to clone over non-empty directory: {repository_directory}")
+        if not git_metadata.is_dir() or not _git_repository_is_usable(repository_directory):
+            # The cache lives in the shared temp directory, so a previously
+            # interrupted clone can leave a partial or corrupted repository
+            # behind.  It is a cache: wipe it and clone fresh instead of
+            # refusing or failing forever.
+            if repository_directory.exists():
+                shutil.rmtree(repository_directory, ignore_errors=True)
             repository_directory.parent.mkdir(parents=True, exist_ok=True)
             clone_arguments = ["clone"]
             if sparse_checkout:
@@ -130,7 +146,16 @@ def refresh_project_files(details):
             clone_arguments.extend([repository_url, repository_directory])
             _run_git(clone_arguments)
         else:
-            _run_git(["-C", repository_directory, "fetch", "--all", "--tags", "--prune"])
+            try:
+                _run_git(["-C", repository_directory, "fetch", "--all", "--tags", "--prune"])
+            except RuntimeError:
+                shutil.rmtree(repository_directory, ignore_errors=True)
+                repository_directory.parent.mkdir(parents=True, exist_ok=True)
+                clone_arguments = ["clone"]
+                if sparse_checkout:
+                    clone_arguments.extend(["--filter=blob:none", "--no-checkout"])
+                clone_arguments.extend([repository_url, repository_directory])
+                _run_git(clone_arguments)
 
         # Windows can reject unrelated repository paths before Git reaches the
         # selected KiCad directory.  Sparse checkout keeps the working tree small

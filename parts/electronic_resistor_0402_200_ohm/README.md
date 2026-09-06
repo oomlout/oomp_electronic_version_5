@@ -37,6 +37,16 @@ Resistor 200 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF2000TCE` |
+| LCSC | [`C25087`](https://www.lcsc.com/product-detail/C25087.html) |
+| LCSC | [`C2909333`](https://www.lcsc.com/product-detail/C2909333.html) |
+| LCSC | [`C54920644`](https://www.lcsc.com/product-detail/C54920644.html) |
+
+
 
 
 
@@ -58,6 +68,10 @@ Resistor 200 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

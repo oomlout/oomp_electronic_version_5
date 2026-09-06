@@ -61,6 +61,10 @@ Connector Header 2.54 mm pitch through-hole 3 pin is an OOMP electronic connecto
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
 
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
 ![Outline](data/working_svg_outline_300.png)
 
 ![Part ID](data/working_svg_part_id_300.png)

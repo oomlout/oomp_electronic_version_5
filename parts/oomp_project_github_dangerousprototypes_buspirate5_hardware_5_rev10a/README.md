@@ -20,7 +20,7 @@ Project dangerousprototypes/buspirate5_hardware 5_rev10a is a KiCad project cont
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 504 |
 | Matched OOMP components | 210 |
-| Unmatched physical components | 10 |
+| Unmatched physical components | 8 |
 | Front-side placements | 205 |
 | Back-side placements | 3 |
 | Project version | `5_rev10a` |
@@ -176,7 +176,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 10 physical component records are not yet matched to an OOMP part.
+- 8 physical component records are not yet matched to an OOMP part.
 - The extractor reports 41 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/lcsc_review.yaml)

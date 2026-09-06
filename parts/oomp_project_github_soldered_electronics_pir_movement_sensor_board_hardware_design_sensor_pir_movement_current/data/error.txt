@@ -1,9 +1,6 @@
 Project data fetch failed.
-Error type: RuntimeError
-Error message: Cloning into 'C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current\data\git\PIR-Movement-sensor-board-hardware-design'...
-fatal: cannot write keep file 'C:/gh/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/git/PIR-Movement-sensor-board-hardware-design/.git/objects/pack/pack-44ea26569088b906d6f5a35a56dbc445358ea61c.keep': Filename too long
-fatal: fetch-pack: invalid index-pack output
-Command: git clone --filter=blob:none --no-checkout https://github.com/SolderedElectronics/PIR-Movement-sensor-board-hardware-design.git C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current\data\git\PIR-Movement-sensor-board-hardware-design
+Error type: FileNotFoundError
+Error message: Required KiCad source file not found: C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\PIR-Movement-sensor-board-hardware-design_7edc84815698\CAD\V1.1.1\PIR_movement_sensor.kicad_pcb
 Repository URL: https://github.com/SolderedElectronics/PIR-Movement-sensor-board-hardware-design.git
 Repository name: PIR-Movement-sensor-board-hardware-design
 Source folder: CAD/V1.1.1
@@ -12,11 +9,6 @@ Extensions: ['.kicad_pcb', '.kicad_sch', '.kicad_pro']
 
 Traceback:
 Traceback (most recent call last):
-  File "kicad_agents/project_git_action.py", line 122, in refresh_project_files
-    _run_git(clone_arguments)
-  File "kicad_agents/project_git_action.py", line 55, in _run_git
-    raise RuntimeError(f"{message}\nCommand: {' '.join(command)}")
-RuntimeError: Cloning into 'C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current\data\git\PIR-Movement-sensor-board-hardware-design'...
-fatal: cannot write keep file 'C:/gh/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/git/PIR-Movement-sensor-board-hardware-design/.git/objects/pack/pack-44ea26569088b906d6f5a35a56dbc445358ea61c.keep': Filename too long
-fatal: fetch-pack: invalid index-pack output
-Command: git clone --filter=blob:none --no-checkout https://github.com/SolderedElectronics/PIR-Movement-sensor-board-hardware-design.git C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current\data\git\PIR-Movement-sensor-board-hardware-design
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\project_git_action.py", line 158, in refresh_project_files
+    raise FileNotFoundError(f"Required KiCad source file not found: {source_file}")
+FileNotFoundError: Required KiCad source file not found: C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\PIR-Movement-sensor-board-hardware-design_7edc84815698\CAD\V1.1.1\PIR_movement_sensor.kicad_pcb

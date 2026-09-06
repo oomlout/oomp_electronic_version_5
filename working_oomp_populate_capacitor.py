@@ -34,6 +34,7 @@ def main(**kwargs):
         "10_nano_farad",
         "100_nano_farad",
         "1_micro_farad",
+        "2_2_micro_farad",
         "4_7_micro_farad",
         "10_micro_farad",
     ]

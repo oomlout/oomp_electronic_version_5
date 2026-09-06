@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q current is a KiCad project containing 106 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q current is a KiCad project containing 106 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q current is a KiC
 | Mounting and locating holes | 7 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 82 |
-| Matched OOMP components | 17 |
-| Unmatched physical components | 52 |
+| Matched OOMP components | 23 |
+| Unmatched physical components | 46 |
 | Front-side placements | 30 |
 | Back-side placements | 6 |
 | Project version | `current` |
@@ -102,12 +102,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | D1 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
 | D2 | 1 | LED Green 1206 | Green | `SparkFun-LED:LED_1206_Bottom_Green` | [`electronic_led_1206_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_1206_green) |
 | D3 | 1 | PESD0402 | PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | unmatched |
-| D5 | 1 | PMEG4005EJ | PMEG4005EJ | `SparkFun-Semiconductor-Standard:SOD-323` | unmatched |
+| D5 | 1 | Diode Schottky SOD-323 | PMEG4005EJ | `SparkFun-Semiconductor-Standard:SOD-323` | [`electronic_diode_schottky_sod_323_bat54w`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_bat54w) |
 | D7 | 1 | PESD3V3L4UG | PESD3V3L4UG | `SparkFun-Semiconductor-Standard:SOT-353` | unmatched |
 | FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
-| J1, J2 | 2 | Qwiic_RA | Qwiic_RA | `SparkFun-Connector:JST_1x04_P1.0mm_Horizontal_SMD` | unmatched |
-| J4 | 1 | USB_C_Receptacle | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | unmatched |
-| J6, J7 | 2 | Conn_01x06 | Conn_01x06 | `SparkFun-Connector:1x06_P2.54mm` | unmatched |
+| J1, J2 | 2 | Connector JST Sh SM04B-SRSS-TB | Qwiic_RA | `SparkFun-Connector:JST_1x04_P1.0mm_Horizontal_SMD` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb) |
+| J4 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
+| J6, J7 | 2 | Connector Header 2.54 mm pitch through-hole 6 pin | Conn_01x06 | `SparkFun-Connector:1x06_P2.54mm` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | JP1 | 1 | LED | LED | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | JP2 | 1 | I2C | I2C | `SparkFun-Jumper:Jumper_3_NO` | unmatched |
 | JP3 | 1 | PPS | PPS | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
@@ -157,7 +157,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 52 physical component records are not yet matched to an OOMP part.
+- 46 physical component records are not yet matched to an OOMP part.
 - The extractor reports 3 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_current/data/generated_data/lcsc_review.yaml)
@@ -167,7 +167,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 15
 
 ## Source files
 

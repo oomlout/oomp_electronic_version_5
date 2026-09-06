@@ -26,26 +26,15 @@ def main(**kwargs):
                         option["taxonomy_15"] = part_number
                         options.append(option)
 
-    # Compact JST-SH connector used for the Bus Pirate buffered I/O header.
-    connectors = [
-        {
-            "type": "jst_sh",
-            "pitch": "1_mm_pitch",
-            "mounting": "surface_mount_right_angle",
-            "pins": "9_pin",
-            "manufacturer": "jst",
-            "part_number": "sm09b_srss_tb",
-        },
-    ]
-    for connector in connectors:
-        option = {}
-        option["taxonomy_2"] = "connector"
-        option["taxonomy_3"] = connector["type"]
-        option["taxonomy_4"] = connector["pitch"]
-        option["taxonomy_5"] = connector["mounting"]
-        option["taxonomy_6"] = connector["pins"]
-        option["taxonomy_14"] = connector["manufacturer"]
-        option["taxonomy_15"] = connector["part_number"]
+    # JST header families (SH 1.0 mm, PH 2.0 mm, XH 2.5 mm): one part per
+    # available pin count, including the SparkFun black Qwiic specials. The
+    # editable table with drawings and KiCad matches lives in
+    # working_oomp_populate_connector_jst_data.py.
+    import working_oomp_populate_connector_jst_data
+
+    for jst_part in working_oomp_populate_connector_jst_data.JST_HEADERS:
+        option = {"taxonomy_2": "connector"}
+        option.update(jst_part["taxonomy"])
         options.append(option)
 
     connector_types = ["header"]

@@ -37,6 +37,16 @@ Resistor 470 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603WAF4700T5E` |
+| LCSC | [`C23179`](https://www.lcsc.com/product-detail/C23179.html) |
+| LCSC | [`C25241`](https://www.lcsc.com/product-detail/C25241.html) |
+| LCSC | [`C2907041`](https://www.lcsc.com/product-detail/C2907041.html) |
+
+
 
 
 
@@ -59,6 +69,10 @@ Resistor 470 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

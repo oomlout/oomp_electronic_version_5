@@ -37,6 +37,16 @@ Capacitor 22 pF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CC0402JRNPO9BN220` |
+| LCSC | [`C106203`](https://www.lcsc.com/product-detail/C106203.html) |
+| LCSC | [`C1555`](https://www.lcsc.com/product-detail/C1555.html) |
+| LCSC | [`C696857`](https://www.lcsc.com/product-detail/C696857.html) |
+
+
 
 
 
@@ -58,6 +68,10 @@ Capacitor 22 pF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

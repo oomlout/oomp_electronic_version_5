@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current/data/generated_data/src/board_300.png)
 
-Project hanqaqa/easyduino Raspberry Pi Pico 2040 current is a KiCad project containing 115 extracted component records. The catalogue matcher linked 33 physical placements to OOMP parts.
+Project hanqaqa/easyduino Raspberry Pi Pico 2040 current is a KiCad project containing 115 extracted component records. The catalogue matcher linked 47 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -17,10 +17,10 @@ Project hanqaqa/easyduino Raspberry Pi Pico 2040 current is a KiCad project cont
 | Components | 115 |
 | PCB footprints | 65 |
 | Mounting and locating holes | 6 |
-| Matched OOMP mounting-hole items | 2 |
+| Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 115 |
-| Matched OOMP components | 33 |
-| Unmatched physical components | 32 |
+| Matched OOMP components | 47 |
+| Unmatched physical components | 18 |
 | Front-side placements | 53 |
 | Back-side placements | 5 |
 | Project version | `current` |
@@ -72,10 +72,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH1` | `H1` | Mounting Hole 2.2 mm Round Unplated | `` | mounting | 3.990 | 2.300 | unmatched (`mechanical_mounting_hole_2_2_mm_round_unplated` proposed) |
-| `MH2` | `H2` | Mounting Hole 2.2 mm Round Unplated | `` | mounting | 17.390 | 2.300 | unmatched (`mechanical_mounting_hole_2_2_mm_round_unplated` proposed) |
-| `MH3` | `H3` | Mounting Hole 2.2 mm Round Unplated | `` | mounting | 3.990 | 48.700 | unmatched (`mechanical_mounting_hole_2_2_mm_round_unplated` proposed) |
-| `MH4` | `H4` | Mounting Hole 2.2 mm Round Unplated | `` | mounting | 16.590 | 48.700 | unmatched (`mechanical_mounting_hole_2_2_mm_round_unplated` proposed) |
+| `MH1` | `H1` | Mounting Hole 2.2 mm Round Unplated | `mechanical / mounting_hole / 2_2_mm / round / unplated` | mounting | 3.990 | 2.300 | [`mechanical_mounting_hole_2_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_2_mm_round_unplated) |
+| `MH2` | `H2` | Mounting Hole 2.2 mm Round Unplated | `mechanical / mounting_hole / 2_2_mm / round / unplated` | mounting | 17.390 | 2.300 | [`mechanical_mounting_hole_2_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_2_mm_round_unplated) |
+| `MH3` | `H3` | Mounting Hole 2.2 mm Round Unplated | `mechanical / mounting_hole / 2_2_mm / round / unplated` | mounting | 3.990 | 48.700 | [`mechanical_mounting_hole_2_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_2_mm_round_unplated) |
+| `MH4` | `H4` | Mounting Hole 2.2 mm Round Unplated | `mechanical / mounting_hole / 2_2_mm / round / unplated` | mounting | 16.590 | 48.700 | [`mechanical_mounting_hole_2_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_2_mm_round_unplated) |
 
 ### Diameter 0.65 mm holes
 
@@ -91,22 +91,22 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2, C5, C6, C7, C8, C9, C10, C11, C12, C15 | 11 | Capacitor 100 nF 0402 | 100nF | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_100_nano_farad) |
 | C3, C4, C13, C14 | 4 | Capacitor 1 uF 0402 | 1uF | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_1_micro_farad) |
-| C16, C17 | 2 | 27p | 27p | `Capacitor_SMD:C_0402_1005Metric` | unmatched |
-| D1 | 1 | D_Schottky | D_Schottky | `Diode_SMD:D_SOD-123` | unmatched |
+| C16, C17 | 2 | Capacitor 27 pF 0402 | 27p | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_27_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_27_pico_farad) |
+| D1 | 1 | Diode Schottky SOD-123 | D_Schottky | `Diode_SMD:D_SOD-123` | [`electronic_diode_schottky_sod_123_ss14`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_123_ss14) |
 | D2, D3, D4 | 3 | LED  0402 | LED | `LED_SMD:LED_0402_1005Metric` | [`electronic_led_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402) |
-| J1 | 1 | USB_C_Receptacle_USB2.0 | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | unmatched |
-| J3, J4 | 2 | Conn_01x20 | Conn_01x20 | `Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical` | unmatched |
-| J5 | 1 | Conn_01x03 | Conn_01x03 | `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical` | unmatched |
+| J1 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
+| J3, J4 | 2 | Connector Header 2.54 mm pitch through-hole 20 pin | Conn_01x20 | `Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_20_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_20_pin) |
+| J5 | 1 | Connector Header 2.54 mm pitch through-hole 3 pin | Conn_01x03 | `Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
 | J6 | 1 | Conn_01x03_MountingPin | Conn_01x03_MountingPin | `Connector_JST:JST_SH_BM03B-SRSS-TB_1x03-1MP_P1.00mm_Vertical` | unmatched |
 | R1, R2, R3, R6, R7 | 5 | Resistor 5100 Ohm 0402 | 5.1k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_5100_ohm) |
 | R4, R5 | 2 | Resistor 27 Ohm 0402 | 27R | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_27_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_27_ohm) |
 | R9, R12, R13, R14, R15 | 5 | Resistor 1000 Ohm 0402 | 1k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1000_ohm) |
-| SW1, SW2 | 2 | SW_Push | SW_Push | `RP2040:ALPSALPINE_SKRPACE010` | unmatched |
+| SW1, SW2 | 2 | Switch TS-1088-AR02016 TACTILE | SW_Push | `RP2040:ALPSALPINE_SKRPACE010` | [`electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016) |
 | TP1, TP2, TP3, TP4, TP5, TP6, TP7, TP8, TP9, TP10, TP11, TP12, TP13, TP14 | 14 | ~ | ~ | `rp2040_lib:TestPoint_pad` | unmatched |
 | U1 | 1 | XC6206P332MR | XC6206P332MR | `Package_TO_SOT_SMD:SOT-23-3` | unmatched |
 | U2 | 1 | RP2040 | RP2040 | `Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP3.2x3.2mm` | unmatched |
 | U3 | 1 | W25Q16JVUXIQ | W25Q16JVUXIQ | `RP2040:W25Q16JVUXIQ` | unmatched |
-| Y1 | 1 | 12MHz | 12MHz | `Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm` | unmatched |
+| Y1 | 1 | Crystal 12 MHz 20 pF 3225 4-pin | 12MHz | `Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm` | [`electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf) |
 
 ## Main nets
 
@@ -140,7 +140,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 32 physical component records are not yet matched to an OOMP part.
+- 18 physical component records are not yet matched to an OOMP part.
 - The extractor reports 14 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current/data/generated_data/lcsc_review.yaml)
@@ -150,7 +150,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 14
 
 ## Source files
 

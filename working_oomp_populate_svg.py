@@ -8,7 +8,10 @@ def get_svg_details():
             "svg_name": "oomp_component_assembly",
             "filename_extra": "assembly",
             "stylesheet": "style_oomp_assembly",
-            "output_formats": ["svg"],
+            "output_formats": ["svg", "png"],
+            # Assembly drawings are true scale, so a 150 dpi render of a small
+            # part would be a handful of pixels; keep the long side readable.
+            "png_minimum_size_px": 600,
             "padding": 0,
             "make_a4": False,
             "write_yaml": False,
@@ -17,7 +20,8 @@ def get_svg_details():
             "svg_name": "oomp_component_assembly_pins",
             "filename_extra": "assembly_pins",
             "stylesheet": "style_oomp_assembly",
-            "output_formats": ["svg"],
+            "output_formats": ["svg", "png"],
+            "png_minimum_size_px": 600,
             "padding": 0,
             "make_a4": False,
             "write_yaml": False,

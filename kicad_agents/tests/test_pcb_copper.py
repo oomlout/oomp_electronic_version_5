@@ -131,7 +131,10 @@ class CopperTests(unittest.TestCase):
             for control in ['copper-data', 'net-select', 'net-search', 'copper-layer', 'show-fills', 'show-traces', 'zoom-reset']:
                 self.assertIn(f'id="{control}"', text)
             self.assertIn("setZoom(zoomScale * Math.exp(exponent), event.clientX, event.clientY)", text)
-            self.assertIn("stage.setPointerCapture(event.pointerId)", text)
+            # The mouse branch must not capture the pointer: capture retargets
+            # mouseup/click to the stage so board artwork never receives clicks.
+            self.assertIn("window.addEventListener('pointermove'", text)
+            self.assertIn("window.addEventListener('pointerup', finishPointerPan)", text)
             self.assertIn("activePointers.size === 2", text)
             self.assertIn("touch-action: none", text)
             self.assertIn("menu.className = 'pin-menu'", text)

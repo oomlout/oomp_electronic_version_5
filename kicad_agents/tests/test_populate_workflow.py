@@ -2,6 +2,7 @@
 
 import unittest
 from unittest.mock import patch
+import working_oomp_metadata
 
 import action_generate
 import working_oomp_populate_svg
@@ -31,6 +32,12 @@ class PopulateWorkflowTests(unittest.TestCase):
             'navigation_electronic_transistor',
             'navigation_electronic_transistor_sot_23',
         ])
+
+    def test_populate_step_does_not_generate_navigation_entries(self):
+        with patch.object(working_oomp_metadata, 'add_navigation_parts') as add_navigation:
+            with patch.object(working_oomp_populate, 'write_extras'):
+                working_oomp_populate.main()
+        add_navigation.assert_not_called()
 
     def test_led_strips_and_filaments_are_not_populated(self):
         options = []
@@ -78,12 +85,14 @@ class PopulateWorkflowTests(unittest.TestCase):
     def test_normal_generation_preserves_pngs_and_updates_navigation(self):
         with patch.object(action_generate.working_oomp_populate, 'main') as populate, \
              patch.object(action_generate.working_oomp, 'main') as define, \
+             patch.object(action_generate.action_generate_navigation, 'generate') as navigation, \
              patch.object(action_generate, 'run_actions', return_value=(3, 0)) as actions, \
              patch('kicad_agents.kicad_library_agent.package_libraries'):
             action_generate.generate('electronic_resistor_0603_2000_ohm')
-        filters = ['electronic_resistor_0603_2000_ohm', 'navigation']
+        filters = ['electronic_resistor_0603_2000_ohm']
         populate.assert_called_once_with()
         define.assert_called_once_with(filter=filters, regenerate_pngs=False)
+        navigation.assert_called_once_with(filter_text='electronic_resistor_0603_2000_ohm')
         actions.assert_called_once_with(filter_text=filters, regenerate_pngs=False)
 
     def test_name_and_datasheet_geometry_survive_default_generation(self):

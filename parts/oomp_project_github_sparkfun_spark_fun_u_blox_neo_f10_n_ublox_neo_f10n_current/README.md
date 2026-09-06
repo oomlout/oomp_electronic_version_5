@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad project containing 154 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
+Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad project containing 154 extracted component records. The catalogue matcher linked 31 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad pro
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 109 |
-| Matched OOMP components | 23 |
-| Unmatched physical components | 83 |
+| Matched OOMP components | 31 |
+| Unmatched physical components | 75 |
 | Front-side placements | 44 |
 | Back-side placements | 8 |
 | Project version | `current` |
@@ -92,16 +92,16 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | BT1 | 1 | 6.8mm_ML414H | 6.8mm_ML414H | `SparkFun-Battery:ML414H_IV01E` | unmatched |
 | C1, C2, C4, C12, C13, C16 | 6 | Capacitor 100 nF 0603 | 0.1uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C3, C8 | 2 | Capacitor 1 uF 0603 | 1.0uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
-| C6, C7 | 2 | 47pF | 47pF | `SparkFun-Capacitor:C_0603_1608Metric` | unmatched |
+| C6, C7 | 2 | Capacitor 47 pF 0603 | 47pF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_47_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_47_pico_farad) |
 | D1 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
 | D2, D3 | 2 | PESD3V3L4UG | PESD3V3L4UG | `SparkFun-Semiconductor-Standard:SOT-353` | unmatched |
 | D4 | 1 | LED Yellow 0603 | Yellow | `SparkFun-LED:LED_0603_1608Metric_Yellow` | [`electronic_led_0603_yellow`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_yellow) |
-| D5, D7, D8 | 3 | PMEG4005EJ | PMEG4005EJ | `SparkFun-Semiconductor-Standard:SOD-323` | unmatched |
+| D5, D7, D8 | 3 | Diode Schottky SOD-323 | PMEG4005EJ | `SparkFun-Semiconductor-Standard:SOD-323` | [`electronic_diode_schottky_sod_323_bat54w`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_bat54w) |
 | D6 | 1 |  PESD0402 |  PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | unmatched |
 | FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
-| J1 | 1 | USB_C_Receptacle | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | unmatched |
-| J2 | 1 | Conn_01x09 | Conn_01x09 | `SparkFun-Connector:1x09` | unmatched |
-| J4 | 1 | Conn_01x06 | Conn_01x06 | `SparkFun-Connector:1x06` | unmatched |
+| J1 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
+| J2 | 1 | Connector Header 2.54 mm pitch through-hole 9 pin | Conn_01x09 | `SparkFun-Connector:1x09` | [`electronic_connector_header_2_54_mm_pitch_through_hole_9_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_9_pin) |
+| J4 | 1 | Connector Header 2.54 mm pitch through-hole 6 pin | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | J5 | 1 | Val** | Val** | `SparkFun-Connector:SMA_Edge` | unmatched |
 | JP1, JP2, JP3, JP4, JP7, JP8 | 6 | ~ | ~ | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | JP5 | 1 | Measure | Measure | `SparkFun-Jumper:Jumper_2_PTH_SMD_Combo-NC` | unmatched |
@@ -154,7 +154,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 83 physical component records are not yet matched to an OOMP part.
+- 75 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/browser_research_queue.md)
@@ -163,7 +163,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 16
 
 ## Source files
 

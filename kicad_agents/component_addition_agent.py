@@ -272,7 +272,9 @@ def validate_implementation(record, require_generated=False):
             "working_svg_outline.png",
             "working_svg_outline_300.png",
             "working_svg_assembly.svg",
+            "working_svg_assembly.png",
             "working_svg_assembly_pins.svg",
+            "working_svg_assembly_pins.png",
             "working_svg_square_pins.png",
             "working_svg_square_pins_300.png",
         ]
@@ -340,9 +342,10 @@ def _refresh_component_indexes(record):
     import oomlout_roboclick
     from kicad_agents.kicad_library_agent import package_libraries
 
-    # Definitions are lightweight; only the affected ancestors run actions.
-    with contextlib.redirect_stdout(io.StringIO()):
-        working_oomp.load_parts(filter="navigation", regenerate_pngs=False)
+    # Definitions are lightweight; refresh the generated navigation tree via the
+    # dedicated action instead of synthesizing navigation parts in parts/.
+    import action_generate_navigation
+    action_generate_navigation.generate()
     identifiers = navigation_part_ids(_load_populated_definition(record))
     for identifier in identifiers:
         directory = PARTS_DIRECTORY / identifier

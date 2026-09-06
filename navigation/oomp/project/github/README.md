@@ -1,9 +1,7 @@
 # Oomp / Project / Github
 
 [Up one level](../README.md)
-
-This category contains 109 parts in total.
-
+This category contains 101 parts in total.
 
 ## Categories
 
@@ -12,9 +10,6 @@ This category contains 109 parts in total.
 - [Hanqaqa](hanqaqa/README.md)
 - [Soldered Electronics](soldered_electronics/README.md)
 - [Sparkfun](sparkfun/README.md)
-
-
-
 
 
 ---

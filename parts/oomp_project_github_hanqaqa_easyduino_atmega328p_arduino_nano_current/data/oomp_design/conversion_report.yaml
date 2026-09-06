@@ -14,17 +14,17 @@ originals:
     sha256: 84e0ce362d52e7588e53f6af2ce7518c320139cc433c854083d122574033e55a
     source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current\data\kicad_file_sheets\References.kicad_sch
 output_sha256:
-  Easyduino_Atmega_Nano.kicad_pcb: 3d465b3edba2a9cb2368497e8873a3efafef47b40e7ef74a0b9928df7e08e4f0
-  Easyduino_Atmega_Nano.kicad_sch: 0f5966416fe305c8fff070ab869a278f22bcfc5db604922eed843ee7dbeefd02
+  Easyduino_Atmega_Nano.kicad_pcb: ac06cd37287f052caa2e84af72c594f9d7785621f3be2b634d2ab9444e8effba
+  Easyduino_Atmega_Nano.kicad_sch: 165156d9aaec69619bf3e4ab3a37ad69209a47260df816b512ea790342301466
   Easyduino_Atmega_Nano.kicad_pro: 0b9a710ad98d115de476c0828a73cc440a1964de33589c0ada6ae472cf257878
   References.kicad_sch: 9a5ddc6a5e71c0614aef0c8c71f0cc3abd7cfdc3585f6af20742a670b911641e
   sym-lib-table: 21866594f2adf0f962fad1f4c2490478f63373c892f02e5291f0ca136dc6c786
   fp-lib-table: 01d1b0fbfffbb842c2a7c4f8f99982fa54d14525d1388a5ea86bbef116b18634
 summary:
-  footprints_converted: 15
-  footprints_skipped: 16
-  symbols_converted: 3
-  symbols_skipped: 62
+  footprints_converted: 16
+  footprints_skipped: 15
+  symbols_converted: 5
+  symbols_skipped: 60
 footprints:
 - reference: C10
   source: Capacitor_SMD:C_0402_1005Metric
@@ -87,7 +87,8 @@ footprints:
 - reference: J1
   source: Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
+  reason: Source is not an available official master for this OOMP part.
 - reference: U3
   source: Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm
   status: skipped
@@ -120,8 +121,9 @@ footprints:
   - fp_rect
 - reference: F1
   source: Fuse:Fuse_0402_1005Metric
-  status: skipped
-  reason: No approved OOMP match.
+  status: converted
+  oomp_id: electronic_fuse_0402_resettable
+  target: OOMP_MachineSolder:electronic_fuse_0402_resettable
 - reference: C1
   source: Capacitor_SMD:C_0402_1005Metric
   status: converted
@@ -130,7 +132,8 @@ footprints:
 - reference: SW1
   source: Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
+  reason: Source is not an available official master for this OOMP part.
 - reference: D2
   source: Diode_SMD:D_0402_1005Metric
   status: skipped
@@ -239,7 +242,8 @@ symbols:
   - J1
   source: Connector:USB_C_Receptacle_USB2.0
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
+  reason: Source is not a known official KiCad symbol.
   file: kicad_file.kicad_sch
 - references:
   - '#PWR02'
@@ -395,14 +399,16 @@ symbols:
 - references:
   - SW1
   source: Switch:SW_Push
-  status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  status: converted
+  oomp_id: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
+  target: OOMP:electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
   file: kicad_file.kicad_sch
 - references:
   - F1
   source: Device:Polyfuse
-  status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  status: converted
+  oomp_id: electronic_fuse_0402_resettable
+  target: OOMP:electronic_fuse_0402_resettable
   file: kicad_file.kicad_sch
 - references:
   - D2

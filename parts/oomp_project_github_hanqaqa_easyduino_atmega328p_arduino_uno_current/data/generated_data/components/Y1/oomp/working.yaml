@@ -46,6 +46,7 @@ kicad:
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf
+manufacturers: []
 md5: a720e4ddf052543d57ed2ee138463ddc
 md5_10: a720e4ddf0
 md5_10_upper: A720E4DDF0
@@ -88,6 +89,20 @@ oomlout_ai_roboclick_2:
     command: image_resize
     file_destination: data/working_svg_square_pins_300.png
     file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_300.png
+    file_source: data/working_svg_assembly.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_pins_300.png
+    file_source: data/working_svg_assembly_pins.png
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
@@ -161,6 +176,7 @@ oomlout_ai_roboclick_3:
         hand_solder: ''
         machine_solder: ''
         symbol: ''
+      manufacturers: []
       name: electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf
       name_proper: Crystal 16 MHz 20 pF 3225 4-pin
       name_readable: Crystal 16 MHz 20 pF 3225 4-pin
@@ -192,6 +208,20 @@ oomlout_ai_roboclick_3:
           command: image_resize
           file_destination: data/working_svg_square_pins_300.png
           file_source: data/working_svg_square_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_300.png
+          file_source: data/working_svg_assembly.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_pins_300.png
+          file_source: data/working_svg_assembly_pins.png
           maximum_dimension: 300
           regenerate_pngs: false
           resample: lanczos
@@ -252,10 +282,14 @@ oomlout_ai_roboclick_3:
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
-        - png: ''
-          preview: data/working_svg_assembly.svg
+        - png: data/working_svg_assembly.png
+          preview: data/working_svg_assembly_300.png
           svg: data/working_svg_assembly.svg
           title: Assembly
+        - png: data/working_svg_assembly_pins.png
+          preview: data/working_svg_assembly_pins_300.png
+          svg: data/working_svg_assembly_pins.svg
+          title: Assembly pinout
         - png: data/working_svg_outline.png
           preview: data/working_svg_outline_300.png
           svg: data/working_svg_outline.svg
@@ -287,6 +321,10 @@ oomlout_ai_roboclick_3:
         file_previews:
         - preview: data/working_svg_square_pins_300.png
           title: Pinout drawing
+        - preview: data/working_svg_assembly_300.png
+          title: Assembly
+        - preview: data/working_svg_assembly_pins_300.png
+          title: Assembly pinout
         - preview: data/working_svg_outline_300.png
           title: Outline
         - preview: data/working_svg_part_id_300.png
@@ -345,7 +383,9 @@ oomlout_ai_roboclick_3:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly
         write_yaml: false
@@ -353,7 +393,9 @@ oomlout_ai_roboclick_3:
         make_a4: false
         output_formats:
         - svg
+        - png
         padding: 0
+        png_minimum_size_px: 600
         stylesheet: style_oomp_assembly
         svg_name: oomp_component_assembly_pins
         write_yaml: false
@@ -456,6 +498,16 @@ oomlout_ai_roboclick_3:
         references:
         - Y1
         version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/board_explorer.html
+        board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Uno
+        github_url: https://github.com/Hanqaqa/Easyduino
+        name: Project hanqaqa/easyduino ATmega328P Arduino Uno current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current
+        project_id: oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current
+        quantity: 1
+        references:
+        - Y1
+        version: current
     dict_data_files: {}
     dict_data_files_exists: {}
     file_output: README.md
@@ -468,10 +520,14 @@ part_id: Y1
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
-  - png: ''
-    preview: data/working_svg_assembly.svg
+  - png: data/working_svg_assembly.png
+    preview: data/working_svg_assembly_300.png
     svg: data/working_svg_assembly.svg
     title: Assembly
+  - png: data/working_svg_assembly_pins.png
+    preview: data/working_svg_assembly_pins_300.png
+    svg: data/working_svg_assembly_pins.svg
+    title: Assembly pinout
   - png: data/working_svg_outline.png
     preview: data/working_svg_outline_300.png
     svg: data/working_svg_outline.svg
@@ -503,6 +559,10 @@ part_page:
   file_previews:
   - preview: data/working_svg_square_pins_300.png
     title: Pinout drawing
+  - preview: data/working_svg_assembly_300.png
+    title: Assembly
+  - preview: data/working_svg_assembly_pins_300.png
+    title: Assembly pinout
   - preview: data/working_svg_outline_300.png
     title: Outline
   - preview: data/working_svg_part_id_300.png
@@ -561,7 +621,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly
   write_yaml: false
@@ -569,7 +631,9 @@ svg_details:
   make_a4: false
   output_formats:
   - svg
+  - png
   padding: 0
+  png_minimum_size_px: 600
   stylesheet: style_oomp_assembly
   svg_name: oomp_component_assembly_pins
   write_yaml: false
@@ -766,6 +830,16 @@ used_in_projects:
   name: Project hanqaqa/easyduino ATmega328P Arduino Nano current
   oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current
   project_id: oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current
+  quantity: 1
+  references:
+  - Y1
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current/board_explorer.html
+  board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Uno
+  github_url: https://github.com/Hanqaqa/Easyduino
+  name: Project hanqaqa/easyduino ATmega328P Arduino Uno current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current
+  project_id: oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_uno_current
   quantity: 1
   references:
   - Y1

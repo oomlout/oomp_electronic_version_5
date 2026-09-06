@@ -37,6 +37,16 @@ Capacitor 10 uF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL05A106MQ5NUNC` |
+| LCSC | [`C15525`](https://www.lcsc.com/product-detail/C15525.html) |
+| LCSC | [`C7472949`](https://www.lcsc.com/product-detail/C7472949.html) |
+| LCSC | [`C48543727`](https://www.lcsc.com/product-detail/C48543727.html) |
+
+
 
 
 
@@ -58,6 +68,10 @@ Capacitor 10 uF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

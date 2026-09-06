@@ -77,7 +77,8 @@ def add_part_page_details(part):
             )
 
     diagrams = [
-        {"title": "Assembly", "svg": f"{DATA_DIRECTORY}/working_svg_assembly.svg", "png": ""},
+        {"title": "Assembly", "svg": f"{DATA_DIRECTORY}/working_svg_assembly.svg", "png": f"{DATA_DIRECTORY}/working_svg_assembly.png"},
+        {"title": "Assembly pinout", "svg": f"{DATA_DIRECTORY}/working_svg_assembly_pins.svg", "png": f"{DATA_DIRECTORY}/working_svg_assembly_pins.png"},
         {"title": "Outline", "svg": f"{DATA_DIRECTORY}/working_svg_outline.svg", "png": f"{DATA_DIRECTORY}/working_svg_outline.png"},
         {"title": "Part ID", "svg": f"{DATA_DIRECTORY}/working_svg_part_id.svg", "png": f"{DATA_DIRECTORY}/working_svg_part_id.png"},
         {"title": "MD5 alpha", "svg": f"{DATA_DIRECTORY}/working_svg_md5_6_alpha.svg", "png": f"{DATA_DIRECTORY}/working_svg_md5_6_alpha.png"},

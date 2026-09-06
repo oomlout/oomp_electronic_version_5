@@ -30,23 +30,56 @@ def main(**kwargs):
         {
             "diode_type": "schottky",
             "package": "sod_123",
-            "manufacturer": "generic",
             "part_number": "ss14",
             "name_short": "Schottky Diode SOD-123",
         },
         {
             "diode_type": "schottky",
             "package": "sod_323",
-            "manufacturer": "generic",
             "part_number": "bat54w",
             "name_short": "Schottky Diode SOD-323",
         },
         {
             "diode_type": "schottky",
-            "package": "0402",
-            "manufacturer": "generic",
+            "package": "sod_523",
             "part_number": "1ss400",
-            "name_short": "Schottky Diode 0402",
+            "name_short": "Schottky Diode SOD-523",
+        },
+        # SparkFun-specific diodes/protection
+        {
+            "diode_type": "tvs",
+            "package": "sot_353",
+            "manufacturer": "toshiba",
+            "part_number": "df5a5_6lfu",
+            "name_short": "TVS Diode DF5A5.6LFU",
+        },
+        {
+            "diode_type": "esd",
+            "package": "0402",
+            "manufacturer": "littelfuse",
+            "part_number": "pesd0402",
+            "name_short": "ESD Suppressor PESD0402",
+        },
+        {
+            "diode_type": "esd_array",
+            "package": "sot_353",
+            "manufacturer": "nexperia",
+            "part_number": "pesd3v3l4ug",
+            "name_short": "ESD Array PESD3V3L4UG",
+        },
+        {
+            "diode_type": "tvs_array",
+            "package": "sot_26",
+            "manufacturer": "diodes_incorporated",
+            "part_number": "dt1042_04so",
+            "name_short": "TVS Array DT1042-04SO",
+        },
+        {
+            "diode_type": "schottky",
+            "package": "sod_323",
+            "manufacturer": "infineon",
+            "part_number": "bat60a",
+            "name_short": "Schottky Diode BAT60A",
         },
     ]
 
@@ -55,7 +88,7 @@ def main(**kwargs):
         option["taxonomy_2"] = "diode"
         option["taxonomy_3"] = diode["diode_type"]
         option["taxonomy_4"] = diode["package"]
-        option["taxonomy_14"] = diode["manufacturer"]
+        option["taxonomy_14"] = diode.get("manufacturer", "")
         option["taxonomy_15"] = diode["part_number"]
         if "name_short" in diode:
             option["name_short"] = diode["name_short"]

@@ -1,9 +1,7 @@
 # Electronic / Resistor
 
 [Up one level](../README.md)
-
-This category contains 529 parts in total.
-
+This category contains 530 parts in total.
 
 ## Categories
 
@@ -14,9 +12,6 @@ This category contains 529 parts in total.
 - [1206](1206/README.md)
 - [2512](2512/README.md)
 - [Quarter Watt Through Hole](quarter_watt_through_hole/README.md)
-
-
-
 
 
 ---

@@ -29,6 +29,10 @@ def main(**kwargs):
     working_oomp_populate_crystal_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_display_extra
     working_oomp_populate_display_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_inductor_extra
+    working_oomp_populate_inductor_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_fuse_extra
+    working_oomp_populate_fuse_extra.main(extras_dict=extras_dict)
 
     ######add notes here
     current = "warehouse_storage_kallax_front_room_location_d_column_3_row"
@@ -37,4 +41,3 @@ def main(**kwargs):
         extras_dict[current]["content_taxonomy_2"] = "filament"
         extras_dict[current]["content_taxonomy_3"] = "empty_spool"
         extras_dict[current]["content_id"] = "three_d_print_filament_empty_spool"
-    

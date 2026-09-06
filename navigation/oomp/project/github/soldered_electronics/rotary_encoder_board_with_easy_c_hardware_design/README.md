@@ -1,16 +1,11 @@
 # Oomp / Project / Github / Soldered Electronics / Rotary Encoder Board With Easy C Hardware Design
 
 [Up one level](../README.md)
-
 This category contains 1 parts in total.
-
 
 ## Categories
 
 - [Input Rotary Encoder Easyc](input_rotary_encoder_easyc/README.md)
-
-
-
 
 
 ---

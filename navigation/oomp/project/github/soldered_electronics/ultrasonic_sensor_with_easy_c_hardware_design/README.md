@@ -1,16 +1,11 @@
 # Oomp / Project / Github / Soldered Electronics / Ultrasonic Sensor With Easy C Hardware Design
 
 [Up one level](../README.md)
-
 This category contains 1 parts in total.
-
 
 ## Categories
 
 - [Sensor Ultrasonic Easyc](sensor_ultrasonic_easyc/README.md)
-
-
-
 
 
 ---

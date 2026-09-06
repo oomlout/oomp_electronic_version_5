@@ -37,6 +37,16 @@ Capacitor 22 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CC0603JRNPO9BN220` |
+| LCSC | [`C105620`](https://www.lcsc.com/product-detail/C105620.html) |
+| LCSC | [`C1653`](https://www.lcsc.com/product-detail/C1653.html) |
+| LCSC | [`C7419421`](https://www.lcsc.com/product-detail/C7419421.html) |
+
+
 
 
 
@@ -58,6 +68,10 @@ Capacitor 22 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

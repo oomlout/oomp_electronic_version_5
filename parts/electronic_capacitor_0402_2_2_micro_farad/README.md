@@ -37,6 +37,16 @@ Capacitor 2.2 uF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL05A225MQ5NSNC` |
+| LCSC | [`C12530`](https://www.lcsc.com/product-detail/C12530.html) |
+| LCSC | [`C20539421`](https://www.lcsc.com/product-detail/C20539421.html) |
+| LCSC | [`C326606`](https://www.lcsc.com/product-detail/C326606.html) |
+
+
 
 
 
@@ -58,6 +68,10 @@ Capacitor 2.2 uF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

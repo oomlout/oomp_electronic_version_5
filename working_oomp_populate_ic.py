@@ -11,6 +11,41 @@ def main(**kwargs):
         "taxonomy_14": "advanced_monolithic_systems", "taxonomy_15": "ams1117_3_3",
     })
     options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_223_3",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_5_volt",
+        "taxonomy_14": "advanced_monolithic_systems", "taxonomy_15": "ams1117_5",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_3_3_volt",
+        "taxonomy_14": "torex", "taxonomy_15": "xc6206p332mr",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_5_volt",
+        "taxonomy_14": "torex", "taxonomy_15": "xc6206p502mr",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "tqfp_32_7_mm_x_7_mm",
+        "taxonomy_4": "microcontroller", "taxonomy_5": "8_bit_avr",
+        "taxonomy_14": "microchip", "taxonomy_15": "atmega328p_au",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sop_16",
+        "taxonomy_4": "converter", "taxonomy_5": "usb_to_serial_converter",
+        "taxonomy_14": "wch", "taxonomy_15": "ch340c",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "qfn_28_5_mm_x_5_mm",
+        "taxonomy_4": "converter", "taxonomy_5": "usb_to_serial_converter",
+        "taxonomy_14": "silicon_labs", "taxonomy_15": "cp2102n_a01_gqfn28r",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "esp32_s3_wroom_1",
+        "taxonomy_4": "microcontroller", "taxonomy_5": "wifi_bluetooth_8_mb_flash",
+        "taxonomy_14": "espressif", "taxonomy_15": "esp32_s3_wroom_1_n8",
+    })
+    options.append({
         "taxonomy_2": "ic", "taxonomy_3": "qfn_28_5_mm_x_5_mm",
         "taxonomy_4": "converter", "taxonomy_5": "usb_to_serial_converter",
         "taxonomy_14": "silicon_labs", "taxonomy_15": "cp2102_gmr",

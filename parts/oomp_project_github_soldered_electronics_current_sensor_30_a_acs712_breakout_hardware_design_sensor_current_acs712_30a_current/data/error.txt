@@ -1,20 +1,14 @@
 Project data fetch failed.
-Error type: RuntimeError
-Error message: Cloning into 'C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current\data\git\Current-sensor-30A-ACS712-breakout-hardware-design'...
-fatal: cannot stat 'C:/gh/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/data/git/Current-sensor-30A-ACS712-breakout-hardware-design/.git/hooks/fsmonitor-watchman.sample': Filename too long
-Command: git clone --filter=blob:none --no-checkout https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design.git C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current\data\git\Current-sensor-30A-ACS712-breakout-hardware-design
+Error type: FileNotFoundError
+Error message: Required KiCad source file not found: C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Current-sensor-30A-ACS712-breakout-hardware-design_35e871c05fc7\CAD\V2.0.0\ACS712_breakout.kicad_pcb
 Repository URL: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design.git
 Repository name: Current-sensor-30A-ACS712-breakout-hardware-design
-Source folder: CAD/V1.1.1
+Source folder: CAD/V2.0.0
 Source basename: ACS712_breakout
 Extensions: ['.kicad_pcb', '.kicad_sch', '.kicad_pro']
 
 Traceback:
 Traceback (most recent call last):
-  File "kicad_agents/project_git_action.py", line 122, in refresh_project_files
-    _run_git(clone_arguments)
-  File "kicad_agents/project_git_action.py", line 55, in _run_git
-    raise RuntimeError(f"{message}\nCommand: {' '.join(command)}")
-RuntimeError: Cloning into 'C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current\data\git\Current-sensor-30A-ACS712-breakout-hardware-design'...
-fatal: cannot stat 'C:/gh/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/data/git/Current-sensor-30A-ACS712-breakout-hardware-design/.git/hooks/fsmonitor-watchman.sample': Filename too long
-Command: git clone --filter=blob:none --no-checkout https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design.git C:\gh\oomp_electronic_version_5\parts\oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current\data\git\Current-sensor-30A-ACS712-breakout-hardware-design
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\project_git_action.py", line 158, in refresh_project_files
+    raise FileNotFoundError(f"Required KiCad source file not found: {source_file}")
+FileNotFoundError: Required KiCad source file not found: C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Current-sensor-30A-ACS712-breakout-hardware-design_35e871c05fc7\CAD\V2.0.0\ACS712_breakout.kicad_pcb

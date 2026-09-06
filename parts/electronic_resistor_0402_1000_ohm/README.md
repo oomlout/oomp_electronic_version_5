@@ -37,6 +37,16 @@ Resistor 1000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F1001TS` |
+| LCSC | [`C2906864`](https://www.lcsc.com/product-detail/C2906864.html) |
+| LCSC | [`C105637`](https://www.lcsc.com/product-detail/C105637.html) |
+| LCSC | [`C106235`](https://www.lcsc.com/product-detail/C106235.html) |
+
+
 
 
 
@@ -60,6 +70,10 @@ Resistor 1000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 ![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
 
 ![Outline](data/working_svg_outline_300.png)
 

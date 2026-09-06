@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_hanqaqa_easyduino_stm32f103_bluepill_current/data/generated_data/src/board_300.png)
 
-Project hanqaqa/easyduino STM32F103 Bluepill current is a KiCad project containing 65 extracted component records. The catalogue matcher linked 16 physical placements to OOMP parts.
+Project hanqaqa/easyduino STM32F103 Bluepill current is a KiCad project containing 65 extracted component records. The catalogue matcher linked 28 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project hanqaqa/easyduino STM32F103 Bluepill current is a KiCad project containi
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 65 |
-| Matched OOMP components | 16 |
-| Unmatched physical components | 14 |
+| Matched OOMP components | 28 |
+| Unmatched physical components | 2 |
 | Front-side placements | 28 |
 | Back-side placements | 2 |
 | Project version | `current` |
@@ -82,20 +82,20 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2, C3, C9 | 4 | Capacitor 100 nF 0402 | 100nF | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_100_nano_farad) |
 | C4, C5, C6 | 3 | Capacitor 1 uF 0402 | 1uF | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_1_micro_farad) |
-| C7, C8, C10, C11 | 4 | 18p | 18p | `Capacitor_SMD:C_0402_1005Metric` | unmatched |
+| C7, C8, C10, C11 | 4 | Capacitor 18 pF 0402 | 18p | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_18_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_18_pico_farad) |
 | D1, D2 | 2 | LED  0402 | LED | `LED_SMD:LED_0402_1005Metric` | [`electronic_led_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402) |
-| J1 | 1 | USB_C_Receptacle_USB2.0 | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | unmatched |
-| J2, J3 | 2 | Conn_01x20 | Conn_01x20 | `Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical` | unmatched |
-| J4 | 1 | Conn_01x04 | Conn_01x04 | `Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical` | unmatched |
+| J1 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
+| J2, J3 | 2 | Connector Header 2.54 mm pitch through-hole 20 pin | Conn_01x20 | `Connector_PinHeader_2.54mm:PinHeader_1x20_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_20_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_20_pin) |
+| J4 | 1 | Connector Header 2.54 mm pitch through-hole 4 pin | Conn_01x04 | `Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | R1, R2 | 2 | Resistor 5100 Ohm 0402 | 5.1k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_5100_ohm) |
 | R3, R4 | 2 | Resistor 10000 Ohm 0402 | 10k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_10000_ohm) |
 | R5 | 1 | Resistor 1500 Ohm 0402 | 1.5k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_1500_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1500_ohm) |
 | R6, R7 | 2 | Resistor 1000 Ohm 0402 | 1k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1000_ohm) |
-| SW1, SW2 | 2 | SW_Push | SW_Push | `Bluepill_Library:ALPSALPINE_SKRPACE010` | unmatched |
+| SW1, SW2 | 2 | Switch TS-1088-AR02016 TACTILE | SW_Push | `Bluepill_Library:ALPSALPINE_SKRPACE010` | [`electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016) |
 | U1 | 1 | XC6206P332MR | XC6206P332MR | `Package_TO_SOT_SMD:SOT-23-3` | unmatched |
 | U2 | 1 | STM32F103C8Tx | STM32F103C8Tx | `Package_QFP:LQFP-48_7x7mm_P0.5mm` | unmatched |
-| Y1 | 1 | 8MHz | 8MHz | `Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm` | unmatched |
-| Y2 | 1 | 32.768kHz | 32.768kHz | `Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm` | unmatched |
+| Y1 | 1 | Crystal 8 MHz 20 pF 5032 2-pin | 8MHz | `Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm` | [`electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf) |
+| Y2 | 1 | Crystal 32.768 kHz 12.5 pF 3215 2-pin | 32.768kHz | `Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm` | [`electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf) |
 
 ## Main nets
 
@@ -129,7 +129,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 14 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_stm32f103_bluepill_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_stm32f103_bluepill_current/data/generated_data/browser_research_queue.md)
@@ -138,7 +138,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_stm32f103_bluepill_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 14
 
 ## Source files
 

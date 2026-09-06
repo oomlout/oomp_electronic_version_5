@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_directional_pad_qwiic_directional_pad_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Qwiic_Directional_Pad Qwiic Directional Pad current is a KiCad project containing 89 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Qwiic_Directional_Pad Qwiic Directional Pad current is a KiCad project containing 89 extracted component records. The catalogue matcher linked 21 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project sparkfun/SparkFun_Qwiic_Directional_Pad Qwiic Directional Pad current is
 | Mounting and locating holes | 5 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 66 |
-| Matched OOMP components | 17 |
-| Unmatched physical components | 47 |
+| Matched OOMP components | 21 |
+| Unmatched physical components | 43 |
 | Front-side placements | 3 |
 | Back-side placements | 29 |
 | Project version | `current` |
@@ -92,9 +92,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | D1 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
 | D2 | 1 | LED_RGB | LED_RGB | `SparkFun-LED:LED_1205_RGB_Bottom` | unmatched |
 | FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
-| J1, J3 | 2 | Qwiic_RA | Qwiic_RA | `SparkFun-Connector:JST_SMD_1.0mm-4_RA` | unmatched |
-| J2 | 1 | Conn_01x04 | Conn_01x04 | `SparkFun-Connector:1x04` | unmatched |
-| J5 | 1 | I2C | I2C | `SparkFun-Connector:1x04` | unmatched |
+| J1, J3 | 2 | Connector JST Sh SM04B-SRSS-TB | Qwiic_RA | `SparkFun-Connector:JST_SMD_1.0mm-4_RA` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb) |
+| J2 | 1 | Connector Header 2.54 mm pitch through-hole 4 pin | Conn_01x04 | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
+| J5 | 1 | Connector Header 2.54 mm pitch through-hole 4 pin | I2C | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | JP1 | 1 | A0 | A0 | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
 | JP2 | 1 | A1 | A1 | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
 | JP3 | 1 | A2 | A2 | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
@@ -141,7 +141,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 47 physical component records are not yet matched to an OOMP part.
+- 43 physical component records are not yet matched to an OOMP part.
 - The extractor reports 18 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_directional_pad_qwiic_directional_pad_current/data/generated_data/lcsc_review.yaml)
@@ -151,7 +151,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_directional_pad_qwiic_directional_pad_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

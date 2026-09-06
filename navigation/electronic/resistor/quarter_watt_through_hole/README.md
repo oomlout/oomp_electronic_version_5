@@ -1,10 +1,7 @@
 # Electronic / Resistor / Quarter Watt Through Hole
 
 [Up one level](../README.md)
-
 This category contains 88 parts in total.
-
-
 
 
 ## Parts
@@ -97,8 +94,6 @@ This category contains 88 parts in total.
 - [Resistor 8200 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_8200_ohm) — `electronic_resistor_quarter_watt_through_hole_8200_ohm`
 - [Resistor 82000 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_82000_ohm) — `electronic_resistor_quarter_watt_through_hole_82000_ohm`
 - [Resistor 820000 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_820000_ohm) — `electronic_resistor_quarter_watt_through_hole_820000_ohm`
-
-
 
 ---
 
