@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: R2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 86bf4bc8-f586-495a-a28c-4ace20842b4d
+  library_id: e-radionica.com schematics:0603R
+  unit: 1
+  body_style: 1
+  position:
+    x: 72.39
+    y: 112.395
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R2
+    Value: 10k
+    Footprint: e-radionica.com footprinti:0603R
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.175
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 69.215
+      y: 112.395
+    net: SDA_PULL3,3
+    net_aliases:
+    - SDA_PULL3,3
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '3'
+      pin_name: ''
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.175
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 75.565
+      y: 112.395
+    net: SDA
+    net_aliases:
+    - SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K1
+      pin_number: '2'
+      pin_name: SDA
+    - reference: K3
+      pin_number: '2'
+      pin_name: SDA
+    - reference: U2
+      pin_number: '1'
+      pin_name: S2
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.955
+        y: -0.7104
+      max:
+        x: 1.9804
+        y: 0.685
+      width: 3.9354
+      height: 1.3954
+      center:
+        x: 0.0127
+        y: -0.0127
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 70.435
+        y: 111.71
+      max:
+        x: 74.3704
+        y: 113.1054
+      width: 3.9354
+      height: 1.3954
+      center:
+        x: 72.4027
+        y: 112.4077
+  warnings: []
+connected_components:
+- reference: JP2
+  pin_number: '3'
+  pin_name: ''
+- reference: K1
+  pin_number: '2'
+  pin_name: SDA
+- reference: K3
+  pin_number: '2'
+  pin_name: SDA
+- reference: U2
+  pin_number: '1'
+  pin_name: S2

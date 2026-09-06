@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: D2
+  source_file: data/kicad_file.kicad_sch
+  uuid: aede7ae0-5bb7-4e06-bea6-265d2a0925e4
+  library_id: SparkFun-LED:LED_Blue_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 226.06
+    y: 93.98
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D2
+    Value: Blue
+    Footprint: SparkFun-LED:LED_0603_1608Metric_Blue
+    Datasheet: https://media.digikey.com/pdf/Data%20Sheets/Rohm%20PDFs/SMLE12_Series_Rev2.0_2007.pdf
+    Description: Light emitting diode
+    PROD_ID: DIO-08575
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: K
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 1.778
+    position:
+      x: 223.52
+      y: 93.98
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '6'
+      pin_name: GPO0/CS1
+  - number: '2'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 1.778
+    position:
+      x: 228.6
+      y: 93.98
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R7
+      pin_number: '2'
+      pin_name: '~'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.889
+        y: -1.143
+      max:
+        x: 1.016
+        y: 1.778
+      width: 1.905
+      height: 2.921
+      center:
+        x: 0.0635
+        y: 0.3175
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 225.171
+        y: 92.202
+      max:
+        x: 227.076
+        y: 95.123
+      width: 1.905
+      height: 2.921
+      center:
+        x: 226.1235
+        y: 93.6625
+  warnings: []
+connected_components:
+- reference: R7
+  pin_number: '2'
+  pin_name: '~'
+- reference: U1
+  pin_number: '6'
+  pin_name: GPO0/CS1

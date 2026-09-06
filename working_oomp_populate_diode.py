@@ -5,6 +5,20 @@ def main(**kwargs):
     # share every package/manufacturer combination, so a cross-product of four
     # separate lists would create invalid parts that do not exist.
     diodes = [
+        {
+            "diode_type": "rectifier",
+            "package": "sma",
+            "manufacturer": "",
+            "part_number": "m4",
+            "name_short": "Rectifier Diode M4 (SMA)",
+        },
+        {
+            "diode_type": "schottky",
+            "package": "0402",
+            "manufacturer": "",
+            "part_number": "",
+            "name_short": "Schottky Diode 0402 (generic)",
+        },
         {"diode_type": "tvs_array", "package": "sot_143", "manufacturer": "littelfuse",
          "part_number": "sp0503bahtg", "name_short": "ESD Array SP0503BAHTG"},
         {

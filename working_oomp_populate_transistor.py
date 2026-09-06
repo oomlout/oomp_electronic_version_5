@@ -4,6 +4,24 @@ def main(**kwargs):
     # Keep transistor definitions in a plain array. Adding another generic or
     # exact device should only require copying and editing one dictionary.
     transistors = [
+        {
+            "taxonomy": ["transistor", "sot_363_6", "mosfet", "n_channel", "dual"],
+            "manufacturer": "",
+            "part_number": "",
+            "name_short": "Dual N-channel MOSFET SOT-363 (generic)",
+        },
+        {
+            "taxonomy": ["transistor", "sot_23", "bipolar", "npn"],
+            "manufacturer": "",
+            "part_number": "",
+            "name_short": "NPN Transistor SOT-23 (generic)",
+        },
+        {
+            "taxonomy": ["transistor", "sot_23", "bipolar", "pnp", "40_volt", "600_milliamp"],
+            "manufacturer": "onsemi",
+            "part_number": "mmbt4403",
+            "name_short": "PNP Transistor MMBT4403",
+        },
         {"taxonomy": ["transistor", "sot_23", "bipolar", "npn", "25_volt", "1_5_amp"],
          "manufacturer": "jsmsemi", "part_number": "ss8050", "name_short": "NPN Transistor SS8050"},
         {

@@ -3,6 +3,7 @@ def main(**kwargs):
 
     inductors = [
         {"size": "0603", "inductance": "10_micro_henry"},
+        {"size": "0806", "inductance": "2_2_micro_henry"},
     ]
 
     for inductor in inductors:

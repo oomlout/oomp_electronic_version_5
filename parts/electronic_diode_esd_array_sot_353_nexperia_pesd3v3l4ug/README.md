@@ -87,6 +87,8 @@ Diode PESD3V3L4UG SOT-353 is an OOMP electronic diode definition. It uses the so
 
 ![Square summary](data/working_svg_square_300.png)
 
+![Square schematic](data/working_svg_square_schematic_300.png)
+
 ![Dimensions](data/working_svg_dimensioned_300.png)
 
 ![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)

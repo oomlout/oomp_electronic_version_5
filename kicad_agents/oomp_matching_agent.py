@@ -10,8 +10,59 @@ from pathlib import Path
 import yaml
 
 
-PACKAGE_SIZES = ["0201", "0402", "0603", "0805", "1206", "2512", "1010", "5050"]
+PACKAGE_SIZES = ["0201", "0402", "0603", "0805", "1206", "1210", "2512", "3216", "1010", "5050"]
 LED_COLORS = ["warm_white", "white", "yellow", "green", "blue", "pink", "red", "rgb"]
+
+# Value/MPN fragments that identify an exact OOMP part already in the
+# catalogue. Consulted before candidate ranking so generic values ("SS14")
+# resolve without per-project override files. A proposal is only accepted if
+# the target part exists, so stale rows stay inert.
+KNOWN_PART_ALIASES = {
+    # Soldered/e-radionica breakout parts identified by exact value/MPN.
+    "attiny404_ssnr": "electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr",
+    "tps613222a": "electronic_ic_sot_23_5_power_management_boost_converter_texas_instruments_tps613222a",
+    "lm393": "electronic_ic_soic_8_logic_comparator_lm393",
+    "rt9080_3_3": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_richtek_rt9080_33",
+    "opa344": "electronic_ic_sot_23_5_amplifier_operational_amplifier_texas_instruments_opa344",
+    "si7211_b_00_iv": "electronic_ic_sot_23_5_sensor_hall_effect_silicon_labs_si7211_b_00_iv",
+    "si7201_b_06_iv": "electronic_ic_sot_23_sensor_hall_effect_silicon_labs_si7201_b_06_iv",
+    "hx711": "electronic_ic_sop_16_converter_load_cell_amplifier_avia_semiconductor_hx711",
+    "df5a5_6lfu": "electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu",
+    "pesd3v3l4ug": "electronic_diode_esd_array_sot_353_nexperia_pesd3v3l4ug",
+    "dt1042_04so": "electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so",
+    "m4_dioda": "electronic_diode_rectifier_sma_m4",
+    "mmbt4403": "electronic_transistor_sot_23_bipolar_pnp_40_volt_600_milliamp_onsemi_mmbt4403",
+    "nmos_dual": "electronic_transistor_sot_363_6_mosfet_n_channel_dual",
+    "q_npn_bce": "electronic_transistor_sot_23_bipolar_npn",
+    "dfe201612e_2r2m_p2": "electronic_inductor_0806_2_2_micro_henry",
+    "dshp03ts_s": "electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s",
+    "tc33x_2_103e": "electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e",
+    "mq_x": "electronic_sensor_mq_6_pin",
+    "tcrt5000l": "electronic_sensor_tcrt5000_4_pin_vishay_tcrt5000l",
+    "am312": "electronic_sensor_pir_3_pin_am312",
+    "apds_9960": "electronic_sensor_apds_9960_broadcom_apds_9960",
+    "easyc_smd": "electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf",
+    "u_fl": "electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1",
+    "sma_edge": "electronic_connector_sma_edge_mount",
+    "kf235_5_0_2p": "electronic_connector_terminal_block_5_mm_pitch_through_hole_2_pin_kf235_5_0_2p",
+    "cr1220_holder": "electronic_connector_coin_cell_holder_through_hole_cr1220",
+    "cp2102n": "electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r",
+    "xc6206p332mr": "electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_xc6206p332mr",
+    "atmega328p_a": "electronic_ic_tqfp_32_7_mm_x_7_mm_microcontroller_8_bit_avr_microchip_atmega328p_au",
+    "ams1117_3_3": "electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3",
+    "ams1117_5v": "electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5",
+    "ch340c": "electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch340c",
+    "jst_sh_2pin_1mm_c145954": "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_2_pin_jst_sm02b_srss_tb",
+    "pesd0402": "electronic_diode_esd_0402_littelfuse_pesd0402",
+    "ss14": "electronic_diode_schottky_sod_123_ss14",
+    "bat54w": "electronic_diode_schottky_sod_323_bat54w",
+    "1ss400": "electronic_diode_schottky_sod_523_1ss400",
+    # Schematic values that are really MPNs of catalogue capacitors.
+    "cl10a226mpcnube": "electronic_capacitor_0603_22_micro_farad",
+    "c1608x7s1a475k080ac": "electronic_capacitor_0603_4_7_micro_farad",
+    # Transistors (BSS138, 2N7002) already carry opt-in generic_match rules in
+    # their populate data, so they are intentionally not aliased here.
+}
 
 
 def normalize_text(value):
@@ -140,7 +191,14 @@ def infer_kind(fields):
     sparkfun_header_footprint = bool(
         re.fullmatch(r"sparkfun_connector_1x\d+(_p2_54mm)?", normalize_text(fields["footprint"]))
     )
-    if sparkfun_header_footprint or (
+    # e-radionica (Soldered) boards use their own header footprints:
+    # HEADER_MALE_NX1 is the plain 2.54 mm header row; HEADER-UPDI is the
+    # 1x03 UPDI programming header.
+    erad_header_footprint = bool(
+        re.search(r"header_male_\d+x\d+", normalize_text(fields["footprint"]))
+    ) or "header_updi" in normalize_text(fields["footprint"])
+    dual_row_header_footprint = bool(re.search(r"pinheader_2x\d+_p2_54mm", normalize_text(fields["footprint"])))
+    if sparkfun_header_footprint or erad_header_footprint or dual_row_header_footprint or (
         "conn_01x" in evidence
         and "jst" not in evidence
         and "pinheader" in evidence
@@ -185,6 +243,21 @@ def proposed_oomp_id(component):
     if pcb.get("is_mounting_hole", False) and len(mounting_holes) > 0:
         return str(mounting_holes[0].get("oomp_id", ""))
 
+    # Known value/MPN aliases point straight at an exact catalogue part.
+    # A bare value may only alias when the schematic carries no MPN -- a
+    # specific MPN ("BSS138-13-F") means the exact identity is known and needs
+    # its own part. An MPN alias requires the normalized MPN to be exact.
+    value_normalized = normalize_text(fields["value"])
+    mpn_normalized = normalize_text(fields["mpn"])
+    if mpn_normalized:
+        if mpn_normalized in KNOWN_PART_ALIASES:
+            return KNOWN_PART_ALIASES[mpn_normalized]
+    else:
+        for alias, oomp_id in KNOWN_PART_ALIASES.items():
+            # \b keeps "2N7002" from matching the "2N7002K" variant.
+            if re.search(rf"\b{re.escape(alias)}\b", value_normalized):
+                return oomp_id
+
     if kind == "resistor":
         resistance = resistance_taxonomy(fields["value"])
         if package_size and resistance != "":
@@ -198,6 +271,13 @@ def proposed_oomp_id(component):
     if kind == "capacitor":
         capacitance = capacitance_taxonomy(fields["value"])
         if package_size and capacitance:
+            evidence = normalize_text(
+                " ".join([fields["footprint"], fields["library_id"], fields["value"]])
+            )
+            if "tantal" in evidence or "kemet" in evidence or "eia" in evidence:
+                # AVX-A / Kemet-I tantalum families: nominal voltage per value.
+                voltage = "10_volt" if package_size == "3216" else "16_volt"
+                return f"electronic_capacitor_{package_size}_avx_a_tantalum_{capacitance}_{voltage}"
             return f"electronic_capacitor_{package_size}_{capacitance}"
 
     if kind == "led" and package_size:
@@ -216,6 +296,7 @@ def proposed_oomp_id(component):
     if kind == "connector_header":
         value_text = normalize_text(fields["value"])
         footprint_text = normalize_text(fields["footprint"])
+        dual_row = False
         pin_count = None
         m = re.search(r"conn_01x(\d+)", value_text)
         if m:
@@ -226,7 +307,22 @@ def proposed_oomp_id(component):
             )
             if m:
                 pin_count = int(m.group(1))
+        if not pin_count:
+            # Dual-row headers (ICSP and friends): PinHeader_2x03_P2.54mm.
+            m = re.search(r"pinheader_2x(\d+)_p2_54mm", footprint_text)
+            if m:
+                pin_count = 2 * int(m.group(1))
+                dual_row = True
+        if not pin_count:
+            # e-radionica HEADER_MALE_NX1 and the 1x03 UPDI header.
+            m = re.search(r"header_male_(\d+)x(\d+)", footprint_text)
+            if m:
+                pin_count = int(m.group(1)) * int(m.group(2))
+            elif "header_updi" in footprint_text or "header_updi" in value_text:
+                pin_count = 3
         if pin_count:
+            if dual_row:
+                return f"electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_{pin_count}_pin"
             return f"electronic_connector_header_2_54_mm_pitch_through_hole_{pin_count}_pin"
 
     if kind == "crystal":
@@ -373,6 +469,41 @@ class OompPartIndex:
         return []
 
 
+def _is_board_feature(fields):
+    """Silkscreen art, fiducials, test points, standoffs and solder-jumper
+    traces live on the board but are never purchased, like DNF parts."""
+    footprint = normalize_text(fields["footprint"])
+    library_id = normalize_text(fields["library_id"])
+    value = normalize_text(fields["value"])
+    reference_upper = str(fields.get("reference", "")).upper()
+    board_feature_evidence = " ".join([footprint, library_id, value])
+    if "buzzard" in board_feature_evidence or "kibuzzard" in board_feature_evidence:
+        return True
+    if "fiducial" in board_feature_evidence or reference_upper.startswith("FID") or reference_upper.startswith("FD"):
+        return True
+    if "standoff" in board_feature_evidence:
+        return True
+    if "testpoint" in board_feature_evidence or "test_point" in board_feature_evidence or (
+        reference_upper.startswith("TP") and "test" in board_feature_evidence
+    ):
+        return True
+    if "logo" in board_feature_evidence or "oshw" in board_feature_evidence:
+        return True
+    if "soldered_graphics" in board_feature_evidence or "sparkfun_aesthetic" in board_feature_evidence:
+        return True
+    if "smd_jumper" in board_feature_evidence or "jumper_2_nc" in board_feature_evidence or (
+        value.startswith("smd_jumper")
+    ):
+        return True
+    # Jumper_2_NC_Trace / Jumper_3_NC-2_Trace and friends: NC solder-blob
+    # traces, not purchased parts.
+    if "jumper" in board_feature_evidence and ("_trace" in board_feature_evidence or "_nc" in board_feature_evidence or "nc_" in board_feature_evidence):
+        return True
+    if value in ("measure",) and "jumper" in board_feature_evidence:
+        return True
+    return False
+
+
 def _is_physical_component(component):
     reference = component.get("reference", "")
     reference_upper = reference.upper()
@@ -393,6 +524,8 @@ def _is_physical_component(component):
         return False
     value_upper = str(fields.get("value", "")).strip().upper()
     if value_upper in ("DNF", "DNP"):
+        return False
+    if _is_board_feature(fields):
         return False
     if component.get("pcb"):
         return True
@@ -493,6 +626,8 @@ def match_component(index, component, overrides=None, blocked=None):
         value_upper = str(fields.get("value", "")).strip().upper()
         if value_upper in ("DNF", "DNP"):
             result["reasons"].append("Component is marked do-not-fit / do-not-populate and has no purchased OOMP part requirement.")
+        elif _is_board_feature(fields):
+            result["reasons"].append("Fiducials, logos, test points, standoffs and solder-jumper traces are board features, not purchased OOMP parts.")
         elif reference_upper.startswith("SJ"):
             result["reasons"].append("PCB solder jumpers are board features, not purchased OOMP parts.")
         elif reference_upper.startswith("UNK_HOLE") or footprint.startswith("dummyfp"):

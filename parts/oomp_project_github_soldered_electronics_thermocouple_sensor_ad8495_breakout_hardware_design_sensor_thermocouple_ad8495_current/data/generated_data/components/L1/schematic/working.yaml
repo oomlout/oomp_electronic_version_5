@@ -1,0 +1,134 @@
+available: true
+units:
+- reference: L1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 142a8d12-ed37-4999-9aa6-2140956285b1
+  library_id: e-radionica.com schematics:0603L
+  unit: 1
+  body_style: 1
+  position:
+    x: 182.88
+    y: 76.2
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: L1
+    Value: Ferrite bead
+    Footprint: e-radionica.com footprinti:0603L
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.715
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 177.165
+      y: 76.2
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: K2
+      pin_number: '3'
+      pin_name: '~'
+  - number: '2'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 187.96
+      y: 76.2
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR05'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR07'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR010'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: C4
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R4
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '7'
+      pin_name: +Vs
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.1753
+        y: -0.0003
+      max:
+        x: 2.5403
+        y: 0.9391
+      width: 5.7156
+      height: 0.9394
+      center:
+        x: -0.3175
+        y: 0.4694
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 179.7047
+        y: 75.2609
+      max:
+        x: 185.4203
+        y: 76.2003
+      width: 5.7156
+      height: 0.9394
+      center:
+        x: 182.5625
+        y: 75.7306
+  warnings: []
+connected_components:
+- reference: '#PWR05'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR07'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR010'
+  pin_number: '1'
+  pin_name: VCC
+- reference: C4
+  pin_number: '1'
+  pin_name: '~'
+- reference: K2
+  pin_number: '3'
+  pin_name: '~'
+- reference: R4
+  pin_number: '2'
+  pin_name: '~'
+- reference: U2
+  pin_number: '7'
+  pin_name: +Vs

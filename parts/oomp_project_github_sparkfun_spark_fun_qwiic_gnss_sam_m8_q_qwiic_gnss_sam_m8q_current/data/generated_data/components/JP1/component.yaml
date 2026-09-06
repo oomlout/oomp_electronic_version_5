@@ -567,7 +567,7 @@ connectivity_cross_check:
   disagree_count: 0
   incomplete_count: 1
 oomp:
-  status: unmatched
+  status: not_applicable
   accepted: false
   oomp_id: null
   confidence: 0.0
@@ -578,28 +578,8 @@ oomp:
     value: LED
     mpn: null
   reasons:
-  - Component family was inferred, but package size was not.
-  candidates:
-  - oomp_id: electronic_led_0201
-    score: 0.1605
-    reasons:
-    - same component family
-  - oomp_id: electronic_led_0402
-    score: 0.1605
-    reasons:
-    - same component family
-  - oomp_id: electronic_led_0603
-    score: 0.1605
-    reasons:
-    - same component family
-  - oomp_id: electronic_led_0805
-    score: 0.1605
-    reasons:
-    - same component family
-  - oomp_id: electronic_led_1206
-    score: 0.1605
-    reasons:
-    - same component family
+  - Fiducials, logos, test points, standoffs and solder-jumper traces are board features, not purchased OOMP parts.
+  candidates: []
 category: other
 category_source: unmatched_kicad_hint
 category_name: Other

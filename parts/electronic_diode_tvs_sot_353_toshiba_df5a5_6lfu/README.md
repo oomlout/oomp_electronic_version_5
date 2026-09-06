@@ -87,6 +87,8 @@ Diode DF5A5.6LFU SOT-353 is an OOMP electronic diode definition. It uses the sot
 
 ![Square summary](data/working_svg_square_300.png)
 
+![Square schematic](data/working_svg_square_schematic_300.png)
+
 ![Dimensions](data/working_svg_dimensioned_300.png)
 
 ![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)

@@ -178,6 +178,13 @@ oomlout_ai_roboclick_2:
     resample: lanczos
   - allow_upscale: false
     command: image_resize
+    file_destination: data/working_svg_square_schematic_300.png
+    file_source: data/working_svg_square_schematic.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
     file_destination: data/working_svg_dimensioned_300.png
     file_source: data/working_svg_dimensioned.png
     maximum_dimension: 300
@@ -354,6 +361,13 @@ oomlout_ai_roboclick_3:
           resample: lanczos
         - allow_upscale: false
           command: image_resize
+          file_destination: data/working_svg_square_schematic_300.png
+          file_source: data/working_svg_square_schematic.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
           file_destination: data/working_svg_dimensioned_300.png
           file_source: data/working_svg_dimensioned.png
           maximum_dimension: 300
@@ -437,6 +451,10 @@ oomlout_ai_roboclick_3:
           preview: data/working_svg_square_300.png
           svg: data/working_svg_square.svg
           title: Square summary
+        - png: data/working_svg_square_schematic.png
+          preview: data/working_svg_square_schematic_300.png
+          svg: data/working_svg_square_schematic.svg
+          title: Square schematic
         - png: data/working_svg_dimensioned.png
           preview: data/working_svg_dimensioned_300.png
           svg: data/working_svg_dimensioned.svg
@@ -474,6 +492,8 @@ oomlout_ai_roboclick_3:
           title: BIP 39 words
         - preview: data/working_svg_square_300.png
           title: Square summary
+        - preview: data/working_svg_square_schematic_300.png
+          title: Square schematic
         - preview: data/working_svg_dimensioned_300.png
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
@@ -612,6 +632,16 @@ oomlout_ai_roboclick_3:
         stylesheet: style_oomp
         svg_name: oomp_component_square_pins
         write_yaml: false
+      - filename_extra: square_schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_square_schematic
+        write_yaml: false
       - filename_extra: dimensioned
         make_a4: false
         output_formats:
@@ -734,6 +764,127 @@ oomlout_ai_roboclick_3:
         references:
         - J2
         version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+        name: Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design
+          CCS811 Breakout current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+        project_id: oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+        quantity: 1
+        references:
+        - K1
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_hardware_design_sensor_load_cell_hx711_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Load-cell-ampfilier-HX711-board-hardware-design
+        github_url: https://github.com/SolderedElectronics/Load-cell-ampfilier-HX711-board-hardware-design
+        name: Project soldered_electronics/Load-cell-ampfilier-HX711-board-hardware-design
+          HX711 Load Cell current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_hardware_design_sensor_load_cell_hx711_current
+        project_id: oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_hardware_design_sensor_load_cell_hx711_current
+        quantity: 1
+        references:
+        - K2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_qwiic_hardware_design_sensor_load_cell_hx711_qwiic_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Load-cell-amplifier-HX711-board-qwiic-hardware-design
+        github_url: https://github.com/SolderedElectronics/Load-cell-amplifier-HX711-board-qwiic-hardware-design
+        name: Project soldered_electronics/Load-cell-ampfilier-HX711-board-qwiic-hardware-design
+          HX711 Load Cell qwiic current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_qwiic_hardware_design_sensor_load_cell_hx711_qwiic_current
+        project_id: oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_qwiic_hardware_design_sensor_load_cell_hx711_qwiic_current
+        quantity: 1
+        references:
+        - K2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_with_easy_c_hardware_design_sensor_load_cell_hx711_easyc_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Load-cell-ampfilier-HX711-board-with-easy-C-hardware-design
+        github_url: https://github.com/SolderedElectronics/Load-cell-ampfilier-HX711-board-with-easy-C-hardware-design
+        name: Project soldered_electronics/Load-cell-ampfilier-HX711-board-with-easy-C-hardware-design
+          HX711 Load Cell easyC current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_with_easy_c_hardware_design_sensor_load_cell_hx711_easyc_current
+        project_id: oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_with_easy_c_hardware_design_sensor_load_cell_hx711_easyc_current
+        quantity: 1
+        references:
+        - K2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_hardware_design_sensor_fire_simple_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-hardware-design
+        github_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-hardware-design
+        name: Project soldered_electronics/Simple-fire-sensor-board-hardware-design
+          Simple Fire Sensor current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_hardware_design_sensor_fire_simple_current
+        project_id: oomp_project_github_soldered_electronics_simple_fire_sensor_board_hardware_design_sensor_fire_simple_current
+        quantity: 1
+        references:
+        - K1
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_qwiic_hardware_design_sensor_fire_simple_qwiic_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-qwiic-hardware-design
+        github_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-qwiic-hardware-design
+        name: Project soldered_electronics/Simple-fire-sensor-board-qwiic-hardware-design
+          Simple Fire Sensor qwiic current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_qwiic_hardware_design_sensor_fire_simple_qwiic_current
+        project_id: oomp_project_github_soldered_electronics_simple_fire_sensor_board_qwiic_hardware_design_sensor_fire_simple_qwiic_current
+        quantity: 1
+        references:
+        - K2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_with_easy_c_hardware_design_sensor_fire_simple_easyc_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-with-easyC-hardware-design
+        github_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-with-easyC-hardware-design
+        name: Project soldered_electronics/Simple-fire-sensor-board-with-easyC-hardware-design
+          Simple Fire Sensor easyC current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_with_easy_c_hardware_design_sensor_fire_simple_easyc_current
+        project_id: oomp_project_github_soldered_electronics_simple_fire_sensor_board_with_easy_c_hardware_design_sensor_fire_simple_easyc_current
+        quantity: 1
+        references:
+        - K2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_hardware_design_sensor_light_simple_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-hardware-design
+        github_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-hardware-design
+        name: Project soldered_electronics/Simple-light-sensor-board-hardware-design
+          Simple Light Sensor current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_hardware_design_sensor_light_simple_current
+        project_id: oomp_project_github_soldered_electronics_simple_light_sensor_board_hardware_design_sensor_light_simple_current
+        quantity: 1
+        references:
+        - K1
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_qwiic_hardware_design_sensor_light_simple_qwiic_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-qwiic-hardware-design
+        github_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-qwiic-hardware-design
+        name: Project soldered_electronics/Simple-light-sensor-board-qwiic-hardware-design
+          Simple Light Sensor qwiic current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_qwiic_hardware_design_sensor_light_simple_qwiic_current
+        project_id: oomp_project_github_soldered_electronics_simple_light_sensor_board_qwiic_hardware_design_sensor_light_simple_qwiic_current
+        quantity: 1
+        references:
+        - K2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_with_easy_c_hardware_design_sensor_light_simple_easyc_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-with-easyC-hardware-design
+        github_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-with-easyC-hardware-design
+        name: Project soldered_electronics/Simple-light-sensor-board-with-easyC-hardware-design
+          Simple Light Sensor easyC current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_with_easy_c_hardware_design_sensor_light_simple_easyc_current
+        project_id: oomp_project_github_soldered_electronics_simple_light_sensor_board_with_easy_c_hardware_design_sensor_light_simple_easyc_current
+        quantity: 1
+        references:
+        - K2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+        github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+        name: Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player
+          Breakout MY1690X-16S current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+        project_id: oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+        quantity: 1
+        references:
+        - J3
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
         github_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
@@ -743,6 +894,18 @@ oomlout_ai_roboclick_3:
         quantity: 1
         references:
         - J5
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953
+        github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953
+        name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953 Qwiic Current
+          Sensor ADE7953 current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current
+        project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current
+        quantity: 2
+        references:
+        - J4
+        - J6
         version: current
     dict_data_files: {}
     dict_data_files_exists: {}
@@ -797,6 +960,10 @@ part_page:
     preview: data/working_svg_square_300.png
     svg: data/working_svg_square.svg
     title: Square summary
+  - png: data/working_svg_square_schematic.png
+    preview: data/working_svg_square_schematic_300.png
+    svg: data/working_svg_square_schematic.svg
+    title: Square schematic
   - png: data/working_svg_dimensioned.png
     preview: data/working_svg_dimensioned_300.png
     svg: data/working_svg_dimensioned.svg
@@ -834,6 +1001,8 @@ part_page:
     title: BIP 39 words
   - preview: data/working_svg_square_300.png
     title: Square summary
+  - preview: data/working_svg_square_schematic_300.png
+    title: Square schematic
   - preview: data/working_svg_dimensioned_300.png
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
@@ -971,6 +1140,16 @@ svg_details:
   padding: 0
   stylesheet: style_oomp
   svg_name: oomp_component_square_pins
+  write_yaml: false
+- filename_extra: square_schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_schematic
   write_yaml: false
 - filename_extra: dimensioned
   make_a4: false
@@ -1178,6 +1357,127 @@ used_in_projects:
   references:
   - J2
   version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+  name: Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design
+    CCS811 Breakout current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+  project_id: oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+  quantity: 1
+  references:
+  - K1
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_hardware_design_sensor_load_cell_hx711_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Load-cell-ampfilier-HX711-board-hardware-design
+  github_url: https://github.com/SolderedElectronics/Load-cell-ampfilier-HX711-board-hardware-design
+  name: Project soldered_electronics/Load-cell-ampfilier-HX711-board-hardware-design
+    HX711 Load Cell current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_hardware_design_sensor_load_cell_hx711_current
+  project_id: oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_hardware_design_sensor_load_cell_hx711_current
+  quantity: 1
+  references:
+  - K2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_qwiic_hardware_design_sensor_load_cell_hx711_qwiic_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Load-cell-amplifier-HX711-board-qwiic-hardware-design
+  github_url: https://github.com/SolderedElectronics/Load-cell-amplifier-HX711-board-qwiic-hardware-design
+  name: Project soldered_electronics/Load-cell-ampfilier-HX711-board-qwiic-hardware-design
+    HX711 Load Cell qwiic current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_qwiic_hardware_design_sensor_load_cell_hx711_qwiic_current
+  project_id: oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_qwiic_hardware_design_sensor_load_cell_hx711_qwiic_current
+  quantity: 1
+  references:
+  - K2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_with_easy_c_hardware_design_sensor_load_cell_hx711_easyc_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Load-cell-ampfilier-HX711-board-with-easy-C-hardware-design
+  github_url: https://github.com/SolderedElectronics/Load-cell-ampfilier-HX711-board-with-easy-C-hardware-design
+  name: Project soldered_electronics/Load-cell-ampfilier-HX711-board-with-easy-C-hardware-design
+    HX711 Load Cell easyC current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_with_easy_c_hardware_design_sensor_load_cell_hx711_easyc_current
+  project_id: oomp_project_github_soldered_electronics_load_cell_ampfilier_hx711_board_with_easy_c_hardware_design_sensor_load_cell_hx711_easyc_current
+  quantity: 1
+  references:
+  - K2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_hardware_design_sensor_fire_simple_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-hardware-design
+  github_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-hardware-design
+  name: Project soldered_electronics/Simple-fire-sensor-board-hardware-design Simple
+    Fire Sensor current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_hardware_design_sensor_fire_simple_current
+  project_id: oomp_project_github_soldered_electronics_simple_fire_sensor_board_hardware_design_sensor_fire_simple_current
+  quantity: 1
+  references:
+  - K1
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_qwiic_hardware_design_sensor_fire_simple_qwiic_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-qwiic-hardware-design
+  github_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-qwiic-hardware-design
+  name: Project soldered_electronics/Simple-fire-sensor-board-qwiic-hardware-design
+    Simple Fire Sensor qwiic current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_qwiic_hardware_design_sensor_fire_simple_qwiic_current
+  project_id: oomp_project_github_soldered_electronics_simple_fire_sensor_board_qwiic_hardware_design_sensor_fire_simple_qwiic_current
+  quantity: 1
+  references:
+  - K2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_with_easy_c_hardware_design_sensor_fire_simple_easyc_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-with-easyC-hardware-design
+  github_url: https://github.com/SolderedElectronics/Simple-fire-sensor-board-with-easyC-hardware-design
+  name: Project soldered_electronics/Simple-fire-sensor-board-with-easyC-hardware-design
+    Simple Fire Sensor easyC current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_fire_sensor_board_with_easy_c_hardware_design_sensor_fire_simple_easyc_current
+  project_id: oomp_project_github_soldered_electronics_simple_fire_sensor_board_with_easy_c_hardware_design_sensor_fire_simple_easyc_current
+  quantity: 1
+  references:
+  - K2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_hardware_design_sensor_light_simple_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-hardware-design
+  github_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-hardware-design
+  name: Project soldered_electronics/Simple-light-sensor-board-hardware-design Simple
+    Light Sensor current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_hardware_design_sensor_light_simple_current
+  project_id: oomp_project_github_soldered_electronics_simple_light_sensor_board_hardware_design_sensor_light_simple_current
+  quantity: 1
+  references:
+  - K1
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_qwiic_hardware_design_sensor_light_simple_qwiic_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-qwiic-hardware-design
+  github_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-qwiic-hardware-design
+  name: Project soldered_electronics/Simple-light-sensor-board-qwiic-hardware-design
+    Simple Light Sensor qwiic current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_qwiic_hardware_design_sensor_light_simple_qwiic_current
+  project_id: oomp_project_github_soldered_electronics_simple_light_sensor_board_qwiic_hardware_design_sensor_light_simple_qwiic_current
+  quantity: 1
+  references:
+  - K2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_with_easy_c_hardware_design_sensor_light_simple_easyc_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-with-easyC-hardware-design
+  github_url: https://github.com/SolderedElectronics/Simple-light-sensor-board-with-easyC-hardware-design
+  name: Project soldered_electronics/Simple-light-sensor-board-with-easyC-hardware-design
+    Simple Light Sensor easyC current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_simple_light_sensor_board_with_easy_c_hardware_design_sensor_light_simple_easyc_current
+  project_id: oomp_project_github_soldered_electronics_simple_light_sensor_board_with_easy_c_hardware_design_sensor_light_simple_easyc_current
+  quantity: 1
+  references:
+  - K2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+  github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+  name: Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout
+    MY1690X-16S current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+  project_id: oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+  quantity: 1
+  references:
+  - J3
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
   github_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
@@ -1187,4 +1487,16 @@ used_in_projects:
   quantity: 1
   references:
   - J5
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953
+  github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953
+  name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953 Qwiic Current Sensor
+    ADE7953 current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current
+  project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current
+  quantity: 2
+  references:
+  - J4
+  - J6
   version: current

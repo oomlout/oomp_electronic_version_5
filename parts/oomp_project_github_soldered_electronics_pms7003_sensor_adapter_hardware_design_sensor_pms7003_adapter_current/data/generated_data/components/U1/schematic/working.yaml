@@ -1,0 +1,264 @@
+available: true
+units:
+- reference: U1
+  source_file: data/kicad_file.kicad_sch
+  uuid: d249bcb5-95c1-4c48-85e3-b25fb8fc8148
+  library_id: e-radionica.com schematics:TPS613222A
+  unit: 1
+  body_style: 1
+  position:
+    x: 84.455
+    y: 76.2
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U1
+    Value: TPS613222A
+    Footprint: e-radionica.com footprinti:tps613222a
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: SW
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 6.985
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 91.44
+      y: 78.74
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: L1
+      pin_number: '1'
+      pin_name: ''
+  - number: '2'
+    name: GND
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 6.985
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 91.44
+      y: 76.2
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR01'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR05'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR07'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR08'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR011'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C2
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C3
+      pin_number: '1'
+      pin_name: '~'
+    - reference: K1
+      pin_number: '5'
+      pin_name: '~'
+    - reference: K2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: K2
+      pin_number: '9'
+      pin_name: '~'
+  - number: '3'
+    name: NC
+    electrical_type: no_connect
+    graphic_style: line
+    local_position:
+      x: 6.985
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 91.44
+      y: 73.66
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '4'
+    name: VOUT
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -6.985
+      y: 1.27
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 77.47
+      y: 74.93
+    net: 5V
+    net_aliases:
+    - 5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR02'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR09'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR010'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: C1
+      pin_number: '2'
+      pin_name: '~'
+    - reference: C2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: K2
+      pin_number: '1'
+      pin_name: '~'
+    - reference: K2
+      pin_number: '10'
+      pin_name: '~'
+  - number: '5'
+    name: NC
+    electrical_type: no_connect
+    graphic_style: line
+    local_position:
+      x: -6.985
+      y: -1.27
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 77.47
+      y: 77.47
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -4.4453
+        y: -3.8103
+      max:
+        x: 4.4453
+        y: 3.8103
+      width: 8.8906
+      height: 7.6206
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 80.0097
+        y: 72.3897
+      max:
+        x: 88.9003
+        y: 80.0103
+      width: 8.8906
+      height: 7.6206
+      center:
+        x: 84.455
+        y: 76.2
+  warnings: []
+connected_components:
+- reference: '#PWR01'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR02'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#PWR03'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR05'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR07'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR08'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR09'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#PWR010'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#PWR011'
+  pin_number: '1'
+  pin_name: GND
+- reference: C1
+  pin_number: '1'
+  pin_name: '~'
+- reference: C1
+  pin_number: '2'
+  pin_name: '~'
+- reference: C2
+  pin_number: '1'
+  pin_name: '~'
+- reference: C2
+  pin_number: '2'
+  pin_name: '~'
+- reference: C3
+  pin_number: '1'
+  pin_name: '~'
+- reference: K1
+  pin_number: '5'
+  pin_name: '~'
+- reference: K2
+  pin_number: '1'
+  pin_name: '~'
+- reference: K2
+  pin_number: '10'
+  pin_name: '~'
+- reference: K2
+  pin_number: '2'
+  pin_name: '~'
+- reference: K2
+  pin_number: '9'
+  pin_name: '~'
+- reference: L1
+  pin_number: '1'
+  pin_name: ''

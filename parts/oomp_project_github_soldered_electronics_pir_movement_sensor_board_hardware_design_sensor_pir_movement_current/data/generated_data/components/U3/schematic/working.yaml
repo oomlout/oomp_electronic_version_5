@@ -1,0 +1,486 @@
+available: true
+units:
+- reference: U3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 2bfc3e11-b0e2-4a99-9dc8-afc1e98df2dd
+  library_id: e-radionica.com schematics:NE555DR
+  unit: 1
+  body_style: 1
+  position:
+    x: 138.43
+    y: 88.9
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U3
+    Value: NE555DR
+    Footprint: e-radionica.com footprinti:SOIC−8
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: GND
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -8.89
+      y: 3.81
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 129.54
+      y: 85.09
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR04'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR06'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR07'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR010'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR011'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR014'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR021'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C2
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '~'
+    - reference: C4
+      pin_number: '2'
+      pin_name: '~'
+    - reference: C5
+      pin_number: '2'
+      pin_name: '-'
+    - reference: K1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: Q1
+      pin_number: '2'
+      pin_name: S
+    - reference: Q2
+      pin_number: '2'
+      pin_name: E
+    - reference: U1
+      pin_number: '3'
+      pin_name: VSS
+    - reference: U2
+      pin_number: '2'
+      pin_name: GND
+  - number: '2'
+    name: TRIG
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -8.89
+      y: 1.27
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 129.54
+      y: 87.63
+    net: TRIG
+    net_aliases:
+    - TRIG
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: Q1
+      pin_number: '3'
+      pin_name: D
+    - reference: Q2
+      pin_number: '1'
+      pin_name: B
+    - reference: R2
+      pin_number: '1'
+      pin_name: '~'
+  - number: '3'
+    name: OUT
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -8.89
+      y: -1.27
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 129.54
+      y: 90.17
+    net: OUT
+    net_aliases:
+    - OUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K1
+      pin_number: '3'
+      pin_name: '~'
+  - number: '4'
+    name: RESET
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -8.89
+      y: -3.81
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 129.54
+      y: 92.71
+    net: 5V
+    net_aliases:
+    - 5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR0101'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0102'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0103'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0104'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0105'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0106'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: C3
+      pin_number: '1'
+      pin_name: '~'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: ''
+    - reference: JP2
+      pin_number: '1'
+      pin_name: ''
+    - reference: K1
+      pin_number: '4'
+      pin_name: '~'
+    - reference: R2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U3
+      pin_number: '8'
+      pin_name: Vcc
+  - number: '5'
+    name: CONT
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 8.89
+      y: -3.81
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 147.32
+      y: 92.71
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C4
+      pin_number: '1'
+      pin_name: '~'
+  - number: '6'
+    name: THRESH
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 8.89
+      y: -1.27
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 147.32
+      y: 90.17
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C5
+      pin_number: '1'
+      pin_name: +
+    - reference: R3
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R4
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U3
+      pin_number: '7'
+      pin_name: DISCH
+  - number: '7'
+    name: DISCH
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 8.89
+      y: 1.27
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 147.32
+      y: 87.63
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C5
+      pin_number: '1'
+      pin_name: +
+    - reference: R3
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R4
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U3
+      pin_number: '6'
+      pin_name: THRESH
+  - number: '8'
+    name: Vcc
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 8.89
+      y: 3.81
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 147.32
+      y: 85.09
+    net: 5V
+    net_aliases:
+    - 5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR0101'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0102'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0103'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0104'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0105'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#PWR0106'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: C3
+      pin_number: '1'
+      pin_name: '~'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: ''
+    - reference: JP2
+      pin_number: '1'
+      pin_name: ''
+    - reference: K1
+      pin_number: '4'
+      pin_name: '~'
+    - reference: R2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U3
+      pin_number: '4'
+      pin_name: RESET
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -7.6962
+        y: -5.1562
+      max:
+        x: 6.4262
+        y: 5.1562
+      width: 14.1224
+      height: 10.3124
+      center:
+        x: -0.635
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 130.7338
+        y: 83.7438
+      max:
+        x: 144.8562
+        y: 94.0562
+      width: 14.1224
+      height: 10.3124
+      center:
+        x: 137.795
+        y: 88.9
+  warnings: []
+connected_components:
+- reference: '#PWR03'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR04'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR06'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR07'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR010'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR011'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR014'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR021'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR0101'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#PWR0102'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#PWR0103'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#PWR0104'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#PWR0105'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#PWR0106'
+  pin_number: '1'
+  pin_name: 5V
+- reference: C1
+  pin_number: '1'
+  pin_name: '~'
+- reference: C2
+  pin_number: '1'
+  pin_name: '~'
+- reference: C3
+  pin_number: '1'
+  pin_name: '~'
+- reference: C3
+  pin_number: '2'
+  pin_name: '~'
+- reference: C4
+  pin_number: '1'
+  pin_name: '~'
+- reference: C4
+  pin_number: '2'
+  pin_name: '~'
+- reference: C5
+  pin_number: '1'
+  pin_name: +
+- reference: C5
+  pin_number: '2'
+  pin_name: '-'
+- reference: JP1
+  pin_number: '2'
+  pin_name: ''
+- reference: JP2
+  pin_number: '1'
+  pin_name: ''
+- reference: K1
+  pin_number: '1'
+  pin_name: '~'
+- reference: K1
+  pin_number: '3'
+  pin_name: '~'
+- reference: K1
+  pin_number: '4'
+  pin_name: '~'
+- reference: Q1
+  pin_number: '2'
+  pin_name: S
+- reference: Q1
+  pin_number: '3'
+  pin_name: D
+- reference: Q2
+  pin_number: '1'
+  pin_name: B
+- reference: Q2
+  pin_number: '2'
+  pin_name: E
+- reference: R2
+  pin_number: '1'
+  pin_name: '~'
+- reference: R2
+  pin_number: '2'
+  pin_name: '~'
+- reference: R3
+  pin_number: '1'
+  pin_name: '~'
+- reference: R4
+  pin_number: '2'
+  pin_name: '~'
+- reference: U1
+  pin_number: '3'
+  pin_name: VSS
+- reference: U2
+  pin_number: '2'
+  pin_name: GND
+- reference: U3
+  pin_number: '4'
+  pin_name: RESET
+- reference: U3
+  pin_number: '6'
+  pin_name: THRESH
+- reference: U3
+  pin_number: '7'
+  pin_name: DISCH
+- reference: U3
+  pin_number: '8'
+  pin_name: Vcc

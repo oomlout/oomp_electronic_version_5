@@ -166,6 +166,13 @@ oomlout_ai_roboclick_2:
     resample: lanczos
   - allow_upscale: false
     command: image_resize
+    file_destination: data/working_svg_square_schematic_300.png
+    file_source: data/working_svg_square_schematic.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
     file_destination: data/working_svg_dimensioned_300.png
     file_source: data/working_svg_dimensioned.png
     maximum_dimension: 300
@@ -308,6 +315,13 @@ oomlout_ai_roboclick_3:
           resample: lanczos
         - allow_upscale: false
           command: image_resize
+          file_destination: data/working_svg_square_schematic_300.png
+          file_source: data/working_svg_square_schematic.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
           file_destination: data/working_svg_dimensioned_300.png
           file_source: data/working_svg_dimensioned.png
           maximum_dimension: 300
@@ -372,6 +386,10 @@ oomlout_ai_roboclick_3:
           preview: data/working_svg_square_300.png
           svg: data/working_svg_square.svg
           title: Square summary
+        - png: data/working_svg_square_schematic.png
+          preview: data/working_svg_square_schematic_300.png
+          svg: data/working_svg_square_schematic.svg
+          title: Square schematic
         - png: data/working_svg_dimensioned.png
           preview: data/working_svg_dimensioned_300.png
           svg: data/working_svg_dimensioned.svg
@@ -397,6 +415,8 @@ oomlout_ai_roboclick_3:
           title: BIP 39 words
         - preview: data/working_svg_square_300.png
           title: Square summary
+        - preview: data/working_svg_square_schematic_300.png
+          title: Square schematic
         - preview: data/working_svg_dimensioned_300.png
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
@@ -525,6 +545,16 @@ oomlout_ai_roboclick_3:
         stylesheet: style_oomp
         svg_name: oomp_component_square_pins
         write_yaml: false
+      - filename_extra: square_schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_square_schematic
+        write_yaml: false
       - filename_extra: dimensioned
         make_a4: false
         output_formats:
@@ -543,6 +573,56 @@ oomlout_ai_roboclick_3:
         stylesheet: style_oomp
         svg_name: oomp_component_dimensioned_titles
         write_yaml: false
+      - filename_extra: schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic
+        write_yaml: false
+      - filename_extra: schematic_pins
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_pins
+        write_yaml: false
+      - filename_extra: schematic_part_id
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_part_id
+        write_yaml: false
+      - filename_extra: schematic_md5_6_alpha
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_md5_6_alpha
+        write_yaml: false
+      - filename_extra: schematic_bip_39_3_word
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_bip_39_3_word
+        write_yaml: false
       taxonomy_1: electronic
       taxonomy_10: ''
       taxonomy_11: ''
@@ -560,6 +640,31 @@ oomlout_ai_roboclick_3:
       taxonomy_9: ''
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+        github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+        name: Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player
+          Breakout MY1690X-16S current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+        project_id: oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+        quantity: 2
+        references:
+        - R1
+        - R4
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+        github_url: https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+        name: Project sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+          Capacitive Soil Moisture Sensor CY8CMBR3102 current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current
+        project_id: oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current
+        quantity: 3
+        references:
+        - R2
+        - R3
+        - R7
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
         github_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
@@ -583,6 +688,19 @@ oomlout_ai_roboclick_3:
         references:
         - R2
         - R3
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
+        github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
+        name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX Qwiic Current
+          Sensor INA2XX current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current
+        project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current
+        quantity: 3
+        references:
+        - R4
+        - R5
+        - R6
         version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_directional_pad_qwiic_directional_pad_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_Qwiic_Directional_Pad
@@ -700,6 +818,10 @@ part_page:
     preview: data/working_svg_square_300.png
     svg: data/working_svg_square.svg
     title: Square summary
+  - png: data/working_svg_square_schematic.png
+    preview: data/working_svg_square_schematic_300.png
+    svg: data/working_svg_square_schematic.svg
+    title: Square schematic
   - png: data/working_svg_dimensioned.png
     preview: data/working_svg_dimensioned_300.png
     svg: data/working_svg_dimensioned.svg
@@ -725,6 +847,8 @@ part_page:
     title: BIP 39 words
   - preview: data/working_svg_square_300.png
     title: Square summary
+  - preview: data/working_svg_square_schematic_300.png
+    title: Square schematic
   - preview: data/working_svg_dimensioned_300.png
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
@@ -852,6 +976,16 @@ svg_details:
   stylesheet: style_oomp
   svg_name: oomp_component_square_pins
   write_yaml: false
+- filename_extra: square_schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_schematic
+  write_yaml: false
 - filename_extra: dimensioned
   make_a4: false
   output_formats:
@@ -869,6 +1003,56 @@ svg_details:
   padding: 0
   stylesheet: style_oomp
   svg_name: oomp_component_dimensioned_titles
+  write_yaml: false
+- filename_extra: schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic
+  write_yaml: false
+- filename_extra: schematic_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_pins
+  write_yaml: false
+- filename_extra: schematic_part_id
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_part_id
+  write_yaml: false
+- filename_extra: schematic_md5_6_alpha
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_md5_6_alpha
+  write_yaml: false
+- filename_extra: schematic_bip_39_3_word
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_bip_39_3_word
   write_yaml: false
 taxonomy_1: electronic
 taxonomy_10: ''
@@ -943,6 +1127,31 @@ taxonomy_8: ''
 taxonomy_9: ''
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+  github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+  name: Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout
+    MY1690X-16S current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+  project_id: oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+  quantity: 2
+  references:
+  - R1
+  - R4
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+  github_url: https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+  name: Project sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102 Capacitive
+    Soil Moisture Sensor CY8CMBR3102 current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current
+  project_id: oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current
+  quantity: 3
+  references:
+  - R2
+  - R3
+  - R7
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
   github_url: https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout
@@ -966,6 +1175,19 @@ used_in_projects:
   references:
   - R2
   - R3
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
+  github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
+  name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX Qwiic Current Sensor
+    INA2XX current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current
+  project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current
+  quantity: 3
+  references:
+  - R4
+  - R5
+  - R6
   version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_directional_pad_qwiic_directional_pad_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_Qwiic_Directional_Pad

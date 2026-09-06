@@ -41,3 +41,5 @@ def main(**kwargs):
         extras_dict[current]["content_taxonomy_2"] = "filament"
         extras_dict[current]["content_taxonomy_3"] = "empty_spool"
         extras_dict[current]["content_id"] = "three_d_print_filament_empty_spool"
+    import working_oomp_populate_lcsc_extra
+    working_oomp_populate_lcsc_extra.main(extras_dict=extras_dict)

@@ -189,6 +189,7 @@ def make_svg_generic(part):
             svg_contents = svg_contents.replace("#333333", "#000000")
             if stylesheet == "style_oomp_assembly":
                 svg_contents = _scale_assembly_strokes(svg_contents)
+                pin_one_attributes = ""
                 pin_one_svg = thing.get("assembly_pin_one_svg", {})
                 if isinstance(pin_one_svg, dict) and "x" in pin_one_svg and "y" in pin_one_svg:
                     pin_one_attributes = (
@@ -205,6 +206,16 @@ def make_svg_generic(part):
                         if len(safe_identifiers) > 0:
                             identifiers_text = "|".join(safe_identifiers)
                             pin_one_attributes += f'data-pin-one-identifiers="{identifiers_text}" '
+                pin_positions_svg = thing.get("assembly_pin_positions_svg", [])
+                if isinstance(pin_positions_svg, list) and len(pin_positions_svg) > 0:
+                    safe_positions = []
+                    for pin_position in pin_positions_svg:
+                        number_text = str(pin_position.get("number", "")).replace('"', "").replace("|", "")
+                        safe_positions.append(
+                            f'{number_text}@{float(pin_position["x"]):.4f},{float(pin_position["y"]):.4f}'
+                        )
+                    pin_one_attributes += f'data-pin-positions="{"|".join(safe_positions)}" '
+                if pin_one_attributes:
                     svg_contents = svg_contents.replace("<svg ", f"<svg {pin_one_attributes}", 1)
             with open(svg_path, "w", encoding="utf-8") as svg_file:
                 svg_file.write(svg_contents)
@@ -316,6 +327,23 @@ def _scale_assembly_strokes(svg_contents):
     return re.sub(r'stroke-width="([0-9.eE+-]+)"', scale_stroke, svg_contents)
 
 
+def _svg_has_deliberate_colour(svg_contents):
+    """True when the SVG assigns a non-neutral colour (e.g. resistor bands).
+
+    Everything else stays on the grayscale flatten, which removes the coloured
+    sub-pixel antialiasing Cairo leaves around black text.
+    """
+    for match in re.findall(r"#[0-9a-fA-F]{6}|#[0-9a-fA-F]{3}", svg_contents):
+        digits = match[1:]
+        if len(digits) == 3:
+            channels = [int(character * 2, 16) for character in digits]
+        else:
+            channels = [int(digits[index : index + 2], 16) for index in (0, 2, 4)]
+        if len(set(channels)) > 1:
+            return True
+    return False
+
+
 def svg_to_png(svg_path, png_path, dpi=150, minimum_size_px=None):
     """Render an SVG to PNG using CairoSVG.
 
@@ -366,7 +394,12 @@ def svg_to_png(svg_path, png_path, dpi=150, minimum_size_px=None):
                 raise
             time.sleep(0.1)
     # Cairo can use coloured sub-pixel antialiasing around otherwise black
-    # text.  Flatten to grayscale so the PNG contains no accidental hues.
+    # text.  Flatten to grayscale so the PNG contains no accidental hues --
+    # unless the drawing uses deliberate colour (resistor bands), which the
+    # flatten would destroy.
+    if _svg_has_deliberate_colour(open(svg_path, "r", encoding="utf-8").read()):
+        print(f"saved png (colour kept): {png_path}")
+        return
     try:
         from PIL import Image
 

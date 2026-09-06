@@ -7,6 +7,7 @@ def main(**kwargs):
         "18_pico_farad",
         "22_pico_farad",
         "27_pico_farad",
+        "33_pico_farad",
         "120_pico_farad",
         "10_nano_farad",
         "22_nano_farad",
@@ -37,6 +38,20 @@ def main(**kwargs):
         "2_2_micro_farad",
         "4_7_micro_farad",
         "10_micro_farad",
+        "22_micro_farad",
+    ]
+    for size in sizes:
+        for capacitance_value in capacitance_values:
+            option = {}
+            option["taxonomy_2"] = "capacitor"
+            option["taxonomy_3"] = size
+            option["taxonomy_4"] = capacitance_value
+            options.append(option)
+
+    sizes = ["0805"]
+    capacitance_values = [
+        "4_7_micro_farad",
+        "22_micro_farad",
     ]
     for size in sizes:
         for capacitance_value in capacitance_values:
@@ -47,7 +62,7 @@ def main(**kwargs):
             options.append(option)
 
     sizes = ["1206"]
-    capacitance_values = ["47_micro_farad"]
+    capacitance_values = ["10_micro_farad", "47_micro_farad"]
     for size in sizes:
         for capacitance_value in capacitance_values:
             option = {}

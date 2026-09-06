@@ -1,0 +1,479 @@
+reference: R10
+schematic:
+  available: true
+  units:
+  - reference: R10
+    source_file: data/kicad_file.kicad_sch
+    uuid: d8d1dc3f-48bc-4336-bc59-59b463131c7d
+    library_id: SparkFun-Resistor:1k_0402
+    unit: 1
+    body_style: 1
+    position:
+      x: 104.14
+      y: 62.23
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R10
+      Value: 1k
+      Footprint: SparkFun-Resistor:R_0402_1005Metric
+      Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+      Description: Resistor
+      PROD_ID: RES-14342
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: ''
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 1.016
+      position:
+        x: 101.6
+        y: 62.23
+      net: B-
+      net_aliases:
+      - B-
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: J6
+        pin_number: '2'
+        pin_name: Pin_2
+      - reference: R2
+        pin_number: '1'
+        pin_name: ''
+    - number: '2'
+      name: ''
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 1.016
+      position:
+        x: 106.68
+        y: 62.23
+      net: IBN
+      net_aliases:
+      - IBN
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C9
+        pin_number: '1'
+        pin_name: ''
+      - reference: U1
+        pin_number: '10'
+        pin_name: IBN
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.524
+          y: -1.016
+        max:
+          x: 1.524
+          y: 1.016
+        width: 3.048
+        height: 2.032
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 102.616
+          y: 61.214
+        max:
+          x: 105.664
+          y: 63.246
+        width: 3.048
+        height: 2.032
+        center:
+          x: 104.14
+          y: 62.23
+    warnings: []
+  connected_components:
+  - reference: C9
+    pin_number: '1'
+    pin_name: ''
+  - reference: J6
+    pin_number: '2'
+    pin_name: Pin_2
+  - reference: R2
+    pin_number: '1'
+    pin_name: ''
+  - reference: U1
+    pin_number: '10'
+    pin_name: IBN
+pcb:
+  reference: R10
+  value: 1k
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 999672bf-74e6-42f9-8ebf-e8066f976d26
+  library_id: SparkFun-Resistor:R_0402_1005Metric
+  layer: F.Cu
+  side: front
+  position:
+    x: 127.3935
+    y: 91.756
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: R10
+    Value: 1k
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-14342
+    ki_fp_filters: R_*
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.51
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 127.3935
+      y: 91.246
+    placed_rotation: 360.0
+    size:
+      x: 0.54
+      y: 0.64
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: B-
+    net_number: null
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.83
+          y: -0.27
+        max:
+          x: -0.19
+          y: 0.27
+        width: 0.64
+        height: 0.54
+        center:
+          x: -0.51
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 127.1235
+          y: 90.926
+        max:
+          x: 127.6635
+          y: 91.566
+        width: 0.54
+        height: 0.64
+        center:
+          x: 127.3935
+          y: 91.246
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: J6
+      pad_number: '2'
+    - reference: R2
+      pad_number: '1'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.51
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 127.3935
+      y: 92.266
+    placed_rotation: 360.0
+    size:
+      x: 0.54
+      y: 0.64
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: IBN
+    net_number: null
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.19
+          y: -0.27
+        max:
+          x: 0.83
+          y: 0.27
+        width: 0.64
+        height: 0.54
+        center:
+          x: 0.51
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 127.1235
+          y: 91.946
+        max:
+          x: 127.6635
+          y: 92.586
+        width: 0.54
+        height: 0.64
+        center:
+          x: 127.3935
+          y: 92.266
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C9
+      pad_number: '1'
+    - reference: U1
+      pad_number: '10'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.83
+        y: -0.27
+      max:
+        x: 0.83
+        y: 0.27
+      width: 1.66
+      height: 0.54
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 127.1235
+        y: 90.926
+      max:
+        x: 127.6635
+        y: 92.586
+      width: 0.54
+      height: 1.66
+      center:
+        x: 127.3935
+        y: 91.756
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.955
+        y: -0.495
+      max:
+        x: 0.955
+        y: 0.495
+      width: 1.91
+      height: 0.99
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 126.8985
+        y: 90.801
+      max:
+        x: 127.8885
+        y: 92.711
+      width: 0.99
+      height: 1.91
+      center:
+        x: 127.3935
+        y: 91.756
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.575
+        y: -0.32
+      max:
+        x: 0.575
+        y: 0.32
+      width: 1.15
+      height: 0.64
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 127.0735
+        y: 91.181
+      max:
+        x: 127.7135
+        y: 92.331
+      width: 0.64
+      height: 1.15
+      center:
+        x: 127.3935
+        y: 91.756
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.213641
+        y: -0.44
+      max:
+        x: 0.213641
+        y: 0.44
+      width: 0.427282
+      height: 0.88
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 126.9535
+        y: 91.542359
+      max:
+        x: 127.8335
+        y: 91.969641
+      width: 0.88
+      height: 0.427282
+      center:
+        x: 127.3935
+        y: 91.756
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.955
+        y: -0.495
+      max:
+        x: 0.955
+        y: 0.495
+      width: 1.91
+      height: 0.99
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 126.8985
+        y: 90.801
+      max:
+        x: 127.8885
+        y: 92.711
+      width: 0.99
+      height: 1.91
+      center:
+        x: 127.3935
+        y: 91.756
+  connected_components:
+  - C9
+  - J6
+  - R2
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - B-
+    pcb_nets:
+    - B-
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - IBN
+    pcb_nets:
+    - IBN
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0402_1000_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0402_1000_ohm
+  inferred:
+    kind: resistor
+    package_size: '0402'
+    value: 1k
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R10

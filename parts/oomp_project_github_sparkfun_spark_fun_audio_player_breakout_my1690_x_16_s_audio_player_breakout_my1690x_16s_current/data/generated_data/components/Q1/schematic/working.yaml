@@ -1,0 +1,223 @@
+available: true
+units:
+- reference: Q1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 9a448852-5fe9-48de-bc32-b500d0b10b46
+  library_id: SparkFun-DiscreteSemi:Q_NMOS_0.2A_50V
+  unit: 1
+  body_style: 1
+  position:
+    x: 128.27
+    y: 132.08
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q1
+    Value: BSS138
+    Footprint: SparkFun-Semiconductor-Standard:SOT23-3
+    Datasheet: https://cdn.sparkfun.com/datasheets/BreakoutBoards/BSS138.pdf
+    Description: N-MOSFET transistor, drain/gate/source
+    PROD_ID: TRANS-00830
+    IMax: 0.2A
+    VMax: 50V
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: G
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 128.27
+      y: 129.54
+    net: 3.3V_P
+    net_aliases:
+    - 3.3V_P
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR01'
+      pin_number: '1'
+      pin_name: 3.3V_P
+    - reference: '#PWR011'
+      pin_number: '1'
+      pin_name: 3.3V_P
+    - reference: '#PWR016'
+      pin_number: '1'
+      pin_name: 3.3V_P
+    - reference: '#PWR018'
+      pin_number: '1'
+      pin_name: 3.3V_P
+    - reference: '#PWR019'
+      pin_number: '1'
+      pin_name: 3.3V_P
+    - reference: '#PWR026'
+      pin_number: '1'
+      pin_name: 3.3V_P
+    - reference: '#PWR027'
+      pin_number: '1'
+      pin_name: 3.3V_P
+    - reference: C2
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C3
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C8
+      pin_number: '1'
+      pin_name: '~'
+    - reference: J6
+      pin_number: '4'
+      pin_name: VDD
+    - reference: R1
+      pin_number: '2'
+      pin_name: '~'
+    - reference: R6
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '5'
+      pin_name: 3V3_Reg
+  - number: '2'
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 123.19
+      y: 134.62
+    net: MY_RX_LV
+    net_aliases:
+    - MY_RX_LV
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '12'
+      pin_name: RX
+  - number: '3'
+    name: D
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 133.35
+      y: 134.62
+    net: MY_RX
+    net_aliases:
+    - MY_RX
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J5
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: R4
+      pin_number: '1'
+      pin_name: '~'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -2.921
+      max:
+        x: 4.572
+        y: 2.921
+      width: 7.112
+      height: 5.842
+      center:
+        x: 1.016
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 125.349
+        y: 129.54
+      max:
+        x: 131.191
+        y: 136.652
+      width: 5.842
+      height: 7.112
+      center:
+        x: 128.27
+        y: 133.096
+  warnings: []
+connected_components:
+- reference: '#PWR01'
+  pin_number: '1'
+  pin_name: 3.3V_P
+- reference: '#PWR011'
+  pin_number: '1'
+  pin_name: 3.3V_P
+- reference: '#PWR016'
+  pin_number: '1'
+  pin_name: 3.3V_P
+- reference: '#PWR018'
+  pin_number: '1'
+  pin_name: 3.3V_P
+- reference: '#PWR019'
+  pin_number: '1'
+  pin_name: 3.3V_P
+- reference: '#PWR026'
+  pin_number: '1'
+  pin_name: 3.3V_P
+- reference: '#PWR027'
+  pin_number: '1'
+  pin_name: 3.3V_P
+- reference: C2
+  pin_number: '1'
+  pin_name: '~'
+- reference: C3
+  pin_number: '1'
+  pin_name: '~'
+- reference: C8
+  pin_number: '1'
+  pin_name: '~'
+- reference: J5
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J6
+  pin_number: '4'
+  pin_name: VDD
+- reference: R1
+  pin_number: '1'
+  pin_name: '~'
+- reference: R1
+  pin_number: '2'
+  pin_name: '~'
+- reference: R4
+  pin_number: '1'
+  pin_name: '~'
+- reference: R6
+  pin_number: '1'
+  pin_name: '~'
+- reference: U2
+  pin_number: '12'
+  pin_name: RX
+- reference: U2
+  pin_number: '5'
+  pin_name: 3V3_Reg

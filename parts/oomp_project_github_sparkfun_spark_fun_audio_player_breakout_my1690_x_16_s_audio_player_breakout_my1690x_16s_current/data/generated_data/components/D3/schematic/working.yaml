@@ -1,0 +1,151 @@
+available: true
+units:
+- reference: D3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 15f3e032-ddb1-4df0-9cca-9bc5dc5c3041
+  library_id: SparkFun-DiscreteSemi:D_Schottky_3A_10V_0.28V
+  unit: 1
+  body_style: 1
+  position:
+    x: 50.8
+    y: 182.88
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D3
+    Value: BAT60A
+    Footprint: SparkFun-Semiconductor-Standard:SOD-323
+    Datasheet: https://www.infineon.com/dgdl/bat60aseries.pdf?folderId=db3a304313d846880113def5812204a1&fileId=db3a304313d846880113def70c9304a9
+    Description: Schottky diode
+    PROD_ID: DIO-14072
+    IMax: 3A
+    VDrop: 0.28V
+    VMax: 10V
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: K
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 1.778
+    position:
+      x: 50.8
+      y: 185.42
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D2
+      pin_number: '2'
+      pin_name: A
+    - reference: L1
+      pin_number: '2'
+      pin_name: '~'
+  - number: '2'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 1.778
+    position:
+      x: 50.8
+      y: 180.34
+    net: VUSB
+    net_aliases:
+    - VUSB
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR024'
+      pin_number: '1'
+      pin_name: VUSB
+    - reference: '#PWR028'
+      pin_number: '1'
+      pin_name: VUSB
+    - reference: '#PWR030'
+      pin_number: '1'
+      pin_name: VUSB
+    - reference: '#PWR032'
+      pin_number: '1'
+      pin_name: VUSB
+    - reference: D6
+      pin_number: '5'
+      pin_name: VCC
+    - reference: J3
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: J4
+      pin_number: VBUS
+      pin_name: VBUS
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -1.143
+      max:
+        x: 0.889
+        y: 1.143
+      width: 2.286
+      height: 2.286
+      center:
+        x: -0.254
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 49.657
+        y: 181.991
+      max:
+        x: 51.943
+        y: 184.277
+      width: 2.286
+      height: 2.286
+      center:
+        x: 50.8
+        y: 183.134
+  warnings: []
+connected_components:
+- reference: '#PWR024'
+  pin_number: '1'
+  pin_name: VUSB
+- reference: '#PWR028'
+  pin_number: '1'
+  pin_name: VUSB
+- reference: '#PWR030'
+  pin_number: '1'
+  pin_name: VUSB
+- reference: '#PWR032'
+  pin_number: '1'
+  pin_name: VUSB
+- reference: D2
+  pin_number: '2'
+  pin_name: A
+- reference: D6
+  pin_number: '5'
+  pin_name: VCC
+- reference: J3
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J4
+  pin_number: VBUS
+  pin_name: VBUS
+- reference: L1
+  pin_number: '2'
+  pin_name: '~'

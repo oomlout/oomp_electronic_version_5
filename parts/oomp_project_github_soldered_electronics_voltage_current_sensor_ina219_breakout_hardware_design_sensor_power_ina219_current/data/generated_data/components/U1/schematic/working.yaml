@@ -1,0 +1,453 @@
+available: true
+units:
+- reference: U1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 22ae4b09-5b03-4969-85df-f2ce4889a329
+  library_id: e-radionica.com schematics:INA219
+  unit: 1
+  body_style: 1
+  position:
+    x: 148.59
+    y: 96.52
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U1
+    Value: INA219
+    Footprint: e-radionica.com footprinti:SOT23-8
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: IN+
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 3.81
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 140.97
+      y: 92.71
+    net: IN+
+    net_aliases:
+    - IN+
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K1
+      pin_number: '2'
+      pin_name: '~'
+    - reference: R5
+      pin_number: '2'
+      pin_name: '~'
+  - number: '2'
+    name: IN-
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 1.27
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 140.97
+      y: 95.25
+    net: IN-
+    net_aliases:
+    - IN-
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R5
+      pin_number: '1'
+      pin_name: '~'
+  - number: '3'
+    name: GND
+    electrical_type: power_out
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: -1.27
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 140.97
+      y: 97.79
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR04'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR07'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR08'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR011'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '~'
+    - reference: K2
+      pin_number: '4'
+      pin_name: GND
+    - reference: K2
+      pin_number: '5'
+      pin_name: SHIELD
+    - reference: K3
+      pin_number: '1'
+      pin_name: '~'
+    - reference: K4
+      pin_number: '4'
+      pin_name: GND
+    - reference: K4
+      pin_number: '5'
+      pin_name: SHIELD
+    - reference: R3
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R4
+      pin_number: '1'
+      pin_name: '~'
+  - number: '4'
+    name: VS
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: -3.81
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 140.97
+      y: 100.33
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR01'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR02'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR05'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR06'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR09'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR010'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: C1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: ''
+    - reference: JP2
+      pin_number: '2'
+      pin_name: ''
+    - reference: JP3
+      pin_number: '2'
+      pin_name: ''
+    - reference: K2
+      pin_number: '3'
+      pin_name: 3V3
+    - reference: K3
+      pin_number: '2'
+      pin_name: '~'
+    - reference: K4
+      pin_number: '3'
+      pin_name: 3V3
+  - number: '5'
+    name: SCL
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: -3.81
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 156.21
+      y: 100.33
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K2
+      pin_number: '1'
+      pin_name: SCL
+    - reference: K3
+      pin_number: '4'
+      pin_name: '~'
+    - reference: K4
+      pin_number: '1'
+      pin_name: SCL
+    - reference: R2
+      pin_number: '1'
+      pin_name: '~'
+  - number: '6'
+    name: SDA
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: -1.27
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 156.21
+      y: 97.79
+    net: SDA
+    net_aliases:
+    - SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K2
+      pin_number: '2'
+      pin_name: SDA
+    - reference: K3
+      pin_number: '3'
+      pin_name: '~'
+    - reference: K4
+      pin_number: '2'
+      pin_name: SDA
+    - reference: R1
+      pin_number: '2'
+      pin_name: '~'
+  - number: '7'
+    name: A0
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 1.27
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 156.21
+      y: 95.25
+    net: A0
+    net_aliases:
+    - A0
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '1'
+      pin_name: ''
+    - reference: R3
+      pin_number: '2'
+      pin_name: '~'
+  - number: '8'
+    name: A1
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 3.81
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 156.21
+      y: 92.71
+    net: A1
+    net_aliases:
+    - A1
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '1'
+      pin_name: ''
+    - reference: R4
+      pin_number: '2'
+      pin_name: '~'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -5.1562
+        y: -5.1562
+      max:
+        x: 5.1562
+        y: 5.1562
+      width: 10.3124
+      height: 10.3124
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 143.4338
+        y: 91.3638
+      max:
+        x: 153.7462
+        y: 101.6762
+      width: 10.3124
+      height: 10.3124
+      center:
+        x: 148.59
+        y: 96.52
+  warnings: []
+connected_components:
+- reference: '#PWR01'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR02'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR03'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR04'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR05'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR06'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR07'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR08'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR09'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR010'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR011'
+  pin_number: '1'
+  pin_name: GND
+- reference: C1
+  pin_number: '1'
+  pin_name: '~'
+- reference: C1
+  pin_number: '2'
+  pin_name: '~'
+- reference: JP1
+  pin_number: '2'
+  pin_name: ''
+- reference: JP2
+  pin_number: '1'
+  pin_name: ''
+- reference: JP2
+  pin_number: '2'
+  pin_name: ''
+- reference: JP3
+  pin_number: '1'
+  pin_name: ''
+- reference: JP3
+  pin_number: '2'
+  pin_name: ''
+- reference: K1
+  pin_number: '1'
+  pin_name: '~'
+- reference: K1
+  pin_number: '2'
+  pin_name: '~'
+- reference: K2
+  pin_number: '1'
+  pin_name: SCL
+- reference: K2
+  pin_number: '2'
+  pin_name: SDA
+- reference: K2
+  pin_number: '3'
+  pin_name: 3V3
+- reference: K2
+  pin_number: '4'
+  pin_name: GND
+- reference: K2
+  pin_number: '5'
+  pin_name: SHIELD
+- reference: K3
+  pin_number: '1'
+  pin_name: '~'
+- reference: K3
+  pin_number: '2'
+  pin_name: '~'
+- reference: K3
+  pin_number: '3'
+  pin_name: '~'
+- reference: K3
+  pin_number: '4'
+  pin_name: '~'
+- reference: K4
+  pin_number: '1'
+  pin_name: SCL
+- reference: K4
+  pin_number: '2'
+  pin_name: SDA
+- reference: K4
+  pin_number: '3'
+  pin_name: 3V3
+- reference: K4
+  pin_number: '4'
+  pin_name: GND
+- reference: K4
+  pin_number: '5'
+  pin_name: SHIELD
+- reference: R1
+  pin_number: '2'
+  pin_name: '~'
+- reference: R2
+  pin_number: '1'
+  pin_name: '~'
+- reference: R3
+  pin_number: '1'
+  pin_name: '~'
+- reference: R3
+  pin_number: '2'
+  pin_name: '~'
+- reference: R4
+  pin_number: '1'
+  pin_name: '~'
+- reference: R4
+  pin_number: '2'
+  pin_name: '~'
+- reference: R5
+  pin_number: '1'
+  pin_name: '~'
+- reference: R5
+  pin_number: '2'
+  pin_name: '~'

@@ -228,6 +228,64 @@ def main(**kwargs):
             )
         part["research_notes"] = notes
 
+    # New connector families (JST PH/XH mountings, 2.54 mm right-angle
+    # headers short/long pin, dual-row ICSP header): shared extras come from
+    # the editable data table beside the JST one.
+    import working_oomp_populate
+    import working_oomp_populate_connector_families_data
+
+    family_datasheet_urls = {
+        "ePH": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+        "eXH": "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf",
+    }
+    for family_part in working_oomp_populate_connector_families_data.CONNECTOR_FAMILIES:
+        current = working_oomp_populate.build_oomp_id(
+            {"taxonomy_1": "electronic", "taxonomy_2": "connector", **family_part["taxonomy"]}
+        )
+        if current not in extras_dict:
+            continue
+        part = extras_dict[current]
+        if family_part["datasheet"]:
+            part["manufacturer"] = "JST"
+            part["part_number_manufacturer"] = family_part["part_number_manufacturer"]
+            part["part_numbers_manufacturer"] = family_part["part_numbers_manufacturer"]
+            part["datasheet_url"] = family_datasheet_urls[family_part["datasheet"]]
+            part["file_copy"] = [
+                {
+                    "file_source": f"parts_source/{current}/datasheet.pdf",
+                    "file_destination": "datasheet.pdf",
+                }
+            ]
+        part["name_short"] = family_part["name_short"]
+        part["part_numbers_lcsc"] = family_part["part_numbers_lcsc"]
+        if family_part["part_number_lcsc"]:
+            part["part_number_lcsc"] = family_part["part_number_lcsc"]
+            part["product_url"] = f"https://www.lcsc.com/product-detail/{family_part['part_number_lcsc']}.html"
+        elif family_part["product_url"]:
+            part["product_url"] = family_part["product_url"]
+        pins = {}
+        for index in range(1, family_part["pin_count"] + 1):
+            pins[f"pin_{index}"] = {"number": str(index), "name": f"pin_{index}", "type": "signal"}
+        part["pins"] = pins
+        drawing = family_part["package_drawing"]
+        part["package_drawing"] = drawing
+        part["dimensions_mm"] = {"length": drawing["body"][0], "width": drawing["body"][1]}
+        footprint_name = family_part["kicad_footprint"].split(":")[-1]
+        part["dimension_reference"] = {
+            "document": f"KiCad {family_part['kicad_footprint'].split(':')[0]} {footprint_name} F.Fab outline",
+            "pages": [],
+            "notes": family_part["note"],
+        }
+        part["kicad"] = {
+            "symbol": family_part["kicad_symbol"],
+            "machine_solder": family_part["kicad_footprint"],
+            "hand_solder": "",
+        }
+        notes = [family_part["note"]]
+        if family_part["generic_match"]:
+            part["generic_match"] = family_part["generic_match"]
+        part["research_notes"] = notes
+
     # Generic match for USB-C receptacle used in Easyduino projects
     current = "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073"
     if current in extras_dict:

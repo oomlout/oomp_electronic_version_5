@@ -37,6 +37,16 @@ def main(**kwargs):
         option.update(jst_part["taxonomy"])
         options.append(option)
 
+    # New connector families (JST PH/XH mountings, 2.54 mm right-angle
+    # headers short/long pin, dual-row ICSP header): editable table in
+    # working_oomp_populate_connector_families_data.py.
+    import working_oomp_populate_connector_families_data
+
+    for family_part in working_oomp_populate_connector_families_data.CONNECTOR_FAMILIES:
+        option = {"taxonomy_2": "connector"}
+        option.update(family_part["taxonomy"])
+        options.append(option)
+
     connector_types = ["header"]
     pitches = ["2_54_mm_pitch"]
     mounting_types = ["through_hole"]
@@ -119,6 +129,36 @@ def main(**kwargs):
         option["taxonomy_14"] = socket["manufacturer"]
         option["taxonomy_15"] = socket["part_number"]
         options.append(option)
+
+    # easyC connector: Soldered's 4-pin 1.25 mm side-entry SMD socket
+    # (JST GH compatible), used by every easyC breakout.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "easyc", "taxonomy_4": "1_25_mm_pitch",
+        "taxonomy_5": "surface_mount_right_angle", "taxonomy_6": "4_pin",
+        "taxonomy_14": "jst", "taxonomy_15": "sm04b_gh_tf",
+        "name_short": "easyC Connector SM04B-GH-TF",
+    })
+    # RF connectors and terminal blocks seen on GNSS and sensor breakouts.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "u_fl", "taxonomy_4": "surface_mount",
+        "taxonomy_14": "i_pex", "taxonomy_15": "u_fl_r_smt_1",
+        "name_short": "U.FL Receptacle",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "sma", "taxonomy_4": "edge_mount",
+        "name_short": "SMA Edge Connector",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "terminal_block", "taxonomy_4": "5_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "2_pin",
+        "taxonomy_15": "kf235_5_0_2p",
+        "name_short": "Terminal Block KF235-5.0-2P",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "coin_cell_holder", "taxonomy_4": "through_hole",
+        "taxonomy_5": "cr1220",
+        "name_short": "CR1220 Coin Cell Holder",
+    })
 
     connector_types = ["usb_a"]
     mounting_types = ["surface_mount"]

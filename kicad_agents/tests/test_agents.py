@@ -1460,7 +1460,7 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         from PIL import Image
 
         preview_files = sorted((part_directory / "data").glob("working_svg*_300.png"))
-        self.assertEqual(len(preview_files), 10)
+        self.assertEqual(len(preview_files), 11)
         for preview_file in preview_files:
             with Image.open(preview_file) as preview_image:
                 self.assertLessEqual(max(preview_image.size), 300)

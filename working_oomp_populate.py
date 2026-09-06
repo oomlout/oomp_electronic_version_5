@@ -47,6 +47,10 @@ def main(**kwargs):
     working_oomp_populate_project.main(**kwargs)
     import working_oomp_populate_mounting_hole
     working_oomp_populate_mounting_hole.main(**kwargs)
+    import working_oomp_populate_sensor
+    working_oomp_populate_sensor.main(**kwargs)
+    import working_oomp_populate_potentiometer
+    working_oomp_populate_potentiometer.main(**kwargs)
 
 
     ###### populate taxonomy details and oobb details

@@ -58,6 +58,7 @@ kicad:
   hand_solder: ''
   machine_solder: Capacitor_SMD:C_0603_1608Metric
   symbol: Device:C_Small
+lcsc_search: 0603 2.2uF
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad
@@ -165,6 +166,13 @@ oomlout_ai_roboclick_2:
     resample: lanczos
   - allow_upscale: false
     command: image_resize
+    file_destination: data/working_svg_square_schematic_300.png
+    file_source: data/working_svg_square_schematic.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
     file_destination: data/working_svg_dimensioned_300.png
     file_source: data/working_svg_dimensioned.png
     maximum_dimension: 300
@@ -213,6 +221,7 @@ oomlout_ai_roboclick_3:
         hand_solder: ''
         machine_solder: Capacitor_SMD:C_0603_1608Metric
         symbol: Device:C_Small
+      lcsc_search: 0603 2.2uF
       manufacturer: Samsung Electro-Mechanics
       manufacturers:
       - manufacturer: Samsung Electro-Mechanics
@@ -306,6 +315,13 @@ oomlout_ai_roboclick_3:
           resample: lanczos
         - allow_upscale: false
           command: image_resize
+          file_destination: data/working_svg_square_schematic_300.png
+          file_source: data/working_svg_square_schematic.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
           file_destination: data/working_svg_dimensioned_300.png
           file_source: data/working_svg_dimensioned.png
           maximum_dimension: 300
@@ -370,6 +386,10 @@ oomlout_ai_roboclick_3:
           preview: data/working_svg_square_300.png
           svg: data/working_svg_square.svg
           title: Square summary
+        - png: data/working_svg_square_schematic.png
+          preview: data/working_svg_square_schematic_300.png
+          svg: data/working_svg_square_schematic.svg
+          title: Square schematic
         - png: data/working_svg_dimensioned.png
           preview: data/working_svg_dimensioned_300.png
           svg: data/working_svg_dimensioned.svg
@@ -395,6 +415,8 @@ oomlout_ai_roboclick_3:
           title: BIP 39 words
         - preview: data/working_svg_square_300.png
           title: Square summary
+        - preview: data/working_svg_square_schematic_300.png
+          title: Square schematic
         - preview: data/working_svg_dimensioned_300.png
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
@@ -523,6 +545,16 @@ oomlout_ai_roboclick_3:
         stylesheet: style_oomp
         svg_name: oomp_component_square_pins
         write_yaml: false
+      - filename_extra: square_schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_square_schematic
+        write_yaml: false
       - filename_extra: dimensioned
         make_a4: false
         output_formats:
@@ -541,6 +573,56 @@ oomlout_ai_roboclick_3:
         stylesheet: style_oomp
         svg_name: oomp_component_dimensioned_titles
         write_yaml: false
+      - filename_extra: schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic
+        write_yaml: false
+      - filename_extra: schematic_pins
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_pins
+        write_yaml: false
+      - filename_extra: schematic_part_id
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_part_id
+        write_yaml: false
+      - filename_extra: schematic_md5_6_alpha
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_md5_6_alpha
+        write_yaml: false
+      - filename_extra: schematic_bip_39_3_word
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_bip_39_3_word
+        write_yaml: false
       taxonomy_1: electronic
       taxonomy_10: ''
       taxonomy_11: ''
@@ -558,6 +640,125 @@ oomlout_ai_roboclick_3:
       taxonomy_9: ''
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design
+        name: Project soldered_electronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design
+          LSM9DS1TR IMU current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current
+        project_id: oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current
+        quantity: 2
+        references:
+        - C6
+        - C7
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+        name: Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design
+          CCS811 Breakout current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+        project_id: oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+        quantity: 2
+        references:
+        - C2
+        - C3
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Color-and-gesture-sensor-APDS-9960-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Color-and-gesture-sensor-APDS-9960-breakout-hardware-design
+        name: Project soldered_electronics/Color-and-gesture-sensor-APDS-9960-breakout-hardware-design
+          APDS-9960 Breakout current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current
+        project_id: oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current
+        quantity: 2
+        references:
+        - C4
+        - C5
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_color_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Color---gesture-sensor-APDS-9960-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Color---gesture-sensor-APDS-9960-breakout-hardware-design
+        name: Project soldered_electronics/Color---gesture-sensor-APDS-9960-breakout-hardware-design
+          APDS-9960 Breakout current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_color_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current
+        project_id: oomp_project_github_soldered_electronics_color_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current
+        quantity: 2
+        references:
+        - C4
+        - C5
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design
+        name: Project soldered_electronics/Current-sensor-30A-ACS712-breakout-hardware-design
+          ACS712 30A current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current
+        project_id: oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current
+        quantity: 1
+        references:
+        - C4
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design
+        name: Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design
+          LTR-507ALS Breakout current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current
+        project_id: oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current
+        quantity: 2
+        references:
+        - C3
+        - C4
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-hardware-design
+        name: Project soldered_electronics/GNSS-GPS-L86-M33-breakout-hardware-design
+          L86-M33 GNSS current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current
+        project_id: oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current
+        quantity: 2
+        references:
+        - C3
+        - C4
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/PIR-Movement-sensor-board-hardware-design
+        github_url: https://github.com/SolderedElectronics/PIR-Movement-sensor-board-hardware-design
+        name: Project soldered_electronics/PIR-Movement-sensor-board-hardware-design
+          PIR Movement Sensor current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current
+        project_id: oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current
+        quantity: 2
+        references:
+        - C1
+        - C2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_pressure_temperature_sensor_bmp388_breakout_hardware_design_sensor_pressure_temp_bmp388_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Pressure---temperature-sensor-BMP388-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Pressure---temperature-sensor-BMP388-breakout-hardware-design
+        name: Project soldered_electronics/Pressure---temperature-sensor-BMP388-breakout-hardware-design
+          BMP388 Breakout current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_pressure_temperature_sensor_bmp388_breakout_hardware_design_sensor_pressure_temp_bmp388_current
+        project_id: oomp_project_github_soldered_electronics_pressure_temperature_sensor_bmp388_breakout_hardware_design_sensor_pressure_temp_bmp388_current
+        quantity: 2
+        references:
+        - C3
+        - C4
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+        github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+        name: Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player
+          Breakout MY1690X-16S current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+        project_id: oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+        quantity: 2
+        references:
+        - C1
+        - C7
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
         github_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
@@ -625,6 +826,10 @@ part_page:
     preview: data/working_svg_square_300.png
     svg: data/working_svg_square.svg
     title: Square summary
+  - png: data/working_svg_square_schematic.png
+    preview: data/working_svg_square_schematic_300.png
+    svg: data/working_svg_square_schematic.svg
+    title: Square schematic
   - png: data/working_svg_dimensioned.png
     preview: data/working_svg_dimensioned_300.png
     svg: data/working_svg_dimensioned.svg
@@ -650,6 +855,8 @@ part_page:
     title: BIP 39 words
   - preview: data/working_svg_square_300.png
     title: Square summary
+  - preview: data/working_svg_square_schematic_300.png
+    title: Square schematic
   - preview: data/working_svg_dimensioned_300.png
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
@@ -777,6 +984,16 @@ svg_details:
   stylesheet: style_oomp
   svg_name: oomp_component_square_pins
   write_yaml: false
+- filename_extra: square_schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_schematic
+  write_yaml: false
 - filename_extra: dimensioned
   make_a4: false
   output_formats:
@@ -794,6 +1011,56 @@ svg_details:
   padding: 0
   stylesheet: style_oomp
   svg_name: oomp_component_dimensioned_titles
+  write_yaml: false
+- filename_extra: schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic
+  write_yaml: false
+- filename_extra: schematic_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_pins
+  write_yaml: false
+- filename_extra: schematic_part_id
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_part_id
+  write_yaml: false
+- filename_extra: schematic_md5_6_alpha
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_md5_6_alpha
+  write_yaml: false
+- filename_extra: schematic_bip_39_3_word
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_bip_39_3_word
   write_yaml: false
 taxonomy_1: electronic
 taxonomy_10: ''
@@ -868,6 +1135,125 @@ taxonomy_8: ''
 taxonomy_9: ''
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design
+  name: Project soldered_electronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design
+    LSM9DS1TR IMU current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current
+  project_id: oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current
+  quantity: 2
+  references:
+  - C6
+  - C7
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+  name: Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design
+    CCS811 Breakout current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+  project_id: oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+  quantity: 2
+  references:
+  - C2
+  - C3
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Color-and-gesture-sensor-APDS-9960-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Color-and-gesture-sensor-APDS-9960-breakout-hardware-design
+  name: Project soldered_electronics/Color-and-gesture-sensor-APDS-9960-breakout-hardware-design
+    APDS-9960 Breakout current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current
+  project_id: oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current
+  quantity: 2
+  references:
+  - C4
+  - C5
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_color_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Color---gesture-sensor-APDS-9960-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Color---gesture-sensor-APDS-9960-breakout-hardware-design
+  name: Project soldered_electronics/Color---gesture-sensor-APDS-9960-breakout-hardware-design
+    APDS-9960 Breakout current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_color_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current
+  project_id: oomp_project_github_soldered_electronics_color_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current
+  quantity: 2
+  references:
+  - C4
+  - C5
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design
+  name: Project soldered_electronics/Current-sensor-30A-ACS712-breakout-hardware-design
+    ACS712 30A current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current
+  project_id: oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current
+  quantity: 1
+  references:
+  - C4
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design
+  name: Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design
+    LTR-507ALS Breakout current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current
+  project_id: oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current
+  quantity: 2
+  references:
+  - C3
+  - C4
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-hardware-design
+  name: Project soldered_electronics/GNSS-GPS-L86-M33-breakout-hardware-design L86-M33
+    GNSS current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current
+  project_id: oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current
+  quantity: 2
+  references:
+  - C3
+  - C4
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/PIR-Movement-sensor-board-hardware-design
+  github_url: https://github.com/SolderedElectronics/PIR-Movement-sensor-board-hardware-design
+  name: Project soldered_electronics/PIR-Movement-sensor-board-hardware-design PIR
+    Movement Sensor current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current
+  project_id: oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current
+  quantity: 2
+  references:
+  - C1
+  - C2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_pressure_temperature_sensor_bmp388_breakout_hardware_design_sensor_pressure_temp_bmp388_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Pressure---temperature-sensor-BMP388-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Pressure---temperature-sensor-BMP388-breakout-hardware-design
+  name: Project soldered_electronics/Pressure---temperature-sensor-BMP388-breakout-hardware-design
+    BMP388 Breakout current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_pressure_temperature_sensor_bmp388_breakout_hardware_design_sensor_pressure_temp_bmp388_current
+  project_id: oomp_project_github_soldered_electronics_pressure_temperature_sensor_bmp388_breakout_hardware_design_sensor_pressure_temp_bmp388_current
+  quantity: 2
+  references:
+  - C3
+  - C4
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+  github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+  name: Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout
+    MY1690X-16S current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+  project_id: oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+  quantity: 2
+  references:
+  - C1
+  - C7
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219
   github_url: https://github.com/sparkfun/SparkFun_Qwiic_ADC_ADS1219

@@ -1,5 +1,48 @@
 def main(**kwargs):
     options = kwargs.get("options", [])
+
+    # Soldered/e-radionica breakout ICs identified by exact MPN in the
+    # schematics (added with the unmatched-components batch).
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_14",
+        "taxonomy_4": "microcontroller", "taxonomy_5": "8_bit_avr",
+        "taxonomy_14": "microchip", "taxonomy_15": "attiny404_ssnr",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23_5",
+        "taxonomy_4": "power_management", "taxonomy_5": "boost_converter",
+        "taxonomy_14": "texas_instruments", "taxonomy_15": "tps613222a",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8",
+        "taxonomy_4": "logic", "taxonomy_5": "comparator",
+        "taxonomy_15": "lm393",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23_5",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_3_3_volt",
+        "taxonomy_14": "richtek", "taxonomy_15": "rt9080_33",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23_5",
+        "taxonomy_4": "amplifier", "taxonomy_5": "operational_amplifier",
+        "taxonomy_14": "texas_instruments", "taxonomy_15": "opa344",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23_5",
+        "taxonomy_4": "sensor", "taxonomy_5": "hall_effect",
+        "taxonomy_14": "silicon_labs", "taxonomy_15": "si7211_b_00_iv",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23",
+        "taxonomy_4": "sensor", "taxonomy_5": "hall_effect",
+        "taxonomy_14": "silicon_labs", "taxonomy_15": "si7201_b_06_iv",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sop_16",
+        "taxonomy_4": "converter", "taxonomy_5": "load_cell_amplifier",
+        "taxonomy_14": "avia_semiconductor", "taxonomy_15": "hx711",
+    })
     options.append({
         "taxonomy_2": "ic", "taxonomy_3": "esp32_wroom_32e", "taxonomy_4": "microcontroller",
         "taxonomy_5": "wifi_bluetooth_8_mb_flash", "taxonomy_14": "espressif",

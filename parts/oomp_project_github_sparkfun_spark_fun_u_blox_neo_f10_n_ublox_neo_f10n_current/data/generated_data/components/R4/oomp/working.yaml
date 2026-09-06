@@ -167,6 +167,13 @@ oomlout_ai_roboclick_2:
     resample: lanczos
   - allow_upscale: false
     command: image_resize
+    file_destination: data/working_svg_square_schematic_300.png
+    file_source: data/working_svg_square_schematic.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
     file_destination: data/working_svg_dimensioned_300.png
     file_source: data/working_svg_dimensioned.png
     maximum_dimension: 300
@@ -310,6 +317,13 @@ oomlout_ai_roboclick_3:
           resample: lanczos
         - allow_upscale: false
           command: image_resize
+          file_destination: data/working_svg_square_schematic_300.png
+          file_source: data/working_svg_square_schematic.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
           file_destination: data/working_svg_dimensioned_300.png
           file_source: data/working_svg_dimensioned.png
           maximum_dimension: 300
@@ -375,6 +389,10 @@ oomlout_ai_roboclick_3:
           preview: data/working_svg_square_300.png
           svg: data/working_svg_square.svg
           title: Square summary
+        - png: data/working_svg_square_schematic.png
+          preview: data/working_svg_square_schematic_300.png
+          svg: data/working_svg_square_schematic.svg
+          title: Square schematic
         - png: data/working_svg_dimensioned.png
           preview: data/working_svg_dimensioned_300.png
           svg: data/working_svg_dimensioned.svg
@@ -400,6 +418,8 @@ oomlout_ai_roboclick_3:
           title: BIP 39 words
         - preview: data/working_svg_square_300.png
           title: Square summary
+        - preview: data/working_svg_square_schematic_300.png
+          title: Square schematic
         - preview: data/working_svg_dimensioned_300.png
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
@@ -528,6 +548,16 @@ oomlout_ai_roboclick_3:
         stylesheet: style_oomp
         svg_name: oomp_component_square_pins
         write_yaml: false
+      - filename_extra: square_schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_square_schematic
+        write_yaml: false
       - filename_extra: dimensioned
         make_a4: false
         output_formats:
@@ -546,6 +576,56 @@ oomlout_ai_roboclick_3:
         stylesheet: style_oomp
         svg_name: oomp_component_dimensioned_titles
         write_yaml: false
+      - filename_extra: schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic
+        write_yaml: false
+      - filename_extra: schematic_pins
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_pins
+        write_yaml: false
+      - filename_extra: schematic_part_id
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_part_id
+        write_yaml: false
+      - filename_extra: schematic_md5_6_alpha
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_md5_6_alpha
+        write_yaml: false
+      - filename_extra: schematic_bip_39_3_word
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_bip_39_3_word
+        write_yaml: false
       taxonomy_1: electronic
       taxonomy_10: ''
       taxonomy_11: ''
@@ -563,6 +643,64 @@ oomlout_ai_roboclick_3:
       taxonomy_9: ''
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+        name: Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design
+          CCS811 Breakout current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+        project_id: oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+        quantity: 4
+        references:
+        - R1
+        - R2
+        - R5
+        - R6
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-hardware-design
+        github_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-hardware-design
+        name: Project soldered_electronics/GNSS-GPS-L86-M33-breakout-hardware-design
+          L86-M33 GNSS current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current
+        project_id: oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current
+        quantity: 1
+        references:
+        - R2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current/board_explorer.html
+        board_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design
+        github_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design
+        name: Project soldered_electronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design
+          L86-M33 GNSS easyC current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current
+        project_id: oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current
+        quantity: 1
+        references:
+        - R2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+        github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+        name: Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player
+          Breakout MY1690X-16S current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+        project_id: oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+        quantity: 1
+        references:
+        - R9
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+        github_url: https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+        name: Project sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+          Capacitive Soil Moisture Sensor CY8CMBR3102 current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current
+        project_id: oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current
+        quantity: 1
+        references:
+        - R1
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_dan_f10_n_gnss_dan_f10n_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N
         github_url: https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N
@@ -582,6 +720,29 @@ oomlout_ai_roboclick_3:
         quantity: 1
         references:
         - R6
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953
+        github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953
+        name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953 Qwiic Current
+          Sensor ADE7953 current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current
+        project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current
+        quantity: 2
+        references:
+        - R3
+        - R6
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
+        github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
+        name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX Qwiic Current
+          Sensor INA2XX current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current
+        project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current
+        quantity: 1
+        references:
+        - R3
         version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q
@@ -670,6 +831,10 @@ part_page:
     preview: data/working_svg_square_300.png
     svg: data/working_svg_square.svg
     title: Square summary
+  - png: data/working_svg_square_schematic.png
+    preview: data/working_svg_square_schematic_300.png
+    svg: data/working_svg_square_schematic.svg
+    title: Square schematic
   - png: data/working_svg_dimensioned.png
     preview: data/working_svg_dimensioned_300.png
     svg: data/working_svg_dimensioned.svg
@@ -695,6 +860,8 @@ part_page:
     title: BIP 39 words
   - preview: data/working_svg_square_300.png
     title: Square summary
+  - preview: data/working_svg_square_schematic_300.png
+    title: Square schematic
   - preview: data/working_svg_dimensioned_300.png
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
@@ -822,6 +989,16 @@ svg_details:
   stylesheet: style_oomp
   svg_name: oomp_component_square_pins
   write_yaml: false
+- filename_extra: square_schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_schematic
+  write_yaml: false
 - filename_extra: dimensioned
   make_a4: false
   output_formats:
@@ -839,6 +1016,56 @@ svg_details:
   padding: 0
   stylesheet: style_oomp
   svg_name: oomp_component_dimensioned_titles
+  write_yaml: false
+- filename_extra: schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic
+  write_yaml: false
+- filename_extra: schematic_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_pins
+  write_yaml: false
+- filename_extra: schematic_part_id
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_part_id
+  write_yaml: false
+- filename_extra: schematic_md5_6_alpha
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_md5_6_alpha
+  write_yaml: false
+- filename_extra: schematic_bip_39_3_word
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_bip_39_3_word
   write_yaml: false
 taxonomy_1: electronic
 taxonomy_10: ''
@@ -913,6 +1140,64 @@ taxonomy_8: ''
 taxonomy_9: ''
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/Air-quality-sensor-CCS811-breakout-hardware-design
+  name: Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design
+    CCS811 Breakout current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+  project_id: oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current
+  quantity: 4
+  references:
+  - R1
+  - R2
+  - R5
+  - R6
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-hardware-design
+  github_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-hardware-design
+  name: Project soldered_electronics/GNSS-GPS-L86-M33-breakout-hardware-design L86-M33
+    GNSS current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current
+  project_id: oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current
+  quantity: 1
+  references:
+  - R2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current/board_explorer.html
+  board_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design
+  github_url: https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design
+  name: Project soldered_electronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design
+    L86-M33 GNSS easyC current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current
+  project_id: oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current
+  quantity: 1
+  references:
+  - R2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+  github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
+  name: Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout
+    MY1690X-16S current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+  project_id: oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current
+  quantity: 1
+  references:
+  - R9
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+  github_url: https://github.com/sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102
+  name: Project sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102 Capacitive
+    Soil Moisture Sensor CY8CMBR3102 current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current
+  project_id: oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current
+  quantity: 1
+  references:
+  - R1
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_dan_f10_n_gnss_dan_f10n_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N
   github_url: https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N
@@ -932,6 +1217,29 @@ used_in_projects:
   quantity: 1
   references:
   - R6
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953
+  github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953
+  name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_ADE7953 Qwiic Current Sensor
+    ADE7953 current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current
+  project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ade7953_qwiic_current_sensor_ade7953_current
+  quantity: 2
+  references:
+  - R3
+  - R6
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
+  github_url: https://github.com/sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX
+  name: Project sparkfun/SparkFun_Qwiic_Current_Sensor_INA2XX Qwiic Current Sensor
+    INA2XX current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current
+  project_id: oomp_project_github_sparkfun_spark_fun_qwiic_current_sensor_ina2_xx_qwiic_current_sensor_ina2xx_current
+  quantity: 1
+  references:
+  - R3
   version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q
