@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 4 pin
+# Connector Header PZ2.54-S04P-A60
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`
 
-Connector Header 2.54 mm pitch through-hole 4 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 10.16 &#x00D7; 2.48 mm.
+Connector Header PZ2.54-S04P-A60 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 10.16 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 4 pin pinout](data/working_svg_top.svg)
+![Connector Header PZ2.54-S04P-A60 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -37,6 +37,16 @@ Connector Header 2.54 mm pitch through-hole 4 pin is an OOMP electronic connecto
 | Width | 2.48 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `PZ2.54-S04P-A60` |
+| LCSC | [`C42431795`](https://www.lcsc.com/product-detail/C42431795.html) |
+| LCSC | [`C7429634`](https://www.lcsc.com/product-detail/C7429634.html) |
+| LCSC | [`C7429682`](https://www.lcsc.com/product-detail/C7429682.html) |
 
 
 
@@ -78,6 +88,8 @@ Connector Header 2.54 mm pitch through-hole 4 pin is an OOMP electronic connecto
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

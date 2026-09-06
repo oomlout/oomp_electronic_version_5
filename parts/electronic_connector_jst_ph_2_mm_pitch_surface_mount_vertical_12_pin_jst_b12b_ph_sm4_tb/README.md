@@ -100,6 +100,8 @@ Connector JST Ph B12B-PH-SM4-TB is an OOMP electronic connector definition. It u
 
 ![Square summary](data/working_svg_square_300.png)
 
+![Square schematic](data/working_svg_square_schematic_300.png)
+
 ![Dimensions](data/working_svg_dimensioned_300.png)
 
 ![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)

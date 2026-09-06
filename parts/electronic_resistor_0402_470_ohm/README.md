@@ -37,6 +37,16 @@ Resistor 470 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402J471 TS` |
+| LCSC | [`C2906945`](https://www.lcsc.com/product-detail/C2906945.html) |
+| LCSC | [`C2909361`](https://www.lcsc.com/product-detail/C2909361.html) |
+| LCSC | [`C25117`](https://www.lcsc.com/product-detail/C25117.html) |
+
+
 
 
 

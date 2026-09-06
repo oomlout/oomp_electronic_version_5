@@ -88,7 +88,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| J1 | 1 | Connector Header 2.54 mm pitch through-hole 4 pin | Conn_01x04 | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
+| J1 | 1 | Connector Header PZ2.54-S04P-A60 | Conn_01x04 | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | SW1 | 1 | Roller_Encoder_Switch | Roller_Encoder_Switch | `RollerEncoder:RollerEncoder` | unmatched |
 
 ## Main nets

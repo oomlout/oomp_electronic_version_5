@@ -77,30 +77,26 @@ const path = require('node:path');
     assert.equal(await page.evaluate(() => activeNet), candidate.netId);
     assert(await page.locator('.board-view:not([hidden]) .copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden)').count() > 0);
     assert(await row.locator('details').getAttribute('open') !== null, 'Pin menu stays expanded after selection');
-    // Pads live in the top-level .copper-pads group and are highlighted in
-    // place rather than being cloned into the under-artwork overlay.
-    assert(await page.locator('.board-view:not([hidden]) .copper-pads .selected-pin').count() > 0);
+    assert(await page.locator('.board-view:not([hidden]) .copper-overlay .copper-pad.selected-pin').count() > 0);
     assert.equal(await page.locator('.selected-pin-ring').count(), 0, 'No enlarged halo around exact-sized pads');
     const padRendering = await page.evaluate(() => {
       const view = document.querySelector('.board-view:not([hidden]) > svg');
       const overlay = view.querySelector('.copper-overlay');
       const part = view.querySelector('.board-component');
-      const anchor = overlay.querySelector('.copper-feature:not(.copper-pad) path, .copper-feature:not(.copper-pad) polygon');
-      const liftedPad = view.querySelector('.copper-pads .copper-pad .pad-anchor');
-      return {
-        belowArtwork: !!(overlay.compareDocumentPosition(part) & Node.DOCUMENT_POSITION_FOLLOWING),
-        stroke: anchor ? getComputedStyle(anchor).stroke : 'none',
-        rendering: anchor ? getComputedStyle(anchor).shapeRendering : 'geometricprecision',
-        padsAboveArtwork: !!(part.compareDocumentPosition(liftedPad) & Node.DOCUMENT_POSITION_FOLLOWING),
-        padFill: getComputedStyle(liftedPad).fill,
-        padStroke: getComputedStyle(liftedPad).stroke,
-      };
+      const anchor = overlay.querySelector('.copper-pad .pad-anchor');
+      return {belowArtwork: !!(overlay.compareDocumentPosition(part) & Node.DOCUMENT_POSITION_FOLLOWING),
+        stroke: getComputedStyle(anchor).stroke, rendering: getComputedStyle(anchor).shapeRendering};
     });
-    assert(padRendering.belowArtwork, 'Highlighted tracks sit below component labels');
+    assert(padRendering.belowArtwork, 'Selected pads and tracks sit below component labels');
+    assert.equal(padRendering.stroke, 'none', 'No rough screen-pixel pad edging');
     assert.equal(padRendering.rendering, 'geometricprecision');
-    assert(padRendering.padsAboveArtwork, 'Pads are lifted above the component artwork');
-    assert.equal(padRendering.padFill, 'rgb(255, 255, 255)', 'Pads are white-backed so traces never cut through');
-    assert.equal(padRendering.padStroke, 'rgb(0, 0, 0)', 'Pads carry a black outline for readability');
+    // The part artwork's own pads carry class="pad" and stay solid white on
+    // the board, with only the designator label rendered above them.
+    const artworkPads = await page.evaluate(() =>
+      [...document.querySelectorAll('.board-view .board-component .pad')]
+        .map(pad => getComputedStyle(pad).fill));
+    assert(artworkPads.length > 0, 'Part artwork includes pad primitives');
+    assert(artworkPads.every(fill => fill === 'rgb(255, 255, 255)'), 'Part artwork pads stay solid white on the board');
     assert.equal(await page.locator('.board-view[data-side="front"] > svg').getAttribute('viewBox'), initialViewBox, 'Selecting a net does not zoom by default');
     await page.locator('#zoom-to-net').check();
     const netViewBox = await page.locator('.board-view[data-side="front"] > svg').getAttribute('viewBox');
@@ -220,52 +216,44 @@ const path = require('node:path');
     assert(!(await page.evaluate(r => selectedReferences.has(r), candidate.reference)), 'Second click on the selected component deselects it');
     assert((await page.locator('#net-status').innerHTML()).includes('OOMP matching'), 'Deselecting returns to the matching summary');
     assert.equal(await page.locator('#detail p.empty').count(), 1, 'Deselecting everything restores the initial detail prompt');
-    // Bounding-box hitboxes: a click anywhere inside a part box selects the
-    // part, while copper above the hitbox layer still receives its own clicks.
+    // Outline-only selection: clicking a part's empty interior must not select
+    // it, and no invisible bounding-box layer may exist. Copper under a part
+    // stays directly clickable.
     const hitProbe = await page.evaluate(() => {
       const view = document.querySelector('.board-view[data-side="front"]');
       const svg = view.querySelector('svg');
       const partProbe = {found: false}, traceProbe = {found: false};
+      if (svg.querySelector('.component-hitbox, .component-hits')) partProbe.hitboxesLeft = true;
       for (const part of view.querySelectorAll('.board-component')) {
-        const hit = svg.querySelector(`.component-hitbox[data-reference="${part.dataset.reference}"]`);
-        if (!hit || partProbe.found) continue;
-        const b = hit.getBBox();
-        const point = new DOMPoint(b.x + b.width / 2, b.y + b.height / 2).matrixTransform(hit.getScreenCTM());
+        if (partProbe.found) break;
+        const b = part.getBBox();
+        const point = new DOMPoint(b.x + b.width / 2, b.y + b.height / 2).matrixTransform(part.getScreenCTM());
         const target = document.elementFromPoint(point.x, point.y);
-        if (target && !target.closest('.copper-feature')) {
-          partProbe.found = true;
-          partProbe.reference = part.dataset.reference;
-          partProbe.x = point.x; partProbe.y = point.y;
-        }
+        if (!target || target.closest('.copper-feature') || target.closest('.board-component') === part) continue;
+        partProbe.found = true;
+        partProbe.reference = part.dataset.reference;
+        partProbe.x = point.x; partProbe.y = point.y;
       }
       for (const segment of view.querySelectorAll('.copper-base .copper-segment')) {
-        if (traceProbe.found && traceProbe.insideBox) continue;
+        if (traceProbe.found) continue;
         const b = segment.getBBox();
         const point = new DOMPoint(b.x + b.width / 2, b.y + b.height / 2).matrixTransform(segment.getScreenCTM());
         const target = document.elementFromPoint(point.x, point.y);
         if (target !== segment && !(target && target.closest('.copper-feature') === segment)) continue;
-        // A trace running through a part box proves copper outranks the hitbox.
-        let insideBox = false;
-        for (const hit of svg.querySelectorAll('.component-hitbox')) {
-          const local = new DOMPoint(point.x, point.y).matrixTransform(hit.getScreenCTM().inverse());
-          const box = hit.getBBox();
-          if (local.x >= box.x && local.x <= box.x + box.width && local.y >= box.y && local.y <= box.y + box.height) { insideBox = true; break; }
-        }
-        if (traceProbe.found && !insideBox) continue;
         traceProbe.found = true;
-        traceProbe.insideBox = insideBox;
         traceProbe.netId = segment.dataset.netId;
         traceProbe.x = point.x; traceProbe.y = point.y;
       }
       return {partProbe, traceProbe};
     });
-    assert(hitProbe.partProbe.found, 'Board has a part with an open box interior to click');
-    await page.mouse.click(hitProbe.partProbe.x, hitProbe.partProbe.y);
-    assert(await page.evaluate(r => selectedReferences.has(r), hitProbe.partProbe.reference), 'Clicking inside the bounding box selects the part');
-    assert.equal(await page.locator('#detail h2').textContent(), hitProbe.partProbe.reference, 'The boxed part populates the detail pane');
+    assert(!hitProbe.partProbe.hitboxesLeft, 'No bounding-box hitboxes remain on the board');
+    if (hitProbe.partProbe.found) {
+      await page.mouse.click(hitProbe.partProbe.x, hitProbe.partProbe.y);
+      assert(!(await page.evaluate(r => selectedReferences.has(r), hitProbe.partProbe.reference)), 'Clicking a part\'s empty interior no longer selects it');
+    }
     if (hitProbe.traceProbe.found) {
       await page.mouse.click(hitProbe.traceProbe.x, hitProbe.traceProbe.y);
-      assert.equal(await page.evaluate(() => activeNet), hitProbe.traceProbe.netId, 'Traces stay clickable above the part hitboxes');
+      assert.equal(await page.evaluate(() => activeNet), hitProbe.traceProbe.netId, 'Traces stay clickable under and around the parts');
       const tracePart = await page.evaluate(() => byReference.get(activeReference));
       if (tracePart) assert(await page.evaluate(r => selectedReferences.has(r), tracePart.reference), 'Following a trace shows one of the parts it connects');
     }
@@ -314,18 +302,13 @@ const path = require('node:path');
         for (const pin of c.pads) if (pin.net_id) expected.add(pin.net_id);
       }
       const shown = [...document.querySelectorAll('.board-view:not([hidden]) .copper-overlay .copper-feature')];
-      // Pads highlight in place in .copper-pads, not via overlay clones.
-      const base = [...document.querySelectorAll('.board-view:not([hidden]) .copper-base .copper-feature')]
-        .filter(e => !e.classList.contains('copper-pad'));
-      const lifted = [...document.querySelectorAll('.board-view:not([hidden]) .copper-pads .copper-pad')];
+      const base = [...document.querySelectorAll('.board-view:not([hidden]) .copper-base .copper-feature')];
       return {expected: [...expected].sort(), actual: [...new Set(shown.map(e => e.dataset.netId))].sort(),
-        expectedFeatures: base.filter(e => expected.has(e.dataset.netId)).length, actualFeatures: shown.length,
-        liftedOnNet: lifted.filter(e => expected.has(e.dataset.netId) && e.classList.contains('on-net')).length};
+        expectedFeatures: base.filter(e => expected.has(e.dataset.netId)).length, actualFeatures: shown.length};
     });
     assert(bulk.expected.length > 1);
     assert.deepEqual(bulk.actual, bulk.expected);
     assert.equal(bulk.actualFeatures, bulk.expectedFeatures, 'Net union contains each feature exactly once');
-    assert(bulk.liftedOnNet > 0, 'Lifted pads highlight in place for the net union');
     await page.locator('#zoom-to-net').check();
     const bulkViewport = await page.locator('.board-view[data-side="front"] > svg').getAttribute('viewBox');
     assert(bulkViewport.split(/\s+/).every(n => Number.isFinite(Number(n))));
@@ -384,10 +367,6 @@ const path = require('node:path');
     assert((await searchLink.getAttribute('rel')).includes('noopener'));
     const factRows = await page.locator('.facts').textContent();
     assert(factRows.includes(searchExample.lcsc_search), 'The declared LCSC search value is shown in the facts');
-    // Pads are lifted above the component artwork in a dedicated group.
-    const padGroups = await page.evaluate(() =>
-      [...document.querySelectorAll('.board-view > svg .copper-pads')].map(group => group.querySelectorAll('.copper-pad').length));
-    assert(padGroups.length >= 1 && padGroups.every(count => count > 0), 'Each board view carries lifted pads');
     // A part with several LCSC options opens the options popup instead of
     // linking straight to one catalogue page.
     const popupState = await page.evaluate(() => {

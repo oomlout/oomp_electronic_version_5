@@ -37,6 +37,16 @@ Resistor 3300 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF3301TCE` |
+| LCSC | [`C25890`](https://www.lcsc.com/product-detail/C25890.html) |
+| LCSC | [`C2906923`](https://www.lcsc.com/product-detail/C2906923.html) |
+| LCSC | [`C137992`](https://www.lcsc.com/product-detail/C137992.html) |
+
+
 
 
 

@@ -37,6 +37,16 @@ Resistor 820000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F8203TS` |
+| LCSC | [`C2909386`](https://www.lcsc.com/product-detail/C2909386.html) |
+| LCSC | [`C67558`](https://www.lcsc.com/product-detail/C67558.html) |
+| LCSC | [`C2906968`](https://www.lcsc.com/product-detail/C2906968.html) |
+
+
 
 
 

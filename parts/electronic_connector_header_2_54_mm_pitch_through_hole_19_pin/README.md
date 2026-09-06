@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 19 pin
+# Connector Header PZ254-1-19-Z-8.5
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_19_pin`
 
-Connector Header 2.54 mm pitch through-hole 19 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 48.26 &#x00D7; 2.48 mm.
+Connector Header PZ254-1-19-Z-8.5 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 48.26 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 19 pin pinout](data/working_svg_top.svg)
+![Connector Header PZ254-1-19-Z-8.5 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -37,6 +37,16 @@ Connector Header 2.54 mm pitch through-hole 19 pin is an OOMP electronic connect
 | Width | 2.48 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `PZ254-1-19-Z-8.5` |
+| LCSC | [`C2894942`](https://www.lcsc.com/product-detail/C2894942.html) |
+| LCSC | [`C247840`](https://www.lcsc.com/product-detail/C247840.html) |
+| LCSC | [`C55130799`](https://www.lcsc.com/product-detail/C55130799.html) |
 
 
 
@@ -74,6 +84,8 @@ Connector Header 2.54 mm pitch through-hole 19 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

@@ -128,7 +128,7 @@ class CopperTests(unittest.TestCase):
             self.assertTrue((output / 'src' / 'board.svg').is_file())
             text = path.read_text(encoding='utf-8')
             self.assertNotIn('</script><script>alert(1)', text)
-            for control in ['copper-data', 'net-select', 'net-search', 'copper-layer', 'show-fills', 'show-traces', 'zoom-reset']:
+            for control in ['copper-data', 'copper-layer', 'show-fills', 'show-traces', 'zoom-reset', 'theme-select', 'lcsc-popup']:
                 self.assertIn(f'id="{control}"', text)
             self.assertIn("setZoom(zoomScale * Math.exp(exponent), event.clientX, event.clientY)", text)
             # The mouse branch must not capture the pointer: capture retargets

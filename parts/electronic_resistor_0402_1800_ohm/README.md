@@ -37,6 +37,16 @@ Resistor 1800 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F1801TS` |
+| LCSC | [`C2909310`](https://www.lcsc.com/product-detail/C2909310.html) |
+| LCSC | [`C163481`](https://www.lcsc.com/product-detail/C163481.html) |
+| LCSC | [`C2906882`](https://www.lcsc.com/product-detail/C2906882.html) |
+
+
 
 
 

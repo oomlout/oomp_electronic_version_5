@@ -7,6 +7,17 @@ import working_scad
 ###### utilities
 
 
+def _load_yaml_with_encoding(yaml_file):
+    """Load YAML text with UTF-8 first, then fall back to cp1252 for legacy files."""
+    for encoding in ["utf-8", "utf-8-sig", "cp1252"]:
+        try:
+            with open(yaml_file, "r", encoding=encoding) as file:
+                return yaml.safe_load(file)
+        except UnicodeDecodeError:
+            continue
+    raise UnicodeDecodeError("utf-8", b"", 0, 1, f"Unable to decode YAML file: {yaml_file}")
+
+
 def cleanup_raw_scad_artifacts(folder):
     if not folder or not os.path.isdir(folder):
         return
@@ -299,17 +310,16 @@ def generate_navigation(folder="parts", sort=["width", "height", "thickness"]):
             yaml_file = os.path.join(root, 'working.yaml')
             #if working.yaml isn't in the root directory, then do it
             if root != folder:
-                with open(yaml_file, 'r') as file:
-                    part = yaml.safe_load(file)
-                    # Process the loaded YAML content as needed
-                    part["folder"] = root
-                    part_name = root.replace(f"{folder}","")
-                    
-                    #remove all slashes
-                    part_name = part_name.replace("/","").replace("\\","")
-                    parts[part_name] = part
+                part = _load_yaml_with_encoding(yaml_file)
+                # Process the loaded YAML content as needed
+                part["folder"] = root
+                part_name = root.replace(f"{folder}","")
+                
+                #remove all slashes
+                part_name = part_name.replace("/","").replace("\\","")
+                parts[part_name] = part
 
-                    print(f"Loaded {yaml_file}")
+                print(f"Loaded {yaml_file}")
 
     pass
     

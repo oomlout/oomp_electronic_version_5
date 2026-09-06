@@ -93,7 +93,11 @@ class PopulateWorkflowTests(unittest.TestCase):
         populate.assert_called_once_with()
         define.assert_called_once_with(filter=filters, regenerate_pngs=False)
         navigation.assert_called_once_with(filter_text='electronic_resistor_0603_2000_ohm')
-        actions.assert_called_once_with(filter_text=filters, regenerate_pngs=False)
+        actions.assert_called_once_with(
+            filter_text=filters,
+            regenerate_pngs=False,
+            honour_normal_gates=True,
+        )
 
     def test_name_and_datasheet_geometry_survive_default_generation(self):
         option = {'taxonomy_1': 'electronic', 'taxonomy_2': 'ic', 'taxonomy_3': 'sot_23_5',

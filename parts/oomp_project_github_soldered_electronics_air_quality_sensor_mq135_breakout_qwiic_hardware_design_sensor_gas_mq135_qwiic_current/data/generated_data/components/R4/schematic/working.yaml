@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: R4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 27f1f3d9-ea7d-4219-a47f-fe000a45bf29
+  library_id: e-radionica.com schematics:0603R
+  unit: 1
+  body_style: 1
+  position:
+    x: 106.68
+    y: 112.395
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R4
+    Value: 10k
+    Footprint: e-radionica.com footprinti:0603R
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.175
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 103.505
+      y: 112.395
+    net: SDA5
+    net_aliases:
+    - SDA5
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '6'
+      pin_name: D2
+    - reference: U4
+      pin_number: '8'
+      pin_name: PB1
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.175
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 109.855
+      y: 112.395
+    net: SDA_PULL5
+    net_aliases:
+    - SDA_PULL5
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '3'
+      pin_name: ''
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.955
+        y: -0.7104
+      max:
+        x: 1.9804
+        y: 0.685
+      width: 3.9354
+      height: 1.3954
+      center:
+        x: 0.0127
+        y: -0.0127
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 104.725
+        y: 111.71
+      max:
+        x: 108.6604
+        y: 113.1054
+      width: 3.9354
+      height: 1.3954
+      center:
+        x: 106.6927
+        y: 112.4077
+  warnings: []
+connected_components:
+- reference: JP1
+  pin_number: '3'
+  pin_name: ''
+- reference: U2
+  pin_number: '6'
+  pin_name: D2
+- reference: U4
+  pin_number: '8'
+  pin_name: PB1

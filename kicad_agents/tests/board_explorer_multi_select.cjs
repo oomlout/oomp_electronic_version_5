@@ -71,8 +71,7 @@ module.exports = async function checkMultiSelect(page) {
   assert.deepEqual(await netIds(), examples.pins.map(p => p.net_id).sort(), 'Both pin nets are highlighted');
   const highlighted = await page.evaluate(() => {
     const pins = new Set();
-    // Pads are lifted into .copper-pads and highlighted in place.
-    for (const element of document.querySelectorAll('.copper-pads .copper-pad.selected-pin')) {
+    for (const element of document.querySelectorAll('.copper-overlay .copper-pad.selected-pin')) {
       pins.add(`${element.dataset.reference}.${element.dataset.pin}`);
     }
     return [...pins].sort();

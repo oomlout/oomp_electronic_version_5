@@ -37,6 +37,16 @@ Resistor 2400 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402J242TS` |
+| LCSC | [`C2929911`](https://www.lcsc.com/product-detail/C2929911.html) |
+| LCSC | [`C112296`](https://www.lcsc.com/product-detail/C112296.html) |
+| LCSC | [`C25882`](https://www.lcsc.com/product-detail/C25882.html) |
+
+
 
 
 
@@ -72,6 +82,8 @@ Resistor 2400 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

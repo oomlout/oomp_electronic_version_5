@@ -37,6 +37,16 @@ Resistor 75 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-0775RL` |
+| LCSC | [`C114757`](https://www.lcsc.com/product-detail/C114757.html) |
+| LCSC | [`C2906966`](https://www.lcsc.com/product-detail/C2906966.html) |
+| LCSC | [`C25133`](https://www.lcsc.com/product-detail/C25133.html) |
+
+
 
 
 

@@ -100,8 +100,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | D6 | 1 |  PESD0402 |  PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | unmatched |
 | FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
 | J1 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
-| J2 | 1 | Connector Header 2.54 mm pitch through-hole 9 pin | Conn_01x09 | `SparkFun-Connector:1x09` | [`electronic_connector_header_2_54_mm_pitch_through_hole_9_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_9_pin) |
-| J4 | 1 | Connector Header 2.54 mm pitch through-hole 6 pin | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
+| J2 | 1 | Connector Header KH-2.54PH180-1X9P-L11.5 | Conn_01x09 | `SparkFun-Connector:1x09` | [`electronic_connector_header_2_54_mm_pitch_through_hole_9_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_9_pin) |
+| J4 | 1 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | J5 | 1 | Val** | Val** | `SparkFun-Connector:SMA_Edge` | unmatched |
 | JP1, JP2, JP3, JP4, JP7, JP8 | 6 | ~ | ~ | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | JP5 | 1 | Measure | Measure | `SparkFun-Jumper:Jumper_2_PTH_SMD_Combo-NC` | unmatched |

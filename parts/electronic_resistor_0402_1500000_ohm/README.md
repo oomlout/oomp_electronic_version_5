@@ -37,6 +37,16 @@ Resistor 1.5e+06 Ohm 0402 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF1504TCE` |
+| LCSC | [`C22276`](https://www.lcsc.com/product-detail/C22276.html) |
+| LCSC | [`C138034`](https://www.lcsc.com/product-detail/C138034.html) |
+| LCSC | [`C159956`](https://www.lcsc.com/product-detail/C159956.html) |
+
+
 
 
 

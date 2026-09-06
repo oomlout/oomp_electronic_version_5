@@ -93,6 +93,7 @@ Population files are the source of truth. Do not fix generated
 | `pcb_copper.py` | Extracts saved traces, vias, copper pads and fills; builds named-net indices and correctly mirrored SVG overlays. | `pcb_files[].copper` in project JSON/YAML; inline explorer copper |
 | `project_readme_action.py` | Roboclick coordinator for processing, review queues, summary generation, and the explorer. | Complete `data/generated_data` project bundle |
 | `interactive_html_bom_action.py` | Runs the vendored InteractiveHtmlBom generator headlessly with KiCad's Python runtime. | `data/interactivehtmlbom/ibom.html` and generation status |
+| `production_jlc_action.py` / `production_jlc_agent.py` | Runs KiCad's native CLI, converts position/BOM data to JLCPCB columns, enriches it from confirmed OOMP parts, and records missing purchasing identities without guessing. | Four JLC deliverables in `data/production_auto_generate/`; audit files in its `data/` subfolder. |
 
 ### Verification agent
 

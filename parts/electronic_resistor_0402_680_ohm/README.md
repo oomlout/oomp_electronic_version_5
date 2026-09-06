@@ -37,6 +37,16 @@ Resistor 680 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-07680RL` |
+| LCSC | [`C137948`](https://www.lcsc.com/product-detail/C137948.html) |
+| LCSC | [`C2906959`](https://www.lcsc.com/product-detail/C2906959.html) |
+| LCSC | [`C25177`](https://www.lcsc.com/product-detail/C25177.html) |
+
+
 
 
 

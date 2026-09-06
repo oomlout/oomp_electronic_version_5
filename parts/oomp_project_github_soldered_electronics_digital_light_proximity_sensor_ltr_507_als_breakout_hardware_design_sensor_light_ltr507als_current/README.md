@@ -1,0 +1,146 @@
+# Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design LTR-507ALS Breakout current
+
+[View the project on GitHub](https://github.com/SolderedElectronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design)
+
+[Open the interactive board explorer (GitHub Pages)](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/board_explorer.html)
+
+[Browse this project category](../../navigation/oomp/project/github/soldered_electronics/digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design/sensor_light_ltr507als/README.md)
+
+![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_300.png)
+
+Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design LTR-507ALS Breakout current is a KiCad project containing 70 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
+
+## Project snapshot
+
+| Item | Count |
+| --- | ---: |
+| Components | 70 |
+| PCB footprints | 56 |
+| Mounting and locating holes | 4 |
+| Matched OOMP mounting-hole items | 4 |
+| Schematic symbols | 46 |
+| Matched OOMP components | 13 |
+| Unmatched physical components | 37 |
+| Front-side placements | 18 |
+| Back-side placements | 3 |
+| Project version | `current` |
+| Git ref | `main` |
+
+## Board
+
+[Original KiCad files](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/original) · [OOMP KiCad design and local libraries](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/oomp_design) · [Conversion / skipped-item report](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/oomp_design/conversion_report.yaml)
+
+The OOMP design is a separate copy. Only symbols and footprints verified against unchanged installed KiCad masters are replaced; custom and modified items are retained.
+
+- Approximate size: **22.0 mm × 38.0 mm**
+- Outline source: `KiCad Edge.Cuts`
+- Placement drawing: [view `board.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board.svg)
+- PNG placement drawing: [view `board.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board.png)
+- 300-pixel placement preview: [view `board_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_300.png)
+- Placement drawing with pin names: [view `board_pins.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_pins.svg)
+- PNG drawing with pin names: [view `board_pins.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_pins.png)
+- 300-pixel pin preview: [view `board_pins_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_pins_300.png)
+- Bottom placement drawing: [view `board_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_bottom.svg)
+- Bottom PNG placement drawing: [view `board_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_bottom.png)
+- 300-pixel bottom preview: [view `board_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_bottom_300.png)
+- Bottom placement drawing with pin names: [view `board_pins_bottom.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_pins_bottom.svg)
+- Bottom PNG drawing with pin names: [view `board_pins_bottom.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_pins_bottom.png)
+- 300-pixel bottom pin preview: [view `board_pins_bottom_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_pins_bottom_300.png)
+- Mechanical drawing: [view `board_mechanical.svg`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_mechanical.svg)
+- Mechanical PNG: [view `board_mechanical.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_mechanical.png)
+- 300-pixel mechanical preview: [view `board_mechanical_300.png`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_mechanical_300.png)
+- Open the board explorer on GitHub Pages: [explore this board](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/board_explorer.html)
+- InteractiveHtmlBom generation is configured; install KiCad or set `KICAD_PYTHON` to its bundled Python to build `data/interactivehtmlbom/ibom.html`.
+
+## Board with pins
+
+![PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_pins_300.png)
+
+## Bottom board with pins
+
+The bottom view is mirrored horizontally so it is shown as viewed from beneath the assembled board.
+
+![Bottom PCB component placement with pin names](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_pins_bottom_300.png)
+
+## Mechanical layer
+
+![PCB mechanical layer with mounting holes](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_mechanical_300.png)
+
+The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. This point is shown as **0,0** in the mechanical drawing; X increases right and Y increases down. Original KiCad coordinates are retained alongside it.
+
+### Diameter 3.2 mm holes
+
+| OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | --- | ---: | ---: | --- |
+| `MH1` | `H1` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | locating | 3.000 | 35.000 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
+| `MH2` | `H2` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | locating | 3.000 | 3.000 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
+| `MH3` | `H3` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | locating | 19.000 | 35.000 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
+| `MH4` | `H4` | Mounting Hole 3.2 mm Round Unplated | `mechanical / mounting_hole / 3_2_mm / round / unplated` | locating | 19.000 | 3.000 | [`mechanical_mounting_hole_3_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_2_mm_round_unplated) |
+
+
+## Bill of materials
+
+| References | Quantity | Description | Value | Footprint | OOMP part |
+| --- | ---: | --- | --- | --- | --- |
+| C1 | 1 | Capacitor 4.7 uF 0603 | 4u7 | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_4_7_micro_farad) |
+| C2 | 1 | Capacitor 100 nF 0603 | 100n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
+| C3, C4 | 2 | Capacitor 2.2 uF 0603 | 2u2 | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
+| JP1, JP2 | 2 | SMD_JUMPER_3_PAD_TRACE | SMD_JUMPER_3_PAD_TRACE | `e-radionica.com footprinti:SMD_JUMPER_3_PAD_TRACE` | unmatched |
+| JP3 | 1 | JUMPER_3_RIGHT | JUMPER_3_RIGHT | `e-radionica.com footprinti:SMD_JUMPER_3_PAD_CONNECTED_RIGHT` | unmatched |
+| JP4 | 1 | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | `e-radionica.com footprinti:SMD-JUMPER-CONNECTED_TRACE_SLODERMASK` | unmatched |
+| JP5 | 1 | SMD_JUMPER | SMD_JUMPER | `e-radionica.com footprinti:SMD_JUMPER` | unmatched |
+| K1 | 1 | HEADER_MALE_3X1 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | unmatched |
+| K2, K4 | 2 | easyC-SMD | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | unmatched |
+| K3 | 1 | HEADER_MALE_4X1 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | unmatched |
+| R1, R2, R3, R4, R5 | 5 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| U1 | 1 | NMOS-DUAL | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | unmatched |
+| U2 | 1 | LTR-507ALS-01 | LTR-507ALS-01 | `e-radionica.com footprinti:LTR-507ALS-01` | unmatched |
+| U3 | 1 | SE5218 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
+
+## Main nets
+
+| Net | Pads | Components |
+| --- | ---: | --- |
+| `GND` | 16 | C1, C2, C3, C4, JP3, K1, K2, K3, K4, U2, U3 |
+| `3V3` | 13 | C1, C2, C4, JP2, JP3, JP5, K2, K4, R5, U1, U2, U3 |
+| `SCL3,3` | 5 | K2, K4, R4, U1, U2 |
+| `SDA3,3` | 5 | K2, K4, R1, U1, U2 |
+| `5V` | 4 | JP1, JP4, JP5, K3 |
+| `Net-(C3-Pad2)` | 4 | C3, JP4, U3 |
+| `INT` | 3 | K1, R5, U2 |
+| `SCL5` | 3 | K3, R2, U1 |
+| `SDA5` | 3 | K3, R3, U1 |
+| `SCL_PULL3,3` | 2 | JP2, R4 |
+| `SCL_PULL5` | 2 | JP1, R2 |
+| `SDA_PULL3,3` | 2 | JP2, R1 |
+| `SDA_PULL5` | 2 | JP1, R3 |
+| `SEL` | 2 | JP3, U2 |
+| `VLED` | 2 | K1, U2 |
+| `unconnected-(U3-Pad4)` | 1 | U3 |
+
+## Design notes
+
+- The extracted board outline is approximately 22.0 mm by 38.0 mm.
+- Placement data contains 18 front-side and 3 back-side components.
+
+## Review notes
+
+- 37 physical component records are not yet matched to an OOMP part.
+
+- Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/lcsc_review.yaml)
+- Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/browser_research_queue.md)
+
+## Generated source bundle
+
+- Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src)
+- Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
+- Matched OOMP source parts copied: 5
+
+## Source files
+
+- Schematic: `data/kicad_file.kicad_sch`
+- PCB: `data/kicad_file.kicad_pcb`
+
+---
+
+Generated deterministically by `kicad_agents.project_summary_agent`; no LLM-authored content is used.

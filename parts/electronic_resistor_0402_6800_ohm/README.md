@@ -37,6 +37,16 @@ Resistor 6800 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-076K8L` |
+| LCSC | [`C93940`](https://www.lcsc.com/product-detail/C93940.html) |
+| LCSC | [`C2906876`](https://www.lcsc.com/product-detail/C2906876.html) |
+| LCSC | [`C54920698`](https://www.lcsc.com/product-detail/C54920698.html) |
+
+
 
 
 

@@ -37,6 +37,16 @@ Resistor 1e+06 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402J105 TS` |
+| LCSC | [`C2906900`](https://www.lcsc.com/product-detail/C2906900.html) |
+| LCSC | [`C138033`](https://www.lcsc.com/product-detail/C138033.html) |
+| LCSC | [`C26083`](https://www.lcsc.com/product-detail/C26083.html) |
+
+
 
 
 

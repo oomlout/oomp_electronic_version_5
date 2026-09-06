@@ -161,6 +161,12 @@ def make_svg_generic(part):
         else:
             working_svg.get_base(thing, **kwargs)
 
+        # Assembly drawings are placed true-scale over routed copper on project
+        # boards.  Keep their pads solid white and above the body artwork, with
+        # only pin labels and pin-1 markers rendered higher.
+        if kwargs.get("stylesheet") == "style_oomp_assembly":
+            _lift_pads_above_body(thing)
+
         filename_extra = svg_detail.get("filename_extra", "")
         suffix = f"_{filename_extra}" if filename_extra else ""
         svg_path = os.path.join(folder, f"working_svg{suffix}.svg")
@@ -277,6 +283,27 @@ def make_svg_generic(part):
 # BIP reference, i.e. a 0.0913 stroke fraction.
 _ASSEMBLY_LINE_REFERENCE_MM = 4.0247
 _BIP_REFERENCE_DIAGONAL_MM = math.hypot(38.0, 24.0)
+
+
+def _lift_pads_above_body(thing):
+    """Reorder assembly primitives so pads sit above the body artwork.
+
+    Pads keep their solid white fill instead of being cut through by the
+    component body drawn later; pin labels and pin-1 markers stay above them.
+    The sort is stable, so the original drawing order is kept within each
+    group.
+    """
+
+    def rank(component):
+        if component.get("css_class") == "pad":
+            return 1
+        if component.get("shape") == "text" or str(component.get("style_name", "")).startswith("component.pin_one"):
+            return 2
+        return 0
+
+    components = thing.get("svg_components", [])
+    if components:
+        thing["svg_components"] = sorted(components, key=rank)
 
 
 def _scale_assembly_strokes(svg_contents):

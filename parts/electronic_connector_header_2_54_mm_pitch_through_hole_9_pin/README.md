@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 9 pin
+# Connector Header KH-2.54PH180-1X9P-L11.5
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_9_pin`
 
-Connector Header 2.54 mm pitch through-hole 9 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 22.86 &#x00D7; 2.48 mm.
+Connector Header KH-2.54PH180-1X9P-L11.5 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 22.86 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 9 pin pinout](data/working_svg_top.svg)
+![Connector Header KH-2.54PH180-1X9P-L11.5 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -37,6 +37,16 @@ Connector Header 2.54 mm pitch through-hole 9 pin is an OOMP electronic connecto
 | Width | 2.48 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `KH-2.54PH180-1X9P-L11.5` |
+| LCSC | [`C2932701`](https://www.lcsc.com/product-detail/C2932701.html) |
+| LCSC | [`C7429639`](https://www.lcsc.com/product-detail/C7429639.html) |
+| LCSC | [`C7429612`](https://www.lcsc.com/product-detail/C7429612.html) |
 
 
 
@@ -74,6 +84,8 @@ Connector Header 2.54 mm pitch through-hole 9 pin is an OOMP electronic connecto
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

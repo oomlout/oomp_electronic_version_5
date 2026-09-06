@@ -37,6 +37,16 @@ Resistor 5600 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F5601TS` |
+| LCSC | [`C2909364`](https://www.lcsc.com/product-detail/C2909364.html) |
+| LCSC | [`C25908`](https://www.lcsc.com/product-detail/C25908.html) |
+| LCSC | [`C137856`](https://www.lcsc.com/product-detail/C137856.html) |
+
+
 
 
 

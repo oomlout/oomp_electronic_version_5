@@ -40,6 +40,8 @@ DETERMINISTIC_SOURCE_FILES = [
     "kicad_agents/project_summary_agent.py",
     "kicad_agents/project_html_agent.py",
     "kicad_agents/project_usage_action.py",
+    "kicad_agents/production_jlc_agent.py",
+    "kicad_agents/production_jlc_action.py",
 ]
 
 
@@ -162,6 +164,7 @@ def run_audit(repository_root):
             if is_project:
                 required_python_actions.append("kicad_agents/project_git_action.py")
                 required_python_actions.append("kicad_agents/project_readme_action.py")
+                required_python_actions.append("kicad_agents/production_jlc_action.py")
             missing_python_actions = []
             for required_python_action in required_python_actions:
                 if required_python_action not in python_files:
@@ -176,6 +179,44 @@ def run_audit(repository_root):
                         "actions": missing_python_actions,
                     }
                 )
+
+            if is_project and "kicad_agents/production_jlc_action.py" in python_files:
+                production_mode = None
+                for mode_name, mode_details in working.items():
+                    if not str(mode_name).startswith("oomlout_") or not isinstance(mode_details, dict):
+                        continue
+                    for action in mode_details.get("actions", []):
+                        python_file = str(action.get("file_python", "")).replace("\\", "/")
+                        if python_file == "kicad_agents/production_jlc_action.py":
+                            production_mode = mode_details
+                expected_gate = "data/production_auto_generate/data/generation_status.yaml"
+                if production_mode is None or not production_mode.get("always_run_on_regeneration", False):
+                    findings.append(
+                        {
+                            "severity": "error",
+                            "code": "production_not_forced_on_regeneration",
+                            "part_id": part_directory.name,
+                            "message": "JLC production mode must be forced during single and full regeneration.",
+                        }
+                    )
+                elif not production_mode.get("honour_gate_in_normal_run", False):
+                    findings.append(
+                        {
+                            "severity": "error",
+                            "code": "production_normal_gate_not_honoured",
+                            "part_id": part_directory.name,
+                            "message": "Normal generation must honour the JLC production gate.",
+                        }
+                    )
+                elif production_mode.get("file_test", "") != expected_gate:
+                    findings.append(
+                        {
+                            "severity": "error",
+                            "code": "production_gate_missing",
+                            "part_id": part_directory.name,
+                            "message": "JLC production mode must use the final generation-status file as its gate.",
+                        }
+                    )
 
             part_checks.append(
                 {

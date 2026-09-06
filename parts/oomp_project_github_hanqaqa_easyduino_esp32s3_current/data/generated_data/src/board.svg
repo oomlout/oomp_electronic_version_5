@@ -2,13 +2,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="121.0450 46.3900 37.9800 83.7400">
 <defs>
 <style>
-.page { fill: #FFFFFF; }
-.board { fill: #FFFFFF; stroke: #000000; stroke-width: 0.35; }
-.edge-cut { fill: none; stroke: #000000; stroke-width: 0.25; }
-.component { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mechanical-pad { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mounting-hole { fill: #FFFFFF; stroke: #000000; stroke-width: 0.22; }
-.reference { fill: #000000; font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: #FFFFFF; stroke-width: 0.35px; }
+.page { fill: var(--brd-page, #FFFFFF); }
+.board { fill: var(--brd-board-fill, #FFFFFF); stroke: var(--brd-board-outline, #000000); stroke-width: 0.35; }
+.edge-cut { fill: none; stroke: var(--brd-board-outline, #000000); stroke-width: 0.25; }
+.component { fill: var(--brd-component-fill, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mechanical-pad { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mounting-hole { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.22; }
+.reference { fill: var(--brd-text, #000000); font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, #FFFFFF); stroke-width: 0.35px; }
+.indicator-plate { fill: var(--brd-plate, #FFFFFF); }
+.indicator-text { fill: var(--brd-plate-text, #000000); }
 </style>
 </defs>
 <rect class="page" x="121.0450" y="46.3900" width="37.9800" height="83.7400" />
@@ -24,52 +26,52 @@
   <rect x="0.0000" y="0.3000" width="8.9400" height="7.3500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
   <rect x="2.2700" y="2.3250" width="1.0000" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
   <rect x="5.6700" y="2.3250" width="1.0000" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="1.0200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="1.2700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="1.8200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="2.0700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="2.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="3.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="3.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="4.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="4.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="5.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="5.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="6.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="6.6200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="6.8700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="7.4200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="7.6700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.0000" y="0.4000" width="0.3000" height="1.1000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.0000" y="5.0500" width="0.3000" height="0.8000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="8.6400" y="0.4000" width="0.3000" height="1.1000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="8.6400" y="5.0500" width="0.3000" height="0.8000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="1.0200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="1.2700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="1.8200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="2.0700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="2.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="3.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="3.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="4.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="4.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="5.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="5.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="6.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="6.6200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="6.8700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="7.4200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="7.6700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.0000" y="0.4000" width="0.3000" height="1.1000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.0000" y="5.0500" width="0.3000" height="0.8000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="8.6400" y="0.4000" width="0.3000" height="1.1000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="8.6400" y="5.0500" width="0.3000" height="0.8000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="J2" data-oomp-id="electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073" tabindex="0" transform="translate(146.9500 119.9250) rotate(0.0000)">
 <g transform="translate(0.0000 -0.3350) rotate(0)"><svg x="-4.4700" y="-3.9750" width="8.9400" height="7.9500" viewBox="0 0 8.9400 7.9500" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="8.9400" height="7.9500"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.3000" width="8.9400" height="7.3500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
   <rect x="2.2700" y="2.3250" width="1.0000" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
   <rect x="5.6700" y="2.3250" width="1.0000" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="1.0200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="1.2700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="1.8200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="2.0700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="2.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="3.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="3.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="4.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="4.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="5.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="5.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="6.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="6.6200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="6.8700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="7.4200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="7.6700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.0000" y="0.4000" width="0.3000" height="1.1000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.0000" y="5.0500" width="0.3000" height="0.8000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="8.6400" y="0.4000" width="0.3000" height="1.1000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="8.6400" y="5.0500" width="0.3000" height="0.8000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="1.0200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="1.2700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="1.8200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="2.0700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="2.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="3.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="3.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="4.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="4.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="5.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="5.5950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="6.0950" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="6.6200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="6.8700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="7.4200" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="7.6700" y="0.0000" width="0.2500" height="0.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.0000" y="0.4000" width="0.3000" height="1.1000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.0000" y="5.0500" width="0.3000" height="0.8000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="8.6400" y="0.4000" width="0.3000" height="1.1000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="8.6400" y="5.0500" width="0.3000" height="0.8000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="U5" data-oomp-id="" tabindex="0" transform="translate(140.7000 99.0000) rotate(0.0000)">
 <rect class="component" x="-4.4250" y="-3.7000" width="8.8500" height="7.3250" rx="0.2" />
@@ -81,15 +83,15 @@
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-2.4000" y="-1.5000" width="4.8000" height="3.0000" viewBox="0 0 4.8000 3.0000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="4.8000" height="3.0000"  fill="none" stroke="none" />
   <rect x="0.4000" y="0.0000" width="4.0000" height="3.0000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
   <circle cx="2.4000" cy="1.5000" r="0.8500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.8500" width="0.4000" height="1.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="4.4000" y="0.8500" width="0.4000" height="1.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.8500" width="0.4000" height="1.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="4.4000" y="0.8500" width="0.4000" height="1.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="SW1" data-oomp-id="electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016" tabindex="0" transform="translate(136.3000 93.2000) rotate(0.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-2.4000" y="-1.5000" width="4.8000" height="3.0000" viewBox="0 0 4.8000 3.0000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="4.8000" height="3.0000"  fill="none" stroke="none" />
   <rect x="0.4000" y="0.0000" width="4.0000" height="3.0000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
   <circle cx="2.4000" cy="1.5000" r="0.8500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.8500" width="0.4000" height="1.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="4.4000" y="0.8500" width="0.4000" height="1.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.8500" width="0.4000" height="1.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="4.4000" y="0.8500" width="0.4000" height="1.3000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="Q1" data-oomp-id="" tabindex="0" transform="translate(136.2000 88.8000) rotate(-180.0000)">
 <rect class="component" x="-1.9750" y="-1.9500" width="3.9500" height="3.7150" rx="0.2" />
@@ -100,31 +102,31 @@
 <g class="board-component" data-reference="C6" data-oomp-id="electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt" tabindex="0" transform="translate(134.4500 99.2000) rotate(-90.0000)">
 <g transform="translate(-0.0225 0.0000) rotate(0)"><svg x="-1.6000" y="-0.8000" width="3.2000" height="1.6000" viewBox="0 0 3.2000 1.6000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="3.2000" height="1.6000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="3.2000" height="1.6000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="-0.0000" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="2.6240" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8850" y="0.2000" width="0.1500" height="1.2000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="-0.0000" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="2.6240" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8850" y="0.2000" width="0.1500" height="1.2000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C7" data-oomp-id="electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt" tabindex="0" transform="translate(146.9500 99.4000) rotate(-90.0000)">
 <g transform="translate(-0.0225 0.0000) rotate(0)"><svg x="-1.6000" y="-0.8000" width="3.2000" height="1.6000" viewBox="0 0 3.2000 1.6000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="3.2000" height="1.6000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="3.2000" height="1.6000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="-0.0000" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="2.6240" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8850" y="0.2000" width="0.1500" height="1.2000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="-0.0000" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="2.6240" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8850" y="0.2000" width="0.1500" height="1.2000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C10" data-oomp-id="electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt" tabindex="0" transform="translate(141.0000 82.6000) rotate(0.0000)">
 <g transform="translate(-0.0225 0.0000) rotate(0)"><svg x="-1.6000" y="-0.8000" width="3.2000" height="1.6000" viewBox="0 0 3.2000 1.6000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="3.2000" height="1.6000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="3.2000" height="1.6000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="-0.0000" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="2.6240" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8850" y="0.2000" width="0.1500" height="1.2000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="-0.0000" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="2.6240" y="0.0000" width="0.5760" height="1.6000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8850" y="0.2000" width="0.1500" height="1.2000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="D1" data-oomp-id="electronic_led_0402" tabindex="0" transform="translate(140.6000 114.0100) rotate(90.0000)">
 <g transform="translate(-0.1175 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
   <circle cx="0.5000" cy="0.2500" r="0.1667"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0493" />
-  <line x1="0.2700" y1="0.4000" x2="0.2700" y2="0.1000"  fill="#000000" stroke="#000000" stroke-width="0.0716" /></svg></g>
+  <line x1="0.2700" y1="0.4000" x2="0.2700" y2="0.1000"  fill="#000000" stroke="#000000" stroke-width="0.0716" />
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="D3" data-oomp-id="" tabindex="0" transform="translate(144.1500 113.9000) rotate(90.0000)">
 <rect class="component" x="-1.1900" y="-0.4950" width="2.1450" height="0.9900" rx="0.2" />
@@ -132,10 +134,10 @@
 <g class="board-component" data-reference="D4" data-oomp-id="electronic_led_0402" tabindex="0" transform="translate(145.6850 106.0000) rotate(-180.0000)">
 <g transform="translate(-0.1175 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
   <circle cx="0.5000" cy="0.2500" r="0.1667"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0493" />
-  <line x1="0.2700" y1="0.4000" x2="0.2700" y2="0.1000"  fill="#000000" stroke="#000000" stroke-width="0.0716" /></svg></g>
+  <line x1="0.2700" y1="0.4000" x2="0.2700" y2="0.1000"  fill="#000000" stroke="#000000" stroke-width="0.0716" />
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="D2" data-oomp-id="" tabindex="0" transform="translate(136.8500 113.9175) rotate(90.0000)">
 <rect class="component" x="-1.1900" y="-0.4950" width="2.1450" height="0.9900" rx="0.2" />
@@ -143,148 +145,148 @@
 <g class="board-component" data-reference="R2" data-oomp-id="electronic_resistor_0402_5100_ohm" tabindex="0" transform="translate(131.3500 113.9000) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R4" data-oomp-id="electronic_resistor_0402_10000_ohm" tabindex="0" transform="translate(142.4000 85.4000) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R5" data-oomp-id="electronic_resistor_0402_10000_ohm" tabindex="0" transform="translate(143.6000 85.4000) rotate(90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R7" data-oomp-id="electronic_resistor_0402_5100_ohm" tabindex="0" transform="translate(145.2500 113.9100) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R8" data-oomp-id="electronic_resistor_0402_5100_ohm" tabindex="0" transform="translate(148.9000 113.8900) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R9" data-oomp-id="electronic_resistor_0402_2400_ohm" tabindex="0" transform="translate(145.6850 104.7000) rotate(0.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R10" data-oomp-id="electronic_resistor_0402_10000_ohm" tabindex="0" transform="translate(138.6900 107.1000) rotate(0.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R11" data-oomp-id="electronic_resistor_0402_5100_ohm" tabindex="0" transform="translate(138.7000 108.2000) rotate(0.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R1" data-oomp-id="electronic_resistor_0402_10000_ohm" tabindex="0" transform="translate(135.2000 85.2900) rotate(90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R3" data-oomp-id="electronic_resistor_0402_5100_ohm" tabindex="0" transform="translate(135.7000 113.9000) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="R6" data-oomp-id="electronic_resistor_0402_5100_ohm" tabindex="0" transform="translate(139.4500 114.0000) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C1" data-oomp-id="electronic_capacitor_0402_1_micro_farad" tabindex="0" transform="translate(138.0500 111.7000) rotate(90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C2" data-oomp-id="electronic_capacitor_0402_100_nano_farad" tabindex="0" transform="translate(136.8500 111.7000) rotate(90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C3" data-oomp-id="electronic_capacitor_0402_100_nano_farad" tabindex="0" transform="translate(135.7000 111.7000) rotate(90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C4" data-oomp-id="electronic_capacitor_0402_100_nano_farad" tabindex="0" transform="translate(137.6000 85.3200) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C5" data-oomp-id="electronic_capacitor_0402_100_nano_farad" tabindex="0" transform="translate(138.8000 85.3200) rotate(90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C8" data-oomp-id="electronic_capacitor_0402_100_nano_farad" tabindex="0" transform="translate(136.4000 85.3200) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="C9" data-oomp-id="electronic_capacitor_0402_100_nano_farad" tabindex="0" transform="translate(144.8000 85.4000) rotate(-90.0000)">
 <g transform="translate(0.0000 0.0000) rotate(0)"><svg x="-0.5000" y="-0.2500" width="1.0000" height="0.5000" viewBox="0 0 1.0000 0.5000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="1.0000" height="0.5000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="1.0000" height="0.5000" rx="0.1200" ry="0.1200"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
-  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="0.0000" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="0.8200" y="0.0000" width="0.1800" height="0.5000"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <circle class="mounting-hole" cx="130.1900" cy="117.3200" r="0.3250" />
 <circle class="mounting-hole" cx="135.9700" cy="117.3200" r="0.3250" />
 <circle class="mounting-hole" cx="144.0600" cy="117.3200" r="0.3250" />
 <circle class="mounting-hole" cx="149.8400" cy="117.3200" r="0.3250" />
-<g class="indicator" transform="translate(140.0350 90.6000)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">U2</text></g>
-<g class="indicator" transform="translate(140.0700 65.7500)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">U1</text></g>
-<g class="indicator" transform="translate(133.0800 119.5900)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J1</text></g>
-<g class="indicator" transform="translate(146.9500 119.5900)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J2</text></g>
-<g class="indicator" transform="translate(140.7000 98.9625)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">U5</text></g>
-<g class="indicator" transform="translate(134.2000 107.1000)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">U3</text></g>
-<g class="indicator" transform="translate(143.9000 93.2000)"><rect x="-0.9144" y="-0.4860" width="1.8288" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">SW2</text></g>
-<g class="indicator" transform="translate(136.3000 93.2000)"><rect x="-0.9144" y="-0.4860" width="1.8288" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">SW1</text></g>
-<g class="indicator" transform="translate(136.2000 88.8925)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">Q1</text></g>
-<g class="indicator" transform="translate(144.0000 88.8925)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">Q2</text></g>
-<g class="indicator" transform="translate(134.4500 99.2225)"><rect x="-0.6560" y="-0.4860" width="1.3120" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">C6</text></g>
-<g class="indicator" transform="translate(146.9500 99.4225)"><rect x="-0.6560" y="-0.4860" width="1.3120" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">C7</text></g>
-<g class="indicator" transform="translate(140.9775 82.6000)"><rect x="-0.8534" y="-0.4536" width="1.7069" height="0.9072" rx="0.0806" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2285" fill="#000000" font-family="Arial, sans-serif" font-size="0.6720" font-weight="bold" text-anchor="middle">C10</text></g>
-<g class="indicator" transform="translate(140.6000 113.8925)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">D1</text></g>
-<g class="indicator" transform="translate(144.1500 113.7825)"><rect x="-0.3867" y="-0.2807" width="0.7734" height="0.5613" rx="0.0499" fill="#FFFFFF" stroke="none" /><text x="0" y="0.1414" fill="#000000" font-family="Arial, sans-serif" font-size="0.4158" font-weight="bold" text-anchor="middle">D3</text></g>
-<g class="indicator" transform="translate(145.8025 106.0000)"><rect x="-0.1953" y="-0.1418" width="0.3906" height="0.2835" rx="0.0252" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0714" fill="#000000" font-family="Arial, sans-serif" font-size="0.2100" font-weight="bold" text-anchor="middle">D4</text></g>
-<g class="indicator" transform="translate(136.8500 113.8000)"><rect x="-0.3867" y="-0.2807" width="0.7734" height="0.5613" rx="0.0499" fill="#FFFFFF" stroke="none" /><text x="0" y="0.1414" fill="#000000" font-family="Arial, sans-serif" font-size="0.4158" font-weight="bold" text-anchor="middle">D2</text></g>
-<g class="indicator" transform="translate(131.3500 113.9000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R2</text></g>
-<g class="indicator" transform="translate(142.4000 85.4000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R4</text></g>
-<g class="indicator" transform="translate(143.6000 85.4000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R5</text></g>
-<g class="indicator" transform="translate(145.2500 113.9100)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R7</text></g>
-<g class="indicator" transform="translate(148.9000 113.8900)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R8</text></g>
-<g class="indicator" transform="translate(145.6850 104.7000)"><rect x="-0.1953" y="-0.1418" width="0.3906" height="0.2835" rx="0.0252" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0714" fill="#000000" font-family="Arial, sans-serif" font-size="0.2100" font-weight="bold" text-anchor="middle">R9</text></g>
-<g class="indicator" transform="translate(138.6900 107.1000)"><rect x="-0.2667" y="-0.1418" width="0.5334" height="0.2835" rx="0.0252" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0714" fill="#000000" font-family="Arial, sans-serif" font-size="0.2100" font-weight="bold" text-anchor="middle">R10</text></g>
-<g class="indicator" transform="translate(138.7000 108.2000)"><rect x="-0.2667" y="-0.1418" width="0.5334" height="0.2835" rx="0.0252" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0714" fill="#000000" font-family="Arial, sans-serif" font-size="0.2100" font-weight="bold" text-anchor="middle">R11</text></g>
-<g class="indicator" transform="translate(135.2000 85.2900)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R1</text></g>
-<g class="indicator" transform="translate(135.7000 113.9000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R3</text></g>
-<g class="indicator" transform="translate(139.4500 114.0000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R6</text></g>
-<g class="indicator" transform="translate(138.0500 111.7000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C1</text></g>
-<g class="indicator" transform="translate(136.8500 111.7000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C2</text></g>
-<g class="indicator" transform="translate(135.7000 111.7000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C3</text></g>
-<g class="indicator" transform="translate(137.6000 85.3200)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C4</text></g>
-<g class="indicator" transform="translate(138.8000 85.3200)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C5</text></g>
-<g class="indicator" transform="translate(136.4000 85.3200)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C8</text></g>
-<g class="indicator" transform="translate(144.8000 85.4000)"><rect x="-0.2050" y="-0.1787" width="0.4100" height="0.3574" rx="0.0318" fill="#FFFFFF" stroke="none" /><text x="0" y="0.0900" fill="#000000" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C9</text></g>
+<g class="indicator" transform="translate(140.0350 90.6000)"><rect class="indicator-plate" x="-2.4610" y="-0.9613" width="4.9219" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">U2</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">ESP32-S3-DevKitC</text></g>
+<g class="indicator" transform="translate(140.0700 65.7500)"><rect class="indicator-plate" x="-2.4610" y="-0.9613" width="4.9219" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">U1</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">ESP32-S3-WROOM-1</text></g>
+<g class="indicator" transform="translate(133.0800 119.5900)"><rect class="indicator-plate" x="-3.3984" y="-0.9550" width="6.7968" height="1.6616" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3358" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J1</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4664" text-anchor="middle">USB_C_Receptacle_USB2.0</text></g>
+<g class="indicator" transform="translate(146.9500 119.5900)"><rect class="indicator-plate" x="-3.3984" y="-0.9550" width="6.7968" height="1.6616" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3358" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J2</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4664" text-anchor="middle">USB_C_Receptacle_USB2.0</text></g>
+<g class="indicator" transform="translate(140.7000 98.9625)"><rect class="indicator-plate" x="-1.7482" y="-0.9613" width="3.4963" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">U5</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">AMS1117-3.3</text></g>
+<g class="indicator" transform="translate(134.2000 107.1000)"><rect class="indicator-plate" x="-2.4300" y="-0.9192" width="4.8600" height="1.6119" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">U3</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4167" text-anchor="middle">CP2102N-Axx-xQFN28</text></g>
+<g class="indicator" transform="translate(143.9000 93.2000)"><rect class="indicator-plate" x="-1.1779" y="-0.9613" width="2.3558" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">SW2</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">SW_Push</text></g>
+<g class="indicator" transform="translate(136.3000 93.2000)"><rect class="indicator-plate" x="-1.1779" y="-0.9613" width="2.3558" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">SW1</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">SW_Push</text></g>
+<g class="indicator" transform="translate(136.2000 88.8925)"><rect class="indicator-plate" x="-1.4630" y="-0.9613" width="2.9261" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">Q1</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">Q_NPN_BCE</text></g>
+<g class="indicator" transform="translate(144.0000 88.8925)"><rect class="indicator-plate" x="-1.4630" y="-0.9613" width="2.9261" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">Q2</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">Q_NPN_BCE</text></g>
+<g class="indicator" transform="translate(134.4500 99.2225)"><rect class="indicator-plate" x="-0.6696" y="-0.9613" width="1.3392" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">C6</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">22u</text></g>
+<g class="indicator" transform="translate(146.9500 99.4225)"><rect class="indicator-plate" x="-0.6696" y="-0.9613" width="1.3392" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">C7</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">22u</text></g>
+<g class="indicator" transform="translate(140.9775 82.6000)"><rect class="indicator-plate" x="-0.8534" y="-0.8314" width="1.7069" height="1.4675" rx="0.0806" stroke="none" /><text class="indicator-text" x="0" y="-0.2534" font-family="Arial, sans-serif" font-size="0.6720" font-weight="bold" text-anchor="middle">C10</text><text class="indicator-text" x="0" y="0.4838" font-family="Arial, sans-serif" font-size="0.3520" text-anchor="middle">22u</text></g>
+<g class="indicator" transform="translate(140.6000 113.8925)"><rect class="indicator-plate" x="-0.2250" y="-0.3534" width="0.4500" height="0.6141" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1258" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">D1</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1747" text-anchor="middle">LED</text></g>
+<g class="indicator" transform="translate(144.1500 113.7825)"><rect class="indicator-plate" x="-0.7573" y="-0.5144" width="1.5147" height="0.9080" rx="0.0499" stroke="none" /><text class="indicator-text" x="0" y="-0.1568" font-family="Arial, sans-serif" font-size="0.4158" font-weight="bold" text-anchor="middle">D3</text><text class="indicator-text" x="0" y="0.2994" font-family="Arial, sans-serif" font-size="0.2178" text-anchor="middle">D_Schottky</text></g>
+<g class="indicator" transform="translate(145.8025 106.0000)"><rect class="indicator-plate" x="-0.1953" y="-0.2598" width="0.3906" height="0.4586" rx="0.0252" stroke="none" /><text class="indicator-text" x="0" y="-0.0792" font-family="Arial, sans-serif" font-size="0.2100" font-weight="bold" text-anchor="middle">D4</text><text class="indicator-text" x="0" y="0.1512" font-family="Arial, sans-serif" font-size="0.1100" text-anchor="middle">LED</text></g>
+<g class="indicator" transform="translate(136.8500 113.8000)"><rect class="indicator-plate" x="-0.7573" y="-0.5144" width="1.5147" height="0.9080" rx="0.0499" stroke="none" /><text class="indicator-text" x="0" y="-0.1568" font-family="Arial, sans-serif" font-size="0.4158" font-weight="bold" text-anchor="middle">D2</text><text class="indicator-text" x="0" y="0.2994" font-family="Arial, sans-serif" font-size="0.2178" text-anchor="middle">D_Schottky</text></g>
+<g class="indicator" transform="translate(131.3500 113.9000)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R2</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">5.1k</text></g>
+<g class="indicator" transform="translate(142.4000 85.4000)"><rect class="indicator-plate" x="-0.2250" y="-0.3534" width="0.4500" height="0.6141" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1258" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R4</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1747" text-anchor="middle">10k</text></g>
+<g class="indicator" transform="translate(143.6000 85.4000)"><rect class="indicator-plate" x="-0.2250" y="-0.3534" width="0.4500" height="0.6141" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1258" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R5</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1747" text-anchor="middle">10k</text></g>
+<g class="indicator" transform="translate(145.2500 113.9100)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R7</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">5.1k</text></g>
+<g class="indicator" transform="translate(148.9000 113.8900)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R8</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">5.1k</text></g>
+<g class="indicator" transform="translate(145.6850 104.7000)"><rect class="indicator-plate" x="-0.1953" y="-0.2598" width="0.3906" height="0.4586" rx="0.0252" stroke="none" /><text class="indicator-text" x="0" y="-0.0792" font-family="Arial, sans-serif" font-size="0.2100" font-weight="bold" text-anchor="middle">R9</text><text class="indicator-text" x="0" y="0.1512" font-family="Arial, sans-serif" font-size="0.1100" text-anchor="middle">2.4k</text></g>
+<g class="indicator" transform="translate(138.6900 107.1000)"><rect class="indicator-plate" x="-0.2667" y="-0.2598" width="0.5334" height="0.4586" rx="0.0252" stroke="none" /><text class="indicator-text" x="0" y="-0.0792" font-family="Arial, sans-serif" font-size="0.2100" font-weight="bold" text-anchor="middle">R10</text><text class="indicator-text" x="0" y="0.1512" font-family="Arial, sans-serif" font-size="0.1100" text-anchor="middle">10k</text></g>
+<g class="indicator" transform="translate(138.7000 108.2000)"><rect class="indicator-plate" x="-0.2667" y="-0.2598" width="0.5334" height="0.4586" rx="0.0252" stroke="none" /><text class="indicator-text" x="0" y="-0.0792" font-family="Arial, sans-serif" font-size="0.2100" font-weight="bold" text-anchor="middle">R11</text><text class="indicator-text" x="0" y="0.1512" font-family="Arial, sans-serif" font-size="0.1100" text-anchor="middle">5.1k</text></g>
+<g class="indicator" transform="translate(135.2000 85.2900)"><rect class="indicator-plate" x="-0.2250" y="-0.3534" width="0.4500" height="0.6141" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1258" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R1</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1747" text-anchor="middle">10k</text></g>
+<g class="indicator" transform="translate(135.7000 113.9000)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R3</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">5.1k</text></g>
+<g class="indicator" transform="translate(139.4500 114.0000)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">R6</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">5.1k</text></g>
+<g class="indicator" transform="translate(138.0500 111.7000)"><rect class="indicator-plate" x="-0.2250" y="-0.3534" width="0.4500" height="0.6141" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1258" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C1</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1747" text-anchor="middle">1u</text></g>
+<g class="indicator" transform="translate(136.8500 111.7000)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C2</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">100n</text></g>
+<g class="indicator" transform="translate(135.7000 111.7000)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C3</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">100n</text></g>
+<g class="indicator" transform="translate(137.6000 85.3200)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C4</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">100n</text></g>
+<g class="indicator" transform="translate(138.8000 85.3200)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C5</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">100n</text></g>
+<g class="indicator" transform="translate(136.4000 85.3200)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C8</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">100n</text></g>
+<g class="indicator" transform="translate(144.8000 85.4000)"><rect class="indicator-plate" x="-0.2250" y="-0.3356" width="0.4500" height="0.5894" rx="0.0318" stroke="none" /><text class="indicator-text" x="0" y="-0.1080" font-family="Arial, sans-serif" font-size="0.2647" font-weight="bold" text-anchor="middle">C9</text><text class="indicator-text" x="0" y="0.1906" font-family="Arial, sans-serif" font-size="0.1500" text-anchor="middle">100n</text></g>
 </svg>

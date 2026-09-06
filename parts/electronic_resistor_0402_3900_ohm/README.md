@@ -37,6 +37,16 @@ Resistor 3900 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-073K9L` |
+| LCSC | [`C131467`](https://www.lcsc.com/product-detail/C131467.html) |
+| LCSC | [`C2909346`](https://www.lcsc.com/product-detail/C2909346.html) |
+| LCSC | [`C2906925`](https://www.lcsc.com/product-detail/C2906925.html) |
+
+
 
 
 

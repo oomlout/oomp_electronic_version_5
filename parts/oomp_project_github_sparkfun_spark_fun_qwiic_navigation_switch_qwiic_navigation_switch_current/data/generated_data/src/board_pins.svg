@@ -2,13 +2,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="129.2550 86.0750 37.4000 37.4000">
 <defs>
 <style>
-.page { fill: #FFFFFF; }
-.board { fill: #FFFFFF; stroke: #000000; stroke-width: 0.35; }
-.edge-cut { fill: none; stroke: #000000; stroke-width: 0.25; }
-.component { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mechanical-pad { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mounting-hole { fill: #FFFFFF; stroke: #000000; stroke-width: 0.22; }
-.reference { fill: #000000; font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: #FFFFFF; stroke-width: 0.35px; }
+.page { fill: var(--brd-page, #FFFFFF); }
+.board { fill: var(--brd-board-fill, #FFFFFF); stroke: var(--brd-board-outline, #000000); stroke-width: 0.35; }
+.edge-cut { fill: none; stroke: var(--brd-board-outline, #000000); stroke-width: 0.25; }
+.component { fill: var(--brd-component-fill, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mechanical-pad { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mounting-hole { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.22; }
+.reference { fill: var(--brd-text, #000000); font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, #FFFFFF); stroke-width: 0.35px; }
+.indicator-plate { fill: var(--brd-plate, #FFFFFF); }
+.indicator-text { fill: var(--brd-plate-text, #000000); }
 </style>
 </defs>
 <rect class="page" x="129.2550" y="86.0750" width="37.4000" height="37.4000" />
@@ -50,7 +52,7 @@
 <circle class="mounting-hole" cx="158.1150" cy="114.9350" r="1.5500" />
 <circle class="mounting-hole" cx="146.6115" cy="103.4315" r="0.5000" />
 <circle class="mounting-hole" cx="149.2985" cy="106.1185" r="0.3500" />
-<g class="indicator" transform="translate(147.9550 104.7750)"><rect x="-0.9144" y="-0.4860" width="1.8288" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">SW2</text></g>
-<g class="indicator" transform="translate(147.9550 93.3450)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J2</text></g>
-<g class="indicator" transform="translate(147.9550 116.2050)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J5</text></g>
+<g class="indicator" transform="translate(147.9550 104.7750)"><rect class="indicator-plate" x="-1.6056" y="-0.9613" width="3.2112" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">SW2</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">Nav Switch</text></g>
+<g class="indicator" transform="translate(147.9550 93.3450)"><rect class="indicator-plate" x="-1.6056" y="-0.9613" width="3.2112" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J2</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">Conn_01x04</text></g>
+<g class="indicator" transform="translate(147.9550 116.2050)"><rect class="indicator-plate" x="-0.6696" y="-0.9613" width="1.3392" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J5</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">I2C</text></g>
 </svg>

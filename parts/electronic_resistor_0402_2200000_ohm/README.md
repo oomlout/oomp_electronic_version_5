@@ -37,6 +37,16 @@ Resistor 2.2e+06 Ohm 0402 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F2204TS` |
+| LCSC | [`C2998080`](https://www.lcsc.com/product-detail/C2998080.html) |
+| LCSC | [`C11490`](https://www.lcsc.com/product-detail/C11490.html) |
+| LCSC | [`C172168`](https://www.lcsc.com/product-detail/C172168.html) |
+
+
 
 
 

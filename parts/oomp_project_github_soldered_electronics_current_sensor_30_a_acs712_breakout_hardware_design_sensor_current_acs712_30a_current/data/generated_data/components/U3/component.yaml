@@ -1,0 +1,870 @@
+reference: U3
+schematic:
+  available: true
+  units:
+  - reference: U3
+    source_file: data/kicad_file.kicad_sch
+    uuid: 55dd2782-9074-4269-a9f1-e10c43f5bd62
+    library_id: e-radionica.com schematics:OPA344
+    unit: 1
+    body_style: 1
+    position:
+      x: 162.56
+      y: 82.55
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: U3
+      Value: OPA344
+      Footprint: e-radionica.com footprinti:SOT-23-5
+      Datasheet: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: OUT
+      electrical_type: output
+      graphic_style: line
+      local_position:
+        x: -8.89
+        y: 3.81
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 153.67
+        y: 78.74
+      net: VREF
+      net_aliases:
+      - VREF
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: K2
+        pin_number: '3'
+        pin_name: '~'
+      - reference: U2
+        pin_number: '3'
+        pin_name: IN+
+      - reference: U3
+        pin_number: '4'
+        pin_name: IN-
+    - number: '2'
+      name: V-
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: -8.89
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 153.67
+        y: 82.55
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '3'
+      name: IN+
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: -8.89
+        y: -3.81
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 153.67
+        y: 86.36
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C4
+        pin_number: '2'
+        pin_name: '~'
+      - reference: R1
+        pin_number: '1'
+        pin_name: '~'
+      - reference: R3
+        pin_number: '2'
+        pin_name: '~'
+    - number: '4'
+      name: IN-
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: 8.89
+        y: -3.81
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 171.45
+        y: 86.36
+      net: VREF
+      net_aliases:
+      - VREF
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: K2
+        pin_number: '3'
+        pin_name: '~'
+      - reference: U2
+        pin_number: '3'
+        pin_name: IN+
+      - reference: U3
+        pin_number: '1'
+        pin_name: OUT
+    - number: '5'
+      name: V+
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: 8.89
+        y: 3.81
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 171.45
+        y: 78.74
+      net: VCC
+      net_aliases:
+      - VCC
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#PWR02'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: '#PWR08'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: '#PWR010'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: '#PWR0103'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: '#PWR0105'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: C2
+        pin_number: '2'
+        pin_name: '~'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '~'
+      - reference: C6
+        pin_number: '2'
+        pin_name: '~'
+      - reference: K2
+        pin_number: '4'
+        pin_name: '~'
+      - reference: R1
+        pin_number: '2'
+        pin_name: '~'
+      - reference: U1
+        pin_number: '8'
+        pin_name: VCC
+      - reference: U2
+        pin_number: '5'
+        pin_name: V+
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -6.4262
+          y: -6.4262
+        max:
+          x: 6.4262
+          y: 6.4262
+        width: 12.8524
+        height: 12.8524
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 156.1338
+          y: 76.1238
+        max:
+          x: 168.9862
+          y: 88.9762
+        width: 12.8524
+        height: 12.8524
+        center:
+          x: 162.56
+          y: 82.55
+    warnings: []
+  connected_components:
+  - reference: '#PWR02'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: '#PWR08'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: '#PWR010'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: '#PWR0103'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: '#PWR0105'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: C2
+    pin_number: '2'
+    pin_name: '~'
+  - reference: C4
+    pin_number: '2'
+    pin_name: '~'
+  - reference: C5
+    pin_number: '2'
+    pin_name: '~'
+  - reference: C6
+    pin_number: '2'
+    pin_name: '~'
+  - reference: K2
+    pin_number: '3'
+    pin_name: '~'
+  - reference: K2
+    pin_number: '4'
+    pin_name: '~'
+  - reference: R1
+    pin_number: '1'
+    pin_name: '~'
+  - reference: R1
+    pin_number: '2'
+    pin_name: '~'
+  - reference: R3
+    pin_number: '2'
+    pin_name: '~'
+  - reference: U1
+    pin_number: '8'
+    pin_name: VCC
+  - reference: U2
+    pin_number: '3'
+    pin_name: IN+
+  - reference: U2
+    pin_number: '5'
+    pin_name: V+
+  - reference: U3
+    pin_number: '1'
+    pin_name: OUT
+  - reference: U3
+    pin_number: '4'
+    pin_name: IN-
+pcb:
+  reference: U3
+  value: OPA344
+  source_file: data/kicad_file.kicad_pcb
+  uuid: db79efc0-e826-4a1c-87e6-cbe23d1836c8
+  library_id: e-radionica.com footprinti:SOT-23-5
+  layer: F.Cu
+  side: front
+  position:
+    x: 127.38
+    y: 110.54
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Sheetfile: Current_sensor_ACS712.kicad_sch
+    Sheetname: ''
+    Reference: U3
+    Value: OPA344
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.3
+      y: -0.95
+      rotation: 180.0
+    position:
+      x: 128.68
+      y: 111.49
+    placed_rotation: 0.0
+    size:
+      x: 1.1
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: VREF
+    net_number: 10
+    pin_function: OUT
+    pin_type: output
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.85
+          y: -1.25
+        max:
+          x: -0.75
+          y: -0.65
+        width: 1.1
+        height: 0.6
+        center:
+          x: -1.3
+          y: -0.95
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 128.13
+          y: 111.19
+        max:
+          x: 129.23
+          y: 111.79
+        width: 1.1
+        height: 0.6
+        center:
+          x: 128.68
+          y: 111.49
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: K2
+      pad_number: '3'
+    - reference: U2
+      pad_number: '3'
+    - reference: U3
+      pad_number: '4'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.3
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 128.68
+      y: 110.54
+    placed_rotation: 0.0
+    size:
+      x: 1.1
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: GND
+    net_number: 1
+    pin_function: V-
+    pin_type: bidirectional
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.85
+          y: -0.3
+        max:
+          x: -0.75
+          y: 0.3
+        width: 1.1
+        height: 0.6
+        center:
+          x: -1.3
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 128.13
+          y: 110.24
+        max:
+          x: 129.23
+          y: 110.84
+        width: 1.1
+        height: 0.6
+        center:
+          x: 128.68
+          y: 110.54
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '1'
+    - reference: C2
+      pad_number: '1'
+    - reference: C3
+      pad_number: '1'
+    - reference: C4
+      pad_number: '1'
+    - reference: C5
+      pad_number: '1'
+    - reference: C6
+      pad_number: '1'
+    - reference: K2
+      pad_number: '1'
+    - reference: R3
+      pad_number: '1'
+    - reference: U1
+      pad_number: '5'
+    - reference: U2
+      pad_number: '2'
+  - number: '3'
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.3
+      y: 0.95
+      rotation: 180.0
+    position:
+      x: 128.68
+      y: 109.59
+    placed_rotation: 0.0
+    size:
+      x: 1.1
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: Net-(C4-Pad2)
+    net_number: 8
+    pin_function: IN+
+    pin_type: input
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.85
+          y: 0.65
+        max:
+          x: -0.75
+          y: 1.25
+        width: 1.1
+        height: 0.6
+        center:
+          x: -1.3
+          y: 0.95
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 128.13
+          y: 109.29
+        max:
+          x: 129.23
+          y: 109.89
+        width: 1.1
+        height: 0.6
+        center:
+          x: 128.68
+          y: 109.59
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C4
+      pad_number: '2'
+    - reference: R1
+      pad_number: '1'
+    - reference: R3
+      pad_number: '2'
+  - number: '4'
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.3
+      y: 0.95
+      rotation: 180.0
+    position:
+      x: 126.08
+      y: 109.59
+    placed_rotation: 0.0
+    size:
+      x: 1.1
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: VREF
+    net_number: 10
+    pin_function: IN-
+    pin_type: input
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.75
+          y: 0.65
+        max:
+          x: 1.85
+          y: 1.25
+        width: 1.1
+        height: 0.6
+        center:
+          x: 1.3
+          y: 0.95
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 125.53
+          y: 109.29
+        max:
+          x: 126.63
+          y: 109.89
+        width: 1.1
+        height: 0.6
+        center:
+          x: 126.08
+          y: 109.59
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: K2
+      pad_number: '3'
+    - reference: U2
+      pad_number: '3'
+    - reference: U3
+      pad_number: '1'
+  - number: '5'
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.3
+      y: -0.95
+      rotation: 180.0
+    position:
+      x: 126.08
+      y: 111.49
+    placed_rotation: 0.0
+    size:
+      x: 1.1
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: VCC
+    net_number: 3
+    pin_function: V+
+    pin_type: input
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.75
+          y: -1.25
+        max:
+          x: 1.85
+          y: -0.65
+        width: 1.1
+        height: 0.6
+        center:
+          x: 1.3
+          y: -0.95
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 125.53
+          y: 111.19
+        max:
+          x: 126.63
+          y: 111.79
+        width: 1.1
+        height: 0.6
+        center:
+          x: 126.08
+          y: 111.49
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C2
+      pad_number: '2'
+    - reference: C5
+      pad_number: '2'
+    - reference: C6
+      pad_number: '2'
+    - reference: K2
+      pad_number: '4'
+    - reference: R1
+      pad_number: '2'
+    - reference: U1
+      pad_number: '8'
+    - reference: U2
+      pad_number: '5'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.85
+        y: -1.25
+      max:
+        x: 1.85
+        y: 1.25
+      width: 3.7
+      height: 2.5
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 125.53
+        y: 109.29
+      max:
+        x: 129.23
+        y: 111.79
+      width: 3.7
+      height: 2.5
+      center:
+        x: 127.38
+        y: 110.54
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.86
+        y: -1.5
+      max:
+        x: 0.86
+        y: 1.5
+      width: 1.72
+      height: 3.0
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 126.52
+        y: 109.04
+      max:
+        x: 128.24
+        y: 112.04
+      width: 1.72
+      height: 3.0
+      center:
+        x: 127.38
+        y: 110.54
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.87
+        y: -1.51
+      max:
+        x: 0.87
+        y: 1.51
+      width: 1.74
+      height: 3.02
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 126.51
+        y: 109.03
+      max:
+        x: 128.25
+        y: 112.05
+      width: 1.74
+      height: 3.02
+      center:
+        x: 127.38
+        y: 110.54
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.85
+        y: -1.51
+      max:
+        x: 1.85
+        y: 1.51
+      width: 3.7
+      height: 3.02
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 125.53
+        y: 109.03
+      max:
+        x: 129.23
+        y: 112.05
+      width: 3.7
+      height: 3.02
+      center:
+        x: 127.38
+        y: 110.54
+  connected_components:
+  - C1
+  - C2
+  - C3
+  - C4
+  - C5
+  - C6
+  - K2
+  - R1
+  - R3
+  - U1
+  - U2
+  - U3
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - VREF
+    pcb_nets:
+    - VREF
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - GND
+    status: incomplete
+  - pin_or_pad_number: '3'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(C4-Pad2)
+    status: incomplete
+  - pin_or_pad_number: '4'
+    schematic_nets:
+    - VREF
+    pcb_nets:
+    - VREF
+    status: agree
+  - pin_or_pad_number: '5'
+    schematic_nets:
+    - VCC
+    pcb_nets:
+    - VCC
+    status: agree
+  agree_count: 3
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: OPA344
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: ic
+category_source: unmatched_kicad_hint
+category_name: IC
+generated_directory: components/U3

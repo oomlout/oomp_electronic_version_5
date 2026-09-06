@@ -37,6 +37,16 @@ Resistor 4.7e+06 Ohm 0402 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F4704TS` |
+| LCSC | [`C3013173`](https://www.lcsc.com/product-detail/C3013173.html) |
+| LCSC | [`C482196`](https://www.lcsc.com/product-detail/C482196.html) |
+| LCSC | [`C227116`](https://www.lcsc.com/product-detail/C227116.html) |
+
+
 
 
 

@@ -37,6 +37,16 @@ Resistor 56 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F56R0TS` |
+| LCSC | [`C3013179`](https://www.lcsc.com/product-detail/C3013179.html) |
+| LCSC | [`C54920812`](https://www.lcsc.com/product-detail/C54920812.html) |
+| LCSC | [`C137957`](https://www.lcsc.com/product-detail/C137957.html) |
+
+
 
 
 

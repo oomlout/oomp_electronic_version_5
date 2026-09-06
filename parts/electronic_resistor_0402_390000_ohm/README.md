@@ -37,6 +37,16 @@ Resistor 390000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F3903TS` |
+| LCSC | [`C2909352`](https://www.lcsc.com/product-detail/C2909352.html) |
+| LCSC | [`C54920788`](https://www.lcsc.com/product-detail/C54920788.html) |
+| LCSC | [`C54920667`](https://www.lcsc.com/product-detail/C54920667.html) |
+
+
 
 
 

@@ -37,6 +37,16 @@ Resistor 820 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F8200TS` |
+| LCSC | [`C2909387`](https://www.lcsc.com/product-detail/C2909387.html) |
+| LCSC | [`C54920831`](https://www.lcsc.com/product-detail/C54920831.html) |
+| LCSC | [`C2933122`](https://www.lcsc.com/product-detail/C2933122.html) |
+
+
 
 
 

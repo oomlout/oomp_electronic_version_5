@@ -37,6 +37,16 @@ Resistor 27000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F2702TS` |
+| LCSC | [`C2933084`](https://www.lcsc.com/product-detail/C2933084.html) |
+| LCSC | [`C25771`](https://www.lcsc.com/product-detail/C25771.html) |
+| LCSC | [`C2929913`](https://www.lcsc.com/product-detail/C2929913.html) |
+
+
 
 
 

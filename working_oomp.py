@@ -84,6 +84,7 @@ def add_part_page_details(part):
         {"title": "MD5 alpha", "svg": f"{DATA_DIRECTORY}/working_svg_md5_6_alpha.svg", "png": f"{DATA_DIRECTORY}/working_svg_md5_6_alpha.png"},
         {"title": "BIP 39 words", "svg": f"{DATA_DIRECTORY}/working_svg_bip_39_3_word.svg", "png": f"{DATA_DIRECTORY}/working_svg_bip_39_3_word.png"},
         {"title": "Square summary", "svg": f"{DATA_DIRECTORY}/working_svg_square.svg", "png": f"{DATA_DIRECTORY}/working_svg_square.png"},
+        {"title": "Square schematic", "svg": f"{DATA_DIRECTORY}/working_svg_square_schematic.svg", "png": f"{DATA_DIRECTORY}/working_svg_square_schematic.png"},
         {"title": "Dimensions", "svg": f"{DATA_DIRECTORY}/working_svg_dimensioned.svg", "png": f"{DATA_DIRECTORY}/working_svg_dimensioned.png"},
         {"title": "Dimensions with labels", "svg": f"{DATA_DIRECTORY}/working_svg_dimensioned_titles.svg", "png": f"{DATA_DIRECTORY}/working_svg_dimensioned_titles.png"},
     ]
@@ -437,6 +438,30 @@ def add_project_actions(part, count):
     }
     part[f"oomlout_ai_roboclick_{count}"] = {
         "actions": [conversion_action], "file_test": "", "retries_until_complete": 0,
+    }
+    count += 1
+    production_action = {
+        "command": "run_python",
+        "file_python": "kicad_agents/production_jlc_action.py",
+            "file_output": f"{DATA_DIRECTORY}/production_auto_generate/data/generation_status.yaml",
+        "description": "Generate JLCPCB Gerbers, drill files, BOM, CPL, OOMP pad audit data, checksums, and review queues from the canonical KiCad PCB.",
+        "parts_directory": "parts",
+        "project_file_basename": part.get("project_file_basename", ""),
+        "project_match_overrides": copy.deepcopy(part.get("project_match_overrides", {})),
+        "production_board_source": part.get("production_board_source", ""),
+        "production_oomp_metadata_board": part.get("production_oomp_metadata_board", ""),
+        "production_exclude_references": copy.deepcopy(part.get("production_exclude_references", [])),
+        "production_lcsc_overrides": copy.deepcopy(part.get("production_lcsc_overrides", {})),
+        "production_rotation_offsets": copy.deepcopy(part.get("production_rotation_offsets", {})),
+        "production_position_offsets_mm": copy.deepcopy(part.get("production_position_offsets_mm", {})),
+        "timeout": "1200",
+    }
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [production_action],
+        "always_run_on_regeneration": True,
+        "file_test": f"{DATA_DIRECTORY}/production_auto_generate/data/generation_status.yaml",
+        "honour_gate_in_normal_run": True,
+        "retries_until_complete": 0,
     }
     return count
 

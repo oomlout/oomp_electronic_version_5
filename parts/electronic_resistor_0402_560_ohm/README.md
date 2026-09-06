@@ -37,6 +37,16 @@ Resistor 560 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF5600TCE` |
+| LCSC | [`C25126`](https://www.lcsc.com/product-detail/C25126.html) |
+| LCSC | [`C25172`](https://www.lcsc.com/product-detail/C25172.html) |
+| LCSC | [`C324803`](https://www.lcsc.com/product-detail/C324803.html) |
+
+
 
 
 

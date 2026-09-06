@@ -37,6 +37,16 @@ Resistor 560000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F5603TS` |
+| LCSC | [`C2909369`](https://www.lcsc.com/product-detail/C2909369.html) |
+| LCSC | [`C1883578`](https://www.lcsc.com/product-detail/C1883578.html) |
+| LCSC | [`C137958`](https://www.lcsc.com/product-detail/C137958.html) |
+
+
 
 
 

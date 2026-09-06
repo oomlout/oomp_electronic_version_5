@@ -20,7 +20,9 @@ oomp / project / github / user / repository / version
 KiCad source folder, file basename, extensions, and project-specific match
 overrides. A missing version definition defaults to `current`.
 
-`working_oomp.py` adds three project-only `run_python` action blocks:
+`working_oomp.py` adds project-only `run_python` action blocks for source
+refresh, InteractiveHtmlBom, documentation, reverse usage, guarded OOMP KiCad
+conversion, and JLCPCB production files:
 
 1. Clone into the part's ignored `data/git/` folder, or fetch and `git pull
    --ff-only` when it already exists, using the system Git executable. The
@@ -31,6 +33,10 @@ overrides. A missing version definition defaults to `current`.
    is required because InteractiveHtmlBom imports `pcbnew`.
 3. Parse those canonical files, match components, copy required OOMP component
    sources, draw the board, and rebuild the project part's `README.md`.
+4. Generate Protel Gerbers, Excellon drills, JLCPCB BOM/CPL files, DRC output,
+   OOMP pad-name audit data and checksummed manifests under
+   `data/production_auto_generate/`. See the
+   [JLCPCB production guide](PRODUCTION_JLC_GUIDE.md).
 
 All blocks use an empty `file_test`, so they run every time actions are run.
 The third block verifies `data/generated_data/src/board_pins.png` as its declared

@@ -120,8 +120,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
 | J1 | 1 | microSD_Friction | microSD_Friction | `SparkFun-Connector:microSD_Friction_Fit_Common` | unmatched |
 | J2, J6 | 2 | SMA_Edge | SMA_Edge | `SparkFun-Connector:SMA_Edge` | unmatched |
-| J3 | 1 | Connector Header 2.54 mm pitch through-hole 15 pin | Conn_01x15 | `SparkFun-Connector:1x15` | [`electronic_connector_header_2_54_mm_pitch_through_hole_15_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_15_pin) |
-| J4 | 1 | Connector Header 2.54 mm pitch through-hole 19 pin | Conn_01x19 | `SparkFun-Connector:1x19` | [`electronic_connector_header_2_54_mm_pitch_through_hole_19_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_19_pin) |
+| J3 | 1 | Connector Header PH2.54-01-15PZD | Conn_01x15 | `SparkFun-Connector:1x15` | [`electronic_connector_header_2_54_mm_pitch_through_hole_15_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_15_pin) |
+| J4 | 1 | Connector Header PZ254-1-19-Z-8.5 | Conn_01x19 | `SparkFun-Connector:1x19` | [`electronic_connector_header_2_54_mm_pitch_through_hole_19_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_19_pin) |
 | J5, J13 | 2 | JST_Locking_6 | JST_Locking_6 | `SparkFun-Connector:JST_SMD_1.25mm-6_Locking` | unmatched |
 | J7, J10 | 2 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
 | J8, J9 | 2 | U.FL | U.FL | `SparkFun-Connector:U.FL` | unmatched |

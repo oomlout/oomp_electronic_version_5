@@ -2,13 +2,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="131.1100 83.4225 58.5150 30.1600">
 <defs>
 <style>
-.page { fill: #FFFFFF; }
-.board { fill: #FFFFFF; stroke: #000000; stroke-width: 0.35; }
-.edge-cut { fill: none; stroke: #000000; stroke-width: 0.25; }
-.component { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mechanical-pad { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mounting-hole { fill: #FFFFFF; stroke: #000000; stroke-width: 0.22; }
-.reference { fill: #000000; font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: #FFFFFF; stroke-width: 0.35px; }
+.page { fill: var(--brd-page, #FFFFFF); }
+.board { fill: var(--brd-board-fill, #FFFFFF); stroke: var(--brd-board-outline, #000000); stroke-width: 0.35; }
+.edge-cut { fill: none; stroke: var(--brd-board-outline, #000000); stroke-width: 0.25; }
+.component { fill: var(--brd-component-fill, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mechanical-pad { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mounting-hole { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.22; }
+.reference { fill: var(--brd-text, #000000); font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, #FFFFFF); stroke-width: 0.35px; }
+.indicator-plate { fill: var(--brd-plate, #FFFFFF); }
+.indicator-text { fill: var(--brd-plate-text, #000000); }
 </style>
 </defs>
 <rect class="page" x="131.1100" y="83.4225" width="58.5150" height="30.1600" />
@@ -22,5 +24,5 @@
 <circle class="mounting-hole" cx="139.1250" cy="106.1225" r="0.8900" />
 <circle class="mounting-hole" cx="175.2550" cy="95.5900" r="0.3250" />
 <circle class="mounting-hole" cx="175.2550" cy="101.3700" r="0.3250" />
-<g class="indicator" transform="translate(140.2100 98.4850)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J2</text></g>
+<g class="indicator" transform="translate(140.2100 98.4850)"><rect class="indicator-plate" x="-0.7502" y="-0.9613" width="1.5005" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J2</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">ICSP</text></g>
 </svg>

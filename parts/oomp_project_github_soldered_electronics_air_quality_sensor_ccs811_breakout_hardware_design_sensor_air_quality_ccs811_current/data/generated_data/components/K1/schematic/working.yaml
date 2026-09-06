@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: K1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 08957892-f320-46ae-b8cd-4070a55254cc
+  library_id: e-radionica.com schematics:HEADER_MALE_2X1
+  unit: 1
+  body_style: 1
+  position:
+    x: 147.32
+    y: 57.15
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: K1
+    Value: HEADER_MALE_2X1
+    Footprint: e-radionica.com footprinti:HEADER_MALE_2X1
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 147.32
+      y: 57.15
+    net: NINT
+    net_aliases:
+    - NINT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '3'
+      pin_name: nINT
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 147.32
+      y: 54.61
+    net: NWAKE
+    net_aliases:
+    - NWAKE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R6
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '7'
+      pin_name: nWAKE
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.2705
+        y: -1.2705
+      max:
+        x: 1.2705
+        y: 3.8105
+      width: 2.541
+      height: 5.081
+      center:
+        x: 0.0
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 146.0495
+        y: 53.3395
+      max:
+        x: 148.5905
+        y: 58.4205
+      width: 2.541
+      height: 5.081
+      center:
+        x: 147.32
+        y: 55.88
+  warnings: []
+connected_components:
+- reference: R1
+  pin_number: '1'
+  pin_name: '~'
+- reference: R6
+  pin_number: '2'
+  pin_name: '~'
+- reference: U2
+  pin_number: '3'
+  pin_name: nINT
+- reference: U2
+  pin_number: '7'
+  pin_name: nWAKE

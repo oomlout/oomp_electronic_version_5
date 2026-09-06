@@ -37,6 +37,16 @@ Resistor 8200 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF8201TCE` |
+| LCSC | [`C25924`](https://www.lcsc.com/product-detail/C25924.html) |
+| LCSC | [`C2909385`](https://www.lcsc.com/product-detail/C2909385.html) |
+| LCSC | [`C19267412`](https://www.lcsc.com/product-detail/C19267412.html) |
+
+
 
 
 

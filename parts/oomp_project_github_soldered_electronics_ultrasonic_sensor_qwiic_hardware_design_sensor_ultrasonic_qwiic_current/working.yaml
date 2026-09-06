@@ -74,13 +74,13 @@ oomlout_ai_roboclick_1:
     project_board: sensor_ultrasonic_qwiic
     project_board_name: Ultrasonic Sensor qwiic
     project_board_url: https://github.com/SolderedElectronics/Ultrasonic-sensor-qwiic-hardware-design
-    project_file_basename: Ultrasonic_sensor
+    project_file_basename: Ultrasonic sensor with easyC
     project_file_extensions:
     - .kicad_pcb
     - .kicad_sch
     - .kicad_pro
     project_file_folder: CAD/V1.1.1
-    project_file_path: CAD/V1.1.1/Ultrasonic_sensor
+    project_file_path: CAD/V1.1.1/Ultrasonic sensor with easyC
     project_git_ref: main
     project_git_url: https://github.com/SolderedElectronics/Ultrasonic-sensor-qwiic-hardware-design.git
     project_github_repository: Ultrasonic-sensor-qwiic-hardware-design
@@ -115,13 +115,13 @@ oomlout_ai_roboclick_3:
     project_board: sensor_ultrasonic_qwiic
     project_board_name: Ultrasonic Sensor qwiic
     project_board_url: https://github.com/SolderedElectronics/Ultrasonic-sensor-qwiic-hardware-design
-    project_file_basename: Ultrasonic_sensor
+    project_file_basename: Ultrasonic sensor with easyC
     project_file_extensions:
     - .kicad_pcb
     - .kicad_sch
     - .kicad_pro
     project_file_folder: CAD/V1.1.1
-    project_file_path: CAD/V1.1.1/Ultrasonic_sensor
+    project_file_path: CAD/V1.1.1/Ultrasonic sensor with easyC
     project_git_ref: main
     project_git_url: https://github.com/SolderedElectronics/Ultrasonic-sensor-qwiic-hardware-design.git
     project_github_repository: Ultrasonic-sensor-qwiic-hardware-design
@@ -189,22 +189,49 @@ oomlout_ai_roboclick_5:
     file_output: data/oomp_design/conversion_report.yaml
     file_python: kicad_agents/kicad_project_action.py
     parts_directory: parts
-    project_file_basename: Ultrasonic_sensor
+    project_file_basename: Ultrasonic sensor with easyC
     project_match_overrides: {}
     timeout: '1200'
   file_test: ''
   retries_until_complete: 0
+oomlout_ai_roboclick_6:
+  actions:
+  - command: run_python
+    description: Generate JLCPCB Gerbers, drill files, BOM, CPL, OOMP pad audit data,
+      checksums, and review queues from the canonical KiCad PCB.
+    file_output: data/production_auto_generate/data/generation_status.yaml
+    file_python: kicad_agents/production_jlc_action.py
+    parts_directory: parts
+    production_board_source: ''
+    production_exclude_references: []
+    production_lcsc_overrides: {}
+    production_oomp_metadata_board: ''
+    production_position_offsets_mm: {}
+    production_rotation_offsets: {}
+    project_file_basename: Ultrasonic sensor with easyC
+    project_match_overrides: {}
+    timeout: '1200'
+  always_run_on_regeneration: true
+  file_test: data/production_auto_generate/data/generation_status.yaml
+  honour_gate_in_normal_run: true
+  retries_until_complete: 0
 oomp_key: oomp_oomp_project_github_soldered_electronics_ultrasonic_sensor_qwiic_hardware_design_sensor_ultrasonic_qwiic_current
+production_board_source: ''
+production_exclude_references: []
+production_lcsc_overrides: {}
+production_oomp_metadata_board: ''
+production_position_offsets_mm: {}
+production_rotation_offsets: {}
 project_board: sensor_ultrasonic_qwiic
 project_board_name: Ultrasonic Sensor qwiic
 project_board_url: https://github.com/SolderedElectronics/Ultrasonic-sensor-qwiic-hardware-design
-project_file_basename: Ultrasonic_sensor
+project_file_basename: Ultrasonic sensor with easyC
 project_file_extensions:
 - .kicad_pcb
 - .kicad_sch
 - .kicad_pro
 project_file_folder: CAD/V1.1.1
-project_file_path: CAD/V1.1.1/Ultrasonic_sensor
+project_file_path: CAD/V1.1.1/Ultrasonic sensor with easyC
 project_file_path_original: ''
 project_git_ref: main
 project_git_url: https://github.com/SolderedElectronics/Ultrasonic-sensor-qwiic-hardware-design.git

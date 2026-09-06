@@ -37,6 +37,16 @@ Resistor 270 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F2700TS` |
+| LCSC | [`C2909342`](https://www.lcsc.com/product-detail/C2909342.html) |
+| LCSC | [`C2906919`](https://www.lcsc.com/product-detail/C2906919.html) |
+| LCSC | [`C163474`](https://www.lcsc.com/product-detail/C163474.html) |
+
+
 
 
 

@@ -37,6 +37,16 @@ Resistor 100 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F1000TS` |
+| LCSC | [`C2906860`](https://www.lcsc.com/product-detail/C2906860.html) |
+| LCSC | [`C106232`](https://www.lcsc.com/product-detail/C106232.html) |
+| LCSC | [`C2906884`](https://www.lcsc.com/product-detail/C2906884.html) |
+
+
 
 
 

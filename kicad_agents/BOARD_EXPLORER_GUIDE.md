@@ -28,32 +28,59 @@ supplier links are only opened when the reader clicks them.
    manufacturer part number for ICs and connectors) — shown in the facts table
    and used verbatim for the search link. Unmatched components fall back to
    footprint size plus schematic value.
-3b. Pads render **above** the component artwork in a dedicated `.copper-pads`
-   layer, white-backed with a black outline, so fills and traces never cut
-   through them and the pins stay readable on the board. That visible copy is
-   pointer-transparent; an invisible copy inside the copper layer keeps the
-   original click behaviour, so a part's own artwork still wins clicks over
-   its pads, and clicking a pad outside the part body selects its pin.
+3b. A **Theme** dropdown in the header switches between the three embedded
+   styles — **Light** (default), **Dark** and **Rainbow**. All three live in
+   the same single file; the choice is remembered per browser via
+   localStorage. Themes restyle the page chrome (header, panels, lists,
+   detail pane) **and re-ink the board and schematic SVGs**: the board
+   fill/outline, the component artwork strokes, pin-one markers and pads,
+   and the schematic page/ink/labels all resolve `--brd-*` / `--sch-*`
+   CSS variables, so Dark turns the whole drawing dark while Light keeps
+   the classic black-on-white look. Standalone assets (README SVGs/PNGs,
+   part diagrams) keep the monochrome print palette — the PNG renderer
+   flattens the variables back to their fallbacks.
+3c. The part artwork's pads render as **solid white shapes with a black
+   outline, above the component body** (only the designator label and pin-1
+   markers sit higher), so pins stay readable over routed copper. The PCB's
+   own copper pads remain in the copper layer beneath the artwork, styled as
+   before.
+3d. The toolbar's **Board / Schematic / Split** buttons switch the centre
+   pane between the PCB drawing, the project's KiCad schematic rendered as
+   styled SVG, and a side-by-side split with a divider line. Schematic symbols
+   mirror the board behaviour: hovering shows the same card, clicking the
+   outline (or a pin) selects, and a selected symbol keeps its black artwork —
+   selection is shown only by the accent rectangle around it. Each symbol's
+   **bold reference and regular value sit above the body** (wrapped to two
+   lines when long) and rotate with rotated parts; packaged parts (ICs,
+   connectors) draw their pin names large and bold inside the outline. Wires
+   are drawn bolder than KiCad's hairline and carry a fat invisible hit twin;
+   clicking a wire follows its net on the schematic and the copper, and
+   unlabelled wire runs are resolved to their copper net through the pins
+   sitting on them. The net tag pills are enlarged so their text stays
+   readable zoomed out. In split view the wheel and drag act on whichever
+   half the pointer is over. The detail pane also gains a **Schematic
+   symbol** preview of the selected part. Projects without a schematic file
+   simply omit the two new buttons.
 4. To follow a net by name, type it in the main search box: matching nets lead
    the results and clicking one highlights its copper. Net names in the
    right-hand pin table are clickable too, as are visible PCB traces and pads.
-5. Clicking a selected component — in the list, on the board artwork or inside
-   its bounding box — deselects it everywhere, keeping any other selections
-   intact. The same applies to pressing Enter on a focused part; Ctrl-click
+5. Clicking a selected component — in the list, on the board artwork or with
+   Enter on a focused part — deselects it everywhere, keeping any other
+   selections intact. Ctrl-click
    still adds/removes single members without clearing the rest. Clicking a
    selected pin or net again (pin buttons, net results, trace or net name)
    deselects it the same way; when nothing is selected the detail pane returns
    to its initial prompt.
-6. Clicking **anywhere inside a part's bounding box** on the board selects that
-   part. The transparent hitboxes sit below the copper, so traces, vias and
-   pads inside a part box are still clicked first and select their net.
+6. On the board, a part is selected by clicking **its outline (or its solid
+   white pads)** — the artwork interior stays click-transparent, so traces,
+   vias and pads under a part remain directly clickable.
 7. Selecting a pin always populates its owning part in the detail pane.
    Following a trace or net keeps the current part when it sits on that net,
    and otherwise shows one of the parts the copper connects to — preferring a
    part on the visible side. Selecting anything **never flips the board
    view**: only components on the shown side appear in the list and receive
-   hitboxes, so the current view layer is always what is selectable. Use the
-   Top/Bottom buttons to change sides.
+   click targets, so the current view layer is always what is selectable. Use
+   the Top/Bottom buttons to change sides.
 8. The selected-net summary lists connected pins. Click one to open that
    component and its pin.
 9. **All copper layers** is the default. **Visible side copper** follows Top/Bottom, or select a
@@ -109,7 +136,7 @@ working_oomp project actions
         -> project.json / project.yaml
      -> project_summary_agent.py (existing assembly SVGs and PNG policy)
      -> project_html_agent.py
-        -> pcb_copper.explorer_copper() / copper_drawings() / add_copper_svg()
+        -> pcb_copper.explorer_copper() / copper_svg() / add_copper_svg()
         -> board_explorer.html
 ```
 
@@ -152,22 +179,29 @@ verified geometry. Original KiCad files are never modified by this feature.
   labelled KiCad hint; a category is not an accepted OOMP match.
 - Layout, colours and copper/selection styling: `_style()` in
   `project_html_agent.py`; the first CSS variables are the quick-edit surface.
-  The lifted `.copper-pads` / invisible `.copper-pad-hits` rules live just
-  below the overlay styles; `_lcsc_search_value()` builds the per-component
-  search string when the matched part does not declare one.
+  The `html[data-theme="dark"]` / `html[data-theme="rainbow"]` blocks define
+  the alternate themes chosen with the header dropdown (persisted to
+  localStorage) and re-theme the drawings through the `--brd-*` (board SVG)
+  and `--sch-*` (schematic SVG) variables, whose fallbacks live in the
+  generated SVG stylesheets (`project_summary_agent.py`, `schematic_svg.py`).
+  `_lcsc_search_value()` builds the per-component search
+  string when the matched part does not declare one.
 - Pin menus, selection and layer interaction: `_script()` in the same file.
-- Copper extraction and geometry: `pcb_copper.py`; `copper_drawings()` splits
-  pads from traces and `add_copper_svg()` places the visible pad copy above
-  the component artwork but below the designator labels.
+- Copper extraction and geometry: `pcb_copper.py`.
+- Assembly artwork pads: the drawing builders tag pad primitives with
+  `css_class="pad"` and `svg_help._lift_pads_above_body()` reorders assembly
+  drawings so pads render above the body with labels/markers higher; the
+  explorer's white-stripping rule exempts `.pad` so they stay solid white on
+  the board.
 - Assembly artwork line weight: `_scale_assembly_strokes()` in `svg_help.py`
   rewrites every assembly drawing to one constant absolute stroke width (the
   IC4 TSOT-23-5 reference on the pt1 board), so large parts no longer draw
   thicker outlines than small ones.
 - The project summary card reads `project.github_url` from the persisted
   summary data; the header icon reuses the same URL. The matching summary
-  filters out the `other` category in `matchingSummary()`; the bounding-box
-  hitboxes are installed by `installComponentHitboxes()` below the copper
-  groups, one per shown side.
+  filters out the `other` category in `matchingSummary()`. Board clicks land
+  on the component artwork itself (outline and pads) or on copper features —
+  there is no invisible bounding-box layer.
 - Iterating on the page itself: `action_regenerate_board_explorer.py` rebuilds
   `board_explorer.html` directly from the persisted `project.json` and
   `project_summary_data.json` under `data/generated_data/`, skipping the

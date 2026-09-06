@@ -1,0 +1,471 @@
+reference: D2
+schematic:
+  available: true
+  units:
+  - reference: D2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 56e8db10-7811-43a8-b9cd-09325a18db70
+    library_id: e-radionica.com schematics:M4_DIODA
+    unit: 1
+    body_style: 1
+    position:
+      x: 95.25
+      y: 123.19
+      rotation: 180.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: D2
+      Value: M4_DIODA
+      Footprint: e-radionica.com footprinti:M4_DIODA
+      Datasheet: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 100.33
+        y: 123.19
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: K2
+        pin_number: 1+
+        pin_name: ''
+    - number: '2'
+      name: K
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 3.81
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 91.44
+        y: 123.19
+      net: V_BCKP
+      net_aliases:
+      - V_BCKP
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: D1
+        pin_number: '2'
+        pin_name: K
+      - reference: U2
+        pin_number: '5'
+        pin_name: V_BCKP
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.5403
+          y: -2.7943
+        max:
+          x: 2.0323
+          y: 2.7943
+        width: 4.5726
+        height: 5.5886
+        center:
+          x: -0.254
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 93.2177
+          y: 120.3957
+        max:
+          x: 97.7903
+          y: 125.9843
+        width: 4.5726
+        height: 5.5886
+        center:
+          x: 95.504
+          y: 123.19
+    warnings: []
+  connected_components:
+  - reference: D1
+    pin_number: '2'
+    pin_name: K
+  - reference: K2
+    pin_number: 1+
+    pin_name: ''
+  - reference: U2
+    pin_number: '5'
+    pin_name: V_BCKP
+pcb:
+  reference: D2
+  value: M4_DIODA
+  source_file: data/kicad_file.kicad_pcb
+  uuid: d107ec2b-88f1-4f52-b196-5c04e0c0bc0d
+  library_id: e-radionica.com footprinti:M4_DIODA
+  layer: F.Cu
+  side: front
+  position:
+    x: 108.9
+    y: 134.63
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Sheetfile: GNSS_breakout_L86-M33.kicad_sch
+    Sheetname: ''
+    Reference: D2
+    Value: M4_DIODA
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.6
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 110.5
+      y: 134.63
+    placed_rotation: 90.0
+    size:
+      x: 1.5
+      y: 2.45
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: Net-(D2-Pad1)
+    net_number: 5
+    pin_function: A
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.825
+          y: -0.75
+        max:
+          x: -0.375
+          y: 0.75
+        width: 2.45
+        height: 1.5
+        center:
+          x: -1.6
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 109.275
+          y: 133.88
+        max:
+          x: 111.725
+          y: 135.38
+        width: 2.45
+        height: 1.5
+        center:
+          x: 110.5
+          y: 134.63
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: K2
+      pad_number: 1+
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.6
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 107.3
+      y: 134.63
+    placed_rotation: 90.0
+    size:
+      x: 1.5
+      y: 2.45
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: V_BCKP
+    net_number: 4
+    pin_function: K
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.375
+          y: -0.75
+        max:
+          x: 2.825
+          y: 0.75
+        width: 2.45
+        height: 1.5
+        center:
+          x: 1.6
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 106.075
+          y: 133.88
+        max:
+          x: 108.525
+          y: 135.38
+        width: 2.45
+        height: 1.5
+        center:
+          x: 107.3
+          y: 134.63
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: D1
+      pad_number: '2'
+    - reference: U2
+      pad_number: '5'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.825
+        y: -0.75
+      max:
+        x: 2.825
+        y: 0.75
+      width: 5.65
+      height: 1.5
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 106.075
+        y: 133.88
+      max:
+        x: 111.725
+        y: 135.38
+      width: 5.65
+      height: 1.5
+      center:
+        x: 108.9
+        y: 134.63
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.16
+        y: -1.85
+      max:
+        x: 2.65
+        y: 1.36
+      width: 4.81
+      height: 3.21
+      center:
+        x: 0.245
+        y: -0.245
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 106.25
+        y: 133.27
+      max:
+        x: 111.06
+        y: 136.48
+      width: 4.81
+      height: 3.21
+      center:
+        x: 108.655
+        y: 134.875
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.16
+        y: -1.9
+      max:
+        x: 2.7
+        y: 1.36
+      width: 4.86
+      height: 3.26
+      center:
+        x: 0.27
+        y: -0.27
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 106.2
+        y: 133.27
+      max:
+        x: 111.06
+        y: 136.53
+      width: 4.86
+      height: 3.26
+      center:
+        x: 108.63
+        y: 134.9
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.825
+        y: -1.9
+      max:
+        x: 2.825
+        y: 1.36
+      width: 5.65
+      height: 3.26
+      center:
+        x: 0.0
+        y: -0.27
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 106.075
+        y: 133.27
+      max:
+        x: 111.725
+        y: 136.53
+      width: 5.65
+      height: 3.26
+      center:
+        x: 108.9
+        y: 134.9
+  connected_components:
+  - D1
+  - K2
+  - U2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(D2-Pad1)
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - V_BCKP
+    pcb_nets:
+    - V_BCKP
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: diode
+    package_size: null
+    value: M4_DIODA
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_diode_schottky_sod_323_bat54w
+    score: 0.1375
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_123_ss14
+    score: 0.1261
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_523_1ss400
+    score: 0.1229
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_323_infineon_bat60a
+    score: 0.1201
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu
+    score: 0.1197
+    reasons:
+    - same component family
+category: diode
+category_source: unmatched_kicad_hint
+category_name: Diode
+generated_directory: components/D2

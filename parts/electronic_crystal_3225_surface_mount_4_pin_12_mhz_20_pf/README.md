@@ -78,6 +78,8 @@ Crystal 12 MHz 20 pF 3225 4-pin is an OOMP electronic crystal definition. It use
 
 ![Square summary](data/working_svg_square_300.png)
 
+![Square schematic](data/working_svg_square_schematic_300.png)
+
 ![Dimensions](data/working_svg_dimensioned_300.png)
 
 ![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)

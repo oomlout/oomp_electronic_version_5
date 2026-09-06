@@ -43,7 +43,7 @@ import working_oomp_populate_ic
 import working_oomp_populate_ic_extra
 import working_oomp_metadata
 import svg_help
-from kicad_agents.pcb_copper import add_copper_svg, copper_drawings
+from kicad_agents.pcb_copper import add_copper_svg, copper_svg
 from kicad_agents.project_html_agent import _lcsc_search_value
 
 
@@ -149,30 +149,46 @@ class LcscSearchTests(unittest.TestCase):
 
 
 class CopperPadLayeringTests(unittest.TestCase):
-    def test_pads_render_above_component_artwork_as_white_shapes(self):
+    def test_board_copper_renders_below_component_artwork(self):
         features = [
             {"kind": "segment", "start": [0, 0], "end": [1, 0], "width": 0.2, "layers": ["F.Cu"],
              "net": "GND", "net_id": "net_0_0", "reference": "", "number": ""},
             {"kind": "pad", "position": [1, 1], "rotation": 0, "size": [1, 0.6], "shape": "rect",
              "layers": ["F.Cu"], "net": "GND", "net_id": "net_0_0", "reference": "R1", "number": "1",
-             "roundrect_rratio": 0, "anchor": "rect", "primitives": [],
-             "drill": {"size": [0.3, 0.3], "offset": [0, 0]}},
+             "roundrect_rratio": 0, "anchor": "rect", "primitives": []},
         ]
-        base_drawing, pads_drawing = copper_drawings(features)
-        self.assertIn("copper-segment", base_drawing)
-        self.assertNotIn("copper-pad", base_drawing)
-        self.assertIn("copper-pad", pads_drawing)
-        self.assertIn("var(--board", pads_drawing)
+        drawing = copper_svg(features)
+        self.assertIn("copper-segment", drawing)
+        self.assertIn("copper-pad", drawing)
         board = ('<svg viewBox="0 0 10 10">'
                  '<g class="board-component" data-reference="R1"><rect class="component" x="1" y="1" width="2" height="1"/></g>'
                  '<g class="indicator"><rect/></g></svg>')
-        composed = add_copper_svg(board, base_drawing, pads_drawing)
-        self.assertLess(composed.find('class="copper-base"'), composed.find('class="board-component"'))
-        pads_index = composed.find('class="copper-pads"')
-        self.assertGreater(pads_index, composed.find('class="board-component"'))
-        self.assertLess(pads_index, composed.find('class="indicator"'))
-        mirrored = add_copper_svg(board, base_drawing, pads_drawing, mirror=True)
-        self.assertIn('class="copper-pads" transform="translate(', mirrored)
+        composed = add_copper_svg(board, drawing)
+        copper_index = composed.find('class="copper-base"')
+        self.assertLess(copper_index, composed.find('class="board-component"'))
+        self.assertNotIn('class="copper-pads"', composed)
+        mirrored = add_copper_svg(board, drawing, mirror=True)
+        self.assertIn('class="copper-base" transform="translate(', mirrored)
+
+    def test_assembly_artwork_lifts_pads_above_body_with_labels_on_top(self):
+        import svg_help
+        thing = {"svg_components": [
+            {"shape": "rect", "css_class": "pad", "style_name": "component.pad"},
+            {"shape": "text", "style_name": "component.label"},
+            {"shape": "rounded_rectangle", "style_name": "component.body"},
+            {"shape": "circle", "style_name": "component.pin_one"},
+        ]}
+        svg_help._lift_pads_above_body(thing)
+        order = [(component["shape"], component.get("css_class")) for component in thing["svg_components"]]
+        self.assertEqual(order, [
+            ("rounded_rectangle", None),   # body artwork first
+            ("rect", "pad"),               # pads above the body, still solid white
+            ("text", None),                # labels and markers render higher...
+            ("circle", None),              # ...keeping their original order
+        ])
+        without_pads = {"svg_components": [{"shape": "rect"}]}
+        svg_help._lift_pads_above_body(without_pads)
+        self.assertEqual(len(without_pads["svg_components"]), 1)
 
 
 class AssemblyStrokeTests(unittest.TestCase):
@@ -1047,7 +1063,8 @@ class ProjectPartTests(unittest.TestCase):
             if option["project_github_repository"] == "Current-sensor-30A-ACS712-breakout-hardware-design"
         )
         self.assertEqual(acs712["project_file_folder"], "CAD/V2.0.0")
-        self.assertEqual(acs712["project_file_basename"], "ACS712_breakout")
+        # Matches the actual project name in the repository's CAD/V2.0.0.
+        self.assertEqual(acs712["project_file_basename"], "Current_sensor_ACS712")
 
         gnss_easyc = next(
             option
@@ -1135,6 +1152,7 @@ class ProjectPartTests(unittest.TestCase):
         first_action = working["oomlout_ai_roboclick_1"]
         second_action = working["oomlout_ai_roboclick_3"]
         usage_action = working["oomlout_ai_roboclick_4"]
+        production_action = working["oomlout_ai_roboclick_6"]
         self.assertEqual(first_action["file_test"], "data/original/manifest.yaml")
         self.assertEqual(second_action["file_test"], "data/generated_data/src/board_mechanical_300.png")
         self.assertEqual(usage_action["file_test"], "")
@@ -1143,6 +1161,13 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIs(second_action["actions"][0]["regenerate_pngs"], False)
         self.assertEqual(len(second_action["actions"]), 6)
         self.assertEqual(usage_action["actions"][0]["file_python"], "kicad_agents/project_usage_action.py")
+        self.assertEqual(production_action["actions"][0]["file_python"], "kicad_agents/production_jlc_action.py")
+        self.assertTrue(production_action["always_run_on_regeneration"])
+        self.assertTrue(production_action["honour_gate_in_normal_run"])
+        self.assertEqual(
+            production_action["file_test"],
+            "data/production_auto_generate/data/generation_status.yaml",
+        )
         self.assertEqual(second_action["actions"][1]["file_destination"], "data/generated_data/src/board_300.png")
         self.assertEqual(second_action["actions"][2]["file_destination"], "data/generated_data/src/board_pins_300.png")
         self.assertEqual(second_action["actions"][3]["file_destination"], "data/generated_data/src/board_bottom_300.png")
@@ -1266,7 +1291,18 @@ class ProjectPartTests(unittest.TestCase):
         self.assertNotIn("UNK_HOLE", board_pins_svg)
         small_reference = re.search(r'font-size="([0-9.]+)"[^>]*>R1</text>', board_pins_svg)
         self.assertIsNotNone(small_reference)
-        self.assertLess(float(small_reference.group(1)), 0.22)
+        # Two-line indicator: the reference stays small enough for a 0402 and
+        # the part's value sits under it in an even smaller font.
+        self.assertLess(float(small_reference.group(1)), 0.31)
+        r1_indicator = re.search(
+            r'<g class="indicator"(?:(?!</g>).)*?>R1</text>(?:(?!</g>).)*?</g>',
+            board_pins_svg, re.S,
+        )
+        self.assertIsNotNone(r1_indicator)
+        after_reference = r1_indicator.group(0).index(">R1</text>")
+        r1_value = re.search(r'font-size="([0-9.]+)"', r1_indicator.group(0)[after_reference:])
+        self.assertIsNotNone(r1_value)
+        self.assertLess(float(r1_value.group(1)), float(small_reference.group(1)))
 
         mechanical_svg = (generated_data / "src" / "board_mechanical.svg").read_text(encoding="utf-8")
         self.assertIn(">0,0</text>", mechanical_svg)
@@ -1320,7 +1356,9 @@ class ProjectPartTests(unittest.TestCase):
         self.assertIn("link.className = 'part-link'", explorer)
         self.assertIn("box.setAttribute('class', selected ? 'selection-box' : 'hover-box')", explorer)
         self.assertIn('class="component-highlights"', explorer)
-        self.assertNotIn("linear-gradient", explorer)
+        # Gradients are allowed only inside the embedded rainbow theme rules.
+        gradient_free = explorer.split('data-theme="rainbow"')[0]
+        self.assertNotIn("linear-gradient", gradient_free)
         self.assertIn("working_svg_square_pins", (generated_data / "src" / "components" / "manifest.yaml").read_text(encoding="utf-8"))
         self.assertIn("https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040", explorer)
         self.assertNotRegex(explorer, r'<script[^>]+src=')
@@ -1400,7 +1438,7 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         self.assertEqual(svg_action["command"], "run_python")
         self.assertEqual(svg_action["part_id"], part_directory.name)
         resize_actions = [action for action in preview_actions if action["command"] == "image_resize"]
-        self.assertEqual(len(resize_actions), 10)
+        self.assertEqual(len(resize_actions), 11)
         self.assertTrue(all(action["command"] == "image_resize" for action in resize_actions))
         self.assertTrue(all(action["maximum_dimension"] == 300 for action in resize_actions))
         self.assertTrue(all(action["allow_upscale"] is False for action in resize_actions))

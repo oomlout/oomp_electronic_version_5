@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 16 pin
+# Connector Header ZX-PZ2.54-1-16PZZ
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_16_pin`
 
-Connector Header 2.54 mm pitch through-hole 16 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 40.64 &#x00D7; 2.48 mm.
+Connector Header ZX-PZ2.54-1-16PZZ is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 40.64 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 16 pin pinout](data/working_svg_top.svg)
+![Connector Header ZX-PZ2.54-1-16PZZ pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 16 pin is an OOMP electronic connect
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `ZX-PZ2.54-1-16PZZ` |
+| LCSC | [`C7501270`](https://www.lcsc.com/product-detail/C7501270.html) |
+| LCSC | [`C54950622`](https://www.lcsc.com/product-detail/C54950622.html) |
+| LCSC | [`C22465876`](https://www.lcsc.com/product-detail/C22465876.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 16 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

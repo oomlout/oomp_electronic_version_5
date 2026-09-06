@@ -37,6 +37,16 @@ Resistor 750 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-07750RL` |
+| LCSC | [`C137936`](https://www.lcsc.com/product-detail/C137936.html) |
+| LCSC | [`C25132`](https://www.lcsc.com/product-detail/C25132.html) |
+| LCSC | [`C2909382`](https://www.lcsc.com/product-detail/C2909382.html) |
+
+
 
 
 

@@ -37,6 +37,16 @@ Resistor 8.2e+06 Ohm 0402 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF8204TCE` |
+| LCSC | [`C423132`](https://www.lcsc.com/product-detail/C423132.html) |
+| LCSC | [`C2933123`](https://www.lcsc.com/product-detail/C2933123.html) |
+| LCSC | [`C54531134`](https://www.lcsc.com/product-detail/C54531134.html) |
+
+
 
 
 

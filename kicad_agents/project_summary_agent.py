@@ -15,6 +15,7 @@ import yaml
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
 
 from .sexpr import as_float, child, children, load, tag, value
+from .schematic_svg import build_symbol_preview_svg, build_schematic_svg
 
 
 ROOT_DIRECTORY = Path(__file__).resolve().parents[1]
@@ -785,13 +786,18 @@ def _make_board_svg(
         f'<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="{view_min_x:.4f} {view_min_y:.4f} {view_width:.4f} {view_height:.4f}">',
         "<defs>",
         "<style>",
-        f'.page {{ fill: {colors["background"]}; }}',
-        f'.board {{ fill: {colors["board_fill"]}; stroke: {colors["board_outline"]}; stroke-width: {svg_style["board_stroke_width_mm"]}; }}',
-        f'.edge-cut {{ fill: none; stroke: {colors["board_outline"]}; stroke-width: {svg_style["edge_cut_stroke_width_mm"]}; }}',
-        f'.component {{ fill: {colors["component_fill"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["component_stroke_width_mm"]}; }}',
-        f'.mechanical-pad {{ fill: {colors["background"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["mechanical_pad_stroke_width_mm"]}; }}',
-        f'.mounting-hole {{ fill: {colors["background"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["mounting_hole_stroke_width_mm"]}; }}',
-        f'.reference {{ fill: {colors["text"]}; font-family: {typography["family"]}; font-size: {typography["reference_size_mm"]}px; text-anchor: middle; paint-order: stroke; stroke: {colors["background"]}; stroke-width: 0.35px; }}',
+        # Colours are CSS custom properties so the board_explorer stylesheet
+        # can re-theme the board per page theme; the fallbacks keep standalone
+        # SVGs rendering with the monochrome print palette.
+        f'.page {{ fill: var(--brd-page, {colors["background"]}); }}',
+        f'.board {{ fill: var(--brd-board-fill, {colors["board_fill"]}); stroke: var(--brd-board-outline, {colors["board_outline"]}); stroke-width: {svg_style["board_stroke_width_mm"]}; }}',
+        f'.edge-cut {{ fill: none; stroke: var(--brd-board-outline, {colors["board_outline"]}); stroke-width: {svg_style["edge_cut_stroke_width_mm"]}; }}',
+        f'.component {{ fill: var(--brd-component-fill, {colors["component_fill"]}); stroke: var(--brd-component-outline, {colors["component_outline"]}); stroke-width: {svg_style["component_stroke_width_mm"]}; }}',
+        f'.mechanical-pad {{ fill: var(--brd-page, {colors["background"]}); stroke: var(--brd-component-outline, {colors["component_outline"]}); stroke-width: {svg_style["mechanical_pad_stroke_width_mm"]}; }}',
+        f'.mounting-hole {{ fill: var(--brd-page, {colors["background"]}); stroke: var(--brd-component-outline, {colors["component_outline"]}); stroke-width: {svg_style["mounting_hole_stroke_width_mm"]}; }}',
+        f'.reference {{ fill: var(--brd-text, {colors["text"]}); font-family: {typography["family"]}; font-size: {typography["reference_size_mm"]}px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, {colors["background"]}); stroke-width: 0.35px; }}',
+        '.indicator-plate { fill: var(--brd-plate, #FFFFFF); }',
+        '.indicator-text { fill: var(--brd-plate-text, #000000); }',
         "</style>",
         "</defs>",
         f'<rect class="page" x="{view_min_x:.4f}" y="{view_min_y:.4f}" width="{view_width:.4f}" height="{view_height:.4f}" />',
@@ -873,20 +879,79 @@ def _make_board_svg(
                 indicator_x = mirror_axis - indicator_x
 
         reference = str(row["reference"])
+        value_text = str(row.get("value") or "").strip()
         maximum_reference_size = float(typography["reference_size_mm"])
         width_reference_size = placed_width * 0.72 / max(1.0, len(reference) * 0.68)
-        height_reference_size = placed_height * 0.42
-        reference_size = min(maximum_reference_size, width_reference_size, height_reference_size)
-        reference_baseline = reference_size * 0.34
-        indicator_width = min(placed_width * 0.82, len(reference) * reference_size * 0.68 + reference_size * 0.5)
-        indicator_height = min(placed_height * 0.60, reference_size * 1.35)
+        if value_text and value_text.upper() not in ("DNF", "DNA", "N/A"):
+            # Two-line indicator: reference on top, value in a smaller font
+            # underneath.  Both sizes shrink until the whole text block fits
+            # inside the part's placed artwork; an unreadably small value is
+            # dropped and the label falls back to one line.
+            reference_size = min(
+                maximum_reference_size,
+                width_reference_size,
+                placed_height * 0.42,
+            )
+            value_size = min(
+                reference_size * 0.66,
+                placed_width * 0.72 / max(1.0, len(value_text) * 0.60),
+                placed_height * 0.22,
+            )
+            if value_size < 0.1:
+                value_text = ""
+        else:
+            value_text = ""
+            reference_size = min(
+                maximum_reference_size,
+                width_reference_size,
+                placed_height * 0.42,
+            )
+        if value_text:
+            # Size the white plate from the real text extents so small parts
+            # (0402 resistors, SOT diodes) never have the reference poking
+            # above the plate or the pair spilling out of the body.
+            reference_baseline = -(value_size * 0.72)
+            value_baseline = reference_size * 0.72
+            text_top = reference_baseline - reference_size * 0.78
+            text_bottom = value_baseline + value_size * 0.28
+            block_height = text_bottom - text_top
+            shrink = min(1.0, placed_height * 0.92 / block_height) if block_height > 0 else 1.0
+            if shrink < 1.0:
+                reference_size *= shrink
+                value_size *= shrink
+                reference_baseline = -(value_size * 0.72)
+                value_baseline = reference_size * 0.72
+                text_top = reference_baseline - reference_size * 0.78
+                text_bottom = value_baseline + value_size * 0.28
+                block_height = text_bottom - text_top
+            indicator_width = min(
+                placed_width * 0.9,
+                max(len(reference) * reference_size * 0.68, len(value_text) * value_size * 0.60)
+                + reference_size * 0.5,
+            )
+            indicator_height = block_height + reference_size * 0.16
+            value_font_size = value_size
+        else:
+            reference_baseline = reference_size * 0.34
+            text_top = reference_baseline - reference_size * 0.78
+            text_bottom = reference_baseline + reference_size * 0.28
+            indicator_width = min(placed_width * 0.82, len(reference) * reference_size * 0.68 + reference_size * 0.5)
+            indicator_height = min(placed_height * 0.60, reference_size * 1.35)
+            value_font_size = 0.0
+        plate_top = min(text_top - reference_size * 0.08, -indicator_height / 2)
+        value_element = ""
+        if value_text:
+            value_element = (
+                f'<text class="indicator-text" x="0" y="{value_baseline:.4f}" font-family="Arial, sans-serif" '
+                f'font-size="{value_font_size:.4f}" text-anchor="middle">{html.escape(value_text)}</text>'
+            )
         reference_lines.append(
             f'<g class="indicator" transform="translate({indicator_x:.4f} {indicator_y:.4f})">'
-            f'<rect x="{-indicator_width / 2:.4f}" y="{-indicator_height / 2:.4f}" width="{indicator_width:.4f}" '
-            f'height="{indicator_height:.4f}" rx="{reference_size * 0.12:.4f}" fill="#FFFFFF" stroke="none" />'
-            f'<text x="0" y="{reference_baseline:.4f}" fill="#000000" font-family="Arial, sans-serif" '
+            f'<rect class="indicator-plate" x="{-indicator_width / 2:.4f}" y="{plate_top:.4f}" width="{indicator_width:.4f}" '
+            f'height="{indicator_height:.4f}" rx="{reference_size * 0.12:.4f}" stroke="none" />'
+            f'<text class="indicator-text" x="0" y="{reference_baseline:.4f}" font-family="Arial, sans-serif" '
             f'font-size="{reference_size:.4f}" font-weight="bold" '
-            f'text-anchor="middle">{html.escape(reference)}</text></g>'
+            f'text-anchor="middle">{html.escape(reference)}</text>{value_element}</g>'
         )
     # Holes are physical removals, so keep them above component artwork.  This
     # prevents connector bodies from obscuring small locating holes.
@@ -976,14 +1041,14 @@ def _make_mechanical_svg(
         f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{view_min_x:.4f} {view_min_y:.4f} {view_width:.4f} {view_height:.4f}">',
         "<defs>",
         "<style>",
-        f'.page {{ fill: {colors["background"]}; }}',
-        f'.board {{ fill: {colors["board_fill"]}; stroke: {colors["board_outline"]}; stroke-width: {svg_style["board_stroke_width_mm"]}; }}',
-        f'.edge-cut {{ fill: none; stroke: {colors["board_outline"]}; stroke-width: {svg_style["edge_cut_stroke_width_mm"]}; }}',
-        f'.mechanical-pad {{ fill: {colors["background"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["mechanical_pad_stroke_width_mm"]}; }}',
-        f'.mounting-hole {{ fill: {colors["background"]}; stroke: {colors["component_outline"]}; stroke-width: {svg_style["mounting_hole_stroke_width_mm"]}; }}',
-        f'.origin {{ fill: none; stroke: {colors["text"]}; stroke-width: {svg_style["origin_stroke_width_mm"]}; }}',
-        f'.leader {{ fill: none; stroke: {colors["text"]}; stroke-width: {svg_style["leader_stroke_width_mm"]}; }}',
-        f'.mechanical-text {{ fill: {colors["text"]}; font-family: {typography["family"]}; font-size: {typography["mechanical_size_mm"]}px; }}',
+        f'.page {{ fill: var(--brd-page, {colors["background"]}); }}',
+        f'.board {{ fill: var(--brd-board-fill, {colors["board_fill"]}); stroke: var(--brd-board-outline, {colors["board_outline"]}); stroke-width: {svg_style["board_stroke_width_mm"]}; }}',
+        f'.edge-cut {{ fill: none; stroke: var(--brd-board-outline, {colors["board_outline"]}); stroke-width: {svg_style["edge_cut_stroke_width_mm"]}; }}',
+        f'.mechanical-pad {{ fill: var(--brd-page, {colors["background"]}); stroke: var(--brd-component-outline, {colors["component_outline"]}); stroke-width: {svg_style["mechanical_pad_stroke_width_mm"]}; }}',
+        f'.mounting-hole {{ fill: var(--brd-page, {colors["background"]}); stroke: var(--brd-component-outline, {colors["component_outline"]}); stroke-width: {svg_style["mounting_hole_stroke_width_mm"]}; }}',
+        f'.origin {{ fill: none; stroke: var(--brd-text, {colors["text"]}); stroke-width: {svg_style["origin_stroke_width_mm"]}; }}',
+        f'.leader {{ fill: none; stroke: var(--brd-text, {colors["text"]}); stroke-width: {svg_style["leader_stroke_width_mm"]}; }}',
+        f'.mechanical-text {{ fill: var(--brd-text, {colors["text"]}); font-family: {typography["family"]}; font-size: {typography["mechanical_size_mm"]}px; }}',
         "</style>",
         "</defs>",
         f'<rect class="page" x="{view_min_x:.4f}" y="{view_min_y:.4f}" width="{view_width:.4f}" height="{view_height:.4f}" />',
@@ -1093,6 +1158,55 @@ def _make_mechanical_svg(
     }
 
 
+def _make_schematic_svg(asset_directory, project_directory, project_data, components):
+    """Write the sheet SVG and per-reference symbol previews used by the explorer."""
+    schematic_files = project_data.get("project", {}).get("schematic_files", [])
+    result = {"available": False, "image_file": "data/generated_data/src/schematic.svg", "page_count": 0, "symbol_count": 0}
+    if not schematic_files:
+        return result
+    try:
+        schematic = build_schematic_svg(project_directory, schematic_files)
+    except Exception as error:
+        # A broken sheet must never silently leave a stale schematic.svg behind.
+        import traceback
+
+        print(f"schematic render failed for {project_directory.name}: {error}")
+        traceback.print_exc()
+        return result
+    (asset_directory / "schematic.svg").write_text(schematic["svg"], encoding="utf-8")
+    preview_directory = asset_directory / "schematic_parts"
+    preview_directory.mkdir(parents=True, exist_ok=True)
+    preview_count = 0
+    for row in _component_rows(components):
+        reference = re.sub(r"[^A-Za-z0-9_.-]", "_", str(row["reference"]))
+        if reference == "":
+            continue
+        preview = build_symbol_preview_svg(project_directory, schematic_files, str(row["reference"]))
+        if not preview:
+            continue
+        (preview_directory / f"{reference}.svg").write_text(preview, encoding="utf-8")
+        preview_count += 1
+    result.update(
+        {
+            "available": True,
+            "page_count": schematic["page_count"],
+            "symbol_count": schematic["symbol_count"],
+            "preview_count": preview_count,
+        }
+    )
+    return result
+
+
+def _flatten_css_variables(svg_text):
+    """Swap every var(--name, fallback) for its fallback value.
+
+    Browsers resolve the custom properties so the board explorer can theme
+    the SVG per page theme; cairosvg cannot, so PNG rendering uses the
+    literal monochrome fallbacks baked in at generation time.
+    """
+    return re.sub(r"var\(\s*--[A-Za-z0-9_-]+\s*,\s*([^()]*?)\s*\)", r"\1", svg_text)
+
+
 def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=False):
     """Render one board PNG, preserving an existing file unless requested."""
     image_file = f"data/generated_data/src/{png_path.name}"
@@ -1130,10 +1244,15 @@ def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=
         output_height = int(maximum_dimension)
         output_width = max(1, round(maximum_dimension * view_width / view_height))
 
+    # The on-disk SVG themes itself through CSS custom properties so the
+    # board explorer can re-ink it per page theme; rasterisers only
+    # understand the literal fallbacks, so flatten the vars before drawing.
+    png_svg_text = _flatten_css_variables(svg_text)
+
     for attempt_number in range(10):
         try:
             cairosvg.svg2png(
-                url=str(svg_path),
+                bytestring=png_svg_text.encode("utf-8"),
                 write_to=str(png_path),
                 output_width=output_width,
                 output_height=output_height,
@@ -1375,6 +1494,8 @@ def generate_project_summary(
         "board_mechanical_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical.png",
         "board_mechanical_300_png": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical_300.png",
         "board_mechanical_300_png_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/board_mechanical_300.png",
+        "schematic": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/schematic.svg",
+        "schematic_raw": f"https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/src/schematic.svg",
         "parts": f"{OOMP_REPOSITORY_URL}/tree/{OOMP_REPOSITORY_BRANCH}/parts",
         "explorer": f"https://oomlout.github.io/oomp_electronic_version_5/{repository_part_path}/board_explorer.html",
         "interactivehtmlbom": f"https://oomlout.github.io/oomp_electronic_version_5/{repository_part_path}/data/interactivehtmlbom/ibom.html",
@@ -1436,6 +1557,7 @@ def generate_project_summary(
         components,
         style,
     )
+    schematic = _make_schematic_svg(asset_directory, project_directory, project_data, components)
     board_png = _make_board_png(
         asset_directory / "board.svg",
         asset_directory / "board.png",
@@ -1533,6 +1655,7 @@ def generate_project_summary(
         "board_pins_bottom_png": board_pins_bottom_png,
         "board_mechanical": board_mechanical,
         "board_mechanical_png": board_mechanical_png,
+        "schematic": schematic,
         "mounting_holes": mounting_holes,
         "interactivehtmlbom": {
             "available": (project_directory / "data" / "interactivehtmlbom" / "ibom.html").is_file(),

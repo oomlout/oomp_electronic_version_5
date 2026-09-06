@@ -29,6 +29,8 @@ def _check_file_paths(part_directory, mode_details):
 
 
 def _check_files_complete(part_directory, mode_details):
+    if mode_details.get("always_run_on_regeneration", False):
+        return False
     paths = _check_file_paths(part_directory, mode_details)
     if not paths:
         return False

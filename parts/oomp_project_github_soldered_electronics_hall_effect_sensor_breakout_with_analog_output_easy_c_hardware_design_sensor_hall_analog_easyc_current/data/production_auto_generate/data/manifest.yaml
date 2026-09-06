@@ -1,0 +1,178 @@
+format_version: 1
+generated_by: kicad_agents.production_jlc_agent
+status: generated_needs_review
+strategy: KiCad's native CLI exports fabrication and position data; Python writes JLCPCB CSVs and audit data.
+source_board: data/kicad_file.kicad_pcb
+source_board_sha256: 676d9a1f25a97938379e1722003c2c658e887ce2668b6019a71c266bc1dd2391
+oomp_metadata_board: data/oomp_design/Hall_effect_sensor_easyC_analog.kicad_pcb
+kicad_cli: C:\Program Files\KiCad\10.0\bin\kicad-cli.exe
+kicad_version: 10.0.6
+gerber_layers:
+- F.Cu
+- B.Cu
+- F.Paste
+- B.Paste
+- F.Silkscreen
+- B.Silkscreen
+- F.Mask
+- B.Mask
+- Edge.Cuts
+jlc_bom_columns:
+- Comment
+- Designator
+- Footprint
+- 'LCSC Part #'
+jlc_cpl_columns:
+- Designator
+- Mid X
+- Mid Y
+- Rotation
+- Layer
+summary:
+  bom_groups: 8
+  placed_components: 11
+  skipped_components: 2
+  components_missing_lcsc: 7
+  gerber_files: 15
+  drc:
+    violations: 32
+    unconnected_items: 0
+    schematic_parity_items: 0
+settings:
+  production_exclude_references: []
+  production_lcsc_overrides: {}
+  production_rotation_offsets: {}
+  production_position_offsets_mm: {}
+commands:
+- - C:/Program Files/KiCad/10.0/bin/kicad-cli.exe
+  - pcb
+  - export
+  - gerbers
+  - --output
+  - data/production_auto_generate/data/gerbers
+  - --layers
+  - F.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts
+  - --subtract-soldermask
+  - --precision
+  - '6'
+  - --check-zones
+  - ./data/kicad_file.kicad_pcb
+- - C:/Program Files/KiCad/10.0/bin/kicad-cli.exe
+  - pcb
+  - export
+  - drill
+  - --output
+  - data/production_auto_generate/data/gerbers
+  - --format
+  - excellon
+  - --drill-origin
+  - absolute
+  - --excellon-zeros-format
+  - decimal
+  - --excellon-oval-format
+  - route
+  - --excellon-units
+  - mm
+  - --excellon-separate-th
+  - --generate-map
+  - --map-format
+  - gerberx2
+  - --generate-report
+  - --report-path
+  - data/production_auto_generate/data/gerbers/drill_report.txt
+  - ./data/kicad_file.kicad_pcb
+- - C:/Program Files/KiCad/10.0/bin/kicad-cli.exe
+  - pcb
+  - export
+  - pos
+  - --format
+  - csv
+  - --units
+  - mm
+  - --side
+  - both
+  - --exclude-dnp
+  - --output
+  - data/production_auto_generate/data/kicad_position_raw.csv
+  - ./data/kicad_file.kicad_pcb
+- - C:/Program Files/KiCad/10.0/bin/kicad-cli.exe
+  - pcb
+  - drc
+  - --output
+  - data/production_auto_generate/data/drc.json
+  - --format
+  - json
+  - --units
+  - mm
+  - --severity-all
+  - ./data/kicad_file.kicad_pcb
+files:
+- path: bom_jlc.csv
+  bytes: 482
+  sha256: 7aa579889d38f19475fa36f1e320eda031b9ac64b3df3dd401b646531b497f0d
+- path: bom_missing_lcsc.csv
+  bytes: 634
+  sha256: 2c91af35a56974aa4b1901b75766795de73f4ee5232c57e6f39d3d28ea72e8fd
+- path: cpl_jlc.csv
+  bytes: 390
+  sha256: 8cc2d21d823c85eaa9fe55a86c8086fcbfccd7484cef4b2a16bca1225adfa49d
+- path: data/components.json
+  bytes: 13077
+  sha256: 94008859b011750b69c999d59d122feb476672b60c867d39fa113e02516eb09b
+- path: data/components.yaml
+  bytes: 8008
+  sha256: 0605a4ac85d2640bee5ab03adb6d7109d5a0fc5cb93c6694c6bdacadf5728803
+- path: data/drc.json
+  bytes: 21988
+  sha256: 279b50dc53ddec4e01c863aa3c4cc9aaa3d86af8020193dcabcadb81628eb097
+- path: data/gerbers/drill_report.txt
+  bytes: 693
+  sha256: dae05fe5cd07fd8cd2e54e68ea86dc9de2e06776376cc85b31645753c35a3093
+- path: data/gerbers/kicad_file-B_Cu.gbl
+  bytes: 30155
+  sha256: 08847a38173f496b84985d233ee9cfe4176d9ba0fc62e1fc71468e6a1cbc49c0
+- path: data/gerbers/kicad_file-B_Mask.gbs
+  bytes: 1551
+  sha256: 0bbc135e3e906d8bf6921988c9b0b7cefb0d8415b80fddd81eeaff6cb61d6765
+- path: data/gerbers/kicad_file-B_Paste.gbp
+  bytes: 894
+  sha256: 14489c044bbf05e62f603efb415018d490ec042f5a57b26c32374c19a9f0638a
+- path: data/gerbers/kicad_file-B_Silkscreen.gbo
+  bytes: 166483
+  sha256: d136b14d1c13df01af6501822f2ea64b1400af9489ce1235646bd0f0fc87e598
+- path: data/gerbers/kicad_file-Edge_Cuts.gm1
+  bytes: 1046
+  sha256: 1d34880d1322d022441771972d64ba36222ed12ac3db88ff3565a2bc1ece523a
+- path: data/gerbers/kicad_file-F_Cu.gtl
+  bytes: 53693
+  sha256: fcfddd871db3fb0dee7aeed8a0b1bf9f264a026df1b78c629ddf87f64bf3670a
+- path: data/gerbers/kicad_file-F_Mask.gts
+  bytes: 3236
+  sha256: 274c54c179a99c9f09eb763590cb71c24e0d30dc45eafe323ad9b866d34947c9
+- path: data/gerbers/kicad_file-F_Paste.gtp
+  bytes: 2188
+  sha256: 4ee33fae80351c9f8393ad051e6056dbcfc4db50402fba61a82655fa90709dd0
+- path: data/gerbers/kicad_file-F_Silkscreen.gto
+  bytes: 139158
+  sha256: ae2040ef55ecfd63bb64476bfd1f6c5b94c8fdb4a5ee607ee6717b9289f83c9e
+- path: data/gerbers/kicad_file-job.gbrjob
+  bytes: 2890
+  sha256: bb94a66c7f7cf8653fef2d97beb92d800a166dcbd0e708c3c63b17cc5b35ebf5
+- path: data/gerbers/kicad_file-NPTH-drl_map.gbr
+  bytes: 22898
+  sha256: 074f71c6de9953c3c8689706c75af3ef5c42f71a9b60dee1180c6442e39f41ee
+- path: data/gerbers/kicad_file-NPTH.drl
+  bytes: 371
+  sha256: 59973fe242c0bf1098285596589d094f7ccc441db3b1ffe404d622bf02674eb9
+- path: data/gerbers/kicad_file-PTH-drl_map.gbr
+  bytes: 34012
+  sha256: 8ce64ce7c409e8f83a39efc1fa724454f8a92db05355ad612786a775ce35d6b6
+- path: data/gerbers/kicad_file-PTH.drl
+  bytes: 732
+  sha256: b20c110886c9e6a0eb7a4f19a39a4148201b1439fda9c5d62e1b42eb00d2dd19
+- path: data/kicad_position_raw.csv
+  bytes: 898
+  sha256: 4cf79814c26480f7aef6450465e425041b7dd937da8ec5eb1ce1f11e3c603954
+- path: gerbers_jlc.zip
+  bytes: 114215
+  sha256: ae5d49a5bd9fc567ac8c205ef413c8ca2ec0eab9f2b533f643e585afaa64fba6

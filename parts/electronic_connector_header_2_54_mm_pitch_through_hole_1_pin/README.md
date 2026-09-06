@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 1 pin
+# Connector Header ZX-PZ2.54-1-1PZZ
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_1_pin`
 
-Connector Header 2.54 mm pitch through-hole 1 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 2.54 &#x00D7; 2.48 mm.
+Connector Header ZX-PZ2.54-1-1PZZ is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 2.54 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 1 pin pinout](data/working_svg_top.svg)
+![Connector Header ZX-PZ2.54-1-1PZZ pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 1 pin is an OOMP electronic connecto
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `ZX-PZ2.54-1-1PZZ` |
+| LCSC | [`C7501259`](https://www.lcsc.com/product-detail/C7501259.html) |
+| LCSC | [`C54950614`](https://www.lcsc.com/product-detail/C54950614.html) |
+| LCSC | [`C27985186`](https://www.lcsc.com/product-detail/C27985186.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 1 pin is an OOMP electronic connecto
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

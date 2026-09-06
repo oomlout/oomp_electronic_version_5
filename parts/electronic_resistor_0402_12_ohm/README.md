@@ -37,6 +37,16 @@ Resistor 12 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F12R0TS` |
+| LCSC | [`C2909317`](https://www.lcsc.com/product-detail/C2909317.html) |
+| LCSC | [`C274886`](https://www.lcsc.com/product-detail/C274886.html) |
+| LCSC | [`C911955`](https://www.lcsc.com/product-detail/C911955.html) |
+
+
 
 
 

@@ -1,0 +1,110 @@
+available: true
+units:
+- reference: R11
+  source_file: data/kicad_file.kicad_sch
+  uuid: c6d509d0-ef65-44fd-9607-65d9d2347b39
+  library_id: e-radionica.com schematics:0603R
+  unit: 1
+  body_style: 1
+  position:
+    x: 125.095
+    y: 131.445
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R11
+    Value: 47k
+    Footprint: e-radionica.com footprinti:0603R
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.175
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 121.92
+      y: 131.445
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R10
+      pin_number: '2'
+      pin_name: '~'
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.175
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 128.27
+      y: 131.445
+    net: OUT
+    net_aliases:
+    - OUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '1'
+      pin_name: OUTA
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.955
+        y: -0.7104
+      max:
+        x: 1.9804
+        y: 0.685
+      width: 3.9354
+      height: 1.3954
+      center:
+        x: 0.0127
+        y: -0.0127
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 123.14
+        y: 130.76
+      max:
+        x: 127.0754
+        y: 132.1554
+      width: 3.9354
+      height: 1.3954
+      center:
+        x: 125.1077
+        y: 131.4577
+  warnings: []
+connected_components:
+- reference: K1
+  pin_number: '1'
+  pin_name: '~'
+- reference: R10
+  pin_number: '2'
+  pin_name: '~'
+- reference: U2
+  pin_number: '1'
+  pin_name: OUTA

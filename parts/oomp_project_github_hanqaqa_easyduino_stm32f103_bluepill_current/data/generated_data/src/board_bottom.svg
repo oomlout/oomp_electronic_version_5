@@ -2,13 +2,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="120.0000 67.0000 35.0000 65.0000">
 <defs>
 <style>
-.page { fill: #FFFFFF; }
-.board { fill: #FFFFFF; stroke: #000000; stroke-width: 0.35; }
-.edge-cut { fill: none; stroke: #000000; stroke-width: 0.25; }
-.component { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mechanical-pad { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mounting-hole { fill: #FFFFFF; stroke: #000000; stroke-width: 0.22; }
-.reference { fill: #000000; font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: #FFFFFF; stroke-width: 0.35px; }
+.page { fill: var(--brd-page, #FFFFFF); }
+.board { fill: var(--brd-board-fill, #FFFFFF); stroke: var(--brd-board-outline, #000000); stroke-width: 0.35; }
+.edge-cut { fill: none; stroke: var(--brd-board-outline, #000000); stroke-width: 0.25; }
+.component { fill: var(--brd-component-fill, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mechanical-pad { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mounting-hole { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.22; }
+.reference { fill: var(--brd-text, #000000); font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, #FFFFFF); stroke-width: 0.35px; }
+.indicator-plate { fill: var(--brd-plate, #FFFFFF); }
+.indicator-text { fill: var(--brd-plate-text, #000000); }
 </style>
 </defs>
 <rect class="page" x="120.0000" y="67.0000" width="35.0000" height="65.0000" />
@@ -77,6 +79,6 @@
 </g>
 <circle class="mounting-hole" cx="140.3900" cy="80.0200" r="0.3250" />
 <circle class="mounting-hole" cx="134.6100" cy="80.0200" r="0.3250" />
-<g class="indicator" transform="translate(145.2060 99.8170)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J2</text></g>
-<g class="indicator" transform="translate(129.9660 99.8170)"><rect x="-0.6696" y="-0.4860" width="1.3392" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J3</text></g>
+<g class="indicator" transform="translate(145.2060 99.8170)"><rect class="indicator-plate" x="-1.0728" y="-0.8335" width="2.1456" height="1.4928" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.2143" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J2</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.2976" text-anchor="middle">Conn_01x20</text></g>
+<g class="indicator" transform="translate(129.9660 99.8170)"><rect class="indicator-plate" x="-1.0728" y="-0.8335" width="2.1456" height="1.4928" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.2143" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J3</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.2976" text-anchor="middle">Conn_01x20</text></g>
 </svg>

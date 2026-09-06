@@ -37,6 +37,16 @@ Resistor 15000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402J153 TS` |
+| LCSC | [`C2906893`](https://www.lcsc.com/product-detail/C2906893.html) |
+| LCSC | [`C114761`](https://www.lcsc.com/product-detail/C114761.html) |
+| LCSC | [`C137917`](https://www.lcsc.com/product-detail/C137917.html) |
+
+
 
 
 

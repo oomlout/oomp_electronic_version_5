@@ -9,7 +9,7 @@ from pathlib import Path
 
 import yaml
 
-from kicad_agents.pcb_copper import add_copper_svg, copper_drawings, explorer_copper
+from kicad_agents.pcb_copper import add_copper_svg, copper_svg, explorer_copper
 
 
 OOMP_PARTS_URL = "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts"
@@ -33,6 +33,17 @@ def _part_pinout_svg(asset_directory, oomp_id):
     for candidate in candidates:
         if candidate.is_file():
             return _svg_without_declaration(_read_text(candidate))
+    return ""
+
+
+def _part_symbol_svg(asset_directory, reference):
+    """The placed schematic symbol drawing for this reference, if the sheet has one."""
+    safe_reference = re.sub(r"[^A-Za-z0-9_.-]", "_", str(reference))
+    if safe_reference == "":
+        return ""
+    candidate = asset_directory / "schematic_parts" / f"{safe_reference}.svg"
+    if candidate.is_file():
+        return _svg_without_declaration(_read_text(candidate))
     return ""
 
 
@@ -160,12 +171,16 @@ def _component_record(component, asset_directory, part_metadata=None):
         "supplier": str(properties.get("Supplier") or "").strip(),
         "pads": pads,
         "pinout_svg": _part_pinout_svg(asset_directory, oomp_id),
+        "symbol_svg": _part_symbol_svg(asset_directory, str(component.get("reference") or "")),
     }
 
 
 def _style():
     # Everything visual lives here.  The variables at the top are the intended
-    # quick-adjustment surface for later restyling.
+    # quick-adjustment surface for later restyling.  Three embedded themes
+    # (light, dark, rainbow) override only the variables plus a handful of
+    # gradient rules — the board drawing itself stays black-on-white so the
+    # artwork remains readable in every theme.
     return """
 :root {
   --page: #f3f1e9;
@@ -188,17 +203,109 @@ def _style():
   --radius: 18px;
   --selection-status-height: 180px;
   --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --header-bg: #171717;
+  --header-fg: #ffffff;
+  --header-muted: #cfcfcf;
+  --header-line: #555555;
+  --float-bg: rgba(255, 255, 255, .97);
+  --toolbar-bg: rgba(255, 255, 255, .94);
+  --sch-page: #ffffff;
+  --sch-ink: #171717;
+  --sch-muted: #686868;
+  --sch-note: #8a7f6a;
+  --sch-body: #f0ede4;
+  --brd-page: var(--board);
+  --brd-board-fill: #ffffff;
+  --brd-board-outline: #1f1f1f;
+  --brd-component-fill: #ffffff;
+  --brd-component-outline: #1f1f1f;
+  --brd-text: #171717;
+  --brd-plate: #ffffff;
+  --brd-plate-text: #171717;
+  --brd-pad-fill: #ffffff;
+  --brd-pad-outline: #1f1f1f;
+}
+html[data-theme="dark"] {
+  --page: #14161a;
+  --panel: #1d2127;
+  --ink: #e8e6e1;
+  --muted: #9aa0a6;
+  --line: #33383f;
+  --accent: #ff6b47;
+  --accent-soft: #3c2a23;
+  --board: #0f1114;
+  --copper: #93a1ad;
+  --net: #ff7a45;
+  --selected-pin: #3fb7c9;
+  --shadow: 0 18px 50px rgba(0, 0, 0, .55);
+  --header-bg: #0b0c0f;
+  --header-muted: #8f959d;
+  --header-line: #3a3f46;
+  --float-bg: rgba(34, 38, 44, .97);
+  --toolbar-bg: rgba(23, 26, 30, .94);
+  --sch-page: #1d2127;
+  --sch-ink: #e8e6e1;
+  --sch-muted: #9aa0a6;
+  --sch-note: #b3a58f;
+  --sch-body: #2c313a;
+  --brd-page: var(--board);
+  --brd-board-fill: #1d2127;
+  --brd-board-outline: #9aa0a6;
+  --brd-component-fill: #262b33;
+  --brd-component-outline: #b8bdc4;
+  --brd-text: #e8e6e1;
+  --brd-plate: #2c313a;
+  --brd-plate-text: #e8e6e1;
+  --brd-pad-fill: #1d2127;
+  --brd-pad-outline: #b8bdc4;
+}
+html[data-theme="rainbow"] {
+  --page: #fdf7ee;
+  --ink: #2b2118;
+  --muted: #857767;
+  --line: #ecdcc3;
+  --accent: #ff5c35;
+  --accent-soft: #ffe8cc;
+  --board: #fbf5ea;
+  --copper: #9d4edd;
+  --net: #d946ef;
+  --selected-pin: #06b6d4;
+  --copper-front: #ff5c35;
+  --copper-back: #00b4d8;
+  --copper-inner-1: #70e000;
+  --copper-inner-2: #9d4edd;
+  --copper-multilayer: #ffb703;
+  --sch-page: #fffbf2;
+  --sch-ink: #6d28d9;
+  --sch-muted: #c2410c;
+  --sch-note: #0f766e;
+  --sch-body: #ede9fe;
+  --brd-page: var(--board);
+  --brd-board-fill: #fff8ec;
+  --brd-board-outline: #6d28d9;
+  --brd-component-fill: #fdf4ff;
+  --brd-component-outline: #9333ea;
+  --brd-text: #7e22ce;
+  --brd-plate: #fce7f3;
+  --brd-plate-text: #be185d;
+  --brd-pad-fill: #fef08a;
+  --brd-pad-outline: #ca8a04;
+  --rainbow: linear-gradient(90deg, #ff5c35, #ffb703, #70e000, #00b4d8, #9d4edd);
 }
 * { box-sizing: border-box; }
 html, body { margin: 0; width: 100%; height: 100%; background: var(--page); color: var(--ink); font-family: var(--font); }
 body { display: grid; grid-template-rows: auto minmax(0, 1fr); overflow: hidden; }
-header { display: flex; align-items: center; gap: 18px; padding: 16px 22px; background: var(--ink); color: white; }
+header { display: flex; align-items: center; gap: 18px; padding: 16px 22px; background: var(--header-bg); color: var(--header-fg); }
 header h1 { margin: 0; font-size: clamp(18px, 2.1vw, 30px); letter-spacing: -.03em; }
-header p { margin: 2px 0 0; color: #cfcfcf; font-size: 13px; }
-.badge { margin-left: auto; border: 1px solid #555; border-radius: 999px; padding: 7px 11px; font-size: 12px; white-space: nowrap; }
-.github-link { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid #555; border-radius: 999px; color: white; flex: none; }
-.github-link:hover { border-color: white; background: #2a2a2a; }
+header p { margin: 2px 0 0; color: var(--header-muted); font-size: 13px; }
+.badge { margin-left: auto; border: 1px solid var(--header-line); border-radius: 999px; padding: 7px 11px; font-size: 12px; white-space: nowrap; }
+.github-link { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid var(--header-line); border-radius: 999px; color: var(--header-fg); flex: none; }
+.github-link:hover { border-color: var(--header-fg); background: rgba(255, 255, 255, .12); }
 .github-link svg { fill: currentColor; }
+.theme-select { display: inline-flex; align-items: center; gap: 7px; margin-left: auto; font-size: 12px; color: var(--header-muted); white-space: nowrap; }
+.theme-select select { width: auto; padding: 7px 9px; border: 1px solid var(--header-line); border-radius: 999px; background: transparent; color: var(--header-fg); font: inherit; font-size: 12px; cursor: pointer; }
+.theme-select select option { color: var(--ink); background: var(--panel); }
+.badge ~ .theme-select { margin-left: 0; }
 .project-card { padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 12px; }
 .project-card-title { font-weight: 650; font-size: 13px; letter-spacing: -.01em; }
 .project-card-meta { color: var(--muted); margin-top: 3px; overflow-wrap: anywhere; }
@@ -218,7 +325,7 @@ header p { margin: 2px 0 0; color: #cfcfcf; font-size: 13px; }
 .panel { min-width: 0; min-height: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.05); }
 .list-panel { display: grid; grid-template-rows: auto auto minmax(0, 1fr); min-width: 0; }
 .search-wrap { padding: 14px; border-bottom: 1px solid var(--line); }
-input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font: inherit; }
+input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--board); color: var(--ink); font: inherit; }
 .part-list { min-width: 0; overflow: auto; padding: 7px; }
 .part-row { position: relative; min-width: 0; }
 .category-group { border-bottom: 1px solid var(--line); padding-bottom: 5px; }
@@ -249,9 +356,9 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .part-link { position: absolute; top: 8px; right: 7px; display: grid; width: 24px; height: 24px; place-items: center; border-radius: 7px; color: var(--ink); text-decoration: none; }
 .part-link:hover { background: var(--ink); color: white; }
 .board-panel { position: relative; display: grid; place-items: center; overflow: auto; padding: 18px; background: var(--board); }
-.board-toolbar { position: absolute; z-index: 10; top: 12px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 5px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.94); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+.board-toolbar { position: absolute; z-index: 10; top: 12px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 5px; border: 1px solid var(--line); border-radius: 12px; background: var(--toolbar-bg); color: var(--ink); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
 .side-button { padding: 7px 11px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
-.side-button:hover, .side-button.active { background: var(--ink); color: white; }
+.side-button:hover, .side-button.active { background: var(--ink); color: var(--panel); }
 .zoom-divider { width: 1px; margin: 4px 2px; background: var(--line); }
 .zoom-button { width: 31px; padding: 7px 0; border: 0; border-radius: 8px; background: transparent; color: var(--ink); font: inherit; font-weight: 850; cursor: pointer; }
 .zoom-button:hover { background: var(--accent-soft); }
@@ -259,21 +366,49 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .zoom-reset { width: auto; min-width: 47px; padding-inline: 7px; font-size: 11px; }
 .board-stage { width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; cursor: grab; touch-action: none; user-select: none; }
 .board-stage.is-panning { cursor: grabbing; }
+.board-stage.split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); place-items: stretch; gap: 8px; position: relative; }
+.board-stage.split::after { content: ''; position: absolute; left: 50%; top: 6px; bottom: 6px; width: 1px; background: var(--line); transform: translateX(-0.5px); pointer-events: none; }
+.board-stage.split .board-view:not([hidden]), .board-stage.split .schematic-view:not([hidden]) { width: auto; }
 .board-view { width: 100%; height: 100%; min-width: 0; min-height: 0; }
-.board-view[hidden] { display: none; }
-.board-view > svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; margin: auto; filter: drop-shadow(0 9px 13px rgba(0,0,0,.12)); }
+/* Per-part artwork keeps its print palette as baked presentation attributes
+   (#FFFFFF fills, #000000 strokes); the rules below re-ink the strokes, the
+   pin-one markers and the pads with the page theme.  White body fills stay
+   governed by the transparent-geometry rule further down. */
+.board-component [fill="#000000"] { fill: var(--brd-component-outline); }
+.board-component [stroke="#000000"] { stroke: var(--brd-component-outline); }
+.board-component .pad { fill: var(--brd-pad-fill); stroke: var(--brd-pad-outline); }
+.board-view[hidden], .schematic-view[hidden] { display: none; }
+.board-view > svg, .schematic-view > svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; margin: auto; filter: drop-shadow(0 9px 13px rgba(0,0,0,.12)); }
+.schematic-view { width: 100%; height: 100%; min-width: 0; min-height: 0; overflow: hidden; border-radius: 8px; }
+/* Schematic symbols reuse the component hover/select machinery.  They stay
+   black whether selected or not — selection is shown only by the accent
+   rectangle drawn around them, exactly like the board view. */
+.schematic-view .sch-symbol { cursor: pointer; outline: none; transition: opacity .13s ease; }
+.schematic-view .sch-wire.on-net { stroke: var(--net); }
+.schematic-view .sch-wire-hit.on-net { stroke: var(--net); stroke-opacity: .25; }
+.schematic-view .sch-junction.on-net { fill: var(--net); }
+.schematic-view.has-net .sch-wire:not(.on-net), .schematic-view.has-net .sch-wire-hit:not(.on-net) { opacity: .18; }
+.schematic-view .sch-global.on-net .sch-label-pill { fill: var(--net); }
+.schematic-view .sch-global.on-net .sch-label-pill-text { fill: #ffffff; }
+.schematic-view .sch-label-tag.on-net .sch-label-pill { fill: var(--net); stroke: var(--net); }
+.schematic-view .sch-label-tag.on-net .sch-label-pill-text { fill: #ffffff; }
+.schematic-view .sch-label.on-net { fill: var(--net); font-weight: 700; }
 .board-stage .board-component { cursor: pointer; outline: none; transition: opacity .13s ease; shape-rendering: geometricPrecision; }
 .board-stage .board-component > .component { fill: none; }
 /* Only the explorer makes white assembly geometry transparent. Labels and
-   black outlines stay above the actual pad/track shapes; source SVGs stay white. */
-.board-stage .board-component :is(rect, path, polygon, circle, ellipse):is([fill="#FFFFFF"], [fill="#ffffff"], [fill="#fff"], [fill="white"]) { fill: none; }
+   black outlines stay above the actual pad/track shapes; source SVGs stay white.
+   The part artwork carries class="pad" primitives: they stay solid white
+   (with their black outline) so pins remain readable over routed copper;
+   every other white-filled artwork shape stays transparent as before. */
+.board-stage .board-component :is(rect, path, polygon, circle, ellipse):is([fill="#FFFFFF"], [fill="#ffffff"], [fill="#fff"], [fill="white"]):not(.pad) { fill: none; }
 /* Never stroke an ancestor of the pin labels: SVG text inherits that stroke,
    which can be several times wider than the letters at physical board scale. */
 .board-stage .board-component text { stroke: none; }
 .board-stage.has-selection .board-component:not(.is-active) { opacity: .55; }
 .component-highlights { pointer-events: none; }
 .selection-box, .hover-box { fill: none; stroke: var(--accent); stroke-width: 1.2; stroke-linejoin: round; stroke-linecap: round; shape-rendering: geometricPrecision; vector-effect: non-scaling-stroke; pointer-events: none; }
-.hover-box { opacity: .65; }
+.selection-box { stroke-width: 2.8; }
+.hover-box { stroke-width: 1.6; opacity: .65; }
 .board-stage .indicator { pointer-events: none; }
 .detail { display: grid; grid-template-rows: minmax(0, 1fr) var(--selection-status-height); gap: 14px; padding: 18px; }
 .part-detail-scroll { min-width: 0; min-height: 0; overflow: auto; overflow-wrap: anywhere; scrollbar-gutter: stable; }
@@ -284,10 +419,12 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .facts { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 7px 10px; margin: 0 0 18px; font-size: 13px; }
 .facts dt { color: var(--muted); }
 .facts dd { margin: 0; overflow-wrap: anywhere; }
-.pinout { min-height: 120px; display: grid; place-items: center; margin: 12px 0; padding: 10px; border: 1px solid var(--line); border-radius: 14px; background: white; overflow: hidden; }
-.pinout svg { width: 100%; max-height: 300px; }
+.pinout { height: 240px; display: grid; place-items: center; margin: 12px 0; padding: 10px; border: 1px solid var(--line); border-radius: 14px; background: white; overflow: hidden; touch-action: none; cursor: grab; }
+.pinout.is-panning { cursor: grabbing; }
+.pinout svg { width: 100%; height: 100%; max-height: none; will-change: transform; transform-origin: 0 0; }
+.pinout.sch-preview { background: var(--sch-page); }
 .pin-table { width: 100%; border-collapse: collapse; font-size: 12px; }
-.pin-table th, .pin-table td { padding: 6px; border-bottom: 1px solid #e5e2da; text-align: left; }
+.pin-table th, .pin-table td { padding: 6px; border-bottom: 1px solid var(--line); text-align: left; }
 .pin-table { table-layout: fixed; overflow-wrap: anywhere; }
 .pin-table th:first-child { width: 45px; }
 .pin-menu { margin: 0 7px 9px; font-size: 12px; }
@@ -308,7 +445,6 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .board-toolbar input { width: auto; }
 .net-selection-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; max-width: 100%; }
 .copper-feature { color: var(--copper); cursor: pointer; shape-rendering: geometricPrecision; }
-.component-hitbox { fill: none; stroke: none; pointer-events: all; cursor: pointer; }
 .copper-segment, .copper-arc, .copper-via { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 .copper-pad, .copper-zone { fill: currentColor; stroke: none; }
 .copper-base .copper-feature { opacity: .48; }
@@ -326,35 +462,32 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
    pixel-width white border caused jagged seams, especially on custom pads. */
 .copper-overlay .copper-pad .pad-anchor { stroke: none; }
 .copper-overlay .selected-pin { color: var(--selected-pin); }
-/* Pads are lifted above the component artwork in .copper-pads and drawn
-   white-backed with a black outline so fills and traces never cut through
-   them; highlighting happens in place (they are not cloned into the overlay).
-   The visible copy never intercepts the pointer — the invisible
-   .copper-pad-hits copy inside .copper-base keeps pad clicks working
-   wherever the component artwork does not cover them. */
-.copper-pads { pointer-events: none; }
-.copper-pads .copper-feature { color: #FFFFFF; }
-.copper-pads .copper-pad { fill: currentColor; stroke: #000000; stroke-width: 0.05; }
-.copper-pads .copper-feature.on-net { color: var(--net); }
-.copper-pads .copper-feature.selected-pin { color: var(--selected-pin); }
-.copper-pads .copper-feature.net-dim { opacity: .25; }
-.copper-pad-hits .copper-feature { fill: none; stroke: none; pointer-events: all; }
-.copper-pad-hits .pad-drill { fill: none !important; stroke: none !important; }
 .net-note { font-size: 11px; color: var(--muted); }
 .layer-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11px; margin-top: 6px; }
 .layer-key { display: inline-flex; align-items: center; gap: 4px; }
 .layer-swatch { width: 10px; height: 10px; border-radius: 50%; background: var(--layer-color); }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
-.actions a { display: inline-block; padding: 9px 12px; border-radius: 10px; background: var(--ink); color: white; text-decoration: none; font-size: 12px; }
+.actions a { display: inline-block; padding: 9px 12px; border-radius: 10px; background: var(--ink); color: var(--panel); text-decoration: none; font-size: 12px; }
 .actions a.secondary, .actions button.secondary { border: 0; cursor: pointer; font: inherit; background: var(--accent-soft); color: var(--ink); }
 .actions a.secondary, .actions button.secondary { padding: 9px 12px; border-radius: 10px; font-size: 12px; }
 .empty { color: var(--muted); line-height: 1.55; }
-.hover-card { position: fixed; z-index: 20; display: none; width: 245px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 12px; background: rgba(255,255,255,.97); box-shadow: var(--shadow); pointer-events: none; }
+.hover-card { position: fixed; z-index: 20; display: none; width: 245px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 12px; background: var(--float-bg); box-shadow: var(--shadow); pointer-events: none; }
 .hover-card.visible { display: block; }
 .hover-card strong { display: block; }
 .hover-card span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
 @media (max-width: 920px) { html, body { height: auto; min-height: 100%; } body { overflow: auto; } .layout { height: auto; overflow: visible; grid-template-columns: 190px minmax(0, 1fr); grid-template-rows: minmax(560px, 75vh) auto; } .detail.panel { grid-column: 1 / -1; height: min(680px, 80vh); min-height: 360px; } }
 @media (max-width: 640px) { body { display: block; } header { flex-wrap: wrap; } .layout { display: block; } .panel { margin-bottom: 12px; } .list-panel { height: 520px; } .board-panel { height: 70vh; min-height: 400px; } }
+html[data-theme="rainbow"] header { background: var(--rainbow); }
+html[data-theme="rainbow"] .panel { border: 1px solid transparent; background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--rainbow) border-box; }
+html[data-theme="rainbow"] .actions a { background: linear-gradient(135deg, #ff5c35, #ff8a00); }
+html[data-theme="rainbow"] .actions a.secondary, html[data-theme="rainbow"] .actions button.secondary { background: var(--accent-soft); color: var(--ink); }
+html[data-theme="rainbow"] .category-group > summary::before { color: #ff5c35; }
+html[data-theme="rainbow"] .layer-swatch { box-shadow: 0 0 0 1px rgba(0, 0, 0, .18); }
+html[data-theme="rainbow"] .board-view > svg, html[data-theme="rainbow"] .schematic-view > svg { filter: drop-shadow(0 9px 13px rgba(157, 78, 221, .22)); }
+html[data-theme="rainbow"] .eyebrow { color: #9d4edd; }
+html[data-theme="rainbow"] .side-button:hover, html[data-theme="rainbow"] .side-button.active { background: var(--accent); }
+html[data-theme="rainbow"] .zoom-button:hover { color: #9d4edd; }
+html[data-theme="rainbow"] .schematic-view .sch-pin { stroke: #9333ea; }
 """
 
 
@@ -375,7 +508,6 @@ let zoomScale = 1;
 let mousePan = null;
 let touchPan = null;
 let suppressBoardClick = false;
-let hoveredReference = '';
 const activePointers = new Map();
 let activeNet = '';
 let activePin = null;
@@ -385,13 +517,41 @@ const collapsedCategories = new Set(components.map(component => component.catego
 const highlightSelectedNets = document.getElementById('highlight-selected-nets');
 const expandedReferences = new Set();
 const layerSelect = document.getElementById('copper-layer');
-const baseFeatures = [...document.querySelectorAll('.copper-base .copper-feature, .copper-pads .copper-feature')];
+const baseFeatures = [...document.querySelectorAll('.copper-base .copper-feature')];
 const boardViewports = new Map();
 document.querySelectorAll('.board-view > svg').forEach(svg => {
   const originalText = svg.getAttribute('viewBox');
   const original = originalText.split(/\s+/).map(Number);
   boardViewports.set(svg, {original, originalText, target: [...original], box: [...original], scale: 1});
 });
+const schematicView = document.getElementById('schematic-view');
+const schematicSvg = schematicView ? schematicView.querySelector('svg') : null;
+if (schematicSvg) {
+  const originalText = schematicSvg.getAttribute('viewBox');
+  const original = originalText.split(/\s+/).map(Number);
+  boardViewports.set(schematicSvg, {original, originalText, target: [...original], box: [...original], scale: 1});
+}
+// Schematic wires and labels are tagged with plain net names; the copper data
+// keys its nets by id, so keep the bridge handy in both directions.
+const netIdByName = new Map(copper.nets.map(net => [net.name, net.id]));
+// Unlabelled sheet runs only carry a run id; their copper net is recovered
+// through any pin sitting on the run (the part's PCB pad knows its net).
+const padNetByPin = new Map();
+components.forEach(component => {
+  for (const pad of component.pads) {
+    if (pad.net) padNetByPin.set(`${component.reference}.${pad.number}`, pad.net);
+  }
+});
+const runNetByName = new Map();
+if (schematicSvg) {
+  schematicSvg.querySelectorAll('.sch-pin-hit[data-run]').forEach(element => {
+    const padNet = padNetByPin.get(`${element.dataset.reference}.${element.dataset.pin}`);
+    if (padNet && !runNetByName.has(element.dataset.run)) runNetByName.set(element.dataset.run, padNet);
+  });
+}
+const schematicNetElements = schematicSvg ? [...schematicSvg.querySelectorAll('[data-net], [data-run]')] : [];
+const schematicSymbols = schematicSvg ? [...schematicSvg.querySelectorAll('.sch-symbol')] : [];
+let manualSchematicRun = '';
 // Explicit editable colours for the common stack; additional internal layers
 // get evenly spaced hues without changing the familiar front/back colours.
 const layerColors = {'F.Cu': 'var(--copper-front)', 'B.Cu': 'var(--copper-back)',
@@ -697,6 +857,7 @@ function renderDetail(component) {
       <dt>Rotation</dt><dd>${escapeHtml(position.rotation_kicad ?? position.rotation ?? '—')}°</dd>
     </dl>
     <div class="actions">${actions}</div>
+    ${component.symbol_svg ? `<div class="eyebrow">Schematic symbol</div><div class="pinout sch-preview">${component.symbol_svg}</div>` : ''}
     <div class="eyebrow">Pinout</div>
     ${component.pinout_svg ? `<div class="pinout">${component.pinout_svg}</div>` : ''}
     ${pinRows(component)}`;
@@ -807,6 +968,7 @@ function toggleNet(netId) {
 
 function selectNet(netId) {
   highlightSelectedNets.checked = false;
+  manualSchematicRun = '';
   activeNet = byNet.has(netId) ? netId : '';
   activePin = null;
   selectedPins.length = 0;
@@ -874,29 +1036,39 @@ function updateNetHighlight() {
     element.classList.toggle('layer-hidden', !featureVisible(element));
     element.classList.toggle('fill-hidden', element.classList.contains('copper-zone') && !fills);
   });
-  // Pads live in the top-level .copper-pads group, so they are highlighted in
-  // place instead of being cloned into the overlay that sits under the parts.
-  document.querySelectorAll('.copper-pads .copper-feature').forEach(element => {
-    const selectedPin = element.classList.contains('copper-pad') && selectedPinIndex(element.dataset.reference, element.dataset.pin, element.dataset.netId) >= 0;
-    const onNet = netIds.has(element.dataset.netId);
-    element.classList.toggle('on-net', onNet);
-    element.classList.toggle('selected-pin', !!selectedPin);
-    element.classList.toggle('net-dim', (netIds.size > 0 || selectedPins.length > 0) && !onNet && !selectedPin);
-  });
   document.querySelectorAll('.copper-overlay').forEach(overlay => {
     overlay.replaceChildren();
     const base = overlay.closest('svg').querySelector('.copper-base');
     base.querySelectorAll('.copper-feature').forEach(element => {
-      if (element.classList.contains('copper-pad')) return;
-      if (!netIds.has(element.dataset.netId)) return;
+      const selectedPin = element.classList.contains('copper-pad') && selectedPinIndex(element.dataset.reference, element.dataset.pin, element.dataset.netId) >= 0;
+      if (!netIds.has(element.dataset.netId) && !selectedPin) return;
       const clone = element.cloneNode(true);
       clone.style.setProperty('--layer-color', layerColor(element));
+      clone.classList.toggle('selected-pin', !!selectedPin);
       overlay.appendChild(clone);
     });
   });
   document.querySelectorAll('.board-component').forEach(element => {
     element.classList.toggle('on-net', connectedReferences.has(element.dataset.reference));
   });
+  // The sheet mirrors the copper: same net names light the wires, labels and
+  // symbols; unlabelled runs join through the copper net their pins share.
+  if (schematicSvg) {
+    const netNames = new Set([...netIds].map(id => byNet.get(id).name));
+    schematicNetElements.forEach(element => {
+      const name = element.dataset.net || runNetByName.get(element.dataset.run) || '';
+      element.classList.toggle('on-net', !!name && netNames.has(name));
+    });
+    if (manualSchematicRun) {
+      schematicNetElements.forEach(element => {
+        if (element.dataset.run === manualSchematicRun) element.classList.add('on-net');
+      });
+    }
+    schematicSymbols.forEach(element => {
+      element.classList.toggle('on-net', connectedReferences.has(element.dataset.reference));
+    });
+    schematicView.classList.toggle('has-net', netIds.size > 0 || !!manualSchematicRun);
+  }
   const status = document.getElementById('net-status');
   if (highlightSelectedNets.checked || selectedPins.length > 1) {
     const selectionLabel = highlightSelectedNets.checked ? `${selectedReferences.size} components · ${selectedPins.length} pins` : `${selectedPins.length} selected pins`;
@@ -918,10 +1090,50 @@ function updateNetHighlight() {
 function updateSelectionBoxes() {
   document.querySelectorAll('.component-highlights').forEach(layer => layer.replaceChildren());
   stage.classList.toggle('has-selection', selectedReferences.size > 0);
+  if (schematicSvg) {
+    schematicView.classList.toggle('has-selection', selectedReferences.size > 0);
+    schematicSymbols.forEach(element => {
+      element.classList.toggle('is-active', selectedReferences.has(element.dataset.reference));
+    });
+  }
+  // Symbols get the same accent rectangle treatment as board parts: the sheet
+  // drawing itself never changes colour, selected or not.
+  if (schematicSvg && !schematicView.hidden) {
+    let symbolLayer = schematicSvg.querySelector('.component-highlights');
+    if (!symbolLayer) {
+      symbolLayer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      symbolLayer.setAttribute('class', 'component-highlights');
+      schematicSvg.appendChild(symbolLayer);
+    }
+    schematicSymbols.forEach(element => {
+      const selected = selectedReferences.has(element.dataset.reference);
+      if (!selected && !element.matches(':hover') && !element.matches(':focus')) return;
+      // The generator records the tight body rectangle; the group's own bbox
+      // would stretch over pin stubs and the label block.
+      const boundsData = (element.dataset.bounds || '').split(',').map(Number);
+      let bx, by, bw, bh;
+      if (boundsData.length === 4 && boundsData.every(value => Number.isFinite(value))) {
+        [bx, by, bw, bh] = boundsData;
+      } else {
+        const bounds = element.getBBox();
+        if (!(bounds.width > 0) && !(bounds.height > 0)) return;
+        bx = bounds.x; by = bounds.y; bw = bounds.width; bh = bounds.height;
+      }
+      const box = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      box.setAttribute('class', selected ? 'selection-box' : 'hover-box');
+      box.dataset.reference = element.dataset.reference;
+      box.setAttribute('x', bx);
+      box.setAttribute('y', by);
+      box.setAttribute('width', bw);
+      box.setAttribute('height', bh);
+      box.setAttribute('rx', '0.3');
+      symbolLayer.appendChild(box);
+    });
+  }
   document.querySelectorAll('.board-component').forEach(element => {
     const selected = selectedReferences.has(element.dataset.reference);
     element.classList.toggle('is-active', selected);
-    if (!selected && !element.matches(':hover') && !element.matches(':focus') && element.dataset.reference !== hoveredReference) return;
+    if (!selected && !element.matches(':hover') && !element.matches(':focus')) return;
     const layer = element.closest('.board-view').querySelector('.component-highlights');
     if (!layer) return;
     const bounds = element.getBBox();
@@ -943,41 +1155,35 @@ function updateSelectionBoxes() {
   });
 }
 
-function activeBoardSvg() {
-  return document.querySelector('.board-view:not([hidden]) > svg');
+function activeBoardSvg(clientX = null, clientY = null) {
+  // In split view the pointer decides which half zooms and pans: wheel or
+  // drag over the board moves the board, over the sheet moves the sheet.
+  if (clientX !== null && stage.classList.contains('split')) {
+    for (const view of document.querySelectorAll('.board-view:not([hidden]), .schematic-view:not([hidden])')) {
+      const rect = view.getBoundingClientRect();
+      if (clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom) {
+        return view.querySelector('svg');
+      }
+    }
+  }
+  return document.querySelector('.board-view:not([hidden]) > svg, .schematic-view:not([hidden]) > svg');
 }
 
-function installComponentHitboxes() {
-  // A transparent hit rectangle per part turns its whole bounding box into a
-  // click target. The layer sits below the copper groups so traces and pads
-  // inside a part box are still clicked instead of the part itself.
-  for (const svg of document.querySelectorAll('.board-view > svg')) {
-    const base = svg.querySelector('.copper-base');
-    if (!base || svg.querySelector('.component-hits')) continue;
-    const layer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    layer.setAttribute('class', 'component-hits');
-    for (const element of svg.querySelectorAll('.board-component')) {
-      const bounds = element.getBBox();
-      if (!(bounds.width > 0) && !(bounds.height > 0)) continue;
-      const reference = element.dataset.reference;
-      const hit = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-      hit.setAttribute('class', 'component-hitbox');
-      hit.dataset.reference = reference;
-      // The generator emits each part and its underlay in board coordinates;
-      // copying the placement transform keeps the box on rotated and
-      // bottom-side parts too.
-      hit.setAttribute('transform', element.getAttribute('transform') || '');
-      hit.setAttribute('x', bounds.x.toFixed(4));
-      hit.setAttribute('y', bounds.y.toFixed(4));
-      hit.setAttribute('width', bounds.width.toFixed(4));
-      hit.setAttribute('height', bounds.height.toFixed(4));
-      hit.addEventListener('mouseenter', event => { hoveredReference = reference; showHover(event, reference); updateSelectionBoxes(); });
-      hit.addEventListener('mousemove', moveHover);
-      hit.addEventListener('mouseleave', () => { hoveredReference = ''; hoverCard.classList.remove('visible'); updateSelectionBoxes(); });
-      layer.appendChild(hit);
-    }
-    svg.insertBefore(layer, base);
-  }
+let activeView = 'board';
+
+function setView(view) {
+  // The schematic needs no side flipping, so side buttons are board-only:
+  // pressing one while the sheet is shown returns to the board drawing.
+  activeView = ['board', 'schematic', 'split'].includes(view) && schematicView ? view : 'board';
+  stage.classList.toggle('split', activeView === 'split');
+  document.querySelectorAll('.board-view').forEach(viewElement => {
+    viewElement.hidden = activeView === 'schematic' || (activeView === 'split' && viewElement.dataset.side !== activeSide);
+  });
+  if (schematicView) schematicView.hidden = activeView === 'board';
+  document.querySelectorAll('.view-button').forEach(button => button.classList.toggle('active', button.dataset.view === activeView));
+  const viewport = boardViewports.get(activeBoardSvg());
+  zoomScale = viewport ? viewport.scale || 1 : 1;
+  updateZoomLabel();
 }
 
 function applyViewport(svg, viewport) {
@@ -998,7 +1204,7 @@ function clientPointInSvg(svg, clientX, clientY) {
 }
 
 function setZoom(nextZoom, clientX = null, clientY = null) {
-  const svg = activeBoardSvg();
+  const svg = activeBoardSvg(clientX, clientY);
   if (!svg) return;
   const viewport = boardViewports.get(svg);
   const next = Math.max(0.5, Math.min(12, nextZoom));
@@ -1035,7 +1241,7 @@ function fitBoard() {
 }
 
 function panActiveBoard(fromX, fromY, toX, toY) {
-  const svg = activeBoardSvg();
+  const svg = activeBoardSvg(fromX, fromY);
   if (!svg) return;
   const start = clientPointInSvg(svg, fromX, fromY);
   const end = clientPointInSvg(svg, toX, toY);
@@ -1059,7 +1265,7 @@ function fitSelectedNet() {
   if (!highlightedNetIds().size) { fitBoard(); return; }
   const view = document.querySelector('.board-view:not([hidden])');
   const svg = view.querySelector(':scope > svg');
-  const elements = view.querySelectorAll('.copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden), .copper-pads .copper-feature.on-net:not(.layer-hidden)');
+  const elements = view.querySelectorAll('.copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden)');
   let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
   for (const element of elements) {
     const box = element.getBBox();
@@ -1086,8 +1292,11 @@ function fitSelectedNet() {
 }
 
 function setSide(side) {
+  // Side flipping only makes sense on the board drawing; leaving the sheet.
+  if (activeView === 'schematic') setView('board');
   activeSide = side === 'back' ? 'back' : 'front';
   document.querySelectorAll('.board-view').forEach(view => { view.hidden = view.dataset.side !== activeSide; });
+  if (schematicView) schematicView.hidden = activeView !== 'split';
   document.querySelectorAll('.side-button[data-side]').forEach(button => button.classList.toggle('active', button.dataset.side === activeSide));
   const viewport = boardViewports.get(activeBoardSvg());
   zoomScale = viewport ? viewport.scale || 1 : 1;
@@ -1201,9 +1410,9 @@ stage.addEventListener('click', event => {
 
 document.querySelectorAll('.board-component').forEach(element => {
   const reference = element.dataset.reference;
-  element.addEventListener('mouseenter', event => { hoveredReference = reference; showHover(event, reference); updateSelectionBoxes(); });
+  element.addEventListener('mouseenter', event => { showHover(event, reference); updateSelectionBoxes(); });
   element.addEventListener('mousemove', moveHover);
-  element.addEventListener('mouseleave', () => { hoveredReference = ''; hoverCard.classList.remove('visible'); updateSelectionBoxes(); });
+  element.addEventListener('mouseleave', () => { hoverCard.classList.remove('visible'); updateSelectionBoxes(); });
   element.addEventListener('focus', updateSelectionBoxes);
   element.addEventListener('blur', updateSelectionBoxes);
   element.addEventListener('click', event => {
@@ -1227,18 +1436,70 @@ detail.addEventListener('click', event => {
     selectPin(component.reference, pin.number, pin.net_id, additiveClick(event));
   } else if (netButton) toggleNet(netButton.dataset.netId);
 });
+// The detail pane's preview boxes (pinout artwork and schematic symbol) are
+// wheel-zoomable and draggable, anchored at the pointer. State lives per
+// rendered box and resets naturally when a new part re-renders the pane.
+const previewZooms = new WeakMap();
+
+function applyPreviewTransform(container) {
+  const svg = container.querySelector('svg');
+  const state = previewZooms.get(container);
+  if (!svg || !state) return;
+  svg.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.s})`;
+}
+
+detail.addEventListener('wheel', event => {
+  const container = event.target.closest('.pinout');
+  if (!container || !container.querySelector('svg')) return;
+  event.preventDefault();
+  const state = previewZooms.get(container) || {s: 1, x: 0, y: 0};
+  const rect = container.getBoundingClientRect();
+  const anchorX = event.clientX - rect.left;
+  const anchorY = event.clientY - rect.top;
+  const deltaUnit = event.deltaMode === 1 ? 16 : 1;
+  const factor = Math.exp(Math.max(-1, Math.min(1, -event.deltaY * deltaUnit * 0.0016)));
+  const nextScale = Math.max(1, Math.min(24, state.s * factor));
+  const ratio = nextScale / state.s;
+  state.x = anchorX - (anchorX - state.x) * ratio;
+  state.y = anchorY - (anchorY - state.y) * ratio;
+  state.s = nextScale;
+  if (state.s <= 1.001) { state.s = 1; state.x = 0; state.y = 0; }
+  previewZooms.set(container, state);
+  applyPreviewTransform(container);
+}, {passive: false});
+
+let previewPan = null;
+
+detail.addEventListener('pointerdown', event => {
+  const container = event.target.closest('.pinout');
+  if (!container || !container.querySelector('svg')) return;
+  const state = previewZooms.get(container) || {s: 1, x: 0, y: 0};
+  previewPan = {container, startX: event.clientX - state.x, startY: event.clientY - state.y};
+  container.classList.add('is-panning');
+});
+
+window.addEventListener('pointermove', event => {
+  if (!previewPan) return;
+  const state = previewZooms.get(previewPan.container) || {s: 1, x: 0, y: 0};
+  state.x = event.clientX - previewPan.startX;
+  state.y = event.clientY - previewPan.startY;
+  if (state.s <= 1.001) { state.x = 0; state.y = 0; }
+  previewZooms.set(previewPan.container, state);
+  applyPreviewTransform(previewPan.container);
+  event.preventDefault();
+});
+
+window.addEventListener('pointerup', () => {
+  if (!previewPan) return;
+  previewPan.container.classList.remove('is-panning');
+  previewPan = null;
+});
 stage.addEventListener('click', event => {
   const feature = event.target.closest('.copper-feature');
   if (!feature) return;
   if (feature.classList.contains('copper-pad') && byReference.has(feature.dataset.reference)) {
     selectPin(feature.dataset.reference, feature.dataset.pin, feature.dataset.netId, additiveClick(event));
   } else selectNet(feature.dataset.netId);
-});
-stage.addEventListener('click', event => {
-  const hit = event.target.closest('.component-hitbox');
-  if (!hit) return;
-  if (additiveClick(event)) toggleComponent(hit.dataset.reference);
-  else selectComponent(hit.dataset.reference);
 });
 document.getElementById('net-status').addEventListener('click', event => {
   const netButton = event.target.closest('button[data-net-id]');
@@ -1274,12 +1535,84 @@ document.getElementById('zoom-to-net').addEventListener('change', event => {
   else fitBoard();
 });
 document.querySelectorAll('.side-button[data-side]').forEach(button => button.addEventListener('click', () => setSide(button.dataset.side)));
+document.querySelectorAll('.view-button').forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
+// Sheet symbols mirror the board artwork: same hover card, same selection
+// rules, so either drawing drives the same component state.
+schematicSymbols.forEach(element => {
+  const reference = element.dataset.reference;
+  element.addEventListener('mouseenter', event => showHover(event, reference));
+  element.addEventListener('mousemove', moveHover);
+  element.addEventListener('mouseleave', () => hoverCard.classList.remove('visible'));
+  element.addEventListener('click', event => {
+    if (additiveClick(event)) toggleComponent(reference);
+    else selectComponent(reference);
+  });
+  element.addEventListener('keydown', event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    if (additiveClick(event)) toggleComponent(reference);
+    else selectComponent(reference);
+  });
+});
+if (schematicSvg) {
+  schematicSvg.addEventListener('click', event => {
+    const netElement = event.target.closest('[data-net], [data-run]');
+    if (!netElement) return;
+    // Named runs map straight to their copper net; unlabelled runs borrow the
+    // net their pins carry on the PCB.  Runs with neither highlight alone.
+    const name = netElement.dataset.net || runNetByName.get(netElement.dataset.run) || '';
+    const netId = netIdByName.get(name);
+    if (netId) {
+      manualSchematicRun = '';
+      toggleNet(netId);
+    } else if (netElement.dataset.run) {
+      manualSchematicRun = manualSchematicRun === netElement.dataset.run ? '' : netElement.dataset.run;
+      updateNetHighlight();
+    }
+  });
+  // Clicking a pin selects that pin together with the net the sheet says it
+  // belongs to; the click must not also select the owning symbol.
+  schematicSvg.querySelectorAll('.sch-pin-hit').forEach(element => {
+    element.addEventListener('click', event => {
+      event.stopPropagation();
+      const pinName = `${element.dataset.reference}.${element.dataset.pin}`;
+      const name = padNetByPin.get(pinName) || element.dataset.net || runNetByName.get(element.dataset.run) || '';
+      const netId = netIdByName.get(name);
+      if (netId) manualSchematicRun = '';
+      selectPin(element.dataset.reference, element.dataset.pin, netId || '', additiveClick(event));
+    });
+  });
+}
 document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoomScale + 0.25));
 document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoomScale - 0.25));
 document.getElementById('zoom-fit').addEventListener('click', fitBoard);
 document.getElementById('zoom-reset').addEventListener('click', fitBoard);
+const themeSelect = document.getElementById('theme-select');
+themeSelect.value = document.documentElement.dataset.theme || 'light';
+// Rainbow mode gives every schematic net its own vivid hue so the sheet reads
+// like wiring loom art; the other themes fall back to the single ink colour.
+function schematicNetColor(name) {
+  const text = String(name || '');
+  let hash = 0;
+  for (let index = 0; index < text.length; index++) hash = (hash * 31 + text.charCodeAt(index)) >>> 0;
+  return `hsl(${hash % 360} 80% 38%)`;
+}
+function applyNetColors() {
+  if (!schematicSvg) return;
+  const rainbow = themeSelect.value === 'rainbow';
+  schematicSvg.querySelectorAll('.sch-wire[data-net], .sch-label[data-net]').forEach(element => {
+    if (rainbow) element.style.setProperty('--net-color', schematicNetColor(element.dataset.net));
+    else element.style.removeProperty('--net-color');
+  });
+}
+themeSelect.addEventListener('change', () => {
+  const theme = ['light', 'dark', 'rainbow'].includes(themeSelect.value) ? themeSelect.value : 'light';
+  document.documentElement.dataset.theme = theme;
+  try { localStorage.setItem('oomp-board-theme', theme); } catch (error) {}
+  applyNetColors();
+});
+applyNetColors();
 renderLayerLegend();
-installComponentHitboxes();
 setZoom(1);
 // Starting unselected also means setSide's first render opens with the OOMP
 // matching summary in the status box and the empty prompt in the detail pane.
@@ -1305,6 +1638,8 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
         board_bottom_svg = _svg_without_declaration(_read_text(board_bottom_path))
     else:
         board_bottom_svg = board_svg
+    schematic_path = asset_directory / "schematic.svg"
+    schematic_svg = _svg_without_declaration(_read_text(schematic_path)) if schematic_path.is_file() else ""
 
     component_records = []
     part_metadata_cache = {}
@@ -1338,9 +1673,9 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
                 if net["name"] == pin["net"] and net["source_file"] == component["source_file"]:
                     pin["net_id"] = net["id"]
                     break
-    base_drawing, pads_drawing = copper_drawings(copper["features"])
-    board_svg = add_copper_svg(board_svg, base_drawing, pads_drawing)
-    board_bottom_svg = add_copper_svg(board_bottom_svg, base_drawing, pads_drawing, mirror=True)
+    copper_drawing = copper_svg(copper["features"])
+    board_svg = add_copper_svg(board_svg, copper_drawing)
+    board_bottom_svg = add_copper_svg(board_bottom_svg, copper_drawing, mirror=True)
     copper_json = json.dumps({key: copper[key] for key in ["nets", "layers", "warnings"]}, ensure_ascii=False).replace("</", "<\\/")
     layer_options = "".join(f'<option value="{html.escape(layer, quote=True)}">{html.escape(layer)}</option>' for layer in copper["layers"])
     warning_html = "".join(f'<p class="net-note">{html.escape(warning)}</p>' for warning in copper["warnings"])
@@ -1384,9 +1719,26 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{html.escape(title)} board explorer</title>
 <style id="oomp-board-style">{_style()}</style>
+<script>
+// Apply the saved theme before first paint so switching pages never flashes.
+(function () {{
+  var theme = 'light';
+  try {{ theme = localStorage.getItem('oomp-board-theme') || 'light'; }} catch (error) {{}}
+  if (['light', 'dark', 'rainbow'].indexOf(theme) < 0) theme = 'light';
+  document.documentElement.dataset.theme = theme;
+}})();
+</script>
 </head>
 <body>
-<header><div><h1>{html.escape(title)}</h1><p>Offline OOMP board explorer · components, pins &amp; routed nets</p></div><div class="badge">{len(component_records)} items · {len(copper['nets'])} nets</div>{github_icon}</header>
+<header><div><h1>{html.escape(title)}</h1><p>Offline OOMP board explorer · components, pins &amp; routed nets</p></div><div class="badge">{len(component_records)} items · {len(copper['nets'])} nets</div>
+  <label class="theme-select">Theme
+    <select id="theme-select" aria-label="Colour theme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="rainbow">Rainbow</option>
+    </select>
+  </label>
+  {github_icon}</header>
 <main class="layout">
   <section class="panel list-panel">
     {project_card}
@@ -1394,7 +1746,11 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
     <div id="part-list" class="part-list"></div>
   </section>
   <section class="panel board-panel">
-    <div class="board-toolbar" aria-label="Board side">
+    <div class="board-toolbar" aria-label="Board view">
+      <button class="side-button view-button active" type="button" data-view="board">Board</button>
+      {f'<button class="side-button view-button" type="button" data-view="schematic">Schematic</button>' if schematic_svg else ''}
+      {f'<button class="side-button view-button" type="button" data-view="split">Split</button>' if schematic_svg else ''}
+      <span class="zoom-divider"></span>
       <button class="side-button active" type="button" data-side="front">Top · {front_count}</button>
       <button class="side-button" type="button" data-side="back">Bottom · {back_count}</button>
       <span class="zoom-divider"></span>
@@ -1414,6 +1770,7 @@ def generate_board_explorer(project_directory, project_data, summary_data, outpu
     <div id="board-stage" class="board-stage">
       <div class="board-view" data-side="front">{board_svg}</div>
       <div class="board-view" data-side="back" hidden>{board_bottom_svg}</div>
+      {f'<div id="schematic-view" class="schematic-view" hidden data-side="schematic">{schematic_svg}</div>' if schematic_svg else ''}
     </div>
   </section>
   <aside class="panel detail">

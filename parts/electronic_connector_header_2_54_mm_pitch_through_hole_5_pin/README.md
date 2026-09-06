@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 5 pin
+# Connector Header PH2.54-1X5P-H25
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_5_pin`
 
-Connector Header 2.54 mm pitch through-hole 5 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 12.7 &#x00D7; 2.48 mm.
+Connector Header PH2.54-1X5P-H25 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 12.7 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 5 pin pinout](data/working_svg_top.svg)
+![Connector Header PH2.54-1X5P-H25 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 5 pin is an OOMP electronic connecto
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `PH2.54-1X5P-H25` |
+| LCSC | [`C42431835`](https://www.lcsc.com/product-detail/C42431835.html) |
+| LCSC | [`C7429635`](https://www.lcsc.com/product-detail/C7429635.html) |
+| LCSC | [`C42391663`](https://www.lcsc.com/product-detail/C42391663.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 5 pin is an OOMP electronic connecto
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

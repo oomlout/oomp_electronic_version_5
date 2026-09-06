@@ -37,6 +37,16 @@ Resistor 33 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-0733RL` |
+| LCSC | [`C138002`](https://www.lcsc.com/product-detail/C138002.html) |
+| LCSC | [`C2906868`](https://www.lcsc.com/product-detail/C2906868.html) |
+| LCSC | [`C324773`](https://www.lcsc.com/product-detail/C324773.html) |
+
+
 
 
 

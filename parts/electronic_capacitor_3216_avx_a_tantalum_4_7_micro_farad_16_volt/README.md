@@ -67,6 +67,8 @@ Capacitor 4.7 uF 16 V Tantalum 3216 AVX A is an OOMP electronic capacitor defini
 
 ![Square summary](data/working_svg_square_300.png)
 
+![Square schematic](data/working_svg_square_schematic_300.png)
+
 ![Dimensions](data/working_svg_dimensioned_300.png)
 
 ![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)

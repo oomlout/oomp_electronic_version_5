@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 20 pin
+# Connector Header 2.54-1*20P&#x76F4;&#x9488;
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_20_pin`
 
-Connector Header 2.54 mm pitch through-hole 20 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 50.8 &#x00D7; 2.48 mm.
+Connector Header 2.54-1*20P&#x76F4;&#x9488; is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 50.8 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 20 pin pinout](data/working_svg_top.svg)
+![Connector Header 2.54-1*20P&#x76F4;&#x9488; pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -37,6 +37,16 @@ Connector Header 2.54 mm pitch through-hole 20 pin is an OOMP electronic connect
 | Width | 2.48 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `2.54-1*20P&#x76F4;&#x9488;` |
+| LCSC | [`C50981`](https://www.lcsc.com/product-detail/C50981.html) |
+| LCSC | [`C3294468`](https://www.lcsc.com/product-detail/C3294468.html) |
+| LCSC | [`C7501591`](https://www.lcsc.com/product-detail/C7501591.html) |
 
 
 
@@ -75,6 +85,8 @@ Connector Header 2.54 mm pitch through-hole 20 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

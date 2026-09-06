@@ -37,6 +37,16 @@ Resistor 56000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-0756KL` |
+| LCSC | [`C114756`](https://www.lcsc.com/product-detail/C114756.html) |
+| LCSC | [`C2906875`](https://www.lcsc.com/product-detail/C2906875.html) |
+| LCSC | [`C2906955`](https://www.lcsc.com/product-detail/C2906955.html) |
+
+
 
 
 

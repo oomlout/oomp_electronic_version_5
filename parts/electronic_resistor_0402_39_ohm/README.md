@@ -37,6 +37,16 @@ Resistor 39 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-0739RL` |
+| LCSC | [`C185420`](https://www.lcsc.com/product-detail/C185420.html) |
+| LCSC | [`C2906939`](https://www.lcsc.com/product-detail/C2906939.html) |
+| LCSC | [`C25110`](https://www.lcsc.com/product-detail/C25110.html) |
+
+
 
 
 

@@ -89,6 +89,10 @@ board and replace the values with that board's actual details.
 | `project_file_basename` | Common filename stem, without an extension. |
 | `project_file_path` | Folder plus filename stem; keep consistent with the previous two fields. |
 | `match_overrides` | Optional reference-to-OOMP-ID matches that you have verified. Use `{}` initially. |
+| `production_exclude_references` | Optional plain list of references omitted from the JLCPCB BOM and CPL. |
+| `production_lcsc_overrides` | Optional reference-to-LCSC-number dictionary for verified project-specific purchasing choices. |
+| `production_rotation_offsets` | Optional reference-to-degree dictionary for JLC placement rotation corrections. |
+| `production_position_offsets_mm` | Optional reference-to-`[x, y]` dictionary for placement-centre corrections in millimetres. |
 
 The source must contain modern `.kicad_pcb`, `.kicad_sch` and `.kicad_pro` files.
 Legacy Eagle or old `.sch` projects must be converted with KiCad first. Followed
@@ -165,6 +169,12 @@ copy. Read `data/oomp_design/conversion_report.yaml` and `validation.yaml`.
 Only symbols/footprints that match official KiCad defaults are replaced.
 Custom or changed items are retained and reported. Original files are preserved
 in `data/original/`; the ignored checkout is under `data/git/`.
+
+It also creates the JLCPCB upload bundle under
+`data/production_auto_generate/`. Review `gerbers_jlc.zip`, `bom_jlc.csv`,
+`cpl_jlc.csv`, `data/drc.json`, and especially `bom_missing_lcsc.csv` before an
+order. Production details and simple correction dictionaries are documented in
+[kicad_agents/PRODUCTION_JLC_GUIDE.md](kicad_agents/PRODUCTION_JLC_GUIDE.md).
 
 ## 2. Add a resistor or capacitor
 

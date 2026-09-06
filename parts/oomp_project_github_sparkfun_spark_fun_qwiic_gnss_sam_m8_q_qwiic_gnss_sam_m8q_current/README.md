@@ -107,7 +107,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
 | J1, J2 | 2 | Connector JST Sh SM04B-SRSS-TB | Qwiic_RA | `SparkFun-Connector:JST_1x04_P1.0mm_Horizontal_SMD` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb) |
 | J4 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
-| J6, J7 | 2 | Connector Header 2.54 mm pitch through-hole 6 pin | Conn_01x06 | `SparkFun-Connector:1x06_P2.54mm` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
+| J6, J7 | 2 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06_P2.54mm` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | JP1 | 1 | LED | LED | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | JP2 | 1 | I2C | I2C | `SparkFun-Jumper:Jumper_3_NO` | unmatched |
 | JP3 | 1 | PPS | PPS | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |

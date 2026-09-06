@@ -37,6 +37,16 @@ Resistor 75000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F7502TS` |
+| LCSC | [`C2909383`](https://www.lcsc.com/product-detail/C2909383.html) |
+| LCSC | [`C140129`](https://www.lcsc.com/product-detail/C140129.html) |
+| LCSC | [`C54920828`](https://www.lcsc.com/product-detail/C54920828.html) |
+
+
 
 
 

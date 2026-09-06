@@ -37,6 +37,16 @@ Resistor 10 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-0710RL` |
+| LCSC | [`C138066`](https://www.lcsc.com/product-detail/C138066.html) |
+| LCSC | [`C2906886`](https://www.lcsc.com/product-detail/C2906886.html) |
+| LCSC | [`C137925`](https://www.lcsc.com/product-detail/C137925.html) |
+
+
 
 
 

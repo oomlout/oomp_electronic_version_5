@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 37 pin
+# Connector Header X6511WV-37H-C60D30
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_37_pin`
 
-Connector Header 2.54 mm pitch through-hole 37 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 93.98 &#x00D7; 2.48 mm.
+Connector Header X6511WV-37H-C60D30 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 93.98 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 37 pin pinout](data/working_svg_top.svg)
+![Connector Header X6511WV-37H-C60D30 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 37 pin is an OOMP electronic connect
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `X6511WV-37H-C60D30` |
+| LCSC | [`C2883696`](https://www.lcsc.com/product-detail/C2883696.html) |
+| LCSC | [`C7430393`](https://www.lcsc.com/product-detail/C7430393.html) |
+| LCSC | [`C2883875`](https://www.lcsc.com/product-detail/C2883875.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 37 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

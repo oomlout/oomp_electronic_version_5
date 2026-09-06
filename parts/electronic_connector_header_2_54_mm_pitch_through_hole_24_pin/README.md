@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 24 pin
+# Connector Header X6511WR-24H-C60D30R1
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_24_pin`
 
-Connector Header 2.54 mm pitch through-hole 24 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 60.96 &#x00D7; 2.48 mm.
+Connector Header X6511WR-24H-C60D30R1 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 60.96 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 24 pin pinout](data/working_svg_top.svg)
+![Connector Header X6511WR-24H-C60D30R1 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 24 pin is an OOMP electronic connect
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `X6511WR-24H-C60D30R1` |
+| LCSC | [`C2883862`](https://www.lcsc.com/product-detail/C2883862.html) |
+| LCSC | [`C3294470`](https://www.lcsc.com/product-detail/C3294470.html) |
+| LCSC | [`C725956`](https://www.lcsc.com/product-detail/C725956.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 24 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

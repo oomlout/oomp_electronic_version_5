@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 21 pin
+# Connector Header HDGCPH-PZ01-21
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_21_pin`
 
-Connector Header 2.54 mm pitch through-hole 21 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 53.34 &#x00D7; 2.48 mm.
+Connector Header HDGCPH-PZ01-21 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 53.34 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 21 pin pinout](data/working_svg_top.svg)
+![Connector Header HDGCPH-PZ01-21 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 21 pin is an OOMP electronic connect
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `HDGCPH-PZ01-21` |
+| LCSC | [`C19190987`](https://www.lcsc.com/product-detail/C19190987.html) |
+| LCSC | [`C2883446`](https://www.lcsc.com/product-detail/C2883446.html) |
+| LCSC | [`C2883859`](https://www.lcsc.com/product-detail/C2883859.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 21 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

@@ -1,0 +1,110 @@
+available: true
+units:
+- reference: D2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 740c9c9e-c377-4082-a7c2-2dfeb8296429
+  library_id: e-radionica.com schematics:M4_DIODA
+  unit: 1
+  body_style: 1
+  position:
+    x: 83.82
+    y: 96.52
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D2
+    Value: M4_DIODA
+    Footprint: e-radionica.com footprinti:M4_DIODA
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 88.9
+      y: 96.52
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: K3
+      pin_number: 1+
+      pin_name: ''
+  - number: '2'
+    name: K
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 80.01
+      y: 96.52
+    net: V_BCKP
+    net_aliases:
+    - V_BCKP
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D1
+      pin_number: '2'
+      pin_name: K
+    - reference: U2
+      pin_number: '5'
+      pin_name: V_BCKP
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.5403
+        y: -2.7943
+      max:
+        x: 2.0323
+        y: 2.7943
+      width: 4.5726
+      height: 5.5886
+      center:
+        x: -0.254
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 81.7877
+        y: 93.7257
+      max:
+        x: 86.3603
+        y: 99.3143
+      width: 4.5726
+      height: 5.5886
+      center:
+        x: 84.074
+        y: 96.52
+  warnings: []
+connected_components:
+- reference: D1
+  pin_number: '2'
+  pin_name: K
+- reference: K3
+  pin_number: 1+
+  pin_name: ''
+- reference: U2
+  pin_number: '5'
+  pin_name: V_BCKP

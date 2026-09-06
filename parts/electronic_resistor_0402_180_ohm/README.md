@@ -37,6 +37,16 @@ Resistor 180 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-07180RL` |
+| LCSC | [`C138045`](https://www.lcsc.com/product-detail/C138045.html) |
+| LCSC | [`C38941`](https://www.lcsc.com/product-detail/C38941.html) |
+| LCSC | [`C2909326`](https://www.lcsc.com/product-detail/C2909326.html) |
+
+
 
 
 

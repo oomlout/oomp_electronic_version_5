@@ -27,8 +27,39 @@ def _as_boolean(value):
     return str(value).strip().lower() in ["1", "true", "yes", "on"]
 
 
+def _project_sources_ready(part_directory):
+    """Gate downstream compilation when canonical KiCad source files are missing."""
+    data_directory = part_directory / "data"
+    required = [
+        data_directory / "kicad_file.kicad_sch",
+        data_directory / "kicad_file.kicad_pcb",
+    ]
+    missing = [path.name for path in required if not path.is_file()]
+    if missing:
+        message = (
+            f"Skipping project_readme_action for {part_directory.name}: missing required source file(s): "
+            + ", ".join(missing)
+        )
+        log_run_error("project_readme_action", RuntimeError(message))
+        print(message)
+        return False
+
+    upstream_error = data_directory / "error.txt"
+    if upstream_error.is_file():
+        message = (
+            f"Skipping project_readme_action for {part_directory.name}: upstream fetch error marker exists "
+            f"({upstream_error})."
+        )
+        log_run_error("project_readme_action", RuntimeError(message))
+        print(message)
+        return False
+    return True
+
+
 def compile_project_part(details):
     part_directory = Path(details["directory"]).resolve()
+    if not _project_sources_ready(part_directory):
+        return
     parts_directory_value = details.get("parts_directory", "parts")
     parts_directory = Path(parts_directory_value).resolve()
     output_directory = part_directory / "data" / "generated_data"

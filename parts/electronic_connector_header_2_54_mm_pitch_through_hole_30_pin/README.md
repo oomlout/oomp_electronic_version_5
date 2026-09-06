@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 30 pin
+# Connector Header 54101-T30-00LF
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_30_pin`
 
-Connector Header 2.54 mm pitch through-hole 30 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 76.2 &#x00D7; 2.48 mm.
+Connector Header 54101-T30-00LF is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 76.2 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 30 pin pinout](data/working_svg_top.svg)
+![Connector Header 54101-T30-00LF pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 30 pin is an OOMP electronic connect
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `54101-T30-00LF` |
+| LCSC | [`C5156075`](https://www.lcsc.com/product-detail/C5156075.html) |
+| LCSC | [`C49569576`](https://www.lcsc.com/product-detail/C49569576.html) |
+| LCSC | [`C2883718`](https://www.lcsc.com/product-detail/C2883718.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 30 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

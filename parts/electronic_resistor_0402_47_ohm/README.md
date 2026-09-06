@@ -37,6 +37,16 @@ Resistor 47 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-0747RL` |
+| LCSC | [`C137973`](https://www.lcsc.com/product-detail/C137973.html) |
+| LCSC | [`C2909362`](https://www.lcsc.com/product-detail/C2909362.html) |
+| LCSC | [`C25118`](https://www.lcsc.com/product-detail/C25118.html) |
+
+
 
 
 

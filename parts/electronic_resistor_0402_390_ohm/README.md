@@ -37,6 +37,16 @@ Resistor 390 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-07390RL` |
+| LCSC | [`C137997`](https://www.lcsc.com/product-detail/C137997.html) |
+| LCSC | [`C2909353`](https://www.lcsc.com/product-detail/C2909353.html) |
+| LCSC | [`C2906937`](https://www.lcsc.com/product-detail/C2906937.html) |
+
+
 
 
 

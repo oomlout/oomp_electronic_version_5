@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 12 pin
+# Connector Header PH2.54-01-12PZD
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_12_pin`
 
-Connector Header 2.54 mm pitch through-hole 12 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 30.48 &#x00D7; 2.48 mm.
+Connector Header PH2.54-01-12PZD is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 30.48 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 12 pin pinout](data/working_svg_top.svg)
+![Connector Header PH2.54-01-12PZD pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 12 pin is an OOMP electronic connect
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `PH2.54-01-12PZD` |
+| LCSC | [`C7501588`](https://www.lcsc.com/product-detail/C7501588.html) |
+| LCSC | [`C725243`](https://www.lcsc.com/product-detail/C725243.html) |
+| LCSC | [`C7501597`](https://www.lcsc.com/product-detail/C7501597.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 12 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

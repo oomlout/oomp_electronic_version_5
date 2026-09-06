@@ -17,7 +17,11 @@ def generate(filter_text):
     working_oomp_populate.main()
     working_oomp.main(filter=filters, regenerate_pngs=False)
     action_generate_navigation.generate(filter_text=filter_text)
-    action_count, skipped = run_actions(filter_text=filters, regenerate_pngs=False)
+    action_count, skipped = run_actions(
+        filter_text=filters,
+        regenerate_pngs=False,
+        honour_normal_gates=True,
+    )
     from kicad_agents.kicad_library_agent import package_libraries
     package_libraries(REPOSITORY_ROOT / "parts", REPOSITORY_ROOT / "kicad_libraries")
     print(f"Generated {filter_text}: {action_count} actions; {skipped} browser actions skipped. Existing PNGs retained.")

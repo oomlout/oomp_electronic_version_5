@@ -37,6 +37,16 @@ Resistor 1e+07 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `HRC0402F1005DNTO` |
+| LCSC | [`C54920615`](https://www.lcsc.com/product-detail/C54920615.html) |
+| LCSC | [`C2933065`](https://www.lcsc.com/product-detail/C2933065.html) |
+| LCSC | [`C54920718`](https://www.lcsc.com/product-detail/C54920718.html) |
+
+
 
 
 

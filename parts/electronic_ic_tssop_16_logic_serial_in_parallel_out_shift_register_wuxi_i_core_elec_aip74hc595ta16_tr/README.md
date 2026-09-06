@@ -112,6 +112,8 @@ IC AiP74HC595TA16.TR TSSOP 16 is an OOMP electronic ic definition. It uses the t
 
 ![Square summary](data/working_svg_square_300.png)
 
+![Square schematic](data/working_svg_square_schematic_300.png)
+
 ![Dimensions](data/working_svg_dimensioned_300.png)
 
 ![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)

@@ -37,6 +37,16 @@ Resistor 133000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F1333TS` |
+| LCSC | [`C2998045`](https://www.lcsc.com/product-detail/C2998045.html) |
+| LCSC | [`C25753`](https://www.lcsc.com/product-detail/C25753.html) |
+| LCSC | [`C49654184`](https://www.lcsc.com/product-detail/C49654184.html) |
+
+
 
 
 
@@ -72,6 +82,8 @@ Resistor 133000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

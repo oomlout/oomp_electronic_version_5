@@ -37,6 +37,16 @@ Resistor 470000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F4703TS` |
+| LCSC | [`C2906871`](https://www.lcsc.com/product-detail/C2906871.html) |
+| LCSC | [`C25790`](https://www.lcsc.com/product-detail/C25790.html) |
+| LCSC | [`C2906944`](https://www.lcsc.com/product-detail/C2906944.html) |
+
+
 
 
 

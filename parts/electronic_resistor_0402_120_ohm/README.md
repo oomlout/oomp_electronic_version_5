@@ -37,6 +37,16 @@ Resistor 120 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F1200TS` |
+| LCSC | [`C2909315`](https://www.lcsc.com/product-detail/C2909315.html) |
+| LCSC | [`C114758`](https://www.lcsc.com/product-detail/C114758.html) |
+| LCSC | [`C25079`](https://www.lcsc.com/product-detail/C25079.html) |
+
+
 
 
 

@@ -37,6 +37,16 @@ Resistor 3.3e+06 Ohm 0402 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-073M3L` |
+| LCSC | [`C470023`](https://www.lcsc.com/product-detail/C470023.html) |
+| LCSC | [`C482174`](https://www.lcsc.com/product-detail/C482174.html) |
+| LCSC | [`C2998179`](https://www.lcsc.com/product-detail/C2998179.html) |
+
+
 
 
 

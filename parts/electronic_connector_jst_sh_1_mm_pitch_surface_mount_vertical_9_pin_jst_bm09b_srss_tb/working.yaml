@@ -171,6 +171,13 @@ oomlout_ai_roboclick_3:
     resample: lanczos
   - allow_upscale: false
     command: image_resize
+    file_destination: data/working_svg_square_schematic_300.png
+    file_source: data/working_svg_square_schematic.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
     file_destination: data/working_svg_dimensioned_300.png
     file_source: data/working_svg_dimensioned.png
     maximum_dimension: 300
@@ -337,6 +344,13 @@ oomlout_ai_roboclick_4:
           resample: lanczos
         - allow_upscale: false
           command: image_resize
+          file_destination: data/working_svg_square_schematic_300.png
+          file_source: data/working_svg_square_schematic.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
           file_destination: data/working_svg_dimensioned_300.png
           file_source: data/working_svg_dimensioned.png
           maximum_dimension: 300
@@ -485,6 +499,10 @@ oomlout_ai_roboclick_4:
           preview: data/working_svg_square_300.png
           svg: data/working_svg_square.svg
           title: Square summary
+        - png: data/working_svg_square_schematic.png
+          preview: data/working_svg_square_schematic_300.png
+          svg: data/working_svg_square_schematic.svg
+          title: Square schematic
         - png: data/working_svg_dimensioned.png
           preview: data/working_svg_dimensioned_300.png
           svg: data/working_svg_dimensioned.svg
@@ -522,6 +540,8 @@ oomlout_ai_roboclick_4:
           title: BIP 39 words
         - preview: data/working_svg_square_300.png
           title: Square summary
+        - preview: data/working_svg_square_schematic_300.png
+          title: Square schematic
         - preview: data/working_svg_dimensioned_300.png
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
@@ -719,6 +739,16 @@ oomlout_ai_roboclick_4:
         stylesheet: style_oomp
         svg_name: oomp_component_square_pins
         write_yaml: false
+      - filename_extra: square_schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_square_schematic
+        write_yaml: false
       - filename_extra: dimensioned
         make_a4: false
         output_formats:
@@ -736,6 +766,56 @@ oomlout_ai_roboclick_4:
         padding: 0
         stylesheet: style_oomp
         svg_name: oomp_component_dimensioned_titles
+        write_yaml: false
+      - filename_extra: schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic
+        write_yaml: false
+      - filename_extra: schematic_pins
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_pins
+        write_yaml: false
+      - filename_extra: schematic_part_id
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_part_id
+        write_yaml: false
+      - filename_extra: schematic_md5_6_alpha
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_md5_6_alpha
+        write_yaml: false
+      - filename_extra: schematic_bip_39_3_word
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_bip_39_3_word
         write_yaml: false
       - filename_extra: top
         make_a4: false
@@ -899,6 +979,10 @@ part_page:
     preview: data/working_svg_square_300.png
     svg: data/working_svg_square.svg
     title: Square summary
+  - png: data/working_svg_square_schematic.png
+    preview: data/working_svg_square_schematic_300.png
+    svg: data/working_svg_square_schematic.svg
+    title: Square schematic
   - png: data/working_svg_dimensioned.png
     preview: data/working_svg_dimensioned_300.png
     svg: data/working_svg_dimensioned.svg
@@ -936,6 +1020,8 @@ part_page:
     title: BIP 39 words
   - preview: data/working_svg_square_300.png
     title: Square summary
+  - preview: data/working_svg_square_schematic_300.png
+    title: Square schematic
   - preview: data/working_svg_dimensioned_300.png
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
@@ -1133,6 +1219,16 @@ svg_details:
   stylesheet: style_oomp
   svg_name: oomp_component_square_pins
   write_yaml: false
+- filename_extra: square_schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_schematic
+  write_yaml: false
 - filename_extra: dimensioned
   make_a4: false
   output_formats:
@@ -1150,6 +1246,56 @@ svg_details:
   padding: 0
   stylesheet: style_oomp
   svg_name: oomp_component_dimensioned_titles
+  write_yaml: false
+- filename_extra: schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic
+  write_yaml: false
+- filename_extra: schematic_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_pins
+  write_yaml: false
+- filename_extra: schematic_part_id
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_part_id
+  write_yaml: false
+- filename_extra: schematic_md5_6_alpha
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_md5_6_alpha
+  write_yaml: false
+- filename_extra: schematic_bip_39_3_word
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_bip_39_3_word
   write_yaml: false
 - filename_extra: top
   make_a4: false

@@ -37,6 +37,16 @@ Resistor 27 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF270JTCE` |
+| LCSC | [`C25100`](https://www.lcsc.com/product-detail/C25100.html) |
+| LCSC | [`C25156`](https://www.lcsc.com/product-detail/C25156.html) |
+| LCSC | [`C138021`](https://www.lcsc.com/product-detail/C138021.html) |
+
+
 
 
 
@@ -72,6 +82,8 @@ Resistor 27 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

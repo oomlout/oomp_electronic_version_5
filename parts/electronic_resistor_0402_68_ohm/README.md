@@ -37,6 +37,16 @@ Resistor 68 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F68R0TS` |
+| LCSC | [`C2909380`](https://www.lcsc.com/product-detail/C2909380.html) |
+| LCSC | [`C54920697`](https://www.lcsc.com/product-detail/C54920697.html) |
+| LCSC | [`C2906961`](https://www.lcsc.com/product-detail/C2906961.html) |
+
+
 
 
 

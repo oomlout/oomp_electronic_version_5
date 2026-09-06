@@ -37,6 +37,16 @@ Resistor 47000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF4702TCE` |
+| LCSC | [`C25792`](https://www.lcsc.com/product-detail/C25792.html) |
+| LCSC | [`C93943`](https://www.lcsc.com/product-detail/C93943.html) |
+| LCSC | [`C2906946`](https://www.lcsc.com/product-detail/C2906946.html) |
+
+
 
 
 

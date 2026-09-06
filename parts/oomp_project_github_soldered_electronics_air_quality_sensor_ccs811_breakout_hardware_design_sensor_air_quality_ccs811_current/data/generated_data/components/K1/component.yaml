@@ -1,0 +1,441 @@
+reference: K1
+schematic:
+  available: true
+  units:
+  - reference: K1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 08957892-f320-46ae-b8cd-4070a55254cc
+    library_id: e-radionica.com schematics:HEADER_MALE_2X1
+    unit: 1
+    body_style: 1
+    position:
+      x: 147.32
+      y: 57.15
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: K1
+      Value: HEADER_MALE_2X1
+      Footprint: e-radionica.com footprinti:HEADER_MALE_2X1
+      Datasheet: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 0.0
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 147.32
+        y: 57.15
+      net: NINT
+      net_aliases:
+      - NINT
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: R1
+        pin_number: '1'
+        pin_name: '~'
+      - reference: U2
+        pin_number: '3'
+        pin_name: nINT
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 147.32
+        y: 54.61
+      net: NWAKE
+      net_aliases:
+      - NWAKE
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: R6
+        pin_number: '2'
+        pin_name: '~'
+      - reference: U2
+        pin_number: '7'
+        pin_name: nWAKE
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.2705
+          y: -1.2705
+        max:
+          x: 1.2705
+          y: 3.8105
+        width: 2.541
+        height: 5.081
+        center:
+          x: 0.0
+          y: 1.27
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 146.0495
+          y: 53.3395
+        max:
+          x: 148.5905
+          y: 58.4205
+        width: 2.541
+        height: 5.081
+        center:
+          x: 147.32
+          y: 55.88
+    warnings: []
+  connected_components:
+  - reference: R1
+    pin_number: '1'
+    pin_name: '~'
+  - reference: R6
+    pin_number: '2'
+    pin_name: '~'
+  - reference: U2
+    pin_number: '3'
+    pin_name: nINT
+  - reference: U2
+    pin_number: '7'
+    pin_name: nWAKE
+pcb:
+  reference: K1
+  value: HEADER_MALE_2X1
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 152a0193-dc29-46d9-812e-2b86dc205716
+  library_id: e-radionica.com footprinti:HEADER_MALE_2X1
+  layer: B.Cu
+  side: back
+  position:
+    x: 105.8
+    y: 115.7
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Sheetfile: CCS811_breakout.kicad_sch
+    Sheetname: ''
+    Reference: K1
+    Value: HEADER_MALE_2X1
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -1.27
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 104.53
+      y: 115.7
+    placed_rotation: 0.0
+    size:
+      x: 1.524
+      y: 1.524
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: NINT
+    net_number: 10
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.032
+          y: -0.762
+        max:
+          x: -0.508
+          y: 0.762
+        width: 1.524
+        height: 1.524
+        center:
+          x: -1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 103.768
+          y: 114.938
+        max:
+          x: 105.292
+          y: 116.462
+        width: 1.524
+        height: 1.524
+        center:
+          x: 104.53
+          y: 115.7
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: R1
+      pad_number: '1'
+    - reference: U2
+      pad_number: '3'
+  - number: '2'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 1.27
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 107.07
+      y: 115.7
+    placed_rotation: 0.0
+    size:
+      x: 1.524
+      y: 1.524
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: NWAKE
+    net_number: 9
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.508
+          y: -0.762
+        max:
+          x: 2.032
+          y: 0.762
+        width: 1.524
+        height: 1.524
+        center:
+          x: 1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 106.308
+          y: 114.938
+        max:
+          x: 107.832
+          y: 116.462
+        width: 1.524
+        height: 1.524
+        center:
+          x: 107.07
+          y: 115.7
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: R6
+      pad_number: '2'
+    - reference: U2
+      pad_number: '7'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.032
+        y: -0.762
+      max:
+        x: 2.032
+        y: 0.762
+      width: 4.064
+      height: 1.524
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 103.768
+        y: 114.938
+      max:
+        x: 107.832
+        y: 116.462
+      width: 4.064
+      height: 1.524
+      center:
+        x: 105.8
+        y: 115.7
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.6
+        y: -1.33
+      max:
+        x: 2.6
+        y: 1.33
+      width: 5.2
+      height: 2.66
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 103.2
+        y: 114.37
+      max:
+        x: 108.4
+        y: 117.03
+      width: 5.2
+      height: 2.66
+      center:
+        x: 105.8
+        y: 115.7
+  connected_components:
+  - R1
+  - R6
+  - U2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - NINT
+    pcb_nets:
+    - NINT
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - NWAKE
+    pcb_nets:
+    - NWAKE
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: HEADER_MALE_2X1
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/K1

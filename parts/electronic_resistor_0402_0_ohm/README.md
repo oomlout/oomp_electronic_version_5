@@ -37,6 +37,16 @@ Resistor 0 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402P000 TS` |
+| LCSC | [`C2906877`](https://www.lcsc.com/product-detail/C2906877.html) |
+| LCSC | [`C17168`](https://www.lcsc.com/product-detail/C17168.html) |
+| LCSC | [`C2906858`](https://www.lcsc.com/product-detail/C2906858.html) |
+
+
 
 
 

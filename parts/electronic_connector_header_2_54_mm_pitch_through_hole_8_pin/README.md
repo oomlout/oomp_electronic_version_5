@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 8 pin
+# Connector Header PZ254V-12-8P
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`
 
-Connector Header 2.54 mm pitch through-hole 8 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 20.32 &#x00D7; 2.48 mm.
+Connector Header PZ254V-12-8P is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 20.32 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 8 pin pinout](data/working_svg_top.svg)
+![Connector Header PZ254V-12-8P pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -37,6 +37,16 @@ Connector Header 2.54 mm pitch through-hole 8 pin is an OOMP electronic connecto
 | Width | 2.48 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `PZ254V-12-8P` |
+| LCSC | [`C492421`](https://www.lcsc.com/product-detail/C492421.html) |
+| LCSC | [`C7429638`](https://www.lcsc.com/product-detail/C7429638.html) |
+| LCSC | [`C54950595`](https://www.lcsc.com/product-detail/C54950595.html) |
 
 
 
@@ -74,6 +84,8 @@ Connector Header 2.54 mm pitch through-hole 8 pin is an OOMP electronic connecto
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

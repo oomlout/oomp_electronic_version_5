@@ -37,6 +37,16 @@ Resistor 150000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-07150KL` |
+| LCSC | [`C93947`](https://www.lcsc.com/product-detail/C93947.html) |
+| LCSC | [`C2909320`](https://www.lcsc.com/product-detail/C2909320.html) |
+| LCSC | [`C2906891`](https://www.lcsc.com/product-detail/C2906891.html) |
+
+
 
 
 

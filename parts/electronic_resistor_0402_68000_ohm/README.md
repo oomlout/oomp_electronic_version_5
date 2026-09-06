@@ -37,6 +37,16 @@ Resistor 68000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F6802TS` |
+| LCSC | [`C2909379`](https://www.lcsc.com/product-detail/C2909379.html) |
+| LCSC | [`C137947`](https://www.lcsc.com/product-detail/C137947.html) |
+| LCSC | [`C36871`](https://www.lcsc.com/product-detail/C36871.html) |
+
+
 
 
 

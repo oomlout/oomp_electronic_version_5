@@ -37,6 +37,16 @@ Resistor 7.5e+06 Ohm 0402 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402JR-077M5L` |
+| LCSC | [`C137839`](https://www.lcsc.com/product-detail/C137839.html) |
+| LCSC | [`C2933121`](https://www.lcsc.com/product-detail/C2933121.html) |
+| LCSC | [`C131625`](https://www.lcsc.com/product-detail/C131625.html) |
+
+
 
 
 

@@ -37,6 +37,16 @@ Resistor 330000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F3303TS` |
+| LCSC | [`C2909349`](https://www.lcsc.com/product-detail/C2909349.html) |
+| LCSC | [`C138006`](https://www.lcsc.com/product-detail/C138006.html) |
+| LCSC | [`C324777`](https://www.lcsc.com/product-detail/C324777.html) |
+
+
 
 
 

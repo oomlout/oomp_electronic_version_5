@@ -1,10 +1,10 @@
-# Connector Header 2.54 mm pitch through-hole 11 pin
+# Connector Header PZ254-1-11-Z-8.5
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_11_pin`
 
-Connector Header 2.54 mm pitch through-hole 11 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 27.94 &#x00D7; 2.48 mm.
+Connector Header PZ254-1-11-Z-8.5 is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 27.94 &#x00D7; 2.48 mm.
 
-![Connector Header 2.54 mm pitch through-hole 11 pin pinout](data/working_svg_top.svg)
+![Connector Header PZ254-1-11-Z-8.5 pinout](data/working_svg_top.svg)
 
 ## At a glance
 
@@ -39,6 +39,16 @@ Connector Header 2.54 mm pitch through-hole 11 pin is an OOMP electronic connect
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `PZ254-1-11-Z-8.5` |
+| LCSC | [`C2894934`](https://www.lcsc.com/product-detail/C2894934.html) |
+| LCSC | [`C18197918`](https://www.lcsc.com/product-detail/C18197918.html) |
+| LCSC | [`C2894953`](https://www.lcsc.com/product-detail/C2894953.html) |
+
+
 
 
 
@@ -66,6 +76,8 @@ Connector Header 2.54 mm pitch through-hole 11 pin is an OOMP electronic connect
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

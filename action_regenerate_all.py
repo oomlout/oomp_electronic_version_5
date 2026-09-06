@@ -60,7 +60,24 @@ def _matches_filter(part_id, filter_text):
     return filter_text in part_id
 
 
-def run_actions(filter_text="", regenerate_pngs=True):
+def _normal_gate_is_complete(part_directory, mode_details):
+    file_test = mode_details.get("file_test", "")
+    if file_test in [None, ""]:
+        return False
+    file_tests = file_test if isinstance(file_test, (list, tuple)) else [file_test]
+    paths = []
+    for file_test_entry in file_tests:
+        path = Path(str(file_test_entry))
+        if not path.is_absolute():
+            path = part_directory / path
+        paths.append(path)
+    mode = str(mode_details.get("file_test_mode") or "exists")
+    if mode == "exists":
+        return all(path.exists() for path in paths)
+    return any(path.exists() for path in paths)
+
+
+def run_actions(filter_text="", regenerate_pngs=True, honour_normal_gates=False):
     discovered_actions = oomlout_roboclick.build_action_lookup()
     parts_directory = REPOSITORY_ROOT / "parts"
     action_count = 0
@@ -74,6 +91,13 @@ def run_actions(filter_text="", regenerate_pngs=True):
         workings = yaml.safe_load(working_file.read_text(encoding="utf-8")) or {}
         for mode_name, mode_details in workings.items():
             if not str(mode_name).startswith("oomlout_") or not isinstance(mode_details, dict):
+                continue
+            if (
+                honour_normal_gates
+                and mode_details.get("honour_gate_in_normal_run", False)
+                and _normal_gate_is_complete(part_directory, mode_details)
+            ):
+                print(f"{part_directory.name} {mode_name}: gate present, skipping normal run")
                 continue
             actions = mode_details.get("actions", [])
             if not isinstance(actions, list):

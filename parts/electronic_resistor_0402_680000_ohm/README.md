@@ -37,6 +37,16 @@ Resistor 680000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-07680KL` |
+| LCSC | [`C163456`](https://www.lcsc.com/product-detail/C163456.html) |
+| LCSC | [`C2909377`](https://www.lcsc.com/product-detail/C2909377.html) |
+| LCSC | [`C144741`](https://www.lcsc.com/product-detail/C144741.html) |
+
+
 
 
 

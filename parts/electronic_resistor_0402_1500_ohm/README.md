@@ -37,6 +37,16 @@ Resistor 1500 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF1501TCE` |
+| LCSC | [`C25867`](https://www.lcsc.com/product-detail/C25867.html) |
+| LCSC | [`C2933074`](https://www.lcsc.com/product-detail/C2933074.html) |
+| LCSC | [`C114759`](https://www.lcsc.com/product-detail/C114759.html) |
+
+
 
 
 
@@ -72,6 +82,8 @@ Resistor 1500 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 ![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
 
 ![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
 
 ![Dimensions](data/working_svg_dimensioned_300.png)
 

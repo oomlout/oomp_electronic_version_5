@@ -2,13 +2,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="83.9000 44.0961 92.0000 92.1539">
 <defs>
 <style>
-.page { fill: #FFFFFF; }
-.board { fill: #FFFFFF; stroke: #000000; stroke-width: 0.35; }
-.edge-cut { fill: none; stroke: #000000; stroke-width: 0.25; }
-.component { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mechanical-pad { fill: #FFFFFF; stroke: #000000; stroke-width: 0.18; }
-.mounting-hole { fill: #FFFFFF; stroke: #000000; stroke-width: 0.22; }
-.reference { fill: #000000; font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: #FFFFFF; stroke-width: 0.35px; }
+.page { fill: var(--brd-page, #FFFFFF); }
+.board { fill: var(--brd-board-fill, #FFFFFF); stroke: var(--brd-board-outline, #000000); stroke-width: 0.35; }
+.edge-cut { fill: none; stroke: var(--brd-board-outline, #000000); stroke-width: 0.25; }
+.component { fill: var(--brd-component-fill, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mechanical-pad { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mounting-hole { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.22; }
+.reference { fill: var(--brd-text, #000000); font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, #FFFFFF); stroke-width: 0.35px; }
+.indicator-plate { fill: var(--brd-plate, #FFFFFF); }
+.indicator-text { fill: var(--brd-plate-text, #000000); }
 </style>
 </defs>
 <rect class="page" x="83.9000" y="44.0961" width="92.0000" height="92.1539" />
@@ -164,18 +166,18 @@
 <g transform="translate(0.0000 -0.5000) rotate(-90)"><svg x="-17.3000" y="-23.9000" width="34.6000" height="47.8000" viewBox="0 0 34.6000 47.8000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="34.6000" height="47.8000"  fill="none" stroke="none" />
   <rect x="0.0000" y="0.0000" width="34.6000" height="47.8000" rx="1.2110" ry="1.2110"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0716" />
   <rect x="2.0000" y="3.5000" width="30.6000" height="40.8000" rx="0.7266" ry="0.7266"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0493" />
-  <rect x="23.3000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="22.5000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="21.7000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="20.9000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="20.1000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="19.3000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="18.5000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="17.7000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="16.9000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="16.1000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="15.3000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" />
-  <rect x="14.5000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" /></svg></g>
+  <rect x="23.3000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="22.5000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="21.7000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="20.9000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="20.1000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="19.3000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="18.5000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="17.7000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="16.9000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="16.1000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="15.3000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" />
+  <rect x="14.5000" y="30.4500" width="0.6000" height="2.5500"  fill="#FFFFFF" stroke="#000000" stroke-width="0.0537" class="pad" /></svg></g>
 </g>
 <g class="board-component" data-reference="J301" data-oomp-id="electronic_connector_header_2_54_mm_pitch_through_hole_10_pin" tabindex="0" transform="translate(141.3300 112.2200) rotate(-90.0000)">
 <g transform="translate(0.0000 -11.4250) rotate(180)"><svg x="-1.2400" y="-12.7000" width="2.4800" height="25.4000" viewBox="0 0 2.4800 25.4000" preserveAspectRatio="xMidYMid meet"><rect x="0.0000" y="0.0000" width="2.4800" height="25.4000"  fill="none" stroke="none" />
@@ -201,7 +203,7 @@
 <circle class="mounting-hole" cx="155.9000" cy="116.1000" r="1.6000" />
 <circle class="mounting-hole" cx="132.7900" cy="65.1500" r="0.3500" />
 <circle class="mounting-hole" cx="127.0100" cy="65.1500" r="0.3500" />
-<g class="indicator" transform="translate(129.4000 90.1000)"><rect x="-1.6488" y="-0.4860" width="3.2976" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">LCD201</text></g>
-<g class="indicator" transform="translate(129.9050 112.2200)"><rect x="-1.1592" y="-0.4860" width="2.3184" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J301</text></g>
-<g class="indicator" transform="translate(129.9000 67.0000)"><rect x="-1.4040" y="-0.4860" width="2.8080" height="0.9720" rx="0.0864" fill="#FFFFFF" stroke="none" /><text x="0" y="0.2448" fill="#000000" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">SW102</text></g>
+<g class="indicator" transform="translate(129.4000 90.1000)"><rect class="indicator-plate" x="-2.6035" y="-0.9613" width="5.2070" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">LCD201</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">TFT_20_QT200H1201</text></g>
+<g class="indicator" transform="translate(129.9050 112.2200)"><rect class="indicator-plate" x="-1.6056" y="-0.9613" width="3.2112" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">J301</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">Conn_01x10</text></g>
+<g class="indicator" transform="translate(129.9000 67.0000)"><rect class="indicator-plate" x="-1.8907" y="-0.9613" width="3.7814" height="1.6704" rx="0.0864" stroke="none" /><text class="indicator-text" x="0" y="-0.3421" font-family="Arial, sans-serif" font-size="0.7200" font-weight="bold" text-anchor="middle">SW102</text><text class="indicator-text" x="0" y="0.5184" font-family="Arial, sans-serif" font-size="0.4752" text-anchor="middle">4P_button_sw</text></g>
 </svg>

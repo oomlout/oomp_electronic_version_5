@@ -37,6 +37,17 @@ Resistor 6.8e+06 Ohm 0402 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `AC0402JR-076M8L` |
+| LCSC | [`C227411`](https://www.lcsc.com/product-detail/C227411.html) |
+| LCSC | [`C49254148`](https://www.lcsc.com/product-detail/C49254148.html) |
+| LCSC | [`C3017535`](https://www.lcsc.com/product-detail/C3017535.html) |
+| LCSC | [`C2906463`](https://www.lcsc.com/product-detail/C2906463.html) |
+
+
 
 
 

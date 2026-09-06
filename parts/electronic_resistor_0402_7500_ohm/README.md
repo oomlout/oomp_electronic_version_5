@@ -37,6 +37,16 @@ Resistor 7500 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF7501TCE` |
+| LCSC | [`C25918`](https://www.lcsc.com/product-detail/C25918.html) |
+| LCSC | [`C137934`](https://www.lcsc.com/product-detail/C137934.html) |
+| LCSC | [`C2960875`](https://www.lcsc.com/product-detail/C2960875.html) |
+
+
 
 
 

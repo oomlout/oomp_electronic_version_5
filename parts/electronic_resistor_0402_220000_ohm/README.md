@@ -37,6 +37,16 @@ Resistor 220000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0402F2203TS` |
+| LCSC | [`C2909335`](https://www.lcsc.com/product-detail/C2909335.html) |
+| LCSC | [`C138030`](https://www.lcsc.com/product-detail/C138030.html) |
+| LCSC | [`C54920755`](https://www.lcsc.com/product-detail/C54920755.html) |
+
+
 
 
 

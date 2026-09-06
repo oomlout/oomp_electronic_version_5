@@ -10,6 +10,11 @@ from parts_source with the current populate code.  Modes without a
 `file_test` (for example the README template render) have no gate and rerun
 with every replay.
 
+With --include-projects, project outputs also drop generated KiCad
+production bundles and generated schematic render artifacts before replay:
+data/production_auto_generate/, data/generated_data/src/schematic.svg, and
+data/generated_data/src/schematic_parts/.
+
 A mode whose gate cannot be rebuilt is never unlocked: only modes holding at
 least one non-browser action lose their gate file.  Failures are collected
 per part; the run continues and reports them at the end.
@@ -18,6 +23,7 @@ per part; the run continues and reports them at the end.
 import argparse
 import copy
 import os
+import shutil
 from pathlib import Path
 
 import oomlout_roboclick
@@ -59,6 +65,29 @@ def delete_gate_files(part_directory, workings):
         if gate.is_file():
             gate.unlink()
             deleted += 1
+    return deleted
+
+
+def delete_generated_project_kicad_outputs(part_directory):
+    """Delete generated project KiCad outputs while preserving source inputs."""
+    deleted = 0
+    production_directory = part_directory / "data" / "production_auto_generate"
+    if production_directory.is_dir():
+        shutil.rmtree(production_directory)
+        deleted += 1
+
+    schematic_file = part_directory / "data" / "generated_data" / "src" / "schematic.svg"
+    if schematic_file.is_file():
+        schematic_file.unlink()
+        deleted += 1
+
+    schematic_parts_directory = (
+        part_directory / "data" / "generated_data" / "src" / "schematic_parts"
+    )
+    if schematic_parts_directory.is_dir():
+        shutil.rmtree(schematic_parts_directory)
+        deleted += 1
+
     return deleted
 
 
@@ -104,8 +133,11 @@ def regenerate_parts(filter_text="", include_projects=False):
         if part_directory.name.startswith("oomp_project_") and not include_projects:
             continue
         workings = yaml.safe_load(working_file.read_text(encoding="utf-8")) or {}
+        generated_deleted_here = 0
+        if part_directory.name.startswith("oomp_project_"):
+            generated_deleted_here = delete_generated_project_kicad_outputs(part_directory)
         deleted_here = delete_gate_files(part_directory, workings)
-        deleted_files += deleted_here
+        deleted_files += deleted_here + generated_deleted_here
         ran_here = 0
         try:
             for mode_details in workings.values():
@@ -117,9 +149,12 @@ def regenerate_parts(filter_text="", include_projects=False):
         except RuntimeError as error:
             failures.append(str(error))
         action_count += ran_here
-        if deleted_here or ran_here:
+        if generated_deleted_here or deleted_here or ran_here:
             touched_parts += 1
-            print(f"{part_directory.name}: deleted {deleted_here} gate file(s), ran {ran_here} action(s)")
+            print(
+                f"{part_directory.name}: deleted {generated_deleted_here} project generated artifact set(s), "
+                f"{deleted_here} gate file(s), ran {ran_here} action(s)"
+            )
     print(
         f"Full regeneration complete: {touched_parts} part(s) refreshed, "
         f"{deleted_files} gate file(s) deleted, {action_count} actions run, "

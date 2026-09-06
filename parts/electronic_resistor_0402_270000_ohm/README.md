@@ -37,6 +37,16 @@ Resistor 270000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF2703TCE` |
+| LCSC | [`C25770`](https://www.lcsc.com/product-detail/C25770.html) |
+| LCSC | [`C2909341`](https://www.lcsc.com/product-detail/C2909341.html) |
+| LCSC | [`C25550`](https://www.lcsc.com/product-detail/C25550.html) |
+
+
 
 
 

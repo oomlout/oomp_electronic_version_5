@@ -88,6 +88,25 @@ def main(**kwargs):
             ],
         },
         {
+            "github_user": "soldered_electronics",
+            "github_repository": "Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design",
+            "github_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design",
+            "repository_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git",
+            "versions": [
+                {
+                    "board": "sensor_gas_mq2_easyc",
+                    "board_name": "MQ2 Breakout easyC",
+                    "board_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design",
+                    "version": "current",
+                    "git_ref": "main",
+                    "sparse_checkout": True,
+                    "project_file_folder": "CAD/V1.1.1",
+                    "project_file_basename": "MQ Breakout",
+                    "project_file_path": "CAD/V1.1.1/MQ Breakout",
+                }
+            ],
+        },
+        {
             "github_user": "dangerousprototypes",
             "github_repository": "buspirate5_hardware",
             "github_url": "https://github.com/DangerousPrototypes/BusPirate5-hardware",
@@ -338,11 +357,15 @@ def main(**kwargs):
 
     # Soldered Electronics sensor boards.  The qwiic/easyc flags follow the
     # repositories that actually exist upstream — SolderedElectronics never
-    # published MQ2 "with easyC" or MQ4 qwiic/easyC variants.
-    for mq_number, repo_slug, qwiic, easyc in [
+    # published an MQ2 "with easyC" variant.  A variant whose repository name
+    # does not follow the base slug's pattern supplies its slug explicitly
+    # (MQ4's variants spell "Methane--CNG" while the base repo uses a dot).
+    for mq_number, repo_slug, qwiic, easyc, *variant_slugs in [
         (2, "Butane--LPG---Smoke-sensor-MQ2-breakout-hardware-design", True, False),
         (3, "Alcohol--Ethanol-sensor-MQ3-breakout-hardware-design", True, True),
-        (4, "Methane.-CNG-sensor-MQ4-breakout-hardware-design", False, False),
+        (4, "Methane.-CNG-sensor-MQ4-breakout-hardware-design", True, True,
+            "Methane--CNG-sensor-MQ4-breakout-qwiic-hardware-design",
+            "Methane--CNG-sensor-MQ4-breakout-with-easyC-hardware-design"),
         (5, "Natural-gas--LPG-sensor-MQ5-breakout-hardware-design", True, True),
         (6, "LPG--Butane-sensor-MQ6-breakout-hardware-design", True, True),
         (7, "CO-sensor-MQ7-breakout-hardware-design", True, True),
@@ -364,9 +387,11 @@ def main(**kwargs):
             "MQ Breakout",
             "V1.1.1",
         )
+        qwiic_slug = variant_slugs[0] if variant_slugs else repo_slug.replace("-hardware-design", "-qwiic-hardware-design")
+        easyc_slug = variant_slugs[1] if len(variant_slugs) > 1 else repo_slug.replace("-hardware-design", "-with-easyC-hardware-design")
         if qwiic:
             add_soldered_project(
-                repo_slug.replace("-hardware-design", "-qwiic-hardware-design"),
+                qwiic_slug,
                 f"sensor_gas_mq{mq_number}_qwiic",
                 f"{base_name} qwiic",
                 f"CAD/V1.1.1",
@@ -375,7 +400,7 @@ def main(**kwargs):
             )
         if easyc:
             add_soldered_project(
-                repo_slug.replace("-hardware-design", "-with-easyC-hardware-design"),
+                easyc_slug,
                 f"sensor_gas_mq{mq_number}_easyc",
                 f"{base_name} easyC",
                 f"CAD/V1.1.1",
@@ -601,6 +626,30 @@ def main(**kwargs):
         "CAD/V1.1.1",
         "HX711_breakout_easyC",
         "V1.1.1",
+    )
+    # The qwiic repository upstream corrected the base repository's
+    # "ampfilier" typo, so the git URL spelling differs from the repository
+    # name the existing OOMP part id is built from.
+    projects.append(
+        {
+            "github_user": "SolderedElectronics",
+            "github_repository": "Load-cell-ampfilier-HX711-board-qwiic-hardware-design",
+            "github_url": "https://github.com/SolderedElectronics/Load-cell-amplifier-HX711-board-qwiic-hardware-design",
+            "repository_url": "https://github.com/SolderedElectronics/Load-cell-amplifier-HX711-board-qwiic-hardware-design.git",
+            "versions": [
+                {
+                    "board": "sensor_load_cell_hx711_qwiic",
+                    "board_name": "HX711 Load Cell qwiic",
+                    "board_url": "https://github.com/SolderedElectronics/Load-cell-amplifier-HX711-board-qwiic-hardware-design",
+                    "version": "current",
+                    "git_ref": "main",
+                    "sparse_checkout": True,
+                    "project_file_folder": "CAD/V1.1.1",
+                    "project_file_basename": "HX711_breakout_easyC",
+                    "project_file_path": "CAD/V1.1.1/HX711_breakout_easyC",
+                }
+            ],
+        }
     )
 
     add_soldered_project(
@@ -901,6 +950,14 @@ def main(**kwargs):
             option["project_match_overrides"] = dict(version_details.get("match_overrides", {}))
             option["project_match_blocked"] = dict(version_details.get("match_blocked", {}))
             option["project_review_notes"] = list(version_details.get("review_notes", []))
+            # Production overrides stay deliberately plain: add references to
+            # the list, or add one reference/value entry to a dictionary.
+            option["production_board_source"] = version_details.get("production_board_source", "")
+            option["production_oomp_metadata_board"] = version_details.get("production_oomp_metadata_board", "")
+            option["production_exclude_references"] = list(version_details.get("production_exclude_references", []))
+            option["production_lcsc_overrides"] = dict(version_details.get("production_lcsc_overrides", {}))
+            option["production_rotation_offsets"] = dict(version_details.get("production_rotation_offsets", {}))
+            option["production_position_offsets_mm"] = dict(version_details.get("production_position_offsets_mm", {}))
             options.append(option)
 
 

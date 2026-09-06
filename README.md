@@ -11,6 +11,7 @@ diagrams, previews, and documentation.
 - [Navigation, file layout, and build commands](kicad_agents/README.md)
 - [Component expansion list](kicad_agents/COMPONENT_EXPANSION_LEDGER.md)
 - [OOMP KiCad libraries and guarded design conversion](kicad_agents/KICAD_LIBRARY_GUIDE.md)
+- [JLCPCB production files](kicad_agents/PRODUCTION_JLC_GUIDE.md)
 - [Installable symbol and footprint libraries](kicad_libraries/README.md)
 
 Each generated part keeps `README.md` and `working.yaml` at its root; supporting

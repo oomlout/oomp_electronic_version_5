@@ -1,0 +1,110 @@
+available: true
+units:
+- reference: JP4
+  source_file: data/kicad_file.kicad_sch
+  uuid: e7682554-fd45-4ecc-b8da-ab5abfe47d87
+  library_id: e-radionica.com schematics:SMD-JUMPER-CONNECTED_TRACE_SOLDERMASK
+  unit: 1
+  body_style: 1
+  position:
+    x: 135.636
+    y: 110.49
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP4
+    Value: SMD-JUMPER-CONNECTED_TRACE_SOLDERMASK
+    Footprint: e-radionica.com footprinti:SMD-JUMPER-CONNECTED_TRACE_SOLDERMASK
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: ''
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 131.826
+      y: 110.49
+    net: PPS
+    net_aliases:
+    - PPS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '6'
+      pin_name: 1PPS
+    - reference: U5
+      pin_number: '13'
+      pin_name: PA3
+  - number: '2'
+    name: ''
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 139.446
+      y: 110.49
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R10
+      pin_number: '1'
+      pin_name: '~'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.6659
+        y: 0.5242
+      max:
+        x: 1.6345
+        y: 1.20198
+      width: 3.3004
+      height: 0.67778
+      center:
+        x: -0.0157
+        y: 0.86309
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 133.9701
+        y: 109.28802
+      max:
+        x: 137.2705
+        y: 109.9658
+      width: 3.3004
+      height: 0.67778
+      center:
+        x: 135.6203
+        y: 109.62691
+  warnings: []
+connected_components:
+- reference: R10
+  pin_number: '1'
+  pin_name: '~'
+- reference: U2
+  pin_number: '6'
+  pin_name: 1PPS
+- reference: U5
+  pin_number: '13'
+  pin_name: PA3

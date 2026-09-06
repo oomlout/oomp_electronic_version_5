@@ -37,6 +37,16 @@ Resistor 2700 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-072K7L` |
+| LCSC | [`C138017`](https://www.lcsc.com/product-detail/C138017.html) |
+| LCSC | [`C2909332`](https://www.lcsc.com/product-detail/C2909332.html) |
+| LCSC | [`C25885`](https://www.lcsc.com/product-detail/C25885.html) |
+
+
 
 
 
