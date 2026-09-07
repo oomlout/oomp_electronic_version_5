@@ -79,7 +79,7 @@ def compile_project_part(details):
         "matches": match_overrides if isinstance(match_overrides, dict) else {},
         "blocked": part_metadata.get("project_match_blocked", {}),
         "review_notes": part_metadata.get("project_review_notes", []),
-        "help": "Project-specific mappings are defined in working_oomp_populate_project.py.",
+        "help": "Project definitions live in project_data; reusable component identities live in kicad_agents/oomp_matching_agent.py.",
     }
     with (output_directory / "match_overrides.yaml").open("w", encoding="utf-8") as output_file:
         yaml.safe_dump(match_override_data, output_file, sort_keys=False, allow_unicode=True)

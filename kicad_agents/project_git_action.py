@@ -110,6 +110,27 @@ def _git_repository_is_usable(repository_directory):
     return completed.returncode == 0
 
 
+def _convert_eagle_board(source_file, destination_file, kicad_cli="kicad-cli"):
+    """Import an Eagle board through KiCad's supported non-KiCad PCB path."""
+    command = [
+        str(kicad_cli), "pcb", "import", "--format", "eagle",
+        "--output", str(destination_file), str(source_file),
+    ]
+    try:
+        completed = subprocess.run(command, capture_output=True, text=True)
+    except FileNotFoundError as error:
+        raise RuntimeError(
+            "KiCad CLI is required to import Eagle boards. Install a KiCad version "
+            "that provides `kicad-cli pcb import --format eagle`."
+        ) from error
+    if completed.returncode != 0:
+        message = completed.stderr.strip() or completed.stdout.strip() or "KiCad CLI import failed"
+        raise RuntimeError(f"{message}\nCommand: {' '.join(command)}")
+    if not destination_file.is_file():
+        raise RuntimeError(f"KiCad CLI reported success but did not create {destination_file}")
+    print(f"converted Eagle board {source_file.name} -> {destination_file.name}")
+
+
 def refresh_project_files(details):
     try:
         part_directory = Path(details["directory"]).resolve()
@@ -121,6 +142,7 @@ def refresh_project_files(details):
         source_folder = str(details.get("project_file_folder", "")).strip()
         sparse_checkout = bool(details.get("project_sparse_checkout", False))
         source_basename = str(details.get("project_file_basename", "")).strip()
+        source_format = str(details.get("project_source_format") or "kicad").strip().lower()
         extensions = details.get("project_file_extensions", [])
 
         required_strings = [repository_url, repository_name, source_basename]
@@ -128,6 +150,8 @@ def refresh_project_files(details):
             raise ValueError("project_git_url, project_github_repository, and project_file_basename are required")
         if not isinstance(extensions, list) or extensions == []:
             raise ValueError("project_file_extensions must be a non-empty list")
+        if source_format not in {"kicad", "eagle"}:
+            raise ValueError(f"Unsupported project_source_format: {source_format}")
 
         repository_directory = _repository_workspace_directory(details)
         git_metadata = repository_directory / ".git"
@@ -172,30 +196,43 @@ def refresh_project_files(details):
             _run_git(["-C", repository_directory, "checkout", "--detach", git_reference])
 
         copied_files = []
-        for extension in extensions:
-            extension_text = str(extension)
-            if not extension_text.startswith("."):
-                extension_text = f".{extension_text}"
-            source_file = repository_directory / source_folder / f"{source_basename}{extension_text}"
-            destination_file = data_directory / f"kicad_file{extension_text}"
-            destination_file.parent.mkdir(parents=True, exist_ok=True)
+        source_project_directory = repository_directory / source_folder
+        if source_format == "eagle":
+            source_file = source_project_directory / f"{source_basename}.brd"
+            eagle_copy = data_directory / "source_eagle.brd"
+            destination_file = data_directory / "kicad_file.kicad_pcb"
             if not source_file.is_file():
-                raise FileNotFoundError(f"Required KiCad source file not found: {source_file}")
-            shutil.copy2(source_file, destination_file)
-            copied_files.append(
-                {
-                    "source": str(source_file),
-                    "destination": str(destination_file),
-                }
-            )
-            print(f"copied {source_file.name} -> {destination_file.name}")
+                raise FileNotFoundError(f"Required Eagle board source file not found: {source_file}")
+            data_directory.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(source_file, eagle_copy)
+            _convert_eagle_board(source_file, destination_file, details.get("project_kicad_cli", "kicad-cli"))
+            copied_files.extend([
+                {"source": str(source_file), "destination": str(eagle_copy)},
+                {"source": str(source_file), "destination": str(destination_file)},
+            ])
+        else:
+            for extension in extensions:
+                extension_text = str(extension)
+                if not extension_text.startswith("."):
+                    extension_text = f".{extension_text}"
+                source_file = source_project_directory / f"{source_basename}{extension_text}"
+                destination_file = data_directory / f"kicad_file{extension_text}"
+                destination_file.parent.mkdir(parents=True, exist_ok=True)
+                if not source_file.is_file():
+                    raise FileNotFoundError(f"Required KiCad source file not found: {source_file}")
+                shutil.copy2(source_file, destination_file)
+                copied_files.append(
+                    {"source": str(source_file), "destination": str(destination_file)}
+                )
+                print(f"copied {source_file.name} -> {destination_file.name}")
 
         # Hierarchical KiCad projects keep the component-bearing sheets beside the
         # root schematic.  Copy them into a stable nested directory so the parser
         # can digest the complete design without depending on the ignored clone.
         sheet_directory = data_directory / "kicad_file_sheets"
-        source_project_directory = repository_directory / source_folder
-        schematic_files = referenced_sheets(source_project_directory / f"{source_basename}.kicad_sch")
+        schematic_files = [] if source_format == "eagle" else referenced_sheets(
+            source_project_directory / f"{source_basename}.kicad_sch"
+        )
         for schematic_file in schematic_files:
             if schematic_file.name.lower() == f"{source_basename}.kicad_sch".lower():
                 continue

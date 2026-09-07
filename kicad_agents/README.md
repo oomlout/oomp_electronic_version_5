@@ -16,9 +16,10 @@ Projects use this taxonomy:
 oomp / project / github / user / repository / version
 ```
 
-`working_oomp_populate_project.py` defines the repository, version, Git ref,
-KiCad source folder, file basename, extensions, and project-specific match
-overrides. A missing version definition defaults to `current`.
+`project_data/<github-user>/working.yaml` defines the repository, version, Git
+ref, KiCad source folder, file basename, and extensions. A missing version
+definition defaults to `current`; reusable component identities are defined by
+the matching agent rather than project-specific reference overrides.
 
 `working_oomp.py` adds project-only `run_python` action blocks for source
 refresh, InteractiveHtmlBom, documentation, reverse usage, guarded OOMP KiCad
@@ -197,14 +198,11 @@ LLM-authored sidecar. Optional visual changes belong in
      --parts-dir parts
    ```
 
-4. When the AI can justify a match, add it to `data/generated_data/match_overrides.yaml`:
-
-   ```yaml
-   matches:
-     R1: electronic_resistor_0402_5100_ohm
-   ```
-
-5. Rerun the processing agent. Overrides are validated against the current `parts` directory and are marked as override-based in `oomp/match.yaml`.
+4. When the AI can justify an identity, add a reusable exact signature (value,
+   footprint, and symbol identity) to `EXACT_COMPONENT_MATCHES` in
+   `oomp_matching_agent.py`.
+5. Rerun the processing agent. The rule is validated against the current
+   `parts` directory and applies to any component with the same evidence.
 
 ## Measurement policy
 

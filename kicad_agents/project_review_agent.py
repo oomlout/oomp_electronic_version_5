@@ -72,7 +72,7 @@ def write_lcsc_review(project_data, output_directory):
     items.sort(key=lambda item: item["references"][0] if item["references"] else item["value"])
     review = {
         "format_version": 1,
-        "help": "Fill resolution after checking the fitted BOM or purchase records, then move confirmed mappings into working_oomp_populate_project.py and the appropriate populate-extra file.",
+        "help": "Fill resolution after checking the fitted BOM or purchase records, then add reusable evidence-based identities to kicad_agents/oomp_matching_agent.py and any required populate-extra file.",
         "item_count": len(items),
         "items": items,
     }

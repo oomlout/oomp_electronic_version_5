@@ -1,20 +1,20 @@
 # Adding boards and components
 
-Edit the small lists and dictionaries in `working_oomp_populate_*.py`, then run
-one generation command. These Python files are the source of truth. You do
-**not** need to hand-write YAML/JSON, Markdown pages, navigation links,
+Edit the small lists in `working_oomp_populate_*.py` and the YAML project
+definitions in `project_data`, then run one generation command. You do **not**
+need to hand-write generated JSON, Markdown pages, navigation links,
 Roboclick actions, SVGs or HTML for a normal addition to a supported family.
 
 ## The short version
 
 | What you are adding | Where to enter the details |
 | --- | --- |
-| Another board or version | The `projects` list in [working_oomp_populate_project.py](working_oomp_populate_project.py) |
+| Another board or version | That GitHub user's `project_data/<user>/working.yaml` |
 | A resistor value or size | The lists in [working_oomp_populate_resistor.py](working_oomp_populate_resistor.py) |
 | A capacitor value or size | The lists in [working_oomp_populate_capacitor.py](working_oomp_populate_capacitor.py) |
 | Another connector, IC, LED, crystal, etc. | The matching `working_oomp_populate_<family>.py` |
 | Manufacturer details, supplier IDs, pins, exact dimensions or KiCad masters | A simple `if current in extras_dict:` block in that family's `working_oomp_populate_<family>_extra.py` |
-| A confirmed project-to-part match | The board version's `match_overrides` dictionary in the project populator |
+| A confirmed component identity | A reusable evidence-based rule in `kicad_agents/oomp_matching_agent.py` |
 
 From this repository directory, run:
 
@@ -44,32 +44,25 @@ family prefix intentionally generates all matching parts and can take longer.
 
 ## 1. Add a board
 
-Open `working_oomp_populate_project.py`. Add one dictionary to `projects`, using
-the same indentation as its neighbours. This is the real Easyduino entry:
+Open the relevant user's `project_data/<user>/working.yaml`. Add the version to
+the repository's `versions` list. This is the real Easyduino entry:
 
-```python
-{
-    "github_user": "hanqaqa",
-    "github_repository": "easyduino",
-    "github_url": "https://github.com/Hanqaqa/Easyduino",
-    "repository_url": "https://github.com/Hanqaqa/Easyduino.git",
-    "versions": [
-        {
-            "board": "atmega328p_arduino_uno",
-            "board_name": "ATmega328P Arduino Uno",
-            "board_url": "https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Uno",
-            "version": "current",
-            "git_ref": "master",
-            "sparse_checkout": True,
-            "project_file_folder": "Atmega328p Arduino Uno",
-            "project_file_basename": "Easyduino_Atmega",
-            "project_file_path": "Atmega328p Arduino Uno/Easyduino_Atmega",
-            "match_overrides": {
-                "J2": "electronic_connector_header_2_54_mm_pitch_through_hole_2_pin",
-            },
-        },
-    ],
-},
+```yaml
+github_user: Hanqaqa
+projects:
+  - github_repository: easyduino
+    github_url: https://github.com/Hanqaqa/Easyduino
+    repository_url: https://github.com/Hanqaqa/Easyduino.git
+    versions:
+      - board: atmega328p_arduino_uno
+        board_name: ATmega328P Arduino Uno
+        board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Uno
+        version: current
+        git_ref: master
+        sparse_checkout: true
+        project_file_folder: Atmega328p Arduino Uno
+        project_file_basename: Easyduino_Atmega
+        project_file_path: Atmega328p Arduino Uno/Easyduino_Atmega
 ```
 
 This is already present; do not add it twice. Copy the pattern for another
@@ -77,18 +70,18 @@ board and replace the values with that board's actual details.
 
 | Field | What to type |
 | --- | --- |
-| `github_user`, `github_repository` | Lowercase taxonomy names; replace spaces and hyphens with underscores. |
+| `github_user`, `github_repository` | User-owned source identifiers. Taxonomy is normalized automatically; preserve real repository spelling. |
 | `github_url`, `repository_url` | Actual upstream URLs. Preserve their real spelling, case and hyphens. |
 | `board` | Optional extra taxonomy level for a repository containing several boards. Lowercase with underscores. Omit for a single-board repository. |
 | `board_name` | Readable board title, including distinguishing model/revision details. |
 | `board_url` | Link to this board's folder on GitHub; used by the generated project page. |
 | `version` | `current` for the moving latest version; defaults to `current`. Use a stable name such as `rev_a` for a historical version. |
 | `git_ref` | Actual upstream branch, tag or commit. `current` pulls that branch; historical versions check out the specified ref without pulling. Defaults to `main`, so specify `master` when appropriate. |
-| `sparse_checkout` | `True` to check out only the selected board folder and root files. Useful for multi-board repositories. |
+| `sparse_checkout` | `true` to check out only the selected board folder and root files. Useful for multi-board repositories. |
 | `project_file_folder` | Directory inside the repository, with original case and spaces. Use `/`, and `""` if files are at repository root. |
 | `project_file_basename` | Common filename stem, without an extension. |
 | `project_file_path` | Folder plus filename stem; keep consistent with the previous two fields. |
-| `match_overrides` | Optional reference-to-OOMP-ID matches that you have verified. Use `{}` initially. |
+| `source_format` | Omit (or use `kicad`) for native KiCad. Use `eagle` for a `.brd` source; the refresh action preserves it and runs `kicad-cli pcb import --format eagle` into the normal KiCad PCB path. Eagle schematic conversion is not available from the CLI, so that route is PCB-only. |
 | `production_exclude_references` | Optional plain list of references omitted from the JLCPCB BOM and CPL. |
 | `production_lcsc_overrides` | Optional reference-to-LCSC-number dictionary for verified project-specific purchasing choices. |
 | `production_rotation_offsets` | Optional reference-to-degree dictionary for JLC placement rotation corrections. |
@@ -132,21 +125,14 @@ another part, rather than overwriting `current`.
 3. Review `data/generated_data/unmatched_parts.yaml` (or JSON) and the browser
    research queue. Do not accept a near match just to remove a warning.
 4. Add any missing components through their populate files. Build those
-   components first. Put confirmed mappings in the board's `match_overrides`,
-   then rerun the same project command.
+   components first. When an exact identity is verified, add a reusable matcher
+   rule based on its value, footprint and symbol identity in
+   `kicad_agents/oomp_matching_agent.py`, then rerun the same project command.
 
-For example, after verifying a connector's pitch, row count and mounting style:
-
-```python
-"match_overrides": {
-    "J2": "electronic_connector_header_2_54_mm_pitch_through_hole_2_pin",
-},
-```
-
-Overrides are declarations of an exact match, not search hints. Never force an
-IC, USB connector or crystal onto a similar-looking but electrically different
-part. Unknown parts still appear in structured data and the explorer with their
-actual PCB pads; they do not get an invented OOMP definition.
+Matcher rules are declarations of an exact identity, not search hints. Never
+force an IC, USB connector or crystal onto a similar-looking but electrically
+different part. Unknown parts still appear in structured data and the explorer
+with their actual PCB pads; they do not get an invented OOMP definition.
 
 For conflicting source records, keep the reason in the same version dictionary:
 
@@ -159,8 +145,8 @@ For conflicting source records, keep the reason in the same version dictionary:
 ],
 ```
 
-Blocked references stay unmatched even if an override is also present. Remove
-the block when the conflict is resolved. These notes persist in project JSON/YAML,
+Blocked references stay unmatched even if an automatic rule would otherwise
+match. Remove the block when the conflict is resolved. These notes persist in project JSON/YAML,
 the project README and `data/generated_data/COMPONENT_REVIEW.md`; the reasons
 also appear in each blocked component's OOMP data.
 

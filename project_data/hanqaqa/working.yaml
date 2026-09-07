@@ -1,0 +1,80 @@
+github_user: Hanqaqa
+projects:
+- github_repository: easyduino
+  github_url: https://github.com/Hanqaqa/Easyduino
+  repository_url: https://github.com/Hanqaqa/Easyduino.git
+  versions:
+  - board: atmega328p_arduino_nano
+    board_name: ATmega328P Arduino Nano
+    board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Nano
+    version: current
+    git_ref: master
+    project_file_folder: Atmega328p Arduino Nano
+    project_file_basename: Easyduino_Atmega_Nano
+    project_file_path: Atmega328p Arduino Nano/Easyduino_Atmega_Nano
+    sparse_checkout: true
+  - board: atmega328p_arduino_uno
+    board_name: ATmega328P Arduino Uno
+    board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Atmega328p%20Arduino%20Uno
+    version: current
+    git_ref: master
+    project_file_folder: Atmega328p Arduino Uno
+    project_file_basename: Easyduino_Atmega
+    project_file_path: Atmega328p Arduino Uno/Easyduino_Atmega
+    sparse_checkout: true
+  - board: esp32
+    board_name: ESP32
+    board_url: https://github.com/Hanqaqa/Easyduino/tree/master/ESP32
+    version: current
+    git_ref: master
+    project_file_folder: ESP32
+    project_file_basename: Easyduino_ESP32
+    project_file_path: ESP32/Easyduino_ESP32
+    match_blocked:
+      U1: BOM C6568, upstream PDF and README identify CP2102-GMR, but the actual schematic
+        symbol is CP2102N-Axx-xQFN28. CP2102-GMR has been added to OOMP; confirm which
+        chip is intended before accepting a match.
+      U4: 'ESP32-DevKitC is a combined 38-pad carrier/header footprint, not an additional
+        DevKit board: the source photo shows two 19-pin male headers. Both headers
+        already exist as electronic_connector_header_2_54_mm_pitch_through_hole_19_pin,
+        but a one-footprint-to-two-parts mapping needs confirmation. Do not buy another
+        DevKitC.'
+    review_notes:
+    - 'J1: C2765186 and the supplied USBC.pdf identify SHOU HAN TYPE-C 16PIN 2MD(073),
+      while the footprint is named G-Switch GT-USB-7010ASV. OOMP follows the BOM/PDF
+      identity; the original footprint remains unchanged pending land-pattern verification.'
+    - 'D1: C7074 is Littelfuse SP0503BAHTG. The upstream ESD_Protection.pdf is TECH
+      PUBLIC, so OOMP uses the downloaded Littelfuse datasheet instead.'
+    - 'C5/C7/C8: C11366 is AVX TAJA226K010RNJ, 22uF 10V, A-case 3216-18. The upstream
+      Kemet-I footprint name specifies a lower 1.0mm body; verify clearance for the
+      actual 1.8mm capacitor.'
+    - 'SW1/SW2: C720477 is XUNPU TS-1088-AR02016, not Alps. The original Alps_SKRK
+      footprint is retained; exact master compatibility has not been certified.'
+    sparse_checkout: true
+  - board: esp32s3
+    board_name: ESP32S3
+    board_url: https://github.com/Hanqaqa/Easyduino/tree/master/ESP32S3
+    version: current
+    git_ref: master
+    project_file_folder: ESP32S3
+    project_file_basename: Easyduino_ESP32S3
+    project_file_path: ESP32S3/Easyduino_ESP32S3
+    sparse_checkout: true
+  - board: raspberry_pi_pico_2040
+    board_name: Raspberry Pi Pico 2040
+    board_url: https://github.com/Hanqaqa/Easyduino/tree/master/Raspberry%20Pi%20Pico%202040
+    version: current
+    git_ref: master
+    project_file_folder: Raspberry Pi Pico 2040
+    project_file_basename: Easyduino_RP2040
+    project_file_path: Raspberry Pi Pico 2040/Easyduino_RP2040
+    sparse_checkout: true
+  - board: stm32f103_bluepill
+    board_name: STM32F103 Bluepill
+    board_url: https://github.com/Hanqaqa/Easyduino/tree/master/STM32F103%20Bluepill
+    version: current
+    git_ref: master
+    project_file_folder: STM32F103 Bluepill
+    project_file_basename: Easyduino_STM32F103
+    project_file_path: STM32F103 Bluepill/Easyduino_STM32F103
+    sparse_checkout: true

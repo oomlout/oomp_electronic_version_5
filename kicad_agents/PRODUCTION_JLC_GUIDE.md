@@ -53,25 +53,20 @@ Primary references:
 
 ## Human-editable project settings
 
-Put overrides beside the other version details in
-`working_oomp_populate_project.py`. Empty lists and dictionaries are added by
-default, so most boards need no production-specific declaration.
+Put overrides beside the other version details in that user's
+`project_data/<github-user>/working.yaml`. Empty lists and dictionaries are
+added by default, so most boards need no production-specific declaration.
 
-```python
-{
-    "version": "current",
-    "project_file_basename": "my_board",
-    "production_exclude_references": ["FID1", "TP1"],
-    "production_lcsc_overrides": {
-        "R1": "C4190",
-    },
-    "production_rotation_offsets": {
-        "U1": 90,
-    },
-    "production_position_offsets_mm": {
-        "J1": [0.0, 0.25],
-    },
-}
+```yaml
+version: current
+project_file_basename: my_board
+production_exclude_references: [FID1, TP1]
+production_lcsc_overrides:
+  R1: C4190
+production_rotation_offsets:
+  U1: 90
+production_position_offsets_mm:
+  J1: [0.0, 0.25]
 ```
 
 Available fields:

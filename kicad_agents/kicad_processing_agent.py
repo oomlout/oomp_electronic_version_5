@@ -1305,22 +1305,25 @@ def process_project(project_directory, parts_directory, output_directory=None):
         )
     if not schematic_paths:
         message = f"No modern .kicad_sch files found under {project_directory}"
-        _log_run_error("kicad_processing_agent", message)
-        print(message)
-        return None, output_directory
+        if not (project_directory / "data" / "source_eagle.brd").is_file():
+            _log_run_error("kicad_processing_agent", message)
+        print(f"{message}; continuing with PCB-only project data.")
     if not pcb_paths:
         message = f"No modern .kicad_pcb files found under {project_directory}"
         _log_run_error("kicad_processing_agent", message)
         print(message)
         return None, output_directory
 
-    project_uuid = value(load(schematic_paths[0]), "uuid", "")
+    project_uuid = value(load(schematic_paths[0]), "uuid", "") if schematic_paths else ""
     parsed_schematics = [_parse_schematic(path, project_directory, project_uuid) for path in schematic_paths]
     parsed_pcbs = [_parse_pcb(path, project_directory) for path in pcb_paths]
     components = _build_components(parsed_schematics, parsed_pcbs)
     _enrich_schematic_connections(components)
     _enrich_pcb_connections(components)
-    _add_connectivity_cross_checks(components, root_schematic=parsed_schematics[0]["source_file"])
+    _add_connectivity_cross_checks(
+        components,
+        root_schematic=parsed_schematics[0]["source_file"] if parsed_schematics else "",
+    )
 
     overrides_path = output_directory / "match_overrides.yaml"
     if not overrides_path.exists():
@@ -1432,7 +1435,7 @@ def process_project(project_directory, parts_directory, output_directory=None):
         review = {"blocked_matches": blocked, "notes": review_notes}
         _write_json(output_directory / "component_review.json", review)
         _write_yaml(output_directory / "component_review.yaml", review)
-        lines = ["# Component review", "", "Generated from working_oomp_populate_project.py. Edit the populate definitions, then regenerate.", "", "## Needs confirmation", ""]
+        lines = ["# Component review", "", "Generated from project_data YAML definitions and the reusable matching rules. Edit the source definition or matcher, then regenerate.", "", "## Needs confirmation", ""]
         for reference, reason in blocked.items():
             lines.append(f"- **{reference}**: {reason}")
         lines.extend(["", "## Verified identities and remaining footprint caveats", ""])

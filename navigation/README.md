@@ -1,11 +1,11 @@
 # OOMP navigation
 
 
-This category contains 558 parts in total.
+This category contains 1 parts in total.
 
 ## Categories
 
-- [Electronic](electronic/README.md)
+- [Oomp](oomp/README.md)
 
 
 ---

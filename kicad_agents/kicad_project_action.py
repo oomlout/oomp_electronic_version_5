@@ -78,6 +78,9 @@ def source_files(data_directory):
         source = data_directory / f'kicad_file.{extension}'
         if source.is_file():
             files[source.name] = source
+    eagle_source = data_directory / 'source_eagle.brd'
+    if eagle_source.is_file():
+        files[eagle_source.name] = eagle_source
     sheet_directory = data_directory / 'kicad_file_sheets'
     if sheet_directory.is_dir():
         for source in sorted(sheet_directory.rglob('*.kicad_sch')):

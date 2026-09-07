@@ -89,6 +89,63 @@ KNOWN_PART_ALIASES = {
 }
 
 
+# Exact component signatures recovered from verified project matches.  Unlike
+# the former per-project, per-reference dictionaries, these are reusable
+# matcher rules: a signature requires the value, footprint and symbol identity
+# to agree.  This keeps a bare value such as ``LED`` or ``SW_Push`` from being
+# over-matched on unrelated boards.
+EXACT_COMPONENT_MATCHES = {
+    ("12mhz", "crystal_crystal_smd_3225_4pin_3_2x2_5mm", "device_crystal_gnd24_small"): "electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf",
+    ("12mhz", "project_tool_mini_reva2_xtal_4p_3225", "project_tool_mini_reva2_eagle_import_xtal_4p_3225"): "electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf",
+    ("1_5a", "inductor_smd_l_0805_2012metric", "kicad5_device_ferrite_bead_small"): "electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000",
+    ("1n4148wt", "diode_smd_d_sod_523", "diode_1n4148ws"): "electronic_diode_switching_sod_523f_onsemi_1n4148wt",
+    ("22u", "capacitor_tantalum_smd_cp_eia_3216_10_kemet_i", "device_c_polarized"): "electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt",
+    ("aip74hc595ta", "package_so_tssop_16_4_4x5mm_p0_65mm", "74xx_74ahct595"): "electronic_ic_tssop_16_logic_serial_in_parallel_out_shift_register_wuxi_i_core_elec_aip74hc595ta16_tr",
+    ("aip74hct245ta", "package_so_tssop_20_4_4x6_5mm_p0_65mm", "74xx_74hc245"): "electronic_ic_tssop_20_logic_octal_bus_transceiver_wuxi_i_core_elec_aip74hct245ta20_tr",
+    ("aip74lvc1t45gc363_tr", "package_to_sot_smd_sot_363_sc_70_6", "logic_leveltranslator_sn74lvc1t45dck"): "electronic_ic_sot_363_6_logic_single_bit_dual_supply_transceiver_wuxi_i_core_elec_aip74lvc1t45gc363_tr",
+    ("ams1117_3_3", "package_to_sot_smd_sot_223_3_tabpin2", "regulator_linear_ams1117_3_3"): "electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3",
+    ("ap2127", "package_to_sot_smd_sot_23_5", "dp_vreg_mcp1824"): "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_diodes_ap2127k_3_3trg1",
+    ("bas40t_05", "package_to_sot_smd_sot_523", "diode_bat54c"): "electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05",
+    ("bcm857", "package_to_sot_smd_sot_363_sc_70_6", "kicad5_device_q_dual_pnp_pnp_e1b1c2e2b2c1"): "electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f",
+    ("cd4067", "package_so_tssop_24_4_4x7_8mm_p0_65mm", "74xx_cd74hc4067m"): "electronic_ic_tssop_24_logic_16_channel_analog_multiplexer_nexperia_74hct4067pw118",
+    ("ch343p", "project_tool_mini_reva2_qfn16_l3_0_w3_0_p0_50_ep1_7", "project_tool_mini_reva2_eagle_import_interface_ch343p"): "electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p",
+    ("conn_01x02_pin", "connector_pinheader_2_54mm_pinheader_1x02_p2_54mm_vertical", "connector_conn_01x02_pin"): "electronic_connector_header_2_54_mm_pitch_through_hole_2_pin",
+    ("conn_01x03", "connector_pinsocket_2_54mm_pinsocket_1x03_p2_54mm_vertical", "connector_generic_conn_01x03"): "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5",
+    ("conn_01x03_mountingpin", "connector_jst_jst_sh_bm03b_srss_tb_1x03_1mp_p1_00mm_vertical", "connector_generic_mountingpin_conn_01x03_mountingpin"): "electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_3_pin_jst_bm03b_srss_tb",
+    ("conn_01x09", "connector_jst_jst_sh_sm09b_srss_tb_1x09_1mp_p1_00mm_horizontal", "connector_generic_conn_01x09"): "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb",
+    ("conn_01x10", "connector_pinheader_2_54mm_pinheader_1x10_p2_54mm_vertical", "connector_generic_conn_01x10"): "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin",
+    ("conn_06lock", "project_tool_mini_reva2_1x06_lock", "project_tool_mini_reva2_eagle_import_conn_06lock"): "electronic_connector_header_2_54_mm_pitch_through_hole_6_pin",
+    ("esp32_wroom_e", "espressif_esp32_wroom_32e", "espressif_esp32_wroom_e"): "electronic_ic_esp32_wroom_32e_microcontroller_wifi_bluetooth_8_mb_flash_espressif_esp32_wroom_32e_n8",
+    ("fb_2a", "project_tool_mini_reva2_pkg_c_0805", "project_tool_mini_reva2_eagle_import_inductor_0805"): "electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d",
+    ("led", "led_smd_led_0402_1005metric", "device_led"): "electronic_led_0402_blue",
+    ("lmv321", "package_to_sot_smd_sot_23_5", "comparator_lmv331"): "electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr",
+    ("lmv321a", "package_to_sot_smd_sot_23_5", "comparator_lmv331"): "electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr",
+    ("lmv324", "package_so_tssop_14_4_4x5mm_p0_65mm", "amplifier_operational_lm324"): "electronic_ic_tssop_14_amplifier_operational_quad_rail_to_rail_output_texas_instruments_lmv324ipwr",
+    ("lmv331", "package_to_sot_smd_sot_23_5", "comparator_lmv331"): "electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr",
+    ("me6211a33pg_n", "package_to_sot_smd_sot_89_3", "regulator_linear_ap2204ra_3_3"): "electronic_ic_sot_89_3_power_management_linear_voltage_regulator_3_3_volt_microne_me6211a33pg_n",
+    ("mmbt7002k", "package_to_sot_smd_sot_23", "transistor_fet_bss138"): "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k",
+    ("mmdt3906", "package_to_sot_smd_sot_363_sc_70_6", "kicad5_device_q_dual_pnp_pnp_e1b1c2e2b2c1"): "electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw",
+    ("mt29f1g01abafdwb", "dp_memory_u_pdfn_8", "dp_memory_mt29f1g01abafdwb"): "electronic_ic_updfn_8_memory_spi_nand_flash_1_gbit_micron_mt29f1g01abafdwb",
+    ("rp2040", "rp_silicon_rp2040_qfn_56", "rp_silicon_rp2040"): "electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040",
+    ("rt9742cgj5", "project_tool_mini_reva2_pkg_sot23_5", "project_tool_mini_reva2_eagle_import_power_switch_rt9742_en_active_high"): "electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5",
+    ("si2301", "package_to_sot_smd_sot_523", "transistor_fet_bss84"): "electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a",
+    ("sk6812_mini_e", "dp_led_sk6812_mini_e", "dp_led_sk6812_mini_e"): "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",
+    ("sk6812_side_a_b", "dp_led_sk6812_side_a_b", "dp_led_sk6812_side_a_b"): "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a",
+    ("sl2_1a", "project_tool_mini_reva2_soic127p604x185_16n", "project_tool_mini_reva2_eagle_import_usb_hub_sl2_1a"): "electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a",
+    ("sn74lvc1g57dbv", "project_tool_mini_reva2_sot95p280x145_6n", "project_tool_mini_reva2_eagle_import_logic_multi_sn74lvc1g57dbv"): "electronic_ic_sot_23_6_logic_configurable_multi_function_gate_texas_instruments_sn74lvc1g57dbvr",
+    ("sp0503baht", "package_to_sot_smd_sot_143", "power_protection_sp0503baht"): "electronic_diode_tvs_array_sot_143_littelfuse_sp0503bahtg",
+    ("srv05_4_p_t7", "project_tool_mini_reva2_sot95p280x145_6n", "project_tool_mini_reva2_eagle_import_diode_tvs_srv05_4"): "electronic_diode_tvs_array_sot_23_6_protek_srv054pt7",
+    ("ss8050", "package_to_sot_smd_sot_23w", "device_q_npn_bce"): "electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050",
+    ("sw_push", "button_switch_smd_sw_push_spst_no_alps_skrk", "switch_sw_push"): "electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016",
+    ("tft_20_qt200h1201", "dp_lcd_tft_20_qt200h1201", "dp_lcd_tft_20_qt200h1201"): "electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201",
+    ("type_c_31_m_12", "usb_c_hro_type_c_31_m_12", "usb_c_type_c_31_m_12"): "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12",
+    ("usb_a_female", "project_tool_mini_reva2_jing_912_121a2023s10100", "project_tool_mini_reva2_eagle_import_usb_a_female_jing_912_121a2023s10100"): "electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100",
+    ("usb_c", "project_tool_mini_reva2_usbc_c_31_m_12", "project_tool_mini_reva2_eagle_import_usbc_usb_c_12"): "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12",
+    ("usb_c_receptacle_usb2_0", "connector_usb_usb_c_receptacle_g_switch_gt_usb_7010asv", "connector_usb_c_receptacle_usb2_0"): "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073",
+    ("w25q128jvsiq", "package_so_sop_8_5_28x5_23mm_p1_27mm", "dp_memory_xm25qh128a"): "electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq",
+}
+
+
 def normalize_text(value):
     value = str(value or "").strip().lower()
     value = value.replace("µ", "u").replace("μ", "u").replace("ω", "ohm").replace("Ω", "ohm")
@@ -331,6 +388,14 @@ def proposed_oomp_id(component):
     mounting_holes = pcb.get("mounting_holes") or []
     if pcb.get("is_mounting_hole", False) and len(mounting_holes) > 0:
         return str(mounting_holes[0].get("oomp_id", ""))
+
+    exact_signature = tuple(
+        normalize_text(fields[field_name])
+        for field_name in ("value", "footprint", "library_id")
+    )
+    exact_match = EXACT_COMPONENT_MATCHES.get(exact_signature)
+    if exact_match:
+        return exact_match
 
     # Known value/MPN aliases point straight at an exact catalogue part.
     # A bare value may only alias when the schematic carries no MPN -- a

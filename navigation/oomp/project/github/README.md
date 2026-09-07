@@ -1,14 +1,10 @@
 # Oomp / Project / Github
 
 [Up one level](../README.md)
-This category contains 101 parts in total.
+This category contains 1 parts in total.
 
 ## Categories
 
-- [Dangerousprototypes](dangerousprototypes/README.md)
-- [Electrolama](electrolama/README.md)
-- [Hanqaqa](hanqaqa/README.md)
-- [Soldered Electronics](soldered_electronics/README.md)
 - [Sparkfun](sparkfun/README.md)
 
 

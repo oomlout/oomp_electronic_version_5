@@ -23,11 +23,12 @@ import kicad_agents.kicad_processing_agent as kicad_processing_agent
 from kicad_agents import interactive_html_bom_action
 from kicad_agents.component_addition_agent import validate_record
 from kicad_agents.pipeline_audit_agent import run_audit
-from kicad_agents.project_git_action import refresh_project_files
+from kicad_agents.project_git_action import _convert_eagle_board, refresh_project_files
 import kicad_agents.project_git_action as project_git_action
 from kicad_agents.sexpr import children, load, tag, value
 from action_regenerate_all import _is_browser_action
 import working_oomp_populate_project
+import working_oomp
 import working_oomp_populate_mounting_hole
 import working_oomp_populate_diode
 import working_oomp_populate_diode_extra
@@ -931,6 +932,22 @@ class ProjectPartTests(unittest.TestCase):
             self.assertTrue(log_path.is_file())
             self.assertIn("No modern .kicad_sch files found", log_path.read_text(encoding="utf-8"))
 
+    def test_process_project_accepts_a_pcb_only_project(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            project_directory = Path(temporary_directory) / "part"
+            data_directory = project_directory / "data"
+            data_directory.mkdir(parents=True)
+            (data_directory / "kicad_file.kicad_pcb").write_text(
+                '(kicad_pcb (version 20221018) (generator pcbnew) (general (thickness 1.6)) '
+                '(paper "A4") (layers (0 "F.Cu" signal) (31 "B.Cu" signal) (36 "B.SilkS" user) '
+                '(37 "F.SilkS" user) (44 "Edge.Cuts" user)))',
+                encoding="utf-8",
+            )
+            project_data, _ = process_project(project_directory, PARTS_DIRECTORY)
+        self.assertIsNotNone(project_data)
+        self.assertEqual(project_data["summary"]["schematic_symbol_count"], 0)
+        self.assertEqual(project_data["summary"]["pcb_footprint_count"], 0)
+
     def test_component_addition_record_rejects_ambiguous_identity_fields(self):
         record = {
             "ledger_id": "E9999",
@@ -1082,6 +1099,31 @@ class ProjectPartTests(unittest.TestCase):
         )
         self.assertEqual(pms7003["project_file_basename"], "PMS7003_sensor_adapter")
 
+    def test_project_yaml_accepts_the_minimal_project_path_definition(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            data_directory = Path(temporary_directory)
+            user_directory = data_directory / "example_user"
+            user_directory.mkdir()
+            (user_directory / "working.yaml").write_text(
+                "github_user: example_user\nprojects:\n  - github_repository: example_board\n    versions:\n      - project_file_path: hardware/example_board\n",
+                encoding="utf-8",
+            )
+            projects = working_oomp_populate_project._load_project_files(data_directory)
+        project = projects[0]
+        version = project["versions"][0]
+        self.assertEqual(project["github_url"], "https://github.com/example_user/example_board")
+        self.assertEqual(project["repository_url"], "https://github.com/example_user/example_board.git")
+        self.assertEqual(version["project_file_folder"], "hardware")
+        self.assertEqual(version["project_file_basename"], "example_board")
+
+    def test_eagle_source_format_reaches_the_project_refresh_action(self):
+        options = []
+        working_oomp_populate_project.main(options=options)
+        adxl345 = next(option for option in options if option["project_github_repository"] == "ADXL345_Breakout")
+        working_oomp.add_project_actions(adxl345, 0)
+        refresh_action = adxl345["oomlout_ai_roboclick_1"]["actions"][0]
+        self.assertEqual(refresh_action["project_source_format"], "eagle")
+
     def test_project_populator_normalizes_taxonomy_and_github_user_ids(self):
         options = []
         working_oomp_populate_project.main(options=options)
@@ -1136,6 +1178,56 @@ class ProjectPartTests(unittest.TestCase):
             self.assertIn("oomp_git_cache", str(repository_directory))
             self.assertNotIn(str(part_directory), str(repository_directory))
 
+    def test_eagle_board_conversion_uses_the_kicad_cli_import_command(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            source = temporary_path / "source.brd"
+            destination = temporary_path / "converted.kicad_pcb"
+            source.write_text("<eagle/>", encoding="utf-8")
+            destination.write_text("(kicad_pcb)", encoding="utf-8")
+            completed = mock.Mock(returncode=0, stdout="", stderr="")
+            with mock.patch("kicad_agents.project_git_action.subprocess.run", return_value=completed) as run:
+                _convert_eagle_board(source, destination, "test-kicad-cli")
+        run.assert_called_once_with(
+            ["test-kicad-cli", "pcb", "import", "--format", "eagle", "--output", str(destination), str(source)],
+            capture_output=True,
+            text=True,
+        )
+
+    def test_refresh_project_files_routes_eagle_boards_through_conversion(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            repository_directory = temporary_path / "repo"
+            (repository_directory / ".git").mkdir(parents=True)
+            source = repository_directory / "Hardware" / "ADXL345_Breakout.brd"
+            source.parent.mkdir()
+            source.write_text("<eagle/>", encoding="utf-8")
+            details = {
+                "directory": str(temporary_path / "part"),
+                "project_git_url": "https://github.com/sparkfun/ADXL345_Breakout.git",
+                "project_github_repository": "ADXL345_Breakout",
+                "project_file_folder": "Hardware",
+                "project_file_basename": "ADXL345_Breakout",
+                "project_file_extensions": [".kicad_pcb"],
+                "project_source_format": "eagle",
+                "project_sparse_checkout": False,
+                "project_git_ref": "master",
+            }
+            def convert(source_path, destination_path, _cli):
+                destination_path.parent.mkdir(parents=True, exist_ok=True)
+                destination_path.write_text("(kicad_pcb)", encoding="utf-8")
+            with mock.patch.object(project_git_action, "_repository_workspace_directory", return_value=repository_directory), \
+                 mock.patch.object(project_git_action, "_git_repository_is_usable", return_value=True), \
+                 mock.patch.object(project_git_action, "_run_git"), \
+                 mock.patch.object(project_git_action, "_convert_eagle_board", side_effect=convert) as converter:
+                copied = refresh_project_files(details)
+            data_directory = temporary_path / "part" / "data"
+            self.assertTrue((data_directory / "source_eagle.brd").is_file())
+            self.assertTrue((data_directory / "kicad_file.kicad_pcb").is_file())
+            self.assertTrue((data_directory / "original" / "source_eagle.brd").is_file())
+            converter.assert_called_once()
+            self.assertEqual(len(copied), 2)
+
     def test_project_populator_keeps_only_current_version_records(self):
         options = []
         working_oomp_populate_project.main(options=options)
@@ -1147,6 +1239,23 @@ class ProjectPartTests(unittest.TestCase):
         self.assertEqual(len(current_sensor), 1)
         self.assertEqual(current_sensor[0]["project_version"], "current")
         self.assertNotIn("v1.0.0", [option["project_version"] for option in current_sensor])
+
+    def test_project_data_declares_one_current_version_per_board(self):
+        project_data_directory = Path(__file__).resolve().parents[2] / "project_data"
+        for definition_file in project_data_directory.glob("*/working.yaml"):
+            definition = yaml.safe_load(definition_file.read_text(encoding="utf-8"))
+            for project in definition["projects"]:
+                versions_by_board = {}
+                for version in project["versions"]:
+                    board = version.get("board", project["github_repository"])
+                    versions_by_board.setdefault(board, []).append(version)
+                for board, versions in versions_by_board.items():
+                    self.assertEqual(
+                        len(versions),
+                        1,
+                        f"{definition_file}: {project['github_repository']}/{board}",
+                    )
+                    self.assertEqual(versions[0].get("version", "current"), "current")
 
     def test_generated_project_part_has_always_run_actions_and_local_assets(self):
         working = yaml.safe_load((PROJECT_PART / "working.yaml").read_text(encoding="utf-8"))

@@ -349,6 +349,7 @@ def add_project_actions(part, count):
         "project_file_basename",
         "project_file_path",
         "project_file_extensions",
+        "project_source_format",
         "project_match_overrides",
         "project_match_blocked",
         "project_review_notes",

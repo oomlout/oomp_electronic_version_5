@@ -31,7 +31,7 @@ editable Python arrays and dictionaries
   -> Roboclick image_resize -> 300 px previews
   -> Roboclick Jinja action -> part README.md
 
-working_oomp_populate_project.py
+project_data/<github-user>/working.yaml
   -> project OOMP part + Roboclick actions
   -> project_git_action.py -> system Git + canonical kicad_file.* copies
   -> interactive_html_bom_action.py -> data/interactivehtmlbom/ibom.html
@@ -59,7 +59,7 @@ file operations. Their name does not mean an AI service is used.
 | `working_oomp_populate_<type>.py` | Defines taxonomy combinations using simple arrays and nested loops. | Generic parts for one family |
 | `working_oomp_populate_<type>_extra.py` | Adds exact manufacturer data, LCSC IDs, pin names, dimensions, and local datasheet-copy instructions with readable `if` blocks. | Exact-part overrides |
 | `working_oomp_populate_svg.py` | Adds the standard diagram list, display name, dimensions, package data, and stylesheet selection. | `svg_details` in each definition |
-| `working_oomp_populate_project.py` | Defines GitHub project/version records, KiCad source paths, and explicit match overrides. | OOMP project definitions |
+| `project_data/<github-user>/working.yaml` | Defines one user's GitHub project/version records and KiCad source paths. | OOMP project definitions |
 | `working_oomp_populate_mounting_hole.py` | Defines round and slotted mounting-hole OOMP items from editable size/plating arrays. | Mechanical mounting-hole parts |
 | `working_oomp_metadata.py` | Builds readable names, extensible distributor links, and navigation-category parts during population. | Shared metadata and the canonical `navigation/` index data |
 
@@ -201,12 +201,12 @@ inside the OOMP part.
 
 ## Add or update a project
 
-1. Add one plain project dictionary and one or more version dictionaries to
-   `working_oomp_populate_project.py`.
-2. Use lowercase taxonomy values and replace repository hyphens with
-   underscores. Keep the real Git URL unchanged.
-3. Specify the modern KiCad folder, basename, extensions, Git ref, and any
-   confirmed per-reference OOMP overrides.
+1. Add a project and one or more version mappings to that user's
+   `project_data/<github-user>/working.yaml`.
+2. Keep real GitHub names and URLs; taxonomy values are normalized by the
+   loader.
+3. Specify the modern KiCad folder, basename, extensions, and Git ref. Add
+   exact component identities as reusable matcher rules, not by reference.
 4. Regenerate the project population and project part.
 5. Run its Roboclick actions. They always refresh/copy source files and rerun
    the deterministic project compiler.
