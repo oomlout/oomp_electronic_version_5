@@ -2,7 +2,7 @@
 
 `electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp`
 
-Fuse Resettable 6 Volt 0 5 Amp 1 Amp 0805 is an OOMP electronic fuse definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
+Fuse Resettable 6 Volt 0 5 Amp 1 Amp 0805 is an OOMP electronic fuse definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
 
 ![Fuse Resettable 6 Volt 0 5 Amp 1 Amp 0805 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Fuse Resettable 6 Volt 0 5 Amp 1 Amp 0805 is an OOMP electronic fuse definition.
 | Type | Fuse |
 | Package / style | 0805 |
 | Nominal size | 2.0 &#x00D7; 1.25 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -37,6 +38,14 @@ Fuse Resettable 6 Volt 0 5 Amp 1 Amp 0805 is an OOMP electronic fuse definition.
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
 
 
 

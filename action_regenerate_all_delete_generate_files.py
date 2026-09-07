@@ -116,8 +116,8 @@ def _run_actions(actions, part_directory, working_file, discovered_actions):
                 str(action.get("command", "")),
                 str(action.get("file_python", "")),
             ])
-            print(f"Logged and skipped failed action: {message}")
-            continue
+            print(f"Logged failure; skipping remaining actions for this part: {message}")
+            raise RuntimeError(message)
         ran += 1
     return ran
 

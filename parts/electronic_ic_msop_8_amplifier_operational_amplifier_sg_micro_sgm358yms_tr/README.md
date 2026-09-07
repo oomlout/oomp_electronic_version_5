@@ -2,7 +2,7 @@
 
 `electronic_ic_msop_8_amplifier_operational_amplifier_sg_micro_sgm358yms_tr`
 
-IC Amplifier Operational Amplifier Sg Micro MSOP_8 is an OOMP electronic ic definition. It uses the msop 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Amplifier Operational Amplifier Sg Micro MSOP_8 is an OOMP electronic ic definition. It uses the msop 8 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 8 documented pins.
 
 ![IC Amplifier Operational Amplifier Sg Micro MSOP_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Amplifier Operational Amplifier Sg Micro MSOP_8 is an OOMP electronic ic defi
 | OOMP ID | `electronic_ic_msop_8_amplifier_operational_amplifier_sg_micro_sgm358yms_tr` |
 | Type | Ic |
 | Package / style | msop 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.0 &#x00D7; 3.0 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,12 +35,27 @@ IC Amplifier Operational Amplifier Sg Micro MSOP_8 is an OOMP electronic ic defi
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.1 mm |
+| Length | 3.0 mm |
+| Width | 3.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | OUTA | signal |
+| 2 | INA_MINUS | signal |
+| 3 | INA_PLUS | signal |
+| 4 | V_MINUS | signal |
+| 5 | INB_PLUS | signal |
+| 6 | INB_MINUS | signal |
+| 7 | OUTB | signal |
+| 8 | V_PLUS | signal |
 
 
 

@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102`
 
-IC Capacitive Touch Controller Controller Infineon SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Capacitive Touch Controller Controller Infineon SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
 ![IC Capacitive Touch Controller Controller Infineon SOIC_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Capacitive Touch Controller Controller Infineon SOIC_8 is an OOMP electronic 
 | OOMP ID | `electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102` |
 | Type | Ic |
 | Package / style | soic 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.9 &#x00D7; 3.9 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,12 +35,27 @@ IC Capacitive Touch Controller Controller Infineon SOIC_8 is an OOMP electronic 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.75 mm |
+| Length | 4.9 mm |
+| Width | 3.9 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
 
 
 

@@ -2,7 +2,7 @@
 
 `electronic_switch_tactile_surface_mount_ck_pts636`
 
-Switch Surface Mount Ck PTS636 TACTILE is an OOMP electronic switch definition. It uses the tactile package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Switch Surface Mount Ck PTS636 TACTILE is an OOMP electronic switch definition. It uses the tactile package or form factor. Its nominal drawing size is 6.0 &#x00D7; 6.0 mm. The definition includes 4 documented pins.
 
 ![Switch Surface Mount Ck PTS636 TACTILE pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Switch Surface Mount Ck PTS636 TACTILE is an OOMP electronic switch definition. 
 | OOMP ID | `electronic_switch_tactile_surface_mount_ck_pts636` |
 | Type | Switch |
 | Package / style | tactile |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 6.0 &#x00D7; 6.0 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -33,12 +34,22 @@ Switch Surface Mount Ck PTS636 TACTILE is an OOMP electronic switch definition. 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 6.0 mm |
+| Width | 6.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
 
 
 

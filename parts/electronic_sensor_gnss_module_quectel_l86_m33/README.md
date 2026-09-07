@@ -2,7 +2,7 @@
 
 `electronic_sensor_gnss_module_quectel_l86_m33`
 
-Sensor Module Quectel L86 M33 GNSS is an OOMP electronic sensor definition. It uses the gnss package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Sensor Module Quectel L86 M33 GNSS is an OOMP electronic sensor definition. It uses the gnss package or form factor. Its nominal drawing size is 18.4 &#x00D7; 18.4 mm. The definition includes 18 documented pins.
 
 ![Sensor Module Quectel L86 M33 GNSS pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Sensor Module Quectel L86 M33 GNSS is an OOMP electronic sensor definition. It u
 | OOMP ID | `electronic_sensor_gnss_module_quectel_l86_m33` |
 | Type | Sensor |
 | Package / style | gnss |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 18.4 &#x00D7; 18.4 mm |
+| Documented pins | 18 |
 
 
 ## Classification
@@ -33,12 +34,36 @@ Sensor Module Quectel L86 M33 GNSS is an OOMP electronic sensor definition. It u
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 18.4 mm |
+| Width | 18.4 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
+| 11 | 11 | signal |
+| 12 | 12 | signal |
+| 13 | 13 | signal |
+| 14 | 14 | signal |
+| 15 | 15 | signal |
+| 16 | 16 | signal |
+| 17 | 17 | signal |
+| 18 | 18 | signal |
 
 
 

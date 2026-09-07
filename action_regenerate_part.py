@@ -35,10 +35,24 @@ def _check_files_complete(part_directory, mode_details):
     paths = _check_file_paths(part_directory, mode_details)
     if not paths:
         return False
+    successful_paths = []
+    for path in paths:
+        successful = path.exists()
+        if successful and path.suffix.lower() in {".yaml", ".yml"}:
+            try:
+                payload = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            except (OSError, UnicodeError, yaml.YAMLError):
+                successful = False
+                payload = {}
+            if isinstance(payload, dict):
+                status = str(payload.get("status", "")).strip().lower()
+                if status in {"failed", "error", "skipped", "incomplete"}:
+                    successful = False
+        successful_paths.append(successful)
     mode = str(mode_details.get("file_test_mode") or "exists")
     if mode == "exists":
-        return all(path.exists() for path in paths)
-    return any(path.exists() for path in paths)
+        return all(successful_paths)
+    return any(successful_paths)
 
 
 def _delete_check_files(part_directory, mode_details):
@@ -74,6 +88,7 @@ def regenerate_part(filter_text, everything=False):
             continue
         matched += 1
         workings = yaml.safe_load(working_file.read_text(encoding="utf-8")) or {}
+        part_failed = False
         for mode_name, mode_details in workings.items():
             if not str(mode_name).startswith("oomlout_") or not isinstance(mode_details, dict):
                 continue
@@ -89,6 +104,7 @@ def regenerate_part(filter_text, everything=False):
             actions = mode_details.get("actions", [])
             if not isinstance(actions, list):
                 continue
+            ran_non_browser_action = False
             for action in actions:
                 if not isinstance(action, dict):
                     continue
@@ -98,6 +114,7 @@ def regenerate_part(filter_text, everything=False):
                     continue
                 action_to_run = copy.deepcopy(action)
                 action_to_run["regenerate_pngs"] = regenerate_pngs
+                ran_non_browser_action = True
                 result = oomlout_roboclick.run_single_action(
                     action=action_to_run,
                     directory=str(part_directory.resolve()),
@@ -114,9 +131,22 @@ def regenerate_part(filter_text, everything=False):
                         str(action.get("command", "")),
                         str(action.get("file_python", "")),
                     ])
-                    print(f"Logged and skipped failed action: {message}")
-                    continue
+                    print(f"Logged failure; skipping remaining modes for this part: {message}")
+                    part_failed = True
+                    break
                 action_count += 1
+            if (
+                not part_failed
+                and ran_non_browser_action
+                and _check_file_paths(part_directory, mode_details)
+                and not _check_files_complete(part_directory, mode_details)
+            ):
+                message = f"{part_directory.name} {mode_name} did not produce a successful check file"
+                log_run_error("action_regenerate_part", RuntimeError(message))
+                print(f"Logged failure; skipping remaining modes for this part: {message}")
+                part_failed = True
+            if part_failed:
+                break
     if not matched:
         raise ValueError(f"No parts under parts/ matched '{filter_text}'.")
     mode_word = "everything" if everything else "missing outputs only"

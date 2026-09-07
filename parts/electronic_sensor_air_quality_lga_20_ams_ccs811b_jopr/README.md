@@ -2,7 +2,7 @@
 
 `electronic_sensor_air_quality_lga_20_ams_ccs811b_jopr`
 
-Sensor Lga 20 Ams CCS811B Jopr AIR QUALITY is an OOMP electronic sensor definition. It uses the air quality package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Sensor Lga 20 Ams CCS811B Jopr AIR QUALITY is an OOMP electronic sensor definition. It uses the air quality package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 20 documented pins.
 
 ![Sensor Lga 20 Ams CCS811B Jopr AIR QUALITY pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Sensor Lga 20 Ams CCS811B Jopr AIR QUALITY is an OOMP electronic sensor definiti
 | OOMP ID | `electronic_sensor_air_quality_lga_20_ams_ccs811b_jopr` |
 | Type | Sensor |
 | Package / style | air quality |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.0 &#x00D7; 3.0 mm |
+| Documented pins | 20 |
 
 
 ## Classification
@@ -33,12 +34,38 @@ Sensor Lga 20 Ams CCS811B Jopr AIR QUALITY is an OOMP electronic sensor definiti
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.0 mm |
+| Width | 3.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
+| 11 | 11 | signal |
+| 12 | 12 | signal |
+| 13 | 13 | signal |
+| 14 | 14 | signal |
+| 15 | 15 | signal |
+| 16 | 16 | signal |
+| 17 | 17 | signal |
+| 18 | 18 | signal |
+| 19 | 19 | signal |
+| 20 | 20 | signal |
 
 
 

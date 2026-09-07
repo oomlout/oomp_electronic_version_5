@@ -2,7 +2,7 @@
 
 `electronic_ic_msop_10_converter_usb_to_serial_converter_wch_ch340e`
 
-IC Converter Usb To Serial Converter Wch MSOP_10 is an OOMP electronic ic definition. It uses the msop 10 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Converter Usb To Serial Converter Wch MSOP_10 is an OOMP electronic ic definition. It uses the msop 10 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 10 documented pins.
 
 ![IC Converter Usb To Serial Converter Wch MSOP_10 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Converter Usb To Serial Converter Wch MSOP_10 is an OOMP electronic ic defini
 | OOMP ID | `electronic_ic_msop_10_converter_usb_to_serial_converter_wch_ch340e` |
 | Type | Ic |
 | Package / style | msop 10 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.0 &#x00D7; 3.0 mm |
+| Documented pins | 10 |
 
 
 ## Classification
@@ -34,12 +35,29 @@ IC Converter Usb To Serial Converter Wch MSOP_10 is an OOMP electronic ic defini
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.1 mm |
+| Length | 3.0 mm |
+| Width | 3.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
 
 
 

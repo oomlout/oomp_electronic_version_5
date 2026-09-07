@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_8_sensor_hall_effect_current_sensor_allegro_acs712`
 
-IC Sensor Hall Effect Current Sensor Allegro SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Sensor Hall Effect Current Sensor Allegro SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
 ![IC Sensor Hall Effect Current Sensor Allegro SOIC_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Sensor Hall Effect Current Sensor Allegro SOIC_8 is an OOMP electronic ic def
 | OOMP ID | `electronic_ic_soic_8_sensor_hall_effect_current_sensor_allegro_acs712` |
 | Type | Ic |
 | Package / style | soic 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.9 &#x00D7; 3.9 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,12 +35,27 @@ IC Sensor Hall Effect Current Sensor Allegro SOIC_8 is an OOMP electronic ic def
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.75 mm |
+| Length | 4.9 mm |
+| Width | 3.9 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | IP_PLUS | signal |
+| 2 | IP_PLUS | signal |
+| 3 | IP_MINUS | signal |
+| 4 | IP_MINUS | signal |
+| 5 | GND | gnd |
+| 6 | FILTER | signal |
+| 7 | VIOUT | signal |
+| 8 | VCC | power |
 
 
 

@@ -2,7 +2,7 @@
 
 `electronic_sensor_accelerometer_lga_14_analog_devices_adxl345`
 
-Sensor Lga 14 Analog Devices ADXL345 ACCELEROMETER is an OOMP electronic sensor definition. It uses the accelerometer package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Sensor Lga 14 Analog Devices ADXL345 ACCELEROMETER is an OOMP electronic sensor definition. It uses the accelerometer package or form factor. Its nominal drawing size is 5.0 &#x00D7; 3.0 mm. The definition includes 14 documented pins.
 
 ![Sensor Lga 14 Analog Devices ADXL345 ACCELEROMETER pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Sensor Lga 14 Analog Devices ADXL345 ACCELEROMETER is an OOMP electronic sensor 
 | OOMP ID | `electronic_sensor_accelerometer_lga_14_analog_devices_adxl345` |
 | Type | Sensor |
 | Package / style | accelerometer |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 5.0 &#x00D7; 3.0 mm |
+| Documented pins | 14 |
 
 
 ## Classification
@@ -33,12 +34,32 @@ Sensor Lga 14 Analog Devices ADXL345 ACCELEROMETER is an OOMP electronic sensor 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 5.0 mm |
+| Width | 3.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | VDD | power |
+| 2 | GND | gnd |
+| 3 | ST1 | signal |
+| 4 | GND | gnd |
+| 5 | VDDIO | signal |
+| 6 | NC | no_connect |
+| 7 | NC | no_connect |
+| 8 | INT2 | signal |
+| 9 | INT1 | signal |
+| 10 | GND | gnd |
+| 11 | RES | signal |
+| 12 | SCL_SCLK | signal |
+| 13 | SDA_SDI | signal |
+| 14 | SDO | signal |
 
 
 

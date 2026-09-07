@@ -2,7 +2,7 @@
 
 `electronic_ic_sot_23_3_power_management_shunt_regulator_texas_instruments_tl431acdbz`
 
-IC Power Management Shunt Regulator Texas Instruments SOT_23_3 is an OOMP electronic ic definition. It uses the sot 23 3 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Power Management Shunt Regulator Texas Instruments SOT_23_3 is an OOMP electronic ic definition. It uses the sot 23 3 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 3 documented pins.
 
 ![IC Power Management Shunt Regulator Texas Instruments SOT_23_3 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Power Management Shunt Regulator Texas Instruments SOT_23_3 is an OOMP electr
 | OOMP ID | `electronic_ic_sot_23_3_power_management_shunt_regulator_texas_instruments_tl431acdbz` |
 | Type | Ic |
 | Package / style | sot 23 3 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 2.9 &#x00D7; 1.6 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -34,12 +35,22 @@ IC Power Management Shunt Regulator Texas Instruments SOT_23_3 is an OOMP electr
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.1 mm |
+| Length | 2.9 mm |
+| Width | 1.6 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | REF | signal |
+| 2 | ANODE | signal |
+| 3 | CATHODE | signal |
 
 
 

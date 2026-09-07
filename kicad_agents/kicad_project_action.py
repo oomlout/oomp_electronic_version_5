@@ -282,15 +282,35 @@ def convert_project(details):
         marks[uuid] = {'text': asset['mark'], 'y': asset['mark_y_mm']}
         eligible[uuid] = (footprint, asset, row)
     request = {'board': str(board_file), 'masters': master_paths, 'marks': marks}
-    completed = subprocess.run(
-        [str(masters.root / 'bin/python.exe'), str(ROOT / 'kicad_agents/kicad_pcb_compare.py')],
-        input=json.dumps(request), text=True, encoding='utf-8', capture_output=True, timeout=180,
-    )
-    if completed.returncode:
-        raise RuntimeError('KiCad comparison failed; no converted design written:\n' + completed.stderr)
-    compared = json.loads(completed.stdout)
+    comparison_python = masters.root / 'bin/python.exe'
+    comparison_unavailable = None
+    if comparison_python.is_file():
+        completed = subprocess.run(
+            [str(comparison_python), str(ROOT / 'kicad_agents/kicad_pcb_compare.py')],
+            input=json.dumps(request), text=True, encoding='utf-8', capture_output=True, timeout=180,
+        )
+        if completed.returncode:
+            raise RuntimeError('KiCad comparison failed; no converted design written:\n' + completed.stderr)
+        compared = json.loads(completed.stdout)
+    else:
+        # Recent KiCad Windows packages can provide kicad-cli and the official
+        # libraries without shipping the legacy pcbnew Python executable.  The
+        # conversion is deliberately fail-closed: keep every footprint exactly
+        # as imported instead of aborting the portable design copy.
+        comparison_unavailable = (
+            f'KiCad pcbnew Python is unavailable ({comparison_python}); '
+            'footprint identity and annotation conversion was skipped.'
+        )
+        compared = {
+            'kicad_version': masters.root.name,
+            'masters': {},
+            'footprints': {},
+        }
     converted_footprints = {}
     for uuid, (footprint, asset, row) in eligible.items():
+        if comparison_unavailable:
+            row['reason'] = comparison_unavailable
+            continue
         placed = compared['footprints'].get(uuid)
         master = compared['masters'][row['source']]
         if not placed or footprint_signature(sx.parse(placed['normalised'])) != footprint_signature(sx.parse(master)):
@@ -402,7 +422,7 @@ def main():
     except Exception as error:
         log_run_error("kicad_project_action", error)
         print(error)
-        return
+        raise
 
 
 if __name__ == '__main__':

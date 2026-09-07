@@ -2,7 +2,7 @@
 
 `electronic_inductor_0603_30_ohm`
 
-Inductor 30 Ohm 0603 is an OOMP electronic inductor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm.
+Inductor 30 Ohm 0603 is an OOMP electronic inductor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
 ![Inductor 30 Ohm 0603 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Inductor 30 Ohm 0603 is an OOMP electronic inductor definition. It uses the 0603
 | Type | Inductor |
 | Package / style | 0603 |
 | Nominal size | 1.6 &#x00D7; 0.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -37,6 +38,14 @@ Inductor 30 Ohm 0603 is an OOMP electronic inductor definition. It uses the 0603
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
 
 
 

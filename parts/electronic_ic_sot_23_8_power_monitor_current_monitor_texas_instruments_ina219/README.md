@@ -2,7 +2,7 @@
 
 `electronic_ic_sot_23_8_power_monitor_current_monitor_texas_instruments_ina219`
 
-IC Power Monitor Current Monitor Texas Instruments SOT_23_8 is an OOMP electronic ic definition. It uses the sot 23 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Power Monitor Current Monitor Texas Instruments SOT_23_8 is an OOMP electronic ic definition. It uses the sot 23 8 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 8 documented pins.
 
 ![IC Power Monitor Current Monitor Texas Instruments SOT_23_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Power Monitor Current Monitor Texas Instruments SOT_23_8 is an OOMP electroni
 | OOMP ID | `electronic_ic_sot_23_8_power_monitor_current_monitor_texas_instruments_ina219` |
 | Type | Ic |
 | Package / style | sot 23 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 2.9 &#x00D7; 1.6 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,12 +35,27 @@ IC Power Monitor Current Monitor Texas Instruments SOT_23_8 is an OOMP electroni
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.1 mm |
+| Length | 2.9 mm |
+| Width | 1.6 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | IN_PLUS | signal |
+| 2 | IN_MINUS | signal |
+| 3 | VCC | power |
+| 4 | GND | gnd |
+| 5 | SCL | signal |
+| 6 | SDA | signal |
+| 7 | A0 | signal |
+| 8 | A1 | signal |
 
 
 

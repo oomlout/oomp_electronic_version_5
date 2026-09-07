@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr`
 
-IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definition. It uses the soic 14 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definition. It uses the soic 14 package or form factor. Its nominal drawing size is 8.65 &#x00D7; 3.9 mm. The definition includes 14 documented pins.
 
 ![IC Microcontroller 8 Bit Avr Microchip SOIC_14 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definiti
 | OOMP ID | `electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr` |
 | Type | Ic |
 | Package / style | soic 14 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 8.65 &#x00D7; 3.9 mm |
+| Documented pins | 14 |
 
 
 ## Classification
@@ -34,12 +35,33 @@ IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definiti
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.75 mm |
+| Length | 8.65 mm |
+| Width | 3.9 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | VDD | power |
+| 2 | PA4 | signal |
+| 3 | PA5 | signal |
+| 4 | PA6 | signal |
+| 5 | PA7 | signal |
+| 6 | PB5 | signal |
+| 7 | PB4 | signal |
+| 8 | PB3 | signal |
+| 9 | PB2 | signal |
+| 10 | PB1 | signal |
+| 11 | PB0 | signal |
+| 12 | PA3 | signal |
+| 13 | PA2 | signal |
+| 14 | GND | gnd |
 
 
 

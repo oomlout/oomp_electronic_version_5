@@ -2,7 +2,7 @@
 
 `electronic_connector_gnss_header_2_mm_pitch_surface_mount_20_pin_plug_in_conn_02x10_gnss_plug_in_header`
 
-Connector Gnss Header 2 mm pitch surface-mount 20 pin Plug In is an OOMP electronic connector definition. It uses the gnss header package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Connector Gnss Header 2 mm pitch surface-mount 20 pin Plug In is an OOMP electronic connector definition. It uses the gnss header package or form factor. Its nominal drawing size is 20.0 &#x00D7; 5.0 mm. The definition includes 20 documented pins.
 
 ![Connector Gnss Header 2 mm pitch surface-mount 20 pin Plug In pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,8 @@ Connector Gnss Header 2 mm pitch surface-mount 20 pin Plug In is an OOMP electro
 | OOMP ID | `electronic_connector_gnss_header_2_mm_pitch_surface_mount_20_pin_plug_in_conn_02x10_gnss_plug_in_header` |
 | Type | Connector |
 | Package / style | gnss header |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 20.0 &#x00D7; 5.0 mm |
+| Documented pins | 20 |
 
 
 ## Classification
@@ -35,12 +36,38 @@ Connector Gnss Header 2 mm pitch surface-mount 20 pin Plug In is an OOMP electro
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
+| Length | 20.0 mm |
 | Width | 5.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
+| 11 | 11 | signal |
+| 12 | 12 | signal |
+| 13 | 13 | signal |
+| 14 | 14 | signal |
+| 15 | 15 | signal |
+| 16 | 16 | signal |
+| 17 | 17 | signal |
+| 18 | 18 | signal |
+| 19 | 19 | signal |
+| 20 | 20 | signal |
 
 
 

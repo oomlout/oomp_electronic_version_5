@@ -2,7 +2,7 @@
 
 `electronic_sensor_particulate_matter_module_bosch_bmv080`
 
-Sensor Module Bosch BMV080 PARTICULATE MATTER is an OOMP electronic sensor definition. It uses the particulate matter package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Sensor Module Bosch BMV080 PARTICULATE MATTER is an OOMP electronic sensor definition. It uses the particulate matter package or form factor. Its nominal drawing size is 20.0 &#x00D7; 5.5 mm. The definition includes 10 documented pins.
 
 ![Sensor Module Bosch BMV080 PARTICULATE MATTER pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Sensor Module Bosch BMV080 PARTICULATE MATTER is an OOMP electronic sensor defin
 | OOMP ID | `electronic_sensor_particulate_matter_module_bosch_bmv080` |
 | Type | Sensor |
 | Package / style | particulate matter |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 20.0 &#x00D7; 5.5 mm |
+| Documented pins | 10 |
 
 
 ## Classification
@@ -33,12 +34,28 @@ Sensor Module Bosch BMV080 PARTICULATE MATTER is an OOMP electronic sensor defin
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 20.0 mm |
+| Width | 5.5 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | VDDL | power |
+| 2 | VSSA | gnd |
+| 3 | VDDA | power |
+| 4 | VSSD | gnd |
+| 5 | PS | signal |
+| 6 | SCK | signal |
+| 7 | MOSI | signal |
+| 8 | MISO | signal |
+| 9 | CS | signal |
+| 10 | VDDD | power |
 
 
 

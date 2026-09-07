@@ -2,7 +2,7 @@
 
 `electronic_ic_vssop_10_power_monitor_current_monitor_texas_instruments_ina228`
 
-IC Power Monitor Current Monitor Texas Instruments VSSOP_10 is an OOMP electronic ic definition. It uses the vssop 10 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Power Monitor Current Monitor Texas Instruments VSSOP_10 is an OOMP electronic ic definition. It uses the vssop 10 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.0 mm. The definition includes 10 documented pins.
 
 ![IC Power Monitor Current Monitor Texas Instruments VSSOP_10 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Power Monitor Current Monitor Texas Instruments VSSOP_10 is an OOMP electroni
 | OOMP ID | `electronic_ic_vssop_10_power_monitor_current_monitor_texas_instruments_ina228` |
 | Type | Ic |
 | Package / style | vssop 10 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.9 &#x00D7; 3.0 mm |
+| Documented pins | 10 |
 
 
 ## Classification
@@ -34,12 +35,29 @@ IC Power Monitor Current Monitor Texas Instruments VSSOP_10 is an OOMP electroni
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.1 mm |
+| Length | 4.9 mm |
+| Width | 3.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | IN_PLUS | signal |
+| 2 | IN_MINUS | signal |
+| 3 | VBUS | signal |
+| 4 | GND | gnd |
+| 5 | VCC | power |
+| 6 | SCL | signal |
+| 7 | SDA | signal |
+| 8 | ALERT | signal |
+| 9 | A0 | signal |
+| 10 | A1 | signal |
 
 
 

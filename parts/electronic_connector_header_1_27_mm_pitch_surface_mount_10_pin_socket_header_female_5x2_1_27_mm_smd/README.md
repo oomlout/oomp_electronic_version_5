@@ -2,7 +2,7 @@
 
 `electronic_connector_header_1_27_mm_pitch_surface_mount_10_pin_socket_header_female_5x2_1_27_mm_smd`
 
-Connector Header 1.27 mm pitch surface-mount 10 pin Socket is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 25.4 &#x00D7; 2.48 mm.
+Connector Header 1.27 mm pitch surface-mount 10 pin Socket is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 7.0 &#x00D7; 5.5 mm. The definition includes 10 documented pins.
 
 ![Connector Header 1.27 mm pitch surface-mount 10 pin Socket pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,8 @@ Connector Header 1.27 mm pitch surface-mount 10 pin Socket is an OOMP electronic
 | OOMP ID | `electronic_connector_header_1_27_mm_pitch_surface_mount_10_pin_socket_header_female_5x2_1_27_mm_smd` |
 | Type | Connector |
 | Package / style | header |
-| Nominal size | 25.4 &#x00D7; 2.48 mm |
+| Nominal size | 7.0 &#x00D7; 5.5 mm |
+| Documented pins | 10 |
 
 
 ## Classification
@@ -35,12 +36,28 @@ Connector Header 1.27 mm pitch surface-mount 10 pin Socket is an OOMP electronic
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 25.4 mm |
-| Width | 2.48 mm |
+| Length | 7.0 mm |
+| Width | 5.5 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
 
 
 

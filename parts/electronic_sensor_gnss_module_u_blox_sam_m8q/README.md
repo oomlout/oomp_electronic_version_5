@@ -2,7 +2,7 @@
 
 `electronic_sensor_gnss_module_u_blox_sam_m8q`
 
-Sensor Module U Blox Sam M8Q GNSS is an OOMP electronic sensor definition. It uses the gnss package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Sensor Module U Blox Sam M8Q GNSS is an OOMP electronic sensor definition. It uses the gnss package or form factor. Its nominal drawing size is 15.5 &#x00D7; 15.5 mm. The definition includes 20 documented pins.
 
 ![Sensor Module U Blox Sam M8Q GNSS pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Sensor Module U Blox Sam M8Q GNSS is an OOMP electronic sensor definition. It us
 | OOMP ID | `electronic_sensor_gnss_module_u_blox_sam_m8q` |
 | Type | Sensor |
 | Package / style | gnss |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 15.5 &#x00D7; 15.5 mm |
+| Documented pins | 20 |
 
 
 ## Classification
@@ -33,12 +34,38 @@ Sensor Module U Blox Sam M8Q GNSS is an OOMP electronic sensor definition. It us
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 15.5 mm |
+| Width | 15.5 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
+| 11 | 11 | signal |
+| 12 | 12 | signal |
+| 13 | 13 | signal |
+| 14 | 14 | signal |
+| 15 | 15 | signal |
+| 16 | 16 | signal |
+| 17 | 17 | signal |
+| 18 | 18 | signal |
+| 19 | 19 | signal |
+| 20 | 20 | signal |
 
 
 

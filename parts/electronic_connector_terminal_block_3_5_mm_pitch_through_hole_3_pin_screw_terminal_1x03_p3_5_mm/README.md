@@ -2,7 +2,7 @@
 
 `electronic_connector_terminal_block_3_5_mm_pitch_through_hole_3_pin_screw_terminal_1x03_p3_5_mm`
 
-Connector Terminal Block 3.5 mm pitch through-hole 3 pin Screw Terminal 1X03 P3 5 Mm is an OOMP electronic connector definition. It uses the terminal block package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Connector Terminal Block 3.5 mm pitch through-hole 3 pin Screw Terminal 1X03 P3 5 Mm is an OOMP electronic connector definition. It uses the terminal block package or form factor. Its nominal drawing size is 11.0 &#x00D7; 8.0 mm. The definition includes 3 documented pins.
 
 ![Connector Terminal Block 3.5 mm pitch through-hole 3 pin Screw Terminal 1X03 P3 5 Mm pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,8 @@ Connector Terminal Block 3.5 mm pitch through-hole 3 pin Screw Terminal 1X03 P3 
 | OOMP ID | `electronic_connector_terminal_block_3_5_mm_pitch_through_hole_3_pin_screw_terminal_1x03_p3_5_mm` |
 | Type | Connector |
 | Package / style | terminal block |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 11.0 &#x00D7; 8.0 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -34,12 +35,21 @@ Connector Terminal Block 3.5 mm pitch through-hole 3 pin Screw Terminal 1X03 P3 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 11.0 mm |
+| Width | 8.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
 
 
 

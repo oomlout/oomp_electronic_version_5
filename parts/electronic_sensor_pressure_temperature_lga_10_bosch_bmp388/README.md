@@ -2,7 +2,7 @@
 
 `electronic_sensor_pressure_temperature_lga_10_bosch_bmp388`
 
-Sensor Lga 10 Bosch BMP388 PRESSURE TEMPERATURE is an OOMP electronic sensor definition. It uses the pressure temperature package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Sensor Lga 10 Bosch BMP388 PRESSURE TEMPERATURE is an OOMP electronic sensor definition. It uses the pressure temperature package or form factor. Its nominal drawing size is 2.0 &#x00D7; 2.0 mm. The definition includes 10 documented pins.
 
 ![Sensor Lga 10 Bosch BMP388 PRESSURE TEMPERATURE pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Sensor Lga 10 Bosch BMP388 PRESSURE TEMPERATURE is an OOMP electronic sensor def
 | OOMP ID | `electronic_sensor_pressure_temperature_lga_10_bosch_bmp388` |
 | Type | Sensor |
 | Package / style | pressure temperature |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 2.0 &#x00D7; 2.0 mm |
+| Documented pins | 10 |
 
 
 ## Classification
@@ -33,12 +34,28 @@ Sensor Lga 10 Bosch BMP388 PRESSURE TEMPERATURE is an OOMP electronic sensor def
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 2.0 mm |
+| Width | 2.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
 
 
 

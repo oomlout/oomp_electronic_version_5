@@ -2,7 +2,7 @@
 
 `electronic_switch_tactile_surface_mount_alps_alpine_skr_k`
 
-Switch Surface Mount Alps Alpine Skr K TACTILE is an OOMP electronic switch definition. It uses the tactile package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Switch Surface Mount Alps Alpine Skr K TACTILE is an OOMP electronic switch definition. It uses the tactile package or form factor. Its nominal drawing size is 3.9 &#x00D7; 2.9 mm. The definition includes 4 documented pins.
 
 ![Switch Surface Mount Alps Alpine Skr K TACTILE pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Switch Surface Mount Alps Alpine Skr K TACTILE is an OOMP electronic switch defi
 | OOMP ID | `electronic_switch_tactile_surface_mount_alps_alpine_skr_k` |
 | Type | Switch |
 | Package / style | tactile |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.9 &#x00D7; 2.9 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -33,12 +34,22 @@ Switch Surface Mount Alps Alpine Skr K TACTILE is an OOMP electronic switch defi
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.9 mm |
+| Width | 2.9 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
 
 
 

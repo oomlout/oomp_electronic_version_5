@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_8_timer_555_timer_texas_instruments_tlc555cd`
 
-IC Timer 555 Timer Texas Instruments SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Timer 555 Timer Texas Instruments SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
 ![IC Timer 555 Timer Texas Instruments SOIC_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Timer 555 Timer Texas Instruments SOIC_8 is an OOMP electronic ic definition.
 | OOMP ID | `electronic_ic_soic_8_timer_555_timer_texas_instruments_tlc555cd` |
 | Type | Ic |
 | Package / style | soic 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.9 &#x00D7; 3.9 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,12 +35,27 @@ IC Timer 555 Timer Texas Instruments SOIC_8 is an OOMP electronic ic definition.
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.75 mm |
+| Length | 4.9 mm |
+| Width | 3.9 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | GND | gnd |
+| 2 | TRIG | signal |
+| 3 | OUT | signal |
+| 4 | RESET | signal |
+| 5 | CTRL | signal |
+| 6 | THRESH | signal |
+| 7 | DISCH | signal |
+| 8 | VCC | power |
 
 
 

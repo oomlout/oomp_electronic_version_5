@@ -325,7 +325,7 @@ def refresh_project_files(details):
     except FileNotFoundError as error:
         _write_error_file(details, error)
         print(error)
-        return None
+        raise
     except Exception as error:
         _write_error_file(details, error)
         raise
@@ -341,7 +341,7 @@ def main():
     except Exception as error:
         log_run_error("project_git_action", error)
         print(error)
-        return
+        raise
 
 
 if __name__ == "__main__":

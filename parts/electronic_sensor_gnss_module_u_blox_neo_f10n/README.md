@@ -2,7 +2,7 @@
 
 `electronic_sensor_gnss_module_u_blox_neo_f10n`
 
-Sensor Module U Blox Neo F10N GNSS is an OOMP electronic sensor definition. It uses the gnss package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Sensor Module U Blox Neo F10N GNSS is an OOMP electronic sensor definition. It uses the gnss package or form factor. Its nominal drawing size is 12.2 &#x00D7; 16.0 mm. The definition includes 24 documented pins.
 
 ![Sensor Module U Blox Neo F10N GNSS pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Sensor Module U Blox Neo F10N GNSS is an OOMP electronic sensor definition. It u
 | OOMP ID | `electronic_sensor_gnss_module_u_blox_neo_f10n` |
 | Type | Sensor |
 | Package / style | gnss |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 12.2 &#x00D7; 16.0 mm |
+| Documented pins | 24 |
 
 
 ## Classification
@@ -33,12 +34,42 @@ Sensor Module U Blox Neo F10N GNSS is an OOMP electronic sensor definition. It u
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 12.2 mm |
+| Width | 16.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
+| 11 | 11 | signal |
+| 12 | 12 | signal |
+| 13 | 13 | signal |
+| 14 | 14 | signal |
+| 15 | 15 | signal |
+| 16 | 16 | signal |
+| 17 | 17 | signal |
+| 18 | 18 | signal |
+| 19 | 19 | signal |
+| 20 | 20 | signal |
+| 21 | 21 | signal |
+| 22 | 22 | signal |
+| 23 | 23 | signal |
+| 24 | 24 | signal |
 
 
 

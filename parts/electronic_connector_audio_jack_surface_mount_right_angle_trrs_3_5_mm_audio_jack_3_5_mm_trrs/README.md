@@ -2,7 +2,7 @@
 
 `electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs`
 
-Connector Audio Jack Surface Mount Right Angle Trrs 3 5 Mm Audio Jack 3 5 Mm Trrs is an OOMP electronic connector definition. It uses the audio jack package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Connector Audio Jack Surface Mount Right Angle Trrs 3 5 Mm Audio Jack 3 5 Mm Trrs is an OOMP electronic connector definition. It uses the audio jack package or form factor. Its nominal drawing size is 13.5 &#x00D7; 6.5 mm. The definition includes 5 documented pins.
 
 ![Connector Audio Jack Surface Mount Right Angle Trrs 3 5 Mm Audio Jack 3 5 Mm Trrs pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,8 @@ Connector Audio Jack Surface Mount Right Angle Trrs 3 5 Mm Audio Jack 3 5 Mm Trr
 | OOMP ID | `electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs` |
 | Type | Connector |
 | Package / style | audio jack |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 13.5 &#x00D7; 6.5 mm |
+| Documented pins | 5 |
 
 
 ## Classification
@@ -34,12 +35,23 @@ Connector Audio Jack Surface Mount Right Angle Trrs 3 5 Mm Audio Jack 3 5 Mm Trr
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 13.5 mm |
+| Width | 6.5 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
 
 
 

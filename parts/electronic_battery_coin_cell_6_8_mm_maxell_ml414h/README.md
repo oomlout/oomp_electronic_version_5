@@ -2,7 +2,7 @@
 
 `electronic_battery_coin_cell_6_8_mm_maxell_ml414h`
 
-Battery 6 8 Mm Maxell ML414H COIN CELL is an OOMP electronic battery definition. It uses the coin cell package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Battery 6 8 Mm Maxell ML414H COIN CELL is an OOMP electronic battery definition. It uses the coin cell package or form factor. Its nominal drawing size is 6.8 &#x00D7; 6.8 mm. The definition includes 2 documented pins.
 
 ![Battery 6 8 Mm Maxell ML414H COIN CELL pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Battery 6 8 Mm Maxell ML414H COIN CELL is an OOMP electronic battery definition.
 | OOMP ID | `electronic_battery_coin_cell_6_8_mm_maxell_ml414h` |
 | Type | Battery |
 | Package / style | coin cell |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 6.8 &#x00D7; 6.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -33,12 +34,20 @@ Battery 6 8 Mm Maxell ML414H COIN CELL is an OOMP electronic battery definition.
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 6.8 mm |
+| Width | 6.8 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | + | signal |
+| 2 | - | signal |
 
 
 

@@ -2,7 +2,7 @@
 
 `electronic_ic_dfn_8_power_management_linear_voltage_regulator_diodes_ap7361c_3_3v`
 
-IC Power Management Linear Voltage Regulator Diodes DFN_8 is an OOMP electronic ic definition. It uses the dfn 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Power Management Linear Voltage Regulator Diodes DFN_8 is an OOMP electronic ic definition. It uses the dfn 8 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 8 documented pins.
 
 ![IC Power Management Linear Voltage Regulator Diodes DFN_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Power Management Linear Voltage Regulator Diodes DFN_8 is an OOMP electronic 
 | OOMP ID | `electronic_ic_dfn_8_power_management_linear_voltage_regulator_diodes_ap7361c_3_3v` |
 | Type | Ic |
 | Package / style | dfn 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.0 &#x00D7; 3.0 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,12 +35,27 @@ IC Power Management Linear Voltage Regulator Diodes DFN_8 is an OOMP electronic 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 0.8 mm |
+| Length | 3.0 mm |
+| Width | 3.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | OUT | signal |
+| 2 | NC | no_connect |
+| 3 | ADJ_NC | signal |
+| 4 | GND | gnd |
+| 5 | EN | signal |
+| 6 | NC | no_connect |
+| 7 | NC | no_connect |
+| 8 | IN | signal |
 
 
 

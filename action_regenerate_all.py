@@ -72,10 +72,24 @@ def _normal_gate_is_complete(part_directory, mode_details):
         if not path.is_absolute():
             path = part_directory / path
         paths.append(path)
+    successful_paths = []
+    for path in paths:
+        successful = path.exists()
+        if successful and path.suffix.lower() in {".yaml", ".yml"}:
+            try:
+                payload = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+            except (OSError, UnicodeError, yaml.YAMLError):
+                successful = False
+                payload = {}
+            if isinstance(payload, dict):
+                status = str(payload.get("status", "")).strip().lower()
+                if status in {"failed", "error", "skipped", "incomplete"}:
+                    successful = False
+        successful_paths.append(successful)
     mode = str(mode_details.get("file_test_mode") or "exists")
     if mode == "exists":
-        return all(path.exists() for path in paths)
-    return any(path.exists() for path in paths)
+        return all(successful_paths)
+    return any(successful_paths)
 
 
 def run_actions(filter_text="", regenerate_pngs=True, honour_normal_gates=False):
@@ -90,6 +104,7 @@ def run_actions(filter_text="", regenerate_pngs=True, honour_normal_gates=False)
         if not working_file.is_file():
             continue
         workings = yaml.safe_load(working_file.read_text(encoding="utf-8")) or {}
+        part_failed = False
         for mode_name, mode_details in workings.items():
             if not str(mode_name).startswith("oomlout_") or not isinstance(mode_details, dict):
                 continue
@@ -103,6 +118,7 @@ def run_actions(filter_text="", regenerate_pngs=True, honour_normal_gates=False)
             actions = mode_details.get("actions", [])
             if not isinstance(actions, list):
                 continue
+            ran_non_browser_action = False
             for action in actions:
                 if not isinstance(action, dict):
                     continue
@@ -112,6 +128,7 @@ def run_actions(filter_text="", regenerate_pngs=True, honour_normal_gates=False)
                     continue
                 action_to_run = copy.deepcopy(action)
                 action_to_run["regenerate_pngs"] = regenerate_pngs
+                ran_non_browser_action = True
                 result = oomlout_roboclick.run_single_action(
                     action=action_to_run,
                     directory=str(part_directory.resolve()),
@@ -128,9 +145,23 @@ def run_actions(filter_text="", regenerate_pngs=True, honour_normal_gates=False)
                         str(action.get("command", "")),
                         str(action.get("file_python", "")),
                     ])
-                    print(f"Logged and skipped failed action: {message}")
-                    continue
+                    print(f"Logged failure; skipping remaining modes for this part: {message}")
+                    part_failed = True
+                    break
                 action_count += 1
+            file_test = mode_details.get("file_test", "")
+            if (
+                not part_failed
+                and ran_non_browser_action
+                and file_test not in (None, "")
+                and not _normal_gate_is_complete(part_directory, mode_details)
+            ):
+                message = f"{part_directory.name} {mode_name} did not produce a successful check file"
+                log_run_error("action_regenerate_all", RuntimeError(message))
+                print(f"Logged failure; skipping remaining modes for this part: {message}")
+                part_failed = True
+            if part_failed:
+                break
     return action_count, skipped_browser_count
 
 

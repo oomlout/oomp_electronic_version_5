@@ -2,7 +2,7 @@
 
 `electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3`
 
-IC Power Management Linear Voltage Regulator Diodes SOT_23_5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm.
+IC Power Management Linear Voltage Regulator Diodes SOT_23_5 is an OOMP electronic ic definition. It uses the sot 23 5 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.6 mm. The definition includes 5 documented pins.
 
 ![IC Power Management Linear Voltage Regulator Diodes SOT_23_5 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ IC Power Management Linear Voltage Regulator Diodes SOT_23_5 is an OOMP electron
 | Type | Ic |
 | Package / style | sot 23 5 |
 | Nominal size | 2.9 &#x00D7; 1.6 mm |
+| Documented pins | 5 |
 
 
 ## Classification
@@ -34,12 +35,24 @@ IC Power Management Linear Voltage Regulator Diodes SOT_23_5 is an OOMP electron
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.1 mm |
 | Length | 2.9 mm |
 | Width | 1.6 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | VIN | power |
+| 2 | GND | gnd |
+| 3 | EN | signal |
+| 4 | NC | no_connect |
+| 5 | VOUT | signal |
 
 
 

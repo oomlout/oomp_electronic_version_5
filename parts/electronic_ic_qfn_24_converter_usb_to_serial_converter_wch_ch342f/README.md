@@ -2,7 +2,7 @@
 
 `electronic_ic_qfn_24_converter_usb_to_serial_converter_wch_ch342f`
 
-IC Converter Usb To Serial Converter Wch QFN_24 is an OOMP electronic ic definition. It uses the qfn 24 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Converter Usb To Serial Converter Wch QFN_24 is an OOMP electronic ic definition. It uses the qfn 24 package or form factor. Its nominal drawing size is 4.0 &#x00D7; 4.0 mm. The definition includes 24 documented pins.
 
 ![IC Converter Usb To Serial Converter Wch QFN_24 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Converter Usb To Serial Converter Wch QFN_24 is an OOMP electronic ic definit
 | OOMP ID | `electronic_ic_qfn_24_converter_usb_to_serial_converter_wch_ch342f` |
 | Type | Ic |
 | Package / style | qfn 24 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.0 &#x00D7; 4.0 mm |
+| Documented pins | 24 |
 
 
 ## Classification
@@ -34,12 +35,43 @@ IC Converter Usb To Serial Converter Wch QFN_24 is an OOMP electronic ic definit
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 0.8 mm |
+| Length | 4.0 mm |
+| Width | 4.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
+| 11 | 11 | signal |
+| 12 | 12 | signal |
+| 13 | 13 | signal |
+| 14 | 14 | signal |
+| 15 | 15 | signal |
+| 16 | 16 | signal |
+| 17 | 17 | signal |
+| 18 | 18 | signal |
+| 19 | 19 | signal |
+| 20 | 20 | signal |
+| 21 | 21 | signal |
+| 22 | 22 | signal |
+| 23 | 23 | signal |
+| 24 | 24 | signal |
 
 
 

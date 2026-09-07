@@ -2,7 +2,7 @@
 
 `electronic_sensor_imu_lga_24_st_lsm9ds1tr`
 
-Sensor Lga 24 St LSM9DS1TR IMU is an OOMP electronic sensor definition. It uses the imu package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Sensor Lga 24 St LSM9DS1TR IMU is an OOMP electronic sensor definition. It uses the imu package or form factor. Its nominal drawing size is 3.5 &#x00D7; 3.0 mm. The definition includes 24 documented pins.
 
 ![Sensor Lga 24 St LSM9DS1TR IMU pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Sensor Lga 24 St LSM9DS1TR IMU is an OOMP electronic sensor definition. It uses 
 | OOMP ID | `electronic_sensor_imu_lga_24_st_lsm9ds1tr` |
 | Type | Sensor |
 | Package / style | imu |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.5 &#x00D7; 3.0 mm |
+| Documented pins | 24 |
 
 
 ## Classification
@@ -33,12 +34,42 @@ Sensor Lga 24 St LSM9DS1TR IMU is an OOMP electronic sensor definition. It uses 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.5 mm |
+| Width | 3.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | VDD | power |
+| 2 | GND | gnd |
+| 3 | VDD | power |
+| 4 | GND | gnd |
+| 5 | VDD | power |
+| 6 | GND | gnd |
+| 7 | VDD | power |
+| 8 | GND | gnd |
+| 9 | VDD | power |
+| 10 | GND | gnd |
+| 11 | VDD | power |
+| 12 | GND | gnd |
+| 13 | VDD | power |
+| 14 | GND | gnd |
+| 15 | VDD | power |
+| 16 | GND | gnd |
+| 17 | VDD | power |
+| 18 | GND | gnd |
+| 19 | VDD | power |
+| 20 | GND | gnd |
+| 21 | VDD | power |
+| 22 | GND | gnd |
+| 23 | VDD | power |
+| 24 | GND | gnd |
 
 
 

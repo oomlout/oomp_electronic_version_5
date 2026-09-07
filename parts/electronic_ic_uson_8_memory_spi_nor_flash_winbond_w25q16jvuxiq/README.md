@@ -2,7 +2,7 @@
 
 `electronic_ic_uson_8_memory_spi_nor_flash_winbond_w25q16jvuxiq`
 
-IC Memory SPI Nor Flash Winbond USON_8 is an OOMP electronic ic definition. It uses the uson 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Memory SPI Nor Flash Winbond USON_8 is an OOMP electronic ic definition. It uses the uson 8 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 2.0 mm. The definition includes 8 documented pins.
 
 ![IC Memory SPI Nor Flash Winbond USON_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Memory SPI Nor Flash Winbond USON_8 is an OOMP electronic ic definition. It u
 | OOMP ID | `electronic_ic_uson_8_memory_spi_nor_flash_winbond_w25q16jvuxiq` |
 | Type | Ic |
 | Package / style | uson 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.0 &#x00D7; 2.0 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,12 +35,27 @@ IC Memory SPI Nor Flash Winbond USON_8 is an OOMP electronic ic definition. It u
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 0.55 mm |
+| Length | 3.0 mm |
+| Width | 2.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | CS | signal |
+| 2 | DO_IO1 | signal |
+| 3 | WP_IO2 | signal |
+| 4 | GND | gnd |
+| 5 | DI_IO0 | signal |
+| 6 | CLK | signal |
+| 7 | HOLD_RESET_IO3 | signal |
+| 8 | VCC | power |
 
 
 

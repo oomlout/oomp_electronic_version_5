@@ -2,7 +2,7 @@
 
 `electronic_ic_tssop_16_converter_analog_to_digital_converter_texas_instruments_ads1219ipw`
 
-IC Converter Analog To Digital Converter Texas Instruments TSSOP_16 is an OOMP electronic ic definition. It uses the tssop 16 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 4.4 mm.
+IC Converter Analog To Digital Converter Texas Instruments TSSOP_16 is an OOMP electronic ic definition. It uses the tssop 16 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 4.4 mm. The definition includes 16 documented pins.
 
 ![IC Converter Analog To Digital Converter Texas Instruments TSSOP_16 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ IC Converter Analog To Digital Converter Texas Instruments TSSOP_16 is an OOMP e
 | Type | Ic |
 | Package / style | tssop 16 |
 | Nominal size | 5.0 &#x00D7; 4.4 mm |
+| Documented pins | 16 |
 
 
 ## Classification
@@ -34,12 +35,35 @@ IC Converter Analog To Digital Converter Texas Instruments TSSOP_16 is an OOMP e
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.2 mm |
 | Length | 5.0 mm |
 | Width | 4.4 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | AIN0 | signal |
+| 2 | AIN1 | signal |
+| 3 | AIN2 | signal |
+| 4 | AIN3 | signal |
+| 5 | AVDD | power |
+| 6 | DVDD | power |
+| 7 | DGND | gnd |
+| 8 | AGND | gnd |
+| 9 | SDA | signal |
+| 10 | SCL | signal |
+| 11 | ADDR0 | signal |
+| 12 | ADDR1 | signal |
+| 13 | DRDY | signal |
+| 14 | START | signal |
+| 15 | REFOUT | signal |
+| 16 | REFIN | signal |
 
 
 

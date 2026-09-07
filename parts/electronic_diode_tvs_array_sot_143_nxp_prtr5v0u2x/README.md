@@ -2,7 +2,7 @@
 
 `electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x`
 
-Diode Tvs Array SOT-143 is an OOMP electronic diode definition. It uses the sot 143 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Diode Tvs Array SOT-143 is an OOMP electronic diode definition. It uses the sot 143 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 1.3 mm. The definition includes 4 documented pins.
 
 ![Diode Tvs Array SOT-143 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Diode Tvs Array SOT-143 is an OOMP electronic diode definition. It uses the sot 
 | OOMP ID | `electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x` |
 | Type | Diode |
 | Package / style | sot 143 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.0 &#x00D7; 1.3 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -33,12 +34,22 @@ Diode Tvs Array SOT-143 is an OOMP electronic diode definition. It uses the sot 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.0 mm |
+| Width | 1.3 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | GND | gnd |
+| 2 | IO1 | signal |
+| 3 | IO2 | signal |
+| 4 | VCC | power |
 
 
 

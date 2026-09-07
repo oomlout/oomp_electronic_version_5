@@ -2,7 +2,7 @@
 
 `electronic_connector_rf_cable_assembly_ipx_to_sma_ipx_connector_with_sma`
 
-Connector Rf Cable Assembly Ipx To Sma Ipx Connector With Sma is an OOMP electronic connector definition. It uses the rf cable assembly package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Connector Rf Cable Assembly Ipx To Sma Ipx Connector With Sma is an OOMP electronic connector definition. It uses the rf cable assembly package or form factor. Its nominal drawing size is 30.0 &#x00D7; 5.0 mm. The definition includes 2 documented pins.
 
 ![Connector Rf Cable Assembly Ipx To Sma Ipx Connector With Sma pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,8 @@ Connector Rf Cable Assembly Ipx To Sma Ipx Connector With Sma is an OOMP electro
 | OOMP ID | `electronic_connector_rf_cable_assembly_ipx_to_sma_ipx_connector_with_sma` |
 | Type | Connector |
 | Package / style | rf cable assembly |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 30.0 &#x00D7; 5.0 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -32,12 +33,20 @@ Connector Rf Cable Assembly Ipx To Sma Ipx Connector With Sma is an OOMP electro
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
+| Length | 30.0 mm |
 | Width | 5.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
 
 
 

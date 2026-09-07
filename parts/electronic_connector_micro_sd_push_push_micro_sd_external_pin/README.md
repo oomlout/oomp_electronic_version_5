@@ -2,7 +2,7 @@
 
 `electronic_connector_micro_sd_push_push_micro_sd_external_pin`
 
-Connector Micro Sd Push Push micro sd external pin is an OOMP electronic connector definition. It uses the micro sd package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Connector Micro Sd Push Push micro sd external pin is an OOMP electronic connector definition. It uses the micro sd package or form factor. Its nominal drawing size is 15.0 &#x00D7; 11.0 mm. The definition includes 10 documented pins.
 
 ![Connector Micro Sd Push Push micro sd external pin pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,8 @@ Connector Micro Sd Push Push micro sd external pin is an OOMP electronic connect
 | OOMP ID | `electronic_connector_micro_sd_push_push_micro_sd_external_pin` |
 | Type | Connector |
 | Package / style | micro sd |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 15.0 &#x00D7; 11.0 mm |
+| Documented pins | 10 |
 
 
 ## Classification
@@ -32,12 +33,28 @@ Connector Micro Sd Push Push micro sd external pin is an OOMP electronic connect
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 15.0 mm |
+| Width | 11.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
 
 
 

@@ -2,7 +2,7 @@
 
 `electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz`
 
-IC Amplifier Thermocouple Amplifier Texas Instruments MSOP_8 is an OOMP electronic ic definition. It uses the msop 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Amplifier Thermocouple Amplifier Texas Instruments MSOP_8 is an OOMP electronic ic definition. It uses the msop 8 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.0 mm. The definition includes 8 documented pins.
 
 ![IC Amplifier Thermocouple Amplifier Texas Instruments MSOP_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Amplifier Thermocouple Amplifier Texas Instruments MSOP_8 is an OOMP electron
 | OOMP ID | `electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz` |
 | Type | Ic |
 | Package / style | msop 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.0 &#x00D7; 3.0 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,12 +35,27 @@ IC Amplifier Thermocouple Amplifier Texas Instruments MSOP_8 is an OOMP electron
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.1 mm |
+| Length | 3.0 mm |
+| Width | 3.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
 
 
 

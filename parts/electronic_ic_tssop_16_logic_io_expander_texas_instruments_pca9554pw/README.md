@@ -2,7 +2,7 @@
 
 `electronic_ic_tssop_16_logic_io_expander_texas_instruments_pca9554pw`
 
-IC Logic Io Expander Texas Instruments TSSOP_16 is an OOMP electronic ic definition. It uses the tssop 16 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 4.4 mm.
+IC Logic Io Expander Texas Instruments TSSOP_16 is an OOMP electronic ic definition. It uses the tssop 16 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 4.4 mm. The definition includes 16 documented pins.
 
 ![IC Logic Io Expander Texas Instruments TSSOP_16 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ IC Logic Io Expander Texas Instruments TSSOP_16 is an OOMP electronic ic definit
 | Type | Ic |
 | Package / style | tssop 16 |
 | Nominal size | 5.0 &#x00D7; 4.4 mm |
+| Documented pins | 16 |
 
 
 ## Classification
@@ -34,12 +35,35 @@ IC Logic Io Expander Texas Instruments TSSOP_16 is an OOMP electronic ic definit
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.2 mm |
 | Length | 5.0 mm |
 | Width | 4.4 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | A0 | signal |
+| 2 | A1 | signal |
+| 3 | A2 | signal |
+| 4 | P0 | signal |
+| 5 | P1 | signal |
+| 6 | P2 | signal |
+| 7 | P3 | signal |
+| 8 | P4 | signal |
+| 9 | P5 | signal |
+| 10 | P6 | signal |
+| 11 | P7 | signal |
+| 12 | INT | signal |
+| 13 | SCL | signal |
+| 14 | SDA | signal |
+| 15 | VSS | gnd |
+| 16 | VDD | power |
 
 
 

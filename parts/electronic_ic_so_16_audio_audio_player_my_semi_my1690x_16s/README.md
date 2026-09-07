@@ -2,7 +2,7 @@
 
 `electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s`
 
-IC Audio Audio Player My Semi SO_16 is an OOMP electronic ic definition. It uses the so 16 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Audio Audio Player My Semi SO_16 is an OOMP electronic ic definition. It uses the so 16 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 4.0 mm. The definition includes 16 documented pins.
 
 ![IC Audio Audio Player My Semi SO_16 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Audio Audio Player My Semi SO_16 is an OOMP electronic ic definition. It uses
 | OOMP ID | `electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s` |
 | Type | Ic |
 | Package / style | so 16 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 10.0 &#x00D7; 4.0 mm |
+| Documented pins | 16 |
 
 
 ## Classification
@@ -34,12 +35,35 @@ IC Audio Audio Player My Semi SO_16 is an OOMP electronic ic definition. It uses
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.75 mm |
 | Length | 10.0 mm |
-| Width | 5.0 mm |
+| Width | 4.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
+| 11 | 11 | signal |
+| 12 | 12 | signal |
+| 13 | 13 | signal |
+| 14 | 14 | signal |
+| 15 | 15 | signal |
+| 16 | 16 | signal |
 
 
 

@@ -2,7 +2,7 @@
 
 `electronic_ic_qfn_28_power_meter_energy_metering_analog_devices_ade7953acpz`
 
-IC Power Meter Energy Metering Analog Devices QFN_28 is an OOMP electronic ic definition. It uses the qfn 28 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Power Meter Energy Metering Analog Devices QFN_28 is an OOMP electronic ic definition. It uses the qfn 28 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 5.0 mm. The definition includes 28 documented pins.
 
 ![IC Power Meter Energy Metering Analog Devices QFN_28 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Power Meter Energy Metering Analog Devices QFN_28 is an OOMP electronic ic de
 | OOMP ID | `electronic_ic_qfn_28_power_meter_energy_metering_analog_devices_ade7953acpz` |
 | Type | Ic |
 | Package / style | qfn 28 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 5.0 &#x00D7; 5.0 mm |
+| Documented pins | 28 |
 
 
 ## Classification
@@ -34,12 +35,47 @@ IC Power Meter Energy Metering Analog Devices QFN_28 is an OOMP electronic ic de
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
+| Height | 0.9 mm |
+| Length | 5.0 mm |
 | Width | 5.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
+| 3 | 3 | signal |
+| 4 | 4 | signal |
+| 5 | 5 | signal |
+| 6 | 6 | signal |
+| 7 | 7 | signal |
+| 8 | 8 | signal |
+| 9 | 9 | signal |
+| 10 | 10 | signal |
+| 11 | 11 | signal |
+| 12 | 12 | signal |
+| 13 | 13 | signal |
+| 14 | 14 | signal |
+| 15 | 15 | signal |
+| 16 | 16 | signal |
+| 17 | 17 | signal |
+| 18 | 18 | signal |
+| 19 | 19 | signal |
+| 20 | 20 | signal |
+| 21 | 21 | signal |
+| 22 | 22 | signal |
+| 23 | 23 | signal |
+| 24 | 24 | signal |
+| 25 | 25 | signal |
+| 26 | 26 | signal |
+| 27 | 27 | signal |
+| 28 | 28 | signal |
 
 
 

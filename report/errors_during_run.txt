@@ -595,3 +595,32 @@ FileNotFoundError: [WinError 2] The system cannot find the file specified
 
 [2026-09-07T19:33:35.786847+00:00] interactive_html_bom_action
 Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-07T19:38:54.496540+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-07T19:41:05.816599+00:00] kicad_project_action
+Error type: FileNotFoundError
+Error message: [WinError 2] The system cannot find the file specified
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_project_action.py", line 401, in main
+    convert_project(details)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_project_action.py", line 285, in convert_project
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 548, in run
+    with Popen(*popenargs, **kwargs) as process:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1538, in _execute_child
+    hp, ht, pid, tid = _winapi.CreateProcess(executable, args,
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [WinError 2] The system cannot find the file specified
+
+[2026-09-07T19:41:05.938299+00:00] action_regenerate_part
+Error type: RuntimeError
+Error message: Regeneration stopped for oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current: run_python returned exit_no_tab
+Command: run_python kicad_agents/kicad_project_action.py
+Traceback:
+NoneType: None
+
