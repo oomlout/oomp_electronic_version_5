@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Current-sensor-30A-ACS712-breakout-hardware-design ACS712 30A current is a KiCad project containing 55 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
+Project soldered_electronics/Current-sensor-30A-ACS712-breakout-hardware-design ACS712 30A current is a KiCad project containing 55 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,9 +19,9 @@ Project soldered_electronics/Current-sensor-30A-ACS712-breakout-hardware-design 
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 38 |
-| Matched OOMP components | 13 |
-| Unmatched physical components | 26 |
-| Front-side placements | 18 |
+| Matched OOMP components | 17 |
+| Unmatched physical components | 3 |
+| Front-side placements | 17 |
 | Back-side placements | 1 |
 | Project version | `current` |
 | Git ref | `main` |
@@ -83,15 +83,14 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1 | 1 | Capacitor 10 nF 0603 | 10n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_10_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_nano_farad) |
 | C2, C3, C5, C6 | 4 | Capacitor 100 nF 0603 | 100n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C4 | 1 | Capacitor 2.2 uF 0603 | 2u2 | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
-| JP1 | 1 | SMD_JUMPER | SMD_JUMPER | `e-radionica.com footprinti:SMD_JUMPER` | unmatched |
 | K1 | 1 | TERMINAL_KF235-5.0-2P | TERMINAL_KF235-5.0-2P | `e-radionica.com footprinti:TERMINAL_KF235-5.0-2P` | unmatched |
-| K2 | 1 | HEADER_MALE_4X1 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | unmatched |
-| K3 | 1 | DSHP03TS-S | DSHP03TS-S | `e-radionica.com footprinti:DSHP03TS-S` | unmatched |
+| K2 | 1 | Connector Header PZ2.54-S04P-A60 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
+| K3 | 1 | Switch Surface Mount Dpdt Ck DSHP03TS S SLIDE | DSHP03TS-S | `e-radionica.com footprinti:DSHP03TS-S` | [`electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s) |
 | R1, R2, R3, R4 | 4 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R5 | 1 | Resistor 100000 Ohm 0603 | 100k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
 | R6 | 1 | 200k | 200k | `e-radionica.com footprinti:0603R` | unmatched |
 | U1 | 1 | ACS712 | ACS712 | `e-radionica.com footprinti:SOIC-8-SWB` | unmatched |
-| U2, U3 | 2 | OPA344 | OPA344 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
+| U2, U3 | 2 | IC Amplifier Operational Amplifier Texas Instruments SOT_23_5 | OPA344 | `e-radionica.com footprinti:SOT-23-5` | [`electronic_ic_sot_23_5_amplifier_operational_amplifier_texas_instruments_opa344`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_amplifier_operational_amplifier_texas_instruments_opa344) |
 
 ## Main nets
 
@@ -115,11 +114,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 38.0 mm by 22.0 mm.
-- Placement data contains 18 front-side and 1 back-side components.
+- Placement data contains 17 front-side and 1 back-side components.
 
 ## Review notes
 
-- 26 physical component records are not yet matched to an OOMP part.
+- 3 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/data/generated_data/browser_research_queue.md)
@@ -128,7 +127,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

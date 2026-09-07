@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/GNSS-GPS-L86-M33-breakout-hardware-design L86-M33 GNSS current is a KiCad project containing 73 extracted component records. The catalogue matcher linked 19 physical placements to OOMP parts.
+Project soldered_electronics/GNSS-GPS-L86-M33-breakout-hardware-design L86-M33 GNSS current is a KiCad project containing 73 extracted component records. The catalogue matcher linked 25 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,9 +19,9 @@ Project soldered_electronics/GNSS-GPS-L86-M33-breakout-hardware-design L86-M33 G
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 55 |
-| Matched OOMP components | 19 |
-| Unmatched physical components | 33 |
-| Front-side placements | 29 |
+| Matched OOMP components | 25 |
+| Unmatched physical components | 4 |
+| Front-side placements | 25 |
 | Back-side placements | 0 |
 | Project version | `current` |
 | Git ref | `main` |
@@ -83,23 +83,21 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1 | 1 | Capacitor 100 nF 0603 | 100n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| C2 | 1 | 10u | 10u | `e-radionica.com footprinti:1206C` | unmatched |
+| C2 | 1 | Capacitor 10 uF 1206 | 10u | `e-radionica.com footprinti:1206C` | [`electronic_capacitor_1206_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_10_micro_farad) |
 | C3, C4 | 2 | Capacitor 2.2 uF 0603 | 2u2 | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
-| D1, D2 | 2 | M4_DIODA | M4_DIODA | `e-radionica.com footprinti:M4_DIODA` | unmatched |
+| D1, D2 | 2 | Diode Rectifier SMA | M4_DIODA | `e-radionica.com footprinti:M4_DIODA` | [`electronic_diode_rectifier_sma_m4`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_rectifier_sma_m4) |
 | D3 | 1 | LED  0402 | purple | `e-radionica.com footprinti:0402LED` | [`electronic_led_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402) |
 | D4 | 1 | LED SZYY0402B 0402 | blue | `e-radionica.com footprinti:0402LED` | [`electronic_led_0402_blue`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_blue) |
-| JP1, JP3, JP4 | 3 | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | `e-radionica.com footprinti:SMD-JUMPER-CONNECTED_TRACE_SLODERMASK` | unmatched |
-| JP2 | 1 | SMD_JUMPER | SMD_JUMPER | `e-radionica.com footprinti:SMD_JUMPER` | unmatched |
 | K1 | 1 | IPX connector with SMA | IPX connector with SMA | `e-radionica.com footprinti:IPX connector with SMA` | unmatched |
-| K2 | 1 | CR1220_HOLDER | CR1220_HOLDER | `e-radionica.com footprinti:CR1220_HOLDER` | unmatched |
-| K3 | 1 | HEADER_MALE_8X1 | HEADER_MALE_8X1 | `e-radionica.com footprinti:HEADER_MALE_8X1` | unmatched |
+| K2 | 1 | Connector Coin Cell Holder through-hole CR1220 | CR1220_HOLDER | `e-radionica.com footprinti:CR1220_HOLDER` | [`electronic_connector_coin_cell_holder_through_hole_cr1220`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_coin_cell_holder_through_hole_cr1220) |
+| K3 | 1 | Connector Header PZ254V-12-8P | HEADER_MALE_8X1 | `e-radionica.com footprinti:HEADER_MALE_8X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
 | Q1 | 1 | NPN-SOT-23-3 | NPN-SOT-23-3 | `e-radionica.com footprinti:SOT-23-3` | unmatched |
 | R1 | 1 | Resistor 5100 Ohm 0603 | 5k1 | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_5100_ohm) |
 | R2 | 1 | Resistor 4700 Ohm 0603 | 4k7 | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
 | R3, R4, R5, R7, R8 | 5 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R6 | 1 | Resistor 47000 Ohm 0603 | 47k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_47000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_47000_ohm) |
 | R9, R10 | 2 | Resistor 2200 Ohm 0402 | 2k2 | `e-radionica.com footprinti:0402R` | [`electronic_resistor_0402_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) |
-| U1 | 1 | NMOS-DUAL | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | unmatched |
+| U1 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
 | U2 | 1 | L86-M33 | L86-M33 | `e-radionica.com footprinti:L86-M33` | unmatched |
 | U3 | 1 | SE5218 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
 
@@ -131,11 +129,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 38.0 mm by 54.0 mm.
-- Placement data contains 29 front-side and 0 back-side components.
+- Placement data contains 25 front-side and 0 back-side components.
 
 ## Review notes
 
-- 33 physical component records are not yet matched to an OOMP part.
+- 4 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current/data/generated_data/browser_research_queue.md)
@@ -144,7 +142,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_hardware_design_sensor_gnss_l86m33_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 10
+- Matched OOMP source parts copied: 15
 
 ## Source files
 

@@ -1,4 +1,4 @@
-count: 8
+count: 5
 components:
 - reference: A1
   fields:
@@ -45,6 +45,10 @@ components:
     reasons:
     - Component family was inferred, but package size was not.
     candidates:
+    - oomp_id: electronic_diode_schottky_0402
+      score: 0.3542
+      reasons:
+      - same component family
     - oomp_id: electronic_diode_schottky_sod_123_ss14
       score: 0.3521
       reasons:
@@ -59,10 +63,6 @@ components:
       - same component family
     - oomp_id: electronic_diode_schottky_sod_323_bat54w
       score: 0.3341
-      reasons:
-      - same component family
-    - oomp_id: electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu
-      score: 0.2967
       reasons:
       - same component family
   generated_directory: components/D1
@@ -112,95 +112,6 @@ components:
     - No supported OOMP component family could be inferred.
     candidates: []
   generated_directory: components/SW1
-- reference: U1
-  fields:
-    reference: U1
-    value: CH340C
-    footprint: Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
-    library_id: Interface_USB:CH340C
-    mpn: ''
-    manufacturer: ''
-  match:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: electronic_connector_usb_c_surface_mount_16_pin
-    inferred:
-      kind: connector
-      package_size: null
-      value: CH340C
-      mpn: null
-    reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      score: 0.3497
-      reasons:
-      - same component family
-    - oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
-      score: 0.3466
-      reasons:
-      - same component family
-    - oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_16_pin_jst_bm16b_srss_tb
-      score: 0.2868
-      reasons:
-      - same component family
-    - oomp_id: electronic_connector_jst_ph_2_mm_pitch_surface_mount_vertical_16_pin_jst_b16b_ph_sm4_tb
-      score: 0.2851
-      reasons:
-      - same component family
-    - oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_16_pin
-      score: 0.2795
-      reasons:
-      - same component family
-  generated_directory: components/U1
-- reference: U2
-  fields:
-    reference: U2
-    value: ATmega328P-A
-    footprint: Package_QFP:TQFP-32_7x7mm_P0.8mm
-    library_id: MCU_Microchip_ATmega:ATmega328P-A
-    mpn: ''
-    manufacturer: ''
-  match:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
-    inferred:
-      kind: null
-      package_size: null
-      value: ATmega328P-A
-      mpn: null
-    reasons:
-    - No supported OOMP component family could be inferred.
-    candidates: []
-  generated_directory: components/U2
-- reference: U3
-  fields:
-    reference: U3
-    value: AMS1117-5V
-    footprint: Package_TO_SOT_SMD:SOT-223-3_TabPin2
-    library_id: Regulator_Linear:AMS1117
-    mpn: ''
-    manufacturer: ''
-  match:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
-    inferred:
-      kind: null
-      package_size: null
-      value: AMS1117-5V
-      mpn: null
-    reasons:
-    - No supported OOMP component family could be inferred.
-    candidates: []
-  generated_directory: components/U3
 - reference: U4
   fields:
     reference: U4

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad project containing 154 extracted component records. The catalogue matcher linked 31 physical placements to OOMP parts.
+Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad project containing 154 extracted component records. The catalogue matcher linked 37 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,10 +19,10 @@ Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad pro
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 109 |
-| Matched OOMP components | 31 |
-| Unmatched physical components | 75 |
-| Front-side placements | 44 |
-| Back-side placements | 8 |
+| Matched OOMP components | 37 |
+| Unmatched physical components | 11 |
+| Front-side placements | 43 |
+| Back-side placements | 1 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -94,17 +94,14 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C3, C8 | 2 | Capacitor 1 uF 0603 | 1.0uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
 | C6, C7 | 2 | Capacitor 47 pF 0603 | 47pF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_47_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_47_pico_farad) |
 | D1 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
-| D2, D3 | 2 | PESD3V3L4UG | PESD3V3L4UG | `SparkFun-Semiconductor-Standard:SOT-353` | unmatched |
+| D2, D3 | 2 | Diode PESD3V3L4UG SOT-353 | PESD3V3L4UG | `SparkFun-Semiconductor-Standard:SOT-353` | [`electronic_diode_esd_array_sot_353_nexperia_pesd3v3l4ug`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_esd_array_sot_353_nexperia_pesd3v3l4ug) |
 | D4 | 1 | LED Yellow 0603 | Yellow | `SparkFun-LED:LED_0603_1608Metric_Yellow` | [`electronic_led_0603_yellow`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_yellow) |
 | D5, D7, D8 | 3 | Diode Schottky SOD-323 | PMEG4005EJ | `SparkFun-Semiconductor-Standard:SOD-323` | [`electronic_diode_schottky_sod_323_bat54w`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_bat54w) |
-| D6 | 1 |  PESD0402 |  PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | unmatched |
-| FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
+| D6 | 1 | Diode PESD0402 0402 |  PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | [`electronic_diode_esd_0402_littelfuse_pesd0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_esd_0402_littelfuse_pesd0402) |
 | J1 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
 | J2 | 1 | Connector Header KH-2.54PH180-1X9P-L11.5 | Conn_01x09 | `SparkFun-Connector:1x09` | [`electronic_connector_header_2_54_mm_pitch_through_hole_9_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_9_pin) |
 | J4 | 1 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
-| J5 | 1 | Val** | Val** | `SparkFun-Connector:SMA_Edge` | unmatched |
-| JP1, JP2, JP3, JP4, JP7, JP8 | 6 | ~ | ~ | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
-| JP5 | 1 | Measure | Measure | `SparkFun-Jumper:Jumper_2_PTH_SMD_Combo-NC` | unmatched |
+| J5 | 1 | Connector Sma Edge Mount | Val** | `SparkFun-Connector:SMA_Edge` | [`electronic_connector_sma_edge_mount`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_sma_edge_mount) |
 | JP6 | 1 | ~ | ~ | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
 | L1 | 1 | 33nH | 33nH | `SparkFun-Capacitor:C_0603_1608Metric` | unmatched |
 | L2 | 1 | 30Ohm | 30Ohm | `SparkFun-Capacitor:C_0603_1608Metric` | unmatched |
@@ -116,11 +113,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R7 | 1 | Resistor 1000 Ohm 0603 | 1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R12 | 1 | Resistor 10000 Ohm 0603 | 10k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R15, R16, R29, R30, R31, R34 | 6 | Resistor 33 Ohm 0603 | 33 | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_33_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_33_ohm) |
-| U1 | 1 | DT1042-04SO | DT1042-04SO | `SparkFun-Semiconductor-Standard:SOT23-6` | unmatched |
+| U1 | 1 | Diode DT1042-04SO SOT-26 | DT1042-04SO | `SparkFun-Semiconductor-Standard:SOT23-6` | [`electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so) |
 | U2 | 1 | AP2112K-3.3 | AP2112K-3.3 | `SparkFun-Semiconductor-Standard:SOT23-5` | unmatched |
 | U3 | 1 | NEO-F10N | NEO-F10N | `SparkFun-GPS:NEO-M9N_M8T_M8U_D9S_F9P_F10N` | unmatched |
-| U7 | 1 | ~ | ~ | `SparkFun-Aesthetic:Ordering_Instructions` | unmatched |
-| U8 | 1 | CH340C | CH340C | `SparkFun-Semiconductor-Standard:SO-16` | unmatched |
+| U8 | 1 | USB-Serial CH340C SOP-16 | CH340C | `SparkFun-Semiconductor-Standard:SO-16` | [`electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch340c`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch340c) |
 
 ## Main nets
 
@@ -150,11 +146,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 50.8 mm by 38.1 mm.
-- Placement data contains 44 front-side and 8 back-side components.
+- Placement data contains 43 front-side and 1 back-side components.
 
 ## Review notes
 
-- 75 physical component records are not yet matched to an OOMP part.
+- 11 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/browser_research_queue.md)
@@ -163,7 +159,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 16
+- Matched OOMP source parts copied: 21
 
 ## Source files
 

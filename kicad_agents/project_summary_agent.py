@@ -574,8 +574,15 @@ def _rotate_point(x, y, rotation):
     return rotated_x, rotated_y
 
 
-def _orientation_rotation(svg_width, svg_height, local_bounds_record, pads, pin_one_svg):
-    """Choose the rotation whose SVG pin-one direction meets PCB pad 1."""
+def _orientation_rotation(
+    svg_width,
+    svg_height,
+    local_bounds_record,
+    pads,
+    pin_one_svg,
+    pin_positions=None,
+):
+    """Choose the rotation whose SVG pin positions land on the PCB pads."""
     local_width = local_bounds_record["max_x"] - local_bounds_record["min_x"]
     local_height = local_bounds_record["max_y"] - local_bounds_record["min_y"]
     svg_is_wide = svg_width >= svg_height
@@ -583,6 +590,45 @@ def _orientation_rotation(svg_width, svg_height, local_bounds_record, pads, pin_
     rotations = [0, 180]
     if svg_is_wide != footprint_is_wide:
         rotations = [90, -90]
+
+    local_center_x = (local_bounds_record["min_x"] + local_bounds_record["max_x"]) / 2
+    local_center_y = (local_bounds_record["min_y"] + local_bounds_record["max_y"]) / 2
+
+    # Preferred fit: least-squares over every pad the drawing and the footprint
+    # share.  A single pin-one marker cannot tell a rotation from the mirrored
+    # placement whenever the marker is off the pad row's axis, which used to
+    # stand right-angle connectors on end.
+    pad_positions_by_number = {}
+    for pad in pads:
+        pad_number = str(pad.get("number", "")).strip().upper()
+        local_position = pad.get("local_position")
+        if pad_number and isinstance(local_position, dict) and "x" in local_position and "y" in local_position:
+            pad_positions_by_number.setdefault(pad_number, local_position)
+    if pin_positions:
+        paired = []
+        for pin_position in pin_positions:
+            pad_position = pad_positions_by_number.get(str(pin_position.get("number", "")).strip().upper())
+            if pad_position is not None:
+                paired.append((float(pin_position["x"]), float(pin_position["y"]), float(pad_position["x"]), float(pad_position["y"])))
+        if len(paired) >= 2:
+            best_rotation = rotations[0]
+            best_score = None
+            for rotation in rotations:
+                radians = math.radians(rotation)
+                cosine = math.cos(radians)
+                sine = math.sin(radians)
+                score = 0.0
+                for svg_x, svg_y, pad_x, pad_y in paired:
+                    source_x = svg_x - svg_width / 2
+                    source_y = svg_y - svg_height / 2
+                    rotated_x = source_x * cosine - source_y * sine
+                    rotated_y = source_x * sine + source_y * cosine
+                    score += (local_center_x + rotated_x - pad_x) ** 2
+                    score += (local_center_y + rotated_y - pad_y) ** 2
+                if best_score is None or score < best_score - 0.000001:
+                    best_score = score
+                    best_rotation = rotation
+            return best_rotation
 
     if (
         not isinstance(pin_one_svg, dict)
@@ -613,8 +659,6 @@ def _orientation_rotation(svg_width, svg_height, local_bounds_record, pads, pin_
 
     source_x = float(pin_one_svg["x"]) - svg_width / 2
     source_y = float(pin_one_svg["y"]) - svg_height / 2
-    local_center_x = (local_bounds_record["min_x"] + local_bounds_record["max_x"]) / 2
-    local_center_y = (local_bounds_record["min_y"] + local_bounds_record["max_y"]) / 2
     target_x = float(pad_one.get("x", local_center_x)) - local_center_x
     target_y = float(pad_one.get("y", local_center_y)) - local_center_y
 
@@ -669,12 +713,30 @@ def _read_assembly_svg(svg_path):
         if identifiers_match is not None:
             pin_one_svg["identifiers"] = identifiers_match.group(1).split("|")
 
+    pin_positions = []
+    positions_match = re.search(r'data-pin-positions\s*=\s*"([^"]+)"', svg_text)
+    if positions_match is not None:
+        for position_entry in positions_match.group(1).split("|"):
+            number_text, _, coordinates = position_entry.partition("@")
+            x_text, _, y_text = coordinates.partition(",")
+            try:
+                pin_positions.append(
+                    {
+                        "number": number_text.strip(),
+                        "x": float(x_text),
+                        "y": float(y_text),
+                    }
+                )
+            except ValueError:
+                continue
+
     return {
         "width": svg_width,
         "height": svg_height,
         "view_box": view_box_match.group(1),
         "inner_svg": svg_text[opening_end + 1 : closing_start].strip(),
         "pin_one": pin_one_svg,
+        "pin_positions": pin_positions,
     }
 
 
@@ -694,6 +756,7 @@ def _inline_svg(svg_path, local_bounds_record, pads):
         local_bounds_record,
         pads,
         svg_details["pin_one"],
+        pin_positions=svg_details.get("pin_positions"),
     )
 
     return (
@@ -722,6 +785,7 @@ def _designator_bounds(svg_path, local_bounds_record, pads, board_rotation, fall
         local_bounds_record,
         pads,
         svg_details["pin_one"],
+        pin_positions=svg_details.get("pin_positions"),
     )
     if abs(orientation_rotation) % 180 == 90:
         designator_width, designator_height = designator_height, designator_width
@@ -796,7 +860,7 @@ def _make_board_svg(
         f'.mechanical-pad {{ fill: var(--brd-page, {colors["background"]}); stroke: var(--brd-component-outline, {colors["component_outline"]}); stroke-width: {svg_style["mechanical_pad_stroke_width_mm"]}; }}',
         f'.mounting-hole {{ fill: var(--brd-page, {colors["background"]}); stroke: var(--brd-component-outline, {colors["component_outline"]}); stroke-width: {svg_style["mounting_hole_stroke_width_mm"]}; }}',
         f'.reference {{ fill: var(--brd-text, {colors["text"]}); font-family: {typography["family"]}; font-size: {typography["reference_size_mm"]}px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, {colors["background"]}); stroke-width: 0.35px; }}',
-        '.indicator-plate { fill: var(--brd-plate, #FFFFFF); }',
+        '.indicator-plate { fill: var(--brd-plate, #FFFFFF); fill-opacity: .55; }',
         '.indicator-text { fill: var(--brd-plate-text, #000000); }',
         "</style>",
         "</defs>",
@@ -881,7 +945,11 @@ def _make_board_svg(
         reference = str(row["reference"])
         value_text = str(row.get("value") or "").strip()
         maximum_reference_size = float(typography["reference_size_mm"])
-        width_reference_size = placed_width * 0.72 / max(1.0, len(reference) * 0.68)
+        # Bold caps in Arial run close to 0.76 em per character; estimating
+        # narrower let long text outrun its plate and made small parts look
+        # oversized.  The 0.34 body-height cap keeps a two-line block well
+        # inside the part instead of filling it edge to edge.
+        width_reference_size = placed_width * 0.72 / max(1.0, len(reference) * 0.76)
         if value_text and value_text.upper() not in ("DNF", "DNA", "N/A"):
             # Two-line indicator: reference on top, value in a smaller font
             # underneath.  Both sizes shrink until the whole text block fits
@@ -890,28 +958,28 @@ def _make_board_svg(
             reference_size = min(
                 maximum_reference_size,
                 width_reference_size,
-                placed_height * 0.42,
+                placed_height * 0.34,
             )
             value_size = min(
                 reference_size * 0.66,
-                placed_width * 0.72 / max(1.0, len(value_text) * 0.60),
-                placed_height * 0.22,
+                placed_width * 0.72 / max(1.0, len(value_text) * 0.64),
+                placed_height * 0.20,
             )
-            if value_size < 0.1:
+            if value_size < 0.055:
                 value_text = ""
         else:
             value_text = ""
             reference_size = min(
                 maximum_reference_size,
                 width_reference_size,
-                placed_height * 0.42,
+                placed_height * 0.34,
             )
         if value_text:
             # Size the white plate from the real text extents so small parts
             # (0402 resistors, SOT diodes) never have the reference poking
             # above the plate or the pair spilling out of the body.
-            reference_baseline = -(value_size * 0.72)
-            value_baseline = reference_size * 0.72
+            reference_baseline = -(value_size * 0.58)
+            value_baseline = reference_size * 0.58
             text_top = reference_baseline - reference_size * 0.78
             text_bottom = value_baseline + value_size * 0.28
             block_height = text_bottom - text_top
@@ -919,24 +987,24 @@ def _make_board_svg(
             if shrink < 1.0:
                 reference_size *= shrink
                 value_size *= shrink
-                reference_baseline = -(value_size * 0.72)
-                value_baseline = reference_size * 0.72
+                reference_baseline = -(value_size * 0.58)
+                value_baseline = reference_size * 0.58
                 text_top = reference_baseline - reference_size * 0.78
                 text_bottom = value_baseline + value_size * 0.28
                 block_height = text_bottom - text_top
             indicator_width = min(
                 placed_width * 0.9,
-                max(len(reference) * reference_size * 0.68, len(value_text) * value_size * 0.60)
-                + reference_size * 0.5,
+                max(len(reference) * reference_size * 0.76, len(value_text) * value_size * 0.64)
+                + reference_size * 0.4,
             )
             indicator_height = block_height + reference_size * 0.16
             value_font_size = value_size
         else:
-            reference_baseline = reference_size * 0.34
+            reference_baseline = reference_size * 0.30
             text_top = reference_baseline - reference_size * 0.78
             text_bottom = reference_baseline + reference_size * 0.28
-            indicator_width = min(placed_width * 0.82, len(reference) * reference_size * 0.68 + reference_size * 0.5)
-            indicator_height = min(placed_height * 0.60, reference_size * 1.35)
+            indicator_width = min(placed_width * 0.82, len(reference) * reference_size * 0.76 + reference_size * 0.4)
+            indicator_height = min(placed_height * 0.60, reference_size * 1.25)
             value_font_size = 0.0
         plate_top = min(text_top - reference_size * 0.08, -indicator_height / 2)
         value_element = ""

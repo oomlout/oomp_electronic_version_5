@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_hanqaqa_easyduino_stm32f103_bluepill_current/data/generated_data/src/board_300.png)
 
-Project hanqaqa/easyduino STM32F103 Bluepill current is a KiCad project containing 65 extracted component records. The catalogue matcher linked 28 physical placements to OOMP parts.
+Project hanqaqa/easyduino STM32F103 Bluepill current is a KiCad project containing 65 extracted component records. The catalogue matcher linked 29 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project hanqaqa/easyduino STM32F103 Bluepill current is a KiCad project containi
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 65 |
-| Matched OOMP components | 28 |
-| Unmatched physical components | 2 |
+| Matched OOMP components | 29 |
+| Unmatched physical components | 1 |
 | Front-side placements | 28 |
 | Back-side placements | 2 |
 | Project version | `current` |
@@ -92,7 +92,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R5 | 1 | Resistor 1500 Ohm 0402 | 1.5k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_1500_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1500_ohm) |
 | R6, R7 | 2 | Resistor 1000 Ohm 0402 | 1k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1000_ohm) |
 | SW1, SW2 | 2 | Switch TS-1088-AR02016 TACTILE | SW_Push | `Bluepill_Library:ALPSALPINE_SKRPACE010` | [`electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016) |
-| U1 | 1 | XC6206P332MR | XC6206P332MR | `Package_TO_SOT_SMD:SOT-23-3` | unmatched |
+| U1 | 1 | Regulator XC6206P332MR 3.3V SOT-23 | XC6206P332MR | `Package_TO_SOT_SMD:SOT-23-3` | [`electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_xc6206p332mr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_xc6206p332mr) |
 | U2 | 1 | STM32F103C8Tx | STM32F103C8Tx | `Package_QFP:LQFP-48_7x7mm_P0.5mm` | unmatched |
 | Y1 | 1 | Crystal 8 MHz 20 pF 5032 2-pin | 8MHz | `Crystal:Crystal_SMD_5032-2Pin_5.0x3.2mm` | [`electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf) |
 | Y2 | 1 | Crystal 32.768 kHz 12.5 pF 3215 2-pin | 32.768kHz | `Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm` | [`electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf) |
@@ -129,7 +129,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 2 physical component records are not yet matched to an OOMP part.
+- 1 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_stm32f103_bluepill_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_stm32f103_bluepill_current/data/generated_data/browser_research_queue.md)
@@ -138,7 +138,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_stm32f103_bluepill_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 14
+- Matched OOMP source parts copied: 15
 
 ## Source files
 

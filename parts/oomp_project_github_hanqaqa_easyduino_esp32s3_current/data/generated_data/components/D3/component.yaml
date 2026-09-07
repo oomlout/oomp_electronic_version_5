@@ -589,10 +589,10 @@ connectivity_cross_check:
   disagree_count: 0
   incomplete_count: 0
 oomp:
-  status: unmatched
-  accepted: false
-  oomp_id: null
-  confidence: 0.0
+  status: matched
+  accepted: true
+  oomp_id: electronic_diode_schottky_0402
+  confidence: 1.0
   proposed_oomp_id: electronic_diode_schottky_0402
   inferred:
     kind: diode
@@ -600,30 +600,9 @@ oomp:
     value: D_Schottky
     mpn: null
   reasons:
-  - The exact normalized component is not present in the OOMP parts directory.
-  candidates:
-  - oomp_id: electronic_diode_schottky_sod_523_1ss400
-    score: 0.3982
-    reasons:
-    - same component family
-  - oomp_id: electronic_diode_schottky_sod_123_ss14
-    score: 0.3961
-    reasons:
-    - same component family
-  - oomp_id: electronic_diode_schottky_sod_323_bat54w
-    score: 0.3882
-    reasons:
-    - same component family
-  - oomp_id: electronic_diode_schottky_sod_323_infineon_bat60a
-    score: 0.3476
-    reasons:
-    - same component family
-  - oomp_id: electronic_diode_esd_0402_littelfuse_pesd0402
-    score: 0.3328
-    reasons:
-    - same component family
-    - same package size
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
 category: diode
-category_source: unmatched_kicad_hint
+category_source: oomp_populate
 category_name: Diode
 generated_directory: components/D3

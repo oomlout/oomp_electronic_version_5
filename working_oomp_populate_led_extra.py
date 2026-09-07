@@ -10,6 +10,24 @@ def main(**kwargs):
         part["product_url"] = "https://www.lcsc.com/product-detail/C434447.html"
         part["datasheet_url"] = "https://www.lcsc.com/datasheet/C434447.pdf"
 
+    # WS2812B parts carry four functional pins on their PLCC4-style bodies
+    # (Worldsemi datasheet: 1 VDD, 2 DOUT, 3 VSS, 4 DIN); the 5050 body's
+    # sixth-pad corners are not connected.
+    ws2812b_parts = [
+        "electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w",
+        "electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc",
+    ]
+    for current in ws2812b_parts:
+        if current not in extras_dict:
+            continue
+        extras_dict[current]["pins"] = {}
+        pins = [["1", "vdd"], ["2", "data_out"], ["3", "gnd"], ["4", "data_in"]]
+        for pin_index in range(len(pins)):
+            pin = pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0], "name": pin[1], "type": "signal"
+            }
+
     led_parts = [
         [
             "electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e",

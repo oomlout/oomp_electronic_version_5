@@ -199,6 +199,13 @@ def _style():
   --copper-inner-1: #9333ea;
   --copper-inner-2: #16803c;
   --copper-multilayer: #674b26;
+  /* Quieter cousins of the layer colours: the unselected copper keeps just
+     enough hue to read its layer while the components stay legible. */
+  --copper-front-muted: #c9988a;
+  --copper-back-muted: #8298cc;
+  --copper-inner-1-muted: #b58fcf;
+  --copper-inner-2-muted: #6da385;
+  --copper-multilayer-muted: #96876f;
   --shadow: 0 18px 50px rgba(20, 20, 20, .14);
   --radius: 18px;
   --selection-status-height: 180px;
@@ -237,6 +244,11 @@ html[data-theme="dark"] {
   --copper: #93a1ad;
   --net: #ff7a45;
   --selected-pin: #3fb7c9;
+  --copper-front-muted: #a9776a;
+  --copper-back-muted: #6f87b0;
+  --copper-inner-1-muted: #9a7fb3;
+  --copper-inner-2-muted: #61917a;
+  --copper-multilayer-muted: #8d8168;
   --shadow: 0 18px 50px rgba(0, 0, 0, .55);
   --header-bg: #0b0c0f;
   --header-muted: #8f959d;
@@ -275,6 +287,11 @@ html[data-theme="rainbow"] {
   --copper-inner-1: #70e000;
   --copper-inner-2: #9d4edd;
   --copper-multilayer: #ffb703;
+  --copper-front-muted: #d5a08d;
+  --copper-back-muted: #83c4d1;
+  --copper-inner-1-muted: #a9c470;
+  --copper-inner-2-muted: #bb8ed2;
+  --copper-multilayer-muted: #d3b268;
   --sch-page: #fffbf2;
   --sch-ink: #6d28d9;
   --sch-muted: #c2410c;
@@ -388,9 +405,9 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .schematic-view .sch-wire-hit.on-net { stroke: var(--net); stroke-opacity: .25; }
 .schematic-view .sch-junction.on-net { fill: var(--net); }
 .schematic-view.has-net .sch-wire:not(.on-net), .schematic-view.has-net .sch-wire-hit:not(.on-net) { opacity: .18; }
-.schematic-view .sch-global.on-net .sch-label-pill { fill: var(--net); }
+.schematic-view .sch-global.on-net .sch-label-pill { fill: var(--net); fill-opacity: 1; }
 .schematic-view .sch-global.on-net .sch-label-pill-text { fill: #ffffff; }
-.schematic-view .sch-label-tag.on-net .sch-label-pill { fill: var(--net); stroke: var(--net); }
+.schematic-view .sch-label-tag.on-net .sch-label-pill { fill: var(--net); stroke: var(--net); fill-opacity: 1; }
 .schematic-view .sch-label-tag.on-net .sch-label-pill-text { fill: #ffffff; }
 .schematic-view .sch-label.on-net { fill: var(--net); font-weight: 700; }
 .board-stage .board-component { cursor: pointer; outline: none; transition: opacity .13s ease; shape-rendering: geometricPrecision; }
@@ -421,7 +438,7 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .facts dd { margin: 0; overflow-wrap: anywhere; }
 .pinout { height: 240px; display: grid; place-items: center; margin: 12px 0; padding: 10px; border: 1px solid var(--line); border-radius: 14px; background: white; overflow: hidden; touch-action: none; cursor: grab; }
 .pinout.is-panning { cursor: grabbing; }
-.pinout svg { width: 100%; height: 100%; max-height: none; will-change: transform; transform-origin: 0 0; }
+.pinout svg { width: 100%; height: 100%; max-height: none; }
 .pinout.sch-preview { background: var(--sch-page); }
 .pin-table { width: 100%; border-collapse: collapse; font-size: 12px; }
 .pin-table th, .pin-table td { padding: 6px; border-bottom: 1px solid var(--line); text-align: left; }
@@ -444,7 +461,7 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .board-toolbar label { font-size: 11px; white-space: nowrap; }
 .board-toolbar input { width: auto; }
 .net-selection-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; max-width: 100%; }
-.copper-feature { color: var(--copper); cursor: pointer; shape-rendering: geometricPrecision; }
+.copper-feature { color: var(--layer-color, var(--copper)); cursor: pointer; shape-rendering: geometricPrecision; }
 .copper-segment, .copper-arc, .copper-via { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
 .copper-pad, .copper-zone { fill: currentColor; stroke: none; }
 .copper-base .copper-feature { opacity: .48; }
@@ -452,7 +469,7 @@ input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-r
 .copper-base .copper-pad { opacity: .28; }
 .copper-feature.layer-hidden, .copper-feature.fill-hidden { display: none; }
 .board-stage.hide-traces .copper-base { display: none; }
-.board-stage.has-net .copper-base .copper-feature { opacity: .10; }
+.board-stage.has-net .copper-base .copper-feature { opacity: .18; }
 .board-stage.has-net .board-component { opacity: .25; }
 .board-stage.has-net .board-component.on-net { opacity: 1; }
 .board-stage.has-net .board-component.is-active { opacity: 1; }
@@ -532,8 +549,15 @@ if (schematicSvg) {
   boardViewports.set(schematicSvg, {original, originalText, target: [...original], box: [...original], scale: 1});
 }
 // Schematic wires and labels are tagged with plain net names; the copper data
-// keys its nets by id, so keep the bridge handy in both directions.
-const netIdByName = new Map(copper.nets.map(net => [net.name, net.id]));
+// keys its nets by id, so keep the bridge handy in both directions.  KiCad
+// prefixes hierarchical net names with their sheet path ("/PB5") while the
+// sheet labels carry the bare name, so index that spelling too.
+const netIdByName = new Map();
+copper.nets.forEach(net => {
+  if (!netIdByName.has(net.name)) netIdByName.set(net.name, net.id);
+  const bare = net.name.split('/').pop();
+  if (bare && bare !== net.name && !netIdByName.has(bare)) netIdByName.set(bare, net.id);
+});
 // Unlabelled sheet runs only carry a run id; their copper net is recovered
 // through any pin sitting on the run (the part's PCB pad knows its net).
 const padNetByPin = new Map();
@@ -556,15 +580,21 @@ let manualSchematicRun = '';
 // get evenly spaced hues without changing the familiar front/back colours.
 const layerColors = {'F.Cu': 'var(--copper-front)', 'B.Cu': 'var(--copper-back)',
   'In1.Cu': 'var(--copper-inner-1)', 'In2.Cu': 'var(--copper-inner-2)'};
+// The unselected copper reads a step quieter than the highlighted overlay,
+// keeping each layer's hue while letting the components come forward.
+const layerColorsMuted = {'F.Cu': 'var(--copper-front-muted)', 'B.Cu': 'var(--copper-back-muted)',
+  'In1.Cu': 'var(--copper-inner-1-muted)', 'In2.Cu': 'var(--copper-inner-2-muted)'};
 copper.layers.forEach((layer, index) => {
   if (!layerColors[layer]) layerColors[layer] = `hsl(${(index * 137.5) % 360} 65% 38%)`;
+  if (!layerColorsMuted[layer]) layerColorsMuted[layer] = `hsl(${(index * 137.5) % 360} 30% 55%)`;
 });
 
-function layerColor(element) {
+function layerColor(element, muted = false) {
   const layers = element.dataset.layers.split(' ');
+  const palette = muted ? layerColorsMuted : layerColors;
   const requested = layerSelect.value === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layerSelect.value;
-  if (requested !== 'all' && layers.includes(requested)) return layerColors[requested];
-  return layers.length === 1 ? layerColors[layers[0]] : 'var(--copper-multilayer)';
+  if (requested !== 'all' && layers.includes(requested)) return palette[requested];
+  return layers.length === 1 ? palette[layers[0]] : (muted ? 'var(--copper-multilayer-muted)' : 'var(--copper-multilayer)');
 }
 
 function renderLayerLegend() {
@@ -1035,6 +1065,10 @@ function updateNetHighlight() {
   baseFeatures.forEach(element => {
     element.classList.toggle('layer-hidden', !featureVisible(element));
     element.classList.toggle('fill-hidden', element.classList.contains('copper-zone') && !fills);
+    // Unselected copper keeps a quiet version of its own layer colour so what
+    // remains visible still reads as that layer without shouting over the
+    // highlighted net or the component artwork.
+    element.style.setProperty('--layer-color', layerColor(element, true));
   });
   document.querySelectorAll('.copper-overlay').forEach(overlay => {
     overlay.replaceChildren();
@@ -1057,7 +1091,10 @@ function updateNetHighlight() {
     const netNames = new Set([...netIds].map(id => byNet.get(id).name));
     schematicNetElements.forEach(element => {
       const name = element.dataset.net || runNetByName.get(element.dataset.run) || '';
-      element.classList.toggle('on-net', !!name && netNames.has(name));
+      // Sheet labels use bare net names while copper keys hierarchical ones
+      // ("/PB5"), so resolve through the alias map before comparing.
+      const elementNetId = name ? netIdByName.get(name) : '';
+      element.classList.toggle('on-net', !!elementNetId && netIds.has(elementNetId));
     });
     if (manualSchematicRun) {
       schematicNetElements.forEach(element => {
@@ -1084,7 +1121,7 @@ function updateNetHighlight() {
   } else {
     status.innerHTML = matchingSummary();
   }
-  if (document.getElementById('zoom-to-net').checked) fitSelectedNet();
+  if (document.getElementById('zoom-to-net').checked) fitSelectionViews();
 }
 
 function updateSelectionBoxes() {
@@ -1207,7 +1244,9 @@ function setZoom(nextZoom, clientX = null, clientY = null) {
   const svg = activeBoardSvg(clientX, clientY);
   if (!svg) return;
   const viewport = boardViewports.get(svg);
-  const next = Math.max(0.5, Math.min(12, nextZoom));
+  // Zooming out past the fit view is allowed (down to 15%) so a sheet or
+  // board that opens tightly framed can be pulled back for context.
+  const next = Math.max(0.15, Math.min(12, nextZoom));
   const previous = viewport.scale || 1;
   if (Math.abs(next - previous) < 0.0001) return;
   let anchor = null;
@@ -1261,33 +1300,60 @@ function touchCentroid() {
   };
 }
 
-function fitSelectedNet() {
-  if (!highlightedNetIds().size) { fitBoard(); return; }
-  const view = document.querySelector('.board-view:not([hidden])');
-  const svg = view.querySelector(':scope > svg');
-  const elements = view.querySelectorAll('.copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden)');
-  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-  for (const element of elements) {
-    const box = element.getBBox();
-    // Convert through the SVG matrices so the bottom reflection is included,
-    // but current screen size and zoom never contaminate PCB millimetres.
-    const matrix = svg.getCTM().inverse().multiply(element.getCTM());
-    const corners = [[box.x, box.y], [box.x + box.width, box.y],
-      [box.x, box.y + box.height], [box.x + box.width, box.y + box.height]];
-    for (const [x, y] of corners) {
-      const p = new DOMPoint(x, y).matrixTransform(matrix);
-      minX = Math.min(minX, p.x); minY = Math.min(minY, p.y);
-      maxX = Math.max(maxX, p.x); maxY = Math.max(maxY, p.y);
+function visibleExplorerSvgs() {
+  return [...document.querySelectorAll('.board-view:not([hidden]) > svg, .schematic-view:not([hidden]) > svg')];
+}
+
+function fitSelectionViews() {
+  // With a net active the view frames the highlighted copper (board) or the
+  // lit wires and labels (sheet).  With only components selected — and "zoom
+  // to net" ticked — it frames the selected parts in both windows instead.
+  const componentOnly = highlightedNetIds().size === 0 && selectedReferences.size > 0;
+  if (!highlightedNetIds().size && !componentOnly) { fitBoard(); return; }
+  let fittedAny = false;
+  for (const svg of visibleExplorerSvgs()) {
+    const view = svg.closest('.board-view, .schematic-view');
+    const isSchematic = view.classList.contains('schematic-view');
+    let elements;
+    if (componentOnly) {
+      elements = isSchematic
+        ? svg.querySelectorAll('.sch-symbol.is-active')
+        : svg.querySelectorAll('.board-component.is-active');
+    } else if (isSchematic) {
+      elements = svg.querySelectorAll('.sch-wire.on-net, .sch-label-tag.on-net, .sch-global.on-net, .sch-junction.on-net, .sch-symbol.on-net');
+    } else {
+      elements = svg.querySelectorAll('.copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden), .board-component.on-net');
     }
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    for (const element of elements) {
+      const box = element.getBBox();
+      if (!(box.width > 0) && !(box.height > 0)) continue;
+      // Convert through the SVG matrices so the bottom reflection is included,
+      // but current screen size and zoom never contaminate PCB millimetres.
+      const matrix = svg.getCTM().inverse().multiply(element.getCTM());
+      const corners = [[box.x, box.y], [box.x + box.width, box.y],
+        [box.x, box.y + box.height], [box.x + box.width, box.y + box.height]];
+      for (const [x, y] of corners) {
+        const p = new DOMPoint(x, y).matrixTransform(matrix);
+        minX = Math.min(minX, p.x); minY = Math.min(minY, p.y);
+        maxX = Math.max(maxX, p.x); maxY = Math.max(maxY, p.y);
+      }
+    }
+    if (!Number.isFinite(minX)) continue;
+    // Frame the selection generously: roughly a third of the selection again
+    // on every side, so the zoom keeps some context around what is lit.
+    const pad = Math.max(1.5, Math.max(maxX - minX, maxY - minY) * .3);
+    const viewport = boardViewports.get(svg);
+    viewport.target = [minX - pad, minY - pad, maxX - minX + pad * 2, maxY - minY + pad * 2];
+    viewport.box = [...viewport.target];
+    // Keep the zoom percentage honest: it reads against the original fit view.
+    viewport.scale = Math.max(0.0001, viewport.original[2] / viewport.box[2]);
+    applyViewport(svg, viewport);
+    fittedAny = true;
   }
-  if (!Number.isFinite(minX)) { fitBoard(); return; }
-  const pad = Math.max(.8, Math.max(maxX - minX, maxY - minY) * .12);
-  const viewport = boardViewports.get(svg);
-  viewport.target = [minX - pad, minY - pad, maxX - minX + pad * 2, maxY - minY + pad * 2];
-  viewport.box = [...viewport.target];
-  viewport.scale = 1;
-  zoomScale = 1;
-  applyViewport(svg, viewport);
+  if (!fittedAny) { fitBoard(); return; }
+  const viewport = boardViewports.get(activeBoardSvg());
+  zoomScale = viewport ? Math.min(12, viewport.scale || 1) : 1;
   updateZoomLabel();
 }
 
@@ -1439,33 +1505,63 @@ detail.addEventListener('click', event => {
 // The detail pane's preview boxes (pinout artwork and schematic symbol) are
 // wheel-zoomable and draggable, anchored at the pointer. State lives per
 // rendered box and resets naturally when a new part re-renders the pane.
+// Zooming moves the viewBox instead of CSS-transforming the element, so the
+// browser re-rasterises the vectors at every scale and stays crisp.
 const previewZooms = new WeakMap();
 
-function applyPreviewTransform(container) {
+function previewState(container) {
+  const svg = container.querySelector('svg');
+  if (!svg) return null;
+  let state = previewZooms.get(container);
+  if (!state) {
+    let original = (svg.getAttribute('viewBox') || '').split(/[\s,]+/).map(Number);
+    if (original.length !== 4 || original.some(value => !Number.isFinite(value))) {
+      // Fall back to the mm width/height, which SVG user units match.
+      const width = parseFloat(svg.getAttribute('width')) || 10;
+      const height = parseFloat(svg.getAttribute('height')) || 10;
+      original = [0, 0, width, height];
+    }
+    state = {box: [...original], original};
+    previewZooms.set(container, state);
+  }
+  return state;
+}
+
+function applyPreviewBox(container) {
   const svg = container.querySelector('svg');
   const state = previewZooms.get(container);
   if (!svg || !state) return;
-  svg.style.transform = `translate(${state.x}px, ${state.y}px) scale(${state.s})`;
+  svg.setAttribute('viewBox', state.box.map(value => value.toFixed(4)).join(' '));
+}
+
+function previewScaleAtPointer(container, event) {
+  const svg = container.querySelector('svg');
+  const matrix = svg.getScreenCTM();
+  if (!matrix) return null;
+  return new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse());
 }
 
 detail.addEventListener('wheel', event => {
   const container = event.target.closest('.pinout');
   if (!container || !container.querySelector('svg')) return;
   event.preventDefault();
-  const state = previewZooms.get(container) || {s: 1, x: 0, y: 0};
-  const rect = container.getBoundingClientRect();
-  const anchorX = event.clientX - rect.left;
-  const anchorY = event.clientY - rect.top;
+  const state = previewState(container);
+  if (!state) return;
+  const anchor = previewScaleAtPointer(container, event);
+  if (!anchor) return;
   const deltaUnit = event.deltaMode === 1 ? 16 : 1;
   const factor = Math.exp(Math.max(-1, Math.min(1, -event.deltaY * deltaUnit * 0.0016)));
-  const nextScale = Math.max(1, Math.min(24, state.s * factor));
-  const ratio = nextScale / state.s;
-  state.x = anchorX - (anchorX - state.x) * ratio;
-  state.y = anchorY - (anchorY - state.y) * ratio;
-  state.s = nextScale;
-  if (state.s <= 1.001) { state.s = 1; state.x = 0; state.y = 0; }
-  previewZooms.set(container, state);
-  applyPreviewTransform(container);
+  const current = state.original[2] / state.box[2];
+  const next = Math.max(0.35, Math.min(24, current * factor));
+  const ratio = current / next;
+  const [x, y, width, height] = state.box;
+  state.box = [
+    anchor.x - (anchor.x - x) * ratio,
+    anchor.y - (anchor.y - y) * ratio,
+    width * ratio,
+    height * ratio,
+  ];
+  applyPreviewBox(container);
 }, {passive: false});
 
 let previewPan = null;
@@ -1473,19 +1569,24 @@ let previewPan = null;
 detail.addEventListener('pointerdown', event => {
   const container = event.target.closest('.pinout');
   if (!container || !container.querySelector('svg')) return;
-  const state = previewZooms.get(container) || {s: 1, x: 0, y: 0};
-  previewPan = {container, startX: event.clientX - state.x, startY: event.clientY - state.y};
+  previewPan = {container, last: {x: event.clientX, y: event.clientY}};
   container.classList.add('is-panning');
 });
 
 window.addEventListener('pointermove', event => {
   if (!previewPan) return;
-  const state = previewZooms.get(previewPan.container) || {s: 1, x: 0, y: 0};
-  state.x = event.clientX - previewPan.startX;
-  state.y = event.clientY - previewPan.startY;
-  if (state.s <= 1.001) { state.x = 0; state.y = 0; }
-  previewZooms.set(previewPan.container, state);
-  applyPreviewTransform(previewPan.container);
+  const state = previewState(previewPan.container);
+  if (state) {
+    const point = previewScaleAtPointer(previewPan.container, event);
+    const svg = previewPan.container.querySelector('svg');
+    if (point && svg && svg.getScreenCTM()) {
+      const previous = new DOMPoint(previewPan.last.x, previewPan.last.y).matrixTransform(svg.getScreenCTM().inverse());
+      state.box[0] += previous.x - point.x;
+      state.box[1] += previous.y - point.y;
+      applyPreviewBox(previewPan.container);
+    }
+  }
+  previewPan.last = {x: event.clientX, y: event.clientY};
   event.preventDefault();
 });
 
@@ -1531,7 +1632,7 @@ for (const id of ['copper-layer', 'show-traces', 'show-fills']) {
   document.getElementById(id).addEventListener('change', updateNetHighlight);
 }
 document.getElementById('zoom-to-net').addEventListener('change', event => {
-  if (event.target.checked) fitSelectedNet();
+  if (event.target.checked) fitSelectionViews();
   else fitBoard();
 });
 document.querySelectorAll('.side-button[data-side]').forEach(button => button.addEventListener('click', () => setSide(button.dataset.side)));

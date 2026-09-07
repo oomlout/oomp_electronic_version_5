@@ -20,7 +20,7 @@ Project dangerousprototypes/buspirate5_hardware 5_rev10a is a KiCad project cont
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 504 |
 | Matched OOMP components | 210 |
-| Unmatched physical components | 8 |
+| Unmatched physical components | 2 |
 | Front-side placements | 205 |
 | Back-side placements | 3 |
 | Project version | `5_rev10a` |
@@ -96,7 +96,6 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C408 | 1 | Capacitor 120 pF 0402 | 120pF | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_120_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_120_pico_farad) |
 | D401, D601, D602, D603 | 4 | Diode 1N4148WT SOD-523F | 1N4148WT | `Diode_SMD:D_SOD-523` | [`electronic_diode_switching_sod_523f_onsemi_1n4148wt`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_523f_onsemi_1n4148wt) |
 | D500, D501, D502, D503, D504 | 5 | Diode BAS40T-05 SOT-523 | BAS40T-05 | `Package_TO_SOT_SMD:SOT-523` | [`electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05) |
-| FID1, FID2, FID3, FID4, FID5 | 5 | Fiducial | Fiducial | `Fiducial:Fiducial_1mm_Mask2mm` | unmatched |
 | J201 | 1 | Connector Header KH-2.54FH-1X3P-H8.5 | Conn_01x03 | `Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5) |
 | J202 | 1 | Connector USB-C TYPE-C-31-M-12 | TYPE-C-31-M-12 | `usb-c:HRO_TYPE-C-31-M-12` | [`electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12) |
 | J301 | 1 | Connector Header 2.54-1*10P针 | Conn_01x10 | `Connector_PinHeader_2.54mm:PinHeader_1x10_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_10_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_10_pin) |
@@ -105,7 +104,6 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | LCD201 | 1 | Display QT200H1201 TFT | TFT_20_QT200H1201 | `dp-lcd:TFT_20_QT200H1201` | [`electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201) |
 | LED701, LED704, LED707, LED708, LED712, LED716, LED717, LED720 | 8 | LED SK6812SIDE-A 4020 SIDE VIEW | SK6812-side-a_b | `dp-LED:SK6812-side-a_b` | [`electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a) |
 | LED702, LED703, LED705, LED706, LED710, LED713, LED714, LED715, LED718, LED719 | 10 | LED SK6812MINI-E 3535 | SK6812-mini-e | `dp-LED:SK6812-mini-e` | [`electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_3535_rgb_sk6812_opsco_optoelectronics_sk6812mini_e) |
-| logo1 | 1 | fcc_logo | fcc_logo | `dp-logo:logo_fcc` | unmatched |
 | Q202 | 1 | Transistor MMBT7002K SOT 23 | MMBT7002K | `Package_TO_SOT_SMD:SOT-23` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k) |
 | Q300, Q301, Q302, Q303, Q304, Q305, Q306, Q307, Q402, Q602 | 10 | Transistor BC2301T-2.8A SOT 523 | SI2301 | `Package_TO_SOT_SMD:SOT-523` | [`electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a) |
 | Q401 | 1 | Transistor BCM857BS-7-F SOT 363 6 | BCM857 | `Package_TO_SOT_SMD:SOT-363_SC-70-6` | [`electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f) |
@@ -176,7 +174,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 8 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 - The extractor reports 41 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a/data/generated_data/lcsc_review.yaml)

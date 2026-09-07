@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_analog_output_easy_c_hardware_design_sensor_hall_analog_easyc_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Hall-effect-sensor-breakout-with-analog-output---easyC-hardware-design Hall Effect Analog Output easyC current is a KiCad project containing 36 extracted component records. The catalogue matcher linked 6 physical placements to OOMP parts.
+Project soldered_electronics/Hall-effect-sensor-breakout-with-analog-output---easyC-hardware-design Hall Effect Analog Output easyC current is a KiCad project containing 36 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,10 +19,10 @@ Project soldered_electronics/Hall-effect-sensor-breakout-with-analog-output---ea
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 26 |
-| Matched OOMP components | 6 |
-| Unmatched physical components | 18 |
-| Front-side placements | 10 |
-| Back-side placements | 2 |
+| Matched OOMP components | 12 |
+| Unmatched physical components | 0 |
+| Front-side placements | 9 |
+| Back-side placements | 1 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -81,13 +81,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2 | 2 | Capacitor 100 nF 0603 | 0.1uF | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| FD1, FD2 | 2 | FIDUCIAL | FIDUCIAL | `e-radionica.com footprinti:FIDUCIAL_23` | unmatched |
-| K1, K3 | 2 | easyC-SMD | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | unmatched |
-| K2 | 1 | HEADER-UPDI | HEADER-UPDI | `e-radionica.com footprinti:HEADER-UPDI` | unmatched |
-| K4 | 1 | DSHP03TS-S | DSHP03TS-S | `e-radionica.com footprinti:DSHP03TS-S` | unmatched |
+| K1, K3 | 2 | Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | [`electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf) |
+| K2 | 1 | Connector Header 2.54-1*3P针 | HEADER-UPDI | `e-radionica.com footprinti:HEADER-UPDI` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
+| K4 | 1 | Switch Surface Mount Dpdt Ck DSHP03TS S SLIDE | DSHP03TS-S | `e-radionica.com footprinti:DSHP03TS-S` | [`electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s) |
 | R1, R2 | 2 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| U1 | 1 | SI7211-B-00-IV | SI7211-B-00-IV | `e-radionica.com footprinti:SOT-23-3` | unmatched |
-| U2 | 1 | ATTINY404-SSNR | ATTINY404-SSNR | `e-radionica.com footprinti:SOIC-14` | unmatched |
+| U1 | 1 | IC Sensor Hall Effect Silicon Labs SOT_23_5 | SI7211-B-00-IV | `e-radionica.com footprinti:SOT-23-3` | [`electronic_ic_sot_23_5_sensor_hall_effect_silicon_labs_si7211_b_00_iv`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_sensor_hall_effect_silicon_labs_si7211_b_00_iv) |
+| U2 | 1 | IC Microcontroller 8 Bit Avr Microchip SOIC_14 | ATTINY404-SSNR | `e-radionica.com footprinti:SOIC-14` | [`electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr) |
 
 ## Main nets
 
@@ -111,11 +110,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 22.0 mm by 22.0 mm.
-- Placement data contains 10 front-side and 2 back-side components.
+- Placement data contains 9 front-side and 1 back-side components.
 
 ## Review notes
 
-- 18 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_analog_output_easy_c_hardware_design_sensor_hall_analog_easyc_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_analog_output_easy_c_hardware_design_sensor_hall_analog_easyc_current/data/generated_data/browser_research_queue.md)
@@ -124,7 +123,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_analog_output_easy_c_hardware_design_sensor_hall_analog_easyc_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 8
 
 ## Source files
 

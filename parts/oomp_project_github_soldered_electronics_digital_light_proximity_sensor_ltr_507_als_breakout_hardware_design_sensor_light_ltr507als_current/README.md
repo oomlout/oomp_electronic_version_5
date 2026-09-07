@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design LTR-507ALS Breakout current is a KiCad project containing 70 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
+Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design LTR-507ALS Breakout current is a KiCad project containing 70 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,10 +19,10 @@ Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakou
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 46 |
-| Matched OOMP components | 13 |
-| Unmatched physical components | 37 |
-| Front-side placements | 18 |
-| Back-side placements | 3 |
+| Matched OOMP components | 18 |
+| Unmatched physical components | 2 |
+| Front-side placements | 14 |
+| Back-side placements | 2 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -85,15 +85,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1 | 1 | Capacitor 4.7 uF 0603 | 4u7 | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_4_7_micro_farad) |
 | C2 | 1 | Capacitor 100 nF 0603 | 100n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C3, C4 | 2 | Capacitor 2.2 uF 0603 | 2u2 | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
-| JP1, JP2 | 2 | SMD_JUMPER_3_PAD_TRACE | SMD_JUMPER_3_PAD_TRACE | `e-radionica.com footprinti:SMD_JUMPER_3_PAD_TRACE` | unmatched |
-| JP3 | 1 | JUMPER_3_RIGHT | JUMPER_3_RIGHT | `e-radionica.com footprinti:SMD_JUMPER_3_PAD_CONNECTED_RIGHT` | unmatched |
-| JP4 | 1 | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | `e-radionica.com footprinti:SMD-JUMPER-CONNECTED_TRACE_SLODERMASK` | unmatched |
-| JP5 | 1 | SMD_JUMPER | SMD_JUMPER | `e-radionica.com footprinti:SMD_JUMPER` | unmatched |
-| K1 | 1 | HEADER_MALE_3X1 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | unmatched |
-| K2, K4 | 2 | easyC-SMD | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | unmatched |
-| K3 | 1 | HEADER_MALE_4X1 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | unmatched |
+| K1 | 1 | Connector Header 2.54-1*3P针 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
+| K2, K4 | 2 | Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | [`electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf) |
+| K3 | 1 | Connector Header PZ2.54-S04P-A60 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | R1, R2, R3, R4, R5 | 5 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| U1 | 1 | NMOS-DUAL | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | unmatched |
+| U1 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
 | U2 | 1 | LTR-507ALS-01 | LTR-507ALS-01 | `e-radionica.com footprinti:LTR-507ALS-01` | unmatched |
 | U3 | 1 | SE5218 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
 
@@ -121,11 +117,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 22.0 mm by 38.0 mm.
-- Placement data contains 18 front-side and 3 back-side components.
+- Placement data contains 14 front-side and 2 back-side components.
 
 ## Review notes
 
-- 37 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/browser_research_queue.md)
@@ -134,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

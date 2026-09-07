@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Color-and-gesture-sensor-APDS-9960-breakout-hardware-design APDS-9960 Breakout current is a KiCad project containing 61 extracted component records. The catalogue matcher linked 11 physical placements to OOMP parts.
+Project soldered_electronics/Color-and-gesture-sensor-APDS-9960-breakout-hardware-design APDS-9960 Breakout current is a KiCad project containing 61 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,10 +19,10 @@ Project soldered_electronics/Color-and-gesture-sensor-APDS-9960-breakout-hardwar
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 44 |
-| Matched OOMP components | 11 |
-| Unmatched physical components | 31 |
-| Front-side placements | 19 |
-| Back-side placements | 3 |
+| Matched OOMP components | 17 |
+| Unmatched physical components | 2 |
+| Front-side placements | 15 |
+| Back-side placements | 2 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -83,15 +83,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1, C3 | 2 | Capacitor 1 uF 0603 | 1uF | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
 | C2 | 1 | 68uF | 68uF | `e-radionica.com footprinti:1210C_tantal` | unmatched |
 | C4, C5 | 2 | Capacitor 2.2 uF 0603 | 2.2uF | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
-| JP1, JP2 | 2 | SMD_JUMPER_3_PAD_TRACE | SMD_JUMPER_3_PAD_TRACE | `e-radionica.com footprinti:SMD_JUMPER_3_PAD_TRACE` | unmatched |
-| JP3, JP4 | 2 | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | `e-radionica.com footprinti:SMD-JUMPER-CONNECTED_TRACE_SLODERMASK` | unmatched |
-| JP5 | 1 | SMD_JUMPER | SMD_JUMPER | `e-radionica.com footprinti:SMD_JUMPER` | unmatched |
-| K1, K3 | 2 | easyC-SMD | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | unmatched |
-| K2 | 1 | HEADER_MALE_4X1 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | unmatched |
-| K4 | 1 | HEADER_MALE_3X1 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | unmatched |
+| K1, K3 | 2 | Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | [`electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf) |
+| K2 | 1 | Connector Header PZ2.54-S04P-A60 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
+| K4 | 1 | Connector Header 2.54-1*3P针 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
 | R1, R2, R3, R4, R5 | 5 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| U1 | 1 | APDS-9960 | APDS-9960 | `e-radionica.com footprinti:APDS-9960` | unmatched |
-| U2 | 1 | NMOS-DUAL | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | unmatched |
+| U1 | 1 | Sensor Broadcom Apds 9960 APDS 9960 | APDS-9960 | `e-radionica.com footprinti:APDS-9960` | [`electronic_sensor_apds_9960_broadcom_apds_9960`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_apds_9960_broadcom_apds_9960) |
+| U2 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
 | U3 | 1 | SE5218 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
 
 ## Main nets
@@ -118,11 +115,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 22.0 mm by 38.0 mm.
-- Placement data contains 19 front-side and 3 back-side components.
+- Placement data contains 15 front-side and 2 back-side components.
 
 ## Review notes
 
-- 31 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current/data/generated_data/browser_research_queue.md)
@@ -131,7 +128,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_color_and_gesture_sensor_apds_9960_breakout_hardware_design_sensor_color_gesture_apds9960_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

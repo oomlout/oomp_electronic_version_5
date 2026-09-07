@@ -295,6 +295,8 @@ def get_dimensions_mm(option):
         return {"length": 14.3, "width": 10.6}
 
     package_dimensions = {
+        "3535": [3.5, 3.5],
+        "4020_side_view": [4.0, 2.0],
         "qfn_16_3_mm_x_3_mm": [3.0, 3.0],
         "sop_16": [10.0, 3.9],
         "sot_23_6": [2.9, 1.6],
@@ -321,7 +323,9 @@ def get_dimensions_mm(option):
         return {"length": values[0], "width": values[1]}
 
     if component_type == "resistor_array" and size == "4_x_0402_convex":
-        return {"length": 3.2, "width": 1.6}
+        # Four 0402 elements side by side (Bourns CAY124, Panasonic EXB-V4V):
+        # the 2.0 x 1.0 mm convex body, not the 1206 numbers.
+        return {"length": 2.0, "width": 1.0}
 
     if component_type == "display":
         return {"length": 80.0, "width": 36.0}

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_analog_output_hardware_design_sensor_hall_analog_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Hall-effect-sensor-breakout-with-analog-output-hardware-design Hall Effect Analog Output current is a KiCad project containing 22 extracted component records. The catalogue matcher linked 3 physical placements to OOMP parts.
+Project soldered_electronics/Hall-effect-sensor-breakout-with-analog-output-hardware-design Hall Effect Analog Output current is a KiCad project containing 22 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,9 +19,9 @@ Project soldered_electronics/Hall-effect-sensor-breakout-with-analog-output-hard
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 10 |
-| Matched OOMP components | 3 |
-| Unmatched physical components | 15 |
-| Front-side placements | 3 |
+| Matched OOMP components | 5 |
+| Unmatched physical components | 0 |
+| Front-side placements | 2 |
 | Back-side placements | 1 |
 | Project version | `current` |
 | Git ref | `main` |
@@ -81,9 +81,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1 | 1 | Capacitor 100 nF 0603 | 0.1uF | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| FD1 | 1 | FIDUCIAL | FIDUCIAL | `e-radionica.com footprinti:FIDUCIAL_23` | unmatched |
-| K1 | 1 | HEADER_MALE_3X1 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | unmatched |
-| U1 | 1 | SI7211-B-00-IV | SI7211-B-00-IV | `e-radionica.com footprinti:SOT-23-3` | unmatched |
+| K1 | 1 | Connector Header 2.54-1*3P针 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
+| U1 | 1 | IC Sensor Hall Effect Silicon Labs SOT_23_5 | SI7211-B-00-IV | `e-radionica.com footprinti:SOT-23-3` | [`electronic_ic_sot_23_5_sensor_hall_effect_silicon_labs_si7211_b_00_iv`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_sensor_hall_effect_silicon_labs_si7211_b_00_iv) |
 
 ## Main nets
 
@@ -96,11 +95,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 22.0 mm by 22.0 mm.
-- Placement data contains 3 front-side and 1 back-side components.
+- Placement data contains 2 front-side and 1 back-side components.
 
 ## Review notes
 
-- 15 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_analog_output_hardware_design_sensor_hall_analog_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_analog_output_hardware_design_sensor_hall_analog_current/data/generated_data/browser_research_queue.md)
@@ -109,7 +108,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_analog_output_hardware_design_sensor_hall_analog_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 2
+- Matched OOMP source parts copied: 4
 
 ## Source files
 

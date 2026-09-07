@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_v0_1/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q v0.1 is a KiCad project containing 106 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q v0.1 is a KiCad project containing 106 extracted component records. The catalogue matcher linked 26 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,10 +19,10 @@ Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q v0.1 is a KiCad 
 | Mounting and locating holes | 7 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 82 |
-| Matched OOMP components | 23 |
-| Unmatched physical components | 46 |
-| Front-side placements | 30 |
-| Back-side placements | 6 |
+| Matched OOMP components | 26 |
+| Unmatched physical components | 8 |
+| Front-side placements | 28 |
+| Back-side placements | 2 |
 | Project version | `v0.1` |
 | Git ref | `v01` |
 
@@ -101,29 +101,22 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C11, C14 | 2 | Capacitor 100 nF 0603 | 0.1uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | D1 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
 | D2 | 1 | LED Green 1206 | Green | `SparkFun-LED:LED_1206_Bottom_Green` | [`electronic_led_1206_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_1206_green) |
-| D3 | 1 | PESD0402 | PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | unmatched |
+| D3 | 1 | Diode PESD0402 0402 | PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | [`electronic_diode_esd_0402_littelfuse_pesd0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_esd_0402_littelfuse_pesd0402) |
 | D5 | 1 | Diode Schottky SOD-323 | PMEG4005EJ | `SparkFun-Semiconductor-Standard:SOD-323` | [`electronic_diode_schottky_sod_323_bat54w`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_bat54w) |
-| D7 | 1 | PESD3V3L4UG | PESD3V3L4UG | `SparkFun-Semiconductor-Standard:SOT-353` | unmatched |
-| FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
+| D7 | 1 | Diode PESD3V3L4UG SOT-353 | PESD3V3L4UG | `SparkFun-Semiconductor-Standard:SOT-353` | [`electronic_diode_esd_array_sot_353_nexperia_pesd3v3l4ug`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_esd_array_sot_353_nexperia_pesd3v3l4ug) |
 | J1, J2 | 2 | Connector JST Sh SM04B-SRSS-TB | Qwiic_RA | `SparkFun-Connector:JST_1x04_P1.0mm_Horizontal_SMD` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb) |
 | J4 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
 | J6, J7 | 2 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06_P2.54mm` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
-| JP1 | 1 | LED | LED | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | JP2 | 1 | I2C | I2C | `SparkFun-Jumper:Jumper_3_NO` | unmatched |
-| JP3 | 1 | PPS | PPS | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
-| JP4 | 1 | RX | RX | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
-| JP5 | 1 | TX | TX | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | R2, R4 | 2 | Resistor 5100 Ohm 0603 | 5.1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_5100_ohm) |
 | R3 | 1 | Resistor 4700 Ohm 0603 | 4.7k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
 | R5, R6, R8 | 3 | Resistor 2200 Ohm 0603 | 2.2k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
 | R7 | 1 | Resistor 1000 Ohm 0603 | 1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R10 | 1 | Resistor 100000 Ohm 0603 | 100k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
 | R11, R12 | 2 | Resistor 470 Ohm 0603 | 470 | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_470_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_470_ohm) |
-| TP1 | 1 | TestPoint_0.75mm | TestPoint_0.75mm | `SparkFun-Connector:TestPoint-1.0mm` | unmatched |
-| TP3 | 1 | 0.75mm | 0.75mm | `SparkFun-Connector:TestPoint-1.0mm` | unmatched |
 | U1 | 1 | SAM-M8Q | SAM-M8Q | `SparkFun-GNSS:u-blox_SAM-M8Q` | unmatched |
 | U4 | 1 | CH340E | CH340E | `SparkFun-Semiconductor-Standard:MSOP-10_3x3mm_P0.5mm` | unmatched |
-| U6 | 1 | RT9080-3.3 | RT9080-3.3 | `SparkFun-Semiconductor-Standard:SOT23-5` | unmatched |
+| U6 | 1 | IC Power Management Linear Voltage Regulator 3 3 Volt Richtek SOT_23_5 | RT9080-3.3 | `SparkFun-Semiconductor-Standard:SOT23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_richtek_rt9080_33`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_richtek_rt9080_33) |
 
 ## Main nets
 
@@ -153,11 +146,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 25.4 mm by 25.4 mm.
-- Placement data contains 30 front-side and 6 back-side components.
+- Placement data contains 28 front-side and 2 back-side components.
 
 ## Review notes
 
-- 46 physical component records are not yet matched to an OOMP part.
+- 8 physical component records are not yet matched to an OOMP part.
 - The extractor reports 3 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_v0_1/data/generated_data/lcsc_review.yaml)
@@ -167,7 +160,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_v0_1/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 15
+- Matched OOMP source parts copied: 18
 
 ## Source files
 

@@ -20,9 +20,9 @@ Project sparkfun/SparkFun_Qwiic_Navigation_Switch Qwiic Navigation Switch curren
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 66 |
 | Matched OOMP components | 21 |
-| Unmatched physical components | 44 |
+| Unmatched physical components | 10 |
 | Front-side placements | 3 |
-| Back-side placements | 29 |
+| Back-side placements | 24 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -103,18 +103,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1 | 1 | Capacitor 100 nF 0603 | 0.1uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | D1 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
 | D2 | 1 | LED_RGB | LED_RGB | `SparkFun-LED:LED_1205_RGB_Bottom` | unmatched |
-| FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
 | J1, J3 | 2 | Connector JST Sh SM04B-SRSS-TB | Qwiic_RA | `SparkFun-Connector:JST_SMD_1.0mm-4_RA` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb) |
 | J2 | 1 | Connector Header PZ2.54-S04P-A60 | Conn_01x04 | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | J5 | 1 | Connector Header PZ2.54-S04P-A60 | I2C | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | JP1 | 1 | A0 | A0 | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
 | JP2 | 1 | A1 | A1 | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
 | JP3 | 1 | A2 | A2 | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
-| JP4 | 1 | PWR | PWR | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
-| JP5 | 1 | 5 | 5 | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
-| JP6 | 1 | I²C | I²C | `SparkFun-Jumper:Jumper_3_NC-2_Trace` | unmatched |
-| JP7 | 1 | 6 | 6 | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
-| JP8 | 1 | 7 | 7 | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | R1, R2, R3, R4, R8, R9, R10, R11, R12 | 9 | Resistor 10000 Ohm 0603 | 10k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R5, R6, R15 | 3 | Resistor 1000 Ohm 0603 | 1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R7, R13, R14 | 3 | Resistor 2200 Ohm 0603 | 2.2k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
@@ -149,11 +143,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 25.4 mm by 25.4 mm.
-- Placement data contains 3 front-side and 29 back-side components.
+- Placement data contains 3 front-side and 24 back-side components.
 
 ## Review notes
 
-- 44 physical component records are not yet matched to an OOMP part.
+- 10 physical component records are not yet matched to an OOMP part.
 - The extractor reports 18 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_navigation_switch_qwiic_navigation_switch_current/data/generated_data/lcsc_review.yaml)

@@ -12,7 +12,7 @@ instructions:
 - Record uncertain results as unresolved instead of guessing.
 - Download PDFs with the browser, then import them with the import-datasheet command
   documented in AGENT_GUIDE.md.
-task_count: 15
+task_count: 7
 tasks:
 - task_id: component_research_1
   status: needs_browser_research
@@ -118,9 +118,9 @@ tasks:
   candidate_oomp_ids:
   - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
   - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138
+  - electronic_transistor_sot_363_6_mosfet_n_channel_dual
   - electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
-  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
-  - electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw
+  - electronic_transistor_sot_23_bipolar_pnp_40_volt_600_milliamp_onsemi_mmbt4403
   required_result:
     manufacturer: ''
     manufacturer_part_number: ''
@@ -130,77 +130,6 @@ tasks:
     confidence: ''
     evidence_notes: ''
 - task_id: component_research_6
-  status: needs_browser_research
-  priority: high
-  references:
-  - U8
-  value: CH340C
-  footprint: SparkFun-Semiconductor-Standard:SO-16
-  query: CH340C SparkFun-Semiconductor-Standard:SO-16
-  browser_urls:
-    lcsc_search: https://www.lcsc.com/search?q=CH340C+SparkFun-Semiconductor-Standard%3ASO-16
-    datasheet_search: https://www.google.com/search?q=CH340C+SparkFun-Semiconductor-Standard%3ASO-16+datasheet+pdf
-  current_match_status: unmatched
-  proposed_oomp_id: ''
-  candidate_oomp_ids: []
-  required_result:
-    manufacturer: ''
-    manufacturer_part_number: ''
-    lcsc_part_number: ''
-    datasheet_url: ''
-    confirmed_oomp_id: ''
-    confidence: ''
-    evidence_notes: ''
-- task_id: component_research_7
-  status: needs_browser_research
-  priority: high
-  references:
-  - U1
-  value: DT1042-04SO
-  footprint: SparkFun-Semiconductor-Standard:SOT23-6
-  query: DT1042-04SO SparkFun-Semiconductor-Standard:SOT23-6
-  browser_urls:
-    lcsc_search: https://www.lcsc.com/search?q=DT1042-04SO+SparkFun-Semiconductor-Standard%3ASOT23-6
-    datasheet_search: https://www.google.com/search?q=DT1042-04SO+SparkFun-Semiconductor-Standard%3ASOT23-6+datasheet+pdf
-  current_match_status: unmatched
-  proposed_oomp_id: ''
-  candidate_oomp_ids:
-  - electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so
-  - electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-  - electronic_diode_esd_0402_littelfuse_pesd0402
-  - electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu
-  - electronic_diode_tvs_array_sot_143_littelfuse_sp0503bahtg
-  required_result:
-    manufacturer: ''
-    manufacturer_part_number: ''
-    lcsc_part_number: ''
-    datasheet_url: ''
-    confirmed_oomp_id: ''
-    confidence: ''
-    evidence_notes: ''
-- task_id: component_research_8
-  status: needs_browser_research
-  priority: high
-  references:
-  - JP5
-  value: Measure
-  footprint: SparkFun-Jumper:Jumper_2_PTH_SMD_Combo-NC
-  query: Measure SparkFun-Jumper:Jumper_2_PTH_SMD_Combo-NC
-  browser_urls:
-    lcsc_search: https://www.lcsc.com/search?q=Measure+SparkFun-Jumper%3AJumper_2_PTH_SMD_Combo-NC
-    datasheet_search: https://www.google.com/search?q=Measure+SparkFun-Jumper%3AJumper_2_PTH_SMD_Combo-NC+datasheet+pdf
-  current_match_status: unmatched
-  proposed_oomp_id: ''
-  candidate_oomp_ids: []
-  required_result:
-    manufacturer: ''
-    manufacturer_part_number: ''
-    lcsc_part_number: ''
-    datasheet_url: ''
-    confirmed_oomp_id: ''
-    confidence: ''
-    evidence_notes: ''
-- task_id: component_research_9
   status: needs_browser_research
   priority: high
   references:
@@ -222,133 +151,7 @@ tasks:
     confirmed_oomp_id: ''
     confidence: ''
     evidence_notes: ''
-- task_id: component_research_10
-  status: needs_browser_research
-  priority: high
-  references:
-  - D6
-  value: PESD0402
-  footprint: SparkFun-Capacitor:C_0402_1005Metric
-  query: PESD0402 SparkFun-Capacitor:C_0402_1005Metric
-  browser_urls:
-    lcsc_search: https://www.lcsc.com/search?q=PESD0402+SparkFun-Capacitor%3AC_0402_1005Metric
-    datasheet_search: https://www.google.com/search?q=PESD0402+SparkFun-Capacitor%3AC_0402_1005Metric+datasheet+pdf
-  current_match_status: unmatched
-  proposed_oomp_id: ''
-  candidate_oomp_ids:
-  - electronic_diode_esd_0402_littelfuse_pesd0402
-  - electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-  - electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so
-  - electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu
-  - electronic_diode_schottky_sod_523_1ss400
-  required_result:
-    manufacturer: ''
-    manufacturer_part_number: ''
-    lcsc_part_number: ''
-    datasheet_url: ''
-    confirmed_oomp_id: ''
-    confidence: ''
-    evidence_notes: ''
-- task_id: component_research_11
-  status: needs_browser_research
-  priority: high
-  references:
-  - D2
-  - D3
-  value: PESD3V3L4UG
-  footprint: SparkFun-Semiconductor-Standard:SOT-353
-  query: PESD3V3L4UG SparkFun-Semiconductor-Standard:SOT-353
-  browser_urls:
-    lcsc_search: https://www.lcsc.com/search?q=PESD3V3L4UG+SparkFun-Semiconductor-Standard%3ASOT-353
-    datasheet_search: https://www.google.com/search?q=PESD3V3L4UG+SparkFun-Semiconductor-Standard%3ASOT-353+datasheet+pdf
-  current_match_status: unmatched
-  proposed_oomp_id: ''
-  candidate_oomp_ids:
-  - electronic_diode_esd_array_sot_353_nexperia_pesd3v3l4ug
-  - electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu
-  - electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-  - electronic_diode_tvs_array_sot_143_littelfuse_sp0503bahtg
-  - electronic_diode_esd_0402_littelfuse_pesd0402
-  required_result:
-    manufacturer: ''
-    manufacturer_part_number: ''
-    lcsc_part_number: ''
-    datasheet_url: ''
-    confirmed_oomp_id: ''
-    confidence: ''
-    evidence_notes: ''
-- task_id: component_research_12
-  status: needs_browser_research
-  priority: high
-  references:
-  - J5
-  value: Val**
-  footprint: SparkFun-Connector:SMA_Edge
-  query: Val** SparkFun-Connector:SMA_Edge
-  browser_urls:
-    lcsc_search: https://www.lcsc.com/search?q=Val%2A%2A+SparkFun-Connector%3ASMA_Edge
-    datasheet_search: https://www.google.com/search?q=Val%2A%2A+SparkFun-Connector%3ASMA_Edge+datasheet+pdf
-  current_match_status: unmatched
-  proposed_oomp_id: ''
-  candidate_oomp_ids: []
-  required_result:
-    manufacturer: ''
-    manufacturer_part_number: ''
-    lcsc_part_number: ''
-    datasheet_url: ''
-    confirmed_oomp_id: ''
-    confidence: ''
-    evidence_notes: ''
-- task_id: component_research_13
-  status: needs_browser_research
-  priority: high
-  references:
-  - U7
-  value: '~'
-  footprint: SparkFun-Aesthetic:Ordering_Instructions
-  query: ~ SparkFun-Aesthetic:Ordering_Instructions
-  browser_urls:
-    lcsc_search: https://www.lcsc.com/search?q=~+SparkFun-Aesthetic%3AOrdering_Instructions
-    datasheet_search: https://www.google.com/search?q=~+SparkFun-Aesthetic%3AOrdering_Instructions+datasheet+pdf
-  current_match_status: unmatched
-  proposed_oomp_id: ''
-  candidate_oomp_ids: []
-  required_result:
-    manufacturer: ''
-    manufacturer_part_number: ''
-    lcsc_part_number: ''
-    datasheet_url: ''
-    confirmed_oomp_id: ''
-    confidence: ''
-    evidence_notes: ''
-- task_id: component_research_14
-  status: needs_browser_research
-  priority: high
-  references:
-  - JP1
-  - JP2
-  - JP3
-  - JP4
-  - JP7
-  - JP8
-  value: '~'
-  footprint: SparkFun-Jumper:Jumper_2_NC_Trace
-  query: ~ SparkFun-Jumper:Jumper_2_NC_Trace
-  browser_urls:
-    lcsc_search: https://www.lcsc.com/search?q=~+SparkFun-Jumper%3AJumper_2_NC_Trace
-    datasheet_search: https://www.google.com/search?q=~+SparkFun-Jumper%3AJumper_2_NC_Trace+datasheet+pdf
-  current_match_status: unmatched
-  proposed_oomp_id: ''
-  candidate_oomp_ids: []
-  required_result:
-    manufacturer: ''
-    manufacturer_part_number: ''
-    lcsc_part_number: ''
-    datasheet_url: ''
-    confirmed_oomp_id: ''
-    confidence: ''
-    evidence_notes: ''
-- task_id: component_research_15
+- task_id: component_research_7
   status: needs_browser_research
   priority: high
   references:

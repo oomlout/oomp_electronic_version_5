@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_GNSS_Flex_Breakout GNSS Flex Breakout current is a KiCad project containing 317 extracted component records. The catalogue matcher linked 50 physical placements to OOMP parts.
+Project sparkfun/SparkFun_GNSS_Flex_Breakout GNSS Flex Breakout current is a KiCad project containing 317 extracted component records. The catalogue matcher linked 69 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,10 +19,10 @@ Project sparkfun/SparkFun_GNSS_Flex_Breakout GNSS Flex Breakout current is a KiC
 | Mounting and locating holes | 16 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 231 |
-| Matched OOMP components | 50 |
-| Unmatched physical components | 146 |
+| Matched OOMP components | 69 |
+| Unmatched physical components | 21 |
 | Front-side placements | 80 |
-| Back-side placements | 16 |
+| Back-side placements | 2 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -108,41 +108,36 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C4, C6, C8, C11 | 4 | Capacitor 100 nF 0603 | 0.1uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C5, C9, C10, C12, C13, C14, C16, C17, C20, C21 | 10 | Capacitor 1 uF 0603 | 1.0uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
 | CH342_EN.1 | 1 | ~ | ~ | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
-| D1, D7, D8, D10, D11, D12, D13, D14, D15, D16 | 10 | DF5A5.6LFU | DF5A5.6LFU | `SparkFun-Semiconductor-Standard:SOT-353` | unmatched |
+| D1, D7, D8, D10, D11, D12, D13, D14, D15, D16 | 10 | Diode DF5A5.6LFU SOT-353 | DF5A5.6LFU | `SparkFun-Semiconductor-Standard:SOT-353` | [`electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_sot_353_toshiba_df5a5_6lfu) |
 | D2 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
 | D3 | 1 | LED Blue 0603 | Blue | `SparkFun-LED:LED_0603_1608Metric_Blue` | [`electronic_led_0603_blue`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_blue) |
 | D5 | 1 | LED White 0603 | White | `SparkFun-LED:LED_0603_1608Metric_White` | [`electronic_led_0603_white`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_white) |
 | D6 | 1 | LED Yellow 0603 | Yellow | `SparkFun-LED:LED_0603_1608Metric_Yellow` | [`electronic_led_0603_yellow`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_yellow) |
-| D9, D20 | 2 | PESD0402 | PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | unmatched |
-| D17, D21 | 2 | DT1042-04SO | DT1042-04SO | `SparkFun-Semiconductor-Standard:SOT23-6` | unmatched |
+| D9, D20 | 2 | Diode PESD0402 0402 | PESD0402 | `SparkFun-Capacitor:C_0402_1005Metric` | [`electronic_diode_esd_0402_littelfuse_pesd0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_esd_0402_littelfuse_pesd0402) |
+| D17, D21 | 2 | Diode DT1042-04SO SOT-26 | DT1042-04SO | `SparkFun-Semiconductor-Standard:SOT23-6` | [`electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so) |
 | D18, D19, D22 | 3 | Diode Schottky SOD-323 | BAT60A | `SparkFun-Semiconductor-Standard:SOD-323` | [`electronic_diode_schottky_sod_323_bat54w`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_bat54w) |
 | F1 | 1 | 6V/2.0A/4.0A | 6V/2.0A/4.0A | `SparkFun-Fuse:1210` | unmatched |
-| FID1, FID2, FID3, FID4 | 4 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
 | J1 | 1 | microSD_Friction | microSD_Friction | `SparkFun-Connector:microSD_Friction_Fit_Common` | unmatched |
-| J2, J6 | 2 | SMA_Edge | SMA_Edge | `SparkFun-Connector:SMA_Edge` | unmatched |
+| J2, J6 | 2 | Connector Sma Edge Mount | SMA_Edge | `SparkFun-Connector:SMA_Edge` | [`electronic_connector_sma_edge_mount`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_sma_edge_mount) |
 | J3 | 1 | Connector Header PH2.54-01-15PZD | Conn_01x15 | `SparkFun-Connector:1x15` | [`electronic_connector_header_2_54_mm_pitch_through_hole_15_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_15_pin) |
 | J4 | 1 | Connector Header PZ254-1-19-Z-8.5 | Conn_01x19 | `SparkFun-Connector:1x19` | [`electronic_connector_header_2_54_mm_pitch_through_hole_19_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_19_pin) |
 | J5, J13 | 2 | JST_Locking_6 | JST_Locking_6 | `SparkFun-Connector:JST_SMD_1.25mm-6_Locking` | unmatched |
 | J7, J10 | 2 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
-| J8, J9 | 2 | U.FL | U.FL | `SparkFun-Connector:U.FL` | unmatched |
+| J8, J9 | 2 | Connector U Fl surface-mount I Pex U Fl R SMT 1 | U.FL | `SparkFun-Connector:U.FL` | [`electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1) |
 | J11, J12 | 2 | Conn_02x10 | Conn_02x10 | `SparkFun-Connector:2x10_2.0mm_Male_Pins_Vertical_SMD_Pegs` | unmatched |
 | J14 | 1 | Connector JST Sh BM04B-SRSS-TB | Qwiic_Vertical | `SparkFun-Connector:JST_SMD_1.0mm-4_Vertical_Black` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_4_pin_black_jst_bm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_4_pin_black_jst_bm04b_srss_tb) |
-| JP1 | 1 | Measure | Measure | `SparkFun-Jumper:Jumper_2_PTH_SMD_Combo-NC` | unmatched |
 | JP2 | 1 | ~ | ~ | `SparkFun-Jumper:Jumper_3_NO` | unmatched |
-| PPS1, PVT1, PWR1, RTK1, SHLD1, SHLD2, VBACKUP.1 | 7 | ~ | ~ | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | R1, R2, R4 | 3 | Resistor 10000 Ohm 0603 | 10k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R3, R5 | 2 | Resistor 100000 Ohm 0603 | 100k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
 | R6 | 1 | Resistor 4700 Ohm 0603 | 4.7k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
 | R7, R8, R9, R12 | 4 | Resistor 2200 Ohm 0603 | 2.2k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
 | R11 | 1 | Resistor 1000 Ohm 0603 | 1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R17, R18, R19, R20 | 4 | Resistor 5100 Ohm 0603 | 5.1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_5100_ohm) |
-| TP9, TP10, TP12, TP14 | 4 | 1.25mm | 1.25mm | `SparkFun-Connector:TestPoint-1.25mm` | unmatched |
 | TR2 | 1 | RFCMF1220100M4T | RFCMF1220100M4T | `SparkFun-Coil:RFCMF1220100M4T` | unmatched |
-| U1 | 1 | RT9080-3.3 | RT9080-3.3 | `SparkFun-Semiconductor-Standard:SOT23-5` | unmatched |
+| U1 | 1 | IC Power Management Linear Voltage Regulator 3 3 Volt Richtek SOT_23_5 | RT9080-3.3 | `SparkFun-Semiconductor-Standard:SOT23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_richtek_rt9080_33`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_richtek_rt9080_33) |
 | U2 | 1 | CH342F | CH342F | `SparkFun-Semiconductor-Standard:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm` | unmatched |
 | U3, U5 | 2 | 74HC4066BQ | 74HC4066BQ | `SparkFun-Semiconductor-Standard:QFN-14_2.5x3mm_P0.5mm_EP1x1.5mm` | unmatched |
 | U4 | 1 | AP7361C-3.3V | AP7361C-3.3V | `SparkFun-Semiconductor-Standard:DFN-8_3x3mm_P0.65mm_EP2.25x1.5mm` | unmatched |
-| VOUT1, VOUT2 | 2 | ~ | ~ | `SparkFun-Jumper:Jumper_3_NC-1_Trace` | unmatched |
 
 ## Main nets
 
@@ -172,11 +167,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 63.5 mm by 50.8 mm.
-- Placement data contains 80 front-side and 16 back-side components.
+- Placement data contains 80 front-side and 2 back-side components.
 
 ## Review notes
 
-- 146 physical component records are not yet matched to an OOMP part.
+- 21 physical component records are not yet matched to an OOMP part.
 - The extractor reports 14 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_current/data/generated_data/lcsc_review.yaml)
@@ -186,7 +181,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 18
+- Matched OOMP source parts copied: 24
 
 ## Source files
 

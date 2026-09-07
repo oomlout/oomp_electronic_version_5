@@ -68,7 +68,7 @@ _SVG_EXTRA_STYLE = (
     ".sch-ref { fill: var(--sch-ink, #171717); font-weight: 800; }"
     ".sch-value { fill: var(--sch-ink, #171717); }"
     ".sch-label { fill: var(--net-color, var(--sch-ink, #171717)); }"
-    ".sch-label-pill { fill: var(--accent-soft, #ffe4db); stroke: var(--accent, #ff5c35); stroke-width: 0.2; }"
+    ".sch-label-pill { fill: var(--accent-soft, #ffe4db); fill-opacity: .55; stroke: var(--accent, #ff5c35); stroke-width: 0.2; }"
     ".sch-label-pill-text { fill: var(--accent, #ff5c35); font-weight: 600; }"
     ".sch-note { fill: none; stroke: var(--sch-note, #8a7f6a); }"
     ".sch-note-text { fill: var(--sch-note, #8a7f6a); }"
@@ -586,7 +586,7 @@ class SymbolInstance:
             score = _overlap_score(rect, obstacles)
             if best is None or score < best[0]:
                 best = (score, side, side_angle, rect)
-        _, side, side_angle, _ = best
+        _, side, side_angle, block_rect = best
         radians = math.radians(side_angle)
         cosine, sine = math.cos(radians), math.sin(radians)
         placed_lines = []
@@ -606,6 +606,7 @@ class SymbolInstance:
             "package": package,
             "side": side,
             "text_angle": -self.rotation + side_angle,
+            "block_rect": block_rect,
             "lines": placed_lines,
         }
 
@@ -1381,10 +1382,18 @@ class SchematicModel:
                 if page_conn is None:
                     page_conn = page.connectivity()
                 instance_bounds = instance.placed_graphics_bounds()
+                # The label block is drawn at its laid-out position, not the
+                # original property anchor, so frame that rectangle too or the
+                # preview crops the identifier/value text.
+                plan = instance.label_layout([])
+                if plan and plan.get("block_rect"):
+                    rect_x1, rect_y1, rect_x2, rect_y2 = plan["block_rect"]
+                    instance_bounds.add(rect_x1, rect_y1)
+                    instance_bounds.add(rect_x2, rect_y2)
                 if not instance_bounds.valid:
                     continue
                 bounds = bounds.merged(instance_bounds)
-                fragments.append(self._symbol_svg(instance, *page_conn))
+                fragments.append(self._symbol_svg(instance, *(page_conn or (None, None)), plan=plan))
         if not fragments or not bounds.valid:
             return ""
         min_x = bounds.min_x - margin

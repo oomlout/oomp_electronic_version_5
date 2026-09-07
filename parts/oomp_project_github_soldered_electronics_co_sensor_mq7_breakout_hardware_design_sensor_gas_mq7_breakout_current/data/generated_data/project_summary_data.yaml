@@ -18,9 +18,9 @@ summary:
   component_count: 49
   schematic_symbol_count: 26
   pcb_footprint_count: 39
-  matched_component_count: 8
-  unmatched_physical_component_count: 28
-  non_physical_symbol_count: 13
+  matched_component_count: 12
+  unmatched_physical_component_count: 0
+  non_physical_symbol_count: 37
   mounting_hole_count: 2
   dedicated_mounting_hole_count: 2
   mounting_hole_oomp_item_count: 2
@@ -554,7 +554,7 @@ placement:
     x: 102.0
     y: 93.5
     rotation: 0.0
-    oomp_id: ''
+    oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_4_pin
     bounds:
       min_x: 96.86
       min_y: 92.17
@@ -1056,7 +1056,7 @@ placement:
     x: 93.65
     y: 103.7
     rotation: 0.0
-    oomp_id: ''
+    oomp_id: electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e
     bounds:
       min_x: 91.74
       min_y: 101.5
@@ -1625,7 +1625,7 @@ placement:
     x: 102.0
     y: 116.5
     rotation: 0.0
-    oomp_id: ''
+    oomp_id: electronic_sensor_mq_6_pin
     bounds:
       min_x: 92.14
       min_y: 106.64
@@ -2118,7 +2118,7 @@ placement:
     x: 102.0
     y: 103.7
     rotation: 0.0
-    oomp_id: ''
+    oomp_id: electronic_ic_soic_8_logic_comparator_lm393
     bounds:
       min_x: 98.525
       min_y: 101.14
@@ -2710,6 +2710,7 @@ board_png:
   image_file: data/generated_data/src/board.png
   width_px: 1088
   height_px: 1600
+  skipped_existing: true
 board_pins:
   available: true
   image_file: data/generated_data/src/board_pins.svg
@@ -2730,6 +2731,7 @@ board_pins_png:
   image_file: data/generated_data/src/board_pins.png
   width_px: 1088
   height_px: 1600
+  skipped_existing: true
 board_bottom:
   available: true
   image_file: data/generated_data/src/board_bottom.svg
@@ -2750,6 +2752,7 @@ board_bottom_png:
   image_file: data/generated_data/src/board_bottom.png
   width_px: 1088
   height_px: 1600
+  skipped_existing: true
 board_pins_bottom:
   available: true
   image_file: data/generated_data/src/board_pins_bottom.svg
@@ -2770,6 +2773,7 @@ board_pins_bottom_png:
   image_file: data/generated_data/src/board_pins_bottom.png
   width_px: 1088
   height_px: 1600
+  skipped_existing: true
 board_mechanical:
   available: true
   image_file: data/generated_data/src/board_mechanical.svg
@@ -2795,6 +2799,7 @@ board_mechanical_png:
   image_file: data/generated_data/src/board_mechanical.png
   width_px: 1600
   height_px: 1122
+  skipped_existing: true
 schematic:
   available: true
   image_file: data/generated_data/src/schematic.svg
@@ -2952,11 +2957,11 @@ bom:
   references:
   - D1
   quantity: 1
-- description: HEADER_MALE_4X1
+- description: Connector Header PZ2.54-S04P-A60
   value: HEADER_MALE_4X1
   footprint: e-radionica.com footprinti:HEADER_MALE_4X1
-  oomp_id: ''
-  oomp_link: ''
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_4_pin
+  oomp_link: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin
   references:
   - K1
   quantity: 1
@@ -2969,11 +2974,11 @@ bom:
   - R1
   - R3
   quantity: 2
-- description: TC33X-2-103E
+- description: Potentiometer Through Hole 10 Kilo Ohm Bourns TC33X 2 103E TRIMMER
   value: TC33X-2-103E
   footprint: e-radionica.com footprinti:tc33x-2-103e
-  oomp_id: ''
-  oomp_link: ''
+  oomp_id: electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e
+  oomp_link: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e
   references:
   - R2
   quantity: 1
@@ -2985,19 +2990,19 @@ bom:
   references:
   - R4
   quantity: 1
-- description: MQ-X
+- description: Sensor 6 Pin MQ
   value: MQ-X
   footprint: e-radionica.com footprinti:MQ
-  oomp_id: ''
-  oomp_link: ''
+  oomp_id: electronic_sensor_mq_6_pin
+  oomp_link: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_mq_6_pin
   references:
   - U1
   quantity: 1
-- description: LM393
+- description: IC Logic Comparator LM393 SOIC_8
   value: LM393
   footprint: e-radionica.com footprinti:SOIC−8
-  oomp_id: ''
-  oomp_link: ''
+  oomp_id: electronic_ic_soic_8_logic_comparator_lm393
+  oomp_link: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_logic_comparator_lm393
   references:
   - U2
   quantity: 1
@@ -3062,12 +3067,13 @@ nets:
 generated_text:
   overview: Project soldered_electronics/CO-sensor-MQ7-breakout-hardware-design MQ7
     Breakout current is a KiCad project containing 49 extracted component records.
-    The catalogue matcher linked 8 physical placements to OOMP parts.
+    The catalogue matcher linked 12 physical placements to OOMP parts.
   design_notes:
   - The extracted board outline is approximately 22.0 mm by 38.0 mm.
   - Placement data contains 9 front-side and 1 back-side components.
   review_notes:
-  - 28 physical component records are not yet matched to an OOMP part.
+  - No unmatched physical components or named-net disagreements were reported by the
+    extractor.
 style:
   format_version: 1
   name: OOMP project summary
@@ -3124,7 +3130,40 @@ source_manifest:
     - working_svg_assembly.svg
     - working_svg_assembly_pins.svg
     - working_svg_square_pins.svg
+  - oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_4_pin
+    project_source_files:
+    - working.yaml
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+    - working_svg_outline.svg
+    generated_image_files:
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+  - oomp_id: electronic_ic_soic_8_logic_comparator_lm393
+    project_source_files:
+    - working.yaml
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+    - working_svg_outline.svg
+    generated_image_files:
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
   - oomp_id: electronic_led_0402
+    project_source_files:
+    - working.yaml
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+    - working_svg_outline.svg
+    generated_image_files:
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+  - oomp_id: electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e
     project_source_files:
     - working.yaml
     - working_svg_assembly.svg
@@ -3147,6 +3186,17 @@ source_manifest:
     - working_svg_assembly_pins.svg
     - working_svg_square_pins.svg
   - oomp_id: electronic_resistor_0603_10000_ohm
+    project_source_files:
+    - working.yaml
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+    - working_svg_outline.svg
+    generated_image_files:
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+  - oomp_id: electronic_sensor_mq_6_pin
     project_source_files:
     - working.yaml
     - working_svg_assembly.svg

@@ -20,7 +20,7 @@ Project sparkfun/SparkFun_Roller_Encoder_Breakout Roller Encoder Breakout curren
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 12 |
 | Matched OOMP components | 1 |
-| Unmatched physical components | 19 |
+| Unmatched physical components | 5 |
 | Front-side placements | 2 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -107,7 +107,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 19 physical component records are not yet matched to an OOMP part.
+- 5 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current/data/generated_data/browser_research_queue.md)

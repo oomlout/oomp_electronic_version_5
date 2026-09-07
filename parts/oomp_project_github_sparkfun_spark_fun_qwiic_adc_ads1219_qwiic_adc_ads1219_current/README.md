@@ -20,9 +20,9 @@ Project sparkfun/SparkFun_Qwiic_ADC_ADS1219 Qwiic ADC ADS1219 current is a KiCad
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 66 |
 | Matched OOMP components | 16 |
-| Unmatched physical components | 56 |
+| Unmatched physical components | 11 |
 | Front-side placements | 17 |
-| Back-side placements | 11 |
+| Back-side placements | 6 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -85,14 +85,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1, C3 | 2 | Capacitor 2.2 uF 0603 | 2.2uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
 | C2, C4 | 2 | Capacitor 100 nF 0603 | 0.1uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | D1 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
-| FID1, FID3 | 2 | Fiducial_0.5mm | Fiducial_0.5mm | `SparkFun-Aesthetic:Fiducial_0.5mm_Mask1mm` | unmatched |
 | J1, J2 | 2 | Connector JST Sh SM04B-SRSS-TB | Qwiic_RA | `SparkFun-Connector:JST_SMD_1.0mm-4_Black` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb) |
 | J3, J4 | 2 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | J5 | 1 | Connector Header PZ254V-11-02P | Conn_01x02 | `SparkFun-Connector:1x02` | [`electronic_connector_header_2_54_mm_pitch_through_hole_2_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_2_pin) |
 | J6 | 1 | Connector Header PZ2.54-S04P-A60 | I2C | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
-| JP1, JP2 | 2 | ~ | ~ | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
-| JP3 | 1 | ~ | ~ | `SparkFun-Jumper:Jumper_3_NC-2_Trace` | unmatched |
-| JP4, JP8 | 2 | G | G | `SparkFun-Jumper:Jumper_2_NC_Trace` | unmatched |
 | JP5, JP9 | 2 | V | V | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
 | JP6, JP10 | 2 | D | D | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
 | JP7, JP11 | 2 | C | C | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
@@ -129,11 +125,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 25.4 mm by 25.4 mm.
-- Placement data contains 17 front-side and 11 back-side components.
+- Placement data contains 17 front-side and 6 back-side components.
 
 ## Review notes
 
-- 56 physical component records are not yet matched to an OOMP part.
+- 11 physical component records are not yet matched to an OOMP part.
 - The extractor reports 3 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/data/generated_data/lcsc_review.yaml)

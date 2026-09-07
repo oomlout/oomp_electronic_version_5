@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design LSM9DS1TR IMU current is a KiCad project containing 82 extracted component records. The catalogue matcher linked 16 physical placements to OOMP parts.
+Project soldered_electronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-breakout-hardware-design LSM9DS1TR IMU current is a KiCad project containing 82 extracted component records. The catalogue matcher linked 22 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,10 +19,10 @@ Project soldered_electronics/Accelerometer---Gyroscope---Magnetometer-LSM9DS1TR-
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 52 |
-| Matched OOMP components | 16 |
-| Unmatched physical components | 45 |
-| Front-side placements | 25 |
-| Back-side placements | 3 |
+| Matched OOMP components | 22 |
+| Unmatched physical components | 2 |
+| Front-side placements | 20 |
+| Back-side placements | 2 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -81,17 +81,14 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2, C5 | 3 | Capacitor 100 nF 0603 | 100n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| C3 | 1 | 10u | 10u | `e-radionica.com footprinti:1206C` | unmatched |
+| C3 | 1 | Capacitor 10 uF 1206 | 10u | `e-radionica.com footprinti:1206C` | [`electronic_capacitor_1206_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_10_micro_farad) |
 | C4 | 1 | Capacitor 10 nF 0603 | 10n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_10_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_nano_farad) |
 | C6, C7 | 2 | Capacitor 2.2 uF 0603 | 2u2 | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
-| JP1, JP2, JP3, JP5 | 4 | SMD_JUMPER_3_PAD_TRACE | SMD_JUMPER_3_PAD_TRACE | `e-radionica.com footprinti:SMD_JUMPER_3_PAD_TRACE` | unmatched |
-| JP4 | 1 | SMD_JUMPER | SMD_JUMPER | `e-radionica.com footprinti:SMD_JUMPER` | unmatched |
-| JP6 | 1 | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | SMD-JUMPER-CONNECTED_TRACE_SLODERMASK | `e-radionica.com footprinti:SMD-JUMPER-CONNECTED_TRACE_SLODERMASK` | unmatched |
-| K1 | 1 | HEADER_MALE_9X1 | HEADER_MALE_9X1 | `e-radionica.com footprinti:HEADER_MALE_9X1` | unmatched |
-| K2, K4 | 2 | easyC-SMD | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | unmatched |
-| K3 | 1 | HEADER_MALE_4X1 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | unmatched |
+| K1 | 1 | Connector Header KH-2.54PH180-1X9P-L11.5 | HEADER_MALE_9X1 | `e-radionica.com footprinti:HEADER_MALE_9X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_9_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_9_pin) |
+| K2, K4 | 2 | Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | [`electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf) |
+| K3 | 1 | Connector Header PZ2.54-S04P-A60 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | R1, R2, R3, R4, R5, R6, R7, R8 | 8 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| U1 | 1 | NMOS-DUAL | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | unmatched |
+| U1 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
 | U2 | 1 | LSM9DS1TR | LSM9DS1TR | `e-radionica.com footprinti:LSM9DS1TR` | unmatched |
 | U3 | 1 | SE5218 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
 
@@ -123,11 +120,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 22.0 mm by 38.0 mm.
-- Placement data contains 25 front-side and 3 back-side components.
+- Placement data contains 20 front-side and 2 back-side components.
 
 ## Review notes
 
-- 45 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current/data/generated_data/browser_research_queue.md)
@@ -136,7 +133,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_accelerometer_gyroscope_magnetometer_lsm9_ds1_tr_breakout_hardware_design_sensor_imu_lsm9ds1tr_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 10
 
 ## Source files
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_hardware_design_sensor_gas_mq2_breakout_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Butane--LPG---Smoke-sensor-MQ2-breakout-hardware-design MQ2 Breakout current is a KiCad project containing 49 extracted component records. The catalogue matcher linked 8 physical placements to OOMP parts.
+Project soldered_electronics/Butane--LPG---Smoke-sensor-MQ2-breakout-hardware-design MQ2 Breakout current is a KiCad project containing 49 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/Butane--LPG---Smoke-sensor-MQ2-breakout-hardware-de
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 26 |
-| Matched OOMP components | 8 |
-| Unmatched physical components | 28 |
+| Matched OOMP components | 12 |
+| Unmatched physical components | 0 |
 | Front-side placements | 9 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -82,12 +82,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2 | 2 | Capacitor 100 nF 0603 | 0.1uF | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | D1 | 1 | LED  0402 | purple | `e-radionica.com footprinti:0402LED` | [`electronic_led_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402) |
-| K1 | 1 | HEADER_MALE_4X1 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | unmatched |
+| K1 | 1 | Connector Header PZ2.54-S04P-A60 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | R1, R3 | 2 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| R2 | 1 | TC33X-2-103E | TC33X-2-103E | `e-radionica.com footprinti:tc33x-2-103e` | unmatched |
+| R2 | 1 | Potentiometer Through Hole 10 Kilo Ohm Bourns TC33X 2 103E TRIMMER | TC33X-2-103E | `e-radionica.com footprinti:tc33x-2-103e` | [`electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e) |
 | R4 | 1 | Resistor 2200 Ohm 0402 | 2k2 | `e-radionica.com footprinti:0402R` | [`electronic_resistor_0402_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) |
-| U1 | 1 | MQ-X | MQ-X | `e-radionica.com footprinti:MQ` | unmatched |
-| U2 | 1 | LM393 | LM393 | `e-radionica.com footprinti:SOIC−8` | unmatched |
+| U1 | 1 | Sensor 6 Pin MQ | MQ-X | `e-radionica.com footprinti:MQ` | [`electronic_sensor_mq_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_mq_6_pin) |
+| U2 | 1 | IC Logic Comparator LM393 SOIC_8 | LM393 | `e-radionica.com footprinti:SOIC−8` | [`electronic_ic_soic_8_logic_comparator_lm393`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_logic_comparator_lm393) |
 
 ## Main nets
 
@@ -110,7 +110,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 28 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_hardware_design_sensor_gas_mq2_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_hardware_design_sensor_gas_mq2_breakout_current/data/generated_data/browser_research_queue.md)
@@ -119,7 +119,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_hardware_design_sensor_gas_mq2_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

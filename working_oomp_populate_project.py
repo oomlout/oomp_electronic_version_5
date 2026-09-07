@@ -88,15 +88,20 @@ def main(**kwargs):
             ],
         },
         {
+            # No "MQ2-breakout-with-easyC" repository exists upstream: Soldered
+            # publishes the connector-equipped MQ2 board under the qwiic name
+            # (product 333116).  The repository slug stays on the easyC spelling
+            # so the existing OOMP part id keeps resolving, while the git URLs
+            # point at the qwiic repository that actually holds the design files.
             "github_user": "soldered_electronics",
             "github_repository": "Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design",
-            "github_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design",
-            "repository_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design.git",
+            "github_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-qwiic-hardware-design",
+            "repository_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-qwiic-hardware-design.git",
             "versions": [
                 {
                     "board": "sensor_gas_mq2_easyc",
                     "board_name": "MQ2 Breakout easyC",
-                    "board_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-with-easyC-hardware-design",
+                    "board_url": "https://github.com/SolderedElectronics/Butane--LPG---Smoke-sensor-MQ2-breakout-qwiic-hardware-design",
                     "version": "current",
                     "git_ref": "main",
                     "sparse_checkout": True,

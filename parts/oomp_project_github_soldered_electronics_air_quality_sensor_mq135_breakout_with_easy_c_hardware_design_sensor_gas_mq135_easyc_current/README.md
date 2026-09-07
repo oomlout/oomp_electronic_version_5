@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_mq135_breakout_with_easy_c_hardware_design_sensor_gas_mq135_easyc_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Air-quality-sensor-MQ135-breakout-with-easyC-hardware-design MQ135 Breakout easyC current is a KiCad project containing 74 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
+Project soldered_electronics/Air-quality-sensor-MQ135-breakout-with-easyC-hardware-design MQ135 Breakout easyC current is a KiCad project containing 74 extracted component records. The catalogue matcher linked 24 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,9 +19,9 @@ Project soldered_electronics/Air-quality-sensor-MQ135-breakout-with-easyC-hardwa
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 49 |
-| Matched OOMP components | 12 |
-| Unmatched physical components | 40 |
-| Front-side placements | 22 |
+| Matched OOMP components | 24 |
+| Unmatched physical components | 0 |
+| Front-side placements | 20 |
 | Back-side placements | 0 |
 | Project version | `current` |
 | Git ref | `main` |
@@ -82,21 +82,20 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C2 | 2 | CL10A226MPCNUBE | CL10A226MPCNUBE | `e-radionica.com footprinti:0805C` | unmatched |
-| C3 | 1 | C1608X7S1A475K080AC | C1608X7S1A475K080AC | `e-radionica.com footprinti:0805C` | unmatched |
+| C1, C2 | 2 | Capacitor 22 uF 0603 | CL10A226MPCNUBE | `e-radionica.com footprinti:0805C` | [`electronic_capacitor_0603_22_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_22_micro_farad) |
+| C3 | 1 | Capacitor 4.7 uF 0603 | C1608X7S1A475K080AC | `e-radionica.com footprinti:0805C` | [`electronic_capacitor_0603_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_4_7_micro_farad) |
 | C4 | 1 | Capacitor 100 nF 0603 | 100n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | D1 | 1 | LED  0402 | purple | `e-radionica.com footprinti:0402LED` | [`electronic_led_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402) |
-| JP1, JP2 | 2 | SMD_JUMPER_3_PAD_TRACE | SMD_JUMPER_3_PAD_TRACE | `e-radionica.com footprinti:SMD_JUMPER_3_PAD_TRACE` | unmatched |
-| K1, K3 | 2 | easyC-SMD | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | unmatched |
-| K2 | 1 | HEADER-UPDI | HEADER-UPDI | `e-radionica.com footprinti:HEADER-UPDI` | unmatched |
-| K4 | 1 | DSHP03TS-S | DSHP03TS-S | `e-radionica.com footprinti:DSHP03TS-S` | unmatched |
-| L1 | 1 | DFE201612E-2R2M=P2 | DFE201612E-2R2M=P2 | `e-radionica.com footprinti:0806L` | unmatched |
+| K1, K3 | 2 | Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | [`electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf) |
+| K2 | 1 | Connector Header 2.54-1*3P针 | HEADER-UPDI | `e-radionica.com footprinti:HEADER-UPDI` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
+| K4 | 1 | Switch Surface Mount Dpdt Ck DSHP03TS S SLIDE | DSHP03TS-S | `e-radionica.com footprinti:DSHP03TS-S` | [`electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s) |
+| L1 | 1 | Inductor 2 2 Micro Henry 0806 | DFE201612E-2R2M=P2 | `e-radionica.com footprinti:0806L` | [`electronic_inductor_0806_2_2_micro_henry`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0806_2_2_micro_henry) |
 | R1, R2, R3, R4, R5 | 5 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R6 | 1 | Resistor 2200 Ohm 0402 | 2k2 | `e-radionica.com footprinti:0402R` | [`electronic_resistor_0402_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) |
-| U1 | 1 | MQ-X | MQ-X | `e-radionica.com footprinti:MQ` | unmatched |
-| U2 | 1 | NMOS-DUAL | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | unmatched |
-| U3 | 1 | TPS613222A | TPS613222A | `e-radionica.com footprinti:tps613222a` | unmatched |
-| U4 | 1 | ATTINY404-SSNR | ATTINY404-SSNR | `e-radionica.com footprinti:SOIC-14` | unmatched |
+| U1 | 1 | Sensor 6 Pin MQ | MQ-X | `e-radionica.com footprinti:MQ` | [`electronic_sensor_mq_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_mq_6_pin) |
+| U2 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
+| U3 | 1 | IC Power Management Boost Converter Texas Instruments SOT_23_5 | TPS613222A | `e-radionica.com footprinti:tps613222a` | [`electronic_ic_sot_23_5_power_management_boost_converter_texas_instruments_tps613222a`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_boost_converter_texas_instruments_tps613222a) |
+| U4 | 1 | IC Microcontroller 8 Bit Avr Microchip SOIC_14 | ATTINY404-SSNR | `e-radionica.com footprinti:SOIC-14` | [`electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr) |
 
 ## Main nets
 
@@ -126,11 +125,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 22.0 mm by 54.0 mm.
-- Placement data contains 22 front-side and 0 back-side components.
+- Placement data contains 20 front-side and 0 back-side components.
 
 ## Review notes
 
-- 40 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_mq135_breakout_with_easy_c_hardware_design_sensor_gas_mq135_easyc_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_mq135_breakout_with_easy_c_hardware_design_sensor_gas_mq135_easyc_current/data/generated_data/browser_research_queue.md)
@@ -139,7 +138,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_mq135_breakout_with_easy_c_hardware_design_sensor_gas_mq135_easyc_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 15
 
 ## Source files
 
