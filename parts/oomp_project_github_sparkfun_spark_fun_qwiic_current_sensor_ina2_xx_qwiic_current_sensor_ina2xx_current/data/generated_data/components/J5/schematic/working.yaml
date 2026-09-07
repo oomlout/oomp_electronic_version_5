@@ -1,0 +1,167 @@
+available: true
+units:
+- reference: J5
+  source_file: data/kicad_file.kicad_sch
+  uuid: 24076312-3a84-411d-af3e-e40b75ec94f5
+  library_id: SparkFun-Connector:ScrewTerminal_1x03_P3.5mm_Horizontal_Black
+  unit: 1
+  body_style: 1
+  position:
+    x: 86.36
+    y: 57.15
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: J5
+    Value: 3.5mm
+    Footprint: SparkFun-Connector:ScrewTerminal_1x03_P3.5mm_Horizontal_Black
+    Datasheet: https://cdn.sparkfun.com/assets/b/1/8/d/9/OSTTEXX0104.pdf
+    Description: Screw terminal
+    PROD_ID: CONN-08288
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: Pin_1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 2.54
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 81.28
+      y: 54.61
+    net: IN+
+    net_aliases:
+    - IN+
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '2'
+      pin_name: B
+    - reference: JP7
+      pin_number: '2'
+      pin_name: B
+    - reference: R8
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '10'
+      pin_name: IN+
+  - number: '2'
+    name: Pin_2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 81.28
+      y: 57.15
+    net: VBUS
+    net_aliases:
+    - VBUS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP7
+      pin_number: '1'
+      pin_name: A
+    - reference: U2
+      pin_number: '8'
+      pin_name: VBUS
+  - number: '3'
+    name: Pin_3
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 81.28
+      y: 59.69
+    net: IN-
+    net_aliases:
+    - IN-
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: R8
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '9'
+      pin_name: IN-
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -3.937
+      max:
+        x: 1.397
+        y: 3.937
+      width: 2.794
+      height: 7.874
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 84.963
+        y: 53.213
+      max:
+        x: 87.757
+        y: 61.087
+      width: 2.794
+      height: 7.874
+      center:
+        x: 86.36
+        y: 57.15
+  warnings: []
+connected_components:
+- reference: JP3
+  pin_number: '2'
+  pin_name: B
+- reference: JP7
+  pin_number: '1'
+  pin_name: A
+- reference: JP7
+  pin_number: '2'
+  pin_name: B
+- reference: R2
+  pin_number: '2'
+  pin_name: '~'
+- reference: R8
+  pin_number: '1'
+  pin_name: '~'
+- reference: R8
+  pin_number: '2'
+  pin_name: '~'
+- reference: U2
+  pin_number: '10'
+  pin_name: IN+
+- reference: U2
+  pin_number: '8'
+  pin_name: VBUS
+- reference: U2
+  pin_number: '9'
+  pin_name: IN-

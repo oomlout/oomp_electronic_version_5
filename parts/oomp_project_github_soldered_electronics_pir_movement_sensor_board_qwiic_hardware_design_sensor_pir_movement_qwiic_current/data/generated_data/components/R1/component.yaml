@@ -1,0 +1,418 @@
+reference: R1
+schematic:
+  available: true
+  units:
+  - reference: R1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 8080663a-b368-479b-b0c0-c970c95c620f
+    library_id: e-radionica.com schematics:0402R
+    unit: 1
+    body_style: 1
+    position:
+      x: 147.32
+      y: 109.22
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R1
+      Value: 2k2
+      Footprint: e-radionica.com footprinti:0402R
+      Datasheet: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -3.175
+        y: 0.0
+        rotation: 0.0
+      length: 1.27
+      position:
+        x: 144.145
+        y: 109.22
+      net: D0
+      net_aliases:
+      - D0
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U3
+        pin_number: '2'
+        pin_name: PA4
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 3.175
+        y: 0.0
+        rotation: 180.0
+      length: 1.27
+      position:
+        x: 150.495
+        y: 109.22
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: D1
+        pin_number: '1'
+        pin_name: A
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.955
+          y: -0.7104
+        max:
+          x: 1.9804
+          y: 0.685
+        width: 3.9354
+        height: 1.3954
+        center:
+          x: 0.0127
+          y: -0.0127
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 145.365
+          y: 108.535
+        max:
+          x: 149.3004
+          y: 109.9304
+        width: 3.9354
+        height: 1.3954
+        center:
+          x: 147.3327
+          y: 109.2327
+    warnings: []
+  connected_components:
+  - reference: D1
+    pin_number: '1'
+    pin_name: A
+  - reference: U3
+    pin_number: '2'
+    pin_name: PA4
+pcb:
+  reference: R1
+  value: 2k2
+  source_file: data/kicad_file.kicad_pcb
+  uuid: ecae4260-91c4-40c9-afb8-0400b711958b
+  library_id: e-radionica.com footprinti:0402R
+  layer: F.Cu
+  side: front
+  position:
+    x: 142.5
+    y: 76.3
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Sheetfile: PIR Movement sensor board with easyC.kicad_sch
+    Sheetname: ''
+    Reference: R1
+    Value: 2k2
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.5
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 143.0
+      y: 76.3
+    placed_rotation: 90.0
+    size:
+      x: 0.64
+      y: 0.54
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: D0
+    net_number: 10
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.77
+          y: -0.32
+        max:
+          x: -0.23
+          y: 0.32
+        width: 0.54
+        height: 0.64
+        center:
+          x: -0.5
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 142.73
+          y: 75.98
+        max:
+          x: 143.27
+          y: 76.62
+        width: 0.54
+        height: 0.64
+        center:
+          x: 143.0
+          y: 76.3
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U3
+      pad_number: '2'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.5
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 142.0
+      y: 76.3
+    placed_rotation: 90.0
+    size:
+      x: 0.64
+      y: 0.54
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: Net-(D1-Pad1)
+    net_number: 3
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.23
+          y: -0.32
+        max:
+          x: 0.77
+          y: 0.32
+        width: 0.54
+        height: 0.64
+        center:
+          x: 0.5
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 141.73
+          y: 75.98
+        max:
+          x: 142.27
+          y: 76.62
+        width: 0.54
+        height: 0.64
+        center:
+          x: 142.0
+          y: 76.3
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: D1
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.77
+        y: -0.32
+      max:
+        x: 0.77
+        y: 0.32
+      width: 1.54
+      height: 0.64
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 141.73
+        y: 75.98
+      max:
+        x: 143.27
+        y: 76.62
+      width: 1.54
+      height: 0.64
+      center:
+        x: 142.5
+        y: 76.3
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.77
+        y: -0.36
+      max:
+        x: 0.77
+        y: 0.36
+      width: 1.54
+      height: 0.72
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 141.73
+        y: 75.94
+      max:
+        x: 143.27
+        y: 76.66
+      width: 1.54
+      height: 0.72
+      center:
+        x: 142.5
+        y: 76.3
+  connected_components:
+  - D1
+  - U3
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - D0
+    pcb_nets:
+    - D0
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(D1-Pad1)
+    status: incomplete
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0402_2200_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0402_2200_ohm
+  inferred:
+    kind: resistor
+    package_size: '0402'
+    value: 2k2
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R1

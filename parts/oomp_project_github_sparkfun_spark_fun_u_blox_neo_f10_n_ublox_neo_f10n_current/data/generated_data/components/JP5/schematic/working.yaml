@@ -1,0 +1,135 @@
+available: true
+units:
+- reference: JP5
+  source_file: data/kicad_file.kicad_sch
+  uuid: 9dcda904-4485-4eaf-a094-2e5b8d3aadad
+  library_id: SparkFun-Jumper:Jumper_Measure
+  unit: 1
+  body_style: 1
+  position:
+    x: 153.67
+    y: 35.56
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP5
+    Value: Measure
+    Footprint: SparkFun-Jumper:Jumper_2_PTH_SMD_Combo-NC
+    Datasheet: '~'
+    Description: Solder Jumper, 2-pole, closed/bridged
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 149.86
+      y: 35.56
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D7
+      pin_number: C
+      pin_name: C
+    - reference: D8
+      pin_number: C
+      pin_name: C
+  - number: '2'
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 157.48
+      y: 35.56
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR09'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR027'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: C1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '1'
+      pin_name: VIN
+    - reference: U2
+      pin_number: '3'
+      pin_name: EN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.2656
+        y: -1.016
+      max:
+        x: 1.2656
+        y: 1.016
+      width: 2.5312
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 152.4044
+        y: 34.544
+      max:
+        x: 154.9356
+        y: 36.576
+      width: 2.5312
+      height: 2.032
+      center:
+        x: 153.67
+        y: 35.56
+  warnings: []
+connected_components:
+- reference: '#PWR09'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR027'
+  pin_number: '1'
+  pin_name: VCC
+- reference: C1
+  pin_number: '1'
+  pin_name: '~'
+- reference: D7
+  pin_number: C
+  pin_name: C
+- reference: D8
+  pin_number: C
+  pin_name: C
+- reference: U2
+  pin_number: '1'
+  pin_name: VIN
+- reference: U2
+  pin_number: '3'
+  pin_name: EN

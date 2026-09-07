@@ -1,0 +1,550 @@
+reference: JP1
+schematic:
+  available: true
+  units:
+  - reference: JP1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 4aac29ee-9855-4448-bd2c-e1673f81afd8
+    library_id: e-radionica.com schematics:SMD_JUMPER_3_PAD_TRACE
+    unit: 1
+    body_style: 1
+    position:
+      x: 48.26
+      y: 140.97
+      rotation: 180.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: JP1
+      Value: SMD_JUMPER_3_PAD_TRACE
+      Footprint: e-radionica.com footprinti:SMD_JUMPER_3_PAD_TRACE
+      Datasheet: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: ''
+      electrical_type: passive
+      graphic_style: inverted
+      local_position:
+        x: -4.5212
+        y: -0.0254
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 52.7812
+        y: 140.9446
+      net: SCL_PULL5
+      net_aliases:
+      - SCL_PULL5
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: R2
+        pin_number: '1'
+        pin_name: '~'
+    - number: '2'
+      name: ''
+      electrical_type: passive
+      graphic_style: inverted
+      local_position:
+        x: 0.0254
+        y: -1.9304
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 48.2346
+        y: 139.0396
+      net: 5V
+      net_aliases:
+      - 5V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#PWR02'
+        pin_number: '1'
+        pin_name: 5V
+      - reference: '#PWR011'
+        pin_number: '1'
+        pin_name: 5V
+      - reference: '#PWR016'
+        pin_number: '1'
+        pin_name: 5V
+      - reference: JP4
+        pin_number: '2'
+        pin_name: ''
+      - reference: JP5
+        pin_number: '1'
+        pin_name: ''
+      - reference: K3
+        pin_number: '2'
+        pin_name: '~'
+    - number: '3'
+      name: ''
+      electrical_type: passive
+      graphic_style: inverted
+      local_position:
+        x: 4.4704
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 43.7896
+        y: 140.97
+      net: SDA_PULL5
+      net_aliases:
+      - SDA_PULL5
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: R3
+        pin_number: '2'
+        pin_name: '~'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6165
+          y: 0.5839
+        max:
+          x: 2.5911
+          y: 1.472467
+        width: 5.2076
+        height: 0.888567
+        center:
+          x: -0.0127
+          y: 1.028183
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 45.6689
+          y: 141.5539
+        max:
+          x: 50.8765
+          y: 142.442467
+        width: 5.2076
+        height: 0.888567
+        center:
+          x: 48.2727
+          y: 141.998183
+    warnings: []
+  connected_components:
+  - reference: '#PWR02'
+    pin_number: '1'
+    pin_name: 5V
+  - reference: '#PWR011'
+    pin_number: '1'
+    pin_name: 5V
+  - reference: '#PWR016'
+    pin_number: '1'
+    pin_name: 5V
+  - reference: JP4
+    pin_number: '2'
+    pin_name: ''
+  - reference: JP5
+    pin_number: '1'
+    pin_name: ''
+  - reference: K3
+    pin_number: '2'
+    pin_name: '~'
+  - reference: R2
+    pin_number: '1'
+    pin_name: '~'
+  - reference: R3
+    pin_number: '2'
+    pin_name: '~'
+pcb:
+  reference: JP1
+  value: SMD_JUMPER_3_PAD_TRACE
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 1a978c37-58c8-4bcc-a79f-1f4f173e5d10
+  library_id: e-radionica.com footprinti:SMD_JUMPER_3_PAD_TRACE
+  layer: F.Cu
+  side: front
+  position:
+    x: 92.0
+    y: 140.0
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Sheetfile: Light_sensor_LTR-507ALS-01.kicad_sch
+    Sheetname: ''
+    Reference: JP1
+    Value: SMD_JUMPER_3_PAD_TRACE
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.7
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 92.0
+      y: 139.3
+    placed_rotation: 180.0
+    size:
+      x: 0.5
+      y: 1.0
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    net: SCL_PULL5
+    net_number: 4
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.2
+          y: -0.25
+        max:
+          x: -0.2
+          y: 0.25
+        width: 1.0
+        height: 0.5
+        center:
+          x: -0.7
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 91.75
+          y: 138.8
+        max:
+          x: 92.25
+          y: 139.8
+        width: 0.5
+        height: 1.0
+        center:
+          x: 92.0
+          y: 139.3
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R2
+      pad_number: '1'
+  - number: '2'
+    type: smd
+    shape: custom
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 92.0
+      y: 140.0
+    placed_rotation: 180.0
+    size:
+      x: 0.5
+      y: 1.0
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    net: 5V
+    net_number: 5
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.5
+          y: -0.25
+        max:
+          x: 0.5
+          y: 0.25
+        width: 1.0
+        height: 0.5
+        center:
+          x: 0.0
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 91.75
+          y: 139.5
+        max:
+          x: 92.25
+          y: 140.5
+        width: 0.5
+        height: 1.0
+        center:
+          x: 92.0
+          y: 140.0
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP4
+      pad_number: '2'
+    - reference: JP5
+      pad_number: '1'
+    - reference: K3
+      pad_number: '2'
+  - number: '3'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.7
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 92.0
+      y: 140.7
+    placed_rotation: 180.0
+    size:
+      x: 0.5
+      y: 1.0
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    net: SDA_PULL5
+    net_number: 6
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.2
+          y: -0.25
+        max:
+          x: 1.2
+          y: 0.25
+        width: 1.0
+        height: 0.5
+        center:
+          x: 0.7
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 91.75
+          y: 140.2
+        max:
+          x: 92.25
+          y: 141.2
+        width: 0.5
+        height: 1.0
+        center:
+          x: 92.0
+          y: 140.7
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R3
+      pad_number: '2'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.2
+        y: -0.25
+      max:
+        x: 1.2
+        y: 0.25
+      width: 2.4
+      height: 0.5
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 91.75
+        y: 138.8
+      max:
+        x: 92.25
+        y: 141.2
+      width: 0.5
+      height: 2.4
+      center:
+        x: 92.0
+        y: 140.0
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.2
+        y: -0.25
+      max:
+        x: 1.2
+        y: 0.25
+      width: 2.4
+      height: 0.5
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 91.75
+        y: 138.8
+      max:
+        x: 92.25
+        y: 141.2
+      width: 0.5
+      height: 2.4
+      center:
+        x: 92.0
+        y: 140.0
+  connected_components:
+  - JP4
+  - JP5
+  - K3
+  - R2
+  - R3
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - SCL_PULL5
+    pcb_nets:
+    - SCL_PULL5
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - 5V
+    pcb_nets:
+    - 5V
+    status: agree
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - SDA_PULL5
+    pcb_nets:
+    - SDA_PULL5
+    status: agree
+  agree_count: 3
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: not_applicable
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: SMD_JUMPER_3_PAD_TRACE
+    mpn: null
+  reasons:
+  - Fiducials, logos, test points, standoffs and solder-jumper traces are board features, not purchased OOMP parts.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/JP1

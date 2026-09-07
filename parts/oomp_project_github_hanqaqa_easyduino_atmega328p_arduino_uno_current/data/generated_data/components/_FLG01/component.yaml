@@ -1,0 +1,141 @@
+reference: '#FLG01'
+schematic:
+  available: true
+  units:
+  - reference: '#FLG01'
+    source_file: data/kicad_file.kicad_sch
+    uuid: 3b549907-f9dd-48f2-9475-f46ec8732746
+    library_id: power:PWR_FLAG
+    unit: 1
+    body_style: 1
+    position:
+      x: 91.44
+      y: 35.56
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: '#FLG01'
+      Value: Vbus_f
+      Footprint: ''
+      Datasheet: ''
+      Description: Special symbol for telling ERC where power comes from
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: ''
+      electrical_type: power_out
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 0.0
+        rotation: 90.0
+      length: 0.0
+      position:
+        x: 91.44
+        y: 35.56
+      net: Vbus_f
+      net_aliases:
+      - Vbus_f
+      - Vbus_f
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C1
+        pin_number: '1'
+        pin_name: ''
+      - reference: D1
+        pin_number: '4'
+        pin_name: VCC
+      - reference: D3
+        pin_number: '2'
+        pin_name: A
+      - reference: F1
+        pin_number: '2'
+        pin_name: ''
+      - reference: U1
+        pin_number: '16'
+        pin_name: VCC
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.016
+          y: 0.0
+        max:
+          x: 1.016
+          y: 2.54
+        width: 2.032
+        height: 2.54
+        center:
+          x: 0.0
+          y: 1.27
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 90.424
+          y: 33.02
+        max:
+          x: 92.456
+          y: 35.56
+        width: 2.032
+        height: 2.54
+        center:
+          x: 91.44
+          y: 34.29
+    warnings: []
+  connected_components:
+  - reference: C1
+    pin_number: '1'
+    pin_name: ''
+  - reference: D1
+    pin_number: '4'
+    pin_name: VCC
+  - reference: D3
+    pin_number: '2'
+    pin_name: A
+  - reference: F1
+    pin_number: '2'
+    pin_name: ''
+  - reference: U1
+    pin_number: '16'
+    pin_name: VCC
+pcb: null
+connectivity_cross_check:
+  available: false
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - Vbus_f
+    pcb_nets: []
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: not_applicable
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: Vbus_f
+    mpn: null
+  reasons:
+  - The symbol has no physical PCB/OOMP part requirement.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/_FLG01

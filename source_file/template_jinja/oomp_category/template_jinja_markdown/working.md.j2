@@ -1,0 +1,96 @@
+# {{ p.name_short | default(p.name_proper, true) }}
+
+`{{ p.part_page.oomp_id }}`
+
+{{ p.part_page.summary }}
+
+![{{ p.name_short | default(p.name_proper, true) }} pinout]({{ p.part_page.main_image.svg }})
+
+## At a glance
+
+| Detail | Value |
+| --- | --- |
+{% for fact in p.part_page.quick_facts -%}
+| {{ fact.title }} | {% if fact.title == 'OOMP ID' %}`{{ fact.value }}`{% else %}{{ fact.value }}{% endif %} |
+{% endfor %}
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+{% for taxonomy in p.part_page.taxonomy -%}
+| {{ taxonomy.level }} | `{{ taxonomy.value }}` |
+{% endfor %}
+
+{% if p.dimensions_mm is defined and p.dimensions_mm %}
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+{% for dimension_name, dimension_value in p.dimensions_mm.items() -%}
+| {{ dimension_name | replace('_', ' ') | title }} | {{ dimension_value }} mm |
+{% endfor %}
+{% endif %}
+
+{% if p.part_page.identifiers %}
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+{% for identifier in p.part_page.identifiers -%}
+| {{ identifier.title }} | {% if identifier.url %}[`{{ identifier.value }}`]({{ identifier.url }}){% else %}`{{ identifier.value }}`{% endif %} |
+{% endfor %}
+{% endif %}
+
+{% if p.part_page.pins %}
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+{% for pin in p.part_page.pins -%}
+| {{ pin.number }} | {{ pin.name }} | {{ pin.type }} |
+{% endfor %}
+{% endif %}
+
+{% if p.part_page.has_datasheet %}
+## Datasheet
+
+[View the datasheet]({{ p.part_page.datasheet_path }})
+{% if p.datasheet_note is defined and p.datasheet_note %}
+
+{{ p.datasheet_note }}
+{% endif %}
+{% endif %}
+
+{% if p.used_in_projects is defined and p.used_in_projects %}
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+{% for project in p.used_in_projects -%}
+| [{{ project.name }}]({{ project.board_url }}) | {{ project.quantity }} | {{ project.references | join(', ') }} | [Board explorer]({{ project.board_explorer_url }}) · [OOMP project]({{ project.oomp_url }}) |
+{% endfor %}
+
+{% endif %}
+## Files
+
+{% if p.kicad is defined %}
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+{% endif %}
+{% for file_preview in p.part_page.file_previews -%}
+![{{ file_preview.title }}]({{ file_preview.preview }})
+
+{% endfor %}
+
+{% if p.part_page.repository_url %}
+[View this part on GitHub]({{ p.part_page.repository_url }})
+{% endif %}
+
+{% if p.part_page.navigation_link %}
+[Browse this category]({{ p.part_page.navigation_link }})
+{% endif %}
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

@@ -1,0 +1,851 @@
+available: true
+units:
+- reference: U4
+  source_file: data/kicad_file.kicad_sch
+  uuid: c49ae215-625e-4263-b40b-39271c85ffe3
+  library_id: SparkFun-IC-Special-Function:PCA9554PW
+  unit: 1
+  body_style: 1
+  position:
+    x: 83.82
+    y: 45.72
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U4
+    Value: PCA9554PW
+    Footprint: SparkFun-Semiconductor-Standard:TSSOP-16_4.4x5mm_P0.65mm
+    Datasheet: https://www.ti.com/lit/ds/symlink/tca9554.pdf
+    Description: 8-bit I2C-bus and SMBus I/O port with interrupt, TSSOP-16
+    PROD_ID: IC-23589
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: A0
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: -5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 50.8
+    net: ADR0
+    net_aliases:
+    - ADR0
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '1'
+      pin_name: A
+    - reference: R1
+      pin_number: '1'
+      pin_name: '~'
+  - number: '10'
+    name: IO5
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -5.08
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 50.8
+    net: IO5{slash}Blue
+    net_aliases:
+    - IO5{slash}Blue
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: JP5
+      pin_number: '2'
+      pin_name: B
+  - number: '11'
+    name: IO6
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -7.62
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 53.34
+    net: IO6{slash}Green
+    net_aliases:
+    - IO6{slash}Green
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: JP7
+      pin_number: '2'
+      pin_name: B
+  - number: '12'
+    name: IO7
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -10.16
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 55.88
+    net: IO7{slash}Red
+    net_aliases:
+    - IO7{slash}Red
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: JP8
+      pin_number: '2'
+      pin_name: B
+  - number: '13'
+    name: ~{INT}
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 43.18
+    net: ~{INT}
+    net_aliases:
+    - ~{INT}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: R4
+      pin_number: '2'
+      pin_name: '~'
+  - number: '14'
+    name: SCL
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: 7.62
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 38.1
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: J3
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: J5
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: R7
+      pin_number: '2'
+      pin_name: '~'
+  - number: '15'
+    name: SDA
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: 5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 40.64
+    net: SDA
+    net_aliases:
+    - SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: J3
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: J5
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: R13
+      pin_number: '2'
+      pin_name: '~'
+  - number: '16'
+    name: VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 12.7
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 83.82
+      y: 33.02
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR01'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR05'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR06'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR09'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR011'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR013'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR016'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR018'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR019'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR046'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR047'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR048'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: D2
+      pin_number: '1'
+      pin_name: A
+    - reference: J1
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: J3
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: J5
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: JP1
+      pin_number: '2'
+      pin_name: B
+    - reference: JP2
+      pin_number: '2'
+      pin_name: B
+    - reference: JP3
+      pin_number: '2'
+      pin_name: B
+    - reference: JP4
+      pin_number: '2'
+      pin_name: B
+    - reference: JP6
+      pin_number: '2'
+      pin_name: C
+    - reference: R4
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R8
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R9
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R10
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R11
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R12
+      pin_number: '1'
+      pin_name: '~'
+  - number: '2'
+    name: A1
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: -7.62
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 53.34
+    net: ADR1
+    net_aliases:
+    - ADR1
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '1'
+      pin_name: A
+    - reference: R2
+      pin_number: '1'
+      pin_name: '~'
+  - number: '3'
+    name: A2
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: -10.16
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 55.88
+    net: ADR2
+    net_aliases:
+    - ADR2
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '1'
+      pin_name: A
+    - reference: R3
+      pin_number: '1'
+      pin_name: '~'
+  - number: '4'
+    name: IO0
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 7.62
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 38.1
+    net: SW_Up
+    net_aliases:
+    - SW_Up
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R9
+      pin_number: '2'
+      pin_name: '~'
+    - reference: SW2
+      pin_number: '1'
+      pin_name: Up
+  - number: '5'
+    name: IO1
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 5.08
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 40.64
+    net: SW_Down
+    net_aliases:
+    - SW_Down
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R8
+      pin_number: '2'
+      pin_name: '~'
+    - reference: SW2
+      pin_number: '5'
+      pin_name: Down
+  - number: '6'
+    name: IO2
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 43.18
+    net: SW_Right
+    net_aliases:
+    - SW_Right
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R10
+      pin_number: '2'
+      pin_name: '~'
+    - reference: SW2
+      pin_number: '2'
+      pin_name: Right
+  - number: '7'
+    name: IO3
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 45.72
+    net: SW_Left
+    net_aliases:
+    - SW_Left
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R11
+      pin_number: '2'
+      pin_name: '~'
+    - reference: SW2
+      pin_number: '7'
+      pin_name: Left
+  - number: '8'
+    name: VSS
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -15.24
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 83.82
+      y: 60.96
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR02'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR04'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR07'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR08'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR010'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR012'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR014'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR015'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR030'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR045'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '~'
+    - reference: D1
+      pin_number: '1'
+      pin_name: K
+    - reference: J1
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: J3
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: J5
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: R1
+      pin_number: '2'
+      pin_name: '~'
+    - reference: R2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: R3
+      pin_number: '2'
+      pin_name: '~'
+    - reference: SW2
+      pin_number: '10'
+      pin_name: GND
+    - reference: SW2
+      pin_number: '3'
+      pin_name: GND
+    - reference: SW2
+      pin_number: '6'
+      pin_name: GND
+    - reference: SW2
+      pin_number: '8'
+      pin_name: GND
+    - reference: SW2
+      pin_number: '9'
+      pin_name: GND
+  - number: '9'
+    name: IO4
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 48.26
+    net: SW_Center
+    net_aliases:
+    - SW_Center
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R12
+      pin_number: '2'
+      pin_name: '~'
+    - reference: SW2
+      pin_number: '4'
+      pin_name: Center
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -7.747
+        y: -12.827
+      max:
+        x: 7.747
+        y: 10.287
+      width: 15.494
+      height: 23.114
+      center:
+        x: 0.0
+        y: -1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 76.073
+        y: 35.433
+      max:
+        x: 91.567
+        y: 58.547
+      width: 15.494
+      height: 23.114
+      center:
+        x: 83.82
+        y: 46.99
+  warnings: []
+connected_components:
+- reference: '#PWR01'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR02'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR03'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR04'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR05'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR06'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR07'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR08'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR09'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR010'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR011'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR012'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR013'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR014'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR015'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR016'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR018'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR019'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR030'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR045'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR046'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR047'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR048'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: C1
+  pin_number: '1'
+  pin_name: '~'
+- reference: C1
+  pin_number: '2'
+  pin_name: '~'
+- reference: D1
+  pin_number: '1'
+  pin_name: K
+- reference: D2
+  pin_number: '1'
+  pin_name: A
+- reference: J1
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J1
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J1
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J1
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: J2
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J2
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J2
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J2
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: J3
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J3
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J3
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J3
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: J5
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J5
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J5
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J5
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: JP1
+  pin_number: '1'
+  pin_name: A
+- reference: JP1
+  pin_number: '2'
+  pin_name: B
+- reference: JP2
+  pin_number: '1'
+  pin_name: A
+- reference: JP2
+  pin_number: '2'
+  pin_name: B
+- reference: JP3
+  pin_number: '1'
+  pin_name: A
+- reference: JP3
+  pin_number: '2'
+  pin_name: B
+- reference: JP4
+  pin_number: '2'
+  pin_name: B
+- reference: JP5
+  pin_number: '2'
+  pin_name: B
+- reference: JP6
+  pin_number: '2'
+  pin_name: C
+- reference: JP7
+  pin_number: '2'
+  pin_name: B
+- reference: JP8
+  pin_number: '2'
+  pin_name: B
+- reference: R1
+  pin_number: '1'
+  pin_name: '~'
+- reference: R1
+  pin_number: '2'
+  pin_name: '~'
+- reference: R2
+  pin_number: '1'
+  pin_name: '~'
+- reference: R2
+  pin_number: '2'
+  pin_name: '~'
+- reference: R3
+  pin_number: '1'
+  pin_name: '~'
+- reference: R3
+  pin_number: '2'
+  pin_name: '~'
+- reference: R4
+  pin_number: '1'
+  pin_name: '~'
+- reference: R4
+  pin_number: '2'
+  pin_name: '~'
+- reference: R7
+  pin_number: '2'
+  pin_name: '~'
+- reference: R8
+  pin_number: '1'
+  pin_name: '~'
+- reference: R8
+  pin_number: '2'
+  pin_name: '~'
+- reference: R9
+  pin_number: '1'
+  pin_name: '~'
+- reference: R9
+  pin_number: '2'
+  pin_name: '~'
+- reference: R10
+  pin_number: '1'
+  pin_name: '~'
+- reference: R10
+  pin_number: '2'
+  pin_name: '~'
+- reference: R11
+  pin_number: '1'
+  pin_name: '~'
+- reference: R11
+  pin_number: '2'
+  pin_name: '~'
+- reference: R12
+  pin_number: '1'
+  pin_name: '~'
+- reference: R12
+  pin_number: '2'
+  pin_name: '~'
+- reference: R13
+  pin_number: '2'
+  pin_name: '~'
+- reference: SW2
+  pin_number: '1'
+  pin_name: Up
+- reference: SW2
+  pin_number: '10'
+  pin_name: GND
+- reference: SW2
+  pin_number: '2'
+  pin_name: Right
+- reference: SW2
+  pin_number: '3'
+  pin_name: GND
+- reference: SW2
+  pin_number: '4'
+  pin_name: Center
+- reference: SW2
+  pin_number: '5'
+  pin_name: Down
+- reference: SW2
+  pin_number: '6'
+  pin_name: GND
+- reference: SW2
+  pin_number: '7'
+  pin_name: Left
+- reference: SW2
+  pin_number: '8'
+  pin_name: GND
+- reference: SW2
+  pin_number: '9'
+  pin_name: GND

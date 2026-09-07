@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: J5
+  source_file: data/kicad_file.kicad_sch
+  uuid: 4e856605-7a8a-4cff-9bea-abb0e74ee2d9
+  library_id: SparkFun-Connector:Conn_01x02
+  unit: 1
+  body_style: 1
+  position:
+    x: 142.24
+    y: 177.8
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: J5
+    Value: Conn_01x02
+    Footprint: SparkFun-Connector:1x02
+    Datasheet: '~'
+    Description: Basic 0.1" PTH
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: Pin_1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 137.16
+      y: 177.8
+    net: ~{RESET}
+    net_aliases:
+    - ~{RESET}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U1
+      pin_number: '3'
+      pin_name: ~{RESET}
+  - number: '2'
+    name: Pin_2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 137.16
+      y: 175.26
+    net: ~{DRDY}
+    net_aliases:
+    - ~{DRDY}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R4
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U1
+      pin_number: '14'
+      pin_name: ~{DRDY}
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -3.937
+      max:
+        x: 1.397
+        y: 1.397
+      width: 2.794
+      height: 5.334
+      center:
+        x: 0.0
+        y: -1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 140.843
+        y: 173.863
+      max:
+        x: 143.637
+        y: 179.197
+      width: 2.794
+      height: 5.334
+      center:
+        x: 142.24
+        y: 176.53
+  warnings: []
+connected_components:
+- reference: R4
+  pin_number: '1'
+  pin_name: '~'
+- reference: R5
+  pin_number: '1'
+  pin_name: '~'
+- reference: U1
+  pin_number: '14'
+  pin_name: ~{DRDY}
+- reference: U1
+  pin_number: '3'
+  pin_name: ~{RESET}

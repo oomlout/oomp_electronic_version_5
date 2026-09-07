@@ -1,0 +1,145 @@
+reference: '#PWR07'
+schematic:
+  available: true
+  units:
+  - reference: '#PWR07'
+    source_file: data/kicad_file.kicad_sch
+    uuid: 27782c21-7cb8-4fc3-ad35-87222d731a81
+    library_id: e-radionica.com schematics:VCC
+    unit: 1
+    body_style: 1
+    position:
+      x: 147.32
+      y: 66.04
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: '#PWR07'
+      Value: VCC
+      Footprint: ''
+      Datasheet: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: VCC
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 0.0
+        rotation: 90.0
+      length: 0.0
+      position:
+        x: 147.32
+        y: 66.04
+      net: VCC
+      net_aliases:
+      - VCC
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#PWR05'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: '#PWR010'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: C4
+        pin_number: '1'
+        pin_name: '~'
+      - reference: L1
+        pin_number: '2'
+        pin_name: ''
+      - reference: R4
+        pin_number: '2'
+        pin_name: '~'
+      - reference: U2
+        pin_number: '7'
+        pin_name: +Vs
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.2703
+          y: 0.0
+        max:
+          x: 1.2703
+          y: 2.5403
+        width: 2.5406
+        height: 2.5403
+        center:
+          x: 0.0
+          y: 1.27015
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 146.0497
+          y: 63.4997
+        max:
+          x: 148.5903
+          y: 66.04
+        width: 2.5406
+        height: 2.5403
+        center:
+          x: 147.32
+          y: 64.76985
+    warnings: []
+  connected_components:
+  - reference: '#PWR05'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: '#PWR010'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: C4
+    pin_number: '1'
+    pin_name: '~'
+  - reference: L1
+    pin_number: '2'
+    pin_name: ''
+  - reference: R4
+    pin_number: '2'
+    pin_name: '~'
+  - reference: U2
+    pin_number: '7'
+    pin_name: +Vs
+pcb: null
+connectivity_cross_check:
+  available: false
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - VCC
+    pcb_nets: []
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: not_applicable
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: VCC
+    mpn: null
+  reasons:
+  - The symbol has no physical PCB/OOMP part requirement.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/_PWR07

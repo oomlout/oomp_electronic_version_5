@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: R30
+  source_file: data/kicad_file.kicad_sch
+  uuid: 118aaf4a-16c6-4675-8641-870637d96863
+  library_id: SparkFun-Resistor:33_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 100.33
+    y: 166.37
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R30
+    Value: '33'
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-08270
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 96.52
+      y: 166.37
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: '3'
+      pin_name: TIMEPULSE
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 104.14
+      y: 166.37
+    net: PPS
+    net_aliases:
+    - PPS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D3
+      pin_number: '4'
+      pin_name: K3
+    - reference: J2
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: Q1
+      pin_number: '1'
+      pin_name: G
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -1.016
+      max:
+        x: 2.54
+        y: 1.016
+      width: 5.08
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 97.79
+        y: 165.354
+      max:
+        x: 102.87
+        y: 167.386
+      width: 5.08
+      height: 2.032
+      center:
+        x: 100.33
+        y: 166.37
+  warnings: []
+connected_components:
+- reference: D3
+  pin_number: '4'
+  pin_name: K3
+- reference: J2
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: Q1
+  pin_number: '1'
+  pin_name: G
+- reference: U3
+  pin_number: '3'
+  pin_name: TIMEPULSE

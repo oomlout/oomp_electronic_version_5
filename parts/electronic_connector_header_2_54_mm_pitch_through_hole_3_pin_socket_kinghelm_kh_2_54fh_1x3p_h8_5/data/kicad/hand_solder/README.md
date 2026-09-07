@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5](electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5.kicad_mod)
+
+Source: `Connector_PinSocket_2.54mm:PinSocket_1x03_P2.54mm_Vertical`. [License](../LICENSE.md).

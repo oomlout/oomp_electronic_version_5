@@ -1,0 +1,154 @@
+available: true
+units:
+- reference: Q2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 06e6fcaf-4a4b-4ee6-be4d-93267a37422a
+  library_id: Device:Q_NPN_BCE
+  unit: 1
+  body_style: 1
+  position:
+    x: 85.09
+    y: 101.6
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: Q2
+    Value: SS8050
+    Footprint: Package_TO_SOT_SMD:SOT-23W
+    Datasheet: ''
+    Description: ''
+    LCSC: C916392
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: B
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 5.715
+    position:
+      x: 80.01
+      y: 101.6
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '2'
+      pin_name: ''
+  - number: '2'
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 87.63
+      y: 106.68
+    net: GPIO0
+    net_aliases:
+    - GPIO0
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C10
+      pin_number: '1'
+      pin_name: ''
+    - reference: SW2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U2
+      pin_number: '25'
+      pin_name: GPIO0/BOOT/ADC2_CH1
+    - reference: U4
+      pin_number: '25'
+      pin_name: '*GPIO0/BOOT/ADC2_CH1'
+  - number: '3'
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 87.63
+      y: 96.52
+    net: ~{DTR}
+    net_aliases:
+    - ~{DTR}
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R4
+      pin_number: '1'
+      pin_name: ''
+    - reference: U1
+      pin_number: '28'
+      pin_name: ~{DTR}
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.6764
+        y: -2.9464
+      max:
+        x: 4.2164
+        y: 2.9464
+      width: 5.8928
+      height: 5.8928
+      center:
+        x: 1.27
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 83.4136
+        y: 98.6536
+      max:
+        x: 89.3064
+        y: 104.5464
+      width: 5.8928
+      height: 5.8928
+      center:
+        x: 86.36
+        y: 101.6
+  warnings: []
+connected_components:
+- reference: C10
+  pin_number: '1'
+  pin_name: ''
+- reference: R4
+  pin_number: '1'
+  pin_name: ''
+- reference: R5
+  pin_number: '2'
+  pin_name: ''
+- reference: SW2
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: '28'
+  pin_name: ~{DTR}
+- reference: U2
+  pin_number: '25'
+  pin_name: GPIO0/BOOT/ADC2_CH1
+- reference: U4
+  pin_number: '25'
+  pin_name: '*GPIO0/BOOT/ADC2_CH1'

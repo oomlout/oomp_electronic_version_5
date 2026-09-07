@@ -1,0 +1,468 @@
+reference: R3
+schematic:
+  available: true
+  units:
+  - reference: R3
+    source_file: data/kicad_file.kicad_sch
+    uuid: ab0cd0d5-cf6c-4ea1-8b5b-15530c42c833
+    library_id: SparkFun-Resistor:1k_0603
+    unit: 1
+    body_style: 1
+    position:
+      x: 121.92
+      y: 38.1
+      rotation: 180.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R3
+      Value: 1k
+      Footprint: SparkFun-Resistor:R_0603_1608Metric
+      Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+      Description: Resistor
+      PROD_ID: RES-07856
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 1.016
+      position:
+        x: 124.46
+        y: 38.1
+      net: RXD
+      net_aliases:
+      - RXD
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: J2
+        pin_number: '3'
+        pin_name: Pin_3
+      - reference: U6
+        pin_number: '9'
+        pin_name: RXD
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 1.016
+      position:
+        x: 119.38
+        y: 38.1
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: JP9
+        pin_number: '2'
+        pin_name: B
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.524
+          y: -1.016
+        max:
+          x: 1.524
+          y: 1.016
+        width: 3.048
+        height: 2.032
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 120.396
+          y: 37.084
+        max:
+          x: 123.444
+          y: 39.116
+        width: 3.048
+        height: 2.032
+        center:
+          x: 121.92
+          y: 38.1
+    warnings: []
+  connected_components:
+  - reference: J2
+    pin_number: '3'
+    pin_name: Pin_3
+  - reference: JP9
+    pin_number: '2'
+    pin_name: B
+  - reference: U6
+    pin_number: '9'
+    pin_name: RXD
+pcb:
+  reference: R3
+  value: 1k
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 9f636bbc-cd67-443e-bb81-7b8b31000174
+  library_id: SparkFun-Resistor:R_0603_1608Metric
+  layer: F.Cu
+  side: front
+  position:
+    x: 148.59
+    y: 86.0425
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: R3
+    Value: 1k
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-07856
+    ki_fp_filters: R_*
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.825
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 149.415
+      y: 86.0425
+    placed_rotation: 0.0
+    size:
+      x: 0.8
+      y: 0.95
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: RXD
+    net_number: 42
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.225
+          y: -0.475
+        max:
+          x: -0.425
+          y: 0.475
+        width: 0.8
+        height: 0.95
+        center:
+          x: -0.825
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 149.015
+          y: 85.5675
+        max:
+          x: 149.815
+          y: 86.5175
+        width: 0.8
+        height: 0.95
+        center:
+          x: 149.415
+          y: 86.0425
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: J2
+      pad_number: '3'
+    - reference: U6
+      pad_number: '9'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.825
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 147.765
+      y: 86.0425
+    placed_rotation: 0.0
+    size:
+      x: 0.8
+      y: 0.95
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: Net-(JP9-B)
+    net_number: 47
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.425
+          y: -0.475
+        max:
+          x: 1.225
+          y: 0.475
+        width: 0.8
+        height: 0.95
+        center:
+          x: 0.825
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 147.365
+          y: 85.5675
+        max:
+          x: 148.165
+          y: 86.5175
+        width: 0.8
+        height: 0.95
+        center:
+          x: 147.765
+          y: 86.0425
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP9
+      pad_number: '2'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.225
+        y: -0.475
+      max:
+        x: 1.225
+        y: 0.475
+      width: 2.45
+      height: 0.95
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 147.365
+        y: 85.5675
+      max:
+        x: 149.815
+        y: 86.5175
+      width: 2.45
+      height: 0.95
+      center:
+        x: 148.59
+        y: 86.0425
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.505
+        y: -0.755
+      max:
+        x: 1.505
+        y: 0.755
+      width: 3.01
+      height: 1.51
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 147.085
+        y: 85.2875
+      max:
+        x: 150.095
+        y: 86.7975
+      width: 3.01
+      height: 1.51
+      center:
+        x: 148.59
+        y: 86.0425
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.85
+        y: -0.4625
+      max:
+        x: 0.85
+        y: 0.4625
+      width: 1.7
+      height: 0.925
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 147.74
+        y: 85.58
+      max:
+        x: 149.44
+        y: 86.505
+      width: 1.7
+      height: 0.925
+      center:
+        x: 148.59
+        y: 86.0425
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.297258
+        y: -0.5825
+      max:
+        x: 0.297258
+        y: 0.5825
+      width: 0.594516
+      height: 1.165
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 148.292742
+        y: 85.46
+      max:
+        x: 148.887258
+        y: 86.625
+      width: 0.594516
+      height: 1.165
+      center:
+        x: 148.59
+        y: 86.0425
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.505
+        y: -0.755
+      max:
+        x: 1.505
+        y: 0.755
+      width: 3.01
+      height: 1.51
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 147.085
+        y: 85.2875
+      max:
+        x: 150.095
+        y: 86.7975
+      width: 3.01
+      height: 1.51
+      center:
+        x: 148.59
+        y: 86.0425
+  connected_components:
+  - J2
+  - JP9
+  - U6
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - RXD
+    pcb_nets:
+    - RXD
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(JP9-B)
+    status: incomplete
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0603_1000_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0603_1000_ohm
+  inferred:
+    kind: resistor
+    package_size: '0603'
+    value: 1k
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R3

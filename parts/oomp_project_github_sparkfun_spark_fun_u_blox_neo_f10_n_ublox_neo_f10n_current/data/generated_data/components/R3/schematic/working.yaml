@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: R3
+  source_file: data/kicad_file_sheets/SparkFun_NEO-F10N-Connectors.kicad_sch
+  uuid: 2d388023-24c1-4560-9999-f0f30d937166
+  library_id: SparkFun-Resistor:10_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 83.82
+    y: 104.14
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R3
+    Value: '10'
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-12581
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 80.01
+      y: 104.14
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C4
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C6
+      pin_number: '1'
+      pin_name: '~'
+    - reference: L1
+      pin_number: '1'
+      pin_name: '1'
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 87.63
+      y: 104.14
+    net: VCC_RF
+    net_aliases:
+    - VCC_RF
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: '9'
+      pin_name: VCC_RF
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -1.016
+      max:
+        x: 2.54
+        y: 1.016
+      width: 5.08
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 81.28
+        y: 103.124
+      max:
+        x: 86.36
+        y: 105.156
+      width: 5.08
+      height: 2.032
+      center:
+        x: 83.82
+        y: 104.14
+  warnings: []
+connected_components:
+- reference: C4
+  pin_number: '1'
+  pin_name: '~'
+- reference: C6
+  pin_number: '1'
+  pin_name: '~'
+- reference: L1
+  pin_number: '1'
+  pin_name: '1'
+- reference: U3
+  pin_number: '9'
+  pin_name: VCC_RF

@@ -1,0 +1,506 @@
+reference: C4
+schematic:
+  available: true
+  units:
+  - reference: C4
+    source_file: data/kicad_file.kicad_sch
+    uuid: 758a6507-b5f9-48a8-a12f-bc2c7b7bacd8
+    library_id: Device:C
+    unit: 1
+    body_style: 1
+    position:
+      x: 139.7
+      y: 58.42
+      rotation: 90.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: C4
+      Value: 100n
+      Footprint: Capacitor_SMD:C_0402_1005Metric
+      Datasheet: ''
+      Description: ''
+      LCSC: C1525
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: ''
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 3.81
+        rotation: 270.0
+      length: 2.794
+      position:
+        x: 135.89
+        y: 58.42
+      net: DTR
+      net_aliases:
+      - DTR
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U3
+        pin_number: '28'
+        pin_name: ~{DTR}
+    - number: '2'
+      name: ''
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -3.81
+        rotation: 90.0
+      length: 2.794
+      position:
+        x: 143.51
+        y: 58.42
+      net: PC6
+      net_aliases:
+      - PC6
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: A1
+        pin_number: '3'
+        pin_name: ~{RESET}
+      - reference: A1
+        pin_number: '28'
+        pin_name: ~{RESET}
+      - reference: J2
+        pin_number: '5'
+        pin_name: Pin_5
+      - reference: R4
+        pin_number: '1'
+        pin_name: ''
+      - reference: R5
+        pin_number: '1'
+        pin_name: ''
+      - reference: U1
+        pin_number: '29'
+        pin_name: ~{RESET}/PC6
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.286
+          y: -1.016
+        max:
+          x: 2.286
+          y: 1.016
+        width: 4.572
+        height: 2.032
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 138.684
+          y: 56.134
+        max:
+          x: 140.716
+          y: 60.706
+        width: 2.032
+        height: 4.572
+        center:
+          x: 139.7
+          y: 58.42
+    warnings: []
+  connected_components:
+  - reference: A1
+    pin_number: '28'
+    pin_name: ~{RESET}
+  - reference: A1
+    pin_number: '3'
+    pin_name: ~{RESET}
+  - reference: J2
+    pin_number: '5'
+    pin_name: Pin_5
+  - reference: R4
+    pin_number: '1'
+    pin_name: ''
+  - reference: R5
+    pin_number: '1'
+    pin_name: ''
+  - reference: U1
+    pin_number: '29'
+    pin_name: ~{RESET}/PC6
+  - reference: U3
+    pin_number: '28'
+    pin_name: ~{DTR}
+pcb:
+  reference: C4
+  value: 100n
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 1fa51667-bfa8-4fd5-9607-0fb6006387b3
+  library_id: Capacitor_SMD:C_0402_1005Metric
+  layer: F.Cu
+  side: front
+  position:
+    x: 149.52
+    y: 93.4
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: C4
+    Value: 100n
+    Datasheet: ''
+    Description: ''
+    KiLib_Generator: C1525
+    LCSC: C1525
+    ki_fp_filters: C_*
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.48
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 149.04
+      y: 93.4
+    placed_rotation: 0.0
+    size:
+      x: 0.56
+      y: 0.62
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: /DTR
+    net_number: null
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.76
+          y: -0.31
+        max:
+          x: -0.2
+          y: 0.31
+        width: 0.56
+        height: 0.62
+        center:
+          x: -0.48
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 148.76
+          y: 93.09
+        max:
+          x: 149.32
+          y: 93.71
+        width: 0.56
+        height: 0.62
+        center:
+          x: 149.04
+          y: 93.4
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U3
+      pad_number: '28'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.48
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 150.0
+      y: 93.4
+    placed_rotation: 0.0
+    size:
+      x: 0.56
+      y: 0.62
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: /PC6
+    net_number: null
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.2
+          y: -0.31
+        max:
+          x: 0.76
+          y: 0.31
+        width: 0.56
+        height: 0.62
+        center:
+          x: 0.48
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 149.72
+          y: 93.09
+        max:
+          x: 150.28
+          y: 93.71
+        width: 0.56
+        height: 0.62
+        center:
+          x: 150.0
+          y: 93.4
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: A1
+      pad_number: '3'
+    - reference: A1
+      pad_number: '28'
+    - reference: J2
+      pad_number: '5'
+    - reference: R4
+      pad_number: '1'
+    - reference: R5
+      pad_number: '1'
+    - reference: U1
+      pad_number: '29'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.76
+        y: -0.31
+      max:
+        x: 0.76
+        y: 0.31
+      width: 1.52
+      height: 0.62
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 148.76
+        y: 93.09
+      max:
+        x: 150.28
+        y: 93.71
+      width: 1.52
+      height: 0.62
+      center:
+        x: 149.52
+        y: 93.4
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.935
+        y: -0.485
+      max:
+        x: 0.935
+        y: 0.485
+      width: 1.87
+      height: 0.97
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 148.585
+        y: 92.915
+      max:
+        x: 150.455
+        y: 93.885
+      width: 1.87
+      height: 0.97
+      center:
+        x: 149.52
+        y: 93.4
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.55
+        y: -0.3
+      max:
+        x: 0.55
+        y: 0.3
+      width: 1.1
+      height: 0.6
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 148.97
+        y: 93.1
+      max:
+        x: 150.07
+        y: 93.7
+      width: 1.1
+      height: 0.6
+      center:
+        x: 149.52
+        y: 93.4
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.167836
+        y: -0.42
+      max:
+        x: 0.167836
+        y: 0.42
+      width: 0.335672
+      height: 0.84
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 149.352164
+        y: 92.98
+      max:
+        x: 149.687836
+        y: 93.82
+      width: 0.335672
+      height: 0.84
+      center:
+        x: 149.52
+        y: 93.4
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.935
+        y: -0.485
+      max:
+        x: 0.935
+        y: 0.485
+      width: 1.87
+      height: 0.97
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 148.585
+        y: 92.915
+      max:
+        x: 150.455
+        y: 93.885
+      width: 1.87
+      height: 0.97
+      center:
+        x: 149.52
+        y: 93.4
+  connected_components:
+  - A1
+  - J2
+  - R4
+  - R5
+  - U1
+  - U3
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - DTR
+    pcb_nets:
+    - /DTR
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - PC6
+    pcb_nets:
+    - /PC6
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_capacitor_0402_100_nano_farad
+  confidence: 1.0
+  proposed_oomp_id: electronic_capacitor_0402_100_nano_farad
+  inferred:
+    kind: capacitor
+    package_size: '0402'
+    value: 100n
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: capacitor
+category_source: oomp_populate
+category_name: Capacitor
+generated_directory: components/C4

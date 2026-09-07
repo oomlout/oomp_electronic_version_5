@@ -1,0 +1,137 @@
+available: true
+units:
+- reference: C4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 758a6507-b5f9-48a8-a12f-bc2c7b7bacd8
+  library_id: Device:C
+  unit: 1
+  body_style: 1
+  position:
+    x: 139.7
+    y: 58.42
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C4
+    Value: 100n
+    Footprint: Capacitor_SMD:C_0402_1005Metric
+    Datasheet: ''
+    Description: ''
+    LCSC: C1525
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 3.81
+      rotation: 270.0
+    length: 2.794
+    position:
+      x: 135.89
+      y: 58.42
+    net: DTR
+    net_aliases:
+    - DTR
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: '28'
+      pin_name: ~{DTR}
+  - number: '2'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -3.81
+      rotation: 90.0
+    length: 2.794
+    position:
+      x: 143.51
+      y: 58.42
+    net: PC6
+    net_aliases:
+    - PC6
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: A1
+      pin_number: '3'
+      pin_name: ~{RESET}
+    - reference: A1
+      pin_number: '28'
+      pin_name: ~{RESET}
+    - reference: J2
+      pin_number: '5'
+      pin_name: Pin_5
+    - reference: R4
+      pin_number: '1'
+      pin_name: ''
+    - reference: R5
+      pin_number: '1'
+      pin_name: ''
+    - reference: U1
+      pin_number: '29'
+      pin_name: ~{RESET}/PC6
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.286
+        y: -1.016
+      max:
+        x: 2.286
+        y: 1.016
+      width: 4.572
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 138.684
+        y: 56.134
+      max:
+        x: 140.716
+        y: 60.706
+      width: 2.032
+      height: 4.572
+      center:
+        x: 139.7
+        y: 58.42
+  warnings: []
+connected_components:
+- reference: A1
+  pin_number: '28'
+  pin_name: ~{RESET}
+- reference: A1
+  pin_number: '3'
+  pin_name: ~{RESET}
+- reference: J2
+  pin_number: '5'
+  pin_name: Pin_5
+- reference: R4
+  pin_number: '1'
+  pin_name: ''
+- reference: R5
+  pin_number: '1'
+  pin_name: ''
+- reference: U1
+  pin_number: '29'
+  pin_name: ~{RESET}/PC6
+- reference: U3
+  pin_number: '28'
+  pin_name: ~{DTR}

@@ -1,0 +1,226 @@
+# KiCad processing and OOMP matching agents
+
+These Python agents digest modern KiCad projects (`.kicad_sch` and `.kicad_pcb`) and create a reviewable component dataset. They do not call an AI API. Instead, the matching agent is an explainable command-line tool that an external AI agent can run, inspect, and override.
+
+See [`AGENT_GUIDE.md`](AGENT_GUIDE.md) for the complete component and project
+pipeline, browser-only research workflow, and command reference. The prioritized
+component backlog is in [`RECOMMENDED_COMPONENTS.md`](RECOMMENDED_COMPONENTS.md).
+The strict one-at-a-time implementation sequence and current progress are in
+[`COMPONENT_EXPANSION_LEDGER.md`](COMPONENT_EXPANSION_LEDGER.md).
+
+## Project parts and Roboclick actions
+
+Projects use this taxonomy:
+
+```text
+oomp / project / github / user / repository / version
+```
+
+`working_oomp_populate_project.py` defines the repository, version, Git ref,
+KiCad source folder, file basename, extensions, and project-specific match
+overrides. A missing version definition defaults to `current`.
+
+`working_oomp.py` adds project-only `run_python` action blocks for source
+refresh, InteractiveHtmlBom, documentation, reverse usage, guarded OOMP KiCad
+conversion, and JLCPCB production files:
+
+1. Clone into the part's ignored `data/git/` folder, or fetch and `git pull
+   --ff-only` when it already exists, using the system Git executable. The
+   selected source files are copied to `data/kicad_file.kicad_pcb`,
+   `data/kicad_file.kicad_sch`, and `data/kicad_file.kicad_pro`.
+2. Run the vendored InteractiveHtmlBom generator without opening a browser.
+   Its result is placed in `data/interactivehtmlbom/`; KiCad's Python runtime
+   is required because InteractiveHtmlBom imports `pcbnew`.
+3. Parse those canonical files, match components, copy required OOMP component
+   sources, draw the board, and rebuild the project part's `README.md`.
+4. Generate Protel Gerbers, Excellon drills, JLCPCB BOM/CPL files, DRC output,
+   OOMP pad-name audit data and checksummed manifests under
+   `data/production_auto_generate/`. See the
+   [JLCPCB production guide](PRODUCTION_JLC_GUIDE.md).
+
+All blocks use an empty `file_test`, so they run every time actions are run.
+The third block verifies `data/generated_data/src/board_pins.png` as its declared
+output while also rebuilding the SVG boards and project README.
+
+Existing PNG files are preserved by default so routine runs do not rewrite
+binary files. To deliberately rebuild the project board PNG, run:
+
+```powershell
+python -m kicad_agents.project_summary_agent parts/oomp_project_github_electrolama_pt1_current --regenerate-pngs
+```
+
+Component diagram PNGs follow the same rule. Use
+`python working_svg.py --regenerate-pngs` when every component PNG should be
+rebuilt. Roboclick image-resize and project actions also accept the explicit
+`regenerate_pngs: true` option for a forced action run.
+
+For a complete deterministic rebuild, run `action_regenerate_all.bat` from the
+repository root. It forces SVG/PNG and preview regeneration, but deliberately
+skips actions that operate an interactive browser.
+The force flag is applied only in memory; saved definitions remain in the
+normal conservative PNG mode after the full rebuild.
+
+## Part navigation and file layout
+
+Population creates an OOMP navigation part for every populated taxonomy
+category. Roboclick renders those parts and copies their canonical Markdown to
+the top-level `navigation/` tree. Navigation uses relative parent/child links;
+links to real parts use absolute GitHub repository URLs.
+
+Generated part folders keep `README.md`, `working.yaml`, and `data/` at
+their root; project parts also keep their standalone `board_explorer.html` there.
+Diagrams, PNG previews, datasheets, project source files, and reports belong under `data/`. Run
+`python -m kicad_agents.migrate_part_data_layout` to migrate legacy roots.
+
+Project explorer links use GitHub Pages at
+`https://oomlout.github.io/oomp_electronic_version_5/parts/<project-id>/board_explorer.html`.
+
+The explorer includes expandable component pins and clickable routed nets,
+top/bottom/internal copper layers, vias and optional saved fills. See the
+[board explorer guide](BOARD_EXPLORER_GUIDE.md) for usage, generation and tests.
+Enable GitHub Pages for the repository's `main` branch and `/ (root)` folder
+after publishing these changes. The root `.nojekyll` file keeps the generated
+HTML/SVG assets unprocessed. These self-contained HTML files also work locally.
+
+## Generated structure
+
+```text
+parts/<project-id>/data/generated_data/
+  project.json
+  project.yaml
+  summary.yaml
+  generated_manifest.json
+  unmatched_parts.json
+  unmatched_parts.yaml
+  mounting_holes.json
+  mounting_holes.yaml
+  match_overrides.yaml
+  src/
+    board.svg                   # self-contained top placement drawing
+    board.png                   # 1600-pixel top drawing
+    board_300.png               # 300-pixel top preview
+    board_pins.svg              # top board with names inside component pads
+    board_pins.png              # 1600-pixel pin-labelled top board
+    board_pins_300.png          # 300-pixel pin-labelled top preview
+    board_bottom.svg            # mirrored bottom placement drawing
+    board_bottom.png            # 1600-pixel bottom drawing
+    board_bottom_300.png        # 300-pixel bottom preview
+    board_pins_bottom.svg       # bottom board with names inside component pads
+    board_pins_bottom.png       # 1600-pixel pin-labelled bottom board
+    board_pins_bottom_300.png   # 300-pixel pin-labelled bottom preview
+    components/
+      <oomp-id>/
+        working_svg_assembly.svg
+        working_svg_assembly_pins.svg
+      manifest.yaml
+  project_style.yaml
+  project_style_override.yaml   # optional, human-created style overrides
+  project_summary_data.json
+  project_summary_data.yaml
+  components/
+    R1/
+      component.json
+      component.yaml
+      schematic/
+        working.yaml
+        size.yaml
+      pcb/
+        working.yaml
+        size.yaml
+      oomp/
+        match.yaml
+        working.yaml        # exact copy from parts/<matched-id>/working.yaml when matched
+    MH1/                    # first-class mechanical OOMP item
+      component.json
+      component.yaml
+      schematic/
+        working.yaml        # explicitly records that no electrical symbol is present
+        size.yaml
+      pcb/
+        working.yaml        # drill, position, source footprint, style, and plating
+        size.yaml
+      oomp/
+        match.yaml
+        working.yaml        # matched mechanical_mounting_hole_* definition
+```
+
+Every schematic symbol is retained. Power symbols and other non-physical entries receive `not_applicable` match status. Every PCB footprint and every physical schematic component is sent to the matcher. Uncertain physical items are written to both unmatched-parts files.
+
+Every extracted mounting or locating hole is also assigned a stable `MH1`,
+`MH2`, ... OOMP reference. Its generated component record keeps the original
+footprint reference and hole ID, while its classification uses the mechanical
+mounting-hole taxonomy: drill size, round or slot style, and plated or
+unplated. These mechanical items remain separate from the electrical BOM and
+the component assembly views.
+
+The project part also has an ignored `data/project_source/<oomp-id>/` tree. It
+contains `working.yaml`, the assembly SVG variants, and
+`working_svg_outline.svg` copied from every matched OOMP part, plus a manifest.
+
+## Deterministic project summary
+
+The project README action calls the processing and summary agents in sequence.
+The summary agent can also be rerun independently after `kicad_file.*` exists:
+
+```powershell
+python -m kicad_agents.project_summary_agent parts\oomp_project_github_electrolama_pt1_current --parts-dir parts
+```
+
+Python compiles the BOM, principal nets, placement statistics, GitHub link,
+board dimensions, top-side `board.svg` and `board_pins.svg`, plus mirrored
+`board_bottom.svg` and `board_pins_bottom.svg` drawings. The board drawings read
+the KiCad `Edge.Cuts` geometry and place each matched component using its local
+footprint bounds, PCB coordinates, and one application of its PCB rotation.
+Reference indicators are dynamically sized and centred on the placed component
+bounds. Clean assembly drawings use `working_svg_assembly.svg`; the pin version
+uses `working_svg_assembly_pins.svg`, with each available pin name fitted inside
+its recorded pad rectangle and rotated 90 degrees for tall pads. Both are
+generated through the standard OOMP SVG pipeline with the shared 0.22 mm
+non-scaling stroke. Component diagrams are inlined into the board SVGs for
+reliable rendering, while their local copies stay in
+`data/generated_data/src/components`.
+
+All README prose and facts are compiled by Python; there is no LLM prompt or
+LLM-authored sidecar. Optional visual changes belong in
+`project_style_override.yaml`; the shared defaults remain in
+`styles/style_project_summary.yaml`.
+
+## AI-assisted matching workflow
+
+1. Run the processing agent.
+2. Read `data/generated_data/unmatched_parts.json` or `.yaml`.
+3. Ask the matching agent for a fresh ranked result for an individual `component.json`:
+
+   ```powershell
+   python -m kicad_agents.oomp_matching_agent `
+     parts\oomp_project_github_electrolama_pt1_current\data\generated_data\components\R1\component.json `
+     --parts-dir parts
+   ```
+
+4. When the AI can justify a match, add it to `data/generated_data/match_overrides.yaml`:
+
+   ```yaml
+   matches:
+     R1: electronic_resistor_0402_5100_ohm
+   ```
+
+5. Rerun the processing agent. Overrides are validated against the current `parts` directory and are marked as override-based in `oomp/match.yaml`.
+
+## Measurement policy
+
+- Schematic size includes embedded symbol graphics only. Pin objects, property fields, and graphical text are excluded.
+- Footprint output retains separate pad, courtyard, fabrication, silkscreen, and overall non-text bounding boxes.
+- Local and placed axis-aligned bounding boxes are expressed in millimetres.
+- Schematic connectivity is reconstructed from pin coordinates, wires, junctions, local/global labels, and power symbols.
+- PCB connectivity comes directly from footprint pad net assignments.
+- A per-component cross-check records named-net agreement or disagreement between schematic pin numbers and PCB pad numbers. It reports source inconsistencies without silently rewriting them.
+
+## Format references
+
+The parser follows KiCad's official modern file-format documentation:
+
+- [S-expression format](https://dev-docs.kicad.org/en/file-formats/sexpr-intro/)
+- [Schematic file format](https://dev-docs.kicad.org/en/file-formats/sexpr-schematic/)
+- [Board file format](https://dev-docs.kicad.org/en/file-formats/sexpr-pcb/)
+
+KiCad documents these modern formats as UTF-8 S-expressions using millimetre coordinates. The schematic embeds the library symbols it uses, while the board embeds each placed footprint, its graphics, pads, position, and net assignments.

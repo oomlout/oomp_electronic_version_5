@@ -1,0 +1,228 @@
+# Component expansion ledger
+
+This is the linear implementation queue for expanding OOMP's electronic
+component coverage.  Work proceeds strictly in sequence: finish, validate, and
+record one row before beginning the next row.  Rows are deliberately explicit
+so a person can reorder the queue, add a variant, or change a package without
+having to understand a generated dependency graph.
+
+## Status values
+
+- `queued`: no implementation work has started.
+- `researching`: browser verification is in progress.
+- `implemented`: populate and extra definitions exist, but final regeneration
+  or project rematching is still outstanding.
+- `validated`: the part is generated, tested, and matched into any project that
+  requested it.
+- `needs_input`: the available project data does not identify an exact part.
+- `not_fitted`: retained as research history, but not added as a fitted part.
+
+## Per-component completion checklist
+
+Every exact manufacturer component must complete these steps in order:
+
+1. Confirm the exact MPN, manufacturer, package, and supplier identity using
+   the available browser.  Similar suffixes do not count as a match.
+2. Open the manufacturer or supplier datasheet in the browser and record the
+   source.  Connectors and ICs must also have a browser-downloaded
+   `datasheet.pdf` imported through `browser_research_agent.py`.
+3. Add the human-editable option to the appropriate
+   `working_oomp_populate_<type>.py` array.
+4. Add MPN, supplier number, pin names, dimensions, and source notes in the
+   corresponding populate-extra file.
+5. Add explicit project match overrides for known references.
+6. Run `working_oomp_populate.py`, load the generated definitions, generate the
+   part assets through the Roboclick action, and rerun the affected project.
+7. Run focused tests and the pipeline audit, then set the row to `validated`.
+
+Generic families follow the same sequence but may intentionally omit a
+manufacturer and supplier number.  Exact variants are always separate rows.
+
+## Phase 0 — close current project gaps
+
+| ID | Status | Component | Planned OOMP identity | Package / coverage | Required evidence or decision |
+| --- | --- | --- | --- | --- | --- |
+| E0001 | validated | onsemi `1N4148WT` switching diode | `electronic_diode_switching_sod_523f_onsemi_1n4148wt` | SOD-523F, 2 pins | LCSC `C232841`; pin 1 cathode, pin 2 anode; 1.6 × 0.8 mm nominal drawing; matched to Bus Pirate D401 and D601–D603. Historical project URL was rejected because it resolves to `1N4148WS`. |
+| E0002 | validated | Diodes Incorporated `BAS40T-05` dual Schottky diode | `electronic_diode_schottky_dual_common_cathode_sot_523_diodes_incorporated_bas40t_05` | SOT-523, 3 pins | Exact bare MPN retained; 40 V, 200 mA; pins 1 and 2 are anodes and pin 3 is the common cathode; matched to Bus Pirate D500–D504. LCSC has no exact listing, so no LCSC number is recorded and `BAS40W-05` is not substituted. |
+| E0003 | validated | Kinghelm `KH-2.54FH-1X3P-H8.5` female socket | `electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5` | 2.54 mm, vertical, one row, 3 pins | LCSC `C2932670`; datasheet confirms 7.62 × 2.50 mm body, 8.50 mm insulation height, 0.64 × 0.40 mm pins, and 1.02 mm recommended PCB holes; matched to generic Bus Pirate J201. |
+| E0004 | validated | TDK `MMZ2012R150AT000` ferrite bead | `electronic_ferrite_bead_0805_15_ohm_1_5_amp_tdk_mmz2012r150at000` | 0805 / 2012 metric | Historical supplier page resolves to LCSC `C275464`; TDK datasheet confirms 15 ohm at 100 MHz, 1.5 A maximum rated current, 0.05 ohm maximum DCR, and 2.0 × 1.25 × 0.85 mm body. Browser-downloaded datasheet, part views, README, and Bus Pirate L201 match validated. |
+| E0005 | validated | SZHTC `QT200H1201` 2.0 inch IPS TFT display | `electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201` | 34.6 × 47.8 mm body, 12-pin flex | Bus Pirate BOM confirms SZHTC brand and exact MPN. Browser-downloaded Surenoo manual explicitly labels its drawing `PRODUCT NO: QT200H1201` and confirms ST7789V, 240 × 320, SPI, dimensions and pinout. LCSC returns no exact result. Exact component definition, datasheet, pinout, real-aspect SVG/PNG views, previews, and README validated; LCD201 override queued, with project regeneration intentionally deferred until all missing parts are finished. |
+| E0006 | validated | CBI `MMBT7002K` N-MOSFET | `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k` | SOT-23, 3 pins | Fitted BOM and exact LCSC `C2879714` verified; CBI datasheet confirms 60 V, 300 mA and pins 1 gate, 2 source, 3 drain. Exact part, datasheet, drawings, previews, README and Q202 override validated; project regeneration deferred. |
+| E0007 | validated | CBI `BC2301T-2.8A` P-MOSFET fitted for schematic value `SI2301` | `electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a` | SOT-523, 3 pins | Exact special-order CBI datasheet verified; no LCSC number because public `C2928245` is the incompatible SOT-23 variant. Ten project matches are queued; project regeneration remains deferred. |
+| E0008 | validated | Diodes Incorporated `BCM857BS-7-F` dual PNP matched pair | `electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f` | SOT-363 / SC-70-6, 6 pins | Exact LCSC `C105896`, EBCEBC pinout, matched-pair limits and package dimensions verified; Q401 override queued and project regeneration deferred. |
+| E0009 | validated | CBI `MMDT3906DW` dual PNP transistor | `electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw` | SOT-363 / SC-70-6, 6 pins | Exact CBI supplier variant and LCSC `C2836075` verified; 40 V, 200 mA, EBCEBC pinout and dimensions added; Q601 override queued and project regeneration deferred. |
+| E0010 | validated | Gainsil `LMV321-TR` single op-amp | `electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr` | SOT-23-5, 5 pins | Exact LCSC `C362273`; rail-to-rail input/output, 2.1–5.5 V, five-pin assignment and full package ranges confirmed from the Gainsil datasheet; U404, U506 and U603 overrides queued. |
+| E0011 | validated | TI `LMV324IPWR` quad op-amp | `electronic_ic_tssop_14_amplifier_operational_quad_rail_to_rail_output_texas_instruments_lmv324ipwr` | TSSOP-14, 14 pins | Exact LCSC `C398929`; TI pin assignment and PW0014A package ranges confirmed; U504 and U505 overrides queued. |
+| E0012 | validated | Gainsil `GS321A-TR` precision single op-amp | `electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr` | SOT-23-5, 5 pins | Exact active LCSC `C431318`; 0.4 mV maximum offset target, rail-to-rail input/output, pinout and package ranges confirmed; U601 override queued. |
+| E0013 | validated | TI `LMV331IDBVR` comparator | `electronic_ic_sot_23_5_comparator_single_open_collector_texas_instruments_lmv331idbvr` | SOT-23-5, 5 pins | Exact LCSC `C34731`; open-collector output, five-pin assignment, electrical data and DBV dimensions confirmed; U602 override queued. |
+| E0014 | needs_input | PTS810-family tactile switch | exact identity after fitted-BOM input | SMD | Footprint does not determine actuator height, force, or exact suffix. |
+| E0015 | needs_input | GT-TC026-family tactile switch | exact identity after fitted-BOM input | SMD, bottom side | Placeholder contains unresolved height and force fields. |
+
+## Phase 1 — foundational discrete semiconductors
+
+| ID | Status | Component | Planned package | Scope and evidence |
+| --- | --- | --- | --- | --- |
+| E0016 | validated | generic `2N7002` N-MOSFET | SOT-23 | OOMP ID `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002`; common number `2N7002`; representative Nexperia sheet; pins 1 gate, 2 source, 3 drain; manufacturer-dependent limits are labelled; deterministic matching requires value, symbol and footprint agreement and refuses components with an explicit maker or MPN. |
+| E0017 | validated | Nexperia `2N7002,215` | SOT-23 | OOMP ID `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215`; exact LCSC `C65189`, active ordering suffix, 60 V and 300 mA solder-point rating, G/S/D pinout, manufacturer datasheet and dimensions verified. |
+| E0018 | validated | generic `BSS138` N-MOSFET | SOT-23 | OOMP ID `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138`; representative onsemi datasheet and CASE 318 dimensions verified, manufacturer-dependent limits labelled, generic matching requires value/symbol/footprint agreement and no explicit MPN. |
+| E0019 | validated | onsemi `BSS138` | SOT-23 | OOMP ID `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`; exact LCSC `C52895`, bare manufacturer orderable number, 50 V / 220 mA limits, G/S/D assignment and CASE 318 dimensions verified. |
+| E0020 | queued | `AO3400A` logic-level N-MOSFET | SOT-23 | Exact Alpha & Omega or verified equivalent identity. |
+| E0021 | queued | `IRLML6344` logic-level N-MOSFET | SOT-23 | Exact Infineon/IR variant, package and thermal data. |
+| E0022 | queued | `AO3401A` P-MOSFET | SOT-23 | Exact variant and G/S/D assignment. |
+| E0023 | queued | confirmed `SI2301` P-MOSFET | SOT-23 | Separate from the Bus Pirate SOT-523 item. |
+| E0024 | queued | generic `MMBT3904` NPN transistor | SOT-23 | Generic B/E/C definition. |
+| E0025 | queued | selected exact `MMBT3904` | SOT-23 | Exact manufacturer and pinout. |
+| E0026 | queued | `BC817` NPN transistor | SOT-23 | Gain-bin suffix must be explicit. |
+| E0027 | queued | generic `MMBT3906` PNP transistor | SOT-23 | Generic B/E/C definition. |
+| E0028 | queued | selected exact `MMBT3906` | SOT-23 | Exact manufacturer and pinout. |
+| E0029 | queued | `BC807` PNP transistor | SOT-23 | Gain-bin suffix must be explicit. |
+| E0030 | queued | generic `1N4148W` switching diode | SOD-123 | Generic two-pin polarity definition. |
+| E0031 | queued | selected exact `1N4148W` | SOD-123 | Exact manufacturer/package variant. |
+| E0032 | queued | selected `1N4148WS` | SOD-323 | Keep distinct from `W` and `WT`; exact manufacturer variant. |
+| E0033 | queued | generic `BAT54` Schottky diode | SOT-23 | Single-diode three-lead package definition. |
+| E0034 | queued | generic `BAT54C` dual Schottky | SOT-23 | Common-cathode topology. |
+| E0035 | queued | generic `BAT54S` dual Schottky | SOT-23 | Series topology. |
+| E0036 | queued | selected exact BAT54-family variants | SOT-23 | One verified stocked MPN for each topology. |
+| E0037 | queued | `SS14` Schottky rectifier | SMA | Exact 1 A / 40 V stocked variant. |
+| E0038 | queued | `B5819W` Schottky rectifier | SOD-123 | Exact manufacturer and limits. |
+| E0039 | queued | generic `M7` / SMD `1N4007` rectifier | SMA | Generic polarity and package. |
+| E0040 | queued | through-hole `1N4007` rectifier | DO-41 | Generic polarity, body and lead spacing. |
+| E0041 | queued | 3.3 V Zener diode | SOD-123 | Select a standard exact MPN after generic entry. |
+| E0042 | queued | 5.1 V Zener diode | SOD-123 | Select a standard exact MPN after generic entry. |
+| E0043 | queued | 12 V Zener diode | SOD-123 | Select a standard exact MPN after generic entry. |
+| E0044 | queued | `USBLC6-2SC6` USB ESD array | SOT-23-6 | Exact ST part or an explicitly named equivalent, six-pin route-through pinout. |
+| E0045 | queued | single-line 5 V TVS diode | SOD-323 | Choose an exact low-capacitance part. |
+| E0046 | queued | `SMAJ5.0A` TVS | SMA | Unidirectional exact part. |
+| E0047 | queued | `SMAJ12A` TVS | SMA | Unidirectional exact part. |
+| E0048 | queued | 0.5 A resettable fuse | 0603 | Hold/trip current, voltage and exact MPN. |
+| E0049 | queued | 1.0 A resettable fuse | 1206 | Hold/trip current, voltage and exact MPN. |
+| E0050 | queued | 1.5 A resettable fuse | 1812 | Hold/trip current, voltage and exact MPN. |
+
+## Phase 2 — power and analogue
+
+| ID | Status | Component | Package target | Scope and evidence |
+| --- | --- | --- | --- | --- |
+| E0051 | queued | `MCP1700-3302` 3.3 V LDO | SOT-23 | Exact suffix, pinout, current and capacitor requirements. |
+| E0052 | queued | `XC6206P332` 3.3 V LDO | SOT-23 | Exact manufacturer variant; base name has many clones. |
+| E0053 | queued | `AMS1117-3.3` LDO | SOT-223 | Exact manufacturer variant plus generic identity. |
+| E0054 | queued | `AMS1117-5.0` LDO | SOT-223 | Exact manufacturer variant plus generic identity. |
+| E0055 | queued | `7805` regulator | TO-220 | Generic and selected exact through-hole version. |
+| E0056 | queued | `MP1584EN` buck regulator | SOIC-8 exposed pad | Exact pinout, thermal pad and package drawing. |
+| E0057 | queued | `MP2307DN` buck regulator | SOIC-8 exposed pad | Exact MPS identity and package drawing. |
+| E0058 | queued | `TPS62160` buck regulator | WSON-8 | Exact TI orderable MPN and exposed-pad pin. |
+| E0059 | queued | `MT3608` boost regulator | SOT-23-6 | Exact manufacturer rather than module-only naming. |
+| E0060 | queued | `TPS61023` boost regulator | VQFN-HR | Exact TI MPN and thermal-pad layout. |
+| E0061 | queued | `MCP73831` Li-ion charger | SOT-23-5 | Exact charge-status polarity and programming pin. |
+| E0062 | queued | `TP4056` Li-ion charger | SOP-8 exposed pad | Exact manufacturer variant and thermal pad. |
+| E0063 | queued | `DW01A` protection controller | SOT-23-6 | Exact clone/manufacturer identity and pinout. |
+| E0064 | queued | `FS8205A` dual MOSFET | TSSOP-8 | Back-to-back MOSFET topology and exact pinout. |
+| E0065 | queued | `MCP6001` op-amp | SOT-23-5 | Exact suffix and rail-to-rail specification. |
+| E0066 | queued | `MCP6002` dual op-amp | SOIC-8 | Exact suffix and eight-pin assignment. |
+| E0067 | queued | `LM358` dual op-amp | SOIC-8 | Generic identity plus selected exact modern stocked part. |
+| E0068 | queued | `TLV9002` dual op-amp | VSSOP-8 | Exact TI suffix and package. |
+| E0069 | queued | `LM393` dual comparator | SOIC-8 | Comparator taxonomy and open-collector outputs. |
+| E0070 | queued | `TL431` adjustable reference | SOT-23 | Exact reference/anode/cathode pinout. |
+| E0071 | queued | `LM4040-2.5` reference | SOT-23 | Exact voltage-grade suffix. |
+| E0072 | queued | `LM4040-3.0` reference | SOT-23 | Exact voltage-grade suffix. |
+| E0073 | queued | `INA219` power monitor | SOIC-8 | Exact TI suffix, Kelvin inputs and I2C pins. |
+| E0074 | queued | `INA226` power monitor | TSSOP-10 | Exact TI suffix and pinout. |
+| E0075 | queued | `ADS1115` ADC | VSSOP-10 | Exact TI suffix, address pin and differential inputs. |
+| E0076 | queued | `MCP3008` ADC | DIP-16 and SOIC-16 | Add package variants as separate identities. |
+| E0077 | queued | `MCP4725` DAC | SOT-23-6 | Exact address variant and pinout. |
+
+## Phase 3 — logic, interfaces, and memory
+
+| ID | Status | Component set | Package target | Scope and evidence |
+| --- | --- | --- | --- | --- |
+| E0078 | queued | `74HC00`, `74HC04`, `74HC14`, `74HC32` | SOIC-14 | Add one exact stocked family at a time in the order shown. |
+| E0079 | queued | `74HC125`, `74HC138`, `74HC165`, `74HC595` | SOIC/TSSOP | Do not conflate logic-family voltage thresholds. |
+| E0080 | queued | `74LVC1G04`, `74LVC1G08`, `74LVC1G125` | SOT-23-5/6 | Exact pin-compatible package codes. |
+| E0081 | queued | `PCA9306` level translator | TSSOP-8 | Exact pinout and enable/reference behavior. |
+| E0082 | queued | `TXS0108E` level translator | TSSOP-20 | Exact package suffix and OE pin. |
+| E0083 | queued | `CH340C` USB serial | SOP-16 | Exact WCH part and internal-clock distinction. |
+| E0084 | queued | `CP2102N` USB serial | QFN-24 | Exact revision/package and exposed-pad pin. |
+| E0085 | queued | `FT232RL` USB serial | SSOP-28 | Exact FTDI part and pin names. |
+| E0086 | queued | `MAX3485` RS-485 | SOIC-8 | Exact 3.3 V transceiver variant. |
+| E0087 | queued | `SN65HVD230` CAN transceiver | SOIC-8 | Exact TI suffix and standby pin. |
+| E0088 | queued | modern `MCP2551` replacement | SOIC-8 | Choose active-production 5 V CAN part rather than obsolete-only entry. |
+| E0089 | queued | `24LC32`, `24LC64`, `24LC256` EEPROM | SOIC-8 | Add capacities linearly; confirm address-pin behavior. |
+| E0090 | queued | `W25Q16JV`, `W25Q32JV`, `W25Q64JV` flash | SOIC-8 | Add capacities linearly with exact Winbond suffixes. |
+| E0091 | queued | microSD push-push socket | exact selected footprint | Datasheet, card-detect pin and shield pins. |
+| E0092 | queued | microSD hinged socket | exact selected footprint | Datasheet, card-detect pin and shield pins. |
+| E0093 | queued | `DS3231M` / `DS3231` RTC | SOIC-16 | Treat MEMS and crystal versions as separate parts. |
+| E0094 | queued | `PCF8523` RTC | SOIC-8 | Exact NXP suffix and backup-supply pin. |
+
+## Phase 4 — controllers, sensors, and user interface
+
+| ID | Status | Component | Package target | Scope and evidence |
+| --- | --- | --- | --- | --- |
+| E0095 | queued | `ATmega328P` | TQFP-32 | Exact active orderable MPN and full pin names. |
+| E0096 | queued | `ATtiny85` | SOIC-8 | Exact suffix and programming pins. |
+| E0097 | queued | `ATtiny1616` | SOIC-20 | UPDI and alternate-function pin names. |
+| E0098 | queued | `SAMD21G18A` | TQFP-48 | Exact suffix, exposed alternatives excluded. |
+| E0099 | queued | `STM32F103C8T6` | LQFP-48 | Exact ST part and full pinout. |
+| E0100 | queued | selected small STM32G0 | LQFP/QFN | Choose exact part from observed project demand. |
+| E0101 | queued | `ESP32-C3-MINI-1` module | module footprint | Antenna keepout, castellated pins and exact module revision. |
+| E0102 | queued | `ESP32-S3-WROOM-1` module | module footprint | Antenna/flash/PSRAM suffixes are separate identities. |
+| E0103 | queued | `ESP-12F` module | module footprint | Exact Ai-Thinker module dimensions and pins. |
+| E0104 | queued | `BME280` environmental sensor | LGA-8 | Exact Bosch part; do not substitute BMP280. |
+| E0105 | queued | `SHT31` humidity sensor | DFN-8 | Exact Sensirion accuracy grade. |
+| E0106 | queued | `AHT20` humidity sensor | LGA-6 | Exact Aosong identity and pinout. |
+| E0107 | queued | `DS18B20` temperature sensor | TO-92 | Genuine/compatible distinction and 1-Wire pinout. |
+| E0108 | queued | `LIS3DH` accelerometer | LGA-16 | Exact ST package and interrupt pins. |
+| E0109 | queued | `MPU-6050` IMU | QFN-24 | Exact TDK/InvenSense identity; module is separate. |
+| E0110 | queued | `ICM-42688-P` IMU | LGA-14 | Exact part and auxiliary interface pins. |
+| E0111 | queued | `BH1750` light sensor | WSOF-6 | Exact manufacturer suffix and address pin. |
+| E0112 | queued | `VEML7700` light sensor | SMD-4 | Exact Vishay part and optical opening. |
+| E0113 | queued | `VL53L0X` ranging sensor | LGA-12 | Exact ST part and optical keepout. |
+| E0114 | queued | `HC-SR04` module | 4-pin module | Module dimensions and transducer clearance. |
+| E0115 | queued | electret microphone capsule | through-hole | Generic diameter/height variants. |
+| E0116 | queued | `MAX9814` microphone amplifier | TDFN-14 | Exact pinout; module is separate. |
+| E0117 | queued | magnetic buzzer and piezo disc | common footprints | Separate active, passive, and bare-disc identities. |
+| E0118 | queued | 6×6 mm tactile switch | through-hole | Generic height variants. |
+| E0119 | queued | `EC11` rotary encoder | through-hole | Exact shaft/switch/mounting variants. |
+| E0120 | queued | common slide switch | through-hole and SMD | Select exact SPDT examples rather than one ambiguous generic body. |
+
+## Phase 5 — connector families
+
+| ID | Status | Family | Variants | Implementation notes |
+| --- | --- | --- | --- | --- |
+| E0121 | queued | 2.54 mm dual-row male headers | 2×2 through 2×20 | Simple pin-count array and nested loop; OOMP name uses total pins plus `dual_row`. |
+| E0122 | queued | 2.54 mm female sockets | 1×1 through 1×40 | Separate socket taxonomy from exposed male headers. |
+| E0123 | queued | 2.54 mm dual-row female sockets | 2×2 through 2×20 | Total-pin naming plus `dual_row`. |
+| E0124 | queued | JST-PH 2.0 mm | 2–6 pins, vertical and right-angle | Generic family plus selected exact JST MPN per orientation. |
+| E0125 | queued | JST-XH 2.5 mm | 2–8 pins | Generic family plus selected exact JST MPN. |
+| E0126 | queued | JST-SH 1.0 mm | 2–10 pins, right-angle | Include 4-pin Qwiic/STEMMA QT and retain existing exact 9-pin part. |
+| E0127 | queued | JST-GH 1.25 mm | 4–10 pins | Generic family plus selected exact JST MPN. |
+| E0128 | queued | USB Micro-B receptacle | common 5-pin SMD | Add exact connector after mechanical drawing review. |
+| E0129 | queued | USB Mini-B receptacle | common 5-pin SMD | Add exact connector after mechanical drawing review. |
+| E0130 | queued | USB-C receptacles | 6, 12, 16 and 24 contacts | Each mechanical/pad pattern is a separate exact part. |
+| E0131 | queued | screw terminals 3.5 mm | 2–6 positions | Nested pitch/pin-count arrays; exact example later. |
+| E0132 | queued | screw terminals 5.08 mm | 2–6 positions | Nested pitch/pin-count arrays; exact example later. |
+| E0133 | queued | 2.1 mm DC barrel jack | through-hole | Exact switched and unswitched versions. |
+| E0134 | queued | FFC/FPC connectors | 0.5 and 1.0 mm common counts | Exact top/bottom-contact orientation must be part of identity. |
+| E0135 | queued | AVR ISP header | 2×3, 2.54 mm | Keyed/unkeyed variants and pin names. |
+| E0136 | queued | ARM Cortex debug header | 2×5, 1.27 mm | Standard SWD pin names and keyed shroud variant. |
+| E0137 | queued | IDC/JTAG header | 2×10, 2.54 mm | Keyed shroud and standard pin naming. |
+
+## Progress log
+
+| Date | ID | Result |
+| --- | --- | --- |
+| 2026-09-01 | E0001 | Validated. Browser research confirms onsemi `1N4148WT`, `C232841`, SOD-523F, 75 V, 300 mA. Added population/extra data, cathode-band diagrams, eight previews, Jinja README, and four Bus Pirate mappings. The project research queue fell from 15 to 14 items. Historical project link `120141` is rejected because it is onsemi `1N4148WS`, `C118873`, SOD-323. |
+| 2026-09-01 | E0002 | Validated. Browser research and the KiCad source confirm Diodes Incorporated `BAS40T-05`, SOT-523, dual common-cathode topology, 40 V and 200 mA. Added exact population/extra data, three physical pin labels, package diagrams and previews, and five Bus Pirate mappings. LCSC returned no exact `BAS40T-05`, so no LCSC code was invented; the research queue fell from 14 to 13 items. |
+| 2026-09-01 | E0003 | Validated. Browser research found the footprint-compatible Kinghelm `KH-2.54FH-1X3P-H8.5`, LCSC `C2932670`. Its browser-downloaded manufacturer drawing was visually verified and added as `datasheet.pdf`. Added exact taxonomy, identifiers, dimensions, pins, top/bottom/side and dimensioned diagrams, README, and the Bus Pirate J201 match. The project research queue fell from 13 to 12 items. |
+| 2026-09-01 | E0004 | Validated. The Bus Pirate historical supplier page identifies L201 as TDK `MMZ2012R150AT000`, LCSC `C275464`, rather than a generic power inductor. The official TDK datasheet confirms 15 ohm at 100 MHz, 1.5 A, 0.05 ohm maximum DCR, and a 2.0 × 1.25 × 0.85 mm body. Added exact taxonomy and manufacturer identifiers, electrical and mechanical data, passive terminals, browser-downloaded datasheet, generated diagrams and README, and the L201 project match. The project research queue fell from 12 to 11 items. |
+| 2026-09-02 | E0005 | Validated. The Bus Pirate fitted BOM identifies SZHTC `QT200H1201`; the browser-downloaded 22-page Surenoo manual confirms the exact product number, 2.0 inch IPS TFT, ST7789V controller, 240 × 320 RGB pixels, 4-wire SPI, 34.6 × 47.8 × 1.9 mm outline, 30.6 × 40.8 mm active area, and the complete 12-contact flex pinout. LCSC returned no exact result, so no LCSC number was invented. Added exact taxonomy and identifiers, electrical/display/mechanical data, local datasheet, footprint-aligned real-aspect drawings, previews, README, tests, and an LCD201 match override. Per instruction, no Bus Pirate project page, board image, explorer, or generated project data was regenerated. |
+| 2026-09-02 | E0006 | Validated. The current Bus Pirate fitted BOM and exact LCSC listing identify CBI `MMBT7002K`, `C2879714`. The browser-downloaded CBI datasheet confirms an N-channel enhancement MOSFET, SOT-23, 60 V drain-source rating, 300 mA continuous drain current, and pins 1 gate, 2 source, 3 drain. Added exact taxonomy, manufacturer and LCSC identifiers, electrical limits, package ranges, local datasheet, physically proportioned pin-1-aware diagrams, previews, README, tests, and a Q202 match override. The historical project supplier URL now resolves to a different BSS138 and was explicitly rejected. Per instruction, no project page or generated project artifact was rebuilt. |
+| 2026-09-02 | E0007 | Validated. The current fitted BOM and Bus Pirate transistor notes identify the special-order CBI `BC2301T-2.8A` behind the schematic value `SI2301`. The exact browser-downloaded CBI datasheet confirms a P-channel enhancement MOSFET in SOT-523, 20 V, 2.8 A, with pins 1 gate, 2 source, 3 drain and the verified package ranges used by the diagrams. Added exact taxonomy and manufacturer identifier, electrical and mechanical data, local datasheet, pin-1-aware diagrams, previews, README, tests, and ten queued project match overrides. No LCSC identifier was assigned because public `C2928245` is the physically incompatible SOT-23 variant. Per instruction, no project page or generated project artifact was rebuilt. |
+| 2026-09-02 | E0008 | Validated. The fitted BOM brand, Bus Pirate component notes, exact supplier page and manufacturer sheet agree on Diodes Incorporated `BCM857BS-7-F`, LCSC `C105896`, for Q401. The datasheet confirms an internally isolated dual PNP matched pair, 45 V, 100 mA, 200 mW, 10 percent hFE matching, 2 mV maximum VBE difference, SOT-363 dimensions, and top-view pins 1 E1, 2 B1, 3 C2, 4 E2, 5 B2, 6 C1. Added exact taxonomy and identifiers, electrical and mechanical data, browser-imported datasheet with provenance, physical diagrams, previews, README, tests, and the queued Q401 match. The new one-component agent built and validated it while its hash guard confirmed no project README, explorer, or board image changed. |
+| 2026-09-02 | E0009 | Validated. The fitted BOM gives CBI `MMDT3906`; the project CBI supplier link resolves that base name to exact orderable MPN `MMDT3906DW`, marking `K3N`, LCSC `C2836075`. The browser-downloaded CBI sheet confirms two internally isolated PNP transistors, 40 V, 200 mA, 200 mW, 250 MHz minimum transition frequency, SOT-363 dimensions, and the EBCEBC top-view assignment used by pins 1 E1, 2 B1, 3 C2, 4 E2, 5 B2, 6 C1. Added exact taxonomy and identifiers, data, provenance-tracked datasheet, drawings, previews, README, tests and Q601 override. The streamlined build ran only two real Roboclick groups, restored conservative PNG state, and confirmed project output remained unchanged. |
+| 2026-09-02 | E0010 | Validated. The Bus Pirate fitted BOM and analogue notes identify Gainsil `LMV321`; the linked supplier listing resolves to exact orderable MPN `LMV321-TR`, LCSC `C362273`. The browser-downloaded Gainsil sheet confirms rail-to-rail input/output, 2.1–5.5 V operation, 1 MHz typical gain bandwidth, pins 1 IN+, 2 VSS, 3 IN-, 4 OUT and 5 VDD, and the complete SOT-23-5 package ranges. Added exact taxonomy and identifiers, electrical and dimensional data, provenance-tracked datasheet, a physical five-pin package drawing, tests and queued U404/U506/U603 matches. The one-component agent generated only this part and guarded all deferred project output from changes. |
+| 2026-09-02 | E0011 | Validated. The Bus Pirate analogue notes identify LMV324 in TSSOP-14 at U504 and U505 and link the exact Texas Instruments `LMV324IPWR` example. Its supplier listing resolves to LCSC `C398929`. The browser-downloaded TI datasheet confirms a quad 2.7 V to 5.5 V operational amplifier with rail-to-rail output and the complete fourteen-pin assignment; TI's official PW0014A drawing confirms the 5.0 by 4.4 mm body, 6.4 mm overall width and 0.65 mm pitch. Added exact taxonomy, identifiers, electrical and mechanical data, datasheet provenance, physical TSSOP drawing support, tests and queued project matches. No project output was regenerated. |
+| 2026-09-02 | E0012 | Validated. The Bus Pirate calls for an A-grade LMV321-class device at U601. Browser comparison rejected the discontinued Onsemi example as the default and selected the active Gainsil `GS321A-TR`, LCSC `C431318`, because it exactly meets the stated 0.4 mV maximum offset target. The Gainsil datasheet confirms rail-to-rail input/output, 2.1 V to 5.5 V operation, the five-pin assignment and SOT-23-5 ranges. Added exact taxonomy, identifiers, data, provenance-tracked datasheet, generated diagrams, tests and the queued U601 match without regenerating project output. |
+| 2026-09-02 | E0013 | Validated. The Bus Pirate analogue notes identify U602 as an LMV331 comparator and link the exact Texas Instruments `LMV331IDBVR` example, LCSC `C34731`. The browser-downloaded TI datasheet confirms 2.7 V to 5.5 V operation, open-collector output, pins 1 IN+, 2 GND, 3 IN-, 4 OUT and 5 VCC, and the DBV SOT-23-5 dimensions. Added exact taxonomy, identifiers, electrical and mechanical data, datasheet provenance, diagrams, tests and the queued U602 match without regenerating project output. |
+| 2026-09-03 | E0016 | Validated. Added a generic `2N7002` family identity with the part number retained in taxonomy, no invented manufacturer or LCSC code, and the browser-downloaded Nexperia sheet as an explicitly representative reference. The sheet confirms the SOT-23 / TO-236AB outline and pins 1 gate, 2 source and 3 drain. Generated the physical diagrams, previews, README, official KiCad symbol, machine- and hand-solder footprints, refreshed only its navigation ancestors, and repackaged the library. Added populate-driven generic matching that requires exact value, symbol and footprint agreement and refuses to hide an explicit manufacturer or MPN. All 90 tests and the deterministic pipeline audit pass; generated project output remained unchanged. |
+| 2026-09-03 | E0017 | Validated. Browser research resolved LCSC `C551410` to the out-of-stock `2N7002,235` suffix and selected stocked Nexperia `2N7002,215`, `C65189`, instead. The manufacturer confirms the active 3,000-piece reel ordering code. Added exact taxonomy and identifiers, condition-qualified electrical limits, the verified SOT-23 body and lead dimensions, pins 1 gate, 2 source and 3 drain, and provenance-tracked manufacturer datasheet. The deterministic build generated diagrams, eight previews, Jinja README, official KiCad symbol and distinct hand/machine footprints, refreshed ancestor navigation and repackaged the library. All 50 component-agent tests and the pipeline audit passed, and the project-output hash guard confirmed no deferred board pages or images changed. |
+| 2026-09-03 | E0018 | Validated. Added the generic BSS138 family without a manufacturer or LCSC identity, using the browser-downloaded onsemi April 2024 Rev. 7 datasheet as an explicitly representative reference. Verified the 50 V class, pins 1 gate, 2 source and 3 drain, and the actual CASE 318 Issue AU drawing, including 2.40 mm overall width and 0.44 mm lead width. Added populate-driven conservative generic matching, source provenance, diagrams, eight previews, Jinja README, official KiCad symbol and hand/machine footprints. The targeted build refreshed navigation and library packaging while its hash guard preserved all deferred project output. All 92 tests and the pipeline audit passed. The agent guide now explains how to confirm browser PDF downloads before importing them. |
+| 2026-09-03 | E0019 | Validated. The browser confirms onsemi BSS138, LCSC C52895, SOT-23 and 42,980 pieces in stock at verification. The manufacturer ordering table explicitly lists bare BSS138; no unverified suffix was added. Added exact identity, condition-qualified 50 V / 220 mA electrical data, G/S/D pins, CASE 318 dimensions and provenance-tracked datasheet. The deterministic build generated the diagrams, eight previews, README, official KiCad symbol and both soldering footprints, refreshed ancestor navigation and repackaged the library. All 52 component-agent tests and the pipeline audit passed, with the project-output hash guard confirming no deferred project artifacts changed. |

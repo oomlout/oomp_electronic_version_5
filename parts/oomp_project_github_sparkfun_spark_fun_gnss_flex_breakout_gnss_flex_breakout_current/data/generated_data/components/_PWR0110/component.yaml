@@ -1,0 +1,164 @@
+reference: '#PWR0110'
+schematic:
+  available: true
+  units:
+  - reference: '#PWR0110'
+    source_file: data/kicad_file.kicad_sch
+    uuid: f9328555-01aa-42bb-b092-24b6afb2cd27
+    library_id: SparkFun-PowerSymbol:VUSB
+    unit: 1
+    body_style: 1
+    position:
+      x: 148.59
+      y: 50.8
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: '#PWR0110'
+      Value: VUSB2
+      Footprint: ''
+      Datasheet: ''
+      Description: Power symbol creates a global label with name "VUSB"
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: VUSB
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 0.0
+        rotation: 90.0
+      length: 0.0
+      position:
+        x: 148.59
+        y: 50.8
+      net: VUSB2
+      net_aliases:
+      - VUSB2
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#PWR069'
+        pin_number: '1'
+        pin_name: VUSB
+      - reference: '#PWR078'
+        pin_number: '1'
+        pin_name: VUSB
+      - reference: '#PWR080'
+        pin_number: '1'
+        pin_name: VUSB
+      - reference: '#PWR096'
+        pin_number: '1'
+        pin_name: VUSB
+      - reference: C12
+        pin_number: '1'
+        pin_name: '~'
+      - reference: D22
+        pin_number: '2'
+        pin_name: A
+      - reference: J7
+        pin_number: VBUS
+        pin_name: VBUS
+      - reference: U2
+        pin_number: '7'
+        pin_name: VDD5
+      - reference: U2
+        pin_number: '8'
+        pin_name: VBUS
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.762
+          y: 0.0
+        max:
+          x: 0.762
+          y: 2.54
+        width: 1.524
+        height: 2.54
+        center:
+          x: 0.0
+          y: 1.27
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 147.828
+          y: 48.26
+        max:
+          x: 149.352
+          y: 50.8
+        width: 1.524
+        height: 2.54
+        center:
+          x: 148.59
+          y: 49.53
+    warnings: []
+  connected_components:
+  - reference: '#PWR069'
+    pin_number: '1'
+    pin_name: VUSB
+  - reference: '#PWR078'
+    pin_number: '1'
+    pin_name: VUSB
+  - reference: '#PWR080'
+    pin_number: '1'
+    pin_name: VUSB
+  - reference: '#PWR096'
+    pin_number: '1'
+    pin_name: VUSB
+  - reference: C12
+    pin_number: '1'
+    pin_name: '~'
+  - reference: D22
+    pin_number: '2'
+    pin_name: A
+  - reference: J7
+    pin_number: VBUS
+    pin_name: VBUS
+  - reference: U2
+    pin_number: '7'
+    pin_name: VDD5
+  - reference: U2
+    pin_number: '8'
+    pin_name: VBUS
+pcb: null
+connectivity_cross_check:
+  available: false
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - VUSB2
+    pcb_nets: []
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: not_applicable
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: VUSB2
+    mpn: null
+  reasons:
+  - The symbol has no physical PCB/OOMP part requirement.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/_PWR0110

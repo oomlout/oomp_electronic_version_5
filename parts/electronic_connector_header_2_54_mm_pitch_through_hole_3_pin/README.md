@@ -1,0 +1,112 @@
+# Connector Header 2.54-1*3P&#x9488;
+
+`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`
+
+Connector Header 2.54-1*3P&#x9488; is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 7.62 &#x00D7; 2.48 mm.
+
+![Connector Header 2.54-1*3P&#x9488; pinout](data/working_svg_top.svg)
+
+## At a glance
+
+| Detail | Value |
+| --- | --- |
+| OOMP ID | `electronic_connector_header_2_54_mm_pitch_through_hole_3_pin` |
+| Type | Connector |
+| Package / style | header |
+| Nominal size | 7.62 &#x00D7; 2.48 mm |
+
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+| 1 | `electronic` |
+| 2 | `connector` |
+| 3 | `header` |
+| 4 | `2_54_mm_pitch` |
+| 5 | `through_hole` |
+| 6 | `3_pin` |
+
+
+
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+| Length | 7.62 mm |
+| Width | 2.48 mm |
+
+
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `2.54-1*3P&#x9488;` |
+| LCSC | [`C49257`](https://www.lcsc.com/product-detail/C49257.html) |
+| LCSC | [`C7429633`](https://www.lcsc.com/product-detail/C7429633.html) |
+| LCSC | [`C7429672`](https://www.lcsc.com/product-detail/C7429672.html) |
+
+
+
+
+
+
+
+
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project hanqaqa/easyduino Raspberry Pi Pico 2040 current](https://github.com/Hanqaqa/Easyduino/tree/master/Raspberry%20Pi%20Pico%202040) | 1 | J5 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_raspberry_pi_pico_2040_current) |
+
+
+
+## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
+![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
+![Outline](data/working_svg_outline_300.png)
+
+![Part ID](data/working_svg_part_id_300.png)
+
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
+
+![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
+
+![Dimensions](data/working_svg_dimensioned_300.png)
+
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+![Top view](data/working_svg_top_300.png)
+
+![Bottom view](data/working_svg_bottom_300.png)
+
+![Side view](data/working_svg_side_300.png)
+
+
+
+
+[View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin)
+
+
+
+[Browse this category](../../navigation/electronic/connector/header/2_54_mm_pitch/through_hole/README.md)
+
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

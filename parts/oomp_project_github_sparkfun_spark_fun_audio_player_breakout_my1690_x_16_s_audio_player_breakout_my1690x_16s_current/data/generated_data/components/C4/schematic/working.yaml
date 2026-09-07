@@ -1,0 +1,114 @@
+available: true
+units:
+- reference: C4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 2566817d-7158-4f09-9eda-892887aed667
+  library_id: SparkFun-Capacitor:47uF_0805_6.3V_20%
+  unit: 1
+  body_style: 1
+  position:
+    x: 166.37
+    y: 58.42
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C4
+    Value: 47uF
+    Footprint: SparkFun-Capacitor:C_0805_2012Metric
+    Datasheet: https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf
+    Description: Unpolarized capacitor
+    PROD_ID: CAP-13854
+    Voltage: 6.3V
+    Tolerance: 20%
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.032
+    position:
+      x: 163.83
+      y: 58.42
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '1'
+      pin_name: DACR
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 2.032
+    position:
+      x: 168.91
+      y: 58.42
+    net: DAC_R
+    net_aliases:
+    - DAC_R
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: R1
+      pin_name: '~'
+    - reference: J2
+      pin_number: '1'
+      pin_name: Pin_1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.6891
+        y: -0.6731
+      max:
+        x: 1.6891
+        y: 0.6604
+      width: 3.3782
+      height: 1.3335
+      center:
+        x: 0.0
+        y: -0.00635
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 165.7096
+        y: 56.7309
+      max:
+        x: 167.0431
+        y: 60.1091
+      width: 1.3335
+      height: 3.3782
+      center:
+        x: 166.37635
+        y: 58.42
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: R1
+  pin_name: '~'
+- reference: J2
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: U2
+  pin_number: '1'
+  pin_name: DACR

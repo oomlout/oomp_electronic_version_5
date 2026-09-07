@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: R3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 8138ae9b-4875-4f28-8e68-8be1f6f91dbc
+  library_id: SparkFun-Resistor:2.2k_0402
+  unit: 1
+  body_style: 1
+  position:
+    x: 213.36
+    y: 92.71
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R3
+    Value: 2.2k
+    Footprint: SparkFun-Resistor:R_0402_1005Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-14341
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 213.36
+      y: 96.52
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: J2
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: U1
+      pin_number: '6'
+      pin_name: SCK/SCL
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 213.36
+      y: 88.9
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP4
+      pin_number: '3'
+      pin_name: B
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -1.016
+      max:
+        x: 2.54
+        y: 1.016
+      width: 5.08
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 212.344
+        y: 90.17
+      max:
+        x: 214.376
+        y: 95.25
+      width: 2.032
+      height: 5.08
+      center:
+        x: 213.36
+        y: 92.71
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: J2
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: JP4
+  pin_number: '3'
+  pin_name: B
+- reference: U1
+  pin_number: '6'
+  pin_name: SCK/SCL

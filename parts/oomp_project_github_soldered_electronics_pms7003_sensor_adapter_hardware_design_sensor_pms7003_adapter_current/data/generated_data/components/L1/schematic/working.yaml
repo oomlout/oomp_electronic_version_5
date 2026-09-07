@@ -1,0 +1,122 @@
+available: true
+units:
+- reference: L1
+  source_file: data/kicad_file.kicad_sch
+  uuid: b0d486b8-cd16-41e0-a2ad-89425521a406
+  library_id: e-radionica.com schematics:0806L
+  unit: 1
+  body_style: 1
+  position:
+    x: 102.235
+    y: 78.74
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: L1
+    Value: DFE201612E-2R2M=P2
+    Footprint: e-radionica.com footprinti:0806L
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.715
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 96.52
+      y: 78.74
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '1'
+      pin_name: SW
+  - number: '2'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 107.315
+      y: 78.74
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR04'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR06'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: C3
+      pin_number: '2'
+      pin_name: '~'
+    - reference: K1
+      pin_number: '6'
+      pin_name: '~'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.1753
+        y: -0.0003
+      max:
+        x: 2.5403
+        y: 0.9391
+      width: 5.7156
+      height: 0.9394
+      center:
+        x: -0.3175
+        y: 0.4694
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 99.0597
+        y: 77.8009
+      max:
+        x: 104.7753
+        y: 78.7403
+      width: 5.7156
+      height: 0.9394
+      center:
+        x: 101.9175
+        y: 78.2706
+  warnings: []
+connected_components:
+- reference: '#PWR04'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR06'
+  pin_number: '1'
+  pin_name: VCC
+- reference: C3
+  pin_number: '2'
+  pin_name: '~'
+- reference: K1
+  pin_number: '6'
+  pin_name: '~'
+- reference: U1
+  pin_number: '1'
+  pin_name: SW

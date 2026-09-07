@@ -1,0 +1,463 @@
+available: true
+units:
+- reference: U1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 21a375f9-be62-4587-a1a6-ebd73231923b
+  library_id: SparkFun-Sensor:CY8CMBR3102
+  unit: 1
+  body_style: 1
+  position:
+    x: 207.01
+    y: 80.01
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U1
+    Value: CY8CMBR3102
+    Footprint: SparkFun-Semiconductor-Standard:SO-8
+    Datasheet: https://www.infineon.com/assets/row/public/documents/30/49/infineon-cy8cmbr3002-cy8cmbr3102-cy8cmbr3106s-cy8cmbr3108-cy8cmbr3110-cy8cmbr3116-datasheet-en.pdf
+    Description: Capacitive Touch Sensor
+    PROD_ID: IC-27515
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '4'
+    name: VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -11.43
+      y: 3.81
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 195.58
+      y: 76.2
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR01'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR05'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR07'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR09'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR010'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR012'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR0108'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C2
+      pin_number: '1'
+      pin_name: '~'
+    - reference: J1
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: J2
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: JP1
+      pin_number: '2'
+      pin_name: B
+    - reference: JP2
+      pin_number: '2'
+      pin_name: B
+    - reference: R7
+      pin_number: '1'
+      pin_name: '~'
+    - reference: TP5
+      pin_number: '1'
+      pin_name: '1'
+  - number: '3'
+    name: VCC
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -11.43
+      y: 1.27
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 195.58
+      y: 78.74
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C4
+      pin_number: '1'
+      pin_name: '~'
+  - number: '2'
+    name: CMOD
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -11.43
+      y: -1.27
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 195.58
+      y: 81.28
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C3
+      pin_number: '1'
+      pin_name: '~'
+  - number: '5'
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -11.43
+      y: -3.81
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 195.58
+      y: 83.82
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR02'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR04'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR06'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR08'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR011'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR0101'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR0105'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR0122'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '~'
+    - reference: C2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '~'
+    - reference: C4
+      pin_number: '2'
+      pin_name: '~'
+    - reference: D1
+      pin_number: '1'
+      pin_name: K
+    - reference: J1
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: J2
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: TP4
+      pin_number: '1'
+      pin_name: '1'
+  - number: '8'
+    name: SDA
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 11.43
+      y: 3.81
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 218.44
+      y: 76.2
+    net: SDA
+    net_aliases:
+    - SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: J2
+      pin_number: '3'
+      pin_name: Pin_3
+    - reference: R3
+      pin_number: '2'
+      pin_name: '~'
+    - reference: TP6
+      pin_number: '1'
+      pin_name: '1'
+  - number: '1'
+    name: SCL
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 11.43
+      y: 1.27
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 218.44
+      y: 78.74
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: J2
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: R2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: TP7
+      pin_number: '1'
+      pin_name: '1'
+  - number: '7'
+    name: CS0
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 11.43
+      y: -1.27
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 218.44
+      y: 81.28
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R6
+      pin_number: '1'
+      pin_name: '~'
+  - number: '6'
+    name: GPO0/CS1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 11.43
+      y: -3.81
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 218.44
+      y: 83.82
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D2
+      pin_number: '1'
+      pin_name: K
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -8.89
+        y: -5.08
+      max:
+        x: 8.89
+        y: 5.08
+      width: 17.78
+      height: 10.16
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 198.12
+        y: 74.93
+      max:
+        x: 215.9
+        y: 85.09
+      width: 17.78
+      height: 10.16
+      center:
+        x: 207.01
+        y: 80.01
+  warnings: []
+connected_components:
+- reference: '#PWR01'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR02'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR03'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR04'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR05'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR06'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR07'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR08'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR09'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR010'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR011'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR012'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0101'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR0105'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR0108'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0122'
+  pin_number: '1'
+  pin_name: GND
+- reference: C1
+  pin_number: '1'
+  pin_name: '~'
+- reference: C1
+  pin_number: '2'
+  pin_name: '~'
+- reference: C2
+  pin_number: '1'
+  pin_name: '~'
+- reference: C2
+  pin_number: '2'
+  pin_name: '~'
+- reference: C3
+  pin_number: '1'
+  pin_name: '~'
+- reference: C3
+  pin_number: '2'
+  pin_name: '~'
+- reference: C4
+  pin_number: '1'
+  pin_name: '~'
+- reference: C4
+  pin_number: '2'
+  pin_name: '~'
+- reference: D1
+  pin_number: '1'
+  pin_name: K
+- reference: D2
+  pin_number: '1'
+  pin_name: K
+- reference: J1
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J1
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J1
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J1
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: J2
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J2
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J2
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J2
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: JP1
+  pin_number: '2'
+  pin_name: B
+- reference: JP2
+  pin_number: '2'
+  pin_name: B
+- reference: R2
+  pin_number: '2'
+  pin_name: '~'
+- reference: R3
+  pin_number: '2'
+  pin_name: '~'
+- reference: R6
+  pin_number: '1'
+  pin_name: '~'
+- reference: R7
+  pin_number: '1'
+  pin_name: '~'
+- reference: TP4
+  pin_number: '1'
+  pin_name: '1'
+- reference: TP5
+  pin_number: '1'
+  pin_name: '1'
+- reference: TP6
+  pin_number: '1'
+  pin_name: '1'
+- reference: TP7
+  pin_number: '1'
+  pin_name: '1'

@@ -1,0 +1,114 @@
+available: true
+units:
+- reference: C5
+  source_file: data/kicad_file.kicad_sch
+  uuid: 566065d9-871f-42a1-a919-a82ee27fafb0
+  library_id: SparkFun-Capacitor:47uF_0805_6.3V_20%
+  unit: 1
+  body_style: 1
+  position:
+    x: 171.45
+    y: 60.96
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C5
+    Value: 47uF
+    Footprint: SparkFun-Capacitor:C_0805_2012Metric
+    Datasheet: https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf
+    Description: Unpolarized capacitor
+    PROD_ID: CAP-13854
+    Voltage: 6.3V
+    Tolerance: 20%
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.032
+    position:
+      x: 168.91
+      y: 60.96
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '16'
+      pin_name: DACL
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 2.032
+    position:
+      x: 173.99
+      y: 60.96
+    net: DAC_L
+    net_aliases:
+    - DAC_L
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: T
+      pin_name: '~'
+    - reference: J2
+      pin_number: '2'
+      pin_name: Pin_2
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.6891
+        y: -0.6731
+      max:
+        x: 1.6891
+        y: 0.6604
+      width: 3.3782
+      height: 1.3335
+      center:
+        x: 0.0
+        y: -0.00635
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 170.7896
+        y: 59.2709
+      max:
+        x: 172.1231
+        y: 62.6491
+      width: 1.3335
+      height: 3.3782
+      center:
+        x: 171.45635
+        y: 60.96
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: T
+  pin_name: '~'
+- reference: J2
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: U2
+  pin_number: '16'
+  pin_name: DACL

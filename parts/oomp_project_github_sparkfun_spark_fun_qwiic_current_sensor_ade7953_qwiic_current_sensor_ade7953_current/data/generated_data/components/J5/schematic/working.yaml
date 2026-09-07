@@ -1,0 +1,187 @@
+available: true
+units:
+- reference: J5
+  source_file: data/kicad_file.kicad_sch
+  uuid: c83a14ea-2d80-4550-8b8b-3f8b278cf53b
+  library_id: SparkFun-Connector:Audio_Jack_TRRS_3.5mm_SMD
+  unit: 1
+  body_style: 1
+  position:
+    x: 43.18
+    y: 49.53
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: J5
+    Value: 3.5mm TRRS
+    Footprint: SparkFun-Connector:Audio_Jack_3.5mm_TRRS_SMD_RA
+    Datasheet: https://cdn.sparkfun.com/datasheets/Prototyping/20153.pdf
+    Description: Audio Jack, 4 Poles (TRRS)
+    PROD_ID: CONN-10676
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: R1
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 48.26
+      y: 52.07
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: true
+    connected_to: []
+  - number: R2
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 48.26
+      y: 49.53
+    net: A-
+    net_aliases:
+    - A-
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J4
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: J5
+      pin_number: S
+      pin_name: ''
+    - reference: R1
+      pin_number: '1'
+      pin_name: ''
+    - reference: R8
+      pin_number: '1'
+      pin_name: ''
+  - number: S
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 48.26
+      y: 46.99
+    net: A-
+    net_aliases:
+    - A-
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J4
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: J5
+      pin_number: R2
+      pin_name: ''
+    - reference: R1
+      pin_number: '1'
+      pin_name: ''
+    - reference: R8
+      pin_number: '1'
+      pin_name: ''
+  - number: T
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -5.08
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 48.26
+      y: 54.61
+    net: A+
+    net_aliases:
+    - A+
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J4
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: R1
+      pin_number: '2'
+      pin_name: ''
+    - reference: R7
+      pin_number: '1'
+      pin_name: ''
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -7.747
+        y: -7.747
+      max:
+        x: 2.667
+        y: 3.937
+      width: 10.414
+      height: 11.684
+      center:
+        x: -2.54
+        y: -1.905
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 35.433
+        y: 45.593
+      max:
+        x: 45.847
+        y: 57.277
+      width: 10.414
+      height: 11.684
+      center:
+        x: 40.64
+        y: 51.435
+  warnings: []
+connected_components:
+- reference: J4
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J4
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J5
+  pin_number: R2
+  pin_name: ''
+- reference: J5
+  pin_number: S
+  pin_name: ''
+- reference: R1
+  pin_number: '1'
+  pin_name: ''
+- reference: R1
+  pin_number: '2'
+  pin_name: ''
+- reference: R7
+  pin_number: '1'
+  pin_name: ''
+- reference: R8
+  pin_number: '1'
+  pin_name: ''

@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: R7
+  source_file: data/kicad_file.kicad_sch
+  uuid: 9d846bdd-db1c-4362-89f5-1a958ac9be8d
+  library_id: SparkFun-Resistor:1k_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 64.77
+    y: 118.11
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R7
+    Value: 1k
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-07856
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 1.016
+    position:
+      x: 64.77
+      y: 120.65
+    net: V_BCKP
+    net_aliases:
+    - V_BCKP
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: BT1
+      pin_number: +
+      pin_name: +
+    - reference: C9
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U6
+      pin_number: '55'
+      pin_name: V_BCKP
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 1.016
+    position:
+      x: 64.77
+      y: 115.57
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D5
+      pin_number: '1'
+      pin_name: K
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.524
+        y: -1.016
+      max:
+        x: 1.524
+        y: 1.016
+      width: 3.048
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 63.754
+        y: 116.586
+      max:
+        x: 65.786
+        y: 119.634
+      width: 2.032
+      height: 3.048
+      center:
+        x: 64.77
+        y: 118.11
+  warnings: []
+connected_components:
+- reference: BT1
+  pin_number: +
+  pin_name: +
+- reference: C9
+  pin_number: '1'
+  pin_name: '~'
+- reference: D5
+  pin_number: '1'
+  pin_name: K
+- reference: U6
+  pin_number: '55'
+  pin_name: V_BCKP

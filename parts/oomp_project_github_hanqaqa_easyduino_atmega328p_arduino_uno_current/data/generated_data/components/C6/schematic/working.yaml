@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: C6
+  source_file: data/kicad_file.kicad_sch
+  uuid: 5bc9abea-4a82-4e1f-9cd3-946d60b7164f
+  library_id: Device:C
+  unit: 1
+  body_style: 1
+  position:
+    x: 151.13
+    y: 63.5
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C6
+    Value: 100n
+    Footprint: Capacitor_SMD:C_0603_1608Metric
+    Datasheet: ''
+    Description: ''
+    LCSC: C14663
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 3.81
+      rotation: 270.0
+    length: 2.794
+    position:
+      x: 147.32
+      y: 63.5
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '13'
+      pin_name: ~{DTR}
+  - number: '2'
+    name: ''
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -3.81
+      rotation: 90.0
+    length: 2.794
+    position:
+      x: 154.94
+      y: 63.5
+    net: PC6
+    net_aliases:
+    - PC6
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: A1
+      pin_number: '3'
+      pin_name: ~{RESET}
+    - reference: J3
+      pin_number: '5'
+      pin_name: Pin_5
+    - reference: R4
+      pin_number: '1'
+      pin_name: ''
+    - reference: R5
+      pin_number: '2'
+      pin_name: ''
+    - reference: U2
+      pin_number: '29'
+      pin_name: ~{RESET}/PC6
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.286
+        y: -1.016
+      max:
+        x: 2.286
+        y: 1.016
+      width: 4.572
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 150.114
+        y: 61.214
+      max:
+        x: 152.146
+        y: 65.786
+      width: 2.032
+      height: 4.572
+      center:
+        x: 151.13
+        y: 63.5
+  warnings: []
+connected_components:
+- reference: A1
+  pin_number: '3'
+  pin_name: ~{RESET}
+- reference: J3
+  pin_number: '5'
+  pin_name: Pin_5
+- reference: R4
+  pin_number: '1'
+  pin_name: ''
+- reference: R5
+  pin_number: '2'
+  pin_name: ''
+- reference: U1
+  pin_number: '13'
+  pin_name: ~{DTR}
+- reference: U2
+  pin_number: '29'
+  pin_name: ~{RESET}/PC6

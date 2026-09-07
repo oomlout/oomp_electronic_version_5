@@ -1,0 +1,30 @@
+format_version: 1
+ledger_id: E0012
+status: researched
+family: ic
+part_id: electronic_ic_sot_23_5_amplifier_operational_single_precision_rail_to_rail_input_output_gainsil_gs321a_tr
+exact_identity: true
+package: sot_23_5
+pin_count: 5
+datasheet_required: true
+project_references:
+  - U601
+research:
+  manufacturer: Gainsil
+  manufacturer_part_number: GS321A-TR
+  lcsc_part_number: C431318
+  lcsc_decision: The active Gainsil GS321A-TR listing exactly meets the Bus Pirate A-grade offset target and SOT-23-5 footprint.
+  product_url: https://www.lcsc.com/product-detail/C431318.html
+  datasheet_url: https://www.lcsc.com/datasheet/C431318.pdf
+  browser_sources:
+    - https://hardware.buspirate.com/bom
+    - https://docs.buspirate.com/docs/hardware/bp5rev10/components/analog/
+    - https://item.szlcsc.com/427641.html
+    - https://www.lcsc.com/product-detail/C431318.html
+    - https://www.lcsc.com/datasheet/C431318.pdf
+    - https://item.szlcsc.com/165892.html
+  evidence_notes:
+    - The project requires an A-grade LMV321-class device at U601 with approximately 0.4 mV maximum input offset.
+    - The exact active Gainsil GS321A-TR listing provides LCSC C431318, SOT-23-5 and 0.4 mV maximum input offset voltage.
+    - Its Gainsil datasheet confirms rail-to-rail input and output, pins 1 IN+, 2 VSS, 3 IN-, 4 OUT and 5 VDD, and the full package ranges.
+    - The discontinued Onsemi alternative was reviewed and rejected as the default exact part.

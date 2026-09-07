@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: R29
+  source_file: data/kicad_file.kicad_sch
+  uuid: 699b4250-4bf7-4a92-8f0d-5a2422a656da
+  library_id: SparkFun-Resistor:33_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 100.33
+    y: 161.29
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R29
+    Value: '33'
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-08270
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 96.52
+      y: 161.29
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: '1'
+      pin_name: ~{SAFEBOOT}
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 104.14
+      y: 161.29
+    net: ~{SAFEBOOT}
+    net_aliases:
+    - ~{SAFEBOOT}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D3
+      pin_number: '3'
+      pin_name: K2
+    - reference: J2
+      pin_number: '4'
+      pin_name: Pin_4
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -1.016
+      max:
+        x: 2.54
+        y: 1.016
+      width: 5.08
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 97.79
+        y: 160.274
+      max:
+        x: 102.87
+        y: 162.306
+      width: 5.08
+      height: 2.032
+      center:
+        x: 100.33
+        y: 161.29
+  warnings: []
+connected_components:
+- reference: D3
+  pin_number: '3'
+  pin_name: K2
+- reference: J2
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: U3
+  pin_number: '1'
+  pin_name: ~{SAFEBOOT}

@@ -1,0 +1,484 @@
+reference: R403
+schematic:
+  available: true
+  units:
+  - reference: R403
+    source_file: data/kicad_file_sheets/bpu-current_limiter.kicad_sch
+    uuid: 00000000-0000-0000-0000-00005eb92f17
+    library_id: Device:R_Small
+    unit: 1
+    body_style: 1
+    position:
+      x: 63.5
+      y: 123.19
+      rotation: 90.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R403
+      Value: 102K
+      Footprint: Resistor_SMD:R_0402_1005Metric
+      Datasheet: '~'
+      RMB: '0.005944'
+      Supplier: https://item.szlcsc.com/174835.html
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 270.0
+      length: 0.762
+      position:
+        x: 60.96
+        y: 123.19
+      net: VREG_ADJ
+      net_aliases:
+      - VREG_ADJ
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U603
+        pin_number: '3'
+        pin_name: '-'
+      - reference: U603
+        pin_number: '4'
+        pin_name: '~'
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -2.54
+        rotation: 90.0
+      length: 0.762
+      position:
+        x: 66.04
+        y: 123.19
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C408
+        pin_number: '2'
+        pin_name: '~'
+      - reference: R404
+        pin_number: '2'
+        pin_name: '~'
+      - reference: R405
+        pin_number: '1'
+        pin_name: '~'
+      - reference: U403
+        pin_number: '4'
+        pin_name: ADJ
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.8636
+          y: -1.8796
+        max:
+          x: 0.8636
+          y: 1.8796
+        width: 1.7272
+        height: 3.7592
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 61.6204
+          y: 122.3264
+        max:
+          x: 65.3796
+          y: 124.0536
+        width: 3.7592
+        height: 1.7272
+        center:
+          x: 63.5
+          y: 123.19
+    warnings: []
+  connected_components:
+  - reference: C408
+    pin_number: '2'
+    pin_name: '~'
+  - reference: R404
+    pin_number: '2'
+    pin_name: '~'
+  - reference: R405
+    pin_number: '1'
+    pin_name: '~'
+  - reference: U403
+    pin_number: '4'
+    pin_name: ADJ
+  - reference: U603
+    pin_number: '3'
+    pin_name: '-'
+  - reference: U603
+    pin_number: '4'
+    pin_name: '~'
+pcb:
+  reference: R403
+  value: 102K
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 00000000-0000-0000-0000-000061a83c81
+  library_id: Resistor_SMD:R_0402_1005Metric
+  layer: F.Cu
+  side: front
+  position:
+    x: 111.99
+    y: 64.75
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    RMB: '0.005944'
+    Sheetfile: bpu-current_limiter.kicad_sch
+    Sheetname: bpu-current_limiter
+    Supplier: https://item.szlcsc.com/174835.html
+    ki_description: Resistor, small symbol
+    ki_keywords: R resistor
+    Reference: R403
+    Value: 102K
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.485
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 111.99
+      y: 64.265
+    placed_rotation: 360.0
+    size:
+      x: 0.59
+      y: 0.64
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: VREG_ADJ
+    net_number: 59
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.805
+          y: -0.295
+        max:
+          x: -0.165
+          y: 0.295
+        width: 0.64
+        height: 0.59
+        center:
+          x: -0.485
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 111.695
+          y: 63.945
+        max:
+          x: 112.285
+          y: 64.585
+        width: 0.59
+        height: 0.64
+        center:
+          x: 111.99
+          y: 64.265
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U603
+      pad_number: '3'
+    - reference: U603
+      pad_number: '4'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.485
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 111.99
+      y: 65.235
+    placed_rotation: 360.0
+    size:
+      x: 0.59
+      y: 0.64
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Paste
+    - F.Mask
+    net: Net-(U403-ADJ)
+    net_number: 73
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.165
+          y: -0.295
+        max:
+          x: 0.805
+          y: 0.295
+        width: 0.64
+        height: 0.59
+        center:
+          x: 0.485
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 111.695
+          y: 64.915
+        max:
+          x: 112.285
+          y: 65.555
+        width: 0.59
+        height: 0.64
+        center:
+          x: 111.99
+          y: 65.235
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C408
+      pad_number: '2'
+    - reference: R404
+      pad_number: '2'
+    - reference: R405
+      pad_number: '1'
+    - reference: U403
+      pad_number: '4'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.805
+        y: -0.295
+      max:
+        x: 0.805
+        y: 0.295
+      width: 1.61
+      height: 0.59
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 111.695
+        y: 63.945
+      max:
+        x: 112.285
+        y: 65.555
+      width: 0.59
+      height: 1.61
+      center:
+        x: 111.99
+        y: 64.75
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.955
+        y: -0.495
+      max:
+        x: 0.955
+        y: 0.495
+      width: 1.91
+      height: 0.99
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 111.495
+        y: 63.795
+      max:
+        x: 112.485
+        y: 65.705
+      width: 0.99
+      height: 1.91
+      center:
+        x: 111.99
+        y: 64.75
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.55
+        y: -0.3
+      max:
+        x: 0.55
+        y: 0.3
+      width: 1.1
+      height: 0.6
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 111.69
+        y: 64.2
+      max:
+        x: 112.29
+        y: 65.3
+      width: 0.6
+      height: 1.1
+      center:
+        x: 111.99
+        y: 64.75
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.955
+        y: -0.495
+      max:
+        x: 0.955
+        y: 0.495
+      width: 1.91
+      height: 0.99
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 111.495
+        y: 63.795
+      max:
+        x: 112.485
+        y: 65.705
+      width: 0.99
+      height: 1.91
+      center:
+        x: 111.99
+        y: 64.75
+  connected_components:
+  - C408
+  - R404
+  - R405
+  - U403
+  - U603
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - VREG_ADJ
+    pcb_nets:
+    - VREG_ADJ
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(U403-ADJ)
+    status: incomplete
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0402_102000_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0402_102000_ohm
+  inferred:
+    kind: resistor
+    package_size: '0402'
+    value: 102K
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R403

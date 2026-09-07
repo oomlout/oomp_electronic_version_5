@@ -1,0 +1,110 @@
+available: true
+units:
+- reference: R6
+  source_file: data/kicad_file.kicad_sch
+  uuid: 62bf77d8-99a7-48fc-905c-ff3f9f58cec3
+  library_id: e-radionica.com schematics:0603R
+  unit: 1
+  body_style: 1
+  position:
+    x: 71.755
+    y: 123.19
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R6
+    Value: 47k
+    Footprint: e-radionica.com footprinti:0603R
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.175
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 71.755
+      y: 126.365
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R7
+      pin_number: '2'
+      pin_name: '~'
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.175
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 71.755
+      y: 120.015
+    net: IN+
+    net_aliases:
+    - IN+
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '3'
+      pin_name: INA+
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.955
+        y: -0.7104
+      max:
+        x: 1.9804
+        y: 0.685
+      width: 3.9354
+      height: 1.3954
+      center:
+        x: 0.0127
+        y: -0.0127
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 71.07
+        y: 121.2096
+      max:
+        x: 72.4654
+        y: 125.145
+      width: 1.3954
+      height: 3.9354
+      center:
+        x: 71.7677
+        y: 123.1773
+  warnings: []
+connected_components:
+- reference: R5
+  pin_number: '2'
+  pin_name: '~'
+- reference: R7
+  pin_number: '2'
+  pin_name: '~'
+- reference: U2
+  pin_number: '3'
+  pin_name: INA+

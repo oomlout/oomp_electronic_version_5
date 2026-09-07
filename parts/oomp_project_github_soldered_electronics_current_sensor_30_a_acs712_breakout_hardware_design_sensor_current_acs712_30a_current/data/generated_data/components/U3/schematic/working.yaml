@@ -1,0 +1,265 @@
+available: true
+units:
+- reference: U3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 55dd2782-9074-4269-a9f1-e10c43f5bd62
+  library_id: e-radionica.com schematics:OPA344
+  unit: 1
+  body_style: 1
+  position:
+    x: 162.56
+    y: 82.55
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U3
+    Value: OPA344
+    Footprint: e-radionica.com footprinti:SOT-23-5
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: OUT
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -8.89
+      y: 3.81
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 153.67
+      y: 78.74
+    net: VREF
+    net_aliases:
+    - VREF
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K2
+      pin_number: '3'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '3'
+      pin_name: IN+
+    - reference: U3
+      pin_number: '4'
+      pin_name: IN-
+  - number: '2'
+    name: V-
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -8.89
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 153.67
+      y: 82.55
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '3'
+    name: IN+
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -8.89
+      y: -3.81
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 153.67
+      y: 86.36
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C4
+      pin_number: '2'
+      pin_name: '~'
+    - reference: R1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: R3
+      pin_number: '2'
+      pin_name: '~'
+  - number: '4'
+    name: IN-
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 8.89
+      y: -3.81
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 171.45
+      y: 86.36
+    net: VREF
+    net_aliases:
+    - VREF
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: K2
+      pin_number: '3'
+      pin_name: '~'
+    - reference: U2
+      pin_number: '3'
+      pin_name: IN+
+    - reference: U3
+      pin_number: '1'
+      pin_name: OUT
+  - number: '5'
+    name: V+
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 8.89
+      y: 3.81
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 171.45
+      y: 78.74
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR02'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR08'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR010'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR0103'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR0105'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: C2
+      pin_number: '2'
+      pin_name: '~'
+    - reference: C5
+      pin_number: '2'
+      pin_name: '~'
+    - reference: C6
+      pin_number: '2'
+      pin_name: '~'
+    - reference: K2
+      pin_number: '4'
+      pin_name: '~'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U1
+      pin_number: '8'
+      pin_name: VCC
+    - reference: U2
+      pin_number: '5'
+      pin_name: V+
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -6.4262
+        y: -6.4262
+      max:
+        x: 6.4262
+        y: 6.4262
+      width: 12.8524
+      height: 12.8524
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 156.1338
+        y: 76.1238
+      max:
+        x: 168.9862
+        y: 88.9762
+      width: 12.8524
+      height: 12.8524
+      center:
+        x: 162.56
+        y: 82.55
+  warnings: []
+connected_components:
+- reference: '#PWR02'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR08'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR010'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR0103'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR0105'
+  pin_number: '1'
+  pin_name: VCC
+- reference: C2
+  pin_number: '2'
+  pin_name: '~'
+- reference: C4
+  pin_number: '2'
+  pin_name: '~'
+- reference: C5
+  pin_number: '2'
+  pin_name: '~'
+- reference: C6
+  pin_number: '2'
+  pin_name: '~'
+- reference: K2
+  pin_number: '3'
+  pin_name: '~'
+- reference: K2
+  pin_number: '4'
+  pin_name: '~'
+- reference: R1
+  pin_number: '1'
+  pin_name: '~'
+- reference: R1
+  pin_number: '2'
+  pin_name: '~'
+- reference: R3
+  pin_number: '2'
+  pin_name: '~'
+- reference: U1
+  pin_number: '8'
+  pin_name: VCC
+- reference: U2
+  pin_number: '3'
+  pin_name: IN+
+- reference: U2
+  pin_number: '5'
+  pin_name: V+
+- reference: U3
+  pin_number: '1'
+  pin_name: OUT
+- reference: U3
+  pin_number: '4'
+  pin_name: IN-

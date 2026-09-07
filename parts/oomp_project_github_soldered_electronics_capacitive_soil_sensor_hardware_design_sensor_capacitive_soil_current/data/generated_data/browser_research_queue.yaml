@@ -1,0 +1,164 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 6
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - R4
+  value: 1K6
+  footprint: e-radionica.com footprinti:0603R
+  query: 1K6 e-radionica.com footprinti:0603R
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1K6+e-radionica.com+footprinti%3A0603R
+    datasheet_search: https://www.google.com/search?q=1K6+e-radionica.com+footprinti%3A0603R+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0603_1600_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_quarter_watt_through_hole_1500_ohm
+  - electronic_resistor_0603_100_ohm
+  - electronic_resistor_0603_6800_ohm
+  - electronic_resistor_0603_5100_ohm
+  - electronic_resistor_0603_5600_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - C4
+  value: 470p
+  footprint: e-radionica.com footprinti:0603C
+  query: 470p e-radionica.com footprinti:0603C
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=470p+e-radionica.com+footprinti%3A0603C
+    datasheet_search: https://www.google.com/search?q=470p+e-radionica.com+footprinti%3A0603C+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0603_470_pico_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_47_pico_farad
+  - electronic_capacitor_0603_27_pico_farad
+  - electronic_capacitor_0603_18_pico_farad
+  - electronic_capacitor_0603_22_pico_farad
+  - electronic_capacitor_0603_33_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - D1
+  value: BAT20J
+  footprint: e-radionica.com footprinti:SOD-323
+  query: BAT20J e-radionica.com footprinti:SOD-323
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=BAT20J+e-radionica.com+footprinti%3ASOD-323
+    datasheet_search: https://www.google.com/search?q=BAT20J+e-radionica.com+footprinti%3ASOD-323+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_diode_schottky_sod_323
+  candidate_oomp_ids:
+  - electronic_diode_schottky_sod_323_bat54w
+  - electronic_diode_schottky_sod_323_infineon_bat60a
+  - electronic_diode_schottky_sod_123_ss14
+  - electronic_diode_schottky_sod_523_1ss400
+  - electronic_diode_schottky_0402
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - PAD1
+  - PAD2
+  value: PAD_2x1.5
+  footprint: e-radionica.com footprinti:PAD_2x1.5
+  query: PAD_2x1.5 e-radionica.com footprinti:PAD_2x1.5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=PAD_2x1.5+e-radionica.com+footprinti%3APAD_2x1.5
+    datasheet_search: https://www.google.com/search?q=PAD_2x1.5+e-radionica.com+footprinti%3APAD_2x1.5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: SGM358YMS/TR
+  footprint: e-radionica.com footprinti:MSOP-8
+  query: SGM358YMS/TR e-radionica.com footprinti:MSOP-8
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=SGM358YMS%2FTR+e-radionica.com+footprinti%3AMSOP-8
+    datasheet_search: https://www.google.com/search?q=SGM358YMS%2FTR+e-radionica.com+footprinti%3AMSOP-8+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_6
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: TLC555CD
+  footprint: e-radionica.com footprinti:SOIC−8
+  query: TLC555CD e-radionica.com footprinti:SOIC−8
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TLC555CD+e-radionica.com+footprinti%3ASOIC%E2%88%928
+    datasheet_search: https://www.google.com/search?q=TLC555CD+e-radionica.com+footprinti%3ASOIC%E2%88%928+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

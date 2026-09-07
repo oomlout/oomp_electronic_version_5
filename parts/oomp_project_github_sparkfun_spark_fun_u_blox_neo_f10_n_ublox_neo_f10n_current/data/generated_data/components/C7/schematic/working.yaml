@@ -1,0 +1,120 @@
+available: true
+units:
+- reference: C7
+  source_file: data/kicad_file_sheets/SparkFun_NEO-F10N-Connectors.kicad_sch
+  uuid: aeafaf3d-ead3-4e44-9d17-a5c4941bf0d7
+  library_id: SparkFun-Capacitor:47pF_0603_50V_5%
+  unit: 1
+  body_style: 1
+  position:
+    x: 83.82
+    y: 87.63
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C7
+    Value: 47pF
+    Footprint: SparkFun-Capacitor:C_0603_1608Metric
+    Datasheet: https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf
+    Description: Unpolarized capacitor
+    PROD_ID: CAP-08913
+    Voltage: 50V
+    Tolerance: 5%
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 3.81
+      rotation: 270.0
+    length: 2.794
+    position:
+      x: 80.01
+      y: 87.63
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D6
+      pin_number: '2'
+      pin_name: A2
+    - reference: J5
+      pin_number: '1'
+      pin_name: In
+    - reference: L1
+      pin_number: '2'
+      pin_name: '2'
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -3.81
+      rotation: 90.0
+    length: 2.794
+    position:
+      x: 87.63
+      y: 87.63
+    net: ANT_IN
+    net_aliases:
+    - ANT_IN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: '11'
+      pin_name: RF_IN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.286
+        y: -1.016
+      max:
+        x: 2.286
+        y: 1.016
+      width: 4.572
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 82.804
+        y: 85.344
+      max:
+        x: 84.836
+        y: 89.916
+      width: 2.032
+      height: 4.572
+      center:
+        x: 83.82
+        y: 87.63
+  warnings: []
+connected_components:
+- reference: D6
+  pin_number: '2'
+  pin_name: A2
+- reference: J5
+  pin_number: '1'
+  pin_name: In
+- reference: L1
+  pin_number: '2'
+  pin_name: '2'
+- reference: U3
+  pin_number: '11'
+  pin_name: RF_IN

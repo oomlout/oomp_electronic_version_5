@@ -1,0 +1,3866 @@
+import copy
+import opsvg
+import yaml
+import os
+from pathlib import Path
+import svg_help
+import svg_styles
+
+
+def main(**kwargs):
+    make_svg(**kwargs)
+
+def make_svg(**kwargs):
+    typ = svg_help.get_typ(**kwargs)
+    oomp_mode = "project"
+    #oomp_mode = "oobb"
+    filt = kwargs.get("filter", "")
+    build_variables = svg_help.get_build_variables(typ, filter=filt)
+    if True:
+        kwargs["filter"] = filt if filt != "" else build_variables["filter"]
+        kwargs["save_type"] = build_variables["save_type"]
+        kwargs["navigation"] = build_variables["navigation"]
+        kwargs["overwrite"] = build_variables["overwrite"]
+        kwargs["oomp_mode"] = oomp_mode
+    parts = get_parts(kwargs, oomp_mode)
+
+    kwargs["parts"] = parts
+
+    svg_help.make_parts(**kwargs)
+
+    if kwargs["navigation"]:
+        oobb_style = False
+        sort = svg_help.get_navigation_sort(oobb_style=oobb_style)
+        svg_help.generate_navigation(sort=sort)
+
+
+def get_parts(kwargs, oomp_mode):
+    parts = []
+
+    #load parts from parts/folder/working.yaml
+    parts_directory = os.path.join(os.path.dirname(__file__), "parts")
+    if not os.path.isdir(parts_directory):
+        return parts
+
+    for folder in os.listdir(parts_directory):
+        folder_path = os.path.join(parts_directory, folder)
+        if not os.path.isdir(folder_path):
+            continue
+        exact_part_id = str(kwargs.get("part_id", ""))
+        filter_text = str(kwargs.get("filter", ""))
+        if exact_part_id != "" and folder != exact_part_id:
+            continue
+        if exact_part_id == "" and filter_text != "" and filter_text not in folder:
+            continue
+
+        working_yaml_path = os.path.join(folder_path, "working.yaml")
+        if not os.path.isfile(working_yaml_path):
+            continue
+
+        with open(working_yaml_path, "r", encoding="utf-8") as infile:
+            loaded_part = yaml.safe_load(infile)
+
+        if not isinstance(loaded_part, dict):
+            continue
+        taxonomy_1 = loaded_part.get("taxonomy_1", "")
+        taxonomy_2 = loaded_part.get("taxonomy_2", "")
+        is_supported_mechanical_part = (
+            taxonomy_1 == "mechanical" and taxonomy_2 == "mounting_hole"
+        )
+        if taxonomy_1 != "electronic" and not is_supported_mechanical_part:
+            continue
+
+        # Apply the shared population definition to existing generated parts.
+        # Future population runs write the same values into working.yaml.
+        import working_oomp_populate_svg
+        working_oomp_populate_svg.add_svg_details(loaded_part)
+
+        svg_details_raw = loaded_part.get("svg_details")
+        # Accept either a single dict or a list of dicts.
+        if isinstance(svg_details_raw, list):
+            # Use the first entry to derive kwargs / oobb_name; the full list
+            # is kept intact in part["svg_details"] for make_svg_generic.
+            svg_details = svg_details_raw[0] if svg_details_raw else {}
+        elif isinstance(svg_details_raw, dict):
+            svg_details = svg_details_raw
+        else:
+            continue  # no recognisable svg_details — skip
+
+        part = loaded_part
+
+        part_kwargs = copy.deepcopy(kwargs)
+        part_kwargs.update(copy.deepcopy(loaded_part.get("kwargs", {})))
+        _SD_META = {"svg_name", "filename_extra", "width", "height", "depth", "styles",
+                    "extra", "radius_name"}
+        svg_details_safe = {k: v for k, v in svg_details.items()
+                            if k not in _SD_META or (k in ("width", "height", "depth") and isinstance(v, (int, float)))}
+        part_kwargs.update(copy.deepcopy(svg_details_safe))
+
+        # stylesheet name override from yaml: svg_details.stylesheet: "jazzy"
+        if "stylesheet" in svg_details:
+            part_kwargs["stylesheet"] = svg_details["stylesheet"]
+
+        # per-part style overrides from yaml: svg_details.styles: {plate: {color: "#FF0000"}}
+        yaml_styles = svg_details.get("styles", {})
+        if isinstance(yaml_styles, dict) and yaml_styles:
+            existing = part_kwargs.get("part_styles", {})
+            part_kwargs["part_styles"] = svg_styles.merge(
+                svg_styles.get_stylesheet(part_kwargs.get("stylesheet", "default")),
+                {**existing, **yaml_styles}
+            ) if not existing else {**existing, **yaml_styles}
+
+        part["kwargs"] = part_kwargs
+        part["oobb_name"] = part.get("oobb_name", svg_details.get("svg_name", "default"))
+
+        if oomp_mode == "oobb":
+            part["kwargs"]["oomp_size"] = part["oobb_name"]
+
+        parts.append(part)
+
+    return parts
+
+
+def get_base(thing, **kwargs):
+
+    prepare_print = kwargs.get("prepare_print", False)
+    width = kwargs.get("width", 1)
+    height = kwargs.get("height", 1)
+    depth = kwargs.get("depth", 3)
+    rot = kwargs.get("rot", [0,0,0])
+    pos = kwargs.get("pos", [0,0,0])
+    extra = kwargs.get("extra", "")
+
+
+
+    #add plate
+    if True:
+        p3 = copy.deepcopy(kwargs)
+        p3["shape"] = f"oobb_plate"
+        p3["depth"] = depth
+        #p3["m"] = "#"
+        pos1 = copy.deepcopy(pos)
+        p3["pos"] = pos1
+        opsvg.se(thing,**p3)
+
+    #add holes
+    if True:
+        p3 = copy.deepcopy(kwargs)
+        p3["shape"] = f"oobb_holes"
+        p3["depth"] = depth
+        p3["radius_name"] = "m6"
+        #p3["m"] = "#"
+        pos1 = copy.deepcopy(pos)
+        p3["pos"] = pos1
+        opsvg.se(thing,**p3)
+
+    #add text
+    if True:
+        p3 = copy.deepcopy(kwargs)
+        p3["shape"] = f"text"
+        p3["text"] = "Base Plate"
+        p3["size"] = 10.0
+        p3["font"] = "sans-serif"
+        p3["halign"] = "left"
+        p3["valign"] = "center"
+        p3["color"] = "#000000"
+        #p3["m"] = "#"
+        pos1 = copy.deepcopy(pos)
+        p3["pos"] = pos1
+        opsvg.se(thing,**p3)
+
+    if prepare_print:
+        svg_help.prepare_base_for_print(thing, pos, **kwargs)
+
+
+def _use_style_oomp(thing, **kwargs):
+    """Load the project-local OOMP stylesheet for component diagrams."""
+    stylesheet = kwargs.get("stylesheet", "style_oomp")
+    styles_directory = Path(__file__).parent / "styles"
+    thing["styles"] = svg_styles.get_stylesheet(
+        stylesheet,
+        styles_dir=styles_directory,
+    )
+
+    part_styles = kwargs.get("part_styles", {})
+    if isinstance(part_styles, dict) and part_styles:
+        thing["styles"] = svg_styles.merge(thing["styles"], part_styles)
+
+
+def _add_diagram_bounds(thing, width, height):
+    """Add the white background and fixed bounds used by every diagram."""
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="background",
+        size=[width, height, 0],
+        pos=[0, 0, 0],
+    )
+
+
+def _add_assembly_bounds(thing, width, height):
+    """Retain predictable SVG bounds without adding an opaque page."""
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="canvas.transparent",
+        size=[width, height, 0],
+        pos=[0, 0, 0],
+    )
+
+
+def _add_square_background(thing, size=64):
+    """Add the white square required by the square PNG diagrams."""
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="background",
+        size=[size, size, 0],
+        pos=[0, 0, 0],
+    )
+
+
+def _add_resistor_outline(
+    thing,
+    body_width=22,
+    body_height=10,
+    pos=None,
+    body_style="component.body",
+):
+    """Draw the resistor body and its two surface-mount end terminals."""
+    if pos is None:
+        pos = [0, 0, 0]
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style=body_style,
+        size=[body_width, body_height, 0],
+        r=1.2,
+        pos=copy.deepcopy(pos),
+    )
+
+    terminal_width = 3
+    if thing.get("assembly_mode", False):
+        # Assembly drawings use a ten-times drawing grid.  Keeping this as a
+        # simple proportion makes small package terminals readable without
+        # changing the physical aspect ratio of the finished SVG.
+        terminal_width = max(0.6, body_width * 0.18)
+    # Two explicit sides keep this easy to edit for other two-pin parts.
+    thing["diagram_pin_positions"] = []
+    sides = [-1, 1]
+    for side_index in range(len(sides)):
+        side = sides[side_index]
+        terminal_pos = copy.deepcopy(pos)
+        terminal_pos[0] += side * (body_width / 2 - terminal_width / 2)
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.terminal",
+            css_class="pad",
+            size=[terminal_width, body_height, 0],
+            pos=terminal_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": str(side_index + 1),
+                "side": "left" if side < 0 else "right",
+                "pos": copy.deepcopy(terminal_pos),
+                "size": [terminal_width, body_height, 0],
+            }
+        )
+
+    return body_width, body_height
+
+
+def _add_through_hole_resistor_outline(thing, width=32, height=9, pos=None):
+    if pos is None:
+        pos = [0, 0, 0]
+
+    lead_lines = [
+        [[-width / 2, 0], [-width / 2 + 6, 0]],
+        [[width / 2 - 6, 0], [width / 2, 0]],
+    ]
+    for lead_line in lead_lines:
+        opsvg.se(
+            thing,
+            shape="line",
+            style="component.pin",
+            p1=lead_line[0],
+            p2=lead_line[1],
+            pos=copy.deepcopy(pos),
+        )
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body_warm",
+        size=[width - 12, height, 0],
+        r=height / 2,
+        pos=copy.deepcopy(pos),
+    )
+    return width, height
+
+
+def _add_led_outline(thing, width=22, height=12, pos=None):
+    if pos is None:
+        pos = [0, 0, 0]
+    size = str(thing.get("taxonomy_3", ""))
+
+    if size in ["3_mm", "5_mm", "10_mm"]:
+        diameter = min(width - 8, height)
+        lead_lines = [
+            [[-diameter / 2, 0], [-width / 2, 0]],
+            [[diameter / 2, 0], [width / 2, 0]],
+        ]
+        for lead_line in lead_lines:
+            opsvg.se(
+                thing,
+                shape="line",
+                style="component.pin",
+                p1=lead_line[0],
+                p2=lead_line[1],
+                pos=copy.deepcopy(pos),
+            )
+        opsvg.se(
+            thing,
+            shape="circle",
+            style="component.lens",
+            r=diameter / 2,
+            pos=copy.deepcopy(pos),
+        )
+        return width, diameter
+
+    if size == "filament_3_volt":
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.lens",
+            size=[width, max(3, height / 3), 0],
+            r=1.5,
+            pos=copy.deepcopy(pos),
+        )
+        return width, max(3, height / 3)
+
+    if size.startswith("strip_"):
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.body",
+            size=[width, height, 0],
+            r=1,
+            pos=copy.deepcopy(pos),
+        )
+        led_x_positions = [-width * 0.3, -width * 0.1, width * 0.1, width * 0.3]
+        for led_x in led_x_positions:
+            led_pos = copy.deepcopy(pos)
+            led_pos[0] += led_x
+            opsvg.se(
+                thing,
+                shape="circle",
+                style="component.lens",
+                r=min(2.1, height / 4),
+                pos=led_pos,
+            )
+        return width, height
+
+    # Addressable LEDs are real multi-pin packages: the SK6812SIDE-A carries
+    # a single row of pads along its bottom edge, and the PLCC4-style
+    # WS2812B / SK6812MINI-E bodies put two pads on each of the long sides.
+    # Their numbering follows the KiCad footprints (1,2 down the left, 3,4 up
+    # the right), so the drawn pads match the physical part pin for pin.
+    pin_count = _get_package_pin_count(thing)
+    if pin_count >= 4:
+        thing["diagram_pin_positions"] = []
+        if "side_view" in size:
+            body_width = width - 2
+            body_height = height - 2
+            pad_length = max(1.5, body_width * 0.06)
+            pad_width = max(2.0, body_width / (pin_count * 2.4))
+            row_span = body_width - pad_width
+            for index in range(pin_count):
+                pin_x = pos[0] + body_width / 2 - pad_width / 2 - (row_span * index / max(pin_count - 1, 1))
+                pin_y = pos[1] - body_height / 2 - pad_length / 2 + 0.25
+                _add_ic_pin(thing, str(index + 1), "bottom", [pin_x, pin_y, 0], [pad_width, pad_length, 0])
+            opsvg.se(
+                thing,
+                shape="rounded_rectangle",
+                style="component.body",
+                size=[body_width, body_height, 0],
+                r=0.8,
+                pos=copy.deepcopy(pos),
+            )
+            # Side-view emitters shine out of a light window on the front face.
+            window_pos = copy.deepcopy(pos)
+            opsvg.se(
+                thing,
+                shape="rect",
+                style="component.lens",
+                size=[body_width * 0.55, body_height * 0.42, 0],
+                pos=window_pos,
+            )
+            opsvg.se(
+                thing,
+                shape="circle",
+                style="component.pin_one",
+                r=1.0,
+                pos=[pos[0] - body_width / 2 + 1.2, pos[1] + body_height / 2 - 1.2, 0],
+            )
+            thing["diagram_outline_width"] = body_width
+            thing["diagram_outline_height"] = body_height + pad_length
+            return body_width, body_height + pad_length
+
+        body_width = width - 2
+        body_height = height - 2
+        pads_per_side = pin_count // 2
+        pad_length = max(2.0, body_width * 0.075)
+        pad_height = max(2.0, body_height / (pads_per_side * 2.6))
+        left_numbers = [str(index + 1) for index in range(pads_per_side)]
+        right_numbers = [str(pin_count - index) for index in range(pads_per_side)]
+        for side_index in range(2):
+            side = ["left", "right"][side_index]
+            numbers = [left_numbers, right_numbers][side_index]
+            side_sign = [-1, 1][side_index]
+            for pin_index in range(pads_per_side):
+                pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+                pin_y = pos[1] + body_height * (0.5 - (pin_index + 0.5) / pads_per_side)
+                _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_height, 0])
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.body",
+            size=[body_width, body_height, 0],
+            r=min(1.2, body_width * 0.06),
+            pos=copy.deepcopy(pos),
+        )
+        opsvg.se(
+            thing,
+            shape="circle",
+            style="component.lens",
+            r=min(body_height, body_width) * 0.16,
+            pos=copy.deepcopy(pos),
+        )
+        opsvg.se(
+            thing,
+            shape="circle",
+            style="component.pin_one",
+            r=1.0,
+            pos=[pos[0] - body_width / 2 + 1.2, pos[1] - body_height / 2 + 1.2, 0],
+        )
+        thing["diagram_outline_width"] = body_width + 2 * pad_length
+        thing["diagram_outline_height"] = body_height
+        return body_width, body_height
+
+    _add_resistor_outline(
+        thing,
+        body_width=width,
+        body_height=height,
+        pos=pos,
+    )
+    opsvg.se(
+        thing,
+        shape="circle",
+        style="component.lens",
+        r=min(3.2, height / 3),
+        pos=copy.deepcopy(pos),
+    )
+    polarity_pos = copy.deepcopy(pos)
+    polarity_pos[0] -= width * 0.23
+    opsvg.se(
+        thing,
+        shape="line",
+        style="component.pin",
+        p1=[0, -height * 0.3],
+        p2=[0, height * 0.3],
+        pos=polarity_pos,
+    )
+    thing["diagram_orientation_anchor"] = {
+        "pos": copy.deepcopy(polarity_pos),
+        "identifiers": ["C"],
+    }
+    return width, height
+
+
+def _add_capacitor_outline(thing, width=22, height=10, pos=None):
+    if pos is None:
+        pos = [0, 0, 0]
+    size = str(thing.get("taxonomy_3", ""))
+    style = str(thing.get("taxonomy_4", ""))
+
+    if "diameter" in size or style == "electrolytic":
+        diameter = min(width, height)
+        _add_resistor_outline(
+            thing,
+            body_width=diameter + 6,
+            body_height=diameter,
+            pos=pos,
+            body_style="component.body_dark",
+        )
+        opsvg.se(
+            thing,
+            shape="circle",
+            style="component.body_dark",
+            r=diameter / 2,
+            pos=copy.deepcopy(pos),
+        )
+        plus_pos = copy.deepcopy(pos)
+        plus_pos[0] -= diameter * 0.18
+        _add_text(thing, "+", "label", plus_pos, size=max(3, diameter / 3), color="#FFFFFF")
+        return diameter + 6, diameter
+
+    body_style = "component.body_warm"
+    _add_resistor_outline(
+        thing,
+        body_width=width,
+        body_height=height,
+        pos=pos,
+        body_style=body_style,
+    )
+    if style == "tantalum":
+        stripe_pos = copy.deepcopy(pos)
+        stripe_pos[0] -= width * 0.2
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[1.5, height * 0.75, 0],
+            pos=stripe_pos,
+        )
+    return width, height
+
+
+def _add_crystal_outline(thing, width=24, height=14, pos=None):
+    if pos is None:
+        pos = [0, 0, 0]
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[width - 4, height - 4, 0],
+        r=1.5,
+        pos=copy.deepcopy(pos),
+    )
+    pad_positions = [
+        [-width / 2 + 2, -height / 2 + 2],
+        [-width / 2 + 2, height / 2 - 2],
+        [width / 2 - 2, -height / 2 + 2],
+        [width / 2 - 2, height / 2 - 2],
+    ]
+    pad_numbers = ["1", "4", "2", "3"]
+    thing["diagram_pin_positions"] = []
+    for pad_index in range(len(pad_positions)):
+        pad_position = pad_positions[pad_index]
+        pad_pos = copy.deepcopy(pos)
+        pad_pos[0] += pad_position[0]
+        pad_pos[1] += pad_position[1]
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[4, 3, 0],
+            pos=pad_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": pad_numbers[pad_index],
+                "side": "corner",
+                "pos": copy.deepcopy(pad_pos),
+                "size": [4, 3, 0],
+            }
+        )
+    crystal_pin_one_pos = copy.deepcopy(pos)
+    crystal_pin_one_pos[0] += pad_positions[0][0]
+    crystal_pin_one_pos[1] += pad_positions[0][1]
+    thing["diagram_orientation_anchor"] = {
+        "pos": crystal_pin_one_pos,
+        "identifiers": ["1"],
+    }
+    return width, height
+
+
+def _get_number_from_taxonomy(thing, taxonomy_names):
+    for taxonomy_name in taxonomy_names:
+        value = str(thing.get(taxonomy_name, ""))
+        sections = value.split("_")
+        for section in sections:
+            if section.isdigit():
+                return int(section)
+    return 0
+
+
+def _add_usb_a_connector_outline(thing, width=30, height=16, pos=None):
+    """Draw the 912-121A2023S10100 top view from its mechanical sheet."""
+    if pos is None:
+        pos = [0, 0, 0]
+
+    dimensions = thing.get("connector_dimensions_mm", {})
+    overall_width = float(dimensions.get("overall_width", 14.3))
+    shell_width_mm = float(dimensions.get("shell_width", 13.1))
+    shell_width = width * shell_width_mm / overall_width
+    shell_height = height
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[shell_width, shell_height, 0],
+        r=min(shell_width * 0.035, shell_height * 0.08),
+        pos=copy.deepcopy(pos),
+    )
+
+    # The two side ears represent the two shell retention legs in the PCB
+    # layout.  They stay inside the 14.30 mm overall envelope.
+    thing["diagram_pin_positions"] = []
+    shell_mount_positions = [-1, 1]
+    for mount_index in range(len(shell_mount_positions)):
+        side = shell_mount_positions[mount_index]
+        mount_pos = copy.deepcopy(pos)
+        mount_width = width - shell_width
+        mount_pos[0] += side * (width / 2 - mount_width / 2)
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[mount_width, shell_height * 0.34, 0],
+            pos=mount_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": str(mount_index + 5),
+                "side": "shell",
+                "pos": copy.deepcopy(mount_pos),
+                "size": [mount_width, shell_height * 0.34, 0],
+            }
+        )
+
+    # Four 1.00 mm contacts on 2.00 mm pitch leave the rear of the shell.
+    contact_count = int(dimensions.get("contact_count", 4))
+    contact_pitch_ratio = float(dimensions.get("contact_pitch", 2.0)) / shell_width_mm
+    contact_width_ratio = float(dimensions.get("contact_width", 1.0)) / shell_width_mm
+    for contact_index in range(contact_count):
+        contact_pos = copy.deepcopy(pos)
+        contact_pos[0] += (contact_index - (contact_count - 1) / 2) * shell_width * contact_pitch_ratio
+        contact_pos[1] += shell_height * 0.43
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[shell_width * contact_width_ratio, shell_height * 0.14, 0],
+            pos=contact_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": str(contact_index + 1),
+                "side": "contact",
+                "pos": copy.deepcopy(contact_pos),
+                "size": [shell_width * contact_width_ratio, shell_height * 0.14, 0],
+            }
+        )
+
+    # The two spring windows are the strongest identifying feature in the
+    # datasheet top view.  Each has two simple retaining bars.
+    window_x_positions = [-shell_width * 0.24, shell_width * 0.24]
+    for window_x in window_x_positions:
+        window_pos = copy.deepcopy(pos)
+        window_pos[0] += window_x
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.hole",
+            size=[shell_width * 0.22, shell_height * 0.30, 0],
+            r=min(shell_width, shell_height) * 0.04,
+            pos=window_pos,
+        )
+        bar_y_positions = [-shell_height * 0.035, shell_height * 0.035]
+        for bar_y in bar_y_positions:
+            bar_pos = copy.deepcopy(window_pos)
+            bar_pos[1] += bar_y
+            opsvg.se(
+                thing,
+                shape="line",
+                style="component.pin",
+                p1=[-shell_width * 0.075, 0],
+                p2=[shell_width * 0.075, 0],
+                pos=bar_pos,
+            )
+
+    # Front opening and tongue make the outline read as a USB-A receptacle.
+    opening_pos = copy.deepcopy(pos)
+    opening_pos[1] -= shell_height * 0.28
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.hole",
+        size=[shell_width * 0.78, shell_height * 0.20, 0],
+        r=shell_height * 0.06,
+        pos=opening_pos,
+    )
+    tongue_pos = copy.deepcopy(opening_pos)
+    tongue_pos[1] -= shell_height * 0.015
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[shell_width * 0.62, shell_height * 0.075, 0],
+        r=shell_height * 0.025,
+        pos=tongue_pos,
+    )
+
+    pin_one_pos = copy.deepcopy(pos)
+    pin_one_pos[0] -= shell_width * 0.34
+    pin_one_pos[1] += shell_height * 0.30
+    opsvg.se(thing, shape="circle", style="component.pin_one", r=min(width, height) * 0.035, pos=pin_one_pos)
+    thing["diagram_orientation_anchor"] = {
+        "pos": copy.deepcopy(pin_one_pos),
+        "identifiers": ["VBUS", "1"],
+    }
+
+    thing["connector_drawing"] = "usb_a"
+    thing["diagram_contact_count"] = contact_count
+    thing["diagram_outline_width"] = width
+    thing["diagram_outline_height"] = shell_height
+    return width, shell_height
+
+
+def _get_usb_c_pcb_pad_details():
+    """Return the TYPE-C-31-M-12 recommended PCB pads from left to right."""
+    # The datasheet uses four 0.60 mm power pads and eight 0.30 mm signal
+    # pads.  Keeping every pad explicit makes footprint corrections easy.
+    return [
+        {"number": "GND@1", "label": "gnd", "x_mm": -3.25, "width_mm": 0.60, "source_pins": ["A1", "B12"]},
+        {"number": "VBUS@1", "label": "vbus", "x_mm": -2.45, "width_mm": 0.60, "source_pins": ["A4", "B9"]},
+        {"number": "SBU2", "label": "sbu2", "x_mm": -1.75, "width_mm": 0.30, "source_pins": ["B8"]},
+        {"number": "CC1", "label": "cc1", "x_mm": -1.25, "width_mm": 0.30, "source_pins": ["A5"]},
+        {"number": "DN2", "label": "dn2", "x_mm": -0.75, "width_mm": 0.30, "source_pins": ["B7"]},
+        {"number": "DP1", "label": "dp1", "x_mm": -0.25, "width_mm": 0.30, "source_pins": ["A6"]},
+        {"number": "DN1", "label": "dn1", "x_mm": 0.25, "width_mm": 0.30, "source_pins": ["A7"]},
+        {"number": "DP2", "label": "dp2", "x_mm": 0.75, "width_mm": 0.30, "source_pins": ["B6"]},
+        {"number": "SBU1", "label": "sbu1", "x_mm": 1.25, "width_mm": 0.30, "source_pins": ["A8"]},
+        {"number": "CC2", "label": "cc2", "x_mm": 1.75, "width_mm": 0.30, "source_pins": ["B5"]},
+        {"number": "VBUS@2", "label": "vbus", "x_mm": 2.45, "width_mm": 0.60, "source_pins": ["A9", "B4"]},
+        {"number": "GND@2", "label": "gnd", "x_mm": 3.25, "width_mm": 0.60, "source_pins": ["A12", "B1"]},
+    ]
+
+
+def _add_usb_c_connector_outline(thing, width=30, height=16, pos=None):
+    """Draw the TYPE-C-31-M-12 shell, rear contacts, tabs, and port."""
+    if pos is None:
+        pos = [0, 0, 0]
+
+    dimensions = thing.get("connector_dimensions_mm", {})
+    shell_width = width
+    shell_height = height
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[shell_width, shell_height, 0],
+        r=min(shell_width * 0.07, shell_height * 0.10),
+        pos=copy.deepcopy(pos),
+    )
+
+    shell_width_mm = float(dimensions.get("shell_width", 8.94))
+    body_depth_mm = float(dimensions.get("body_depth", 7.35))
+    pad_length_mm = float(dimensions.get("pcb_pad_length", 1.5))
+    pad_length = shell_height * pad_length_mm / body_depth_mm
+    thing["diagram_pin_positions"] = []
+    pcb_pad_details = _get_usb_c_pcb_pad_details()
+    for pad_detail in pcb_pad_details:
+        contact_pos = copy.deepcopy(pos)
+        contact_pos[0] += shell_width * pad_detail["x_mm"] / shell_width_mm
+        contact_pos[1] += shell_height * 0.44
+        contact_width = shell_width * pad_detail["width_mm"] / shell_width_mm
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[contact_width, pad_length, 0],
+            pos=contact_pos,
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": pad_detail["number"],
+                "label": pad_detail["label"],
+                "source_pins": copy.deepcopy(pad_detail["source_pins"]),
+                "side": "contact",
+                "pos": copy.deepcopy(contact_pos),
+                "size": [contact_width, pad_length, 0],
+            }
+        )
+
+    # Four shell tabs follow the recommended PCB layout: two toward the rear
+    # and two toward the front, mirrored about the connector centreline.
+    mount_y_positions = [shell_height * 0.28, -shell_height * 0.28]
+    for side in [-1, 1]:
+        for mount_y in mount_y_positions:
+            mount_pos = copy.deepcopy(pos)
+            mount_pos[0] += side * shell_width * 0.43
+            mount_pos[1] += mount_y
+            opsvg.se(
+                thing,
+                shape="rounded_rectangle",
+                style="component.pad",
+            css_class="pad",
+                size=[shell_width * 0.09, shell_height * 0.18, 0],
+                r=min(shell_width, shell_height) * 0.025,
+                pos=mount_pos,
+            )
+
+    # Two latch windows and the central shell seam match the top view.
+    window_x_positions = [-shell_width * 0.25, shell_width * 0.25]
+    for window_x in window_x_positions:
+        window_pos = copy.deepcopy(pos)
+        window_pos[0] += window_x
+        window_pos[1] += shell_height * 0.13
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.hole",
+            size=[shell_width * 0.17, shell_height * 0.12, 0],
+            r=min(shell_width, shell_height) * 0.025,
+            pos=window_pos,
+        )
+    opsvg.se(
+        thing,
+        shape="line",
+        style="component.pin",
+        p1=[0, -shell_height * 0.08],
+        p2=[0, shell_height * 0.30],
+        pos=copy.deepcopy(pos),
+    )
+
+    opening_pos = copy.deepcopy(pos)
+    opening_pos[1] -= shell_height * 0.27
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.hole",
+        size=[shell_width * 0.80, shell_height * 0.22, 0],
+        r=shell_height * 0.09,
+        pos=opening_pos,
+    )
+    tongue_pos = copy.deepcopy(opening_pos)
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[shell_width * 0.55, shell_height * 0.065, 0],
+        r=shell_height * 0.02,
+        pos=tongue_pos,
+    )
+
+    pin_one_pos = copy.deepcopy(thing["diagram_pin_positions"][0]["pos"])
+    opsvg.se(thing, shape="circle", style="component.pin_one", r=min(width, height) * 0.035, pos=pin_one_pos)
+    thing["diagram_orientation_anchor"] = {
+        "pos": copy.deepcopy(pin_one_pos),
+        "identifiers": ["GND@1", "A1", "GND"],
+    }
+
+    thing["connector_drawing"] = "usb_c"
+    thing["diagram_contact_count"] = len(pcb_pad_details)
+    thing["diagram_outline_width"] = shell_width
+    thing["diagram_outline_height"] = shell_height
+    return shell_width, shell_height
+
+
+def _add_connector_outline(thing, width=30, height=16, pos=None):
+    if pos is None:
+        pos = [0, 0, 0]
+    connector_type = str(thing.get("taxonomy_3", ""))
+    pin_count = _get_number_from_taxonomy(thing, ["taxonomy_5", "taxonomy_6"])
+
+    if connector_type == "usb_a":
+        return _add_usb_a_connector_outline(thing, width=width, height=height, pos=pos)
+    if connector_type == "usb_c":
+        return _add_usb_c_connector_outline(thing, width=width, height=height, pos=pos)
+
+    if connector_type == "header":
+        pin_count = max(pin_count, 1)
+        header_height = width
+        header_width = min(8, max(4, height * 0.35))
+        if thing.get("assembly_mode", False):
+            header_width = height
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.body_dark",
+            size=[header_width, header_height, 0],
+            r=1,
+            pos=copy.deepcopy(pos),
+        )
+        pin_spacing = header_height / pin_count
+        diagram_pin_positions = []
+        for pin_index in range(pin_count):
+            pin_pos = copy.deepcopy(pos)
+            pin_pos[1] += header_height / 2 - pin_spacing / 2 - pin_index * pin_spacing
+            pin_square = min(1.8, pin_spacing * 0.5)
+            hole_square = min(3.2, pin_spacing * 0.7)
+            if thing.get("assembly_mode", False):
+                header_dimensions = thing.get("header_dimensions_mm", {})
+                pin_square = float(header_dimensions.get("pin_square", 0.64)) * 10
+                hole_square = float(header_dimensions.get("hole_square", 0.95)) * 10
+            # A real header shows the square socket with the metal pin sitting
+            # inside it.
+            opsvg.se(
+                thing,
+                shape="rect",
+                style="component.hole",
+                size=[hole_square, hole_square, 0],
+                pos=pin_pos,
+            )
+            opsvg.se(
+                thing,
+                shape="rect",
+                style="component.terminal",
+                css_class="pad",
+                size=[pin_square, pin_square, 0],
+                pos=pin_pos,
+            )
+            diagram_pin_positions.append(
+                {
+                    "number": str(pin_index + 1),
+                    "side": "header",
+                    "pos": copy.deepcopy(pin_pos),
+                    "size": [pin_square, pin_square, 0],
+                }
+            )
+        # The moulded notch on the pin-one end of the plastic, as moulded on
+        # every real 2.54 mm strip, marks orientation without any text.
+        notch_size = min(header_width * 0.5, pin_spacing * 0.9)
+        opsvg.se(
+            thing,
+            shape="polygon",
+            style="component.hole",
+            points=[
+                [-notch_size / 2, header_height / 2 - notch_size * 0.35],
+                [notch_size / 2, header_height / 2 - notch_size * 0.35],
+                [0, header_height / 2 - notch_size * 0.9],
+            ],
+            pos=copy.deepcopy(pos),
+        )
+        if len(diagram_pin_positions) > 0:
+            pin_one_marker_pos = copy.deepcopy(diagram_pin_positions[0]["pos"])
+            pin_one_marker_pos[0] -= header_width * 0.30
+            opsvg.se(
+                thing,
+                shape="circle",
+                style="component.pin_one",
+                r=min(header_width, pin_spacing) * 0.06,
+                pos=pin_one_marker_pos,
+            )
+        thing["diagram_pin_positions"] = diagram_pin_positions
+        thing["diagram_outline_width"] = header_width
+        return header_width, header_height
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[width, height, 0],
+        r=2,
+        pos=copy.deepcopy(pos),
+    )
+    opening_width = width - 6
+    opening_height = height - 6
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body_dark",
+        size=[opening_width, opening_height, 0],
+        r=1.5,
+        pos=copy.deepcopy(pos),
+    )
+    visible_contacts = min(max(pin_count, 4), 16)
+    contact_spacing = opening_width / (visible_contacts + 1)
+    for contact_index in range(visible_contacts):
+        contact_pos = copy.deepcopy(pos)
+        contact_pos[0] += -opening_width / 2 + contact_spacing * (contact_index + 1)
+        opsvg.se(
+            thing,
+            shape="line",
+            style="component.terminal",
+            p1=[0, -opening_height * 0.28],
+            p2=[0, opening_height * 0.28],
+            pos=contact_pos,
+        )
+    return width, height
+
+
+def _get_package_pin_count(thing):
+    pins = thing.get("pins", {})
+    if isinstance(pins, dict) and len(pins) > 0:
+        return len(pins)
+    if isinstance(pins, list) and len(pins) > 0:
+        return len(pins)
+
+    component_type = thing.get("taxonomy_2", "")
+    if component_type == "connector":
+        pin_count = _get_number_from_taxonomy(thing, ["taxonomy_5", "taxonomy_6"])
+        if pin_count > 0:
+            return pin_count
+    if component_type in ["diode", "ic", "transistor"]:
+        pin_count = _get_number_from_taxonomy(thing, ["taxonomy_3", "taxonomy_4"])
+        if pin_count > 0:
+            return pin_count
+
+    defaults = {
+        "capacitor": 2,
+        "crystal": 4,
+        "diode": 2,
+        "display": 16,
+        "ferrite_bead": 2,
+        "led": 2,
+        "resistor": 2,
+        "resistor_array": 8,
+        "wire": 2,
+    }
+    return defaults.get(component_type, 0)
+
+
+def _add_ic_pin(thing, pin_number, side, pin_pos, pin_size):
+    """Draw one outlined IC pin and retain its exact label position."""
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="component.pad",
+            css_class="pad",
+        size=pin_size,
+        pos=copy.deepcopy(pin_pos),
+    )
+    thing["diagram_pin_positions"].append(
+        {
+            "number": str(pin_number),
+            "side": side,
+            "pos": copy.deepcopy(pin_pos),
+            "size": copy.deepcopy(pin_size),
+        }
+    )
+
+
+def _add_ic_pin_one_marker(thing, package, body_width, body_height, pos):
+    """Use the same basic pin-1 cue shown by each source datasheet."""
+    marker_x = pos[0] - body_width / 2 + 1.1
+    marker_y = pos[1] + body_height / 2 - 1.1
+
+    if package in ["sot_23", "sot_523", "sot_363_6"]:
+        # The CBI SOT-23 outline numbers pin 1 at the lower-left lead when the
+        # single drain lead is on the right.  A small circle keeps that anchor
+        # visible in every monochrome diagram.
+        marker_x = pos[0] - body_width / 2 + 0.8
+        marker_y = pos[1] - body_height / 2 + 0.8
+
+    if package == "tsot_23_5":
+        # Richtek uses a triangular corner mark beside pin 1.
+        marker_x = pos[0] - body_width / 2 + 0.9
+        marker_y = pos[1] - body_height / 2 + 0.9
+        triangle_points = [
+            [marker_x - 0.8, marker_y - 0.8],
+            [marker_x - 0.8, marker_y + 0.8],
+            [marker_x + 0.8, marker_y - 0.8],
+        ]
+        triangle_lines = [
+            [triangle_points[0], triangle_points[1]],
+            [triangle_points[1], triangle_points[2]],
+            [triangle_points[2], triangle_points[0]],
+        ]
+        for triangle_line in triangle_lines:
+            opsvg.se(
+                thing,
+                shape="line",
+                style="component.pin_one_line",
+                p1=triangle_line[0],
+                p2=triangle_line[1],
+                pos=[0, 0, 0],
+            )
+        return
+
+    # WCH, CoreChips, and TI all use a circular pin-1 index cue.
+    if package.startswith("qfn"):
+        marker_y = pos[1] - body_height / 2 + 1.1
+    opsvg.se(
+        thing,
+        shape="circle",
+        style="component.pin_one",
+        r=0.65,
+        pos=[marker_x, marker_y, 0],
+    )
+
+
+def _add_ic_outline(thing, width=24, height=16, pos=None):
+    """Draw the audited IC package orientation and physical pin numbering."""
+    if pos is None:
+        pos = [0, 0, 0]
+    package = str(thing.get("taxonomy_3", ""))
+    if thing.get("taxonomy_2", "") == "diode":
+        package = str(thing.get("taxonomy_4", package))
+    thing["diagram_pin_positions"] = []
+
+    if thing.get("taxonomy_2", "") == "diode" and _get_package_pin_count(thing) == 2:
+        body_width = max(width - 7, width * 0.62)
+        body_height = height
+        pad_length = max(2.5, (width - body_width) / 2 + 0.5)
+        pad_width = max(1.2, height * 0.45)
+
+        pin_positions = [
+            ["1", "left", -1],
+            ["2", "right", 1],
+        ]
+        for pin_position in pin_positions:
+            pin_x = pos[0] + pin_position[2] * (body_width / 2 + pad_length / 2 - 0.25)
+            _add_ic_pin(
+                thing,
+                pin_position[0],
+                pin_position[1],
+                [pin_x, pos[1], 0],
+                [pad_length, pad_width, 0],
+            )
+
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.body",
+            size=[body_width, body_height, 0],
+            r=min(0.8, body_height * 0.15),
+            pos=copy.deepcopy(pos),
+        )
+
+        # Pin 1 is the cathode.  The datasheet package marking is represented
+        # by a single black outline line rather than a colour or filled block.
+        cathode_x = pos[0] - body_width * 0.28
+        opsvg.se(
+            thing,
+            shape="line",
+            style="component.pin_one_line",
+            p1=[cathode_x, pos[1] - body_height * 0.32],
+            p2=[cathode_x, pos[1] + body_height * 0.32],
+            pos=[0, 0, 0],
+        )
+        thing["diagram_outline_width"] = body_width + 2 * pad_length
+        thing["diagram_outline_height"] = body_height
+        return body_width, body_height
+
+    if package == "sot_23":
+        body_height = max(8, height - 2)
+        if thing.get("assembly_mode", False):
+            body_height = height
+        body_width = body_height * 1.425 / 2.9
+        overall_width = body_height * 2.6 / 2.9
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(1.0, body_height * 0.425 / 2.9)
+        pin_rows = [
+            ["1", "left", 0.3275],
+            ["2", "left", -0.3275],
+            ["3", "right", 0.0],
+        ]
+        overall_width = body_height * 2.6 / 2.9
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(1.0, body_height * 0.425 / 2.9)
+        pin_rows = [
+            ["1", "left", -0.3275],
+            ["2", "left", 0.3275],
+            ["3", "right", 0.0],
+        ]
+        for pin_row in pin_rows:
+            side_sign = -1
+            if pin_row[1] == "right":
+                side_sign = 1
+            pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+            pin_y = pos[1] + body_height * pin_row[2]
+            _add_ic_pin(
+                thing,
+                pin_row[0],
+                pin_row[1],
+                [pin_x, pin_y, 0],
+                [pad_length, pad_width, 0],
+            )
+
+    elif package == "sot_523" and thing.get("taxonomy_2", "") == "transistor":
+        body_height = max(8, height - 2)
+        if thing.get("assembly_mode", False):
+            body_height = height
+        body_width = body_height * 0.775 / 1.6
+        overall_width = body_height
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(0.8, body_height * 0.33 / 1.6)
+        pin_rows = [
+            ["1", "left", 0.30],
+            ["2", "left", -0.30],
+            ["3", "right", 0.0],
+        ]
+        overall_width = body_height
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(0.8, body_height * 0.33 / 1.6)
+        pin_rows = [
+            ["1", "left", -0.30],
+            ["2", "left", 0.30],
+            ["3", "right", 0.0],
+        ]
+        for pin_row in pin_rows:
+            side_sign = -1
+            if pin_row[1] == "right":
+                side_sign = 1
+            pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+            pin_y = pos[1] + body_height * pin_row[2]
+            _add_ic_pin(
+                thing,
+                pin_row[0],
+                pin_row[1],
+                [pin_x, pin_y, 0],
+                [pad_length, pad_width, 0],
+            )
+
+    elif package == "sot_363_6" and thing.get("taxonomy_2", "") in ("transistor", "ic", ""):
+        # Diodes Incorporated shows the SOT363 top view with pins 1, 2, 3
+        # along the bottom edge and 6, 5, 4 along the top edge.  Keep that
+        # physical orientation and its 0.65 mm pitch explicit here.  SC-70-6
+        # ICs share the exact same body, so they draw identically.
+        body_width = max(10, width - 2)
+        if thing.get("assembly_mode", False):
+            body_width = width
+        body_height = body_width * 1.3 / 2.15
+        overall_height = body_width * 2.1 / 2.15
+        pad_length = (overall_height - body_height) / 2 + 0.5
+        pad_width = max(0.7, body_width * 0.25 / 2.15)
+        bottom_numbers = ["1", "2", "3"]
+        top_numbers = ["6", "5", "4"]
+        pin_offsets = [-0.65, 0.0, 0.65]
+        for side_index in range(2):
+            side = ["bottom", "top"][side_index]
+            numbers = [bottom_numbers, top_numbers][side_index]
+            side_sign = [-1, 1][side_index]
+            for pin_index in range(3):
+                pin_x = pos[0] + body_width * pin_offsets[pin_index] / 2.15
+                pin_y = pos[1] + side_sign * (body_height / 2 + pad_length / 2 - 0.25)
+                _add_ic_pin(
+                    thing,
+                    numbers[pin_index],
+                    side,
+                    [pin_x, pin_y, 0],
+                    [pad_width, pad_length, 0],
+                )
+
+    elif thing.get("taxonomy_2", "") == "diode" and package == "sot_523":
+        body_height = max(8, height - 2)
+        body_width = body_height * 0.8 / 1.6
+        overall_width = body_height
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(1.0, body_height * 0.26)
+        pin_rows = [
+            ["1", "left", 0.27],
+            ["2", "left", -0.27],
+            ["3", "right", 0.0],
+        ]
+        for pin_row in pin_rows:
+            side_sign = -1
+            if pin_row[1] == "right":
+                side_sign = 1
+            pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+            pin_y = pos[1] + body_height * pin_row[2]
+            _add_ic_pin(
+                thing,
+                pin_row[0],
+                pin_row[1],
+                [pin_x, pin_y, 0],
+                [pad_length, pad_width, 0],
+            )
+
+    elif package.startswith("qfn"):
+        body_width = min(width - 2, height - 2)
+        body_height = body_width
+        pad_length = max(1.8, body_width * 0.18)
+        pad_width = max(0.75, body_width * 0.09)
+        edge_offset = body_width / 2
+        offsets = []
+        for pin_index in range(4):
+            offsets.append(body_width * (-0.30 + pin_index * 0.20))
+
+        pin_sides = [
+            {"side": "left", "numbers": [13, 14, 15, 16]},
+            {"side": "top", "numbers": [12, 11, 10, 9]},
+            {"side": "right", "numbers": [8, 7, 6, 5]},
+            {"side": "bottom", "numbers": [1, 2, 3, 4]},
+        ]
+        for pin_side in pin_sides:
+            side = pin_side["side"]
+            numbers = pin_side["numbers"]
+            for pin_index in range(len(numbers)):
+                if side == "left":
+                    pin_pos = [pos[0] - edge_offset, pos[1] - offsets[pin_index], 0]
+                    pin_size = [pad_length, pad_width, 0]
+                elif side == "right":
+                    pin_pos = [pos[0] + edge_offset, pos[1] - offsets[pin_index], 0]
+                    pin_size = [pad_length, pad_width, 0]
+                elif side == "top":
+                    pin_pos = [pos[0] + offsets[pin_index], pos[1] + edge_offset, 0]
+                    pin_size = [pad_width, pad_length, 0]
+                else:
+                    pin_pos = [pos[0] + offsets[pin_index], pos[1] - edge_offset, 0]
+                    pin_size = [pad_width, pad_length, 0]
+                _add_ic_pin(thing, numbers[pin_index], side, pin_pos, pin_size)
+
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.body",
+            size=[body_width, body_height, 0],
+            r=0.7,
+            pos=copy.deepcopy(pos),
+        )
+        # CH343P exposed pad 0 is GND.
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.exposed_pad",
+            size=[body_width * 0.44, body_height * 0.44, 0],
+            pos=copy.deepcopy(pos),
+        )
+        thing["diagram_pin_positions"].append(
+            {
+                "number": "0",
+                "side": "center",
+                "pos": copy.deepcopy(pos),
+                "size": [body_width * 0.44, body_height * 0.44, 0],
+            }
+        )
+        _add_ic_pin_one_marker(thing, package, body_width, body_height, pos)
+        thing["diagram_outline_width"] = body_width + pad_length
+        thing["diagram_outline_height"] = body_height + pad_length
+        return body_width, body_height
+
+    elif package in ("updfn_8", "pdfn_8", "dfn_8") or package.startswith(("dfn_", "pdfn_", "updfn_")):
+        # 6 x 5 mm style DFN/PDFN: four contacts per side on the two long
+        # edges at a 1.27 mm pitch, with the large exposed pad between them.
+        body_width = width - 2
+        body_height = height - 2
+        pitch_grid = 12.7
+        pad_length = max(2.5, body_width * 0.06)
+        pad_width = max(4.0, pitch_grid * 0.42)
+        bottom_numbers = ["1", "2", "3", "4"]
+        top_numbers = ["8", "7", "6", "5"]
+        offsets = [-1.5 * pitch_grid, -0.5 * pitch_grid, 0.5 * pitch_grid, 1.5 * pitch_grid]
+        scale = body_width / max(width, 1.0)
+        offsets = [offset * scale for offset in offsets]
+        for side_index in range(2):
+            side = ["bottom", "top"][side_index]
+            numbers = [bottom_numbers, top_numbers][side_index]
+            side_sign = [-1, 1][side_index]
+            for pin_index in range(4):
+                pin_x = pos[0] + offsets[pin_index]
+                pin_y = pos[1] + side_sign * (body_height / 2 + pad_length / 2 - 0.25)
+                _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_width, pad_length, 0])
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.body",
+            size=[body_width, body_height, 0],
+            r=0.6,
+            pos=copy.deepcopy(pos),
+        )
+        # The exposed thermal pad inside the contact row (drawn, never numbered,
+        # because the matching footprint may or may not carry it as pad 9).
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.exposed_pad",
+            size=[body_width * 0.62, body_height * 0.62, 0],
+            pos=copy.deepcopy(pos),
+        )
+        opsvg.se(
+            thing,
+            shape="circle",
+            style="component.pin_one",
+            r=1.2,
+            pos=[pos[0] - body_width / 2 + 1.6, pos[1] - body_height / 2 + 1.6, 0],
+        )
+        thing["diagram_outline_width"] = body_width
+        thing["diagram_outline_height"] = body_height + 2 * pad_length
+        return body_width, body_height
+
+    elif package.startswith("tssop_"):
+        pin_count = max(_get_package_pin_count(thing), 2)
+        pins_per_side = pin_count // 2
+        ic_dimensions = _get_ic_dimensions_mm(thing)
+        package_body_length = float(ic_dimensions.get("body_length", 5.0))
+        package_body_width = float(ic_dimensions.get("body_width", 4.4))
+        package_overall_width = float(ic_dimensions.get("overall_width", 6.4))
+        package_pin_width = float(ic_dimensions.get("pin_width", 0.235))
+        body_height = max(8, height - 2)
+        if thing.get("assembly_mode", False):
+            body_height = height
+        body_width = body_height * package_body_width / package_body_length
+        overall_width = body_height * package_overall_width / package_body_length
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(0.45, body_height * package_pin_width / package_body_length)
+        left_numbers = []
+        right_numbers = []
+        for pin_index in range(pins_per_side):
+            left_numbers.append(pin_index + 1)
+            right_numbers.append(pin_count - pin_index)
+        for side_index in range(2):
+            side = ["left", "right"][side_index]
+            numbers = [left_numbers, right_numbers][side_index]
+            side_sign = [-1, 1][side_index]
+            for pin_index in range(len(numbers)):
+                pin_y = pos[1] + body_height * (0.5 - (pin_index + 0.5) / pins_per_side)
+                pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+                _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_width, 0])
+
+    elif package == "sop_16":
+        body_height = max(8, height - 2)
+        body_width = body_height * 3.9 / 9.9
+        overall_width = body_height * 6.04 / 9.9
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = max(0.45, body_height * 0.406 / 9.9)
+        left_numbers = [1, 2, 3, 4, 5, 6, 7, 8]
+        right_numbers = [16, 15, 14, 13, 12, 11, 10, 9]
+        for side_index in range(2):
+            side = ["left", "right"][side_index]
+            numbers = [left_numbers, right_numbers][side_index]
+            side_sign = [-1, 1][side_index]
+            for pin_index in range(8):
+                pin_y = pos[1] + body_height * (0.4375 - pin_index * 0.125)
+                pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+                _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_width, 0])
+
+    elif package in ["sot_23_5", "sot_23_6"]:
+        body_height = max(8, height - 2)
+        ic_dimensions = thing.get("ic_dimensions_mm", {})
+        package_body_length = float(ic_dimensions.get("body_length", 2.9))
+        package_body_width = float(ic_dimensions.get("body_width", 1.6))
+        package_overall_width = float(ic_dimensions.get("overall_width", 2.8))
+        package_pin_width = float(ic_dimensions.get("pin_width", 0.375))
+        body_width = body_height * package_body_width / package_body_length
+        overall_width = body_height * package_overall_width / package_body_length
+        pad_length = (overall_width - body_width) / 2 + 0.5
+        pad_width = body_height * package_pin_width / package_body_length
+        left_numbers = [1, 2, 3]
+        right_numbers = [6, 5, 4]
+        if package == "sot_23_5":
+            right_numbers = [5, 4]
+        for side_index in range(2):
+            side = ["left", "right"][side_index]
+            numbers = [left_numbers, right_numbers][side_index]
+            side_sign = [-1, 1][side_index]
+            for pin_index in range(len(numbers)):
+                if len(numbers) == 3:
+                    pin_y = pos[1] + body_height * (0.3275 - pin_index * 0.3275)
+                else:
+                    pin_y = pos[1] + body_height * [0.3275, -0.3275][pin_index]
+                pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
+                _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_width, 0])
+
+    elif package == "tsot_23_5":
+        overall_height = max(9, height - 2)
+        body_height = overall_height * 1.6 / 2.7955
+        body_width = body_height * 2.8955 / 1.6
+        pad_length = (overall_height - body_height) / 2 + 0.5
+        pad_width = body_width * 0.4295 / 2.8955
+        bottom_numbers = [1, 2, 3]
+        top_numbers = [5, 4]
+        for pin_index in range(3):
+            pin_x = pos[0] + body_width * (-0.3275 + pin_index * 0.3275)
+            pin_y = pos[1] - body_height / 2 - pad_length / 2 + 0.25
+            _add_ic_pin(thing, bottom_numbers[pin_index], "bottom", [pin_x, pin_y, 0], [pad_width, pad_length, 0])
+        for pin_index in range(2):
+            pin_x = pos[0] + body_width * [-0.3275, 0.3275][pin_index]
+            pin_y = pos[1] + body_height / 2 + pad_length / 2 - 0.25
+            _add_ic_pin(thing, top_numbers[pin_index], "top", [pin_x, pin_y, 0], [pad_width, pad_length, 0])
+
+    else:
+        body_width = width - 8
+        body_height = height
+        pin_count = max(_get_package_pin_count(thing), 2)
+        left_pin_count = (pin_count + 1) // 2
+        right_pin_count = pin_count // 2
+        for side_index in range(2):
+            side = ["left", "right"][side_index]
+            side_sign = [-1, 1][side_index]
+            side_count = [left_pin_count, right_pin_count][side_index]
+            for pin_index in range(side_count):
+                pin_number = pin_index + 1
+                if side == "right":
+                    pin_number = pin_count - pin_index
+                pin_y = pos[1] + body_height * (0.5 - (pin_index + 0.5) / side_count)
+                pin_x = pos[0] + side_sign * (body_width / 2 + 1.5)
+                _add_ic_pin(thing, pin_number, side, [pin_x, pin_y, 0], [3.5, 1.2, 0])
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[body_width, body_height, 0],
+        r=0.8,
+        pos=copy.deepcopy(pos),
+    )
+    _add_ic_pin_one_marker(thing, package, body_width, body_height, pos)
+    thing["diagram_outline_width"] = body_width + 2 * max(0, (thing["diagram_pin_positions"][0]["size"][0] - 0.5))
+    thing["diagram_outline_height"] = body_height
+    if package == "tsot_23_5":
+        thing["diagram_outline_width"] = body_width
+        thing["diagram_outline_height"] = body_height + 2 * pad_length
+    if package == "sot_363_6" and thing.get("taxonomy_2", "") in ("transistor", "ic", ""):
+        thing["diagram_outline_width"] = body_width
+        thing["diagram_outline_height"] = body_height + 2 * pad_length
+    return body_width, body_height
+
+
+def _add_display_outline(thing, width=30, height=16, pos=None):
+    if pos is None:
+        pos = [0, 0, 0]
+
+    display_type = str(thing.get("taxonomy_3", ""))
+    dimensions = thing.get("display_dimensions_mm", {})
+    if display_type == "tft" and isinstance(dimensions, dict) and len(dimensions) > 0:
+        body_width_mm = float(dimensions.get("body_width", 34.6))
+        body_height_mm = float(dimensions.get("body_height", 47.8))
+
+        # The ordinary part diagrams fit the real portrait outline inside the
+        # supplied box.  Assembly mode already supplies a physical 10x mm box,
+        # so it must remain exactly one-to-one with the board footprint.
+        drawing_width = float(width)
+        drawing_height = float(height)
+        if not thing.get("assembly_mode", False):
+            scale = min(
+                float(width) / max(body_width_mm, 0.01),
+                float(height) / max(body_height_mm, 0.01),
+            )
+            drawing_width = body_width_mm * scale
+            drawing_height = body_height_mm * scale
+
+        scale_x = drawing_width / max(body_width_mm, 0.01)
+        scale_y = drawing_height / max(body_height_mm, 0.01)
+        corner_radius = min(drawing_width, drawing_height) * 0.035
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.body",
+            size=[drawing_width, drawing_height, 0],
+            r=corner_radius,
+            pos=copy.deepcopy(pos),
+        )
+
+        active_width = float(dimensions.get("active_width", 30.6)) * scale_x
+        active_height = float(dimensions.get("active_height", 40.8)) * scale_y
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.screen",
+            size=[active_width, active_height, 0],
+            r=corner_radius * 0.6,
+            pos=copy.deepcopy(pos),
+        )
+
+        # QT200H1201 flex contacts, in the same local coordinate system as the
+        # KiCad footprint.  Keeping these simple constants visible makes later
+        # display variants straightforward to edit from their datasheets.
+        pin_pitch_mm = float(dimensions.get("fpc_pin_pitch", 0.8))
+        pad_width_mm = float(dimensions.get("fpc_pad_width", 0.6))
+        pad_length_mm = float(dimensions.get("fpc_pad_length", 2.55))
+        pin_one_x_mm = 6.3
+        pin_y_mm = -7.825
+        pin_labels = _get_pin_label_map(thing)
+        thing["diagram_pin_positions"] = []
+        for pin_index in range(12):
+            pin_number = str(pin_index + 1)
+            pin_x_mm = pin_one_x_mm - pin_index * pin_pitch_mm
+            pin_pos = [
+                pos[0] + pin_x_mm * scale_x,
+                pos[1] + pin_y_mm * scale_y,
+                0,
+            ]
+            pin_size = [pad_width_mm * scale_x, pad_length_mm * scale_y, 0]
+            opsvg.se(
+                thing,
+                shape="rect",
+                style="component.pad",
+            css_class="pad",
+                size=copy.deepcopy(pin_size),
+                pos=copy.deepcopy(pin_pos),
+            )
+            thing["diagram_pin_positions"].append(
+                {
+                    "number": pin_number,
+                    "label": pin_labels.get(pin_number, f"pin {pin_number}"),
+                    "side": "bottom",
+                    "pos": copy.deepcopy(pin_pos),
+                    "size": copy.deepcopy(pin_size),
+                }
+            )
+
+        pin_one_pos = copy.deepcopy(thing["diagram_pin_positions"][0]["pos"])
+        thing["diagram_orientation_anchor"] = {
+            "pos": pin_one_pos,
+            "identifiers": ["1"],
+        }
+        thing["diagram_outline_width"] = drawing_width
+        thing["diagram_outline_height"] = drawing_height
+        return drawing_width, drawing_height
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[width, height, 0],
+        r=1.5,
+        pos=copy.deepcopy(pos),
+    )
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.screen",
+        size=[width - 6, height - 6, 0],
+        r=1,
+        pos=copy.deepcopy(pos),
+    )
+    return width, height
+
+
+def _add_breadboard_outline(thing, width=32, height=16, pos=None):
+    if pos is None:
+        pos = [0, 0, 0]
+    opsvg.se(thing, shape="rounded_rectangle", style="component.body", size=[width, height, 0], r=1.5, pos=copy.deepcopy(pos))
+    columns = 12
+    rows = 4
+    for column in range(columns):
+        for row in range(rows):
+            hole_pos = copy.deepcopy(pos)
+            hole_pos[0] += -width * 0.42 + column * width * 0.84 / (columns - 1)
+            hole_pos[1] += -height * 0.3 + row * height * 0.6 / (rows - 1)
+            opsvg.se(thing, shape="circle", style="component.hole", r=0.45, pos=hole_pos)
+    return width, height
+
+
+def _add_wire_outline(thing, width=32, height=10, pos=None):
+    if pos is None:
+        pos = [0, 0, 0]
+    wire_points = [
+        [-width / 2 + 3, 0],
+        [-width / 6, height / 4],
+        [width / 6, -height / 4],
+        [width / 2 - 3, 0],
+    ]
+    for index in range(len(wire_points) - 1):
+        opsvg.se(
+            thing,
+            shape="line",
+            style="component.pin",
+            p1=wire_points[index],
+            p2=wire_points[index + 1],
+            pos=copy.deepcopy(pos),
+        )
+    for side in [-1, 1]:
+        end_pos = copy.deepcopy(pos)
+        end_pos[0] += side * (width / 2 - 1.5)
+        opsvg.se(thing, shape="circle", style="component.pad",
+            css_class="pad", r=1.5, pos=end_pos)
+    return width, height
+
+
+def _add_slot_outline(thing, width, height, style, pos):
+    """Two visible end circles joined by straight sides, never an ellipse.
+
+    The SVG framework's slot width is the distance BETWEEN circle centres;
+    our hole sizes are the full outside dimensions, including both caps.
+    """
+    diameter = min(width, height)
+    centre_spacing = max(width, height) - diameter
+    rotation = 90 if height > width else 0
+    opsvg.se(
+        thing,
+        shape="slot",
+        style=style,
+        r=diameter / 2,
+        w=centre_spacing,
+        rot=[0, 0, rotation],
+        pos=copy.deepcopy(pos),
+    )
+    # The continuous slot is the cutout boundary. Show its two generating
+    # circles as well, so an elongated hole doesn't read as a stretched oval.
+    # Only the drill gets these construction outlines, not the plating ring.
+    if style == "component.hole" and centre_spacing > 0:
+        for direction in [-1, 1]:
+            circle_pos = copy.deepcopy(pos)
+            axis = 1 if height > width else 0
+            circle_pos[axis] += direction * centre_spacing / 2
+            opsvg.se(
+                thing, shape="circle", style=style,
+                r=diameter / 2, pos=circle_pos, color="none",
+            )
+
+
+def _add_mounting_hole_outline(thing, width=16, height=16, pos=None):
+    """Draw a mounting hole using its explicit round/slot and plating style."""
+    if pos is None:
+        pos = [0, 0, 0]
+
+    hole_style = str(thing.get("hole_style", thing.get("taxonomy_4", "round")))
+    hole_plating = str(thing.get("hole_plating", thing.get("taxonomy_5", "unplated")))
+    hole_size_mm = thing.get("hole_size_mm", {})
+
+    physical_x = float(hole_size_mm.get("x", 1.0))
+    physical_y = float(hole_size_mm.get("y", physical_x))
+    drawing_x = float(width)
+    drawing_y = float(height)
+
+    if not thing.get("assembly_mode", False):
+        scale = min(float(width) / max(physical_x, 0.01), float(height) / max(physical_y, 0.01))
+        drawing_x = physical_x * scale
+        drawing_y = physical_y * scale
+
+    if hole_plating == "plated":
+        if hole_style == "slot":
+            _add_slot_outline(thing, drawing_x, drawing_y, "component.body", pos)
+        else:
+            opsvg.se(
+                thing,
+                shape="circle",
+                style="component.body",
+                r=min(drawing_x, drawing_y) / 2,
+                pos=copy.deepcopy(pos),
+            )
+
+        # A second concentric outline is the deliberately monochrome plating
+        # cue.  The exact drill size remains in hole_size_mm and project data.
+        drawing_x *= 0.72
+        drawing_y *= 0.72
+
+    if hole_style == "slot":
+        _add_slot_outline(thing, drawing_x, drawing_y, "component.hole", pos)
+    else:
+        opsvg.se(
+            thing,
+            shape="circle",
+            style="component.hole",
+            r=min(drawing_x, drawing_y) / 2,
+            pos=copy.deepcopy(pos),
+        )
+    return width, height
+
+
+def _add_populated_package_outline(thing, width, height, pos=None):
+    """Draw verified millimetre geometry from plain populate rows, at one scale."""
+    pos = pos or [0, 0, 0]
+    drawing = thing["package_drawing"]
+    overall_width, overall_height = drawing["overall"]
+    scale = min(width / overall_width, height / overall_height)
+    body_width, body_height = drawing["body"]
+    # Dense physical pins need a fine display outline. Assembly drawings keep
+    # the shared assembly stylesheet unchanged (common line thickness in mm).
+    if not thing.get("assembly_mode") and "styles" in thing:
+        for style_name in ["component.body", "component.pad", "component.pin_one"]:
+            thing["styles"][style_name]["stroke_width"] = min(.3, .08 * scale)
+    thing["diagram_pin_positions"] = []
+    opsvg.se(thing, shape="rect", style="component.body",
+             size=[body_width * scale, body_height * scale, 0], pos=copy.deepcopy(pos))
+    # Optional shield/actuator outlines: x, y, width, height in physical mm.
+    for x, y, w, h in drawing.get("boxes", []):
+        opsvg.se(thing, shape="rect", style="component.body",
+                 size=[w * scale, h * scale, 0], pos=[pos[0] + x * scale, pos[1] + y * scale, 0])
+    for x, y, radius in drawing.get("circles", []):
+        opsvg.se(thing, shape="circle", style="component.body", r=radius * scale,
+                 pos=[pos[0] + x * scale, pos[1] + y * scale, 0])
+    for number, side, x, y, w, h in drawing["pins"]:
+        _add_ic_pin(thing, number, side,
+                    [pos[0] + x * scale, pos[1] + y * scale, 0], [w * scale, h * scale, 0])
+    if thing["diagram_pin_positions"]:
+        first_pin = thing["diagram_pin_positions"][0]
+        thing["diagram_orientation_anchor"] = {"pos": copy.deepcopy(first_pin["pos"]),
+                                               "identifiers": [str(first_pin["number"])]}
+    if drawing.get("pin_one"):
+        x, y = drawing["pin_one"]
+        opsvg.se(thing, shape="circle", style="component.pin_one",
+                 r=.12 * scale, pos=[pos[0] + x * scale, pos[1] + y * scale, 0])
+    thing["diagram_outline_width"] = overall_width * scale
+    thing["diagram_outline_height"] = overall_height * scale
+    return body_width * scale, body_height * scale
+
+
+def _add_component_outline(thing, width=22, height=10, pos=None):
+    """Dispatch to a simple physical outline for each populated component type."""
+    component_type = str(thing.get("taxonomy_2", ""))
+    size = str(thing.get("taxonomy_3", ""))
+    if thing.get("package_drawing"):
+        return _add_populated_package_outline(thing, width, height, pos)
+
+    if component_type == "resistor":
+        if size == "quarter_watt_through_hole":
+            return _add_through_hole_resistor_outline(thing, width=width, height=height, pos=pos)
+        return _add_resistor_outline(thing, body_width=width, body_height=height, pos=pos)
+    if component_type == "resistor_array":
+        return _add_ic_outline(thing, width=width, height=height, pos=pos)
+    if component_type == "capacitor":
+        return _add_capacitor_outline(thing, width=width, height=height, pos=pos)
+    if component_type == "led":
+        return _add_led_outline(thing, width=width, height=height, pos=pos)
+    if component_type == "crystal":
+        return _add_crystal_outline(thing, width=width, height=height, pos=pos)
+    if component_type == "ferrite_bead":
+        return _add_resistor_outline(thing, body_width=width, body_height=height, pos=pos, body_style="component.body_dark")
+    if component_type == "connector":
+        return _add_connector_outline(thing, width=width, height=height, pos=pos)
+    if component_type in ["diode", "ic", "transistor"]:
+        return _add_ic_outline(thing, width=width, height=height, pos=pos)
+    if component_type == "display":
+        return _add_display_outline(thing, width=width, height=height, pos=pos)
+    if component_type == "prototyping":
+        return _add_breadboard_outline(thing, width=width, height=height, pos=pos)
+    if component_type == "wire":
+        return _add_wire_outline(thing, width=width, height=height, pos=pos)
+    if component_type == "mounting_hole":
+        return _add_mounting_hole_outline(thing, width=width, height=height, pos=pos)
+
+    opsvg.se(thing, shape="rounded_rectangle", style="component.body", size=[width, height, 0], r=1, pos=pos or [0, 0, 0])
+    return width, height
+
+
+def _add_text(thing, text, style, pos, size=None, **kwargs):
+    text_details = {
+        "shape": "text",
+        "style": style,
+        "text": str(text),
+        "pos": copy.deepcopy(pos),
+    }
+    if size is not None:
+        text_details["size"] = size
+    text_details.update(kwargs)
+    opsvg.se(thing, **text_details)
+
+
+def _get_bip_39_words(thing):
+    words = thing.get("bip_39_3_word_array", [])
+    if not isinstance(words, list) or len(words) == 0:
+        words = str(thing.get("bip_39_3_word_space", "")).split()
+
+    words_three = []
+    for index in range(3):
+        if index < len(words):
+            words_three.append(str(words[index]))
+        else:
+            words_three.append("")
+    return words_three
+
+
+def _get_pin_labels(thing):
+    pins = thing.get("pins", [])
+    labels = []
+    used_pin_keys = []
+
+    if isinstance(pins, dict):
+        # Numeric traversal keeps pin order predictable and easy to inspect.
+        for pin_number in range(0, 100):
+            pin_key = f"pin_{pin_number}"
+            if pin_key in pins:
+                pin = pins[pin_key]
+                pin_name = str(pin.get("name", "")).strip()
+                if pin_name == "":
+                    pin_name = f"pin {pin.get('number', pin_number)}"
+                labels.append(pin_name)
+                used_pin_keys.append(pin_key)
+
+        for pin_key in pins:
+            if pin_key not in used_pin_keys:
+                pin = pins[pin_key]
+                pin_number = str(pin.get("number", len(labels) + 1))
+                pin_name = str(pin.get("name", "")).strip()
+                labels.append(pin_name if pin_name != "" else f"pin {pin_number}")
+
+    if isinstance(pins, list):
+        for index in range(len(pins)):
+            pin = pins[index]
+            if isinstance(pin, dict):
+                pin_number = str(pin.get("number", index + 1))
+                pin_name = str(pin.get("name", "")).strip()
+                labels.append(pin_name if pin_name != "" else f"pin {pin_number}")
+
+    pin_count = _get_package_pin_count(thing)
+    while len(labels) < pin_count:
+        labels.append(f"pin {len(labels) + 1}")
+
+    return labels
+
+
+def _get_pin_label_map(thing):
+    """Return pin names by their explicit datasheet pin number."""
+    pin_label_map = {}
+    pins = thing.get("pins", {})
+    if isinstance(pins, dict):
+        for pin_key in pins:
+            pin = pins[pin_key]
+            pin_number = str(pin.get("number", pin_key.replace("pin_", "")))
+            pin_name = str(pin.get("name", "")).strip()
+            if pin_name == "":
+                pin_name = f"pin {pin_number}"
+            pin_label_map[pin_number] = pin_name
+    if isinstance(pins, list):
+        for pin_index in range(len(pins)):
+            pin = pins[pin_index]
+            if isinstance(pin, dict):
+                pin_number = str(pin.get("number", pin_index + 1))
+                pin_name = str(pin.get("name", "")).strip()
+                if pin_name == "":
+                    pin_name = f"pin {pin_number}"
+                pin_label_map[pin_number] = pin_name
+    return pin_label_map
+
+
+def _shorten_pin_name(pin_name):
+    """Keep common electrical names compact enough for physical pad labels."""
+    pin_name = str(pin_name).strip()
+    replacements = [
+        ["usb_negative", "D-"],
+        ["usb_positive", "D+"],
+        ["ground", "GND"],
+    ]
+    for replacement in replacements:
+        pin_name = pin_name.replace(replacement[0], replacement[1])
+    return pin_name
+
+
+def _add_assembly_pin_labels(thing):
+    """Put each pin name inside its recorded physical pad rectangle."""
+    pin_label_map = _get_pin_label_map(thing)
+    diagram_pin_positions = thing.get("diagram_pin_positions", [])
+
+    for pin_record in diagram_pin_positions:
+        if not isinstance(pin_record, dict):
+            continue
+
+        pin_number = str(pin_record.get("number", "")).strip()
+        pin_name = str(pin_record.get("label", "")).strip()
+        if pin_name == "":
+            pin_name = pin_label_map.get(pin_number, f"pin {pin_number}")
+        pin_name = _shorten_pin_name(pin_name)
+        if pin_name == "":
+            pin_name = f"pin {pin_number}"
+
+        pin_pos = pin_record.get("pos", [0, 0, 0])
+        pin_size = pin_record.get("size", [0, 0, 0])
+        if not isinstance(pin_pos, list) or len(pin_pos) < 2:
+            continue
+        if not isinstance(pin_size, list) or len(pin_size) < 2:
+            continue
+
+        pin_width = abs(float(pin_size[0]))
+        pin_height = abs(float(pin_size[1]))
+        if pin_width <= 0 or pin_height <= 0:
+            continue
+
+        rotation = 0
+        text_length_space = pin_width
+        text_height_space = pin_height
+        if pin_height > pin_width:
+            rotation = 90
+            text_length_space = pin_height
+            text_height_space = pin_width
+
+        # The estimates are intentionally simple constants so a maintainer can
+        # easily make labels looser or tighter later.  No label is allowed to
+        # extend past the rectangle merely to enforce a minimum font size.
+        height_limited_size = text_height_space * 0.70
+        length_limited_size = text_length_space * 0.88 / max(1, len(pin_name)) / 0.56
+        label_size = min(height_limited_size, length_limited_size)
+
+        _add_text(
+            thing,
+            pin_name,
+            "label.pin_inside",
+            copy.deepcopy(pin_pos),
+            size=label_size,
+            rot=[0, 0, rotation],
+        )
+
+
+def _get_component_text_color(thing):
+    # style_oomp is intentionally monochrome: white parts, black outlines/text.
+    return "#000000"
+
+
+def _add_square_pin_labels(thing):
+    pin_labels = _get_pin_labels(thing)
+    if len(pin_labels) == 0:
+        return
+
+    component_type = str(thing.get("taxonomy_2", ""))
+    component_size = str(thing.get("taxonomy_3", ""))
+
+    if component_type == "connector" and component_size in ["usb_a", "usb_c"]:
+        connector_labels = []
+        pins = thing.get("pins", {})
+        if isinstance(pins, dict):
+            for pin_index in range(1, 100):
+                pin_key = f"pin_{pin_index}"
+                if pin_key in pins:
+                    pin = pins[pin_key]
+                    pin_number = str(pin.get("number", pin_index))
+                    pin_name = str(pin.get("name", f"pin {pin_number}"))
+                    name_replacements = [
+                        ["usb_negative", "D-"],
+                        ["usb_positive", "D+"],
+                    ]
+                    for replacement in name_replacements:
+                        pin_name = pin_name.replace(replacement[0], replacement[1])
+                    connector_labels.append(f"{pin_number} {pin_name}")
+        if len(connector_labels) > 0:
+            pin_labels = connector_labels
+
+    diagram_pin_positions = thing.get("diagram_pin_positions", [])
+    if component_type == "connector" and component_size == "header" and diagram_pin_positions:
+        label_size = min(2.2, max(0.7, 16.0 / len(pin_labels)))
+        label_x = float(thing.get("diagram_outline_width", 4)) / 2 + 2
+        for index in range(min(len(pin_labels), len(diagram_pin_positions))):
+            pin_position = diagram_pin_positions[index]
+            if isinstance(pin_position, dict):
+                pin_position = pin_position.get("pos", [0, 0, 0])
+            _add_text(
+                thing,
+                pin_labels[index],
+                "label.pin",
+                [label_x, pin_position[1], 0],
+                size=label_size,
+                halign="left",
+            )
+        return
+
+    if (component_type in ["ic", "diode", "transistor"] or thing.get("package_drawing")) and diagram_pin_positions:
+        pin_label_map = _get_pin_label_map(thing)
+
+        # SOP and TSSOP packages have dense long-edge pins.  Directly adjacent
+        # text would overlap, so keep their two readable banks as the requested
+        # close-pitch exception.
+        if component_size == "sop_16" or component_size.startswith("tssop_"):
+            side_details = [
+                {"side": "left", "x": -12.5, "halign": "right"},
+                {"side": "right", "x": 12.5, "halign": "left"},
+            ]
+            for side_detail in side_details:
+                side_records = []
+                for pin_record in diagram_pin_positions:
+                    if pin_record.get("side", "") == side_detail["side"]:
+                        side_records.append(pin_record)
+                for pin_index in range(len(side_records)):
+                    pin_record = side_records[pin_index]
+                    pin_number = pin_record.get("number", "")
+                    pin_name = pin_label_map.get(pin_number, f"pin {pin_number}")
+                    label_y = 12 - pin_index * 18 / max(1, len(side_records) - 1)
+                    _add_text(
+                        thing,
+                        pin_name,
+                        "label.pin",
+                        [side_detail["x"], label_y, 0],
+                        size=1.6,
+                        halign=side_detail["halign"],
+                    )
+            return
+
+        # All other audited packages keep every title directly beside its pin.
+        for pin_record in diagram_pin_positions:
+            pin_number = pin_record.get("number", "")
+            pin_name = pin_label_map.get(pin_number, f"pin {pin_number}")
+            side = pin_record.get("side", "")
+            pin_pos = pin_record.get("pos", [0, 0, 0])
+            pin_size = pin_record.get("size", [0, 0, 0])
+            label_size = 2.2
+            if component_size.startswith("qfn"):
+                label_size = 1.45
+            if component_size == "tsot_23_5":
+                label_size = 1.9
+            if component_type == "diode":
+                # Small diode packages have very little space between a pad and
+                # the square diagram edge.  A simple character-count rule keeps
+                # long names such as common_cathode visible and easy to adjust.
+                character_count = max(1, len(pin_name))
+                label_size = min(1.8, max(1.0, 17.0 / character_count))
+            if component_type == "transistor":
+                label_size = 2.0
+                if component_size == "sot_363_6":
+                    # Six long EBCEBC names share two very short package
+                    # edges.  A direct character-count rule keeps every label
+                    # beside its pad without colliding with the summary code.
+                    label_size = min(1.4, max(0.85, 11.0 / max(1, len(pin_name))))
+
+            if thing.get("package_drawing"):
+                # Fit each label within its neighbours' pitch and the square's
+                # title/code margins. Rows remain directly beside their pins.
+                axis = 1 if side in ["left", "right"] else 0
+                for neighbour in diagram_pin_positions:
+                    if neighbour is pin_record or neighbour.get("side") != side:
+                        continue
+                    gap = abs(neighbour["pos"][axis] - pin_pos[axis])
+                    if gap > .001:
+                        label_size = min(label_size, gap * .65)
+                available = 8.0
+                if side == "top":
+                    available = max(.1, 17 - pin_pos[1] - pin_size[1] / 2 - .7)
+                elif side == "bottom":
+                    available = max(.1, pin_pos[1] - pin_size[1] / 2 + 10 - .7)
+                else:
+                    available = max(.1, 30 - abs(pin_pos[0]) - pin_size[0] / 2 - .6)
+                label_size = min(label_size, available / max(1, len(pin_name) * .65))
+
+            if side == "left":
+                label_pos = [pin_pos[0] - pin_size[0] / 2 - 0.6, pin_pos[1], 0]
+                _add_text(thing, pin_name, "label.pin", label_pos, size=label_size, halign="right")
+            elif side == "right":
+                label_pos = [pin_pos[0] + pin_size[0] / 2 + 0.6, pin_pos[1], 0]
+                _add_text(thing, pin_name, "label.pin", label_pos, size=label_size, halign="left")
+            elif side == "top":
+                label_pos = [pin_pos[0], pin_pos[1] + pin_size[1] / 2 + 0.7, 0]
+                _add_text(
+                    thing,
+                    pin_name,
+                    "label.pin",
+                    label_pos,
+                    size=label_size,
+                    halign="left",
+                    rot=[0, 0, 90],
+                )
+            elif side == "bottom":
+                label_pos = [pin_pos[0], pin_pos[1] - pin_size[1] / 2 - 0.7, 0]
+                _add_text(
+                    thing,
+                    pin_name,
+                    "label.pin",
+                    label_pos,
+                    size=label_size,
+                    halign="right",
+                    rot=[0, 0, 90],
+                )
+            elif side == "center":
+                _add_text(
+                    thing,
+                    pin_name,
+                    "label.pin",
+                    [pin_pos[0], pin_pos[1], 0],
+                    size=label_size,
+                )
+        return
+
+    left_labels = []
+    right_labels = []
+    for index in range(len(pin_labels)):
+        if index < (len(pin_labels) + 1) // 2:
+            left_labels.append(pin_labels[index])
+        else:
+            right_labels.append(pin_labels[index])
+
+    maximum_side_count = max(len(left_labels), len(right_labels))
+    label_size = 2.8
+    if maximum_side_count > 8:
+        label_size = max(0.9, 18.0 / maximum_side_count)
+
+    side_details = [
+        {"labels": left_labels, "x": -13, "halign": "right"},
+        {"labels": right_labels, "x": 13, "halign": "left"},
+    ]
+    for side_detail in side_details:
+        labels = side_detail["labels"]
+        if len(labels) == 1:
+            y_positions = [3]
+        else:
+            y_positions = []
+            for index in range(len(labels)):
+                y_positions.append(12 - index * 18 / (len(labels) - 1))
+
+        for index in range(len(labels)):
+            _add_text(
+                thing,
+                labels[index],
+                "label.pin",
+                [side_detail["x"], y_positions[index], 0],
+                size=label_size,
+                halign=side_detail["halign"],
+            )
+
+
+def _get_name_lines(thing, maximum_characters=29):
+    """Split a long part name into short, manually predictable lines."""
+    display_name = thing.get("name_short", "")
+    if display_name == "":
+        display_name = thing.get("name", thing.get("id", "component"))
+    words = str(display_name).split()
+    lines = []
+    current_line = ""
+
+    for word in words:
+        proposed_line = word if current_line == "" else f"{current_line} {word}"
+        if len(proposed_line) <= maximum_characters:
+            current_line = proposed_line
+        else:
+            if current_line != "":
+                lines.append(current_line)
+            current_line = word
+
+    if current_line != "":
+        lines.append(current_line)
+
+    return lines[:3]
+
+
+def _add_square_name(thing):
+    name_lines = _get_name_lines(thing, maximum_characters=22)
+    y_positions = [27, 23, 19]
+    for index in range(len(name_lines)):
+        _add_text(
+            thing,
+            name_lines[index],
+            "label.name",
+            [0, y_positions[index], 0],
+        )
+
+
+def _add_square_codes(thing):
+    md5_6_alpha_upper = thing.get("md5_6_alpha_upper", "")
+    if md5_6_alpha_upper == "":
+        md5_6_alpha_upper = str(thing.get("md5_6_alpha", "")).upper()
+    words = _get_bip_39_words(thing)
+    bip_39_3_word = " ".join(words)
+    _add_text(thing, md5_6_alpha_upper, "label.summary_code", [0, -14, 0])
+    _add_text(thing, bip_39_3_word, "label.summary_words", [0, -21, 0])
+
+
+def _format_dimension_mm(value):
+    if isinstance(value, (int, float)):
+        return f"{value:g} mm"
+    return f"{value} mm"
+
+
+def _format_dimension_range_mm(minimum, maximum, nominal):
+    if minimum is not None and maximum is not None:
+        if minimum == maximum:
+            return _format_dimension_mm(minimum)
+        return f"{minimum:g}-{maximum:g} mm"
+    return _format_dimension_mm(nominal)
+
+
+def _add_dimension_line(thing, p1, p2):
+    opsvg.se(
+        thing,
+        shape="line",
+        style="dimension.line",
+        p1=copy.deepcopy(p1),
+        p2=copy.deepcopy(p2),
+        pos=[0, 0, 0],
+    )
+
+
+def _add_horizontal_dimension(thing, x1, x2, y, text, text_y=None):
+    if text_y is None:
+        text_y = y - 3.5
+    dimension_lines = [
+        [[x1, y], [x2, y]],
+        [[x1 - 0.8, y - 0.8], [x1 + 0.8, y + 0.8]],
+        [[x2 - 0.8, y - 0.8], [x2 + 0.8, y + 0.8]],
+    ]
+    for dimension_line in dimension_lines:
+        _add_dimension_line(thing, dimension_line[0], dimension_line[1])
+    _add_text(thing, text, "label.dimension", [(x1 + x2) / 2, text_y, 0], size=2.5)
+
+
+def _add_vertical_dimension(thing, x, y1, y2, text, text_x=None):
+    if text_x is None:
+        text_x = x - 3.5
+    dimension_lines = [
+        [[x, y1], [x, y2]],
+        [[x - 0.8, y1 - 0.8], [x + 0.8, y1 + 0.8]],
+        [[x - 0.8, y2 - 0.8], [x + 0.8, y2 + 0.8]],
+    ]
+    for dimension_line in dimension_lines:
+        _add_dimension_line(thing, dimension_line[0], dimension_line[1])
+    _add_text(
+        thing,
+        text,
+        "label.dimension",
+        [text_x, (y1 + y2) / 2, 0],
+        size=2.5,
+        rot=[0, 0, 90],
+    )
+
+
+def _get_dimension_label(title, value, show_titles):
+    value_text = _format_dimension_mm(value)
+    if show_titles:
+        return f"{title} {value_text}"
+    return value_text
+
+
+def _add_header_dimensions(thing, show_titles=False):
+    """Dimension the vertical header in top and side views."""
+    dimensions = thing.get("header_dimensions_mm", {})
+    plastic_length = dimensions.get("plastic_length", 25.4)
+    plastic_width = dimensions.get("plastic_width", 2.48)
+    plastic_height = dimensions.get("plastic_height", 2.54)
+    pin_pitch = dimensions.get("pin_pitch", 2.54)
+    pin_square = dimensions.get("pin_square", 0.64)
+    pin_thickness = dimensions.get("pin_thickness", pin_square)
+    pin_length_total = dimensions.get("pin_length_total", 10.92)
+    pin_length_post = dimensions.get("pin_length_post", 5.84)
+    pin_length_tail = dimensions.get("pin_length_tail", 2.54)
+
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="background",
+        size=[82, 72, 0],
+        pos=[0, 0, 0],
+    )
+
+    # Top view: black plastic body and all pins, oriented vertically.
+    top_view_pos = [-15, 2, 0]
+    top_view_width, top_view_height = _add_connector_outline(
+        thing,
+        width=36,
+        height=14,
+        pos=top_view_pos,
+    )
+    top_view_left = top_view_pos[0] - top_view_width / 2
+    top_view_right = top_view_pos[0] + top_view_width / 2
+    top_view_bottom = top_view_pos[1] - top_view_height / 2
+    top_view_top = top_view_pos[1] + top_view_height / 2
+
+    _add_dimension_line(thing, [top_view_left, top_view_bottom], [-24, top_view_bottom])
+    _add_dimension_line(thing, [top_view_left, top_view_top], [-24, top_view_top])
+    _add_vertical_dimension(
+        thing,
+        -24,
+        top_view_bottom,
+        top_view_top,
+        _get_dimension_label("plastic length", plastic_length, show_titles),
+        text_x=-28,
+    )
+
+    _add_dimension_line(thing, [top_view_left, top_view_bottom], [top_view_left, -21])
+    _add_dimension_line(thing, [top_view_right, top_view_bottom], [top_view_right, -21])
+    _add_horizontal_dimension(
+        thing,
+        top_view_left,
+        top_view_right,
+        -21,
+        _get_dimension_label("plastic width", plastic_width, show_titles),
+        text_y=-25,
+    )
+
+    pin_positions = thing.get("diagram_pin_positions", [])
+    if len(pin_positions) >= 2:
+        pitch_x = top_view_right + 5
+        first_pin_position = pin_positions[0]
+        second_pin_position = pin_positions[1]
+        if isinstance(first_pin_position, dict):
+            first_pin_position = first_pin_position.get("pos", [0, 0, 0])
+        if isinstance(second_pin_position, dict):
+            second_pin_position = second_pin_position.get("pos", [0, 0, 0])
+        first_pin_y = first_pin_position[1]
+        second_pin_y = second_pin_position[1]
+        _add_dimension_line(thing, [top_view_right, first_pin_y], [pitch_x, first_pin_y])
+        _add_dimension_line(thing, [top_view_right, second_pin_y], [pitch_x, second_pin_y])
+        _add_vertical_dimension(
+            thing,
+            pitch_x,
+            second_pin_y,
+            first_pin_y,
+            _get_dimension_label("pitch", pin_pitch, show_titles),
+            text_x=pitch_x + 3,
+        )
+
+    # Enlarged square pin detail.
+    pin_detail_pos = [27, 22, 0]
+    pin_detail_height = 5 * pin_thickness / pin_square
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="component.pad",
+            css_class="pad",
+        size=[5, pin_detail_height, 0],
+        pos=pin_detail_pos,
+    )
+    pin_dimension_title = "pin square"
+    pin_dimension_value = pin_square
+    if pin_thickness != pin_square:
+        pin_dimension_title = "pin"
+        pin_dimension_value = f"{pin_square:g} x {pin_thickness:g}"
+    _add_horizontal_dimension(
+        thing,
+        pin_detail_pos[0] - 2.5,
+        pin_detail_pos[0] + 2.5,
+        17.5,
+        _get_dimension_label(pin_dimension_title, pin_dimension_value, show_titles),
+        text_y=14,
+    )
+
+    # Side view: full pin, plastic body, post, and PCB tail.
+    side_view_x = 20
+    side_bottom = -24
+    side_top = 8
+    side_scale = (side_top - side_bottom) / pin_length_total
+    tail_height = pin_length_tail * side_scale
+    plastic_body_height = plastic_height * side_scale
+    plastic_bottom = side_bottom + tail_height
+    plastic_top = plastic_bottom + plastic_body_height
+    plastic_center = (plastic_bottom + plastic_top) / 2
+
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="component.pad",
+            css_class="pad",
+        size=[1.8, side_top - side_bottom, 0],
+        pos=[side_view_x, (side_top + side_bottom) / 2, 0],
+    )
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="component.body_dark",
+        size=[12, plastic_body_height, 0],
+        pos=[side_view_x, plastic_center, 0],
+    )
+
+    _add_vertical_dimension(
+        thing,
+        31,
+        side_bottom,
+        side_top,
+        _get_dimension_label("pin total", pin_length_total, show_titles),
+        text_x=35,
+    )
+    if pin_length_post > 0:
+        _add_vertical_dimension(
+            thing,
+            11,
+            plastic_top,
+            side_top,
+            _get_dimension_label("post", pin_length_post, show_titles),
+            text_x=8,
+        )
+    _add_vertical_dimension(
+        thing,
+        11,
+        side_bottom,
+        plastic_bottom,
+        _get_dimension_label("tail", pin_length_tail, show_titles),
+        text_x=8,
+    )
+    _add_text(
+        thing,
+        _get_dimension_label("plastic height", plastic_height, show_titles),
+        "label.dimension",
+        [side_view_x, -30, 0],
+        size=2.3,
+    )
+
+
+def _add_component_dimensions(thing, body_width, body_height, show_titles=False):
+    """Draw editable horizontal and vertical dimensions around a component."""
+    body_left = -body_width / 2
+    body_right = body_width / 2
+    body_top = body_height / 2
+    body_bottom = -body_height / 2
+
+    horizontal_dimension_y = -body_height / 2 - 6
+    vertical_dimension_x = body_width / 2 + 6
+
+    # Extension lines, dimension lines, and diagonal end ticks.
+    dimension_lines = [
+        [[body_left, body_bottom], [body_left, horizontal_dimension_y - 1]],
+        [[body_right, body_bottom], [body_right, horizontal_dimension_y - 1]],
+        [[body_left, horizontal_dimension_y], [body_right, horizontal_dimension_y]],
+        [[body_left - 1, horizontal_dimension_y - 1], [body_left + 1, horizontal_dimension_y + 1]],
+        [[body_right - 1, horizontal_dimension_y - 1], [body_right + 1, horizontal_dimension_y + 1]],
+        [[body_right, body_bottom], [vertical_dimension_x + 1, body_bottom]],
+        [[body_right, body_top], [vertical_dimension_x + 1, body_top]],
+        [[vertical_dimension_x, body_bottom], [vertical_dimension_x, body_top]],
+        [[vertical_dimension_x - 1, body_bottom - 1], [vertical_dimension_x + 1, body_bottom + 1]],
+        [[vertical_dimension_x - 1, body_top - 1], [vertical_dimension_x + 1, body_top + 1]],
+    ]
+    for dimension_line in dimension_lines:
+        _add_dimension_line(thing, dimension_line[0], dimension_line[1])
+
+    dimensions_mm = thing.get("dimensions_mm", {})
+    length_text = _format_dimension_mm(dimensions_mm.get("length", 1.6))
+    width_text = _format_dimension_mm(dimensions_mm.get("width", 0.8))
+
+    component_type = thing.get("taxonomy_2", "")
+    package = thing.get("taxonomy_3", "")
+    if component_type == "ic":
+        ic_dimensions = thing.get("ic_dimensions_mm", {})
+        length_text = _format_dimension_range_mm(
+            ic_dimensions.get("body_length_min"),
+            ic_dimensions.get("body_length_max"),
+            ic_dimensions.get("body_length", dimensions_mm.get("length", 1.6)),
+        )
+        width_text = _format_dimension_range_mm(
+            ic_dimensions.get("body_width_min"),
+            ic_dimensions.get("body_width_max"),
+            ic_dimensions.get("body_width", dimensions_mm.get("width", 0.8)),
+        )
+
+        # SOP and TI SOT are displayed in the datasheet's portrait top view.
+        if package in ["sop_16", "sot_23_5", "sot_23_6"] or package.startswith("tssop_"):
+            length_text, width_text = width_text, length_text
+    if component_type == "transistor" and package in ["sot_23", "sot_523"]:
+        transistor_dimensions = thing.get("transistor_dimensions_mm", {})
+        length_text = _format_dimension_range_mm(
+            transistor_dimensions.get("overall_width_minimum"),
+            transistor_dimensions.get("overall_width_maximum"),
+            transistor_dimensions.get("overall_width_nominal", dimensions_mm.get("width", 2.6)),
+        )
+        width_text = _format_dimension_range_mm(
+            transistor_dimensions.get("body_length_minimum"),
+            transistor_dimensions.get("body_length_maximum"),
+            transistor_dimensions.get("body_length_nominal", dimensions_mm.get("length", 2.9)),
+        )
+    if component_type == "transistor" and package == "sot_363_6":
+        transistor_dimensions = thing.get("transistor_dimensions_mm", {})
+        length_text = _format_dimension_range_mm(
+            transistor_dimensions.get("body_length_minimum"),
+            transistor_dimensions.get("body_length_maximum"),
+            transistor_dimensions.get("body_length_nominal", dimensions_mm.get("length", 2.15)),
+        )
+        width_text = _format_dimension_range_mm(
+            transistor_dimensions.get("overall_width_minimum"),
+            transistor_dimensions.get("overall_width_maximum"),
+            transistor_dimensions.get("overall_width_nominal", dimensions_mm.get("width", 2.1)),
+        )
+    if thing.get("package_drawing"):
+        length_text = _format_dimension_mm(thing["package_drawing"]["body"][0])
+        width_text = _format_dimension_mm(thing["package_drawing"]["body"][1])
+        if show_titles:
+            length_text = "body width " + length_text
+            width_text = "body depth " + width_text
+    elif show_titles:
+        if component_type == "ic" and (package in ["sop_16", "sot_23_5", "sot_23_6"] or package.startswith("tssop_")):
+            length_text = f"body width {length_text}"
+            width_text = f"body length {width_text}"
+        elif component_type == "ic":
+            length_text = f"body length {length_text}"
+            width_text = f"body width {width_text}"
+        elif component_type == "transistor" and package in ["sot_23", "sot_523"]:
+            length_text = f"overall width {length_text}"
+            width_text = f"body length {width_text}"
+        elif component_type == "transistor" and package == "sot_363_6":
+            length_text = f"body length {length_text}"
+            width_text = f"overall width {width_text}"
+        else:
+            length_text = f"length {length_text}"
+            width_text = f"width {width_text}"
+
+    dimension_text_size = None
+    if component_type in ["ic", "transistor"]:
+        dimension_text_size = 2.3
+    if component_type == "ic" and package == "sot_23_5":
+        dimension_text_size = 1.8
+
+    _add_text(
+        thing,
+        length_text,
+        "label.dimension",
+        [0, horizontal_dimension_y - 4.5, 0],
+        size=dimension_text_size,
+    )
+    _add_text(
+        thing,
+        width_text,
+        "label.dimension",
+        [vertical_dimension_x + 5, 0, 0],
+        size=dimension_text_size,
+        rot=[0, 0, 90],
+    )
+
+
+def _get_ic_dimensions_mm(thing):
+    """ic_dimensions_mm with fallbacks derived from the plain dimensions_mm.
+
+    Parts populated before the ic dimension audit (or without one) still need
+    correct proportions: body length/width come from dimensions_mm, and the
+    lead-to-lead overall width grows by a typical 0.6 mm of lead per side.
+    """
+    ic_dimensions = dict(thing.get("ic_dimensions_mm") or {})
+    if ic_dimensions:
+        return ic_dimensions
+    dimensions = thing.get("dimensions_mm", {})
+    physical_length = float(dimensions.get("length", 0))
+    physical_width = float(dimensions.get("width", 0))
+    if physical_length > 0 and physical_width > 0:
+        ic_dimensions["body_length"] = physical_length
+        ic_dimensions["body_width"] = physical_width
+        ic_dimensions.setdefault("overall_width", physical_width + 1.2)
+    return ic_dimensions
+
+
+def _get_assembly_drawing_dimensions(thing):
+    """Return canvas and outline sizes on a simple ten-times millimetre grid."""
+    if thing.get("package_drawing"):
+        width, height = thing["package_drawing"]["overall"]
+        return {"canvas_width": width * 10, "canvas_height": height * 10,
+                "outline_width": width * 10, "outline_height": height * 10}
+    dimensions = thing.get("dimensions_mm", {})
+    physical_length = float(dimensions.get("length", 10))
+    physical_width = float(dimensions.get("width", 5))
+
+    canvas_width = physical_length * 10
+    canvas_height = physical_width * 10
+    outline_width = canvas_width
+    outline_height = canvas_height
+
+    component_type = str(thing.get("taxonomy_2", ""))
+    package = str(thing.get("taxonomy_3", ""))
+    if component_type == "diode":
+        package = str(thing.get("taxonomy_4", package))
+
+    # Header drawings are vertical.  The board assembler can rotate the
+    # unchanged SVG by 90 degrees when the KiCad footprint is horizontal.
+    if component_type == "connector" and package == "header":
+        canvas_width = physical_width * 10
+        canvas_height = physical_length * 10
+        outline_width = physical_length * 10
+        outline_height = physical_width * 10
+
+    # These package drawers follow the orientation used in their datasheets:
+    # pins left/right for SOP and SOT, pins above/below for TSOT.
+    if component_type in ["ic", "diode", "transistor"]:
+        ic_dimensions = thing.get("ic_dimensions_mm", {})
+        if component_type == "transistor" and package in ["sot_23", "sot_523"]:
+            transistor_dimensions = thing.get("transistor_dimensions_mm", {})
+            canvas_width = float(transistor_dimensions.get("overall_width_nominal", physical_width)) * 10
+            canvas_height = float(transistor_dimensions.get("body_length_nominal", physical_length)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+        elif package == "sot_363_6":
+            # SC-70-6 is 2.0 mm along the pin row and 2.15 mm across it
+            # including the leads, whichever component type lives inside.
+            transistor_dimensions = thing.get("transistor_dimensions_mm", {})
+            canvas_width = float(transistor_dimensions.get("body_length_nominal", 2.0)) * 10
+            canvas_height = float(transistor_dimensions.get("overall_width_nominal", 2.15)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+        elif component_type == "diode" and package == "sot_523":
+            diode_dimensions = thing.get("diode_dimensions_mm", {})
+            canvas_width = float(diode_dimensions.get("overall_width", physical_length)) * 10
+            canvas_height = float(diode_dimensions.get("body_length", physical_length)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+        elif package in ["sop_16", "sot_23_5", "sot_23_6"] or package.startswith("tssop_"):
+            ic_dimensions = _get_ic_dimensions_mm(thing)
+            canvas_width = float(ic_dimensions.get("overall_width", physical_width)) * 10
+            canvas_height = float(ic_dimensions.get("body_length", physical_length)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+        elif package == "tsot_23_5":
+            canvas_width = float(ic_dimensions.get("body_length", physical_length)) * 10
+            canvas_height = float(ic_dimensions.get("overall_width", physical_width)) * 10
+            outline_width = canvas_width
+            outline_height = canvas_height
+
+    return {
+        "canvas_width": canvas_width,
+        "canvas_height": canvas_height,
+        "outline_width": outline_width,
+        "outline_height": outline_height,
+    }
+
+
+def _get_connector_view_size(thing, view_name):
+    """Return a readable connector view size while preserving its ratio."""
+    connector_type = str(thing.get("taxonomy_3", ""))
+    dimensions = thing.get("connector_dimensions_mm", {})
+
+    if connector_type == "header":
+        if view_name in ["top", "bottom"]:
+            return [32.0, 14.0]
+        return [24.0, 32.0]
+
+    physical_width = float(thing.get("dimensions_mm", {}).get("length", 10.0))
+    physical_depth = float(thing.get("dimensions_mm", {}).get("width", 5.0))
+    if view_name == "side":
+        physical_width = float(dimensions.get("side_depth", physical_depth))
+        physical_depth = float(dimensions.get("overall_height", physical_depth / 2))
+
+    drawing_width = 30.0
+    drawing_height = drawing_width * physical_depth / max(physical_width, 0.1)
+    if drawing_height > 24.0:
+        scale = 24.0 / drawing_height
+        drawing_width *= scale
+        drawing_height *= scale
+    return [drawing_width, drawing_height]
+
+
+def _add_usb_c_bottom_view(thing, width, height, pos=None):
+    """Draw the TYPE-C-31-M-12 PCB-facing shell and exposed pads."""
+    if pos is None:
+        pos = [0, 0, 0]
+    dimensions = thing.get("connector_dimensions_mm", {})
+    shell_width_mm = float(dimensions.get("shell_width", 8.94))
+    body_depth_mm = float(dimensions.get("body_depth", 7.35))
+    bottom_depth_mm = float(dimensions.get("bottom_body_depth", 6.28))
+    pad_length_mm = float(dimensions.get("pcb_pad_length", 1.5))
+    body_height = height * bottom_depth_mm / body_depth_mm
+    body_pos = copy.deepcopy(pos)
+    body_pos[1] -= (height - body_height) / 2
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[width, body_height, 0],
+        r=min(width, body_height) * 0.06,
+        pos=body_pos,
+    )
+
+    pad_length = height * pad_length_mm / body_depth_mm
+    pad_y = pos[1] + height / 2 - pad_length / 2
+    for pad_detail in _get_usb_c_pcb_pad_details():
+        pad_width = width * pad_detail["width_mm"] / shell_width_mm
+        pad_pos = [pos[0] + width * pad_detail["x_mm"] / shell_width_mm, pad_y, 0]
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[pad_width, pad_length, 0],
+            pos=pad_pos,
+        )
+
+    mount_details = [
+        [-0.43, 0.27, 0.09, 0.18],
+        [0.43, 0.27, 0.09, 0.18],
+        [-0.43, -0.27, 0.09, 0.18],
+        [0.43, -0.27, 0.09, 0.18],
+    ]
+    for mount_detail in mount_details:
+        mount_pos = [pos[0] + width * mount_detail[0], pos[1] + height * mount_detail[1], 0]
+        opsvg.se(
+            thing,
+            shape="rounded_rectangle",
+            style="component.pad",
+            css_class="pad",
+            size=[width * mount_detail[2], height * mount_detail[3], 0],
+            r=min(width, height) * 0.02,
+            pos=mount_pos,
+        )
+
+    locating_pin_x_positions = [-0.28, 0.28]
+    for locating_pin_x in locating_pin_x_positions:
+        locating_pin_pos = [pos[0] + width * locating_pin_x, pos[1] - height * 0.22, 0]
+        opsvg.se(
+            thing,
+            shape="circle",
+            style="component.hole",
+            r=min(width, height) * 0.025,
+            pos=locating_pin_pos,
+        )
+
+
+def _add_usb_a_bottom_view(thing, width, height, pos=None):
+    """Draw the 912-121A2023S10100 PCB-facing shell and SMT contacts."""
+    if pos is None:
+        pos = [0, 0, 0]
+    dimensions = thing.get("connector_dimensions_mm", {})
+    shell_width_mm = float(dimensions.get("shell_width", 13.1))
+    body_depth_mm = float(dimensions.get("body_depth", 10.6))
+
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="component.body",
+        size=[width * shell_width_mm / 14.3, height, 0],
+        pos=copy.deepcopy(pos),
+    )
+
+    contact_count = int(dimensions.get("contact_count", 4))
+    contact_pitch = width * float(dimensions.get("contact_pitch", 2.0)) / 14.3
+    contact_width = width * float(dimensions.get("contact_width", 1.0)) / 14.3
+    contact_length = height * 0.17
+    for contact_index in range(contact_count):
+        contact_x = (contact_index - (contact_count - 1) / 2) * contact_pitch
+        contact_pos = [pos[0] + contact_x, pos[1] + height * 0.43, 0]
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[contact_width, contact_length, 0],
+            pos=contact_pos,
+        )
+
+    shell_mount_x_positions = [-1, 1]
+    for shell_mount_x in shell_mount_x_positions:
+        mount_pos = [pos[0] + shell_mount_x * width * 0.46, pos[1], 0]
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[width * 0.08, height * 0.34, 0],
+            pos=mount_pos,
+        )
+
+
+def _add_header_bottom_view(thing, width, height, pos=None):
+    """Draw the PCB-facing side of a single-row vertical header."""
+    if pos is None:
+        pos = [0, 0, 0]
+    _add_connector_outline(thing, width=width, height=height, pos=pos)
+
+
+def _add_connector_side_view(thing, width, height, pos=None):
+    """Draw an undimensioned side elevation from connector datasheet values."""
+    if pos is None:
+        pos = [0, 0, 0]
+    connector_type = str(thing.get("taxonomy_3", ""))
+    dimensions = thing.get("connector_dimensions_mm", {})
+
+    if connector_type == "header":
+        header_dimensions = thing.get("header_dimensions_mm", {})
+        pin_total = float(header_dimensions.get("pin_length_total", 10.92))
+        plastic_height = float(header_dimensions.get("plastic_height", 2.54))
+        tail_length = float(header_dimensions.get("pin_length_tail", 2.54))
+        pin_width = max(0.8, width * 0.05)
+        plastic_drawing_height = height * plastic_height / pin_total
+        plastic_bottom = pos[1] - height / 2 + height * tail_length / pin_total
+        plastic_center = plastic_bottom + plastic_drawing_height / 2
+        opsvg.se(thing, shape="rect", style="component.pad",
+            css_class="pad", size=[pin_width, height, 0], pos=copy.deepcopy(pos))
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.body_dark",
+            size=[width * 0.55, plastic_drawing_height, 0],
+            pos=[pos[0], plastic_center, 0],
+        )
+        return
+
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[width, height, 0],
+        r=min(width, height) * 0.06,
+        pos=copy.deepcopy(pos),
+    )
+
+    port_height_mm = float(dimensions.get("port_height", dimensions.get("receptacle_height", 2.56)))
+    overall_height_mm = float(dimensions.get("overall_height", port_height_mm))
+    port_height = height * port_height_mm / max(overall_height_mm, 0.1)
+    port_pos = [pos[0] - width * 0.42, pos[1], 0]
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.hole",
+        size=[width * 0.16, port_height * 0.72, 0],
+        r=min(width, height) * 0.04,
+        pos=port_pos,
+    )
+
+    rear_contact_pos = [pos[0] + width * 0.47, pos[1] - height * 0.22, 0]
+    opsvg.se(
+        thing,
+        shape="rect",
+        style="component.pad",
+            css_class="pad",
+        size=[width * 0.12, height * 0.16, 0],
+        pos=rear_contact_pos,
+    )
+    mount_x_positions = [-0.20, 0.28]
+    for mount_x in mount_x_positions:
+        mount_pos = [pos[0] + width * mount_x, pos[1] - height * 0.48, 0]
+        opsvg.se(
+            thing,
+            shape="rect",
+            style="component.pad",
+            css_class="pad",
+            size=[width * 0.07, height * 0.22, 0],
+            pos=mount_pos,
+        )
+
+
+def get_oomp_component_assembly(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    dimensions = _get_assembly_drawing_dimensions(thing)
+    thing["assembly_mode"] = True
+    thing["svg_output_scale"] = 0.1
+    _add_assembly_bounds(
+        thing,
+        dimensions["canvas_width"],
+        dimensions["canvas_height"],
+    )
+    _add_component_outline(
+        thing,
+        width=dimensions["outline_width"],
+        height=dimensions["outline_height"],
+    )
+
+    # Keep the native pin-one point with the assembly SVG.  The project board
+    # compiler uses it to choose between otherwise ambiguous 90/180 degree
+    # orientations when matching the drawing to a KiCad footprint.
+    pin_one_position = None
+    pin_one_identifiers = ["1"]
+    orientation_anchor = thing.get("diagram_orientation_anchor", {})
+    if isinstance(orientation_anchor, dict):
+        pin_one_position = orientation_anchor.get("pos")
+        anchor_identifiers = orientation_anchor.get("identifiers", [])
+        if isinstance(anchor_identifiers, list) and len(anchor_identifiers) > 0:
+            pin_one_identifiers = [str(identifier) for identifier in anchor_identifiers]
+    diagram_pin_positions = thing.get("diagram_pin_positions", [])
+    if pin_one_position is None:
+        for pin_position in diagram_pin_positions:
+            if isinstance(pin_position, dict):
+                if str(pin_position.get("number", "")) == "1":
+                    pin_one_position = pin_position.get("pos")
+                    break
+            elif isinstance(pin_position, list) and pin_one_position is None:
+                pin_one_position = pin_position
+
+    # Every pad position rides along with the SVG so the project board can
+    # choose the placement rotation by fitting the whole pin set, not just the
+    # pin-one marker (whose off-centre position alone cannot separate a
+    # rotation from its mirror when the drawing centre and the footprint
+    # centre sit on opposite sides of the pad row).  The SVG's own bounding
+    # box is the coordinate frame the renderer writes, so measure against that
+    # rather than the nominal canvas; drawings whose pads overhang the body
+    # would otherwise carry pin data offset by the overhang.
+    flat_components = opsvg._flatten(thing.get("svg_components", []))
+    if len(flat_components) > 0:
+        output_scale = float(thing.get("svg_output_scale", 1.0))
+        bounding_box = opsvg._bounding_box(flat_components)
+
+        def assembly_svg_x(grid_x):
+            return (float(grid_x) - bounding_box["xmin"]) * output_scale
+
+        def assembly_svg_y(grid_y):
+            return (bounding_box["ymax"] - float(grid_y)) * output_scale
+
+        if isinstance(pin_one_position, list) and len(pin_one_position) >= 2:
+            thing["assembly_pin_one_svg"] = {
+                "x": assembly_svg_x(pin_one_position[0]),
+                "y": assembly_svg_y(pin_one_position[1]),
+                "identifiers": pin_one_identifiers,
+            }
+
+        pin_positions_svg = []
+        for pin_record in diagram_pin_positions:
+            if not isinstance(pin_record, dict):
+                continue
+            pin_pos = pin_record.get("pos")
+            if not isinstance(pin_pos, list) or len(pin_pos) < 2:
+                continue
+            pin_positions_svg.append(
+                {
+                    "number": str(pin_record.get("number", "")),
+                    "x": assembly_svg_x(pin_pos[0]),
+                    "y": assembly_svg_y(pin_pos[1]),
+                }
+            )
+        if len(pin_positions_svg) > 0:
+            thing["assembly_pin_positions_svg"] = pin_positions_svg
+
+
+def get_oomp_component_assembly_pins(thing, **kwargs):
+    """Physical assembly drawing with every available pin name in its pad."""
+    get_oomp_component_assembly(thing, **kwargs)
+    _add_assembly_pin_labels(thing)
+
+
+def _get_schematic_pin_records(thing):
+    """Ordered [{number, name}] records for the schematic symbol drawings."""
+    pin_label_map = _get_pin_label_map(thing)
+    if not pin_label_map:
+        return []
+
+    def pin_order(pin_number):
+        try:
+            return (0, float(pin_number), "")
+        except (TypeError, ValueError):
+            return (1, 0.0, str(pin_number))
+
+    return [
+        {"number": pin_number, "name": pin_label_map[pin_number]}
+        for pin_number in sorted(pin_label_map, key=pin_order)
+    ]
+
+
+def _add_schematic_wire(thing, p1, p2):
+    """One thin black schematic line (same weight as pin one markers)."""
+    opsvg.se(thing, shape="line", style="component.pin_one_line", p1=p1, p2=p2)
+
+
+def _add_schematic_two_terminal(thing, kind, show_labels):
+    """Classic two-terminal schematic line art with stubs to the borders."""
+    _add_schematic_wire(thing, [-16, 0], [-6, 0])
+    _add_schematic_wire(thing, [6, 0], [16, 0])
+    if kind == "resistor":
+        zigzag = [[-6, 0], [-5, -2.4], [-3, 2.4], [-1, -2.4], [1, 2.4], [3, -2.4], [5, 2.4], [6, 0]]
+        for start, end in zip(zigzag, zigzag[1:]):
+            _add_schematic_wire(thing, start, end)
+    elif kind == "capacitor":
+        _add_schematic_wire(thing, [-1.5, -4.2], [-1.5, 4.2])
+        _add_schematic_wire(thing, [1.5, -4.2], [1.5, 4.2])
+    elif kind in ("diode", "led"):
+        opsvg.se(
+            thing,
+            shape="polygon",
+            style="component.body",
+            pos=[0, 0, 0],
+            points=[[-4, -3.6], [-4, 3.6], [2, 0]],
+        )
+        _add_schematic_wire(thing, [2, -3.6], [2, 3.6])
+        if kind == "led":
+            for arrow_x in (0.2, 3.2):
+                _add_schematic_wire(thing, [arrow_x, 4.2], [arrow_x + 2.2, 6.4])
+                opsvg.se(
+                    thing,
+                    shape="polygon",
+                    style="component.pin_one_line",
+                    pos=[0, 0, 0],
+                    points=[[arrow_x + 2.2, 6.4], [arrow_x + 1.2, 6.1], [arrow_x + 1.9, 5.4]],
+                )
+    elif kind == "crystal":
+        _add_schematic_wire(thing, [-3.2, -4.2], [-3.2, 4.2])
+        _add_schematic_wire(thing, [3.2, -4.2], [3.2, 4.2])
+        opsvg.se(thing, shape="rect", style="component.body", size=[3.6, 7.0, 0], pos=[0, 0, 0])
+    else:
+        # Ferrite beads and anything else solid: a plain rectangle body.
+        opsvg.se(thing, shape="rect", style="component.body", size=[8, 6, 0], pos=[0, 0, 0])
+    if show_labels:
+        _add_text(thing, "1", "label.pin", [-14.8, -2.0, 0], size=2.2)
+        _add_text(thing, "2", "label.pin", [14.8, -2.0, 0], size=2.2)
+
+
+def _schematic_pin_records(thing):
+    """Pin records for the schematic symbol, synthesised when undocumented.
+
+    Headers and wires rarely carry a pin map, but their symbol still needs
+    numbered pins: headers from the pin count in the taxonomy, jumper wires
+    as the two ends of the run.
+    """
+    pin_records = _get_schematic_pin_records(thing)
+    if pin_records:
+        return pin_records
+    pin_count = _get_package_pin_count(thing)
+    if thing.get("taxonomy_2", "") == "connector" and pin_count > 0:
+        # Undocumented connector pins still read as "Pin 1", "Pin 2", ... beside
+        # the symbol, matching how the physical part is counted.
+        return [{"number": str(index + 1), "name": f"Pin {index + 1}"} for index in range(pin_count)]
+    if thing.get("taxonomy_2", "") == "wire" and pin_count == 2:
+        return [{"number": "1", "name": ""}, {"number": "2", "name": ""}]
+    return []
+
+
+def _is_one_line_connector(thing):
+    """Every connector (headers, JST, USB...) uses the KiCad connector symbol:
+    all pins down one column instead of wrapped IC-style around the body."""
+    return thing.get("taxonomy_2", "") == "connector"
+
+
+def _schematic_layout(thing, pin_records, max_height=21.0):
+    """(one_line, rows, box_height) for the schematic body rectangle."""
+    count = len(pin_records)
+    one_line = _is_one_line_connector(thing) and count > 0
+    if one_line:
+        rows = count
+    else:
+        left_count = (count + 1) // 2
+        rows = max(left_count, count - left_count, 1)
+    if max_height is None:
+        box_height = max(8.0, rows * 3.8 + 3.0)
+    else:
+        box_height = max(8.0, min(max_height, rows * 3.8 + 3.0))
+    return one_line, rows, box_height
+
+
+def _schematic_symbol_extents(thing, max_height=21.0):
+    """(top_y, bottom_y) the symbol will occupy, without drawing it."""
+    if _transistor_symbol_kind(thing):
+        # KiCad-style transistor line art (leads plus pin labels).
+        return 9.4, -9.4
+    pin_records = _schematic_pin_records(thing)
+    boxed_types = ("ic", "transistor", "connector", "resistor_array", "display")
+    if str(thing.get("taxonomy_2", "")) in boxed_types or len(pin_records) > 2:
+        _, _, box_height = _schematic_layout(thing, pin_records, max_height)
+        return box_height / 2, -box_height / 2
+    # Two-terminal line art (including its LED arrows) stays within these.
+    return 6.4, -4.2
+
+
+def _add_schematic_box(thing, pin_records, show_labels, max_height=21.0):
+    """Rectangular schematic body with pin stubs, KiCad style.
+
+    Connectors put every pin down one side in a single column like the project
+    schematics; everything else wraps the pins down the left and back up the
+    right like a real IC, with the pin names inside the body.
+    """
+    count = len(pin_records)
+    one_line, rows, box_height = _schematic_layout(thing, pin_records, max_height)
+    left_count = count if one_line else (count + 1) // 2
+    box_width = 18.0
+    stub = 3.4
+    opsvg.se(thing, shape="rect", style="component.body", size=[box_width, box_height, 0], pos=[0, 0, 0])
+    step = box_height / (rows + 1)
+    for index in range(left_count):
+        if one_line:
+            # KiCad connector symbols number pin 1 at the top of the column.
+            y = box_height / 2 - step * (index + 1)
+        else:
+            y = -box_height / 2 + step * (index + 1)
+        _add_schematic_wire(thing, [-box_width / 2 - stub, y], [-box_width / 2, y])
+        if show_labels:
+            _add_schematic_pin_label(
+                thing,
+                pin_records[index],
+                [-box_width / 2 - stub - 0.6, y, 0],
+                "left",
+                name_inside=not one_line,
+            )
+    for index in range(count - left_count):
+        pin = pin_records[left_count + index]
+        # Right-side pins run bottom-up so the numbering wraps like a real IC.
+        y = box_height / 2 - step * (index + 1)
+        _add_schematic_wire(thing, [box_width / 2, y], [box_width / 2 + stub, y])
+        if show_labels:
+            _add_schematic_pin_label(
+                thing,
+                pin,
+                [box_width / 2 + stub + 0.6, y, 0],
+                "right",
+                name_inside=not one_line,
+            )
+
+
+def _add_schematic_page(thing, extra_bottom=0.0, base_height=24.0, max_height=21.0):
+    """White page sized so the symbol (and detail text below it) never clips."""
+    top_y, bottom_y = _schematic_symbol_extents(thing, max_height=max_height)
+    height = max(base_height + extra_bottom, (top_y - bottom_y) + 7.0 + extra_bottom)
+    pin_records = _schematic_pin_records(thing)
+    one_line, _, _ = _schematic_layout(thing, pin_records, max_height)
+    width = 38
+    if one_line:
+        # Connector pin names ("Pin 12", "usb_d_plus", ...) sit beside the
+        # stubs, so the page grows to keep the longest label on the sheet.
+        longest = max((len(str(pin.get("name", ""))) for pin in pin_records), default=0)
+        width = max(width, 2 * (14.5 + longest * 1.05))
+    _add_diagram_bounds(thing, width, height)
+    return bottom_y
+
+
+def _add_schematic_pin_label(thing, pin, pos, side, name_inside=False):
+    """KiCad-style pin labelling: number just inside the body edge.
+
+    IC-style symbols keep the pin names inside the body as well; connectors
+    (one pin column) hang their names beside the stub instead, so the sparse
+    column stays readable.
+    """
+    pin_number = str(pin.get("number", ""))
+    pin_name = str(pin.get("name", "")).strip()
+    if side == "left":
+        _add_text(thing, pin_number, "label.pin", [pos[0] + 4.6, pos[1], 0], size=1.8, halign="left")
+        if pin_name and pin_name != pin_number:
+            if name_inside:
+                _add_text(thing, pin_name, "label.pin", [pos[0] + 7.0, pos[1], 0], size=1.6, halign="left")
+            else:
+                _add_text(thing, pin_name, "label.pin", [pos[0] - 0.6, pos[1], 0], size=1.8, halign="right")
+    else:
+        _add_text(thing, pin_number, "label.pin", [pos[0] - 4.6, pos[1], 0], size=1.8, halign="right")
+        if pin_name and pin_name != pin_number:
+            if name_inside:
+                _add_text(thing, pin_name, "label.pin", [pos[0] - 7.0, pos[1], 0], size=1.6, halign="right")
+            else:
+                _add_text(thing, pin_name, "label.pin", [pos[0] + 0.6, pos[1], 0], size=1.8, halign="left")
+
+
+_BAND_COLOURS = [
+    "#1a1a1a",  # 0 black
+    "#7b3f00",  # 1 brown
+    "#d62728",  # 2 red
+    "#e8590c",  # 3 orange
+    "#f2c400",  # 4 yellow
+    "#2b8a3e",  # 5 green
+    "#1971c2",  # 6 blue
+    "#9c36b5",  # 7 violet
+    "#868e96",  # 8 grey
+    "#f8f9fa",  # 9 white
+]
+_BAND_GOLD = "#c9a227"
+_BAND_SILVER = "#c0c0c0"
+
+
+def _quarter_watt_resistance_value(thing):
+    """Ohms parsed from the taxonomy ("10_ohm"); None when unreadable."""
+    value = str(thing.get("taxonomy_4", "")).strip().removesuffix("_ohm")
+    try:
+        return float(value)
+    except ValueError:
+        return None
+
+
+def _resistor_band_colours(ohms):
+    """[digit, digit, multiplier] band colours for the four-band code.
+
+    Zero-ohm jumpers get their single black band; unrepresentable values get
+    no bands at all rather than a wrong code.
+    """
+    if ohms is None:
+        return []
+    if ohms == 0:
+        return [_BAND_COLOURS[0]]
+    value = float(ohms)
+    exponent = 0
+    while value >= 100 and exponent < 9:
+        value /= 10.0
+        exponent += 1
+    while value < 10 and exponent > -2:
+        value *= 10.0
+        exponent -= 1
+    first_digit = int(value // 10)
+    second_digit = int(round(value - first_digit * 10))
+    if second_digit == 10:
+        first_digit, second_digit = first_digit + 1, 0
+    if first_digit == 10:
+        first_digit, second_digit = 1, 0
+        exponent += 1
+    if not (0 <= first_digit <= 9 and 0 <= second_digit <= 9):
+        return []
+    if exponent == -1:
+        multiplier = _BAND_GOLD
+    elif exponent == -2:
+        multiplier = _BAND_SILVER
+    elif 0 <= exponent <= 9:
+        multiplier = _BAND_COLOURS[exponent]
+    else:
+        return []
+    return [_BAND_COLOURS[first_digit], _BAND_COLOURS[second_digit], multiplier]
+
+
+def _add_schematic_axial_resistor(thing, show_labels, color_bands=True):
+    """Quarter-watt through-hole resistor: rounded body with leads and the
+    three value bands plus the gold tolerance band."""
+    _add_schematic_wire(thing, [-16, 0], [-9, 0])
+    _add_schematic_wire(thing, [9, 0], [16, 0])
+    opsvg.se(
+        thing,
+        shape="rounded_rectangle",
+        style="component.body",
+        size=[18, 6.4, 0],
+        r=2.9,
+        pos=[0, 0, 0],
+    )
+    if color_bands:
+        bands = _resistor_band_colours(_quarter_watt_resistance_value(thing))
+        if len(bands) == 1:
+            # Zero-ohm jumper: one black band in the middle of the body.
+            positions, colours = [0.0], bands
+        elif len(bands) == 3:
+            positions = [-5.0, -2.0, 1.0, 5.0]
+            colours = bands + [_BAND_GOLD]
+        else:
+            positions, colours = [], []
+        for x, colour in zip(positions, colours):
+            opsvg.se(
+                thing,
+                shape="rect",
+                style="component.body",
+                color=colour,
+                size=[1.5, 6.4, 0],
+                pos=[x, 0, 0],
+            )
+    if show_labels:
+        _add_text(thing, "1", "label.pin", [-14.8, -2.0, 0], size=2.2)
+        _add_text(thing, "2", "label.pin", [14.8, -2.0, 0], size=2.2)
+
+
+def _transistor_symbol_kind(thing):
+    """KiCad-style line art applies to single three-pin BJTs and MOSFETs."""
+    if str(thing.get("taxonomy_2", "")) != "transistor":
+        return ""
+    pin_records = _schematic_pin_records(thing)
+    if len(pin_records) != 3:
+        return ""
+    names = {str(pin.get("name", "")).lower() for pin in pin_records}
+    polarity = str(thing.get("taxonomy_5", ""))
+    if {"base", "emitter", "collector"} <= names:
+        return "pnp" if "pnp" in polarity else "npn"
+    if {"gate", "source", "drain"} <= names:
+        return "pmos" if "p_channel" in polarity else "nmos"
+    return ""
+
+
+def _add_schematic_transistor(thing, kind, show_labels):
+    """Classic KiCad transistor line art: circle envelope, base/gate bar on
+    the left, collector/drain leaving the top and emitter/source the bottom."""
+    records = {str(pin.get("name", "")).lower(): pin for pin in _schematic_pin_records(thing)}
+    is_bjt = kind in ("npn", "pnp")
+    if is_bjt:
+        left_name, top_name, bottom_name = "base", "collector", "emitter"
+        opsvg.se(thing, shape="circle", style="component.body", r=5.2, pos=[1.0, 0, 0])
+        _add_schematic_wire(thing, [-16, 0], [-1.4, 0])
+        _add_schematic_wire(thing, [-1.4, -2.6], [-1.4, 2.6])
+        _add_schematic_wire(thing, [-1.4, 1.5], [2.0, 3.3])
+        _add_schematic_wire(thing, [2.0, 3.3], [2.0, 7.4])
+        _add_schematic_wire(thing, [-1.4, -1.5], [2.0, -3.3])
+        _add_schematic_wire(thing, [2.0, -3.3], [2.0, -7.4])
+        # Emitter arrow: away from the base for NPN, toward it for PNP.
+        start = [-1.4, -1.5]
+        direction = [0.8838, -0.4680]
+        if kind == "npn":
+            apex = [1.83, -3.21]
+            base_center = [apex[0] - 1.6 * direction[0], apex[1] - 1.6 * direction[1]]
+        else:
+            apex = [-1.23, -1.59]
+            base_center = [apex[0] + 1.6 * direction[0], apex[1] + 1.6 * direction[1]]
+        corners = [
+            [base_center[0] + 0.6 * 0.4680, base_center[1] + 0.6 * 0.8838],
+            [base_center[0] - 0.6 * 0.4680, base_center[1] - 0.6 * 0.8838],
+        ]
+    else:
+        left_name, top_name, bottom_name = "gate", "drain", "source"
+        opsvg.se(thing, shape="circle", style="component.body", r=5.4, pos=[1.0, 0, 0])
+        _add_schematic_wire(thing, [-16, 0], [-3.0, 0])
+        _add_schematic_wire(thing, [-3.0, -2.6], [-3.0, 2.6])
+        _add_schematic_wire(thing, [-3.0, 0], [-1.8, 0])
+        # Broken channel bars mark the enhancement-mode part.
+        for y1, y2 in ((1.2, 2.8), (-0.8, 0.8), (-2.8, -1.2)):
+            _add_schematic_wire(thing, [-1.8, y1], [-1.8, y2])
+        _add_schematic_wire(thing, [-1.8, 2.8], [2.0, 2.8])
+        _add_schematic_wire(thing, [-1.8, -2.8], [2.0, -2.8])
+        _add_schematic_wire(thing, [2.0, -2.8], [2.0, 2.8])
+        _add_schematic_wire(thing, [2.0, 2.8], [2.0, 7.4])
+        _add_schematic_wire(thing, [2.0, -2.8], [2.0, -7.4])
+        for y in (2.8, -2.8):
+            opsvg.se(thing, shape="circle", style="component.pin_one_line", r=0.32, pos=[2.0, y, 0])
+        # Channel arrow: toward the gate for N-channel, away for P-channel.
+        if kind == "nmos":
+            apex = [-1.2, 0.0]
+            corners = [[0.2, 0.55], [0.2, -0.55]]
+        else:
+            apex = [0.2, 0.0]
+            corners = [[-1.2, 0.55], [-1.2, -0.55]]
+    opsvg.se(
+        thing,
+        shape="polygon",
+        style="component.body",
+        color="#000000",
+        pos=[0, 0, 0],
+        points=[apex] + corners,
+    )
+    if show_labels:
+        _add_text(thing, records[left_name]["number"], "label.pin", [-14.8, -2.2, 0], size=2.2)
+        _add_text(thing, left_name, "label.pin", [-14.8, 2.2, 0], size=1.6)
+        _add_text(thing, records[top_name]["number"], "label.pin", [3.2, 6.6, 0], size=2.2, halign="left")
+        _add_text(thing, top_name, "label.pin", [3.2, 8.4, 0], size=1.6, halign="left")
+        _add_text(thing, records[bottom_name]["number"], "label.pin", [3.2, -6.6, 0], size=2.2, halign="left")
+        _add_text(thing, bottom_name, "label.pin", [3.2, -8.4, 0], size=1.6, halign="left")
+
+
+def _draw_schematic_symbol(thing, show_labels, max_height=21.0, color_bands=True):
+    """Dispatch the schematic symbol drawing for this component type."""
+    pin_records = _schematic_pin_records(thing)
+    component_type = str(thing.get("taxonomy_2", ""))
+    if component_type == "transistor":
+        kind = _transistor_symbol_kind(thing)
+        if kind:
+            _add_schematic_transistor(thing, kind, show_labels)
+            return
+    boxed_types = ("ic", "transistor", "connector", "resistor_array", "display")
+    if component_type in boxed_types or len(pin_records) > 2:
+        _add_schematic_box(thing, pin_records, show_labels, max_height=max_height)
+        return
+    if component_type == "resistor" and "quarter_watt" in str(thing.get("taxonomy_3", "")):
+        _add_schematic_axial_resistor(thing, show_labels, color_bands=color_bands)
+        return
+    kind = {
+        "resistor": "resistor",
+        "ferrite_bead": "ferrite",
+        "capacitor": "capacitor",
+        "diode": "diode",
+        "led": "led",
+        "crystal": "crystal",
+        "inductor": "ferrite",
+    }.get(component_type, "")
+    if kind == "" and len(pin_records) == 2 and component_type != "wire":
+        kind = "resistor"
+    if kind == "":
+        _add_schematic_box(thing, pin_records, show_labels, max_height=max_height)
+    else:
+        _add_schematic_two_terminal(thing, kind, show_labels)
+
+
+def get_oomp_component_schematic(thing, **kwargs):
+    """Clean schematic-style symbol drawing to sit beside the physical set."""
+    _use_style_oomp(thing, **kwargs)
+    _add_schematic_page(thing, max_height=None)
+    _draw_schematic_symbol(thing, show_labels=False, max_height=None)
+
+
+def get_oomp_component_schematic_pins(thing, **kwargs):
+    """Schematic symbol with every pin number (and name) labelled."""
+    _use_style_oomp(thing, **kwargs)
+    _add_schematic_page(thing, max_height=None)
+    _draw_schematic_symbol(thing, show_labels=True, max_height=None)
+
+
+def get_oomp_component_schematic_part_id(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    bottom_y = _add_schematic_page(thing, extra_bottom=8.0, max_height=None)
+    _draw_schematic_symbol(thing, show_labels=False, max_height=None, color_bands=False)
+    part_id = str(thing.get("part_id", "R1"))
+    part_id_size = 6.0
+    if len(part_id) > 3:
+        part_id_size = max(2.4, 18.0 / len(part_id))
+    _add_text(thing, part_id, "label.part_id", [0, bottom_y - 4.6, 0], size=part_id_size)
+
+
+def get_oomp_component_schematic_md5_6_alpha(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    bottom_y = _add_schematic_page(thing, extra_bottom=8.0, max_height=None)
+    _draw_schematic_symbol(thing, show_labels=False, max_height=None, color_bands=False)
+    _add_text(
+        thing,
+        thing.get("md5_6_alpha_upper", str(thing.get("md5_6_alpha", "")).upper()),
+        "label.code",
+        [0, bottom_y - 4.6, 0],
+    )
+
+
+def get_oomp_component_schematic_bip_39_3_word(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    bottom_y = _add_schematic_page(thing, extra_bottom=14.0, max_height=None)
+    _draw_schematic_symbol(thing, show_labels=False, max_height=None, color_bands=False)
+    words = _get_bip_39_words(thing)
+    for index in range(3):
+        _add_text(
+            thing,
+            words[index],
+            "label.word",
+            [0, bottom_y - 4.6 - index * 3.4, 0],
+        )
+
+
+def get_oomp_component_square_schematic(thing, **kwargs):
+    """Square summary card with the schematic symbol standing in for the
+    physical outline: name banner, labelled symbol and identification codes."""
+    _use_style_oomp(thing, **kwargs)
+    _add_square_background(thing)
+    _add_square_name(thing)
+    _, rows, box_height = _schematic_layout(thing, _schematic_pin_records(thing), max_height=22.0)
+    step = box_height / (rows + 1)
+    show_labels = step >= 2.5
+    _draw_schematic_symbol(thing, show_labels=show_labels, max_height=22.0)
+    _add_square_codes(thing)
+
+
+def get_oomp_component_top(thing, **kwargs):
+    """Connector top view; this is also the basis of the main diagrams."""
+    _use_style_oomp(thing, **kwargs)
+    view_size = _get_connector_view_size(thing, "top")
+    _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
+    _add_component_outline(thing, width=view_size[0], height=view_size[1])
+
+
+def get_oomp_component_bottom(thing, **kwargs):
+    """Connector PCB-facing view from its mechanical drawing."""
+    _use_style_oomp(thing, **kwargs)
+    connector_type = str(thing.get("taxonomy_3", ""))
+    view_size = _get_connector_view_size(thing, "bottom")
+    _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
+    if thing.get("package_drawing"):
+        drawing = copy.deepcopy(thing["package_drawing"])
+        bottom = copy.deepcopy(drawing.get("bottom", drawing))
+        for pin in bottom["pins"]:
+            pin[2] = -pin[2]
+        for box in bottom.get("boxes", []):
+            box[0] = -box[0]
+        thing["package_drawing"] = bottom
+        _add_populated_package_outline(thing, view_size[0], view_size[1])
+        thing["package_drawing"] = drawing
+    elif connector_type == "usb_c":
+        _add_usb_c_bottom_view(thing, view_size[0], view_size[1])
+    elif connector_type == "usb_a":
+        _add_usb_a_bottom_view(thing, view_size[0], view_size[1])
+    elif connector_type == "header":
+        _add_header_bottom_view(thing, view_size[0], view_size[1])
+
+
+def get_oomp_component_side(thing, **kwargs):
+    """Connector side elevation from datasheet height and lead dimensions."""
+    _use_style_oomp(thing, **kwargs)
+    view_size = _get_connector_view_size(thing, "side")
+    _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
+    if thing.get("package_drawing", {}).get("side"):
+        drawing = thing["package_drawing"]
+        thing["package_drawing"] = drawing["side"]
+        _add_populated_package_outline(thing, view_size[0], view_size[1])
+        thing["package_drawing"] = drawing
+    else:
+        _add_connector_side_view(thing, view_size[0], view_size[1])
+
+
+def get_oomp_component_outline(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    _add_diagram_bounds(thing, 34, 20)
+    _add_component_outline(thing, width=30, height=16)
+
+
+def get_oomp_component_part_id(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    _add_diagram_bounds(thing, 34, 20)
+    _add_component_outline(thing, width=30, height=16)
+
+    part_id = str(thing.get("part_id", "R1"))
+    part_id_size = 6.0
+    if len(part_id) > 3:
+        part_id_size = max(2.4, 18.0 / len(part_id))
+    _add_text(
+        thing,
+        part_id,
+        "label.part_id",
+        [0, 0, 0],
+        size=part_id_size,
+        color=_get_component_text_color(thing),
+    )
+
+
+def get_oomp_component_md5_6_alpha(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    _add_diagram_bounds(thing, 34, 20)
+    _add_component_outline(thing, width=30, height=16)
+    _add_text(
+        thing,
+        thing.get(
+            "md5_6_alpha_upper",
+            str(thing.get("md5_6_alpha", "")).upper(),
+        ),
+        "label.code",
+        [0, 0, 0],
+        color=_get_component_text_color(thing),
+    )
+
+
+def get_oomp_component_bip_39_3_word(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    _add_diagram_bounds(thing, 38, 24)
+    _add_component_outline(thing, width=34, height=20)
+
+    words = _get_bip_39_words(thing)
+    word_y_positions = [5, 0, -5]
+    for index in range(3):
+        _add_text(
+            thing,
+            words[index],
+            "label.word",
+            [0, word_y_positions[index], 0],
+            color=_get_component_text_color(thing),
+        )
+
+
+def get_oomp_component_square(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    _add_square_background(thing)
+    _add_square_name(thing)
+    component_width = 22
+    component_height = 10
+    if thing.get("taxonomy_2", "") == "display" and thing.get("taxonomy_3", "") == "tft":
+        component_width = 16
+        component_height = 20
+    _add_component_outline(
+        thing,
+        width=component_width,
+        height=component_height,
+        pos=[0, 3, 0],
+    )
+    _add_square_codes(thing)
+
+
+def get_oomp_component_square_pins(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    _add_square_background(thing)
+    _add_square_name(thing)
+    component_width = 18
+    component_height = 9
+    if thing.get("taxonomy_2", "") == "connector" and thing.get("taxonomy_3", "") in ["usb_a", "usb_c"]:
+        component_width = 22
+        component_height = 13
+    if thing.get("taxonomy_2", "") == "connector" and thing.get("taxonomy_3", "") == "header":
+        component_width = 22
+        component_height = 10
+    if thing.get("taxonomy_2", "") == "display" and thing.get("taxonomy_3", "") == "tft":
+        component_width = 16
+        component_height = 20
+    if thing.get("taxonomy_2", "") == "ic":
+        package = thing.get("taxonomy_3", "")
+        package_sizes = {
+            "qfn_16_3_mm_x_3_mm": [16, 14],
+            "sop_16": [18, 18],
+            "sot_23_6": [18, 16],
+            "tsot_23_5": [20, 16],
+        }
+        if package in package_sizes:
+            component_width = package_sizes[package][0]
+            component_height = package_sizes[package][1]
+    if thing.get("package_drawing"):
+        component_width = 24
+        component_height = 18
+    _add_component_outline(
+        thing,
+        width=component_width,
+        height=component_height,
+        pos=[0, 3, 0],
+    )
+
+    _add_square_pin_labels(thing)
+
+    _add_square_codes(thing)
+
+
+def get_oomp_component_dimensioned(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    if thing.get("taxonomy_2", "") == "connector" and thing.get("taxonomy_3", "") == "header":
+        _add_header_dimensions(thing, show_titles=False)
+        return
+    if thing.get("taxonomy_2", "") == "ic":
+        _add_diagram_bounds(thing, 72, 58)
+    else:
+        _add_diagram_bounds(thing, 58, 44)
+    body_width, body_height = _add_component_outline(thing, width=32, height=16)
+    _add_component_dimensions(thing, body_width, body_height, show_titles=False)
+
+
+def get_oomp_component_dimensioned_titles(thing, **kwargs):
+    _use_style_oomp(thing, **kwargs)
+    if thing.get("taxonomy_2", "") == "connector" and thing.get("taxonomy_3", "") == "header":
+        _add_header_dimensions(thing, show_titles=True)
+        return
+    if thing.get("taxonomy_2", "") == "ic":
+        _add_diagram_bounds(thing, 72, 58)
+    else:
+        _add_diagram_bounds(thing, 58, 44)
+    body_width, body_height = _add_component_outline(thing, width=32, height=16)
+    _add_component_dimensions(thing, body_width, body_height, show_titles=True)
+
+
+def get_fill_in_the_blanks(thing, **kwargs):
+    svg_help.get_fill_in_the_blanks(thing, **kwargs)
+
+
+def get_a4_sheet(thing, **kwargs):
+    svg_help.get_a4_sheet(thing, **kwargs)
+
+
+def get_label_76x50(thing, **kwargs):
+    svg_help.get_label_76x50(thing, **kwargs)
+
+
+def _default_label_boxes():
+    """Default 3 × 4 grid matching the Project Bolt tin insert photo.
+
+    Top row is 0.5 units tall (narrow label strip);
+    the three lower rows are each 1.0 units tall.
+    Total: 3 wide × 3.5 high = 12 boxes.
+    """
+    boxes = []
+    n = 1
+    layout = [
+        (0.0, 0.5),   # top narrow row
+        (0.5, 1.0),
+        (1.5, 1.0),
+        (2.5, 1.0),
+    ]
+    for (row_y, row_h) in layout:
+        for col in range(3):
+            boxes.append({
+                "x": float(col),
+                "y": row_y,
+                "w": 1.0,
+                "h": row_h,
+                "name": f"box_{n}",
+            })
+            n += 1
+    return boxes
+
+
+def get_internal_label_sheet(thing, **kwargs):
+    """Proportional grid label sheet for tin inserts.
+
+    No dark background — boxes sit directly on the card, separated by the
+    card's own fill showing through the gap.  Corner radii are computed per
+    corner so junctions and card edges look geometrically correct:
+
+      r_inner  = gap_mm / 2   — inner corners: arc exactly fills the gap void
+      r_outer  = card_r - card_margin_mm  — outer corners: parallel to card edge
+
+    Parameters
+    ----------
+    unit_mm        : float  — physical size of one grid unit in mm   (default 42.0)
+    grid_w         : float  — grid width in units                    (default 3.0)
+    grid_h         : float  — grid height in units                   (default 3.5)
+    card_margin_mm : float  — card fill visible around the grid      (default 2.0)
+                              unit_mm=42, grid_w=3, margin=2 → card_w=130 mm
+    card_r         : float  — card corner radius in mm               (default 8.0)
+    gap_frac       : float  — gap between boxes as fraction of unit_mm (default 0.07)
+    boxes          : list   — list of box dicts.  Each dict may contain:
+                               x, y        — top-left position in units (required)
+                               w, h        — size in units              (required)
+                               name        — identifier string          (default "box_N")
+                               text        — display text               (defaults to name)
+                               style       — box fill style             (default "plate.cell")
+                               text_style      — text style             (default "label")
+                               text_size       — font size override mm  (default from style)
+                               halign          — text alignment         (default "center";
+                                                 auto "left" when lined)
+                               valign          — vertical alignment     (default "center";
+                                                 auto "top" when lined)
+                               lined           — fill box with ruled    (default False)
+                                                 lines for handwriting
+                               line_spacing_mm — spacing between lines  (default 6.0 mm)
+                               (any extra keys are preserved and ignored)
+    stylesheet     : str    — stylesheet name                        (default "project_bolt")
+    """
+    prepare_print  = kwargs.get("prepare_print", False)
+    pos            = kwargs.get("pos", [0, 0, 0])
+    unit_mm        = float(kwargs.get("unit_mm",         42.0))
+    grid_w         = float(kwargs.get("grid_w",           3.0))
+    grid_h         = float(kwargs.get("grid_h",           3.5))
+    card_margin_mm = float(kwargs.get("card_margin_mm",   2.0))
+    card_r         = float(kwargs.get("card_r",           8.0))
+    gap_frac       = float(kwargs.get("gap_frac",         0.07))
+    boxes          = kwargs.get("boxes", _default_label_boxes())
+
+    # ── Derived dimensions ────────────────────────────────────────────────────
+    sheet_w  = grid_w * unit_mm                       # 126.0 mm
+    sheet_h  = grid_h * unit_mm                       # 147.0 mm
+    card_w   = sheet_w + 2 * card_margin_mm           # 130.0 mm
+    card_h   = sheet_h + 2 * card_margin_mm           # 151.0 mm
+    gap_mm   = gap_frac * unit_mm                     #   2.94 mm
+
+    # Corner radius rules:
+    #   inner: arc radius = gap/2 → arc exactly reaches the gap centreline,
+    #          filling the void where four box corners meet
+    #   outer: parallel to the card's own rounded corner
+    r_inner  = gap_mm / 2
+    r_outer  = max(card_r - card_margin_mm, 0.0)
+
+    _EPS = 1e-3   # tolerance for edge-touching checks
+
+    def _radii(bx, by, bw, bh):
+        """Return (r_tl, r_tr, r_br, r_bl) for a box at grid position (bx,by)."""
+        at_left   = bx              < _EPS
+        at_top    = by              < _EPS
+        at_right  = (bx + bw - grid_w) > -_EPS
+        at_bottom = (by + bh - grid_h) > -_EPS
+        tl = r_outer if (at_left  and at_top)    else r_inner
+        tr = r_outer if (at_right and at_top)    else r_inner
+        br = r_outer if (at_right and at_bottom) else r_inner
+        bl = r_outer if (at_left  and at_bottom) else r_inner
+        return tl, tr, br, bl
+
+    # ── Stylesheet ────────────────────────────────────────────────────────────
+    if "styles" not in thing or not thing.get("styles"):
+        sheet_name = kwargs.get("stylesheet", "project_bolt")
+        thing["styles"] = svg_styles.get_stylesheet(sheet_name)
+
+    # ── Card fill (drawn first — border comes last) ───────────────────────────
+    pos1 = copy.deepcopy(pos)
+    opsvg.se(thing, shape="rounded_rectangle", style="plate",
+             size=[card_w, card_h, 0], r=card_r, pos=pos1,
+             stroke="none", stroke_width=0)
+
+    # ── Boxes ─────────────────────────────────────────────────────────────────
+    # Box centre in Y-up coords (origin = card centre = sheet centre):
+    #   cx = -sheet_w/2 + unit_mm*(bx + bw/2)
+    #   cy =  sheet_h/2 - unit_mm*(by + bh/2)
+    # gap_mm cancels in the centre calculation; only affects w_mm / h_mm.
+    for i, box in enumerate(boxes):
+        bx         = float(box.get("x", 0))
+        by         = float(box.get("y", 0))
+        bw         = float(box.get("w", 1))
+        bh         = float(box.get("h", 1))
+        name       = box.get("name",       f"box_{i + 1}")
+        text       = box.get("text",       name)
+        box_style  = box.get("style",      "plate.cell")
+        txt_style  = box.get("text_style", "label")
+        txt_size   = box.get("text_size",  None)
+        lined      = bool(box.get("lined", False))
+        line_spc   = float(box.get("line_spacing_mm", 6.0))
+
+        # lined boxes default to top-left anchored text; explicit values win
+        halign = box.get("halign", "left"   if lined else "center")
+        valign = box.get("valign", "top"    if lined else "center")
+
+        w_mm = bw * unit_mm - gap_mm
+        h_mm = bh * unit_mm - gap_mm
+        cx   = -sheet_w / 2 + unit_mm * (bx + bw / 2)
+        cy   =  sheet_h / 2 - unit_mm * (by + bh / 2)
+
+        tl, tr, br, bl = _radii(bx, by, bw, bh)
+
+        pos1    = copy.deepcopy(pos)
+        pos1[0] += cx
+        pos1[1] += cy
+
+        # 1. Box fill
+        opsvg.se(thing, shape="rrect_corners", style=box_style,
+                 size=[w_mm, h_mm, 0],
+                 r_tl=tl, r_tr=tr, r_br=br, r_bl=bl,
+                 pos=pos1)
+
+        # 2. Ruled lines (drawn before text so text sits on top)
+        if lined:
+            pad_x      = gap_mm * 1.5          # horizontal inset
+            pad_y      = gap_mm                # top / bottom inset
+            rule_w     = w_mm - 2 * pad_x
+            rule_thick = 0.35
+            y_from_top = pad_y + line_spc * 0.65   # first line
+            while y_from_top + rule_thick / 2 < h_mm - pad_y:
+                # Y-up offset from box centre: positive = up
+                line_dy = h_mm / 2 - y_from_top
+                lpos    = copy.deepcopy(pos)
+                lpos[0] += cx
+                lpos[1] += cy + line_dy
+                opsvg.se(thing, shape="rect", style="rule",
+                         size=[rule_w, rule_thick, 0], pos=lpos)
+                y_from_top += line_spc
+
+        # 3. Text — anchor point offset so halign/valign align to box edge
+        padding = gap_mm
+        off_x = {"left":  -(w_mm / 2 - padding),
+                 "right":  (w_mm / 2 - padding),
+                 "center": 0.0}.get(halign, 0.0)
+        off_y = {"top":    (h_mm / 2 - padding),    # Y-up: positive = up
+                 "bottom": -(h_mm / 2 - padding),
+                 "center": 0.0}.get(valign, 0.0)
+
+        txt_pos    = copy.deepcopy(pos)
+        txt_pos[0] += cx + off_x
+        txt_pos[1] += cy + off_y
+
+        txt_kwargs = dict(halign=halign, valign=valign)
+        if txt_size is not None:
+            txt_kwargs["size"] = txt_size
+        opsvg.se(thing, shape="text", style=txt_style,
+                 text=text, pos=txt_pos, **txt_kwargs)
+
+    # ── Card border (drawn last — on top of everything) ───────────────────────
+    pos1 = copy.deepcopy(pos)
+    opsvg.se(thing, shape="rounded_rectangle", style="plate.outline",
+             size=[card_w, card_h, 0], r=card_r, pos=pos1)
+
+    if prepare_print:
+        svg_help.prepare_base_for_print(thing, pos, **kwargs)
+
+
+if __name__ == '__main__':
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Generate OOMP component SVG and PNG diagrams.")
+    parser.add_argument("--filter", default="", help="Only generate parts containing this text in their ID.")
+    parser.add_argument(
+        "--regenerate-pngs",
+        action="store_true",
+        help="Replace existing PNG files. Without this option existing PNGs are kept.",
+    )
+    arguments = parser.parse_args()
+    kwargs = {
+        "filter": arguments.filter,
+        "regenerate_pngs": arguments.regenerate_pngs,
+    }
+    main(**kwargs)

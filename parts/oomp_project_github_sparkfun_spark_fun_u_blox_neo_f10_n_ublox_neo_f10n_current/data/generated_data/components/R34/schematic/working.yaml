@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: R34
+  source_file: data/kicad_file.kicad_sch
+  uuid: f4654031-62b5-4fde-99b7-5f5416f1aea6
+  library_id: SparkFun-Resistor:33_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 53.34
+    y: 151.13
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: R34
+    Value: '33'
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-08270
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 49.53
+      y: 151.13
+    net: ~{RESET}
+    net_aliases:
+    - ~{RESET}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D3
+      pin_number: '1'
+      pin_name: K1
+    - reference: J2
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: R12
+      pin_number: '2'
+      pin_name: '~'
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 57.15
+      y: 151.13
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: '8'
+      pin_name: ~{RESET}
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -1.016
+      max:
+        x: 2.54
+        y: 1.016
+      width: 5.08
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 50.8
+        y: 150.114
+      max:
+        x: 55.88
+        y: 152.146
+      width: 5.08
+      height: 2.032
+      center:
+        x: 53.34
+        y: 151.13
+  warnings: []
+connected_components:
+- reference: D3
+  pin_number: '1'
+  pin_name: K1
+- reference: J2
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: R12
+  pin_number: '2'
+  pin_name: '~'
+- reference: U3
+  pin_number: '8'
+  pin_name: ~{RESET}

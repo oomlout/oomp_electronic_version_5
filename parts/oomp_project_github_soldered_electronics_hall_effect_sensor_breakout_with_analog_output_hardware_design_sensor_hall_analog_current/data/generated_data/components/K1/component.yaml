@@ -1,0 +1,562 @@
+reference: K1
+schematic:
+  available: true
+  units:
+  - reference: K1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 6735f21c-333a-4a4c-9006-65ddb07d502f
+    library_id: e-radionica.com schematics:HEADER_MALE_3X1
+    unit: 1
+    body_style: 1
+    position:
+      x: 177.8
+      y: 93.98
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: K1
+      Value: HEADER_MALE_3X1
+      Footprint: e-radionica.com footprinti:HEADER_MALE_3X1
+      Datasheet: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -2.54
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 177.8
+        y: 96.52
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#PWR02'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#PWR04'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '2'
+        pin_name: '~'
+      - reference: U1
+        pin_number: '3'
+        pin_name: GND
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 0.0
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 177.8
+        y: 93.98
+      net: OUT
+      net_aliases:
+      - OUT
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U1
+        pin_number: '2'
+        pin_name: OUT
+    - number: '3'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 177.8
+        y: 91.44
+      net: VCC
+      net_aliases:
+      - VCC
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#PWR01'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: '#PWR03'
+        pin_number: '1'
+        pin_name: VCC
+      - reference: C1
+        pin_number: '1'
+        pin_name: '~'
+      - reference: U1
+        pin_number: '1'
+        pin_name: VDD
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.2705
+          y: -3.8105
+        max:
+          x: 1.2705
+          y: 3.8105
+        width: 2.541
+        height: 7.621
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 176.5295
+          y: 90.1695
+        max:
+          x: 179.0705
+          y: 97.7905
+        width: 2.541
+        height: 7.621
+        center:
+          x: 177.8
+          y: 93.98
+    warnings: []
+  connected_components:
+  - reference: '#PWR01'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: '#PWR02'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#PWR03'
+    pin_number: '1'
+    pin_name: VCC
+  - reference: '#PWR04'
+    pin_number: '1'
+    pin_name: GND
+  - reference: C1
+    pin_number: '1'
+    pin_name: '~'
+  - reference: C1
+    pin_number: '2'
+    pin_name: '~'
+  - reference: U1
+    pin_number: '1'
+    pin_name: VDD
+  - reference: U1
+    pin_number: '2'
+    pin_name: OUT
+  - reference: U1
+    pin_number: '3'
+    pin_name: GND
+pcb:
+  reference: K1
+  value: HEADER_MALE_3X1
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 79343134-4236-4365-a0d2-946c5565fb50
+  library_id: e-radionica.com footprinti:HEADER_MALE_3X1
+  layer: B.Cu
+  side: back
+  position:
+    x: 100.5
+    y: 119.0
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Sheetfile: Hall_effect_sensor_analog.kicad_sch
+    Sheetname: ''
+    Reference: K1
+    Value: HEADER_MALE_3X1
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 100.5
+      y: 116.46
+    placed_rotation: 360.0
+    size:
+      x: 1.7
+      y: 1.7
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: GND
+    net_number: 1
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -3.39
+          y: -0.85
+        max:
+          x: -1.69
+          y: 0.85
+        width: 1.7
+        height: 1.7
+        center:
+          x: -2.54
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 99.65
+          y: 115.61
+        max:
+          x: 101.35
+          y: 117.31
+        width: 1.7
+        height: 1.7
+        center:
+          x: 100.5
+          y: 116.46
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '2'
+    - reference: U1
+      pad_number: '3'
+  - number: '2'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 100.5
+      y: 119.0
+    placed_rotation: 360.0
+    size:
+      x: 1.7
+      y: 1.7
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: OUT
+    net_number: 3
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.85
+          y: -0.85
+        max:
+          x: 0.85
+          y: 0.85
+        width: 1.7
+        height: 1.7
+        center:
+          x: 0.0
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 99.65
+          y: 118.15
+        max:
+          x: 101.35
+          y: 119.85
+        width: 1.7
+        height: 1.7
+        center:
+          x: 100.5
+          y: 119.0
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: U1
+      pad_number: '2'
+  - number: '3'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 100.5
+      y: 121.54
+    placed_rotation: 360.0
+    size:
+      x: 1.7
+      y: 1.7
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: VCC
+    net_number: 2
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.69
+          y: -0.85
+        max:
+          x: 3.39
+          y: 0.85
+        width: 1.7
+        height: 1.7
+        center:
+          x: 2.54
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 99.65
+          y: 120.69
+        max:
+          x: 101.35
+          y: 122.39
+        width: 1.7
+        height: 1.7
+        center:
+          x: 100.5
+          y: 121.54
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '1'
+    - reference: U1
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -3.39
+        y: -0.85
+      max:
+        x: 3.39
+        y: 0.85
+      width: 6.78
+      height: 1.7
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 99.65
+        y: 115.61
+      max:
+        x: 101.35
+        y: 122.39
+      width: 1.7
+      height: 6.78
+      center:
+        x: 100.5
+        y: 119.0
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -3.87
+        y: -1.33
+      max:
+        x: 3.87
+        y: 1.33
+      width: 7.74
+      height: 2.66
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 99.17
+        y: 115.13
+      max:
+        x: 101.83
+        y: 122.87
+      width: 2.66
+      height: 7.74
+      center:
+        x: 100.5
+        y: 119.0
+  connected_components:
+  - C1
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - GND
+    pcb_nets:
+    - GND
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - OUT
+    pcb_nets:
+    - OUT
+    status: agree
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - VCC
+    pcb_nets:
+    - VCC
+    status: agree
+  agree_count: 3
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+  confidence: 1.0
+  proposed_oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+  inferred:
+    kind: connector_header
+    package_size: null
+    value: HEADER_MALE_3X1
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: connector
+category_source: oomp_populate
+category_name: Connector
+generated_directory: components/K1

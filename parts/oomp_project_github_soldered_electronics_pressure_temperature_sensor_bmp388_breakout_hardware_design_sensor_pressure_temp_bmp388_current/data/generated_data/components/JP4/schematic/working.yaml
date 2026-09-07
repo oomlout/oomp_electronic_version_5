@@ -1,0 +1,146 @@
+available: true
+units:
+- reference: JP4
+  source_file: data/kicad_file.kicad_sch
+  uuid: d6e91e8f-5695-4611-b793-d84c93f63b9e
+  library_id: e-radionica.com schematics:SMD-JUMPER-CONNECTED_TRACE_SOLDERMASK
+  unit: 1
+  body_style: 1
+  position:
+    x: 177.8
+    y: 121.92
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP4
+    Value: SMD-JUMPER-CONNECTED_TRACE_SOLDERMASK
+    Footprint: e-radionica.com footprinti:SMD-JUMPER-CONNECTED_TRACE_SOLDERMASK
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: ''
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 177.8
+      y: 125.73
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C3
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U3
+      pin_number: '1'
+      pin_name: VIN
+    - reference: U3
+      pin_number: '3'
+      pin_name: EN
+  - number: '2'
+    name: ''
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 177.8
+      y: 118.11
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR017'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#PWR019'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: JP1
+      pin_number: '2'
+      pin_name: ''
+    - reference: JP5
+      pin_number: '1'
+      pin_name: ''
+    - reference: K2
+      pin_number: '3'
+      pin_name: '~'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.6659
+        y: 0.5242
+      max:
+        x: 1.6345
+        y: 1.20198
+      width: 3.3004
+      height: 0.67778
+      center:
+        x: -0.0157
+        y: 0.86309
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 176.59802
+        y: 120.2855
+      max:
+        x: 177.2758
+        y: 123.5859
+      width: 0.67778
+      height: 3.3004
+      center:
+        x: 176.93691
+        y: 121.9357
+  warnings: []
+connected_components:
+- reference: '#PWR03'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR017'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#PWR019'
+  pin_number: '1'
+  pin_name: VCC
+- reference: C3
+  pin_number: '2'
+  pin_name: '~'
+- reference: JP1
+  pin_number: '2'
+  pin_name: ''
+- reference: JP5
+  pin_number: '1'
+  pin_name: ''
+- reference: K2
+  pin_number: '3'
+  pin_name: '~'
+- reference: U3
+  pin_number: '1'
+  pin_name: VIN
+- reference: U3
+  pin_number: '3'
+  pin_name: EN

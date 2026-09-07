@@ -1,0 +1,142 @@
+reference: TP2
+available: true
+measurement_policy: Footprint text is excluded. Separate pad, courtyard, fabrication, silkscreen, and overall bounds are retained.
+measurements:
+  pads_local:
+    measurement: all footprint pads in footprint-local coordinates
+    units: mm
+    available: true
+    min:
+      x: -1.25
+      y: -1.25
+    max:
+      x: 1.25
+      y: 1.25
+    width: 2.5
+    height: 2.5
+    center:
+      x: 0.0
+      y: 0.0
+  pads_placed:
+    measurement: all pads after PCB placement and rotation
+    units: mm
+    available: true
+    min:
+      x: 110.2
+      y: 105.75
+    max:
+      x: 112.7
+      y: 108.25
+    width: 2.5
+    height: 2.5
+    center:
+      x: 111.45
+      y: 107.0
+  courtyard_local:
+    measurement: F.CrtYd and B.CrtYd graphics; text excluded
+    units: mm
+    available: true
+    min:
+      x: -1.775
+      y: -1.775
+    max:
+      x: 1.775
+      y: 1.775
+    width: 3.55
+    height: 3.55
+    center:
+      x: 0.0
+      y: 0.0
+  courtyard_placed:
+    measurement: courtyard after PCB placement and rotation
+    units: mm
+    available: true
+    min:
+      x: 109.675
+      y: 105.225
+    max:
+      x: 113.225
+      y: 108.775
+    width: 3.55
+    height: 3.55
+    center:
+      x: 111.45
+      y: 107.0
+  fabrication_local:
+    measurement: F.Fab and B.Fab graphics; text excluded
+    units: mm
+    available: false
+    min: null
+    max: null
+    width: null
+    height: null
+    center: null
+  fabrication_placed:
+    measurement: fabrication graphics after placement
+    units: mm
+    available: false
+    min: null
+    max: null
+    width: null
+    height: null
+    center: null
+  silkscreen_local:
+    measurement: F.SilkS and B.SilkS graphics; text excluded
+    units: mm
+    available: true
+    min:
+      x: -1.51
+      y: -1.51
+    max:
+      x: 1.51
+      y: 1.51
+    width: 3.02
+    height: 3.02
+    center:
+      x: 0.0
+      y: 0.0
+  silkscreen_placed:
+    measurement: silkscreen graphics after placement
+    units: mm
+    available: true
+    min:
+      x: 109.94
+      y: 105.49
+    max:
+      x: 112.96
+      y: 108.51
+    width: 3.02
+    height: 3.02
+    center:
+      x: 111.45
+      y: 107.0
+  overall_local:
+    measurement: all non-text footprint graphics and pads
+    units: mm
+    available: true
+    min:
+      x: -1.775
+      y: -1.775
+    max:
+      x: 1.775
+      y: 1.775
+    width: 3.55
+    height: 3.55
+    center:
+      x: 0.0
+      y: 0.0
+  overall_placed:
+    measurement: all non-text footprint graphics and pads after placement
+    units: mm
+    available: true
+    min:
+      x: 109.675
+      y: 105.225
+    max:
+      x: 113.225
+      y: 108.775
+    width: 3.55
+    height: 3.55
+    center:
+      x: 111.45
+      y: 107.0

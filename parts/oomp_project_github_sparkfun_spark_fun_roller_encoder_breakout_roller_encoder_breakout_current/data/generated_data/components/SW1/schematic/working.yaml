@@ -1,0 +1,215 @@
+available: true
+units:
+- reference: SW1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 80213381-536d-418c-b53e-856740a08a37
+  library_id: RollerEncoder:Roller_Encoder_Switch
+  unit: 1
+  body_style: 1
+  position:
+    x: 119.38
+    y: 101.6
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: SW1
+    Value: Roller_Encoder_Switch
+    Footprint: RollerEncoder:RollerEncoder
+    Datasheet: '~'
+    Description: Roller encoder, incremental quadrate outputs, with switch
+    PROD_ID: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 111.76
+      y: 99.06
+    net: A
+    net_aliases:
+    - A
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '2'
+      pin_name: Pin_2
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 111.76
+      y: 101.6
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR01'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR02'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: GND
+    - reference: J1
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: SW1
+      pin_number: S2
+      pin_name: S2
+  - number: B
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 111.76
+      y: 104.14
+    net: B
+    net_aliases:
+    - B
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '1'
+      pin_name: Pin_1
+  - number: S1
+    name: S1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 127.0
+      y: 99.06
+    net: SWITCH
+    net_aliases:
+    - SWITCH
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '3'
+      pin_name: Pin_3
+  - number: S2
+    name: S2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 127.0
+      y: 104.14
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR01'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR02'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#PWR03'
+      pin_number: '1'
+      pin_name: GND
+    - reference: J1
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: SW1
+      pin_number: C
+      pin_name: C
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -5.207
+        y: -5.207
+      max:
+        x: 5.207
+        y: 5.207
+      width: 10.414
+      height: 10.414
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 114.173
+        y: 96.393
+      max:
+        x: 124.587
+        y: 106.807
+      width: 10.414
+      height: 10.414
+      center:
+        x: 119.38
+        y: 101.6
+  warnings: []
+connected_components:
+- reference: '#PWR01'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR02'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#PWR03'
+  pin_number: '1'
+  pin_name: GND
+- reference: J1
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J1
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J1
+  pin_number: '3'
+  pin_name: Pin_3
+- reference: J1
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: SW1
+  pin_number: C
+  pin_name: C
+- reference: SW1
+  pin_number: S2
+  pin_name: S2
