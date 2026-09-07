@@ -37,6 +37,14 @@ Resistor 12000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F1202TS` |
+| LCSC | [`C2930406`](https://www.lcsc.com/product-detail/C2930406.html) |
+
+
 
 
 

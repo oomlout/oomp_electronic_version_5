@@ -37,6 +37,14 @@ Resistor 1e+07 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RHC-01U106JT` |
+| LCSC | [`C2991657`](https://www.lcsc.com/product-detail/C2991657.html) |
+
+
 
 
 

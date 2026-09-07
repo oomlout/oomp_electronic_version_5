@@ -37,6 +37,14 @@ Resistor 2200 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF2201TEE` |
+| LCSC | [`C473508`](https://www.lcsc.com/product-detail/C473508.html) |
+
+
 
 
 

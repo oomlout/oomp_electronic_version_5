@@ -37,6 +37,14 @@ Capacitor 10 nF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FCC0402B103K500AT` |
+| LCSC | [`C5137480`](https://www.lcsc.com/product-detail/C5137480.html) |
+
+
 
 
 

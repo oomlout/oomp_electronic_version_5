@@ -37,6 +37,14 @@ Resistor 470000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC1206FR-07470KL` |
+| LCSC | [`C137273`](https://www.lcsc.com/product-detail/C137273.html) |
+
+
 
 
 

@@ -2,7 +2,7 @@
 
 `electronic_resistor_array_4_x_0402_convex_330_ohm_8_pin`
 
-Resistor array 330 Ohm 4 X 0402 Convex is an OOMP electronic resistor array definition. It uses the 4 x 0402 convex package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Resistor array 330 Ohm 4 X 0402 Convex is an OOMP electronic resistor array definition. It uses the 4 x 0402 convex package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.0 mm.
 
 ![Resistor array 330 Ohm 4 X 0402 Convex pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,7 @@ Resistor array 330 Ohm 4 X 0402 Convex is an OOMP electronic resistor array defi
 | OOMP ID | `electronic_resistor_array_4_x_0402_convex_330_ohm_8_pin` |
 | Type | Resistor Array |
 | Package / style | 4 x 0402 convex |
-| Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Nominal size | 2.0 &#x00D7; 1.0 mm |
 
 
 ## Classification
@@ -32,8 +32,8 @@ Resistor array 330 Ohm 4 X 0402 Convex is an OOMP electronic resistor array defi
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 3.2 mm |
-| Width | 1.6 mm |
+| Length | 2.0 mm |
+| Width | 1.0 mm |
 
 
 

@@ -37,6 +37,14 @@ Resistor 15 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRP1206F15R0TSN` |
+| LCSC | [`C2934388`](https://www.lcsc.com/product-detail/C2934388.html) |
+
+
 
 
 

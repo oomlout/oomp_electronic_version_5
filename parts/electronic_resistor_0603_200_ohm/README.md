@@ -37,6 +37,14 @@ Resistor 200 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0603FR-07200RL` |
+| LCSC | [`C114664`](https://www.lcsc.com/product-detail/C114664.html) |
+
+
 
 
 

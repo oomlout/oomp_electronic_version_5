@@ -37,6 +37,14 @@ Resistor 8200 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC-01W8201FT` |
+| LCSC | [`C321051`](https://www.lcsc.com/product-detail/C321051.html) |
+
+
 
 
 

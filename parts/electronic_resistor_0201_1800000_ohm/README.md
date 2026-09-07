@@ -37,6 +37,14 @@ Resistor 1.8e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RTT01185JTH` |
+| LCSC | [`C166413`](https://www.lcsc.com/product-detail/C166413.html) |
+
+
 
 
 

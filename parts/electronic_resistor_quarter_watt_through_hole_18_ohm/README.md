@@ -37,6 +37,14 @@ Resistor 18 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTE52-18R` |
+| LCSC | [`C723642`](https://www.lcsc.com/product-detail/C723642.html) |
+
+
 
 
 

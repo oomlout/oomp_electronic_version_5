@@ -37,6 +37,14 @@ Resistor 75 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTE52-75R` |
+| LCSC | [`C513654`](https://www.lcsc.com/product-detail/C513654.html) |
+
+
 
 
 

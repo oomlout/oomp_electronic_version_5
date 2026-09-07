@@ -37,6 +37,14 @@ Resistor 27000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FBF52-27K` |
+| LCSC | [`C1370982`](https://www.lcsc.com/product-detail/C1370982.html) |
+
+
 
 
 

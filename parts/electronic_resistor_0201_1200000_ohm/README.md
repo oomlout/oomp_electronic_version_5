@@ -37,6 +37,14 @@ Resistor 1.2e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1RC0201F1204` |
+| LCSC | [`C54530541`](https://www.lcsc.com/product-detail/C54530541.html) |
+
+
 
 
 

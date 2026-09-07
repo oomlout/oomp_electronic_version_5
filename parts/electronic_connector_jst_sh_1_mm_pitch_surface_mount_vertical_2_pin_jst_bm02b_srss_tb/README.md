@@ -47,6 +47,7 @@ Connector JST Sh BM02B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM02B-SRSS-TB` |
+| LCSC | [`C161690`](https://www.lcsc.com/product-detail/C161690.html) |
 
 
 

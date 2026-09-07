@@ -39,6 +39,14 @@ Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall is an OOMP elec
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FVH010ADA221M0654` |
+| LCSC | [`C7469982`](https://www.lcsc.com/product-detail/C7469982.html) |
+
+
 
 
 

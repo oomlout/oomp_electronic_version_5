@@ -37,6 +37,14 @@ Resistor 3900 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-073K9L` |
+| LCSC | [`C273280`](https://www.lcsc.com/product-detail/C273280.html) |
+
+
 
 
 

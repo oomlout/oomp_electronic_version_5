@@ -39,6 +39,14 @@ Capacitor 4.7 uF 16 V Tantalum 3216 AVX A is an OOMP electronic capacitor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CA45-B016K476T` |
+| LCSC | [`C6387914`](https://www.lcsc.com/product-detail/C6387914.html) |
+
+
 
 
 

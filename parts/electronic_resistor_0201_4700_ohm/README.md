@@ -37,6 +37,14 @@ Resistor 4700 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201JR-074K7L` |
+| LCSC | [`C142008`](https://www.lcsc.com/product-detail/C142008.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 12 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `EWWR0003J12R0T9` |
+| LCSC | [`C348852`](https://www.lcsc.com/product-detail/C348852.html) |
+
+
 
 
 

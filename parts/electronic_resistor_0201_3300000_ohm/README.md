@@ -37,6 +37,14 @@ Resistor 3.3e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF3304TEE` |
+| LCSC | [`C423582`](https://www.lcsc.com/product-detail/C423582.html) |
+
+
 
 
 

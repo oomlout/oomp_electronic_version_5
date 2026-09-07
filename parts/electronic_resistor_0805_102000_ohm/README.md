@@ -37,6 +37,14 @@ Resistor 102000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F1023TS` |
+| LCSC | [`C2999517`](https://www.lcsc.com/product-detail/C2999517.html) |
+
+
 
 
 

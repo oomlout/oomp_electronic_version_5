@@ -37,6 +37,14 @@ Resistor 390000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F3903T5E` |
+| LCSC | [`C17656`](https://www.lcsc.com/product-detail/C17656.html) |
+
+
 
 
 

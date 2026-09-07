@@ -37,6 +37,14 @@ Resistor 6.8e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF6804TEE` |
+| LCSC | [`C423449`](https://www.lcsc.com/product-detail/C423449.html) |
+
+
 
 
 

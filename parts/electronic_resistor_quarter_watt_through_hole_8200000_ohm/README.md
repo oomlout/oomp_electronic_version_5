@@ -37,6 +37,14 @@ Resistor 8.2e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC12JB8M20` |
+| LCSC | [`C19511659`](https://www.lcsc.com/product-detail/C19511659.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 5.6e+06 Ohm 0603 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F5604TS` |
+| LCSC | [`C2933237`](https://www.lcsc.com/product-detail/C2933237.html) |
+
+
 
 
 

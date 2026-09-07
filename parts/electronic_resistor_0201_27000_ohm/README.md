@@ -37,6 +37,14 @@ Resistor 27000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF2702TEE` |
+| LCSC | [`C270351`](https://www.lcsc.com/product-detail/C270351.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 330000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C2907320`](https://www.lcsc.com/product-detail/C2907320.html) |
+
+
 
 
 

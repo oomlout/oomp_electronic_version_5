@@ -37,6 +37,14 @@ Resistor 3300 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF3301TEE` |
+| LCSC | [`C270350`](https://www.lcsc.com/product-detail/C270350.html) |
+
+
 
 
 

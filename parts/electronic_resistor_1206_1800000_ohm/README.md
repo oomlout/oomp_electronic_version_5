@@ -37,6 +37,14 @@ Resistor 1.8e+06 Ohm 1206 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F1804TS` |
+| LCSC | [`C2933615`](https://www.lcsc.com/product-detail/C2933615.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 12 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC-01W12R0FT` |
+| LCSC | [`C304510`](https://www.lcsc.com/product-detail/C304510.html) |
+
+
 
 
 

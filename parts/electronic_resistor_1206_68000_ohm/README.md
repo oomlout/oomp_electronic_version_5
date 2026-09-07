@@ -37,6 +37,14 @@ Resistor 68000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C2907529`](https://www.lcsc.com/product-detail/C2907529.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 510000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-07510KL` |
+| LCSC | [`C295805`](https://www.lcsc.com/product-detail/C295805.html) |
+
+
 
 
 

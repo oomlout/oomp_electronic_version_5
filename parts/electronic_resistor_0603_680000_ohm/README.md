@@ -37,6 +37,14 @@ Resistor 680000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603WAF6803T5E` |
+| LCSC | [`C25822`](https://www.lcsc.com/product-detail/C25822.html) |
+
+
 
 
 

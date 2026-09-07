@@ -47,6 +47,7 @@ Connector JST Sh BM12B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM12B-SRSS-TB` |
+| LCSC | [`C5306746`](https://www.lcsc.com/product-detail/C5306746.html) |
 
 
 

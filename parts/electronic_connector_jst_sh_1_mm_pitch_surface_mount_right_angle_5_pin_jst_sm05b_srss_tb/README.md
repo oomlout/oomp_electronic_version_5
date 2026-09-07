@@ -47,6 +47,7 @@ Connector JST Sh SM05B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SM05B-SRSS-TB` |
+| LCSC | [`C189896`](https://www.lcsc.com/product-detail/C189896.html) |
 
 
 

@@ -37,6 +37,14 @@ Resistor 68000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF1/8W-68K&#x03A9;&#x00B1;1%T52` |
+| LCSC | [`C713932`](https://www.lcsc.com/product-detail/C713932.html) |
+
+
 
 
 

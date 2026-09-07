@@ -2,7 +2,7 @@
 
 `electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w`
 
-LED RGB WS2812B Worldsemi 5050 is an OOMP electronic led definition. It uses the 5050 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 5.0 mm.
+LED RGB WS2812B Worldsemi 5050 is an OOMP electronic led definition. It uses the 5050 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 5.0 mm. The definition includes 4 documented pins.
 
 ![LED RGB WS2812B Worldsemi 5050 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ LED RGB WS2812B Worldsemi 5050 is an OOMP electronic led definition. It uses the
 | Type | Led |
 | Package / style | 5050 |
 | Nominal size | 5.0 &#x00D7; 5.0 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -40,6 +41,16 @@ LED RGB WS2812B Worldsemi 5050 is an OOMP electronic led definition. It uses the
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | vdd | signal |
+| 2 | data_out | signal |
+| 3 | gnd | signal |
+| 4 | data_in | signal |
 
 
 

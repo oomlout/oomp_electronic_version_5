@@ -37,6 +37,14 @@ Resistor 270 Ohm 0201 is an OOMP electronic resistor definition. It uses the 020
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CNTO` |
+| LCSC | [`C55098252`](https://www.lcsc.com/product-detail/C55098252.html) |
+
+
 
 
 

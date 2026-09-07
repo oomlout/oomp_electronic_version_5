@@ -37,6 +37,14 @@ Resistor 33000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603WAF3302T5E` |
+| LCSC | [`C4216`](https://www.lcsc.com/product-detail/C4216.html) |
+
+
 
 
 

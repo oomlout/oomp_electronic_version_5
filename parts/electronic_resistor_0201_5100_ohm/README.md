@@ -37,6 +37,14 @@ Resistor 5100 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMJ0512TEE` |
+| LCSC | [`C473460`](https://www.lcsc.com/product-detail/C473460.html) |
+
+
 
 
 

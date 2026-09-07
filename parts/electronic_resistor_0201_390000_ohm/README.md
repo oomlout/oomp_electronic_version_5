@@ -37,6 +37,14 @@ Resistor 390000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CNTO` |
+| LCSC | [`C55098269`](https://www.lcsc.com/product-detail/C55098269.html) |
+
+
 
 
 

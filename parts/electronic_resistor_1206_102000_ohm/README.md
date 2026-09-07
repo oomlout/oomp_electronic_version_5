@@ -37,6 +37,14 @@ Resistor 102000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F1023T5E` |
+| LCSC | [`C247406`](https://www.lcsc.com/product-detail/C247406.html) |
+
+
 
 
 

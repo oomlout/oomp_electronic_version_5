@@ -37,6 +37,14 @@ Resistor 39 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `HRC0201F39R0CNTO` |
+| LCSC | [`C55098201`](https://www.lcsc.com/product-detail/C55098201.html) |
+
+
 
 
 

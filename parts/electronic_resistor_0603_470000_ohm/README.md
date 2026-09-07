@@ -37,6 +37,14 @@ Resistor 470000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F4703TS` |
+| LCSC | [`C2907040`](https://www.lcsc.com/product-detail/C2907040.html) |
+
+
 
 
 

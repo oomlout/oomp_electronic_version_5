@@ -37,6 +37,14 @@ Resistor 18000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F1802T5E` |
+| LCSC | [`C17921`](https://www.lcsc.com/product-detail/C17921.html) |
+
+
 
 
 

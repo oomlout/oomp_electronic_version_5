@@ -37,6 +37,14 @@ Resistor 220000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F2203TS` |
+| LCSC | [`C2907242`](https://www.lcsc.com/product-detail/C2907242.html) |
+
+
 
 
 

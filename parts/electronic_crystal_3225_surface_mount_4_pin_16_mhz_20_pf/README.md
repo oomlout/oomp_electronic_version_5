@@ -40,6 +40,14 @@ Crystal 16 MHz 20 pF 3225 4-pin is an OOMP electronic crystal definition. It use
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `SX3B16.000F2010F30` |
+| LCSC | [`C2901671`](https://www.lcsc.com/product-detail/C2901671.html) |
+
+
 
 
 

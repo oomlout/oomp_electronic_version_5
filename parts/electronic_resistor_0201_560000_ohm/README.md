@@ -37,6 +37,14 @@ Resistor 560000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `AF0201FR-07560KL` |
+| LCSC | [`C2108111`](https://www.lcsc.com/product-detail/C2108111.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 10 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `KNP2W-10&#x03A9;&#x00B1;5%T` |
+| LCSC | [`C714512`](https://www.lcsc.com/product-detail/C714512.html) |
+
+
 
 
 

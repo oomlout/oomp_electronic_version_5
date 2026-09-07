@@ -37,6 +37,14 @@ Resistor 100000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F1003TS` |
+| LCSC | [`C2907368`](https://www.lcsc.com/product-detail/C2907368.html) |
+
+
 
 
 

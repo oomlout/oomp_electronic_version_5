@@ -37,6 +37,14 @@ Resistor 2700 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0201F2701TS` |
+| LCSC | [`C7467314`](https://www.lcsc.com/product-detail/C7467314.html) |
+
+
 
 
 

@@ -46,6 +46,7 @@ IC 74HCT4067PW,118 TSSOP 24 is an OOMP electronic ic definition. It uses the tss
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `74HCT4067PW,118` |
+| LCSC | [`C547734`](https://www.lcsc.com/product-detail/C547734.html) |
 
 
 

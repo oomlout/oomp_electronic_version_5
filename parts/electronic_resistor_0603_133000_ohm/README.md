@@ -37,6 +37,14 @@ Resistor 133000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F1333TS` |
+| LCSC | [`C2933141`](https://www.lcsc.com/product-detail/C2933141.html) |
+
+
 
 
 

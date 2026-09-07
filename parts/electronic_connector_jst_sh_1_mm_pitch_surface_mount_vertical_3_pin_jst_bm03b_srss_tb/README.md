@@ -47,6 +47,7 @@ Connector JST Sh BM03B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM03B-SRSS-TB` |
+| LCSC | [`C160389`](https://www.lcsc.com/product-detail/C160389.html) |
 
 
 

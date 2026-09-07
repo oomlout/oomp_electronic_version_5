@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_connector_jst_ph_2_mm_pitch_through_hole_vertical_2_pin_jst_b2b_ph_k_s](electronic_connector_jst_ph_2_mm_pitch_through_hole_vertical_2_pin_jst_b2b_ph_k_s.kicad_mod)
+
+Source: `Connector_JST:JST_PH_B2B-PH-K_1x02_P2.00mm_Vertical`. [License](../LICENSE.md).

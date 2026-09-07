@@ -37,6 +37,14 @@ Resistor 10 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-0710RL` |
+| LCSC | [`C106226`](https://www.lcsc.com/product-detail/C106226.html) |
+
+
 
 
 

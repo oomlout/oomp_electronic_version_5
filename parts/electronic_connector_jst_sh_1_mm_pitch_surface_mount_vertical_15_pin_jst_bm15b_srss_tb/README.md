@@ -47,6 +47,7 @@ Connector JST Sh BM15B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM15B-SRSS-TB` |
+| LCSC | [`C5305069`](https://www.lcsc.com/product-detail/C5305069.html) |
 
 
 

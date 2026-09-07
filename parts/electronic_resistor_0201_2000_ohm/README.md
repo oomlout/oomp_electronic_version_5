@@ -37,6 +37,14 @@ Resistor 2000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC-01W2001FT` |
+| LCSC | [`C310178`](https://www.lcsc.com/product-detail/C310178.html) |
+
+
 
 
 

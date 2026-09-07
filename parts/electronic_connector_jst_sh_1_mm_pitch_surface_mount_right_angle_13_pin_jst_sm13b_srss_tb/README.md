@@ -47,6 +47,7 @@ Connector JST Sh SM13B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SM13B-SRSS-TB` |
+| LCSC | [`C160412`](https://www.lcsc.com/product-detail/C160412.html) |
 
 
 

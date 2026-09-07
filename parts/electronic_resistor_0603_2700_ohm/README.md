@@ -37,6 +37,14 @@ Resistor 2700 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F2701TS` |
+| LCSC | [`C2907008`](https://www.lcsc.com/product-detail/C2907008.html) |
+
+
 
 
 

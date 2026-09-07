@@ -37,6 +37,14 @@ Resistor 6800 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-076K8L` |
+| LCSC | [`C274877`](https://www.lcsc.com/product-detail/C274877.html) |
+
+
 
 
 

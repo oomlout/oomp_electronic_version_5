@@ -37,6 +37,14 @@ Resistor 33 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMJ0330TEE` |
+| LCSC | [`C423356`](https://www.lcsc.com/product-detail/C423356.html) |
+
+
 
 
 

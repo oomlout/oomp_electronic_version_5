@@ -37,6 +37,14 @@ Resistor 56 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C2933788`](https://www.lcsc.com/product-detail/C2933788.html) |
+
+
 
 
 

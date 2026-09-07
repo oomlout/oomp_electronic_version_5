@@ -37,6 +37,14 @@ Resistor 120 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F1200TS` |
+| LCSC | [`C2933584`](https://www.lcsc.com/product-detail/C2933584.html) |
+
+
 
 
 

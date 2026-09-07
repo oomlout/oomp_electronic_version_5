@@ -37,6 +37,14 @@ Resistor 100 Ohm 0201 is an OOMP electronic resistor definition. It uses the 020
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-07100RL` |
+| LCSC | [`C77623`](https://www.lcsc.com/product-detail/C77623.html) |
+
+
 
 
 

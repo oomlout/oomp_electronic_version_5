@@ -37,6 +37,14 @@ Capacitor 27 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CC0603JRNPO9BN270` |
+| LCSC | [`C107045`](https://www.lcsc.com/product-detail/C107045.html) |
+
+
 
 
 

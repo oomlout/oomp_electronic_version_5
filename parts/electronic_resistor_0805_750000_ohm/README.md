@@ -37,6 +37,14 @@ Resistor 750000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F7503TS` |
+| LCSC | [`C2933497`](https://www.lcsc.com/product-detail/C2933497.html) |
+
+
 
 
 

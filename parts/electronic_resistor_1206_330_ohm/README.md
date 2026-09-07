@@ -37,6 +37,14 @@ Resistor 330 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F3300T5E` |
+| LCSC | [`C17930`](https://www.lcsc.com/product-detail/C17930.html) |
+
+
 
 
 

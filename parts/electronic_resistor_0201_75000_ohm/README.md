@@ -37,6 +37,14 @@ Resistor 75000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-0775KL` |
+| LCSC | [`C295816`](https://www.lcsc.com/product-detail/C295816.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 270000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603WAF2703T5E` |
+| LCSC | [`C22965`](https://www.lcsc.com/product-detail/C22965.html) |
+
+
 
 
 

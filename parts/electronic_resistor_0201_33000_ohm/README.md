@@ -37,6 +37,14 @@ Resistor 33000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-0733KL` |
+| LCSC | [`C155694`](https://www.lcsc.com/product-detail/C155694.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 6800 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F6801TS` |
+| LCSC | [`C2933747`](https://www.lcsc.com/product-detail/C2933747.html) |
+
+
 
 
 

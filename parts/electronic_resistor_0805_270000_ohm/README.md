@@ -37,6 +37,14 @@ Resistor 270000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F2703TS` |
+| LCSC | [`C2930189`](https://www.lcsc.com/product-detail/C2930189.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 82 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC-01W82R0FT` |
+| LCSC | [`C321062`](https://www.lcsc.com/product-detail/C321062.html) |
+
+
 
 
 

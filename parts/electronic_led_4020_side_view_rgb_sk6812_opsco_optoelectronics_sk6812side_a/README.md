@@ -2,7 +2,7 @@
 
 `electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a`
 
-LED SK6812SIDE-A 4020 SIDE VIEW is an OOMP electronic led definition. It uses the 4020 side view package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm. The definition includes 4 documented pins.
+LED SK6812SIDE-A 4020 SIDE VIEW is an OOMP electronic led definition. It uses the 4020 side view package or form factor. Its nominal drawing size is 4.0 &#x00D7; 2.0 mm. The definition includes 4 documented pins.
 
 ![LED SK6812SIDE-A 4020 SIDE VIEW pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,7 @@ LED SK6812SIDE-A 4020 SIDE VIEW is an OOMP electronic led definition. It uses th
 | OOMP ID | `electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a` |
 | Type | Led |
 | Package / style | 4020 side view |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.0 &#x00D7; 2.0 mm |
 | Documented pins | 4 |
 
 
@@ -35,8 +35,8 @@ LED SK6812SIDE-A 4020 SIDE VIEW is an OOMP electronic led definition. It uses th
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 4.0 mm |
+| Width | 2.0 mm |
 
 
 

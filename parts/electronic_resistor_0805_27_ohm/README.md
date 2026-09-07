@@ -37,6 +37,14 @@ Resistor 27 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F270JT5E` |
+| LCSC | [`C17594`](https://www.lcsc.com/product-detail/C17594.html) |
+
+
 
 
 

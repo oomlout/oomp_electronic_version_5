@@ -37,6 +37,14 @@ Resistor 120 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F1200TS` |
+| LCSC | [`C2906988`](https://www.lcsc.com/product-detail/C2906988.html) |
+
+
 
 
 

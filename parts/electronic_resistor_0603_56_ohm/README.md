@@ -37,6 +37,14 @@ Resistor 56 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0603
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603WAF560JT5E` |
+| LCSC | [`C25196`](https://www.lcsc.com/product-detail/C25196.html) |
+
+
 
 
 

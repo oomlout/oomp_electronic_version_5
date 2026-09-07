@@ -37,6 +37,14 @@ Resistor 2700 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CR1/4W-2K7&#x00B1;5%-ST26` |
+| LCSC | [`C2894624`](https://www.lcsc.com/product-detail/C2894624.html) |
+
+
 
 
 

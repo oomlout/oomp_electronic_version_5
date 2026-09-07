@@ -37,6 +37,14 @@ Resistor 27 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF270JTEE` |
+| LCSC | [`C473051`](https://www.lcsc.com/product-detail/C473051.html) |
+
+
 
 
 

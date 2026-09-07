@@ -37,6 +37,14 @@ Resistor 68 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F68R0TS` |
+| LCSC | [`C2933487`](https://www.lcsc.com/product-detail/C2933487.html) |
+
+
 
 
 

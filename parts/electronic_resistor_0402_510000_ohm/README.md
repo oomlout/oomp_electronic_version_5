@@ -37,6 +37,14 @@ Resistor 510000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0402FR-07510KL` |
+| LCSC | [`C137961`](https://www.lcsc.com/product-detail/C137961.html) |
+
+
 
 
 

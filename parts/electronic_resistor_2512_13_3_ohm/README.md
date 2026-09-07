@@ -37,6 +37,14 @@ Resistor 13.3 Ohm 2512 is an OOMP electronic resistor definition. It uses the 25
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RMEF2512FT133R` |
+| LCSC | [`C6981998`](https://www.lcsc.com/product-detail/C6981998.html) |
+
+
 
 
 

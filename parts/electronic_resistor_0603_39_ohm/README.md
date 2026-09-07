@@ -37,6 +37,14 @@ Resistor 39 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0603
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C2907161`](https://www.lcsc.com/product-detail/C2907161.html) |
+
+
 
 
 

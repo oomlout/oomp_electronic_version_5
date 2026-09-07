@@ -37,6 +37,14 @@ Resistor 0 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definiti
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25-T-52-0R` |
+| LCSC | [`C173063`](https://www.lcsc.com/product-detail/C173063.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 470 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CR1/2W-470&#x03A9;&#x00B1;5%-XT52` |
+| LCSC | [`C2894503`](https://www.lcsc.com/product-detail/C2894503.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 2.7e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RK73B1HTTC275J` |
+| LCSC | [`C307097`](https://www.lcsc.com/product-detail/C307097.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 5.6e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FNTN` |
+| LCSC | [`C54921355`](https://www.lcsc.com/product-detail/C54921355.html) |
+
+
 
 
 

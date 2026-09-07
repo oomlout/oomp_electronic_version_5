@@ -40,6 +40,14 @@ Crystal 12 MHz 20 pF 3225 4-pin is an OOMP electronic crystal definition. It use
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TAXM12M4RLBDDT2T` |
+| LCSC | [`C133334`](https://www.lcsc.com/product-detail/C133334.html) |
+
+
 
 
 

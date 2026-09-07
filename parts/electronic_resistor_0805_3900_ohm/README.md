@@ -37,6 +37,14 @@ Resistor 3900 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F3901TS` |
+| LCSC | [`C2907252`](https://www.lcsc.com/product-detail/C2907252.html) |
+
+
 
 
 

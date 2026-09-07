@@ -37,6 +37,14 @@ Resistor 3.3e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR50SFTE52-3M3` |
+| LCSC | [`C914831`](https://www.lcsc.com/product-detail/C914831.html) |
+
+
 
 
 

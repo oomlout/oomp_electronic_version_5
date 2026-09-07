@@ -37,6 +37,14 @@ Resistor 1e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF1/4W-1M&#x00B1;1%-OT52` |
+| LCSC | [`C2903250`](https://www.lcsc.com/product-detail/C2903250.html) |
+
+
 
 
 

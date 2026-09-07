@@ -47,6 +47,7 @@ Connector JST Sh BM16B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM16B-SRSS-TB` |
+| LCSC | [`C594409`](https://www.lcsc.com/product-detail/C594409.html) |
 
 
 

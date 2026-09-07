@@ -1,10 +1,10 @@
-# Fuse Resettable 0402
+# Fuse SMD0402-004-12 0402
 
 `electronic_fuse_0402_resettable`
 
-Fuse Resettable 0402 is an OOMP electronic fuse definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
+Fuse SMD0402-004-12 0402 is an OOMP electronic fuse definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
 
-![Fuse Resettable 0402 pinout](data/working_svg_square_pins.svg)
+![Fuse SMD0402-004-12 0402 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -36,6 +36,14 @@ Fuse Resettable 0402 is an OOMP electronic fuse definition. It uses the 0402 pac
 | Width | 0.5 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `SMD0402-004-12` |
+| LCSC | [`C48951238`](https://www.lcsc.com/product-detail/C48951238.html) |
 
 
 

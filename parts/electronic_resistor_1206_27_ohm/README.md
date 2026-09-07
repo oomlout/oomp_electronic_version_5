@@ -37,6 +37,14 @@ Resistor 27 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F270JT5E` |
+| LCSC | [`C17946`](https://www.lcsc.com/product-detail/C17946.html) |
+
+
 
 
 

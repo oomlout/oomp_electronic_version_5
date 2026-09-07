@@ -37,6 +37,14 @@ Resistor 8200 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTE52-8K2` |
+| LCSC | [`C173049`](https://www.lcsc.com/product-detail/C173049.html) |
+
+
 
 
 

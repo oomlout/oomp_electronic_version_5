@@ -37,6 +37,14 @@ Resistor 68 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTE52-68R` |
+| LCSC | [`C173041`](https://www.lcsc.com/product-detail/C173041.html) |
+
+
 
 
 

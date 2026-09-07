@@ -37,6 +37,14 @@ Resistor 56 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1RC0201F5609` |
+| LCSC | [`C54530591`](https://www.lcsc.com/product-detail/C54530591.html) |
+
+
 
 
 

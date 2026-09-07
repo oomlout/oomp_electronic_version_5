@@ -47,6 +47,7 @@ Connector JST Sh SM10B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SM10B-SRSS-TB` |
+| LCSC | [`C160409`](https://www.lcsc.com/product-detail/C160409.html) |
 
 
 

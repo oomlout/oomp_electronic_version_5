@@ -37,6 +37,14 @@ Capacitor 22 nF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CC0402KRX7R7BB223` |
+| LCSC | [`C107017`](https://www.lcsc.com/product-detail/C107017.html) |
+
+
 
 
 

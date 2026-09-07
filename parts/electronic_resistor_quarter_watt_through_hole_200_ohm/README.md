@@ -37,6 +37,14 @@ Resistor 200 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF1/4W-200&#x03A9;&#x00B1;1%-OT26` |
+| LCSC | [`C2843022`](https://www.lcsc.com/product-detail/C2843022.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 4.7e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F4704TS` |
+| LCSC | [`C2933449`](https://www.lcsc.com/product-detail/C2933449.html) |
+
+
 
 
 

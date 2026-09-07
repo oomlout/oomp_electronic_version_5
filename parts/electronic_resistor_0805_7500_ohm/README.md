@@ -37,6 +37,14 @@ Resistor 7500 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F7501T5E` |
+| LCSC | [`C17807`](https://www.lcsc.com/product-detail/C17807.html) |
+
+
 
 
 

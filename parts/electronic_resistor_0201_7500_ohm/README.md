@@ -37,6 +37,14 @@ Resistor 7500 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RK73H1HTTC7501F` |
+| LCSC | [`C172777`](https://www.lcsc.com/product-detail/C172777.html) |
+
+
 
 
 

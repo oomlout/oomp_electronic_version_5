@@ -37,6 +37,14 @@ Resistor 3.9e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RK73B1HTTC395J` |
+| LCSC | [`C307101`](https://www.lcsc.com/product-detail/C307101.html) |
+
+
 
 
 

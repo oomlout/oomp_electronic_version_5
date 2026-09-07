@@ -37,6 +37,14 @@ Resistor 133000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `HRC0805F1333FNTN` |
+| LCSC | [`C55098541`](https://www.lcsc.com/product-detail/C55098541.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 820000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF8203TEE` |
+| LCSC | [`C423427`](https://www.lcsc.com/product-detail/C423427.html) |
+
+
 
 
 

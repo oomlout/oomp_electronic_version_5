@@ -37,6 +37,14 @@ Resistor 1.8e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CFR-25JT-52-1M8` |
+| LCSC | [`C1370519`](https://www.lcsc.com/product-detail/C1370519.html) |
+
+
 
 
 

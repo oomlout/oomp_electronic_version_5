@@ -37,6 +37,14 @@ Resistor 150 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C2907300`](https://www.lcsc.com/product-detail/C2907300.html) |
+
+
 
 
 

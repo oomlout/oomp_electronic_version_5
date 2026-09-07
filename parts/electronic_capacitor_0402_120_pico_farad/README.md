@@ -37,6 +37,14 @@ Capacitor 120 pF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CC0402JRNPO9BN121` |
+| LCSC | [`C106996`](https://www.lcsc.com/product-detail/C106996.html) |
+
+
 
 
 

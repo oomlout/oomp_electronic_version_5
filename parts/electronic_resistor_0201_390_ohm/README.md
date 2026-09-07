@@ -37,6 +37,14 @@ Resistor 390 Ohm 0201 is an OOMP electronic resistor definition. It uses the 020
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMJ0391TEE` |
+| LCSC | [`C473467`](https://www.lcsc.com/product-detail/C473467.html) |
+
+
 
 
 

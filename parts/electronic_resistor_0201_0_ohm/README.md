@@ -37,6 +37,14 @@ Resistor 0 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF0000TEE` |
+| LCSC | [`C473473`](https://www.lcsc.com/product-detail/C473473.html) |
+
+
 
 
 

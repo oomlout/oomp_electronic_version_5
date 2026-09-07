@@ -37,6 +37,14 @@ Resistor 3900 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR50SFTE52-3K9` |
+| LCSC | [`C1375312`](https://www.lcsc.com/product-detail/C1375312.html) |
+
+
 
 
 

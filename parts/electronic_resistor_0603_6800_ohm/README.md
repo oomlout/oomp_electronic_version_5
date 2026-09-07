@@ -37,6 +37,14 @@ Resistor 6800 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F6801TS` |
+| LCSC | [`C2907055`](https://www.lcsc.com/product-detail/C2907055.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 680 Ohm 0201 is an OOMP electronic resistor definition. It uses the 020
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF6800TEE` |
+| LCSC | [`C473509`](https://www.lcsc.com/product-detail/C473509.html) |
+
+
 
 
 

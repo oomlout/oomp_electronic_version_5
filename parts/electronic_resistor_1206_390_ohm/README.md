@@ -37,6 +37,14 @@ Resistor 390 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F3900T5E` |
+| LCSC | [`C4491`](https://www.lcsc.com/product-detail/C4491.html) |
+
+
 
 
 

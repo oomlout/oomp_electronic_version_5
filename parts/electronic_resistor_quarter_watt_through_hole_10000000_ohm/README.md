@@ -37,6 +37,14 @@ Resistor 1e+07 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RI40-1W-10M&#x03A9;&#x00B1;2%T` |
+| LCSC | [`C714675`](https://www.lcsc.com/product-detail/C714675.html) |
+
+
 
 
 

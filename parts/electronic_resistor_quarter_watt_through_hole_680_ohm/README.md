@@ -37,6 +37,14 @@ Resistor 680 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTE52-680R` |
+| LCSC | [`C173039`](https://www.lcsc.com/product-detail/C173039.html) |
+
+
 
 
 

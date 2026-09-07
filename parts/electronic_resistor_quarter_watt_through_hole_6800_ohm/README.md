@@ -37,6 +37,14 @@ Resistor 6800 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CFR-25JB-52-6K8` |
+| LCSC | [`C1366599`](https://www.lcsc.com/product-detail/C1366599.html) |
+
+
 
 
 

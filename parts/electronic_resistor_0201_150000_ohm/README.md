@@ -37,6 +37,14 @@ Resistor 150000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF1503TEE` |
+| LCSC | [`C473465`](https://www.lcsc.com/product-detail/C473465.html) |
+
+
 
 
 

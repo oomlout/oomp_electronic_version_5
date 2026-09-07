@@ -37,6 +37,14 @@ Resistor 180 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `T` |
+| LCSC | [`C120037`](https://www.lcsc.com/product-detail/C120037.html) |
+
+
 
 
 

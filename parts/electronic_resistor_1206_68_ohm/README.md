@@ -37,6 +37,14 @@ Resistor 68 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F68R0TS` |
+| LCSC | [`C2930011`](https://www.lcsc.com/product-detail/C2930011.html) |
+
+
 
 
 

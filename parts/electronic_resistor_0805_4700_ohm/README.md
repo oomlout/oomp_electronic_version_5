@@ -37,6 +37,14 @@ Resistor 4700 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F4701TS` |
+| LCSC | [`C2907264`](https://www.lcsc.com/product-detail/C2907264.html) |
+
+
 
 
 

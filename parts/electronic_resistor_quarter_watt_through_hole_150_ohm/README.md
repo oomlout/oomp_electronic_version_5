@@ -37,6 +37,14 @@ Resistor 150 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RSF3WSJT-73-150R` |
+| LCSC | [`C1392170`](https://www.lcsc.com/product-detail/C1392170.html) |
+
+
 
 
 

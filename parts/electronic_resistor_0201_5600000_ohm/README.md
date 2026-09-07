@@ -37,6 +37,14 @@ Resistor 5.6e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-075M6L` |
+| LCSC | [`C474751`](https://www.lcsc.com/product-detail/C474751.html) |
+
+
 
 
 

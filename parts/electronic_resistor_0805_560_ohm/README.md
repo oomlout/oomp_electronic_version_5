@@ -37,6 +37,14 @@ Resistor 560 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8J0561T5E` |
+| LCSC | [`C25319`](https://www.lcsc.com/product-detail/C25319.html) |
+
+
 
 
 

@@ -47,6 +47,7 @@ Connector JST Ph B6B-PH-SM4-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `B6B-PH-SM4-TB` |
+| LCSC | [`C2875161`](https://www.lcsc.com/product-detail/C2875161.html) |
 
 
 

@@ -37,6 +37,14 @@ Resistor 8.2e+06 Ohm 0603 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F8204TS` |
+| LCSC | [`C5713293`](https://www.lcsc.com/product-detail/C5713293.html) |
+
+
 
 
 

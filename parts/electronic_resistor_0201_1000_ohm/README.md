@@ -37,6 +37,14 @@ Resistor 1000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201JR-071KL` |
+| LCSC | [`C131396`](https://www.lcsc.com/product-detail/C131396.html) |
+
+
 
 
 

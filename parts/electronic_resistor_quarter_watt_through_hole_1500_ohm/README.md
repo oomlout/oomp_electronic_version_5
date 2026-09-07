@@ -37,6 +37,14 @@ Resistor 1500 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF1W-1K5&#x00B1;1%-TT63` |
+| LCSC | [`C2903196`](https://www.lcsc.com/product-detail/C2903196.html) |
+
+
 
 
 

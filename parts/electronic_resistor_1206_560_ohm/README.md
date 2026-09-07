@@ -37,6 +37,14 @@ Resistor 560 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C3013270`](https://www.lcsc.com/product-detail/C3013270.html) |
+
+
 
 
 

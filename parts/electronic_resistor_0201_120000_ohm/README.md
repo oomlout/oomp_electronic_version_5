@@ -37,6 +37,14 @@ Resistor 120000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-07120KL` |
+| LCSC | [`C274344`](https://www.lcsc.com/product-detail/C274344.html) |
+
+
 
 
 

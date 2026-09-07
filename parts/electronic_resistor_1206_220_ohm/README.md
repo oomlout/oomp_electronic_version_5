@@ -37,6 +37,14 @@ Resistor 220 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C2933785`](https://www.lcsc.com/product-detail/C2933785.html) |
+
+
 
 
 

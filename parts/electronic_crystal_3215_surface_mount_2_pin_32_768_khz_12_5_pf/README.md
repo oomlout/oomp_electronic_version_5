@@ -40,6 +40,14 @@ Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal definition. 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `Q13FC13500004` |
+| LCSC | [`C32346`](https://www.lcsc.com/product-detail/C32346.html) |
+
+
 
 
 

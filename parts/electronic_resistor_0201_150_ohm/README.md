@@ -37,6 +37,14 @@ Resistor 150 Ohm 0201 is an OOMP electronic resistor definition. It uses the 020
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-07150RL` |
+| LCSC | [`C295773`](https://www.lcsc.com/product-detail/C295773.html) |
+
+
 
 
 

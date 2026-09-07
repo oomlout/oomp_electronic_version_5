@@ -37,6 +37,14 @@ Resistor 470000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201JR-07470KL` |
+| LCSC | [`C138098`](https://www.lcsc.com/product-detail/C138098.html) |
+
+
 
 
 

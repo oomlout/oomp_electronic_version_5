@@ -37,6 +37,14 @@ Resistor 560 Ohm 0201 is an OOMP electronic resistor definition. It uses the 020
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1RC0201F5600` |
+| LCSC | [`C54530589`](https://www.lcsc.com/product-detail/C54530589.html) |
+
+
 
 
 

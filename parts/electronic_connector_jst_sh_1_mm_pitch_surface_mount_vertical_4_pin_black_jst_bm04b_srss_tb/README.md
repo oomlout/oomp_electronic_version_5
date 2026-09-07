@@ -48,6 +48,7 @@ Connector JST Sh BM04B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM04B-SRSS-TB` |
+| LCSC | [`C160390`](https://www.lcsc.com/product-detail/C160390.html) |
 
 
 

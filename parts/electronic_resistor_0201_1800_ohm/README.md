@@ -37,6 +37,14 @@ Resistor 1800 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMJ0182TEE` |
+| LCSC | [`C473538`](https://www.lcsc.com/product-detail/C473538.html) |
+
+
 
 
 

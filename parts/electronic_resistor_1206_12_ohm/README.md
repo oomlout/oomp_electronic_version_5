@@ -37,6 +37,14 @@ Resistor 12 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F120JT5E` |
+| LCSC | [`C17913`](https://www.lcsc.com/product-detail/C17913.html) |
+
+
 
 
 

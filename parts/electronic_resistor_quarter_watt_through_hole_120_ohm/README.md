@@ -37,6 +37,14 @@ Resistor 120 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTF52-120R` |
+| LCSC | [`C1371058`](https://www.lcsc.com/product-detail/C1371058.html) |
+
+
 
 
 

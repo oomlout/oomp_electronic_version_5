@@ -37,6 +37,14 @@ Resistor 5600 Ohm 0201 is an OOMP electronic resistor definition. It uses the 02
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF5601TEE` |
+| LCSC | [`C423481`](https://www.lcsc.com/product-detail/C423481.html) |
+
+
 
 
 

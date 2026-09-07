@@ -37,6 +37,14 @@ Resistor 39000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `STB5` |
+| LCSC | [`C337041`](https://www.lcsc.com/product-detail/C337041.html) |
+
+
 
 
 

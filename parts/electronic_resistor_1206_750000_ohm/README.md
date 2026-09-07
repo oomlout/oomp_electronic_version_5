@@ -37,6 +37,14 @@ Resistor 750000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F7503T5E` |
+| LCSC | [`C25835`](https://www.lcsc.com/product-detail/C25835.html) |
+
+
 
 
 

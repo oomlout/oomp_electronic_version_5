@@ -47,6 +47,7 @@ Connector JST Sh BM09B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM09B-SRSS-TB` |
+| LCSC | [`C495259`](https://www.lcsc.com/product-detail/C495259.html) |
 
 
 

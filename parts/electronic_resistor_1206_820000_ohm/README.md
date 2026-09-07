@@ -37,6 +37,14 @@ Resistor 820000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F8203TS` |
+| LCSC | [`C2960782`](https://www.lcsc.com/product-detail/C2960782.html) |
+
+
 
 
 

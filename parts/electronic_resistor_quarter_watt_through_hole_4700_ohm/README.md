@@ -37,6 +37,14 @@ Resistor 4700 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `T` |
+| LCSC | [`C119339`](https://www.lcsc.com/product-detail/C119339.html) |
+
+
 
 
 

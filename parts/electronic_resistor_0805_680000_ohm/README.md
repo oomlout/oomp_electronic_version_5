@@ -37,6 +37,14 @@ Resistor 680000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F6803T5E` |
+| LCSC | [`C17797`](https://www.lcsc.com/product-detail/C17797.html) |
+
+
 
 
 

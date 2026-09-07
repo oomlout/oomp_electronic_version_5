@@ -37,6 +37,14 @@ Resistor 10 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F100JT5E` |
+| LCSC | [`C17415`](https://www.lcsc.com/product-detail/C17415.html) |
+
+
 
 
 

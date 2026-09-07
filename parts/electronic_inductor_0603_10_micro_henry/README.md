@@ -1,10 +1,10 @@
-# Inductor 10 Micro Henry 0603
+# Inductor AHW1608FE100KTF 0603
 
 `electronic_inductor_0603_10_micro_henry`
 
-Inductor 10 Micro Henry 0603 is an OOMP electronic inductor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
+Inductor AHW1608FE100KTF 0603 is an OOMP electronic inductor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
-![Inductor 10 Micro Henry 0603 pinout](data/working_svg_square_pins.svg)
+![Inductor AHW1608FE100KTF 0603 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -36,6 +36,14 @@ Inductor 10 Micro Henry 0603 is an OOMP electronic inductor definition. It uses 
 | Width | 0.8 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `AHW1608FE100KTF` |
+| LCSC | [`C6808014`](https://www.lcsc.com/product-detail/C6808014.html) |
 
 
 

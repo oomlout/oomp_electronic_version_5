@@ -37,6 +37,14 @@ Resistor 0.2 Ohm 2512 is an OOMP electronic resistor definition. It uses the 251
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RPL-12L2R00FT` |
+| LCSC | [`C5119990`](https://www.lcsc.com/product-detail/C5119990.html) |
+
+
 
 
 

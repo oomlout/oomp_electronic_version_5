@@ -1,10 +1,10 @@
-# Diode Schottky SOD-523
+# Diode 1SS400SMT2R SOD-523
 
 `electronic_diode_schottky_sod_523_1ss400`
 
-Diode Schottky SOD-523 is an OOMP electronic diode definition. It uses the sod 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
+Diode 1SS400SMT2R SOD-523 is an OOMP electronic diode definition. It uses the sod 523 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
-![Diode Schottky SOD-523 pinout](data/working_svg_square_pins.svg)
+![Diode 1SS400SMT2R SOD-523 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -37,6 +37,14 @@ Diode Schottky SOD-523 is an OOMP electronic diode definition. It uses the sod 5
 | Width | 0.8 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1SS400SMT2R` |
+| LCSC | [`C253164`](https://www.lcsc.com/product-detail/C253164.html) |
 
 
 

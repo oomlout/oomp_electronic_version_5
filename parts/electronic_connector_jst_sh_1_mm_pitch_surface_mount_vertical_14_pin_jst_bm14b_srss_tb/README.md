@@ -47,6 +47,7 @@ Connector JST Sh BM14B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM14B-SRSS-TB` |
+| LCSC | [`C265384`](https://www.lcsc.com/product-detail/C265384.html) |
 
 
 

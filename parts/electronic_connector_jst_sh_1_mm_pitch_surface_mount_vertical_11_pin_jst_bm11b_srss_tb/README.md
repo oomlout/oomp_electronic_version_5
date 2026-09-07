@@ -47,6 +47,7 @@ Connector JST Sh BM11B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM11B-SRSS-TB` |
+| LCSC | [`C594396`](https://www.lcsc.com/product-detail/C594396.html) |
 
 
 

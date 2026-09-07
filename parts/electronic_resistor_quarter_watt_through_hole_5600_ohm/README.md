@@ -37,6 +37,14 @@ Resistor 5600 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `T` |
+| LCSC | [`C119341`](https://www.lcsc.com/product-detail/C119341.html) |
+
+
 
 
 

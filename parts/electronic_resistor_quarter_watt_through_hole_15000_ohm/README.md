@@ -37,6 +37,14 @@ Resistor 15000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FMP100JT-52-15K` |
+| LCSC | [`C1379222`](https://www.lcsc.com/product-detail/C1379222.html) |
+
+
 
 
 

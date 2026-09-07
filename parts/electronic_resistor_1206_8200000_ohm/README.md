@@ -37,6 +37,14 @@ Resistor 8.2e+06 Ohm 1206 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C2960809`](https://www.lcsc.com/product-detail/C2960809.html) |
+
+
 
 
 

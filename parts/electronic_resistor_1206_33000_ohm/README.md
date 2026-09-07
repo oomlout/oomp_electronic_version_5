@@ -37,6 +37,14 @@ Resistor 33000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F3302T5E` |
+| LCSC | [`C18004`](https://www.lcsc.com/product-detail/C18004.html) |
+
+
 
 
 

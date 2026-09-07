@@ -37,6 +37,14 @@ Resistor 100000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor def
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF1/4W-100K&#x00B1;1%-OT26` |
+| LCSC | [`C2843019`](https://www.lcsc.com/product-detail/C2843019.html) |
+
+
 
 
 

@@ -39,6 +39,14 @@ Capacitor 220 uF 10 V Electrolytic 8 mm diameter x 6.5 mm tall is an OOMP electr
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RVT220UF10V67RV0037` |
+| LCSC | [`C2833309`](https://www.lcsc.com/product-detail/C2833309.html) |
+
+
 
 
 

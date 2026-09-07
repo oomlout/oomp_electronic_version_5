@@ -37,6 +37,14 @@ Resistor 12000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR0W4F1202A50` |
+| LCSC | [`C58670`](https://www.lcsc.com/product-detail/C58670.html) |
+
+
 
 
 

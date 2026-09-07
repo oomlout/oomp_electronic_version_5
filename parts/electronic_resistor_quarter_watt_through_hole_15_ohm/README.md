@@ -37,6 +37,14 @@ Resistor 15 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `T` |
+| LCSC | [`C119285`](https://www.lcsc.com/product-detail/C119285.html) |
+
+
 
 
 

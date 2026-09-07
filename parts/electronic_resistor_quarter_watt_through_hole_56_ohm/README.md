@@ -37,6 +37,14 @@ Resistor 56 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF006FF560JA50` |
+| LCSC | [`C18724268`](https://www.lcsc.com/product-detail/C18724268.html) |
+
+
 
 
 

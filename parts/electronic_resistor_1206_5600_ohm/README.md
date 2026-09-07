@@ -37,6 +37,14 @@ Resistor 5600 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F5601TS` |
+| LCSC | [`C2933730`](https://www.lcsc.com/product-detail/C2933730.html) |
+
+
 
 
 

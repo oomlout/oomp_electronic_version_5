@@ -37,6 +37,14 @@ Resistor 510 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603WAF5100T5E` |
+| LCSC | [`C23193`](https://www.lcsc.com/product-detail/C23193.html) |
+
+
 
 
 

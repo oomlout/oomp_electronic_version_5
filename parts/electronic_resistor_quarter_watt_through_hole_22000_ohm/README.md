@@ -37,6 +37,14 @@ Resistor 22000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `T` |
+| LCSC | [`C119354`](https://www.lcsc.com/product-detail/C119354.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 15 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C18164323`](https://www.lcsc.com/product-detail/C18164323.html) |
+
+
 
 
 

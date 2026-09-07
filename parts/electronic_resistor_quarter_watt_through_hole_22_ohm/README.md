@@ -37,6 +37,14 @@ Resistor 22 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CFR-25JB-52-22R` |
+| LCSC | [`C1365706`](https://www.lcsc.com/product-detail/C1365706.html) |
+
+
 
 
 

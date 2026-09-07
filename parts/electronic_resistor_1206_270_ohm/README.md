@@ -37,6 +37,14 @@ Resistor 270 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F2700TS` |
+| LCSC | [`C2933655`](https://www.lcsc.com/product-detail/C2933655.html) |
+
+
 
 
 

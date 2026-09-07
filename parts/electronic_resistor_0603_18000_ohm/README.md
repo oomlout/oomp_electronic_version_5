@@ -37,6 +37,14 @@ Resistor 18000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F1802TS` |
+| LCSC | [`C2907001`](https://www.lcsc.com/product-detail/C2907001.html) |
+
+
 
 
 

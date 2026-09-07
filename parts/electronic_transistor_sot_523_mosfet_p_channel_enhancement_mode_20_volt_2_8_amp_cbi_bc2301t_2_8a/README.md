@@ -49,6 +49,7 @@ Transistor BC2301T-2.8A SOT 523 is an OOMP electronic transistor definition. It 
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BC2301T-2.8A` |
+| LCSC | [`C21714127`](https://www.lcsc.com/product-detail/C21714127.html) |
 
 
 

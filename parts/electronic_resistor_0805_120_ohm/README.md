@@ -37,6 +37,14 @@ Resistor 120 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F1200T5E` |
+| LCSC | [`C17437`](https://www.lcsc.com/product-detail/C17437.html) |
+
+
 
 
 

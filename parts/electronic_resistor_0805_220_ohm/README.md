@@ -37,6 +37,14 @@ Resistor 220 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F2200TS` |
+| LCSC | [`C2933369`](https://www.lcsc.com/product-detail/C2933369.html) |
+
+
 
 
 

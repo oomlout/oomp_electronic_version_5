@@ -37,6 +37,14 @@ Resistor 390 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTE52-390R` |
+| LCSC | [`C173010`](https://www.lcsc.com/product-detail/C173010.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 3.3e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F3304T5E` |
+| LCSC | [`C34154`](https://www.lcsc.com/product-detail/C34154.html) |
+
+
 
 
 

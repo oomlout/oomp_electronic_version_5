@@ -37,6 +37,14 @@ Resistor 75 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0201F75R0TS` |
+| LCSC | [`C18164340`](https://www.lcsc.com/product-detail/C18164340.html) |
+
+
 
 
 

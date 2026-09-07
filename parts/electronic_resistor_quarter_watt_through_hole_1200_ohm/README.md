@@ -37,6 +37,14 @@ Resistor 1200 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTE52-1K2` |
+| LCSC | [`C138211`](https://www.lcsc.com/product-detail/C138211.html) |
+
+
 
 
 

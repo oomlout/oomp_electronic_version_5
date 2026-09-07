@@ -37,6 +37,14 @@ Resistor 102000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC-01W1023FT` |
+| LCSC | [`C320501`](https://www.lcsc.com/product-detail/C320501.html) |
+
+
 
 
 

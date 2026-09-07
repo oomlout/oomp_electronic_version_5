@@ -37,6 +37,14 @@ Resistor 22000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F2202TS` |
+| LCSC | [`C2907375`](https://www.lcsc.com/product-detail/C2907375.html) |
+
+
 
 
 

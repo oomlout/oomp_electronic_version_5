@@ -37,6 +37,14 @@ Resistor 18000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F1802T5E` |
+| LCSC | [`C17506`](https://www.lcsc.com/product-detail/C17506.html) |
+
+
 
 
 

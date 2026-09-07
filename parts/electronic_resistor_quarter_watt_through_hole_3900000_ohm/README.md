@@ -37,6 +37,14 @@ Resistor 3.9e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `T` |
+| LCSC | [`C136527`](https://www.lcsc.com/product-detail/C136527.html) |
+
+
 
 
 

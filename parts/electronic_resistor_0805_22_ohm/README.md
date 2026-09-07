@@ -37,6 +37,14 @@ Resistor 22 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TS` |
+| LCSC | [`C2907310`](https://www.lcsc.com/product-detail/C2907310.html) |
+
+
 
 
 

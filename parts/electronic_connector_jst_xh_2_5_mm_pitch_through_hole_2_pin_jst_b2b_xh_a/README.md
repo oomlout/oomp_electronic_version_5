@@ -47,6 +47,7 @@ Connector JST Xh B2B-XH-A is an OOMP electronic connector definition. It uses th
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `B2B-XH-A` |
+| LCSC | [`C2875161`](https://www.lcsc.com/product-detail/C2875161.html) |
 
 
 

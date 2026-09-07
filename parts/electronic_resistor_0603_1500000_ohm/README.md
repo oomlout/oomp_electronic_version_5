@@ -37,6 +37,14 @@ Resistor 1.5e+06 Ohm 0603 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0603JR-071M5L` |
+| LCSC | [`C137651`](https://www.lcsc.com/product-detail/C137651.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 510 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4J0511T5E` |
+| LCSC | [`C25386`](https://www.lcsc.com/product-detail/C25386.html) |
+
+
 
 
 

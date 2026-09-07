@@ -37,6 +37,14 @@ Resistor 7.5e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RTT01755JTH` |
+| LCSC | [`C166393`](https://www.lcsc.com/product-detail/C166393.html) |
+
+
 
 
 

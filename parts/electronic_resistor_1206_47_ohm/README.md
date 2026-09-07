@@ -37,6 +37,14 @@ Resistor 47 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F47R0TS` |
+| LCSC | [`C2933712`](https://www.lcsc.com/product-detail/C2933712.html) |
+
+
 
 
 

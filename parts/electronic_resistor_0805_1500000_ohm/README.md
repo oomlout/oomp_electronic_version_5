@@ -37,6 +37,14 @@ Resistor 1.5e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F1504TS` |
+| LCSC | [`C2933325`](https://www.lcsc.com/product-detail/C2933325.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 47000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF1/4W-47K&#x00B1;1%-ST52` |
+| LCSC | [`C2857423`](https://www.lcsc.com/product-detail/C2857423.html) |
+
+
 
 
 

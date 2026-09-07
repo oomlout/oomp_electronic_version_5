@@ -47,6 +47,7 @@ Connector JST Sh BM08B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `BM08B-SRSS-TB` |
+| LCSC | [`C265120`](https://www.lcsc.com/product-detail/C265120.html) |
 
 
 

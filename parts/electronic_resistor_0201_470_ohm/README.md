@@ -37,6 +37,14 @@ Resistor 470 Ohm 0201 is an OOMP electronic resistor definition. It uses the 020
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF4700TEE` |
+| LCSC | [`C473464`](https://www.lcsc.com/product-detail/C473464.html) |
+
+
 
 
 

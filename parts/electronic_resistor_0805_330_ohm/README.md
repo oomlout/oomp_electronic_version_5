@@ -37,6 +37,14 @@ Resistor 330 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F3300T5E` |
+| LCSC | [`C17630`](https://www.lcsc.com/product-detail/C17630.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 39 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC1206F39R0TS` |
+| LCSC | [`C2933694`](https://www.lcsc.com/product-detail/C2933694.html) |
+
+
 
 
 

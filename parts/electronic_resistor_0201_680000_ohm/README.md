@@ -37,6 +37,14 @@ Resistor 680000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `GR0201J680KTAG00` |
+| LCSC | [`C49655543`](https://www.lcsc.com/product-detail/C49655543.html) |
+
+
 
 
 

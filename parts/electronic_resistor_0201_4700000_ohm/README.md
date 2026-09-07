@@ -37,6 +37,14 @@ Resistor 4.7e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMJ0475TEE` |
+| LCSC | [`C423341`](https://www.lcsc.com/product-detail/C423341.html) |
+
+
 
 
 

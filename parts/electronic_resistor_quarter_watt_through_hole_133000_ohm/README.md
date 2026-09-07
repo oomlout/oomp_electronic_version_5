@@ -37,6 +37,14 @@ Resistor 133000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor def
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FBF52-133K` |
+| LCSC | [`C1364884`](https://www.lcsc.com/product-detail/C1364884.html) |
+
+
 
 
 

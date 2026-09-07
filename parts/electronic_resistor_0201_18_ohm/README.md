@@ -37,6 +37,14 @@ Resistor 18 Ohm 0201 is an OOMP electronic resistor definition. It uses the 0201
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1RC0201J0180` |
+| LCSC | [`C54530619`](https://www.lcsc.com/product-detail/C54530619.html) |
+
+
 
 
 

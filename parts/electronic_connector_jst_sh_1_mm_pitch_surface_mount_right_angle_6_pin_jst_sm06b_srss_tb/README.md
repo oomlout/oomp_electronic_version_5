@@ -47,6 +47,7 @@ Connector JST Sh SM06B-SRSS-TB is an OOMP electronic connector definition. It us
 | Identifier | Value |
 | --- | --- |
 | Manufacturer part number | `SM06B-SRSS-TB` |
+| LCSC | [`C5306612`](https://www.lcsc.com/product-detail/C5306612.html) |
 
 
 

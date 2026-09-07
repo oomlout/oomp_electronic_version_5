@@ -37,6 +37,14 @@ Resistor 1.5e+06 Ohm 0201 is an OOMP electronic resistor definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `WR02X155JAL` |
+| LCSC | [`C2894201`](https://www.lcsc.com/product-detail/C2894201.html) |
+
+
 
 
 

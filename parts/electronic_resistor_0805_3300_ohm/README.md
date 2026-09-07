@@ -37,6 +37,14 @@ Resistor 3300 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0805F3301TS` |
+| LCSC | [`C2907249`](https://www.lcsc.com/product-detail/C2907249.html) |
+
+
 
 
 

@@ -37,6 +37,14 @@ Resistor 270000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RC0201FR-07270KL` |
+| LCSC | [`C273315`](https://www.lcsc.com/product-detail/C273315.html) |
+
+
 
 
 

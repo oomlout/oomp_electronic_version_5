@@ -37,6 +37,14 @@ Resistor 470000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor def
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MFR-25FTE52-470K` |
+| LCSC | [`C173019`](https://www.lcsc.com/product-detail/C173019.html) |
+
+
 
 
 

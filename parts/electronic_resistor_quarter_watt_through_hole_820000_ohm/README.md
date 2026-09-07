@@ -37,6 +37,14 @@ Resistor 820000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor def
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `T` |
+| LCSC | [`C136537`](https://www.lcsc.com/product-detail/C136537.html) |
+
+
 
 
 

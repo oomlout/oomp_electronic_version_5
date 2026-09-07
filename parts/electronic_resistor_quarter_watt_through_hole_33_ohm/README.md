@@ -37,6 +37,14 @@ Resistor 33 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF1/4W-33&#x03A9;&#x00B1;1%T52` |
+| LCSC | [`C713968`](https://www.lcsc.com/product-detail/C713968.html) |
+
+
 
 
 

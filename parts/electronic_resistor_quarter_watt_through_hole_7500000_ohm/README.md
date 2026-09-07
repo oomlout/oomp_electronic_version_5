@@ -37,6 +37,14 @@ Resistor 7.5e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `MF2W-7M5&#x00B1;5%-9T73` |
+| LCSC | [`C2903173`](https://www.lcsc.com/product-detail/C2903173.html) |
+
+
 
 
 

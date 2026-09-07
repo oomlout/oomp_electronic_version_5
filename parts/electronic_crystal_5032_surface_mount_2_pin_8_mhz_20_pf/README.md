@@ -40,6 +40,14 @@ Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition. It uses
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `TAXM8M2QLFCDT1T` |
+| LCSC | [`C122522`](https://www.lcsc.com/product-detail/C122522.html) |
+
+
 
 
 

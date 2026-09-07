@@ -37,6 +37,14 @@ Resistor 510 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `T` |
+| LCSC | [`C119318`](https://www.lcsc.com/product-detail/C119318.html) |
+
+
 
 
 

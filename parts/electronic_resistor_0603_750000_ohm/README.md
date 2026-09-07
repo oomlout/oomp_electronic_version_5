@@ -37,6 +37,14 @@ Resistor 750000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603WAF7503T5E` |
+| LCSC | [`C23240`](https://www.lcsc.com/product-detail/C23240.html) |
+
+
 
 
 

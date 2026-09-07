@@ -37,6 +37,14 @@ Resistor 133000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `RT1206DRE07133KL` |
+| LCSC | [`C706443`](https://www.lcsc.com/product-detail/C706443.html) |
+
+
 
 
 

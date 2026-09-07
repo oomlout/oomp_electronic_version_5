@@ -1,10 +1,10 @@
-# LED RGB WS2812B Xinglight 1010
+# LED XL-1010RGBC-2812B 1010
 
 `electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc`
 
-LED RGB WS2812B Xinglight 1010 is an OOMP electronic led definition. It uses the 1010 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 1.0 mm.
+LED XL-1010RGBC-2812B 1010 is an OOMP electronic led definition. It uses the 1010 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 1.0 mm. The definition includes 4 documented pins.
 
-![LED RGB WS2812B Xinglight 1010 pinout](data/working_svg_square_pins.svg)
+![LED XL-1010RGBC-2812B 1010 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -14,6 +14,7 @@ LED RGB WS2812B Xinglight 1010 is an OOMP electronic led definition. It uses the
 | Type | Led |
 | Package / style | 1010 |
 | Nominal size | 1.0 &#x00D7; 1.0 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -40,6 +41,24 @@ LED RGB WS2812B Xinglight 1010 is an OOMP electronic led definition. It uses the
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `XL-1010RGBC-2812B` |
+| LCSC | [`C5349953`](https://www.lcsc.com/product-detail/C5349953.html) |
+
+
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | vdd | signal |
+| 2 | data_out | signal |
+| 3 | gnd | signal |
+| 4 | data_in | signal |
 
 
 

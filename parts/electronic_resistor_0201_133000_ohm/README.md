@@ -37,6 +37,14 @@ Resistor 133000 Ohm 0201 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0201WMF1333TEE` |
+| LCSC | [`C423748`](https://www.lcsc.com/product-detail/C423748.html) |
+
+
 
 
 

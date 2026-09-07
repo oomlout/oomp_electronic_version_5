@@ -1,10 +1,10 @@
-# Display Character 16 By 2 Backlight Yellow LCD
+# Display XL-1608UYC-06 LCD
 
 `electronic_display_lcd_character_16_by_2_backlight_yellow`
 
-Display Character 16 By 2 Backlight Yellow LCD is an OOMP electronic display definition. It uses the lcd package or form factor. Its nominal drawing size is 80.0 &#x00D7; 36.0 mm.
+Display XL-1608UYC-06 LCD is an OOMP electronic display definition. It uses the lcd package or form factor. Its nominal drawing size is 80.0 &#x00D7; 36.0 mm.
 
-![Display Character 16 By 2 Backlight Yellow LCD pinout](data/working_svg_square_pins.svg)
+![Display XL-1608UYC-06 LCD pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -37,6 +37,14 @@ Display Character 16 By 2 Backlight Yellow LCD is an OOMP electronic display def
 | Width | 36.0 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `XL-1608UYC-06` |
+| LCSC | [`C965802`](https://www.lcsc.com/product-detail/C965802.html) |
 
 
 

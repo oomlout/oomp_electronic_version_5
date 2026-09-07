@@ -37,6 +37,14 @@ Resistor 1500 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `FRC0603F1501TS` |
+| LCSC | [`C2930050`](https://www.lcsc.com/product-detail/C2930050.html) |
+
+
 
 
 
