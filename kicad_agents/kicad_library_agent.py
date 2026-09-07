@@ -62,7 +62,9 @@ def find_kicad_root(configured=None):
                             key=lambda path: tuple(int(number) for number in re.findall(r'\d+', path.name)),
                             reverse=True)
     for candidate in candidates:
-        if (candidate / 'share/kicad/symbols').is_dir() and (candidate / 'bin/python.exe').is_file():
+        legacy_libraries = candidate / 'share/kicad/symbols'
+        current_libraries = candidate / 'share/symbols'
+        if (legacy_libraries.is_dir() or current_libraries.is_dir()) and (candidate / 'bin/kicad-cli.exe').is_file():
             return candidate.resolve()
     raise FileNotFoundError('Official KiCad libraries not found; set OOMP_KICAD_ROOT to the KiCad installation directory.')
 
@@ -89,6 +91,9 @@ def symbol_signature(symbol):
 class Masters:
     def __init__(self, root=None):
         self.root = find_kicad_root(root)
+        self.library_root = self.root / 'share/kicad'
+        if not (self.library_root / 'symbols').is_dir():
+            self.library_root = self.root / 'share'
         self.symbols = {}
         self.symbol_signatures = {}
 
@@ -132,7 +137,7 @@ class Masters:
         library, entry = library_id.split(':', 1)
         if any(char in library + entry for char in ['/','\\']) or '..' in library + entry:
             return None
-        path = self.root / 'share/kicad/footprints' / f'{library}.pretty' / f'{entry}.kicad_mod'
+        path = self.library_root / 'footprints' / f'{library}.pretty' / f'{entry}.kicad_mod'
         return path if path.is_file() else None
 
     def symbol(self, library_id, trail=None):
@@ -142,7 +147,7 @@ class Masters:
         if any(char in library + entry for char in ['/','\\']) or '..' in library + entry:
             raise KeyError(library_id)
         if library not in self.symbols:
-            path = self.root / 'share/kicad/symbols' / f'{library}.kicad_sym'
+            path = self.library_root / 'symbols' / f'{library}.kicad_sym'
             if not path.is_file():
                 raise KeyError(library_id)
             parsed = sx.parse(path.read_text(encoding='utf-8'))

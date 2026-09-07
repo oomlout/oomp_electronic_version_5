@@ -10,6 +10,7 @@ import traceback
 import tempfile
 from pathlib import Path
 
+from kicad_agents.kicad_cli import find_kicad_cli
 from kicad_agents.run_error_report import log_run_error
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -131,6 +132,50 @@ def _convert_eagle_board(source_file, destination_file, kicad_cli="kicad-cli"):
     print(f"converted Eagle board {source_file.name} -> {destination_file.name}")
 
 
+def _convert_eagle_project(
+    source_board, source_schematic, destination_board, destination_schematic,
+    destination_project, kicad_cli="kicad-cli",
+):
+    """Import a paired Eagle design into the normal KiCad project file set.
+
+    The top-level ``kicad-cli import`` command autodetects each input and is
+    the only non-interactive KiCad CLI path that converts Eagle schematics as
+    well as PCBs.  Its output stem produces the matching PCB, schematic, and
+    project files together.
+    """
+    output_stem = destination_board.with_suffix("")
+    command = [
+        str(kicad_cli), "import", "--output", str(output_stem),
+        str(source_board), str(source_schematic),
+    ]
+    try:
+        completed = subprocess.run(command, capture_output=True, text=True)
+    except FileNotFoundError as error:
+        raise RuntimeError(
+            "KiCad CLI is required to import Eagle projects. Install a KiCad version "
+            "that provides `kicad-cli import`."
+        ) from error
+    if completed.returncode != 0:
+        message = completed.stderr.strip() or completed.stdout.strip() or "KiCad CLI import failed"
+        raise RuntimeError(
+            f"{message}\nCommand: {' '.join(command)}\n"
+            "Eagle schematic conversion requires a KiCad CLI version with `kicad-cli import`."
+        )
+    missing_outputs = [
+        output for output in [destination_board, destination_schematic, destination_project]
+        if not output.is_file()
+    ]
+    if missing_outputs:
+        raise RuntimeError(
+            "KiCad CLI reported success but did not create: "
+            + ", ".join(str(output) for output in missing_outputs)
+        )
+    print(
+        f"converted Eagle project {source_board.name} + {source_schematic.name} "
+        f"-> {destination_board.name}, {destination_schematic.name}"
+    )
+
+
 def refresh_project_files(details):
     try:
         part_directory = Path(details["directory"]).resolve()
@@ -198,17 +243,34 @@ def refresh_project_files(details):
         copied_files = []
         source_project_directory = repository_directory / source_folder
         if source_format == "eagle":
-            source_file = source_project_directory / f"{source_basename}.brd"
-            eagle_copy = data_directory / "source_eagle.brd"
-            destination_file = data_directory / "kicad_file.kicad_pcb"
-            if not source_file.is_file():
-                raise FileNotFoundError(f"Required Eagle board source file not found: {source_file}")
+            source_board = source_project_directory / f"{source_basename}.brd"
+            source_schematic = source_project_directory / f"{source_basename}.sch"
+            eagle_board_copy = data_directory / "source_eagle.brd"
+            eagle_schematic_copy = data_directory / "source_eagle.sch"
+            destination_board = data_directory / "kicad_file.kicad_pcb"
+            destination_schematic = data_directory / "kicad_file.kicad_sch"
+            destination_project = data_directory / "kicad_file.kicad_pro"
+            if not source_board.is_file():
+                raise FileNotFoundError(f"Required Eagle board source file not found: {source_board}")
+            if not source_schematic.is_file():
+                raise FileNotFoundError(f"Required Eagle schematic source file not found: {source_schematic}")
             data_directory.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(source_file, eagle_copy)
-            _convert_eagle_board(source_file, destination_file, details.get("project_kicad_cli", "kicad-cli"))
+            shutil.copy2(source_board, eagle_board_copy)
+            shutil.copy2(source_schematic, eagle_schematic_copy)
+            _convert_eagle_project(
+                source_board,
+                source_schematic,
+                destination_board,
+                destination_schematic,
+                destination_project,
+                find_kicad_cli(details.get("project_kicad_cli")),
+            )
             copied_files.extend([
-                {"source": str(source_file), "destination": str(eagle_copy)},
-                {"source": str(source_file), "destination": str(destination_file)},
+                {"source": str(source_board), "destination": str(eagle_board_copy)},
+                {"source": str(source_schematic), "destination": str(eagle_schematic_copy)},
+                {"source": str(source_board), "destination": str(destination_board)},
+                {"source": str(source_schematic), "destination": str(destination_schematic)},
+                {"source": str(source_board), "destination": str(destination_project)},
             ])
         else:
             for extension in extensions:
@@ -255,6 +317,10 @@ def refresh_project_files(details):
             if table.is_file():
                 shutil.copy2(table, data_directory / table_name)
         preserve_originals(data_directory)
+        error_path = data_directory / "error.txt"
+        if error_path.is_file():
+            error_path.unlink()
+            print(f"removed stale project fetch error marker: {error_path}")
         return copied_files
     except FileNotFoundError as error:
         _write_error_file(details, error)

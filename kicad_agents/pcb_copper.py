@@ -18,6 +18,28 @@ def point(node, key):
     return [as_float(coordinates[1]), as_float(coordinates[2])]
 
 
+def _footprint_placement(footprint):
+    """Return the SVG-space origin and rotation for either KiCad placement form."""
+    at = child(footprint, "at")
+    if at is not None:
+        return point(footprint, "at"), -as_float(at[3]) if len(at) > 3 else 0
+
+    # KiCad 10's Eagle importer serialises footprint placement as a transform.
+    # The PCB editor applies it to the pads, so explorer copper must too.
+    transform = child(footprint, "transform")
+    if transform is not None:
+        translate = child(transform, "translate")
+        rotate = child(transform, "rotate")
+        origin = [
+            as_float(translate[1]) if translate is not None and len(translate) > 1 else 0,
+            as_float(translate[2]) if translate is not None and len(translate) > 2 else 0,
+        ]
+        rotation = -as_float(rotate[1]) if rotate is not None and len(rotate) > 1 else 0
+        return origin, rotation
+
+    return [0, 0], 0
+
+
 def net_name(node, net_names):
     net = child(node, "net")
     if not net or len(net) < 2:
@@ -109,9 +131,7 @@ def extract_copper(root):
             for text in children(footprint, "fp_text"):
                 if len(text) >= 3 and text[1] == "reference":
                     reference = text[2]
-        origin = point(footprint, "at")
-        at = child(footprint, "at") or []
-        rotation = -as_float(at[3]) if len(at) > 3 else 0
+        origin, rotation = _footprint_placement(footprint)
         for index, pad in enumerate(children(footprint, "pad")):
             pad_layers = _layers(pad)
             if pad[2] == "np_thru_hole" or not any(layer.endswith(".Cu") for layer in pad_layers):

@@ -68,7 +68,12 @@ def generate(filter_text=""):
 
     for part in navigation_parts:
         category_path = part.get("navigation", {}).get("category_path", [])
-        relative_path = Path(working_oomp_metadata._navigation_file_path(category_path).replace("navigation/", ""))
+        # Strip only the leading output-root component.  A taxonomy value may
+        # itself be named ``navigation``; a global replacement would silently
+        # collapse that real category out of the generated path.
+        relative_path = Path(
+            working_oomp_metadata._navigation_file_path(category_path).removeprefix("navigation/")
+        )
         page_path = NAVIGATION_ROOT / relative_path
         page_path.parent.mkdir(parents=True, exist_ok=True)
         page_path.write_text(_render_navigation_page(part["navigation"]), encoding="utf-8")

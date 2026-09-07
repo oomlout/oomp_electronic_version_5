@@ -350,6 +350,7 @@ def add_project_actions(part, count):
         "project_file_path",
         "project_file_extensions",
         "project_source_format",
+        "project_kicad_cli",
         "project_match_overrides",
         "project_match_blocked",
         "project_review_notes",
@@ -422,6 +423,21 @@ def add_project_actions(part, count):
     part[f"oomlout_ai_roboclick_{count}"] = {
         "actions": [project_compile_action] + board_preview_actions,
         "file_test": f"{DATA_DIRECTORY}/generated_data/src/board_mechanical_300.png",
+        "retries_until_complete": 0,
+    }
+    count += 1
+    project_images_action = {
+        "command": "run_python",
+        "file_python": "kicad_agents/project_images_action.py",
+        "file_output": "images/pcb_3d_populated.png",
+        "description": "Create front, back, isometric, and populated 3D board images in the part images folder.",
+        "timeout": "1200",
+    }
+    for project_action_field in project_action_fields:
+        project_images_action[project_action_field] = copy.deepcopy(part.get(project_action_field, ""))
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [project_images_action],
+        "file_test": "images/pcb_3d_populated.png",
         "retries_until_complete": 0,
     }
     count += 1

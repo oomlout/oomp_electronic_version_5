@@ -1,7 +1,7 @@
 # Electronic / LED
 
 [Up one level](../README.md)
-This category contains 148 parts in total.
+This category contains 149 parts in total.
 
 ## Categories
 
@@ -11,6 +11,7 @@ This category contains 148 parts in total.
 - [0805](0805/README.md)
 - [10 Mm](10_mm/README.md)
 - [1010](1010/README.md)
+- [1205](1205/README.md)
 - [1206](1206/README.md)
 - [3 Mm](3_mm/README.md)
 - [3535](3535/README.md)

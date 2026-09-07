@@ -6,7 +6,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [LED RGB WS2812B Xinglight 1010](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc) — `electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc`
+- [LED XL-1010RGBC-2812B 1010](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc) — `electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc`
 
 ---
 

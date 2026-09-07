@@ -15,6 +15,7 @@ import oomlout_roboclick
 import yaml
 
 from action_regenerate_all import REPOSITORY_ROOT, _is_browser_action, _matches_filter
+from kicad_agents.run_error_report import log_run_error
 
 
 def _recompile_parts(filter_text):
@@ -42,10 +43,16 @@ def _run_actions(actions, part_directory, working_file, discovered_actions):
             _discovered_actions=discovered_actions,
         )
         if result in ["exit", "exit_no_tab"]:
-            raise RuntimeError(
+            message = (
                 f"Diagram regeneration stopped for {part_directory.name}: "
                 f"{action.get('command', '')} returned {result}"
             )
+            log_run_error("action_regenerate_all_delete_current_diagrams", RuntimeError(message), command=[
+                str(action.get("command", "")),
+                str(action.get("file_python", "")),
+            ])
+            print(f"Logged and skipped failed action: {message}")
+            continue
         ran += 1
     return ran
 

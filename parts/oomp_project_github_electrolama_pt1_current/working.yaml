@@ -77,21 +77,11 @@ oomlout_ai_roboclick_1:
     project_github_repository: pt1
     project_github_url: https://github.com/electrolama/pt1
     project_github_user: electrolama
+    project_kicad_cli: ''
     project_match_blocked: {}
-    project_match_overrides:
-      CON1: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      CON2: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      CON3: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
-      D1: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-      D2: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-      IC1: electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p
-      IC2: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
-      IC3: electronic_ic_sot_23_6_logic_configurable_multi_function_gate_texas_instruments_sn74lvc1g57dbvr
-      IC4: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
-      J1: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
-      L1: electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d
-      XT1: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+    project_match_overrides: {}
     project_review_notes: []
+    project_source_format: ''
     project_sparse_checkout: false
     project_version: current
     timeout: '600'
@@ -130,21 +120,11 @@ oomlout_ai_roboclick_3:
     project_github_repository: pt1
     project_github_url: https://github.com/electrolama/pt1
     project_github_user: electrolama
+    project_kicad_cli: ''
     project_match_blocked: {}
-    project_match_overrides:
-      CON1: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      CON2: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      CON3: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
-      D1: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-      D2: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-      IC1: electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p
-      IC2: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
-      IC3: electronic_ic_sot_23_6_logic_configurable_multi_function_gate_texas_instruments_sn74lvc1g57dbvr
-      IC4: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
-      J1: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
-      L1: electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d
-      XT1: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+    project_match_overrides: {}
     project_review_notes: []
+    project_source_format: ''
     project_sparse_checkout: false
     project_version: current
     regenerate_pngs: false
@@ -189,6 +169,38 @@ oomlout_ai_roboclick_3:
 oomlout_ai_roboclick_4:
   actions:
   - command: run_python
+    description: Create front, back, isometric, and populated 3D board images in the
+      part images folder.
+    file_output: images/pcb_3d_populated.png
+    file_python: kicad_agents/project_images_action.py
+    project_board: ''
+    project_board_name: ''
+    project_board_url: ''
+    project_file_basename: pt1-RevA2
+    project_file_extensions:
+    - .kicad_pcb
+    - .kicad_sch
+    - .kicad_pro
+    project_file_folder: pcba/Rev A2
+    project_file_path: pcba/Rev A2/pt1-RevA2
+    project_git_ref: main
+    project_git_url: https://github.com/electrolama/pt1.git
+    project_github_repository: pt1
+    project_github_url: https://github.com/electrolama/pt1
+    project_github_user: electrolama
+    project_kicad_cli: ''
+    project_match_blocked: {}
+    project_match_overrides: {}
+    project_review_notes: []
+    project_source_format: ''
+    project_sparse_checkout: false
+    project_version: current
+    timeout: '1200'
+  file_test: images/pcb_3d_populated.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
+  actions:
+  - command: run_python
     description: Refresh Used in projects metadata and part README links from all
       confirmed project matches.
     file_python: kicad_agents/project_usage_action.py
@@ -196,7 +208,7 @@ oomlout_ai_roboclick_4:
     timeout: '600'
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Preserve original KiCad files, package local libraries, and replace
@@ -205,23 +217,11 @@ oomlout_ai_roboclick_5:
     file_python: kicad_agents/kicad_project_action.py
     parts_directory: parts
     project_file_basename: pt1-RevA2
-    project_match_overrides:
-      CON1: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      CON2: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      CON3: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
-      D1: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-      D2: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-      IC1: electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p
-      IC2: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
-      IC3: electronic_ic_sot_23_6_logic_configurable_multi_function_gate_texas_instruments_sn74lvc1g57dbvr
-      IC4: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
-      J1: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
-      L1: electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d
-      XT1: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+    project_match_overrides: {}
     timeout: '1200'
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_6:
+oomlout_ai_roboclick_7:
   actions:
   - command: run_python
     description: Generate JLCPCB Gerbers, drill files, BOM, CPL, OOMP pad audit data,
@@ -236,19 +236,7 @@ oomlout_ai_roboclick_6:
     production_position_offsets_mm: {}
     production_rotation_offsets: {}
     project_file_basename: pt1-RevA2
-    project_match_overrides:
-      CON1: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      CON2: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-      CON3: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
-      D1: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-      D2: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-      IC1: electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p
-      IC2: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
-      IC3: electronic_ic_sot_23_6_logic_configurable_multi_function_gate_texas_instruments_sn74lvc1g57dbvr
-      IC4: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
-      J1: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
-      L1: electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d
-      XT1: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+    project_match_overrides: {}
     timeout: '1200'
   always_run_on_regeneration: true
   file_test: data/production_auto_generate/data/generation_status.yaml
@@ -276,19 +264,7 @@ project_github_repository: pt1
 project_github_url: https://github.com/electrolama/pt1
 project_github_user: electrolama
 project_match_blocked: {}
-project_match_overrides:
-  CON1: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-  CON2: electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12
-  CON3: electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100
-  D1: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-  D2: electronic_diode_tvs_array_sot_23_6_protek_srv054pt7
-  IC1: electronic_ic_qfn_16_3_mm_x_3_mm_converter_usb_to_serial_converter_wch_ch343p
-  IC2: electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a
-  IC3: electronic_ic_sot_23_6_logic_configurable_multi_function_gate_texas_instruments_sn74lvc1g57dbvr
-  IC4: electronic_ic_tsot_23_5_power_management_high_side_power_switch_with_flag_richtek_rt9742cgj5
-  J1: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
-  L1: electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d
-  XT1: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+project_match_overrides: {}
 project_review_notes: []
 project_sparse_checkout: false
 project_version: current

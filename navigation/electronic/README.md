@@ -1,12 +1,30 @@
 # Electronic
 
 [Up one level](../README.md)
-This category contains 558 parts in total.
+This category contains 1152 parts in total.
 
 ## Categories
 
+- [Battery](battery/README.md)
+- [Capacitor](capacitor/README.md)
+- [Connector](connector/README.md)
+- [Crystal](crystal/README.md)
+- [Diode](diode/README.md)
+- [Display](display/README.md)
+- [Ferrite Bead](ferrite_bead/README.md)
+- [Fuse](fuse/README.md)
+- [IC](ic/README.md)
+- [Inductor](inductor/README.md)
+- [LED](led/README.md)
+- [Potentiometer](potentiometer/README.md)
+- [Prototyping](prototyping/README.md)
 - [Resistor](resistor/README.md)
 - [Resistor Array](resistor_array/README.md)
+- [Sensor](sensor/README.md)
+- [Switch](switch/README.md)
+- [Transformer](transformer/README.md)
+- [Transistor](transistor/README.md)
+- [Wire](wire/README.md)
 
 
 ---

@@ -95,6 +95,20 @@ def main(**kwargs):
             "part_number": "bat60a",
             "name_short": "Schottky Diode BAT60A",
         },
+        {
+            "diode_type": "tvs_array",
+            "package": "sot_143",
+            "manufacturer": "nxp",
+            "part_number": "prtr5v0u2x",
+            "name_short": "USB ESD Protection PRTR5V0U2X",
+        },
+        {
+            "diode_type": "schottky",
+            "package": "sod_323",
+            "manufacturer": "infineon",
+            "part_number": "bat20j",
+            "name_short": "Schottky Diode BAT20J",
+        },
     ]
 
     for diode in diodes:

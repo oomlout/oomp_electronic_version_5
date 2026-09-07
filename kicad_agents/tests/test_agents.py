@@ -21,10 +21,12 @@ from kicad_agents.browser_research_agent import (
 )
 import kicad_agents.kicad_processing_agent as kicad_processing_agent
 from kicad_agents import interactive_html_bom_action
+from kicad_agents.project_images_action import render_project_images
 from kicad_agents.component_addition_agent import validate_record
 from kicad_agents.pipeline_audit_agent import run_audit
-from kicad_agents.project_git_action import _convert_eagle_board, refresh_project_files
+from kicad_agents.project_git_action import _convert_eagle_board, _convert_eagle_project, refresh_project_files
 import kicad_agents.project_git_action as project_git_action
+from kicad_agents.kicad_cli import find_kicad_cli
 from kicad_agents.sexpr import children, load, tag, value
 from action_regenerate_all import _is_browser_action
 import working_oomp_populate_project
@@ -948,6 +950,33 @@ class ProjectPartTests(unittest.TestCase):
         self.assertEqual(project_data["summary"]["schematic_symbol_count"], 0)
         self.assertEqual(project_data["summary"]["pcb_footprint_count"], 0)
 
+    def test_kicad_10_eagle_transform_preserves_footprint_placement(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            project_directory = Path(temporary_directory) / "part"
+            data_directory = project_directory / "data"
+            data_directory.mkdir(parents=True)
+            board_path = data_directory / "kicad_file.kicad_pcb"
+            board_path.write_text(
+                '(kicad_pcb (version 20260101) (generator pcbnew) '
+                '(footprint "imported:C_0603" (layer "F.Cu") '
+                '(transform (translate 6.1976 -11.938) (rotate 90) (scale 1 1)) '
+                '(property "Reference" "C1") (property "Value" "100nF") '
+                '(pad "1" smd rect (at -0.85 0 90) (size 1.1 1) (layers "F.Cu"))))',
+                encoding="utf-8",
+            )
+
+            parsed = kicad_processing_agent._parse_pcb(board_path, project_directory)
+
+        footprint = parsed["footprints"][0]
+        self.assertEqual(footprint["position"], {
+            "x": 6.1976,
+            "y": -11.938,
+            "rotation": -90.0,
+            "rotation_kicad": 90.0,
+            "units": "mm",
+        })
+        self.assertEqual(footprint["pads"][0]["position"], {"x": 6.1976, "y": -11.088})
+
     def test_component_addition_record_rejects_ambiguous_identity_fields(self):
         record = {
             "ledger_id": "E9999",
@@ -1194,14 +1223,90 @@ class ProjectPartTests(unittest.TestCase):
             text=True,
         )
 
+    def test_blank_kicad_cli_configuration_is_treated_as_unset(self):
+        with mock.patch.dict("os.environ", {"KICAD_CLI": "configured-kicad-cli"}):
+            self.assertEqual(find_kicad_cli(""), "configured-kicad-cli")
+
+    def test_eagle_project_conversion_uses_the_combined_kicad_cli_import_command(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            temporary_path = Path(temporary_directory)
+            board = temporary_path / "source.brd"
+            schematic = temporary_path / "source.sch"
+            destination_board = temporary_path / "kicad_file.kicad_pcb"
+            destination_schematic = temporary_path / "kicad_file.kicad_sch"
+            destination_project = temporary_path / "kicad_file.kicad_pro"
+            board.write_text("<eagle/>", encoding="utf-8")
+            schematic.write_text("<eagle/>", encoding="utf-8")
+            for destination in [destination_board, destination_schematic, destination_project]:
+                destination.write_text("converted", encoding="utf-8")
+            completed = mock.Mock(returncode=0, stdout="", stderr="")
+            with mock.patch("kicad_agents.project_git_action.subprocess.run", return_value=completed) as run:
+                _convert_eagle_project(
+                    board, schematic, destination_board, destination_schematic,
+                    destination_project, "test-kicad-cli",
+                )
+        run.assert_called_once_with(
+            [
+                "test-kicad-cli", "import", "--output", str(temporary_path / "kicad_file"),
+                str(board), str(schematic),
+            ],
+            capture_output=True,
+            text=True,
+        )
+
+    def test_project_images_action_creates_part_level_artwork_and_3d_renders(self):
+        with tempfile.TemporaryDirectory() as temporary_directory:
+            part_directory = Path(temporary_directory) / "part"
+            source_directory = part_directory / "data" / "generated_data" / "src"
+            source_directory.mkdir(parents=True)
+            (part_directory / "data" / "kicad_file.kicad_pcb").write_text("(kicad_pcb)", encoding="utf-8")
+            (source_directory / "board.png").write_bytes(b"front")
+            (source_directory / "board_bottom.png").write_bytes(b"back")
+
+            def render(command, **_kwargs):
+                Path(command[command.index("--output") + 1]).write_bytes(b"render")
+                return mock.Mock(returncode=0, stdout="", stderr="")
+
+            with mock.patch("kicad_agents.project_images_action.subprocess.run", side_effect=render) as run:
+                result = render_project_images({
+                    "directory": str(part_directory),
+                    "project_kicad_cli": "test-kicad-cli",
+                })
+
+            images_directory = part_directory / "images"
+            self.assertEqual((images_directory / "pcb_front.png").read_bytes(), b"front")
+            self.assertEqual((images_directory / "pcb_back.png").read_bytes(), b"back")
+            self.assertTrue((images_directory / "pcb_isometric.png").is_file())
+            self.assertTrue((images_directory / "pcb_3d_populated.png").is_file())
+            self.assertEqual(run.call_count, 2)
+            self.assertIn("315,0,45", result["commands"][0])
+            self.assertIn("0.75", result["commands"][1])
+            self.assertIn("--perspective", result["commands"][1])
+
+    def test_project_actions_include_part_level_images_action(self):
+        options = []
+        working_oomp_populate_project.main(options=options)
+        adxl345 = next(option for option in options if option["project_github_repository"] == "ADXL345_Breakout")
+        working_oomp.add_project_actions(adxl345, 0)
+        actions = [
+            action
+            for mode in adxl345.values()
+            if isinstance(mode, dict)
+            for action in mode.get("actions", [])
+        ]
+        image_action = next(action for action in actions if action.get("file_python") == "kicad_agents/project_images_action.py")
+        self.assertEqual(image_action["file_output"], "images/pcb_3d_populated.png")
+
     def test_refresh_project_files_routes_eagle_boards_through_conversion(self):
         with tempfile.TemporaryDirectory() as temporary_directory:
             temporary_path = Path(temporary_directory)
             repository_directory = temporary_path / "repo"
             (repository_directory / ".git").mkdir(parents=True)
             source = repository_directory / "Hardware" / "ADXL345_Breakout.brd"
+            source_schematic = repository_directory / "Hardware" / "ADXL345_Breakout.sch"
             source.parent.mkdir()
             source.write_text("<eagle/>", encoding="utf-8")
+            source_schematic.write_text("<eagle/>", encoding="utf-8")
             details = {
                 "directory": str(temporary_path / "part"),
                 "project_git_url": "https://github.com/sparkfun/ADXL345_Breakout.git",
@@ -1213,20 +1318,25 @@ class ProjectPartTests(unittest.TestCase):
                 "project_sparse_checkout": False,
                 "project_git_ref": "master",
             }
-            def convert(source_path, destination_path, _cli):
-                destination_path.parent.mkdir(parents=True, exist_ok=True)
-                destination_path.write_text("(kicad_pcb)", encoding="utf-8")
+            def convert(board_path, schematic_path, board_destination, schematic_destination, project_destination, _cli):
+                for destination in [board_destination, schematic_destination, project_destination]:
+                    destination.parent.mkdir(parents=True, exist_ok=True)
+                    destination.write_text("converted", encoding="utf-8")
             with mock.patch.object(project_git_action, "_repository_workspace_directory", return_value=repository_directory), \
                  mock.patch.object(project_git_action, "_git_repository_is_usable", return_value=True), \
                  mock.patch.object(project_git_action, "_run_git"), \
-                 mock.patch.object(project_git_action, "_convert_eagle_board", side_effect=convert) as converter:
+                 mock.patch.object(project_git_action, "_convert_eagle_project", side_effect=convert) as converter:
                 copied = refresh_project_files(details)
             data_directory = temporary_path / "part" / "data"
             self.assertTrue((data_directory / "source_eagle.brd").is_file())
+            self.assertTrue((data_directory / "source_eagle.sch").is_file())
             self.assertTrue((data_directory / "kicad_file.kicad_pcb").is_file())
+            self.assertTrue((data_directory / "kicad_file.kicad_sch").is_file())
+            self.assertTrue((data_directory / "kicad_file.kicad_pro").is_file())
             self.assertTrue((data_directory / "original" / "source_eagle.brd").is_file())
+            self.assertTrue((data_directory / "original" / "source_eagle.sch").is_file())
             converter.assert_called_once()
-            self.assertEqual(len(copied), 2)
+            self.assertEqual(len(copied), 5)
 
     def test_project_populator_keeps_only_current_version_records(self):
         options = []

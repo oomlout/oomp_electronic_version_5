@@ -1,0 +1,13 @@
+# Electronic / Capacitor / 8 Mm Diameter 14 5 Mm Tall / Electrolytic
+
+[Up one level](../README.md)
+This category contains 1 parts in total.
+
+## Categories
+
+- [680 Micro Farad](680_micro_farad/README.md)
+
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

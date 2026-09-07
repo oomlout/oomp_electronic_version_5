@@ -44,6 +44,14 @@ Mounting Hole 3.302 mm Round Unplated is an OOMP mechanical mounting hole defini
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project sparkfun/ADXL345_Breakout ADXL345 Breakout current](https://github.com/sparkfun/ADXL345_Breakout/tree/master/Hardware) | 2 | MH1, MH2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current) |
+
+
+
 ## Files
 
 

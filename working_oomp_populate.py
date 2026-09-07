@@ -51,6 +51,10 @@ def main(**kwargs):
     working_oomp_populate_sensor.main(**kwargs)
     import working_oomp_populate_potentiometer
     working_oomp_populate_potentiometer.main(**kwargs)
+    import working_oomp_populate_battery
+    working_oomp_populate_battery.main(**kwargs)
+    import working_oomp_populate_transformer
+    working_oomp_populate_transformer.main(**kwargs)
 
 
     ###### populate taxonomy details and oobb details

@@ -114,6 +114,47 @@ def main(**kwargs):
                         option["taxonomy_15"] = part_number
                         options.append(option)
 
+    # Additional unmatched-project IC identities.  This is intentionally the
+    # lightweight population layer only; datasheet, pinout, dimensions, and
+    # exact matching records are added in the subsequent ledger pass.
+    unmatched_ics = [
+        ["lqfp_48", "microcontroller", "stm32", "st", "stm32f103c8tx"],
+        ["uson_8", "memory", "spi_nor_flash", "winbond", "w25q16jvuxiq"],
+        ["sot_23_5", "power_management", "linear_voltage_regulator", "", "se5218"],
+        ["sot_23_5", "power_management", "linear_voltage_regulator", "", "se5218alg"],
+        ["soic_8", "timer", "555_timer", "texas_instruments", "tlc555cd"],
+        ["soic_8", "timer", "555_timer", "texas_instruments", "ne555dr"],
+        ["msop_8", "amplifier", "operational_amplifier", "sg_micro", "sgm358yms_tr"],
+        ["soic_14", "microcontroller", "8_bit_avr", "microchip", "attiny1604_ssnr"],
+        ["soic_8", "sensor", "hall_effect_current_sensor", "allegro", "acs712"],
+        ["soic_8", "capacitive_touch_controller", "controller", "infineon", "cy8cmbr3102"],
+        ["qfn_24", "converter", "usb_to_serial_converter", "wch", "ch342f"],
+        ["qfn_14", "logic", "analog_switch", "nexperia", "74hc4066bq"],
+        ["dfn_8", "power_management", "linear_voltage_regulator", "diodes", "ap7361c_3_3v"],
+        ["tssop_16", "converter", "analog_to_digital_converter", "texas_instruments", "ads1219ipw"],
+        ["qfn_28", "power_meter", "energy_metering", "analog_devices", "ade7953acpz"],
+        ["vssop_10", "power_monitor", "current_monitor", "texas_instruments", "ina228"],
+        ["sot_23_8", "power_monitor", "current_monitor", "texas_instruments", "ina219"],
+        ["tssop_16", "logic", "io_expander", "texas_instruments", "pca9554pw"],
+        ["msop_10", "converter", "usb_to_serial_converter", "wch", "ch340e"],
+        ["sot_23_5", "power_management", "linear_voltage_regulator", "diodes", "ap2112k_3_3"],
+        ["sot_23_3", "power_management", "shunt_regulator", "texas_instruments", "tl431acdbz"],
+        ["msop_8", "amplifier", "thermocouple_amplifier", "texas_instruments", "ad8495armz"],
+        ["so_16", "audio", "audio_player", "my_semi", "my1690x_16s"],
+    ]
+    for package, ic_type, function, manufacturer, part_number in unmatched_ics:
+        option = {
+            "taxonomy_2": "ic",
+            "taxonomy_3": package,
+            "taxonomy_4": ic_type,
+            "taxonomy_5": function,
+            "taxonomy_15": part_number,
+            "name_short": part_number.replace("_", " ").upper(),
+        }
+        if manufacturer:
+            option["taxonomy_14"] = manufacturer
+        options.append(option)
+
     # Exact Bus Pirate 5 devices.  Keep each row independent so package,
     # function, manufacturer, or suffix changes are easy to edit later.
     bus_pirate_ics = [

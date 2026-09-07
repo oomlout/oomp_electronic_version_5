@@ -89,13 +89,28 @@ def _point(node, point_tag="at", default=(0.0, 0.0)):
 
 def _position(node):
     at_node = child(node, "at")
-    if at_node is None:
-        return {"x": 0.0, "y": 0.0, "rotation": 0.0}
-    return {
-        "x": as_float(at_node[1]) if len(at_node) > 1 else 0.0,
-        "y": as_float(at_node[2]) if len(at_node) > 2 else 0.0,
-        "rotation": as_float(at_node[3]) if len(at_node) > 3 else 0.0,
-    }
+    if at_node is not None:
+        return {
+            "x": as_float(at_node[1]) if len(at_node) > 1 else 0.0,
+            "y": as_float(at_node[2]) if len(at_node) > 2 else 0.0,
+            "rotation": as_float(at_node[3]) if len(at_node) > 3 else 0.0,
+        }
+
+    # KiCad 10's Eagle importer writes footprint placement as a transform
+    # rather than the longstanding footprint-level ``(at x y rotation)``.
+    # KiCad's PCB editor and renderer honour it, so retain that same geometry
+    # for the project JSON and board-explorer overlays.
+    transform_node = child(node, "transform")
+    if transform_node is not None:
+        translate_node = child(transform_node, "translate")
+        rotate_node = child(transform_node, "rotate")
+        return {
+            "x": as_float(translate_node[1]) if translate_node is not None and len(translate_node) > 1 else 0.0,
+            "y": as_float(translate_node[2]) if translate_node is not None and len(translate_node) > 2 else 0.0,
+            "rotation": as_float(rotate_node[1]) if rotate_node is not None and len(rotate_node) > 1 else 0.0,
+        }
+
+    return {"x": 0.0, "y": 0.0, "rotation": 0.0}
 
 
 def _properties(node):

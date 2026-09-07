@@ -25,8 +25,9 @@ Keep `match_blocked`, `review_notes`, and production metadata alongside the
 version that they describe. Do not add reference-level component matches here:
 add a reusable, evidence-based rule in `kicad_agents/oomp_matching_agent.py`.
 
-Set `source_format: eagle` for an Eagle `.brd` file. The refresh action retains
-the input as `source_eagle.brd`, converts it with `kicad-cli pcb import --format
-eagle`, then continues with the standard PCB pipeline. The KiCad CLI does not
-offer an Eagle schematic importer, so this path intentionally has no schematic
-data.
+Set `source_format: eagle` for paired Eagle `.brd` and `.sch` files with the
+same basename. The refresh action retains them as `source_eagle.brd` and
+`source_eagle.sch`, then uses `kicad-cli import` to create the matching
+`kicad_file.kicad_pcb`, `.kicad_sch`, and `.kicad_pro` files before continuing
+through the standard project pipeline. This needs a KiCad CLI version that
+provides the top-level `import` command.

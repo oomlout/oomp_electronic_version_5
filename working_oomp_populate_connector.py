@@ -26,6 +26,69 @@ def main(**kwargs):
                         option["taxonomy_15"] = part_number
                         options.append(option)
 
+    # Connector footprints found in the expanded unmatched-project report.
+    # These are population identities only; exact drawing and manufacturer
+    # records are deliberately deferred to the connector research pass.
+    unmatched_connectors = [
+        {
+            "type": "header", "pitch": "1_27_mm_pitch",
+            "mounting": "surface_mount", "pins": "10_pin", "style": "socket",
+            "part_number": "header_female_5x2_1_27_mm_smd",
+            "name_short": "1.27 mm 2x5 SMD Female Header",
+        },
+        {
+            "type": "micro_sd", "style": "push_push",
+            "part_number": "micro_sd_external_pin",
+            "name_short": "microSD Push-Push Socket",
+        },
+        {
+            "type": "micro_sd", "style": "friction_fit",
+            "part_number": "micro_sd_friction_fit",
+            "name_short": "microSD Friction-Fit Socket",
+        },
+        {
+            "type": "jst", "pitch": "1_25_mm_pitch", "mounting": "surface_mount",
+            "pins": "6_pin", "style": "locking",
+            "part_number": "jst_smd_1_25_mm_6_locking",
+            "name_short": "JST 1.25 mm 6-Pin Locking Connector",
+        },
+        {
+            "type": "audio_jack", "size": "3_5_mm", "style": "trrs",
+            "mounting": "surface_mount_right_angle",
+            "part_number": "audio_jack_3_5_mm_trrs",
+            "name_short": "3.5 mm TRRS Audio Jack",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "3_pin",
+            "part_number": "screw_terminal_1x03_p3_5_mm",
+            "name_short": "3.5 mm 3-Pin Screw Terminal",
+        },
+        {
+            "type": "gnss_header", "pitch": "2_mm_pitch",
+            "mounting": "surface_mount", "pins": "20_pin",
+            "style": "plug_in",
+            "part_number": "conn_02x10_gnss_plug_in_header",
+            "name_short": "2x10 2.0 mm GNSS Plug-In Header",
+        },
+        {
+            "type": "rf_cable_assembly", "style": "ipx_to_sma",
+            "part_number": "ipx_connector_with_sma",
+            "name_short": "IPX-to-SMA RF Cable Assembly",
+        },
+    ]
+    for connector in unmatched_connectors:
+        option = {
+            "taxonomy_2": "connector",
+            "taxonomy_3": connector["type"],
+        }
+        for key, value in connector.items():
+            if key in {"type", "name_short"}:
+                continue
+            option[f"taxonomy_{ {'pitch': 4, 'mounting': 5, 'pins': 6, 'style': 7, 'part_number': 15}.get(key, 8) }"] = value
+        option["name_short"] = connector["name_short"]
+        options.append(option)
+
     # JST header families (SH 1.0 mm, PH 2.0 mm, XH 2.5 mm): one part per
     # available pin count, including the SparkFun black Qwiic specials. The
     # editable table with drawings and KiCad matches lives in

@@ -1,11 +1,12 @@
 # Electronic / IC / Sot 23
 
 [Up one level](../README.md)
-This category contains 2 parts in total.
+This category contains 3 parts in total.
 
 ## Categories
 
 - [Power Management](power_management/README.md)
+- [Sensor](sensor/README.md)
 
 
 ---

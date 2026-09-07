@@ -1,11 +1,12 @@
 # Electronic / Capacitor / 1206
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 2 parts in total.
 
 
 ## Parts
 
+- [Capacitor 10 uF 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_10_micro_farad) — `electronic_capacitor_1206_10_micro_farad`
 - [Capacitor 47 uF 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_47_micro_farad) — `electronic_capacitor_1206_47_micro_farad`
 
 ---

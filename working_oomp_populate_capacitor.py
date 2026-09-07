@@ -133,6 +133,11 @@ def main(**kwargs):
         "taxonomy_5": "680_micro_farad",
         "taxonomy_6": "16_volt",
     })
+    options.append({
+        "taxonomy_2": "capacitor",
+        "taxonomy_3": "0603",
+        "taxonomy_4": "2200_pico_farad",
+    })
 
 
 if __name__ == "__main__":

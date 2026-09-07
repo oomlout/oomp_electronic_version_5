@@ -83,9 +83,11 @@ oomlout_ai_roboclick_1:
     project_github_repository: SparkFun_Qwiic_GNSS_SAM-M8Q
     project_github_url: https://github.com/sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q
     project_github_user: sparkfun
+    project_kicad_cli: ''
     project_match_blocked: {}
     project_match_overrides: {}
     project_review_notes: []
+    project_source_format: ''
     project_sparse_checkout: true
     project_version: current
     timeout: '600'
@@ -124,9 +126,11 @@ oomlout_ai_roboclick_3:
     project_github_repository: SparkFun_Qwiic_GNSS_SAM-M8Q
     project_github_url: https://github.com/sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q
     project_github_user: sparkfun
+    project_kicad_cli: ''
     project_match_blocked: {}
     project_match_overrides: {}
     project_review_notes: []
+    project_source_format: ''
     project_sparse_checkout: true
     project_version: current
     regenerate_pngs: false
@@ -171,6 +175,38 @@ oomlout_ai_roboclick_3:
 oomlout_ai_roboclick_4:
   actions:
   - command: run_python
+    description: Create front, back, isometric, and populated 3D board images in the
+      part images folder.
+    file_output: images/pcb_3d_populated.png
+    file_python: kicad_agents/project_images_action.py
+    project_board: qwiic_gnss_sam_m8q
+    project_board_name: Qwiic GNSS SAM-M8Q
+    project_board_url: https://github.com/sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q
+    project_file_basename: SparkFun_Qwiic_GNSS_SAM-M8Q
+    project_file_extensions:
+    - .kicad_pcb
+    - .kicad_sch
+    - .kicad_pro
+    project_file_folder: Hardware
+    project_file_path: Hardware/SparkFun_Qwiic_GNSS_SAM-M8Q
+    project_git_ref: main
+    project_git_url: https://github.com/sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q.git
+    project_github_repository: SparkFun_Qwiic_GNSS_SAM-M8Q
+    project_github_url: https://github.com/sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q
+    project_github_user: sparkfun
+    project_kicad_cli: ''
+    project_match_blocked: {}
+    project_match_overrides: {}
+    project_review_notes: []
+    project_source_format: ''
+    project_sparse_checkout: true
+    project_version: current
+    timeout: '1200'
+  file_test: images/pcb_3d_populated.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
+  actions:
+  - command: run_python
     description: Refresh Used in projects metadata and part README links from all
       confirmed project matches.
     file_python: kicad_agents/project_usage_action.py
@@ -178,7 +214,7 @@ oomlout_ai_roboclick_4:
     timeout: '600'
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Preserve original KiCad files, package local libraries, and replace
@@ -191,7 +227,7 @@ oomlout_ai_roboclick_5:
     timeout: '1200'
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_6:
+oomlout_ai_roboclick_7:
   actions:
   - command: run_python
     description: Generate JLCPCB Gerbers, drill files, BOM, CPL, OOMP pad audit data,

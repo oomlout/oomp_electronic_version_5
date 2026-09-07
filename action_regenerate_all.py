@@ -10,6 +10,7 @@ import oomlout_roboclick
 import working_oomp
 import working_oomp_populate
 from kicad_agents.migrate_part_data_layout import migrate_parts
+from kicad_agents.run_error_report import log_run_error
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parent
@@ -119,10 +120,16 @@ def run_actions(filter_text="", regenerate_pngs=True, honour_normal_gates=False)
                     _discovered_actions=discovered_actions,
                 )
                 if result in ["exit", "exit_no_tab"]:
-                    raise RuntimeError(
+                    message = (
                         f"Regeneration stopped for {part_directory.name}: "
                         f"{action.get('command', '')} returned {result}"
                     )
+                    log_run_error("action_regenerate_all", RuntimeError(message), command=[
+                        str(action.get("command", "")),
+                        str(action.get("file_python", "")),
+                    ])
+                    print(f"Logged and skipped failed action: {message}")
+                    continue
                 action_count += 1
     return action_count, skipped_browser_count
 

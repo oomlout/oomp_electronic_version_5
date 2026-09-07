@@ -2,7 +2,16 @@
 setlocal
 
 cd /d "%~dp0"
-set "PATH=C:\Program Files\KiCad\10.0\bin;%PATH%"
+set "PATH=C:\Program Files\KiCad\10\bin;%PATH%"
+set "OOMP_KICAD_ROOT=C:\Program Files\KiCad\10"
+set "KICAD_PYTHON=C:\Program Files\KiCad\10\bin\python.exe"
+
+kicad-cli --help | findstr /r /c:"^[ ]*import[ ]" >nul
+if errorlevel 1 (
+    echo This Eagle pipeline requires a KiCad CLI version with the top-level "import" command.
+    echo Install a newer KiCad build, then run this batch file again.
+    exit /b 1
+)
 
 echo Running the full SparkFun ADXL345 Breakout import and generation process...
 echo.

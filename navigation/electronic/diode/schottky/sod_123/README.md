@@ -6,7 +6,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [Diode Schottky SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_123_ss14) — `electronic_diode_schottky_sod_123_ss14`
+- [Diode SS14L SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_123_ss14) — `electronic_diode_schottky_sod_123_ss14`
 
 ---
 

@@ -6,7 +6,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [Display Character 16 By 2 Backlight Yellow LCD](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_lcd_character_16_by_2_backlight_yellow) — `electronic_display_lcd_character_16_by_2_backlight_yellow`
+- [Display XL-1608UYC-06 LCD](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_display_lcd_character_16_by_2_backlight_yellow) — `electronic_display_lcd_character_16_by_2_backlight_yellow`
 
 ---
 

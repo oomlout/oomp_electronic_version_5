@@ -55,6 +55,40 @@ def add_kicad_details(part):
                 selections['symbol'] = 'Mechanical:MountingHole'
                 selections['machine_solder'] = f'MountingHole:MountingHole_{entry}'
                 selections['hand_solder'] = selections['machine_solder']
+    # Populate-only package loading for the currently unmatched component
+    # batch. These are official KiCad package masters selected by package
+    # family; exact pin-aware symbols and manufacturer variants are deferred to
+    # the populate-extra/ledger pass.
+    package_footprints = {
+        'sot_23': 'Package_TO_SOT_SMD:SOT-23',
+        'sot_23_3': 'Package_TO_SOT_SMD:SOT-23',
+        'sot_23_5': 'Package_TO_SOT_SMD:SOT-23-5',
+        'sot_23_8': 'Package_SO:VSSOP-8_2.3x2mm_P0.5mm',
+        'sot_143': 'Package_TO_SOT_SMD:SOT-143',
+        'sot_223_3': 'Package_TO_SOT_SMD:SOT-223-3_TabPin2',
+        'soic_8': 'Package_SO:SOIC-8_3.9x4.9mm_P1.27mm',
+        'soic_14': 'Package_SO:SOIC-14_3.9x8.7mm_P1.27mm',
+        'so_16': 'Package_SO:SO-16_3.9x9.9mm_P1.27mm',
+        'msop_8': 'Package_SO:MSOP-8_3x3mm_P0.65mm',
+        'msop_10': 'Package_SO:MSOP-10_3x3mm_P0.5mm',
+        'tssop_16': 'Package_SO:TSSOP-16_4.4x5mm_P0.65mm',
+        'qfn_14': 'Package_DFN_QFN:QFN-14-1EP_3x3mm_P0.5mm_EP1.65x1.65mm',
+        'qfn_24': 'Package_DFN_QFN:QFN-24-1EP_4x4mm_P0.5mm_EP2.7x2.7mm',
+        'qfn_28': 'Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm',
+        'uson_8': 'Package_DFN_QFN:USON-8-1EP_2x2mm_P0.5mm_EP0.8x1.6mm',
+        'dfn_8': 'Package_DFN_QFN:DFN-8-1EP_2x2mm_P0.5mm_EP0.8x1.6mm',
+        'lqfp_48': 'Package_QFP:LQFP-48_7x7mm_P0.5mm',
+        'sod_323': 'Diode_SMD:D_SOD-323',
+    }
+    if kind == 'ic' and size in package_footprints:
+        selections['machine_solder'] = package_footprints[size]
+        selections['hand_solder'] = package_footprints[size]
+    if kind == 'diode':
+        diode_package = part.get('taxonomy_4', '')
+        if diode_package in package_footprints:
+            selections['machine_solder'] = package_footprints[diode_package]
+            selections['hand_solder'] = package_footprints[diode_package]
+
     # Existing explicit family/populate-extra choices take precedence.
     selections.update(part.get('kicad', {}))
     part['kicad'] = selections

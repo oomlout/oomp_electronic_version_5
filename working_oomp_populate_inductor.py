@@ -5,6 +5,8 @@ def main(**kwargs):
         {"size": "0603", "inductance": "10_micro_henry"},
         {"size": "0806", "inductance": "2_2_micro_henry"},
         {"size": "0603", "inductance": "33_nano_henry"},
+        {"size": "0603", "inductance": "470_ohm"},
+        {"size": "0603", "inductance": "30_ohm"},
     ]
 
     for inductor in inductors:

@@ -81,7 +81,7 @@ board and replace the values with that board's actual details.
 | `project_file_folder` | Directory inside the repository, with original case and spaces. Use `/`, and `""` if files are at repository root. |
 | `project_file_basename` | Common filename stem, without an extension. |
 | `project_file_path` | Folder plus filename stem; keep consistent with the previous two fields. |
-| `source_format` | Omit (or use `kicad`) for native KiCad. Use `eagle` for a `.brd` source; the refresh action preserves it and runs `kicad-cli pcb import --format eagle` into the normal KiCad PCB path. Eagle schematic conversion is not available from the CLI, so that route is PCB-only. |
+| `source_format` | Omit (or use `kicad`) for native KiCad. Use `eagle` for paired `.brd` and `.sch` sources; the refresh action preserves both and runs `kicad-cli import` into the normal KiCad PCB, schematic, and project paths. This requires a KiCad CLI version that provides the top-level `import` command. |
 | `production_exclude_references` | Optional plain list of references omitted from the JLCPCB BOM and CPL. |
 | `production_lcsc_overrides` | Optional reference-to-LCSC-number dictionary for verified project-specific purchasing choices. |
 | `production_rotation_offsets` | Optional reference-to-degree dictionary for JLC placement rotation corrections. |

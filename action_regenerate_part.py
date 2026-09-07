@@ -9,6 +9,7 @@ import oomlout_roboclick
 import yaml
 
 from action_regenerate_all import REPOSITORY_ROOT, _is_browser_action, _matches_filter
+from kicad_agents.run_error_report import log_run_error
 
 
 def _check_file_paths(part_directory, mode_details):
@@ -105,10 +106,16 @@ def regenerate_part(filter_text, everything=False):
                     _discovered_actions=discovered_actions,
                 )
                 if result in ["exit", "exit_no_tab"]:
-                    raise RuntimeError(
+                    message = (
                         f"Regeneration stopped for {part_directory.name}: "
                         f"{action.get('command', '')} returned {result}"
                     )
+                    log_run_error("action_regenerate_part", RuntimeError(message), command=[
+                        str(action.get("command", "")),
+                        str(action.get("file_python", "")),
+                    ])
+                    print(f"Logged and skipped failed action: {message}")
+                    continue
                 action_count += 1
     if not matched:
         raise ValueError(f"No parts under parts/ matched '{filter_text}'.")

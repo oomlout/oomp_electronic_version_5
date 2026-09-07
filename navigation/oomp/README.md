@@ -1,7 +1,7 @@
 # Oomp
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 108 parts in total.
 
 ## Categories
 

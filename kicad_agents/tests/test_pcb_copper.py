@@ -66,6 +66,18 @@ class CopperTests(unittest.TestCase):
         self.assertEqual(pads[2]["net"], "")
         self.assertEqual(pads[3]["net"], "")
 
+    def test_kicad_10_eagle_transform_places_copper_pads(self):
+        pcb = '''(kicad_pcb (layers (0 "F.Cu" signal))
+          (footprint "imported:C_0603" (layer "F.Cu")
+            (transform (translate 6.1976 -11.938) (rotate 90) (scale 1 1))
+            (property "Reference" "C1")
+            (pad "1" smd rect (at -0.85 0 90) (size 1.1 1) (layers "F.Cu"))))'''
+
+        pads = extract_copper(loads(pcb))["pads"]
+
+        self.assertEqual(pads[0]["reference"], "C1")
+        self.assertEqual(pads[0]["position"], [6.1976, -11.088])
+
     def test_modern_named_nets_and_old_empty_net(self):
         pcb = '(kicad_pcb (segment (start 0 0) (end 1 0) (layer "F.Cu") (net "0")))'
         self.assertEqual(extract_copper(loads(pcb))["tracks"][0]["net"], "0")
