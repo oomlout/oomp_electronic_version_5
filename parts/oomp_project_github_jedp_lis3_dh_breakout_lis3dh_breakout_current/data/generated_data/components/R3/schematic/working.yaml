@@ -1,0 +1,110 @@
+available: true
+units:
+- reference: R3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 901a7156-a339-4879-a64d-a6eed48862ec
+  library_id: Device:R_Small_US
+  unit: 1
+  body_style: 1
+  position:
+    x: 76.2
+    y: 144.78
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R3
+    Value: 10k
+    Footprint: Resistor_SMD:R_0603_1608Metric
+    Datasheet: '~'
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 1.016
+    position:
+      x: 76.2
+      y: 142.24
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '1'
+      pin_name: A
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 1.016
+    position:
+      x: 76.2
+      y: 147.32
+    net: SDA{slash}SDI{slash}SDO
+    net_aliases:
+    - SDA{slash}SDI{slash}SDO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '4'
+      pin_name: Pin_4
+    - reference: U1
+      pin_number: '6'
+      pin_name: SDA/SDI/SDO
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.016
+        y: -1.524
+      max:
+        x: 1.016
+        y: 1.524
+      width: 2.032
+      height: 3.048
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 75.184
+        y: 143.256
+      max:
+        x: 77.216
+        y: 146.304
+      width: 2.032
+      height: 3.048
+      center:
+        x: 76.2
+        y: 144.78
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: '4'
+  pin_name: Pin_4
+- reference: JP1
+  pin_number: '1'
+  pin_name: A
+- reference: U1
+  pin_number: '6'
+  pin_name: SDA/SDI/SDO

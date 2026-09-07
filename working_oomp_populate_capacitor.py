@@ -53,6 +53,7 @@ def main(**kwargs):
     sizes = ["0805"]
     capacitance_values = [
         "4_7_micro_farad",
+        "10_micro_farad",
         "22_micro_farad",
         "47_micro_farad",
     ]

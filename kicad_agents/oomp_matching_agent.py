@@ -48,12 +48,17 @@ KNOWN_PART_ALIASES = {
     "tcrt5000l": "electronic_sensor_tcrt5000_4_pin_vishay_tcrt5000l",
     "am312": "electronic_sensor_pir_3_pin_am312",
     "apds_9960": "electronic_sensor_apds_9960_broadcom_apds_9960",
-    "easyc_smd": "electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf",
+    "easyc_smd": "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb",
+    # Soldered's easyC socket is the same 1 mm 4-pin JST SH connector the
+    # Qwiic/STEMMA QT boards use, so every board maps to one catalogue part.
     "u_fl": "electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1",
     "sma_edge": "electronic_connector_sma_edge_mount",
     "kf235_5_0_2p": "electronic_connector_terminal_block_5_mm_pitch_through_hole_2_pin_kf235_5_0_2p",
     "cr1220_holder": "electronic_connector_coin_cell_holder_through_hole_cr1220",
     "cp2102n": "electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r",
+    "ap2112k_3_3": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3",
+    "lis3dhtr": "electronic_sensor_accelerometer_lga_16_st_lis3dhtr",
+    "adxl345": "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345",
     # The full schematic value "CP2102N-Axx-xQFN28" -- the bare "cp2102n" alias
     # above cannot match it because the word-boundary rule stops at the
     # following underscore.
@@ -273,6 +278,18 @@ def _first_schematic_unit(component):
     return units[0] if units else {}
 
 
+def _strip_import_library_prefix(footprint):
+    """Eagle-imported boards keep the source library in the footprint id
+    ("Adafruit LIS3DH-import-fps:JST_SH4" / "kicad_file:0805-NO"); that
+    library name is an import artifact, so only the footprint name after
+    the colon identifies the package."""
+    text = str(footprint or "")
+    library, separator, name = text.rpartition(":")
+    if separator and (library.strip().lower() == "kicad_file" or "import" in library.lower()):
+        return name.strip()
+    return text
+
+
 def component_fields(component):
     unit = _first_schematic_unit(component)
     properties = unit.get("properties") or {}
@@ -280,7 +297,9 @@ def component_fields(component):
     return {
         "reference": component.get("reference", ""),
         "value": properties.get("Value") or pcb.get("value") or "",
-        "footprint": properties.get("Footprint") or pcb.get("library_id") or "",
+        "footprint": _strip_import_library_prefix(
+            properties.get("Footprint") or pcb.get("library_id") or ""
+        ),
         "library_id": unit.get("library_id", ""),
         "mpn": properties.get("MPN") or properties.get("Manufacturer Part Number") or "",
         "manufacturer": properties.get("Manufacturer") or properties.get("Manufacturer Name") or "",
@@ -344,7 +363,10 @@ def infer_kind(fields):
         re.search(r"header_male_\d+x\d+", normalize_text(fields["footprint"]))
     ) or "header_updi" in normalize_text(fields["footprint"])
     dual_row_header_footprint = bool(re.search(r"pinheader_2x\d+_p2_54mm", normalize_text(fields["footprint"])))
-    if sparkfun_header_footprint or erad_header_footprint or dual_row_header_footprint or (
+    # Eagle libraries name plain 2.54 mm headers "1X06_ROUND_70" and friends;
+    # the footprint name alone carries the pin count.
+    eagle_header_footprint = bool(re.match(r"1x\d+", normalize_text(fields["footprint"])))
+    if sparkfun_header_footprint or erad_header_footprint or dual_row_header_footprint or eagle_header_footprint or (
         "conn_01x" in evidence
         and "jst" not in evidence
         and "pinheader" in evidence
@@ -357,6 +379,10 @@ def infer_kind(fields):
     if "usb_c_receptacle" in evidence or "usb_c" in evidence:
         return "connector"
     if reference.startswith("J") and ("conn_" in evidence or "header" in evidence or "receptacle" in evidence):
+        return "connector"
+    # Eagle-import boards label connectors CONN<nn> and draw the 1 mm JST SH
+    # socket under its raw footprint name (JST_SH4).
+    if reference.startswith("CONN") or re.fullmatch(r"jst_sh\d+", normalize_text(fields["footprint"])):
         return "connector"
     return ""
 
@@ -403,6 +429,19 @@ def proposed_oomp_id(component):
     # its own part. An MPN alias requires the normalized MPN to be exact.
     value_normalized = normalize_text(fields["value"])
     mpn_normalized = normalize_text(fields["mpn"])
+    # Footprint-qualified identities: the bare schematic value is ambiguous
+    # across packages, so the footprint picks the catalogue part.
+    footprint_name = normalize_text(fields["footprint"])
+    if re.search(r"\bbss138\b", value_normalized) and "sot363" in footprint_name:
+        # A BSS138-style value drawn on SOT-363 (SC-70-6) is the I2C
+        # level-shifter dual FET, not the single SOT-23 BSS138.
+        return "electronic_transistor_sot_363_6_mosfet_n_channel_dual"
+    if re.search(r"\b1n4148\b", value_normalized):
+        # The 1N4148 order suffix follows the package.
+        if "sod_323" in footprint_name:
+            return "electronic_diode_switching_sod_323_onsemi_1n4148ws"
+        if "sod_523f" in footprint_name:
+            return "electronic_diode_switching_sod_523f_onsemi_1n4148wt"
     if mpn_normalized:
         if mpn_normalized in KNOWN_PART_ALIASES:
             return KNOWN_PART_ALIASES[mpn_normalized]
@@ -470,7 +509,7 @@ def proposed_oomp_id(component):
         else:
             m = re.search(r"pinheader_1x(\d+)_p2_54mm", footprint_text) or re.fullmatch(
                 r"sparkfun_connector_1x(\d+)(?:_p2_54mm)?", footprint_text
-            )
+            ) or re.match(r"1x(\d+)", footprint_text)
             if m:
                 pin_count = int(m.group(1))
         if not pin_count:
@@ -569,6 +608,17 @@ def proposed_oomp_id(component):
         value_text = normalize_text(fields["value"])
         footprint_text = normalize_text(fields["footprint"])
         library_text = normalize_text(fields["library_id"])
+
+        # Qwiic / STEMMA QT boards draw the 1 mm JST SH socket under the raw
+        # eagle footprint name (JST_SH4); the catalogue carries the
+        # right-angle part for every pin count.
+        m = re.fullmatch(r"jst_sh(\d+)", footprint_text)
+        if m:
+            pin_count = int(m.group(1))
+            return (
+                "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_"
+                f"{pin_count}_pin_jst_sm{pin_count:02d}b_srss_tb"
+            )
 
         # USB-C receptacle
         if "usb_c" in value_text or "usb_c" in library_text or "usb_c" in footprint_text:
@@ -682,7 +732,14 @@ def _is_board_feature(fields):
     if value.startswith("pad_") and reference_upper.startswith("PAD"):
         return True
     # Footprint-only outline graphics (SparkFun "BMV080_Outline" on REF**).
-    if "outline" in board_feature_evidence:
+    # "NOOUTLINE" is an Eagle-import pad naming artifact (0805-NO /
+    # CHIPLED_0603_NOOUTLINE are ordinary two-pad parts), so it must not count.
+    if re.search(r"(?<!no)outline", board_feature_evidence):
+        return True
+    # Eagle-import boards carry silkscreen art and board graphics as U$-numbered
+    # footprints (logos, revision features, connector artwork); real parts keep
+    # lettered references.
+    if reference_upper.startswith("U$"):
         return True
     if value in ("measure",) and "jumper" in board_feature_evidence:
         return True
@@ -812,7 +869,10 @@ def match_component(index, component, overrides=None, blocked=None):
         if value_upper in ("DNF", "DNP"):
             result["reasons"].append("Component is marked do-not-fit / do-not-populate and has no purchased OOMP part requirement.")
         elif _is_board_feature(fields):
-            result["reasons"].append("Fiducials, logos, test points, standoffs and solder-jumper traces are board features, not purchased OOMP parts.")
+            if reference_upper.startswith("U$"):
+                result["reasons"].append("Eagle-import U$ footprints are board artwork (logos and board graphics), not purchased OOMP parts.")
+            else:
+                result["reasons"].append("Fiducials, logos, test points, standoffs and solder-jumper traces are board features, not purchased OOMP parts.")
         elif reference_upper.startswith("SJ"):
             result["reasons"].append("PCB solder jumpers are board features, not purchased OOMP parts.")
         elif reference_upper.startswith("UNK_HOLE") or footprint.startswith("dummyfp"):

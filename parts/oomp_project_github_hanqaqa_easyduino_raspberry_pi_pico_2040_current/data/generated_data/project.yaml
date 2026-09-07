@@ -13,8 +13,8 @@ summary:
   component_count: 115
   schematic_symbol_count: 115
   pcb_footprint_count: 65
-  matched_component_count: 48
-  unmatched_physical_component_count: 3
+  matched_component_count: 50
+  unmatched_physical_component_count: 1
   non_physical_symbol_count: 64
   mounting_hole_count: 6
   dedicated_mounting_hole_count: 4
@@ -111226,9 +111226,9 @@ components:
   oomp:
     status: matched
     accepted: true
-    oomp_id: electronic_led_0402
+    oomp_id: electronic_led_0402_blue
     confidence: 1.0
-    proposed_oomp_id: electronic_led_0402
+    proposed_oomp_id: electronic_led_0402_blue
     inferred:
       kind: led
       package_size: '0402'
@@ -112326,9 +112326,9 @@ components:
   oomp:
     status: matched
     accepted: true
-    oomp_id: electronic_led_0402
+    oomp_id: electronic_led_0402_blue
     confidence: 1.0
-    proposed_oomp_id: electronic_led_0402
+    proposed_oomp_id: electronic_led_0402_blue
     inferred:
       kind: led
       package_size: '0402'
@@ -113426,9 +113426,9 @@ components:
   oomp:
     status: matched
     accepted: true
-    oomp_id: electronic_led_0402
+    oomp_id: electronic_led_0402_blue
     confidence: 1.0
-    proposed_oomp_id: electronic_led_0402
+    proposed_oomp_id: electronic_led_0402_blue
     inferred:
       kind: led
       package_size: '0402'
@@ -119948,16 +119948,15 @@ components:
     accepted: true
     oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
     confidence: 1.0
-    proposed_oomp_id: electronic_connector_usb_c_surface_mount_16_pin
+    proposed_oomp_id: electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073
     inferred:
       kind: connector
-      package_size: usb_c
+      package_size: null
       value: USB_C_Receptacle_USB2.0
       mpn: null
     reasons:
-    - Generic value, symbol and footprint agree with the populated matching rule; no manufacturer or MPN was supplied.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
-    identity_scope: generic_family
   category: connector
   category_source: oomp_populate
   category_name: Connector
@@ -131477,41 +131476,21 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_3_pin_jst_bm03b_srss_tb
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_3_pin_jst_bm03b_srss_tb
     inferred:
       kind: connector
       package_size: null
       value: Conn_01x03_MountingPin
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_3_pin_jst_bm03b_srss_tb
-      score: 0.3025
-      reasons:
-      - same component family
-    - oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_2_pin_jst_bm02b_srss_tb
-      score: 0.2672
-      reasons:
-      - same component family
-    - oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_4_pin_jst_bm04b_srss_tb
-      score: 0.2672
-      reasons:
-      - same component family
-    - oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_5_pin_jst_bm05b_srss_tb
-      score: 0.2672
-      reasons:
-      - same component family
-    - oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_6_pin_jst_bm06b_srss_tb
-      score: 0.2672
-      reasons:
-      - same component family
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J6
 - reference: R1
@@ -160638,21 +160617,21 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040
+    confidence: 1.0
+    proposed_oomp_id: electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040
     inferred:
       kind: null
       package_size: null
       value: RP2040
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: mcu
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: MCU
   generated_directory: components/U2
 - reference: U3

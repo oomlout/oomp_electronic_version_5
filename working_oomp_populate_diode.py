@@ -35,6 +35,13 @@ def main(**kwargs):
             "name_short": "Switching Diode 1N4148WT",
         },
         {
+            "diode_type": "switching",
+            "package": "sod_323",
+            "manufacturer": "onsemi",
+            "part_number": "1n4148ws",
+            "name_short": "Switching Diode 1N4148WS",
+        },
+        {
             "diode_type": "schottky_dual_common_cathode",
             "package": "sot_523",
             "manufacturer": "diodes_incorporated",

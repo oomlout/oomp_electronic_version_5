@@ -775,40 +775,20 @@ connectivity_cross_check:
   disagree_count: 0
   incomplete_count: 2
 oomp:
-  status: unmatched
-  accepted: false
-  oomp_id: null
-  confidence: 0.0
-  proposed_oomp_id: null
+  status: matched
+  accepted: true
+  oomp_id: electronic_transistor_sot_23_bipolar_npn
+  confidence: 1.0
+  proposed_oomp_id: electronic_transistor_sot_23_bipolar_npn
   inferred:
     kind: transistor
     package_size: null
     value: NPN
     mpn: null
   reasons:
-  - Component family was inferred, but package size was not.
-  candidates:
-  - oomp_id: electronic_transistor_sot_23_bipolar_npn
-    score: 0.2655
-    reasons:
-    - same component family
-  - oomp_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
-    score: 0.1652
-    reasons:
-    - same component family
-  - oomp_id: electronic_transistor_sot_23_bipolar_pnp_40_volt_600_milliamp_onsemi_mmbt4403
-    score: 0.1289
-    reasons:
-    - same component family
-  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
-    score: 0.1201
-    reasons:
-    - same component family
-  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
-    score: 0.1201
-    reasons:
-    - same component family
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
 category: transistor
-category_source: unmatched_kicad_hint
+category_source: oomp_populate
 category_name: Transistor
 generated_directory: components/Q1

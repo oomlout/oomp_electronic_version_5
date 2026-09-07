@@ -2,7 +2,7 @@
 
 - [Symbol](electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr.kicad_sym) — `Comparator:LMV331`
 - [Machine Solder](machine_solder/electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr.kicad_mod) — `Package_TO_SOT_SMD:SOT-23-5`
-- [Hand Solder](hand_solder/electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr.kicad_mod) — `Package_TO_SOT_SMD:SOT-23-5_HandSoldering`
+- [Hand Solder](hand_solder/electronic_ic_sot_23_5_amplifier_operational_single_rail_to_rail_input_output_gainsil_lmv321_tr.kicad_mod) — `Package_TO_SOT_SMD:SOT-23-5`
 
 ## Review
 

@@ -1,0 +1,242 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-07T22:45:42",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "key": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "key": "silk_over_copper"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        },
+        {
+            "description": "Footprint not found in libraries",
+            "key": "lib_footprint_issues"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint FID3",
+                    "pos": {
+                        "x": 126.441,
+                        "y": 103.567
+                    },
+                    "uuid": "15867ade-bc87-4922-9129-417303565686"
+                },
+                {
+                    "description": "Footprint ST1",
+                    "pos": {
+                        "x": 125.806,
+                        "y": 106.996
+                    },
+                    "uuid": "d6e3a13c-269f-419f-bd67-6bdd2ca889a7"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint J5",
+                    "pos": {
+                        "x": 128.346,
+                        "y": 104.456
+                    },
+                    "uuid": "32e86325-0d05-4bd6-91d6-53c21673e547"
+                },
+                {
+                    "description": "Footprint ST1",
+                    "pos": {
+                        "x": 125.806,
+                        "y": 106.996
+                    },
+                    "uuid": "d6e3a13c-269f-419f-bd67-6bdd2ca889a7"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint J1",
+                    "pos": {
+                        "x": 128.346,
+                        "y": 109.536
+                    },
+                    "uuid": "496c33c8-231a-4a74-958b-9b97e3782621"
+                },
+                {
+                    "description": "Footprint ST1",
+                    "pos": {
+                        "x": 125.806,
+                        "y": 106.996
+                    },
+                    "uuid": "d6e3a13c-269f-419f-bd67-6bdd2ca889a7"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint FID4",
+                    "pos": {
+                        "x": 139.395,
+                        "y": 109.409
+                    },
+                    "uuid": "61aa0ed3-558f-4c6d-9e62-dd57c48bd5c1"
+                },
+                {
+                    "description": "Footprint J2",
+                    "pos": {
+                        "x": 137.3835,
+                        "y": 106.996
+                    },
+                    "uuid": "7f06f0e1-3d0c-4351-8d25-773b642f9d23"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+                {
+                    "description": "Zone [GND] on F.Cu and B.Cu, priority 0",
+                    "pos": {
+                        "x": 123.266,
+                        "y": 110.806
+                    },
+                    "uuid": "c43c8e43-4c50-4081-bbac-68f3d5ee0053"
+                },
+                {
+                    "description": "Pad 2 [GND] of C3 on F.Cu",
+                    "pos": {
+                        "x": 132.057,
+                        "y": 109.536
+                    },
+                    "uuid": "7808a3b7-af87-4ec8-b528-e7409bd98dac"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+                {
+                    "description": "Zone [GND] on F.Cu and B.Cu, priority 0",
+                    "pos": {
+                        "x": 123.266,
+                        "y": 110.806
+                    },
+                    "uuid": "c43c8e43-4c50-4081-bbac-68f3d5ee0053"
+                },
+                {
+                    "description": "Pad 10 [GND] of U1 on F.Cu",
+                    "pos": {
+                        "x": 130.756,
+                        "y": 106.496
+                    },
+                    "uuid": "5afb54d0-2c59-4571-9f52-b90b0eea6757"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+                {
+                    "description": "Zone [GND] on F.Cu and B.Cu, priority 0",
+                    "pos": {
+                        "x": 123.266,
+                        "y": 110.806
+                    },
+                    "uuid": "c43c8e43-4c50-4081-bbac-68f3d5ee0053"
+                },
+                {
+                    "description": "Pad 12 [GND] of U1 on F.Cu",
+                    "pos": {
+                        "x": 130.756,
+                        "y": 107.496
+                    },
+                    "uuid": "e7c6dee1-e186-4b8c-8e66-685d0b077b24"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Thermal relief connection to zone incomplete (layer F.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+                {
+                    "description": "Zone [GND] on F.Cu and B.Cu, priority 0",
+                    "pos": {
+                        "x": 123.266,
+                        "y": 110.806
+                    },
+                    "uuid": "c43c8e43-4c50-4081-bbac-68f3d5ee0053"
+                },
+                {
+                    "description": "Pad 2 [GND] of C4 on F.Cu",
+                    "pos": {
+                        "x": 134.922,
+                        "y": 109.536
+                    },
+                    "uuid": "81010c63-b3ce-46ca-afba-7d7cdcf2718f"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        }
+    ]
+}

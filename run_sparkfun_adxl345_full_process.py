@@ -13,7 +13,7 @@ def main() -> int:
     if str(kicad_bin) not in current_path.split(os.pathsep):
         os.environ["PATH"] = str(kicad_bin) + os.pathsep + current_path
 
-    filter_value = "oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current"
+    filter_value = "oomp_project_github_sparkfun_spark_fun_triple_axis_acclerometer_lis3_"
     print("Running the full SparkFun ADXL345 Breakout import and generation process...")
     print()
 

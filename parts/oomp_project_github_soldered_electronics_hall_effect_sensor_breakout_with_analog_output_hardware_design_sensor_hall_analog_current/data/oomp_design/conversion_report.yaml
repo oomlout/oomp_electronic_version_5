@@ -1,5 +1,5 @@
 format_version: 1
-kicad_version: 10.0.6
+kicad_version: '10'
 originals:
   kicad_file.kicad_pcb:
     sha256: 6a3455cf1661e4056f18a41a312b5682449b88532481460eaa4c31ac7ff11f43
@@ -37,7 +37,8 @@ footprints:
 - reference: U1
   source: e-radionica.com footprinti:SOT-23-3
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_ic_sot_23_5_sensor_hall_effect_silicon_labs_si7211_b_00_iv
+  reason: Source is not an available official master for this OOMP part.
 - reference: G***
   source: Soldered Graphics:Logo-Back-OSH-3.5mm
   status: skipped
@@ -100,7 +101,8 @@ footprints:
 - reference: K1
   source: e-radionica.com footprinti:HEADER_MALE_3X1
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+  reason: Source is not an available official master for this OOMP part.
 - reference: ''
   source: buzzardLabel
   status: skipped
@@ -134,7 +136,8 @@ symbols:
   - K1
   source: e-radionica.com schematics:HEADER_MALE_3X1
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+  reason: Source is not a known official KiCad symbol.
   file: kicad_file.kicad_sch
 - references:
   - '#PWR03'
@@ -152,7 +155,8 @@ symbols:
   - U1
   source: e-radionica.com schematics:SI7201-B-06-IV
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_ic_sot_23_5_sensor_hall_effect_silicon_labs_si7211_b_00_iv
+  reason: OOMP symbol master unavailable.
   file: kicad_file.kicad_sch
 - references:
   - '#PWR01'

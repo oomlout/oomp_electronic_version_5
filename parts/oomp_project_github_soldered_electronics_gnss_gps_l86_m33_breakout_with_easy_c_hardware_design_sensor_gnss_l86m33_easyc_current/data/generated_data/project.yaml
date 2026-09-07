@@ -12,8 +12,8 @@ summary:
   component_count: 68
   schematic_symbol_count: 53
   pcb_footprint_count: 56
-  matched_component_count: 25
-  unmatched_physical_component_count: 4
+  matched_component_count: 26
+  unmatched_physical_component_count: 3
   non_physical_symbol_count: 39
   mounting_hole_count: 4
   dedicated_mounting_hole_count: 4
@@ -42319,9 +42319,9 @@ components:
   oomp:
     status: matched
     accepted: true
-    oomp_id: electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
+    oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
     confidence: 1.0
-    proposed_oomp_id: electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
+    proposed_oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
     inferred:
       kind: null
       package_size: null
@@ -44650,9 +44650,9 @@ components:
   oomp:
     status: matched
     accepted: true
-    oomp_id: electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
+    oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
     confidence: 1.0
-    proposed_oomp_id: electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
+    proposed_oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
     inferred:
       kind: null
       package_size: null
@@ -48897,41 +48897,21 @@ components:
     disagree_count: 0
     incomplete_count: 2
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_transistor_sot_23_bipolar_npn
+    confidence: 1.0
+    proposed_oomp_id: electronic_transistor_sot_23_bipolar_npn
     inferred:
       kind: transistor
       package_size: null
       value: NPN
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: electronic_transistor_sot_23_bipolar_npn
-      score: 0.2655
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
-      score: 0.1652
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_bipolar_pnp_40_volt_600_milliamp_onsemi_mmbt4403
-      score: 0.1289
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
-      score: 0.1201
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
-      score: 0.1201
-      reasons:
-      - same component family
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: transistor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Transistor
   generated_directory: components/Q1
 - reference: R1

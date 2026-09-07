@@ -1,0 +1,110 @@
+available: true
+units:
+- reference: R2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 0fc1f81c-efd8-4c7d-8f2a-5cef7c8c4803
+  library_id: Device:R_Small_US
+  unit: 1
+  body_style: 1
+  position:
+    x: 60.96
+    y: 144.78
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R2
+    Value: 10k
+    Footprint: Resistor_SMD:R_0603_1608Metric
+    Datasheet: '~'
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 1.016
+    position:
+      x: 60.96
+      y: 142.24
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '3'
+      pin_name: B
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 1.016
+    position:
+      x: 60.96
+      y: 147.32
+    net: SCL{slash}SPC
+    net_aliases:
+    - SCL{slash}SPC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '5'
+      pin_name: Pin_5
+    - reference: U1
+      pin_number: '4'
+      pin_name: SCL/SPC
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.016
+        y: -1.524
+      max:
+        x: 1.016
+        y: 1.524
+      width: 2.032
+      height: 3.048
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 59.944
+        y: 143.256
+      max:
+        x: 61.976
+        y: 146.304
+      width: 2.032
+      height: 3.048
+      center:
+        x: 60.96
+        y: 144.78
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: '5'
+  pin_name: Pin_5
+- reference: JP1
+  pin_number: '3'
+  pin_name: B
+- reference: U1
+  pin_number: '4'
+  pin_name: SCL/SPC

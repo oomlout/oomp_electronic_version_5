@@ -1,5 +1,5 @@
 format_version: 1
-kicad_version: 10.0.6
+kicad_version: '10'
 originals:
   kicad_file.kicad_pcb:
     sha256: 3da25837a17ebb1139fdd8ab0101526c86faa517104962ea7cb5b734c188e2bd
@@ -25,7 +25,8 @@ footprints:
 - reference: K2
   source: e-radionica.com footprinti:CR1220_HOLDER
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_connector_coin_cell_holder_through_hole_cr1220
+  reason: Source is not an available official master for this OOMP part.
 - reference: R6
   source: e-radionica.com footprinti:0603R
   status: skipped
@@ -70,7 +71,8 @@ footprints:
 - reference: Q1
   source: e-radionica.com footprinti:SOT-23-3
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_transistor_sot_23_bipolar_npn
+  reason: Source is not an available official master for this OOMP part.
 - reference: ''
   source: buzzardLabel
   status: skipped
@@ -125,7 +127,8 @@ footprints:
 - reference: U1
   source: e-radionica.com footprinti:SOT-363
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_transistor_sot_363_6_mosfet_n_channel_dual
+  reason: Source is not an available official master for this OOMP part.
 - reference: R3
   source: e-radionica.com footprinti:0603R
   status: skipped
@@ -139,7 +142,8 @@ footprints:
 - reference: K3
   source: e-radionica.com footprinti:HEADER_MALE_8X1
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_8_pin
+  reason: Source is not an available official master for this OOMP part.
 - reference: ''
   source: buzzardLabel
   status: skipped
@@ -151,7 +155,8 @@ footprints:
 - reference: D1
   source: e-radionica.com footprinti:M4_DIODA
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_diode_rectifier_sma_m4
+  reason: Source is not an available official master for this OOMP part.
 - reference: ''
   source: buzzardLabel
   status: skipped
@@ -212,7 +217,8 @@ footprints:
 - reference: C2
   source: e-radionica.com footprinti:1206C
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_capacitor_1206_10_micro_farad
+  reason: Source is not an available official master for this OOMP part.
 - reference: ''
   source: buzzardLabel
   status: skipped
@@ -255,7 +261,8 @@ footprints:
 - reference: D2
   source: e-radionica.com footprinti:M4_DIODA
   status: skipped
-  reason: No approved OOMP match.
+  oomp_id: electronic_diode_rectifier_sma_m4
+  reason: Source is not an available official master for this OOMP part.
 - reference: R7
   source: e-radionica.com footprinti:0603R
   status: skipped
@@ -296,7 +303,8 @@ symbols:
   - C2
   source: e-radionica.com schematics:1206C
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_capacitor_1206_10_micro_farad
+  reason: Source is not a known official KiCad symbol.
   file: kicad_file.kicad_sch
 - references:
   - FD1
@@ -353,7 +361,8 @@ symbols:
   - Q1
   source: e-radionica.com schematics:NPN-SOT-23-3
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_transistor_sot_23_bipolar_npn
+  reason: OOMP symbol master unavailable.
   file: kicad_file.kicad_sch
 - references:
   - K1
@@ -365,7 +374,8 @@ symbols:
   - D2
   source: e-radionica.com schematics:M4_DIODA
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_diode_rectifier_sma_m4
+  reason: OOMP symbol master unavailable.
   file: kicad_file.kicad_sch
 - references:
   - C3
@@ -390,7 +400,8 @@ symbols:
   - K3
   source: e-radionica.com schematics:HEADER_MALE_8X1
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_8_pin
+  reason: Source is not a known official KiCad symbol.
   file: kicad_file.kicad_sch
 - references:
   - '#PWR012'
@@ -498,13 +509,15 @@ symbols:
   - K2
   source: e-radionica.com schematics:CR1220_HOLDER
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_connector_coin_cell_holder_through_hole_cr1220
+  reason: OOMP symbol master unavailable.
   file: kicad_file.kicad_sch
 - references:
   - U1
   source: e-radionica.com schematics:NMOS-DUAL
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_transistor_sot_363_6_mosfet_n_channel_dual
+  reason: OOMP symbol master unavailable.
   file: kicad_file.kicad_sch
 - references:
   - R7
@@ -621,7 +634,8 @@ symbols:
   - D1
   source: e-radionica.com schematics:M4_DIODA
   status: skipped
-  reason: No single approved OOMP part for every instance of this symbol.
+  oomp_id: electronic_diode_rectifier_sma_m4
+  reason: OOMP symbol master unavailable.
   file: kicad_file.kicad_sch
 validation:
   status: passed

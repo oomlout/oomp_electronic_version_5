@@ -1,0 +1,124 @@
+available: true
+units:
+- reference: J1
+  source_file: data/kicad_file.kicad_sch
+  uuid: d4e2920f-54cc-4955-87ec-ce3878322f44
+  library_id: SparkFun-Connector:Conn_01x02
+  unit: 1
+  body_style: 1
+  position:
+    x: 106.68
+    y: 138.43
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: J1
+    Value: Conn_01x02
+    Footprint: SparkFun-Connector:1x02
+    Datasheet: '~'
+    Description: Basic 0.1" PTH
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: Pin_1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 101.6
+      y: 138.43
+    net: ~{CS}
+    net_aliases:
+    - ~{CS}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U1
+      pin_number: '8'
+      pin_name: ~{CS}/MODE
+  - number: '2'
+    name: Pin_2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 3.81
+    position:
+      x: 101.6
+      y: 140.97
+    net: ADDR{slash}SDO
+    net_aliases:
+    - ADDR{slash}SDO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '2'
+      pin_name: B
+    - reference: R4
+      pin_number: '1'
+      pin_name: '~'
+    - reference: U1
+      pin_number: '7'
+      pin_name: SA0/SDO
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -3.937
+      max:
+        x: 1.397
+        y: 1.397
+      width: 2.794
+      height: 5.334
+      center:
+        x: 0.0
+        y: -1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 105.283
+        y: 137.033
+      max:
+        x: 108.077
+        y: 142.367
+      width: 2.794
+      height: 5.334
+      center:
+        x: 106.68
+        y: 139.7
+  warnings: []
+connected_components:
+- reference: JP3
+  pin_number: '2'
+  pin_name: B
+- reference: R1
+  pin_number: '1'
+  pin_name: '~'
+- reference: R4
+  pin_number: '1'
+  pin_name: '~'
+- reference: U1
+  pin_number: '7'
+  pin_name: SA0/SDO
+- reference: U1
+  pin_number: '8'
+  pin_name: ~{CS}/MODE

@@ -624,3 +624,42 @@ Command: run_python kicad_agents/kicad_project_action.py
 Traceback:
 NoneType: None
 
+[2026-09-07T20:12:32.464056+00:00] project_readme_action
+Error type: RuntimeError
+Error message: Skipping project_readme_action for oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current: missing required source file(s): kicad_file.kicad_sch, kicad_file.kicad_pcb
+Traceback:
+NoneType: None
+
+[2026-09-07T20:12:33.731876+00:00] project_images_action
+Error type: FileNotFoundError
+Error message: Project image generation needs: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current\data\kicad_file.kicad_pcb, C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current\data\generated_data\src\board.png, C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current\data\generated_data\src\board_bottom.png
+Traceback:
+NoneType: None
+
+[2026-09-07T20:13:51.576615+00:00] kicad_processing_agent
+Message: No modern .kicad_pcb files found under C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
+Traceback:
+NoneType: None
+
+[2026-09-07T20:40:03.416559+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-07T21:41:49.702610+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-07T21:43:52.191281+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-07T21:47:31.691657+00:00] production_jlc_action
+Error type: PermissionError
+Error message: [WinError 5] Access is denied: 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_digital_output_hardware_design_sensor_hall_digital_current\\data\\production_auto_generate_build_lb0xjkho' -> 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_digital_output_hardware_design_sensor_hall_digital_current\\data\\production_auto_generate'
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/production_jlc_action.py", line 62, in run
+    return generate_jlc_production_files(details)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\production_jlc_agent.py", line 720, in generate_jlc_production_files
+    _replace_generated_directory(build_directory, output_directory)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\production_jlc_agent.py", line 584, in _replace_generated_directory
+    build_directory.replace(output_directory)
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1376, in replace
+    os.replace(self, target)
+PermissionError: [WinError 5] Access is denied: 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_digital_output_hardware_design_sensor_hall_digital_current\\data\\production_auto_generate_build_lb0xjkho' -> 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_soldered_electronics_hall_effect_sensor_breakout_with_digital_output_hardware_design_sensor_hall_digital_current\\data\\production_auto_generate'
+

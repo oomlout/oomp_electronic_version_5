@@ -1,0 +1,864 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-07T21:42:45",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+                {
+                    "description": "Zone [GND] on B.Cu, priority 0",
+                    "pos": {
+                        "x": 144.78,
+                        "y": 108.839
+                    },
+                    "uuid": "69c98e9b-ad7c-42e2-b72d-0a3f46103907"
+                },
+                {
+                    "description": "PTH pad 2 [GND] of J2",
+                    "pos": {
+                        "x": 124.46,
+                        "y": 90.805
+                    },
+                    "uuid": "2497efe9-ea27-46c0-948f-86505a68d0e0"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad [<no net>] of I2C_EN on F.Mask",
+                    "pos": {
+                        "x": 134.804,
+                        "y": 104.14
+                    },
+                    "uuid": "08477c8f-5990-4a59-b4c6-8a22fbd2c8f0"
+                },
+                {
+                    "description": "Track [Net-(JP1-Pad1)] on F.Cu, length 0.4096 mm",
+                    "pos": {
+                        "x": 135.604,
+                        "y": 103.73038
+                    },
+                    "uuid": "2762d1d0-1921-4b7e-a2cf-a148a79a4987"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad [<no net>] of I2C_EN on F.Mask",
+                    "pos": {
+                        "x": 134.804,
+                        "y": 104.14
+                    },
+                    "uuid": "08477c8f-5990-4a59-b4c6-8a22fbd2c8f0"
+                },
+                {
+                    "description": "Track [Net-(JP1-Pad1)] on F.Cu, length 0.4096 mm",
+                    "pos": {
+                        "x": 135.604,
+                        "y": 103.73038
+                    },
+                    "uuid": "2762d1d0-1921-4b7e-a2cf-a148a79a4987"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad [<no net>] of I2C_EN on F.Mask",
+                    "pos": {
+                        "x": 134.804,
+                        "y": 104.14
+                    },
+                    "uuid": "08477c8f-5990-4a59-b4c6-8a22fbd2c8f0"
+                },
+                {
+                    "description": "Pad 2 [+3V3] of I2C_EN on F.Cu",
+                    "pos": {
+                        "x": 133.604,
+                        "y": 104.14
+                    },
+                    "uuid": "62948c21-99bd-476f-bab2-7f9cf0eb1d63"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad [<no net>] of I2C_EN on F.Mask",
+                    "pos": {
+                        "x": 134.804,
+                        "y": 104.14
+                    },
+                    "uuid": "08477c8f-5990-4a59-b4c6-8a22fbd2c8f0"
+                },
+                {
+                    "description": "Pad 1 [Net-(JP1-Pad1)] of I2C_EN on F.Cu",
+                    "pos": {
+                        "x": 135.604,
+                        "y": 104.14
+                    },
+                    "uuid": "7805bc8f-c5a5-4464-b4e6-5847e7ca5b63"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad [<no net>] of I2C_EN on F.Mask",
+                    "pos": {
+                        "x": 132.404,
+                        "y": 104.14
+                    },
+                    "uuid": "9503b4f4-9ac3-45d7-ac88-39b28327cbc5"
+                },
+                {
+                    "description": "Track [Net-(JP1-Pad3)] on F.Cu, length 1.4920 mm",
+                    "pos": {
+                        "x": 131.604,
+                        "y": 102.648
+                    },
+                    "uuid": "1a140212-b148-4052-8b59-a02949f527dc"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad [<no net>] of I2C_EN on F.Mask",
+                    "pos": {
+                        "x": 132.404,
+                        "y": 104.14
+                    },
+                    "uuid": "9503b4f4-9ac3-45d7-ac88-39b28327cbc5"
+                },
+                {
+                    "description": "Track [Net-(JP1-Pad3)] on F.Cu, length 1.4920 mm",
+                    "pos": {
+                        "x": 131.604,
+                        "y": 102.648
+                    },
+                    "uuid": "1a140212-b148-4052-8b59-a02949f527dc"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad [<no net>] of I2C_EN on F.Mask",
+                    "pos": {
+                        "x": 132.404,
+                        "y": 104.14
+                    },
+                    "uuid": "9503b4f4-9ac3-45d7-ac88-39b28327cbc5"
+                },
+                {
+                    "description": "Pad 3 [Net-(JP1-Pad3)] of I2C_EN on F.Cu",
+                    "pos": {
+                        "x": 131.604,
+                        "y": 104.14
+                    },
+                    "uuid": "60d12bc8-43a0-4270-a674-6c298da2ee52"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad [<no net>] of I2C_EN on F.Mask",
+                    "pos": {
+                        "x": 132.404,
+                        "y": 104.14
+                    },
+                    "uuid": "9503b4f4-9ac3-45d7-ac88-39b28327cbc5"
+                },
+                {
+                    "description": "Pad 3 [Net-(JP1-Pad3)] of I2C_EN on F.Cu",
+                    "pos": {
+                        "x": 131.604,
+                        "y": 104.14
+                    },
+                    "uuid": "60d12bc8-43a0-4270-a674-6c298da2ee52"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Footprint 'SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm' does not match copy in library 'Jumper'",
+            "items": [
+                {
+                    "description": "Footprint I2C_ADDR",
+                    "pos": {
+                        "x": 138.557,
+                        "y": 104.14
+                    },
+                    "uuid": "0a39aefb-7935-4fc0-8915-a80a44a6b6b7"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'PinHeader_1x06_P2.54mm_Vertical' does not match copy in library 'Connector_PinHeader_2.54mm'",
+            "items": [
+                {
+                    "description": "Footprint J2",
+                    "pos": {
+                        "x": 124.46,
+                        "y": 88.265
+                    },
+                    "uuid": "1aa1c7f5-7660-43f2-8538-0c720a4e5a03"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'Resistor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 134.239,
+                        "y": 100.076
+                    },
+                    "uuid": "407a3538-8124-4658-9e8d-64224f9b237f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'LGA-16_3x3mm_P0.5mm_LayoutBorder3x5y' does not match copy in library 'Package_LGA'",
+            "items": [
+                {
+                    "description": "Footprint LIS3DH",
+                    "pos": {
+                        "x": 133.35,
+                        "y": 94.615
+                    },
+                    "uuid": "4b21c0b7-e147-4945-9fa4-e4d45c0bc00a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'PinHeader_1x06_P2.54mm_Vertical' does not match copy in library 'Connector_PinHeader_2.54mm'",
+            "items": [
+                {
+                    "description": "Footprint J1",
+                    "pos": {
+                        "x": 142.24,
+                        "y": 88.265
+                    },
+                    "uuid": "60636aa1-f2c2-4053-816d-e4613aa84c80"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'Resistor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 130.683,
+                        "y": 100.076
+                    },
+                    "uuid": "64541dd6-c96e-45bd-a2a8-1d34df2aec0c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'Resistor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 132.461,
+                        "y": 100.076
+                    },
+                    "uuid": "67bd58da-f759-45a5-9907-3746ec2b23f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'LED_0603_1608Metric' does not match copy in library 'LED_SMD'",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 131.699,
+                        "y": 88.265
+                    },
+                    "uuid": "8e963b1f-a377-45d6-ace3-2e2f4ce6d776"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'C_0603_1608Metric' does not match copy in library 'Capacitor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C2",
+                    "pos": {
+                        "x": 130.683,
+                        "y": 92.837
+                    },
+                    "uuid": "9ccf6fcb-0e58-41ac-8bb4-f579304c7e53"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'C_0603_1608Metric' does not match copy in library 'Capacitor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint C3",
+                    "pos": {
+                        "x": 130.683,
+                        "y": 96.774
+                    },
+                    "uuid": "b303b814-647a-44d6-8f8f-f67a94f0db0e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm' does not match copy in library 'Jumper'",
+            "items": [
+                {
+                    "description": "Footprint VDD_IO_3V3",
+                    "pos": {
+                        "x": 128.651,
+                        "y": 104.14
+                    },
+                    "uuid": "bacfe3e6-89a7-400d-8ccd-9546a174f9a6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'Resistor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R5",
+                    "pos": {
+                        "x": 135.001,
+                        "y": 88.265
+                    },
+                    "uuid": "d598b851-0a5d-4ca4-98a1-62ba523cac8e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm' does not match copy in library 'Jumper'",
+            "items": [
+                {
+                    "description": "Footprint I2C_EN",
+                    "pos": {
+                        "x": 133.604,
+                        "y": 104.14
+                    },
+                    "uuid": "de0b2781-1181-4ffc-9638-7a822c991d7f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'R_0603_1608Metric' does not match copy in library 'Resistor_SMD'",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 136.017,
+                        "y": 100.076
+                    },
+                    "uuid": "fd8934a4-81e4-42d9-a09d-6008ab660583"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text '~{CS}' on F.Silkscreen",
+                    "pos": {
+                        "x": 140.081,
+                        "y": 100.965
+                    },
+                    "uuid": "08818e79-c269-4e90-a712-52e1b2f3ac15"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'ADC2' on F.Silkscreen",
+                    "pos": {
+                        "x": 126.365,
+                        "y": 95.885
+                    },
+                    "uuid": "2ca0c99d-71e4-4e18-841b-e81dd1e8a953"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'INT2\n' on F.Silkscreen",
+                    "pos": {
+                        "x": 140.208,
+                        "y": 90.805
+                    },
+                    "uuid": "3932f124-e11b-4d72-b07c-6457bb3a6e9f"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text '3V3' on F.Silkscreen",
+                    "pos": {
+                        "x": 126.492,
+                        "y": 88.265
+                    },
+                    "uuid": "744348b8-4331-49d1-ba49-d43c6a1bc973"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'SDO' on F.Silkscreen",
+                    "pos": {
+                        "x": 140.335,
+                        "y": 93.345
+                    },
+                    "uuid": "885d3e35-6b09-46b9-8dc5-0587cd6c4c45"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'ADC1' on F.Silkscreen",
+                    "pos": {
+                        "x": 126.365,
+                        "y": 98.425
+                    },
+                    "uuid": "9531ea2a-a978-4836-9530-b18321361f6c"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'SCL/\nSPC' on F.Silkscreen",
+                    "pos": {
+                        "x": 140.208,
+                        "y": 98.425
+                    },
+                    "uuid": "9b911f19-e9ab-457f-ae6a-0619d33c76a2"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'VDD\nIO' on F.Silkscreen",
+                    "pos": {
+                        "x": 126.365,
+                        "y": 100.965
+                    },
+                    "uuid": "a36640e8-9968-463d-a802-dfd3b38f09d7"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'INT1\n' on F.Silkscreen",
+                    "pos": {
+                        "x": 140.208,
+                        "y": 88.392
+                    },
+                    "uuid": "daceb91c-3536-42d1-90db-08f8ae2f381e"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'GND' on F.Silkscreen",
+                    "pos": {
+                        "x": 126.492,
+                        "y": 90.805
+                    },
+                    "uuid": "db74e325-155b-4e10-af2e-4b0e6638148b"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'SDA/\nSDI/SDO' on F.Silkscreen",
+                    "pos": {
+                        "x": 140.208,
+                        "y": 95.885
+                    },
+                    "uuid": "ec35a886-db2b-4e28-a631-c3320d5cb6be"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.7620 mm)",
+            "items": [
+                {
+                    "description": "PCB text 'ADC3' on F.Silkscreen",
+                    "pos": {
+                        "x": 126.492,
+                        "y": 93.345
+                    },
+                    "uuid": "f0a645dc-398e-4297-920d-493b6a4cc5a7"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text thickness out of range (board setup constraints silk text thickness min thickness 0.0800 mm; actual 0.0762 mm)",
+            "items": [
+                {
+                    "description": "Reference field of I2C_ADDR",
+                    "pos": {
+                        "x": 138.938,
+                        "y": 105.918
+                    },
+                    "uuid": "95ad6eb3-1877-4e33-9b63-dd71752aaa9f"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_thickness"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of I2C_ADDR",
+                    "pos": {
+                        "x": 138.938,
+                        "y": 105.918
+                    },
+                    "uuid": "95ad6eb3-1877-4e33-9b63-dd71752aaa9f"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R4",
+                    "pos": {
+                        "x": 134.239,
+                        "y": 102.108
+                    },
+                    "uuid": "56d4c527-a18b-47f1-b5de-838d1819ec6b"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 130.683,
+                        "y": 102.108
+                    },
+                    "uuid": "28d06711-da85-4e17-9dd2-28ce5890921e"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R3",
+                    "pos": {
+                        "x": 132.461,
+                        "y": 102.108
+                    },
+                    "uuid": "77a05197-be12-466a-b96d-dab9d3999aa1"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of D1",
+                    "pos": {
+                        "x": 130.556,
+                        "y": 87.122
+                    },
+                    "uuid": "47cd4028-25b2-4d9f-a6f7-512399787fc2"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of C2",
+                    "pos": {
+                        "x": 131.953,
+                        "y": 91.694
+                    },
+                    "uuid": "fb93b1f8-8eb4-47c8-ba7c-4f27435b862d"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of C3",
+                    "pos": {
+                        "x": 129.54,
+                        "y": 97.282
+                    },
+                    "uuid": "5028939c-0540-4608-be28-5eb727ae8b7a"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text thickness out of range (board setup constraints silk text thickness min thickness 0.0800 mm; actual 0.0762 mm)",
+            "items": [
+                {
+                    "description": "Reference field of VDD_IO_3V3",
+                    "pos": {
+                        "x": 127.889,
+                        "y": 105.918
+                    },
+                    "uuid": "ff14bb0b-2b6d-4458-ad0a-fc821fe1c605"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_thickness"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of VDD_IO_3V3",
+                    "pos": {
+                        "x": 127.889,
+                        "y": 105.918
+                    },
+                    "uuid": "ff14bb0b-2b6d-4458-ad0a-fc821fe1c605"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R5",
+                    "pos": {
+                        "x": 136.017,
+                        "y": 87.122
+                    },
+                    "uuid": "845777f1-aedc-41b7-9345-2b0bb6c6d96d"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text thickness out of range (board setup constraints silk text thickness min thickness 0.0800 mm; actual 0.0762 mm)",
+            "items": [
+                {
+                    "description": "Reference field of I2C_EN",
+                    "pos": {
+                        "x": 133.35,
+                        "y": 105.918
+                    },
+                    "uuid": "fb90c2bc-ad38-409a-9875-42db4d536264"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_thickness"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of I2C_EN",
+                    "pos": {
+                        "x": 133.35,
+                        "y": 105.918
+                    },
+                    "uuid": "fb90c2bc-ad38-409a-9875-42db4d536264"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of C1",
+                    "pos": {
+                        "x": 136.017,
+                        "y": 86.106
+                    },
+                    "uuid": "604393fd-a8b5-4aba-8bcc-e7dd34efa9a9"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.5080 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 136.017,
+                        "y": 102.108
+                    },
+                    "uuid": "71bf3842-8271-41d1-8d43-459cf47bdca6"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        }
+    ]
+}

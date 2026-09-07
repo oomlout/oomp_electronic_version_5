@@ -194,6 +194,7 @@ def main(**kwargs):
         "electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr": {"dimensions": {"length": 8.65, "width": 3.9, "height": 1.75}, "pins": ["VDD", "PA4", "PA5", "PA6", "PA7", "PB5", "PB4", "PB3", "PB2", "PB1", "PB0", "PA3", "PA2", "GND"], "drawing": _gullwing([str(index) for index in range(1, 15)], body=(8.65, 3.9), overall=(10.3, 6.0))},
         "electronic_ic_soic_8_timer_555_timer_texas_instruments_tlc555cd": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["GND", "TRIG", "OUT", "RESET", "CTRL", "THRESH", "DISCH", "VCC"], "drawing": _gullwing([str(index) for index in range(1, 9)])},
         "electronic_ic_soic_8_timer_555_timer_texas_instruments_ne555dr": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["GND", "TRIG", "OUT", "RESET", "CTRL", "THRESH", "DISCH", "VCC"], "drawing": _gullwing([str(index) for index in range(1, 9)])},
+        "electronic_ic_soic_8_logic_comparator_lm393": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["OUT1", "IN1_MINUS", "IN1_PLUS", "GND", "IN2_PLUS", "IN2_MINUS", "OUT2", "VCC"], "drawing": _gullwing([str(index) for index in range(1, 9)])},
         "electronic_ic_soic_8_sensor_hall_effect_current_sensor_allegro_acs712": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["IP_PLUS", "IP_PLUS", "IP_MINUS", "IP_MINUS", "GND", "FILTER", "VIOUT", "VCC"], "drawing": _gullwing([str(index) for index in range(1, 9)])},
         "electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": [str(index) for index in range(1, 9)], "drawing": _gullwing([str(index) for index in range(1, 9)])},
         "electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s": {"dimensions": {"length": 10.0, "width": 4.0, "height": 1.75}, "pins": [str(index) for index in range(1, 17)], "drawing": _gullwing([str(index) for index in range(1, 17)], body=(10.0, 4.0), overall=(12.0, 6.0))},
@@ -220,6 +221,8 @@ def main(**kwargs):
         "electronic_sensor_light_proximity_ch_6_liteon_ltr_507als_01": (2.65, 2.0, [str(i) for i in range(1, 9)], _module(2.65, 2.0, [str(i) for i in range(1, 9)], body=(1.8, 1.3))),
         "electronic_sensor_pressure_temperature_lga_10_bosch_bmp388": (2.0, 2.0, [str(i) for i in range(1, 11)], _module(2.0, 2.0, [str(i) for i in range(1, 11)], body=(1.8, 1.8))),
         "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345": (5.0, 3.0, ["VDD", "GND", "ST1", "GND", "VDDIO", "NC", "NC", "INT2", "INT1", "GND", "RES", "SCL_SCLK", "SDA_SDI", "SDO"], _module(5.0, 3.0, [str(i) for i in range(1, 15)])),
+        "electronic_sensor_accelerometer_lga_16_st_lis3dhtr": (3.0, 3.0, [str(i) for i in range(1, 17)], _module(3.0, 3.0, [str(i) for i in range(1, 17)])),
+        "electronic_sensor_accelerometer_lga_16_st_lis3dhtr": (3.0, 3.0, [str(i) for i in range(1, 17)], _module(3.0, 3.0, [str(i) for i in range(1, 17)])),
         "electronic_sensor_particulate_matter_module_bosch_bmv080": (20.0, 5.5, ["VDDL", "VSSA", "VDDA", "VSSD", "PS", "SCK", "MOSI", "MISO", "CS", "VDDD"], _module(20.0, 5.5, [str(i) for i in range(1, 11)], body=(4.4, 3.0))),
     }
     for current, (length, width, pins, drawing) in sensors.items():
@@ -238,6 +241,7 @@ def main(**kwargs):
     # Simple, physically legible two-terminal and protection parts.
     simple = {
         "electronic_diode_schottky_sod_323_infineon_bat20j": ({"length": 1.7, "width": 1.25}, ["K", "A"], _gullwing(["1", "2"], body=(1.7, 1.25), overall=(2.8, 1.8), pad_width=0.55)),
+        "electronic_diode_switching_sod_323_onsemi_1n4148ws": ({"length": 1.7, "width": 1.25}, ["K", "A"], _gullwing(["1", "2"], body=(1.7, 1.25), overall=(2.8, 1.8), pad_width=0.55)),
         "electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x": ({"length": 3.0, "width": 1.3}, ["GND", "IO1", "IO2", "VCC"], _qfn(["1", "2", "3", "4"], body=(2.9, 1.3), overall=(3.8, 2.5))),
         "electronic_capacitor_0603_2200_pico_farad": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5)),
         "electronic_inductor_0603_30_ohm": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5)),

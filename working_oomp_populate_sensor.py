@@ -34,6 +34,7 @@ def main(**kwargs):
         ["pressure_temperature", "lga_10", "bosch", "bmp388", "BMP388 Pressure Sensor"],
         ["gnss", "module", "quectel", "l86_m33", "Quectel L86-M33 GNSS Module"],
         ["accelerometer", "lga_14", "analog_devices", "adxl345", "ADXL345 Accelerometer"],
+        ["accelerometer", "lga_16", "st", "lis3dhtr", "LIS3DHTR Accelerometer"],
         ["gnss", "module", "u_blox", "sam_m8q", "u-blox SAM-M8Q GNSS Module"],
         ["gnss", "module", "u_blox", "dan_f10n", "u-blox DAN-F10N GNSS Module"],
         ["gnss", "module", "u_blox", "neo_f10n", "u-blox NEO-F10N GNSS Module"],

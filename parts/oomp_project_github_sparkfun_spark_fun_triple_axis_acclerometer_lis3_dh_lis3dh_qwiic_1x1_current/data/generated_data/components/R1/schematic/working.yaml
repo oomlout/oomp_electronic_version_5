@@ -1,0 +1,215 @@
+available: true
+units:
+- reference: R1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 77dd457c-87b4-407f-93d7-6b9e2baba3c9
+  library_id: SparkFun-Resistor:10k_0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 95.25
+    y: 53.34
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R1
+    Value: 10k
+    Footprint: SparkFun-Resistor:R_0603_1608Metric
+    Datasheet: https://www.vishay.com/docs/20035/dcrcwe3.pdf
+    Description: Resistor
+    PROD_ID: RES-00824
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 1.016
+    position:
+      x: 95.25
+      y: 55.88
+    net: ~{CS}
+    net_aliases:
+    - ~{CS}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '1'
+      pin_name: Pin_1
+    - reference: U1
+      pin_number: '8'
+      pin_name: ~{CS}/MODE
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 1.016
+    position:
+      x: 95.25
+      y: 50.8
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR010'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR0104'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR0106'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR0108'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR0109'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR0113'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR0114'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#PWR0124'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C1
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C2
+      pin_number: '1'
+      pin_name: '~'
+    - reference: J3
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: J4
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: J5
+      pin_number: '2'
+      pin_name: Pin_2
+    - reference: JP1
+      pin_number: '2'
+      pin_name: B
+    - reference: JP2
+      pin_number: '2'
+      pin_name: B
+    - reference: R4
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U1
+      pin_number: '14'
+      pin_name: VDD
+    - reference: U1
+      pin_number: '1'
+      pin_name: VDDIO
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.524
+        y: -1.016
+      max:
+        x: 1.524
+        y: 1.016
+      width: 3.048
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 94.234
+        y: 51.816
+      max:
+        x: 96.266
+        y: 54.864
+      width: 2.032
+      height: 3.048
+      center:
+        x: 95.25
+        y: 53.34
+  warnings: []
+connected_components:
+- reference: '#PWR010'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0104'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0106'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0108'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0109'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0113'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0114'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#PWR0124'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: C1
+  pin_number: '1'
+  pin_name: '~'
+- reference: C2
+  pin_number: '1'
+  pin_name: '~'
+- reference: J1
+  pin_number: '1'
+  pin_name: Pin_1
+- reference: J3
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J4
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: J5
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: JP1
+  pin_number: '2'
+  pin_name: B
+- reference: JP2
+  pin_number: '2'
+  pin_name: B
+- reference: R4
+  pin_number: '2'
+  pin_name: '~'
+- reference: U1
+  pin_number: '1'
+  pin_name: VDDIO
+- reference: U1
+  pin_number: '14'
+  pin_name: VDD
+- reference: U1
+  pin_number: '8'
+  pin_name: ~{CS}/MODE
