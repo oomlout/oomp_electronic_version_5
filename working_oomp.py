@@ -233,6 +233,16 @@ def add_part_build_actions(part, count):
         for file_copy in file_copies:
             if not isinstance(file_copy, dict):
                 continue
+            file_source = str(file_copy.get("file_source", "")).strip()
+            if file_source == "":
+                continue
+            if not os.path.isabs(file_source):
+                file_source = os.path.join(os.path.dirname(__file__), file_source)
+            if not os.path.isfile(file_source):
+                print(
+                    f"Skipping missing file_copy source for {part.get('name', '<unknown>')}: {file_source}"
+                )
+                continue
             file_destination = os.path.join(
                 DATA_DIRECTORY,
                 os.path.basename(str(file_copy.get("file_destination", ""))),
@@ -240,7 +250,7 @@ def add_part_build_actions(part, count):
             copy_actions.append(
                 {
                     "command": "file_copy",
-                    "file_source": file_copy.get("file_source", ""),
+                    "file_source": file_source,
                     "file_destination": file_destination,
                     "exit_on_missing": True,
                     "delete_before_copy": True,

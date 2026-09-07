@@ -10,7 +10,7 @@ from pathlib import Path
 import yaml
 
 
-PACKAGE_SIZES = ["0201", "0402", "0603", "0805", "1206", "1210", "2512", "3216", "1010", "5050"]
+PACKAGE_SIZES = ["0201", "0402", "0603", "0805", "1206", "1205", "1210", "2512", "3216", "1010", "5050"]
 LED_COLORS = ["warm_white", "white", "yellow", "green", "blue", "pink", "red", "rgb"]
 
 # Value/MPN fragments that identify an exact OOMP part already in the
@@ -34,6 +34,13 @@ KNOWN_PART_ALIASES = {
     "mmbt4403": "electronic_transistor_sot_23_bipolar_pnp_40_volt_600_milliamp_onsemi_mmbt4403",
     "nmos_dual": "electronic_transistor_sot_363_6_mosfet_n_channel_dual",
     "q_npn_bce": "electronic_transistor_sot_23_bipolar_npn",
+    # Soldered boards draw bare "NPN"/"PNP"/"NMOS" values on SOT-23-3
+    # footprints with no MPN; the underscore suffix defeats the word-boundary
+    # match, so the spelled-out schematic values get their own rows.
+    "npn": "electronic_transistor_sot_23_bipolar_npn",
+    "npn_sot_23_3": "electronic_transistor_sot_23_bipolar_npn",
+    "pnp": "electronic_transistor_sot_23_bipolar_pnp",
+    "nmos": "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode",
     "dfe201612e_2r2m_p2": "electronic_inductor_0806_2_2_micro_henry",
     "dshp03ts_s": "electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s",
     "tc33x_2_103e": "electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e",
@@ -47,11 +54,25 @@ KNOWN_PART_ALIASES = {
     "kf235_5_0_2p": "electronic_connector_terminal_block_5_mm_pitch_through_hole_2_pin_kf235_5_0_2p",
     "cr1220_holder": "electronic_connector_coin_cell_holder_through_hole_cr1220",
     "cp2102n": "electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r",
+    # The full schematic value "CP2102N-Axx-xQFN28" -- the bare "cp2102n" alias
+    # above cannot match it because the word-boundary rule stops at the
+    # following underscore.
+    "cp2102n_axx_xqfn28": "electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r",
     "xc6206p332mr": "electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_xc6206p332mr",
+    "xc6206p502mr": "electronic_ic_sot_23_power_management_linear_voltage_regulator_5_volt_torex_xc6206p502mr",
     "atmega328p_a": "electronic_ic_tqfp_32_7_mm_x_7_mm_microcontroller_8_bit_avr_microchip_atmega328p_au",
+    # The Uno schematic writes the AMS1117 suffix with a trailing V.
     "ams1117_3_3": "electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3",
+    "ams1117_3_3v": "electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3",
     "ams1117_5v": "electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5",
     "ch340c": "electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch340c",
+    # Pico board MCU: same RP2040 the Bus Pirate 5 uses.
+    "rp2040": "electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040",
+    # BSS138 on SparkFun boards: the part's generic_match rules list KiCad's
+    # symbol/footprint names, but SparkFun ships its own symbol and footprint,
+    # so the value itself (which is the bare MPN there) aliases straight to the
+    # stocked onsemi variant.
+    "bss138": "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138",
     "jst_sh_2pin_1mm_c145954": "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_2_pin_jst_sm02b_srss_tb",
     "pesd0402": "electronic_diode_esd_0402_littelfuse_pesd0402",
     "ss14": "electronic_diode_schottky_sod_123_ss14",
@@ -62,8 +83,9 @@ KNOWN_PART_ALIASES = {
     # Soldered radial electrolytic (16 V, 681 code = 680 uF, 8 mm x 14.5 mm).
     "emzr160ara681mha0g": "electronic_capacitor_8_mm_diameter_14_5_mm_tall_electrolytic_680_micro_farad_16_volt",
     "c1608x7s1a475k080ac": "electronic_capacitor_0603_4_7_micro_farad",
-    # Transistors (BSS138, 2N7002) already carry opt-in generic_match rules in
-    # their populate data, so they are intentionally not aliased here.
+    # 2N7002 carries an opt-in generic_match rule in its populate data, so it
+    # is intentionally not aliased here (BSS138 above needs the alias because
+    # SparkFun boards use their own symbol/footprint names).
 }
 
 
@@ -244,6 +266,10 @@ def infer_kind(fields):
         return "diode"
     if any(d in evidence for d in ["d_schottky", "d_tvs", "d_rectifier", "d_zener", "d_zener_sod"]):
         return "diode"
+    # Resettable PTC fuses (SparkFun draws them on F references with a fuse
+    # symbol; the value is a voltage/hold/trip rating triplet, not an MPN).
+    if reference.startswith("F") and not reference.startswith("FID") and "fuse" in evidence:
+        return "fuse"
     # Generic through-hole 2.54 mm pin headers: KiCad's Conn_01xNN symbols on
     # PinHeader_1xNN_P2.54mm footprints, and SparkFun's 1xNN footprints (2.54 mm
     # with or without an explicit _P2.54mm suffix). A SparkFun 1xNN footprint is
@@ -471,6 +497,9 @@ def proposed_oomp_id(component):
         if diode_type and package:
             return f"electronic_diode_{diode_type}_{package}"
 
+    if kind == "fuse" and package_size:
+        return f"electronic_fuse_{package_size}_resettable"
+
     if kind == "connector":
         value_text = normalize_text(fields["value"])
         footprint_text = normalize_text(fields["footprint"])
@@ -583,6 +612,12 @@ def _is_board_feature(fields):
         return True
     # Jumper_2_NO / Jumper_3_NO: unpopulated solder-blob option pads.
     if re.search(r"jumper_\d+_no", board_feature_evidence):
+        return True
+    # Soldered "PAD_2x1.5": exposed probe/sensing pads etched in the board copper.
+    if value.startswith("pad_") and reference_upper.startswith("PAD"):
+        return True
+    # Footprint-only outline graphics (SparkFun "BMV080_Outline" on REF**).
+    if "outline" in board_feature_evidence:
         return True
     if value in ("measure",) and "jumper" in board_feature_evidence:
         return True
@@ -722,6 +757,10 @@ def match_component(index, component, overrides=None, blocked=None):
         return result
 
     if reference in (blocked or {}):
+        # A blocked reference is a documented decision, not an unexplained
+        # failure: it keeps the reason text and leaves the unmatched report
+        # to genuinely unexplained components.
+        result["status"] = "blocked"
         result["reasons"].append(str(blocked[reference]))
         return result
 

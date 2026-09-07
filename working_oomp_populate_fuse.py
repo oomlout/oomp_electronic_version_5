@@ -3,7 +3,9 @@ def main(**kwargs):
 
     fuses = [
         {"size": "0402", "fuse_type": "resettable"},
+        {"size": "0805", "fuse_type": "resettable"},
         {"size": "1206", "fuse_type": "resettable"},
+        {"size": "1210", "fuse_type": "resettable"},
     ]
 
     for fuse in fuses:
@@ -12,3 +14,7 @@ def main(**kwargs):
         option["taxonomy_3"] = fuse["size"]
         option["taxonomy_4"] = fuse["fuse_type"]
         options.append(option)
+
+
+if __name__ == "__main__":
+    main()

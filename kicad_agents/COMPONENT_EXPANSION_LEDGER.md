@@ -204,6 +204,47 @@ manufacturer and supplier number.  Exact variants are always separate rows.
 | E0135 | queued | AVR ISP header | 2×3, 2.54 mm | Keyed/unkeyed variants and pin names. |
 | E0136 | queued | ARM Cortex debug header | 2×5, 1.27 mm | Standard SWD pin names and keyed shroud variant. |
 | E0137 | queued | IDC/JTAG header | 2×10, 2.54 mm | Keyed shroud and standard pin naming. |
+| E0138 | queued | `SE5218` / `SE5218ALG` | SOT-23-5 | Fitted as U3 on nearly every Soldered easyC breakout; manufacturer and function still unconfirmed. |
+| E0139 | queued | `PRTR5V0U2X` | SOT-143 | NXP USB ESD protection diode; Arduino Uno D1. |
+| E0140 | queued | `BAT20J` | SOD-323 | Infineon schottky; capacitive soil sensor D1. |
+| E0141 | queued | `TL431ACDBZ` | SOT-23-3 | TI shunt regulator; thermocouple board U1. |
+| E0142 | queued | `AD8495ARMZ` | MSOP-8 | TI thermocouple amplifier; thermocouple board U2 (footprint is the TP4056 MSOP-8). |
+| E0143 | queued | `INA219` | SOT23-8 | TI current/power monitor; INA219 breakout U1. |
+| E0144 | queued | `ACS712ELCTR-30A` | SOIC-8 | Allegro hall current sensor; 30 A board U1. |
+| E0145 | queued | `BMP388` | LGA-10 | Bosch pressure sensor; BMP388 board U1 (distinct from queued E0104 BME280). |
+| E0146 | queued | `LSM9DS1TR` | LGA-24 | ST 9-DOF IMU; LSM9DS1 breakout U2. |
+| E0147 | queued | `CCS811B-JOPR` | LGA-20 | ams air-quality sensor; CCS811 breakout U2. |
+| E0148 | queued | `LTR-507ALS-01` | CH-6 | LiteOn ambient light/proximity sensor; LTR-507ALS breakout U2. |
+| E0149 | queued | `L86-M33` | module | Quectel GNSS module; L86-M33 breakout U2. |
+| E0150 | queued | 555 timer SOIC-8 | SOIC-8 | Exact variants `TLC555CD` (capacitive soil U1) and `NE555DR` (PIR board U3). |
+| E0151 | queued | `SGM358YMS/TR` | MSOP-8 | SG Micro op-amp; capacitive soil sensor U2. |
+| E0152 | queued | `ATTINY1604-SSNR` | SOIC-14 | Microchip AVR; L86-M33 easyC board U5 (E0082-style row needed beside ATTINY404). |
+| E0153 | queued | `W25Q16JVUXIQ` | USON-8 | Winbond 16 Mbit NOR flash; Pico U3 (E0090 covers SOIC-8 JV parts only). |
+| E0154 | queued | `MY1690X-16S` | SO-16 | Audio player IC; SparkFun MY1690X breakout U2. |
+| E0155 | queued | `CY8CMBR3102` | SOIC-8 | Infineon capacitive-touch controller; SparkFun soil moisture board U1. |
+| E0156 | queued | `ADS1219IPW` | TSSOP-16 | TI 24-bit ADC; Qwiic ADS1219 board U1. |
+| E0157 | queued | `ADE7953ACPZ` | QFN-28 | ADI energy-metering IC; Qwiic ADE7953 board U1. |
+| E0158 | queued | `INA228` | VSSOP-10 | TI current monitor; Qwiic INA2XX board U2. |
+| E0159 | queued | `PCA9554PW` | TSSOP-16 | TI I²C I/O expander; Qwiic directional pad / navigation switch U4. |
+| E0160 | queued | `CH340E` | MSOP-10 | WCH USB-serial; Qwiic SAM-M8Q U4. |
+| E0161 | queued | `CH342F` | QFN-24 | WCH dual USB-serial; GNSS Flex U2. |
+| E0162 | queued | `74HC4066BQ` | QFN-14 | Nexperia analog switch; GNSS Flex U3/U5. |
+| E0163 | queued | `AP7361C-3.3V` | DFN-8 | Diodes LDO; GNSS Flex U4. |
+| E0164 | queued | `AP2112K-3.3` | SOT-25 | Diodes LDO; NEO-F10N board U2. |
+| E0165 | queued | u-blox GNSS modules | module | `SAM-M8Q`, `DAN-F10N`, `NEO-F10N` — separate identities per module. |
+| E0166 | queued | `BMV080` | module | BSD particulate-matter sensor; BMV080 breakout U1 (outline footprint is board art). |
+| E0167 | queued | `ML414H` + `IV01E` holder | coin cell | Rechargeable backup battery and holder on SparkFun GNSS boards (BT1). |
+| E0168 | queued | 5-way navigation switch | SMD 7.5 / 9.9 mm | SparkFun nav switch footprints; one exact part per size. |
+| E0169 | queued | roller encoder switch | proprietary | SparkFun Roller Encoder Breakout SW1. |
+| E0170 | queued | slide potentiometer | Soldered SLIDER_POT | Single/dual variants; slider potentiometer boards R1. |
+| E0171 | queued | PIR fresnel lens | kapica dome | Mechanical lens for Soldered PIR boards (K2/K5); purchased with or beside the sensor. |
+| E0172 | queued | IPX-to-SMA pigtail | cable assembly | "IPX connector with SMA" on L86-M33 boards K1; assembly, not a single part. |
+| E0173 | queued | microSD card connectors | push-push / friction-fit | SparkFun external-pin and friction-fit footprints. |
+| E0174 | queued | 3.5 mm TRRS jack | SMD right angle | SparkFun Audio_Jack_3.5mm_TRRS footprints. |
+| E0175 | queued | 2×10 2.0 mm GNSS header | plug-in, SMD pegs | SparkFun GNSS Flex J11/J12 left/right. |
+| E0176 | queued | 1.27 mm 2×5 female header | SMD | PMS7003 adapter K2 socket. |
+| E0177 | queued | `B3FS-100xP` | SMD | Omron tactile switch; Arduino Uno SW1. |
+| E0178 | queued | `RFCMF1220100M4T` | SMD coil | Coilcraft USB transformer; GNSS Flex TR2. |
 
 ## Progress log
 

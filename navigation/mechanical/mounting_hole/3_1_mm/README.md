@@ -1,11 +1,11 @@
-# Mechanical
+# Mechanical / Mounting Hole / 3 1 Mm
 
 [Up one level](../README.md)
-This category contains 50 parts in total.
+This category contains 2 parts in total.
 
 ## Categories
 
-- [Mounting Hole](mounting_hole/README.md)
+- [Round](round/README.md)
 
 
 ---

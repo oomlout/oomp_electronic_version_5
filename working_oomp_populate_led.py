@@ -68,6 +68,14 @@ def main(**kwargs):
         option["taxonomy_7"] = bus_pirate_led["part_number"]
         options.append(option)
 
+    # SparkFun bottom-view 1205 RGB indicator (no addressable controller);
+    # "1205" also needs to be in the matcher's PACKAGE_SIZES for the proposal.
+    option = {}
+    option["taxonomy_2"] = "led"
+    option["taxonomy_3"] = "1205"
+    option["taxonomy_4"] = "rgb"
+    options.append(option)
+
     # LED filaments are intentionally disabled. Keep this simple declaration
     # commented so the family can be restored later without reconstructing it.
     # colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]

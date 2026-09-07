@@ -3,6 +3,7 @@
 import unittest
 from unittest.mock import patch
 import working_oomp_metadata
+import working_oomp
 
 import action_generate
 import working_oomp_populate_svg
@@ -38,6 +39,23 @@ class PopulateWorkflowTests(unittest.TestCase):
             with patch.object(working_oomp_populate, 'write_extras'):
                 working_oomp_populate.main()
         add_navigation.assert_not_called()
+
+    def test_missing_source_file_does_not_create_file_copy_action(self):
+        part = {
+            'name': 'electronic_connector_jst_ph_2_mm_pitch_surface_mount_right_angle_10_pin_jst_s10b_ph_sm4_tb',
+            'file_copy': [
+                {
+                    'file_source': 'parts_source/electronic_connector_jst_ph_2_mm_pitch_surface_mount_right_angle_10_pin_jst_s10b_ph_sm4_tb/datasheet.pdf',
+                    'file_destination': 'datasheet.pdf',
+                }
+            ],
+        }
+        working_oomp.add_part_build_actions(part, 0)
+        actions = []
+        for key, value in part.items():
+            if key.startswith('oomlout_ai_roboclick_') and isinstance(value, dict):
+                actions.extend(value.get('actions', []))
+        self.assertNotIn('file_copy', [action.get('command') for action in actions])
 
     def test_led_strips_and_filaments_are_not_populated(self):
         options = []

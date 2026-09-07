@@ -1,7 +1,7 @@
 # Electronic / Resistor / 0402
 
 [Up one level](../README.md)
-This category contains 88 parts in total.
+This category contains 91 parts in total.
 
 
 ## Parts
@@ -38,6 +38,8 @@ This category contains 88 parts in total.
 - [Resistor 2.7e+06 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2700000_ohm) — `electronic_resistor_0402_2700000_ohm`
 - [Resistor 200 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_200_ohm) — `electronic_resistor_0402_200_ohm`
 - [Resistor 2000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2000_ohm) — `electronic_resistor_0402_2000_ohm`
+- [Resistor 20000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_20000_ohm) — `electronic_resistor_0402_20000_ohm`
+- [Resistor 200000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_200000_ohm) — `electronic_resistor_0402_200000_ohm`
 - [Resistor 22 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_22_ohm) — `electronic_resistor_0402_22_ohm`
 - [Resistor 220 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_220_ohm) — `electronic_resistor_0402_220_ohm`
 - [Resistor 2200 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) — `electronic_resistor_0402_2200_ohm`
@@ -51,6 +53,7 @@ This category contains 88 parts in total.
 - [Resistor 270000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_270000_ohm) — `electronic_resistor_0402_270000_ohm`
 - [Resistor 3.3e+06 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_3300000_ohm) — `electronic_resistor_0402_3300000_ohm`
 - [Resistor 3.9e+06 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_3900000_ohm) — `electronic_resistor_0402_3900000_ohm`
+- [Resistor 300 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_300_ohm) — `electronic_resistor_0402_300_ohm`
 - [Resistor 33 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_33_ohm) — `electronic_resistor_0402_33_ohm`
 - [Resistor 330 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_330_ohm) — `electronic_resistor_0402_330_ohm`
 - [Resistor 3300 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_3300_ohm) — `electronic_resistor_0402_3300_ohm`

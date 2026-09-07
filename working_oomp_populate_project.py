@@ -288,6 +288,12 @@ def main(**kwargs):
                     "project_file_folder": "Raspberry Pi Pico 2040",
                     "project_file_basename": "Easyduino_RP2040",
                     "project_file_path": "Raspberry Pi Pico 2040/Easyduino_RP2040",
+                    "match_overrides": {
+                        # Debug-connector symbol on the JST-SH BM03B-SRSS-TB
+                        # vertical 3-pin footprint; the matcher skips JST
+                        # Conn_01xNN symbols, so pin the exact catalogue part.
+                        "J6": "electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_3_pin_jst_bm03b_srss_tb",
+                    },
                 },
                 {
                     "board": "stm32f103_bluepill",
@@ -312,31 +318,33 @@ def main(**kwargs):
         project_file_basename,
         version_folder,
         git_ref="main",
+        match_blocked=None,
     ):
         repo_url = f"https://github.com/SolderedElectronics/{repo_slug}"
+        version = {
+            "board": board_slug,
+            "board_name": board_name,
+            "board_url": repo_url,
+            "version": "current",
+            "git_ref": git_ref,
+            "sparse_checkout": True,
+            "project_file_folder": project_file_folder,
+            "project_file_basename": project_file_basename,
+            "project_file_path": f"{project_file_folder}/{project_file_basename}",
+        }
+        if match_blocked:
+            version["match_blocked"] = match_blocked
         projects.append(
             {
                 "github_user": "SolderedElectronics",
                 "github_repository": repo_slug,
                 "github_url": repo_url,
                 "repository_url": f"{repo_url}.git",
-                "versions": [
-                    {
-                        "board": board_slug,
-                        "board_name": board_name,
-                        "board_url": repo_url,
-                        "version": "current",
-                        "git_ref": git_ref,
-                        "sparse_checkout": True,
-                        "project_file_folder": project_file_folder,
-                        "project_file_basename": project_file_basename,
-                        "project_file_path": f"{project_file_folder}/{project_file_basename}",
-                    }
-                ],
+                "versions": [version],
             }
         )
 
-    def add_variant_family(base_repo_slug, base_board_slug, base_board_name, project_file_basename, version_folder, variants):
+    def add_variant_family(base_repo_slug, base_board_slug, base_board_name, project_file_basename, version_folder, variants, variant_match_blocks=None):
         for variant in variants:
             repo_suffix, board_suffix, name_suffix = variant[:3]
             # Repos in a family do not necessarily mirror the base board's
@@ -358,6 +366,7 @@ def main(**kwargs):
                 file_folder,
                 file_basename,
                 version_folder,
+                match_blocked=(variant_match_blocks or {}).get(board_suffix),
             )
 
     # Soldered Electronics sensor boards.  The qwiic/easyc flags follow the
@@ -885,25 +894,26 @@ def main(**kwargs):
 
     for sparkfun_project in sparkfun_projects:
         active_version = _select_active_version(sparkfun_project.get("versions", [{"version": "current", "git_ref": "main"}]))
+        sparkfun_version = {
+            "board": sparkfun_project["board"],
+            "board_name": sparkfun_project["board_name"],
+            "board_url": sparkfun_project["repo_url"],
+            "version": active_version.get("version", "current"),
+            "git_ref": active_version.get("git_ref", "main"),
+            "sparse_checkout": True,
+            "project_file_folder": sparkfun_project["project_file_folder"],
+            "project_file_basename": sparkfun_project["project_file_basename"],
+            "project_file_path": sparkfun_project["project_file_path"],
+        }
+        if sparkfun_project.get("match_blocked"):
+            sparkfun_version["match_blocked"] = sparkfun_project["match_blocked"]
         projects.append(
             {
                 "github_user": "sparkfun",
                 "github_repository": sparkfun_project["github_repository"],
                 "github_url": sparkfun_project["repo_url"],
                 "repository_url": f"{sparkfun_project['repo_url']}.git",
-                "versions": [
-                    {
-                        "board": sparkfun_project["board"],
-                        "board_name": sparkfun_project["board_name"],
-                        "board_url": sparkfun_project["repo_url"],
-                        "version": active_version.get("version", "current"),
-                        "git_ref": active_version.get("git_ref", "main"),
-                        "sparse_checkout": True,
-                        "project_file_folder": sparkfun_project["project_file_folder"],
-                        "project_file_basename": sparkfun_project["project_file_basename"],
-                        "project_file_path": sparkfun_project["project_file_path"],
-                    }
-                ],
+                "versions": [sparkfun_version],
             }
         )
 

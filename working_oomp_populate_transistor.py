@@ -17,6 +17,23 @@ def main(**kwargs):
             "name_short": "NPN Transistor SOT-23 (generic)",
         },
         {
+            # Soldered boards draw bare "PNP" symbols on SOT-23-3 footprints
+            # (PIR movement sensor Q2); mirror the generic NPN entry.
+            "taxonomy": ["transistor", "sot_23", "bipolar", "pnp"],
+            "manufacturer": "",
+            "part_number": "",
+            "name_short": "PNP Transistor SOT-23 (generic)",
+        },
+        {
+            # Soldered boards draw bare "NMOS" symbols on SOT-23-3 footprints
+            # (PIR movement sensor Q1); a value-less generic keeps them matchable
+            # until a fitted BOM names the exact part.
+            "taxonomy": ["transistor", "sot_23", "mosfet", "n_channel", "enhancement_mode"],
+            "manufacturer": "",
+            "part_number": "",
+            "name_short": "N-channel MOSFET SOT-23 (generic)",
+        },
+        {
             "taxonomy": ["transistor", "sot_23", "bipolar", "pnp", "40_volt", "600_milliamp"],
             "manufacturer": "onsemi",
             "part_number": "mmbt4403",
