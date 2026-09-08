@@ -1,0 +1,561 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-08T17:19:06",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "key": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "key": "silk_over_copper"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        },
+        {
+            "description": "Footprint not found in libraries",
+            "key": "lib_footprint_issues"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.5680 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [IN-] of R2 on F.Cu",
+                    "pos": {
+                        "x": 133.0035,
+                        "y": 95.8835
+                    },
+                    "uuid": "110eaf72-43c9-4459-a64f-c51615ca76a7"
+                },
+                {
+                    "description": "Track [3.3V] on F.Cu, length 1.6164 mm",
+                    "pos": {
+                        "x": 132.791,
+                        "y": 98.741
+                    },
+                    "uuid": "34adf233-9ae7-419f-bb7d-c58e9ab22d57"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.2611 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [IN-] of U2 on F.Cu",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 99.8285
+                    },
+                    "uuid": "00a0f73c-9715-4335-98fe-0022a5f3309c"
+                },
+                {
+                    "description": "Track [VBUS] on F.Cu, length 1.6252 mm",
+                    "pos": {
+                        "x": 136.540764,
+                        "y": 100.3285
+                    },
+                    "uuid": "b94f27d3-a60c-4706-a985-5afac0d29f45"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.3222 mm)",
+            "items": [
+                {
+                    "description": "Track [IN-] on F.Cu, length 0.6273 mm",
+                    "pos": {
+                        "x": 136.927401,
+                        "y": 99.384901
+                    },
+                    "uuid": "3d39e3b7-c16e-4efa-9546-046688185a2d"
+                },
+                {
+                    "description": "Track [VBUS] on F.Cu, length 1.6252 mm",
+                    "pos": {
+                        "x": 136.540764,
+                        "y": 100.3285
+                    },
+                    "uuid": "b94f27d3-a60c-4706-a985-5afac0d29f45"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.1778 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [IN+] of JP7 on B.Cu",
+                    "pos": {
+                        "x": 138.1504,
+                        "y": 86.4474
+                    },
+                    "uuid": "5d24680c-26d9-4ae2-ad94-44f3c5a2efc8"
+                },
+                {
+                    "description": "Pad 1 [VBUS] of JP7 on B.Cu",
+                    "pos": {
+                        "x": 137.3376,
+                        "y": 86.4474
+                    },
+                    "uuid": "bf44eb47-d1df-4bee-aeb0-e0a0776284ea"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 8 [VBUS] of U2 on F.Cu",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 100.3285
+                    },
+                    "uuid": "5b4e34df-aaaf-4645-adde-81e32def91ba"
+                },
+                {
+                    "description": "Pad 7 [GND] of U2 on F.Cu",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 100.8285
+                    },
+                    "uuid": "ef1ade5f-4825-485f-9574-5873c5e3484a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [IN-] of U2 on F.Cu",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 99.8285
+                    },
+                    "uuid": "00a0f73c-9715-4335-98fe-0022a5f3309c"
+                },
+                {
+                    "description": "Pad 8 [VBUS] of U2 on F.Cu",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 100.3285
+                    },
+                    "uuid": "5b4e34df-aaaf-4645-adde-81e32def91ba"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint FID3",
+                    "pos": {
+                        "x": 123.901,
+                        "y": 86.041
+                    },
+                    "uuid": "15867ade-bc87-4922-9129-417303565686"
+                },
+                {
+                    "description": "Footprint ST1",
+                    "pos": {
+                        "x": 125.806,
+                        "y": 87.946
+                    },
+                    "uuid": "d6e3a13c-269f-419f-bd67-6bdd2ca889a7"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint ST3",
+                    "pos": {
+                        "x": 146.126,
+                        "y": 108.266
+                    },
+                    "uuid": "581204c0-620a-4656-b079-613aedc55c22"
+                },
+                {
+                    "description": "Footprint FID4",
+                    "pos": {
+                        "x": 148.031,
+                        "y": 110.171
+                    },
+                    "uuid": "61aa0ed3-558f-4c6d-9e62-dd57c48bd5c1"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 135.966,
+                        "y": 95.8835
+                    },
+                    "uuid": "8f84244a-6a37-4431-b538-0b6ee1fc9956"
+                },
+                {
+                    "description": "Footprint R8",
+                    "pos": {
+                        "x": 135.966,
+                        "y": 95.8835
+                    },
+                    "uuid": "f785e0fc-2339-4396-8352-3c7ca333b979"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Rectangle [<no net>] of Ref** on F.Cu",
+                    "pos": {
+                        "x": 124.2285,
+                        "y": 92.7185
+                    },
+                    "uuid": "0b9545a0-5b60-4174-895e-c9337be90620"
+                },
+                {
+                    "description": "Pad 1 [<no net>] of Ref** on F.Cu",
+                    "pos": {
+                        "x": 124.8535,
+                        "y": 93.3435
+                    },
+                    "uuid": "6de9e66c-4674-4724-82f4-e45896a20525"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Rectangle [<no net>] of Ref** on F.Cu",
+                    "pos": {
+                        "x": 124.2285,
+                        "y": 90.8135
+                    },
+                    "uuid": "7858caa9-70b6-4b84-b52e-7f3fccd6b352"
+                },
+                {
+                    "description": "Pad 1 [<no net>] of Ref** on F.Cu",
+                    "pos": {
+                        "x": 124.8535,
+                        "y": 91.4385
+                    },
+                    "uuid": "fa2d579e-69fe-4044-ab2c-e55b1cb0c13b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "comment": "",
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.3349 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.9700 mm",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 100.8285
+                    },
+                    "uuid": "90961dcf-2755-46fd-ac53-c7edf29fc8b7"
+                },
+                {
+                    "description": "Track [VBUS] on F.Cu, length 1.6252 mm",
+                    "pos": {
+                        "x": 136.540764,
+                        "y": 100.3285
+                    },
+                    "uuid": "b94f27d3-a60c-4706-a985-5afac0d29f45"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "comment": "",
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.3622 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Pad 8 [VBUS] of U2 on F.Cu",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 100.3285
+                    },
+                    "uuid": "5b4e34df-aaaf-4645-adde-81e32def91ba"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 1.8031 mm",
+                    "pos": {
+                        "x": 139.136,
+                        "y": 100.8285
+                    },
+                    "uuid": "d7e7d677-70f6-4242-9f25-11268c34ff55"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "comment": "",
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.3222 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Track [IN-] on F.Cu, length 0.7950 mm",
+                    "pos": {
+                        "x": 137.371,
+                        "y": 99.8285
+                    },
+                    "uuid": "49e9d333-86f1-4edf-826e-ed9aa2e299d4"
+                },
+                {
+                    "description": "Track [VBUS] on F.Cu, length 1.6252 mm",
+                    "pos": {
+                        "x": 136.540764,
+                        "y": 100.3285
+                    },
+                    "uuid": "b94f27d3-a60c-4706-a985-5afac0d29f45"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "comment": "",
+            "description": "Clearance violation (netclass 'HV' clearance 0.6096 mm; actual 0.3852 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Pad 1 [Net-(JP3-A)] of R2 on F.Cu",
+                    "pos": {
+                        "x": 138.9285,
+                        "y": 95.8835
+                    },
+                    "uuid": "5f749897-5869-4562-afc9-3df590360ffe"
+                },
+                {
+                    "description": "PTH pad 2 [IN+] of R8",
+                    "pos": {
+                        "x": 140.866,
+                        "y": 95.8835
+                    },
+                    "uuid": "b5f6e584-0d2d-4714-ae1d-780f3012c156"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "comment": "",
+            "description": "Clearance violation (netclass 'Default' diff pair clearance 0.2540 mm; actual 0.2000 mm)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Pad 9 [IN-] of U2 on F.Cu",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 99.8285
+                    },
+                    "uuid": "00a0f73c-9715-4335-98fe-0022a5f3309c"
+                },
+                {
+                    "description": "Pad 10 [IN+] of U2 on F.Cu",
+                    "pos": {
+                        "x": 138.166,
+                        "y": 99.3285
+                    },
+                    "uuid": "dc70cc86-a6e7-4c45-9fcd-572a08c83543"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "comment": "",
+            "description": "Items shorting two nets (nets <no net> and <no net>)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Rectangle [<no net>] of Ref** on F.Cu",
+                    "pos": {
+                        "x": 124.2285,
+                        "y": 92.7185
+                    },
+                    "uuid": "0b9545a0-5b60-4174-895e-c9337be90620"
+                },
+                {
+                    "description": "Pad 1 [<no net>] of Ref** on F.Cu",
+                    "pos": {
+                        "x": 124.8535,
+                        "y": 93.3435
+                    },
+                    "uuid": "6de9e66c-4674-4724-82f4-e45896a20525"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "comment": "",
+            "description": "Items shorting two nets (nets <no net> and <no net>)",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Rectangle [<no net>] of Ref** on F.Cu",
+                    "pos": {
+                        "x": 124.2285,
+                        "y": 90.8135
+                    },
+                    "uuid": "7858caa9-70b6-4b84-b52e-7f3fccd6b352"
+                },
+                {
+                    "description": "Pad 1 [<no net>] of Ref** on F.Cu",
+                    "pos": {
+                        "x": 124.8535,
+                        "y": 91.4385
+                    },
+                    "uuid": "fa2d579e-69fe-4044-ab2c-e55b1cb0c13b"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 123.266,
+                        "y": 85.406
+                    },
+                    "uuid": "8eae2629-b3b9-46da-8360-700b2a58a511"
+                },
+                {
+                    "description": "Segment of JP7 on B.Silkscreen",
+                    "pos": {
+                        "x": 138.6076,
+                        "y": 85.4314
+                    },
+                    "uuid": "03d926b6-d93f-4f30-8465-f189024a19cc"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 123.266,
+                        "y": 85.406
+                    },
+                    "uuid": "8eae2629-b3b9-46da-8360-700b2a58a511"
+                },
+                {
+                    "description": "Arc of JP7 on B.Silkscreen",
+                    "pos": {
+                        "x": 138.6076,
+                        "y": 85.6854
+                    },
+                    "uuid": "69091db0-a898-487f-9dd0-53e62a8ccd83"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "comment": "",
+            "description": "Silkscreen clipped by board edge",
+            "excluded": true,
+            "items": [
+                {
+                    "description": "Rectangle on Edge.Cuts",
+                    "pos": {
+                        "x": 123.266,
+                        "y": 85.406
+                    },
+                    "uuid": "8eae2629-b3b9-46da-8360-700b2a58a511"
+                },
+                {
+                    "description": "Arc of JP7 on B.Silkscreen",
+                    "pos": {
+                        "x": 136.8804,
+                        "y": 85.6854
+                    },
+                    "uuid": "860ec8c3-6bef-4949-ad33-c24c73899575"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        }
+    ]
+}

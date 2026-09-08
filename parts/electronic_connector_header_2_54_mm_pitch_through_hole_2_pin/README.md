@@ -53,6 +53,11 @@ Connector Header PZ254V-11-02P is an OOMP electronic connector definition. It us
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

@@ -53,6 +53,11 @@ Connector Header PH2.54-01-15PZD is an OOMP electronic connector definition. It 
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

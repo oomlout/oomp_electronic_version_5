@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Roller_Encoder_Breakout Roller Encoder Breakout current is a KiCad project containing 25 extracted component records. The catalogue matcher linked 1 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Roller_Encoder_Breakout Roller Encoder Breakout current is a KiCad project containing 25 extracted component records. The catalogue matcher linked 6 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -17,10 +17,10 @@ Project sparkfun/SparkFun_Roller_Encoder_Breakout Roller Encoder Breakout curren
 | Components | 25 |
 | PCB footprints | 23 |
 | Mounting and locating holes | 5 |
-| Matched OOMP mounting-hole items | 0 |
+| Matched OOMP mounting-hole items | 5 |
 | Schematic symbols | 12 |
-| Matched OOMP components | 1 |
-| Unmatched physical components | 5 |
+| Matched OOMP components | 6 |
+| Unmatched physical components | 0 |
 | Front-side placements | 2 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -72,16 +72,16 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH1` | `ST1` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 22.860 | 2.540 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH2` | `ST2` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 22.860 | 22.860 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH3` | `ST3` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 2.540 | 2.540 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH4` | `ST4` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 2.540 | 22.860 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
+| `MH1` | `ST1` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 22.860 | 2.540 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH2` | `ST2` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 22.860 | 22.860 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH3` | `ST3` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 2.540 | 2.540 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH4` | `ST4` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 2.540 | 22.860 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
 
 ### Diameter 1.6 mm holes
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH5` | `SW1` | Mounting Hole 1.6 mm Round Unplated | `` | locating | 12.383 | 18.700 | unmatched (`mechanical_mounting_hole_1_6_mm_round_unplated` proposed) |
+| `MH5` | `SW1` | Mounting Hole 1.6 mm Round Unplated | `mechanical / mounting_hole / 1_6_mm / round / unplated` | locating | 12.383 | 18.700 | [`mechanical_mounting_hole_1_6_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_1_6_mm_round_unplated) |
 
 
 ## Bill of materials
@@ -89,7 +89,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | J1 | 1 | Connector Header PZ2.54-S04P-A60 | Conn_01x04 | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
-| SW1 | 1 | Roller_Encoder_Switch | Roller_Encoder_Switch | `RollerEncoder:RollerEncoder` | unmatched |
+| SW1 | 1 | Switch Through Hole Roller Encoder Switch ROLLER ENCODER | Roller_Encoder_Switch | `RollerEncoder:RollerEncoder` | [`electronic_switch_roller_encoder_through_hole_roller_encoder_switch`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_roller_encoder_through_hole_roller_encoder_switch) |
 
 ## Main nets
 
@@ -107,7 +107,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 5 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current/data/generated_data/browser_research_queue.md)
@@ -116,7 +116,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 1
+- Matched OOMP source parts copied: 3
 
 ## Source files
 

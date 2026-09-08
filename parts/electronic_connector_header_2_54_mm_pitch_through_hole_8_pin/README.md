@@ -53,6 +53,11 @@ Connector Header PZ254V-12-8P is an OOMP electronic connector definition. It use
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

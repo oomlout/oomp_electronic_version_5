@@ -2,7 +2,7 @@
 
 `electronic_ic_tqfp_32_7_mm_x_7_mm_microcontroller_8_bit_avr_microchip_atmega328p_au`
 
-MCU ATmega328P-AU 8-bit AVR TQFP-32 is an OOMP electronic ic definition. It uses the tqfp 32 7 mm x 7 mm package or form factor. Its nominal drawing size is 7.0 &#x00D7; 7.0 mm.
+MCU ATmega328P-AU 8-bit AVR TQFP-32 is an OOMP electronic ic definition. It uses the tqfp 32 7 mm x 7 mm package or form factor. Its nominal drawing size is 9.0 &#x00D7; 9.0 mm. The definition includes 32 documented pins.
 
 ![MCU ATmega328P-AU 8-bit AVR TQFP-32 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ MCU ATmega328P-AU 8-bit AVR TQFP-32 is an OOMP electronic ic definition. It uses
 | OOMP ID | `electronic_ic_tqfp_32_7_mm_x_7_mm_microcontroller_8_bit_avr_microchip_atmega328p_au` |
 | Type | Ic |
 | Package / style | tqfp 32 7 mm x 7 mm |
-| Nominal size | 7.0 &#x00D7; 7.0 mm |
+| Nominal size | 9.0 &#x00D7; 9.0 mm |
+| Documented pins | 32 |
 
 
 ## Classification
@@ -34,8 +35,9 @@ MCU ATmega328P-AU 8-bit AVR TQFP-32 is an OOMP electronic ic definition. It uses
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 7.0 mm |
-| Width | 7.0 mm |
+| Height | 1.2 mm |
+| Length | 9.0 mm |
+| Width | 9.0 mm |
 
 
 
@@ -48,6 +50,44 @@ MCU ATmega328P-AU 8-bit AVR TQFP-32 is an OOMP electronic ic definition. It uses
 | LCSC | [`C14877`](https://www.lcsc.com/product-detail/C14877.html) |
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | PD3 | signal |
+| 2 | PD4 | signal |
+| 3 | GND | gnd |
+| 4 | VCC | power |
+| 5 | GND | gnd |
+| 6 | VCC | power |
+| 7 | XTAL1/PB6 | signal |
+| 8 | XTAL2/PB7 | signal |
+| 9 | PD5 | signal |
+| 10 | PD6 | signal |
+| 11 | PD7 | signal |
+| 12 | PB0 | signal |
+| 13 | PB1 | signal |
+| 14 | PB2 | signal |
+| 15 | PB3 | signal |
+| 16 | PB4 | signal |
+| 17 | PB5 | signal |
+| 18 | AVCC | signal |
+| 19 | ADC6 | signal |
+| 20 | AREF | signal |
+| 21 | GND | gnd |
+| 22 | ADC7 | signal |
+| 23 | PC0 | signal |
+| 24 | PC1 | signal |
+| 25 | PC2 | signal |
+| 26 | PC3 | signal |
+| 27 | PC4 | signal |
+| 28 | PC5 | signal |
+| 29 | RESET/PC6 | signal |
+| 30 | PD0 | signal |
+| 31 | PD1 | signal |
+| 32 | PD2 | signal |
 
 
 

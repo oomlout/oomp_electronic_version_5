@@ -2,7 +2,7 @@
 
 `electronic_led_1205_rgb`
 
-LED RGB 1205 is an OOMP electronic led definition. It uses the 1205 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+LED RGB 1205 is an OOMP electronic led definition. It uses the 1205 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm. The definition includes 4 documented pins.
 
 ![LED RGB 1205 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ LED RGB 1205 is an OOMP electronic led definition. It uses the 1205 package or f
 | OOMP ID | `electronic_led_1205_rgb` |
 | Type | Led |
 | Package / style | 1205 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -31,12 +32,22 @@ LED RGB 1205 is an OOMP electronic led definition. It uses the 1205 package or f
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.2 mm |
+| Width | 1.6 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | R | signal |
+| 2 | G | signal |
+| 3 | B | signal |
+| 4 | COM | signal |
 
 
 

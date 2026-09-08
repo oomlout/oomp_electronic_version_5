@@ -1,10 +1,9 @@
 # KiCad assets: electronic_connector_micro_sd_push_push_micro_sd_external_pin
 
-
+- [Symbol](electronic_connector_micro_sd_push_push_micro_sd_external_pin.kicad_sym) — `Connector:Micro_SD_Card_Det2`
 
 ## Review
 
-- Official symbol master unavailable: not selected
 - Official machine_solder footprint unavailable: not selected
 - Official hand_solder footprint unavailable: not selected
 

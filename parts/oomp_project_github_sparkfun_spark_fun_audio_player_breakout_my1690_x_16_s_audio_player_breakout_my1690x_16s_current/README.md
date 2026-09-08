@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout MY1690X-16S current is a KiCad project containing 112 extracted component records. The catalogue matcher linked 29 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout MY1690X-16S current is a KiCad project containing 112 extracted component records. The catalogue matcher linked 33 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakou
 | Mounting and locating holes | 9 |
 | Matched OOMP mounting-hole items | 9 |
 | Schematic symbols | 82 |
-| Matched OOMP components | 29 |
-| Unmatched physical components | 4 |
+| Matched OOMP components | 33 |
+| Unmatched physical components | 0 |
 | Front-side placements | 18 |
 | Back-side placements | 12 |
 | Project version | `current` |
@@ -111,20 +111,20 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | D2, D3 | 2 | Diode Schottky SOD-323 | BAT60A | `SparkFun-Semiconductor-Standard:SOD-323` | [`electronic_diode_schottky_sod_323_bat54w`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_bat54w) |
 | D4 | 1 | LED Red 0603 | Red | `SparkFun-LED:LED_0603_1608Metric_Red` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
 | D6 | 1 | Diode DT1042-04SO SOT-26 | DT1042-04SO | `SparkFun-Semiconductor-Standard:SOT23-6` | [`electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so) |
-| J1 | 1 | 3.5mm TRRS | 3.5mm TRRS | `SparkFun-Connector:Audio_Jack_3.5mm_TRRS_SMD_RA` | unmatched |
+| J1 | 1 | Connector Audio Jack Surface Mount Right Angle Trrs 3 5 Mm Audio Jack 3 5 Mm Trrs | 3.5mm TRRS | `SparkFun-Connector:Audio_Jack_3.5mm_TRRS_SMD_RA` | [`electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs) |
 | J2 | 1 | Connector Header 2.54-1*3P针 | Conn_01x03 | `SparkFun-Connector:1x03` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
 | J3 | 1 | Connector Header PZ254V-11-02P | Conn_01x02 | `SparkFun-Connector:1x02` | [`electronic_connector_header_2_54_mm_pitch_through_hole_2_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_2_pin) |
 | J4 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
 | J5 | 1 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
-| J6 | 1 | microSD | microSD | `SparkFun-Connector:microSD_External_Pin` | unmatched |
-| L1 | 1 | 470Ohm | 470Ohm | `SparkFun-Capacitor:C_0603_1608Metric` | unmatched |
+| J6 | 1 | Connector Micro Sd Push Push micro sd external pin | microSD | `SparkFun-Connector:microSD_External_Pin` | [`electronic_connector_micro_sd_push_push_micro_sd_external_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_micro_sd_push_push_micro_sd_external_pin) |
+| L1 | 1 | Inductor 470 Ohm 0603 | 470Ohm | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_inductor_0603_470_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0603_470_ohm) |
 | Q1 | 1 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `SparkFun-Semiconductor-Standard:SOT23-3` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
 | R1, R4 | 2 | Resistor 2200 Ohm 0603 | 2.2k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
 | R2, R3 | 2 | Resistor 5100 Ohm 0603 | 5.1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_5100_ohm) |
 | R5 | 1 | Resistor 1000 Ohm 0603 | 1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R6 | 1 | Resistor 100000 Ohm 0603 | 100k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
 | R9 | 1 | Resistor 4700 Ohm 0603 | 4.7k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
-| U2 | 1 | MY1690X-16S | MY1690X-16S | `SparkFun-Semiconductor-Standard:SO-16` | unmatched |
+| U2 | 1 | IC Audio Audio Player My Semi SO_16 | MY1690X-16S | `SparkFun-Semiconductor-Standard:SO-16` | [`electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s) |
 
 ## Main nets
 
@@ -158,7 +158,6 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 4 physical component records are not yet matched to an OOMP part.
 - The extractor reports 1 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/data/generated_data/lcsc_review.yaml)
@@ -168,7 +167,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 20
+- Matched OOMP source parts copied: 24
 
 ## Source files
 

@@ -1,6 +1,6 @@
 # Component review
 
-Generated from working_oomp_populate_project.py. Edit the populate definitions, then regenerate.
+Generated from project_data YAML definitions and the reusable matching rules. Edit the source definition or matcher, then regenerate.
 
 ## Needs confirmation
 

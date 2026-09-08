@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design L86-M33 GNSS easyC current is a KiCad project containing 68 extracted component records. The catalogue matcher linked 25 physical placements to OOMP parts.
+Project soldered_electronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design L86-M33 GNSS easyC current is a KiCad project containing 68 extracted component records. The catalogue matcher linked 29 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-desig
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 53 |
-| Matched OOMP components | 25 |
-| Unmatched physical components | 4 |
+| Matched OOMP components | 29 |
+| Unmatched physical components | 0 |
 | Front-side placements | 25 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -87,19 +87,19 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | D1, D2 | 2 | Diode Rectifier SMA | M4_DIODA | `e-radionica.com footprinti:M4_DIODA` | [`electronic_diode_rectifier_sma_m4`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_rectifier_sma_m4) |
 | D3 | 1 | LED  0402 | purple | `e-radionica.com footprinti:0402LED` | [`electronic_led_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402) |
 | D4 | 1 | LED SZYY0402B 0402 | blue | `e-radionica.com footprinti:0402LED` | [`electronic_led_0402_blue`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_blue) |
-| K1 | 1 | IPX connector with SMA | IPX connector with SMA | `e-radionica.com footprinti:IPX connector with SMA` | unmatched |
+| K1 | 1 | Connector Rf Cable Assembly Ipx To Sma Ipx Connector With Sma | IPX connector with SMA | `e-radionica.com footprinti:IPX connector with SMA` | [`electronic_connector_rf_cable_assembly_ipx_to_sma_ipx_connector_with_sma`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_rf_cable_assembly_ipx_to_sma_ipx_connector_with_sma) |
 | K3 | 1 | Connector Coin Cell Holder through-hole CR1220 | CR1220_HOLDER | `e-radionica.com footprinti:CR1220_HOLDER` | [`electronic_connector_coin_cell_holder_through_hole_cr1220`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_coin_cell_holder_through_hole_cr1220) |
 | K5, K7 | 2 | Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST | easyC-SMD | `e-radionica.com footprinti:easyC-connector` | [`electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf) |
 | K6 | 1 | Connector Header 2.54-1*3P针 | HEADER-UPDI | `e-radionica.com footprinti:HEADER-UPDI` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
 | K8 | 1 | Switch Surface Mount Dpdt Ck DSHP03TS S SLIDE | DSHP03TS-S | `e-radionica.com footprinti:DSHP03TS-S` | [`electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_slide_surface_mount_dpdt_ck_dshp03ts_s) |
-| Q1 | 1 | NPN | NPN | `e-radionica.com footprinti:SOT-23-3` | unmatched |
+| Q1 | 1 | Transistor Bipolar Npn SOT 23 | NPN | `e-radionica.com footprinti:SOT-23-3` | [`electronic_transistor_sot_23_bipolar_npn`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn) |
 | R1, R3 | 2 | Resistor 1000 Ohm 0603 | 1k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R2 | 1 | Resistor 4700 Ohm 0603 | 4k7 | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
 | R4, R5, R7 | 3 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R6 | 1 | Resistor 47000 Ohm 0603 | 47k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_47000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_47000_ohm) |
 | R9, R10 | 2 | Resistor 2200 Ohm 0402 | 2k2 | `e-radionica.com footprinti:0402R` | [`electronic_resistor_0402_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) |
-| U2 | 1 | L86-M33 | L86-M33 | `e-radionica.com footprinti:L86-M33` | unmatched |
-| U5 | 1 | ATTINY1604-SSNR | ATTINY1604-SSNR | `e-radionica.com footprinti:SOIC-14` | unmatched |
+| U2 | 1 | Sensor Module Quectel L86 M33 GNSS | L86-M33 | `e-radionica.com footprinti:L86-M33` | [`electronic_sensor_gnss_module_quectel_l86_m33`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_gnss_module_quectel_l86_m33) |
+| U5 | 1 | IC Microcontroller 8 Bit Avr Microchip SOIC_14 | ATTINY1604-SSNR | `e-radionica.com footprinti:SOIC-14` | [`electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr) |
 
 ## Main nets
 
@@ -133,7 +133,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 4 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current/data/generated_data/browser_research_queue.md)
@@ -142,7 +142,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 15
+- Matched OOMP source parts copied: 19
 
 ## Source files
 

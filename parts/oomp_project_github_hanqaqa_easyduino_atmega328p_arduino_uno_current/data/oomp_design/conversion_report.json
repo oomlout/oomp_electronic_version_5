@@ -21,7 +21,7 @@
   },
   "output_sha256": {
     "Easyduino_Atmega.kicad_pcb": "5d757bc3649588ee01fc86c71535c4ac589e164efac02c04e1640966778c04ea",
-    "Easyduino_Atmega.kicad_sch": "ce37c3322d4ef3615d34b30e7526cb062bd83e516d0e7bf31e20d5da5421c29b",
+    "Easyduino_Atmega.kicad_sch": "a674ad67bd5826756bf112cefc451ec7575f1664d794af4ab0e32eccaa11db27",
     "Easyduino_Atmega.kicad_pro": "a22013888eb493fb6c91475ea60f69eee2b19923a4679d9e735d1182e14a38a2",
     "References.kicad_sch": "adcf11aeec114f8f430dfbbb405b21dc7aa93c5d9c61d0142d859fede0f0f991",
     "sym-lib-table": "21866594f2adf0f962fad1f4c2490478f63373c892f02e5291f0ca136dc6c786",
@@ -30,8 +30,8 @@
   "summary": {
     "footprints_converted": 0,
     "footprints_skipped": 38,
-    "symbols_converted": 12,
-    "symbols_skipped": 68
+    "symbols_converted": 14,
+    "symbols_skipped": 66
   },
   "footprints": [
     {
@@ -93,7 +93,8 @@
       "reference": "D1",
       "source": "Package_TO_SOT_SMD:SOT-143",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x",
+      "reason": "KiCad pcbnew Python is unavailable (C:\\Program Files\\KiCad\\10\\bin\\python.exe); footprint identity and annotation conversion was skipped."
     },
     {
       "reference": "C9",
@@ -113,7 +114,8 @@
       "reference": "SW1",
       "source": "Button_Switch_SMD:SW_SPST_Omron_B3FS-100xP",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "electronic_switch_tactile_surface_mount_omron_b3fs_100xp",
+      "reason": "KiCad pcbnew Python is unavailable (C:\\Program Files\\KiCad\\10\\bin\\python.exe); footprint identity and annotation conversion was skipped."
     },
     {
       "reference": "U4",
@@ -1000,8 +1002,9 @@
         "SW1"
       ],
       "source": "Switch:SW_Push",
-      "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "status": "converted",
+      "oomp_id": "electronic_switch_tactile_surface_mount_omron_b3fs_100xp",
+      "target": "OOMP:electronic_switch_tactile_surface_mount_omron_b3fs_100xp",
       "file": "kicad_file.kicad_sch"
     },
     {
@@ -1018,8 +1021,9 @@
         "D1"
       ],
       "source": "Power_Protection:PRTR5V0U2X",
-      "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "status": "converted",
+      "oomp_id": "electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x",
+      "target": "OOMP:electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x",
       "file": "kicad_file.kicad_sch"
     },
     {

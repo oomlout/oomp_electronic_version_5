@@ -51,15 +51,15 @@
     "bpu-iobufffer.kicad_sch": "d085fe93f7b6bd98a1c4556f5ac1ac77b29cc30eb2f254873172864f4ea06d02",
     "IO-expand-595-mux.kicad_sch": "9a9cf79bd68d0f90359939949dd50355fcf44adba216f776fb82b0ffcae6002e",
     "leds.kicad_sch": "82be4f27524e4fb5945b5a93c7caf922c29ab139787f26caa74f5700d3eae2ec",
-    "micro-rp2040.kicad_sch": "ffb2d23bd36dbdb6e0095010a2539def9229e0e69ac2d3aaa8b05f6b77403a1b",
+    "micro-rp2040.kicad_sch": "b6adfd7c05121f8137bfe2404eb86509d8a57ee1057ca1e64411d4c357f3dfda",
     "sym-lib-table": "6cb4890355f592406450361037901529461358c9cd0d845ef3dafb8205a020d1",
     "fp-lib-table": "50246c5a478069bb91da1c4e0395fbc0bbf2e6d2c458c42ae691e627e4b1521b"
   },
   "summary": {
     "footprints_converted": 0,
     "footprints_skipped": 220,
-    "symbols_converted": 88,
-    "symbols_skipped": 416
+    "symbols_converted": 89,
+    "symbols_skipped": 415
   },
   "footprints": [
     {
@@ -676,7 +676,8 @@
       "reference": "SW101",
       "source": "Button_Switch_SMD:SW_SPST_PTS810",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "electronic_switch_tactile_surface_mount_pts810",
+      "reason": "KiCad pcbnew Python is unavailable (C:\\Program Files\\KiCad\\10\\bin\\python.exe); footprint identity and annotation conversion was skipped."
     },
     {
       "reference": "D601",
@@ -1577,7 +1578,8 @@
       "reference": "SW102",
       "source": "dp-switch:GT-TC026X-HXXX-LX",
       "status": "skipped",
-      "reason": "No approved OOMP match."
+      "oomp_id": "electronic_switch_tactile_through_hole_gt_tc026x_hxxx_lx",
+      "reason": "Source is not an available official master for this OOMP part."
     },
     {
       "reference": "logo1",
@@ -5851,7 +5853,7 @@
       "source": "RP_Silicon:RP2040",
       "status": "skipped",
       "oomp_id": "electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040",
-      "reason": "OOMP symbol master unavailable.",
+      "reason": "Source is not a known official KiCad symbol.",
       "file": "micro-rp2040.kicad_sch"
     },
     {
@@ -6259,8 +6261,9 @@
         "SW101"
       ],
       "source": "Switch:SW_SPST",
-      "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "status": "converted",
+      "oomp_id": "electronic_switch_tactile_surface_mount_pts810",
+      "target": "OOMP:electronic_switch_tactile_surface_mount_pts810",
       "file": "micro-rp2040.kicad_sch"
     },
     {
@@ -6345,7 +6348,8 @@
       ],
       "source": "dp-switch:4P_button_sw",
       "status": "skipped",
-      "reason": "No single approved OOMP part for every instance of this symbol.",
+      "oomp_id": "electronic_switch_tactile_through_hole_gt_tc026x_hxxx_lx",
+      "reason": "OOMP symbol master unavailable.",
       "file": "micro-rp2040.kicad_sch"
     },
     {
@@ -6404,12 +6408,5 @@
       "reason": "OOMP symbol master unavailable.",
       "file": "micro-rp2040.kicad_sch"
     }
-  ],
-  "validation": {
-    "status": "passed",
-    "pcb_invariants": "unchanged except approved IDs and added annotations",
-    "netlist_components": 220,
-    "netlist_nets": 198,
-    "netlist_comparison": "component values/UUIDs and named-net pin memberships match exactly"
-  }
+  ]
 }

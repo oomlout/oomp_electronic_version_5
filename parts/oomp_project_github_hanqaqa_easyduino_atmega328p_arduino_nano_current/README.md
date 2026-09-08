@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current/data/generated_data/src/board_300.png)
 
-Project hanqaqa/easyduino ATmega328P Arduino Nano current is a KiCad project containing 65 extracted component records. The catalogue matcher linked 28 physical placements to OOMP parts.
+Project hanqaqa/easyduino ATmega328P Arduino Nano current is a KiCad project containing 65 extracted component records. The catalogue matcher linked 30 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -17,10 +17,10 @@ Project hanqaqa/easyduino ATmega328P Arduino Nano current is a KiCad project con
 | Components | 65 |
 | PCB footprints | 31 |
 | Mounting and locating holes | 6 |
-| Matched OOMP mounting-hole items | 2 |
+| Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 65 |
-| Matched OOMP components | 28 |
-| Unmatched physical components | 3 |
+| Matched OOMP components | 30 |
+| Unmatched physical components | 1 |
 | Front-side placements | 30 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -72,10 +72,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH2` | `A1` | Mounting Hole 1.78 mm Round Unplated | `` | mounting | 3.860 | 1.460 | unmatched (`mechanical_mounting_hole_1_78_mm_round_unplated` proposed) |
-| `MH4` | `A1` | Mounting Hole 1.78 mm Round Unplated | `` | mounting | 3.860 | 16.700 | unmatched (`mechanical_mounting_hole_1_78_mm_round_unplated` proposed) |
-| `MH1` | `A1` | Mounting Hole 1.78 mm Round Unplated | `` | mounting | 44.500 | 1.460 | unmatched (`mechanical_mounting_hole_1_78_mm_round_unplated` proposed) |
-| `MH3` | `A1` | Mounting Hole 1.78 mm Round Unplated | `` | mounting | 44.500 | 16.700 | unmatched (`mechanical_mounting_hole_1_78_mm_round_unplated` proposed) |
+| `MH2` | `A1` | Mounting Hole 1.78 mm Round Unplated | `mechanical / mounting_hole / 1_78_mm / round / unplated` | mounting | 3.860 | 1.460 | [`mechanical_mounting_hole_1_78_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_1_78_mm_round_unplated) |
+| `MH4` | `A1` | Mounting Hole 1.78 mm Round Unplated | `mechanical / mounting_hole / 1_78_mm / round / unplated` | mounting | 3.860 | 16.700 | [`mechanical_mounting_hole_1_78_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_1_78_mm_round_unplated) |
+| `MH1` | `A1` | Mounting Hole 1.78 mm Round Unplated | `mechanical / mounting_hole / 1_78_mm / round / unplated` | mounting | 44.500 | 1.460 | [`mechanical_mounting_hole_1_78_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_1_78_mm_round_unplated) |
+| `MH3` | `A1` | Mounting Hole 1.78 mm Round Unplated | `mechanical / mounting_hole / 1_78_mm / round / unplated` | mounting | 44.500 | 16.700 | [`mechanical_mounting_hole_1_78_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_1_78_mm_round_unplated) |
 
 ### Diameter 0.65 mm holes
 
@@ -93,7 +93,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1, C11, C12 | 3 | Capacitor 1 uF 0402 | 1u | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_1_micro_farad) |
 | C2, C3, C4, C5, C6, C7, C8 | 7 | Capacitor 100 nF 0402 | 100n | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_100_nano_farad) |
 | C9, C10 | 2 | Capacitor 22 pF 0402 | 22p | `Capacitor_SMD:C_0402_1005Metric` | [`electronic_capacitor_0402_22_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_22_pico_farad) |
-| D1, D3 | 2 | LED  0402 | LED | `LED_SMD:LED_0402_1005Metric` | [`electronic_led_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402) |
+| D1, D3 | 2 | LED SZYY0402B 0402 | LED | `LED_SMD:LED_0402_1005Metric` | [`electronic_led_0402_blue`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_blue) |
 | D2 | 1 | Diode Schottky 0402 | D_Schottky | `Diode_SMD:D_0402_1005Metric` | [`electronic_diode_schottky_0402`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_0402) |
 | F1 | 1 | Fuse SMD0402-004-12 0402 | Polyfuse | `Fuse:Fuse_0402_1005Metric` | [`electronic_fuse_0402_resettable`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_fuse_0402_resettable) |
 | J1 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle_USB2.0 | `Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
@@ -103,8 +103,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R6, R7 | 2 | Resistor 2000 Ohm 0402 | 2k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_2000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2000_ohm) |
 | SW1 | 1 | Switch TS-1088-AR02016 TACTILE | SW_Push | `Button_Switch_SMD:SW_Tactile_SPST_NO_Straight_CK_PTS636Sx25SMTRLFS` | [`electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016) |
 | U1 | 1 | MCU ATmega328P-AU 8-bit AVR TQFP-32 | ATmega328P-A | `Package_QFP:TQFP-32_7x7mm_P0.8mm` | [`electronic_ic_tqfp_32_7_mm_x_7_mm_microcontroller_8_bit_avr_microchip_atmega328p_au`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_tqfp_32_7_mm_x_7_mm_microcontroller_8_bit_avr_microchip_atmega328p_au) |
-| U2 | 1 | XC6206P502MR | XC6206P502MR | `Package_TO_SOT_SMD:SOT-23-3` | unmatched |
-| U3 | 1 | CP2102N-Axx-xQFN28 | CP2102N-Axx-xQFN28 | `Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm` | unmatched |
+| U2 | 1 | Regulator XC6206P502MR 5V SOT-23 | XC6206P502MR | `Package_TO_SOT_SMD:SOT-23-3` | [`electronic_ic_sot_23_power_management_linear_voltage_regulator_5_volt_torex_xc6206p502mr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_power_management_linear_voltage_regulator_5_volt_torex_xc6206p502mr) |
+| U3 | 1 | USB-Serial CP2102N-A01-GQFN28R | CP2102N-Axx-xQFN28 | `Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm` | [`electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r) |
 | Y1 | 1 | Crystal 16 MHz 20 pF 3225 4-pin | 16 MHz | `Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm` | [`electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf) |
 
 ## Main nets
@@ -139,7 +139,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 3 physical component records are not yet matched to an OOMP part.
+- 1 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current/data/generated_data/browser_research_queue.md)
@@ -148,7 +148,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_atmega328p_arduino_nano_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 14
+- Matched OOMP source parts copied: 16
 
 ## Source files
 

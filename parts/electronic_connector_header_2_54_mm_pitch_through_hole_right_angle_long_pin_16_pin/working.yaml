@@ -30,33 +30,42 @@ bip_39_full_space: turtle goat lyrics omit decline december rule august suffer c
 bip_39_full_underscore: turtle_goat_lyrics_omit_decline_december_rule_august_suffer_chase_rail_account
 category: connector
 category_name: Connector
+datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/49c4f1422350c0cc1f0b975f3802576a.pdf?productCode=C2905424
 dimension_reference:
-  datasheet_url: https://suddendocs.samtec.com/catalog_english/a-tsw-htsw.pdf
+  datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/49c4f1422350c0cc1f0b975f3802576a.pdf?productCode=C2905424
   document: KiCad Connector_PinHeader_2.54mm PinHeader_1x16_P2.54mm_Horizontal F.Fab
     outline
   manufacturer: samtec
   notes: '2.54 mm right-angle male header, plastic moulded on the LONG pin side: the
     long legs (~6 mm) run down into the board, giving clearance under the plastic.
     Drawing derived from KiCad PinHeader_1x16_P2.54mm_Horizontal with the plastic
-    block mirrored across the pin row.'
-  pages: []
+    block mirrored across the pin row. LCSC family mechanical reference: C2905424
+    / KH-2.54PH90-1X2P-L13.8. The drawing gives a 2.50 mm carrier, 0.64 mm square
+    pins, a 6.0 mm long leg and a 3.0 mm short leg. The generated pin count remains
+    the OOMP variant identity.'
+  pages:
+  - 1
   product_url: https://www.samtec.com/products/tsw-110-07-t-s
   sample_part_number: tsw_110_07_t_s
   series: tsw
 dimensions_mm:
-  length: 10.36
+  length: 2.54
   width: 40.64
 directory: parts/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin
 distributors: []
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin/datasheet.pdf
 header_dimensions_mm:
-  pin_length_post: 5.84
-  pin_length_tail: 2.54
-  pin_length_total: 10.92
+  pcb_hole_diameter: 1.02
+  pin_length_post: 3.0
+  pin_length_tail: 6.0
+  pin_length_total: 11.6
   pin_pitch: 2.54
   pin_square: 0.64
-  plastic_height: 2.54
+  plastic_height: 2.5
   plastic_length: 40.64
-  plastic_width: 2.48
+  plastic_width: 2.5
 id: electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin
 id_no_class: electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin
 id_no_size: electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin
@@ -107,6 +116,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -217,7 +236,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -225,33 +244,42 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: connector
       category_name: Connector
+      datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/49c4f1422350c0cc1f0b975f3802576a.pdf?productCode=C2905424
       dimension_reference:
-        datasheet_url: https://suddendocs.samtec.com/catalog_english/a-tsw-htsw.pdf
+        datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/49c4f1422350c0cc1f0b975f3802576a.pdf?productCode=C2905424
         document: KiCad Connector_PinHeader_2.54mm PinHeader_1x16_P2.54mm_Horizontal
           F.Fab outline
         manufacturer: samtec
         notes: '2.54 mm right-angle male header, plastic moulded on the LONG pin side:
           the long legs (~6 mm) run down into the board, giving clearance under the
           plastic. Drawing derived from KiCad PinHeader_1x16_P2.54mm_Horizontal with
-          the plastic block mirrored across the pin row.'
-        pages: []
+          the plastic block mirrored across the pin row. LCSC family mechanical reference:
+          C2905424 / KH-2.54PH90-1X2P-L13.8. The drawing gives a 2.50 mm carrier,
+          0.64 mm square pins, a 6.0 mm long leg and a 3.0 mm short leg. The generated
+          pin count remains the OOMP variant identity.'
+        pages:
+        - 1
         product_url: https://www.samtec.com/products/tsw-110-07-t-s
         sample_part_number: tsw_110_07_t_s
         series: tsw
       dimensions_mm:
-        length: 10.36
+        length: 2.54
         width: 40.64
       directory: parts\electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin
       distributors: []
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin/datasheet.pdf
       header_dimensions_mm:
-        pin_length_post: 5.84
-        pin_length_tail: 2.54
-        pin_length_total: 10.92
+        pcb_hole_diameter: 1.02
+        pin_length_post: 3.0
+        pin_length_tail: 6.0
+        pin_length_total: 11.6
         pin_pitch: 2.54
         pin_square: 0.64
-        plastic_height: 2.54
+        plastic_height: 2.5
         plastic_length: 40.64
-        plastic_width: 2.48
+        plastic_width: 2.5
       kicad:
         hand_solder: ''
         machine_solder: Connector_PinHeader_2.54mm:PinHeader_1x16_P2.54mm_Horizontal
@@ -281,6 +309,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -394,110 +432,109 @@ oomlout_ai_roboclick_3:
         retries_until_complete: 0
       package_drawing:
         body:
-        - 10.36
+        - 2.54
         - 40.64
-        boxes: []
+        body_offset:
+        - 1.5
+        - 0.0
         overall:
-        - 10.89
+        - 10.92
         - 40.64
-        pin_one:
-        - -4.86
-        - 19.05
         pins:
         - - '1'
-          - top
-          - -4.86
-          - 19.05
+          - left
+          - 0.0
+          - -19.05
           - 1.7
           - 1.7
         - - '2'
-          - top
-          - -4.86
-          - 21.59
+          - left
+          - 0.0
+          - -16.51
           - 1.7
           - 1.7
         - - '3'
-          - top
-          - -4.86
-          - 24.13
+          - left
+          - 0.0
+          - -13.97
           - 1.7
           - 1.7
         - - '4'
-          - top
-          - -4.86
-          - 26.67
+          - left
+          - 0.0
+          - -11.43
           - 1.7
           - 1.7
         - - '5'
-          - top
-          - -4.86
-          - 29.21
+          - left
+          - 0.0
+          - -8.89
           - 1.7
           - 1.7
         - - '6'
-          - top
-          - -4.86
-          - 31.75
+          - left
+          - 0.0
+          - -6.350000000000001
           - 1.7
           - 1.7
         - - '7'
-          - top
-          - -4.86
-          - 34.29
+          - left
+          - 0.0
+          - -3.8100000000000005
           - 1.7
           - 1.7
         - - '8'
-          - top
-          - -4.86
-          - 36.83
+          - left
+          - 0.0
+          - -1.2699999999999996
           - 1.7
           - 1.7
         - - '9'
-          - top
-          - -4.86
-          - 39.37
+          - left
+          - 0.0
+          - 1.2699999999999996
           - 1.7
           - 1.7
         - - '10'
-          - top
-          - -4.86
-          - 41.91
+          - left
+          - 0.0
+          - 3.8099999999999987
           - 1.7
           - 1.7
         - - '11'
-          - top
-          - -4.86
-          - 44.45
+          - left
+          - 0.0
+          - 6.349999999999998
           - 1.7
           - 1.7
         - - '12'
-          - top
-          - -4.86
-          - 46.99
+          - left
+          - 0.0
+          - 8.89
           - 1.7
           - 1.7
         - - '13'
-          - top
-          - -4.86
-          - 49.53
+          - left
+          - 0.0
+          - 11.43
           - 1.7
           - 1.7
         - - '14'
-          - top
-          - -4.86
-          - 52.07
+          - left
+          - 0.0
+          - 13.970000000000002
           - 1.7
           - 1.7
         - - '15'
-          - top
-          - -4.86
-          - 54.61
+          - left
+          - 0.0
+          - 16.51
           - 1.7
           - 1.7
         - - '16'
-          - top
-          - -4.86
-          - 57.15
+          - left
+          - 0.0
+          - 19.05
           - 1.7
           - 1.7
       part_id: J1
@@ -586,7 +623,7 @@ oomlout_ai_roboclick_3:
           title: Bottom view
         - preview: data/working_svg_side_300.png
           title: Side view
-        has_datasheet: false
+        has_datasheet: true
         identifiers: []
         main_image:
           png: data/working_svg_top.png
@@ -652,13 +689,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: header
         - title: Nominal size
-          value: 10.36 × 40.64 mm
+          value: 2.54 × 40.64 mm
         - title: Documented pins
           value: 16
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin
         summary: Connector Header 2.54 mm pitch through hole right angle long pin
           16 pin is an OOMP electronic connector definition. It uses the header package
-          or form factor. Its nominal drawing size is 10.36 × 40.64 mm. The definition
+          or form factor. Its nominal drawing size is 2.54 × 40.64 mm. The definition
           includes 16 documented pins.
         taxonomy:
         - level: 1
@@ -950,110 +987,109 @@ oomlout_ai_roboclick_3:
 oomp_key: oomp_electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin
 package_drawing:
   body:
-  - 10.36
+  - 2.54
   - 40.64
-  boxes: []
+  body_offset:
+  - 1.5
+  - 0.0
   overall:
-  - 10.89
+  - 10.92
   - 40.64
-  pin_one:
-  - -4.86
-  - 19.05
   pins:
   - - '1'
-    - top
-    - -4.86
-    - 19.05
+    - left
+    - 0.0
+    - -19.05
     - 1.7
     - 1.7
   - - '2'
-    - top
-    - -4.86
-    - 21.59
+    - left
+    - 0.0
+    - -16.51
     - 1.7
     - 1.7
   - - '3'
-    - top
-    - -4.86
-    - 24.13
+    - left
+    - 0.0
+    - -13.97
     - 1.7
     - 1.7
   - - '4'
-    - top
-    - -4.86
-    - 26.67
+    - left
+    - 0.0
+    - -11.43
     - 1.7
     - 1.7
   - - '5'
-    - top
-    - -4.86
-    - 29.21
+    - left
+    - 0.0
+    - -8.89
     - 1.7
     - 1.7
   - - '6'
-    - top
-    - -4.86
-    - 31.75
+    - left
+    - 0.0
+    - -6.350000000000001
     - 1.7
     - 1.7
   - - '7'
-    - top
-    - -4.86
-    - 34.29
+    - left
+    - 0.0
+    - -3.8100000000000005
     - 1.7
     - 1.7
   - - '8'
-    - top
-    - -4.86
-    - 36.83
+    - left
+    - 0.0
+    - -1.2699999999999996
     - 1.7
     - 1.7
   - - '9'
-    - top
-    - -4.86
-    - 39.37
+    - left
+    - 0.0
+    - 1.2699999999999996
     - 1.7
     - 1.7
   - - '10'
-    - top
-    - -4.86
-    - 41.91
+    - left
+    - 0.0
+    - 3.8099999999999987
     - 1.7
     - 1.7
   - - '11'
-    - top
-    - -4.86
-    - 44.45
+    - left
+    - 0.0
+    - 6.349999999999998
     - 1.7
     - 1.7
   - - '12'
-    - top
-    - -4.86
-    - 46.99
+    - left
+    - 0.0
+    - 8.89
     - 1.7
     - 1.7
   - - '13'
-    - top
-    - -4.86
-    - 49.53
+    - left
+    - 0.0
+    - 11.43
     - 1.7
     - 1.7
   - - '14'
-    - top
-    - -4.86
-    - 52.07
+    - left
+    - 0.0
+    - 13.970000000000002
     - 1.7
     - 1.7
   - - '15'
-    - top
-    - -4.86
-    - 54.61
+    - left
+    - 0.0
+    - 16.51
     - 1.7
     - 1.7
   - - '16'
-    - top
-    - -4.86
-    - 57.15
+    - left
+    - 0.0
+    - 19.05
     - 1.7
     - 1.7
 part_id: J1
@@ -1142,7 +1178,7 @@ part_page:
     title: Bottom view
   - preview: data/working_svg_side_300.png
     title: Side view
-  has_datasheet: false
+  has_datasheet: true
   identifiers: []
   main_image:
     png: data/working_svg_top.png
@@ -1208,14 +1244,14 @@ part_page:
   - title: Package / style
     value: header
   - title: Nominal size
-    value: 10.36 × 40.64 mm
+    value: 2.54 × 40.64 mm
   - title: Documented pins
     value: 16
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_16_pin
   summary: Connector Header 2.54 mm pitch through hole right angle long pin 16 pin
     is an OOMP electronic connector definition. It uses the header package or form
-    factor. Its nominal drawing size is 10.36 × 40.64 mm. The definition includes
-    16 documented pins.
+    factor. Its nominal drawing size is 2.54 × 40.64 mm. The definition includes 16
+    documented pins.
   taxonomy:
   - level: 1
     value: electronic

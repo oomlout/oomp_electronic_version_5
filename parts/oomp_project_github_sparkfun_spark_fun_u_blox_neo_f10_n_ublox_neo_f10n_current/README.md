@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad project containing 154 extracted component records. The catalogue matcher linked 37 physical placements to OOMP parts.
+Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad project containing 154 extracted component records. The catalogue matcher linked 47 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -17,12 +17,12 @@ Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current is a KiCad pro
 | Components | 154 |
 | PCB footprints | 112 |
 | Mounting and locating holes | 6 |
-| Matched OOMP mounting-hole items | 2 |
+| Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 109 |
-| Matched OOMP components | 37 |
-| Unmatched physical components | 11 |
+| Matched OOMP components | 47 |
+| Unmatched physical components | 0 |
 | Front-side placements | 43 |
-| Back-side placements | 1 |
+| Back-side placements | 0 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -79,17 +79,17 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH3` | `ST1` | Mounting Hole 3.302 mm Round Unplated | `` | locating | 48.259 | 2.540 | unmatched (`mechanical_mounting_hole_3_302_mm_round_unplated` proposed) |
-| `MH4` | `ST2` | Mounting Hole 3.302 mm Round Unplated | `` | locating | 48.259 | 35.560 | unmatched (`mechanical_mounting_hole_3_302_mm_round_unplated` proposed) |
-| `MH5` | `ST3` | Mounting Hole 3.302 mm Round Unplated | `` | locating | 2.539 | 2.540 | unmatched (`mechanical_mounting_hole_3_302_mm_round_unplated` proposed) |
-| `MH6` | `ST4` | Mounting Hole 3.302 mm Round Unplated | `` | locating | 2.539 | 35.560 | unmatched (`mechanical_mounting_hole_3_302_mm_round_unplated` proposed) |
+| `MH3` | `ST1` | Mounting Hole 3.302 mm Round Unplated | `mechanical / mounting_hole / 3_302_mm / round / unplated` | locating | 48.259 | 2.540 | [`mechanical_mounting_hole_3_302_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_302_mm_round_unplated) |
+| `MH4` | `ST2` | Mounting Hole 3.302 mm Round Unplated | `mechanical / mounting_hole / 3_302_mm / round / unplated` | locating | 48.259 | 35.560 | [`mechanical_mounting_hole_3_302_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_302_mm_round_unplated) |
+| `MH5` | `ST3` | Mounting Hole 3.302 mm Round Unplated | `mechanical / mounting_hole / 3_302_mm / round / unplated` | locating | 2.539 | 2.540 | [`mechanical_mounting_hole_3_302_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_302_mm_round_unplated) |
+| `MH6` | `ST4` | Mounting Hole 3.302 mm Round Unplated | `mechanical / mounting_hole / 3_302_mm / round / unplated` | locating | 2.539 | 35.560 | [`mechanical_mounting_hole_3_302_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_302_mm_round_unplated) |
 
 
 ## Bill of materials
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| BT1 | 1 | 6.8mm_ML414H | 6.8mm_ML414H | `SparkFun-Battery:ML414H_IV01E` | unmatched |
+| BT1 | 1 | Battery 6 8 Mm Maxell ML414H COIN CELL | 6.8mm_ML414H | `SparkFun-Battery:ML414H_IV01E` | [`electronic_battery_coin_cell_6_8_mm_maxell_ml414h`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_battery_coin_cell_6_8_mm_maxell_ml414h) |
 | C1, C2, C4, C12, C13, C16 | 6 | Capacitor 100 nF 0603 | 0.1uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C3, C8 | 2 | Capacitor 1 uF 0603 | 1.0uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
 | C6, C7 | 2 | Capacitor 47 pF 0603 | 47pF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_47_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_47_pico_farad) |
@@ -102,10 +102,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J2 | 1 | Connector Header KH-2.54PH180-1X9P-L11.5 | Conn_01x09 | `SparkFun-Connector:1x09` | [`electronic_connector_header_2_54_mm_pitch_through_hole_9_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_9_pin) |
 | J4 | 1 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | J5 | 1 | Connector Sma Edge Mount | Val** | `SparkFun-Connector:SMA_Edge` | [`electronic_connector_sma_edge_mount`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_sma_edge_mount) |
-| JP6 | 1 | ~ | ~ | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
-| L1 | 1 | 33nH | 33nH | `SparkFun-Capacitor:C_0603_1608Metric` | unmatched |
-| L2 | 1 | 30Ohm | 30Ohm | `SparkFun-Capacitor:C_0603_1608Metric` | unmatched |
-| Q1 | 1 | BSS138 | BSS138 | `SparkFun-Semiconductor-Standard:SOT23-3` | unmatched |
+| L1 | 1 | Inductor 33 Nano Henry 0603 | 33nH | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_inductor_0603_33_nano_henry`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0603_33_nano_henry) |
+| L2 | 1 | Inductor 30 Ohm 0603 | 30Ohm | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_inductor_0603_30_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0603_30_ohm) |
+| Q1 | 1 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `SparkFun-Semiconductor-Standard:SOT23-3` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
 | R1, R2 | 2 | Resistor 5100 Ohm 0603 | 5.1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_5100_ohm) |
 | R3 | 1 | Resistor 10 Ohm 0603 | 10 | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_10_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10_ohm) |
 | R4 | 1 | Resistor 4700 Ohm 0603 | 4.7k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
@@ -114,8 +113,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R12 | 1 | Resistor 10000 Ohm 0603 | 10k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R15, R16, R29, R30, R31, R34 | 6 | Resistor 33 Ohm 0603 | 33 | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_33_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_33_ohm) |
 | U1 | 1 | Diode DT1042-04SO SOT-26 | DT1042-04SO | `SparkFun-Semiconductor-Standard:SOT23-6` | [`electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_array_sot_26_diodes_incorporated_dt1042_04so) |
-| U2 | 1 | AP2112K-3.3 | AP2112K-3.3 | `SparkFun-Semiconductor-Standard:SOT23-5` | unmatched |
-| U3 | 1 | NEO-F10N | NEO-F10N | `SparkFun-GPS:NEO-M9N_M8T_M8U_D9S_F9P_F10N` | unmatched |
+| U2 | 1 | IC Power Management Linear Voltage Regulator Diodes SOT_23_5 | AP2112K-3.3 | `SparkFun-Semiconductor-Standard:SOT23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3) |
+| U3 | 1 | Sensor Module U Blox Neo F10N GNSS | NEO-F10N | `SparkFun-GPS:NEO-M9N_M8T_M8U_D9S_F9P_F10N` | [`electronic_sensor_gnss_module_u_blox_neo_f10n`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_gnss_module_u_blox_neo_f10n) |
 | U8 | 1 | USB-Serial CH340C SOP-16 | CH340C | `SparkFun-Semiconductor-Standard:SO-16` | [`electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch340c`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch340c) |
 
 ## Main nets
@@ -146,11 +145,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 50.8 mm by 38.1 mm.
-- Placement data contains 43 front-side and 1 back-side components.
+- Placement data contains 43 front-side and 0 back-side components.
 
 ## Review notes
 
-- 11 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/browser_research_queue.md)
@@ -159,7 +158,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 21
+- Matched OOMP source parts copied: 28
 
 ## Source files
 

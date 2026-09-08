@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/PIR-Movement-sensor-board-hardware-design PIR Movement Sensor current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 14 physical placements to OOMP parts.
+Project soldered_electronics/PIR-Movement-sensor-board-hardware-design PIR Movement Sensor current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/PIR-Movement-sensor-board-hardware-design PIR Movem
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 37 |
-| Matched OOMP components | 14 |
-| Unmatched physical components | 4 |
+| Matched OOMP components | 17 |
+| Unmatched physical components | 1 |
 | Front-side placements | 14 |
 | Back-side placements | 2 |
 | Project version | `current` |
@@ -88,13 +88,13 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | K2 | 1 | PIR_lens | PIR_lens | `e-radionica.com footprinti:PIR_senzor_kapica` | unmatched |
 | Q1 | 1 | Transistor Mosfet N Channel Enhancement Mode SOT 23 | NMOS | `e-radionica.com footprinti:SOT-23-3` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode) |
 | Q2 | 1 | Transistor Bipolar Pnp SOT 23 | PNP | `e-radionica.com footprinti:SOT-23-3` | [`electronic_transistor_sot_23_bipolar_pnp`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_pnp) |
-| R1 | 1 | TC33X-2-105E | TC33X-2-105E | `e-radionica.com footprinti:tc33x-2-103e` | unmatched |
+| R1 | 1 | Potentiometer Through Hole 1 Mega Ohm Bourns TC33X 2 105E TRIMMER | TC33X-2-105E | `e-radionica.com footprinti:tc33x-2-103e` | [`electronic_potentiometer_trimmer_through_hole_1_mega_ohm_bourns_tc33x_2_105e`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_potentiometer_trimmer_through_hole_1_mega_ohm_bourns_tc33x_2_105e) |
 | R2 | 1 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R3 | 1 | Resistor 1000 Ohm 0603 | 1k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R4 | 1 | Resistor 10 Ohm 0603 | 10R | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10_ohm) |
 | U1 | 1 | Sensor 3 Pin AM312 PIR | AM312 | `e-radionica.com footprinti:PIR_senzor` | [`electronic_sensor_pir_3_pin_am312`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_pir_3_pin_am312) |
-| U2 | 1 | SE5218 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
-| U3 | 1 | NE555DR | NE555DR | `e-radionica.com footprinti:SOIC−8` | unmatched |
+| U2 | 1 | IC Power Management Linear Voltage Regulator SE5218 SOT_23_5 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218) |
+| U3 | 1 | IC Timer 555 Timer Texas Instruments SOIC_8 | NE555DR | `e-radionica.com footprinti:SOIC−8` | [`electronic_ic_soic_8_timer_555_timer_texas_instruments_ne555dr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_timer_555_timer_texas_instruments_ne555dr) |
 
 ## Main nets
 
@@ -120,7 +120,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 4 physical component records are not yet matched to an OOMP part.
+- 1 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/generated_data/browser_research_queue.md)
@@ -129,7 +129,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 12
+- Matched OOMP source parts copied: 15
 
 ## Source files
 

@@ -1,0 +1,173 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-08T15:04:23",
+    "ignored_checks": [
+        {
+            "description": "Courtyards overlap",
+            "key": "courtyards_overlap"
+        },
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "key": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "key": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "key": "silk_edge_clearance"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        },
+        {
+            "description": "Footprint not found in libraries",
+            "key": "lib_footprint_issues"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.1270 mm; actual 0.1081 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [VBUS] of J4",
+                    "pos": {
+                        "x": 153.441,
+                        "y": 74.819
+                    },
+                    "uuid": "f3a3766a-4109-4c64-b094-89e0da1cf5ef"
+                },
+                {
+                    "description": "NPTH pad of H2",
+                    "pos": {
+                        "x": 151.39,
+                        "y": 75.8
+                    },
+                    "uuid": "e8ccc5b9-f1e6-450f-b768-7d572a4f27a6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.1270 mm; actual 0.1081 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [VBUS] of J4",
+                    "pos": {
+                        "x": 153.441,
+                        "y": 74.819
+                    },
+                    "uuid": "f3a3766a-4109-4c64-b094-89e0da1cf5ef"
+                },
+                {
+                    "description": "NPTH pad of H2",
+                    "pos": {
+                        "x": 151.39,
+                        "y": 75.8
+                    },
+                    "uuid": "e8ccc5b9-f1e6-450f-b768-7d572a4f27a6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.1270 mm; actual 0.1081 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [VBUS] of J4",
+                    "pos": {
+                        "x": 153.441,
+                        "y": 74.819
+                    },
+                    "uuid": "f3a3766a-4109-4c64-b094-89e0da1cf5ef"
+                },
+                {
+                    "description": "NPTH pad of H2",
+                    "pos": {
+                        "x": 151.39,
+                        "y": 75.8
+                    },
+                    "uuid": "e8ccc5b9-f1e6-450f-b768-7d572a4f27a6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.1270 mm; actual 0.1081 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [VBUS] of J4",
+                    "pos": {
+                        "x": 153.441,
+                        "y": 74.819
+                    },
+                    "uuid": "f3a3766a-4109-4c64-b094-89e0da1cf5ef"
+                },
+                {
+                    "description": "NPTH pad of H2",
+                    "pos": {
+                        "x": 151.39,
+                        "y": 75.8
+                    },
+                    "uuid": "e8ccc5b9-f1e6-450f-b768-7d572a4f27a6"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Copper connection too narrow (board setup constraints minimum connection width 0.1270 mm; actual 0.1110 mm) (In2.Cu)",
+            "items": [
+                {
+                    "description": "Zone '3V3' [+3.3V] on In2.Cu, priority 1",
+                    "pos": {
+                        "x": 135.0,
+                        "y": 74.0
+                    },
+                    "uuid": "9cb69ad4-f06a-40c6-b37f-76fc4e7cdd58"
+                }
+            ],
+            "severity": "warning",
+            "type": "connection_width"
+        }
+    ]
+}

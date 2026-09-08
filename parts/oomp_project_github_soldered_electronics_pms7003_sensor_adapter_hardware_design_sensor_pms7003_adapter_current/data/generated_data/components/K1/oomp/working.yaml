@@ -30,9 +30,17 @@ bip_39_full_space: party wife stadium else man critic gossip drive elbow mention
 bip_39_full_underscore: party_wife_stadium_else_man_critic_gossip_drive_elbow_mention_shrimp_brand
 category: connector
 category_name: Connector
+datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/fca06906dc282fca8d245c00832715b0.pdf?productCode=C49423294
 dimension_reference:
-  datasheet_url: https://suddendocs.samtec.com/catalog_english/a-tsw-htsw.pdf
+  datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/fca06906dc282fca8d245c00832715b0.pdf?productCode=C49423294
+  document: LCSC C49423294 / Ckmtw B-210S-1xP-A110, 2.54 mm single-row straight header
   manufacturer: samtec
+  notes: LCSC family drawing covers 1 through 40 positions. The physical view uses
+    the individual chamfered 2.50 mm insulator cells, 0.64 mm square pins, PA=6.0
+    mm mating length and PC=3.0 mm PCB tail; the bottom view follows its 1.02 mm recommended
+    PCB drill pattern.
+  pages:
+  - 2
   product_url: https://www.samtec.com/products/tsw-110-07-t-s
   sample_part_number: tsw_110_07_t_s
   series: tsw
@@ -56,15 +64,19 @@ distributors:
   product_name: Pin Header 6 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃
   title: LCSC
   url: https://www.lcsc.com/product-detail/C3294461.html
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin/datasheet.pdf
 header_dimensions_mm:
-  pin_length_post: 5.84
-  pin_length_tail: 2.54
-  pin_length_total: 10.92
+  pcb_hole_diameter: 1.02
+  pin_length_post: 6.0
+  pin_length_tail: 3.0
+  pin_length_total: 11.6
   pin_pitch: 2.54
   pin_square: 0.64
-  plastic_height: 2.54
+  plastic_height: 2.5
   plastic_length: 15.24
-  plastic_width: 2.48
+  plastic_width: 2.5
 id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
 id_no_class: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
 id_no_size: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
@@ -111,6 +123,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -221,7 +243,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -229,9 +251,18 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: connector
       category_name: Connector
+      datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/fca06906dc282fca8d245c00832715b0.pdf?productCode=C49423294
       dimension_reference:
-        datasheet_url: https://suddendocs.samtec.com/catalog_english/a-tsw-htsw.pdf
+        datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/fca06906dc282fca8d245c00832715b0.pdf?productCode=C49423294
+        document: LCSC C49423294 / Ckmtw B-210S-1xP-A110, 2.54 mm single-row straight
+          header
         manufacturer: samtec
+        notes: LCSC family drawing covers 1 through 40 positions. The physical view
+          uses the individual chamfered 2.50 mm insulator cells, 0.64 mm square pins,
+          PA=6.0 mm mating length and PC=3.0 mm PCB tail; the bottom view follows
+          its 1.02 mm recommended PCB drill pattern.
+        pages:
+        - 2
         product_url: https://www.samtec.com/products/tsw-110-07-t-s
         sample_part_number: tsw_110_07_t_s
         series: tsw
@@ -256,15 +287,19 @@ oomlout_ai_roboclick_3:
         product_name: Pin Header 6 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃
         title: LCSC
         url: https://www.lcsc.com/product-detail/C3294461.html
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin/datasheet.pdf
       header_dimensions_mm:
-        pin_length_post: 5.84
-        pin_length_tail: 2.54
-        pin_length_total: 10.92
+        pcb_hole_diameter: 1.02
+        pin_length_post: 6.0
+        pin_length_tail: 3.0
+        pin_length_total: 11.6
         pin_pitch: 2.54
         pin_square: 0.64
-        plastic_height: 2.54
+        plastic_height: 2.5
         plastic_length: 15.24
-        plastic_width: 2.48
+        plastic_width: 2.5
       kicad:
         hand_solder: Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical
         machine_solder: Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical
@@ -292,6 +327,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -501,7 +546,7 @@ oomlout_ai_roboclick_3:
           title: Bottom view
         - preview: data/working_svg_side_300.png
           title: Side view
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -751,6 +796,16 @@ oomlout_ai_roboclick_3:
       taxonomy_9: ''
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current/board_explorer.html
+        board_url: https://github.com/adafruit/Adafruit_ADXL345_PCB/blob/master/ADXL345%20STEMMA%20QT.brd
+        github_url: https://github.com/adafruit/Adafruit_ADXL345_PCB
+        name: Project adafruit/Adafruit_ADXL345_PCB ADXL345 STEMMA QT current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
+        project_id: oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
+        quantity: 1
+        references:
+        - JP1
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current/board_explorer.html
         board_url: https://github.com/adafruit/Adafruit-LIS3DH-Breakout-PCB/blob/master/Adafruit%20LIS3DH.brd
         github_url: https://github.com/adafruit/Adafruit-LIS3DH-Breakout-PCB
@@ -985,7 +1040,7 @@ part_page:
     title: Bottom view
   - preview: data/working_svg_side_300.png
     title: Side view
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -1319,6 +1374,16 @@ taxonomy_8: ''
 taxonomy_9: ''
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current/board_explorer.html
+  board_url: https://github.com/adafruit/Adafruit_ADXL345_PCB/blob/master/ADXL345%20STEMMA%20QT.brd
+  github_url: https://github.com/adafruit/Adafruit_ADXL345_PCB
+  name: Project adafruit/Adafruit_ADXL345_PCB ADXL345 STEMMA QT current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
+  project_id: oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
+  quantity: 1
+  references:
+  - JP1
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current/board_explorer.html
   board_url: https://github.com/adafruit/Adafruit-LIS3DH-Breakout-PCB/blob/master/Adafruit%20LIS3DH.brd
   github_url: https://github.com/adafruit/Adafruit-LIS3DH-Breakout-PCB

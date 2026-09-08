@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Qwiic_ADC_ADS1219 Qwiic ADC ADS1219 current is a KiCad project containing 104 extracted component records. The catalogue matcher linked 16 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Qwiic_ADC_ADS1219 Qwiic ADC ADS1219 current is a KiCad project containing 104 extracted component records. The catalogue matcher linked 21 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -17,12 +17,12 @@ Project sparkfun/SparkFun_Qwiic_ADC_ADS1219 Qwiic ADC ADS1219 current is a KiCad
 | Components | 104 |
 | PCB footprints | 77 |
 | Mounting and locating holes | 4 |
-| Matched OOMP mounting-hole items | 0 |
+| Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 66 |
-| Matched OOMP components | 16 |
-| Unmatched physical components | 11 |
+| Matched OOMP components | 21 |
+| Unmatched physical components | 0 |
 | Front-side placements | 17 |
-| Back-side placements | 6 |
+| Back-side placements | 0 |
 | Project version | `current` |
 | Git ref | `main` |
 
@@ -72,10 +72,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH1` | `ST1` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 2.540 | 2.540 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH2` | `ST2` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 22.860 | 2.540 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH3` | `ST3` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 22.860 | 22.860 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH4` | `ST4` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 2.540 | 22.860 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
+| `MH1` | `ST1` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 2.540 | 2.540 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH2` | `ST2` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 22.860 | 2.540 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH3` | `ST3` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 22.860 | 22.860 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH4` | `ST4` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 2.540 | 22.860 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
 
 
 ## Bill of materials
@@ -89,13 +89,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J3, J4 | 2 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | J5 | 1 | Connector Header PZ254V-11-02P | Conn_01x02 | `SparkFun-Connector:1x02` | [`electronic_connector_header_2_54_mm_pitch_through_hole_2_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_2_pin) |
 | J6 | 1 | Connector Header PZ2.54-S04P-A60 | I2C | `SparkFun-Connector:1x04` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
-| JP5, JP9 | 2 | V | V | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
-| JP6, JP10 | 2 | D | D | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
-| JP7, JP11 | 2 | C | C | `SparkFun-Jumper:Jumper_2_NO` | unmatched |
 | R1 | 1 | Resistor 1000 Ohm 0603 | 1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R2, R3 | 2 | Resistor 2200 Ohm 0603 | 2.2k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
 | R4, R5 | 2 | Resistor 10000 Ohm 0603 | 10k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| U1 | 1 | ADS1219IPW | ADS1219IPW | `SparkFun-Semiconductor-Standard:TSSOP-16` | unmatched |
+| U1 | 1 | IC Converter Analog To Digital Converter Texas Instruments TSSOP_16 | ADS1219IPW | `SparkFun-Semiconductor-Standard:TSSOP-16` | [`electronic_ic_tssop_16_converter_analog_to_digital_converter_texas_instruments_ads1219ipw`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_tssop_16_converter_analog_to_digital_converter_texas_instruments_ads1219ipw) |
 
 ## Main nets
 
@@ -125,11 +122,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 25.4 mm by 25.4 mm.
-- Placement data contains 17 front-side and 6 back-side components.
+- Placement data contains 17 front-side and 0 back-side components.
 
 ## Review notes
 
-- 11 physical component records are not yet matched to an OOMP part.
 - The extractor reports 3 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/data/generated_data/lcsc_review.yaml)
@@ -139,7 +135,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_adc_ads1219_qwiic_adc_ads1219_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 10
+- Matched OOMP source parts copied: 12
 
 ## Source files
 

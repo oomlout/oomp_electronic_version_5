@@ -53,6 +53,11 @@ Connector Header 2.54-1*3P&#x9488; is an OOMP electronic connector definition. I
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

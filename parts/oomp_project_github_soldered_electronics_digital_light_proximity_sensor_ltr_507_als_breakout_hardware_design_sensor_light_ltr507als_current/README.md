@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design LTR-507ALS Breakout current is a KiCad project containing 70 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
+Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakout-hardware-design LTR-507ALS Breakout current is a KiCad project containing 70 extracted component records. The catalogue matcher linked 20 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/Digital-light---proximity-sensor-LTR-507ALS-breakou
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 46 |
-| Matched OOMP components | 18 |
-| Unmatched physical components | 2 |
+| Matched OOMP components | 20 |
+| Unmatched physical components | 0 |
 | Front-side placements | 14 |
 | Back-side placements | 2 |
 | Project version | `current` |
@@ -90,8 +90,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | K3 | 1 | Connector Header PZ2.54-S04P-A60 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | R1, R2, R3, R4, R5 | 5 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | U1 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
-| U2 | 1 | LTR-507ALS-01 | LTR-507ALS-01 | `e-radionica.com footprinti:LTR-507ALS-01` | unmatched |
-| U3 | 1 | SE5218 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
+| U2 | 1 | Sensor Ch 6 Liteon Ltr 507ALS 01 LIGHT PROXIMITY | LTR-507ALS-01 | `e-radionica.com footprinti:LTR-507ALS-01` | [`electronic_sensor_light_proximity_ch_6_liteon_ltr_507als_01`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_light_proximity_ch_6_liteon_ltr_507als_01) |
+| U3 | 1 | IC Power Management Linear Voltage Regulator SE5218 SOT_23_5 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218) |
 
 ## Main nets
 
@@ -121,7 +121,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 2 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/browser_research_queue.md)
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_digital_light_proximity_sensor_ltr_507_als_breakout_hardware_design_sensor_light_ltr507als_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 9
+- Matched OOMP source parts copied: 11
 
 ## Source files
 

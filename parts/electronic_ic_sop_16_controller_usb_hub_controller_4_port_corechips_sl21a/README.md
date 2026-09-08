@@ -2,7 +2,7 @@
 
 `electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a`
 
-IC SL2.1A SOP 16 is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 3.9 mm. The definition includes 16 documented pins.
+IC SL2.1A SOP 16 is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 9.9 &#x00D7; 3.9 mm. The definition includes 16 documented pins.
 
 ![IC SL2.1A SOP 16 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,7 @@ IC SL2.1A SOP 16 is an OOMP electronic ic definition. It uses the sop 16 package
 | OOMP ID | `electronic_ic_sop_16_controller_usb_hub_controller_4_port_corechips_sl21a` |
 | Type | Ic |
 | Package / style | sop 16 |
-| Nominal size | 10.0 &#x00D7; 3.9 mm |
+| Nominal size | 9.9 &#x00D7; 3.9 mm |
 | Documented pins | 16 |
 
 
@@ -35,7 +35,7 @@ IC SL2.1A SOP 16 is an OOMP electronic ic definition. It uses the sop 16 package
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
+| Length | 9.9 mm |
 | Width | 3.9 mm |
 
 

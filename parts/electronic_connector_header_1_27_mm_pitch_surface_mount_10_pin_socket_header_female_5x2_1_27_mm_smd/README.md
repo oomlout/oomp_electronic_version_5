@@ -64,6 +64,14 @@ Connector Header 1.27 mm pitch surface-mount 10 pin Socket is an OOMP electronic
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project soldered_electronics/PMS7003-sensor-adapter-hardware-design PMS7003 Adapter current](https://github.com/SolderedElectronics/PMS7003-sensor-adapter-hardware-design) | 1 | K2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_pms7003_sensor_adapter_hardware_design_sensor_pms7003_adapter_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_pms7003_sensor_adapter_hardware_design_sensor_pms7003_adapter_current) |
+
+
+
 ## Files
 
 

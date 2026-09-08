@@ -4,7 +4,7 @@ These entries are incomplete. No missing footprint geometry or symbol pinout was
 
 | OOMP part | Missing assets / reason |
 | --- | --- |
-| [electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) | Official hand_solder footprint unavailable: not selected |
+| [electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf) | Official symbol master unavailable: not selected; Official machine_solder footprint unavailable: not selected; Official hand_solder footprint unavailable: not selected |
 | [electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr) | Official symbol master unavailable: not selected |
 | [electronic_ic_sot_23_5_power_management_boost_converter_texas_instruments_tps613222a](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_boost_converter_texas_instruments_tps613222a) | Official symbol master unavailable: not selected |
 | [electronic_inductor_0806_2_2_micro_henry](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0806_2_2_micro_henry) | Official symbol master unavailable: not selected; Official machine_solder footprint unavailable: not selected; Official hand_solder footprint unavailable: not selected |

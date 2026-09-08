@@ -45,19 +45,27 @@ Connector Micro Sd Friction Fit Micro Sd Friction Fit is an OOMP electronic conn
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-| 1 | 1 | signal |
-| 2 | 2 | signal |
-| 3 | 3 | signal |
-| 4 | 4 | signal |
-| 5 | 5 | signal |
-| 6 | 6 | signal |
-| 7 | 7 | signal |
-| 8 | 8 | signal |
-| 9 | 9 | signal |
-| 10 | 10 | signal |
+| 1 | DAT2 | signal |
+| 2 | DAT3/CD | signal |
+| 3 | CMD | signal |
+| 4 | VDD | power |
+| 5 | CLK | signal |
+| 6 | VSS | gnd |
+| 7 | DAT0 | signal |
+| 8 | DAT1 | signal |
+| 9 | CARD_DETECT | signal |
+| 10 | CD_COMMON | signal |
 
 
 
+
+
+
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project sparkfun/SparkFun_GNSS_Flex_Breakout GNSS Flex Breakout current](https://github.com/sparkfun/SparkFun_GNSS_Flex_Breakout) | 1 | J1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_flex_breakout_gnss_flex_breakout_current) |
 
 
 

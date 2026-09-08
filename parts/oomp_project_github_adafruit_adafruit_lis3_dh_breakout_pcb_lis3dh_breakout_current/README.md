@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-LIS3DH-Breakout-PCB LIS3DH Breakout current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 16 physical placements to OOMP parts.
+Project adafruit/Adafruit-LIS3DH-Breakout-PCB LIS3DH Breakout current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-LIS3DH-Breakout-PCB LIS3DH Breakout current is a KiCad
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 55 |
-| Matched OOMP components | 16 |
-| Unmatched physical components | 2 |
+| Matched OOMP components | 18 |
+| Unmatched physical components | 0 |
 | Front-side placements | 14 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -83,7 +83,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1 | 1 | Capacitor 100 nF 0603 | 0.1uF | `Adafruit LIS3DH-import-fps:0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| C2, C3 | 2 | 10uF | 10uF | `Adafruit LIS3DH-import-fps:0805-NO` | unmatched |
+| C2, C3 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit LIS3DH-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | CONN3, CONN4 | 2 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `Adafruit LIS3DH-import-fps:JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
 | D1 | 1 | LED Green 0603 | GREEN | `Adafruit LIS3DH-import-fps:CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_green) |
 | D2 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit LIS3DH-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
@@ -121,7 +121,6 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 2 physical component records are not yet matched to an OOMP part.
 - The extractor reports 4 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current/data/generated_data/lcsc_review.yaml)
@@ -131,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 10
+- Matched OOMP source parts copied: 11
 
 ## Source files
 

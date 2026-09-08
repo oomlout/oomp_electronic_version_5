@@ -53,6 +53,11 @@ Connector Header PZ254-1-19-Z-8.5 is an OOMP electronic connector definition. It
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_pms7003_sensor_adapter_hardware_design_sensor_pms7003_adapter_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/PMS7003-sensor-adapter-hardware-design PMS7003 Adapter current is a KiCad project containing 37 extracted component records. The catalogue matcher linked 8 physical placements to OOMP parts.
+Project soldered_electronics/PMS7003-sensor-adapter-hardware-design PMS7003 Adapter current is a KiCad project containing 37 extracted component records. The catalogue matcher linked 9 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/PMS7003-sensor-adapter-hardware-design PMS7003 Adap
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 21 |
-| Matched OOMP components | 8 |
-| Unmatched physical components | 1 |
+| Matched OOMP components | 9 |
+| Unmatched physical components | 0 |
 | Front-side placements | 1 |
 | Back-side placements | 6 |
 | Project version | `current` |
@@ -83,7 +83,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1, C2 | 2 | Capacitor 22 uF 0603 | CL10A226MPCNUBE | `e-radionica.com footprinti:0805C` | [`electronic_capacitor_0603_22_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_22_micro_farad) |
 | C3 | 1 | Capacitor 4.7 uF 0603 | C1608X7S1A475K080AC | `e-radionica.com footprinti:0805C` | [`electronic_capacitor_0603_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_4_7_micro_farad) |
 | K1 | 1 | Connector Header 2.54-1x6P直针 | HEADER_MALE_6X1 | `e-radionica.com footprinti:HEADER_MALE_6X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
-| K2 | 1 | HEADER_MALE_5x2_1.27mm | HEADER_MALE_5x2_1.27mm | `e-radionica.com footprinti:HEADER_FEMALE_5x2_1.27mm_SMD` | unmatched |
+| K2 | 1 | Connector Header 1.27 mm pitch surface-mount 10 pin Socket | HEADER_MALE_5x2_1.27mm | `e-radionica.com footprinti:HEADER_FEMALE_5x2_1.27mm_SMD` | [`electronic_connector_header_1_27_mm_pitch_surface_mount_10_pin_socket_header_female_5x2_1_27_mm_smd`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_1_27_mm_pitch_surface_mount_10_pin_socket_header_female_5x2_1_27_mm_smd) |
 | L1 | 1 | Inductor 2 2 Micro Henry 0806 | DFE201612E-2R2M=P2 | `e-radionica.com footprinti:0806L` | [`electronic_inductor_0806_2_2_micro_henry`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0806_2_2_micro_henry) |
 | U1 | 1 | IC Power Management Boost Converter Texas Instruments SOT_23_5 | TPS613222A | `e-radionica.com footprinti:tps613222a` | [`electronic_ic_sot_23_5_power_management_boost_converter_texas_instruments_tps613222a`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_boost_converter_texas_instruments_tps613222a) |
 
@@ -111,7 +111,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 1 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_pms7003_sensor_adapter_hardware_design_sensor_pms7003_adapter_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_pms7003_sensor_adapter_hardware_design_sensor_pms7003_adapter_current/data/generated_data/browser_research_queue.md)
@@ -120,7 +120,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_pms7003_sensor_adapter_hardware_design_sensor_pms7003_adapter_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_particulate_matter_sensor_breakout_bmv080_particulate_matter_bmv080_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080 Particulate Matter Sensor BMV080 current is a KiCad project containing 74 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080 Particulate Matter Sensor BMV080 current is a KiCad project containing 74 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project sparkfun/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080 Particulate 
 | Mounting and locating holes | 0 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 47 |
-| Matched OOMP components | 12 |
-| Unmatched physical components | 1 |
+| Matched OOMP components | 13 |
+| Unmatched physical components | 0 |
 | Front-side placements | 9 |
 | Back-side placements | 4 |
 | Project version | `current` |
@@ -79,7 +79,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J2 | 1 | Connector Header PH2.54-01-07PZD | Conn_01x07 | `SparkFun-Connector:1x07` | [`electronic_connector_header_2_54_mm_pitch_through_hole_7_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_7_pin) |
 | R1, R2, R4 | 3 | Resistor 10000 Ohm 0402 | 10k | `SparkFun-Resistor:R_0402_1005Metric` | [`electronic_resistor_0402_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_10000_ohm) |
 | R3, R5 | 2 | Resistor 2200 Ohm 0402 | 2.2k | `SparkFun-Resistor:R_0402_1005Metric` | [`electronic_resistor_0402_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) |
-| U1 | 1 | BMV080 | BMV080 | `SparkFun-Connector:FPC_0.3mm-13` | unmatched |
+| U1 | 1 | Sensor Module Bosch BMV080 PARTICULATE MATTER | BMV080 | `SparkFun-Connector:FPC_0.3mm-13` | [`electronic_sensor_particulate_matter_module_bosch_bmv080`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_particulate_matter_module_bosch_bmv080) |
 
 ## Main nets
 
@@ -109,7 +109,6 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 1 physical component records are not yet matched to an OOMP part.
 - The extractor reports 1 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_particulate_matter_sensor_breakout_bmv080_particulate_matter_bmv080_current/data/generated_data/lcsc_review.yaml)
@@ -119,7 +118,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_particulate_matter_sensor_breakout_bmv080_particulate_matter_bmv080_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

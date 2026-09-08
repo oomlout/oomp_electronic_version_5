@@ -2,7 +2,7 @@
 
 `electronic_ic_sop_16_converter_load_cell_amplifier_avia_semiconductor_hx711`
 
-IC Converter Load Cell Amplifier Avia Semiconductor SOP_16 is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 3.9 mm.
+IC Converter Load Cell Amplifier Avia Semiconductor SOP_16 is an OOMP electronic ic definition. It uses the sop 16 package or form factor. Its nominal drawing size is 9.9 &#x00D7; 3.9 mm.
 
 ![IC Converter Load Cell Amplifier Avia Semiconductor SOP_16 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,7 @@ IC Converter Load Cell Amplifier Avia Semiconductor SOP_16 is an OOMP electronic
 | OOMP ID | `electronic_ic_sop_16_converter_load_cell_amplifier_avia_semiconductor_hx711` |
 | Type | Ic |
 | Package / style | sop 16 |
-| Nominal size | 10.0 &#x00D7; 3.9 mm |
+| Nominal size | 9.9 &#x00D7; 3.9 mm |
 
 
 ## Classification
@@ -34,7 +34,7 @@ IC Converter Load Cell Amplifier Avia Semiconductor SOP_16 is an OOMP electronic
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
+| Length | 9.9 mm |
 | Width | 3.9 mm |
 
 

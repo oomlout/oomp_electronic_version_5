@@ -1,0 +1,524 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-08T17:12:43",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "key": "silk_over_copper"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 120.45,
+                        "y": 93.98
+                    },
+                    "uuid": "1dea96e3-a067-44e0-895a-73579c62089e"
+                },
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 120.45,
+                        "y": 93.98
+                    },
+                    "uuid": "ab53d76d-3fe9-4f6c-943f-659df6fc743e"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Thermal relief connection to zone incomplete (layer B.Cu; zone min spoke count 2; actual 1)",
+            "items": [
+                {
+                    "description": "Zone 'GND' [GND] on F.Cu and B.Cu, priority 0",
+                    "pos": {
+                        "x": 116.84,
+                        "y": 102.87
+                    },
+                    "uuid": "c87c7337-b168-4c05-bd29-1bd654adc4a1"
+                },
+                {
+                    "description": "PTH pad 6 [GND] of J2",
+                    "pos": {
+                        "x": 133.985,
+                        "y": 100.965
+                    },
+                    "uuid": "5760ef97-98bd-4c72-a7d4-c8bbdcaa2d01"
+                }
+            ],
+            "severity": "error",
+            "type": "starved_thermal"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Sensor'",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 120.45,
+                        "y": 93.98
+                    },
+                    "uuid": "1dea96e3-a067-44e0-895a-73579c62089e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint Ref**",
+                    "pos": {
+                        "x": 118.77,
+                        "y": 98.82
+                    },
+                    "uuid": "3e133de7-c78f-4be1-b564-2975de14bd5d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Resistor'",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 125.14,
+                        "y": 98.7
+                    },
+                    "uuid": "6167bd09-edf7-4359-b1bd-5c83e2174c60"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Resistor'",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 122.59,
+                        "y": 98.69
+                    },
+                    "uuid": "685e89df-d600-47a3-8f7f-2e461d4e74d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Resistor'",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 132.72,
+                        "y": 98.72
+                    },
+                    "uuid": "6fcde1b7-3d8d-4e73-a20d-d3c5be18dce1"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 118.81,
+                        "y": 101.15
+                    },
+                    "uuid": "a9208735-b43b-4bf4-a1df-c97f30a5fc8b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Connector'",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 120.45,
+                        "y": 93.98
+                    },
+                    "uuid": "ab53d76d-3fe9-4f6c-943f-659df6fc743e"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Capacitor'",
+            "items": [
+                {
+                    "description": "Footprint C1",
+                    "pos": {
+                        "x": 118.14,
+                        "y": 93.62
+                    },
+                    "uuid": "abc27903-e37a-4222-8162-26d2341b0cc9"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Resistor'",
+            "items": [
+                {
+                    "description": "Footprint R5",
+                    "pos": {
+                        "x": 130.24,
+                        "y": 98.71
+                    },
+                    "uuid": "b56e0ae2-49f7-4301-88cb-81cf2cf558f4"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint FID2",
+                    "pos": {
+                        "x": 140.335,
+                        "y": 102.235
+                    },
+                    "uuid": "ba300e31-bddb-444b-9d6b-6501a33dc890"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 125.22,
+                        "y": 91.13
+                    },
+                    "uuid": "d516d790-0c9e-45bb-8729-396e73124c81"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint FID4",
+                    "pos": {
+                        "x": 117.475,
+                        "y": 90.805
+                    },
+                    "uuid": "d6149ba6-f09e-42b7-9e6f-91a82d3121f2"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Resistor'",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 127.67,
+                        "y": 98.71
+                    },
+                    "uuid": "d73b271d-78a9-40ad-b0a1-71035980a0e0"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Connector'",
+            "items": [
+                {
+                    "description": "Footprint J2",
+                    "pos": {
+                        "x": 121.285,
+                        "y": 100.965
+                    },
+                    "uuid": "f02baecf-26c0-4c27-ba41-8b1e2cfbf318"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Capacitor'",
+            "items": [
+                {
+                    "description": "Footprint C2",
+                    "pos": {
+                        "x": 118.14,
+                        "y": 96.08
+                    },
+                    "uuid": "fab21310-f9e4-4930-bdab-0bce100fc734"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint G1",
+                    "pos": {
+                        "x": 144.78,
+                        "y": 128.27
+                    },
+                    "uuid": "fde3a837-76fa-452f-a5d3-56437db3c08f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Connector'",
+            "items": [
+                {
+                    "description": "Footprint J1",
+                    "pos": {
+                        "x": 121.92,
+                        "y": 96.52
+                    },
+                    "uuid": "00b742a6-4131-43e3-a571-cdeffe5720eb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Capacitor'",
+            "items": [
+                {
+                    "description": "Footprint C3",
+                    "pos": {
+                        "x": 124.409,
+                        "y": 91.823
+                    },
+                    "uuid": "0953fa6e-7898-4830-9765-86f1e842252b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Jumper'",
+            "items": [
+                {
+                    "description": "Footprint JP3",
+                    "pos": {
+                        "x": 139.96,
+                        "y": 99.03
+                    },
+                    "uuid": "3589a904-5c8e-4a2c-9b46-a8c5811cfbc3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Jumper'",
+            "items": [
+                {
+                    "description": "Footprint JP2",
+                    "pos": {
+                        "x": 125.5,
+                        "y": 95.65
+                    },
+                    "uuid": "6d1bf029-2a65-4ae9-98ca-300b4c5737bf"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Jumper'",
+            "items": [
+                {
+                    "description": "Footprint JP1",
+                    "pos": {
+                        "x": 128.68,
+                        "y": 92.35
+                    },
+                    "uuid": "6fed0b09-64cd-4736-962a-bdb9ada330f6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Capacitor'",
+            "items": [
+                {
+                    "description": "Footprint C5",
+                    "pos": {
+                        "x": 125.684,
+                        "y": 92.284
+                    },
+                    "uuid": "7a520c95-d412-4b58-a96d-ab86566497cd"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 119.11,
+                        "y": 92.39
+                    },
+                    "uuid": "9462a8ac-cd0c-4d4f-82c5-31231e772a9d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Jumper'",
+            "items": [
+                {
+                    "description": "Footprint JP4",
+                    "pos": {
+                        "x": 130.09,
+                        "y": 95.7
+                    },
+                    "uuid": "9f41e369-1bd3-4ab3-877f-85812328781d"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint FID3",
+                    "pos": {
+                        "x": 140.335,
+                        "y": 90.805
+                    },
+                    "uuid": "a7fad8de-87c8-44ba-9552-7f02badc016f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Aesthetic'",
+            "items": [
+                {
+                    "description": "Footprint FID1",
+                    "pos": {
+                        "x": 117.475,
+                        "y": 102.235
+                    },
+                    "uuid": "aed1b820-9731-4610-a48b-50bb7eb2aa30"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'SparkFun-Capacitor'",
+            "items": [
+                {
+                    "description": "Footprint C4",
+                    "pos": {
+                        "x": 123.351,
+                        "y": 91.826
+                    },
+                    "uuid": "c84d5dce-4e6f-4cd5-99d3-f04b619d1ba8"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of G*** on F.Silkscreen",
+                    "pos": {
+                        "x": 123.786978,
+                        "y": 90.797186
+                    },
+                    "uuid": "7ce4eb92-fe7d-49f1-9faf-4847d5a3e31d"
+                },
+                {
+                    "description": "Segment on F.Silkscreen",
+                    "pos": {
+                        "x": 140.01,
+                        "y": 91.67
+                    },
+                    "uuid": "ecdd55ba-6595-4aac-a2b0-1a5928569506"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

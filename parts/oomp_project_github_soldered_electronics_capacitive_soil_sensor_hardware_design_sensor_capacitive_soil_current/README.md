@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_capacitive_soil_sensor_hardware_design_sensor_capacitive_soil_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Capacitive-soil-sensor-hardware-design Capacitive Soil Sensor current is a KiCad project containing 51 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
+Project soldered_electronics/Capacitive-soil-sensor-hardware-design Capacitive Soil Sensor current is a KiCad project containing 51 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,9 +19,9 @@ Project soldered_electronics/Capacitive-soil-sensor-hardware-design Capacitive S
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 42 |
-| Matched OOMP components | 18 |
-| Unmatched physical components | 7 |
-| Front-side placements | 22 |
+| Matched OOMP components | 23 |
+| Unmatched physical components | 0 |
+| Front-side placements | 20 |
 | Back-side placements | 1 |
 | Project version | `current` |
 | Git ref | `main` |
@@ -83,20 +83,19 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1 | 1 | Capacitor 1 uF 0603 | 1u | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
 | C2 | 1 | Capacitor 10 nF 0603 | 10n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_10_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_nano_farad) |
 | C3, C7, C8 | 3 | Capacitor 100 nF 0603 | 100n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| C4 | 1 | 470p | 470p | `e-radionica.com footprinti:0603C` | unmatched |
-| D1 | 1 | BAT20J | BAT20J | `e-radionica.com footprinti:SOD-323` | unmatched |
+| C4 | 1 | Capacitor 470 pF 0603 | 470p | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_470_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_470_pico_farad) |
+| D1 | 1 | Diode Schottky SOD-323 | BAT20J | `e-radionica.com footprinti:SOD-323` | [`electronic_diode_schottky_sod_323_infineon_bat20j`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_infineon_bat20j) |
 | K1 | 1 | Connector Header 2.54-1*3P针 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
-| PAD1, PAD2 | 2 | PAD_2x1.5 | PAD_2x1.5 | `e-radionica.com footprinti:PAD_2x1.5` | unmatched |
 | R1 | 1 | Resistor 1e+06 Ohm 0603 | 1M | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1000000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000000_ohm) |
 | R2 | 1 | Resistor 10000 Ohm 0603 | 10K | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R3 | 1 | Resistor 330 Ohm 0603 | 330R | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_330_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_330_ohm) |
-| R4 | 1 | 1K6 | 1K6 | `e-radionica.com footprinti:0603R` | unmatched |
+| R4 | 1 | Resistor 1600 Ohm 0603 | 1K6 | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1600_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1600_ohm) |
 | R5, R9 | 2 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R6, R11 | 2 | Resistor 47000 Ohm 0603 | 47k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_47000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_47000_ohm) |
 | R7, R10 | 2 | Resistor 100000 Ohm 0603 | 100k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
 | R8 | 1 | Potentiometer Through Hole 10 Kilo Ohm Bourns TC33X 2 103E TRIMMER | tc33x-2-103e | `e-radionica.com footprinti:tc33x-2-103e` | [`electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e) |
-| U1 | 1 | TLC555CD | TLC555CD | `e-radionica.com footprinti:SOIC−8` | unmatched |
-| U2 | 1 | SGM358YMS/TR | SGM358YMS/TR | `e-radionica.com footprinti:MSOP-8` | unmatched |
+| U1 | 1 | IC Timer 555 Timer Texas Instruments SOIC_8 | TLC555CD | `e-radionica.com footprinti:SOIC−8` | [`electronic_ic_soic_8_timer_555_timer_texas_instruments_tlc555cd`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_timer_555_timer_texas_instruments_tlc555cd) |
+| U2 | 1 | IC Amplifier Operational Amplifier Sg Micro MSOP_8 | SGM358YMS/TR | `e-radionica.com footprinti:MSOP-8` | [`electronic_ic_msop_8_amplifier_operational_amplifier_sg_micro_sgm358yms_tr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_msop_8_amplifier_operational_amplifier_sg_micro_sgm358yms_tr) |
 
 ## Main nets
 
@@ -121,11 +120,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 22.0 mm by 109.0 mm.
-- Placement data contains 22 front-side and 1 back-side components.
+- Placement data contains 20 front-side and 1 back-side components.
 
 ## Review notes
 
-- 7 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_capacitive_soil_sensor_hardware_design_sensor_capacitive_soil_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_capacitive_soil_sensor_hardware_design_sensor_capacitive_soil_current/data/generated_data/browser_research_queue.md)
@@ -134,7 +133,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_capacitive_soil_sensor_hardware_design_sensor_capacitive_soil_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 16
 
 ## Source files
 

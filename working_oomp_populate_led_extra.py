@@ -21,7 +21,12 @@ def main(**kwargs):
         if current not in extras_dict:
             continue
         extras_dict[current]["pins"] = {}
-        pins = [["1", "vdd"], ["2", "data_out"], ["3", "gnd"], ["4", "data_in"]]
+        if current == "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a":
+            # SK6812SIDE-A datasheet: 1 DIN, 2 VDD, 3 DOUT, 4 GND.
+            pins = [["1", "data_in"], ["2", "vdd"], ["3", "data_out"], ["4", "gnd"]]
+        else:
+            # SK6812MINI-E datasheet: 1 VDD, 2 DOUT, 3 GND, 4 DIN.
+            pins = [["1", "vdd"], ["2", "data_out"], ["3", "gnd"], ["4", "data_in"]]
         for pin_index in range(len(pins)):
             pin = pins[pin_index]
             extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
@@ -47,9 +52,39 @@ def main(**kwargs):
         extras_dict[current]["part_number_manufacturer"] = led_part[1]
         extras_dict[current]["part_number_lcsc"] = led_part[2]
         extras_dict[current]["pins"] = {}
-        pins = [["1", "vdd"], ["2", "data_out"], ["3", "gnd"], ["4", "data_in"]]
+        if current == "electronic_led_4020_side_view_rgb_sk6812_opsco_optoelectronics_sk6812side_a":
+            # SK6812SIDE-A datasheet: 1 DIN, 2 VDD, 3 DOUT, 4 GND.
+            pins = [["1", "data_in"], ["2", "vdd"], ["3", "data_out"], ["4", "gnd"]]
+        else:
+            # SK6812MINI-E datasheet: 1 VDD, 2 DOUT, 3 GND, 4 DIN.
+            pins = [["1", "vdd"], ["2", "data_out"], ["3", "gnd"], ["4", "data_in"]]
         for pin_index in range(len(pins)):
             pin = pins[pin_index]
             extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
                 "number": pin[0], "name": pin[1], "type": "signal"
             }
+
+    # The SparkFun 1205 RGB indicator is a four-pad 1205 metric package, not
+    # the two-terminal generic LED fallback.  Keep the common-anode/cathode
+    # identity explicit so assembly and pinout diagrams show all four pads.
+    current = "electronic_led_1205_rgb"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6}
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "R", "type": "signal"},
+            "pin_2": {"number": "2", "name": "G", "type": "signal"},
+            "pin_3": {"number": "3", "name": "B", "type": "signal"},
+            "pin_4": {"number": "4", "name": "COM", "type": "signal"},
+        }
+        part["package_drawing"] = {
+            "overall": [3.2, 1.6],
+            "body": [2.4, 1.2],
+            "pins": [
+                ["1", "bottom", -1.05, -0.7, 0.45, 0.4],
+                ["2", "bottom", -0.35, -0.7, 0.45, 0.4],
+                ["3", "bottom", 0.35, -0.7, 0.45, 0.4],
+                ["4", "bottom", 1.05, -0.7, 0.45, 0.4],
+            ],
+            "pin_one": [-1.05, -0.7],
+        }

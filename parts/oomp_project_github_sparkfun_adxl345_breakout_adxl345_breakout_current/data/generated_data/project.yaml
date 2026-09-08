@@ -27,75 +27,75 @@ schematic_files:
   format_version: '20260830'
   generator: eeschema
   generator_version: '10.99'
-  uuid: e934a2e0-deaa-4c36-b01b-110e97d3f6a4
+  uuid: ea4455fe-24d3-4d6e-af70-43525fa1a10b
   wire_count: 37
   junction_count: 5
   labels:
-  - name: SCL
-    scope: global
-    position:
-      x: 200.66
-      y: 111.76
-  - name: SCL
-    scope: global
-    position:
-      x: 152.4
-      y: 111.76
-  - name: GND
-    scope: global
-    position:
-      x: 200.66
-      y: 93.98
   - name: SDA
     scope: global
     position:
       x: 200.66
       y: 109.22
-  - name: CS
-    scope: global
-    position:
-      x: 200.66
-      y: 99.06
-  - name: INT2
-    scope: global
-    position:
-      x: 200.66
-      y: 104.14
-  - name: INT1
-    scope: global
-    position:
-      x: 152.4
-      y: 116.84
-  - name: SDO
-    scope: global
-    position:
-      x: 200.66
-      y: 106.68
-  - name: SDO
-    scope: global
-    position:
-      x: 152.4
-      y: 106.68
-  - name: SDA
-    scope: global
-    position:
-      x: 152.4
-      y: 109.22
-  - name: CS
-    scope: global
-    position:
-      x: 152.4
-      y: 101.6
   - name: INT2
     scope: global
     position:
       x: 152.4
       y: 119.38
+  - name: SCL
+    scope: global
+    position:
+      x: 200.66
+      y: 111.76
+  - name: SCL
+    scope: global
+    position:
+      x: 152.4
+      y: 111.76
+  - name: SDO
+    scope: global
+    position:
+      x: 152.4
+      y: 106.68
+  - name: SDO
+    scope: global
+    position:
+      x: 200.66
+      y: 106.68
   - name: INT1
     scope: global
     position:
       x: 200.66
       y: 101.6
+  - name: CS
+    scope: global
+    position:
+      x: 152.4
+      y: 101.6
+  - name: SDA
+    scope: global
+    position:
+      x: 152.4
+      y: 109.22
+  - name: INT1
+    scope: global
+    position:
+      x: 152.4
+      y: 116.84
+  - name: INT2
+    scope: global
+    position:
+      x: 200.66
+      y: 104.14
+  - name: CS
+    scope: global
+    position:
+      x: 200.66
+      y: 99.06
+  - name: GND
+    scope: global
+    position:
+      x: 200.66
+      y: 93.98
   hierarchical_sheet_count: 0
 pcb_files:
 - source_file: data/kicad_file.kicad_pcb
@@ -112,30 +112,6 @@ pcb_files:
     tracks:
     - kind: segment
       start:
-      - 6.8326
-      - -8.1026
-      end:
-      - 6.35
-      - -7.62
-      width: 0.254
-      layers:
-      - F.Cu
-      net: CS
-      uuid: 8bbdeb36-d310-4560-a389-94ac1de51762
-    - kind: segment
-      start:
-      - 6.35
-      - -7.62
-      end:
-      - 6.35
-      - -1.27
-      width: 0.254
-      layers:
-      - F.Cu
-      net: CS
-      uuid: b671ba76-b812-41d1-8b73-7053a13126eb
-    - kind: segment
-      start:
       - 8.1616
       - -8.1026
       end:
@@ -145,19 +121,31 @@ pcb_files:
       layers:
       - F.Cu
       net: CS
-      uuid: b6abe672-70a1-4bf5-84aa-92c28908c110
+      uuid: 75f84138-6470-400f-b1e8-8bfd7fba48c9
     - kind: segment
       start:
-      - 19.05
-      - -2.54
+      - 6.35
+      - -7.62
       end:
-      - 19.05
+      - 6.35
       - -1.27
       width: 0.254
       layers:
       - F.Cu
-      net: SCL
-      uuid: 421e0d6c-68b9-40e7-b581-c6a2649924a4
+      net: CS
+      uuid: cf34fcb1-abe4-47d3-a9e0-59332d621d9f
+    - kind: segment
+      start:
+      - 6.8326
+      - -8.1026
+      end:
+      - 6.35
+      - -7.62
+      width: 0.254
+      layers:
+      - F.Cu
+      net: CS
+      uuid: f65a9fc9-cfe6-4e36-b299-bb226820dfae
     - kind: segment
       start:
       - 12.3616
@@ -169,7 +157,7 @@ pcb_files:
       layers:
       - F.Cu
       net: SCL
-      uuid: ba2d16f5-3290-465d-bf7d-845ebe5e82fd
+      uuid: 5c2365ce-f437-4ffb-8c10-2f6ab6385bc1
     - kind: segment
       start:
       - 13.4874
@@ -181,19 +169,19 @@ pcb_files:
       layers:
       - F.Cu
       net: SCL
-      uuid: c423f4d0-c8dd-4acc-a278-d50250c7fa27
+      uuid: a3a79ef7-624a-4742-9e12-acaec4a1bdf2
     - kind: segment
       start:
-      - 12.2616
-      - -6.9645
+      - 19.05
+      - -2.54
       end:
-      - 12.2616
-      - -5.5184
+      - 19.05
+      - -1.27
       width: 0.254
       layers:
       - F.Cu
-      net: SDA
-      uuid: 9349f24d-e5cc-4a73-bc6e-73688c2be1b4
+      net: SCL
+      uuid: cb75fdeb-1c0e-42f3-86ed-56b574d4508e
     - kind: segment
       start:
       - 12.2616
@@ -205,7 +193,19 @@ pcb_files:
       layers:
       - F.Cu
       net: SDA
-      uuid: af05e50f-de1f-460b-a8d4-a601a0fd4051
+      uuid: 16b3860a-a004-4483-a841-bf7fdbdcfabd
+    - kind: segment
+      start:
+      - 12.2616
+      - -6.9645
+      end:
+      - 12.2616
+      - -5.5184
+      width: 0.254
+      layers:
+      - F.Cu
+      net: SDA
+      uuid: 7163872f-7eba-4281-ad89-f071bbb96f01
     - kind: segment
       start:
       - 11.4616
@@ -217,7 +217,7 @@ pcb_files:
       layers:
       - F.Cu
       net: SDO
-      uuid: 6e5310b0-e3e7-4406-bd62-be067ea58fb8
+      uuid: 6bfda431-c60c-4249-a51f-022d97d2f5e0
     - kind: segment
       start:
       - 11.4616
@@ -229,7 +229,7 @@ pcb_files:
       layers:
       - F.Cu
       net: SDO
-      uuid: a04a1a3a-b77a-4aec-8664-9e0a1b22a01d
+      uuid: 754db50d-a536-4480-b3ff-f64c85c34d8d
     - kind: segment
       start:
       - 9.0616
@@ -241,7 +241,7 @@ pcb_files:
       layers:
       - F.Cu
       net: INT2
-      uuid: 3ba0d0a1-6db1-4877-aaf4-3860c8f15bf2
+      uuid: 21eff393-d7d6-4376-9ba9-3e23d68ac802
     - kind: segment
       start:
       - 9.0616
@@ -253,19 +253,7 @@ pcb_files:
       layers:
       - F.Cu
       net: INT2
-      uuid: a8cbac85-6b93-43ef-86a1-5a88ef8fca03
-    - kind: segment
-      start:
-      - 8.2616
-      - -1.8984
-      end:
-      - 8.89
-      - -1.27
-      width: 0.254
-      layers:
-      - F.Cu
-      net: INT1
-      uuid: 0a3e6069-47fc-4877-83d1-addaee14535a
+      uuid: 73ea3574-6a1c-4527-abc2-06845c11b1c2
     - kind: segment
       start:
       - 8.2616
@@ -277,91 +265,19 @@ pcb_files:
       layers:
       - F.Cu
       net: INT1
-      uuid: 8e9955de-d298-4d26-8f09-5666672e0279
-    - kind: segment
-      start:
-      - 12.8778
-      - -11.6332
-      end:
-      - 8.2804
-      - -11.6332
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 0b8396cf-cca4-4c94-9b8d-ac289c5dd4c0
+      uuid: 69a43e4c-b5ea-464e-9f8a-96014d2d207b
     - kind: segment
       start:
       - 8.2616
-      - -10.5222
+      - -1.8984
       end:
-      - 8.2804
-      - -10.541
+      - 8.89
+      - -1.27
       width: 0.254
       layers:
       - F.Cu
-      net: VCC
-      uuid: 10d7777d-3440-40b7-8f6b-dd1c3e901a30
-    - kind: segment
-      start:
-      - 8.2616
-      - -9.2407
-      end:
-      - 8.2616
-      - -10.5222
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 22d8e0dc-a187-4f96-a438-b41f306de7ea
-    - kind: segment
-      start:
-      - 7.6708
-      - -10.5664
-      end:
-      - 6.9342
-      - -9.8298
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 24047f12-b0cb-4e14-9a06-48b76d6c05af
-    - kind: segment
-      start:
-      - 12.2616
-      - -9.2407
-      end:
-      - 12.2616
-      - -10.7122
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 2b50f4e4-aea4-4985-bf0a-5e45bcc34faa
-    - kind: segment
-      start:
-      - 8.2804
-      - -10.541
-      end:
-      - 8.2804
-      - -11.6332
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 3e0fc795-082a-4346-b890-e85c8079b14d
-    - kind: segment
-      start:
-      - 5.969
-      - -9.1948
-      end:
-      - 4.318
-      - -9.1948
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 52a02881-2440-4b67-a4dd-215ae75b093e
+      net: INT1
+      uuid: fea8801f-e4eb-4fb2-a422-873f9c76b771
     - kind: segment
       start:
       - 12.2616
@@ -373,19 +289,7 @@ pcb_files:
       layers:
       - F.Cu
       net: VCC
-      uuid: 54f90bc0-0e78-4cbe-9bd6-92b1123abdbb
-    - kind: segment
-      start:
-      - 13.0048
-      - -11.5062
-      end:
-      - 13.0048
-      - -10.922
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 5b759feb-96be-4ecc-b67c-1ec10532d17d
+      uuid: 0d9fe525-94ec-4669-82ee-0723b666883a
     - kind: segment
       start:
       - 12.8778
@@ -397,31 +301,19 @@ pcb_files:
       layers:
       - F.Cu
       net: VCC
-      uuid: 5d8e6981-5071-45bc-9f0e-f71e10e267ac
+      uuid: 2b7ab987-7aa3-4f8e-b8ed-e5bcf72f9b24
     - kind: segment
       start:
-      - 8.255
-      - -10.5664
+      - 6.223
+      - -9.4488
       end:
-      - 8.2804
-      - -10.541
+      - 5.969
+      - -9.1948
       width: 0.254
       layers:
       - F.Cu
       net: VCC
-      uuid: 60348393-21eb-4b4d-b1d5-6ed6e0ef886f
-    - kind: segment
-      start:
-      - 3.937
-      - -1.397
-      end:
-      - 3.81
-      - -1.27
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 675cc122-2738-4b85-9815-ac76d85acc06
+      uuid: 3ac058fd-9d79-4a4c-9635-c651f0d4ada0
     - kind: segment
       start:
       - 6.1976
@@ -433,43 +325,7 @@ pcb_files:
       layers:
       - F.Cu
       net: VCC
-      uuid: 79e8e6bc-396f-4070-8a88-ff6084ed8438
-    - kind: segment
-      start:
-      - 6.223
-      - -9.8298
-      end:
-      - 6.223
-      - -9.4488
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: 904ca53d-f788-4baf-a440-148020c45ad8
-    - kind: segment
-      start:
-      - 8.76
-      - -13.081
-      end:
-      - 8.2804
-      - -13.081
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: a03e398b-9949-4281-a1b8-28f776376919
-    - kind: segment
-      start:
-      - 6.9342
-      - -9.8298
-      end:
-      - 6.223
-      - -9.8298
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: a823619d-ec29-416b-a4be-658efe07e2ef
+      uuid: 4251acdd-2c70-4805-98e3-5dd011b272bb
     - kind: segment
       start:
       - 8.2804
@@ -481,79 +337,31 @@ pcb_files:
       layers:
       - F.Cu
       net: VCC
-      uuid: abfbbb77-c795-4afa-ba55-b522b85b7be8
+      uuid: 450aa3b0-f02a-4fb0-a06d-7379538c28d6
     - kind: segment
       start:
-      - 4.318
-      - -9.1948
-      end:
-      - 3.937
-      - -8.8138
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: b119e28b-e874-4896-9b43-80dca1e5fd9b
-    - kind: segment
-      start:
-      - 13.931
-      - -10.922
-      end:
-      - 14.097
-      - -11.088
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: b32d8af5-0c5e-407f-9b21-878c3b0eed96
-    - kind: segment
-      start:
-      - 6.223
-      - -11.0626
-      end:
-      - 6.223
-      - -9.8298
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: b9cbce59-661c-42fa-b871-bb2ce4b17514
-    - kind: segment
-      start:
-      - 3.937
-      - -8.8138
-      end:
-      - 3.937
-      - -1.397
-      width: 0.254
-      layers:
-      - F.Cu
-      net: VCC
-      uuid: c7f0b607-a530-417d-a40c-7f89288cf0cf
-    - kind: segment
-      start:
-      - 7.6708
-      - -10.5664
-      end:
       - 8.255
       - -10.5664
+      end:
+      - 8.2804
+      - -10.541
       width: 0.254
       layers:
       - F.Cu
       net: VCC
-      uuid: e1b198b2-cf01-48ad-a5e8-d1eb14c80174
+      uuid: 483bbd40-df3d-4ff8-8a34-ba82921d2510
     - kind: segment
       start:
-      - 6.223
-      - -9.4488
+      - 8.76
+      - -13.081
       end:
-      - 5.969
-      - -9.1948
+      - 8.2804
+      - -13.081
       width: 0.254
       layers:
       - F.Cu
       net: VCC
-      uuid: e315cacc-9411-4baa-9f46-c8545ee43353
+      uuid: 4c046e25-78fe-4085-99cc-f92ccece9b70
     - kind: segment
       start:
       - 12.4714
@@ -565,7 +373,175 @@ pcb_files:
       layers:
       - F.Cu
       net: VCC
-      uuid: f83c4f2a-04a2-4d39-8356-20e542be531e
+      uuid: 574ac8d7-bcf7-4877-832c-e2634460add9
+    - kind: segment
+      start:
+      - 5.969
+      - -9.1948
+      end:
+      - 4.318
+      - -9.1948
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 5f8ad0df-b2f0-45b3-8f65-23a9a148ee58
+    - kind: segment
+      start:
+      - 12.8778
+      - -11.6332
+      end:
+      - 8.2804
+      - -11.6332
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 6175c124-cbcd-481e-9b39-d835d307d126
+    - kind: segment
+      start:
+      - 3.937
+      - -8.8138
+      end:
+      - 3.937
+      - -1.397
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 6d498e48-ea78-4d8d-814c-f5396ddacbfb
+    - kind: segment
+      start:
+      - 4.318
+      - -9.1948
+      end:
+      - 3.937
+      - -8.8138
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 77f48446-8e0f-46fc-b8f8-e1e4bbcecd9f
+    - kind: segment
+      start:
+      - 6.223
+      - -11.0626
+      end:
+      - 6.223
+      - -9.8298
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 7b3ab16b-34eb-435a-b5fd-9abef21ba41c
+    - kind: segment
+      start:
+      - 8.2804
+      - -10.541
+      end:
+      - 8.2804
+      - -11.6332
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 859f0a1a-3579-457d-a13b-3b1041762873
+    - kind: segment
+      start:
+      - 13.931
+      - -10.922
+      end:
+      - 14.097
+      - -11.088
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 877f993e-2992-49a5-97a3-f919b88af10e
+    - kind: segment
+      start:
+      - 6.223
+      - -9.8298
+      end:
+      - 6.223
+      - -9.4488
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 88a35d11-b7d2-49f0-93b3-b5d453062c1e
+    - kind: segment
+      start:
+      - 12.2616
+      - -9.2407
+      end:
+      - 12.2616
+      - -10.7122
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 8aac557e-9b99-4384-8d0c-99fec6b55aca
+    - kind: segment
+      start:
+      - 13.0048
+      - -11.5062
+      end:
+      - 13.0048
+      - -10.922
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: 9c638ccc-5544-4440-87ef-302eaad61d46
+    - kind: segment
+      start:
+      - 7.6708
+      - -10.5664
+      end:
+      - 6.9342
+      - -9.8298
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: c13e1f5e-0332-4775-b717-d5794690541c
+    - kind: segment
+      start:
+      - 8.2616
+      - -9.2407
+      end:
+      - 8.2616
+      - -10.5222
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: c3a19b00-50af-4dfb-8714-dd930683cb79
+    - kind: segment
+      start:
+      - 3.937
+      - -1.397
+      end:
+      - 3.81
+      - -1.27
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: cc777d89-59a9-49f8-8ac8-df22c684fdc3
+    - kind: segment
+      start:
+      - 6.9342
+      - -9.8298
+      end:
+      - 6.223
+      - -9.8298
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: de1871bf-dea6-4743-9567-259d68ad41e1
     - kind: segment
       start:
       - 13.0048
@@ -577,7 +553,31 @@ pcb_files:
       layers:
       - F.Cu
       net: VCC
-      uuid: fa745c3a-3828-43dd-a62c-cebeb01a787b
+      uuid: eff284f1-0f8b-48bf-a0bf-819297872ea9
+    - kind: segment
+      start:
+      - 7.6708
+      - -10.5664
+      end:
+      - 8.255
+      - -10.5664
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: f92b7364-9758-4e9f-a443-d555dab07096
+    - kind: segment
+      start:
+      - 8.2616
+      - -10.5222
+      end:
+      - 8.2804
+      - -10.541
+      width: 0.254
+      layers:
+      - F.Cu
+      net: VCC
+      uuid: f93c1106-2f31-4d93-a5a4-a88d5d421b98
     vias:
     - kind: via
       position:
@@ -589,9 +589,99 @@ pcb_files:
       - F.Cu
       - B.Cu
       net: GND
-      uuid: 7d1a6d46-fc8c-4dfc-bc3e-459ea4613728
+      uuid: 01af288a-9890-45e2-8cdc-aa72e0e88d24
     zones: []
     pads:
+    - kind: pad
+      reference: CIO0
+      number: '1'
+      pad_index: 0
+      position:
+      - 14.097
+      - -11.088
+      rotation: -90.0
+      size:
+      - 1.1
+      - 1.0
+      shape: rect
+      layers:
+      - F.Cu
+      net: VCC
+      roundrect_rratio: 0.0
+      anchor: rect
+      primitives: []
+    - kind: pad
+      reference: CIO0
+      number: '2'
+      pad_index: 1
+      position:
+      - 14.097
+      - -12.788
+      rotation: -90.0
+      size:
+      - 1.1
+      - 1.0
+      shape: rect
+      layers:
+      - F.Cu
+      net: GND
+      roundrect_rratio: 0.0
+      anchor: rect
+      primitives: []
+    - kind: pad
+      reference: JP4
+      number: '1'
+      pad_index: 0
+      position:
+      - 1.905
+      - -6.985
+      rotation: 0
+      size:
+      - 1.0
+      - 1.0
+      shape: roundrect
+      layers:
+      - F.Cu
+      net: ''
+      roundrect_rratio: 0.5
+      anchor: rect
+      primitives: []
+    - kind: pad
+      reference: C2
+      number: A
+      pad_index: 0
+      position:
+      - 8.76
+      - -13.081
+      rotation: -270.0
+      size:
+      - 1.6
+      - 1.4
+      shape: rect
+      layers:
+      - F.Cu
+      net: VCC
+      roundrect_rratio: 0.0
+      anchor: rect
+      primitives: []
+    - kind: pad
+      reference: C2
+      number: C
+      pad_index: 1
+      position:
+      - 11.56
+      - -13.081
+      rotation: -270.0
+      size:
+      - 1.6
+      - 1.4
+      shape: rect
+      layers:
+      - F.Cu
+      net: GND
+      roundrect_rratio: 0.0
+      anchor: rect
+      primitives: []
     - kind: pad
       reference: JP1
       number: '1'
@@ -801,132 +891,6 @@ pcb_files:
         - 0.0
         - 0.0
     - kind: pad
-      reference: C2
-      number: A
-      pad_index: 0
-      position:
-      - 8.76
-      - -13.081
-      rotation: -270.0
-      size:
-      - 1.6
-      - 1.4
-      shape: rect
-      layers:
-      - F.Cu
-      net: VCC
-      roundrect_rratio: 0.0
-      anchor: rect
-      primitives: []
-    - kind: pad
-      reference: C2
-      number: C
-      pad_index: 1
-      position:
-      - 11.56
-      - -13.081
-      rotation: -270.0
-      size:
-      - 1.6
-      - 1.4
-      shape: rect
-      layers:
-      - F.Cu
-      net: GND
-      roundrect_rratio: 0.0
-      anchor: rect
-      primitives: []
-    - kind: pad
-      reference: JP4
-      number: '1'
-      pad_index: 0
-      position:
-      - 1.905
-      - -6.985
-      rotation: 0
-      size:
-      - 1.0
-      - 1.0
-      shape: roundrect
-      layers:
-      - F.Cu
-      net: ''
-      roundrect_rratio: 0.5
-      anchor: rect
-      primitives: []
-    - kind: pad
-      reference: CIO0
-      number: '1'
-      pad_index: 0
-      position:
-      - 14.097
-      - -11.088
-      rotation: -90.0
-      size:
-      - 1.1
-      - 1.0
-      shape: rect
-      layers:
-      - F.Cu
-      net: VCC
-      roundrect_rratio: 0.0
-      anchor: rect
-      primitives: []
-    - kind: pad
-      reference: CIO0
-      number: '2'
-      pad_index: 1
-      position:
-      - 14.097
-      - -12.788
-      rotation: -90.0
-      size:
-      - 1.1
-      - 1.0
-      shape: rect
-      layers:
-      - F.Cu
-      net: GND
-      roundrect_rratio: 0.0
-      anchor: rect
-      primitives: []
-    - kind: pad
-      reference: C1
-      number: '1'
-      pad_index: 0
-      position:
-      - 6.1976
-      - -11.088
-      rotation: -90.0
-      size:
-      - 1.1
-      - 1.0
-      shape: rect
-      layers:
-      - F.Cu
-      net: VCC
-      roundrect_rratio: 0.0
-      anchor: rect
-      primitives: []
-    - kind: pad
-      reference: C1
-      number: '2'
-      pad_index: 1
-      position:
-      - 6.1976
-      - -12.788
-      rotation: -90.0
-      size:
-      - 1.1
-      - 1.0
-      shape: rect
-      layers:
-      - F.Cu
-      net: GND
-      roundrect_rratio: 0.0
-      anchor: rect
-      primitives: []
-    - kind: pad
       reference: JP5
       number: '1'
       pad_index: 0
@@ -942,6 +906,42 @@ pcb_files:
       - F.Cu
       net: ''
       roundrect_rratio: 0.5
+      anchor: rect
+      primitives: []
+    - kind: pad
+      reference: C1
+      number: '1'
+      pad_index: 0
+      position:
+      - 6.1976
+      - -11.088
+      rotation: -90.0
+      size:
+      - 1.1
+      - 1.0
+      shape: rect
+      layers:
+      - F.Cu
+      net: VCC
+      roundrect_rratio: 0.0
+      anchor: rect
+      primitives: []
+    - kind: pad
+      reference: C1
+      number: '2'
+      pad_index: 1
+      position:
+      - 6.1976
+      - -12.788
+      rotation: -90.0
+      size:
+      - 1.1
+      - 1.0
+      shape: rect
+      layers:
+      - F.Cu
+      net: GND
+      roundrect_rratio: 0.0
       anchor: rect
       primitives: []
     - kind: pad
@@ -1205,65 +1205,7 @@ components:
     units:
     - reference: '#FRAME2'
       source_file: data/kicad_file.kicad_sch
-      uuid: 49809299-9fff-4e48-8938-e4a77b7d5127
-      library_id: kicad_file-eagle-import:SparkFun-Aesthetics_FRAME-LETTER
-      unit: 1
-      body_style: 1
-      position:
-        x: 25.4
-        y: 203.2
-        rotation: 0.0
-        mirror: null
-        units: mm
-      properties:
-        Reference: '#FRAME2'
-        Value: FRAME-LETTER
-        Footprint: ''
-        Datasheet: ''
-        Description: ''
-        LAST_DATE_TIME: ''
-        SHEET: ''
-        DRAWING_NAME: ''
-      in_bom: true
-      on_board: true
-      in_position_files: true
-      dnp: false
-      pins: []
-      size:
-        local_graphics:
-          measurement: symbol graphics only; excludes pins, properties, and text
-          units: mm
-          available: true
-          min:
-            x: -0.2032
-            y: -0.2032
-          max:
-            x: 249.1232
-            y: 185.6232
-          width: 249.3264
-          height: 185.8264
-          center:
-            x: 124.46
-            y: 92.71
-        placed_graphics:
-          measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
-          units: mm
-          available: true
-          min:
-            x: 25.1968
-            y: 17.5768
-          max:
-            x: 274.5232
-            y: 203.4032
-          width: 249.3264
-          height: 185.8264
-          center:
-            x: 149.86
-            y: 110.49
-      warnings: []
-    - reference: '#FRAME2'
-      source_file: data/kicad_file.kicad_sch
-      uuid: cedc54eb-a581-4665-ac00-a1f087e89df9
+      uuid: 0a644e3d-2adc-477d-906e-30c5847ad92a
       library_id: kicad_file-eagle-import:SparkFun-Aesthetics_FRAME-LETTER
       unit: 2
       body_style: 1
@@ -1319,6 +1261,64 @@ components:
             x: 223.52
             y: 185.42
       warnings: []
+    - reference: '#FRAME2'
+      source_file: data/kicad_file.kicad_sch
+      uuid: b5636690-d817-4166-bcc0-dd57d01601a0
+      library_id: kicad_file-eagle-import:SparkFun-Aesthetics_FRAME-LETTER
+      unit: 1
+      body_style: 1
+      position:
+        x: 25.4
+        y: 203.2
+        rotation: 0.0
+        mirror: null
+        units: mm
+      properties:
+        Reference: '#FRAME2'
+        Value: FRAME-LETTER
+        Footprint: ''
+        Datasheet: ''
+        Description: ''
+        LAST_DATE_TIME: ''
+        SHEET: ''
+        DRAWING_NAME: ''
+      in_bom: true
+      on_board: true
+      in_position_files: true
+      dnp: false
+      pins: []
+      size:
+        local_graphics:
+          measurement: symbol graphics only; excludes pins, properties, and text
+          units: mm
+          available: true
+          min:
+            x: -0.2032
+            y: -0.2032
+          max:
+            x: 249.1232
+            y: 185.6232
+          width: 249.3264
+          height: 185.8264
+          center:
+            x: 124.46
+            y: 92.71
+        placed_graphics:
+          measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+          units: mm
+          available: true
+          min:
+            x: 25.1968
+            y: 17.5768
+          max:
+            x: 274.5232
+            y: 203.4032
+          width: 249.3264
+          height: 185.8264
+          center:
+            x: 149.86
+            y: 110.49
+      warnings: []
     connected_components: []
   pcb: null
   connectivity_cross_check:
@@ -1353,7 +1353,7 @@ components:
     units:
     - reference: '#GND1'
       source_file: data/kicad_file.kicad_sch
-      uuid: 246756a9-d628-43c0-8aef-8c24afd75903
+      uuid: fbca9582-c6a8-42de-bc1d-338ed84e4c02
       library_id: kicad_file-eagle-import:SparkFun_GND
       unit: 1
       body_style: 1
@@ -1517,7 +1517,7 @@ components:
     units:
     - reference: '#GND3'
       source_file: data/kicad_file.kicad_sch
-      uuid: d799219a-ab3e-4df9-8fcd-3dffbb9e7381
+      uuid: f7da39ba-e43d-4ef1-af82-468d2757e472
       library_id: kicad_file-eagle-import:SparkFun_GND
       unit: 1
       body_style: 1
@@ -1681,7 +1681,7 @@ components:
     units:
     - reference: '#GND4'
       source_file: data/kicad_file.kicad_sch
-      uuid: 6fd1ff5f-5035-4310-ae03-d96c3fd14b61
+      uuid: 2250a0be-3cbd-4b96-bfde-bdcaa998fe22
       library_id: kicad_file-eagle-import:SparkFun_GND
       unit: 1
       body_style: 1
@@ -1845,7 +1845,7 @@ components:
     units:
     - reference: '#P+1'
       source_file: data/kicad_file.kicad_sch
-      uuid: f162bce1-b2cf-4d14-863f-2342aac44739
+      uuid: 014ab240-070d-4456-9221-88c84f75df06
       library_id: kicad_file-eagle-import:SparkFun_VCC
       unit: 1
       body_style: 1
@@ -2009,7 +2009,7 @@ components:
     units:
     - reference: '#P+2'
       source_file: data/kicad_file.kicad_sch
-      uuid: 8341f500-71cd-49ec-89cc-ec4b7b9789ba
+      uuid: 92230495-31ce-4802-9aa9-bb7607c9d1c4
       library_id: kicad_file-eagle-import:SparkFun_VCC
       unit: 1
       body_style: 1
@@ -2173,7 +2173,7 @@ components:
     units:
     - reference: '#P+3'
       source_file: data/kicad_file.kicad_sch
-      uuid: da7e242f-e986-4ebd-afb6-941868ae73d7
+      uuid: e3e20175-a955-42d4-b9b6-0720ce2a7fc9
       library_id: kicad_file-eagle-import:SparkFun_VCC
       unit: 1
       body_style: 1
@@ -2337,7 +2337,7 @@ components:
     units:
     - reference: '#P+4'
       source_file: data/kicad_file.kicad_sch
-      uuid: f1f1e457-fa75-4ca4-93d8-4eb521eba0ec
+      uuid: 27ba5349-3cb9-49d5-8482-6986ea52d9cb
       library_id: kicad_file-eagle-import:SparkFun_VCC
       unit: 1
       body_style: 1
@@ -2501,7 +2501,7 @@ components:
     units:
     - reference: C1
       source_file: data/kicad_file.kicad_sch
-      uuid: 35244647-657c-430d-aff1-3a1ea537cec6
+      uuid: 629929da-30b4-429d-aeb4-d067d05391ab
       library_id: kicad_file-eagle-import:SparkFun_CAP0603-CAP
       unit: 1
       body_style: 1
@@ -2703,7 +2703,7 @@ components:
     reference: C1
     value: 0.1uF
     source_file: data/kicad_file.kicad_pcb
-    uuid: cad88d8d-4891-499e-b941-f65d5d0d00ae
+    uuid: da8f7d3b-f11f-4097-a9d9-25f67f726a88
     library_id: ADXL345_Breakout-import-fps:0603-CAP
     layer: F.Cu
     side: front
@@ -3074,7 +3074,7 @@ components:
     units:
     - reference: C2
       source_file: data/kicad_file.kicad_sch
-      uuid: fd964fd9-f2a8-4b8a-a181-d7f411c60d70
+      uuid: a6eb94a9-67f8-4cd9-bf63-b5f128a29818
       library_id: kicad_file-eagle-import:SparkFun_CAP_POL1206
       unit: 1
       body_style: 1
@@ -3276,7 +3276,7 @@ components:
     reference: C2
     value: 10uF
     source_file: data/kicad_file.kicad_pcb
-    uuid: 560a1f5a-913f-4e70-811a-767b6233aa40
+    uuid: 6148bd9f-673c-4443-90b1-c277e3e6bb6b
     library_id: ADXL345_Breakout-import-fps:EIA3216
     layer: F.Cu
     side: front
@@ -3623,7 +3623,7 @@ components:
     units:
     - reference: CIO0
       source_file: data/kicad_file.kicad_sch
-      uuid: 8012da0e-869f-495c-b451-663424bffb43
+      uuid: 854c9821-3ac3-4347-a8ed-43e1a6cde2af
       library_id: kicad_file-eagle-import:SparkFun_CAP0603-CAP
       unit: 1
       body_style: 1
@@ -3825,7 +3825,7 @@ components:
     reference: CIO0
     value: 0.1uF
     source_file: data/kicad_file.kicad_pcb
-    uuid: c0c3e5e3-5ed0-4199-a747-091c6668a5d9
+    uuid: 090f8166-8618-4c36-8495-964b9da1bf91
     library_id: ADXL345_Breakout-import-fps:0603-CAP
     layer: F.Cu
     side: front
@@ -4196,7 +4196,7 @@ components:
     units:
     - reference: JP1
       source_file: data/kicad_file.kicad_sch
-      uuid: ae56df48-695f-4a21-a876-fd01ca5e71c9
+      uuid: 69b651b9-b33b-484b-8561-bd2eb03d2e5a
       library_id: kicad_file-eagle-import:SparkFun_M08
       unit: 1
       body_style: 1
@@ -4542,7 +4542,7 @@ components:
     reference: JP1
     value: ''
     source_file: data/kicad_file.kicad_pcb
-    uuid: 0104bf96-1ca7-48f4-8027-af68a1c15b2c
+    uuid: 9b6bf96f-617d-4b3f-8bf6-daa4d775798b
     library_id: ADXL345_Breakout-import-fps:1X08
     layer: F.Cu
     side: front
@@ -5349,7 +5349,7 @@ components:
     units:
     - reference: JP2
       source_file: data/kicad_file.kicad_sch
-      uuid: 4d08b5ac-cc50-41aa-bcc8-f75abc744338
+      uuid: df01cf90-a939-438b-9ba9-c223269d606c
       library_id: kicad_file-eagle-import:SparkFun_STAND-OFF
       unit: 1
       body_style: 1
@@ -5407,7 +5407,7 @@ components:
     reference: JP2
     value: STAND-OFF
     source_file: data/kicad_file.kicad_pcb
-    uuid: 9bf4be88-3b03-4677-b3f7-41c0c8ee716a
+    uuid: 38c67640-00fe-4071-b8cd-95aaeb725475
     library_id: ADXL345_Breakout-import-fps:STAND-OFF
     layer: F.Cu
     side: front
@@ -5733,7 +5733,7 @@ components:
     units:
     - reference: JP3
       source_file: data/kicad_file.kicad_sch
-      uuid: 03fa190d-3621-40ad-9e12-2e4611e860f6
+      uuid: 8a980a00-c091-4055-a71a-3dec811b061d
       library_id: kicad_file-eagle-import:SparkFun_STAND-OFF
       unit: 1
       body_style: 1
@@ -5791,7 +5791,7 @@ components:
     reference: JP3
     value: STAND-OFF
     source_file: data/kicad_file.kicad_pcb
-    uuid: 3ca58bb5-31f7-4b42-885f-0b77cac27b30
+    uuid: abd595b0-b142-4e65-86e0-0984b5571aca
     library_id: ADXL345_Breakout-import-fps:STAND-OFF
     layer: F.Cu
     side: front
@@ -6117,7 +6117,7 @@ components:
     units:
     - reference: JP4
       source_file: data/kicad_file.kicad_sch
-      uuid: 5be7f481-dcb8-4ac7-9afc-d9c4eaa6a4a3
+      uuid: 4ecaf523-6a4b-4d34-8dce-922fa3cf2aed
       library_id: kicad_file-eagle-import:SparkFun-Aesthetics_FIDUCIAL1X2
       unit: 1
       body_style: 1
@@ -6175,7 +6175,7 @@ components:
     reference: JP4
     value: FIDUCIAL1X2
     source_file: data/kicad_file.kicad_pcb
-    uuid: 79942a7a-5b6b-4617-b7c9-283eff64e366
+    uuid: 449eef37-bbe3-438c-83e9-8c54c5a91a35
     library_id: ADXL345_Breakout-import-fps:FIDUCIAL-1X2
     layer: F.Cu
     side: front
@@ -6410,7 +6410,7 @@ components:
     units:
     - reference: JP5
       source_file: data/kicad_file.kicad_sch
-      uuid: e9dbe4a2-8838-4708-87d1-1b721e45abcf
+      uuid: d51c5180-0326-48e9-8c67-86d34697a0e8
       library_id: kicad_file-eagle-import:SparkFun-Aesthetics_FIDUCIAL1X2
       unit: 1
       body_style: 1
@@ -6468,7 +6468,7 @@ components:
     reference: JP5
     value: FIDUCIAL1X2
     source_file: data/kicad_file.kicad_pcb
-    uuid: dbdd2ec5-6be7-43c7-8040-3c7f0bf3ced3
+    uuid: bba5b31c-2b28-4815-8356-0dc92534b7bb
     library_id: ADXL345_Breakout-import-fps:FIDUCIAL-1X2
     layer: F.Cu
     side: front
@@ -6703,7 +6703,7 @@ components:
     units:
     - reference: U2
       source_file: data/kicad_file.kicad_sch
-      uuid: 0fce1e7b-6cc2-4540-9b85-708fe650c73c
+      uuid: b0679e49-ef01-4aab-96bd-278ffedb1a57
       library_id: kicad_file-eagle-import:Testing_ADXL345PATRICK
       unit: 1
       body_style: 1
@@ -7241,7 +7241,7 @@ components:
     reference: U2
     value: ADXL345PATRICK
     source_file: data/kicad_file.kicad_pcb
-    uuid: e82d9ac3-e225-42e2-8cd8-b4700d0a74b0
+    uuid: e511d22e-9f8c-4c91-accb-cb31a2097b43
     library_id: ADXL345_Breakout-import-fps:LGA14_1_1_PATRICK
     layer: F.Cu
     side: front
@@ -8478,7 +8478,7 @@ components:
     units:
     - reference: U$2
       source_file: data/kicad_file.kicad_sch
-      uuid: afe9c2d7-aef2-4532-b736-90a5d8cc3431
+      uuid: 6d8fd925-8705-4ded-80f3-cbcb30285552
       library_id: kicad_file-eagle-import:SparkFun_LOGO-SFENEW
       unit: 1
       body_style: 1
@@ -8536,7 +8536,7 @@ components:
     reference: U$2
     value: LOGO-SFENEW
     source_file: data/kicad_file.kicad_pcb
-    uuid: 285d4d1c-d206-4a71-baa3-c729b39d199d
+    uuid: 185558c0-1d8b-41a7-8fd1-aeb80e4763ce
     library_id: ADXL345_Breakout-import-fps:SFE-NEW-WEBLOGO
     layer: B.Cu
     side: back
@@ -8705,7 +8705,7 @@ components:
     units:
     - reference: U$3
       source_file: data/kicad_file.kicad_sch
-      uuid: cc328cc2-9707-4b52-a7e8-bacc598172ce
+      uuid: 3306137e-9543-4c22-88fa-a83d34aa24b2
       library_id: kicad_file-eagle-import:SparkFun-Aesthetics_OSHW-LOGOS
       unit: 1
       body_style: 1
@@ -8763,7 +8763,7 @@ components:
     reference: U$3
     value: OSHW-LOGOS
     source_file: data/kicad_file.kicad_pcb
-    uuid: 14d5ce1a-5c11-4af4-af3a-d7eb264bce74
+    uuid: e7f06b48-1ce3-42c5-aa73-4949d3083f3b
     library_id: ADXL345_Breakout-import-fps:OSHW-LOGO-S
     layer: F.Cu
     side: front

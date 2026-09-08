@@ -1,0 +1,302 @@
+[2026-09-08T12:13:19.492755+00:00] component_svg_action
+Error type: UnboundLocalError
+Error message: cannot access local variable 'step' where it is not associated with a value
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/component_svg_action.py", line 64, in main
+    build_component_diagrams(json.loads(arguments.kwargs))
+  File "kicad_agents/component_svg_action.py", line 43, in build_component_diagrams
+    working_svg.main(
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 11, in main
+    make_svg(**kwargs)
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 29, in make_svg
+    svg_help.make_parts(**kwargs)
+  File "C:\gh\oomp_electronic_version_5\svg_help.py", line 94, in make_parts
+    make_svg_generic(part)
+  File "C:\gh\oomp_electronic_version_5\svg_help.py", line 160, in make_svg_generic
+    func(thing, **kwargs)
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 3614, in get_oomp_component_square_schematic
+    _draw_schematic_symbol(thing, show_labels=show_labels, max_height=22.0)
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 3511, in _draw_schematic_symbol
+    _add_schematic_box(thing, pin_records, show_labels, max_height=max_height)
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 3235, in _add_schematic_box
+    label_size = max(0.65, min(1.8, step * 0.62))
+                                    ^^^^
+UnboundLocalError: cannot access local variable 'step' where it is not associated with a value
+
+[2026-09-08T12:13:27.058065+00:00] component_svg_action
+Error type: UnboundLocalError
+Error message: cannot access local variable 'step' where it is not associated with a value
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/component_svg_action.py", line 64, in main
+    build_component_diagrams(json.loads(arguments.kwargs))
+  File "kicad_agents/component_svg_action.py", line 43, in build_component_diagrams
+    working_svg.main(
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 11, in main
+    make_svg(**kwargs)
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 29, in make_svg
+    svg_help.make_parts(**kwargs)
+  File "C:\gh\oomp_electronic_version_5\svg_help.py", line 94, in make_parts
+    make_svg_generic(part)
+  File "C:\gh\oomp_electronic_version_5\svg_help.py", line 160, in make_svg_generic
+    func(thing, **kwargs)
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 3614, in get_oomp_component_square_schematic
+    _draw_schematic_symbol(thing, show_labels=show_labels, max_height=22.0)
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 3511, in _draw_schematic_symbol
+    _add_schematic_box(thing, pin_records, show_labels, max_height=max_height)
+  File "C:\gh\oomp_electronic_version_5\working_svg.py", line 3235, in _add_schematic_box
+    label_size = max(0.65, min(1.8, step * 0.62))
+                                    ^^^^
+UnboundLocalError: cannot access local variable 'step' where it is not associated with a value
+
+[2026-09-08T13:39:11.452816+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T13:42:07.947538+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T13:45:19.183472+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T13:48:09.659508+00:00] kicad_project_action
+Error type: OSError
+Error message: [Errno 22] Invalid argument: 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a\\data\\oomp_design\\conversion_report.json'
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/kicad_project_action.py", line 421, in main
+    convert_project(details)
+  File "kicad_agents/kicad_project_action.py", line 401, in convert_project
+    write_report(output_directory / 'conversion_report', report)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_library_agent.py", line 38, in write_report
+    write_changed(Path(path).with_suffix('.json'), json.dumps(data, indent=2, ensure_ascii=False) + '\n')
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_library_agent.py", line 34, in write_changed
+    path.write_bytes(data)
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1036, in write_bytes
+    with self.open(mode='wb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1013, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_dangerousprototypes_buspirate5_hardware_5_rev10a\\data\\oomp_design\\conversion_report.json'
+
+[2026-09-08T13:48:40.073265+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T13:53:33.613514+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T13:55:23.329261+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T13:56:57.852926+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T13:58:41.763912+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:00:18.060980+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:01:58.551098+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:04:30.073207+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:06:04.791833+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:07:31.144772+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:09:08.309740+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:10:35.218292+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:12:00.212671+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:13:31.444199+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:15:03.564148+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:16:27.827794+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:17:59.234363+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:19:29.578865+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:20:52.767393+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:22:22.071966+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:23:55.770674+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:25:28.123226+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:27:00.940357+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:28:28.328490+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:29:57.871882+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:31:30.251640+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:32:59.866503+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:34:23.888897+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:35:53.323095+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:37:29.452209+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:38:53.598006+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:40:23.004943+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:41:52.040060+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:43:18.797856+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:44:43.719346+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:46:09.571990+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:47:36.505255+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:49:05.812063+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:50:36.558510+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:52:01.622527+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:53:21.869115+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:54:45.759755+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:56:11.438479+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:57:37.396209+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T14:59:01.556551+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:00:25.281892+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:01:54.709441+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:03:23.865660+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:04:47.653674+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:06:16.715498+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:07:42.627497+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:09:14.048020+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:10:42.615045+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:12:06.470539+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:13:36.103805+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:15:05.371872+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:16:29.371163+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:17:58.184754+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:19:27.509493+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:20:51.593690+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:22:21.635056+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:23:45.132683+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:25:14.258830+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:26:43.853628+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:28:09.234870+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:29:35.213631+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:31:00.725669+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:32:25.116370+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:33:54.231034+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:35:22.859946+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:36:48.181104+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:38:13.275660+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:39:45.392560+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:41:08.956087+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:42:36.162962+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:44:03.737060+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:45:32.170347+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:47:17.206485+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:48:48.667509+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:50:20.259486+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:51:49.320344+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:53:17.185123+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:54:38.337049+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:56:02.816558+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:57:25.242440+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T15:58:50.935358+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:00:17.761165+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:01:48.665328+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:03:21.734766+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:04:43.282873+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:06:18.829449+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:07:43.871974+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:09:26.168467+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:11:24.085240+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:12:48.307104+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:14:22.153973+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:16:51.087911+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:19:14.092310+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:21:57.111087+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:24:01.432435+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:26:04.051621+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:29:07.388159+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:31:21.187496+00:00] production_jlc_agent
+Error type: PermissionError
+Error message: [WinError 5] Access is denied: 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current\\data\\production_auto_generate_build_nby4qncu' -> 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current\\data\\production_auto_generate'
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\production_jlc_agent.py", line 739, in generate_jlc_production_files
+    _replace_generated_directory(build_directory, output_directory)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\production_jlc_agent.py", line 585, in _replace_generated_directory
+    build_directory.replace(output_directory)
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\pathlib.py", line 1376, in replace
+    os.replace(self, target)
+PermissionError: [WinError 5] Access is denied: 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current\\data\\production_auto_generate_build_nby4qncu' -> 'C:\\gh\\oomp_electronic_version_5\\parts\\oomp_project_github_sparkfun_spark_fun_roller_encoder_breakout_roller_encoder_breakout_current\\data\\production_auto_generate'
+
+[2026-09-08T16:31:25.250115+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:33:50.038169+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.
+[2026-09-08T16:36:11.773207+00:00] interactive_html_bom_action
+Message: InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action.

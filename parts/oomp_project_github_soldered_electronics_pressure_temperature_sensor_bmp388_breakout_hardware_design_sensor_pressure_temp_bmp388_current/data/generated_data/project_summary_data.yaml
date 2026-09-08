@@ -18,8 +18,8 @@ summary:
   component_count: 67
   schematic_symbol_count: 51
   pcb_footprint_count: 52
-  matched_component_count: 19
-  unmatched_physical_component_count: 2
+  matched_component_count: 21
+  unmatched_physical_component_count: 0
   non_physical_symbol_count: 46
   mounting_hole_count: 4
   dedicated_mounting_hole_count: 4
@@ -845,7 +845,7 @@ placement:
     x: 113.3
     y: 139.0
     rotation: -90.0
-    oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
+    oomp_id: electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
     bounds:
       min_x: 110.4
       min_y: 135.5
@@ -1800,7 +1800,7 @@ placement:
     x: 144.7
     y: 139.0
     rotation: 90.0
-    oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
+    oomp_id: electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
     bounds:
       min_x: 142.25
       min_y: 135.5
@@ -3327,7 +3327,7 @@ placement:
     x: 129.0
     y: 139.0
     rotation: -180.0
-    oomp_id: ''
+    oomp_id: electronic_sensor_pressure_temperature_lga_10_bosch_bmp388
     bounds:
       min_x: 127.94
       min_y: 137.94
@@ -4671,7 +4671,7 @@ placement:
     x: 119.0
     y: 145.5
     rotation: -90.0
-    oomp_id: ''
+    oomp_id: electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218alg
     bounds:
       min_x: 117.49
       min_y: 143.14
@@ -5095,7 +5095,6 @@ board_png:
   image_file: data/generated_data/src/board.png
   width_px: 1600
   height_px: 1088
-  skipped_existing: true
 board_pins:
   available: true
   image_file: data/generated_data/src/board_pins.svg
@@ -5116,7 +5115,6 @@ board_pins_png:
   image_file: data/generated_data/src/board_pins.png
   width_px: 1600
   height_px: 1088
-  skipped_existing: true
 board_bottom:
   available: true
   image_file: data/generated_data/src/board_bottom.svg
@@ -5137,7 +5135,6 @@ board_bottom_png:
   image_file: data/generated_data/src/board_bottom.png
   width_px: 1600
   height_px: 1088
-  skipped_existing: true
 board_pins_bottom:
   available: true
   image_file: data/generated_data/src/board_pins_bottom.svg
@@ -5158,7 +5155,6 @@ board_pins_bottom_png:
   image_file: data/generated_data/src/board_pins_bottom.png
   width_px: 1600
   height_px: 1088
-  skipped_existing: true
 board_mechanical:
   available: true
   image_file: data/generated_data/src/board_mechanical.svg
@@ -5184,7 +5180,6 @@ board_mechanical_png:
   image_file: data/generated_data/src/board_mechanical.png
   width_px: 1600
   height_px: 654
-  skipped_existing: true
 schematic:
   available: true
   image_file: data/generated_data/src/schematic.svg
@@ -5453,11 +5448,11 @@ bom:
   - C3
   - C4
   quantity: 2
-- description: Connector JST Sh SM04B-SRSS-TB
+- description: Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST
   value: easyC-SMD
   footprint: e-radionica.com footprinti:easyC-connector
-  oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
-  oomp_link: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
+  oomp_id: electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
+  oomp_link: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
   references:
   - K1
   - K4
@@ -5498,11 +5493,11 @@ bom:
   references:
   - R3
   quantity: 1
-- description: BMP388
+- description: Sensor Lga 10 Bosch BMP388 PRESSURE TEMPERATURE
   value: BMP388
   footprint: e-radionica.com footprinti:BMP388
-  oomp_id: ''
-  oomp_link: ''
+  oomp_id: electronic_sensor_pressure_temperature_lga_10_bosch_bmp388
+  oomp_link: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_pressure_temperature_lga_10_bosch_bmp388
   references:
   - U1
   quantity: 1
@@ -5514,11 +5509,11 @@ bom:
   references:
   - U2
   quantity: 1
-- description: SE5218ALG
+- description: IC Power Management Linear Voltage Regulator SE5218ALG SOT_23_5
   value: SE5218ALG
   footprint: e-radionica.com footprinti:SOT-23-5
-  oomp_id: ''
-  oomp_link: ''
+  oomp_id: electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218alg
+  oomp_link: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218alg
   references:
   - U3
   quantity: 1
@@ -5631,12 +5626,13 @@ nets:
 generated_text:
   overview: Project soldered_electronics/Pressure---temperature-sensor-BMP388-breakout-hardware-design
     BMP388 Breakout current is a KiCad project containing 67 extracted component records.
-    The catalogue matcher linked 19 physical placements to OOMP parts.
+    The catalogue matcher linked 21 physical placements to OOMP parts.
   design_notes:
   - The extracted board outline is approximately 38.0 mm by 22.0 mm.
   - Placement data contains 17 front-side and 0 back-side components.
   review_notes:
-  - 2 physical component records are not yet matched to an OOMP part.
+  - No unmatched physical components or named-net disagreements were reported by the
+    extractor.
 style:
   format_version: 1
   name: OOMP project summary
@@ -5704,6 +5700,17 @@ source_manifest:
     - working_svg_assembly.svg
     - working_svg_assembly_pins.svg
     - working_svg_square_pins.svg
+  - oomp_id: electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf
+    project_source_files:
+    - working.yaml
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+    - working_svg_outline.svg
+    generated_image_files:
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
   - oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_1_pin
     project_source_files:
     - working.yaml
@@ -5726,7 +5733,7 @@ source_manifest:
     - working_svg_assembly.svg
     - working_svg_assembly_pins.svg
     - working_svg_square_pins.svg
-  - oomp_id: electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb
+  - oomp_id: electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218alg
     project_source_files:
     - working.yaml
     - working_svg_assembly.svg
@@ -5749,6 +5756,17 @@ source_manifest:
     - working_svg_assembly_pins.svg
     - working_svg_square_pins.svg
   - oomp_id: electronic_resistor_0603_10000_ohm
+    project_source_files:
+    - working.yaml
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+    - working_svg_outline.svg
+    generated_image_files:
+    - working_svg_assembly.svg
+    - working_svg_assembly_pins.svg
+    - working_svg_square_pins.svg
+  - oomp_id: electronic_sensor_pressure_temperature_lga_10_bosch_bmp388
     project_source_files:
     - working.yaml
     - working_svg_assembly.svg

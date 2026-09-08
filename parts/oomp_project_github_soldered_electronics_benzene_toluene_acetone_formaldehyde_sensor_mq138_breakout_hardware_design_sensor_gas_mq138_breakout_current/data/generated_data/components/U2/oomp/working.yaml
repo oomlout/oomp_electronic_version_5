@@ -31,10 +31,17 @@ bip_39_full_underscore: earn_air_gravity_surface_salmon_ethics_weird_venture_dep
 category: logic
 category_name: Logic
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 1.75
+  length: 4.9
+  width: 3.9
 directory: parts/electronic_ic_soic_8_logic_comparator_lm393
 distributors: []
+ic_dimensions_mm:
+  body_length: 4.9
+  body_width: 3.9
+  overall_width: 6.0
+  pin_pitch: 1.27
+  pin_width: 0.42
 id: electronic_ic_soic_8_logic_comparator_lm393
 id_no_class: electronic_ic_soic_8_logic_comparator_lm393
 id_no_size: electronic_ic_soic_8_logic_comparator_lm393
@@ -176,10 +183,17 @@ oomlout_ai_roboclick_3:
       category: logic
       category_name: Logic
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 1.75
+        length: 4.9
+        width: 3.9
       directory: parts\electronic_ic_soic_8_logic_comparator_lm393
       distributors: []
+      ic_dimensions_mm:
+        body_length: 4.9
+        body_width: 3.9
+        overall_width: 6.0
+        pin_pitch: 1.27
+        pin_width: 0.42
       kicad:
         hand_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
         machine_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
@@ -294,6 +308,65 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      package_drawing:
+        body:
+        - 3.9
+        - 4.9
+        overall:
+        - 6.02
+        - 4.9
+        pin_one:
+        - -1.6
+        - 2.1
+        pins:
+        - - '1'
+          - left
+          - -2.48
+          - 1.8375000000000001
+          - 1.0599999999999998
+          - 0.42
+        - - '8'
+          - right
+          - 2.48
+          - 1.8375000000000001
+          - 1.0599999999999998
+          - 0.42
+        - - '2'
+          - left
+          - -2.48
+          - 0.6125
+          - 1.0599999999999998
+          - 0.42
+        - - '7'
+          - right
+          - 2.48
+          - 0.6125
+          - 1.0599999999999998
+          - 0.42
+        - - '3'
+          - left
+          - -2.48
+          - -0.6124999999999998
+          - 1.0599999999999998
+          - 0.42
+        - - '6'
+          - right
+          - 2.48
+          - -0.6124999999999998
+          - 1.0599999999999998
+          - 0.42
+        - - '4'
+          - left
+          - -2.48
+          - -1.8375000000000004
+          - 1.0599999999999998
+          - 0.42
+        - - '5'
+          - right
+          - 2.48
+          - -1.8375000000000004
+          - 1.0599999999999998
+          - 0.42
       part_id: U1
       part_page:
         datasheet_path: data/datasheet.pdf
@@ -370,7 +443,31 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/ic/soic_8/logic/comparator/README.md
         oomp_id: electronic_ic_soic_8_logic_comparator_lm393
-        pins: []
+        pins:
+        - name: OUT1
+          number: '1'
+          type: signal
+        - name: IN1_MINUS
+          number: '2'
+          type: signal
+        - name: IN1_PLUS
+          number: '3'
+          type: signal
+        - name: GND
+          number: '4'
+          type: gnd
+        - name: IN2_PLUS
+          number: '5'
+          type: signal
+        - name: IN2_MINUS
+          number: '6'
+          type: signal
+        - name: OUT2
+          number: '7'
+          type: signal
+        - name: VCC
+          number: '8'
+          type: power
         quick_facts:
         - title: OOMP ID
           value: electronic_ic_soic_8_logic_comparator_lm393
@@ -379,11 +476,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: soic 8
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 4.9 × 3.9 mm
+        - title: Documented pins
+          value: 8
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_logic_comparator_lm393
         summary: IC Logic Comparator LM393 SOIC_8 is an OOMP electronic ic definition.
-          It uses the soic 8 package or form factor. Its nominal drawing size is 10.0
-          × 5.0 mm.
+          It uses the soic 8 package or form factor. Its nominal drawing size is 4.9
+          × 3.9 mm. The definition includes 8 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -397,6 +496,39 @@ oomlout_ai_roboclick_3:
           value: comparator
         - level: 15
           value: lm393
+      pins:
+        pin_1:
+          name: OUT1
+          number: '1'
+          type: signal
+        pin_2:
+          name: IN1_MINUS
+          number: '2'
+          type: signal
+        pin_3:
+          name: IN1_PLUS
+          number: '3'
+          type: signal
+        pin_4:
+          name: GND
+          number: '4'
+          type: gnd
+        pin_5:
+          name: IN2_PLUS
+          number: '5'
+          type: signal
+        pin_6:
+          name: IN2_MINUS
+          number: '6'
+          type: signal
+        pin_7:
+          name: OUT2
+          number: '7'
+          type: signal
+        pin_8:
+          name: VCC
+          number: '8'
+          type: power
       regenerate_pngs: false
       svg_details:
       - filename_extra: assembly
@@ -774,6 +906,65 @@ oomlout_ai_roboclick_3:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_ic_soic_8_logic_comparator_lm393
+package_drawing:
+  body:
+  - 3.9
+  - 4.9
+  overall:
+  - 6.02
+  - 4.9
+  pin_one:
+  - -1.6
+  - 2.1
+  pins:
+  - - '1'
+    - left
+    - -2.48
+    - 1.8375000000000001
+    - 1.0599999999999998
+    - 0.42
+  - - '8'
+    - right
+    - 2.48
+    - 1.8375000000000001
+    - 1.0599999999999998
+    - 0.42
+  - - '2'
+    - left
+    - -2.48
+    - 0.6125
+    - 1.0599999999999998
+    - 0.42
+  - - '7'
+    - right
+    - 2.48
+    - 0.6125
+    - 1.0599999999999998
+    - 0.42
+  - - '3'
+    - left
+    - -2.48
+    - -0.6124999999999998
+    - 1.0599999999999998
+    - 0.42
+  - - '6'
+    - right
+    - 2.48
+    - -0.6124999999999998
+    - 1.0599999999999998
+    - 0.42
+  - - '4'
+    - left
+    - -2.48
+    - -1.8375000000000004
+    - 1.0599999999999998
+    - 0.42
+  - - '5'
+    - right
+    - 2.48
+    - -1.8375000000000004
+    - 1.0599999999999998
+    - 0.42
 part_id: U1
 part_page:
   datasheet_path: data/datasheet.pdf
@@ -850,7 +1041,31 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/ic/soic_8/logic/comparator/README.md
   oomp_id: electronic_ic_soic_8_logic_comparator_lm393
-  pins: []
+  pins:
+  - name: OUT1
+    number: '1'
+    type: signal
+  - name: IN1_MINUS
+    number: '2'
+    type: signal
+  - name: IN1_PLUS
+    number: '3'
+    type: signal
+  - name: GND
+    number: '4'
+    type: gnd
+  - name: IN2_PLUS
+    number: '5'
+    type: signal
+  - name: IN2_MINUS
+    number: '6'
+    type: signal
+  - name: OUT2
+    number: '7'
+    type: signal
+  - name: VCC
+    number: '8'
+    type: power
   quick_facts:
   - title: OOMP ID
     value: electronic_ic_soic_8_logic_comparator_lm393
@@ -859,11 +1074,13 @@ part_page:
   - title: Package / style
     value: soic 8
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 4.9 × 3.9 mm
+  - title: Documented pins
+    value: 8
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_logic_comparator_lm393
   summary: IC Logic Comparator LM393 SOIC_8 is an OOMP electronic ic definition. It
-    uses the soic 8 package or form factor. Its nominal drawing size is 10.0 × 5.0
-    mm.
+    uses the soic 8 package or form factor. Its nominal drawing size is 4.9 × 3.9
+    mm. The definition includes 8 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -877,6 +1094,39 @@ part_page:
     value: comparator
   - level: 15
     value: lm393
+pins:
+  pin_1:
+    name: OUT1
+    number: '1'
+    type: signal
+  pin_2:
+    name: IN1_MINUS
+    number: '2'
+    type: signal
+  pin_3:
+    name: IN1_PLUS
+    number: '3'
+    type: signal
+  pin_4:
+    name: GND
+    number: '4'
+    type: gnd
+  pin_5:
+    name: IN2_PLUS
+    number: '5'
+    type: signal
+  pin_6:
+    name: IN2_MINUS
+    number: '6'
+    type: signal
+  pin_7:
+    name: OUT2
+    number: '7'
+    type: signal
+  pin_8:
+    name: VCC
+    number: '8'
+    type: power
 regenerate_pngs: false
 svg_details:
 - filename_extra: assembly

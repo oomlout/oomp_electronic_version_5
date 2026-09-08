@@ -1,6 +1,27 @@
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
 
+    # KiCad's LCD-016N002L is the correct 16x2 character-display symbol for
+    # the generic LCD entry.  Preserve its electrical pin names instead of
+    # leaving the display as a pin-less rectangle.
+    current = "electronic_display_lcd_character_16_by_2_backlight_yellow"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part.setdefault("kicad", {})["symbol"] = "Display_Character:LCD-016N002L"
+        lcd_pins = [
+            ("VSS", "power_in"), ("VDD", "power_in"), ("VO", "passive"),
+            ("RS", "input"), ("R/W", "input"), ("E", "input"),
+            ("DB0", "bidirectional"), ("DB1", "bidirectional"),
+            ("DB2", "bidirectional"), ("DB3", "bidirectional"),
+            ("DB4", "bidirectional"), ("DB5", "bidirectional"),
+            ("DB6", "bidirectional"), ("DB7", "bidirectional"),
+            ("A/VEE", "power_in"), ("K", "power_in"),
+        ]
+        part["pins"] = {
+            f"pin_{index + 1}": {"number": str(index + 1), "name": name, "type": pin_type}
+            for index, (name, pin_type) in enumerate(lcd_pins)
+        }
+
     current = "electronic_display_tft_2_inch_240_x_320_pixel_ips_spi_12_pin_szhtc_qt200h1201"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer"] = "QT200H1201"

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102 Capacitive Soil Moisture Sensor CY8CMBR3102 current is a KiCad project containing 73 extracted component records. The catalogue matcher linked 15 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102 Capacitive Soil Moisture Sensor CY8CMBR3102 current is a KiCad project containing 73 extracted component records. The catalogue matcher linked 16 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project sparkfun/SparkFun_Capacitive_Soil_Moisture_Sensor_CY8CMBR3102 Capacitive
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 46 |
-| Matched OOMP components | 15 |
-| Unmatched physical components | 1 |
+| Matched OOMP components | 16 |
+| Unmatched physical components | 0 |
 | Front-side placements | 14 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -89,7 +89,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R1 | 1 | Resistor 4700 Ohm 0603 | 4.7k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
 | R2, R3, R7 | 3 | Resistor 2200 Ohm 0603 | 2.2k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
 | R6 | 1 | Resistor 560 Ohm 0603 | 560 | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_560_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_560_ohm) |
-| U1 | 1 | CY8CMBR3102 | CY8CMBR3102 | `SparkFun-Semiconductor-Standard:SO-8` | unmatched |
+| U1 | 1 | IC Capacitive Touch Controller Controller Infineon SOIC_8 | CY8CMBR3102 | `SparkFun-Semiconductor-Standard:SO-8` | [`electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102) |
 
 ## Main nets
 
@@ -121,7 +121,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 1 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current/data/generated_data/browser_research_queue.md)
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_capacitive_soil_moisture_sensor_cy8_cmbr3102_capacitive_soil_moisture_cy8cmbr3102_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 10
+- Matched OOMP source parts copied: 11
 
 ## Source files
 

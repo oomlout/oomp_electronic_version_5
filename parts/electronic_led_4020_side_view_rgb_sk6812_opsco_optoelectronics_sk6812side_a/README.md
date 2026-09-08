@@ -55,10 +55,10 @@ LED SK6812SIDE-A 4020 SIDE VIEW is an OOMP electronic led definition. It uses th
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-| 1 | vdd | signal |
-| 2 | data_out | signal |
-| 3 | gnd | signal |
-| 4 | data_in | signal |
+| 1 | data_in | signal |
+| 2 | vdd | signal |
+| 3 | data_out | signal |
+| 4 | gnd | signal |
 
 
 

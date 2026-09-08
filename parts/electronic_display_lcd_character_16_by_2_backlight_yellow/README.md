@@ -2,7 +2,7 @@
 
 `electronic_display_lcd_character_16_by_2_backlight_yellow`
 
-Display XL-1608UYC-06 LCD is an OOMP electronic display definition. It uses the lcd package or form factor. Its nominal drawing size is 80.0 &#x00D7; 36.0 mm.
+Display XL-1608UYC-06 LCD is an OOMP electronic display definition. It uses the lcd package or form factor. Its nominal drawing size is 80.0 &#x00D7; 36.0 mm. The definition includes 16 documented pins.
 
 ![Display XL-1608UYC-06 LCD pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Display XL-1608UYC-06 LCD is an OOMP electronic display definition. It uses the 
 | Type | Display |
 | Package / style | lcd |
 | Nominal size | 80.0 &#x00D7; 36.0 mm |
+| Documented pins | 16 |
 
 
 ## Classification
@@ -47,6 +48,28 @@ Display XL-1608UYC-06 LCD is an OOMP electronic display definition. It uses the 
 | LCSC | [`C965802`](https://www.lcsc.com/product-detail/C965802.html) |
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | VSS | power_in |
+| 2 | VDD | power_in |
+| 3 | VO | passive |
+| 4 | RS | input |
+| 5 | R/W | input |
+| 6 | E | input |
+| 7 | DB0 | bidirectional |
+| 8 | DB1 | bidirectional |
+| 9 | DB2 | bidirectional |
+| 10 | DB3 | bidirectional |
+| 11 | DB4 | bidirectional |
+| 12 | DB5 | bidirectional |
+| 13 | DB6 | bidirectional |
+| 14 | DB7 | bidirectional |
+| 15 | A/VEE | power_in |
+| 16 | K | power_in |
 
 
 

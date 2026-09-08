@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_triple_axis_acclerometer_lis3_dh_lis3dh_qwiic_micro_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Triple_Axis_Acclerometer-LIS3DH LIS3DH Qwiic Micro current is a KiCad project containing 50 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Triple_Axis_Acclerometer-LIS3DH LIS3DH Qwiic Micro current is a KiCad project containing 50 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project sparkfun/SparkFun_Triple_Axis_Acclerometer-LIS3DH LIS3DH Qwiic Micro cur
 | Mounting and locating holes | 1 |
 | Matched OOMP mounting-hole items | 1 |
 | Schematic symbols | 39 |
-| Matched OOMP components | 10 |
-| Unmatched physical components | 2 |
+| Matched OOMP components | 12 |
+| Unmatched physical components | 0 |
 | Front-side placements | 11 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,7 +82,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C3 | 1 | Capacitor 100 nF 0402 | 0.1uF | `SparkFun-Capacitor:C_0402_1005Metric` | [`electronic_capacitor_0402_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_100_nano_farad) |
 | C4 | 1 | Capacitor 10 uF 0402 | 10uF | `SparkFun-Capacitor:C_0402_1005Metric` | [`electronic_capacitor_0402_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_10_micro_farad) |
 | D1 | 1 | LED Red 0402 | Red | `SparkFun-LED:LED_0402_1005Metric_Red` | [`electronic_led_0402_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0402_red) |
-| J1, J5 | 2 | PTH_1x1mm | PTH_1x1mm | `SparkFun-Connector:1x01_1x1mm` | unmatched |
+| J1, J5 | 2 | Connector Header ZX-PZ2.54-1-1PZZ | PTH_1x1mm | `SparkFun-Connector:1x01_1x1mm` | [`electronic_connector_header_2_54_mm_pitch_through_hole_1_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_1_pin) |
 | J2 | 1 | Connector JST Sh SM04B-SRSS-TB | Qwiic_RA | `SparkFun-Connector:JST_SMD_1.0mm-4_Black` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb) |
 | R1, R6 | 2 | Resistor 2200 Ohm 0402 | 2.2k | `SparkFun-Resistor:R_0402_1005Metric` | [`electronic_resistor_0402_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) |
 | R2 | 1 | Resistor 10000 Ohm 0402 | 10k | `SparkFun-Resistor:R_0402_1005Metric` | [`electronic_resistor_0402_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_10000_ohm) |
@@ -118,7 +118,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 2 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_triple_axis_acclerometer_lis3_dh_lis3dh_qwiic_micro_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_triple_axis_acclerometer_lis3_dh_lis3dh_qwiic_micro_current/data/generated_data/browser_research_queue.md)
@@ -127,7 +127,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_triple_axis_acclerometer_lis3_dh_lis3dh_qwiic_micro_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 9
+- Matched OOMP source parts copied: 10
 
 ## Source files
 

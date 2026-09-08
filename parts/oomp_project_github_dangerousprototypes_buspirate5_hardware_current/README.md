@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_current/data/generated_data/src/board_300.png)
 
-Project dangerousprototypes/buspirate5_hardware current is a KiCad project containing 440 extracted component records. The catalogue matcher linked 210 physical placements to OOMP parts.
+Project dangerousprototypes/buspirate5_hardware current is a KiCad project containing 440 extracted component records. The catalogue matcher linked 212 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project dangerousprototypes/buspirate5_hardware current is a KiCad project conta
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 504 |
-| Matched OOMP components | 210 |
-| Unmatched physical components | 2 |
+| Matched OOMP components | 212 |
+| Unmatched physical components | 0 |
 | Front-side placements | 205 |
 | Back-side placements | 3 |
 | Project version | `current` |
@@ -125,8 +125,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | RN303, RN308, RN317, RN318 | 4 | Resistor array 100000 Ohm 4 X 0402 Convex | 100K | `Resistor_SMD:R_Array_Convex_4x0402` | [`electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin) |
 | RN311, RN312 | 2 | Resistor array 10000 Ohm 4 X 0402 Convex | 10K | `Resistor_SMD:R_Array_Convex_4x0402` | [`electronic_resistor_array_4_x_0402_convex_10000_ohm_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0402_convex_10000_ohm_8_pin) |
 | RN315, RN400, RN401, RN402 | 4 | Resistor array 510 Ohm 4 X 0402 Convex | 510R | `Resistor_SMD:R_Array_Convex_4x0402` | [`electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin) |
-| SW101 | 1 | SW_SPST | SW_SPST | `Button_Switch_SMD:SW_SPST_PTS810` | unmatched |
-| SW102 | 1 | 4P_button_sw | 4P_button_sw | `dp-switch:GT-TC026X-HXXX-LX` | unmatched |
+| SW101 | 1 | Switch Surface Mount PTS810 TACTILE | SW_SPST | `Button_Switch_SMD:SW_SPST_PTS810` | [`electronic_switch_tactile_surface_mount_pts810`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_pts810) |
+| SW102 | 1 | Switch Through Hole Gt TC026X Hxxx Lx TACTILE | 4P_button_sw | `dp-switch:GT-TC026X-HXXX-LX` | [`electronic_switch_tactile_through_hole_gt_tc026x_hxxx_lx`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_through_hole_gt_tc026x_hxxx_lx) |
 | U102 | 1 | IC W25Q128JVSIQ SOP 8 5 28 MM X 5 23 MM | W25Q128JVSIQ | `Package_SO:SOP-8_5.28x5.23mm_P1.27mm` | [`electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq) |
 | U103 | 1 | IC RP2040 QFN 56 7 MM X 7 MM | RP2040 | `RP_Silicon:RP2040-QFN-56` | [`electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040) |
 | U105 | 1 | IC MT29F1G01ABAFDWB UPDFN 8 | MT29F1G01ABAFDWB | `dp-memory:U-PDFN-8` | [`electronic_ic_updfn_8_memory_spi_nand_flash_1_gbit_micron_mt29f1g01abafdwb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_updfn_8_memory_spi_nand_flash_1_gbit_micron_mt29f1g01abafdwb) |
@@ -174,7 +174,6 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 2 physical component records are not yet matched to an OOMP part.
 - The extractor reports 41 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_current/data/generated_data/lcsc_review.yaml)
@@ -184,7 +183,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_dangerousprototypes_buspirate5_hardware_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 51
+- Matched OOMP source parts copied: 53
 
 ## Source files
 

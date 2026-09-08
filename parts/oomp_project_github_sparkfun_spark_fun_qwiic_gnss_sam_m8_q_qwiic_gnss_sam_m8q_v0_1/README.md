@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_v0_1/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q v0.1 is a KiCad project containing 106 extracted component records. The catalogue matcher linked 26 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q v0.1 is a KiCad project containing 106 extracted component records. The catalogue matcher linked 33 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -17,12 +17,12 @@ Project sparkfun/SparkFun_Qwiic_GNSS_SAM-M8Q Qwiic GNSS SAM-M8Q v0.1 is a KiCad 
 | Components | 106 |
 | PCB footprints | 73 |
 | Mounting and locating holes | 7 |
-| Matched OOMP mounting-hole items | 2 |
+| Matched OOMP mounting-hole items | 7 |
 | Schematic symbols | 82 |
-| Matched OOMP components | 26 |
-| Unmatched physical components | 8 |
+| Matched OOMP components | 33 |
+| Unmatched physical components | 0 |
 | Front-side placements | 28 |
-| Back-side placements | 2 |
+| Back-side placements | 1 |
 | Project version | `v0.1` |
 | Git ref | `v01` |
 
@@ -72,7 +72,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH1` | `D2` | Mounting Hole 2.3 mm Round Unplated | `` | locating | 22.543 | 18.098 | unmatched (`mechanical_mounting_hole_2_3_mm_round_unplated` proposed) |
+| `MH1` | `D2` | Mounting Hole 2.3 mm Round Unplated | `mechanical / mounting_hole / 2_3_mm / round / unplated` | locating | 22.543 | 18.098 | [`mechanical_mounting_hole_2_3_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_2_3_mm_round_unplated) |
 
 ### Diameter 0.65 mm holes
 
@@ -85,17 +85,17 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH4` | `ST1` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 2.540 | 2.540 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH5` | `ST2` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 22.860 | 2.540 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH6` | `ST3` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 2.540 | 22.860 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH7` | `ST4` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 22.860 | 22.781 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
+| `MH4` | `ST1` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 2.540 | 2.540 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH5` | `ST2` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 22.860 | 2.540 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH6` | `ST3` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 2.540 | 22.860 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH7` | `ST4` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 22.860 | 22.781 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
 
 
 ## Bill of materials
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| BT1 | 1 | ML414H | ML414H | `SparkFun-Battery:ML414H_IV01E` | unmatched |
+| BT1 | 1 | Battery 6 8 Mm Maxell ML414H COIN CELL | ML414H | `SparkFun-Battery:ML414H_IV01E` | [`electronic_battery_coin_cell_6_8_mm_maxell_ml414h`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_battery_coin_cell_6_8_mm_maxell_ml414h) |
 | C1, C9 | 2 | Capacitor 1 uF 0603 | 1.0uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
 | C10 | 1 | Capacitor 10 uF 0603 | 10uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_micro_farad) |
 | C11, C14 | 2 | Capacitor 100 nF 0603 | 0.1uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
@@ -107,15 +107,14 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J1, J2 | 2 | Connector JST Sh SM04B-SRSS-TB | Qwiic_RA | `SparkFun-Connector:JST_1x04_P1.0mm_Horizontal_SMD` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_black_jst_sm04b_srss_tb) |
 | J4 | 1 | Connector USB-C TYPE-C 16PIN 2MD(073) | USB_C_Receptacle | `SparkFun-Connector:USB-C_16` | [`electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073) |
 | J6, J7 | 2 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06_P2.54mm` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
-| JP2 | 1 | I2C | I2C | `SparkFun-Jumper:Jumper_3_NO` | unmatched |
 | R2, R4 | 2 | Resistor 5100 Ohm 0603 | 5.1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_5100_ohm) |
 | R3 | 1 | Resistor 4700 Ohm 0603 | 4.7k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
 | R5, R6, R8 | 3 | Resistor 2200 Ohm 0603 | 2.2k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
 | R7 | 1 | Resistor 1000 Ohm 0603 | 1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R10 | 1 | Resistor 100000 Ohm 0603 | 100k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
 | R11, R12 | 2 | Resistor 470 Ohm 0603 | 470 | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_470_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_470_ohm) |
-| U1 | 1 | SAM-M8Q | SAM-M8Q | `SparkFun-GNSS:u-blox_SAM-M8Q` | unmatched |
-| U4 | 1 | CH340E | CH340E | `SparkFun-Semiconductor-Standard:MSOP-10_3x3mm_P0.5mm` | unmatched |
+| U1 | 1 | Sensor Module U Blox Sam M8Q GNSS | SAM-M8Q | `SparkFun-GNSS:u-blox_SAM-M8Q` | [`electronic_sensor_gnss_module_u_blox_sam_m8q`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_gnss_module_u_blox_sam_m8q) |
+| U4 | 1 | IC Converter Usb To Serial Converter Wch MSOP_10 | CH340E | `SparkFun-Semiconductor-Standard:MSOP-10_3x3mm_P0.5mm` | [`electronic_ic_msop_10_converter_usb_to_serial_converter_wch_ch340e`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_msop_10_converter_usb_to_serial_converter_wch_ch340e) |
 | U6 | 1 | IC Power Management Linear Voltage Regulator 3 3 Volt Richtek SOT_23_5 | RT9080-3.3 | `SparkFun-Semiconductor-Standard:SOT23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_richtek_rt9080_33`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_3_3_volt_richtek_rt9080_33) |
 
 ## Main nets
@@ -146,11 +145,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 25.4 mm by 25.4 mm.
-- Placement data contains 28 front-side and 2 back-side components.
+- Placement data contains 28 front-side and 1 back-side components.
 
 ## Review notes
 
-- 8 physical component records are not yet matched to an OOMP part.
 - The extractor reports 3 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_v0_1/data/generated_data/lcsc_review.yaml)
@@ -160,7 +158,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_qwiic_gnss_sam_m8_q_qwiic_gnss_sam_m8q_v0_1/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 18
+- Matched OOMP source parts copied: 22
 
 ## Source files
 

@@ -1,11 +1,10 @@
 # KiCad assets: electronic_switch_tactile_surface_mount_omron_b3fs_100xp
 
-
+- [Symbol](electronic_switch_tactile_surface_mount_omron_b3fs_100xp.kicad_sym) — `Switch:SW_Push`
+- [Machine Solder](machine_solder/electronic_switch_tactile_surface_mount_omron_b3fs_100xp.kicad_mod) — `Button_Switch_SMD:SW_SPST_Omron_B3FS-100xP`
 
 ## Review
 
-- Official symbol master unavailable: not selected
-- Official machine_solder footprint unavailable: not selected
 - Official hand_solder footprint unavailable: not selected
 
 Silkscreen code: `4Y67Y`. Source provenance: [manifest](manifest.yaml).

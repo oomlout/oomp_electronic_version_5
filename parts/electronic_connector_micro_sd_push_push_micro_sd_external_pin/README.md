@@ -45,19 +45,27 @@ Connector Micro Sd Push Push micro sd external pin is an OOMP electronic connect
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-| 1 | 1 | signal |
-| 2 | 2 | signal |
-| 3 | 3 | signal |
-| 4 | 4 | signal |
-| 5 | 5 | signal |
-| 6 | 6 | signal |
-| 7 | 7 | signal |
-| 8 | 8 | signal |
-| 9 | 9 | signal |
-| 10 | 10 | signal |
+| 1 | DAT2 | signal |
+| 2 | DAT3/CD | signal |
+| 3 | CMD | signal |
+| 4 | VDD | power |
+| 5 | CLK | signal |
+| 6 | VSS | gnd |
+| 7 | DAT0 | signal |
+| 8 | DAT1 | signal |
+| 9 | CARD_DETECT | signal |
+| 10 | CD_COMMON | signal |
 
 
 
+
+
+
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout MY1690X-16S current](https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S) | 1 | J6 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current) |
 
 
 

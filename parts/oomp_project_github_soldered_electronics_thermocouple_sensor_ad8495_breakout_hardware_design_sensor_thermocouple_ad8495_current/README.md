@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_thermocouple_sensor_ad8495_breakout_hardware_design_sensor_thermocouple_ad8495_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Thermocouple-sensor-AD8495-breakout-hardware-design AD8495 Breakout current is a KiCad project containing 35 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
+Project soldered_electronics/Thermocouple-sensor-AD8495-breakout-hardware-design AD8495 Breakout current is a KiCad project containing 35 extracted component records. The catalogue matcher linked 15 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/Thermocouple-sensor-AD8495-breakout-hardware-design
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 26 |
-| Matched OOMP components | 12 |
-| Unmatched physical components | 3 |
+| Matched OOMP components | 15 |
+| Unmatched physical components | 0 |
 | Front-side placements | 12 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -82,14 +82,14 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, C3 | 2 | Capacitor 10 nF 0603 | 0.01uF | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_10_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_nano_farad) |
 | C2, C4 | 2 | Capacitor 100 nF 0603 | 0.1uF | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| K1 | 1 | TERMINAL_KF235-5.0-2P | TERMINAL_KF235-5.0-2P | `e-radionica.com footprinti:TERMINAL_KF235-5.0-2P` | unmatched |
+| K1 | 1 | Connector Terminal Block 5 mm pitch through-hole 2 pin KF235 5 0 2P | TERMINAL_KF235-5.0-2P | `e-radionica.com footprinti:TERMINAL_KF235-5.0-2P` | [`electronic_connector_terminal_block_5_mm_pitch_through_hole_2_pin_kf235_5_0_2p`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_terminal_block_5_mm_pitch_through_hole_2_pin_kf235_5_0_2p) |
 | K2 | 1 | Connector Header 2.54-1*3P针 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
 | L1 | 1 | Ferrite Bead 600 Ohm 500 Milliamp 0603 | Ferrite bead | `e-radionica.com footprinti:0603L` | [`electronic_ferrite_bead_0603_600_ohm_500_milliamp`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0603_600_ohm_500_milliamp) |
 | R1 | 1 | Resistor 1e+06 Ohm 0603 | 1M | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1000000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000000_ohm) |
 | R2, R3 | 2 | Resistor 100 Ohm 0603 | 100R | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100_ohm) |
 | R4 | 1 | Resistor 1000 Ohm 0603 | 1K | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
-| U1 | 1 | TL431ACDBZ | TL431ACDBZ | `e-radionica.com footprinti:SOT-23-3` | unmatched |
-| U2 | 1 | AD8495ARMZ | AD8495ARMZ | `e-radionica.com footprinti:TP4056M-MSOP8` | unmatched |
+| U1 | 1 | IC Power Management Shunt Regulator Texas Instruments SOT_23_3 | TL431ACDBZ | `e-radionica.com footprinti:SOT-23-3` | [`electronic_ic_sot_23_3_power_management_shunt_regulator_texas_instruments_tl431acdbz`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_3_power_management_shunt_regulator_texas_instruments_tl431acdbz) |
+| U2 | 1 | IC Amplifier Thermocouple Amplifier Texas Instruments MSOP_8 | AD8495ARMZ | `e-radionica.com footprinti:TP4056M-MSOP8` | [`electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz) |
 
 ## Main nets
 
@@ -113,7 +113,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 3 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_thermocouple_sensor_ad8495_breakout_hardware_design_sensor_thermocouple_ad8495_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_thermocouple_sensor_ad8495_breakout_hardware_design_sensor_thermocouple_ad8495_current/data/generated_data/browser_research_queue.md)
@@ -122,7 +122,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_thermocouple_sensor_ad8495_breakout_hardware_design_sensor_thermocouple_ad8495_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 8
+- Matched OOMP source parts copied: 11
 
 ## Source files
 

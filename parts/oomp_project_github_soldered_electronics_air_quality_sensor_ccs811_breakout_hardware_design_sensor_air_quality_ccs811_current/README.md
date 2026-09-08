@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design CCS811 Breakout current is a KiCad project containing 63 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
+Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design CCS811 Breakout current is a KiCad project containing 63 extracted component records. The catalogue matcher linked 20 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/Air-quality-sensor-CCS811-breakout-hardware-design 
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 48 |
-| Matched OOMP components | 18 |
-| Unmatched physical components | 2 |
+| Matched OOMP components | 20 |
+| Unmatched physical components | 0 |
 | Front-side placements | 16 |
 | Back-side placements | 2 |
 | Project version | `current` |
@@ -88,8 +88,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R1, R2, R5, R6 | 4 | Resistor 4700 Ohm 0603 | 4.7k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
 | R3, R4, R7, R8 | 4 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | U1 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | NMOS-DUAL | `e-radionica.com footprinti:SOT-363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
-| U2 | 1 | CCS811B-JOPR | CCS811B-JOPR | `e-radionica.com footprinti:CCS811` | unmatched |
-| U3 | 1 | SE5218 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | unmatched |
+| U2 | 1 | Sensor Lga 20 Ams CCS811B Jopr AIR QUALITY | CCS811B-JOPR | `e-radionica.com footprinti:CCS811` | [`electronic_sensor_air_quality_lga_20_ams_ccs811b_jopr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_air_quality_lga_20_ams_ccs811b_jopr) |
+| U3 | 1 | IC Power Management Linear Voltage Regulator SE5218 SOT_23_5 | SE5218 | `e-radionica.com footprinti:SOT-23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218) |
 
 ## Main nets
 
@@ -121,7 +121,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 2 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/data/generated_data/browser_research_queue.md)
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_air_quality_sensor_ccs811_breakout_hardware_design_sensor_air_quality_ccs811_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 9
+- Matched OOMP source parts copied: 11
 
 ## Source files
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_jedp_lis3_dh_breakout_lis3dh_breakout_current/data/generated_data/src/board_300.png)
 
-Project jedp/LIS3DH-breakout LIS3DH Breakout current is a KiCad project containing 35 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
+Project jedp/LIS3DH-breakout LIS3DH Breakout current is a KiCad project containing 35 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,9 +19,9 @@ Project jedp/LIS3DH-breakout LIS3DH Breakout current is a KiCad project containi
 | Mounting and locating holes | 0 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 30 |
-| Matched OOMP components | 10 |
-| Unmatched physical components | 9 |
-| Front-side placements | 15 |
+| Matched OOMP components | 12 |
+| Unmatched physical components | 1 |
+| Front-side placements | 12 |
 | Back-side placements | 0 |
 | Project version | `current` |
 | Git ref | `main` |
@@ -76,14 +76,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1 | 1 | 10µ | 10µ | `Capacitor_SMD:CP_Elec_4x4.5` | unmatched |
 | C2, C3 | 2 | Capacitor 100 nF 0603 | 0.1µ | `Capacitor_SMD:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | D1 | 1 | LED  0603 | LED PWR | `LED_SMD:LED_0603_1608Metric` | [`electronic_led_0603`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603) |
-| I2C_ADDR | 1 | I2C ADDR | I2C ADDR | `Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm` | unmatched |
-| I2C_EN | 1 | I2C EN | I2C EN | `Jumper:SolderJumper-3_P2.0mm_Open_TrianglePad1.0x1.5mm` | unmatched |
 | J1, J2 | 2 | Connector Header 2.54-1x6P直针 | Conn_01x06_Female | `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
-| LIS3DH | 1 | LIS3DH | LIS3DH | `Package_LGA:LGA-16_3x3mm_P0.5mm_LayoutBorder3x5y` | unmatched |
+| LIS3DH | 1 | Sensor Lga 16 St LIS3DHTR ACCELEROMETER | LIS3DH | `Package_LGA:LGA-16_3x3mm_P0.5mm_LayoutBorder3x5y` | [`electronic_sensor_accelerometer_lga_16_st_lis3dhtr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_accelerometer_lga_16_st_lis3dhtr) |
 | R1, R4 | 2 | Resistor 100000 Ohm 0603 | 100k | `Resistor_SMD:R_0603_1608Metric` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
 | R2, R3 | 2 | Resistor 10000 Ohm 0603 | 10k | `Resistor_SMD:R_0603_1608Metric` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R5 | 1 | Resistor 1000 Ohm 0603 | 1k | `Resistor_SMD:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
-| VDD_IO_3V3 | 1 | VCC_IO = VCC | VCC_IO = VCC | `Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm` | unmatched |
 
 ## Main nets
 
@@ -111,11 +108,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 21.844 mm by 26.035 mm.
-- Placement data contains 15 front-side and 0 back-side components.
+- Placement data contains 12 front-side and 0 back-side components.
 
 ## Review notes
 
-- 9 physical component records are not yet matched to an OOMP part.
+- 1 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_jedp_lis3_dh_breakout_lis3dh_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_jedp_lis3_dh_breakout_lis3dh_breakout_current/data/generated_data/browser_research_queue.md)
@@ -124,7 +121,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_jedp_lis3_dh_breakout_lis3dh_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

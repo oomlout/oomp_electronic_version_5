@@ -21,7 +21,7 @@ def _pin_map(names):
     return pins
 
 
-def _gullwing(names, body=(4.9, 3.9), overall=(6.0, 5.0), pad_width=0.7):
+def _gullwing(names, body=(4.9, 3.9), overall=(6.0, 5.0), pad_width=0.7, pin_one=True):
     """Create a top-view two-row package drawing for SO/MSOP/VSSOP/SOT parts."""
     count = len(names)
     left_count = (count + 1) // 2
@@ -36,12 +36,14 @@ def _gullwing(names, body=(4.9, 3.9), overall=(6.0, 5.0), pad_width=0.7):
     for index in range(right_count):
         y = body_h / 2 - (index + 0.5) * body_h / max(right_count, 1)
         pins.append([str(count - index), "right", (body_w + pin_length) / 2, y, pin_length, pad_width])
-    return {
+    drawing = {
         "overall": list(overall),
         "body": list(body),
         "pins": pins,
-        "pin_one": [-(body_w / 2) + 0.35, (body_h / 2) - 0.35],
     }
+    if pin_one:
+        drawing["pin_one"] = [-(body_w / 2) + 0.35, (body_h / 2) - 0.35]
+    return drawing
 
 
 def _soic(names, body_length, body_width, overall_width, pad_width=0.42):
@@ -80,7 +82,13 @@ def _sot363():
 
 
 def _qfp(names, body=(7.0, 7.0), overall=(9.7, 9.7), pad_width=0.32):
-    """Create a square gull-wing package with clockwise pin numbering."""
+    """Create a square gull-wing package with standard top-view numbering.
+
+    QFP pin 1 is at the upper-left corner.  From there the numbers continue
+    down the left edge, across the bottom, up the right edge, and back across
+    the top.  The former helper started at the lower-left corner and mirrored
+    every side, which made the package drawing disagree with KiCad footprints.
+    """
     count = len(names)
     per_side = count // 4
     body_w, body_h = body
@@ -89,23 +97,25 @@ def _qfp(names, body=(7.0, 7.0), overall=(9.7, 9.7), pad_width=0.32):
     pin_y = (body_h + overall_h) / 4
     pins = []
     for index in range(per_side):
-        offset = body_h / 2 - (index + 0.5) * body_h / per_side
-        pins.append([str(index + 1), "bottom", -body_w / 2 + (index + 0.5) * body_w / per_side, -pin_y, pad_width, pin_y - body_h / 2])
+        y = body_h / 2 - (index + 0.5) * body_h / per_side
+        pins.append([str(index + 1), "left", -pin_x, y, pin_y - body_h / 2, pad_width])
     for index in range(per_side):
         number = per_side + index + 1
-        offset = body_w / 2 - (index + 0.5) * body_w / per_side
-        pins.append([str(number), "right", pin_x, offset, pin_y - body_h / 2, pad_width])
+        x = -body_w / 2 + (index + 0.5) * body_w / per_side
+        pins.append([str(number), "bottom", x, -pin_y, pad_width, pin_y - body_h / 2])
     for index in range(per_side):
         number = per_side * 2 + index + 1
-        pins.append([str(number), "top", body_w / 2 - (index + 0.5) * body_w / per_side, pin_y, pad_width, pin_y - body_h / 2])
+        y = -body_h / 2 + (index + 0.5) * body_h / per_side
+        pins.append([str(number), "right", pin_x, y, pin_y - body_h / 2, pad_width])
     for index in range(per_side):
         number = per_side * 3 + index + 1
-        pins.append([str(number), "left", -pin_x, -body_h / 2 + (index + 0.5) * body_h / per_side, pin_y - body_h / 2, pad_width])
+        x = body_w / 2 - (index + 0.5) * body_w / per_side
+        pins.append([str(number), "top", x, pin_y, pad_width, pin_y - body_h / 2])
     return {
         "overall": list(overall),
         "body": list(body),
         "pins": pins,
-        "pin_one": [-body_w / 2 + 0.45, -body_h / 2 + 0.45],
+        "pin_one": [-body_w / 2 + 0.45, body_h / 2 - 0.45],
     }
 
 
@@ -245,6 +255,13 @@ def main(**kwargs):
             "reference": {"document": "STM32F103x8/xB datasheet, LQFP48 package", "notes": "7 x 7 mm body, 0.5 mm pitch, 9.7 mm maximum lead span."},
             "url": "https://www.st.com/resource/en/datasheet/stm32f103c8.pdf",
         },
+        "electronic_ic_tqfp_32_7_mm_x_7_mm_microcontroller_8_bit_avr_microchip_atmega328p_au": {
+            "dimensions": {"length": 9.0, "width": 9.0, "height": 1.2},
+            "pins": ["PD3", "PD4", "GND", "VCC", "GND", "VCC", "XTAL1/PB6", "XTAL2/PB7", "PD5", "PD6", "PD7", "PB0", "PB1", "PB2", "PB3", "PB4", "PB5", "AVCC", "ADC6", "AREF", "GND", "ADC7", "PC0", "PC1", "PC2", "PC3", "PC4", "PC5", "RESET/PC6", "PD0", "PD1", "PD2"],
+            "drawing": _qfp([str(index) for index in range(1, 33)], body=(7.0, 7.0), overall=(9.0, 9.0), pad_width=0.3),
+            "reference": {"document": "Microchip ATmega328/P datasheet, 32-lead TQFP package", "notes": "7 x 7 mm body, 0.8 mm pitch, pin 1 at the upper-left in the top view; numbering proceeds down the left edge."},
+            "url": "https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS40002061B.pdf",
+        },
         "electronic_ic_uson_8_memory_spi_nor_flash_winbond_w25q16jvuxiq": {
             "dimensions": {"length": 3.0, "width": 2.0, "height": 0.55},
             "pins": ["CS", "DO_IO1", "WP_IO2", "GND", "DI_IO0", "CLK", "HOLD_RESET_IO3", "VCC"],
@@ -271,7 +288,7 @@ def main(**kwargs):
         "electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": [str(index) for index in range(1, 9)], "drawing": _soic([str(index) for index in range(1, 9)], 4.9, 3.9, 6.02)},
         "electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s": {"dimensions": {"length": 10.0, "width": 4.0, "height": 1.75}, "pins": [str(index) for index in range(1, 17)], "drawing": _soic([str(index) for index in range(1, 17)], 10.0, 4.0, 6.0)},
         "electronic_ic_msop_8_amplifier_operational_amplifier_sg_micro_sgm358yms_tr": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": ["OUTA", "INA_MINUS", "INA_PLUS", "V_MINUS", "INB_PLUS", "INB_MINUS", "OUTB", "V_PLUS"], "drawing": _gullwing([str(index) for index in range(1, 9)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
-        "electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": [str(index) for index in range(1, 9)], "drawing": _gullwing([str(index) for index in range(1, 9)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
+        "electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": ["NC", "-IN", "+IN", "V-", "V+", "OUT", "NC", "REF"], "drawing": _gullwing([str(index) for index in range(1, 9)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
         "electronic_ic_msop_10_converter_usb_to_serial_converter_wch_ch340e": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": [str(index) for index in range(1, 11)], "drawing": _gullwing([str(index) for index in range(1, 11)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
         "electronic_ic_tssop_16_converter_analog_to_digital_converter_texas_instruments_ads1219ipw": {"dimensions": {"length": 5.0, "width": 4.4, "height": 1.2}, "pins": ["AIN0", "AIN1", "AIN2", "AIN3", "AVDD", "DVDD", "DGND", "AGND", "SDA", "SCL", "ADDR0", "ADDR1", "DRDY", "START", "REFOUT", "REFIN"], "drawing": _gullwing([str(index) for index in range(1, 17)], body=(5.0, 4.4), overall=(6.4, 6.4), pad_width=0.28)},
         "electronic_ic_tssop_16_logic_io_expander_texas_instruments_pca9554pw": {"dimensions": {"length": 5.0, "width": 4.4, "height": 1.2}, "pins": ["A0", "A1", "A2", "P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "INT", "SCL", "SDA", "VSS", "VDD"], "drawing": _gullwing([str(index) for index in range(1, 17)], body=(5.0, 4.4), overall=(6.4, 6.4), pad_width=0.28)},
@@ -346,9 +363,12 @@ def main(**kwargs):
         "electronic_diode_schottky_sod_323_infineon_bat20j": ({"length": 1.7, "width": 1.25}, ["K", "A"], _gullwing(["1", "2"], body=(1.7, 1.25), overall=(2.8, 1.8), pad_width=0.55)),
         "electronic_diode_switching_sod_323_onsemi_1n4148ws": ({"length": 1.7, "width": 1.25}, ["K", "A"], _gullwing(["1", "2"], body=(1.7, 1.25), overall=(2.8, 1.8), pad_width=0.55)),
         "electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x": ({"length": 3.0, "width": 1.3}, ["GND", "IO1", "IO2", "VCC"], _qfn(["1", "2", "3", "4"], body=(2.9, 1.3), overall=(3.8, 2.5))),
-        "electronic_capacitor_0603_2200_pico_farad": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5)),
-        "electronic_inductor_0603_30_ohm": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5)),
-        "electronic_inductor_0603_470_ohm": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5)),
+        "electronic_capacitor_0603_2200_pico_farad": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5, pin_one=False)),
+        # Standard 0603 inductors use the same rectangular body and gull-wing
+        # contact geometry as 0603 chip resistors; they are non-polarized, so
+        # do not add a misleading pin-one dot.
+        "electronic_inductor_0603_30_ohm": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5, pin_one=False)),
+        "electronic_inductor_0603_470_ohm": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5, pin_one=False)),
         "electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp": ({"length": 2.0, "width": 1.25}, ["1", "2"], _gullwing(["1", "2"], body=(1.6, 1.0), overall=(2.3, 1.5), pad_width=0.55)),
         "electronic_fuse_1210_resettable_6_volt_2_amp_4_amp": ({"length": 3.2, "width": 2.5}, ["1", "2"], _gullwing(["1", "2"], body=(2.6, 1.9), overall=(3.6, 2.8), pad_width=0.75)),
         "electronic_battery_coin_cell_6_8_mm_maxell_ml414h": ({"length": 6.8, "width": 6.8}, ["+", "-"], {"overall": [6.8, 6.8], "body": [6.8, 6.8], "pins": [["+", "left", -2.5, 0, 1.2, 1.2], ["-", "right", 2.5, 0, 1.2, 1.2]], "circles": [[0, 0, 2.6]], "pin_one": [-2.5, 0]}),
@@ -391,6 +411,25 @@ def main(**kwargs):
             drawing = _button(length, width, count)
         _set(extras_dict[current], dimensions={"length": length, "width": width}, pins=[str(i) for i in range(1, count + 1)], drawing=drawing)
 
+    # Use installed KiCad masters where an exact device symbol exists.  The
+    # OOMP renderer remains the deterministic fallback for previews, while
+    # library generation and native KiCad views can use these real symbols.
+    kicad_symbols = {
+        "electronic_battery_coin_cell_6_8_mm_maxell_ml414h": "Device:Battery_Cell",
+        "electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp": "Device:Polyfuse",
+        "electronic_fuse_1210_resettable_6_volt_2_amp_4_amp": "Device:Polyfuse",
+        "electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x": "Power_Protection:PRTR5V0U2X",
+        "electronic_connector_micro_sd_push_push_micro_sd_external_pin": "Connector:Micro_SD_Card_Det2",
+        "electronic_connector_micro_sd_friction_fit_micro_sd_friction_fit": "Connector:Micro_SD_Card_Det2",
+        "electronic_display_lcd_character_16_by_2_backlight_yellow": "Display_Character:LCD-016N002L",
+        "electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz": "Sensor_Temperature:AD8495",
+        "electronic_ic_esp32_wroom_32e_microcontroller_wifi_bluetooth_8_mb_flash_espressif_esp32_wroom_32e_n8": "RF_Module:ESP32-WROOM-32E",
+    }
+    for current, symbol in kicad_symbols.items():
+        part = extras_dict.get(current)
+        if part is not None:
+            part.setdefault("kicad", {})["symbol"] = symbol
+
     # Connectors are intentionally top-view oriented so their contact pattern
     # is visible in the main part image.
     connectors = {
@@ -424,4 +463,10 @@ def main(**kwargs):
             drawing = {"overall": [length, width], "body": [length * .45, width], "pins": [["1", "left", -length / 2 + .5, 0, 1.0, 1.0], ["2", "right", length / 2 - .5, 0, 1.0, 1.0]], "circles": [[length * .28, 0, width * .48]]}
         else:
             drawing = {"overall": [length, width], "body": [length - .5, width - .5], "pins": [[str(index + 1), "bottom", -length / 2 + 1.0 + index * (length - 2.0) / max(count - 1, 1), -width / 2 + .35, .6, .7] for index in range(count)]}
-        _set(extras_dict[current], dimensions={"length": length, "width": width}, pins=[str(i) for i in range(1, count + 1)], drawing=drawing)
+        if current.startswith("electronic_connector_micro_sd"):
+            # Eight card contacts plus the two socket-switch contacts, matching
+            # KiCad's Micro_SD_Card_Det2 symbol.
+            pin_names = ["DAT2", "DAT3/CD", "CMD", "VDD", "CLK", "VSS", "DAT0", "DAT1", "CARD_DETECT", "CD_COMMON"]
+        else:
+            pin_names = [str(i) for i in range(1, count + 1)]
+        _set(extras_dict[current], dimensions={"length": length, "width": width}, pins=pin_names, drawing=drawing)

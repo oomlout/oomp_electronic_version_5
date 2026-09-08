@@ -1,5 +1,133 @@
+def _header_pin_count(value):
+    text = str(value or "")
+    digits = "".join(character for character in text if character.isdigit())
+    return int(digits) if digits else 1
+
+
+def _right_angle_header_drawing(pin_count):
+    """KiCad Horizontal footprint top view: narrow carrier, one pad row."""
+    row_length = max(1, pin_count) * 2.54
+    row_start = -((pin_count - 1) * 2.54) / 2
+    return {
+        "overall": [10.92, row_length],
+        "body": [2.54, row_length],
+        # The LCSC mechanical drawing and KiCad F.Fab outline both put the
+        # moulded carrier behind the bent pin row.  It is not centred on the
+        # plated pad centres: the pad row is at x=0 and the 2.5 mm carrier
+        # begins about 1.5 mm behind it.
+        "body_offset": [1.5, 0.0],
+        "pins": [
+            [str(index + 1), "left", 0.0, row_start + index * 2.54, 1.7, 1.7]
+            for index in range(pin_count)
+        ],
+        # Pin 1 is identified by the square pad, matching the KiCad footprint.
+    }
+
+
+def _dual_row_header_drawing(pin_count):
+    """KiCad Vertical 2xN footprint top view, odd/even columns preserved."""
+    columns = 2
+    rows = max(1, (pin_count + 1) // 2)
+    row_length = rows * 2.54
+    row_start = -((rows - 1) * 2.54) / 2
+    pins = []
+    for row in range(rows):
+        for column in range(columns):
+            number = row * 2 + column + 1
+            if number > pin_count:
+                continue
+            pins.append([str(number), "top", -1.27 + column * 2.54, row_start + row * 2.54, 1.7, 1.7])
+    return {
+        "overall": [5.08, row_length],
+        "body": [5.08, row_length],
+        "pins": pins,
+    }
+
+
+def _fix_254_header_package_drawings(extras_dict):
+    """Normalize package drawings to the KiCad 2.54 mm header masters."""
+    for part in extras_dict.values():
+        if not isinstance(part, dict):
+            continue
+        taxonomy = part.get("taxonomy", {})
+        if not isinstance(taxonomy, dict):
+            taxonomy = {}
+        taxonomy_2 = part.get("taxonomy_2", taxonomy.get("taxonomy_2", ""))
+        taxonomy_3 = part.get("taxonomy_3", taxonomy.get("taxonomy_3", ""))
+        if taxonomy_2 != "connector" or taxonomy_3 != "header":
+            continue
+        taxonomy_5 = str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", "")))
+        taxonomy_6 = str(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        pin_count = _header_pin_count(taxonomy_6)
+        if "right_angle" in taxonomy_5:
+            part["package_drawing"] = _right_angle_header_drawing(pin_count)
+        elif "dual_row" in taxonomy_6:
+            part["package_drawing"] = _dual_row_header_drawing(pin_count)
+
+
+def _apply_254_straight_header_references(extras_dict):
+    """Apply the LCSC C49423294 1xN mechanical series to bare 2.54 headers."""
+    datasheet_url = "https://datasheet.lcsc.com/datasheet/pdf/fca06906dc282fca8d245c00832715b0.pdf?productCode=C49423294"
+    for current, part in extras_dict.items():
+        if not isinstance(part, dict):
+            continue
+        taxonomy = part.get("taxonomy", {})
+        if not isinstance(taxonomy, dict):
+            taxonomy = {}
+        if (
+            str(part.get("taxonomy_2", taxonomy.get("taxonomy_2", ""))) != "connector"
+            or str(part.get("taxonomy_3", taxonomy.get("taxonomy_3", ""))) != "header"
+            or str(part.get("taxonomy_4", taxonomy.get("taxonomy_4", ""))) != "2_54_mm_pitch"
+            or str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", ""))) != "through_hole"
+            or str(part.get("taxonomy_7", taxonomy.get("taxonomy_7", ""))) == "socket"
+        ):
+            continue
+        pin_count = _header_pin_count(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        # LCSC C49423294 / B-210S-1xP-A110, PDF page 2: 0.64 mm square
+        # pin, 2.50 mm insulator, PA=6.0 mm and PC=3.0 mm (11.6 mm total).
+        dimensions = dict(part.get("header_dimensions_mm", {}))
+        dimensions.update(
+            {
+                "pin_length_post": 6.0,
+                "pin_length_tail": 3.0,
+                "pin_length_total": 11.6,
+                "pin_pitch": 2.54,
+                "pin_square": 0.64,
+                "plastic_height": 2.5,
+                "plastic_width": 2.5,
+                "plastic_length": pin_count * 2.54,
+                "pcb_hole_diameter": 1.02,
+            }
+        )
+        part["header_dimensions_mm"] = dimensions
+        part["datasheet_url"] = datasheet_url
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+        part["dimension_reference"] = {
+            "document": "LCSC C49423294 / Ckmtw B-210S-1xP-A110, 2.54 mm single-row straight header",
+            "datasheet_url": datasheet_url,
+            "pages": [2],
+            "notes": (
+                "LCSC family drawing covers 1 through 40 positions. The physical view uses "
+                "the individual chamfered 2.50 mm insulator cells, 0.64 mm square pins, "
+                "PA=6.0 mm mating length and PC=3.0 mm PCB tail; the bottom view follows "
+                "its 1.02 mm recommended PCB drill pattern."
+            ),
+        }
+
+
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
+
+    # The family table supplies the identity and KiCad library match. Its
+    # legacy right-angle/dual-row geometry is replaced here with the current
+    # KiCad footprint pad arrangement before source YAML is written.
+    _fix_254_header_package_drawings(extras_dict)
+    _apply_254_straight_header_references(extras_dict)
 
     current = "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073"
     if current in extras_dict:
@@ -56,6 +184,23 @@ def main(**kwargs):
             "pin_width": 0.64,
             "pin_thickness": 0.4,
             "recommended_hole_diameter": 1.02,
+        }
+        extras_dict[current]["header_dimensions_mm"] = {
+            "pin_length_post": 0.0,
+            "pin_length_tail": 3.0,
+            "pin_length_total": 11.5,
+            "pin_pitch": 2.54,
+            "pin_square": 0.64,
+            "plastic_height": 8.5,
+            "plastic_width": 2.5,
+            "plastic_length": 7.62,
+            "pcb_hole_diameter": 1.02,
+        }
+        extras_dict[current]["dimension_reference"] = {
+            "document": "LCSC C2932670 / Kinghelm KH-2.54FH-1X3P-H8.5",
+            "datasheet_url": "https://www.lcsc.com/datasheet/C2932670.pdf",
+            "pages": [],
+            "notes": "Exact 1x3 female socket reference; 8.5 mm insulation body and 3.0 mm board tail.",
         }
         extras_dict[current]["electrical"] = {
             "current_rating": "3 A",
@@ -238,6 +383,8 @@ def main(**kwargs):
         "ePH": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
         "eXH": "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf",
     }
+    right_angle_short_datasheet = "https://datasheet.lcsc.com/datasheet/pdf/b5cb595e0f1fbc2c250246781364a9f5.pdf?productCode=C3012223"
+    right_angle_long_datasheet = "https://datasheet.lcsc.com/datasheet/pdf/49c4f1422350c0cc1f0b975f3802576a.pdf?productCode=C2905424"
     for family_part in working_oomp_populate_connector_families_data.CONNECTOR_FAMILIES:
         current = working_oomp_populate.build_oomp_id(
             {"taxonomy_1": "electronic", "taxonomy_2": "connector", **family_part["taxonomy"]}
@@ -267,8 +414,35 @@ def main(**kwargs):
         for index in range(1, family_part["pin_count"] + 1):
             pins[f"pin_{index}"] = {"number": str(index), "name": f"pin_{index}", "type": "signal"}
         part["pins"] = pins
-        drawing = family_part["package_drawing"]
+        # The family table retains the original research record, but its
+        # legacy right-angle/dual-row drawings are not the current KiCad
+        # master geometry.  Apply the same normalized 2.54 mm drawing here,
+        # after the family metadata is copied, so the assignment cannot
+        # reintroduce the old oversized pads or pin-one marker.
+        family_taxonomy = family_part.get("taxonomy", {})
+        family_taxonomy_5 = str(family_taxonomy.get("taxonomy_5", ""))
+        family_taxonomy_6 = str(family_taxonomy.get("taxonomy_6", ""))
+        if "right_angle" in family_taxonomy_5:
+            drawing = _right_angle_header_drawing(family_part["pin_count"])
+        elif "dual_row" in family_taxonomy_6:
+            drawing = _dual_row_header_drawing(family_part["pin_count"])
+        else:
+            drawing = family_part["package_drawing"]
         part["package_drawing"] = drawing
+        if "right_angle" in family_taxonomy_5:
+            # The LCSC side profiles give PA=6.0 mm and PC=3.0 mm around a
+            # 2.5 mm carrier. The OOMP short/long identity specifies which
+            # one is the board-facing leg, so preserve that distinction.
+            is_long_pin = "long_pin" in family_taxonomy_5
+            dimensions = dict(part.get("header_dimensions_mm", {}))
+            dimensions["pin_length_post"] = 3.0 if is_long_pin else 6.0
+            dimensions["plastic_height"] = 2.5
+            dimensions["plastic_width"] = 2.5
+            dimensions["pin_length_tail"] = 6.0 if is_long_pin else 3.0
+            dimensions["pin_length_total"] = 11.6
+            dimensions["pin_square"] = 0.64
+            dimensions["pcb_hole_diameter"] = 1.02
+            part["header_dimensions_mm"] = dimensions
         part["dimensions_mm"] = {"length": drawing["body"][0], "width": drawing["body"][1]}
         footprint_name = family_part["kicad_footprint"].split(":")[-1]
         part["dimension_reference"] = {
@@ -276,6 +450,25 @@ def main(**kwargs):
             "pages": [],
             "notes": family_part["note"],
         }
+        if "right_angle" in family_taxonomy_5:
+            is_long_pin = "long_pin" in family_taxonomy_5
+            datasheet_url = right_angle_long_datasheet if is_long_pin else right_angle_short_datasheet
+            source_part = "C2905424 / KH-2.54PH90-1X2P-L13.8" if is_long_pin else "C3012223 / PZ254-1-02-W-8.5"
+            part["datasheet_url"] = datasheet_url
+            part["file_copy"] = [
+                {
+                    "file_source": f"parts_source/{current}/datasheet.pdf",
+                    "file_destination": "datasheet.pdf",
+                }
+            ]
+            part["dimension_reference"]["datasheet_url"] = datasheet_url
+            part["dimension_reference"]["pages"] = [1]
+            part["dimension_reference"]["notes"] = (
+                f"{family_part['note']} LCSC family mechanical reference: {source_part}. "
+                "The drawing gives a 2.50 mm carrier, 0.64 mm square pins, a 6.0 mm "
+                "long leg and a 3.0 mm short leg. The generated pin count remains the "
+                "OOMP variant identity."
+            )
         part["kicad"] = {
             "symbol": family_part["kicad_symbol"],
             "machine_solder": family_part["kicad_footprint"],

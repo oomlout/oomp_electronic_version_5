@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr`
 
-IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definition. It uses the soic 14 package or form factor. Its nominal drawing size is 8.65 &#x00D7; 3.9 mm. The definition includes 14 documented pins.
+IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definition. It uses the soic 14 package or form factor. Its nominal drawing size is 8.69 &#x00D7; 3.9 mm. The definition includes 14 documented pins.
 
 ![IC Microcontroller 8 Bit Avr Microchip SOIC_14 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,7 @@ IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definiti
 | OOMP ID | `electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr` |
 | Type | Ic |
 | Package / style | soic 14 |
-| Nominal size | 8.65 &#x00D7; 3.9 mm |
+| Nominal size | 8.69 &#x00D7; 3.9 mm |
 | Documented pins | 14 |
 
 
@@ -36,7 +36,7 @@ IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definiti
 | Measurement | Value |
 | --- | ---: |
 | Height | 1.75 mm |
-| Length | 8.65 mm |
+| Length | 8.69 mm |
 | Width | 3.9 mm |
 
 
@@ -65,6 +65,14 @@ IC Microcontroller 8 Bit Avr Microchip SOIC_14 is an OOMP electronic ic definiti
 
 
 
+
+
+
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project soldered_electronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design L86-M33 GNSS easyC current](https://github.com/SolderedElectronics/GNSS-GPS-L86-M33-breakout-with-easyC-hardware-design) | 1 | U5 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_gnss_gps_l86_m33_breakout_with_easy_c_hardware_design_sensor_gnss_l86m33_easyc_current) |
 
 
 
