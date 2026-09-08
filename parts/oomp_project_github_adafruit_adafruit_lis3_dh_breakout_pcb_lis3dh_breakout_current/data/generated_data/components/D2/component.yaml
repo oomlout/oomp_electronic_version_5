@@ -4,8 +4,8 @@ schematic:
   units:
   - reference: D2
     source_file: data/kicad_file.kicad_sch
-    uuid: 4f21fb59-5d31-48ba-968b-db3178f5a203
-    library_id: kicad_file-eagle-import:DIODESOD-323
+    uuid: 4c028f83-0a9b-4609-a87f-ce40311737f2
+    library_id: kicad_file-eagle-import:microbuilder_DIODESOD-323
     unit: 1
     body_style: 1
     position:
@@ -115,7 +115,7 @@ pcb:
   reference: D2
   value: 1N4148
   source_file: data/kicad_file.kicad_pcb
-  uuid: d6a3ac3f-4a32-45fd-b090-e4e8f37b832e
+  uuid: 4a7acec5-68b0-49c5-b9bf-df508c06a161
   library_id: Adafruit LIS3DH-import-fps:SOD-323
   layer: F.Cu
   side: front
@@ -433,40 +433,20 @@ connectivity_cross_check:
   disagree_count: 0
   incomplete_count: 1
 oomp:
-  status: unmatched
-  accepted: false
-  oomp_id: null
-  confidence: 0.0
-  proposed_oomp_id: electronic_diode_schottky_sod_323
+  status: matched
+  accepted: true
+  oomp_id: electronic_diode_switching_sod_323_onsemi_1n4148ws
+  confidence: 1.0
+  proposed_oomp_id: electronic_diode_switching_sod_323_onsemi_1n4148ws
   inferred:
     kind: diode
     package_size: null
     value: 1N4148
     mpn: null
   reasons:
-  - Component family was inferred, but package size was not.
-  candidates:
-  - oomp_id: electronic_diode_schottky_sod_323_bat54w
-    score: 0.4789
-    reasons:
-    - same component family
-  - oomp_id: electronic_diode_schottky_sod_323_infineon_bat20j
-    score: 0.4317
-    reasons:
-    - same component family
-  - oomp_id: electronic_diode_schottky_sod_323_infineon_bat60a
-    score: 0.4317
-    reasons:
-    - same component family
-  - oomp_id: electronic_diode_schottky_sod_123_ss14
-    score: 0.4155
-    reasons:
-    - same component family
-  - oomp_id: electronic_diode_schottky_sod_523_1ss400
-    score: 0.4068
-    reasons:
-    - same component family
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
 category: diode
-category_source: unmatched_kicad_hint
+category_source: oomp_populate
 category_name: Diode
 generated_directory: components/D2

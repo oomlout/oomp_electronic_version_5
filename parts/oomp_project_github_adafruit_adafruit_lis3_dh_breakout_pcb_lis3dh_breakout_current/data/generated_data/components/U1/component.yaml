@@ -4,8 +4,8 @@ schematic:
   units:
   - reference: U1
     source_file: data/kicad_file.kicad_sch
-    uuid: b202ac39-b5f0-44b8-8a6f-d10c522422c6
-    library_id: kicad_file-eagle-import:ACCEL_LIS3DHTR
+    uuid: ddb3b8c2-7408-4872-b4b8-71b9851b0c3c
+    library_id: kicad_file-eagle-import:microbuilder_ACCEL_LIS3DHTR
     unit: 1
     body_style: 1
     position:
@@ -95,9 +95,6 @@ schematic:
         pin_number: '2'
         pin_name: '2'
       - reference: R1
-        pin_number: '5'
-        pin_name: '2'
-      - reference: R1
         pin_number: '1'
         pin_name: '1'
       - reference: R1
@@ -106,11 +103,14 @@ schematic:
       - reference: R1
         pin_number: '7'
         pin_name: '2'
-      - reference: R3
-        pin_number: '7'
+      - reference: R1
+        pin_number: '5'
         pin_name: '2'
       - reference: R3
         pin_number: '5'
+        pin_name: '2'
+      - reference: R3
+        pin_number: '7'
         pin_name: '2'
       - reference: SJ1
         pin_number: '1'
@@ -605,9 +605,6 @@ schematic:
         pin_number: '2'
         pin_name: '2'
       - reference: R1
-        pin_number: '5'
-        pin_name: '2'
-      - reference: R1
         pin_number: '1'
         pin_name: '1'
       - reference: R1
@@ -616,11 +613,14 @@ schematic:
       - reference: R1
         pin_number: '7'
         pin_name: '2'
-      - reference: R3
-        pin_number: '7'
+      - reference: R1
+        pin_number: '5'
         pin_name: '2'
       - reference: R3
         pin_number: '5'
+        pin_name: '2'
+      - reference: R3
+        pin_number: '7'
         pin_name: '2'
       - reference: SJ1
         pin_number: '1'
@@ -887,7 +887,7 @@ pcb:
   reference: U1
   value: LIS3DHTR
   source_file: data/kicad_file.kicad_pcb
-  uuid: f3cc6688-14c1-4fba-8a5a-8982bae669f8
+  uuid: a667bc28-371c-4e2b-962e-a396242123c8
   library_id: Adafruit LIS3DH-import-fps:LGA16_3X3MM
   layer: F.Cu
   side: front
@@ -2335,20 +2335,20 @@ connectivity_cross_check:
   disagree_count: 0
   incomplete_count: 1
 oomp:
-  status: unmatched
-  accepted: false
-  oomp_id: null
-  confidence: 0.0
-  proposed_oomp_id: null
+  status: matched
+  accepted: true
+  oomp_id: electronic_sensor_accelerometer_lga_16_st_lis3dhtr
+  confidence: 1.0
+  proposed_oomp_id: electronic_sensor_accelerometer_lga_16_st_lis3dhtr
   inferred:
     kind: null
     package_size: null
     value: LIS3DHTR
     mpn: null
   reasons:
-  - No supported OOMP component family could be inferred.
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
   candidates: []
-category: ic
-category_source: unmatched_kicad_hint
-category_name: IC
+category: other
+category_source: oomp_populate
+category_name: Other
 generated_directory: components/U1

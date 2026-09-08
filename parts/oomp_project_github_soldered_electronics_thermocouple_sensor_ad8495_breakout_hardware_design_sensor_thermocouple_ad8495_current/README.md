@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_thermocouple_sensor_ad8495_breakout_hardware_design_sensor_thermocouple_ad8495_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/Thermocouple-sensor-AD8495-breakout-hardware-design AD8495 Breakout current is a KiCad project containing 35 extracted component records. The catalogue matcher linked 11 physical placements to OOMP parts.
+Project soldered_electronics/Thermocouple-sensor-AD8495-breakout-hardware-design AD8495 Breakout current is a KiCad project containing 35 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/Thermocouple-sensor-AD8495-breakout-hardware-design
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 26 |
-| Matched OOMP components | 11 |
-| Unmatched physical components | 4 |
+| Matched OOMP components | 12 |
+| Unmatched physical components | 3 |
 | Front-side placements | 12 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -84,7 +84,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C2, C4 | 2 | Capacitor 100 nF 0603 | 0.1uF | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | K1 | 1 | TERMINAL_KF235-5.0-2P | TERMINAL_KF235-5.0-2P | `e-radionica.com footprinti:TERMINAL_KF235-5.0-2P` | unmatched |
 | K2 | 1 | Connector Header 2.54-1*3P针 | HEADER_MALE_3X1 | `e-radionica.com footprinti:HEADER_MALE_3X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) |
-| L1 | 1 | Ferrite bead | Ferrite bead | `e-radionica.com footprinti:0603L` | unmatched |
+| L1 | 1 | Ferrite Bead 600 Ohm 500 Milliamp 0603 | Ferrite bead | `e-radionica.com footprinti:0603L` | [`electronic_ferrite_bead_0603_600_ohm_500_milliamp`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ferrite_bead_0603_600_ohm_500_milliamp) |
 | R1 | 1 | Resistor 1e+06 Ohm 0603 | 1M | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1000000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000000_ohm) |
 | R2, R3 | 2 | Resistor 100 Ohm 0603 | 100R | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100_ohm) |
 | R4 | 1 | Resistor 1000 Ohm 0603 | 1K | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
@@ -113,7 +113,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 4 physical component records are not yet matched to an OOMP part.
+- 3 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_thermocouple_sensor_ad8495_breakout_hardware_design_sensor_thermocouple_ad8495_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_thermocouple_sensor_ad8495_breakout_hardware_design_sensor_thermocouple_ad8495_current/data/generated_data/browser_research_queue.md)
@@ -122,7 +122,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_thermocouple_sensor_ad8495_breakout_hardware_design_sensor_thermocouple_ad8495_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 8
 
 ## Source files
 

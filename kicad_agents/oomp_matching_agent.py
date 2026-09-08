@@ -58,7 +58,50 @@ KNOWN_PART_ALIASES = {
     "cp2102n": "electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r",
     "ap2112k_3_3": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3",
     "lis3dhtr": "electronic_sensor_accelerometer_lga_16_st_lis3dhtr",
+    "lis3dh": "electronic_sensor_accelerometer_lga_16_st_lis3dhtr",
     "adxl345": "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345",
+    "pts810": "electronic_switch_tactile_surface_mount_pts810",
+    "gt_tc026x_hxxx_lx": "electronic_switch_tactile_through_hole_gt_tc026x_hxxx_lx",
+    "b3fs_100xp": "electronic_switch_tactile_surface_mount_omron_b3fs_100xp",
+    "prtr5v0u2x": "electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x",
+    "se5218": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218",
+    "se5218alg": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_se5218alg",
+    "ccs811b_jopr": "electronic_sensor_air_quality_lga_20_ams_ccs811b_jopr",
+    "bat20j": "electronic_diode_schottky_sod_323_infineon_bat20j",
+    "tlc555cd": "electronic_ic_soic_8_timer_555_timer_texas_instruments_tlc555cd",
+    "sgm358yms_tr": "electronic_ic_msop_8_amplifier_operational_amplifier_sg_micro_sgm358yms_tr",
+    "acs712": "electronic_ic_soic_8_sensor_hall_effect_current_sensor_allegro_acs712",
+    "ltr_507als_01": "electronic_sensor_light_proximity_ch_6_liteon_ltr_507als_01",
+    "l86_m33": "electronic_sensor_gnss_module_quectel_l86_m33",
+    "attiny1604_ssnr": "electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr",
+    "ch342f": "electronic_ic_qfn_24_converter_usb_to_serial_converter_wch_ch342f",
+    "74hc4066bq": "electronic_ic_qfn_14_logic_analog_switch_nexperia_74hc4066bq",
+    "ap7361c_3_3v": "electronic_ic_dfn_8_power_management_linear_voltage_regulator_diodes_ap7361c_3_3v",
+    "ads1219ipw": "electronic_ic_tssop_16_converter_analog_to_digital_converter_texas_instruments_ads1219ipw",
+    "ade7953acpz": "electronic_ic_qfn_28_power_meter_energy_metering_analog_devices_ade7953acpz",
+    "ina228": "electronic_ic_vssop_10_power_monitor_current_monitor_texas_instruments_ina228",
+    "pca9554pw": "electronic_ic_tssop_16_logic_io_expander_texas_instruments_pca9554pw",
+    "ch340e": "electronic_ic_msop_10_converter_usb_to_serial_converter_wch_ch340e",
+    "my1690x_16s": "electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s",
+    "cy8cmbr3102": "electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102",
+    "ml414h": "electronic_battery_coin_cell_6_8_mm_maxell_ml414h",
+    "ad8495armz": "electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz",
+    "ina219": "electronic_ic_sot_23_8_power_monitor_current_monitor_texas_instruments_ina219",
+    "bmp388": "electronic_sensor_pressure_temperature_lga_10_bosch_bmp388",
+    "w25q16jvuxiq": "electronic_ic_uson_8_memory_spi_nor_flash_winbond_w25q16jvuxiq",
+    "stm32f103c8tx": "electronic_ic_lqfp_48_microcontroller_stm32_st_stm32f103c8tx",
+    "esp32_s3_wroom_1": "electronic_ic_esp32_s3_wroom_1_microcontroller_wifi_bluetooth_8_mb_flash_espressif_esp32_s3_wroom_1_n8",
+    "ne555dr": "electronic_ic_soic_8_timer_555_timer_texas_instruments_ne555dr",
+    "tc33x_2_105e": "electronic_potentiometer_trimmer_through_hole_1_mega_ohm_bourns_tc33x_2_105e",
+    "tl431acdbz": "electronic_ic_sot_23_3_power_management_shunt_regulator_texas_instruments_tl431acdbz",
+    "lsm9ds1tr": "electronic_sensor_imu_lga_24_st_lsm9ds1tr",
+    "dan_f10n": "electronic_sensor_gnss_module_u_blox_dan_f10n",
+    "ipx_connector_with_sma": "electronic_connector_rf_cable_assembly_ipx_to_sma_ipx_connector_with_sma",
+    "header_female_5x2_1_27mm_smd": "electronic_connector_header_1_27_mm_pitch_surface_mount_10_pin_socket_header_female_5x2_1_27_mm_smd",
+    "sam_m8q": "electronic_sensor_gnss_module_u_blox_sam_m8q",
+    "neo_f10n": "electronic_sensor_gnss_module_u_blox_neo_f10n",
+    "bmv080": "electronic_sensor_particulate_matter_module_bosch_bmv080",
+    "rfcmf1220100m4t": "electronic_transformer_surface_mount_usb_coilcraft_rfcmf1220100m4t",
     # The full schematic value "CP2102N-Axx-xQFN28" -- the bare "cp2102n" alias
     # above cannot match it because the word-boundary rule stops at the
     # following underscore.
@@ -120,6 +163,7 @@ EXACT_COMPONENT_MATCHES = {
     ("conn_01x09", "connector_jst_jst_sh_sm09b_srss_tb_1x09_1mp_p1_00mm_horizontal", "connector_generic_conn_01x09"): "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_9_pin_jst_sm09b_srss_tb",
     ("conn_01x10", "connector_pinheader_2_54mm_pinheader_1x10_p2_54mm_vertical", "connector_generic_conn_01x10"): "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin",
     ("conn_06lock", "project_tool_mini_reva2_1x06_lock", "project_tool_mini_reva2_eagle_import_conn_06lock"): "electronic_connector_header_2_54_mm_pitch_through_hole_6_pin",
+    ("adxl345patrick", "lga14_1_1_patrick", "kicad_file_eagle_import_testing_adxl345patrick"): "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345",
     ("esp32_wroom_e", "espressif_esp32_wroom_32e", "espressif_esp32_wroom_e"): "electronic_ic_esp32_wroom_32e_microcontroller_wifi_bluetooth_8_mb_flash_espressif_esp32_wroom_32e_n8",
     ("fb_2a", "project_tool_mini_reva2_pkg_c_0805", "project_tool_mini_reva2_eagle_import_inductor_0805"): "electronic_ferrite_bead_0805_220_ohm_2_amp_murata_blm21pg221sn1d",
     ("led", "led_smd_led_0402_1005metric", "device_led"): "electronic_led_0402_blue",
@@ -432,6 +476,47 @@ def proposed_oomp_id(component):
     # Footprint-qualified identities: the bare schematic value is ambiguous
     # across packages, so the footprint picks the catalogue part.
     footprint_name = normalize_text(fields["footprint"])
+    # Common imported footprints carry the exact switch or capacitor identity
+    # even when the schematic value is only a generic symbol/value.
+    if "pts810" in footprint_name:
+        return "electronic_switch_tactile_surface_mount_pts810"
+    if "gt_tc026x_hxxx_lx" in footprint_name:
+        return "electronic_switch_tactile_through_hole_gt_tc026x_hxxx_lx"
+    if "b3fs_100x" in footprint_name:
+        return "electronic_switch_tactile_surface_mount_omron_b3fs_100xp"
+    if "ml414h" in footprint_name or "ml414h" in value_normalized:
+        return "electronic_battery_coin_cell_6_8_mm_maxell_ml414h"
+    if normalize_text(fields["value"]) in {"10uf", "10u"} and "0805" in footprint_name:
+        return "electronic_capacitor_0805_10_micro_farad"
+    if "1x01_1x1mm" in footprint_name:
+        return "electronic_connector_header_2_54_mm_pitch_through_hole_1_pin"
+    if "audio_jack_3_5mm_trrs" in footprint_name:
+        return "electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs"
+    if "microsd_external_pin" in footprint_name:
+        return "electronic_connector_micro_sd_push_push_micro_sd_external_pin"
+    if "microsd_friction_fit" in footprint_name:
+        return "electronic_connector_micro_sd_friction_fit_micro_sd_friction_fit"
+    if "terminal_kf235_5_0_2p" in footprint_name:
+        return "electronic_connector_terminal_block_5_mm_pitch_through_hole_2_pin_kf235_5_0_2p"
+    if "jst_smd_1_25mm_6_locking" in footprint_name or "jst_1_25mm_6_locking" in footprint_name:
+        return "electronic_connector_jst_1_25_mm_pitch_surface_mount_6_pin_locking_jst_smd_1_25_mm_6_locking"
+    if "2x10_2_0mm_male_pins_vertical_smd_pegs" in footprint_name:
+        return "electronic_connector_gnss_header_2_mm_pitch_surface_mount_20_pin_plug_in_conn_02x10_gnss_plug_in_header"
+    if "screwterminal_1x03_p3_5mm" in footprint_name or "screw_terminal_1x03_p3_5mm" in footprint_name:
+        return "electronic_connector_terminal_block_3_5_mm_pitch_through_hole_3_pin_screw_terminal_1x03_p3_5_mm"
+    if "c_0603_1608metric" in footprint_name and any(
+        marker in normalize_text(fields.get("library_id", "")) for marker in ("inductor", "coil", "ferrite")
+    ):
+        if normalize_text(fields.get("value", "")) == "470ohm":
+            return "electronic_inductor_0603_470_ohm"
+        if normalize_text(fields.get("value", "")) == "30ohm":
+            return "electronic_inductor_0603_30_ohm"
+    if "sparkfun_switch_navigation_smd_9_9x9_9mm" in footprint_name:
+        return "electronic_switch_navigation_surface_mount_9_9_mm"
+    if "sparkfun_switch_navigation_smd_7_5x7_5mm" in footprint_name:
+        return "electronic_switch_navigation_surface_mount_7_5_mm"
+    if "rollerencoder_rollerencoder" in footprint_name:
+        return "electronic_switch_roller_encoder_through_hole_roller_encoder_switch"
     if re.search(r"\bbss138\b", value_normalized) and "sot363" in footprint_name:
         # A BSS138-style value drawn on SOT-363 (SC-70-6) is the I2C
         # level-shifter dual FET, not the single SOT-23 BSS138.
@@ -720,6 +805,11 @@ def _is_board_feature(fields):
     if "smd_jumper" in board_feature_evidence or "jumper_2_nc" in board_feature_evidence or (
         value.startswith("smd_jumper")
     ):
+        return True
+    # KiCad's standard SolderJumper-* footprints are exposed copper option
+    # pads, not purchased components.  Treat them as board features even when
+    # the schematic reference is not prefixed SJ (common in imported boards).
+    if "solderjumper" in footprint or "solder_jumper" in footprint:
         return True
     # Jumper_2_NC_Trace / Jumper_3_NC-2_Trace and friends: NC solder-blob
     # traces, not purchased parts.

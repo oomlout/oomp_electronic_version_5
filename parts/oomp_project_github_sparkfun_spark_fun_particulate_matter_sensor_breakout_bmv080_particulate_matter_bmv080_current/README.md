@@ -20,8 +20,8 @@ Project sparkfun/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080 Particulate 
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 47 |
 | Matched OOMP components | 12 |
-| Unmatched physical components | 2 |
-| Front-side placements | 10 |
+| Unmatched physical components | 1 |
+| Front-side placements | 9 |
 | Back-side placements | 4 |
 | Project version | `current` |
 | Git ref | `main` |
@@ -79,7 +79,6 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J2 | 1 | Connector Header PH2.54-01-07PZD | Conn_01x07 | `SparkFun-Connector:1x07` | [`electronic_connector_header_2_54_mm_pitch_through_hole_7_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_7_pin) |
 | R1, R2, R4 | 3 | Resistor 10000 Ohm 0402 | 10k | `SparkFun-Resistor:R_0402_1005Metric` | [`electronic_resistor_0402_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_10000_ohm) |
 | R3, R5 | 2 | Resistor 2200 Ohm 0402 | 2.2k | `SparkFun-Resistor:R_0402_1005Metric` | [`electronic_resistor_0402_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2200_ohm) |
-| REF** | 1 | BMV080_Outline | BMV080_Outline | `SparkFun-Sensor:BMV080_Outline` | unmatched |
 | U1 | 1 | BMV080 | BMV080 | `SparkFun-Connector:FPC_0.3mm-13` | unmatched |
 
 ## Main nets
@@ -106,11 +105,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 24.13 mm by 12.7 mm.
-- Placement data contains 10 front-side and 4 back-side components.
+- Placement data contains 9 front-side and 4 back-side components.
 
 ## Review notes
 
-- 2 physical component records are not yet matched to an OOMP part.
+- 1 physical component records are not yet matched to an OOMP part.
 - The extractor reports 1 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_particulate_matter_sensor_breakout_bmv080_particulate_matter_bmv080_current/data/generated_data/lcsc_review.yaml)

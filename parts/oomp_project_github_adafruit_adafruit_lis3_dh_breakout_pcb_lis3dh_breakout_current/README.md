@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-LIS3DH-Breakout-PCB LIS3DH Breakout current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 8 physical placements to OOMP parts.
+Project adafruit/Adafruit-LIS3DH-Breakout-PCB LIS3DH Breakout current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 16 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,10 +19,10 @@ Project adafruit/Adafruit-LIS3DH-Breakout-PCB LIS3DH Breakout current is a KiCad
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 55 |
-| Matched OOMP components | 8 |
-| Unmatched physical components | 11 |
-| Front-side placements | 12 |
-| Back-side placements | 3 |
+| Matched OOMP components | 16 |
+| Unmatched physical components | 2 |
+| Front-side placements | 14 |
+| Back-side placements | 0 |
 | Project version | `current` |
 | Git ref | `master` |
 
@@ -83,16 +83,15 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1 | 1 | Capacitor 100 nF 0603 | 0.1uF | `Adafruit LIS3DH-import-fps:0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| CONN3, CONN4 | 2 | STEMMA_I2C_QT | STEMMA_I2C_QT | `Adafruit LIS3DH-import-fps:JST_SH4` | unmatched |
-| D2 | 1 | 1N4148 | 1N4148 | `Adafruit LIS3DH-import-fps:SOD-323` | unmatched |
-| JP2, JP3 | 2 | Adafruit LIS3DH-import-fps:1X06_ROUND_70 |  | `Adafruit LIS3DH-import-fps:1X06_ROUND_70` | unmatched |
-| Q2 | 1 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `Adafruit LIS3DH-import-fps:SOT363` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
+| C2, C3 | 2 | 10uF | 10uF | `Adafruit LIS3DH-import-fps:0805-NO` | unmatched |
+| CONN3, CONN4 | 2 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `Adafruit LIS3DH-import-fps:JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
+| D1 | 1 | LED Green 0603 | GREEN | `Adafruit LIS3DH-import-fps:CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_green) |
+| D2 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit LIS3DH-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| JP2, JP3 | 2 | Connector Header 2.54-1x6P直针 |  | `Adafruit LIS3DH-import-fps:1X06_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
+| Q2 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | BSS138 | `Adafruit LIS3DH-import-fps:SOT363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
 | R1, R3 | 2 | Resistor 10000 Ohm 0603 | 10K | `Adafruit LIS3DH-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| U1 | 1 | LIS3DHTR | LIS3DHTR | `Adafruit LIS3DH-import-fps:LGA16_3X3MM` | unmatched |
-| U2 | 1 | AP2112K-3.3 | AP2112K-3.3 | `Adafruit LIS3DH-import-fps:SOT23-5` | unmatched |
-| U$12 | 1 | Adafruit LIS3DH-import-fps:ADAFRUIT_2.5MM |  | `Adafruit LIS3DH-import-fps:ADAFRUIT_2.5MM` | unmatched |
-| U$25 | 1 | Adafruit LIS3DH-import-fps:PCBFEAT-REV-040 |  | `Adafruit LIS3DH-import-fps:PCBFEAT-REV-040` | unmatched |
-| U$30, U$31 | 2 | Adafruit LIS3DH-import-fps:STEMMAQT |  | `Adafruit LIS3DH-import-fps:STEMMAQT` | unmatched |
+| U1 | 1 | Sensor Lga 16 St LIS3DHTR ACCELEROMETER | LIS3DHTR | `Adafruit LIS3DH-import-fps:LGA16_3X3MM` | [`electronic_sensor_accelerometer_lga_16_st_lis3dhtr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_accelerometer_lga_16_st_lis3dhtr) |
+| U2 | 1 | IC Power Management Linear Voltage Regulator Diodes SOT_23_5 | AP2112K-3.3 | `Adafruit LIS3DH-import-fps:SOT23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3) |
 
 ## Main nets
 
@@ -118,11 +117,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 ## Design notes
 
 - The extracted board outline is approximately 17.78 mm by 25.4 mm.
-- Placement data contains 12 front-side and 3 back-side components.
+- Placement data contains 14 front-side and 0 back-side components.
 
 ## Review notes
 
-- 11 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 - The extractor reports 4 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current/data/generated_data/lcsc_review.yaml)
@@ -132,7 +131,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_lis3_dh_breakout_pcb_lis3dh_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 10
 
 ## Source files
 

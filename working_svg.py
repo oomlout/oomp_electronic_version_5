@@ -1410,20 +1410,44 @@ def _add_ic_outline(thing, width=24, height=16, pos=None):
                 pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
                 _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_width, 0])
 
-    elif package == "sop_16":
+    elif package.startswith(("soic_", "so_", "sop_")):
+        # JEDEC/Microchip narrow SOICs all use the same two long gull-wing
+        # edges: pin 1 starts at the upper-left and the opposite bank counts
+        # back from the highest pin.  Use the package's physical dimensions so
+        # SOIC-8/14/16 (and the older SOP aliases) do not fall into the tiny,
+        # generic IC fallback.
+        pin_count = max(_get_package_pin_count(thing), 2)
+        pins_per_side = pin_count // 2
+        ic_dimensions = _get_ic_dimensions_mm(thing)
+        defaults = {
+            "soic_8": (4.9, 3.9, 6.0, 0.42),
+            "soic_14": (8.69, 3.9, 5.99, 0.42),
+            "soic_16": (9.9, 3.9, 6.04, 0.42),
+            "so_16": (10.0, 4.0, 6.0, 0.42),
+            "sop_16": (9.9, 3.9, 6.04, 0.406),
+        }
+        body_length, body_width_mm, overall_width_mm, pin_width_mm = defaults.get(
+            package, (9.9, 3.9, 6.04, 0.42)
+        )
+        body_length = float(ic_dimensions.get("body_length", body_length))
+        body_width_mm = float(ic_dimensions.get("body_width", body_width_mm))
+        overall_width_mm = float(ic_dimensions.get("overall_width", overall_width_mm))
+        pin_width_mm = float(ic_dimensions.get("pin_width", pin_width_mm))
         body_height = max(8, height - 2)
-        body_width = body_height * 3.9 / 9.9
-        overall_width = body_height * 6.04 / 9.9
+        if thing.get("assembly_mode", False):
+            body_height = height
+        body_width = body_height * body_width_mm / body_length
+        overall_width = body_height * overall_width_mm / body_length
         pad_length = (overall_width - body_width) / 2 + 0.5
-        pad_width = max(0.45, body_height * 0.406 / 9.9)
-        left_numbers = [1, 2, 3, 4, 5, 6, 7, 8]
-        right_numbers = [16, 15, 14, 13, 12, 11, 10, 9]
+        pad_width = max(0.9, body_height * pin_width_mm / body_length * 1.2)
+        left_numbers = list(range(1, pins_per_side + 1))
+        right_numbers = list(range(pin_count, pins_per_side, -1))
         for side_index in range(2):
             side = ["left", "right"][side_index]
             numbers = [left_numbers, right_numbers][side_index]
             side_sign = [-1, 1][side_index]
-            for pin_index in range(8):
-                pin_y = pos[1] + body_height * (0.4375 - pin_index * 0.125)
+            for pin_index in range(len(numbers)):
+                pin_y = pos[1] + body_height * (0.5 - (pin_index + 0.5) / pins_per_side)
                 pin_x = pos[0] + side_sign * (body_width / 2 + pad_length / 2 - 0.25)
                 _add_ic_pin(thing, numbers[pin_index], side, [pin_x, pin_y, 0], [pad_length, pad_width, 0])
 
@@ -2032,7 +2056,7 @@ def _add_square_pin_labels(thing):
         # SOP and TSSOP packages have dense long-edge pins.  Directly adjacent
         # text would overlap, so keep their two readable banks as the requested
         # close-pitch exception.
-        if component_size == "sop_16" or component_size.startswith("tssop_"):
+        if component_size.startswith(("soic_", "so_", "sop_", "tssop_")):
             side_details = [
                 {"side": "left", "x": -12.5, "halign": "right"},
                 {"side": "right", "x": 12.5, "halign": "left"},

@@ -1,0 +1,196 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-08T00:16:40",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "key": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "key": "silk_over_copper"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        },
+        {
+            "description": "Footprint not found in libraries",
+            "key": "lib_footprint_issues"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [GND] of D6 on F.Cu",
+                    "pos": {
+                        "x": 171.98,
+                        "y": 108.9025
+                    },
+                    "uuid": "44faf640-fc87-491f-80ea-9cc2cbb48add"
+                },
+                {
+                    "description": "NPTH pad of D6",
+                    "pos": {
+                        "x": 170.18,
+                        "y": 108.9025
+                    },
+                    "uuid": "ea13b988-57d3-4a43-8bc7-8a3d18dc7ca2"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [Net-(D6-A)] of D6 on F.Cu",
+                    "pos": {
+                        "x": 168.38,
+                        "y": 108.9025
+                    },
+                    "uuid": "9487ad99-a547-44e6-97e4-11478199ffa7"
+                },
+                {
+                    "description": "NPTH pad of D6",
+                    "pos": {
+                        "x": 170.18,
+                        "y": 108.9025
+                    },
+                    "uuid": "ea13b988-57d3-4a43-8bc7-8a3d18dc7ca2"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint FID3",
+                    "pos": {
+                        "x": 135.89,
+                        "y": 77.47
+                    },
+                    "uuid": "15867ade-bc87-4922-9129-417303565686"
+                },
+                {
+                    "description": "Footprint ST3",
+                    "pos": {
+                        "x": 137.795,
+                        "y": 79.375
+                    },
+                    "uuid": "e97c950a-51ec-468b-ab00-9eb68a9d0bcb"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint ST2",
+                    "pos": {
+                        "x": 173.355,
+                        "y": 114.935
+                    },
+                    "uuid": "2694e774-c1ec-4c5e-bbbe-3cc4cf88cc4c"
+                },
+                {
+                    "description": "Footprint FID4",
+                    "pos": {
+                        "x": 175.26,
+                        "y": 116.84
+                    },
+                    "uuid": "61aa0ed3-558f-4c6d-9e62-dd57c48bd5c1"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad 1 [GND] of D6 on F.Cu",
+                    "pos": {
+                        "x": 171.98,
+                        "y": 108.9025
+                    },
+                    "uuid": "44faf640-fc87-491f-80ea-9cc2cbb48add"
+                },
+                {
+                    "description": "NPTH pad of D6",
+                    "pos": {
+                        "x": 170.18,
+                        "y": 108.9025
+                    },
+                    "uuid": "ea13b988-57d3-4a43-8bc7-8a3d18dc7ca2"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad 2 [Net-(D6-A)] of D6 on F.Cu",
+                    "pos": {
+                        "x": 168.38,
+                        "y": 108.9025
+                    },
+                    "uuid": "9487ad99-a547-44e6-97e4-11478199ffa7"
+                },
+                {
+                    "description": "NPTH pad of D6",
+                    "pos": {
+                        "x": 170.18,
+                        "y": 108.9025
+                    },
+                    "uuid": "ea13b988-57d3-4a43-8bc7-8a3d18dc7ca2"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        }
+    ]
+}

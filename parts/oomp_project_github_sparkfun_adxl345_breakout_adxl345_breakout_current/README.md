@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/ADXL345_Breakout ADXL345 Breakout current is a KiCad project containing 19 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
+Project sparkfun/ADXL345_Breakout ADXL345 Breakout current is a KiCad project containing 19 extracted component records. The catalogue matcher linked 7 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project sparkfun/ADXL345_Breakout ADXL345 Breakout current is a KiCad project co
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 20 |
-| Matched OOMP components | 5 |
-| Unmatched physical components | 2 |
+| Matched OOMP components | 7 |
+| Unmatched physical components | 0 |
 | Front-side placements | 5 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,8 +82,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, CIO0 | 2 | Capacitor 100 nF 0603 | 0.1uF | `ADXL345_Breakout-import-fps:0603-CAP` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C2 | 1 | Capacitor 10 uF 1206 | 10uF | `ADXL345_Breakout-import-fps:EIA3216` | [`electronic_capacitor_1206_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_10_micro_farad) |
-| JP1 | 1 | ADXL345_Breakout-import-fps:1X08 |  | `ADXL345_Breakout-import-fps:1X08` | unmatched |
-| U2 | 1 | ADXL345PATRICK | ADXL345PATRICK | `ADXL345_Breakout-import-fps:LGA14_1_1_PATRICK` | unmatched |
+| JP1 | 1 | Connector Header PZ254V-12-8P |  | `ADXL345_Breakout-import-fps:1X08` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
+| U2 | 1 | Sensor Lga 14 Analog Devices ADXL345 ACCELEROMETER | ADXL345PATRICK | `ADXL345_Breakout-import-fps:LGA14_1_1_PATRICK` | [`electronic_sensor_accelerometer_lga_14_analog_devices_adxl345`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_accelerometer_lga_14_analog_devices_adxl345) |
 
 ## Main nets
 
@@ -105,7 +105,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 2 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current/data/generated_data/browser_research_queue.md)
@@ -114,7 +114,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 5
 
 ## Source files
 

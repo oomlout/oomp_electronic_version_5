@@ -79,7 +79,7 @@ def render_project_images(details):
         kicad_cli,
         board_file,
         isometric_destination,
-        ["--side", "top", "--rotate", "315,0,45", "--background", "transparent", "--quality", "basic"],
+        ["--side", "top", "--rotate", "315,0,45", "--zoom", "0.82", "--background", "transparent", "--quality", "basic"],
     )
     if isometric_command is None:
         return None
@@ -89,7 +89,7 @@ def render_project_images(details):
         board_file,
         populated_destination,
         [
-            "--side", "top", "--rotate", "315,0,45", "--zoom", "0.75", "--perspective", "--floor",
+            "--side", "top", "--rotate", "315,0,45", "--zoom", "0.65", "--perspective", "--floor",
             "--background", "opaque", "--quality", "high",
         ],
     )

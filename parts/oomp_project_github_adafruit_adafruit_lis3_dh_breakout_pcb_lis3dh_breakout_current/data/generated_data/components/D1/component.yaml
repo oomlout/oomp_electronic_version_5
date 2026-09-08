@@ -4,8 +4,8 @@ schematic:
   units:
   - reference: D1
     source_file: data/kicad_file.kicad_sch
-    uuid: c8d556e4-8110-4a8d-8928-64c4df85f298
-    library_id: kicad_file-eagle-import:LED0603_NOOUTLINE
+    uuid: d0b51cc2-d8bb-404a-a141-cd00bdb018b3
+    library_id: kicad_file-eagle-import:microbuilder_LED0603_NOOUTLINE
     unit: 1
     body_style: 1
     position:
@@ -217,7 +217,7 @@ pcb:
   reference: D1
   value: GREEN
   source_file: data/kicad_file.kicad_pcb
-  uuid: be29fe89-8c0b-4ec8-8e42-7520b85c13e5
+  uuid: 25cfdbfd-e498-4474-a7fb-e40e1ecf290d
   library_id: Adafruit LIS3DH-import-fps:CHIPLED_0603_NOOUTLINE
   layer: F.Cu
   side: front
@@ -559,10 +559,10 @@ connectivity_cross_check:
   disagree_count: 0
   incomplete_count: 1
 oomp:
-  status: not_applicable
-  accepted: false
-  oomp_id: null
-  confidence: 0.0
+  status: matched
+  accepted: true
+  oomp_id: electronic_led_0603_green
+  confidence: 1.0
   proposed_oomp_id: electronic_led_0603_green
   inferred:
     kind: led
@@ -570,9 +570,9 @@ oomp:
     value: GREEN
     mpn: null
   reasons:
-  - Fiducials, logos, test points, standoffs and solder-jumper traces are board features, not purchased OOMP parts.
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
   candidates: []
-category: diode
-category_source: unmatched_kicad_hint
-category_name: Diode
+category: led
+category_source: oomp_populate
+category_name: LED
 generated_directory: components/D1

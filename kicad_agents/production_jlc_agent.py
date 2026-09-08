@@ -21,6 +21,7 @@ from pathlib import Path
 import yaml
 
 from kicad_agents.kicad_processing_agent import _parse_pcb
+from kicad_agents.run_error_report import log_run_error
 from kicad_agents.sexpr import child, children, load, tag, value
 
 
@@ -593,133 +594,156 @@ def _validate_public_output_layout(build_directory):
         raise RuntimeError(f"Unexpected production root files: expected {sorted(expected)}, found {sorted(actual)}")
 
 
+def _write_failure_status(output_directory, error):
+    output_directory.mkdir(parents=True, exist_ok=True)
+    status_directory = output_directory / "data"
+    status_directory.mkdir(parents=True, exist_ok=True)
+    status = {
+        "generated_by": "kicad_agents.production_jlc_agent",
+        "status": "failed",
+        "message": str(error),
+        "error_type": type(error).__name__,
+    }
+    (status_directory / "generation_status.yaml").write_text(
+        yaml.safe_dump(status, sort_keys=False, allow_unicode=True),
+        encoding="utf-8",
+    )
+    return status
+
+
 def generate_jlc_production_files(details):
     part_directory = Path(details["directory"]).resolve()
     data_directory = part_directory / "data"
     output_directory = data_directory / OUTPUT_DIRECTORY_NAME
-    board_path = _source_board(part_directory, details)
-    if not board_path.is_file():
-        raise FileNotFoundError(f"Production KiCad board is missing: {board_path}")
-    kicad_cli = find_kicad_cli()
-    if kicad_cli is None:
-        raise FileNotFoundError("kicad-cli was not found. Install KiCad or set KICAD_CLI.")
-
-    build_directory = Path(tempfile.mkdtemp(prefix="production_auto_generate_build_", dir=data_directory))
     try:
-        internal_directory = build_directory / "data"
-        internal_directory.mkdir(parents=True, exist_ok=True)
-        layers, raw_position_file, commands, _ = _export_kicad_files(kicad_cli, board_path, internal_directory)
-        production_board_data = _parse_pcb(board_path, part_directory)
-        production_footprints = production_board_data["footprints"]
+        board_path = _source_board(part_directory, details)
+        if not board_path.is_file():
+            raise FileNotFoundError(f"Production KiCad board is missing: {board_path}")
+        kicad_cli = find_kicad_cli()
+        if kicad_cli is None:
+            raise FileNotFoundError("kicad-cli was not found. Install KiCad or set KICAD_CLI.")
 
-        metadata_board = _conversion_board(data_directory, details)
-        metadata_footprints = []
-        if metadata_board is not None:
-            metadata_footprints = _parse_pcb(metadata_board, part_directory)["footprints"]
+        build_directory = Path(tempfile.mkdtemp(prefix="production_auto_generate_build_", dir=data_directory))
+        try:
+            internal_directory = build_directory / "data"
+            internal_directory.mkdir(parents=True, exist_ok=True)
+            layers, raw_position_file, commands, _ = _export_kicad_files(kicad_cli, board_path, internal_directory)
+            production_board_data = _parse_pcb(board_path, part_directory)
+            production_footprints = production_board_data["footprints"]
 
-        action_details = dict(details)
-        action_details["production_board_resolved"] = str(board_path)
-        parts_directory = Path(details.get("parts_directory", "parts"))
-        if not parts_directory.is_absolute():
-            parts_directory = REPOSITORY_ROOT / parts_directory
-        bom_rows, cpl_rows, components, skipped, unmatched = build_component_rows(
-            _parse_position_file(raw_position_file),
-            production_footprints,
-            metadata_footprints,
-            action_details,
-            parts_directory,
-        )
+            metadata_board = _conversion_board(data_directory, details)
+            metadata_footprints = []
+            if metadata_board is not None:
+                metadata_footprints = _parse_pcb(metadata_board, part_directory)["footprints"]
 
-        _write_csv(build_directory / "bom_jlc.csv", JLC_BOM_COLUMNS, bom_rows)
-        _write_csv(build_directory / "cpl_jlc.csv", JLC_CPL_COLUMNS, cpl_rows)
-        unmatched_columns = ["Designator", "Comment", "Footprint", "OOMP ID", "Reason"]
-        _write_csv(build_directory / "bom_missing_lcsc.csv", unmatched_columns, unmatched)
-        component_data = {
-            "format_version": 1,
-            "source_board": str(board_path.relative_to(part_directory)).replace("\\", "/"),
-            "oomp_metadata_board": (
-                str(metadata_board.relative_to(part_directory)).replace("\\", "/") if metadata_board else None
-            ),
-            "components": components,
-            "skipped_components": skipped,
-        }
-        _write_json(internal_directory / "components.json", component_data)
-        _write_yaml(internal_directory / "components.yaml", component_data)
-        _stable_zip(internal_directory / "gerbers", build_directory / "gerbers_jlc.zip")
-
-        cli_version = _run_command([kicad_cli, "version"], board_path.parent).stdout.strip()
-        generated_files = []
-        for generated_file in sorted(build_directory.rglob("*")):
-            if not generated_file.is_file() or generated_file.name in {"manifest.json", "manifest.yaml", "generation_status.yaml"}:
-                continue
-            generated_files.append(
-                {
-                    "path": str(generated_file.relative_to(build_directory)).replace("\\", "/"),
-                    "bytes": generated_file.stat().st_size,
-                    "sha256": _sha256(generated_file),
-                }
+            action_details = dict(details)
+            action_details["production_board_resolved"] = str(board_path)
+            parts_directory = Path(details.get("parts_directory", "parts"))
+            if not parts_directory.is_absolute():
+                parts_directory = REPOSITORY_ROOT / parts_directory
+            bom_rows, cpl_rows, components, skipped, unmatched = build_component_rows(
+                _parse_position_file(raw_position_file),
+                production_footprints,
+                metadata_footprints,
+                action_details,
+                parts_directory,
             )
-        drc_summary = _drc_summary(internal_directory / "drc.json")
-        needs_drc_review = sum(drc_summary.values()) > 0
-        needs_bom_review = len(unmatched) > 0
-        if needs_bom_review and needs_drc_review:
-            status = "generated_needs_review"
-        elif needs_bom_review:
-            status = "generated_needs_bom_review"
-        elif needs_drc_review:
-            status = "generated_needs_drc_review"
-        else:
-            status = "generated"
-        manifest = {
-            "format_version": 1,
-            "generated_by": "kicad_agents.production_jlc_agent",
-            "status": status,
-            "strategy": "KiCad's native CLI exports fabrication and position data; Python writes JLCPCB CSVs and audit data.",
-            "source_board": str(board_path.relative_to(part_directory)).replace("\\", "/"),
-            "source_board_sha256": _sha256(board_path),
-            "oomp_metadata_board": (
-                str(metadata_board.relative_to(part_directory)).replace("\\", "/") if metadata_board else None
-            ),
-            "kicad_cli": str(kicad_cli),
-            "kicad_version": cli_version,
-            "gerber_layers": layers,
-            "jlc_bom_columns": JLC_BOM_COLUMNS,
-            "jlc_cpl_columns": JLC_CPL_COLUMNS,
-            "summary": {
-                "bom_groups": len(bom_rows),
-                "placed_components": len(cpl_rows),
-                "skipped_components": len(skipped),
+
+            _write_csv(build_directory / "bom_jlc.csv", JLC_BOM_COLUMNS, bom_rows)
+            _write_csv(build_directory / "cpl_jlc.csv", JLC_CPL_COLUMNS, cpl_rows)
+            unmatched_columns = ["Designator", "Comment", "Footprint", "OOMP ID", "Reason"]
+            _write_csv(build_directory / "bom_missing_lcsc.csv", unmatched_columns, unmatched)
+            component_data = {
+                "format_version": 1,
+                "source_board": str(board_path.relative_to(part_directory)).replace("\\", "/"),
+                "oomp_metadata_board": (
+                    str(metadata_board.relative_to(part_directory)).replace("\\", "/") if metadata_board else None
+                ),
+                "components": components,
+                "skipped_components": skipped,
+            }
+            _write_json(internal_directory / "components.json", component_data)
+            _write_yaml(internal_directory / "components.yaml", component_data)
+            _stable_zip(internal_directory / "gerbers", build_directory / "gerbers_jlc.zip")
+
+            cli_version = _run_command([kicad_cli, "version"], board_path.parent).stdout.strip()
+            generated_files = []
+            for generated_file in sorted(build_directory.rglob("*")):
+                if not generated_file.is_file() or generated_file.name in {"manifest.json", "manifest.yaml", "generation_status.yaml"}:
+                    continue
+                generated_files.append(
+                    {
+                        "path": str(generated_file.relative_to(build_directory)).replace("\\", "/"),
+                        "bytes": generated_file.stat().st_size,
+                        "sha256": _sha256(generated_file),
+                    }
+                )
+            drc_summary = _drc_summary(internal_directory / "drc.json")
+            needs_drc_review = sum(drc_summary.values()) > 0
+            needs_bom_review = len(unmatched) > 0
+            if needs_bom_review and needs_drc_review:
+                status = "generated_needs_review"
+            elif needs_bom_review:
+                status = "generated_needs_bom_review"
+            elif needs_drc_review:
+                status = "generated_needs_drc_review"
+            else:
+                status = "generated"
+            manifest = {
+                "format_version": 1,
+                "generated_by": "kicad_agents.production_jlc_agent",
+                "status": status,
+                "strategy": "KiCad's native CLI exports fabrication and position data; Python writes JLCPCB CSVs and audit data.",
+                "source_board": str(board_path.relative_to(part_directory)).replace("\\", "/"),
+                "source_board_sha256": _sha256(board_path),
+                "oomp_metadata_board": (
+                    str(metadata_board.relative_to(part_directory)).replace("\\", "/") if metadata_board else None
+                ),
+                "kicad_cli": str(kicad_cli),
+                "kicad_version": cli_version,
+                "gerber_layers": layers,
+                "jlc_bom_columns": JLC_BOM_COLUMNS,
+                "jlc_cpl_columns": JLC_CPL_COLUMNS,
+                "summary": {
+                    "bom_groups": len(bom_rows),
+                    "placed_components": len(cpl_rows),
+                    "skipped_components": len(skipped),
+                    "components_missing_lcsc": len(unmatched),
+                    "gerber_files": len(list((internal_directory / "gerbers").glob("*"))),
+                    "drc": drc_summary,
+                },
+                "settings": {
+                    "production_exclude_references": list(details.get("production_exclude_references", [])),
+                    "production_lcsc_overrides": dict(details.get("production_lcsc_overrides", {})),
+                    "production_rotation_offsets": dict(details.get("production_rotation_offsets", {})),
+                    "production_position_offsets_mm": dict(details.get("production_position_offsets_mm", {})),
+                },
+                "commands": _portable_commands(commands, build_directory, output_directory, part_directory),
+                "files": generated_files,
+            }
+            _write_json(internal_directory / "manifest.json", manifest)
+            _write_yaml(internal_directory / "manifest.yaml", manifest)
+            generation_status = {
+                "generated_by": "kicad_agents.production_jlc_action",
+                "status": status,
+                "message": "JLCPCB production files generated. Review manifest.yaml and all fabrication files before ordering.",
                 "components_missing_lcsc": len(unmatched),
-                "gerber_files": len(list((internal_directory / "gerbers").glob("*"))),
                 "drc": drc_summary,
-            },
-            "settings": {
-                "production_exclude_references": list(details.get("production_exclude_references", [])),
-                "production_lcsc_overrides": dict(details.get("production_lcsc_overrides", {})),
-                "production_rotation_offsets": dict(details.get("production_rotation_offsets", {})),
-                "production_position_offsets_mm": dict(details.get("production_position_offsets_mm", {})),
-            },
-            "commands": _portable_commands(commands, build_directory, output_directory, part_directory),
-            "files": generated_files,
-        }
-        _write_json(internal_directory / "manifest.json", manifest)
-        _write_yaml(internal_directory / "manifest.yaml", manifest)
-        generation_status = {
-            "generated_by": "kicad_agents.production_jlc_action",
-            "status": status,
-            "message": "JLCPCB production files generated. Review manifest.yaml and all fabrication files before ordering.",
-            "components_missing_lcsc": len(unmatched),
-            "drc": drc_summary,
-            "gerber_zip": "gerbers_jlc.zip",
-            "bom": "bom_jlc.csv",
-            "cpl": "cpl_jlc.csv",
-            "manifest": "data/manifest.yaml",
-        }
-        _write_yaml(internal_directory / "generation_status.yaml", generation_status)
-        _validate_public_output_layout(build_directory)
-        _replace_generated_directory(build_directory, output_directory)
-        print(f"JLCPCB production files: {output_directory}")
-        return output_directory
-    except Exception:
-        shutil.rmtree(build_directory, ignore_errors=True)
-        raise
+                "gerber_zip": "gerbers_jlc.zip",
+                "bom": "bom_jlc.csv",
+                "cpl": "cpl_jlc.csv",
+                "manifest": "data/manifest.yaml",
+            }
+            _write_yaml(internal_directory / "generation_status.yaml", generation_status)
+            _validate_public_output_layout(build_directory)
+            _replace_generated_directory(build_directory, output_directory)
+            print(f"JLCPCB production files: {output_directory}")
+            return output_directory
+        finally:
+            if build_directory.exists() and output_directory.exists() is False:
+                shutil.rmtree(build_directory, ignore_errors=True)
+    except Exception as error:
+        _write_failure_status(output_directory, error)
+        log_run_error("production_jlc_agent", error)
+        print(f"JLCPCB production generation failed: {error}")
+        return None

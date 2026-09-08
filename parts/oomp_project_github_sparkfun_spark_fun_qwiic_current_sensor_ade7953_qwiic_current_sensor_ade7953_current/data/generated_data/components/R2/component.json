@@ -603,10 +603,10 @@
     "incomplete_count": 0
   },
   "oomp": {
-    "status": "unmatched",
-    "accepted": false,
-    "oomp_id": null,
-    "confidence": 0.0,
+    "status": "matched",
+    "accepted": true,
+    "oomp_id": "electronic_resistor_0603_5_6_ohm",
+    "confidence": 1.0,
     "proposed_oomp_id": "electronic_resistor_0603_5_6_ohm",
     "inferred": {
       "kind": "resistor",
@@ -615,53 +615,12 @@
       "mpn": null
     },
     "reasons": [
-      "The exact normalized component is not present in the OOMP parts directory."
+      "Exact OOMP ID constructed from component type, package size, and normalized value."
     ],
-    "candidates": [
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_10_ohm",
-        "score": 0.5535,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_12_ohm",
-        "score": 0.4993,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_2512_13_3_ohm",
-        "score": 0.477,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_15_ohm",
-        "score": 0.4314,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_18_ohm",
-        "score": 0.376,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      }
-    ]
+    "candidates": []
   },
   "category": "resistor",
-  "category_source": "unmatched_kicad_hint",
+  "category_source": "oomp_populate",
   "category_name": "Resistor",
   "generated_directory": "components/R2"
 }

@@ -4,8 +4,8 @@ schematic:
   units:
   - reference: JP3
     source_file: data/kicad_file.kicad_sch
-    uuid: 50e1c08e-7bac-49fe-8946-4ad82d554812
-    library_id: kicad_file-eagle-import:HEADER-1X670MIL
+    uuid: 6a9dbe2c-f02c-4369-8108-d6e161b5d0f4
+    library_id: kicad_file-eagle-import:microbuilder_HEADER-1X670MIL
     unit: 1
     body_style: 1
     position:
@@ -143,9 +143,6 @@ schematic:
         pin_number: '1'
         pin_name: '1'
       - reference: R1
-        pin_number: '5'
-        pin_name: '2'
-      - reference: R1
         pin_number: '1'
         pin_name: '1'
       - reference: R1
@@ -154,11 +151,14 @@ schematic:
       - reference: R1
         pin_number: '7'
         pin_name: '2'
-      - reference: R3
-        pin_number: '7'
+      - reference: R1
+        pin_number: '5'
         pin_name: '2'
       - reference: R3
         pin_number: '5'
+        pin_name: '2'
+      - reference: R3
+        pin_number: '7'
         pin_name: '2'
       - reference: SJ1
         pin_number: '1'
@@ -548,7 +548,7 @@ pcb:
   reference: JP3
   value: ''
   source_file: data/kicad_file.kicad_pcb
-  uuid: 4ee2c84c-296d-4e88-a258-947cf22cf790
+  uuid: 30a7f22d-9a1a-4023-8213-c997f8fe16cb
   library_id: Adafruit LIS3DH-import-fps:1X06_ROUND_70
   layer: F.Cu
   side: front
@@ -1232,40 +1232,20 @@ connectivity_cross_check:
   disagree_count: 0
   incomplete_count: 0
 oomp:
-  status: unmatched
-  accepted: false
-  oomp_id: null
-  confidence: 0.0
-  proposed_oomp_id: null
+  status: matched
+  accepted: true
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
+  confidence: 1.0
+  proposed_oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_6_pin
   inferred:
-    kind: connector
+    kind: connector_header
     package_size: null
     value: HEADER-1X670MIL
     mpn: null
   reasons:
-  - Component family was inferred, but package size was not.
-  candidates:
-  - oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_2_pin
-    score: 0.1656
-    reasons:
-    - same component family
-  - oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
-    score: 0.1618
-    reasons:
-    - same component family
-  - oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_4_pin
-    score: 0.1618
-    reasons:
-    - same component family
-  - oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_5_pin
-    score: 0.1618
-    reasons:
-    - same component family
-  - oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_8_pin
-    score: 0.1618
-    reasons:
-    - same component family
-category: other
-category_source: unmatched_kicad_hint
-category_name: Other
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: connector
+category_source: oomp_populate
+category_name: Connector
 generated_directory: components/JP3

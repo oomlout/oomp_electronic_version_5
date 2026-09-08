@@ -48,21 +48,29 @@ Sensor Lga 14 Analog Devices ADXL345 ACCELEROMETER is an OOMP electronic sensor 
 | ---: | --- | --- |
 | 1 | VDD | power |
 | 2 | GND | gnd |
-| 3 | ST1 | signal |
+| 3 | RESERVED | no_connect |
 | 4 | GND | gnd |
-| 5 | VDDIO | signal |
-| 6 | NC | no_connect |
-| 7 | NC | no_connect |
-| 8 | INT2 | signal |
-| 9 | INT1 | signal |
-| 10 | GND | gnd |
-| 11 | RES | signal |
-| 12 | SCL_SCLK | signal |
-| 13 | SDA_SDI | signal |
-| 14 | SDO | signal |
+| 5 | GND | gnd |
+| 6 | VS | signal |
+| 7 | CS | signal |
+| 8 | INT1 | signal |
+| 9 | INT2 | signal |
+| 10 | NC | no_connect |
+| 11 | RESERVED | no_connect |
+| 12 | SDO_ALT_ADDRESS | signal |
+| 13 | SDA_SDI_SDIO | signal |
+| 14 | SCL_SCLK | signal |
 
 
 
+
+
+
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project sparkfun/ADXL345_Breakout ADXL345 Breakout current](https://github.com/sparkfun/ADXL345_Breakout/tree/master/Hardware) | 1 | U2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current) |
 
 
 

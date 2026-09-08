@@ -1,0 +1,961 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-08T00:10:34",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "PTH inside courtyard",
+            "key": "pth_inside_courtyard"
+        },
+        {
+            "description": "NPTH inside courtyard",
+            "key": "npth_inside_courtyard"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0500 mm)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.15,
+                        "y": 120.45
+                    },
+                    "uuid": "0312d917-d1c3-447f-bd31-87036c96ec04"
+                },
+                {
+                    "description": "Track [VCC] on F.Cu, length 0.9000 mm",
+                    "pos": {
+                        "x": 102.4,
+                        "y": 119.5
+                    },
+                    "uuid": "45eccc50-c1d4-4940-83a8-c9695691484e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0500 mm)",
+            "items": [
+                {
+                    "description": "Track [Net-(JP1-Pad3)] on F.Cu, length 0.2828 mm",
+                    "pos": {
+                        "x": 103.3,
+                        "y": 120.6
+                    },
+                    "uuid": "366f6bdf-e0f7-4fba-a065-0d67d1f407ff"
+                },
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.85,
+                        "y": 120.45
+                    },
+                    "uuid": "9d2d5e4b-bcc4-41ce-bea7-94365157c284"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0500 mm)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.15,
+                        "y": 120.45
+                    },
+                    "uuid": "0312d917-d1c3-447f-bd31-87036c96ec04"
+                },
+                {
+                    "description": "Track [Net-(JP1-Pad1)] on F.Cu, length 0.2828 mm",
+                    "pos": {
+                        "x": 101.5,
+                        "y": 120.6
+                    },
+                    "uuid": "474e3e37-cd87-46c4-8f5c-cffa39c459ce"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and Net-(JP1-Pad1))",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.15,
+                        "y": 120.45
+                    },
+                    "uuid": "0312d917-d1c3-447f-bd31-87036c96ec04"
+                },
+                {
+                    "description": "Pad 1 [Net-(JP1-Pad1)] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 101.7,
+                        "y": 120.4
+                    },
+                    "uuid": "943917d4-5c4b-43f3-8613-c646e0977a27"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and VCC)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.15,
+                        "y": 120.45
+                    },
+                    "uuid": "0312d917-d1c3-447f-bd31-87036c96ec04"
+                },
+                {
+                    "description": "Pad 2 [VCC] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.4,
+                        "y": 120.4
+                    },
+                    "uuid": "8f188c4b-0ba3-40c8-8337-66f7ad01c0cf"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 3 [Net-(JP1-Pad3)] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 103.1,
+                        "y": 120.4
+                    },
+                    "uuid": "2f6b0dd0-a1e9-4aca-9f74-fb99f013ef18"
+                },
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.85,
+                        "y": 120.45
+                    },
+                    "uuid": "9d2d5e4b-bcc4-41ce-bea7-94365157c284"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [VCC] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.4,
+                        "y": 120.4
+                    },
+                    "uuid": "8f188c4b-0ba3-40c8-8337-66f7ad01c0cf"
+                },
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.85,
+                        "y": 120.45
+                    },
+                    "uuid": "9d2d5e4b-bcc4-41ce-bea7-94365157c284"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (pad clearance 1.1000 mm; actual 0.4000 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [<no net>] of FD1 on F.Cu",
+                    "pos": {
+                        "x": 93.4,
+                        "y": 137.4
+                    },
+                    "uuid": "00f3f58b-32c3-4954-b1f0-0212ed5cf93f"
+                },
+                {
+                    "description": "Circle [<no net>] of FD1 on F.Cu",
+                    "pos": {
+                        "x": 93.4,
+                        "y": 137.4
+                    },
+                    "uuid": "51662be9-80f0-49f4-b66a-219dae741621"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad 1 [<no net>] of FD1 on F.Cu",
+                    "pos": {
+                        "x": 93.4,
+                        "y": 137.4
+                    },
+                    "uuid": "00f3f58b-32c3-4954-b1f0-0212ed5cf93f"
+                },
+                {
+                    "description": "Circle [<no net>] of FD1 on F.Cu",
+                    "pos": {
+                        "x": 93.4,
+                        "y": 137.4
+                    },
+                    "uuid": "51662be9-80f0-49f4-b66a-219dae741621"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.15,
+                        "y": 120.45
+                    },
+                    "uuid": "0312d917-d1c3-447f-bd31-87036c96ec04"
+                },
+                {
+                    "description": "Pad 2 [VCC] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.4,
+                        "y": 120.4
+                    },
+                    "uuid": "8f188c4b-0ba3-40c8-8337-66f7ad01c0cf"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.15,
+                        "y": 120.45
+                    },
+                    "uuid": "0312d917-d1c3-447f-bd31-87036c96ec04"
+                },
+                {
+                    "description": "Pad 1 [Net-(JP1-Pad1)] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 101.7,
+                        "y": 120.4
+                    },
+                    "uuid": "943917d4-5c4b-43f3-8613-c646e0977a27"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad 3 [Net-(JP1-Pad3)] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 103.1,
+                        "y": 120.4
+                    },
+                    "uuid": "2f6b0dd0-a1e9-4aca-9f74-fb99f013ef18"
+                },
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.85,
+                        "y": 120.45
+                    },
+                    "uuid": "9d2d5e4b-bcc4-41ce-bea7-94365157c284"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad 2 [VCC] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.4,
+                        "y": 120.4
+                    },
+                    "uuid": "8f188c4b-0ba3-40c8-8337-66f7ad01c0cf"
+                },
+                {
+                    "description": "Polygon [<no net>] of JP1 on F.Cu",
+                    "pos": {
+                        "x": 102.85,
+                        "y": 120.45
+                    },
+                    "uuid": "9d2d5e4b-bcc4-41ce-bea7-94365157c284"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 90.4,
+                        "y": 139.4
+                    },
+                    "uuid": "c9f66d2a-e8b0-414b-9849-de9ea6338837"
+                },
+                {
+                    "description": "Polygon of  on F.Silkscreen",
+                    "pos": {
+                        "x": 90.73,
+                        "y": 129.87
+                    },
+                    "uuid": "6e63664a-c5f9-41f7-ba3f-c0c63e54039e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 128.4,
+                        "y": 119.4
+                    },
+                    "uuid": "1785a419-0a4e-4db1-89d3-5fa6019f1a4f"
+                },
+                {
+                    "description": "Segment of K1 on F.Silkscreen",
+                    "pos": {
+                        "x": 115.9,
+                        "y": 134.5
+                    },
+                    "uuid": "4e58a176-75ba-4f3d-ba21-5a1e721f5c83"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 128.4,
+                        "y": 119.4
+                    },
+                    "uuid": "1785a419-0a4e-4db1-89d3-5fa6019f1a4f"
+                },
+                {
+                    "description": "Segment of K1 on F.Silkscreen",
+                    "pos": {
+                        "x": 115.9,
+                        "y": 124.3
+                    },
+                    "uuid": "d5a7b080-678a-47b3-b3a7-c7670faebf39"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 90.4,
+                        "y": 139.4
+                    },
+                    "uuid": "c9f66d2a-e8b0-414b-9849-de9ea6338837"
+                },
+                {
+                    "description": "Polygon of  on F.Silkscreen",
+                    "pos": {
+                        "x": 90.74,
+                        "y": 132.41
+                    },
+                    "uuid": "929be727-e90c-4702-962c-bc11c9449e5c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 90.4,
+                        "y": 139.4
+                    },
+                    "uuid": "c9f66d2a-e8b0-414b-9849-de9ea6338837"
+                },
+                {
+                    "description": "Polygon of  on F.Silkscreen",
+                    "pos": {
+                        "x": 90.72,
+                        "y": 124.79
+                    },
+                    "uuid": "79667acc-2985-4597-9819-7ecdd93d6847"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 90.4,
+                        "y": 139.4
+                    },
+                    "uuid": "c9f66d2a-e8b0-414b-9849-de9ea6338837"
+                },
+                {
+                    "description": "Polygon of  on F.Silkscreen",
+                    "pos": {
+                        "x": 90.72,
+                        "y": 127.33
+                    },
+                    "uuid": "fdbb54c3-e8bb-4271-bddc-58cac9190a5b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint JP1",
+                    "pos": {
+                        "x": 102.4,
+                        "y": 120.4
+                    },
+                    "uuid": "1c6c00e1-38f1-4300-98a0-eb4502367b60"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint R2",
+                    "pos": {
+                        "x": 101.5,
+                        "y": 122.7
+                    },
+                    "uuid": "1ecdc216-1d21-4c1a-8194-22c24e783e9c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 104.9,
+                        "y": 121.1
+                    },
+                    "uuid": "20c1f01f-d7c4-4ef0-9215-532c65e7061a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint K4",
+                    "pos": {
+                        "x": 109.4,
+                        "y": 137.1
+                    },
+                    "uuid": "2707a0df-3209-48e8-a3ee-43644622664c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint R4",
+                    "pos": {
+                        "x": 103.4,
+                        "y": 128.2
+                    },
+                    "uuid": "2b8ec8dd-7af3-4c4c-9b24-c93a257fbe7b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 98.9,
+                        "y": 120.9
+                    },
+                    "uuid": "2c64f8a7-e0b8-402b-8165-31dbb6378258"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint JP3",
+                    "pos": {
+                        "x": 103.4,
+                        "y": 130.6
+                    },
+                    "uuid": "33c529f8-07d0-46db-bae8-11a0794f1caf"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint C1",
+                    "pos": {
+                        "x": 109.4,
+                        "y": 126.9
+                    },
+                    "uuid": "41b51405-62a2-4c50-95e3-c3c0097c582b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 120.4,
+                        "y": 137.4
+                    },
+                    "uuid": "4fb1c9e2-8925-4ecf-92cc-44ff919d43cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint K1",
+                    "pos": {
+                        "x": 121.4,
+                        "y": 129.4
+                    },
+                    "uuid": "54dfc5a9-4964-4f3a-a7e3-f826d1e5b493"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint U1",
+                    "pos": {
+                        "x": 109.4,
+                        "y": 129.4
+                    },
+                    "uuid": "5a5d0b0f-c51c-4f11-8736-40e6e06b830b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint FD1",
+                    "pos": {
+                        "x": 93.4,
+                        "y": 137.4
+                    },
+                    "uuid": "70afd967-956d-4318-9d12-d2fb947bb854"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 120.4,
+                        "y": 121.4
+                    },
+                    "uuid": "713c79e6-6ecc-496b-b733-40880af7b222"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 101.6,
+                        "y": 137.0
+                    },
+                    "uuid": "89bbbb16-d99f-4318-8632-fdf3e6083a85"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint R3",
+                    "pos": {
+                        "x": 105.4,
+                        "y": 128.2
+                    },
+                    "uuid": "8b34c135-fe77-4f6b-80ab-6b321876d91f"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint K2",
+                    "pos": {
+                        "x": 109.4,
+                        "y": 121.7
+                    },
+                    "uuid": "9afc9186-1711-4788-a673-d7629812211c"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 112.4,
+                        "y": 129.4
+                    },
+                    "uuid": "9ff07558-d5c6-4ae1-ad05-b49926a8cc08"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint R5",
+                    "pos": {
+                        "x": 113.9,
+                        "y": 129.4
+                    },
+                    "uuid": "a3ff56c3-eff6-405f-9bdd-21a24a6424e3"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint H1",
+                    "pos": {
+                        "x": 93.4,
+                        "y": 121.4
+                    },
+                    "uuid": "a80470ef-3136-4e4e-aa0d-7494bddb4882"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint H2",
+                    "pos": {
+                        "x": 125.4,
+                        "y": 121.4
+                    },
+                    "uuid": "ce5394ff-d2e6-412d-84b9-31d3e4ebcdfa"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint G***",
+                    "pos": {
+                        "x": 104.9,
+                        "y": 137.7
+                    },
+                    "uuid": "d2983121-6f89-4455-bfba-1d7f5c840c8a"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint R1",
+                    "pos": {
+                        "x": 103.3,
+                        "y": 122.7
+                    },
+                    "uuid": "d2d7d12c-04a6-425c-9f94-aeafd2455313"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint JP2",
+                    "pos": {
+                        "x": 105.4,
+                        "y": 130.6
+                    },
+                    "uuid": "d63e25dd-12e6-4b7f-9e2a-3938ff6ec539"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint REF**",
+                    "pos": {
+                        "x": 94.4,
+                        "y": 129.4
+                    },
+                    "uuid": "3eb090f3-c7a5-4b37-831d-da9e5bb92cea"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'e-radionica.com footprinti'",
+            "items": [
+                {
+                    "description": "Footprint K3",
+                    "pos": {
+                        "x": 91.9,
+                        "y": 129.4
+                    },
+                    "uuid": "44bd26c2-5101-4860-b210-8431a95366dc"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "The current configuration does not include the footprint library 'Soldered Graphics'",
+            "items": [
+                {
+                    "description": "Footprint Ref**",
+                    "pos": {
+                        "x": 91.2,
+                        "y": 138.4
+                    },
+                    "uuid": "904059d9-6b98-41bb-8765-3d7444063161"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_issues"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of  on F.Silkscreen",
+                    "pos": {
+                        "x": 90.72,
+                        "y": 124.79
+                    },
+                    "uuid": "79667acc-2985-4597-9819-7ecdd93d6847"
+                },
+                {
+                    "description": "PTH pad 4 [SCL] of K3",
+                    "pos": {
+                        "x": 91.9,
+                        "y": 125.59
+                    },
+                    "uuid": "36acc7c7-eeae-4f32-8381-b253eb405f23"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of  on F.Silkscreen",
+                    "pos": {
+                        "x": 90.72,
+                        "y": 127.33
+                    },
+                    "uuid": "fdbb54c3-e8bb-4271-bddc-58cac9190a5b"
+                },
+                {
+                    "description": "PTH pad 3 [SDA] of K3",
+                    "pos": {
+                        "x": 91.9,
+                        "y": 128.13
+                    },
+                    "uuid": "e9d2a354-0ab6-4ece-8dea-c28febb0a065"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of  on F.Silkscreen",
+                    "pos": {
+                        "x": 90.73,
+                        "y": 129.87
+                    },
+                    "uuid": "6e63664a-c5f9-41f7-ba3f-c0c63e54039e"
+                },
+                {
+                    "description": "PTH pad 2 [VCC] of K3",
+                    "pos": {
+                        "x": 91.9,
+                        "y": 130.67
+                    },
+                    "uuid": "3d1daa28-5603-4098-950f-e1366e1ae66e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Polygon of  on F.Silkscreen",
+                    "pos": {
+                        "x": 90.74,
+                        "y": 132.41
+                    },
+                    "uuid": "929be727-e90c-4702-962c-bc11c9449e5c"
+                },
+                {
+                    "description": "PTH pad 1 [GND] of K3",
+                    "pos": {
+                        "x": 91.9,
+                        "y": 133.21
+                    },
+                    "uuid": "b8c60b9b-be75-45d3-966d-7007860f6c3c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/data/generated_data/src/board_300.png)
 
-Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout MY1690X-16S current is a KiCad project containing 112 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
+Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakout MY1690X-16S current is a KiCad project containing 112 extracted component records. The catalogue matcher linked 29 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -17,10 +17,10 @@ Project sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S Audio Player Breakou
 | Components | 112 |
 | PCB footprints | 74 |
 | Mounting and locating holes | 9 |
-| Matched OOMP mounting-hole items | 4 |
+| Matched OOMP mounting-hole items | 9 |
 | Schematic symbols | 82 |
-| Matched OOMP components | 23 |
-| Unmatched physical components | 10 |
+| Matched OOMP components | 29 |
+| Unmatched physical components | 4 |
 | Front-side placements | 18 |
 | Back-side placements | 12 |
 | Project version | `current` |
@@ -72,8 +72,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH1` | `J1` | Mounting Hole 1.2 mm Round Unplated | `` | locating | 12.700 | 1.326 | unmatched (`mechanical_mounting_hole_1_2_mm_round_unplated` proposed) |
-| `MH2` | `J1` | Mounting Hole 1.2 mm Round Unplated | `` | locating | 12.700 | 8.326 | unmatched (`mechanical_mounting_hole_1_2_mm_round_unplated` proposed) |
+| `MH1` | `J1` | Mounting Hole 1.2 mm Round Unplated | `mechanical / mounting_hole / 1_2_mm / round / unplated` | locating | 12.700 | 1.326 | [`mechanical_mounting_hole_1_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_1_2_mm_round_unplated) |
+| `MH2` | `J1` | Mounting Hole 1.2 mm Round Unplated | `mechanical / mounting_hole / 1_2_mm / round / unplated` | locating | 12.700 | 8.326 | [`mechanical_mounting_hole_1_2_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_1_2_mm_round_unplated) |
 
 ### Diameter 0.65 mm holes
 
@@ -93,9 +93,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | OOMP reference | Source | Name | Classification | Role | Board X (mm) | Board Y (mm) | OOMP part |
 | --- | --- | --- | --- | --- | ---: | ---: | --- |
-| `MH7` | `ST1` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 22.860 | 2.540 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH8` | `ST2` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 2.540 | 2.540 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
-| `MH9` | `ST3` | Mounting Hole 3.1 mm Round Unplated | `` | locating | 2.540 | 22.860 | unmatched (`mechanical_mounting_hole_3_1_mm_round_unplated` proposed) |
+| `MH7` | `ST1` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 22.860 | 2.540 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH8` | `ST2` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 2.540 | 2.540 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
+| `MH9` | `ST3` | Mounting Hole 3.1 mm Round Unplated | `mechanical / mounting_hole / 3_1_mm / round / unplated` | locating | 2.540 | 22.860 | [`mechanical_mounting_hole_3_1_mm_round_unplated`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/mechanical_mounting_hole_3_1_mm_round_unplated) |
 
 
 ## Bill of materials
@@ -105,7 +105,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1, C7 | 2 | Capacitor 2.2 uF 0603 | 2.2uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
 | C2, C6 | 2 | Capacitor 10 uF 0603 | 10uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_micro_farad) |
 | C3, C9 | 2 | Capacitor 100 nF 0603 | 0.1uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| C4, C5 | 2 | 47uF | 47uF | `SparkFun-Capacitor:C_0805_2012Metric` | unmatched |
+| C4, C5 | 2 | Capacitor 47 uF 0805 | 47uF | `SparkFun-Capacitor:C_0805_2012Metric` | [`electronic_capacitor_0805_47_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_47_micro_farad) |
 | C8 | 1 | Capacitor 1 uF 0603 | 1.0uF | `SparkFun-Capacitor:C_0603_1608Metric` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
 | D1 | 1 | LED Green 0603 | Green | `SparkFun-LED:LED_0603_1608Metric_Green` | [`electronic_led_0603_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_green) |
 | D2, D3 | 2 | Diode Schottky SOD-323 | BAT60A | `SparkFun-Semiconductor-Standard:SOD-323` | [`electronic_diode_schottky_sod_323_bat54w`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_bat54w) |
@@ -118,7 +118,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J5 | 1 | Connector Header 2.54-1x6P直针 | Conn_01x06 | `SparkFun-Connector:1x06` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | J6 | 1 | microSD | microSD | `SparkFun-Connector:microSD_External_Pin` | unmatched |
 | L1 | 1 | 470Ohm | 470Ohm | `SparkFun-Capacitor:C_0603_1608Metric` | unmatched |
-| Q1 | 1 | BSS138 | BSS138 | `SparkFun-Semiconductor-Standard:SOT23-3` | unmatched |
+| Q1 | 1 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `SparkFun-Semiconductor-Standard:SOT23-3` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
 | R1, R4 | 2 | Resistor 2200 Ohm 0603 | 2.2k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
 | R2, R3 | 2 | Resistor 5100 Ohm 0603 | 5.1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_5100_ohm) |
 | R5 | 1 | Resistor 1000 Ohm 0603 | 1k | `SparkFun-Resistor:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
@@ -158,7 +158,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 10 physical component records are not yet matched to an OOMP part.
+- 4 physical component records are not yet matched to an OOMP part.
 - The extractor reports 1 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/data/generated_data/lcsc_review.yaml)
@@ -168,7 +168,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 17
+- Matched OOMP source parts copied: 20
 
 ## Source files
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/generated_data/src/board_300.png)
 
-Project soldered_electronics/PIR-Movement-sensor-board-hardware-design PIR Movement Sensor current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 11 physical placements to OOMP parts.
+Project soldered_electronics/PIR-Movement-sensor-board-hardware-design PIR Movement Sensor current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 14 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project soldered_electronics/PIR-Movement-sensor-board-hardware-design PIR Movem
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 37 |
-| Matched OOMP components | 11 |
-| Unmatched physical components | 7 |
+| Matched OOMP components | 14 |
+| Unmatched physical components | 4 |
 | Front-side placements | 14 |
 | Back-side placements | 2 |
 | Project version | `current` |
@@ -83,11 +83,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C1, C2 | 2 | Capacitor 2.2 uF 0603 | 2u2 | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_2_2_micro_farad) |
 | C3 | 1 | Capacitor 100 nF 0603 | 100n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C4 | 1 | Capacitor 10 nF 0603 | 10n | `e-radionica.com footprinti:0603C` | [`electronic_capacitor_0603_10_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_nano_farad) |
-| C5 | 1 | EMZR160ARA681MHA0G | EMZR160ARA681MHA0G | `e-radionica.com footprinti:ELECTROLITIC_CAP_8x8x14.5` | unmatched |
+| C5 | 1 | Capacitor 680 uF 16 V Electrolytic 8 mm diameter x 14.5 mm tall | EMZR160ARA681MHA0G | `e-radionica.com footprinti:ELECTROLITIC_CAP_8x8x14.5` | [`electronic_capacitor_8_mm_diameter_14_5_mm_tall_electrolytic_680_micro_farad_16_volt`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_8_mm_diameter_14_5_mm_tall_electrolytic_680_micro_farad_16_volt) |
 | K1 | 1 | Connector Header PZ2.54-S04P-A60 | HEADER_MALE_4X1 | `e-radionica.com footprinti:HEADER_MALE_4X1` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | K2 | 1 | PIR_lens | PIR_lens | `e-radionica.com footprinti:PIR_senzor_kapica` | unmatched |
-| Q1 | 1 | NMOS | NMOS | `e-radionica.com footprinti:SOT-23-3` | unmatched |
-| Q2 | 1 | PNP | PNP | `e-radionica.com footprinti:SOT-23-3` | unmatched |
+| Q1 | 1 | Transistor Mosfet N Channel Enhancement Mode SOT 23 | NMOS | `e-radionica.com footprinti:SOT-23-3` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode) |
+| Q2 | 1 | Transistor Bipolar Pnp SOT 23 | PNP | `e-radionica.com footprinti:SOT-23-3` | [`electronic_transistor_sot_23_bipolar_pnp`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_pnp) |
 | R1 | 1 | TC33X-2-105E | TC33X-2-105E | `e-radionica.com footprinti:tc33x-2-103e` | unmatched |
 | R2 | 1 | Resistor 10000 Ohm 0603 | 10k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R3 | 1 | Resistor 1000 Ohm 0603 | 1k | `e-radionica.com footprinti:0603R` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
@@ -120,7 +120,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 7 physical component records are not yet matched to an OOMP part.
+- 4 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/generated_data/browser_research_queue.md)
@@ -129,7 +129,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_soldered_electronics_pir_movement_sensor_board_hardware_design_sensor_pir_movement_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 9
+- Matched OOMP source parts copied: 12
 
 ## Source files
 

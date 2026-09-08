@@ -568,10 +568,10 @@
     "incomplete_count": 0
   },
   "oomp": {
-    "status": "unmatched",
-    "accepted": false,
-    "oomp_id": null,
-    "confidence": 0.0,
+    "status": "matched",
+    "accepted": true,
+    "oomp_id": "electronic_resistor_1210_0_1_ohm",
+    "confidence": 1.0,
     "proposed_oomp_id": "electronic_resistor_1210_0_1_ohm",
     "inferred": {
       "kind": "resistor",
@@ -580,49 +580,12 @@
       "mpn": null
     },
     "reasons": [
-      "The exact normalized component is not present in the OOMP parts directory."
+      "Exact OOMP ID constructed from component type, package size, and normalized value."
     ],
-    "candidates": [
-      {
-        "oomp_id": "electronic_resistor_2512_0_2_ohm",
-        "score": 0.5346,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_array_4_x_0402_convex_10000_ohm_8_pin",
-        "score": 0.2544,
-        "reasons": [
-          "same component family"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin",
-        "score": 0.252,
-        "reasons": [
-          "same component family"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_array_4_x_0402_convex_330_ohm_8_pin",
-        "score": 0.2515,
-        "reasons": [
-          "same component family"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin",
-        "score": 0.2515,
-        "reasons": [
-          "same component family"
-        ]
-      }
-    ]
+    "candidates": []
   },
   "category": "resistor",
-  "category_source": "unmatched_kicad_hint",
+  "category_source": "oomp_populate",
   "category_name": "Resistor",
   "generated_directory": "components/R5"
 }

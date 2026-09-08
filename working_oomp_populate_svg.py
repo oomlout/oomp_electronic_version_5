@@ -298,7 +298,11 @@ def get_dimensions_mm(option):
         "3535": [3.5, 3.5],
         "4020_side_view": [4.0, 2.0],
         "qfn_16_3_mm_x_3_mm": [3.0, 3.0],
-        "sop_16": [10.0, 3.9],
+        "soic_8": [4.9, 3.9],
+        "soic_14": [8.69, 3.9],
+        "soic_16": [9.9, 3.9],
+        "so_16": [10.0, 4.0],
+        "sop_16": [9.9, 3.9],
         "sot_23_6": [2.9, 1.6],
         "tsot_23_5": [2.9, 1.6],
         "sot_23_5": [2.9, 1.6],
@@ -352,7 +356,7 @@ def add_svg_details(option):
     # Family defaults may be applied twice (populate and working_oomp). Keep
     # explicit datasheet dimensions from the populate-extra definition.
     explicit_geometry = {}
-    for key in ["ic_dimensions_mm", "connector_dimensions_mm", "header_dimensions_mm", "dimension_reference"]:
+    for key in ["ic_dimensions_mm", "connector_dimensions_mm", "header_dimensions_mm", "dimension_reference", "package_drawing"]:
         if isinstance(option.get(key), dict):
             explicit_geometry[key] = copy.deepcopy(option[key])
     component_type = option.get("taxonomy_2", "")
@@ -463,6 +467,34 @@ def add_svg_details(option):
                 "body_length": 3.0,
                 "body_width": 3.0,
                 "pin_pitch": 0.5,
+            },
+            "soic_8": {
+                "body_length": 4.9,
+                "body_width": 3.9,
+                "overall_width": 6.0,
+                "pin_pitch": 1.27,
+                "pin_width": 0.42,
+            },
+            "soic_14": {
+                "body_length": 8.69,
+                "body_width": 3.9,
+                "overall_width": 5.99,
+                "pin_pitch": 1.27,
+                "pin_width": 0.42,
+            },
+            "soic_16": {
+                "body_length": 9.9,
+                "body_width": 3.9,
+                "overall_width": 6.04,
+                "pin_pitch": 1.27,
+                "pin_width": 0.42,
+            },
+            "so_16": {
+                "body_length": 10.0,
+                "body_width": 4.0,
+                "overall_width": 6.0,
+                "pin_pitch": 1.27,
+                "pin_width": 0.42,
             },
             "sop_16": {
                 # CoreChips SL2.1A package drawing, nominal values from ranges.

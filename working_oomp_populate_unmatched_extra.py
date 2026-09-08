@@ -44,6 +44,23 @@ def _gullwing(names, body=(4.9, 3.9), overall=(6.0, 5.0), pad_width=0.7):
     }
 
 
+def _soic(names, body_length, body_width, overall_width, pad_width=0.42):
+    """Return a narrow-body SOIC top view in the conventional vertical pose."""
+    count = len(names)
+    per_side = count // 2
+    pins = []
+    for index in range(per_side):
+        y = body_length / 2 - (index + 0.5) * body_length / per_side
+        pins.append([str(index + 1), "left", -overall_width / 2 + (overall_width - body_width) / 4, y, (overall_width - body_width) / 2, pad_width])
+        pins.append([str(count - index), "right", overall_width / 2 - (overall_width - body_width) / 4, y, (overall_width - body_width) / 2, pad_width])
+    return {
+        "overall": [overall_width, body_length],
+        "body": [body_width, body_length],
+        "pins": pins,
+        "pin_one": [-body_width / 2 + 0.35, body_length / 2 - 0.35],
+    }
+
+
 def _qfp(names, body=(7.0, 7.0), overall=(9.7, 9.7), pad_width=0.32):
     """Create a square gull-wing package with clockwise pin numbering."""
     count = len(names)
@@ -136,6 +153,42 @@ def _module(width, height, names, antenna=False, body=None):
     return drawing
 
 
+def _lis3dh_lga16():
+    """ST LIS3DH LGA-16: 5/3/5/3 pads around a 3 mm square body."""
+    pins = []
+    for number, y in zip(range(1, 6), (-1.0, -0.5, 0.0, 0.5, 1.0)):
+        pins.append([str(number), "left", -1.4, y, 0.5, 0.36])
+    for number, x in zip(range(6, 9), (-0.5, 0.0, 0.5)):
+        pins.append([str(number), "bottom", x, 1.4, 0.36, 0.5])
+    for number, y in zip(range(9, 14), (1.0, 0.5, 0.0, -0.5, -1.0)):
+        pins.append([str(number), "right", 1.4, y, 0.5, 0.36])
+    for number, x in zip(range(14, 17), (0.5, 0.0, -0.5)):
+        pins.append([str(number), "top", x, -1.4, 0.36, 0.5])
+    return {
+        "overall": [3.0, 3.0],
+        "body": [2.2, 2.2],
+        "pins": pins,
+        "pin_one": [-1.0, -1.0],
+    }
+
+
+def _adxl345_lga14():
+    """ADI CC-14-1 top view: six pads on each long edge and one end pad."""
+    pins = []
+    for number, x in zip(range(1, 7), (-2.25, -1.35, -0.45, 0.45, 1.35, 2.25)):
+        pins.append([str(number), "top", x, 1.5, 0.5, 0.55])
+    pins.append(["7", "left", -2.1, 0.0, 0.55, 0.5])
+    for number, x in zip(range(8, 14), (2.25, 1.35, 0.45, -0.45, -1.35, -2.25)):
+        pins.append([str(number), "bottom", x, -1.5, 0.5, 0.55])
+    pins.append(["14", "right", 2.1, 0.0, 0.55, 0.5])
+    return {
+        "overall": [5.0, 3.0],
+        "body": [4.1, 2.46],
+        "pins": pins,
+        "pin_one": [-1.65, 1.0],
+    }
+
+
 def _button(width, depth, pin_count=4, body=None):
     body = body or (width * 0.72, depth * 0.72)
     pins = []
@@ -191,13 +244,14 @@ def main(**kwargs):
         "electronic_ic_qfn_14_logic_analog_switch_nexperia_74hc4066bq": {"dimensions": {"length": 3.0, "width": 3.0, "height": 0.9}, "pins": [str(index) for index in range(1, 15)], "drawing": _qfn([str(index) for index in range(1, 15)], body=(3.0, 3.0), overall=(4.2, 4.2), exposed_pad=False)},
         "electronic_ic_qfn_24_converter_usb_to_serial_converter_wch_ch342f": {"dimensions": {"length": 4.0, "width": 4.0, "height": 0.8}, "pins": [str(index) for index in range(1, 25)], "drawing": _qfn([str(index) for index in range(1, 25)], body=(4.0, 4.0), overall=(5.2, 5.2), exposed_pad=False)},
         "electronic_ic_qfn_28_power_meter_energy_metering_analog_devices_ade7953acpz": {"dimensions": {"length": 5.0, "width": 5.0, "height": 0.9}, "pins": [str(index) for index in range(1, 29)], "drawing": _qfn([str(index) for index in range(1, 29)], body=(5.0, 5.0), overall=(6.2, 6.2), exposed_pad=True)},
-        "electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr": {"dimensions": {"length": 8.65, "width": 3.9, "height": 1.75}, "pins": ["VDD", "PA4", "PA5", "PA6", "PA7", "PB5", "PB4", "PB3", "PB2", "PB1", "PB0", "PA3", "PA2", "GND"], "drawing": _gullwing([str(index) for index in range(1, 15)], body=(8.65, 3.9), overall=(10.3, 6.0))},
-        "electronic_ic_soic_8_timer_555_timer_texas_instruments_tlc555cd": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["GND", "TRIG", "OUT", "RESET", "CTRL", "THRESH", "DISCH", "VCC"], "drawing": _gullwing([str(index) for index in range(1, 9)])},
-        "electronic_ic_soic_8_timer_555_timer_texas_instruments_ne555dr": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["GND", "TRIG", "OUT", "RESET", "CTRL", "THRESH", "DISCH", "VCC"], "drawing": _gullwing([str(index) for index in range(1, 9)])},
-        "electronic_ic_soic_8_logic_comparator_lm393": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["OUT1", "IN1_MINUS", "IN1_PLUS", "GND", "IN2_PLUS", "IN2_MINUS", "OUT2", "VCC"], "drawing": _gullwing([str(index) for index in range(1, 9)])},
-        "electronic_ic_soic_8_sensor_hall_effect_current_sensor_allegro_acs712": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["IP_PLUS", "IP_PLUS", "IP_MINUS", "IP_MINUS", "GND", "FILTER", "VIOUT", "VCC"], "drawing": _gullwing([str(index) for index in range(1, 9)])},
-        "electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": [str(index) for index in range(1, 9)], "drawing": _gullwing([str(index) for index in range(1, 9)])},
-        "electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s": {"dimensions": {"length": 10.0, "width": 4.0, "height": 1.75}, "pins": [str(index) for index in range(1, 17)], "drawing": _gullwing([str(index) for index in range(1, 17)], body=(10.0, 4.0), overall=(12.0, 6.0))},
+        "electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr": {"dimensions": {"length": 8.69, "width": 3.9, "height": 1.75}, "pins": ["VDD", "PA4", "PA5", "PA6", "PA7", "PB5", "PB4", "PB3", "PB2", "PB1", "PB0", "PA3", "PA2", "GND"], "drawing": _soic([str(index) for index in range(1, 15)], 8.69, 3.9, 5.99)},
+        "electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr": {"dimensions": {"length": 8.69, "width": 3.9, "height": 1.6}, "pins": ["VDD", "PA4", "PA5", "PA6", "PA7", "PB3", "PB2", "PB1", "PB0", "PA3", "PA2", "PA1", "PA0", "GND"], "drawing": _soic([str(index) for index in range(1, 15)], 8.69, 3.9, 5.99), "reference": {"document": "Microchip ATtiny202/204/402/404/406 datasheet, 14-pin SOIC; Microchip C04-00065 / SL", "notes": "8.69 mm nominal package length, 3.90 mm molded body width, 5.99 mm nominal lead span, 1.27 mm pitch."}, "url": "https://onlinedocs.microchip.com/oxy/GUID-5A56DB3A-31E1-4F46-984F-39186535C84E-en-US-7/index.html"},
+        "electronic_ic_soic_8_timer_555_timer_texas_instruments_tlc555cd": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["GND", "TRIG", "OUT", "RESET", "CTRL", "THRESH", "DISCH", "VCC"], "drawing": _soic([str(index) for index in range(1, 9)], 4.9, 3.9, 6.02)},
+        "electronic_ic_soic_8_timer_555_timer_texas_instruments_ne555dr": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["GND", "TRIG", "OUT", "RESET", "CTRL", "THRESH", "DISCH", "VCC"], "drawing": _soic([str(index) for index in range(1, 9)], 4.9, 3.9, 6.02)},
+        "electronic_ic_soic_8_logic_comparator_lm393": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["OUT1", "IN1_MINUS", "IN1_PLUS", "GND", "IN2_PLUS", "IN2_MINUS", "OUT2", "VCC"], "drawing": _soic([str(index) for index in range(1, 9)], 4.9, 3.9, 6.02)},
+        "electronic_ic_soic_8_sensor_hall_effect_current_sensor_allegro_acs712": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": ["IP_PLUS", "IP_PLUS", "IP_MINUS", "IP_MINUS", "GND", "FILTER", "VIOUT", "VCC"], "drawing": _soic([str(index) for index in range(1, 9)], 4.9, 3.9, 6.02)},
+        "electronic_ic_soic_8_capacitive_touch_controller_controller_infineon_cy8cmbr3102": {"dimensions": {"length": 4.9, "width": 3.9, "height": 1.75}, "pins": [str(index) for index in range(1, 9)], "drawing": _soic([str(index) for index in range(1, 9)], 4.9, 3.9, 6.02)},
+        "electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s": {"dimensions": {"length": 10.0, "width": 4.0, "height": 1.75}, "pins": [str(index) for index in range(1, 17)], "drawing": _soic([str(index) for index in range(1, 17)], 10.0, 4.0, 6.0)},
         "electronic_ic_msop_8_amplifier_operational_amplifier_sg_micro_sgm358yms_tr": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": ["OUTA", "INA_MINUS", "INA_PLUS", "V_MINUS", "INB_PLUS", "INB_MINUS", "OUTB", "V_PLUS"], "drawing": _gullwing([str(index) for index in range(1, 9)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
         "electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": [str(index) for index in range(1, 9)], "drawing": _gullwing([str(index) for index in range(1, 9)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
         "electronic_ic_msop_10_converter_usb_to_serial_converter_wch_ch340e": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": [str(index) for index in range(1, 11)], "drawing": _gullwing([str(index) for index in range(1, 11)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
@@ -220,14 +274,20 @@ def main(**kwargs):
         "electronic_sensor_air_quality_lga_20_ams_ccs811b_jopr": (3.0, 3.0, [str(i) for i in range(1, 21)], _module(3.0, 3.0, [str(i) for i in range(1, 21)])),
         "electronic_sensor_light_proximity_ch_6_liteon_ltr_507als_01": (2.65, 2.0, [str(i) for i in range(1, 9)], _module(2.65, 2.0, [str(i) for i in range(1, 9)], body=(1.8, 1.3))),
         "electronic_sensor_pressure_temperature_lga_10_bosch_bmp388": (2.0, 2.0, [str(i) for i in range(1, 11)], _module(2.0, 2.0, [str(i) for i in range(1, 11)], body=(1.8, 1.8))),
-        "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345": (5.0, 3.0, ["VDD", "GND", "ST1", "GND", "VDDIO", "NC", "NC", "INT2", "INT1", "GND", "RES", "SCL_SCLK", "SDA_SDI", "SDO"], _module(5.0, 3.0, [str(i) for i in range(1, 15)])),
-        "electronic_sensor_accelerometer_lga_16_st_lis3dhtr": (3.0, 3.0, [str(i) for i in range(1, 17)], _module(3.0, 3.0, [str(i) for i in range(1, 17)])),
-        "electronic_sensor_accelerometer_lga_16_st_lis3dhtr": (3.0, 3.0, [str(i) for i in range(1, 17)], _module(3.0, 3.0, [str(i) for i in range(1, 17)])),
+        "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345": (5.0, 3.0, ["VDD", "GND", "RESERVED", "GND", "GND", "VS", "CS", "INT1", "INT2", "NC", "RESERVED", "SDO_ALT_ADDRESS", "SDA_SDI_SDIO", "SCL_SCLK"], _adxl345_lga14()),
+        "electronic_sensor_accelerometer_lga_16_st_lis3dhtr": (3.0, 3.0, ["VDDIO", "NC", "NC", "SCL_SPC", "GND", "SDA_SDI_SDO", "SDO_SA0", "CS", "INT2", "RES", "INT1", "GND", "ADC3", "VDD", "ADC2", "ADC1"], _lis3dh_lga16()),
         "electronic_sensor_particulate_matter_module_bosch_bmv080": (20.0, 5.5, ["VDDL", "VSSA", "VDDA", "VSSD", "PS", "SCK", "MOSI", "MISO", "CS", "VDDD"], _module(20.0, 5.5, [str(i) for i in range(1, 11)], body=(4.4, 3.0))),
     }
     for current, (length, width, pins, drawing) in sensors.items():
         if current in extras_dict:
             _set(extras_dict[current], dimensions={"length": length, "width": width}, pins=pins, drawing=drawing)
+    for current, reference, url in [
+        ("electronic_sensor_accelerometer_lga_14_analog_devices_adxl345", {"document": "Analog Devices ADXL345 datasheet, CC-14-1", "notes": "14-terminal LGA, 5.00 x 3.00 x 1.00 mm; top view has six pads on each long edge and one end pad at each short edge."}, "https://www.analog.com/media/en/technical-documentation/data-sheets/adxl345.pdf"),
+        ("electronic_sensor_accelerometer_lga_16_st_lis3dhtr", {"document": "ST LIS3DH datasheet, LGA-16 package information", "notes": "3.00 x 3.00 mm body, 1.00 mm maximum height, with 5/3/5/3 contacts around the package."}, "https://www.st.com/resource/en/datasheet/lis3dh.pdf"),
+    ]:
+        if current in extras_dict:
+            extras_dict[current]["dimension_reference"] = reference
+            extras_dict[current]["datasheet_url"] = url
     modules = {
         "electronic_sensor_gnss_module_quectel_l86_m33": (18.4, 18.4, 18, True),
         "electronic_sensor_gnss_module_u_blox_sam_m8q": (15.5, 15.5, 20, True),
@@ -254,6 +314,16 @@ def main(**kwargs):
     for current, (dimensions, pins, drawing) in simple.items():
         if current in extras_dict:
             _set(extras_dict[current], dimensions=dimensions, pins=pins, drawing=drawing)
+
+    # The SOD-323 switching diode is backed by the manufacturer package
+    # drawing rather than only by its taxonomy dimensions.
+    diode_1n4148ws = extras_dict.get("electronic_diode_switching_sod_323_onsemi_1n4148ws")
+    if diode_1n4148ws is not None:
+        diode_1n4148ws["dimension_reference"] = {
+            "document": "onsemi 1N4148WS datasheet and SOD-323FL package drawing",
+            "notes": "1.70 x 1.25 mm nominal body; pin 1 cathode and pin 2 anode.",
+        }
+        diode_1n4148ws["datasheet_url"] = "https://www.onsemi.com/download/data-sheet/pdf/1n4148ws-d.pdf"
 
     # Switches: body, actuator and real terminal count are more informative
     # than the former blank rectangle, even where the exact fitted suffix is
@@ -312,4 +382,3 @@ def main(**kwargs):
         else:
             drawing = {"overall": [length, width], "body": [length - .5, width - .5], "pins": [[str(index + 1), "bottom", -length / 2 + 1.0 + index * (length - 2.0) / max(count - 1, 1), -width / 2 + .35, .6, .7] for index in range(count)]}
         _set(extras_dict[current], dimensions={"length": length, "width": width}, pins=[str(i) for i in range(1, count + 1)], drawing=drawing)
-

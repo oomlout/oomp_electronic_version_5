@@ -12,13 +12,13 @@ summary:
   component_count: 112
   schematic_symbol_count: 82
   pcb_footprint_count: 74
-  matched_component_count: 23
-  unmatched_physical_component_count: 10
+  matched_component_count: 33
+  unmatched_physical_component_count: 0
   non_physical_symbol_count: 79
   mounting_hole_count: 9
   dedicated_mounting_hole_count: 3
-  mounting_hole_oomp_item_count: 4
-  unmatched_mounting_hole_oomp_item_count: 5
+  mounting_hole_oomp_item_count: 9
+  unmatched_mounting_hole_oomp_item_count: 0
   connectivity_named_net_agreement_count: 68
   connectivity_named_net_disagreement_count: 1
 schematic_files:
@@ -53700,10 +53700,10 @@ components:
     disagree_count: 0
     incomplete_count: 1
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: electronic_capacitor_0805_47_micro_farad
+    confidence: 1.0
     proposed_oomp_id: electronic_capacitor_0805_47_micro_farad
     inferred:
       kind: capacitor
@@ -53711,37 +53711,10 @@ components:
       value: 47uF
       mpn: null
     reasons:
-    - The exact normalized component is not present in the OOMP parts directory.
-    candidates:
-    - oomp_id: electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
-      score: 0.5022
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0805_4_7_micro_farad
-      score: 0.2994
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0805_22_micro_farad
-      score: 0.2975
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
-      score: 0.26
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
-      score: 0.2596
-      reasons:
-      - same component family
-      - nearby normalized value
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: capacitor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Capacitor
   generated_directory: components/C4
 - reference: C5
@@ -54200,10 +54173,10 @@ components:
     disagree_count: 0
     incomplete_count: 1
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: electronic_capacitor_0805_47_micro_farad
+    confidence: 1.0
     proposed_oomp_id: electronic_capacitor_0805_47_micro_farad
     inferred:
       kind: capacitor
@@ -54211,37 +54184,10 @@ components:
       value: 47uF
       mpn: null
     reasons:
-    - The exact normalized component is not present in the OOMP parts directory.
-    candidates:
-    - oomp_id: electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
-      score: 0.5022
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0805_4_7_micro_farad
-      score: 0.2994
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0805_22_micro_farad
-      score: 0.2975
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
-      score: 0.26
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
-      score: 0.2596
-      reasons:
-      - same component family
-      - nearby normalized value
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: capacitor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Capacitor
   generated_directory: components/C5
 - reference: C6
@@ -64153,14 +64099,34 @@ components:
         name: Mounting Hole 1.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 1_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 1_2_mm
+        - round
+        - unplated
       name: Mounting Hole 1.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -64209,14 +64175,34 @@ components:
         name: Mounting Hole 1.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 1_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 1_2_mm
+        - round
+        - unplated
       name: Mounting Hole 1.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -64428,21 +64414,21 @@ components:
     disagree_count: 0
     incomplete_count: 1
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs
     inferred:
       kind: null
       package_size: null
       value: 3.5mm TRRS
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J1
 - reference: J2
@@ -72188,21 +72174,21 @@ components:
     disagree_count: 0
     incomplete_count: 3
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_connector_micro_sd_push_push_micro_sd_external_pin
+    confidence: 1.0
+    proposed_oomp_id: electronic_connector_micro_sd_push_push_micro_sd_external_pin
     inferred:
       kind: null
       package_size: null
       value: microSD
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: connector
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Connector
   generated_directory: components/J6
 - reference: JP1
@@ -79673,21 +79659,21 @@ components:
     disagree_count: 0
     incomplete_count: 1
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_inductor_0603_470_ohm
+    confidence: 1.0
+    proposed_oomp_id: electronic_inductor_0603_470_ohm
     inferred:
       kind: null
       package_size: '0603'
       value: 470Ohm
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: inductor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Inductor
   generated_directory: components/L1
 - reference: Q1
@@ -80347,41 +80333,21 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138
+    confidence: 1.0
+    proposed_oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138
     inferred:
       kind: transistor
       package_size: null
       value: BSS138
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
-      score: 0.1071
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138
-      score: 0.0908
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_363_6_mosfet_n_channel_dual
-      score: 0.0665
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
-      score: 0.0624
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_bipolar_pnp_40_volt_600_milliamp_onsemi_mmbt4403
-      score: 0.0524
-      reasons:
-      - same component family
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: transistor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Transistor
   generated_directory: components/Q1
 - reference: R1
@@ -84882,14 +84848,34 @@ components:
         name: Mounting Hole 3.1 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 3_1_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 3_1_mm
+        - round
+        - unplated
       name: Mounting Hole 3.1 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -85045,10 +85031,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -85056,31 +85042,11 @@ components:
       value: Standoff
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: mechanical_mounting_hole_1_mm_round_unplated
-      score: 0.4722
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_3_mm_round_unplated
-      score: 0.4722
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
-      score: 0.4648
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_mm_round_unplated
-      score: 0.4644
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_4_mm_round_unplated
-      score: 0.4644
-      reasons:
-      - same component family
-  category: other
-  category_source: unmatched_kicad_hint
-  category_name: Other
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
+  category: mounting_hole
+  category_source: oomp_populate
+  category_name: Mounting hole
   generated_directory: components/ST1
 - reference: ST2
   schematic:
@@ -85268,14 +85234,34 @@ components:
         name: Mounting Hole 3.1 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 3_1_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 3_1_mm
+        - round
+        - unplated
       name: Mounting Hole 3.1 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -85431,10 +85417,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -85442,31 +85428,11 @@ components:
       value: Standoff
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: mechanical_mounting_hole_1_mm_round_unplated
-      score: 0.4722
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_3_mm_round_unplated
-      score: 0.4722
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
-      score: 0.4648
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_mm_round_unplated
-      score: 0.4644
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_4_mm_round_unplated
-      score: 0.4644
-      reasons:
-      - same component family
-  category: other
-  category_source: unmatched_kicad_hint
-  category_name: Other
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
+  category: mounting_hole
+  category_source: oomp_populate
+  category_name: Mounting hole
   generated_directory: components/ST2
 - reference: ST3
   schematic:
@@ -85654,14 +85620,34 @@ components:
         name: Mounting Hole 3.1 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 3_1_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 3_1_mm
+        - round
+        - unplated
       name: Mounting Hole 3.1 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -85817,10 +85803,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -85828,31 +85814,11 @@ components:
       value: Standoff
       mpn: null
     reasons:
-    - Component family was inferred, but package size was not.
-    candidates:
-    - oomp_id: mechanical_mounting_hole_1_mm_round_unplated
-      score: 0.4722
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_3_mm_round_unplated
-      score: 0.4722
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_2_mm_round_unplated
-      score: 0.4648
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_2_mm_round_unplated
-      score: 0.4644
-      reasons:
-      - same component family
-    - oomp_id: mechanical_mounting_hole_4_mm_round_unplated
-      score: 0.4644
-      reasons:
-      - same component family
-  category: other
-  category_source: unmatched_kicad_hint
-  category_name: Other
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
+  category: mounting_hole
+  category_source: oomp_populate
+  category_name: Mounting hole
   generated_directory: components/ST3
 - reference: U2
   schematic:
@@ -88329,21 +88295,21 @@ components:
     disagree_count: 0
     incomplete_count: 6
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
-    proposed_oomp_id: null
+    status: matched
+    accepted: true
+    oomp_id: electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s
+    confidence: 1.0
+    proposed_oomp_id: electronic_ic_so_16_audio_audio_player_my_semi_my1690x_16s
     inferred:
       kind: null
       package_size: null
       value: MY1690X-16S
       mpn: null
     reasons:
-    - No supported OOMP component family could be inferred.
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
     candidates: []
   category: ic
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: IC
   generated_directory: components/U2
 review_notes: []
@@ -88380,7 +88346,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
   component_reference: J1
-  component_oomp_id: null
+  component_oomp_id: electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs
   component_footprint: SparkFun-Connector:Audio_Jack_3.5mm_TRRS_SMD_RA
   component_side: front
   dedicated_footprint: false
@@ -88389,14 +88355,34 @@ mounting_holes:
     name: Mounting Hole 1.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 1_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 1_2_mm
+    - round
+    - unplated
   name: Mounting Hole 1.2 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -88441,7 +88427,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
   component_reference: J1
-  component_oomp_id: null
+  component_oomp_id: electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs
   component_footprint: SparkFun-Connector:Audio_Jack_3.5mm_TRRS_SMD_RA
   component_side: front
   dedicated_footprint: false
@@ -88450,14 +88436,34 @@ mounting_holes:
     name: Mounting Hole 1.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 1_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 1_2_mm
+    - round
+    - unplated
   name: Mounting Hole 1.2 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -88664,7 +88670,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_1_mm_round_unplated
   component_reference: J6
-  component_oomp_id: null
+  component_oomp_id: electronic_connector_micro_sd_push_push_micro_sd_external_pin
   component_footprint: SparkFun-Connector:microSD_External_Pin
   component_side: back
   dedicated_footprint: false
@@ -88745,7 +88751,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_1_mm_round_unplated
   component_reference: J6
-  component_oomp_id: null
+  component_oomp_id: electronic_connector_micro_sd_push_push_micro_sd_external_pin
   component_footprint: SparkFun-Connector:microSD_External_Pin
   component_side: back
   dedicated_footprint: false
@@ -88826,7 +88832,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
   component_reference: ST1
-  component_oomp_id: null
+  component_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
   component_footprint: SparkFun-Hardware:Standoff
   component_side: front
   dedicated_footprint: true
@@ -88835,14 +88841,34 @@ mounting_holes:
     name: Mounting Hole 3.1 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 3_1_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 3_1_mm
+    - round
+    - unplated
   name: Mounting Hole 3.1 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -88887,7 +88913,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
   component_reference: ST2
-  component_oomp_id: null
+  component_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
   component_footprint: SparkFun-Hardware:Standoff
   component_side: front
   dedicated_footprint: true
@@ -88896,14 +88922,34 @@ mounting_holes:
     name: Mounting Hole 3.1 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 3_1_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 3_1_mm
+    - round
+    - unplated
   name: Mounting Hole 3.1 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -88948,7 +88994,7 @@ mounting_holes:
   classification_reason: KiCad non-plated through-hole pad
   oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
   component_reference: ST3
-  component_oomp_id: null
+  component_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
   component_footprint: SparkFun-Hardware:Standoff
   component_side: front
   dedicated_footprint: true
@@ -88957,14 +89003,34 @@ mounting_holes:
     name: Mounting Hole 3.1 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 3_1_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 3_1_mm
+    - round
+    - unplated
   name: Mounting Hole 3.1 mm Round Unplated
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -88991,8 +89057,28 @@ mounting_hole_items:
     name: Mounting Hole 1.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 1_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 1_2_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -89041,7 +89127,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
       component_reference: J1
-      component_oomp_id: null
+      component_oomp_id: electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs
       component_footprint: SparkFun-Connector:Audio_Jack_3.5mm_TRRS_SMD_RA
       component_side: front
       dedicated_footprint: false
@@ -89050,14 +89136,34 @@ mounting_hole_items:
         name: Mounting Hole 1.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 1_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 1_2_mm
+        - round
+        - unplated
       name: Mounting Hole 1.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -89084,10 +89190,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -89120,8 +89226,28 @@ mounting_hole_items:
     name: Mounting Hole 1.2 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 1_2_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 1_2_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -89170,7 +89296,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
       component_reference: J1
-      component_oomp_id: null
+      component_oomp_id: electronic_connector_audio_jack_surface_mount_right_angle_trrs_3_5_mm_audio_jack_3_5_mm_trrs
       component_footprint: SparkFun-Connector:Audio_Jack_3.5mm_TRRS_SMD_RA
       component_side: front
       dedicated_footprint: false
@@ -89179,14 +89305,34 @@ mounting_hole_items:
         name: Mounting Hole 1.2 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 1_2_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 1_2_mm
+        - round
+        - unplated
       name: Mounting Hole 1.2 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -89213,10 +89359,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_1_2_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -89657,7 +89803,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_1_mm_round_unplated
       component_reference: J6
-      component_oomp_id: null
+      component_oomp_id: electronic_connector_micro_sd_push_push_micro_sd_external_pin
       component_footprint: SparkFun-Connector:microSD_External_Pin
       component_side: back
       dedicated_footprint: false
@@ -89826,7 +89972,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_1_mm_round_unplated
       component_reference: J6
-      component_oomp_id: null
+      component_oomp_id: electronic_connector_micro_sd_push_push_micro_sd_external_pin
       component_footprint: SparkFun-Connector:microSD_External_Pin
       component_side: back
       dedicated_footprint: false
@@ -89925,8 +90071,28 @@ mounting_hole_items:
     name: Mounting Hole 3.1 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 3_1_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 3_1_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -89975,7 +90141,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
       component_reference: ST1
-      component_oomp_id: null
+      component_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
       component_footprint: SparkFun-Hardware:Standoff
       component_side: front
       dedicated_footprint: true
@@ -89984,14 +90150,34 @@ mounting_hole_items:
         name: Mounting Hole 3.1 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 3_1_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 3_1_mm
+        - round
+        - unplated
       name: Mounting Hole 3.1 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -90018,10 +90204,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -90054,8 +90240,28 @@ mounting_hole_items:
     name: Mounting Hole 3.1 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 3_1_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 3_1_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -90104,7 +90310,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
       component_reference: ST2
-      component_oomp_id: null
+      component_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
       component_footprint: SparkFun-Hardware:Standoff
       component_side: front
       dedicated_footprint: true
@@ -90113,14 +90319,34 @@ mounting_hole_items:
         name: Mounting Hole 3.1 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 3_1_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 3_1_mm
+        - round
+        - unplated
       name: Mounting Hole 3.1 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -90147,10 +90373,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole
@@ -90183,8 +90409,28 @@ mounting_hole_items:
     name: Mounting Hole 3.1 mm Round Unplated
     class: mechanical
     type: mounting_hole
-    taxonomy: []
-    taxonomy_path: []
+    taxonomy:
+    - level: 1
+      key: taxonomy_1
+      value: mechanical
+    - level: 2
+      key: taxonomy_2
+      value: mounting_hole
+    - level: 3
+      key: taxonomy_3
+      value: 3_1_mm
+    - level: 4
+      key: taxonomy_4
+      value: round
+    - level: 5
+      key: taxonomy_5
+      value: unplated
+    taxonomy_path:
+    - mechanical
+    - mounting_hole
+    - 3_1_mm
+    - round
+    - unplated
   schematic:
     available: false
     units: []
@@ -90233,7 +90479,7 @@ mounting_hole_items:
       classification_reason: KiCad non-plated through-hole pad
       oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
       component_reference: ST3
-      component_oomp_id: null
+      component_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
       component_footprint: SparkFun-Hardware:Standoff
       component_side: front
       dedicated_footprint: true
@@ -90242,14 +90488,34 @@ mounting_hole_items:
         name: Mounting Hole 3.1 mm Round Unplated
         class: mechanical
         type: mounting_hole
-        taxonomy: []
-        taxonomy_path: []
+        taxonomy:
+        - level: 1
+          key: taxonomy_1
+          value: mechanical
+        - level: 2
+          key: taxonomy_2
+          value: mounting_hole
+        - level: 3
+          key: taxonomy_3
+          value: 3_1_mm
+        - level: 4
+          key: taxonomy_4
+          value: round
+        - level: 5
+          key: taxonomy_5
+          value: unplated
+        taxonomy_path:
+        - mechanical
+        - mounting_hole
+        - 3_1_mm
+        - round
+        - unplated
       name: Mounting Hole 3.1 mm Round Unplated
       oomp:
-        status: unmatched
-        accepted: false
-        oomp_id: ''
-        confidence: 0.0
+        status: matched
+        accepted: true
+        oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+        confidence: 1.0
         proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
         inferred:
           kind: mounting_hole
@@ -90276,10 +90542,10 @@ mounting_hole_items:
           y: 0.0
     connected_components: []
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: ''
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
+    confidence: 1.0
     proposed_oomp_id: mechanical_mounting_hole_3_1_mm_round_unplated
     inferred:
       kind: mounting_hole

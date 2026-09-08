@@ -11,6 +11,8 @@ projects:
     git_ref: main
     sparse_checkout: true
     project_file_path: Hardware/Qwiic 1x1/SparkFun_LIS3DH
+    project_match_overrides:
+      U1: electronic_sensor_accelerometer_lga_16_st_lis3dhtr
   - board: lis3dh_qwiic_micro
     board_name: LIS3DH Qwiic Micro
     board_url: https://github.com/sparkfun/SparkFun_Triple_Axis_Acclerometer-LIS3DH/tree/main/Hardware/Micro
@@ -18,6 +20,8 @@ projects:
     git_ref: main
     sparse_checkout: true
     project_file_path: Hardware/Micro/SparkFun_LIS3DH_Micro
+    project_match_overrides:
+      U1: electronic_sensor_accelerometer_lga_16_st_lis3dhtr
 - github_repository: ADXL345_Breakout
   github_url: https://github.com/sparkfun/ADXL345_Breakout
   repository_url: https://github.com/sparkfun/ADXL345_Breakout.git
@@ -32,6 +36,9 @@ projects:
     project_file_folder: Hardware
     project_file_basename: ADXL345_Breakout
     project_file_path: Hardware/ADXL345_Breakout
+    project_match_overrides:
+      U2: electronic_sensor_accelerometer_lga_14_analog_devices_adxl345
+      JP1: electronic_connector_header_2_54_mm_pitch_through_hole_8_pin
 - github_repository: SparkFun_Particulate_Matter_Sensor_Breakout_BMV080
   github_url: https://github.com/sparkfun/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080
   repository_url: https://github.com/sparkfun/SparkFun_Particulate_Matter_Sensor_Breakout_BMV080.git
