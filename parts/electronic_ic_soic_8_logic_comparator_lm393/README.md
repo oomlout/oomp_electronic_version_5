@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_8_logic_comparator_lm393`
 
-IC Logic Comparator LM393 SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+IC Logic Comparator LM393 SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
 ![IC Logic Comparator LM393 SOIC_8 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC Logic Comparator LM393 SOIC_8 is an OOMP electronic ic definition. It uses th
 | OOMP ID | `electronic_ic_soic_8_logic_comparator_lm393` |
 | Type | Ic |
 | Package / style | soic 8 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.9 &#x00D7; 3.9 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -33,12 +34,27 @@ IC Logic Comparator LM393 SOIC_8 is an OOMP electronic ic definition. It uses th
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 1.75 mm |
+| Length | 4.9 mm |
+| Width | 3.9 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | OUT1 | signal |
+| 2 | IN1_MINUS | signal |
+| 3 | IN1_PLUS | signal |
+| 4 | GND | gnd |
+| 5 | IN2_PLUS | signal |
+| 6 | IN2_MINUS | signal |
+| 7 | OUT2 | signal |
+| 8 | VCC | power |
 
 
 

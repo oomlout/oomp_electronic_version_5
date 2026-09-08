@@ -1359,7 +1359,13 @@ def process_project(project_directory, parts_directory, output_directory=None):
     for component in components:
         component["oomp"] = match_component(part_index, component, overrides=overrides, blocked=blocked)
         matched_id = component["oomp"].get("oomp_id")
-        if matched_id in part_index.by_id:
+        if component["oomp"].get("status") == "not_applicable":
+            # Board artwork, logos, fiducials and other excluded symbols are
+            # deliberately not catalogue components.  Keep them out of the
+            # IC/connector hints derived from their reference prefix.
+            component["category"] = "other"
+            component["category_source"] = "not_applicable"
+        elif matched_id in part_index.by_id:
             if matched_id not in category_metadata:
                 working_path = Path(part_index.by_id[matched_id]["working_yaml"])
                 category_metadata[matched_id] = yaml.safe_load(working_path.read_text(encoding="utf-8")) or {}

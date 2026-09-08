@@ -48,9 +48,10 @@ KNOWN_PART_ALIASES = {
     "tcrt5000l": "electronic_sensor_tcrt5000_4_pin_vishay_tcrt5000l",
     "am312": "electronic_sensor_pir_3_pin_am312",
     "apds_9960": "electronic_sensor_apds_9960_broadcom_apds_9960",
-    "easyc_smd": "electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb",
-    # Soldered's easyC socket is the same 1 mm 4-pin JST SH connector the
-    # Qwiic/STEMMA QT boards use, so every board maps to one catalogue part.
+    # Soldered's easyC socket is the 1.25 mm JST GH part.  Qwiic/STEMMA QT
+    # uses the separate 1.00 mm JST SH family and must not be conflated with
+    # it merely because both are four-pin board connectors.
+    "easyc_smd": "electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf",
     "u_fl": "electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1",
     "sma_edge": "electronic_connector_sma_edge_mount",
     "kf235_5_0_2p": "electronic_connector_terminal_block_5_mm_pitch_through_hole_2_pin_kf235_5_0_2p",

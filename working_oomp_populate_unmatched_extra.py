@@ -61,6 +61,24 @@ def _soic(names, body_length, body_width, overall_width, pad_width=0.42):
     }
 
 
+def _sot363():
+    """Official SOT-363/SC-88 top view: 1/2/3 below, 6/5/4 above."""
+    body_w, body_h = 2.0, 1.25
+    overall_w, overall_h = 2.0, 2.15
+    pad_length = (overall_h - body_h) / 2
+    pins = []
+    for number, x in zip(("1", "2", "3"), (-0.65, 0.0, 0.65)):
+        pins.append([number, "bottom", x, -body_h / 2 - pad_length / 2, 0.30, pad_length])
+    for number, x in zip(("6", "5", "4"), (-0.65, 0.0, 0.65)):
+        pins.append([number, "top", x, body_h / 2 + pad_length / 2, 0.30, pad_length])
+    return {
+        "overall": [overall_w, overall_h],
+        "body": [body_w, body_h],
+        "pins": pins,
+        "pin_one": [-0.65, -body_h / 2 - pad_length / 2],
+    }
+
+
 def _qfp(names, body=(7.0, 7.0), overall=(9.7, 9.7), pad_width=0.32):
     """Create a square gull-wing package with clockwise pin numbering."""
     count = len(names)
@@ -267,6 +285,31 @@ def main(**kwargs):
     for current, data in exact.items():
         if current in extras_dict:
             _set(extras_dict[current], dimensions=data["dimensions"], pins=data["pins"], drawing=data["drawing"], reference=data.get("reference"), url=data.get("url"))
+
+    # Keep the generic dual MOSFET's package drawing explicit.  The identity
+    # is intentionally generic, but its physical SC-70-6/SOT-363 outline is
+    # not: 2.0 x 1.25 mm body, 0.65 mm pitch, six terminals.
+    sot363_generic = extras_dict.get("electronic_transistor_sot_363_6_mosfet_n_channel_dual")
+    if sot363_generic is not None:
+        sot363_generic["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.95}
+        sot363_generic["package_drawing"] = _sot363()
+        sot363_generic["transistor_dimensions_mm"] = {
+            "body_length_nominal": 2.0,
+            "body_length_minimum": 1.8,
+            "body_length_maximum": 2.2,
+            "body_width_nominal": 1.25,
+            "body_width_minimum": 1.15,
+            "body_width_maximum": 1.35,
+            "overall_width_nominal": 2.1,
+            "overall_width_minimum": 2.0,
+            "overall_width_maximum": 2.2,
+            "pin_pitch": 0.65,
+        }
+        sot363_generic["dimension_reference"] = {
+            "document": "Nexperia SOT363 package outline",
+            "notes": "SC-88/SOT-363: 2.0 mm nominal body length, 1.25 mm body width, 0.65 mm pitch, 2.1 mm nominal lead span.",
+        }
+        sot363_generic["datasheet_url"] = "https://assets.nexperia.com/documents/package-information/SOT363.pdf"
 
     # Package-accurate sensor bodies and the small sensor/module families.
     sensors = {

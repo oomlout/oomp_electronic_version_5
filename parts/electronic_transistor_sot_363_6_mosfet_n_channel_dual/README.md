@@ -33,6 +33,7 @@ Transistor Mosfet N Channel Dual SOT 363 6 is an OOMP electronic transistor defi
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.95 mm |
 | Length | 2.0 mm |
 | Width | 1.25 mm |
 
