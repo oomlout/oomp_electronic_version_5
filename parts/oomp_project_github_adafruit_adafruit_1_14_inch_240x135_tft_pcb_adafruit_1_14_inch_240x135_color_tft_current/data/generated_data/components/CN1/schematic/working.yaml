@@ -1,0 +1,645 @@
+available: true
+units:
+- reference: CN1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 97b7cfbf-996c-4260-bfec-0bfe18a98a99
+  library_id: kicad_file-eagle-import:MICROSD
+  unit: 1
+  body_style: 1
+  position:
+    x: 71.12
+    y: 106.68
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: CN1
+    Value: MICROSD
+    Footprint: kicad_file:MICROSD
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: DAT2
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 111.76
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '2'
+    name: CS
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 106.68
+    net: SDCS_3V
+    net_aliases:
+    - SDCS_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: '10'
+      pin_name: 4Y
+  - number: '3'
+    name: DATA_IN
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 101.6
+    net: MOSI_3V
+    net_aliases:
+    - MOSI_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: DISP1
+      pin_number: '3'
+      pin_name: DATA
+    - reference: U3
+      pin_number: '6'
+      pin_name: 3Y
+  - number: '4'
+    name: SD_VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -10.16
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 116.84
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$12'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$13'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$15'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$20'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$21'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$26'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$30'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$31'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: DISP1
+      pin_number: '10'
+      pin_name: VDD
+    - reference: DISP1
+      pin_number: '12'
+      pin_name: LEDA
+    - reference: IC5
+      pin_number: '3'
+      pin_name: VCC
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R8
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U2
+      pin_number: '5'
+      pin_name: OUT
+    - reference: U3
+      pin_number: '1'
+      pin_name: VCC
+  - number: '5'
+    name: SCLK
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 104.14
+    net: SCK_3V
+    net_aliases:
+    - SCK_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: DISP1
+      pin_number: '4'
+      pin_name: CLOCK
+    - reference: U3
+      pin_number: '4'
+      pin_name: 2Y
+  - number: '6'
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -12.7
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 119.38
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$8'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$22'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$25'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$27'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$29'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: CN1
+      pin_number: MT1
+      pin_name: GND
+    - reference: CN1
+      pin_number: MT2
+      pin_name: GND
+    - reference: DISP1
+      pin_number: '8'
+      pin_name: GND
+    - reference: DISP1
+      pin_number: '13'
+      pin_name: GND
+    - reference: IC5
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: Q1
+      pin_number: '2'
+      pin_name: E
+    - reference: U2
+      pin_number: '2'
+      pin_name: GND
+    - reference: U3
+      pin_number: '8'
+      pin_name: GND
+  - number: '7'
+    name: DATA_OUT
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 7.62
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 99.06
+    net: MISO_3V
+    net_aliases:
+    - MISO_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '5'
+      pin_name: '5'
+  - number: '8'
+    name: DAT1
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 109.22
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: CD1
+    name: CARD_DETECT
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 88.9
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: CD2
+    name: CARD_DETECT1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 15.24
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 91.44
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: MT1
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -20.32
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 127.0
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$8'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$22'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$25'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$27'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$29'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: CN1
+      pin_number: '6'
+      pin_name: GND
+    - reference: CN1
+      pin_number: MT2
+      pin_name: GND
+    - reference: DISP1
+      pin_number: '8'
+      pin_name: GND
+    - reference: DISP1
+      pin_number: '13'
+      pin_name: GND
+    - reference: IC5
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: Q1
+      pin_number: '2'
+      pin_name: E
+    - reference: U2
+      pin_number: '2'
+      pin_name: GND
+    - reference: U3
+      pin_number: '8'
+      pin_name: GND
+  - number: MT2
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 124.46
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$8'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$22'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$25'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$27'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$29'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: CN1
+      pin_number: '6'
+      pin_name: GND
+    - reference: CN1
+      pin_number: MT1
+      pin_name: GND
+    - reference: DISP1
+      pin_number: '8'
+      pin_name: GND
+    - reference: DISP1
+      pin_number: '13'
+      pin_name: GND
+    - reference: IC5
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: Q1
+      pin_number: '2'
+      pin_name: E
+    - reference: U2
+      pin_number: '2'
+      pin_name: GND
+    - reference: U3
+      pin_number: '8'
+      pin_name: GND
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -12.827
+        y: -25.527
+      max:
+        x: 12.827
+        y: 20.447
+      width: 25.654
+      height: 45.974
+      center:
+        x: 0.0
+        y: -2.54
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 58.293
+        y: 86.233
+      max:
+        x: 83.947
+        y: 132.207
+      width: 25.654
+      height: 45.974
+      center:
+        x: 71.12
+        y: 109.22
+  warnings: []
+connected_components:
+- reference: '#U$5'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$8'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$12'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$13'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$15'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$17'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$20'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$21'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$22'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$25'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$26'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$27'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$29'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$30'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$31'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: C1
+  pin_number: '2'
+  pin_name: '2'
+- reference: C2
+  pin_number: '2'
+  pin_name: '2'
+- reference: C3
+  pin_number: '1'
+  pin_name: '1'
+- reference: C3
+  pin_number: '2'
+  pin_name: '2'
+- reference: CN1
+  pin_number: '6'
+  pin_name: GND
+- reference: CN1
+  pin_number: MT1
+  pin_name: GND
+- reference: CN1
+  pin_number: MT2
+  pin_name: GND
+- reference: DISP1
+  pin_number: '10'
+  pin_name: VDD
+- reference: DISP1
+  pin_number: '12'
+  pin_name: LEDA
+- reference: DISP1
+  pin_number: '13'
+  pin_name: GND
+- reference: DISP1
+  pin_number: '3'
+  pin_name: DATA
+- reference: DISP1
+  pin_number: '4'
+  pin_name: CLOCK
+- reference: DISP1
+  pin_number: '8'
+  pin_name: GND
+- reference: IC5
+  pin_number: '1'
+  pin_name: GND
+- reference: IC5
+  pin_number: '3'
+  pin_name: VCC
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '3'
+  pin_name: '3'
+- reference: JP1
+  pin_number: '5'
+  pin_name: '5'
+- reference: Q1
+  pin_number: '2'
+  pin_name: E
+- reference: R2
+  pin_number: '2'
+  pin_name: '2'
+- reference: R8
+  pin_number: '2'
+  pin_name: '2'
+- reference: U2
+  pin_number: '2'
+  pin_name: GND
+- reference: U2
+  pin_number: '5'
+  pin_name: OUT
+- reference: U3
+  pin_number: '1'
+  pin_name: VCC
+- reference: U3
+  pin_number: '10'
+  pin_name: 4Y
+- reference: U3
+  pin_number: '4'
+  pin_name: 2Y
+- reference: U3
+  pin_number: '6'
+  pin_name: 3Y
+- reference: U3
+  pin_number: '8'
+  pin_name: GND

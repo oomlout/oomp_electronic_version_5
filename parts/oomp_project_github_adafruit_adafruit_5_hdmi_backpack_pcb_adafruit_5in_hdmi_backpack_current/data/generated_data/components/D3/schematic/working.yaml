@@ -1,0 +1,129 @@
+available: true
+units:
+- reference: D3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 94d06c79-3112-4c32-8fef-53b5a54e643c
+  library_id: kicad_file-eagle-import:DIODESOD-323
+  unit: 1
+  body_style: 1
+  position:
+    x: 309.88
+    y: 210.82
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D3
+    Value: 1N4148
+    Footprint: kicad_file:SOD-323
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 309.88
+      y: 208.28
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: BACKLITEPWM0
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R18
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U4
+      pin_number: '4'
+      pin_name: SHDN
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 309.88
+      y: 213.36
+    net: ACTIVE
+    net_aliases:
+    - ACTIVE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '31'
+      pin_name: MS
+    - reference: R21
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '8'
+      pin_name: SCDT
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -1.397
+      max:
+        x: 1.397
+        y: 1.397
+      width: 2.794
+      height: 2.794
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 308.483
+        y: 209.423
+      max:
+        x: 311.277
+        y: 212.217
+      width: 2.794
+      height: 2.794
+      center:
+        x: 309.88
+        y: 210.82
+  warnings: []
+connected_components:
+- reference: BACKLITEPWM0
+  pin_number: '1'
+  pin_name: '1'
+- reference: J1
+  pin_number: '31'
+  pin_name: MS
+- reference: R18
+  pin_number: '2'
+  pin_name: '2'
+- reference: R21
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '8'
+  pin_name: SCDT
+- reference: U4
+  pin_number: '4'
+  pin_name: SHDN

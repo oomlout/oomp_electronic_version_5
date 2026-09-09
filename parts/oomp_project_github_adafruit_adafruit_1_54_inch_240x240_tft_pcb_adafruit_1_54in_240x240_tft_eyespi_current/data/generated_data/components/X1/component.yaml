@@ -1,0 +1,2218 @@
+reference: X1
+schematic:
+  available: true
+  units:
+  - reference: X1
+    source_file: data/kicad_file.kicad_sch
+    uuid: d5dd170d-9c3c-4b66-882a-dfda0562f1eb
+    library_id: kicad_file-eagle-import:MICROSD
+    unit: 1
+    body_style: 1
+    position:
+      x: 101.6
+      y: 116.84
+      rotation: 0.0
+      mirror: y
+      units: mm
+    properties:
+      Reference: X1
+      Value: MICROSD
+      Footprint: kicad_file:MICROSD
+      Datasheet: ''
+      Description: ''
+      JLC_ROTATION: '90'
+      LCSC: C125617
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: DAT2
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: -5.08
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 121.92
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '2'
+      name: CS
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 116.84
+      net: CARDCS_3V
+      net_aliases:
+      - CARDCS_3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U1
+        pin_number: '10'
+        pin_name: 4Y
+    - number: '3'
+      name: DATA_IN
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: 5.08
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 111.76
+      net: MOSI_3V
+      net_aliases:
+      - MOSI_3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: TFT1
+        pin_number: '21'
+        pin_name: SDA
+      - reference: U1
+        pin_number: '12'
+        pin_name: 5Y
+    - number: '4'
+      name: SD_VDD
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: -10.16
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 127.0
+      net: +3V3
+      net_aliases:
+      - +3V3
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#+3V1'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V2'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V3'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V4'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V6'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V7'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V8'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V9'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V10'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V11'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V12'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: '#+3V13'
+        pin_number: '1'
+        pin_name: +3V3
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C3
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: JP2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: TFT1
+        pin_number: '1'
+        pin_name: LEDA
+      - reference: TFT1
+        pin_number: '3'
+        pin_name: IM2
+      - reference: TFT1
+        pin_number: '4'
+        pin_name: IM1
+      - reference: TFT1
+        pin_number: '6'
+        pin_name: VCI
+      - reference: U1
+        pin_number: '1'
+        pin_name: VCC
+      - reference: U2
+        pin_number: '5'
+        pin_name: OUT
+    - number: '5'
+      name: SCLK
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: 2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 114.3
+      net: SCK_3V
+      net_aliases:
+      - SCK_3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: TFT1
+        pin_number: '17'
+        pin_name: RS/CLK
+      - reference: U1
+        pin_number: '4'
+        pin_name: 2Y
+    - number: '6'
+      name: SD_VSS
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: -12.7
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 129.54
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: IC4
+        pin_number: '1'
+        pin_name: GND
+      - reference: JP2
+        pin_number: '3'
+        pin_name: '3'
+      - reference: Q3
+        pin_number: '2'
+        pin_name: S
+      - reference: TFT1
+        pin_number: '5'
+        pin_name: IM0
+      - reference: TFT1
+        pin_number: '7'
+        pin_name: DB7
+      - reference: TFT1
+        pin_number: '8'
+        pin_name: DB6
+      - reference: TFT1
+        pin_number: '9'
+        pin_name: DB5
+      - reference: TFT1
+        pin_number: '10'
+        pin_name: DB4
+      - reference: TFT1
+        pin_number: '11'
+        pin_name: DB3
+      - reference: TFT1
+        pin_number: '12'
+        pin_name: DB2
+      - reference: TFT1
+        pin_number: '13'
+        pin_name: DB1
+      - reference: TFT1
+        pin_number: '14'
+        pin_name: DB0
+      - reference: TFT1
+        pin_number: '15'
+        pin_name: ~{RD}
+      - reference: TFT1
+        pin_number: '22'
+        pin_name: GND
+      - reference: TFT1
+        pin_number: SUPPORT1
+        pin_name: GND
+      - reference: TFT1
+        pin_number: SUPPORT2
+        pin_name: GND
+      - reference: U1
+        pin_number: '8'
+        pin_name: GND
+      - reference: U2
+        pin_number: '2'
+        pin_name: GND
+      - reference: X1
+        pin_number: MT1
+        pin_name: MOUNTING
+      - reference: X1
+        pin_number: MT2
+        pin_name: MOUNTING
+      - reference: X2
+        pin_number: '3'
+        pin_name: GND
+      - reference: X2
+        pin_number: SUPPORT1
+        pin_name: GND
+      - reference: X2
+        pin_number: SUPPORT2
+        pin_name: GND
+    - number: '7'
+      name: DATA_OUT
+      electrical_type: output
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: 7.62
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 109.22
+      net: MISO
+      net_aliases:
+      - MISO
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP2
+        pin_number: '5'
+        pin_name: '5'
+      - reference: X2
+        pin_number: '6'
+        pin_name: MISO
+    - number: '8'
+      name: DAT1
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: -2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 119.38
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: CD1
+      name: CARD_DETECT
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: 17.78
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 99.06
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: X1
+        pin_number: CD2
+        pin_name: CARD_DETECT
+    - number: CD2
+      name: CARD_DETECT
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: 17.78
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 99.06
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: X1
+        pin_number: CD1
+        pin_name: CARD_DETECT
+    - number: MT1
+      name: MOUNTING
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: -17.78
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 134.62
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: IC4
+        pin_number: '1'
+        pin_name: GND
+      - reference: JP2
+        pin_number: '3'
+        pin_name: '3'
+      - reference: Q3
+        pin_number: '2'
+        pin_name: S
+      - reference: TFT1
+        pin_number: '5'
+        pin_name: IM0
+      - reference: TFT1
+        pin_number: '7'
+        pin_name: DB7
+      - reference: TFT1
+        pin_number: '8'
+        pin_name: DB6
+      - reference: TFT1
+        pin_number: '9'
+        pin_name: DB5
+      - reference: TFT1
+        pin_number: '10'
+        pin_name: DB4
+      - reference: TFT1
+        pin_number: '11'
+        pin_name: DB3
+      - reference: TFT1
+        pin_number: '12'
+        pin_name: DB2
+      - reference: TFT1
+        pin_number: '13'
+        pin_name: DB1
+      - reference: TFT1
+        pin_number: '14'
+        pin_name: DB0
+      - reference: TFT1
+        pin_number: '15'
+        pin_name: ~{RD}
+      - reference: TFT1
+        pin_number: '22'
+        pin_name: GND
+      - reference: TFT1
+        pin_number: SUPPORT1
+        pin_name: GND
+      - reference: TFT1
+        pin_number: SUPPORT2
+        pin_name: GND
+      - reference: U1
+        pin_number: '8'
+        pin_name: GND
+      - reference: U2
+        pin_number: '2'
+        pin_name: GND
+      - reference: X1
+        pin_number: '6'
+        pin_name: SD_VSS
+      - reference: X1
+        pin_number: MT2
+        pin_name: MOUNTING
+      - reference: X2
+        pin_number: '3'
+        pin_name: GND
+      - reference: X2
+        pin_number: SUPPORT1
+        pin_name: GND
+      - reference: X2
+        pin_number: SUPPORT2
+        pin_name: GND
+    - number: MT2
+      name: MOUNTING
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -15.24
+        y: -17.78
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 116.84
+        y: 134.62
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND13'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$18'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: IC4
+        pin_number: '1'
+        pin_name: GND
+      - reference: JP2
+        pin_number: '3'
+        pin_name: '3'
+      - reference: Q3
+        pin_number: '2'
+        pin_name: S
+      - reference: TFT1
+        pin_number: '5'
+        pin_name: IM0
+      - reference: TFT1
+        pin_number: '7'
+        pin_name: DB7
+      - reference: TFT1
+        pin_number: '8'
+        pin_name: DB6
+      - reference: TFT1
+        pin_number: '9'
+        pin_name: DB5
+      - reference: TFT1
+        pin_number: '10'
+        pin_name: DB4
+      - reference: TFT1
+        pin_number: '11'
+        pin_name: DB3
+      - reference: TFT1
+        pin_number: '12'
+        pin_name: DB2
+      - reference: TFT1
+        pin_number: '13'
+        pin_name: DB1
+      - reference: TFT1
+        pin_number: '14'
+        pin_name: DB0
+      - reference: TFT1
+        pin_number: '15'
+        pin_name: ~{RD}
+      - reference: TFT1
+        pin_number: '22'
+        pin_name: GND
+      - reference: TFT1
+        pin_number: SUPPORT1
+        pin_name: GND
+      - reference: TFT1
+        pin_number: SUPPORT2
+        pin_name: GND
+      - reference: U1
+        pin_number: '8'
+        pin_name: GND
+      - reference: U2
+        pin_number: '2'
+        pin_name: GND
+      - reference: X1
+        pin_number: '6'
+        pin_name: SD_VSS
+      - reference: X1
+        pin_number: MT1
+        pin_name: MOUNTING
+      - reference: X2
+        pin_number: '3'
+        pin_name: GND
+      - reference: X2
+        pin_number: SUPPORT1
+        pin_name: GND
+      - reference: X2
+        pin_number: SUPPORT2
+        pin_name: GND
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -12.827
+          y: -25.527
+        max:
+          x: 12.827
+          y: 20.447
+        width: 25.654
+        height: 45.974
+        center:
+          x: 0.0
+          y: -2.54
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 88.773
+          y: 96.393
+        max:
+          x: 114.427
+          y: 142.367
+        width: 25.654
+        height: 45.974
+        center:
+          x: 101.6
+          y: 119.38
+    warnings: []
+  connected_components:
+  - reference: '#+3V1'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V2'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V3'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V4'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V6'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V7'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V8'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V9'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V10'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V11'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V12'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#+3V13'
+    pin_number: '1'
+    pin_name: +3V3
+  - reference: '#GND1'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND2'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND3'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND4'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND5'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND6'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND7'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND8'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND9'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND11'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND12'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND13'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#U$11'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#U$18'
+    pin_number: '1'
+    pin_name: GND
+  - reference: C1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C2
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C3
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C4
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C4
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C5
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C5
+    pin_number: '2'
+    pin_name: '2'
+  - reference: IC4
+    pin_number: '1'
+    pin_name: GND
+  - reference: JP2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: JP2
+    pin_number: '3'
+    pin_name: '3'
+  - reference: JP2
+    pin_number: '5'
+    pin_name: '5'
+  - reference: Q3
+    pin_number: '2'
+    pin_name: S
+  - reference: R3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: TFT1
+    pin_number: '1'
+    pin_name: LEDA
+  - reference: TFT1
+    pin_number: '10'
+    pin_name: DB4
+  - reference: TFT1
+    pin_number: '11'
+    pin_name: DB3
+  - reference: TFT1
+    pin_number: '12'
+    pin_name: DB2
+  - reference: TFT1
+    pin_number: '13'
+    pin_name: DB1
+  - reference: TFT1
+    pin_number: '14'
+    pin_name: DB0
+  - reference: TFT1
+    pin_number: '15'
+    pin_name: ~{RD}
+  - reference: TFT1
+    pin_number: '17'
+    pin_name: RS/CLK
+  - reference: TFT1
+    pin_number: '21'
+    pin_name: SDA
+  - reference: TFT1
+    pin_number: '22'
+    pin_name: GND
+  - reference: TFT1
+    pin_number: '3'
+    pin_name: IM2
+  - reference: TFT1
+    pin_number: '4'
+    pin_name: IM1
+  - reference: TFT1
+    pin_number: '5'
+    pin_name: IM0
+  - reference: TFT1
+    pin_number: '6'
+    pin_name: VCI
+  - reference: TFT1
+    pin_number: '7'
+    pin_name: DB7
+  - reference: TFT1
+    pin_number: '8'
+    pin_name: DB6
+  - reference: TFT1
+    pin_number: '9'
+    pin_name: DB5
+  - reference: TFT1
+    pin_number: SUPPORT1
+    pin_name: GND
+  - reference: TFT1
+    pin_number: SUPPORT2
+    pin_name: GND
+  - reference: U1
+    pin_number: '1'
+    pin_name: VCC
+  - reference: U1
+    pin_number: '10'
+    pin_name: 4Y
+  - reference: U1
+    pin_number: '12'
+    pin_name: 5Y
+  - reference: U1
+    pin_number: '4'
+    pin_name: 2Y
+  - reference: U1
+    pin_number: '8'
+    pin_name: GND
+  - reference: U2
+    pin_number: '2'
+    pin_name: GND
+  - reference: U2
+    pin_number: '5'
+    pin_name: OUT
+  - reference: X1
+    pin_number: '6'
+    pin_name: SD_VSS
+  - reference: X1
+    pin_number: CD1
+    pin_name: CARD_DETECT
+  - reference: X1
+    pin_number: CD2
+    pin_name: CARD_DETECT
+  - reference: X1
+    pin_number: MT1
+    pin_name: MOUNTING
+  - reference: X1
+    pin_number: MT2
+    pin_name: MOUNTING
+  - reference: X2
+    pin_number: '3'
+    pin_name: GND
+  - reference: X2
+    pin_number: '6'
+    pin_name: MISO
+  - reference: X2
+    pin_number: SUPPORT1
+    pin_name: GND
+  - reference: X2
+    pin_number: SUPPORT2
+    pin_name: GND
+pcb:
+  reference: X1
+  value: MICROSD
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 91df0314-e23a-4020-9d17-bef3616921e9
+  library_id: Adafruit 1.54in 240x240 TFT EYESPI-import-fps:MICROSD
+  layer: F.Cu
+  side: front
+  position:
+    x: 3.302
+    y: -23.495
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: X1
+    Value: MICROSD
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.761
+      y: 3.147
+      rotation: -90.0
+    position:
+      x: 0.155
+      y: -21.734
+    placed_rotation: 0.0
+    size:
+      x: 0.7
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.011
+          y: 2.797
+        max:
+          x: 2.511
+          y: 3.497
+        width: 1.5
+        height: 0.7
+        center:
+          x: 1.761
+          y: 3.147
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -0.195
+          y: -22.484
+        max:
+          x: 0.505
+          y: -20.984
+        width: 0.7
+        height: 1.5
+        center:
+          x: 0.155
+          y: -21.734
+    plating: null
+    is_mounting_hole: false
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.661
+      y: 2.747
+      rotation: -90.0
+    position:
+      x: 0.555
+      y: -22.834
+    placed_rotation: 0.0
+    size:
+      x: 0.7
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: CARDCS_3V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.089
+          y: 2.397
+        max:
+          x: 1.411
+          y: 3.097
+        width: 1.5
+        height: 0.7
+        center:
+          x: 0.661
+          y: 2.747
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 0.205
+          y: -23.584
+        max:
+          x: 0.905
+          y: -22.084
+        width: 0.7
+        height: 1.5
+        center:
+          x: 0.555
+          y: -22.834
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U1
+      pad_number: '10'
+  - number: '3'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.439
+      y: 3.147
+      rotation: -90.0
+    position:
+      x: 0.155
+      y: -23.934
+    placed_rotation: 0.0
+    size:
+      x: 0.7
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: MOSI_3V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.189
+          y: 2.797
+        max:
+          x: 0.311
+          y: 3.497
+        width: 1.5
+        height: 0.7
+        center:
+          x: -0.439
+          y: 3.147
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -0.195
+          y: -24.684
+        max:
+          x: 0.505
+          y: -23.184
+        width: 0.7
+        height: 1.5
+        center:
+          x: 0.155
+          y: -23.934
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: TFT1
+      pad_number: '21'
+    - reference: U1
+      pad_number: '12'
+  - number: '4'
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.539
+      y: 3.547
+      rotation: -90.0
+    position:
+      x: -0.245
+      y: -25.034
+    placed_rotation: 0.0
+    size:
+      x: 0.7
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: +3V3
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.289
+          y: 3.197
+        max:
+          x: -0.789
+          y: 3.897
+        width: 1.5
+        height: 0.7
+        center:
+          x: -1.539
+          y: 3.547
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -0.595
+          y: -25.784
+        max:
+          x: 0.105
+          y: -24.284
+        width: 0.7
+        height: 1.5
+        center:
+          x: -0.245
+          y: -25.034
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C2
+      pad_number: '1'
+    - reference: C3
+      pad_number: '1'
+    - reference: C4
+      pad_number: '1'
+    - reference: C5
+      pad_number: '1'
+    - reference: JP2
+      pad_number: '2'
+    - reference: R3
+      pad_number: '2'
+    - reference: TFT1
+      pad_number: '1'
+    - reference: TFT1
+      pad_number: '3'
+    - reference: TFT1
+      pad_number: '4'
+    - reference: TFT1
+      pad_number: '6'
+    - reference: U1
+      pad_number: '1'
+    - reference: U2
+      pad_number: '5'
+  - number: '5'
+    type: smd
+    shape: rect
+    local_position:
+      x: -2.639
+      y: 3.147
+      rotation: -90.0
+    position:
+      x: 0.155
+      y: -26.134
+    placed_rotation: 0.0
+    size:
+      x: 0.7
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: SCK_3V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -3.389
+          y: 2.797
+        max:
+          x: -1.889
+          y: 3.497
+        width: 1.5
+        height: 0.7
+        center:
+          x: -2.639
+          y: 3.147
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -0.195
+          y: -26.884
+        max:
+          x: 0.505
+          y: -25.384
+        width: 0.7
+        height: 1.5
+        center:
+          x: 0.155
+          y: -26.134
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: TFT1
+      pad_number: '17'
+    - reference: U1
+      pad_number: '4'
+  - number: '6'
+    type: smd
+    shape: rect
+    local_position:
+      x: -3.739
+      y: 3.547
+      rotation: -90.0
+    position:
+      x: -0.245
+      y: -27.234
+    placed_rotation: 0.0
+    size:
+      x: 0.7
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: GND
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -4.489
+          y: 3.197
+        max:
+          x: -2.989
+          y: 3.897
+        width: 1.5
+        height: 0.7
+        center:
+          x: -3.739
+          y: 3.547
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -0.595
+          y: -27.984
+        max:
+          x: 0.105
+          y: -26.484
+        width: 0.7
+        height: 1.5
+        center:
+          x: -0.245
+          y: -27.234
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '2'
+    - reference: C2
+      pad_number: '2'
+    - reference: C3
+      pad_number: '2'
+    - reference: C4
+      pad_number: '2'
+    - reference: C5
+      pad_number: '2'
+    - reference: IC4
+      pad_number: '1'
+    - reference: JP2
+      pad_number: '3'
+    - reference: Q3
+      pad_number: '2'
+    - reference: TFT1
+      pad_number: '5'
+    - reference: TFT1
+      pad_number: '7'
+    - reference: TFT1
+      pad_number: '8'
+    - reference: TFT1
+      pad_number: '9'
+    - reference: TFT1
+      pad_number: '10'
+    - reference: TFT1
+      pad_number: '11'
+    - reference: TFT1
+      pad_number: '12'
+    - reference: TFT1
+      pad_number: '13'
+    - reference: TFT1
+      pad_number: '14'
+    - reference: TFT1
+      pad_number: '15'
+    - reference: TFT1
+      pad_number: '22'
+    - reference: TFT1
+      pad_number: SUPPORT1
+    - reference: TFT1
+      pad_number: SUPPORT2
+    - reference: U1
+      pad_number: '8'
+    - reference: U2
+      pad_number: '2'
+    - reference: X1
+      pad_number: MT1
+    - reference: X1
+      pad_number: MT2
+    - reference: X2
+      pad_number: '3'
+    - reference: X2
+      pad_number: SUPPORT1
+    - reference: X2
+      pad_number: SUPPORT2
+  - number: '7'
+    type: smd
+    shape: rect
+    local_position:
+      x: -4.839
+      y: 3.147
+      rotation: -90.0
+    position:
+      x: 0.155
+      y: -28.334
+    placed_rotation: 0.0
+    size:
+      x: 0.7
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: MISO
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -5.589
+          y: 2.797
+        max:
+          x: -4.089
+          y: 3.497
+        width: 1.5
+        height: 0.7
+        center:
+          x: -4.839
+          y: 3.147
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -0.195
+          y: -29.084
+        max:
+          x: 0.505
+          y: -27.584
+        width: 0.7
+        height: 1.5
+        center:
+          x: 0.155
+          y: -28.334
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP2
+      pad_number: '5'
+    - reference: X2
+      pad_number: '6'
+  - number: '8'
+    type: smd
+    shape: rect
+    local_position:
+      x: -5.939
+      y: 3.147
+      rotation: -90.0
+    position:
+      x: 0.155
+      y: -29.434
+    placed_rotation: 0.0
+    size:
+      x: 0.7
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -6.689
+          y: 2.797
+        max:
+          x: -5.189
+          y: 3.497
+        width: 1.5
+        height: 0.7
+        center:
+          x: -5.939
+          y: 3.147
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -0.195
+          y: -30.184
+        max:
+          x: 0.505
+          y: -28.684
+        width: 0.7
+        height: 1.5
+        center:
+          x: 0.155
+          y: -29.434
+    plating: null
+    is_mounting_hole: false
+  - number: CD1
+    type: smd
+    shape: rect
+    local_position:
+      x: -5.239
+      y: -7.053
+      rotation: 0.0
+    position:
+      x: 10.355
+      y: -28.734
+    placed_rotation: 90.0
+    size:
+      x: 1.4
+      y: 1.8
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -5.939
+          y: -7.953
+        max:
+          x: -4.539
+          y: -6.153
+        width: 1.4
+        height: 1.8
+        center:
+          x: -5.239
+          y: -7.053
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 9.455
+          y: -29.434
+        max:
+          x: 11.255
+          y: -28.034
+        width: 1.8
+        height: 1.4
+        center:
+          x: 10.355
+          y: -28.734
+    plating: null
+    is_mounting_hole: false
+  - number: CD2
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.38
+      y: -7.053
+      rotation: 0.0
+    position:
+      x: 10.355
+      y: -23.115
+    placed_rotation: 90.0
+    size:
+      x: 1.4
+      y: 1.8
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.32
+          y: -7.953
+        max:
+          x: 1.08
+          y: -6.153
+        width: 1.4
+        height: 1.8
+        center:
+          x: 0.38
+          y: -7.053
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 9.455
+          y: -23.815
+        max:
+          x: 11.255
+          y: -22.415
+        width: 1.8
+        height: 1.4
+        center:
+          x: 10.355
+          y: -23.115
+    plating: null
+    is_mounting_hole: false
+  - number: MT1
+    type: smd
+    shape: rect
+    local_position:
+      x: -6.839
+      y: 6.047
+      rotation: -90.0
+    position:
+      x: -2.745
+      y: -30.334
+    placed_rotation: 0.0
+    size:
+      x: 1.4
+      y: 1.9
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: GND
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -7.789
+          y: 5.347
+        max:
+          x: -5.889
+          y: 6.747
+        width: 1.9
+        height: 1.4
+        center:
+          x: -6.839
+          y: 6.047
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -3.445
+          y: -31.284
+        max:
+          x: -2.045
+          y: -29.384
+        width: 1.4
+        height: 1.9
+        center:
+          x: -2.745
+          y: -30.334
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '2'
+    - reference: C2
+      pad_number: '2'
+    - reference: C3
+      pad_number: '2'
+    - reference: C4
+      pad_number: '2'
+    - reference: C5
+      pad_number: '2'
+    - reference: IC4
+      pad_number: '1'
+    - reference: JP2
+      pad_number: '3'
+    - reference: Q3
+      pad_number: '2'
+    - reference: TFT1
+      pad_number: '5'
+    - reference: TFT1
+      pad_number: '7'
+    - reference: TFT1
+      pad_number: '8'
+    - reference: TFT1
+      pad_number: '9'
+    - reference: TFT1
+      pad_number: '10'
+    - reference: TFT1
+      pad_number: '11'
+    - reference: TFT1
+      pad_number: '12'
+    - reference: TFT1
+      pad_number: '13'
+    - reference: TFT1
+      pad_number: '14'
+    - reference: TFT1
+      pad_number: '15'
+    - reference: TFT1
+      pad_number: '22'
+    - reference: TFT1
+      pad_number: SUPPORT1
+    - reference: TFT1
+      pad_number: SUPPORT2
+    - reference: U1
+      pad_number: '8'
+    - reference: U2
+      pad_number: '2'
+    - reference: X1
+      pad_number: '6'
+    - reference: X1
+      pad_number: MT2
+    - reference: X2
+      pad_number: '3'
+    - reference: X2
+      pad_number: SUPPORT1
+    - reference: X2
+      pad_number: SUPPORT2
+  - number: MT2
+    type: smd
+    shape: rect
+    local_position:
+      x: 6.361
+      y: 6.947
+      rotation: -90.0
+    position:
+      x: -3.645
+      y: -17.134
+    placed_rotation: 0.0
+    size:
+      x: 1.4
+      y: 1.9
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: GND
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 5.411
+          y: 6.247
+        max:
+          x: 7.311
+          y: 7.647
+        width: 1.9
+        height: 1.4
+        center:
+          x: 6.361
+          y: 6.947
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -4.345
+          y: -18.084
+        max:
+          x: -2.945
+          y: -16.184
+        width: 1.4
+        height: 1.9
+        center:
+          x: -3.645
+          y: -17.134
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '2'
+    - reference: C2
+      pad_number: '2'
+    - reference: C3
+      pad_number: '2'
+    - reference: C4
+      pad_number: '2'
+    - reference: C5
+      pad_number: '2'
+    - reference: IC4
+      pad_number: '1'
+    - reference: JP2
+      pad_number: '3'
+    - reference: Q3
+      pad_number: '2'
+    - reference: TFT1
+      pad_number: '5'
+    - reference: TFT1
+      pad_number: '7'
+    - reference: TFT1
+      pad_number: '8'
+    - reference: TFT1
+      pad_number: '9'
+    - reference: TFT1
+      pad_number: '10'
+    - reference: TFT1
+      pad_number: '11'
+    - reference: TFT1
+      pad_number: '12'
+    - reference: TFT1
+      pad_number: '13'
+    - reference: TFT1
+      pad_number: '14'
+    - reference: TFT1
+      pad_number: '15'
+    - reference: TFT1
+      pad_number: '22'
+    - reference: TFT1
+      pad_number: SUPPORT1
+    - reference: TFT1
+      pad_number: SUPPORT2
+    - reference: U1
+      pad_number: '8'
+    - reference: U2
+      pad_number: '2'
+    - reference: X1
+      pad_number: '6'
+    - reference: X1
+      pad_number: MT1
+    - reference: X2
+      pad_number: '3'
+    - reference: X2
+      pad_number: SUPPORT1
+    - reference: X2
+      pad_number: SUPPORT2
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -7.789
+        y: -7.953
+      max:
+        x: 7.311
+        y: 7.647
+      width: 15.1
+      height: 15.6
+      center:
+        x: -0.239
+        y: -0.153
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: -4.345
+        y: -31.284
+      max:
+        x: 11.255
+        y: -16.184
+      width: 15.6
+      height: 15.1
+      center:
+        x: 3.455
+        y: -23.734
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -7.299
+        y: -7.573
+      max:
+        x: 6.901
+        y: 12.927
+      width: 14.2
+      height: 20.5
+      center:
+        x: -0.199
+        y: 2.677
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: -9.625
+        y: -30.794
+      max:
+        x: 10.875
+        y: -16.594
+      width: 20.5
+      height: 14.2
+      center:
+        x: 0.625
+        y: -23.694
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -7.3525
+        y: -7.6565
+      max:
+        x: 6.9745
+        y: 5.8205
+      width: 14.327
+      height: 13.477
+      center:
+        x: -0.189
+        y: -0.918
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: -2.5185
+        y: -30.8475
+      max:
+        x: 10.9585
+        y: -16.5205
+      width: 13.477
+      height: 14.327
+      center:
+        x: 4.22
+        y: -23.684
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -7.789
+        y: -7.953
+      max:
+        x: 7.311
+        y: 12.927
+      width: 15.1
+      height: 20.88
+      center:
+        x: -0.239
+        y: 2.487
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: -9.625
+        y: -31.284
+      max:
+        x: 11.255
+        y: -16.184
+      width: 20.88
+      height: 15.1
+      center:
+        x: 0.815
+        y: -23.734
+  connected_components:
+  - C1
+  - C2
+  - C3
+  - C4
+  - C5
+  - IC4
+  - JP2
+  - Q3
+  - R3
+  - TFT1
+  - U1
+  - U2
+  - X1
+  - X2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - CARDCS_3V
+    pcb_nets:
+    - CARDCS_3V
+    status: agree
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - MOSI_3V
+    pcb_nets:
+    - MOSI_3V
+    status: agree
+  - pin_or_pad_number: '4'
+    schematic_nets:
+    - +3V3
+    pcb_nets:
+    - +3V3
+    status: agree
+  - pin_or_pad_number: '5'
+    schematic_nets:
+    - SCK_3V
+    pcb_nets:
+    - SCK_3V
+    status: agree
+  - pin_or_pad_number: '6'
+    schematic_nets:
+    - GND
+    pcb_nets:
+    - GND
+    status: agree
+  - pin_or_pad_number: '7'
+    schematic_nets:
+    - MISO
+    pcb_nets:
+    - MISO
+    status: agree
+  - pin_or_pad_number: '8'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: CD1
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: CD2
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: MT1
+    schematic_nets:
+    - GND
+    pcb_nets:
+    - GND
+    status: agree
+  - pin_or_pad_number: MT2
+    schematic_nets:
+    - GND
+    pcb_nets:
+    - GND
+    status: agree
+  agree_count: 8
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: MICROSD
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/X1

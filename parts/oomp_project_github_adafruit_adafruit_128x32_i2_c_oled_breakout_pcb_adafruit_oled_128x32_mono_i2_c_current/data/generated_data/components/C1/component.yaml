@@ -1,0 +1,478 @@
+reference: C1
+schematic:
+  available: true
+  units:
+  - reference: C1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 98aca1c5-56e4-4307-aaa5-b1c4e761b19f
+    library_id: kicad_file-eagle-import:CAP_CERAMIC0805
+    unit: 1
+    body_style: 1
+    position:
+      x: 88.9
+      y: 81.28
+      rotation: 90.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: C1
+      Value: 1uF
+      Footprint: kicad_file:0805
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: P$1
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 83.82
+        y: 81.28
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: LCD1
+        pin_number: '2'
+        pin_name: C2-
+    - number: '2'
+      name: P$2
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -2.54
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 91.44
+        y: 81.28
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: LCD1
+        pin_number: '1'
+        pin_name: C2+
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.26995
+          y: -0.0762
+        max:
+          x: 1.26995
+          y: 2.6162
+        width: 2.5399
+        height: 2.6924
+        center:
+          x: 0.0
+          y: 1.27
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 86.2838
+          y: 80.01005
+        max:
+          x: 88.9762
+          y: 82.54995
+        width: 2.6924
+        height: 2.5399
+        center:
+          x: 87.63
+          y: 81.28
+    warnings: []
+  connected_components:
+  - reference: LCD1
+    pin_number: '1'
+    pin_name: C2+
+  - reference: LCD1
+    pin_number: '2'
+    pin_name: C2-
+pcb:
+  reference: C1
+  value: 1uF
+  source_file: data/kicad_file.kicad_pcb
+  uuid: fed98fe5-f820-4a63-a2a2-e70e9fee899a
+  library_id: Adafruit OLED 128x32 Mono I2C-import-fps:0805
+  layer: B.Cu
+  side: back
+  position:
+    x: 18.542
+    y: -5.08
+    rotation: 0.0
+    rotation_kicad: -0.0
+    units: mm
+  properties:
+    Reference: C1
+    Value: 1uF
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.95
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 17.592
+      y: -5.08
+    placed_rotation: 0.0
+    size:
+      x: 1.3
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: N$2
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.6
+          y: -0.75
+        max:
+          x: -0.3
+          y: 0.75
+        width: 1.3
+        height: 1.5
+        center:
+          x: -0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 16.942
+          y: -5.83
+        max:
+          x: 18.242
+          y: -4.33
+        width: 1.3
+        height: 1.5
+        center:
+          x: 17.592
+          y: -5.08
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: LCD1
+      pad_number: '2'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.95
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 19.492
+      y: -5.08
+    placed_rotation: 0.0
+    size:
+      x: 1.3
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: N$1
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.3
+          y: -0.75
+        max:
+          x: 1.6
+          y: 0.75
+        width: 1.3
+        height: 1.5
+        center:
+          x: 0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 18.842
+          y: -5.83
+        max:
+          x: 20.142
+          y: -4.33
+        width: 1.3
+        height: 1.5
+        center:
+          x: 19.492
+          y: -5.08
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: LCD1
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.6
+        y: -0.75
+      max:
+        x: 1.6
+        y: 0.75
+      width: 3.2
+      height: 1.5
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 16.942
+        y: -5.83
+      max:
+        x: 20.142
+        y: -4.33
+      width: 3.2
+      height: 1.5
+      center:
+        x: 18.542
+        y: -5.08
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.8984
+        y: -0.9084
+      max:
+        x: 1.8984
+        y: 0.9084
+      width: 3.7968
+      height: 1.8168
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 16.6436
+        y: -5.9884
+      max:
+        x: 20.4404
+        y: -4.1716
+      width: 3.7968
+      height: 1.8168
+      center:
+        x: 18.542
+        y: -5.08
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.0922
+        y: -0.7239
+      max:
+        x: 1.1057
+        y: 0.7262
+      width: 2.1979
+      height: 1.4501
+      center:
+        x: 0.00675
+        y: 0.00115
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 17.4498
+        y: -5.8039
+      max:
+        x: 19.6477
+        y: -4.3538
+      width: 2.1979
+      height: 1.4501
+      center:
+        x: 18.54875
+        y: -5.07885
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.8635
+        y: -0.9635
+      max:
+        x: 1.8635
+        y: 0.9635
+      width: 3.727
+      height: 1.927
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 16.6785
+        y: -6.0435
+      max:
+        x: 20.4055
+        y: -4.1165
+      width: 3.727
+      height: 1.927
+      center:
+        x: 18.542
+        y: -5.08
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.8984
+        y: -0.9635
+      max:
+        x: 1.8984
+        y: 0.9635
+      width: 3.7968
+      height: 1.927
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 16.6436
+        y: -6.0435
+      max:
+        x: 20.4404
+        y: -4.1165
+      width: 3.7968
+      height: 1.927
+      center:
+        x: 18.542
+        y: -5.08
+  connected_components:
+  - LCD1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - N$2
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - N$1
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: electronic_capacitor_0805_1_micro_farad
+  inferred:
+    kind: capacitor
+    package_size: 0805
+    value: 1uF
+    mpn: null
+  reasons:
+  - The exact normalized component is not present in the OOMP parts directory.
+  candidates:
+  - oomp_id: electronic_capacitor_0603_10_nano_farad
+    score: 0.5886
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0603_100_nano_farad
+    score: 0.588
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0805_4_7_micro_farad
+    score: 0.527
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0402_2_2_micro_farad
+    score: 0.5053
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0603_2_2_micro_farad
+    score: 0.5053
+    reasons:
+    - same component family
+    - nearby normalized value
+category: capacitor
+category_source: unmatched_kicad_hint
+category_name: Capacitor
+generated_directory: components/C1

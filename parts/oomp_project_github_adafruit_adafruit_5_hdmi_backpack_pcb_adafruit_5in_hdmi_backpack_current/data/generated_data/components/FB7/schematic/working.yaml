@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: FB7
+  source_file: data/kicad_file.kicad_sch
+  uuid: 78c1d5bf-3b21-4a32-b20a-2978beb70501
+  library_id: kicad_file-eagle-import:FERRITE_0805MP
+  unit: 1
+  body_style: 1
+  position:
+    x: 332.74
+    y: 35.56
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: FB7
+    Value: Ferrite
+    Footprint: kicad_file:_0805MP
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: P$1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 332.74
+      y: 38.1
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: IC1
+      pin_number: '1'
+      pin_name: VDD
+    - reference: IC1
+      pin_number: '4'
+      pin_name: MODE
+  - number: '2'
+    name: P$2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 332.74
+      y: 33.02
+    net: AVDD-TOUCH
+    net_aliases:
+    - AVDD-TOUCH
+    - AVDD2
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$67'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#U$77'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: SJ4
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.4732
+        y: -1.1557
+      max:
+        x: 1.4732
+        y: 1.1557
+      width: 2.9464
+      height: 2.3114
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 331.5843
+        y: 34.0868
+      max:
+        x: 333.8957
+        y: 37.0332
+      width: 2.3114
+      height: 2.9464
+      center:
+        x: 332.74
+        y: 35.56
+  warnings: []
+connected_components:
+- reference: '#U$67'
+  pin_number: '1'
+  pin_name: VDD
+- reference: '#U$77'
+  pin_number: '1'
+  pin_name: VDD
+- reference: C1
+  pin_number: '2'
+  pin_name: '2'
+- reference: IC1
+  pin_number: '1'
+  pin_name: VDD
+- reference: IC1
+  pin_number: '4'
+  pin_name: MODE
+- reference: SJ4
+  pin_number: '2'
+  pin_name: '2'

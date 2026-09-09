@@ -1,0 +1,18 @@
+Project data fetch failed.
+Error type: RuntimeError
+Error message: fatal: Cannot fast-forward to multiple branches.
+Command: git -C C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Adafruit-128x64-Monochrome-OLED-PCB_119b1bb62b7a pull --ff-only
+Repository URL: https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB.git
+Repository name: Adafruit-128x64-Monochrome-OLED-PCB
+Source folder: 
+Source basename: Adafruit 128x64 Mono OLED PCB
+Extensions: ['.kicad_pcb', '.kicad_sch', '.kicad_pro']
+
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/project_git_action.py", line 239, in refresh_project_files
+    _run_git(["-C", repository_directory, "pull", "--ff-only"])
+  File "kicad_agents/project_git_action.py", line 58, in _run_git
+    raise RuntimeError(f"{message}\nCommand: {' '.join(command)}")
+RuntimeError: fatal: Cannot fast-forward to multiple branches.
+Command: git -C C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Adafruit-128x64-Monochrome-OLED-PCB_119b1bb62b7a pull --ff-only

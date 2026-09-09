@@ -1,0 +1,122 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 4
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: ''
+  footprint: Adafruit 128x64 Mono OLED PCB v2-import-fps:SOT23-5
+  query: Adafruit 128x64 Mono OLED PCB v2-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=Adafruit+128x64+Mono+OLED+PCB+v2-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=Adafruit+128x64+Mono+OLED+PCB+v2-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - C3
+  - C4
+  - C6
+  - C7
+  value: 1uF
+  footprint: Adafruit 128x64 Mono OLED PCB v2-import-fps:0805
+  query: 1uF Adafruit 128x64 Mono OLED PCB v2-import-fps:0805
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1uF+Adafruit+128x64+Mono+OLED+PCB+v2-import-fps%3A0805
+    datasheet_search: https://www.google.com/search?q=1uF+Adafruit+128x64+Mono+OLED+PCB+v2-import-fps%3A0805+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_1_micro_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_10_nano_farad
+  - electronic_capacitor_0603_100_nano_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  - electronic_capacitor_0402_2_2_micro_farad
+  - electronic_capacitor_0603_2_2_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - C8
+  value: 2.2uF/16V
+  footprint: Adafruit 128x64 Mono OLED PCB v2-import-fps:0805
+  query: 2.2uF/16V Adafruit 128x64 Mono OLED PCB v2-import-fps:0805
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=2.2uF%2F16V+Adafruit+128x64+Mono+OLED+PCB+v2-import-fps%3A0805
+    datasheet_search: https://www.google.com/search?q=2.2uF%2F16V+Adafruit+128x64+Mono+OLED+PCB+v2-import-fps%3A0805+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_2_2_micro_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0805_4_7_micro_farad
+  - electronic_capacitor_0402_2_2_micro_farad
+  - electronic_capacitor_0603_2_2_micro_farad
+  - electronic_capacitor_0402_4_7_micro_farad
+  - electronic_capacitor_0603_4_7_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: UG-2864HSWEG01
+  footprint: Adafruit 128x64 Mono OLED PCB v2-import-fps:UG-2864HSWEG01_0.96IN_WRAPAROUND
+  query: UG-2864HSWEG01 Adafruit 128x64 Mono OLED PCB v2-import-fps:UG-2864HSWEG01_0.96IN_WRAPAROUND
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=UG-2864HSWEG01+Adafruit+128x64+Mono+OLED+PCB+v2-import-fps%3AUG-2864HSWEG01_0.96IN_WRAPAROUND
+    datasheet_search: https://www.google.com/search?q=UG-2864HSWEG01+Adafruit+128x64+Mono+OLED+PCB+v2-import-fps%3AUG-2864HSWEG01_0.96IN_WRAPAROUND+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_led_1206_white
+  - electronic_led_0201
+  - electronic_led_1206_white_tint
+  - electronic_led_1206_white_clear
+  - electronic_led_0201_red
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
