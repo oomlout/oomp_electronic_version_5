@@ -1,0 +1,56 @@
+repository: sparkfun/Qwiic_MultiPort
+commit: 1642f0465f6c0009816cd416eacbf85d05a7cb45
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: qwiic_multi_star
+  path: Hardware/Hardware - MultiStar/Hardware - MultiStar, 4 points/Qwiic_MultiStar.brd
+  format: eagle
+- board: hardware_multi_star_5_points_qwiic_multi_star
+  path: Hardware/Hardware - MultiStar/Hardware - MultiStar, 5 points/Qwiic_MultiStar.brd
+  format: eagle
+- board: qwiic_multi_port
+  path: Hardware/Qwiic_MultiPort.brd
+  format: eagle
+boards_excluded:
+- path: Hardware/Production/Qwiic_MultiPort-Panel.brd
+  source_format: eagle
+  folder: Hardware/Production
+  basename: Qwiic_MultiPort-Panel
+  project_file_path: Hardware/Production/Qwiic_MultiPort-Panel
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: Qwiic_MultiPort-Panel
+  family_key: hardware_production/qwiic_multi_port_panel
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: qwiic_multi_port_panel
+  board_name: Qwiic Multi Port Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 14
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 4
+  - kind: current_version_selection
+    count: 3
+  - kind: project_metadata_generation
+    count: 3
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:08:01Z'

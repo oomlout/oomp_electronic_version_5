@@ -1,0 +1,53 @@
+repository: sparkfun/tsunami
+commit: 5046609544d4c6328bdb667a31630aa630e5f9e2
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: tapestry
+  path: Hardware/deprecated/Tapestry.brd
+  format: eagle
+- board: tsunami
+  path: Hardware/tsunami.brd
+  format: eagle
+boards_excluded:
+- path: Production/13240-tsunami-panel.v11.brd
+  source_format: eagle
+  folder: Production
+  basename: 13240-tsunami-panel.v11
+  project_file_path: Production/13240-tsunami-panel.v11
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: 13240-tsunami-panel
+  family_key: production/13240_tsunami_panel
+  version_key:
+  - 11
+  version_text: v11
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: 13240_tsunami_panel
+  board_name: 13240 tsunami panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 11
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 3
+  - kind: current_version_selection
+    count: 2
+  - kind: project_metadata_generation
+    count: 2
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:07:14Z'

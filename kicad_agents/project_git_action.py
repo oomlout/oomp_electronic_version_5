@@ -292,9 +292,12 @@ def refresh_project_files(details):
         # root schematic.  Copy them into a stable nested directory so the parser
         # can digest the complete design without depending on the ignored clone.
         sheet_directory = data_directory / "kicad_file_sheets"
-        schematic_files = [] if source_format == "eagle" else referenced_sheets(
-            source_project_directory / f"{source_basename}.kicad_sch"
-        )
+        source_schematic = source_project_directory / f"{source_basename}.kicad_sch"
+        # KiCad projects may legitimately be PCB-only. Only follow
+        # hierarchical sheets when a schematic was declared and copied.
+        schematic_files = []
+        if source_format != "eagle" and ".kicad_sch" in extensions:
+            schematic_files = referenced_sheets(source_schematic)
         for schematic_file in schematic_files:
             if schematic_file.name.lower() == f"{source_basename}.kicad_sch".lower():
                 continue

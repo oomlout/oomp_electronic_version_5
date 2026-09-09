@@ -1,0 +1,50 @@
+repository: sparkfun/MPR121_Capacitive_Touch_Keypad
+commit: 9fce051696a88f07de22763c3a8a5505bdc5f5ad
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: mpr121_cap_touch_keypad
+  path: Hardware/MPR121-Cap-Touch-Keypad.brd
+  format: eagle
+boards_excluded:
+- path: Production/MPR121-Cap-Touch-Keypad_Panel_v13a.brd
+  source_format: eagle
+  folder: Production
+  basename: MPR121-Cap-Touch-Keypad_Panel_v13a
+  project_file_path: Production/MPR121-Cap-Touch-Keypad_Panel_v13a
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: MPR121-Cap-Touch-Keypad_Panela
+  family_key: production/mpr121_cap_touch_keypad_panela
+  version_key:
+  - 13
+  version_text: v13
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: mpr121_cap_touch_keypad_panela
+  board_name: MPR121 Cap Touch Keypad Panela
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:08:48Z'

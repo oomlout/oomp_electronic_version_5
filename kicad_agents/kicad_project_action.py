@@ -335,7 +335,13 @@ def convert_project(details):
     basename = str(details.get('project_file_basename') or 'kicad_file')
     if Path(basename).name != basename or basename in ['.', '..']:
         raise ValueError('Invalid project_file_basename')
-    project_uuid = sx.value(sx.parse(files['kicad_file.kicad_sch'].read_text(encoding='utf-8')), 'uuid')
+    # A KiCad project may be distributed as PCB-only.  The project UUID is
+    # only needed to disambiguate schematic symbol instances, so leave it
+    # empty when there is no root schematic to parse.
+    project_uuid = ''
+    schematic_source = files.get('kicad_file.kicad_sch')
+    if schematic_source is not None:
+        project_uuid = sx.value(sx.parse(schematic_source.read_text(encoding='utf-8')), 'uuid')
     outputs = {f'{basename}.kicad_pcb': sx.document(board)}
     schematic_rows = []
     for relative, source in files.items():

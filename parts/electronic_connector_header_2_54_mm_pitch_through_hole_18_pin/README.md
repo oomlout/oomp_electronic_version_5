@@ -53,6 +53,11 @@ Connector Header PZ254R-11-18P is an OOMP electronic connector definition. It us
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

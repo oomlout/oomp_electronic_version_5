@@ -191,7 +191,7 @@ oomlout_ai_roboclick_3:
       kicad:
         hand_solder: Package_SO:MSOP-8_3x3mm_P0.65mm
         machine_solder: Package_SO:MSOP-8_3x3mm_P0.65mm
-        symbol: ''
+        symbol: Sensor_Temperature:AD8495
       lcsc_search: msop 8 amplifier thermocouple amplifier texas instruments ad8495armz
         ic
       manufacturers: []
@@ -441,28 +441,28 @@ oomlout_ai_roboclick_3:
         navigation_link: ../../navigation/electronic/ic/msop_8/amplifier/thermocouple_amplifier/texas_instruments/README.md
         oomp_id: electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz
         pins:
-        - name: '1'
+        - name: NC
           number: '1'
-          type: signal
-        - name: '2'
+          type: no_connect
+        - name: -IN
           number: '2'
           type: signal
-        - name: '3'
+        - name: +IN
           number: '3'
           type: signal
-        - name: '4'
+        - name: V-
           number: '4'
           type: signal
-        - name: '5'
+        - name: V+
           number: '5'
           type: signal
-        - name: '6'
+        - name: OUT
           number: '6'
           type: signal
-        - name: '7'
+        - name: NC
           number: '7'
-          type: signal
-        - name: '8'
+          type: no_connect
+        - name: REF
           number: '8'
           type: signal
         quick_facts:
@@ -498,35 +498,35 @@ oomlout_ai_roboclick_3:
           value: ad8495armz
       pins:
         pin_1:
-          name: '1'
+          name: NC
           number: '1'
-          type: signal
+          type: no_connect
         pin_2:
-          name: '2'
+          name: -IN
           number: '2'
           type: signal
         pin_3:
-          name: '3'
+          name: +IN
           number: '3'
           type: signal
         pin_4:
-          name: '4'
+          name: V-
           number: '4'
           type: signal
         pin_5:
-          name: '5'
+          name: V+
           number: '5'
           type: signal
         pin_6:
-          name: '6'
+          name: OUT
           number: '6'
           type: signal
         pin_7:
-          name: '7'
+          name: NC
           number: '7'
-          type: signal
+          type: no_connect
         pin_8:
-          name: '8'
+          name: REF
           number: '8'
           type: signal
       regenerate_pngs: false
@@ -718,6 +718,19 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0
 oomp_key: oomp_electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz
 package_drawing:
   body:
@@ -855,28 +868,28 @@ part_page:
   navigation_link: ../../navigation/electronic/ic/msop_8/amplifier/thermocouple_amplifier/texas_instruments/README.md
   oomp_id: electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz
   pins:
-  - name: '1'
+  - name: NC
     number: '1'
-    type: signal
-  - name: '2'
+    type: no_connect
+  - name: -IN
     number: '2'
     type: signal
-  - name: '3'
+  - name: +IN
     number: '3'
     type: signal
-  - name: '4'
+  - name: V-
     number: '4'
     type: signal
-  - name: '5'
+  - name: V+
     number: '5'
     type: signal
-  - name: '6'
+  - name: OUT
     number: '6'
     type: signal
-  - name: '7'
+  - name: NC
     number: '7'
-    type: signal
-  - name: '8'
+    type: no_connect
+  - name: REF
     number: '8'
     type: signal
   quick_facts:
@@ -913,7 +926,7 @@ pins:
   pin_1:
     name: NC
     number: '1'
-    type: signal
+    type: no_connect
   pin_2:
     name: -IN
     number: '2'
@@ -937,7 +950,7 @@ pins:
   pin_7:
     name: NC
     number: '7'
-    type: signal
+    type: no_connect
   pin_8:
     name: REF
     number: '8'

@@ -302,10 +302,18 @@ def make_scad_generic(part):
 
     print(f"done {oomp_id}")
 
-def generate_navigation(folder="parts", sort=["width", "height", "thickness"]):
+def generate_navigation(folder="parts", sort=["width", "height", "thickness"], skip_directories=None):
     #crawl though all directories in scad_output and load all the working.yaml files
     parts = {}
+    if skip_directories is None:
+        skip_directories = ["components", "data"]
+    skip_directory_names = {
+        str(directory_name).strip().lower()
+        for directory_name in skip_directories
+        if str(directory_name).strip() != ""
+    }
     for root, dirs, files in os.walk(folder):
+        dirs[:] = [directory for directory in dirs if directory.lower() not in skip_directory_names]
         if 'working.yaml' in files:
             yaml_file = os.path.join(root, 'working.yaml')
             #if working.yaml isn't in the root directory, then do it

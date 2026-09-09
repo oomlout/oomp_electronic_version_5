@@ -1,0 +1,48 @@
+repository: sparkfun/SI4735_AM_FM_Shield
+commit: 10e153f9238eda586dfef122093b295b96425564
+definition_file: null
+boards_added: []
+boards_excluded:
+- path: Hardware/SI4735 Shield-v12.brd
+  source_format: eagle
+  folder: Hardware
+  basename: SI4735 Shield-v12
+  project_file_path: Hardware/SI4735 Shield-v12
+  project_file_extensions:
+  - .brd
+  - .sch
+  has_schematic: true
+  family_stem: SI4735 Shield
+  family_key: hardware/si4735_shield
+  version_key:
+  - 12
+  version_text: v12
+  auxiliary_words: []
+  eagle_board_storage: legacy_binary
+  eagle_schematic_storage: legacy_binary
+  board: si4735_shield
+  board_name: SI4735 Shield
+ingestion_status: too_old
+ingest_note: 'too old: repository contains pre-Eagle-6 binary board or schematic files'
+legacy_binary_files:
+- path: Hardware/SI4735 Shield-v12.brd
+  kind: board
+- path: Hardware/SI4735 Shield-v12.sch
+  kind: schematic
+python_work:
+  decision_units: 6
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 1
+  - kind: legacy_eagle_binary_gate
+    count: 2
+  - kind: queue_ingested_note
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:21:54Z'

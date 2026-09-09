@@ -53,6 +53,11 @@ Connector Header 54101-T30-00LF is an OOMP electronic connector definition. It u
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

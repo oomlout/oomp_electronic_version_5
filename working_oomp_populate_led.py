@@ -76,6 +76,17 @@ def main(**kwargs):
     option["taxonomy_4"] = "rgb"
     options.append(option)
 
+    # SparkFun's Eagle library also has a board-facing 1206 green indicator
+    # footprint.  Keep this as a single explicit variant: the bottom-view
+    # pad arrangement is not interchangeable with the ordinary 1206 LED
+    # family, and no speculative red/blue variants are being populated.
+    options.append({
+        "taxonomy_2": "led",
+        "taxonomy_3": "1206_bottom",
+        "taxonomy_4": "green",
+        "name_short": "Bottom-view Green LED 1206",
+    })
+
     # LED filaments are intentionally disabled. Keep this simple declaration
     # commented so the family can be restored later without reconstructing it.
     # colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]

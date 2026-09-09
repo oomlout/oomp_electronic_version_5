@@ -53,6 +53,11 @@ Connector Header X6511WR-34H-C60D30R2 is an OOMP electronic connector definition
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

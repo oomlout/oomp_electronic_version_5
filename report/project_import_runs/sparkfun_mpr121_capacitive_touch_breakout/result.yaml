@@ -1,0 +1,68 @@
+repository: sparkfun/MPR121_Capacitive_Touch_Breakout
+commit: 5d6699bb80b02e3dfca946e936331843a11e209c
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: mpr121_breakout
+  path: Hardware/MPR121-Breakout-v13.brd
+  format: eagle
+boards_excluded:
+- path: Hardware/MPR121-Breakout.brd
+  source_format: eagle
+  folder: Hardware
+  basename: MPR121-Breakout
+  project_file_path: Hardware/MPR121-Breakout
+  project_file_extensions:
+  - .brd
+  - .sch
+  has_schematic: true
+  family_stem: MPR121-Breakout
+  family_key: hardware/mpr121_breakout
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words: []
+  eagle_board_storage: xml
+  eagle_schematic_storage: xml
+  exclude_reason: older version of Hardware/MPR121-Breakout-v13.brd
+- path: Production/MPR121-Breakout-Panel-v13.brd
+  source_format: eagle
+  folder: Production
+  basename: MPR121-Breakout-Panel-v13
+  project_file_path: Production/MPR121-Breakout-Panel-v13
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: MPR121-Breakout-Panel
+  family_key: production/mpr121_breakout_panel
+  version_key:
+  - 13
+  version_text: v13
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: mpr121_breakout_panel
+  board_name: MPR121 Breakout Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 9
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 3
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:15:07Z'

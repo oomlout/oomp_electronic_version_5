@@ -30,10 +30,10 @@ def _as_boolean(value):
 def _project_sources_ready(part_directory):
     """Gate downstream compilation when canonical KiCad source files are missing."""
     data_directory = part_directory / "data"
-    required = [
-        data_directory / "kicad_file.kicad_sch",
-        data_directory / "kicad_file.kicad_pcb",
-    ]
+    # A KiCad board can be distributed without a schematic. The project
+    # processor can still extract the PCB, placements, footprints, and board
+    # explorer, so only the PCB is required at this gate.
+    required = [data_directory / "kicad_file.kicad_pcb"]
     missing = [path.name for path in required if not path.is_file()]
     if missing:
         message = (

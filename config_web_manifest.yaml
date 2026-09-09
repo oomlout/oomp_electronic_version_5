@@ -1,0 +1,119 @@
+schema_version: 1
+output_filename: web.yaml
+
+repository:
+  owner: oomlout
+  name: oomp_electronic_version_5
+  branch: main
+  parts_path: parts
+  pages_base_url: https://oomlout.github.io/oomp_electronic_version_5/parts
+
+metadata:
+  # Roboclick modes are summarized under generation instead of being copied
+  # verbatim into the website-facing metadata block.
+  exclude_prefixes:
+  - oomlout_ai_roboclick_
+  exclude_fields:
+  - counter
+  - make_files
+
+inventory:
+  include_hidden: false
+  exclude:
+  - web.yaml
+  - web.yaml.tmp
+  - '**/__pycache__/**'
+  - '**/*.pyc'
+  - '**/.DS_Store'
+
+  primary_asset_priority:
+  - data/working_svg_square_pins_300.png
+  - data/working_svg_top_300.png
+  - data/generated_data/src/board_pins_300.png
+  - images/pcb_3d_populated.png
+  - README.md
+
+  # First match wins, so specific functional folders precede generic file
+  # types. This makes the category useful for site navigation and filtering.
+  categories:
+    datasheet:
+    - '*datasheet*.pdf'
+    - '**/*datasheet*.pdf'
+    manufacturing:
+    - 'data/production_auto_generate/**'
+    - '**/*.gbr'
+    - '**/*.ger'
+    - '**/*.drl'
+    - '**/*.pos'
+    - '**/*.csv'
+    upstream_source:
+    - 'data/original/**'
+    - 'data/git/**'
+    project_data:
+    - 'data/generated_data/**'
+    kicad:
+    - 'data/kicad/**'
+    - '**/*.kicad_sch'
+    - '**/*.kicad_pcb'
+    - '**/*.kicad_sym'
+    - '**/*.kicad_mod'
+    - '**/*.kicad_pro'
+    - '**/*.kicad_prl'
+    archive:
+    - '*.zip'
+    - '**/*.zip'
+    model_3d:
+    - '*.stl'
+    - '**/*.stl'
+    - '*.step'
+    - '**/*.step'
+    - '*.stp'
+    - '**/*.stp'
+    image:
+    - '*.png'
+    - '**/*.png'
+    - '*.jpg'
+    - '**/*.jpg'
+    - '*.jpeg'
+    - '**/*.jpeg'
+    - '*.webp'
+    - '**/*.webp'
+    vector:
+    - '*.svg'
+    - '**/*.svg'
+    documentation:
+    - README.md
+    - '**/README.md'
+    - '*.md'
+    - '**/*.md'
+    metadata:
+    - '*.yaml'
+    - '**/*.yaml'
+    - '*.yml'
+    - '**/*.yml'
+    - '*.json'
+    - '**/*.json'
+    document:
+    - '*.pdf'
+    - '**/*.pdf'
+
+descriptions:
+  exact:
+    README.md: Human-readable overview, specifications, diagrams, and useful links.
+    working.yaml: Complete generated OOMP source record and Roboclick build recipe.
+    working_manual.yaml: Hand-maintained metadata overrides preserved during regeneration.
+    data/datasheet.pdf: Manufacturer or supplier datasheet for the part.
+  patterns:
+    '*_300.png': Web-sized preview image, constrained to 300 pixels.
+    'data/working_svg_*.svg': Editable vector drawing generated from the OOMP definition.
+    'data/working_svg_*.png': Raster rendering of an OOMP vector drawing.
+    'data/kicad/hand_solder/**': KiCad library asset optimized for hand soldering.
+    'data/kicad/machine_solder/**': KiCad library asset optimized for machine assembly.
+    'data/kicad/**': KiCad symbol, footprint, metadata, or supporting documentation.
+    'data/original/**': Preserved upstream project source or provenance data.
+    'data/generated_data/**': Derived project data used by documentation and interactive views.
+    'data/production_auto_generate/**': Manufacturing output or production validation data.
+    'images/pcb_front.png': Front view of the PCB.
+    'images/pcb_back.png': Back view of the PCB.
+    'images/pcb_isometric.png': Isometric rendering of the PCB.
+    'images/pcb_3d_populated.png': Populated 3D rendering of the PCB.

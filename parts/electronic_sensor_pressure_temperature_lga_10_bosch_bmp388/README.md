@@ -46,16 +46,16 @@ Sensor Lga 10 Bosch BMP388 PRESSURE TEMPERATURE is an OOMP electronic sensor def
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-| 1 | 1 | signal |
-| 2 | 2 | signal |
-| 3 | 3 | signal |
-| 4 | 4 | signal |
-| 5 | 5 | signal |
-| 6 | 6 | signal |
-| 7 | 7 | signal |
-| 8 | 8 | signal |
-| 9 | 9 | signal |
-| 10 | 10 | signal |
+| 1 | VDDIO | signal |
+| 2 | SCK | signal |
+| 3 | VSS | gnd |
+| 4 | SDI | signal |
+| 5 | SDO | signal |
+| 6 | CSB | signal |
+| 7 | INT | signal |
+| 8 | VSS | gnd |
+| 9 | VSS | gnd |
+| 10 | VDD | power |
 
 
 

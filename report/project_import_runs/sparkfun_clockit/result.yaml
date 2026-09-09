@@ -1,0 +1,48 @@
+repository: sparkfun/ClockIt
+commit: f160ea50b6209bfaf3863ae75f2bdbdb2a44529f
+definition_file: null
+boards_added: []
+boards_excluded:
+- path: Hardware/Clock-v16.brd
+  source_format: eagle
+  folder: Hardware
+  basename: Clock-v16
+  project_file_path: Hardware/Clock-v16
+  project_file_extensions:
+  - .brd
+  - .sch
+  has_schematic: true
+  family_stem: Clock
+  family_key: hardware/clock
+  version_key:
+  - 16
+  version_text: v16
+  auxiliary_words: []
+  eagle_board_storage: legacy_binary
+  eagle_schematic_storage: legacy_binary
+  board: clock
+  board_name: Clock
+ingestion_status: too_old
+ingest_note: 'too old: repository contains pre-Eagle-6 binary board or schematic files'
+legacy_binary_files:
+- path: Hardware/Clock-v16.brd
+  kind: board
+- path: Hardware/Clock-v16.sch
+  kind: schematic
+python_work:
+  decision_units: 6
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 1
+  - kind: legacy_eagle_binary_gate
+    count: 2
+  - kind: queue_ingested_note
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:04:01Z'

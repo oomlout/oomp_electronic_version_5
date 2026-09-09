@@ -1,0 +1,48 @@
+repository: sparkfun/ProtoSnap-Pro_Mini
+commit: efd48af73e96a7703a92fa465742754407c44196
+definition_file: null
+boards_added: []
+boards_excluded:
+- path: Hardware/ProtoSnap-v14a.brd
+  source_format: eagle
+  folder: Hardware
+  basename: ProtoSnap-v14a
+  project_file_path: Hardware/ProtoSnap-v14a
+  project_file_extensions:
+  - .brd
+  - .sch
+  has_schematic: true
+  family_stem: ProtoSnapa
+  family_key: hardware/proto_snapa
+  version_key:
+  - 14
+  version_text: v14
+  auxiliary_words: []
+  eagle_board_storage: legacy_binary
+  eagle_schematic_storage: legacy_binary
+  board: proto_snapa
+  board_name: Proto Snapa
+ingestion_status: too_old
+ingest_note: 'too old: repository contains pre-Eagle-6 binary board or schematic files'
+legacy_binary_files:
+- path: Hardware/ProtoSnap-v14a.brd
+  kind: board
+- path: Hardware/ProtoSnap-v14a.sch
+  kind: schematic
+python_work:
+  decision_units: 6
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 1
+  - kind: legacy_eagle_binary_gate
+    count: 2
+  - kind: queue_ingested_note
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:13:32Z'

@@ -1,0 +1,35 @@
+repository: sparkfun/MP3_Player_Shield
+commit: 28059938df586e7c147f38d51ff90bde4d9a602c
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: spark_fun_mp3_shield
+  path: hardware/SparkFunMP3Shield.brd
+  format: eagle
+boards_excluded:
+- path: Production/MP3-Shield-Panel-v15.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 2
+  details:
+  - kind: include_override
+    count: 1
+  - kind: exclude_paths
+    count: 1
+completed_at: '2026-09-09T10:33:14Z'

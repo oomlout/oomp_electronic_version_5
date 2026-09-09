@@ -1,0 +1,141 @@
+available: true
+units:
+- reference: Q2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 65079c9b-e8fb-4f39-9ef3-6f78624f1201
+  library_id: working-eagle-import:NPN-MMBT5550LT1G
+  unit: 1
+  body_style: 1
+  position:
+    x: 236.22
+    y: 99.06
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: Q2
+    Value: SS8050
+    Footprint: working:SOT96P237X111-3N
+    Datasheet: ''
+    JLCASSY: C2150
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 233.68
+      y: 99.06
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R4
+      pin_number: '1'
+      pin_name: '1'
+  - number: '2'
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 0.0
+    position:
+      x: 236.22
+      y: 96.52
+    net: RTS
+    net_aliases:
+    - RTS
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '11'
+      pin_name: RTS
+    - reference: R5
+      pin_number: '1'
+      pin_name: '1'
+  - number: '3'
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 0.0
+    position:
+      x: 236.22
+      y: 101.6
+    net: AUTORST_EN
+    net_aliases:
+    - AUTORST_EN
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: SJ1
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.2512
+        y: -2.6162
+      max:
+        x: 0.0762
+        y: 2.6162
+      width: 3.3274
+      height: 5.2324
+      center:
+        x: -1.5875
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 232.9688
+        y: 96.4438
+      max:
+        x: 236.2962
+        y: 101.6762
+      width: 3.3274
+      height: 5.2324
+      center:
+        x: 234.6325
+        y: 99.06
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '11'
+  pin_name: RTS
+- reference: J1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R4
+  pin_number: '1'
+  pin_name: '1'
+- reference: R5
+  pin_number: '1'
+  pin_name: '1'
+- reference: SJ1
+  pin_number: '2'
+  pin_name: '2'

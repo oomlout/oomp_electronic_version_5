@@ -14,9 +14,13 @@ diagrams, previews, and documentation.
 - [JLCPCB production files](kicad_agents/PRODUCTION_JLC_GUIDE.md)
 - [Installable symbol and footprint libraries](kicad_libraries/README.md)
 
-Each generated part keeps `README.md` and `working.yaml` at its root; supporting
-files live in `data/`. Project pages include top/bottom board drawings, mounting
-hole tables, an offline board explorer, and InteractiveHtmlBom.
+Each generated part keeps `README.md`, `working.yaml`, and a website-facing
+`web.yaml` at its root; supporting files live in `data/`. The web manifest
+normalizes the part metadata, inventories available files with descriptions and
+sizes, and supplies GitHub page/raw URLs. Its schema, repository location,
+categories, exclusions, descriptions, and primary-asset priorities are editable
+in `config_web_manifest.yaml`. Project pages include top/bottom board drawings,
+mounting hole tables, an offline board explorer, and InteractiveHtmlBom.
 
 Run `action_generate.bat --filter <oomp-id>` for a normal populate/action build
 and navigation refresh, retaining existing PNGs. Run `action_regenerate_all.bat` for a complete rebuild, including existing PNGs

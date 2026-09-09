@@ -53,6 +53,11 @@ Connector Header X6511WR-27H-C60D30R1 is an OOMP electronic connector definition
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

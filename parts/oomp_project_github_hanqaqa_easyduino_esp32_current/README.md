@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_hanqaqa_easyduino_esp32_current/data/generated_data/src/board_300.png)
 
-Project hanqaqa/easyduino ESP32 current is a KiCad project containing 64 extracted component records. The catalogue matcher linked 27 physical placements to OOMP parts.
+Project hanqaqa/easyduino ESP32 current is a KiCad project containing 64 extracted component records. The catalogue matcher linked 28 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project hanqaqa/easyduino ESP32 current is a KiCad project containing 64 extract
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 64 |
-| Matched OOMP components | 27 |
-| Unmatched physical components | 0 |
+| Matched OOMP components | 28 |
+| Unmatched physical components | 1 |
 | Front-side placements | 29 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -91,7 +91,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R2, R3, R8 | 3 | Resistor 5100 Ohm 0402 | 5.1k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_5100_ohm) |
 | R6 | 1 | Resistor 2000 Ohm 0402 | 2k | `Resistor_SMD:R_0402_1005Metric` | [`electronic_resistor_0402_2000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_2000_ohm) |
 | SW1, SW2 | 2 | Switch TS-1088-AR02016 TACTILE | SW_Push | `Button_Switch_SMD:SW_Push_SPST_NO_Alps_SKRK` | [`electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016) |
-| U1 | 1 | CP2102N-Axx-xQFN28 | CP2102N-Axx-xQFN28 | `Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm` | unmatched |
+| U1 | 1 | USB-Serial CP2102N-A01-GQFN28R | CP2102N-Axx-xQFN28 | `Package_DFN_QFN:QFN-28-1EP_5x5mm_P0.5mm_EP3.35x3.35mm` | [`electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102n_a01_gqfn28r) |
 | U2 | 1 | IC ESP32-WROOM-32E-N8 ESP32 WROOM 32E | ESP32-WROOM-E | `Espressif:ESP32-WROOM-32E` | [`electronic_ic_esp32_wroom_32e_microcontroller_wifi_bluetooth_8_mb_flash_espressif_esp32_wroom_32e_n8`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_esp32_wroom_32e_microcontroller_wifi_bluetooth_8_mb_flash_espressif_esp32_wroom_32e_n8) |
 | U3 | 1 | Regulator AMS1117-3.3 3.3V SOT-223 | AMS1117-3.3 | `Package_TO_SOT_SMD:SOT-223-3_TabPin2` | [`electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3) |
 | U4 | 1 | ESP32-DevKitC | ESP32-DevKitC | `Espressif:ESP32-DevKitC` | unmatched |
@@ -128,13 +128,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
+- 1 physical component records are not yet matched to an OOMP part.
 - The extractor reports 2 named-net comparisons that differ between schematic and PCB data.
-- J1: C2765186 and the supplied USBC.pdf identify SHOU HAN TYPE-C 16PIN 2MD(073), while the footprint is named G-Switch GT-USB-7010ASV. OOMP follows the BOM/PDF identity; the original footprint remains unchanged pending land-pattern verification.
-- D1: C7074 is Littelfuse SP0503BAHTG. The upstream ESD_Protection.pdf is TECH PUBLIC, so OOMP uses the downloaded Littelfuse datasheet instead.
-- C5/C7/C8: C11366 is AVX TAJA226K010RNJ, 22uF 10V, A-case 3216-18. The upstream Kemet-I footprint name specifies a lower 1.0mm body; verify clearance for the actual 1.8mm capacitor.
-- SW1/SW2: C720477 is XUNPU TS-1088-AR02016, not Alps. The original Alps_SKRK footprint is retained; exact master compatibility has not been certified.
-- U1: BOM C6568, upstream PDF and README identify CP2102-GMR, but the actual schematic symbol is CP2102N-Axx-xQFN28. CP2102-GMR has been added to OOMP; confirm which chip is intended before accepting a match.
-- U4: ESP32-DevKitC is a combined 38-pad carrier/header footprint, not an additional DevKit board: the source photo shows two 19-pin male headers. Both headers already exist as electronic_connector_header_2_54_mm_pitch_through_hole_19_pin, but a one-footprint-to-two-parts mapping needs confirmation. Do not buy another DevKitC.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_esp32_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_hanqaqa_easyduino_esp32_current/data/generated_data/browser_research_queue.md)
@@ -143,7 +138,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_hanqaqa_easyduino_esp32_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 13
+- Matched OOMP source parts copied: 14
 
 ## Source files
 

@@ -1,0 +1,50 @@
+repository: sparkfun/Qwiic_Magnetometer_MLX90393
+commit: 9167ef00efc6b20c69a5dd715c359d926beadd56
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: qwiic_mlx90393_magnetometer
+  path: Hardware/Qwiic_MLX90393_Magnetometer.brd
+  format: eagle
+boards_excluded:
+- path: Production/Qwiic_MLX90393_Magnetometer-Panel_v10.brd
+  source_format: eagle
+  folder: Production
+  basename: Qwiic_MLX90393_Magnetometer-Panel_v10
+  project_file_path: Production/Qwiic_MLX90393_Magnetometer-Panel_v10
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: Qwiic_MLX90393_Magnetometer-Panel
+  family_key: production/qwiic_mlx90393_magnetometer_panel
+  version_key:
+  - 10
+  version_text: v10
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: qwiic_mlx90393_magnetometer_panel
+  board_name: Qwiic MLX90393 Magnetometer Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T10:44:16Z'

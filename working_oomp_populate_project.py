@@ -128,7 +128,9 @@ def main(**kwargs):
                 "project_file_basename": version_details.get("project_file_basename", ""),
                 "project_file_path": version_details.get("project_file_path", ""),
                 "project_file_path_original": version_details.get("project_file_path_original", ""),
-                "project_file_extensions": list(PROJECT_FILE_EXTENSIONS),
+                "project_file_extensions": list(
+                    version_details.get("project_file_extensions", PROJECT_FILE_EXTENSIONS)
+                ),
                 "project_match_overrides": {},
                 "project_match_blocked": dict(version_details.get("match_blocked", {})),
                 "project_review_notes": list(version_details.get("review_notes", [])),

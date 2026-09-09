@@ -1,0 +1,35 @@
+repository: sparkfun/Qwiic_Spectral_Sensor_AS726X
+commit: 4a5ba39e5a32962e019a8dc454d0946af5c83de7
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: qwiic_spectral_sensor_as726x
+  path: Hardware/Qwiic_Spectral_Sensor-AS726x.brd
+  format: eagle
+boards_excluded:
+- path: Production/13725_Qwiic_Spectral_Sensor-AS726x-panel.v10.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 2
+  details:
+  - kind: include_override
+    count: 1
+  - kind: exclude_paths
+    count: 1
+completed_at: '2026-09-09T10:22:57Z'

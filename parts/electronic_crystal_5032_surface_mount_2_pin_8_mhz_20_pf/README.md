@@ -2,7 +2,7 @@
 
 `electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf`
 
-Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition. It uses the 5032 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition. It uses the 5032 package or form factor. Its nominal drawing size is 5.0 &#x00D7; 3.2 mm. The definition includes 2 documented pins.
 
 ![Crystal 8 MHz 20 pF 5032 2-pin pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition. It uses
 | OOMP ID | `electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf` |
 | Type | Crystal |
 | Package / style | 5032 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 5.0 &#x00D7; 3.2 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -34,8 +35,8 @@ Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition. It uses
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 5.0 mm |
+| Width | 3.2 mm |
 
 
 
@@ -48,6 +49,14 @@ Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition. It uses
 | LCSC | [`C122522`](https://www.lcsc.com/product-detail/C122522.html) |
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
 
 
 

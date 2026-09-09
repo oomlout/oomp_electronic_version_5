@@ -2,7 +2,7 @@
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_12_pin`
 
-Connector Header 2.54 mm pitch through hole right angle long pin 12 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 10.36 &#x00D7; 30.48 mm. The definition includes 12 documented pins.
+Connector Header 2.54 mm pitch through hole right angle long pin 12 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 2.54 &#x00D7; 30.48 mm. The definition includes 12 documented pins.
 
 ![Connector Header 2.54 mm pitch through hole right angle long pin 12 pin pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector Header 2.54 mm pitch through hole right angle long pin 12 pin is an OO
 | OOMP ID | `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_12_pin` |
 | Type | Connector |
 | Package / style | header |
-| Nominal size | 10.36 &#x00D7; 30.48 mm |
+| Nominal size | 2.54 &#x00D7; 30.48 mm |
 | Documented pins | 12 |
 
 
@@ -34,7 +34,7 @@ Connector Header 2.54 mm pitch through hole right angle long pin 12 pin is an OO
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.36 mm |
+| Length | 2.54 mm |
 | Width | 30.48 mm |
 
 
@@ -60,6 +60,11 @@ Connector Header 2.54 mm pitch through hole right angle long pin 12 pin is an OO
 | 12 | pin_12 | signal |
 
 
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

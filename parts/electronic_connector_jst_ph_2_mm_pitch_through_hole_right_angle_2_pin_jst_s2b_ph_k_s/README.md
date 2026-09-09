@@ -2,7 +2,7 @@
 
 `electronic_connector_jst_ph_2_mm_pitch_through_hole_right_angle_2_pin_jst_s2b_ph_k_s`
 
-Connector JST Ph S2B-PH-K-S is an OOMP electronic connector definition. It uses the jst ph package or form factor. Its nominal drawing size is 5.9 &#x00D7; 7.6 mm. The definition includes 2 documented pins.
+Connector JST Ph S2B-PH-K-S is an OOMP electronic connector definition. It uses the jst ph package or form factor. Its nominal drawing size is 2.54 &#x00D7; 5.08 mm. The definition includes 2 documented pins.
 
 ![Connector JST Ph S2B-PH-K-S pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector JST Ph S2B-PH-K-S is an OOMP electronic connector definition. It uses 
 | OOMP ID | `electronic_connector_jst_ph_2_mm_pitch_through_hole_right_angle_2_pin_jst_s2b_ph_k_s` |
 | Type | Connector |
 | Package / style | jst ph |
-| Nominal size | 5.9 &#x00D7; 7.6 mm |
+| Nominal size | 2.54 &#x00D7; 5.08 mm |
 | Documented pins | 2 |
 
 
@@ -36,8 +36,8 @@ Connector JST Ph S2B-PH-K-S is an OOMP electronic connector definition. It uses 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 5.9 mm |
-| Width | 7.6 mm |
+| Length | 2.54 mm |
+| Width | 5.08 mm |
 
 
 

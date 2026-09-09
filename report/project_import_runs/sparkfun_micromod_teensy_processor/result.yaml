@@ -1,0 +1,40 @@
+repository: sparkfun/MicroMod_Teensy_Processor
+commit: 51ca16ddcabd38d134c051391ffedf16dafc19a0
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: micro_mod_teensy_lockable
+  path: Hardware/Lockable/MicroMod-Teensy-Lockable.brd
+  format: eagle
+- board: micro_mod_teensy
+  path: Hardware/MicroMod-Teensy.brd
+  format: eagle
+boards_excluded:
+- path: Hardware/Lockable/Production/MicroMod-Teensy-Lockable-Panel.brd
+  exclude_reason: review decision
+- path: Hardware/Production/MicroMod-Teensy-Panel.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 12
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 4
+  - kind: current_version_selection
+    count: 2
+  - kind: project_metadata_generation
+    count: 2
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 4
+  details:
+  - kind: include_override
+    count: 2
+  - kind: exclude_paths
+    count: 2
+completed_at: '2026-09-09T10:31:41Z'

@@ -1,0 +1,74 @@
+repository: sparkfun/SparkFun_GPS_Dead_Reckoning_ZED-F9R
+commit: 5f9ddc4a2083e7c8417bacd10507f2a6bb518ed1
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: spark_fun_zed_f9_r
+  path: Hardware/SMA/SparkFun_ZED-F9R_v11.brd
+  format: eagle
+- board: spark_fun_zed_f9_r_u_fl
+  path: Hardware/UFL/SparkFun_ZED-F9R_v12_uFL.brd
+  format: eagle
+boards_excluded:
+- path: Production/SMA/SparkFun_ZED-F9R_v11-Panel.brd
+  source_format: eagle
+  folder: Production/SMA
+  basename: SparkFun_ZED-F9R_v11-Panel
+  project_file_path: Production/SMA/SparkFun_ZED-F9R_v11-Panel
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: SparkFun_ZED-F9R-Panel
+  family_key: production_sma/spark_fun_zed_f9_r_panel
+  version_key:
+  - 11
+  version_text: v11
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: spark_fun_zed_f9_r_panel
+  board_name: Spark Fun ZED F9 R Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+- path: Production/uFL/SparkFun_ZED-F9R_v12_uFL-Panel.brd
+  source_format: eagle
+  folder: Production/uFL
+  basename: SparkFun_ZED-F9R_v12_uFL-Panel
+  project_file_path: Production/uFL/SparkFun_ZED-F9R_v12_uFL-Panel
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: SparkFun_ZED-F9R_uFL-Panel
+  family_key: production_u_fl/spark_fun_zed_f9_r_u_fl_panel
+  version_key:
+  - 12
+  version_text: v12
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: spark_fun_zed_f9_r_u_fl_panel
+  board_name: Spark Fun ZED F9 R u FL Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 12
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 4
+  - kind: current_version_selection
+    count: 2
+  - kind: project_metadata_generation
+    count: 2
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T10:50:01Z'

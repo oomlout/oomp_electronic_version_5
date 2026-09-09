@@ -26,9 +26,19 @@ Repair the affected OOMP component schematics and shared drawing routines, then 
 - Standard SMD markings now fit inside the package body: resistor `10 ohm` renders `100`; capacitor `2200 pF` renders `222`.
 - Quarter-watt resistor colour bands are grouped like the physical part, have no individual black borders, and remain cleanly contained by the final black body outline.
 - The 2.54 mm header top and side views now preserve the datasheet proportions: square individual collars, 0.64 mm square pins, and clearly different short/long right-angle legs.
+- A complete 2.54 mm header output audit removed the remaining fixed-size identity overlays, corrected the straight carrier offset, replaced right-angle dimension cards that still showed a straight pin, centred low-pin-count bent silhouettes, and added regression coverage for all three profiles.
 - SK6812MINI-E remains the four-pad PLCC-style layout; SK6812SIDE-A now follows its datasheet's unusual left-to-right side-emitter row: `1 DIN`, `2 VDD`, `3 DOUT`, `4 GND`.
 - Populate-time rules were updated in the extra-detail modules so the repairs survive a future fresh generation.
 - Validation: Python compilation, `git diff --check`, `MatchingAgentTests` (21 tests), and the README preview test all pass.
+
+## Follow-up package and project repairs
+
+- [x] LSM9DS1TR: replace the placeholder alternating power/ground pin table with the ST LGA-24 pinout and regenerate the package views.
+- [x] PCA9554PW: retain the exact project match and correct the TSSOP-16 pins 8--15 in the canonical part and SparkFun U4 copy.
+- [x] SK6812MINI-E: redraw the 3.2 x 2.8 mm body and 1.34 x 0.68 mm side contacts from the manufacturer drawing.
+- [x] JST GH SM04B-GH-TF: add the 1.25 mm pitch connector dimensions, four pins, and side-entry top/bottom/side drawing path.
+- [x] Eagle-import reconstruction: non-applicable artwork, fiducials, and solder-jumper features remain in audit data but no longer get reconstructed component folders.
+- [x] Bus Pirate 5 J302: rotate the canonical PCB footprint by 180 degrees; the preserved original remains unchanged for comparison.
 
 ## Scope guard
 

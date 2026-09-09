@@ -1,0 +1,50 @@
+repository: sparkfun/SD-MMC_Breakout
+commit: d472cfaa8c39cf9efc94f010e50b85bc87eefc7b
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: sd_mmc_breakout
+  path: Hardware/SD_MMC Breakout-v20.brd
+  format: eagle
+boards_excluded:
+- path: Production Files/SD_MMC Breakout-Panel-v21.brd
+  source_format: eagle
+  folder: Production Files
+  basename: SD_MMC Breakout-Panel-v21
+  project_file_path: Production Files/SD_MMC Breakout-Panel-v21
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: SD_MMC Breakout-Panel
+  family_key: production_files/sd_mmc_breakout_panel
+  version_key:
+  - 21
+  version_text: v21
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: sd_mmc_breakout_panel
+  board_name: SD MMC Breakout Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T10:52:38Z'

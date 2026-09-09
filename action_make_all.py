@@ -2,6 +2,11 @@ import copy
 #import working_scad
 
 def main(**kwargs):
+
+    if False:
+        import action_delete_generated_files
+        action_delete_generated_files.main(**kwargs)
+
     kwargs["run_oomp_populate"] = True
 
     kwargs["run_oomp"] = True

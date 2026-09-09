@@ -53,6 +53,11 @@ Connector Header ZX-PZ2.54-1-16PZZ is an OOMP electronic connector definition. I
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

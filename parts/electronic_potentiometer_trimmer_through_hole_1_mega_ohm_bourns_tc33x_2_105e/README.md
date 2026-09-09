@@ -2,7 +2,7 @@
 
 `electronic_potentiometer_trimmer_through_hole_1_mega_ohm_bourns_tc33x_2_105e`
 
-Potentiometer Through Hole 1 Mega Ohm Bourns TC33X 2 105E TRIMMER is an OOMP electronic potentiometer definition. It uses the trimmer package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Potentiometer Through Hole 1 Mega Ohm Bourns TC33X 2 105E TRIMMER is an OOMP electronic potentiometer definition. It uses the trimmer package or form factor. Its nominal drawing size is 3.8 &#x00D7; 3.6 mm. The definition includes 3 documented pins.
 
 ![Potentiometer Through Hole 1 Mega Ohm Bourns TC33X 2 105E TRIMMER pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Potentiometer Through Hole 1 Mega Ohm Bourns TC33X 2 105E TRIMMER is an OOMP ele
 | OOMP ID | `electronic_potentiometer_trimmer_through_hole_1_mega_ohm_bourns_tc33x_2_105e` |
 | Type | Potentiometer |
 | Package / style | trimmer |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.8 &#x00D7; 3.6 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -34,12 +35,21 @@ Potentiometer Through Hole 1 Mega Ohm Bourns TC33X 2 105E TRIMMER is an OOMP ele
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.8 mm |
+| Width | 3.6 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | CW | signal |
+| 2 | WIPER | signal |
+| 3 | CCW | signal |
 
 
 

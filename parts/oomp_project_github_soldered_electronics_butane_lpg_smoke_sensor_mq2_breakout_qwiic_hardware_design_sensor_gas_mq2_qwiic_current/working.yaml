@@ -173,7 +173,13 @@ oomlout_ai_roboclick_3:
     maximum_dimension: 300
     regenerate_pngs: false
     resample: lanczos
-  file_test: data/generated_data/src/board_mechanical_300.png
+  - command: run_python
+    description: Refresh Used in projects metadata and part README links from all
+      confirmed project matches.
+    file_python: kicad_agents/project_usage_action.py
+    parts_directory: parts
+    timeout: '600'
+  file_test: ''
   retries_until_complete: 0
 oomlout_ai_roboclick_4:
   actions:
@@ -210,16 +216,6 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Refresh Used in projects metadata and part README links from all
-      confirmed project matches.
-    file_python: kicad_agents/project_usage_action.py
-    parts_directory: parts
-    timeout: '600'
-  file_test: ''
-  retries_until_complete: 0
-oomlout_ai_roboclick_6:
-  actions:
-  - command: run_python
     description: Preserve original KiCad files, package local libraries, and replace
       only verified unchanged defaults in an OOMP design copy.
     file_output: data/oomp_design/conversion_report.yaml
@@ -230,7 +226,7 @@ oomlout_ai_roboclick_6:
     timeout: '1200'
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_7:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Generate JLCPCB Gerbers, drill files, BOM, CPL, OOMP pad audit data,
@@ -250,6 +246,19 @@ oomlout_ai_roboclick_7:
   always_run_on_regeneration: true
   file_test: data/production_auto_generate/data/generation_status.yaml
   honour_gate_in_normal_run: true
+  retries_until_complete: 0
+oomlout_ai_roboclick_7:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_oomp_project_github_soldered_electronics_butane_lpg_smoke_sensor_mq2_breakout_qwiic_hardware_design_sensor_gas_mq2_qwiic_current
 production_board_source: ''
@@ -393,4 +402,5 @@ taxonomy_7_upper_length_4: CURR
 taxonomy_7_upper_length_5: CURRE
 taxonomy_8: ''
 taxonomy_9: ''
+threaded_workers: 6
 url_chat: ''

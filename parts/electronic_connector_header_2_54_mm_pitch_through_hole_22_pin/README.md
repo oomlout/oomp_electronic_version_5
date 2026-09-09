@@ -53,6 +53,11 @@ Connector Header B-2100S22P-A110 is an OOMP electronic connector definition. It 
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

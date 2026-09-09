@@ -60,6 +60,7 @@ KNOWN_PART_ALIASES = {
     "ap2112k_3_3": "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3",
     "lis3dhtr": "electronic_sensor_accelerometer_lga_16_st_lis3dhtr",
     "lis3dh": "electronic_sensor_accelerometer_lga_16_st_lis3dhtr",
+    "adxl343": "electronic_sensor_accelerometer_lga_14_analog_devices_adxl343",
     "adxl345": "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345",
     "pts810": "electronic_switch_tactile_surface_mount_pts810",
     "gt_tc026x_hxxx_lx": "electronic_switch_tactile_through_hole_gt_tc026x_hxxx_lx",
@@ -127,6 +128,26 @@ KNOWN_PART_ALIASES = {
     "ss14": "electronic_diode_schottky_sod_123_ss14",
     "bat54w": "electronic_diode_schottky_sod_323_bat54w",
     "1ss400": "electronic_diode_schottky_sod_523_1ss400",
+    "1n4148ws": "electronic_diode_switching_sod_323_onsemi_1n4148ws",
+    "1n4148w": "electronic_diode_switching_sod_123_onsemi_1n4148w",
+    "ss8050": "electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050",
+    "blm18kg221sn1d": "electronic_ferrite_bead_0603_220_ohm_2_2_amp_murata_blm18kg221sn1d",
+    "lbmf1608t100k": "electronic_inductor_0603_10_micro_henry_taiyo_yuden_lbmf1608t100k",
+    "atmega328p_mu": "electronic_ic_qfn_32_5_mm_x_5_mm_microcontroller_8_bit_avr_microchip_atmega328p_mu",
+    "mcp1700t_3302e_tt": "electronic_ic_sot_23_3_power_management_linear_voltage_regulator_3_3_volt_microchip_mcp1700t_3302e_tt",
+    "max31856": "electronic_ic_tssop_14_converter_thermocouple_to_digital_converter_maxim_max31856",
+    "infineon_slb9670": "electronic_ic_qfn_32_5_mm_x_5_mm_trusted_platform_module_trusted_platform_module_infineon_slb9670",
+    "infineon_slb9665": "electronic_ic_qfn_32_5_mm_x_5_mm_trusted_platform_module_trusted_platform_module_infineon_slb9665",
+    "ch343g": "electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch343g",
+    "ld1117_3_3": "electronic_ic_sot_223_4_power_management_linear_voltage_regulator_3_3_volt_st_ld1117_3_3",
+    "esp8285h16": "electronic_ic_qfn_33_5_mm_x_5_mm_microcontroller_wifi_bluetooth_espressif_esp8285h16",
+    "pushbutton_6x6mm": "electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016",
+    "ant3216ll00r2400a": "electronic_antenna_3216_surface_mount_ceramic_yageo_ant3216ll00r2400a",
+    "mlt_8530": "electronic_buzzer_surface_mount_mu_rata_mlt_8530",
+    "esp_12s": "electronic_ic_module_esp_12s_microcontroller_wifi_bluetooth_espressif_esp_12s",
+    "usb_c_usb_c_12": "electronic_connector_usb_c_surface_mount_12_pin_generic_usb_c_12_pin_generic",
+    "61030621121": "electronic_connector_header_2_54_mm_pitch_surface_mount_dual_row_6_pin_wurth_electronics_61030621121",
+    "terminal_block_1x2": "electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2",
     # Schematic values that are really MPNs of catalogue capacitors.
     "cl10a226mpcnube": "electronic_capacitor_0603_22_micro_farad",
     # Soldered radial electrolytic (16 V, 681 code = 680 uF, 8 mm x 14.5 mm).
@@ -215,7 +236,10 @@ def _engineering_number(value, suffixes):
         decimal = float("0." + middle_match.group(3))
         return (whole + decimal) * suffixes[middle_match.group(2)]
 
-    normal_match = re.fullmatch(r"(\d+(?:\.\d+)?)([a-z]?)", normalized)
+    # KiCad values often carry a tolerance, voltage, or dielectric after the
+    # engineering value ("10uF 16V X5R", "12k 1%"). Parse the leading
+    # electrical value while intentionally ignoring those descriptive tails.
+    normal_match = re.match(r"(\d+(?:\.\d+)?)([a-z]?)", normalized)
     if normal_match and normal_match.group(2) in suffixes:
         return float(normal_match.group(1)) * suffixes[normal_match.group(2)]
     return None
@@ -330,7 +354,17 @@ def _strip_import_library_prefix(footprint):
     the colon identifies the package."""
     text = str(footprint or "")
     library, separator, name = text.rpartition(":")
-    if separator and (library.strip().lower() == "kicad_file" or "import" in library.lower()):
+    library_name = library.strip().lower()
+    # Eagle imports and project-local rescue libraries prepend an unstable
+    # namespace to the useful footprint name.  The suffix is the part that
+    # carries the package identity (JST_SH4, SOD-323, C_0603, etc.).
+    if separator and (
+        library_name == "kicad_file"
+        or "import" in library_name
+        or library_name == "working"
+        or library_name.endswith("rescue")
+        or library_name == "rocketscreamkicadlib"
+    ):
         return name.strip()
     return text
 
@@ -407,7 +441,9 @@ def infer_kind(fields):
     erad_header_footprint = bool(
         re.search(r"header_male_\d+x\d+", normalize_text(fields["footprint"]))
     ) or "header_updi" in normalize_text(fields["footprint"])
-    dual_row_header_footprint = bool(re.search(r"pinheader_2x\d+_p2_54mm", normalize_text(fields["footprint"])))
+    dual_row_header_footprint = bool(re.search(r"pin(?:header|socket)_2x\d+_p2_54mm", normalize_text(fields["footprint"]))) or bool(
+        re.search(r"hdr_2x\d+_pitch2_54mm", normalize_text(fields["footprint"]))
+    )
     # Eagle libraries name plain 2.54 mm headers "1X06_ROUND_70" and friends;
     # the footprint name alone carries the pin count.
     eagle_header_footprint = bool(re.match(r"1x\d+", normalize_text(fields["footprint"])))
@@ -418,7 +454,7 @@ def infer_kind(fields):
         and "2_54mm" in evidence
     ):
         return "connector_header"
-    if reference.startswith("Y") and "crystal" in evidence:
+    if (reference.startswith("Y") or reference.startswith("XT")) and ("crystal" in evidence or "xtal" in evidence):
         return "crystal"
     # USB-C and other connectors
     if "usb_c_receptacle" in evidence or "usb_c" in evidence:
@@ -477,6 +513,34 @@ def proposed_oomp_id(component):
     # Footprint-qualified identities: the bare schematic value is ambiguous
     # across packages, so the footprint picks the catalogue part.
     footprint_name = normalize_text(fields["footprint"])
+    if value_normalized == "26mhz" and "xtal_4p_2016" in footprint_name:
+        return "electronic_crystal_2016_surface_mount_4_pin_26_mhz_20_pf_txc_nx3225gd"
+    if "mlt_8530" in footprint_name:
+        return "electronic_buzzer_surface_mount_mu_rata_mlt_8530"
+    if "hyg9605b" in value_normalized or "hyg9605b" in footprint_name:
+        return "electronic_buzzer_surface_mount_hydz_hyg9605b"
+    if "micro_usb" in footprint_name or value_normalized == "micro_usb":
+        return "electronic_connector_micro_usb_surface_mount_9_pin_rocketscream_micro_usb"
+    if "mf_fsmf" in footprint_name:
+        return "electronic_fuse_0603_resettable_bourns_mf_fsmf"
+    if "it_1109s" in value_normalized or "it_1102w" in footprint_name:
+        return "electronic_switch_tactile_surface_mount_switronic_it_1109s"
+    # Imported project values often combine a vendor/library prefix and the
+    # useful part number with underscores.  Substring checks are intentional:
+    # ``_`` is a word character, so a \b regex does not find the suffix in
+    # values such as ``6103XX21121_61030621121``.
+    if "usbc_c_31_m_12" in footprint_name or value_normalized == "usbc_usb_c_12":
+        return "electronic_connector_usb_c_surface_mount_12_pin_usb_c_12_pin_generic"
+    if "61030621121" in value_normalized or footprint_name == "61030621121":
+        return "electronic_connector_header_2_54_mm_pitch_surface_mount_dual_row_6_pin_wurth_electronics_61030621121"
+    if "ch343g" in value_normalized:
+        return "electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch343g"
+    if "esp8285h16" in value_normalized:
+        return "electronic_ic_qfn_33_5_mm_x_5_mm_microcontroller_wifi_bluetooth_espressif_esp8285h16"
+    if "1n4148w" in value_normalized:
+        return "electronic_diode_switching_sod_123_onsemi_1n4148w"
+    if "2n3904" in value_normalized and "sot_23" in footprint_name:
+        return "electronic_transistor_sot_23_bipolar_npn"
     # Common imported footprints carry the exact switch or capacitor identity
     # even when the schematic value is only a generic symbol/value.
     if "pts810" in footprint_name:
@@ -487,6 +551,15 @@ def proposed_oomp_id(component):
         return "electronic_switch_tactile_surface_mount_omron_b3fs_100xp"
     if "ml414h" in footprint_name or "ml414h" in value_normalized:
         return "electronic_battery_coin_cell_6_8_mm_maxell_ml414h"
+    if "led_1206_bottom" in footprint_name and "green" in (value_normalized + " " + footprint_name):
+        return "electronic_led_1206_bottom_green"
+    # Adafruit's Eagle-imported board carries the exact ADXL343 value on an
+    # imported LGA14 footprint.  Keep ADXL343 distinct from ADXL345 now that
+    # the exact manufacturer identity exists in the catalogue.
+    if "adxl343" in value_normalized and "lga14" in footprint_name:
+        return "electronic_sensor_accelerometer_lga_14_analog_devices_adxl343"
+    if "adxl345" in value_normalized and "lga14" in footprint_name:
+        return "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345"
     if normalize_text(fields["value"]) in {"10uf", "10u"} and "0805" in footprint_name:
         return "electronic_capacitor_0805_10_micro_farad"
     if "1x01_1x1mm" in footprint_name:
@@ -600,7 +673,9 @@ def proposed_oomp_id(component):
                 pin_count = int(m.group(1))
         if not pin_count:
             # Dual-row headers (ICSP and friends): PinHeader_2x03_P2.54mm.
-            m = re.search(r"pinheader_2x(\d+)_p2_54mm", footprint_text)
+            m = re.search(r"pin(?:header|socket)_2x(\d+)_p2_54mm", footprint_text) or re.search(
+                r"hdr_2x(\d+)_pitch2_54mm", footprint_text
+            )
             if m:
                 pin_count = 2 * int(m.group(1))
                 dual_row = True

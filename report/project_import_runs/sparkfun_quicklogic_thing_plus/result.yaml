@@ -1,0 +1,46 @@
+repository: sparkfun/QuickLogic_Thing_Plus
+commit: 07d226cfc7c69327714011948f35a965764fa982
+definition_file: null
+boards_added: []
+boards_excluded:
+- path: Hardware/Board Files/QTPLUS_V2_1.brd
+  source_format: eagle
+  folder: Hardware/Board Files
+  basename: QTPLUS_V2_1
+  project_file_path: Hardware/Board Files/QTPLUS_V2_1
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: QTPLUS
+  family_key: hardware_board_files/qtplus
+  version_key:
+  - 2
+  - 1
+  version_text: V2_1
+  auxiliary_words: []
+  eagle_board_storage: legacy_binary
+  eagle_schematic_storage: missing
+  board: qtplus
+  board_name: QTPLUS
+ingestion_status: too_old
+ingest_note: 'too old: repository contains pre-Eagle-6 binary board or schematic files'
+legacy_binary_files:
+- path: Hardware/Board Files/QTPLUS_V2_1.brd
+  kind: board
+python_work:
+  decision_units: 5
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 1
+  - kind: legacy_eagle_binary_gate
+    count: 1
+  - kind: queue_ingested_note
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T10:47:03Z'

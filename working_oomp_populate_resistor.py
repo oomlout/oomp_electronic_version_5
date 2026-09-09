@@ -21,7 +21,7 @@ def main(**kwargs):
     resistance_values.append(10000000)
 
     # Additional project values can be added directly to this simple list.
-    additional_resistance_values = [200, 300, 510, 2000, 2400, 5100, 20000, 102000, 133000, 200000, 510000]
+    additional_resistance_values = [200, 300, 510, 1600, 2400, 5100, 12000, 20000, 53600, 102000, 133000, 200000, 510000]
     for additional_resistance_value in additional_resistance_values:
         resistance_values.append(additional_resistance_value)
 

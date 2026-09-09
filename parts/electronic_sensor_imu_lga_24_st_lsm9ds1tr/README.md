@@ -46,30 +46,30 @@ Sensor Lga 24 St LSM9DS1TR IMU is an OOMP electronic sensor definition. It uses 
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-| 1 | VDD | power |
-| 2 | GND | gnd |
-| 3 | VDD | power |
-| 4 | GND | gnd |
-| 5 | VDD | power |
-| 6 | GND | gnd |
-| 7 | VDD | power |
-| 8 | GND | gnd |
-| 9 | VDD | power |
-| 10 | GND | gnd |
-| 11 | VDD | power |
-| 12 | GND | gnd |
-| 13 | VDD | power |
-| 14 | GND | gnd |
-| 15 | VDD | power |
-| 16 | GND | gnd |
-| 17 | VDD | power |
-| 18 | GND | gnd |
-| 19 | VDD | power |
+| 1 | VDDIO | signal |
+| 2 | SCL/SPC | signal |
+| 3 | VDDIO | signal |
+| 4 | SDA/SDI/SDO | signal |
+| 5 | SDO_A/G | signal |
+| 6 | SDO_M | signal |
+| 7 | CS_A/G | signal |
+| 8 | CS_M | signal |
+| 9 | DRDY_M | signal |
+| 10 | INT_M | signal |
+| 11 | INT1_A/G | signal |
+| 12 | INT2_A/G | signal |
+| 13 | DEN_A/G | signal |
+| 14 | RES | signal |
+| 15 | RES | signal |
+| 16 | RES | signal |
+| 17 | RES | signal |
+| 18 | RES | signal |
+| 19 | GND | gnd |
 | 20 | GND | gnd |
-| 21 | VDD | power |
-| 22 | GND | gnd |
+| 21 | CAP | signal |
+| 22 | VDD | power |
 | 23 | VDD | power |
-| 24 | GND | gnd |
+| 24 | C1 | signal |
 
 
 

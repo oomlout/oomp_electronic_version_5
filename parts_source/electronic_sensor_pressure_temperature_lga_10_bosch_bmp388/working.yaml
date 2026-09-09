@@ -1,5 +1,10 @@
 category: other
 category_name: Other
+datasheet_url: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp388-ds001.pdf
+dimension_reference:
+  document: Bosch BMP388 datasheet, Figure 26 and landing pattern
+  notes: 10-pin metal-lid LGA, 2.00 x 2.00 x 0.75 mm; pads are the Bosch 1.525 mm
+    bottom-view array.
 dimensions_mm:
   length: 2.0
   width: 2.0
@@ -17,115 +22,119 @@ package_drawing:
   body:
   - 1.8
   - 1.8
+  circles:
+  - - 0.4
+    - -0.4
+    - 0.1
   overall:
   - 2.0
   - 2.0
   pin_one:
-  - -0.4
-  - -0.4
+  - 0.25
+  - -0.7625
   pins:
   - - '1'
-    - left
-    - -0.75
-    - -0.6666666666666667
-    - 0.5
-    - 0.3
+    - bottom
+    - 0.25
+    - -0.7625
+    - 0.275
+    - 0.25
   - - '2'
-    - left
-    - -0.75
-    - 0.0
-    - 0.5
-    - 0.3
+    - bottom
+    - -0.25
+    - -0.7625
+    - 0.275
+    - 0.25
   - - '3'
     - left
-    - -0.75
-    - 0.6666666666666667
-    - 0.5
-    - 0.3
-  - - '4'
-    - bottom
-    - -0.6666666666666667
-    - -0.75
-    - 0.3
-    - 0.5
-  - - '5'
-    - bottom
-    - 0.0
-    - -0.75
-    - 0.3
-    - 0.5
-  - - '6'
-    - bottom
-    - 0.6666666666666667
-    - -0.75
-    - 0.3
-    - 0.5
-  - - '7'
-    - right
-    - 0.75
+    - -0.7625
     - -0.5
+    - 0.25
+    - 0.275
+  - - '4'
+    - left
+    - -0.7625
+    - 0.0
+    - 0.25
+    - 0.275
+  - - '5'
+    - left
+    - -0.7625
     - 0.5
-    - 0.45
+    - 0.25
+    - 0.275
+  - - '6'
+    - top
+    - -0.25
+    - 0.7625
+    - 0.275
+    - 0.25
+  - - '7'
+    - top
+    - 0.25
+    - 0.7625
+    - 0.275
+    - 0.25
   - - '8'
     - right
-    - 0.75
+    - 0.7625
     - 0.5
-    - 0.5
-    - 0.45
+    - 0.25
+    - 0.275
   - - '9'
-    - top
-    - -0.5
-    - 0.75
-    - 0.45
-    - 0.5
+    - right
+    - 0.7625
+    - 0.0
+    - 0.25
+    - 0.275
   - - '10'
-    - top
-    - 0.5
-    - 0.75
-    - 0.45
-    - 0.5
+    - right
+    - 0.7625
+    - -0.5
+    - 0.25
+    - 0.275
 part_id: P1
 pins:
   pin_1:
-    name: '1'
+    name: VDDIO
     number: '1'
     type: signal
   pin_10:
-    name: '10'
+    name: VDD
     number: '10'
-    type: signal
+    type: power
   pin_2:
-    name: '2'
+    name: SCK
     number: '2'
     type: signal
   pin_3:
-    name: '3'
+    name: VSS
     number: '3'
-    type: signal
+    type: gnd
   pin_4:
-    name: '4'
+    name: SDI
     number: '4'
     type: signal
   pin_5:
-    name: '5'
+    name: SDO
     number: '5'
     type: signal
   pin_6:
-    name: '6'
+    name: CSB
     number: '6'
     type: signal
   pin_7:
-    name: '7'
+    name: INT
     number: '7'
     type: signal
   pin_8:
-    name: '8'
+    name: VSS
     number: '8'
-    type: signal
+    type: gnd
   pin_9:
-    name: '9'
+    name: VSS
     number: '9'
-    type: signal
+    type: gnd
 svg_details:
 - filename_extra: assembly
   make_a4: false

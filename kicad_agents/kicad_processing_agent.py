@@ -1065,6 +1065,11 @@ def _write_component_tree(output_directory, components, part_index):
             previous_directories = set()
 
     for component in components:
+        # Board artwork, fiducials, solder-jumper address links and other
+        # non-purchased features remain in project.yaml for connectivity and
+        # audit purposes, but must not become reconstructed component parts.
+        if component.get("oomp", {}).get("status") == "not_applicable":
+            continue
         directory_name = _component_directory_name(component["reference"])
         if directory_name in used_directory_names:
             suffix = (component.get("pcb") or {}).get("uuid", "")[:8] or "duplicate"

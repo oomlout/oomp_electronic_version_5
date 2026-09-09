@@ -153,6 +153,33 @@ def _qfn(names, body=(4.0, 4.0), overall=(5.3, 5.3), exposed_pad=False):
     return drawing
 
 
+def _qfn24(names):
+    """QFN-24 with the 0.5 mm pitch used by the CH342F package.
+
+    The old generic QFN helper distributed contacts over the full body edge,
+    which made a 4 x 4 mm QFN-24 look like a much coarser package.  The WCH
+    package has six contacts on each side at 0.5 mm pitch.
+    """
+    body = (4.0, 4.0)
+    overall = (5.2, 5.2)
+    centres = (-1.25, -0.75, -0.25, 0.25, 0.75, 1.25)
+    pins = []
+    for index, x in enumerate(centres, 1):
+        pins.append([str(index), "bottom", x, -2.25, 0.25, 0.60])
+    for index, y in enumerate(centres, 7):
+        pins.append([str(index), "right", 2.25, y, 0.60, 0.25])
+    for index, x in enumerate(reversed(centres), 13):
+        pins.append([str(index), "top", x, 2.25, 0.25, 0.60])
+    for index, y in enumerate(reversed(centres), 19):
+        pins.append([str(index), "left", -2.25, y, 0.60, 0.25])
+    return {
+        "overall": list(overall),
+        "body": list(body),
+        "pins": pins,
+        "pin_one": [-1.25, -2.25],
+    }
+
+
 def _module(width, height, names, antenna=False, body=None):
     """Create a module/LGA outline with evenly distributed edge contacts."""
     body = body or (width * 0.82, height * 0.82)
@@ -181,6 +208,136 @@ def _module(width, height, names, antenna=False, body=None):
     return drawing
 
 
+def _bmp388_lga10():
+    """Bosch BMP388 bottom-view land pattern from the package drawing."""
+    # Bosch's 2 x 2 mm package uses a 1.525 mm pad array.  The six pads on
+    # the north/south edges are 0.275 x 0.250 mm and the four side pads are
+    # 0.250 x 0.275 mm; these positions also agree with KiCad's Bosch LGA-10
+    # footprint.
+    pins = [
+        ["1", "bottom", 0.25, -0.7625, 0.275, 0.250],
+        ["2", "bottom", -0.25, -0.7625, 0.275, 0.250],
+        ["3", "left", -0.7625, -0.5, 0.250, 0.275],
+        ["4", "left", -0.7625, 0.0, 0.250, 0.275],
+        ["5", "left", -0.7625, 0.5, 0.250, 0.275],
+        ["6", "top", -0.25, 0.7625, 0.275, 0.250],
+        ["7", "top", 0.25, 0.7625, 0.275, 0.250],
+        ["8", "right", 0.7625, 0.5, 0.250, 0.275],
+        ["9", "right", 0.7625, 0.0, 0.250, 0.275],
+        ["10", "right", 0.7625, -0.5, 0.250, 0.275],
+    ]
+    return {
+        "overall": [2.0, 2.0],
+        "body": [1.8, 1.8],
+        "pins": pins,
+        "pin_one": [0.25, -0.7625],
+        "circles": [[0.4, -0.4, 0.10]],
+    }
+
+
+def _two_pin_crystal(length, width):
+    """Two-pad ceramic crystal, with contacts at the short ends."""
+    pad_length = min(0.65, length * 0.18)
+    pad_width = width * 0.62
+    x = length / 2 - pad_length / 2
+    return {
+        "overall": [length, width],
+        "body": [length - pad_length * 1.7, width - 0.30],
+        "pins": [
+            ["1", "left", -x, 0.0, pad_length, pad_width],
+            ["2", "right", x, 0.0, pad_length, pad_width],
+        ],
+        "pin_one": [-x, 0.0],
+    }
+
+
+def _chip_passive(length, width):
+    """Simple two-terminal rectangular chip package with end contacts."""
+    pad_length = min(0.55, length * 0.18)
+    x = length / 2 - pad_length / 2
+    return {
+        "overall": [length, width],
+        "body": [length - pad_length * 1.7, width * 0.68],
+        "pins": [
+            ["1", "left", -x, 0.0, pad_length, width * 0.72],
+            ["2", "right", x, 0.0, pad_length, width * 0.72],
+        ],
+        "pin_one": [-x, 0.0],
+    }
+
+
+def _u_fl_r_smt_1():
+    """Hirose U.FL-R-SMT-1 top view: 3.0 x 3.1 mm receptacle."""
+    return {
+        "overall": [3.6, 3.6],
+        "body": [3.0, 3.1],
+        "pins": [
+            ["1", "bottom", 0.0, -1.50, 0.85, 0.55],
+            ["2", "left", -1.50, 0.0, 0.55, 0.75],
+            ["3", "right", 1.50, 0.0, 0.55, 0.75],
+        ],
+        "circles": [[0.0, 0.0, 0.72]],
+        "pin_one": [0.0, -1.50],
+    }
+
+
+def _roller_encoder():
+    """SparkFun roller-encoder board footprint for Panasonic EVQWGD001.
+
+    The breakout exposes the fitted encoder as four board contacts (A, B,
+    switch and ground) in one 2.54 mm row.  The large side wheel is retained
+    as a circle so the drawing reads as the physical component rather than a
+    generic five-pin switch.
+    """
+    pins = [
+        ["1", "bottom", -3.81, -6.0, 1.0, 1.0],
+        ["2", "bottom", -1.27, -6.0, 1.0, 1.0],
+        ["3", "bottom", 1.27, -6.0, 1.0, 1.0],
+        ["4", "bottom", 3.81, -6.0, 1.0, 1.0],
+    ]
+    return {
+        "overall": [16.8, 14.0],
+        "body": [11.0, 10.0],
+        "body_offset": [-1.0, 0.6],
+        "pins": pins,
+        "circles": [[4.6, 0.6, 2.2], [-1.0, 0.6, 1.6]],
+        "pin_one": [-3.81, -6.0],
+    }
+
+
+def _bmv080_flex():
+    """Bosch BMV080: 4.4 mm sensor end on a 20 mm flex PCB."""
+    # The long body represents the flex PCB.  The extra boxes distinguish the
+    # LGA/lens end from the ZIF contact end without pretending the flex is a
+    # conventional rectangular 20-pin module.
+    pins = []
+    for index, y in enumerate([(-1.8 + index * 0.3) for index in range(13)], 1):
+        pins.append([str(index), "right", 9.55, y, 0.45, 0.20])
+    return {
+        "overall": [20.0, 5.5],
+        "body": [20.0, 4.4],
+        "boxes": [[-7.8, 0.0, 4.4, 3.0], [6.3, 0.0, 6.1, 4.4]],
+        "circles": [[-7.8, 0.0, 1.0]],
+        "pins": pins,
+        "pin_one": [9.55, -1.8],
+    }
+
+
+def _tc33x2_trimmer():
+    """Bourns TC33X-2 3 mm top-adjust J-lead trimmer."""
+    return {
+        "overall": [3.8, 3.6],
+        "body": [3.0, 2.8],
+        "pins": [
+            ["1", "bottom", -1.25, -1.55, 0.55, 0.65],
+            ["2", "bottom", 0.0, -1.55, 0.55, 0.65],
+            ["3", "bottom", 1.25, -1.55, 0.55, 0.65],
+        ],
+        "circles": [[0.0, 0.1, 0.78]],
+        "pin_one": [-1.25, -1.55],
+    }
+
+
 def _lis3dh_lga16():
     """ST LIS3DH LGA-16: 5/3/5/3 pads around a 3 mm square body."""
     pins = []
@@ -193,7 +350,9 @@ def _lis3dh_lga16():
     for number, x in zip(range(14, 17), (0.5, 0.0, -0.5)):
         pins.append([str(number), "top", x, -1.4, 0.36, 0.5])
     return {
-        "overall": [3.0, 3.0],
+        # The 3.0 mm body is retained, but the view box includes the pads
+        # underneath the package so labels and contacts are not clipped.
+        "overall": [3.4, 3.4],
         "body": [2.2, 2.2],
         "pins": pins,
         "pin_one": [-1.0, -1.0],
@@ -210,7 +369,9 @@ def _adxl345_lga14():
         pins.append([str(number), "bottom", x, -1.5, 0.5, 0.55])
     pins.append(["14", "right", 2.1, 0.0, 0.55, 0.5])
     return {
-        "overall": [5.0, 3.0],
+        # ADXL345 is a 5 x 3 mm LGA; its bottom lands extend beyond the body
+        # in the drawing, so the diagram envelope is deliberately larger.
+        "overall": [5.2, 3.8],
         "body": [4.1, 2.46],
         "pins": pins,
         "pin_one": [-1.65, 1.0],
@@ -248,6 +409,78 @@ def main(**kwargs):
 
     # Exact packages with manufacturer drawings.
     exact = {
+        "electronic_ic_qfn_32_5_mm_x_5_mm_microcontroller_8_bit_avr_microchip_atmega328p_mu": {
+            "dimensions": {"length": 5.0, "width": 5.0, "height": 1.0},
+            "pins": [str(index) for index in range(1, 33)],
+            "drawing": _qfn([str(index) for index in range(1, 33)], body=(5.0, 5.0), overall=(6.2, 6.2), exposed_pad=True),
+            "reference": {"document": "Microchip ATmega328P-MU package drawing", "notes": "32-lead QFN, 5 x 5 mm body, 0.5 mm pitch, exposed ground pad."},
+            "url": "https://ww1.microchip.com/downloads/en/DeviceDoc/ATmega48A-PA-88A-PA-168A-PA-328-P-DS40002061B.pdf",
+        },
+        "electronic_ic_sot_23_3_power_management_linear_voltage_regulator_3_3_volt_microchip_mcp1700t_3302e_tt": {
+            "dimensions": {"length": 2.9, "width": 1.6, "height": 1.1},
+            "pins": ["VIN", "GND", "VOUT"],
+            "drawing": _gullwing(["1", "2", "3"], body=(2.9, 1.6), overall=(4.2, 3.2), pad_width=0.42),
+            "reference": {"document": "Microchip MCP1700 datasheet, SOT-23 package", "notes": "Three-lead SOT-23 regulator; pin 1 VIN, pin 2 GND, pin 3 VOUT for the TT suffix."},
+            "url": "https://ww1.microchip.com/downloads/en/DeviceDoc/21826E.pdf",
+        },
+        "electronic_ic_tssop_14_converter_thermocouple_to_digital_converter_maxim_max31856": {
+            "dimensions": {"length": 5.0, "width": 4.4, "height": 1.2},
+            "pins": [str(index) for index in range(1, 15)],
+            "drawing": _gullwing([str(index) for index in range(1, 15)], body=(5.0, 4.4), overall=(6.4, 6.4), pad_width=0.28),
+            "reference": {"document": "Analog Devices MAX31856 datasheet, TSSOP-14 package", "notes": "14-lead TSSOP, 0.65 mm pitch."},
+            "url": "https://www.analog.com/media/en/technical-documentation/data-sheets/max31856.pdf",
+        },
+        "electronic_ic_qfn_32_5_mm_x_5_mm_trusted_platform_module_trusted_platform_module_infineon_slb9670": {
+            "dimensions": {"length": 5.0, "width": 5.0, "height": 0.9},
+            "pins": [str(index) for index in range(1, 33)],
+            "drawing": _qfn([str(index) for index in range(1, 33)], body=(5.0, 5.0), overall=(6.2, 6.2), exposed_pad=True),
+            "reference": {"document": "Infineon SLB9670 package information", "notes": "32-pin 5 x 5 mm QFN with exposed pad; board source uses the standard 0.5 mm pitch footprint."},
+        },
+        "electronic_ic_qfn_32_5_mm_x_5_mm_trusted_platform_module_trusted_platform_module_infineon_slb9665": {
+            "dimensions": {"length": 5.0, "width": 5.0, "height": 0.9},
+            "pins": [str(index) for index in range(1, 33)],
+            "drawing": _qfn([str(index) for index in range(1, 33)], body=(5.0, 5.0), overall=(6.2, 6.2), exposed_pad=True),
+            "reference": {"document": "Infineon SLB9665 package information", "notes": "32-pin 5 x 5 mm QFN with exposed pad; board source uses the standard 0.5 mm pitch footprint."},
+        },
+        "electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch343g": {
+            "dimensions": {"length": 10.0, "width": 4.0, "height": 1.75},
+            "pins": [str(index) for index in range(1, 17)],
+            "drawing": _soic([str(index) for index in range(1, 17)], 10.0, 4.0, 6.0),
+            "reference": {"document": "WCH CH343G datasheet, SOP-16 package", "notes": "16-lead narrow-body SOP/SSOP-style package; pin 1 is at the upper-left in the top view."},
+            "url": "https://www.wch-ic.com/downloads/CH343DS1_PDF.html",
+        },
+        "electronic_ic_sot_223_4_power_management_linear_voltage_regulator_3_3_volt_st_ld1117_3_3": {
+            "dimensions": {"length": 6.5, "width": 7.0, "height": 1.8},
+            "pins": ["GND", "VOUT", "VIN", "VOUT"],
+            "drawing": _gullwing(["1", "2", "3", "4"], body=(6.5, 3.5), overall=(7.6, 7.0), pad_width=0.75),
+            "reference": {"document": "ST LD1117 datasheet, SOT-223-4 package", "notes": "SOT-223-4 with tab/duplicate VOUT connection."},
+            "url": "https://www.st.com/resource/en/datasheet/ld1117.pdf",
+        },
+        "electronic_ic_qfn_33_5_mm_x_5_mm_microcontroller_wifi_bluetooth_espressif_esp8285h16": {
+            "dimensions": {"length": 5.0, "width": 5.0, "height": 1.0},
+            "pins": [str(index) for index in range(1, 34)],
+            "drawing": _qfn([str(index) for index in range(1, 34)], body=(5.0, 5.0), overall=(6.2, 6.2), exposed_pad=True),
+            "reference": {"document": "Espressif ESP8285 datasheet and QFN package drawing", "notes": "5 x 5 mm QFN with 32 perimeter contacts and centre exposed pad."},
+            "url": "https://www.espressif.com/sites/default/files/documentation/0a-esp8285_datasheet_en.pdf",
+        },
+        "electronic_crystal_2016_surface_mount_4_pin_26_mhz_20_pf_txc_nx3225gd": {
+            "dimensions": {"length": 2.0, "width": 1.6, "height": 0.8},
+            "pins": ["1", "2", "3", "4"],
+            "drawing": {
+                "overall": [2.2, 1.8],
+                "body": [2.0, 1.6],
+                "pins": [["1", "left", -0.9, -0.55, 0.4, 0.45], ["2", "left", -0.9, 0.55, 0.4, 0.45],
+                         ["3", "right", 0.9, 0.55, 0.4, 0.45], ["4", "right", 0.9, -0.55, 0.4, 0.45]],
+                "pin_one": [-0.9, -0.55],
+            },
+            "reference": {"document": "TXC NX3225GD package drawing", "notes": "Four-pad 2.0 x 1.6 mm ceramic crystal, 0.8 mm maximum height."},
+        },
+        "electronic_ic_module_esp_12s_microcontroller_wifi_bluetooth_espressif_esp_12s": {
+            "dimensions": {"length": 24.0, "width": 16.0, "height": 3.0},
+            "pins": [str(index) for index in range(1, 17)],
+            "drawing": _module(24.0, 16.0, [str(index) for index in range(1, 17)], antenna=True, body=(18.0, 16.0)),
+            "reference": {"document": "Ai-Thinker ESP-12S module mechanical drawing", "notes": "ESP-12S Wi-Fi module, 16 castellated contacts on the two long edges and an onboard antenna keepout."},
+        },
         "electronic_ic_lqfp_48_microcontroller_stm32_st_stm32f103c8tx": {
             "dimensions": {"length": 9.7, "width": 9.7, "height": 1.6},
             "pins": ["VBAT", "PC13", "PC14", "PC15", "PD0", "PD1", "NRST", "VSSA", "VDDA", "PA0", "PA1", "PA2", "PA3", "PA4", "PA5", "PA6", "PA7", "PB0", "PB1", "PB2", "PB10", "PB11", "VSS", "VDD", "PB12", "PB13", "PB14", "PB15", "PA8", "PA9", "PA10", "PA11", "PA12", "PA13", "VSS", "VDD", "PA14", "PA15", "PB3", "PB4", "PB5", "PB6", "PB7", "BOOT0", "PB8", "PB9", "VSS", "VDD"],
@@ -277,7 +510,7 @@ def main(**kwargs):
             "url": "https://www.diodes.com/datasheet/download/AP7361C.pdf",
         },
         "electronic_ic_qfn_14_logic_analog_switch_nexperia_74hc4066bq": {"dimensions": {"length": 3.0, "width": 3.0, "height": 0.9}, "pins": [str(index) for index in range(1, 15)], "drawing": _qfn([str(index) for index in range(1, 15)], body=(3.0, 3.0), overall=(4.2, 4.2), exposed_pad=False)},
-        "electronic_ic_qfn_24_converter_usb_to_serial_converter_wch_ch342f": {"dimensions": {"length": 4.0, "width": 4.0, "height": 0.8}, "pins": [str(index) for index in range(1, 25)], "drawing": _qfn([str(index) for index in range(1, 25)], body=(4.0, 4.0), overall=(5.2, 5.2), exposed_pad=False)},
+        "electronic_ic_qfn_24_converter_usb_to_serial_converter_wch_ch342f": {"dimensions": {"length": 4.0, "width": 4.0, "height": 0.8}, "pins": [str(index) for index in range(1, 25)], "drawing": _qfn24([str(index) for index in range(1, 25)]), "reference": {"document": "WCH CH342F datasheet, QFN24 package", "notes": "4 x 4 mm body, six contacts per side on a 0.5 mm pitch; no exposed centre pad."}, "url": "https://www.wch-ic.com/downloads/CH342DS1_PDF.html"},
         "electronic_ic_qfn_28_power_meter_energy_metering_analog_devices_ade7953acpz": {"dimensions": {"length": 5.0, "width": 5.0, "height": 0.9}, "pins": [str(index) for index in range(1, 29)], "drawing": _qfn([str(index) for index in range(1, 29)], body=(5.0, 5.0), overall=(6.2, 6.2), exposed_pad=True)},
         "electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny1604_ssnr": {"dimensions": {"length": 8.69, "width": 3.9, "height": 1.75}, "pins": ["VDD", "PA4", "PA5", "PA6", "PA7", "PB5", "PB4", "PB3", "PB2", "PB1", "PB0", "PA3", "PA2", "GND"], "drawing": _soic([str(index) for index in range(1, 15)], 8.69, 3.9, 5.99)},
         "electronic_ic_soic_14_microcontroller_8_bit_avr_microchip_attiny404_ssnr": {"dimensions": {"length": 8.69, "width": 3.9, "height": 1.6}, "pins": ["VDD", "PA4", "PA5", "PA6", "PA7", "PB3", "PB2", "PB1", "PB0", "PA3", "PA2", "PA1", "PA0", "GND"], "drawing": _soic([str(index) for index in range(1, 15)], 8.69, 3.9, 5.99), "reference": {"document": "Microchip ATtiny202/204/402/404/406 datasheet, 14-pin SOIC; Microchip C04-00065 / SL", "notes": "8.69 mm nominal package length, 3.90 mm molded body width, 5.99 mm nominal lead span, 1.27 mm pitch."}, "url": "https://onlinedocs.microchip.com/oxy/GUID-5A56DB3A-31E1-4F46-984F-39186535C84E-en-US-7/index.html"},
@@ -291,7 +524,7 @@ def main(**kwargs):
         "electronic_ic_msop_8_amplifier_thermocouple_amplifier_texas_instruments_ad8495armz": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": ["NC", "-IN", "+IN", "V-", "V+", "OUT", "NC", "REF"], "drawing": _gullwing([str(index) for index in range(1, 9)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
         "electronic_ic_msop_10_converter_usb_to_serial_converter_wch_ch340e": {"dimensions": {"length": 3.0, "width": 3.0, "height": 1.1}, "pins": [str(index) for index in range(1, 11)], "drawing": _gullwing([str(index) for index in range(1, 11)], body=(3.0, 3.0), overall=(4.8, 3.2), pad_width=0.42)},
         "electronic_ic_tssop_16_converter_analog_to_digital_converter_texas_instruments_ads1219ipw": {"dimensions": {"length": 5.0, "width": 4.4, "height": 1.2}, "pins": ["AIN0", "AIN1", "AIN2", "AIN3", "AVDD", "DVDD", "DGND", "AGND", "SDA", "SCL", "ADDR0", "ADDR1", "DRDY", "START", "REFOUT", "REFIN"], "drawing": _gullwing([str(index) for index in range(1, 17)], body=(5.0, 4.4), overall=(6.4, 6.4), pad_width=0.28)},
-        "electronic_ic_tssop_16_logic_io_expander_texas_instruments_pca9554pw": {"dimensions": {"length": 5.0, "width": 4.4, "height": 1.2}, "pins": ["A0", "A1", "A2", "P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "INT", "SCL", "SDA", "VSS", "VDD"], "drawing": _gullwing([str(index) for index in range(1, 17)], body=(5.0, 4.4), overall=(6.4, 6.4), pad_width=0.28)},
+        "electronic_ic_tssop_16_logic_io_expander_texas_instruments_pca9554pw": {"dimensions": {"length": 5.0, "width": 4.4, "height": 1.2}, "pins": ["A0", "A1", "A2", "P0", "P1", "P2", "P3", "VSS", "P4", "P5", "P6", "P7", "INT", "SCL", "SDA", "VDD"], "drawing": _gullwing([str(index) for index in range(1, 17)], body=(5.0, 4.4), overall=(6.4, 6.4), pad_width=0.28)},
         "electronic_ic_vssop_10_power_monitor_current_monitor_texas_instruments_ina228": {"dimensions": {"length": 4.9, "width": 3.0, "height": 1.1}, "pins": ["IN_PLUS", "IN_MINUS", "VBUS", "GND", "VCC", "SCL", "SDA", "ALERT", "A0", "A1"], "drawing": _gullwing([str(index) for index in range(1, 11)], body=(4.9, 3.0), overall=(6.2, 4.0), pad_width=0.3)},
         "electronic_ic_sot_23_8_power_monitor_current_monitor_texas_instruments_ina219": {"dimensions": {"length": 2.9, "width": 1.6, "height": 1.1}, "pins": ["IN_PLUS", "IN_MINUS", "VCC", "GND", "SCL", "SDA", "A0", "A1"], "drawing": _gullwing([str(index) for index in range(1, 9)], body=(2.9, 1.6), overall=(4.2, 3.2), pad_width=0.42)},
         "electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3": {"dimensions": {"length": 2.9, "width": 1.6, "height": 1.1}, "pins": ["VIN", "GND", "EN", "NC", "VOUT"], "drawing": _gullwing([str(index) for index in range(1, 6)], body=(2.9, 1.6), overall=(4.2, 3.2), pad_width=0.42)},
@@ -330,20 +563,34 @@ def main(**kwargs):
 
     # Package-accurate sensor bodies and the small sensor/module families.
     sensors = {
-        "electronic_sensor_imu_lga_24_st_lsm9ds1tr": (3.5, 3.0, ["VDD", "GND"] * 12, _module(3.5, 3.0, [str(i) for i in range(1, 25)])),
+        "electronic_sensor_imu_lga_24_st_lsm9ds1tr": (3.5, 3.0, [
+            "VDDIO", "SCL/SPC", "VDDIO", "SDA/SDI/SDO", "SDO_A/G", "SDO_M",
+            "CS_A/G", "CS_M", "DRDY_M", "INT_M", "INT1_A/G", "INT2_A/G",
+            "DEN_A/G", "RES", "RES", "RES", "RES", "RES", "GND", "GND",
+            "CAP", "VDD", "VDD", "C1",
+        ], _module(3.5, 3.0, [str(i) for i in range(1, 25)])),
         "electronic_sensor_air_quality_lga_20_ams_ccs811b_jopr": (3.0, 3.0, [str(i) for i in range(1, 21)], _module(3.0, 3.0, [str(i) for i in range(1, 21)])),
         "electronic_sensor_light_proximity_ch_6_liteon_ltr_507als_01": (2.65, 2.0, [str(i) for i in range(1, 9)], _module(2.65, 2.0, [str(i) for i in range(1, 9)], body=(1.8, 1.3))),
-        "electronic_sensor_pressure_temperature_lga_10_bosch_bmp388": (2.0, 2.0, [str(i) for i in range(1, 11)], _module(2.0, 2.0, [str(i) for i in range(1, 11)], body=(1.8, 1.8))),
+        "electronic_sensor_pressure_temperature_lga_10_bosch_bmp388": (2.0, 2.0, ["VDDIO", "SCK", "VSS", "SDI", "SDO", "CSB", "INT", "VSS", "VSS", "VDD"], _bmp388_lga10()),
         "electronic_sensor_accelerometer_lga_14_analog_devices_adxl345": (5.0, 3.0, ["VDD", "GND", "RESERVED", "GND", "GND", "VS", "CS", "INT1", "INT2", "NC", "RESERVED", "SDO_ALT_ADDRESS", "SDA_SDI_SDIO", "SCL_SCLK"], _adxl345_lga14()),
+        "electronic_sensor_accelerometer_lga_14_analog_devices_adxl343": (5.0, 3.0, ["VDD", "GND", "RESERVED", "GND", "GND", "VS", "CS", "INT1", "INT2", "NC", "RESERVED", "SDO_ALT_ADDRESS", "SDA_SDI_SDIO", "SCL_SCLK"], _adxl345_lga14()),
         "electronic_sensor_accelerometer_lga_16_st_lis3dhtr": (3.0, 3.0, ["VDDIO", "NC", "NC", "SCL_SPC", "GND", "SDA_SDI_SDO", "SDO_SA0", "CS", "INT2", "RES", "INT1", "GND", "ADC3", "VDD", "ADC2", "ADC1"], _lis3dh_lga16()),
-        "electronic_sensor_particulate_matter_module_bosch_bmv080": (20.0, 5.5, ["VDDL", "VSSA", "VDDA", "VSSD", "PS", "SCK", "MOSI", "MISO", "CS", "VDDD"], _module(20.0, 5.5, [str(i) for i in range(1, 11)], body=(4.4, 3.0))),
+        # Bosch integration-guideline Figure 30 pin order, including the
+        # separate VDDD supply and the actual SPI/control sequence.
+        "electronic_sensor_particulate_matter_module_bosch_bmv080": (20.0, 5.5, [
+            "VDDL", "VSSA", "VDDA", "CSB", "MOSI", "SCK", "PS",
+            "VDDIO", "VSSD", "VDDD", "MISO", "IRQ", "NC",
+        ], _bmv080_flex()),
     }
     for current, (length, width, pins, drawing) in sensors.items():
         if current in extras_dict:
             _set(extras_dict[current], dimensions={"length": length, "width": width}, pins=pins, drawing=drawing)
     for current, reference, url in [
         ("electronic_sensor_accelerometer_lga_14_analog_devices_adxl345", {"document": "Analog Devices ADXL345 datasheet, CC-14-1", "notes": "14-terminal LGA, 5.00 x 3.00 x 1.00 mm; top view has six pads on each long edge and one end pad at each short edge."}, "https://www.analog.com/media/en/technical-documentation/data-sheets/adxl345.pdf"),
+        ("electronic_sensor_accelerometer_lga_14_analog_devices_adxl343", {"document": "Analog Devices ADXL343 datasheet, CC-14-1", "notes": "14-terminal LGA, 5.00 x 3.00 x 1.00 mm; pinout and land pattern follow the ADXL343 top-view pin table and CC-14-1 outline."}, "https://www.analog.com/media/en/technical-documentation/data-sheets/ADXL343.pdf"),
         ("electronic_sensor_accelerometer_lga_16_st_lis3dhtr", {"document": "ST LIS3DH datasheet, LGA-16 package information", "notes": "3.00 x 3.00 mm body, 1.00 mm maximum height, with 5/3/5/3 contacts around the package."}, "https://www.st.com/resource/en/datasheet/lis3dh.pdf"),
+        ("electronic_sensor_pressure_temperature_lga_10_bosch_bmp388", {"document": "Bosch BMP388 datasheet, Figure 26 and landing pattern", "notes": "10-pin metal-lid LGA, 2.00 x 2.00 x 0.75 mm; pads are the Bosch 1.525 mm bottom-view array."}, "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmp388-ds001.pdf"),
+        ("electronic_sensor_particulate_matter_module_bosch_bmv080", {"document": "Bosch BMV080 datasheet, Figures 6/7 and integration guideline Figure 30", "notes": "4.4 mm sensor end on a 20.0 mm flex PCB, 5.5 mm wide at the ZIF ears, with 13 electrical contacts."}, "https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf"),
     ]:
         if current in extras_dict:
             extras_dict[current]["dimension_reference"] = reference
@@ -362,21 +609,72 @@ def main(**kwargs):
     simple = {
         "electronic_diode_schottky_sod_323_infineon_bat20j": ({"length": 1.7, "width": 1.25}, ["K", "A"], _gullwing(["1", "2"], body=(1.7, 1.25), overall=(2.8, 1.8), pad_width=0.55)),
         "electronic_diode_switching_sod_323_onsemi_1n4148ws": ({"length": 1.7, "width": 1.25}, ["K", "A"], _gullwing(["1", "2"], body=(1.7, 1.25), overall=(2.8, 1.8), pad_width=0.55)),
+        "electronic_diode_switching_sod_123_onsemi_1n4148w": ({"length": 2.6, "width": 1.6}, ["K", "A"], _gullwing(["1", "2"], body=(2.0, 1.3), overall=(2.6, 1.6), pad_width=0.55)),
         "electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x": ({"length": 3.0, "width": 1.3}, ["GND", "IO1", "IO2", "VCC"], _qfn(["1", "2", "3", "4"], body=(2.9, 1.3), overall=(3.8, 2.5))),
+        "electronic_resistor_1210_0_1_ohm": ({"length": 3.2, "width": 2.5}, ["1", "2"], _chip_passive(3.2, 2.5)),
+        "electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf": ({"length": 5.0, "width": 3.2}, ["1", "2"], _two_pin_crystal(5.0, 3.2)),
+        "electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf": ({"length": 3.2, "width": 1.5}, ["1", "2"], _two_pin_crystal(3.2, 1.5)),
+        "electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1": ({"length": 3.0, "width": 3.1}, ["RF", "GND", "GND"], _u_fl_r_smt_1()),
+        "electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e": ({"length": 3.8, "width": 3.6}, ["CW", "WIPER", "CCW"], _tc33x2_trimmer()),
+        "electronic_potentiometer_trimmer_through_hole_1_mega_ohm_bourns_tc33x_2_105e": ({"length": 3.8, "width": 3.6}, ["CW", "WIPER", "CCW"], _tc33x2_trimmer()),
         "electronic_capacitor_0603_2200_pico_farad": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5, pin_one=False)),
         # Standard 0603 inductors use the same rectangular body and gull-wing
         # contact geometry as 0603 chip resistors; they are non-polarized, so
         # do not add a misleading pin-one dot.
         "electronic_inductor_0603_30_ohm": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5, pin_one=False)),
         "electronic_inductor_0603_470_ohm": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5, pin_one=False)),
+        "electronic_inductor_0603_10_micro_henry_taiyo_yuden_lbmf1608t100k": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5, pin_one=False)),
+        "electronic_ferrite_bead_0603_220_ohm_2_2_amp_murata_blm18kg221sn1d": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.8), overall=(1.8, 1.3), pad_width=0.5, pin_one=False)),
         "electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp": ({"length": 2.0, "width": 1.25}, ["1", "2"], _gullwing(["1", "2"], body=(1.6, 1.0), overall=(2.3, 1.5), pad_width=0.55)),
         "electronic_fuse_1210_resettable_6_volt_2_amp_4_amp": ({"length": 3.2, "width": 2.5}, ["1", "2"], _gullwing(["1", "2"], body=(2.6, 1.9), overall=(3.6, 2.8), pad_width=0.75)),
         "electronic_battery_coin_cell_6_8_mm_maxell_ml414h": ({"length": 6.8, "width": 6.8}, ["+", "-"], {"overall": [6.8, 6.8], "body": [6.8, 6.8], "pins": [["+", "left", -2.5, 0, 1.2, 1.2], ["-", "right", 2.5, 0, 1.2, 1.2]], "circles": [[0, 0, 2.6]], "pin_one": [-2.5, 0]}),
         "electronic_transformer_surface_mount_usb_coilcraft_rfcmf1220100m4t": ({"length": 12.0, "width": 10.0}, [str(i) for i in range(1, 5)], _gullwing([str(i) for i in range(1, 5)], body=(8.0, 8.0), overall=(12.0, 10.0), pad_width=0.8)),
+        "electronic_antenna_3216_surface_mount_ceramic_yageo_ant3216ll00r2400a": ({"length": 3.2, "width": 1.6}, ["1", "2"], _chip_passive(3.2, 1.6)),
+        "electronic_buzzer_surface_mount_mu_rata_mlt_8530": ({"length": 8.5, "width": 8.5}, ["1", "2"], {"overall": [9.0, 9.0], "body": [8.5, 8.5], "pins": [["1", "bottom", -3.0, -4.5, 1.0, 1.0], ["2", "bottom", 3.0, -4.5, 1.0, 1.0]], "circles": [[0, 0, 3.0]], "pin_one": [-3.0, -4.5]}),
+        "electronic_fuse_0603_resettable_bourns_mf_fsmf": ({"length": 1.6, "width": 0.8}, ["1", "2"], _gullwing(["1", "2"], body=(1.0, 0.7), overall=(1.8, 1.2), pad_width=0.45, pin_one=False)),
+        "electronic_buzzer_surface_mount_hydz_hyg9605b": ({"length": 9.6, "width": 9.6}, ["1", "2"], {"overall": [10.0, 10.0], "body": [9.6, 9.6], "pins": [["1", "bottom", -3.75, -4.8, 1.2, 1.2], ["2", "bottom", 3.75, -4.8, 1.2, 1.2]], "circles": [[0, 0, 3.2]], "pin_one": [-3.75, -4.8]}),
+        "electronic_connector_micro_usb_surface_mount_9_pin_rocketscream_micro_usb": ({"length": 9.15, "width": 6.30}, [str(i) for i in range(1, 10)], {"overall": [9.15, 6.30], "body": [7.75, 5.0], "pins": [[str(i), "bottom", -1.3 + (i - 1) * 0.65, -2.1, 0.4, 1.35] for i in range(1, 6)] + [["6", "side", -3.6, 1.1, 1.3, 1.2], ["7", "side", 3.6, 1.1, 1.3, 1.2], ["8", "top", -3.6, 1.1, 1.3, 1.7], ["9", "top", 3.6, 1.1, 1.3, 1.7]], "pin_one": [-1.3, -2.1]}),
+        "electronic_switch_tactile_surface_mount_switronic_it_1109s": ({"length": 6.0, "width": 6.0}, ["1", "2", "3", "4"], _button(6.0, 6.0, 4)),
     }
     for current, (dimensions, pins, drawing) in simple.items():
         if current in extras_dict:
             _set(extras_dict[current], dimensions=dimensions, pins=pins, drawing=drawing)
+
+    researched_metadata = {
+        "electronic_buzzer_surface_mount_hydz_hyg9605b": {
+            "manufacturer": "HYDZ",
+            "part_number_manufacturer": "HYG-9605B 5V",
+            "datasheet_url": "https://www.lcsc.com/product-detail/C7544819.html",
+            "dimension_reference": {"document": "HYDZ HYG-9605B 5V product data", "notes": "9.6 x 9.6 mm SMD magnetic buzzer, 5 V, approximately 2.7 kHz resonant frequency and 30 mA consumption."},
+        },
+        "electronic_switch_tactile_surface_mount_switronic_it_1109s": {
+            "manufacturer": "Switronic",
+            "part_number_manufacturer": "IT-1109S",
+            "datasheet_url": "https://cdn.promelec.ru/upload/items/2022/08/10/IT-1102W--IT1109_.pdf",
+            "dimension_reference": {"document": "Switronic IT-1102W through IT-1109S datasheet", "notes": "6 mm tactile switch family; IT-1109S uses the 3.8 mm stem and four terminals."},
+        },
+    }
+    for current, metadata in researched_metadata.items():
+        if current in extras_dict:
+            extras_dict[current].update(metadata)
+
+    for current in (
+        "electronic_potentiometer_trimmer_through_hole_10_kilo_ohm_bourns_tc33x_2_103e",
+        "electronic_potentiometer_trimmer_through_hole_1_mega_ohm_bourns_tc33x_2_105e",
+    ):
+        part = extras_dict.get(current)
+        if part is not None:
+            # Preserve the established OOMP IDs for project compatibility,
+            # while correcting the shared family metadata: TC33X-2 is
+            # surface-mount, not through-hole.
+            part["mounting"] = "surface_mount"
+            part["form_factor"] = "tc33x_2"
+            part["taxonomy_form_factor"] = "surface_mount_tc33x_2"
+            part["dimension_reference"] = {
+                "document": "Bourns TC33 datasheet, TC33X-2 outline and land pattern",
+                "notes": "3 mm top-adjust trimmer, 3.8 x 3.6 mm body/land-pattern envelope, three J-lead terminals; shared for all resistance values.",
+            }
+            part["datasheet_url"] = "https://www.bourns.com/docs/Product-Datasheets/TC33.pdf"
 
     # The SOD-323 switching diode is backed by the manufacturer package
     # drawing rather than only by its taxonomy dimensions.
@@ -396,16 +694,19 @@ def main(**kwargs):
         "electronic_switch_tactile_through_hole_gt_tc026x_hxxx_lx": (6.0, 6.0, 4),
         "electronic_switch_tactile_surface_mount_omron_b3fs_100xp": (8.0, 8.0, 4),
         "electronic_switch_tactile_surface_mount_ck_pts636": (6.0, 6.0, 4),
+        "electronic_switch_tactile_surface_mount_switronic_it_1109s": (6.0, 6.0, 4),
         "electronic_switch_tactile_surface_mount_alps_alpine_skr_k": (3.9, 2.9, 4),
         "electronic_switch_tactile_surface_mount_alps_alpine_skrpace010": (4.2, 3.2, 4),
         "electronic_switch_navigation_surface_mount_7_5_mm": (7.5, 7.5, 5),
         "electronic_switch_navigation_surface_mount_9_9_mm": (9.9, 9.9, 5),
-        "electronic_switch_roller_encoder_through_hole_roller_encoder_switch": (12.0, 10.0, 5),
+        "electronic_switch_roller_encoder_through_hole_roller_encoder_switch": (16.8, 14.0, 4),
     }
     for current, (length, width, count) in switches.items():
         if current not in extras_dict:
             continue
-        if count == 5:
+        if current == "electronic_switch_roller_encoder_through_hole_roller_encoder_switch":
+            drawing = _roller_encoder()
+        elif count == 5:
             drawing = {"overall": [length, width], "body": [length * .72, width * .72], "pins": [["1", "left", -length / 2 + .35, -width * .25, .7, .7], ["2", "left", -length / 2 + .35, width * .25, .7, .7], ["3", "right", length / 2 - .35, width * .25, .7, .7], ["4", "right", length / 2 - .35, -width * .25, .7, .7], ["5", "bottom", 0, -width / 2 + .35, .7, .7]], "circles": [[0, 0, min(length, width) * .18]]}
         else:
             drawing = _button(length, width, count)
@@ -415,6 +716,7 @@ def main(**kwargs):
     # OOMP renderer remains the deterministic fallback for previews, while
     # library generation and native KiCad views can use these real symbols.
     kicad_symbols = {
+        "electronic_sensor_accelerometer_lga_14_analog_devices_adxl343": "Sensor_Motion:ADXL343",
         "electronic_battery_coin_cell_6_8_mm_maxell_ml414h": "Device:Battery_Cell",
         "electronic_fuse_0805_resettable_6_volt_0_5_amp_1_amp": "Device:Polyfuse",
         "electronic_fuse_1210_resettable_6_volt_2_amp_4_amp": "Device:Polyfuse",
@@ -429,6 +731,13 @@ def main(**kwargs):
         part = extras_dict.get(current)
         if part is not None:
             part.setdefault("kicad", {})["symbol"] = symbol
+
+    adxl343 = extras_dict.get("electronic_sensor_accelerometer_lga_14_analog_devices_adxl343")
+    if adxl343 is not None:
+        adxl343.setdefault("kicad", {}).update({
+            "machine_solder": "Package_LGA:LGA-14_3x5mm_P0.8mm_LayoutBorder1x6y",
+            "hand_solder": "Package_LGA:LGA-14_3x5mm_P0.8mm_LayoutBorder1x6y",
+        })
 
     # Connectors are intentionally top-view oriented so their contact pattern
     # is visible in the main part image.

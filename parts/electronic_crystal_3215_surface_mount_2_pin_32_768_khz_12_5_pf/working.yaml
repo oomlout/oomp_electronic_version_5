@@ -31,8 +31,8 @@ bip_39_full_underscore: trial_stone_arctic_empty_door_dice_day_will_smile_train_
 category: crystal
 category_name: Crystal
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  length: 3.2
+  width: 1.5
 directory: parts/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
 distributors:
 - key: lcsc
@@ -184,8 +184,8 @@ oomlout_ai_roboclick_3:
       category: crystal
       category_name: Crystal
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        length: 3.2
+        width: 1.5
       directory: parts\electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
       distributors:
       - key: lcsc
@@ -310,6 +310,29 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      package_drawing:
+        body:
+        - 2.2208000000000006
+        - 1.2
+        overall:
+        - 3.2
+        - 1.5
+        pin_one:
+        - -1.312
+        - 0.0
+        pins:
+        - - '1'
+          - left
+          - -1.312
+          - 0.0
+          - 0.576
+          - 0.9299999999999999
+        - - '2'
+          - right
+          - 1.312
+          - 0.0
+          - 0.576
+          - 0.9299999999999999
       part_id: Y1
       part_number_lcsc: C32346
       part_number_manufacturer: Q13FC13500004
@@ -400,7 +423,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/crystal/3215/surface_mount/2_pin/32_768_khz/README.md
         oomp_id: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: signal
+        - name: '2'
+          number: '2'
+          type: signal
         quick_facts:
         - title: OOMP ID
           value: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
@@ -409,11 +438,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: '3215'
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 3.2 × 1.5 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
         summary: Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal
           definition. It uses the 3215 package or form factor. Its nominal drawing
-          size is 10.0 × 5.0 mm.
+          size is 3.2 × 1.5 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -429,6 +460,15 @@ oomlout_ai_roboclick_3:
           value: 32_768_khz
         - level: 7
           value: 12_5_pf
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: signal
+        pin_2:
+          name: '2'
+          number: '2'
+          type: signal
       product_url: https://www.lcsc.com/product-detail/C32346.html
       regenerate_pngs: false
       research_notes:
@@ -621,7 +661,43 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0
 oomp_key: oomp_electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
+package_drawing:
+  body:
+  - 2.2208000000000006
+  - 1.2
+  overall:
+  - 3.2
+  - 1.5
+  pin_one:
+  - -1.312
+  - 0.0
+  pins:
+  - - '1'
+    - left
+    - -1.312
+    - 0.0
+    - 0.576
+    - 0.9299999999999999
+  - - '2'
+    - right
+    - 1.312
+    - 0.0
+    - 0.576
+    - 0.9299999999999999
 part_id: Y1
 part_number_lcsc: C32346
 part_number_manufacturer: Q13FC13500004
@@ -712,7 +788,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/crystal/3215/surface_mount/2_pin/32_768_khz/README.md
   oomp_id: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: signal
+  - name: '2'
+    number: '2'
+    type: signal
   quick_facts:
   - title: OOMP ID
     value: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
@@ -721,11 +803,13 @@ part_page:
   - title: Package / style
     value: '3215'
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 3.2 × 1.5 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
   summary: Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal definition.
-    It uses the 3215 package or form factor. Its nominal drawing size is 10.0 × 5.0
-    mm.
+    It uses the 3215 package or form factor. Its nominal drawing size is 3.2 × 1.5
+    mm. The definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -741,6 +825,15 @@ part_page:
     value: 32_768_khz
   - level: 7
     value: 12_5_pf
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: signal
+  pin_2:
+    name: '2'
+    number: '2'
+    type: signal
 product_url: https://www.lcsc.com/product-detail/C32346.html
 regenerate_pngs: false
 research_notes:

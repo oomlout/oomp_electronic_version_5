@@ -23,6 +23,19 @@ def main(**kwargs):
         "taxonomy_14": "broadcom", "taxonomy_15": "apds_9960",
         "name_short": "Gesture/Proximity Sensor APDS-9960",
     })
+    options.append({
+        "taxonomy_2": "antenna", "taxonomy_3": "3216", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "ceramic", "taxonomy_14": "yageo", "taxonomy_15": "ant3216ll00r2400a",
+        "name_short": "Ceramic Antenna ANT3216LL00R2400A",
+    })
+    options.append({
+        "taxonomy_2": "buzzer", "taxonomy_3": "surface_mount", "taxonomy_14": "mu_rata",
+        "taxonomy_15": "mlt_8530", "name_short": "SMD Buzzer MLT-8530",
+    })
+    options.append({
+        "taxonomy_2": "buzzer", "taxonomy_3": "surface_mount", "taxonomy_14": "hydz",
+        "taxonomy_15": "hyg9605b", "name_short": "HYDZ HYG-9605B 5V SMD Magnetic Buzzer",
+    })
 
     # Sensor/module identities from the expanded unmatched-project report.
     # They are intentionally population-only placeholders until the exact
@@ -34,6 +47,7 @@ def main(**kwargs):
         ["pressure_temperature", "lga_10", "bosch", "bmp388", "BMP388 Pressure Sensor"],
         ["gnss", "module", "quectel", "l86_m33", "Quectel L86-M33 GNSS Module"],
         ["accelerometer", "lga_14", "analog_devices", "adxl345", "ADXL345 Accelerometer"],
+        ["accelerometer", "lga_14", "analog_devices", "adxl343", "ADXL343 Accelerometer"],
         ["accelerometer", "lga_16", "st", "lis3dhtr", "LIS3DHTR Accelerometer"],
         ["gnss", "module", "u_blox", "sam_m8q", "u-blox SAM-M8Q GNSS Module"],
         ["gnss", "module", "u_blox", "dan_f10n", "u-blox DAN-F10N GNSS Module"],

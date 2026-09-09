@@ -1,0 +1,37 @@
+repository: sparkfun/OpenPIR
+commit: 41862c355b6d1bd3bc0f65fd0f7e4933e05276d7
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: spark_fun_open_pir_ncs36000
+  path: Hardware/SparkFun-OpenPIR-NCS36000.brd
+  format: eagle
+boards_excluded:
+- path: Production/13433-SparkFun-OpenPIR-NCS36000-panel.v10.brd
+  exclude_reason: review decision
+- path: Production/SparkFun-OpenPIR-NCS36000_PROTO_Panel_v01.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 9
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 3
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 4
+  details:
+  - kind: include_override
+    count: 2
+  - kind: exclude_paths
+    count: 2
+completed_at: '2026-09-09T10:23:43Z'

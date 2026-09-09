@@ -118,6 +118,15 @@ def main(**kwargs):
     # lightweight population layer only; datasheet, pinout, dimensions, and
     # exact matching records are added in the subsequent ledger pass.
     unmatched_ics = [
+        ["module_esp_12s", "microcontroller", "wifi_bluetooth", "espressif", "esp_12s"],
+        ["qfn_32_5_mm_x_5_mm", "microcontroller", "8_bit_avr", "microchip", "atmega328p_mu"],
+        ["sot_23_3", "power_management", "linear_voltage_regulator_3_3_volt", "microchip", "mcp1700t_3302e_tt"],
+        ["tssop_14", "converter", "thermocouple_to_digital_converter", "maxim", "max31856"],
+        ["qfn_32_5_mm_x_5_mm", "trusted_platform_module", "trusted_platform_module", "infineon", "slb9670"],
+        ["qfn_32_5_mm_x_5_mm", "trusted_platform_module", "trusted_platform_module", "infineon", "slb9665"],
+        ["sop_16", "converter", "usb_to_serial_converter", "wch", "ch343g"],
+        ["sot_223_4", "power_management", "linear_voltage_regulator_3_3_volt", "st", "ld1117_3_3"],
+        ["qfn_33_5_mm_x_5_mm", "microcontroller", "wifi_bluetooth", "espressif", "esp8285h16"],
         ["lqfp_48", "microcontroller", "stm32", "st", "stm32f103c8tx"],
         ["uson_8", "memory", "spi_nor_flash", "winbond", "w25q16jvuxiq"],
         ["sot_23_5", "power_management", "linear_voltage_regulator", "", "se5218"],

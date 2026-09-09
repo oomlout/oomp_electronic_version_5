@@ -1,0 +1,104 @@
+available: true
+units:
+- reference: R6
+  source_file: data/kicad_file.kicad_sch
+  uuid: 00000000-0000-0000-0000-0000591daed2
+  library_id: TINY-REFLOW-CONTROLLER-rescue:RESISTOR-RocketScreamKiCadLib
+  unit: 1
+  body_style: 1
+  position:
+    x: 41.91
+    y: 186.69
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R6
+    Value: 2K2
+    Footprint: RocketScreamKiCadLib:R_0603
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -6.35
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 48.26
+      y: 186.69
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D1
+      pin_number: '2'
+      pin_name: A
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 6.35
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 35.56
+      y: 186.69
+    net: D4
+    net_aliases:
+    - D4
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '2'
+      pin_name: (PCINT20/XCK/T0)PD4
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.81
+        y: -1.27
+      max:
+        x: 3.81
+        y: 1.27
+      width: 7.62
+      height: 2.54
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 38.1
+        y: 185.42
+      max:
+        x: 45.72
+        y: 187.96
+      width: 7.62
+      height: 2.54
+      center:
+        x: 41.91
+        y: 186.69
+  warnings: []
+connected_components:
+- reference: D1
+  pin_number: '2'
+  pin_name: A
+- reference: U1
+  pin_number: '2'
+  pin_name: (PCINT20/XCK/T0)PD4

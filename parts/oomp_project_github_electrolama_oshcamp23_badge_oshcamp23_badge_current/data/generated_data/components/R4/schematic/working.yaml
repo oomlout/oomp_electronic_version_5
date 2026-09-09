@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: R4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 565d3b6e-a014-4aca-a40b-f11ca95f4331
+  library_id: working-eagle-import:RES-0402
+  unit: 1
+  body_style: 1
+  position:
+    x: 198.12
+    y: 96.52
+    rotation: 270.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: R4
+    Value: 12k 1%
+    Footprint: working:_PKG_R_0402
+    Datasheet: ''
+    JLCASSY: C25752
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 198.12
+      y: 93.98
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q2
+      pin_number: '1'
+      pin_name: B
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 198.12
+      y: 99.06
+    net: DTR
+    net_aliases:
+    - DTR
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '10'
+      pin_name: DTR
+    - reference: Q1
+      pin_number: '2'
+      pin_name: E
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -0.6477
+      max:
+        x: 2.6162
+        y: 0.6477
+      width: 5.2324
+      height: 1.2954
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 197.4723
+        y: 93.9038
+      max:
+        x: 198.7677
+        y: 99.1362
+      width: 1.2954
+      height: 5.2324
+      center:
+        x: 198.12
+        y: 96.52
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '10'
+  pin_name: DTR
+- reference: Q1
+  pin_number: '2'
+  pin_name: E
+- reference: Q2
+  pin_number: '1'
+  pin_name: B

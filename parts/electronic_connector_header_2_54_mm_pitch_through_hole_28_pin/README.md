@@ -53,6 +53,11 @@ Connector Header 2011-1X28G00SB is an OOMP electronic connector definition. It u
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

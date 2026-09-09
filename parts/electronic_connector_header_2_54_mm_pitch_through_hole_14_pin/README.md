@@ -53,6 +53,11 @@ Connector Header KH-2.54PH180-1X14P-L11.5 is an OOMP electronic connector defini
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

@@ -1,0 +1,71 @@
+repository: sparkfun/MicroView_USB_Programmer
+commit: 7057bea2c0b54db610f1ea53f22856b7026088ea
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: spark_fun_micro_view_usb
+  path: Hardware/SparkFun_MicroViewUSB.brd
+  format: eagle
+boards_excluded:
+- path: Production/MicroViewUSB-GiantPanel-v02.brd
+  source_format: eagle
+  folder: Production
+  basename: MicroViewUSB-GiantPanel-v02
+  project_file_path: Production/MicroViewUSB-GiantPanel-v02
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: MicroViewUSB-GiantPanel
+  family_key: production/micro_view_usb_giant_panel
+  version_key:
+  - 2
+  version_text: v02
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: micro_view_usb_giant_panel
+  board_name: Micro View USB Giant Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+- path: Production/MicroViewUSB-Panel-v02.brd
+  source_format: eagle
+  folder: Production
+  basename: MicroViewUSB-Panel-v02
+  project_file_path: Production/MicroViewUSB-Panel-v02
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: MicroViewUSB-Panel
+  family_key: production/micro_view_usb_panel
+  version_key:
+  - 2
+  version_text: v02
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: micro_view_usb_panel
+  board_name: Micro View USB Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 9
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 3
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:03:17Z'

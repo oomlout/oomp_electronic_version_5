@@ -1,0 +1,46 @@
+repository: sparkfun/MIDI_Breakout
+commit: 457a8b03226aaa9eb35fecf5e766f15bc9055bee
+definition_file: null
+boards_added: []
+boards_excluded:
+- path: Hardware/MIDI_Breakout.brd
+  source_format: eagle
+  folder: Hardware
+  basename: MIDI_Breakout
+  project_file_path: Hardware/MIDI_Breakout
+  project_file_extensions:
+  - .brd
+  - .sch
+  has_schematic: true
+  family_stem: MIDI_Breakout
+  family_key: hardware/midi_breakout
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words: []
+  eagle_board_storage: legacy_binary
+  eagle_schematic_storage: xml
+  board: midi_breakout
+  board_name: MIDI Breakout
+ingestion_status: too_old
+ingest_note: 'too old: repository contains pre-Eagle-6 binary board or schematic files'
+legacy_binary_files:
+- path: Hardware/MIDI_Breakout.brd
+  kind: board
+python_work:
+  decision_units: 5
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 1
+  - kind: legacy_eagle_binary_gate
+    count: 1
+  - kind: queue_ingested_note
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T10:56:55Z'

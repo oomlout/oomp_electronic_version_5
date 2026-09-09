@@ -1,0 +1,2113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project electrolama/nandcat NAND Cat current board explorer</title>
+<style id="oomp-board-style">
+:root {
+  --page: #f3f1e9;
+  --panel: #ffffff;
+  --ink: #171717;
+  --muted: #686868;
+  --line: #c9c5ba;
+  --accent: #ff5c35;
+  --accent-soft: #ffe4db;
+  --board: #f8f8f5;
+  --copper: #7a8790;
+  --net: #d9480f;
+  --selected-pin: #007d8a;
+  --copper-front: #d9480f;
+  --copper-back: #2563eb;
+  --copper-inner-1: #9333ea;
+  --copper-inner-2: #16803c;
+  --copper-multilayer: #674b26;
+  /* Quieter cousins of the layer colours: the unselected copper keeps just
+     enough hue to read its layer while the components stay legible. */
+  --copper-front-muted: #c9988a;
+  --copper-back-muted: #8298cc;
+  --copper-inner-1-muted: #b58fcf;
+  --copper-inner-2-muted: #6da385;
+  --copper-multilayer-muted: #96876f;
+  --shadow: 0 18px 50px rgba(20, 20, 20, .14);
+  --radius: 18px;
+  --selection-status-height: 180px;
+  --font: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --header-bg: #171717;
+  --header-fg: #ffffff;
+  --header-muted: #cfcfcf;
+  --header-line: #555555;
+  --float-bg: rgba(255, 255, 255, .97);
+  --toolbar-bg: rgba(255, 255, 255, .94);
+  --sch-page: #ffffff;
+  --sch-ink: #171717;
+  --sch-muted: #686868;
+  --sch-note: #8a7f6a;
+  --sch-body: #f0ede4;
+  --brd-page: var(--board);
+  --brd-board-fill: #ffffff;
+  --brd-board-outline: #1f1f1f;
+  --brd-component-fill: #ffffff;
+  --brd-component-outline: #1f1f1f;
+  --brd-text: #171717;
+  --brd-plate: #ffffff;
+  --brd-plate-text: #171717;
+  --brd-pad-fill: #ffffff;
+  --brd-pad-outline: #1f1f1f;
+}
+html[data-theme="dark"] {
+  --page: #14161a;
+  --panel: #1d2127;
+  --ink: #e8e6e1;
+  --muted: #9aa0a6;
+  --line: #33383f;
+  --accent: #ff6b47;
+  --accent-soft: #3c2a23;
+  --board: #0f1114;
+  --copper: #93a1ad;
+  --net: #ff7a45;
+  --selected-pin: #3fb7c9;
+  --copper-front-muted: #a9776a;
+  --copper-back-muted: #6f87b0;
+  --copper-inner-1-muted: #9a7fb3;
+  --copper-inner-2-muted: #61917a;
+  --copper-multilayer-muted: #8d8168;
+  --shadow: 0 18px 50px rgba(0, 0, 0, .55);
+  --header-bg: #0b0c0f;
+  --header-muted: #8f959d;
+  --header-line: #3a3f46;
+  --float-bg: rgba(34, 38, 44, .97);
+  --toolbar-bg: rgba(23, 26, 30, .94);
+  --sch-page: #1d2127;
+  --sch-ink: #e8e6e1;
+  --sch-muted: #9aa0a6;
+  --sch-note: #b3a58f;
+  --sch-body: #2c313a;
+  --brd-page: var(--board);
+  --brd-board-fill: #1d2127;
+  --brd-board-outline: #9aa0a6;
+  --brd-component-fill: #262b33;
+  --brd-component-outline: #b8bdc4;
+  --brd-text: #e8e6e1;
+  --brd-plate: #2c313a;
+  --brd-plate-text: #e8e6e1;
+  --brd-pad-fill: #1d2127;
+  --brd-pad-outline: #b8bdc4;
+}
+html[data-theme="rainbow"] {
+  --page: #fdf7ee;
+  --ink: #2b2118;
+  --muted: #857767;
+  --line: #ecdcc3;
+  --accent: #ff5c35;
+  --accent-soft: #ffe8cc;
+  --board: #fbf5ea;
+  --copper: #9d4edd;
+  --net: #d946ef;
+  --selected-pin: #06b6d4;
+  --copper-front: #ff5c35;
+  --copper-back: #00b4d8;
+  --copper-inner-1: #70e000;
+  --copper-inner-2: #9d4edd;
+  --copper-multilayer: #ffb703;
+  --copper-front-muted: #d5a08d;
+  --copper-back-muted: #83c4d1;
+  --copper-inner-1-muted: #a9c470;
+  --copper-inner-2-muted: #bb8ed2;
+  --copper-multilayer-muted: #d3b268;
+  --sch-page: #fffbf2;
+  --sch-ink: #6d28d9;
+  --sch-muted: #c2410c;
+  --sch-note: #0f766e;
+  --sch-body: #ede9fe;
+  --brd-page: var(--board);
+  --brd-board-fill: #fff8ec;
+  --brd-board-outline: #6d28d9;
+  --brd-component-fill: #fdf4ff;
+  --brd-component-outline: #9333ea;
+  --brd-text: #7e22ce;
+  --brd-plate: #fce7f3;
+  --brd-plate-text: #be185d;
+  --brd-pad-fill: #fef08a;
+  --brd-pad-outline: #ca8a04;
+  --rainbow: linear-gradient(90deg, #ff5c35, #ffb703, #70e000, #00b4d8, #9d4edd);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; width: 100%; height: 100%; background: var(--page); color: var(--ink); font-family: var(--font); }
+body { display: grid; grid-template-rows: auto minmax(0, 1fr); overflow: hidden; }
+header { display: flex; align-items: center; gap: 18px; padding: 16px 22px; background: var(--header-bg); color: var(--header-fg); }
+header h1 { margin: 0; font-size: clamp(18px, 2.1vw, 30px); letter-spacing: -.03em; }
+header p { margin: 2px 0 0; color: var(--header-muted); font-size: 13px; }
+.badge { margin-left: auto; border: 1px solid var(--header-line); border-radius: 999px; padding: 7px 11px; font-size: 12px; white-space: nowrap; }
+.github-link { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border: 1px solid var(--header-line); border-radius: 999px; color: var(--header-fg); flex: none; }
+.github-link:hover { border-color: var(--header-fg); background: rgba(255, 255, 255, .12); }
+.github-link svg { fill: currentColor; }
+.theme-select { display: inline-flex; align-items: center; gap: 7px; margin-left: auto; font-size: 12px; color: var(--header-muted); white-space: nowrap; }
+.theme-select select { width: auto; padding: 7px 9px; border: 1px solid var(--header-line); border-radius: 999px; background: transparent; color: var(--header-fg); font: inherit; font-size: 12px; cursor: pointer; }
+.theme-select select option { color: var(--ink); background: var(--panel); }
+.badge ~ .theme-select { margin-left: 0; }
+.project-card { padding: 12px 14px; border-bottom: 1px solid var(--line); font-size: 12px; }
+.project-card-title { font-weight: 650; font-size: 13px; letter-spacing: -.01em; }
+.project-card-meta { color: var(--muted); margin-top: 3px; overflow-wrap: anywhere; }
+.project-card-link { display: inline-block; margin-top: 7px; color: var(--accent); text-decoration: none; font-weight: 600; }
+.project-card-link:hover { text-decoration: underline; }
+.popup-overlay { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 20px; background: rgba(23, 23, 23, .45); }
+.popup-overlay[hidden] { display: none; }
+.popup-card { width: min(440px, 100%); display: grid; gap: 8px; padding: 16px 18px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+.popup-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; }
+.popup-close { width: auto; padding: 0 6px; border: none; background: none; font-size: 20px; line-height: 1; cursor: pointer; color: var(--muted); }
+.popup-close:hover { color: var(--ink); }
+.popup-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 10px; color: inherit; text-decoration: none; font-size: 12px; }
+.popup-row:hover { border-color: var(--accent); background: var(--accent-soft); }
+.popup-name { min-width: 0; overflow-wrap: anywhere; font-weight: 600; }
+.popup-number { flex: none; font-family: ui-monospace, "Cascadia Mono", Consolas, monospace; color: var(--muted); }
+.layout { height: 100%; min-height: 0; display: grid; grid-template-columns: minmax(190px, 260px) minmax(0, 1fr) minmax(260px, 360px); gap: 14px; padding: 14px; overflow: hidden; }
+.panel { min-width: 0; min-height: 0; background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 18px rgba(0,0,0,.05); }
+.list-panel { display: grid; grid-template-rows: auto auto minmax(0, 1fr); min-width: 0; }
+.search-wrap { padding: 14px; border-bottom: 1px solid var(--line); }
+input { width: 100%; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; background: var(--board); color: var(--ink); font: inherit; }
+.part-list { min-width: 0; overflow: auto; padding: 7px; }
+.part-row { position: relative; min-width: 0; }
+.category-group { border-bottom: 1px solid var(--line); padding-bottom: 5px; }
+.category-group > summary { display: flex; align-items: center; gap: 7px; padding: 10px 3px; cursor: pointer; font-size: 12px; font-weight: 750; }
+.category-group > summary::before { content: '▸'; }
+.category-group[open] > summary::before { content: '▾'; }
+.category-group > summary span { flex: 1; min-width: 0; overflow-wrap: anywhere; }
+.category-group > summary small { color: var(--muted); font-weight: 400; }
+.category-select, .part-select { width: 14px; height: 14px; margin: 0; padding: 0; flex: 0 0 auto; cursor: pointer; accent-color: var(--accent); }
+.part-select { position: absolute; left: 5px; top: 12px; }
+.part-row > .part-button { padding-left: 25px; }
+.part-button.selected { background: var(--accent-soft); }
+.selection-status-header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.selection-status-header button { border: 0; background: transparent; color: var(--ink); text-decoration: underline; cursor: pointer; font: inherit; font-size: 11px; }
+.match-rows { display: flex; flex-wrap: wrap; gap: 3px 12px; margin-top: 4px; }
+.match-rows span { font-size: 11px; color: var(--muted); }
+.match-rows b { color: var(--ink); font-weight: 650; }
+.net-results { display: flex; flex-direction: column; gap: 2px; padding: 2px 3px 6px; }
+.net-results .net-link { display: flex; justify-content: space-between; gap: 8px; padding: 6px 8px; border: 0; border-radius: 8px; background: transparent; text-align: left; cursor: pointer; font-size: 12px; }
+.net-results .net-link:hover { background: var(--accent-soft); }
+.net-results .net-link small { color: var(--muted); font-size: 10px; }
+.part-button { width: 100%; min-width: 0; display: grid; grid-template-columns: 50px minmax(0, 1fr); gap: 3px 8px; padding: 9px 32px 9px 9px; border: 0; border-radius: 10px; background: transparent; color: inherit; text-align: left; cursor: pointer; }
+.part-button:hover, .part-button.active { background: var(--accent-soft); }
+.part-button.active:not(.selected) { background: transparent; box-shadow: inset 0 0 0 1px var(--line); }
+.part-button strong { font-size: 13px; }
+.part-button span { overflow: hidden; color: var(--muted); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
+.part-button .oomp-id { grid-column: 1 / -1; overflow-wrap: anywhere; text-overflow: clip; white-space: normal; }
+.part-link { position: absolute; top: 8px; right: 7px; display: grid; width: 24px; height: 24px; place-items: center; border-radius: 7px; color: var(--ink); text-decoration: none; }
+.part-link:hover { background: var(--ink); color: white; }
+.board-panel { position: relative; display: grid; place-items: center; overflow: auto; padding: 18px; background: var(--board); }
+.board-toolbar { position: absolute; z-index: 10; top: 12px; left: 12px; right: 12px; display: flex; flex-wrap: wrap; align-items: center; gap: 5px; padding: 5px; border: 1px solid var(--line); border-radius: 12px; background: var(--toolbar-bg); color: var(--ink); box-shadow: 0 4px 14px rgba(0,0,0,.08); }
+.side-button { padding: 7px 11px; border: 0; border-radius: 8px; background: transparent; color: var(--muted); font: inherit; font-size: 12px; font-weight: 750; cursor: pointer; }
+.side-button:hover, .side-button.active { background: var(--ink); color: var(--panel); }
+.zoom-divider { width: 1px; margin: 4px 2px; background: var(--line); }
+.zoom-button { width: 31px; padding: 7px 0; border: 0; border-radius: 8px; background: transparent; color: var(--ink); font: inherit; font-weight: 850; cursor: pointer; }
+.zoom-button:hover { background: var(--accent-soft); }
+.zoom-label { min-width: 43px; align-self: center; color: var(--muted); font-size: 11px; text-align: center; }
+.zoom-reset { width: auto; min-width: 47px; padding-inline: 7px; font-size: 11px; }
+.board-stage { width: 100%; height: 100%; min-width: 0; min-height: 0; display: grid; place-items: center; cursor: grab; touch-action: none; user-select: none; }
+.board-stage.is-panning { cursor: grabbing; }
+.board-stage.split { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); place-items: stretch; gap: 8px; position: relative; }
+.board-stage.split::after { content: ''; position: absolute; left: 50%; top: 6px; bottom: 6px; width: 1px; background: var(--line); transform: translateX(-0.5px); pointer-events: none; }
+.board-stage.split .board-view:not([hidden]), .board-stage.split .schematic-view:not([hidden]) { width: auto; }
+.board-view { width: 100%; height: 100%; min-width: 0; min-height: 0; }
+/* Per-part artwork keeps its print palette as baked presentation attributes
+   (#FFFFFF fills, #000000 strokes); the rules below re-ink the strokes, the
+   pin-one markers and the pads with the page theme.  White body fills stay
+   governed by the transparent-geometry rule further down. */
+.board-component [fill="#000000"] { fill: var(--brd-component-outline); }
+.board-component [stroke="#000000"] { stroke: var(--brd-component-outline); }
+.board-component .pad { fill: var(--brd-pad-fill); stroke: var(--brd-pad-outline); }
+.board-view[hidden], .schematic-view[hidden] { display: none; }
+.board-view > svg, .schematic-view > svg { display: block; width: 100%; height: 100%; max-width: 100%; max-height: 100%; margin: auto; filter: drop-shadow(0 9px 13px rgba(0,0,0,.12)); }
+.schematic-view { width: 100%; height: 100%; min-width: 0; min-height: 0; overflow: hidden; border-radius: 8px; }
+/* Schematic symbols reuse the component hover/select machinery.  They stay
+   black whether selected or not — selection is shown only by the accent
+   rectangle drawn around them, exactly like the board view. */
+.schematic-view .sch-symbol { cursor: pointer; outline: none; transition: opacity .13s ease; }
+.schematic-view .sch-wire.on-net { stroke: var(--net); }
+.schematic-view .sch-wire-hit.on-net { stroke: var(--net); stroke-opacity: .25; }
+.schematic-view .sch-junction.on-net { fill: var(--net); }
+.schematic-view.has-net .sch-wire:not(.on-net), .schematic-view.has-net .sch-wire-hit:not(.on-net) { opacity: .18; }
+.schematic-view .sch-global.on-net .sch-label-pill { fill: var(--net); fill-opacity: 1; }
+.schematic-view .sch-global.on-net .sch-label-pill-text { fill: #ffffff; }
+.schematic-view .sch-label-tag.on-net .sch-label-pill { fill: var(--net); stroke: var(--net); fill-opacity: 1; }
+.schematic-view .sch-label-tag.on-net .sch-label-pill-text { fill: #ffffff; }
+.schematic-view .sch-label.on-net { fill: var(--net); font-weight: 700; }
+.board-stage .board-component { cursor: pointer; outline: none; transition: opacity .13s ease; shape-rendering: geometricPrecision; }
+.board-stage .board-component > .component { fill: none; }
+/* Only the explorer makes white assembly geometry transparent. Labels and
+   black outlines stay above the actual pad/track shapes; source SVGs stay white.
+   The part artwork carries class="pad" primitives: they stay solid white
+   (with their black outline) so pins remain readable over routed copper;
+   every other white-filled artwork shape stays transparent as before. */
+.board-stage .board-component :is(rect, path, polygon, circle, ellipse):is([fill="#FFFFFF"], [fill="#ffffff"], [fill="#fff"], [fill="white"]):not(.pad) { fill: none; }
+/* Never stroke an ancestor of the pin labels: SVG text inherits that stroke,
+   which can be several times wider than the letters at physical board scale. */
+.board-stage .board-component text { stroke: none; }
+.board-stage.has-selection .board-component:not(.is-active) { opacity: .55; }
+.component-highlights { pointer-events: none; }
+.selection-box, .hover-box { fill: none; stroke: var(--accent); stroke-width: 1.2; stroke-linejoin: round; stroke-linecap: round; shape-rendering: geometricPrecision; vector-effect: non-scaling-stroke; pointer-events: none; }
+.selection-box { stroke-width: 2.8; }
+.hover-box { stroke-width: 1.6; opacity: .65; }
+.board-stage .indicator { pointer-events: none; }
+.detail { display: grid; grid-template-rows: minmax(0, 1fr) var(--selection-status-height); gap: 14px; padding: 18px; }
+.part-detail-scroll { min-width: 0; min-height: 0; overflow: auto; overflow-wrap: anywhere; scrollbar-gutter: stable; }
+.selection-status { min-width: 0; min-height: 0; display: grid; grid-template-rows: auto minmax(0, 1fr); gap: 8px; padding: 12px; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.eyebrow { color: var(--accent); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.detail h2 { margin: 5px 0 0; font-size: 30px; letter-spacing: -.04em; }
+.value { margin: 4px 0 18px; color: var(--muted); }
+.facts { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 7px 10px; margin: 0 0 18px; font-size: 13px; }
+.facts dt { color: var(--muted); }
+.facts dd { margin: 0; overflow-wrap: anywhere; }
+.pinout { height: 240px; display: grid; place-items: center; margin: 12px 0; padding: 10px; border: 1px solid var(--line); border-radius: 14px; background: white; overflow: hidden; touch-action: none; cursor: grab; }
+.pinout.is-panning { cursor: grabbing; }
+.pinout svg { width: 100%; height: 100%; max-height: none; }
+.pinout.sch-preview { background: var(--sch-page); }
+.pin-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.pin-table th, .pin-table td { padding: 6px; border-bottom: 1px solid var(--line); text-align: left; }
+.pin-table { table-layout: fixed; overflow-wrap: anywhere; }
+.pin-table th:first-child { width: 45px; }
+.pin-menu { margin: 0 7px 9px; font-size: 12px; }
+.pin-menu summary { cursor: pointer; padding: 5px; color: var(--muted); }
+.pin-menu-body { max-height: 260px; overflow: auto; }
+.pin-button, .net-link { font: inherit; text-align: left; cursor: pointer; border: 0; border-radius: 5px; color: inherit; background: transparent; overflow-wrap: anywhere; }
+.pin-button { display: block; width: 100%; padding: 6px; border-left: 3px solid transparent; }
+.pin-button small { display: block; color: var(--muted); overflow-wrap: anywhere; }
+.pin-button:hover, .net-link:hover { background: var(--accent-soft); }
+.pin-button.on-net, .net-link.on-net { background: var(--accent-soft); }
+.pin-button.selected-pin { border-left-color: var(--selected-pin); color: var(--selected-pin); font-weight: 750; }
+.net-link { color: var(--net); padding: 3px; text-decoration: underline; }
+.board-toolbar select { width: 100%; min-width: 0; max-width: 100%; padding: 6px; border: 1px solid var(--line); border-radius: 6px; background: white; font: inherit; }
+.net-status { min-width: 0; min-height: 0; overflow: auto; overflow-wrap: anywhere; font-size: 12px; line-height: 1.5; scrollbar-gutter: stable; }
+.net-status button { font-size: 11px; }
+.board-toolbar select { width: auto; max-width: 155px; font-size: 11px; }
+.board-toolbar label { font-size: 11px; white-space: nowrap; }
+.board-toolbar input { width: auto; }
+.net-selection-controls { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; max-width: 100%; }
+.copper-feature { color: var(--layer-color, var(--copper)); cursor: pointer; shape-rendering: geometricPrecision; }
+.copper-segment, .copper-arc, .copper-via { fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; }
+.copper-pad, .copper-zone { fill: currentColor; stroke: none; }
+.copper-base .copper-feature { opacity: .48; }
+.copper-base .copper-zone { opacity: .10; pointer-events: none; }
+.copper-base .copper-pad { opacity: .28; }
+.copper-feature.layer-hidden, .copper-feature.fill-hidden { display: none; }
+.board-stage.hide-traces .copper-base { display: none; }
+.board-stage.has-net .copper-base .copper-feature { opacity: .18; }
+.board-stage.has-net .board-component { opacity: .25; }
+.board-stage.has-net .board-component.on-net { opacity: 1; }
+.board-stage.has-net .board-component.is-active { opacity: 1; }
+.copper-overlay .copper-feature { color: var(--layer-color, var(--net)); opacity: 1; }
+.copper-overlay .copper-zone { opacity: .18; pointer-events: none; }
+/* Use the exact native circle/rounded-rectangle/custom pad boundary. The old
+   pixel-width white border caused jagged seams, especially on custom pads. */
+.copper-overlay .copper-pad .pad-anchor { stroke: none; }
+.copper-overlay .selected-pin { color: var(--selected-pin); }
+.net-note { font-size: 11px; color: var(--muted); }
+.layer-legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 11px; margin-top: 6px; }
+.layer-key { display: inline-flex; align-items: center; gap: 4px; }
+.layer-swatch { width: 10px; height: 10px; border-radius: 50%; background: var(--layer-color); }
+.actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+.actions a { display: inline-block; padding: 9px 12px; border-radius: 10px; background: var(--ink); color: var(--panel); text-decoration: none; font-size: 12px; }
+.actions a.secondary, .actions button.secondary { border: 0; cursor: pointer; font: inherit; background: var(--accent-soft); color: var(--ink); }
+.actions a.secondary, .actions button.secondary { padding: 9px 12px; border-radius: 10px; font-size: 12px; }
+.empty { color: var(--muted); line-height: 1.55; }
+.hover-card { position: fixed; z-index: 20; display: none; width: 245px; padding: 11px 13px; border: 1px solid var(--line); border-radius: 12px; background: var(--float-bg); box-shadow: var(--shadow); pointer-events: none; }
+.hover-card.visible { display: block; }
+.hover-card strong { display: block; }
+.hover-card span { display: block; margin-top: 3px; color: var(--muted); font-size: 12px; }
+@media (max-width: 920px) { html, body { height: auto; min-height: 100%; } body { overflow: auto; } .layout { height: auto; overflow: visible; grid-template-columns: 190px minmax(0, 1fr); grid-template-rows: minmax(560px, 75vh) auto; } .detail.panel { grid-column: 1 / -1; height: min(680px, 80vh); min-height: 360px; } }
+@media (max-width: 640px) { body { display: block; } header { flex-wrap: wrap; } .layout { display: block; } .panel { margin-bottom: 12px; } .list-panel { height: 520px; } .board-panel { height: 70vh; min-height: 400px; } }
+html[data-theme="rainbow"] header { background: var(--rainbow); }
+html[data-theme="rainbow"] .panel { border: 1px solid transparent; background: linear-gradient(var(--panel), var(--panel)) padding-box, var(--rainbow) border-box; }
+html[data-theme="rainbow"] .actions a { background: linear-gradient(135deg, #ff5c35, #ff8a00); }
+html[data-theme="rainbow"] .actions a.secondary, html[data-theme="rainbow"] .actions button.secondary { background: var(--accent-soft); color: var(--ink); }
+html[data-theme="rainbow"] .category-group > summary::before { color: #ff5c35; }
+html[data-theme="rainbow"] .layer-swatch { box-shadow: 0 0 0 1px rgba(0, 0, 0, .18); }
+html[data-theme="rainbow"] .board-view > svg, html[data-theme="rainbow"] .schematic-view > svg { filter: drop-shadow(0 9px 13px rgba(157, 78, 221, .22)); }
+html[data-theme="rainbow"] .eyebrow { color: #9d4edd; }
+html[data-theme="rainbow"] .side-button:hover, html[data-theme="rainbow"] .side-button.active { background: var(--accent); }
+html[data-theme="rainbow"] .zoom-button:hover { color: #9d4edd; }
+html[data-theme="rainbow"] .schematic-view .sch-pin { stroke: #9333ea; }
+</style>
+<script>
+// Apply the saved theme before first paint so switching pages never flashes.
+(function () {
+  var theme = 'light';
+  try { theme = localStorage.getItem('oomp-board-theme') || 'light'; } catch (error) {}
+  if (['light', 'dark', 'rainbow'].indexOf(theme) < 0) theme = 'light';
+  document.documentElement.dataset.theme = theme;
+})();
+</script>
+</head>
+<body>
+<header><div><h1>Project electrolama/nandcat NAND Cat current</h1><p>Offline OOMP board explorer · components, pins &amp; routed nets</p></div><div class="badge">0 items · 8 nets</div>
+  <label class="theme-select">Theme
+    <select id="theme-select" aria-label="Colour theme">
+      <option value="light">Light</option>
+      <option value="dark">Dark</option>
+      <option value="rainbow">Rainbow</option>
+    </select>
+  </label>
+  <a class="github-link" href="https://github.com/electrolama/nandcat/tree/master/Revision%20A" target="_blank" rel="noopener" aria-label="Open the project repository on GitHub" title="https://github.com/electrolama/nandcat/tree/master/Revision%20A"><svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg></a></header>
+<main class="layout">
+  <section class="panel list-panel">
+    <div class="project-card"><div class="project-card-title">Project electrolama/nandcat NAND Cat current</div><div class="project-card-meta">electrolama/nandcat · current · 0 items · 8 nets</div><a class="project-card-link" href="https://github.com/electrolama/nandcat/tree/master/Revision%20A" target="_blank" rel="noopener">View project on GitHub ↗</a></div>
+    <div class="search-wrap"><input id="search" type="search" placeholder="Filter components, pins or nets…" aria-label="Filter components and nets"><div id="layer-legend" class="layer-legend" aria-label="Highlighted copper layer colours"></div></div>
+    <div id="part-list" class="part-list"></div>
+  </section>
+  <section class="panel board-panel">
+    <div class="board-toolbar" aria-label="Board view">
+      <button class="side-button view-button active" type="button" data-view="board">Board</button>
+      
+      
+      <span class="zoom-divider"></span>
+      <button class="side-button active" type="button" data-side="front">Top · 0</button>
+      <button class="side-button" type="button" data-side="back">Bottom · 0</button>
+      <span class="zoom-divider"></span>
+      <button id="zoom-out" class="zoom-button" type="button" aria-label="Zoom out">−</button>
+      <button id="zoom-fit" class="zoom-label side-button" type="button" aria-label="Fit board"><span id="zoom-label">100%</span></button>
+      <button id="zoom-in" class="zoom-button" type="button" aria-label="Zoom in">+</button>
+      <button id="zoom-reset" class="zoom-button zoom-reset" type="button" aria-label="Reset board zoom to 100%">100%</button>
+      <span class="zoom-divider"></span>
+      <select id="copper-layer" aria-label="Copper layers"><option value="side">Visible side copper</option><option value="all" selected>All copper layers</option><option value="F.Cu">F.Cu</option><option value="B.Cu">B.Cu</option></select>
+      <label><input id="show-traces" type="checkbox" checked> Traces</label>
+      <label><input id="show-fills" type="checkbox" checked> Fills</label>
+      <span class="net-selection-controls">
+        <label><input id="zoom-to-net" type="checkbox"> Zoom to net</label>
+        <label><input id="highlight-selected-nets" type="checkbox"> Highlight all selected nets</label>
+      </span>
+    </div>
+    <div id="board-stage" class="board-stage">
+      <div class="board-view" data-side="front"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="19.6003 15.7000 70.8761 40.6997">
+<defs>
+<style>
+.page { fill: var(--brd-page, #FFFFFF); }
+.board { fill: var(--brd-board-fill, #FFFFFF); stroke: var(--brd-board-outline, #000000); stroke-width: 0.35; }
+.edge-cut { fill: none; stroke: var(--brd-board-outline, #000000); stroke-width: 0.25; }
+.component { fill: var(--brd-component-fill, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mechanical-pad { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mounting-hole { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.22; }
+.reference { fill: var(--brd-text, #000000); font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, #FFFFFF); stroke-width: 0.35px; }
+.indicator-plate { fill: var(--brd-plate, #FFFFFF); fill-opacity: .55; }
+.indicator-text { fill: var(--brd-plate-text, #000000); }
+</style>
+</defs>
+<rect class="page" x="19.6003" y="15.7000" width="70.8761" height="40.6997" />
+<rect class="board" x="25.6003" y="21.7000" width="58.8761" height="28.6997" rx="1.0" />
+<polyline class="edge-cut" points="84.4220,37.8822 84.3672,38.0793" />
+<polyline class="edge-cut" points="78.7259,29.8969 79.0564,30.3169" />
+<polyline class="edge-cut" points="84.0321,38.6507 83.8489,38.8215" />
+<polyline class="edge-cut" points="83.6228,38.9760 83.3493,39.1103" />
+<polyline class="edge-cut" points="83.3493,39.1103 83.0242,39.2205" />
+<polyline class="edge-cut" points="83.0242,39.2205 82.6430,39.3027" />
+<polyline class="edge-cut" points="79.3718,42.0588 78.9461,42.6669" />
+<polyline class="edge-cut" points="78.9461,42.6669 78.4824,43.2354" />
+<polyline class="edge-cut" points="79.0564,30.3169 79.3789,30.7777" />
+<polyline class="edge-cut" points="83.2329,35.0007 83.4061,35.0456" />
+<polyline class="edge-cut" points="83.8489,38.8215 83.6228,38.9760" />
+<polyline class="edge-cut" points="84.3936,36.4112 84.4549,36.8095" />
+<polyline class="edge-cut" points="78.4824,43.2354 77.9843,43.7635" />
+<polyline class="edge-cut" points="80.6232,39.2414 80.5110,39.6265" />
+<polyline class="edge-cut" points="82.8393,34.9798 83.0441,34.9783" />
+<polyline class="edge-cut" points="79.7560,41.4116 79.3718,42.0588" />
+<polyline class="edge-cut" points="80.2464,40.3688 80.0950,40.7259" />
+<polyline class="edge-cut" points="80.3853,40.0023 80.2464,40.3688" />
+<polyline class="edge-cut" points="77.9843,43.7635 77.4554,44.2508" />
+<polyline class="edge-cut" points="77.4554,44.2508 76.8993,44.6966" />
+<polyline class="edge-cut" points="80.9563,35.2192 82.6179,35.0066" />
+<polyline class="edge-cut" points="83.7079,35.1968 83.8374,35.3003" />
+<polyline class="edge-cut" points="80.5110,39.6265 80.3853,40.0023" />
+<polyline class="edge-cut" points="80.8419,34.4483 80.9563,35.2192" />
+<polyline class="edge-cut" points="75.1036,45.7788 74.4745,46.0526" />
+<polyline class="edge-cut" points="74.4745,46.0526 73.8362,46.2818" />
+<polyline class="edge-cut" points="83.8374,35.3003 83.9535,35.4205" />
+<polyline class="edge-cut" points="82.6430,39.3027 80.6232,39.2414" />
+<polyline class="edge-cut" points="84.1469,35.7052 84.2254,35.8667" />
+<polyline class="edge-cut" points="84.0565,35.5559 84.1469,35.7052" />
+<polyline class="edge-cut" points="84.1766,38.4674 84.0321,38.6507" />
+<polyline class="edge-cut" points="73.8362,46.2818 73.1921,46.4659" />
+<polyline class="edge-cut" points="73.1921,46.4659 72.5460,46.6043" />
+<polyline class="edge-cut" points="72.5460,46.6043 71.8866,46.6924" />
+<polyline class="edge-cut" points="80.6814,33.7243 80.8419,34.4483" />
+<polyline class="edge-cut" points="82.6179,35.0066 82.8393,34.9798" />
+<polyline class="edge-cut" points="83.9535,35.4205 84.0565,35.5559" />
+<polyline class="edge-cut" points="84.4549,36.8095 84.4764,37.3254" />
+<polyline class="edge-cut" points="84.2254,35.8667 84.2923,36.0392" />
+<polyline class="edge-cut" points="76.3196,45.1002 75.7198,45.4612" />
+<polyline class="edge-cut" points="84.4764,37.3254 84.4555,37.6882" />
+<polyline class="edge-cut" points="84.2869,38.2756 84.1766,38.4674" />
+<polyline class="edge-cut" points="76.8993,44.6966 76.3196,45.1002" />
+<polyline class="edge-cut" points="75.7198,45.4612 75.1036,45.7788" />
+<polyline class="edge-cut" points="78.3928,29.5168 78.7259,29.8969" />
+<polyline class="edge-cut" points="83.0441,34.9783 83.2329,35.0007" />
+<polyline class="edge-cut" points="78.0627,29.1758 78.3928,29.5168" />
+<polyline class="edge-cut" points="80.0950,40.7259 79.7560,41.4116" />
+<polyline class="edge-cut" points="79.6880,31.2802 79.9782,31.8252" />
+<polyline class="edge-cut" points="84.3672,38.0793 84.2869,38.2756" />
+<polyline class="edge-cut" points="79.9782,31.8252 80.2441,32.4136" />
+<polyline class="edge-cut" points="84.2923,36.0392 84.3936,36.4112" />
+<polyline class="edge-cut" points="80.4803,33.0464 80.6814,33.7243" />
+<polyline class="edge-cut" points="79.3789,30.7777 79.6880,31.2802" />
+<polyline class="edge-cut" points="80.2441,32.4136 80.4803,33.0464" />
+<polyline class="edge-cut" points="83.4061,35.0456 83.5643,35.1114" />
+<polyline class="edge-cut" points="83.5643,35.1114 83.7079,35.1968" />
+<polyline class="edge-cut" points="84.4555,37.6882 84.4220,37.8822" />
+<polyline class="edge-cut" points="50.9067,50.2556 50.3247,50.2958" />
+<polyline class="edge-cut" points="60.6578,44.9943 60.3321,45.3968" />
+<polyline class="edge-cut" points="48.5000,50.3000 25.6003,50.3997" />
+<polyline class="edge-cut" points="25.6003,50.3997 25.6003,50.3997" />
+<polyline class="edge-cut" points="69.8121,46.6366 69.1047,46.5161" />
+<polyline class="edge-cut" points="71.2079,46.7262 70.5148,46.7071" />
+<polyline class="edge-cut" points="60.3321,45.3968 59.9960,45.7853" />
+<polyline class="edge-cut" points="55.5786,49.0689 55.1085,49.2713" />
+<polyline class="edge-cut" points="61.8588,43.2498 61.5736,43.7057" />
+<polyline class="edge-cut" points="69.1047,46.5161 68.3975,46.3470" />
+<polyline class="edge-cut" points="50.3247,50.2958 49.7296,50.3167" />
+<polyline class="edge-cut" points="65.6667,45.2137 65.0329,44.8233" />
+<polyline class="edge-cut" points="56.4836,48.6140 56.0370,48.8497" />
+<polyline class="edge-cut" points="65.0329,44.8233 64.4284,44.3929" />
+<polyline class="edge-cut" points="57.3423,48.0937 56.9187,48.3619" />
+<polyline class="edge-cut" points="54.1321,49.6245 53.6257,49.7749" />
+<polyline class="edge-cut" points="67.6952,46.1308 67.0027,45.8689" />
+<polyline class="edge-cut" points="57.7545,47.8096 57.3423,48.0937" />
+<polyline class="edge-cut" points="53.6257,49.7749 53.1070,49.9076" />
+<polyline class="edge-cut" points="62.6131,42.5922 62.4000,42.3000" />
+<polyline class="edge-cut" points="63.8580,43.9239 63.3265,43.4178" />
+<polyline class="edge-cut" points="52.5759,50.0222 52.0322,50.1186" />
+<polyline class="edge-cut" points="52.0322,50.1186 51.4759,50.1965" />
+<polyline class="edge-cut" points="62.4000,42.3000 61.8588,43.2498" />
+<polyline class="edge-cut" points="61.5736,43.7057 61.2784,44.1486" />
+<polyline class="edge-cut" points="58.1555,47.5099 57.7545,47.8096" />
+<polyline class="edge-cut" points="56.9187,48.3619 56.4836,48.6140" />
+<polyline class="edge-cut" points="53.1070,49.9076 52.5759,50.0222" />
+<polyline class="edge-cut" points="51.4759,50.1965 50.9067,50.2556" />
+<polyline class="edge-cut" points="49.7296,50.3167 49.1215,50.3182" />
+<polyline class="edge-cut" points="49.1215,50.3182 48.5000,50.3000" />
+<polyline class="edge-cut" points="70.5148,46.7071 69.8121,46.6366" />
+<polyline class="edge-cut" points="62.8389,42.8760 62.6131,42.5922" />
+<polyline class="edge-cut" points="60.9732,44.5782 60.6578,44.9943" />
+<polyline class="edge-cut" points="56.0370,48.8497 55.5786,49.0689" />
+<polyline class="edge-cut" points="61.2784,44.1486 60.9732,44.5782" />
+<polyline class="edge-cut" points="59.6494,46.1595 59.2922,46.5194" />
+<polyline class="edge-cut" points="59.2922,46.5194 58.9242,46.8645" />
+<polyline class="edge-cut" points="68.3975,46.3470 67.6952,46.1308" />
+<polyline class="edge-cut" points="67.0027,45.8689 66.3249,45.5627" />
+<polyline class="edge-cut" points="64.4284,44.3929 63.8580,43.9239" />
+<polyline class="edge-cut" points="63.3265,43.4178 62.8389,42.8760" />
+<polyline class="edge-cut" points="59.9960,45.7853 59.6494,46.1595" />
+<polyline class="edge-cut" points="58.9242,46.8645 58.5453,47.1948" />
+<polyline class="edge-cut" points="71.8866,46.6924 71.2079,46.7262" />
+<polyline class="edge-cut" points="66.3249,45.5627 65.6667,45.2137" />
+<polyline class="edge-cut" points="58.5453,47.1948 58.1555,47.5099" />
+<polyline class="edge-cut" points="55.1085,49.2713 54.6263,49.4565" />
+<polyline class="edge-cut" points="54.6263,49.4565 54.1321,49.6245" />
+<polyline class="edge-cut" points="62.7897,30.1162 63.2166,29.5716" />
+<polyline class="edge-cut" points="57.7683,25.0113 58.1846,25.3198" />
+<polyline class="edge-cut" points="56.8911,24.4342 57.3371,24.7159" />
+<polyline class="edge-cut" points="56.4305,24.1669 56.8911,24.4342" />
+<polyline class="edge-cut" points="60.9687,28.1820 61.2468,28.5793" />
+<polyline class="edge-cut" points="61.5091,28.9832 61.7554,29.3931" />
+<polyline class="edge-cut" points="53.3647,22.9020 53.9111,23.0692" />
+<polyline class="edge-cut" points="51.6423,22.5164 52.2302,22.6249" />
+<polyline class="edge-cut" points="25.6003,50.3997 25.6003,22.3997" />
+<polyline class="edge-cut" points="58.1846,25.3198 58.5861,25.6408" />
+<polyline class="edge-cut" points="61.2468,28.5793 61.5091,28.9832" />
+<polyline class="edge-cut" points="57.3371,24.7159 57.7683,25.0113" />
+<polyline class="edge-cut" points="61.7554,29.3931 61.9856,29.8083" />
+<polyline class="edge-cut" points="62.3975,30.6522 62.7897,30.1162" />
+<polyline class="edge-cut" points="58.9724,25.9736 59.3436,26.3175" />
+<polyline class="edge-cut" points="55.4657,23.6782 55.9553,23.9147" />
+<polyline class="edge-cut" points="54.4435,23.2548 54.9617,23.4580" />
+<polyline class="edge-cut" points="61.9856,29.8083 62.1997,30.2282" />
+<polyline class="edge-cut" points="59.3436,26.3175 59.6995,26.6720" />
+<polyline class="edge-cut" points="63.2166,29.5716 63.4607,29.2916" />
+<polyline class="edge-cut" points="53.9111,23.0692 54.4435,23.2548" />
+<polyline class="edge-cut" points="25.6003,22.3997 48.5000,22.3000" />
+<polyline class="edge-cut" points="59.6995,26.6720 60.0401,27.0363" />
+<polyline class="edge-cut" points="64.4000,28.4000 65.5000,21.9000" />
+<polyline class="edge-cut" points="65.5000,21.9000 68.4409,26.3544" />
+<polyline class="edge-cut" points="52.8044,22.7537 53.3647,22.9020" />
+<polyline class="edge-cut" points="68.4409,26.3544 68.7805,26.2674" />
+<polyline class="edge-cut" points="68.7805,26.2674 69.1272,26.1989" />
+<polyline class="edge-cut" points="63.7346,29.0042 64.0454,28.7076" />
+<polyline class="edge-cut" points="69.1272,26.1989 69.4893,26.1482" />
+<polyline class="edge-cut" points="70.2932,26.0972 70.7517,26.0955" />
+<polyline class="edge-cut" points="54.9617,23.4580 55.4657,23.6782" />
+<polyline class="edge-cut" points="70.7517,26.0955 71.8236,26.1362" />
+<polyline class="edge-cut" points="71.8236,26.1362 75.6000,21.7000" />
+<polyline class="edge-cut" points="75.6000,21.7000 76.6452,28.0258" />
+<polyline class="edge-cut" points="58.5861,25.6408 58.9724,25.9736" />
+<polyline class="edge-cut" points="62.1997,30.2282 62.3975,30.6522" />
+<polyline class="edge-cut" points="60.6748,27.7920 60.9687,28.1820" />
+<polyline class="edge-cut" points="49.1551,22.2976 49.7970,22.3187" />
+<polyline class="edge-cut" points="76.6452,28.0258 77.1438,28.3783" />
+<polyline class="edge-cut" points="50.4256,22.3627 51.0407,22.4288" />
+<polyline class="edge-cut" points="48.5000,22.3000 49.1551,22.2976" />
+<polyline class="edge-cut" points="51.0407,22.4288 51.6423,22.5164" />
+<polyline class="edge-cut" points="52.2302,22.6249 52.8044,22.7537" />
+<polyline class="edge-cut" points="55.9553,23.9147 56.4305,24.1669" />
+<polyline class="edge-cut" points="60.3652,27.4099 60.6748,27.7920" />
+<polyline class="edge-cut" points="63.4607,29.2916 63.7346,29.0042" />
+<polyline class="edge-cut" points="69.4893,26.1482 69.8752,26.1145" />
+<polyline class="edge-cut" points="77.1438,28.3783 77.4327,28.6074" />
+<polyline class="edge-cut" points="69.8752,26.1145 70.2932,26.0972" />
+<polyline class="edge-cut" points="77.4327,28.6074 77.7408,28.8730" />
+<polyline class="edge-cut" points="77.7408,28.8730 78.0627,29.1758" />
+<polyline class="edge-cut" points="64.0454,28.7076 64.4000,28.4000" />
+<polyline class="edge-cut" points="49.7970,22.3187 50.4256,22.3627" />
+<polyline class="edge-cut" points="60.0401,27.0363 60.3652,27.4099" />
+<g class="copper-base" transform=""><g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 51.95 43.05 L 51.5 43.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 51.95 40.25 L 51.95 43.05" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 51.5 33.25 L 53.25 33.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 33.25 L 53.25 33.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 69.6 36.8 L 56.8 36.8" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 51.95 40.25 L 52.6548 40.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 52.6548 40.25 L 53.25 40.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 40.25 L 53.25 40.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.549999 39.950001 L 56.75 36.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 40.25 L 53.549999 39.950001" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 56.8 36.8 L 56.75 36.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 40.25 32.0952 L 40.8452 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 40.25 33.25 L 40.25 32.0952" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 56.75 36.75 L 54.75 34.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 44.0 31.5 L 40.8452 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 47.25 34.75 L 44.0 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 33.674264 L 53.25 34.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 33.25 L 53.25 33.674264" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 54.75 34.75 L 53.25 34.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 34.75 L 47.25 34.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 45.29 35.75 L 42.79 33.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 45.925 35.75 L 45.29 35.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 28.75 25.5 L 28.75 33.45" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 28.75 39.05 L 28.75 47.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 42.79 32.047919 L 41.992081 31.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 42.79 33.25 L 42.79 32.047919" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 41.992081 31.25 L 39.0 31.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 34.0 36.25 L 28.75 36.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 39.0 31.25 L 34.0 36.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 28.75 33.45 L 28.75 36.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 28.75 36.25 L 28.75 39.05" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 49.8 30.0 L 46.5 30.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 46.5 30.0 L 46.0 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 46.0 29.5 L 44.75 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 49.8 33.125 L 49.925 33.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 49.8 30.0 L 49.8 33.125" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 51.0 38.25 L 52.5 38.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 52.5 38.25 L 54.25 36.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 54.25 36.5 L 54.25 30.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 53.75 30.0 L 51.95 30.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 54.25 30.5 L 53.75 30.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 50.175 43.5 L 46.5 43.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 46.5 43.5 L 46.0 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 46.0 43.0 L 44.5 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 50.05 43.375 L 50.175 43.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 50.05 40.25 L 50.05 43.375" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_5" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R2-Pad1)</title><path d="M 43.175 29.5 L 34.0 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_5" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R2-Pad1)</title><path d="M 34.0 29.5 L 33.25 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_5" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R2-Pad1)</title><path d="M 33.25 25.5 L 33.25 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_5" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R2-Pad1)</title><path d="M 33.25 29.5 L 33.25 33.45" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_6" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R4-Pad1)</title><path d="M 42.925 43.0 L 34.0 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_6" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R4-Pad1)</title><path d="M 34.0 43.0 L 33.25 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_6" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R4-Pad1)</title><path d="M 33.25 39.05 L 33.25 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_6" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R4-Pad1)</title><path d="M 33.25 43.0 L 33.25 47.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 72.14 35.527208 L 71.112792 34.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 72.14 36.8 L 72.14 35.527208" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 71.112792 34.5 L 57.75 34.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 57.75 34.5 L 54.75 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 50.75 28.0 L 51.4548 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 51.4548 28.0 L 51.75 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 51.75 28.0 L 53.0 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 53.0 28.0 L 53.25 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 53.25 28.0 L 53.25 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 53.25 28.0 L 53.25 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 54.75 31.5 L 53.25 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 53.25 31.5 L 50.25 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 50.25 31.5 L 48.0 33.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 48.0 33.75 L 48.0 33.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 47.5 34.25 L 48.0 33.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 47.5 35.75 L 47.5 34.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-via" data-net-id="net_0_0" data-layers="F.Cu B.Cu" data-reference="" data-pin=""><title>GND</title><circle cx="53.25" cy="33.25" r="0.30000000000000004" stroke-width="0.2"/></g>
+<g class="copper-feature copper-via" data-net-id="net_0_0" data-layers="F.Cu B.Cu" data-reference="" data-pin=""><title>GND</title><circle cx="53.25" cy="40.25" r="0.30000000000000004" stroke-width="0.2"/></g>
+<g class="copper-feature copper-via" data-net-id="net_0_1" data-layers="F.Cu B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><circle cx="53.25" cy="28.0" r="0.30000000000000004" stroke-width="0.2"/></g>
+<g class="copper-feature copper-via" data-net-id="net_0_1" data-layers="F.Cu B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><circle cx="48.0" cy="33.75" r="0.30000000000000004" stroke-width="0.2"/></g></g><g class="copper-overlay" transform=""></g><g class="component-highlights" pointer-events="none"></g></svg>
+</div>
+      <div class="board-view" data-side="back" hidden><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="19.6003 15.7000 70.8761 40.6997">
+<defs>
+<style>
+.page { fill: var(--brd-page, #FFFFFF); }
+.board { fill: var(--brd-board-fill, #FFFFFF); stroke: var(--brd-board-outline, #000000); stroke-width: 0.35; }
+.edge-cut { fill: none; stroke: var(--brd-board-outline, #000000); stroke-width: 0.25; }
+.component { fill: var(--brd-component-fill, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mechanical-pad { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.18; }
+.mounting-hole { fill: var(--brd-page, #FFFFFF); stroke: var(--brd-component-outline, #000000); stroke-width: 0.22; }
+.reference { fill: var(--brd-text, #000000); font-family: Arial, sans-serif; font-size: 0.72px; text-anchor: middle; paint-order: stroke; stroke: var(--brd-plate, #FFFFFF); stroke-width: 0.35px; }
+.indicator-plate { fill: var(--brd-plate, #FFFFFF); fill-opacity: .55; }
+.indicator-text { fill: var(--brd-plate-text, #000000); }
+</style>
+</defs>
+<rect class="page" x="19.6003" y="15.7000" width="70.8761" height="40.6997" />
+<rect class="board" x="25.6003" y="21.7000" width="58.8761" height="28.6997" rx="1.0" />
+<polyline class="edge-cut" points="25.6547,37.8822 25.7095,38.0793" />
+<polyline class="edge-cut" points="31.3508,29.8969 31.0203,30.3169" />
+<polyline class="edge-cut" points="26.0446,38.6507 26.2278,38.8215" />
+<polyline class="edge-cut" points="26.4539,38.9760 26.7274,39.1103" />
+<polyline class="edge-cut" points="26.7274,39.1103 27.0525,39.2205" />
+<polyline class="edge-cut" points="27.0525,39.2205 27.4336,39.3027" />
+<polyline class="edge-cut" points="30.7049,42.0588 31.1306,42.6669" />
+<polyline class="edge-cut" points="31.1306,42.6669 31.5943,43.2354" />
+<polyline class="edge-cut" points="31.0203,30.3169 30.6978,30.7777" />
+<polyline class="edge-cut" points="26.8438,35.0007 26.6706,35.0456" />
+<polyline class="edge-cut" points="26.2278,38.8215 26.4539,38.9760" />
+<polyline class="edge-cut" points="25.6831,36.4112 25.6218,36.8095" />
+<polyline class="edge-cut" points="31.5943,43.2354 32.0924,43.7635" />
+<polyline class="edge-cut" points="29.4535,39.2414 29.5657,39.6265" />
+<polyline class="edge-cut" points="27.2374,34.9798 27.0326,34.9783" />
+<polyline class="edge-cut" points="30.3207,41.4116 30.7049,42.0588" />
+<polyline class="edge-cut" points="29.8302,40.3688 29.9817,40.7259" />
+<polyline class="edge-cut" points="29.6914,40.0023 29.8302,40.3688" />
+<polyline class="edge-cut" points="32.0924,43.7635 32.6213,44.2508" />
+<polyline class="edge-cut" points="32.6213,44.2508 33.1774,44.6966" />
+<polyline class="edge-cut" points="29.1204,35.2192 27.4588,35.0066" />
+<polyline class="edge-cut" points="26.3688,35.1968 26.2393,35.3003" />
+<polyline class="edge-cut" points="29.5657,39.6265 29.6914,40.0023" />
+<polyline class="edge-cut" points="29.2348,34.4483 29.1204,35.2192" />
+<polyline class="edge-cut" points="34.9731,45.7788 35.6022,46.0526" />
+<polyline class="edge-cut" points="35.6022,46.0526 36.2405,46.2818" />
+<polyline class="edge-cut" points="26.2393,35.3003 26.1232,35.4205" />
+<polyline class="edge-cut" points="27.4336,39.3027 29.4535,39.2414" />
+<polyline class="edge-cut" points="25.9297,35.7052 25.8513,35.8667" />
+<polyline class="edge-cut" points="26.0202,35.5559 25.9297,35.7052" />
+<polyline class="edge-cut" points="25.9001,38.4674 26.0446,38.6507" />
+<polyline class="edge-cut" points="36.2405,46.2818 36.8846,46.4659" />
+<polyline class="edge-cut" points="36.8846,46.4659 37.5307,46.6043" />
+<polyline class="edge-cut" points="37.5307,46.6043 38.1901,46.6924" />
+<polyline class="edge-cut" points="29.3953,33.7243 29.2348,34.4483" />
+<polyline class="edge-cut" points="27.4588,35.0066 27.2374,34.9798" />
+<polyline class="edge-cut" points="26.1232,35.4205 26.0202,35.5559" />
+<polyline class="edge-cut" points="25.6218,36.8095 25.6003,37.3254" />
+<polyline class="edge-cut" points="25.8513,35.8667 25.7844,36.0392" />
+<polyline class="edge-cut" points="33.7571,45.1002 34.3569,45.4612" />
+<polyline class="edge-cut" points="25.6003,37.3254 25.6212,37.6882" />
+<polyline class="edge-cut" points="25.7898,38.2756 25.9001,38.4674" />
+<polyline class="edge-cut" points="33.1774,44.6966 33.7571,45.1002" />
+<polyline class="edge-cut" points="34.3569,45.4612 34.9731,45.7788" />
+<polyline class="edge-cut" points="31.6839,29.5168 31.3508,29.8969" />
+<polyline class="edge-cut" points="27.0326,34.9783 26.8438,35.0007" />
+<polyline class="edge-cut" points="32.0140,29.1758 31.6839,29.5168" />
+<polyline class="edge-cut" points="29.9817,40.7259 30.3207,41.4116" />
+<polyline class="edge-cut" points="30.3887,31.2802 30.0985,31.8252" />
+<polyline class="edge-cut" points="25.7095,38.0793 25.7898,38.2756" />
+<polyline class="edge-cut" points="30.0985,31.8252 29.8326,32.4136" />
+<polyline class="edge-cut" points="25.7844,36.0392 25.6831,36.4112" />
+<polyline class="edge-cut" points="29.5963,33.0464 29.3953,33.7243" />
+<polyline class="edge-cut" points="30.6978,30.7777 30.3887,31.2802" />
+<polyline class="edge-cut" points="29.8326,32.4136 29.5963,33.0464" />
+<polyline class="edge-cut" points="26.6706,35.0456 26.5124,35.1114" />
+<polyline class="edge-cut" points="26.5124,35.1114 26.3688,35.1968" />
+<polyline class="edge-cut" points="25.6212,37.6882 25.6547,37.8822" />
+<polyline class="edge-cut" points="59.1700,50.2556 59.7520,50.2958" />
+<polyline class="edge-cut" points="49.4189,44.9943 49.7446,45.3968" />
+<polyline class="edge-cut" points="61.5767,50.3000 84.4764,50.3997" />
+<polyline class="edge-cut" points="84.4764,50.3997 84.4764,50.3997" />
+<polyline class="edge-cut" points="40.2645,46.6366 40.9720,46.5161" />
+<polyline class="edge-cut" points="38.8688,46.7262 39.5619,46.7071" />
+<polyline class="edge-cut" points="49.7446,45.3968 50.0807,45.7853" />
+<polyline class="edge-cut" points="54.4980,49.0689 54.9682,49.2713" />
+<polyline class="edge-cut" points="48.2179,43.2498 48.5031,43.7057" />
+<polyline class="edge-cut" points="40.9720,46.5161 41.6792,46.3470" />
+<polyline class="edge-cut" points="59.7520,50.2958 60.3470,50.3167" />
+<polyline class="edge-cut" points="44.4099,45.2137 45.0437,44.8233" />
+<polyline class="edge-cut" points="53.5930,48.6140 54.0397,48.8497" />
+<polyline class="edge-cut" points="45.0437,44.8233 45.6483,44.3929" />
+<polyline class="edge-cut" points="52.7344,48.0937 53.1580,48.3619" />
+<polyline class="edge-cut" points="55.9446,49.6245 56.4510,49.7749" />
+<polyline class="edge-cut" points="42.3815,46.1308 43.0740,45.8689" />
+<polyline class="edge-cut" points="52.3222,47.8096 52.7344,48.0937" />
+<polyline class="edge-cut" points="56.4510,49.7749 56.9697,49.9076" />
+<polyline class="edge-cut" points="47.4636,42.5922 47.6767,42.3000" />
+<polyline class="edge-cut" points="46.2187,43.9239 46.7501,43.4178" />
+<polyline class="edge-cut" points="57.5008,50.0222 58.0445,50.1186" />
+<polyline class="edge-cut" points="58.0445,50.1186 58.6008,50.1965" />
+<polyline class="edge-cut" points="47.6767,42.3000 48.2179,43.2498" />
+<polyline class="edge-cut" points="48.5031,43.7057 48.7983,44.1486" />
+<polyline class="edge-cut" points="51.9212,47.5099 52.3222,47.8096" />
+<polyline class="edge-cut" points="53.1580,48.3619 53.5930,48.6140" />
+<polyline class="edge-cut" points="56.9697,49.9076 57.5008,50.0222" />
+<polyline class="edge-cut" points="58.6008,50.1965 59.1700,50.2556" />
+<polyline class="edge-cut" points="60.3470,50.3167 60.9552,50.3182" />
+<polyline class="edge-cut" points="60.9552,50.3182 61.5767,50.3000" />
+<polyline class="edge-cut" points="39.5619,46.7071 40.2645,46.6366" />
+<polyline class="edge-cut" points="47.2378,42.8760 47.4636,42.5922" />
+<polyline class="edge-cut" points="49.1035,44.5782 49.4189,44.9943" />
+<polyline class="edge-cut" points="54.0397,48.8497 54.4980,49.0689" />
+<polyline class="edge-cut" points="48.7983,44.1486 49.1035,44.5782" />
+<polyline class="edge-cut" points="50.4272,46.1595 50.7845,46.5194" />
+<polyline class="edge-cut" points="50.7845,46.5194 51.1525,46.8645" />
+<polyline class="edge-cut" points="41.6792,46.3470 42.3815,46.1308" />
+<polyline class="edge-cut" points="43.0740,45.8689 43.7517,45.5627" />
+<polyline class="edge-cut" points="45.6483,44.3929 46.2187,43.9239" />
+<polyline class="edge-cut" points="46.7501,43.4178 47.2378,42.8760" />
+<polyline class="edge-cut" points="50.0807,45.7853 50.4272,46.1595" />
+<polyline class="edge-cut" points="51.1525,46.8645 51.5313,47.1948" />
+<polyline class="edge-cut" points="38.1901,46.6924 38.8688,46.7262" />
+<polyline class="edge-cut" points="43.7517,45.5627 44.4099,45.2137" />
+<polyline class="edge-cut" points="51.5313,47.1948 51.9212,47.5099" />
+<polyline class="edge-cut" points="54.9682,49.2713 55.4504,49.4565" />
+<polyline class="edge-cut" points="55.4504,49.4565 55.9446,49.6245" />
+<polyline class="edge-cut" points="47.2870,30.1162 46.8601,29.5716" />
+<polyline class="edge-cut" points="52.3084,25.0113 51.8920,25.3198" />
+<polyline class="edge-cut" points="53.1856,24.4342 52.7396,24.7159" />
+<polyline class="edge-cut" points="53.6462,24.1669 53.1856,24.4342" />
+<polyline class="edge-cut" points="49.1080,28.1820 48.8299,28.5793" />
+<polyline class="edge-cut" points="48.5676,28.9832 48.3213,29.3931" />
+<polyline class="edge-cut" points="56.7119,22.9020 56.1655,23.0692" />
+<polyline class="edge-cut" points="58.4344,22.5164 57.8465,22.6249" />
+<polyline class="edge-cut" points="84.4764,50.3997 84.4764,22.3997" />
+<polyline class="edge-cut" points="51.8920,25.3198 51.4906,25.6408" />
+<polyline class="edge-cut" points="48.8299,28.5793 48.5676,28.9832" />
+<polyline class="edge-cut" points="52.7396,24.7159 52.3084,25.0113" />
+<polyline class="edge-cut" points="48.3213,29.3931 48.0911,29.8083" />
+<polyline class="edge-cut" points="47.6792,30.6522 47.2870,30.1162" />
+<polyline class="edge-cut" points="51.1043,25.9736 50.7331,26.3175" />
+<polyline class="edge-cut" points="54.6110,23.6782 54.1214,23.9147" />
+<polyline class="edge-cut" points="55.6332,23.2548 55.1150,23.4580" />
+<polyline class="edge-cut" points="48.0911,29.8083 47.8770,30.2282" />
+<polyline class="edge-cut" points="50.7331,26.3175 50.3772,26.6720" />
+<polyline class="edge-cut" points="46.8601,29.5716 46.6160,29.2916" />
+<polyline class="edge-cut" points="56.1655,23.0692 55.6332,23.2548" />
+<polyline class="edge-cut" points="84.4764,22.3997 61.5767,22.3000" />
+<polyline class="edge-cut" points="50.3772,26.6720 50.0366,27.0363" />
+<polyline class="edge-cut" points="45.6767,28.4000 44.5767,21.9000" />
+<polyline class="edge-cut" points="44.5767,21.9000 41.6357,26.3544" />
+<polyline class="edge-cut" points="57.2723,22.7537 56.7119,22.9020" />
+<polyline class="edge-cut" points="41.6357,26.3544 41.2961,26.2674" />
+<polyline class="edge-cut" points="41.2961,26.2674 40.9495,26.1989" />
+<polyline class="edge-cut" points="46.3421,29.0042 46.0313,28.7076" />
+<polyline class="edge-cut" points="40.9495,26.1989 40.5874,26.1482" />
+<polyline class="edge-cut" points="39.7835,26.0972 39.3249,26.0955" />
+<polyline class="edge-cut" points="55.1150,23.4580 54.6110,23.6782" />
+<polyline class="edge-cut" points="39.3249,26.0955 38.2531,26.1362" />
+<polyline class="edge-cut" points="38.2531,26.1362 34.4767,21.7000" />
+<polyline class="edge-cut" points="34.4767,21.7000 33.4315,28.0258" />
+<polyline class="edge-cut" points="51.4906,25.6408 51.1043,25.9736" />
+<polyline class="edge-cut" points="47.8770,30.2282 47.6792,30.6522" />
+<polyline class="edge-cut" points="49.4019,27.7920 49.1080,28.1820" />
+<polyline class="edge-cut" points="60.9216,22.2976 60.2797,22.3187" />
+<polyline class="edge-cut" points="33.4315,28.0258 32.9329,28.3783" />
+<polyline class="edge-cut" points="59.6511,22.3627 59.0360,22.4288" />
+<polyline class="edge-cut" points="61.5767,22.3000 60.9216,22.2976" />
+<polyline class="edge-cut" points="59.0360,22.4288 58.4344,22.5164" />
+<polyline class="edge-cut" points="57.8465,22.6249 57.2723,22.7537" />
+<polyline class="edge-cut" points="54.1214,23.9147 53.6462,24.1669" />
+<polyline class="edge-cut" points="49.7115,27.4099 49.4019,27.7920" />
+<polyline class="edge-cut" points="46.6160,29.2916 46.3421,29.0042" />
+<polyline class="edge-cut" points="40.5874,26.1482 40.2015,26.1145" />
+<polyline class="edge-cut" points="32.9329,28.3783 32.6440,28.6074" />
+<polyline class="edge-cut" points="40.2015,26.1145 39.7835,26.0972" />
+<polyline class="edge-cut" points="32.6440,28.6074 32.3359,28.8730" />
+<polyline class="edge-cut" points="32.3359,28.8730 32.0140,29.1758" />
+<polyline class="edge-cut" points="46.0313,28.7076 45.6767,28.4000" />
+<polyline class="edge-cut" points="60.2797,22.3187 59.6511,22.3627" />
+<polyline class="edge-cut" points="50.0366,27.0363 49.7115,27.4099" />
+<g class="copper-base" transform="translate(110.076700 0) scale(-1 1)"><g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 51.95 43.05 L 51.5 43.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 51.95 40.25 L 51.95 43.05" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 51.5 33.25 L 53.25 33.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 33.25 L 53.25 33.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 69.6 36.8 L 56.8 36.8" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 51.95 40.25 L 52.6548 40.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 52.6548 40.25 L 53.25 40.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="F.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 40.25 L 53.25 40.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.549999 39.950001 L 56.75 36.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 40.25 L 53.549999 39.950001" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 56.8 36.8 L 56.75 36.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 40.25 32.0952 L 40.8452 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 40.25 33.25 L 40.25 32.0952" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 56.75 36.75 L 54.75 34.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 44.0 31.5 L 40.8452 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 47.25 34.75 L 44.0 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 33.674264 L 53.25 34.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 33.25 L 53.25 33.674264" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 54.75 34.75 L 53.25 34.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_0" data-layers="B.Cu" data-reference="" data-pin=""><title>GND</title><path d="M 53.25 34.75 L 47.25 34.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 45.29 35.75 L 42.79 33.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 45.925 35.75 L 45.29 35.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 28.75 25.5 L 28.75 33.45" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 28.75 39.05 L 28.75 47.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 42.79 32.047919 L 41.992081 31.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 42.79 33.25 L 42.79 32.047919" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 41.992081 31.25 L 39.0 31.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 34.0 36.25 L 28.75 36.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 39.0 31.25 L 34.0 36.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 28.75 33.45 L 28.75 36.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_7" data-layers="F.Cu" data-reference="" data-pin=""><title>VCC</title><path d="M 28.75 36.25 L 28.75 39.05" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 49.8 30.0 L 46.5 30.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 46.5 30.0 L 46.0 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 46.0 29.5 L 44.75 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 49.8 33.125 L 49.925 33.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_2" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad1)</title><path d="M 49.8 30.0 L 49.8 33.125" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 51.0 38.25 L 52.5 38.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 52.5 38.25 L 54.25 36.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 54.25 36.5 L 54.25 30.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 53.75 30.0 L 51.95 30.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_3" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q1-Pad2)</title><path d="M 54.25 30.5 L 53.75 30.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 50.175 43.5 L 46.5 43.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 46.5 43.5 L 46.0 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 46.0 43.0 L 44.5 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 50.05 43.375 L 50.175 43.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_4" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(Q2-Pad1)</title><path d="M 50.05 40.25 L 50.05 43.375" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_5" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R2-Pad1)</title><path d="M 43.175 29.5 L 34.0 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_5" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R2-Pad1)</title><path d="M 34.0 29.5 L 33.25 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_5" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R2-Pad1)</title><path d="M 33.25 25.5 L 33.25 29.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_5" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R2-Pad1)</title><path d="M 33.25 29.5 L 33.25 33.45" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_6" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R4-Pad1)</title><path d="M 42.925 43.0 L 34.0 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_6" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R4-Pad1)</title><path d="M 34.0 43.0 L 33.25 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_6" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R4-Pad1)</title><path d="M 33.25 39.05 L 33.25 43.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_6" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(R4-Pad1)</title><path d="M 33.25 43.0 L 33.25 47.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 72.14 35.527208 L 71.112792 34.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 72.14 36.8 L 72.14 35.527208" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 71.112792 34.5 L 57.75 34.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 57.75 34.5 L 54.75 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 50.75 28.0 L 51.4548 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 51.4548 28.0 L 51.75 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 51.75 28.0 L 53.0 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 53.0 28.0 L 53.25 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 53.25 28.0 L 53.25 28.0" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 53.25 28.0 L 53.25 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 54.75 31.5 L 53.25 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 53.25 31.5 L 50.25 31.5" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 50.25 31.5 L 48.0 33.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 48.0 33.75 L 48.0 33.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 47.5 34.25 L 48.0 33.75" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-segment" data-net-id="net_0_1" data-layers="F.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><path d="M 47.5 35.75 L 47.5 34.25" stroke-width="0.3048"/></g>
+<g class="copper-feature copper-via" data-net-id="net_0_0" data-layers="F.Cu B.Cu" data-reference="" data-pin=""><title>GND</title><circle cx="53.25" cy="33.25" r="0.30000000000000004" stroke-width="0.2"/></g>
+<g class="copper-feature copper-via" data-net-id="net_0_0" data-layers="F.Cu B.Cu" data-reference="" data-pin=""><title>GND</title><circle cx="53.25" cy="40.25" r="0.30000000000000004" stroke-width="0.2"/></g>
+<g class="copper-feature copper-via" data-net-id="net_0_1" data-layers="F.Cu B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><circle cx="53.25" cy="28.0" r="0.30000000000000004" stroke-width="0.2"/></g>
+<g class="copper-feature copper-via" data-net-id="net_0_1" data-layers="F.Cu B.Cu" data-reference="" data-pin=""><title>Net-(D1-Pad2)</title><circle cx="48.0" cy="33.75" r="0.30000000000000004" stroke-width="0.2"/></g></g><g class="copper-overlay" transform="translate(110.076700 0) scale(-1 1)"></g><g class="component-highlights" pointer-events="none"></g></svg>
+</div>
+      
+    </div>
+  </section>
+  <aside class="panel detail">
+    <div class="part-detail-scroll"><div id="detail"><p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p></div></div>
+    <section class="selection-status" aria-labelledby="selection-status-title">
+      <div class="selection-status-header"><div id="selection-status-title" class="eyebrow">Selection status</div><button id="clear-selection" type="button">Clear</button></div>
+      <div id="net-status" class="net-status" role="status" aria-live="polite"></div>
+    </section>
+  </aside>
+</main>
+<div id="hover-card" class="hover-card" role="status"></div>
+<div id="lcsc-popup" class="popup-overlay" hidden></div>
+<script id="component-data" type="application/json">[]</script>
+<script id="copper-data" type="application/json">{"nets": [{"id": "net_0_0", "name": "GND", "source_file": "data/kicad_file.kicad_pcb", "pins": [], "track_count": 20, "via_count": 2, "fill_count": 0, "layers": ["F.Cu", "B.Cu"]}, {"id": "net_0_1", "name": "Net-(D1-Pad2)", "source_file": "data/kicad_file.kicad_pcb", "pins": [], "track_count": 16, "via_count": 2, "fill_count": 0, "layers": ["B.Cu", "F.Cu"]}, {"id": "net_0_2", "name": "Net-(Q1-Pad1)", "source_file": "data/kicad_file.kicad_pcb", "pins": [], "track_count": 5, "via_count": 0, "fill_count": 0, "layers": ["F.Cu"]}, {"id": "net_0_3", "name": "Net-(Q1-Pad2)", "source_file": "data/kicad_file.kicad_pcb", "pins": [], "track_count": 5, "via_count": 0, "fill_count": 0, "layers": ["F.Cu"]}, {"id": "net_0_4", "name": "Net-(Q2-Pad1)", "source_file": "data/kicad_file.kicad_pcb", "pins": [], "track_count": 5, "via_count": 0, "fill_count": 0, "layers": ["F.Cu"]}, {"id": "net_0_5", "name": "Net-(R2-Pad1)", "source_file": "data/kicad_file.kicad_pcb", "pins": [], "track_count": 4, "via_count": 0, "fill_count": 0, "layers": ["F.Cu"]}, {"id": "net_0_6", "name": "Net-(R4-Pad1)", "source_file": "data/kicad_file.kicad_pcb", "pins": [], "track_count": 4, "via_count": 0, "fill_count": 0, "layers": ["F.Cu"]}, {"id": "net_0_7", "name": "VCC", "source_file": "data/kicad_file.kicad_pcb", "pins": [], "track_count": 11, "via_count": 0, "fill_count": 0, "layers": ["F.Cu"]}], "layers": ["F.Cu", "B.Cu"], "warnings": []}</script>
+<script>
+const components = JSON.parse(document.getElementById('component-data').textContent);
+const copper = JSON.parse(document.getElementById('copper-data').textContent);
+const byNet = new Map(copper.nets.map(net => [net.id, net]));
+const byReference = new Map(components.map(component => [component.reference, component]));
+const list = document.getElementById('part-list');
+const detail = document.getElementById('detail');
+const search = document.getElementById('search');
+const stage = document.getElementById('board-stage');
+const hoverCard = document.getElementById('hover-card');
+let activeReference = '';
+let activeSide = 'front';
+let zoomScale = 1;
+let mousePan = null;
+let touchPan = null;
+let suppressBoardClick = false;
+const activePointers = new Map();
+let activeNet = '';
+let activePin = null;
+const selectedReferences = new Set();
+const selectedPins = [];
+const collapsedCategories = new Set(components.map(component => component.category));
+const highlightSelectedNets = document.getElementById('highlight-selected-nets');
+const expandedReferences = new Set();
+const layerSelect = document.getElementById('copper-layer');
+const baseFeatures = [...document.querySelectorAll('.copper-base .copper-feature')];
+const boardViewports = new Map();
+document.querySelectorAll('.board-view > svg').forEach(svg => {
+  const originalText = svg.getAttribute('viewBox');
+  const original = originalText.split(/\s+/).map(Number);
+  boardViewports.set(svg, {original, originalText, target: [...original], box: [...original], scale: 1});
+});
+const schematicView = document.getElementById('schematic-view');
+const schematicSvg = schematicView ? schematicView.querySelector('svg') : null;
+if (schematicSvg) {
+  const originalText = schematicSvg.getAttribute('viewBox');
+  const original = originalText.split(/\s+/).map(Number);
+  boardViewports.set(schematicSvg, {original, originalText, target: [...original], box: [...original], scale: 1});
+}
+// Schematic wires and labels are tagged with plain net names; the copper data
+// keys its nets by id, so keep the bridge handy in both directions.  KiCad
+// prefixes hierarchical net names with their sheet path ("/PB5") while the
+// sheet labels carry the bare name, so index that spelling too.
+const netIdByName = new Map();
+copper.nets.forEach(net => {
+  if (!netIdByName.has(net.name)) netIdByName.set(net.name, net.id);
+  const bare = net.name.split('/').pop();
+  if (bare && bare !== net.name && !netIdByName.has(bare)) netIdByName.set(bare, net.id);
+});
+// Unlabelled sheet runs only carry a run id; their copper net is recovered
+// through any pin sitting on the run (the part's PCB pad knows its net).
+const padNetByPin = new Map();
+components.forEach(component => {
+  for (const pad of component.pads) {
+    if (pad.net) padNetByPin.set(`${component.reference}.${pad.number}`, pad.net);
+  }
+});
+const runNetByName = new Map();
+if (schematicSvg) {
+  schematicSvg.querySelectorAll('.sch-pin-hit[data-run]').forEach(element => {
+    const padNet = padNetByPin.get(`${element.dataset.reference}.${element.dataset.pin}`);
+    if (padNet && !runNetByName.has(element.dataset.run)) runNetByName.set(element.dataset.run, padNet);
+  });
+}
+const schematicNetElements = schematicSvg ? [...schematicSvg.querySelectorAll('[data-net], [data-run]')] : [];
+const schematicSymbols = schematicSvg ? [...schematicSvg.querySelectorAll('.sch-symbol')] : [];
+let manualSchematicRun = '';
+// Explicit editable colours for the common stack; additional internal layers
+// get evenly spaced hues without changing the familiar front/back colours.
+const layerColors = {'F.Cu': 'var(--copper-front)', 'B.Cu': 'var(--copper-back)',
+  'In1.Cu': 'var(--copper-inner-1)', 'In2.Cu': 'var(--copper-inner-2)'};
+// The unselected copper reads a step quieter than the highlighted overlay,
+// keeping each layer's hue while letting the components come forward.
+const layerColorsMuted = {'F.Cu': 'var(--copper-front-muted)', 'B.Cu': 'var(--copper-back-muted)',
+  'In1.Cu': 'var(--copper-inner-1-muted)', 'In2.Cu': 'var(--copper-inner-2-muted)'};
+copper.layers.forEach((layer, index) => {
+  if (!layerColors[layer]) layerColors[layer] = `hsl(${(index * 137.5) % 360} 65% 38%)`;
+  if (!layerColorsMuted[layer]) layerColorsMuted[layer] = `hsl(${(index * 137.5) % 360} 30% 55%)`;
+});
+
+function layerColor(element, muted = false) {
+  const layers = element.dataset.layers.split(' ');
+  const palette = muted ? layerColorsMuted : layerColors;
+  const requested = layerSelect.value === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layerSelect.value;
+  if (requested !== 'all' && layers.includes(requested)) return palette[requested];
+  return layers.length === 1 ? palette[layers[0]] : (muted ? 'var(--copper-multilayer-muted)' : 'var(--copper-multilayer)');
+}
+
+function renderLayerLegend() {
+  const legend = document.getElementById('layer-legend');
+  legend.replaceChildren();
+  const items = copper.layers.map(layer => [layer, layerColors[layer]]);
+  items.push(['Via / through-hole', 'var(--copper-multilayer)']);
+  items.push(['Selected pin', 'var(--selected-pin)']);
+  for (const [label, color] of items) {
+    const key = document.createElement('span');
+    key.className = 'layer-key';
+    key.style.setProperty('--layer-color', color);
+    const swatch = document.createElement('span');
+    swatch.className = 'layer-swatch';
+    key.append(swatch, document.createTextNode(label));
+    legend.appendChild(key);
+  }
+}
+
+function escapeHtml(value) {
+  return String(value ?? '').replace(/[&<>'"]/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[character]));
+}
+
+function additiveClick(event) {
+  return event.ctrlKey || event.metaKey;
+}
+
+function selectedPinIndex(reference, number, netId) {
+  for (let index = 0; index < selectedPins.length; index++) {
+    const pin = selectedPins[index];
+    if (pin.reference === reference && pin.number === number && pin.net_id === (netId || '')) return index;
+  }
+  return -1;
+}
+
+function syncActivePin() {
+  activePin = selectedPins.length ? selectedPins[selectedPins.length - 1] : null;
+  activeNet = selectedPins.length === 1 ? selectedPins[0].net_id : '';
+}
+
+function toggleCategory(category) {
+  const members = components.filter(component => component.category === category);
+  const deselect = members.every(component => selectedReferences.has(component.reference));
+  for (const component of members) {
+    if (deselect) selectedReferences.delete(component.reference);
+    else selectedReferences.add(component.reference);
+  }
+  selectionChanged(true);
+}
+
+function toggleComponent(reference) {
+  if (selectedReferences.has(reference)) selectedReferences.delete(reference);
+  else selectedReferences.add(reference);
+  activeReference = reference;
+  selectionChanged(true);
+}
+
+function renderList(filterText = '') {
+  const filter = filterText.trim().toLowerCase();
+  const scrollTop = list.scrollTop;
+  list.innerHTML = '';
+  // Net names are searchable in the main box; matching nets lead the results
+  // so a typed name can be followed straight from the list.
+  if (filter) {
+    const matchingNets = copper.nets.filter(net => net.name.toLowerCase().includes(filter));
+    if (matchingNets.length) {
+      const group = document.createElement('details');
+      group.className = 'category-group net-group';
+      group.open = true;
+      const heading = document.createElement('summary');
+      const title = document.createElement('span');
+      title.textContent = 'Nets';
+      const count = document.createElement('small');
+      count.textContent = `${matchingNets.length}`;
+      heading.append(title, count);
+      group.appendChild(heading);
+      const body = document.createElement('div');
+      body.className = 'net-results';
+      for (const net of matchingNets) {
+        const netButton = document.createElement('button');
+        netButton.type = 'button';
+        netButton.className = 'net-link' + (net.id === activeNet ? ' on-net' : '');
+        netButton.dataset.netId = net.id;
+        netButton.innerHTML = `${escapeHtml(net.name)}<small>${net.pins.length} pins · ${net.track_count} traces</small>`;
+        netButton.addEventListener('click', () => toggleNet(net.id));
+        body.appendChild(netButton);
+      }
+      group.appendChild(body);
+      list.appendChild(group);
+    }
+  }
+  const groups = new Map();
+  const visible = components.filter(component => {
+    const haystack = [component.reference, component.value, component.category, component.category_name, component.oomp_id, component.footprint, ...component.pads.map(pin => `${pin.number} ${pin.name} ${pin.net}`)].join(' ').toLowerCase();
+    return component.side === activeSide && haystack.includes(filter);
+  });
+  for (const component of visible) {
+    if (!groups.has(component.category)) groups.set(component.category, []);
+    groups.get(component.category).push(component);
+  }
+  for (const [category, members] of [...groups].sort((a, b) => a[0].localeCompare(b[0]))) {
+    const allMembers = components.filter(component => component.category === category);
+    const selectedCount = allMembers.filter(component => selectedReferences.has(component.reference)).length;
+    const group = document.createElement('details');
+    group.className = 'category-group';
+    group.dataset.category = category;
+    group.open = !!filter || !collapsedCategories.has(category);
+    const heading = document.createElement('summary');
+    heading.title = 'Click to expand; Ctrl-click to select or deselect this category';
+    heading.addEventListener('click', event => {
+      if (!additiveClick(event)) return;
+      event.preventDefault();
+      toggleCategory(category);
+    });
+    const select = document.createElement('input');
+    select.type = 'checkbox';
+    select.className = 'category-select';
+    select.dataset.category = category;
+    select.checked = selectedCount === allMembers.length;
+    select.indeterminate = selectedCount > 0 && selectedCount < allMembers.length;
+    select.setAttribute('aria-label', `Select all ${members[0].category_name} components on both sides`);
+    select.addEventListener('click', event => event.stopPropagation());
+    select.addEventListener('change', () => {
+      for (const component of allMembers) {
+        if (select.checked) selectedReferences.add(component.reference);
+        else selectedReferences.delete(component.reference);
+      }
+      selectionChanged(true);
+    });
+    heading.appendChild(select);
+    const title = document.createElement('span');
+    title.textContent = members[0].category_name;
+    heading.appendChild(title);
+    const count = document.createElement('small');
+    count.textContent = `${selectedCount}/${allMembers.length}`;
+    count.title = `${selectedCount} selected of ${allMembers.length} on both sides; ${members.length} visible`;
+    heading.appendChild(count);
+    group.appendChild(heading);
+    group.addEventListener('toggle', () => {
+      if (filter) return;
+      if (group.open) collapsedCategories.delete(category);
+      else collapsedCategories.add(category);
+    });
+    for (const component of members) {
+    const row = document.createElement('div');
+    row.className = 'part-row';
+    const selectPart = document.createElement('input');
+    selectPart.type = 'checkbox';
+    selectPart.className = 'part-select';
+    selectPart.dataset.reference = component.reference;
+    selectPart.checked = selectedReferences.has(component.reference);
+    selectPart.setAttribute('aria-label', `Select ${component.reference}`);
+    selectPart.addEventListener('change', () => {
+      if (selectPart.checked) selectedReferences.add(component.reference);
+      else selectedReferences.delete(component.reference);
+      selectionChanged(true);
+    });
+    row.appendChild(selectPart);
+    const button = document.createElement('button');
+    button.className = 'part-button' + (component.reference === activeReference ? ' active' : '') + (selectedReferences.has(component.reference) ? ' selected' : '');
+    button.dataset.reference = component.reference;
+    button.innerHTML = `<strong>${escapeHtml(component.reference)}</strong><span>${escapeHtml(component.value || 'unlabelled')}</span><span class="oomp-id">${escapeHtml(component.oomp_id || 'unmatched')}</span>`;
+    button.setAttribute('aria-pressed', selectedReferences.has(component.reference));
+    button.addEventListener('click', event => {
+      if (additiveClick(event)) toggleComponent(component.reference);
+      else selectComponent(component.reference);
+    });
+    row.appendChild(button);
+    if (component.part_url) {
+      const link = document.createElement('a');
+      link.className = 'part-link';
+      link.href = component.part_url;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.title = `Open ${component.oomp_id}`;
+      link.textContent = '↗';
+      row.appendChild(link);
+    }
+    const menu = document.createElement('details');
+    menu.className = 'pin-menu';
+    menu.open = expandedReferences.has(component.reference);
+    const summary = document.createElement('summary');
+    summary.textContent = `Pins · ${component.pads.length}`;
+    summary.title = 'Click to expand; Ctrl-click to select or deselect all pins';
+    summary.addEventListener('click', event => {
+      if (!additiveClick(event)) return;
+      event.preventDefault();
+      toggleComponentPins(component.reference);
+    });
+    menu.appendChild(summary);
+    const body = document.createElement('div');
+    body.className = 'pin-menu-body';
+    component.pads.forEach(pin => {
+      const pinButton = document.createElement('button');
+      pinButton.type = 'button';
+      pinButton.className = pinClass(component, pin);
+      pinButton.dataset.pin = pin.number;
+      pinButton.dataset.reference = component.reference;
+      pinButton.innerHTML = `${escapeHtml(pin.number || 'Pad')} · ${escapeHtml(pin.name || 'unnamed')}<small>${escapeHtml(pin.net || 'No assigned net')}</small>`;
+      pinButton.setAttribute('aria-pressed', selectedPinIndex(component.reference, pin.number, pin.net_id) >= 0);
+      pinButton.addEventListener('click', event => selectPin(component.reference, pin.number, pin.net_id, additiveClick(event)));
+      body.appendChild(pinButton);
+    });
+    menu.appendChild(body);
+    menu.addEventListener('toggle', () => {
+      if (menu.open) expandedReferences.add(component.reference);
+      else expandedReferences.delete(component.reference);
+    });
+    row.appendChild(menu);
+    group.appendChild(row);
+    }
+    list.appendChild(group);
+  }
+  list.scrollTop = scrollTop;
+}
+
+function highlightedNetIds() {
+  const ids = new Set();
+  if (highlightSelectedNets.checked) {
+    for (const reference of selectedReferences) {
+      for (const pin of byReference.get(reference).pads) {
+        if (pin.net_id && byNet.has(pin.net_id)) ids.add(pin.net_id);
+      }
+    }
+  } else if (byNet.has(activeNet)) ids.add(activeNet);
+  for (const pin of selectedPins) {
+    if (byNet.has(pin.net_id)) ids.add(pin.net_id);
+  }
+  return ids;
+}
+
+function renderInitialDetail() {
+  detail.innerHTML = '<p class="empty">Choose a component to inspect its placement, OOMP match and pins.</p>';
+}
+
+function refreshDetail() {
+  const component = byReference.get(activeReference);
+  if (component) renderDetail(component);
+  else renderInitialDetail();
+}
+
+function selectionChanged(preservePins = false) {
+  if (!preservePins) {
+    selectedPins.length = 0;
+    activeNet = '';
+    activePin = null;
+  }
+  updateSelectionBoxes();
+  updateNetHighlight();
+  renderList(search.value);
+  refreshDetail();
+}
+
+function pinClass(component, pin) {
+  const selected = selectedPinIndex(component.reference, pin.number, pin.net_id) >= 0;
+  return 'pin-button' + (highlightedNetIds().has(pin.net_id) ? ' on-net' : '') + (selected ? ' selected-pin' : '');
+}
+
+function pinRows(component) {
+  if (!component.pads.length) return '<p class="empty">No PCB pads were extracted for this item.</p>';
+  return `<table class="pin-table"><thead><tr><th>Pin</th><th>Name</th><th>Net</th></tr></thead><tbody>${component.pads.map((pin, index) => `<tr><td><button class="${pinClass(component, pin)}" data-pin-index="${index}">${escapeHtml(pin.number || 'Pad')}</button></td><td>${escapeHtml(pin.name || '—')}</td><td>${pin.net_id ? `<button class="net-link${activeNet === pin.net_id ? ' on-net' : ''}" data-net-id="${escapeHtml(pin.net_id)}">${escapeHtml(pin.net)}</button>` : 'No net'}</td></tr>`).join('')}</tbody></table>`;
+}
+
+function renderDetail(component) {
+  const position = component.position || {};
+  const match = component.oomp_id ? 'Matched OOMP part' : 'Needs OOMP match';
+  const lcscAction = component.lcsc_options && component.lcsc_options.length > 1
+    ? `<button class="secondary lcsc-link" type="button" data-reference="${escapeHtml(component.reference)}" title="Choose between ${component.lcsc_options.length} LCSC options">LCSC options (${component.lcsc_options.length})</button>`
+    : component.lcsc_url ? `<a class="secondary lcsc-link" href="${escapeHtml(component.lcsc_url)}" target="_blank" rel="noopener noreferrer" title="${escapeHtml(component.lcsc_part_number)}">Open LCSC</a>` : '';
+  const lcscSearch = component.lcsc_search || '';
+  const searchAction = lcscSearch
+    ? `<a class="secondary" href="https://www.lcsc.com/search?q=${encodeURIComponent(lcscSearch)}" target="_blank" rel="noopener noreferrer" title="LCSC search: ${escapeHtml(lcscSearch)}">Search LCSC</a>` : '';
+  const actions = [
+    component.part_url ? `<a href="${escapeHtml(component.part_url)}" target="_blank" rel="noopener">Open OOMP part</a>` : '',
+    lcscAction,
+    searchAction,
+    component.supplier ? `<a class="secondary" href="${escapeHtml(component.supplier)}" target="_blank" rel="noopener">Supplier source</a>` : ''
+  ].join('');
+  detail.innerHTML = `
+    <div class="eyebrow">${escapeHtml(match)}</div>
+    <h2>${escapeHtml(component.reference)}</h2>
+    <div class="value">${escapeHtml(component.value || 'No value')}</div>
+    <dl class="facts">
+      <dt>OOMP</dt><dd>${escapeHtml(component.oomp_id || 'unmatched')}</dd>
+      <dt>Category</dt><dd>${escapeHtml(component.category_name)}${component.category_source === 'unmatched_kicad_hint' ? ' (KiCad hint)' : ''}</dd>
+      <dt>Footprint</dt><dd>${escapeHtml(component.footprint || '—')}</dd>
+      <dt>LCSC search</dt><dd>${escapeHtml(lcscSearch || '—')}</dd>
+      <dt>Side</dt><dd>${escapeHtml(component.side || '—')}</dd>
+      <dt>Position</dt><dd>${escapeHtml(position.x ?? '—')}, ${escapeHtml(position.y ?? '—')} mm</dd>
+      <dt>Rotation</dt><dd>${escapeHtml(position.rotation_kicad ?? position.rotation ?? '—')}°</dd>
+    </dl>
+    <div class="actions">${actions}</div>
+    ${component.symbol_svg ? `<div class="eyebrow">Schematic symbol</div><div class="pinout sch-preview">${component.symbol_svg}</div>` : ''}
+    <div class="eyebrow">Pinout</div>
+    ${component.pinout_svg ? `<div class="pinout">${component.pinout_svg}</div>` : ''}
+    ${pinRows(component)}`;
+}
+
+const lcscPopup = document.getElementById('lcsc-popup');
+
+function openLcscPopup(component) {
+  const rows = (component.lcsc_options || []).map(option =>
+    `<a class="popup-row" href="${escapeHtml(option.url)}" target="_blank" rel="noopener noreferrer">` +
+    `<span class="popup-name">${escapeHtml(option.product_name || 'LCSC option')}</span>` +
+    `<span class="popup-number">${escapeHtml(option.part_number)}</span></a>`).join('');
+  lcscPopup.innerHTML = `<div class="popup-card" role="dialog" aria-label="LCSC options">` +
+    `<div class="popup-head"><strong>LCSC options · ${escapeHtml(component.reference)}</strong>` +
+    `<button class="popup-close" type="button" aria-label="Close">&times;</button></div>${rows}</div>`;
+  lcscPopup.hidden = false;
+}
+
+function closeLcscPopup() {
+  lcscPopup.hidden = true;
+}
+
+lcscPopup.addEventListener('click', event => {
+  if (event.target === lcscPopup || event.target.closest('.popup-close')) closeLcscPopup();
+});
+
+detail.addEventListener('click', event => {
+  const button = event.target.closest('button.lcsc-link');
+  if (!button) return;
+  const component = byReference.get(button.dataset.reference);
+  if (component && (component.lcsc_options || []).length > 1) openLcscPopup(component);
+});
+
+function selectComponent(reference, preserveNet = false, expandCategory = true) {
+  const component = byReference.get(reference);
+  if (!component) return;
+  // Selection never flips the board view; components on the hidden side stay
+  // reachable through the side buttons instead.
+  // Clicking a selected component (list button, board artwork or Enter)
+  // deselects it, keeping any other selections intact.
+  if (!preserveNet && selectedReferences.has(reference)) {
+    selectedReferences.delete(reference);
+    if (activeReference === reference) activeReference = [...selectedReferences][0] || '';
+    selectionChanged();
+    return;
+  }
+  activeReference = reference;
+  if (expandCategory) collapsedCategories.delete(component.category);
+  if (!selectedReferences.has(reference)) {
+    selectedReferences.clear();
+    selectedReferences.add(reference);
+  }
+  if (!preserveNet) { activeNet = ''; activePin = null; selectedPins.length = 0; }
+  updateSelectionBoxes();
+  renderDetail(component);
+  renderList(search.value);
+  updateNetHighlight();
+}
+
+function selectPin(reference, number, netId, additive = false) {
+  // Clicking a pin that is already selected deselects it again, whichever
+  // surface the click came from; its part stays populated in the detail pane.
+  const index = selectedPinIndex(reference, number, netId);
+  if (index >= 0) {
+    selectedPins.splice(index, 1);
+    syncActivePin();
+    selectionChanged(true);
+    return;
+  }
+  if (!additive) {
+    highlightSelectedNets.checked = false;
+    selectedPins.length = 0;
+  }
+  selectedPins.push({reference, number, net_id: netId || ''});
+  syncActivePin();
+  expandedReferences.add(reference);
+  // A pin selection always populates its owning part in the detail pane.
+  const component = byReference.get(reference);
+  if (component) {
+    activeReference = reference;
+    collapsedCategories.delete(component.category);
+    // Additive clicks only borrow the detail pane; the component selection
+    // itself is untouched so grouped selections survive.
+    if (!additive && !selectedReferences.has(reference)) {
+      selectedReferences.clear();
+      selectedReferences.add(reference);
+    }
+  }
+  selectionChanged(true);
+}
+
+function toggleComponentPins(reference) {
+  const component = byReference.get(reference);
+  const deselect = component.pads.every(pin => selectedPinIndex(reference, pin.number, pin.net_id) >= 0);
+  for (const pin of component.pads) {
+    const index = selectedPinIndex(reference, pin.number, pin.net_id);
+    if (deselect && index >= 0) selectedPins.splice(index, 1);
+    else if (!deselect && index < 0) selectedPins.push({reference, number: pin.number, net_id: pin.net_id || ''});
+  }
+  syncActivePin();
+  activeReference = reference;
+  selectionChanged(true);
+}
+
+function toggleNet(netId) {
+  selectNet(activeNet === netId ? '' : netId);
+}
+
+function selectNet(netId) {
+  highlightSelectedNets.checked = false;
+  manualSchematicRun = '';
+  activeNet = byNet.has(netId) ? netId : '';
+  activePin = null;
+  selectedPins.length = 0;
+  if (activeNet) {
+    // Following copper keeps the selected part when it sits on that net and
+    // otherwise shows one of the parts the copper connects to.
+    const net = byNet.get(activeNet);
+    const current = byReference.get(activeReference);
+    const connected = current && net.pins.some(pin => pin.reference === current.reference);
+    if (!connected) {
+      // Prefer a part on the shown side so the detail pane follows copper to a
+      // part that is actually visible; the board view itself never flips.
+      const pins = net.pins.filter(pin => byReference.has(pin.reference));
+      const candidate = pins.find(pin => byReference.get(pin.reference).side === activeSide) || pins[0];
+      if (candidate) {
+        const component = byReference.get(candidate.reference);
+        activeReference = candidate.reference;
+        selectedReferences.clear();
+        selectedReferences.add(candidate.reference);
+        collapsedCategories.delete(component.category);
+      }
+    }
+  }
+  updateSelectionBoxes();
+  updateNetHighlight();
+  renderList(search.value);
+  refreshDetail();
+}
+
+function matchingSummary() {
+  // The catch-all "other" bucket says nothing about matching progress, so the
+  // summary counts real component categories only.
+  const counted = components.filter(component => component.category !== 'other');
+  const categories = new Map();
+  for (const component of counted) {
+    if (!categories.has(component.category_name)) categories.set(component.category_name, {total: 0, matched: 0});
+    const entry = categories.get(component.category_name);
+    entry.total += 1;
+    if (component.oomp_id) entry.matched += 1;
+  }
+  const rows = [...categories.entries()].sort((a, b) => b[1].total - a[1].total || a[0].localeCompare(b[0]));
+  const total = counted.length;
+  const matched = counted.filter(component => component.oomp_id).length;
+  const percent = total ? Math.round((matched / total) * 100) : 0;
+  return `<strong>OOMP matching</strong> ${matched}/${total} matched · ${percent}%<div class="match-rows">${rows.map(([name, entry]) => `<span>${escapeHtml(name)} <b>${entry.matched}/${entry.total}</b></span>`).join('')}</div><span class="net-note">Filter and click a component to inspect it; search a net name to follow its copper.</span>`;
+}
+
+function featureVisible(element) {
+  const layer = layerSelect.value;
+  const selectedLayer = layer === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layer;
+  return layer === 'all' || element.dataset.layers.split(' ').includes(selectedLayer);
+}
+
+function updateNetHighlight() {
+  const net = byNet.get(activeNet);
+  const netIds = highlightedNetIds();
+  const connectedReferences = new Set();
+  for (const id of netIds) {
+    for (const pin of byNet.get(id).pins) connectedReferences.add(pin.reference);
+  }
+  const fills = document.getElementById('show-fills').checked;
+  stage.classList.toggle('has-net', netIds.size > 0);
+  stage.classList.toggle('hide-traces', !document.getElementById('show-traces').checked);
+  baseFeatures.forEach(element => {
+    element.classList.toggle('layer-hidden', !featureVisible(element));
+    element.classList.toggle('fill-hidden', element.classList.contains('copper-zone') && !fills);
+    // Unselected copper keeps a quiet version of its own layer colour so what
+    // remains visible still reads as that layer without shouting over the
+    // highlighted net or the component artwork.
+    element.style.setProperty('--layer-color', layerColor(element, true));
+  });
+  document.querySelectorAll('.copper-overlay').forEach(overlay => {
+    overlay.replaceChildren();
+    const base = overlay.closest('svg').querySelector('.copper-base');
+    base.querySelectorAll('.copper-feature').forEach(element => {
+      const selectedPin = element.classList.contains('copper-pad') && selectedPinIndex(element.dataset.reference, element.dataset.pin, element.dataset.netId) >= 0;
+      if (!netIds.has(element.dataset.netId) && !selectedPin) return;
+      const clone = element.cloneNode(true);
+      clone.style.setProperty('--layer-color', layerColor(element));
+      clone.classList.toggle('selected-pin', !!selectedPin);
+      overlay.appendChild(clone);
+    });
+  });
+  document.querySelectorAll('.board-component').forEach(element => {
+    element.classList.toggle('on-net', connectedReferences.has(element.dataset.reference));
+  });
+  // The sheet mirrors the copper: same net names light the wires, labels and
+  // symbols; unlabelled runs join through the copper net their pins share.
+  if (schematicSvg) {
+    const netNames = new Set([...netIds].map(id => byNet.get(id).name));
+    schematicNetElements.forEach(element => {
+      const name = element.dataset.net || runNetByName.get(element.dataset.run) || '';
+      // Sheet labels use bare net names while copper keys hierarchical ones
+      // ("/PB5"), so resolve through the alias map before comparing.
+      const elementNetId = name ? netIdByName.get(name) : '';
+      element.classList.toggle('on-net', !!elementNetId && netIds.has(elementNetId));
+    });
+    if (manualSchematicRun) {
+      schematicNetElements.forEach(element => {
+        if (element.dataset.run === manualSchematicRun) element.classList.add('on-net');
+      });
+    }
+    schematicSymbols.forEach(element => {
+      element.classList.toggle('on-net', connectedReferences.has(element.dataset.reference));
+    });
+    schematicView.classList.toggle('has-net', netIds.size > 0 || !!manualSchematicRun);
+  }
+  const status = document.getElementById('net-status');
+  if (highlightSelectedNets.checked || selectedPins.length > 1) {
+    const selectionLabel = highlightSelectedNets.checked ? `${selectedReferences.size} components · ${selectedPins.length} pins` : `${selectedPins.length} selected pins`;
+    status.innerHTML = `<strong>${selectionLabel} · ${netIds.size} nets</strong><br><span class="net-note">All connected pins and copper on the shown layers. Click a net below to follow it alone.</span><div>${[...netIds].map(id => `<button class="net-link" data-net-id="${escapeHtml(id)}">${escapeHtml(byNet.get(id).name)}</button>`).join(' ')}</div>`;
+  } else if (net) {
+    const visiblePins = net.pins.filter(pin => layerSelect.value === 'all' || pin.layers.includes(layerSelect.value === 'side' ? (activeSide === 'back' ? 'B.Cu' : 'F.Cu') : layerSelect.value));
+    status.innerHTML = `<strong>${escapeHtml(net.name)}</strong><br>${net.track_count} traces · ${net.via_count} vias · ${net.fill_count} saved fills<br>${visiblePins.length} / ${net.pins.length} pins on shown layers<br><span class="net-note">${escapeHtml(net.layers.join(' · '))}</span><div>${net.pins.map(pin => byReference.has(pin.reference) ? `<button class="net-link" data-reference="${escapeHtml(pin.reference)}" data-pin="${escapeHtml(pin.number)}">${escapeHtml(pin.reference)}.${escapeHtml(pin.number || 'pad')}</button>` : `<span>${escapeHtml(pin.reference)}.${escapeHtml(pin.number)} (not in BOM) </span>`).join('')}</div>`;
+  } else if (activePin) {
+    status.textContent = `${activePin.reference}.${activePin.number}: no assigned net; only this pin is highlighted.`;
+  } else if (activeReference && byReference.has(activeReference)) {
+    const component = byReference.get(activeReference);
+    status.innerHTML = `<strong>${escapeHtml(component.reference)}</strong> selected · ${escapeHtml(component.oomp_id || 'no OOMP match yet')}<br><span class="net-note">Expand Pins or click a net name to follow its copper. Click the component again to deselect it.</span>`;
+  } else {
+    status.innerHTML = matchingSummary();
+  }
+  if (document.getElementById('zoom-to-net').checked) fitSelectionViews();
+}
+
+function updateSelectionBoxes() {
+  document.querySelectorAll('.component-highlights').forEach(layer => layer.replaceChildren());
+  stage.classList.toggle('has-selection', selectedReferences.size > 0);
+  if (schematicSvg) {
+    schematicView.classList.toggle('has-selection', selectedReferences.size > 0);
+    schematicSymbols.forEach(element => {
+      element.classList.toggle('is-active', selectedReferences.has(element.dataset.reference));
+    });
+  }
+  // Symbols get the same accent rectangle treatment as board parts: the sheet
+  // drawing itself never changes colour, selected or not.
+  if (schematicSvg && !schematicView.hidden) {
+    let symbolLayer = schematicSvg.querySelector('.component-highlights');
+    if (!symbolLayer) {
+      symbolLayer = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      symbolLayer.setAttribute('class', 'component-highlights');
+      schematicSvg.appendChild(symbolLayer);
+    }
+    schematicSymbols.forEach(element => {
+      const selected = selectedReferences.has(element.dataset.reference);
+      if (!selected && !element.matches(':hover') && !element.matches(':focus')) return;
+      // The generator records the tight body rectangle; the group's own bbox
+      // would stretch over pin stubs and the label block.
+      const boundsData = (element.dataset.bounds || '').split(',').map(Number);
+      let bx, by, bw, bh;
+      if (boundsData.length === 4 && boundsData.every(value => Number.isFinite(value))) {
+        [bx, by, bw, bh] = boundsData;
+      } else {
+        const bounds = element.getBBox();
+        if (!(bounds.width > 0) && !(bounds.height > 0)) return;
+        bx = bounds.x; by = bounds.y; bw = bounds.width; bh = bounds.height;
+      }
+      const box = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      box.setAttribute('class', selected ? 'selection-box' : 'hover-box');
+      box.dataset.reference = element.dataset.reference;
+      box.setAttribute('x', bx);
+      box.setAttribute('y', by);
+      box.setAttribute('width', bw);
+      box.setAttribute('height', bh);
+      box.setAttribute('rx', '0.3');
+      symbolLayer.appendChild(box);
+    });
+  }
+  document.querySelectorAll('.board-component').forEach(element => {
+    const selected = selectedReferences.has(element.dataset.reference);
+    element.classList.toggle('is-active', selected);
+    if (!selected && !element.matches(':hover') && !element.matches(':focus')) return;
+    const layer = element.closest('.board-view').querySelector('.component-highlights');
+    if (!layer) return;
+    const bounds = element.getBBox();
+    const pad = Math.max(0.7, Math.min(bounds.width, bounds.height) * 0.18);
+    const boxWidth = Math.max(bounds.width + pad * 2, 2.4);
+    const boxHeight = Math.max(bounds.height + pad * 2, 2.4);
+    const box = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    box.setAttribute('class', selected ? 'selection-box' : 'hover-box');
+    box.dataset.reference = element.dataset.reference;
+    // The generator emits each component and this underlay in board coordinates.
+    // Copy its placement, including the bottom-side position and rotation.
+    box.setAttribute('transform', element.getAttribute('transform') || '');
+    box.setAttribute('x', bounds.x + bounds.width / 2 - boxWidth / 2);
+    box.setAttribute('y', bounds.y + bounds.height / 2 - boxHeight / 2);
+    box.setAttribute('width', boxWidth);
+    box.setAttribute('height', boxHeight);
+    box.setAttribute('rx', '0.15');
+    layer.appendChild(box);
+  });
+}
+
+function activeBoardSvg(clientX = null, clientY = null) {
+  // In split view the pointer decides which half zooms and pans: wheel or
+  // drag over the board moves the board, over the sheet moves the sheet.
+  if (clientX !== null && stage.classList.contains('split')) {
+    for (const view of document.querySelectorAll('.board-view:not([hidden]), .schematic-view:not([hidden])')) {
+      const rect = view.getBoundingClientRect();
+      if (clientX >= rect.left && clientX <= rect.right && clientY >= rect.top && clientY <= rect.bottom) {
+        return view.querySelector('svg');
+      }
+    }
+  }
+  return document.querySelector('.board-view:not([hidden]) > svg, .schematic-view:not([hidden]) > svg');
+}
+
+let activeView = 'board';
+
+function setView(view) {
+  // The schematic needs no side flipping, so side buttons are board-only:
+  // pressing one while the sheet is shown returns to the board drawing.
+  activeView = ['board', 'schematic', 'split'].includes(view) && schematicView ? view : 'board';
+  stage.classList.toggle('split', activeView === 'split');
+  document.querySelectorAll('.board-view').forEach(viewElement => {
+    viewElement.hidden = activeView === 'schematic' || (activeView === 'split' && viewElement.dataset.side !== activeSide);
+  });
+  if (schematicView) schematicView.hidden = activeView === 'board';
+  document.querySelectorAll('.view-button').forEach(button => button.classList.toggle('active', button.dataset.view === activeView));
+  const viewport = boardViewports.get(activeBoardSvg());
+  zoomScale = viewport ? viewport.scale || 1 : 1;
+  updateZoomLabel();
+}
+
+function applyViewport(svg, viewport) {
+  // Restoring the fit view reuses the source viewBox text so regeneration
+  // stays byte-identical; Number formatting would drop trailing zeros.
+  const isOriginal = viewport.box.every((value, index) => value === viewport.original[index]);
+  svg.setAttribute('viewBox', isOriginal ? viewport.originalText : viewport.box.join(' '));
+}
+
+function updateZoomLabel() {
+  document.getElementById('zoom-label').textContent = `${Math.round(zoomScale * 100)}%`;
+}
+
+function clientPointInSvg(svg, clientX, clientY) {
+  const matrix = svg.getScreenCTM();
+  if (!matrix) return null;
+  return new DOMPoint(clientX, clientY).matrixTransform(matrix.inverse());
+}
+
+function setZoom(nextZoom, clientX = null, clientY = null) {
+  const svg = activeBoardSvg(clientX, clientY);
+  if (!svg) return;
+  const viewport = boardViewports.get(svg);
+  // Zooming out past the fit view is allowed (down to 15%) so a sheet or
+  // board that opens tightly framed can be pulled back for context.
+  const next = Math.max(0.15, Math.min(12, nextZoom));
+  const previous = viewport.scale || 1;
+  if (Math.abs(next - previous) < 0.0001) return;
+  let anchor = null;
+  if (Number.isFinite(clientX) && Number.isFinite(clientY)) {
+    anchor = clientPointInSvg(svg, clientX, clientY);
+  }
+  const [x, y, width, height] = viewport.box;
+  if (!anchor) anchor = new DOMPoint(x + width / 2, y + height / 2);
+  const ratio = previous / next;
+  viewport.box = [
+    anchor.x - (anchor.x - x) * ratio,
+    anchor.y - (anchor.y - y) * ratio,
+    width * ratio,
+    height * ratio,
+  ];
+  viewport.scale = next;
+  zoomScale = next;
+  applyViewport(svg, viewport);
+  updateZoomLabel();
+}
+
+function fitBoard() {
+  boardViewports.forEach((viewport, svg) => {
+    viewport.target = [...viewport.original];
+    viewport.box = [...viewport.original];
+    viewport.scale = 1;
+    applyViewport(svg, viewport);
+  });
+  zoomScale = 1;
+  updateZoomLabel();
+}
+
+function panActiveBoard(fromX, fromY, toX, toY) {
+  const svg = activeBoardSvg(fromX, fromY);
+  if (!svg) return;
+  const start = clientPointInSvg(svg, fromX, fromY);
+  const end = clientPointInSvg(svg, toX, toY);
+  if (!start || !end) return;
+  const viewport = boardViewports.get(svg);
+  viewport.box[0] -= end.x - start.x;
+  viewport.box[1] -= end.y - start.y;
+  applyViewport(svg, viewport);
+}
+
+function touchCentroid() {
+  const points = [...activePointers.values()];
+  if (points.length < 2) return null;
+  return {
+    x: (points[0].x + points[1].x) / 2,
+    y: (points[0].y + points[1].y) / 2,
+  };
+}
+
+function visibleExplorerSvgs() {
+  return [...document.querySelectorAll('.board-view:not([hidden]) > svg, .schematic-view:not([hidden]) > svg')];
+}
+
+function fitSelectionViews() {
+  // With a net active the view frames the highlighted copper (board) or the
+  // lit wires and labels (sheet).  With only components selected — and "zoom
+  // to net" ticked — it frames the selected parts in both windows instead.
+  const componentOnly = highlightedNetIds().size === 0 && selectedReferences.size > 0;
+  if (!highlightedNetIds().size && !componentOnly) { fitBoard(); return; }
+  let fittedAny = false;
+  for (const svg of visibleExplorerSvgs()) {
+    const view = svg.closest('.board-view, .schematic-view');
+    const isSchematic = view.classList.contains('schematic-view');
+    let elements;
+    if (componentOnly) {
+      elements = isSchematic
+        ? svg.querySelectorAll('.sch-symbol.is-active')
+        : svg.querySelectorAll('.board-component.is-active');
+    } else if (isSchematic) {
+      elements = svg.querySelectorAll('.sch-wire.on-net, .sch-label-tag.on-net, .sch-global.on-net, .sch-junction.on-net, .sch-symbol.on-net');
+    } else {
+      elements = svg.querySelectorAll('.copper-overlay .copper-feature:not(.layer-hidden):not(.fill-hidden), .board-component.on-net');
+    }
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    for (const element of elements) {
+      const box = element.getBBox();
+      if (!(box.width > 0) && !(box.height > 0)) continue;
+      // Convert through the SVG matrices so the bottom reflection is included,
+      // but current screen size and zoom never contaminate PCB millimetres.
+      const matrix = svg.getCTM().inverse().multiply(element.getCTM());
+      const corners = [[box.x, box.y], [box.x + box.width, box.y],
+        [box.x, box.y + box.height], [box.x + box.width, box.y + box.height]];
+      for (const [x, y] of corners) {
+        const p = new DOMPoint(x, y).matrixTransform(matrix);
+        minX = Math.min(minX, p.x); minY = Math.min(minY, p.y);
+        maxX = Math.max(maxX, p.x); maxY = Math.max(maxY, p.y);
+      }
+    }
+    if (!Number.isFinite(minX)) continue;
+    // Frame the selection generously: roughly a third of the selection again
+    // on every side, so the zoom keeps some context around what is lit.
+    const pad = Math.max(1.5, Math.max(maxX - minX, maxY - minY) * .3);
+    const viewport = boardViewports.get(svg);
+    viewport.target = [minX - pad, minY - pad, maxX - minX + pad * 2, maxY - minY + pad * 2];
+    viewport.box = [...viewport.target];
+    // Keep the zoom percentage honest: it reads against the original fit view.
+    viewport.scale = Math.max(0.0001, viewport.original[2] / viewport.box[2]);
+    applyViewport(svg, viewport);
+    fittedAny = true;
+  }
+  if (!fittedAny) { fitBoard(); return; }
+  const viewport = boardViewports.get(activeBoardSvg());
+  zoomScale = viewport ? Math.min(12, viewport.scale || 1) : 1;
+  updateZoomLabel();
+}
+
+function setSide(side) {
+  // Side flipping only makes sense on the board drawing; leaving the sheet.
+  if (activeView === 'schematic') setView('board');
+  activeSide = side === 'back' ? 'back' : 'front';
+  document.querySelectorAll('.board-view').forEach(view => { view.hidden = view.dataset.side !== activeSide; });
+  if (schematicView) schematicView.hidden = activeView !== 'split';
+  document.querySelectorAll('.side-button[data-side]').forEach(button => button.classList.toggle('active', button.dataset.side === activeSide));
+  const viewport = boardViewports.get(activeBoardSvg());
+  zoomScale = viewport ? viewport.scale || 1 : 1;
+  updateZoomLabel();
+  renderList(search.value);
+  updateNetHighlight();
+}
+
+function showHover(event, reference) {
+  const component = byReference.get(reference);
+  if (!component) return;
+  hoverCard.innerHTML = `<strong>${escapeHtml(component.reference)} · ${escapeHtml(component.value || 'unlabelled')}</strong><span>${escapeHtml(component.oomp_id || 'Unmatched — click for extracted pins')}</span>`;
+  hoverCard.classList.add('visible');
+  moveHover(event);
+}
+
+function moveHover(event) {
+  if (mousePan) return;
+  const gap = 15;
+  const width = 245;
+  let x = event.clientX + gap;
+  let y = event.clientY + gap;
+  if (x + width > window.innerWidth) x = event.clientX - width - gap;
+  if (y + 90 > window.innerHeight) y = event.clientY - 100;
+  hoverCard.style.left = `${Math.max(8, x)}px`;
+  hoverCard.style.top = `${Math.max(8, y)}px`;
+}
+
+stage.addEventListener('wheel', event => {
+  event.preventDefault();
+  const deltaUnit = event.deltaMode === 1 ? 16 : (event.deltaMode === 2 ? stage.clientHeight : 1);
+  const exponent = Math.max(-1, Math.min(1, -event.deltaY * deltaUnit * 0.0015));
+  setZoom(zoomScale * Math.exp(exponent), event.clientX, event.clientY);
+}, {passive: false});
+
+stage.addEventListener('pointerdown', event => {
+  if (event.pointerType === 'touch') {
+    activePointers.set(event.pointerId, {x: event.clientX, y: event.clientY});
+    if (activePointers.size === 2) {
+      touchPan = {last: touchCentroid(), moved: false};
+      stage.classList.add('is-panning');
+      hoverCard.classList.remove('visible');
+      // Capture only once a two-finger pan really starts; capturing every
+      // touch would retarget the tap's click to the stage and break selection.
+      for (const pointerId of activePointers.keys()) {
+        try { stage.setPointerCapture(pointerId); } catch (error) {}
+      }
+    }
+    return;
+  }
+  if (event.button !== 0) return;
+  // Deliberately no pointer capture for the mouse: capturing here retargets
+  // the compat mouseup/click to the stage, so component artwork and copper
+  // features would never receive clicks. Window listeners track the drag.
+  mousePan = {pointerId: event.pointerId, lastX: event.clientX, lastY: event.clientY, distance: 0};
+  hoverCard.classList.remove('visible');
+});
+
+window.addEventListener('pointermove', event => {
+  if (event.pointerType === 'touch') {
+    if (!activePointers.has(event.pointerId)) return;
+    activePointers.set(event.pointerId, {x: event.clientX, y: event.clientY});
+    if (!touchPan || activePointers.size !== 2) return;
+    const next = touchCentroid();
+    const distance = Math.hypot(next.x - touchPan.last.x, next.y - touchPan.last.y);
+    if (distance > 0) {
+      panActiveBoard(touchPan.last.x, touchPan.last.y, next.x, next.y);
+      touchPan.last = next;
+      touchPan.moved = touchPan.moved || distance > 1;
+    }
+    event.preventDefault();
+    return;
+  }
+  if (!mousePan || mousePan.pointerId !== event.pointerId) return;
+  const delta = Math.hypot(event.clientX - mousePan.lastX, event.clientY - mousePan.lastY);
+  if (delta > 0) {
+    if (mousePan.distance === 0) stage.classList.add('is-panning');
+    panActiveBoard(mousePan.lastX, mousePan.lastY, event.clientX, event.clientY);
+    mousePan.lastX = event.clientX;
+    mousePan.lastY = event.clientY;
+    mousePan.distance += delta;
+  }
+  event.preventDefault();
+});
+
+function finishPointerPan(event) {
+  if (event.pointerType === 'touch') {
+    activePointers.delete(event.pointerId);
+    if (touchPan && touchPan.moved) suppressBoardClick = true;
+    if (activePointers.size < 2) {
+      touchPan = null;
+      stage.classList.remove('is-panning');
+    }
+  } else if (mousePan && mousePan.pointerId === event.pointerId) {
+    if (mousePan.distance > 3) suppressBoardClick = true;
+    mousePan = null;
+    stage.classList.remove('is-panning');
+  }
+  if (stage.hasPointerCapture(event.pointerId)) stage.releasePointerCapture(event.pointerId);
+  if (suppressBoardClick) setTimeout(() => { suppressBoardClick = false; }, 0);
+}
+
+window.addEventListener('pointerup', finishPointerPan);
+window.addEventListener('pointercancel', finishPointerPan);
+stage.addEventListener('click', event => {
+  if (!suppressBoardClick) return;
+  event.preventDefault();
+  event.stopImmediatePropagation();
+  suppressBoardClick = false;
+}, true);
+
+document.querySelectorAll('.board-component').forEach(element => {
+  const reference = element.dataset.reference;
+  element.addEventListener('mouseenter', event => { showHover(event, reference); updateSelectionBoxes(); });
+  element.addEventListener('mousemove', moveHover);
+  element.addEventListener('mouseleave', () => { hoverCard.classList.remove('visible'); updateSelectionBoxes(); });
+  element.addEventListener('focus', updateSelectionBoxes);
+  element.addEventListener('blur', updateSelectionBoxes);
+  element.addEventListener('click', event => {
+    if (additiveClick(event)) toggleComponent(reference);
+    else selectComponent(reference);
+  });
+  element.addEventListener('keydown', event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    if (additiveClick(event)) toggleComponent(reference);
+    else selectComponent(reference);
+  });
+});
+search.addEventListener('input', () => renderList(search.value));
+detail.addEventListener('click', event => {
+  const pinButton = event.target.closest('[data-pin-index]');
+  const netButton = event.target.closest('.net-link[data-net-id]');
+  if (pinButton) {
+    const component = byReference.get(activeReference);
+    const pin = component.pads[Number(pinButton.dataset.pinIndex)];
+    selectPin(component.reference, pin.number, pin.net_id, additiveClick(event));
+  } else if (netButton) toggleNet(netButton.dataset.netId);
+});
+// The detail pane's preview boxes (pinout artwork and schematic symbol) are
+// wheel-zoomable and draggable, anchored at the pointer. State lives per
+// rendered box and resets naturally when a new part re-renders the pane.
+// Zooming moves the viewBox instead of CSS-transforming the element, so the
+// browser re-rasterises the vectors at every scale and stays crisp.
+const previewZooms = new WeakMap();
+
+function previewState(container) {
+  const svg = container.querySelector('svg');
+  if (!svg) return null;
+  let state = previewZooms.get(container);
+  if (!state) {
+    let original = (svg.getAttribute('viewBox') || '').split(/[\s,]+/).map(Number);
+    if (original.length !== 4 || original.some(value => !Number.isFinite(value))) {
+      // Fall back to the mm width/height, which SVG user units match.
+      const width = parseFloat(svg.getAttribute('width')) || 10;
+      const height = parseFloat(svg.getAttribute('height')) || 10;
+      original = [0, 0, width, height];
+    }
+    state = {box: [...original], original};
+    previewZooms.set(container, state);
+  }
+  return state;
+}
+
+function applyPreviewBox(container) {
+  const svg = container.querySelector('svg');
+  const state = previewZooms.get(container);
+  if (!svg || !state) return;
+  svg.setAttribute('viewBox', state.box.map(value => value.toFixed(4)).join(' '));
+}
+
+function previewScaleAtPointer(container, event) {
+  const svg = container.querySelector('svg');
+  const matrix = svg.getScreenCTM();
+  if (!matrix) return null;
+  return new DOMPoint(event.clientX, event.clientY).matrixTransform(matrix.inverse());
+}
+
+detail.addEventListener('wheel', event => {
+  const container = event.target.closest('.pinout');
+  if (!container || !container.querySelector('svg')) return;
+  event.preventDefault();
+  const state = previewState(container);
+  if (!state) return;
+  const anchor = previewScaleAtPointer(container, event);
+  if (!anchor) return;
+  const deltaUnit = event.deltaMode === 1 ? 16 : 1;
+  const factor = Math.exp(Math.max(-1, Math.min(1, -event.deltaY * deltaUnit * 0.0016)));
+  const current = state.original[2] / state.box[2];
+  const next = Math.max(0.35, Math.min(24, current * factor));
+  const ratio = current / next;
+  const [x, y, width, height] = state.box;
+  state.box = [
+    anchor.x - (anchor.x - x) * ratio,
+    anchor.y - (anchor.y - y) * ratio,
+    width * ratio,
+    height * ratio,
+  ];
+  applyPreviewBox(container);
+}, {passive: false});
+
+let previewPan = null;
+
+detail.addEventListener('pointerdown', event => {
+  const container = event.target.closest('.pinout');
+  if (!container || !container.querySelector('svg')) return;
+  previewPan = {container, last: {x: event.clientX, y: event.clientY}};
+  container.classList.add('is-panning');
+});
+
+window.addEventListener('pointermove', event => {
+  if (!previewPan) return;
+  const state = previewState(previewPan.container);
+  if (state) {
+    const point = previewScaleAtPointer(previewPan.container, event);
+    const svg = previewPan.container.querySelector('svg');
+    if (point && svg && svg.getScreenCTM()) {
+      const previous = new DOMPoint(previewPan.last.x, previewPan.last.y).matrixTransform(svg.getScreenCTM().inverse());
+      state.box[0] += previous.x - point.x;
+      state.box[1] += previous.y - point.y;
+      applyPreviewBox(previewPan.container);
+    }
+  }
+  previewPan.last = {x: event.clientX, y: event.clientY};
+  event.preventDefault();
+});
+
+window.addEventListener('pointerup', () => {
+  if (!previewPan) return;
+  previewPan.container.classList.remove('is-panning');
+  previewPan = null;
+});
+stage.addEventListener('click', event => {
+  const feature = event.target.closest('.copper-feature');
+  if (!feature) return;
+  if (feature.classList.contains('copper-pad') && byReference.has(feature.dataset.reference)) {
+    selectPin(feature.dataset.reference, feature.dataset.pin, feature.dataset.netId, additiveClick(event));
+  } else selectNet(feature.dataset.netId);
+});
+document.getElementById('net-status').addEventListener('click', event => {
+  const netButton = event.target.closest('button[data-net-id]');
+  if (netButton) { toggleNet(netButton.dataset.netId); return; }
+  const button = event.target.closest('button[data-reference]');
+  if (!button) return;
+  // Resolve the pad's real net instead of assuming the currently shown one.
+  const component = byReference.get(button.dataset.reference);
+  const pad = component && component.pads.find(pin => String(pin.number) === button.dataset.pin);
+  selectPin(button.dataset.reference, button.dataset.pin, pad ? pad.net_id : activeNet, additiveClick(event));
+});
+document.getElementById('clear-selection').addEventListener('click', () => {
+  selectedReferences.clear();
+  activeReference = '';
+  selectionChanged();
+});
+highlightSelectedNets.addEventListener('change', () => selectionChanged(true));
+document.addEventListener('keydown', event => {
+  if (event.key !== 'Escape') return;
+  // Escape closes the LCSC options popup first; only then does it clear the
+  // pin/net selection.
+  if (!lcscPopup.hidden) {
+    closeLcscPopup();
+    return;
+  }
+  selectNet('');
+});
+for (const id of ['copper-layer', 'show-traces', 'show-fills']) {
+  document.getElementById(id).addEventListener('change', updateNetHighlight);
+}
+document.getElementById('zoom-to-net').addEventListener('change', event => {
+  if (event.target.checked) fitSelectionViews();
+  else fitBoard();
+});
+document.querySelectorAll('.side-button[data-side]').forEach(button => button.addEventListener('click', () => setSide(button.dataset.side)));
+document.querySelectorAll('.view-button').forEach(button => button.addEventListener('click', () => setView(button.dataset.view)));
+// Sheet symbols mirror the board artwork: same hover card, same selection
+// rules, so either drawing drives the same component state.
+schematicSymbols.forEach(element => {
+  const reference = element.dataset.reference;
+  element.addEventListener('mouseenter', event => showHover(event, reference));
+  element.addEventListener('mousemove', moveHover);
+  element.addEventListener('mouseleave', () => hoverCard.classList.remove('visible'));
+  element.addEventListener('click', event => {
+    if (additiveClick(event)) toggleComponent(reference);
+    else selectComponent(reference);
+  });
+  element.addEventListener('keydown', event => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    if (additiveClick(event)) toggleComponent(reference);
+    else selectComponent(reference);
+  });
+});
+if (schematicSvg) {
+  schematicSvg.addEventListener('click', event => {
+    const netElement = event.target.closest('[data-net], [data-run]');
+    if (!netElement) return;
+    // Named runs map straight to their copper net; unlabelled runs borrow the
+    // net their pins carry on the PCB.  Runs with neither highlight alone.
+    const name = netElement.dataset.net || runNetByName.get(netElement.dataset.run) || '';
+    const netId = netIdByName.get(name);
+    if (netId) {
+      manualSchematicRun = '';
+      toggleNet(netId);
+    } else if (netElement.dataset.run) {
+      manualSchematicRun = manualSchematicRun === netElement.dataset.run ? '' : netElement.dataset.run;
+      updateNetHighlight();
+    }
+  });
+  // Clicking a pin selects that pin together with the net the sheet says it
+  // belongs to; the click must not also select the owning symbol.
+  schematicSvg.querySelectorAll('.sch-pin-hit').forEach(element => {
+    element.addEventListener('click', event => {
+      event.stopPropagation();
+      const pinName = `${element.dataset.reference}.${element.dataset.pin}`;
+      const name = padNetByPin.get(pinName) || element.dataset.net || runNetByName.get(element.dataset.run) || '';
+      const netId = netIdByName.get(name);
+      if (netId) manualSchematicRun = '';
+      selectPin(element.dataset.reference, element.dataset.pin, netId || '', additiveClick(event));
+    });
+  });
+}
+document.getElementById('zoom-in').addEventListener('click', () => setZoom(zoomScale + 0.25));
+document.getElementById('zoom-out').addEventListener('click', () => setZoom(zoomScale - 0.25));
+document.getElementById('zoom-fit').addEventListener('click', fitBoard);
+document.getElementById('zoom-reset').addEventListener('click', fitBoard);
+const themeSelect = document.getElementById('theme-select');
+themeSelect.value = document.documentElement.dataset.theme || 'light';
+// Rainbow mode gives every schematic net its own vivid hue so the sheet reads
+// like wiring loom art; the other themes fall back to the single ink colour.
+function schematicNetColor(name) {
+  const text = String(name || '');
+  let hash = 0;
+  for (let index = 0; index < text.length; index++) hash = (hash * 31 + text.charCodeAt(index)) >>> 0;
+  return `hsl(${hash % 360} 80% 38%)`;
+}
+function applyNetColors() {
+  if (!schematicSvg) return;
+  const rainbow = themeSelect.value === 'rainbow';
+  schematicSvg.querySelectorAll('.sch-wire[data-net], .sch-label[data-net]').forEach(element => {
+    if (rainbow) element.style.setProperty('--net-color', schematicNetColor(element.dataset.net));
+    else element.style.removeProperty('--net-color');
+  });
+}
+themeSelect.addEventListener('change', () => {
+  const theme = ['light', 'dark', 'rainbow'].includes(themeSelect.value) ? themeSelect.value : 'light';
+  document.documentElement.dataset.theme = theme;
+  try { localStorage.setItem('oomp-board-theme', theme); } catch (error) {}
+  applyNetColors();
+});
+applyNetColors();
+renderLayerLegend();
+setZoom(1);
+// Starting unselected also means setSide's first render opens with the OOMP
+// matching summary in the status box and the empty prompt in the detail pane.
+setSide('front', false);
+</script>
+</body>
+</html>

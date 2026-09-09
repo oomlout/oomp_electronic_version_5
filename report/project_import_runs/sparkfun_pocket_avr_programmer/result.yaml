@@ -1,0 +1,39 @@
+repository: sparkfun/Pocket_AVR_Programmer
+commit: c51d6f0254f8f7d08831ed9fc40d86c64035276d
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: avr_pocket_programmer
+  path: Hardware/AVR-Pocket-Programmer.brd
+  format: eagle
+boards_excluded:
+- path: Production/AVR-Pocket-Programmer-GiantPanel-v11.brd
+  exclude_reason: review decision
+- path: Production/AVR-Pocket-Programmer-Panel-v11.brd
+  exclude_reason: review decision
+- path: Production/AVR-Pocket-Programmer_Panel_v11a.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 10
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 4
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 6
+  details:
+  - kind: include_override
+    count: 3
+  - kind: exclude_paths
+    count: 3
+completed_at: '2026-09-09T10:17:18Z'

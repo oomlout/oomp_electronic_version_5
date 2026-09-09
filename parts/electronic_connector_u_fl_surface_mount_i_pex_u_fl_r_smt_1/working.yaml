@@ -31,8 +31,8 @@ bip_39_full_underscore: flame_insect_dad_syrup_broom_stomach_clinic_prevent_repa
 category: connector
 category_name: Connector
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  length: 3.0
+  width: 3.1
 directory: parts/electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
 distributors: []
 id: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
@@ -197,8 +197,8 @@ oomlout_ai_roboclick_3:
       category: connector
       category_name: Connector
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        length: 3.0
+        width: 3.1
       directory: parts\electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
       distributors: []
       kicad:
@@ -336,6 +336,39 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      package_drawing:
+        body:
+        - 3.0
+        - 3.1
+        circles:
+        - - 0.0
+          - 0.0
+          - 0.72
+        overall:
+        - 3.6
+        - 3.6
+        pin_one:
+        - 0.0
+        - -1.5
+        pins:
+        - - '1'
+          - bottom
+          - 0.0
+          - -1.5
+          - 0.85
+          - 0.55
+        - - '2'
+          - left
+          - -1.5
+          - 0.0
+          - 0.55
+          - 0.75
+        - - '3'
+          - right
+          - 1.5
+          - 0.0
+          - 0.55
+          - 0.75
       part_id: J1
       part_page:
         datasheet_path: data/datasheet.pdf
@@ -430,7 +463,16 @@ oomlout_ai_roboclick_3:
           title: Top view
         navigation_link: ../../navigation/electronic/connector/u_fl/surface_mount/i_pex/README.md
         oomp_id: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
-        pins: []
+        pins:
+        - name: RF
+          number: '1'
+          type: signal
+        - name: GND
+          number: '2'
+          type: gnd
+        - name: GND
+          number: '3'
+          type: gnd
         quick_facts:
         - title: OOMP ID
           value: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
@@ -439,11 +481,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: u fl
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 3.0 × 3.1 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
         summary: Connector U Fl surface-mount I Pex U Fl R SMT 1 is an OOMP electronic
           connector definition. It uses the u fl package or form factor. Its nominal
-          drawing size is 10.0 × 5.0 mm.
+          drawing size is 3.0 × 3.1 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -457,6 +501,19 @@ oomlout_ai_roboclick_3:
           value: i_pex
         - level: 15
           value: u_fl_r_smt_1
+      pins:
+        pin_1:
+          name: RF
+          number: '1'
+          type: signal
+        pin_2:
+          name: GND
+          number: '2'
+          type: gnd
+        pin_3:
+          name: GND
+          number: '3'
+          type: gnd
       regenerate_pngs: false
       svg_details:
       - filename_extra: assembly
@@ -683,7 +740,53 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0
 oomp_key: oomp_electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
+package_drawing:
+  body:
+  - 3.0
+  - 3.1
+  circles:
+  - - 0.0
+    - 0.0
+    - 0.72
+  overall:
+  - 3.6
+  - 3.6
+  pin_one:
+  - 0.0
+  - -1.5
+  pins:
+  - - '1'
+    - bottom
+    - 0.0
+    - -1.5
+    - 0.85
+    - 0.55
+  - - '2'
+    - left
+    - -1.5
+    - 0.0
+    - 0.55
+    - 0.75
+  - - '3'
+    - right
+    - 1.5
+    - 0.0
+    - 0.55
+    - 0.75
 part_id: J1
 part_page:
   datasheet_path: data/datasheet.pdf
@@ -778,7 +881,16 @@ part_page:
     title: Top view
   navigation_link: ../../navigation/electronic/connector/u_fl/surface_mount/i_pex/README.md
   oomp_id: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
-  pins: []
+  pins:
+  - name: RF
+    number: '1'
+    type: signal
+  - name: GND
+    number: '2'
+    type: gnd
+  - name: GND
+    number: '3'
+    type: gnd
   quick_facts:
   - title: OOMP ID
     value: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
@@ -787,11 +899,13 @@ part_page:
   - title: Package / style
     value: u fl
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 3.0 × 3.1 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
   summary: Connector U Fl surface-mount I Pex U Fl R SMT 1 is an OOMP electronic connector
     definition. It uses the u fl package or form factor. Its nominal drawing size
-    is 10.0 × 5.0 mm.
+    is 3.0 × 3.1 mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -805,6 +919,19 @@ part_page:
     value: i_pex
   - level: 15
     value: u_fl_r_smt_1
+pins:
+  pin_1:
+    name: RF
+    number: '1'
+    type: signal
+  pin_2:
+    name: GND
+    number: '2'
+    type: gnd
+  pin_3:
+    name: GND
+    number: '3'
+    type: gnd
 regenerate_pngs: false
 svg_details:
 - filename_extra: assembly

@@ -38,6 +38,11 @@ def main(**kwargs):
         },
         {
             "style": "tactile", "mounting": "surface_mount",
+            "manufacturer": "switronic", "part_number": "it_1109s",
+            "name_short": "Switronic IT-1109S Tactile Switch",
+        },
+        {
+            "style": "tactile", "mounting": "surface_mount",
             "manufacturer": "alps_alpine", "part_number": "skr_k",
             "name_short": "Alps SKRK Tactile Switch",
         },

@@ -1,0 +1,50 @@
+repository: sparkfun/USB-C-Breakout
+commit: c37b0849e0db8a6f9a3df06f9301f303fe85cd8f
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: usb_c_breakout
+  path: Hardware/USB-C-Breakout.brd
+  format: eagle
+boards_excluded:
+- path: Production/USB-C-Breakout-Panel.brd
+  source_format: eagle
+  folder: Production
+  basename: USB-C-Breakout-Panel
+  project_file_path: Production/USB-C-Breakout-Panel
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: USB-C-Breakout-Panel
+  family_key: production/usb_c_breakout_panel
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: usb_c_breakout_panel
+  board_name: USB C Breakout Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T10:44:33Z'

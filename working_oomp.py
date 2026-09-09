@@ -4,11 +4,22 @@ import copy
 import oomlout_roboclick
 import os
 import yaml
+from functools import lru_cache
 
 import working_oomp_metadata
 
 
 DATA_DIRECTORY = "data"
+WEB_MANIFEST_CONFIG_FILE = "config_web_manifest.yaml"
+
+
+@lru_cache(maxsize=1)
+def web_manifest_output_filename():
+    """Read the configured output name once while assembling part actions."""
+    config_path = os.path.join(os.path.dirname(__file__), WEB_MANIFEST_CONFIG_FILE)
+    with open(config_path, "r", encoding="utf-8") as config_input:
+        config = yaml.safe_load(config_input) or {}
+    return str(config.get("output_filename", "web.yaml"))
 
 
 def as_boolean(value):
@@ -405,6 +416,14 @@ def add_project_actions(part, count):
             }
         )
 
+    project_usage_action = {
+        "command": "run_python",
+        "file_python": "kicad_agents/project_usage_action.py",
+        "description": "Refresh Used in projects metadata and part README links from all confirmed project matches.",
+        "parts_directory": "parts",
+        "timeout": "600",
+    }
+
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
         "actions": [
@@ -421,8 +440,11 @@ def add_project_actions(part, count):
     }
     count += 1
     part[f"oomlout_ai_roboclick_{count}"] = {
-        "actions": [project_compile_action] + board_preview_actions,
-        "file_test": f"{DATA_DIRECTORY}/generated_data/src/board_mechanical_300.png",
+        "actions": [project_compile_action] + board_preview_actions + [project_usage_action],
+        # Usage metadata is derived from the freshly compiled project and is
+        # intentionally ungated so a new project match cannot leave stale
+        # README links behind.
+        "file_test": "",
         "retries_until_complete": 0,
     }
     count += 1
@@ -438,18 +460,6 @@ def add_project_actions(part, count):
     part[f"oomlout_ai_roboclick_{count}"] = {
         "actions": [project_images_action],
         "file_test": "images/pcb_3d_populated.png",
-        "retries_until_complete": 0,
-    }
-    count += 1
-    part[f"oomlout_ai_roboclick_{count}"] = {
-        "actions": [{
-            "command": "run_python",
-            "file_python": "kicad_agents/project_usage_action.py",
-            "description": "Refresh Used in projects metadata and part README links from all confirmed project matches.",
-            "parts_directory": "parts",
-            "timeout": "600",
-        }],
-        "file_test": "",
         "retries_until_complete": 0,
     }
     count += 1
@@ -492,6 +502,31 @@ def add_project_actions(part, count):
     }
     return count
 
+
+def add_web_manifest_action(part, count):
+    """Append the website manifest as the final, always-run Roboclick action."""
+    output_filename = web_manifest_output_filename()
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [
+            {
+                "command": "run_python",
+                "file_python": "kicad_agents/web_manifest_action.py",
+                "file_output": output_filename,
+                "manifest_config": WEB_MANIFEST_CONFIG_FILE,
+                "description": "Summarize working.yaml and inventory every available part file for website generators.",
+                "timeout": "600",
+            }
+        ],
+        "always_run_on_regeneration": True,
+        "description": f"Regenerate the deterministic {output_filename} after every other part action.",
+        # Deliberately ungated: the stock Roboclick runner skips a mode when
+        # file_test already exists. run_python still verifies file_output.
+        "file_test": "",
+        "retries_until_complete": 0,
+    }
+    return count
+
 def main(**kwargs):
     load_parts(**kwargs)
 
@@ -513,22 +548,39 @@ def create_generic(**kwargs):
         print(f"      directory {directory_source} does not exist, creating it")
         #create it
         os.makedirs(directory_source)
-    directories = os.listdir(directory_source)
-    for directory  in directories:
-        directory_full = f"{directory_source}/{directory}"
-        filenames = os.listdir(f"{directory_full}")
+    skip_source_directories = kwargs.get("skip_source_directories", ["components", "data"])
+    if isinstance(skip_source_directories, str):
+        skip_source_directories = [skip_source_directories]
+    skip_source_directories = {
+        str(directory_name).strip().lower()
+        for directory_name in skip_source_directories
+        if str(directory_name).strip() != ""
+    }
+
+    for root, directories, filenames in os.walk(directory_source):
+        directories[:] = [
+            directory
+            for directory in directories
+            if directory.lower() not in skip_source_directories
+        ]
         for filename in filenames:
             import yaml
             #go through directories and load working.yaml files
-            # only load .yaml files
-            if "working.yaml" in filename:
-                file_path = os.path.join(directory_full, filename)
-                with open(file_path, 'r', encoding='utf-8') as file:
-                    data = yaml.safe_load(file)
-                    thing_details = {}
-                    for deet in data:
-                        thing_details[deet] = data[deet]
-                    things[directory] = thing_details
+            if filename != "working.yaml":
+                continue
+            file_path = os.path.join(root, filename)
+            relative_parent = os.path.relpath(os.path.dirname(file_path), directory_source)
+            if relative_parent in ["", "."]:
+                continue
+            directory = relative_parent.replace("\\", "/").split("/")[0]
+            with open(file_path, 'r', encoding='utf-8') as file:
+                data = yaml.safe_load(file)
+                if not isinstance(data, dict):
+                    continue
+                thing_details = {}
+                for deet in data:
+                    thing_details[deet] = data[deet]
+                things[directory] = thing_details
     
     
     parts = []
@@ -771,6 +823,10 @@ def create_generic(**kwargs):
                 count=count,
             )
 
+
+        # Keep this immediately before parts.append: web.yaml must see the
+        # output of every preceding Roboclick action and must itself run last.
+        count = add_web_manifest_action(part, count)
 
         parts.append(part)
     

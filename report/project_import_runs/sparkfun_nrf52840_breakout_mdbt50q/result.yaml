@@ -1,0 +1,37 @@
+repository: sparkfun/nRF52840_Breakout_MDBT50Q
+commit: 46f154b42a57c1eed5dd1d212e41cef3c25b264b
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: nrf52840_breakout_mdbt50q
+  path: Hardware/nrf52840-breakout-mdbt50q.brd
+  format: eagle
+boards_excluded:
+- path: Hardware/Production/nrf52840-breakout-qwiic-lipo-Panel.brd
+  exclude_reason: review decision
+- path: Production/14113-nrf52840-breakout-mdbt50q-Panel.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 9
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 3
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 4
+  details:
+  - kind: include_override
+    count: 2
+  - kind: exclude_paths
+    count: 2
+completed_at: '2026-09-09T10:29:29Z'

@@ -26,6 +26,18 @@ def main(**kwargs):
                         option["taxonomy_15"] = part_number
                         options.append(option)
 
+    # Dual-row 2.54 mm sockets used by the Electrolama TPM modules and the
+    # Tiny Reflow Controller.  Keep the total contact count in the taxonomy so
+    # the matcher can distinguish 2x06 (12 contacts) from 2x07 (14 contacts).
+    for pin_count in ["dual_row_12_pin", "dual_row_14_pin"]:
+        options.append({
+            "taxonomy_2": "connector",
+            "taxonomy_3": "header",
+            "taxonomy_4": "2_54_mm_pitch",
+            "taxonomy_5": "through_hole",
+            "taxonomy_6": pin_count,
+        })
+
     # Connector footprints found in the expanded unmatched-project report.
     # These are population identities only; exact drawing and manufacturer
     # records are deliberately deferred to the connector research pass.
@@ -221,6 +233,28 @@ def main(**kwargs):
         "taxonomy_2": "connector", "taxonomy_3": "coin_cell_holder", "taxonomy_4": "through_hole",
         "taxonomy_5": "cr1220",
         "name_short": "CR1220 Coin Cell Holder",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_c", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "12_pin", "taxonomy_15": "usb_c_12_pin_generic",
+        "name_short": "USB-C 12-Pin Receptacle",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "micro_usb", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "9_pin", "taxonomy_14": "rocketscream", "taxonomy_15": "micro_usb",
+        "name_short": "RocketScream MICRO-USB Receptacle",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "header", "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "surface_mount", "taxonomy_6": "dual_row_6_pin",
+        "taxonomy_14": "wurth_electronics", "taxonomy_15": "61030621121",
+        "name_short": "WR-PHD 2.54 mm SMT Dual Header 6-Pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "terminal_block", "taxonomy_4": "3_5_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "2_pin",
+        "taxonomy_14": "te_connectivity", "taxonomy_15": "1776275_2",
+        "name_short": "Buchanan 3.5 mm 2-Pin Terminal Block",
     })
 
     connector_types = ["usb_a"]

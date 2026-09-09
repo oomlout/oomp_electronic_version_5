@@ -53,6 +53,11 @@ Connector Header X6511WV-38H-C60D30 is an OOMP electronic connector definition. 
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

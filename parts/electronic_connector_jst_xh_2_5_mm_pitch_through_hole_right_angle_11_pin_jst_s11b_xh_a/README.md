@@ -2,7 +2,7 @@
 
 `electronic_connector_jst_xh_2_5_mm_pitch_through_hole_right_angle_11_pin_jst_s11b_xh_a`
 
-Connector JST Xh S11B-XH-A is an OOMP electronic connector definition. It uses the jst xh package or form factor. Its nominal drawing size is 29.9 &#x00D7; 11.5 mm. The definition includes 11 documented pins.
+Connector JST Xh S11B-XH-A is an OOMP electronic connector definition. It uses the jst xh package or form factor. Its nominal drawing size is 2.54 &#x00D7; 27.94 mm. The definition includes 11 documented pins.
 
 ![Connector JST Xh S11B-XH-A pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector JST Xh S11B-XH-A is an OOMP electronic connector definition. It uses t
 | OOMP ID | `electronic_connector_jst_xh_2_5_mm_pitch_through_hole_right_angle_11_pin_jst_s11b_xh_a` |
 | Type | Connector |
 | Package / style | jst xh |
-| Nominal size | 29.9 &#x00D7; 11.5 mm |
+| Nominal size | 2.54 &#x00D7; 27.94 mm |
 | Documented pins | 11 |
 
 
@@ -36,8 +36,8 @@ Connector JST Xh S11B-XH-A is an OOMP electronic connector definition. It uses t
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 29.9 mm |
-| Width | 11.5 mm |
+| Length | 2.54 mm |
+| Width | 27.94 mm |
 
 
 

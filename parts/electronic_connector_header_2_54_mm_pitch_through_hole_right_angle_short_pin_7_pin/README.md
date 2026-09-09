@@ -2,7 +2,7 @@
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_short_pin_7_pin`
 
-Connector Header 2.54 mm pitch through hole right angle short pin 7 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 10.36 &#x00D7; 17.78 mm. The definition includes 7 documented pins.
+Connector Header 2.54 mm pitch through hole right angle short pin 7 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 2.54 &#x00D7; 17.78 mm. The definition includes 7 documented pins.
 
 ![Connector Header 2.54 mm pitch through hole right angle short pin 7 pin pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector Header 2.54 mm pitch through hole right angle short pin 7 pin is an OO
 | OOMP ID | `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_short_pin_7_pin` |
 | Type | Connector |
 | Package / style | header |
-| Nominal size | 10.36 &#x00D7; 17.78 mm |
+| Nominal size | 2.54 &#x00D7; 17.78 mm |
 | Documented pins | 7 |
 
 
@@ -34,7 +34,7 @@ Connector Header 2.54 mm pitch through hole right angle short pin 7 pin is an OO
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.36 mm |
+| Length | 2.54 mm |
 | Width | 17.78 mm |
 
 
@@ -55,6 +55,11 @@ Connector Header 2.54 mm pitch through hole right angle short pin 7 pin is an OO
 | 7 | pin_7 | signal |
 
 
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit_ADXL345_PCB ADXL345 STEMMA QT current is a KiCad project containing 48 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
+Project adafruit/Adafruit_ADXL345_PCB ADXL345 STEMMA QT current is a KiCad project containing 48 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit_ADXL345_PCB ADXL345 STEMMA QT current is a KiCad proje
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 54 |
-| Matched OOMP components | 17 |
-| Unmatched physical components | 1 |
+| Matched OOMP components | 18 |
+| Unmatched physical components | 0 |
 | Front-side placements | 14 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -92,7 +92,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | JP2 | 1 | Connector Header PZ2.54-S04P-A60 |  | `ADXL345 STEMMA QT-import-fps:1X04_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | Q2 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | BSS138 | `ADXL345 STEMMA QT-import-fps:SOT363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
 | R1, R3 | 2 | Resistor 10000 Ohm 0603 | 10K | `ADXL345 STEMMA QT-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| U1 | 1 | ADXL343 | ADXL343 | `ADXL345 STEMMA QT-import-fps:LGA14` | unmatched |
+| U1 | 1 | Sensor Lga 14 Analog Devices ADXL343 ACCELEROMETER | ADXL343 | `ADXL345 STEMMA QT-import-fps:LGA14` | [`electronic_sensor_accelerometer_lga_14_analog_devices_adxl343`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_accelerometer_lga_14_analog_devices_adxl343) |
 | U2 | 1 | IC Power Management Linear Voltage Regulator Diodes SOT_23_5 | AP2112K-3.3 | `ADXL345 STEMMA QT-import-fps:SOT23-5` | [`electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sot_23_5_power_management_linear_voltage_regulator_diodes_ap2112k_3_3) |
 
 ## Main nets
@@ -121,7 +121,6 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 1 physical component records are not yet matched to an OOMP part.
 - The extractor reports 4 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current/data/generated_data/lcsc_review.yaml)
@@ -131,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 12
 
 ## Source files
 

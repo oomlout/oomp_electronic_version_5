@@ -501,30 +501,30 @@ oomlout_ai_roboclick_3:
         - name: P3
           number: '7'
           type: signal
-        - name: P4
+        - name: VSS
           number: '8'
-          type: signal
-        - name: P5
+          type: gnd
+        - name: P4
           number: '9'
           type: signal
-        - name: P6
+        - name: P5
           number: '10'
           type: signal
-        - name: P7
+        - name: P6
           number: '11'
           type: signal
-        - name: INT
+        - name: P7
           number: '12'
           type: signal
-        - name: SCL
+        - name: INT
           number: '13'
           type: signal
-        - name: SDA
+        - name: SCL
           number: '14'
           type: signal
-        - name: VSS
+        - name: SDA
           number: '15'
-          type: gnd
+          type: signal
         - name: VDD
           number: '16'
           type: power
@@ -564,29 +564,29 @@ oomlout_ai_roboclick_3:
           number: '1'
           type: signal
         pin_10:
-          name: P6
+          name: P5
           number: '10'
           type: signal
         pin_11:
-          name: P7
+          name: P6
           number: '11'
           type: signal
         pin_12:
-          name: INT
+          name: P7
           number: '12'
           type: signal
         pin_13:
-          name: SCL
+          name: INT
           number: '13'
           type: signal
         pin_14:
-          name: SDA
+          name: SCL
           number: '14'
           type: signal
         pin_15:
-          name: VSS
+          name: SDA
           number: '15'
-          type: gnd
+          type: signal
         pin_16:
           name: VDD
           number: '16'
@@ -616,11 +616,11 @@ oomlout_ai_roboclick_3:
           number: '7'
           type: signal
         pin_8:
-          name: P4
+          name: VSS
           number: '8'
-          type: signal
+          type: gnd
         pin_9:
-          name: P5
+          name: P4
           number: '9'
           type: signal
       regenerate_pngs: false
@@ -821,6 +821,19 @@ oomlout_ai_roboclick_3:
     file_output: README.md
     file_template: C:\gh\oomp_electronic_version_5\source_file\template_jinja\oomp_category\template_jinja_markdown\working.md.j2
     search_and_replace: []
+  file_test: ''
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_ic_tssop_16_logic_io_expander_texas_instruments_pca9554pw
@@ -1029,30 +1042,30 @@ part_page:
   - name: P3
     number: '7'
     type: signal
-  - name: P4
+  - name: VSS
     number: '8'
-    type: signal
-  - name: P5
+    type: gnd
+  - name: P4
     number: '9'
     type: signal
-  - name: P6
+  - name: P5
     number: '10'
     type: signal
-  - name: P7
+  - name: P6
     number: '11'
     type: signal
-  - name: INT
+  - name: P7
     number: '12'
     type: signal
-  - name: SCL
+  - name: INT
     number: '13'
     type: signal
-  - name: SDA
+  - name: SCL
     number: '14'
     type: signal
-  - name: VSS
+  - name: SDA
     number: '15'
-    type: gnd
+    type: signal
   - name: VDD
     number: '16'
     type: power
@@ -1092,29 +1105,29 @@ pins:
     number: '1'
     type: signal
   pin_10:
-    name: P6
+    name: P5
     number: '10'
     type: signal
   pin_11:
-    name: P7
+    name: P6
     number: '11'
     type: signal
   pin_12:
-    name: INT
+    name: P7
     number: '12'
     type: signal
   pin_13:
-    name: SCL
+    name: INT
     number: '13'
     type: signal
   pin_14:
-    name: SDA
+    name: SCL
     number: '14'
     type: signal
   pin_15:
-    name: VSS
+    name: SDA
     number: '15'
-    type: gnd
+    type: signal
   pin_16:
     name: VDD
     number: '16'
@@ -1144,11 +1157,11 @@ pins:
     number: '7'
     type: signal
   pin_8:
-    name: P4
+    name: VSS
     number: '8'
-    type: signal
+    type: gnd
   pin_9:
-    name: P5
+    name: P4
     number: '9'
     type: signal
 regenerate_pngs: false

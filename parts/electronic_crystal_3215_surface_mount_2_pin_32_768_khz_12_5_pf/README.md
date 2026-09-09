@@ -2,7 +2,7 @@
 
 `electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf`
 
-Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal definition. It uses the 3215 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal definition. It uses the 3215 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.5 mm. The definition includes 2 documented pins.
 
 ![Crystal 32.768 kHz 12.5 pF 3215 2-pin pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal definition. 
 | OOMP ID | `electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf` |
 | Type | Crystal |
 | Package / style | 3215 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.2 &#x00D7; 1.5 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -34,8 +35,8 @@ Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal definition. 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.2 mm |
+| Width | 1.5 mm |
 
 
 
@@ -48,6 +49,14 @@ Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal definition. 
 | LCSC | [`C32346`](https://www.lcsc.com/product-detail/C32346.html) |
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
 
 
 

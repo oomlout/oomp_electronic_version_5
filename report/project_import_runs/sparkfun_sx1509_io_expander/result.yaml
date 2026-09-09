@@ -1,0 +1,50 @@
+repository: sparkfun/SX1509_IO-Expander
+commit: cc235c16a1f2104c928b55bb81e4c9e06d7613f7
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: spark_fun_sx1509_breakout
+  path: Hardware/SparkFun-SX1509-Breakout.brd
+  format: eagle
+boards_excluded:
+- path: Production/SX1509-Breakout_Panel_v20.brd
+  source_format: eagle
+  folder: Production
+  basename: SX1509-Breakout_Panel_v20
+  project_file_path: Production/SX1509-Breakout_Panel_v20
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: SX1509-Breakout_Panel
+  family_key: production/sx1509_breakout_panel
+  version_key:
+  - 20
+  version_text: v20
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: sx1509_breakout_panel
+  board_name: SX1509 Breakout Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:20:26Z'

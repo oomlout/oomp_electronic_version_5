@@ -1,0 +1,35 @@
+repository: sparkfun/SparkFun_Qwiic_LED_Stick
+commit: 50bdbbc7337922b885718b4de083cadc6d7c15e6
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: qwiic_led_stick
+  path: Hardware/Qwiic LED Stick.brd
+  format: eagle
+boards_excluded:
+- path: Hardware/Production/Qwiic LED Stick-Panel.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 2
+  details:
+  - kind: include_override
+    count: 1
+  - kind: exclude_paths
+    count: 1
+completed_at: '2026-09-09T10:28:22Z'

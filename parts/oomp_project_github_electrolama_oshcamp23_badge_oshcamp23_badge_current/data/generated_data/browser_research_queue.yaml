@@ -1,0 +1,66 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 2
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - C8
+  - C9
+  value: TBD
+  footprint: working:_PKG_C_0402_NOTHERMALS
+  query: TBD working:_PKG_C_0402_NOTHERMALS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TBD+working%3A_PKG_C_0402_NOTHERMALS
+    datasheet_search: https://www.google.com/search?q=TBD+working%3A_PKG_C_0402_NOTHERMALS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_capacitor_0402_8_pico_farad
+  - electronic_capacitor_0402_10_nano_farad
+  - electronic_capacitor_0402_15_pico_farad
+  - electronic_capacitor_0402_18_pico_farad
+  - electronic_capacitor_0402_1_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - L1
+  value: TBD
+  footprint: working:_PKG_L_0402
+  query: TBD working:_PKG_L_0402
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TBD+working%3A_PKG_L_0402
+    datasheet_search: https://www.google.com/search?q=TBD+working%3A_PKG_L_0402+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

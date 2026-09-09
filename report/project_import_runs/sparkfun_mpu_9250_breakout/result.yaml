@@ -1,0 +1,50 @@
+repository: sparkfun/MPU-9250_Breakout
+commit: 5aa492079056d0eaf508b00d8fcd5f491e7d8d2c
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: spark_fun_mpu_9250_breakout
+  path: Hardware/SparkFun_MPU-9250_Breakout.brd
+  format: eagle
+boards_excluded:
+- path: Production/MPU-9250_Breakout_Panel_v10.brd
+  source_format: eagle
+  folder: Production
+  basename: MPU-9250_Breakout_Panel_v10
+  project_file_path: Production/MPU-9250_Breakout_Panel_v10
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: MPU-9250_Breakout_Panel
+  family_key: production/mpu_9250_breakout_panel
+  version_key:
+  - 10
+  version_text: v10
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: mpu_9250_breakout_panel
+  board_name: MPU 9250 Breakout Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:19:35Z'

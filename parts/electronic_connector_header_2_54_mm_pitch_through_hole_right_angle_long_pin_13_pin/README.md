@@ -2,7 +2,7 @@
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_13_pin`
 
-Connector Header 2.54 mm pitch through hole right angle long pin 13 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 10.36 &#x00D7; 33.02 mm. The definition includes 13 documented pins.
+Connector Header 2.54 mm pitch through hole right angle long pin 13 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 2.54 &#x00D7; 33.02 mm. The definition includes 13 documented pins.
 
 ![Connector Header 2.54 mm pitch through hole right angle long pin 13 pin pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector Header 2.54 mm pitch through hole right angle long pin 13 pin is an OO
 | OOMP ID | `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_13_pin` |
 | Type | Connector |
 | Package / style | header |
-| Nominal size | 10.36 &#x00D7; 33.02 mm |
+| Nominal size | 2.54 &#x00D7; 33.02 mm |
 | Documented pins | 13 |
 
 
@@ -34,7 +34,7 @@ Connector Header 2.54 mm pitch through hole right angle long pin 13 pin is an OO
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.36 mm |
+| Length | 2.54 mm |
 | Width | 33.02 mm |
 
 
@@ -61,6 +61,11 @@ Connector Header 2.54 mm pitch through hole right angle long pin 13 pin is an OO
 | 13 | pin_13 | signal |
 
 
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

@@ -53,6 +53,11 @@ Connector Header 2.54-1*40P&#x76F4;&#x9488; is an OOMP electronic connector defi
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

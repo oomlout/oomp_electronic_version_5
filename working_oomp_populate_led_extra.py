@@ -88,3 +88,32 @@ def main(**kwargs):
             ],
             "pin_one": [-1.05, -0.7],
         }
+
+    # SparkFun LED_1206_Bottom_Green is the board-facing version of the
+    # standard 1206 green LED footprint.  It is a two-terminal device; the
+    # bottom-facing footprint name must not turn it into the unrelated four
+    # pad 1205 RGB entry above.
+    current = "electronic_led_1206_bottom_green"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Inolux"
+        part["part_number_manufacturer"] = "IN-S126ATG"
+        part["product_url"] = "https://www.sparkfun.com/bright-green-led-surface-mount-1206.html"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.5, "height": 1.1}
+        part["dimension_reference"] = {
+            "document": "SparkFun Bright Green LED Surface Mount 1206 / IN-S126ATG",
+            "notes": "3.20 x 1.50 x 1.10 mm LED; bottom-view Eagle footprint with two contacts.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "K", "type": "signal"},
+            "pin_2": {"number": "2", "name": "A", "type": "signal"},
+        }
+        part["package_drawing"] = {
+            "overall": [3.2, 1.5],
+            "body": [2.35, 1.10],
+            "pins": [
+                ["1", "left", -1.35, 0.0, 0.50, 1.05],
+                ["2", "right", 1.35, 0.0, 0.50, 1.05],
+            ],
+            "pin_one": [-1.35, 0.0],
+        }

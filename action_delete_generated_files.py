@@ -28,8 +28,8 @@ from action_regenerate_all import REPOSITORY_ROOT, _matches_filter
 
 # Default remains the minimal gate-only reset.  Set this to True when preparing
 # the repository for a complete local regeneration, or use --full-reset.
-#FULL_RESET = True
-FULL_RESET = False
+FULL_RESET = True
+#FULL_RESET = False
 
 
 # A few run_python actions contain their own generated-file checks instead of
@@ -116,7 +116,11 @@ def delete_all_generated_pngs(part_directory):
 
 
 def delete_generated_files(filter_text="", include_projects=True, full_reset=None):
-    """Delete generated files without recompiling or running any actions."""
+    """Delete generated files and return a summary dictionary.
+
+    This function is intentionally callable from other Python modules while the
+    script also remains runnable from the command line via ``main()``.
+    """
     if full_reset is None:
         full_reset = FULL_RESET
     os.chdir(REPOSITORY_ROOT)
@@ -149,10 +153,16 @@ def delete_generated_files(filter_text="", include_projects=True, full_reset=Non
         f"Generated-file deletion complete: {touched_parts} part(s) touched, "
         f"{deleted_files} generated file or artifact set(s) deleted."
     )
-    return 0
+    return {
+        "filter_text": filter_text,
+        "include_projects": include_projects,
+        "full_reset": full_reset,
+        "touched_parts": touched_parts,
+        "deleted_files": deleted_files,
+    }
 
 
-def main():
+def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--filter", default="", help="OOMP part ID or family prefix; omit for every part")
     parser.add_argument(
@@ -166,13 +176,14 @@ def main():
         action="store_true",
         help="Also delete generated PNG files; source snapshots under data/git and data/original are preserved",
     )
-    arguments = parser.parse_args()
+    arguments = parser.parse_args(argv)
     delete_generated_files(
         filter_text=arguments.filter,
         include_projects=arguments.include_projects,
         full_reset=FULL_RESET or arguments.full_reset,
     )
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

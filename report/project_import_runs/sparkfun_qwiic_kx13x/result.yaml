@@ -1,0 +1,50 @@
+repository: sparkfun/Qwiic_KX13X
+commit: ba21595631d4ae07b4a7ffea6b1e4826ace2783b
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: qwiic_kx13_x
+  path: Hardware/Qwiic_KX13X.brd
+  format: eagle
+boards_excluded:
+- path: Production/Qwiic_KX13X-Panel.brd
+  source_format: eagle
+  folder: Production
+  basename: Qwiic_KX13X-Panel
+  project_file_path: Production/Qwiic_KX13X-Panel
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: Qwiic_KX13X-Panel
+  family_key: production/qwiic_kx13_x_panel
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: qwiic_kx13_x_panel
+  board_name: Qwiic KX13 X Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:01:26Z'

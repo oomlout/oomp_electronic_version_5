@@ -20,6 +20,8 @@ default to `current` and `main`. Add `board`, `board_name`, `board_url`,
 `sparse_checkout`, and the `project_file_*` fields when the repository needs
 them. A repository may have multiple version records; `current` is selected in
 preference to historical entries, otherwise the newest numeric version is used.
+For PCB-only KiCad projects, set `project_file_extensions` on that version to
+`[.kicad_pcb]`; the default is `[.kicad_pcb, .kicad_sch, .kicad_pro]`.
 
 Keep `match_blocked`, `review_notes`, and production metadata alongside the
 version that they describe. Do not add reference-level component matches here:

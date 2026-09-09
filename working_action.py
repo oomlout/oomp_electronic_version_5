@@ -10,6 +10,7 @@ def main(**kwargs):
     import oomlout_roboclick
     import working_oomp
 
+    kwargs.setdefault("threaded_workers", 6)
     
 
     #delete options
@@ -43,21 +44,16 @@ def main(**kwargs):
     if True:
         working_oomp.main(**kwargs)
 
-    # Run the legacy Roboclick "ai" namespace.  The name is historical: the
-    # default OOMP actions in this repository are deterministic Python, image
-    # resize, file-copy, and Jinja actions.  LLM actions are opt-in only.
+    # Load every real Roboclick mode before starting the worker pool.  The
+    # legacy "ai" name is historical: this repository's normal actions are
+    # deterministic Python, image-resize, file-copy, and Jinja jobs.
     if True:
-        directory = "parts"
-        kwargs["directory"] = directory
-        kwargs["mode"] = "ai"
-        oomlout_roboclick.run_folder_recursive(**kwargs)
-
-    #run_roboclick_corel
-    if True:
-        directory = "parts"
-        kwargs["directory"] = directory
-        kwargs["mode"] = "corel"
-        oomlout_roboclick.run_folder_recursive(**kwargs)
+        run_kwargs = copy.deepcopy(kwargs)
+        run_kwargs["directory"] = "parts"
+        run_kwargs["mode"] = "all"
+        run_kwargs["recursive_threaded"] = True
+        run_kwargs["threaded_subprocess_actions"] = True
+        oomlout_roboclick.run_folder_recursive(**run_kwargs)
 
     
 

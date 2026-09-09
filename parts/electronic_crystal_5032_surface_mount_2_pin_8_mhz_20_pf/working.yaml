@@ -31,8 +31,8 @@ bip_39_full_underscore: spider_pact_erase_glare_pet_tree_mother_wool_erosion_man
 category: crystal
 category_name: Crystal
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  length: 5.0
+  width: 3.2
 directory: parts/electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
 distributors:
 - key: lcsc
@@ -184,8 +184,8 @@ oomlout_ai_roboclick_3:
       category: crystal
       category_name: Crystal
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        length: 5.0
+        width: 3.2
       directory: parts\electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
       distributors:
       - key: lcsc
@@ -310,6 +310,29 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      package_drawing:
+        body:
+        - 3.895
+        - 2.9000000000000004
+        overall:
+        - 5.0
+        - 3.2
+        pin_one:
+        - -2.175
+        - 0.0
+        pins:
+        - - '1'
+          - left
+          - -2.175
+          - 0.0
+          - 0.65
+          - 1.984
+        - - '2'
+          - right
+          - 2.175
+          - 0.0
+          - 0.65
+          - 1.984
       part_id: Y1
       part_number_lcsc: C122522
       part_number_manufacturer: TAXM8M2QLFCDT1T
@@ -400,7 +423,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/crystal/5032/surface_mount/2_pin/8_mhz/README.md
         oomp_id: electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: signal
+        - name: '2'
+          number: '2'
+          type: signal
         quick_facts:
         - title: OOMP ID
           value: electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
@@ -409,11 +438,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: '5032'
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 5.0 × 3.2 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
         summary: Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition.
-          It uses the 5032 package or form factor. Its nominal drawing size is 10.0
-          × 5.0 mm.
+          It uses the 5032 package or form factor. Its nominal drawing size is 5.0
+          × 3.2 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -429,6 +460,15 @@ oomlout_ai_roboclick_3:
           value: 8_mhz
         - level: 7
           value: 20_pf
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: signal
+        pin_2:
+          name: '2'
+          number: '2'
+          type: signal
       product_url: https://www.lcsc.com/product-detail/C122522.html
       regenerate_pngs: false
       research_notes:
@@ -621,7 +661,43 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0
 oomp_key: oomp_electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
+package_drawing:
+  body:
+  - 3.895
+  - 2.9000000000000004
+  overall:
+  - 5.0
+  - 3.2
+  pin_one:
+  - -2.175
+  - 0.0
+  pins:
+  - - '1'
+    - left
+    - -2.175
+    - 0.0
+    - 0.65
+    - 1.984
+  - - '2'
+    - right
+    - 2.175
+    - 0.0
+    - 0.65
+    - 1.984
 part_id: Y1
 part_number_lcsc: C122522
 part_number_manufacturer: TAXM8M2QLFCDT1T
@@ -712,7 +788,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/crystal/5032/surface_mount/2_pin/8_mhz/README.md
   oomp_id: electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: signal
+  - name: '2'
+    number: '2'
+    type: signal
   quick_facts:
   - title: OOMP ID
     value: electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
@@ -721,11 +803,13 @@ part_page:
   - title: Package / style
     value: '5032'
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 5.0 × 3.2 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
   summary: Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition.
-    It uses the 5032 package or form factor. Its nominal drawing size is 10.0 × 5.0
-    mm.
+    It uses the 5032 package or form factor. Its nominal drawing size is 5.0 × 3.2
+    mm. The definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -741,6 +825,15 @@ part_page:
     value: 8_mhz
   - level: 7
     value: 20_pf
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: signal
+  pin_2:
+    name: '2'
+    number: '2'
+    type: signal
 product_url: https://www.lcsc.com/product-detail/C122522.html
 regenerate_pngs: false
 research_notes:

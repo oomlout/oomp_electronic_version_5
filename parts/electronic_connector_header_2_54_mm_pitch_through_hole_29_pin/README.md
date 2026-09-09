@@ -53,6 +53,11 @@ Connector Header HDGCPH-PZ01-29 is an OOMP electronic connector definition. It u
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Files

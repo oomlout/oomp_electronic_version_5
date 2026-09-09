@@ -2,7 +2,7 @@
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_short_pin_18_pin`
 
-Connector Header 2.54 mm pitch through hole right angle short pin 18 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 10.36 &#x00D7; 45.72 mm. The definition includes 18 documented pins.
+Connector Header 2.54 mm pitch through hole right angle short pin 18 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 2.54 &#x00D7; 45.72 mm. The definition includes 18 documented pins.
 
 ![Connector Header 2.54 mm pitch through hole right angle short pin 18 pin pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector Header 2.54 mm pitch through hole right angle short pin 18 pin is an O
 | OOMP ID | `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_short_pin_18_pin` |
 | Type | Connector |
 | Package / style | header |
-| Nominal size | 10.36 &#x00D7; 45.72 mm |
+| Nominal size | 2.54 &#x00D7; 45.72 mm |
 | Documented pins | 18 |
 
 
@@ -34,7 +34,7 @@ Connector Header 2.54 mm pitch through hole right angle short pin 18 pin is an O
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.36 mm |
+| Length | 2.54 mm |
 | Width | 45.72 mm |
 
 
@@ -66,6 +66,11 @@ Connector Header 2.54 mm pitch through hole right angle short pin 18 pin is an O
 | 18 | pin_18 | signal |
 
 
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

@@ -1,0 +1,50 @@
+repository: sparkfun/SparkFun_GNSS_Dead_Reckoning_ZED-F9K
+commit: 94fa41377b57bcb29b226d363950e9be80011ef2
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: spark_fun_gps_zed_f9_k
+  path: Hardware/SparkFun_GPS_ZED-F9K.brd
+  format: eagle
+boards_excluded:
+- path: Production/SparkFun_GPS_ZED-F9K-Panel.brd
+  source_format: eagle
+  folder: Production
+  basename: SparkFun_GPS_ZED-F9K-Panel
+  project_file_path: Production/SparkFun_GPS_ZED-F9K-Panel
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: SparkFun_GPS_ZED-F9K-Panel
+  family_key: production/spark_fun_gps_zed_f9_k_panel
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: spark_fun_gps_zed_f9_k_panel
+  board_name: Spark Fun GPS ZED F9 K Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:21:00Z'

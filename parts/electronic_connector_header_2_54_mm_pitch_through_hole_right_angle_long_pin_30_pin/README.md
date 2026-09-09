@@ -2,7 +2,7 @@
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_30_pin`
 
-Connector Header 2.54 mm pitch through hole right angle long pin 30 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 10.36 &#x00D7; 76.2 mm. The definition includes 30 documented pins.
+Connector Header 2.54 mm pitch through hole right angle long pin 30 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 2.54 &#x00D7; 76.2 mm. The definition includes 30 documented pins.
 
 ![Connector Header 2.54 mm pitch through hole right angle long pin 30 pin pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector Header 2.54 mm pitch through hole right angle long pin 30 pin is an OO
 | OOMP ID | `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_30_pin` |
 | Type | Connector |
 | Package / style | header |
-| Nominal size | 10.36 &#x00D7; 76.2 mm |
+| Nominal size | 2.54 &#x00D7; 76.2 mm |
 | Documented pins | 30 |
 
 
@@ -34,7 +34,7 @@ Connector Header 2.54 mm pitch through hole right angle long pin 30 pin is an OO
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.36 mm |
+| Length | 2.54 mm |
 | Width | 76.2 mm |
 
 
@@ -78,6 +78,11 @@ Connector Header 2.54 mm pitch through hole right angle long pin 30 pin is an OO
 | 30 | pin_30 | signal |
 
 
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

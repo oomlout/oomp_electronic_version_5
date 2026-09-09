@@ -1,0 +1,116 @@
+available: true
+units:
+- reference: R3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 00000000-0000-0000-0000-0000591d7e13
+  library_id: TINY-REFLOW-CONTROLLER-rescue:RESISTOR-RocketScreamKiCadLib
+  unit: 1
+  body_style: 1
+  position:
+    x: 210.82
+    y: 149.86
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R3
+    Value: 100R
+    Footprint: RocketScreamKiCadLib:R_0603
+    Datasheet: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -6.35
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 204.47
+      y: 149.86
+    net: TC+
+    net_aliases:
+    - TC+
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '2'
+      pin_name: '2'
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 6.35
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 217.17
+      y: 149.86
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C2
+      pin_number: '1'
+      pin_name: '~'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '~'
+    - reference: U3
+      pin_number: '4'
+      pin_name: T+
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.81
+        y: -1.27
+      max:
+        x: 3.81
+        y: 1.27
+      width: 7.62
+      height: 2.54
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 207.01
+        y: 148.59
+      max:
+        x: 214.63
+        y: 151.13
+      width: 7.62
+      height: 2.54
+      center:
+        x: 210.82
+        y: 149.86
+  warnings: []
+connected_components:
+- reference: C2
+  pin_number: '1'
+  pin_name: '~'
+- reference: C3
+  pin_number: '2'
+  pin_name: '~'
+- reference: J1
+  pin_number: '2'
+  pin_name: '2'
+- reference: U3
+  pin_number: '4'
+  pin_name: T+

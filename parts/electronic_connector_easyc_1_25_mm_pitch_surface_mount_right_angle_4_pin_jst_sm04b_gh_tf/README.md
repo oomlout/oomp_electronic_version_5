@@ -2,7 +2,7 @@
 
 `electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf`
 
-Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST is an OOMP electronic connector definition. It uses the easyc package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST is an OOMP electronic connector definition. It uses the easyc package or form factor. Its nominal drawing size is 5.4 &#x00D7; 4.0 mm. The definition includes 4 documented pins.
 
 ![Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,8 @@ Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST is an OOMP ele
 | OOMP ID | `electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf` |
 | Type | Connector |
 | Package / style | easyc |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 5.4 &#x00D7; 4.0 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -35,12 +36,23 @@ Connector Easyc 1.25 mm pitch Surface Mount Right Angle 4 pin JST is an OOMP ele
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 3.0 mm |
+| Length | 5.4 mm |
+| Width | 4.0 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | pin_1 | signal |
+| 2 | pin_2 | signal |
+| 3 | pin_3 | signal |
+| 4 | pin_4 | signal |
 
 
 

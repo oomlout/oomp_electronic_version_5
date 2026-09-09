@@ -2,7 +2,7 @@
 
 `electronic_resistor_1210_0_1_ohm`
 
-Resistor 0.1 Ohm 1210 is an OOMP electronic resistor definition. It uses the 1210 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Resistor 0.1 Ohm 1210 is an OOMP electronic resistor definition. It uses the 1210 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 2.5 mm. The definition includes 2 documented pins.
 
 ![Resistor 0.1 Ohm 1210 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Resistor 0.1 Ohm 1210 is an OOMP electronic resistor definition. It uses the 121
 | OOMP ID | `electronic_resistor_1210_0_1_ohm` |
 | Type | Resistor |
 | Package / style | 1210 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.2 &#x00D7; 2.5 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,12 +32,20 @@ Resistor 0.1 Ohm 1210 is an OOMP electronic resistor definition. It uses the 121
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.2 mm |
+| Width | 2.5 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | signal |
+| 2 | 2 | signal |
 
 
 

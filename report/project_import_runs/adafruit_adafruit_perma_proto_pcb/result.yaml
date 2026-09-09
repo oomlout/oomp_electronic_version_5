@@ -1,0 +1,41 @@
+repository: adafruit/Adafruit-Perma-Proto-PCB
+commit: 2c7f1ba8791a65e9b3886cb34356d6ec1abe54de
+definition_file: C:\gh\oomp_electronic_version_5\project_data\adafruit\working.yaml
+boards_added:
+- board: adafruit_minty_permaproto
+  path: adafruit minty permaproto.brd
+  format: eagle
+boards_excluded:
+- path: adafruit permaproto fullbreadboard.brd
+  exclude_reason: review decision
+- path: adafruit permaproto halfbreadboard.brd
+  exclude_reason: review decision
+- path: adafruit permaproto quarterbreadboard.brd
+  exclude_reason: review decision
+- path: adafruit permaproto smalls.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 11
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 5
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 8
+  details:
+  - kind: include_override
+    count: 4
+  - kind: exclude_paths
+    count: 4
+completed_at: '2026-09-09T10:16:12Z'

@@ -1,0 +1,66 @@
+repository: sparkfun/Qwiic_IMU_BNO080
+commit: b821d9c1c76c2700fa70ade7783cc522cd3cc683
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: qwiic_imu_bonobo
+  path: Hardware/Qwiic_IMU_Bonobo.brd
+  format: eagle
+boards_excluded:
+- path: Hardware/Production/Qwiic_IMU_Bonobo-Panel.brd
+  source_format: eagle
+  folder: Hardware/Production
+  basename: Qwiic_IMU_Bonobo-Panel
+  project_file_path: Hardware/Production/Qwiic_IMU_Bonobo-Panel
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: Qwiic_IMU_Bonobo-Panel
+  family_key: hardware_production/qwiic_imu_bonobo_panel
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: qwiic_imu_bonobo_panel
+  board_name: Qwiic IMU Bonobo Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+- path: Documents/Qwiic_IMU_Bonobo.brd
+  exclude_reason: review decision
+- path: Hardware/TestJig/Jig-Lower-Layer.brd
+  exclude_reason: review decision
+- path: Hardware/TestJig/Jig-Middle-Layer.brd
+  exclude_reason: review decision
+- path: Hardware/TestJig/Jig-Top-Layer.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 12
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 6
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 10
+  details:
+  - kind: include_override
+    count: 4
+  - kind: exclude_paths
+    count: 4
+  - kind: board
+    path: Hardware/Qwiic_IMU_Bonobo.brd
+  - kind: board_name
+    path: Hardware/Qwiic_IMU_Bonobo.brd
+completed_at: '2026-09-09T10:35:54Z'

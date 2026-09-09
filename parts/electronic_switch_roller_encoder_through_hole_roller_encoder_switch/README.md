@@ -2,7 +2,7 @@
 
 `electronic_switch_roller_encoder_through_hole_roller_encoder_switch`
 
-Switch Through Hole Roller Encoder Switch ROLLER ENCODER is an OOMP electronic switch definition. It uses the roller encoder package or form factor. Its nominal drawing size is 12.0 &#x00D7; 10.0 mm. The definition includes 5 documented pins.
+Switch Through Hole Roller Encoder Switch ROLLER ENCODER is an OOMP electronic switch definition. It uses the roller encoder package or form factor. Its nominal drawing size is 16.8 &#x00D7; 14.0 mm. The definition includes 4 documented pins.
 
 ![Switch Through Hole Roller Encoder Switch ROLLER ENCODER pinout](data/working_svg_square_pins.svg)
 
@@ -13,8 +13,8 @@ Switch Through Hole Roller Encoder Switch ROLLER ENCODER is an OOMP electronic s
 | OOMP ID | `electronic_switch_roller_encoder_through_hole_roller_encoder_switch` |
 | Type | Switch |
 | Package / style | roller encoder |
-| Nominal size | 12.0 &#x00D7; 10.0 mm |
-| Documented pins | 5 |
+| Nominal size | 16.8 &#x00D7; 14.0 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -33,8 +33,8 @@ Switch Through Hole Roller Encoder Switch ROLLER ENCODER is an OOMP electronic s
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 12.0 mm |
-| Width | 10.0 mm |
+| Length | 16.8 mm |
+| Width | 14.0 mm |
 
 
 
@@ -49,7 +49,6 @@ Switch Through Hole Roller Encoder Switch ROLLER ENCODER is an OOMP electronic s
 | 2 | 2 | signal |
 | 3 | 3 | signal |
 | 4 | 4 | signal |
-| 5 | 5 | signal |
 
 
 

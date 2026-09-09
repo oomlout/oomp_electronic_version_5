@@ -31,8 +31,8 @@ bip_39_full_underscore: sing_popular_oil_screen_chest_hundred_cluster_awful_peli
 category: switch
 category_name: Switch
 dimensions_mm:
-  length: 12.0
-  width: 10.0
+  length: 16.8
+  width: 14.0
 directory: parts/electronic_switch_roller_encoder_through_hole_roller_encoder_switch
 distributors: []
 id: electronic_switch_roller_encoder_through_hole_roller_encoder_switch
@@ -176,8 +176,8 @@ oomlout_ai_roboclick_3:
       category: switch
       category_name: Switch
       dimensions_mm:
-        length: 12.0
-        width: 10.0
+        length: 16.8
+        width: 14.0
       directory: parts\electronic_switch_roller_encoder_through_hole_roller_encoder_switch
       distributors: []
       kicad:
@@ -296,46 +296,49 @@ oomlout_ai_roboclick_3:
         retries_until_complete: 0
       package_drawing:
         body:
-        - 8.64
-        - 7.199999999999999
-        circles:
-        - - 0
-          - 0
-          - 1.7999999999999998
-        overall:
-        - 12.0
+        - 11.0
         - 10.0
+        body_offset:
+        - -1.0
+        - 0.6
+        circles:
+        - - 4.6
+          - 0.6
+          - 2.2
+        - - -1.0
+          - 0.6
+          - 1.6
+        overall:
+        - 16.8
+        - 14.0
+        pin_one:
+        - -3.81
+        - -6.0
         pins:
         - - '1'
-          - left
-          - -5.65
-          - -2.5
-          - 0.7
-          - 0.7
-        - - '2'
-          - left
-          - -5.65
-          - 2.5
-          - 0.7
-          - 0.7
-        - - '3'
-          - right
-          - 5.65
-          - 2.5
-          - 0.7
-          - 0.7
-        - - '4'
-          - right
-          - 5.65
-          - -2.5
-          - 0.7
-          - 0.7
-        - - '5'
           - bottom
-          - 0
-          - -4.65
-          - 0.7
-          - 0.7
+          - -3.81
+          - -6.0
+          - 1.0
+          - 1.0
+        - - '2'
+          - bottom
+          - -1.27
+          - -6.0
+          - 1.0
+          - 1.0
+        - - '3'
+          - bottom
+          - 1.27
+          - -6.0
+          - 1.0
+          - 1.0
+        - - '4'
+          - bottom
+          - 3.81
+          - -6.0
+          - 1.0
+          - 1.0
       part_id: P1
       part_page:
         datasheet_path: data/datasheet.pdf
@@ -425,9 +428,6 @@ oomlout_ai_roboclick_3:
         - name: '4'
           number: '4'
           type: signal
-        - name: '5'
-          number: '5'
-          type: signal
         quick_facts:
         - title: OOMP ID
           value: electronic_switch_roller_encoder_through_hole_roller_encoder_switch
@@ -436,14 +436,14 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: roller encoder
         - title: Nominal size
-          value: 12.0 × 10.0 mm
+          value: 16.8 × 14.0 mm
         - title: Documented pins
-          value: 5
+          value: 4
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_roller_encoder_through_hole_roller_encoder_switch
         summary: Switch Through Hole Roller Encoder Switch ROLLER ENCODER is an OOMP
           electronic switch definition. It uses the roller encoder package or form
-          factor. Its nominal drawing size is 12.0 × 10.0 mm. The definition includes
-          5 documented pins.
+          factor. Its nominal drawing size is 16.8 × 14.0 mm. The definition includes
+          4 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -471,10 +471,6 @@ oomlout_ai_roboclick_3:
         pin_4:
           name: '4'
           number: '4'
-          type: signal
-        pin_5:
-          name: '5'
-          number: '5'
           type: signal
       regenerate_pngs: false
       svg_details:
@@ -665,49 +661,65 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0
 oomp_key: oomp_electronic_switch_roller_encoder_through_hole_roller_encoder_switch
 package_drawing:
   body:
-  - 8.64
-  - 7.199999999999999
-  circles:
-  - - 0
-    - 0
-    - 1.7999999999999998
-  overall:
-  - 12.0
+  - 11.0
   - 10.0
+  body_offset:
+  - -1.0
+  - 0.6
+  circles:
+  - - 4.6
+    - 0.6
+    - 2.2
+  - - -1.0
+    - 0.6
+    - 1.6
+  overall:
+  - 16.8
+  - 14.0
+  pin_one:
+  - -3.81
+  - -6.0
   pins:
   - - '1'
-    - left
-    - -5.65
-    - -2.5
-    - 0.7
-    - 0.7
-  - - '2'
-    - left
-    - -5.65
-    - 2.5
-    - 0.7
-    - 0.7
-  - - '3'
-    - right
-    - 5.65
-    - 2.5
-    - 0.7
-    - 0.7
-  - - '4'
-    - right
-    - 5.65
-    - -2.5
-    - 0.7
-    - 0.7
-  - - '5'
     - bottom
-    - 0
-    - -4.65
-    - 0.7
-    - 0.7
+    - -3.81
+    - -6.0
+    - 1.0
+    - 1.0
+  - - '2'
+    - bottom
+    - -1.27
+    - -6.0
+    - 1.0
+    - 1.0
+  - - '3'
+    - bottom
+    - 1.27
+    - -6.0
+    - 1.0
+    - 1.0
+  - - '4'
+    - bottom
+    - 3.81
+    - -6.0
+    - 1.0
+    - 1.0
 part_id: P1
 part_page:
   datasheet_path: data/datasheet.pdf
@@ -797,9 +809,6 @@ part_page:
   - name: '4'
     number: '4'
     type: signal
-  - name: '5'
-    number: '5'
-    type: signal
   quick_facts:
   - title: OOMP ID
     value: electronic_switch_roller_encoder_through_hole_roller_encoder_switch
@@ -808,13 +817,13 @@ part_page:
   - title: Package / style
     value: roller encoder
   - title: Nominal size
-    value: 12.0 × 10.0 mm
+    value: 16.8 × 14.0 mm
   - title: Documented pins
-    value: 5
+    value: 4
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_roller_encoder_through_hole_roller_encoder_switch
   summary: Switch Through Hole Roller Encoder Switch ROLLER ENCODER is an OOMP electronic
     switch definition. It uses the roller encoder package or form factor. Its nominal
-    drawing size is 12.0 × 10.0 mm. The definition includes 5 documented pins.
+    drawing size is 16.8 × 14.0 mm. The definition includes 4 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -842,10 +851,6 @@ pins:
   pin_4:
     name: '4'
     number: '4'
-    type: signal
-  pin_5:
-    name: '5'
-    number: '5'
     type: signal
 regenerate_pngs: false
 svg_details:

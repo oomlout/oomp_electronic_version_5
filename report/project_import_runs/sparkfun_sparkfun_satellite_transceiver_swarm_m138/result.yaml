@@ -1,0 +1,38 @@
+repository: sparkfun/SparkFun_Satellite_Transceiver-Swarm_M138
+commit: 89fb89156547127c3dc262fd7d005e53817f617a
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: ground_plate
+  path: Hardware/Ground Plate/Ground Plate.brd
+  format: eagle
+- board: satellite_transceiver_breakout_swarm_m138
+  path: Hardware/Satellite_Transceiver_Breakout__Swarm_M138.brd
+  format: eagle
+boards_excluded:
+- path: Production/Satellite_Transceiver_Breakout__Swarm_M138-Panel.brd
+  exclude_reason: review decision
+python_work:
+  decision_units: 11
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 3
+  - kind: current_version_selection
+    count: 2
+  - kind: project_metadata_generation
+    count: 2
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 2
+  details:
+  - kind: include_override
+    count: 1
+  - kind: exclude_paths
+    count: 1
+completed_at: '2026-09-09T10:20:12Z'

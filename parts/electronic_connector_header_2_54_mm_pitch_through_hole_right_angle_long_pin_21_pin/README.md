@@ -2,7 +2,7 @@
 
 `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_21_pin`
 
-Connector Header 2.54 mm pitch through hole right angle long pin 21 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 10.36 &#x00D7; 53.34 mm. The definition includes 21 documented pins.
+Connector Header 2.54 mm pitch through hole right angle long pin 21 pin is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 2.54 &#x00D7; 53.34 mm. The definition includes 21 documented pins.
 
 ![Connector Header 2.54 mm pitch through hole right angle long pin 21 pin pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector Header 2.54 mm pitch through hole right angle long pin 21 pin is an OO
 | OOMP ID | `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_long_pin_21_pin` |
 | Type | Connector |
 | Package / style | header |
-| Nominal size | 10.36 &#x00D7; 53.34 mm |
+| Nominal size | 2.54 &#x00D7; 53.34 mm |
 | Documented pins | 21 |
 
 
@@ -34,7 +34,7 @@ Connector Header 2.54 mm pitch through hole right angle long pin 21 pin is an OO
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.36 mm |
+| Length | 2.54 mm |
 | Width | 53.34 mm |
 
 
@@ -69,6 +69,11 @@ Connector Header 2.54 mm pitch through hole right angle long pin 21 pin is an OO
 | 21 | pin_21 | signal |
 
 
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

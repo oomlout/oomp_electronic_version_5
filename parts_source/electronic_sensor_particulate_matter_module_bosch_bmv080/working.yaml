@@ -1,5 +1,10 @@
 category: other
 category_name: Other
+datasheet_url: https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmv080-ds000.pdf
+dimension_reference:
+  document: Bosch BMV080 datasheet, Figures 6/7 and integration guideline Figure 30
+  notes: 4.4 mm sensor end on a 20.0 mm flex PCB, 5.5 mm wide at the ZIF ears, with
+    13 electrical contacts.
 dimensions_mm:
   length: 20.0
   width: 5.5
@@ -15,75 +20,106 @@ name_readable: Sensor Module Bosch BMV080 PARTICULATE MATTER
 name_short: Sensor Module Bosch BMV080 PARTICULATE MATTER
 package_drawing:
   body:
+  - 20.0
   - 4.4
-  - 3.0
+  boxes:
+  - - -7.8
+    - 0.0
+    - 4.4
+    - 3.0
+  - - 6.3
+    - 0.0
+    - 6.1
+    - 4.4
+  circles:
+  - - -7.8
+    - 0.0
+    - 1.0
   overall:
   - 20.0
   - 5.5
   pin_one:
-  - -9.4
-  - -2.15
+  - 9.55
+  - -1.8
   pins:
   - - '1'
-    - left
-    - -9.75
-    - -1.8333333333333335
-    - 0.5
-    - 0.825
+    - right
+    - 9.55
+    - -1.8
+    - 0.45
+    - 0.2
   - - '2'
-    - left
-    - -9.75
-    - 0.0
-    - 0.5
-    - 0.825
+    - right
+    - 9.55
+    - -1.5
+    - 0.45
+    - 0.2
   - - '3'
-    - left
-    - -9.75
-    - 1.833333333333334
-    - 0.5
-    - 0.825
+    - right
+    - 9.55
+    - -1.2000000000000002
+    - 0.45
+    - 0.2
   - - '4'
-    - bottom
-    - -6.666666666666667
-    - -2.5
-    - 3.0
-    - 0.5
+    - right
+    - 9.55
+    - -0.9000000000000001
+    - 0.45
+    - 0.2
   - - '5'
-    - bottom
-    - 0.0
-    - -2.5
-    - 3.0
-    - 0.5
+    - right
+    - 9.55
+    - -0.6000000000000001
+    - 0.45
+    - 0.2
   - - '6'
-    - bottom
-    - 6.666666666666668
-    - -2.5
-    - 3.0
-    - 0.5
+    - right
+    - 9.55
+    - -0.30000000000000004
+    - 0.45
+    - 0.2
   - - '7'
     - right
-    - 9.75
-    - -1.375
-    - 0.5
-    - 1.2375
+    - 9.55
+    - -2.220446049250313e-16
+    - 0.45
+    - 0.2
   - - '8'
     - right
-    - 9.75
-    - 1.375
-    - 0.5
-    - 1.2375
+    - 9.55
+    - 0.30000000000000004
+    - 0.45
+    - 0.2
   - - '9'
-    - top
-    - -5.0
-    - 2.5
-    - 4.5
-    - 0.5
+    - right
+    - 9.55
+    - 0.5999999999999999
+    - 0.45
+    - 0.2
   - - '10'
-    - top
-    - 5.0
-    - 2.5
-    - 4.5
-    - 0.5
+    - right
+    - 9.55
+    - 0.8999999999999997
+    - 0.45
+    - 0.2
+  - - '11'
+    - right
+    - 9.55
+    - 1.2
+    - 0.45
+    - 0.2
+  - - '12'
+    - right
+    - 9.55
+    - 1.4999999999999998
+    - 0.45
+    - 0.2
+  - - '13'
+    - right
+    - 9.55
+    - 1.7999999999999996
+    - 0.45
+    - 0.2
 part_id: P1
 pins:
   pin_1:
@@ -94,6 +130,18 @@ pins:
     name: VDDD
     number: '10'
     type: power
+  pin_11:
+    name: MISO
+    number: '11'
+    type: signal
+  pin_12:
+    name: IRQ
+    number: '12'
+    type: signal
+  pin_13:
+    name: NC
+    number: '13'
+    type: no_connect
   pin_2:
     name: VSSA
     number: '2'
@@ -103,11 +151,11 @@ pins:
     number: '3'
     type: power
   pin_4:
-    name: VSSD
+    name: CSB
     number: '4'
-    type: gnd
+    type: signal
   pin_5:
-    name: PS
+    name: MOSI
     number: '5'
     type: signal
   pin_6:
@@ -115,17 +163,17 @@ pins:
     number: '6'
     type: signal
   pin_7:
-    name: MOSI
+    name: PS
     number: '7'
     type: signal
   pin_8:
-    name: MISO
+    name: VDDIO
     number: '8'
     type: signal
   pin_9:
-    name: CS
+    name: VSSD
     number: '9'
-    type: signal
+    type: gnd
 svg_details:
 - filename_extra: assembly
   make_a4: false

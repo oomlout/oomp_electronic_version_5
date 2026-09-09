@@ -2,7 +2,7 @@
 
 `electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1`
 
-Connector U Fl surface-mount I Pex U Fl R SMT 1 is an OOMP electronic connector definition. It uses the u fl package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Connector U Fl surface-mount I Pex U Fl R SMT 1 is an OOMP electronic connector definition. It uses the u fl package or form factor. Its nominal drawing size is 3.0 &#x00D7; 3.1 mm. The definition includes 3 documented pins.
 
 ![Connector U Fl surface-mount I Pex U Fl R SMT 1 pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,8 @@ Connector U Fl surface-mount I Pex U Fl R SMT 1 is an OOMP electronic connector 
 | OOMP ID | `electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1` |
 | Type | Connector |
 | Package / style | u fl |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.0 &#x00D7; 3.1 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -33,12 +34,21 @@ Connector U Fl surface-mount I Pex U Fl R SMT 1 is an OOMP electronic connector 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Length | 3.0 mm |
+| Width | 3.1 mm |
 
 
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | RF | signal |
+| 2 | GND | gnd |
+| 3 | GND | gnd |
 
 
 

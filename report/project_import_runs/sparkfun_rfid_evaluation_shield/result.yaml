@@ -1,0 +1,48 @@
+repository: sparkfun/RFID_Evaluation_Shield
+commit: bae57f1f46f0460cfc828843517f1dc8d5996405
+definition_file: null
+boards_added: []
+boards_excluded:
+- path: Hardware/RFID_Eval_13.56MHz.brd
+  source_format: eagle
+  folder: Hardware
+  basename: RFID_Eval_13.56MHz
+  project_file_path: Hardware/RFID_Eval_13.56MHz
+  project_file_extensions:
+  - .brd
+  - .sch
+  has_schematic: true
+  family_stem: RFID_Eval_13.56MHz
+  family_key: hardware/rfid_eval_13_56_mhz
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words: []
+  eagle_board_storage: legacy_binary
+  eagle_schematic_storage: legacy_binary
+  board: rfid_eval_13_56_mhz
+  board_name: RFID Eval 13.56 MHz
+ingestion_status: too_old
+ingest_note: 'too old: repository contains pre-Eagle-6 binary board or schematic files'
+legacy_binary_files:
+- path: Hardware/RFID_Eval_13.56MHz.brd
+  kind: board
+- path: Hardware/RFID_Eval_13.56MHz.sch
+  kind: schematic
+python_work:
+  decision_units: 6
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 1
+  - kind: legacy_eagle_binary_gate
+    count: 2
+  - kind: queue_ingested_note
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:14:14Z'

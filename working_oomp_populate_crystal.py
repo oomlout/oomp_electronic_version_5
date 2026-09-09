@@ -64,6 +64,18 @@ def main(**kwargs):
                         option["taxonomy_7"] = load_capacitance
                         options.append(option)
 
+    # OSHCamp badge: 4-pad 2.0 x 1.6 mm ceramic crystal.
+    options.append({
+        "taxonomy_2": "crystal",
+        "taxonomy_3": "2016",
+        "taxonomy_4": "surface_mount",
+        "taxonomy_5": "4_pin",
+        "taxonomy_6": "26_mhz",
+        "taxonomy_7": "20_pf",
+        "taxonomy_14": "txc",
+        "taxonomy_15": "nx3225gd",
+    })
+
 
 if __name__ == "__main__":
     main()

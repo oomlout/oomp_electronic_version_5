@@ -28,6 +28,14 @@ def main(**kwargs):
             "current_rating": "500_milliamp",
             "name_short": "Ferrite Bead 0603",
         },
+        {
+            "package": "0603",
+            "impedance": "220_ohm",
+            "current_rating": "2_2_amp",
+            "manufacturer": "murata",
+            "part_number": "blm18kg221sn1d",
+            "name_short": "Ferrite Bead BLM18KG221SN1D",
+        },
     ]
 
     for ferrite_bead in ferrite_beads:

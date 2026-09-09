@@ -2,7 +2,7 @@
 
 `electronic_connector_jst_ph_2_mm_pitch_surface_mount_right_angle_14_pin_jst_s14b_ph_sm4_tb`
 
-Connector JST Ph S14B-PH-SM4-TB is an OOMP electronic connector definition. It uses the jst ph package or form factor. Its nominal drawing size is 31.9 &#x00D7; 7.6 mm. The definition includes 14 documented pins.
+Connector JST Ph S14B-PH-SM4-TB is an OOMP electronic connector definition. It uses the jst ph package or form factor. Its nominal drawing size is 2.54 &#x00D7; 35.56 mm. The definition includes 14 documented pins.
 
 ![Connector JST Ph S14B-PH-SM4-TB pinout](data/working_svg_top.svg)
 
@@ -13,7 +13,7 @@ Connector JST Ph S14B-PH-SM4-TB is an OOMP electronic connector definition. It u
 | OOMP ID | `electronic_connector_jst_ph_2_mm_pitch_surface_mount_right_angle_14_pin_jst_s14b_ph_sm4_tb` |
 | Type | Connector |
 | Package / style | jst ph |
-| Nominal size | 31.9 &#x00D7; 7.6 mm |
+| Nominal size | 2.54 &#x00D7; 35.56 mm |
 | Documented pins | 14 |
 
 
@@ -36,8 +36,8 @@ Connector JST Ph S14B-PH-SM4-TB is an OOMP electronic connector definition. It u
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 31.9 mm |
-| Width | 7.6 mm |
+| Length | 2.54 mm |
+| Width | 35.56 mm |
 
 
 

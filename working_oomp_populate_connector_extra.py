@@ -129,6 +129,118 @@ def main(**kwargs):
     _fix_254_header_package_drawings(extras_dict)
     _apply_254_straight_header_references(extras_dict)
 
+    current = "electronic_connector_header_2_54_mm_pitch_surface_mount_dual_row_6_pin_wurth_electronics_61030621121"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Würth Elektronik"
+        part["part_number_manufacturer"] = "61030621121"
+        part["datasheet_url"] = "https://www.we-online.com/components/products/datasheet/61030621121.pdf"
+        part["connector_dimensions_mm"] = {"pitch": 2.54, "positions": 6, "rows": 2, "termination": "surface_mount", "insulation_height": 2.54}
+        part["package_drawing"] = {
+            "overall": [7.62, 5.08], "body": [7.62, 5.08],
+            "pins": [[str(number), "top", -1.27 + 2.54 * ((number + 1) % 2), -2.54 + 2.54 * ((number - 1) // 2), 1.0, 1.0] for number in range(1, 7)],
+            "pin_one": [-1.27, -2.54],
+        }
+
+    current = "electronic_connector_usb_c_surface_mount_12_pin_generic_usb_c_12_pin_generic"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["dimensions_mm"] = {"length": 8.9, "width": 7.3, "height": 3.2}
+        part["package_drawing"] = {
+            "overall": [8.9, 7.6], "body": [8.9, 7.3],
+            "pins": [[str(index + 1), "top", -2.75 + index * 0.5, 3.75, 0.25, 0.7] for index in range(12)],
+            "boxes": [[-3.8, -1.0, 0.8, 5.2], [3.8, -1.0, 0.8, 5.2]],
+            "pin_one": [-2.75, 3.75],
+        }
+        part["kicad"] = {"symbol": "Connector:USB_C_Receptacle_USB2.0_16P", "machine_solder": "", "hand_solder": ""}
+
+    current = "electronic_connector_micro_usb_surface_mount_9_pin_rocketscream_micro_usb"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "RocketScream Electronics"
+        part["part_number_manufacturer"] = "MICRO-USB"
+        part["dimensions_mm"] = {"length": 9.15, "width": 6.30, "height": 3.0}
+        part["datasheet_url"] = "https://github.com/rocketscream/RocketScreamKicadLibrary/blob/master/RocketScreamKicadLibrary.pretty/MICRO-USB.kicad_mod"
+        part["connector_dimensions_mm"] = {
+            "positions": 5, "shield_pads": 4, "contact_pitch": 0.65,
+            "mounting": "surface_mount_receptacle",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "VBUS", "type": "power_in"},
+            "pin_2": {"number": "2", "name": "D-", "type": "bidirectional"},
+            "pin_3": {"number": "3", "name": "D+", "type": "bidirectional"},
+            "pin_4": {"number": "4", "name": "ID", "type": "passive"},
+            "pin_5": {"number": "5", "name": "GND", "type": "power_in"},
+            "pin_6": {"number": "6", "name": "SHIELD", "type": "passive"},
+            "pin_7": {"number": "7", "name": "SHIELD", "type": "passive"},
+            "pin_8": {"number": "8", "name": "SHIELD", "type": "passive"},
+            "pin_9": {"number": "9", "name": "SHIELD", "type": "passive"},
+        }
+        part["package_drawing"] = {
+            "overall": [9.15, 6.30], "body": [7.75, 5.0],
+            "pins": [
+                [str(index), "bottom", -1.3 + (index - 1) * 0.65, -2.1, 0.4, 1.35]
+                for index in range(1, 6)
+            ] + [
+                [str(index), "side", x, 1.1, 1.3, 1.2]
+                for index, x in ((6, -3.6), (7, 3.6))
+            ] + [
+                ["8", "top", -3.6, 1.1, 1.3, 1.7],
+                ["9", "top", 3.6, 1.1, 1.3, 1.7],
+            ],
+            "pin_one": [-1.3, -2.1],
+        }
+        part["kicad"] = {"symbol": "Connector:USB_B_Micro", "machine_solder": "", "hand_solder": ""}
+
+    current = "electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "TE Connectivity"
+        part["part_number_manufacturer"] = "1776275-2"
+        part["datasheet_url"] = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=CustomerDrawing%7F1776275%7Fpdf%7FEnglish%7FENG_CD_1776275-2.pdf%7F1776275-2"
+        part["connector_dimensions_mm"] = {"pitch": 3.5, "positions": 2, "mounting": "through_hole", "entry": "right_angle"}
+        part["package_drawing"] = {
+            "overall": [8.0, 7.0], "body": [7.0, 6.0],
+            "pins": [["1", "bottom", -1.75, -3.3, 1.0, 1.4], ["2", "bottom", 1.75, -3.3, 1.0, 1.4]],
+            "pin_one": [-1.75, -3.3],
+        }
+
+    # JST GH-compatible easyC side-entry socket.  Keep this as a populate
+    # rule, rather than a generated-file edit, so a full regeneration retains
+    # the pitch, four contacts, and the connector-specific mechanical views.
+    current = "electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["dimensions_mm"] = {"length": 5.4, "width": 4.0, "height": 3.0}
+        part["connector_dimensions_mm"] = {
+            "pitch": 1.25,
+            "positions": 4,
+            "body_length": 5.4,
+            "body_width": 4.0,
+            "height": 3.0,
+            "contact_style": "surface_mount_right_angle",
+        }
+        part["pins"] = {
+            f"pin_{index}": {"number": str(index), "name": f"pin_{index}", "type": "signal"}
+            for index in range(1, 5)
+        }
+        part["package_drawing"] = {
+            "overall": [5.4, 4.0],
+            "body": [5.4, 3.0],
+            "body_offset": [0.0, 0.45],
+            "pins": [
+                [str(index), "top", -1.875 + (index - 1) * 1.25, -1.55, 0.65, 0.6]
+                for index in range(1, 5)
+            ],
+            "pin_one": [-1.875, -1.55],
+        }
+        part["dimension_reference"] = {
+            "document": "JST GH series SM04B-GH-TF mechanical outline",
+            "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf",
+            "notes": "Four-position, 1.25 mm pitch, right-angle surface-mount GH-compatible connector; dimensions are nominal body and contact-row dimensions used for the OOMP drawing.",
+        }
+        part["datasheet_url"] = "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf"
+
     current = "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073"
     if current in extras_dict:
         part = extras_dict[current]

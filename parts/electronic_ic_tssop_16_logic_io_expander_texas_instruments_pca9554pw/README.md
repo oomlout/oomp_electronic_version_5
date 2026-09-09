@@ -55,14 +55,14 @@ IC Logic Io Expander Texas Instruments TSSOP_16 is an OOMP electronic ic definit
 | 5 | P1 | signal |
 | 6 | P2 | signal |
 | 7 | P3 | signal |
-| 8 | P4 | signal |
-| 9 | P5 | signal |
-| 10 | P6 | signal |
-| 11 | P7 | signal |
-| 12 | INT | signal |
-| 13 | SCL | signal |
-| 14 | SDA | signal |
-| 15 | VSS | gnd |
+| 8 | VSS | gnd |
+| 9 | P4 | signal |
+| 10 | P5 | signal |
+| 11 | P6 | signal |
+| 12 | P7 | signal |
+| 13 | INT | signal |
+| 14 | SCL | signal |
+| 15 | SDA | signal |
 | 16 | VDD | power |
 
 

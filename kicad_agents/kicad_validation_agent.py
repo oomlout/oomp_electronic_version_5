@@ -53,6 +53,19 @@ def validate_design(project_directory, basename, masters=None):
     manifest = json.loads((original / 'manifest.json').read_text())
     report = json.loads((output / 'conversion_report.json').read_text())
     pcb_invariants(original / 'kicad_file.kicad_pcb', output / f'{basename}.kicad_pcb', report)
+    # PCB-only KiCad projects have no schematic/netlist to compare.  The PCB
+    # invariant check above is still meaningful, so report that validation
+    # result without trying to invoke `kicad-cli sch export`.
+    has_schematic = any(relative.endswith('.kicad_sch') for relative in manifest['files'])
+    if not has_schematic:
+        result = {
+            'status': 'passed',
+            'pcb_invariants': 'unchanged except approved IDs and added annotations',
+            'netlist_comparison': 'not applicable: PCB-only source project',
+        }
+        write_report(output / 'validation', result)
+        return result
+
     snapshots = []
     with tempfile.TemporaryDirectory(prefix='oomp_kicad_validate_') as temporary:
         baseline = Path(temporary) / 'baseline'

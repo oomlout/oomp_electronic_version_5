@@ -1,0 +1,56 @@
+repository: adafruit/Adafruit-METRO-328-PCB
+commit: 1d635d70533c446c925ec77240370cfee4fba7ad
+definition_file: C:\gh\oomp_electronic_version_5\project_data\adafruit\working.yaml
+boards_added:
+- board: metro_mini_328_stemma_qt
+  path: Metro Mini 328 V2 - STEMMA QT.brd
+  format: eagle
+- board: metro_mini
+  path: Metro Mini Rev B.brd
+  format: eagle
+- board: metro_thm_ldo
+  path: Metro THM+LDO Rev B.brd
+  format: eagle
+- board: metro_thm_ldo_cp2104
+  path: Metro THM+LDO Rev C - CP2104.brd
+  format: eagle
+boards_excluded:
+- path: Metro Mini Rev A.brd
+  source_format: eagle
+  folder: ''
+  basename: Metro Mini Rev A
+  project_file_path: Metro Mini Rev A
+  project_file_extensions:
+  - .brd
+  - .sch
+  has_schematic: true
+  family_stem: Metro Mini
+  family_key: /metro_mini
+  version_key:
+  - 0
+  version_text: Rev A
+  auxiliary_words: []
+  eagle_board_storage: xml
+  eagle_schematic_storage: xml
+  exclude_reason: older version of Metro Mini Rev B.brd
+python_work:
+  decision_units: 17
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 5
+  - kind: current_version_selection
+    count: 4
+  - kind: project_metadata_generation
+    count: 4
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T10:42:30Z'

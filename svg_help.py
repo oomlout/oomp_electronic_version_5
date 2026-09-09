@@ -3,6 +3,8 @@ import math
 import os
 import re
 import sys
+import traceback
+from datetime import datetime, timezone
 import yaml
 
 import opsvg
@@ -79,6 +81,26 @@ def prepare_base_for_print(thing, pos, **kwargs):
     pass
 
 
+def _log_svg_part_error(part, error):
+    report_file = os.path.join(os.path.dirname(__file__), "report", "errors_during_run.txt")
+    os.makedirs(os.path.dirname(report_file), exist_ok=True)
+    timestamp = datetime.now(timezone.utc).isoformat()
+    part_name = str(part.get("name", part.get("id", part.get("oobb_name", "<unknown>"))))
+    part_id = str(part.get("id", ""))
+    entry = [
+        f"[{timestamp}] working_svg (part-level)",
+        f"Part: {part_name}",
+        f"Part ID: {part_id}",
+        f"Error type: {type(error).__name__}",
+        f"Error message: {error}",
+        "Traceback:",
+        traceback.format_exc(),
+        "",
+    ]
+    with open(report_file, "a", encoding="utf-8") as handle:
+        handle.write("\n".join(entry))
+
+
 def make_parts(**kwargs):
     parts          = kwargs.get("parts", [])
     filter         = kwargs.get("filter", "")
@@ -91,7 +113,11 @@ def make_parts(**kwargs):
             part_id = part.get("id", "")
             if filter in oobb_name or filter in extra or filter in part_id:
                 print(f"making {part['oobb_name']}")
-                make_svg_generic(part)
+                try:
+                    make_svg_generic(part)
+                except Exception as error:
+                    _log_svg_part_error(part, error)
+                    print(f"skipping failed part after error: {part.get('name', part.get('oobb_name', '<unknown>'))} ({type(error).__name__}: {error})")
             else:
                 print(f"skipping {part['oobb_name']}")
 
@@ -344,6 +370,18 @@ def _svg_has_deliberate_colour(svg_contents):
     return False
 
 
+def _parse_svg_viewbox_size(svg_contents):
+    """Return (width, height) from viewBox when available."""
+    view_box_match = re.search(
+        r'viewBox\s*=\s*"([0-9.eE+-]+)\s+([0-9.eE+-]+)\s+([0-9.eE+-]+)\s+([0-9.eE+-]+)"',
+        svg_contents,
+    )
+    if view_box_match is None:
+        return None, None
+
+    return float(view_box_match.group(3)), float(view_box_match.group(4))
+
+
 def svg_to_png(svg_path, png_path, dpi=150, minimum_size_px=None):
     """Render an SVG to PNG using CairoSVG.
 
@@ -361,22 +399,32 @@ def svg_to_png(svg_path, png_path, dpi=150, minimum_size_px=None):
     # background also removes the transparent padding around cropped SVGs.
     import time
 
+    with open(svg_path, "r", encoding="utf-8") as svg_file:
+        svg_contents = svg_file.read()
+
+    view_width, view_height = _parse_svg_viewbox_size(svg_contents)
+    if (
+        view_width is not None
+        and view_height is not None
+        and (view_width <= 0 or view_height <= 0)
+    ):
+        print(f"[svg_help] PNG export skipped for zero-size SVG: {svg_path}")
+        return
+
     output_width = None
     output_height = None
-    if minimum_size_px is not None:
-        with open(svg_path, "r", encoding="utf-8") as svg_file:
-            svg_contents = svg_file.read()
-        view_box_match = re.search(
-            r'viewBox="([0-9.eE+-]+) ([0-9.eE+-]+) ([0-9.eE+-]+) ([0-9.eE+-]+)', svg_contents
-        )
-        if view_box_match is not None:
-            view_width = float(view_box_match.group(3))
-            view_height = float(view_box_match.group(4))
-            natural_long_side_px = max(view_width, view_height) * dpi / 25.4
-            if natural_long_side_px < minimum_size_px:
+    if view_width is not None and view_height is not None:
+        natural_width_px = view_width * dpi / 25.4
+        natural_height_px = view_height * dpi / 25.4
+        output_width = max(1, round(natural_width_px))
+        output_height = max(1, round(natural_height_px))
+
+        if minimum_size_px is not None:
+            natural_long_side_px = max(natural_width_px, natural_height_px)
+            if natural_long_side_px > 0 and natural_long_side_px < minimum_size_px:
                 factor = minimum_size_px / natural_long_side_px
-                output_width = max(1, round(view_width * dpi / 25.4 * factor))
-                output_height = max(1, round(view_height * dpi / 25.4 * factor))
+                output_width = max(1, round(natural_width_px * factor))
+                output_height = max(1, round(natural_height_px * factor))
 
     for attempt_number in range(5):
         try:
@@ -389,6 +437,11 @@ def svg_to_png(svg_path, png_path, dpi=150, minimum_size_px=None):
                 background_color="#FFFFFF",
             )
             break
+        except ValueError as error:
+            if "SVG size is undefined" in str(error):
+                print(f"[svg_help] PNG export skipped; SVG size undefined: {svg_path}")
+                return
+            raise
         except OSError:
             if attempt_number == 4:
                 raise
@@ -397,7 +450,7 @@ def svg_to_png(svg_path, png_path, dpi=150, minimum_size_px=None):
     # text.  Flatten to grayscale so the PNG contains no accidental hues --
     # unless the drawing uses deliberate colour (resistor bands), which the
     # flatten would destroy.
-    if _svg_has_deliberate_colour(open(svg_path, "r", encoding="utf-8").read()):
+    if _svg_has_deliberate_colour(svg_contents):
         print(f"saved png (colour kept): {png_path}")
         return
     try:
@@ -420,10 +473,18 @@ def svg_to_png(svg_path, png_path, dpi=150, minimum_size_px=None):
     print(f"saved png: {png_path}")
 
 
-def generate_navigation(folder="parts", sort=["oobb_name", "width", "height"]):
+def generate_navigation(folder="parts", sort=["oobb_name", "width", "height"], skip_directories=None):
     #crawl through all directories in parts/ and load all working.yaml files
     parts = {}
+    if skip_directories is None:
+        skip_directories = ["components", "data"]
+    skip_directory_names = {
+        str(directory_name).strip().lower()
+        for directory_name in skip_directories
+        if str(directory_name).strip() != ""
+    }
     for root, dirs, files in os.walk(folder):
+        dirs[:] = [directory for directory in dirs if directory.lower() not in skip_directory_names]
         if "working.yaml" in files:
             yaml_file = os.path.join(root, "working.yaml")
             if root != folder:

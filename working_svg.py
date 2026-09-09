@@ -413,6 +413,46 @@ def _add_led_outline(thing, width=22, height=12, pos=None):
             thing["diagram_outline_height"] = body_height + pad_length
             return body_width, body_height + pad_length
 
+        if str(thing.get("taxonomy_7", "")) == "sk6812mini_e":
+            # SK6812MINI-E: the datasheet body is 3.2 x 2.8 mm and the
+            # solder contacts project as two short, broad wings on each
+            # side. The old generic PLCC4 drawer lost that stepped profile.
+            scale = min((width * 0.82) / 5.88, (height * 0.82) / 2.8)
+            body_width = 3.2 * scale
+            body_height = 2.8 * scale
+            tab_length = 1.34 * scale
+            tab_height = 0.68 * scale
+            tab_y = 0.68 * scale
+            for pin_index, number in enumerate(["1", "2"]):
+                pin_y = pos[1] - tab_y if pin_index == 0 else pos[1] + tab_y
+                _add_ic_pin(
+                    thing, number, "left",
+                    [pos[0] - body_width / 2 - tab_length / 2, pin_y, 0],
+                    [tab_length, tab_height, 0],
+                )
+            for pin_index, number in enumerate(["4", "3"]):
+                pin_y = pos[1] - tab_y if pin_index == 0 else pos[1] + tab_y
+                _add_ic_pin(
+                    thing, number, "right",
+                    [pos[0] + body_width / 2 + tab_length / 2, pin_y, 0],
+                    [tab_length, tab_height, 0],
+                )
+            opsvg.se(
+                thing, shape="rounded_rectangle", style="component.body",
+                size=[body_width, body_height, 0],
+                r=min(body_width, body_height) * 0.12,
+                pos=copy.deepcopy(pos),
+            )
+            opsvg.se(
+                thing, shape="circle", style="component.pin_one",
+                r=min(body_width, body_height) * 0.09,
+                pos=[pos[0] - body_width / 2 + body_width * 0.18,
+                     pos[1] - body_height / 2 + body_height * 0.18, 0],
+            )
+            thing["diagram_outline_width"] = body_width + 2 * tab_length
+            thing["diagram_outline_height"] = body_height
+            return body_width, body_height
+
         body_width = width - 2
         body_height = height - 2
         pads_per_side = pin_count // 2
@@ -541,13 +581,26 @@ def _add_crystal_outline(thing, width=24, height=14, pos=None):
         r=1.5,
         pos=copy.deepcopy(pos),
     )
-    pad_positions = [
-        [-width / 2 + 2, -height / 2 + 2],
-        [-width / 2 + 2, height / 2 - 2],
-        [width / 2 - 2, -height / 2 + 2],
-        [width / 2 - 2, height / 2 - 2],
-    ]
-    pad_numbers = ["1", "4", "2", "3"]
+    if _get_package_pin_count(thing) == 2:
+        # Ceramic 2-pad crystals (3215/5032) have contacts on the two short
+        # ends.  The former four-corner fallback was an oscillator drawing,
+        # not a crystal drawing, and was especially misleading for 2-pin
+        # parts without a populate override.
+        pad_positions = [
+            [-width / 2 + 2, 0],
+            [width / 2 - 2, 0],
+        ]
+        pad_numbers = ["1", "2"]
+        pad_size = [4, max(2.2, height * 0.62), 0]
+    else:
+        pad_positions = [
+            [-width / 2 + 2, -height / 2 + 2],
+            [-width / 2 + 2, height / 2 - 2],
+            [width / 2 - 2, -height / 2 + 2],
+            [width / 2 - 2, height / 2 - 2],
+        ]
+        pad_numbers = ["1", "4", "2", "3"]
+        pad_size = [4, 3, 0]
     thing["diagram_pin_positions"] = []
     for pad_index in range(len(pad_positions)):
         pad_position = pad_positions[pad_index]
@@ -559,7 +612,7 @@ def _add_crystal_outline(thing, width=24, height=14, pos=None):
             shape="rect",
             style="component.pad",
             css_class="pad",
-            size=[4, 3, 0],
+            size=pad_size,
             pos=pad_pos,
         )
         thing["diagram_pin_positions"].append(
@@ -567,7 +620,7 @@ def _add_crystal_outline(thing, width=24, height=14, pos=None):
                 "number": pad_numbers[pad_index],
                 "side": "corner",
                 "pos": copy.deepcopy(pad_pos),
-                "size": [4, 3, 0],
+                "size": copy.deepcopy(pad_size),
             }
         )
     crystal_pin_one_pos = copy.deepcopy(pos)
@@ -895,6 +948,22 @@ def _header_dimensions(thing):
     }
 
 
+def _header_row_extent_for_slot(thing, maximum_extent, minimum_extent=8.0):
+    """Readable row length for a bounded diagram without distorting 1 pin."""
+    pin_count = max(1, _get_number_from_taxonomy(thing, ["taxonomy_6"]))
+    return min(float(maximum_extent), max(float(minimum_extent), pin_count * 3.0))
+
+
+def _header_front_center_x(thing, row_extent):
+    """X offset that centres the collar plus any right-angle tail."""
+    if "right_angle" not in str(thing.get("taxonomy_5", "")):
+        return 0.0
+    pin_count = max(1, _get_number_from_taxonomy(thing, ["taxonomy_6"]))
+    dimensions = _header_dimensions(thing)
+    scale = float(row_extent) / (pin_count * dimensions["pin_pitch"])
+    return dimensions["pin_length_tail"] * scale / 2
+
+
 def _add_254_header_physical_outline(thing, width=30, height=16, pos=None):
     """Physical top view from the LCSC 2.54 mm single-row header drawings.
 
@@ -1047,7 +1116,14 @@ def _add_254_header_side_view(thing, width=24, height=32, pos=None):
         body_width = dimensions["plastic_width"] * scale
         body_height = dimensions["plastic_height"] * scale
         pin_width = max(0.22, dimensions["pin_square"] * scale)
-        body_center = [pos[0] - width * 0.02, pos[1] + height * 0.12, 0]
+        # Centre the complete bent-pin silhouette, not just the plastic.  The
+        # short profile has a 6 mm mating post, so centring the carrier left
+        # its exposed end just outside the side-view canvas.
+        body_center = [
+            pos[0] + (mating_length - 0.72) * scale / 2,
+            pos[1] + (board_length - dimensions["plastic_height"] / 2) * scale / 2,
+            0,
+        ]
         body_left = body_center[0] - body_width / 2
         body_right = body_center[0] + body_width / 2
         lead_y = body_center[1]
@@ -1086,6 +1162,20 @@ def _add_254_header_side_view(thing, width=24, height=32, pos=None):
             size=[body_width, body_height, 0],
             pos=copy.deepcopy(body_center),
         )
+        thing["header_side_geometry"] = {
+            "right_angle": True,
+            "scale": scale,
+            "body_left": body_left,
+            "body_right": body_right,
+            "body_bottom": body_center[1] - body_height / 2,
+            "body_top": body_center[1] + body_height / 2,
+            "lead_y": lead_y,
+            "mating_start_x": body_left - mating_length * scale,
+            "bend_x": bend_x,
+            "board_end_y": lead_y - board_length * scale,
+            "mating_length": mating_length,
+            "board_length": board_length,
+        }
         return profile_width_mm * scale, profile_height_mm * scale
 
     total_length = max(0.1, dimensions["pin_length_total"])
@@ -1100,7 +1190,7 @@ def _add_254_header_side_view(thing, width=24, height=32, pos=None):
         style="component.pad",
         css_class="pad",
         size=[pin_width, total_length * scale, 0],
-        pos=[pos[0], body_center_y, 0],
+        pos=[pos[0], pos[1], 0],
     )
     opsvg.se(
         thing,
@@ -1109,6 +1199,16 @@ def _add_254_header_side_view(thing, width=24, height=32, pos=None):
         size=[body_width, body_height, 0],
         pos=[pos[0], body_center_y, 0],
     )
+    thing["header_side_geometry"] = {
+        "right_angle": False,
+        "scale": scale,
+        "body_left": pos[0] - body_width / 2,
+        "body_right": pos[0] + body_width / 2,
+        "body_bottom": body_center_y - body_height / 2,
+        "body_top": body_center_y + body_height / 2,
+        "pin_bottom": pos[1] - total_length * scale / 2,
+        "pin_top": pos[1] + total_length * scale / 2,
+    }
     return body_width, total_length * scale
 
 
@@ -1125,6 +1225,47 @@ def _add_connector_outline(thing, width=30, height=16, pos=None):
         return _add_usb_a_connector_outline(thing, width=width, height=height, pos=pos)
     if connector_type == "usb_c":
         return _add_usb_c_connector_outline(thing, width=width, height=height, pos=pos)
+
+    if connector_type == "easyc" and str(thing.get("taxonomy_4", "")) == "1_25_mm_pitch":
+        dimensions = thing.get("connector_dimensions_mm", {})
+        housing_width = float(dimensions.get("housing_width", 8.25))
+        housing_depth = float(dimensions.get("housing_depth", 3.75))
+        pitch = float(dimensions.get("pitch", 1.25))
+        pin_count = max(pin_count, 4)
+        scale = min(width / (housing_width + 2.0), height / (housing_depth + 2.0))
+        body_width = housing_width * scale
+        body_height = housing_depth * scale
+        body_pos = [pos[0], pos[1] - 0.15 * scale, 0]
+        opsvg.se(
+            thing, shape="rounded_rectangle", style="component.body",
+            size=[body_width, body_height, 0],
+            r=min(body_width, body_height) * 0.08, pos=body_pos,
+        )
+        pin_span = (pin_count - 1) * pitch * scale
+        pin_width = max(0.55, 0.7 * scale)
+        pin_length = max(1.5, 1.2 * scale)
+        thing["diagram_pin_positions"] = []
+        for pin_index in range(pin_count):
+            pin_x = pos[0] - pin_span / 2 + pin_index * pitch * scale
+            pin_y = pos[1] + body_height / 2 + pin_length / 2 - 0.05 * scale
+            _add_ic_pin(
+                thing, str(pin_index + 1), "bottom",
+                [pin_x, pin_y, 0], [pin_width, pin_length, 0],
+            )
+        shoulder_width = max(0.45, 0.55 * scale)
+        shoulder_height = max(1.0, 1.5 * scale)
+        for shoulder_x in [
+            pos[0] - body_width / 2 + shoulder_width / 2,
+            pos[0] + body_width / 2 - shoulder_width / 2,
+        ]:
+            opsvg.se(
+                thing, shape="rect", style="component.body_dark",
+                size=[shoulder_width, shoulder_height, 0],
+                pos=[shoulder_x, pos[1] + body_height / 2 - shoulder_height / 2, 0],
+            )
+        thing["diagram_outline_width"] = body_width
+        thing["diagram_outline_height"] = body_height + pin_length
+        return body_width, body_height + pin_length
 
     if connector_type == "header":
         pin_count = max(pin_count, 1)
@@ -1256,7 +1397,7 @@ def _get_package_pin_count(thing):
 
     defaults = {
         "capacitor": 2,
-        "crystal": 4,
+        "crystal": 2,
         "diode": 2,
         "display": 16,
         "ferrite_bead": 2,
@@ -2667,167 +2808,127 @@ def _get_dimension_label(title, value, show_titles):
 
 
 def _add_header_dimensions(thing, show_titles=False):
-    """Dimension the vertical header in top and side views."""
-    dimensions = thing.get("header_dimensions_mm", {})
-    plastic_length = dimensions.get("plastic_length", 25.4)
-    plastic_width = dimensions.get("plastic_width", 2.48)
-    plastic_height = dimensions.get("plastic_height", 2.54)
-    pin_pitch = dimensions.get("pin_pitch", 2.54)
-    pin_square = dimensions.get("pin_square", 0.64)
-    pin_thickness = dimensions.get("pin_thickness", pin_square)
-    pin_length_total = dimensions.get("pin_length_total", 10.92)
-    pin_length_post = dimensions.get("pin_length_post", 5.84)
-    pin_length_tail = dimensions.get("pin_length_tail", 2.54)
+    """Datasheet-style top/front and side dimensions for 2.54 mm headers."""
+    dimensions = _header_dimensions(thing)
+    pin_count = max(1, _get_number_from_taxonomy(thing, ["taxonomy_6"]))
+    orientation = str(thing.get("taxonomy_5", ""))
+    is_right_angle = "right_angle" in orientation
+    plastic_length = float(thing.get("header_dimensions_mm", {}).get(
+        "plastic_length", pin_count * dimensions["pin_pitch"]
+    ))
+    pin_pitch = dimensions["pin_pitch"]
+    pin_square = dimensions["pin_square"]
+    pin_thickness = float(thing.get("header_dimensions_mm", {}).get("pin_thickness", pin_square))
 
-    opsvg.se(
-        thing,
-        shape="rect",
-        style="background",
-        size=[82, 72, 0],
-        pos=[0, 0, 0],
-    )
+    opsvg.se(thing, shape="rect", style="background", size=[82, 72, 0], pos=[0, 0, 0])
 
-    # Top view: black plastic body and all pins, oriented vertically.
+    # Front/top view.  The row is bounded for the dimension sheet, while each
+    # collar retains the same scale in both axes and short/long bent tails are
+    # taken from the same shared physical drawer used by normal diagrams.
     top_view_pos = [-15, 2, 0]
-    top_view_width, top_view_height = _add_connector_outline(
+    top_row_extent = _header_row_extent_for_slot(thing, 36.0)
+    top_scale = top_row_extent / (pin_count * pin_pitch)
+    collar_width = dimensions["plastic_width"] * top_scale
+    _add_254_header_physical_outline(
         thing,
-        width=36,
-        height=14,
+        width=top_row_extent,
+        height=collar_width,
         pos=top_view_pos,
     )
-    top_view_left = top_view_pos[0] - top_view_width / 2
-    top_view_right = top_view_pos[0] + top_view_width / 2
-    top_view_bottom = top_view_pos[1] - top_view_height / 2
-    top_view_top = top_view_pos[1] + top_view_height / 2
+    top_view_left = top_view_pos[0] - collar_width / 2
+    top_view_right = top_view_pos[0] + collar_width / 2
+    top_view_bottom = top_view_pos[1] - top_row_extent / 2
+    top_view_top = top_view_pos[1] + top_row_extent / 2
 
     _add_dimension_line(thing, [top_view_left, top_view_bottom], [-24, top_view_bottom])
     _add_dimension_line(thing, [top_view_left, top_view_top], [-24, top_view_top])
     _add_vertical_dimension(
-        thing,
-        -24,
-        top_view_bottom,
-        top_view_top,
-        _get_dimension_label("plastic length", plastic_length, show_titles),
-        text_x=-28,
+        thing, -24, top_view_bottom, top_view_top,
+        _get_dimension_label("plastic length", plastic_length, show_titles), text_x=-28,
     )
-
     _add_dimension_line(thing, [top_view_left, top_view_bottom], [top_view_left, -21])
     _add_dimension_line(thing, [top_view_right, top_view_bottom], [top_view_right, -21])
     _add_horizontal_dimension(
-        thing,
-        top_view_left,
-        top_view_right,
-        -21,
-        _get_dimension_label("plastic width", plastic_width, show_titles),
-        text_y=-25,
+        thing, top_view_left, top_view_right, -21,
+        _get_dimension_label("plastic width", dimensions["plastic_width"], show_titles), text_y=-25,
     )
 
     pin_positions = thing.get("diagram_pin_positions", [])
     if len(pin_positions) >= 2:
+        first_pin_y = pin_positions[0]["pos"][1]
+        second_pin_y = pin_positions[1]["pos"][1]
         pitch_x = top_view_right + 5
-        first_pin_position = pin_positions[0]
-        second_pin_position = pin_positions[1]
-        if isinstance(first_pin_position, dict):
-            first_pin_position = first_pin_position.get("pos", [0, 0, 0])
-        if isinstance(second_pin_position, dict):
-            second_pin_position = second_pin_position.get("pos", [0, 0, 0])
-        first_pin_y = first_pin_position[1]
-        second_pin_y = second_pin_position[1]
         _add_dimension_line(thing, [top_view_right, first_pin_y], [pitch_x, first_pin_y])
         _add_dimension_line(thing, [top_view_right, second_pin_y], [pitch_x, second_pin_y])
         _add_vertical_dimension(
-            thing,
-            pitch_x,
-            second_pin_y,
-            first_pin_y,
-            _get_dimension_label("pitch", pin_pitch, show_titles),
-            text_x=pitch_x + 3,
+            thing, pitch_x, second_pin_y, first_pin_y,
+            _get_dimension_label("pitch", pin_pitch, show_titles), text_x=pitch_x + 3,
         )
 
-    # Enlarged square pin detail.
+    # Enlarged 0.64 mm square pin detail, matching the sheet callout.
     pin_detail_pos = [27, 22, 0]
     pin_detail_height = 5 * pin_thickness / pin_square
     opsvg.se(
-        thing,
-        shape="rect",
-        style="component.pad",
-            css_class="pad",
-        size=[5, pin_detail_height, 0],
-        pos=pin_detail_pos,
+        thing, shape="rect", style="component.pad", css_class="pad",
+        size=[5, pin_detail_height, 0], pos=pin_detail_pos,
     )
-    pin_dimension_title = "pin square"
-    pin_dimension_value = pin_square
-    if pin_thickness != pin_square:
-        pin_dimension_title = "pin"
-        pin_dimension_value = f"{pin_square:g} x {pin_thickness:g}"
+    pin_dimension_title = "pin square" if pin_thickness == pin_square else "pin"
+    pin_dimension_value = pin_square if pin_thickness == pin_square else f"{pin_square:g} x {pin_thickness:g}"
     _add_horizontal_dimension(
-        thing,
-        pin_detail_pos[0] - 2.5,
-        pin_detail_pos[0] + 2.5,
-        17.5,
-        _get_dimension_label(pin_dimension_title, pin_dimension_value, show_titles),
-        text_y=14,
+        thing, pin_detail_pos[0] - 2.5, pin_detail_pos[0] + 2.5, 17.5,
+        _get_dimension_label(pin_dimension_title, pin_dimension_value, show_titles), text_y=14,
     )
 
-    # Side view: full pin, plastic body, post, and PCB tail.
-    side_view_x = 20
-    side_bottom = -24
-    side_top = 8
-    side_scale = (side_top - side_bottom) / pin_length_total
-    tail_height = pin_length_tail * side_scale
-    plastic_body_height = plastic_height * side_scale
-    plastic_bottom = side_bottom + tail_height
-    plastic_top = plastic_bottom + plastic_body_height
-    plastic_center = (plastic_bottom + plastic_top) / 2
-
-    opsvg.se(
-        thing,
-        shape="rect",
-        style="component.pad",
-            css_class="pad",
-        size=[1.8, side_top - side_bottom, 0],
-        pos=[side_view_x, (side_top + side_bottom) / 2, 0],
-    )
-    opsvg.se(
-        thing,
-        shape="rect",
-        style="component.body_dark",
-        size=[12, plastic_body_height, 0],
-        pos=[side_view_x, plastic_center, 0],
-    )
-
-    _add_vertical_dimension(
-        thing,
-        31,
-        side_bottom,
-        side_top,
-        _get_dimension_label("pin total", pin_length_total, show_titles),
-        text_x=35,
-    )
-    if pin_length_post > 0:
-        _add_vertical_dimension(
-            thing,
-            11,
-            plastic_top,
-            side_top,
-            _get_dimension_label("post", pin_length_post, show_titles),
-            text_x=8,
+    # Side view.  Straight and right-angle parts deliberately use different
+    # dimension schemes: a bent pin must never inherit the old vertical-pin
+    # total/post/tail graphic.
+    side_pos = [20, -7, 0]
+    _add_254_header_side_view(thing, width=28, height=32, pos=side_pos)
+    geometry = thing.get("header_side_geometry", {})
+    if is_right_angle and geometry.get("right_angle"):
+        mating_start = geometry["mating_start_x"]
+        body_left = geometry["body_left"]
+        horizontal_y = geometry["body_top"] + 5
+        _add_dimension_line(thing, [mating_start, geometry["lead_y"]], [mating_start, horizontal_y])
+        _add_dimension_line(thing, [body_left, geometry["lead_y"]], [body_left, horizontal_y])
+        _add_horizontal_dimension(
+            thing, mating_start, body_left, horizontal_y,
+            _get_dimension_label("post", geometry["mating_length"], show_titles), text_y=horizontal_y + 3,
         )
-    _add_vertical_dimension(
-        thing,
-        11,
-        side_bottom,
-        plastic_bottom,
-        _get_dimension_label("tail", pin_length_tail, show_titles),
-        text_x=8,
-    )
-    _add_text(
-        thing,
-        _get_dimension_label("plastic height", plastic_height, show_titles),
-        "label.dimension",
-        [side_view_x, -30, 0],
-        size=2.3,
-    )
+        tail_x = geometry["bend_x"] + 5
+        _add_dimension_line(thing, [geometry["bend_x"], geometry["lead_y"]], [tail_x, geometry["lead_y"]])
+        _add_dimension_line(thing, [geometry["bend_x"], geometry["board_end_y"]], [tail_x, geometry["board_end_y"]])
+        _add_vertical_dimension(
+            thing, tail_x, geometry["board_end_y"], geometry["lead_y"],
+            _get_dimension_label("tail", geometry["board_length"], show_titles), text_x=tail_x + 3,
+        )
+        _add_text(
+            thing,
+            _get_dimension_label("plastic", dimensions["plastic_height"], show_titles),
+            "label.dimension", [side_pos[0], -30, 0], size=2.3,
+        )
+    else:
+        pin_bottom = geometry["pin_bottom"]
+        pin_top = geometry["pin_top"]
+        body_bottom = geometry["body_bottom"]
+        body_top = geometry["body_top"]
+        _add_vertical_dimension(
+            thing, 31, pin_bottom, pin_top,
+            _get_dimension_label("pin total", dimensions["pin_length_total"], show_titles), text_x=35,
+        )
+        _add_vertical_dimension(
+            thing, 11, body_top, pin_top,
+            _get_dimension_label("post", dimensions["pin_length_post"], show_titles), text_x=8,
+        )
+        _add_vertical_dimension(
+            thing, 11, pin_bottom, body_bottom,
+            _get_dimension_label("tail", dimensions["pin_length_tail"], show_titles), text_x=8,
+        )
+        _add_text(
+            thing,
+            _get_dimension_label("plastic height", dimensions["plastic_height"], show_titles),
+            "label.dimension", [side_pos[0], -30, 0], size=2.3,
+        )
 
 
 def _add_component_dimensions(thing, body_width, body_height, show_titles=False):
@@ -3199,6 +3300,26 @@ def _add_connector_side_view(thing, width, height, pos=None):
         pos = [0, 0, 0]
     connector_type = str(thing.get("taxonomy_3", ""))
     dimensions = thing.get("connector_dimensions_mm", {})
+
+    if connector_type == "easyc" and str(thing.get("taxonomy_4", "")) == "1_25_mm_pitch":
+        body_width = width * 0.62
+        body_height = height * 0.64
+        body_pos = [pos[0] - width * 0.08, pos[1] - height * 0.12, 0]
+        opsvg.se(
+            thing, shape="rounded_rectangle", style="component.body",
+            size=[body_width, body_height, 0],
+            r=min(body_width, body_height) * 0.08, pos=body_pos,
+        )
+        tail_width = max(0.7, width * 0.035)
+        tail_length = height * 0.42
+        for index in range(4):
+            pin_x = pos[0] - width * 0.22 + index * width * 0.147
+            opsvg.se(
+                thing, shape="rect", style="component.pad", css_class="pad",
+                size=[tail_width, tail_length, 0],
+                pos=[pin_x, pos[1] + height * 0.25, 0],
+            )
+        return body_width, body_height + tail_length
 
     if connector_type == "header":
         header_dimensions = thing.get("header_dimensions_mm", {})
@@ -4022,7 +4143,12 @@ def get_oomp_component_top(thing, **kwargs):
         # Header ``width`` follows the pin row (vertical in these diagrams),
         # so the display frame is deliberately transposed.
         _add_diagram_bounds(thing, max(32, view_size[1] + 8), max(32, view_size[0] + 8))
-        _add_254_header_physical_outline(thing, width=view_size[0], height=view_size[1])
+        _add_254_header_physical_outline(
+            thing,
+            width=view_size[0],
+            height=view_size[1],
+            pos=[_header_front_center_x(thing, view_size[0]), 0, 0],
+        )
     else:
         _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
         _add_component_outline(thing, width=view_size[0], height=view_size[1])
@@ -4056,6 +4182,9 @@ def get_oomp_component_bottom(thing, **kwargs):
     elif connector_type == "usb_a":
         _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
         _add_usb_a_bottom_view(thing, view_size[0], view_size[1])
+    elif connector_type == "easyc":
+        _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
+        _add_connector_outline(thing, view_size[0], view_size[1])
     elif connector_type == "header":
         _add_diagram_bounds(thing, max(38, view_size[0] + 8), max(32, view_size[1] + 8))
         _add_header_bottom_view(thing, view_size[0], view_size[1])
@@ -4082,14 +4211,46 @@ def get_oomp_component_outline(thing, **kwargs):
     if _is_254_mm_through_hole_header(thing):
         view_size = _get_connector_view_size(thing, "top")
         _add_diagram_bounds(thing, max(32, view_size[1] + 8), max(32, view_size[0] + 8))
-        _add_254_header_physical_outline(thing, width=view_size[0], height=view_size[1])
+        _add_254_header_physical_outline(
+            thing,
+            width=view_size[0],
+            height=view_size[1],
+            pos=[_header_front_center_x(thing, view_size[0]), 0, 0],
+        )
         return
     _add_diagram_bounds(thing, 34, 20)
     _add_component_outline(thing, width=30, height=16)
 
 
+def _add_254_header_identity_base(thing, line_count=1):
+    """Header plus a clear label area for ID/hash/word diagrams."""
+    row_extent = _header_row_extent_for_slot(thing, 24.0)
+    pin_count = max(1, _get_number_from_taxonomy(thing, ["taxonomy_6"]))
+    dimensions = _header_dimensions(thing)
+    scale = row_extent / (pin_count * dimensions["pin_pitch"])
+    cross_extent = dimensions["plastic_width"] * scale
+    if "right_angle" in str(thing.get("taxonomy_5", "")):
+        cross_extent += dimensions["pin_length_tail"] * scale
+    label_depth = 7.0 + max(0, line_count - 1) * 3.4
+    canvas_width = max(38.0, cross_extent + 8.0)
+    canvas_height = max(28.0, row_extent + label_depth + 6.0)
+    body_y = label_depth / 2
+    body_x = _header_front_center_x(thing, row_extent)
+    _add_diagram_bounds(thing, canvas_width, canvas_height)
+    _add_254_header_physical_outline(
+        thing, width=row_extent, height=cross_extent, pos=[body_x, body_y, 0]
+    )
+    return body_y - row_extent / 2 - 3.6
+
+
 def get_oomp_component_part_id(thing, **kwargs):
     _use_style_oomp(thing, **kwargs)
+    if _is_254_mm_through_hole_header(thing):
+        label_y = _add_254_header_identity_base(thing)
+        part_id = str(thing.get("part_id", "J1"))
+        part_id_size = 6.0 if len(part_id) <= 3 else max(2.4, 18.0 / len(part_id))
+        _add_text(thing, part_id, "label.part_id", [0, label_y, 0], size=part_id_size, color="#000000")
+        return
     _add_diagram_bounds(thing, 34, 20)
     _add_component_outline(thing, width=30, height=16)
 
@@ -4109,6 +4270,11 @@ def get_oomp_component_part_id(thing, **kwargs):
 
 def get_oomp_component_md5_6_alpha(thing, **kwargs):
     _use_style_oomp(thing, **kwargs)
+    if _is_254_mm_through_hole_header(thing):
+        label_y = _add_254_header_identity_base(thing)
+        code = thing.get("md5_6_alpha_upper", str(thing.get("md5_6_alpha", "")).upper())
+        _add_text(thing, code, "label.code", [0, label_y, 0], color="#000000")
+        return
     _add_diagram_bounds(thing, 34, 20)
     _add_component_outline(thing, width=30, height=16)
     _add_text(
@@ -4125,6 +4291,14 @@ def get_oomp_component_md5_6_alpha(thing, **kwargs):
 
 def get_oomp_component_bip_39_3_word(thing, **kwargs):
     _use_style_oomp(thing, **kwargs)
+    if _is_254_mm_through_hole_header(thing):
+        label_y = _add_254_header_identity_base(thing, line_count=3)
+        for index, word in enumerate(_get_bip_39_words(thing)):
+            _add_text(
+                thing, word, "label.word", [0, label_y - index * 3.4, 0],
+                color="#000000",
+            )
+        return
     _add_diagram_bounds(thing, 38, 24)
     _add_component_outline(thing, width=34, height=20)
 
@@ -4146,14 +4320,17 @@ def get_oomp_component_square(thing, **kwargs):
     _add_square_name(thing)
     component_width = 22
     component_height = 10
+    if _is_254_mm_through_hole_header(thing):
+        component_width = _header_row_extent_for_slot(thing, 22.0)
     if thing.get("taxonomy_2", "") == "display" and thing.get("taxonomy_3", "") == "tft":
         component_width = 16
         component_height = 20
+    component_x = _header_front_center_x(thing, component_width) if _is_254_mm_through_hole_header(thing) else 0
     _add_component_outline(
         thing,
         width=component_width,
         height=component_height,
-        pos=[0, 3, 0],
+        pos=[component_x, 3, 0],
     )
     _add_square_codes(thing)
 
@@ -4168,7 +4345,7 @@ def get_oomp_component_square_pins(thing, **kwargs):
         component_width = 22
         component_height = 13
     if thing.get("taxonomy_2", "") == "connector" and thing.get("taxonomy_3", "") == "header":
-        component_width = 22
+        component_width = _header_row_extent_for_slot(thing, 22.0)
         component_height = 10
     if thing.get("taxonomy_2", "") == "display" and thing.get("taxonomy_3", "") == "tft":
         component_width = 16
@@ -4184,14 +4361,15 @@ def get_oomp_component_square_pins(thing, **kwargs):
         if package in package_sizes:
             component_width = package_sizes[package][0]
             component_height = package_sizes[package][1]
-    if thing.get("package_drawing"):
+    if thing.get("package_drawing") and not _is_254_mm_through_hole_header(thing):
         component_width = 24
         component_height = 18
+    component_x = _header_front_center_x(thing, component_width) if _is_254_mm_through_hole_header(thing) else 0
     _add_component_outline(
         thing,
         width=component_width,
         height=component_height,
-        pos=[0, 3, 0],
+        pos=[component_x, 3, 0],
     )
 
     _add_square_pin_labels(thing)

@@ -48,14 +48,14 @@ IC Amplifier Thermocouple Amplifier Texas Instruments MSOP_8 is an OOMP electron
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-| 1 | 1 | signal |
-| 2 | 2 | signal |
-| 3 | 3 | signal |
-| 4 | 4 | signal |
-| 5 | 5 | signal |
-| 6 | 6 | signal |
-| 7 | 7 | signal |
-| 8 | 8 | signal |
+| 1 | NC | no_connect |
+| 2 | -IN | signal |
+| 3 | +IN | signal |
+| 4 | V- | signal |
+| 5 | V+ | signal |
+| 6 | OUT | signal |
+| 7 | NC | no_connect |
+| 8 | REF | signal |
 
 
 

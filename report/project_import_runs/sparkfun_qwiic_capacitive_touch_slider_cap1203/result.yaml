@@ -1,0 +1,50 @@
+repository: sparkfun/Qwiic_Capacitive_Touch_Slider_CAP1203
+commit: a78a8703b50e08f269f0508067d410e7a0a8674c
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: cap1203
+  path: Hardware/CAP1203.brd
+  format: eagle
+boards_excluded:
+- path: Hardware/Production/CAP1203-Panel.brd
+  source_format: eagle
+  folder: Hardware/Production
+  basename: CAP1203-Panel
+  project_file_path: Hardware/Production/CAP1203-Panel
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: CAP1203-Panel
+  family_key: hardware_production/cap1203_panel
+  version_key:
+  - 0
+  version_text: ''
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: cap1203_panel
+  board_name: CAP1203 Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:08:31Z'

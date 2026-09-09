@@ -1,0 +1,50 @@
+repository: sparkfun/ATmega128RFA1_Dev
+commit: 62d342467896650edb38c47651dddaa0aa11f94e
+definition_file: C:\gh\oomp_electronic_version_5\project_data\sparkfun\working.yaml
+boards_added:
+- board: atmega128_rfa1_dev_board
+  path: hardware/ATmega128RFA1-DevBoard.brd
+  format: eagle
+boards_excluded:
+- path: Production Files/ATmega128RFA1-DevBoard-Panel-v23.brd
+  source_format: eagle
+  folder: Production Files
+  basename: ATmega128RFA1-DevBoard-Panel-v23
+  project_file_path: Production Files/ATmega128RFA1-DevBoard-Panel-v23
+  project_file_extensions:
+  - .brd
+  has_schematic: false
+  family_stem: ATmega128RFA1-DevBoard-Panel
+  family_key: production_files/atmega128_rfa1_dev_board_panel
+  version_key:
+  - 23
+  version_text: v23
+  auxiliary_words:
+  - panel
+  - production
+  eagle_board_storage: xml
+  eagle_schematic_storage: missing
+  board: atmega128_rfa1_dev_board_panel
+  board_name: ATmega128 RFA1 Dev Board Panel
+  exclude_reason: 'automatic auxiliary source: panel, production'
+python_work:
+  decision_units: 8
+  details:
+  - kind: queue_selection
+    count: 1
+  - kind: temporary_git_clone
+    count: 1
+  - kind: board_file_inventory
+    count: 2
+  - kind: current_version_selection
+    count: 1
+  - kind: project_metadata_generation
+    count: 1
+  - kind: yaml_append_and_validation
+    count: 1
+  - kind: queue_status_update
+    count: 1
+llm_work:
+  decision_units: 0
+  details: []
+completed_at: '2026-09-09T11:11:32Z'
