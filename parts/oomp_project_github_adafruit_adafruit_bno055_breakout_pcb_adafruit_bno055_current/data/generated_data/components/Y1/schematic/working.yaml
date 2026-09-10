@@ -1,0 +1,116 @@
+available: true
+units:
+- reference: Y1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 0b9c3520-ce09-47ea-b55c-7979807e3442
+  library_id: kicad_file-eagle-import:CRYSTAL8.0X3.8
+  unit: 1
+  body_style: 1
+  position:
+    x: 60.96
+    y: 96.52
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Y1
+    Value: 32.768kHz
+    Footprint: kicad_file:CRYSTAL_8X3.8
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 60.96
+      y: 99.06
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U$2
+      pin_number: '26'
+      pin_name: XOUT32
+  - number: P$4
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 60.96
+      y: 93.98
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U$2
+      pin_number: '27'
+      pin_name: XIN32
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.905
+      max:
+        x: 2.667
+        y: 1.905
+      width: 5.334
+      height: 3.81
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 59.055
+        y: 93.853
+      max:
+        x: 62.865
+        y: 99.187
+      width: 3.81
+      height: 5.334
+      center:
+        x: 60.96
+        y: 96.52
+  warnings: []
+connected_components:
+- reference: C1
+  pin_number: '2'
+  pin_name: '2'
+- reference: C2
+  pin_number: '2'
+  pin_name: '2'
+- reference: U$2
+  pin_number: '26'
+  pin_name: XOUT32
+- reference: U$2
+  pin_number: '27'
+  pin_name: XIN32

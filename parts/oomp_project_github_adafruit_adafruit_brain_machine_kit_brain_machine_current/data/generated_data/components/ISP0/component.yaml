@@ -1,0 +1,963 @@
+reference: ISP0
+schematic:
+  available: true
+  units:
+  - reference: ISP0
+    source_file: data/kicad_file.kicad_sch
+    uuid: e6b4f59c-7965-4cda-b2ec-dd7ba9391d8d
+    library_id: kicad_file-eagle-import:AVRIS-6
+    unit: 1
+    body_style: 1
+    position:
+      x: 132.08
+      y: 142.24
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: ISP0
+      Value: AVRISP-6
+      Footprint: kicad_file:203
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: MISO
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: -12.7
+        y: 2.54
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 119.38
+        y: 139.7
+      net: MISO
+      net_aliases:
+      - MISO
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: IC1
+        pin_number: '2'
+        pin_name: (MISO/DO/AIN1/OC0B/OC1A/PCINT1)PB1
+      - reference: R2
+        pin_number: '2'
+        pin_name: '1'
+    - number: '2'
+      name: SCK
+      electrical_type: output
+      graphic_style: line
+      local_position:
+        x: -12.7
+        y: 0.0
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 119.38
+        y: 142.24
+      net: SCK
+      net_aliases:
+      - SCK
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: IC1
+        pin_number: '3'
+        pin_name: (SCK/USCK/SCL/ADC1/T0/INT0/PCINT2)PB2
+      - reference: R3
+        pin_number: '2'
+        pin_name: '1'
+    - number: '3'
+      name: RST
+      electrical_type: output
+      graphic_style: line
+      local_position:
+        x: -12.7
+        y: -2.54
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 119.38
+        y: 144.78
+      net: RST
+      net_aliases:
+      - RST
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: IC1
+        pin_number: '6'
+        pin_name: (RESET/DW/ADC0/PCINT5)PB5
+      - reference: ON/OFF0
+        pin_number: '2'
+        pin_name: S
+      - reference: ON/OFF0
+        pin_number: '3'
+        pin_name: S1
+    - number: '4'
+      name: GND
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 15.24
+        y: -2.54
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 147.32
+        y: 144.78
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '-0'
+        pin_number: '1'
+        pin_name: '1'
+      - reference: GND1
+        pin_number: '1'
+        pin_name: GND
+      - reference: GND2
+        pin_number: '1'
+        pin_name: GND
+      - reference: GND3
+        pin_number: '1'
+        pin_name: GND
+      - reference: GND7
+        pin_number: '1'
+        pin_name: GND
+      - reference: IC1
+        pin_number: '7'
+        pin_name: GND
+      - reference: L-0
+        pin_number: '1'
+        pin_name: '1'
+      - reference: ON/OFF0
+        pin_number: '1'
+        pin_name: P
+      - reference: ON/OFF0
+        pin_number: '4'
+        pin_name: P1
+      - reference: R-0
+        pin_number: '1'
+        pin_name: '1'
+    - number: '5'
+      name: MOSI
+      electrical_type: output
+      graphic_style: line
+      local_position:
+        x: 15.24
+        y: 0.0
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 147.32
+        y: 142.24
+      net: MOSI
+      net_aliases:
+      - MOSI
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: IC1
+        pin_number: '1'
+        pin_name: (MOSI/DI/SDA/AIN0/OC0A/OC1A/AREF/PCINT0)PB0
+      - reference: R1
+        pin_number: '2'
+        pin_name: '1'
+    - number: '6'
+      name: VCC
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 15.24
+        y: 2.54
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 147.32
+        y: 139.7
+      net: VCC
+      net_aliases:
+      - VCC
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '+0'
+        pin_number: '1'
+        pin_name: '1'
+      - reference: IC1
+        pin_number: '8'
+        pin_name: VCC
+      - reference: P+1
+        pin_number: '1'
+        pin_name: VCC
+      - reference: P+2
+        pin_number: '1'
+        pin_name: VCC
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -7.747
+          y: -5.207
+        max:
+          x: 10.287
+          y: 5.207
+        width: 18.034
+        height: 10.414
+        center:
+          x: 1.27
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 124.333
+          y: 137.033
+        max:
+          x: 142.367
+          y: 147.447
+        width: 18.034
+        height: 10.414
+        center:
+          x: 133.35
+          y: 142.24
+    warnings: []
+  connected_components:
+  - reference: '+0'
+    pin_number: '1'
+    pin_name: '1'
+  - reference: '-0'
+    pin_number: '1'
+    pin_name: '1'
+  - reference: GND1
+    pin_number: '1'
+    pin_name: GND
+  - reference: GND2
+    pin_number: '1'
+    pin_name: GND
+  - reference: GND3
+    pin_number: '1'
+    pin_name: GND
+  - reference: GND7
+    pin_number: '1'
+    pin_name: GND
+  - reference: IC1
+    pin_number: '1'
+    pin_name: (MOSI/DI/SDA/AIN0/OC0A/OC1A/AREF/PCINT0)PB0
+  - reference: IC1
+    pin_number: '2'
+    pin_name: (MISO/DO/AIN1/OC0B/OC1A/PCINT1)PB1
+  - reference: IC1
+    pin_number: '3'
+    pin_name: (SCK/USCK/SCL/ADC1/T0/INT0/PCINT2)PB2
+  - reference: IC1
+    pin_number: '6'
+    pin_name: (RESET/DW/ADC0/PCINT5)PB5
+  - reference: IC1
+    pin_number: '7'
+    pin_name: GND
+  - reference: IC1
+    pin_number: '8'
+    pin_name: VCC
+  - reference: L-0
+    pin_number: '1'
+    pin_name: '1'
+  - reference: ON/OFF0
+    pin_number: '1'
+    pin_name: P
+  - reference: ON/OFF0
+    pin_number: '2'
+    pin_name: S
+  - reference: ON/OFF0
+    pin_number: '3'
+    pin_name: S1
+  - reference: ON/OFF0
+    pin_number: '4'
+    pin_name: P1
+  - reference: P+1
+    pin_number: '1'
+    pin_name: VCC
+  - reference: P+2
+    pin_number: '1'
+    pin_name: VCC
+  - reference: R1
+    pin_number: '2'
+    pin_name: '1'
+  - reference: R2
+    pin_number: '2'
+    pin_name: '1'
+  - reference: R3
+    pin_number: '2'
+    pin_name: '1'
+  - reference: R-0
+    pin_number: '1'
+    pin_name: '1'
+pcb:
+  reference: ISP0
+  value: AVRISP-6
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 74df94fe-821b-42dd-b027-9efae281180f
+  library_id: brain-import-fps:AVRISP
+  layer: F.Cu
+  side: front
+  position:
+    x: 30.734
+    y: -3.048
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: ISP0
+    Value: AVRISP-6
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -1.27
+      y: -2.54
+      rotation: -90.0
+    position:
+      x: 33.274
+      y: -4.318
+    placed_rotation: 0.0
+    size:
+      x: 1.6256
+      y: 1.6256
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: MISO
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.0828
+          y: -3.3528
+        max:
+          x: -0.4572
+          y: -1.7272
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: -1.27
+          y: -2.54
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 32.4612
+          y: -5.1308
+        max:
+          x: 34.0868
+          y: -3.5052
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 33.274
+          y: -4.318
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC1
+      pad_number: '6'
+    - reference: R2
+      pad_number: '1'
+  - number: '2'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 1.27
+      y: -2.54
+      rotation: -90.0
+    position:
+      x: 33.274
+      y: -1.778
+    placed_rotation: 0.0
+    size:
+      x: 1.6256
+      y: 1.6256
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: VCC
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.4572
+          y: -3.3528
+        max:
+          x: 2.0828
+          y: -1.7272
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 1.27
+          y: -2.54
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 32.4612
+          y: -2.5908
+        max:
+          x: 34.0868
+          y: -0.9652
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 33.274
+          y: -1.778
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: '+0'
+      pad_number: '1'
+    - reference: IC1
+      pad_number: '8'
+  - number: '3'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -1.27
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 30.734
+      y: -4.318
+    placed_rotation: 0.0
+    size:
+      x: 1.6256
+      y: 1.6256
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: SCK
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.0828
+          y: -0.8128
+        max:
+          x: -0.4572
+          y: 0.8128
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: -1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 29.9212
+          y: -5.1308
+        max:
+          x: 31.5468
+          y: -3.5052
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 30.734
+          y: -4.318
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC1
+      pad_number: '7'
+    - reference: R3
+      pad_number: '1'
+  - number: '4'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 1.27
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 30.734
+      y: -1.778
+    placed_rotation: 0.0
+    size:
+      x: 1.6256
+      y: 1.6256
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: MOSI
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.4572
+          y: -0.8128
+        max:
+          x: 2.0828
+          y: 0.8128
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 29.9212
+          y: -2.5908
+        max:
+          x: 31.5468
+          y: -0.9652
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 30.734
+          y: -1.778
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC1
+      pad_number: '5'
+    - reference: R1
+      pad_number: '1'
+  - number: '5'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -1.27
+      y: 2.54
+      rotation: -90.0
+    position:
+      x: 28.194
+      y: -4.318
+    placed_rotation: 0.0
+    size:
+      x: 1.6256
+      y: 1.6256
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: RST
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.0828
+          y: 1.7272
+        max:
+          x: -0.4572
+          y: 3.3528
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: -1.27
+          y: 2.54
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 27.3812
+          y: -5.1308
+        max:
+          x: 29.0068
+          y: -3.5052
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 28.194
+          y: -4.318
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC1
+      pad_number: '1'
+    - reference: ON/OFF0
+      pad_number: '1'
+    - reference: ON/OFF0
+      pad_number: '2'
+  - number: '6'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 1.27
+      y: 2.54
+      rotation: -90.0
+    position:
+      x: 28.194
+      y: -1.778
+    placed_rotation: 0.0
+    size:
+      x: 1.6256
+      y: 1.6256
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: GND
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.4572
+          y: 1.7272
+        max:
+          x: 2.0828
+          y: 3.3528
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 1.27
+          y: 2.54
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 27.3812
+          y: -2.5908
+        max:
+          x: 29.0068
+          y: -0.9652
+        width: 1.6256
+        height: 1.6256
+        center:
+          x: 28.194
+          y: -1.778
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '-'
+    - reference: C2
+      pad_number: '-'
+    - reference: HYPHEN0
+      pad_number: '1'
+    - reference: IC1
+      pad_number: '4'
+    - reference: L-0
+      pad_number: '1'
+    - reference: ON/OFF0
+      pad_number: '3'
+    - reference: ON/OFF0
+      pad_number: '4'
+    - reference: R-0
+      pad_number: '1'
+    - reference: X1
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.0828
+        y: -3.3528
+      max:
+        x: 2.0828
+        y: 3.3528
+      width: 4.1656
+      height: 6.7056
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 27.3812
+        y: -5.1308
+      max:
+        x: 34.0868
+        y: -0.9652
+      width: 6.7056
+      height: 4.1656
+      center:
+        x: 30.734
+        y: -3.048
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.6035
+        y: -3.8735
+      max:
+        x: 2.6035
+        y: 3.8735
+      width: 5.207
+      height: 7.747
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 26.8605
+        y: -5.6515
+      max:
+        x: 34.6075
+        y: -0.4445
+      width: 7.747
+      height: 5.207
+      center:
+        x: 30.734
+        y: -3.048
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.6035
+        y: -3.8735
+      max:
+        x: 2.6035
+        y: 3.8735
+      width: 5.207
+      height: 7.747
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 26.8605
+        y: -5.6515
+      max:
+        x: 34.6075
+        y: -0.4445
+      width: 7.747
+      height: 5.207
+      center:
+        x: 30.734
+        y: -3.048
+  connected_components:
+  - '+0'
+  - C1
+  - C2
+  - HYPHEN0
+  - IC1
+  - L-0
+  - ON/OFF0
+  - R1
+  - R2
+  - R3
+  - R-0
+  - X1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - MISO
+    pcb_nets:
+    - MISO
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - SCK
+    pcb_nets:
+    - VCC
+    status: disagree
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - RST
+    pcb_nets:
+    - SCK
+    status: disagree
+  - pin_or_pad_number: '4'
+    schematic_nets:
+    - GND
+    pcb_nets:
+    - MOSI
+    status: disagree
+  - pin_or_pad_number: '5'
+    schematic_nets:
+    - MOSI
+    pcb_nets:
+    - RST
+    status: disagree
+  - pin_or_pad_number: '6'
+    schematic_nets:
+    - VCC
+    pcb_nets:
+    - GND
+    status: disagree
+  agree_count: 1
+  disagree_count: 5
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: AVRISP-6
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/ISP0

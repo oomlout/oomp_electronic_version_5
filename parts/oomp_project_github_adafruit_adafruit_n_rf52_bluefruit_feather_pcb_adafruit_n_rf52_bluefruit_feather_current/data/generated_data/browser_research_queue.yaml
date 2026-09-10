@@ -1,0 +1,427 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 17
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - L2
+  value: 10uH
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:0805-NO
+  query: 10uH Adafruit nRF52 Bluefruit Feather-import-fps:0805-NO
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=10uH+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A0805-NO
+    datasheet_search: https://www.google.com/search?q=10uH+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A0805-NO+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_inductor_0805_10_micro_henry
+  candidate_oomp_ids:
+  - electronic_inductor_0603_10_micro_henry
+  - electronic_inductor_0806_2_2_micro_henry
+  - electronic_inductor_0603_33_nano_henry
+  - electronic_inductor_0603_30_ohm
+  - electronic_inductor_0603_470_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - C12
+  value: 1nF
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:0603-NO
+  query: 1nF Adafruit nRF52 Bluefruit Feather-import-fps:0603-NO
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1nF+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A0603-NO
+    datasheet_search: https://www.google.com/search?q=1nF+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A0603-NO+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0603_1_nano_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_18_pico_farad
+  - electronic_capacitor_0603_10_pico_farad
+  - electronic_capacitor_0603_47_pico_farad
+  - electronic_capacitor_0603_22_pico_farad
+  - electronic_capacitor_0603_27_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - R6
+  value: 2M
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:0603-NO
+  query: 2M Adafruit nRF52 Bluefruit Feather-import-fps:0603-NO
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=2M+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A0603-NO
+    datasheet_search: https://www.google.com/search?q=2M+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A0603-NO+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0603_2000000_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_quarter_watt_through_hole_2200000_ohm
+  - electronic_resistor_quarter_watt_through_hole_1800000_ohm
+  - electronic_resistor_quarter_watt_through_hole_1500000_ohm
+  - electronic_resistor_quarter_watt_through_hole_2700000_ohm
+  - electronic_resistor_quarter_watt_through_hole_3300000_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - C13
+  - C9
+  value: 300pF
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:_0603MP
+  query: 300pF Adafruit nRF52 Bluefruit Feather-import-fps:_0603MP
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=300pF+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A_0603MP
+    datasheet_search: https://www.google.com/search?q=300pF+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A_0603MP+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0603_300_pico_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_10_pico_farad
+  - electronic_capacitor_0603_2200_pico_farad
+  - electronic_capacitor_0603_33_pico_farad
+  - electronic_capacitor_0603_470_pico_farad
+  - electronic_capacitor_0603_18_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - X4
+  value: '32.768'
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:XTAL3215
+  query: 32.768 Adafruit nRF52 Bluefruit Feather-import-fps:XTAL3215
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=32.768+Adafruit+nRF52+Bluefruit+Feather-import-fps%3AXTAL3215
+    datasheet_search: https://www.google.com/search?q=32.768+Adafruit+nRF52+Bluefruit+Feather-import-fps%3AXTAL3215+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_6
+  status: needs_browser_research
+  priority: high
+  references:
+  - X1
+  value: 4u20317
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:2X05_1.27MM_BOX_POSTS
+  query: 4u20317 Adafruit nRF52 Bluefruit Feather-import-fps:2X05_1.27MM_BOX_POSTS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=4u20317+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A2X05_1.27MM_BOX_POSTS
+    datasheet_search: https://www.google.com/search?q=4u20317+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A2X05_1.27MM_BOX_POSTS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_7
+  status: needs_browser_research
+  priority: high
+  references:
+  - X3
+  value: 4u20329
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:4UCONN_20329_V2
+  query: 4u20329 Adafruit nRF52 Bluefruit Feather-import-fps:4UCONN_20329_V2
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=4u20329+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A4UCONN_20329_V2
+    datasheet_search: https://www.google.com/search?q=4u20329+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A4UCONN_20329_V2+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_8
+  status: needs_browser_research
+  priority: high
+  references:
+  - R4
+  value: 806K
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:0603-NO
+  query: 806K Adafruit nRF52 Bluefruit Feather-import-fps:0603-NO
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=806K+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A0603-NO
+    datasheet_search: https://www.google.com/search?q=806K+Adafruit+nRF52+Bluefruit+Feather-import-fps%3A0603-NO+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0603_806000_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_quarter_watt_through_hole_820000_ohm
+  - electronic_resistor_quarter_watt_through_hole_750000_ohm
+  - electronic_resistor_quarter_watt_through_hole_680000_ohm
+  - electronic_resistor_quarter_watt_through_hole_1000000_ohm
+  - electronic_resistor_quarter_watt_through_hole_560000_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_9
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: AP2112(3.3V)
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:SOT23-5
+  query: AP2112(3.3V) Adafruit nRF52 Bluefruit Feather-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=AP2112%283.3V%29+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=AP2112%283.3V%29+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_10
+  status: needs_browser_research
+  priority: high
+  references:
+  - U4
+  value: CP2104
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:QFN24_4MM_SMSC
+  query: CP2104 Adafruit nRF52 Bluefruit Feather-import-fps:QFN24_4MM_SMSC
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=CP2104+Adafruit+nRF52+Bluefruit+Feather-import-fps%3AQFN24_4MM_SMSC
+    datasheet_search: https://www.google.com/search?q=CP2104+Adafruit+nRF52+Bluefruit+Feather-import-fps%3AQFN24_4MM_SMSC+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_11
+  status: needs_browser_research
+  priority: high
+  references:
+  - Q3
+  value: DMG3415U-7
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:SOT23-R
+  query: DMG3415U-7 Adafruit nRF52 Bluefruit Feather-import-fps:SOT23-R
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=DMG3415U-7+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ASOT23-R
+    datasheet_search: https://www.google.com/search?q=DMG3415U-7+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ASOT23-R+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a
+  - electronic_transistor_sot_363_6_mosfet_n_channel_dual
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+  - electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_12
+  status: needs_browser_research
+  priority: high
+  references:
+  - MS1
+  value: FEATHERWING_NODIM
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:FEATHERWING_NODIM
+  query: FEATHERWING_NODIM Adafruit nRF52 Bluefruit Feather-import-fps:FEATHERWING_NODIM
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FEATHERWING_NODIM+Adafruit+nRF52+Bluefruit+Feather-import-fps%3AFEATHERWING_NODIM
+    datasheet_search: https://www.google.com/search?q=FEATHERWING_NODIM+Adafruit+nRF52+Bluefruit+Feather-import-fps%3AFEATHERWING_NODIM+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_13
+  status: needs_browser_research
+  priority: high
+  references:
+  - X2
+  value: JSTPH
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:JSTPH2
+  query: JSTPH Adafruit nRF52 Bluefruit Feather-import-fps:JSTPH2
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=JSTPH+Adafruit+nRF52+Bluefruit+Feather-import-fps%3AJSTPH2
+    datasheet_search: https://www.google.com/search?q=JSTPH+Adafruit+nRF52+Bluefruit+Feather-import-fps%3AJSTPH2+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_14
+  status: needs_browser_research
+  priority: high
+  references:
+  - SW1
+  - SW2
+  value: KMR2
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:BTN_KMR2_4.6X2.8
+  query: KMR2 Adafruit nRF52 Bluefruit Feather-import-fps:BTN_KMR2_4.6X2.8
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=KMR2+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ABTN_KMR2_4.6X2.8
+    datasheet_search: https://www.google.com/search?q=KMR2+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ABTN_KMR2_4.6X2.8+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_15
+  status: needs_browser_research
+  priority: high
+  references:
+  - D5
+  value: MBR120
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:SOD-123
+  query: MBR120 Adafruit nRF52 Bluefruit Feather-import-fps:SOD-123
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MBR120+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ASOD-123
+    datasheet_search: https://www.google.com/search?q=MBR120+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ASOD-123+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_diode_schottky_sod_123
+  candidate_oomp_ids:
+  - electronic_diode_schottky_sod_123_ss14
+  - electronic_diode_schottky_sod_323_bat54w
+  - electronic_diode_schottky_sod_523_1ss400
+  - electronic_diode_switching_sod_123_onsemi_1n4148w
+  - electronic_diode_schottky_sod_323_infineon_bat20j
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_16
+  status: needs_browser_research
+  priority: high
+  references:
+  - U3
+  value: MCP73831T-2ACI/OT
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:SOT23-5
+  query: MCP73831T-2ACI/OT Adafruit nRF52 Bluefruit Feather-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MCP73831T-2ACI%2FOT+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=MCP73831T-2ACI%2FOT+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_17
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: MDBT42
+  footprint: Adafruit nRF52 Bluefruit Feather-import-fps:BLE_MODULE_RAYTAC_MDBT42
+  query: MDBT42 Adafruit nRF52 Bluefruit Feather-import-fps:BLE_MODULE_RAYTAC_MDBT42
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MDBT42+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ABLE_MODULE_RAYTAC_MDBT42
+    datasheet_search: https://www.google.com/search?q=MDBT42+Adafruit+nRF52+Bluefruit+Feather-import-fps%3ABLE_MODULE_RAYTAC_MDBT42+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

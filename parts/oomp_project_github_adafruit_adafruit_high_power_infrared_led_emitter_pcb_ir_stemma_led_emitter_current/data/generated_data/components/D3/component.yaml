@@ -1,0 +1,459 @@
+reference: D3
+schematic:
+  available: true
+  units:
+  - reference: D3
+    source_file: data/kicad_file.kicad_sch
+    uuid: 13661c8c-d407-44ba-97a0-f3f4532edeaa
+    library_id: kicad_file-eagle-import:LED1206
+    unit: 1
+    body_style: 1
+    position:
+      x: 111.76
+      y: 116.84
+      rotation: 270.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: D3
+      Value: 1206 IR 940nm
+      Footprint: kicad_file:CHIPLED_1206
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: A
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 111.76
+        y: 111.76
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R4
+        pin_number: '1'
+        pin_name: '1'
+    - number: C
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 111.76
+        y: 119.38
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: D4
+        pin_number: C
+        pin_name: C
+      - reference: LED1
+        pin_number: K
+        pin_name: C
+      - reference: Q1
+        pin_number: '3'
+        pin_name: D
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -1.397
+        max:
+          x: 1.397
+          y: 3.302
+        width: 4.064
+        height: 4.699
+        center:
+          x: -0.635
+          y: 0.9525
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 110.363
+          y: 114.173
+        max:
+          x: 115.062
+          y: 118.237
+        width: 4.699
+        height: 4.064
+        center:
+          x: 112.7125
+          y: 116.205
+    warnings: []
+  connected_components:
+  - reference: D4
+    pin_number: C
+    pin_name: C
+  - reference: LED1
+    pin_number: K
+    pin_name: C
+  - reference: Q1
+    pin_number: '3'
+    pin_name: D
+  - reference: R4
+    pin_number: '1'
+    pin_name: '1'
+pcb:
+  reference: D3
+  value: 1206 IR 940nm
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 24e27fdb-5cd4-44ef-8caf-d76465e2793d
+  library_id: IR STEMMA LED Emitter-import-fps:CHIPLED_1206
+  layer: F.Cu
+  side: front
+  position:
+    x: 20.32
+    y: -8.89
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: D3
+    Value: 1206 IR 940nm
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: 1.496
+      rotation: 180.0
+    position:
+      x: 20.32
+      y: -10.386
+    placed_rotation: 0.0
+    size:
+      x: 1.5
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$5
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.75
+          y: 0.746
+        max:
+          x: 0.75
+          y: 2.246
+        width: 1.5
+        height: 1.5
+        center:
+          x: 0.0
+          y: 1.496
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 19.57
+          y: -11.136
+        max:
+          x: 21.07
+          y: -9.636
+        width: 1.5
+        height: 1.5
+        center:
+          x: 20.32
+          y: -10.386
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R4
+      pad_number: '1'
+  - number: C
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: -1.496
+      rotation: 180.0
+    position:
+      x: 20.32
+      y: -7.394
+    placed_rotation: 0.0
+    size:
+      x: 1.5
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$4
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.75
+          y: -2.246
+        max:
+          x: 0.75
+          y: -0.746
+        width: 1.5
+        height: 1.5
+        center:
+          x: 0.0
+          y: -1.496
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 19.57
+          y: -8.144
+        max:
+          x: 21.07
+          y: -6.644
+        width: 1.5
+        height: 1.5
+        center:
+          x: 20.32
+          y: -7.394
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: D4
+      pad_number: C
+    - reference: LED1
+      pad_number: K
+    - reference: Q1
+      pad_number: '3'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.75
+        y: -2.246
+      max:
+        x: 0.75
+        y: 2.246
+      width: 1.5
+      height: 4.492
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 19.57
+        y: -11.136
+      max:
+        x: 21.07
+        y: -6.644
+      width: 1.5
+      height: 4.492
+      center:
+        x: 20.32
+        y: -8.89
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.8508
+        y: -1.6508
+      max:
+        x: 0.8508
+        y: 1.65
+      width: 1.7016
+      height: 3.3008
+      center:
+        x: 0.0
+        y: -0.0004
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 19.4692
+        y: -10.54
+      max:
+        x: 21.1708
+        y: -7.2392
+      width: 1.7016
+      height: 3.3008
+      center:
+        x: 20.32
+        y: -8.8896
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.1016
+        y: -2.6001
+      max:
+        x: 1.1016
+        y: 2.6001
+      width: 2.2032
+      height: 5.2002
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 19.2184
+        y: -11.4901
+      max:
+        x: 21.4216
+        y: -6.2899
+      width: 2.2032
+      height: 5.2002
+      center:
+        x: 20.32
+        y: -8.89
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.1016
+        y: -2.6001
+      max:
+        x: 1.1016
+        y: 2.6001
+      width: 2.2032
+      height: 5.2002
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 19.2184
+        y: -11.4901
+      max:
+        x: 21.4216
+        y: -6.2899
+      width: 2.2032
+      height: 5.2002
+      center:
+        x: 20.32
+        y: -8.89
+  connected_components:
+  - D4
+  - LED1
+  - Q1
+  - R4
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: A
+    schematic_nets: []
+    pcb_nets:
+    - N$5
+    status: incomplete
+  - pin_or_pad_number: C
+    schematic_nets: []
+    pcb_nets:
+    - N$4
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_led_1206
+  confidence: 1.0
+  proposed_oomp_id: electronic_led_1206
+  inferred:
+    kind: led
+    package_size: '1206'
+    value: 1206 IR 940nm
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: led
+category_source: oomp_populate
+category_name: LED
+generated_directory: components/D3

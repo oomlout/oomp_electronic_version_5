@@ -1,0 +1,470 @@
+reference: J1
+schematic:
+  available: true
+  units:
+  - reference: J1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 74b7c042-bb67-46e1-bef7-f09d3c4dea2c
+    library_id: kicad_file-eagle-import:TERMBLOCK_1X2
+    unit: 1
+    body_style: 1
+    position:
+      x: 210.82
+      y: 58.42
+      rotation: 0.0
+      mirror: x
+      units: mm
+    properties:
+      Reference: J1
+      Value: 3.5mm
+      Footprint: kicad_file:TERMBLOCK_1X2-3.5MM
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 2.54
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 205.74
+        y: 60.96
+      net: VIN-
+      net_aliases:
+      - VIN-
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U1
+        pin_number: '2'
+        pin_name: VIN-
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 205.74
+        y: 58.42
+      net: VIN+
+      net_aliases:
+      - VIN+
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R5
+        pin_number: '2'
+        pin_name: '2'
+      - reference: U1
+        pin_number: '1'
+        pin_name: VIN+
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -2.667
+        max:
+          x: 5.207
+          y: 5.207
+        width: 7.874
+        height: 7.874
+        center:
+          x: 1.27
+          y: 1.27
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 208.153
+          y: 55.753
+        max:
+          x: 216.027
+          y: 63.627
+        width: 7.874
+        height: 7.874
+        center:
+          x: 212.09
+          y: 59.69
+    warnings: []
+  connected_components:
+  - reference: JP2
+    pin_number: '1'
+    pin_name: '1'
+  - reference: JP2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R5
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R5
+    pin_number: '2'
+    pin_name: '2'
+  - reference: U1
+    pin_number: '1'
+    pin_name: VIN+
+  - reference: U1
+    pin_number: '2'
+    pin_name: VIN-
+pcb:
+  reference: J1
+  value: 3.5mm
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 3e1ef86b-1d78-4444-b052-cacf8e930475
+  library_id: INA219 FeatherWing-import-fps:TERMBLOCK_1X2-3.5MM
+  layer: F.Cu
+  side: front
+  position:
+    x: 46.99
+    y: -11.43
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: J1
+    Value: 3.5mm
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 1.8
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 46.99
+      y: -13.23
+    placed_rotation: 0.0
+    size:
+      x: 2.1844
+      y: 2.1844
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: VIN-
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.7078
+          y: -1.0922
+        max:
+          x: 2.8922
+          y: 1.0922
+        width: 2.1844
+        height: 2.1844
+        center:
+          x: 1.8
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 45.8978
+          y: -14.3222
+        max:
+          x: 48.0822
+          y: -12.1378
+        width: 2.1844
+        height: 2.1844
+        center:
+          x: 46.99
+          y: -13.23
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP2
+      pad_number: '1'
+    - reference: R5
+      pad_number: '1'
+    - reference: U1
+      pad_number: '2'
+  - number: '2'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -1.7
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 46.99
+      y: -9.73
+    placed_rotation: 0.0
+    size:
+      x: 2.1844
+      y: 2.1844
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: VIN+
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.7922
+          y: -1.0922
+        max:
+          x: -0.6078
+          y: 1.0922
+        width: 2.1844
+        height: 2.1844
+        center:
+          x: -1.7
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 45.8978
+          y: -10.8222
+        max:
+          x: 48.0822
+          y: -8.6378
+        width: 2.1844
+        height: 2.1844
+        center:
+          x: 46.99
+          y: -9.73
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP2
+      pad_number: '2'
+    - reference: R5
+      pad_number: '2'
+    - reference: U1
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.7922
+        y: -1.0922
+      max:
+        x: 2.8922
+        y: 1.0922
+      width: 5.6844
+      height: 2.1844
+      center:
+        x: 0.05
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 45.8978
+        y: -14.3222
+      max:
+        x: 48.0822
+        y: -8.6378
+      width: 2.1844
+      height: 5.6844
+      center:
+        x: 46.99
+        y: -11.48
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -3.5016
+        y: -3.5016
+      max:
+        x: 3.7016
+        y: 3.7016
+      width: 7.2032
+      height: 7.2032
+      center:
+        x: 0.1
+        y: 0.1
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 43.4884
+        y: -15.1316
+      max:
+        x: 50.6916
+        y: -7.9284
+      width: 7.2032
+      height: 7.2032
+      center:
+        x: 47.09
+        y: -11.53
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -3.5016
+        y: -3.5016
+      max:
+        x: 3.7016
+        y: 3.7016
+      width: 7.2032
+      height: 7.2032
+      center:
+        x: 0.1
+        y: 0.1
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 43.4884
+        y: -15.1316
+      max:
+        x: 50.6916
+        y: -7.9284
+      width: 7.2032
+      height: 7.2032
+      center:
+        x: 47.09
+        y: -11.53
+  connected_components:
+  - JP2
+  - R5
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - VIN-
+    pcb_nets:
+    - VIN-
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - VIN+
+    pcb_nets:
+    - VIN+
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: 3.5mm
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: connector
+category_source: unmatched_kicad_hint
+category_name: Connector
+generated_directory: components/J1

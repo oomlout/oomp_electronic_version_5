@@ -1,0 +1,353 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 14
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - C4
+  value: 10uF
+  footprint: microtouch-import-fps:A_3216-18R
+  query: 10uF microtouch-import-fps:A_3216-18R
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=10uF+microtouch-import-fps%3AA_3216-18R
+    datasheet_search: https://www.google.com/search?q=10uF+microtouch-import-fps%3AA_3216-18R+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_3216_10_micro_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt
+  - electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  - electronic_capacitor_0402_4_7_micro_farad
+  - electronic_capacitor_0603_4_7_micro_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - X2
+  value: 16Mhz
+  footprint: microtouch-import-fps:NX5032
+  query: 16Mhz microtouch-import-fps:NX5032
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=16Mhz+microtouch-import-fps%3ANX5032
+    datasheet_search: https://www.google.com/search?q=16Mhz+microtouch-import-fps%3ANX5032+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - C1
+  - C2
+  value: 18pf
+  footprint: microtouch-import-fps:C0805K
+  query: 18pf microtouch-import-fps:C0805K
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=18pf+microtouch-import-fps%3AC0805K
+    datasheet_search: https://www.google.com/search?q=18pf+microtouch-import-fps%3AC0805K+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_18_pico_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0805_10_micro_farad
+  - electronic_capacitor_0805_22_micro_farad
+  - electronic_capacitor_0805_47_micro_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  - electronic_capacitor_0402_18_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - C3
+  - C5
+  - C6
+  - C8
+  value: 1uf
+  footprint: microtouch-import-fps:C0805K
+  query: 1uf microtouch-import-fps:C0805K
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1uf+microtouch-import-fps%3AC0805K
+    datasheet_search: https://www.google.com/search?q=1uf+microtouch-import-fps%3AC0805K+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_1_micro_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_10_nano_farad
+  - electronic_capacitor_0603_100_nano_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  - electronic_capacitor_0402_2_2_micro_farad
+  - electronic_capacitor_0603_2_2_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - JP1
+  value: BATT
+  footprint: microtouch-import-fps:JSTPH2
+  query: BATT microtouch-import-fps:JSTPH2
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=BATT+microtouch-import-fps%3AJSTPH2
+    datasheet_search: https://www.google.com/search?q=BATT+microtouch-import-fps%3AJSTPH2+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_6
+  status: needs_browser_research
+  priority: high
+  references:
+  - RESET/BOOT0
+  value: EVQQ2
+  footprint: microtouch-import-fps:EVQ-Q2
+  query: EVQQ2 microtouch-import-fps:EVQ-Q2
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=EVQQ2+microtouch-import-fps%3AEVQ-Q2
+    datasheet_search: https://www.google.com/search?q=EVQQ2+microtouch-import-fps%3AEVQ-Q2+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_resistor_1210_0_1_ohm
+  - electronic_resistor_0201_0_ohm
+  - electronic_resistor_0402_0_ohm
+  - electronic_resistor_1206_0_ohm
+  - electronic_resistor_0201_10_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_7
+  status: needs_browser_research
+  priority: high
+  references:
+  - ISP0
+  value: ISP
+  footprint: microtouch-import-fps:MA03-2
+  query: ISP microtouch-import-fps:MA03-2
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=ISP+microtouch-import-fps%3AMA03-2
+    datasheet_search: https://www.google.com/search?q=ISP+microtouch-import-fps%3AMA03-2+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_8
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: KSSMINISWITCH
+  footprint: microtouch-import-fps:KSSMINI
+  query: KSSMINISWITCH microtouch-import-fps:KSSMINI
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=KSSMINISWITCH+microtouch-import-fps%3AKSSMINI
+    datasheet_search: https://www.google.com/search?q=KSSMINISWITCH+microtouch-import-fps%3AKSSMINI+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_9
+  status: needs_browser_research
+  priority: high
+  references:
+  - LDO0
+  value: LP298XS
+  footprint: microtouch-import-fps:SOT23-5L
+  query: LP298XS microtouch-import-fps:SOT23-5L
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=LP298XS+microtouch-import-fps%3ASOT23-5L
+    datasheet_search: https://www.google.com/search?q=LP298XS+microtouch-import-fps%3ASOT23-5L+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_10
+  status: needs_browser_research
+  priority: high
+  references:
+  - LIPO0
+  value: MCP73811/2
+  footprint: microtouch-import-fps:SOT23-5L
+  query: MCP73811/2 microtouch-import-fps:SOT23-5L
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MCP73811%2F2+microtouch-import-fps%3ASOT23-5L
+    datasheet_search: https://www.google.com/search?q=MCP73811%2F2+microtouch-import-fps%3ASOT23-5L+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_11
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: MICROSD
+  footprint: microtouch-import-fps:MICRO-SD-SOCKET-PP
+  query: MICROSD microtouch-import-fps:MICRO-SD-SOCKET-PP
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MICROSD+microtouch-import-fps%3AMICRO-SD-SOCKET-PP
+    datasheet_search: https://www.google.com/search?q=MICROSD+microtouch-import-fps%3AMICRO-SD-SOCKET-PP+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_12
+  status: needs_browser_research
+  priority: high
+  references:
+  - ACCELEROMERTER0
+  value: MMA7455
+  footprint: microtouch-import-fps:LGA
+  query: MMA7455 microtouch-import-fps:LGA
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MMA7455+microtouch-import-fps%3ALGA
+    datasheet_search: https://www.google.com/search?q=MMA7455+microtouch-import-fps%3ALGA+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_13
+  status: needs_browser_research
+  priority: high
+  references:
+  - Q1
+  value: PN2222
+  footprint: microtouch-import-fps:SOT23-BEC
+  query: PN2222 microtouch-import-fps:SOT23-BEC
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=PN2222+microtouch-import-fps%3ASOT23-BEC
+    datasheet_search: https://www.google.com/search?q=PN2222+microtouch-import-fps%3ASOT23-BEC+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_transistor_sot_23_bipolar_npn
+  - electronic_transistor_sot_23_bipolar_pnp
+  - electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_14
+  status: needs_browser_research
+  priority: high
+  references:
+  - X1
+  value: USBSMD
+  footprint: microtouch-import-fps:USB-MINIB
+  query: USBSMD microtouch-import-fps:USB-MINIB
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=USBSMD+microtouch-import-fps%3AUSB-MINIB
+    datasheet_search: https://www.google.com/search?q=USBSMD+microtouch-import-fps%3AUSB-MINIB+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

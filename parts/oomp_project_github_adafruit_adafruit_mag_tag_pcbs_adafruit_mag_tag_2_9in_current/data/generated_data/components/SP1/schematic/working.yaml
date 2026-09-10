@@ -1,0 +1,104 @@
+available: true
+units:
+- reference: SP1
+  source_file: data/kicad_file.kicad_sch
+  uuid: d284e5f6-3770-4b3a-9ef0-a053f899d11e
+  library_id: kicad_file-eagle-import:SPEAKER_7.5MM
+  unit: 1
+  body_style: 1
+  position:
+    x: 259.08
+    y: 248.92
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: SP1
+    Value: 7.5mm SPK
+    Footprint: kicad_file:BUZZER_SMT_7.5MM
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: +
+    name: +
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 259.08
+      y: 243.84
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC2
+      pin_number: '6'
+      pin_name: VO_P
+  - number: '-'
+    name: '-'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 259.08
+      y: 254.0
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC2
+      pin_number: '1'
+      pin_name: VO_N
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -5.207
+        y: -0.762
+      max:
+        x: 5.207
+        y: 5.207
+      width: 10.414
+      height: 5.969
+      center:
+        x: 0.0
+        y: 2.2225
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 258.318
+        y: 243.713
+      max:
+        x: 264.287
+        y: 254.127
+      width: 5.969
+      height: 10.414
+      center:
+        x: 261.3025
+        y: 248.92
+  warnings: []
+connected_components:
+- reference: IC2
+  pin_number: '1'
+  pin_name: VO_N
+- reference: IC2
+  pin_number: '6'
+  pin_name: VO_P

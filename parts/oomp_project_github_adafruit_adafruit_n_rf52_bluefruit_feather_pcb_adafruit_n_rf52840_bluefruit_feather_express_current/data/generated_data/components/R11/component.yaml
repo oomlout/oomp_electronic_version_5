@@ -1,0 +1,452 @@
+reference: R11
+schematic:
+  available: true
+  units:
+  - reference: R11
+    source_file: data/kicad_file.kicad_sch
+    uuid: 1b058f55-3616-4dbd-994e-98d267c9e9df
+    library_id: kicad_file-eagle-import:RESISTOR_0603MP
+    unit: 1
+    body_style: 1
+    position:
+      x: 340.36
+      y: 185.42
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R11
+      Value: 22 ohm
+      Footprint: kicad_file:_0603MP
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 335.28
+        y: 185.42
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: D+0
+        pin_number: TP
+        pin_name: TP
+      - reference: X1
+        pin_number: D+
+        pin_name: D+
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 345.44
+        y: 185.42
+      net: USBD+
+      net_aliases:
+      - USBD+
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: MDBT1
+        pin_number: '35'
+        pin_name: D+
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -1.397
+        max:
+          x: 2.667
+          y: 1.397
+        width: 5.334
+        height: 2.794
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 337.693
+          y: 184.023
+        max:
+          x: 343.027
+          y: 186.817
+        width: 5.334
+        height: 2.794
+        center:
+          x: 340.36
+          y: 185.42
+    warnings: []
+  connected_components:
+  - reference: D+0
+    pin_number: TP
+    pin_name: TP
+  - reference: MDBT1
+    pin_number: '35'
+    pin_name: D+
+  - reference: X1
+    pin_number: D+
+    pin_name: D+
+pcb:
+  reference: R11
+  value: 22 ohm
+  source_file: data/kicad_file.kicad_pcb
+  uuid: bdb284d9-a7d5-43f9-9919-9bb8cf2d2e10
+  library_id: Adafruit nRF52840 Bluefruit Feather Express Rev E-import-fps:_0603MP
+  layer: F.Cu
+  side: front
+  position:
+    x: 36.5125
+    y: -5.2705
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: R11
+    Value: 22 ohm
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.762
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 35.7505
+      y: -5.2705
+    placed_rotation: 0.0
+    size:
+      x: 0.8
+      y: 0.8
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: D+
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.162
+          y: -0.4
+        max:
+          x: -0.362
+          y: 0.4
+        width: 0.8
+        height: 0.8
+        center:
+          x: -0.762
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 35.3505
+          y: -5.6705
+        max:
+          x: 36.1505
+          y: -4.8705
+        width: 0.8
+        height: 0.8
+        center:
+          x: 35.7505
+          y: -5.2705
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: D+0
+      pad_number: TP
+    - reference: X1
+      pad_number: D+
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.762
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 37.2745
+      y: -5.2705
+    placed_rotation: 0.0
+    size:
+      x: 0.8
+      y: 0.8
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: USBD+
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.362
+          y: -0.4
+        max:
+          x: 1.162
+          y: 0.4
+        width: 0.8
+        height: 0.8
+        center:
+          x: 0.762
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 36.8745
+          y: -5.6705
+        max:
+          x: 37.6745
+          y: -4.8705
+        width: 0.8
+        height: 0.8
+        center:
+          x: 37.2745
+          y: -5.2705
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: MDBT1
+      pad_number: '35'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.162
+        y: -0.4
+      max:
+        x: 1.162
+        y: 0.4
+      width: 2.324
+      height: 0.8
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 35.3505
+        y: -5.6705
+      max:
+        x: 37.6745
+        y: -4.8705
+      width: 2.324
+      height: 0.8
+      center:
+        x: 36.5125
+        y: -5.2705
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.8
+        y: -0.4
+      max:
+        x: 0.8
+        y: 0.4
+      width: 1.6
+      height: 0.8
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 35.7125
+        y: -5.6705
+      max:
+        x: 37.3125
+        y: -4.8705
+      width: 1.6
+      height: 0.8
+      center:
+        x: 36.5125
+        y: -5.2705
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.1016
+        y: -0.3556
+      max:
+        x: 0.1016
+        y: 0.3556
+      width: 0.2032
+      height: 0.7112
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 36.4109
+        y: -5.6261
+      max:
+        x: 36.6141
+        y: -4.9149
+      width: 0.2032
+      height: 0.7112
+      center:
+        x: 36.5125
+        y: -5.2705
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.162
+        y: -0.4
+      max:
+        x: 1.162
+        y: 0.4
+      width: 2.324
+      height: 0.8
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 35.3505
+        y: -5.6705
+      max:
+        x: 37.6745
+        y: -4.8705
+      width: 2.324
+      height: 0.8
+      center:
+        x: 36.5125
+        y: -5.2705
+  connected_components:
+  - D+0
+  - MDBT1
+  - X1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - D+
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - USBD+
+    pcb_nets:
+    - USBD+
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0603_22_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0603_22_ohm
+  inferred:
+    kind: resistor
+    package_size: '0603'
+    value: 22 ohm
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R11

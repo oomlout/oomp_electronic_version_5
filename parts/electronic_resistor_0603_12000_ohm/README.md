@@ -51,6 +51,14 @@ Resistor 12000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-FT232H-Breakout-PCB Adafruit FT232 H current](https://github.com/adafruit/Adafruit-FT232H-Breakout-PCB/blob/master/Adafruit%20FT232H.brd) | 5 | R1, R2, R7, R10, R11 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_ft232_h_breakout_pcb_adafruit_ft232_h_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_ft232_h_breakout_pcb_adafruit_ft232_h_current) |
+
+
+
 ## Files
 
 

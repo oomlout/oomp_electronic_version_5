@@ -1,0 +1,673 @@
+available: true
+units:
+- reference: DISP1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 4c461f68-1255-42f9-a065-4d128c7c9ed4
+  library_id: kicad_file-eagle-import:DISP_LCD_GENERIC_SPI_1.14IN_13P
+  unit: 1
+  body_style: 1
+  position:
+    x: 73.66
+    y: 53.34
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: DISP1
+    Value: DISP_LCD_GENERIC_SPI_1.14IN_13P
+    Footprint: kicad_file:TFT_1.14IN_240X135_WRAPAROUND
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '3'
+    name: DATA
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: 2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 50.8
+    net: MOSI
+    net_aliases:
+    - MOSI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: RASPI1
+      pin_number: '19'
+      pin_name: SPI_MOSI
+  - number: '4'
+    name: CLOCK
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: 0.0
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 53.34
+    net: SCLK
+    net_aliases:
+    - SCLK
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: RASPI1
+      pin_number: '23'
+      pin_name: SPI_SCLK
+  - number: '5'
+    name: RS/DC
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: 5.08
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 48.26
+    net: TFT_DC
+    net_aliases:
+    - TFT_DC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: RASPI1
+      pin_number: '22'
+      pin_name: GPIO25
+  - number: '6'
+    name: RESET
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: 7.62
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 45.72
+    net: TFT_RST
+    net_aliases:
+    - TFT_RST
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC5
+      pin_number: '2'
+      pin_name: /RESET
+    - reference: R2
+      pin_number: '1'
+      pin_name: '1'
+  - number: '7'
+    name: CS
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: -2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 55.88
+    net: TFT_CS
+    net_aliases:
+    - TFT_CS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: RASPI1
+      pin_number: '24'
+      pin_name: '#SPI_CE0'
+  - number: '8'
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: -12.7
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 66.04
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$7'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$10'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$11'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$18'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$23'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$25'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$27'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$29'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C10
+      pin_number: '1'
+      pin_name: '1'
+    - reference: CONN1
+      pin_number: '1'
+      pin_name: GND
+    - reference: DISP1
+      pin_number: '13'
+      pin_name: GND
+    - reference: IC5
+      pin_number: '1'
+      pin_name: GND
+    - reference: Q1
+      pin_number: '2'
+      pin_name: E
+    - reference: RASPI1
+      pin_number: '6'
+      pin_name: GND
+    - reference: RASPI1
+      pin_number: '9'
+      pin_name: GND
+    - reference: RASPI1
+      pin_number: '14'
+      pin_name: GND
+    - reference: RASPI1
+      pin_number: '20'
+      pin_name: GND
+    - reference: SW1
+      pin_number: B
+      pin_name: S
+    - reference: SW1
+      pin_number: B'
+      pin_name: S1
+    - reference: SW2
+      pin_number: B
+      pin_name: S
+    - reference: SW2
+      pin_number: B'
+      pin_name: S1
+  - number: '10'
+    name: VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: -10.16
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 63.5
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$2'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$12'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$13'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$14'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$16'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$21'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$22'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$24'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$26'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$30'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$31'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C10
+      pin_number: '2'
+      pin_name: '2'
+    - reference: CONN1
+      pin_number: '2'
+      pin_name: V+
+    - reference: IC5
+      pin_number: '3'
+      pin_name: VCC
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R8
+      pin_number: '2'
+      pin_name: '2'
+    - reference: RASPI1
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: RASPI1
+      pin_number: '17'
+      pin_name: 3.3V
+  - number: '11'
+    name: LEDK
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: 10.16
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 43.18
+    net: LED_K
+    net_aliases:
+    - LED_K
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '2'
+      pin_name: '2'
+  - number: '12'
+    name: LEDA
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: 12.7
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 40.64
+    net: 5.0V
+    net_aliases:
+    - 5.0V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$8'
+      pin_number: '1'
+      pin_name: 5.0V
+    - reference: '#U$9'
+      pin_number: '1'
+      pin_name: 5.0V
+    - reference: RASPI1
+      pin_number: '2'
+      pin_name: 5.0V
+    - reference: RASPI1
+      pin_number: '4'
+      pin_name: 5.0V
+  - number: '13'
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -25.4
+      y: -12.7
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 48.26
+      y: 66.04
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$7'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$10'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$11'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$18'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$23'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$25'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$27'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$29'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C10
+      pin_number: '1'
+      pin_name: '1'
+    - reference: CONN1
+      pin_number: '1'
+      pin_name: GND
+    - reference: DISP1
+      pin_number: '8'
+      pin_name: GND
+    - reference: IC5
+      pin_number: '1'
+      pin_name: GND
+    - reference: Q1
+      pin_number: '2'
+      pin_name: E
+    - reference: RASPI1
+      pin_number: '6'
+      pin_name: GND
+    - reference: RASPI1
+      pin_number: '9'
+      pin_name: GND
+    - reference: RASPI1
+      pin_number: '14'
+      pin_name: GND
+    - reference: RASPI1
+      pin_number: '20'
+      pin_name: GND
+    - reference: SW1
+      pin_number: B
+      pin_name: S
+    - reference: SW1
+      pin_number: B'
+      pin_name: S1
+    - reference: SW2
+      pin_number: B
+      pin_name: S
+    - reference: SW2
+      pin_number: B'
+      pin_name: S1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -20.447
+        y: -15.367
+      max:
+        x: 15.367
+        y: 15.367
+      width: 35.814
+      height: 30.734
+      center:
+        x: -2.54
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 53.213
+        y: 37.973
+      max:
+        x: 89.027
+        y: 68.707
+      width: 35.814
+      height: 30.734
+      center:
+        x: 71.12
+        y: 53.34
+  warnings: []
+connected_components:
+- reference: '#U$2'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$5'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$7'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$8'
+  pin_number: '1'
+  pin_name: 5.0V
+- reference: '#U$9'
+  pin_number: '1'
+  pin_name: 5.0V
+- reference: '#U$10'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$11'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$12'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$13'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$14'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$16'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$17'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$18'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$21'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$22'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$23'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$24'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$25'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$26'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$27'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$29'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$30'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$31'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: C1
+  pin_number: '2'
+  pin_name: '2'
+- reference: C2
+  pin_number: '1'
+  pin_name: '1'
+- reference: C2
+  pin_number: '2'
+  pin_name: '2'
+- reference: C10
+  pin_number: '1'
+  pin_name: '1'
+- reference: C10
+  pin_number: '2'
+  pin_name: '2'
+- reference: CONN1
+  pin_number: '1'
+  pin_name: GND
+- reference: CONN1
+  pin_number: '2'
+  pin_name: V+
+- reference: DISP1
+  pin_number: '13'
+  pin_name: GND
+- reference: DISP1
+  pin_number: '8'
+  pin_name: GND
+- reference: IC5
+  pin_number: '1'
+  pin_name: GND
+- reference: IC5
+  pin_number: '2'
+  pin_name: /RESET
+- reference: IC5
+  pin_number: '3'
+  pin_name: VCC
+- reference: Q1
+  pin_number: '2'
+  pin_name: E
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: R2
+  pin_number: '1'
+  pin_name: '1'
+- reference: R2
+  pin_number: '2'
+  pin_name: '2'
+- reference: R3
+  pin_number: '2'
+  pin_name: '2'
+- reference: R5
+  pin_number: '2'
+  pin_name: '2'
+- reference: R8
+  pin_number: '2'
+  pin_name: '2'
+- reference: RASPI1
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: RASPI1
+  pin_number: '14'
+  pin_name: GND
+- reference: RASPI1
+  pin_number: '17'
+  pin_name: 3.3V
+- reference: RASPI1
+  pin_number: '19'
+  pin_name: SPI_MOSI
+- reference: RASPI1
+  pin_number: '2'
+  pin_name: 5.0V
+- reference: RASPI1
+  pin_number: '20'
+  pin_name: GND
+- reference: RASPI1
+  pin_number: '22'
+  pin_name: GPIO25
+- reference: RASPI1
+  pin_number: '23'
+  pin_name: SPI_SCLK
+- reference: RASPI1
+  pin_number: '24'
+  pin_name: '#SPI_CE0'
+- reference: RASPI1
+  pin_number: '4'
+  pin_name: 5.0V
+- reference: RASPI1
+  pin_number: '6'
+  pin_name: GND
+- reference: RASPI1
+  pin_number: '9'
+  pin_name: GND
+- reference: SW1
+  pin_number: B
+  pin_name: S
+- reference: SW1
+  pin_number: B'
+  pin_name: S1
+- reference: SW2
+  pin_number: B
+  pin_name: S
+- reference: SW2
+  pin_number: B'
+  pin_name: S1

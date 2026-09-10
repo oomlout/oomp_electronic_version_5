@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: L0
+  source_file: data/kicad_file.kicad_sch
+  uuid: 5f0efecf-5325-4ad1-ab71-13c0184851ce
+  library_id: kicad_file-eagle-import:LEDCHIPLED_0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 243.84
+    y: 119.38
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: L0
+    Value: RED
+    Footprint: kicad_file:170
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 243.84
+      y: 124.46
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '2'
+      pin_name: '1'
+  - number: '2'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 243.84
+      y: 116.84
+    net: PE6
+    net_aliases:
+    - PE6
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '37'
+      pin_name: PE6
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 240.3348
+        y: 119.253
+      max:
+        x: 245.237
+        y: 122.7582
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: 242.7859
+        y: 121.0056
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '37'
+  pin_name: PE6
+- reference: R5
+  pin_number: '2'
+  pin_name: '1'

@@ -1,0 +1,495 @@
+reference: R12
+schematic:
+  available: true
+  units:
+  - reference: R12
+    source_file: data/kicad_file.kicad_sch
+    uuid: 6074187b-504c-4840-b8aa-dbf08636026c
+    library_id: kicad_file-eagle-import:R-US_M0805
+    unit: 1
+    body_style: 1
+    position:
+      x: 104.14
+      y: 157.48
+      rotation: 270.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R12
+      Value: 100K
+      Footprint: kicad_file:97
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 104.14
+        y: 162.56
+      net: RD
+      net_aliases:
+      - RD
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: R13
+        pin_number: '2'
+        pin_name: '1'
+      - reference: U$1
+        pin_number: '36'
+        pin_name: PF7(ADC7)
+      - reference: U$2
+        pin_number: '10'
+        pin_name: RD
+    - number: '2'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 104.14
+        y: 152.4
+      net: LIPO
+      net_aliases:
+      - LIPO
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: JP1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: LDO0
+        pin_number: '2'
+        pin_name: VIN
+      - reference: LIPO0
+        pin_number: '3'
+        pin_name: VBAT
+      - reference: U2
+        pin_number: '1'
+        pin_name: P$1
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6416
+          y: -1.1176
+        max:
+          x: 2.6416
+          y: 1.1176
+        width: 5.2832
+        height: 2.2352
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 103.0224
+          y: 154.8384
+        max:
+          x: 105.2576
+          y: 160.1216
+        width: 2.2352
+        height: 5.2832
+        center:
+          x: 104.14
+          y: 157.48
+    warnings: []
+  connected_components:
+  - reference: C8
+    pin_number: '1'
+    pin_name: '1'
+  - reference: JP1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: LDO0
+    pin_number: '2'
+    pin_name: VIN
+  - reference: LIPO0
+    pin_number: '3'
+    pin_name: VBAT
+  - reference: R13
+    pin_number: '2'
+    pin_name: '1'
+  - reference: U2
+    pin_number: '1'
+    pin_name: P$1
+  - reference: U$1
+    pin_number: '36'
+    pin_name: PF7(ADC7)
+  - reference: U$2
+    pin_number: '10'
+    pin_name: RD
+pcb:
+  reference: R12
+  value: 100K
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 414df101-dbfd-4979-ac13-fe0930714a97
+  library_id: microtouch-import-fps:M0805
+  layer: F.Cu
+  side: front
+  position:
+    x: 23.0
+    y: -28.7999
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: R12
+    Value: 100K
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.95
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 22.05
+      y: -28.7999
+    placed_rotation: 0.0
+    size:
+      x: 1.3
+      y: 1.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    net: LIPO
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.6
+          y: -0.8
+        max:
+          x: -0.3
+          y: 0.8
+        width: 1.3
+        height: 1.6
+        center:
+          x: -0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 21.4
+          y: -29.5999
+        max:
+          x: 22.7
+          y: -27.9999
+        width: 1.3
+        height: 1.6
+        center:
+          x: 22.05
+          y: -28.7999
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C8
+      pad_number: '1'
+    - reference: JP1
+      pad_number: '2'
+    - reference: LDO0
+      pad_number: '1'
+    - reference: LIPO0
+      pad_number: '3'
+    - reference: U2
+      pad_number: P$1
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.95
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 23.95
+      y: -28.7999
+    placed_rotation: 0.0
+    size:
+      x: 1.3
+      y: 1.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    net: RD
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.3
+          y: -0.8
+        max:
+          x: 1.6
+          y: 0.8
+        width: 1.3
+        height: 1.6
+        center:
+          x: 0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 23.3
+          y: -29.5999
+        max:
+          x: 24.6
+          y: -27.9999
+        width: 1.3
+        height: 1.6
+        center:
+          x: 23.95
+          y: -28.7999
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R13
+      pad_number: '1'
+    - reference: U$1
+      pad_number: '36'
+    - reference: U$2
+      pad_number: '10'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.6
+        y: -0.8
+      max:
+        x: 1.6
+        y: 0.8
+      width: 3.2
+      height: 1.6
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 21.4
+        y: -29.5999
+      max:
+        x: 24.6
+        y: -27.9999
+      width: 3.2
+      height: 1.6
+      center:
+        x: 23.0
+        y: -28.7999
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.9984
+        y: -1.0084
+      max:
+        x: 1.9984
+        y: 1.0084
+      width: 3.9968
+      height: 2.0168
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 21.0016
+        y: -29.8083
+      max:
+        x: 24.9984
+        y: -27.7915
+      width: 3.9968
+      height: 2.0168
+      center:
+        x: 23.0
+        y: -28.7999
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.0414
+        y: -0.7112
+      max:
+        x: 1.0414
+        y: 0.7112
+      width: 2.0828
+      height: 1.4224
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 21.9586
+        y: -29.5111
+      max:
+        x: 24.0414
+        y: -28.0887
+      width: 2.0828
+      height: 1.4224
+      center:
+        x: 23.0
+        y: -28.7999
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.9984
+        y: -1.0084
+      max:
+        x: 1.9984
+        y: 1.0084
+      width: 3.9968
+      height: 2.0168
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 21.0016
+        y: -29.8083
+      max:
+        x: 24.9984
+        y: -27.7915
+      width: 3.9968
+      height: 2.0168
+      center:
+        x: 23.0
+        y: -28.7999
+  connected_components:
+  - C8
+  - JP1
+  - LDO0
+  - LIPO0
+  - R13
+  - U2
+  - U$1
+  - U$2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - RD
+    pcb_nets:
+    - LIPO
+    status: disagree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - LIPO
+    pcb_nets:
+    - RD
+    status: disagree
+  agree_count: 0
+  disagree_count: 2
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0805_100000_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0805_100000_ohm
+  inferred:
+    kind: resistor
+    package_size: 0805
+    value: 100K
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R12

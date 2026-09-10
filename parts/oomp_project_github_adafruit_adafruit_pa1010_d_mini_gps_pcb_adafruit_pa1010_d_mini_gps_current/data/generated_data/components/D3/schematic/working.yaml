@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: D3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 7cf2f1a0-77b6-4f31-b40a-2fca7193559a
+  library_id: kicad_file-eagle-import:LED0603_NOOUTLINE
+  unit: 1
+  body_style: 1
+  position:
+    x: 111.76
+    y: 40.64
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D3
+    Value: RED
+    Footprint: kicad_file:CHIPLED_0603_NOOUTLINE
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 111.76
+      y: 35.56
+    net: 1PPS
+    net_aliases:
+    - 1PPS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: X1
+      pin_number: '3'
+      pin_name: PPS
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 111.76
+      y: 43.18
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: '7'
+      pin_name: '2'
+    - reference: R1
+      pin_number: '8'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.397
+      max:
+        x: 1.397
+        y: 3.302
+      width: 4.064
+      height: 4.699
+      center:
+        x: -0.635
+        y: 0.9525
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 110.363
+        y: 37.973
+      max:
+        x: 115.062
+        y: 42.037
+      width: 4.699
+      height: 4.064
+      center:
+        x: 112.7125
+        y: 40.005
+  warnings: []
+connected_components:
+- reference: JP2
+  pin_number: '2'
+  pin_name: '2'
+- reference: R1
+  pin_number: '7'
+  pin_name: '2'
+- reference: R1
+  pin_number: '8'
+  pin_name: '2'
+- reference: X1
+  pin_number: '3'
+  pin_name: PPS

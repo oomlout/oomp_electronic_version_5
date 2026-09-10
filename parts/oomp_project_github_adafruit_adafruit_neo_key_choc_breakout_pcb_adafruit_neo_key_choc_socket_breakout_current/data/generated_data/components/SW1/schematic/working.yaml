@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: SW1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 84a47699-fc33-40ad-a397-887c386dd1cd
+  library_id: kicad_file-eagle-import:SWITCH_PUSHBUTTON_CHOCSOCKET
+  unit: 1
+  body_style: 1
+  position:
+    x: 114.3
+    y: 68.58
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: SW1
+    Value: MX SOCKET
+    Footprint: kicad_file:KAILH_CHOC_SOCKET
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: P$1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 119.38
+      y: 68.58
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D1
+      pin_number: A
+      pin_name: A
+  - number: '2'
+    name: P$2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 109.22
+      y: 68.58
+    net: SWITCHA
+    net_aliases:
+    - SWITCHA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '4'
+      pin_name: '4'
+    - reference: JP3
+      pin_number: '4'
+      pin_name: '4'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: 1.143
+      max:
+        x: 2.667
+        y: 2.413
+      width: 5.334
+      height: 1.27
+      center:
+        x: 0.0
+        y: 1.778
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 111.633
+        y: 66.167
+      max:
+        x: 116.967
+        y: 67.437
+      width: 5.334
+      height: 1.27
+      center:
+        x: 114.3
+        y: 66.802
+  warnings: []
+connected_components:
+- reference: D1
+  pin_number: A
+  pin_name: A
+- reference: JP1
+  pin_number: '4'
+  pin_name: '4'
+- reference: JP3
+  pin_number: '4'
+  pin_name: '4'

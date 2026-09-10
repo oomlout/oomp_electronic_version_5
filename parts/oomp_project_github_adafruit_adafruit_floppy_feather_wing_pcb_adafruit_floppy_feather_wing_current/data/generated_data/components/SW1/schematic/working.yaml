@@ -1,0 +1,134 @@
+available: true
+units:
+- reference: SW1
+  source_file: data/kicad_file.kicad_sch
+  uuid: b2e57abf-658a-4ab8-a981-85f810f073e3
+  library_id: kicad_file-eagle-import:SWITCH_SPDT
+  unit: 1
+  body_style: 1
+  position:
+    x: 71.12
+    y: 76.2
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: SW1
+    Value: RA_SLIDE
+    Footprint: kicad_file:SPDT_SMT_SSSS811101
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: O
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 73.66
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: B
+    name: P
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 66.04
+      y: 76.2
+    net: WRGATE_3V
+    net_aliases:
+    - WRGATE_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '5'
+      pin_name: '5'
+    - reference: MS1
+      pin_number: '24'
+      pin_name: GPIO12
+  - number: C
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 78.74
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R3
+      pin_number: '5'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '9'
+      pin_name: A8
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.0008
+        y: -3.0008
+      max:
+        x: 0.7112
+        y: 3.0008
+      width: 3.712
+      height: 6.0016
+      center:
+        x: -1.1448
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 68.1192
+        y: 73.1992
+      max:
+        x: 71.8312
+        y: 79.2008
+      width: 3.712
+      height: 6.0016
+      center:
+        x: 69.9752
+        y: 76.2
+  warnings: []
+connected_components:
+- reference: JP1
+  pin_number: '5'
+  pin_name: '5'
+- reference: MS1
+  pin_number: '24'
+  pin_name: GPIO12
+- reference: R3
+  pin_number: '5'
+  pin_name: '2'
+- reference: U1
+  pin_number: '9'
+  pin_name: A8

@@ -1,0 +1,164 @@
+available: true
+units:
+- reference: SW2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 1cf50b56-5a6e-4275-bdf4-397f03b1e0ab
+  library_id: kicad_file-eagle-import:DIPSWITCH_2PIN
+  unit: 1
+  body_style: 1
+  position:
+    x: 292.1
+    y: 264.16
+    rotation: 270.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: SW2
+    Value: DIP2
+    Footprint: kicad_file:DIPSWITCH_2PIN
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: 1OFF
+    name: 1OFF
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: -10.16
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 302.26
+      y: 261.62
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R14
+      pin_number: '1'
+      pin_name: '1'
+  - number: 1ON
+    name: 1ON
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 10.16
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 281.94
+      y: 261.62
+    net: BOOT_MODE1
+    net_aliases:
+    - BOOT_MODE1
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC2
+      pin_number: '73'
+      pin_name: GPIO_SD_03
+    - reference: TP1
+      pin_number: P$1
+      pin_name: P$1
+  - number: 2OFF
+    name: 2OFF
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -10.16
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 302.26
+      y: 266.7
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R17
+      pin_number: '1'
+      pin_name: '1'
+  - number: 2ON
+    name: 2ON
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 10.16
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 281.94
+      y: 266.7
+    net: BOOT_MODE0
+    net_aliases:
+    - BOOT_MODE0
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC2
+      pin_number: '72'
+      pin_name: GPIO_SD_04
+    - reference: TP2
+      pin_number: P$1
+      pin_name: P$1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -5.207
+        y: -7.747
+      max:
+        x: 5.207
+        y: 7.747
+      width: 10.414
+      height: 15.494
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 284.353
+        y: 258.953
+      max:
+        x: 299.847
+        y: 269.367
+      width: 15.494
+      height: 10.414
+      center:
+        x: 292.1
+        y: 264.16
+  warnings: []
+connected_components:
+- reference: IC2
+  pin_number: '72'
+  pin_name: GPIO_SD_04
+- reference: IC2
+  pin_number: '73'
+  pin_name: GPIO_SD_03
+- reference: R14
+  pin_number: '1'
+  pin_name: '1'
+- reference: R17
+  pin_number: '1'
+  pin_name: '1'
+- reference: TP1
+  pin_number: P$1
+  pin_name: P$1
+- reference: TP2
+  pin_number: P$1
+  pin_name: P$1

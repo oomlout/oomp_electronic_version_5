@@ -44,6 +44,15 @@ Mounting Hole 3 mm Round Unplated is an OOMP mechanical mounting hole definition
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-Menta-PCB Menta current](https://github.com/adafruit/Adafruit-Menta-PCB/blob/master/menta.brd) | 4 | MH1, MH2, MH3, MH4 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_menta_pcb_menta_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_menta_pcb_menta_current) |
+| [Project adafruit/Adafruit-NeoKey-CHOC-Breakout-PCB Adafruit Neo Key CHOC Socket Breakout current](https://github.com/adafruit/Adafruit-NeoKey-CHOC-Breakout-PCB/blob/main/Adafruit%20NeoKey%20CHOC%20Socket%20Breakout.brd) | 2 | MH3, MH4 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_neo_key_choc_breakout_pcb_adafruit_neo_key_choc_socket_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_neo_key_choc_breakout_pcb_adafruit_neo_key_choc_socket_breakout_current) |
+
+
+
 ## Files
 
 

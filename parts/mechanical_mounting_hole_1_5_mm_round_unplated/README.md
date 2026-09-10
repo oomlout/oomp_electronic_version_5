@@ -44,6 +44,16 @@ Mounting Hole 1.5 mm Round Unplated is an OOMP mechanical mounting hole definiti
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-Adalogger-FeatherWing-PCB adalogger featherwing current](https://github.com/adafruit/Adafruit-Adalogger-FeatherWing-PCB/blob/master/adalogger%20featherwing.brd) | 2 | MH1, MH2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_adalogger_feather_wing_pcb_adalogger_featherwing_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_adalogger_feather_wing_pcb_adalogger_featherwing_current) |
+| [Project adafruit/Adafruit_Brain-Machine-Kit Brain Machine current](https://github.com/adafruit/Adafruit_Brain-Machine-Kit/blob/master/pcb/brain.brd) | 9 | MH5, MH6, MH7, MH8, MH9, MH10, MH11, MH12, MH13 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_brain_machine_kit_brain_machine_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_brain_machine_kit_brain_machine_current) |
+| [Project adafruit/Adafruit-Feather-RP2040-USB-Host-PCB Adafruit Feather RP2040 USB Host current](https://github.com/adafruit/Adafruit-Feather-RP2040-USB-Host-PCB/blob/main/Adafruit%20Feather%20RP2040%20USB%20Host.brd) | 2 | MH5, MH6 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_feather_rp2040_usb_host_pcb_adafruit_feather_rp2040_usb_host_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_feather_rp2040_usb_host_pcb_adafruit_feather_rp2040_usb_host_current) |
+
+
+
 ## Files
 
 

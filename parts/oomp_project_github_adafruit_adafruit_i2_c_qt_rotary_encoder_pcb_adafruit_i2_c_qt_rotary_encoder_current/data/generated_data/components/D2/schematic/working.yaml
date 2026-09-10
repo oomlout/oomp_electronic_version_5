@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: D2
+  source_file: data/kicad_file.kicad_sch
+  uuid: c917054f-5789-4a0e-8b52-59f8d3257454
+  library_id: kicad_file-eagle-import:LED0603_NOOUTLINE
+  unit: 1
+  body_style: 1
+  position:
+    x: 144.78
+    y: 180.34
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D2
+    Value: red
+    Footprint: kicad_file:CHIPLED_0603_NOOUTLINE
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 144.78
+      y: 175.26
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: '2'
+      pin_name: '2'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 144.78
+      y: 182.88
+    net: INT
+    net_aliases:
+    - INT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '12'
+      pin_name: PA15/I2C/I1/AIN7/SERCOM0.1
+    - reference: JP2
+      pin_number: '6'
+      pin_name: '6'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.397
+      max:
+        x: 1.397
+        y: 3.302
+      width: 4.064
+      height: 4.699
+      center:
+        x: -0.635
+        y: 0.9525
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 143.383
+        y: 177.673
+      max:
+        x: 148.082
+        y: 181.737
+      width: 4.699
+      height: 4.064
+      center:
+        x: 145.7325
+        y: 179.705
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '12'
+  pin_name: PA15/I2C/I1/AIN7/SERCOM0.1
+- reference: JP2
+  pin_number: '6'
+  pin_name: '6'
+- reference: R2
+  pin_number: '2'
+  pin_name: '2'

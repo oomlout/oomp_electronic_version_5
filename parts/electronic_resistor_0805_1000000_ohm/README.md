@@ -51,6 +51,15 @@ Resistor 1e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-GUVA-Analog-UV-Sensor-Breakout-PCB Adafruit GUVA UV Sensor Breakout current](https://github.com/adafruit/Adafruit-GUVA-Analog-UV-Sensor-Breakout-PCB/blob/master/Adafruit%20GUVA%20UV%20Sensor%20Breakout.brd) | 1 | R1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_guva_analog_uv_sensor_breakout_pcb_adafruit_guva_uv_sensor_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_guva_analog_uv_sensor_breakout_pcb_adafruit_guva_uv_sensor_breakout_current) |
+| [Project adafruit/Adafruit-MAX98357-I2S-Amp-Breakout Adafruit MAX98357 Breakout current](https://github.com/adafruit/Adafruit-MAX98357-I2S-Amp-Breakout/blob/master/Adafruit%20MAX98357%20Breakout.brd) | 1 | R1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_max98357_i2_s_amp_breakout_adafruit_max98357_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_max98357_i2_s_amp_breakout_adafruit_max98357_breakout_current) |
+
+
+
 ## Files
 
 

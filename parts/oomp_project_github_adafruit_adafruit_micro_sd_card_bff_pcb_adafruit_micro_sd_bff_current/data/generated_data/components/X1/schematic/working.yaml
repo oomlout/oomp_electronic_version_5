@@ -1,0 +1,589 @@
+available: true
+units:
+- reference: X1
+  source_file: data/kicad_file.kicad_sch
+  uuid: f2fb64c5-593a-4589-89d5-4ec2ca2b15dd
+  library_id: kicad_file-eagle-import:MICROSD104031-0811
+  unit: 1
+  body_style: 1
+  position:
+    x: 101.6
+    y: 78.74
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: X1
+    Value: MicroSD
+    Footprint: kicad_file:MOLEX_104031-0811
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: DAT2
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 83.82
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '2'
+    name: CS
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 78.74
+    net: SD_CS
+    net_aliases:
+    - SD_CS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: SJ1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: SJ2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: SJ3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: SJ4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: TP1
+      pin_number: P$1
+      pin_name: P$1
+  - number: '3'
+    name: DATA_IN
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 73.66
+    net: MOSI
+    net_aliases:
+    - MOSI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '4'
+      pin_name: '4'
+    - reference: JP3
+      pin_number: 4C
+      pin_name: '4'
+  - number: '4'
+    name: SD_VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -10.16
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 88.9
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$1'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$4'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: JP3
+      pin_number: '5'
+      pin_name: '5'
+    - reference: JP3
+      pin_number: 5C
+      pin_name: '5'
+  - number: '5'
+    name: SCLK
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 76.2
+    net: SCK
+    net_aliases:
+    - SCK
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP3
+      pin_number: 2C
+      pin_name: '2'
+  - number: '6'
+    name: SD_VSS
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -12.7
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 91.44
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP3
+      pin_number: '6'
+      pin_name: '6'
+    - reference: JP3
+      pin_number: 6C
+      pin_name: '6'
+    - reference: X1
+      pin_number: '10'
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G1
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G2
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G3
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G4
+      pin_name: MOUNTING
+  - number: '7'
+    name: DATA_OUT
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 7.62
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 71.12
+    net: MISO
+    net_aliases:
+    - MISO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '3'
+      pin_name: '3'
+    - reference: JP3
+      pin_number: 3C
+      pin_name: '3'
+  - number: '8'
+    name: DAT1
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 81.28
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '9'
+    name: CARD_DETECT
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 60.96
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '10'
+    name: MOUNTING
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 96.52
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP3
+      pin_number: '6'
+      pin_name: '6'
+    - reference: JP3
+      pin_number: 6C
+      pin_name: '6'
+    - reference: X1
+      pin_number: '6'
+      pin_name: SD_VSS
+    - reference: X1
+      pin_number: G1
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G2
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G3
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G4
+      pin_name: MOUNTING
+  - number: G1
+    name: MOUNTING
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 96.52
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP3
+      pin_number: '6'
+      pin_name: '6'
+    - reference: JP3
+      pin_number: 6C
+      pin_name: '6'
+    - reference: X1
+      pin_number: '6'
+      pin_name: SD_VSS
+    - reference: X1
+      pin_number: '10'
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G2
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G3
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G4
+      pin_name: MOUNTING
+  - number: G2
+    name: MOUNTING
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 96.52
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP3
+      pin_number: '6'
+      pin_name: '6'
+    - reference: JP3
+      pin_number: 6C
+      pin_name: '6'
+    - reference: X1
+      pin_number: '6'
+      pin_name: SD_VSS
+    - reference: X1
+      pin_number: '10'
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G1
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G3
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G4
+      pin_name: MOUNTING
+  - number: G3
+    name: MOUNTING
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 96.52
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP3
+      pin_number: '6'
+      pin_name: '6'
+    - reference: JP3
+      pin_number: 6C
+      pin_name: '6'
+    - reference: X1
+      pin_number: '6'
+      pin_name: SD_VSS
+    - reference: X1
+      pin_number: '10'
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G1
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G2
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G4
+      pin_name: MOUNTING
+  - number: G4
+    name: MOUNTING
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 96.52
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: JP3
+      pin_number: '6'
+      pin_name: '6'
+    - reference: JP3
+      pin_number: 6C
+      pin_name: '6'
+    - reference: X1
+      pin_number: '6'
+      pin_name: SD_VSS
+    - reference: X1
+      pin_number: '10'
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G1
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G2
+      pin_name: MOUNTING
+    - reference: X1
+      pin_number: G3
+      pin_name: MOUNTING
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -12.827
+        y: -25.527
+      max:
+        x: 12.827
+        y: 20.447
+      width: 25.654
+      height: 45.974
+      center:
+        x: 0.0
+        y: -2.54
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 88.773
+        y: 58.293
+      max:
+        x: 114.427
+        y: 104.267
+      width: 25.654
+      height: 45.974
+      center:
+        x: 101.6
+        y: 81.28
+  warnings: []
+connected_components:
+- reference: '#GND1'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND2'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$1'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$4'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: JP3
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP3
+  pin_number: 2C
+  pin_name: '2'
+- reference: JP3
+  pin_number: '3'
+  pin_name: '3'
+- reference: JP3
+  pin_number: 3C
+  pin_name: '3'
+- reference: JP3
+  pin_number: '4'
+  pin_name: '4'
+- reference: JP3
+  pin_number: 4C
+  pin_name: '4'
+- reference: JP3
+  pin_number: '5'
+  pin_name: '5'
+- reference: JP3
+  pin_number: 5C
+  pin_name: '5'
+- reference: JP3
+  pin_number: '6'
+  pin_name: '6'
+- reference: JP3
+  pin_number: 6C
+  pin_name: '6'
+- reference: SJ1
+  pin_number: '2'
+  pin_name: '2'
+- reference: SJ2
+  pin_number: '2'
+  pin_name: '2'
+- reference: SJ3
+  pin_number: '2'
+  pin_name: '2'
+- reference: SJ4
+  pin_number: '2'
+  pin_name: '2'
+- reference: TP1
+  pin_number: P$1
+  pin_name: P$1
+- reference: X1
+  pin_number: '10'
+  pin_name: MOUNTING
+- reference: X1
+  pin_number: '6'
+  pin_name: SD_VSS
+- reference: X1
+  pin_number: G1
+  pin_name: MOUNTING
+- reference: X1
+  pin_number: G2
+  pin_name: MOUNTING
+- reference: X1
+  pin_number: G3
+  pin_name: MOUNTING
+- reference: X1
+  pin_number: G4
+  pin_name: MOUNTING

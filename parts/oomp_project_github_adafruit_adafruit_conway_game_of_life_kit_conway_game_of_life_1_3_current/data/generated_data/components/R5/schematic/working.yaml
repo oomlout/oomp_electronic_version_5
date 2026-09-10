@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: R5
+  source_file: data/kicad_file.kicad_sch
+  uuid: 928cedad-2777-44d2-b253-77fa6410bfae
+  library_id: kicad_file-eagle-import:R-US_0207/10
+  unit: 1
+  body_style: 1
+  position:
+    x: 243.84
+    y: 68.58
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R5
+    Value: R-US_0207/10
+    Footprint: kicad_file:34
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 243.84
+      y: 63.5
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: LED5
+      pin_number: '2'
+      pin_name: A
+  - number: '2'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 243.84
+      y: 73.66
+    net: MISO
+    net_aliases:
+    - MISO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '18'
+      pin_name: (MISO)PB4
+    - reference: ICSP0
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 242.7224
+        y: 65.9384
+      max:
+        x: 244.9576
+        y: 71.2216
+      width: 2.2352
+      height: 5.2832
+      center:
+        x: 243.84
+        y: 68.58
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '18'
+  pin_name: (MISO)PB4
+- reference: ICSP0
+  pin_number: '1'
+  pin_name: '1'
+- reference: LED5
+  pin_number: '2'
+  pin_name: A

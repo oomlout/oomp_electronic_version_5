@@ -1,0 +1,199 @@
+available: true
+units:
+- reference: D3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 5c69f981-77af-444e-8f54-b0b382c36db1
+  library_id: kicad_file-eagle-import:LED_RGB_PLCC63535
+  unit: 1
+  body_style: 1
+  position:
+    x: 205.74
+    y: 43.18
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D3
+    Value: RGB
+    Footprint: kicad_file:RGBLED_3535_PLCC6
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: BGND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 12.7
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 218.44
+      y: 45.72
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+  - number: '2'
+    name: GGND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 12.7
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 218.44
+      y: 43.18
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R3
+      pin_number: '2'
+      pin_name: '2'
+  - number: '3'
+    name: RGND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 12.7
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 218.44
+      y: 40.64
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: '2'
+      pin_name: '2'
+  - number: '4'
+    name: RED
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -12.7
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 193.04
+      y: 40.64
+    net: RED
+    net_aliases:
+    - RED
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: X1
+      pin_number: '14'
+      pin_name: IO26/DAC2/A2_9
+  - number: '5'
+    name: GRN
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -12.7
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 193.04
+      y: 43.18
+    net: GREEN
+    net_aliases:
+    - GREEN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: X1
+      pin_number: '13'
+      pin_name: IO25/DAC1/A2_8
+  - number: '6'
+    name: BLUE
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -12.7
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 193.04
+      y: 45.72
+    net: BLUE
+    net_aliases:
+    - BLUE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: X1
+      pin_number: '15'
+      pin_name: IO27/A2_7
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -10.287
+        y: -5.207
+      max:
+        x: 10.287
+        y: 5.207
+      width: 20.574
+      height: 10.414
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 195.453
+        y: 37.973
+      max:
+        x: 216.027
+        y: 48.387
+      width: 20.574
+      height: 10.414
+      center:
+        x: 205.74
+        y: 43.18
+  warnings: []
+connected_components:
+- reference: R2
+  pin_number: '2'
+  pin_name: '2'
+- reference: R3
+  pin_number: '2'
+  pin_name: '2'
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'
+- reference: X1
+  pin_number: '13'
+  pin_name: IO25/DAC1/A2_8
+- reference: X1
+  pin_number: '14'
+  pin_name: IO26/DAC2/A2_9
+- reference: X1
+  pin_number: '15'
+  pin_name: IO27/A2_7

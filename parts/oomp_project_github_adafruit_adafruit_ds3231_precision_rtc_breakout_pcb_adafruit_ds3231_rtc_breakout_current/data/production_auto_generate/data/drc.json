@@ -1,0 +1,4805 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-09T23:35:09",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Courtyards overlap",
+            "items": [
+                {
+                    "description": "Footprint FID1",
+                    "pos": {
+                        "x": 9.398,
+                        "y": -13.97
+                    },
+                    "uuid": "3166218c-ab41-4c37-a5bf-550e73114614"
+                },
+                {
+                    "description": "Footprint IC1",
+                    "pos": {
+                        "x": 11.176,
+                        "y": -10.414
+                    },
+                    "uuid": "e0a8c2cd-9c19-46b6-b84a-c681d697f41f"
+                }
+            ],
+            "severity": "error",
+            "type": "courtyards_overlap"
+        },
+        {
+            "description": "Unresolved text variable",
+            "items": [
+                {
+                    "description": "Footprint text of U$9 (${REV})",
+                    "pos": {
+                        "x": 16.1544,
+                        "y": -16.002
+                    },
+                    "uuid": "d1e49b14-5bb5-47ff-a9d1-d39e4bcbcade"
+                }
+            ],
+            "severity": "error",
+            "type": "unresolved_variable"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Arc on Edge.Cuts",
+                    "pos": {
+                        "x": 20.32,
+                        "y": -2.54
+                    },
+                    "uuid": "f7b526d4-efae-40c5-964a-117372fc144e"
+                },
+                {
+                    "description": "PCB text '~RST' on F.Silkscreen",
+                    "pos": {
+                        "x": 20.193,
+                        "y": -0.635
+                    },
+                    "uuid": "30e9f93d-7f8f-4f05-ab65-686c12809f67"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Text thickness out of range (board setup constraints silk text thickness min thickness 0.0800 mm; actual 0.0667 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_thickness"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of JP1",
+                    "pos": {
+                        "x": 1.1938,
+                        "y": -4.3688
+                    },
+                    "uuid": "ae8b2db6-c9b8-44c6-8ca9-d53c7e72613b"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of C1",
+                    "pos": {
+                        "x": 18.415,
+                        "y": -8.636
+                    },
+                    "uuid": "614aa324-8b3e-48d5-acdb-8ed4e240327d"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of B1",
+                    "pos": {
+                        "x": 13.032,
+                        "y": -10.808
+                    },
+                    "uuid": "ca7f3733-1b39-4d71-9610-b6f9b85df9b1"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.5401,
+                        "y": -11.2871
+                    },
+                    "uuid": "0ff019f9-228a-42be-8008-0cb3a3f87980"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.5338,
+                        "y": -11.2808
+                    },
+                    "uuid": "c2221751-18d2-4cf8-a0fd-70fadc5d4142"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.5338,
+                        "y": -11.2744
+                    },
+                    "uuid": "403d05a5-115d-49e2-aa73-5545941ad4a4"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.5274,
+                        "y": -11.2681
+                    },
+                    "uuid": "9733d444-d575-4416-ab54-ffbed4aec83b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.5211,
+                        "y": -11.2617
+                    },
+                    "uuid": "0582eada-32b9-4e0a-bb67-61f04806a4e9"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.5147,
+                        "y": -11.2554
+                    },
+                    "uuid": "0672a5b7-0d66-447c-ba69-ae2b2aa15a70"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.502,
+                        "y": -11.249
+                    },
+                    "uuid": "69896472-295f-4200-a009-03cfe38c5938"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.248,
+                        "y": -11.1665
+                    },
+                    "uuid": "3744f274-3c08-4dbd-9a9b-717444d7b6a8"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.3814,
+                        "y": -11.1919
+                    },
+                    "uuid": "faabd1f6-0cbb-4fbe-8fee-1a40e5e0d427"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.4004,
+                        "y": -11.1982
+                    },
+                    "uuid": "ddb835ad-265b-4092-8eb9-cf768af6041e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.356,
+                        "y": -11.1855
+                    },
+                    "uuid": "88897405-b0d1-4456-b2c8-3ad9a2770b16"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.2988,
+                        "y": -11.1728
+                    },
+                    "uuid": "c74e00bb-9f14-4fc3-8251-523fa55c648b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.3369,
+                        "y": -11.1792
+                    },
+                    "uuid": "5e00f28f-1240-4e56-899e-aafe7207c2a1"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.4195,
+                        "y": -11.2046
+                    },
+                    "uuid": "9ea480b8-acd3-48d1-af1f-a87e71a20498"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.4385,
+                        "y": -11.2109
+                    },
+                    "uuid": "027a5db4-1d92-4303-bc39-f04a7e70da50"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.4512,
+                        "y": -11.2173
+                    },
+                    "uuid": "159cec88-7ba5-45d0-86b4-c3343ac2d641"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.4639,
+                        "y": -11.2236
+                    },
+                    "uuid": "034e7267-ab48-4136-9ff0-eb073d7dc680"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.4766,
+                        "y": -11.23
+                    },
+                    "uuid": "cf348724-1215-4879-875e-722f319a7882"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.483,
+                        "y": -11.2363
+                    },
+                    "uuid": "240918ec-723b-406b-bfcf-fa40f9e44f3a"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.4957,
+                        "y": -11.2427
+                    },
+                    "uuid": "2c0acb20-4612-46df-ab1f-d9e10253518e"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0522
+                    },
+                    "uuid": "366fd934-9b57-4261-9207-d0c6d1e52ce5"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0585
+                    },
+                    "uuid": "3b57cbc9-6ee1-45d3-8360-901f8c10819f"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7083,
+                        "y": -11.0649
+                    },
+                    "uuid": "e8734f2d-d851-4562-9e36-663081bbd761"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7083,
+                        "y": -11.0712
+                    },
+                    "uuid": "c529ad88-6a19-4ee9-99ab-be667792d478"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7019,
+                        "y": -11.0776
+                    },
+                    "uuid": "d7364a8e-ad50-4400-95cd-b6a9d129fe22"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.6829,
+                        "y": -11.0903
+                    },
+                    "uuid": "ca127b61-3137-4c0c-9131-590ea6e6ff03"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.6956,
+                        "y": -11.0839
+                    },
+                    "uuid": "0c3fdd63-6007-432a-9d20-7f23d5acbc7d"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.1368,
+                        "y": -11.0966
+                    },
+                    "uuid": "27a52bac-8291-4f0d-97e3-4609c8f9dff0"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7685,
+                        "y": -11.1538
+                    },
+                    "uuid": "c860ac99-6b88-4a51-9448-a4e9f062be8a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7621,
+                        "y": -11.1601
+                    },
+                    "uuid": "e451d246-8517-480a-8946-c2ea496c2b04"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.8129,
+                        "y": -11.1347
+                    },
+                    "uuid": "48a84745-3dcb-413c-8aa5-982d988248f0"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.8002,
+                        "y": -11.1411
+                    },
+                    "uuid": "11a7b0f8-459b-4b6a-a322-0d4dfd531055"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7875,
+                        "y": -11.1474
+                    },
+                    "uuid": "8cc2ded3-a9b5-4fbd-a4d9-7e1da8f91371"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.832,
+                        "y": -11.1284
+                    },
+                    "uuid": "a49f7a9c-7da0-4bfb-b224-09e968e47e0e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.851,
+                        "y": -11.122
+                    },
+                    "uuid": "656985ef-9658-4905-8932-ed553175dda2"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.8701,
+                        "y": -11.1157
+                    },
+                    "uuid": "eb467b90-f753-449b-8e2d-67ac38b11e48"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.8955,
+                        "y": -11.1093
+                    },
+                    "uuid": "9942a52a-7a9d-429d-9a1a-97b3397d4225"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.9336,
+                        "y": -11.103
+                    },
+                    "uuid": "53525636-3df8-414a-b3a8-2ba65393d3a9"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.9813,
+                        "y": -11.0395
+                    },
+                    "uuid": "e89e536c-1862-42a3-9990-5a4afcc515b9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.994,
+                        "y": -11.0331
+                    },
+                    "uuid": "0ed625a3-05e9-41f3-be64-f811b1a56fe0"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0004,
+                        "y": -11.0268
+                    },
+                    "uuid": "07f30071-edfe-45d8-95f1-26000f2a56a9"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0131,
+                        "y": -11.0204
+                    },
+                    "uuid": "950475e9-6cf7-4d48-8396-e220dd063bbc"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0194,
+                        "y": -11.0141
+                    },
+                    "uuid": "08ebadf6-d427-47b4-9b41-43cfae6d5b5b"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0258,
+                        "y": -11.0077
+                    },
+                    "uuid": "d4bb683b-8109-4894-a8e4-ca417f9552d4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0321,
+                        "y": -11.0014
+                    },
+                    "uuid": "987af903-f99a-4d70-97cf-397b97e8bf9f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0385,
+                        "y": -10.995
+                    },
+                    "uuid": "b7512046-7415-4d6b-b731-f8a7fd0f05d1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0448,
+                        "y": -10.9887
+                    },
+                    "uuid": "ce1ef96f-211c-4aac-8743-348bb0f4e40a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0512,
+                        "y": -10.9823
+                    },
+                    "uuid": "f0f24dda-b7ac-4d1c-b8f1-ef450f533afb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.9623,
+                        "y": -11.0458
+                    },
+                    "uuid": "662b6fbf-4e34-41b6-ae4f-8818f8f1a235"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0829,
+                        "y": -10.9442
+                    },
+                    "uuid": "b4c6aaec-9cb3-45c7-812e-2d382d105a24"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0893,
+                        "y": -10.9379
+                    },
+                    "uuid": "36a4b9d1-d344-4308-8a01-0e74ea6750d9"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0766,
+                        "y": -10.9506
+                    },
+                    "uuid": "fe7e4bc7-0930-4ee2-893c-3cc2ce535ea8"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0766,
+                        "y": -10.9569
+                    },
+                    "uuid": "2d326f0a-4462-473d-b6c3-bfe05b4ca5ac"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0702,
+                        "y": -10.9633
+                    },
+                    "uuid": "ab05cf51-6c3e-4846-88b4-3f425c93d0cc"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0639,
+                        "y": -10.9696
+                    },
+                    "uuid": "781dc89e-b1ce-451a-8d63-37e9f48a8a7d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 3.0575,
+                        "y": -10.976
+                    },
+                    "uuid": "6b6abc9e-a0a3-4a2a-b52b-3bee7940918b"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.721,
+                        "y": -11.0331
+                    },
+                    "uuid": "9d877908-edad-441f-85b0-b5ca7add32fe"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0395
+                    },
+                    "uuid": "b1a5c63d-f3a1-406a-8572-1cec3f94c90b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0458
+                    },
+                    "uuid": "af1176b1-9a7e-4672-bcb7-d1fb650d0d80"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0268
+                    },
+                    "uuid": "0cd7fd95-17e4-4343-93dc-828fbb6dadde"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0204
+                    },
+                    "uuid": "da83c80e-6c15-418d-a19f-faf12d630d51"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0141
+                    },
+                    "uuid": "73358cf9-dded-42b1-a37d-6d8495131833"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0077
+                    },
+                    "uuid": "d4c657fb-8d25-4a60-ba91-45818de3756e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7083,
+                        "y": -10.9823
+                    },
+                    "uuid": "eb30a39f-bc08-4b8a-8756-f830d11757e6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7083,
+                        "y": -10.9887
+                    },
+                    "uuid": "548402b1-af17-4af4-a28e-3beecb55359f"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7083,
+                        "y": -10.995
+                    },
+                    "uuid": "e8f48903-91d0-46ae-a5e5-df6a333a3e78"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.7146,
+                        "y": -11.0014
+                    },
+                    "uuid": "ab44f13e-5bfd-4633-a113-7a3e974e666d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7367,
+                        "y": -11.1728
+                    },
+                    "uuid": "d1204449-4d53-48c6-a04c-7de66bf920c4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7431,
+                        "y": -11.1665
+                    },
+                    "uuid": "3d5b24f0-e417-4df4-a647-abb3322578c2"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.613,
+                        "y": -11.2617
+                    },
+                    "uuid": "53368c5f-2f4c-4f4c-9711-98b50ae71bbc"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6097,
+                        "y": -11.2617
+                    },
+                    "uuid": "13fb31bb-3fb5-4f2b-9dba-d5818fc0f401"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6161,
+                        "y": -11.2554
+                    },
+                    "uuid": "59212c2e-d95f-469e-a31c-6f4bff162cb7"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6542,
+                        "y": -11.2236
+                    },
+                    "uuid": "723b11e0-2d94-4b71-a1bd-02d8efe4201f"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6478,
+                        "y": -11.23
+                    },
+                    "uuid": "1f841905-a764-4780-b134-77a857ac78cf"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6415,
+                        "y": -11.2363
+                    },
+                    "uuid": "059eeb77-1ebf-4718-a914-e0e02f62bdd3"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6351,
+                        "y": -11.2427
+                    },
+                    "uuid": "d245e919-969d-40a7-b35f-f2e272e0d76e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6224,
+                        "y": -11.249
+                    },
+                    "uuid": "d8cf3fd3-da5c-4d14-99b0-e3fe7cbd2bbb"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5907,
+                        "y": -11.2808
+                    },
+                    "uuid": "574f61bd-2465-402c-801f-5fa6137a3326"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.597,
+                        "y": -11.2744
+                    },
+                    "uuid": "e564828d-aace-4721-86cd-c8041913ef00"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6034,
+                        "y": -11.2681
+                    },
+                    "uuid": "56935ebd-c5ff-4db6-b59b-b327549311c8"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5843,
+                        "y": -11.2871
+                    },
+                    "uuid": "3fcd65c6-8486-4f1d-973c-72f40c68f6ca"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7113,
+                        "y": -11.1855
+                    },
+                    "uuid": "f6692902-3662-49d0-86ff-1d80227b638f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.724,
+                        "y": -11.1792
+                    },
+                    "uuid": "27f65540-4dc1-452e-bfe8-41b75b1e3101"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.705,
+                        "y": -11.1919
+                    },
+                    "uuid": "9a6650bc-f802-4abd-879b-c1e7c5ba8c36"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6923,
+                        "y": -11.1982
+                    },
+                    "uuid": "96f620e7-ca0f-4e1f-a787-46ffec134446"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6859,
+                        "y": -11.2046
+                    },
+                    "uuid": "c35ae9b2-17e4-4150-b264-aaef3bb6ba40"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6732,
+                        "y": -11.2109
+                    },
+                    "uuid": "95740020-f58c-461c-b801-b61cf024f857"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6669,
+                        "y": -11.2173
+                    },
+                    "uuid": "c9bee0df-e24d-4d71-b9a3-2841fed44c22"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.959,
+                        "y": -11.0395
+                    },
+                    "uuid": "437910e0-484d-430d-873e-59013144bf17"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.9463,
+                        "y": -11.0331
+                    },
+                    "uuid": "1fb63e39-9d66-4258-b7b1-1072d419758a"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.9717,
+                        "y": -11.0458
+                    },
+                    "uuid": "af0f80c4-ecee-426a-a995-fa02b5741edf"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.0288,
+                        "y": -11.0649
+                    },
+                    "uuid": "9abd0f9e-e0e4-4cfd-9e46-1698505173dd"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.0034,
+                        "y": -11.0585
+                    },
+                    "uuid": "6f948451-aaab-44f0-a02f-e60601547e9a"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.9907,
+                        "y": -11.0522
+                    },
+                    "uuid": "295f6910-9025-40b4-a20a-e3c57137653b"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.0669,
+                        "y": -11.0776
+                    },
+                    "uuid": "026aeab9-3057-4594-b7a5-f04ee180ab37"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.0479,
+                        "y": -11.0712
+                    },
+                    "uuid": "a31e414e-c02c-4cb1-a3b1-2fac80c3ed94"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.1114,
+                        "y": -11.0903
+                    },
+                    "uuid": "2ba0cb18-2acb-49d6-8034-6957be4e0104"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.0923,
+                        "y": -11.0839
+                    },
+                    "uuid": "5a564b66-c74e-4adc-aa00-901fea1b1548"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.9336,
+                        "y": -11.0268
+                    },
+                    "uuid": "06b66abd-3a29-4b16-8d5b-c612335ddd90"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.9209,
+                        "y": -11.0204
+                    },
+                    "uuid": "d6253427-8557-4988-8b13-1a48c6ecf537"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.9018,
+                        "y": -11.0077
+                    },
+                    "uuid": "91ca6f41-f597-49fd-b4a7-e0b340fe5ffa"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.9082,
+                        "y": -11.0141
+                    },
+                    "uuid": "8545e47f-cdad-49cc-86b4-7d43037a5e53"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.8701,
+                        "y": -10.9887
+                    },
+                    "uuid": "b2cf9642-9cce-4169-b06c-3a1b89bf0f82"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.8828,
+                        "y": -10.995
+                    },
+                    "uuid": "0d1d36e5-1632-487b-8d5a-2cdd3202db04"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.8891,
+                        "y": -11.0014
+                    },
+                    "uuid": "b6ca6127-fb5b-43da-8787-f193583adad3"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.8637,
+                        "y": -10.9823
+                    },
+                    "uuid": "aa542a19-8a6b-46a3-85ca-4f6871b94944"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7558,
+                        "y": -10.8807
+                    },
+                    "uuid": "3bf9b9e8-1e34-4b4e-91a8-7cc017dd104e"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7494,
+                        "y": -10.8744
+                    },
+                    "uuid": "fed412b6-7f0f-4b95-868b-dce8348932be"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7494,
+                        "y": -10.868
+                    },
+                    "uuid": "349ea429-ecf4-458c-b85d-2d90ad3970ef"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7367,
+                        "y": -10.8553
+                    },
+                    "uuid": "fb8c44d7-2d12-4ae9-bfde-75effd096024"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7431,
+                        "y": -10.8617
+                    },
+                    "uuid": "f938b655-c46f-4e52-a2a5-97c21dfa059b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7304,
+                        "y": -10.849
+                    },
+                    "uuid": "e7599803-b543-45b1-816a-52d146086eb5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7113,
+                        "y": -10.8172
+                    },
+                    "uuid": "7d164a13-e9a3-4ee1-91d4-527dfa7c0084"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7113,
+                        "y": -10.8236
+                    },
+                    "uuid": "22feae9c-011e-48df-a894-bcad2a752c2c"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.724,
+                        "y": -10.8363
+                    },
+                    "uuid": "2f0b0b44-b606-4ec0-a756-243a2f890705"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.724,
+                        "y": -10.8426
+                    },
+                    "uuid": "6263daaf-20d6-4e7a-b022-c0a09c65f708"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.7177,
+                        "y": -10.8299
+                    },
+                    "uuid": "77adf5dd-f7db-4e7e-84c3-267fcd38731c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6923,
+                        "y": -10.7855
+                    },
+                    "uuid": "c6ce6a6c-8af8-49a6-8ba8-2c0f3606f40c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6923,
+                        "y": -10.7918
+                    },
+                    "uuid": "8b0c663a-f63a-4cc9-9732-cd84c4a2c127"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.705,
+                        "y": -10.8109
+                    },
+                    "uuid": "5d076366-811e-4316-ae37-c0dc75c5330c"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6986,
+                        "y": -10.8045
+                    },
+                    "uuid": "78281923-e167-4210-a23b-e6121485aa1a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6986,
+                        "y": -10.7982
+                    },
+                    "uuid": "f4a1e09a-0129-4207-a0fb-24f4e5d7587e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6796,
+                        "y": -10.7728
+                    },
+                    "uuid": "73cfac52-7754-4f72-86ff-1f06f255bcd1"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6796,
+                        "y": -10.7664
+                    },
+                    "uuid": "4b6a9bcf-7424-4a71-b9c6-d4800dd5e03d"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6669,
+                        "y": -10.7474
+                    },
+                    "uuid": "0d48023d-1bfb-4e29-8182-8fbff411895d"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6732,
+                        "y": -10.7537
+                    },
+                    "uuid": "a0c45266-bf04-4330-86ba-ef7e5445de05"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6732,
+                        "y": -10.7601
+                    },
+                    "uuid": "ebe58d97-6906-4dcc-af68-4785013b77c4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6859,
+                        "y": -10.7791
+                    },
+                    "uuid": "802df2e5-2fe0-4913-a90f-8271a8d53c5c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6669,
+                        "y": -10.741
+                    },
+                    "uuid": "401cc736-b128-4fc2-8e12-d54950655315"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6605,
+                        "y": -10.7347
+                    },
+                    "uuid": "d8b2de63-8c59-4b2b-893e-f9f593fb069a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6542,
+                        "y": -10.7283
+                    },
+                    "uuid": "007a2dc6-e665-463a-9274-bed6ea1b85b3"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6542,
+                        "y": -10.722
+                    },
+                    "uuid": "fedea258-2d95-4759-81f1-407e0b02654f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6478,
+                        "y": -10.7156
+                    },
+                    "uuid": "37166f9c-492a-4fd7-89b6-4a7a6f7a150f"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6478,
+                        "y": -10.7093
+                    },
+                    "uuid": "eb611180-bb55-448b-acfe-f65792643ef0"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6478,
+                        "y": -10.7029
+                    },
+                    "uuid": "5fb7e8b1-e7ff-43a3-bf2a-d6c227d94d0c"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6415,
+                        "y": -10.6966
+                    },
+                    "uuid": "54cc69ff-b142-44d5-bb7d-877e4f89cdea"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6415,
+                        "y": -10.6902
+                    },
+                    "uuid": "f165c0b4-11e9-4bdf-bed9-3197dff9b907"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.6351,
+                        "y": -10.6839
+                    },
+                    "uuid": "fa278e06-38d2-40b4-974e-39f86d62294c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4192,
+                        "y": -10.0425
+                    },
+                    "uuid": "dfcfe561-599d-4324-87ee-3eb63918f293"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4129,
+                        "y": -10.0235
+                    },
+                    "uuid": "52a5d1b3-e51c-4f38-99d5-a501a0a43520"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4129,
+                        "y": -10.0171
+                    },
+                    "uuid": "87902b90-b87c-4b5e-b9b1-69b7ae78e26e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4192,
+                        "y": -10.0298
+                    },
+                    "uuid": "54346d10-8fdc-4ccc-a914-4713ac0ca7e6"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4192,
+                        "y": -10.0362
+                    },
+                    "uuid": "01c6a14e-7b69-4ad7-8cc4-d03c5139a6f1"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4256,
+                        "y": -10.0489
+                    },
+                    "uuid": "6dcdfa88-b92c-49a4-9cde-597ba9c2f3b3"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4256,
+                        "y": -10.0552
+                    },
+                    "uuid": "fb595842-54be-427b-8bef-7cf260f2a3d2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4256,
+                        "y": -10.0616
+                    },
+                    "uuid": "72c8ac2d-d224-4154-b4fd-e4927c60223d"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4319,
+                        "y": -10.0679
+                    },
+                    "uuid": "099f5ce9-5a06-4feb-8909-5f7271cf7e26"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4319,
+                        "y": -10.0743
+                    },
+                    "uuid": "98a882d2-0466-49f0-a2f6-4c0a9fbf2f5f"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4319,
+                        "y": -10.0806
+                    },
+                    "uuid": "9fe73da0-c615-4597-b5d2-2912cc040817"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4383,
+                        "y": -10.0997
+                    },
+                    "uuid": "224a59b7-63f4-4eea-a5be-ee8a00d013f6"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4383,
+                        "y": -10.0933
+                    },
+                    "uuid": "ea35726f-bb05-44d8-b273-fbd5621b911a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4319,
+                        "y": -10.087
+                    },
+                    "uuid": "2c99615f-842e-47e4-b317-80de79f4d85c"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4446,
+                        "y": -10.106
+                    },
+                    "uuid": "ccf72b41-f1be-41da-b9b1-021c201a3542"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4446,
+                        "y": -10.1124
+                    },
+                    "uuid": "958f6a03-e9e4-4106-a773-e8ef7622ed54"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4446,
+                        "y": -10.1187
+                    },
+                    "uuid": "18f47717-8f82-4f1b-aa83-870ea1c32ee8"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4446,
+                        "y": -10.1251
+                    },
+                    "uuid": "ee904880-2d8a-4354-a34c-e3cd401465a5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.451,
+                        "y": -10.1314
+                    },
+                    "uuid": "8468053f-2eeb-49a7-a960-868617bce4e5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4637,
+                        "y": -10.1695
+                    },
+                    "uuid": "86a2a7cb-33c5-45f8-a85a-fcde57386b7a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4573,
+                        "y": -10.1632
+                    },
+                    "uuid": "5fcb5432-6b4d-4f3c-a72d-7615b478ef57"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4573,
+                        "y": -10.1568
+                    },
+                    "uuid": "821a8f32-63fc-499c-83fc-49c36bc14978"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4573,
+                        "y": -10.1505
+                    },
+                    "uuid": "01922bf4-ff61-4747-9f90-360a8b93deac"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4573,
+                        "y": -10.1441
+                    },
+                    "uuid": "04eb7471-89bb-4094-946d-6cae7661d68f"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.451,
+                        "y": -10.1378
+                    },
+                    "uuid": "7da0e5df-da3e-4502-b961-5d939cdb2f0d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4764,
+                        "y": -10.2076
+                    },
+                    "uuid": "2b8c8838-b488-41eb-9bf9-a46fa44feb98"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.47,
+                        "y": -10.2013
+                    },
+                    "uuid": "01d10619-ecdd-4695-8595-789cbbe0bb36"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.47,
+                        "y": -10.1822
+                    },
+                    "uuid": "42d505ea-3c6d-4e00-94df-31028a66452f"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.47,
+                        "y": -10.1886
+                    },
+                    "uuid": "6e78a08b-b9a8-411b-9629-846240a3ef81"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4637,
+                        "y": -10.1759
+                    },
+                    "uuid": "9074d29d-2802-4b9d-b9dd-3342bd82d59c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.47,
+                        "y": -10.1949
+                    },
+                    "uuid": "437af574-374e-4f3d-a5f3-4afe4c45bce9"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4764,
+                        "y": -10.214
+                    },
+                    "uuid": "1d6e3309-d28c-41b2-b5ca-2bbe1afbe606"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4764,
+                        "y": -10.2203
+                    },
+                    "uuid": "66c53d9d-fe47-4515-b070-263e425b9012"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4827,
+                        "y": -10.2267
+                    },
+                    "uuid": "6915cf72-520e-4a69-8875-40b2814741b6"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4827,
+                        "y": -10.233
+                    },
+                    "uuid": "5b8d2cee-3c88-4b53-8407-eca018e60483"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4827,
+                        "y": -10.2394
+                    },
+                    "uuid": "ba19fd40-08ff-449a-9e34-49b6ab90b1ae"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4891,
+                        "y": -10.2584
+                    },
+                    "uuid": "10818378-ed7f-47d1-9c91-d9a324a17e60"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4891,
+                        "y": -10.2521
+                    },
+                    "uuid": "26c7b317-f667-4f7f-8b9e-693715d71a3d"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4891,
+                        "y": -10.2457
+                    },
+                    "uuid": "d8c1ab9d-08ea-48d2-8dbf-3ee2ad7ebf66"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.4954,
+                        "y": -10.2648
+                    },
+                    "uuid": "79decf62-a647-4138-933d-ba1d5255bb32"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5462,
+                        "y": -10.4299
+                    },
+                    "uuid": "14ead5f5-4ec9-48b8-8613-605bd059a6f5"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5526,
+                        "y": -10.4426
+                    },
+                    "uuid": "802d2e89-54f9-405c-a962-d0fd48a6cc59"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5526,
+                        "y": -10.4362
+                    },
+                    "uuid": "6bb97d38-159b-4cd9-9b03-b4ee258957d0"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5399,
+                        "y": -10.4108
+                    },
+                    "uuid": "3b1c846f-742a-42a8-9f40-aabfb6ac8193"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5462,
+                        "y": -10.4172
+                    },
+                    "uuid": "0b74d733-9ef7-4277-980c-fe6ffaf1ab38"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5462,
+                        "y": -10.4235
+                    },
+                    "uuid": "27f2278b-f29b-4526-82a2-976e3ae6008e"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5399,
+                        "y": -10.3981
+                    },
+                    "uuid": "cffdd3f1-a610-4ad7-938b-50678fa821e1"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5399,
+                        "y": -10.4045
+                    },
+                    "uuid": "c380491d-7bc0-4185-85e4-880bbf0f60c4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5335,
+                        "y": -10.3854
+                    },
+                    "uuid": "8f6d0290-4ab2-4a68-ab17-6c37f87d492e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5335,
+                        "y": -10.3918
+                    },
+                    "uuid": "5de46cc9-f476-4c34-8417-f352889cbad1"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5335,
+                        "y": -10.3791
+                    },
+                    "uuid": "bbfe5b7a-4b13-449a-9fb5-a7e284208885"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5272,
+                        "y": -10.3664
+                    },
+                    "uuid": "c1ff3971-905b-41ff-8f71-f64c84f490b4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5272,
+                        "y": -10.36
+                    },
+                    "uuid": "7db193cf-85c0-4fbe-8b1a-5c39b8d6c7f9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5208,
+                        "y": -10.3537
+                    },
+                    "uuid": "1d2d5f24-b528-4a80-abc8-76d1758f5e00"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5208,
+                        "y": -10.3473
+                    },
+                    "uuid": "e091e06a-4261-43eb-bfb0-8e8d735a9137"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5081,
+                        "y": -10.3092
+                    },
+                    "uuid": "10f5e913-42bb-4267-8099-e30d2fad43ff"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5145,
+                        "y": -10.3219
+                    },
+                    "uuid": "a6c8c039-83f9-40c6-a502-24368284afad"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5081,
+                        "y": -10.3156
+                    },
+                    "uuid": "1a88e7f1-e545-4340-9fec-eef932202bcd"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5145,
+                        "y": -10.3283
+                    },
+                    "uuid": "72d460db-8a0a-4d95-b3d3-040db1cc04f8"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                },
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5145,
+                        "y": -10.3346
+                    },
+                    "uuid": "80b8bdbe-dc17-4b03-93f3-1a61be0ed37e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Polygon of U$8 on F.Silkscreen",
+                    "pos": {
+                        "x": 1.5208,
+                        "y": -10.341
+                    },
+                    "uuid": "61634211-49d0-4263-92d2-e440003f34ca"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 1.778,
+                        "y": -9.906
+                    },
+                    "uuid": "741f0c09-641c-41a8-9fab-7d449081b51e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Footprint text of U$9 (${REV})",
+                    "pos": {
+                        "x": 16.1544,
+                        "y": -16.002
+                    },
+                    "uuid": "d1e49b14-5bb5-47ff-a9d1-d39e4bcbcade"
+                },
+                {
+                    "description": "PTH pad P$1 [<no net>] of U$6",
+                    "pos": {
+                        "x": 20.32,
+                        "y": -15.24
+                    },
+                    "uuid": "90953e8a-7c37-4554-bac2-ef2e618f1490"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of B1",
+                    "pos": {
+                        "x": 13.032,
+                        "y": -10.808
+                    },
+                    "uuid": "ca7f3733-1b39-4d71-9610-b6f9b85df9b1"
+                },
+                {
+                    "description": "Circle of B1 on B.Mask",
+                    "pos": {
+                        "x": 11.43,
+                        "y": -10.668
+                    },
+                    "uuid": "1b70d0d0-df2b-40c0-9d74-e2bd212bcda5"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of B1",
+                    "pos": {
+                        "x": 13.032,
+                        "y": -10.808
+                    },
+                    "uuid": "ca7f3733-1b39-4d71-9610-b6f9b85df9b1"
+                },
+                {
+                    "description": "Pad - [GND] of B1 on B.Cu",
+                    "pos": {
+                        "x": 11.43,
+                        "y": -10.668
+                    },
+                    "uuid": "9d695e86-92d6-4562-98a9-d26aff3d36ef"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

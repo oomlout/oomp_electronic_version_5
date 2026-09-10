@@ -1,0 +1,89 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 3
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - IC1
+  value: ATSAMD09D14A-MU
+  footprint: Adafruit I2C QT Rotary Encoder-import-fps:QFN24_4MM
+  query: ATSAMD09D14A-MU Adafruit I2C QT Rotary Encoder-import-fps:QFN24_4MM
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=ATSAMD09D14A-MU+Adafruit+I2C+QT+Rotary+Encoder-import-fps%3AQFN24_4MM
+    datasheet_search: https://www.google.com/search?q=ATSAMD09D14A-MU+Adafruit+I2C+QT+Rotary+Encoder-import-fps%3AQFN24_4MM+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - TP1
+  - TP2
+  - TP3
+  value: TPTP15R
+  footprint: Adafruit I2C QT Rotary Encoder-import-fps:TP15R
+  query: TPTP15R Adafruit I2C QT Rotary Encoder-import-fps:TP15R
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TPTP15R+Adafruit+I2C+QT+Rotary+Encoder-import-fps%3ATP15R
+    datasheet_search: https://www.google.com/search?q=TPTP15R+Adafruit+I2C+QT+Rotary+Encoder-import-fps%3ATP15R+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - LED1
+  value: WS2812B_SK6812E
+  footprint: Adafruit I2C QT Rotary Encoder-import-fps:NEO3535_REVERSE
+  query: WS2812B_SK6812E Adafruit I2C QT Rotary Encoder-import-fps:NEO3535_REVERSE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=WS2812B_SK6812E+Adafruit+I2C+QT+Rotary+Encoder-import-fps%3ANEO3535_REVERSE
+    datasheet_search: https://www.google.com/search?q=WS2812B_SK6812E+Adafruit+I2C+QT+Rotary+Encoder-import-fps%3ANEO3535_REVERSE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_led_5050_rgb_ws2812b_worldsemi_ws2812b_b_w
+  - electronic_led_1010_rgb_ws2812b_xinglight_1010rgbc
+  - electronic_led_0201_red
+  - electronic_led_1206_red
+  - electronic_led_0201_blue_clear
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

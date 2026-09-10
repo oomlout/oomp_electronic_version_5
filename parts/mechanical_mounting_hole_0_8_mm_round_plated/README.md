@@ -48,6 +48,8 @@ Mounting Hole 0.8 mm Round Plated is an OOMP mechanical mounting hole definition
 
 | Project | Quantity | References | Explore |
 | --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-LED-Backpacks Adafruit 0.56 7 Segment QT current](https://github.com/adafruit/Adafruit-LED-Backpacks/blob/master/Adafruit%200.56%207-Segment%20QT.brd) | 14 | MH1, MH2, MH3, MH4, MH5, MH6, MH7, MH8, MH9, MH10, MH11, MH12, MH13, MH14 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_0_56_7_segment_qt_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_0_56_7_segment_qt_current) |
+| [Project adafruit/Adafruit-LED-Backpacks Adafruit 7seg backpack current](https://github.com/adafruit/Adafruit-LED-Backpacks/blob/master/Adafruit%207seg%20backpack.brd) | 14 | MH1, MH2, MH3, MH4, MH5, MH6, MH7, MH8, MH9, MH10, MH11, MH12, MH13, MH14 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_7seg_backpack_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_7seg_backpack_current) |
 | [Project electrolama/pt1 current](https://github.com/electrolama/pt1) | 2 | MH5, MH6 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_electrolama_pt1_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_electrolama_pt1_current) |
 
 

@@ -1,0 +1,592 @@
+available: true
+units:
+- reference: U2
+  source_file: data/kicad_file.kicad_sch
+  uuid: e8ca0a7f-d4e6-4f7e-ac07-8da86445e08c
+  library_id: kicad_file-eagle-import:BMP585
+  unit: 1
+  body_style: 1
+  position:
+    x: 68.58
+    y: 88.9
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U2
+    Value: BMP585
+    Footprint: kicad_file:LGA9_BMP585_BOS
+    Datasheet: ''
+    Description: ''
+    COPYRIGHT: Copyright (C) 2025 Ultra Librarian. All rights reserved.
+    MANUFACTURER_NAME: Bosch Sensortec
+    MANUFACTURER_PART_NUMBER: BMP585
+    TYPE: Pressure Sensors, Transducers
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: SCX
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 0.0
+    length: 7.62
+    position:
+      x: 68.58
+      y: 88.9
+    net: SCK_3V
+    net_aliases:
+    - SCK_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: '2'
+      pin_name: '1'
+  - number: '2'
+    name: SDX
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 0.0
+    length: 7.62
+    position:
+      x: 68.58
+      y: 91.44
+    net: SDI_3V
+    net_aliases:
+    - SDI_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: '4'
+      pin_name: '1'
+  - number: '3'
+    name: SDO
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 0.0
+    length: 7.62
+    position:
+      x: 68.58
+      y: 93.98
+    net: SDO/ADR
+    net_aliases:
+    - SDO/ADR
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '5'
+      pin_name: '5'
+    - reference: R4
+      pin_number: '1'
+      pin_name: '1'
+    - reference: SJ1
+      pin_number: '1'
+      pin_name: '1'
+  - number: '4'
+    name: VDDIO
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -7.62
+      rotation: 0.0
+    length: 7.62
+    position:
+      x: 68.58
+      y: 96.52
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$10'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$12'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$18'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$25'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$33'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$34'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$35'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$36'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$37'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$38'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$45'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C6
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R2
+      pin_number: '7'
+      pin_name: '2'
+    - reference: R2
+      pin_number: '5'
+      pin_name: '2'
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '5'
+      pin_name: OUT
+    - reference: U2
+      pin_number: '8'
+      pin_name: VDD
+  - number: '5'
+    name: INT
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: 40.64
+      y: -10.16
+      rotation: 180.0
+    length: 7.62
+    position:
+      x: 109.22
+      y: 99.06
+    net: INT
+    net_aliases:
+    - INT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '8'
+      pin_name: '8'
+  - number: '6'
+    name: VSS
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 40.64
+      y: -7.62
+      rotation: 180.0
+    length: 7.62
+    position:
+      x: 109.22
+      y: 96.52
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND6'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$4'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$23'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$30'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$31'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C5
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C6
+      pin_number: '2'
+      pin_name: '2'
+    - reference: CONN3
+      pin_number: '1'
+      pin_name: GND
+    - reference: CONN3
+      pin_number: MT2
+      pin_name: MT
+    - reference: CONN3
+      pin_number: MT1
+      pin_name: MT
+    - reference: CONN4
+      pin_number: MT2
+      pin_name: MT
+    - reference: CONN4
+      pin_number: '1'
+      pin_name: GND
+    - reference: CONN4
+      pin_number: MT1
+      pin_name: MT
+    - reference: D1
+      pin_number: C
+      pin_name: C
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: SJ1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '2'
+      pin_name: GND
+  - number: '7'
+    name: CSB
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 40.64
+      y: -5.08
+      rotation: 180.0
+    length: 7.62
+    position:
+      x: 109.22
+      y: 93.98
+    net: CS_3V
+    net_aliases:
+    - CS_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D2
+      pin_number: A
+      pin_name: A
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+  - number: '8'
+    name: VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 40.64
+      y: -2.54
+      rotation: 180.0
+    length: 7.62
+    position:
+      x: 109.22
+      y: 91.44
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$10'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$12'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$18'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$25'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$33'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$34'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$35'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$36'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$37'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$38'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$45'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C6
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R2
+      pin_number: '7'
+      pin_name: '2'
+    - reference: R2
+      pin_number: '5'
+      pin_name: '2'
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '5'
+      pin_name: OUT
+    - reference: U2
+      pin_number: '4'
+      pin_name: VDDIO
+  - number: '9'
+    name: L/M
+    electrical_type: no_connect
+    graphic_style: line
+    local_position:
+      x: 40.64
+      y: 0.0
+      rotation: 180.0
+    length: 7.62
+    position:
+      x: 109.22
+      y: 88.9
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: 7.5438
+        y: -15.3162
+      max:
+        x: 33.0962
+        y: 5.1562
+      width: 25.5524
+      height: 20.4724
+      center:
+        x: 20.32
+        y: -5.08
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 76.1238
+        y: 83.7438
+      max:
+        x: 101.6762
+        y: 104.2162
+      width: 25.5524
+      height: 20.4724
+      center:
+        x: 88.9
+        y: 93.98
+  warnings: []
+connected_components:
+- reference: '#GND6'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$1'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$4'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$5'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$10'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$12'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$18'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$23'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$25'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$30'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$31'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$33'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$34'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$35'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$36'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$37'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$38'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$45'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: C4
+  pin_number: '2'
+  pin_name: '2'
+- reference: C5
+  pin_number: '1'
+  pin_name: '1'
+- reference: C5
+  pin_number: '2'
+  pin_name: '2'
+- reference: C6
+  pin_number: '1'
+  pin_name: '1'
+- reference: C6
+  pin_number: '2'
+  pin_name: '2'
+- reference: CONN3
+  pin_number: '1'
+  pin_name: GND
+- reference: CONN3
+  pin_number: MT1
+  pin_name: MT
+- reference: CONN3
+  pin_number: MT2
+  pin_name: MT
+- reference: CONN4
+  pin_number: '1'
+  pin_name: GND
+- reference: CONN4
+  pin_number: MT1
+  pin_name: MT
+- reference: CONN4
+  pin_number: MT2
+  pin_name: MT
+- reference: D1
+  pin_number: C
+  pin_name: C
+- reference: D2
+  pin_number: A
+  pin_name: A
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '3'
+  pin_name: '3'
+- reference: JP1
+  pin_number: '5'
+  pin_name: '5'
+- reference: JP1
+  pin_number: '8'
+  pin_name: '8'
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: R2
+  pin_number: '2'
+  pin_name: '1'
+- reference: R2
+  pin_number: '4'
+  pin_name: '1'
+- reference: R2
+  pin_number: '5'
+  pin_name: '2'
+- reference: R2
+  pin_number: '7'
+  pin_name: '2'
+- reference: R4
+  pin_number: '1'
+  pin_name: '1'
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'
+- reference: R5
+  pin_number: '1'
+  pin_name: '1'
+- reference: SJ1
+  pin_number: '1'
+  pin_name: '1'
+- reference: SJ1
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: '2'
+  pin_name: GND
+- reference: U1
+  pin_number: '5'
+  pin_name: OUT
+- reference: U2
+  pin_number: '4'
+  pin_name: VDDIO
+- reference: U2
+  pin_number: '8'
+  pin_name: VDD

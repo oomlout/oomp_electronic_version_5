@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: R5
+  source_file: data/kicad_file.kicad_sch
+  uuid: bdd6aa66-df9d-47b1-ab6f-80009eb9f49e
+  library_id: kicad_file-eagle-import:R-US_R0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 177.8
+    y: 81.28
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R5
+    Value: '10'
+    Footprint: kicad_file:R0805
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 182.88
+      y: 81.28
+    net: TX
+    net_aliases:
+    - TX
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: FTDI0
+      pin_number: '4'
+      pin_name: '4'
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 172.72
+      y: 81.28
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '1'
+      pin_name: TXD
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 175.1584
+        y: 80.1624
+      max:
+        x: 180.4416
+        y: 82.3976
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 177.8
+        y: 81.28
+  warnings: []
+connected_components:
+- reference: FTDI0
+  pin_number: '4'
+  pin_name: '4'
+- reference: IC1
+  pin_number: '1'
+  pin_name: TXD

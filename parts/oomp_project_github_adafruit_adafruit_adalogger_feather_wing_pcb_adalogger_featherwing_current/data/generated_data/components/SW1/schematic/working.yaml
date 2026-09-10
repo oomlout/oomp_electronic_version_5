@@ -1,0 +1,168 @@
+available: true
+units:
+- reference: SW1
+  source_file: data/kicad_file.kicad_sch
+  uuid: e0db0443-cc00-4d31-ae55-392b0b368c9b
+  library_id: kicad_file-eagle-import:SWITCH_TACT_SMT4.6X2.8
+  unit: 1
+  body_style: 1
+  position:
+    x: 88.9
+    y: 162.56
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: SW1
+    Value: KMR2
+    Footprint: kicad_file:BTN_KMR2_4.6X2.8
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: P
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 83.82
+      y: 162.56
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: SW1
+      pin_number: A'
+      pin_name: P1
+  - number: A'
+    name: P1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 83.82
+      y: 165.1
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: SW1
+      pin_number: A
+      pin_name: P
+  - number: B
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 162.56
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '16'
+      pin_name: '16'
+    - reference: MS1
+      pin_number: '1'
+      pin_name: ~{RESET}
+    - reference: SW1
+      pin_number: B'
+      pin_name: S1
+  - number: B'
+    name: S1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 165.1
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '16'
+      pin_name: '16'
+    - reference: MS1
+      pin_number: '1'
+      pin_name: ~{RESET}
+    - reference: SW1
+      pin_number: B
+      pin_name: S
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.8702
+        y: -2.6162
+      max:
+        x: 2.8702
+        y: 4.572
+      width: 5.7404
+      height: 7.1882
+      center:
+        x: 0.0
+        y: 0.9779
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 86.0298
+        y: 157.988
+      max:
+        x: 91.7702
+        y: 165.1762
+      width: 5.7404
+      height: 7.1882
+      center:
+        x: 88.9
+        y: 161.5821
+  warnings: []
+connected_components:
+- reference: JP2
+  pin_number: '16'
+  pin_name: '16'
+- reference: MS1
+  pin_number: '1'
+  pin_name: ~{RESET}
+- reference: SW1
+  pin_number: A
+  pin_name: P
+- reference: SW1
+  pin_number: A'
+  pin_name: P1
+- reference: SW1
+  pin_number: B
+  pin_name: S
+- reference: SW1
+  pin_number: B'
+  pin_name: S1

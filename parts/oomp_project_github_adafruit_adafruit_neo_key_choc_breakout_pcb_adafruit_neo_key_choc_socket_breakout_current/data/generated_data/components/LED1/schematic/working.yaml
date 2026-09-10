@@ -1,0 +1,226 @@
+available: true
+units:
+- reference: LED1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 0e4da679-dd88-46ae-ac7f-57b50f6a23ab
+  library_id: kicad_file-eagle-import:WS2812B_SK6812E
+  unit: 1
+  body_style: 1
+  position:
+    x: 111.76
+    y: 93.98
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: LED1
+    Value: WS2812B_SK6812E
+    Footprint: kicad_file:NEO3535_REVERSE
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: 1-VDD
+    name: VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 15.24
+      rotation: 270.0
+    length: 5.08
+    position:
+      x: 116.84
+      y: 78.74
+    net: VDD
+    net_aliases:
+    - VDD
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#VDD1'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#VDD2'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#VDD3'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP3
+      pin_number: '1'
+      pin_name: '1'
+  - number: 2-DOUT
+    name: DO
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: 12.7
+      y: -2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 124.46
+      y: 96.52
+    net: NEO_OUT
+    net_aliases:
+    - NEO_OUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: JP4
+      pin_number: '1'
+      pin_name: '1'
+  - number: 3-GND
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -10.16
+      rotation: 90.0
+    length: 5.08
+    position:
+      x: 111.76
+      y: 104.14
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP3
+      pin_number: '2'
+      pin_name: '2'
+  - number: 4-DIN
+    name: DI
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -12.7
+      y: -2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 96.52
+    net: NEO_IN
+    net_aliases:
+    - NEO_IN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP3
+      pin_number: '3'
+      pin_name: '3'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -7.747
+        y: -5.207
+      max:
+        x: 7.747
+        y: 10.287
+      width: 15.494
+      height: 15.494
+      center:
+        x: 0.0
+        y: 2.54
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 104.013
+        y: 83.693
+      max:
+        x: 119.507
+        y: 99.187
+      width: 15.494
+      height: 15.494
+      center:
+        x: 111.76
+        y: 91.44
+  warnings: []
+connected_components:
+- reference: '#GND1'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND2'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#VDD1'
+  pin_number: '1'
+  pin_name: VDD
+- reference: '#VDD2'
+  pin_number: '1'
+  pin_name: VDD
+- reference: '#VDD3'
+  pin_number: '1'
+  pin_name: VDD
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: C1
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '3'
+  pin_name: '3'
+- reference: JP2
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP3
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP3
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP3
+  pin_number: '3'
+  pin_name: '3'
+- reference: JP4
+  pin_number: '1'
+  pin_name: '1'

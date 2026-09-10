@@ -1,0 +1,30 @@
+Project data fetch failed.
+Error type: RuntimeError
+Error message: fatal: Unable to create 'C:/Users/aaron/AppData/Local/Temp/oomp_git_cache/Adafruit_Learning_System_Guides_c5706479f4f7/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+Command: git -C C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Adafruit_Learning_System_Guides_c5706479f4f7 sparse-checkout init --cone
+Repository URL: https://github.com/adafruit/Adafruit_Learning_System_Guides.git
+Repository name: Adafruit_Learning_System_Guides
+Source folder: ItsyBitsy/ItsyBitsy_Keybow
+Source basename: ItsyBitsy_Keybow_04
+Extensions: ['.kicad_pcb', '.kicad_sch', '.kicad_pro']
+
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/project_git_action.py", line 234, in refresh_project_files
+    _run_git(["-C", repository_directory, "sparse-checkout", "init", "--cone"])
+  File "kicad_agents/project_git_action.py", line 58, in _run_git
+    raise RuntimeError(f"{message}\nCommand: {' '.join(command)}")
+RuntimeError: fatal: Unable to create 'C:/Users/aaron/AppData/Local/Temp/oomp_git_cache/Adafruit_Learning_System_Guides_c5706479f4f7/.git/index.lock': File exists.
+
+Another git process seems to be running in this repository, e.g.
+an editor opened by 'git commit'. Please make sure all processes
+are terminated then try again. If it still fails, a git process
+may have crashed in this repository earlier:
+remove the file manually to continue.
+Command: git -C C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Adafruit_Learning_System_Guides_c5706479f4f7 sparse-checkout init --cone

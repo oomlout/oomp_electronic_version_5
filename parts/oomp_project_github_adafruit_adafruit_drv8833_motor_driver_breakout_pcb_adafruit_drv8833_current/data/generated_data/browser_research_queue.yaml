@@ -1,0 +1,142 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 5
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - C3
+  value: 0.1uF
+  footprint: Adafruit DRV8833-import-fps:0805-NO
+  query: 0.1uF Adafruit DRV8833-import-fps:0805-NO
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=0.1uF+Adafruit+DRV8833-import-fps%3A0805-NO
+    datasheet_search: https://www.google.com/search?q=0.1uF+Adafruit+DRV8833-import-fps%3A0805-NO+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_100_nano_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0402_100_nano_farad
+  - electronic_capacitor_0402_10_nano_farad
+  - electronic_capacitor_0402_22_nano_farad
+  - electronic_capacitor_0805_10_micro_farad
+  - electronic_capacitor_0805_22_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - R1
+  - R2
+  value: 0.2Ω
+  footprint: Adafruit DRV8833-import-fps:_1206
+  query: 0.2Ω Adafruit DRV8833-import-fps:_1206
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=0.2%CE%A9+Adafruit+DRV8833-import-fps%3A_1206
+    datasheet_search: https://www.google.com/search?q=0.2%CE%A9+Adafruit+DRV8833-import-fps%3A_1206+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_1206_0_2_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_2512_0_2_ohm
+  - electronic_resistor_1210_0_1_ohm
+  - electronic_resistor_1206_0_ohm
+  - electronic_resistor_1206_10_ohm
+  - electronic_resistor_1206_12_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - Q1
+  value: DMG3415U
+  footprint: Adafruit DRV8833-import-fps:SOT23-WIDE
+  query: DMG3415U Adafruit DRV8833-import-fps:SOT23-WIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=DMG3415U+Adafruit+DRV8833-import-fps%3ASOT23-WIDE
+    datasheet_search: https://www.google.com/search?q=DMG3415U+Adafruit+DRV8833-import-fps%3ASOT23-WIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_transistor_sot_363_6_mosfet_n_channel_dual
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
+  - electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: DRV8833PWPR
+  footprint: Adafruit DRV8833-import-fps:HTSSOP16
+  query: DRV8833PWPR Adafruit DRV8833-import-fps:HTSSOP16
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=DRV8833PWPR+Adafruit+DRV8833-import-fps%3AHTSSOP16
+    datasheet_search: https://www.google.com/search?q=DRV8833PWPR+Adafruit+DRV8833-import-fps%3AHTSSOP16+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - J1
+  value: VMOTORIN
+  footprint: Adafruit DRV8833-import-fps:TERMBLOCK_1X2-3.5MM
+  query: VMOTORIN Adafruit DRV8833-import-fps:TERMBLOCK_1X2-3.5MM
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=VMOTORIN+Adafruit+DRV8833-import-fps%3ATERMBLOCK_1X2-3.5MM
+    datasheet_search: https://www.google.com/search?q=VMOTORIN+Adafruit+DRV8833-import-fps%3ATERMBLOCK_1X2-3.5MM+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

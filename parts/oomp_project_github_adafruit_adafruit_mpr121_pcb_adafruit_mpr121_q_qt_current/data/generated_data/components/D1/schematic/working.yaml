@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: D1
+  source_file: data/kicad_file.kicad_sch
+  uuid: e7158475-5159-490b-9427-8517f863222d
+  library_id: kicad_file-eagle-import:LED0603_NOOUTLINE
+  unit: 1
+  body_style: 1
+  position:
+    x: 106.68
+    y: 114.3
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D1
+    Value: RED
+    Footprint: kicad_file:CHIPLED_0603_NOOUTLINE
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 106.68
+      y: 119.38
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R7
+      pin_number: '1'
+      pin_name: '1'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 106.68
+      y: 111.76
+    net: INT
+    net_aliases:
+    - INT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '6'
+      pin_name: '6'
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '1'
+      pin_name: '#IRQ'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.397
+      max:
+        x: 1.397
+        y: 3.302
+      width: 4.064
+      height: 4.699
+      center:
+        x: -0.635
+        y: 0.9525
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 103.378
+        y: 112.903
+      max:
+        x: 108.077
+        y: 116.967
+      width: 4.699
+      height: 4.064
+      center:
+        x: 105.7275
+        y: 114.935
+  warnings: []
+connected_components:
+- reference: JP2
+  pin_number: '6'
+  pin_name: '6'
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R7
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '1'
+  pin_name: '#IRQ'

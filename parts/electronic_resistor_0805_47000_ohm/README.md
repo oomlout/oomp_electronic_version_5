@@ -51,6 +51,18 @@ Resistor 47000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-LED-Backpacks Adafruit 0.54 Alphanumeric current](https://github.com/adafruit/Adafruit-LED-Backpacks/blob/master/Adafruit%200.54%20Alphanumeric%20v0.1.brd) | 3 | R3, R4, R5 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_0_54_alphanumeric_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_0_54_alphanumeric_current) |
+| [Project adafruit/Adafruit-LED-Backpacks Adafruit 1.2in 7 segment current](https://github.com/adafruit/Adafruit-LED-Backpacks/blob/master/Adafruit%201.2in%207-segment.brd) | 3 | R3, R4, R5 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_1_2in_7_segment_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_1_2in_7_segment_current) |
+| [Project adafruit/Adafruit-LED-Backpacks Adafruit 7seg backpack current](https://github.com/adafruit/Adafruit-LED-Backpacks/blob/master/Adafruit%207seg%20backpack.brd) | 3 | R3, R4, R5 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_7seg_backpack_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_7seg_backpack_current) |
+| [Project adafruit/Adafruit-LED-Backpacks Adafruit bicolor bargraph 24 current](https://github.com/adafruit/Adafruit-LED-Backpacks/blob/master/Adafruit%20bicolor%20bargraph%2024.brd) | 3 | R3, R4, R5 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_bicolor_bargraph_24_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_bicolor_bargraph_24_current) |
+| [Project adafruit/Adafruit-LED-Backpacks Adafruit HT16 K33 breakout current](https://github.com/adafruit/Adafruit-LED-Backpacks/blob/master/Adafruit%20HT16K33%20breakout.brd) | 3 | R3, R4, R5 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_ht16_k33_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_ht16_k33_breakout_current) |
+
+
+
 ## Files
 
 

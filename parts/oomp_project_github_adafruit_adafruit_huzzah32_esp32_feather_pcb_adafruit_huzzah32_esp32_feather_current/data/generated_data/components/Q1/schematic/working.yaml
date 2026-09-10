@@ -1,0 +1,165 @@
+available: true
+units:
+- reference: Q1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 7d5bb104-6ac7-4156-93ee-da7ad7581c7c
+  library_id: kicad_file-eagle-import:TRANSISTOR_NPNSOT23-3
+  unit: 1
+  body_style: 1
+  position:
+    x: 144.78
+    y: 134.62
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: Q1
+    Value: mmbt2222
+    Footprint: kicad_file:SOT23-3
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 142.24
+      y: 134.62
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R13
+      pin_number: '5'
+      pin_name: '2'
+  - number: '2'
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 147.32
+      y: 129.54
+    net: RTS
+    net_aliases:
+    - RTS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '19'
+      pin_name: RTS
+    - reference: R13
+      pin_number: '7'
+      pin_name: '2'
+  - number: '3'
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 147.32
+      y: 139.7
+    net: RESET
+    net_aliases:
+    - RESET
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C4
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '16'
+      pin_name: '16'
+    - reference: R13
+      pin_number: '6'
+      pin_name: '2'
+    - reference: SW2
+      pin_number: B
+      pin_name: S
+    - reference: SW2
+      pin_number: B'
+      pin_name: S1
+    - reference: X2
+      pin_number: '3'
+      pin_name: EN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.25395
+        y: -2.6162
+      max:
+        x: 2.6162
+        y: 2.6162
+      width: 2.87015
+      height: 5.2324
+      center:
+        x: 1.181125
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 144.52605
+        y: 132.0038
+      max:
+        x: 147.3962
+        y: 137.2362
+      width: 2.87015
+      height: 5.2324
+      center:
+        x: 145.961125
+        y: 134.62
+  warnings: []
+connected_components:
+- reference: C4
+  pin_number: '1'
+  pin_name: '1'
+- reference: IC1
+  pin_number: '19'
+  pin_name: RTS
+- reference: JP1
+  pin_number: '16'
+  pin_name: '16'
+- reference: R13
+  pin_number: '5'
+  pin_name: '2'
+- reference: R13
+  pin_number: '6'
+  pin_name: '2'
+- reference: R13
+  pin_number: '7'
+  pin_name: '2'
+- reference: SW2
+  pin_number: B
+  pin_name: S
+- reference: SW2
+  pin_number: B'
+  pin_name: S1
+- reference: X2
+  pin_number: '3'
+  pin_name: EN

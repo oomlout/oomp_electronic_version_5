@@ -1,0 +1,2228 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-10T00:02:15",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on B.Cu, length 0.1796 mm",
+                    "pos": {
+                        "x": -5.08,
+                        "y": -1.143
+                    },
+                    "uuid": "e71605cb-5327-4d2f-a8bf-fe87f3e10c29"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 0.8344 mm",
+                    "pos": {
+                        "x": -2.712,
+                        "y": -3.257
+                    },
+                    "uuid": "9eac686d-62ae-4ef1-903a-8dcbcdf63473"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.3810 mm",
+                    "pos": {
+                        "x": -2.712,
+                        "y": -3.638
+                    },
+                    "uuid": "92cf4d8f-60dc-4311-9acf-c32f4ca0d3a4"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 1.3435 mm",
+                    "pos": {
+                        "x": 1.077,
+                        "y": -0.955
+                    },
+                    "uuid": "a1c4fd2b-a763-4c6e-95fb-ecaee1a4f4d5"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track (arc) [GND] on B.Cu, length 0.5086 mm",
+                    "pos": {
+                        "x": -1.079501,
+                        "y": 1.8415
+                    },
+                    "uuid": "f04068b7-83fb-411d-94b5-ea380400cad3"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 0.4320 mm",
+                    "pos": {
+                        "x": 1.077,
+                        "y": -0.523
+                    },
+                    "uuid": "a3544b56-5f27-4b17-90ee-5051f1b1cf6f"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.5300 mm",
+                    "pos": {
+                        "x": -0.53,
+                        "y": -6.35
+                    },
+                    "uuid": "368d4268-5689-48de-830e-6b9ef88b635b"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on F.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "e1e907b7-4f3f-4a14-9230-3319725bd5e8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 3.0858 mm",
+                    "pos": {
+                        "x": -2.712,
+                        "y": -4.168
+                    },
+                    "uuid": "531015ed-64da-48d3-abd2-a0a1e61b3ade"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on F.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "e1e907b7-4f3f-4a14-9230-3319725bd5e8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and GND)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.527,
+                        "y": -0.373
+                    },
+                    "uuid": "4a4b96d9-4da5-49a2-877e-0eb55983c780"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 0.4320 mm",
+                    "pos": {
+                        "x": 1.077,
+                        "y": -0.523
+                    },
+                    "uuid": "a3544b56-5f27-4b17-90ee-5051f1b1cf6f"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1296 mm)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.527,
+                        "y": -0.373
+                    },
+                    "uuid": "4a4b96d9-4da5-49a2-877e-0eb55983c780"
+                },
+                {
+                    "description": "Track [GND] on F.Cu, length 1.3435 mm",
+                    "pos": {
+                        "x": 1.077,
+                        "y": -0.955
+                    },
+                    "uuid": "a1c4fd2b-a763-4c6e-95fb-ecaee1a4f4d5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on B.Cu, length 0.1270 mm",
+                    "pos": {
+                        "x": 0.127,
+                        "y": -6.35
+                    },
+                    "uuid": "255f34e6-d189-4696-a4f6-814b58c48d5a"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on B.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "fc56c1b5-3c7d-42de-bf07-3fdcb1646bb7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [SDA_3V] on F.Cu, length 1.6510 mm",
+                    "pos": {
+                        "x": -5.588,
+                        "y": 1.524
+                    },
+                    "uuid": "725303d6-a824-433f-9f23-c4530ff498f8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP3 on F.Cu",
+                    "pos": {
+                        "x": -7.204025,
+                        "y": 2.375962
+                    },
+                    "uuid": "ad142dcf-45db-4e3d-8ea5-85e3ef7d697c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SDA_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": 0.627
+                    },
+                    "uuid": "a81238c2-d413-4970-a765-ae5849c75e9d"
+                },
+                {
+                    "description": "Track [SDA_3V] on F.Cu, length 0.0212 mm",
+                    "pos": {
+                        "x": -0.838,
+                        "y": 0.762
+                    },
+                    "uuid": "d90bc3a2-d267-4f23-8c14-b481cc795742"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SDA_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP3 on B.Cu",
+                    "pos": {
+                        "x": -7.204025,
+                        "y": 2.375962
+                    },
+                    "uuid": "4f083e8f-c6fc-4dea-92ee-fbc7c1319e0e"
+                },
+                {
+                    "description": "Track [SDA_3V] on B.Cu, length 11.1760 mm",
+                    "pos": {
+                        "x": -5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "aa17bdad-7382-4adf-b427-42a0dfcc9ca1"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [SDA_3V] on F.Cu, length 2.1110 mm",
+                    "pos": {
+                        "x": 3.477,
+                        "y": 3.175
+                    },
+                    "uuid": "56adbfe8-744b-4b69-8b73-47a189e6b874"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP4 on F.Cu",
+                    "pos": {
+                        "x": 5.704025,
+                        "y": 4.974038
+                    },
+                    "uuid": "de68e428-a5cc-4b8e-898e-19c9cd4713bf"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SCL_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP6 on F.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "2c99ba96-5cba-40c8-af75-14660d5d657c"
+                },
+                {
+                    "description": "Track [SCL_3V] on F.Cu, length 0.0600 mm",
+                    "pos": {
+                        "x": 5.588,
+                        "y": -3.115
+                    },
+                    "uuid": "3f7998e8-e3d3-4544-83ea-c65b8646c9bd"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [SDA_3V] on F.Cu, length 1.0670 mm",
+                    "pos": {
+                        "x": -1.905,
+                        "y": 0.762
+                    },
+                    "uuid": "827199ae-7a61-4154-8c1a-ebd8f6a20fb6"
+                },
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": 0.627
+                    },
+                    "uuid": "a81238c2-d413-4970-a765-ae5849c75e9d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [SCL_3V] on B.Cu, length 1.6164 mm",
+                    "pos": {
+                        "x": -5.207,
+                        "y": -3.175
+                    },
+                    "uuid": "a8920212-1f1f-4e93-abcb-fa3b7dcdb1c5"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP5 on B.Cu",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "c97bc07e-7e64-4969-b2eb-283f7e2b32e1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3] on F.Cu, length 1.3970 mm",
+                    "pos": {
+                        "x": 0.127,
+                        "y": 6.35
+                    },
+                    "uuid": "422fae0e-59f0-42c0-b165-6502f92bf193"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on F.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "f1ca1c9e-3731-4b8e-8f6f-a5d0d543ed86"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1685 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3] on F.Cu, length 0.6350 mm",
+                    "pos": {
+                        "x": 0.762,
+                        "y": 4.953
+                    },
+                    "uuid": "1fd95122-ebaa-4acc-8d35-941caa6588cc"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on F.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "f1ca1c9e-3731-4b8e-8f6f-a5d0d543ed86"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1446 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3] on F.Cu, length 2.4130 mm",
+                    "pos": {
+                        "x": 0.127,
+                        "y": 4.953
+                    },
+                    "uuid": "3565a05d-7044-4df1-8501-99b862466528"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on F.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "f1ca1c9e-3731-4b8e-8f6f-a5d0d543ed86"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SCL_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP6 on F.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "2c99ba96-5cba-40c8-af75-14660d5d657c"
+                },
+                {
+                    "description": "Track [SCL_3V] on F.Cu, length 3.2796 mm",
+                    "pos": {
+                        "x": 3.269,
+                        "y": -0.796
+                    },
+                    "uuid": "c5bade4d-80cd-41e5-aba6-a25ac1e1cd1e"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [SCL_3V] on F.Cu, length 1.2690 mm",
+                    "pos": {
+                        "x": 1.077,
+                        "y": 0.127
+                    },
+                    "uuid": "8729064e-cdb5-4c29-9a61-a81c39e7e765"
+                },
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.527,
+                        "y": 0.277
+                    },
+                    "uuid": "97ba9df0-11f1-44c7-9399-b0381e9140ec"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [SCL_3V] on B.Cu, length 0.3810 mm",
+                    "pos": {
+                        "x": -5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "45bb3562-c47a-423a-944f-73d4cd7f3c86"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP5 on B.Cu",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "c97bc07e-7e64-4969-b2eb-283f7e2b32e1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3] on F.Cu, length 0.1270 mm",
+                    "pos": {
+                        "x": 0.127,
+                        "y": 6.35
+                    },
+                    "uuid": "9b796cc9-1604-4227-9680-20c915c3eda6"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on F.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "f1ca1c9e-3731-4b8e-8f6f-a5d0d543ed86"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [SCL_3V] on B.Cu, length 1.6164 mm",
+                    "pos": {
+                        "x": 4.445,
+                        "y": -4.318
+                    },
+                    "uuid": "628d3563-3c95-4c85-b4aa-cdb808407ca4"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP6 on B.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "9b309e0f-c298-48c4-8d94-789a08ef594c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Track [INT] on F.Cu, length 0.7010 mm",
+                    "pos": {
+                        "x": -0.823,
+                        "y": 0.127
+                    },
+                    "uuid": "1f5b593e-7b95-4f4a-9a97-6c16e91ce780"
+                },
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": -0.023
+                    },
+                    "uuid": "d7c092fe-6e3d-415b-94b9-64ead4150ba3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1240 mm)",
+            "items": [
+                {
+                    "description": "Track [INT] on F.Cu, length 0.3592 mm",
+                    "pos": {
+                        "x": -1.524,
+                        "y": 0.127
+                    },
+                    "uuid": "7113497b-71f6-47ec-861f-9de77ec3ef0b"
+                },
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": -0.023
+                    },
+                    "uuid": "d7c092fe-6e3d-415b-94b9-64ead4150ba3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [GND] of TP2",
+                    "pos": {
+                        "x": 0.0,
+                        "y": -6.35
+                    },
+                    "uuid": "35c0244b-8d00-47f2-8703-08a3a808169e"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on F.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "e1e907b7-4f3f-4a14-9230-3319725bd5e8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP4",
+                    "pos": {
+                        "x": 5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "ba2aa82d-9c40-4482-a62e-0bc3f8208a41"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP4 on F.Cu",
+                    "pos": {
+                        "x": 5.704025,
+                        "y": 4.974038
+                    },
+                    "uuid": "de68e428-a5cc-4b8e-898e-19c9cd4713bf"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [+3V3] of TP1",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 6.35
+                    },
+                    "uuid": "457ae3a9-39a1-4465-a66f-be2aedeaea85"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on F.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "f1ca1c9e-3731-4b8e-8f6f-a5d0d543ed86"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP4",
+                    "pos": {
+                        "x": 5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "ba2aa82d-9c40-4482-a62e-0bc3f8208a41"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP4 on B.Cu",
+                    "pos": {
+                        "x": 5.704025,
+                        "y": 4.974038
+                    },
+                    "uuid": "c3099e2b-0353-400f-a2ed-0e5e1da30091"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SCL_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.527,
+                        "y": 0.277
+                    },
+                    "uuid": "97ba9df0-11f1-44c7-9399-b0381e9140ec"
+                },
+                {
+                    "description": "Pad P$2 [SCL_3V] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.077,
+                        "y": 0.127
+                    },
+                    "uuid": "c49412f2-36b1-458b-bd50-e4811c46dc87"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [GND] of TP2",
+                    "pos": {
+                        "x": 0.0,
+                        "y": -6.35
+                    },
+                    "uuid": "35c0244b-8d00-47f2-8703-08a3a808169e"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on B.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "fc56c1b5-3c7d-42de-bf07-3fdcb1646bb7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP6",
+                    "pos": {
+                        "x": 5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "05967102-774a-4d9e-8cc6-06ac9f6a820a"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP6 on F.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "2c99ba96-5cba-40c8-af75-14660d5d657c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [+3V3] of TP1",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 6.35
+                    },
+                    "uuid": "457ae3a9-39a1-4465-a66f-be2aedeaea85"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on B.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "5eb24fea-4d9c-4f79-bd41-1b62a2467be5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SDA_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP3 on F.Cu",
+                    "pos": {
+                        "x": -7.204025,
+                        "y": 2.375962
+                    },
+                    "uuid": "ad142dcf-45db-4e3d-8ea5-85e3ef7d697c"
+                },
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP3",
+                    "pos": {
+                        "x": -5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "e7af2524-dd3e-4313-ba23-fda8710feb66"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SCL_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP5 on F.Cu",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "863aad5b-b8fd-4dbe-99a5-3820f1d84ebd"
+                },
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP5",
+                    "pos": {
+                        "x": -5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "8e30b62a-b4be-44c1-9acb-2d2317d227b8"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SDA_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP3 on B.Cu",
+                    "pos": {
+                        "x": -7.204025,
+                        "y": 2.375962
+                    },
+                    "uuid": "4f083e8f-c6fc-4dea-92ee-fbc7c1319e0e"
+                },
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP3",
+                    "pos": {
+                        "x": -5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "e7af2524-dd3e-4313-ba23-fda8710feb66"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP6",
+                    "pos": {
+                        "x": 5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "05967102-774a-4d9e-8cc6-06ac9f6a820a"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP6 on B.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "9b309e0f-c298-48c4-8d94-789a08ef594c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and GND)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.527,
+                        "y": -0.373
+                    },
+                    "uuid": "4a4b96d9-4da5-49a2-877e-0eb55983c780"
+                },
+                {
+                    "description": "Pad P$3 [GND] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.077,
+                        "y": -0.523
+                    },
+                    "uuid": "e27bffdf-36ec-4523-af66-42ce7a76b806"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP5",
+                    "pos": {
+                        "x": -5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "8e30b62a-b4be-44c1-9acb-2d2317d227b8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP5 on B.Cu",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "c97bc07e-7e64-4969-b2eb-283f7e2b32e1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets <no net> and SDA_3V)",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": 0.627
+                    },
+                    "uuid": "a81238c2-d413-4970-a765-ae5849c75e9d"
+                },
+                {
+                    "description": "Pad P$6 [SDA_3V] of U1 on F.Cu",
+                    "pos": {
+                        "x": -0.823,
+                        "y": 0.777
+                    },
+                    "uuid": "b3c97855-acd9-418b-b4aa-96b85b941caa"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad P$5 [INT] of U1 on F.Cu",
+                    "pos": {
+                        "x": -0.823,
+                        "y": 0.127
+                    },
+                    "uuid": "86166fb3-2027-4265-b4f2-6fbad9ea405a"
+                },
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": -0.023
+                    },
+                    "uuid": "d7c092fe-6e3d-415b-94b9-64ead4150ba3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad P$4 [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -0.823,
+                        "y": -0.523
+                    },
+                    "uuid": "1cf4d0b9-ef54-41ba-94d0-9150effc40f2"
+                },
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": -0.673
+                    },
+                    "uuid": "6c0fb91b-4058-45f7-8ba0-fb5bb801472e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP4 on F.Cu",
+                    "pos": {
+                        "x": 5.704025,
+                        "y": 4.974038
+                    },
+                    "uuid": "de68e428-a5cc-4b8e-898e-19c9cd4713bf"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP4 on B.Cu",
+                    "pos": {
+                        "x": 5.704025,
+                        "y": 4.974038
+                    },
+                    "uuid": "c3099e2b-0353-400f-a2ed-0e5e1da30091"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.1008 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP4",
+                    "pos": {
+                        "x": 5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "ba2aa82d-9c40-4482-a62e-0bc3f8208a41"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.1778 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "PTH pad TAP [GND] of TP2",
+                    "pos": {
+                        "x": 0.0,
+                        "y": -6.35
+                    },
+                    "uuid": "35c0244b-8d00-47f2-8703-08a3a808169e"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on F.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "e1e907b7-4f3f-4a14-9230-3319725bd5e8"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on B.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "fc56c1b5-3c7d-42de-bf07-3fdcb1646bb7"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.1778 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "PTH pad TAP [+3V3] of TP1",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 6.35
+                    },
+                    "uuid": "457ae3a9-39a1-4465-a66f-be2aedeaea85"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on B.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "5eb24fea-4d9c-4f79-bd41-1b62a2467be5"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on F.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "f1ca1c9e-3731-4b8e-8f6f-a5d0d543ed86"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP3 on F.Cu",
+                    "pos": {
+                        "x": -7.204025,
+                        "y": 2.375962
+                    },
+                    "uuid": "ad142dcf-45db-4e3d-8ea5-85e3ef7d697c"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.1008 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP3",
+                    "pos": {
+                        "x": -5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "e7af2524-dd3e-4313-ba23-fda8710feb66"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP5 on F.Cu",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "863aad5b-b8fd-4dbe-99a5-3820f1d84ebd"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP3 on B.Cu",
+                    "pos": {
+                        "x": -7.204025,
+                        "y": 2.375962
+                    },
+                    "uuid": "4f083e8f-c6fc-4dea-92ee-fbc7c1319e0e"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP5 on B.Cu",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "c97bc07e-7e64-4969-b2eb-283f7e2b32e1"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.1008 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP5",
+                    "pos": {
+                        "x": -5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "8e30b62a-b4be-44c1-9acb-2d2317d227b8"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.1008 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP6",
+                    "pos": {
+                        "x": 5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "05967102-774a-4d9e-8cc6-06ac9f6a820a"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP6 on F.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "2c99ba96-5cba-40c8-af75-14660d5d657c"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Circle on Edge.Cuts",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "d7a12833-fb86-47eb-b0c7-827c7582eca8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP6 on B.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "9b309e0f-c298-48c4-8d94-789a08ef594c"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP6",
+                    "pos": {
+                        "x": 5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "05967102-774a-4d9e-8cc6-06ac9f6a820a"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP6 on F.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "2c99ba96-5cba-40c8-af75-14660d5d657c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad P$4 [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -0.823,
+                        "y": -0.523
+                    },
+                    "uuid": "1cf4d0b9-ef54-41ba-94d0-9150effc40f2"
+                },
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": -0.673
+                    },
+                    "uuid": "6c0fb91b-4058-45f7-8ba0-fb5bb801472e"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [GND] of TP2",
+                    "pos": {
+                        "x": 0.0,
+                        "y": -6.35
+                    },
+                    "uuid": "35c0244b-8d00-47f2-8703-08a3a808169e"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on F.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "e1e907b7-4f3f-4a14-9230-3319725bd5e8"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [+3V3] of TP1",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 6.35
+                    },
+                    "uuid": "457ae3a9-39a1-4465-a66f-be2aedeaea85"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on F.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "f1ca1c9e-3731-4b8e-8f6f-a5d0d543ed86"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.527,
+                        "y": -0.373
+                    },
+                    "uuid": "4a4b96d9-4da5-49a2-877e-0eb55983c780"
+                },
+                {
+                    "description": "Pad P$3 [GND] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.077,
+                        "y": -0.523
+                    },
+                    "uuid": "e27bffdf-36ec-4523-af66-42ce7a76b806"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad P$5 [INT] of U1 on F.Cu",
+                    "pos": {
+                        "x": -0.823,
+                        "y": 0.127
+                    },
+                    "uuid": "86166fb3-2027-4265-b4f2-6fbad9ea405a"
+                },
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": -0.023
+                    },
+                    "uuid": "d7c092fe-6e3d-415b-94b9-64ead4150ba3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP5 on F.Cu",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "863aad5b-b8fd-4dbe-99a5-3820f1d84ebd"
+                },
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP5",
+                    "pos": {
+                        "x": -5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "8e30b62a-b4be-44c1-9acb-2d2317d227b8"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.527,
+                        "y": 0.277
+                    },
+                    "uuid": "97ba9df0-11f1-44c7-9399-b0381e9140ec"
+                },
+                {
+                    "description": "Pad P$2 [SCL_3V] of U1 on F.Cu",
+                    "pos": {
+                        "x": 1.077,
+                        "y": 0.127
+                    },
+                    "uuid": "c49412f2-36b1-458b-bd50-e4811c46dc87"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of U1 on F.Cu",
+                    "pos": {
+                        "x": -1.273,
+                        "y": 0.627
+                    },
+                    "uuid": "a81238c2-d413-4970-a765-ae5849c75e9d"
+                },
+                {
+                    "description": "Pad P$6 [SDA_3V] of U1 on F.Cu",
+                    "pos": {
+                        "x": -0.823,
+                        "y": 0.777
+                    },
+                    "uuid": "b3c97855-acd9-418b-b4aa-96b85b941caa"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP3 on F.Cu",
+                    "pos": {
+                        "x": -7.204025,
+                        "y": 2.375962
+                    },
+                    "uuid": "ad142dcf-45db-4e3d-8ea5-85e3ef7d697c"
+                },
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP3",
+                    "pos": {
+                        "x": -5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "e7af2524-dd3e-4313-ba23-fda8710feb66"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP4",
+                    "pos": {
+                        "x": 5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "ba2aa82d-9c40-4482-a62e-0bc3f8208a41"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP4 on F.Cu",
+                    "pos": {
+                        "x": 5.704025,
+                        "y": 4.974038
+                    },
+                    "uuid": "de68e428-a5cc-4b8e-898e-19c9cd4713bf"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP6",
+                    "pos": {
+                        "x": 5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "05967102-774a-4d9e-8cc6-06ac9f6a820a"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP6 on B.Cu",
+                    "pos": {
+                        "x": 7.204025,
+                        "y": -2.375962
+                    },
+                    "uuid": "9b309e0f-c298-48c4-8d94-789a08ef594c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [GND] of TP2",
+                    "pos": {
+                        "x": 0.0,
+                        "y": -6.35
+                    },
+                    "uuid": "35c0244b-8d00-47f2-8703-08a3a808169e"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP2 on B.Cu",
+                    "pos": {
+                        "x": 1.5,
+                        "y": -7.35
+                    },
+                    "uuid": "fc56c1b5-3c7d-42de-bf07-3fdcb1646bb7"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [+3V3] of TP1",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 6.35
+                    },
+                    "uuid": "457ae3a9-39a1-4465-a66f-be2aedeaea85"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP1 on B.Cu",
+                    "pos": {
+                        "x": -1.5,
+                        "y": 7.35
+                    },
+                    "uuid": "5eb24fea-4d9c-4f79-bd41-1b62a2467be5"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon [<no net>] of TP3 on B.Cu",
+                    "pos": {
+                        "x": -7.204025,
+                        "y": 2.375962
+                    },
+                    "uuid": "4f083e8f-c6fc-4dea-92ee-fbc7c1319e0e"
+                },
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP3",
+                    "pos": {
+                        "x": -5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "e7af2524-dd3e-4313-ba23-fda8710feb66"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP5",
+                    "pos": {
+                        "x": -5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "8e30b62a-b4be-44c1-9acb-2d2317d227b8"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP5 on B.Cu",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "c97bc07e-7e64-4969-b2eb-283f7e2b32e1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "PTH pad TAP [SDA_3V] of TP4",
+                    "pos": {
+                        "x": 5.588,
+                        "y": 3.175
+                    },
+                    "uuid": "ba2aa82d-9c40-4482-a62e-0bc3f8208a41"
+                },
+                {
+                    "description": "Polygon [<no net>] of TP4 on B.Cu",
+                    "pos": {
+                        "x": 5.704025,
+                        "y": 4.974038
+                    },
+                    "uuid": "c3099e2b-0353-400f-a2ed-0e5e1da30091"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": -3.302,
+                        "y": -2.667
+                    },
+                    "uuid": "5c457298-46f1-47c7-9bfa-0bf93388d6b2"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 0.127,
+                        "y": -1.905
+                    },
+                    "uuid": "f22a85eb-f165-41ca-ad21-d5f8484680c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Track has unconnected end",
+            "items": [
+                {
+                    "description": "Track [GND] on B.Cu, length 0.1796 mm",
+                    "pos": {
+                        "x": -5.08,
+                        "y": -1.143
+                    },
+                    "uuid": "e71605cb-5327-4d2f-a8bf-fe87f3e10c29"
+                }
+            ],
+            "severity": "warning",
+            "type": "track_dangling"
+        },
+        {
+            "description": "Footprint 'ADAFRUIT_3.5MM' does not match copy in library 'Adafruit Flora TCS34725-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint U$8",
+                    "pos": {
+                        "x": 4.445,
+                        "y": -2.794
+                    },
+                    "uuid": "64863a33-bace-4249-b22d-e5e51596eacf"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of C1",
+                    "pos": {
+                        "x": -3.7125,
+                        "y": 2.348
+                    },
+                    "uuid": "c80acdb2-11b3-4fcb-9efd-240d173e03bc"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of LED1",
+                    "pos": {
+                        "x": -4.554,
+                        "y": 1.731
+                    },
+                    "uuid": "08e99c0a-2773-451c-8360-9b2f8f53e15a"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of U1",
+                    "pos": {
+                        "x": 1.27,
+                        "y": 1.647
+                    },
+                    "uuid": "7839c36c-aa15-4403-bf43-382eabad9f44"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of Q3",
+                    "pos": {
+                        "x": -3.667,
+                        "y": -3.168
+                    },
+                    "uuid": "f7401001-dc84-46f1-9165-ffc3b6e4a37b"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 3.6265,
+                        "y": 4.867
+                    },
+                    "uuid": "22059cd7-2788-4fe5-8c9f-395df9102277"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 4.539,
+                        "y": -1.3675
+                    },
+                    "uuid": "b59f2605-6e6a-4586-9920-4416f2c4bff6"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R6",
+                    "pos": {
+                        "x": 0.4445,
+                        "y": -4.699
+                    },
+                    "uuid": "5a94f640-3dcd-43a6-926e-d4d2eb40fa0b"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of LED1",
+                    "pos": {
+                        "x": -4.554,
+                        "y": 1.731
+                    },
+                    "uuid": "08e99c0a-2773-451c-8360-9b2f8f53e15a"
+                },
+                {
+                    "description": "PCB text 'SCL' on F.Silkscreen",
+                    "pos": {
+                        "x": -7.239,
+                        "y": -0.635
+                    },
+                    "uuid": "9fc44b8e-4bab-49fb-8336-8b38e0dea421"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of LED1",
+                    "pos": {
+                        "x": -4.554,
+                        "y": 1.731
+                    },
+                    "uuid": "08e99c0a-2773-451c-8360-9b2f8f53e15a"
+                },
+                {
+                    "description": "PCB text 'SDA' on F.Silkscreen",
+                    "pos": {
+                        "x": -7.366,
+                        "y": 1.778
+                    },
+                    "uuid": "aa4c5df0-f76e-4bf5-9237-07bf38fe8668"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "PCB text 'SCL' on F.Silkscreen",
+                    "pos": {
+                        "x": 4.699,
+                        "y": -0.635
+                    },
+                    "uuid": "8a3cd843-7a50-4465-bfd6-3c232244a0a0"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 4.539,
+                        "y": -1.3675
+                    },
+                    "uuid": "b59f2605-6e6a-4586-9920-4416f2c4bff6"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of Q3",
+                    "pos": {
+                        "x": -3.667,
+                        "y": -3.168
+                    },
+                    "uuid": "f7401001-dc84-46f1-9165-ffc3b6e4a37b"
+                },
+                {
+                    "description": "Polygon of TP5 on F.Mask",
+                    "pos": {
+                        "x": -5.704025,
+                        "y": -4.974038
+                    },
+                    "uuid": "21e3af38-3fe6-437d-935f-417d8ec6192b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of Q3",
+                    "pos": {
+                        "x": -3.667,
+                        "y": -3.168
+                    },
+                    "uuid": "f7401001-dc84-46f1-9165-ffc3b6e4a37b"
+                },
+                {
+                    "description": "PTH pad TAP [SCL_3V] of TP5",
+                    "pos": {
+                        "x": -5.588,
+                        "y": -3.175
+                    },
+                    "uuid": "8e30b62a-b4be-44c1-9acb-2d2317d227b8"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of C1",
+                    "pos": {
+                        "x": -3.7125,
+                        "y": 2.348
+                    },
+                    "uuid": "c80acdb2-11b3-4fcb-9efd-240d173e03bc"
+                },
+                {
+                    "description": "Pad A [+3V3] of LED1 on F.Cu",
+                    "pos": {
+                        "x": -3.304,
+                        "y": 1.806
+                    },
+                    "uuid": "025384bc-50aa-451c-87b9-63a50a025ae4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 3.6265,
+                        "y": 4.867
+                    },
+                    "uuid": "22059cd7-2788-4fe5-8c9f-395df9102277"
+                },
+                {
+                    "description": "Arc of FID2 on F.Mask",
+                    "pos": {
+                        "x": 2.667,
+                        "y": 5.715
+                    },
+                    "uuid": "6a0a5819-12b6-4ddd-8060-9a6cfd0dc40b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 3.6265,
+                        "y": 4.867
+                    },
+                    "uuid": "22059cd7-2788-4fe5-8c9f-395df9102277"
+                },
+                {
+                    "description": "Arc of FID2 on F.Mask",
+                    "pos": {
+                        "x": 2.667,
+                        "y": 5.715
+                    },
+                    "uuid": "64375702-667f-47a6-8743-d0c80a83f9b4"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 3.6265,
+                        "y": 4.867
+                    },
+                    "uuid": "22059cd7-2788-4fe5-8c9f-395df9102277"
+                },
+                {
+                    "description": "Pad 1 [<no net>] of FID2 on F.Cu",
+                    "pos": {
+                        "x": 2.667,
+                        "y": 5.715
+                    },
+                    "uuid": "50923cb8-09e7-4f17-97ce-9037ac36c884"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 3.6265,
+                        "y": 4.867
+                    },
+                    "uuid": "22059cd7-2788-4fe5-8c9f-395df9102277"
+                },
+                {
+                    "description": "Arc of FID2 on F.Mask",
+                    "pos": {
+                        "x": 2.667,
+                        "y": 5.715
+                    },
+                    "uuid": "e6086c98-9bca-41b2-8c8d-fdd3990a2df9"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R6",
+                    "pos": {
+                        "x": 0.4445,
+                        "y": -4.699
+                    },
+                    "uuid": "5a94f640-3dcd-43a6-926e-d4d2eb40fa0b"
+                },
+                {
+                    "description": "PTH pad TAP [GND] of TP2",
+                    "pos": {
+                        "x": 0.0,
+                        "y": -6.35
+                    },
+                    "uuid": "35c0244b-8d00-47f2-8703-08a3a808169e"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

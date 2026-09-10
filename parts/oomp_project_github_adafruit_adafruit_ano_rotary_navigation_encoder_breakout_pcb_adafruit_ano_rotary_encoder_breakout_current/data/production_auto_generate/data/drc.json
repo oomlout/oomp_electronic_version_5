@@ -1,0 +1,658 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-09T23:02:35",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3597 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": -17.78,
+                        "y": -15.24
+                    },
+                    "uuid": "5f9ed848-7a20-476f-9596-8b10bc8d55c8"
+                },
+                {
+                    "description": "PTH pad S5 [SW5] of X1",
+                    "pos": {
+                        "x": -16.150319,
+                        "y": -3.606245
+                    },
+                    "uuid": "34f27f05-4225-42b8-bdd5-732688163500"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3597 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 17.78,
+                        "y": 17.78
+                    },
+                    "uuid": "0ada2003-951b-485c-9813-f932b2391312"
+                },
+                {
+                    "description": "PTH pad S3 [SW3] of X1",
+                    "pos": {
+                        "x": 16.150319,
+                        "y": 3.606245
+                    },
+                    "uuid": "9259cd95-02eb-4642-bce8-4882bdc4fbfe"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.4304 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 15.24,
+                        "y": -17.78
+                    },
+                    "uuid": "d65ab015-c145-49fc-b1d2-519b04de5052"
+                },
+                {
+                    "description": "PTH pad COM_B [COMB] of X1",
+                    "pos": {
+                        "x": -3.252691,
+                        "y": -16.079608
+                    },
+                    "uuid": "dd0601f8-5126-4520-8cd3-6bd413341b32"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Unresolved text variable",
+            "items": [
+                {
+                    "description": "Footprint text of U$33 (${REV})",
+                    "pos": {
+                        "x": 10.8966,
+                        "y": -6.858
+                    },
+                    "uuid": "16ce5a3d-d556-4ef0-84b8-1054ec848e90"
+                }
+            ],
+            "severity": "error",
+            "type": "unresolved_variable"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": -15.24,
+                        "y": 20.32
+                    },
+                    "uuid": "03adac5e-eacd-4f6d-bf76-58a0dbf43269"
+                },
+                {
+                    "description": "Reference field of JP3",
+                    "pos": {
+                        "x": 11.5062,
+                        "y": 20.2438
+                    },
+                    "uuid": "ea51b047-bb2e-4111-bfe1-033e51f89330"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Footprint 'ENCODER_ANO' does not match copy in library 'Adafruit ANO Rotary Encoder Breakout-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint X1",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "7d84d9ab-06dc-4134-8939-e8f8f3db2e72"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of JP3",
+                    "pos": {
+                        "x": 11.5062,
+                        "y": 20.2438
+                    },
+                    "uuid": "ea51b047-bb2e-4111-bfe1-033e51f89330"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint text of U$33 (${REV})",
+                    "pos": {
+                        "x": 10.8966,
+                        "y": -6.858
+                    },
+                    "uuid": "16ce5a3d-d556-4ef0-84b8-1054ec848e90"
+                },
+                {
+                    "description": "Circle of U$33 on F.Silkscreen",
+                    "pos": {
+                        "x": 10.541,
+                        "y": -6.35
+                    },
+                    "uuid": "4cecfa08-ec70-4d4a-9212-b416517dd61a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "36b1b76e-de32-42ec-9c46-7962b3dacc59"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": -3.181981,
+                        "y": 3.181981
+                    },
+                    "uuid": "bdd6eeae-99aa-464f-bec1-a45d0d6ac0ac"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "36b1b76e-de32-42ec-9c46-7962b3dacc59"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": 3.181981,
+                        "y": -3.181981
+                    },
+                    "uuid": "5b4dde9c-a596-493e-9d78-7029a83a4e7b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": -10.606602,
+                        "y": -10.606602
+                    },
+                    "uuid": "b58c73c5-682d-4870-827f-d6b1e68a3def"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "PTH pad COM_B [COMB] of X1",
+                    "pos": {
+                        "x": -3.252691,
+                        "y": -16.079608
+                    },
+                    "uuid": "dd0601f8-5126-4520-8cd3-6bd413341b32"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "PTH pad S5 [SW5] of X1",
+                    "pos": {
+                        "x": -16.150319,
+                        "y": -3.606245
+                    },
+                    "uuid": "34f27f05-4225-42b8-bdd5-732688163500"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": -10.606602,
+                        "y": 10.606602
+                    },
+                    "uuid": "858b251d-c138-4c9b-af8a-35dd36c61143"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "PTH pad S4 [SW4] of X1",
+                    "pos": {
+                        "x": -7.74989,
+                        "y": 15.103801
+                    },
+                    "uuid": "92863bcf-db9e-475b-a2d9-943a8855c3ff"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": 10.606602,
+                        "y": 10.606602
+                    },
+                    "uuid": "9856e120-708f-4d71-a359-838ac2579564"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "PTH pad S3 [SW3] of X1",
+                    "pos": {
+                        "x": 16.150319,
+                        "y": 3.606245
+                    },
+                    "uuid": "9259cd95-02eb-4642-bce8-4882bdc4fbfe"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "PTH pad S2 [SW2] of X1",
+                    "pos": {
+                        "x": 7.74989,
+                        "y": -15.103801
+                    },
+                    "uuid": "2639f896-f021-4437-8002-d4b414e14711"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "fc1107dc-20ea-409b-8ba3-92ea14e23726"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": 10.606602,
+                        "y": -10.606602
+                    },
+                    "uuid": "e813f3d7-4096-4abe-901d-187d846e4d34"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": -10.606602,
+                        "y": -10.606602
+                    },
+                    "uuid": "b58c73c5-682d-4870-827f-d6b1e68a3def"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "PTH pad COM_B [COMB] of X1",
+                    "pos": {
+                        "x": -3.252691,
+                        "y": -16.079608
+                    },
+                    "uuid": "dd0601f8-5126-4520-8cd3-6bd413341b32"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "PTH pad S5 [SW5] of X1",
+                    "pos": {
+                        "x": -16.150319,
+                        "y": -3.606245
+                    },
+                    "uuid": "34f27f05-4225-42b8-bdd5-732688163500"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": -10.606602,
+                        "y": 10.606602
+                    },
+                    "uuid": "858b251d-c138-4c9b-af8a-35dd36c61143"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "PTH pad S4 [SW4] of X1",
+                    "pos": {
+                        "x": -7.74989,
+                        "y": 15.103801
+                    },
+                    "uuid": "92863bcf-db9e-475b-a2d9-943a8855c3ff"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": 10.606602,
+                        "y": 10.606602
+                    },
+                    "uuid": "9856e120-708f-4d71-a359-838ac2579564"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "PTH pad S3 [SW3] of X1",
+                    "pos": {
+                        "x": 16.150319,
+                        "y": 3.606245
+                    },
+                    "uuid": "9259cd95-02eb-4642-bce8-4882bdc4fbfe"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "PTH pad S2 [SW2] of X1",
+                    "pos": {
+                        "x": 7.74989,
+                        "y": -15.103801
+                    },
+                    "uuid": "2639f896-f021-4437-8002-d4b414e14711"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Circle of X1 on B.Silkscreen",
+                    "pos": {
+                        "x": 0.0,
+                        "y": 0.0
+                    },
+                    "uuid": "e84b42c0-105d-49de-b3e4-b0fcd5f1e242"
+                },
+                {
+                    "description": "NPTH pad of X1",
+                    "pos": {
+                        "x": 10.606602,
+                        "y": -10.606602
+                    },
+                    "uuid": "e813f3d7-4096-4abe-901d-187d846e4d34"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

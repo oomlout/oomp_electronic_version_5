@@ -1,0 +1,123 @@
+available: true
+units:
+- reference: R1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 434c1bff-8d52-432c-9495-f85240d563db
+  library_id: kicad_file-eagle-import:R-US_0207/10
+  unit: 1
+  body_style: 1
+  position:
+    x: 170.18
+    y: 73.66
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R1
+    Value: 1.0k
+    Footprint: kicad_file:36
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 175.26
+      y: 73.66
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '1'
+      pin_name: +
+    - reference: X1
+      pin_number: '1'
+      pin_name: '5'
+    - reference: X1
+      pin_number: '2'
+      pin_name: '4'
+  - number: '2'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 165.1
+      y: 73.66
+    net: MOSI
+    net_aliases:
+    - MOSI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '1'
+      pin_name: (MOSI/DI/SDA/AIN0/OC0A/OC1A/AREF/PCINT0)PB0
+    - reference: ISP0
+      pin_number: '5'
+      pin_name: MOSI
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 167.5384
+        y: 72.5424
+      max:
+        x: 172.8216
+        y: 74.7776
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 170.18
+        y: 73.66
+  warnings: []
+connected_components:
+- reference: C1
+  pin_number: '1'
+  pin_name: +
+- reference: IC1
+  pin_number: '1'
+  pin_name: (MOSI/DI/SDA/AIN0/OC0A/OC1A/AREF/PCINT0)PB0
+- reference: ISP0
+  pin_number: '5'
+  pin_name: MOSI
+- reference: X1
+  pin_number: '1'
+  pin_name: '5'
+- reference: X1
+  pin_number: '2'
+  pin_name: '4'

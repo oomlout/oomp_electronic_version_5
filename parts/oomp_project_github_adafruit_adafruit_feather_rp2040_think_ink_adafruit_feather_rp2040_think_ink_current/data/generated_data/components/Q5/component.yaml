@@ -1,0 +1,586 @@
+reference: Q5
+schematic:
+  available: true
+  units:
+  - reference: Q5
+    source_file: data/kicad_file.kicad_sch
+    uuid: 023a8dfb-a0dd-46f7-b889-62edcbb9525c
+    library_id: kicad_file-eagle-import:MOSFET-NWIDE
+    unit: 1
+    body_style: 1
+    position:
+      x: 185.42
+      y: 190.5
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: Q5
+      Value: IRLML0100
+      Footprint: kicad_file:SOT23-WIDE
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: G
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: -2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 182.88
+        y: 193.04
+      net: GDR
+      net_aliases:
+      - GDR
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: EINK2
+        pin_number: '2'
+        pin_name: GDR
+    - number: '2'
+      name: S
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 187.96
+        y: 195.58
+      net: RESE
+      net_aliases:
+      - RESE
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: EINK2
+        pin_number: '3'
+        pin_name: RESE
+      - reference: R14
+        pin_number: '2'
+        pin_name: '2'
+    - number: '3'
+      name: D
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 187.96
+        y: 185.42
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C27
+        pin_number: '1'
+        pin_name: '1'
+      - reference: D5
+        pin_number: C
+        pin_name: C
+      - reference: L1
+        pin_number: P$1
+        pin_name: '1'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.127
+          y: -3.302
+        max:
+          x: 4.6482
+          y: 3.302
+        width: 4.7752
+        height: 6.604
+        center:
+          x: 2.2606
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 185.293
+          y: 187.198
+        max:
+          x: 190.0682
+          y: 193.802
+        width: 4.7752
+        height: 6.604
+        center:
+          x: 187.6806
+          y: 190.5
+    warnings: []
+  connected_components:
+  - reference: C27
+    pin_number: '1'
+    pin_name: '1'
+  - reference: D5
+    pin_number: C
+    pin_name: C
+  - reference: EINK2
+    pin_number: '2'
+    pin_name: GDR
+  - reference: EINK2
+    pin_number: '3'
+    pin_name: RESE
+  - reference: L1
+    pin_number: P$1
+    pin_name: '1'
+  - reference: R14
+    pin_number: '2'
+    pin_name: '2'
+pcb:
+  reference: Q5
+  value: IRLML0100
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 2251e363-f398-47ed-841e-3dfdfad82b56
+  library_id: Adafruit Feather RP2040 ThinkInk-import-fps:SOT23-WIDE
+  layer: F.Cu
+  side: front
+  position:
+    x: 38.481
+    y: -17.78
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: Q5
+    Value: IRLML0100
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.95
+      y: 1.0
+      rotation: 180.0
+    position:
+      x: 39.431
+      y: -18.78
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 1.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: GDR
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.45
+          y: 0.4
+        max:
+          x: -0.45
+          y: 1.6
+        width: 1.0
+        height: 1.2
+        center:
+          x: -0.95
+          y: 1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 38.931
+          y: -19.38
+        max:
+          x: 39.931
+          y: -18.18
+        width: 1.0
+        height: 1.2
+        center:
+          x: 39.431
+          y: -18.78
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: EINK2
+      pad_number: '2'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.95
+      y: 1.0
+      rotation: 180.0
+    position:
+      x: 37.531
+      y: -18.78
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 1.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: RESE
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.45
+          y: 0.4
+        max:
+          x: 1.45
+          y: 1.6
+        width: 1.0
+        height: 1.2
+        center:
+          x: 0.95
+          y: 1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 37.031
+          y: -19.38
+        max:
+          x: 38.031
+          y: -18.18
+        width: 1.0
+        height: 1.2
+        center:
+          x: 37.531
+          y: -18.78
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: EINK2
+      pad_number: '3'
+    - reference: R14
+      pad_number: '1'
+  - number: '3'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: -1.0
+      rotation: 180.0
+    position:
+      x: 38.481
+      y: -16.78
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 1.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$12
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.5
+          y: -1.6
+        max:
+          x: 0.5
+          y: -0.4
+        width: 1.0
+        height: 1.2
+        center:
+          x: 0.0
+          y: -1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 37.981
+          y: -17.38
+        max:
+          x: 38.981
+          y: -16.18
+        width: 1.0
+        height: 1.2
+        center:
+          x: 38.481
+          y: -16.78
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C27
+      pad_number: '1'
+    - reference: D5
+      pad_number: A
+    - reference: L1
+      pad_number: P$1
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.45
+        y: -1.6
+      max:
+        x: 1.45
+        y: 1.6
+      width: 2.9
+      height: 3.2
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 37.031
+        y: -19.38
+      max:
+        x: 39.931
+        y: -16.18
+      width: 2.9
+      height: 3.2
+      center:
+        x: 38.481
+        y: -17.78
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.674
+        y: -1.2954
+      max:
+        x: 1.674
+        y: 1.2954
+      width: 3.348
+      height: 2.5908
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 36.807
+        y: -19.0754
+      max:
+        x: 40.155
+        y: -16.4846
+      width: 3.348
+      height: 2.5908
+      center:
+        x: 38.481
+        y: -17.78
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.774
+        y: -0.762
+      max:
+        x: 1.774
+        y: 0.762
+      width: 3.548
+      height: 1.524
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 36.707
+        y: -18.542
+      max:
+        x: 40.255
+        y: -17.018
+      width: 3.548
+      height: 1.524
+      center:
+        x: 38.481
+        y: -17.78
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.774
+        y: -1.6
+      max:
+        x: 1.774
+        y: 1.6
+      width: 3.548
+      height: 3.2
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 36.707
+        y: -19.38
+      max:
+        x: 40.255
+        y: -16.18
+      width: 3.548
+      height: 3.2
+      center:
+        x: 38.481
+        y: -17.78
+  connected_components:
+  - C27
+  - D5
+  - EINK2
+  - L1
+  - R14
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - GDR
+    pcb_nets:
+    - GDR
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - RESE
+    pcb_nets:
+    - RESE
+    status: agree
+  - pin_or_pad_number: '3'
+    schematic_nets: []
+    pcb_nets:
+    - N$12
+    status: incomplete
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: transistor
+    package_size: null
+    value: IRLML0100
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+    score: 0.122
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_363_6_mosfet_n_channel_dual
+    score: 0.1216
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+    score: 0.1159
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
+    score: 0.1138
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138
+    score: 0.1027
+    reasons:
+    - same component family
+category: transistor
+category_source: unmatched_kicad_hint
+category_name: Transistor
+generated_directory: components/Q5

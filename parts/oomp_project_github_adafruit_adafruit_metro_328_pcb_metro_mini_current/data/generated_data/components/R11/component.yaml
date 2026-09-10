@@ -1,0 +1,454 @@
+reference: R11
+schematic:
+  available: true
+  units:
+  - reference: R11
+    source_file: data/kicad_file.kicad_sch
+    uuid: c3b72e90-1e18-44ab-b433-04962aa2310b
+    library_id: kicad_file-eagle-import:RESISTOR0805_NOOUTLINE
+    unit: 1
+    body_style: 1
+    position:
+      x: 132.08
+      y: 246.38
+      rotation: 180.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R11
+      Value: 1K
+      Footprint: kicad_file:0805-NO
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 137.16
+        y: 246.38
+      net: IO0
+      net_aliases:
+      - IO0
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: IOL0
+        pin_number: '8'
+        pin_name: '8'
+      - reference: U2
+        pin_number: '30'
+        pin_name: (RXD)PD0
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 127.0
+        y: 246.38
+      net: RXD
+      net_aliases:
+      - RXD
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U3
+        pin_number: '21'
+        pin_name: TXD
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -1.397
+        max:
+          x: 2.667
+          y: 1.397
+        width: 5.334
+        height: 2.794
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 129.413
+          y: 244.983
+        max:
+          x: 134.747
+          y: 247.777
+        width: 5.334
+        height: 2.794
+        center:
+          x: 132.08
+          y: 246.38
+    warnings: []
+  connected_components:
+  - reference: IOL0
+    pin_number: '8'
+    pin_name: '8'
+  - reference: U2
+    pin_number: '30'
+    pin_name: (RXD)PD0
+  - reference: U3
+    pin_number: '21'
+    pin_name: TXD
+pcb:
+  reference: R11
+  value: 1K
+  source_file: data/kicad_file.kicad_pcb
+  uuid: cd4fd7c1-31a2-4678-9d26-69abc0be3975
+  library_id: Metro Mini Rev B-import-fps:0805-NO
+  layer: F.Cu
+  side: front
+  position:
+    x: 38.1
+    y: -5.461
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: R11
+    Value: 1K
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.95
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 38.1
+      y: -6.411
+    placed_rotation: 0.0
+    size:
+      x: 1.3
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: IO0
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.7
+          y: -0.65
+        max:
+          x: -0.2
+          y: 0.65
+        width: 1.5
+        height: 1.3
+        center:
+          x: -0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 37.45
+          y: -7.161
+        max:
+          x: 38.75
+          y: -5.661
+        width: 1.3
+        height: 1.5
+        center:
+          x: 38.1
+          y: -6.411
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: IOL0
+      pad_number: '8'
+    - reference: U2
+      pad_number: '30'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.95
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 38.1
+      y: -4.511
+    placed_rotation: 0.0
+    size:
+      x: 1.3
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: RXD
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.2
+          y: -0.65
+        max:
+          x: 1.7
+          y: 0.65
+        width: 1.5
+        height: 1.3
+        center:
+          x: 0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 37.45
+          y: -5.261
+        max:
+          x: 38.75
+          y: -3.761
+        width: 1.3
+        height: 1.5
+        center:
+          x: 38.1
+          y: -4.511
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U3
+      pad_number: '21'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.7
+        y: -0.65
+      max:
+        x: 1.7
+        y: 0.65
+      width: 3.4
+      height: 1.3
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 37.45
+        y: -7.161
+      max:
+        x: 38.75
+        y: -3.761
+      width: 1.3
+      height: 3.4
+      center:
+        x: 38.1
+        y: -5.461
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.0922
+        y: -0.7262
+      max:
+        x: 1.1057
+        y: 0.7239
+      width: 2.1979
+      height: 1.4501
+      center:
+        x: 0.00675
+        y: -0.00115
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 37.3761
+        y: -6.5532
+      max:
+        x: 38.8262
+        y: -4.3553
+      width: 1.4501
+      height: 2.1979
+      center:
+        x: 38.10115
+        y: -5.45425
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.1524
+        y: -0.6604
+      max:
+        x: 0.1524
+        y: 0.6604
+      width: 0.3048
+      height: 1.3208
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 37.4396
+        y: -5.6134
+      max:
+        x: 38.7604
+        y: -5.3086
+      width: 1.3208
+      height: 0.3048
+      center:
+        x: 38.1
+        y: -5.461
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.7
+        y: -0.7262
+      max:
+        x: 1.7
+        y: 0.7239
+      width: 3.4
+      height: 1.4501
+      center:
+        x: 0.0
+        y: -0.00115
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 37.3761
+        y: -7.161
+      max:
+        x: 38.8262
+        y: -3.761
+      width: 1.4501
+      height: 3.4
+      center:
+        x: 38.10115
+        y: -5.461
+  connected_components:
+  - IOL0
+  - U2
+  - U3
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - IO0
+    pcb_nets:
+    - IO0
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - RXD
+    pcb_nets:
+    - RXD
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0805_1000_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0805_1000_ohm
+  inferred:
+    kind: resistor
+    package_size: 0805
+    value: 1K
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R11

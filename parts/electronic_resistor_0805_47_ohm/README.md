@@ -51,6 +51,14 @@ Resistor 47 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project adafruit/2.8-TFT-Breakout-PCB Adafruit tftlcd8bit current](https://github.com/adafruit/2.8-TFT-Breakout-PCB/blob/master/Adafruit_tftlcd8bit.brd) | 4 | R1, R2, R3, R4 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_tftlcd8bit_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_tftlcd8bit_current) |
+
+
+
 ## Files
 
 

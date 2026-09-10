@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: JP4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 965d7087-a264-4a55-b023-d3b0fc07a196
+  library_id: kicad_file-eagle-import:HEADER-1X2ROUND
+  unit: 1
+  body_style: 1
+  position:
+    x: 104.14
+    y: 121.92
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP4
+    Value: HEADER-1X2ROUND
+    Footprint: kicad_file:1X02_ROUND
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 119.38
+    net: ASEN
+    net_aliases:
+    - ASEN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: SJ1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '3'
+      pin_name: A_ISENSE
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 121.92
+    net: BSEN
+    net_aliases:
+    - BSEN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: SJ2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '6'
+      pin_name: B_ISENSE
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -6.5532
+        y: -2.7432
+      max:
+        x: 1.4732
+        y: 5.2832
+      width: 8.0264
+      height: 8.0264
+      center:
+        x: -2.54
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 97.5868
+        y: 116.6368
+      max:
+        x: 105.6132
+        y: 124.6632
+      width: 8.0264
+      height: 8.0264
+      center:
+        x: 101.6
+        y: 120.65
+  warnings: []
+connected_components:
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: R2
+  pin_number: '2'
+  pin_name: '2'
+- reference: SJ1
+  pin_number: '1'
+  pin_name: '1'
+- reference: SJ2
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '3'
+  pin_name: A_ISENSE
+- reference: U1
+  pin_number: '6'
+  pin_name: B_ISENSE

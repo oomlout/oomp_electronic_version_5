@@ -1,0 +1,101 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 3
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - C5
+  - C7
+  value: 0.1uF
+  footprint: Adafruit 128x64 Mono OLED PCB-import-fps:C0805K
+  query: 0.1uF Adafruit 128x64 Mono OLED PCB-import-fps:C0805K
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=0.1uF+Adafruit+128x64+Mono+OLED+PCB-import-fps%3AC0805K
+    datasheet_search: https://www.google.com/search?q=0.1uF+Adafruit+128x64+Mono+OLED+PCB-import-fps%3AC0805K+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_100_nano_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0402_100_nano_farad
+  - electronic_capacitor_0402_10_nano_farad
+  - electronic_capacitor_0402_22_nano_farad
+  - electronic_capacitor_0805_10_micro_farad
+  - electronic_capacitor_0805_22_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - C1
+  - C2
+  - C4
+  value: 1uF
+  footprint: Adafruit 128x64 Mono OLED PCB-import-fps:C0805K
+  query: 1uF Adafruit 128x64 Mono OLED PCB-import-fps:C0805K
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1uF+Adafruit+128x64+Mono+OLED+PCB-import-fps%3AC0805K
+    datasheet_search: https://www.google.com/search?q=1uF+Adafruit+128x64+Mono+OLED+PCB-import-fps%3AC0805K+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_1_micro_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_10_nano_farad
+  - electronic_capacitor_0603_100_nano_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  - electronic_capacitor_0402_2_2_micro_farad
+  - electronic_capacitor_0603_2_2_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - C3
+  - C6
+  value: 2.2uF
+  footprint: Adafruit 128x64 Mono OLED PCB-import-fps:C0805K
+  query: 2.2uF Adafruit 128x64 Mono OLED PCB-import-fps:C0805K
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=2.2uF+Adafruit+128x64+Mono+OLED+PCB-import-fps%3AC0805K
+    datasheet_search: https://www.google.com/search?q=2.2uF+Adafruit+128x64+Mono+OLED+PCB-import-fps%3AC0805K+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_2_2_micro_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0805_4_7_micro_farad
+  - electronic_capacitor_0402_2_2_micro_farad
+  - electronic_capacitor_0603_2_2_micro_farad
+  - electronic_capacitor_0402_4_7_micro_farad
+  - electronic_capacitor_0603_4_7_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

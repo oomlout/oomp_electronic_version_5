@@ -1,0 +1,632 @@
+reference: JP1
+schematic:
+  available: true
+  units:
+  - reference: JP1
+    source_file: data/kicad_file.kicad_sch
+    uuid: fcd10434-194a-421b-942c-667cb966beb5
+    library_id: kicad_file-eagle-import:HEADER-1X4ROUND
+    unit: 1
+    body_style: 1
+    position:
+      x: 134.62
+      y: 195.58
+      rotation: 180.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: JP1
+      Value: HEADER-1X4ROUND
+      Footprint: kicad_file:1X04_ROUND
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: inverted
+      local_position:
+        x: -2.54
+        y: 5.08
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 137.16
+        y: 200.66
+      net: PWM0
+      net_aliases:
+      - PWM0
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U2
+        pin_number: '6'
+        pin_name: PWM0
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: inverted
+      local_position:
+        x: -2.54
+        y: 2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 137.16
+        y: 198.12
+      net: PWM1
+      net_aliases:
+      - PWM1
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U2
+        pin_number: '7'
+        pin_name: PWM1
+    - number: '3'
+      name: '3'
+      electrical_type: passive
+      graphic_style: inverted
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 137.16
+        y: 195.58
+      net: PWM14
+      net_aliases:
+      - PWM14
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U2
+        pin_number: '21'
+        pin_name: PWM14
+    - number: '4'
+      name: '4'
+      electrical_type: passive
+      graphic_style: inverted
+      local_position:
+        x: -2.54
+        y: -2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 137.16
+        y: 193.04
+      net: PWM15
+      net_aliases:
+      - PWM15
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U2
+        pin_number: '22'
+        pin_name: PWM15
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -6.5532
+          y: -5.2832
+        max:
+          x: 1.4732
+          y: 7.8232
+        width: 8.0264
+        height: 13.1064
+        center:
+          x: -2.54
+          y: 1.27
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 133.1468
+          y: 190.2968
+        max:
+          x: 141.1732
+          y: 203.4032
+        width: 8.0264
+        height: 13.1064
+        center:
+          x: 137.16
+          y: 196.85
+    warnings: []
+  connected_components:
+  - reference: U2
+    pin_number: '21'
+    pin_name: PWM14
+  - reference: U2
+    pin_number: '22'
+    pin_name: PWM15
+  - reference: U2
+    pin_number: '6'
+    pin_name: PWM0
+  - reference: U2
+    pin_number: '7'
+    pin_name: PWM1
+pcb:
+  reference: JP1
+  value: ''
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 0ee395ba-7ad4-487a-b254-f2ce87f55ea7
+  library_id: Adafruit Motor Bonnet Rev B-import-fps:1X04_ROUND
+  layer: F.Cu
+  side: front
+  position:
+    x: 2.667
+    y: -12.954
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: JP1
+    Value: ''
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 2.667
+      y: -9.144
+    placed_rotation: 90.0
+    size:
+      x: 1.778
+      y: 1.778
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: PWM0
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -4.699
+          y: -0.889
+        max:
+          x: -2.921
+          y: 0.889
+        width: 1.778
+        height: 1.778
+        center:
+          x: -3.81
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 1.778
+          y: -10.033
+        max:
+          x: 3.556
+          y: -8.255
+        width: 1.778
+        height: 1.778
+        center:
+          x: 2.667
+          y: -9.144
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: U2
+      pad_number: '6'
+  - number: '2'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -1.27
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 2.667
+      y: -11.684
+    placed_rotation: 90.0
+    size:
+      x: 1.778
+      y: 1.778
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: PWM1
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.159
+          y: -0.889
+        max:
+          x: -0.381
+          y: 0.889
+        width: 1.778
+        height: 1.778
+        center:
+          x: -1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 1.778
+          y: -12.573
+        max:
+          x: 3.556
+          y: -10.795
+        width: 1.778
+        height: 1.778
+        center:
+          x: 2.667
+          y: -11.684
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: U2
+      pad_number: '7'
+  - number: '3'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 1.27
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 2.667
+      y: -14.224
+    placed_rotation: 90.0
+    size:
+      x: 1.778
+      y: 1.778
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: PWM14
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.381
+          y: -0.889
+        max:
+          x: 2.159
+          y: 0.889
+        width: 1.778
+        height: 1.778
+        center:
+          x: 1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 1.778
+          y: -15.113
+        max:
+          x: 3.556
+          y: -13.335
+        width: 1.778
+        height: 1.778
+        center:
+          x: 2.667
+          y: -14.224
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: U2
+      pad_number: '21'
+  - number: '4'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 2.667
+      y: -16.764
+    placed_rotation: 90.0
+    size:
+      x: 1.778
+      y: 1.778
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.0
+      y: 1.0
+      diameter: 1.0
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: PWM15
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.921
+          y: -0.889
+        max:
+          x: 4.699
+          y: 0.889
+        width: 1.778
+        height: 1.778
+        center:
+          x: 3.81
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 1.778
+          y: -17.653
+        max:
+          x: 3.556
+          y: -15.875
+        width: 1.778
+        height: 1.778
+        center:
+          x: 2.667
+          y: -16.764
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: U2
+      pad_number: '22'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -4.699
+        y: -0.889
+      max:
+        x: 4.699
+        y: 0.889
+      width: 9.398
+      height: 1.778
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 1.778
+        y: -17.653
+      max:
+        x: 3.556
+        y: -8.255
+      width: 1.778
+      height: 9.398
+      center:
+        x: 2.667
+        y: -12.954
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -5.1816
+        y: -0.7366
+      max:
+        x: 4.064
+        y: 0.7366
+      width: 9.2456
+      height: 1.4732
+      center:
+        x: -0.5588
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 1.9304
+        y: -17.018
+      max:
+        x: 3.4036
+        y: -7.7724
+      width: 1.4732
+      height: 9.2456
+      center:
+        x: 2.667
+        y: -12.3952
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -5.1816
+        y: -0.889
+      max:
+        x: 4.699
+        y: 0.889
+      width: 9.8806
+      height: 1.778
+      center:
+        x: -0.2413
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 1.778
+        y: -17.653
+      max:
+        x: 3.556
+        y: -7.7724
+      width: 1.778
+      height: 9.8806
+      center:
+        x: 2.667
+        y: -12.7127
+  connected_components:
+  - U2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - PWM0
+    pcb_nets:
+    - PWM0
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - PWM1
+    pcb_nets:
+    - PWM1
+    status: agree
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - PWM14
+    pcb_nets:
+    - PWM14
+    status: agree
+  - pin_or_pad_number: '4'
+    schematic_nets:
+    - PWM15
+    pcb_nets:
+    - PWM15
+    status: agree
+  agree_count: 4
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_4_pin
+  confidence: 1.0
+  proposed_oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_4_pin
+  inferred:
+    kind: connector_header
+    package_size: null
+    value: HEADER-1X4ROUND
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: connector
+category_source: oomp_populate
+category_name: Connector
+generated_directory: components/JP1

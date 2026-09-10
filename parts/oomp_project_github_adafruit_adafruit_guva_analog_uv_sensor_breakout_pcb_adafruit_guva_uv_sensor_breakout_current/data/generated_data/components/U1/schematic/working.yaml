@@ -1,0 +1,276 @@
+available: true
+units:
+- reference: U1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 94cc10bf-0652-4ad7-979e-4ec89a813933
+  library_id: kicad_file-eagle-import:OPAMP_SINGLESOT235
+  unit: 1
+  body_style: 1
+  position:
+    x: 162.56
+    y: 109.22
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U1
+    Value: MCP6001
+    Footprint: kicad_file:SOT23-5
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: OUT
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 170.18
+      y: 109.22
+    net: AOUT
+    net_aliases:
+    - AOUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R2
+      pin_number: '1'
+      pin_name: '1'
+  - number: '2'
+    name: V-
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: -7.62
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 160.02
+      y: 116.84
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP2
+      pin_number: '3'
+      pin_name: '3'
+    - reference: R3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '3'
+      pin_name: +IN
+    - reference: U2
+      pin_number: A
+      pin_name: A
+  - number: '3'
+    name: +IN
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 111.76
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP2
+      pin_number: '3'
+      pin_name: '3'
+    - reference: R3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '2'
+      pin_name: V-
+    - reference: U2
+      pin_number: A
+      pin_name: A
+  - number: '4'
+    name: -IN
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 106.68
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: K
+      pin_name: C
+  - number: '5'
+    name: V+
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 7.62
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 160.02
+      y: 101.6
+    net: 5.0V
+    net_aliases:
+    - 5.0V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$1'
+      pin_number: '1'
+      pin_name: 5.0V
+    - reference: '#U$4'
+      pin_number: '1'
+      pin_name: 5.0V
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP2
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -5.2832
+        y: -5.2832
+      max:
+        x: 5.2832
+        y: 5.2832
+      width: 10.5664
+      height: 10.5664
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 157.2768
+        y: 103.9368
+      max:
+        x: 167.8432
+        y: 114.5032
+      width: 10.5664
+      height: 10.5664
+      center:
+        x: 162.56
+        y: 109.22
+  warnings: []
+connected_components:
+- reference: '#U$1'
+  pin_number: '1'
+  pin_name: 5.0V
+- reference: '#U$2'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$4'
+  pin_number: '1'
+  pin_name: 5.0V
+- reference: '#U$5'
+  pin_number: '1'
+  pin_name: GND
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: C1
+  pin_number: '2'
+  pin_name: '2'
+- reference: C2
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP2
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP2
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP2
+  pin_number: '3'
+  pin_name: '3'
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R2
+  pin_number: '1'
+  pin_name: '1'
+- reference: R3
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '2'
+  pin_name: V-
+- reference: U1
+  pin_number: '3'
+  pin_name: +IN
+- reference: U2
+  pin_number: A
+  pin_name: A
+- reference: U2
+  pin_number: K
+  pin_name: C

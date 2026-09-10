@@ -1,0 +1,676 @@
+reference: Q2
+schematic:
+  available: true
+  units:
+  - reference: Q2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 7035067d-663c-4c15-9f7d-cf6f643a6900
+    library_id: kicad_file-eagle-import:MOSFET-P
+    unit: 1
+    body_style: 1
+    position:
+      x: 99.06
+      y: 40.64
+      rotation: 270.0
+      mirror: x
+      units: mm
+    properties:
+      Reference: Q2
+      Value: DMG3415U-7
+      Footprint: kicad_file:SOT23-R
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: G
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 96.52
+        y: 35.56
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '2'
+      name: S
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 93.98
+        y: 40.64
+      net: VBUS
+      net_aliases:
+      - VBUS
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#U$2'
+        pin_number: '1'
+        pin_name: VBUS
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C15
+        pin_number: '1'
+        pin_name: '1'
+      - reference: F2
+        pin_number: '2'
+        pin_name: '2'
+    - number: '3'
+      name: D
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 104.14
+        y: 40.64
+      net: +5V
+      net_aliases:
+      - +5V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#P+1'
+        pin_number: '1'
+        pin_name: +5V
+      - reference: '#P+2'
+        pin_number: '1'
+        pin_name: +5V
+      - reference: '#P+4'
+        pin_number: '1'
+        pin_name: +5V
+      - reference: '#P+14'
+        pin_number: '1'
+        pin_name: +5V
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CHG1
+        pin_number: A
+        pin_name: A
+      - reference: D4
+        pin_number: A
+        pin_name: A
+      - reference: PC2
+        pin_number: +
+        pin_name: +
+      - reference: Q1
+        pin_number: '1'
+        pin_name: G
+      - reference: R14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: U1
+        pin_number: '2'
+        pin_name: OUT
+      - reference: U1
+        pin_number: '4'
+        pin_name: OUT
+      - reference: U2
+        pin_number: '4'
+        pin_name: VDD
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -3.302
+        max:
+          x: 2.1082
+          y: 3.302
+        width: 4.7752
+        height: 6.604
+        center:
+          x: -0.2794
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 95.758
+          y: 37.973
+        max:
+          x: 102.362
+          y: 42.7482
+        width: 6.604
+        height: 4.7752
+        center:
+          x: 99.06
+          y: 40.3606
+    warnings: []
+  connected_components:
+  - reference: '#P+1'
+    pin_number: '1'
+    pin_name: +5V
+  - reference: '#P+2'
+    pin_number: '1'
+    pin_name: +5V
+  - reference: '#P+4'
+    pin_number: '1'
+    pin_name: +5V
+  - reference: '#P+14'
+    pin_number: '1'
+    pin_name: +5V
+  - reference: '#U$2'
+    pin_number: '1'
+    pin_name: VBUS
+  - reference: C1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C15
+    pin_number: '1'
+    pin_name: '1'
+  - reference: CHG1
+    pin_number: A
+    pin_name: A
+  - reference: D4
+    pin_number: A
+    pin_name: A
+  - reference: F2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: PC2
+    pin_number: +
+    pin_name: +
+  - reference: Q1
+    pin_number: '1'
+    pin_name: G
+  - reference: R14
+    pin_number: '2'
+    pin_name: '2'
+  - reference: U1
+    pin_number: '2'
+    pin_name: OUT
+  - reference: U1
+    pin_number: '4'
+    pin_name: OUT
+  - reference: U2
+    pin_number: '4'
+    pin_name: VDD
+pcb:
+  reference: Q2
+  value: DMG3415U-7
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 0cea3592-01cf-4a3a-a47e-ed951fc46f0f
+  library_id: Adafruit Metro ESP32-S3 Rev B-import-fps:SOT23-R
+  layer: F.Cu
+  side: front
+  position:
+    x: 25.0825
+    y: -26.797
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: Q2
+    Value: DMG3415U-7
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.95
+      y: 1.0
+      rotation: -90.0
+    position:
+      x: 24.0825
+      y: -27.747
+    placed_rotation: 0.0
+    size:
+      x: 0.635
+      y: 1.016
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$2
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.458
+          y: 0.6825
+        max:
+          x: -0.442
+          y: 1.3175
+        width: 1.016
+        height: 0.635
+        center:
+          x: -0.95
+          y: 1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 23.765
+          y: -28.255
+        max:
+          x: 24.4
+          y: -27.239
+        width: 0.635
+        height: 1.016
+        center:
+          x: 24.0825
+          y: -27.747
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R15
+      pad_number: '1'
+    - reference: R16
+      pad_number: '2'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.95
+      y: 1.0
+      rotation: -90.0
+    position:
+      x: 24.0825
+      y: -25.847
+    placed_rotation: 0.0
+    size:
+      x: 0.635
+      y: 1.016
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: +5V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.442
+          y: 0.6825
+        max:
+          x: 1.458
+          y: 1.3175
+        width: 1.016
+        height: 0.635
+        center:
+          x: 0.95
+          y: 1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 23.765
+          y: -26.355
+        max:
+          x: 24.4
+          y: -25.339
+        width: 0.635
+        height: 1.016
+        center:
+          x: 24.0825
+          y: -25.847
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C3
+      pad_number: '2'
+    - reference: CHG1
+      pad_number: A
+    - reference: D4
+      pad_number: A
+    - reference: PC2
+      pad_number: +
+    - reference: Q1
+      pad_number: '1'
+    - reference: R14
+      pad_number: '2'
+    - reference: U1
+      pad_number: '2'
+    - reference: U1
+      pad_number: '4'
+    - reference: U2
+      pad_number: '4'
+  - number: '3'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: -1.0
+      rotation: -90.0
+    position:
+      x: 26.0825
+      y: -26.797
+    placed_rotation: 0.0
+    size:
+      x: 0.635
+      y: 1.016
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VBUS
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.508
+          y: -1.3175
+        max:
+          x: 0.508
+          y: -0.6825
+        width: 1.016
+        height: 0.635
+        center:
+          x: 0.0
+          y: -1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 25.765
+          y: -27.305
+        max:
+          x: 26.4
+          y: -26.289
+        width: 0.635
+        height: 1.016
+        center:
+          x: 26.0825
+          y: -26.797
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '1'
+    - reference: C15
+      pad_number: '1'
+    - reference: F2
+      pad_number: '2'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.458
+        y: -1.3175
+      max:
+        x: 1.458
+        y: 1.3175
+      width: 2.916
+      height: 2.635
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 23.765
+        y: -28.255
+      max:
+        x: 26.4
+        y: -25.339
+      width: 2.635
+      height: 2.916
+      center:
+        x: 25.0825
+        y: -26.797
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.674
+        y: -1.2954
+      max:
+        x: 1.674
+        y: 1.2954
+      width: 3.348
+      height: 2.5908
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 23.7871
+        y: -28.471
+      max:
+        x: 26.3779
+        y: -25.123
+      width: 2.5908
+      height: 3.348
+      center:
+        x: 25.0825
+        y: -26.797
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.674
+        y: -0.762
+      max:
+        x: 1.674
+        y: 0.762
+      width: 3.348
+      height: 1.524
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 24.3205
+        y: -28.471
+      max:
+        x: 25.8445
+        y: -25.123
+      width: 1.524
+      height: 3.348
+      center:
+        x: 25.0825
+        y: -26.797
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.674
+        y: -1.3175
+      max:
+        x: 1.674
+        y: 1.3175
+      width: 3.348
+      height: 2.635
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 23.765
+        y: -28.471
+      max:
+        x: 26.4
+        y: -25.123
+      width: 2.635
+      height: 3.348
+      center:
+        x: 25.0825
+        y: -26.797
+  connected_components:
+  - C1
+  - C3
+  - C15
+  - CHG1
+  - D4
+  - F2
+  - PC2
+  - Q1
+  - R14
+  - R15
+  - R16
+  - U1
+  - U2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - N$2
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - VBUS
+    pcb_nets:
+    - +5V
+    status: disagree
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - +5V
+    pcb_nets:
+    - VBUS
+    status: disagree
+  agree_count: 0
+  disagree_count: 2
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: transistor
+    package_size: null
+    value: DMG3415U-7
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a
+    score: 0.111
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_363_6_mosfet_n_channel_dual
+    score: 0.0944
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+    score: 0.086
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_363_6_bipolar_pnp_dual_matched_pair_45_volt_100_milliamp_diodes_incorporated_bcm857bs_7_f
+    score: 0.0856
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+    score: 0.0819
+    reasons:
+    - same component family
+category: transistor
+category_source: unmatched_kicad_hint
+category_name: Transistor
+generated_directory: components/Q2

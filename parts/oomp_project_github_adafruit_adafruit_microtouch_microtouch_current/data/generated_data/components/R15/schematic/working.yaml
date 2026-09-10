@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: R15
+  source_file: data/kicad_file.kicad_sch
+  uuid: 1c0d05e1-48da-452e-adcf-6efc7120d610
+  library_id: kicad_file-eagle-import:R-US_M0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 58.42
+    y: 147.32
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R15
+    Value: 10k
+    Footprint: kicad_file:97
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 58.42
+      y: 152.4
+    net: RESET
+    net_aliases:
+    - RESET
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: ISP0
+      pin_number: '3'
+      pin_name: '5'
+    - reference: RESET/BOOT0
+      pin_number: '3'
+      pin_name: S1
+    - reference: U$1
+      pin_number: '13'
+      pin_name: RESET
+  - number: '2'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 58.42
+      y: 142.24
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: P+10
+      pin_number: '1'
+      pin_name: VCC
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 57.3024
+        y: 144.6784
+      max:
+        x: 59.5376
+        y: 149.9616
+      width: 2.2352
+      height: 5.2832
+      center:
+        x: 58.42
+        y: 147.32
+  warnings: []
+connected_components:
+- reference: ISP0
+  pin_number: '3'
+  pin_name: '5'
+- reference: P+10
+  pin_number: '1'
+  pin_name: VCC
+- reference: RESET/BOOT0
+  pin_number: '3'
+  pin_name: S1
+- reference: U$1
+  pin_number: '13'
+  pin_name: RESET

@@ -1,0 +1,501 @@
+reference: D1
+schematic:
+  available: true
+  units:
+  - reference: D1
+    source_file: data/kicad_file.kicad_sch
+    uuid: b4e9947d-2717-45c1-8789-8d790dd16b54
+    library_id: kicad_file-eagle-import:DIODE-SCHOTTKYSOD-123
+    unit: 1
+    body_style: 1
+    position:
+      x: 53.34
+      y: 137.16
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: D1
+      Value: MBR540
+      Footprint: kicad_file:SOD-123
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: A
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 50.8
+        y: 137.16
+      net: PWR
+      net_aliases:
+      - PWR
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: X5
+        pin_number: PWR
+        pin_name: PWR
+    - number: C
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 55.88
+        y: 137.16
+      net: VIN
+      net_aliases:
+      - VIN
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C12
+        pin_number: '1'
+        pin_name: '1'
+      - reference: PC1
+        pin_number: +
+        pin_name: +
+      - reference: POWER0
+        pin_number: '8'
+        pin_name: '8'
+      - reference: R15
+        pin_number: '2'
+        pin_name: '2'
+      - reference: U1
+        pin_number: '3'
+        pin_name: IN
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.397
+          y: -1.397
+        max:
+          x: 1.905
+          y: 1.397
+        width: 3.302
+        height: 2.794
+        center:
+          x: 0.254
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 51.943
+          y: 135.763
+        max:
+          x: 55.245
+          y: 138.557
+        width: 3.302
+        height: 2.794
+        center:
+          x: 53.594
+          y: 137.16
+    warnings: []
+  connected_components:
+  - reference: C12
+    pin_number: '1'
+    pin_name: '1'
+  - reference: PC1
+    pin_number: +
+    pin_name: +
+  - reference: POWER0
+    pin_number: '8'
+    pin_name: '8'
+  - reference: R15
+    pin_number: '2'
+    pin_name: '2'
+  - reference: U1
+    pin_number: '3'
+    pin_name: IN
+  - reference: X5
+    pin_number: PWR
+    pin_name: PWR
+pcb:
+  reference: D1
+  value: MBR540
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 7b8b7df0-982d-4be2-ae51-b408c4370d17
+  library_id: Adafruit Metro ESP32-S3 Rev B-import-fps:SOD-123
+  layer: F.Cu
+  side: front
+  position:
+    x: 6.223
+    y: -53.9115
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: D1
+    Value: MBR540
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.85
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 6.223
+      y: -55.7615
+    placed_rotation: 90.0
+    size:
+      x: 1.4
+      y: 1.4
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: PWR
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.15
+          y: -0.7
+        max:
+          x: 2.55
+          y: 0.7
+        width: 1.4
+        height: 1.4
+        center:
+          x: 1.85
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 5.523
+          y: -56.4615
+        max:
+          x: 6.923
+          y: -55.0615
+        width: 1.4
+        height: 1.4
+        center:
+          x: 6.223
+          y: -55.7615
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: X5
+      pad_number: PWR
+  - number: C
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.85
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 6.223
+      y: -52.0615
+    placed_rotation: 90.0
+    size:
+      x: 1.4
+      y: 1.4
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VIN
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.55
+          y: -0.7
+        max:
+          x: -1.15
+          y: 0.7
+        width: 1.4
+        height: 1.4
+        center:
+          x: -1.85
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 5.523
+          y: -52.7615
+        max:
+          x: 6.923
+          y: -51.3615
+        width: 1.4
+        height: 1.4
+        center:
+          x: 6.223
+          y: -52.0615
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C12
+      pad_number: '1'
+    - reference: PC1
+      pad_number: +
+    - reference: POWER0
+      pad_number: '8'
+    - reference: R15
+      pad_number: '2'
+    - reference: U1
+      pad_number: '3'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.55
+        y: -0.7
+      max:
+        x: 2.55
+        y: 0.7
+      width: 5.1
+      height: 1.4
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 5.523
+        y: -56.4615
+      max:
+        x: 6.923
+        y: -51.3615
+      width: 1.4
+      height: 5.1
+      center:
+        x: 6.223
+        y: -53.9115
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.723
+        y: -0.8016
+      max:
+        x: 1.723
+        y: 0.8016
+      width: 3.446
+      height: 1.6032
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 5.4214
+        y: -55.6345
+      max:
+        x: 7.0246
+        y: -52.1885
+      width: 1.6032
+      height: 3.446
+      center:
+        x: 6.223
+        y: -53.9115
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.9746
+        y: -0.8016
+      max:
+        x: 0.9746
+        y: 0.8016
+      width: 1.9492
+      height: 1.6032
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 5.4214
+        y: -54.8861
+      max:
+        x: 7.0246
+        y: -52.9369
+      width: 1.6032
+      height: 1.9492
+      center:
+        x: 6.223
+        y: -53.9115
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.55
+        y: -0.8016
+      max:
+        x: 2.55
+        y: 0.8016
+      width: 5.1
+      height: 1.6032
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 5.4214
+        y: -56.4615
+      max:
+        x: 7.0246
+        y: -51.3615
+      width: 1.6032
+      height: 5.1
+      center:
+        x: 6.223
+        y: -53.9115
+  connected_components:
+  - C12
+  - PC1
+  - POWER0
+  - R15
+  - U1
+  - X5
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: A
+    schematic_nets:
+    - PWR
+    pcb_nets:
+    - PWR
+    status: agree
+  - pin_or_pad_number: C
+    schematic_nets:
+    - VIN
+    pcb_nets:
+    - VIN
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: electronic_diode_schottky_sod_123
+  inferred:
+    kind: diode
+    package_size: null
+    value: MBR540
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_diode_schottky_sod_123_ss14
+    score: 0.4879
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_323_bat54w
+    score: 0.4068
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_523_1ss400
+    score: 0.4068
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_switching_sod_123_onsemi_1n4148w
+    score: 0.389
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_323_infineon_bat20j
+    score: 0.366
+    reasons:
+    - same component family
+category: diode
+category_source: unmatched_kicad_hint
+category_name: Diode
+generated_directory: components/D1

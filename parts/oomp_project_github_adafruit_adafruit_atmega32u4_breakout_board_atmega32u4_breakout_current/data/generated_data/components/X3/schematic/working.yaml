@@ -1,0 +1,116 @@
+available: true
+units:
+- reference: X3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 38f93e7d-5b70-43a1-8a1d-12d2617c513a
+  library_id: kicad_file-eagle-import:XTALNX5032
+  unit: 1
+  body_style: 1
+  position:
+    x: 132.08
+    y: 152.4
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: X3
+    Value: 16MHz
+    Footprint: kicad_file:5
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: P$1
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 132.08
+      y: 157.48
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: IC1
+      pin_number: '1'
+      pin_name: XTAL2
+  - number: '2'
+    name: P$2
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 132.08
+      y: 147.32
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: IC1
+      pin_number: '2'
+      pin_name: XTAL1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -2.667
+      max:
+        x: 2.667
+        y: 2.667
+      width: 5.334
+      height: 5.334
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 129.413
+        y: 149.733
+      max:
+        x: 134.747
+        y: 155.067
+      width: 5.334
+      height: 5.334
+      center:
+        x: 132.08
+        y: 152.4
+  warnings: []
+connected_components:
+- reference: C2
+  pin_number: '1'
+  pin_name: '1'
+- reference: C3
+  pin_number: '1'
+  pin_name: '1'
+- reference: IC1
+  pin_number: '1'
+  pin_name: XTAL2
+- reference: IC1
+  pin_number: '2'
+  pin_name: XTAL1

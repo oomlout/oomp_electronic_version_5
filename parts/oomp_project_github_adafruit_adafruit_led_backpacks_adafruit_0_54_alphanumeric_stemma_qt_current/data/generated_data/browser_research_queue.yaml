@@ -1,0 +1,122 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 4
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - LED1
+  - LED2
+  value: ''
+  footprint: Adafruit 0.54 Alphanumeric STEMMA QT-import-fps:SEGMENT_STARTBUST_DUAL_KWA-541CBB
+  query: Adafruit 0.54 Alphanumeric STEMMA QT-import-fps:SEGMENT_STARTBUST_DUAL_KWA-541CBB
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=Adafruit+0.54+Alphanumeric+STEMMA+QT-import-fps%3ASEGMENT_STARTBUST_DUAL_KWA-541CBB
+    datasheet_search: https://www.google.com/search?q=Adafruit+0.54+Alphanumeric+STEMMA+QT-import-fps%3ASEGMENT_STARTBUST_DUAL_KWA-541CBB+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_led_0201_red
+  - electronic_led_0402_red
+  - electronic_led_0603_red
+  - electronic_led_0805_red
+  - electronic_led_1206_red
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - D1
+  - D3
+  value: CUS530
+  footprint: Adafruit 0.54 Alphanumeric STEMMA QT-import-fps:SOD-323F
+  query: CUS530 Adafruit 0.54 Alphanumeric STEMMA QT-import-fps:SOD-323F
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=CUS530+Adafruit+0.54+Alphanumeric+STEMMA+QT-import-fps%3ASOD-323F
+    datasheet_search: https://www.google.com/search?q=CUS530+Adafruit+0.54+Alphanumeric+STEMMA+QT-import-fps%3ASOD-323F+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_diode_schottky_sod_323
+  candidate_oomp_ids:
+  - electronic_diode_schottky_sod_323_bat54w
+  - electronic_diode_schottky_sod_123_ss14
+  - electronic_diode_schottky_sod_523_1ss400
+  - electronic_diode_schottky_sod_323_infineon_bat20j
+  - electronic_diode_schottky_sod_323_infineon_bat60a
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: HT16K33
+  footprint: Adafruit 0.54 Alphanumeric STEMMA QT-import-fps:SOP28_300MIL_SKINNY
+  query: HT16K33 Adafruit 0.54 Alphanumeric STEMMA QT-import-fps:SOP28_300MIL_SKINNY
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=HT16K33+Adafruit+0.54+Alphanumeric+STEMMA+QT-import-fps%3ASOP28_300MIL_SKINNY
+    datasheet_search: https://www.google.com/search?q=HT16K33+Adafruit+0.54+Alphanumeric+STEMMA+QT-import-fps%3ASOP28_300MIL_SKINNY+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - CONN1
+  - CONN2
+  value: STEMMA_I2C_QTRA
+  footprint: Adafruit 0.54 Alphanumeric STEMMA QT-import-fps:JST_SH4_RA
+  query: STEMMA_I2C_QTRA Adafruit 0.54 Alphanumeric STEMMA QT-import-fps:JST_SH4_RA
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=STEMMA_I2C_QTRA+Adafruit+0.54+Alphanumeric+STEMMA+QT-import-fps%3AJST_SH4_RA
+    datasheet_search: https://www.google.com/search?q=STEMMA_I2C_QTRA+Adafruit+0.54+Alphanumeric+STEMMA+QT-import-fps%3AJST_SH4_RA+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_2_pin_jst_bm02b_srss_tb
+  - electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_3_pin_jst_bm03b_srss_tb
+  - electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_4_pin_jst_bm04b_srss_tb
+  - electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_5_pin_jst_bm05b_srss_tb
+  - electronic_connector_jst_sh_1_mm_pitch_surface_mount_vertical_6_pin_jst_bm06b_srss_tb
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

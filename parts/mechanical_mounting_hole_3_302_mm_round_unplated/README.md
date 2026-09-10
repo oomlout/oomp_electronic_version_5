@@ -48,6 +48,7 @@ Mounting Hole 3.302 mm Round Unplated is an OOMP mechanical mounting hole defini
 
 | Project | Quantity | References | Explore |
 | --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-Menta-PCB Menta current](https://github.com/adafruit/Adafruit-Menta-PCB/blob/master/menta.brd) | 1 | MH5 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_menta_pcb_menta_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_menta_pcb_menta_current) |
 | [Project sparkfun/ADXL345_Breakout ADXL345 Breakout current](https://github.com/sparkfun/ADXL345_Breakout/tree/master/Hardware) | 2 | MH1, MH2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_adxl345_breakout_adxl345_breakout_current) |
 | [Project sparkfun/SparkFun_u-blox_NEO-F10N u-blox NEO-F10N current](https://github.com/sparkfun/SparkFun_u-blox_NEO-F10N) | 4 | MH3, MH4, MH5, MH6 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_u_blox_neo_f10_n_ublox_neo_f10n_current) |
 

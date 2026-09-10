@@ -1,0 +1,98 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 1
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - C1
+  - C10
+  - C11
+  - C12
+  - C13
+  - C14
+  - C15
+  - C17
+  - C18
+  - C19
+  - C2
+  - C20
+  - C21
+  - C22
+  - C23
+  - C25
+  - C26
+  - C27
+  - C28
+  - C29
+  - C3
+  - C30
+  - C31
+  - C33
+  - C34
+  - C35
+  - C36
+  - C37
+  - C38
+  - C39
+  - C4
+  - C41
+  - C42
+  - C43
+  - C44
+  - C45
+  - C46
+  - C47
+  - C49
+  - C5
+  - C50
+  - C51
+  - C52
+  - C53
+  - C54
+  - C55
+  - C57
+  - C58
+  - C59
+  - C6
+  - C60
+  - C61
+  - C62
+  - C63
+  - C7
+  - C9
+  value: 1.0uF
+  footprint: Adafruit_NeoMatrix_8x8 SK6812-import-fps:0805-NO
+  query: 1.0uF Adafruit_NeoMatrix_8x8 SK6812-import-fps:0805-NO
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1.0uF+Adafruit_NeoMatrix_8x8+SK6812-import-fps%3A0805-NO
+    datasheet_search: https://www.google.com/search?q=1.0uF+Adafruit_NeoMatrix_8x8+SK6812-import-fps%3A0805-NO+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_1_micro_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_10_nano_farad
+  - electronic_capacitor_0603_100_nano_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  - electronic_capacitor_0402_2_2_micro_farad
+  - electronic_capacitor_0603_2_2_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

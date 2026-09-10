@@ -1,0 +1,79 @@
+format_version: 1
+kicad_version: '10'
+originals:
+  kicad_file.kicad_pcb:
+    sha256: f06e2f2dff6a43f1dc4f087842d3bb470d9eccbb7707b9858bba4a02dbc7a0bc
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_50_pin_0_5mm_fpc_current\data\kicad_file.kicad_pcb
+  kicad_file.kicad_sch:
+    sha256: 162b431dc66a5e1e3127e151286dd4c733a877b753fc06dd8fc15426ad262904
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_50_pin_0_5mm_fpc_current\data\kicad_file.kicad_sch
+  kicad_file.kicad_pro:
+    sha256: 3b70f7ea08f9da1c9f8e4384a548e1105a68a0f33600eb0d44badb88e3f8373a
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_50_pin_0_5mm_fpc_current\data\kicad_file.kicad_pro
+  source_eagle.brd:
+    sha256: f108f60c2ce293e479001bbe1518c8a6973f9f201df8bc31846c9df00d53ded7
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_50_pin_0_5mm_fpc_current\data\source_eagle.brd
+  source_eagle.sch:
+    sha256: ec841299a8078b2320bf095fd011169b6286f6e57a176092e048370ae2671cc2
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_50_pin_0_5mm_fpc_current\data\source_eagle.sch
+  sym-lib-table:
+    sha256: a84bc672e5ae020fa2137981252144bc3ef292490bdb60e87e73d164531cf24b
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_50_pin_0_5mm_fpc_current\data\sym-lib-table
+  fp-lib-table:
+    sha256: 705a86842c523d5901d4b3e07367b8cd571e30350da2bb86ac90237c9e71180e
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_50_pin_0_5mm_fpc_current\data\fp-lib-table
+output_sha256:
+  50 pin 0.5mm FPC.kicad_pcb: ad6b5d145af25ae207fedb3f1fda7296e2e4801660dafe771c97af041e34461e
+  50 pin 0.5mm FPC.kicad_sch: c9fa04396b2f57880776132cc98df8ecaef20b49a666d181f75b311b6fc4e09f
+  50 pin 0.5mm FPC.kicad_pro: 3b70f7ea08f9da1c9f8e4384a548e1105a68a0f33600eb0d44badb88e3f8373a
+  sym-lib-table: 4d42d86ed205cbb9df0bddf00b339c578bd3cbcffe7f733bbb0585ae625ef2f6
+  fp-lib-table: f3d92ac91f6d77471d35255ba6a3ad887b25bcfe6b4caa81d28df0b7f1a09d6e
+summary:
+  footprints_converted: 0
+  footprints_skipped: 4
+  symbols_converted: 0
+  symbols_skipped: 3
+footprints:
+- reference: U$1
+  source: 50 pin 0.5mm FPC-import-fps:ADAFRUIT_5MM
+  status: skipped
+  reason: No approved OOMP match.
+- reference: CONN1
+  source: 50 pin 0.5mm FPC-import-fps:2X25
+  status: skipped
+  reason: No approved OOMP match.
+- reference: CONN3
+  source: 50 pin 0.5mm FPC-import-fps:1X25_ROUND_70MIL
+  status: skipped
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_25_pin
+  reason: Source is not an available official master for this OOMP part.
+- reference: CONN2
+  source: 50 pin 0.5mm FPC-import-fps:FPC_GENERIC_0.5MM_50PIN
+  status: skipped
+  reason: No approved OOMP match.
+symbols:
+- references:
+  - CONN3
+  source: kicad_file-eagle-import:HEADER-1X25
+  status: skipped
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_25_pin
+  reason: Source is not a known official KiCad symbol.
+  file: kicad_file.kicad_sch
+- references:
+  - CONN2
+  source: kicad_file-eagle-import:HEADER-1X50_0.5MM
+  status: skipped
+  reason: No single approved OOMP part for every instance of this symbol.
+  file: kicad_file.kicad_sch
+- references:
+  - CONN1
+  source: kicad_file-eagle-import:HEADER-2X25_70MIL
+  status: skipped
+  reason: No single approved OOMP part for every instance of this symbol.
+  file: kicad_file.kicad_sch
+validation:
+  status: passed
+  pcb_invariants: unchanged except approved IDs and added annotations
+  netlist_components: 3
+  netlist_nets: 50
+  netlist_comparison: component values/UUIDs and named-net pin memberships match exactly

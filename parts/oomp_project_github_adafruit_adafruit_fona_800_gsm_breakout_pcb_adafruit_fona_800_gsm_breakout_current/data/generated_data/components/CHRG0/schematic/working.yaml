@@ -1,0 +1,129 @@
+available: true
+units:
+- reference: CHRG0
+  source_file: data/kicad_file.kicad_sch
+  uuid: 5387d58b-5b35-4557-b0ba-a5d78e990019
+  library_id: kicad_file-eagle-import:LED0805_NOOUTLINE
+  unit: 1
+  body_style: 1
+  position:
+    x: 73.66
+    y: 198.12
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: CHRG0
+    Value: ORANGE
+    Footprint: kicad_file:CHIPLED_0805_NOOUTLINE
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 68.58
+      y: 198.12
+    net: +5V
+    net_aliases:
+    - +5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY1'
+      pin_number: '1'
+      pin_name: +5V
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '4'
+      pin_name: VDD
+    - reference: VBUS0
+      pin_number: '1'
+      pin_name: '1'
+    - reference: X2
+      pin_number: VBUS
+      pin_name: VBUS
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 198.12
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.397
+      max:
+        x: 1.397
+        y: 3.302
+      width: 4.064
+      height: 4.699
+      center:
+        x: -0.635
+        y: 0.9525
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 70.993
+        y: 194.818
+      max:
+        x: 75.057
+        y: 199.517
+      width: 4.064
+      height: 4.699
+      center:
+        x: 73.025
+        y: 197.1675
+  warnings: []
+connected_components:
+- reference: '#SUPPLY1'
+  pin_number: '1'
+  pin_name: +5V
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: U2
+  pin_number: '4'
+  pin_name: VDD
+- reference: VBUS0
+  pin_number: '1'
+  pin_name: '1'
+- reference: X2
+  pin_number: VBUS
+  pin_name: VBUS

@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: D1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 372e7d01-eb33-447b-b209-9907a6bfc1cb
+  library_id: kicad_file-eagle-import:DIODESOD-323
+  unit: 1
+  body_style: 1
+  position:
+    x: 114.3
+    y: 182.88
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D1
+    Value: 1n4148
+    Footprint: kicad_file:SOD-323
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 111.76
+      y: 182.88
+    net: NRESET_3V
+    net_aliases:
+    - NRESET_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U$2
+      pin_number: '11'
+      pin_name: NRESET
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 116.84
+      y: 182.88
+    net: RESET
+    net_aliases:
+    - RESET
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '6'
+      pin_name: '6'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -1.397
+      max:
+        x: 1.397
+        y: 1.397
+      width: 2.794
+      height: 2.794
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 112.903
+        y: 181.483
+      max:
+        x: 115.697
+        y: 184.277
+      width: 2.794
+      height: 2.794
+      center:
+        x: 114.3
+        y: 182.88
+  warnings: []
+connected_components:
+- reference: JP3
+  pin_number: '6'
+  pin_name: '6'
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'
+- reference: U$2
+  pin_number: '11'
+  pin_name: NRESET

@@ -1,0 +1,446 @@
+reference: X2
+schematic:
+  available: true
+  units:
+  - reference: X2
+    source_file: data/kicad_file.kicad_sch
+    uuid: e9113a97-df91-44b3-941b-018790d33660
+    library_id: kicad_file-eagle-import:XTAL-3.2X1.5
+    unit: 1
+    body_style: 1
+    position:
+      x: 137.16
+      y: 99.06
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: X2
+      Value: '32.768'
+      Footprint: kicad_file:XTAL3215
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: P$1
+      name: P$1
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 132.08
+        y: 99.06
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U$4
+        pin_number: '1'
+        pin_name: PA00/EINT0/SERCOM1.0
+    - number: P$2
+      name: P$2
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 142.24
+        y: 99.06
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U$4
+        pin_number: '2'
+        pin_name: PA01/EINT1/SERCOM1.1
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -2.667
+        max:
+          x: 2.667
+          y: 2.667
+        width: 5.334
+        height: 5.334
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 134.493
+          y: 96.393
+        max:
+          x: 139.827
+          y: 101.727
+        width: 5.334
+        height: 5.334
+        center:
+          x: 137.16
+          y: 99.06
+    warnings: []
+  connected_components:
+  - reference: C2
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C4
+    pin_number: '1'
+    pin_name: '1'
+  - reference: U$4
+    pin_number: '1'
+    pin_name: PA00/EINT0/SERCOM1.0
+  - reference: U$4
+    pin_number: '2'
+    pin_name: PA01/EINT1/SERCOM1.1
+pcb:
+  reference: X2
+  value: '32.768'
+  source_file: data/kicad_file.kicad_pcb
+  uuid: a33faf5f-9036-4dea-8f3b-dfeec6052d03
+  library_id: Adafruit Feather M0 Express-import-fps:XTAL3215
+  layer: F.Cu
+  side: front
+  position:
+    x: 17.78
+    y: -4.826
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: X2
+    Value: '32.768'
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: P$1
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.2
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 18.98
+      y: -4.826
+    placed_rotation: 0.0
+    size:
+      x: 1.1
+      y: 1.9
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$5
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.65
+          y: -0.95
+        max:
+          x: 1.75
+          y: 0.95
+        width: 1.1
+        height: 1.9
+        center:
+          x: 1.2
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 18.43
+          y: -5.776
+        max:
+          x: 19.53
+          y: -3.876
+        width: 1.1
+        height: 1.9
+        center:
+          x: 18.98
+          y: -4.826
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C2
+      pad_number: '1'
+    - reference: U$4
+      pad_number: '1'
+  - number: P$2
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.2
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 16.58
+      y: -4.826
+    placed_rotation: 180.0
+    size:
+      x: 1.1
+      y: 1.9
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$7
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.75
+          y: -0.95
+        max:
+          x: -0.65
+          y: 0.95
+        width: 1.1
+        height: 1.9
+        center:
+          x: -1.2
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 16.03
+          y: -5.776
+        max:
+          x: 17.13
+          y: -3.876
+        width: 1.1
+        height: 1.9
+        center:
+          x: 16.58
+          y: -4.826
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C4
+      pad_number: '1'
+    - reference: U$4
+      pad_number: '2'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.75
+        y: -0.95
+      max:
+        x: 1.75
+        y: 0.95
+      width: 3.5
+      height: 1.9
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 16.03
+        y: -5.776
+      max:
+        x: 19.53
+        y: -3.876
+      width: 3.5
+      height: 1.9
+      center:
+        x: 17.78
+        y: -4.826
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.6635
+        y: -0.7635
+      max:
+        x: 1.6635
+        y: 0.7635
+      width: 3.327
+      height: 1.527
+      center:
+        x: -0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 16.1165
+        y: -5.5895
+      max:
+        x: 19.4435
+        y: -4.0625
+      width: 3.327
+      height: 1.527
+      center:
+        x: 17.78
+        y: -4.826
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.75
+        y: -0.95
+      max:
+        x: 1.75
+        y: 0.95
+      width: 3.5
+      height: 1.9
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 16.03
+        y: -5.776
+      max:
+        x: 19.53
+        y: -3.876
+      width: 3.5
+      height: 1.9
+      center:
+        x: 17.78
+        y: -4.826
+  connected_components:
+  - C2
+  - C4
+  - U$4
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: P$1
+    schematic_nets: []
+    pcb_nets:
+    - N$5
+    status: incomplete
+  - pin_or_pad_number: P$2
+    schematic_nets: []
+    pcb_nets:
+    - N$7
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: '32.768'
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/X2

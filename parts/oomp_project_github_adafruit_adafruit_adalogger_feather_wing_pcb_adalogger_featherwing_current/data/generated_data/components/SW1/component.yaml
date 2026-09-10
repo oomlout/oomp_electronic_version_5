@@ -1,0 +1,697 @@
+reference: SW1
+schematic:
+  available: true
+  units:
+  - reference: SW1
+    source_file: data/kicad_file.kicad_sch
+    uuid: e0db0443-cc00-4d31-ae55-392b0b368c9b
+    library_id: kicad_file-eagle-import:SWITCH_TACT_SMT4.6X2.8
+    unit: 1
+    body_style: 1
+    position:
+      x: 88.9
+      y: 162.56
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: SW1
+      Value: KMR2
+      Footprint: kicad_file:BTN_KMR2_4.6X2.8
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: A
+      name: P
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 83.82
+        y: 162.56
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: SW1
+        pin_number: A'
+        pin_name: P1
+    - number: A'
+      name: P1
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: -2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 83.82
+        y: 165.1
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: SW1
+        pin_number: A
+        pin_name: P
+    - number: B
+      name: S
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 93.98
+        y: 162.56
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: JP2
+        pin_number: '16'
+        pin_name: '16'
+      - reference: MS1
+        pin_number: '1'
+        pin_name: ~{RESET}
+      - reference: SW1
+        pin_number: B'
+        pin_name: S1
+    - number: B'
+      name: S1
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: -2.54
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 93.98
+        y: 165.1
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: JP2
+        pin_number: '16'
+        pin_name: '16'
+      - reference: MS1
+        pin_number: '1'
+        pin_name: ~{RESET}
+      - reference: SW1
+        pin_number: B
+        pin_name: S
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.8702
+          y: -2.6162
+        max:
+          x: 2.8702
+          y: 4.572
+        width: 5.7404
+        height: 7.1882
+        center:
+          x: 0.0
+          y: 0.9779
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 86.0298
+          y: 157.988
+        max:
+          x: 91.7702
+          y: 165.1762
+        width: 5.7404
+        height: 7.1882
+        center:
+          x: 88.9
+          y: 161.5821
+    warnings: []
+  connected_components:
+  - reference: JP2
+    pin_number: '16'
+    pin_name: '16'
+  - reference: MS1
+    pin_number: '1'
+    pin_name: ~{RESET}
+  - reference: SW1
+    pin_number: A
+    pin_name: P
+  - reference: SW1
+    pin_number: A'
+    pin_name: P1
+  - reference: SW1
+    pin_number: B
+    pin_name: S
+  - reference: SW1
+    pin_number: B'
+    pin_name: S1
+pcb:
+  reference: SW1
+  value: KMR2
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 6fe820ea-0f78-4286-9907-3856ba7fadf3
+  library_id: adalogger featherwing-import-fps:BTN_KMR2_4.6X2.8
+  layer: F.Cu
+  side: front
+  position:
+    x: 20.447
+    y: -7.747
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: SW1
+    Value: KMR2
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: smd
+    shape: rect
+    local_position:
+      x: 2.05
+      y: -0.8
+      rotation: 180.0
+    position:
+      x: 18.397
+      y: -6.947
+    placed_rotation: 0.0
+    size:
+      x: 0.9
+      y: 0.9
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: GND
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.6
+          y: -1.25
+        max:
+          x: 2.5
+          y: -0.35
+        width: 0.9
+        height: 0.9
+        center:
+          x: 2.05
+          y: -0.8
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 17.947
+          y: -7.397
+        max:
+          x: 18.847
+          y: -6.497
+        width: 0.9
+        height: 0.9
+        center:
+          x: 18.397
+          y: -6.947
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: B1
+      pad_number: '-'
+    - reference: C1
+      pad_number: '2'
+    - reference: C2
+      pad_number: '2'
+    - reference: IC1
+      pad_number: '4'
+    - reference: JP2
+      pad_number: '13'
+    - reference: MS1
+      pad_number: '4'
+    - reference: SW1
+      pad_number: A'
+    - reference: X4
+      pad_number: '6'
+    - reference: X4
+      pad_number: MT1
+    - reference: X4
+      pad_number: MT2
+  - number: A'
+    type: smd
+    shape: rect
+    local_position:
+      x: -2.05
+      y: -0.8
+      rotation: 180.0
+    position:
+      x: 22.497
+      y: -6.947
+    placed_rotation: 0.0
+    size:
+      x: 0.9
+      y: 0.9
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: GND
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.5
+          y: -1.25
+        max:
+          x: -1.6
+          y: -0.35
+        width: 0.9
+        height: 0.9
+        center:
+          x: -2.05
+          y: -0.8
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 22.047
+          y: -7.397
+        max:
+          x: 22.947
+          y: -6.497
+        width: 0.9
+        height: 0.9
+        center:
+          x: 22.497
+          y: -6.947
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: B1
+      pad_number: '-'
+    - reference: C1
+      pad_number: '2'
+    - reference: C2
+      pad_number: '2'
+    - reference: IC1
+      pad_number: '4'
+    - reference: JP2
+      pad_number: '13'
+    - reference: MS1
+      pad_number: '4'
+    - reference: SW1
+      pad_number: A
+    - reference: X4
+      pad_number: '6'
+    - reference: X4
+      pad_number: MT1
+    - reference: X4
+      pad_number: MT2
+  - number: B
+    type: smd
+    shape: rect
+    local_position:
+      x: 2.05
+      y: 0.8
+      rotation: 180.0
+    position:
+      x: 18.397
+      y: -8.547
+    placed_rotation: 0.0
+    size:
+      x: 0.9
+      y: 0.9
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: RESET
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.6
+          y: 0.35
+        max:
+          x: 2.5
+          y: 1.25
+        width: 0.9
+        height: 0.9
+        center:
+          x: 2.05
+          y: 0.8
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 17.947
+          y: -8.997
+        max:
+          x: 18.847
+          y: -8.097
+        width: 0.9
+        height: 0.9
+        center:
+          x: 18.397
+          y: -8.547
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP2
+      pad_number: '16'
+    - reference: MS1
+      pad_number: '1'
+    - reference: SW1
+      pad_number: B'
+  - number: B'
+    type: smd
+    shape: rect
+    local_position:
+      x: -2.05
+      y: 0.8
+      rotation: 180.0
+    position:
+      x: 22.497
+      y: -8.547
+    placed_rotation: 0.0
+    size:
+      x: 0.9
+      y: 0.9
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: RESET
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.5
+          y: 0.35
+        max:
+          x: -1.6
+          y: 1.25
+        width: 0.9
+        height: 0.9
+        center:
+          x: -2.05
+          y: 0.8
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 22.047
+          y: -8.997
+        max:
+          x: 22.947
+          y: -8.097
+        width: 0.9
+        height: 0.9
+        center:
+          x: 22.497
+          y: -8.547
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP2
+      pad_number: '16'
+    - reference: MS1
+      pad_number: '1'
+    - reference: SW1
+      pad_number: B
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.5
+        y: -1.25
+      max:
+        x: 2.5
+        y: 1.25
+      width: 5.0
+      height: 2.5
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 17.947
+        y: -8.997
+      max:
+        x: 22.947
+        y: -6.497
+      width: 5.0
+      height: 2.5
+      center:
+        x: 20.447
+        y: -7.747
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.2016
+        y: -1.5016
+      max:
+        x: 2.2016
+        y: 1.5016
+      width: 4.4032
+      height: 3.0032
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 18.2454
+        y: -9.2486
+      max:
+        x: 22.6486
+        y: -6.2454
+      width: 4.4032
+      height: 3.0032
+      center:
+        x: 20.447
+        y: -7.747
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.2016
+        y: -1.627
+      max:
+        x: 2.2016
+        y: 1.627
+      width: 4.4032
+      height: 3.254
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 18.2454
+        y: -9.374
+      max:
+        x: 22.6486
+        y: -6.12
+      width: 4.4032
+      height: 3.254
+      center:
+        x: 20.447
+        y: -7.747
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.5
+        y: -1.627
+      max:
+        x: 2.5
+        y: 1.627
+      width: 5.0
+      height: 3.254
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 17.947
+        y: -9.374
+      max:
+        x: 22.947
+        y: -6.12
+      width: 5.0
+      height: 3.254
+      center:
+        x: 20.447
+        y: -7.747
+  connected_components:
+  - B1
+  - C1
+  - C2
+  - IC1
+  - JP2
+  - MS1
+  - SW1
+  - X4
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: A
+    schematic_nets: []
+    pcb_nets:
+    - GND
+    status: incomplete
+  - pin_or_pad_number: A'
+    schematic_nets: []
+    pcb_nets:
+    - GND
+    status: incomplete
+  - pin_or_pad_number: B
+    schematic_nets: []
+    pcb_nets:
+    - RESET
+    status: incomplete
+  - pin_or_pad_number: B'
+    schematic_nets: []
+    pcb_nets:
+    - RESET
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 4
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: KMR2
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: switch
+category_source: unmatched_kicad_hint
+category_name: Switch
+generated_directory: components/SW1

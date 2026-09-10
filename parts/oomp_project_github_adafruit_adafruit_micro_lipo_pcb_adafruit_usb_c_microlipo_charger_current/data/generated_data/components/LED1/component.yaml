@@ -1,0 +1,478 @@
+reference: LED1
+schematic:
+  available: true
+  units:
+  - reference: LED1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 05784d75-09cb-4e45-a973-2022d854a040
+    library_id: kicad_file-eagle-import:LED0805_NOOUTLINE
+    unit: 1
+    body_style: 1
+    position:
+      x: 129.54
+      y: 99.06
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: LED1
+      Value: RED
+      Footprint: kicad_file:CHIPLED_0805_NOOUTLINE
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: A
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 124.46
+        y: 99.06
+      net: 5V
+      net_aliases:
+      - 5V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: JP4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U1
+        pin_number: '4'
+        pin_name: VDD
+      - reference: X2
+        pin_number: A4B9
+        pin_name: VBUS
+      - reference: X2
+        pin_number: B4A9
+        pin_name: VBUS
+    - number: C
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 132.08
+        y: 99.06
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R1
+        pin_number: '1'
+        pin_name: '1'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -1.397
+        max:
+          x: 1.397
+          y: 3.302
+        width: 4.064
+        height: 4.699
+        center:
+          x: -0.635
+          y: 0.9525
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 126.873
+          y: 95.758
+        max:
+          x: 130.937
+          y: 100.457
+        width: 4.064
+        height: 4.699
+        center:
+          x: 128.905
+          y: 98.1075
+    warnings: []
+  connected_components:
+  - reference: C1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: JP4
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: U1
+    pin_number: '4'
+    pin_name: VDD
+  - reference: X2
+    pin_number: A4B9
+    pin_name: VBUS
+  - reference: X2
+    pin_number: B4A9
+    pin_name: VBUS
+pcb:
+  reference: LED1
+  value: RED
+  source_file: data/kicad_file.kicad_pcb
+  uuid: d08e5a95-6906-4279-a83e-941b96285916
+  library_id: Adafruit USB C microlipo charger-import-fps:CHIPLED_0805_NOOUTLINE
+  layer: F.Cu
+  side: front
+  position:
+    x: 17.145
+    y: -2.3495
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: LED1
+    Value: RED
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: 1.05
+      rotation: 180.0
+    position:
+      x: 17.145
+      y: -3.3995
+    placed_rotation: 0.0
+    size:
+      x: 1.2
+      y: 1.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: 5V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.6
+          y: 0.45
+        max:
+          x: 0.6
+          y: 1.65
+        width: 1.2
+        height: 1.2
+        center:
+          x: 0.0
+          y: 1.05
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 16.545
+          y: -3.9995
+        max:
+          x: 17.745
+          y: -2.7995
+        width: 1.2
+        height: 1.2
+        center:
+          x: 17.145
+          y: -3.3995
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '1'
+    - reference: JP4
+      pad_number: '1'
+    - reference: U1
+      pad_number: '4'
+    - reference: X2
+      pad_number: A4B9
+    - reference: X2
+      pad_number: B4A9
+  - number: C
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: -1.05
+      rotation: 180.0
+    position:
+      x: 17.145
+      y: -1.2995
+    placed_rotation: 0.0
+    size:
+      x: 1.2
+      y: 1.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$1
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.6
+          y: -1.65
+        max:
+          x: 0.6
+          y: -0.45
+        width: 1.2
+        height: 1.2
+        center:
+          x: 0.0
+          y: -1.05
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 16.545
+          y: -1.8995
+        max:
+          x: 17.745
+          y: -0.6995
+        width: 1.2
+        height: 1.2
+        center:
+          x: 17.145
+          y: -1.2995
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R1
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.6
+        y: -1.65
+      max:
+        x: 0.6
+        y: 1.65
+      width: 1.2
+      height: 3.3
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 16.545
+        y: -3.9995
+      max:
+        x: 17.745
+        y: -0.6995
+      width: 1.2
+      height: 3.3
+      center:
+        x: 17.145
+        y: -2.3495
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.6258
+        y: -1.0
+      max:
+        x: 0.6258
+        y: 1.0
+      width: 1.2516
+      height: 2.0
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 16.5192
+        y: -3.3495
+      max:
+        x: 17.7708
+        y: -1.3495
+      width: 1.2516
+      height: 2.0
+      center:
+        x: 17.145
+        y: -2.3495
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.4445
+        y: -0.331
+      max:
+        x: 0.4445
+        y: 0.254
+      width: 0.889
+      height: 0.585
+      center:
+        x: 0.0
+        y: -0.0385
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 16.7005
+        y: -2.6035
+      max:
+        x: 17.5895
+        y: -2.0185
+      width: 0.889
+      height: 0.585
+      center:
+        x: 17.145
+        y: -2.311
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.6258
+        y: -1.65
+      max:
+        x: 0.6258
+        y: 1.65
+      width: 1.2516
+      height: 3.3
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 16.5192
+        y: -3.9995
+      max:
+        x: 17.7708
+        y: -0.6995
+      width: 1.2516
+      height: 3.3
+      center:
+        x: 17.145
+        y: -2.3495
+  connected_components:
+  - C1
+  - JP4
+  - R1
+  - U1
+  - X2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: A
+    schematic_nets:
+    - 5V
+    pcb_nets:
+    - 5V
+    status: agree
+  - pin_or_pad_number: C
+    schematic_nets: []
+    pcb_nets:
+    - N$1
+    status: incomplete
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_led_0805_red
+  confidence: 1.0
+  proposed_oomp_id: electronic_led_0805_red
+  inferred:
+    kind: led
+    package_size: 0805
+    value: RED
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: led
+category_source: oomp_populate
+category_name: LED
+generated_directory: components/LED1

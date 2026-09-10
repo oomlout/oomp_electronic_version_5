@@ -1,0 +1,456 @@
+reference: LED1
+schematic:
+  available: true
+  units:
+  - reference: LED1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 68b067cc-656b-4fb0-9e8e-2c94784071ff
+    library_id: kicad_file-eagle-import:LEDSMLK34
+    unit: 1
+    body_style: 1
+    position:
+      x: 127.0
+      y: 104.14
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: LED1
+      Value: LEDSMLK34
+      Footprint: kicad_file:101
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 127.0
+        y: 109.22
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: IC1
+        pin_number: '1'
+        pin_name: PB0
+      - reference: TPIDATA0
+        pin_number: '1'
+        pin_name: TP
+    - number: '2'
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 127.0
+        y: 101.6
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -3.5052
+          y: -3.3782
+        max:
+          x: 1.397
+          y: 0.127
+        width: 4.9022
+        height: 3.5052
+        center:
+          x: -1.0541
+          y: -1.6256
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 123.4948
+          y: 104.013
+        max:
+          x: 128.397
+          y: 107.5182
+        width: 4.9022
+        height: 3.5052
+        center:
+          x: 125.9459
+          y: 105.7656
+    warnings: []
+  connected_components:
+  - reference: IC1
+    pin_number: '1'
+    pin_name: PB0
+  - reference: TPIDATA0
+    pin_number: '1'
+    pin_name: TP
+pcb:
+  reference: LED1
+  value: ''
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 178209da-7fa7-49aa-812f-e344d6d61d41
+  library_id: cuff-import-fps:SMLK34
+  layer: F.Cu
+  side: front
+  position:
+    x: 0.0
+    y: 0.0
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: LED1
+    Value: ''
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.9
+      y: 0.0
+      rotation: 360.0
+    position:
+      x: -0.9
+      y: -0.0
+    placed_rotation: 180.0
+    size:
+      x: 3.65
+      y: 1.74
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    net: N$3
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.925
+          y: -0.87
+        max:
+          x: 2.725
+          y: 0.87
+        width: 3.65
+        height: 1.74
+        center:
+          x: 0.9
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: -2.725
+          y: -0.87
+        max:
+          x: 0.925
+          y: 0.87
+        width: 3.65
+        height: 1.74
+        center:
+          x: -0.9
+          y: -0.0
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R1
+      pad_number: '1'
+  - number: K
+    type: smd
+    shape: rect
+    local_position:
+      x: -2.1
+      y: 0.0
+      rotation: 360.0
+    position:
+      x: 2.1
+      y: 0.0
+    placed_rotation: 180.0
+    size:
+      x: 1.35
+      y: 1.74
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    net: B0
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.775
+          y: -0.87
+        max:
+          x: -1.425
+          y: 0.87
+        width: 1.35
+        height: 1.74
+        center:
+          x: -2.1
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 1.425
+          y: -0.87
+        max:
+          x: 2.775
+          y: 0.87
+        width: 1.35
+        height: 1.74
+        center:
+          x: 2.1
+          y: 0.0
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC1
+      pad_number: '5'
+    - reference: TPIDATA0
+      pad_number: TP
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.775
+        y: -0.87
+      max:
+        x: 2.725
+        y: 0.87
+      width: 5.5
+      height: 1.74
+      center:
+        x: -0.025
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: -2.725
+        y: -0.87
+      max:
+        x: 2.775
+        y: 0.87
+      width: 5.5
+      height: 1.74
+      center:
+        x: 0.025
+        y: 0.0
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.0635
+        y: -1.0635
+      max:
+        x: 2.0635
+        y: 1.0635
+      width: 4.127
+      height: 2.127
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: -2.0635
+        y: -1.0635
+      max:
+        x: 2.0635
+        y: 1.0635
+      width: 4.127
+      height: 2.127
+      center:
+        x: 0.0
+        y: 0.0
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.775
+        y: -1.0635
+      max:
+        x: 2.725
+        y: 1.0635
+      width: 5.5
+      height: 2.127
+      center:
+        x: -0.025
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: -2.725
+        y: -1.0635
+      max:
+        x: 2.775
+        y: 1.0635
+      width: 5.5
+      height: 2.127
+      center:
+        x: 0.025
+        y: 0.0
+  connected_components:
+  - IC1
+  - R1
+  - TPIDATA0
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: A
+    schematic_nets: []
+    pcb_nets:
+    - N$3
+    status: incomplete
+  - pin_or_pad_number: K
+    schematic_nets: []
+    pcb_nets:
+    - B0
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: led
+    package_size: null
+    value: LEDSMLK34
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_led_0402
+    score: 0.1722
+    reasons:
+    - same component family
+  - oomp_id: electronic_led_0603
+    score: 0.1722
+    reasons:
+    - same component family
+  - oomp_id: electronic_led_3_mm_blue
+    score: 0.1652
+    reasons:
+    - same component family
+  - oomp_id: electronic_led_5_mm_blue
+    score: 0.1652
+    reasons:
+    - same component family
+  - oomp_id: electronic_led_3_mm
+    score: 0.165
+    reasons:
+    - same component family
+category: led
+category_source: unmatched_kicad_hint
+category_name: LED
+generated_directory: components/LED1

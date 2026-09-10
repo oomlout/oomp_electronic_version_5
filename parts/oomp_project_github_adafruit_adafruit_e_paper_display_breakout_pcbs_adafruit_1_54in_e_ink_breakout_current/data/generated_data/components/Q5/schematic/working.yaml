@@ -1,0 +1,147 @@
+available: true
+units:
+- reference: Q5
+  source_file: data/kicad_file.kicad_sch
+  uuid: bd6dfdd5-914a-452d-9b37-095eb205b6a3
+  library_id: kicad_file-eagle-import:IRLML2060TRPBF
+  unit: 1
+  body_style: 1
+  position:
+    x: 124.46
+    y: 81.28
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q5
+    Value: IRLML0100
+    Footprint: kicad_file:SOT23-3
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: G
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 121.92
+      y: 83.82
+    net: GDR
+    net_aliases:
+    - GDR
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: EINK1
+      pin_number: '2'
+      pin_name: GDR
+  - number: '2'
+    name: S
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 127.0
+      y: 86.36
+    net: RESE
+    net_aliases:
+    - RESE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: EINK1
+      pin_number: '3'
+      pin_name: RESE
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+  - number: '3'
+    name: D
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 127.0
+      y: 76.2
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: D3
+      pin_number: C
+      pin_name: C
+    - reference: L1
+      pin_number: P$1
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.127
+        y: -3.302
+      max:
+        x: 4.6482
+        y: 3.302
+      width: 4.7752
+      height: 6.604
+      center:
+        x: 2.2606
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 124.333
+        y: 77.978
+      max:
+        x: 129.1082
+        y: 84.582
+      width: 4.7752
+      height: 6.604
+      center:
+        x: 126.7206
+        y: 81.28
+  warnings: []
+connected_components:
+- reference: C5
+  pin_number: '1'
+  pin_name: '1'
+- reference: D3
+  pin_number: C
+  pin_name: C
+- reference: EINK1
+  pin_number: '2'
+  pin_name: GDR
+- reference: EINK1
+  pin_number: '3'
+  pin_name: RESE
+- reference: L1
+  pin_number: P$1
+  pin_name: '1'
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'

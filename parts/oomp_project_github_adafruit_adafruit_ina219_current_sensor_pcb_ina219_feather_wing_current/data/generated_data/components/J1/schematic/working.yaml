@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: J1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 74b7c042-bb67-46e1-bef7-f09d3c4dea2c
+  library_id: kicad_file-eagle-import:TERMBLOCK_1X2
+  unit: 1
+  body_style: 1
+  position:
+    x: 210.82
+    y: 58.42
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: J1
+    Value: 3.5mm
+    Footprint: kicad_file:TERMBLOCK_1X2-3.5MM
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 205.74
+      y: 60.96
+    net: VIN-
+    net_aliases:
+    - VIN-
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '2'
+      pin_name: VIN-
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 205.74
+      y: 58.42
+    net: VIN+
+    net_aliases:
+    - VIN+
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R5
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '1'
+      pin_name: VIN+
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -2.667
+      max:
+        x: 5.207
+        y: 5.207
+      width: 7.874
+      height: 7.874
+      center:
+        x: 1.27
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 208.153
+        y: 55.753
+      max:
+        x: 216.027
+        y: 63.627
+      width: 7.874
+      height: 7.874
+      center:
+        x: 212.09
+        y: 59.69
+  warnings: []
+connected_components:
+- reference: JP2
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP2
+  pin_number: '2'
+  pin_name: '2'
+- reference: R5
+  pin_number: '1'
+  pin_name: '1'
+- reference: R5
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: '1'
+  pin_name: VIN+
+- reference: U1
+  pin_number: '2'
+  pin_name: VIN-

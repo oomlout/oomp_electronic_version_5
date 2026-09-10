@@ -638,12 +638,44 @@ oomlout_ai_roboclick_3:
         pin_pitch: 0.65
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current/board_explorer.html
+        board_url: https://github.com/adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB/blob/master/Adafruit%20OLED%20128x32%20Mono%20I2C%20STEMMA%20QT%20rev%20B.brd
+        github_url: https://github.com/adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB
+        name: Project adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB Adafruit OLED
+          128x32 Mono I2 C STEMMA QT current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current
+        project_id: oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current
+        quantity: 1
+        references:
+        - Q2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current/board_explorer.html
+        board_url: https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB/blob/master/Adafruit%200.96in%20128x64%20OLED%20STEMMA%20QT.brd
+        github_url: https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB
+        name: Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 0.96in 128x64 OLED
+          STEMMA QT current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current
+        project_id: oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current
+        quantity: 1
+        references:
+        - Q2
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current/board_explorer.html
         board_url: https://github.com/adafruit/Adafruit_ADXL345_PCB/blob/master/ADXL345%20STEMMA%20QT.brd
         github_url: https://github.com/adafruit/Adafruit_ADXL345_PCB
         name: Project adafruit/Adafruit_ADXL345_PCB ADXL345 STEMMA QT current
         oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
         project_id: oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
+        quantity: 1
+        references:
+        - Q2
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_adxl375_pcb_adafruit_adxl375_current/board_explorer.html
+        board_url: https://github.com/adafruit/Adafruit_ADXL375_PCB/blob/main/Adafruit%20ADXL375.brd
+        github_url: https://github.com/adafruit/Adafruit_ADXL375_PCB
+        name: Project adafruit/Adafruit_ADXL375_PCB Adafruit ADXL375 current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_adxl375_pcb_adafruit_adxl375_current
+        project_id: oomp_project_github_adafruit_adafruit_adxl375_pcb_adafruit_adxl375_current
         quantity: 1
         references:
         - Q2
@@ -1015,6 +1047,19 @@ oomlout_ai_roboclick_3:
     file_output: README.md
     file_template: C:\gh\oomp_electronic_version_5\source_file\template_jinja\oomp_category\template_jinja_markdown\working.md.j2
     search_and_replace: []
+  file_test: ''
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_transistor_sot_363_6_mosfet_n_channel_dual
@@ -1421,6 +1466,7 @@ taxonomy_6_upper_length_5: DUAL
 taxonomy_7: ''
 taxonomy_8: ''
 taxonomy_9: ''
+threaded_workers: 6
 transistor_dimensions_mm:
   body_length_maximum: 2.2
   body_length_minimum: 1.8
@@ -1434,12 +1480,44 @@ transistor_dimensions_mm:
   pin_pitch: 0.65
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current/board_explorer.html
+  board_url: https://github.com/adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB/blob/master/Adafruit%20OLED%20128x32%20Mono%20I2C%20STEMMA%20QT%20rev%20B.brd
+  github_url: https://github.com/adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB
+  name: Project adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB Adafruit OLED 128x32
+    Mono I2 C STEMMA QT current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current
+  project_id: oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current
+  quantity: 1
+  references:
+  - Q2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current/board_explorer.html
+  board_url: https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB/blob/master/Adafruit%200.96in%20128x64%20OLED%20STEMMA%20QT.brd
+  github_url: https://github.com/adafruit/Adafruit-128x64-Monochrome-OLED-PCB
+  name: Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 0.96in 128x64 OLED STEMMA
+    QT current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current
+  project_id: oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current
+  quantity: 1
+  references:
+  - Q2
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current/board_explorer.html
   board_url: https://github.com/adafruit/Adafruit_ADXL345_PCB/blob/master/ADXL345%20STEMMA%20QT.brd
   github_url: https://github.com/adafruit/Adafruit_ADXL345_PCB
   name: Project adafruit/Adafruit_ADXL345_PCB ADXL345 STEMMA QT current
   oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
   project_id: oomp_project_github_adafruit_adafruit_adxl345_pcb_adxl345_stemma_qt_current
+  quantity: 1
+  references:
+  - Q2
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_adxl375_pcb_adafruit_adxl375_current/board_explorer.html
+  board_url: https://github.com/adafruit/Adafruit_ADXL375_PCB/blob/main/Adafruit%20ADXL375.brd
+  github_url: https://github.com/adafruit/Adafruit_ADXL375_PCB
+  name: Project adafruit/Adafruit_ADXL375_PCB Adafruit ADXL375 current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_adxl375_pcb_adafruit_adxl375_current
+  project_id: oomp_project_github_adafruit_adafruit_adxl375_pcb_adafruit_adxl375_current
   quantity: 1
   references:
   - Q2

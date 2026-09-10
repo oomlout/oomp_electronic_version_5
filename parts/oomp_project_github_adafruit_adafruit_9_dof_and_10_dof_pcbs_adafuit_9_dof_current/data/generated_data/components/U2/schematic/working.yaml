@@ -1,0 +1,909 @@
+available: true
+units:
+- reference: U2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 058340a3-16c8-4e0f-a8e9-8a20468302b7
+  library_id: kicad_file-eagle-import:LSM303DLHC
+  unit: 1
+  body_style: 1
+  position:
+    x: 167.64
+    y: 73.66
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U2
+    Value: LSM303DLHC
+    Footprint: kicad_file:LGA14
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: VDDIO
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 12.7
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 66.04
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$2'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$4'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$7'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$11'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$16'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$20'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$23'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C8
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: Q1
+      pin_number: '1'
+      pin_name: G
+    - reference: Q2
+      pin_number: '1'
+      pin_name: G
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R5
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: P$1
+      pin_name: VDDIO
+    - reference: U1
+      pin_number: P$16
+      pin_name: VDD
+    - reference: U2
+      pin_number: '14'
+      pin_name: VDD
+    - reference: U4
+      pin_number: '5'
+      pin_name: OUT
+  - number: '2'
+    name: SCL
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 12.7
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 68.58
+    net: SCL_3V
+    net_aliases:
+    - SCL_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: Q2
+      pin_number: '2'
+      pin_name: S
+    - reference: R4
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: P$2
+      pin_name: SCL/SPC
+  - number: '3'
+    name: SDA
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 12.7
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 71.12
+    net: SDA_3V
+    net_aliases:
+    - SDA_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: Q1
+      pin_number: '2'
+      pin_name: S
+    - reference: R5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: P$3
+      pin_name: SDA/SDI/SDO
+  - number: '4'
+    name: INT2
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 12.7
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 73.66
+    net: LSM_INT2
+    net_aliases:
+    - LSM_INT2
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '9'
+      pin_name: '9'
+  - number: '5'
+    name: INT1
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 12.7
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 76.2
+    net: LSM_INT1
+    net_aliases:
+    - LSM_INT1
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '8'
+      pin_name: '8'
+  - number: '6'
+    name: C1
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 12.7
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 78.74
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C6
+      pin_number: '1'
+      pin_name: '1'
+  - number: '7'
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 167.64
+      y: 88.9
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$6'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$12'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$13'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$14'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$15'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$19'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$24'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C5
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C6
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C8
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C9
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: R3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: P$8
+      pin_name: RSVRD1(GND)
+    - reference: U1
+      pin_number: P$9
+      pin_name: RSVRD2(GND)
+    - reference: U1
+      pin_number: P$10
+      pin_name: RSVRD3(GND)
+    - reference: U1
+      pin_number: P$11
+      pin_name: RSVRD4(GND)
+    - reference: U1
+      pin_number: P$12
+      pin_name: RSVRD5(GND)
+    - reference: U1
+      pin_number: P$13
+      pin_name: GND
+    - reference: U1
+      pin_number: P$15
+      pin_name: RSVRD6(VDD)
+    - reference: U2
+      pin_number: '10'
+      pin_name: GND
+    - reference: U2
+      pin_number: '11'
+      pin_name: GND
+    - reference: U4
+      pin_number: '2'
+      pin_name: GND
+  - number: '8'
+    name: NC
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -12.7
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 78.74
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '9'
+    name: DRDY
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: -12.7
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 76.2
+    net: LSM_DRDY
+    net_aliases:
+    - LSM_DRDY
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '10'
+      pin_name: '10'
+  - number: '10'
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -12.7
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 73.66
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$6'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$12'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$13'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$14'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$15'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$19'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$24'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C5
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C6
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C8
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C9
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: R3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: P$8
+      pin_name: RSVRD1(GND)
+    - reference: U1
+      pin_number: P$9
+      pin_name: RSVRD2(GND)
+    - reference: U1
+      pin_number: P$10
+      pin_name: RSVRD3(GND)
+    - reference: U1
+      pin_number: P$11
+      pin_name: RSVRD4(GND)
+    - reference: U1
+      pin_number: P$12
+      pin_name: RSVRD5(GND)
+    - reference: U1
+      pin_number: P$13
+      pin_name: GND
+    - reference: U1
+      pin_number: P$15
+      pin_name: RSVRD6(VDD)
+    - reference: U2
+      pin_number: '7'
+      pin_name: GND
+    - reference: U2
+      pin_number: '11'
+      pin_name: GND
+    - reference: U4
+      pin_number: '2'
+      pin_name: GND
+  - number: '11'
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -12.7
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 71.12
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$6'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$12'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$13'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$14'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$15'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$19'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$24'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C5
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C6
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C8
+      pin_number: '2'
+      pin_name: '2'
+    - reference: C9
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: R3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: P$8
+      pin_name: RSVRD1(GND)
+    - reference: U1
+      pin_number: P$9
+      pin_name: RSVRD2(GND)
+    - reference: U1
+      pin_number: P$10
+      pin_name: RSVRD3(GND)
+    - reference: U1
+      pin_number: P$11
+      pin_name: RSVRD4(GND)
+    - reference: U1
+      pin_number: P$12
+      pin_name: RSVRD5(GND)
+    - reference: U1
+      pin_number: P$13
+      pin_name: GND
+    - reference: U1
+      pin_number: P$15
+      pin_name: RSVRD6(VDD)
+    - reference: U2
+      pin_number: '7'
+      pin_name: GND
+    - reference: U2
+      pin_number: '10'
+      pin_name: GND
+    - reference: U4
+      pin_number: '2'
+      pin_name: GND
+  - number: '12'
+    name: SETP
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -12.7
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 68.58
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C7
+      pin_number: '1'
+      pin_name: '1'
+  - number: '13'
+    name: SETC
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: -12.7
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 66.04
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C7
+      pin_number: '2'
+      pin_name: '2'
+  - number: '14'
+    name: VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 17.78
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 167.64
+      y: 55.88
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$2'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$4'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$7'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$11'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$16'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$20'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$23'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C8
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: Q1
+      pin_number: '1'
+      pin_name: G
+    - reference: Q2
+      pin_number: '1'
+      pin_name: G
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R5
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: P$1
+      pin_name: VDDIO
+    - reference: U1
+      pin_number: P$16
+      pin_name: VDD
+    - reference: U2
+      pin_number: '1'
+      pin_name: VDDIO
+    - reference: U4
+      pin_number: '5'
+      pin_name: OUT
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -12.827
+        y: -10.287
+      max:
+        x: 15.367
+        y: 10.287
+      width: 28.194
+      height: 20.574
+      center:
+        x: 1.27
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 157.353
+        y: 58.293
+      max:
+        x: 177.927
+        y: 86.487
+      width: 20.574
+      height: 28.194
+      center:
+        x: 167.64
+        y: 72.39
+  warnings: []
+connected_components:
+- reference: '#U$2'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$4'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$5'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$6'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$7'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$11'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$12'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$13'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$14'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$15'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$16'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$17'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$19'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$20'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$23'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$24'
+  pin_number: '1'
+  pin_name: GND
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: C3
+  pin_number: '1'
+  pin_name: '1'
+- reference: C3
+  pin_number: '2'
+  pin_name: '2'
+- reference: C5
+  pin_number: '1'
+  pin_name: '1'
+- reference: C5
+  pin_number: '2'
+  pin_name: '2'
+- reference: C6
+  pin_number: '1'
+  pin_name: '1'
+- reference: C6
+  pin_number: '2'
+  pin_name: '2'
+- reference: C7
+  pin_number: '1'
+  pin_name: '1'
+- reference: C7
+  pin_number: '2'
+  pin_name: '2'
+- reference: C8
+  pin_number: '1'
+  pin_name: '1'
+- reference: C8
+  pin_number: '2'
+  pin_name: '2'
+- reference: C9
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '10'
+  pin_name: '10'
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '3'
+  pin_name: '3'
+- reference: JP1
+  pin_number: '8'
+  pin_name: '8'
+- reference: JP1
+  pin_number: '9'
+  pin_name: '9'
+- reference: Q1
+  pin_number: '1'
+  pin_name: G
+- reference: Q1
+  pin_number: '2'
+  pin_name: S
+- reference: Q2
+  pin_number: '1'
+  pin_name: G
+- reference: Q2
+  pin_number: '2'
+  pin_name: S
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R2
+  pin_number: '1'
+  pin_name: '1'
+- reference: R3
+  pin_number: '1'
+  pin_name: '1'
+- reference: R4
+  pin_number: '1'
+  pin_name: '1'
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'
+- reference: R5
+  pin_number: '1'
+  pin_name: '1'
+- reference: R5
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: P$1
+  pin_name: VDDIO
+- reference: U1
+  pin_number: P$10
+  pin_name: RSVRD3(GND)
+- reference: U1
+  pin_number: P$11
+  pin_name: RSVRD4(GND)
+- reference: U1
+  pin_number: P$12
+  pin_name: RSVRD5(GND)
+- reference: U1
+  pin_number: P$13
+  pin_name: GND
+- reference: U1
+  pin_number: P$15
+  pin_name: RSVRD6(VDD)
+- reference: U1
+  pin_number: P$16
+  pin_name: VDD
+- reference: U1
+  pin_number: P$2
+  pin_name: SCL/SPC
+- reference: U1
+  pin_number: P$3
+  pin_name: SDA/SDI/SDO
+- reference: U1
+  pin_number: P$8
+  pin_name: RSVRD1(GND)
+- reference: U1
+  pin_number: P$9
+  pin_name: RSVRD2(GND)
+- reference: U2
+  pin_number: '1'
+  pin_name: VDDIO
+- reference: U2
+  pin_number: '10'
+  pin_name: GND
+- reference: U2
+  pin_number: '11'
+  pin_name: GND
+- reference: U2
+  pin_number: '14'
+  pin_name: VDD
+- reference: U2
+  pin_number: '7'
+  pin_name: GND
+- reference: U4
+  pin_number: '2'
+  pin_name: GND
+- reference: U4
+  pin_number: '5'
+  pin_name: OUT

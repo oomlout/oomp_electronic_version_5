@@ -1,0 +1,443 @@
+reference: F2
+schematic:
+  available: true
+  units:
+  - reference: F2
+    source_file: data/kicad_file.kicad_sch
+    uuid: a347fc33-0645-4b4f-9907-f94130f72f19
+    library_id: kicad_file-eagle-import:PTCFUSE-1206
+    unit: 1
+    body_style: 1
+    position:
+      x: 93.98
+      y: 40.64
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: F2
+      Value: 500mA
+      Footprint: kicad_file:R1206
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 88.9
+        y: 38.1
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: X3
+        pin_number: VBUS
+        pin_name: VBUS
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 2.54
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 99.06
+        y: 38.1
+      net: USBVCC
+      net_aliases:
+      - USBVCC
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: TR1
+        pin_number: '1'
+        pin_name: D
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: 1.143
+        max:
+          x: 2.667
+          y: 3.4519
+        width: 5.334
+        height: 2.3089
+        center:
+          x: 0.0
+          y: 2.29745
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 91.313
+          y: 37.1881
+        max:
+          x: 96.647
+          y: 39.497
+        width: 5.334
+        height: 2.3089
+        center:
+          x: 93.98
+          y: 38.34255
+    warnings: []
+  connected_components:
+  - reference: TR1
+    pin_number: '1'
+    pin_name: D
+  - reference: X3
+    pin_number: VBUS
+    pin_name: VBUS
+pcb:
+  reference: F2
+  value: 500mA
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 1ff8eb38-b5e5-421a-b356-c3d63e5b175d
+  library_id: Adafruit Grand Central M4 Express rev B-import-fps:R1206
+  layer: F.Cu
+  side: front
+  position:
+    x: 9.398
+    y: -34.036
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: F2
+    Value: 500mA
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.422
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 7.976
+      y: -34.036
+    placed_rotation: 0.0
+    size:
+      x: 1.6
+      y: 1.803
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VBUS
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.222
+          y: -0.9015
+        max:
+          x: -0.622
+          y: 0.9015
+        width: 1.6
+        height: 1.803
+        center:
+          x: -1.422
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.176
+          y: -34.9375
+        max:
+          x: 8.776
+          y: -33.1345
+        width: 1.6
+        height: 1.803
+        center:
+          x: 7.976
+          y: -34.036
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: X3
+      pad_number: VBUS
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.422
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 10.82
+      y: -34.036
+    placed_rotation: 0.0
+    size:
+      x: 1.6
+      y: 1.803
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: USBVCC
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.622
+          y: -0.9015
+        max:
+          x: 2.222
+          y: 0.9015
+        width: 1.6
+        height: 1.803
+        center:
+          x: 1.422
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.02
+          y: -34.9375
+        max:
+          x: 11.62
+          y: -33.1345
+        width: 1.6
+        height: 1.803
+        center:
+          x: 10.82
+          y: -34.036
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: TR1
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.222
+        y: -0.9015
+      max:
+        x: 2.222
+        y: 0.9015
+      width: 4.444
+      height: 1.803
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 7.176
+        y: -34.9375
+      max:
+        x: 11.62
+        y: -33.1345
+      width: 4.444
+      height: 1.803
+      center:
+        x: 9.398
+        y: -34.036
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.4984
+        y: -1.0084
+      max:
+        x: 2.4984
+        y: 1.0084
+      width: 4.9968
+      height: 2.0168
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 6.8996
+        y: -35.0444
+      max:
+        x: 11.8964
+        y: -33.0276
+      width: 4.9968
+      height: 2.0168
+      center:
+        x: 9.398
+        y: -34.036
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.6891
+        y: -0.889
+      max:
+        x: 1.6891
+        y: 0.889
+      width: 3.3782
+      height: 1.778
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 7.7089
+        y: -34.925
+      max:
+        x: 11.0871
+        y: -33.147
+      width: 3.3782
+      height: 1.778
+      center:
+        x: 9.398
+        y: -34.036
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.4984
+        y: -1.0084
+      max:
+        x: 2.4984
+        y: 1.0084
+      width: 4.9968
+      height: 2.0168
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 6.8996
+        y: -35.0444
+      max:
+        x: 11.8964
+        y: -33.0276
+      width: 4.9968
+      height: 2.0168
+      center:
+        x: 9.398
+        y: -34.036
+  connected_components:
+  - TR1
+  - X3
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - VBUS
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - USBVCC
+    pcb_nets:
+    - USBVCC
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_fuse_1206_resettable
+  confidence: 1.0
+  proposed_oomp_id: electronic_fuse_1206_resettable
+  inferred:
+    kind: fuse
+    package_size: '1206'
+    value: 500mA
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: other
+category_source: oomp_populate
+category_name: Other
+generated_directory: components/F2

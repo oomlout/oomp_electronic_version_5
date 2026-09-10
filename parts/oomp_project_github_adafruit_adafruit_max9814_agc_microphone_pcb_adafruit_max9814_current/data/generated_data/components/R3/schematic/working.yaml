@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: R3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 202ff80d-d860-4a28-8562-3f17d7c9e467
+  library_id: kicad_file-eagle-import:R-US_R0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 132.08
+    y: 127.0
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R3
+    Value: 2.2K
+    Footprint: kicad_file:R0805
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 132.08
+      y: 132.08
+    net: INPUT
+    net_aliases:
+    - INPUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C9
+      pin_number: '2'
+      pin_name: '2'
+    - reference: Q1
+      pin_number: +
+      pin_name: '2'
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 132.08
+      y: 121.92
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U$1
+      pin_number: P$13
+      pin_name: MICBIAS
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 130.9624
+        y: 124.3584
+      max:
+        x: 133.1976
+        y: 129.6416
+      width: 2.2352
+      height: 5.2832
+      center:
+        x: 132.08
+        y: 127.0
+  warnings: []
+connected_components:
+- reference: C9
+  pin_number: '2'
+  pin_name: '2'
+- reference: Q1
+  pin_number: +
+  pin_name: '2'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: U$1
+  pin_number: P$13
+  pin_name: MICBIAS

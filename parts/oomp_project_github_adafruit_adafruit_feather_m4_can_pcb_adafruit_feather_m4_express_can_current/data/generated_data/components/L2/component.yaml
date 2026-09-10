@@ -1,0 +1,478 @@
+reference: L2
+schematic:
+  available: true
+  units:
+  - reference: L2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 7289de6d-01dc-429c-8fdc-25f20038ccb7
+    library_id: kicad_file-eagle-import:INDUCTOR
+    unit: 1
+    body_style: 1
+    position:
+      x: 60.96
+      y: 119.38
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: L2
+      Value: 10uH
+      Footprint: kicad_file:INDUCTOR_1007
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: P$1
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 55.88
+        y: 119.38
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C13
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C15
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U$14
+        pin_number: '53'
+        pin_name: VDDCORE
+    - number: P$2
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 66.04
+        y: 119.38
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U$14
+        pin_number: '55'
+        pin_name: VSW
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -0.127
+        max:
+          x: 2.667
+          y: 1.0794
+        width: 5.334
+        height: 1.2064
+        center:
+          x: 0.0
+          y: 0.4762
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 58.293
+          y: 118.3006
+        max:
+          x: 63.627
+          y: 119.507
+        width: 5.334
+        height: 1.2064
+        center:
+          x: 60.96
+          y: 118.9038
+    warnings: []
+  connected_components:
+  - reference: C13
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C15
+    pin_number: '1'
+    pin_name: '1'
+  - reference: U$14
+    pin_number: '53'
+    pin_name: VDDCORE
+  - reference: U$14
+    pin_number: '55'
+    pin_name: VSW
+pcb:
+  reference: L2
+  value: 10uH
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 6c553114-f8da-44a9-af8e-e6868a461de8
+  library_id: Adafruit Feather M4 Express CAN-import-fps:INDUCTOR_1007
+  layer: F.Cu
+  side: front
+  position:
+    x: 21.6154
+    y: -11.7475
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: L2
+    Value: 10uH
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: P$1
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.127
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 21.6154
+      y: -12.8745
+    placed_rotation: 0.0
+    size:
+      x: 1.016
+      y: 2.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VDDCORE1
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.227
+          y: -0.508
+        max:
+          x: -0.027
+          y: 0.508
+        width: 2.2
+        height: 1.016
+        center:
+          x: -1.127
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 21.1074
+          y: -13.9745
+        max:
+          x: 22.1234
+          y: -11.7745
+        width: 1.016
+        height: 2.2
+        center:
+          x: 21.6154
+          y: -12.8745
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C13
+      pad_number: '1'
+    - reference: C15
+      pad_number: '1'
+    - reference: U$14
+      pad_number: '53'
+  - number: P$2
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.127
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 21.6154
+      y: -10.6205
+    placed_rotation: 0.0
+    size:
+      x: 1.016
+      y: 2.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$11
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.027
+          y: -0.508
+        max:
+          x: 2.227
+          y: 0.508
+        width: 2.2
+        height: 1.016
+        center:
+          x: 1.127
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 21.1074
+          y: -11.7205
+        max:
+          x: 22.1234
+          y: -9.5205
+        width: 1.016
+        height: 2.2
+        center:
+          x: 21.6154
+          y: -10.6205
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U$14
+      pad_number: '55'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.227
+        y: -0.508
+      max:
+        x: 2.227
+        y: 0.508
+      width: 4.454
+      height: 1.016
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 21.1074
+        y: -13.9745
+      max:
+        x: 22.1234
+        y: -9.5205
+      width: 1.016
+      height: 4.454
+      center:
+        x: 21.6154
+        y: -11.7475
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.3516
+        y: -1.0016
+      max:
+        x: 1.3516
+        y: 1.0016
+      width: 2.7032
+      height: 2.0032
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 20.6138
+        y: -13.0991
+      max:
+        x: 22.617
+        y: -10.3959
+      width: 2.0032
+      height: 2.7032
+      center:
+        x: 21.6154
+        y: -11.7475
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.9431
+        y: -1.3716
+      max:
+        x: 1.9431
+        y: 1.3716
+      width: 3.8862
+      height: 2.7432
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 20.2438
+        y: -13.6906
+      max:
+        x: 22.987
+        y: -9.8044
+      width: 2.7432
+      height: 3.8862
+      center:
+        x: 21.6154
+        y: -11.7475
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.227
+        y: -1.3716
+      max:
+        x: 2.227
+        y: 1.3716
+      width: 4.454
+      height: 2.7432
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 20.2438
+        y: -13.9745
+      max:
+        x: 22.987
+        y: -9.5205
+      width: 2.7432
+      height: 4.454
+      center:
+        x: 21.6154
+        y: -11.7475
+  connected_components:
+  - C13
+  - C15
+  - U$14
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: P$1
+    schematic_nets: []
+    pcb_nets:
+    - VDDCORE1
+    status: incomplete
+  - pin_or_pad_number: P$2
+    schematic_nets: []
+    pcb_nets:
+    - N$11
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: inductor
+    package_size: null
+    value: 10uH
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_inductor_0603_10_micro_henry
+    score: 0.103
+    reasons:
+    - same component family
+  - oomp_id: electronic_inductor_0603_30_ohm
+    score: 0.0991
+    reasons:
+    - same component family
+  - oomp_id: electronic_inductor_0603_470_ohm
+    score: 0.098
+    reasons:
+    - same component family
+  - oomp_id: electronic_inductor_0603_33_nano_henry
+    score: 0.0875
+    reasons:
+    - same component family
+  - oomp_id: electronic_inductor_0806_2_2_micro_henry
+    score: 0.086
+    reasons:
+    - same component family
+category: inductor
+category_source: unmatched_kicad_hint
+category_name: Inductor
+generated_directory: components/L2

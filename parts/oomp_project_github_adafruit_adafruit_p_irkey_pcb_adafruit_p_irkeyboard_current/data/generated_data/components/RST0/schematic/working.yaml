@@ -1,0 +1,95 @@
+available: true
+units:
+- reference: RST0
+  source_file: data/kicad_file.kicad_sch
+  uuid: 05deda9e-dca6-4e70-a0af-a69a9a128c02
+  library_id: kicad_file-eagle-import:TPTP16R
+  unit: 1
+  body_style: 1
+  position:
+    x: 160.02
+    y: 58.42
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: RST0
+    Value: TPTP16R
+    Footprint: kicad_file:TP16R
+    Datasheet: ''
+    Description: ''
+    TP_SIGNAL_NAME: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: TP
+    name: TP
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 160.02
+      y: 60.96
+    net: ~{RESET}
+    net_aliases:
+    - ~{RESET}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC3
+      pin_number: '26'
+      pin_name: /RESET
+    - reference: Q2
+      pin_number: A
+      pin_name: P
+    - reference: Q2
+      pin_number: A'
+      pin_name: P1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.889
+        y: -1.651
+      max:
+        x: 0.889
+        y: 0.127
+      width: 1.778
+      height: 1.778
+      center:
+        x: 0.0
+        y: -0.762
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 159.131
+        y: 58.293
+      max:
+        x: 160.909
+        y: 60.071
+      width: 1.778
+      height: 1.778
+      center:
+        x: 160.02
+        y: 59.182
+  warnings: []
+connected_components:
+- reference: IC3
+  pin_number: '26'
+  pin_name: /RESET
+- reference: Q2
+  pin_number: A
+  pin_name: P
+- reference: Q2
+  pin_number: A'
+  pin_name: P1

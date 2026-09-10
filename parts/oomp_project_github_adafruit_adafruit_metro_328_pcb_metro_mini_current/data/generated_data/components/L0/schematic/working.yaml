@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: L0
+  source_file: data/kicad_file.kicad_sch
+  uuid: c81080f9-0adf-4b56-b089-dd8d0736004b
+  library_id: kicad_file-eagle-import:LED0805_NOOUTLINE
+  unit: 1
+  body_style: 1
+  position:
+    x: 370.84
+    y: 50.8
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: L0
+    Value: RED
+    Footprint: kicad_file:CHIPLED_0805_NOOUTLINE
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 365.76
+      y: 50.8
+    net: SCK
+    net_aliases:
+    - SCK
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: AD1
+      pin_number: '6'
+      pin_name: '6'
+    - reference: U2
+      pin_number: '17'
+      pin_name: (SCK)PB5
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 373.38
+      y: 50.8
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: '5'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.397
+      max:
+        x: 1.397
+        y: 3.302
+      width: 4.064
+      height: 4.699
+      center:
+        x: -0.635
+        y: 0.9525
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 368.173
+        y: 47.498
+      max:
+        x: 372.237
+        y: 52.197
+      width: 4.064
+      height: 4.699
+      center:
+        x: 370.205
+        y: 49.8475
+  warnings: []
+connected_components:
+- reference: AD1
+  pin_number: '6'
+  pin_name: '6'
+- reference: R2
+  pin_number: '5'
+  pin_name: '2'
+- reference: U2
+  pin_number: '17'
+  pin_name: (SCK)PB5

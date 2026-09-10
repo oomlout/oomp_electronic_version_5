@@ -60,6 +60,14 @@ Connector Header 2.54-1*40P&#x76F4;&#x9488; is an OOMP electronic connector defi
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-FPC-SMT-Adapter-PCBs Super Lucky Multi FPC current](https://github.com/adafruit/Adafruit-FPC-SMT-Adapter-PCBs/blob/master/Super%20Lucky%20Multi%20FPC.brd) | 1 | CON1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_super_lucky_multi_fpc_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_fpc_smt_adapter_pcbs_super_lucky_multi_fpc_current) |
+
+
+
 ## Files
 
 
