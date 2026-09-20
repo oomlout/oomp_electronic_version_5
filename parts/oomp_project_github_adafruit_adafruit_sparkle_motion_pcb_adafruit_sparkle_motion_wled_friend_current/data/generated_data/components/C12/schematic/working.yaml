@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: C12
+  source_file: data/kicad_file.kicad_sch
+  uuid: f6fb946e-20f2-4c74-8039-0aee5248abdf
+  library_id: kicad_file-eagle-import:CAP_CERAMIC0603_NO
+  unit: 1
+  body_style: 1
+  position:
+    x: 307.34
+    y: 50.8
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C12
+    Value: 0.1uF
+    Footprint: kicad_file:0603-NO
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 302.26
+      y: 50.8
+    net: BOOT
+    net_aliases:
+    - BOOT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U$10
+      pin_number: '6'
+      pin_name: BOOT
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 309.88
+      y: 50.8
+    net: SW
+    net_aliases:
+    - SW
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: L1
+      pin_number: P$1
+      pin_name: '1'
+    - reference: U$10
+      pin_number: '2'
+      pin_name: SW
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.26995
+        y: -0.0762
+      max:
+        x: 1.26995
+        y: 2.6162
+      width: 2.5399
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 304.7238
+        y: 49.53005
+      max:
+        x: 307.4162
+        y: 52.06995
+      width: 2.6924
+      height: 2.5399
+      center:
+        x: 306.07
+        y: 50.8
+  warnings: []
+connected_components:
+- reference: L1
+  pin_number: P$1
+  pin_name: '1'
+- reference: U$10
+  pin_number: '2'
+  pin_name: SW
+- reference: U$10
+  pin_number: '6'
+  pin_name: BOOT

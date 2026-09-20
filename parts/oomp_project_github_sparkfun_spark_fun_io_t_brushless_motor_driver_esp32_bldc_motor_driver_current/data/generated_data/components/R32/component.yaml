@@ -1,0 +1,501 @@
+reference: R32
+schematic:
+  available: true
+  units:
+  - reference: R32
+    source_file: data/kicad_file.kicad_sch
+    uuid: 3fc32469-a683-41fd-b9bd-b509582e067a
+    library_id: kicad_file-eagle-import:0.012OHM0603
+    unit: 1
+    body_style: 1
+    position:
+      x: 408.94
+      y: 45.72
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R32
+      Value: 0.012ohm
+      Footprint: kicad_file:0603
+      Datasheet: ''
+      Description: ''
+      PROD_ID: RES-14691
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 403.86
+        y: 45.72
+      net: SENSE_U
+      net_aliases:
+      - SENSE_U
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: U1
+        pin_number: '15'
+        pin_name: U
+      - reference: U7
+        pin_number: '8'
+        pin_name: IN+
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 414.02
+        y: 45.72
+      net: U
+      net_aliases:
+      - U
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: P1
+        pin_number: '3'
+        pin_name: '3'
+      - reference: TP13
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U7
+        pin_number: '1'
+        pin_name: IN-
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6162
+          y: -1.0922
+        max:
+          x: 2.6162
+          y: 1.0922
+        width: 5.2324
+        height: 2.1844
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 406.3238
+          y: 44.6278
+        max:
+          x: 411.5562
+          y: 46.8122
+        width: 5.2324
+        height: 2.1844
+        center:
+          x: 408.94
+          y: 45.72
+    warnings: []
+  connected_components:
+  - reference: P1
+    pin_number: '3'
+    pin_name: '3'
+  - reference: TP13
+    pin_number: '1'
+    pin_name: '1'
+  - reference: U1
+    pin_number: '15'
+    pin_name: U
+  - reference: U7
+    pin_number: '1'
+    pin_name: IN-
+  - reference: U7
+    pin_number: '8'
+    pin_name: IN+
+pcb:
+  reference: R32
+  value: 0.012ohm
+  source_file: data/kicad_file.kicad_pcb
+  uuid: d9d8c9a3-06d7-4794-a6fc-a4f240085ef4
+  library_id: ESP32_BLDC_Motor_Driver-import-fps:0603
+  layer: F.Cu
+  side: front
+  position:
+    x: 70.358
+    y: -50.165
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: R32
+    Value: 0.012ohm
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.85
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 69.508
+      y: -50.165
+    placed_rotation: 0.0
+    size:
+      x: 1.1
+      y: 1.0
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: SENSE_U
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.4
+          y: -0.5
+        max:
+          x: -0.3
+          y: 0.5
+        width: 1.1
+        height: 1.0
+        center:
+          x: -0.85
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 68.958
+          y: -50.665
+        max:
+          x: 70.058
+          y: -49.665
+        width: 1.1
+        height: 1.0
+        center:
+          x: 69.508
+          y: -50.165
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U1
+      pad_number: '15'
+    - reference: U7
+      pad_number: '8'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.85
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 71.208
+      y: -50.165
+    placed_rotation: 0.0
+    size:
+      x: 1.1
+      y: 1.0
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: U
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.3
+          y: -0.5
+        max:
+          x: 1.4
+          y: 0.5
+        width: 1.1
+        height: 1.0
+        center:
+          x: 0.85
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 70.658
+          y: -50.665
+        max:
+          x: 71.758
+          y: -49.665
+        width: 1.1
+        height: 1.0
+        center:
+          x: 71.208
+          y: -50.165
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: P1
+      pad_number: '3'
+    - reference: TP13
+      pad_number: '1'
+    - reference: U7
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.4
+        y: -0.5
+      max:
+        x: 1.4
+        y: 0.5
+      width: 2.8
+      height: 1.0
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 68.958
+        y: -50.665
+      max:
+        x: 71.758
+        y: -49.665
+      width: 2.8
+      height: 1.0
+      center:
+        x: 70.358
+        y: -50.165
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.6254
+        y: -0.7254
+      max:
+        x: 1.6254
+        y: 0.7254
+      width: 3.2508
+      height: 1.4508
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 68.7326
+        y: -50.8904
+      max:
+        x: 71.9834
+        y: -49.4396
+      width: 3.2508
+      height: 1.4508
+      center:
+        x: 70.358
+        y: -50.165
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.8382
+        y: -0.4828
+      max:
+        x: 0.8303
+        y: 0.4699
+      width: 1.6685
+      height: 0.9527
+      center:
+        x: -0.00395
+        y: -0.00645
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 69.5198
+        y: -50.6478
+      max:
+        x: 71.1883
+        y: -49.6951
+      width: 1.6685
+      height: 0.9527
+      center:
+        x: 70.35405
+        y: -50.17145
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.6254
+        y: -0.7254
+      max:
+        x: 1.6254
+        y: 0.7254
+      width: 3.2508
+      height: 1.4508
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 68.7326
+        y: -50.8904
+      max:
+        x: 71.9834
+        y: -49.4396
+      width: 3.2508
+      height: 1.4508
+      center:
+        x: 70.358
+        y: -50.165
+  connected_components:
+  - P1
+  - TP13
+  - U1
+  - U7
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - SENSE_U
+    pcb_nets:
+    - SENSE_U
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - U
+    pcb_nets:
+    - U
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: electronic_resistor_0603_0_012_ohm
+  inferred:
+    kind: resistor
+    package_size: '0603'
+    value: 0.012ohm
+    mpn: null
+  reasons:
+  - The exact normalized component is not present in the OOMP parts directory.
+  candidates:
+  - oomp_id: electronic_resistor_2512_0_015_ohm
+    score: 0.6748
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_resistor_0603_12_ohm
+    score: 0.2977
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_resistor_0603_100_ohm
+    score: 0.297
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_resistor_0603_120_ohm
+    score: 0.297
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_resistor_0603_200_ohm
+    score: 0.297
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+category: resistor
+category_source: unmatched_kicad_hint
+category_name: Resistor
+generated_directory: components/R32

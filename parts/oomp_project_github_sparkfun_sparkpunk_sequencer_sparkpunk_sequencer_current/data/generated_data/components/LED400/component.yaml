@@ -1,0 +1,482 @@
+reference: LED400
+schematic:
+  available: true
+  units:
+  - reference: LED400
+    source_file: data/kicad_file.kicad_sch
+    uuid: 7d1310ff-a62b-4ff7-979f-313c0c9f2a6b
+    library_id: kicad_file-eagle-import:LED5MM-KIT
+    unit: 1
+    body_style: 1
+    position:
+      x: 347.98
+      y: 63.5
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: LED400
+      Value: RED
+      Footprint: kicad_file:LED5MM-KIT
+      Datasheet: ''
+      Description: ''
+      PROD_ID: DIO-09529
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: A
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 347.98
+        y: 60.96
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: Q400
+        pin_number: '1'
+        pin_name: E
+      - reference: S400
+        pin_number: '3'
+        pin_name: S
+      - reference: VR400
+        pin_number: TOP
+        pin_name: E
+    - number: K
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 347.98
+        y: 68.58
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R400
+        pin_number: P$2
+        pin_name: '2'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -3.5052
+          y: -3.3782
+        max:
+          x: 1.397
+          y: 0.127
+        width: 4.9022
+        height: 3.5052
+        center:
+          x: -1.0541
+          y: -1.6256
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 344.4748
+          y: 63.373
+        max:
+          x: 349.377
+          y: 66.8782
+        width: 4.9022
+        height: 3.5052
+        center:
+          x: 346.9259
+          y: 65.1256
+    warnings: []
+  connected_components:
+  - reference: Q400
+    pin_number: '1'
+    pin_name: E
+  - reference: R400
+    pin_number: P$2
+    pin_name: '2'
+  - reference: S400
+    pin_number: '3'
+    pin_name: S
+  - reference: VR400
+    pin_number: TOP
+    pin_name: E
+pcb:
+  reference: LED400
+  value: RED
+  source_file: data/kicad_file.kicad_pcb
+  uuid: a4c24284-6fe2-40d1-b107-c370aacf25a7
+  library_id: sparkpunk_sequencer-import-fps:LED5MM-KIT
+  layer: F.Cu
+  side: front
+  position:
+    x: 115.57
+    y: -71.12
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: LED400
+    Value: RED
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -1.27
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 114.3
+      y: -71.12
+    placed_rotation: 0.0
+    size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: N$35
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.2098
+          y: -0.9398
+        max:
+          x: -0.3302
+          y: 0.9398
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: -1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 113.3602
+          y: -72.0598
+        max:
+          x: 115.2398
+          y: -70.1802
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 114.3
+          y: -71.12
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: Q400
+      pad_number: '1'
+    - reference: S400
+      pad_number: '3'
+    - reference: VR400
+      pad_number: TOP
+  - number: K
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 1.27
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 116.84
+      y: -71.12
+    placed_rotation: 0.0
+    size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: N$36
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.3302
+          y: -0.9398
+        max:
+          x: 2.2098
+          y: 0.9398
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 115.9002
+          y: -72.0598
+        max:
+          x: 117.7798
+          y: -70.1802
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 116.84
+          y: -71.12
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: R400
+      pad_number: P$2
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.2098
+        y: -0.9398
+      max:
+        x: 2.2098
+        y: 0.9398
+      width: 4.4196
+      height: 1.8796
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 113.3602
+        y: -72.0598
+      max:
+        x: 117.7798
+        y: -70.1802
+      width: 4.4196
+      height: 1.8796
+      center:
+        x: 115.57
+        y: -71.12
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.2352
+        y: -2.2352
+      max:
+        x: 2.2352
+        y: 2.2352
+      width: 4.4704
+      height: 4.4704
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 113.3348
+        y: -73.3552
+      max:
+        x: 117.8052
+        y: -68.8848
+      width: 4.4704
+      height: 4.4704
+      center:
+        x: 115.57
+        y: -71.12
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -3.302
+        y: -3.302
+      max:
+        x: 2.667
+        y: 3.302
+      width: 5.969
+      height: 6.604
+      center:
+        x: -0.3175
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 112.268
+        y: -74.422
+      max:
+        x: 118.237
+        y: -67.818
+      width: 5.969
+      height: 6.604
+      center:
+        x: 115.2525
+        y: -71.12
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -3.302
+        y: -3.302
+      max:
+        x: 2.667
+        y: 3.302
+      width: 5.969
+      height: 6.604
+      center:
+        x: -0.3175
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 112.268
+        y: -74.422
+      max:
+        x: 118.237
+        y: -67.818
+      width: 5.969
+      height: 6.604
+      center:
+        x: 115.2525
+        y: -71.12
+  connected_components:
+  - Q400
+  - R400
+  - S400
+  - VR400
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: A
+    schematic_nets: []
+    pcb_nets:
+    - N$35
+    status: incomplete
+  - pin_or_pad_number: K
+    schematic_nets: []
+    pcb_nets:
+    - N$36
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: led
+    package_size: null
+    value: RED
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_led_0201_red
+    score: 0.2108
+    reasons:
+    - same component family
+  - oomp_id: electronic_led_0402_red
+    score: 0.2108
+    reasons:
+    - same component family
+  - oomp_id: electronic_led_0603_red
+    score: 0.2108
+    reasons:
+    - same component family
+  - oomp_id: electronic_led_0805_red
+    score: 0.2108
+    reasons:
+    - same component family
+  - oomp_id: electronic_led_1206_red
+    score: 0.2108
+    reasons:
+    - same component family
+category: led
+category_source: unmatched_kicad_hint
+category_name: LED
+generated_directory: components/LED400

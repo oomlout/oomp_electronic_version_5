@@ -1,0 +1,457 @@
+reference: R18
+schematic:
+  available: true
+  units:
+  - reference: R18
+    source_file: data/kicad_file.kicad_sch
+    uuid: 00000000-0000-0000-0000-00005f1a957e
+    library_id: picodvi-rescue:R-Device
+    unit: 1
+    body_style: 1
+    position:
+      x: 238.76
+      y: 43.18
+      rotation: 270.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R18
+      Value: '270'
+      Footprint: Resistor_SMD:R_0402_1005Metric
+      Datasheet: '~'
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 3.81
+        rotation: 270.0
+      length: 1.27
+      position:
+        x: 242.57
+        y: 43.18
+      net: DVI_D0-
+      net_aliases:
+      - DVI_D0-
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: J5
+        pin_number: '9'
+        pin_name: D0-
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -3.81
+        rotation: 90.0
+      length: 1.27
+      position:
+        x: 234.95
+        y: 43.18
+      net: uC_DVI_D0-
+      net_aliases:
+      - uC_DVI_D0-
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U1
+        pin_number: '8'
+        pin_name: GPIO6
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.143
+          y: -2.667
+        max:
+          x: 1.143
+          y: 2.667
+        width: 2.286
+        height: 5.334
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 236.093
+          y: 42.037
+        max:
+          x: 241.427
+          y: 44.323
+        width: 5.334
+        height: 2.286
+        center:
+          x: 238.76
+          y: 43.18
+    warnings: []
+  connected_components:
+  - reference: J5
+    pin_number: '9'
+    pin_name: D0-
+  - reference: U1
+    pin_number: '8'
+    pin_name: GPIO6
+pcb:
+  reference: R18
+  value: '270'
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 3c43aff5-29c5-497f-a2d2-fa5a39dda5b3
+  library_id: Resistor_SMD:R_0402_1005Metric
+  layer: B.Cu
+  side: back
+  position:
+    x: 211.8
+    y: 106.4
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Sheetfile: picodvi.kicad_sch
+    Sheetname: ''
+    Reference: R18
+    Value: '270'
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.51
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 211.8
+      y: 105.89
+    placed_rotation: 360.0
+    size:
+      x: 0.54
+      y: 0.64
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Paste
+    - B.Mask
+    net: /DVI_D0-
+    net_number: 13
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.83
+          y: -0.27
+        max:
+          x: -0.19
+          y: 0.27
+        width: 0.64
+        height: 0.54
+        center:
+          x: -0.51
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 211.53
+          y: 105.57
+        max:
+          x: 212.07
+          y: 106.21
+        width: 0.54
+        height: 0.64
+        center:
+          x: 211.8
+          y: 105.89
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: J5
+      pad_number: '9'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.51
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 211.8
+      y: 106.91
+    placed_rotation: 360.0
+    size:
+      x: 0.54
+      y: 0.64
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Paste
+    - B.Mask
+    net: /uC_DVI_D0-
+    net_number: 61
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.19
+          y: -0.27
+        max:
+          x: 0.83
+          y: 0.27
+        width: 0.64
+        height: 0.54
+        center:
+          x: 0.51
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 211.53
+          y: 106.59
+        max:
+          x: 212.07
+          y: 107.23
+        width: 0.54
+        height: 0.64
+        center:
+          x: 211.8
+          y: 106.91
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U1
+      pad_number: '8'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.83
+        y: -0.27
+      max:
+        x: 0.83
+        y: 0.27
+      width: 1.66
+      height: 0.54
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 211.53
+        y: 105.57
+      max:
+        x: 212.07
+        y: 107.23
+      width: 0.54
+      height: 1.66
+      center:
+        x: 211.8
+        y: 106.4
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.955
+        y: -0.495
+      max:
+        x: 0.955
+        y: 0.495
+      width: 1.91
+      height: 0.99
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 211.305
+        y: 105.445
+      max:
+        x: 212.295
+        y: 107.355
+      width: 0.99
+      height: 1.91
+      center:
+        x: 211.8
+        y: 106.4
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.575
+        y: -0.32
+      max:
+        x: 0.575
+        y: 0.32
+      width: 1.15
+      height: 0.64
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 211.48
+        y: 105.825
+      max:
+        x: 212.12
+        y: 106.975
+      width: 0.64
+      height: 1.15
+      center:
+        x: 211.8
+        y: 106.4
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.213641
+        y: -0.44
+      max:
+        x: 0.213641
+        y: 0.44
+      width: 0.427282
+      height: 0.88
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 211.36
+        y: 106.186359
+      max:
+        x: 212.24
+        y: 106.613641
+      width: 0.88
+      height: 0.427282
+      center:
+        x: 211.8
+        y: 106.4
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.955
+        y: -0.495
+      max:
+        x: 0.955
+        y: 0.495
+      width: 1.91
+      height: 0.99
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 211.305
+        y: 105.445
+      max:
+        x: 212.295
+        y: 107.355
+      width: 0.99
+      height: 1.91
+      center:
+        x: 211.8
+        y: 106.4
+  connected_components:
+  - J5
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - DVI_D0-
+    pcb_nets:
+    - /DVI_D0-
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - uC_DVI_D0-
+    pcb_nets:
+    - /uC_DVI_D0-
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0402_270_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0402_270_ohm
+  inferred:
+    kind: resistor
+    package_size: '0402'
+    value: '270'
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R18

@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: LED3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 9e71e420-0ffc-4a6a-8c7e-456641f0d65f
+  library_id: kicad_file-eagle-import:LEDCHIP-LED0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 182.88
+    y: 104.14
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: LED3
+    Value: LEDCHIP-LED0805
+    Footprint: kicad_file:CHIP-LED0805
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 182.88
+      y: 101.6
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R8
+      pin_number: '1'
+      pin_name: '1'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 182.88
+      y: 109.22
+    net: OUT2
+    net_aliases:
+    - OUT2
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '7'
+      pin_name: OUT2
+    - reference: JP1
+      pin_number: '4'
+      pin_name: '4'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 179.3748
+        y: 104.013
+      max:
+        x: 184.277
+        y: 107.5182
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: 181.8259
+        y: 105.7656
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '7'
+  pin_name: OUT2
+- reference: JP1
+  pin_number: '4'
+  pin_name: '4'
+- reference: R8
+  pin_number: '1'
+  pin_name: '1'

@@ -1,0 +1,148 @@
+available: true
+units:
+- reference: Q2
+  source_file: data/kicad_file.kicad_sch
+  uuid: f9c70560-f179-47eb-b38c-e657585c44ca
+  library_id: kicad_file-eagle-import:TRANSISTOR_NPNMMBT2222A
+  unit: 1
+  body_style: 1
+  position:
+    x: 187.96
+    y: 157.48
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q2
+    Value: MMBT2222A
+    Footprint: kicad_file:SOT23-3
+    Datasheet: ''
+    Description: ''
+    PROD_ID: TRANS-08049
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 190.5
+      y: 157.48
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R10
+      pin_number: '2'
+      pin_name: '2'
+  - number: '2'
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 185.42
+      y: 152.4
+    net: DTR
+    net_aliases:
+    - DTR
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R9
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U4
+      pin_number: '1'
+      pin_name: ~{DTR}
+  - number: '3'
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 185.42
+      y: 162.56
+    net: GPIO0
+    net_aliases:
+    - GPIO0
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '4'
+      pin_name: '4'
+    - reference: R14
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '15'
+      pin_name: SPICS2/GPIO0
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.25395
+        y: -2.6162
+      max:
+        x: 2.6162
+        y: 2.6162
+      width: 2.87015
+      height: 5.2324
+      center:
+        x: 1.181125
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 185.3438
+        y: 154.8638
+      max:
+        x: 188.21395
+        y: 160.0962
+      width: 2.87015
+      height: 5.2324
+      center:
+        x: 186.778875
+        y: 157.48
+  warnings: []
+connected_components:
+- reference: JP3
+  pin_number: '4'
+  pin_name: '4'
+- reference: R9
+  pin_number: '1'
+  pin_name: '1'
+- reference: R10
+  pin_number: '2'
+  pin_name: '2'
+- reference: R14
+  pin_number: '1'
+  pin_name: '1'
+- reference: U2
+  pin_number: '15'
+  pin_name: SPICS2/GPIO0
+- reference: U4
+  pin_number: '1'
+  pin_name: ~{DTR}

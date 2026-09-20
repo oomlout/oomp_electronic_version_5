@@ -1,0 +1,173 @@
+available: true
+units:
+- reference: D3
+  source_file: data/kicad_file.kicad_sch
+  uuid: ab3a3624-ade6-48e0-875b-adefa339fe35
+  library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-MBRA140
+  unit: 1
+  body_style: 1
+  position:
+    x: 106.68
+    y: 45.72
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D3
+    Value: MBRA140
+    Footprint: kicad_file:SMA-DIODE
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-08053
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 109.22
+      y: 45.72
+    net: VBAT
+    net_aliases:
+    - VBAT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP2
+      pin_number: '2'
+      pin_name: '1'
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: TP1
+      pin_number: P$1
+      pin_name: '1'
+    - reference: U2
+      pin_number: '3'
+      pin_name: VBAT
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 104.14
+      y: 45.72
+    net: VIN
+    net_aliases:
+    - VIN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY1'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: '#SUPPLY3'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: D1
+      pin_number: C
+      pin_name: C
+    - reference: JP3
+      pin_number: '1'
+      pin_name: VIN
+    - reference: JP3
+      pin_number: VIN
+      pin_name: VIN
+    - reference: R2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '4'
+      pin_name: VIN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.651
+      max:
+        x: 2.6162
+        y: 1.651
+      width: 5.2324
+      height: 3.302
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 104.0638
+        y: 44.069
+      max:
+        x: 109.2962
+        y: 47.371
+      width: 5.2324
+      height: 3.302
+      center:
+        x: 106.68
+        y: 45.72
+  warnings: []
+connected_components:
+- reference: '#SUPPLY1'
+  pin_number: '1'
+  pin_name: VIN
+- reference: '#SUPPLY3'
+  pin_number: '1'
+  pin_name: VIN
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: C3
+  pin_number: '1'
+  pin_name: '1'
+- reference: D1
+  pin_number: C
+  pin_name: C
+- reference: JP2
+  pin_number: '2'
+  pin_name: '1'
+- reference: JP3
+  pin_number: '1'
+  pin_name: VIN
+- reference: JP3
+  pin_number: VIN
+  pin_name: VIN
+- reference: R2
+  pin_number: '1'
+  pin_name: '1'
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'
+- reference: TP1
+  pin_number: P$1
+  pin_name: '1'
+- reference: U2
+  pin_number: '3'
+  pin_name: VBAT
+- reference: U2
+  pin_number: '4'
+  pin_name: VIN

@@ -1,0 +1,106 @@
+available: true
+units:
+- reference: R1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 7e5b9b46-680f-4ebb-a151-1aaa2c70abda
+  library_id: kicad_file-eagle-import:1KOHM-0402T-1/16W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 233.68
+    y: 198.12
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R1
+    Value: 1k
+    Footprint: kicad_file:0402-TIGHT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-14342
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 233.68
+      y: 203.2
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D2
+      pin_number: A
+      pin_name: A
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 233.68
+      y: 193.04
+    net: LED_BUILTIN
+    net_aliases:
+    - LED_BUILTIN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: ~D19
+      pin_name: (CMPRF0/SCCCLK/I2SBCLK)~{D19}
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 232.5878
+        y: 195.5038
+      max:
+        x: 234.7722
+        y: 200.7362
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 233.68
+        y: 198.12
+  warnings: []
+connected_components:
+- reference: D2
+  pin_number: A
+  pin_name: A
+- reference: U1
+  pin_number: ~D19
+  pin_name: (CMPRF0/SCCCLK/I2SBCLK)~{D19}

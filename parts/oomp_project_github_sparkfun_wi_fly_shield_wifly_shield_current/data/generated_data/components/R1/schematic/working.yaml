@@ -1,0 +1,123 @@
+available: true
+units:
+- reference: R1
+  source_file: data/kicad_file.kicad_sch
+  uuid: a5bca946-e9d3-47be-b71d-9878a136f0fd
+  library_id: kicad_file-eagle-import:RESISTOR0402-RES
+  unit: 1
+  body_style: 1
+  position:
+    x: 256.54
+    y: 68.58
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R1
+    Value: 22k
+    Footprint: kicad_file:13
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 256.54
+      y: 63.5
+    net: RXDIN
+    net_aliases:
+    - RXDIN
+    net_scope: global
+    no_connect: false
+    connected_to: []
+  - number: '2'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 256.54
+      y: 73.66
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '1'
+      pin_name: RESET
+    - reference: JP4
+      pin_number: '22'
+      pin_name: /CTS
+    - reference: JP4
+      pin_number: '23'
+      pin_name: TX
+    - reference: JP4
+      pin_number: '24'
+      pin_name: RX
+    - reference: R2
+      pin_number: '1'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 255.4478
+        y: 65.9638
+      max:
+        x: 257.6322
+        y: 71.1962
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 256.54
+        y: 68.58
+  warnings: []
+connected_components:
+- reference: JP1
+  pin_number: '1'
+  pin_name: RESET
+- reference: JP4
+  pin_number: '22'
+  pin_name: /CTS
+- reference: JP4
+  pin_number: '23'
+  pin_name: TX
+- reference: JP4
+  pin_number: '24'
+  pin_name: RX
+- reference: R2
+  pin_number: '1'
+  pin_name: '2'

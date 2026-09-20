@@ -1,0 +1,106 @@
+available: true
+units:
+- reference: R26
+  source_file: data/kicad_file.kicad_sch
+  uuid: 56418fcd-c659-4a62-bdeb-034b7284558f
+  library_id: kicad_file-eagle-import:33OHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 106.68
+    y: 48.26
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R26
+    Value: '33'
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-08270
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 48.26
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U4
+      pin_number: '46'
+      pin_name: TX_READY
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 111.76
+      y: 48.26
+    net: TX_RDY
+    net_aliases:
+    - TX_RDY
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J5
+      pin_number: '7'
+      pin_name: '7'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 104.0638
+        y: 47.1678
+      max:
+        x: 109.2962
+        y: 49.3522
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 106.68
+        y: 48.26
+  warnings: []
+connected_components:
+- reference: J5
+  pin_number: '7'
+  pin_name: '7'
+- reference: U4
+  pin_number: '46'
+  pin_name: TX_READY

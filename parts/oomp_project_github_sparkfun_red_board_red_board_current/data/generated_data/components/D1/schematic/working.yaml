@@ -1,0 +1,136 @@
+available: true
+units:
+- reference: D1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 7e5b85c9-8548-4036-90ea-2033a5a9939b
+  library_id: kicad_file-eagle-import:MBRA140
+  unit: 1
+  body_style: 1
+  position:
+    x: 193.04
+    y: 43.18
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D1
+    Value: MBRA140
+    Footprint: kicad_file:SMA-DIODE
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-08053
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 190.5
+      y: 43.18
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: J3
+      pin_number: VIN0
+      pin_name: PWR
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 195.58
+      y: 43.18
+    net: VIN
+    net_aliases:
+    - VIN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY5'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: '#SUPPLY7'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: C5
+      pin_number: +
+      pin_name: +
+    - reference: IC3
+      pin_number: '3'
+      pin_name: IN
+    - reference: JP10
+      pin_number: 1A
+      pin_name: '1'
+    - reference: JP10
+      pin_number: 1B
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.651
+      max:
+        x: 2.6162
+        y: 1.651
+      width: 5.2324
+      height: 3.302
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 190.4238
+        y: 41.529
+      max:
+        x: 195.6562
+        y: 44.831
+      width: 5.2324
+      height: 3.302
+      center:
+        x: 193.04
+        y: 43.18
+  warnings: []
+connected_components:
+- reference: '#SUPPLY5'
+  pin_number: '1'
+  pin_name: VIN
+- reference: '#SUPPLY7'
+  pin_number: '1'
+  pin_name: VIN
+- reference: C5
+  pin_number: +
+  pin_name: +
+- reference: IC3
+  pin_number: '3'
+  pin_name: IN
+- reference: J3
+  pin_number: VIN0
+  pin_name: PWR
+- reference: JP10
+  pin_number: 1A
+  pin_name: '1'
+- reference: JP10
+  pin_number: 1B
+  pin_name: '1'

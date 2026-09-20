@@ -1,0 +1,142 @@
+available: true
+units:
+- reference: R2
+  source_file: data/kicad_file.kicad_sch
+  uuid: a94faa33-a892-4e0a-8b97-263f54291982
+  library_id: kicad_file-eagle-import:RESISTOR0805_NOOUTLINE
+  unit: 1
+  body_style: 1
+  position:
+    x: 119.38
+    y: 124.46
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R2
+    Value: 10K
+    Footprint: kicad_file:0805-NO
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 119.38
+      y: 129.54
+    net: ENABLE
+    net_aliases:
+    - ENABLE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '8'
+      pin_name: '8'
+    - reference: U2
+      pin_number: '3'
+      pin_name: EN
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 119.38
+      y: 119.38
+    net: VIN
+    net_aliases:
+    - VIN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$7'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: '#U$10'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U2
+      pin_number: '1'
+      pin_name: IN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.397
+      max:
+        x: 2.667
+        y: 1.397
+      width: 5.334
+      height: 2.794
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 117.983
+        y: 121.793
+      max:
+        x: 120.777
+        y: 127.127
+      width: 2.794
+      height: 5.334
+      center:
+        x: 119.38
+        y: 124.46
+  warnings: []
+connected_components:
+- reference: '#U$7'
+  pin_number: '1'
+  pin_name: VIN
+- reference: '#U$10'
+  pin_number: '1'
+  pin_name: VIN
+- reference: '#U$17'
+  pin_number: '1'
+  pin_name: VIN
+- reference: C3
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '8'
+  pin_name: '8'
+- reference: U2
+  pin_number: '1'
+  pin_name: IN
+- reference: U2
+  pin_number: '3'
+  pin_name: EN

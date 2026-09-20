@@ -1,0 +1,142 @@
+reference: MS1
+available: true
+measurement_policy: Footprint text is excluded. Separate pad, courtyard, fabrication, silkscreen, and overall bounds are retained.
+measurements:
+  pads_local:
+    measurement: all footprint pads in footprint-local coordinates
+    units: mm
+    available: true
+    min:
+      x: 5.08
+      y: -26.035
+    max:
+      x: 45.72
+      y: 3.175
+    width: 40.64
+    height: 29.21
+    center:
+      x: 25.4
+      y: -11.43
+  pads_placed:
+    measurement: all pads after PCB placement and rotation
+    units: mm
+    available: true
+    min:
+      x: 28.2575
+      y: -48.895
+    max:
+      x: 57.4675
+      y: -8.255
+    width: 29.21
+    height: 40.64
+    center:
+      x: 42.8625
+      y: -28.575
+  courtyard_local:
+    measurement: F.CrtYd and B.CrtYd graphics; text excluded
+    units: mm
+    available: false
+    min: null
+    max: null
+    width: null
+    height: null
+    center: null
+  courtyard_placed:
+    measurement: courtyard after PCB placement and rotation
+    units: mm
+    available: false
+    min: null
+    max: null
+    width: null
+    height: null
+    center: null
+  fabrication_local:
+    measurement: F.Fab and B.Fab graphics; text excluded
+    units: mm
+    available: true
+    min:
+      x: -0.05
+      y: -22.91
+    max:
+      x: 50.85
+      y: 0.05
+    width: 50.9
+    height: 22.96
+    center:
+      x: 25.4
+      y: -11.43
+  fabrication_placed:
+    measurement: fabrication graphics after placement
+    units: mm
+    available: true
+    min:
+      x: 31.3825
+      y: -54.025
+    max:
+      x: 54.3425
+      y: -3.125
+    width: 22.96
+    height: 50.9
+    center:
+      x: 42.8625
+      y: -28.575
+  silkscreen_local:
+    measurement: F.SilkS and B.SilkS graphics; text excluded
+    units: mm
+    available: true
+    min:
+      x: 4.9784
+      y: -27.0256
+    max:
+      x: 45.8216
+      y: 4.1656
+    width: 40.8432
+    height: 31.1912
+    center:
+      x: 25.4
+      y: -11.43
+  silkscreen_placed:
+    measurement: silkscreen graphics after placement
+    units: mm
+    available: true
+    min:
+      x: 27.2669
+      y: -48.9966
+    max:
+      x: 58.4581
+      y: -8.1534
+    width: 31.1912
+    height: 40.8432
+    center:
+      x: 42.8625
+      y: -28.575
+  overall_local:
+    measurement: all non-text footprint graphics and pads
+    units: mm
+    available: true
+    min:
+      x: -0.05
+      y: -27.0256
+    max:
+      x: 50.85
+      y: 4.1656
+    width: 50.9
+    height: 31.1912
+    center:
+      x: 25.4
+      y: -11.43
+  overall_placed:
+    measurement: all non-text footprint graphics and pads after placement
+    units: mm
+    available: true
+    min:
+      x: 27.2669
+      y: -54.025
+    max:
+      x: 58.4581
+      y: -3.125
+    width: 31.1912
+    height: 50.9
+    center:
+      x: 42.8625
+      y: -28.575

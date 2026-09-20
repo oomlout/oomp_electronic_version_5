@@ -1,0 +1,82 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 3
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - FRAME1
+  value: FRAME-LETTER
+  footprint: SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps:CREATIVE_COMMONS
+  query: FRAME-LETTER SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps:CREATIVE_COMMONS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FRAME-LETTER+SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps%3ACREATIVE_COMMONS
+    datasheet_search: https://www.google.com/search?q=FRAME-LETTER+SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps%3ACREATIVE_COMMONS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: LM3880
+  footprint: SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps:SOT23-6
+  query: LM3880 SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps:SOT23-6
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=LM3880+SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps%3ASOT23-6
+    datasheet_search: https://www.google.com/search?q=LM3880+SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps%3ASOT23-6+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: LSM303C
+  footprint: SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps:LGA-12
+  query: LSM303C SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps:LGA-12
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=LSM303C+SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps%3ALGA-12
+    datasheet_search: https://www.google.com/search?q=LSM303C+SparkFun_LSM303C_6_DOF_IMU_Breakout-import-fps%3ALGA-12+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

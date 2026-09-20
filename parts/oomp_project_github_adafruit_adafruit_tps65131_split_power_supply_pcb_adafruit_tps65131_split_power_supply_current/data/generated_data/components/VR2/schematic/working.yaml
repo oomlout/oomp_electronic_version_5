@@ -1,0 +1,135 @@
+available: true
+units:
+- reference: VR2
+  source_file: data/kicad_file.kicad_sch
+  uuid: f48e754c-515d-4adc-8615-78bef868f8ad
+  library_id: kicad_file-eagle-import:TRIMPOTTC33X-2
+  unit: 1
+  body_style: 1
+  position:
+    x: 256.54
+    y: 152.4
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: VR2
+    Value: 100K
+    Footprint: kicad_file:TRIMPOT_BOURNS_TC33X-2
+    Datasheet: ''
+    Description: ''
+    ROT: '0'
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 256.54
+      y: 157.48
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '2'
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 251.46
+      y: 152.4
+    net: FBN
+    net_aliases:
+    - FBN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C10
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '16'
+      pin_name: FBN
+  - number: '3'
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 256.54
+      y: 147.32
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R4
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.2751
+        y: -2.667
+      max:
+        x: 2.6162
+        y: 2.667
+      width: 5.8913
+      height: 5.334
+      center:
+        x: -0.32945
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 253.9238
+        y: 149.733
+      max:
+        x: 259.8151
+        y: 155.067
+      width: 5.8913
+      height: 5.334
+      center:
+        x: 256.86945
+        y: 152.4
+  warnings: []
+connected_components:
+- reference: C10
+  pin_number: '2'
+  pin_name: '2'
+- reference: R3
+  pin_number: '2'
+  pin_name: '2'
+- reference: R4
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '16'
+  pin_name: FBN

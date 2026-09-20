@@ -1,0 +1,136 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 5
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - C1
+  value: 1uF
+  footprint: Adafruit TPL5110-import-fps:0805-NO
+  query: 1uF Adafruit TPL5110-import-fps:0805-NO
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1uF+Adafruit+TPL5110-import-fps%3A0805-NO
+    datasheet_search: https://www.google.com/search?q=1uF+Adafruit+TPL5110-import-fps%3A0805-NO+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0805_1_micro_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_10_nano_farad
+  - electronic_capacitor_0603_100_nano_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  - electronic_capacitor_0402_2_2_micro_farad
+  - electronic_capacitor_0603_2_2_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - VR1
+  value: 200k
+  footprint: Adafruit TPL5110-import-fps:TRIMPOT_BOURNS_TC33X-2
+  query: 200k Adafruit TPL5110-import-fps:TRIMPOT_BOURNS_TC33X-2
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=200k+Adafruit+TPL5110-import-fps%3ATRIMPOT_BOURNS_TC33X-2
+    datasheet_search: https://www.google.com/search?q=200k+Adafruit+TPL5110-import-fps%3ATRIMPOT_BOURNS_TC33X-2+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - Q1
+  value: DMG3415
+  footprint: Adafruit TPL5110-import-fps:SOT23-WIDE
+  query: DMG3415 Adafruit TPL5110-import-fps:SOT23-WIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=DMG3415+Adafruit+TPL5110-import-fps%3ASOT23-WIDE
+    datasheet_search: https://www.google.com/search?q=DMG3415+Adafruit+TPL5110-import-fps%3ASOT23-WIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_transistor_sot_363_6_mosfet_n_channel_dual
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
+  - electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - SW1
+  value: EVQQ
+  footprint: Adafruit TPL5110-import-fps:EVQ-Q2_SMALLER
+  query: EVQQ Adafruit TPL5110-import-fps:EVQ-Q2_SMALLER
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=EVQQ+Adafruit+TPL5110-import-fps%3AEVQ-Q2_SMALLER
+    datasheet_search: https://www.google.com/search?q=EVQQ+Adafruit+TPL5110-import-fps%3AEVQ-Q2_SMALLER+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: TPL5110
+  footprint: Adafruit TPL5110-import-fps:SOT23-6
+  query: TPL5110 Adafruit TPL5110-import-fps:SOT23-6
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TPL5110+Adafruit+TPL5110-import-fps%3ASOT23-6
+    datasheet_search: https://www.google.com/search?q=TPL5110+Adafruit+TPL5110-import-fps%3ASOT23-6+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

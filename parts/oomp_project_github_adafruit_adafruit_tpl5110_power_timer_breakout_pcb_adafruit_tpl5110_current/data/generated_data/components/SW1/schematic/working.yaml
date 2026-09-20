@@ -1,0 +1,253 @@
+available: true
+units:
+- reference: SW1
+  source_file: data/kicad_file.kicad_sch
+  uuid: a3983c3a-f953-4dd5-b776-e211dc88f2fb
+  library_id: kicad_file-eagle-import:SWITCH_TACT_SMT_EVQQ2_SMALL
+  unit: 1
+  body_style: 1
+  position:
+    x: 116.84
+    y: 101.6
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: SW1
+    Value: EVQQ
+    Footprint: kicad_file:EVQ-Q2_SMALLER
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: P
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 116.84
+      y: 106.68
+    net: DELAY
+    net_aliases:
+    - DELAY
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: SJ1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: SW1
+      pin_number: A'
+      pin_name: P1
+    - reference: U2
+      pin_number: '3'
+      pin_name: DELAY
+  - number: A'
+    name: P1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 119.38
+      y: 106.68
+    net: DELAY
+    net_aliases:
+    - DELAY
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: SJ1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: SW1
+      pin_number: A
+      pin_name: P
+    - reference: U2
+      pin_number: '3'
+      pin_name: DELAY
+  - number: B
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 116.84
+      y: 96.52
+    net: VDD
+    net_aliases:
+    - VDD
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#VDD1'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#VDD2'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#VDD3'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: Q1
+      pin_number: '2'
+      pin_name: S
+    - reference: SW1
+      pin_number: B'
+      pin_name: S1
+    - reference: U2
+      pin_number: '1'
+      pin_name: VDD
+    - reference: U2
+      pin_number: '6'
+      pin_name: EN
+  - number: B'
+    name: S1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 119.38
+      y: 96.52
+    net: VDD
+    net_aliases:
+    - VDD
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#VDD1'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#VDD2'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#VDD3'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: Q1
+      pin_number: '2'
+      pin_name: S
+    - reference: SW1
+      pin_number: B
+      pin_name: S
+    - reference: U2
+      pin_number: '1'
+      pin_name: VDD
+    - reference: U2
+      pin_number: '6'
+      pin_name: EN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.8702
+        y: -2.6162
+      max:
+        x: 2.8702
+        y: 4.572
+      width: 5.7404
+      height: 7.1882
+      center:
+        x: 0.0
+        y: 0.9779
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 112.268
+        y: 98.7298
+      max:
+        x: 119.4562
+        y: 104.4702
+      width: 7.1882
+      height: 5.7404
+      center:
+        x: 115.8621
+        y: 101.6
+  warnings: []
+connected_components:
+- reference: '#VDD1'
+  pin_number: '1'
+  pin_name: VDD
+- reference: '#VDD2'
+  pin_number: '1'
+  pin_name: VDD
+- reference: '#VDD3'
+  pin_number: '1'
+  pin_name: VDD
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP1
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP1
+  pin_number: '3'
+  pin_name: '3'
+- reference: Q1
+  pin_number: '2'
+  pin_name: S
+- reference: SJ1
+  pin_number: '2'
+  pin_name: '2'
+- reference: SW1
+  pin_number: A
+  pin_name: P
+- reference: SW1
+  pin_number: A'
+  pin_name: P1
+- reference: SW1
+  pin_number: B
+  pin_name: S
+- reference: SW1
+  pin_number: B'
+  pin_name: S1
+- reference: U2
+  pin_number: '1'
+  pin_name: VDD
+- reference: U2
+  pin_number: '3'
+  pin_name: DELAY
+- reference: U2
+  pin_number: '6'
+  pin_name: EN

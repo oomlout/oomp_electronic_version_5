@@ -1,0 +1,228 @@
+available: true
+units:
+- reference: JP9
+  source_file: data/kicad_file.kicad_sch
+  uuid: df1ef464-0d86-4f3c-9ddb-3c66e604744b
+  library_id: kicad_file-eagle-import:PINHD-1X6B
+  unit: 1
+  body_style: 1
+  position:
+    x: 99.06
+    y: 142.24
+    rotation: 90.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: JP9
+    Value: PINHD-1X6B
+    Footprint: kicad_file:1X06-BIG
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 7.62
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 106.68
+      y: 144.78
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 104.14
+      y: 144.78
+    net: RTC_SCL
+    net_aliases:
+    - RTC_SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: I2C0
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: A5
+      pin_name: A5/SCL
+    - reference: U1
+      pin_number: SCL
+      pin_name: SCL
+    - reference: U4
+      pin_number: '6'
+      pin_name: SCL
+  - number: '3'
+    name: '3'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 144.78
+    net: RTC_SDA
+    net_aliases:
+    - RTC_SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: I2C0
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP2
+      pin_number: '8'
+      pin_name: '8'
+    - reference: R2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: A4
+      pin_name: A4/SDA
+    - reference: U1
+      pin_number: SDA
+      pin_name: SDA
+    - reference: U4
+      pin_number: '5'
+      pin_name: SDA
+  - number: '4'
+    name: '4'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 99.06
+      y: 144.78
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '5'
+    name: '5'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 96.52
+      y: 144.78
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '6'
+    name: '6'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: -5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 144.78
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -6.5532
+        y: -7.8232
+      max:
+        x: 1.4732
+        y: 10.3632
+      width: 8.0264
+      height: 18.1864
+      center:
+        x: -2.54
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 91.2368
+        y: 140.7668
+      max:
+        x: 109.4232
+        y: 148.7932
+      width: 18.1864
+      height: 8.0264
+      center:
+        x: 100.33
+        y: 144.78
+  warnings: []
+connected_components:
+- reference: I2C0
+  pin_number: '1'
+  pin_name: '1'
+- reference: I2C0
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP2
+  pin_number: '8'
+  pin_name: '8'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: R2
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: A4
+  pin_name: A4/SDA
+- reference: U1
+  pin_number: A5
+  pin_name: A5/SCL
+- reference: U1
+  pin_number: SCL
+  pin_name: SCL
+- reference: U1
+  pin_number: SDA
+  pin_name: SDA
+- reference: U4
+  pin_number: '5'
+  pin_name: SDA
+- reference: U4
+  pin_number: '6'
+  pin_name: SCL

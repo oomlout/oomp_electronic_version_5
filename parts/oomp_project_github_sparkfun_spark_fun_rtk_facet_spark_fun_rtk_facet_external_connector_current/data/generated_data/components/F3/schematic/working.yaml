@@ -1,0 +1,142 @@
+available: true
+units:
+- reference: F3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 259161ca-e055-427c-9923-b1b3b163cc4a
+  library_id: SparkFun-Fuse:Fuse 6V/2.0A/4.0A
+  unit: 1
+  body_style: 1
+  position:
+    x: 87.63
+    y: 53.34
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: F3
+    Value: 6V/2.0A/4.0A
+    Footprint: SparkFun-Fuse:1210
+    Datasheet: https://www.belfuse.com/resources/datasheets/circuitprotection/ds-cp-0zch-series.pdf
+    Description: Resettable fuse 2A
+    PROD_ID: RES-14313
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 1.27
+    position:
+      x: 91.44
+      y: 53.34
+    net: V_USB
+    net_aliases:
+    - V_USB
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#PWR0101'
+      pin_number: '1'
+      pin_name: VUSB
+    - reference: '#PWR0102'
+      pin_number: '1'
+      pin_name: VUSB
+    - reference: J1
+      pin_number: '10'
+      pin_name: Pin_10
+    - reference: J1
+      pin_number: '11'
+      pin_name: Pin_11
+    - reference: J1
+      pin_number: '12'
+      pin_name: Pin_12
+    - reference: J1
+      pin_number: '9'
+      pin_name: Pin_9
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 1.27
+    position:
+      x: 83.82
+      y: 53.34
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D1
+      pin_number: '5'
+      pin_name: VCC
+    - reference: JP0
+      pin_number: '2'
+      pin_name: B
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.524
+      max:
+        x: 2.667
+        y: 1.524
+      width: 5.334
+      height: 3.048
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 84.963
+        y: 51.816
+      max:
+        x: 90.297
+        y: 54.864
+      width: 5.334
+      height: 3.048
+      center:
+        x: 87.63
+        y: 53.34
+  warnings: []
+connected_components:
+- reference: '#PWR0101'
+  pin_number: '1'
+  pin_name: VUSB
+- reference: '#PWR0102'
+  pin_number: '1'
+  pin_name: VUSB
+- reference: D1
+  pin_number: '5'
+  pin_name: VCC
+- reference: J1
+  pin_number: '10'
+  pin_name: Pin_10
+- reference: J1
+  pin_number: '11'
+  pin_name: Pin_11
+- reference: J1
+  pin_number: '12'
+  pin_name: Pin_12
+- reference: J1
+  pin_number: '9'
+  pin_name: Pin_9
+- reference: JP0
+  pin_number: '2'
+  pin_name: B

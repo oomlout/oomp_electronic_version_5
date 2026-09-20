@@ -1,0 +1,512 @@
+reference: R1
+schematic:
+  available: true
+  units:
+  - reference: R1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 84ac1640-4e69-4701-a04a-bc88abb45f0b
+    library_id: kicad_file-eagle-import:RESISTOR0805_NOOUTLINE
+    unit: 1
+    body_style: 1
+    position:
+      x: 154.94
+      y: 58.42
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R1
+      Value: 100K
+      Footprint: kicad_file:0805-NO
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 149.86
+        y: 58.42
+      net: VIN
+      net_aliases:
+      - VIN
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#U$10'
+        pin_number: '1'
+        pin_name: VIN
+      - reference: '#U$13'
+        pin_number: '1'
+        pin_name: VIN
+      - reference: '#U$16'
+        pin_number: '1'
+        pin_name: VIN
+      - reference: '#U$17'
+        pin_number: '1'
+        pin_name: VIN
+      - reference: C3
+        pin_number: '1'
+        pin_name: '1'
+      - reference: JP3
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: U3
+        pin_number: '1'
+        pin_name: IN
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 160.02
+        y: 58.42
+      net: EN
+      net_aliases:
+      - EN
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP3
+        pin_number: '3'
+        pin_name: '3'
+      - reference: U3
+        pin_number: '3'
+        pin_name: EN
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -1.397
+        max:
+          x: 2.667
+          y: 1.397
+        width: 5.334
+        height: 2.794
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 152.273
+          y: 57.023
+        max:
+          x: 157.607
+          y: 59.817
+        width: 5.334
+        height: 2.794
+        center:
+          x: 154.94
+          y: 58.42
+    warnings: []
+  connected_components:
+  - reference: '#U$10'
+    pin_number: '1'
+    pin_name: VIN
+  - reference: '#U$13'
+    pin_number: '1'
+    pin_name: VIN
+  - reference: '#U$16'
+    pin_number: '1'
+    pin_name: VIN
+  - reference: '#U$17'
+    pin_number: '1'
+    pin_name: VIN
+  - reference: C3
+    pin_number: '1'
+    pin_name: '1'
+  - reference: JP3
+    pin_number: '1'
+    pin_name: '1'
+  - reference: JP3
+    pin_number: '3'
+    pin_name: '3'
+  - reference: R2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: U3
+    pin_number: '1'
+    pin_name: IN
+  - reference: U3
+    pin_number: '3'
+    pin_name: EN
+pcb:
+  reference: R1
+  value: 100K
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 0eeac779-47d2-42e9-b6b2-bbc479167746
+  library_id: Adafruit RFM+LoRa Breakout-import-fps:0805-NO
+  layer: F.Cu
+  side: front
+  position:
+    x: 5.334
+    y: -6.604
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: R1
+    Value: 100K
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.95
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 5.334
+      y: -7.554
+    placed_rotation: 0.0
+    size:
+      x: 1.24
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VIN
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.7
+          y: -0.62
+        max:
+          x: -0.2
+          y: 0.62
+        width: 1.5
+        height: 1.24
+        center:
+          x: -0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 4.714
+          y: -8.304
+        max:
+          x: 5.954
+          y: -6.804
+        width: 1.24
+        height: 1.5
+        center:
+          x: 5.334
+          y: -7.554
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C3
+      pad_number: '1'
+    - reference: JP3
+      pad_number: '1'
+    - reference: R2
+      pad_number: '2'
+    - reference: R3
+      pad_number: '2'
+    - reference: U3
+      pad_number: '1'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.95
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 5.334
+      y: -5.654
+    placed_rotation: 0.0
+    size:
+      x: 1.24
+      y: 1.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: EN
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.2
+          y: -0.62
+        max:
+          x: 1.7
+          y: 0.62
+        width: 1.5
+        height: 1.24
+        center:
+          x: 0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 4.714
+          y: -6.404
+        max:
+          x: 5.954
+          y: -4.904
+        width: 1.24
+        height: 1.5
+        center:
+          x: 5.334
+          y: -5.654
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP3
+      pad_number: '3'
+    - reference: U3
+      pad_number: '3'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.7
+        y: -0.62
+      max:
+        x: 1.7
+        y: 0.62
+      width: 3.4
+      height: 1.24
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 4.714
+        y: -8.304
+      max:
+        x: 5.954
+        y: -4.904
+      width: 1.24
+      height: 3.4
+      center:
+        x: 5.334
+        y: -6.604
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.0922
+        y: -0.7262
+      max:
+        x: 1.1057
+        y: 0.7239
+      width: 2.1979
+      height: 1.4501
+      center:
+        x: 0.00675
+        y: -0.00115
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 4.6101
+        y: -7.6962
+      max:
+        x: 6.0602
+        y: -5.4983
+      width: 1.4501
+      height: 2.1979
+      center:
+        x: 5.33515
+        y: -6.59725
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.1524
+        y: -0.6604
+      max:
+        x: 0.1524
+        y: 0.6604
+      width: 0.3048
+      height: 1.3208
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 4.6736
+        y: -6.7564
+      max:
+        x: 5.9944
+        y: -6.4516
+      width: 1.3208
+      height: 0.3048
+      center:
+        x: 5.334
+        y: -6.604
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.7
+        y: -0.7262
+      max:
+        x: 1.7
+        y: 0.7239
+      width: 3.4
+      height: 1.4501
+      center:
+        x: 0.0
+        y: -0.00115
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 4.6101
+        y: -8.304
+      max:
+        x: 6.0602
+        y: -4.904
+      width: 1.4501
+      height: 3.4
+      center:
+        x: 5.33515
+        y: -6.604
+  connected_components:
+  - C3
+  - JP3
+  - R2
+  - R3
+  - U3
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - VIN
+    pcb_nets:
+    - VIN
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - EN
+    pcb_nets:
+    - EN
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0805_100000_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0805_100000_ohm
+  inferred:
+    kind: resistor
+    package_size: 0805
+    value: 100K
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R1

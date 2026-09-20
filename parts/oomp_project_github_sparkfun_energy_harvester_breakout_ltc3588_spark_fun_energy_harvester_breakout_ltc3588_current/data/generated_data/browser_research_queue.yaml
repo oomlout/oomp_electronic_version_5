@@ -1,0 +1,65 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 2
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: 10uH
+  footprint: SparkFun_Energy_Harvester_Breakout-LTC3588-import-fps:CDRH3D28
+  query: 10uH SparkFun_Energy_Harvester_Breakout-LTC3588-import-fps:CDRH3D28
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=10uH+SparkFun_Energy_Harvester_Breakout-LTC3588-import-fps%3ACDRH3D28
+    datasheet_search: https://www.google.com/search?q=10uH+SparkFun_Energy_Harvester_Breakout-LTC3588-import-fps%3ACDRH3D28+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_inductor_0603_10_micro_henry
+  - electronic_inductor_0603_30_ohm
+  - electronic_inductor_0603_470_ohm
+  - electronic_inductor_0603_33_nano_henry
+  - electronic_inductor_0806_2_2_micro_henry
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: LTC3588
+  footprint: SparkFun_Energy_Harvester_Breakout-LTC3588-import-fps:MSOP-10-GNDPAD
+  query: LTC3588 SparkFun_Energy_Harvester_Breakout-LTC3588-import-fps:MSOP-10-GNDPAD
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=LTC3588+SparkFun_Energy_Harvester_Breakout-LTC3588-import-fps%3AMSOP-10-GNDPAD
+    datasheet_search: https://www.google.com/search?q=LTC3588+SparkFun_Energy_Harvester_Breakout-LTC3588-import-fps%3AMSOP-10-GNDPAD+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

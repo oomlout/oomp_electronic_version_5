@@ -1,0 +1,160 @@
+available: true
+units:
+- reference: D1
+  source_file: data/kicad_file.kicad_sch
+  uuid: e268b687-2f1c-49b8-a108-f8f13c745065
+  library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-BAT20J
+  unit: 1
+  body_style: 1
+  position:
+    x: 109.22
+    y: 106.68
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: D1
+    Value: 1A/23V/620mV
+    Footprint: kicad_file:SOD-323
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-11623
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 106.68
+      y: 106.68
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: L1
+      pin_number: P$2
+      pin_name: '2'
+    - reference: U1
+      pin_number: '1'
+      pin_name: SW
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 111.76
+      y: 106.68
+    net: 12V
+    net_aliases:
+    - 12V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY5'
+      pin_number: '1'
+      pin_name: 12V
+    - reference: '#SUPPLY7'
+      pin_number: '1'
+      pin_name: 12V
+    - reference: '#SUPPLY9'
+      pin_number: '1'
+      pin_name: 12V
+    - reference: C6
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C7
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C8
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: TP1
+      pin_number: P$1
+      pin_name: '1'
+    - reference: U2
+      pin_number: P$23
+      pin_name: VCC
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.3462
+      max:
+        x: 2.6162
+        y: 1.3462
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 106.6038
+        y: 105.3338
+      max:
+        x: 111.8362
+        y: 108.0262
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 109.22
+        y: 106.68
+  warnings: []
+connected_components:
+- reference: '#SUPPLY5'
+  pin_number: '1'
+  pin_name: 12V
+- reference: '#SUPPLY7'
+  pin_number: '1'
+  pin_name: 12V
+- reference: '#SUPPLY9'
+  pin_number: '1'
+  pin_name: 12V
+- reference: C6
+  pin_number: '1'
+  pin_name: '1'
+- reference: C7
+  pin_number: '1'
+  pin_name: '1'
+- reference: C8
+  pin_number: '1'
+  pin_name: '1'
+- reference: L1
+  pin_number: P$2
+  pin_name: '2'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: TP1
+  pin_number: P$1
+  pin_name: '1'
+- reference: U1
+  pin_number: '1'
+  pin_name: SW
+- reference: U2
+  pin_number: P$23
+  pin_name: VCC

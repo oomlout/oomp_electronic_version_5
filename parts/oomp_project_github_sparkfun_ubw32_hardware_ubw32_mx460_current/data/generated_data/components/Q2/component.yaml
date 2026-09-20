@@ -1,0 +1,487 @@
+reference: Q2
+schematic:
+  available: true
+  units:
+  - reference: Q2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 2236b115-7954-4e84-b616-da4d06ad99be
+    library_id: kicad_file-eagle-import:CRYSTAL32-SMD
+    unit: 1
+    body_style: 1
+    position:
+      x: 312.42
+      y: 48.26
+      rotation: 180.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: Q2
+      Value: 32.768KHz
+      Footprint: kicad_file:CRYSTAL-32KHZ-SMD
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: X1
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 0.0
+      position:
+        x: 314.96
+        y: 48.26
+      net: RC13
+      net_aliases:
+      - RC13
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C17
+        pin_number: '1'
+        pin_name: '1'
+      - reference: J3
+        pin_number: '9'
+        pin_name: '9'
+      - reference: U1
+        pin_number: '73'
+        pin_name: SOSCI/CN1/RC13
+    - number: X2
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 309.88
+        y: 48.26
+      net: RC14
+      net_aliases:
+      - RC14
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C16
+        pin_number: '1'
+        pin_name: '1'
+      - reference: J3
+        pin_number: '10'
+        pin_name: '10'
+      - reference: U1
+        pin_number: '74'
+        pin_name: SOSCO/T1CK/CN0/RC14
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6162
+          y: -1.905
+        max:
+          x: 2.6162
+          y: 1.905
+        width: 5.2324
+        height: 3.81
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 309.8038
+          y: 46.355
+        max:
+          x: 315.0362
+          y: 50.165
+        width: 5.2324
+        height: 3.81
+        center:
+          x: 312.42
+          y: 48.26
+    warnings: []
+  connected_components:
+  - reference: C16
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C17
+    pin_number: '1'
+    pin_name: '1'
+  - reference: J3
+    pin_number: '10'
+    pin_name: '10'
+  - reference: J3
+    pin_number: '9'
+    pin_name: '9'
+  - reference: U1
+    pin_number: '73'
+    pin_name: SOSCI/CN1/RC13
+  - reference: U1
+    pin_number: '74'
+    pin_name: SOSCO/T1CK/CN0/RC14
+pcb:
+  reference: Q2
+  value: 32.768KHz
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 8328e699-5569-45e7-830d-819838c2a04f
+  library_id: UBW32_MX460_v262-import-fps:CRYSTAL-32KHZ-SMD
+  layer: F.Cu
+  side: front
+  position:
+    x: 66.04
+    y: -19.05
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: Q2
+    Value: 32.768KHz
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: X1
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.27
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 66.04
+      y: -20.32
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 2.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: RC13
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.52
+          y: -0.5
+        max:
+          x: -0.02
+          y: 0.5
+        width: 2.5
+        height: 1.0
+        center:
+          x: -1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 65.54
+          y: -21.57
+        max:
+          x: 66.54
+          y: -19.07
+        width: 1.0
+        height: 2.5
+        center:
+          x: 66.04
+          y: -20.32
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C17
+      pad_number: '1'
+    - reference: J3
+      pad_number: '9'
+    - reference: U1
+      pad_number: '73'
+  - number: X2
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.27
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 66.04
+      y: -17.78
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 2.5
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: RC14
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.02
+          y: -0.5
+        max:
+          x: 2.52
+          y: 0.5
+        width: 2.5
+        height: 1.0
+        center:
+          x: 1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 65.54
+          y: -19.03
+        max:
+          x: 66.54
+          y: -16.53
+        width: 1.0
+        height: 2.5
+        center:
+          x: 66.04
+          y: -17.78
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C16
+      pad_number: '1'
+    - reference: J3
+      pad_number: '10'
+    - reference: U1
+      pad_number: '74'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.52
+        y: -0.5
+      max:
+        x: 2.52
+        y: 0.5
+      width: 5.04
+      height: 1.0
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 65.54
+        y: -21.57
+      max:
+        x: 66.54
+        y: -16.53
+      width: 1.0
+      height: 5.04
+      center:
+        x: 66.04
+        y: -19.05
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.3335
+        y: -8.3185
+      max:
+        x: 1.3335
+        y: -1.8415
+      width: 2.667
+      height: 6.477
+      center:
+        x: 0.0
+        y: -5.08
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 67.8815
+        y: -20.3835
+      max:
+        x: 74.3585
+        y: -17.7165
+      width: 6.477
+      height: 2.667
+      center:
+        x: 71.12
+        y: -19.05
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.52
+        y: -8.3185
+      max:
+        x: 2.52
+        y: 0.5
+      width: 5.04
+      height: 8.8185
+      center:
+        x: 0.0
+        y: -3.90925
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 65.54
+        y: -21.57
+      max:
+        x: 74.3585
+        y: -16.53
+      width: 8.8185
+      height: 5.04
+      center:
+        x: 69.94925
+        y: -19.05
+  connected_components:
+  - C16
+  - C17
+  - J3
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: X1
+    schematic_nets:
+    - RC13
+    pcb_nets:
+    - RC13
+    status: agree
+  - pin_or_pad_number: X2
+    schematic_nets:
+    - RC14
+    pcb_nets:
+    - RC14
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: transistor
+    package_size: null
+    value: 32.768KHz
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_transistor_sot_363_6_mosfet_n_channel_dual
+    score: 0.0794
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_bipolar_npn
+    score: 0.0692
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_bipolar_pnp
+    score: 0.0692
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+    score: 0.0638
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
+    score: 0.0633
+    reasons:
+    - same component family
+category: transistor
+category_source: unmatched_kicad_hint
+category_name: Transistor
+generated_directory: components/Q2

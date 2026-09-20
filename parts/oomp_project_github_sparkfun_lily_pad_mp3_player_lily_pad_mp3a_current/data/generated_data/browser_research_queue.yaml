@@ -1,0 +1,838 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 35
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - L1
+  - L2
+  - L3
+  - L4
+  value: ''
+  footprint: LilyPad-MP3-v15a-import-fps:0805
+  query: LilyPad-MP3-v15a-import-fps:0805
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=LilyPad-MP3-v15a-import-fps%3A0805
+    datasheet_search: https://www.google.com/search?q=LilyPad-MP3-v15a-import-fps%3A0805+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - D1
+  value: ''
+  footprint: LilyPad-MP3-v15a-import-fps:SOD-523
+  query: LilyPad-MP3-v15a-import-fps:SOD-523
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=LilyPad-MP3-v15a-import-fps%3ASOD-523
+    datasheet_search: https://www.google.com/search?q=LilyPad-MP3-v15a-import-fps%3ASOD-523+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_diode_schottky_sod_523
+  candidate_oomp_ids:
+  - electronic_diode_schottky_sod_523_1ss400
+  - electronic_diode_schottky_sod_123_ss14
+  - electronic_diode_schottky_sod_323_bat54w
+  - electronic_diode_schottky_sod_323_infineon_bat20j
+  - electronic_diode_schottky_sod_323_infineon_bat60a
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - C22
+  value: 10uF
+  footprint: LilyPad-MP3-v15a-import-fps:EIA3216
+  query: 10uF LilyPad-MP3-v15a-import-fps:EIA3216
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=10uF+LilyPad-MP3-v15a-import-fps%3AEIA3216
+    datasheet_search: https://www.google.com/search?q=10uF+LilyPad-MP3-v15a-import-fps%3AEIA3216+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_3216_avx_a_tantalum_10_micro_farad_16_volt
+  candidate_oomp_ids:
+  - electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt
+  - electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  - electronic_capacitor_0402_4_7_micro_farad
+  - electronic_capacitor_0603_4_7_micro_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - Y2
+  value: 12.288MHz
+  footprint: LilyPad-MP3-v15a-import-fps:CRYSTAL-SMD-5X3
+  query: 12.288MHz LilyPad-MP3-v15a-import-fps:CRYSTAL-SMD-5X3
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=12.288MHz+LilyPad-MP3-v15a-import-fps%3ACRYSTAL-SMD-5X3
+    datasheet_search: https://www.google.com/search?q=12.288MHz+LilyPad-MP3-v15a-import-fps%3ACRYSTAL-SMD-5X3+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+  - electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
+  - electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
+  - electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf
+  - electronic_crystal_3225_surface_mount_4_pin_3_579545_mhz_20_pf
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - C30
+  - C31
+  - C32
+  - C33
+  value: 1nF
+  footprint: LilyPad-MP3-v15a-import-fps:0402-CAP
+  query: 1nF LilyPad-MP3-v15a-import-fps:0402-CAP
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1nF+LilyPad-MP3-v15a-import-fps%3A0402-CAP
+    datasheet_search: https://www.google.com/search?q=1nF+LilyPad-MP3-v15a-import-fps%3A0402-CAP+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0402_1_nano_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0402_15_pico_farad
+  - electronic_capacitor_0402_18_pico_farad
+  - electronic_capacitor_0402_8_pico_farad
+  - electronic_capacitor_0402_120_pico_farad
+  - electronic_capacitor_0402_33_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_6
+  status: needs_browser_research
+  priority: high
+  references:
+  - R10
+  - R11
+  value: '20'
+  footprint: LilyPad-MP3-v15a-import-fps:0402-RES
+  query: 20 LilyPad-MP3-v15a-import-fps:0402-RES
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=20+LilyPad-MP3-v15a-import-fps%3A0402-RES
+    datasheet_search: https://www.google.com/search?q=20+LilyPad-MP3-v15a-import-fps%3A0402-RES+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0402_20_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_quarter_watt_through_hole_22_ohm
+  - electronic_resistor_quarter_watt_through_hole_18_ohm
+  - electronic_resistor_quarter_watt_through_hole_15_ohm
+  - electronic_resistor_quarter_watt_through_hole_27_ohm
+  - electronic_resistor_2512_13_3_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_7
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST9
+  value: 3.3V
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: 3.3V LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=3.3V+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=3.3V+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_8
+  status: needs_browser_research
+  priority: high
+  references:
+  - C17
+  value: 470pF
+  footprint: LilyPad-MP3-v15a-import-fps:0402-CAP
+  query: 470pF LilyPad-MP3-v15a-import-fps:0402-CAP
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=470pF+LilyPad-MP3-v15a-import-fps%3A0402-CAP
+    datasheet_search: https://www.google.com/search?q=470pF+LilyPad-MP3-v15a-import-fps%3A0402-CAP+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0402_470_pico_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0402_27_pico_farad
+  - electronic_capacitor_0402_8_pico_farad
+  - electronic_capacitor_0402_120_pico_farad
+  - electronic_capacitor_0402_33_pico_farad
+  - electronic_capacitor_0402_18_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_9
+  status: needs_browser_research
+  priority: high
+  references:
+  - C16
+  value: 47nF
+  footprint: LilyPad-MP3-v15a-import-fps:0402-CAP
+  query: 47nF LilyPad-MP3-v15a-import-fps:0402-CAP
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=47nF+LilyPad-MP3-v15a-import-fps%3A0402-CAP
+    datasheet_search: https://www.google.com/search?q=47nF+LilyPad-MP3-v15a-import-fps%3A0402-CAP+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0402_47_nano_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0402_10_nano_farad
+  - electronic_capacitor_0402_22_nano_farad
+  - electronic_capacitor_0402_100_nano_farad
+  - electronic_capacitor_0402_4_7_micro_farad
+  - electronic_capacitor_0402_27_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_10
+  status: needs_browser_research
+  priority: high
+  references:
+  - C2
+  value: 47uF
+  footprint: LilyPad-MP3-v15a-import-fps:EIA3528
+  query: 47uF LilyPad-MP3-v15a-import-fps:EIA3528
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=47uF+LilyPad-MP3-v15a-import-fps%3AEIA3528
+    datasheet_search: https://www.google.com/search?q=47uF+LilyPad-MP3-v15a-import-fps%3AEIA3528+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  - electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_0402_1_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_11
+  status: needs_browser_research
+  priority: high
+  references:
+  - Y1
+  value: 8MHz
+  footprint: LilyPad-MP3-v15a-import-fps:RESONATOR-SMD
+  query: 8MHz LilyPad-MP3-v15a-import-fps:RESONATOR-SMD
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=8MHz+LilyPad-MP3-v15a-import-fps%3ARESONATOR-SMD
+    datasheet_search: https://www.google.com/search?q=8MHz+LilyPad-MP3-v15a-import-fps%3ARESONATOR-SMD+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_12
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: ATMEGA328
+  footprint: LilyPad-MP3-v15a-import-fps:TQFP32-08
+  query: ATMEGA328 LilyPad-MP3-v15a-import-fps:TQFP32-08
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=ATMEGA328+LilyPad-MP3-v15a-import-fps%3ATQFP32-08
+    datasheet_search: https://www.google.com/search?q=ATMEGA328+LilyPad-MP3-v15a-import-fps%3ATQFP32-08+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_13
+  status: needs_browser_research
+  priority: high
+  references:
+  - TP13
+  value: DTR
+  footprint: LilyPad-MP3-v15a-import-fps:PAD.03X.05
+  query: DTR LilyPad-MP3-v15a-import-fps:PAD.03X.05
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=DTR+LilyPad-MP3-v15a-import-fps%3APAD.03X.05
+    datasheet_search: https://www.google.com/search?q=DTR+LilyPad-MP3-v15a-import-fps%3APAD.03X.05+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_14
+  status: needs_browser_research
+  priority: high
+  references:
+  - S2
+  value: EC12PLRGBSDVBF-D
+  footprint: LilyPad-MP3-v15a-import-fps:ENCODER_LED_3
+  query: EC12PLRGBSDVBF-D LilyPad-MP3-v15a-import-fps:ENCODER_LED_3
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=EC12PLRGBSDVBF-D+LilyPad-MP3-v15a-import-fps%3AENCODER_LED_3
+    datasheet_search: https://www.google.com/search?q=EC12PLRGBSDVBF-D+LilyPad-MP3-v15a-import-fps%3AENCODER_LED_3+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_led_3_mm
+  - electronic_led_3_mm_red
+  - electronic_led_3_mm_red_tint
+  - electronic_led_3_mm_tint
+  - electronic_led_3_mm_red_clear
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_15
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST11
+  value: GND
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: GND LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=GND+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=GND+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_16
+  status: needs_browser_research
+  priority: high
+  references:
+  - JP5
+  value: HEADPHONE
+  footprint: LilyPad-MP3-v15a-import-fps:AUDIO-JACK-3.5MM-SMD
+  query: HEADPHONE LilyPad-MP3-v15a-import-fps:AUDIO-JACK-3.5MM-SMD
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=HEADPHONE+LilyPad-MP3-v15a-import-fps%3AAUDIO-JACK-3.5MM-SMD
+    datasheet_search: https://www.google.com/search?q=HEADPHONE+LilyPad-MP3-v15a-import-fps%3AAUDIO-JACK-3.5MM-SMD+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_17
+  status: needs_browser_research
+  priority: high
+  references:
+  - JP1
+  value: LiPo
+  footprint: LilyPad-MP3-v15a-import-fps:JST-2-SMD
+  query: LiPo LilyPad-MP3-v15a-import-fps:JST-2-SMD
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=LiPo+LilyPad-MP3-v15a-import-fps%3AJST-2-SMD
+    datasheet_search: https://www.google.com/search?q=LiPo+LilyPad-MP3-v15a-import-fps%3AJST-2-SMD+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_18
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: MCP73831
+  footprint: LilyPad-MP3-v15a-import-fps:SOT23-5
+  query: MCP73831 LilyPad-MP3-v15a-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MCP73831+LilyPad-MP3-v15a-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=MCP73831+LilyPad-MP3-v15a-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_19
+  status: needs_browser_research
+  priority: high
+  references:
+  - U3
+  value: MIC5219 3.3V
+  footprint: LilyPad-MP3-v15a-import-fps:SOT23-5
+  query: MIC5219 3.3V LilyPad-MP3-v15a-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MIC5219+3.3V+LilyPad-MP3-v15a-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=MIC5219+3.3V+LilyPad-MP3-v15a-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_20
+  status: needs_browser_research
+  priority: high
+  references:
+  - S1
+  value: POWER
+  footprint: LilyPad-MP3-v15a-import-fps:AYZ0202
+  query: POWER LilyPad-MP3-v15a-import-fps:AYZ0202
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=POWER+LilyPad-MP3-v15a-import-fps%3AAYZ0202
+    datasheet_search: https://www.google.com/search?q=POWER+LilyPad-MP3-v15a-import-fps%3AAYZ0202+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_21
+  status: needs_browser_research
+  priority: high
+  references:
+  - JP4
+  value: PROG
+  footprint: LilyPad-MP3-v15a-import-fps:2X3-NS
+  query: PROG LilyPad-MP3-v15a-import-fps:2X3-NS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=PROG+LilyPad-MP3-v15a-import-fps%3A2X3-NS
+    datasheet_search: https://www.google.com/search?q=PROG+LilyPad-MP3-v15a-import-fps%3A2X3-NS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_22
+  status: needs_browser_research
+  priority: high
+  references:
+  - U5
+  value: SP6214 1.8V
+  footprint: LilyPad-MP3-v15a-import-fps:SC70
+  query: SP6214 1.8V LilyPad-MP3-v15a-import-fps:SC70
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=SP6214+1.8V+LilyPad-MP3-v15a-import-fps%3ASC70
+    datasheet_search: https://www.google.com/search?q=SP6214+1.8V+LilyPad-MP3-v15a-import-fps%3ASC70+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_23
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST6
+  value: SPKL+
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: SPKL+ LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=SPKL%2B+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=SPKL%2B+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_24
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST5
+  value: SPKL-
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: SPKL- LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=SPKL-+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=SPKL-+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_25
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST8
+  value: SPKR+
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: SPKR+ LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=SPKR%2B+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=SPKR%2B+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_26
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST7
+  value: SPKR-
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: SPKR- LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=SPKR-+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=SPKR-+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_27
+  status: needs_browser_research
+  priority: high
+  references:
+  - U6
+  value: TPA2016D2RTJ
+  footprint: LilyPad-MP3-v15a-import-fps:QFN-20-0.5MM
+  query: TPA2016D2RTJ LilyPad-MP3-v15a-import-fps:QFN-20-0.5MM
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TPA2016D2RTJ+LilyPad-MP3-v15a-import-fps%3AQFN-20-0.5MM
+    datasheet_search: https://www.google.com/search?q=TPA2016D2RTJ+LilyPad-MP3-v15a-import-fps%3AQFN-20-0.5MM+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_28
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST12
+  value: TRIG1
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: TRIG1 LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TRIG1+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=TRIG1+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_29
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST1
+  value: TRIG2/SDA
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: TRIG2/SDA LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TRIG2%2FSDA+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=TRIG2%2FSDA+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_30
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST2
+  value: TRIG3/SCL
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: TRIG3/SCL LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TRIG3%2FSCL+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=TRIG3%2FSCL+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_31
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST3
+  value: TRIG4/TXO
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: TRIG4/TXO LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TRIG4%2FTXO+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=TRIG4%2FTXO+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_32
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST4
+  value: TRIG5/RXI
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: TRIG5/RXI LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=TRIG5%2FRXI+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=TRIG5%2FRXI+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_33
+  status: needs_browser_research
+  priority: high
+  references:
+  - U7
+  value: USD-SOCKET
+  footprint: LilyPad-MP3-v15a-import-fps:MICRO-SD-SOCKET-PP
+  query: USD-SOCKET LilyPad-MP3-v15a-import-fps:MICRO-SD-SOCKET-PP
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=USD-SOCKET+LilyPad-MP3-v15a-import-fps%3AMICRO-SD-SOCKET-PP
+    datasheet_search: https://www.google.com/search?q=USD-SOCKET+LilyPad-MP3-v15a-import-fps%3AMICRO-SD-SOCKET-PP+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_34
+  status: needs_browser_research
+  priority: high
+  references:
+  - ST10
+  value: VIN
+  footprint: LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  query: VIN LilyPad-MP3-v15a-import-fps:PETAL-LONG-1-2SIDE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=VIN+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE
+    datasheet_search: https://www.google.com/search?q=VIN+LilyPad-MP3-v15a-import-fps%3APETAL-LONG-1-2SIDE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_35
+  status: needs_browser_research
+  priority: high
+  references:
+  - U4
+  value: VS1053
+  footprint: LilyPad-MP3-v15a-import-fps:LQFP-48
+  query: VS1053 LilyPad-MP3-v15a-import-fps:LQFP-48
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=VS1053+LilyPad-MP3-v15a-import-fps%3ALQFP-48
+    datasheet_search: https://www.google.com/search?q=VS1053+LilyPad-MP3-v15a-import-fps%3ALQFP-48+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

@@ -1,0 +1,129 @@
+available: true
+units:
+- reference: R2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 2c491ab8-8fe5-44d7-b8d6-f90695a314ce
+  library_id: kicad_file-eagle-import:rcl_R-US_R0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 134.62
+    y: 76.2
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R2
+    Value: 100K
+    Footprint: kicad_file:R0805
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 139.7
+      y: 76.2
+    net: GATE
+    net_aliases:
+    - GATE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '11'
+      pin_name: O
+    - reference: Q2
+      pin_number: '1'
+      pin_name: G
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 129.54
+      y: 76.2
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '8'
+      pin_name: I0
+    - reference: IC1
+      pin_number: '9'
+      pin_name: I1
+    - reference: S1
+      pin_number: '1'
+      pin_name: S
+    - reference: S1
+      pin_number: '2'
+      pin_name: S1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 131.9784
+        y: 75.0824
+      max:
+        x: 137.2616
+        y: 77.3176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 134.62
+        y: 76.2
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '11'
+  pin_name: O
+- reference: IC1
+  pin_number: '8'
+  pin_name: I0
+- reference: IC1
+  pin_number: '9'
+  pin_name: I1
+- reference: Q2
+  pin_number: '1'
+  pin_name: G
+- reference: S1
+  pin_number: '1'
+  pin_name: S
+- reference: S1
+  pin_number: '2'
+  pin_name: S1

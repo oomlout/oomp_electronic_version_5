@@ -1,0 +1,18 @@
+Project data fetch failed.
+Error type: RuntimeError
+Error message: fatal: Cannot fast-forward to multiple branches.
+Command: git -C C:\Users\AARON_~1\AppData\Local\Temp\oomp_git_cache\UBW32_ea2fd5a623e3 pull --ff-only
+Repository URL: https://github.com/sparkfun/UBW32.git
+Repository name: UBW32
+Source folder: Hardware/Kicad
+Source basename: UBW32_MX460_v262
+Extensions: ['.kicad_pcb', '.kicad_sch', '.kicad_pro']
+
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/project_git_action.py", line 239, in refresh_project_files
+    _run_git(["-C", repository_directory, "pull", "--ff-only"])
+  File "kicad_agents/project_git_action.py", line 58, in _run_git
+    raise RuntimeError(f"{message}\nCommand: {' '.join(command)}")
+RuntimeError: fatal: Cannot fast-forward to multiple branches.
+Command: git -C C:\Users\AARON_~1\AppData\Local\Temp\oomp_git_cache\UBW32_ea2fd5a623e3 pull --ff-only

@@ -1,0 +1,131 @@
+available: true
+units:
+- reference: R2
+  source_file: data/kicad_file.kicad_sch
+  uuid: c90d6183-5d7c-4a5e-b5ac-4d60dd950047
+  library_id: kicad_file-eagle-import:100OHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 165.1
+    y: 58.42
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R2
+    Value: '100'
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-07863
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 165.1
+      y: 63.5
+    net: DSCL_N
+    net_aliases:
+    - DSCL_N
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '6'
+      pin_name: DSCL-
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 165.1
+      y: 53.34
+    net: DSCL_P
+    net_aliases:
+    - DSCL_P
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J3
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '7'
+      pin_name: DSCL+
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 164.0078
+        y: 55.8038
+      max:
+        x: 166.1922
+        y: 61.0362
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 165.1
+        y: 58.42
+  warnings: []
+connected_components:
+- reference: J3
+  pin_number: '1'
+  pin_name: '1'
+- reference: J3
+  pin_number: '2'
+  pin_name: '2'
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R3
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: '6'
+  pin_name: DSCL-
+- reference: U1
+  pin_number: '7'
+  pin_name: DSCL+

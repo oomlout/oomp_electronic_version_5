@@ -1,0 +1,204 @@
+(footprint "U.FL"
+	(version 20260831)
+	(generator "pcbnew")
+	(generator_version "10.99")
+	(layer "F.Cu")
+	(descr "U.FL SMD Antenna Connector\n\nSpecifications:\n• Area: 3.0mm x 2.5mm\n\nDatasheet referenced for footprint\n\nExample device(s):\n\n• U.FL")
+	(property "Reference" "REF**"
+		(at -1.27 -2.54 0)
+		(layer "F.SilkS")
+		(uuid "8238df0e-32ee-4496-8afa-d906794e918f")
+		(effects
+			(font
+				(size 0.48768 0.48768)
+				(thickness 0.12192)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "U.FL"
+		(at -1.27 2.54 0)
+		(layer "F.Fab")
+		(uuid "39eafaa6-df27-4ca7-9e29-8d9884bc6b31")
+		(effects
+			(font
+				(size 0.48768 0.48768)
+				(thickness 0.12192)
+			)
+			(justify left top)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "708a50e8-2431-4d53-b429-424141bc540d")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "b2b42290-aecb-4a85-8206-8f622b3e8d85")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.524 -1.778)
+		(end -1.016 -2.286)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ea2eb4e4-0702-49eb-8a0c-ee79a05f20ff")
+	)
+	(fp_line
+		(start -1.524 -1.016)
+		(end -1.524 -1.778)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "dd7b78a6-9aca-4341-b3bf-ea214d5c4931")
+	)
+	(fp_line
+		(start -1.016 -2.286)
+		(end -0.254 -2.286)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "c2823444-460a-4620-b70c-874bad5f25bb")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 0.127 0)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "d30e0ecd-e9a4-4efd-b192-2863164fbfa6")
+	)
+	(fp_poly
+		(pts
+			(xy 0.889 0.508) (xy 0.889 -0.508) (xy 0.254 -0.508) (xy 0.254 0.508)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "42de3df2-742c-4bcd-bdb1-5f6cf5e1c96e")
+	)
+	(pad "1" smd rect
+		(at 0 -1.375)
+		(size 2.2 0.85)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.1016)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "f90cc27e-59ef-4a44-9530-b4d5a6dfb2e0")
+	)
+	(pad "2" smd rect
+		(at 0 1.375)
+		(size 2.2 0.85)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.1016)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "88c0b3b3-d0f7-4b9e-abfb-523d02e77922")
+	)
+	(pad "FEED" smd rect
+		(at 1.525 0)
+		(size 1.05 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.1016)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "d9264f5b-f6dc-47d7-98c7-e10651dc3b1d")
+	)
+	(pad "NC" smd rect
+		(at -1.525 0)
+		(size 1.05 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(solder_mask_margin 0.1016)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "3a07e3ff-3805-42fe-8665-fb543cd5a8cb")
+	)
+	(zone
+		(layer "F.Cu")
+		(uuid "ee35c1f4-fb56-489f-ac18-23bf307691b0")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads not_allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy -0.8 0.8) (xy 0.8 0.8) (xy 0.8 -0.8) (xy -0.8 -0.8)
+			)
+		)
+	)
+	(zone
+		(layer "B.Cu")
+		(uuid "d4be2a6f-3a72-43d4-ad3d-138f9075dfb9")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads not_allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy -0.8 0.8) (xy 0.8 0.8) (xy 0.8 -0.8) (xy -0.8 -0.8)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

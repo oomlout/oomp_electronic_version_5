@@ -2,7 +2,14 @@
 
 import argparse
 import json
+import sys
 from pathlib import Path
+
+REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+repository_root_text = str(REPOSITORY_ROOT)
+if repository_root_text in sys.path:
+    sys.path.remove(repository_root_text)
+sys.path.insert(0, repository_root_text)
 
 import yaml
 

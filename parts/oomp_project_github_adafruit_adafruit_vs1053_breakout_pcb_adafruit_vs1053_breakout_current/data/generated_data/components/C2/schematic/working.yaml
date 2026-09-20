@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: C2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 442fd082-09df-4a10-9bc7-4ac0986577e4
+  library_id: kicad_file-eagle-import:CPOL-USC
+  unit: 1
+  body_style: 1
+  position:
+    x: 88.9
+    y: 81.28
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C2
+    Value: 220uF
+    Footprint: kicad_file:PANASONIC_C
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: +
+    name: +
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 81.28
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R7
+      pin_number: '1'
+      pin_name: '1'
+  - number: '-'
+    name: '-'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 93.98
+      y: 81.28
+    net: L_OUT
+    net_aliases:
+    - L_OUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -2.6162
+      max:
+        x: 2.667
+        y: 1.17595
+      width: 5.334
+      height: 3.79215
+      center:
+        x: 0.0
+        y: -0.720125
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 87.72405
+        y: 78.613
+      max:
+        x: 91.5162
+        y: 83.947
+      width: 3.79215
+      height: 5.334
+      center:
+        x: 89.620125
+        y: 81.28
+  warnings: []
+connected_components:
+- reference: JP2
+  pin_number: '2'
+  pin_name: '2'
+- reference: R7
+  pin_number: '1'
+  pin_name: '1'

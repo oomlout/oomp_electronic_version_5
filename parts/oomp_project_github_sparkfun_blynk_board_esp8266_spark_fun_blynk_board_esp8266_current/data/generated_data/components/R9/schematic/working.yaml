@@ -1,0 +1,106 @@
+available: true
+units:
+- reference: R9
+  source_file: data/kicad_file.kicad_sch
+  uuid: 08ffd0d7-249d-4d88-8dd3-89eeaf105794
+  library_id: kicad_file-eagle-import:200OHM1/10W1%(0603)
+  unit: 1
+  body_style: 1
+  position:
+    x: 111.76
+    y: 213.36
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R9
+    Value: '200'
+    Footprint: kicad_file:0603-RES
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-08220
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 116.84
+      y: 213.36
+    net: SD_CLK
+    net_aliases:
+    - SD_CLK
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U5
+      pin_number: '6'
+      pin_name: SCK
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 106.68
+      y: 213.36
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '21'
+      pin_name: SPICLK/SD_CLK
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 109.1438
+        y: 212.2678
+      max:
+        x: 114.3762
+        y: 214.4522
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 111.76
+        y: 213.36
+  warnings: []
+connected_components:
+- reference: U2
+  pin_number: '21'
+  pin_name: SPICLK/SD_CLK
+- reference: U5
+  pin_number: '6'
+  pin_name: SCK

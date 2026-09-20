@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: R17
+  source_file: data/kicad_file.kicad_sch
+  uuid: 2d1ad15c-3d00-45c8-ad12-87045cd38425
+  library_id: kicad_file-eagle-import:10KOHM-0402T-1/16W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 269.24
+    y: 157.48
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: R17
+    Value: 10k
+    Footprint: kicad_file:0402-TIGHT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-14241
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 264.16
+      y: 157.48
+    net: DTR
+    net_aliases:
+    - DTR
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: Q2
+      pin_number: '1'
+      pin_name: E
+    - reference: U6
+      pin_number: '23'
+      pin_name: DTR
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 274.32
+      y: 157.48
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q2
+      pin_number: '5'
+      pin_name: B
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 266.6238
+        y: 156.3878
+      max:
+        x: 271.8562
+        y: 158.5722
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 269.24
+        y: 157.48
+  warnings: []
+connected_components:
+- reference: Q2
+  pin_number: '1'
+  pin_name: E
+- reference: Q2
+  pin_number: '5'
+  pin_name: B
+- reference: U6
+  pin_number: '23'
+  pin_name: DTR

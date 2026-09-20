@@ -53,6 +53,17 @@ Resistor 220000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project sparkfun/MicroMod_Artemis_Processor Micro Mod Artemis Processor Board current](https://github.com/sparkfun/MicroMod_Artemis_Processor/blob/master/Hardware/MicroMod-Artemis-ProcessorBoard.brd) | 1 | R15 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_micro_mod_artemis_processor_micro_mod_artemis_processor_board_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_micro_mod_artemis_processor_micro_mod_artemis_processor_board_current) |
+| [Project sparkfun/OpenLog_Artemis Spark Fun Artemis Open Log current](https://github.com/sparkfun/OpenLog_Artemis/blob/main/Hardware/SparkFun_Artemis_OpenLog.brd) | 2 | R3, R29 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_open_log_artemis_spark_fun_artemis_open_log_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_open_log_artemis_spark_fun_artemis_open_log_current) |
+| [Project sparkfun/SparkFun_Buck_Regulator_AP63357DV-7 Spark Fun Buck Regulator AP63357 DV 7 Baby Buck5 V current](https://github.com/sparkfun/SparkFun_Buck_Regulator_AP63357DV-7/blob/main/Hardware/BabyBuck5V/SparkFun_Buck_Regulator_AP63357DV-7_BabyBuck5V.brd) | 1 | R1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_buck_regulator_ap63357_dv_7_spark_fun_buck_regulator_ap63357_dv_7_baby_buck5_v_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_buck_regulator_ap63357_dv_7_spark_fun_buck_regulator_ap63357_dv_7_baby_buck5_v_current) |
+| [Project sparkfun/SparkFun_Buck_Regulator_AP63357DV-7 Spark Fun Buck Regulator AP63357 DV 7 Buck5 V current](https://github.com/sparkfun/SparkFun_Buck_Regulator_AP63357DV-7/blob/main/Hardware/Buck5V/SparkFun_Buck_Regulator_AP63357DV-7_Buck5V.brd) | 1 | R1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_buck_regulator_ap63357_dv_7_spark_fun_buck_regulator_ap63357_dv_7_buck5_v_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_buck_regulator_ap63357_dv_7_spark_fun_buck_regulator_ap63357_dv_7_buck5_v_current) |
+
+
+
 ## Files
 
 

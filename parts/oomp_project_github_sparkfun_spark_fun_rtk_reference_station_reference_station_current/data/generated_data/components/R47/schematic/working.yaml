@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: R47
+  source_file: data/kicad_file.kicad_sch
+  uuid: 5eb1d10e-b285-479b-8b20-7164916fcc18
+  library_id: kicad_file-eagle-import:33OHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 340.36
+    y: 55.88
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: R47
+    Value: '33'
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-08270
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 335.28
+      y: 55.88
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U4
+      pin_number: '26'
+      pin_name: RX2
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 345.44
+      y: 55.88
+    net: ZED_RX2
+    net_aliases:
+    - ZED_RX2
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J13
+      pin_number: '5'
+      pin_name: '5'
+    - reference: RX2
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 337.7438
+        y: 54.7878
+      max:
+        x: 342.9762
+        y: 56.9722
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 340.36
+        y: 55.88
+  warnings: []
+connected_components:
+- reference: J13
+  pin_number: '5'
+  pin_name: '5'
+- reference: RX2
+  pin_number: '1'
+  pin_name: '1'
+- reference: U4
+  pin_number: '26'
+  pin_name: RX2

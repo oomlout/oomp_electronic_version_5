@@ -1,0 +1,436 @@
+reference: TP1
+schematic:
+  available: true
+  units:
+  - reference: TP1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 66a2976b-30e5-4bb3-bde6-9838e703563a
+    library_id: kicad_file-eagle-import:TEST-POINTTP_15TH_THRU
+    unit: 1
+    body_style: 1
+    position:
+      x: 106.68
+      y: 157.48
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: TP1
+      Value: TEST-POINTTP_15TH_THRU
+      Footprint: kicad_file:TP_15TH
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: P$1
+      name: '1'
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 0.0
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 106.68
+        y: 157.48
+      net: 3.3V
+      net_aliases:
+      - 3.3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#P+4'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#P+5'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#P+6'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: C8
+        pin_number: A
+        pin_name: +
+      - reference: SJ1
+        pin_number: '3'
+        pin_name: '3'
+      - reference: U1
+        pin_number: '6'
+        pin_name: VREG
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.0762
+          y: -0.8382
+        max:
+          x: 3.3782
+          y: 0.8382
+        width: 3.4544
+        height: 1.6764
+        center:
+          x: 1.651
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 106.6038
+          y: 156.6418
+        max:
+          x: 110.0582
+          y: 158.3182
+        width: 3.4544
+        height: 1.6764
+        center:
+          x: 108.331
+          y: 157.48
+    warnings: []
+  connected_components:
+  - reference: '#P+4'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#P+5'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#P+6'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: C8
+    pin_number: A
+    pin_name: +
+  - reference: SJ1
+    pin_number: '3'
+    pin_name: '3'
+  - reference: U1
+    pin_number: '6'
+    pin_name: VREG
+pcb:
+  reference: TP1
+  value: TEST-POINTTP_15TH_THRU
+  source_file: data/kicad_file.kicad_pcb
+  uuid: b21f4df8-7bef-4fee-b1eb-15c1ee6ce1a9
+  library_id: L6470 AutoDriver-import-fps:TP_15TH
+  layer: F.Cu
+  side: front
+  position:
+    x: 29.21
+    y: -15.24
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: TP1
+    Value: TEST-POINTTP_15TH_THRU
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: P$1
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 29.21
+      y: -15.24
+    placed_rotation: 0.0
+    size:
+      x: 0.635
+      y: 0.635
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.381
+      y: 0.381
+      diameter: 0.381
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: 3.3V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.3175
+          y: -0.3175
+        max:
+          x: 0.3175
+          y: 0.3175
+        width: 0.635
+        height: 0.635
+        center:
+          x: 0.0
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 28.8925
+          y: -15.5575
+        max:
+          x: 29.5275
+          y: -14.9225
+        width: 0.635
+        height: 0.635
+        center:
+          x: 29.21
+          y: -15.24
+    plating: plated
+    is_mounting_hole: true
+    connected_to:
+    - reference: C8
+      pad_number: A
+    - reference: SJ1
+      pad_number: '1'
+    - reference: U1
+      pad_number: '6'
+  mounting_holes:
+  - id: TP1_hole_1
+    reference: TP1
+    pad_number: P$1
+    role: shield_mount
+    plating: plated
+    style: round
+    drill_size:
+      x: 0.381
+      y: 0.381
+      diameter: 0.381
+      units: mm
+    pad_size:
+      x: 0.635
+      y: 0.635
+      units: mm
+    pad_shape: circle
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 29.21
+      y: -15.24
+    rotation: 0.0
+    layers:
+    - '*.Cu'
+    net: 3.3V
+    classification_reason: plated pad uses a mechanical mounting/shield identifier
+    oomp_id: mechanical_mounting_hole_0_381_mm_round_plated
+    oomp_reference: MH8
+    classification:
+      name: Mounting Hole 0.381 mm Round Plated
+      class: mechanical
+      type: mounting_hole
+      taxonomy: []
+      taxonomy_path: []
+    name: Mounting Hole 0.381 mm Round Plated
+    oomp:
+      status: unmatched
+      accepted: false
+      oomp_id: ''
+      confidence: 0.0
+      proposed_oomp_id: mechanical_mounting_hole_0_381_mm_round_plated
+      inferred:
+        kind: mounting_hole
+        style: round
+        plating: plated
+        drill_size:
+          x: 0.381
+          y: 0.381
+          diameter: 0.381
+          units: mm
+      reasons:
+      - Exact mechanical mounting-hole OOMP ID constructed from drill size, style, and plating.
+      candidates: []
+  is_mounting_hole: true
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.3175
+        y: -0.3175
+      max:
+        x: 0.3175
+        y: 0.3175
+      width: 0.635
+      height: 0.635
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 28.8925
+        y: -15.5575
+      max:
+        x: 29.5275
+        y: -14.9225
+      width: 0.635
+      height: 0.635
+      center:
+        x: 29.21
+        y: -15.24
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.381
+        y: -0.381
+      max:
+        x: 0.381
+        y: 0.381
+      width: 0.762
+      height: 0.762
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 28.829
+        y: -15.621
+      max:
+        x: 29.591
+        y: -14.859
+      width: 0.762
+      height: 0.762
+      center:
+        x: 29.21
+        y: -15.24
+  connected_components:
+  - C8
+  - SJ1
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: P$1
+    schematic_nets:
+    - 3.3V
+    pcb_nets:
+    - 3.3V
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: mechanical_mounting_hole_0_381_mm_round_plated
+  inferred:
+    kind: mounting_hole
+    package_size: null
+    value: TEST-POINTTP_15TH_THRU
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: mechanical_mounting_hole_0_8_mm_round_plated
+    score: 0.4187
+    reasons:
+    - same component family
+  - oomp_id: mechanical_mounting_hole_1_mm_round_plated
+    score: 0.4153
+    reasons:
+    - same component family
+  - oomp_id: mechanical_mounting_hole_3_mm_round_plated
+    score: 0.4153
+    reasons:
+    - same component family
+  - oomp_id: mechanical_mounting_hole_0_8_mm_round_unplated
+    score: 0.4113
+    reasons:
+    - same component family
+  - oomp_id: mechanical_mounting_hole_0_7_mm_round_plated
+    score: 0.4109
+    reasons:
+    - same component family
+category: test_point
+category_source: unmatched_kicad_hint
+category_name: Test point
+generated_directory: components/TP1

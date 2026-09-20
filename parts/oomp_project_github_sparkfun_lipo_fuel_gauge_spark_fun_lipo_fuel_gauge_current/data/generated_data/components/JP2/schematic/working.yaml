@@ -1,0 +1,148 @@
+available: true
+units:
+- reference: JP2
+  source_file: data/kicad_file.kicad_sch
+  uuid: ea622e44-709c-46be-af65-e7dc83dcdbb8
+  library_id: kicad_file-eagle-import:CONN_031X03_NO_SILK
+  unit: 1
+  body_style: 1
+  position:
+    x: 241.3
+    y: 101.6
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP2
+    Value: CONN_031X03_NO_SILK
+    Footprint: kicad_file:1X03_NO_SILK
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: -2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 233.68
+      y: 99.06
+    net: SDA
+    net_aliases:
+    - SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R6
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '8'
+      pin_name: SDA
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 233.68
+      y: 101.6
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '7'
+      pin_name: SCL
+  - number: '3'
+    name: '3'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 233.68
+      y: 104.14
+    net: QST
+    net_aliases:
+    - QST
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U2
+      pin_number: '6'
+      pin_name: QST
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.7432
+        y: -5.2832
+      max:
+        x: 4.0132
+        y: 5.2832
+      width: 6.7564
+      height: 10.5664
+      center:
+        x: 0.635
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 237.2868
+        y: 96.3168
+      max:
+        x: 244.0432
+        y: 106.8832
+      width: 6.7564
+      height: 10.5664
+      center:
+        x: 240.665
+        y: 101.6
+  warnings: []
+connected_components:
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'
+- reference: R5
+  pin_number: '1'
+  pin_name: '1'
+- reference: R6
+  pin_number: '1'
+  pin_name: '1'
+- reference: U2
+  pin_number: '6'
+  pin_name: QST
+- reference: U2
+  pin_number: '7'
+  pin_name: SCL
+- reference: U2
+  pin_number: '8'
+  pin_name: SDA

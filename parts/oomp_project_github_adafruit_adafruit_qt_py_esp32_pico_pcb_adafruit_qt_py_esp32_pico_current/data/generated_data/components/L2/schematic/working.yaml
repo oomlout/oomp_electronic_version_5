@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: L2
+  source_file: data/kicad_file.kicad_sch
+  uuid: a64a5b85-2d96-49bf-a05e-b313f540ef6f
+  library_id: kicad_file-eagle-import:INDUCTOR_0402
+  unit: 1
+  body_style: 1
+  position:
+    x: 68.58
+    y: 66.04
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: L2
+    Value: 2.2nH
+    Footprint: kicad_file:_0402
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 63.5
+      y: 66.04
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C9
+      pin_number: '1'
+      pin_name: '1'
+    - reference: X1
+      pin_number: FP
+      pin_name: P$1
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 66.04
+    net: LNA
+    net_aliases:
+    - LNA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C7
+      pin_number: '1'
+      pin_name: '1'
+    - reference: X2
+      pin_number: '2'
+      pin_name: LNA_IN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -0.127
+      max:
+        x: 2.667
+        y: 1.0794
+      width: 5.334
+      height: 1.2064
+      center:
+        x: 0.0
+        y: 0.4762
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 65.913
+        y: 64.9606
+      max:
+        x: 71.247
+        y: 66.167
+      width: 5.334
+      height: 1.2064
+      center:
+        x: 68.58
+        y: 65.5638
+  warnings: []
+connected_components:
+- reference: C7
+  pin_number: '1'
+  pin_name: '1'
+- reference: C9
+  pin_number: '1'
+  pin_name: '1'
+- reference: X1
+  pin_number: FP
+  pin_name: P$1
+- reference: X2
+  pin_number: '2'
+  pin_name: LNA_IN

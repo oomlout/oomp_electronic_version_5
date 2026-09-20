@@ -1,0 +1,148 @@
+available: true
+units:
+- reference: C2
+  source_file: data/kicad_file.kicad_sch
+  uuid: a0bb9f98-8b4c-4070-b57d-1736fc0a526d
+  library_id: kicad_file-eagle-import:CAP_CERAMIC_0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 139.7
+    y: 106.68
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C2
+    Value: 1µF
+    Footprint: kicad_file:_0805
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: P$1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 139.7
+      y: 101.6
+    net: AVDD
+    net_aliases:
+    - AVDD
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$2'
+      pin_number: '1'
+      pin_name: AVDD
+    - reference: '#U$12'
+      pin_number: '1'
+      pin_name: AVDD
+    - reference: FB1
+      pin_number: '2'
+      pin_name: P$2
+    - reference: IC1
+      pin_number: P$6
+      pin_name: VDDA
+  - number: '2'
+    name: P$2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 139.7
+      y: 109.22
+    net: AGND
+    net_aliases:
+    - AGND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$1'
+      pin_number: '1'
+      pin_name: AGND
+    - reference: '#U$7'
+      pin_number: '1'
+      pin_name: AGND
+    - reference: '#U$15'
+      pin_number: '1'
+      pin_name: AGND
+    - reference: FB2
+      pin_number: '2'
+      pin_name: P$2
+    - reference: IC1
+      pin_number: P$10
+      pin_name: VSSA
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.26995
+        y: -0.0762
+      max:
+        x: 1.26995
+        y: 2.6162
+      width: 2.5399
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 138.43005
+        y: 104.0638
+      max:
+        x: 140.96995
+        y: 106.7562
+      width: 2.5399
+      height: 2.6924
+      center:
+        x: 139.7
+        y: 105.41
+  warnings: []
+connected_components:
+- reference: '#U$1'
+  pin_number: '1'
+  pin_name: AGND
+- reference: '#U$2'
+  pin_number: '1'
+  pin_name: AVDD
+- reference: '#U$7'
+  pin_number: '1'
+  pin_name: AGND
+- reference: '#U$12'
+  pin_number: '1'
+  pin_name: AVDD
+- reference: '#U$15'
+  pin_number: '1'
+  pin_name: AGND
+- reference: FB1
+  pin_number: '2'
+  pin_name: P$2
+- reference: FB2
+  pin_number: '2'
+  pin_name: P$2
+- reference: IC1
+  pin_number: P$10
+  pin_name: VSSA
+- reference: IC1
+  pin_number: P$6
+  pin_name: VDDA

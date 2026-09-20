@@ -1,0 +1,166 @@
+available: true
+units:
+- reference: Q2
+  source_file: data/kicad_file.kicad_sch
+  uuid: c0c796bd-d55d-4da9-a57a-1e8505490e1d
+  library_id: kicad_file-eagle-import:MOSFET-NCH-2N7002PW
+  unit: 1
+  body_style: 1
+  position:
+    x: 144.78
+    y: 170.18
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q2
+    Value: 2N7002PW
+    Footprint: kicad_file:SOT323
+    Datasheet: ''
+    Description: ''
+    PROD_ID: TRANS-11151
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: G
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 142.24
+      y: 165.1
+    net: 3.3V_F
+    net_aliases:
+    - 3.3V_F
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C14
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R11
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '3'
+      pin_name: VCCIO
+    - reference: U1
+      pin_number: '13'
+      pin_name: 3V3OUT
+    - reference: U1
+      pin_number: '14'
+      pin_name: ~{RESET}
+  - number: '2'
+    name: S
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 139.7
+      y: 172.72
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R11
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '1'
+      pin_name: ~{DTR}
+  - number: '3'
+    name: D
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 149.86
+      y: 172.72
+    net: DTR
+    net_aliases:
+    - DTR
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C8
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R13
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -2.6162
+      max:
+        x: 3.556
+        y: 2.6162
+      width: 6.1722
+      height: 5.2324
+      center:
+        x: 0.4699
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 142.1638
+        y: 167.5638
+      max:
+        x: 147.3962
+        y: 173.736
+      width: 5.2324
+      height: 6.1722
+      center:
+        x: 144.78
+        y: 170.6499
+  warnings: []
+connected_components:
+- reference: C8
+  pin_number: '1'
+  pin_name: '1'
+- reference: C14
+  pin_number: '1'
+  pin_name: '1'
+- reference: R11
+  pin_number: '1'
+  pin_name: '1'
+- reference: R11
+  pin_number: '2'
+  pin_name: '2'
+- reference: R13
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '1'
+  pin_name: ~{DTR}
+- reference: U1
+  pin_number: '13'
+  pin_name: 3V3OUT
+- reference: U1
+  pin_number: '14'
+  pin_name: ~{RESET}
+- reference: U1
+  pin_number: '3'
+  pin_name: VCCIO

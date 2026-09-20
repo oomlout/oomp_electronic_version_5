@@ -10,12 +10,12 @@ import traceback
 import tempfile
 from pathlib import Path
 
-from kicad_agents.kicad_cli import find_kicad_cli
-from kicad_agents.run_error_report import log_run_error
-
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
+
+from kicad_agents.kicad_cli import find_kicad_cli
+from kicad_agents.run_error_report import log_run_error
 
 
 def referenced_sheets(root_file):

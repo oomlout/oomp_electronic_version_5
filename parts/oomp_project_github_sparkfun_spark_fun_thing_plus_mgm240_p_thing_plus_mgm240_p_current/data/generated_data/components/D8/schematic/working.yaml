@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: D8
+  source_file: data/kicad_file.kicad_sch
+  uuid: 994e496f-9b35-4838-aa9f-f1f7102b659c
+  library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-RB751S40
+  unit: 1
+  body_style: 1
+  position:
+    x: 320.04
+    y: 111.76
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D8
+    Value: 120mA/40V/370mV
+    Footprint: kicad_file:SOD-523
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-11018
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 322.58
+      y: 111.76
+    net: DBG_WAKE
+    net_aliases:
+    - DBG_WAKE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U3
+      pin_number: E1
+      pin_name: PA6
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 317.5
+      y: 111.76
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: LP0
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R18
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.3462
+      max:
+        x: 2.6162
+        y: 1.3462
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 317.4238
+        y: 110.4138
+      max:
+        x: 322.6562
+        y: 113.1062
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 320.04
+        y: 111.76
+  warnings: []
+connected_components:
+- reference: LP0
+  pin_number: '1'
+  pin_name: '1'
+- reference: R18
+  pin_number: '2'
+  pin_name: '2'
+- reference: U3
+  pin_number: E1
+  pin_name: PA6

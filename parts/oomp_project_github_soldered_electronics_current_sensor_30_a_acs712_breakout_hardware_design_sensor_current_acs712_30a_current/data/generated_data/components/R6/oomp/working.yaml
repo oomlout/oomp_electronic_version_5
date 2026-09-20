@@ -564,6 +564,18 @@ oomlout_ai_roboclick_3:
       taxonomy_9: ''
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_esp32_feather_v2_pcb_adafruit_esp32_feather_current/board_explorer.html
+        board_url: https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB/blob/main/Adafruit%20ESP32%20Feather%20V2.brd
+        github_url: https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB
+        name: Project adafruit/Adafruit-ESP32-Feather-V2-PCB Adafruit ESP32 Feather
+          current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_esp32_feather_v2_pcb_adafruit_esp32_feather_current
+        project_id: oomp_project_github_adafruit_adafruit_esp32_feather_v2_pcb_adafruit_esp32_feather_current
+        quantity: 2
+        references:
+        - R1
+        - R3
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/board_explorer.html
         board_url: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design
         github_url: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design
@@ -580,6 +592,19 @@ oomlout_ai_roboclick_3:
     file_output: README.md
     file_template: C:\gh\oomp_electronic_version_5\source_file\template_jinja\oomp_category\template_jinja_markdown\working.md.j2
     search_and_replace: []
+  file_test: ''
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0603_200000_ohm
@@ -906,8 +931,20 @@ taxonomy_6: ''
 taxonomy_7: ''
 taxonomy_8: ''
 taxonomy_9: ''
+threaded_workers: 6
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_esp32_feather_v2_pcb_adafruit_esp32_feather_current/board_explorer.html
+  board_url: https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB/blob/main/Adafruit%20ESP32%20Feather%20V2.brd
+  github_url: https://github.com/adafruit/Adafruit-ESP32-Feather-V2-PCB
+  name: Project adafruit/Adafruit-ESP32-Feather-V2-PCB Adafruit ESP32 Feather current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_esp32_feather_v2_pcb_adafruit_esp32_feather_current
+  project_id: oomp_project_github_adafruit_adafruit_esp32_feather_v2_pcb_adafruit_esp32_feather_current
+  quantity: 2
+  references:
+  - R1
+  - R3
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_soldered_electronics_current_sensor_30_a_acs712_breakout_hardware_design_sensor_current_acs712_30a_current/board_explorer.html
   board_url: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design
   github_url: https://github.com/SolderedElectronics/Current-sensor-30A-ACS712-breakout-hardware-design

@@ -1,0 +1,102 @@
+available: true
+units:
+- reference: RST0
+  source_file: data/kicad_file.kicad_sch
+  uuid: f9639aec-3b4a-479c-bbb7-c3115c5e84ec
+  library_id: kicad_file-eagle-import:TPB1,27
+  unit: 1
+  body_style: 1
+  position:
+    x: 48.26
+    y: 83.82
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: RST0
+    Value: TPB1,27
+    Footprint: kicad_file:B1,27
+    Datasheet: ''
+    Description: ''
+    TP_SIGNAL_NAME: ''
+    POPULARITY: '19'
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: TP
+    name: TP
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 48.26
+      y: 86.36
+    net: ~{RESET}
+    net_aliases:
+    - ~{RESET}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: B1
+      pin_number: A
+      pin_name: P
+    - reference: B1
+      pin_number: A'
+      pin_name: P1
+    - reference: IC2
+      pin_number: '4'
+      pin_name: ~{RESET}
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.889
+        y: -1.651
+      max:
+        x: 0.889
+        y: 0.127
+      width: 1.778
+      height: 1.778
+      center:
+        x: 0.0
+        y: -0.762
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 47.371
+        y: 83.693
+      max:
+        x: 49.149
+        y: 85.471
+      width: 1.778
+      height: 1.778
+      center:
+        x: 48.26
+        y: 84.582
+  warnings: []
+connected_components:
+- reference: B1
+  pin_number: A
+  pin_name: P
+- reference: B1
+  pin_number: A'
+  pin_name: P1
+- reference: IC2
+  pin_number: '4'
+  pin_name: ~{RESET}
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'

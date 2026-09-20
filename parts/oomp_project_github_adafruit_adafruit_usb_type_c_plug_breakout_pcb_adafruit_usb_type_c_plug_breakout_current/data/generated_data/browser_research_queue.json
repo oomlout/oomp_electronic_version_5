@@ -1,0 +1,51 @@
+{
+  "format_version": 1,
+  "generated_by": "kicad_agents.browser_research_agent",
+  "network_policy": {
+    "research_surface": "available interactive browser",
+    "python_http_clients_allowed": false,
+    "download_method": "browser download followed by validated local import"
+  },
+  "instructions": [
+    "Open the supplied URLs with the available browser; do not replace this with requests, urllib, curl, or an unofficial API.",
+    "Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet before accepting a match.",
+    "Record uncertain results as unresolved instead of guessing.",
+    "Download PDFs with the browser, then import them with the import-datasheet command documented in AGENT_GUIDE.md."
+  ],
+  "task_count": 1,
+  "tasks": [
+    {
+      "task_id": "component_research_1",
+      "status": "needs_browser_research",
+      "priority": "high",
+      "references": [
+        "X1"
+      ],
+      "value": "USB Type C Plug",
+      "footprint": "Adafruit USB Type C Plug Breakout-import-fps:USB_TYPEC_PLUG_12P",
+      "query": "USB Type C Plug Adafruit USB Type C Plug Breakout-import-fps:USB_TYPEC_PLUG_12P",
+      "browser_urls": {
+        "lcsc_search": "https://www.lcsc.com/search?q=USB+Type+C+Plug+Adafruit+USB+Type+C+Plug+Breakout-import-fps%3AUSB_TYPEC_PLUG_12P",
+        "datasheet_search": "https://www.google.com/search?q=USB+Type+C+Plug+Adafruit+USB+Type+C+Plug+Breakout-import-fps%3AUSB_TYPEC_PLUG_12P+datasheet+pdf"
+      },
+      "current_match_status": "unmatched",
+      "proposed_oomp_id": "electronic_connector_usb_c_surface_mount_16_pin",
+      "candidate_oomp_ids": [
+        "electronic_connector_usb_c_surface_mount_12_pin_usb_c_12_pin_generic",
+        "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073",
+        "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12",
+        "electronic_connector_micro_usb_surface_mount_9_pin_rocketscream_micro_usb",
+        "electronic_connector_sma_edge_mount"
+      ],
+      "required_result": {
+        "manufacturer": "",
+        "manufacturer_part_number": "",
+        "lcsc_part_number": "",
+        "datasheet_url": "",
+        "confirmed_oomp_id": "",
+        "confidence": "",
+        "evidence_notes": ""
+      }
+    }
+  ]
+}

@@ -1,0 +1,487 @@
+reference: C3
+schematic:
+  available: true
+  units:
+  - reference: C3
+    source_file: data/kicad_file.kicad_sch
+    uuid: 470f447a-4588-4bc8-93c5-36d04c1331a9
+    library_id: SparkFun-Capacitor:1.0uF_0805_25V_10%
+    unit: 1
+    body_style: 1
+    position:
+      x: 102.87
+      y: 77.47
+      rotation: 0.0
+      mirror: y
+      units: mm
+    properties:
+      Reference: C3
+      Value: 1.0uF
+      Footprint: SparkFun-Capacitor:C_0805_2012Metric
+      Datasheet: https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf
+      Description: Unpolarized capacitor
+      PROD_ID: CAP-08064
+      Voltage: 25V
+      Tolerance: 10%
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 3.81
+        rotation: 270.0
+      length: 2.794
+      position:
+        x: 102.87
+        y: 73.66
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U1
+        pin_number: '2'
+        pin_name: C2P
+    - number: '2'
+      name: '~'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -3.81
+        rotation: 90.0
+      length: 2.794
+      position:
+        x: 102.87
+        y: 81.28
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U1
+        pin_number: '3'
+        pin_name: C2N
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.286
+          y: -1.016
+        max:
+          x: 2.286
+          y: 1.016
+        width: 4.572
+        height: 2.032
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 100.584
+          y: 76.454
+        max:
+          x: 105.156
+          y: 78.486
+        width: 4.572
+        height: 2.032
+        center:
+          x: 102.87
+          y: 77.47
+    warnings: []
+  connected_components:
+  - reference: U1
+    pin_number: '2'
+    pin_name: C2P
+  - reference: U1
+    pin_number: '3'
+    pin_name: C2N
+pcb:
+  reference: C3
+  value: 1.0uF
+  source_file: data/kicad_file.kicad_pcb
+  uuid: fb7517da-fec7-4737-9ed7-426ad34765bb
+  library_id: SparkFun-Capacitor:C_0805_2012Metric
+  layer: B.Cu
+  side: back
+  position:
+    x: 143.1925
+    y: 103.1875
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: C3
+    Value: 1.0uF
+    Footprint: SparkFun-Capacitor:C_0805_2012Metric
+    Datasheet: https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf
+    Description: Unpolarized capacitor
+    PROD_ID: CAP-08064
+    Voltage: 25V
+    Tolerance: 10%
+    ki_fp_filters: C_*
+  attributes:
+  - smd
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.95
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 143.1925
+      y: 102.2375
+    placed_rotation: 360.0
+    size:
+      x: 1.0
+      y: 1.45
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Paste
+    - B.Mask
+    net: Net-(U1-C2P)
+    net_number: 25
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.675
+          y: -0.5
+        max:
+          x: -0.225
+          y: 0.5
+        width: 1.45
+        height: 1.0
+        center:
+          x: -0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 142.6925
+          y: 101.5125
+        max:
+          x: 143.6925
+          y: 102.9625
+        width: 1.0
+        height: 1.45
+        center:
+          x: 143.1925
+          y: 102.2375
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U1
+      pad_number: '2'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.95
+      y: 0.0
+      rotation: 270.0
+    position:
+      x: 143.1925
+      y: 104.1375
+    placed_rotation: 360.0
+    size:
+      x: 1.0
+      y: 1.45
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Paste
+    - B.Mask
+    net: Net-(U1-C2N)
+    net_number: 26
+    pin_function: null
+    pin_type: passive
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.225
+          y: -0.5
+        max:
+          x: 1.675
+          y: 0.5
+        width: 1.45
+        height: 1.0
+        center:
+          x: 0.95
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 142.6925
+          y: 103.4125
+        max:
+          x: 143.6925
+          y: 104.8625
+        width: 1.0
+        height: 1.45
+        center:
+          x: 143.1925
+          y: 104.1375
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U1
+      pad_number: '3'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.675
+        y: -0.5
+      max:
+        x: 1.675
+        y: 0.5
+      width: 3.35
+      height: 1.0
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 142.6925
+        y: 101.5125
+      max:
+        x: 143.6925
+        y: 104.8625
+      width: 1.0
+      height: 3.35
+      center:
+        x: 143.1925
+        y: 103.1875
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.725
+        y: -1.005
+      max:
+        x: 1.725
+        y: 1.005
+      width: 3.45
+      height: 2.01
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 142.1875
+        y: 101.4625
+      max:
+        x: 144.1975
+        y: 104.9125
+      width: 2.01
+      height: 3.45
+      center:
+        x: 143.1925
+        y: 103.1875
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.05
+        y: -0.675
+      max:
+        x: 1.05
+        y: 0.675
+      width: 2.1
+      height: 1.35
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 142.5175
+        y: 102.1375
+      max:
+        x: 143.8675
+        y: 104.2375
+      width: 1.35
+      height: 2.1
+      center:
+        x: 143.1925
+        y: 103.1875
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.321252
+        y: -0.795
+      max:
+        x: 0.321252
+        y: 0.795
+      width: 0.642504
+      height: 1.59
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 142.3975
+        y: 102.866248
+      max:
+        x: 143.9875
+        y: 103.508752
+      width: 1.59
+      height: 0.642504
+      center:
+        x: 143.1925
+        y: 103.1875
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.725
+        y: -1.005
+      max:
+        x: 1.725
+        y: 1.005
+      width: 3.45
+      height: 2.01
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 142.1875
+        y: 101.4625
+      max:
+        x: 144.1975
+        y: 104.9125
+      width: 2.01
+      height: 3.45
+      center:
+        x: 143.1925
+        y: 103.1875
+  connected_components:
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(U1-C2P)
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - Net-(U1-C2N)
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: electronic_capacitor_0805_1_micro_farad
+  inferred:
+    kind: capacitor
+    package_size: 0805
+    value: 1.0uF
+    mpn: null
+  reasons:
+  - The exact normalized component is not present in the OOMP parts directory.
+  candidates:
+  - oomp_id: electronic_capacitor_0603_10_nano_farad
+    score: 0.5886
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0603_100_nano_farad
+    score: 0.588
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0805_4_7_micro_farad
+    score: 0.527
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0402_2_2_micro_farad
+    score: 0.5053
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0603_2_2_micro_farad
+    score: 0.5053
+    reasons:
+    - same component family
+    - nearby normalized value
+category: capacitor
+category_source: unmatched_kicad_hint
+category_name: Capacitor
+generated_directory: components/C3

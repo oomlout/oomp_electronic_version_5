@@ -1,0 +1,87 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 3
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - R1
+  value: 4.7ohm
+  footprint: SGP30 Rev D-import-fps:0603-NO
+  query: 4.7ohm SGP30 Rev D-import-fps:0603-NO
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=4.7ohm+SGP30+Rev+D-import-fps%3A0603-NO
+    datasheet_search: https://www.google.com/search?q=4.7ohm+SGP30+Rev+D-import-fps%3A0603-NO+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0603_4_7_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_0603_5_6_ohm
+  - electronic_resistor_quarter_watt_through_hole_10_ohm
+  - electronic_resistor_quarter_watt_through_hole_12_ohm
+  - electronic_resistor_2512_13_3_ohm
+  - electronic_resistor_quarter_watt_through_hole_15_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: MCP-1.8V
+  footprint: SGP30 Rev D-import-fps:SOT23-5
+  query: MCP-1.8V SGP30 Rev D-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MCP-1.8V+SGP30+Rev+D-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=MCP-1.8V+SGP30+Rev+D-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - X1
+  value: SGP30
+  footprint: SGP30 Rev D-import-fps:SGP30
+  query: SGP30 SGP30 Rev D-import-fps:SGP30
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=SGP30+SGP30+Rev+D-import-fps%3ASGP30
+    datasheet_search: https://www.google.com/search?q=SGP30+SGP30+Rev+D-import-fps%3ASGP30+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

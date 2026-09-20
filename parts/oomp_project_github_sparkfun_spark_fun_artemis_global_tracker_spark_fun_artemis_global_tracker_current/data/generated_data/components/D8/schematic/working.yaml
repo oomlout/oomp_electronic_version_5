@@ -1,0 +1,143 @@
+available: true
+units:
+- reference: D8
+  source_file: data/kicad_file.kicad_sch
+  uuid: 2ec6a80a-6376-48cd-a164-38ace3c6f1a6
+  library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-PMEG4005EJ
+  unit: 1
+  body_style: 1
+  position:
+    x: 261.62
+    y: 195.58
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D8
+    Value: 0.5A/40V/420mV
+    Footprint: kicad_file:SOD-323
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-10955
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 259.08
+      y: 195.58
+    net: V_BATT
+    net_aliases:
+    - V_BATT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY34'
+      pin_number: '1'
+      pin_name: V_BATT
+    - reference: '#SUPPLY42'
+      pin_number: '1'
+      pin_name: V_BATT
+    - reference: C8
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U9
+      pin_number: '3'
+      pin_name: VBAT
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 264.16
+      y: 195.58
+    net: VBUS
+    net_aliases:
+    - VBUS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D10
+      pin_number: C
+      pin_name: C
+    - reference: D14
+      pin_number: C
+      pin_name: C
+    - reference: J4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: MEAS0
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.3462
+      max:
+        x: 2.6162
+        y: 1.3462
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 259.0038
+        y: 194.2338
+      max:
+        x: 264.2362
+        y: 196.9262
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 261.62
+        y: 195.58
+  warnings: []
+connected_components:
+- reference: '#SUPPLY34'
+  pin_number: '1'
+  pin_name: V_BATT
+- reference: '#SUPPLY42'
+  pin_number: '1'
+  pin_name: V_BATT
+- reference: C8
+  pin_number: '1'
+  pin_name: '1'
+- reference: D10
+  pin_number: C
+  pin_name: C
+- reference: D14
+  pin_number: C
+  pin_name: C
+- reference: J4
+  pin_number: '2'
+  pin_name: '2'
+- reference: MEAS0
+  pin_number: '1'
+  pin_name: '1'
+- reference: U9
+  pin_number: '3'
+  pin_name: VBAT

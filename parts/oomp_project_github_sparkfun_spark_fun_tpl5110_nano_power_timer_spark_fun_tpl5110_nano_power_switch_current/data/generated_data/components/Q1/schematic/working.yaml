@@ -1,0 +1,185 @@
+available: true
+units:
+- reference: Q1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 6e164b92-3ab0-47da-a018-0547f3eec92b
+  library_id: kicad_file-eagle-import:MOSFET_PCH-SI2309DS
+  unit: 1
+  body_style: 1
+  position:
+    x: 210.82
+    y: 111.76
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q1
+    Value: 1.1A/60V/600mΩ
+    Footprint: kicad_file:SOT23-3
+    Datasheet: ''
+    Description: ''
+    PROD_ID: TRANS-08285
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: G
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 213.36
+      y: 116.84
+    net: ~{DRV}
+    net_aliases:
+    - ~{DRV}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '5'
+      pin_name: ~{DRV}
+  - number: '2'
+    name: S
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 215.9
+      y: 109.22
+    net: VDD
+    net_aliases:
+    - VDD
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY1'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#SUPPLY2'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#SUPPLY4'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: '#SUPPLY5'
+      pin_number: '1'
+      pin_name: VDD
+    - reference: J1
+      pin_number: '2'
+      pin_name: +
+    - reference: J2
+      pin_number: '6'
+      pin_name: '6'
+    - reference: S1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '1'
+      pin_name: VDD
+    - reference: U1
+      pin_number: '6'
+      pin_name: EN/ONE_SHOT
+  - number: '3'
+    name: D
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 205.74
+      y: 109.22
+    net: VDD_OUT
+    net_aliases:
+    - VDD_OUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP2
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -2.6162
+      max:
+        x: 3.556
+        y: 2.6162
+      width: 6.1722
+      height: 5.2324
+      center:
+        x: 0.4699
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 208.2038
+        y: 108.204
+      max:
+        x: 213.4362
+        y: 114.3762
+      width: 5.2324
+      height: 6.1722
+      center:
+        x: 210.82
+        y: 111.2901
+  warnings: []
+connected_components:
+- reference: '#SUPPLY1'
+  pin_number: '1'
+  pin_name: VDD
+- reference: '#SUPPLY2'
+  pin_number: '1'
+  pin_name: VDD
+- reference: '#SUPPLY4'
+  pin_number: '1'
+  pin_name: VDD
+- reference: '#SUPPLY5'
+  pin_number: '1'
+  pin_name: VDD
+- reference: J1
+  pin_number: '2'
+  pin_name: +
+- reference: J2
+  pin_number: '2'
+  pin_name: '2'
+- reference: J2
+  pin_number: '6'
+  pin_name: '6'
+- reference: JP2
+  pin_number: '2'
+  pin_name: '2'
+- reference: S1
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '1'
+  pin_name: VDD
+- reference: U1
+  pin_number: '5'
+  pin_name: ~{DRV}
+- reference: U1
+  pin_number: '6'
+  pin_name: EN/ONE_SHOT

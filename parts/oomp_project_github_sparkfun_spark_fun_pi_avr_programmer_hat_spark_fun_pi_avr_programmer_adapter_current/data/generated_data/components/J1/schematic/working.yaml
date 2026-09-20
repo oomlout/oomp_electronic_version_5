@@ -1,0 +1,203 @@
+available: true
+units:
+- reference: J1
+  source_file: data/kicad_file.kicad_sch
+  uuid: d32a4c1d-b8cd-4df4-a2c4-d879f12c017a
+  library_id: kicad_file-eagle-import:CONN_03X2SMT
+  unit: 1
+  body_style: 1
+  position:
+    x: 149.86
+    y: 101.6
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: J1
+    Value: AVR 3X2 TARGET
+    Footprint: kicad_file:2X3_SMT_POSTS
+    Datasheet: ''
+    Description: ''
+    PROD_ID: CONN-11415
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 157.48
+      y: 99.06
+    net: VCC_C
+    net_aliases:
+    - VCC_C
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '6'
+      pin_name: GND
+  - number: '2'
+    name: '2'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 142.24
+      y: 99.06
+    net: MISO_C
+    net_aliases:
+    - MISO_C
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '2'
+      pin_name: RXI
+  - number: '3'
+    name: '3'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 0.0
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 157.48
+      y: 101.6
+    net: MOSI_C
+    net_aliases:
+    - MOSI_C
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '1'
+      pin_name: DTR
+  - number: '4'
+    name: '4'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 142.24
+      y: 101.6
+    net: SCK_C
+    net_aliases:
+    - SCK_C
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '3'
+      pin_name: TXO
+  - number: '5'
+    name: '5'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: -2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 157.48
+      y: 104.14
+    net: GND_C
+    net_aliases:
+    - GND_C
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '5'
+      pin_name: CTS
+  - number: '6'
+    name: '6'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: -2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 142.24
+      y: 104.14
+    net: RST_C
+    net_aliases:
+    - RST_C
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '4'
+      pin_name: VCC
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -4.0132
+        y: -5.2832
+      max:
+        x: 4.0132
+        y: 5.2832
+      width: 8.0264
+      height: 10.5664
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 145.8468
+        y: 96.3168
+      max:
+        x: 153.8732
+        y: 106.8832
+      width: 8.0264
+      height: 10.5664
+      center:
+        x: 149.86
+        y: 101.6
+  warnings: []
+connected_components:
+- reference: J2
+  pin_number: '1'
+  pin_name: DTR
+- reference: J2
+  pin_number: '2'
+  pin_name: RXI
+- reference: J2
+  pin_number: '3'
+  pin_name: TXO
+- reference: J2
+  pin_number: '4'
+  pin_name: VCC
+- reference: J2
+  pin_number: '5'
+  pin_name: CTS
+- reference: J2
+  pin_number: '6'
+  pin_name: GND

@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: R7
+  source_file: data/kicad_file.kicad_sch
+  uuid: 2736b84c-2582-4e09-a687-64c4881b4f99
+  library_id: kicad_file-eagle-import:10KOHM1/10W1%(0603)0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 60.96
+    y: 81.28
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R7
+    Value: 10K
+    Footprint: kicad_file:0603-RES
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-00824
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 60.96
+      y: 86.36
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: DTR
+      pin_name: '1'
+    - reference: JP19
+      pin_number: P$5
+      pin_name: CTS
+    - reference: Q2
+      pin_number: '3'
+      pin_name: D
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 60.96
+      y: 76.2
+    net: 5V
+    net_aliases:
+    - 5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY2'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#SUPPLY4'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: R5
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 59.8678
+        y: 78.6638
+      max:
+        x: 62.0522
+        y: 83.8962
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 60.96
+        y: 81.28
+  warnings: []
+connected_components:
+- reference: '#SUPPLY2'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#SUPPLY4'
+  pin_number: '1'
+  pin_name: 5V
+- reference: JP1
+  pin_number: DTR
+  pin_name: '1'
+- reference: JP19
+  pin_number: P$5
+  pin_name: CTS
+- reference: Q2
+  pin_number: '3'
+  pin_name: D
+- reference: R5
+  pin_number: '2'
+  pin_name: '2'

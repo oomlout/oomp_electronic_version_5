@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: Y1
+  source_file: data/kicad_file.kicad_sch
+  uuid: c73ba2d4-206f-4cf4-a293-d7b0fa9385cb
+  library_id: kicad_file-eagle-import:CRYSTAL3.2X1.5MM
+  unit: 1
+  body_style: 1
+  position:
+    x: 60.96
+    y: 137.16
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Y1
+    Value: 32.768kHz
+    Footprint: kicad_file:CRYSTAL-SMD-3.2X1.5MM
+    Datasheet: ''
+    Description: ''
+    PROD_ID: XTAL-13062
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 60.96
+      y: 139.7
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C6
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '2'
+      pin_name: PA01(XOUT32/SER1:1/TC2:1)
+  - number: P$2
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 60.96
+      y: 134.62
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C5
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '1'
+      pin_name: PA00(XIN32/SER1:0/TC2:0)
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.905
+      max:
+        x: 2.6162
+        y: 1.905
+      width: 5.2324
+      height: 3.81
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 59.055
+        y: 134.5438
+      max:
+        x: 62.865
+        y: 139.7762
+      width: 3.81
+      height: 5.2324
+      center:
+        x: 60.96
+        y: 137.16
+  warnings: []
+connected_components:
+- reference: C5
+  pin_number: '2'
+  pin_name: '2'
+- reference: C6
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '1'
+  pin_name: PA00(XIN32/SER1:0/TC2:0)
+- reference: U1
+  pin_number: '2'
+  pin_name: PA01(XOUT32/SER1:1/TC2:1)

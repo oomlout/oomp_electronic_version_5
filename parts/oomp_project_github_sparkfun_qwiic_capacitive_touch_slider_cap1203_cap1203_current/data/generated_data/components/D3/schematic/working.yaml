@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: D3
+  source_file: data/kicad_file.kicad_sch
+  uuid: e5cf76f5-9283-487b-9fe9-324df8cbaae8
+  library_id: kicad_file-eagle-import:LED-GREEN1206-BOTTOM
+  unit: 1
+  body_style: 1
+  position:
+    x: 134.62
+    y: 45.72
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D3
+    Value: Green
+    Footprint: kicad_file:LED-1206-BOTTOM
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-11076
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 132.08
+      y: 45.72
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 139.7
+      y: 45.72
+    net: ~{INT}
+    net_aliases:
+    - ~{INT}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J4
+      pin_number: '5'
+      pin_name: '5'
+    - reference: R2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '1'
+      pin_name: ~{ALERT}
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 134.493
+        y: 44.323
+      max:
+        x: 137.9982
+        y: 49.2252
+      width: 3.5052
+      height: 4.9022
+      center:
+        x: 136.2456
+        y: 46.7741
+  warnings: []
+connected_components:
+- reference: J4
+  pin_number: '5'
+  pin_name: '5'
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R2
+  pin_number: '1'
+  pin_name: '1'
+- reference: U2
+  pin_number: '1'
+  pin_name: ~{ALERT}

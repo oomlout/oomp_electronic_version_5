@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: D9
+  source_file: data/kicad_file.kicad_sch
+  uuid: 4f376d91-c414-479c-99dd-9281518ea3ce
+  library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-B340A
+  unit: 1
+  body_style: 1
+  position:
+    x: 193.04
+    y: 167.64
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D9
+    Value: 3A/40V/500mV
+    Footprint: kicad_file:SMA-DIODE
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-09886
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 190.5
+      y: 167.64
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: X1
+      pin_number: '2'
+      pin_name: '2'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 195.58
+      y: 167.64
+    net: 5V
+    net_aliases:
+    - 5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY5'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: '#SUPPLY24'
+      pin_number: '1'
+      pin_name: 5V
+    - reference: B1
+      pin_number: 5V
+      pin_name: 5V
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.3462
+      max:
+        x: 2.6162
+        y: 1.3462
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 190.4238
+        y: 166.2938
+      max:
+        x: 195.6562
+        y: 168.9862
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 193.04
+        y: 167.64
+  warnings: []
+connected_components:
+- reference: '#SUPPLY5'
+  pin_number: '1'
+  pin_name: 5V
+- reference: '#SUPPLY24'
+  pin_number: '1'
+  pin_name: 5V
+- reference: B1
+  pin_number: 5V
+  pin_name: 5V
+- reference: X1
+  pin_number: '2'
+  pin_name: '2'

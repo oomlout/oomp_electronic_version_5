@@ -1,0 +1,208 @@
+(footprint "U.FL"
+	(version 20260831)
+	(generator "pcbnew")
+	(generator_version "10.99")
+	(layer "F.Cu")
+	(descr "U.FL SMD Antenna Connector\n\nSpecifications:\n• Area: 3.0mm x 2.5mm\n\nDatasheet referenced for footprint\n\nExample device(s):\n\n• U.FL")
+	(property "Reference" "REF**"
+		(at -1.27 -2.54 0)
+		(layer "F.SilkS")
+		(uuid "55964b6d-7d07-4119-8e49-8ebb8a931ee9")
+		(effects
+			(font
+				(size 0.48768 0.48768)
+				(thickness 0.12192)
+			)
+			(justify left bottom)
+		)
+	)
+	(property "Value" "U.FL"
+		(at -1.27 2.54 0)
+		(layer "F.Fab")
+		(uuid "c6fe5f92-4119-43c2-8915-3c7bf6c12b49")
+		(effects
+			(font
+				(size 0.48768 0.48768)
+				(thickness 0.12192)
+			)
+			(justify left top)
+		)
+	)
+	(property "Datasheet" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "8822826e-ec6b-4a53-954a-5f36ec38a299")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" ""
+		(at 0 0 0)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "41bfc0f8-2032-49cd-a29f-e63081f40f58")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(duplicate_pad_numbers_are_jumpers no)
+	(fp_line
+		(start -1.524 -1.778)
+		(end -1.016 -2.286)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "ef014c4b-27e1-4b56-9a4b-5bd63f70b2b1")
+	)
+	(fp_line
+		(start -1.524 -1.016)
+		(end -1.524 -1.778)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "1da301ce-b28f-48ac-9333-d040f3b28bc7")
+	)
+	(fp_line
+		(start -1.016 -2.286)
+		(end -0.254 -2.286)
+		(stroke
+			(width 0.1524)
+			(type solid)
+		)
+		(layer "F.SilkS")
+		(uuid "86ec2ec2-1522-481e-ab60-c02613f23414")
+	)
+	(fp_circle
+		(center 0 0)
+		(end 0.127 0)
+		(stroke
+			(width 0.254)
+			(type solid)
+		)
+		(fill no)
+		(layer "F.SilkS")
+		(uuid "fa679e24-bde0-46bf-973f-7f109a462bbe")
+	)
+	(fp_poly
+		(pts
+			(xy 0.889 0.508) (xy 0.889 -0.508) (xy 0.254 -0.508) (xy 0.254 0.508)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill yes)
+		(layer "F.SilkS")
+		(uuid "f71497cc-5a54-4d21-a400-28748c9f8474")
+	)
+	(pad "1" smd roundrect
+		(at 0 -1.375)
+		(size 2.2 0.85)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.05976470588)
+		(solder_mask_margin 0.0635)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "9d1f8ca7-bae6-4af0-914b-f14c4314117e")
+	)
+	(pad "2" smd roundrect
+		(at 0 1.375)
+		(size 2.2 0.85)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.05976470588)
+		(solder_mask_margin 0.0635)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "a3361ae7-f709-4edb-8ddd-c4ead3de00c5")
+	)
+	(pad "FEED" smd roundrect
+		(at 1.525 0)
+		(size 1.05 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.0508)
+		(solder_mask_margin 0.0635)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "e64b5961-629a-48cb-8432-5a7941f71654")
+	)
+	(pad "NC" smd roundrect
+		(at -1.525 0)
+		(size 1.05 1)
+		(layers "F.Cu" "F.Mask" "F.Paste")
+		(roundrect_rratio 0.0508)
+		(solder_mask_margin 0.0635)
+		(solder_paste_margin 0)
+		(thermal_bridge_angle 0)
+		(uuid "bc3fce71-ef5e-4e15-8a3d-26ad5a29c60b")
+	)
+	(zone
+		(layer "F.Cu")
+		(uuid "4514aeb8-c041-4a48-bd44-c86ecedbea60")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads not_allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy -0.8 0.8) (xy 0.8 0.8) (xy 0.8 -0.8) (xy -0.8 -0.8)
+			)
+		)
+	)
+	(zone
+		(layer "B.Cu")
+		(uuid "5189f352-cf13-4fd9-ab77-675fd24d0279")
+		(hatch edge 0.5)
+		(connect_pads
+			(clearance 0)
+		)
+		(min_thickness 0.25)
+		(keepout
+			(tracks not_allowed)
+			(vias not_allowed)
+			(pads not_allowed)
+			(copperpour not_allowed)
+			(footprints allowed)
+		)
+		(placement
+			(enabled no)
+			(sheetname "")
+		)
+		(fill
+			(thermal_gap 0.5)
+			(thermal_bridge_width 0.5)
+			(island_removal_mode 0)
+		)
+		(polygon
+			(pts
+				(xy -0.8 0.8) (xy 0.8 0.8) (xy 0.8 -0.8) (xy -0.8 -0.8)
+			)
+		)
+	)
+	(embedded_fonts no)
+)

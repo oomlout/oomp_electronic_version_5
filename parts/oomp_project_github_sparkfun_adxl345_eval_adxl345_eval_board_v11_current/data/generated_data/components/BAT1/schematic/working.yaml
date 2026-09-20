@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: BAT1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 169fb5c8-e083-4980-8f55-6f5f465dfb77
+  library_id: kicad_file-eagle-import:ACCEL_SCKAA
+  unit: 1
+  body_style: 1
+  position:
+    x: 210.82
+    y: 137.16
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: BAT1
+    Value: AA Battery
+    Footprint: kicad_file:98
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '-'
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 210.82
+      y: 142.24
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: BAT2
+      pin_number: '2'
+      pin_name: +
+  - number: '2'
+    name: +
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 210.82
+      y: 132.08
+    net: RAW
+    net_aliases:
+    - RAW
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: S3
+      pin_number: '1'
+      pin_name: P
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -4.0132
+      max:
+        x: 2.7432
+        y: 4.0132
+      width: 5.3594
+      height: 8.0264
+      center:
+        x: 0.0635
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 206.8068
+        y: 134.5438
+      max:
+        x: 214.8332
+        y: 139.9032
+      width: 8.0264
+      height: 5.3594
+      center:
+        x: 210.82
+        y: 137.2235
+  warnings: []
+connected_components:
+- reference: BAT2
+  pin_number: '2'
+  pin_name: +
+- reference: S3
+  pin_number: '1'
+  pin_name: P

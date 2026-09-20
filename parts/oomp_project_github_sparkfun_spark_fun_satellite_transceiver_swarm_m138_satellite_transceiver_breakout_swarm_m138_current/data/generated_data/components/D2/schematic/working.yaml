@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: D2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 357f3fac-b2fc-4f5d-8cb5-12c23b9bd03a
+  library_id: kicad_file-eagle-import:LED-GREEN0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 96.52
+    y: 134.62
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D2
+    Value: GREEN
+    Footprint: kicad_file:LED-0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-00821
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 96.52
+      y: 132.08
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R3
+      pin_number: '2'
+      pin_name: '2'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 96.52
+      y: 139.7
+    net: CH340_RXI
+    net_aliases:
+    - CH340_RXI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: TXO0
+      pin_number: '2'
+      pin_name: '2'
+    - reference: TXO0
+      pin_number: '4'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '9'
+      pin_name: RXI
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 93.0148
+        y: 134.493
+      max:
+        x: 97.917
+        y: 137.9982
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: 95.4659
+        y: 136.2456
+  warnings: []
+connected_components:
+- reference: R3
+  pin_number: '2'
+  pin_name: '2'
+- reference: TXO0
+  pin_number: '2'
+  pin_name: '2'
+- reference: TXO0
+  pin_number: '4'
+  pin_name: '2'
+- reference: U1
+  pin_number: '9'
+  pin_name: RXI

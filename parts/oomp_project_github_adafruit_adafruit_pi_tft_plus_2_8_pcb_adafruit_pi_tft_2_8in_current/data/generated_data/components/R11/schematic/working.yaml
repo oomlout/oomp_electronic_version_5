@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: R11
+  source_file: data/kicad_file.kicad_sch
+  uuid: da0aecd4-6f27-4a5b-a584-03edf10a3f7d
+  library_id: kicad_file-eagle-import:RESISTOR0805_NOOUTLINE
+  unit: 1
+  body_style: 1
+  position:
+    x: 265.43
+    y: 156.21
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R11
+    Value: '22'
+    Footprint: kicad_file:0805-NO
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 270.51
+      y: 156.21
+    net: MOSI_3V
+    net_aliases:
+    - MOSI_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '19'
+      pin_name: '19'
+    - reference: RPI1
+      pin_number: '19'
+      pin_name: SPI_MOSI
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 260.35
+      y: 156.21
+    net: MOSI
+    net_aliases:
+    - MOSI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '7'
+      pin_name: MOSI
+    - reference: U$2
+      pin_number: '34'
+      pin_name: SDI
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.397
+      max:
+        x: 2.667
+        y: 1.397
+      width: 5.334
+      height: 2.794
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 262.763
+        y: 154.813
+      max:
+        x: 268.097
+        y: 157.607
+      width: 5.334
+      height: 2.794
+      center:
+        x: 265.43
+        y: 156.21
+  warnings: []
+connected_components:
+- reference: JP3
+  pin_number: '19'
+  pin_name: '19'
+- reference: RPI1
+  pin_number: '19'
+  pin_name: SPI_MOSI
+- reference: U2
+  pin_number: '7'
+  pin_name: MOSI
+- reference: U$2
+  pin_number: '34'
+  pin_name: SDI

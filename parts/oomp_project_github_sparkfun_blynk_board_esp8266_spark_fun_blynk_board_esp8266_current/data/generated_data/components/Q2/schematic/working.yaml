@@ -1,0 +1,148 @@
+available: true
+units:
+- reference: Q2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 23509e86-1dd0-4416-ab31-44cfc4ec683d
+  library_id: kicad_file-eagle-import:TRANSISTOR_NPNMMBT2222A
+  unit: 1
+  body_style: 1
+  position:
+    x: 370.84
+    y: 182.88
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: Q2
+    Value: MMBT2222A
+    Footprint: kicad_file:SOT23-3@1
+    Datasheet: ''
+    Description: ''
+    PROD_ID: TRANS-08049
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 373.38
+      y: 182.88
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R17
+      pin_number: '2'
+      pin_name: '2'
+  - number: '2'
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 368.3
+      y: 187.96
+    net: RTS
+    net_aliases:
+    - RTS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R18
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U4
+      pin_number: '2'
+      pin_name: ~{RTS}
+  - number: '3'
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 368.3
+      y: 177.8
+    net: RESET
+    net_aliases:
+    - RESET
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP28
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R10
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '32'
+      pin_name: EXT_RSTB
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.25395
+        y: -2.6162
+      max:
+        x: 2.6162
+        y: 2.6162
+      width: 2.87015
+      height: 5.2324
+      center:
+        x: 1.181125
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 368.2238
+        y: 180.2638
+      max:
+        x: 371.09395
+        y: 185.4962
+      width: 2.87015
+      height: 5.2324
+      center:
+        x: 369.658875
+        y: 182.88
+  warnings: []
+connected_components:
+- reference: JP28
+  pin_number: '1'
+  pin_name: '1'
+- reference: R10
+  pin_number: '1'
+  pin_name: '1'
+- reference: R17
+  pin_number: '2'
+  pin_name: '2'
+- reference: R18
+  pin_number: '1'
+  pin_name: '1'
+- reference: U2
+  pin_number: '32'
+  pin_name: EXT_RSTB
+- reference: U4
+  pin_number: '2'
+  pin_name: ~{RTS}

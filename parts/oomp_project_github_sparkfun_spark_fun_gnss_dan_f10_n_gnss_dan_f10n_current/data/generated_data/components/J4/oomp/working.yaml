@@ -31,8 +31,8 @@ bip_39_full_underscore: flame_insect_dad_syrup_broom_stomach_clinic_prevent_repa
 category: connector
 category_name: Connector
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  length: 3.0
+  width: 3.1
 directory: parts/electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
 distributors: []
 id: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
@@ -197,8 +197,8 @@ oomlout_ai_roboclick_3:
       category: connector
       category_name: Connector
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        length: 3.0
+        width: 3.1
       directory: parts\electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
       distributors: []
       kicad:
@@ -336,6 +336,39 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      package_drawing:
+        body:
+        - 3.0
+        - 3.1
+        circles:
+        - - 0.0
+          - 0.0
+          - 0.72
+        overall:
+        - 3.6
+        - 3.6
+        pin_one:
+        - 0.0
+        - -1.5
+        pins:
+        - - '1'
+          - bottom
+          - 0.0
+          - -1.5
+          - 0.85
+          - 0.55
+        - - '2'
+          - left
+          - -1.5
+          - 0.0
+          - 0.55
+          - 0.75
+        - - '3'
+          - right
+          - 1.5
+          - 0.0
+          - 0.55
+          - 0.75
       part_id: J1
       part_page:
         datasheet_path: data/datasheet.pdf
@@ -430,7 +463,16 @@ oomlout_ai_roboclick_3:
           title: Top view
         navigation_link: ../../navigation/electronic/connector/u_fl/surface_mount/i_pex/README.md
         oomp_id: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
-        pins: []
+        pins:
+        - name: RF
+          number: '1'
+          type: signal
+        - name: GND
+          number: '2'
+          type: gnd
+        - name: GND
+          number: '3'
+          type: gnd
         quick_facts:
         - title: OOMP ID
           value: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
@@ -439,11 +481,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: u fl
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 3.0 × 3.1 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
         summary: Connector U Fl surface-mount I Pex U Fl R SMT 1 is an OOMP electronic
           connector definition. It uses the u fl package or form factor. Its nominal
-          drawing size is 10.0 × 5.0 mm.
+          drawing size is 3.0 × 3.1 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -457,6 +501,19 @@ oomlout_ai_roboclick_3:
           value: i_pex
         - level: 15
           value: u_fl_r_smt_1
+      pins:
+        pin_1:
+          name: RF
+          number: '1'
+          type: signal
+        pin_2:
+          name: GND
+          number: '2'
+          type: gnd
+        pin_3:
+          name: GND
+          number: '3'
+          type: gnd
       regenerate_pngs: false
       svg_details:
       - filename_extra: assembly
@@ -655,6 +712,48 @@ oomlout_ai_roboclick_3:
       taxonomy_9: ''
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_lte_cat_m1_shield_lte_cat_m1_shield_sara_r4_current/board_explorer.html
+        board_url: https://github.com/sparkfun/LTE_Cat_M1_Shield/blob/main/Hardware/lte_cat_m1_shield_sara-r4.brd
+        github_url: https://github.com/sparkfun/LTE_Cat_M1_Shield
+        name: Project sparkfun/LTE_Cat_M1_Shield lte cat m1 shield sara r4 current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_lte_cat_m1_shield_lte_cat_m1_shield_sara_r4_current
+        project_id: oomp_project_github_sparkfun_lte_cat_m1_shield_lte_cat_m1_shield_sara_r4_current
+        quantity: 1
+        references:
+        - J8
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_mini_gen_spark_fun_mini_gen_current/board_explorer.html
+        board_url: https://github.com/sparkfun/MiniGen/blob/master/Hardware/SparkFun_MiniGen.brd
+        github_url: https://github.com/sparkfun/MiniGen
+        name: Project sparkfun/MiniGen Spark Fun Mini Gen current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_mini_gen_spark_fun_mini_gen_current
+        project_id: oomp_project_github_sparkfun_mini_gen_spark_fun_mini_gen_current
+        quantity: 1
+        references:
+        - J1
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_simultaneous_rfid_tag_reader_simultaneous_rfid_tag_reader_current/board_explorer.html
+        board_url: https://github.com/sparkfun/Simultaneous_RFID_Tag_Reader/blob/master/Hardware/Simultaneous_RFID_Tag_Reader.brd
+        github_url: https://github.com/sparkfun/Simultaneous_RFID_Tag_Reader
+        name: Project sparkfun/Simultaneous_RFID_Tag_Reader Simultaneous RFID Tag
+          Reader current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_simultaneous_rfid_tag_reader_simultaneous_rfid_tag_reader_current
+        project_id: oomp_project_github_sparkfun_simultaneous_rfid_tag_reader_simultaneous_rfid_tag_reader_current
+        quantity: 1
+        references:
+        - J4
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_artemis_global_tracker_spark_fun_artemis_global_tracker_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_Artemis_Global_Tracker/blob/main/Hardware/SparkFun_Artemis_Global_Tracker.brd
+        github_url: https://github.com/sparkfun/SparkFun_Artemis_Global_Tracker
+        name: Project sparkfun/SparkFun_Artemis_Global_Tracker Spark Fun Artemis Global
+          Tracker current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_artemis_global_tracker_spark_fun_artemis_global_tracker_current
+        project_id: oomp_project_github_sparkfun_spark_fun_artemis_global_tracker_spark_fun_artemis_global_tracker_current
+        quantity: 1
+        references:
+        - J6
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_dan_f10_n_gnss_dan_f10n_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N
         github_url: https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N
@@ -676,6 +775,17 @@ oomlout_ai_roboclick_3:
         - J8
         - J9
         version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_function_board_neo_m9_n_spark_fun_gnss_neo_m9_n_current/board_explorer.html
+        board_url: https://github.com/sparkfun/SparkFun_GNSS_Function_Board_NEO-M9N/blob/main/Hardware/SparkFun_GNSS_NEO-M9N.brd
+        github_url: https://github.com/sparkfun/SparkFun_GNSS_Function_Board_NEO-M9N
+        name: Project sparkfun/SparkFun_GNSS_Function_Board_NEO-M9N Spark Fun GNSS
+          NEO M9 N current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_function_board_neo_m9_n_spark_fun_gnss_neo_m9_n_current
+        project_id: oomp_project_github_sparkfun_spark_fun_gnss_function_board_neo_m9_n_spark_fun_gnss_neo_m9_n_current
+        quantity: 1
+        references:
+        - E1
+        version: current
     dict_data_files: {}
     dict_data_files_exists: {}
     file_output: README.md
@@ -683,7 +793,53 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0
 oomp_key: oomp_electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
+package_drawing:
+  body:
+  - 3.0
+  - 3.1
+  circles:
+  - - 0.0
+    - 0.0
+    - 0.72
+  overall:
+  - 3.6
+  - 3.6
+  pin_one:
+  - 0.0
+  - -1.5
+  pins:
+  - - '1'
+    - bottom
+    - 0.0
+    - -1.5
+    - 0.85
+    - 0.55
+  - - '2'
+    - left
+    - -1.5
+    - 0.0
+    - 0.55
+    - 0.75
+  - - '3'
+    - right
+    - 1.5
+    - 0.0
+    - 0.55
+    - 0.75
 part_id: J1
 part_page:
   datasheet_path: data/datasheet.pdf
@@ -778,7 +934,16 @@ part_page:
     title: Top view
   navigation_link: ../../navigation/electronic/connector/u_fl/surface_mount/i_pex/README.md
   oomp_id: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
-  pins: []
+  pins:
+  - name: RF
+    number: '1'
+    type: signal
+  - name: GND
+    number: '2'
+    type: gnd
+  - name: GND
+    number: '3'
+    type: gnd
   quick_facts:
   - title: OOMP ID
     value: electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
@@ -787,11 +952,13 @@ part_page:
   - title: Package / style
     value: u fl
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 3.0 × 3.1 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_u_fl_surface_mount_i_pex_u_fl_r_smt_1
   summary: Connector U Fl surface-mount I Pex U Fl R SMT 1 is an OOMP electronic connector
     definition. It uses the u fl package or form factor. Its nominal drawing size
-    is 10.0 × 5.0 mm.
+    is 3.0 × 3.1 mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -805,6 +972,19 @@ part_page:
     value: i_pex
   - level: 15
     value: u_fl_r_smt_1
+pins:
+  pin_1:
+    name: RF
+    number: '1'
+    type: signal
+  pin_2:
+    name: GND
+    number: '2'
+    type: gnd
+  pin_3:
+    name: GND
+    number: '3'
+    type: gnd
 regenerate_pngs: false
 svg_details:
 - filename_extra: assembly
@@ -1085,8 +1265,51 @@ taxonomy_6: ''
 taxonomy_7: ''
 taxonomy_8: ''
 taxonomy_9: ''
+threaded_workers: 6
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_lte_cat_m1_shield_lte_cat_m1_shield_sara_r4_current/board_explorer.html
+  board_url: https://github.com/sparkfun/LTE_Cat_M1_Shield/blob/main/Hardware/lte_cat_m1_shield_sara-r4.brd
+  github_url: https://github.com/sparkfun/LTE_Cat_M1_Shield
+  name: Project sparkfun/LTE_Cat_M1_Shield lte cat m1 shield sara r4 current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_lte_cat_m1_shield_lte_cat_m1_shield_sara_r4_current
+  project_id: oomp_project_github_sparkfun_lte_cat_m1_shield_lte_cat_m1_shield_sara_r4_current
+  quantity: 1
+  references:
+  - J8
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_mini_gen_spark_fun_mini_gen_current/board_explorer.html
+  board_url: https://github.com/sparkfun/MiniGen/blob/master/Hardware/SparkFun_MiniGen.brd
+  github_url: https://github.com/sparkfun/MiniGen
+  name: Project sparkfun/MiniGen Spark Fun Mini Gen current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_mini_gen_spark_fun_mini_gen_current
+  project_id: oomp_project_github_sparkfun_mini_gen_spark_fun_mini_gen_current
+  quantity: 1
+  references:
+  - J1
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_simultaneous_rfid_tag_reader_simultaneous_rfid_tag_reader_current/board_explorer.html
+  board_url: https://github.com/sparkfun/Simultaneous_RFID_Tag_Reader/blob/master/Hardware/Simultaneous_RFID_Tag_Reader.brd
+  github_url: https://github.com/sparkfun/Simultaneous_RFID_Tag_Reader
+  name: Project sparkfun/Simultaneous_RFID_Tag_Reader Simultaneous RFID Tag Reader
+    current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_simultaneous_rfid_tag_reader_simultaneous_rfid_tag_reader_current
+  project_id: oomp_project_github_sparkfun_simultaneous_rfid_tag_reader_simultaneous_rfid_tag_reader_current
+  quantity: 1
+  references:
+  - J4
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_artemis_global_tracker_spark_fun_artemis_global_tracker_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_Artemis_Global_Tracker/blob/main/Hardware/SparkFun_Artemis_Global_Tracker.brd
+  github_url: https://github.com/sparkfun/SparkFun_Artemis_Global_Tracker
+  name: Project sparkfun/SparkFun_Artemis_Global_Tracker Spark Fun Artemis Global
+    Tracker current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_artemis_global_tracker_spark_fun_artemis_global_tracker_current
+  project_id: oomp_project_github_sparkfun_spark_fun_artemis_global_tracker_spark_fun_artemis_global_tracker_current
+  quantity: 1
+  references:
+  - J6
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_dan_f10_n_gnss_dan_f10n_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N
   github_url: https://github.com/sparkfun/SparkFun_GNSS_DAN-F10N
@@ -1107,4 +1330,15 @@ used_in_projects:
   references:
   - J8
   - J9
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_gnss_function_board_neo_m9_n_spark_fun_gnss_neo_m9_n_current/board_explorer.html
+  board_url: https://github.com/sparkfun/SparkFun_GNSS_Function_Board_NEO-M9N/blob/main/Hardware/SparkFun_GNSS_NEO-M9N.brd
+  github_url: https://github.com/sparkfun/SparkFun_GNSS_Function_Board_NEO-M9N
+  name: Project sparkfun/SparkFun_GNSS_Function_Board_NEO-M9N Spark Fun GNSS NEO M9
+    N current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_gnss_function_board_neo_m9_n_spark_fun_gnss_neo_m9_n_current
+  project_id: oomp_project_github_sparkfun_spark_fun_gnss_function_board_neo_m9_n_spark_fun_gnss_neo_m9_n_current
+  quantity: 1
+  references:
+  - E1
   version: current

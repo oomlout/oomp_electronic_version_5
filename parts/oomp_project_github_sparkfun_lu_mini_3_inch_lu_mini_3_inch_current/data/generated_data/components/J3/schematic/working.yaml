@@ -1,0 +1,106 @@
+available: true
+units:
+- reference: J3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 323d6c13-82b2-4aea-8a73-c0fb0a15f546
+  library_id: kicad_file-eagle-import:SOLDER_PAD_2
+  unit: 1
+  body_style: 1
+  position:
+    x: 76.2
+    y: 231.14
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: J3
+    Value: SOLDER_PAD_2
+    Footprint: kicad_file:SOLDER_PAD_2
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 83.82
+      y: 231.14
+    net: DO
+    net_aliases:
+    - DO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D60
+      pin_number: SDO
+      pin_name: DO
+  - number: P$2
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 83.82
+      y: 228.6
+    net: CO
+    net_aliases:
+    - CO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D60
+      pin_number: CKO
+      pin_name: CO
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.7432
+        y: -2.7432
+      max:
+        x: 4.0132
+        y: 5.2832
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 0.635
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 73.4568
+        y: 225.8568
+      max:
+        x: 80.2132
+        y: 233.8832
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 76.835
+        y: 229.87
+  warnings: []
+connected_components:
+- reference: D60
+  pin_number: CKO
+  pin_name: CO
+- reference: D60
+  pin_number: SDO
+  pin_name: DO

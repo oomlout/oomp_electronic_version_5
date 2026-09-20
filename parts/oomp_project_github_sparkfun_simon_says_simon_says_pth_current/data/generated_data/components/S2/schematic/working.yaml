@@ -1,0 +1,122 @@
+available: true
+units:
+- reference: S2
+  source_file: data/kicad_file.kicad_sch
+  uuid: e431d160-4649-4378-afac-c64aae0663fd
+  library_id: kicad_file-eagle-import:SWITCH-SPSTKIT
+  unit: 1
+  body_style: 1
+  position:
+    x: 149.86
+    y: 134.62
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: S2
+    Value: SWITCH-SPSTKIT
+    Footprint: kicad_file:26
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: P
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 152.4
+      y: 134.62
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: SG1
+      pin_number: '1'
+      pin_name: '2'
+  - number: '2'
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 144.78
+      y: 137.16
+    net: BUZZER2
+    net_aliases:
+    - BUZZER2
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '14'
+      pin_name: PD7(AIN1)
+  - number: '3'
+    name: O
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 144.78
+      y: 132.08
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.4608
+        y: -3.0008
+      max:
+        x: 3.2512
+        y: 3.0008
+      width: 3.712
+      height: 6.0016
+      center:
+        x: 1.3952
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 146.6088
+        y: 131.6192
+      max:
+        x: 150.3208
+        y: 137.6208
+      width: 3.712
+      height: 6.0016
+      center:
+        x: 148.4648
+        y: 134.62
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '14'
+  pin_name: PD7(AIN1)
+- reference: SG1
+  pin_number: '1'
+  pin_name: '2'

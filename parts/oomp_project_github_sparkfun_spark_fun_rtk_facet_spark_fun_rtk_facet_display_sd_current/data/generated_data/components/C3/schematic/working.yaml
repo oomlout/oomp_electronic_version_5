@@ -1,0 +1,107 @@
+available: true
+units:
+- reference: C3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 470f447a-4588-4bc8-93c5-36d04c1331a9
+  library_id: SparkFun-Capacitor:1.0uF_0805_25V_10%
+  unit: 1
+  body_style: 1
+  position:
+    x: 102.87
+    y: 77.47
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: C3
+    Value: 1.0uF
+    Footprint: SparkFun-Capacitor:C_0805_2012Metric
+    Datasheet: https://cdn.sparkfun.com/assets/8/a/4/a/5/Kemet_Capacitor_Datasheet.pdf
+    Description: Unpolarized capacitor
+    PROD_ID: CAP-08064
+    Voltage: 25V
+    Tolerance: 10%
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 3.81
+      rotation: 270.0
+    length: 2.794
+    position:
+      x: 102.87
+      y: 73.66
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '2'
+      pin_name: C2P
+  - number: '2'
+    name: '~'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -3.81
+      rotation: 90.0
+    length: 2.794
+    position:
+      x: 102.87
+      y: 81.28
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '3'
+      pin_name: C2N
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.286
+        y: -1.016
+      max:
+        x: 2.286
+        y: 1.016
+      width: 4.572
+      height: 2.032
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 100.584
+        y: 76.454
+      max:
+        x: 105.156
+        y: 78.486
+      width: 4.572
+      height: 2.032
+      center:
+        x: 102.87
+        y: 77.47
+  warnings: []
+connected_components:
+- reference: U1
+  pin_number: '2'
+  pin_name: C2P
+- reference: U1
+  pin_number: '3'
+  pin_name: C2N

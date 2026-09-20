@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: D1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 5cd015af-a827-4595-ae6d-af1642e65782
+  library_id: SparkFun-LED:LED_Green_1206-Bottom
+  unit: 1
+  body_style: 1
+  position:
+    x: 95.25
+    y: 153.67
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D1
+    Value: Green
+    Footprint: SparkFun-LED:LED_1206_Bottom_Green
+    Datasheet: https://optoelectronics.liteon.com/upload/download/DS22-2000-256/LTST-C230KGKT.pdf
+    Description: Light emitting diode, bottom mount
+    PROD_ID: DIO-11076
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: K
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 95.25
+      y: 157.48
+    net: CHARGE_LED
+    net_aliases:
+    - CHARGE_LED
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '11'
+      pin_name: Pin_11
+    - reference: J4
+      pin_number: '2'
+      pin_name: Pin_2
+  - number: '2'
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 95.25
+      y: 149.86
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '2'
+      pin_name: '~'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -4.572
+        y: -2.286
+      max:
+        x: 1.397
+        y: 1.397
+      width: 5.969
+      height: 3.683
+      center:
+        x: -1.5875
+        y: -0.4445
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 93.853
+        y: 152.273
+      max:
+        x: 97.536
+        y: 158.242
+      width: 3.683
+      height: 5.969
+      center:
+        x: 95.6945
+        y: 155.2575
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: '11'
+  pin_name: Pin_11
+- reference: J4
+  pin_number: '2'
+  pin_name: Pin_2
+- reference: R5
+  pin_number: '2'
+  pin_name: '~'

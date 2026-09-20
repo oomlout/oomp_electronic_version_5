@@ -1,7 +1,7 @@
 Project data fetch failed.
 Error type: RuntimeError
-Error message: fatal: Cannot fast-forward to multiple branches.
-Command: git -C C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Adafruit_Learning_System_Guides_c5706479f4f7 pull --ff-only
+Error message: fatal: destination path 'C:\Users\AARON_~1\AppData\Local\Temp\oomp_git_cache\Adafruit_Learning_System_Guides_c5706479f4f7' already exists and is not an empty directory.
+Command: git clone --filter=blob:none --no-checkout https://github.com/adafruit/Adafruit_Learning_System_Guides.git C:\Users\AARON_~1\AppData\Local\Temp\oomp_git_cache\Adafruit_Learning_System_Guides_c5706479f4f7
 Repository URL: https://github.com/adafruit/Adafruit_Learning_System_Guides.git
 Repository name: Adafruit_Learning_System_Guides
 Source folder: BLE_Client_Server/Eagle
@@ -10,9 +10,9 @@ Extensions: ['.kicad_pcb', '.kicad_sch', '.kicad_pro']
 
 Traceback:
 Traceback (most recent call last):
-  File "kicad_agents/project_git_action.py", line 239, in refresh_project_files
-    _run_git(["-C", repository_directory, "pull", "--ff-only"])
+  File "kicad_agents/project_git_action.py", line 216, in refresh_project_files
+    _run_git(clone_arguments)
   File "kicad_agents/project_git_action.py", line 58, in _run_git
     raise RuntimeError(f"{message}\nCommand: {' '.join(command)}")
-RuntimeError: fatal: Cannot fast-forward to multiple branches.
-Command: git -C C:\Users\aaron\AppData\Local\Temp\oomp_git_cache\Adafruit_Learning_System_Guides_c5706479f4f7 pull --ff-only
+RuntimeError: fatal: destination path 'C:\Users\AARON_~1\AppData\Local\Temp\oomp_git_cache\Adafruit_Learning_System_Guides_c5706479f4f7' already exists and is not an empty directory.
+Command: git clone --filter=blob:none --no-checkout https://github.com/adafruit/Adafruit_Learning_System_Guides.git C:\Users\AARON_~1\AppData\Local\Temp\oomp_git_cache\Adafruit_Learning_System_Guides_c5706479f4f7

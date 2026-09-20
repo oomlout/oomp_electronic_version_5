@@ -1,0 +1,131 @@
+available: true
+units:
+- reference: Y2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 7384d97d-7a2a-482c-9c53-7b026df732ee
+  library_id: kicad_file-eagle-import:CRYSTAL-32.768KHZSMD-3.2X1.5
+  unit: 1
+  body_style: 1
+  position:
+    x: 170.18
+    y: 53.34
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: Y2
+    Value: 32.768kHz
+    Footprint: kicad_file:CRYSTAL-SMD-3.2X1.5MM
+    Datasheet: ''
+    Description: ''
+    PROD_ID: XTAL-13062
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 167.64
+      y: 53.34
+    net: 32-G5/RTC
+    net_aliases:
+    - 32-G5/RTC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C9
+      pin_number: '2'
+      pin_name: '2'
+    - reference: J1
+      pin_number: '73'
+      pin_name: G5/BUS5
+    - reference: U2
+      pin_number: '12'
+      pin_name: 32K_XP(GPIO32/ADC1:4/TOUCH9/RTC9)
+  - number: P$2
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 172.72
+      y: 53.34
+    net: 33-G6/RTC
+    net_aliases:
+    - 33-G6/RTC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C26
+      pin_number: '2'
+      pin_name: '2'
+    - reference: J1
+      pin_number: '71'
+      pin_name: G6/BUS6
+    - reference: U2
+      pin_number: '13'
+      pin_name: 32K_XN(GPIO33/ADC1:5/TOUCH8/RTC8)
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.905
+      max:
+        x: 2.6162
+        y: 1.905
+      width: 5.2324
+      height: 3.81
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 167.5638
+        y: 51.435
+      max:
+        x: 172.7962
+        y: 55.245
+      width: 5.2324
+      height: 3.81
+      center:
+        x: 170.18
+        y: 53.34
+  warnings: []
+connected_components:
+- reference: C9
+  pin_number: '2'
+  pin_name: '2'
+- reference: C26
+  pin_number: '2'
+  pin_name: '2'
+- reference: J1
+  pin_number: '71'
+  pin_name: G6/BUS6
+- reference: J1
+  pin_number: '73'
+  pin_name: G5/BUS5
+- reference: U2
+  pin_number: '12'
+  pin_name: 32K_XP(GPIO32/ADC1:4/TOUCH9/RTC9)
+- reference: U2
+  pin_number: '13'
+  pin_name: 32K_XN(GPIO33/ADC1:5/TOUCH8/RTC8)

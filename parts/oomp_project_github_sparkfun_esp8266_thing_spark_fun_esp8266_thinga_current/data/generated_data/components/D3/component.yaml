@@ -1,0 +1,517 @@
+reference: D3
+schematic:
+  available: true
+  units:
+  - reference: D3
+    source_file: data/kicad_file.kicad_sch
+    uuid: 90cee9b4-62ea-4311-ac79-9ad16c353cd1
+    library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-BAT20J
+    unit: 1
+    body_style: 1
+    position:
+      x: 116.84
+      y: 30.48
+      rotation: 270.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: D3
+      Value: BAT20J
+      Footprint: kicad_file:SOD-323
+      Datasheet: ''
+      Description: ''
+      PROD_ID: DIO-11623
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: A
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 0.0
+      position:
+        x: 116.84
+        y: 27.94
+      net: VUSB
+      net_aliases:
+      - VUSB
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: D1
+        pin_number: A
+        pin_name: A
+      - reference: JP1
+        pin_number: VBUS1
+        pin_name: VCC
+      - reference: R7
+        pin_number: '2'
+        pin_name: '2'
+      - reference: U2
+        pin_number: '4'
+        pin_name: VIN
+    - number: C
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 116.84
+        y: 33.02
+      net: VIN
+      net_aliases:
+      - VIN
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#SUPPLY4'
+        pin_number: '1'
+        pin_name: VIN
+      - reference: '#SUPPLY8'
+        pin_number: '1'
+        pin_name: VIN
+      - reference: '#SUPPLY12'
+        pin_number: '1'
+        pin_name: VIN
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: JP3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: Q1
+        pin_number: '3'
+        pin_name: D
+      - reference: S1
+        pin_number: '3'
+        pin_name: S
+      - reference: U4
+        pin_number: '1'
+        pin_name: IN
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6162
+          y: -1.651
+        max:
+          x: 2.6162
+          y: 1.651
+        width: 5.2324
+        height: 3.302
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 115.189
+          y: 27.8638
+        max:
+          x: 118.491
+          y: 33.0962
+        width: 3.302
+        height: 5.2324
+        center:
+          x: 116.84
+          y: 30.48
+    warnings: []
+  connected_components:
+  - reference: '#SUPPLY4'
+    pin_number: '1'
+    pin_name: VIN
+  - reference: '#SUPPLY8'
+    pin_number: '1'
+    pin_name: VIN
+  - reference: '#SUPPLY12'
+    pin_number: '1'
+    pin_name: VIN
+  - reference: C7
+    pin_number: '1'
+    pin_name: '1'
+  - reference: D1
+    pin_number: A
+    pin_name: A
+  - reference: JP1
+    pin_number: VBUS1
+    pin_name: VCC
+  - reference: JP3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: Q1
+    pin_number: '3'
+    pin_name: D
+  - reference: R7
+    pin_number: '2'
+    pin_name: '2'
+  - reference: S1
+    pin_number: '3'
+    pin_name: S
+  - reference: U2
+    pin_number: '4'
+    pin_name: VIN
+  - reference: U4
+    pin_number: '1'
+    pin_name: IN
+pcb:
+  reference: D3
+  value: BAT20J
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 00a2fc53-b185-47e8-ac9b-79e324582dd6
+  library_id: SparkFun_ESP8266_Thing_V10a-import-fps:SOD-323
+  layer: F.Cu
+  side: front
+  position:
+    x: 10.16
+    y: -15.875
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: D3
+    Value: BAT20J
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.15
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 9.01
+      y: -15.875
+    placed_rotation: 0.0
+    size:
+      x: 0.63
+      y: 0.83
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VUSB
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.835
+          y: -0.415
+        max:
+          x: 1.465
+          y: 0.415
+        width: 0.63
+        height: 0.83
+        center:
+          x: 1.15
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 8.695
+          y: -16.29
+        max:
+          x: 9.325
+          y: -15.46
+        width: 0.63
+        height: 0.83
+        center:
+          x: 9.01
+          y: -15.875
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: D1
+      pad_number: A
+    - reference: JP1
+      pad_number: VBUS1
+    - reference: Q1
+      pad_number: '1'
+    - reference: R7
+      pad_number: '2'
+    - reference: U2
+      pad_number: '4'
+  - number: C
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.15
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 11.31
+      y: -15.875
+    placed_rotation: 0.0
+    size:
+      x: 0.63
+      y: 0.83
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VIN
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.465
+          y: -0.415
+        max:
+          x: -0.835
+          y: 0.415
+        width: 0.63
+        height: 0.83
+        center:
+          x: -1.15
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.995
+          y: -16.29
+        max:
+          x: 11.625
+          y: -15.46
+        width: 0.63
+        height: 0.83
+        center:
+          x: 11.31
+          y: -15.875
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C7
+      pad_number: '1'
+    - reference: JP3
+      pad_number: '2'
+    - reference: Q1
+      pad_number: '2'
+    - reference: S1
+      pad_number: '3'
+    - reference: U4
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.465
+        y: -0.415
+      max:
+        x: 1.465
+        y: 0.415
+      width: 2.93
+      height: 0.83
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 8.695
+        y: -16.29
+      max:
+        x: 11.625
+        y: -15.46
+      width: 2.93
+      height: 0.83
+      center:
+        x: 10.16
+        y: -15.875
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.0016
+        y: -0.7516
+      max:
+        x: 1.0016
+        y: 0.7516
+      width: 2.0032
+      height: 1.5032
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 9.1584
+        y: -16.6266
+      max:
+        x: 11.1616
+        y: -15.1234
+      width: 2.0032
+      height: 1.5032
+      center:
+        x: 10.16
+        y: -15.875
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.465
+        y: -0.7516
+      max:
+        x: 1.465
+        y: 0.7516
+      width: 2.93
+      height: 1.5032
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 8.695
+        y: -16.6266
+      max:
+        x: 11.625
+        y: -15.1234
+      width: 2.93
+      height: 1.5032
+      center:
+        x: 10.16
+        y: -15.875
+  connected_components:
+  - C7
+  - D1
+  - JP1
+  - JP3
+  - Q1
+  - R7
+  - S1
+  - U2
+  - U4
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: A
+    schematic_nets:
+    - VUSB
+    pcb_nets:
+    - VUSB
+    status: agree
+  - pin_or_pad_number: C
+    schematic_nets:
+    - VIN
+    pcb_nets:
+    - VIN
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_diode_schottky_sod_323_infineon_bat20j
+  confidence: 1.0
+  proposed_oomp_id: electronic_diode_schottky_sod_323_infineon_bat20j
+  inferred:
+    kind: diode
+    package_size: null
+    value: BAT20J
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: diode
+category_source: oomp_populate
+category_name: Diode
+generated_directory: components/D3

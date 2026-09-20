@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: R17
+  source_file: data/kicad_file.kicad_sch
+  uuid: 0d252dd5-40f2-47de-9c86-60650c4e6dea
+  library_id: kicad_file-eagle-import:33OHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 106.68
+    y: 63.5
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R17
+    Value: '33'
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-08270
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 63.5
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U4
+      pin_number: '27'
+      pin_name: TX2
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 111.76
+      y: 63.5
+    net: TXD2_ZED
+    net_aliases:
+    - TXD2_ZED
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J8
+      pin_number: '2'
+      pin_name: '2'
+    - reference: TX2-RX2
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 104.0638
+        y: 62.4078
+      max:
+        x: 109.2962
+        y: 64.5922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 106.68
+        y: 63.5
+  warnings: []
+connected_components:
+- reference: J8
+  pin_number: '2'
+  pin_name: '2'
+- reference: TX2-RX2
+  pin_number: '1'
+  pin_name: '1'
+- reference: U4
+  pin_number: '27'
+  pin_name: TX2

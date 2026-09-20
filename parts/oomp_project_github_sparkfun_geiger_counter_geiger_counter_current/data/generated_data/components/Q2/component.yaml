@@ -1,0 +1,570 @@
+reference: Q2
+schematic:
+  available: true
+  units:
+  - reference: Q2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 5556f1e5-9382-4c57-84bc-eba5ed1693ef
+    library_id: kicad_file-eagle-import:TRANSISTOR_NPNTO92
+    unit: 1
+    body_style: 1
+    position:
+      x: 231.14
+      y: 48.26
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: Q2
+      Value: MPSA18
+      Footprint: kicad_file:TO-92
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: E
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 233.68
+        y: 53.34
+      net: OUT
+      net_aliases:
+      - OUT
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP2
+        pin_number: '3'
+        pin_name: '3'
+      - reference: R17
+        pin_number: P$2
+        pin_name: '2'
+      - reference: U8
+        pin_number: '32'
+        pin_name: PD2(INT0)
+    - number: '2'
+      name: B
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 228.6
+        y: 48.26
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R15
+        pin_number: P$2
+        pin_name: '2'
+    - number: '3'
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 233.68
+        y: 43.18
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R16
+        pin_number: P$1
+        pin_name: '1'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.25395
+          y: -2.6162
+        max:
+          x: 2.6162
+          y: 2.6162
+        width: 2.87015
+        height: 5.2324
+        center:
+          x: 1.181125
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 230.88605
+          y: 45.6438
+        max:
+          x: 233.7562
+          y: 50.8762
+        width: 2.87015
+        height: 5.2324
+        center:
+          x: 232.321125
+          y: 48.26
+    warnings: []
+  connected_components:
+  - reference: JP2
+    pin_number: '3'
+    pin_name: '3'
+  - reference: R15
+    pin_number: P$2
+    pin_name: '2'
+  - reference: R16
+    pin_number: P$1
+    pin_name: '1'
+  - reference: R17
+    pin_number: P$2
+    pin_name: '2'
+  - reference: U8
+    pin_number: '32'
+    pin_name: PD2(INT0)
+pcb:
+  reference: Q2
+  value: MPSA18
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 93afc9fc-a52a-4d71-a974-c517a335e474
+  library_id: Geiger_Counter-import-fps:TO-92
+  layer: F.Cu
+  side: front
+  position:
+    x: 97.79
+    y: -40.64
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: Q2
+    Value: MPSA18
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -1.27
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 99.06
+      y: -40.64
+    placed_rotation: 0.0
+    size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: OUT
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.2098
+          y: -0.9398
+        max:
+          x: -0.3302
+          y: 0.9398
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: -1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 98.1202
+          y: -41.5798
+        max:
+          x: 99.9998
+          y: -39.7002
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 99.06
+          y: -40.64
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP2
+      pad_number: '3'
+    - reference: R17
+      pad_number: P$2
+    - reference: U8
+      pad_number: '32'
+  - number: '2'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 0.0
+      y: -1.905
+      rotation: 180.0
+    position:
+      x: 97.79
+      y: -38.735
+    placed_rotation: 0.0
+    size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: N$5
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.9398
+          y: -2.8448
+        max:
+          x: 0.9398
+          y: -0.9652
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 0.0
+          y: -1.905
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 96.8502
+          y: -39.6748
+        max:
+          x: 98.7298
+          y: -37.7952
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 97.79
+          y: -38.735
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: R15
+      pad_number: P$2
+  - number: '3'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 1.27
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 96.52
+      y: -40.64
+    placed_rotation: 0.0
+    size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: N$8
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.3302
+          y: -0.9398
+        max:
+          x: 2.2098
+          y: 0.9398
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 1.27
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 95.5802
+          y: -41.5798
+        max:
+          x: 97.4598
+          y: -39.7002
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 96.52
+          y: -40.64
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: R16
+      pad_number: P$1
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.2098
+        y: -2.8448
+      max:
+        x: 2.2098
+        y: 0.9398
+      width: 4.4196
+      height: 3.7846
+      center:
+        x: 0.0
+        y: -0.9525
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 95.5802
+        y: -41.5798
+      max:
+        x: 99.9998
+        y: -37.7952
+      width: 4.4196
+      height: 3.7846
+      center:
+        x: 97.79
+        y: -39.6875
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.768647
+        y: -2.650101
+      max:
+        x: 2.768561
+        y: 1.7526
+      width: 5.537208
+      height: 4.402701
+      center:
+        x: -4.3e-05
+        y: -0.448751
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 95.021439
+        y: -42.3926
+      max:
+        x: 100.558647
+        y: -37.989899
+      width: 5.537208
+      height: 4.402701
+      center:
+        x: 97.790043
+        y: -40.191249
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.768647
+        y: -2.8448
+      max:
+        x: 2.768561
+        y: 1.7526
+      width: 5.537208
+      height: 4.5974
+      center:
+        x: -4.3e-05
+        y: -0.5461
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 95.021439
+        y: -42.3926
+      max:
+        x: 100.558647
+        y: -37.7952
+      width: 5.537208
+      height: 4.5974
+      center:
+        x: 97.790043
+        y: -40.0939
+  connected_components:
+  - JP2
+  - R15
+  - R16
+  - R17
+  - U8
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - OUT
+    pcb_nets:
+    - OUT
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - N$5
+    status: incomplete
+  - pin_or_pad_number: '3'
+    schematic_nets: []
+    pcb_nets:
+    - N$8
+    status: incomplete
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: transistor
+    package_size: null
+    value: MPSA18
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_transistor_sot_23_bipolar_npn
+    score: 0.0769
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_bipolar_pnp
+    score: 0.0769
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
+    score: 0.0747
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_363_6_mosfet_n_channel_dual
+    score: 0.0738
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+    score: 0.0691
+    reasons:
+    - same component family
+category: transistor
+category_source: unmatched_kicad_hint
+category_name: Transistor
+generated_directory: components/Q2

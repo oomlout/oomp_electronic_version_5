@@ -1,0 +1,196 @@
+available: true
+units:
+- reference: Q3
+  source_file: data/kicad_file.kicad_sch
+  uuid: d8e0fe6a-4e9e-4231-aaa6-ceeade3aab2a
+  library_id: kicad_file-eagle-import:MOSFET_PCH-DMG2305UX-7
+  unit: 1
+  body_style: 1
+  position:
+    x: 177.8
+    y: 35.56
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q3
+    Value: 20V/4.2A/52mΩ/1.4W
+    Footprint: kicad_file:SOT23-3
+    Datasheet: ''
+    Description: ''
+    PROD_ID: TRANS-14388
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: G
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 40.64
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q1
+      pin_number: '3'
+      pin_name: C
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+  - number: '2'
+    name: S
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 182.88
+      y: 33.02
+    net: 5V_MEAS
+    net_aliases:
+    - 5V_MEAS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: MEAS0
+      pin_number: '1'
+      pin_name: '1'
+    - reference: MEAS0
+      pin_number: '3'
+      pin_name: '1'
+    - reference: Q1
+      pin_number: '4'
+      pin_name: E
+  - number: '3'
+    name: D
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 172.72
+      y: 33.02
+    net: V_USB
+    net_aliases:
+    - V_USB
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY9'
+      pin_number: '1'
+      pin_name: V_USB
+    - reference: '#SUPPLY10'
+      pin_number: '1'
+      pin_name: V_USB
+    - reference: '#SUPPLY18'
+      pin_number: '1'
+      pin_name: V_USB
+    - reference: C6
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C7
+      pin_number: +
+      pin_name: +
+    - reference: J1
+      pin_number: VBUS1
+      pin_name: VBUS
+    - reference: J1
+      pin_number: VBUS2
+      pin_name: VBUS
+    - reference: Q1
+      pin_number: '6'
+      pin_name: C
+    - reference: U5
+      pin_number: '5'
+      pin_name: VCC
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -2.6162
+      max:
+        x: 3.556
+        y: 2.6162
+      width: 6.1722
+      height: 5.2324
+      center:
+        x: 0.4699
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 175.1838
+        y: 32.004
+      max:
+        x: 180.4162
+        y: 38.1762
+      width: 5.2324
+      height: 6.1722
+      center:
+        x: 177.8
+        y: 35.0901
+  warnings: []
+connected_components:
+- reference: '#SUPPLY9'
+  pin_number: '1'
+  pin_name: V_USB
+- reference: '#SUPPLY10'
+  pin_number: '1'
+  pin_name: V_USB
+- reference: '#SUPPLY18'
+  pin_number: '1'
+  pin_name: V_USB
+- reference: C6
+  pin_number: '1'
+  pin_name: '1'
+- reference: C7
+  pin_number: +
+  pin_name: +
+- reference: J1
+  pin_number: VBUS1
+  pin_name: VBUS
+- reference: J1
+  pin_number: VBUS2
+  pin_name: VBUS
+- reference: MEAS0
+  pin_number: '1'
+  pin_name: '1'
+- reference: MEAS0
+  pin_number: '3'
+  pin_name: '1'
+- reference: Q1
+  pin_number: '3'
+  pin_name: C
+- reference: Q1
+  pin_number: '4'
+  pin_name: E
+- reference: Q1
+  pin_number: '6'
+  pin_name: C
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'
+- reference: U5
+  pin_number: '5'
+  pin_name: VCC

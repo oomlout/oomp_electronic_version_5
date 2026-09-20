@@ -1,0 +1,152 @@
+available: true
+units:
+- reference: RV2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 6eed56df-c25e-4a5e-894b-a15d935d3a18
+  library_id: kicad_file-eagle-import:POTALPS-KIT
+  unit: 1
+  body_style: 1
+  position:
+    x: 180.34
+    y: 231.14
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: RV2
+    Value: 10k
+    Footprint: kicad_file:ALPS_POT_KIT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-09177
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 7.62
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 187.96
+      y: 231.14
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C3
+      pin_number: '1'
+      pin_name: +
+    - reference: IC3
+      pin_number: '5'
+      pin_name: +IN
+  - number: P$2
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 236.22
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC3
+      pin_number: '1'
+      pin_name: OUT
+    - reference: IC3
+      pin_number: '2'
+      pin_name: -IN
+    - reference: RV2
+      pin_number: P$3
+      pin_name: A
+  - number: P$3
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -7.62
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 172.72
+      y: 231.14
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC3
+      pin_number: '1'
+      pin_name: OUT
+    - reference: IC3
+      pin_number: '2'
+      pin_name: -IN
+    - reference: RV2
+      pin_number: P$2
+      pin_name: S
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.143
+        y: -5.1562
+      max:
+        x: 2.7432
+        y: 5.1562
+      width: 3.8862
+      height: 10.3124
+      center:
+        x: 0.8001
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 175.1838
+        y: 229.997
+      max:
+        x: 185.4962
+        y: 233.8832
+      width: 10.3124
+      height: 3.8862
+      center:
+        x: 180.34
+        y: 231.9401
+  warnings: []
+connected_components:
+- reference: C3
+  pin_number: '1'
+  pin_name: +
+- reference: IC3
+  pin_number: '1'
+  pin_name: OUT
+- reference: IC3
+  pin_number: '2'
+  pin_name: -IN
+- reference: IC3
+  pin_number: '5'
+  pin_name: +IN
+- reference: RV2
+  pin_number: P$2
+  pin_name: S
+- reference: RV2
+  pin_number: P$3
+  pin_name: A

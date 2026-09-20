@@ -1,0 +1,482 @@
+reference: C2
+schematic:
+  available: true
+  units:
+  - reference: C2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 3c62eabd-703a-40a1-9cb0-3e0689e10ece
+    library_id: kicad_file-eagle-import:270PF-0402T-50V-5%
+    unit: 1
+    body_style: 1
+    position:
+      x: 53.34
+      y: 187.96
+      rotation: 0.0
+      mirror: y
+      units: mm
+    properties:
+      Reference: C2
+      Value: 270pF
+      Footprint: kicad_file:0402-TIGHT
+      Datasheet: ''
+      Description: ''
+      PROD_ID: CAP-15129
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 53.34
+        y: 182.88
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U2
+        pin_number: '7'
+        pin_name: SENSOR_CAPN(GPI38/ADC1:2/RTC2)
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -2.54
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 53.34
+        y: 190.5
+      net: 39-BATT/3
+      net_aliases:
+      - 39-BATT/3
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: J1
+        pin_number: '49'
+        pin_name: BATT_VIN/3
+      - reference: U2
+        pin_number: '8'
+        pin_name: SENSOR_VN(GPI39/ADC1:3/RTC3)
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.03195
+          y: -0.0762
+        max:
+          x: 2.03195
+          y: 2.6162
+        width: 4.0639
+        height: 2.6924
+        center:
+          x: 0.0
+          y: 1.27
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 51.30805
+          y: 185.3438
+        max:
+          x: 55.37195
+          y: 188.0362
+        width: 4.0639
+        height: 2.6924
+        center:
+          x: 53.34
+          y: 186.69
+    warnings: []
+  connected_components:
+  - reference: J1
+    pin_number: '49'
+    pin_name: BATT_VIN/3
+  - reference: U2
+    pin_number: '7'
+    pin_name: SENSOR_CAPN(GPI38/ADC1:2/RTC2)
+  - reference: U2
+    pin_number: '8'
+    pin_name: SENSOR_VN(GPI39/ADC1:3/RTC3)
+pcb:
+  reference: C2
+  value: 270pF
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 7c02571c-62a1-44de-9c92-1cc5d143394e
+  library_id: SparkFun_MicroMod_ESP32-import-fps:0402-TIGHT
+  layer: F.Cu
+  side: front
+  position:
+    x: 4.699
+    y: -10.3984
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: C2
+    Value: 270pF
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.5
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 5.199
+      y: -10.3984
+    placed_rotation: 0.0
+    size:
+      x: 0.6
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: '38'
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.8
+          y: -0.3
+        max:
+          x: -0.2
+          y: 0.3
+        width: 0.6
+        height: 0.6
+        center:
+          x: -0.5
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 4.899
+          y: -10.6984
+        max:
+          x: 5.499
+          y: -10.0984
+        width: 0.6
+        height: 0.6
+        center:
+          x: 5.199
+          y: -10.3984
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: U2
+      pad_number: '7'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.5
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 4.199
+      y: -10.3984
+    placed_rotation: 0.0
+    size:
+      x: 0.6
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: 39-BATT/3
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.2
+          y: -0.3
+        max:
+          x: 0.8
+          y: 0.3
+        width: 0.6
+        height: 0.6
+        center:
+          x: 0.5
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 3.899
+          y: -10.6984
+        max:
+          x: 4.499
+          y: -10.0984
+        width: 0.6
+        height: 0.6
+        center:
+          x: 4.199
+          y: -10.3984
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: J1
+      pad_number: '49'
+    - reference: U2
+      pad_number: '8'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.8
+        y: -0.3
+      max:
+        x: 0.8
+        y: 0.3
+      width: 1.6
+      height: 0.6
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 3.899
+        y: -10.6984
+      max:
+        x: 5.499
+        y: -10.0984
+      width: 1.6
+      height: 0.6
+      center:
+        x: 4.699
+        y: -10.3984
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.9512
+        y: -0.4512
+      max:
+        x: 0.9512
+        y: 0.4512
+      width: 1.9024
+      height: 0.9024
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 3.7478
+        y: -10.8496
+      max:
+        x: 5.6502
+        y: -9.9472
+      width: 1.9024
+      height: 0.9024
+      center:
+        x: 4.699
+        y: -10.3984
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.50127
+        y: -0.25127
+      max:
+        x: 0.50127
+        y: 0.25127
+      width: 1.00254
+      height: 0.50254
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 4.19773
+        y: -10.64967
+      max:
+        x: 5.20027
+        y: -10.14713
+      width: 1.00254
+      height: 0.50254
+      center:
+        x: 4.699
+        y: -10.3984
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.9512
+        y: -0.4512
+      max:
+        x: 0.9512
+        y: 0.4512
+      width: 1.9024
+      height: 0.9024
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 3.7478
+        y: -10.8496
+      max:
+        x: 5.6502
+        y: -9.9472
+      width: 1.9024
+      height: 0.9024
+      center:
+        x: 4.699
+        y: -10.3984
+  connected_components:
+  - J1
+  - U2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - '38'
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - 39-BATT/3
+    pcb_nets:
+    - 39-BATT/3
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: electronic_capacitor_0402_270_pico_farad
+  inferred:
+    kind: capacitor
+    package_size: '0402'
+    value: 270pF
+    mpn: null
+  reasons:
+  - The exact normalized component is not present in the OOMP parts directory.
+  candidates:
+  - oomp_id: electronic_capacitor_0402_27_pico_farad
+    score: 0.8782
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0402_120_pico_farad
+    score: 0.8777
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0402_22_pico_farad
+    score: 0.8769
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0402_8_pico_farad
+    score: 0.8758
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+  - oomp_id: electronic_capacitor_0402_15_pico_farad
+    score: 0.8757
+    reasons:
+    - same component family
+    - same package size
+    - nearby normalized value
+category: capacitor
+category_source: unmatched_kicad_hint
+category_name: Capacitor
+generated_directory: components/C2

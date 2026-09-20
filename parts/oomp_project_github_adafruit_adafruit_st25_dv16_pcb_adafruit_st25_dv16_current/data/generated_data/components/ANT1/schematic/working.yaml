@@ -1,0 +1,104 @@
+available: true
+units:
+- reference: ANT1
+  source_file: data/kicad_file.kicad_sch
+  uuid: c0cdc4ce-c471-45e7-805e-3a22e495c2a0
+  library_id: kicad_file-eagle-import:NFC_ANTENNA_25X15
+  unit: 1
+  body_style: 1
+  position:
+    x: 154.94
+    y: 93.98
+    rotation: 270.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: ANT1
+    Value: NFC_ANTENNA_25X15
+    Footprint: kicad_file:NFCANT_25X15
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 88.9
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: RF1
+      pin_number: '2'
+      pin_name: AC0
+  - number: P$2
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 154.94
+      y: 99.06
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: RF1
+      pin_number: '3'
+      pin_name: AC1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -0.127
+      max:
+        x: 2.667
+        y: 1.0794
+      width: 5.334
+      height: 1.2064
+      center:
+        x: 0.0
+        y: 0.4762
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 153.8606
+        y: 91.313
+      max:
+        x: 155.067
+        y: 96.647
+      width: 1.2064
+      height: 5.334
+      center:
+        x: 154.4638
+        y: 93.98
+  warnings: []
+connected_components:
+- reference: RF1
+  pin_number: '2'
+  pin_name: AC0
+- reference: RF1
+  pin_number: '3'
+  pin_name: AC1

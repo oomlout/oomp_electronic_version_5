@@ -1,0 +1,136 @@
+available: true
+units:
+- reference: R2
+  source_file: data/kicad_file.kicad_sch
+  uuid: c4acd427-33f0-4ca6-8c23-9bed7995448a
+  library_id: kicad_file-eagle-import:RESISTOR0603-RES
+  unit: 1
+  body_style: 1
+  position:
+    x: 147.32
+    y: 91.44
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R2
+    Value: 10K
+    Footprint: kicad_file:0603-RES
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 147.32
+      y: 86.36
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#P+1'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#P+2'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#P+3'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: JP1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 147.32
+      y: 96.52
+    net: OUT
+    net_aliases:
+    - OUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '3'
+      pin_name: C
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 146.2278
+        y: 88.8238
+      max:
+        x: 148.4122
+        y: 94.0562
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 147.32
+        y: 91.44
+  warnings: []
+connected_components:
+- reference: '#P+1'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#P+2'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#P+3'
+  pin_number: '1'
+  pin_name: VCC
+- reference: JP1
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: '3'
+  pin_name: C

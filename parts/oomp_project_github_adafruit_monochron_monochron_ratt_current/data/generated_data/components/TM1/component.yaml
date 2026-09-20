@@ -1,0 +1,579 @@
+reference: TM1
+schematic:
+  available: true
+  units:
+  - reference: TM1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 00e343ae-3b40-4488-9742-9b81f50f9d94
+    library_id: kicad_file-eagle-import:TRIM_US-CA6H
+    unit: 1
+    body_style: 1
+    position:
+      x: 203.2
+      y: 114.3
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: TM1
+      Value: 10K
+      Footprint: kicad_file:11
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -7.62
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 203.2
+        y: 121.92
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: GND4
+        pin_number: '1'
+        pin_name: GND
+    - number: '2'
+      name: E
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 7.62
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 203.2
+        y: 106.68
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U$1
+        pin_number: '3'
+        pin_name: VEE
+    - number: '3'
+      name: S
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 208.28
+        y: 114.3
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: U$1
+        pin_number: '18'
+        pin_name: VO
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -1.143
+          y: -5.1562
+        max:
+          x: 2.7432
+          y: 5.1562
+        width: 3.8862
+        height: 10.3124
+        center:
+          x: 0.8001
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 202.057
+          y: 109.1438
+        max:
+          x: 205.9432
+          y: 119.4562
+        width: 3.8862
+        height: 10.3124
+        center:
+          x: 204.0001
+          y: 114.3
+    warnings: []
+  connected_components:
+  - reference: GND4
+    pin_number: '1'
+    pin_name: GND
+  - reference: U$1
+    pin_number: '18'
+    pin_name: VO
+  - reference: U$1
+    pin_number: '3'
+    pin_name: VEE
+pcb:
+  reference: TM1
+  value: 10K
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 09aa60ba-7978-4c4d-b18c-b12557dd2f13
+  library_id: ratt-import-fps:CA6H
+  layer: F.Cu
+  side: front
+  position:
+    x: 89.662
+    y: -17.78
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: TM1
+    Value: 10K
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: thru_hole
+    shape: oval
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 89.662
+      y: -20.32
+    placed_rotation: 0.0
+    size:
+      x: 3.048
+      y: 1.524
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.016
+      y: 1.016
+      diameter: 1.016
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: +9V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -3.302
+          y: -1.524
+        max:
+          x: -1.778
+          y: 1.524
+        width: 1.524
+        height: 3.048
+        center:
+          x: -2.54
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 88.138
+          y: -21.082
+        max:
+          x: 91.186
+          y: -19.558
+        width: 3.048
+        height: 1.524
+        center:
+          x: 89.662
+          y: -20.32
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '2'
+    - reference: S1
+      pad_number: '1'
+    - reference: S2
+      pad_number: '2'
+  - number: E
+    type: thru_hole
+    shape: oval
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 89.662
+      y: -15.24
+    placed_rotation: 0.0
+    size:
+      x: 3.048
+      y: 1.524
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.016
+      y: 1.016
+      diameter: 1.016
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: VCC
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.778
+          y: -1.524
+        max:
+          x: 3.302
+          y: 1.524
+        width: 1.524
+        height: 3.048
+        center:
+          x: 2.54
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 88.138
+          y: -16.002
+        max:
+          x: 91.186
+          y: -14.478
+        width: 3.048
+        height: 1.524
+        center:
+          x: 89.662
+          y: -15.24
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC1
+      pad_number: '2'
+    - reference: IC2
+      pad_number: '1'
+    - reference: IC3
+      pad_number: '2'
+    - reference: ISP0
+      pad_number: '1'
+    - reference: JP1
+      pad_number: '4'
+    - reference: JP3
+      pad_number: '4'
+    - reference: R2'0
+      pad_number: '2'
+    - reference: R8
+      pad_number: '1'
+    - reference: SP1
+      pad_number: P$2
+    - reference: SW1
+      pad_number: '2'
+  - number: S
+    type: thru_hole
+    shape: oval
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: -90.0
+    position:
+      x: 92.202
+      y: -17.78
+    placed_rotation: 0.0
+    size:
+      x: 3.048
+      y: 1.524
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.016
+      y: 1.016
+      diameter: 1.016
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.762
+          y: -4.064
+        max:
+          x: 0.762
+          y: -1.016
+        width: 1.524
+        height: 3.048
+        center:
+          x: 0.0
+          y: -2.54
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 90.678
+          y: -18.542
+        max:
+          x: 93.726
+          y: -17.018
+        width: 3.048
+        height: 1.524
+        center:
+          x: 92.202
+          y: -17.78
+    plating: plated
+    is_mounting_hole: false
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -3.302
+        y: -4.064
+      max:
+        x: 3.302
+        y: 1.524
+      width: 6.604
+      height: 5.588
+      center:
+        x: 0.0
+        y: -1.27
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 88.138
+        y: -21.082
+      max:
+        x: 93.726
+        y: -14.478
+      width: 5.588
+      height: 6.604
+      center:
+        x: 90.932
+        y: -17.78
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -3.3782
+        y: -3.6322
+      max:
+        x: 3.3782
+        y: 0.0762
+      width: 6.7564
+      height: 3.7084
+      center:
+        x: 0.0
+        y: -1.778
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 89.5858
+        y: -21.1582
+      max:
+        x: 93.2942
+        y: -14.4018
+      width: 3.7084
+      height: 6.7564
+      center:
+        x: 91.44
+        y: -17.78
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -3.3782
+        y: -3.6322
+      max:
+        x: 3.3782
+        y: 0.0762
+      width: 6.7564
+      height: 3.7084
+      center:
+        x: 0.0
+        y: -1.778
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 89.5858
+        y: -21.1582
+      max:
+        x: 93.2942
+        y: -14.4018
+      width: 3.7084
+      height: 6.7564
+      center:
+        x: 91.44
+        y: -17.78
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -3.3782
+        y: -4.064
+      max:
+        x: 3.3782
+        y: 1.524
+      width: 6.7564
+      height: 5.588
+      center:
+        x: 0.0
+        y: -1.27
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 88.138
+        y: -21.1582
+      max:
+        x: 93.726
+        y: -14.4018
+      width: 5.588
+      height: 6.7564
+      center:
+        x: 90.932
+        y: -17.78
+  connected_components:
+  - C1
+  - IC1
+  - IC2
+  - IC3
+  - ISP0
+  - JP1
+  - JP3
+  - R2'0
+  - R8
+  - S1
+  - S2
+  - SP1
+  - SW1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '3'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: A
+    schematic_nets: []
+    pcb_nets:
+    - +9V
+    status: incomplete
+  - pin_or_pad_number: E
+    schematic_nets: []
+    pcb_nets:
+    - VCC
+    status: incomplete
+  - pin_or_pad_number: S
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: 10K
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/TM1

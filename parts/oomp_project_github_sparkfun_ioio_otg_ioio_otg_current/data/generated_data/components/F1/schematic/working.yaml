@@ -1,0 +1,119 @@
+available: true
+units:
+- reference: F1
+  source_file: data/kicad_file.kicad_sch
+  uuid: b267a2cc-4576-468a-a5d3-5b4c7cc5f59d
+  library_id: kicad_file-eagle-import:PTCSMD
+  unit: 1
+  body_style: 1
+  position:
+    x: 337.82
+    y: 58.42
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: F1
+    Value: 0.75A
+    Footprint: kicad_file:PTC-1206
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-11150
+    PART#: 0ZCA0075FF2G
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 332.74
+      y: 58.42
+    net: VBUS
+    net_aliases:
+    - VBUS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP21
+      pin_number: VBUS1
+      pin_name: VBUS
+    - reference: U1
+      pin_number: '34'
+      pin_name: VBUS/RF7
+  - number: '2'
+    name: '2'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 345.44
+      y: 58.42
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D1
+      pin_number: A
+      pin_name: A
+    - reference: Q1
+      pin_number: '3'
+      pin_name: D
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -2.667
+      max:
+        x: 5.207
+        y: 2.667
+      width: 7.874
+      height: 5.334
+      center:
+        x: 1.27
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 335.153
+        y: 55.753
+      max:
+        x: 343.027
+        y: 61.087
+      width: 7.874
+      height: 5.334
+      center:
+        x: 339.09
+        y: 58.42
+  warnings: []
+connected_components:
+- reference: D1
+  pin_number: A
+  pin_name: A
+- reference: JP21
+  pin_number: VBUS1
+  pin_name: VBUS
+- reference: Q1
+  pin_number: '3'
+  pin_name: D
+- reference: U1
+  pin_number: '34'
+  pin_name: VBUS/RF7

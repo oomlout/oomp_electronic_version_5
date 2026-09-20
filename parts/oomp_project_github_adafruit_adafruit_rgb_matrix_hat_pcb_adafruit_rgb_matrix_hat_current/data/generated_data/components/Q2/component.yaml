@@ -1,0 +1,568 @@
+reference: Q2
+schematic:
+  available: true
+  units:
+  - reference: Q2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 7823c901-a124-4abe-b0ba-072c59351e5c
+    library_id: kicad_file-eagle-import:MOSFET-PTO252
+    unit: 1
+    body_style: 1
+    position:
+      x: 68.58
+      y: 195.58
+      rotation: 270.0
+      mirror: x
+      units: mm
+    properties:
+      Reference: Q2
+      Value: AOD417
+      Footprint: kicad_file:TO252
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: G
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 2.54
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 66.04
+        y: 190.5
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '2'
+      name: S
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 63.5
+        y: 195.58
+      net: 5VIN
+      net_aliases:
+      - 5VIN
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: X1
+        pin_number: '1'
+        pin_name: PWR
+      - reference: X1
+        pin_number: 1'
+        pin_name: PWR
+    - number: '3'
+      name: D
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 73.66
+        y: 195.58
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: IC3
+        pin_number: '1'
+        pin_name: IN
+      - reference: Q1
+        pin_number: '3'
+        pin_name: D
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -3.302
+        max:
+          x: 2.1082
+          y: 3.302
+        width: 4.7752
+        height: 6.604
+        center:
+          x: -0.2794
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 65.278
+          y: 192.913
+        max:
+          x: 71.882
+          y: 197.6882
+        width: 6.604
+        height: 4.7752
+        center:
+          x: 68.58
+          y: 195.3006
+    warnings: []
+  connected_components:
+  - reference: IC3
+    pin_number: '1'
+    pin_name: IN
+  - reference: Q1
+    pin_number: '3'
+    pin_name: D
+  - reference: X1
+    pin_number: '1'
+    pin_name: PWR
+  - reference: X1
+    pin_number: 1'
+    pin_name: PWR
+pcb:
+  reference: Q2
+  value: AOD417
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 020b2656-965d-4b6a-aa82-c85479b6b6e0
+  library_id: Adafruit RGB Matrix HAT-import-fps:TO252
+  layer: F.Cu
+  side: front
+  position:
+    x: 7.493
+    y: -16.002
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: Q2
+    Value: AOD417
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -2.28
+      y: 3.657
+      rotation: 90.0
+    position:
+      x: 11.15
+      y: -13.722
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 1.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$7
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -3.08
+          y: 3.157
+        max:
+          x: -1.48
+          y: 4.157
+        width: 1.6
+        height: 1.0
+        center:
+          x: -2.28
+          y: 3.657
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.65
+          y: -14.522
+        max:
+          x: 11.65
+          y: -12.922
+        width: 1.0
+        height: 1.6
+        center:
+          x: 11.15
+          y: -13.722
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC3
+      pad_number: '5'
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 2.28
+      y: 3.657
+      rotation: 90.0
+    position:
+      x: 11.15
+      y: -18.282
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 1.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$5
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.48
+          y: 3.157
+        max:
+          x: 3.08
+          y: 4.157
+        width: 1.6
+        height: 1.0
+        center:
+          x: 2.28
+          y: 3.657
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.65
+          y: -19.082
+        max:
+          x: 11.65
+          y: -17.482
+        width: 1.0
+        height: 1.6
+        center:
+          x: 11.15
+          y: -18.282
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC3
+      pad_number: '1'
+    - reference: Q1
+      pad_number: '3'
+  - number: '3'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: -3.643
+      rotation: 90.0
+    position:
+      x: 3.85
+      y: -16.002
+    placed_rotation: 0.0
+    size:
+      x: 5.4
+      y: 6.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: 5VIN
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -3.1
+          y: -6.343
+        max:
+          x: 3.1
+          y: -0.943
+        width: 6.2
+        height: 5.4
+        center:
+          x: 0.0
+          y: -3.643
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 1.15
+          y: -19.102
+        max:
+          x: 6.55
+          y: -12.902
+        width: 5.4
+        height: 6.2
+        center:
+          x: 3.85
+          y: -16.002
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: X1
+      pad_number: '1'
+    - reference: X1
+      pad_number: 1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -3.1
+        y: -6.343
+      max:
+        x: 3.1
+        y: 4.157
+      width: 6.2
+      height: 10.5
+      center:
+        x: 0.0
+        y: -1.093
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 1.15
+        y: -19.102
+      max:
+        x: 11.65
+        y: -12.902
+      width: 10.5
+      height: 6.2
+      center:
+        x: 6.4
+        y: -16.002
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -3.3786
+        y: -6.35
+      max:
+        x: 3.379
+        y: 4.0132
+      width: 6.7576
+      height: 10.3632
+      center:
+        x: 0.0002
+        y: -1.1684
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 1.143
+        y: -19.381
+      max:
+        x: 11.5062
+        y: -12.6234
+      width: 10.3632
+      height: 6.7576
+      center:
+        x: 6.3246
+        y: -16.0022
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -3.3786
+        y: -5.08
+      max:
+        x: 3.3786
+        y: 1.8796
+      width: 6.7572
+      height: 6.9596
+      center:
+        x: 0.0
+        y: -1.6002
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 2.413
+        y: -19.3806
+      max:
+        x: 9.3726
+        y: -12.6234
+      width: 6.9596
+      height: 6.7572
+      center:
+        x: 5.8928
+        y: -16.002
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -3.3786
+        y: -6.35
+      max:
+        x: 3.379
+        y: 4.157
+      width: 6.7576
+      height: 10.507
+      center:
+        x: 0.0002
+        y: -1.0965
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 1.143
+        y: -19.381
+      max:
+        x: 11.65
+        y: -12.6234
+      width: 10.507
+      height: 6.7576
+      center:
+        x: 6.3965
+        y: -16.0022
+  connected_components:
+  - IC3
+  - Q1
+  - X1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - N$7
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - 5VIN
+    pcb_nets:
+    - N$5
+    status: disagree
+  - pin_or_pad_number: '3'
+    schematic_nets: []
+    pcb_nets:
+    - 5VIN
+    status: incomplete
+  agree_count: 0
+  disagree_count: 1
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: transistor
+    package_size: null
+    value: AOD417
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_transistor_sot_363_6_mosfet_n_channel_dual
+    score: 0.1168
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+    score: 0.1121
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
+    score: 0.1022
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+    score: 0.1022
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138
+    score: 0.0863
+    reasons:
+    - same component family
+category: transistor
+category_source: unmatched_kicad_hint
+category_name: Transistor
+generated_directory: components/Q2

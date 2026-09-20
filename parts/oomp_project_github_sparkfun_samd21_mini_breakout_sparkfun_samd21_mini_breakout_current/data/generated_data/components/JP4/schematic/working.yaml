@@ -1,0 +1,106 @@
+available: true
+units:
+- reference: JP4
+  source_file: data/kicad_file.kicad_sch
+  uuid: ca0e287d-1b1c-4674-84c6-517680c1d9a3
+  library_id: kicad_file-eagle-import:M021X02_NO_SILK
+  unit: 1
+  body_style: 1
+  position:
+    x: 254.0
+    y: 147.32
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP4
+    Value: M021X02_NO_SILK
+    Footprint: kicad_file:1X02_NO_SILK
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 261.62
+      y: 147.32
+    net: SDA
+    net_aliases:
+    - SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '31'
+      pin_name: PA22(I2C/SER3:0+)
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 261.62
+      y: 144.78
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '32'
+      pin_name: PA23(I2C/SER3:0+)
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.7432
+        y: -2.7432
+      max:
+        x: 4.0132
+        y: 5.2832
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 0.635
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 251.2568
+        y: 142.0368
+      max:
+        x: 258.0132
+        y: 150.0632
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 254.635
+        y: 146.05
+  warnings: []
+connected_components:
+- reference: U1
+  pin_number: '31'
+  pin_name: PA22(I2C/SER3:0+)
+- reference: U1
+  pin_number: '32'
+  pin_name: PA23(I2C/SER3:0+)

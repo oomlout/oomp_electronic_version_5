@@ -1,0 +1,111 @@
+available: true
+units:
+- reference: L3
+  source_file: data/kicad_file.kicad_sch
+  uuid: b179a9be-8efc-4b89-80f4-083a586c9d33
+  library_id: kicad_file-eagle-import:INDUCTOR0402
+  unit: 1
+  body_style: 1
+  position:
+    x: 200.66
+    y: 129.54
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: L3
+    Value: Ferrite 2.5k
+    Footprint: kicad_file:C0402
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 7.62
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 193.04
+      y: 129.54
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C9
+      pin_number: C
+      pin_name: '-'
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -7.62
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 208.28
+      y: 129.54
+    net: LA
+    net_aliases:
+    - LA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '3'
+      pin_name: '3'
+    - reference: U2
+      pin_number: TIP
+      pin_name: LEFT
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.127
+        y: -5.207
+      max:
+        x: 1.397
+        y: 5.207
+      width: 1.524
+      height: 10.414
+      center:
+        x: 0.635
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 195.453
+        y: 128.143
+      max:
+        x: 205.867
+        y: 129.667
+      width: 10.414
+      height: 1.524
+      center:
+        x: 200.66
+        y: 128.905
+  warnings: []
+connected_components:
+- reference: C9
+  pin_number: C
+  pin_name: '-'
+- reference: JP3
+  pin_number: '3'
+  pin_name: '3'
+- reference: U2
+  pin_number: TIP
+  pin_name: LEFT

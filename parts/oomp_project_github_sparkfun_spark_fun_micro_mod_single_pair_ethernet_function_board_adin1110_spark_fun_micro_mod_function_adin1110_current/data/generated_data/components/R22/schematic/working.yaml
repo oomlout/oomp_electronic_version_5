@@ -1,0 +1,119 @@
+available: true
+units:
+- reference: R22
+  source_file: data/kicad_file.kicad_sch
+  uuid: 23695ba4-bca0-451c-960b-761be4d04431
+  library_id: kicad_file-eagle-import:10KOHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 279.4
+    y: 215.9
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R22
+    Value: 10k
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-00824
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 279.4
+      y: 210.82
+    net: 3.3V_IN
+    net_aliases:
+    - 3.3V_IN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '73'
+      pin_name: 3.3V
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 279.4
+      y: 220.98
+    net: PWR_EN
+    net_aliases:
+    - PWR_EN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '71'
+      pin_name: PWR_EN
+    - reference: Q1
+      pin_number: '1'
+      pin_name: G
+    - reference: U3
+      pin_number: '3'
+      pin_name: EN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 278.3078
+        y: 213.2838
+      max:
+        x: 280.4922
+        y: 218.5162
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 279.4
+        y: 215.9
+  warnings: []
+connected_components:
+- reference: J2
+  pin_number: '71'
+  pin_name: PWR_EN
+- reference: J2
+  pin_number: '73'
+  pin_name: 3.3V
+- reference: Q1
+  pin_number: '1'
+  pin_name: G
+- reference: U3
+  pin_number: '3'
+  pin_name: EN

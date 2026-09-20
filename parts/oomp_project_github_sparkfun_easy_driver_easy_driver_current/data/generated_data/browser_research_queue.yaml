@@ -1,0 +1,273 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 10
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - C1
+  value: .1uF
+  footprint: EasyDriver_v45-import-fps:0603-CAP
+  query: .1uF EasyDriver_v45-import-fps:0603-CAP
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=.1uF+EasyDriver_v45-import-fps%3A0603-CAP
+    datasheet_search: https://www.google.com/search?q=.1uF+EasyDriver_v45-import-fps%3A0603-CAP+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_10_nano_farad
+  - electronic_capacitor_0603_10_pico_farad
+  - electronic_capacitor_0603_18_pico_farad
+  - electronic_capacitor_0603_1_micro_farad
+  - electronic_capacitor_0603_100_nano_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - R1
+  - R2
+  value: '.75'
+  footprint: EasyDriver_v45-import-fps:0805
+  query: .75 EasyDriver_v45-import-fps:0805
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=.75+EasyDriver_v45-import-fps%3A0805
+    datasheet_search: https://www.google.com/search?q=.75+EasyDriver_v45-import-fps%3A0805+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_resistor_0805_75_ohm
+  - electronic_resistor_0201_75_ohm
+  - electronic_resistor_0402_75_ohm
+  - electronic_resistor_0603_75_ohm
+  - electronic_resistor_1206_75_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - R16
+  value: 10K
+  footprint: EasyDriver_v45-import-fps:TRIMPOT-3MM-2
+  query: 10K EasyDriver_v45-import-fps:TRIMPOT-3MM-2
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=10K+EasyDriver_v45-import-fps%3ATRIMPOT-3MM-2
+    datasheet_search: https://www.google.com/search?q=10K+EasyDriver_v45-import-fps%3ATRIMPOT-3MM-2+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_resistor_quarter_watt_through_hole_10000_ohm
+  - electronic_resistor_quarter_watt_through_hole_12000_ohm
+  - electronic_resistor_quarter_watt_through_hole_8200_ohm
+  - electronic_resistor_quarter_watt_through_hole_7500_ohm
+  - electronic_resistor_quarter_watt_through_hole_6800_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - R5
+  value: 2.49K
+  footprint: EasyDriver_v45-import-fps:0603-RES
+  query: 2.49K EasyDriver_v45-import-fps:0603-RES
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=2.49K+EasyDriver_v45-import-fps%3A0603-RES
+    datasheet_search: https://www.google.com/search?q=2.49K+EasyDriver_v45-import-fps%3A0603-RES+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0603_2490_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_quarter_watt_through_hole_2400_ohm
+  - electronic_resistor_quarter_watt_through_hole_2700_ohm
+  - electronic_resistor_quarter_watt_through_hole_2200_ohm
+  - electronic_resistor_quarter_watt_through_hole_2000_ohm
+  - electronic_resistor_quarter_watt_through_hole_3300_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - R8
+  value: '240'
+  footprint: EasyDriver_v45-import-fps:0603-RES
+  query: 240 EasyDriver_v45-import-fps:0603-RES
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=240+EasyDriver_v45-import-fps%3A0603-RES
+    datasheet_search: https://www.google.com/search?q=240+EasyDriver_v45-import-fps%3A0603-RES+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0603_240_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_0603_2400_ohm
+  - electronic_resistor_0603_0_ohm
+  - electronic_resistor_0603_120_ohm
+  - electronic_resistor_0603_200_ohm
+  - electronic_resistor_0603_220_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_6
+  status: needs_browser_research
+  priority: high
+  references:
+  - C3
+  value: 47uF
+  footprint: EasyDriver_v45-import-fps:PANASONIC_D
+  query: 47uF EasyDriver_v45-import-fps:PANASONIC_D
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=47uF+EasyDriver_v45-import-fps%3APANASONIC_D
+    datasheet_search: https://www.google.com/search?q=47uF+EasyDriver_v45-import-fps%3APANASONIC_D+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  - electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_0402_1_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_7
+  status: needs_browser_research
+  priority: high
+  references:
+  - C4
+  - C5
+  value: 680pF
+  footprint: EasyDriver_v45-import-fps:0603-CAP
+  query: 680pF EasyDriver_v45-import-fps:0603-CAP
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=680pF+EasyDriver_v45-import-fps%3A0603-CAP
+    datasheet_search: https://www.google.com/search?q=680pF+EasyDriver_v45-import-fps%3A0603-CAP+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0603_680_pico_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_18_pico_farad
+  - electronic_capacitor_0603_10_pico_farad
+  - electronic_capacitor_0603_470_pico_farad
+  - electronic_capacitor_0603_2200_pico_farad
+  - electronic_capacitor_0603_33_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_8
+  status: needs_browser_research
+  priority: high
+  references:
+  - IC1
+  value: A3967SLB
+  footprint: EasyDriver_v45-import-fps:SO24W
+  query: A3967SLB EasyDriver_v45-import-fps:SO24W
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=A3967SLB+EasyDriver_v45-import-fps%3ASO24W
+    datasheet_search: https://www.google.com/search?q=A3967SLB+EasyDriver_v45-import-fps%3ASO24W+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_9
+  status: needs_browser_research
+  priority: high
+  references:
+  - FRAME2
+  value: FRAME-LETTER
+  footprint: EasyDriver_v45-import-fps:CREATIVE_COMMONS
+  query: FRAME-LETTER EasyDriver_v45-import-fps:CREATIVE_COMMONS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FRAME-LETTER+EasyDriver_v45-import-fps%3ACREATIVE_COMMONS
+    datasheet_search: https://www.google.com/search?q=FRAME-LETTER+EasyDriver_v45-import-fps%3ACREATIVE_COMMONS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_10
+  status: needs_browser_research
+  priority: high
+  references:
+  - IC2
+  value: V_REG_317SMD
+  footprint: EasyDriver_v45-import-fps:SOT223
+  query: V_REG_317SMD EasyDriver_v45-import-fps:SOT223
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=V_REG_317SMD+EasyDriver_v45-import-fps%3ASOT223
+    datasheet_search: https://www.google.com/search?q=V_REG_317SMD+EasyDriver_v45-import-fps%3ASOT223+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

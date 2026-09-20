@@ -1,0 +1,326 @@
+{
+  "format_version": 1,
+  "generated_by": "kicad_agents.production_jlc_agent",
+  "status": "generated_needs_review",
+  "strategy": "KiCad's native CLI exports fabrication and position data; Python writes JLCPCB CSVs and audit data.",
+  "source_board": "data/kicad_file.kicad_pcb",
+  "source_board_sha256": "e584b5160455e946307d6b84c2be5b75328c977e8a3fd4bece3ee581e5db466e",
+  "oomp_metadata_board": "data/oomp_design/SparkFun_MicroSD_Sniffer.kicad_pcb",
+  "kicad_cli": "C:\\Program Files\\KiCad\\10\\bin\\kicad-cli.exe",
+  "kicad_version": "10.99.0",
+  "gerber_layers": [
+    "F.Cu",
+    "In1.Cu",
+    "In2.Cu",
+    "In3.Cu",
+    "In4.Cu",
+    "In5.Cu",
+    "In6.Cu",
+    "In7.Cu",
+    "In8.Cu",
+    "In9.Cu",
+    "In10.Cu",
+    "In11.Cu",
+    "In12.Cu",
+    "In13.Cu",
+    "In14.Cu",
+    "B.Cu",
+    "F.Paste",
+    "B.Paste",
+    "F.Silkscreen",
+    "B.Silkscreen",
+    "F.Mask",
+    "B.Mask",
+    "Edge.Cuts"
+  ],
+  "jlc_bom_columns": [
+    "Comment",
+    "Designator",
+    "Footprint",
+    "LCSC Part #"
+  ],
+  "jlc_cpl_columns": [
+    "Designator",
+    "Mid X",
+    "Mid Y",
+    "Rotation",
+    "Layer"
+  ],
+  "summary": {
+    "bom_groups": 4,
+    "placed_components": 4,
+    "skipped_components": 5,
+    "components_missing_lcsc": 3,
+    "gerber_files": 29,
+    "drc": {
+      "violations": 24,
+      "unconnected_items": 8,
+      "schematic_parity_items": 0
+    }
+  },
+  "settings": {
+    "production_exclude_references": [],
+    "production_lcsc_overrides": {},
+    "production_rotation_offsets": {},
+    "production_position_offsets_mm": {}
+  },
+  "commands": [
+    [
+      "C:/Program Files/KiCad/10/bin/kicad-cli.exe",
+      "pcb",
+      "export",
+      "gerbers",
+      "--output",
+      "data/production_auto_generate/data/gerbers",
+      "--layers",
+      "F.Cu,In1.Cu,In2.Cu,In3.Cu,In4.Cu,In5.Cu,In6.Cu,In7.Cu,In8.Cu,In9.Cu,In10.Cu,In11.Cu,In12.Cu,In13.Cu,In14.Cu,B.Cu,F.Paste,B.Paste,F.Silkscreen,B.Silkscreen,F.Mask,B.Mask,Edge.Cuts",
+      "--subtract-soldermask",
+      "--precision",
+      "6",
+      "--check-zones",
+      "./data/kicad_file.kicad_pcb"
+    ],
+    [
+      "C:/Program Files/KiCad/10/bin/kicad-cli.exe",
+      "pcb",
+      "export",
+      "drill",
+      "--output",
+      "data/production_auto_generate/data/gerbers",
+      "--format",
+      "excellon",
+      "--drill-origin",
+      "absolute",
+      "--excellon-zeros-format",
+      "decimal",
+      "--excellon-oval-format",
+      "route",
+      "--excellon-units",
+      "mm",
+      "--excellon-separate-th",
+      "--generate-map",
+      "--map-format",
+      "gerberx2",
+      "--generate-report",
+      "--report-path",
+      "data/production_auto_generate/data/gerbers/drill_report.txt",
+      "./data/kicad_file.kicad_pcb"
+    ],
+    [
+      "C:/Program Files/KiCad/10/bin/kicad-cli.exe",
+      "pcb",
+      "export",
+      "pos",
+      "--format",
+      "csv",
+      "--units",
+      "mm",
+      "--side",
+      "both",
+      "--exclude-dnp",
+      "--output",
+      "data/production_auto_generate/data/kicad_position_raw.csv",
+      "./data/kicad_file.kicad_pcb"
+    ],
+    [
+      "C:/Program Files/KiCad/10/bin/kicad-cli.exe",
+      "pcb",
+      "drc",
+      "--output",
+      "data/production_auto_generate/data/drc.json",
+      "--format",
+      "json",
+      "--units",
+      "mm",
+      "--severity-all",
+      "./data/kicad_file.kicad_pcb"
+    ]
+  ],
+  "files": [
+    {
+      "path": "bom_jlc.csv",
+      "bytes": 293,
+      "sha256": "8babc1fbe256a496f342d8108b08247a80a409015811eb8268a63349de89eb6a"
+    },
+    {
+      "path": "bom_missing_lcsc.csv",
+      "bytes": 329,
+      "sha256": "2bf032d8a5f9215c1fb36dea33ffd7813851a94387f5cc974e775cd18e1eaec0"
+    },
+    {
+      "path": "cpl_jlc.csv",
+      "bytes": 156,
+      "sha256": "90842443ac9d8c5e800498525b34af7f32ed41ea83ebdb49a32c4a0ed5727ea9"
+    },
+    {
+      "path": "data/components.json",
+      "bytes": 7237,
+      "sha256": "8723103ab7e5134bb5f49578330855f13971673640e196127d9efdd266dad358"
+    },
+    {
+      "path": "data/components.yaml",
+      "bytes": 4382,
+      "sha256": "b227536fcdebdc0aad40b32c01af38b3e325feec9f27ff45d98d14ce61029f60"
+    },
+    {
+      "path": "data/drc.json",
+      "bytes": 25562,
+      "sha256": "947d0f4e4e90ffce17c7306e1c4d21a4e8c02939d669b6feb1d76d4db28787eb"
+    },
+    {
+      "path": "data/gerbers/drill_report.txt",
+      "bytes": 1220,
+      "sha256": "cf1d524360048cc9ab33a8a8907c04f6e2229d2caa9dca419f8b00cda23e721c"
+    },
+    {
+      "path": "data/gerbers/kicad_file-B_Cu.gbl",
+      "bytes": 25078,
+      "sha256": "fc06a6bd08de1df790d18819410b95450abf04b77e52c234e7850b040148beba"
+    },
+    {
+      "path": "data/gerbers/kicad_file-B_Mask.gbs",
+      "bytes": 1959,
+      "sha256": "5877a99f510923fb22636c8db1a23a4e70625ae69447464a836d88743e50caa8"
+    },
+    {
+      "path": "data/gerbers/kicad_file-B_Paste.gbp",
+      "bytes": 786,
+      "sha256": "e7b1229c1972e123ff91a7096f90948cbb953c63f04475b16095ff65d9b083c6"
+    },
+    {
+      "path": "data/gerbers/kicad_file-B_Silkscreen.gbo",
+      "bytes": 43914,
+      "sha256": "754ef623d41098ea74bf98286892b2e4c5da3eafb347a4fc60a8b13f61994d6b"
+    },
+    {
+      "path": "data/gerbers/kicad_file-Edge_Cuts.gm1",
+      "bytes": 1417,
+      "sha256": "62e96ebe9f66cec5fe2e9791937871937987e8900121603f9adf842c0bdaffb4"
+    },
+    {
+      "path": "data/gerbers/kicad_file-F_Cu.gtl",
+      "bytes": 24401,
+      "sha256": "f7461b3e79f312d46e6b2b8f4771c6b469cba58fc62f71e00f6ae304e5a50797"
+    },
+    {
+      "path": "data/gerbers/kicad_file-F_Mask.gts",
+      "bytes": 2258,
+      "sha256": "d3ce88ab0b6f2b37d6a65558710ae67b10edee8a3173ba5dac9c5726c2e32931"
+    },
+    {
+      "path": "data/gerbers/kicad_file-F_Paste.gtp",
+      "bytes": 914,
+      "sha256": "29f4d76d6bc546ed66ce53f6a5d5991ef931dc68d73f6585b198c1d41ef917b8"
+    },
+    {
+      "path": "data/gerbers/kicad_file-F_Silkscreen.gto",
+      "bytes": 22210,
+      "sha256": "4e45132e80183e3af16616490ce9b873bdde59ea01143acc185cfbe6b13a04ba"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In10_Cu.g10",
+      "bytes": 1314,
+      "sha256": "d373c1d9fae0db142712f7c994828860f8489fa843a54d46572fc0dd1c9e0a3c"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In11_Cu.g11",
+      "bytes": 1314,
+      "sha256": "6d562a7c45643d69bd64cded7504a6bb4ac341d28e5cd40b961efcc56f7e411e"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In12_Cu.g12",
+      "bytes": 1314,
+      "sha256": "d7ae0345b36db0b27e867934a2bcba5848076bc48f4de1ef00201e40b5927704"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In13_Cu.g13",
+      "bytes": 1314,
+      "sha256": "dd9140f8c1f5c87301c2780d597a5985392779835a59bf0bbf4b437b07a0c741"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In14_Cu.g14",
+      "bytes": 1314,
+      "sha256": "568676dcf3524c5ba8922e406ceb903cf9e92d2862e22ed943ce7cf1d27d3443"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In1_Cu.g1",
+      "bytes": 1313,
+      "sha256": "03a683523d1c1ff1e2c72808cd92f0ecb6a4d67e31acf5148e290be8229e21c2"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In2_Cu.g2",
+      "bytes": 1313,
+      "sha256": "119d0e1da9eecaf66f692b652eed0d022422455c8d186324921f9fb82eca15c2"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In3_Cu.g3",
+      "bytes": 1313,
+      "sha256": "606a47b067f98308e8c9051aa40ea2b52561414e1057f50e9c39fc0243fa9ade"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In4_Cu.g4",
+      "bytes": 1313,
+      "sha256": "b69ce2f8bac280454c789f9e096ebec06fec5c710cb6f2db18573ccb7e59ed10"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In5_Cu.g5",
+      "bytes": 1313,
+      "sha256": "8f3b4c1139ecedcf2582d8b654fae427f801b3d2465f37b8acba6cdaaf604587"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In6_Cu.g6",
+      "bytes": 1313,
+      "sha256": "bcd0217c6b9d2a13d2b00718e11ab9ca3063890491144fc2ac36840510bba1e0"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In7_Cu.g7",
+      "bytes": 1313,
+      "sha256": "88afa2b5a51d0199f1a5735950cabf4e112aa00a5a1a250ea1b3e2ead6803e5f"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In8_Cu.g8",
+      "bytes": 1313,
+      "sha256": "71a0989c4686a7151ad5c10d8df6c0baabc3e4858deb4a6e6b89f6f9cfba5af9"
+    },
+    {
+      "path": "data/gerbers/kicad_file-In9_Cu.g9",
+      "bytes": 1314,
+      "sha256": "87713bb057816422dfe7dea8ed3d9ef6989ec790ae2c86435c553449c7868de5"
+    },
+    {
+      "path": "data/gerbers/kicad_file-job.gbrjob",
+      "bytes": 8841,
+      "sha256": "7f40dbc7e68b8bf5c2395f6aab53c513278c31d1a6c827e51a2d16e5439c7389"
+    },
+    {
+      "path": "data/gerbers/kicad_file-NPTH-drl_map.gbr",
+      "bytes": 4341,
+      "sha256": "3a28b8cdcd2eae4545a644f1d62cd637a35ab68482f04266e32d4a1847f52c6f"
+    },
+    {
+      "path": "data/gerbers/kicad_file-NPTH.drl",
+      "bytes": 313,
+      "sha256": "e567e77b1e0b9756e4569bdf4895c37b384ae254f4ed86f55d79237b16fd6d29"
+    },
+    {
+      "path": "data/gerbers/kicad_file-PTH-drl_map.gbr",
+      "bytes": 32630,
+      "sha256": "2b19a3f196152003913cf33152035bc1fa12faf9ec694fe96fa77f50d180e540"
+    },
+    {
+      "path": "data/gerbers/kicad_file-PTH.drl",
+      "bytes": 660,
+      "sha256": "04290a7520f94b98faa1c8c05ce3d076c71b48f97a3e1e0ffad3a4383d3c549e"
+    },
+    {
+      "path": "data/kicad_position_raw.csv",
+      "bytes": 684,
+      "sha256": "0bd72a8154bd0267a8014c3a77ae5f83c07dc21e0c17bb3a05053705cd7b0bf3"
+    },
+    {
+      "path": "gerbers_jlc.zip",
+      "bytes": 49570,
+      "sha256": "76654637577586909d5b2a6697fea95cce63ced4c01d3ea1ee6ef167f0fde68c"
+    }
+  ]
+}

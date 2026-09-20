@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: LED1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 16541517-fd04-43d9-ad56-ff7c64f15a09
+  library_id: kicad_file-eagle-import:LED5MM-KIT
+  unit: 1
+  body_style: 1
+  position:
+    x: 101.6
+    y: 165.1
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: LED1
+    Value: RED
+    Footprint: kicad_file:LED5MM-KIT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-09529
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 162.56
+    net: CLK-IN
+    net_aliases:
+    - CLK-IN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC6
+      pin_number: '14'
+      pin_name: CLK
+    - reference: R13
+      pin_number: P$1
+      pin_name: '1'
+    - reference: SJ3
+      pin_number: '2'
+      pin_name: '2'
+  - number: K
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 170.18
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R19
+      pin_number: P$2
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 98.0948
+        y: 164.973
+      max:
+        x: 102.997
+        y: 168.4782
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: 100.5459
+        y: 166.7256
+  warnings: []
+connected_components:
+- reference: IC6
+  pin_number: '14'
+  pin_name: CLK
+- reference: R13
+  pin_number: P$1
+  pin_name: '1'
+- reference: R19
+  pin_number: P$2
+  pin_name: '2'
+- reference: SJ3
+  pin_number: '2'
+  pin_name: '2'

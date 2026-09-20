@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: R10
+  source_file: data/kicad_file.kicad_sch
+  uuid: dea06268-c247-4410-995e-26d8aa2e012d
+  library_id: kicad_file-eagle-import:R-US_0207/10
+  unit: 1
+  body_style: 1
+  position:
+    x: 88.9
+    y: 78.74
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R10
+    Value: 10K
+    Footprint: kicad_file:42
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 88.9
+      y: 83.82
+    net: RST
+    net_aliases:
+    - RST
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '28'
+      pin_name: PC6(/RESET/PCI14)
+    - reference: ISP0
+      pin_number: '5'
+      pin_name: '5'
+    - reference: JP1
+      pin_number: '1'
+      pin_name: '1'
+  - number: '2'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 88.9
+      y: 73.66
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: P+16
+      pin_number: '1'
+      pin_name: VCC
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 87.7824
+        y: 76.0984
+      max:
+        x: 90.0176
+        y: 81.3816
+      width: 2.2352
+      height: 5.2832
+      center:
+        x: 88.9
+        y: 78.74
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '28'
+  pin_name: PC6(/RESET/PCI14)
+- reference: ISP0
+  pin_number: '5'
+  pin_name: '5'
+- reference: JP1
+  pin_number: '1'
+  pin_name: '1'
+- reference: P+16
+  pin_number: '1'
+  pin_name: VCC

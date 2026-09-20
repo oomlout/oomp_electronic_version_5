@@ -1,0 +1,136 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 5
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - Y1
+  value: 12MHz
+  footprint: MicroMod-RP2040-ProcessorBoard-import-fps:CRYSTAL-SMD-2X2.5MM
+  query: 12MHz MicroMod-RP2040-ProcessorBoard-import-fps:CRYSTAL-SMD-2X2.5MM
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=12MHz+MicroMod-RP2040-ProcessorBoard-import-fps%3ACRYSTAL-SMD-2X2.5MM
+    datasheet_search: https://www.google.com/search?q=12MHz+MicroMod-RP2040-ProcessorBoard-import-fps%3ACRYSTAL-SMD-2X2.5MM+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+  - electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
+  - electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf
+  - electronic_crystal_2016_surface_mount_4_pin_26_mhz_20_pf_txc_nx3225gd
+  - electronic_crystal_3225_surface_mount_4_pin_3_579545_mhz_20_pf
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - FRAME1
+  value: FRAME-LEDGER
+  footprint: MicroMod-RP2040-ProcessorBoard-import-fps:CREATIVE_COMMONS
+  query: FRAME-LEDGER MicroMod-RP2040-ProcessorBoard-import-fps:CREATIVE_COMMONS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FRAME-LEDGER+MicroMod-RP2040-ProcessorBoard-import-fps%3ACREATIVE_COMMONS
+    datasheet_search: https://www.google.com/search?q=FRAME-LEDGER+MicroMod-RP2040-ProcessorBoard-import-fps%3ACREATIVE_COMMONS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_led_0201_clear
+  - electronic_led_0201_green
+  - electronic_led_0402_clear
+  - electronic_led_0402_green
+  - electronic_led_0603_clear
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: FSUSB30MUX_MSOP10
+  footprint: MicroMod-RP2040-ProcessorBoard-import-fps:MSOP10
+  query: FSUSB30MUX_MSOP10 MicroMod-RP2040-ProcessorBoard-import-fps:MSOP10
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FSUSB30MUX_MSOP10+MicroMod-RP2040-ProcessorBoard-import-fps%3AMSOP10
+    datasheet_search: https://www.google.com/search?q=FSUSB30MUX_MSOP10+MicroMod-RP2040-ProcessorBoard-import-fps%3AMSOP10+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - J1
+  value: MICROMOD-2222
+  footprint: MicroMod-RP2040-ProcessorBoard-import-fps:M.2-CARD-E-22
+  query: MICROMOD-2222 MicroMod-RP2040-ProcessorBoard-import-fps:M.2-CARD-E-22
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MICROMOD-2222+MicroMod-RP2040-ProcessorBoard-import-fps%3AM.2-CARD-E-22
+    datasheet_search: https://www.google.com/search?q=MICROMOD-2222+MicroMod-RP2040-ProcessorBoard-import-fps%3AM.2-CARD-E-22+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: W25QXX128MBIT
+  footprint: MicroMod-RP2040-ProcessorBoard-import-fps:WSON-8-6X5-SKINNY_CENTERPAD
+  query: W25QXX128MBIT MicroMod-RP2040-ProcessorBoard-import-fps:WSON-8-6X5-SKINNY_CENTERPAD
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=W25QXX128MBIT+MicroMod-RP2040-ProcessorBoard-import-fps%3AWSON-8-6X5-SKINNY_CENTERPAD
+    datasheet_search: https://www.google.com/search?q=W25QXX128MBIT+MicroMod-RP2040-ProcessorBoard-import-fps%3AWSON-8-6X5-SKINNY_CENTERPAD+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

@@ -1,0 +1,147 @@
+available: true
+units:
+- reference: C1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 8779fe0c-940d-4748-90cb-265880301c7d
+  library_id: kicad_file-eagle-import:C-USC0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 104.14
+    y: 101.6
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C1
+    Value: 0.1uF
+    Footprint: kicad_file:C0805
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 104.14
+      y: 99.06
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP2
+      pin_number: '10'
+      pin_name: '10'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '2'
+      pin_name: VCCA
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 104.14
+      y: 106.68
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: JP1
+      pin_number: '10'
+      pin_name: '10'
+    - reference: U1
+      pin_number: '11'
+      pin_name: GND
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -2.6162
+      max:
+        x: 2.667
+        y: 0.127
+      width: 5.334
+      height: 2.7432
+      center:
+        x: 0.0
+        y: -1.2446
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 101.473
+        y: 101.473
+      max:
+        x: 106.807
+        y: 104.2162
+      width: 5.334
+      height: 2.7432
+      center:
+        x: 104.14
+        y: 102.8446
+  warnings: []
+connected_components:
+- reference: '#U$1'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$2'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$3'
+  pin_number: '1'
+  pin_name: GND
+- reference: C2
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '10'
+  pin_name: '10'
+- reference: JP2
+  pin_number: '10'
+  pin_name: '10'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: '11'
+  pin_name: GND
+- reference: U1
+  pin_number: '2'
+  pin_name: VCCA

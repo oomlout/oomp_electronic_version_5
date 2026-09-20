@@ -79,7 +79,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | J1, J2 | 2 | Connector Header 2.54-1x6P直针 | Conn_01x06_Female | `Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | LIS3DH | 1 | Sensor Lga 16 St LIS3DHTR ACCELEROMETER | LIS3DH | `Package_LGA:LGA-16_3x3mm_P0.5mm_LayoutBorder3x5y` | [`electronic_sensor_accelerometer_lga_16_st_lis3dhtr`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_sensor_accelerometer_lga_16_st_lis3dhtr) |
 | R1, R4 | 2 | Resistor 100000 Ohm 0603 | 100k | `Resistor_SMD:R_0603_1608Metric` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
-| R2, R3 | 2 | Resistor 10000 Ohm 0603 | 10k | `Resistor_SMD:R_0603_1608Metric` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R2, R3 | 2 | electronic resistor 0603 10000 ohm | 10k | `Resistor_SMD:R_0603_1608Metric` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R5 | 1 | Resistor 1000 Ohm 0603 | 1k | `Resistor_SMD:R_0603_1608Metric` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 
 ## Main nets

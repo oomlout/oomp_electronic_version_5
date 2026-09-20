@@ -108,17 +108,6 @@ def _web_url(config: dict, part_id: str, relative_path: str = "") -> str:
     return f"{pages_base}/{suffix}" if pages_base else ""
 
 
-def _format_bytes(size_bytes: int) -> str:
-    if size_bytes < 1000:
-        return f"{size_bytes} B"
-    value = float(size_bytes)
-    for unit in ["kB", "MB", "GB", "TB"]:
-        value /= 1000
-        if value < 1000 or unit == "TB":
-            return f"{value:.1f} {unit}" if value < 10 else f"{value:.0f} {unit}"
-    return f"{size_bytes} B"
-
-
 def _category_for(relative_path: str, config: dict) -> str:
     for category, patterns in config.get("inventory", {}).get("categories", {}).items():
         if _matches(relative_path, patterns or []):
@@ -234,7 +223,6 @@ def _inventory(part_directory: Path, output_filename: str, config: dict) -> tupl
             continue
         category = _category_for(relative_path, config)
         urls = _github_urls(config, part_directory.name, relative_path)
-        stat = path.stat()
         files.append(
             {
                 "name": path.name,
@@ -244,8 +232,6 @@ def _inventory(part_directory: Path, output_filename: str, config: dict) -> tupl
                 "media_type": _mime_type(path),
                 "category": category,
                 "description": _description_for(relative_path, category, config),
-                "size_bytes": stat.st_size,
-                "size": _format_bytes(stat.st_size),
                 "github_url": urls["github"],
                 "raw_url": urls["raw"],
                 "web_url": _web_url(config, part_directory.name, relative_path),
@@ -253,37 +239,21 @@ def _inventory(part_directory: Path, output_filename: str, config: dict) -> tupl
         )
 
     category_counts = Counter(item["category"] for item in files)
-    category_sizes = Counter()
     extension_counts = Counter(item["extension"] or "[no extension]" for item in files)
-    extension_sizes = Counter()
-    for item in files:
-        category_sizes[item["category"]] += item["size_bytes"]
-        extension_sizes[item["extension"] or "[no extension]"] += item["size_bytes"]
-    largest = max(files, key=lambda item: (item["size_bytes"], item["path"])) if files else None
     stats = {
         "file_count": len(files),
-        "total_size_bytes": sum(item["size_bytes"] for item in files),
-        "total_size": _format_bytes(sum(item["size_bytes"] for item in files)),
         "by_category": {
             category: {
                 "count": category_counts[category],
-                "size_bytes": category_sizes[category],
-                "size": _format_bytes(category_sizes[category]),
             }
             for category in sorted(category_counts)
         },
         "by_extension": {
             extension: {
                 "count": extension_counts[extension],
-                "size_bytes": extension_sizes[extension],
-                "size": _format_bytes(extension_sizes[extension]),
             }
             for extension in sorted(extension_counts)
         },
-        "largest_file": (
-            {"path": largest["path"], "size_bytes": largest["size_bytes"], "size": largest["size"]}
-            if largest else None
-        ),
     }
     return files, stats
 

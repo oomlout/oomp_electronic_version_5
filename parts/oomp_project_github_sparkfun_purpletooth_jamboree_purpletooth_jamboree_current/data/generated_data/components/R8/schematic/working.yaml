@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: R8
+  source_file: data/kicad_file.kicad_sch
+  uuid: f270519b-4dbd-4585-bb0e-721e384c5254
+  library_id: kicad_file-eagle-import:10KOHM1/10W1%(0603)0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 50.8
+    y: 106.68
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R8
+    Value: 10K
+    Footprint: kicad_file:0603-RES
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-00824
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 45.72
+      y: 106.68
+    net: RX
+    net_aliases:
+    - RX
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '42'
+      pin_name: UART_RX
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 106.68
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: RXI
+      pin_name: '2'
+    - reference: JP19
+      pin_number: P$3
+      pin_name: RXI
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 48.1838
+        y: 105.5878
+      max:
+        x: 53.4162
+        y: 107.7722
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 50.8
+        y: 106.68
+  warnings: []
+connected_components:
+- reference: JP1
+  pin_number: RXI
+  pin_name: '2'
+- reference: JP19
+  pin_number: P$3
+  pin_name: RXI
+- reference: U1
+  pin_number: '42'
+  pin_name: UART_RX

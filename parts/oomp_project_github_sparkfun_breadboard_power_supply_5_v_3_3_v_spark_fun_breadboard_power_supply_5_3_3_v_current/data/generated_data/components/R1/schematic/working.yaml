@@ -1,0 +1,141 @@
+available: true
+units:
+- reference: R1
+  source_file: data/kicad_file.kicad_sch
+  uuid: f2c6be64-f063-4983-9662-c9bd7c9aff8f
+  library_id: kicad_file-eagle-import:RESISTORPTH1
+  unit: 1
+  body_style: 1
+  position:
+    x: 172.72
+    y: 78.74
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R1
+    Value: '240'
+    Footprint: kicad_file:AXIAL-0.3
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 172.72
+      y: 83.82
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: P$2
+      pin_name: '2'
+    - reference: U1
+      pin_number: ADJ
+      pin_name: ADJ
+  - number: P$2
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 172.72
+      y: 73.66
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#P+3'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: C2
+      pin_number: '1'
+      pin_name: +
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: JP3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R4
+      pin_number: P$2
+      pin_name: '2'
+    - reference: U1
+      pin_number: OUT
+      pin_name: OUT
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 171.6278
+        y: 76.1238
+      max:
+        x: 173.8122
+        y: 81.3562
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 172.72
+        y: 78.74
+  warnings: []
+connected_components:
+- reference: '#P+3'
+  pin_number: '1'
+  pin_name: VCC
+- reference: C2
+  pin_number: '1'
+  pin_name: +
+- reference: C3
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP3
+  pin_number: '1'
+  pin_name: '1'
+- reference: R2
+  pin_number: P$2
+  pin_name: '2'
+- reference: R4
+  pin_number: P$2
+  pin_name: '2'
+- reference: U1
+  pin_number: ADJ
+  pin_name: ADJ
+- reference: U1
+  pin_number: OUT
+  pin_name: OUT

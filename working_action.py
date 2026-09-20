@@ -10,9 +10,6 @@ def main(**kwargs):
     import oomlout_roboclick
     import working_oomp
 
-    kwargs.setdefault("threaded_workers", 6)
-    
-
     #delete options
     run_delete = False
     run_delete = True
@@ -44,15 +41,14 @@ def main(**kwargs):
     if True:
         working_oomp.main(**kwargs)
 
-    # Load every real Roboclick mode before starting the worker pool.  The
-    # legacy "ai" name is historical: this repository's normal actions are
-    # deterministic Python, image-resize, file-copy, and Jinja jobs.
+    # Run the repository actions in deterministic directory order by default.
+    # Callers can still opt into Roboclick's threaded runner explicitly.
     if True:
         run_kwargs = copy.deepcopy(kwargs)
         run_kwargs["directory"] = "parts"
         run_kwargs["mode"] = "all"
-        run_kwargs["recursive_threaded"] = True
-        run_kwargs["threaded_subprocess_actions"] = True
+        run_kwargs.setdefault("recursive_threaded", False)
+        run_kwargs.setdefault("threaded_subprocess_actions", False)
         oomlout_roboclick.run_folder_recursive(**run_kwargs)
 
     

@@ -1,0 +1,503 @@
+reference: R8
+schematic:
+  available: true
+  units:
+  - reference: R8
+    source_file: data/kicad_file.kicad_sch
+    uuid: 6741b0db-9125-4870-955c-4df7744df55a
+    library_id: kicad_file-eagle-import:R-US_0207/10
+    unit: 1
+    body_style: 1
+    position:
+      x: 99.06
+      y: 185.42
+      rotation: 270.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R8
+      Value: 2.2k
+      Footprint: kicad_file:42
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 99.06
+        y: 190.5
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: P+15
+        pin_number: '1'
+        pin_name: VCC
+    - number: '2'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 99.06
+        y: 180.34
+      net: SDA
+      net_aliases:
+      - SDA
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: IC1
+        pin_number: '23'
+        pin_name: (PCI12/ADC4/SDA)PC4
+      - reference: JP2
+        pin_number: '13'
+        pin_name: '13'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6416
+          y: -1.1176
+        max:
+          x: 2.6416
+          y: 1.1176
+        width: 5.2832
+        height: 2.2352
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 97.9424
+          y: 182.7784
+        max:
+          x: 100.1776
+          y: 188.0616
+        width: 2.2352
+        height: 5.2832
+        center:
+          x: 99.06
+          y: 185.42
+    warnings: []
+  connected_components:
+  - reference: IC1
+    pin_number: '23'
+    pin_name: (PCI12/ADC4/SDA)PC4
+  - reference: JP2
+    pin_number: '13'
+    pin_name: '13'
+  - reference: P+15
+    pin_number: '1'
+    pin_name: VCC
+pcb:
+  reference: R8
+  value: 2.2k
+  source_file: data/kicad_file.kicad_pcb
+  uuid: c96aa452-2729-4aff-84af-d4b8690c8993
+  library_id: ratt-import-fps:0207_10
+  layer: F.Cu
+  side: front
+  position:
+    x: 58.674
+    y: -26.162
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: R8
+    Value: 2.2k
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: thru_hole
+    shape: roundrect
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 53.594
+      y: -26.162
+    placed_rotation: 0.0
+    size:
+      x: 1.6764
+      y: 1.6764
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: VCC
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -5.9182
+          y: -0.8382
+        max:
+          x: -4.2418
+          y: 0.8382
+        width: 1.6764
+        height: 1.6764
+        center:
+          x: -5.08
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 52.7558
+          y: -27.0002
+        max:
+          x: 54.4322
+          y: -25.3238
+        width: 1.6764
+        height: 1.6764
+        center:
+          x: 53.594
+          y: -26.162
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC1
+      pad_number: '2'
+    - reference: IC2
+      pad_number: '1'
+    - reference: IC3
+      pad_number: '2'
+    - reference: ISP0
+      pad_number: '1'
+    - reference: JP1
+      pad_number: '4'
+    - reference: JP3
+      pad_number: '4'
+    - reference: R2'0
+      pad_number: '2'
+    - reference: SP1
+      pad_number: P$2
+    - reference: SW1
+      pad_number: '2'
+    - reference: TM1
+      pad_number: E
+  - number: '2'
+    type: thru_hole
+    shape: roundrect
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 63.754
+      y: -26.162
+    placed_rotation: 0.0
+    size:
+      x: 1.6764
+      y: 1.6764
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    net: N$148
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 4.2418
+          y: -0.8382
+        max:
+          x: 5.9182
+          y: 0.8382
+        width: 1.6764
+        height: 1.6764
+        center:
+          x: 5.08
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 62.9158
+          y: -27.0002
+        max:
+          x: 64.5922
+          y: -25.3238
+        width: 1.6764
+        height: 1.6764
+        center:
+          x: 63.754
+          y: -26.162
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: R9
+      pad_number: '1'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -5.9182
+        y: -0.8382
+      max:
+        x: 5.9182
+        y: 0.8382
+      width: 11.8364
+      height: 1.6764
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 52.7558
+        y: -27.0002
+      max:
+        x: 64.5922
+        y: -25.3238
+      width: 11.8364
+      height: 1.6764
+      center:
+        x: 58.674
+        y: -26.162
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -5.3848
+        y: -0.3048
+      max:
+        x: 5.3848
+        y: 0.3048
+      width: 10.7696
+      height: 0.6096
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 53.2892
+        y: -26.4668
+      max:
+        x: 64.0588
+        y: -25.8572
+      width: 10.7696
+      height: 0.6096
+      center:
+        x: 58.674
+        y: -26.162
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -4.0386
+        y: -1.2192
+      max:
+        x: 4.0386
+        y: 1.2192
+      width: 8.0772
+      height: 2.4384
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 54.6354
+        y: -27.3812
+      max:
+        x: 62.7126
+        y: -24.9428
+      width: 8.0772
+      height: 2.4384
+      center:
+        x: 58.674
+        y: -26.162
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -5.9182
+        y: -1.2192
+      max:
+        x: 5.9182
+        y: 1.2192
+      width: 11.8364
+      height: 2.4384
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 52.7558
+        y: -27.3812
+      max:
+        x: 64.5922
+        y: -24.9428
+      width: 11.8364
+      height: 2.4384
+      center:
+        x: 58.674
+        y: -26.162
+  connected_components:
+  - IC1
+  - IC2
+  - IC3
+  - ISP0
+  - JP1
+  - JP3
+  - R2'0
+  - R9
+  - SP1
+  - SW1
+  - TM1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets:
+    - VCC
+    status: incomplete
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - SDA
+    pcb_nets:
+    - N$148
+    status: disagree
+  agree_count: 0
+  disagree_count: 1
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: resistor
+    package_size: null
+    value: 2.2k
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_resistor_quarter_watt_through_hole_2200_ohm
+    score: 0.7034
+    reasons:
+    - same component family
+    - same normalized value
+  - oomp_id: electronic_resistor_quarter_watt_through_hole_2400_ohm
+    score: 0.677
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_resistor_quarter_watt_through_hole_2000_ohm
+    score: 0.6745
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_resistor_quarter_watt_through_hole_2700_ohm
+    score: 0.6412
+    reasons:
+    - same component family
+    - nearby normalized value
+  - oomp_id: electronic_resistor_quarter_watt_through_hole_1800_ohm
+    score: 0.6407
+    reasons:
+    - same component family
+    - nearby normalized value
+category: resistor
+category_source: unmatched_kicad_hint
+category_name: Resistor
+generated_directory: components/R8

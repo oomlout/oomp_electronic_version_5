@@ -1,0 +1,530 @@
+reference: L1
+schematic:
+  available: true
+  units:
+  - reference: L1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 7cb70873-9fe6-49d2-9246-4b71faf70d6d
+    library_id: kicad_file-eagle-import:INDUCTORTDK_VLC5045
+    unit: 1
+    body_style: 1
+    position:
+      x: 91.44
+      y: 180.34
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: L1
+      Value: 1uH
+      Footprint: kicad_file:INDUCTOR_5X5MM_TDK_VLC5045
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: P$1
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 86.36
+        y: 180.34
+      net: VBAT
+      net_aliases:
+      - VBAT
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#U$2'
+        pin_number: '1'
+        pin_name: VBAT
+      - reference: '#U$11'
+        pin_number: '1'
+        pin_name: VBAT
+      - reference: '#U$12'
+        pin_number: '1'
+        pin_name: VBAT
+      - reference: '#U$24'
+        pin_number: '1'
+        pin_name: VBAT
+      - reference: '#U$38'
+        pin_number: '1'
+        pin_name: VBAT
+      - reference: BATT1
+        pin_number: PLUS
+        pin_name: +
+      - reference: C5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: IC1
+        pin_number: '3'
+        pin_name: VIN
+      - reference: SW1
+        pin_number: S2
+        pin_name: S2
+    - number: P$2
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 96.52
+        y: 180.34
+      net: SW
+      net_aliases:
+      - SW
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: IC1
+        pin_number: '5'
+        pin_name: SW
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.667
+          y: -0.127
+        max:
+          x: 2.667
+          y: 1.0794
+        width: 5.334
+        height: 1.2064
+        center:
+          x: 0.0
+          y: 0.4762
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 88.773
+          y: 179.2606
+        max:
+          x: 94.107
+          y: 180.467
+        width: 5.334
+        height: 1.2064
+        center:
+          x: 91.44
+          y: 179.8638
+    warnings: []
+  connected_components:
+  - reference: '#U$2'
+    pin_number: '1'
+    pin_name: VBAT
+  - reference: '#U$11'
+    pin_number: '1'
+    pin_name: VBAT
+  - reference: '#U$12'
+    pin_number: '1'
+    pin_name: VBAT
+  - reference: '#U$24'
+    pin_number: '1'
+    pin_name: VBAT
+  - reference: '#U$38'
+    pin_number: '1'
+    pin_name: VBAT
+  - reference: BATT1
+    pin_number: PLUS
+    pin_name: +
+  - reference: C5
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C7
+    pin_number: '1'
+    pin_name: '1'
+  - reference: IC1
+    pin_number: '3'
+    pin_name: VIN
+  - reference: IC1
+    pin_number: '5'
+    pin_name: SW
+  - reference: SW1
+    pin_number: S2
+    pin_name: S2
+pcb:
+  reference: L1
+  value: 1uH
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 66fd250e-a5b6-4174-80ec-af1907505dfc
+  library_id: BLM Badge rev B-import-fps:INDUCTOR_5X5MM_TDK_VLC5045
+  layer: F.Cu
+  side: front
+  position:
+    x: 29.591
+    y: -39.878
+    rotation: 0.0
+    rotation_kicad: 0.0
+    units: mm
+  properties:
+    Reference: L1
+    Value: 1uH
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: P$1
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.6
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 27.991
+      y: -39.878
+    placed_rotation: 0.0
+    size:
+      x: 2.0
+      y: 5.0
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: VBAT
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.6
+          y: -2.5
+        max:
+          x: -0.6
+          y: 2.5
+        width: 2.0
+        height: 5.0
+        center:
+          x: -1.6
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 26.991
+          y: -42.378
+        max:
+          x: 28.991
+          y: -37.378
+        width: 2.0
+        height: 5.0
+        center:
+          x: 27.991
+          y: -39.878
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: BATT1
+      pad_number: PLUS
+    - reference: C5
+      pad_number: '1'
+    - reference: C7
+      pad_number: '1'
+    - reference: IC1
+      pad_number: '3'
+    - reference: SW1
+      pad_number: S2
+  - number: P$2
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.6
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 31.191
+      y: -39.878
+    placed_rotation: 0.0
+    size:
+      x: 2.0
+      y: 5.0
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: SW
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.6
+          y: -2.5
+        max:
+          x: 2.6
+          y: 2.5
+        width: 2.0
+        height: 5.0
+        center:
+          x: 1.6
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 30.191
+          y: -42.378
+        max:
+          x: 32.191
+          y: -37.378
+        width: 2.0
+        height: 5.0
+        center:
+          x: 31.191
+          y: -39.878
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: IC1
+      pad_number: '5'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.6
+        y: -2.5
+      max:
+        x: 2.6
+        y: 2.5
+      width: 5.2
+      height: 5.0
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 26.991
+        y: -42.378
+      max:
+        x: 32.191
+        y: -37.378
+      width: 5.2
+      height: 5.0
+      center:
+        x: 29.591
+        y: -39.878
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.6016
+        y: -2.6016
+      max:
+        x: 2.6016
+        y: 2.6016
+      width: 5.2032
+      height: 5.2032
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 26.9894
+        y: -42.4796
+      max:
+        x: 32.1926
+        y: -37.2764
+      width: 5.2032
+      height: 5.2032
+      center:
+        x: 29.591
+        y: -39.878
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.9516
+        y: -2.8516
+      max:
+        x: 2.9516
+        y: 2.8516
+      width: 5.9032
+      height: 5.7032
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 26.6394
+        y: -42.7296
+      max:
+        x: 32.5426
+        y: -37.0264
+      width: 5.9032
+      height: 5.7032
+      center:
+        x: 29.591
+        y: -39.878
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.9516
+        y: -2.8516
+      max:
+        x: 2.9516
+        y: 2.8516
+      width: 5.9032
+      height: 5.7032
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 26.6394
+        y: -42.7296
+      max:
+        x: 32.5426
+        y: -37.0264
+      width: 5.9032
+      height: 5.7032
+      center:
+        x: 29.591
+        y: -39.878
+  connected_components:
+  - BATT1
+  - C5
+  - C7
+  - IC1
+  - SW1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: P$1
+    schematic_nets:
+    - VBAT
+    pcb_nets:
+    - VBAT
+    status: agree
+  - pin_or_pad_number: P$2
+    schematic_nets:
+    - SW
+    pcb_nets:
+    - SW
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: inductor
+    package_size: null
+    value: 1uH
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_inductor_0603_30_ohm
+    score: 0.0876
+    reasons:
+    - same component family
+  - oomp_id: electronic_inductor_0603_470_ohm
+    score: 0.0864
+    reasons:
+    - same component family
+  - oomp_id: electronic_inductor_0603_33_nano_henry
+    score: 0.0775
+    reasons:
+    - same component family
+  - oomp_id: electronic_inductor_0603_10_micro_henry
+    score: 0.0767
+    reasons:
+    - same component family
+  - oomp_id: electronic_inductor_0806_2_2_micro_henry
+    score: 0.0759
+    reasons:
+    - same component family
+category: inductor
+category_source: unmatched_kicad_hint
+category_name: Inductor
+generated_directory: components/L1

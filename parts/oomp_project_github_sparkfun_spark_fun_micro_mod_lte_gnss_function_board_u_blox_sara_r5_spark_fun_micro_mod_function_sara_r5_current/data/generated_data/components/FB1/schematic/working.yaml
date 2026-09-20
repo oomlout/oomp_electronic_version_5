@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: FB1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 79e40b4e-c629-4d1a-96ac-943d8ac7cc84
+  library_id: kicad_file-eagle-import:FERRITE_BEAD-0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 424.18
+    y: 68.58
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: FB1
+    Value: 30Ω/1.8A
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: NDUC-13805
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 424.18
+      y: 73.66
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R24
+      pin_number: '2'
+      pin_name: '2'
+    - reference: TP22
+      pin_number: '1'
+      pin_name: '1'
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 424.18
+      y: 63.5
+    net: GNSS_ANT
+    net_aliases:
+    - GNSS_ANT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D4
+      pin_number: '1'
+      pin_name: '1'
+    - reference: J4
+      pin_number: FEED
+      pin_name: SIGNAL
+    - reference: U1
+      pin_number: '31'
+      pin_name: ANT_GNSS
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.0762
+        y: -2.6162
+      max:
+        x: 1.2192
+        y: 2.6162
+      width: 1.2954
+      height: 5.2324
+      center:
+        x: 0.5715
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 422.9608
+        y: 65.9638
+      max:
+        x: 424.2562
+        y: 71.1962
+      width: 1.2954
+      height: 5.2324
+      center:
+        x: 423.6085
+        y: 68.58
+  warnings: []
+connected_components:
+- reference: C3
+  pin_number: '1'
+  pin_name: '1'
+- reference: D4
+  pin_number: '1'
+  pin_name: '1'
+- reference: J4
+  pin_number: FEED
+  pin_name: SIGNAL
+- reference: R24
+  pin_number: '2'
+  pin_name: '2'
+- reference: TP22
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '31'
+  pin_name: ANT_GNSS

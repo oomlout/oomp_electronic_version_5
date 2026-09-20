@@ -5,15 +5,14 @@ import json
 import sys
 from pathlib import Path
 
-import yaml
-from kicad_agents.run_error_report import log_run_error
-
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
 repository_root_text = str(REPOSITORY_ROOT)
 if repository_root_text in sys.path:
     sys.path.remove(repository_root_text)
 sys.path.insert(0, repository_root_text)
 
+import yaml
+from kicad_agents.run_error_report import log_run_error
 from kicad_agents.kicad_processing_agent import process_project
 from kicad_agents.project_summary_agent import generate_project_summary
 from kicad_agents.project_html_agent import generate_board_explorer

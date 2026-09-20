@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: R4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 92df9ec3-82d7-447b-813c-f568a56ee73b
+  library_id: kicad_file-eagle-import:R-US_0207/10
+  unit: 1
+  body_style: 1
+  position:
+    x: 175.26
+    y: 167.64
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R4
+    Value: 1K
+    Footprint: kicad_file:42
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 175.26
+      y: 162.56
+    net: SWITCHES
+    net_aliases:
+    - SWITCHES
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '25'
+      pin_name: (PCI10/ADC2)PC2
+    - reference: JP2
+      pin_number: '11'
+      pin_name: '11'
+    - reference: R3
+      pin_number: '2'
+      pin_name: '1'
+  - number: '2'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 175.26
+      y: 172.72
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '1'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 174.1424
+        y: 164.9984
+      max:
+        x: 176.3776
+        y: 170.2816
+      width: 2.2352
+      height: 5.2832
+      center:
+        x: 175.26
+        y: 167.64
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '25'
+  pin_name: (PCI10/ADC2)PC2
+- reference: JP2
+  pin_number: '11'
+  pin_name: '11'
+- reference: R3
+  pin_number: '2'
+  pin_name: '1'
+- reference: R5
+  pin_number: '1'
+  pin_name: '2'

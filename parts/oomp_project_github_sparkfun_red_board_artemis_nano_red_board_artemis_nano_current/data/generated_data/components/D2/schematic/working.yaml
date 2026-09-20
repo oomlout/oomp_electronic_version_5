@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: D2
+  source_file: data/kicad_file.kicad_sch
+  uuid: f02166d1-1f92-472a-9a5e-bd79d066e4ae
+  library_id: kicad_file-eagle-import:LED-YELLOW0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 53.34
+    y: 40.64
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D2
+    Value: Yellow
+    Footprint: kicad_file:LED-0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-09003
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 50.8
+      y: 40.64
+    net: V_USB
+    net_aliases:
+    - V_USB
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY13'
+      pin_number: '1'
+      pin_name: V_USB
+    - reference: '#SUPPLY16'
+      pin_number: '1'
+      pin_name: V_USB
+    - reference: C5
+      pin_number: '1'
+      pin_name: '1'
+    - reference: D3
+      pin_number: A
+      pin_name: A
+    - reference: U2
+      pin_number: '4'
+      pin_name: VIN
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 58.42
+      y: 40.64
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R6
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 53.213
+        y: 39.243
+      max:
+        x: 56.7182
+        y: 44.1452
+      width: 3.5052
+      height: 4.9022
+      center:
+        x: 54.9656
+        y: 41.6941
+  warnings: []
+connected_components:
+- reference: '#SUPPLY13'
+  pin_number: '1'
+  pin_name: V_USB
+- reference: '#SUPPLY16'
+  pin_number: '1'
+  pin_name: V_USB
+- reference: C5
+  pin_number: '1'
+  pin_name: '1'
+- reference: D3
+  pin_number: A
+  pin_name: A
+- reference: R6
+  pin_number: '2'
+  pin_name: '2'
+- reference: U2
+  pin_number: '4'
+  pin_name: VIN

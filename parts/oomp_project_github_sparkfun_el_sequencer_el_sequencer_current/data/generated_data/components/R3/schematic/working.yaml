@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: R3
+  source_file: data/kicad_file.kicad_sch
+  uuid: bf8580ea-72d2-4a1d-8711-e237493de80b
+  library_id: kicad_file-eagle-import:RESISTOR0402-RES
+  unit: 1
+  body_style: 1
+  position:
+    x: 73.66
+    y: 96.52
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R3
+    Value: 1K
+    Footprint: kicad_file:0402-RES
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 101.6
+    net: RXI
+    net_aliases:
+    - RXI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R4
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U3
+      pin_number: '30'
+      pin_name: PD0(RXD)
+    - reference: U4-DNP0
+      pin_number: '2'
+      pin_name: DOUT
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 91.44
+    net: FTDI_RXI
+    net_aliases:
+    - FTDI_RXI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP3
+      pin_number: '3'
+      pin_name: TXO
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 72.5678
+        y: 93.9038
+      max:
+        x: 74.7522
+        y: 99.1362
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 73.66
+        y: 96.52
+  warnings: []
+connected_components:
+- reference: JP3
+  pin_number: '3'
+  pin_name: TXO
+- reference: R4
+  pin_number: '2'
+  pin_name: '2'
+- reference: U3
+  pin_number: '30'
+  pin_name: PD0(RXD)
+- reference: U4-DNP0
+  pin_number: '2'
+  pin_name: DOUT

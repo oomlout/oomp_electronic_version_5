@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: D6
+  source_file: data/kicad_file.kicad_sch
+  uuid: 6dfe2c69-5c01-47e9-a317-f6a22555fd5c
+  library_id: kicad_file-eagle-import:LED-BLUE0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 180.34
+    y: 185.42
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D6
+    Value: BLUE
+    Footprint: kicad_file:LED-0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-08575
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 182.88
+    net: DBG_LED_PWR
+    net_aliases:
+    - DBG_LED_PWR
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C12
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U3
+      pin_number: A12
+      pin_name: VREGO
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 190.5
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R15
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 176.8348
+        y: 185.293
+      max:
+        x: 181.737
+        y: 188.7982
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: 179.2859
+        y: 187.0456
+  warnings: []
+connected_components:
+- reference: C12
+  pin_number: '1'
+  pin_name: '1'
+- reference: R15
+  pin_number: '2'
+  pin_name: '2'
+- reference: U3
+  pin_number: A12
+  pin_name: VREGO

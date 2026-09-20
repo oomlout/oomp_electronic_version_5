@@ -1,0 +1,251 @@
+available: true
+units:
+- reference: SW2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 3bc59856-f56c-47e1-b7dd-912f6970c07a
+  library_id: kicad_file-eagle-import:SWITCH_DPDTEG1390
+  unit: 1
+  body_style: 1
+  position:
+    x: 111.76
+    y: 116.84
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: SW2
+    Value: DPDT SLIDE
+    Footprint: kicad_file:EG1390
+    Datasheet: ''
+    Description: ''
+    LCSC: C318999
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: O1
+    name: O1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 7.62
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 109.22
+      y: 124.46
+    net: TXO
+    net_aliases:
+    - TXO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP8
+      pin_number: '11'
+      pin_name: '11'
+    - reference: SW2
+      pin_number: S2
+      pin_name: S2
+    - reference: X3
+      pin_number: '12'
+      pin_name: TXD
+  - number: O2
+    name: O2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 109.22
+      y: 114.3
+    net: RXI
+    net_aliases:
+    - RXI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP8
+      pin_number: '10'
+      pin_name: '10'
+    - reference: SW2
+      pin_number: S1
+      pin_name: S1
+    - reference: X3
+      pin_number: '11'
+      pin_name: RXD
+  - number: P1
+    name: P1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 116.84
+      y: 121.92
+    net: RXD
+    net_aliases:
+    - RXD
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: CB1
+      pin_number: S3
+      pin_name: GPIO1
+    - reference: CB1
+      pin_number: S4
+      pin_name: GPIO1
+  - number: P2
+    name: P2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 116.84
+      y: 111.76
+    net: TXD
+    net_aliases:
+    - TXD
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: CB1
+      pin_number: S1
+      pin_name: GPIO0
+    - reference: CB1
+      pin_number: S2
+      pin_name: GPIO0
+  - number: S1
+    name: S1
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 109.22
+      y: 119.38
+    net: RXI
+    net_aliases:
+    - RXI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP8
+      pin_number: '10'
+      pin_name: '10'
+    - reference: SW2
+      pin_number: O2
+      pin_name: O2
+    - reference: X3
+      pin_number: '11'
+      pin_name: RXD
+  - number: S2
+    name: S2
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -7.62
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 109.22
+      y: 109.22
+    net: TXO
+    net_aliases:
+    - TXO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP8
+      pin_number: '11'
+      pin_name: '11'
+    - reference: SW2
+      pin_number: O1
+      pin_name: O1
+    - reference: X3
+      pin_number: '12'
+      pin_name: TXD
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.0008
+        y: -8.0808
+      max:
+        x: 0.7112
+        y: 8.0808
+      width: 3.712
+      height: 16.1616
+      center:
+        x: -1.1448
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 111.0488
+        y: 108.7592
+      max:
+        x: 114.7608
+        y: 124.9208
+      width: 3.712
+      height: 16.1616
+      center:
+        x: 112.9048
+        y: 116.84
+  warnings: []
+connected_components:
+- reference: CB1
+  pin_number: S1
+  pin_name: GPIO0
+- reference: CB1
+  pin_number: S2
+  pin_name: GPIO0
+- reference: CB1
+  pin_number: S3
+  pin_name: GPIO1
+- reference: CB1
+  pin_number: S4
+  pin_name: GPIO1
+- reference: JP8
+  pin_number: '10'
+  pin_name: '10'
+- reference: JP8
+  pin_number: '11'
+  pin_name: '11'
+- reference: SW2
+  pin_number: O1
+  pin_name: O1
+- reference: SW2
+  pin_number: O2
+  pin_name: O2
+- reference: SW2
+  pin_number: S1
+  pin_name: S1
+- reference: SW2
+  pin_number: S2
+  pin_name: S2
+- reference: X3
+  pin_number: '11'
+  pin_name: RXD
+- reference: X3
+  pin_number: '12'
+  pin_name: TXD

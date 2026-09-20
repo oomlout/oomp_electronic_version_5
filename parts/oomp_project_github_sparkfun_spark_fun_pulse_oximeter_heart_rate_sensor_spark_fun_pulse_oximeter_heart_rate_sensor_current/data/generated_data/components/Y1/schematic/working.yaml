@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: Y1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 19fdca48-de4b-4dbd-ba89-6f47287eda0f
+  library_id: kicad_file-eagle-import:CRYSTAL-32.768KHZSMD-3.2X1.5
+  unit: 1
+  body_style: 1
+  position:
+    x: 190.5
+    y: 45.72
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Y1
+    Value: 32.768kHz
+    Footprint: kicad_file:CRYSTAL-SMD-3.2X1.5MM
+    Datasheet: ''
+    Description: ''
+    PROD_ID: XTAL-13062
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 187.96
+      y: 45.72
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '1'
+      pin_name: OSC_OUT
+  - number: P$2
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 193.04
+      y: 45.72
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '2'
+      pin_name: OSC_IN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.905
+      max:
+        x: 2.6162
+        y: 1.905
+      width: 5.2324
+      height: 3.81
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 187.8838
+        y: 43.815
+      max:
+        x: 193.1162
+        y: 47.625
+      width: 5.2324
+      height: 3.81
+      center:
+        x: 190.5
+        y: 45.72
+  warnings: []
+connected_components:
+- reference: U2
+  pin_number: '1'
+  pin_name: OSC_OUT
+- reference: U2
+  pin_number: '2'
+  pin_name: OSC_IN

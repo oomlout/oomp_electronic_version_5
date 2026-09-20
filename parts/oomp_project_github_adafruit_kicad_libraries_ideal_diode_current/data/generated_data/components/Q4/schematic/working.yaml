@@ -1,0 +1,141 @@
+available: true
+units:
+- reference: Q4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 86765223-4110-4b47-a9ef-3892ac9e9ff8
+  library_id: Transistor_FET:AO3401A
+  unit: 1
+  body_style: 1
+  position:
+    x: 148.59
+    y: 69.85
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q4
+    Value: AO3401A
+    Footprint: Package_TO_SOT_SMD:SOT-23
+    Datasheet: http://www.aosmd.com/pdfs/datasheet/AO3401A.pdf
+    Description: -4.0A Id, -30V Vds, P-Channel MOSFET, SOT-23
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: G
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 148.59
+      y: 74.93
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q3
+      pin_number: '3'
+      pin_name: C2
+    - reference: R10
+      pin_number: '1'
+      pin_name: ''
+  - number: '2'
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 153.67
+      y: 67.31
+    net: SHARED_OUT
+    net_aliases:
+    - SHARED_OUT
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q3
+      pin_number: '4'
+      pin_name: E2
+  - number: '3'
+    name: D
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 143.51
+      y: 67.31
+    net: INPUT
+    net_aliases:
+    - INPUT
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C35
+      pin_number: '1'
+      pin_name: ''
+    - reference: Q3
+      pin_number: '1'
+      pin_name: E1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.54
+        y: -2.921
+      max:
+        x: 4.572
+        y: 2.921
+      width: 7.112
+      height: 5.842
+      center:
+        x: 1.016
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 145.669
+        y: 65.278
+      max:
+        x: 151.511
+        y: 72.39
+      width: 5.842
+      height: 7.112
+      center:
+        x: 148.59
+        y: 68.834
+  warnings: []
+connected_components:
+- reference: C35
+  pin_number: '1'
+  pin_name: ''
+- reference: Q3
+  pin_number: '1'
+  pin_name: E1
+- reference: Q3
+  pin_number: '3'
+  pin_name: C2
+- reference: Q3
+  pin_number: '4'
+  pin_name: E2
+- reference: R10
+  pin_number: '1'
+  pin_name: ''

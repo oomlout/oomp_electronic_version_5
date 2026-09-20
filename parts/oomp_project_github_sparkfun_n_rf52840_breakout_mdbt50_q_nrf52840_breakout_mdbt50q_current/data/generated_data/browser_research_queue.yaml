@@ -1,0 +1,292 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 12
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - J1
+  value: ''
+  footprint: nrf52840-breakout-mdbt50q-import-fps:JST-2-SMD
+  query: nrf52840-breakout-mdbt50q-import-fps:JST-2-SMD
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=nrf52840-breakout-mdbt50q-import-fps%3AJST-2-SMD
+    datasheet_search: https://www.google.com/search?q=nrf52840-breakout-mdbt50q-import-fps%3AJST-2-SMD+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - S2
+  value: ''
+  footprint: nrf52840-breakout-mdbt50q-import-fps:SWITCH_SPST_SMD_A
+  query: nrf52840-breakout-mdbt50q-import-fps:SWITCH_SPST_SMD_A
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=nrf52840-breakout-mdbt50q-import-fps%3ASWITCH_SPST_SMD_A
+    datasheet_search: https://www.google.com/search?q=nrf52840-breakout-mdbt50q-import-fps%3ASWITCH_SPST_SMD_A+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - J6
+  value: ''
+  footprint: nrf52840-breakout-mdbt50q-import-fps:USB-MICROB-PTH-MILL
+  query: nrf52840-breakout-mdbt50q-import-fps:USB-MICROB-PTH-MILL
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=nrf52840-breakout-mdbt50q-import-fps%3AUSB-MICROB-PTH-MILL
+    datasheet_search: https://www.google.com/search?q=nrf52840-breakout-mdbt50q-import-fps%3AUSB-MICROB-PTH-MILL+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - C3
+  - C7
+  value: 15pF
+  footprint: nrf52840-breakout-mdbt50q-import-fps:0603
+  query: 15pF nrf52840-breakout-mdbt50q-import-fps:0603
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=15pF+nrf52840-breakout-mdbt50q-import-fps%3A0603
+    datasheet_search: https://www.google.com/search?q=15pF+nrf52840-breakout-mdbt50q-import-fps%3A0603+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_0603_15_pico_farad
+  candidate_oomp_ids:
+  - electronic_capacitor_0603_10_pico_farad
+  - electronic_capacitor_0603_18_pico_farad
+  - electronic_capacitor_0603_1_micro_farad
+  - electronic_capacitor_0603_22_pico_farad
+  - electronic_capacitor_0603_27_pico_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - D3
+  - D4
+  value: 1A/23V/620mV
+  footprint: nrf52840-breakout-mdbt50q-import-fps:SOD-323
+  query: 1A/23V/620mV nrf52840-breakout-mdbt50q-import-fps:SOD-323
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1A%2F23V%2F620mV+nrf52840-breakout-mdbt50q-import-fps%3ASOD-323
+    datasheet_search: https://www.google.com/search?q=1A%2F23V%2F620mV+nrf52840-breakout-mdbt50q-import-fps%3ASOD-323+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_diode_schottky_sod_323
+  candidate_oomp_ids:
+  - electronic_diode_schottky_sod_323_infineon_bat20j
+  - electronic_diode_schottky_sod_323_bat54w
+  - electronic_diode_schottky_sod_323_infineon_bat60a
+  - electronic_diode_schottky_sod_123_ss14
+  - electronic_diode_schottky_sod_523_1ss400
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_6
+  status: needs_browser_research
+  priority: high
+  references:
+  - U3
+  value: 3.3V
+  footprint: nrf52840-breakout-mdbt50q-import-fps:SOT23-5
+  query: 3.3V nrf52840-breakout-mdbt50q-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=3.3V+nrf52840-breakout-mdbt50q-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=3.3V+nrf52840-breakout-mdbt50q-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_7
+  status: needs_browser_research
+  priority: high
+  references:
+  - S3
+  value: BOOTLOAD
+  footprint: nrf52840-breakout-mdbt50q-import-fps:TACTILE_SWITCH_SMD_RIGHT_ANGLE
+  query: BOOTLOAD nrf52840-breakout-mdbt50q-import-fps:TACTILE_SWITCH_SMD_RIGHT_ANGLE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=BOOTLOAD+nrf52840-breakout-mdbt50q-import-fps%3ATACTILE_SWITCH_SMD_RIGHT_ANGLE
+    datasheet_search: https://www.google.com/search?q=BOOTLOAD+nrf52840-breakout-mdbt50q-import-fps%3ATACTILE_SWITCH_SMD_RIGHT_ANGLE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_8
+  status: needs_browser_research
+  priority: high
+  references:
+  - J8
+  value: CORTEX_DEBUG_PTH
+  footprint: nrf52840-breakout-mdbt50q-import-fps:2X5-PTH-1.27MM
+  query: CORTEX_DEBUG_PTH nrf52840-breakout-mdbt50q-import-fps:2X5-PTH-1.27MM
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=CORTEX_DEBUG_PTH+nrf52840-breakout-mdbt50q-import-fps%3A2X5-PTH-1.27MM
+    datasheet_search: https://www.google.com/search?q=CORTEX_DEBUG_PTH+nrf52840-breakout-mdbt50q-import-fps%3A2X5-PTH-1.27MM+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_9
+  status: needs_browser_research
+  priority: high
+  references:
+  - FRAME1
+  value: FRAME-LETTER
+  footprint: nrf52840-breakout-mdbt50q-import-fps:CREATIVE_COMMONS
+  query: FRAME-LETTER nrf52840-breakout-mdbt50q-import-fps:CREATIVE_COMMONS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FRAME-LETTER+nrf52840-breakout-mdbt50q-import-fps%3ACREATIVE_COMMONS
+    datasheet_search: https://www.google.com/search?q=FRAME-LETTER+nrf52840-breakout-mdbt50q-import-fps%3ACREATIVE_COMMONS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_10
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: MCP73831
+  footprint: nrf52840-breakout-mdbt50q-import-fps:SOT23-5
+  query: MCP73831 nrf52840-breakout-mdbt50q-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MCP73831+nrf52840-breakout-mdbt50q-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=MCP73831+nrf52840-breakout-mdbt50q-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_11
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: MDBT50Q
+  footprint: nrf52840-breakout-mdbt50q-import-fps:MDBT50Q
+  query: MDBT50Q nrf52840-breakout-mdbt50q-import-fps:MDBT50Q
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MDBT50Q+nrf52840-breakout-mdbt50q-import-fps%3AMDBT50Q
+    datasheet_search: https://www.google.com/search?q=MDBT50Q+nrf52840-breakout-mdbt50q-import-fps%3AMDBT50Q+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_12
+  status: needs_browser_research
+  priority: high
+  references:
+  - S1
+  value: RESET
+  footprint: nrf52840-breakout-mdbt50q-import-fps:TACTILE_SWITCH_SMD_RIGHT_ANGLE
+  query: RESET nrf52840-breakout-mdbt50q-import-fps:TACTILE_SWITCH_SMD_RIGHT_ANGLE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=RESET+nrf52840-breakout-mdbt50q-import-fps%3ATACTILE_SWITCH_SMD_RIGHT_ANGLE
+    datasheet_search: https://www.google.com/search?q=RESET+nrf52840-breakout-mdbt50q-import-fps%3ATACTILE_SWITCH_SMD_RIGHT_ANGLE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

@@ -1,0 +1,106 @@
+available: true
+units:
+- reference: JP8
+  source_file: data/kicad_file.kicad_sch
+  uuid: 27e24024-b291-4498-8c89-ee3db7c0e75f
+  library_id: kicad_file-eagle-import:M023.5MM
+  unit: 1
+  body_style: 1
+  position:
+    x: 152.4
+    y: 180.34
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: JP8
+    Value: M023.5MM
+    Footprint: kicad_file:SCREWTERMINAL-3.5MM-2
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 144.78
+      y: 180.34
+    net: OUT2A
+    net_aliases:
+    - OUT2A
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '28'
+      pin_name: OUT2A
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 144.78
+      y: 177.8
+    net: OUT1A
+    net_aliases:
+    - OUT1A
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '1'
+      pin_name: OUT1A
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.7432
+        y: -2.7432
+      max:
+        x: 4.0132
+        y: 5.2832
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 0.635
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 148.3868
+        y: 175.0568
+      max:
+        x: 155.1432
+        y: 183.0832
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 151.765
+        y: 179.07
+  warnings: []
+connected_components:
+- reference: U1
+  pin_number: '1'
+  pin_name: OUT1A
+- reference: U1
+  pin_number: '28'
+  pin_name: OUT2A

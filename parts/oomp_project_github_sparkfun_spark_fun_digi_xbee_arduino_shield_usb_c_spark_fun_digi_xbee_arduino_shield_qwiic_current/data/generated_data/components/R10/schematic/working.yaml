@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: R10
+  source_file: data/kicad_file.kicad_sch
+  uuid: 4fc41bbb-689c-46ad-a58c-340ffd7804a5
+  library_id: kicad_file-eagle-import:330OHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 73.66
+    y: 256.54
+    rotation: 90.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: R10
+    Value: '330'
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-00818
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 261.62
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D6
+      pin_number: A
+      pin_name: A
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 251.46
+    net: D4/SPI_PICO
+    net_aliases:
+    - D4/SPI_PICO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '11'
+      pin_name: PICO/TX2/DIO4
+    - reference: J5
+      pin_number: '10'
+      pin_name: '10'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 72.5678
+        y: 253.9238
+      max:
+        x: 74.7522
+        y: 259.1562
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 73.66
+        y: 256.54
+  warnings: []
+connected_components:
+- reference: D6
+  pin_number: A
+  pin_name: A
+- reference: J2
+  pin_number: '11'
+  pin_name: PICO/TX2/DIO4
+- reference: J5
+  pin_number: '10'
+  pin_name: '10'

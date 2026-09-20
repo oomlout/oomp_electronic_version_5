@@ -1,0 +1,604 @@
+available: true
+units:
+- reference: U1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 4f07c345-82d7-43fd-a3c4-3bc874c6cbca
+  library_id: kicad_file-eagle-import:74HC4050D
+  unit: 1
+  body_style: 1
+  position:
+    x: 66.04
+    y: 96.52
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U1
+    Value: 74HC4050D
+    Footprint: kicad_file:SOIC16
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: VCC
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: 17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 78.74
+    net: 3.3V
+    net_aliases:
+    - 3.3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$4'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$8'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$9'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$10'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$17'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: '#U$25'
+      pin_number: '1'
+      pin_name: 3.3V
+    - reference: C3
+      pin_number: '1'
+      pin_name: P$1
+    - reference: C5
+      pin_number: '1'
+      pin_name: P$1
+    - reference: FB1
+      pin_number: '1'
+      pin_name: P$1
+    - reference: IC1
+      pin_number: P$7
+      pin_name: VDD
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '5'
+      pin_name: OUT
+  - number: '2'
+    name: 1Y
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 12.7
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 83.82
+    net: SCLK
+    net_aliases:
+    - SCLK
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: P$1
+      pin_name: SCLK
+  - number: '3'
+    name: 1A
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: 12.7
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 83.82
+    net: SCLK_5V
+    net_aliases:
+    - SCLK_5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '4'
+      pin_name: '4'
+  - number: '4'
+    name: 2Y
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 7.62
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 88.9
+    net: SI
+    net_aliases:
+    - SI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: P$2
+      pin_name: SI
+  - number: '5'
+    name: 2A
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: 7.62
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 88.9
+    net: SI_5V
+    net_aliases:
+    - SI_5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '5'
+      pin_name: '5'
+  - number: '6'
+    name: 3Y
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 93.98
+    net: SCS
+    net_aliases:
+    - SCS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: P$3
+      pin_name: SCS
+  - number: '7'
+    name: 3A
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 93.98
+    net: SCS_5V
+    net_aliases:
+    - SCS_5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '6'
+      pin_name: '6'
+  - number: '8'
+    name: GND
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: -17.78
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 114.3
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$6'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$11'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$14'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$18'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$20'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$23'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$24'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#U$26'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: '2'
+      pin_name: P$2
+    - reference: C3
+      pin_number: '2'
+      pin_name: P$2
+    - reference: C4
+      pin_number: '2'
+      pin_name: P$2
+    - reference: C5
+      pin_number: '2'
+      pin_name: P$2
+    - reference: FB2
+      pin_number: '1'
+      pin_name: P$1
+    - reference: IC1
+      pin_number: P$9
+      pin_name: VSS
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: R2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: R3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '2'
+      pin_name: GND
+  - number: '9'
+    name: 4A
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 99.06
+    net: EXTCOMIN_5V
+    net_aliases:
+    - EXTCOMIN_5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '9'
+      pin_name: '9'
+    - reference: R2
+      pin_number: '1'
+      pin_name: '1'
+  - number: '10'
+    name: 4Y
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 99.06
+    net: EXTCOMIN
+    net_aliases:
+    - EXTCOMIN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: P$4
+      pin_name: EXTCOMIN
+  - number: '11'
+    name: 5A
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: -7.62
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 104.14
+    net: DISP_5V
+    net_aliases:
+    - DISP_5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '8'
+      pin_name: '8'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+  - number: '12'
+    name: 5Y
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -7.62
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 104.14
+    net: DISP
+    net_aliases:
+    - DISP
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '1'
+      pin_name: P$1
+    - reference: IC1
+      pin_number: P$5
+      pin_name: DISP
+  - number: '14'
+    name: 6A
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -10.16
+      y: -12.7
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 109.22
+    net: EXTMODE_5V
+    net_aliases:
+    - EXTMODE_5V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '7'
+      pin_name: '7'
+    - reference: R3
+      pin_number: '2'
+      pin_name: '2'
+  - number: '15'
+    name: 6Y
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -12.7
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 109.22
+    net: EXTMODE
+    net_aliases:
+    - EXTMODE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: P$8
+      pin_name: EXTMODE
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -7.747
+        y: -20.447
+      max:
+        x: 7.747
+        y: 20.447
+      width: 15.494
+      height: 40.894
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 58.293
+        y: 76.073
+      max:
+        x: 73.787
+        y: 116.967
+      width: 15.494
+      height: 40.894
+      center:
+        x: 66.04
+        y: 96.52
+  warnings: []
+connected_components:
+- reference: '#U$3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$4'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$5'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$6'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$8'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$9'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$10'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$11'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$14'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$17'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$18'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$20'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$23'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$24'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#U$25'
+  pin_number: '1'
+  pin_name: 3.3V
+- reference: '#U$26'
+  pin_number: '1'
+  pin_name: GND
+- reference: C1
+  pin_number: '1'
+  pin_name: P$1
+- reference: C1
+  pin_number: '2'
+  pin_name: P$2
+- reference: C3
+  pin_number: '1'
+  pin_name: P$1
+- reference: C3
+  pin_number: '2'
+  pin_name: P$2
+- reference: C4
+  pin_number: '2'
+  pin_name: P$2
+- reference: C5
+  pin_number: '1'
+  pin_name: P$1
+- reference: C5
+  pin_number: '2'
+  pin_name: P$2
+- reference: FB1
+  pin_number: '1'
+  pin_name: P$1
+- reference: FB2
+  pin_number: '1'
+  pin_name: P$1
+- reference: IC1
+  pin_number: P$1
+  pin_name: SCLK
+- reference: IC1
+  pin_number: P$2
+  pin_name: SI
+- reference: IC1
+  pin_number: P$3
+  pin_name: SCS
+- reference: IC1
+  pin_number: P$4
+  pin_name: EXTCOMIN
+- reference: IC1
+  pin_number: P$5
+  pin_name: DISP
+- reference: IC1
+  pin_number: P$7
+  pin_name: VDD
+- reference: IC1
+  pin_number: P$8
+  pin_name: EXTMODE
+- reference: IC1
+  pin_number: P$9
+  pin_name: VSS
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '3'
+  pin_name: '3'
+- reference: JP1
+  pin_number: '4'
+  pin_name: '4'
+- reference: JP1
+  pin_number: '5'
+  pin_name: '5'
+- reference: JP1
+  pin_number: '6'
+  pin_name: '6'
+- reference: JP1
+  pin_number: '7'
+  pin_name: '7'
+- reference: JP1
+  pin_number: '8'
+  pin_name: '8'
+- reference: JP1
+  pin_number: '9'
+  pin_name: '9'
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: R2
+  pin_number: '1'
+  pin_name: '1'
+- reference: R2
+  pin_number: '2'
+  pin_name: '2'
+- reference: R3
+  pin_number: '1'
+  pin_name: '1'
+- reference: R3
+  pin_number: '2'
+  pin_name: '2'
+- reference: U2
+  pin_number: '2'
+  pin_name: GND
+- reference: U2
+  pin_number: '5'
+  pin_name: OUT

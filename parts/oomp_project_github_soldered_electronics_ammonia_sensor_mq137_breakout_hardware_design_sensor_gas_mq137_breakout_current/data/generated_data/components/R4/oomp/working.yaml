@@ -629,6 +629,18 @@ oomlout_ai_roboclick_3:
       taxonomy_9: ''
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_pico_dvi_mini_board_picodvi_current/board_explorer.html
+        board_url: https://github.com/adafruit/PicoDVI/blob/master/hardware/mini_board/picodvi.kicad_pcb
+        github_url: https://github.com/adafruit/PicoDVI
+        name: Project adafruit/PicoDVI picodvi current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_pico_dvi_mini_board_picodvi_current
+        project_id: oomp_project_github_adafruit_pico_dvi_mini_board_picodvi_current
+        quantity: 3
+        references:
+        - R1
+        - R2
+        - R6
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_electrolama_pt1_current/board_explorer.html
         board_url: https://github.com/electrolama/pt1
         github_url: https://github.com/electrolama/pt1
@@ -1268,6 +1280,19 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0402_2200_ohm
 part_id: R1
 part_number_lcsc: C2906920
@@ -1618,8 +1643,21 @@ taxonomy_6: ''
 taxonomy_7: ''
 taxonomy_8: ''
 taxonomy_9: ''
+threaded_workers: 6
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_pico_dvi_mini_board_picodvi_current/board_explorer.html
+  board_url: https://github.com/adafruit/PicoDVI/blob/master/hardware/mini_board/picodvi.kicad_pcb
+  github_url: https://github.com/adafruit/PicoDVI
+  name: Project adafruit/PicoDVI picodvi current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_pico_dvi_mini_board_picodvi_current
+  project_id: oomp_project_github_adafruit_pico_dvi_mini_board_picodvi_current
+  quantity: 3
+  references:
+  - R1
+  - R2
+  - R6
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_electrolama_pt1_current/board_explorer.html
   board_url: https://github.com/electrolama/pt1
   github_url: https://github.com/electrolama/pt1

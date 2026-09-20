@@ -1,0 +1,129 @@
+available: true
+units:
+- reference: U2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 3a52e6c4-4441-43c5-9b6a-e38701712cdd
+  library_id: kicad_file-eagle-import:INDUCTOR-
+  unit: 1
+  body_style: 1
+  position:
+    x: 172.72
+    y: 104.14
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U2
+    Value: 10uH
+    Footprint: kicad_file:CDRH3D28
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 7.62
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 165.1
+      y: 104.14
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '5'
+      pin_name: SW
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -7.62
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 180.34
+      y: 104.14
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#P+1'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: '#P+2'
+      pin_number: '1'
+      pin_name: VCC
+    - reference: C7
+      pin_number: A
+      pin_name: +
+    - reference: JP2
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U1
+      pin_number: '6'
+      pin_name: VOUT
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.127
+        y: -5.207
+      max:
+        x: 1.397
+        y: 5.207
+      width: 1.524
+      height: 10.414
+      center:
+        x: 0.635
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 167.513
+        y: 102.743
+      max:
+        x: 177.927
+        y: 104.267
+      width: 10.414
+      height: 1.524
+      center:
+        x: 172.72
+        y: 103.505
+  warnings: []
+connected_components:
+- reference: '#P+1'
+  pin_number: '1'
+  pin_name: VCC
+- reference: '#P+2'
+  pin_number: '1'
+  pin_name: VCC
+- reference: C7
+  pin_number: A
+  pin_name: +
+- reference: JP2
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '5'
+  pin_name: SW
+- reference: U1
+  pin_number: '6'
+  pin_name: VOUT

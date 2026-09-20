@@ -1,0 +1,123 @@
+available: true
+units:
+- reference: S1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 284bb524-7e9f-436b-90e9-78bca2e396db
+  library_id: kicad_file-eagle-import:SWITCH-SPDTKIT
+  unit: 1
+  body_style: 1
+  position:
+    x: 35.56
+    y: 266.7
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: S1
+    Value: SPDT
+    Footprint: kicad_file:SWITCH-SPDT_KIT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: SWCH-08261
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: O
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 30.48
+      y: 269.24
+    net: VBATT
+    net_aliases:
+    - VBATT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: BAT1
+      pin_number: V+
+      pin_name: V+
+  - number: '2'
+    name: P
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 38.1
+      y: 266.7
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D3
+      pin_number: A
+      pin_name: A
+  - number: '3'
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 30.48
+      y: 264.16
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.4608
+        y: -3.0008
+      max:
+        x: 3.2512
+        y: 3.0008
+      width: 3.712
+      height: 6.0016
+      center:
+        x: 1.3952
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 32.3088
+        y: 263.6992
+      max:
+        x: 36.0208
+        y: 269.7008
+      width: 3.712
+      height: 6.0016
+      center:
+        x: 34.1648
+        y: 266.7
+  warnings: []
+connected_components:
+- reference: BAT1
+  pin_number: V+
+  pin_name: V+
+- reference: D3
+  pin_number: A
+  pin_name: A

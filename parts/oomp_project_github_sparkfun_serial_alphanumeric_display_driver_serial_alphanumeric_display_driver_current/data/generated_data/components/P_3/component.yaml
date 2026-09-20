@@ -1,0 +1,134 @@
+reference: P+3
+schematic:
+  available: true
+  units:
+  - reference: P+3
+    source_file: data/kicad_file.kicad_sch
+    uuid: 4ecbd5f8-73c1-43f0-813a-f7c9412999ee
+    library_id: kicad_file-eagle-import:3.3V''
+    unit: 1
+    body_style: 1
+    position:
+      x: 93.98
+      y: 76.2
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: P+3
+      Value: 3.3V
+      Footprint: kicad_file:0
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: 3.3V
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 0.0
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 93.98
+        y: 76.2
+      net: 3.3V
+      net_aliases:
+      - 3.3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: P+8
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: U2
+        pin_number: '3'
+        pin_name: OUT
+      - reference: U3
+        pin_number: '13'
+        pin_name: VDD
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -0.889
+          y: 1.143
+        max:
+          x: 0.889
+          y: 2.667
+        width: 1.778
+        height: 1.524
+        center:
+          x: 0.0
+          y: 1.905
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 93.091
+          y: 73.533
+        max:
+          x: 94.869
+          y: 75.057
+        width: 1.778
+        height: 1.524
+        center:
+          x: 93.98
+          y: 74.295
+    warnings: []
+  connected_components:
+  - reference: C2
+    pin_number: '1'
+    pin_name: '1'
+  - reference: P+8
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: U2
+    pin_number: '3'
+    pin_name: OUT
+  - reference: U3
+    pin_number: '13'
+    pin_name: VDD
+pcb: null
+connectivity_cross_check:
+  available: false
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - 3.3V
+    pcb_nets: []
+    status: incomplete
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: 3.3V
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: connector
+category_source: unmatched_kicad_hint
+category_name: Connector
+generated_directory: components/P_3

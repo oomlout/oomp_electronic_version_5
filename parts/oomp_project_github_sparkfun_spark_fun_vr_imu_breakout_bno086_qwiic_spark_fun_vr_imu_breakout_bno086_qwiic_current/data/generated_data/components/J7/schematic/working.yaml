@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: J7
+  source_file: data/kicad_file.kicad_sch
+  uuid: 36a7b163-8602-4001-8df9-01d6777d0b57
+  library_id: kicad_file-eagle-import:CONN_021X02_NO_SILK
+  unit: 1
+  body_style: 1
+  position:
+    x: 43.18
+    y: 160.02
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: J7
+    Value: CONN_021X02_NO_SILK
+    Footprint: kicad_file:1X02_NO_SILK
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 50.8
+      y: 160.02
+    net: ~{RST}
+    net_aliases:
+    - ~{RST}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J6
+      pin_number: '8'
+      pin_name: '8'
+    - reference: R1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '11'
+      pin_name: ~{RST}
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 50.8
+      y: 157.48
+    net: ~{INT}
+    net_aliases:
+    - ~{INT}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '14'
+      pin_name: ~{H_INT}
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.7432
+        y: -2.7432
+      max:
+        x: 4.0132
+        y: 5.2832
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 0.635
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 40.4368
+        y: 154.7368
+      max:
+        x: 47.1932
+        y: 162.7632
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 43.815
+        y: 158.75
+  warnings: []
+connected_components:
+- reference: J6
+  pin_number: '8'
+  pin_name: '8'
+- reference: R1
+  pin_number: '1'
+  pin_name: '1'
+- reference: U2
+  pin_number: '11'
+  pin_name: ~{RST}
+- reference: U2
+  pin_number: '14'
+  pin_name: ~{H_INT}

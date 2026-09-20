@@ -1,0 +1,453 @@
+reference: R6
+schematic:
+  available: true
+  units:
+  - reference: R6
+    source_file: data/kicad_file.kicad_sch
+    uuid: 7281f667-695b-4f6e-b3c2-6008fd2a17ef
+    library_id: kicad_file-eagle-import:2.2KOHM-0402T-1/16W-1%
+    unit: 1
+    body_style: 1
+    position:
+      x: 73.66
+      y: 276.86
+      rotation: 90.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R6
+      Value: 2.2k
+      Footprint: kicad_file:0402-TIGHT
+      Datasheet: ''
+      Description: ''
+      PROD_ID: RES-14341
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 73.66
+        y: 281.94
+      net: I2C_SCL
+      net_aliases:
+      - I2C_SCL
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: J1
+        pin_number: '21'
+        pin_name: I2C_SCL
+      - reference: U4
+        pin_number: '6'
+        pin_name: SCL
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 73.66
+        y: 271.78
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: I2C0
+        pin_number: '3'
+        pin_name: '3'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6162
+          y: -1.0922
+        max:
+          x: 2.6162
+          y: 1.0922
+        width: 5.2324
+        height: 2.1844
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 72.5678
+          y: 274.2438
+        max:
+          x: 74.7522
+          y: 279.4762
+        width: 2.1844
+        height: 5.2324
+        center:
+          x: 73.66
+          y: 276.86
+    warnings: []
+  connected_components:
+  - reference: I2C0
+    pin_number: '3'
+    pin_name: '3'
+  - reference: J1
+    pin_number: '21'
+    pin_name: I2C_SCL
+  - reference: U4
+    pin_number: '6'
+    pin_name: SCL
+pcb:
+  reference: R6
+  value: 2.2k
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 0b9ee6f4-96ca-4ab7-8aa1-5c6211f96c87
+  library_id: SparkFun_MicroMod_Function_SARA-R5-import-fps:0402-TIGHT
+  layer: F.Cu
+  side: front
+  position:
+    x: 19.877096
+    y: -13.060681
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: R6
+    Value: 2.2k
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.5
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 19.877096
+      y: -12.560681
+    placed_rotation: 0.0
+    size:
+      x: 0.6
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: I2C_SCL
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.8
+          y: -0.3
+        max:
+          x: -0.2
+          y: 0.3
+        width: 0.6
+        height: 0.6
+        center:
+          x: -0.5
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 19.577096
+          y: -12.860681
+        max:
+          x: 20.177096
+          y: -12.260681
+        width: 0.6
+        height: 0.6
+        center:
+          x: 19.877096
+          y: -12.560681
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: J1
+      pad_number: '21'
+    - reference: U4
+      pad_number: '6'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.5
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 19.877096
+      y: -13.560681
+    placed_rotation: 0.0
+    size:
+      x: 0.6
+      y: 0.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: N$14
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.2
+          y: -0.3
+        max:
+          x: 0.8
+          y: 0.3
+        width: 0.6
+        height: 0.6
+        center:
+          x: 0.5
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 19.577096
+          y: -13.860681
+        max:
+          x: 20.177096
+          y: -13.260681
+        width: 0.6
+        height: 0.6
+        center:
+          x: 19.877096
+          y: -13.560681
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: I2C0
+      pad_number: '3'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -0.8
+        y: -0.3
+      max:
+        x: 0.8
+        y: 0.3
+      width: 1.6
+      height: 0.6
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 19.577096
+        y: -13.860681
+      max:
+        x: 20.177096
+        y: -12.260681
+      width: 0.6
+      height: 1.6
+      center:
+        x: 19.877096
+        y: -13.060681
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.9512
+        y: -0.4512
+      max:
+        x: 0.9512
+        y: 0.4512
+      width: 1.9024
+      height: 0.9024
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 19.425896
+        y: -14.011881
+      max:
+        x: 20.328296
+        y: -12.109481
+      width: 0.9024
+      height: 1.9024
+      center:
+        x: 19.877096
+        y: -13.060681
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -0.50127
+        y: -0.25127
+      max:
+        x: 0.50127
+        y: 0.25127
+      width: 1.00254
+      height: 0.50254
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 19.625826
+        y: -13.561951
+      max:
+        x: 20.128366
+        y: -12.559411
+      width: 0.50254
+      height: 1.00254
+      center:
+        x: 19.877096
+        y: -13.060681
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -0.9512
+        y: -0.4512
+      max:
+        x: 0.9512
+        y: 0.4512
+      width: 1.9024
+      height: 0.9024
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 19.425896
+        y: -14.011881
+      max:
+        x: 20.328296
+        y: -12.109481
+      width: 0.9024
+      height: 1.9024
+      center:
+        x: 19.877096
+        y: -13.060681
+  connected_components:
+  - I2C0
+  - J1
+  - U4
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - I2C_SCL
+    pcb_nets:
+    - I2C_SCL
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets:
+    - N$14
+    status: incomplete
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_resistor_0402_2200_ohm
+  confidence: 1.0
+  proposed_oomp_id: electronic_resistor_0402_2200_ohm
+  inferred:
+    kind: resistor
+    package_size: '0402'
+    value: 2.2k
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: resistor
+category_source: oomp_populate
+category_name: Resistor
+generated_directory: components/R6

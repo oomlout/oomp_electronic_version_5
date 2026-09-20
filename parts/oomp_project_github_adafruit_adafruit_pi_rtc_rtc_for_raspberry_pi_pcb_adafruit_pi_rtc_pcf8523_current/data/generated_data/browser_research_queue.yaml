@@ -1,0 +1,114 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 4
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - Q1
+  value: '32.768'
+  footprint: Adafruit PiRTC PCF8523-import-fps:CRYSTAL_8X3.8
+  query: 32.768 Adafruit PiRTC PCF8523-import-fps:CRYSTAL_8X3.8
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=32.768+Adafruit+PiRTC+PCF8523-import-fps%3ACRYSTAL_8X3.8
+    datasheet_search: https://www.google.com/search?q=32.768+Adafruit+PiRTC+PCF8523-import-fps%3ACRYSTAL_8X3.8+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a
+  - electronic_transistor_sot_23_bipolar_npn
+  - electronic_transistor_sot_23_bipolar_pnp
+  - electronic_transistor_sot_363_6_mosfet_n_channel_dual
+  - electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jsmsemi_ss8050
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - B1
+  value: CR1220
+  footprint: Adafruit PiRTC PCF8523-import-fps:CR1220
+  query: CR1220 Adafruit PiRTC PCF8523-import-fps:CR1220
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=CR1220+Adafruit+PiRTC+PCF8523-import-fps%3ACR1220
+    datasheet_search: https://www.google.com/search?q=CR1220+Adafruit+PiRTC+PCF8523-import-fps%3ACR1220+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - RPI1
+  value: RASPBERRYPI_2X3
+  footprint: Adafruit PiRTC PCF8523-import-fps:RASPBERRYPI_2X3_THMSMT
+  query: RASPBERRYPI_2X3 Adafruit PiRTC PCF8523-import-fps:RASPBERRYPI_2X3_THMSMT
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=RASPBERRYPI_2X3+Adafruit+PiRTC+PCF8523-import-fps%3ARASPBERRYPI_2X3_THMSMT
+    datasheet_search: https://www.google.com/search?q=RASPBERRYPI_2X3+Adafruit+PiRTC+PCF8523-import-fps%3ARASPBERRYPI_2X3_THMSMT+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_resistor_0201_33_ohm
+  - electronic_resistor_0201_39_ohm
+  - electronic_resistor_0402_33_ohm
+  - electronic_resistor_0402_39_ohm
+  - electronic_resistor_1206_33_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - IC1
+  value: RTC_PCF8523T
+  footprint: Adafruit PiRTC PCF8523-import-fps:SOIC8_150MIL
+  query: RTC_PCF8523T Adafruit PiRTC PCF8523-import-fps:SOIC8_150MIL
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=RTC_PCF8523T+Adafruit+PiRTC+PCF8523-import-fps%3ASOIC8_150MIL
+    datasheet_search: https://www.google.com/search?q=RTC_PCF8523T+Adafruit+PiRTC+PCF8523-import-fps%3ASOIC8_150MIL+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

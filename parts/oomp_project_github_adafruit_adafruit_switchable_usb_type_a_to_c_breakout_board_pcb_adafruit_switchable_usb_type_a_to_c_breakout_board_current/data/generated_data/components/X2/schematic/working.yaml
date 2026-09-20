@@ -1,0 +1,178 @@
+available: true
+units:
+- reference: X2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 406d53c8-6c4e-4558-8f24-91364eca94fc
+  library_id: kicad_file-eagle-import:USB_TYPEAPTHFML
+  unit: 1
+  body_style: 1
+  position:
+    x: 45.72
+    y: 40.64
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: X2
+    Value: USB A Host
+    Footprint: kicad_file:USB_HOST-PTH
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: D+
+    name: D+
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 40.64
+    net: P_M
+    net_aliases:
+    - P_M
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: SW1
+      pin_number: 3ON
+      pin_name: 3ON
+  - number: D-
+    name: D-
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 38.1
+    net: N_M
+    net_aliases:
+    - N_M
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: SW1
+      pin_number: 2ON
+      pin_name: 2ON
+  - number: GND
+    name: GND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -5.08
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 45.72
+    net: G_M
+    net_aliases:
+    - G_M
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '4'
+      pin_name: '4'
+    - reference: SW1
+      pin_number: 4ON
+      pin_name: 4ON
+  - number: VBUS
+    name: VBUS
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 5.08
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 55.88
+      y: 35.56
+    net: V_M
+    net_aliases:
+    - V_M
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: SW1
+      pin_number: 1ON
+      pin_name: 1ON
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -10.327
+        y: -7.747
+      max:
+        x: 7.747
+        y: 7.747
+      width: 18.074
+      height: 15.494
+      center:
+        x: -1.29
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 35.393
+        y: 32.893
+      max:
+        x: 53.467
+        y: 48.387
+      width: 18.074
+      height: 15.494
+      center:
+        x: 44.43
+        y: 40.64
+  warnings: []
+connected_components:
+- reference: JP1
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: JP1
+  pin_number: '3'
+  pin_name: '3'
+- reference: JP1
+  pin_number: '4'
+  pin_name: '4'
+- reference: SW1
+  pin_number: 1ON
+  pin_name: 1ON
+- reference: SW1
+  pin_number: 2ON
+  pin_name: 2ON
+- reference: SW1
+  pin_number: 3ON
+  pin_name: 3ON
+- reference: SW1
+  pin_number: 4ON
+  pin_name: 4ON

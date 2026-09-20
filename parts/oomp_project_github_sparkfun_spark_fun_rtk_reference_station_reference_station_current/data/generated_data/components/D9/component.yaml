@@ -1,0 +1,526 @@
+reference: D9
+schematic:
+  available: true
+  units:
+  - reference: D9
+    source_file: data/kicad_file.kicad_sch
+    uuid: 9cfb235b-7f33-4a0c-b526-fac21013b6d3
+    library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-BAT60A
+    unit: 1
+    body_style: 1
+    position:
+      x: 152.4
+      y: 129.54
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: D9
+      Value: 3A/10V/280mV
+      Footprint: kicad_file:SOD-323
+      Datasheet: ''
+      Description: ''
+      PROD_ID: DIO-14072
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: A
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 0.0
+      position:
+        x: 149.86
+        y: 129.54
+      net: V_POE
+      net_aliases:
+      - V_POE
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C47
+        pin_number: '1'
+        pin_name: '1'
+      - reference: L1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: LOAD0
+        pin_number: '1'
+        pin_name: '1'
+      - reference: VPOE0
+        pin_number: '1'
+        pin_name: '1'
+    - number: C
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 154.94
+        y: 129.54
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: D4
+        pin_number: C
+        pin_name: C
+      - reference: D5
+        pin_number: C
+        pin_name: C
+      - reference: D6
+        pin_number: C
+        pin_name: C
+      - reference: MEAS0
+        pin_number: '2'
+        pin_name: '2'
+      - reference: MEAS0
+        pin_number: '4'
+        pin_name: '2'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6162
+          y: -1.3462
+        max:
+          x: 2.6162
+          y: 1.3462
+        width: 5.2324
+        height: 2.6924
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 149.7838
+          y: 128.1938
+        max:
+          x: 155.0162
+          y: 130.8862
+        width: 5.2324
+        height: 2.6924
+        center:
+          x: 152.4
+          y: 129.54
+    warnings: []
+  connected_components:
+  - reference: C47
+    pin_number: '1'
+    pin_name: '1'
+  - reference: D4
+    pin_number: C
+    pin_name: C
+  - reference: D5
+    pin_number: C
+    pin_name: C
+  - reference: D6
+    pin_number: C
+    pin_name: C
+  - reference: L1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: LOAD0
+    pin_number: '1'
+    pin_name: '1'
+  - reference: MEAS0
+    pin_number: '2'
+    pin_name: '2'
+  - reference: MEAS0
+    pin_number: '4'
+    pin_name: '2'
+  - reference: VPOE0
+    pin_number: '1'
+    pin_name: '1'
+pcb:
+  reference: D9
+  value: 3A/10V/280mV
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 430f6679-6766-42c0-896b-ab16a7bd7bfd
+  library_id: Reference_Station-import-fps:SOD-323
+  layer: F.Cu
+  side: front
+  position:
+    x: 36.83
+    y: -43.18
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: D9
+    Value: 3A/10V/280mV
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: A
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 1.15
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 35.68
+      y: -43.18
+    placed_rotation: 0.0
+    size:
+      x: 0.63
+      y: 0.83
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: V_POE
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.835
+          y: -0.415
+        max:
+          x: 1.465
+          y: 0.415
+        width: 0.63
+        height: 0.83
+        center:
+          x: 1.15
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 35.365
+          y: -43.595
+        max:
+          x: 35.995
+          y: -42.765
+        width: 0.63
+        height: 0.83
+        center:
+          x: 35.68
+          y: -43.18
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C47
+      pad_number: '1'
+    - reference: L1
+      pad_number: '2'
+    - reference: LOAD0
+      pad_number: '2'
+    - reference: VPOE0
+      pad_number: '1'
+  - number: C
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -1.15
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 37.98
+      y: -43.18
+    placed_rotation: 0.0
+    size:
+      x: 0.63
+      y: 0.83
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: MEAS
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.465
+          y: -0.415
+        max:
+          x: -0.835
+          y: 0.415
+        width: 0.63
+        height: 0.83
+        center:
+          x: -1.15
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 37.665
+          y: -43.595
+        max:
+          x: 38.295
+          y: -42.765
+        width: 0.63
+        height: 0.83
+        center:
+          x: 37.98
+          y: -43.18
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: D4
+      pad_number: C
+    - reference: D5
+      pad_number: C
+    - reference: D6
+      pad_number: C
+    - reference: MEAS0
+      pad_number: '2'
+    - reference: MEAS0
+      pad_number: '4'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.465
+        y: -0.415
+      max:
+        x: 1.465
+        y: 0.415
+      width: 2.93
+      height: 0.83
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 35.365
+        y: -43.595
+      max:
+        x: 38.295
+        y: -42.765
+      width: 2.93
+      height: 0.83
+      center:
+        x: 36.83
+        y: -43.18
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.7145
+        y: -0.8255
+      max:
+        x: 1.7145
+        y: 0.8255
+      width: 3.429
+      height: 1.651
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 35.1155
+        y: -44.0055
+      max:
+        x: 38.5445
+        y: -42.3545
+      width: 3.429
+      height: 1.651
+      center:
+        x: 36.83
+        y: -43.18
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.8716
+        y: -0.7266
+      max:
+        x: 1.0016
+        y: 0.7266
+      width: 2.8732
+      height: 1.4532
+      center:
+        x: -0.435
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 35.8284
+        y: -43.9066
+      max:
+        x: 38.7016
+        y: -42.4534
+      width: 2.8732
+      height: 1.4532
+      center:
+        x: 37.265
+        y: -43.18
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.8716
+        y: -0.8255
+      max:
+        x: 1.7145
+        y: 0.8255
+      width: 3.5861
+      height: 1.651
+      center:
+        x: -0.07855
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 35.1155
+        y: -44.0055
+      max:
+        x: 38.7016
+        y: -42.3545
+      width: 3.5861
+      height: 1.651
+      center:
+        x: 36.90855
+        y: -43.18
+  connected_components:
+  - C47
+  - D4
+  - D5
+  - D6
+  - L1
+  - LOAD0
+  - MEAS0
+  - VPOE0
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: A
+    schematic_nets:
+    - V_POE
+    pcb_nets:
+    - V_POE
+    status: agree
+  - pin_or_pad_number: C
+    schematic_nets: []
+    pcb_nets:
+    - MEAS
+    status: incomplete
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: electronic_diode_schottky_sod_323
+  inferred:
+    kind: diode
+    package_size: null
+    value: 3A/10V/280mV
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_diode_schottky_sod_323_infineon_bat60a
+    score: 0.5139
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_323_bat54w
+    score: 0.5022
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_323_infineon_bat20j
+    score: 0.455
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_123_ss14
+    score: 0.4455
+    reasons:
+    - same component family
+  - oomp_id: electronic_diode_schottky_sod_523_1ss400
+    score: 0.4368
+    reasons:
+    - same component family
+category: diode
+category_source: unmatched_kicad_hint
+category_name: Diode
+generated_directory: components/D9

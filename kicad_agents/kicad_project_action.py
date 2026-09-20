@@ -8,7 +8,6 @@ import subprocess
 import sys
 import uuid as uuid_module
 from pathlib import Path
-from kicad_agents.run_error_report import log_run_error
 
 ROOT = Path(__file__).resolve().parents[1]
 if str(ROOT) not in sys.path:
@@ -16,6 +15,7 @@ if str(ROOT) not in sys.path:
 
 import yaml
 
+from kicad_agents.run_error_report import log_run_error
 from kicad_agents import kicad_sexpr as sx
 from kicad_agents.kicad_library_agent import (
     Masters, build_part, package_libraries, project_candidates, rename_symbol,
@@ -422,13 +422,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--kwargs', required=True)
     args = parser.parse_args()
-    details = json.loads(args.kwargs)
     try:
+        details = json.loads(args.kwargs)
         convert_project(details)
     except Exception as error:
         log_run_error("kicad_project_action", error)
         print(error)
-        raise
+        return
 
 
 if __name__ == '__main__':

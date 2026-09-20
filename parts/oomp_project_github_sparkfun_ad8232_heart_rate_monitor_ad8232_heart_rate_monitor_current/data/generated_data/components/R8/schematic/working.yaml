@@ -1,0 +1,123 @@
+available: true
+units:
+- reference: R8
+  source_file: data/kicad_file.kicad_sch
+  uuid: 67a16656-2450-4236-aff7-187e90aeca8c
+  library_id: kicad_file-eagle-import:RESISTOR0603-RES
+  unit: 1
+  body_style: 1
+  position:
+    x: 139.7
+    y: 119.38
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R8
+    Value: 100k
+    Footprint: kicad_file:0603-RES
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 139.7
+      y: 124.46
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R9
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '9'
+      pin_name: OPAMP-
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 139.7
+      y: 114.3
+    net: REFOUT
+    net_aliases:
+    - REFOUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C3
+      pin_number: '1'
+      pin_name: '1'
+    - reference: C6
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '8'
+      pin_name: REFOUT
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 138.6078
+        y: 116.7638
+      max:
+        x: 140.7922
+        y: 121.9962
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 139.7
+        y: 119.38
+  warnings: []
+connected_components:
+- reference: C3
+  pin_number: '1'
+  pin_name: '1'
+- reference: C6
+  pin_number: '2'
+  pin_name: '2'
+- reference: R9
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: '8'
+  pin_name: REFOUT
+- reference: U1
+  pin_number: '9'
+  pin_name: OPAMP-

@@ -1,0 +1,148 @@
+available: true
+units:
+- reference: D2
+  source_file: data/kicad_file.kicad_sch
+  uuid: eac17403-0440-4ae6-806a-b223155b9f2a
+  library_id: kicad_file-eagle-import:DIODE_SOD-123FL
+  unit: 1
+  body_style: 1
+  position:
+    x: 210.82
+    y: 157.48
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D2
+    Value: SCHOTTKY
+    Footprint: kicad_file:SOD-123FL
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 210.82
+      y: 154.94
+    net: VBUS
+    net_aliases:
+    - VBUS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$3'
+      pin_number: '1'
+      pin_name: VBUS
+    - reference: '#U$5'
+      pin_number: '1'
+      pin_name: VBUS
+    - reference: '#U$11'
+      pin_number: '1'
+      pin_name: VBUS
+    - reference: CN1
+      pin_number: VBUS
+      pin_name: VBUS
+    - reference: JP4
+      pin_number: '5'
+      pin_name: '5'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 210.82
+      y: 160.02
+    net: VOUT
+    net_aliases:
+    - VOUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: D3
+      pin_number: C
+      pin_name: C
+    - reference: U1
+      pin_number: '1'
+      pin_name: IN
+    - reference: U1
+      pin_number: '3'
+      pin_name: EN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.397
+        y: -1.397
+      max:
+        x: 1.397
+        y: 1.397
+      width: 2.794
+      height: 2.794
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 209.423
+        y: 156.083
+      max:
+        x: 212.217
+        y: 158.877
+      width: 2.794
+      height: 2.794
+      center:
+        x: 210.82
+        y: 157.48
+  warnings: []
+connected_components:
+- reference: '#U$3'
+  pin_number: '1'
+  pin_name: VBUS
+- reference: '#U$5'
+  pin_number: '1'
+  pin_name: VBUS
+- reference: '#U$11'
+  pin_number: '1'
+  pin_name: VBUS
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: CN1
+  pin_number: VBUS
+  pin_name: VBUS
+- reference: D3
+  pin_number: C
+  pin_name: C
+- reference: JP4
+  pin_number: '5'
+  pin_name: '5'
+- reference: U1
+  pin_number: '1'
+  pin_name: IN
+- reference: U1
+  pin_number: '3'
+  pin_name: EN

@@ -51,6 +51,20 @@ Resistor 390 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project sparkfun/Easy_Driver Easy Driver current](https://github.com/sparkfun/Easy_Driver/blob/master/Hardware/EasyDriver_v45.brd) | 1 | R6 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_easy_driver_easy_driver_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_easy_driver_easy_driver_current) |
+| [Project sparkfun/EL_Sequencer EL Sequencer current](https://github.com/sparkfun/EL_Sequencer/blob/master/Hardware/EL_Sequencer.brd) | 1 | R1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_el_sequencer_el_sequencer_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_el_sequencer_el_sequencer_current) |
+| [Project sparkfun/QwiicBus_EndPoint Spark Fun Qwiic Bus Endpoint current](https://github.com/sparkfun/QwiicBus_EndPoint/blob/main/Hardware/SparkFun_QwiicBus_Endpoint.brd) | 4 | R1, R3, R4, R6 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_qwiic_bus_end_point_spark_fun_qwiic_bus_endpoint_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_qwiic_bus_end_point_spark_fun_qwiic_bus_endpoint_current) |
+| [Project sparkfun/SparkFun_Differential_I2C_Breakout_PCA9615_Qwiic Spark Fun Differential I2 C Breakout PCA9615 Qwiic current](https://github.com/sparkfun/SparkFun_Differential_I2C_Breakout_PCA9615_Qwiic/blob/master/Hardware/SparkFun_Differential_I2C_Breakout_PCA9615_Qwiic.brd) | 4 | R1, R3, R4, R6 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_differential_i2_c_breakout_pca9615_qwiic_spark_fun_differential_i2_c_breakout_pca9615_qwiic_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_differential_i2_c_breakout_pca9615_qwiic_spark_fun_differential_i2_c_breakout_pca9615_qwiic_current) |
+| [Project sparkfun/SparkFun_Tsunami_Super_WAV_Trigger_Qwiic Spark Fun Tsunami Qwiic current](https://github.com/sparkfun/SparkFun_Tsunami_Super_WAV_Trigger_Qwiic/blob/main/Hardware/SparkFun_Tsunami_Qwiic.brd) | 2 | R7, R8 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_tsunami_super_wav_trigger_qwiic_spark_fun_tsunami_qwiic_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_tsunami_super_wav_trigger_qwiic_spark_fun_tsunami_qwiic_current) |
+| [Project sparkfun/tsunami Tapestry current](https://github.com/sparkfun/tsunami/blob/master/Hardware/deprecated/Tapestry.brd) | 2 | R20, R21 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_tsunami_tapestry_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_tsunami_tapestry_current) |
+| [Project sparkfun/tsunami tsunami current](https://github.com/sparkfun/tsunami/blob/master/Hardware/tsunami.brd) | 2 | R7, R8 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_tsunami_tsunami_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_tsunami_tsunami_current) |
+
+
+
 ## Files
 
 

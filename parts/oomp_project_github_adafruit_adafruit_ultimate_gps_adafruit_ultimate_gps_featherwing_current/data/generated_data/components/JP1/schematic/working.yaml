@@ -1,0 +1,172 @@
+available: true
+units:
+- reference: JP1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 44a12a01-928c-42c2-a8d9-9ae28b7adcdf
+  library_id: kicad_file-eagle-import:HEADER-1X4ROUND
+  unit: 1
+  body_style: 1
+  position:
+    x: 83.82
+    y: 78.74
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: JP1
+    Value: HEADER-1X4ROUND
+    Footprint: kicad_file:1X04_ROUND
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 83.82
+    net: GPS_RESET
+    net_aliases:
+    - GPS_RESET
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: SJ1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: P$2
+      pin_name: NRESET
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 81.28
+    net: FIX
+    net_aliases:
+    - FIX
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: LED1
+      pin_number: A
+      pin_name: A
+    - reference: U1
+      pin_number: P$5
+      pin_name: 3D-FIX
+  - number: '3'
+    name: '3'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 78.74
+    net: 1PPS
+    net_aliases:
+    - 1PPS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: P$13
+      pin_name: 1PPS
+  - number: '4'
+    name: '4'
+    electrical_type: passive
+    graphic_style: inverted
+    local_position:
+      x: -2.54
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 86.36
+      y: 76.2
+    net: ENABLE
+    net_aliases:
+    - ENABLE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: Q1
+      pin_number: '1'
+      pin_name: G
+    - reference: R2
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -6.5532
+        y: -5.2832
+      max:
+        x: 1.4732
+        y: 7.8232
+      width: 8.0264
+      height: 13.1064
+      center:
+        x: -2.54
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 82.3468
+        y: 73.4568
+      max:
+        x: 90.3732
+        y: 86.5632
+      width: 8.0264
+      height: 13.1064
+      center:
+        x: 86.36
+        y: 80.01
+  warnings: []
+connected_components:
+- reference: LED1
+  pin_number: A
+  pin_name: A
+- reference: Q1
+  pin_number: '1'
+  pin_name: G
+- reference: R2
+  pin_number: '2'
+  pin_name: '2'
+- reference: SJ1
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: P$13
+  pin_name: 1PPS
+- reference: U1
+  pin_number: P$2
+  pin_name: NRESET
+- reference: U1
+  pin_number: P$5
+  pin_name: 3D-FIX

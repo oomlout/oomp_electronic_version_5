@@ -1,0 +1,136 @@
+available: true
+units:
+- reference: C4
+  source_file: data/kicad_file.kicad_sch
+  uuid: f0fae478-bd29-4f2b-ac29-363848bf60ee
+  library_id: kicad_file-eagle-import:C-USC0805K
+  unit: 1
+  body_style: 1
+  position:
+    x: 53.34
+    y: 93.98
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C4
+    Value: 0.1uF
+    Footprint: kicad_file:C0805K
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 50.8
+      y: 93.98
+    net: DTR
+    net_aliases:
+    - DTR
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC2
+      pin_number: '2'
+      pin_name: DTR
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 58.42
+      y: 93.98
+    net: RST
+    net_aliases:
+    - RST
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '1'
+      pin_name: PC6(/RESET/PCI14)
+    - reference: JP3
+      pin_number: '5'
+      pin_name: '5'
+    - reference: JP4
+      pin_number: '4'
+      pin_name: '4'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: S1
+      pin_number: A
+      pin_name: P
+    - reference: S1
+      pin_number: A'
+      pin_name: P1
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -2.6162
+      max:
+        x: 2.667
+        y: 0.127
+      width: 5.334
+      height: 2.7432
+      center:
+        x: 0.0
+        y: -1.2446
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 53.213
+        y: 91.313
+      max:
+        x: 55.9562
+        y: 96.647
+      width: 2.7432
+      height: 5.334
+      center:
+        x: 54.5846
+        y: 93.98
+  warnings: []
+connected_components:
+- reference: IC1
+  pin_number: '1'
+  pin_name: PC6(/RESET/PCI14)
+- reference: IC2
+  pin_number: '2'
+  pin_name: DTR
+- reference: JP3
+  pin_number: '5'
+  pin_name: '5'
+- reference: JP4
+  pin_number: '4'
+  pin_name: '4'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: S1
+  pin_number: A
+  pin_name: P
+- reference: S1
+  pin_number: A'
+  pin_name: P1

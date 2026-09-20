@@ -1,0 +1,118 @@
+available: true
+units:
+- reference: R28
+  source_file: data/kicad_file.kicad_sch
+  uuid: afd03a54-e885-4157-8b79-03d13727a6be
+  library_id: kicad_file-eagle-import:10KOHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 203.2
+    y: 245.364
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R28
+    Value: 10k
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-00824
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 203.2
+      y: 250.444
+    net: ESP_4/~{INT_MAG}
+    net_aliases:
+    - ESP_4/~{INT_MAG}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J5
+      pin_number: '5'
+      pin_name: '5'
+    - reference: U3
+      pin_number: '26'
+      pin_name: IOA4
+    - reference: U8
+      pin_number: '5'
+      pin_name: ~{INT}
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 203.2
+      y: 240.284
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: INT0
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 202.1078
+        y: 242.7478
+      max:
+        x: 204.2922
+        y: 247.9802
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 203.2
+        y: 245.364
+  warnings: []
+connected_components:
+- reference: INT0
+  pin_number: '1'
+  pin_name: '1'
+- reference: J5
+  pin_number: '5'
+  pin_name: '5'
+- reference: U3
+  pin_number: '26'
+  pin_name: IOA4
+- reference: U8
+  pin_number: '5'
+  pin_name: ~{INT}

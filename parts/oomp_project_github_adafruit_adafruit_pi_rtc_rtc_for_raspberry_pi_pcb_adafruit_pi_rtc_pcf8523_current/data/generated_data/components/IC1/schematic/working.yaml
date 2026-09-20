@@ -1,0 +1,305 @@
+available: true
+units:
+- reference: IC1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 6f7971d1-81a6-4837-bb90-0d58ec4a499c
+  library_id: kicad_file-eagle-import:RTC_PCF8523T
+  unit: 1
+  body_style: 1
+  position:
+    x: 165.1
+    y: 119.38
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: IC1
+    Value: RTC_PCF8523T
+    Footprint: kicad_file:SOIC8_150MIL
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: XI
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 180.34
+      y: 116.84
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q1
+      pin_number: P$1
+      pin_name: '1'
+  - number: '2'
+    name: XO
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 0.0
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 180.34
+      y: 119.38
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q1
+      pin_number: P$4
+      pin_name: '2'
+  - number: '3'
+    name: VBAT
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 180.34
+      y: 121.92
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: B1
+      pin_number: +$1
+      pin_name: +
+    - reference: B1
+      pin_number: +$2
+      pin_name: +
+  - number: '4'
+    name: VSS
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -5.08
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 180.34
+      y: 124.46
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND16'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND17'
+      pin_number: '1'
+      pin_name: GND
+    - reference: B1
+      pin_number: '-'
+      pin_name: '-'
+    - reference: C1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: RPI1
+      pin_number: '6'
+      pin_name: GND
+    - reference: RPI1
+      pin_number: 6'
+      pin_name: GND
+  - number: '5'
+    name: SDA
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 15.24
+      y: -5.08
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 149.86
+      y: 124.46
+    net: SDA
+    net_aliases:
+    - SDA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: RPI1
+      pin_number: '3'
+      pin_name: SDA
+    - reference: RPI1
+      pin_number: 3'
+      pin_name: SDA
+  - number: '6'
+    name: SCL
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 15.24
+      y: -2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 149.86
+      y: 121.92
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: RPI1
+      pin_number: '5'
+      pin_name: SCL
+    - reference: RPI1
+      pin_number: 5'
+      pin_name: SCL
+  - number: '7'
+    name: ~{INT1/CLK}
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: 15.24
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 149.86
+      y: 119.38
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '8'
+    name: VDD
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: 15.24
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 149.86
+      y: 116.84
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R1
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -10.287
+        y: -7.747
+      max:
+        x: 10.287
+        y: 5.207
+      width: 20.574
+      height: 12.954
+      center:
+        x: 0.0
+        y: -1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 154.813
+        y: 114.173
+      max:
+        x: 175.387
+        y: 127.127
+      width: 20.574
+      height: 12.954
+      center:
+        x: 165.1
+        y: 120.65
+  warnings: []
+connected_components:
+- reference: '#GND2'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND16'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND17'
+  pin_number: '1'
+  pin_name: GND
+- reference: B1
+  pin_number: +$1
+  pin_name: +
+- reference: B1
+  pin_number: +$2
+  pin_name: +
+- reference: B1
+  pin_number: '-'
+  pin_name: '-'
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: C1
+  pin_number: '2'
+  pin_name: '2'
+- reference: Q1
+  pin_number: P$1
+  pin_name: '1'
+- reference: Q1
+  pin_number: P$4
+  pin_name: '2'
+- reference: R1
+  pin_number: '2'
+  pin_name: '2'
+- reference: RPI1
+  pin_number: '3'
+  pin_name: SDA
+- reference: RPI1
+  pin_number: 3'
+  pin_name: SDA
+- reference: RPI1
+  pin_number: '5'
+  pin_name: SCL
+- reference: RPI1
+  pin_number: 5'
+  pin_name: SCL
+- reference: RPI1
+  pin_number: '6'
+  pin_name: GND
+- reference: RPI1
+  pin_number: 6'
+  pin_name: GND

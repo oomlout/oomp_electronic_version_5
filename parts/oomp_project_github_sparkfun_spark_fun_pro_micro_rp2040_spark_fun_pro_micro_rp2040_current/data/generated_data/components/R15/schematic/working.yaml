@@ -1,0 +1,125 @@
+available: true
+units:
+- reference: R15
+  source_file: data/kicad_file.kicad_sch
+  uuid: f60c1a6e-3543-40dc-bd59-eb9563ade271
+  library_id: kicad_file-eagle-import:1KOHM-0402T-1/16W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 210.82
+    y: 50.8
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R15
+    Value: 1k
+    Footprint: kicad_file:0402-TIGHT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-14342
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 210.82
+      y: 55.88
+    net: QSPI-CS
+    net_aliases:
+    - QSPI-CS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R16
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '56'
+      pin_name: QSPI_~{CS}
+    - reference: U4
+      pin_number: '1'
+      pin_name: ~{CS}
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 210.82
+      y: 45.72
+    net: BOOT
+    net_aliases:
+    - BOOT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: S2
+      pin_number: '3'
+      pin_name: '2'
+    - reference: S2
+      pin_number: '4'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 209.7278
+        y: 48.1838
+      max:
+        x: 211.9122
+        y: 53.4162
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 210.82
+        y: 50.8
+  warnings: []
+connected_components:
+- reference: R16
+  pin_number: '1'
+  pin_name: '1'
+- reference: S2
+  pin_number: '3'
+  pin_name: '2'
+- reference: S2
+  pin_number: '4'
+  pin_name: '2'
+- reference: U2
+  pin_number: '56'
+  pin_name: QSPI_~{CS}
+- reference: U4
+  pin_number: '1'
+  pin_name: ~{CS}

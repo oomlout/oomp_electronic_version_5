@@ -1,0 +1,473 @@
+reference: Y1
+schematic:
+  available: true
+  units:
+  - reference: Y1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 06f77335-0ec7-452e-ae5d-35fb90fb2bdf
+    library_id: kicad_file-eagle-import:CRYSTALHC49UV
+    unit: 1
+    body_style: 1
+    position:
+      x: 208.28
+      y: 132.08
+      rotation: 270.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: Y1
+      Value: CRYSTALHC49UV
+      Footprint: kicad_file:HC49U-V
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -2.54
+        y: 0.0
+        rotation: 0.0
+      length: 0.0
+      position:
+        x: 208.28
+        y: 129.54
+      net: XO
+      net_aliases:
+      - XO
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP3
+        pin_number: '18'
+        pin_name: '18'
+      - reference: U1
+        pin_number: '29'
+        pin_name: XO
+    - number: '2'
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 2.54
+        y: 0.0
+        rotation: 180.0
+      length: 0.0
+      position:
+        x: 208.28
+        y: 134.62
+      net: XI
+      net_aliases:
+      - XI
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP3
+        pin_number: '17'
+        pin_name: '17'
+      - reference: U1
+        pin_number: '28'
+        pin_name: XI
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6162
+          y: -1.905
+        max:
+          x: 2.6162
+          y: 1.905
+        width: 5.2324
+        height: 3.81
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 206.375
+          y: 129.4638
+        max:
+          x: 210.185
+          y: 134.6962
+        width: 3.81
+        height: 5.2324
+        center:
+          x: 208.28
+          y: 132.08
+    warnings: []
+  connected_components:
+  - reference: JP3
+    pin_number: '17'
+    pin_name: '17'
+  - reference: JP3
+    pin_number: '18'
+    pin_name: '18'
+  - reference: U1
+    pin_number: '28'
+    pin_name: XI
+  - reference: U1
+    pin_number: '29'
+    pin_name: XO
+pcb:
+  reference: Y1
+  value: ''
+  source_file: data/kicad_file.kicad_pcb
+  uuid: c2d18282-fdee-4e20-88f0-ecff15671582
+  library_id: P8X32A_Breakout-import-fps:HC49U-V
+  layer: F.Cu
+  side: front
+  position:
+    x: 39.37
+    y: -12.7
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: Y1
+    Value: ''
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -2.413
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 39.37
+      y: -10.287
+    placed_rotation: 0.0
+    size:
+      x: 1.4224
+      y: 1.4224
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: XO
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -3.1242
+          y: -0.7112
+        max:
+          x: -1.7018
+          y: 0.7112
+        width: 1.4224
+        height: 1.4224
+        center:
+          x: -2.413
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 38.6588
+          y: -10.9982
+        max:
+          x: 40.0812
+          y: -9.5758
+        width: 1.4224
+        height: 1.4224
+        center:
+          x: 39.37
+          y: -10.287
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP3
+      pad_number: '18'
+    - reference: U1
+      pad_number: '29'
+  - number: '2'
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 2.413
+      y: 0.0
+      rotation: 90.0
+    position:
+      x: 39.37
+      y: -15.113
+    placed_rotation: 0.0
+    size:
+      x: 1.4224
+      y: 1.4224
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.8128
+      y: 0.8128
+      diameter: 0.8128
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: XI
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.7018
+          y: -0.7112
+        max:
+          x: 3.1242
+          y: 0.7112
+        width: 1.4224
+        height: 1.4224
+        center:
+          x: 2.413
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 38.6588
+          y: -15.8242
+        max:
+          x: 40.0812
+          y: -14.4018
+        width: 1.4224
+        height: 1.4224
+        center:
+          x: 39.37
+          y: -15.113
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP3
+      pad_number: '17'
+    - reference: U1
+      pad_number: '28'
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -3.1242
+        y: -0.7112
+      max:
+        x: 3.1242
+        y: 0.7112
+      width: 6.2484
+      height: 1.4224
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 38.6588
+        y: -15.8242
+      max:
+        x: 40.0812
+        y: -9.5758
+      width: 1.4224
+      height: 6.2484
+      center:
+        x: 39.37
+        y: -12.7
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -5.4102
+        y: -2.4892
+      max:
+        x: 5.4102
+        y: 2.4892
+      width: 10.8204
+      height: 4.9784
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 36.8808
+        y: -18.1102
+      max:
+        x: 41.8592
+        y: -7.2898
+      width: 4.9784
+      height: 10.8204
+      center:
+        x: 39.37
+        y: -12.7
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -5.4102
+        y: -2.4892
+      max:
+        x: 5.4102
+        y: 2.4892
+      width: 10.8204
+      height: 4.9784
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 36.8808
+        y: -18.1102
+      max:
+        x: 41.8592
+        y: -7.2898
+      width: 4.9784
+      height: 10.8204
+      center:
+        x: 39.37
+        y: -12.7
+  connected_components:
+  - JP3
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - XO
+    pcb_nets:
+    - XO
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - XI
+    pcb_nets:
+    - XI
+    status: agree
+  agree_count: 2
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: crystal
+    package_size: null
+    value: CRYSTALHC49UV
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_crystal_5032_surface_mount_2_pin_8_mhz_20_pf
+    score: 0.1185
+    reasons:
+    - same component family
+  - oomp_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
+    score: 0.1173
+    reasons:
+    - same component family
+  - oomp_id: electronic_crystal_3225_surface_mount_4_pin_16_mhz_20_pf
+    score: 0.1173
+    reasons:
+    - same component family
+  - oomp_id: electronic_crystal_2016_surface_mount_4_pin_26_mhz_20_pf_txc_nx3225gd
+    score: 0.1093
+    reasons:
+    - same component family
+  - oomp_id: electronic_crystal_3225_surface_mount_4_pin_3_579545_mhz_20_pf
+    score: 0.1089
+    reasons:
+    - same component family
+category: crystal
+category_source: unmatched_kicad_hint
+category_name: Crystal
+generated_directory: components/Y1

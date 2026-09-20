@@ -1,0 +1,124 @@
+available: true
+units:
+- reference: R7
+  source_file: data/kicad_file.kicad_sch
+  uuid: dbee8180-121a-4840-80a3-74fe9b51177c
+  library_id: kicad_file-eagle-import:4.7KOHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 129.54
+    y: 142.24
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R7
+    Value: 4.7k
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-07857
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 129.54
+      y: 147.32
+    net: SCL
+    net_aliases:
+    - SCL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '4'
+      pin_name: '4'
+    - reference: J2
+      pin_number: '4'
+      pin_name: '4'
+    - reference: J8
+      pin_number: '4'
+      pin_name: '4'
+    - reference: U1
+      pin_number: '4'
+      pin_name: SCL
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 129.54
+      y: 137.16
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: I2C0
+      pin_number: '3'
+      pin_name: '3'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 128.4478
+        y: 139.6238
+      max:
+        x: 130.6322
+        y: 144.8562
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 129.54
+        y: 142.24
+  warnings: []
+connected_components:
+- reference: I2C0
+  pin_number: '3'
+  pin_name: '3'
+- reference: J1
+  pin_number: '4'
+  pin_name: '4'
+- reference: J2
+  pin_number: '4'
+  pin_name: '4'
+- reference: J8
+  pin_number: '4'
+  pin_name: '4'
+- reference: U1
+  pin_number: '4'
+  pin_name: SCL

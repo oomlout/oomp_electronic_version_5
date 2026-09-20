@@ -1,0 +1,591 @@
+reference: BAT2
+schematic:
+  available: true
+  units:
+  - reference: BAT2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 37553c17-b26e-418d-a406-b6980e518663
+    library_id: kicad_file-eagle-import:BUTTON_GREENBUTTON_GREEN
+    unit: 1
+    body_style: 1
+    position:
+      x: 38.1
+      y: 43.18
+      rotation: 90.0
+      mirror: x
+      units: mm
+    properties:
+      Reference: BAT2
+      Value: AA
+      Footprint: kicad_file:39
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: '-'
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 38.1
+        y: 38.1
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: S1
+        pin_number: '1'
+        pin_name: P
+    - number: '2'
+      name: +
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 38.1
+        y: 48.26
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: BAT1
+        pin_number: '1'
+        pin_name: '-'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6162
+          y: -4.0132
+        max:
+          x: 2.7432
+          y: 4.0132
+        width: 5.3594
+        height: 8.0264
+        center:
+          x: 0.0635
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 34.0868
+          y: 40.4368
+        max:
+          x: 42.1132
+          y: 45.7962
+        width: 8.0264
+        height: 5.3594
+        center:
+          x: 38.1
+          y: 43.1165
+    warnings: []
+  connected_components:
+  - reference: BAT1
+    pin_number: '1'
+    pin_name: '-'
+  - reference: S1
+    pin_number: '1'
+    pin_name: P
+pcb:
+  reference: BAT2
+  value: AA
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 501f4ff9-2e4d-4a60-8508-ce2e43d70d2f
+  library_id: Simon-PTH-import-fps:BATTERY-AA-KIT
+  layer: F.Cu
+  side: front
+  position:
+    x: 71.12
+    y: -31.75
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: BAT2
+    Value: AA
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: GND@1
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 25.146
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 71.12
+      y: -6.604
+    placed_rotation: 0.0
+    size:
+      x: 2.7813
+      y: 2.7813
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.8542
+      y: 1.8542
+      diameter: 1.8542
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: N$4
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 23.75535
+          y: -1.39065
+        max:
+          x: 26.53665
+          y: 1.39065
+        width: 2.7813
+        height: 2.7813
+        center:
+          x: 25.146
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 69.72935
+          y: -7.99465
+        max:
+          x: 72.51065
+          y: -5.21335
+        width: 2.7813
+        height: 2.7813
+        center:
+          x: 71.12
+          y: -6.604
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: BAT1
+      pad_number: PWR@1
+  - number: GND@2
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 18.034
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 71.12
+      y: -13.716
+    placed_rotation: 0.0
+    size:
+      x: 2.7813
+      y: 2.7813
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.8542
+      y: 1.8542
+      diameter: 1.8542
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 16.64335
+          y: -1.39065
+        max:
+          x: 19.42465
+          y: 1.39065
+        width: 2.7813
+        height: 2.7813
+        center:
+          x: 18.034
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 69.72935
+          y: -15.10665
+        max:
+          x: 72.51065
+          y: -12.32535
+        width: 2.7813
+        height: 2.7813
+        center:
+          x: 71.12
+          y: -13.716
+    plating: plated
+    is_mounting_hole: false
+  - number: PWR@1
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -25.146
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 71.12
+      y: -56.896
+    placed_rotation: 0.0
+    size:
+      x: 2.7813
+      y: 2.7813
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.8542
+      y: 1.8542
+      diameter: 1.8542
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: N$2
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -26.53665
+          y: -1.39065
+        max:
+          x: -23.75535
+          y: 1.39065
+        width: 2.7813
+        height: 2.7813
+        center:
+          x: -25.146
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 69.72935
+          y: -58.28665
+        max:
+          x: 72.51065
+          y: -55.50535
+        width: 2.7813
+        height: 2.7813
+        center:
+          x: 71.12
+          y: -56.896
+    plating: plated
+    is_mounting_hole: false
+    connected_to:
+    - reference: S1
+      pad_number: '2'
+  - number: PWR@2
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -18.034
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 71.12
+      y: -49.784
+    placed_rotation: 90.0
+    size:
+      x: 2.7813
+      y: 2.7813
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 1.8542
+      y: 1.8542
+      diameter: 1.8542
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -19.42465
+          y: -1.39065
+        max:
+          x: -16.64335
+          y: 1.39065
+        width: 2.7813
+        height: 2.7813
+        center:
+          x: -18.034
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 69.72935
+          y: -51.17465
+        max:
+          x: 72.51065
+          y: -48.39335
+        width: 2.7813
+        height: 2.7813
+        center:
+          x: 71.12
+          y: -49.784
+    plating: plated
+    is_mounting_hole: false
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -26.53665
+        y: -1.39065
+      max:
+        x: 26.53665
+        y: 1.39065
+      width: 53.0733
+      height: 2.7813
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 69.72935
+        y: -58.28665
+      max:
+        x: 72.51065
+        y: -5.21335
+      width: 2.7813
+      height: 53.0733
+      center:
+        x: 71.12
+        y: -31.75
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -26.7335
+        y: -7.6835
+      max:
+        x: 26.7335
+        y: 7.6835
+      width: 53.467
+      height: 15.367
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 63.4365
+        y: -58.4835
+      max:
+        x: 78.8035
+        y: -5.0165
+      width: 15.367
+      height: 53.467
+      center:
+        x: 71.12
+        y: -31.75
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -27.178
+        y: -4.953
+      max:
+        x: 27.178
+        y: 4.953
+      width: 54.356
+      height: 9.906
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 66.167
+        y: -58.928
+      max:
+        x: 76.073
+        y: -4.572
+      width: 9.906
+      height: 54.356
+      center:
+        x: 71.12
+        y: -31.75
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -27.178
+        y: -7.6835
+      max:
+        x: 27.178
+        y: 7.6835
+      width: 54.356
+      height: 15.367
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 63.4365
+        y: -58.928
+      max:
+        x: 78.8035
+        y: -4.572
+      width: 15.367
+      height: 54.356
+      center:
+        x: 71.12
+        y: -31.75
+  connected_components:
+  - BAT1
+  - S1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '2'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: GND@1
+    schematic_nets: []
+    pcb_nets:
+    - N$4
+    status: incomplete
+  - pin_or_pad_number: GND@2
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: PWR@1
+    schematic_nets: []
+    pcb_nets:
+    - N$2
+    status: incomplete
+  - pin_or_pad_number: PWR@2
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  agree_count: 0
+  disagree_count: 0
+  incomplete_count: 2
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: AA
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: other
+category_source: unmatched_kicad_hint
+category_name: Other
+generated_directory: components/BAT2

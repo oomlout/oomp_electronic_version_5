@@ -1,0 +1,239 @@
+available: true
+units:
+- reference: U1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 5a7e12e7-6eb0-4d77-917c-77ec529b65fc
+  library_id: kicad_file-eagle-import:V_REG_NCP1400SOT23-5
+  unit: 1
+  body_style: 1
+  position:
+    x: 154.94
+    y: 99.06
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: U1
+    Value: NCP1402
+    Footprint: kicad_file:SOT23-5
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: EN
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 162.56
+      y: 93.98
+    net: VOUT
+    net_aliases:
+    - VOUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C2
+      pin_number: A
+      pin_name: +
+    - reference: D1
+      pin_number: C
+      pin_name: C
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '2'
+      pin_name: OUT
+  - number: '2'
+    name: OUT
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 162.56
+      y: 99.06
+    net: VOUT
+    net_aliases:
+    - VOUT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C2
+      pin_number: A
+      pin_name: +
+    - reference: D1
+      pin_number: C
+      pin_name: C
+    - reference: JP1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '1'
+      pin_name: EN
+  - number: '3'
+    name: NC
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -7.62
+      y: -5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 162.56
+      y: 104.14
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '4'
+    name: GND
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: -5.08
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 144.78
+      y: 104.14
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND4'
+      pin_number: '1'
+      pin_name: GND
+    - reference: C1
+      pin_number: C
+      pin_name: '-'
+    - reference: C2
+      pin_number: C
+      pin_name: '-'
+    - reference: JP1
+      pin_number: '1'
+      pin_name: '1'
+  - number: '5'
+    name: LX
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 10.16
+      y: 5.08
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 144.78
+      y: 93.98
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D1
+      pin_number: A
+      pin_name: A
+    - reference: L1
+      pin_number: P$2
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -5.2832
+        y: -7.8232
+      max:
+        x: 7.8232
+        y: 7.8232
+      width: 13.1064
+      height: 15.6464
+      center:
+        x: 1.27
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 147.1168
+        y: 91.2368
+      max:
+        x: 160.2232
+        y: 106.8832
+      width: 13.1064
+      height: 15.6464
+      center:
+        x: 153.67
+        y: 99.06
+  warnings: []
+connected_components:
+- reference: '#GND1'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND2'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND4'
+  pin_number: '1'
+  pin_name: GND
+- reference: C1
+  pin_number: C
+  pin_name: '-'
+- reference: C2
+  pin_number: A
+  pin_name: +
+- reference: C2
+  pin_number: C
+  pin_name: '-'
+- reference: D1
+  pin_number: A
+  pin_name: A
+- reference: D1
+  pin_number: C
+  pin_name: C
+- reference: JP1
+  pin_number: '1'
+  pin_name: '1'
+- reference: JP1
+  pin_number: '2'
+  pin_name: '2'
+- reference: L1
+  pin_number: P$2
+  pin_name: '2'
+- reference: U1
+  pin_number: '1'
+  pin_name: EN
+- reference: U1
+  pin_number: '2'
+  pin_name: OUT

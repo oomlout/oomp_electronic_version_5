@@ -1,0 +1,595 @@
+reference: R5
+schematic:
+  available: true
+  units:
+  - reference: R5
+    source_file: data/kicad_file.kicad_sch
+    uuid: 2a7a5193-71a0-4888-83c2-8e4c66c86a2a
+    library_id: kicad_file-eagle-import:RESISTORAXIAL-0.3
+    unit: 1
+    body_style: 1
+    position:
+      x: 246.38
+      y: 88.9
+      rotation: 90.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: R5
+      Value: CUSTOM
+      Footprint: kicad_file:AXIAL-0.3
+      Datasheet: ''
+      Description: ''
+      PROD_ID: ' '
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: P$1
+      name: '1'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 246.38
+        y: 93.98
+      net: FB
+      net_aliases:
+      - FB
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R3
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U1
+        pin_number: P$5
+        pin_name: FB
+    - number: P$2
+      name: '2'
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 5.08
+        y: 0.0
+        rotation: 180.0
+      length: 2.54
+      position:
+        x: 246.38
+        y: 83.82
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: S1
+        pin_number: '1'
+        pin_name: '1'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.6162
+          y: -1.0922
+        max:
+          x: 2.6162
+          y: 1.0922
+        width: 5.2324
+        height: 2.1844
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 245.2878
+          y: 86.2838
+        max:
+          x: 247.4722
+          y: 91.5162
+        width: 2.1844
+        height: 5.2324
+        center:
+          x: 246.38
+          y: 88.9
+    warnings: []
+  connected_components:
+  - reference: R2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R3
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R4
+    pin_number: '1'
+    pin_name: '1'
+  - reference: S1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: U1
+    pin_number: P$5
+    pin_name: FB
+pcb:
+  reference: R5
+  value: CUSTOM
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 5c3d54ea-d061-4302-a65f-c422d94f6b19
+  library_id: SparkFun_Buck-Boost-import-fps:AXIAL-0.3
+  layer: F.Cu
+  side: front
+  position:
+    x: 9.525
+    y: -8.382
+    rotation: 90.0
+    rotation_kicad: -90.0
+    units: mm
+  properties:
+    Reference: R5
+    Value: CUSTOM
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: P$1
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 9.525
+      y: -12.192
+    placed_rotation: 0.0
+    size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: FB
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -4.7498
+          y: -0.9398
+        max:
+          x: -2.8702
+          y: 0.9398
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: -3.81
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 8.5852
+          y: -13.1318
+        max:
+          x: 10.4648
+          y: -11.2522
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 9.525
+          y: -12.192
+    plating: plated
+    is_mounting_hole: true
+    connected_to:
+    - reference: R2
+      pad_number: '2'
+    - reference: R3
+      pad_number: '1'
+    - reference: R4
+      pad_number: '1'
+    - reference: U1
+      pad_number: P$5
+  - number: P$2
+    type: thru_hole
+    shape: circle
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 9.525
+      y: -4.572
+    placed_rotation: 0.0
+    size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: N$4
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.8702
+          y: -0.9398
+        max:
+          x: 4.7498
+          y: 0.9398
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 3.81
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 8.5852
+          y: -5.5118
+        max:
+          x: 10.4648
+          y: -3.6322
+        width: 1.8796
+        height: 1.8796
+        center:
+          x: 9.525
+          y: -4.572
+    plating: plated
+    is_mounting_hole: true
+    connected_to:
+    - reference: S1
+      pad_number: '1'
+  mounting_holes:
+  - id: R5_hole_1
+    reference: R5
+    pad_number: P$1
+    role: shield_mount
+    plating: plated
+    style: round
+    drill_size:
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      units: mm
+    pad_size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    pad_shape: circle
+    local_position:
+      x: -3.81
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 9.525
+      y: -12.192
+    rotation: 0.0
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: FB
+    classification_reason: plated pad uses a mechanical mounting/shield identifier
+    oomp_id: mechanical_mounting_hole_0_9_mm_round_plated
+    oomp_reference: MH5
+    classification:
+      name: Mounting Hole 0.9 mm Round Plated
+      class: mechanical
+      type: mounting_hole
+      taxonomy: []
+      taxonomy_path: []
+    name: Mounting Hole 0.9 mm Round Plated
+    oomp:
+      status: unmatched
+      accepted: false
+      oomp_id: ''
+      confidence: 0.0
+      proposed_oomp_id: mechanical_mounting_hole_0_9_mm_round_plated
+      inferred:
+        kind: mounting_hole
+        style: round
+        plating: plated
+        drill_size:
+          x: 0.9
+          y: 0.9
+          diameter: 0.9
+          units: mm
+      reasons:
+      - Exact mechanical mounting-hole OOMP ID constructed from drill size, style, and plating.
+      candidates: []
+  - id: R5_hole_2
+    reference: R5
+    pad_number: P$2
+    role: shield_mount
+    plating: plated
+    style: round
+    drill_size:
+      x: 0.9
+      y: 0.9
+      diameter: 0.9
+      units: mm
+    pad_size:
+      x: 1.8796
+      y: 1.8796
+      units: mm
+    pad_shape: circle
+    local_position:
+      x: 3.81
+      y: 0.0
+      rotation: -90.0
+    position:
+      x: 9.525
+      y: -4.572
+    rotation: 0.0
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: N$4
+    classification_reason: plated pad uses a mechanical mounting/shield identifier
+    oomp_id: mechanical_mounting_hole_0_9_mm_round_plated
+    oomp_reference: MH6
+    classification:
+      name: Mounting Hole 0.9 mm Round Plated
+      class: mechanical
+      type: mounting_hole
+      taxonomy: []
+      taxonomy_path: []
+    name: Mounting Hole 0.9 mm Round Plated
+    oomp:
+      status: unmatched
+      accepted: false
+      oomp_id: ''
+      confidence: 0.0
+      proposed_oomp_id: mechanical_mounting_hole_0_9_mm_round_plated
+      inferred:
+        kind: mounting_hole
+        style: round
+        plating: plated
+        drill_size:
+          x: 0.9
+          y: 0.9
+          diameter: 0.9
+          units: mm
+      reasons:
+      - Exact mechanical mounting-hole OOMP ID constructed from drill size, style, and plating.
+      candidates: []
+  is_mounting_hole: true
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -4.7498
+        y: -0.9398
+      max:
+        x: 4.7498
+        y: 0.9398
+      width: 9.4996
+      height: 1.8796
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 8.5852
+        y: -13.1318
+      max:
+        x: 10.4648
+        y: -3.6322
+      width: 1.8796
+      height: 9.4996
+      center:
+        x: 9.525
+        y: -8.382
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.8956
+        y: -0.8636
+      max:
+        x: 2.8956
+        y: 0.8636
+      width: 5.7912
+      height: 1.7272
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 8.6614
+        y: -11.2776
+      max:
+        x: 10.3886
+        y: -5.4864
+      width: 1.7272
+      height: 5.7912
+      center:
+        x: 9.525
+        y: -8.382
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -4.7498
+        y: -0.9398
+      max:
+        x: 4.7498
+        y: 0.9398
+      width: 9.4996
+      height: 1.8796
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 8.5852
+        y: -13.1318
+      max:
+        x: 10.4648
+        y: -3.6322
+      width: 1.8796
+      height: 9.4996
+      center:
+        x: 9.525
+        y: -8.382
+  connected_components:
+  - R2
+  - R3
+  - R4
+  - S1
+  - U1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: P$1
+    schematic_nets:
+    - FB
+    pcb_nets:
+    - FB
+    status: agree
+  - pin_or_pad_number: P$2
+    schematic_nets: []
+    pcb_nets:
+    - N$4
+    status: incomplete
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: mechanical_mounting_hole_0_9_mm_round_plated
+  inferred:
+    kind: mounting_hole
+    package_size: null
+    value: CUSTOM
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: mechanical_mounting_hole_0_7_mm_round_plated
+    score: 0.4639
+    reasons:
+    - same component family
+  - oomp_id: mechanical_mounting_hole_0_8_mm_round_plated
+    score: 0.4639
+    reasons:
+    - same component family
+  - oomp_id: mechanical_mounting_hole_3_mm_round_plated
+    score: 0.4637
+    reasons:
+    - same component family
+  - oomp_id: mechanical_mounting_hole_0_65_mm_round_plated
+    score: 0.4601
+    reasons:
+    - same component family
+  - oomp_id: mechanical_mounting_hole_0_7_mm_round_unplated
+    score: 0.4563
+    reasons:
+    - same component family
+category: resistor
+category_source: unmatched_kicad_hint
+category_name: Resistor
+generated_directory: components/R5

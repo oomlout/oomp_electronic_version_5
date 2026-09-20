@@ -1,0 +1,173 @@
+available: true
+units:
+- reference: D4
+  source_file: data/kicad_file.kicad_sch
+  uuid: c02d95e4-0569-4f40-afd1-3c743492253a
+  library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-BAT20J
+  unit: 1
+  body_style: 1
+  position:
+    x: 175.26
+    y: 40.64
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D4
+    Value: 1A/23V/620mV
+    Footprint: kicad_file:SOD-323
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-11623
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 172.72
+      y: 40.64
+    net: V_BATT
+    net_aliases:
+    - V_BATT
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY14'
+      pin_number: '1'
+      pin_name: V_BATT
+    - reference: '#SUPPLY15'
+      pin_number: '1'
+      pin_name: V_BATT
+    - reference: C6
+      pin_number: '1'
+      pin_name: '1'
+    - reference: J12
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U2
+      pin_number: '3'
+      pin_name: VBAT
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 177.8
+      y: 40.64
+    net: VIN
+    net_aliases:
+    - VIN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY18'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: '#SUPPLY19'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: '#SUPPLY20'
+      pin_number: '1'
+      pin_name: VIN
+    - reference: C8
+      pin_number: '1'
+      pin_name: '1'
+    - reference: D3
+      pin_number: C
+      pin_name: C
+    - reference: J2
+      pin_number: '12'
+      pin_name: '12'
+    - reference: S2
+      pin_number: '3'
+      pin_name: S
+    - reference: U3
+      pin_number: '1'
+      pin_name: IN
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.3462
+      max:
+        x: 2.6162
+        y: 1.3462
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 172.6438
+        y: 39.2938
+      max:
+        x: 177.8762
+        y: 41.9862
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 175.26
+        y: 40.64
+  warnings: []
+connected_components:
+- reference: '#SUPPLY14'
+  pin_number: '1'
+  pin_name: V_BATT
+- reference: '#SUPPLY15'
+  pin_number: '1'
+  pin_name: V_BATT
+- reference: '#SUPPLY18'
+  pin_number: '1'
+  pin_name: VIN
+- reference: '#SUPPLY19'
+  pin_number: '1'
+  pin_name: VIN
+- reference: '#SUPPLY20'
+  pin_number: '1'
+  pin_name: VIN
+- reference: C6
+  pin_number: '1'
+  pin_name: '1'
+- reference: C8
+  pin_number: '1'
+  pin_name: '1'
+- reference: D3
+  pin_number: C
+  pin_name: C
+- reference: J2
+  pin_number: '12'
+  pin_name: '12'
+- reference: J12
+  pin_number: '2'
+  pin_name: '2'
+- reference: S2
+  pin_number: '3'
+  pin_name: S
+- reference: U2
+  pin_number: '3'
+  pin_name: VBAT
+- reference: U3
+  pin_number: '1'
+  pin_name: IN

@@ -1,0 +1,117 @@
+available: true
+units:
+- reference: R3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 44888e41-0f30-43d2-8e47-b26f8a6b7bcf
+  library_id: kicad_file-eagle-import:R-US_R0805
+  unit: 1
+  body_style: 1
+  position:
+    x: 73.66
+    y: 68.58
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R3
+    Value: 1.0 K
+    Footprint: kicad_file:R0805
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 68.58
+      y: 68.58
+    net: SCK
+    net_aliases:
+    - SCK
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '19'
+      pin_name: (PCI5/SCK)PB5
+    - reference: JD2
+      pin_number: '6'
+      pin_name: '6'
+    - reference: JP3
+      pin_number: '3'
+      pin_name: '3'
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 78.74
+      y: 68.58
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D2
+      pin_number: A
+      pin_name: A
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6416
+        y: -1.1176
+      max:
+        x: 2.6416
+        y: 1.1176
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 71.0184
+        y: 67.4624
+      max:
+        x: 76.3016
+        y: 69.6976
+      width: 5.2832
+      height: 2.2352
+      center:
+        x: 73.66
+        y: 68.58
+  warnings: []
+connected_components:
+- reference: D2
+  pin_number: A
+  pin_name: A
+- reference: IC1
+  pin_number: '19'
+  pin_name: (PCI5/SCK)PB5
+- reference: JD2
+  pin_number: '6'
+  pin_name: '6'
+- reference: JP3
+  pin_number: '3'
+  pin_name: '3'

@@ -1,0 +1,116 @@
+available: true
+units:
+- reference: R11
+  source_file: data/kicad_file.kicad_sch
+  uuid: 1cbd8361-d656-4899-a97f-3c16bd1cca8c
+  library_id: kicad_file-eagle-import:RESISTOR0402-RES
+  unit: 1
+  body_style: 1
+  position:
+    x: 165.1
+    y: 111.76
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R11
+    Value: 47k
+    Footprint: kicad_file:0402-RES
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 170.18
+      y: 111.76
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C9
+      pin_number: A
+      pin_name: +
+    - reference: U3
+      pin_number: '7'
+      pin_name: VO2
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 160.02
+      y: 111.76
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R10
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U3
+      pin_number: '6'
+      pin_name: IN2
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 162.4838
+        y: 110.6678
+      max:
+        x: 167.7162
+        y: 112.8522
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 165.1
+        y: 111.76
+  warnings: []
+connected_components:
+- reference: C9
+  pin_number: A
+  pin_name: +
+- reference: R10
+  pin_number: '1'
+  pin_name: '1'
+- reference: U3
+  pin_number: '6'
+  pin_name: IN2
+- reference: U3
+  pin_number: '7'
+  pin_name: VO2

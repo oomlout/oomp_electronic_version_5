@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: D6
+  source_file: data/kicad_file.kicad_sch
+  uuid: dc3923a4-bbbc-4fc6-bf6d-9e5a1da395ae
+  library_id: kicad_file-eagle-import:DIODE-SCHOTTKY-BAT60A
+  unit: 1
+  body_style: 1
+  position:
+    x: 246.38
+    y: 48.26
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D6
+    Value: 3A/10V/280mV
+    Footprint: kicad_file:SOD-323
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-14072
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 246.38
+      y: 50.8
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: BT1
+      pin_number: +
+      pin_name: +
+    - reference: R8
+      pin_number: '2'
+      pin_name: '2'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 246.38
+      y: 45.72
+    net: RTC_3V
+    net_aliases:
+    - RTC_3V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: D7
+      pin_number: C
+      pin_name: C
+    - reference: J6
+      pin_number: '72'
+      pin_name: RTC_3V
+    - reference: R8
+      pin_number: '1'
+      pin_name: '1'
+    - reference: TP1
+      pin_number: P$1
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.3462
+      max:
+        x: 2.6162
+        y: 1.3462
+      width: 5.2324
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 245.0338
+        y: 45.6438
+      max:
+        x: 247.7262
+        y: 50.8762
+      width: 2.6924
+      height: 5.2324
+      center:
+        x: 246.38
+        y: 48.26
+  warnings: []
+connected_components:
+- reference: BT1
+  pin_number: +
+  pin_name: +
+- reference: D7
+  pin_number: C
+  pin_name: C
+- reference: J6
+  pin_number: '72'
+  pin_name: RTC_3V
+- reference: R8
+  pin_number: '1'
+  pin_name: '1'
+- reference: R8
+  pin_number: '2'
+  pin_name: '2'
+- reference: TP1
+  pin_number: P$1
+  pin_name: '1'

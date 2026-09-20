@@ -1,0 +1,598 @@
+reference: D1
+schematic:
+  available: true
+  units:
+  - reference: D1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 4d9247ec-fc64-4fd4-a153-623191e7b22a
+    library_id: kicad_file-eagle-import:LED-GREEN1206-BOTTOM
+    unit: 1
+    body_style: 1
+    position:
+      x: 99.06
+      y: 147.32
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: D1
+      Value: Green
+      Footprint: kicad_file:LED-1206-BOTTOM
+      Datasheet: ''
+      Description: ''
+      PROD_ID: DIO-11076
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: A
+      name: A
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 2.54
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 99.06
+        y: 144.78
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+    - number: C
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 99.06
+        y: 152.4
+      net: CHARGE_LED
+      net_aliases:
+      - CHARGE_LED
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: J1
+        pin_number: '11'
+        pin_name: '11'
+      - reference: JP1
+        pin_number: '2'
+        pin_name: '2'
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -3.5052
+          y: -3.3782
+        max:
+          x: 1.397
+          y: 0.127
+        width: 4.9022
+        height: 3.5052
+        center:
+          x: -1.0541
+          y: -1.6256
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 95.5548
+          y: 147.193
+        max:
+          x: 100.457
+          y: 150.6982
+        width: 4.9022
+        height: 3.5052
+        center:
+          x: 98.0059
+          y: 148.9456
+    warnings: []
+  connected_components:
+  - reference: J1
+    pin_number: '11'
+    pin_name: '11'
+  - reference: JP1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R5
+    pin_number: '1'
+    pin_name: '1'
+pcb:
+  reference: D1
+  value: Green
+  source_file: data/kicad_file.kicad_pcb
+  uuid: c16766dc-3974-4b46-b069-93fff30b22a4
+  library_id: SparkFun RTK Facet - Display SD-import-fps:LED-1206-BOTTOM
+  layer: B.Cu
+  side: back
+  position:
+    x: 3.51
+    y: -19.0
+    rotation: -180.0
+    rotation_kicad: 180.0
+    units: mm
+  properties:
+    Reference: D1
+    Value: Green
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: ''
+    type: np_thru_hole
+    shape: circle
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 3.51
+      y: -19.0
+    placed_rotation: 0.0
+    size:
+      x: 2.6556
+      y: 2.6556
+      units: mm
+    drill:
+      available: true
+      shape: round
+      x: 2.3
+      y: 2.3
+      diameter: 2.3
+      offset:
+        x: 0.0
+        y: 0.0
+      units: mm
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.3278
+          y: -1.3278
+        max:
+          x: 1.3278
+          y: 1.3278
+        width: 2.6556
+        height: 2.6556
+        center:
+          x: 0.0
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 2.1822
+          y: -20.3278
+        max:
+          x: 4.8378
+          y: -17.6722
+        width: 2.6556
+        height: 2.6556
+        center:
+          x: 3.51
+          y: -19.0
+    plating: unplated
+    is_mounting_hole: true
+  - number: A
+    type: smd
+    shape: rect
+    local_position:
+      x: -1.8
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 5.31
+      y: -19.0
+    placed_rotation: 0.0
+    size:
+      x: 1.5
+      y: 1.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: N$3
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.55
+          y: -0.8
+        max:
+          x: -1.05
+          y: 0.8
+        width: 1.5
+        height: 1.6
+        center:
+          x: -1.8
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 4.56
+          y: -19.8
+        max:
+          x: 6.06
+          y: -18.2
+        width: 1.5
+        height: 1.6
+        center:
+          x: 5.31
+          y: -19.0
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R5
+      pad_number: '1'
+  - number: C
+    type: smd
+    shape: rect
+    local_position:
+      x: 1.8
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 1.71
+      y: -19.0
+    placed_rotation: 0.0
+    size:
+      x: 1.5
+      y: 1.6
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: CHARGE_LED
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.05
+          y: -0.8
+        max:
+          x: 2.55
+          y: 0.8
+        width: 1.5
+        height: 1.6
+        center:
+          x: 1.8
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 0.96
+          y: -19.8
+        max:
+          x: 2.46
+          y: -18.2
+        width: 1.5
+        height: 1.6
+        center:
+          x: 1.71
+          y: -19.0
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: J1
+      pad_number: '11'
+    - reference: JP1
+      pad_number: '2'
+  mounting_holes:
+  - id: D1_hole_1
+    reference: D1
+    pad_number: ''
+    role: locating
+    plating: unplated
+    style: round
+    drill_size:
+      x: 2.3
+      y: 2.3
+      diameter: 2.3
+      units: mm
+    pad_size:
+      x: 2.6556
+      y: 2.6556
+      units: mm
+    pad_shape: circle
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 180.0
+    position:
+      x: 3.51
+      y: -19.0
+    rotation: 0.0
+    layers:
+    - '*.Cu'
+    - '*.Mask'
+    net: null
+    classification_reason: KiCad non-plated through-hole pad
+    oomp_id: mechanical_mounting_hole_2_3_mm_round_unplated
+    oomp_reference: MH1
+    classification:
+      name: Mounting Hole 2.3 mm Round Unplated
+      class: mechanical
+      type: mounting_hole
+      taxonomy:
+      - level: 1
+        key: taxonomy_1
+        value: mechanical
+      - level: 2
+        key: taxonomy_2
+        value: mounting_hole
+      - level: 3
+        key: taxonomy_3
+        value: 2_3_mm
+      - level: 4
+        key: taxonomy_4
+        value: round
+      - level: 5
+        key: taxonomy_5
+        value: unplated
+      taxonomy_path:
+      - mechanical
+      - mounting_hole
+      - 2_3_mm
+      - round
+      - unplated
+    name: Mounting Hole 2.3 mm Round Unplated
+    oomp:
+      status: matched
+      accepted: true
+      oomp_id: mechanical_mounting_hole_2_3_mm_round_unplated
+      confidence: 1.0
+      proposed_oomp_id: mechanical_mounting_hole_2_3_mm_round_unplated
+      inferred:
+        kind: mounting_hole
+        style: round
+        plating: unplated
+        drill_size:
+          x: 2.3
+          y: 2.3
+          diameter: 2.3
+          units: mm
+      reasons:
+      - Exact mechanical mounting-hole OOMP ID constructed from drill size, style, and plating.
+      candidates: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.55
+        y: -1.3278
+      max:
+        x: 2.55
+        y: 1.3278
+      width: 5.1
+      height: 2.6556
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 0.96
+        y: -20.3278
+      max:
+        x: 6.06
+        y: -17.6722
+      width: 5.1
+      height: 2.6556
+      center:
+        x: 3.51
+        y: -19.0
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.600001
+        y: -0.75
+      max:
+        x: 1.600001
+        y: 0.75
+      width: 3.200002
+      height: 1.5
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 1.909999
+        y: -19.75
+      max:
+        x: 5.110001
+        y: -18.25
+      width: 3.200002
+      height: 1.5
+      center:
+        x: 3.51
+        y: -19.0
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: 2.7051
+        y: -1.0795
+      max:
+        x: 2.8321
+        y: 1.0795
+      width: 0.127
+      height: 2.159
+      center:
+        x: 2.7686
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 0.6779
+        y: -20.0795
+      max:
+        x: 0.8049
+        y: -17.9205
+      width: 0.127
+      height: 2.159
+      center:
+        x: 0.7414
+        y: -19.0
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -2.55
+        y: -1.3278
+      max:
+        x: 2.8321
+        y: 1.3278
+      width: 5.3821
+      height: 2.6556
+      center:
+        x: 0.14105
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 0.6779
+        y: -20.3278
+      max:
+        x: 6.06
+        y: -17.6722
+      width: 5.3821
+      height: 2.6556
+      center:
+        x: 3.36895
+        y: -19.0
+  connected_components:
+  - J1
+  - JP1
+  - R5
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: ''
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: A
+    schematic_nets: []
+    pcb_nets:
+    - N$3
+    status: incomplete
+  - pin_or_pad_number: C
+    schematic_nets:
+    - CHARGE_LED
+    pcb_nets:
+    - CHARGE_LED
+    status: agree
+  agree_count: 1
+  disagree_count: 0
+  incomplete_count: 1
+oomp:
+  status: matched
+  accepted: true
+  oomp_id: electronic_led_1206_bottom_green
+  confidence: 1.0
+  proposed_oomp_id: electronic_led_1206_bottom_green
+  inferred:
+    kind: led
+    package_size: '1206'
+    value: Green
+    mpn: null
+  reasons:
+  - Exact OOMP ID constructed from component type, package size, and normalized value.
+  candidates: []
+category: led
+category_source: oomp_populate
+category_name: LED
+generated_directory: components/D1

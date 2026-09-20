@@ -1,0 +1,216 @@
+available: true
+units:
+- reference: S4
+  source_file: data/kicad_file.kicad_sch
+  uuid: 44fe6b58-472d-4821-a06e-af2cbd4c9b88
+  library_id: kicad_file-eagle-import:SWITCH-DPDT-SMD-AYZ0202
+  unit: 1
+  body_style: 1
+  position:
+    x: 71.12
+    y: 167.64
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: S4
+    Value: SWITCH-DPDT-SMD-AYZ0202
+    Footprint: kicad_file:SWITCH_DPDT_SMD_AYZ0202
+    Datasheet: ''
+    Description: ''
+    PROD_ID: SWCH-08179
+    SF_SKU: COM-00597
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 167.64
+    net: D_TX_JUMP
+    net_aliases:
+    - D_TX_JUMP
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: ATX0
+      pin_number: '1'
+      pin_name: '1'
+  - number: '2'
+    name: '2'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 66.04
+      y: 165.1
+    net: D13/TXO
+    net_aliases:
+    - D13/TXO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '2'
+      pin_name: DOUT
+    - reference: J6
+      pin_number: '2'
+      pin_name: '2'
+  - number: '3'
+    name: '3'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 5.08
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 162.56
+    net: D13/TXO-R3
+    net_aliases:
+    - D13/TXO-R3
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: B1
+      pin_number: RX
+      pin_name: RX
+  - number: '4'
+    name: '4'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -7.62
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 175.26
+    net: D_RX_JUMP
+    net_aliases:
+    - D_RX_JUMP
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: ARX0
+      pin_number: '1'
+      pin_name: '1'
+  - number: '5'
+    name: '5'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: -5.08
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 66.04
+      y: 172.72
+    net: D14/RXI
+    net_aliases:
+    - D14/RXI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J2
+      pin_number: '3'
+      pin_name: DIN/~{CONFIG}
+    - reference: J6
+      pin_number: '3'
+      pin_name: '3'
+  - number: '6'
+    name: '6'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -2.54
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 76.2
+      y: 170.18
+    net: D14/RXI-R3
+    net_aliases:
+    - D14/RXI-R3
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: B1
+      pin_number: TX
+      pin_name: TX
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.0262
+        y: -10.287
+      max:
+        x: 3.0262
+        y: 7.747
+      width: 6.0524
+      height: 18.034
+      center:
+        x: 0.0
+        y: -1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 68.0938
+        y: 159.893
+      max:
+        x: 74.1462
+        y: 177.927
+      width: 6.0524
+      height: 18.034
+      center:
+        x: 71.12
+        y: 168.91
+  warnings: []
+connected_components:
+- reference: ARX0
+  pin_number: '1'
+  pin_name: '1'
+- reference: ATX0
+  pin_number: '1'
+  pin_name: '1'
+- reference: B1
+  pin_number: RX
+  pin_name: RX
+- reference: B1
+  pin_number: TX
+  pin_name: TX
+- reference: J2
+  pin_number: '2'
+  pin_name: DOUT
+- reference: J2
+  pin_number: '3'
+  pin_name: DIN/~{CONFIG}
+- reference: J6
+  pin_number: '2'
+  pin_name: '2'
+- reference: J6
+  pin_number: '3'
+  pin_name: '3'

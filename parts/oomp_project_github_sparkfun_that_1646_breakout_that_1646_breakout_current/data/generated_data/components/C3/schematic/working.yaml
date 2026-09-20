@@ -1,0 +1,120 @@
+available: true
+units:
+- reference: C3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 6c69fc4a-597d-4816-a24a-64d56306c02f
+  library_id: kicad_file-eagle-import:PANA-EEE-1EA100NP
+  unit: 1
+  body_style: 1
+  position:
+    x: 119.38
+    y: 63.5
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C3
+    Value: 10uf NP
+    Footprint: kicad_file:PANASONIC_D
+    Datasheet: ''
+    Description: ''
+    DK_PN: PCE4294TR-ND
+    MFR: Panasonic
+    MFR_PN: 1ea100np
+    PROD_ID: CAP-13474
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: +
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 114.3
+      y: 63.5
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC1
+      pin_number: '7'
+      pin_name: SNS+
+  - number: '-'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 121.92
+      y: 63.5
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: D1
+      pin_number: '3'
+      pin_name: COM
+    - reference: IC1
+      pin_number: '8'
+      pin_name: OUT+
+    - reference: L2
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.03195
+        y: -0.0762
+      max:
+        x: 2.03195
+        y: 2.6162
+      width: 4.0639
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 116.7638
+        y: 61.46805
+      max:
+        x: 119.4562
+        y: 65.53195
+      width: 2.6924
+      height: 4.0639
+      center:
+        x: 118.11
+        y: 63.5
+  warnings: []
+connected_components:
+- reference: D1
+  pin_number: '3'
+  pin_name: COM
+- reference: IC1
+  pin_number: '7'
+  pin_name: SNS+
+- reference: IC1
+  pin_number: '8'
+  pin_name: OUT+
+- reference: L2
+  pin_number: '1'
+  pin_name: '1'

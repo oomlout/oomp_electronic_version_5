@@ -576,6 +576,29 @@ oomlout_ai_roboclick_3:
       taxonomy_9: ''
       url_chat: ''
       used_in_projects:
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_matrix_portal_m4_pcb_adafruit_matrix_portal_m4_current/board_explorer.html
+        board_url: https://github.com/adafruit/Adafruit-MatrixPortal-M4-PCB/blob/main/Adafruit%20MatrixPortal%20M4.brd
+        github_url: https://github.com/adafruit/Adafruit-MatrixPortal-M4-PCB
+        name: Project adafruit/Adafruit-MatrixPortal-M4-PCB Adafruit Matrix Portal
+          M4 current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_matrix_portal_m4_pcb_adafruit_matrix_portal_m4_current
+        project_id: oomp_project_github_adafruit_adafruit_matrix_portal_m4_pcb_adafruit_matrix_portal_m4_current
+        quantity: 2
+        references:
+        - MH11
+        - MH12
+        version: current
+      - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_qwiic_mp3_trigger_qwiic_mp3_trigger_current/board_explorer.html
+        board_url: https://github.com/sparkfun/Qwiic_MP3_Trigger/blob/master/Hardware/Qwiic%20MP3%20Trigger.brd
+        github_url: https://github.com/sparkfun/Qwiic_MP3_Trigger
+        name: Project sparkfun/Qwiic_MP3_Trigger Qwiic MP3 Trigger current
+        oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_qwiic_mp3_trigger_qwiic_mp3_trigger_current
+        project_id: oomp_project_github_sparkfun_qwiic_mp3_trigger_qwiic_mp3_trigger_current
+        quantity: 2
+        references:
+        - MH1
+        - MH2
+        version: current
       - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
         board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
         github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
@@ -618,6 +641,19 @@ oomlout_ai_roboclick_3:
     file_output: README.md
     file_template: C:\gh\oomp_electronic_version_5\source_file\template_jinja\oomp_category\template_jinja_markdown\working.md.j2
     search_and_replace: []
+  file_test: ''
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_mechanical_mounting_hole_1_2_mm_round_unplated
@@ -961,8 +997,31 @@ taxonomy_6: ''
 taxonomy_7: ''
 taxonomy_8: ''
 taxonomy_9: ''
+threaded_workers: 6
 url_chat: ''
 used_in_projects:
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_matrix_portal_m4_pcb_adafruit_matrix_portal_m4_current/board_explorer.html
+  board_url: https://github.com/adafruit/Adafruit-MatrixPortal-M4-PCB/blob/main/Adafruit%20MatrixPortal%20M4.brd
+  github_url: https://github.com/adafruit/Adafruit-MatrixPortal-M4-PCB
+  name: Project adafruit/Adafruit-MatrixPortal-M4-PCB Adafruit Matrix Portal M4 current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_matrix_portal_m4_pcb_adafruit_matrix_portal_m4_current
+  project_id: oomp_project_github_adafruit_adafruit_matrix_portal_m4_pcb_adafruit_matrix_portal_m4_current
+  quantity: 2
+  references:
+  - MH11
+  - MH12
+  version: current
+- board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_qwiic_mp3_trigger_qwiic_mp3_trigger_current/board_explorer.html
+  board_url: https://github.com/sparkfun/Qwiic_MP3_Trigger/blob/master/Hardware/Qwiic%20MP3%20Trigger.brd
+  github_url: https://github.com/sparkfun/Qwiic_MP3_Trigger
+  name: Project sparkfun/Qwiic_MP3_Trigger Qwiic MP3 Trigger current
+  oomp_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_qwiic_mp3_trigger_qwiic_mp3_trigger_current
+  project_id: oomp_project_github_sparkfun_qwiic_mp3_trigger_qwiic_mp3_trigger_current
+  quantity: 2
+  references:
+  - MH1
+  - MH2
+  version: current
 - board_explorer_url: https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_audio_player_breakout_my1690_x_16_s_audio_player_breakout_my1690x_16s_current/board_explorer.html
   board_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S
   github_url: https://github.com/sparkfun/SparkFun_Audio_Player_Breakout_MY1690X-16S

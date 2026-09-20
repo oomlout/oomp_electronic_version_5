@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: R25
+  source_file: data/kicad_file.kicad_sch
+  uuid: 875843c6-ddc1-4d9a-ad80-dc4ba012f02c
+  library_id: kicad_file-eagle-import:RESISTOR0402-RES
+  unit: 1
+  body_style: 1
+  position:
+    x: 109.22
+    y: 177.8
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R25
+    Value: '330'
+    Footprint: kicad_file:0402-RES
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 114.3
+      y: 177.8
+    net: ROT-LEDG
+    net_aliases:
+    - ROT-LEDG
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '24'
+      pin_name: PC1(ADC1)
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 104.14
+      y: 177.8
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: S2
+      pin_number: '2'
+      pin_name: -G
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 106.6038
+        y: 176.7078
+      max:
+        x: 111.8362
+        y: 178.8922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 109.22
+        y: 177.8
+  warnings: []
+connected_components:
+- reference: S2
+  pin_number: '2'
+  pin_name: -G
+- reference: U1
+  pin_number: '24'
+  pin_name: PC1(ADC1)

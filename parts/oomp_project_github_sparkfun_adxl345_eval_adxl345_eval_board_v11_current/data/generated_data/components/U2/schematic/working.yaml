@@ -1,0 +1,801 @@
+available: true
+units:
+- reference: U2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 29071d3a-7590-465c-a8cd-15ba295302b9
+  library_id: kicad_file-eagle-import:ADXL345''
+  unit: 1
+  body_style: 1
+  position:
+    x: 114.3
+    y: 165.1
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: U2
+    Value: ADXL345
+    Footprint: kicad_file:26
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: RESET
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: -15.24
+      y: -5.08
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 170.18
+    net: AGND
+    net_aliases:
+    - AGND
+    - GND
+    - GND7
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: BAT2
+      pin_number: '1'
+      pin_name: '-'
+    - reference: LED1
+      pin_number: '1'
+      pin_name: C
+    - reference: LED2
+      pin_number: '1'
+      pin_name: C
+    - reference: LED3
+      pin_number: '1'
+      pin_name: C
+    - reference: S1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: S1
+      pin_number: '4'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '4'
+      pin_name: GND
+    - reference: U1
+      pin_number: '5'
+      pin_name: GND
+    - reference: U1
+      pin_number: '8'
+      pin_name: AGND
+    - reference: U2
+      pin_number: '10'
+      pin_name: GND7
+    - reference: U2
+      pin_number: '16'
+      pin_name: AGND
+    - reference: U2
+      pin_number: '17'
+      pin_name: TEST
+  - number: '2'
+    name: OSCI
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 0.0
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 165.1
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '3'
+    name: OSCO
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -2.54
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 167.64
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '4'
+    name: DSR
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 162.56
+    net: ACCEL_DI
+    net_aliases:
+    - ACCEL_DI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '29'
+      pin_name: PC2(ADC2)
+  - number: '5'
+    name: DCD
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 165.1
+    net: ACCEL_SCK
+    net_aliases:
+    - ACCEL_SCK
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '30'
+      pin_name: PC1(ADC1)
+  - number: '6'
+    name: RI
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: -2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 167.64
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '7'
+    name: 3V3OUT
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 7.62
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 157.48
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '6'
+      pin_name: '6'
+    - reference: S3
+      pin_number: '3'
+      pin_name: O
+    - reference: U1
+      pin_number: '6'
+      pin_name: VCC
+    - reference: U1
+      pin_number: '7'
+      pin_name: VCC
+    - reference: U1
+      pin_number: '9'
+      pin_name: AREF
+    - reference: U1
+      pin_number: '10'
+      pin_name: AVCC
+    - reference: U2
+      pin_number: '18'
+      pin_name: VCC
+  - number: '8'
+    name: USBDM
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 17.78
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 147.32
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '9'
+    name: USBDP
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 15.24
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 149.86
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '10'
+    name: GND7
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -12.7
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 177.8
+    net: AGND
+    net_aliases:
+    - AGND
+    - GND
+    - GND7
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: BAT2
+      pin_number: '1'
+      pin_name: '-'
+    - reference: LED1
+      pin_number: '1'
+      pin_name: C
+    - reference: LED2
+      pin_number: '1'
+      pin_name: C
+    - reference: LED3
+      pin_number: '1'
+      pin_name: C
+    - reference: S1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: S1
+      pin_number: '4'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '4'
+      pin_name: GND
+    - reference: U1
+      pin_number: '5'
+      pin_name: GND
+    - reference: U1
+      pin_number: '8'
+      pin_name: AGND
+    - reference: U2
+      pin_number: '1'
+      pin_name: RESET
+    - reference: U2
+      pin_number: '16'
+      pin_name: AGND
+    - reference: U2
+      pin_number: '17'
+      pin_name: TEST
+  - number: '11'
+    name: GND18
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -15.24
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 180.34
+    net: GND18
+    net_aliases:
+    - GND18
+    net_scope: global
+    no_connect: false
+    connected_to: []
+  - number: '12'
+    name: GND21
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -17.78
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 182.88
+    net: GND21
+    net_aliases:
+    - GND21
+    net_scope: global
+    no_connect: false
+    connected_to: []
+  - number: '13'
+    name: TXD
+    electrical_type: output
+    graphic_style: line
+    local_position:
+      x: 15.24
+      y: 17.78
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 147.32
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '14'
+    name: RXD
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 15.24
+      y: 15.24
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 149.86
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '15'
+    name: VCCIO
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 5.08
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 160.02
+    net: VCCIO
+    net_aliases:
+    - VCCIO
+    net_scope: global
+    no_connect: false
+    connected_to: []
+  - number: '16'
+    name: AGND
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -10.16
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 175.26
+    net: AGND
+    net_aliases:
+    - AGND
+    - GND
+    - GND7
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: BAT2
+      pin_number: '1'
+      pin_name: '-'
+    - reference: LED1
+      pin_number: '1'
+      pin_name: C
+    - reference: LED2
+      pin_number: '1'
+      pin_name: C
+    - reference: LED3
+      pin_number: '1'
+      pin_name: C
+    - reference: S1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: S1
+      pin_number: '4'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '4'
+      pin_name: GND
+    - reference: U1
+      pin_number: '5'
+      pin_name: GND
+    - reference: U1
+      pin_number: '8'
+      pin_name: AGND
+    - reference: U2
+      pin_number: '1'
+      pin_name: RESET
+    - reference: U2
+      pin_number: '10'
+      pin_name: GND7
+    - reference: U2
+      pin_number: '17'
+      pin_name: TEST
+  - number: '17'
+    name: TEST
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: -7.62
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 172.72
+    net: AGND
+    net_aliases:
+    - AGND
+    - GND
+    - GND7
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: BAT2
+      pin_number: '1'
+      pin_name: '-'
+    - reference: LED1
+      pin_number: '1'
+      pin_name: C
+    - reference: LED2
+      pin_number: '1'
+      pin_name: C
+    - reference: LED3
+      pin_number: '1'
+      pin_name: C
+    - reference: S1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: S1
+      pin_number: '4'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '4'
+      pin_name: GND
+    - reference: U1
+      pin_number: '5'
+      pin_name: GND
+    - reference: U1
+      pin_number: '8'
+      pin_name: AGND
+    - reference: U2
+      pin_number: '1'
+      pin_name: RESET
+    - reference: U2
+      pin_number: '10'
+      pin_name: GND7
+    - reference: U2
+      pin_number: '16'
+      pin_name: AGND
+  - number: '18'
+    name: VCC
+    electrical_type: power_in
+    graphic_style: line
+    local_position:
+      x: -15.24
+      y: 10.16
+      rotation: 0.0
+    length: 5.08
+    position:
+      x: 99.06
+      y: 154.94
+    net: VCC
+    net_aliases:
+    - VCC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '6'
+      pin_name: '6'
+    - reference: S3
+      pin_number: '3'
+      pin_name: O
+    - reference: U1
+      pin_number: '6'
+      pin_name: VCC
+    - reference: U1
+      pin_number: '7'
+      pin_name: VCC
+    - reference: U1
+      pin_number: '9'
+      pin_name: AREF
+    - reference: U1
+      pin_number: '10'
+      pin_name: AVCC
+    - reference: U2
+      pin_number: '7'
+      pin_name: 3V3OUT
+  - number: '19'
+    name: TXLED
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: -7.62
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 172.72
+    net: ACCEL_INT2
+    net_aliases:
+    - ACCEL_INT2
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '21'
+      pin_name: PD2(INT0)
+  - number: '20'
+    name: RXLED
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: -10.16
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 175.26
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '21'
+    name: RTS
+    electrical_type: output
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: 7.62
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 157.48
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '22'
+    name: CTS
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: 10.16
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 154.94
+    net: ACCEL_CS
+    net_aliases:
+    - ACCEL_CS
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '31'
+      pin_name: PC0(ADC0)
+  - number: '23'
+    name: DTR
+    electrical_type: output
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: 5.08
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 160.02
+    net: ACCEL_DO
+    net_aliases:
+    - ACCEL_DO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '28'
+      pin_name: PC3(ADC3)
+  - number: '24'
+    name: PWREN
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: -12.7
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 177.8
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '25'
+    name: TXDEN
+    electrical_type: input
+    graphic_style: line
+    local_position:
+      x: 15.24
+      y: -15.24
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 180.34
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: '26'
+    name: SLEEP
+    electrical_type: input
+    graphic_style: inverted
+    local_position:
+      x: 15.24
+      y: -17.78
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 129.54
+      y: 182.88
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -10.287
+        y: -20.447
+      max:
+        x: 10.287
+        y: 20.447
+      width: 20.574
+      height: 40.894
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 104.013
+        y: 144.653
+      max:
+        x: 124.587
+        y: 185.547
+      width: 20.574
+      height: 40.894
+      center:
+        x: 114.3
+        y: 165.1
+  warnings: []
+connected_components:
+- reference: BAT2
+  pin_number: '1'
+  pin_name: '-'
+- reference: C1
+  pin_number: '6'
+  pin_name: '6'
+- reference: LED1
+  pin_number: '1'
+  pin_name: C
+- reference: LED2
+  pin_number: '1'
+  pin_name: C
+- reference: LED3
+  pin_number: '1'
+  pin_name: C
+- reference: S1
+  pin_number: '1'
+  pin_name: '1'
+- reference: S1
+  pin_number: '4'
+  pin_name: '2'
+- reference: S3
+  pin_number: '3'
+  pin_name: O
+- reference: U1
+  pin_number: '10'
+  pin_name: AVCC
+- reference: U1
+  pin_number: '21'
+  pin_name: PD2(INT0)
+- reference: U1
+  pin_number: '28'
+  pin_name: PC3(ADC3)
+- reference: U1
+  pin_number: '29'
+  pin_name: PC2(ADC2)
+- reference: U1
+  pin_number: '30'
+  pin_name: PC1(ADC1)
+- reference: U1
+  pin_number: '31'
+  pin_name: PC0(ADC0)
+- reference: U1
+  pin_number: '4'
+  pin_name: GND
+- reference: U1
+  pin_number: '5'
+  pin_name: GND
+- reference: U1
+  pin_number: '6'
+  pin_name: VCC
+- reference: U1
+  pin_number: '7'
+  pin_name: VCC
+- reference: U1
+  pin_number: '8'
+  pin_name: AGND
+- reference: U1
+  pin_number: '9'
+  pin_name: AREF
+- reference: U2
+  pin_number: '1'
+  pin_name: RESET
+- reference: U2
+  pin_number: '10'
+  pin_name: GND7
+- reference: U2
+  pin_number: '16'
+  pin_name: AGND
+- reference: U2
+  pin_number: '17'
+  pin_name: TEST
+- reference: U2
+  pin_number: '18'
+  pin_name: VCC
+- reference: U2
+  pin_number: '7'
+  pin_name: 3V3OUT

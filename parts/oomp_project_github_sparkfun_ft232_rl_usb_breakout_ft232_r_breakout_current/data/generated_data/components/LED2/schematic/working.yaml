@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: LED2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 94fcdd10-1b05-4642-aca3-db3618839f3b
+  library_id: kicad_file-eagle-import:LED-GREEN0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 208.28
+    y: 86.36
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: LED2
+    Value: Green
+    Footprint: kicad_file:LED-0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-00821
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 208.28
+      y: 83.82
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R2
+      pin_number: '1'
+      pin_name: '1'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 208.28
+      y: 91.44
+    net: RXLED
+    net_aliases:
+    - RXLED
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP1
+      pin_number: '3'
+      pin_name: '3'
+    - reference: U1
+      pin_number: '22'
+      pin_name: RXLED
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 204.7748
+        y: 86.233
+      max:
+        x: 209.677
+        y: 89.7382
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: 207.2259
+        y: 87.9856
+  warnings: []
+connected_components:
+- reference: JP1
+  pin_number: '3'
+  pin_name: '3'
+- reference: R2
+  pin_number: '1'
+  pin_name: '1'
+- reference: U1
+  pin_number: '22'
+  pin_name: RXLED

@@ -1,0 +1,449 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 18
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - C15
+  - C3
+  - C6
+  value: 10uF
+  footprint: RedBoard-import-fps:EIA3216
+  query: 10uF RedBoard-import-fps:EIA3216
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=10uF+RedBoard-import-fps%3AEIA3216
+    datasheet_search: https://www.google.com/search?q=10uF+RedBoard-import-fps%3AEIA3216+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_capacitor_3216_avx_a_tantalum_10_micro_farad_16_volt
+  candidate_oomp_ids:
+  - electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt
+  - electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  - electronic_capacitor_0402_4_7_micro_farad
+  - electronic_capacitor_0603_4_7_micro_farad
+  - electronic_capacitor_0805_4_7_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - Y1
+  value: 16MHz
+  footprint: RedBoard-import-fps:RESONATOR-SMD-3.2X1.3
+  query: 16MHz RedBoard-import-fps:RESONATOR-SMD-3.2X1.3
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=16MHz+RedBoard-import-fps%3ARESONATOR-SMD-3.2X1.3
+    datasheet_search: https://www.google.com/search?q=16MHz+RedBoard-import-fps%3ARESONATOR-SMD-3.2X1.3+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - Q1
+  value: 1A/60V/500mΩ
+  footprint: RedBoard-import-fps:SOT23-3
+  query: 1A/60V/500mΩ RedBoard-import-fps:SOT23-3
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=1A%2F60V%2F500m%CE%A9+RedBoard-import-fps%3ASOT23-3
+    datasheet_search: https://www.google.com/search?q=1A%2F60V%2F500m%CE%A9+RedBoard-import-fps%3ASOT23-3+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_transistor_sot_363_6_mosfet_n_channel_dual
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - R15
+  value: '240'
+  footprint: RedBoard-import-fps:0603
+  query: 240 RedBoard-import-fps:0603
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=240+RedBoard-import-fps%3A0603
+    datasheet_search: https://www.google.com/search?q=240+RedBoard-import-fps%3A0603+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0603_240_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_0603_2400_ohm
+  - electronic_resistor_0603_0_ohm
+  - electronic_resistor_0603_120_ohm
+  - electronic_resistor_0603_200_ohm
+  - electronic_resistor_0603_220_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_5
+  status: needs_browser_research
+  priority: high
+  references:
+  - Q2
+  value: 2N7002PW
+  footprint: RedBoard-import-fps:SOT323
+  query: 2N7002PW RedBoard-import-fps:SOT323
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=2N7002PW+RedBoard-import-fps%3ASOT323
+    datasheet_search: https://www.google.com/search?q=2N7002PW+RedBoard-import-fps%3ASOT323+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_cbi_mmbt7002k
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215
+  - electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_6
+  status: needs_browser_research
+  priority: high
+  references:
+  - C5
+  value: 47uF
+  footprint: RedBoard-import-fps:PANASONIC_D
+  query: 47uF RedBoard-import-fps:PANASONIC_D
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=47uF+RedBoard-import-fps%3APANASONIC_D
+    datasheet_search: https://www.google.com/search?q=47uF+RedBoard-import-fps%3APANASONIC_D+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt
+  - electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
+  - electronic_capacitor_0402_1_micro_farad
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_7
+  status: needs_browser_research
+  priority: high
+  references:
+  - F1
+  value: 6V/0.5A
+  footprint: RedBoard-import-fps:1206
+  query: 6V/0.5A RedBoard-import-fps:1206
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=6V%2F0.5A+RedBoard-import-fps%3A1206
+    datasheet_search: https://www.google.com/search?q=6V%2F0.5A+RedBoard-import-fps%3A1206+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_8
+  status: needs_browser_research
+  priority: high
+  references:
+  - R14
+  value: '715'
+  footprint: RedBoard-import-fps:0603
+  query: 715 RedBoard-import-fps:0603
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=715+RedBoard-import-fps%3A0603
+    datasheet_search: https://www.google.com/search?q=715+RedBoard-import-fps%3A0603+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: electronic_resistor_0603_715_ohm
+  candidate_oomp_ids:
+  - electronic_resistor_0603_75_ohm
+  - electronic_resistor_0603_15_ohm
+  - electronic_resistor_0603_750_ohm
+  - electronic_resistor_0603_150_ohm
+  - electronic_resistor_0603_7500_ohm
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_9
+  status: needs_browser_research
+  priority: high
+  references:
+  - U4
+  value: ATMEGA328P_TQFP
+  footprint: RedBoard-import-fps:TQFP32-08
+  query: ATMEGA328P_TQFP RedBoard-import-fps:TQFP32-08
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=ATMEGA328P_TQFP+RedBoard-import-fps%3ATQFP32-08
+    datasheet_search: https://www.google.com/search?q=ATMEGA328P_TQFP+RedBoard-import-fps%3ATQFP32-08+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_10
+  status: needs_browser_research
+  priority: high
+  references:
+  - FRAME2
+  value: FRAME-LETTER
+  footprint: RedBoard-import-fps:CREATIVE_COMMONS
+  query: FRAME-LETTER RedBoard-import-fps:CREATIVE_COMMONS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FRAME-LETTER+RedBoard-import-fps%3ACREATIVE_COMMONS
+    datasheet_search: https://www.google.com/search?q=FRAME-LETTER+RedBoard-import-fps%3ACREATIVE_COMMONS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_11
+  status: needs_browser_research
+  priority: high
+  references:
+  - U1
+  value: FT231XS
+  footprint: RedBoard-import-fps:SSOP20_L
+  query: FT231XS RedBoard-import-fps:SSOP20_L
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FT231XS+RedBoard-import-fps%3ASSOP20_L
+    datasheet_search: https://www.google.com/search?q=FT231XS+RedBoard-import-fps%3ASSOP20_L+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_12
+  status: needs_browser_research
+  priority: high
+  references:
+  - J2
+  value: ICSP
+  footprint: RedBoard-import-fps:2X3_SMT_POSTS
+  query: ICSP RedBoard-import-fps:2X3_SMT_POSTS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=ICSP+RedBoard-import-fps%3A2X3_SMT_POSTS
+    datasheet_search: https://www.google.com/search?q=ICSP+RedBoard-import-fps%3A2X3_SMT_POSTS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_13
+  status: needs_browser_research
+  priority: high
+  references:
+  - IC3
+  value: LM1117
+  footprint: RedBoard-import-fps:SOT223-ALT1
+  query: LM1117 RedBoard-import-fps:SOT223-ALT1
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=LM1117+RedBoard-import-fps%3ASOT223-ALT1
+    datasheet_search: https://www.google.com/search?q=LM1117+RedBoard-import-fps%3ASOT223-ALT1+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_14
+  status: needs_browser_research
+  priority: high
+  references:
+  - D1
+  value: MBRA140
+  footprint: RedBoard-import-fps:SMA-DIODE
+  query: MBRA140 RedBoard-import-fps:SMA-DIODE
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MBRA140+RedBoard-import-fps%3ASMA-DIODE
+    datasheet_search: https://www.google.com/search?q=MBRA140+RedBoard-import-fps%3ASMA-DIODE+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids:
+  - electronic_diode_rectifier_sma_m4
+  - electronic_diode_schottky_0402
+  - electronic_diode_schottky_sod_523_1ss400
+  - electronic_diode_tvs_array_sot_143_nxp_prtr5v0u2x
+  - electronic_diode_tvs_array_sot_143_littelfuse_sp0503bahtg
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_15
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: MIC5205
+  footprint: RedBoard-import-fps:SOT23-5
+  query: MIC5205 RedBoard-import-fps:SOT23-5
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=MIC5205+RedBoard-import-fps%3ASOT23-5
+    datasheet_search: https://www.google.com/search?q=MIC5205+RedBoard-import-fps%3ASOT23-5+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_16
+  status: needs_browser_research
+  priority: high
+  references:
+  - J3
+  value: POWER_JACKSUPER_BOMB_DIGITY
+  footprint: RedBoard-import-fps:POWER_JACK_SMD_OVERPASTE_SUPER_BOMB_DIGITY
+  query: POWER_JACKSUPER_BOMB_DIGITY RedBoard-import-fps:POWER_JACK_SMD_OVERPASTE_SUPER_BOMB_DIGITY
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=POWER_JACKSUPER_BOMB_DIGITY+RedBoard-import-fps%3APOWER_JACK_SMD_OVERPASTE_SUPER_BOMB_DIGITY
+    datasheet_search: https://www.google.com/search?q=POWER_JACKSUPER_BOMB_DIGITY+RedBoard-import-fps%3APOWER_JACK_SMD_OVERPASTE_SUPER_BOMB_DIGITY+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_17
+  status: needs_browser_research
+  priority: high
+  references:
+  - S1
+  value: RESET
+  footprint: RedBoard-import-fps:TACTILE-SWITCH-SMD
+  query: RESET RedBoard-import-fps:TACTILE-SWITCH-SMD
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=RESET+RedBoard-import-fps%3ATACTILE-SWITCH-SMD
+    datasheet_search: https://www.google.com/search?q=RESET+RedBoard-import-fps%3ATACTILE-SWITCH-SMD+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_18
+  status: needs_browser_research
+  priority: high
+  references:
+  - JP12
+  value: USB-MINIB-5PIN
+  footprint: RedBoard-import-fps:USB-MINIB
+  query: USB-MINIB-5PIN RedBoard-import-fps:USB-MINIB
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=USB-MINIB-5PIN+RedBoard-import-fps%3AUSB-MINIB
+    datasheet_search: https://www.google.com/search?q=USB-MINIB-5PIN+RedBoard-import-fps%3AUSB-MINIB+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

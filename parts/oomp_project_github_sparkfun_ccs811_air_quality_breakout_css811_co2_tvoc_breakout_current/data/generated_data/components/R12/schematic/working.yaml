@@ -1,0 +1,120 @@
+available: true
+units:
+- reference: R12
+  source_file: data/kicad_file.kicad_sch
+  uuid: eaf9bee0-7de4-4e61-8d37-2d60a86091ac
+  library_id: kicad_file-eagle-import:NTC-THERMISTOR-AXIAL-0.1
+  unit: 1
+  body_style: 1
+  position:
+    x: 243.84
+    y: 91.44
+    rotation: 270.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R12
+    Value: 10k
+    Footprint: kicad_file:AXIAL-0.1
+    Datasheet: ''
+    Description: ''
+    PROD_ID: N/A
+    SF_ID: SEN-00250
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: '1'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 243.84
+      y: 86.36
+    net: AUX
+    net_aliases:
+    - AUX
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R10
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '8'
+      pin_name: AUX
+  - number: P$2
+    name: '2'
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 243.84
+      y: 99.06
+    net: NTC_SENSE
+    net_aliases:
+    - NTC_SENSE
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '4'
+      pin_name: PWM
+    - reference: U2
+      pin_number: '5'
+      pin_name: SENSE
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -2.6162
+      max:
+        x: 5.1562
+        y: 2.6162
+      width: 7.7724
+      height: 5.2324
+      center:
+        x: 1.27
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 241.2238
+        y: 88.8238
+      max:
+        x: 246.4562
+        y: 96.5962
+      width: 5.2324
+      height: 7.7724
+      center:
+        x: 243.84
+        y: 92.71
+  warnings: []
+connected_components:
+- reference: R10
+  pin_number: '1'
+  pin_name: '1'
+- reference: U2
+  pin_number: '4'
+  pin_name: PWM
+- reference: U2
+  pin_number: '5'
+  pin_name: SENSE
+- reference: U2
+  pin_number: '8'
+  pin_name: AUX

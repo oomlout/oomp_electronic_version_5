@@ -1,0 +1,130 @@
+available: true
+units:
+- reference: J2
+  source_file: data/kicad_file.kicad_sch
+  uuid: e5cacacd-22fd-4e13-ba8e-4dbd500c8a37
+  library_id: kicad_file-eagle-import:M03PTH
+  unit: 1
+  body_style: 1
+  position:
+    x: 218.44
+    y: 78.74
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: J2
+    Value: M03PTH
+    Footprint: kicad_file:1X03
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: -2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 210.82
+      y: 76.2
+    net: AUX_CL
+    net_aliases:
+    - AUX_CL
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '7'
+      pin_name: AUX_CL
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 210.82
+      y: 78.74
+    net: FSYNC
+    net_aliases:
+    - FSYNC
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '11'
+      pin_name: FSYNC
+  - number: '3'
+    name: '3'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 210.82
+      y: 81.28
+    net: AUX_DA
+    net_aliases:
+    - AUX_DA
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '21'
+      pin_name: AUX_DA
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.7432
+        y: -5.2832
+      max:
+        x: 4.0132
+        y: 5.2832
+      width: 6.7564
+      height: 10.5664
+      center:
+        x: 0.635
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 214.4268
+        y: 73.4568
+      max:
+        x: 221.1832
+        y: 84.0232
+      width: 6.7564
+      height: 10.5664
+      center:
+        x: 217.805
+        y: 78.74
+  warnings: []
+connected_components:
+- reference: U1
+  pin_number: '11'
+  pin_name: FSYNC
+- reference: U1
+  pin_number: '21'
+  pin_name: AUX_DA
+- reference: U1
+  pin_number: '7'
+  pin_name: AUX_CL

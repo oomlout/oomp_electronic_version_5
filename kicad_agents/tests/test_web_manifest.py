@@ -43,12 +43,14 @@ class WebManifestTests(unittest.TestCase):
             self.assertEqual(manifest["id"], "electronic_test_part")
             self.assertEqual(manifest["highlights"]["pin_count"], 2)
             self.assertEqual(manifest["file_stats"]["file_count"], 3)
-            self.assertTrue(manifest["file_stats"]["total_size"].endswith((" B", " kB", " MB", " GB", " TB")))
+            self.assertNotIn("total_size", manifest["file_stats"])
+            self.assertNotIn("total_size_bytes", manifest["file_stats"])
             self.assertNotIn("oomlout_ai_roboclick_1", manifest["metadata"])
             self.assertEqual([item["path"] for item in manifest["files"]], ["data/present.svg", "README.md", "working.yaml"])
             readme = next(item for item in manifest["files"] if item["path"] == "README.md")
             self.assertIn("Human-readable overview", readme["description"])
-            self.assertTrue(readme["size"].endswith(" B"))
+            self.assertNotIn("size", readme)
+            self.assertNotIn("size_bytes", readme)
             self.assertEqual(readme["media_type"], "text/markdown")
             self.assertEqual(
                 readme["github_url"],

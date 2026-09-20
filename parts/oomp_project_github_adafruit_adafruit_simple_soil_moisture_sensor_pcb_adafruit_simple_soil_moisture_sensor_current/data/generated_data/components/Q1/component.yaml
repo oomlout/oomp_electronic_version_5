@@ -1,0 +1,615 @@
+reference: Q1
+schematic:
+  available: true
+  units:
+  - reference: Q1
+    source_file: data/kicad_file.kicad_sch
+    uuid: 3333d557-1319-40f7-8a14-62263ed8250f
+    library_id: kicad_file-eagle-import:TRANSISTOR_NPNWIDE
+    unit: 1
+    body_style: 1
+    position:
+      x: 55.88
+      y: 106.68
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: Q1
+      Value: MMBT3904
+      Footprint: kicad_file:SOT23-WIDE
+      Datasheet: ''
+      Description: ''
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: B
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: -5.08
+        y: 0.0
+        rotation: 0.0
+      length: 2.54
+      position:
+        x: 50.8
+        y: 106.68
+      net: SOIL2
+      net_aliases:
+      - SOIL2
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: SOIL2
+        pin_number: P$1
+        pin_name: P$1
+    - number: '2'
+      name: E
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: -5.08
+        rotation: 90.0
+      length: 2.54
+      position:
+        x: 55.88
+        y: 111.76
+      net: SIGNAL
+      net_aliases:
+      - SIGNAL
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: CN1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: TP2
+        pin_number: P$1
+        pin_name: SEW
+    - number: '3'
+      name: C
+      electrical_type: passive
+      graphic_style: line
+      local_position:
+        x: 0.0
+        y: 5.08
+        rotation: 270.0
+      length: 2.54
+      position:
+        x: 55.88
+        y: 101.6
+      net: V+
+      net_aliases:
+      - V+
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#P+1'
+        pin_number: '1'
+        pin_name: V+
+      - reference: '#P+2'
+        pin_number: '1'
+        pin_name: V+
+      - reference: '#P+3'
+        pin_number: '1'
+        pin_name: V+
+      - reference: CN1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: R1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: TP1
+        pin_number: P$1
+        pin_name: SEW
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -2.79395
+          y: -2.6162
+        max:
+          x: 0.0762
+          y: 2.6162
+        width: 2.87015
+        height: 5.2324
+        center:
+          x: -1.358875
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 53.08605
+          y: 104.0638
+        max:
+          x: 55.9562
+          y: 109.2962
+        width: 2.87015
+        height: 5.2324
+        center:
+          x: 54.521125
+          y: 106.68
+    warnings: []
+  connected_components:
+  - reference: '#P+1'
+    pin_number: '1'
+    pin_name: V+
+  - reference: '#P+2'
+    pin_number: '1'
+    pin_name: V+
+  - reference: '#P+3'
+    pin_number: '1'
+    pin_name: V+
+  - reference: CN1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: CN1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: SOIL2
+    pin_number: P$1
+    pin_name: P$1
+  - reference: TP1
+    pin_number: P$1
+    pin_name: SEW
+  - reference: TP2
+    pin_number: P$1
+    pin_name: SEW
+pcb:
+  reference: Q1
+  value: MMBT3904
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 28aa4543-f7b3-4e4f-bd9a-a6012a82da5c
+  library_id: Adafruit Simple Soil Moisture Sensor-import-fps:SOT23-WIDE
+  layer: F.Cu
+  side: front
+  position:
+    x: 12.446
+    y: -41.402
+    rotation: -90.0
+    rotation_kicad: 90.0
+    units: mm
+  properties:
+    Reference: Q1
+    Value: MMBT3904
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: rect
+    local_position:
+      x: -0.95
+      y: 1.0
+      rotation: 90.0
+    position:
+      x: 13.446
+      y: -40.452
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 1.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: SOIL2
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.55
+          y: 0.5
+        max:
+          x: -0.35
+          y: 1.5
+        width: 1.2
+        height: 1.0
+        center:
+          x: -0.95
+          y: 1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.946
+          y: -41.052
+        max:
+          x: 13.946
+          y: -39.852
+        width: 1.0
+        height: 1.2
+        center:
+          x: 13.446
+          y: -40.452
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: SOIL2
+      pad_number: P$1
+  - number: '2'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.95
+      y: 1.0
+      rotation: 90.0
+    position:
+      x: 13.446
+      y: -42.352
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 1.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: SIGNAL
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.35
+          y: 0.5
+        max:
+          x: 1.55
+          y: 1.5
+        width: 1.2
+        height: 1.0
+        center:
+          x: 0.95
+          y: 1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.946
+          y: -42.952
+        max:
+          x: 13.946
+          y: -41.752
+        width: 1.0
+        height: 1.2
+        center:
+          x: 13.446
+          y: -42.352
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: CN1
+      pad_number: '1'
+    - reference: R2
+      pad_number: '2'
+    - reference: TP2
+      pad_number: P$1
+  - number: '3'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: -1.0
+      rotation: 90.0
+    position:
+      x: 11.446
+      y: -41.402
+    placed_rotation: 0.0
+    size:
+      x: 1.0
+      y: 1.2
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - F.Cu
+    - F.Mask
+    - F.Paste
+    net: V+
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.6
+          y: -1.5
+        max:
+          x: 0.6
+          y: -0.5
+        width: 1.2
+        height: 1.0
+        center:
+          x: 0.0
+          y: -1.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.946
+          y: -42.002
+        max:
+          x: 11.946
+          y: -40.802
+        width: 1.0
+        height: 1.2
+        center:
+          x: 11.446
+          y: -41.402
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: CN1
+      pad_number: '2'
+    - reference: R1
+      pad_number: '1'
+    - reference: TP1
+      pad_number: P$1
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -1.55
+        y: -1.5
+      max:
+        x: 1.55
+        y: 1.5
+      width: 3.1
+      height: 3.0
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 10.946
+        y: -42.952
+      max:
+        x: 13.946
+        y: -39.852
+      width: 3.0
+      height: 3.1
+      center:
+        x: 12.446
+        y: -41.402
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: false
+      min: null
+      max: null
+      width: null
+      height: null
+      center: null
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.674
+        y: -1.2954
+      max:
+        x: 1.674
+        y: 1.2954
+      width: 3.348
+      height: 2.5908
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 11.1506
+        y: -43.076
+      max:
+        x: 13.7414
+        y: -39.728
+      width: 2.5908
+      height: 3.348
+      center:
+        x: 12.446
+        y: -41.402
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -1.774
+        y: -0.762
+      max:
+        x: 1.774
+        y: 0.762
+      width: 3.548
+      height: 1.524
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 11.684
+        y: -43.176
+      max:
+        x: 13.208
+        y: -39.628
+      width: 1.524
+      height: 3.548
+      center:
+        x: 12.446
+        y: -41.402
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -1.774
+        y: -1.5
+      max:
+        x: 1.774
+        y: 1.5
+      width: 3.548
+      height: 3.0
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 10.946
+        y: -43.176
+      max:
+        x: 13.946
+        y: -39.628
+      width: 3.0
+      height: 3.548
+      center:
+        x: 12.446
+        y: -41.402
+  connected_components:
+  - CN1
+  - R1
+  - R2
+  - SOIL2
+  - TP1
+  - TP2
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - SOIL2
+    pcb_nets:
+    - SOIL2
+    status: agree
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - SIGNAL
+    pcb_nets:
+    - SIGNAL
+    status: agree
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - V+
+    pcb_nets:
+    - V+
+    status: agree
+  agree_count: 3
+  disagree_count: 0
+  incomplete_count: 0
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: transistor
+    package_size: null
+    value: MMBT3904
+    mpn: null
+  reasons:
+  - Component family was inferred, but package size was not.
+  candidates:
+  - oomp_id: electronic_transistor_sot_23_bipolar_pnp_40_volt_600_milliamp_onsemi_mmbt4403
+    score: 0.0737
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
+    score: 0.0682
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_363_6_bipolar_pnp_dual_general_purpose_40_volt_200_milliamp_cbi_mmdt3906dw
+    score: 0.066
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
+    score: 0.0654
+    reasons:
+    - same component family
+  - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
+    score: 0.0654
+    reasons:
+    - same component family
+category: transistor
+category_source: unmatched_kicad_hint
+category_name: Transistor
+generated_directory: components/Q1

@@ -1,0 +1,164 @@
+available: true
+units:
+- reference: RV1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 2d9e3e62-36ba-49fe-871c-5ba9419a50ee
+  library_id: kicad_file-eagle-import:POTALPS-KIT
+  unit: 1
+  body_style: 1
+  position:
+    x: 38.1
+    y: 127.0
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: RV1
+    Value: 10k
+    Footprint: kicad_file:ALPS_POT_KIT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-09177
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: P$1
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 7.62
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 38.1
+      y: 119.38
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C2
+      pin_number: '1'
+      pin_name: +
+    - reference: C4
+      pin_number: '1'
+      pin_name: +
+    - reference: IC1
+      pin_number: '2'
+      pin_name: TRI
+    - reference: IC1
+      pin_number: '6'
+      pin_name: TRE
+    - reference: RV1
+      pin_number: P$2
+      pin_name: S
+  - number: P$2
+    name: S
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 43.18
+      y: 127.0
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C2
+      pin_number: '1'
+      pin_name: +
+    - reference: C4
+      pin_number: '1'
+      pin_name: +
+    - reference: IC1
+      pin_number: '2'
+      pin_name: TRI
+    - reference: IC1
+      pin_number: '6'
+      pin_name: TRE
+    - reference: RV1
+      pin_number: P$1
+      pin_name: E
+  - number: P$3
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -7.62
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 38.1
+      y: 134.62
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R1
+      pin_number: P$2
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -1.143
+        y: -5.1562
+      max:
+        x: 2.7432
+        y: 5.1562
+      width: 3.8862
+      height: 10.3124
+      center:
+        x: 0.8001
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 36.957
+        y: 121.8438
+      max:
+        x: 40.8432
+        y: 132.1562
+      width: 3.8862
+      height: 10.3124
+      center:
+        x: 38.9001
+        y: 127.0
+  warnings: []
+connected_components:
+- reference: C2
+  pin_number: '1'
+  pin_name: +
+- reference: C4
+  pin_number: '1'
+  pin_name: +
+- reference: IC1
+  pin_number: '2'
+  pin_name: TRI
+- reference: IC1
+  pin_number: '6'
+  pin_name: TRE
+- reference: R1
+  pin_number: P$2
+  pin_name: '2'
+- reference: RV1
+  pin_number: P$1
+  pin_name: E
+- reference: RV1
+  pin_number: P$2
+  pin_name: S

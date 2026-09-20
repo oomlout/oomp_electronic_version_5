@@ -1,0 +1,119 @@
+available: true
+units:
+- reference: R2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 5b8bf7ab-8997-446f-967c-448355db2a70
+  library_id: kicad_file-eagle-import:100KOHM-0402T-1/16W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 370.84
+    y: 73.66
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R2
+    Value: 100k
+    Footprint: kicad_file:0402-TIGHT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-13495
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 370.84
+      y: 78.74
+    net: ANT_REG_EN
+    net_aliases:
+    - ANT_REG_EN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: ANT_REG_EN0
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U3
+      pin_number: '3'
+      pin_name: EN
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 370.84
+      y: 68.58
+    net: 3.3V_IN
+    net_aliases:
+    - 3.3V_IN
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '73'
+      pin_name: 3.3V
+    - reference: R33
+      pin_number: '2'
+      pin_name: '2'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 369.7478
+        y: 71.0438
+      max:
+        x: 371.9322
+        y: 76.2762
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 370.84
+        y: 73.66
+  warnings: []
+connected_components:
+- reference: ANT_REG_EN0
+  pin_number: '1'
+  pin_name: '1'
+- reference: J1
+  pin_number: '73'
+  pin_name: 3.3V
+- reference: R33
+  pin_number: '2'
+  pin_name: '2'
+- reference: U3
+  pin_number: '3'
+  pin_name: EN

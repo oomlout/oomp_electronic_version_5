@@ -4,7 +4,14 @@ import argparse
 import json
 import shutil
 import subprocess
+import sys
 from pathlib import Path
+
+REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
+repository_root_text = str(REPOSITORY_ROOT)
+if repository_root_text in sys.path:
+    sys.path.remove(repository_root_text)
+sys.path.insert(0, repository_root_text)
 
 from kicad_agents.kicad_cli import find_kicad_cli
 from kicad_agents.run_error_report import log_run_error

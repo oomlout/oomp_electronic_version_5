@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: C1
+  source_file: data/kicad_file.kicad_sch
+  uuid: af32160c-9303-4680-890d-f70a71fac97d
+  library_id: kicad_file-eagle-import:270PF-0402T-50V-5%
+  unit: 1
+  body_style: 1
+  position:
+    x: 66.04
+    y: 182.88
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: C1
+    Value: 270pF
+    Footprint: kicad_file:0402-TIGHT
+    Datasheet: ''
+    Description: ''
+    PROD_ID: CAP-15129
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 60.96
+      y: 182.88
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '6'
+      pin_name: SENSOR_CAPP(GPI37/ADC1:1/RTC1)
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -2.54
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 68.58
+      y: 182.88
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: U2
+      pin_number: '5'
+      pin_name: SENSOR_VP(GPI36/ADC1:0/RTC0)
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.03195
+        y: -0.0762
+      max:
+        x: 2.03195
+        y: 2.6162
+      width: 4.0639
+      height: 2.6924
+      center:
+        x: 0.0
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 63.4238
+        y: 180.84805
+      max:
+        x: 66.1162
+        y: 184.91195
+      width: 2.6924
+      height: 4.0639
+      center:
+        x: 64.77
+        y: 182.88
+  warnings: []
+connected_components:
+- reference: U2
+  pin_number: '5'
+  pin_name: SENSOR_VP(GPI36/ADC1:0/RTC0)
+- reference: U2
+  pin_number: '6'
+  pin_name: SENSOR_CAPP(GPI37/ADC1:1/RTC1)

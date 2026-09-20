@@ -1,0 +1,164 @@
+available: true
+units:
+- reference: Q1
+  source_file: data/kicad_file.kicad_sch
+  uuid: ac891c4e-4abe-4ec3-b5d0-96e68c09d10a
+  library_id: kicad_file-eagle-import:MOSFET-N_TO252
+  unit: 1
+  body_style: 1
+  position:
+    x: 78.74
+    y: 195.58
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q1
+    Value: AOD514
+    Footprint: kicad_file:TO252
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: G
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: -2.54
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 81.28
+      y: 198.12
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC3
+      pin_number: '4'
+      pin_name: GATEN
+  - number: '2'
+    name: S
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 83.82
+      y: 193.04
+    net: 5.0V
+    net_aliases:
+    - 5.0V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#U$2'
+      pin_number: '1'
+      pin_name: 5.0V
+    - reference: '#U$4'
+      pin_number: '1'
+      pin_name: 5.0V
+    - reference: '#U$9'
+      pin_number: '1'
+      pin_name: 5.0V
+    - reference: D1
+      pin_number: A
+      pin_name: A
+    - reference: D2
+      pin_number: A
+      pin_name: A
+    - reference: MATRIX_PWR0
+      pin_number: P$4
+      pin_name: P2
+  - number: '3'
+    name: D
+    electrical_type: bidirectional
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 73.66
+      y: 193.04
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: IC3
+      pin_number: '1'
+      pin_name: IN
+    - reference: Q2
+      pin_number: '3'
+      pin_name: D
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.127
+        y: -3.302
+      max:
+        x: 4.6482
+        y: 3.302
+      width: 4.7752
+      height: 6.604
+      center:
+        x: 2.2606
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 75.438
+        y: 190.9318
+      max:
+        x: 82.042
+        y: 195.707
+      width: 6.604
+      height: 4.7752
+      center:
+        x: 78.74
+        y: 193.3194
+  warnings: []
+connected_components:
+- reference: '#U$2'
+  pin_number: '1'
+  pin_name: 5.0V
+- reference: '#U$4'
+  pin_number: '1'
+  pin_name: 5.0V
+- reference: '#U$9'
+  pin_number: '1'
+  pin_name: 5.0V
+- reference: D1
+  pin_number: A
+  pin_name: A
+- reference: D2
+  pin_number: A
+  pin_name: A
+- reference: IC3
+  pin_number: '1'
+  pin_name: IN
+- reference: IC3
+  pin_number: '4'
+  pin_name: GATEN
+- reference: MATRIX_PWR0
+  pin_number: P$4
+  pin_name: P2
+- reference: Q2
+  pin_number: '3'
+  pin_name: D

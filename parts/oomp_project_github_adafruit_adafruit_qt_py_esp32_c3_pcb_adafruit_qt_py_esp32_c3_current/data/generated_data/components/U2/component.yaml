@@ -1,0 +1,4631 @@
+reference: U2
+schematic:
+  available: true
+  units:
+  - reference: U2
+    source_file: data/kicad_file.kicad_sch
+    uuid: 6bac1ae2-d559-423c-b7ed-bc4392405ac2
+    library_id: kicad_file-eagle-import:ESP32-C3FH4
+    unit: 1
+    body_style: 1
+    position:
+      x: 119.38
+      y: 124.46
+      rotation: 0.0
+      mirror: null
+      units: mm
+    properties:
+      Reference: U2
+      Value: ESP32-C3FH4
+      Footprint: kicad_file:QFN32_5MM
+      Datasheet: ''
+      Description: ''
+      DIGI-KEY_PART_NUMBER: 1904-ESP32-C3FH4CT-ND
+      MF: Espressif Systems
+      MP: ESP32-C3FH4
+      PACKAGE: VFQFN-32 Espressif Systems
+      PURCHASE-URL: https://pricing.snapeda.com/search/part/ESP32-C3FH4/?ref=eda
+    in_bom: true
+    on_board: true
+    in_position_files: true
+    dnp: false
+    pins:
+    - number: '1'
+      name: LNA_IN
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: 25.4
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 99.06
+      net: LNA
+      net_aliases:
+      - LNA
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: L2
+        pin_number: '2'
+        pin_name: '2'
+    - number: '2'
+      name: VDD3P3
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 30.48
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 93.98
+      net: VDD3P3
+      net_aliases:
+      - VDD3P3
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: L1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: U2
+        pin_number: '3'
+        pin_name: VDD3P3
+    - number: '3'
+      name: VDD3P3
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 30.48
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 93.98
+      net: VDD3P3
+      net_aliases:
+      - VDD3P3
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: L1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: U2
+        pin_number: '2'
+        pin_name: VDD3P3
+    - number: '4'
+      name: GPIO0/XTAL_32K+
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: 2.54
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 121.92
+      net: A3
+      net_aliases:
+      - A3
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP1
+        pin_number: '4'
+        pin_name: '4'
+      - reference: JP1
+        pin_number: 4C
+        pin_name: '4'
+    - number: '5'
+      name: GPIO1/XTAL_32K-
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: 0.0
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 124.46
+      net: A2
+      net_aliases:
+      - A2
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP1
+        pin_number: '3'
+        pin_name: '3'
+      - reference: JP1
+        pin_number: 3C
+        pin_name: '3'
+    - number: '6'
+      name: GPIO2
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -10.16
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 134.62
+      net: NEOPIX
+      net_aliases:
+      - NEOPIX
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: LED1
+        pin_number: '1'
+        pin_name: DI
+      - reference: R2
+        pin_number: '2'
+        pin_name: '2'
+    - number: '7'
+      name: CHIP_EN
+      electrical_type: input
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: 15.24
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 109.22
+      net: ~{RESET}
+      net_aliases:
+      - ~{RESET}
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C3
+        pin_number: '1'
+        pin_name: '1'
+      - reference: Q2
+        pin_number: A
+        pin_name: P
+      - reference: Q2
+        pin_number: A'
+        pin_name: P1
+      - reference: R1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: SWC1
+        pin_number: TP
+        pin_name: TP
+    - number: '8'
+      name: GPIO3
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -12.7
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 137.16
+      net: A1
+      net_aliases:
+      - A1
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: JP1
+        pin_number: 2C
+        pin_name: '2'
+    - number: '9'
+      name: MTMS/GPIO4
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 15.24
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 109.22
+      net: A0
+      net_aliases:
+      - A0
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: JP1
+        pin_number: 1C
+        pin_name: '1'
+    - number: '10'
+      name: MTDI/GPIO5
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 12.7
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 111.76
+      net: SDA
+      net_aliases:
+      - SDA
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: CONN1
+        pin_number: '3'
+        pin_name: SDA
+      - reference: JP1
+        pin_number: '5'
+        pin_name: '5'
+      - reference: JP1
+        pin_number: 5C
+        pin_name: '5'
+    - number: '11'
+      name: VDD3P3_RTC
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 27.94
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 96.52
+      net: 3.3V
+      net_aliases:
+      - 3.3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#U$2'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$4'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$7'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$10'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$11'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$13'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$15'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$16'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$17'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$19'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$20'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$21'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$22'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$23'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$24'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C14
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C15
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C16
+        pin_number: '1'
+        pin_name: '1'
+      - reference: CONN1
+        pin_number: '2'
+        pin_name: V+
+      - reference: JP3
+        pin_number: '5'
+        pin_name: '5'
+      - reference: JP3
+        pin_number: 5C
+        pin_name: '5'
+      - reference: L1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: LED1
+        pin_number: '2'
+        pin_name: VDD
+      - reference: R1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U1
+        pin_number: '5'
+        pin_name: OUT
+      - reference: U2
+        pin_number: '17'
+        pin_name: VDD3P3_CPU
+      - reference: U2
+        pin_number: '31'
+        pin_name: VDDA
+      - reference: U2
+        pin_number: '32'
+        pin_name: VDDA
+    - number: '12'
+      name: MTCK/GPIO6
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 10.16
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 114.3
+      net: SCL
+      net_aliases:
+      - SCL
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: CONN1
+        pin_number: '4'
+        pin_name: SCL
+      - reference: JP1
+        pin_number: '6'
+        pin_name: '6'
+      - reference: JP1
+        pin_number: 6C
+        pin_name: '6'
+    - number: '13'
+      name: MTDO/GPIO7
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 7.62
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 116.84
+      net: MOSI
+      net_aliases:
+      - MOSI
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP3
+        pin_number: '4'
+        pin_name: '4'
+      - reference: JP3
+        pin_number: 4C
+        pin_name: '4'
+    - number: '14'
+      name: GPIO8
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -15.24
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 139.7
+      net: MISO
+      net_aliases:
+      - MISO
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP3
+        pin_number: '3'
+        pin_name: '3'
+      - reference: JP3
+        pin_number: 3C
+        pin_name: '3'
+      - reference: R7
+        pin_number: '2'
+        pin_name: '2'
+    - number: '15'
+      name: BOOT/GPIO9
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -17.78
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 142.24
+      net: BOOT
+      net_aliases:
+      - BOOT
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: Q1
+        pin_number: A
+        pin_name: P
+      - reference: Q1
+        pin_number: A'
+        pin_name: P1
+      - reference: SWC2
+        pin_number: TP
+        pin_name: TP
+    - number: '16'
+      name: GPIO10
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -20.32
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 144.78
+      net: SCK
+      net_aliases:
+      - SCK
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: JP3
+        pin_number: 2C
+        pin_name: '2'
+    - number: '17'
+      name: VDD3P3_CPU
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 25.4
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 99.06
+      net: 3.3V
+      net_aliases:
+      - 3.3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#U$2'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$4'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$7'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$10'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$11'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$13'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$15'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$16'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$17'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$19'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$20'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$21'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$22'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$23'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$24'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C14
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C15
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C16
+        pin_number: '1'
+        pin_name: '1'
+      - reference: CONN1
+        pin_number: '2'
+        pin_name: V+
+      - reference: JP3
+        pin_number: '5'
+        pin_name: '5'
+      - reference: JP3
+        pin_number: 5C
+        pin_name: '5'
+      - reference: L1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: LED1
+        pin_number: '2'
+        pin_name: VDD
+      - reference: R1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U1
+        pin_number: '5'
+        pin_name: OUT
+      - reference: U2
+        pin_number: '11'
+        pin_name: VDD3P3_RTC
+      - reference: U2
+        pin_number: '31'
+        pin_name: VDDA
+      - reference: U2
+        pin_number: '32'
+        pin_name: VDDA
+    - number: '18'
+      name: VDD_SPI
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 22.86
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 101.6
+      net: VDD_SPI
+      net_aliases:
+      - VDD_SPI
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: C11
+        pin_number: '1'
+        pin_name: '1'
+    - number: '19'
+      name: SPIHD
+      electrical_type: no_connect
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: -5.08
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 129.54
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '20'
+      name: SPIWP
+      electrical_type: no_connect
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: -7.62
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 132.08
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '21'
+      name: SPICS0
+      electrical_type: no_connect
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: -10.16
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 134.62
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '22'
+      name: SPICLK
+      electrical_type: no_connect
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: -12.7
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 137.16
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '23'
+      name: SPID
+      electrical_type: no_connect
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: -15.24
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 139.7
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '24'
+      name: SPIQ
+      electrical_type: no_connect
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: -17.78
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 142.24
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to: []
+    - number: '25'
+      name: GPIO18
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -22.86
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 147.32
+      net: D-
+      net_aliases:
+      - D-
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: X6
+        pin_number: A7
+        pin_name: D-
+      - reference: X6
+        pin_number: B7
+        pin_name: D-
+    - number: '26'
+      name: GPIO19
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -25.4
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 149.86
+      net: D+
+      net_aliases:
+      - D+
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: X6
+        pin_number: A6
+        pin_name: D+
+      - reference: X6
+        pin_number: B6
+        pin_name: D+
+    - number: '27'
+      name: U0RXD/GPIO20
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -2.54
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 127.0
+      net: RX
+      net_aliases:
+      - RX
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: JP3
+        pin_number: '1'
+        pin_name: '1'
+      - reference: JP3
+        pin_number: 1C
+        pin_name: '1'
+    - number: '28'
+      name: U0TXD/GPIO21
+      electrical_type: bidirectional
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -5.08
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 129.54
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R4
+        pin_number: '1'
+        pin_name: '1'
+    - number: '29'
+      name: XTAL_N
+      electrical_type: output
+      graphic_style: line
+      local_position:
+        x: -22.86
+        y: 7.62
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 116.84
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: R3
+        pin_number: '2'
+        pin_name: '2'
+    - number: '30'
+      name: XTAL_P
+      electrical_type: input
+      graphic_style: clock
+      local_position:
+        x: -22.86
+        y: 10.16
+        rotation: 0.0
+      length: 5.08
+      position:
+        x: 96.52
+        y: 114.3
+      net: null
+      net_aliases: []
+      net_scope: sheet
+      no_connect: false
+      connected_to:
+      - reference: C17
+        pin_number: '1'
+        pin_name: '1'
+      - reference: Y1
+        pin_number: '3'
+        pin_name: '2'
+    - number: '31'
+      name: VDDA
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 20.32
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 104.14
+      net: 3.3V
+      net_aliases:
+      - 3.3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#U$2'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$4'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$7'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$10'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$11'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$13'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$15'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$16'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$17'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$19'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$20'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$21'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$22'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$23'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$24'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C14
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C15
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C16
+        pin_number: '1'
+        pin_name: '1'
+      - reference: CONN1
+        pin_number: '2'
+        pin_name: V+
+      - reference: JP3
+        pin_number: '5'
+        pin_name: '5'
+      - reference: JP3
+        pin_number: 5C
+        pin_name: '5'
+      - reference: L1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: LED1
+        pin_number: '2'
+        pin_name: VDD
+      - reference: R1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U1
+        pin_number: '5'
+        pin_name: OUT
+      - reference: U2
+        pin_number: '11'
+        pin_name: VDD3P3_RTC
+      - reference: U2
+        pin_number: '17'
+        pin_name: VDD3P3_CPU
+      - reference: U2
+        pin_number: '32'
+        pin_name: VDDA
+    - number: '32'
+      name: VDDA
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: 20.32
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 104.14
+      net: 3.3V
+      net_aliases:
+      - 3.3V
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#U$2'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$4'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$7'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$10'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$11'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$13'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$15'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$16'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$17'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$19'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$20'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$21'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$22'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$23'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: '#U$24'
+        pin_number: '1'
+        pin_name: 3.3V
+      - reference: C2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C4
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C8
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C10
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C14
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C15
+        pin_number: '1'
+        pin_name: '1'
+      - reference: C16
+        pin_number: '1'
+        pin_name: '1'
+      - reference: CONN1
+        pin_number: '2'
+        pin_name: V+
+      - reference: JP3
+        pin_number: '5'
+        pin_name: '5'
+      - reference: JP3
+        pin_number: 5C
+        pin_name: '5'
+      - reference: L1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: LED1
+        pin_number: '2'
+        pin_name: VDD
+      - reference: R1
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R2
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R7
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U1
+        pin_number: '5'
+        pin_name: OUT
+      - reference: U2
+        pin_number: '11'
+        pin_name: VDD3P3_RTC
+      - reference: U2
+        pin_number: '17'
+        pin_name: VDD3P3_CPU
+      - reference: U2
+        pin_number: '31'
+        pin_name: VDDA
+    - number: '33'
+      name: GND
+      electrical_type: power_in
+      graphic_style: line
+      local_position:
+        x: 22.86
+        y: -30.48
+        rotation: 180.0
+      length: 5.08
+      position:
+        x: 142.24
+        y: 154.94
+      net: GND
+      net_aliases:
+      - GND
+      net_scope: global
+      no_connect: false
+      connected_to:
+      - reference: '#GND1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND2'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND3'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND4'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND5'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND6'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND7'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND8'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND10'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND11'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND12'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND14'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND15'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND16'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND17'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND19'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND22'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND23'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND24'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND25'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND26'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#GND27'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$1'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$9'
+        pin_number: '1'
+        pin_name: GND
+      - reference: '#U$14'
+        pin_number: '1'
+        pin_name: GND
+      - reference: C1
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C2
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C3
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C4
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C6
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C7
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C8
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C9
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C10
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C11
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C14
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C15
+        pin_number: '2'
+        pin_name: '2'
+      - reference: C16
+        pin_number: '2'
+        pin_name: '2'
+      - reference: CONN1
+        pin_number: MT1
+        pin_name: MT
+      - reference: CONN1
+        pin_number: MT2
+        pin_name: MT
+      - reference: CONN1
+        pin_number: '1'
+        pin_name: GND
+      - reference: GND0
+        pin_number: P$1
+        pin_name: P$1
+      - reference: JP3
+        pin_number: '6'
+        pin_name: '6'
+      - reference: JP3
+        pin_number: 6C
+        pin_name: '6'
+      - reference: LED1
+        pin_number: '4'
+        pin_name: GND
+      - reference: Q1
+        pin_number: B'
+        pin_name: S1
+      - reference: Q2
+        pin_number: B
+        pin_name: S
+      - reference: Q2
+        pin_number: B'
+        pin_name: S1
+      - reference: R5
+        pin_number: '1'
+        pin_name: '1'
+      - reference: R6
+        pin_number: '1'
+        pin_name: '1'
+      - reference: U1
+        pin_number: '2'
+        pin_name: GND
+      - reference: X6
+        pin_number: A1B12
+        pin_name: GND
+      - reference: X6
+        pin_number: B1A12
+        pin_name: GND
+    size:
+      local_graphics:
+        measurement: symbol graphics only; excludes pins, properties, and text
+        units: mm
+        available: true
+        min:
+          x: -17.907
+          y: -33.147
+        max:
+          x: 17.907
+          y: 33.147
+        width: 35.814
+        height: 66.294
+        center:
+          x: 0.0
+          y: 0.0
+      placed_graphics:
+        measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+        units: mm
+        available: true
+        min:
+          x: 101.473
+          y: 91.313
+        max:
+          x: 137.287
+          y: 157.607
+        width: 35.814
+        height: 66.294
+        center:
+          x: 119.38
+          y: 124.46
+    warnings: []
+  connected_components:
+  - reference: '#GND1'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND2'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND3'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND4'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND5'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND6'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND7'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND8'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND9'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND10'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND11'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND12'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND14'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND15'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND16'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND17'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND19'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND22'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND23'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND24'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND25'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND26'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#GND27'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#U$1'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#U$2'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$4'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$7'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$9'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#U$10'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$11'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$13'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$14'
+    pin_number: '1'
+    pin_name: GND
+  - reference: '#U$15'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$16'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$17'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$19'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$20'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$21'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$22'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$23'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: '#U$24'
+    pin_number: '1'
+    pin_name: 3.3V
+  - reference: C1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C2
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C3
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C4
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C4
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C6
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C6
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C7
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C7
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C8
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C8
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C9
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C10
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C10
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C11
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C11
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C14
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C14
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C15
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C15
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C16
+    pin_number: '1'
+    pin_name: '1'
+  - reference: C16
+    pin_number: '2'
+    pin_name: '2'
+  - reference: C17
+    pin_number: '1'
+    pin_name: '1'
+  - reference: CONN1
+    pin_number: '1'
+    pin_name: GND
+  - reference: CONN1
+    pin_number: '2'
+    pin_name: V+
+  - reference: CONN1
+    pin_number: '3'
+    pin_name: SDA
+  - reference: CONN1
+    pin_number: '4'
+    pin_name: SCL
+  - reference: CONN1
+    pin_number: MT1
+    pin_name: MT
+  - reference: CONN1
+    pin_number: MT2
+    pin_name: MT
+  - reference: GND0
+    pin_number: P$1
+    pin_name: P$1
+  - reference: JP1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: JP1
+    pin_number: 1C
+    pin_name: '1'
+  - reference: JP1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: JP1
+    pin_number: 2C
+    pin_name: '2'
+  - reference: JP1
+    pin_number: '3'
+    pin_name: '3'
+  - reference: JP1
+    pin_number: 3C
+    pin_name: '3'
+  - reference: JP1
+    pin_number: '4'
+    pin_name: '4'
+  - reference: JP1
+    pin_number: 4C
+    pin_name: '4'
+  - reference: JP1
+    pin_number: '5'
+    pin_name: '5'
+  - reference: JP1
+    pin_number: 5C
+    pin_name: '5'
+  - reference: JP1
+    pin_number: '6'
+    pin_name: '6'
+  - reference: JP1
+    pin_number: 6C
+    pin_name: '6'
+  - reference: JP3
+    pin_number: '1'
+    pin_name: '1'
+  - reference: JP3
+    pin_number: 1C
+    pin_name: '1'
+  - reference: JP3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: JP3
+    pin_number: 2C
+    pin_name: '2'
+  - reference: JP3
+    pin_number: '3'
+    pin_name: '3'
+  - reference: JP3
+    pin_number: 3C
+    pin_name: '3'
+  - reference: JP3
+    pin_number: '4'
+    pin_name: '4'
+  - reference: JP3
+    pin_number: 4C
+    pin_name: '4'
+  - reference: JP3
+    pin_number: '5'
+    pin_name: '5'
+  - reference: JP3
+    pin_number: 5C
+    pin_name: '5'
+  - reference: JP3
+    pin_number: '6'
+    pin_name: '6'
+  - reference: JP3
+    pin_number: 6C
+    pin_name: '6'
+  - reference: L1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: L1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: L2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: LED1
+    pin_number: '1'
+    pin_name: DI
+  - reference: LED1
+    pin_number: '2'
+    pin_name: VDD
+  - reference: LED1
+    pin_number: '4'
+    pin_name: GND
+  - reference: Q1
+    pin_number: A
+    pin_name: P
+  - reference: Q1
+    pin_number: A'
+    pin_name: P1
+  - reference: Q1
+    pin_number: B'
+    pin_name: S1
+  - reference: Q2
+    pin_number: A
+    pin_name: P
+  - reference: Q2
+    pin_number: A'
+    pin_name: P1
+  - reference: Q2
+    pin_number: B
+    pin_name: S
+  - reference: Q2
+    pin_number: B'
+    pin_name: S1
+  - reference: R1
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R1
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R2
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R2
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R3
+    pin_number: '2'
+    pin_name: '2'
+  - reference: R4
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R5
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R6
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R7
+    pin_number: '1'
+    pin_name: '1'
+  - reference: R7
+    pin_number: '2'
+    pin_name: '2'
+  - reference: SWC1
+    pin_number: TP
+    pin_name: TP
+  - reference: SWC2
+    pin_number: TP
+    pin_name: TP
+  - reference: U1
+    pin_number: '2'
+    pin_name: GND
+  - reference: U1
+    pin_number: '5'
+    pin_name: OUT
+  - reference: U2
+    pin_number: '11'
+    pin_name: VDD3P3_RTC
+  - reference: U2
+    pin_number: '17'
+    pin_name: VDD3P3_CPU
+  - reference: U2
+    pin_number: '2'
+    pin_name: VDD3P3
+  - reference: U2
+    pin_number: '3'
+    pin_name: VDD3P3
+  - reference: U2
+    pin_number: '31'
+    pin_name: VDDA
+  - reference: U2
+    pin_number: '32'
+    pin_name: VDDA
+  - reference: X6
+    pin_number: A1B12
+    pin_name: GND
+  - reference: X6
+    pin_number: A6
+    pin_name: D+
+  - reference: X6
+    pin_number: A7
+    pin_name: D-
+  - reference: X6
+    pin_number: B1A12
+    pin_name: GND
+  - reference: X6
+    pin_number: B6
+    pin_name: D+
+  - reference: X6
+    pin_number: B7
+    pin_name: D-
+  - reference: Y1
+    pin_number: '3'
+    pin_name: '2'
+pcb:
+  reference: U2
+  value: ESP32-C3FH4
+  source_file: data/kicad_file.kicad_pcb
+  uuid: 3c2758f2-5291-49b3-84d4-dfcdf1c58ad6
+  library_id: Adafruit QT Py ESP32-C3-import-fps:QFN32_5MM
+  layer: B.Cu
+  side: back
+  position:
+    x: 10.541
+    y: -8.3185
+    rotation: 0.0
+    rotation_kicad: -0.0
+    units: mm
+  properties:
+    Reference: U2
+    Value: ESP32-C3FH4
+    Datasheet: ''
+    Description: ''
+  attributes: []
+  exclude_from_bom: false
+  exclude_from_position_files: false
+  pads:
+  - number: '1'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -2.45
+      y: 1.75
+      rotation: 0.0
+    position:
+      x: 8.091
+      y: -6.5685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: LNA
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.855
+          y: 1.615
+        max:
+          x: -2.045
+          y: 1.885
+        width: 0.81
+        height: 0.27
+        center:
+          x: -2.45
+          y: 1.75
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.686
+          y: -6.7035
+        max:
+          x: 8.496
+          y: -6.4335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 8.091
+          y: -6.5685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C7
+      pad_number: '1'
+    - reference: L2
+      pad_number: '2'
+  - number: '2'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -2.45
+      y: 1.25
+      rotation: 0.0
+    position:
+      x: 8.091
+      y: -7.0685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: VDD3P3
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.855
+          y: 1.115
+        max:
+          x: -2.045
+          y: 1.385
+        width: 0.81
+        height: 0.27
+        center:
+          x: -2.45
+          y: 1.25
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.686
+          y: -7.2035
+        max:
+          x: 8.496
+          y: -6.9335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 8.091
+          y: -7.0685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: L1
+      pad_number: '2'
+    - reference: U2
+      pad_number: '3'
+  - number: '3'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -2.45
+      y: 0.75
+      rotation: 0.0
+    position:
+      x: 8.091
+      y: -7.5685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: VDD3P3
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.855
+          y: 0.615
+        max:
+          x: -2.045
+          y: 0.885
+        width: 0.81
+        height: 0.27
+        center:
+          x: -2.45
+          y: 0.75
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.686
+          y: -7.7035
+        max:
+          x: 8.496
+          y: -7.4335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 8.091
+          y: -7.5685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: L1
+      pad_number: '2'
+    - reference: U2
+      pad_number: '2'
+  - number: '4'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -2.45
+      y: 0.25
+      rotation: 0.0
+    position:
+      x: 8.091
+      y: -8.0685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: A3
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.855
+          y: 0.115
+        max:
+          x: -2.045
+          y: 0.385
+        width: 0.81
+        height: 0.27
+        center:
+          x: -2.45
+          y: 0.25
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.686
+          y: -8.2035
+        max:
+          x: 8.496
+          y: -7.9335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 8.091
+          y: -8.0685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP1
+      pad_number: '4'
+    - reference: JP1
+      pad_number: 4C
+  - number: '5'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -2.45
+      y: -0.25
+      rotation: 0.0
+    position:
+      x: 8.091
+      y: -8.5685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: A2
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.855
+          y: -0.385
+        max:
+          x: -2.045
+          y: -0.115
+        width: 0.81
+        height: 0.27
+        center:
+          x: -2.45
+          y: -0.25
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.686
+          y: -8.7035
+        max:
+          x: 8.496
+          y: -8.4335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 8.091
+          y: -8.5685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP1
+      pad_number: '3'
+    - reference: JP1
+      pad_number: 3C
+  - number: '6'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -2.45
+      y: -0.75
+      rotation: 0.0
+    position:
+      x: 8.091
+      y: -9.0685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: NEOPIX
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.855
+          y: -0.885
+        max:
+          x: -2.045
+          y: -0.615
+        width: 0.81
+        height: 0.27
+        center:
+          x: -2.45
+          y: -0.75
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.686
+          y: -9.2035
+        max:
+          x: 8.496
+          y: -8.9335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 8.091
+          y: -9.0685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: LED1
+      pad_number: '1'
+    - reference: R2
+      pad_number: '2'
+  - number: '7'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -2.45
+      y: -1.25
+      rotation: 0.0
+    position:
+      x: 8.091
+      y: -9.5685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: ~{RESET}
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.855
+          y: -1.385
+        max:
+          x: -2.045
+          y: -1.115
+        width: 0.81
+        height: 0.27
+        center:
+          x: -2.45
+          y: -1.25
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.686
+          y: -9.7035
+        max:
+          x: 8.496
+          y: -9.4335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 8.091
+          y: -9.5685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C3
+      pad_number: '1'
+    - reference: Q2
+      pad_number: A
+    - reference: Q2
+      pad_number: A'
+    - reference: R1
+      pad_number: '2'
+    - reference: SWC1
+      pad_number: TP
+  - number: '8'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -2.45
+      y: -1.75
+      rotation: 0.0
+    position:
+      x: 8.091
+      y: -10.0685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: A1
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -2.855
+          y: -1.885
+        max:
+          x: -2.045
+          y: -1.615
+        width: 0.81
+        height: 0.27
+        center:
+          x: -2.45
+          y: -1.75
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 7.686
+          y: -10.2035
+        max:
+          x: 8.496
+          y: -9.9335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 8.091
+          y: -10.0685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP1
+      pad_number: '2'
+    - reference: JP1
+      pad_number: 2C
+  - number: '9'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -1.75
+      y: -2.45
+      rotation: 0.0
+    position:
+      x: 8.791
+      y: -10.7685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: A0
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.885
+          y: -2.855
+        max:
+          x: -1.615
+          y: -2.045
+        width: 0.27
+        height: 0.81
+        center:
+          x: -1.75
+          y: -2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 8.656
+          y: -11.1735
+        max:
+          x: 8.926
+          y: -10.3635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 8.791
+          y: -10.7685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP1
+      pad_number: '1'
+    - reference: JP1
+      pad_number: 1C
+  - number: '10'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -1.25
+      y: -2.45
+      rotation: 0.0
+    position:
+      x: 9.291
+      y: -10.7685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: SDA
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.385
+          y: -2.855
+        max:
+          x: -1.115
+          y: -2.045
+        width: 0.27
+        height: 0.81
+        center:
+          x: -1.25
+          y: -2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 9.156
+          y: -11.1735
+        max:
+          x: 9.426
+          y: -10.3635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 9.291
+          y: -10.7685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: CONN1
+      pad_number: '3'
+    - reference: JP1
+      pad_number: '5'
+    - reference: JP1
+      pad_number: 5C
+  - number: '11'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.75
+      y: -2.45
+      rotation: 0.0
+    position:
+      x: 9.791
+      y: -10.7685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: 3.3V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.885
+          y: -2.855
+        max:
+          x: -0.615
+          y: -2.045
+        width: 0.27
+        height: 0.81
+        center:
+          x: -0.75
+          y: -2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 9.656
+          y: -11.1735
+        max:
+          x: 9.926
+          y: -10.3635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 9.791
+          y: -10.7685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C2
+      pad_number: '1'
+    - reference: C4
+      pad_number: '1'
+    - reference: C6
+      pad_number: '1'
+    - reference: C8
+      pad_number: '1'
+    - reference: C10
+      pad_number: '1'
+    - reference: C14
+      pad_number: '1'
+    - reference: C15
+      pad_number: '1'
+    - reference: C16
+      pad_number: '1'
+    - reference: CONN1
+      pad_number: '2'
+    - reference: JP3
+      pad_number: '5'
+    - reference: JP3
+      pad_number: 5C
+    - reference: L1
+      pad_number: '1'
+    - reference: LED1
+      pad_number: '2'
+    - reference: R1
+      pad_number: '1'
+    - reference: R2
+      pad_number: '1'
+    - reference: R7
+      pad_number: '1'
+    - reference: U1
+      pad_number: '5'
+    - reference: U2
+      pad_number: '17'
+    - reference: U2
+      pad_number: '31'
+    - reference: U2
+      pad_number: '32'
+  - number: '12'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.25
+      y: -2.45
+      rotation: 0.0
+    position:
+      x: 10.291
+      y: -10.7685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: SCL
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.385
+          y: -2.855
+        max:
+          x: -0.115
+          y: -2.045
+        width: 0.27
+        height: 0.81
+        center:
+          x: -0.25
+          y: -2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.156
+          y: -11.1735
+        max:
+          x: 10.426
+          y: -10.3635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 10.291
+          y: -10.7685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: CONN1
+      pad_number: '4'
+    - reference: JP1
+      pad_number: '6'
+    - reference: JP1
+      pad_number: 6C
+  - number: '13'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.25
+      y: -2.45
+      rotation: 0.0
+    position:
+      x: 10.791
+      y: -10.7685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: MOSI
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.115
+          y: -2.855
+        max:
+          x: 0.385
+          y: -2.045
+        width: 0.27
+        height: 0.81
+        center:
+          x: 0.25
+          y: -2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.656
+          y: -11.1735
+        max:
+          x: 10.926
+          y: -10.3635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 10.791
+          y: -10.7685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP3
+      pad_number: '4'
+    - reference: JP3
+      pad_number: 4C
+  - number: '14'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.75
+      y: -2.45
+      rotation: 0.0
+    position:
+      x: 11.291
+      y: -10.7685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: MISO
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.615
+          y: -2.855
+        max:
+          x: 0.885
+          y: -2.045
+        width: 0.27
+        height: 0.81
+        center:
+          x: 0.75
+          y: -2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 11.156
+          y: -11.1735
+        max:
+          x: 11.426
+          y: -10.3635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 11.291
+          y: -10.7685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP3
+      pad_number: '3'
+    - reference: JP3
+      pad_number: 3C
+    - reference: R7
+      pad_number: '2'
+  - number: '15'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 1.25
+      y: -2.45
+      rotation: 0.0
+    position:
+      x: 11.791
+      y: -10.7685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: BOOT
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.115
+          y: -2.855
+        max:
+          x: 1.385
+          y: -2.045
+        width: 0.27
+        height: 0.81
+        center:
+          x: 1.25
+          y: -2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 11.656
+          y: -11.1735
+        max:
+          x: 11.926
+          y: -10.3635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 11.791
+          y: -10.7685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: Q1
+      pad_number: A
+    - reference: Q1
+      pad_number: A'
+    - reference: SWC2
+      pad_number: TP
+  - number: '16'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 1.75
+      y: -2.45
+      rotation: 0.0
+    position:
+      x: 12.291
+      y: -10.7685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: SCK
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.615
+          y: -2.855
+        max:
+          x: 1.885
+          y: -2.045
+        width: 0.27
+        height: 0.81
+        center:
+          x: 1.75
+          y: -2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.156
+          y: -11.1735
+        max:
+          x: 12.426
+          y: -10.3635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 12.291
+          y: -10.7685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP3
+      pad_number: '2'
+    - reference: JP3
+      pad_number: 2C
+  - number: '17'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 2.45
+      y: -1.75
+      rotation: 0.0
+    position:
+      x: 12.991
+      y: -10.0685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: 3.3V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.045
+          y: -1.885
+        max:
+          x: 2.855
+          y: -1.615
+        width: 0.81
+        height: 0.27
+        center:
+          x: 2.45
+          y: -1.75
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.586
+          y: -10.2035
+        max:
+          x: 13.396
+          y: -9.9335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 12.991
+          y: -10.0685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C2
+      pad_number: '1'
+    - reference: C4
+      pad_number: '1'
+    - reference: C6
+      pad_number: '1'
+    - reference: C8
+      pad_number: '1'
+    - reference: C10
+      pad_number: '1'
+    - reference: C14
+      pad_number: '1'
+    - reference: C15
+      pad_number: '1'
+    - reference: C16
+      pad_number: '1'
+    - reference: CONN1
+      pad_number: '2'
+    - reference: JP3
+      pad_number: '5'
+    - reference: JP3
+      pad_number: 5C
+    - reference: L1
+      pad_number: '1'
+    - reference: LED1
+      pad_number: '2'
+    - reference: R1
+      pad_number: '1'
+    - reference: R2
+      pad_number: '1'
+    - reference: R7
+      pad_number: '1'
+    - reference: U1
+      pad_number: '5'
+    - reference: U2
+      pad_number: '11'
+    - reference: U2
+      pad_number: '31'
+    - reference: U2
+      pad_number: '32'
+  - number: '18'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 2.45
+      y: -1.25
+      rotation: 0.0
+    position:
+      x: 12.991
+      y: -9.5685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: VDD_SPI
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.045
+          y: -1.385
+        max:
+          x: 2.855
+          y: -1.115
+        width: 0.81
+        height: 0.27
+        center:
+          x: 2.45
+          y: -1.25
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.586
+          y: -9.7035
+        max:
+          x: 13.396
+          y: -9.4335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 12.991
+          y: -9.5685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C11
+      pad_number: '1'
+  - number: '19'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 2.45
+      y: -0.75
+      rotation: 0.0
+    position:
+      x: 12.991
+      y: -9.0685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.045
+          y: -0.885
+        max:
+          x: 2.855
+          y: -0.615
+        width: 0.81
+        height: 0.27
+        center:
+          x: 2.45
+          y: -0.75
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.586
+          y: -9.2035
+        max:
+          x: 13.396
+          y: -8.9335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 12.991
+          y: -9.0685
+    plating: null
+    is_mounting_hole: false
+  - number: '20'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 2.45
+      y: -0.25
+      rotation: 0.0
+    position:
+      x: 12.991
+      y: -8.5685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.045
+          y: -0.385
+        max:
+          x: 2.855
+          y: -0.115
+        width: 0.81
+        height: 0.27
+        center:
+          x: 2.45
+          y: -0.25
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.586
+          y: -8.7035
+        max:
+          x: 13.396
+          y: -8.4335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 12.991
+          y: -8.5685
+    plating: null
+    is_mounting_hole: false
+  - number: '21'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 2.45
+      y: 0.25
+      rotation: 0.0
+    position:
+      x: 12.991
+      y: -8.0685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.045
+          y: 0.115
+        max:
+          x: 2.855
+          y: 0.385
+        width: 0.81
+        height: 0.27
+        center:
+          x: 2.45
+          y: 0.25
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.586
+          y: -8.2035
+        max:
+          x: 13.396
+          y: -7.9335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 12.991
+          y: -8.0685
+    plating: null
+    is_mounting_hole: false
+  - number: '22'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 2.45
+      y: 0.75
+      rotation: 0.0
+    position:
+      x: 12.991
+      y: -7.5685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.045
+          y: 0.615
+        max:
+          x: 2.855
+          y: 0.885
+        width: 0.81
+        height: 0.27
+        center:
+          x: 2.45
+          y: 0.75
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.586
+          y: -7.7035
+        max:
+          x: 13.396
+          y: -7.4335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 12.991
+          y: -7.5685
+    plating: null
+    is_mounting_hole: false
+  - number: '23'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 2.45
+      y: 1.25
+      rotation: 0.0
+    position:
+      x: 12.991
+      y: -7.0685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.045
+          y: 1.115
+        max:
+          x: 2.855
+          y: 1.385
+        width: 0.81
+        height: 0.27
+        center:
+          x: 2.45
+          y: 1.25
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.586
+          y: -7.2035
+        max:
+          x: 13.396
+          y: -6.9335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 12.991
+          y: -7.0685
+    plating: null
+    is_mounting_hole: false
+  - number: '24'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 2.45
+      y: 1.75
+      rotation: 0.0
+    position:
+      x: 12.991
+      y: -6.5685
+    placed_rotation: 0.0
+    size:
+      x: 0.81
+      y: 0.27
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: null
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 2.045
+          y: 1.615
+        max:
+          x: 2.855
+          y: 1.885
+        width: 0.81
+        height: 0.27
+        center:
+          x: 2.45
+          y: 1.75
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.586
+          y: -6.7035
+        max:
+          x: 13.396
+          y: -6.4335
+        width: 0.81
+        height: 0.27
+        center:
+          x: 12.991
+          y: -6.5685
+    plating: null
+    is_mounting_hole: false
+  - number: '25'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 1.75
+      y: 2.45
+      rotation: 0.0
+    position:
+      x: 12.291
+      y: -5.8685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: D-
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.615
+          y: 2.045
+        max:
+          x: 1.885
+          y: 2.855
+        width: 0.27
+        height: 0.81
+        center:
+          x: 1.75
+          y: 2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 12.156
+          y: -6.2735
+        max:
+          x: 12.426
+          y: -5.4635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 12.291
+          y: -5.8685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: X6
+      pad_number: A7
+    - reference: X6
+      pad_number: B7
+  - number: '26'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 1.25
+      y: 2.45
+      rotation: 0.0
+    position:
+      x: 11.791
+      y: -5.8685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: D+
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 1.115
+          y: 2.045
+        max:
+          x: 1.385
+          y: 2.855
+        width: 0.27
+        height: 0.81
+        center:
+          x: 1.25
+          y: 2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 11.656
+          y: -6.2735
+        max:
+          x: 11.926
+          y: -5.4635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 11.791
+          y: -5.8685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: X6
+      pad_number: A6
+    - reference: X6
+      pad_number: B6
+  - number: '27'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.75
+      y: 2.45
+      rotation: 0.0
+    position:
+      x: 11.291
+      y: -5.8685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: RX
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.615
+          y: 2.045
+        max:
+          x: 0.885
+          y: 2.855
+        width: 0.27
+        height: 0.81
+        center:
+          x: 0.75
+          y: 2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 11.156
+          y: -6.2735
+        max:
+          x: 11.426
+          y: -5.4635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 11.291
+          y: -5.8685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: JP3
+      pad_number: '1'
+    - reference: JP3
+      pad_number: 1C
+  - number: '28'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: 0.25
+      y: 2.45
+      rotation: 0.0
+    position:
+      x: 10.791
+      y: -5.8685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: N$1
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: 0.115
+          y: 2.045
+        max:
+          x: 0.385
+          y: 2.855
+        width: 0.27
+        height: 0.81
+        center:
+          x: 0.25
+          y: 2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.656
+          y: -6.2735
+        max:
+          x: 10.926
+          y: -5.4635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 10.791
+          y: -5.8685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R4
+      pad_number: '1'
+  - number: '29'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.25
+      y: 2.45
+      rotation: 0.0
+    position:
+      x: 10.291
+      y: -5.8685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: N$5
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.385
+          y: 2.045
+        max:
+          x: -0.115
+          y: 2.855
+        width: 0.27
+        height: 0.81
+        center:
+          x: -0.25
+          y: 2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 10.156
+          y: -6.2735
+        max:
+          x: 10.426
+          y: -5.4635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 10.291
+          y: -5.8685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: R3
+      pad_number: '2'
+  - number: '30'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -0.75
+      y: 2.45
+      rotation: 0.0
+    position:
+      x: 9.791
+      y: -5.8685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: N$6
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -0.885
+          y: 2.045
+        max:
+          x: -0.615
+          y: 2.855
+        width: 0.27
+        height: 0.81
+        center:
+          x: -0.75
+          y: 2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 9.656
+          y: -6.2735
+        max:
+          x: 9.926
+          y: -5.4635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 9.791
+          y: -5.8685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C17
+      pad_number: '1'
+    - reference: Y1
+      pad_number: '3'
+  - number: '31'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -1.25
+      y: 2.45
+      rotation: 0.0
+    position:
+      x: 9.291
+      y: -5.8685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: 3.3V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.385
+          y: 2.045
+        max:
+          x: -1.115
+          y: 2.855
+        width: 0.27
+        height: 0.81
+        center:
+          x: -1.25
+          y: 2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 9.156
+          y: -6.2735
+        max:
+          x: 9.426
+          y: -5.4635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 9.291
+          y: -5.8685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C2
+      pad_number: '1'
+    - reference: C4
+      pad_number: '1'
+    - reference: C6
+      pad_number: '1'
+    - reference: C8
+      pad_number: '1'
+    - reference: C10
+      pad_number: '1'
+    - reference: C14
+      pad_number: '1'
+    - reference: C15
+      pad_number: '1'
+    - reference: C16
+      pad_number: '1'
+    - reference: CONN1
+      pad_number: '2'
+    - reference: JP3
+      pad_number: '5'
+    - reference: JP3
+      pad_number: 5C
+    - reference: L1
+      pad_number: '1'
+    - reference: LED1
+      pad_number: '2'
+    - reference: R1
+      pad_number: '1'
+    - reference: R2
+      pad_number: '1'
+    - reference: R7
+      pad_number: '1'
+    - reference: U1
+      pad_number: '5'
+    - reference: U2
+      pad_number: '11'
+    - reference: U2
+      pad_number: '17'
+    - reference: U2
+      pad_number: '32'
+  - number: '32'
+    type: smd
+    shape: roundrect
+    local_position:
+      x: -1.75
+      y: 2.45
+      rotation: 0.0
+    position:
+      x: 8.791
+      y: -5.8685
+    placed_rotation: 0.0
+    size:
+      x: 0.27
+      y: 0.81
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    - B.Paste
+    net: 3.3V
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.885
+          y: 2.045
+        max:
+          x: -1.615
+          y: 2.855
+        width: 0.27
+        height: 0.81
+        center:
+          x: -1.75
+          y: 2.45
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 8.656
+          y: -6.2735
+        max:
+          x: 8.926
+          y: -5.4635
+        width: 0.27
+        height: 0.81
+        center:
+          x: 8.791
+          y: -5.8685
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C2
+      pad_number: '1'
+    - reference: C4
+      pad_number: '1'
+    - reference: C6
+      pad_number: '1'
+    - reference: C8
+      pad_number: '1'
+    - reference: C10
+      pad_number: '1'
+    - reference: C14
+      pad_number: '1'
+    - reference: C15
+      pad_number: '1'
+    - reference: C16
+      pad_number: '1'
+    - reference: CONN1
+      pad_number: '2'
+    - reference: JP3
+      pad_number: '5'
+    - reference: JP3
+      pad_number: 5C
+    - reference: L1
+      pad_number: '1'
+    - reference: LED1
+      pad_number: '2'
+    - reference: R1
+      pad_number: '1'
+    - reference: R2
+      pad_number: '1'
+    - reference: R7
+      pad_number: '1'
+    - reference: U1
+      pad_number: '5'
+    - reference: U2
+      pad_number: '11'
+    - reference: U2
+      pad_number: '17'
+    - reference: U2
+      pad_number: '31'
+  - number: '33'
+    type: smd
+    shape: rect
+    local_position:
+      x: 0.0
+      y: 0.0
+      rotation: 0.0
+    position:
+      x: 10.541
+      y: -8.3185
+    placed_rotation: 0.0
+    size:
+      x: 3.0
+      y: 3.0
+      units: mm
+    drill:
+      available: false
+      shape: null
+      x: null
+      y: null
+      diameter: null
+      units: mm
+    layers:
+    - B.Cu
+    - B.Mask
+    net: GND
+    net_number: null
+    pin_function: null
+    pin_type: null
+    bounds:
+      local:
+        measurement: pad bounds in footprint-local coordinates
+        units: mm
+        available: true
+        min:
+          x: -1.5
+          y: -1.5
+        max:
+          x: 1.5
+          y: 1.5
+        width: 3.0
+        height: 3.0
+        center:
+          x: 0.0
+          y: 0.0
+      placed:
+        measurement: pad bounds after footprint placement and rotation
+        units: mm
+        available: true
+        min:
+          x: 9.041
+          y: -9.8185
+        max:
+          x: 12.041
+          y: -6.8185
+        width: 3.0
+        height: 3.0
+        center:
+          x: 10.541
+          y: -8.3185
+    plating: null
+    is_mounting_hole: false
+    connected_to:
+    - reference: C1
+      pad_number: '2'
+    - reference: C2
+      pad_number: '2'
+    - reference: C3
+      pad_number: '2'
+    - reference: C4
+      pad_number: '2'
+    - reference: C6
+      pad_number: '2'
+    - reference: C7
+      pad_number: '2'
+    - reference: C8
+      pad_number: '2'
+    - reference: C9
+      pad_number: '2'
+    - reference: C10
+      pad_number: '2'
+    - reference: C11
+      pad_number: '2'
+    - reference: C14
+      pad_number: '2'
+    - reference: C15
+      pad_number: '2'
+    - reference: C16
+      pad_number: '2'
+    - reference: C17
+      pad_number: '2'
+    - reference: C18
+      pad_number: '2'
+    - reference: CONN1
+      pad_number: '1'
+    - reference: CONN1
+      pad_number: MT1
+    - reference: CONN1
+      pad_number: MT2
+    - reference: GND0
+      pad_number: P$1
+    - reference: JP3
+      pad_number: '6'
+    - reference: JP3
+      pad_number: 6C
+    - reference: LED1
+      pad_number: '4'
+    - reference: Q1
+      pad_number: B'
+    - reference: Q2
+      pad_number: B
+    - reference: Q2
+      pad_number: B'
+    - reference: R5
+      pad_number: '1'
+    - reference: R6
+      pad_number: '1'
+    - reference: U1
+      pad_number: '2'
+    - reference: X6
+      pad_number: A1B12
+    - reference: X6
+      pad_number: B1A12
+  mounting_holes: []
+  is_mounting_hole: false
+  size:
+    pads_local:
+      measurement: all footprint pads in footprint-local coordinates
+      units: mm
+      available: true
+      min:
+        x: -2.855
+        y: -2.855
+      max:
+        x: 2.855
+        y: 2.855
+      width: 5.71
+      height: 5.71
+      center:
+        x: 0.0
+        y: 0.0
+    pads_placed:
+      measurement: all pads after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 7.686
+        y: -11.1735
+      max:
+        x: 13.396
+        y: -5.4635
+      width: 5.71
+      height: 5.71
+      center:
+        x: 10.541
+        y: -8.3185
+    courtyard_local:
+      measurement: F.CrtYd and B.CrtYd graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -3.13
+        y: -3.13
+      max:
+        x: 3.13
+        y: 3.13
+      width: 6.26
+      height: 6.26
+      center:
+        x: 0.0
+        y: 0.0
+    courtyard_placed:
+      measurement: courtyard after PCB placement and rotation
+      units: mm
+      available: true
+      min:
+        x: 7.411
+        y: -11.4485
+      max:
+        x: 13.671
+        y: -5.1885
+      width: 6.26
+      height: 6.26
+      center:
+        x: 10.541
+        y: -8.3185
+    fabrication_local:
+      measurement: F.Fab and B.Fab graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.5635
+        y: -2.5635
+      max:
+        x: 2.5635
+        y: 2.5635
+      width: 5.127
+      height: 5.127
+      center:
+        x: 0.0
+        y: 0.0
+    fabrication_placed:
+      measurement: fabrication graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 7.9775
+        y: -10.882
+      max:
+        x: 13.1045
+        y: -5.755
+      width: 5.127
+      height: 5.127
+      center:
+        x: 10.541
+        y: -8.3185
+    silkscreen_local:
+      measurement: F.SilkS and B.SilkS graphics; text excluded
+      units: mm
+      available: true
+      min:
+        x: -2.5635
+        y: -2.5635
+      max:
+        x: 2.5635
+        y: 2.5635
+      width: 5.127
+      height: 5.127
+      center:
+        x: 0.0
+        y: 0.0
+    silkscreen_placed:
+      measurement: silkscreen graphics after placement
+      units: mm
+      available: true
+      min:
+        x: 7.9775
+        y: -10.882
+      max:
+        x: 13.1045
+        y: -5.755
+      width: 5.127
+      height: 5.127
+      center:
+        x: 10.541
+        y: -8.3185
+    overall_local:
+      measurement: all non-text footprint graphics and pads
+      units: mm
+      available: true
+      min:
+        x: -3.13
+        y: -3.13
+      max:
+        x: 3.13
+        y: 3.13
+      width: 6.26
+      height: 6.26
+      center:
+        x: 0.0
+        y: 0.0
+    overall_placed:
+      measurement: all non-text footprint graphics and pads after placement
+      units: mm
+      available: true
+      min:
+        x: 7.411
+        y: -11.4485
+      max:
+        x: 13.671
+        y: -5.1885
+      width: 6.26
+      height: 6.26
+      center:
+        x: 10.541
+        y: -8.3185
+  connected_components:
+  - C1
+  - C2
+  - C3
+  - C4
+  - C6
+  - C7
+  - C8
+  - C9
+  - C10
+  - C11
+  - C14
+  - C15
+  - C16
+  - C17
+  - C18
+  - CONN1
+  - GND0
+  - JP1
+  - JP3
+  - L1
+  - L2
+  - LED1
+  - Q1
+  - Q2
+  - R1
+  - R2
+  - R3
+  - R4
+  - R5
+  - R6
+  - R7
+  - SWC1
+  - SWC2
+  - U1
+  - U2
+  - X6
+  - Y1
+connectivity_cross_check:
+  available: true
+  policy: Named schematic nets are compared with PCB pad nets using matching pin/pad numbers; root-sheet local labels also
+    allow KiCad's leading '/' prefix.
+  comparisons:
+  - pin_or_pad_number: '1'
+    schematic_nets:
+    - LNA
+    pcb_nets:
+    - LNA
+    status: agree
+  - pin_or_pad_number: '10'
+    schematic_nets:
+    - SDA
+    pcb_nets:
+    - SDA
+    status: agree
+  - pin_or_pad_number: '11'
+    schematic_nets:
+    - 3.3V
+    pcb_nets:
+    - 3.3V
+    status: agree
+  - pin_or_pad_number: '12'
+    schematic_nets:
+    - SCL
+    pcb_nets:
+    - SCL
+    status: agree
+  - pin_or_pad_number: '13'
+    schematic_nets:
+    - MOSI
+    pcb_nets:
+    - MOSI
+    status: agree
+  - pin_or_pad_number: '14'
+    schematic_nets:
+    - MISO
+    pcb_nets:
+    - MISO
+    status: agree
+  - pin_or_pad_number: '15'
+    schematic_nets:
+    - BOOT
+    pcb_nets:
+    - BOOT
+    status: agree
+  - pin_or_pad_number: '16'
+    schematic_nets:
+    - SCK
+    pcb_nets:
+    - SCK
+    status: agree
+  - pin_or_pad_number: '17'
+    schematic_nets:
+    - 3.3V
+    pcb_nets:
+    - 3.3V
+    status: agree
+  - pin_or_pad_number: '18'
+    schematic_nets:
+    - VDD_SPI
+    pcb_nets:
+    - VDD_SPI
+    status: agree
+  - pin_or_pad_number: '19'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '2'
+    schematic_nets:
+    - VDD3P3
+    pcb_nets:
+    - VDD3P3
+    status: agree
+  - pin_or_pad_number: '20'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '21'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '22'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '23'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '24'
+    schematic_nets: []
+    pcb_nets: []
+    status: no_named_net
+  - pin_or_pad_number: '25'
+    schematic_nets:
+    - D-
+    pcb_nets:
+    - D-
+    status: agree
+  - pin_or_pad_number: '26'
+    schematic_nets:
+    - D+
+    pcb_nets:
+    - D+
+    status: agree
+  - pin_or_pad_number: '27'
+    schematic_nets:
+    - RX
+    pcb_nets:
+    - RX
+    status: agree
+  - pin_or_pad_number: '28'
+    schematic_nets: []
+    pcb_nets:
+    - N$1
+    status: incomplete
+  - pin_or_pad_number: '29'
+    schematic_nets: []
+    pcb_nets:
+    - N$5
+    status: incomplete
+  - pin_or_pad_number: '3'
+    schematic_nets:
+    - VDD3P3
+    pcb_nets:
+    - VDD3P3
+    status: agree
+  - pin_or_pad_number: '30'
+    schematic_nets: []
+    pcb_nets:
+    - N$6
+    status: incomplete
+  - pin_or_pad_number: '31'
+    schematic_nets:
+    - 3.3V
+    pcb_nets:
+    - 3.3V
+    status: agree
+  - pin_or_pad_number: '32'
+    schematic_nets:
+    - 3.3V
+    pcb_nets:
+    - 3.3V
+    status: agree
+  - pin_or_pad_number: '33'
+    schematic_nets:
+    - GND
+    pcb_nets:
+    - GND
+    status: agree
+  - pin_or_pad_number: '4'
+    schematic_nets:
+    - A3
+    pcb_nets:
+    - A3
+    status: agree
+  - pin_or_pad_number: '5'
+    schematic_nets:
+    - A2
+    pcb_nets:
+    - A2
+    status: agree
+  - pin_or_pad_number: '6'
+    schematic_nets:
+    - NEOPIX
+    pcb_nets:
+    - NEOPIX
+    status: agree
+  - pin_or_pad_number: '7'
+    schematic_nets:
+    - ~{RESET}
+    pcb_nets:
+    - ~{RESET}
+    status: agree
+  - pin_or_pad_number: '8'
+    schematic_nets:
+    - A1
+    pcb_nets:
+    - A1
+    status: agree
+  - pin_or_pad_number: '9'
+    schematic_nets:
+    - A0
+    pcb_nets:
+    - A0
+    status: agree
+  agree_count: 24
+  disagree_count: 0
+  incomplete_count: 3
+oomp:
+  status: unmatched
+  accepted: false
+  oomp_id: null
+  confidence: 0.0
+  proposed_oomp_id: null
+  inferred:
+    kind: null
+    package_size: null
+    value: ESP32-C3FH4
+    mpn: null
+  reasons:
+  - No supported OOMP component family could be inferred.
+  candidates: []
+category: ic
+category_source: unmatched_kicad_hint
+category_name: IC
+generated_directory: components/U2

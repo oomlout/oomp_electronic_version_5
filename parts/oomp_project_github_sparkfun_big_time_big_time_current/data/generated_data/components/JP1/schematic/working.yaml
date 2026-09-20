@@ -1,0 +1,265 @@
+available: true
+units:
+- reference: JP1
+  source_file: data/kicad_file.kicad_sch
+  uuid: 32e2ea51-6057-4084-8633-0b67e5e05402
+  library_id: kicad_file-eagle-import:FTDI_BASICPTH
+  unit: 1
+  body_style: 1
+  position:
+    x: 78.74
+    y: 48.26
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: JP1
+    Value: FTDI_BASICPTH
+    Footprint: kicad_file:FTDI_BASIC
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: CTS
+    name: '5'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 5.08
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 83.82
+      y: 53.34
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  - number: DTR
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -5.08
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 83.82
+      y: 43.18
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: C1
+      pin_number: '1'
+      pin_name: '1'
+  - number: GND
+    name: '6'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 7.62
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 83.82
+      y: 55.88
+    net: GND
+    net_aliases:
+    - GND
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#GND1'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND2'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND3'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND4'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND5'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND6'
+      pin_number: '1'
+      pin_name: GND
+    - reference: '#GND23'
+      pin_number: '1'
+      pin_name: GND
+    - reference: BAT0
+      pin_number: '2'
+      pin_name: '-'
+    - reference: C2
+      pin_number: '2'
+      pin_name: '2'
+    - reference: LED1
+      pin_number: '9'
+      pin_name: APOS-C
+    - reference: LED1
+      pin_number: '12'
+      pin_name: COL-C
+    - reference: S1
+      pin_number: '2'
+      pin_name: '2'
+    - reference: U1
+      pin_number: '8'
+      pin_name: GND
+    - reference: U1
+      pin_number: '22'
+      pin_name: GND
+  - number: RXI
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: -2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 83.82
+      y: 45.72
+    net: TXO
+    net_aliases:
+    - TXO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '3'
+      pin_name: PD1(TXD)
+  - number: TXO
+    name: '3'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 83.82
+      y: 48.26
+    net: RXI
+    net_aliases:
+    - RXI
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: '2'
+      pin_name: PD0(RXD)
+  - number: VCC
+    name: '4'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 83.82
+      y: 50.8
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to: []
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -5.2832
+        y: -7.8232
+      max:
+        x: 1.4732
+        y: 10.3632
+      width: 6.7564
+      height: 18.1864
+      center:
+        x: -1.905
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 73.4568
+        y: 40.4368
+      max:
+        x: 80.2132
+        y: 58.6232
+      width: 6.7564
+      height: 18.1864
+      center:
+        x: 76.835
+        y: 49.53
+  warnings: []
+connected_components:
+- reference: '#GND1'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND2'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND3'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND4'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND5'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND6'
+  pin_number: '1'
+  pin_name: GND
+- reference: '#GND23'
+  pin_number: '1'
+  pin_name: GND
+- reference: BAT0
+  pin_number: '2'
+  pin_name: '-'
+- reference: C1
+  pin_number: '1'
+  pin_name: '1'
+- reference: C2
+  pin_number: '2'
+  pin_name: '2'
+- reference: LED1
+  pin_number: '12'
+  pin_name: COL-C
+- reference: LED1
+  pin_number: '9'
+  pin_name: APOS-C
+- reference: S1
+  pin_number: '2'
+  pin_name: '2'
+- reference: U1
+  pin_number: '2'
+  pin_name: PD0(RXD)
+- reference: U1
+  pin_number: '22'
+  pin_name: GND
+- reference: U1
+  pin_number: '3'
+  pin_name: PD1(TXD)
+- reference: U1
+  pin_number: '8'
+  pin_name: GND

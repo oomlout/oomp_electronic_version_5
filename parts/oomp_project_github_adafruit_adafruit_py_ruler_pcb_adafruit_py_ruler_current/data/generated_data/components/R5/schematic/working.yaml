@@ -1,0 +1,105 @@
+available: true
+units:
+- reference: R5
+  source_file: data/kicad_file.kicad_sch
+  uuid: 2bc4bf98-4e98-4475-8291-34322ff9f1f9
+  library_id: kicad_file-eagle-import:RESISTOR_0603_NOOUT
+  unit: 1
+  body_style: 1
+  position:
+    x: 167.64
+    y: 134.62
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R5
+    Value: 10K
+    Footprint: kicad_file:0603-NO
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 172.72
+      y: 134.62
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: L3
+      pin_number: A
+      pin_name: A
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 162.56
+      y: 134.62
+    net: LED7
+    net_aliases:
+    - LED7
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: IC3
+      pin_number: '25'
+      pin_name: PA27/I15
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.667
+        y: -1.397
+      max:
+        x: 2.667
+        y: 1.397
+      width: 5.334
+      height: 2.794
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 164.973
+        y: 133.223
+      max:
+        x: 170.307
+        y: 136.017
+      width: 5.334
+      height: 2.794
+      center:
+        x: 167.64
+        y: 134.62
+  warnings: []
+connected_components:
+- reference: IC3
+  pin_number: '25'
+  pin_name: PA27/I15
+- reference: L3
+  pin_number: A
+  pin_name: A

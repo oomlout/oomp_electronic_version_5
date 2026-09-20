@@ -1,0 +1,105 @@
+format_version: 1
+generated_by: kicad_agents.browser_research_agent
+network_policy:
+  research_surface: available interactive browser
+  python_http_clients_allowed: false
+  download_method: browser download followed by validated local import
+instructions:
+- Open the supplied URLs with the available browser; do not replace this with requests,
+  urllib, curl, or an unofficial API.
+- Confirm exact package, suffix, pinout, and dimensions from the manufacturer datasheet
+  before accepting a match.
+- Record uncertain results as unresolved instead of guessing.
+- Download PDFs with the browser, then import them with the import-datasheet command
+  documented in AGENT_GUIDE.md.
+task_count: 4
+tasks:
+- task_id: component_research_1
+  status: needs_browser_research
+  priority: high
+  references:
+  - S1
+  value: ''
+  footprint: CAP1203-import-fps:CAP_SENSE_SLIDER
+  query: CAP1203-import-fps:CAP_SENSE_SLIDER
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=CAP1203-import-fps%3ACAP_SENSE_SLIDER
+    datasheet_search: https://www.google.com/search?q=CAP1203-import-fps%3ACAP_SENSE_SLIDER+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_2
+  status: needs_browser_research
+  priority: high
+  references:
+  - U2
+  value: CAP1203
+  footprint: CAP1203-import-fps:SO08-TIGHT
+  query: CAP1203 CAP1203-import-fps:SO08-TIGHT
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=CAP1203+CAP1203-import-fps%3ASO08-TIGHT
+    datasheet_search: https://www.google.com/search?q=CAP1203+CAP1203-import-fps%3ASO08-TIGHT+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_3
+  status: needs_browser_research
+  priority: high
+  references:
+  - FRAME1
+  value: FRAME-LETTER
+  footprint: CAP1203-import-fps:CREATIVE_COMMONS
+  query: FRAME-LETTER CAP1203-import-fps:CREATIVE_COMMONS
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=FRAME-LETTER+CAP1203-import-fps%3ACREATIVE_COMMONS
+    datasheet_search: https://www.google.com/search?q=FRAME-LETTER+CAP1203-import-fps%3ACREATIVE_COMMONS+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''
+- task_id: component_research_4
+  status: needs_browser_research
+  priority: high
+  references:
+  - J1
+  - J2
+  value: Qwiic Right Angle
+  footprint: CAP1203-import-fps:JST04_1MM_RA
+  query: Qwiic Right Angle CAP1203-import-fps:JST04_1MM_RA
+  browser_urls:
+    lcsc_search: https://www.lcsc.com/search?q=Qwiic+Right+Angle+CAP1203-import-fps%3AJST04_1MM_RA
+    datasheet_search: https://www.google.com/search?q=Qwiic+Right+Angle+CAP1203-import-fps%3AJST04_1MM_RA+datasheet+pdf
+  current_match_status: unmatched
+  proposed_oomp_id: ''
+  candidate_oomp_ids: []
+  required_result:
+    manufacturer: ''
+    manufacturer_part_number: ''
+    lcsc_part_number: ''
+    datasheet_url: ''
+    confirmed_oomp_id: ''
+    confidence: ''
+    evidence_notes: ''

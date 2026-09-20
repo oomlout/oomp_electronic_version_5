@@ -1,0 +1,136 @@
+available: true
+units:
+- reference: R11
+  source_file: data/kicad_file.kicad_sch
+  uuid: c3014886-3dbc-494b-93b1-7d94f2b0f12f
+  library_id: kicad_file-eagle-import:10KOHM-0603-1/10W-1%
+  unit: 1
+  body_style: 1
+  position:
+    x: 137.16
+    y: 165.1
+    rotation: 90.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: R11
+    Value: 10k
+    Footprint: kicad_file:0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: RES-00824
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -5.08
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 137.16
+      y: 170.18
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: Q2
+      pin_number: '2'
+      pin_name: S
+    - reference: U1
+      pin_number: '1'
+      pin_name: ~{DTR}
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 5.08
+      y: 0.0
+      rotation: 180.0
+    length: 2.54
+    position:
+      x: 137.16
+      y: 160.02
+    net: 3.3V_F
+    net_aliases:
+    - 3.3V_F
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: C14
+      pin_number: '1'
+      pin_name: '1'
+    - reference: Q2
+      pin_number: '1'
+      pin_name: G
+    - reference: U1
+      pin_number: '3'
+      pin_name: VCCIO
+    - reference: U1
+      pin_number: '13'
+      pin_name: 3V3OUT
+    - reference: U1
+      pin_number: '14'
+      pin_name: ~{RESET}
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.0922
+      max:
+        x: 2.6162
+        y: 1.0922
+      width: 5.2324
+      height: 2.1844
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 136.0678
+        y: 162.4838
+      max:
+        x: 138.2522
+        y: 167.7162
+      width: 2.1844
+      height: 5.2324
+      center:
+        x: 137.16
+        y: 165.1
+  warnings: []
+connected_components:
+- reference: C14
+  pin_number: '1'
+  pin_name: '1'
+- reference: Q2
+  pin_number: '1'
+  pin_name: G
+- reference: Q2
+  pin_number: '2'
+  pin_name: S
+- reference: U1
+  pin_number: '1'
+  pin_name: ~{DTR}
+- reference: U1
+  pin_number: '13'
+  pin_name: 3V3OUT
+- reference: U1
+  pin_number: '14'
+  pin_name: ~{RESET}
+- reference: U1
+  pin_number: '3'
+  pin_name: VCCIO

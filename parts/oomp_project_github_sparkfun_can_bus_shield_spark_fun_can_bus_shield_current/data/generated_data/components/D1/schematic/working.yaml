@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: D1
+  source_file: data/kicad_file.kicad_sch
+  uuid: c958f12c-8059-422e-bfac-200be6cf7e22
+  library_id: kicad_file-eagle-import:MBRA140
+  unit: 1
+  body_style: 1
+  position:
+    x: 241.3
+    y: 60.96
+    rotation: 0.0
+    mirror: x
+    units: mm
+  properties:
+    Reference: D1
+    Value: MBRA140
+    Footprint: kicad_file:SMA-DIODE
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-08053
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 0.0
+    position:
+      x: 238.76
+      y: 60.96
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: F1
+      pin_number: '1'
+      pin_name: '1'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 0.0
+      rotation: 180.0
+    length: 0.0
+    position:
+      x: 243.84
+      y: 60.96
+    net: 12V
+    net_aliases:
+    - 12V
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: '#SUPPLY2'
+      pin_number: '1'
+      pin_name: 12V
+    - reference: C4
+      pin_number: '1'
+      pin_name: '1'
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.6162
+        y: -1.651
+      max:
+        x: 2.6162
+        y: 1.651
+      width: 5.2324
+      height: 3.302
+      center:
+        x: 0.0
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 238.6838
+        y: 59.309
+      max:
+        x: 243.9162
+        y: 62.611
+      width: 5.2324
+      height: 3.302
+      center:
+        x: 241.3
+        y: 60.96
+  warnings: []
+connected_components:
+- reference: '#SUPPLY2'
+  pin_number: '1'
+  pin_name: 12V
+- reference: C4
+  pin_number: '1'
+  pin_name: '1'
+- reference: F1
+  pin_number: '1'
+  pin_name: '1'

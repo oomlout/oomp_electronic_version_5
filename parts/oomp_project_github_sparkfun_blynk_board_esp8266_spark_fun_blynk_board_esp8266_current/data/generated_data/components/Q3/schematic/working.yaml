@@ -1,0 +1,166 @@
+available: true
+units:
+- reference: Q3
+  source_file: data/kicad_file.kicad_sch
+  uuid: 4035592c-ec0e-4666-b618-c6ee47bd1d09
+  library_id: kicad_file-eagle-import:TRANSISTOR_NPNMMBT2222A
+  unit: 1
+  body_style: 1
+  position:
+    x: 370.84
+    y: 200.66
+    rotation: 180.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: Q3
+    Value: MMBT2222A
+    Footprint: kicad_file:SOT23-3@1
+    Datasheet: ''
+    Description: ''
+    PROD_ID: TRANS-08049
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: B
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: -2.54
+      y: 0.0
+      rotation: 0.0
+    length: 2.54
+    position:
+      x: 373.38
+      y: 200.66
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R18
+      pin_number: '2'
+      pin_name: '2'
+  - number: '2'
+    name: E
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 368.3
+      y: 195.58
+    net: DTR
+    net_aliases:
+    - DTR
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: R17
+      pin_number: '1'
+      pin_name: '1'
+    - reference: U4
+      pin_number: '1'
+      pin_name: ~{DTR}
+  - number: '3'
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 2.54
+      y: 5.08
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 368.3
+      y: 205.74
+    net: 0/BUTTON
+    net_aliases:
+    - 0/BUTTON
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: JP26
+      pin_number: 1@2
+      pin_name: '1'
+    - reference: JP27
+      pin_number: '1'
+      pin_name: '1'
+    - reference: R19
+      pin_number: '1'
+      pin_name: '1'
+    - reference: S1
+      pin_number: '1'
+      pin_name: '1'
+    - reference: S1
+      pin_number: '2'
+      pin_name: '1'
+    - reference: U2
+      pin_number: '15'
+      pin_name: SPICS2/GPIO0
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -0.25395
+        y: -2.6162
+      max:
+        x: 2.6162
+        y: 2.6162
+      width: 2.87015
+      height: 5.2324
+      center:
+        x: 1.181125
+        y: 0.0
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 368.2238
+        y: 198.0438
+      max:
+        x: 371.09395
+        y: 203.2762
+      width: 2.87015
+      height: 5.2324
+      center:
+        x: 369.658875
+        y: 200.66
+  warnings: []
+connected_components:
+- reference: JP26
+  pin_number: 1@2
+  pin_name: '1'
+- reference: JP27
+  pin_number: '1'
+  pin_name: '1'
+- reference: R17
+  pin_number: '1'
+  pin_name: '1'
+- reference: R18
+  pin_number: '2'
+  pin_name: '2'
+- reference: R19
+  pin_number: '1'
+  pin_name: '1'
+- reference: S1
+  pin_number: '1'
+  pin_name: '1'
+- reference: S1
+  pin_number: '2'
+  pin_name: '1'
+- reference: U2
+  pin_number: '15'
+  pin_name: SPICS2/GPIO0
+- reference: U4
+  pin_number: '1'
+  pin_name: ~{DTR}

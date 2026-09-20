@@ -43,6 +43,20 @@ LED Red 1206 is an OOMP electronic led definition. It uses the 1206 package or f
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project sparkfun/Digital_Sandbox Digital Sandbox current](https://github.com/sparkfun/Digital_Sandbox/blob/master/Hardware/DigitalSandbox.brd) | 1 | D2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_digital_sandbox_digital_sandbox_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_digital_sandbox_digital_sandbox_current) |
+| [Project sparkfun/Geiger_Counter Geiger Counter current](https://github.com/sparkfun/Geiger_Counter/blob/master/Hardware/Geiger_Counter.brd) | 1 | LED1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_geiger_counter_geiger_counter_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_geiger_counter_geiger_counter_current) |
+| [Project sparkfun/MicroView_USB_Programmer Spark Fun Micro View USB current](https://github.com/sparkfun/MicroView_USB_Programmer/blob/master/Hardware/SparkFun_MicroViewUSB.brd) | 1 | D2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_micro_view_usb_programmer_spark_fun_micro_view_usb_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_micro_view_usb_programmer_spark_fun_micro_view_usb_current) |
+| [Project sparkfun/RedBoard Red Board current](https://github.com/sparkfun/RedBoard/blob/master/Hardware/RedBoard.brd) | 1 | LED3 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_red_board_red_board_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_red_board_red_board_current) |
+| [Project sparkfun/Red_V Red Five current](https://github.com/sparkfun/Red_V/blob/master/Hardware/RedFive.brd) | 1 | LED2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_red_v_red_five_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_red_v_red_five_current) |
+| [Project sparkfun/SparkFun_Pi_AVR_Programmer_HAT Spark Fun Pi AVR Programmer HAT current](https://github.com/sparkfun/SparkFun_Pi_AVR_Programmer_HAT/blob/master/HARDWARE/HAT/SparkFun_Pi_AVR_Programmer_HAT.brd) | 4 | D2, D3, D8, D10 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_spark_fun_pi_avr_programmer_hat_spark_fun_pi_avr_programmer_hat_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_spark_fun_pi_avr_programmer_hat_spark_fun_pi_avr_programmer_hat_current) |
+| [Project sparkfun/USB_Serial_GPIO_Breakout-CP2103 Spark Fun CP2103 Breakout current](https://github.com/sparkfun/USB_Serial_GPIO_Breakout-CP2103/blob/master/Hardware/SparkFun_CP2103_Breakout.brd) | 1 | LED1 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_sparkfun_usb_serial_gpio_breakout_cp2103_spark_fun_cp2103_breakout_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_sparkfun_usb_serial_gpio_breakout_cp2103_spark_fun_cp2103_breakout_current) |
+
+
+
 ## Files
 
 

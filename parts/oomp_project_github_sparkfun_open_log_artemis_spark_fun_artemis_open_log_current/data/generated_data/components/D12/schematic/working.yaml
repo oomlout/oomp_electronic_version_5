@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: D12
+  source_file: data/kicad_file.kicad_sch
+  uuid: ccfc54e0-8f8d-4a8c-8ca4-8f7942c261c1
+  library_id: kicad_file-eagle-import:LED-GREEN0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 101.6
+    y: 40.64
+    rotation: 0.0
+    mirror: null
+    units: mm
+  properties:
+    Reference: D12
+    Value: GREEN
+    Footprint: kicad_file:LED-0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-00821
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 38.1
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R25
+      pin_number: '1'
+      pin_name: '1'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 101.6
+      y: 45.72
+    net: ARTEMIS_TX0
+    net_aliases:
+    - ARTEMIS_TX0
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U8
+      pin_number: TXO-0
+      pin_name: ~{D48(TX0/SCL5/SCK5})
+    - reference: U10
+      pin_number: '9'
+      pin_name: RXI
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 98.0948
+        y: 40.513
+      max:
+        x: 102.997
+        y: 44.0182
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: 100.5459
+        y: 42.2656
+  warnings: []
+connected_components:
+- reference: R25
+  pin_number: '1'
+  pin_name: '1'
+- reference: U8
+  pin_number: TXO-0
+  pin_name: ~{D48(TX0/SCL5/SCK5})
+- reference: U10
+  pin_number: '9'
+  pin_name: RXI

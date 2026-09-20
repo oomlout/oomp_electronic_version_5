@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: LED2
+  source_file: data/kicad_file.kicad_sch
+  uuid: 057d4ce8-c188-46ee-9b99-d550b83075ce
+  library_id: kicad_file-eagle-import:LED-YELLOW0603
+  unit: 1
+  body_style: 1
+  position:
+    x: 165.1
+    y: 99.06
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: LED2
+    Value: Yellow
+    Footprint: kicad_file:LED-0603
+    Datasheet: ''
+    Description: ''
+    PROD_ID: DIO-09003
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: A
+    name: A
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: 2.54
+      rotation: 270.0
+    length: 2.54
+    position:
+      x: 165.1
+      y: 96.52
+    net: null
+    net_aliases: []
+    net_scope: sheet
+    no_connect: false
+    connected_to:
+    - reference: R5
+      pin_number: '2'
+      pin_name: '2'
+  - number: C
+    name: C
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 0.0
+      y: -5.08
+      rotation: 90.0
+    length: 2.54
+    position:
+      x: 165.1
+      y: 104.14
+    net: TXO
+    net_aliases:
+    - TXO
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J1
+      pin_number: '4'
+      pin_name: '4'
+    - reference: U5
+      pin_number: '2'
+      pin_name: TXO
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -3.5052
+        y: -3.3782
+      max:
+        x: 1.397
+        y: 0.127
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: -1.0541
+        y: -1.6256
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 163.703
+        y: 98.933
+      max:
+        x: 168.6052
+        y: 102.4382
+      width: 4.9022
+      height: 3.5052
+      center:
+        x: 166.1541
+        y: 100.6856
+  warnings: []
+connected_components:
+- reference: J1
+  pin_number: '4'
+  pin_name: '4'
+- reference: R5
+  pin_number: '2'
+  pin_name: '2'
+- reference: U5
+  pin_number: '2'
+  pin_name: TXO

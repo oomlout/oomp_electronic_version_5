@@ -1,0 +1,112 @@
+available: true
+units:
+- reference: J5
+  source_file: data/kicad_file.kicad_sch
+  uuid: feab6ebb-e951-4a80-9f00-284cbc34e67a
+  library_id: kicad_file-eagle-import:CONN_021X02_NO_SILK
+  unit: 1
+  body_style: 1
+  position:
+    x: 215.9
+    y: 119.38
+    rotation: 0.0
+    mirror: y
+    units: mm
+  properties:
+    Reference: J5
+    Value: CONN_021X02_NO_SILK
+    Footprint: kicad_file:1X02_NO_SILK
+    Datasheet: ''
+    Description: ''
+  in_bom: true
+  on_board: true
+  in_position_files: true
+  dnp: false
+  pins:
+  - number: '1'
+    name: '1'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 0.0
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 208.28
+      y: 119.38
+    net: ~{A1}
+    net_aliases:
+    - ~{A1}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: J11
+      pin_number: '6'
+      pin_name: SWO
+    - reference: U1
+      pin_number: ~AD33/SWO
+      pin_name: ~{AD33(SWO/32KHZ})
+  - number: '2'
+    name: '2'
+    electrical_type: passive
+    graphic_style: line
+    local_position:
+      x: 7.62
+      y: 2.54
+      rotation: 180.0
+    length: 5.08
+    position:
+      x: 208.28
+      y: 116.84
+    net: ~{A0}
+    net_aliases:
+    - ~{A0}
+    net_scope: global
+    no_connect: false
+    connected_to:
+    - reference: U1
+      pin_number: ~AD13
+      pin_name: ~{AD13(I2SBCLK/RX1})
+  size:
+    local_graphics:
+      measurement: symbol graphics only; excludes pins, properties, and text
+      units: mm
+      available: true
+      min:
+        x: -2.7432
+        y: -2.7432
+      max:
+        x: 4.0132
+        y: 5.2832
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 0.635
+        y: 1.27
+    placed_graphics:
+      measurement: axis-aligned bounds after schematic placement, rotation, and mirroring
+      units: mm
+      available: true
+      min:
+        x: 211.8868
+        y: 114.0968
+      max:
+        x: 218.6432
+        y: 122.1232
+      width: 6.7564
+      height: 8.0264
+      center:
+        x: 215.265
+        y: 118.11
+  warnings: []
+connected_components:
+- reference: J11
+  pin_number: '6'
+  pin_name: SWO
+- reference: U1
+  pin_number: ~AD13
+  pin_name: ~{AD13(I2SBCLK/RX1})
+- reference: U1
+  pin_number: ~AD33/SWO
+  pin_name: ~{AD33(SWO/32KHZ})
