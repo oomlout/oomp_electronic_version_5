@@ -1,0 +1,321 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-22T05:52:40",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Items shorting two nets (nets <no net> and N$1)",
+            "items": [
+                {
+                    "description": "Pad +$2 [<no net>] of B1 on F.Cu",
+                    "pos": {
+                        "x": 8.2254,
+                        "y": -9.525
+                    },
+                    "uuid": "7ba008e2-2c6e-4326-b3e1-eb1bb25dd9c4"
+                },
+                {
+                    "description": "Track [N$1] on F.Cu, length 0.2540 mm",
+                    "pos": {
+                        "x": 8.382,
+                        "y": -9.652
+                    },
+                    "uuid": "c8de412e-14ea-4a86-bfe9-5a54354c869b"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.7893 mm)",
+            "items": [
+                {
+                    "description": "Pad +$2 [<no net>] of B1 on F.Cu",
+                    "pos": {
+                        "x": 8.2254,
+                        "y": -9.525
+                    },
+                    "uuid": "7ba008e2-2c6e-4326-b3e1-eb1bb25dd9c4"
+                },
+                {
+                    "description": "Via [N$1] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 8.636,
+                        "y": -9.652
+                    },
+                    "uuid": "994c2081-9c2c-4960-a29e-da6e61217dc1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad +$2 [<no net>] of B1 on F.Cu",
+                    "pos": {
+                        "x": 8.2254,
+                        "y": -9.525
+                    },
+                    "uuid": "7ba008e2-2c6e-4326-b3e1-eb1bb25dd9c4"
+                },
+                {
+                    "description": "Via [N$1] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 8.636,
+                        "y": -9.652
+                    },
+                    "uuid": "994c2081-9c2c-4960-a29e-da6e61217dc1"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3810 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 8.89,
+                        "y": 0.0
+                    },
+                    "uuid": "6f14fbc0-310a-4aa1-abee-352cda070908"
+                },
+                {
+                    "description": "PTH pad 4 [N$1] of CN1",
+                    "pos": {
+                        "x": -3.81,
+                        "y": -1.27
+                    },
+                    "uuid": "1008348a-c3fe-4d7b-81f9-bebfe4a8dc82"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3810 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 8.89,
+                        "y": 0.0
+                    },
+                    "uuid": "6f14fbc0-310a-4aa1-abee-352cda070908"
+                },
+                {
+                    "description": "PTH pad 3 [N$1] of CN1",
+                    "pos": {
+                        "x": -1.27,
+                        "y": -1.27
+                    },
+                    "uuid": "29653fbc-dfb1-4a05-9c84-bc41985977ed"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3810 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 8.89,
+                        "y": 0.0
+                    },
+                    "uuid": "6f14fbc0-310a-4aa1-abee-352cda070908"
+                },
+                {
+                    "description": "PTH pad 2 [GND] of CN1",
+                    "pos": {
+                        "x": 1.27,
+                        "y": -1.27
+                    },
+                    "uuid": "23763e90-4f2d-4f4e-b3f9-27b86aeae006"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3810 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 8.89,
+                        "y": 0.0
+                    },
+                    "uuid": "6f14fbc0-310a-4aa1-abee-352cda070908"
+                },
+                {
+                    "description": "PTH pad 1 [GND] of CN1",
+                    "pos": {
+                        "x": 3.81,
+                        "y": -1.27
+                    },
+                    "uuid": "1c83c5f1-53ca-4227-b774-11879e6c0617"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad +$2 [<no net>] of B1 on F.Cu",
+                    "pos": {
+                        "x": 8.2254,
+                        "y": -9.525
+                    },
+                    "uuid": "7ba008e2-2c6e-4326-b3e1-eb1bb25dd9c4"
+                },
+                {
+                    "description": "Via [N$1] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 8.636,
+                        "y": -9.652
+                    },
+                    "uuid": "994c2081-9c2c-4960-a29e-da6e61217dc1"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Pad +$2 [<no net>] of B1 on F.Cu",
+                    "pos": {
+                        "x": 8.2254,
+                        "y": -9.525
+                    },
+                    "uuid": "7ba008e2-2c6e-4326-b3e1-eb1bb25dd9c4"
+                },
+                {
+                    "description": "Track [N$1] on F.Cu, length 0.2540 mm",
+                    "pos": {
+                        "x": 8.382,
+                        "y": -9.652
+                    },
+                    "uuid": "c8de412e-14ea-4a86-bfe9-5a54354c869b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Footprint 'ADAFRUIT_5MM' does not match copy in library 'coin12mm-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint U$4",
+                    "pos": {
+                        "x": 2.413,
+                        "y": -9.652
+                    },
+                    "uuid": "bc177629-8ec7-4252-bf90-36e4d114d1cb"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6665 mm)",
+            "items": [
+                {
+                    "description": "Reference field of B1",
+                    "pos": {
+                        "x": -3.302,
+                        "y": -1.665
+                    },
+                    "uuid": "708e8be1-6feb-4f13-b987-fba383a6422a"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of B1",
+                    "pos": {
+                        "x": -3.302,
+                        "y": -1.665
+                    },
+                    "uuid": "708e8be1-6feb-4f13-b987-fba383a6422a"
+                },
+                {
+                    "description": "PTH pad 4 [N$1] of CN1",
+                    "pos": {
+                        "x": -3.81,
+                        "y": -1.27
+                    },
+                    "uuid": "1008348a-c3fe-4d7b-81f9-bebfe4a8dc82"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of B1",
+                    "pos": {
+                        "x": -3.302,
+                        "y": -1.665
+                    },
+                    "uuid": "708e8be1-6feb-4f13-b987-fba383a6422a"
+                },
+                {
+                    "description": "PTH pad 3 [N$1] of CN1",
+                    "pos": {
+                        "x": -1.27,
+                        "y": -1.27
+                    },
+                    "uuid": "29653fbc-dfb1-4a05-9c84-bc41985977ed"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

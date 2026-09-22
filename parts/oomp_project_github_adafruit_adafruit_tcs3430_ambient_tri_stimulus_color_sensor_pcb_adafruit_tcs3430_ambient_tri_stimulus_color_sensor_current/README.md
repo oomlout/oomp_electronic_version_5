@@ -102,8 +102,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | PLABEL12 | 1 | PLABEL12 |  | `PLABEL12` | unmatched |
 | PLABEL13 | 1 | PLABEL13 |  | `PLABEL13` | unmatched |
 | Q1, Q2 | 2 | Transistor Mosfet N Channel Dual SOT 363 6 | BSS138 | `SOT363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
-| R1, R2 | 2 | electronic resistor 0603 10000 ohm | 10K | `0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| R3 | 1 | electronic resistor 0603 10000 ohm | 10KPack | `RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R1, R2 | 2 | Resistor 10000 Ohm 0603 | 10K | `0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R3 | 1 | Resistor 10000 Ohm 0603 | 10KPack | `RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | U2 | 1 | AP2127K-1.8 | AP2127K-1.8 | `SOT23-5` | unmatched |
 | X1 | 1 | TCS34303 | TCS34303 | `TCS34303` | unmatched |
 

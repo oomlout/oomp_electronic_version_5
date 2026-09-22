@@ -121,7 +121,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | PLABEL24 | 1 | Adafruit TLV320DAC3100 I2S DAC-import-fps:PLABEL24 |  | `Adafruit TLV320DAC3100 I2S DAC-import-fps:PLABEL24` | unmatched |
 | PLABEL25 | 1 | Adafruit TLV320DAC3100 I2S DAC-import-fps:PLABEL25 |  | `Adafruit TLV320DAC3100 I2S DAC-import-fps:PLABEL25` | unmatched |
 | PLABEL26 | 1 | Adafruit TLV320DAC3100 I2S DAC-import-fps:PLABEL26 |  | `Adafruit TLV320DAC3100 I2S DAC-import-fps:PLABEL26` | unmatched |
-| R1, R8, R9 | 3 | electronic resistor 0603 10000 ohm | 10k | `Adafruit TLV320DAC3100 I2S DAC-import-fps:0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R1, R8, R9 | 3 | Resistor 10000 Ohm 0603 | 10k | `Adafruit TLV320DAC3100 I2S DAC-import-fps:0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R3 | 1 | Resistor 2200 Ohm 0603 | 2.2K | `Adafruit TLV320DAC3100 I2S DAC-import-fps:0603-NO` | [`electronic_resistor_0603_2200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2200_ohm) |
 | U1 | 1 | TLV320DAC3100 | TLV320DAC3100 | `Adafruit TLV320DAC3100 I2S DAC-import-fps:TLV320DAC3100` | unmatched |
 | U2 | 1 | AP2127K-3.3 | AP2127K-3.3 | `Adafruit TLV320DAC3100 I2S DAC-import-fps:SOT23-5` | unmatched |

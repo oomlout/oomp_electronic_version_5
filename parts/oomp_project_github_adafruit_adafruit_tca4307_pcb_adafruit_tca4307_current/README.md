@@ -88,7 +88,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | IC1 | 1 | TCA4307 | TCA4307 | `Adafruit TCA4307-import-fps:TSSOP8` | unmatched |
 | JP2 | 1 | Connector Header PZ2.54-S04P-A60 |  | `Adafruit TCA4307-import-fps:1X04_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | JP3 | 1 | Connector Header 2.54-1x6P直针 |  | `Adafruit TCA4307-import-fps:1X06_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
-| R1, R2 | 2 | electronic resistor 0603 10000 ohm | 10K | `Adafruit TCA4307-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R1, R2 | 2 | Resistor 10000 Ohm 0603 | 10K | `Adafruit TCA4307-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 
 ## Main nets
 

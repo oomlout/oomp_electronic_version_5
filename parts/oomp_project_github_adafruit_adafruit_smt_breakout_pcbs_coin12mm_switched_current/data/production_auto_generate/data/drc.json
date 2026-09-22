@@ -1,0 +1,321 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-22T06:02:37",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [3V] on F.Cu, length 1.0776 mm",
+                    "pos": {
+                        "x": 10.541,
+                        "y": -6.477
+                    },
+                    "uuid": "87f22a9f-7fa8-424f-9c6a-9ca1b18342dd"
+                },
+                {
+                    "description": "Via [3V] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 19.812,
+                        "y": -18.161
+                    },
+                    "uuid": "2426ed83-a61c-4a3b-a376-99527e9d52e0"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Items not allowed (keepout area of U$3)",
+            "items": [
+                {
+                    "description": "PTH pad P$1 [<no net>] of U$3",
+                    "pos": {
+                        "x": 2.54,
+                        "y": -2.54
+                    },
+                    "uuid": "51b31288-1364-4791-ba0b-b100a450f145"
+                }
+            ],
+            "severity": "error",
+            "type": "items_not_allowed"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0588 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of SW1",
+                    "pos": {
+                        "x": 9.93,
+                        "y": -7.493
+                    },
+                    "uuid": "83afaca3-4b87-4753-8885-c32b285f8dcd"
+                },
+                {
+                    "description": "Track [3V] on F.Cu, length 2.6670 mm",
+                    "pos": {
+                        "x": 7.874,
+                        "y": -6.477
+                    },
+                    "uuid": "eb69527f-c1fb-43a8-a575-048833c2e1ba"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.9402 mm)",
+            "items": [
+                {
+                    "description": "Via [3V] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 19.812,
+                        "y": -18.161
+                    },
+                    "uuid": "2426ed83-a61c-4a3b-a376-99527e9d52e0"
+                },
+                {
+                    "description": "Pad +$2 [<no net>] of B1 on F.Cu",
+                    "pos": {
+                        "x": 19.6554,
+                        "y": -18.034
+                    },
+                    "uuid": "4533f6d4-f25a-4fb7-b7d2-ba21b63007cc"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad +$2 [<no net>] of B1 on F.Cu",
+                    "pos": {
+                        "x": 19.6554,
+                        "y": -18.034
+                    },
+                    "uuid": "4533f6d4-f25a-4fb7-b7d2-ba21b63007cc"
+                },
+                {
+                    "description": "Via [3V] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 19.812,
+                        "y": -18.161
+                    },
+                    "uuid": "2426ed83-a61c-4a3b-a376-99527e9d52e0"
+                }
+            ],
+            "severity": "error",
+            "type": "hole_clearance"
+        },
+        {
+            "description": "Front solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Via [3V] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 19.812,
+                        "y": -18.161
+                    },
+                    "uuid": "2426ed83-a61c-4a3b-a376-99527e9d52e0"
+                },
+                {
+                    "description": "Pad +$2 [<no net>] of B1 on F.Cu",
+                    "pos": {
+                        "x": 19.6554,
+                        "y": -18.034
+                    },
+                    "uuid": "4533f6d4-f25a-4fb7-b7d2-ba21b63007cc"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [3V] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 19.812,
+                        "y": -18.161
+                    },
+                    "uuid": "2426ed83-a61c-4a3b-a376-99527e9d52e0"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [3V] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 3.175,
+                        "y": -18.034
+                    },
+                    "uuid": "565ad68b-5807-4469-af46-9bb5c1ec7559"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        },
+        {
+            "description": "Footprint 'EG1390' does not match copy in library 'coin12mm - switched-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint SW1",
+                    "pos": {
+                        "x": 11.43,
+                        "y": -7.493
+                    },
+                    "uuid": "745033c6-9025-40c2-bf27-ee88677b42ee"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6665 mm)",
+            "items": [
+                {
+                    "description": "Reference field of B1",
+                    "pos": {
+                        "x": 8.128,
+                        "y": -10.174
+                    },
+                    "uuid": "0f5d6166-2fec-4388-a2ea-6d6fc54df0c2"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "PCB text 'Off' on F.Silkscreen",
+                    "pos": {
+                        "x": 16.256,
+                        "y": -6.604
+                    },
+                    "uuid": "183826be-3111-4a54-a11d-3ac796f7ff4d"
+                },
+                {
+                    "description": "Reference field of SW1",
+                    "pos": {
+                        "x": 15.43,
+                        "y": -9.593
+                    },
+                    "uuid": "7a298a7f-482d-4b71-8703-e4c5cc319b29"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of B1",
+                    "pos": {
+                        "x": 8.128,
+                        "y": -10.174
+                    },
+                    "uuid": "0f5d6166-2fec-4388-a2ea-6d6fc54df0c2"
+                },
+                {
+                    "description": "Pad S2 [<no net>] of SW1 on F.Cu",
+                    "pos": {
+                        "x": 8.93,
+                        "y": -10.293
+                    },
+                    "uuid": "fa708ae8-e037-4b90-987c-d3e52598a162"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW1",
+                    "pos": {
+                        "x": 15.43,
+                        "y": -9.593
+                    },
+                    "uuid": "7a298a7f-482d-4b71-8703-e4c5cc319b29"
+                },
+                {
+                    "description": "Arc of FID2 on F.Mask",
+                    "pos": {
+                        "x": 16.002,
+                        "y": -10.033
+                    },
+                    "uuid": "53ac723e-67e5-4296-aff6-e0ea5737c59a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of SW1",
+                    "pos": {
+                        "x": 15.43,
+                        "y": -9.593
+                    },
+                    "uuid": "7a298a7f-482d-4b71-8703-e4c5cc319b29"
+                },
+                {
+                    "description": "Arc of FID2 on F.Mask",
+                    "pos": {
+                        "x": 16.002,
+                        "y": -10.033
+                    },
+                    "uuid": "fe096c6c-6208-4be9-abcf-0a456e4ae27c"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        }
+    ]
+}

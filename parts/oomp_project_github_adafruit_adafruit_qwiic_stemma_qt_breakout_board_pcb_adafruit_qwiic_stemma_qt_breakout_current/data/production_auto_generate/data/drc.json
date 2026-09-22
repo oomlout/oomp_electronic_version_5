@@ -1,0 +1,1345 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-09-21T22:18:15",
+    "ignored_checks": [
+        {
+            "description": "Footprint has no courtyard defined",
+            "key": "missing_courtyard"
+        },
+        {
+            "description": "Track endpoint not centered on via",
+            "key": "track_not_centered_on_via"
+        },
+        {
+            "description": "Tuning profile track geometries",
+            "key": "tuning_profile_track_geometries"
+        },
+        {
+            "description": "Footprint doesn't match symbol's footprint filters",
+            "key": "footprint_filters_mismatch"
+        },
+        {
+            "description": "Footprint component type doesn't match footprint pads",
+            "key": "footprint_type_mismatch"
+        }
+    ],
+    "included_severities": [
+        "error",
+        "warning",
+        "exclusion"
+    ],
+    "kicad_version": "10.99.0",
+    "schematic_parity": [],
+    "source": "kicad_file.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C1 on F.Cu",
+                    "pos": {
+                        "x": 4.699,
+                        "y": -7.427
+                    },
+                    "uuid": "2662972d-c15e-43ba-9416-a9af9226207c"
+                },
+                {
+                    "description": "Pad C [GND] of D1 on F.Cu",
+                    "pos": {
+                        "x": 1.282,
+                        "y": -6.604
+                    },
+                    "uuid": "7e919895-7866-480a-9625-cf171318ac03"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 2 [GND] of C1 on F.Cu",
+                    "pos": {
+                        "x": 4.699,
+                        "y": -7.427
+                    },
+                    "uuid": "2662972d-c15e-43ba-9416-a9af9226207c"
+                },
+                {
+                    "description": "Pad MT2 [GND] of CONN5 on F.Cu",
+                    "pos": {
+                        "x": 6.09,
+                        "y": -11.546
+                    },
+                    "uuid": "27e0629c-77ab-46d4-8733-dc81d8af13eb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "PTH pad 2 [GND] of JP1",
+                    "pos": {
+                        "x": 7.62,
+                        "y": -2.54
+                    },
+                    "uuid": "eb4ca01e-e84c-4af6-a4fd-b0f0a6cf9183"
+                },
+                {
+                    "description": "Pad 2 [GND] of C1 on F.Cu",
+                    "pos": {
+                        "x": 4.699,
+                        "y": -7.427
+                    },
+                    "uuid": "2662972d-c15e-43ba-9416-a9af9226207c"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 1 [GND] of CONN5 on F.Cu",
+                    "pos": {
+                        "x": 10.39,
+                        "y": -7.646
+                    },
+                    "uuid": "a0337752-1264-4493-8735-b1e82827aa79"
+                },
+                {
+                    "description": "Pad MT1 [GND] of CONN5 on F.Cu",
+                    "pos": {
+                        "x": 11.69,
+                        "y": -11.546
+                    },
+                    "uuid": "040c0d48-20d6-4756-8ac9-e78e17b78dcb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad MT1 [GND] of CONN5 on F.Cu",
+                    "pos": {
+                        "x": 11.69,
+                        "y": -11.546
+                    },
+                    "uuid": "040c0d48-20d6-4756-8ac9-e78e17b78dcb"
+                },
+                {
+                    "description": "Pad MT2 [GND] of CONN5 on F.Cu",
+                    "pos": {
+                        "x": 6.09,
+                        "y": -11.546
+                    },
+                    "uuid": "27e0629c-77ab-46d4-8733-dc81d8af13eb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Items shorting two nets (nets VCC and N$5)",
+            "items": [
+                {
+                    "description": "Pad 2 [VCC] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -5.588
+                    },
+                    "uuid": "05c99b43-4693-440a-9d0e-2c589be2eda3"
+                },
+                {
+                    "description": "Track [N$5] on B.Cu, length 0.5080 mm",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -6.604
+                    },
+                    "uuid": "8fd42075-01dc-4fe1-8251-c60eb38ab83a"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1270 mm)",
+            "items": [
+                {
+                    "description": "Track [N$3] on B.Cu, length 0.1796 mm",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -6.985
+                    },
+                    "uuid": "252a7b41-d90f-4155-b5bc-ecbddeb778e8"
+                },
+                {
+                    "description": "Track [N$5] on B.Cu, length 0.5080 mm",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -6.604
+                    },
+                    "uuid": "8fd42075-01dc-4fe1-8251-c60eb38ab83a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.1270 mm)",
+            "items": [
+                {
+                    "description": "Track [N$6] on B.Cu, length 0.5080 mm",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -4.572
+                    },
+                    "uuid": "5951f0ab-a3c2-4a60-aa00-c39ea9a4bd5f"
+                },
+                {
+                    "description": "Track [N$4] on B.Cu, length 1.2700 mm",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -4.191
+                    },
+                    "uuid": "f542ace4-be08-4fc7-9a27-7ad0936bd062"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad WIRE [<no net>] of SJ1 on B.Cu",
+                    "pos": {
+                        "x": 3.556,
+                        "y": -5.715
+                    },
+                    "uuid": "2fce3e07-fe86-4065-8629-b7712029dd7a"
+                },
+                {
+                    "description": "Pad 1 [N$2] of SJ1 on B.Cu",
+                    "pos": {
+                        "x": 2.794,
+                        "y": -5.715
+                    },
+                    "uuid": "553e0e37-974e-43d3-ab1b-cc6b452964a3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation ( clearance 0.2000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Pad WIRE [<no net>] of SJ1 on B.Cu",
+                    "pos": {
+                        "x": 3.556,
+                        "y": -5.715
+                    },
+                    "uuid": "2fce3e07-fe86-4065-8629-b7712029dd7a"
+                },
+                {
+                    "description": "Pad 2 [VCC] of SJ1 on B.Cu",
+                    "pos": {
+                        "x": 4.318,
+                        "y": -5.715
+                    },
+                    "uuid": "af1cd0f7-bf0e-4ddc-b667-bd17d1cb85e8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2540 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 15.24,
+                        "y": -12.7
+                    },
+                    "uuid": "e51c999a-d958-4c17-bac5-2520396a34b5"
+                },
+                {
+                    "description": "Pad MT2 [GND] of CONN5 on F.Cu",
+                    "pos": {
+                        "x": 6.09,
+                        "y": -11.546
+                    },
+                    "uuid": "27e0629c-77ab-46d4-8733-dc81d8af13eb"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2540 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 15.24,
+                        "y": -12.7
+                    },
+                    "uuid": "e51c999a-d958-4c17-bac5-2520396a34b5"
+                },
+                {
+                    "description": "Pad MT1 [GND] of CONN5 on F.Cu",
+                    "pos": {
+                        "x": 11.69,
+                        "y": -11.546
+                    },
+                    "uuid": "040c0d48-20d6-4756-8ac9-e78e17b78dcb"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Unresolved text variable",
+            "items": [
+                {
+                    "description": "Footprint text of U$25 (${REV})",
+                    "pos": {
+                        "x": 2.7686,
+                        "y": -1.397
+                    },
+                    "uuid": "09c4697e-0645-4357-886e-53c86cbe9137"
+                }
+            ],
+            "severity": "error",
+            "type": "unresolved_variable"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Track [N$3] on B.Cu, length 1.3970 mm",
+                    "pos": {
+                        "x": 16.002,
+                        "y": -7.112
+                    },
+                    "uuid": "0547843e-3e3d-45f0-845c-8b2b7ef01b93"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Track [N$3] on B.Cu, length 1.3970 mm",
+                    "pos": {
+                        "x": 16.002,
+                        "y": -7.112
+                    },
+                    "uuid": "0547843e-3e3d-45f0-845c-8b2b7ef01b93"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Track [N$3] on B.Cu, length 1.3970 mm",
+                    "pos": {
+                        "x": 16.002,
+                        "y": -7.112
+                    },
+                    "uuid": "0547843e-3e3d-45f0-845c-8b2b7ef01b93"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Track [N$3] on B.Cu, length 1.3970 mm",
+                    "pos": {
+                        "x": 16.002,
+                        "y": -7.112
+                    },
+                    "uuid": "0547843e-3e3d-45f0-845c-8b2b7ef01b93"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Track [N$3] on B.Cu, length 1.3970 mm",
+                    "pos": {
+                        "x": 16.002,
+                        "y": -7.112
+                    },
+                    "uuid": "0547843e-3e3d-45f0-845c-8b2b7ef01b93"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Track [N$3] on B.Cu, length 1.3970 mm",
+                    "pos": {
+                        "x": 16.002,
+                        "y": -7.112
+                    },
+                    "uuid": "0547843e-3e3d-45f0-845c-8b2b7ef01b93"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 2 [VCC] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -5.588
+                    },
+                    "uuid": "05c99b43-4693-440a-9d0e-2c589be2eda3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 2 [VCC] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -5.588
+                    },
+                    "uuid": "05c99b43-4693-440a-9d0e-2c589be2eda3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 2 [VCC] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -5.588
+                    },
+                    "uuid": "05c99b43-4693-440a-9d0e-2c589be2eda3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 2 [VCC] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -5.588
+                    },
+                    "uuid": "05c99b43-4693-440a-9d0e-2c589be2eda3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 2 [VCC] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -5.588
+                    },
+                    "uuid": "05c99b43-4693-440a-9d0e-2c589be2eda3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ1 on B.Mask",
+                    "pos": {
+                        "x": 2.286,
+                        "y": -4.953
+                    },
+                    "uuid": "11abb15c-e998-40ee-bcb6-9b094b443717"
+                },
+                {
+                    "description": "Track [VCC] on B.Cu, length 0.1796 mm",
+                    "pos": {
+                        "x": 5.08,
+                        "y": -5.588
+                    },
+                    "uuid": "0ddf2357-cf73-4a9c-bcca-0f1e79974b3b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ1 on B.Mask",
+                    "pos": {
+                        "x": 2.286,
+                        "y": -4.953
+                    },
+                    "uuid": "11abb15c-e998-40ee-bcb6-9b094b443717"
+                },
+                {
+                    "description": "Track [VCC] on B.Cu, length 0.1796 mm",
+                    "pos": {
+                        "x": 5.08,
+                        "y": -5.588
+                    },
+                    "uuid": "0ddf2357-cf73-4a9c-bcca-0f1e79974b3b"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ1 on B.Mask",
+                    "pos": {
+                        "x": 2.286,
+                        "y": -4.953
+                    },
+                    "uuid": "11abb15c-e998-40ee-bcb6-9b094b443717"
+                },
+                {
+                    "description": "Pad 1 [N$2] of SJ1 on B.Cu",
+                    "pos": {
+                        "x": 2.794,
+                        "y": -5.715
+                    },
+                    "uuid": "553e0e37-974e-43d3-ab1b-cc6b452964a3"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ1 on B.Mask",
+                    "pos": {
+                        "x": 2.286,
+                        "y": -4.953
+                    },
+                    "uuid": "11abb15c-e998-40ee-bcb6-9b094b443717"
+                },
+                {
+                    "description": "Track [N$2] on B.Cu, length 2.1553 mm",
+                    "pos": {
+                        "x": 2.794,
+                        "y": -5.715
+                    },
+                    "uuid": "839d466c-4dfc-4639-befa-e58e3647f35c"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Track [N$6] on B.Cu, length 0.5080 mm",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -4.572
+                    },
+                    "uuid": "5951f0ab-a3c2-4a60-aa00-c39ea9a4bd5f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Track [N$6] on B.Cu, length 0.5080 mm",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -4.572
+                    },
+                    "uuid": "5951f0ab-a3c2-4a60-aa00-c39ea9a4bd5f"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 1 [N$3] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -6.985
+                    },
+                    "uuid": "5cec9b1c-5d52-4d17-9e22-879b24978e04"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 1 [N$3] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -6.985
+                    },
+                    "uuid": "5cec9b1c-5d52-4d17-9e22-879b24978e04"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 1 [N$3] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -6.985
+                    },
+                    "uuid": "5cec9b1c-5d52-4d17-9e22-879b24978e04"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 1 [N$3] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -6.985
+                    },
+                    "uuid": "5cec9b1c-5d52-4d17-9e22-879b24978e04"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 3 [N$4] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -4.191
+                    },
+                    "uuid": "693d4125-ea60-41c0-b7b7-8a00a77dc269"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Rear solder mask aperture bridges items with different nets",
+            "items": [
+                {
+                    "description": "Polygon of SJ2 on B.Mask",
+                    "pos": {
+                        "x": 15.367,
+                        "y": -7.6708
+                    },
+                    "uuid": "4cb85bb0-6411-4144-a504-f4712d2f991c"
+                },
+                {
+                    "description": "Pad 3 [N$4] of SJ2 on B.Cu",
+                    "pos": {
+                        "x": 14.478,
+                        "y": -4.191
+                    },
+                    "uuid": "693d4125-ea60-41c0-b7b7-8a00a77dc269"
+                }
+            ],
+            "severity": "error",
+            "type": "solder_mask_bridge"
+        },
+        {
+            "description": "Silkscreen clipped by board edge",
+            "items": [
+                {
+                    "description": "Arc on Edge.Cuts",
+                    "pos": {
+                        "x": 2.54,
+                        "y": -2.54
+                    },
+                    "uuid": "6d449d46-0725-4448-bb59-80258b2179c5"
+                },
+                {
+                    "description": "Footprint text of U$25 (${REV})",
+                    "pos": {
+                        "x": 2.7686,
+                        "y": -1.397
+                    },
+                    "uuid": "09c4697e-0645-4357-886e-53c86cbe9137"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_edge_clearance"
+        },
+        {
+            "description": "Footprint 'CHIPLED_0603_NOOUTLINE' does not match copy in library 'Adafruit Qwiic Stemma QT Breakout-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint D1",
+                    "pos": {
+                        "x": 2.032,
+                        "y": -6.604
+                    },
+                    "uuid": "14cea71e-2674-4739-a53e-68ddc86d0f15"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'ADAFRUIT_3.5MM' does not match copy in library 'Adafruit Qwiic Stemma QT Breakout-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint U$2",
+                    "pos": {
+                        "x": 10.922,
+                        "y": -5.715
+                    },
+                    "uuid": "0c96ce78-fb15-42dd-b8a1-6bf03457568b"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'PLABEL6' does not match copy in library 'Adafruit Qwiic Stemma QT Breakout-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint PLABEL6",
+                    "pos": {
+                        "x": 16.637,
+                        "y": -5.461
+                    },
+                    "uuid": "29dd9201-a669-4bc8-ae0e-8404b4e2bed6"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'STEMMAQT' does not match copy in library 'Adafruit Qwiic Stemma QT Breakout-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint U$31",
+                    "pos": {
+                        "x": 13.335,
+                        "y": -9.779
+                    },
+                    "uuid": "77dfa825-f5e5-4c66-8138-864528ae1e04"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Footprint 'PLABEL5' does not match copy in library 'Adafruit Qwiic Stemma QT Breakout-import-fps'",
+            "items": [
+                {
+                    "description": "Footprint PLABEL5",
+                    "pos": {
+                        "x": 3.429,
+                        "y": -7.493
+                    },
+                    "uuid": "f84cdbd8-52c5-40a3-bd7f-ad47ed116832"
+                }
+            ],
+            "severity": "warning",
+            "type": "lib_footprint_mismatch"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of D1",
+                    "pos": {
+                        "x": 3.302,
+                        "y": -5.842
+                    },
+                    "uuid": "019f3801-d8dd-4146-898f-b48d73005d74"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of JP1",
+                    "pos": {
+                        "x": 3.7338,
+                        "y": -4.3688
+                    },
+                    "uuid": "5bda8cb8-7da3-4458-878c-43246e6b9fa4"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 11.684,
+                        "y": -6.985
+                    },
+                    "uuid": "4e41750b-2870-4553-a1d3-8ee7cf17679b"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 3.937,
+                        "y": -4.953
+                    },
+                    "uuid": "9de5c2d5-a637-4f87-952a-b303b761c69b"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of C1",
+                    "pos": {
+                        "x": 4.826,
+                        "y": -8.509
+                    },
+                    "uuid": "2fa61327-779b-4401-8641-e272fd848500"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of R3",
+                    "pos": {
+                        "x": 11.684,
+                        "y": -5.207
+                    },
+                    "uuid": "257416df-3710-4b5e-a0a1-0df242ffaf8e"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text thickness out of range (board setup constraints silk text thickness min thickness 0.0800 mm; actual 0.0748 mm)",
+            "items": [
+                {
+                    "description": "Reference field of CONN5",
+                    "pos": {
+                        "x": 13.49,
+                        "y": -6.838
+                    },
+                    "uuid": "b4f8c4a1-d492-4524-855e-a39e32f322e2"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_thickness"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of SJ1",
+                    "pos": {
+                        "x": 1.905,
+                        "y": -4.445
+                    },
+                    "uuid": "340e5f50-d283-4425-9bb1-eb97b04098f0"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Text height out of range (board setup constraints silk text height min height 0.8000 mm; actual 0.6928 mm)",
+            "items": [
+                {
+                    "description": "Reference field of SJ2",
+                    "pos": {
+                        "x": 13.208,
+                        "y": -7.493
+                    },
+                    "uuid": "37271823-6c8d-487a-9ee9-80cdff4fb018"
+                }
+            ],
+            "severity": "warning",
+            "type": "text_height"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of C1",
+                    "pos": {
+                        "x": 4.826,
+                        "y": -8.509
+                    },
+                    "uuid": "2fa61327-779b-4401-8641-e272fd848500"
+                },
+                {
+                    "description": "Circle of U$1 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.54,
+                        "y": -10.16
+                    },
+                    "uuid": "7f90c8ac-ab55-4b9e-97f4-4292a0b1719a"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of D1",
+                    "pos": {
+                        "x": 3.302,
+                        "y": -5.842
+                    },
+                    "uuid": "019f3801-d8dd-4146-898f-b48d73005d74"
+                },
+                {
+                    "description": "Segment of R1 on F.Silkscreen",
+                    "pos": {
+                        "x": 2.159,
+                        "y": -5.48
+                    },
+                    "uuid": "14dcf77f-363a-4849-888d-9d3b5b65a333"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of JP1",
+                    "pos": {
+                        "x": 3.7338,
+                        "y": -4.3688
+                    },
+                    "uuid": "5bda8cb8-7da3-4458-878c-43246e6b9fa4"
+                },
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 3.937,
+                        "y": -4.953
+                    },
+                    "uuid": "9de5c2d5-a637-4f87-952a-b303b761c69b"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 11.684,
+                        "y": -6.985
+                    },
+                    "uuid": "4e41750b-2870-4553-a1d3-8ee7cf17679b"
+                },
+                {
+                    "description": "Reference field of CONN5",
+                    "pos": {
+                        "x": 13.49,
+                        "y": -6.838
+                    },
+                    "uuid": "b4f8c4a1-d492-4524-855e-a39e32f322e2"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of C1",
+                    "pos": {
+                        "x": 4.826,
+                        "y": -8.509
+                    },
+                    "uuid": "2fa61327-779b-4401-8641-e272fd848500"
+                },
+                {
+                    "description": "PTH pad P$1 [<no net>] of U$1",
+                    "pos": {
+                        "x": 2.54,
+                        "y": -10.16
+                    },
+                    "uuid": "66dfebc8-8170-4603-9d54-453090120612"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of D1",
+                    "pos": {
+                        "x": 3.302,
+                        "y": -5.842
+                    },
+                    "uuid": "019f3801-d8dd-4146-898f-b48d73005d74"
+                },
+                {
+                    "description": "Pad 2 [N$1] of R1 on F.Cu",
+                    "pos": {
+                        "x": 3.009,
+                        "y": -5.08
+                    },
+                    "uuid": "1863afae-d19a-4301-8ecd-a37ffa186942"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R1",
+                    "pos": {
+                        "x": 3.937,
+                        "y": -4.953
+                    },
+                    "uuid": "9de5c2d5-a637-4f87-952a-b303b761c69b"
+                },
+                {
+                    "description": "Pad 1 [VCC] of C1 on F.Cu",
+                    "pos": {
+                        "x": 4.699,
+                        "y": -5.527
+                    },
+                    "uuid": "5b19b107-55f4-43c0-8313-02ea2bb0cb1d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of JP1",
+                    "pos": {
+                        "x": 3.7338,
+                        "y": -4.3688
+                    },
+                    "uuid": "5bda8cb8-7da3-4458-878c-43246e6b9fa4"
+                },
+                {
+                    "description": "Pad 1 [VCC] of C1 on F.Cu",
+                    "pos": {
+                        "x": 4.699,
+                        "y": -5.527
+                    },
+                    "uuid": "5b19b107-55f4-43c0-8313-02ea2bb0cb1d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of R2",
+                    "pos": {
+                        "x": 11.684,
+                        "y": -6.985
+                    },
+                    "uuid": "4e41750b-2870-4553-a1d3-8ee7cf17679b"
+                },
+                {
+                    "description": "Pad 1 [GND] of CONN5 on F.Cu",
+                    "pos": {
+                        "x": 10.39,
+                        "y": -7.646
+                    },
+                    "uuid": "a0337752-1264-4493-8735-b1e82827aa79"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clipped by solder mask",
+            "items": [
+                {
+                    "description": "Reference field of CONN5",
+                    "pos": {
+                        "x": 13.49,
+                        "y": -6.838
+                    },
+                    "uuid": "b4f8c4a1-d492-4524-855e-a39e32f322e2"
+                },
+                {
+                    "description": "Pad 2 [SCL] of R2 on F.Cu",
+                    "pos": {
+                        "x": 12.612,
+                        "y": -6.858
+                    },
+                    "uuid": "383c6bcf-2d52-4df3-9bd2-52b0bd05f47d"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_over_copper"
+        },
+        {
+            "description": "Silkscreen clearance",
+            "items": [
+                {
+                    "description": "Footprint text of U$25 (${REV})",
+                    "pos": {
+                        "x": 2.7686,
+                        "y": -1.397
+                    },
+                    "uuid": "09c4697e-0645-4357-886e-53c86cbe9137"
+                },
+                {
+                    "description": "Circle of U$25 on B.Silkscreen",
+                    "pos": {
+                        "x": 2.413,
+                        "y": -1.905
+                    },
+                    "uuid": "4987973f-3337-4812-a101-9c47bd6b0c41"
+                }
+            ],
+            "severity": "warning",
+            "type": "silk_overlap"
+        }
+    ]
+}

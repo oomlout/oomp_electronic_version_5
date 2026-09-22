@@ -1,0 +1,87 @@
+format_version: 1
+kicad_version: '10'
+originals:
+  kicad_file.kicad_pcb:
+    sha256: 52c6a23852d81a549047edfd437dc34473f8f615b44bb1233013322c27876de5
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_smt_breakout_pcbs_5050_led_current\data\kicad_file.kicad_pcb
+  kicad_file.kicad_sch:
+    sha256: c4446af161cd1dfebf30f4e2e154a58308c36b8748baecb544f34502e73a4ed8
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_smt_breakout_pcbs_5050_led_current\data\kicad_file.kicad_sch
+  kicad_file.kicad_pro:
+    sha256: 4aa358b9ebd8b86ed2930053271280e8389b8764374d483146c9e8f2e7df8e2f
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_smt_breakout_pcbs_5050_led_current\data\kicad_file.kicad_pro
+  source_eagle.brd:
+    sha256: 5f4cc153e6324c426a37213cf39f0d9e6009c351be4228824fd165d6da4aeef1
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_smt_breakout_pcbs_5050_led_current\data\source_eagle.brd
+  source_eagle.sch:
+    sha256: 3823dbaed99a7c63eed89fa70ed0945080cc8e8afc239ba19fd93aa5bc1d6575
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_smt_breakout_pcbs_5050_led_current\data\source_eagle.sch
+  sym-lib-table:
+    sha256: a84bc672e5ae020fa2137981252144bc3ef292490bdb60e87e73d164531cf24b
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_smt_breakout_pcbs_5050_led_current\data\sym-lib-table
+  fp-lib-table:
+    sha256: 8c7d2b6a750808ddcee58e6e4d2c8c3ccf33d6fd91664a21075ebcbc48f97766
+    source: C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_smt_breakout_pcbs_5050_led_current\data\fp-lib-table
+output_sha256:
+  5050LED.kicad_pcb: 02800f3d7da55851be8082f4e44a2bd46b7f3d2f21cfb233a08dc27cbc6c2e08
+  5050LED.kicad_sch: 7419656e633e3f8e8257209dafcd1e139add30032bf4f4de84fa82c16d82849a
+  5050LED.kicad_pro: 4aa358b9ebd8b86ed2930053271280e8389b8764374d483146c9e8f2e7df8e2f
+  sym-lib-table: 4d42d86ed205cbb9df0bddf00b339c578bd3cbcffe7f733bbb0585ae625ef2f6
+  fp-lib-table: 399d780aa6b7c2549b42addd13b973f62254700e855991e680a5b748025c5ca0
+summary:
+  footprints_converted: 0
+  footprints_skipped: 4
+  symbols_converted: 0
+  symbols_skipped: 4
+footprints:
+- reference: JP2
+  source: 5050LED-import-fps:1X03-CLEANBIG
+  status: skipped
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+  reason: Source is not an available official master for this OOMP part.
+- reference: JP1
+  source: 5050LED-import-fps:1X03-CLEANBIG
+  status: skipped
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+  reason: Source is not an available official master for this OOMP part.
+- reference: LED1
+  source: 5050LED-import-fps:RGBLED5050
+  status: skipped
+  reason: No approved OOMP match.
+- reference: LED2
+  source: 5050LED-import-fps:RGBLED5050
+  status: skipped
+  reason: No approved OOMP match.
+symbols:
+- references:
+  - JP1
+  source: kicad_file-eagle-import:PINHD-1X3CB
+  status: skipped
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+  reason: Source is not a known official KiCad symbol.
+  file: kicad_file.kicad_sch
+- references:
+  - JP2
+  source: kicad_file-eagle-import:PINHD-1X3CB
+  status: skipped
+  oomp_id: electronic_connector_header_2_54_mm_pitch_through_hole_3_pin
+  reason: Source is not a known official KiCad symbol.
+  file: kicad_file.kicad_sch
+- references:
+  - LED1
+  source: kicad_file-eagle-import:RGBLED5050
+  status: skipped
+  reason: No single approved OOMP part for every instance of this symbol.
+  file: kicad_file.kicad_sch
+- references:
+  - LED2
+  source: kicad_file-eagle-import:RGBLED5050
+  status: skipped
+  reason: No single approved OOMP part for every instance of this symbol.
+  file: kicad_file.kicad_sch
+validation:
+  status: passed
+  pcb_invariants: unchanged except approved IDs and added annotations
+  netlist_components: 4
+  netlist_nets: 6
+  netlist_comparison: component values/UUIDs and named-net pin memberships match exactly

@@ -88,8 +88,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | IC1 | 1 | TCA8418 | TCA8418 | `Adafruit TCA8418-import-fps:QFN24_4MM_SMSC` | unmatched |
 | JP1, JP4 | 2 | Connector Header PZ254-1-13-Z-8.5 |  | `Adafruit TCA8418-import-fps:1X13_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_13_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_13_pin) |
 | Q2 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | BSS138 | `Adafruit TCA8418-import-fps:SOT363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
-| R1, R2, R4 | 3 | electronic resistor 0603 10000 ohm | 10K | `Adafruit TCA8418-import-fps:0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| R3 | 1 | electronic resistor 0603 10000 ohm | 10K Pack | `Adafruit TCA8418-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R1, R2, R4 | 3 | Resistor 10000 Ohm 0603 | 10K | `Adafruit TCA8418-import-fps:0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R3 | 1 | Resistor 10000 Ohm 0603 | 10K Pack | `Adafruit TCA8418-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | U2 | 1 | AP2127K-3.3 | AP2127K-3.3 | `Adafruit TCA8418-import-fps:SOT23-5` | unmatched |
 
 ## Main nets

@@ -103,8 +103,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | PLABEL13 | 1 | Adafruit TMP119 Temperature Sensor-import-fps:PLABEL13 |  | `Adafruit TMP119 Temperature Sensor-import-fps:PLABEL13` | unmatched |
 | PLABEL14 | 1 | Adafruit TMP119 Temperature Sensor-import-fps:PLABEL14 |  | `Adafruit TMP119 Temperature Sensor-import-fps:PLABEL14` | unmatched |
 | PLABEL15 | 1 | Adafruit TMP119 Temperature Sensor-import-fps:PLABEL15 |  | `Adafruit TMP119 Temperature Sensor-import-fps:PLABEL15` | unmatched |
-| R1 | 1 | electronic resistor 0603 10000 ohm | 10K | `Adafruit TMP119 Temperature Sensor-import-fps:0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| R3 | 1 | electronic resistor 0603 10000 ohm | 10K Pack | `Adafruit TMP119 Temperature Sensor-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R1 | 1 | Resistor 10000 Ohm 0603 | 10K | `Adafruit TMP119 Temperature Sensor-import-fps:0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R3 | 1 | Resistor 10000 Ohm 0603 | 10K Pack | `Adafruit TMP119 Temperature Sensor-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | X2 | 1 | TMP119 | TMP119 | `Adafruit TMP119 Temperature Sensor-import-fps:DSBGA-9` | unmatched |
 
 ## Main nets
