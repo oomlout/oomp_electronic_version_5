@@ -87,7 +87,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | L1 | 1 | SDER041H-2R2MS | SDER041H-2R2MS | `TPS62827 3.3V Buck Converter-import-fps:INDUCTOR_4X4MM_SRP0415` | unmatched |
 | R1, R3 | 2 | Resistor 100000 Ohm 0603 | 100K | `TPS62827 3.3V Buck Converter-import-fps:0603-NO` | [`electronic_resistor_0603_100000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm) |
 | R2 | 1 | 450K | 450K | `TPS62827 3.3V Buck Converter-import-fps:0603-NO` | unmatched |
-| R4 | 1 | electronic resistor 0603 10000 ohm | 10k | `TPS62827 3.3V Buck Converter-import-fps:_0603MP` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R4 | 1 | Resistor 10000 Ohm 0603 | 10k | `TPS62827 3.3V Buck Converter-import-fps:_0603MP` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 
 ## Main nets
 

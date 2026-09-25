@@ -100,7 +100,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | D2 | 1 |   NSR0320 |   NSR0320 | `Adafruit QT2040 Trinkey-import-fps:SOD-323_MINI` | unmatched |
 | IC2 | 1 | RP2040_QFN56 | RP2040_QFN56 | `Adafruit QT2040 Trinkey-import-fps:QFN56_7MM_REDUCEDEPAD` | unmatched |
 | LED1 | 1 | WS2812B_SK6805_1515 | WS2812B_SK6805_1515 | `Adafruit QT2040 Trinkey-import-fps:SK6805_1515` | unmatched |
-| R1 | 1 | electronic resistor 0603 10000 ohm | 10K | `Adafruit QT2040 Trinkey-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
+| R1 | 1 | Resistor 10000 Ohm 0603 | 10K | `Adafruit QT2040 Trinkey-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
 | R6, R16 | 2 | Resistor 1000 Ohm 0603 | 1K | `Adafruit QT2040 Trinkey-import-fps:0603-NO` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R14, R15 | 2 | Resistor 27 Ohm 0603 | 27 | `Adafruit QT2040 Trinkey-import-fps:0603-NO` | [`electronic_resistor_0603_27_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_27_ohm) |
 | SW2, SW3 | 2 | Adafruit QT2040 Trinkey-import-fps:SPST_TACTILE_RA |  | `Adafruit QT2040 Trinkey-import-fps:SPST_TACTILE_RA` | unmatched |
