@@ -46,10 +46,36 @@ distributors:
   part_number: C6187
   title: LCSC
   url: https://www.lcsc.com/product-detail/C6187.html
+- key: jlcpcb
+  part_number: C6187
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
 id: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5
 id_no_class: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5
 id_no_size: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5
 id_no_type: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5
+jlcpcb_selection:
+  compatibility_notes: Exact Advanced Monolithic Systems AMS1117-5.0 and C6187 match
+    existing OOMP 5 V SOT-223 regulator. JLC page lists fixed positive 5 V, 1 A, input
+    up to 15 V and 1.3 V dropout. Confirm tab/pinout, output capacitor stability,
+    thermal limits and land pattern in the full pass.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    max_supply_voltage: 15 V
+    operating_temperature: -40 to +125 C
+    output_current: 1 A
+    output_voltage: 5 V
+    voltage_dropout: 1.3 V
+  stock_observed: 108536
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Package_TO_SOT_SMD:SOT-223-3_TabPin2
@@ -190,6 +216,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -212,6 +252,32 @@ oomlout_ai_roboclick_3:
         part_number: C6187
         title: LCSC
         url: https://www.lcsc.com/product-detail/C6187.html
+      - key: jlcpcb
+        part_number: C6187
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
+      jlcpcb_selection:
+        compatibility_notes: Exact Advanced Monolithic Systems AMS1117-5.0 and C6187
+          match existing OOMP 5 V SOT-223 regulator. JLC page lists fixed positive
+          5 V, 1 A, input up to 15 V and 1.3 V dropout. Confirm tab/pinout, output
+          capacitor stability, thermal limits and land pattern in the full pass.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          max_supply_voltage: 15 V
+          operating_temperature: -40 to +125 C
+          output_current: 1 A
+          output_voltage: 5 V
+          voltage_dropout: 1.3 V
+        stock_observed: 108536
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Package_TO_SOT_SMD:SOT-223-3_TabPin2
@@ -332,6 +398,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3
       package_drawing:
         body:
         - 6.5
@@ -365,8 +446,16 @@ oomlout_ai_roboclick_3:
           - 3.05
           - 1.75
       part_id: U1
+      part_number_jlcpcb: C6187
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
       part_number_lcsc: C6187
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C6187.html
       part_number_manufacturer: AMS1117-5.0
+      part_numbers_lcsc:
+      - part_number: C6187
+      part_numbers_manufacturer:
+      - manufacturer: Advanced Monolithic Systems
+        part_number: AMS1117-5.0
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -441,6 +530,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C6187.html
           value: C6187
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
+          value: C6187
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -501,7 +593,7 @@ oomlout_ai_roboclick_3:
           name: vin
           number: '3'
           type: power
-      product_url: https://www.lcsc.com/product-detail/C6187.html
+      product_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
       regenerate_pngs: false
       svg_details:
       - filename_extra: assembly
@@ -690,7 +782,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -703,6 +795,7 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3
 oomp_key: oomp_electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5
 package_drawing:
   body:
@@ -737,8 +830,16 @@ package_drawing:
     - 3.05
     - 1.75
 part_id: U1
+part_number_jlcpcb: C6187
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
 part_number_lcsc: C6187
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C6187.html
 part_number_manufacturer: AMS1117-5.0
+part_numbers_lcsc:
+- part_number: C6187
+part_numbers_manufacturer:
+- manufacturer: Advanced Monolithic Systems
+  part_number: AMS1117-5.0
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -813,6 +914,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C6187.html
     value: C6187
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
+    value: C6187
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -873,7 +977,7 @@ pins:
     name: vin
     number: '3'
     type: power
-product_url: https://www.lcsc.com/product-detail/C6187.html
+product_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
 regenerate_pngs: false
 svg_details:
 - filename_extra: assembly

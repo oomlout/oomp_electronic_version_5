@@ -37,6 +37,15 @@ Capacitor 2.2 nF 0603 is an OOMP electronic capacitor definition. It uses the 06
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603B222K500NT` |
+| LCSC | [`C1604`](https://www.lcsc.com/product-detail/C1604.html) |
+| JLCPCB | [`C1604`](https://jlcpcb.com/partdetail/1956-0603B222K500NT/C1604) |
+
+
 
 
 

@@ -36,14 +36,41 @@ dimensions_mm:
 directory: parts/electronic_resistor_0805_150000_ohm
 distributors:
 - key: lcsc
-  part_number: C2907228
-  product_name: 150kΩ ±1% 125mW 0805 Thick Film Resistor
+  part_number: C17470
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C2907228.html
+  url: https://www.lcsc.com/product-detail/C17470.html
+- key: jlcpcb
+  part_number: C17470
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
 id: electronic_resistor_0805_150000_ohm
 id_no_class: electronic_resistor_0805_150000_ohm
 id_no_size: electronic_resistor_0805_150000_ohm
 id_no_type: electronic_resistor_0805_150000_ohm
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0805 150kΩ resistor preferred FOJAN C2907228
+    at 125mW and ±1%. Basic C17470 lists 125mW, 150V, ±1% and ±100ppm/℃. Preserve
+    FOJAN as an alternative; its voltage/TCR were not established here. Full pass
+    checks derating and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 125mW
+    Resistance: 150kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 150V
+  stock_observed: 1041033
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0805_2012Metric
@@ -52,10 +79,10 @@ lcsc_search: 0805 150kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_150000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_150000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_150000_ohm
-manufacturer: FOJAN
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
-- manufacturer: FOJAN
-  part_number: FRC0805F1503TS
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0805W8F1503T5E
 md5: 6f8a1c045e2a609eea9eba1dfa2d2723
 md5_10: 6f8a1c045e
 md5_10_upper: 6F8A1C045E
@@ -177,6 +204,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0805_150000_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -189,19 +230,46 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_resistor_0805_150000_ohm
       distributors:
       - key: lcsc
-        part_number: C2907228
-        product_name: 150kΩ ±1% 125mW 0805 Thick Film Resistor
+        part_number: C17470
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C2907228.html
+        url: https://www.lcsc.com/product-detail/C17470.html
+      - key: jlcpcb
+        part_number: C17470
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
+      jlcpcb_selection:
+        compatibility_notes: Existing generic 0805 150kΩ resistor preferred FOJAN
+          C2907228 at 125mW and ±1%. Basic C17470 lists 125mW, 150V, ±1% and ±100ppm/℃.
+          Preserve FOJAN as an alternative; its voltage/TCR were not established here.
+          Full pass checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 125mW
+          Resistance: 150kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 150V
+        stock_observed: 1041033
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0805_2012Metric
         symbol: Device:R_Small
       lcsc_search: 0805 150kΩ
-      manufacturer: FOJAN
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
-      - manufacturer: FOJAN
-        part_number: FRC0805F1503TS
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0805W8F1503T5E
       name: electronic_resistor_0805_150000_ohm
       name_proper: Resistor 150000 Ohm 0805
       name_readable: Resistor 150000 Ohm 0805
@@ -310,15 +378,32 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0805_150000_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
       part_id: R1
-      part_number_lcsc: C2907228
-      part_number_manufacturer: FRC0805F1503TS
+      part_number_jlcpcb: C17470
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
+      part_number_lcsc: C17470
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C17470.html
+      part_number_manufacturer: 0805W8F1503T5E
       part_numbers_lcsc:
-      - part_number: C2907228
-        product_name: 150kΩ ±1% 125mW 0805 Thick Film Resistor
+      - part_number: C17470
       part_numbers_manufacturer:
-      - manufacturer: FOJAN
-        part_number: FRC0805F1503TS
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0805W8F1503T5E
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -389,10 +474,13 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: FRC0805F1503TS
+          value: 0805W8F1503T5E
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C2907228.html
-          value: C2907228
+          url: https://www.lcsc.com/product-detail/C17470.html
+          value: C17470
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
+          value: C17470
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -423,11 +511,8 @@ oomlout_ai_roboclick_3:
           value: 0805
         - level: 4
           value: 150000_ohm
-      product_url: https://www.lcsc.com/product-detail/C2907228.html
+      product_url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
       regenerate_pngs: false
-      research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0805 150KΩ" (1,213,500 in stock at capture).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -680,7 +765,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -693,16 +778,19 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0805_150000_ohm
 part_id: R1
-part_number_lcsc: C2907228
-part_number_manufacturer: FRC0805F1503TS
+part_number_jlcpcb: C17470
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
+part_number_lcsc: C17470
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C17470.html
+part_number_manufacturer: 0805W8F1503T5E
 part_numbers_lcsc:
-- part_number: C2907228
-  product_name: 150kΩ ±1% 125mW 0805 Thick Film Resistor
+- part_number: C17470
 part_numbers_manufacturer:
-- manufacturer: FOJAN
-  part_number: FRC0805F1503TS
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0805W8F1503T5E
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -773,10 +861,13 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: FRC0805F1503TS
+    value: 0805W8F1503T5E
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C2907228.html
-    value: C2907228
+    url: https://www.lcsc.com/product-detail/C17470.html
+    value: C17470
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
+    value: C17470
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -806,11 +897,8 @@ part_page:
     value: 0805
   - level: 4
     value: 150000_ohm
-product_url: https://www.lcsc.com/product-detail/C2907228.html
+product_url: https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470
 regenerate_pngs: false
-research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0805
-  150KΩ" (1,213,500 in stock at capture).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

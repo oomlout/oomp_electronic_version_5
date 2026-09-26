@@ -41,10 +41,11 @@ Capacitor 18 pF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CC0402JRNPO9BN180` |
+| Manufacturer part number | `0402CG180J500NT` |
+| LCSC | [`C1549`](https://www.lcsc.com/product-detail/C1549.html) |
 | LCSC | [`C106202`](https://www.lcsc.com/product-detail/C106202.html) |
 | LCSC | [`C7393840`](https://www.lcsc.com/product-detail/C7393840.html) |
-| LCSC | [`C1549`](https://www.lcsc.com/product-detail/C1549.html) |
+| JLCPCB | [`C1549`](https://jlcpcb.com/partdetail/1901-0402CG180J500NT/C1549) |
 
 
 

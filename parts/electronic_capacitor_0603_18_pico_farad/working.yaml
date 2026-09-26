@@ -36,14 +36,38 @@ dimensions_mm:
 directory: parts/electronic_capacitor_0603_18_pico_farad
 distributors:
 - key: lcsc
-  part_number: C107040
-  product_name: 18pF ±5% 50V Ceramic Capacitor NP0 0603
+  part_number: C1647
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C107040.html
+  url: https://www.lcsc.com/product-detail/C1647.html
+- key: jlcpcb
+  part_number: C1647
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
 id: electronic_capacitor_0603_18_pico_farad
 id_no_class: electronic_capacitor_0603_18_pico_farad
 id_no_size: electronic_capacitor_0603_18_pico_farad
 id_no_type: electronic_capacitor_0603_18_pico_farad
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0603 18 pF capacitor. Samsung C1647 is 50
+    V C0G +/-5%; previous YAGEO C107040 was 50 V NP0 +/-5%. C0G/NP0 are the same Class
+    I temperature characteristic. Preserve C107040 and other alternatives; project-specific
+    RF/Q requirements need full review.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    capacitance: 18 pF
+    dielectric: C0G
+    rated_voltage: 50 V
+    tolerance: +/-5%
+  stock_observed: 279500
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Capacitor_SMD:C_0603_1608Metric
@@ -52,10 +76,10 @@ lcsc_search: 0603 18pF
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_18_pico_farad
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_18_pico_farad
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_18_pico_farad
-manufacturer: YAGEO
+manufacturer: Samsung Electro-Mechanics
 manufacturers:
-- manufacturer: YAGEO
-  part_number: CC0603JRNPO9BN180
+- manufacturer: Samsung Electro-Mechanics
+  part_number: CL10C180JB8NNNC
 md5: ab6b0c1c038a9615707f9dd080b4b57e
 md5_10: ab6b0c1c03
 md5_10_upper: AB6B0C1C03
@@ -177,6 +201,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_capacitor_0603_18_pico_farad
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -189,19 +227,43 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_capacitor_0603_18_pico_farad
       distributors:
       - key: lcsc
-        part_number: C107040
-        product_name: 18pF ±5% 50V Ceramic Capacitor NP0 0603
+        part_number: C1647
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C107040.html
+        url: https://www.lcsc.com/product-detail/C1647.html
+      - key: jlcpcb
+        part_number: C1647
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
+      jlcpcb_selection:
+        compatibility_notes: Existing generic 0603 18 pF capacitor. Samsung C1647
+          is 50 V C0G +/-5%; previous YAGEO C107040 was 50 V NP0 +/-5%. C0G/NP0 are
+          the same Class I temperature characteristic. Preserve C107040 and other
+          alternatives; project-specific RF/Q requirements need full review.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          capacitance: 18 pF
+          dielectric: C0G
+          rated_voltage: 50 V
+          tolerance: +/-5%
+        stock_observed: 279500
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Capacitor_SMD:C_0603_1608Metric
         symbol: Device:C_Small
       lcsc_search: 0603 18pF
-      manufacturer: YAGEO
+      manufacturer: Samsung Electro-Mechanics
       manufacturers:
-      - manufacturer: YAGEO
-        part_number: CC0603JRNPO9BN180
+      - manufacturer: Samsung Electro-Mechanics
+        part_number: CL10C180JB8NNNC
       name: electronic_capacitor_0603_18_pico_farad
       name_proper: Capacitor 18 pF 0603
       name_readable: Capacitor 18 pF 0603
@@ -310,15 +372,32 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_capacitor_0603_18_pico_farad
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
       part_id: C1
-      part_number_lcsc: C107040
-      part_number_manufacturer: CC0603JRNPO9BN180
+      part_number_jlcpcb: C1647
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
+      part_number_lcsc: C1647
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C1647.html
+      part_number_manufacturer: CL10C180JB8NNNC
       part_numbers_lcsc:
-      - part_number: C107040
-        product_name: 18pF ±5% 50V Ceramic Capacitor NP0 0603
+      - part_number: C1647
       part_numbers_manufacturer:
-      - manufacturer: YAGEO
-        part_number: CC0603JRNPO9BN180
+      - manufacturer: Samsung Electro-Mechanics
+        part_number: CL10C180JB8NNNC
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -389,10 +468,13 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: CC0603JRNPO9BN180
+          value: CL10C180JB8NNNC
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C107040.html
-          value: C107040
+          url: https://www.lcsc.com/product-detail/C1647.html
+          value: C1647
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
+          value: C1647
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -423,11 +505,8 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - level: 4
           value: 18_pico_farad
-      product_url: https://www.lcsc.com/product-detail/C107040.html
+      product_url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
       regenerate_pngs: false
-      research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0603 18pF" (922,900 in stock at capture).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -683,7 +762,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -696,16 +775,19 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
 oomp_key: oomp_electronic_capacitor_0603_18_pico_farad
 part_id: C1
-part_number_lcsc: C107040
-part_number_manufacturer: CC0603JRNPO9BN180
+part_number_jlcpcb: C1647
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
+part_number_lcsc: C1647
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1647.html
+part_number_manufacturer: CL10C180JB8NNNC
 part_numbers_lcsc:
-- part_number: C107040
-  product_name: 18pF ±5% 50V Ceramic Capacitor NP0 0603
+- part_number: C1647
 part_numbers_manufacturer:
-- manufacturer: YAGEO
-  part_number: CC0603JRNPO9BN180
+- manufacturer: Samsung Electro-Mechanics
+  part_number: CL10C180JB8NNNC
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -776,10 +858,13 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: CC0603JRNPO9BN180
+    value: CL10C180JB8NNNC
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C107040.html
-    value: C107040
+    url: https://www.lcsc.com/product-detail/C1647.html
+    value: C1647
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
+    value: C1647
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -809,11 +894,8 @@ part_page:
     value: '0603'
   - level: 4
     value: 18_pico_farad
-product_url: https://www.lcsc.com/product-detail/C107040.html
+product_url: https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647
 regenerate_pngs: false
-research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0603
-  18pF" (922,900 in stock at capture).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

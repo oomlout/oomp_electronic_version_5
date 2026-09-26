@@ -47,6 +47,10 @@ distributors:
   part_number: C720477
   title: LCSC
   url: https://www.lcsc.com/product-detail/C720477.html
+- key: jlcpcb
+  part_number: C720477
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
 file_copy:
 - file_destination: datasheet.pdf
   file_source: parts_source/electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016/datasheet.pdf
@@ -67,6 +71,38 @@ id: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
 id_no_class: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
 id_no_size: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
 id_no_type: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
+jlcpcb_selection:
+  compatibility_notes: Existing exact XUNPU TS-1088-AR02016 OOMP identity already
+    prefers C720477. The newly browser-linked PDF differs from the repository's earlier
+    two-page PDF; save it separately and reconcile mechanical drawings during the
+    full pass. The existing KiCad candidate footprints are not certified interchangeable
+    with this XUNPU switch.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Actuator Style: Round Button
+    Actuator/Cap Color: Black
+    Circuit: SPST
+    Contact Current: 50mA
+    Length: 3.9mm
+    Life: 100,000 cycles
+    Mounting Type: Surface Mount,Vertical
+    Operating Force: 1.6N
+    Operating Temperature: -30℃~+80℃
+    Switch Height: 2mm
+    Termination Style: SMD(SMT) Tab
+    Voltage Rating: 12V
+    Width: 3mm
+    with Bracket: Without Bracket
+  stock_observed: 944332
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   allow_project_fallback: false
   hand_solder: ''
@@ -211,6 +247,20 @@ oomlout_ai_roboclick_3:
   retries_until_complete: 0
 oomlout_ai_roboclick_4:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -234,6 +284,10 @@ oomlout_ai_roboclick_4:
         part_number: C720477
         title: LCSC
         url: https://www.lcsc.com/product-detail/C720477.html
+      - key: jlcpcb
+        part_number: C720477
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
       file_copy:
       - file_destination: datasheet.pdf
         file_source: parts_source/electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016/datasheet.pdf
@@ -250,6 +304,38 @@ oomlout_ai_roboclick_4:
         - SW_Push
         - SW_SPST
         - SW_Tactile
+      jlcpcb_selection:
+        compatibility_notes: Existing exact XUNPU TS-1088-AR02016 OOMP identity already
+          prefers C720477. The newly browser-linked PDF differs from the repository's
+          earlier two-page PDF; save it separately and reconcile mechanical drawings
+          during the full pass. The existing KiCad candidate footprints are not certified
+          interchangeable with this XUNPU switch.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Actuator Style: Round Button
+          Actuator/Cap Color: Black
+          Circuit: SPST
+          Contact Current: 50mA
+          Length: 3.9mm
+          Life: 100,000 cycles
+          Mounting Type: Surface Mount,Vertical
+          Operating Force: 1.6N
+          Operating Temperature: -30℃~+80℃
+          Switch Height: 2mm
+          Termination Style: SMD(SMT) Tab
+          Voltage Rating: 12V
+          Width: 3mm
+          with Bracket: Without Bracket
+        stock_observed: 944332
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         allow_project_fallback: false
         hand_solder: ''
@@ -378,6 +464,20 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       package_drawing:
         body:
         - 4
@@ -403,8 +503,16 @@ oomlout_ai_roboclick_4:
           - 0.4
           - 1.3
       part_id: P1
+      part_number_jlcpcb: C720477
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
       part_number_lcsc: C720477
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C720477.html
       part_number_manufacturer: TS-1088-AR02016
+      part_numbers_lcsc:
+      - part_number: C720477
+      part_numbers_manufacturer:
+      - manufacturer: XUNPU
+        part_number: TS-1088-AR02016
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -479,6 +587,9 @@ oomlout_ai_roboclick_4:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C720477.html
           value: C720477
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
+          value: C720477
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -530,7 +641,7 @@ oomlout_ai_roboclick_4:
           name: contact_2
           number: '2'
           type: passive
-      product_url: https://www.lcsc.com/product-detail/C720477.html
+      product_url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
       regenerate_pngs: false
       research_notes:
       - Nonpolar contacts numbered 1/2 using schematic convention. No exact XUNPU
@@ -783,7 +894,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -822,8 +933,16 @@ package_drawing:
     - 0.4
     - 1.3
 part_id: P1
+part_number_jlcpcb: C720477
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
 part_number_lcsc: C720477
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C720477.html
 part_number_manufacturer: TS-1088-AR02016
+part_numbers_lcsc:
+- part_number: C720477
+part_numbers_manufacturer:
+- manufacturer: XUNPU
+  part_number: TS-1088-AR02016
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -898,6 +1017,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C720477.html
     value: C720477
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
+    value: C720477
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -949,7 +1071,7 @@ pins:
     name: contact_2
     number: '2'
     type: passive
-product_url: https://www.lcsc.com/product-detail/C720477.html
+product_url: https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477
 regenerate_pngs: false
 research_notes:
 - Nonpolar contacts numbered 1/2 using schematic convention. No exact XUNPU master

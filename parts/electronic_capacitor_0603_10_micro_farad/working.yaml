@@ -50,10 +50,34 @@ distributors:
   product_name: 10uF ±20% 16V Ceramic Capacitor X5R 0603
   title: LCSC
   url: https://www.lcsc.com/product-detail/C92487.html
+- key: jlcpcb
+  part_number: C19702
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
 id: electronic_capacitor_0603_10_micro_farad
 id_no_class: electronic_capacitor_0603_10_micro_farad
 id_no_size: electronic_capacitor_0603_10_micro_farad
 id_no_type: electronic_capacitor_0603_10_micro_farad
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0603 10 uF capacitor already selected this
+    exact Samsung C19702 purchasing choice. JLC confirms 10 V X5R +/-10%. Its DC-bias-dependent
+    effective capacitance and temperature limits require full project-specific review.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    capacitance: 10 uF
+    dielectric: X5R
+    rated_voltage: 10 V
+    tolerance: +/-10%
+  stock_observed: 11159157
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Capacitor_SMD:C_0603_1608Metric
@@ -191,6 +215,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_capacitor_0603_10_micro_farad
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -217,6 +255,31 @@ oomlout_ai_roboclick_3:
         product_name: 10uF ±20% 16V Ceramic Capacitor X5R 0603
         title: LCSC
         url: https://www.lcsc.com/product-detail/C92487.html
+      - key: jlcpcb
+        part_number: C19702
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
+      jlcpcb_selection:
+        compatibility_notes: Existing generic 0603 10 uF capacitor already selected
+          this exact Samsung C19702 purchasing choice. JLC confirms 10 V X5R +/-10%.
+          Its DC-bias-dependent effective capacitance and temperature limits require
+          full project-specific review.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          capacitance: 10 uF
+          dielectric: X5R
+          rated_voltage: 10 V
+          tolerance: +/-10%
+        stock_observed: 11159157
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Capacitor_SMD:C_0603_1608Metric
@@ -338,8 +401,26 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_capacitor_0603_10_micro_farad
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
       part_id: C1
+      part_number_jlcpcb: C19702
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
       part_number_lcsc: C19702
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C19702.html
       part_number_manufacturer: CL10A106KP8NNNC
       part_numbers_lcsc:
       - part_number: C19702
@@ -435,6 +516,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C92487.html
           value: C92487
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
+          value: C19702
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -465,7 +549,7 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - level: 4
           value: 10_micro_farad
-      product_url: https://www.lcsc.com/product-detail/C19702.html
+      product_url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock listing first (C19702, 7,061,560
@@ -1277,7 +1361,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -1290,9 +1374,13 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
 oomp_key: oomp_electronic_capacitor_0603_10_micro_farad
 part_id: C1
+part_number_jlcpcb: C19702
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
 part_number_lcsc: C19702
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C19702.html
 part_number_manufacturer: CL10A106KP8NNNC
 part_numbers_lcsc:
 - part_number: C19702
@@ -1388,6 +1476,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C92487.html
     value: C92487
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
+    value: C19702
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -1417,7 +1508,7 @@ part_page:
     value: '0603'
   - level: 4
     value: 10_micro_farad
-product_url: https://www.lcsc.com/product-detail/C19702.html
+product_url: https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C19702, 7,061,560 in

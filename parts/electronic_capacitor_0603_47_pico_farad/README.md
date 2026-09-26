@@ -41,10 +41,11 @@ Capacitor 47 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CC0603JRNPO9BN470` |
-| LCSC | [`C105622`](https://www.lcsc.com/product-detail/C105622.html) |
+| Manufacturer part number | `CL10C470JB8NNNC` |
 | LCSC | [`C1671`](https://www.lcsc.com/product-detail/C1671.html) |
+| LCSC | [`C105622`](https://www.lcsc.com/product-detail/C105622.html) |
 | LCSC | [`C94904`](https://www.lcsc.com/product-detail/C94904.html) |
+| JLCPCB | [`C1671`](https://jlcpcb.com/partdetail/2023-CL10C470JB8NNNC/C1671) |
 
 
 

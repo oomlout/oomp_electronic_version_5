@@ -41,8 +41,9 @@ Capacitor 10 nF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FCC0603B103K500CT` |
-| LCSC | [`C5137477`](https://www.lcsc.com/product-detail/C5137477.html) |
+| Manufacturer part number | `0603B103K500NT` |
+| LCSC | [`C57112`](https://www.lcsc.com/product-detail/C57112.html) |
+| JLCPCB | [`C57112`](https://jlcpcb.com/partdetail/58143-0603B103K500NT/C57112) |
 
 
 

@@ -35,14 +35,40 @@ dimensions_mm:
 directory: parts/electronic_resistor_0603_75000_ohm
 distributors:
 - key: lcsc
-  part_number: C2907067
-  product_name: 75kΩ ±1% 100mW 0603 Thick Film Resistor
+  part_number: C23242
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C2907067.html
+  url: https://www.lcsc.com/product-detail/C23242.html
+- key: jlcpcb
+  part_number: C23242
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
 id: electronic_resistor_0603_75000_ohm
 id_no_class: electronic_resistor_0603_75000_ohm
 id_no_size: electronic_resistor_0603_75000_ohm
 id_no_type: electronic_resistor_0603_75000_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0603 75kΩ resistor formerly preferred FOJAN C2907067.
+    Promote verified Basic C23242 and retain FOJAN as an alternative. Full pass checks
+    derating and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 100mW
+    Resistance: 75kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 75V
+  stock_observed: 803181
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0603_1608Metric
@@ -51,10 +77,10 @@ lcsc_search: 0603 75kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_75000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_75000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_75000_ohm
-manufacturer: FOJAN
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
-- manufacturer: FOJAN
-  part_number: FRC0603F7502TS
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF7502T5E
 md5: d6572c28a2e846a2d0bf7f18edc8cb8b
 md5_10: d6572c28a2
 md5_10_upper: D6572C28A2
@@ -176,6 +202,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0603_75000_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -188,19 +228,45 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_resistor_0603_75000_ohm
       distributors:
       - key: lcsc
-        part_number: C2907067
-        product_name: 75kΩ ±1% 100mW 0603 Thick Film Resistor
+        part_number: C23242
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C2907067.html
+        url: https://www.lcsc.com/product-detail/C23242.html
+      - key: jlcpcb
+        part_number: C23242
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
+      jlcpcb_selection:
+        compatibility_notes: Generic 0603 75kΩ resistor formerly preferred FOJAN C2907067.
+          Promote verified Basic C23242 and retain FOJAN as an alternative. Full pass
+          checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 100mW
+          Resistance: 75kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 75V
+        stock_observed: 803181
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0603_1608Metric
         symbol: Device:R_Small
       lcsc_search: 0603 75kΩ
-      manufacturer: FOJAN
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
-      - manufacturer: FOJAN
-        part_number: FRC0603F7502TS
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF7502T5E
       name: electronic_resistor_0603_75000_ohm
       name_proper: Resistor 75000 Ohm 0603
       name_readable: Resistor 75000 Ohm 0603
@@ -309,15 +375,32 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0603_75000_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
       part_id: R1
-      part_number_lcsc: C2907067
-      part_number_manufacturer: FRC0603F7502TS
+      part_number_jlcpcb: C23242
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
+      part_number_lcsc: C23242
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C23242.html
+      part_number_manufacturer: 0603WAF7502T5E
       part_numbers_lcsc:
-      - part_number: C2907067
-        product_name: 75kΩ ±1% 100mW 0603 Thick Film Resistor
+      - part_number: C23242
       part_numbers_manufacturer:
-      - manufacturer: FOJAN
-        part_number: FRC0603F7502TS
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF7502T5E
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -388,10 +471,13 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: FRC0603F7502TS
+          value: 0603WAF7502T5E
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C2907067.html
-          value: C2907067
+          url: https://www.lcsc.com/product-detail/C23242.html
+          value: C23242
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
+          value: C23242
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -422,11 +508,8 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - level: 4
           value: 75000_ohm
-      product_url: https://www.lcsc.com/product-detail/C2907067.html
+      product_url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
       regenerate_pngs: false
-      research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0603 75KΩ" (1,623,200 in stock at capture).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -668,7 +751,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -681,16 +764,19 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0603_75000_ohm
 part_id: R1
-part_number_lcsc: C2907067
-part_number_manufacturer: FRC0603F7502TS
+part_number_jlcpcb: C23242
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
+part_number_lcsc: C23242
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C23242.html
+part_number_manufacturer: 0603WAF7502T5E
 part_numbers_lcsc:
-- part_number: C2907067
-  product_name: 75kΩ ±1% 100mW 0603 Thick Film Resistor
+- part_number: C23242
 part_numbers_manufacturer:
-- manufacturer: FOJAN
-  part_number: FRC0603F7502TS
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF7502T5E
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -761,10 +847,13 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: FRC0603F7502TS
+    value: 0603WAF7502T5E
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C2907067.html
-    value: C2907067
+    url: https://www.lcsc.com/product-detail/C23242.html
+    value: C23242
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
+    value: C23242
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -794,11 +883,8 @@ part_page:
     value: '0603'
   - level: 4
     value: 75000_ohm
-product_url: https://www.lcsc.com/product-detail/C2907067.html
+product_url: https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242
 regenerate_pngs: false
-research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0603
-  75KΩ" (1,623,200 in stock at capture).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -106,7 +106,7 @@ oomlout_ai_roboclick_2:
     delete_before_copy: true
     exit_on_missing: true
     file_destination: data/datasheet.pdf
-    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_jst_ph_2_mm_pitch_surface_mount_vertical_5_pin_jst_b5b_ph_sm4_tb/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_jst_ph_2_mm_pitch_surface_mount_right_angle_10_pin_jst_s10b_ph_sm4_tb/datasheet.pdf
   description: Copy part-specific source files into the working data directory.
   file_test: data/datasheet.pdf
   retries_until_complete: 0
@@ -223,6 +223,20 @@ oomlout_ai_roboclick_3:
   retries_until_complete: 0
 oomlout_ai_roboclick_4:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_connector_jst_ph_2_mm_pitch_surface_mount_vertical_5_pin_jst_b5b_ph_sm4_tb
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -283,7 +297,7 @@ oomlout_ai_roboclick_4:
           delete_before_copy: true
           exit_on_missing: true
           file_destination: data/datasheet.pdf
-          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_jst_ph_2_mm_pitch_surface_mount_vertical_5_pin_jst_b5b_ph_sm4_tb/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_connector_jst_ph_2_mm_pitch_surface_mount_right_angle_10_pin_jst_s10b_ph_sm4_tb/datasheet.pdf
         description: Copy part-specific source files into the working data directory.
         file_test: data/datasheet.pdf
         retries_until_complete: 0
@@ -399,6 +413,21 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_connector_jst_ph_2_mm_pitch_surface_mount_vertical_5_pin_jst_b5b_ph_sm4_tb
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_connector_jst_ph_2_mm_pitch_surface_mount_right_angle_10_pin_jst_s10b_ph_sm4_tb
       package_drawing:
         body:
         - 13.95
@@ -836,7 +865,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -849,6 +878,7 @@ oomlout_ai_roboclick_5:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_connector_jst_ph_2_mm_pitch_surface_mount_right_angle_10_pin_jst_s10b_ph_sm4_tb
 oomp_key: oomp_electronic_connector_jst_ph_2_mm_pitch_surface_mount_vertical_5_pin_jst_b5b_ph_sm4_tb
 package_drawing:
   body:

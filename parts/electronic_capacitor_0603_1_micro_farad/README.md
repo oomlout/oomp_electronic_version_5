@@ -41,10 +41,12 @@ Capacitor 1 uF 0603 is an OOMP electronic capacitor definition. It uses the 0603
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CL10A105KA8NNNC` |
+| Manufacturer part number | `CL10A105KB8NNNC` |
+| LCSC | [`C15849`](https://www.lcsc.com/product-detail/C15849.html) |
 | LCSC | [`C5673`](https://www.lcsc.com/product-detail/C5673.html) |
 | LCSC | [`C1592`](https://www.lcsc.com/product-detail/C1592.html) |
 | LCSC | [`C5199872`](https://www.lcsc.com/product-detail/C5199872.html) |
+| JLCPCB | [`C15849`](https://jlcpcb.com/partdetail/16531-CL10A105KB8NNNC/C15849) |
 
 
 

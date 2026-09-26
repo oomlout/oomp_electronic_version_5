@@ -41,10 +41,11 @@ Capacitor 15 pF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CC0402JRNPO9BN150` |
-| LCSC | [`C106997`](https://www.lcsc.com/product-detail/C106997.html) |
+| Manufacturer part number | `0402CG150J500NT` |
 | LCSC | [`C1548`](https://www.lcsc.com/product-detail/C1548.html) |
+| LCSC | [`C106997`](https://www.lcsc.com/product-detail/C106997.html) |
 | LCSC | [`C326803`](https://www.lcsc.com/product-detail/C326803.html) |
+| JLCPCB | [`C1548`](https://jlcpcb.com/partdetail/1900-0402CG150J500NT/C1548) |
 
 
 

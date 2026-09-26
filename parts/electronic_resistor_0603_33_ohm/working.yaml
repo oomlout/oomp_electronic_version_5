@@ -50,10 +50,37 @@ distributors:
   product_name: 33Ω ±5% 100mW 0603 Thick Film Resistor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C25232.html
+- key: jlcpcb
+  part_number: C23140
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
 id: electronic_resistor_0603_33_ohm
 id_no_class: electronic_resistor_0603_33_ohm
 id_no_size: electronic_resistor_0603_33_ohm
 id_no_type: electronic_resistor_0603_33_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0603 33Ω resistor already prefers exact C23140/0603WAF330JT5E.
+    Confirm verified Basic identity and retain existing alternatives. Full pass checks
+    derating and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 100mW
+    Resistance: 33Ω
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 75V
+  stock_observed: 5859953
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0603_1608Metric
@@ -62,8 +89,10 @@ lcsc_search: 0603 33Ω
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_33_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_33_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_33_ohm
-manufacturer: UNI-ROYAL
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF330JT5E
 - manufacturer: UNI-ROYAL
   part_number: 0603WAF330JT5E
 - manufacturer: FOJAN
@@ -191,6 +220,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0603_33_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -217,13 +260,42 @@ oomlout_ai_roboclick_3:
         product_name: 33Ω ±5% 100mW 0603 Thick Film Resistor
         title: LCSC
         url: https://www.lcsc.com/product-detail/C25232.html
+      - key: jlcpcb
+        part_number: C23140
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
+      jlcpcb_selection:
+        compatibility_notes: Generic 0603 33Ω resistor already prefers exact C23140/0603WAF330JT5E.
+          Confirm verified Basic identity and retain existing alternatives. Full pass
+          checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 100mW
+          Resistance: 33Ω
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 75V
+        stock_observed: 5859953
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0603_1608Metric
         symbol: Device:R_Small
       lcsc_search: 0603 33Ω
-      manufacturer: UNI-ROYAL
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF330JT5E
       - manufacturer: UNI-ROYAL
         part_number: 0603WAF330JT5E
       - manufacturer: FOJAN
@@ -338,8 +410,25 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0603_33_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       part_id: R1
+      part_number_jlcpcb: C23140
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
       part_number_lcsc: C23140
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C23140.html
       part_number_manufacturer: 0603WAF330JT5E
       part_numbers_lcsc:
       - part_number: C23140
@@ -349,6 +438,8 @@ oomlout_ai_roboclick_3:
       - part_number: C25232
         product_name: 33Ω ±5% 100mW 0603 Thick Film Resistor
       part_numbers_manufacturer:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF330JT5E
       - manufacturer: UNI-ROYAL
         part_number: 0603WAF330JT5E
       - manufacturer: FOJAN
@@ -435,6 +526,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C25232.html
           value: C25232
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
+          value: C23140
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -465,7 +559,7 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - level: 4
           value: 33_ohm
-      product_url: https://www.lcsc.com/product-detail/C23140.html
+      product_url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock listing first (C23140, 4,105,300
@@ -1026,7 +1120,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -1041,7 +1135,10 @@ oomlout_ai_roboclick_4:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0603_33_ohm
 part_id: R1
+part_number_jlcpcb: C23140
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
 part_number_lcsc: C23140
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C23140.html
 part_number_manufacturer: 0603WAF330JT5E
 part_numbers_lcsc:
 - part_number: C23140
@@ -1051,6 +1148,8 @@ part_numbers_lcsc:
 - part_number: C25232
   product_name: 33Ω ±5% 100mW 0603 Thick Film Resistor
 part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF330JT5E
 - manufacturer: UNI-ROYAL
   part_number: 0603WAF330JT5E
 - manufacturer: FOJAN
@@ -1137,6 +1236,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C25232.html
     value: C25232
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
+    value: C23140
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -1166,7 +1268,7 @@ part_page:
     value: '0603'
   - level: 4
     value: 33_ohm
-product_url: https://www.lcsc.com/product-detail/C23140.html
+product_url: https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C23140, 4,105,300 in

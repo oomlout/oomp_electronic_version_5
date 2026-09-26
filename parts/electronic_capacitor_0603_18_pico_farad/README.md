@@ -41,8 +41,9 @@ Capacitor 18 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CC0603JRNPO9BN180` |
-| LCSC | [`C107040`](https://www.lcsc.com/product-detail/C107040.html) |
+| Manufacturer part number | `CL10C180JB8NNNC` |
+| LCSC | [`C1647`](https://www.lcsc.com/product-detail/C1647.html) |
+| JLCPCB | [`C1647`](https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647) |
 
 
 

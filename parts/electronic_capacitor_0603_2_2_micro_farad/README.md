@@ -45,6 +45,7 @@ Capacitor 2.2 uF 0603 is an OOMP electronic capacitor definition. It uses the 06
 | LCSC | [`C23630`](https://www.lcsc.com/product-detail/C23630.html) |
 | LCSC | [`C57895`](https://www.lcsc.com/product-detail/C57895.html) |
 | LCSC | [`C913904`](https://www.lcsc.com/product-detail/C913904.html) |
+| JLCPCB | [`C23630`](https://jlcpcb.com/partdetail/24366-CL10A225KO8NNNC/C23630) |
 
 
 

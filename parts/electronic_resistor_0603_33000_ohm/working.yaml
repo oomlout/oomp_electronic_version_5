@@ -37,13 +37,38 @@ directory: parts/electronic_resistor_0603_33000_ohm
 distributors:
 - key: lcsc
   part_number: C4216
-  product_name: 33kΩ ±1% 100mW 0603 Thick Film Resistor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C4216.html
+- key: jlcpcb
+  part_number: C4216
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
 id: electronic_resistor_0603_33000_ohm
 id_no_class: electronic_resistor_0603_33000_ohm
 id_no_size: electronic_resistor_0603_33000_ohm
 id_no_type: electronic_resistor_0603_33000_ohm
+jlcpcb_selection:
+  compatibility_notes: Existing OOMP 0603 33 kohm purchase choice matches UNI-ROYAL
+    C4216 and MPN 0603WAF3302T5E. JLC page lists 100 mW, 75 V, +/-1%, +/-100ppm/C.
+    Check power derating and pad geometry in the full pass.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    max_voltage: 75 V
+    operating_temperature: -55 to +155 C
+    power: 100 mW
+    resistance: 33 kohm
+    temperature_coefficient: +/-100 ppm/C
+    tolerance: +/-1%
+  stock_observed: 3328011
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0603_1608Metric
@@ -52,9 +77,9 @@ lcsc_search: 0603 33kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_33000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_33000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_33000_ohm
-manufacturer: UNI-ROYAL
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
-- manufacturer: UNI-ROYAL
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
   part_number: 0603WAF3302T5E
 md5: 596e08d199919dbb023da564d3cfd93e
 md5_10: 596e08d199
@@ -177,6 +202,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0603_33000_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -190,17 +229,42 @@ oomlout_ai_roboclick_3:
       distributors:
       - key: lcsc
         part_number: C4216
-        product_name: 33kΩ ±1% 100mW 0603 Thick Film Resistor
         title: LCSC
         url: https://www.lcsc.com/product-detail/C4216.html
+      - key: jlcpcb
+        part_number: C4216
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
+      jlcpcb_selection:
+        compatibility_notes: Existing OOMP 0603 33 kohm purchase choice matches UNI-ROYAL
+          C4216 and MPN 0603WAF3302T5E. JLC page lists 100 mW, 75 V, +/-1%, +/-100ppm/C.
+          Check power derating and pad geometry in the full pass.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          max_voltage: 75 V
+          operating_temperature: -55 to +155 C
+          power: 100 mW
+          resistance: 33 kohm
+          temperature_coefficient: +/-100 ppm/C
+          tolerance: +/-1%
+        stock_observed: 3328011
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0603_1608Metric
         symbol: Device:R_Small
       lcsc_search: 0603 33kΩ
-      manufacturer: UNI-ROYAL
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
-      - manufacturer: UNI-ROYAL
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
         part_number: 0603WAF3302T5E
       name: electronic_resistor_0603_33000_ohm
       name_proper: Resistor 33000 Ohm 0603
@@ -310,14 +374,30 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0603_33000_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       part_id: R1
+      part_number_jlcpcb: C4216
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
       part_number_lcsc: C4216
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C4216.html
       part_number_manufacturer: 0603WAF3302T5E
       part_numbers_lcsc:
       - part_number: C4216
-        product_name: 33kΩ ±1% 100mW 0603 Thick Film Resistor
       part_numbers_manufacturer:
-      - manufacturer: UNI-ROYAL
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
         part_number: 0603WAF3302T5E
       part_page:
         datasheet_path: data/datasheet.pdf
@@ -393,6 +473,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C4216.html
           value: C4216
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
+          value: C4216
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -423,11 +506,8 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - level: 4
           value: 33000_ohm
-      product_url: https://www.lcsc.com/product-detail/C4216.html
+      product_url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
       regenerate_pngs: false
-      research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0603 33KΩ" (2,664,100 in stock at capture).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -670,7 +750,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -685,13 +765,15 @@ oomlout_ai_roboclick_4:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0603_33000_ohm
 part_id: R1
+part_number_jlcpcb: C4216
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
 part_number_lcsc: C4216
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C4216.html
 part_number_manufacturer: 0603WAF3302T5E
 part_numbers_lcsc:
 - part_number: C4216
-  product_name: 33kΩ ±1% 100mW 0603 Thick Film Resistor
 part_numbers_manufacturer:
-- manufacturer: UNI-ROYAL
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
   part_number: 0603WAF3302T5E
 part_page:
   datasheet_path: data/datasheet.pdf
@@ -767,6 +849,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C4216.html
     value: C4216
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
+    value: C4216
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -796,11 +881,8 @@ part_page:
     value: '0603'
   - level: 4
     value: 33000_ohm
-product_url: https://www.lcsc.com/product-detail/C4216.html
+product_url: https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216
 regenerate_pngs: false
-research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0603
-  33KΩ" (2,664,100 in stock at capture).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -37,6 +37,15 @@ Capacitor 470 pF 0603 is an OOMP electronic capacitor definition. It uses the 06
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603B471K500NT` |
+| LCSC | [`C1620`](https://www.lcsc.com/product-detail/C1620.html) |
+| JLCPCB | [`C1620`](https://jlcpcb.com/partdetail/1972-0603B471K500NT/C1620) |
+
+
 
 
 

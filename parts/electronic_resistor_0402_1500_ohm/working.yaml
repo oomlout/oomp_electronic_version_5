@@ -51,10 +51,37 @@ distributors:
     - Surfa...
   title: LCSC
   url: https://www.lcsc.com/product-detail/C114759.html
+- key: jlcpcb
+  part_number: C25867
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
 id: electronic_resistor_0402_1500_ohm
 id_no_class: electronic_resistor_0402_1500_ohm
 id_no_size: electronic_resistor_0402_1500_ohm
 id_no_type: electronic_resistor_0402_1500_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0402 1.5kΩ resistor already prefers exact C25867/0402WGF1501TCE.
+    Confirm verified Basic identity and retain existing alternatives. Full pass checks
+    derating and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 62.5mW
+    Resistance: 1.5kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 50V
+  stock_observed: 2189648
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0402_1005Metric
@@ -63,8 +90,10 @@ lcsc_search: 0402 1.5kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1500_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1500_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_1500_ohm
-manufacturer: UNI-ROYAL
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF1501TCE
 - manufacturer: UNI-ROYAL
   part_number: 0402WGF1501TCE
 md5: 1e91dd264b58aff044eadaf0f91b45fa
@@ -188,6 +217,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0402_1500_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -215,13 +258,42 @@ oomlout_ai_roboclick_3:
           Resistor - Surfa...
         title: LCSC
         url: https://www.lcsc.com/product-detail/C114759.html
+      - key: jlcpcb
+        part_number: C25867
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
+      jlcpcb_selection:
+        compatibility_notes: Generic 0402 1.5kΩ resistor already prefers exact C25867/0402WGF1501TCE.
+          Confirm verified Basic identity and retain existing alternatives. Full pass
+          checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 62.5mW
+          Resistance: 1.5kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 50V
+        stock_observed: 2189648
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0402_1005Metric
         symbol: Device:R_Small
       lcsc_search: 0402 1.5kΩ
-      manufacturer: UNI-ROYAL
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0402WGF1501TCE
       - manufacturer: UNI-ROYAL
         part_number: 0402WGF1501TCE
       name: electronic_resistor_0402_1500_ohm
@@ -332,8 +404,25 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0402_1500_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       part_id: R1
+      part_number_jlcpcb: C25867
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
       part_number_lcsc: C25867
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C25867.html
       part_number_manufacturer: 0402WGF1501TCE
       part_numbers_lcsc:
       - part_number: C25867
@@ -343,6 +432,11 @@ oomlout_ai_roboclick_3:
       - part_number: C114759
         product_name: 50V 1.5kΩ Thick Film Resistor 62.5mW ±1% ±100ppm/℃ 0402 Chip
           Resistor - Surfa...
+      part_numbers_manufacturer:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0402WGF1501TCE
+      - manufacturer: UNI-ROYAL
+        part_number: 0402WGF1501TCE
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -423,6 +517,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C114759.html
           value: C114759
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
+          value: C25867
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -453,7 +550,7 @@ oomlout_ai_roboclick_3:
           value: '0402'
         - level: 4
           value: 1500_ohm
-      product_url: https://www.lcsc.com/product-detail/C25867.html
+      product_url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified
@@ -667,7 +764,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -682,7 +779,10 @@ oomlout_ai_roboclick_4:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0402_1500_ohm
 part_id: R1
+part_number_jlcpcb: C25867
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
 part_number_lcsc: C25867
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C25867.html
 part_number_manufacturer: 0402WGF1501TCE
 part_numbers_lcsc:
 - part_number: C25867
@@ -692,6 +792,11 @@ part_numbers_lcsc:
 - part_number: C114759
   product_name: 50V 1.5kΩ Thick Film Resistor 62.5mW ±1% ±100ppm/℃ 0402 Chip Resistor
     - Surfa...
+part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF1501TCE
+- manufacturer: UNI-ROYAL
+  part_number: 0402WGF1501TCE
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -772,6 +877,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C114759.html
     value: C114759
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
+    value: C25867
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -801,7 +909,7 @@ part_page:
     value: '0402'
   - level: 4
     value: 1500_ohm
-product_url: https://www.lcsc.com/product-detail/C25867.html
+product_url: https://jlcpcb.com/partdetail/26610-0402WGF1501TCE/C25867
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified JLCPCB

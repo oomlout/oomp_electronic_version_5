@@ -51,10 +51,37 @@ distributors:
     - Surface Mount RoHS
   title: LCSC
   url: https://www.lcsc.com/product-detail/C14675.html
+- key: jlcpcb
+  part_number: C25803
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
 id: electronic_resistor_0603_100000_ohm
 id_no_class: electronic_resistor_0603_100000_ohm
 id_no_size: electronic_resistor_0603_100000_ohm
 id_no_type: electronic_resistor_0603_100000_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0603 100kΩ resistor already prefers exact C25803/0603WAF1003T5E.
+    Confirm verified Basic identity and retain existing alternatives. Full pass checks
+    derating and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 100mW
+    Resistance: 100kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 75V
+  stock_observed: 22882611
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0603_1608Metric
@@ -63,8 +90,10 @@ lcsc_search: 0603 100kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_100000_ohm
-manufacturer: UNI-ROYAL
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF1003T5E
 - manufacturer: UNI-ROYAL
   part_number: 0603WAF1003T5E
 - manufacturer: FOJAN
@@ -192,6 +221,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0603_100000_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -219,13 +262,42 @@ oomlout_ai_roboclick_3:
           Resistor - Surface Mount RoHS
         title: LCSC
         url: https://www.lcsc.com/product-detail/C14675.html
+      - key: jlcpcb
+        part_number: C25803
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
+      jlcpcb_selection:
+        compatibility_notes: Generic 0603 100kΩ resistor already prefers exact C25803/0603WAF1003T5E.
+          Confirm verified Basic identity and retain existing alternatives. Full pass
+          checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 100mW
+          Resistance: 100kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 75V
+        stock_observed: 22882611
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0603_1608Metric
         symbol: Device:R_Small
       lcsc_search: 0603 100kΩ
-      manufacturer: UNI-ROYAL
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF1003T5E
       - manufacturer: UNI-ROYAL
         part_number: 0603WAF1003T5E
       - manufacturer: FOJAN
@@ -340,8 +412,26 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0603_100000_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
       part_id: R1
+      part_number_jlcpcb: C25803
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
       part_number_lcsc: C25803
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C25803.html
       part_number_manufacturer: 0603WAF1003T5E
       part_numbers_lcsc:
       - part_number: C25803
@@ -352,6 +442,8 @@ oomlout_ai_roboclick_3:
         product_name: 100kΩ 100mW 75V ±1% ±100ppm/℃ Thick Film Resistor 0603 Chip
           Resistor - Surface Mount RoHS
       part_numbers_manufacturer:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF1003T5E
       - manufacturer: UNI-ROYAL
         part_number: 0603WAF1003T5E
       - manufacturer: FOJAN
@@ -438,6 +530,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C14675.html
           value: C14675
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
+          value: C25803
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -468,7 +563,7 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - level: 4
           value: 100000_ohm
-      product_url: https://www.lcsc.com/product-detail/C25803.html
+      product_url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock listing first (C25803, 17,818,900
@@ -2226,7 +2321,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -2239,9 +2334,13 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0603_100000_ohm
 part_id: R1
+part_number_jlcpcb: C25803
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
 part_number_lcsc: C25803
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C25803.html
 part_number_manufacturer: 0603WAF1003T5E
 part_numbers_lcsc:
 - part_number: C25803
@@ -2252,6 +2351,8 @@ part_numbers_lcsc:
   product_name: 100kΩ 100mW 75V ±1% ±100ppm/℃ Thick Film Resistor 0603 Chip Resistor
     - Surface Mount RoHS
 part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF1003T5E
 - manufacturer: UNI-ROYAL
   part_number: 0603WAF1003T5E
 - manufacturer: FOJAN
@@ -2338,6 +2439,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C14675.html
     value: C14675
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
+    value: C25803
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -2367,7 +2471,7 @@ part_page:
     value: '0603'
   - level: 4
     value: 100000_ohm
-product_url: https://www.lcsc.com/product-detail/C25803.html
+product_url: https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C25803, 17,818,900 in

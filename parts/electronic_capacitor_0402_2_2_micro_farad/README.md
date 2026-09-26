@@ -45,6 +45,7 @@ Capacitor 2.2 uF 0402 is an OOMP electronic capacitor definition. It uses the 04
 | LCSC | [`C12530`](https://www.lcsc.com/product-detail/C12530.html) |
 | LCSC | [`C20539421`](https://www.lcsc.com/product-detail/C20539421.html) |
 | LCSC | [`C326606`](https://www.lcsc.com/product-detail/C326606.html) |
+| JLCPCB | [`C12530`](https://jlcpcb.com/partdetail/13164-CL05A225MQ5NSNC/C12530) |
 
 
 

@@ -37,6 +37,15 @@ Capacitor 22 uF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL10A226MQ8NRNC` |
+| LCSC | [`C59461`](https://www.lcsc.com/product-detail/C59461.html) |
+| JLCPCB | [`C59461`](https://jlcpcb.com/partdetail/60514-CL10A226MQ8NRNC/C59461) |
+
+
 
 
 

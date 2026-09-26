@@ -36,14 +36,40 @@ dimensions_mm:
 directory: parts/electronic_resistor_0603_120000_ohm
 distributors:
 - key: lcsc
-  part_number: C2906987
-  product_name: 120kΩ ±1% 100mW 0603 Thick Film Resistor
+  part_number: C25808
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C2906987.html
+  url: https://www.lcsc.com/product-detail/C25808.html
+- key: jlcpcb
+  part_number: C25808
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
 id: electronic_resistor_0603_120000_ohm
 id_no_class: electronic_resistor_0603_120000_ohm
 id_no_size: electronic_resistor_0603_120000_ohm
 id_no_type: electronic_resistor_0603_120000_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0603 120kΩ resistor formerly preferred C2906987. Promote
+    verified Basic C25808 and retain C2906987 as an alternative. Full pass checks
+    derating and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 100mW
+    Resistance: 120kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 75V
+  stock_observed: 1053986
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0603_1608Metric
@@ -52,10 +78,10 @@ lcsc_search: 0603 120kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_120000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_120000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_120000_ohm
-manufacturer: FOJAN
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
-- manufacturer: FOJAN
-  part_number: FRC0603F1203TS
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF1203T5E
 md5: 74179563c2b954a1dd708e82ba58d785
 md5_10: 74179563c2
 md5_10_upper: 74179563C2
@@ -177,6 +203,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0603_120000_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -189,19 +229,45 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_resistor_0603_120000_ohm
       distributors:
       - key: lcsc
-        part_number: C2906987
-        product_name: 120kΩ ±1% 100mW 0603 Thick Film Resistor
+        part_number: C25808
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C2906987.html
+        url: https://www.lcsc.com/product-detail/C25808.html
+      - key: jlcpcb
+        part_number: C25808
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
+      jlcpcb_selection:
+        compatibility_notes: Generic 0603 120kΩ resistor formerly preferred C2906987.
+          Promote verified Basic C25808 and retain C2906987 as an alternative. Full
+          pass checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 100mW
+          Resistance: 120kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 75V
+        stock_observed: 1053986
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0603_1608Metric
         symbol: Device:R_Small
       lcsc_search: 0603 120kΩ
-      manufacturer: FOJAN
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
-      - manufacturer: FOJAN
-        part_number: FRC0603F1203TS
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF1203T5E
       name: electronic_resistor_0603_120000_ohm
       name_proper: Resistor 120000 Ohm 0603
       name_readable: Resistor 120000 Ohm 0603
@@ -310,15 +376,32 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0603_120000_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
       part_id: R1
-      part_number_lcsc: C2906987
-      part_number_manufacturer: FRC0603F1203TS
+      part_number_jlcpcb: C25808
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
+      part_number_lcsc: C25808
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C25808.html
+      part_number_manufacturer: 0603WAF1203T5E
       part_numbers_lcsc:
-      - part_number: C2906987
-        product_name: 120kΩ ±1% 100mW 0603 Thick Film Resistor
+      - part_number: C25808
       part_numbers_manufacturer:
-      - manufacturer: FOJAN
-        part_number: FRC0603F1203TS
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF1203T5E
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -389,10 +472,13 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: FRC0603F1203TS
+          value: 0603WAF1203T5E
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C2906987.html
-          value: C2906987
+          url: https://www.lcsc.com/product-detail/C25808.html
+          value: C25808
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
+          value: C25808
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -423,11 +509,8 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - level: 4
           value: 120000_ohm
-      product_url: https://www.lcsc.com/product-detail/C2906987.html
+      product_url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
       regenerate_pngs: false
-      research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0603 120KΩ" (1,036,600 in stock at capture).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -604,7 +687,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -617,16 +700,19 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0603_120000_ohm
 part_id: R1
-part_number_lcsc: C2906987
-part_number_manufacturer: FRC0603F1203TS
+part_number_jlcpcb: C25808
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
+part_number_lcsc: C25808
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C25808.html
+part_number_manufacturer: 0603WAF1203T5E
 part_numbers_lcsc:
-- part_number: C2906987
-  product_name: 120kΩ ±1% 100mW 0603 Thick Film Resistor
+- part_number: C25808
 part_numbers_manufacturer:
-- manufacturer: FOJAN
-  part_number: FRC0603F1203TS
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF1203T5E
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -697,10 +783,13 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: FRC0603F1203TS
+    value: 0603WAF1203T5E
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C2906987.html
-    value: C2906987
+    url: https://www.lcsc.com/product-detail/C25808.html
+    value: C25808
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
+    value: C25808
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -730,11 +819,8 @@ part_page:
     value: '0603'
   - level: 4
     value: 120000_ohm
-product_url: https://www.lcsc.com/product-detail/C2906987.html
+product_url: https://jlcpcb.com/partdetail/26551-0603WAF1203T5E/C25808
 regenerate_pngs: false
-research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0603
-  120KΩ" (1,036,600 in stock at capture).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

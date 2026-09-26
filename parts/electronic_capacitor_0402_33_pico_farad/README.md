@@ -37,6 +37,15 @@ Capacitor 33 pF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402CG330J500NT` |
+| LCSC | [`C1562`](https://www.lcsc.com/product-detail/C1562.html) |
+| JLCPCB | [`C1562`](https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562) |
+
+
 
 
 

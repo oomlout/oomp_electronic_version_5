@@ -34,11 +34,39 @@ dimensions_mm:
   length: 2.0
   width: 1.25
 directory: parts/electronic_capacitor_0805_22_micro_farad
-distributors: []
+distributors:
+- key: lcsc
+  part_number: C45783
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C45783.html
+- key: jlcpcb
+  part_number: C45783
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
 id: electronic_capacitor_0805_22_micro_farad
 id_no_class: electronic_capacitor_0805_22_micro_farad
 id_no_size: electronic_capacitor_0805_22_micro_farad
 id_no_type: electronic_capacitor_0805_22_micro_farad
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0805 22 uF capacitor had no primary purchasing
+    number. Samsung C45783 is a non-polar 25 V X5R +/-20% MLCC. Its DC-bias-dependent
+    effective capacitance and temperature limits require full project-specific review.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    capacitance: 22 uF
+    dielectric: X5R
+    rated_voltage: 25 V
+    tolerance: +/-20%
+  stock_observed: 4273836
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Capacitor_SMD:C_0805_2012Metric
@@ -47,7 +75,10 @@ lcsc_search: 0805 22uF
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_22_micro_farad
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_22_micro_farad
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_22_micro_farad
-manufacturers: []
+manufacturer: Samsung Electro-Mechanics
+manufacturers:
+- manufacturer: Samsung Electro-Mechanics
+  part_number: CL21A226MAQNNNE
 md5: 24ab1d17e7cfe79af6708450cc123713
 md5_10: 24ab1d17e7
 md5_10_upper: 24AB1D17E7
@@ -169,6 +200,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_capacitor_0805_22_micro_farad
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -179,13 +224,45 @@ oomlout_ai_roboclick_3:
         length: 2.0
         width: 1.25
       directory: parts\electronic_capacitor_0805_22_micro_farad
-      distributors: []
+      distributors:
+      - key: lcsc
+        part_number: C45783
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C45783.html
+      - key: jlcpcb
+        part_number: C45783
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
+      jlcpcb_selection:
+        compatibility_notes: Existing generic 0805 22 uF capacitor had no primary
+          purchasing number. Samsung C45783 is a non-polar 25 V X5R +/-20% MLCC. Its
+          DC-bias-dependent effective capacitance and temperature limits require full
+          project-specific review.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          capacitance: 22 uF
+          dielectric: X5R
+          rated_voltage: 25 V
+          tolerance: +/-20%
+        stock_observed: 4273836
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Capacitor_SMD:C_0805_2012Metric
         symbol: Device:C_Small
       lcsc_search: 0805 22uF
-      manufacturers: []
+      manufacturer: Samsung Electro-Mechanics
+      manufacturers:
+      - manufacturer: Samsung Electro-Mechanics
+        part_number: CL21A226MAQNNNE
       name: electronic_capacitor_0805_22_micro_farad
       name_proper: Capacitor 22 uF 0805
       name_readable: Capacitor 22 uF 0805
@@ -294,7 +371,32 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_capacitor_0805_22_micro_farad
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
       part_id: C1
+      part_number_jlcpcb: C45783
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
+      part_number_lcsc: C45783
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C45783.html
+      part_number_manufacturer: CL21A226MAQNNNE
+      part_numbers_lcsc:
+      - part_number: C45783
+      part_numbers_manufacturer:
+      - manufacturer: Samsung Electro-Mechanics
+        part_number: CL21A226MAQNNNE
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -362,7 +464,16 @@ oomlout_ai_roboclick_3:
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
         has_datasheet: false
-        identifiers: []
+        identifiers:
+        - title: Manufacturer part number
+          url: ''
+          value: CL21A226MAQNNNE
+        - title: LCSC
+          url: https://www.lcsc.com/product-detail/C45783.html
+          value: C45783
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
+          value: C45783
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -393,6 +504,7 @@ oomlout_ai_roboclick_3:
           value: 0805
         - level: 4
           value: 22_micro_farad
+      product_url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
       regenerate_pngs: false
       svg_details:
       - filename_extra: assembly
@@ -962,7 +1074,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -975,8 +1087,19 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
 oomp_key: oomp_electronic_capacitor_0805_22_micro_farad
 part_id: C1
+part_number_jlcpcb: C45783
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
+part_number_lcsc: C45783
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C45783.html
+part_number_manufacturer: CL21A226MAQNNNE
+part_numbers_lcsc:
+- part_number: C45783
+part_numbers_manufacturer:
+- manufacturer: Samsung Electro-Mechanics
+  part_number: CL21A226MAQNNNE
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -1044,7 +1167,16 @@ part_page:
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
   has_datasheet: false
-  identifiers: []
+  identifiers:
+  - title: Manufacturer part number
+    url: ''
+    value: CL21A226MAQNNNE
+  - title: LCSC
+    url: https://www.lcsc.com/product-detail/C45783.html
+    value: C45783
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
+    value: C45783
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -1074,6 +1206,7 @@ part_page:
     value: 0805
   - level: 4
     value: 22_micro_farad
+product_url: https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783
 regenerate_pngs: false
 svg_details:
 - filename_extra: assembly

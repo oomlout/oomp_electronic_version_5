@@ -45,6 +45,7 @@ Capacitor 100 nF 0603 is an OOMP electronic capacitor definition. It uses the 06
 | LCSC | [`C14663`](https://www.lcsc.com/product-detail/C14663.html) |
 | LCSC | [`C30926`](https://www.lcsc.com/product-detail/C30926.html) |
 | LCSC | [`C1591`](https://www.lcsc.com/product-detail/C1591.html) |
+| JLCPCB | [`C14663`](https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663) |
 
 
 

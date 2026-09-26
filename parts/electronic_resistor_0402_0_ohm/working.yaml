@@ -36,26 +36,53 @@ dimensions_mm:
 directory: parts/electronic_resistor_0402_0_ohm
 distributors:
 - key: lcsc
+  part_number: C17168
+  product_name: 0Ω ±1% 62.5mW 0402 Thick Film Resistor
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C17168.html
+- key: lcsc
   part_number: C2906877
   product_name: 0Ω 62.5mW 50V Thick Film Resistor ±5% 0402 Chip Resistor - Surface
     Mount
   title: LCSC
   url: https://www.lcsc.com/product-detail/C2906877.html
 - key: lcsc
-  part_number: C17168
-  product_name: 0Ω ±1% 62.5mW 0402 Thick Film Resistor
-  title: LCSC
-  url: https://www.lcsc.com/product-detail/C17168.html
-- key: lcsc
   part_number: C2906858
   product_name: 0Ω 62.5mW 50V Thick Film Resistor ±1% ±400ppm/℃ 0402 Chip Resistor
     - Surface ...
   title: LCSC
   url: https://www.lcsc.com/product-detail/C2906858.html
+- key: jlcpcb
+  part_number: C17168
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
 id: electronic_resistor_0402_0_ohm
 id_no_class: electronic_resistor_0402_0_ohm
 id_no_size: electronic_resistor_0402_0_ohm
 id_no_type: electronic_resistor_0402_0_ohm
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0402 zero-ohm jumper already listed C17168
+    as an alternative. Promote the verified Basic house choice and retain FOJAN C2906877.
+    Maximum resistance and current rating must be checked from the series datasheet
+    before use in current-sensitive circuits; full pass also checks pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    current_rating: pending datasheet review
+    maximum_resistance: pending datasheet review
+    nominal_resistance: 0 ohm
+    operating_temperature: -55 to +155 C
+    power_as_listed: 62.5 mW
+    voltage_as_listed: 50 V
+  stock_observed: 10286598
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0402_1005Metric
@@ -64,8 +91,10 @@ lcsc_search: 0402 0Ω
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_0_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_0_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_0_ohm
-manufacturer: FOJAN
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF0000TCE
 - manufacturer: FOJAN
   part_number: FRC0402P000 TS
 md5: f61b961aa55fd900194a6e1e19ed5e67
@@ -189,6 +218,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0402_0_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -201,29 +244,59 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_resistor_0402_0_ohm
       distributors:
       - key: lcsc
+        part_number: C17168
+        product_name: 0Ω ±1% 62.5mW 0402 Thick Film Resistor
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C17168.html
+      - key: lcsc
         part_number: C2906877
         product_name: 0Ω 62.5mW 50V Thick Film Resistor ±5% 0402 Chip Resistor - Surface
           Mount
         title: LCSC
         url: https://www.lcsc.com/product-detail/C2906877.html
       - key: lcsc
-        part_number: C17168
-        product_name: 0Ω ±1% 62.5mW 0402 Thick Film Resistor
-        title: LCSC
-        url: https://www.lcsc.com/product-detail/C17168.html
-      - key: lcsc
         part_number: C2906858
         product_name: 0Ω 62.5mW 50V Thick Film Resistor ±1% ±400ppm/℃ 0402 Chip Resistor
           - Surface ...
         title: LCSC
         url: https://www.lcsc.com/product-detail/C2906858.html
+      - key: jlcpcb
+        part_number: C17168
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
+      jlcpcb_selection:
+        compatibility_notes: Existing generic 0402 zero-ohm jumper already listed
+          C17168 as an alternative. Promote the verified Basic house choice and retain
+          FOJAN C2906877. Maximum resistance and current rating must be checked from
+          the series datasheet before use in current-sensitive circuits; full pass
+          also checks pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          current_rating: pending datasheet review
+          maximum_resistance: pending datasheet review
+          nominal_resistance: 0 ohm
+          operating_temperature: -55 to +155 C
+          power_as_listed: 62.5 mW
+          voltage_as_listed: 50 V
+        stock_observed: 10286598
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0402_1005Metric
         symbol: Device:R_Small
       lcsc_search: 0402 0Ω
-      manufacturer: FOJAN
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0402WGF0000TCE
       - manufacturer: FOJAN
         part_number: FRC0402P000 TS
       name: electronic_resistor_0402_0_ohm
@@ -334,18 +407,40 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0402_0_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       part_id: R1
-      part_number_lcsc: C2906877
-      part_number_manufacturer: FRC0402P000 TS
+      part_number_jlcpcb: C17168
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
+      part_number_lcsc: C17168
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C17168.html
+      part_number_manufacturer: 0402WGF0000TCE
       part_numbers_lcsc:
+      - part_number: C17168
+        product_name: 0Ω ±1% 62.5mW 0402 Thick Film Resistor
       - part_number: C2906877
         product_name: 0Ω 62.5mW 50V Thick Film Resistor ±5% 0402 Chip Resistor - Surface
           Mount
-      - part_number: C17168
-        product_name: 0Ω ±1% 62.5mW 0402 Thick Film Resistor
       - part_number: C2906858
         product_name: 0Ω 62.5mW 50V Thick Film Resistor ±1% ±400ppm/℃ 0402 Chip Resistor
           - Surface ...
+      part_numbers_manufacturer:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0402WGF0000TCE
+      - manufacturer: FOJAN
+        part_number: FRC0402P000 TS
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -416,16 +511,19 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: FRC0402P000 TS
-        - title: LCSC
-          url: https://www.lcsc.com/product-detail/C2906877.html
-          value: C2906877
+          value: 0402WGF0000TCE
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C17168.html
           value: C17168
         - title: LCSC
+          url: https://www.lcsc.com/product-detail/C2906877.html
+          value: C2906877
+        - title: LCSC
           url: https://www.lcsc.com/product-detail/C2906858.html
           value: C2906858
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
+          value: C17168
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -456,7 +554,7 @@ oomlout_ai_roboclick_3:
           value: '0402'
         - level: 4
           value: 0_ohm
-      product_url: https://www.lcsc.com/product-detail/C2906877.html
+      product_url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified
@@ -681,7 +779,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -696,17 +794,25 @@ oomlout_ai_roboclick_4:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0402_0_ohm
 part_id: R1
-part_number_lcsc: C2906877
-part_number_manufacturer: FRC0402P000 TS
+part_number_jlcpcb: C17168
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
+part_number_lcsc: C17168
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C17168.html
+part_number_manufacturer: 0402WGF0000TCE
 part_numbers_lcsc:
+- part_number: C17168
+  product_name: 0Ω ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C2906877
   product_name: 0Ω 62.5mW 50V Thick Film Resistor ±5% 0402 Chip Resistor - Surface
     Mount
-- part_number: C17168
-  product_name: 0Ω ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C2906858
   product_name: 0Ω 62.5mW 50V Thick Film Resistor ±1% ±400ppm/℃ 0402 Chip Resistor
     - Surface ...
+part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF0000TCE
+- manufacturer: FOJAN
+  part_number: FRC0402P000 TS
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -777,16 +883,19 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: FRC0402P000 TS
-  - title: LCSC
-    url: https://www.lcsc.com/product-detail/C2906877.html
-    value: C2906877
+    value: 0402WGF0000TCE
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C17168.html
     value: C17168
   - title: LCSC
+    url: https://www.lcsc.com/product-detail/C2906877.html
+    value: C2906877
+  - title: LCSC
     url: https://www.lcsc.com/product-detail/C2906858.html
     value: C2906858
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
+    value: C17168
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -816,7 +925,7 @@ part_page:
     value: '0402'
   - level: 4
     value: 0_ohm
-product_url: https://www.lcsc.com/product-detail/C2906877.html
+product_url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified JLCPCB

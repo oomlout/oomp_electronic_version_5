@@ -41,8 +41,9 @@ Capacitor 33 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CC0603JRNPO9BN330` |
-| LCSC | [`C107047`](https://www.lcsc.com/product-detail/C107047.html) |
+| Manufacturer part number | `CL10C330JB8NNNC` |
+| LCSC | [`C1663`](https://www.lcsc.com/product-detail/C1663.html) |
+| JLCPCB | [`C1663`](https://jlcpcb.com/partdetail/2015-CL10C330JB8NNNC/C1663) |
 
 
 

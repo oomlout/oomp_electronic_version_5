@@ -37,6 +37,15 @@ Capacitor 10 uF 0805 is an OOMP electronic capacitor definition. It uses the 080
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL21A106KAYNNNE` |
+| LCSC | [`C15850`](https://www.lcsc.com/product-detail/C15850.html) |
+| JLCPCB | [`C15850`](https://jlcpcb.com/partdetail/16532-CL21A106KAYNNNE/C15850) |
+
+
 
 
 

@@ -37,6 +37,15 @@ Capacitor 10 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL10C100JB8NNNC` |
+| LCSC | [`C1634`](https://www.lcsc.com/product-detail/C1634.html) |
+| JLCPCB | [`C1634`](https://jlcpcb.com/partdetail/1986-CL10C100JB8NNNC/C1634) |
+
+
 
 
 

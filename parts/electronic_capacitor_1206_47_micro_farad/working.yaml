@@ -36,24 +36,49 @@ dimensions_mm:
 directory: parts/electronic_capacitor_1206_47_micro_farad
 distributors:
 - key: lcsc
-  part_number: C68361
-  product_name: 47uF ±20% 6.3V Ceramic Capacitor X5R 1206
-  title: LCSC
-  url: https://www.lcsc.com/product-detail/C68361.html
-- key: lcsc
   part_number: C96123
   product_name: 47uF ±20% 10V Ceramic Capacitor X5R 1206
   title: LCSC
   url: https://www.lcsc.com/product-detail/C96123.html
 - key: lcsc
+  part_number: C68361
+  product_name: 47uF ±20% 6.3V Ceramic Capacitor X5R 1206
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C68361.html
+- key: lcsc
   part_number: C5448950
   product_name: 47uF ±20% 10V Ceramic Capacitor X5R 1206
   title: LCSC
   url: https://www.lcsc.com/product-detail/C5448950.html
+- key: jlcpcb
+  part_number: C96123
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
 id: electronic_capacitor_1206_47_micro_farad
 id_no_class: electronic_capacitor_1206_47_micro_farad
 id_no_size: electronic_capacitor_1206_47_micro_farad
 id_no_type: electronic_capacitor_1206_47_micro_farad
+jlcpcb_selection:
+  compatibility_notes: Existing generic 1206 47 uF capacitor. Samsung C96123 is 10
+    V X5R +/-20%; previous Samsung C68361 was 6.3 V X5R +/-20%. Preserve C68361 and
+    other alternatives. Effective capacitance at DC bias needs project-specific full
+    review.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    capacitance: 47 uF
+    dielectric: X5R
+    rated_voltage: 10 V
+    tolerance: +/-20%
+  stock_observed: 422796
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Capacitor_SMD:C_1206_3216Metric
@@ -65,9 +90,9 @@ link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/pa
 manufacturer: Samsung Electro-Mechanics
 manufacturers:
 - manufacturer: Samsung Electro-Mechanics
-  part_number: CL31A476MQHNNNE
-- manufacturer: Samsung Electro-Mechanics
   part_number: CL31A476MPHNNNE
+- manufacturer: Samsung Electro-Mechanics
+  part_number: CL31A476MQHNNNE
 - manufacturer: CCTC
   part_number: TCC1206X5R476M100HT
 md5: a831676902ed812fbbdceaa22e49059f
@@ -191,6 +216,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_capacitor_1206_47_micro_farad
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -203,20 +242,45 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_capacitor_1206_47_micro_farad
       distributors:
       - key: lcsc
-        part_number: C68361
-        product_name: 47uF ±20% 6.3V Ceramic Capacitor X5R 1206
-        title: LCSC
-        url: https://www.lcsc.com/product-detail/C68361.html
-      - key: lcsc
         part_number: C96123
         product_name: 47uF ±20% 10V Ceramic Capacitor X5R 1206
         title: LCSC
         url: https://www.lcsc.com/product-detail/C96123.html
       - key: lcsc
+        part_number: C68361
+        product_name: 47uF ±20% 6.3V Ceramic Capacitor X5R 1206
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C68361.html
+      - key: lcsc
         part_number: C5448950
         product_name: 47uF ±20% 10V Ceramic Capacitor X5R 1206
         title: LCSC
         url: https://www.lcsc.com/product-detail/C5448950.html
+      - key: jlcpcb
+        part_number: C96123
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
+      jlcpcb_selection:
+        compatibility_notes: Existing generic 1206 47 uF capacitor. Samsung C96123
+          is 10 V X5R +/-20%; previous Samsung C68361 was 6.3 V X5R +/-20%. Preserve
+          C68361 and other alternatives. Effective capacitance at DC bias needs project-specific
+          full review.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          capacitance: 47 uF
+          dielectric: X5R
+          rated_voltage: 10 V
+          tolerance: +/-20%
+        stock_observed: 422796
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Capacitor_SMD:C_1206_3216Metric
@@ -225,9 +289,9 @@ oomlout_ai_roboclick_3:
       manufacturer: Samsung Electro-Mechanics
       manufacturers:
       - manufacturer: Samsung Electro-Mechanics
-        part_number: CL31A476MQHNNNE
-      - manufacturer: Samsung Electro-Mechanics
         part_number: CL31A476MPHNNNE
+      - manufacturer: Samsung Electro-Mechanics
+        part_number: CL31A476MQHNNNE
       - manufacturer: CCTC
         part_number: TCC1206X5R476M100HT
       name: electronic_capacitor_1206_47_micro_farad
@@ -338,21 +402,39 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_capacitor_1206_47_micro_farad
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
       part_id: C1
-      part_number_lcsc: C68361
-      part_number_manufacturer: CL31A476MQHNNNE
+      part_number_jlcpcb: C96123
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
+      part_number_lcsc: C96123
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C96123.html
+      part_number_manufacturer: CL31A476MPHNNNE
       part_numbers_lcsc:
-      - part_number: C68361
-        product_name: 47uF ±20% 6.3V Ceramic Capacitor X5R 1206
       - part_number: C96123
         product_name: 47uF ±20% 10V Ceramic Capacitor X5R 1206
+      - part_number: C68361
+        product_name: 47uF ±20% 6.3V Ceramic Capacitor X5R 1206
       - part_number: C5448950
         product_name: 47uF ±20% 10V Ceramic Capacitor X5R 1206
       part_numbers_manufacturer:
       - manufacturer: Samsung Electro-Mechanics
-        part_number: CL31A476MQHNNNE
-      - manufacturer: Samsung Electro-Mechanics
         part_number: CL31A476MPHNNNE
+      - manufacturer: Samsung Electro-Mechanics
+        part_number: CL31A476MQHNNNE
       - manufacturer: CCTC
         part_number: TCC1206X5R476M100HT
       part_page:
@@ -425,16 +507,19 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: CL31A476MQHNNNE
-        - title: LCSC
-          url: https://www.lcsc.com/product-detail/C68361.html
-          value: C68361
+          value: CL31A476MPHNNNE
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C96123.html
           value: C96123
         - title: LCSC
+          url: https://www.lcsc.com/product-detail/C68361.html
+          value: C68361
+        - title: LCSC
           url: https://www.lcsc.com/product-detail/C5448950.html
           value: C5448950
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
+          value: C96123
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -465,7 +550,7 @@ oomlout_ai_roboclick_3:
           value: '1206'
         - level: 4
           value: 47_micro_farad
-      product_url: https://www.lcsc.com/product-detail/C68361.html
+      product_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock listing first (C68361, 921,810
@@ -676,7 +761,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -689,22 +774,26 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
 oomp_key: oomp_electronic_capacitor_1206_47_micro_farad
 part_id: C1
-part_number_lcsc: C68361
-part_number_manufacturer: CL31A476MQHNNNE
+part_number_jlcpcb: C96123
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
+part_number_lcsc: C96123
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C96123.html
+part_number_manufacturer: CL31A476MPHNNNE
 part_numbers_lcsc:
-- part_number: C68361
-  product_name: 47uF ±20% 6.3V Ceramic Capacitor X5R 1206
 - part_number: C96123
   product_name: 47uF ±20% 10V Ceramic Capacitor X5R 1206
+- part_number: C68361
+  product_name: 47uF ±20% 6.3V Ceramic Capacitor X5R 1206
 - part_number: C5448950
   product_name: 47uF ±20% 10V Ceramic Capacitor X5R 1206
 part_numbers_manufacturer:
 - manufacturer: Samsung Electro-Mechanics
-  part_number: CL31A476MQHNNNE
-- manufacturer: Samsung Electro-Mechanics
   part_number: CL31A476MPHNNNE
+- manufacturer: Samsung Electro-Mechanics
+  part_number: CL31A476MQHNNNE
 - manufacturer: CCTC
   part_number: TCC1206X5R476M100HT
 part_page:
@@ -777,16 +866,19 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: CL31A476MQHNNNE
-  - title: LCSC
-    url: https://www.lcsc.com/product-detail/C68361.html
-    value: C68361
+    value: CL31A476MPHNNNE
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C96123.html
     value: C96123
   - title: LCSC
+    url: https://www.lcsc.com/product-detail/C68361.html
+    value: C68361
+  - title: LCSC
     url: https://www.lcsc.com/product-detail/C5448950.html
     value: C5448950
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
+    value: C96123
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -816,7 +908,7 @@ part_page:
     value: '1206'
   - level: 4
     value: 47_micro_farad
-product_url: https://www.lcsc.com/product-detail/C68361.html
+product_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C68361, 921,810 in stock

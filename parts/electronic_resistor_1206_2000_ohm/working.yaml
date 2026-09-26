@@ -37,13 +37,42 @@ directory: parts/electronic_resistor_1206_2000_ohm
 distributors:
 - key: lcsc
   part_number: C17944
-  product_name: 2kΩ ±1% 250mW 1206 Thick Film Resistor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C17944.html
+- key: jlcpcb
+  part_number: C17944
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
 id: electronic_resistor_1206_2000_ohm
 id_no_class: electronic_resistor_1206_2000_ohm
 id_no_size: electronic_resistor_1206_2000_ohm
 id_no_type: electronic_resistor_1206_2000_ohm
+jlcpcb_selection:
+  compatibility_notes: 'Generic passive with matching value/package: the queue hint
+    electronic_resistor_1206_2000_ohm did not yet exist because 2 kohm is outside
+    the E12 grid, so one explicit size/value pair [''1206'', 2000] was added to the
+    resistor family extra_values list, creating exactly the hinted generic ID. Verified
+    compatibility: 2 kohm, 1206, +/-1%, 250 mW, 200 V, +/-100 ppm/deg C thick film;
+    recorded as purchasing-choice ratings for the UNI-ROYAL SKU.'
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 250mW
+    Resistance: 2kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 200V
+  stock_observed: 2187091
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-25'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_1206_3216Metric
@@ -52,9 +81,9 @@ lcsc_search: 1206 2kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2000_ohm
-manufacturer: UNI-ROYAL
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
-- manufacturer: UNI-ROYAL
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
   part_number: 1206W4F2001T5E
 md5: 11dd38a2c4396f2174c804bf8757fb69
 md5_10: 11dd38a2c4
@@ -177,6 +206,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_1206_2000_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -190,17 +233,47 @@ oomlout_ai_roboclick_3:
       distributors:
       - key: lcsc
         part_number: C17944
-        product_name: 2kΩ ±1% 250mW 1206 Thick Film Resistor
         title: LCSC
         url: https://www.lcsc.com/product-detail/C17944.html
+      - key: jlcpcb
+        part_number: C17944
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
+      jlcpcb_selection:
+        compatibility_notes: 'Generic passive with matching value/package: the queue
+          hint electronic_resistor_1206_2000_ohm did not yet exist because 2 kohm
+          is outside the E12 grid, so one explicit size/value pair [''1206'', 2000]
+          was added to the resistor family extra_values list, creating exactly the
+          hinted generic ID. Verified compatibility: 2 kohm, 1206, +/-1%, 250 mW,
+          200 V, +/-100 ppm/deg C thick film; recorded as purchasing-choice ratings
+          for the UNI-ROYAL SKU.'
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 250mW
+          Resistance: 2kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 200V
+        stock_observed: 2187091
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-25'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_1206_3216Metric
         symbol: Device:R_Small
       lcsc_search: 1206 2kΩ
-      manufacturer: UNI-ROYAL
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
-      - manufacturer: UNI-ROYAL
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
         part_number: 1206W4F2001T5E
       name: electronic_resistor_1206_2000_ohm
       name_proper: Resistor 2000 Ohm 1206
@@ -310,14 +383,30 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_1206_2000_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       part_id: R1
+      part_number_jlcpcb: C17944
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
       part_number_lcsc: C17944
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C17944.html
       part_number_manufacturer: 1206W4F2001T5E
       part_numbers_lcsc:
       - part_number: C17944
-        product_name: 2kΩ ±1% 250mW 1206 Thick Film Resistor
       part_numbers_manufacturer:
-      - manufacturer: UNI-ROYAL
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
         part_number: 1206W4F2001T5E
       part_page:
         datasheet_path: data/datasheet.pdf
@@ -393,6 +482,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C17944.html
           value: C17944
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
+          value: C17944
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -423,11 +515,8 @@ oomlout_ai_roboclick_3:
           value: '1206'
         - level: 4
           value: 2000_ohm
-      product_url: https://www.lcsc.com/product-detail/C17944.html
+      product_url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
       regenerate_pngs: false
-      research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "1206 2KΩ" (1,899,000 in stock at capture).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -604,7 +693,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -619,13 +708,15 @@ oomlout_ai_roboclick_4:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_1206_2000_ohm
 part_id: R1
+part_number_jlcpcb: C17944
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
 part_number_lcsc: C17944
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C17944.html
 part_number_manufacturer: 1206W4F2001T5E
 part_numbers_lcsc:
 - part_number: C17944
-  product_name: 2kΩ ±1% 250mW 1206 Thick Film Resistor
 part_numbers_manufacturer:
-- manufacturer: UNI-ROYAL
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
   part_number: 1206W4F2001T5E
 part_page:
   datasheet_path: data/datasheet.pdf
@@ -701,6 +792,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C17944.html
     value: C17944
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
+    value: C17944
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -730,11 +824,8 @@ part_page:
     value: '1206'
   - level: 4
     value: 2000_ohm
-product_url: https://www.lcsc.com/product-detail/C17944.html
+product_url: https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944
 regenerate_pngs: false
-research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "1206
-  2KΩ" (1,899,000 in stock at capture).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

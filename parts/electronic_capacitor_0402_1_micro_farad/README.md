@@ -41,10 +41,11 @@ Capacitor 1 uF 0402 is an OOMP electronic capacitor definition. It uses the 0402
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TCC0402X5R105M6R3AT` |
-| LCSC | [`C2887021`](https://www.lcsc.com/product-detail/C2887021.html) |
+| Manufacturer part number | `CL05A105KA5NQNC` |
 | LCSC | [`C52923`](https://www.lcsc.com/product-detail/C52923.html) |
+| LCSC | [`C2887021`](https://www.lcsc.com/product-detail/C2887021.html) |
 | LCSC | [`C29266`](https://www.lcsc.com/product-detail/C29266.html) |
+| JLCPCB | [`C52923`](https://jlcpcb.com/partdetail/53938-CL05A105KA5NQNC/C52923) |
 
 
 

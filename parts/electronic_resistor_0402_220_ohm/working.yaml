@@ -36,6 +36,11 @@ dimensions_mm:
 directory: parts/electronic_resistor_0402_220_ohm
 distributors:
 - key: lcsc
+  part_number: C25091
+  product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C25091.html
+- key: lcsc
   part_number: C112291
   product_name: 50V Thick Film Resistor 62.5mW 220Ω ±1% ±100ppm/℃ 0402 Chip Resistor
     - Surfac...
@@ -46,15 +51,37 @@ distributors:
   product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C2909336.html
-- key: lcsc
+- key: jlcpcb
   part_number: C25091
-  product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
-  title: LCSC
-  url: https://www.lcsc.com/product-detail/C25091.html
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
 id: electronic_resistor_0402_220_ohm
 id_no_class: electronic_resistor_0402_220_ohm
 id_no_size: electronic_resistor_0402_220_ohm
 id_no_type: electronic_resistor_0402_220_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0402 220Ω resistor formerly preferred C112291. Promote
+    verified Basic C25091 and retain C112291 as an alternative. Full pass checks derating
+    and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 62.5mW
+    Resistance: 220Ω
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 50V
+  stock_observed: 1497220
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0402_1005Metric
@@ -63,8 +90,10 @@ lcsc_search: 0402 220Ω
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_220_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_220_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_220_ohm
-manufacturer: YAGEO
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF2200TCE
 - manufacturer: YAGEO
   part_number: RC0402FR-07220RL
 md5: e307804ecda357eb9881fbdfdbe3a02c
@@ -188,6 +217,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0402_220_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -200,6 +243,11 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_resistor_0402_220_ohm
       distributors:
       - key: lcsc
+        part_number: C25091
+        product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C25091.html
+      - key: lcsc
         part_number: C112291
         product_name: 50V Thick Film Resistor 62.5mW 220Ω ±1% ±100ppm/℃ 0402 Chip
           Resistor - Surfac...
@@ -210,18 +258,42 @@ oomlout_ai_roboclick_3:
         product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
         title: LCSC
         url: https://www.lcsc.com/product-detail/C2909336.html
-      - key: lcsc
+      - key: jlcpcb
         part_number: C25091
-        product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
-        title: LCSC
-        url: https://www.lcsc.com/product-detail/C25091.html
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
+      jlcpcb_selection:
+        compatibility_notes: Generic 0402 220Ω resistor formerly preferred C112291.
+          Promote verified Basic C25091 and retain C112291 as an alternative. Full
+          pass checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 62.5mW
+          Resistance: 220Ω
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 50V
+        stock_observed: 1497220
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0402_1005Metric
         symbol: Device:R_Small
       lcsc_search: 0402 220Ω
-      manufacturer: YAGEO
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0402WGF2200TCE
       - manufacturer: YAGEO
         part_number: RC0402FR-07220RL
       name: electronic_resistor_0402_220_ohm
@@ -332,17 +404,39 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0402_220_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       part_id: R1
-      part_number_lcsc: C112291
-      part_number_manufacturer: RC0402FR-07220RL
+      part_number_jlcpcb: C25091
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
+      part_number_lcsc: C25091
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C25091.html
+      part_number_manufacturer: 0402WGF2200TCE
       part_numbers_lcsc:
+      - part_number: C25091
+        product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
       - part_number: C112291
         product_name: 50V Thick Film Resistor 62.5mW 220Ω ±1% ±100ppm/℃ 0402 Chip
           Resistor - Surfac...
       - part_number: C2909336
         product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
-      - part_number: C25091
-        product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
+      part_numbers_manufacturer:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0402WGF2200TCE
+      - manufacturer: YAGEO
+        part_number: RC0402FR-07220RL
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -413,15 +507,18 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: RC0402FR-07220RL
+          value: 0402WGF2200TCE
+        - title: LCSC
+          url: https://www.lcsc.com/product-detail/C25091.html
+          value: C25091
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C112291.html
           value: C112291
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C2909336.html
           value: C2909336
-        - title: LCSC
-          url: https://www.lcsc.com/product-detail/C25091.html
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
           value: C25091
         main_image:
           png: data/working_svg_square_pins.png
@@ -453,7 +550,7 @@ oomlout_ai_roboclick_3:
           value: '0402'
         - level: 4
           value: 220_ohm
-      product_url: https://www.lcsc.com/product-detail/C112291.html
+      product_url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified
@@ -649,7 +746,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -664,16 +761,24 @@ oomlout_ai_roboclick_4:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0402_220_ohm
 part_id: R1
-part_number_lcsc: C112291
-part_number_manufacturer: RC0402FR-07220RL
+part_number_jlcpcb: C25091
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
+part_number_lcsc: C25091
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C25091.html
+part_number_manufacturer: 0402WGF2200TCE
 part_numbers_lcsc:
+- part_number: C25091
+  product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C112291
   product_name: 50V Thick Film Resistor 62.5mW 220Ω ±1% ±100ppm/℃ 0402 Chip Resistor
     - Surfac...
 - part_number: C2909336
   product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
-- part_number: C25091
-  product_name: 220Ω ±1% 62.5mW 0402 Thick Film Resistor
+part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF2200TCE
+- manufacturer: YAGEO
+  part_number: RC0402FR-07220RL
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -744,15 +849,18 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: RC0402FR-07220RL
+    value: 0402WGF2200TCE
+  - title: LCSC
+    url: https://www.lcsc.com/product-detail/C25091.html
+    value: C25091
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C112291.html
     value: C112291
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C2909336.html
     value: C2909336
-  - title: LCSC
-    url: https://www.lcsc.com/product-detail/C25091.html
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
     value: C25091
   main_image:
     png: data/working_svg_square_pins.png
@@ -783,7 +891,7 @@ part_page:
     value: '0402'
   - level: 4
     value: 220_ohm
-product_url: https://www.lcsc.com/product-detail/C112291.html
+product_url: https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified JLCPCB

@@ -45,6 +45,7 @@ Capacitor 10 uF 0603 is an OOMP electronic capacitor definition. It uses the 060
 | LCSC | [`C19702`](https://www.lcsc.com/product-detail/C19702.html) |
 | LCSC | [`C96446`](https://www.lcsc.com/product-detail/C96446.html) |
 | LCSC | [`C92487`](https://www.lcsc.com/product-detail/C92487.html) |
+| JLCPCB | [`C19702`](https://jlcpcb.com/partdetail/20411-CL10A106KP8NNNC/C19702) |
 
 
 
