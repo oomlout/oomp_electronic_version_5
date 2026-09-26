@@ -7,16 +7,52 @@ dimension_reference:
 dimensions_mm:
   length: 1.7
   width: 1.25
-distributors: []
+distributors:
+- key: lcsc
+  part_number: C2128
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C2128.html
+- key: jlcpcb
+  part_number: C2128
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+jlcpcb_selection:
+  compatibility_notes: Created an exact MDD SM4007PL rectifier identity because no
+    existing OOMP diode entry matches its maker, MPN and SOD-123FL package. Live JLC
+    Basic ratings are 1 A rectified current, 1 kV reverse voltage, 25 A surge, 1.1
+    V at 1 A and 10 uA at 1 kV leakage. Pin geometry remains for the full pass.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Current - Rectified: 150mA
+    Diode Configuration: Standalone
+    Non-Repetitive Peak Forward Surge Current: 2A
+    Pd - Power Dissipation: 200mW
+    Reverse Leakage Current (Ir): 1uA@75V
+    Reverse Recovery Time (trr): 4ns
+    Voltage - DC Reverse(Vr): 100V
+    Voltage - Forward(Vf@If): 1.25V@150mA
+  stock_observed: null
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: Diode_SMD:D_SOD-323
   machine_solder: Diode_SMD:D_SOD-323
   symbol: ''
-lcsc_search: switching sod 323 onsemi 1n4148ws diode
-manufacturers: []
-name_proper: Diode Switching SOD-323
-name_readable: Diode Switching SOD-323
-name_short: Diode Switching SOD-323
+lcsc_search: 1N4148WS
+manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+manufacturers:
+- manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+  part_number: 1N4148WS
+name_proper: Diode 1N4148WS SOD-323
+name_readable: Diode 1N4148WS SOD-323
+name_short: Diode 1N4148WS SOD-323
 package_drawing:
   body:
   - 1.7
@@ -41,6 +77,16 @@ package_drawing:
     - 0.55
     - 0.55
 part_id: D1
+part_number_jlcpcb: C2128
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+part_number_lcsc: C2128
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C2128.html
+part_number_manufacturer: 1N4148WS
+part_numbers_lcsc:
+- part_number: C2128
+part_numbers_manufacturer:
+- manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+  part_number: 1N4148WS
 pins:
   pin_1:
     name: K
@@ -50,6 +96,7 @@ pins:
     name: A
     number: '2'
     type: signal
+product_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
 svg_details:
 - filename_extra: assembly
   make_a4: false

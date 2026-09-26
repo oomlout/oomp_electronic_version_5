@@ -217,6 +217,35 @@ def main(**kwargs):
         part["research_notes"] = [
             "LCSC stock research 2026-09: highest-stock listing first (C98220, 11,903,000 in stock at capture); runners-up follow."
         ]
+        from working_oomp_populate_jlc import set_preferred_jlc
+        set_preferred_jlc(
+            part,
+            code="C25804",
+            manufacturer="UNI-ROYAL(Uniroyal Elec)",
+            mpn="0603WAF1002T5E",
+            selection={
+                "verified_on": "2026-09-24",
+                "official_url": "https://jlcpcb.com/partdetail/26547-0603WAF1002T5E/C25804",
+                "tier": "basic",
+                "tier_label_observed": "Basic",
+                "stock_observed": 23028117,
+                "purchase_moq_observed": 1,
+                "pcba_min_qty_observed": None,
+                "compatibility_notes": "Existing generic 0603 10 kohm resistor. UNI-ROYAL C25804 is a 100 mW, 75 V, +/-1%, +/-100 ppm/deg C thick-film 0603, matching the previous YAGEO C98220 published ratings. Preserve C98220 and other alternatives; this is a purchase preference, not a universal generic rating.",
+                "ratings": {
+                    "resistance": "10 kohm",
+                    "power": "100 mW",
+                    "maximum_working_voltage": "75 V",
+                    "tolerance": "+/-1%",
+                    "temperature_coefficient": "+/-100 ppm/deg C",
+                    "operating_temperature": "-55 to +155 deg C",
+                },
+                "datasheet_pages": [],
+                "pinout_checked": False,
+                "footprint_checked": False,
+                "visual_review": "pending",
+            },
+        )
 
     current = "electronic_resistor_0603_1000_ohm"
     if current in extras_dict:
@@ -1609,3 +1638,6 @@ def main(**kwargs):
         part["research_notes"] = [
             "LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified JLCPCB Part Class on the product page); best C54920615 with 512,000 in stock at capture.",
         ]
+
+    from working_oomp_populate_jlc import apply_reviewed_jlc_choices
+    apply_reviewed_jlc_choices(extras_dict, family="resistor")

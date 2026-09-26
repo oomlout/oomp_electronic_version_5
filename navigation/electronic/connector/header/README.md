@@ -1,7 +1,7 @@
 # Electronic / Connector / Header
 
 [Up one level](../README.md)
-This category contains 123 parts in total.
+This category contains 126 parts in total.
 
 ## Categories
 

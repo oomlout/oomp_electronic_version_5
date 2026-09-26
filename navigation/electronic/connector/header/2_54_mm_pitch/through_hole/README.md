@@ -1,7 +1,7 @@
 # Electronic / Connector / Header / 2 54 Mm Pitch / Through Hole
 
 [Up one level](../README.md)
-This category contains 42 parts in total.
+This category contains 44 parts in total.
 
 ## Categories
 
@@ -9,6 +9,8 @@ This category contains 42 parts in total.
 
 ## Parts
 
+- [Connector Header 2.54 mm pitch through-hole dual row 12 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_12_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_12_pin`
+- [Connector Header 2.54 mm pitch through-hole dual row 14 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_14_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_14_pin`
 - [Connector Header 2.54 mm pitch through-hole dual row 6 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_6_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_6_pin`
 - [Connector Header 2.54-1*10P针](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_10_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_10_pin`
 - [Connector Header 2.54-1*20P直针](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_20_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_20_pin`

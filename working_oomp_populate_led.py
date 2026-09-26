@@ -87,6 +87,62 @@ def main(**kwargs):
         "name_short": "Bottom-view Green LED 1206",
     })
 
+    # Exact discrete indicator LED purchasing identities.  Size, color and
+    # lens style keep the family axes; the maker and MPN make the row exact.
+    exact_indicator_leds = [
+        {
+            "size": "0603",
+            "color": "red",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_r",
+        },
+        {
+            "size": "0603",
+            "color": "white",
+            "lens_style": "tint",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_w",
+        },
+        {
+            "size": "0805",
+            "color": "yellow",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_y",
+        },
+        {
+            "size": "0805",
+            "color": "green",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_g",
+        },
+        {
+            "size": "0805",
+            "color": "white",
+            "lens_style": "tint",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_w",
+        },
+        {
+            "size": "0805",
+            "color": "red",
+            "lens_style": "clear",
+            "manufacturer": "foshan_nationstar_optoelectronics",
+            "part_number": "ncd0805r1",
+        },
+    ]
+    for indicator_led in exact_indicator_leds:
+        option = {}
+        option["taxonomy_2"] = "led"
+        option["taxonomy_3"] = indicator_led["size"]
+        option["taxonomy_4"] = indicator_led["color"]
+        option["taxonomy_5"] = indicator_led["lens_style"]
+        option["taxonomy_6"] = indicator_led["manufacturer"]
+        option["taxonomy_7"] = indicator_led["part_number"]
+        options.append(option)
+
     # LED filaments are intentionally disabled. Keep this simple declaration
     # commented so the family can be restored later without reconstructing it.
     # colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]

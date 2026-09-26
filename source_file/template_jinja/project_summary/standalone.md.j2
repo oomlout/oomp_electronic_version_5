@@ -1,0 +1,86 @@
+# {{ project.display_name }} documentation
+
+[Open the offline board explorer]({{ repository_links.explorer }}){% if interactivehtmlbom.available %} · [Open InteractiveHtmlBom]({{ repository_links.interactivehtmlbom }}){% endif %}
+
+{% if board.available %}
+![PCB component placement]({{ repository_links.board }})
+{% endif %}
+
+{{ generated_text.overview }}
+
+## Project snapshot
+
+| Item | Count |
+| --- | ---: |
+| Components | {{ summary.component_count }} |
+| PCB footprints | {{ summary.pcb_footprint_count }} |
+| Mounting and locating holes | {{ mounting_holes.count }} |
+| Schematic symbols | {{ summary.schematic_symbol_count }} |
+| Matched OOMP components | {{ summary.matched_component_count }} |
+| Unmatched physical components | {{ summary.unmatched_physical_component_count }} |
+| Front-side placements | {{ placement.front_count }} |
+| Back-side placements | {{ placement.back_count }} |
+
+## Board resources
+
+{% if board.available %}
+- Approximate size: **{{ board.width_mm }} mm × {{ board.height_mm }} mm**
+- [Top placement SVG]({{ repository_links.board }}){% if board_png.available %} · [PNG]({{ repository_links.board_png }}){% endif %}
+- [Top placement with pin names]({{ repository_links.board_pins }}){% if board_pins_png.available %} · [PNG]({{ repository_links.board_pins_png }}){% endif %}
+- [Bottom placement SVG]({{ repository_links.board_bottom }}){% if board_bottom_png.available %} · [PNG]({{ repository_links.board_bottom_png }}){% endif %}
+- [Bottom placement with pin names]({{ repository_links.board_pins_bottom }}){% if board_pins_bottom_png.available %} · [PNG]({{ repository_links.board_pins_bottom_png }}){% endif %}
+- [Mechanical drawing]({{ repository_links.board_mechanical }}){% if board_mechanical_png.available %} · [PNG]({{ repository_links.board_mechanical_png }}){% endif %}
+- [Offline board explorer]({{ repository_links.explorer }})
+{% if schematic.available %}- [Schematic drawing]({{ repository_links.schematic }})
+{% endif %}
+{% if interactivehtmlbom.available %}- [InteractiveHtmlBom]({{ repository_links.interactivehtmlbom }})
+{% else %}- InteractiveHtmlBom was not generated. Install KiCad or set `KICAD_PYTHON` to KiCad's Python and rerun the batch file.
+{% endif %}
+{% else %}
+No PCB outline or placed-footprint bounds were available.
+{% endif %}
+
+## Bill of materials
+
+| References | Quantity | Description | Value | Footprint | OOMP part |
+| --- | ---: | --- | --- | --- | --- |
+{% for row in bom %}
+| {{ row.references | join(', ') }} | {{ row.quantity }} | {{ row.description }} | {{ row.value }} | `{{ row.footprint }}` | {% if row.oomp_id %}[`{{ row.oomp_id }}`]({{ row.oomp_link }}){% else %}unmatched{% endif %} |
+{% endfor %}
+
+## Main nets
+
+| Net | Pads | Components |
+| --- | ---: | --- |
+{% for net in nets %}
+| `{{ net.name }}` | {{ net.pad_count }} | {{ net.references | join(', ') }} |
+{% endfor %}
+
+## Mechanical details
+
+{% if mounting_holes.count %}
+Coordinates use the minimum X/Y point of `Edge.Cuts` as the board-relative 0,0 origin.
+
+| OOMP reference | Source | Size | Role | Board X (mm) | Board Y (mm) | OOMP part |
+| --- | --- | --- | --- | ---: | ---: | --- |
+{% for group in mounting_holes.groups %}{% for hole in group.holes %}
+| `{{ hole.id }}` | `{{ hole.reference }}` | {{ hole.size_text }} | {{ hole.role }} | {{ '%.3f' | format(hole.position_board_mm.x) }} | {{ '%.3f' | format(hole.position_board_mm.y) }} | {% if hole.oomp_status == 'matched' %}`{{ hole.oomp_id }}`{% else %}unmatched{% endif %} |
+{% endfor %}{% endfor %}
+{% else %}
+No mounting or locating holes were extracted.
+{% endif %}
+
+## Review notes
+
+{% for note in generated_text.review_notes %}
+- {{ note }}
+{% endfor %}
+
+- [Part identity/LCSC review]({{ repository_links.lcsc_review }})
+- [Browser research and datasheet queue]({{ repository_links.browser_research_queue }})
+- [Generated data and image assets]({{ repository_links.generated_source }})
+- Canonical copies of the selected KiCad source files are in [`data/`]({{ repository_links.kicad_original }}).
+
+---
+
+Generated deterministically by the OOMP electronics documentation pipeline.

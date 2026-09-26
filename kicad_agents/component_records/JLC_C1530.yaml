@@ -1,0 +1,67 @@
+format_version: 1
+ledger_id: JLC_C1530
+status: researched
+family: capacitor
+part_id: electronic_capacitor_0402_220_pico_farad
+exact_identity: true
+package: '0402'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  manufacturer_part_number: 0402B221K500NT
+  lcsc_part_number: C1530
+  lcsc_decision: New generic 0402 220 pF capacitor. The live Basic FH C1530 choice is a 50 V X7R +/-10%
+    MLCC matching value and package. The purchase preference carries those ratings; project voltage margin
+    and DC-bias behavior remain for the full pass.
+  product_url: https://jlcpcb.com/partdetail/1882-0402B221K500NT/C1530
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987688294137856-C1530.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/1882-0402B221K500NT/C1530
+  webpage_capture: parts_source/electronic_capacitor_0402_220_pico_farad/web_page_distributor_jlc.txt
+  evidence_notes:
+  - Live JLC page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 0402B221K500NT, C1530, 0402,
+    220pF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-09-26: the shared Fenghua family PDF decodes the ordering code (0402 / X7R / 221 =
+    220 pF / K = +-10% / 500 = 50 V) and gives the 0402 dimensions and X7R characteristics.'
+  - 'COVERAGE GAP: the X7R 0402 table in this document revision starts at 330 pF (page 9); the 220 pF
+    rows present are C0G 0402 (page 6) and X7R 01005 (page 8). The ordering table does not cover the full
+    selected 0402B221K500NT suffix, which the integration doc requires for completion.'
+  - 'Verifiable work done: pins, dimensions, package data, KiCad masters (Device:C_Small + C_0402_1005Metric
+    + official HandSolder master), file_copy and record ratings. Remaining: a current Fenghua 0402 X7R
+    datasheet (or manufacturer product page) listing the 221 0402 50 V row.'
+jlc_selection:
+  verified_on: '2026-09-24'
+  official_url: https://jlcpcb.com/partdetail/1882-0402B221K500NT/C1530
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 775042
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: New generic 0402 220 pF capacitor. The live Basic FH C1530 choice is a 50 V X7R
+    +/-10% MLCC matching value and package. The purchase preference carries those ratings; project voltage
+    margin and DC-bias behavior remain for the full pass.
+  ratings:
+    Capacitance: 220 pF (code 221)
+    Tolerance: +-10% (code K)
+    Rated voltage: 50 V (code 500)
+    Dielectric: X7R (Class II) per ordering code and JLC listing
+    Temperature range: -55 C to +125 C (X7R class definition)
+    Polarization: none
+    Datasheet coverage: 0402 X7R 221 row NOT listed in the saved family PDF revision (starts at 330 pF);
+      ordering-table coverage still to be confirmed
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared Fenghua family PDF)
+    ordering_coverage:
+    - 4
+    product_dimensions:
+    - 5
+    temperature_characteristics:
+    - 5
+    x7r_0402_table_checked:
+    - 9
+    gap: no 0402 X7R 221 row in this revision
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: pending

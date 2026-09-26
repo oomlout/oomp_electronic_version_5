@@ -239,6 +239,15 @@ def validate_implementation(record, require_generated=False):
     source_directory = PARTS_SOURCE_DIRECTORY / part_id
     source_datasheet = source_directory / "datasheet.pdf"
     source_provenance = source_directory / "datasheet_source.yaml"
+    # Parts whose datasheet is byte-identical to another part's keep one shared
+    # PDF and record its folder in oomp_datasheet_common_with.
+    common_with = str(definition.get("oomp_datasheet_common_with", "")).strip()
+    if not common_with and (source_directory / "working.yaml").is_file():
+        common_with = str(_read_yaml(source_directory / "working.yaml").get("oomp_datasheet_common_with", "")).strip()
+    if common_with:
+        shared_datasheet = PARTS_SOURCE_DIRECTORY / common_with / "datasheet.pdf"
+        if shared_datasheet.is_file():
+            source_datasheet = shared_datasheet
     if datasheet_required:
         if not source_datasheet.is_file():
             errors.append("parts_source datasheet.pdf is missing")
@@ -252,7 +261,10 @@ def validate_implementation(record, require_generated=False):
             checks["datasheet_provenance"] = "pass"
         file_copies = definition.get("file_copy") or []
         expected_source = f"parts_source/{part_id}/datasheet.pdf"
-        if not any(item.get("file_source") == expected_source for item in file_copies if isinstance(item, dict)):
+        expected_sources = {expected_source}
+        if common_with:
+            expected_sources.add(f"parts_source/{common_with}/datasheet.pdf")
+        if not any(item.get("file_source") in expected_sources for item in file_copies if isinstance(item, dict)):
             errors.append("populate-extra is missing the datasheet file_copy action")
 
     reference_names = [str(item) for item in (record.get("project_references") or [])]
@@ -349,6 +361,11 @@ def _refresh_component_indexes(record):
     identifiers = navigation_part_ids(_load_populated_definition(record))
     for identifier in identifiers:
         directory = PARTS_DIRECTORY / identifier
+        # Navigation pages now render into the top-level navigation/ tree
+        # (refreshed above); only ancestors that are real part folders keep
+        # roboclick-run index actions.
+        if not (directory / "working.yaml").is_file():
+            continue
         working = _read_yaml(directory / "working.yaml")
         oomlout_roboclick.run_folder(folder=str(directory), mode=_action_modes(working))
     library_report = package_libraries(PARTS_DIRECTORY, REPOSITORY_ROOT / "kicad_libraries")

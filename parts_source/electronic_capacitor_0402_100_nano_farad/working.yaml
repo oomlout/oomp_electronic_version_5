@@ -1,61 +1,147 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707269992677376-C1525.pdf
+dimension_reference:
+  document: Samsung MLCC catalogue, Product Lineup Standard & High Capacitors X7R
+  notes: 0402 size 1.00 x 0.50 mm with 0.55 mm maximum thickness for the CL05B104KO5
+    row; the NNC packaging suffix is a packing variant of that electrical row.
+  pages:
+  - 65
 dimensions_mm:
+  height: 0.55
   length: 1.0
   width: 0.5
 distributors:
-- key: lcsc
-  part_number: C60474
-  product_name: 100nF ±10% 16V Ceramic Capacitor X7R 0402
-  title: LCSC
-  url: https://www.lcsc.com/product-detail/C60474.html
 - key: lcsc
   part_number: C1525
   product_name: 100nF ±10% 16V X7R 0402 Ceramic Capacitor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C1525.html
 - key: lcsc
+  part_number: C60474
+  product_name: 100nF ±10% 16V Ceramic Capacitor X7R 0402
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C60474.html
+- key: lcsc
   part_number: C131394
   product_name: 100nF ±10% 50V Ceramic Capacitor X7R 0402
   title: LCSC
   url: https://www.lcsc.com/product-detail/C131394.html
+- key: jlcpcb
+  part_number: C1525
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525
+electrical:
+  capacitance: 100 nF (104)
+  dielectric: X7R (Class II)
+  polarized: false
+  rated_voltage: 16 Vdc (code O)
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  thickness_maximum: 0.55 mm
+  tolerance: +-10% (K)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0402_100_nano_farad/datasheet.pdf
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0402 100 nF capacitor. Samsung C1525 is a
+    16 V X7R +/-10% 0402 MLCC, matching the recorded value/package and the former
+    YAGEO C60474 option. Preference is a purchasing choice; preserve C60474 and other
+    alternatives. DC-bias performance and project-specific voltage margin remain for
+    the full pass.
+  datasheet_pages:
+    document: Samsung MLCC catalogue (C1525 import)
+    ordering_coverage:
+    - 65
+    packaging_specification:
+    - 74
+    - 78
+    product_dimensions:
+    - 65
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525
+  pcba_min_qty_observed: null
+  pinout_checked: true
+  purchase_moq_observed: 1
+  ratings:
+    Capacitance: 100 nF (code 104)
+    DC bias note: Class II capacitance derates with applied DC voltage; no DC-bias
+      curve in the catalogue
+    Dielectric: X7R (Class II)
+    Polarization: none
+    Rated voltage: 16 Vdc (code O)
+    Temperature characteristic: +-15% over the operating range
+    Temperature range: -55 C to +125 C
+    Thickness maximum: 0.55 mm
+    Tolerance: +-10% (code K)
+  stock_observed: 24770247
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: 'Inspected 2026-09-26 after the build. data/working_svg_square_pins.png
+    hero: Capacitor 100 nF 0402 with terminals labelled pin 1 / pin 2, silkscreen
+    code and bip-39 words legible; assembly and pin views use the standard 0402 chip
+    renderer with end metallization, no overlap or cropping. data/kicad manifest complete:
+    Device:C_Small symbol, C_0402_1005Metric machine master, C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
+    hand master. README.md: 100 nF value, C1525 links, pin table, datasheet link to
+    data/datasheet.pdf. Limitation: KiCad assets checked as s-expression text rather
+    than rendered in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
   machine_solder: Capacitor_SMD:C_0402_1005Metric
   symbol: Device:C_Small
 lcsc_search: 0402 100nF
-manufacturer: YAGEO
+manufacturer: Samsung Electro-Mechanics
 manufacturers:
-- manufacturer: YAGEO
-  part_number: CC0402KRX7R7BB104
 - manufacturer: Samsung Electro-Mechanics
   part_number: CL05B104KO5NNNC
+- manufacturer: YAGEO
+  part_number: CC0402KRX7R7BB104
 - manufacturer: YAGEO
   part_number: CC0402KRX7R9BB104
 name_proper: Capacitor 100 nF 0402
 name_readable: Capacitor 100 nF 0402
 name_short: Capacitor 100 nF 0402
+package_name_manufacturer: 0402 (1005 metric), 0.55 mm max thickness
 part_id: C1
-part_number_lcsc: C60474
-part_number_manufacturer: CC0402KRX7R7BB104
+part_number_jlcpcb: C1525
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525
+part_number_lcsc: C1525
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1525.html
+part_number_manufacturer: CL05B104KO5NNNC
 part_numbers_lcsc:
-- part_number: C60474
-  product_name: 100nF ±10% 16V Ceramic Capacitor X7R 0402
 - part_number: C1525
   product_name: 100nF ±10% 16V X7R 0402 Ceramic Capacitor
+- part_number: C60474
+  product_name: 100nF ±10% 16V Ceramic Capacitor X7R 0402
 - part_number: C131394
   product_name: 100nF ±10% 50V Ceramic Capacitor X7R 0402
 part_numbers_manufacturer:
-- manufacturer: YAGEO
-  part_number: CC0402KRX7R7BB104
 - manufacturer: Samsung Electro-Mechanics
   part_number: CL05B104KO5NNNC
 - manufacturer: YAGEO
+  part_number: CC0402KRX7R7BB104
+- manufacturer: YAGEO
   part_number: CC0402KRX7R9BB104
-product_url: https://www.lcsc.com/product-detail/C60474.html
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C60474, 14,596,000 in
   stock at capture); runners-up follow.'
+- 'Full pass 2026-09-26: the saved Samsung catalogue X7R 0402 lineup covers the CL05B104KO5
+  electrical row exactly (100 nF, 16 Vdc, +-10%, 0.55 mm max); NNC is a packaging
+  variant per the catalogue''s packaging specification.'
+- Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -1,0 +1,74 @@
+format_version: 1
+ledger_id: JLC_C1525
+status: intaken
+family: capacitor
+part_id: electronic_capacitor_0402_100_nano_farad
+exact_identity: true
+package: '0402'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: Samsung Electro-Mechanics
+  manufacturer_part_number: CL05B104KO5NNNC
+  lcsc_part_number: C1525
+  lcsc_decision: JLCPCB's official product page uses C1525 for this exact Samsung purchase choice.
+  product_url: https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707269992677376-C1525.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525
+  webpage_capture: parts_source/electronic_capacitor_0402_100_nano_farad/web_page_distributor_jlc.txt
+  evidence_notes:
+  - Official page displayed Basic, Samsung Electro-Mechanics, CL05B104KO5NNNC, C1525, 0402, 100nF, 16V,
+    X7R and +/-10% on 2026-09-24.
+  - Reuses generic electronic_capacitor_0402_100_nano_farad; the previous primary YAGEO C60474 choice
+    is retained in the alternatives. The 16 V X7R +/-10% purchasing ratings are specific to C1525, not
+    a guarantee of every generic instance.
+  - JLC-linked C1525 PDF was downloaded through the browser and imported with source URL and SHA-256 into
+    the matching parts_source datasheet.pdf. Ordering-code and dimensional review remain full-pass tasks.
+  - 'Full pass 2026-09-26: the saved Samsung MLCC catalogue X7R 0402 lineup (page 65) covers the CL05B104KO5
+    electrical row exactly: 0402 1.00 x 0.50 mm, 100 nF, 16 Vdc, +-10%, 0.55 mm max thickness. The purchased
+    CL05B104KO5NNNC is that row with the NNC packaging variant, defined by the catalogue''s own packaging
+    specification section.'
+  - Non-polarized two-terminal chip; KiCad Device:C_Small with Capacitor_SMD:C_0402_1005Metric and the
+    official C_0402_1005Metric_Pad0.74x0.62mm_HandSolder hand master.
+  - 'Detailed tables and page references: parts_source/electronic_capacitor_0402_100_nano_farad/integration_review.md'
+jlc_selection:
+  verified_on: '2026-09-24'
+  official_url: https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 24770247
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: Existing generic 0402 100 nF capacitor. Samsung C1525 is a 16 V X7R +/-10% 0402
+    MLCC, matching the recorded value/package and the former YAGEO C60474 option. Preference is a purchasing
+    choice; preserve C60474 and other alternatives. DC-bias performance and project-specific voltage margin
+    remain for the full pass.
+  ratings:
+    Capacitance: 100 nF (code 104)
+    Tolerance: +-10% (code K)
+    Rated voltage: 16 Vdc (code O)
+    Dielectric: X7R (Class II)
+    Temperature range: -55 C to +125 C
+    Temperature characteristic: +-15% over the operating range
+    Thickness maximum: 0.55 mm
+    Polarization: none
+    DC bias note: Class II capacitance derates with applied DC voltage; no DC-bias curve in the catalogue
+  datasheet_pages:
+    document: Samsung MLCC catalogue (C1525 import)
+    ordering_coverage:
+    - 65
+    product_dimensions:
+    - 65
+    packaging_specification:
+    - 74
+    - 78
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-09-26 after the build. data/working_svg_square_pins.png hero: Capacitor
+    100 nF 0402 with terminals labelled pin 1 / pin 2, silkscreen code and bip-39 words legible; assembly
+    and pin views use the standard 0402 chip renderer with end metallization, no overlap or cropping.
+    data/kicad manifest complete: Device:C_Small symbol, C_0402_1005Metric machine master, C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
+    hand master. README.md: 100 nF value, C1525 links, pin table, datasheet link to data/datasheet.pdf.
+    Limitation: KiCad assets checked as s-expression text rather than rendered in a KiCad GUI.'

@@ -27,6 +27,14 @@ and navigation refresh, retaining existing PNGs. Run `action_regenerate_all.bat`
 and 300-pixel previews. Browser-driven actions are skipped. Normal runs preserve
 existing PNGs; forcing a rebuild does not change that default.
 
+To document an arbitrary local KiCad project, run
+`generate_oomp_documentation.bat` while the project directory is the current
+directory. It creates `oomp_documentation/` containing a local README, board
+drawings, extracted project data, review files, an offline board explorer, and
+InteractiveHtmlBom when KiCad's Python runtime is available. If a directory has
+multiple boards, select one with
+`generate_oomp_documentation.bat --project <board-name-or-path>`.
+
 The project HTML links target GitHub Pages. After publishing, enable Pages for
 the `main` branch and `/ (root)` folder. The generated HTML also opens locally
 without external scripts or stylesheets.

@@ -1,13 +1,14 @@
 # Electronic / Switch / Tactile / Surface Mount
 
 [Up one level](../README.md)
-This category contains 6 parts in total.
+This category contains 7 parts in total.
 
 ## Categories
 
 - [Alps Alpine](alps_alpine/README.md)
 - [Ck](ck/README.md)
 - [Omron](omron/README.md)
+- [Switronic](switronic/README.md)
 - [Xunpu](xunpu/README.md)
 
 ## Parts

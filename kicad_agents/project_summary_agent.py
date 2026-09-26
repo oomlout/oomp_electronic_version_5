@@ -8,6 +8,7 @@ import json
 import math
 import re
 import shutil
+import subprocess
 import time
 from pathlib import Path
 
@@ -1291,8 +1292,6 @@ def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=
             "skipped_existing": True,
         }
 
-    import cairosvg
-
     svg_text = svg_path.read_text(encoding="utf-8")
     view_box_match = re.search(r'viewBox\s*=\s*"([^"]+)"', svg_text)
     if view_box_match is None:
@@ -1317,19 +1316,50 @@ def _make_board_png(svg_path, png_path, maximum_dimension=1600, regenerate_pngs=
     # understand the literal fallbacks, so flatten the vars before drawing.
     png_svg_text = _flatten_css_variables(svg_text)
 
-    for attempt_number in range(10):
-        try:
-            cairosvg.svg2png(
-                bytestring=png_svg_text.encode("utf-8"),
-                write_to=str(png_path),
-                output_width=output_width,
-                output_height=output_height,
-            )
-            break
-        except OSError:
-            if attempt_number == 9:
-                raise
-            time.sleep(0.1)
+    try:
+        import cairosvg
+    except ImportError:
+        cairosvg = None
+
+    if cairosvg is not None:
+        for attempt_number in range(10):
+            try:
+                cairosvg.svg2png(
+                    bytestring=png_svg_text.encode("utf-8"),
+                    write_to=str(png_path),
+                    output_width=output_width,
+                    output_height=output_height,
+                )
+                break
+            except OSError:
+                if attempt_number == 9:
+                    raise
+                time.sleep(0.1)
+    else:
+        inkscape = shutil.which("inkscape.com") or shutil.which("inkscape")
+        if inkscape is None:
+            return {
+                "available": False,
+                "image_file": "",
+                "reason": "Neither CairoSVG nor Inkscape is available; the generated SVG remains available.",
+            }
+        completed = subprocess.run(
+            [
+                inkscape,
+                "--pipe",
+                "--export-type=png",
+                f"--export-filename={png_path}",
+                f"--export-width={output_width}",
+                f"--export-height={output_height}",
+            ],
+            input=png_svg_text,
+            capture_output=True,
+            text=True,
+            timeout=120,
+        )
+        if completed.returncode != 0 or not png_path.is_file():
+            reason = completed.stderr.strip() or completed.stdout.strip() or "Inkscape PNG rendering failed."
+            return {"available": False, "image_file": "", "reason": reason}
     return {
         "available": True,
         "image_file": image_file,
@@ -1469,6 +1499,8 @@ def generate_project_summary(
     part_metadata=None,
     readme_output=None,
     regenerate_pngs=False,
+    repository_links_override=None,
+    summary_template=None,
 ):
     project_directory = Path(project_directory).resolve()
     if parts_directory is None:
@@ -1571,6 +1603,8 @@ def generate_project_summary(
         "browser_research_queue": f"{OOMP_REPOSITORY_URL}/blob/{OOMP_REPOSITORY_BRANCH}/{repository_part_path}/data/generated_data/browser_research_queue.md",
         "navigation": navigation_relative,
     }
+    if repository_links_override:
+        repository_links.update(repository_links_override)
     source_manifest = _copy_project_sources(
         components,
         parts_directory,
@@ -1738,15 +1772,16 @@ def generate_project_summary(
     _write_json(output_directory / "project_summary_data.json", summary_data)
     _write_yaml(output_directory / "project_summary_data.yaml", summary_data)
 
+    selected_template = Path(summary_template).resolve() if summary_template else SUMMARY_TEMPLATE
     environment = Environment(
-        loader=FileSystemLoader(str(SUMMARY_TEMPLATE.parent)),
+        loader=FileSystemLoader(str(selected_template.parent)),
         undefined=StrictUndefined,
         autoescape=False,
         keep_trailing_newline=True,
         trim_blocks=True,
         lstrip_blocks=True,
     )
-    template = environment.get_template(SUMMARY_TEMPLATE.name)
+    template = environment.get_template(selected_template.name)
     markdown = template.render(**summary_data)
     if readme_output is None:
         readme_output = project_directory / "README.md"

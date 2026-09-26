@@ -206,6 +206,7 @@ def add_distributor_links(part):
     """
     distributor_definitions = [
         ["lcsc", "LCSC", "part_number_lcsc", "part_numbers_lcsc", "https://www.lcsc.com/product-detail/{part_number}.html"],
+        ["jlcpcb", "JLCPCB", "part_number_jlcpcb", "part_numbers_jlcpcb", "https://jlcpcb.com/partdetail/{part_number}"],
         ["digikey", "DigiKey", "part_number_digikey", "part_numbers_digikey", "https://www.digikey.com/en/products/result?keywords={part_number}"],
         ["mouser", "Mouser", "part_number_mouser", "part_numbers_mouser", "https://www.mouser.com/c/?q={part_number}"],
         ["farnell", "Farnell", "part_number_farnell", "part_numbers_farnell", "https://uk.farnell.com/search?st={part_number}"],

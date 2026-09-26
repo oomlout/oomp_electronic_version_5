@@ -52,6 +52,11 @@ def main(**kwargs):
             "name_short": "Alps SKRPACE010 Tactile Switch",
         },
         {
+            "style": "tactile", "mounting": "surface_mount",
+            "manufacturer": "xkb_connection", "part_number": "ts_1187a_b_a_b",
+            "name_short": "XKB TS-1187A-B-A-B Tactile Switch",
+        },
+        {
             "style": "navigation", "mounting": "surface_mount",
             "size": "7_5_mm", "name_short": "Five-Way Navigation Switch 7.5 mm",
         },

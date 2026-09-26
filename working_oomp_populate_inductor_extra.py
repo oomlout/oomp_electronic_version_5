@@ -21,3 +21,7 @@ def main(**kwargs):
             "symbols": ["Device:L"],
             "footprints": ["Inductor_SMD:L_0603_1608Metric"],
         }
+
+    # Apply individually reviewed JLC house choices after other supplier data.
+    from working_oomp_populate_jlc import apply_reviewed_jlc_choices
+    apply_reviewed_jlc_choices(extras_dict, family="inductor")

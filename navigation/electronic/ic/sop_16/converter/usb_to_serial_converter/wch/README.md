@@ -1,11 +1,12 @@
 # Electronic / IC / Sop 16 / Converter / Usb To Serial Converter / Wch
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 2 parts in total.
 
 
 ## Parts
 
+- [IC Converter Usb To Serial Converter Wch SOP_16](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch343g) — `electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch343g`
 - [USB-Serial CH340C SOP-16](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch340c) — `electronic_ic_sop_16_converter_usb_to_serial_converter_wch_ch340c`
 
 ---

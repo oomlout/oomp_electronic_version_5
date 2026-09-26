@@ -1289,7 +1289,7 @@ def _mounting_hole_items(mounting_holes):
     return items
 
 
-def process_project(project_directory, parts_directory, output_directory=None):
+def process_project(project_directory, parts_directory, output_directory=None, log_missing_schematic=True):
     project_directory = Path(project_directory).resolve()
     parts_directory = Path(parts_directory).resolve()
     if output_directory is None:
@@ -1325,7 +1325,7 @@ def process_project(project_directory, parts_directory, output_directory=None):
         )
     if not schematic_paths:
         message = f"No modern .kicad_sch files found under {project_directory}"
-        if not (project_directory / "data" / "source_eagle.brd").is_file():
+        if log_missing_schematic and not (project_directory / "data" / "source_eagle.brd").is_file():
             _log_run_error("kicad_processing_agent", message)
         print(f"{message}; continuing with PCB-only project data.")
     if not pcb_paths:

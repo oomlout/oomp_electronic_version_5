@@ -1,0 +1,103 @@
+format_version: 1
+ledger_id: JLC_C6961
+status: researched
+family: ic
+part_id: electronic_ic_soic_8_amplifier_operational_amplifier_dual_jfet_input_stmicroelectronics_tl072cdt
+exact_identity: true
+package: SO-8
+pin_count: 8
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: STMicroelectronics
+  manufacturer_part_number: TL072CDT
+  lcsc_part_number: C6961
+  lcsc_decision: New exact STMicroelectronics TL072CDT OOMP identity for the Basic JLC C6961 dual JFET-input
+    amplifier. JLC calls the package SO-8; OOMP uses the SOIC-8 family taxonomy as a provisional package
+    class. Full pass must verify the manufacturer's ordering suffix, pin map, body and pad dimensions,
+    electrical limits, and exact KiCad symbol/footprint before certification.
+  product_url: https://jlcpcb.com/partdetail/STMicroelectronics-TL072CDT/C6961
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8567021770910547968-C6961.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/STMicroelectronics-TL072CDT/C6961
+  webpage_capture: parts_source/electronic_ic_soic_8_amplifier_operational_amplifier_dual_jfet_input_stmicroelectronics_tl072cdt/web_page_distributor_jlc.txt
+  evidence_notes:
+  - Live JLC page displayed Basic, STMicroelectronics, TL072CDT, C6961, SO-8, two channels, 6V~36V supply
+    and the listed amplifier parameters on 2026-09-24.
+  - This is an exact device entry. The SO-8 to SOIC-8 taxonomy mapping is provisional until datasheet
+    and footprint review.
+  - 'Full pass 2026-09-26: the saved PDF is ST TL072/A/B Doc ID 2298 Rev 7 (July 2012); its order-code
+    table (page 14) covers TL072CDT (0 to +70 C, SO-8, marking 072C), so the document covers the full
+    selected suffix.'
+  - 'Pin connections (page 1, top view): 1 Output 1, 2 Inverting input 1, 3 Non-inverting input 1, 4 VCC-,
+    5 Non-inverting input 2, 6 Inverting input 2, 7 Output 2, 8 VCC+; no NC pins, no exposed pad.'
+  - KiCad Amplifier_Operational:TL072 (extends LM2904) matches the datasheet pin for pin; Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+    (JEDEC MS-012AA) matches the ST SO-8 typ dimensions (D 4.90, E1 3.90, E 6.00, e 1.27). No HandSolder
+    variant exists in the installed libraries, so the same official master is selected unchanged for hand
+    soldering (long 1.95 mm pads; nothing enlarged).
+  - 'Detailed tables and page references: parts_source/electronic_ic_soic_8_amplifier_operational_amplifier_dual_jfet_input_stmicroelectronics_tl072cdt/integration_review.md'
+jlc_selection:
+  verified_on: '2026-09-24'
+  official_url: https://jlcpcb.com/partdetail/STMicroelectronics-TL072CDT/C6961
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 115776
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: New exact STMicroelectronics TL072CDT OOMP identity for the Basic JLC C6961 dual
+    JFET-input amplifier. JLC calls the package SO-8; OOMP uses the SOIC-8 family taxonomy as a provisional
+    package class. Full pass must verify the manufacturer's ordering suffix, pin map, body and pad dimensions,
+    electrical limits, and exact KiCad symbol/footprint before certification.
+  ratings:
+    Amplifier channels: 2
+    Input stage: JFET, input resistance 10^12 Ohm typical
+    Supply voltage (recommended): 6 V to 36 V single supply, or +-3 V to +-18 V split
+    Supply voltage (absolute maximum): +-18 V
+    Input voltage (absolute maximum): +-15 V, never more than supply or 15 V
+    Differential input voltage (absolute maximum): +-30 V
+    Input offset voltage: 3 mV typical, 10 mV maximum at VCC = +-15 V, TA = 25 C (13 mV over temperature)
+    Input offset voltage drift: 10 uV/C typical
+    Input offset current: 5 pA typical, 100 pA maximum at TA = 25 C (10 nA over temperature)
+    Input bias current: 20 pA typical, 200 pA maximum at TA = 25 C; junction leakage, doubles every 10
+      C
+    Large signal voltage gain: 200 V/mV typical, 25 V/mV minimum at RL = 2 kOhm, Vo = +-10 V
+    Gain bandwidth product: 4 MHz typical, 2.5 MHz minimum at Vin = 10 mV, F = 100 kHz
+    Slew rate: 16 V/us typical, 8 V/us minimum at Vin = 10 V, RL = 2 kOhm, CL = 100 pF, unity gain
+    Supply current: 1.4 mA typical, 2.5 mA maximum for both amplifiers, no load
+    Output voltage swing: +-12 V typical at RL = 2 kOhm, VCC = +-15 V (13.5 V at RL = 10 kOhm)
+    Output short-circuit current: 40 mA typical, 60 mA maximum at TA = 25 C; short-circuit duration infinite
+    Input common mode voltage range: +-11 V minimum at VCC = +-15 V
+    Common mode rejection ratio: 86 dB typical, 70 dB minimum at RS = 50 Ohm
+    Supply voltage rejection ratio: 86 dB typical, 70 dB minimum at RS = 50 Ohm
+    Equivalent input noise voltage: 15 nV/sqrt(Hz) typical at RS = 100 Ohm, F = 1 kHz
+    Total harmonic distortion: 0.01 percent typical at F = 1 kHz, AV = 20 dB, Vo = 2 Vpp
+    Channel separation: 120 dB typical at AV = 100
+    Thermal resistance junction to ambient: 125 C/W (SO-8)
+    ESD tolerance: 1 kV HBM, 200 V MM, 1.5 kV CDM
+    Operating temperature: 0 C to +70 C (TL072C grade)
+  datasheet_pages:
+    document: ST TL072, TL072A, TL072B datasheet Doc ID 2298 Rev 7 (July 2012)
+    ordering_coverage:
+    - 14
+    pin_connections:
+    - 1
+    maximum_ratings:
+    - 3
+    operating_conditions:
+    - 3
+    electrical_characteristics:
+    - 4
+    - 5
+    package_dimensions:
+    - 13
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-09-26 after the build. data/working_svg_assembly_pins.png and _300 preview:
+    SOIC-8 top view with 1out/1in-/1in+/vcc- down the left and vcc+/2out/2in-/2in+ up the right, pin-1
+    circle at the top-left, matching the ST datasheet pin-connection diagram; no mirroring, no label overlap,
+    no cropping. working_svg_square_pins.png hero titled IC TL072CDT SOIC 8 with legible pin names and
+    silkscreen code. working_svg_dimensioned.png: 3.9 x 4.9 mm body with arrows. data/kicad manifest complete
+    with Amplifier_Operational:TL072 symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm machine/hand footprints;
+    generated symbol renamed to the OOMP ID with three units matching the datasheet. README.md: TL072CDT
+    part number, LCSC/JLC C6961 links, pin table, datasheet link resolving to data/datasheet.pdf. Limitation:
+    KiCad symbol/footprint checked as s-expression text rather than rendered in a KiCad GUI.'

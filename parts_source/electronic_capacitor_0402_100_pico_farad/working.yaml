@@ -1,0 +1,292 @@
+category: capacitor
+category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987747089891328-C1546.pdf
+dimension_reference:
+  document: Fenghua General Series MLCC specification (C1546)
+  notes: '0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm,
+    terminal WB 0.25+-0.05 mm. C0G 0402 table lists 100 pF at 50 V with the CA thickness
+    code (page 6).'
+  pages:
+  - 4
+  - 5
+  - 6
+dimensions_mm:
+  height: 0.5
+  length: 1.0
+  width: 0.5
+distributors:
+- key: lcsc
+  part_number: C1546
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C1546.html
+- key: jlcpcb
+  part_number: C1546
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546
+electrical:
+  capacitance: 100 pF (101)
+  dielectric: C0G (Class I)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: 0+-30 ppm/C referenced to 25 C (C0G)
+  temperature_range: -55 to +125 C
+  tolerance: +-5% (J)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0402_100_pico_farad/datasheet.pdf
+jlcpcb_selection:
+  compatibility_notes: New generic 0402 100 pF capacitor. The live Basic FH C1546
+    choice is a 50 V C0G +/-5% MLCC matching value and package. The purchase preference
+    carries those ratings; project voltage margin remains for the full pass.
+  datasheet_pages:
+    '4': 'How To Order decode: size 0402, dielectric CG (C0G), capacitance 101, tolerance
+      J (+-5%), voltage 500 (50 V), termination N, packing T'
+    '5': 'Product dimensions (0402 CA: 1.00x0.50, T 0.50, WB 0.25 mm) and temperature
+      coefficient/characteristics table (C0G row)'
+    '6': 'C0G 0402 capacitance/voltage table: 100 pF at 25 V and 50 V = CA'
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546
+  pcba_min_qty_observed: null
+  pinout_checked: true
+  purchase_moq_observed: 1
+  ratings:
+    Capacitance:
+      conditions: reference 25 C
+      value: 100 pF
+    Dielectric:
+      conditions: Fenghua dielectric code CG
+      value: C0G (Class I)
+    Operating Temperature:
+      conditions: Class I dielectric
+      value: -55 C to +125 C
+    Temperature Coefficient:
+      conditions: referenced to 25 C
+      value: C0G (0+-30 ppm/C)
+    Tolerance:
+      conditions: code J, measured at 25 C
+      value: +-5%
+    Voltage Rating:
+      conditions: rated continuous; derating applies above category temperature
+      value: 50 V DC
+  stock_observed: 3487478
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: Inspected 2026-09-26 after the build. data/working_svg_square_pins_300.png
+    hero renders "Capacitor 100 pF 0402" with a standard built-in 0402 chip outline,
+    terminal pads labelled 1 and 2, and silkscreen mark 5REI4 matching the kicad manifest
+    mark. data/working_svg_assembly_pins_300.png top view shows the "101" value code
+    (10 x 10^1 pF = 100 pF per the Fenghua ordering decode) between terminals 1 and
+    2. data/kicad/manifest.yaml is status complete with symbol (Device:C_Small), machine_solder
+    (C_0402_1005Metric) and hand_solder (C_0402_1005Metric_Pad0.74x0.62mm_HandSolder)
+    assets; README lists the 0402 100 pF entry. Approved.
+kicad:
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
+  machine_solder: Capacitor_SMD:C_0402_1005Metric
+  symbol: Device:C_Small
+lcsc_search: 0402 100pF
+manufacturer: FH (Guangdong Fenghua Advanced Tech)
+manufacturers:
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: 0402CG101J500NT
+name_proper: Capacitor 100 pF 0402
+name_readable: Capacitor 100 pF 0402
+name_short: Capacitor 100 pF 0402
+package_name_manufacturer: 0402 (1005 metric, CA thickness code)
+part_id: C1
+part_number_jlcpcb: C1546
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546
+part_number_lcsc: C1546
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1546.html
+part_number_manufacturer: 0402CG101J500NT
+part_numbers_lcsc:
+- part_number: C1546
+part_numbers_manufacturer:
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: 0402CG101J500NT
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546
+research_notes:
+- 'The official JLC page lists Basic Fenghua 0402CG101J500NT (C1546): 100 pF, 50 V,
+  C0G, +-5% in 0402.'
+- The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 101 = 100 pF,
+  J = +-5%, 500 = 50 V), and the C0G 0402 table covers 100 pF at 50 V.
+- Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws
+  the package from the verified dimensions.
+svg_details:
+- filename_extra: assembly
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp_assembly
+  svg_name: oomp_component_assembly
+  write_yaml: false
+- filename_extra: assembly_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp_assembly
+  svg_name: oomp_component_assembly_pins
+  write_yaml: false
+- filename_extra: outline
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_outline
+  write_yaml: false
+- filename_extra: part_id
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_part_id
+  write_yaml: false
+- filename_extra: md5_6_alpha
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_md5_6_alpha
+  write_yaml: false
+- filename_extra: bip_39_3_word
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_bip_39_3_word
+  write_yaml: false
+- filename_extra: square
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_square
+  write_yaml: false
+- filename_extra: square_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_pins
+  write_yaml: false
+- filename_extra: square_schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_schematic
+  write_yaml: false
+- filename_extra: dimensioned
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_dimensioned
+  write_yaml: false
+- filename_extra: dimensioned_titles
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_dimensioned_titles
+  write_yaml: false
+- filename_extra: schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic
+  write_yaml: false
+- filename_extra: schematic_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_pins
+  write_yaml: false
+- filename_extra: schematic_part_id
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_part_id
+  write_yaml: false
+- filename_extra: schematic_md5_6_alpha
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_md5_6_alpha
+  write_yaml: false
+- filename_extra: schematic_bip_39_3_word
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_bip_39_3_word
+  write_yaml: false
+taxonomy_1: electronic
+taxonomy_10: ''
+taxonomy_11: ''
+taxonomy_12: ''
+taxonomy_13: ''
+taxonomy_14: ''
+taxonomy_15: ''
+taxonomy_2: capacitor
+taxonomy_3: '0402'
+taxonomy_4: 100_pico_farad
+taxonomy_5: ''
+taxonomy_6: ''
+taxonomy_7: ''
+taxonomy_8: ''
+taxonomy_9: ''

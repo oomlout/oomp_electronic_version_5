@@ -4,6 +4,8 @@ def main(**kwargs):
     inductors = [
         {"size": "0603", "inductance": "10_micro_henry"},
         {"size": "0603", "inductance": "10_micro_henry", "manufacturer": "taiyo_yuden", "part_number": "lbmf1608t100k"},
+        {"size": "0603", "inductance": "10_micro_henry", "manufacturer": "sunlord", "part_number": "sdfl1608s100ktf"},
+        {"size": "0805", "inductance": "10_micro_henry", "manufacturer": "sunlord", "part_number": "sdfl2012s100ktf"},
         {"size": "0806", "inductance": "2_2_micro_henry"},
         {"size": "0603", "inductance": "33_nano_henry"},
         {"size": "0603", "inductance": "470_ohm"},

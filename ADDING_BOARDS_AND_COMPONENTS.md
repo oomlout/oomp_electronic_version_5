@@ -1,5 +1,8 @@
 # Adding boards and components
 
+For the JLCPCB house-parts expansion backlog and one-part AI workflow, use
+[JLC house-parts plan](kicad_agents/jlc_house_parts/README.md).
+
 Edit the small lists in `working_oomp_populate_*.py` and the YAML project
 definitions in `project_data`, then run one generation command. You do **not**
 need to hand-write generated JSON, Markdown pages, navigation links,

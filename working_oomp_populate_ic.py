@@ -19,6 +19,36 @@ def main(**kwargs):
         "taxonomy_15": "lm393",
     })
     options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8",
+        "taxonomy_4": "amplifier", "taxonomy_5": "operational_amplifier_dual_jfet_input",
+        "taxonomy_14": "stmicroelectronics", "taxonomy_15": "tl072cdt",
+        "name_short": "TL072CDT Dual JFET Input Op Amp",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8",
+        "taxonomy_4": "amplifier", "taxonomy_5": "operational_amplifier_dual_low_noise",
+        "taxonomy_14": "texas_instruments", "taxonomy_15": "ne5532dr",
+        "name_short": "NE5532DR Dual Low-Noise Op Amp",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8",
+        "taxonomy_4": "amplifier", "taxonomy_5": "operational_amplifier_dual",
+        "taxonomy_14": "onsemi", "taxonomy_15": "lm358dr2g",
+        "name_short": "LM358DR2G Dual Op Amp",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_14",
+        "taxonomy_4": "amplifier", "taxonomy_5": "operational_amplifier_quad",
+        "taxonomy_14": "stmicroelectronics", "taxonomy_15": "lm324dt",
+        "name_short": "LM324DT Quad Op Amp",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8",
+        "taxonomy_4": "amplifier", "taxonomy_5": "operational_amplifier_precision",
+        "taxonomy_14": "texas_instruments", "taxonomy_15": "op07cdr",
+        "name_short": "OP07CDR Precision Op Amp",
+    })
+    options.append({
         "taxonomy_2": "ic", "taxonomy_3": "sot_23_5",
         "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_3_3_volt",
         "taxonomy_14": "richtek", "taxonomy_15": "rt9080_33",
@@ -92,6 +122,96 @@ def main(**kwargs):
         "taxonomy_2": "ic", "taxonomy_3": "qfn_28_5_mm_x_5_mm",
         "taxonomy_4": "converter", "taxonomy_5": "usb_to_serial_converter",
         "taxonomy_14": "silicon_labs", "taxonomy_15": "cp2102_gmr",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8",
+        "taxonomy_4": "interface", "taxonomy_5": "rs_485_transceiver",
+        "taxonomy_14": "maxlinear", "taxonomy_15": "sp485een_l_tr",
+        "name_short": "SP485EEN-L/TR RS-485 Transceiver",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8",
+        "taxonomy_4": "interface", "taxonomy_5": "rs_485_transceiver",
+        "taxonomy_14": "maxlinear", "taxonomy_15": "sp3485en_l_tr",
+        "name_short": "SP3485EN-L/TR RS-485 Transceiver",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "tssop_16",
+        "taxonomy_4": "interface", "taxonomy_5": "rs_232_transceiver",
+        "taxonomy_14": "maxlinear", "taxonomy_15": "sp3232eey_l_tr",
+        "name_short": "SP3232EEY-L/TR RS-232 Transceiver",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_14",
+        "taxonomy_4": "logic", "taxonomy_5": "hex_schmitt_trigger_inverter",
+        "taxonomy_14": "nexperia", "taxonomy_15": "74hc14d_653",
+        "name_short": "74HC14D,653 Hex Schmitt Trigger Inverter",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_16",
+        "taxonomy_4": "logic", "taxonomy_5": "serial_in_parallel_out_shift_register",
+        "taxonomy_14": "nexperia", "taxonomy_15": "74hc595d_118",
+        "name_short": "74HC595D,118 8-Bit Shift Register",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "smd_4p",
+        "taxonomy_4": "optocoupler", "taxonomy_5": "phototransistor_output",
+        "taxonomy_14": "lite_on", "taxonomy_15": "ltv_817s_ta1_c",
+        "name_short": "LTV-817S-TA1-C Optocoupler",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sop_4_175mil",
+        "taxonomy_4": "optocoupler", "taxonomy_5": "phototransistor_output",
+        "taxonomy_14": "lite_on", "taxonomy_15": "ltv_217_b_g",
+        "name_short": "LTV-217-B-G Optocoupler",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8_ep",
+        "taxonomy_4": "power_management", "taxonomy_5": "buck_converter",
+        "taxonomy_14": "texas_instruments", "taxonomy_15": "tps5430ddar",
+        "name_short": "TPS5430DDAR Buck Converter",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_16",
+        "taxonomy_4": "driver", "taxonomy_5": "darlington_array",
+        "taxonomy_14": "texas_instruments", "taxonomy_15": "uln2003adr",
+        "name_short": "ULN2003ADR Darlington Array",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "soic_8",
+        "taxonomy_4": "power_management", "taxonomy_5": "buck_converter",
+        "taxonomy_14": "xlsemi", "taxonomy_15": "xl1509_5_0e1",
+        "name_short": "XL1509-5.0E1 Buck Converter",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23",
+        "taxonomy_4": "power_management", "taxonomy_5": "voltage_reference",
+        "taxonomy_14": "jiangsu_changjing_electronics_technology_co_ltd", "taxonomy_15": "cj431",
+        "name_short": "CJ431 Voltage Reference",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_23",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_3_3_volt",
+        "taxonomy_14": "torex_semicon", "taxonomy_15": "xc6206p332mr_g",
+        "name_short": "XC6206P332MR-G LDO 3.3V",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_89_3",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_3_3_volt",
+        "taxonomy_14": "holtek_semicon", "taxonomy_15": "ht7533_1",
+        "name_short": "HT7533-1 LDO 3.3V",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "to_252_2_dpak",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_5_volt",
+        "taxonomy_14": "stmicroelectronics", "taxonomy_15": "l78m05abdt_tr",
+        "name_short": "L78M05ABDT-TR 5V Regulator",
+    })
+    options.append({
+        "taxonomy_2": "ic", "taxonomy_3": "sot_89_3",
+        "taxonomy_4": "power_management", "taxonomy_5": "linear_voltage_regulator_5_volt",
+        "taxonomy_14": "utc_unisonic_tech", "taxonomy_15": "78l05g_ab3_r",
+        "name_short": "78L05G-AB3-R 5V Regulator",
     })
 
     packages = ["qfn_16_3_mm_x_3_mm"]

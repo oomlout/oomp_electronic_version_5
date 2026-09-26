@@ -114,7 +114,17 @@ def main(**kwargs):
     working_oomp_metadata.add_readable_metadata(extras)
 
 
+    # write_extras rewrites each working.yaml from scratch, which drops the
+    # oomp_datasheet_common_with pointer recorded by datasheet deduplication.
+    # Snapshot the pointers first, then after writing restore the ones that
+    # were wiped and re-derive all of them from the PDFs on disk so newly
+    # populated parts are folded in too.  This keeps the shared datasheet
+    # location persistent between generations.
+    import action_dedupe_datasheets
+    common_with_snapshot = action_dedupe_datasheets.collect_common_with_keys()
     write_extras(extras)
+    action_dedupe_datasheets.restore_common_with_keys(common_with_snapshot, verbose=False)
+    action_dedupe_datasheets.deduplicate(dry_run=False, verbose=False)
 
 
 

@@ -68,6 +68,35 @@ def main(**kwargs):
                      ["2", "top", 0, 2.625, 3.05, 1.75]],
         }
         part["kicad"] = {"symbol": "Regulator_Linear:AMS1117-3.3", "machine_solder": "Package_TO_SOT_SMD:SOT-223-3_TabPin2", "hand_solder": ""}
+        from working_oomp_populate_jlc import set_preferred_jlc
+        set_preferred_jlc(
+            part,
+            code="C6186",
+            manufacturer="Advanced Monolithic Systems",
+            mpn="AMS1117-3.3",
+            selection={
+                "verified_on": "2026-09-24",
+                "official_url": "https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186",
+                "tier": "basic",
+                "tier_label_observed": "Basic",
+                "stock_observed": 1158933,
+                "purchase_moq_observed": 1,
+                "pcba_min_qty_observed": None,
+                "compatibility_notes": "Exact AMS1117-3.3 identity; JLC C6186 already matched this OOMP ID. SOT-223 pin 2 and tab are VOUT. KiCad SOT-223-3_TabPin2 matches pad numbering; the same official footprint serves hand assembly because no dedicated hand-solder variant exists.",
+                "ratings": {
+                    "output_voltage": "3.3 V nominal",
+                    "output_current": "1 A series rating; SOT-223 dissipation limit 1.2 W",
+                    "maximum_input_voltage": "15 V absolute maximum",
+                    "dropout_voltage": "1.1 V typical, 1.3 V maximum at 0.8 A",
+                    "operating_junction_temperature": "-40 to +125 deg C",
+                },
+                "datasheet_pages": [1, 2, 3, 7],
+                "pinout_checked": True,
+                "footprint_checked": True,
+                "visual_review": "pending",
+            },
+        )
+        part["kicad"]["hand_solder"] = "Package_TO_SOT_SMD:SOT-223-3_TabPin2"
 
     current = "electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5"
     if current in extras_dict:
@@ -931,3 +960,236 @@ def main(**kwargs):
                 "file_destination": "datasheet.pdf",
             }
         ]
+
+    # JLC C7955 / onsemi LM393DR2G, verified against the onsemi LM393/D Rev. 25
+    # datasheet (ordering page 7 covers the DR2G suffix; pins page 1; maximum
+    # ratings page 2; characteristics page 3; SOIC-8 NB Case 751-07 page 9).
+    # Purchasing identity fields (manufacturer, MPN, LCSC/JLC numbers and
+    # jlcpcb_selection) come from the reviewed-choice registry, not here.
+    current = "electronic_ic_soic_8_logic_comparator_lm393"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "D Suffix SOIC-8 NB Case 751-07"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709014336602112-C7955.pdf"
+        part["electrical"] = {
+            "comparator_count": 2,
+            "output_style": "open collector",
+            "input_common_mode": "includes ground",
+            "minimum_supply_voltage": "2.0 V single supply",
+            "maximum_supply_voltage": "36.0 V single supply / +-18 V split supply",
+            "maximum_input_offset_voltage": "5.0 mV at TA = 25 C",
+            "typical_input_bias_current": "20 nA",
+            "maximum_input_bias_current": "250 nA at TA = 25 C",
+            "typical_supply_current": "0.4 mA both comparators, RL = infinity",
+            "maximum_supply_current": "1.0 mA both comparators, RL = infinity",
+            "typical_output_saturation_voltage": "150 mV at ISink <= 4.0 mA",
+            "maximum_output_saturation_voltage": "400 mV at ISink <= 4.0 mA, TA = 25 C",
+            "minimum_output_sink_current": "6.0 mA at VO <= 1.5 V, TA = 25 C",
+            "typical_low_to_high_response_time": "1.3 us with 5.0 mV overdrive",
+            "large_signal_response_time": "300 ns with TTL input swing",
+            "maximum_power_dissipation": "570 mW at TA = 25 C, derate 5.7 mW/C",
+            "operating_temperature": "0 to +70 C",
+        }
+        part["ic_dimensions_mm"] = {
+            "body_length": 4.9,
+            "body_length_min": 4.8,
+            "body_length_max": 5.0,
+            "body_width": 3.9,
+            "body_width_min": 3.8,
+            "body_width_max": 4.0,
+            "overall_width": 6.0,
+            "overall_width_min": 5.8,
+            "overall_width_max": 6.2,
+            "body_height_max": 1.75,
+            "body_height_min": 1.35,
+            "pin_pitch": 1.27,
+            "pin_width": 0.42,
+            "pin_width_min": 0.33,
+            "pin_width_max": 0.51,
+            "pin_length": 1.05,
+            "seat_standoff_min": 0.1,
+            "seat_standoff_max": 0.25,
+            "lead_thickness_min": 0.19,
+            "lead_thickness_max": 0.25,
+        }
+        part["dimensions_mm"] = {"length": 4.9, "width": 3.9, "height": 1.75}
+        part["dimension_reference"] = {
+            "document": "onsemi LM393/D Rev. 25, SOIC-8 NB Case 751-07 Issue AK",
+            "pages": [9],
+            "notes": "Length/width/span use the documented min/max midpoints (A 4.80-5.00, B 3.80-4.00, S 5.80-6.20); height is the 1.75 maximum. Pin positions use the 1.27 BSC pitch.",
+        }
+        part["pins"] = {}
+        comparator_pins = [
+            ["1", "1out", "open_collector_output"],
+            ["2", "1in-", "input"],
+            ["3", "1in+", "input"],
+            ["4", "gnd", "power"],
+            ["5", "2in+", "input"],
+            ["6", "2in-", "input"],
+            ["7", "2out", "open_collector_output"],
+            ["8", "vcc", "power"],
+        ]
+        for pin_index in range(len(comparator_pins)):
+            pin = comparator_pins[pin_index]
+            part["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        # Top view, y up, pin 1 top-left; pin columns honour the 1.27 mm pitch.
+        lead_span = 1.05
+        pin_rows = [1.905, 0.635, -0.635, -1.905]
+        part["package_drawing"] = {
+            "overall": [6.0, 4.9],
+            "body": [3.9, 4.9],
+            "pins": [
+                ["1", "left", -2.475, pin_rows[0], lead_span, 0.42],
+                ["2", "left", -2.475, pin_rows[1], lead_span, 0.42],
+                ["3", "left", -2.475, pin_rows[2], lead_span, 0.42],
+                ["4", "left", -2.475, pin_rows[3], lead_span, 0.42],
+                ["5", "right", 2.475, pin_rows[3], lead_span, 0.42],
+                ["6", "right", 2.475, pin_rows[2], lead_span, 0.42],
+                ["7", "right", 2.475, pin_rows[1], lead_span, 0.42],
+                ["8", "right", 2.475, pin_rows[0], lead_span, 0.42],
+            ],
+            "pin_one": [-1.6, 2.1],
+        }
+        part["kicad"] = {
+            "symbol": "Comparator:LM393",
+            "machine_solder": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+            # No HandSolder variant of this master exists in the installed
+            # libraries. The same official JEDEC MS-012 master is selected
+            # unchanged: its 1.95 mm long pads already accommodate hand
+            # soldering, and no pads are enlarged or invented.
+            "hand_solder": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic onsemi LM393DR2G (C7955) in SOIC-8; the purchased identity is an exact LM393 ordering suffix.",
+            "The onsemi LM393/D Rev. 25 datasheet confirms the dual open-collector comparator with the eight-pin assignment above and SOIC-8 NB Case 751-07 dimensions.",
+            "Comparator:LM393 matches the datasheet pin for pin, including open-collector outputs and the V-/V+ power pins; Package_SO:SOIC-8_3.9x4.9mm_P1.27mm is the matching JEDEC MS-012 machine footprint.",
+            "No HandSolder variant of the SOIC-8 3.9x4.9 master exists in the installed KiCad libraries; the same official master is selected unchanged for hand soldering (long 1.95 mm pads, no enlargement).",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C6961 / STMicroelectronics TL072CDT, verified against the ST TL072
+    # datasheet Doc ID 2298 Rev 7 (ordering page 14 covers the CDT suffix; pins
+    # page 1; ratings pages 3-5; SO-8 package page 13). Purchasing identity
+    # fields come from the reviewed-choice registry, not here.
+    current = "electronic_ic_soic_8_amplifier_operational_amplifier_dual_jfet_input_stmicroelectronics_tl072cdt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "D Suffix SO-8"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8567021770910547968-C6961.pdf"
+        part["electrical"] = {
+            "amplifier_count": 2,
+            "input_stage": "JFET",
+            "minimum_supply_voltage": "6.0 V single supply / +-3.0 V split supply",
+            "maximum_supply_voltage": "36.0 V single supply / +-18.0 V split supply",
+            "maximum_input_offset_voltage": "10.0 mV at VCC = +-15 V, TA = 25 C (3.0 mV typical)",
+            "input_offset_voltage_drift": "10 uV/C typical",
+            "typical_input_bias_current": "20 pA",
+            "maximum_input_bias_current": "200 pA at TA = 25 C",
+            "typical_gain_bandwidth_product": "4.0 MHz at Vin = 10 mV, F = 100 kHz",
+            "minimum_gain_bandwidth_product": "2.5 MHz",
+            "typical_slew_rate": "16.0 V/us at Vin = 10 V, unity gain (8.0 V/us minimum)",
+            "typical_supply_current": "1.4 mA both amplifiers, no load",
+            "maximum_supply_current": "2.5 mA both amplifiers, no load",
+            "typical_equivalent_input_noise": "15 nV/sqrt(Hz) at RS = 100 Ohm, F = 1 kHz",
+            "minimum_large_signal_voltage_gain": "25 V/mV at RL = 2 kOhm, Vo = +-10 V (200 V/mV typical)",
+            "typical_output_voltage_swing": "+-12 V at RL = 2 kOhm, VCC = +-15 V",
+            "output_short_circuit_protection": "infinite duration; 40 mA typical short-circuit current",
+            "operating_temperature": "0 to +70 C (TL072C grade)",
+        }
+        part["ic_dimensions_mm"] = {
+            "body_length": 4.9,
+            "body_length_min": 4.8,
+            "body_length_max": 5.0,
+            "body_width": 3.9,
+            "body_width_min": 3.8,
+            "body_width_max": 4.0,
+            "overall_width": 6.0,
+            "overall_width_min": 5.8,
+            "overall_width_max": 6.2,
+            "body_height_max": 1.75,
+            "pin_pitch": 1.27,
+            "pin_width": 0.38,
+            "pin_width_min": 0.28,
+            "pin_width_max": 0.48,
+            "pin_length": 1.05,
+            "seat_standoff_min": 0.1,
+            "seat_standoff_max": 0.25,
+            "lead_thickness_min": 0.17,
+            "lead_thickness_max": 0.23,
+        }
+        part["dimensions_mm"] = {"length": 4.9, "width": 3.9, "height": 1.75}
+        part["dimension_reference"] = {
+            "document": "ST TL072 datasheet Doc ID 2298 Rev 7, SO-8 package Table 5",
+            "pages": [13],
+            "notes": "ST states typ values: D 4.90, E1 3.90, E 6.00, e 1.27; height is the 1.75 maximum. Pin positions use the 1.27 mm pitch.",
+        }
+        part["pins"] = {}
+        amplifier_pins = [
+            ["1", "1out", "output"],
+            ["2", "1in-", "input"],
+            ["3", "1in+", "input"],
+            ["4", "vcc-", "power"],
+            ["5", "2in+", "input"],
+            ["6", "2in-", "input"],
+            ["7", "2out", "output"],
+            ["8", "vcc+", "power"],
+        ]
+        for pin_index in range(len(amplifier_pins)):
+            pin = amplifier_pins[pin_index]
+            part["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        # Top view, y up, pin 1 top-left; pin rows honour the 1.27 mm pitch.
+        lead_span = 1.05
+        pin_rows = [1.905, 0.635, -0.635, -1.905]
+        part["package_drawing"] = {
+            "overall": [6.0, 4.9],
+            "body": [3.9, 4.9],
+            "pins": [
+                ["1", "left", -2.475, pin_rows[0], lead_span, 0.38],
+                ["2", "left", -2.475, pin_rows[1], lead_span, 0.38],
+                ["3", "left", -2.475, pin_rows[2], lead_span, 0.38],
+                ["4", "left", -2.475, pin_rows[3], lead_span, 0.38],
+                ["5", "right", 2.475, pin_rows[3], lead_span, 0.38],
+                ["6", "right", 2.475, pin_rows[2], lead_span, 0.38],
+                ["7", "right", 2.475, pin_rows[1], lead_span, 0.38],
+                ["8", "right", 2.475, pin_rows[0], lead_span, 0.38],
+            ],
+            "pin_one": [-1.6, 2.1],
+        }
+        part["kicad"] = {
+            "symbol": "Amplifier_Operational:TL072",
+            "machine_solder": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+            # No HandSolder variant of this master exists in the installed
+            # libraries; the same official JEDEC MS-012 master is selected
+            # unchanged (long 1.95 mm pads, nothing enlarged).
+            "hand_solder": "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic STMicroelectronics TL072CDT (C6961) in SO-8; the ordering table of Doc ID 2298 Rev 7 covers the CDT suffix exactly.",
+            "The ST datasheet confirms the dual JFET-input op-amp with the eight-pin assignment above and SO-8 package dimensions (D 4.80-5.00, E1 3.80-4.00, E 5.80-6.20, e 1.27 BSC).",
+            "Amplifier_Operational:TL072 matches the datasheet pin for pin; Package_SO:SOIC-8_3.9x4.9mm_P1.27mm is the matching JEDEC MS-012 machine footprint.",
+            "No HandSolder variant of the SOIC-8 3.9x4.9 master exists in the installed KiCad libraries; the same official master is selected unchanged for hand soldering.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    from working_oomp_populate_jlc import apply_reviewed_jlc_choices
+    apply_reviewed_jlc_choices(extras_dict, family="ic")

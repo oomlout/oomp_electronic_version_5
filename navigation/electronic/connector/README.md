@@ -1,7 +1,7 @@
 # Electronic / Connector
 
 [Up one level](../README.md)
-This category contains 259 parts in total.
+This category contains 265 parts in total.
 
 ## Categories
 
@@ -15,6 +15,7 @@ This category contains 259 parts in total.
 - [JST Sh](jst_sh/README.md)
 - [JST Xh](jst_xh/README.md)
 - [Micro Sd](micro_sd/README.md)
+- [Micro Usb](micro_usb/README.md)
 - [Rf Cable Assembly](rf_cable_assembly/README.md)
 - [Sma](sma/README.md)
 - [Terminal Block](terminal_block/README.md)

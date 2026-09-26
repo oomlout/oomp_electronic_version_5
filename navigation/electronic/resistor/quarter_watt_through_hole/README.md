@@ -1,7 +1,7 @@
 # Electronic / Resistor / Quarter Watt Through Hole
 
 [Up one level](../README.md)
-This category contains 91 parts in total.
+This category contains 93 parts in total.
 
 
 ## Parts
@@ -27,6 +27,7 @@ This category contains 91 parts in total.
 - [Resistor 1500 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_1500_ohm) — `electronic_resistor_quarter_watt_through_hole_1500_ohm`
 - [Resistor 15000 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_15000_ohm) — `electronic_resistor_quarter_watt_through_hole_15000_ohm`
 - [Resistor 150000 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_150000_ohm) — `electronic_resistor_quarter_watt_through_hole_150000_ohm`
+- [Resistor 1600 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_1600_ohm) — `electronic_resistor_quarter_watt_through_hole_1600_ohm`
 - [Resistor 18 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_18_ohm) — `electronic_resistor_quarter_watt_through_hole_18_ohm`
 - [Resistor 180 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_180_ohm) — `electronic_resistor_quarter_watt_through_hole_180_ohm`
 - [Resistor 1800 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_1800_ohm) — `electronic_resistor_quarter_watt_through_hole_1800_ohm`
@@ -74,6 +75,7 @@ This category contains 91 parts in total.
 - [Resistor 510 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_510_ohm) — `electronic_resistor_quarter_watt_through_hole_510_ohm`
 - [Resistor 5100 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_5100_ohm) — `electronic_resistor_quarter_watt_through_hole_5100_ohm`
 - [Resistor 510000 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_510000_ohm) — `electronic_resistor_quarter_watt_through_hole_510000_ohm`
+- [Resistor 53600 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_53600_ohm) — `electronic_resistor_quarter_watt_through_hole_53600_ohm`
 - [Resistor 56 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_56_ohm) — `electronic_resistor_quarter_watt_through_hole_56_ohm`
 - [Resistor 560 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_560_ohm) — `electronic_resistor_quarter_watt_through_hole_560_ohm`
 - [Resistor 5600 Ohm QUARTER_WATT_THROUGH_HOLE](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_quarter_watt_through_hole_5600_ohm) — `electronic_resistor_quarter_watt_through_hole_5600_ohm`

@@ -90,10 +90,12 @@ def generate_interactive_html_bom(details):
     pcb_file = data_directory / "kicad_file.kicad_pcb"
     output_directory = data_directory / "interactivehtmlbom"
     output_file = output_directory / "ibom.html"
+    record_run_errors = details.get("record_run_errors", True)
 
     if not pcb_file.is_file():
         message = f"KiCad PCB file is missing: {pcb_file}"
-        _write_run_error("interactive_html_bom_action", message)
+        if record_run_errors:
+            _write_run_error("interactive_html_bom_action", message)
         _write_status(output_directory, "failed", message)
         print(message)
         return None
@@ -102,7 +104,8 @@ def generate_interactive_html_bom(details):
             "InteractiveHtmlBom is not set up. Expected "
             f"{INTERACTIVE_HTML_BOM_SCRIPT}"
         )
-        _write_run_error("interactive_html_bom_action", message)
+        if record_run_errors:
+            _write_run_error("interactive_html_bom_action", message)
         _write_status(output_directory, "failed", message)
         print(message)
         return None
@@ -118,7 +121,8 @@ def generate_interactive_html_bom(details):
             "InteractiveHtmlBom requires KiCad's bundled Python with the pcbnew module. "
             "Install KiCad or set KICAD_PYTHON to that python.exe, then rerun this action."
         )
-        _write_run_error("interactive_html_bom_action", message)
+        if record_run_errors:
+            _write_run_error("interactive_html_bom_action", message)
         _write_status(output_directory, "waiting_for_kicad_python", message)
         print(message)
         return None
@@ -147,13 +151,15 @@ def generate_interactive_html_bom(details):
     if completed.returncode != 0:
         message = completed.stderr.strip() or "InteractiveHtmlBom generation failed"
         _write_status(output_directory, "failed", message, command=command)
-        _write_run_error("interactive_html_bom_action", message, command=command)
+        if record_run_errors:
+            _write_run_error("interactive_html_bom_action", message, command=command)
         print(message)
         return None
     if not output_file.is_file():
         message = f"InteractiveHtmlBom exited successfully but did not create {output_file}"
         _write_status(output_directory, "failed", message, command=command)
-        _write_run_error("interactive_html_bom_action", message, command=command)
+        if record_run_errors:
+            _write_run_error("interactive_html_bom_action", message, command=command)
         print(message)
         return None
 

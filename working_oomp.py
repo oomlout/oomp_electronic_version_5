@@ -28,6 +28,26 @@ def as_boolean(value):
     return str(value).strip().lower() in ["1", "true", "yes", "on"]
 
 
+def resolve_datasheet_copy_source(part, file_source):
+    """Point a part's datasheet copy at the shared PDF when deduplicated.
+
+    Parts whose datasheet is byte-identical to another part's keep a single
+    copy under parts_source and name its folder in ``oomp_datasheet_common_with``.
+    """
+    normalized = str(file_source).replace("\\", "/")
+    if normalized != f"parts_source/{part.get('name', '')}/datasheet.pdf":
+        return file_source
+    if os.path.isfile(os.path.join(os.path.dirname(__file__), normalized)):
+        return file_source
+    common_with = str(part.get("oomp_datasheet_common_with", "")).strip()
+    if common_with == "":
+        return file_source
+    shared_source = f"parts_source/{common_with}/datasheet.pdf"
+    if os.path.isfile(os.path.join(os.path.dirname(__file__), shared_source)):
+        return shared_source
+    return file_source
+
+
 def add_part_page_details(part):
     """Prepare small, explicit arrays used by the part Markdown template."""
     taxonomy = []
@@ -174,7 +194,7 @@ def add_part_page_details(part):
                 continue
             file_destination = str(file_copy.get("file_destination", "")).replace("\\", "/")
             if file_destination.lower().endswith("datasheet.pdf"):
-                source_file = str(file_copy.get("file_source", ""))
+                source_file = resolve_datasheet_copy_source(part, str(file_copy.get("file_source", "")))
                 if not os.path.isabs(source_file):
                     source_file = os.path.join(os.path.dirname(__file__), source_file)
                 if os.path.isfile(source_file):
@@ -247,6 +267,7 @@ def add_part_build_actions(part, count):
             file_source = str(file_copy.get("file_source", "")).strip()
             if file_source == "":
                 continue
+            file_source = resolve_datasheet_copy_source(part, file_source)
             if not os.path.isabs(file_source):
                 file_source = os.path.join(os.path.dirname(__file__), file_source)
             if not os.path.isfile(file_source):
@@ -337,6 +358,34 @@ def add_part_build_actions(part, count):
             "actions": component_actions,
             "description": "Build component diagrams and proportional 300-pixel README previews with deterministic Python actions.",
             "file_test": f"{DATA_DIRECTORY}/working_svg_square_pins_300.png",
+            "retries_until_complete": 0,
+        }
+
+    # KiCad renders run after the library install step has laid down the
+    # masters; parts without KiCad selections have nothing to plot.
+    kicad_selections = part.get("kicad", {})
+    if not isinstance(kicad_selections, dict):
+        kicad_selections = {}
+    has_kicad_data = any(
+        str(kicad_selections.get(kicad_field, "")).strip() != ""
+        for kicad_field in ["symbol", "machine_solder", "hand_solder"]
+    )
+    if has_kicad_data:
+        count += 1
+        part[f"oomlout_ai_roboclick_{count}"] = {
+            "actions": [
+                {
+                    "command": "run_python",
+                    "file_python": "kicad_agents/kicad_render_action.py",
+                    "file_output": f"{DATA_DIRECTORY}/kicad/contact_sheet.png",
+                    "description": "Render this part's KiCad symbol and footprints to SVG and PNG, and build a labelled contact sheet.",
+                    "part_id": part.get("name", ""),
+                    "regenerate_pngs": regenerate_pngs,
+                    "timeout": "600",
+                }
+            ],
+            "description": "Render KiCad symbol and footprint SVG and PNG views with a review contact sheet.",
+            "file_test": f"{DATA_DIRECTORY}/kicad/contact_sheet.png",
             "retries_until_complete": 0,
         }
     return count

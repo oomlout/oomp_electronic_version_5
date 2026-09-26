@@ -2,7 +2,7 @@
 
 `electronic_capacitor_0402_100_nano_farad`
 
-Capacitor 100 nF 0402 is an OOMP electronic capacitor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm.
+Capacitor 100 nF 0402 is an OOMP electronic capacitor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
 
 ![Capacitor 100 nF 0402 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Capacitor 100 nF 0402 is an OOMP electronic capacitor definition. It uses the 04
 | Type | Capacitor |
 | Package / style | 0402 |
 | Nominal size | 1.0 &#x00D7; 0.5 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Capacitor 100 nF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.55 mm |
 | Length | 1.0 mm |
 | Width | 0.5 mm |
 
@@ -41,14 +43,28 @@ Capacitor 100 nF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CC0402KRX7R7BB104` |
-| LCSC | [`C60474`](https://www.lcsc.com/product-detail/C60474.html) |
+| Manufacturer part number | `CL05B104KO5NNNC` |
 | LCSC | [`C1525`](https://www.lcsc.com/product-detail/C1525.html) |
+| LCSC | [`C60474`](https://www.lcsc.com/product-detail/C60474.html) |
 | LCSC | [`C131394`](https://www.lcsc.com/product-detail/C131394.html) |
+| JLCPCB | [`C1525`](https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

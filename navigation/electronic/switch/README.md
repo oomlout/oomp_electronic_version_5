@@ -1,7 +1,7 @@
 # Electronic / Switch
 
 [Up one level](../README.md)
-This category contains 11 parts in total.
+This category contains 12 parts in total.
 
 ## Categories
 

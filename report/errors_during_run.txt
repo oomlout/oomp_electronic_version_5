@@ -11425,6 +11425,7 @@ Error message: Skipping production_jlc_action for oomp_project_github_adafruit_a
 Traceback:
 NoneType: None
 
+<<<<<<< Updated upstream
 [2026-09-22T23:13:57.880958+00:00] working_svg
 Error type: ModuleNotFoundError
 Error message: No module named 'opsvg'
@@ -14835,4 +14836,93 @@ NoneType: None
 Message: No modern .kicad_sch files found under C:\gh\oomp_electronic_version_5\parts\oomp_project_github_adafruit_adafruit_swirly_grid_pcb_5x5_current
 Traceback:
 NoneType: None
+=======
+[2026-09-24T17:28:24.237729+00:00] browser_research_agent
+Error type: FileExistsError
+Error message: Datasheet already exists: C:\gh\oomp_electronic_version_5\parts_source\electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq\datasheet.pdf; pass --replace to update it.
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\browser_research_agent.py", line 262, in main
+    destination = import_browser_datasheet(
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\browser_research_agent.py", line 220, in import_browser_datasheet
+    raise FileExistsError(f"Datasheet already exists: {destination}; pass --replace to update it.")
+FileExistsError: Datasheet already exists: C:\gh\oomp_electronic_version_5\parts_source\electronic_ic_sop_8_5_28_mm_x_5_23_mm_memory_spi_nor_flash_128_mbit_winbond_w25q128jvsiq\datasheet.pdf; pass --replace to update it.
+>>>>>>> Stashed changes
+
+[2026-09-26T14:06:08.035539+00:00] component_svg_action
+Error type: ValueError
+Error message: Roboclick part directory 'oomp_electronic_version_5' does not match part_id 'electronic_ic_soic_8_logic_comparator_lm393'.
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\component_svg_action.py", line 62, in main
+    build_component_diagrams(json.loads(arguments.kwargs))
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\component_svg_action.py", line 30, in build_component_diagrams
+    raise ValueError(
+ValueError: Roboclick part directory 'oomp_electronic_version_5' does not match part_id 'electronic_ic_soic_8_logic_comparator_lm393'.
+
+[2026-09-26T14:48:08.269619+00:00] kicad_processing_agent
+Message: No modern .kicad_sch files found under C:\Users\aaron\AppData\Local\Temp\tmpkgcowc4a\part
+Traceback:
+NoneType: None
+
+[2026-09-26T14:51:36.348807+00:00] kicad_processing_agent
+Message: No modern .kicad_sch files found under C:\Users\aaron\AppData\Local\Temp\tmpkt9v42nm\part
+Traceback:
+NoneType: None
+
+[2026-09-26T16:17:49.684502+00:00] kicad_render_action
+Error type: JSONDecodeError
+Error message: Invalid \escape: line 1 column 18 (char 17)
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_render_action.py", line 361, in main
+    build(json.loads(arguments.kwargs))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\json\decoder.py", line 353, in raw_decode
+    obj, end = self.scan_once(s, idx)
+               ^^^^^^^^^^^^^^^^^^^^^^
+json.decoder.JSONDecodeError: Invalid \escape: line 1 column 18 (char 17)
+
+[2026-09-26T16:28:59.333666+00:00] kicad_render_action
+Error type: FileNotFoundError
+Error message: No KiCad data to render for does_not_exist_xyz: C:\gh\oomp_electronic_version_5\parts\does_not_exist_xyz\data\kicad is missing.
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_render_action.py", line 387, in main
+    build(json.loads(arguments.kwargs))
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_render_action.py", line 320, in build
+    raise FileNotFoundError(
+FileNotFoundError: No KiCad data to render for does_not_exist_xyz: C:\gh\oomp_electronic_version_5\parts\does_not_exist_xyz\data\kicad is missing.
+
+[2026-09-26T17:33:38.575119+00:00] kicad_render_action
+Error type: FileNotFoundError
+Error message: No KiCad data to render for electronic_capacitor_0402_100_nano_farad_50_volt: C:\gh\oomp_electronic_version_5\parts\electronic_capacitor_0402_100_nano_farad_50_volt\data\kicad is missing.
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_render_action.py", line 682, in main
+    build(json.loads(arguments.kwargs))
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_render_action.py", line 591, in build
+    raise FileNotFoundError(
+FileNotFoundError: No KiCad data to render for electronic_capacitor_0402_100_nano_farad_50_volt: C:\gh\oomp_electronic_version_5\parts\electronic_capacitor_0402_100_nano_farad_50_volt\data\kicad is missing.
+
+[2026-09-26T20:07:47.719889+00:00] working_oomp_populate
+Error type: OSError
+Error message: [Errno 22] Invalid argument: 'parts_source\\electronic_resistor_0603_56000_ohm\\working.yaml'
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\working.py", line 61, in run
+    working_oomp_populate.main(**kwargs_2)
+  File "C:\gh\oomp_electronic_version_5\working_oomp_populate.py", line 125, in main
+    write_extras(extras)
+  File "C:\gh\oomlout_oomp_version_5\oomp_populate_helper.py", line 72, in write_extras
+    with open(yaml_path, "w", encoding="utf-8") as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 22] Invalid argument: 'parts_source\\electronic_resistor_0603_56000_ohm\\working.yaml'
 

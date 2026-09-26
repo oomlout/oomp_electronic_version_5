@@ -1,10 +1,10 @@
-# IC Logic Comparator LM393 SOIC_8
+# IC LM393DR2G SOIC 8
 
 `electronic_ic_soic_8_logic_comparator_lm393`
 
-IC Logic Comparator LM393 SOIC_8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
+IC LM393DR2G SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
-![IC Logic Comparator LM393 SOIC_8 pinout](data/working_svg_square_pins.svg)
+![IC LM393DR2G SOIC 8 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -41,22 +41,36 @@ IC Logic Comparator LM393 SOIC_8 is an OOMP electronic ic definition. It uses th
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `LM393DR2G` |
+| LCSC | [`C7955`](https://www.lcsc.com/product-detail/C7955.html) |
+| JLCPCB | [`C7955`](https://jlcpcb.com/partdetail/onsemi-LM393DR2G/C7955) |
+
+
 
 
 ## Pins
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-| 1 | OUT1 | signal |
-| 2 | IN1_MINUS | signal |
-| 3 | IN1_PLUS | signal |
-| 4 | GND | gnd |
-| 5 | IN2_PLUS | signal |
-| 6 | IN2_MINUS | signal |
-| 7 | OUT2 | signal |
-| 8 | VCC | power |
+| 1 | 1out | open_collector_output |
+| 2 | 1in- | input |
+| 3 | 1in+ | input |
+| 4 | gnd | power |
+| 5 | 2in+ | input |
+| 6 | 2in- | input |
+| 7 | 2out | open_collector_output |
+| 8 | vcc | power |
 
 
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

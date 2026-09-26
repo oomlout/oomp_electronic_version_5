@@ -1,0 +1,13 @@
+# Oomp / Project / Github / Adafruit / Adafruit LED Backpacks / Adafruit Bicolor 8X8
+
+[Up one level](../README.md)
+This category contains 1 parts in total.
+
+
+## Parts
+
+- [Project adafruit/Adafruit-LED-Backpacks Adafruit bicolor 8x8 current](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_bicolor_8x8_current) — `oomp_project_github_adafruit_adafruit_led_backpacks_adafruit_bicolor_8x8_current`
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

@@ -36,6 +36,38 @@ def main(**kwargs):
             "part_number": "blm18kg221sn1d",
             "name_short": "Ferrite Bead BLM18KG221SN1D",
         },
+        {
+            "package": "0603",
+            "impedance": "600_ohm",
+            "current_rating": "200_milliamp",
+            "manufacturer": "sunlord",
+            "part_number": "gz1608d601tf",
+            "name_short": "Ferrite Bead GZ1608D601TF",
+        },
+        {
+            "package": "0805",
+            "impedance": "100_ohm",
+            "current_rating": "800_milliamp",
+            "manufacturer": "sunlord",
+            "part_number": "gz2012d101tf",
+            "name_short": "Ferrite Bead GZ2012D101TF",
+        },
+        {
+            "package": "0805",
+            "impedance": "600_ohm",
+            "current_rating": "500_milliamp",
+            "manufacturer": "sunlord",
+            "part_number": "gz2012d601tf",
+            "name_short": "Ferrite Bead GZ2012D601TF",
+        },
+        {
+            "package": "0603",
+            "impedance": "120_ohm",
+            "current_rating": "2_amp",
+            "manufacturer": "murata",
+            "part_number": "blm18pg121sn1d",
+            "name_short": "Ferrite Bead BLM18PG121SN1D",
+        },
     ]
 
     for ferrite_bead in ferrite_beads:

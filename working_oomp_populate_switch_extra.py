@@ -38,3 +38,6 @@ def main(**kwargs):
                 "RP2040:ALPSALPINE_SKRPACE010",
             ],
         }
+
+    from working_oomp_populate_jlc import apply_reviewed_jlc_choices
+    apply_reviewed_jlc_choices(extras_dict, family="switch")

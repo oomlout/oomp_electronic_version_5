@@ -22,6 +22,56 @@ def main(**kwargs):
                         option["taxonomy_7"] = load_capacitance
                         options.append(option)
 
+    # C9002 has 80 ohm ESR. The generic 12 MHz / 20 pF choice currently
+    # prefers a 50 ohm part, so keep this Basic SKU as an explicit variant.
+    options.append({
+        "taxonomy_2": "crystal",
+        "taxonomy_3": "3225",
+        "taxonomy_4": "surface_mount",
+        "taxonomy_5": "4_pin",
+        "taxonomy_6": "12_mhz",
+        "taxonomy_7": "20_pf",
+        "taxonomy_8": "80_ohm_esr",
+    })
+
+    # C9006 is a 25 MHz, 12 pF, 50 ohm 3225 crystal.  Keep its electrical
+    # constraints explicit rather than allowing it to stand in for a different
+    # load-capacitance or ESR oscillator.
+    options.append({
+        "taxonomy_2": "crystal",
+        "taxonomy_3": "3225",
+        "taxonomy_4": "surface_mount",
+        "taxonomy_5": "4_pin",
+        "taxonomy_6": "25_mhz",
+        "taxonomy_7": "12_pf",
+        "taxonomy_8": "50_ohm_esr",
+    })
+
+    # C12674 uses the much larger two-terminal HC-49S-SMD outline.  It is not
+    # interchangeable with the existing 5032 8 MHz crystal despite sharing
+    # frequency and load capacitance.
+    options.append({
+        "taxonomy_2": "crystal",
+        "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount",
+        "taxonomy_5": "2_pin",
+        "taxonomy_6": "8_mhz",
+        "taxonomy_7": "20_pf",
+        "taxonomy_8": "70_ohm_esr",
+    })
+
+    # C13738 is a 16 MHz 3225 part, but its 9 pF load differs from the
+    # existing 16 MHz / 20 pF definition.
+    options.append({
+        "taxonomy_2": "crystal",
+        "taxonomy_3": "3225",
+        "taxonomy_4": "surface_mount",
+        "taxonomy_5": "4_pin",
+        "taxonomy_6": "16_mhz",
+        "taxonomy_7": "9_pf",
+        "taxonomy_8": "50_ohm_esr",
+    })
+
     # 5032 2-pin crystals
     packages = ["5032"]
     mounting_types = ["surface_mount"]

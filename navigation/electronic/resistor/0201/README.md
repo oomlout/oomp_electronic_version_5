@@ -1,7 +1,7 @@
 # Electronic / Resistor / 0201
 
 [Up one level](../README.md)
-This category contains 91 parts in total.
+This category contains 93 parts in total.
 
 
 ## Parts
@@ -27,6 +27,7 @@ This category contains 91 parts in total.
 - [Resistor 1500 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_1500_ohm) — `electronic_resistor_0201_1500_ohm`
 - [Resistor 15000 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_15000_ohm) — `electronic_resistor_0201_15000_ohm`
 - [Resistor 150000 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_150000_ohm) — `electronic_resistor_0201_150000_ohm`
+- [Resistor 1600 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_1600_ohm) — `electronic_resistor_0201_1600_ohm`
 - [Resistor 18 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_18_ohm) — `electronic_resistor_0201_18_ohm`
 - [Resistor 180 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_180_ohm) — `electronic_resistor_0201_180_ohm`
 - [Resistor 1800 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_1800_ohm) — `electronic_resistor_0201_1800_ohm`
@@ -74,6 +75,7 @@ This category contains 91 parts in total.
 - [Resistor 510 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_510_ohm) — `electronic_resistor_0201_510_ohm`
 - [Resistor 5100 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_5100_ohm) — `electronic_resistor_0201_5100_ohm`
 - [Resistor 510000 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_510000_ohm) — `electronic_resistor_0201_510000_ohm`
+- [Resistor 53600 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_53600_ohm) — `electronic_resistor_0201_53600_ohm`
 - [Resistor 56 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_56_ohm) — `electronic_resistor_0201_56_ohm`
 - [Resistor 560 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_560_ohm) — `electronic_resistor_0201_560_ohm`
 - [Resistor 5600 Ohm 0201](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0201_5600_ohm) — `electronic_resistor_0201_5600_ohm`

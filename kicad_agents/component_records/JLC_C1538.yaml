@@ -1,0 +1,71 @@
+format_version: 1
+ledger_id: JLC_C1538
+status: researched
+family: capacitor
+part_id: electronic_capacitor_0402_4_7_nano_farad
+exact_identity: true
+package: '0402'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  manufacturer_part_number: 0402B472K500NT
+  lcsc_part_number: C1538
+  lcsc_decision: New generic 0402 4.7 nF capacitor. The live Basic FH C1538 choice is a 50 V X7R +/-10%
+    MLCC matching value and package. The purchase preference carries those ratings; project voltage margin
+    and DC-bias behavior remain for the full pass.
+  product_url: https://jlcpcb.com/partdetail/1890-0402B472K500NT/C1538
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987717859651584-C1538.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/1890-0402B472K500NT/C1538
+  webpage_capture: parts_source/electronic_capacitor_0402_4_7_nano_farad/web_page_distributor_jlc.txt
+  evidence_notes:
+  - Live JLC page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 0402B472K500NT, C1538, 0402,
+    4.7nF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-09-26: the shared Fenghua family PDF (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad,
+    sha256 verified) decodes the ordering code 0402B472K500NT = 0402 / X7R / 472 = 4.7 nF / K = +-10%
+    / 500 = 50 V.'
+  - The X7R 0402 table (page 9) lists 4.7 nF with the CA thickness code at every voltage including 50
+    V, so the document covers the full selected suffix.
+  - Non-polarized two-terminal chip; KiCad Device:C_Small with Capacitor_SMD:C_0402_1005Metric and the
+    official C_0402_1005Metric_Pad0.74x0.62mm_HandSolder hand master.
+  - 'Detailed tables and page references: parts_source/electronic_capacitor_0402_4_7_nano_farad/integration_review.md'
+jlc_selection:
+  verified_on: '2026-09-24'
+  official_url: https://jlcpcb.com/partdetail/1890-0402B472K500NT/C1538
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 1435757
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: New generic 0402 4.7 nF capacitor. The live Basic FH C1538 choice is a 50 V X7R
+    +/-10% MLCC matching value and package. The purchase preference carries those ratings; project voltage
+    margin and DC-bias behavior remain for the full pass.
+  ratings:
+    Capacitance: 4.7 nF (code 472)
+    Tolerance: +-10% (code K)
+    Rated voltage: 50 V (code 500)
+    Dielectric: X7R (Class II)
+    Temperature range: -55 C to +125 C
+    Temperature characteristic: +-15% over the operating range
+    Thickness: 0.50 +-0.05 mm (CA code)
+    Polarization: none
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared Fenghua family PDF)
+    ordering_coverage:
+    - 4
+    capacitance_voltage_coverage:
+    - 9
+    product_dimensions:
+    - 5
+    temperature_characteristics:
+    - 5
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-09-26 after the build. data/working_svg_square_pins.png hero: Capacitor
+    4.7 nF 0402 with terminals labelled 1 and 2, silkscreen code and bip-39 words legible; assembly and
+    pin views use the standard 0402 chip renderer, no overlap or cropping. data/kicad manifest complete:
+    Device:C_Small symbol, C_0402_1005Metric machine master, C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
+    hand master. README.md: 4.7 nF value, C1538 links, pin table, datasheet link to data/datasheet.pdf.
+    Limitation: KiCad assets checked as s-expression text rather than rendered in a KiCad GUI.'

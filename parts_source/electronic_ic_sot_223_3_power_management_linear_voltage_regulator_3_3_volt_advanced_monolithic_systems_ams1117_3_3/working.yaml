@@ -15,11 +15,41 @@ distributors:
   part_number: C6186
   title: LCSC
   url: https://www.lcsc.com/product-detail/C6186.html
+- key: jlcpcb
+  part_number: C6186
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186
 file_copy:
 - file_destination: datasheet.pdf
   file_source: parts_source/electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3/datasheet.pdf
+jlcpcb_selection:
+  compatibility_notes: Exact AMS1117-3.3 identity; JLC C6186 already matched this
+    OOMP ID. SOT-223 pin 2 and tab are VOUT. KiCad SOT-223-3_TabPin2 matches pad numbering;
+    the same official footprint serves hand assembly because no dedicated hand-solder
+    variant exists.
+  datasheet_pages:
+  - 1
+  - 2
+  - 3
+  - 7
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186
+  pcba_min_qty_observed: null
+  pinout_checked: true
+  purchase_moq_observed: 1
+  ratings:
+    dropout_voltage: 1.1 V typical, 1.3 V maximum at 0.8 A
+    maximum_input_voltage: 15 V absolute maximum
+    operating_junction_temperature: -40 to +125 deg C
+    output_current: 1 A series rating; SOT-223 dissipation limit 1.2 W
+    output_voltage: 3.3 V nominal
+  stock_observed: 1158933
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
-  hand_solder: ''
+  hand_solder: Package_TO_SOT_SMD:SOT-223-3_TabPin2
   machine_solder: Package_TO_SOT_SMD:SOT-223-3_TabPin2
   symbol: Regulator_Linear:AMS1117-3.3
 lcsc_search: AMS1117-3.3
@@ -64,8 +94,16 @@ package_drawing:
     - 3.05
     - 1.75
 part_id: U1
+part_number_jlcpcb: C6186
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186
 part_number_lcsc: C6186
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C6186.html
 part_number_manufacturer: AMS1117-3.3
+part_numbers_lcsc:
+- part_number: C6186
+part_numbers_manufacturer:
+- manufacturer: Advanced Monolithic Systems
+  part_number: AMS1117-3.3
 pins:
   pin_1:
     name: gnd
@@ -79,7 +117,7 @@ pins:
     name: vin
     number: '3'
     type: power
-product_url: https://www.lcsc.com/product-detail/C6186.html
+product_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186
 svg_details:
 - filename_extra: assembly
   make_a4: false

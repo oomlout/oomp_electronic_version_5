@@ -1,7 +1,7 @@
 # Electronic / Resistor
 
 [Up one level](../README.md)
-This category contains 553 parts in total.
+This category contains 564 parts in total.
 
 ## Categories
 

@@ -1,7 +1,7 @@
 # Electronic / Diode
 
 [Up one level](../README.md)
-This category contains 16 parts in total.
+This category contains 18 parts in total.
 
 ## Categories
 

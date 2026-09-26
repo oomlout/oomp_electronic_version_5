@@ -1,0 +1,44 @@
+format_version: 1
+ledger_id: JLC_C6186
+status: researched
+family: ic
+part_id: electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3
+exact_identity: true
+package: SOT-223
+pin_count: 3
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: Advanced Monolithic Systems
+  manufacturer_part_number: AMS1117-3.3
+  lcsc_part_number: C6186
+  lcsc_decision: JLCPCB and LCSC use the same C6186 purchasing code for this exact part.
+  product_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8550724073475612672-C6186.pdf
+  browser_sources:
+    - https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186
+  webpage_capture: parts_source/electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3/web_page_distributor_jlc.txt
+  evidence_notes:
+    - The official page displayed Basic, C6186, Advanced Monolithic Systems, AMS1117-3.3, and SOT-223 on 2026-09-24.
+    - The existing repository PDF is an Advanced Monolithic Systems AMS1117 series datasheet; its page 1 ordering table explicitly includes AMS1117-3.3 in SOT-223 and shows pin 1 GND, pin 2 VOUT, pin 3 VIN, with the tab VOUT.
+    - Datasheet page 7 gives 2.29 mm nominal lead pitch, 6.30-6.71 mm body length, and 6.71-7.29 mm overall width; the selected KiCad SOT-223-3_TabPin2 master has pads 1, 2, 3 and the tab as pad 2.
+    - The linked JLC PDF was blocked in the isolated browser. The existing tracked PDF was inspected locally and its external acquisition URL remains unverified; no direct HTTP download was made.
+jlc_selection:
+  verified_on: '2026-09-24'
+  official_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 1158933
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: Exact AMS1117-3.3 identity; JLC C6186 already matched this OOMP ID. SOT-223 pin 2 and tab are VOUT. KiCad SOT-223-3_TabPin2 matches pad numbering; the same official footprint serves hand assembly because no dedicated hand-solder variant exists.
+  ratings:
+    output_voltage: 3.3 V nominal
+    output_current: 1 A series rating; SOT-223 dissipation limit 1.2 W
+    maximum_input_voltage: 15 V absolute maximum
+    dropout_voltage: 1.1 V typical, 1.3 V maximum at 0.8 A
+    operating_junction_temperature: -40 to +125 deg C
+  datasheet_pages: [1, 2, 3, 7]
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: pending

@@ -1,0 +1,82 @@
+format_version: 1
+ledger_id: JLC_C1546
+status: researched
+family: capacitor
+part_id: electronic_capacitor_0402_100_pico_farad
+exact_identity: true
+package: '0402'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  manufacturer_part_number: 0402CG101J500NT
+  lcsc_part_number: C1546
+  lcsc_decision: New generic 0402 100 pF capacitor. The live Basic FH C1546 choice is a 50 V C0G +/-5%
+    MLCC matching value and package. The purchase preference carries those ratings; project voltage margin
+    remains for the full pass.
+  product_url: https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987747089891328-C1546.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546
+  webpage_capture: parts_source/electronic_capacitor_0402_100_pico_farad/web_page_distributor_jlc.txt
+  evidence_notes:
+  - Live JLC page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 0402CG101J500NT, C1546, 0402,
+    100pF, 50V, C0G and +/-5% on 2026-09-24.
+  - 'Stage-two pass 2026-09-26: Fenghua General Series spec (the C1546 PDF saved in parts_source) verifies
+    0402CG101J500NT end to end.'
+  - 'Ordering decode (page 4): 0402 = 1.00x0.50 mm size, CG = C0G dielectric, 101 = 10x10^1 pF = 100 pF,
+    J = +-5%, 500 = 50 V, N = nickel-barrier termination, T = 7-inch braided reel.'
+  - 'C0G 0402 capacitance/voltage table (page 6): 100 pF is offered at 25 V and 50 V (code CA), so the
+    50 V ordering suffix is a catalogue row, not a guess.'
+  - 'Dimensions (page 5): 0402 CA = L 1.00+-0.05, W 0.50+-0.05, T 0.50+-0.05, terminal width WB 0.25+-0.05
+    mm; the CA thickness code from the table gives T 0.50+-0.05 consistently.'
+  - 'Temperature characteristics (page 5): C0G is 0+-30 ppm/C referenced to 25 C over -55 to +125 C.'
+  - 'Two-terminal non-polarized chip: pins 1/2 passive, Device:C_Small symbol, Capacitor_SMD:C_0402_1005Metric
+    machine pad set with the Pad0.74x0.62mm_HandSolder variant for hand assembly (masters verified in
+    the installed KiCad 10 libraries).'
+jlc_selection:
+  verified_on: '2026-09-24'
+  official_url: https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 3487478
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: New generic 0402 100 pF capacitor. The live Basic FH C1546 choice is a 50 V C0G
+    +/-5% MLCC matching value and package. The purchase preference carries those ratings; project voltage
+    margin remains for the full pass.
+  ratings:
+    Capacitance:
+      value: 100 pF
+      conditions: reference 25 C
+    Tolerance:
+      value: +-5%
+      conditions: code J, measured at 25 C
+    Voltage Rating:
+      value: 50 V DC
+      conditions: rated continuous; derating applies above category temperature
+    Temperature Coefficient:
+      value: C0G (0+-30 ppm/C)
+      conditions: referenced to 25 C
+    Operating Temperature:
+      value: -55 C to +125 C
+      conditions: Class I dielectric
+    Dielectric:
+      value: C0G (Class I)
+      conditions: Fenghua dielectric code CG
+  datasheet_pages:
+    '4': 'How To Order decode: size 0402, dielectric CG (C0G), capacitance 101, tolerance J (+-5%), voltage
+      500 (50 V), termination N, packing T'
+    '5': 'Product dimensions (0402 CA: 1.00x0.50, T 0.50, WB 0.25 mm) and temperature coefficient/characteristics
+      table (C0G row)'
+    '6': 'C0G 0402 capacitance/voltage table: 100 pF at 25 V and 50 V = CA'
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: Inspected 2026-09-26 after the build. data/working_svg_square_pins_300.png hero renders
+    "Capacitor 100 pF 0402" with a standard built-in 0402 chip outline, terminal pads labelled 1 and 2,
+    and silkscreen mark 5REI4 matching the kicad manifest mark. data/working_svg_assembly_pins_300.png
+    top view shows the "101" value code (10 x 10^1 pF = 100 pF per the Fenghua ordering decode) between
+    terminals 1 and 2. data/kicad/manifest.yaml is status complete with symbol (Device:C_Small), machine_solder
+    (C_0402_1005Metric) and hand_solder (C_0402_1005Metric_Pad0.74x0.62mm_HandSolder) assets; README lists
+    the 0402 100 pF entry. Approved.

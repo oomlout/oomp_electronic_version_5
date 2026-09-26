@@ -6,7 +6,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [IC Logic Comparator LM393 SOIC_8](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_logic_comparator_lm393) — `electronic_ic_soic_8_logic_comparator_lm393`
+- [IC LM393DR2G SOIC 8](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_logic_comparator_lm393) — `electronic_ic_soic_8_logic_comparator_lm393`
 
 ---
 

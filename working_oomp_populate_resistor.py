@@ -21,7 +21,7 @@ def main(**kwargs):
     resistance_values.append(10000000)
 
     # Additional project values can be added directly to this simple list.
-    additional_resistance_values = [200, 300, 510, 1600, 2400, 5100, 12000, 20000, 53600, 102000, 133000, 200000, 510000]
+    additional_resistance_values = [200, 300, 510, 1600, 2400, 5100, 20000, 53600, 102000, 133000, 200000, 510000]
     for additional_resistance_value in additional_resistance_values:
         resistance_values.append(additional_resistance_value)
 
@@ -42,6 +42,17 @@ def main(**kwargs):
         ["2512", "13_3_ohm"],
         ["2512", "0_015_ohm"],
         ["1210", "0_1_ohm"],
+        ["0805", "2_2_ohm"],
+        ["0805", "4_7_ohm"],
+        ["0805", "5_1_ohm"],
+        ["1206", "1_ohm"],
+        ["0603", "1_ohm"],
+        ["0603", "2_2_ohm"],
+        ["0603", "2_ohm"],
+        ["0603", "4_7_ohm"],
+        ["0603", "5_1_ohm"],
+        ["0805", "1_ohm"],
+        ["1206", "0_1_ohm"],
     ]
     for low_value_resistor in low_value_resistors:
         option = {}
@@ -53,12 +64,41 @@ def main(**kwargs):
     # Board values outside the E12 grid: the Soldered 0603 pull-ups and the
     # SparkFun USB current-limiting resistors.
     extra_values = [
-        ["0603", 1600],
         ["0603", 5.6],
         ["0603", 30],
+        ["0402", 2000],
+        ["0603", 3000],
+        ["0603", 6200],
+        ["0805", 20],
+        ["0805", 24000],
+        ["0805", 2000],
+        ["0805", 30000],
+        ["0805", 3000],
+        ["0805", 49.9],
+        ["0805", 51000],
+        ["0805", 51],
+        ["1206", 2000],
+        ["1206", 20],
+        ["0603", 13000],
+        ["0603", 20],
+        ["0603", 2000],
+        ["0603", 2000000],
+        ["0603", 3600],
+        ["0603", 30000],
+        ["0603", 300000],
+        ["0603", 4990],
+        ["0603", 49900],
+        ["0603", 49.9],
+        ["0603", 51000],
+        ["0603", 51],
+        ["0603", 9100],
+        ["0603", 24000],
+        ["0402", 49.9],
+        ["0402", 51000],
     ]
     for size, resistance_value in extra_values:
-        value_token = f"{resistance_value:g}".replace(".", "_")
+        # Integer values must stay exact; :g alone would render 2000000 as 2e+06.
+        value_token = f"{resistance_value:d}" if isinstance(resistance_value, int) else f"{resistance_value:g}".replace(".", "_")
         option = {
             "taxonomy_2": "resistor",
             "taxonomy_3": size,

@@ -334,3 +334,7 @@ def main(**kwargs):
             "symbols": ["Device:D_Schottky"],
             "footprints": ["Diode_SMD:D_SOD-323"],
         }
+
+    # Apply individually reviewed JLC house choices after other supplier data.
+    from working_oomp_populate_jlc import apply_reviewed_jlc_choices
+    apply_reviewed_jlc_choices(extras_dict, family="diode")

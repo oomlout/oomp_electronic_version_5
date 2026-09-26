@@ -1,0 +1,104 @@
+format_version: 1
+ledger_id: JLC_C7955
+status: researched
+family: ic
+part_id: electronic_ic_soic_8_logic_comparator_lm393
+exact_identity: true
+package: SOIC-8
+pin_count: 8
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: onsemi
+  manufacturer_part_number: LM393DR2G
+  lcsc_part_number: C7955
+  lcsc_decision: Existing generic LM393 SOIC-8 dual-comparator OOMP entry has no preferred
+    supplier or manufacturer identity. Select live-verified Basic onsemi LM393DR2G
+    / C7955 as its purchase part. The full pass must verify onsemi pin mapping, package
+    dimensions, open-collector output characteristics, ratings, and the assigned KiCad
+    symbol/footprint before generated assets are certified.
+  product_url: https://jlcpcb.com/partdetail/onsemi-LM393DR2G/C7955
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709014336602112-C7955.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/onsemi-LM393DR2G/C7955
+  webpage_capture: parts_source/electronic_ic_soic_8_logic_comparator_lm393/web_page_distributor_jlc.txt
+  evidence_notes:
+  - Live JLC page displayed Basic, onsemi, LM393DR2G, C7955, SOIC-8, two comparator
+    channels, 2V~36V single supply and the listed electrical parameters on 2026-09-24.
+  - The existing OOMP entry is a generic LM393 comparator in SOIC-8 with no LCSC number.
+    Purchase preference does not yet certify the generic pinout or physical footprint.
+  - 'Full pass 2026-09-26: the saved PDF is onsemi LM393/D Rev. 25 (April 2014),
+    publication LM393/D; its ordering table (page 7) covers LM393DR2G (0 to +70 C,
+    SOIC-8 Pb-free, D suffix, Case 751-07, 2500/tape and reel), so the document
+    covers the full selected suffix.'
+  - 'Pin connections (page 1, top view): 1 Output A, 2 Input A-, 3 Input A+, 4 GND,
+    5 Input B+, 6 Input B-, 7 Output B, 8 VCC; no NC pins, no exposed pad.'
+  - KiCad Comparator:LM393 (extends LM2903) matches the datasheet pin for pin, with
+    open-collector output types and V-/V+ power pins; Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+    (JEDEC MS-012AA) matches the Case 751-07 body and 1.27 BSC pitch. No HandSolder
+    variant exists in the installed libraries, so the same official master is
+    selected unchanged for hand soldering (long 1.95 mm pads; nothing enlarged).
+  - The unmatched-extras duplicate drawing entry was removed; the datasheet-verified
+    pins, dimensions and package drawing now live in working_oomp_populate_ic_extra.py.
+  - Detailed tables and page references: parts_source/electronic_ic_soic_8_logic_comparator_lm393/integration_review.md
+jlc_selection:
+  verified_on: '2026-09-24'
+  official_url: https://jlcpcb.com/partdetail/onsemi-LM393DR2G/C7955
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 238878
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: Existing generic LM393 SOIC-8 dual-comparator OOMP entry has
+    no preferred supplier or manufacturer identity. Select live-verified Basic onsemi
+    LM393DR2G / C7955 as its purchase part. The full pass must verify onsemi pin mapping,
+    package dimensions, open-collector output characteristics, ratings, and the assigned
+    KiCad symbol/footprint before generated assets are certified.
+  ratings:
+    Comparator channels: 2
+    Output style: open collector (sink only; logic-compatible with pull-up)
+    Supply voltage (recommended single): 2.0 V to 36.0 V
+    Supply voltage (recommended split): ±1.0 V to ±18.0 V
+    Supply voltage (absolute maximum): +36 V or ±18 V
+    Input differential voltage (absolute maximum): 36 V
+    Input common mode range: 0 V to VCC-1.5 V at 25 °C; -0.3 V low limit absolute
+    Input offset voltage: ±5.0 mV maximum at VCC=5.0 V, TA=25 °C (±1.0 mV typical)
+    Input offset current: ±50 nA maximum at TA=25 °C (±5.0 nA typical)
+    Input bias current: 250 nA maximum at TA=25 °C, 20 nA typical; flows out of inputs
+    Voltage gain: 50 V/mV minimum at RL≥15 kΩ, VCC=15 V (200 V/mV typical)
+    Response time: 1.3 µs typical with 100 mV step and 5.0 mV overdrive, RL=5.1 kΩ
+    Large signal response: 300 ns with TTL input swing
+    Output sink current: 6.0 mA minimum, 16 mA typical at VO≤1.5 V, TA=25 °C
+    Output saturation voltage: 400 mV maximum at ISink≤4.0 mA, TA=25 °C (150 mV typical)
+    Output leakage current: 1.0 µA maximum at VO=30 V over temperature
+    Supply current: 1.0 mA maximum for both comparators, RL=∞, TA=25 °C (0.4 mA typical)
+    Power dissipation: 570 mW at TA=25 °C; derate 5.7 mW/°C above 25 °C
+    Output short circuit to ground: continuous permitted, sink current limited to 20 mA
+    ESD protection: 1500 V human body model, 150 V machine model
+    Operating temperature: 0 °C to +70 °C (LM393 suffix)
+  datasheet_pages:
+    document: onsemi LM393/D Rev. 25 (April 2014), Publication Order Number LM393/D
+    ordering_coverage: [7]
+    pin_connections: [1]
+    maximum_ratings: [2]
+    electrical_characteristics: [3]
+    package_dimensions: [9]
+    land_pattern: [9]
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: >-
+    Inspected 2026-09-26 after the final build. data/working_svg_assembly.png and
+    working_svg_assembly_pins.png: proportional SOIC-8 top view, 1out/1in-/1in+/gnd
+    down the left and vcc/2out/2in-/2in+ up the right, pin-1 circle at the top-left,
+    no mirrored view, no label overlap, no cropping. working_svg_square_pins.png:
+    hero image titled IC LM393DR2G SOIC 8 with silkscreen code 2P9YL and legible
+    pin names. working_svg_dimensioned.png: 3.9 x 4.9 mm body dimensions with
+    arrows. working_svg_outline.png: clean outline. data/kicad/machine_solder
+    footprint: 8 roundrect pads 1.95x0.6 mm at the verified JEDEC MS-012 positions
+    (pad 1 top-left, 1.27 pitch); hand_solder copy is the same official master;
+    generated symbol renamed to the OOMP ID with Value IC LM393DR2G SOIC 8,
+    Footprint OOMP_MachineSolder link, three units matching the datasheet pin
+    table. README.md: maker part number LM393DR2G, LCSC/JLC C7955 links, ratings
+    dimensions, pin table, and a datasheet link that resolves to data/datasheet.pdf.
+    Limitation: KiCad symbol/footprint were checked as text/s-expression files
+    rather than rendered in a KiCad GUI session.
