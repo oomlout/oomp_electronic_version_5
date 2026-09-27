@@ -16269,3 +16269,239 @@ Traceback (most recent call last):
 AttributeError: 'NoneType' object has no attribute 'GetFootprints'
 
 
+[2026-09-27T11:16:53.100288+00:00] kicad_project_action
+Error type: TimeoutExpired
+Error message: Command '['C:\\Program Files\\KiCad\\10.0\\bin\\python.exe', 'C:\\gh\\oomp_electronic_version_5\\kicad_agents\\kicad_pcb_compare.py']' timed out after 180 seconds
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/kicad_project_action.py", line 427, in main
+    convert_project(details)
+  File "kicad_agents/kicad_project_action.py", line 288, in convert_project
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1628, in _communicate
+    raise TimeoutExpired(self.args, orig_timeout)
+subprocess.TimeoutExpired: Command '['C:\\Program Files\\KiCad\\10.0\\bin\\python.exe', 'C:\\gh\\oomp_electronic_version_5\\kicad_agents\\kicad_pcb_compare.py']' timed out after 180 seconds
+
+[2026-09-27T11:23:59.131796+00:00] kicad_project_action
+Error type: RuntimeError
+Error message: KiCad comparison failed; no converted design written:
+Traceback (most recent call last):
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3740, in <module>
+    main()
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3725, in main
+    globals = debugger.run(setup["file"], None, None, is_module)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2709, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2717, in _exec
+    globals = pydevd_runpy.run_path(file, globals, "__main__")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 73, in <module>
+    print(json.dumps(run(json.load(sys.stdin))))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 62, in run
+    for footprint in board.GetFootprints():
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'GetFootprints'
+
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/kicad_project_action.py", line 427, in main
+    convert_project(details)
+  File "kicad_agents/kicad_project_action.py", line 293, in convert_project
+    raise RuntimeError('KiCad comparison failed; no converted design written:\n' + completed.stderr)
+RuntimeError: KiCad comparison failed; no converted design written:
+Traceback (most recent call last):
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3740, in <module>
+    main()
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3725, in main
+    globals = debugger.run(setup["file"], None, None, is_module)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2709, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2717, in _exec
+    globals = pydevd_runpy.run_path(file, globals, "__main__")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 73, in <module>
+    print(json.dumps(run(json.load(sys.stdin))))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 62, in run
+    for footprint in board.GetFootprints():
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'GetFootprints'
+
+
+[2026-09-27T11:31:44.172021+00:00] kicad_project_action
+Error type: TimeoutExpired
+Error message: Command '['C:\\Program Files\\KiCad\\10.0\\bin\\python.exe', 'C:\\gh\\oomp_electronic_version_5\\kicad_agents\\kicad_pcb_compare.py']' timed out after 180 seconds
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/kicad_project_action.py", line 427, in main
+    convert_project(details)
+  File "kicad_agents/kicad_project_action.py", line 288, in convert_project
+    completed = subprocess.run(
+                ^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\aaron\AppData\Local\Programs\Python\Python312\Lib\subprocess.py", line 1628, in _communicate
+    raise TimeoutExpired(self.args, orig_timeout)
+subprocess.TimeoutExpired: Command '['C:\\Program Files\\KiCad\\10.0\\bin\\python.exe', 'C:\\gh\\oomp_electronic_version_5\\kicad_agents\\kicad_pcb_compare.py']' timed out after 180 seconds
+
+[2026-09-27T11:44:05.040784+00:00] kicad_project_action
+Error type: RuntimeError
+Error message: KiCad comparison failed; no converted design written:
+Traceback (most recent call last):
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3740, in <module>
+    main()
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3725, in main
+    globals = debugger.run(setup["file"], None, None, is_module)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2709, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2717, in _exec
+    globals = pydevd_runpy.run_path(file, globals, "__main__")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 73, in <module>
+    print(json.dumps(run(json.load(sys.stdin))))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 62, in run
+    for footprint in board.GetFootprints():
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'GetFootprints'
+
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/kicad_project_action.py", line 427, in main
+    convert_project(details)
+  File "kicad_agents/kicad_project_action.py", line 293, in convert_project
+    raise RuntimeError('KiCad comparison failed; no converted design written:\n' + completed.stderr)
+RuntimeError: KiCad comparison failed; no converted design written:
+Traceback (most recent call last):
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3740, in <module>
+    main()
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3725, in main
+    globals = debugger.run(setup["file"], None, None, is_module)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2709, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2717, in _exec
+    globals = pydevd_runpy.run_path(file, globals, "__main__")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 73, in <module>
+    print(json.dumps(run(json.load(sys.stdin))))
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 62, in run
+    for footprint in board.GetFootprints():
+                     ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'GetFootprints'
+
+
+[2026-09-27T11:53:54.606125+00:00] kicad_project_action
+Error type: RuntimeError
+Error message: KiCad comparison failed; no converted design written:
+Traceback (most recent call last):
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3740, in <module>
+    main()
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3725, in main
+    globals = debugger.run(setup["file"], None, None, is_module)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2709, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2717, in _exec
+    globals = pydevd_runpy.run_path(file, globals, "__main__")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 73, in <module>
+    footprints[uuid] = record
+                 ^^^^^^^^^^^^^
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 62, in run
+    master = pcbnew.FootprintLoad(str(path.parent), path.stem)
+                 ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'GetFootprints'
+
+Traceback:
+Traceback (most recent call last):
+  File "kicad_agents/kicad_project_action.py", line 427, in main
+    parser.add_argument('--kwargs', required=True)
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "kicad_agents/kicad_project_action.py", line 293, in convert_project
+    raise RuntimeError('KiCad comparison failed; no converted design written:\n' + completed.stderr)
+RuntimeError: KiCad comparison failed; no converted design written:
+Traceback (most recent call last):
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3740, in <module>
+    main()
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 3725, in main
+    globals = debugger.run(setup["file"], None, None, is_module)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2709, in run
+    return self._exec(is_module, entry_point_fn, module_name, file, globals, locals)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\pydevd.py", line 2717, in _exec
+    globals = pydevd_runpy.run_path(file, globals, "__main__")
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 310, in run_path
+    return _run_module_code(code, init_globals, run_name, pkg_name=pkg_name, script_name=fname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 127, in _run_module_code
+    _run_code(code, mod_globals, init_globals, mod_name, mod_spec, pkg_name, script_name)
+  File "c:\Users\aaron\.vscode\extensions\ms-python.debugpy-2026.6.0-win32-x64\bundled\libs\debugpy\_vendored\pydevd\_pydevd_bundle\pydevd_runpy.py", line 118, in _run_code
+    exec(code, run_globals)
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 73, in <module>
+    footprints[uuid] = record
+                 ^^^^^^^^^^^^^
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_pcb_compare.py", line 62, in run
+    master = pcbnew.FootprintLoad(str(path.parent), path.stem)
+                 ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'GetFootprints'
+
+

@@ -292,6 +292,10 @@ def convert_project(details):
         if completed.returncode:
             raise RuntimeError('KiCad comparison failed; no converted design written:\n' + completed.stderr)
         compared = json.loads(completed.stdout)
+        if compared.get('error'):
+            log_run_error('kicad_pcb_compare', RuntimeError(compared['error']))
+            print(f"ERROR: {compared['error']}")
+            return None
     else:
         # Recent KiCad Windows packages can provide kicad-cli and the official
         # libraries without shipping the legacy pcbnew Python executable.  The

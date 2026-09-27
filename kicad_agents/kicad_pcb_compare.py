@@ -1,6 +1,7 @@
 """Run with KiCad's Python. Read/normalise copies only; never save the source PCB."""
 
 import json
+import logging
 import sys
 
 import pcbnew
@@ -50,6 +51,10 @@ def placed_mark(footprint, mark, mark_y):
 
 def run(request):
     board = pcbnew.LoadBoard(request['board'])
+    if board is None:
+        error = f"KiCad could not load board: {request['board']}; OOMP conversion skipped."
+        logging.error(error)
+        return {'error': error}
     master_records = {}
     for library_id, path in request['masters'].items():
         from pathlib import Path

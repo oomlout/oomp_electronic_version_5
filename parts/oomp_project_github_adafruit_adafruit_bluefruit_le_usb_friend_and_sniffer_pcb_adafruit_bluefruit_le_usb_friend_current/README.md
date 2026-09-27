@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_bluefruit_le_usb_friend_and_sniffer_pcb_adafruit_bluefruit_le_usb_friend_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-Bluefruit-LE-USB-Friend-and-Sniffer-PCB Adafruit Bluefruit LE USB Friend current is a KiCad project containing 73 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
+Project adafruit/Adafruit-Bluefruit-LE-USB-Friend-and-Sniffer-PCB Adafruit Bluefruit LE USB Friend current is a KiCad project containing 73 extracted component records. The catalogue matcher linked 15 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-Bluefruit-LE-USB-Friend-and-Sniffer-PCB Adafruit Bluef
 | Mounting and locating holes | 25 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 54 |
-| Matched OOMP components | 13 |
-| Unmatched physical components | 27 |
+| Matched OOMP components | 15 |
+| Unmatched physical components | 25 |
 | Front-side placements | 21 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -118,7 +118,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C2 | 2 | 1uF | 1uF | `Adafruit Bluefruit LE USB Friend-import-fps:_0805MP` | unmatched |
+| C1, C2 | 2 | Capacitor 1 uF 0805 | 1uF | `Adafruit Bluefruit LE USB Friend-import-fps:_0805MP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C3, C4 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit Bluefruit LE USB Friend-import-fps:_0805MP` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | LED1 | 1 | LED Yellow 0805 | YELLOW | `Adafruit Bluefruit LE USB Friend-import-fps:CHIPLED_0805_NOOUTLINE` | [`electronic_led_0805_yellow`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_yellow) |
 | LED2 | 1 | LED Green 0805 | GREEN | `Adafruit Bluefruit LE USB Friend-import-fps:CHIPLED_0805_NOOUTLINE` | [`electronic_led_0805_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_green) |
@@ -167,7 +167,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 27 physical component records are not yet matched to an OOMP part.
+- 25 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_bluefruit_le_usb_friend_and_sniffer_pcb_adafruit_bluefruit_le_usb_friend_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_bluefruit_le_usb_friend_and_sniffer_pcb_adafruit_bluefruit_le_usb_friend_current/data/generated_data/browser_research_queue.md)
@@ -176,7 +176,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_bluefruit_le_usb_friend_and_sniffer_pcb_adafruit_bluefruit_le_usb_friend_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 8
+- Matched OOMP source parts copied: 9
 
 ## Source files
 
