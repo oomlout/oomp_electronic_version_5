@@ -41,8 +41,9 @@ Resistor 330 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F3300TS` |
-| LCSC | [`C2933198`](https://www.lcsc.com/product-detail/C2933198.html) |
+| Manufacturer part number | `0603WAF3300T5E` |
+| LCSC | [`C23138`](https://www.lcsc.com/product-detail/C23138.html) |
+| JLCPCB | [`C23138`](https://jlcpcb.com/partdetail/23865-0603WAF3300T5E/C23138) |
 
 
 

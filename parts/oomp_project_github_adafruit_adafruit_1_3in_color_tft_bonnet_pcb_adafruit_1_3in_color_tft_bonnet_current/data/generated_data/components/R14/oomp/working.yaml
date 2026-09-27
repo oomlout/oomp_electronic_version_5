@@ -37,13 +37,39 @@ directory: parts/electronic_resistor_0805_10000_ohm
 distributors:
 - key: lcsc
   part_number: C17414
-  product_name: 10kΩ ±1% 125mW 0805 Thick Film Resistor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C17414.html
+- key: jlcpcb
+  part_number: C17414
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
 id: electronic_resistor_0805_10000_ohm
 id_no_class: electronic_resistor_0805_10000_ohm
 id_no_size: electronic_resistor_0805_10000_ohm
 id_no_type: electronic_resistor_0805_10000_ohm
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0805 10kΩ resistor already prefers exact UNI-ROYAL
+    MPN 0805W8F1002T5E and C17414. The live JLC listing verifies this Basic purchasing
+    identity. Datasheet derating and pad geometry remain for the full pass.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 125mW
+    Resistance: 10kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 150V
+  stock_observed: 51433185
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0805_2012Metric
@@ -52,9 +78,9 @@ lcsc_search: 0805 10kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm
-manufacturer: UNI-ROYAL
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
-- manufacturer: UNI-ROYAL
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
   part_number: 0805W8F1002T5E
 md5: 231e3bb5f9ad13dc1bdde838e2850d71
 md5_10: 231e3bb5f9
@@ -177,6 +203,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0805_10000_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -190,17 +230,44 @@ oomlout_ai_roboclick_3:
       distributors:
       - key: lcsc
         part_number: C17414
-        product_name: 10kΩ ±1% 125mW 0805 Thick Film Resistor
         title: LCSC
         url: https://www.lcsc.com/product-detail/C17414.html
+      - key: jlcpcb
+        part_number: C17414
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
+      jlcpcb_selection:
+        compatibility_notes: Existing generic 0805 10kΩ resistor already prefers exact
+          UNI-ROYAL MPN 0805W8F1002T5E and C17414. The live JLC listing verifies this
+          Basic purchasing identity. Datasheet derating and pad geometry remain for
+          the full pass.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 125mW
+          Resistance: 10kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 150V
+        stock_observed: 51433185
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0805_2012Metric
         symbol: Device:R_Small
       lcsc_search: 0805 10kΩ
-      manufacturer: UNI-ROYAL
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
-      - manufacturer: UNI-ROYAL
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
         part_number: 0805W8F1002T5E
       name: electronic_resistor_0805_10000_ohm
       name_proper: Resistor 10000 Ohm 0805
@@ -310,14 +377,31 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0805_10000_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
       part_id: R1
+      part_number_jlcpcb: C17414
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
       part_number_lcsc: C17414
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C17414.html
       part_number_manufacturer: 0805W8F1002T5E
       part_numbers_lcsc:
       - part_number: C17414
-        product_name: 10kΩ ±1% 125mW 0805 Thick Film Resistor
       part_numbers_manufacturer:
-      - manufacturer: UNI-ROYAL
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
         part_number: 0805W8F1002T5E
       part_page:
         datasheet_path: data/datasheet.pdf
@@ -393,6 +477,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C17414.html
           value: C17414
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
+          value: C17414
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -423,11 +510,8 @@ oomlout_ai_roboclick_3:
           value: 0805
         - level: 4
           value: 10000_ohm
-      product_url: https://www.lcsc.com/product-detail/C17414.html
+      product_url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
       regenerate_pngs: false
-      research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0805 10KΩ" (47,609,400 in stock at capture).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -1760,7 +1844,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -1773,15 +1857,18 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0805_10000_ohm
 part_id: R1
+part_number_jlcpcb: C17414
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
 part_number_lcsc: C17414
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C17414.html
 part_number_manufacturer: 0805W8F1002T5E
 part_numbers_lcsc:
 - part_number: C17414
-  product_name: 10kΩ ±1% 125mW 0805 Thick Film Resistor
 part_numbers_manufacturer:
-- manufacturer: UNI-ROYAL
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
   part_number: 0805W8F1002T5E
 part_page:
   datasheet_path: data/datasheet.pdf
@@ -1857,6 +1944,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C17414.html
     value: C17414
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
+    value: C17414
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -1886,11 +1976,8 @@ part_page:
     value: 0805
   - level: 4
     value: 10000_ohm
-product_url: https://www.lcsc.com/product-detail/C17414.html
+product_url: https://jlcpcb.com/partdetail/18102-0805W8F1002T5E/C17414
 regenerate_pngs: false
-research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0805
-  10KΩ" (47,609,400 in stock at capture).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

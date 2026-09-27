@@ -37,6 +37,15 @@ Capacitor 10 uF 1206 is an OOMP electronic capacitor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL31A106KBHNNNE` |
+| LCSC | [`C13585`](https://www.lcsc.com/product-detail/C13585.html) |
+| JLCPCB | [`C13585`](https://jlcpcb.com/partdetail/14236-CL31A106KBHNNNE/C13585) |
+
+
 
 
 

@@ -37,6 +37,15 @@ Resistor 200000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0805W8F2003T5E` |
+| LCSC | [`C17539`](https://www.lcsc.com/product-detail/C17539.html) |
+| JLCPCB | [`C17539`](https://jlcpcb.com/partdetail/18227-0805W8F2003T5E/C17539) |
+
+
 
 
 

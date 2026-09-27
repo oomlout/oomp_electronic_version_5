@@ -43,6 +43,7 @@ Resistor 560 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 | --- | --- |
 | Manufacturer part number | `0603WAF5600T5E` |
 | LCSC | [`C23204`](https://www.lcsc.com/product-detail/C23204.html) |
+| JLCPCB | [`C23204`](https://jlcpcb.com/partdetail/23931-0603WAF5600T5E/C23204) |
 
 
 

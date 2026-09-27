@@ -41,8 +41,9 @@ Resistor 150000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F1503TS` |
-| LCSC | [`C2907228`](https://www.lcsc.com/product-detail/C2907228.html) |
+| Manufacturer part number | `0805W8F1503T5E` |
+| LCSC | [`C17470`](https://www.lcsc.com/product-detail/C17470.html) |
+| JLCPCB | [`C17470`](https://jlcpcb.com/partdetail/18158-0805W8F1503T5E/C17470) |
 
 
 

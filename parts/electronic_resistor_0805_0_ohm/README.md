@@ -41,8 +41,9 @@ Resistor 0 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2907288`](https://www.lcsc.com/product-detail/C2907288.html) |
+| Manufacturer part number | `0805W8F0000T5E` |
+| LCSC | [`C17477`](https://www.lcsc.com/product-detail/C17477.html) |
+| JLCPCB | [`C17477`](https://jlcpcb.com/partdetail/18165-0805W8F0000T5E/C17477) |
 
 
 

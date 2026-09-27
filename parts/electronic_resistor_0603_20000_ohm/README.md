@@ -37,6 +37,15 @@ Resistor 20000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0603WAF2002T5E` |
+| LCSC | [`C4184`](https://www.lcsc.com/product-detail/C4184.html) |
+| JLCPCB | [`C4184`](https://jlcpcb.com/partdetail/4591-0603WAF2002T5E/C4184) |
+
+
 
 
 

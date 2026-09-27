@@ -41,8 +41,9 @@ Resistor 2400 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F2401TS` |
-| LCSC | [`C2907235`](https://www.lcsc.com/product-detail/C2907235.html) |
+| Manufacturer part number | `0805W8F2401T5E` |
+| LCSC | [`C17526`](https://www.lcsc.com/product-detail/C17526.html) |
+| JLCPCB | [`C17526`](https://jlcpcb.com/partdetail/18214-0805W8F2401T5E/C17526) |
 
 
 

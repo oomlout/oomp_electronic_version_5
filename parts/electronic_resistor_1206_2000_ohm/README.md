@@ -43,6 +43,7 @@ Resistor 2000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 | --- | --- |
 | Manufacturer part number | `1206W4F2001T5E` |
 | LCSC | [`C17944`](https://www.lcsc.com/product-detail/C17944.html) |
+| JLCPCB | [`C17944`](https://jlcpcb.com/partdetail/18632-1206W4F2001T5E/C17944) |
 
 
 

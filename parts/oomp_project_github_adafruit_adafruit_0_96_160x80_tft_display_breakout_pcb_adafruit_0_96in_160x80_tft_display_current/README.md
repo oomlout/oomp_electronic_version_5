@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_0_96_160x80_tft_display_breakout_pcb_adafruit_0_96in_160x80_tft_display_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-0.96-160x80-TFT-Display-Breakout-PCB Adafruit 0.96in 160x80 TFT Display current is a KiCad project containing 47 extracted component records. The catalogue matcher linked 9 physical placements to OOMP parts.
+Project adafruit/Adafruit-0.96-160x80-TFT-Display-Breakout-PCB Adafruit 0.96in 160x80 TFT Display current is a KiCad project containing 47 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-0.96-160x80-TFT-Display-Breakout-PCB Adafruit 0.96in 1
 | Mounting and locating holes | 12 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 35 |
-| Matched OOMP components | 9 |
-| Unmatched physical components | 16 |
+| Matched OOMP components | 10 |
+| Unmatched physical components | 15 |
 | Front-side placements | 13 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -96,7 +96,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2 | 2 | Capacitor 10 uF 0805 | 10µF | `Adafruit 0.96in 160x80 TFT Display-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C3 | 1 | 0.1uF | 0.1uF | `Adafruit 0.96in 160x80 TFT Display-import-fps:0805-NO` | unmatched |
+| C3 | 1 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit 0.96in 160x80 TFT Display-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | CN1 | 1 | Adafruit 0.96in 160x80 TFT Display-import-fps:MICROSD |  | `Adafruit 0.96in 160x80 TFT Display-import-fps:MICROSD` | unmatched |
 | IC5 | 1 | APX803 | APX803 | `Adafruit 0.96in 160x80 TFT Display-import-fps:SOT23` | unmatched |
 | JP1 | 1 | Connector Header PZ254-1-11-Z-8.5 |  | `Adafruit 0.96in 160x80 TFT Display-import-fps:1X11_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_11_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_11_pin) |
@@ -139,7 +139,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 16 physical component records are not yet matched to an OOMP part.
+- 15 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_0_96_160x80_tft_display_breakout_pcb_adafruit_0_96in_160x80_tft_display_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_0_96_160x80_tft_display_breakout_pcb_adafruit_0_96in_160x80_tft_display_current/data/generated_data/browser_research_queue.md)
@@ -148,7 +148,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_0_96_160x80_tft_display_breakout_pcb_adafruit_0_96in_160x80_tft_display_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

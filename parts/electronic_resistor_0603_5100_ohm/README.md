@@ -45,6 +45,7 @@ Resistor 5100 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | LCSC | [`C23186`](https://www.lcsc.com/product-detail/C23186.html) |
 | LCSC | [`C2907044`](https://www.lcsc.com/product-detail/C2907044.html) |
 | LCSC | [`C26000`](https://www.lcsc.com/product-detail/C26000.html) |
+| JLCPCB | [`C23186`](https://jlcpcb.com/partdetail/23913-0603WAF5101T5E/C23186) |
 
 
 

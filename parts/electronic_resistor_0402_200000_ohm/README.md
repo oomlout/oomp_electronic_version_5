@@ -37,6 +37,15 @@ Resistor 200000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402WGF2003TCE` |
+| LCSC | [`C25764`](https://www.lcsc.com/product-detail/C25764.html) |
+| JLCPCB | [`C25764`](https://jlcpcb.com/partdetail/26507-0402WGF2003TCE/C25764) |
+
+
 
 
 

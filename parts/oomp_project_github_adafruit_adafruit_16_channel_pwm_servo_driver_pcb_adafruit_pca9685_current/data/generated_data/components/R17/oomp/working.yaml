@@ -36,14 +36,41 @@ dimensions_mm:
 directory: parts/electronic_resistor_0805_220_ohm
 distributors:
 - key: lcsc
-  part_number: C2933369
-  product_name: 220Ω ±1% 125mW 0805 Thick Film Resistor
+  part_number: C17557
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C2933369.html
+  url: https://www.lcsc.com/product-detail/C17557.html
+- key: jlcpcb
+  part_number: C17557
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
 id: electronic_resistor_0805_220_ohm
 id_no_class: electronic_resistor_0805_220_ohm
 id_no_size: electronic_resistor_0805_220_ohm
 id_no_type: electronic_resistor_0805_220_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0805 220Ω resistor formerly preferred FOJAN C2933369,
+    listed as 125mW and ±1%. Promote verified Basic C17557 and retain FOJAN as an
+    alternative; prior voltage/TCR were not established here. Full pass checks derating
+    and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 125mW
+    Resistance: 220Ω
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 150V
+  stock_observed: 978109
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0805_2012Metric
@@ -52,10 +79,10 @@ lcsc_search: 0805 220Ω
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_220_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_220_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_220_ohm
-manufacturer: FOJAN
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
-- manufacturer: FOJAN
-  part_number: FRC0805F2200TS
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0805W8F2200T5E
 md5: 5b162aff3983302412c35d3a6a14a2a3
 md5_10: 5b162aff39
 md5_10_upper: 5B162AFF39
@@ -177,6 +204,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0805_220_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -189,19 +230,46 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_resistor_0805_220_ohm
       distributors:
       - key: lcsc
-        part_number: C2933369
-        product_name: 220Ω ±1% 125mW 0805 Thick Film Resistor
+        part_number: C17557
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C2933369.html
+        url: https://www.lcsc.com/product-detail/C17557.html
+      - key: jlcpcb
+        part_number: C17557
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
+      jlcpcb_selection:
+        compatibility_notes: Generic 0805 220Ω resistor formerly preferred FOJAN C2933369,
+          listed as 125mW and ±1%. Promote verified Basic C17557 and retain FOJAN
+          as an alternative; prior voltage/TCR were not established here. Full pass
+          checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 125mW
+          Resistance: 220Ω
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 150V
+        stock_observed: 978109
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0805_2012Metric
         symbol: Device:R_Small
       lcsc_search: 0805 220Ω
-      manufacturer: FOJAN
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
-      - manufacturer: FOJAN
-        part_number: FRC0805F2200TS
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0805W8F2200T5E
       name: electronic_resistor_0805_220_ohm
       name_proper: Resistor 220 Ohm 0805
       name_readable: Resistor 220 Ohm 0805
@@ -310,15 +378,32 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0805_220_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
       part_id: R1
-      part_number_lcsc: C2933369
-      part_number_manufacturer: FRC0805F2200TS
+      part_number_jlcpcb: C17557
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
+      part_number_lcsc: C17557
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C17557.html
+      part_number_manufacturer: 0805W8F2200T5E
       part_numbers_lcsc:
-      - part_number: C2933369
-        product_name: 220Ω ±1% 125mW 0805 Thick Film Resistor
+      - part_number: C17557
       part_numbers_manufacturer:
-      - manufacturer: FOJAN
-        part_number: FRC0805F2200TS
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0805W8F2200T5E
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -389,10 +474,13 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: FRC0805F2200TS
+          value: 0805W8F2200T5E
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C2933369.html
-          value: C2933369
+          url: https://www.lcsc.com/product-detail/C17557.html
+          value: C17557
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
+          value: C17557
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -423,11 +511,8 @@ oomlout_ai_roboclick_3:
           value: 0805
         - level: 4
           value: 220_ohm
-      product_url: https://www.lcsc.com/product-detail/C2933369.html
+      product_url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
       regenerate_pngs: false
-      research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0805 220Ω" (1,783,900 in stock at capture).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -663,7 +748,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -676,16 +761,19 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0805_220_ohm
 part_id: R1
-part_number_lcsc: C2933369
-part_number_manufacturer: FRC0805F2200TS
+part_number_jlcpcb: C17557
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
+part_number_lcsc: C17557
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C17557.html
+part_number_manufacturer: 0805W8F2200T5E
 part_numbers_lcsc:
-- part_number: C2933369
-  product_name: 220Ω ±1% 125mW 0805 Thick Film Resistor
+- part_number: C17557
 part_numbers_manufacturer:
-- manufacturer: FOJAN
-  part_number: FRC0805F2200TS
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0805W8F2200T5E
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -756,10 +844,13 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: FRC0805F2200TS
+    value: 0805W8F2200T5E
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C2933369.html
-    value: C2933369
+    url: https://www.lcsc.com/product-detail/C17557.html
+    value: C17557
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
+    value: C17557
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -789,11 +880,8 @@ part_page:
     value: 0805
   - level: 4
     value: 220_ohm
-product_url: https://www.lcsc.com/product-detail/C2933369.html
+product_url: https://jlcpcb.com/partdetail/18245-0805W8F2200T5E/C17557
 regenerate_pngs: false
-research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0805
-  220Ω" (1,783,900 in stock at capture).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

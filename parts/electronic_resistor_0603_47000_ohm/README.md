@@ -41,8 +41,9 @@ Resistor 47000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F4702TS` |
-| LCSC | [`C2907042`](https://www.lcsc.com/product-detail/C2907042.html) |
+| Manufacturer part number | `0603WAF4702T5E` |
+| LCSC | [`C25819`](https://www.lcsc.com/product-detail/C25819.html) |
+| JLCPCB | [`C25819`](https://jlcpcb.com/partdetail/26562-0603WAF4702T5E/C25819) |
 
 
 

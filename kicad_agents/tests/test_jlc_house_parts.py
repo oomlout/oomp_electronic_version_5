@@ -34,16 +34,21 @@ class HousePartsTests(unittest.TestCase):
         self.assertFalse(record["jlc_selection"]["footprint_checked"])
         with self.assertRaisesRegex(ValueError, "Observed mpn differs"):
             build_intake_scaffold(row, dict(observed, mpn="DIFFERENT"))
+        # The official category shows non-Basic house parts with a plain
+        # "Extended" badge; it maps to the preferred/promotional house tier.
+        extended_row = dict(row, tier="preferred_extended")
+        _, _, extended_record = build_intake_scaffold(extended_row, dict(observed, tier_label="Extended"))
+        self.assertEqual(extended_record["jlc_selection"]["tier"], "preferred_extended")
         with self.assertRaisesRegex(ValueError, "class differs"):
-            build_intake_scaffold(row, dict(observed, tier_label="Extended"))
+            build_intake_scaffold(extended_row, dict(observed, tier_label="Ordinary Extended"))
 
     def test_capture_covers_all_rows_without_retired_queue_items(self):
         rows = normalize_capture(read_json(SOURCE))
-        self.assertEqual(len(rows), 2004)
+        self.assertEqual(len(rows), 1574)
         active = [r for r in rows if not r["retired"]]
-        self.assertEqual(len(active), 1586)
-        self.assertEqual(sum(r["tier"] == "basic" for r in active), 351)
-        self.assertTrue(all(r["last_seen"] == "2026-09-18 08:22:22" for r in active))
+        self.assertEqual(len(active), 1574)
+        self.assertEqual(sum(r["tier"] == "basic" for r in active), 83)
+        self.assertTrue(all(r["last_seen"] == "2026-09-26" for r in active))
 
     def test_bad_capture_fails_closed(self):
         rows = read_json(SOURCE)[:1]

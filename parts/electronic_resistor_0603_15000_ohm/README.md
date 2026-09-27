@@ -41,8 +41,9 @@ Resistor 15000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F1502TS` |
-| LCSC | [`C2906995`](https://www.lcsc.com/product-detail/C2906995.html) |
+| Manufacturer part number | `0603WAF1502T5E` |
+| LCSC | [`C22809`](https://www.lcsc.com/product-detail/C22809.html) |
+| JLCPCB | [`C22809`](https://jlcpcb.com/partdetail/23536-0603WAF1502T5E/C22809) |
 
 
 

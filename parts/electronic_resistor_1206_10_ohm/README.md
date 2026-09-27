@@ -41,8 +41,9 @@ Resistor 10 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC1206F10R0TS` |
-| LCSC | [`C2907371`](https://www.lcsc.com/product-detail/C2907371.html) |
+| Manufacturer part number | `1206W4F100JT5E` |
+| LCSC | [`C17903`](https://www.lcsc.com/product-detail/C17903.html) |
+| JLCPCB | [`C17903`](https://jlcpcb.com/partdetail/18591-1206W4F100JT5E/C17903) |
 
 
 

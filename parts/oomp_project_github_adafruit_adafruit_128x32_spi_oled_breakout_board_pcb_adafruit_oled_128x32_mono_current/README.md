@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_128x32_spi_oled_breakout_board_pcb_adafruit_oled_128x32_mono_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-128x32-SPI-OLED-breakout-board-PCB Adafruit OLED 128x32 Mono current is a KiCad project containing 32 extracted component records. The catalogue matcher linked 6 physical placements to OOMP parts.
+Project adafruit/Adafruit-128x32-SPI-OLED-breakout-board-PCB Adafruit OLED 128x32 Mono current is a KiCad project containing 32 extracted component records. The catalogue matcher linked 14 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-128x32-SPI-OLED-breakout-board-PCB Adafruit OLED 128x3
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 31 |
-| Matched OOMP components | 6 |
-| Unmatched physical components | 11 |
+| Matched OOMP components | 14 |
+| Unmatched physical components | 3 |
 | Front-side placements | 2 |
 | Back-side placements | 11 |
 | Project version | `current` |
@@ -89,9 +89,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C2, C3, C4 | 4 | 1.0uF | 1.0uF | `Adafruit OLED 128x32 Mono-import-fps:0805` | unmatched |
-| C5, C6, C7 | 3 | 2.2uF | 2.2uF | `Adafruit OLED 128x32 Mono-import-fps:0805` | unmatched |
-| C8 | 1 | 0.1uF | 0.1uF | `Adafruit OLED 128x32 Mono-import-fps:0805` | unmatched |
+| C1, C2, C3, C4 | 4 | Capacitor 1 uF 0805 | 1.0uF | `Adafruit OLED 128x32 Mono-import-fps:0805` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C5, C6, C7 | 3 | Capacitor 2.2 uF 0805 | 2.2uF | `Adafruit OLED 128x32 Mono-import-fps:0805` | [`electronic_capacitor_0805_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_micro_farad) |
+| C8 | 1 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit OLED 128x32 Mono-import-fps:0805` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | JP1 | 1 | Connector Header PZ254V-12-8P |  | `Adafruit OLED 128x32 Mono-import-fps:1X08_ROUND_76` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
 | LCD1 | 1 | UG-2832HSWEG04 | UG-2832HSWEG04 | `Adafruit OLED 128x32 Mono-import-fps:UG-2832HSWEG04_WRAPAROUND` | unmatched |
 | R1 | 1 | Resistor 390000 Ohm 0805 | 390K | `Adafruit OLED 128x32 Mono-import-fps:0805` | [`electronic_resistor_0805_390000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_390000_ohm) |
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 11 physical component records are not yet matched to an OOMP part.
+- 3 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x32_spi_oled_breakout_board_pcb_adafruit_oled_128x32_mono_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x32_spi_oled_breakout_board_pcb_adafruit_oled_128x32_mono_current/data/generated_data/browser_research_queue.md)
@@ -139,7 +139,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x32_spi_oled_breakout_board_pcb_adafruit_oled_128x32_mono_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

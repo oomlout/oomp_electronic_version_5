@@ -41,8 +41,9 @@ Resistor 510000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2907178`](https://www.lcsc.com/product-detail/C2907178.html) |
+| Manufacturer part number | `0603WAF5103T5E` |
+| LCSC | [`C23192`](https://www.lcsc.com/product-detail/C23192.html) |
+| JLCPCB | [`C23192`](https://jlcpcb.com/partdetail/23919-0603WAF5103T5E/C23192) |
 
 
 

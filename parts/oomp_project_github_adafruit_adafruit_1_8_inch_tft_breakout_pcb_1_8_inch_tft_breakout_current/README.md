@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_1_8_inch_tft_breakout_pcb_1_8_inch_tft_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit_1.8_Inch_TFT_Breakout_PCB 1.8 Inch TFT Breakout current is a KiCad project containing 43 extracted component records. The catalogue matcher linked 8 physical placements to OOMP parts.
+Project adafruit/Adafruit_1.8_Inch_TFT_Breakout_PCB 1.8 Inch TFT Breakout current is a KiCad project containing 43 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit_1.8_Inch_TFT_Breakout_PCB 1.8 Inch TFT Breakout curren
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 44 |
-| Matched OOMP components | 8 |
-| Unmatched physical components | 6 |
+| Matched OOMP components | 10 |
+| Unmatched physical components | 4 |
 | Front-side placements | 10 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -90,7 +90,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2 | 2 | Capacitor 10 uF 0805 | 10uF | `jdt1800-bob-import-fps:C0805K` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C3, C4 | 2 | 0.1uF | 0.1uF | `jdt1800-bob-import-fps:C0805K` | unmatched |
+| C3, C4 | 2 | Capacitor 100 nF 0805 | 0.1uF | `jdt1800-bob-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | IC1 | 1 | 4050D | 4050D | `jdt1800-bob-import-fps:SO16` | unmatched |
 | IC2 | 1 | LP298XS | LP298XS | `jdt1800-bob-import-fps:SOT23-5L` | unmatched |
 | Q1 | 1 | 2N2222 | 2N2222 | `jdt1800-bob-import-fps:SOT23-BEC` | unmatched |
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 6 physical component records are not yet matched to an OOMP part.
+- 4 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_1_8_inch_tft_breakout_pcb_1_8_inch_tft_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_1_8_inch_tft_breakout_pcb_1_8_inch_tft_breakout_current/data/generated_data/browser_research_queue.md)
@@ -139,7 +139,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_1_8_inch_tft_breakout_pcb_1_8_inch_tft_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 5
 
 ## Source files
 

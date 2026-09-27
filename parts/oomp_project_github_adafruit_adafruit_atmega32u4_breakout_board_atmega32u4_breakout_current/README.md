@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_atmega32u4_breakout_board_atmega32u4_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit_Atmega32u4_Breakout_Board ATmega32u4 Breakout current is a KiCad project containing 57 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
+Project adafruit/Adafruit_Atmega32u4_Breakout_Board ATmega32u4 Breakout current is a KiCad project containing 57 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit_Atmega32u4_Breakout_Board ATmega32u4 Breakout current 
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 45 |
-| Matched OOMP components | 13 |
-| Unmatched physical components | 38 |
+| Matched OOMP components | 17 |
+| Unmatched physical components | 34 |
 | Front-side placements | 22 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -90,7 +90,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | BOOT0 | 1 | EVQQ2 | EVQQ2 | `atmega32u4bb-import-fps:EVQ-Q2` | unmatched |
-| C1, C4, C6, C7 | 4 | 0.1uF | 0.1uF | `atmega32u4bb-import-fps:C0805K` | unmatched |
+| C1, C4, C6, C7 | 4 | Capacitor 100 nF 0805 | 0.1uF | `atmega32u4bb-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | C2, C3 | 2 | 18pF | 18pF | `atmega32u4bb-import-fps:C0805K` | unmatched |
 | C5 | 1 | 10uF | 10uF | `atmega32u4bb-import-fps:A_3216-18R` | unmatched |
 | CN1 | 1 | MiniB USB | MiniB USB | `atmega32u4bb-import-fps:USB-MINIB` | unmatched |
@@ -138,7 +138,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 38 physical component records are not yet matched to an OOMP part.
+- 34 physical component records are not yet matched to an OOMP part.
 - The extractor reports 21 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_atmega32u4_breakout_board_atmega32u4_breakout_current/data/generated_data/lcsc_review.yaml)
@@ -148,7 +148,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_atmega32u4_breakout_board_atmega32u4_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 8
 
 ## Source files
 

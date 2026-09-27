@@ -41,10 +41,12 @@ Resistor 10 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `RC0402FR-0710RL` |
+| Manufacturer part number | `0402WGF100JTCE` |
+| LCSC | [`C25077`](https://www.lcsc.com/product-detail/C25077.html) |
 | LCSC | [`C138066`](https://www.lcsc.com/product-detail/C138066.html) |
 | LCSC | [`C2906886`](https://www.lcsc.com/product-detail/C2906886.html) |
 | LCSC | [`C137925`](https://www.lcsc.com/product-detail/C137925.html) |
+| JLCPCB | [`C25077`](https://jlcpcb.com/partdetail/25820-0402WGF100JTCE/C25077) |
 
 
 

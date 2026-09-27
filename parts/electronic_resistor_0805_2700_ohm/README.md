@@ -43,6 +43,7 @@ Resistor 2700 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 | --- | --- |
 | Manufacturer part number | `0805W8F2701T5E` |
 | LCSC | [`C17530`](https://www.lcsc.com/product-detail/C17530.html) |
+| JLCPCB | [`C17530`](https://jlcpcb.com/partdetail/18218-0805W8F2701T5E/C17530) |
 
 
 

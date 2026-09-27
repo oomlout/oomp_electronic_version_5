@@ -43,6 +43,7 @@ Resistor 2000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | --- | --- |
 | Manufacturer part number | `0603WAF2001T5E` |
 | LCSC | [`C22975`](https://www.lcsc.com/product-detail/C22975.html) |
+| JLCPCB | [`C22975`](https://jlcpcb.com/partdetail/23702-0603WAF2001T5E/C22975) |
 
 
 

@@ -45,6 +45,7 @@ Resistor 470 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 | LCSC | [`C23179`](https://www.lcsc.com/product-detail/C23179.html) |
 | LCSC | [`C25241`](https://www.lcsc.com/product-detail/C25241.html) |
 | LCSC | [`C2907041`](https://www.lcsc.com/product-detail/C2907041.html) |
+| JLCPCB | [`C23179`](https://jlcpcb.com/partdetail/23906-0603WAF4700T5E/C23179) |
 
 
 

@@ -45,6 +45,7 @@ Resistor 2200 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | LCSC | [`C4190`](https://www.lcsc.com/product-detail/C4190.html) |
 | LCSC | [`C2907005`](https://www.lcsc.com/product-detail/C2907005.html) |
 | LCSC | [`C25992`](https://www.lcsc.com/product-detail/C25992.html) |
+| JLCPCB | [`C4190`](https://jlcpcb.com/partdetail/4597-0603WAF2201T5E/C4190) |
 
 
 

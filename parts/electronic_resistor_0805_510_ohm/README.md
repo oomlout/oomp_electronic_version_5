@@ -43,6 +43,7 @@ Resistor 510 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 | --- | --- |
 | Manufacturer part number | `0805W8F5100T5E` |
 | LCSC | [`C17734`](https://www.lcsc.com/product-detail/C17734.html) |
+| JLCPCB | [`C17734`](https://jlcpcb.com/partdetail/18422-0805W8F5100T5E/C17734) |
 
 
 

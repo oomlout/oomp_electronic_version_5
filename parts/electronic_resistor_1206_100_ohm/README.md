@@ -41,8 +41,9 @@ Resistor 100 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2907422`](https://www.lcsc.com/product-detail/C2907422.html) |
+| Manufacturer part number | `1206W4F1000T5E` |
+| LCSC | [`C17901`](https://www.lcsc.com/product-detail/C17901.html) |
+| JLCPCB | [`C17901`](https://jlcpcb.com/partdetail/18589-1206W4F1000T5E/C17901) |
 
 
 

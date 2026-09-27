@@ -41,8 +41,9 @@ Resistor 8200 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F8201TS` |
-| LCSC | [`C2933503`](https://www.lcsc.com/product-detail/C2933503.html) |
+| Manufacturer part number | `0805W8F8201T5E` |
+| LCSC | [`C17828`](https://www.lcsc.com/product-detail/C17828.html) |
+| JLCPCB | [`C17828`](https://jlcpcb.com/partdetail/18516-0805W8F8201T5E/C17828) |
 
 
 

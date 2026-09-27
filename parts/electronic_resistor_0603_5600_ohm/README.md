@@ -41,8 +41,9 @@ Resistor 5600 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F5601TS` |
-| LCSC | [`C2907046`](https://www.lcsc.com/product-detail/C2907046.html) |
+| Manufacturer part number | `0603WAF5601T5E` |
+| LCSC | [`C23189`](https://www.lcsc.com/product-detail/C23189.html) |
+| JLCPCB | [`C23189`](https://jlcpcb.com/partdetail/23916-0603WAF5601T5E/C23189) |
 
 
 

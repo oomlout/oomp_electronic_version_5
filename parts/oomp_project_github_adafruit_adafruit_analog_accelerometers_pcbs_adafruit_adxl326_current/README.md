@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_analog_accelerometers_pcbs_adafruit_adxl326_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-Analog-Accelerometers-PCBs Adafruit ADXL326 current is a KiCad project containing 29 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
+Project adafruit/Adafruit-Analog-Accelerometers-PCBs Adafruit ADXL326 current is a KiCad project containing 29 extracted component records. The catalogue matcher linked 8 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-Analog-Accelerometers-PCBs Adafruit ADXL326 current is
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 28 |
-| Matched OOMP components | 5 |
-| Unmatched physical components | 5 |
+| Matched OOMP components | 8 |
+| Unmatched physical components | 2 |
 | Front-side placements | 8 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -81,7 +81,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C5 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit ADXL326-import-fps:C0805K` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C2, C3, C4 | 3 | 0.1uF | 0.1uF | `Adafruit ADXL326-import-fps:C0805K` | unmatched |
+| C2, C3, C4 | 3 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit ADXL326-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | IC1 | 1 | ADXL33X | ADXL33X | `Adafruit ADXL326-import-fps:16LCSP` | unmatched |
 | IC2 | 1 | LP298XS | LP298XS | `Adafruit ADXL326-import-fps:SOT23-5L` | unmatched |
 | JP2 | 1 | Connector Header PH2.54-01-07PZD |  | `Adafruit ADXL326-import-fps:1X07_ROUND_76` | [`electronic_connector_header_2_54_mm_pitch_through_hole_7_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_7_pin) |
@@ -105,7 +105,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 5 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_analog_accelerometers_pcbs_adafruit_adxl326_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_analog_accelerometers_pcbs_adafruit_adxl326_current/data/generated_data/browser_research_queue.md)
@@ -114,7 +114,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_analog_accelerometers_pcbs_adafruit_adxl326_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 4
 
 ## Source files
 

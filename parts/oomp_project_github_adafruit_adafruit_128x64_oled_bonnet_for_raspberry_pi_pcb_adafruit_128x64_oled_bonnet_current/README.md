@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_128x64_oled_bonnet_for_raspberry_pi_pcb_adafruit_128x64_oled_bonnet_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-128x64-OLED-Bonnet-for-Raspberry-Pi-PCB Adafruit 128x64 OLED Bonnet current is a KiCad project containing 35 extracted component records. The catalogue matcher linked 4 physical placements to OOMP parts.
+Project adafruit/Adafruit-128x64-OLED-Bonnet-for-Raspberry-Pi-PCB Adafruit 128x64 OLED Bonnet current is a KiCad project containing 35 extracted component records. The catalogue matcher linked 9 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-128x64-OLED-Bonnet-for-Raspberry-Pi-PCB Adafruit 128x6
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 34 |
-| Matched OOMP components | 4 |
-| Unmatched physical components | 11 |
+| Matched OOMP components | 9 |
+| Unmatched physical components | 6 |
 | Front-side placements | 15 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -90,7 +90,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C2, C5 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit 128x64 OLED Bonnet-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C3, C4, C6, C7, C8 | 5 | 2.2uF | 2.2uF | `Adafruit 128x64 OLED Bonnet-import-fps:0805-NO` | unmatched |
+| C3, C4, C6, C7, C8 | 5 | Capacitor 2.2 uF 0805 | 2.2uF | `Adafruit 128x64 OLED Bonnet-import-fps:0805-NO` | [`electronic_capacitor_0805_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_micro_farad) |
 | IC1 | 1 | APX803 | APX803 | `Adafruit 128x64 OLED Bonnet-import-fps:SOT23` | unmatched |
 | R1 | 1 | Resistor 10000 Ohm 0805 | 10K | `Adafruit 128x64 OLED Bonnet-import-fps:0805-NO` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
 | R3 | 1 | Resistor 390000 Ohm 0805 | 390K | `Adafruit 128x64 OLED Bonnet-import-fps:0805-NO` | [`electronic_resistor_0805_390000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_390000_ohm) |
@@ -131,7 +131,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 11 physical component records are not yet matched to an OOMP part.
+- 6 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x64_oled_bonnet_for_raspberry_pi_pcb_adafruit_128x64_oled_bonnet_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x64_oled_bonnet_for_raspberry_pi_pcb_adafruit_128x64_oled_bonnet_current/data/generated_data/browser_research_queue.md)
@@ -140,7 +140,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x64_oled_bonnet_for_raspberry_pi_pcb_adafruit_128x64_oled_bonnet_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 4
 
 ## Source files
 

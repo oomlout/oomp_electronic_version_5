@@ -37,6 +37,15 @@ Capacitor 4.7 uF 0805 is an OOMP electronic capacitor definition. It uses the 08
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL21A475KAQNNNE` |
+| LCSC | [`C1779`](https://www.lcsc.com/product-detail/C1779.html) |
+| JLCPCB | [`C1779`](https://jlcpcb.com/partdetail/2131-CL21A475KAQNNNE/C1779) |
+
+
 
 
 

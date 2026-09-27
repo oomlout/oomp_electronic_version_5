@@ -41,8 +41,9 @@ Resistor 1800 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `RC0603FR-071K8L` |
-| LCSC | [`C185354`](https://www.lcsc.com/product-detail/C185354.html) |
+| Manufacturer part number | `0603WAF1801T5E` |
+| LCSC | [`C4177`](https://www.lcsc.com/product-detail/C4177.html) |
+| JLCPCB | [`C4177`](https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177) |
 
 
 

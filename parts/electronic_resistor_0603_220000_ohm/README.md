@@ -41,8 +41,9 @@ Resistor 220000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F2203TS` |
-| LCSC | [`C2907013`](https://www.lcsc.com/product-detail/C2907013.html) |
+| Manufacturer part number | `0603WAF2203T5E` |
+| LCSC | [`C22961`](https://www.lcsc.com/product-detail/C22961.html) |
+| JLCPCB | [`C22961`](https://jlcpcb.com/partdetail/23688-0603WAF2203T5E/C22961) |
 
 
 

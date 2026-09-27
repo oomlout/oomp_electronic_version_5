@@ -41,8 +41,9 @@ Resistor 220 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2907127`](https://www.lcsc.com/product-detail/C2907127.html) |
+| Manufacturer part number | `0603WAF2200T5E` |
+| LCSC | [`C22962`](https://www.lcsc.com/product-detail/C22962.html) |
+| JLCPCB | [`C22962`](https://jlcpcb.com/partdetail/23689-0603WAF2200T5E/C22962) |
 
 
 

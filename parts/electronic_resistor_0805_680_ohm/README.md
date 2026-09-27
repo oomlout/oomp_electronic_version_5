@@ -43,6 +43,7 @@ Resistor 680 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 | --- | --- |
 | Manufacturer part number | `0805W8F6800T5E` |
 | LCSC | [`C17798`](https://www.lcsc.com/product-detail/C17798.html) |
+| JLCPCB | [`C17798`](https://jlcpcb.com/partdetail/18486-0805W8F6800T5E/C17798) |
 
 
 

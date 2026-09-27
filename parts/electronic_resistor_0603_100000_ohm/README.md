@@ -45,6 +45,7 @@ Resistor 100000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 
 | LCSC | [`C25803`](https://www.lcsc.com/product-detail/C25803.html) |
 | LCSC | [`C2906980`](https://www.lcsc.com/product-detail/C2906980.html) |
 | LCSC | [`C14675`](https://www.lcsc.com/product-detail/C14675.html) |
+| JLCPCB | [`C25803`](https://jlcpcb.com/partdetail/26546-0603WAF1003T5E/C25803) |
 
 
 

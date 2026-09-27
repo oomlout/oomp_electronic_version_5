@@ -43,6 +43,7 @@ Resistor 4700 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 | --- | --- |
 | Manufacturer part number | `1206W4F4701T5E` |
 | LCSC | [`C17936`](https://www.lcsc.com/product-detail/C17936.html) |
+| JLCPCB | [`C17936`](https://jlcpcb.com/partdetail/18624-1206W4F4701T5E/C17936) |
 
 
 

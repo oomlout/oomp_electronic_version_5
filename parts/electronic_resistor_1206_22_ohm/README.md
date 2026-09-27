@@ -41,8 +41,9 @@ Resistor 22 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC1206F22R0TS` |
-| LCSC | [`C2933647`](https://www.lcsc.com/product-detail/C2933647.html) |
+| Manufacturer part number | `1206W4F220JT5E` |
+| LCSC | [`C17958`](https://www.lcsc.com/product-detail/C17958.html) |
+| JLCPCB | [`C17958`](https://jlcpcb.com/partdetail/18646-1206W4F220JT5E/C17958) |
 
 
 

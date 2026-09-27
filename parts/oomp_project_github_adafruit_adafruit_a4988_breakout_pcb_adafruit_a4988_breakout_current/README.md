@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_a4988_breakout_pcb_adafruit_a4988_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-A4988-Breakout-PCB Adafruit A4988 Breakout current is a KiCad project containing 64 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
+Project adafruit/Adafruit-A4988-Breakout-PCB Adafruit A4988 Breakout current is a KiCad project containing 64 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-A4988-Breakout-PCB Adafruit A4988 Breakout current is 
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 67 |
-| Matched OOMP components | 18 |
-| Unmatched physical components | 10 |
+| Matched OOMP components | 23 |
+| Unmatched physical components | 5 |
 | Front-side placements | 24 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,7 +82,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C3, C5, C7, C8 | 5 | 0.22uF/50V | 0.22uF/50V | `Adafruit A4988 Breakout-import-fps:0603-NO` | unmatched |
+| C1, C3, C5, C7, C8 | 5 | Capacitor 220 nF 0603 | 0.22uF/50V | `Adafruit A4988 Breakout-import-fps:0603-NO` | [`electronic_capacitor_0603_220_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_220_nano_farad) |
 | C2 | 1 | Capacitor 10 uF 0805 | 10uF | `Adafruit A4988 Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C4 | 1 | 22uF/50V | 22uF/50V | `Adafruit A4988 Breakout-import-fps:PANASONIC_C` | unmatched |
 | D1 | 1 | LED Red 0603 | RED | `Adafruit A4988 Breakout-import-fps:CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red) |
@@ -129,7 +129,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 10 physical component records are not yet matched to an OOMP part.
+- 5 physical component records are not yet matched to an OOMP part.
 - The extractor reports 1 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_a4988_breakout_pcb_adafruit_a4988_breakout_current/data/generated_data/lcsc_review.yaml)
@@ -139,7 +139,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_a4988_breakout_pcb_adafruit_a4988_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 9
+- Matched OOMP source parts copied: 10
 
 ## Source files
 

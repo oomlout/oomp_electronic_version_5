@@ -43,6 +43,7 @@ Resistor 5100 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 | --- | --- |
 | Manufacturer part number | `0805W8F5101T5E` |
 | LCSC | [`C27834`](https://www.lcsc.com/product-detail/C27834.html) |
+| JLCPCB | [`C27834`](https://jlcpcb.com/partdetail/28584-0805W8F5101T5E/C27834) |
 
 
 

@@ -23,7 +23,7 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "kicad_agents/jlc_house_parts"
-SOURCE = DATA / "sources/catalogue-browser-official-2026-09-26.json"
+SOURCE = DATA / "sources/catalogue-browser-official-basic-category-2026-09-26.json"
 CLAIMS = DATA / "claims"
 LOCKS = DATA / "locks"
 STAGING = DATA / "browser_staging"
@@ -110,7 +110,7 @@ def code_options(part):
 
 def prepare():
     catalogue = normalize_capture(read_json(SOURCE))
-    if len(catalogue) != 3452 or sum(not x["retired"] for x in catalogue) != 1574:
+    if len(catalogue) != 1574 or sum(not x["retired"] for x in catalogue) != 1574:
         raise ValueError("Captured snapshot count mismatch; check browser truncation or intentionally update the snapshot contract")
     parts, duplicates = population()
     by_code, by_mpn = defaultdict(set), defaultdict(set)
@@ -157,9 +157,9 @@ def prepare():
                    existing_electronic_parts=len(parts),
                    existing_parts_with_lcsc=sum(bool(code_options(x)) for x in parts.values()),
                    duplicate_population_ids=duplicates,
-                   completeness="2026-09-26 browser crawl of the official Basic & Promotional Extended category (64 pages, 25 rows each); 1574 active rows captured, 20 page-boundary duplicates removed, 6 non-standard listings without a readable class badge excluded (C3116 C4650 C4662 C4664 C4688 C4689); the official category was re-curated since 2026-09-18, so 1460 dated-snapshot codes no longer listed are retired here and only 126 codes survive; category/package fields are kept from the dated mirror for surviving codes and empty for new ones.")
+                   completeness="2026-09-26 corrected re-crawl of the official Basic & Promotional Extended category (https://jlcpcb.com/parts/basic_parts, 64 pages x 25 rows, in-browser DOM capture with per-page content-settle verification). The earlier same-day catalogue-browser-official-2026-09-26.json capture is RETIRED as a bad seed: its pagination dropped the category restriction and swept the wider catalogue (1495 of 1574 queued rows were not house parts). This capture holds the category filter for every page: 1600 raw rows, 20 site-side page-boundary duplicate rows removed by first-occurrence dedupe, 1580 unique codes, and the six non-standard listings without a readable class badge excluded (C3116 C4650 C4662 C4664 C4688 C4689), leaving 1574 standard house parts (83 Basic, 1491 Promotional Extended). The site's own counter reports 1586 items; offset pagination cannot display all of them distinctly, so the verified unique set is authoritative. Raw rows: catalogue-browser-official-basic-category-2026-09-26-raw.json. Category/package columns are empty: the official listing rows do not carry them, so intake reads them from each detail page.")
     write_json(DATA / "summary.json", summary)
-    lines = ["# JLC house-part analysis queue", "", "Snapshot: 18 September 2026; captured 24 September. Candidates, not approved substitutions.", "", "| Code | Class | Manufacturer / MPN | Package | OOMP candidates |", "| --- | --- | --- | --- | --- |"]
+    lines = ["# JLC house-part analysis queue", "", "Snapshot: official Basic & Promotional Extended category, captured 26 September 2026 (corrected in-category re-crawl). Candidates, not approved substitutions.", "", "| Code | Class | Manufacturer / MPN | Package | OOMP candidates |", "| --- | --- | --- | --- | --- |"]
     for x in queue:
         clean = lambda value: str(value).replace("|", "/").replace("\n", " ")
         lines.append(f"| [{x['code']}]({x['jlcpcb_url']}) | {x['tier']} | {clean(x['manufacturer'])} / {clean(x['mpn'])} | {clean(x['package'])} | {', '.join(c['part_id'] for c in x['candidates']) or 'Needs matching / new entry'} |")
@@ -316,8 +316,12 @@ def build_intake_scaffold(row, observed):
                           ("official_url", row["jlcpcb_url"])):
         if observed[key] != expected and not (key == "package" and not expected):
             raise ValueError(f"Observed {key} differs from queued candidate; resolve identity")
+    # The official category lists non-Basic house parts with a plain "Extended"
+    # badge; its tooltip names them Promotional Extended. Queue membership is
+    # category membership, so the visible badge maps to the house tier.
     tier = {"Basic": "basic", "Preferred": "preferred_extended",
-            "Promotional": "preferred_extended"}.get(observed["tier_label"])
+            "Promotional": "preferred_extended",
+            "Extended": "preferred_extended"}.get(observed["tier_label"])
     if tier != row["tier"]:
         raise ValueError("Live JLC class differs from house-part snapshot")
     if not re.fullmatch(r"electronic_[a-z0-9_]+", observed["part_id"]):
@@ -743,7 +747,7 @@ def main():
                 raise SystemExit("Staged capture shows a house class; run the intake flow (intake_from_capture) instead of defer --from-capture")
             reason = (f"Live JLCPCB product page on {capture['captured_on']} ({capture['official_url']}) shows house class "
                       f"{capture['tier_label']}, not Basic/Preferred/Promotional, conflicting with the queued {row['tier']} "
-                      f"snapshot (last seen 2026-09-18). Identity otherwise verified: {row['manufacturer']} {row['mpn']}, "
+                      f"snapshot (official category crawl captured 2026-09-26). Identity otherwise verified: {row['manufacturer']} {row['mpn']}, "
                       f"{capture.get('description', '')}, {row['package'] or capture.get('package', '')}, "
                       f"stock {capture.get('stock_observed')}, "
                       f"MOQ {capture.get('purchase_moq_observed')}. An ordinary Extended listing is outside house-parts intake; "

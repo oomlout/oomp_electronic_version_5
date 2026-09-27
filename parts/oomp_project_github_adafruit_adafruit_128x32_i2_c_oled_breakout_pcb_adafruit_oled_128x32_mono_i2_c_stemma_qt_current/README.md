@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB Adafruit OLED 128x32 Mono I2 C STEMMA QT current is a KiCad project containing 54 extracted component records. The catalogue matcher linked 19 physical placements to OOMP parts.
+Project adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB Adafruit OLED 128x32 Mono I2 C STEMMA QT current is a KiCad project containing 54 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB Adafruit OLED 128x32 Mono
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 55 |
-| Matched OOMP components | 19 |
-| Unmatched physical components | 6 |
+| Matched OOMP components | 23 |
+| Unmatched physical components | 2 |
 | Front-side placements | 19 |
 | Back-side placements | 2 |
 | Project version | `current` |
@@ -84,10 +84,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1 | 1 | Capacitor 100 nF 0603 | 0.1uF | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C2, C3, C8, C9 | 4 | Capacitor 10 uF 0805 | 10uF | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C4, C5, C6, C7 | 4 | 1uF | 1uF | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:0805-NO` | unmatched |
+| C4, C5, C6, C7 | 4 | Capacitor 1 uF 0805 | 1uF | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | CONN4 | 1 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
 | D1 | 1 | LED Green 0603 | GREEN | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_green) |
-| D2 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D2 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | IC5 | 1 | APX803 | APX803 | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:SOT23` | unmatched |
 | JP1 | 1 | Connector Header 2.54-1x6P直针 |  | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:1X06_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | LCD1 | 1 | Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:UG-2832HSWEG02_WRAPUNDER |  | `Adafruit OLED 128x32 Mono I2C STEMMA QT rev B-import-fps:UG-2832HSWEG02_WRAPUNDER` | unmatched |
@@ -127,7 +127,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 6 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 - The extractor reports 6 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current/data/generated_data/lcsc_review.yaml)
@@ -137,7 +137,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_stemma_qt_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 12
 
 ## Source files
 

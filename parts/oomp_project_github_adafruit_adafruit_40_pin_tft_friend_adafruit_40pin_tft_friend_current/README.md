@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_40_pin_tft_friend_adafruit_40pin_tft_friend_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-40-pin-TFT-Friend Adafruit 40pin TFT friend current is a KiCad project containing 49 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
+Project adafruit/Adafruit-40-pin-TFT-Friend Adafruit 40pin TFT friend current is a KiCad project containing 49 extracted component records. The catalogue matcher linked 16 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-40-pin-TFT-Friend Adafruit 40pin TFT friend current is
 | Mounting and locating holes | 1 |
 | Matched OOMP mounting-hole items | 1 |
 | Schematic symbols | 87 |
-| Matched OOMP components | 13 |
-| Unmatched physical components | 11 |
+| Matched OOMP components | 16 |
+| Unmatched physical components | 8 |
 | Front-side placements | 23 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -80,8 +80,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | BLUE0, GREEN0 | 2 | Connector Header PZ254V-12-8P |  | `Adafruit 40pin TFT friend-import-fps:1X08-BIG` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
-| C1 | 1 | 0.1uF | 0.1uF | `Adafruit 40pin TFT friend-import-fps:_0805MP` | unmatched |
-| C2, C8 | 2 | 1uF | 1uF | `Adafruit 40pin TFT friend-import-fps:_0805MP` | unmatched |
+| C1 | 1 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit 40pin TFT friend-import-fps:_0805MP` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
+| C2, C8 | 2 | Capacitor 1 uF 0805 | 1uF | `Adafruit 40pin TFT friend-import-fps:_0805MP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C6, C7 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit 40pin TFT friend-import-fps:_0805MP` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | CONTROL0, JP1 | 2 | Connector Header 2.54-1x6P直针 |  | `Adafruit 40pin TFT friend-import-fps:1X06-BIG` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | D1 | 1 | MM3Z24VT1G | MM3Z24VT1G | `Adafruit 40pin TFT friend-import-fps:SMADIODE` | unmatched |
@@ -129,7 +129,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 11 physical component records are not yet matched to an OOMP part.
+- 8 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_40_pin_tft_friend_adafruit_40pin_tft_friend_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_40_pin_tft_friend_adafruit_40pin_tft_friend_current/data/generated_data/browser_research_queue.md)
@@ -138,7 +138,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_40_pin_tft_friend_adafruit_40pin_tft_friend_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 8
+- Matched OOMP source parts copied: 10
 
 ## Source files
 

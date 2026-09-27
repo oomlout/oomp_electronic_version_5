@@ -41,8 +41,9 @@ Resistor 390 Ohm 0603 is an OOMP electronic resistor definition. It uses the 060
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F3900TS` |
-| LCSC | [`C2907031`](https://www.lcsc.com/product-detail/C2907031.html) |
+| Manufacturer part number | `0603WAF3900T5E` |
+| LCSC | [`C23151`](https://www.lcsc.com/product-detail/C23151.html) |
+| JLCPCB | [`C23151`](https://jlcpcb.com/partdetail/23878-0603WAF3900T5E/C23151) |
 
 
 

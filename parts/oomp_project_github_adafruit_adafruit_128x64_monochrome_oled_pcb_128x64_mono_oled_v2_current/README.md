@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_128x64_mono_oled_v2_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 128x64 Mono OLED PCB v2 current is a KiCad project containing 56 extracted component records. The catalogue matcher linked 22 physical placements to OOMP parts.
+Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 128x64 Mono OLED PCB v2 current is a KiCad project containing 56 extracted component records. The catalogue matcher linked 27 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 128x64 Mono OLED PCB v2 cur
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 53 |
-| Matched OOMP components | 22 |
-| Unmatched physical components | 7 |
+| Matched OOMP components | 27 |
+| Unmatched physical components | 2 |
 | Front-side placements | 2 |
 | Back-side placements | 23 |
 | Project version | `current` |
@@ -90,9 +90,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2, C5 | 3 | Capacitor 10 uF 0805 | 10uF | `Adafruit 128x64 Mono OLED PCB v2-import-fps:0805` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C3, C4, C6, C7 | 4 | 1uF | 1uF | `Adafruit 128x64 Mono OLED PCB v2-import-fps:0805` | unmatched |
-| C8 | 1 | 2.2uF/16V | 2.2uF/16V | `Adafruit 128x64 Mono OLED PCB v2-import-fps:0805` | unmatched |
-| D1, D2, D3 | 3 | Diode Switching SOD-323 | 1N4148 | `Adafruit 128x64 Mono OLED PCB v2-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| C3, C4, C6, C7 | 4 | Capacitor 1 uF 0805 | 1uF | `Adafruit 128x64 Mono OLED PCB v2-import-fps:0805` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C8 | 1 | Capacitor 2.2 uF 0805 | 2.2uF/16V | `Adafruit 128x64 Mono OLED PCB v2-import-fps:0805` | [`electronic_capacitor_0805_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_micro_farad) |
+| D1, D2, D3 | 3 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit 128x64 Mono OLED PCB v2-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | JP1 | 1 | Connector Header PZ254V-12-8P |  | `Adafruit 128x64 Mono OLED PCB v2-import-fps:1X08_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
 | Q1, Q2 | 2 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `Adafruit 128x64 Mono OLED PCB v2-import-fps:SOT23-WIDE` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
 | R2, R4, R5, R6, R11, R12, R13, R14 | 8 | Resistor 10000 Ohm 0805 | 10K | `Adafruit 128x64 Mono OLED PCB v2-import-fps:0805` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
@@ -132,7 +132,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 7 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_128x64_mono_oled_v2_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_128x64_mono_oled_v2_current/data/generated_data/browser_research_queue.md)
@@ -141,7 +141,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_128x64_mono_oled_v2_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

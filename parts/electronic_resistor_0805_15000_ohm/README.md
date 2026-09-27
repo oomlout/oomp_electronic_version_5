@@ -41,8 +41,9 @@ Resistor 15000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F1502TS` |
-| LCSC | [`C2930170`](https://www.lcsc.com/product-detail/C2930170.html) |
+| Manufacturer part number | `0805W8F1502T5E` |
+| LCSC | [`C17475`](https://www.lcsc.com/product-detail/C17475.html) |
+| JLCPCB | [`C17475`](https://jlcpcb.com/partdetail/18163-0805W8F1502T5E/C17475) |
 
 
 

@@ -1,10 +1,10 @@
-# Diode Switching SOD-323
+# Diode 1N4148WS SOD-323
 
 `electronic_diode_switching_sod_323_onsemi_1n4148ws`
 
-Diode Switching SOD-323 is an OOMP electronic diode definition. It uses the sod 323 package or form factor. Its nominal drawing size is 1.7 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
+Diode 1N4148WS SOD-323 is an OOMP electronic diode definition. It uses the sod 323 package or form factor. Its nominal drawing size is 1.7 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
 
-![Diode Switching SOD-323 pinout](data/working_svg_square_pins.svg)
+![Diode 1N4148WS SOD-323 pinout](data/working_svg_square_pins.svg)
 
 ## At a glance
 
@@ -38,6 +38,15 @@ Diode Switching SOD-323 is an OOMP electronic diode definition. It uses the sod 
 | Width | 1.25 mm |
 
 
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1N4148WS` |
+| LCSC | [`C2128`](https://www.lcsc.com/product-detail/C2128.html) |
+| JLCPCB | [`C2128`](https://jlcpcb.com/partdetail/2485-1N4148WS/C2128) |
 
 
 

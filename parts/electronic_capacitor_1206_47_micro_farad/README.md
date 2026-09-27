@@ -41,10 +41,11 @@ Capacitor 47 uF 1206 is an OOMP electronic capacitor definition. It uses the 120
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CL31A476MQHNNNE` |
-| LCSC | [`C68361`](https://www.lcsc.com/product-detail/C68361.html) |
+| Manufacturer part number | `CL31A476MPHNNNE` |
 | LCSC | [`C96123`](https://www.lcsc.com/product-detail/C96123.html) |
+| LCSC | [`C68361`](https://www.lcsc.com/product-detail/C68361.html) |
 | LCSC | [`C5448950`](https://www.lcsc.com/product-detail/C5448950.html) |
+| JLCPCB | [`C96123`](https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123) |
 
 
 

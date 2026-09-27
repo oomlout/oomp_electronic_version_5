@@ -43,6 +43,7 @@ Resistor 470 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 | --- | --- |
 | Manufacturer part number | `0805W8F4700T5E` |
 | LCSC | [`C17710`](https://www.lcsc.com/product-detail/C17710.html) |
+| JLCPCB | [`C17710`](https://jlcpcb.com/partdetail/18398-0805W8F4700T5E/C17710) |
 
 
 

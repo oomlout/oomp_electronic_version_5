@@ -41,8 +41,9 @@ Resistor 6800 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F6801TS` |
-| LCSC | [`C2907276`](https://www.lcsc.com/product-detail/C2907276.html) |
+| Manufacturer part number | `0805W8F6801T5E` |
+| LCSC | [`C17772`](https://www.lcsc.com/product-detail/C17772.html) |
+| JLCPCB | [`C17772`](https://jlcpcb.com/partdetail/18460-0805W8F6801T5E/C17772) |
 
 
 

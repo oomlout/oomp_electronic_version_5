@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_2_8_inch_tft_shield_pcb_2_8_inch_tft_shield_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit_2.8_Inch_TFT_Shield_PCB 2.8 Inch TFT Shield current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 7 physical placements to OOMP parts.
+Project adafruit/Adafruit_2.8_Inch_TFT_Shield_PCB 2.8 Inch TFT Shield current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit_2.8_Inch_TFT_Shield_PCB 2.8 Inch TFT Shield current is
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 51 |
-| Matched OOMP components | 7 |
-| Unmatched physical components | 12 |
+| Matched OOMP components | 10 |
+| Unmatched physical components | 9 |
 | Front-side placements | 18 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -81,7 +81,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C5 | 2 | Capacitor 10 uF 0805 | 10uF | `tfttouchshield-import-fps:C0805K` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C2, C3, C4 | 3 | 0.1uF | 0.1uF | `tfttouchshield-import-fps:C0805K` | unmatched |
+| C2, C3, C4 | 3 | Capacitor 100 nF 0805 | 0.1uF | `tfttouchshield-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | CN2 | 1 | ILI9325_28TFT | ILI9325_28TFT | `tfttouchshield-import-fps:ILI9325_28INCH_TS` | unmatched |
 | IC1, IC3 | 2 | 74ACT245DW | 74ACT245DW | `tfttouchshield-import-fps:SO20W` | unmatched |
 | IC4 | 1 | ADP122 | ADP122 | `tfttouchshield-import-fps:SOT23-5L` | unmatched |
@@ -123,7 +123,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 12 physical component records are not yet matched to an OOMP part.
+- 9 physical component records are not yet matched to an OOMP part.
 - The extractor reports 2 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_2_8_inch_tft_shield_pcb_2_8_inch_tft_shield_current/data/generated_data/lcsc_review.yaml)
@@ -133,7 +133,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_2_8_inch_tft_shield_pcb_2_8_inch_tft_shield_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 4
 
 ## Source files
 

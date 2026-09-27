@@ -43,6 +43,7 @@ Resistor 2200 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 | --- | --- |
 | Manufacturer part number | `0805W8F2201T5E` |
 | LCSC | [`C17520`](https://www.lcsc.com/product-detail/C17520.html) |
+| JLCPCB | [`C17520`](https://jlcpcb.com/partdetail/18208-0805W8F2201T5E/C17520) |
 
 
 

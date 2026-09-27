@@ -43,6 +43,7 @@ Resistor 1200 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 | --- | --- |
 | Manufacturer part number | `0805W8F1201T5E` |
 | LCSC | [`C17379`](https://www.lcsc.com/product-detail/C17379.html) |
+| JLCPCB | [`C17379`](https://jlcpcb.com/partdetail/18067-0805W8F1201T5E/C17379) |
 
 
 

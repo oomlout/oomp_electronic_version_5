@@ -43,6 +43,7 @@ Resistor 1200 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | --- | --- |
 | Manufacturer part number | `0603WAF1201T5E` |
 | LCSC | [`C22765`](https://www.lcsc.com/product-detail/C22765.html) |
+| JLCPCB | [`C22765`](https://jlcpcb.com/partdetail/23492-0603WAF1201T5E/C22765) |
 
 
 

@@ -43,6 +43,7 @@ Resistor 1e+06 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1
 | --- | --- |
 | Manufacturer part number | `1206W4F1004T5E` |
 | LCSC | [`C17927`](https://www.lcsc.com/product-detail/C17927.html) |
+| JLCPCB | [`C17927`](https://jlcpcb.com/partdetail/18615-1206W4F1004T5E/C17927) |
 
 
 

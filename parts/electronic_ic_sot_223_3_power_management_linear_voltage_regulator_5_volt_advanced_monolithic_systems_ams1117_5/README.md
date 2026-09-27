@@ -47,6 +47,7 @@ Regulator AMS1117-5.0 5V SOT-223 is an OOMP electronic ic definition. It uses th
 | --- | --- |
 | Manufacturer part number | `AMS1117-5.0` |
 | LCSC | [`C6187`](https://www.lcsc.com/product-detail/C6187.html) |
+| JLCPCB | [`C6187`](https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187) |
 
 
 

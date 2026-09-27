@@ -41,8 +41,9 @@ Resistor 1e+07 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `0603WAJ0106T5E` |
-| LCSC | [`C26097`](https://www.lcsc.com/product-detail/C26097.html) |
+| Manufacturer part number | `0603WAF1005T5E` |
+| LCSC | [`C7250`](https://www.lcsc.com/product-detail/C7250.html) |
+| JLCPCB | [`C7250`](https://jlcpcb.com/partdetail/7726-0603WAF1005T5E/C7250) |
 
 
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_2_8_tft_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/2.8-TFT-Breakout-PCB Adafruit 2.8 TFT Breakout current is a KiCad project containing 70 extracted component records. The catalogue matcher linked 21 physical placements to OOMP parts.
+Project adafruit/2.8-TFT-Breakout-PCB Adafruit 2.8 TFT Breakout current is a KiCad project containing 70 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/2.8-TFT-Breakout-PCB Adafruit 2.8 TFT Breakout current is a KiC
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 69 |
-| Matched OOMP components | 21 |
-| Unmatched physical components | 8 |
+| Matched OOMP components | 23 |
+| Unmatched physical components | 6 |
 | Front-side placements | 25 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,7 +82,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C4 | 2 | 0.1uF | 0.1uF | `Adafruit 2.8 TFT Breakout v2-import-fps:0805-NO` | unmatched |
+| C1, C4 | 2 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit 2.8 TFT Breakout v2-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | C2, C3, C5 | 3 | Capacitor 10 uF 0805 | 10uF | `Adafruit 2.8 TFT Breakout v2-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | IC1 | 1 | MIC5225-3.3 | MIC5225-3.3 | `Adafruit 2.8 TFT Breakout v2-import-fps:SOT23-5L` | unmatched |
 | IC2, IC3 | 2 | 74LVC245 | 74LVC245 | `Adafruit 2.8 TFT Breakout v2-import-fps:SO20W` | unmatched |
@@ -127,7 +127,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 8 physical component records are not yet matched to an OOMP part.
+- 6 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_2_8_tft_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_2_8_tft_breakout_current/data/generated_data/browser_research_queue.md)
@@ -136,7 +136,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_2_8_tft_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

@@ -41,8 +41,9 @@ Resistor 5600 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F5601TS` |
-| LCSC | [`C2907271`](https://www.lcsc.com/product-detail/C2907271.html) |
+| Manufacturer part number | `0805W8F5601T5E` |
+| LCSC | [`C4382`](https://www.lcsc.com/product-detail/C4382.html) |
+| JLCPCB | [`C4382`](https://jlcpcb.com/partdetail/4789-0805W8F5601T5E/C4382) |
 
 
 

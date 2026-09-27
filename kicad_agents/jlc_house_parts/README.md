@@ -14,23 +14,15 @@ PCBA; do not generalize it to all assembly services or all assembly charges.
 
 | Snapshot inventory | Count |
 | --- | ---: |
-| Active house-part candidates | 1,586 |
-| Basic | 351 |
-| Preferred / Promotional Extended | 1,235 |
-| Historical / retired rows retained separately | 418 |
-| Active candidates with an existing OOMP hint | 260 |
-| Existing distinct electronic OOMP IDs | 1,188 |
-| Existing electronic IDs with at least one LCSC code | 719 |
-| Existing electronic IDs needing supplier research | 469 |
+| Active house-part candidates (2026-09-26 corrected capture) | 1,574 |
+| Basic | 83 |
+| Preferred / Promotional Extended | 1,491 |
+| Active candidates with an existing OOMP hint | 96 |
+| Existing distinct electronic OOMP IDs | 1,362 |
+| Existing electronic IDs with at least one LCSC code | 910 |
 
-The 260 are **candidate matches**, not approved substitutions. Other rows may
-also match existing OOMP entries after research. Seven existing duplicate
-resistor population IDs are listed in `summary.json`; a worker must resolve a
-duplicate affecting its target before completing that item.
-
-Major groups include 293 chip resistors, 136 ceramic capacitors, 324 TVS/ESD
-devices, 254 Zeners, 202 Schottky diodes, 90 BJTs and 39 MOSFETs. Full category
-counts are in `summary.json`.
+The 96 are **candidate matches**, not approved substitutions. Other rows may
+also match existing OOMP entries after research.
 
 ## Where the list comes from
 
@@ -49,31 +41,40 @@ counts are in `summary.json`.
 4. [CDFER database](https://github.com/CDFER/jlcpcb-parts-database) and
    [jlcparts](https://github.com/yaqwsx/jlcparts) are alternative discovery sources.
    CDFER's stock-filtered products are unsuitable as the sole exhaustive list.
-5. **2026-09-26 refresh (current authority):** the official category page was
-   crawled directly in the browser (64 pages × 25 rows) and saved as
-   `sources/catalogue-browser-official-2026-09-26.json` in the same 16-column
-   DOM contract. The official category was re-curated since 18 September: only
-   126 of the dated snapshot's 1,586 active codes remain listed, 1,460 are
-   retired here, 1,448 codes are new, and the Basic tier shrank from 351 to 79
-   (all 79 already had intake progress). Surviving codes keep their
-   category/package from the dated mirror; new codes carry empty
-   category/package until intake reads their detail pages. Six non-standard
-   listings without a readable class badge were excluded
-   (C3116, C4650, C4662, C4664, C4688, C4689).
+5. **2026-09-26 corrected re-crawl (current authority):** the official category
+   page was crawled in the browser with the category filter held for all
+   64 pages × 25 rows, saved as
+   `sources/catalogue-browser-official-basic-category-2026-09-26.json` in the
+   16-column DOM contract (raw rows with per-page provenance:
+   `...-raw.json`). The same-day `catalogue-browser-official-2026-09-26.json`
+   capture is **retired as a bad seed**: its pagination dropped the category
+   restriction and swept the wider catalogue, so 1,495 of its 1,574 queued
+   rows were not house parts at all. The corrected capture holds 1,600 raw
+   rows, removes 20 site-side page-boundary duplicates by first-occurrence
+   dedupe (the listing's offset pagination overlaps consecutive pages),
+   excludes the six non-standard listings without a readable class badge
+   (C3116, C4650, C4662, C4664, C4688, C4689), and yields 1,574 standard
+   house parts — 83 Basic and 1,491 Promotional Extended. The site's own
+   counter reports 1,586 items; offset pagination cannot display all of them
+   distinctly, so the verified unique set is the authority. Category and
+   package columns are empty: the official listing rows do not carry them,
+   and intake must read them from each detail page. On the official category
+   the non-Basic badge reads plainly "Extended" (tooltip: Promotional
+   Extended); because queue membership now equals category membership, that
+   badge maps to the `preferred_extended` house tier instead of triggering a
+   class-conflict deferral.
 
-The saved input is a browser DOM capture of all **2,004** displayed table rows,
-with original cells and links. All 1,586 non-retired rows were last seen by the
-mirror on **18 September 2026, 08:22:22 UTC**. Acquisition was on 24 September;
-these dates are deliberately distinct. A first DOM extraction was capped at
-2,000 rows; the final four were explicitly collected and the full count checked.
-The input SHA-256 is recorded in `summary.json`.
+The saved input is a browser DOM capture of the official category listing:
+1,600 raw rows over 64 pages, reduced to 1,574 standard codes after
+page-boundary dedupe and exclusion of the six unbadged listings. All rows
+carry the crawl date **2026-09-26** as `first_seen`/`last_seen`; the raw
+per-page harvest is retained beside it with original cells and links. The
+input SHA-256 is recorded in `summary.json`.
 
-The active count agrees with JLC's initial category count, but equal counts do
-not prove identical membership. The official site's Next control dropped the
-category restriction into the wider catalogue during this session. Consequently
-this is a complete **mirror snapshot**, not a claim to have freshly verified all
-official listings. Every worker must recheck its actual official product page.
-Stock, prices, MOQ and class may have changed.
+Equal counts do not prove identical membership, and the listing's offset
+pagination overlaps consecutive pages, so a handful of rows shift between
+pages while crawling. Every worker must still recheck its actual official
+product page. Stock, prices, MOQ and class may have changed.
 
 For a refresh, acquire a new browser snapshot or browser-downloaded CSV, retain
 its original bytes, dates, URLs and hash, and compare code sets. The current
@@ -202,7 +203,7 @@ targeted generation, rendered diagram/README review and a recorded result.
 The deterministic checks verify structure and consistency; the worker must
 still inspect the evidence. Each stage has its own explicit deferral reason.
 
-The intake sweep ends when all 1,586 snapshot codes are either intake-complete
+The intake sweep ends when all 1,574 snapshot codes are either intake-complete
 or intake-deferred, followed by review of deferrals. Full ecosystem coverage
 requires full completion, the existing-part audit and affected project
 validation. Deferred parts are **not** counted as successfully added.

@@ -43,6 +43,7 @@ Resistor 2400 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | --- | --- |
 | Manufacturer part number | `0603WAF2401T5E` |
 | LCSC | [`C22940`](https://www.lcsc.com/product-detail/C22940.html) |
+| JLCPCB | [`C22940`](https://jlcpcb.com/partdetail/23667-0603WAF2401T5E/C22940) |
 
 
 

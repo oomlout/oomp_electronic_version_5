@@ -41,10 +41,12 @@ Resistor 2200 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0402J222 TS` |
+| Manufacturer part number | `0402WGF2201TCE` |
+| LCSC | [`C25879`](https://www.lcsc.com/product-detail/C25879.html) |
 | LCSC | [`C2906920`](https://www.lcsc.com/product-detail/C2906920.html) |
 | LCSC | [`C2906865`](https://www.lcsc.com/product-detail/C2906865.html) |
 | LCSC | [`C163447`](https://www.lcsc.com/product-detail/C163447.html) |
+| JLCPCB | [`C25879`](https://jlcpcb.com/partdetail/26622-0402WGF2201TCE/C25879) |
 
 
 

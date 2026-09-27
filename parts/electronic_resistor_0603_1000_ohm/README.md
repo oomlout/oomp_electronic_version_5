@@ -41,10 +41,11 @@ Resistor 1000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F1001TS` |
-| LCSC | [`C2907002`](https://www.lcsc.com/product-detail/C2907002.html) |
+| Manufacturer part number | `0603WAF1001T5E` |
 | LCSC | [`C21190`](https://www.lcsc.com/product-detail/C21190.html) |
+| LCSC | [`C2907002`](https://www.lcsc.com/product-detail/C2907002.html) |
 | LCSC | [`C22548`](https://www.lcsc.com/product-detail/C22548.html) |
+| JLCPCB | [`C21190`](https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190) |
 
 
 

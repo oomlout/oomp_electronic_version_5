@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_128x64_mono_oled_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 128x64 Mono OLED PCB current is a KiCad project containing 36 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
+Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 128x64 Mono OLED PCB current is a KiCad project containing 36 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 128x64 Mono OLED PCB curren
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 31 |
-| Matched OOMP components | 10 |
-| Unmatched physical components | 7 |
+| Matched OOMP components | 17 |
+| Unmatched physical components | 0 |
 | Front-side placements | 13 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -83,9 +83,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | B1, P0\0 | 2 | Connector Header 2.54-1*10P针 | PINHD-1X10 | `Adafruit 128x64 Mono OLED PCB-import-fps:1X10-BIG` | [`electronic_connector_header_2_54_mm_pitch_through_hole_10_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_10_pin) |
-| C1, C2, C4 | 3 | 1uF | 1uF | `Adafruit 128x64 Mono OLED PCB-import-fps:C0805K` | unmatched |
-| C3, C6 | 2 | 2.2uF | 2.2uF | `Adafruit 128x64 Mono OLED PCB-import-fps:C0805K` | unmatched |
-| C5, C7 | 2 | 0.1uF | 0.1uF | `Adafruit 128x64 Mono OLED PCB-import-fps:C0805K` | unmatched |
+| C1, C2, C4 | 3 | Capacitor 1 uF 0805 | 1uF | `Adafruit 128x64 Mono OLED PCB-import-fps:C0805K` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C3, C6 | 2 | Capacitor 2.2 uF 0805 | 2.2uF | `Adafruit 128x64 Mono OLED PCB-import-fps:C0805K` | [`electronic_capacitor_0805_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_micro_farad) |
+| C5, C7 | 2 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit 128x64 Mono OLED PCB-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | R1, R2, R3 | 3 | Resistor 10000 Ohm 0805 | 10K | `Adafruit 128x64 Mono OLED PCB-import-fps:R0805` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
 | R4 | 1 | Resistor 390000 Ohm 0805 | 390K | `Adafruit 128x64 Mono OLED PCB-import-fps:R0805` | [`electronic_resistor_0805_390000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_390000_ohm) |
 
@@ -121,7 +121,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 7 physical component records are not yet matched to an OOMP part.
+- No unmatched physical components or named-net disagreements were reported by the extractor.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_128x64_mono_oled_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_128x64_mono_oled_current/data/generated_data/browser_research_queue.md)
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_128x64_mono_oled_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

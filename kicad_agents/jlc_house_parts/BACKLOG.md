@@ -1,88 +1,93 @@
 # JLC house-part analysis queue
 
-Snapshot: 18 September 2026; captured 24 September. Candidates, not approved substitutions.
+Snapshot: official Basic & Promotional Extended category, captured 26 September 2026 (corrected in-category re-crawl). Candidates, not approved substitutions.
 
 | Code | Class | Manufacturer / MPN | Package | OOMP candidates |
 | --- | --- | --- | --- | --- |
-| [C6961](https://jlcpcb.com/partdetail/STMicroelectronics-TL072CDT/C6961) | basic | STMicroelectronics / TL072CDT | SO-8 | electronic_ic_soic_8_amplifier_operational_amplifier_dual_jfet_input_stmicroelectronics_tl072cdt |
-| [C1523](https://jlcpcb.com/partdetail/1875-0402B102K500NT/C1523) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402B102K500NT | 0402 | electronic_capacitor_0402_1_nano_farad |
-| [C1525](https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525) | basic | Samsung Electro-Mechanics / CL05B104KO5NNNC | 0402 | electronic_capacitor_0402_100_nano_farad |
-| [C1530](https://jlcpcb.com/partdetail/1882-0402B221K500NT/C1530) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402B221K500NT | 0402 | electronic_capacitor_0402_220_pico_farad |
-| [C1532](https://jlcpcb.com/partdetail/1884-0402B223K500NT/C1532) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402B223K500NT | 0402 | electronic_capacitor_0402_22_nano_farad |
-| [C1538](https://jlcpcb.com/partdetail/1890-0402B472K500NT/C1538) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402B472K500NT | 0402 | electronic_capacitor_0402_4_7_nano_farad |
-| [C1546](https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG101J500NT | 0402 | electronic_capacitor_0402_100_pico_farad |
-| [C1547](https://jlcpcb.com/partdetail/1899-0402CG120J500NT/C1547) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG120J500NT | 0402 | electronic_capacitor_0402_12_pico_farad |
-| [C1548](https://jlcpcb.com/partdetail/1900-0402CG150J500NT/C1548) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG150J500NT | 0402 | electronic_capacitor_0402_15_pico_farad |
-| [C1549](https://jlcpcb.com/partdetail/1901-0402CG180J500NT/C1549) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG180J500NT | 0402 | electronic_capacitor_0402_18_pico_farad |
-| [C1554](https://jlcpcb.com/partdetail/1906-0402CG200J500NT/C1554) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG200J500NT | 0402 | electronic_capacitor_0402_20_pico_farad |
-| [C1555](https://jlcpcb.com/partdetail/1907-0402CG220J500NT/C1555) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG220J500NT | 0402 | electronic_capacitor_0402_22_pico_farad |
-| [C1562](https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG330J500NT | 0402 | electronic_capacitor_0402_33_pico_farad |
-| [C1567](https://jlcpcb.com/partdetail/1919-0402CG470J500NT/C1567) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG470J500NT | 0402 | electronic_capacitor_0402_47_pico_farad |
-| [C1588](https://jlcpcb.com/partdetail/1940-CL10B102KB8NNNC/C1588) | basic | Samsung Electro-Mechanics / CL10B102KB8NNNC | 0603 | electronic_capacitor_0603_1_nano_farad |
-| [C1594](https://jlcpcb.com/partdetail/1946-0603B151K500NT/C1594) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603B151K500NT | 0603 | electronic_capacitor_0603_150_pico_farad |
-| [C1603](https://jlcpcb.com/partdetail/1955-CL10B221KB8NNNC/C1603) | basic | Samsung Electro-Mechanics / CL10B221KB8NNNC | 0603 | electronic_capacitor_0603_220_pico_farad |
-| [C1604](https://jlcpcb.com/partdetail/1956-0603B222K500NT/C1604) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603B222K500NT | 0603 | electronic_capacitor_0603_2_2_nano_farad |
-| [C1613](https://jlcpcb.com/partdetail/1965-CL10B332KB8NNNC/C1613) | basic | Samsung Electro-Mechanics / CL10B332KB8NNNC | 0603 | electronic_capacitor_0603_3_3_nano_farad |
-| [C1620](https://jlcpcb.com/partdetail/1972-0603B471K500NT/C1620) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603B471K500NT | 0603 | electronic_capacitor_0603_470_pico_farad |
-| [C1622](https://jlcpcb.com/partdetail/1974-CL10B473KB8NNNC/C1622) | basic | Samsung Electro-Mechanics / CL10B473KB8NNNC | 0603 | electronic_capacitor_0603_47_nano_farad |
-| [C1623](https://jlcpcb.com/partdetail/1975-CL10B474KA8NNNC/C1623) | basic | Samsung Electro-Mechanics / CL10B474KA8NNNC | 0603 | electronic_capacitor_0603_470_nano_farad |
-| [C1631](https://jlcpcb.com/partdetail/1983-0603B682K500NT/C1631) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603B682K500NT | 0603 | electronic_capacitor_0603_6_8_nano_farad |
-| [C1634](https://jlcpcb.com/partdetail/1986-CL10C100JB8NNNC/C1634) | basic | Samsung Electro-Mechanics / CL10C100JB8NNNC | 0603 | electronic_capacitor_0603_10_pico_farad |
-| [C1644](https://jlcpcb.com/partdetail/1996-CL10C150JB8NNNC/C1644) | basic | Samsung Electro-Mechanics / CL10C150JB8NNNC | 0603 | electronic_capacitor_0603_15_pico_farad |
-| [C1647](https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647) | basic | Samsung Electro-Mechanics / CL10C180JB8NNNC | 0603 | electronic_capacitor_0603_18_pico_farad |
-| [C1648](https://jlcpcb.com/partdetail/2000-CL10C200JB8NNNC/C1648) | basic | Samsung Electro-Mechanics / CL10C200JB8NNNC | 0603 | electronic_capacitor_0603_20_pico_farad |
-| [C1653](https://jlcpcb.com/partdetail/2005-CL10C220JB8NNNC/C1653) | basic | Samsung Electro-Mechanics / CL10C220JB8NNNC | 0603 | electronic_capacitor_0603_22_pico_farad |
-| [C1710](https://jlcpcb.com/partdetail/2062-CL21B103KBANNNC/C1710) | basic | Samsung Electro-Mechanics / CL21B103KBANNNC | 0805 | electronic_capacitor_0805_10_nano_farad |
-| [C1729](https://jlcpcb.com/partdetail/2081-CL21B223KBANNNC/C1729) | basic | Samsung Electro-Mechanics / CL21B223KBANNNC | 0805 | electronic_capacitor_0805_22_nano_farad |
-| [C1739](https://jlcpcb.com/partdetail/2091-0805B333K500NT/C1739) | basic | FH (Guangdong Fenghua Advanced Tech) / 0805B333K500NT | 0805 | electronic_capacitor_0805_33_nano_farad |
-| [C1743](https://jlcpcb.com/partdetail/2095-0805B471K500NT/C1743) | basic | FH (Guangdong Fenghua Advanced Tech) / 0805B471K500NT | 0805 | electronic_capacitor_0805_470_pico_farad |
-| [C1744](https://jlcpcb.com/partdetail/2096-0805B472K500NT/C1744) | basic | FH (Guangdong Fenghua Advanced Tech) / 0805B472K500NT | 0805 | electronic_capacitor_0805_4_7_nano_farad |
-| [C1779](https://jlcpcb.com/partdetail/2131-CL21A475KAQNNNE/C1779) | basic | Samsung Electro-Mechanics / CL21A475KAQNNNE | 0805 | electronic_capacitor_0805_4_7_micro_farad |
-| [C1790](https://jlcpcb.com/partdetail/2142-CL21C101JBANNNC/C1790) | basic | Samsung Electro-Mechanics / CL21C101JBANNNC | 0805 | electronic_capacitor_0805_100_pico_farad |
-| [C1798](https://jlcpcb.com/partdetail/2150-CL21C200JBANNNC/C1798) | basic | Samsung Electro-Mechanics / CL21C200JBANNNC | 0805 | electronic_capacitor_0805_20_pico_farad |
-| [C1804](https://jlcpcb.com/partdetail/2156-CL21C220JBANNNC/C1804) | basic | Samsung Electro-Mechanics / CL21C220JBANNNC | 0805 | electronic_capacitor_0805_22_pico_farad |
-| [C1846](https://jlcpcb.com/partdetail/2198-1206B103K500NT/C1846) | basic | FH (Guangdong Fenghua Advanced Tech) / 1206B103K500NT | 1206 | electronic_capacitor_1206_10_nano_farad |
-| [C1848](https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848) | basic | Samsung Electro-Mechanics / CL31B105KBHNNNE | 1206 | electronic_capacitor_1206_1_micro_farad |
-| [C5378](https://jlcpcb.com/partdetail/5810-CL21B224KBFNNNE/C5378) | basic | Samsung Electro-Mechanics / CL21B224KBFNNNE | 0805 | electronic_capacitor_0805_220_nano_farad |
-| [C2488](https://jlcpcb.com/partdetail/2865-MB10S50MIL/C2488) | basic | MDD(Microdiode Semiconductor) / MB10S-50MIL | MBS | electronic_diode_bridge_rectifier_mbs_mdd_microdiode_semiconductor_mb10s_50mil |
-| [C2480](https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS14/C2480) | basic | MDD(Microdiode Semiconductor) / SS14 | SMA(DO-214AC) | electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14 |
-| [C2128](https://jlcpcb.com/partdetail/2485-1N4148WS/C2128) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / 1N4148WS | SOD-323 | electronic_diode_switching_sod_323_onsemi_1n4148ws |
-| [C2500](https://jlcpcb.com/partdetail/Nexperia-BAV99215/C2500) | basic | Nexperia / BAV99,215 | SOT-23 | electronic_diode_switching_dual_series_sot_23_nexperia_bav99_215 |
-| [C1002](https://jlcpcb.com/partdetail/Sunlord-GZ1608D601TF/C1002) | basic | Sunlord / GZ1608D601TF | 0603 | electronic_ferrite_bead_0603_600_ohm_200_milliamp_sunlord_gz1608d601tf |
-| [C1015](https://jlcpcb.com/partdetail/Sunlord-GZ2012D101TF/C1015) | basic | Sunlord / GZ2012D101TF | 0805 | electronic_ferrite_bead_0805_100_ohm_800_milliamp_sunlord_gz2012d101tf |
-| [C1017](https://jlcpcb.com/partdetail/Sunlord-GZ2012D601TF/C1017) | basic | Sunlord / GZ2012D601TF | 0805 | electronic_ferrite_bead_0805_600_ohm_500_milliamp_sunlord_gz2012d601tf |
-| [C1035](https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035) | basic | Sunlord / SDFL1608S100KTF | 0603 | electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf |
-| [C1046](https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046) | basic | Sunlord / SDFL2012S100KTF | 0805 | electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf |
-| [C6855](https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855) | basic | MaxLinear / SP485EEN-L/TR | SOIC-8 | electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr |
-| [C5605](https://jlcpcb.com/partdetail/Nexperia-74HC14D653/C5605) | basic | Nexperia / 74HC14D,653 | SOIC-14 | electronic_ic_soic_14_logic_hex_schmitt_trigger_inverter_nexperia_74hc14d_653 |
-| [C5947](https://jlcpcb.com/partdetail/Nexperia-74HC595D118/C5947) | basic | Nexperia / 74HC595D,118 | SOIC-16 | electronic_ic_soic_16_logic_serial_in_parallel_out_shift_register_nexperia_74hc595d_118 |
-| [C2286](https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286) | basic | Hubei KENTO Elec / KT-0603R | 0603 | electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r |
-| [C2290](https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603W/C2290) | basic | Hubei KENTO Elec / KT-0603W | 0603 | electronic_led_0603_white_tint_hubei_kento_elec_kt_0603_w |
-| [C2296](https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296) | basic | Hubei KENTO Elec / KT-0805Y | 0805 | electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y |
-| [C2297](https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297) | basic | Hubei KENTO Elec / KT-0805G | 0805 | electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g |
-| [C3113](https://jlcpcb.com/partdetail/3500-CJ431/C3113) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / CJ431 | SOT-23 | electronic_ic_sot_23_power_management_voltage_reference_jiangsu_changjing_electronics_technology_co_ltd_cj431 |
-| [C5446](https://jlcpcb.com/partdetail/TorexSemicon-XC6206P332MRG/C5446) | basic | Torex Semicon / XC6206P332MR-G | SOT-23-3L | electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_semicon_xc6206p332mr_g |
-| [C6186](https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186) | basic | Advanced Monolithic Systems / AMS1117-3.3 | SOT-223 | electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3 |
-| [C6187](https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187) | basic | Advanced Monolithic Systems / AMS1117-5.0 | SOT-223 | electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5 |
-| [C4109](https://jlcpcb.com/partdetail/4516-0402WGF2001TCE/C4109) | basic | UNI-ROYAL(Uniroyal Elec) / 0402WGF2001TCE | 0402 | electronic_resistor_0402_2000_ohm |
-| [C4177](https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF1801T5E | 0603 | electronic_resistor_0603_1800_ohm |
-| [C4184](https://jlcpcb.com/partdetail/4591-0603WAF2002T5E/C4184) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF2002T5E | 0603 | electronic_resistor_0603_20000_ohm |
-| [C4190](https://jlcpcb.com/partdetail/4597-0603WAF2201T5E/C4190) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF2201T5E | 0603 | electronic_resistor_0603_2200_ohm |
-| [C4211](https://jlcpcb.com/partdetail/4618-0603WAF3001T5E/C4211) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF3001T5E | 0603 | electronic_resistor_0603_3000_ohm |
-| [C4216](https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF3302T5E | 0603 | electronic_resistor_0603_33000_ohm |
-| [C4260](https://jlcpcb.com/partdetail/4667-0603WAF6201T5E/C4260) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF6201T5E | 0603 | electronic_resistor_0603_6200_ohm |
-| [C4275](https://jlcpcb.com/partdetail/4682-0603WAF750JT5E/C4275) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF750JT5E | 0603 | electronic_resistor_0603_75_ohm |
-| [C4310](https://jlcpcb.com/partdetail/4717-0805W8F1501T5E/C4310) | basic | UNI-ROYAL(Uniroyal Elec) / 0805W8F1501T5E | 0805 | electronic_resistor_0805_1500_ohm |
-| [C4328](https://jlcpcb.com/partdetail/4735-0805W8F2002T5E/C4328) | basic | UNI-ROYAL(Uniroyal Elec) / 0805W8F2002T5E | 0805 | electronic_resistor_0805_20000_ohm |
-| [C4382](https://jlcpcb.com/partdetail/4789-0805W8F5601T5E/C4382) | basic | UNI-ROYAL(Uniroyal Elec) / 0805W8F5601T5E | 0805 | electronic_resistor_0805_5600_ohm |
-| [C4410](https://jlcpcb.com/partdetail/4817-1206W4F1001T5E/C4410) | basic | UNI-ROYAL(Uniroyal Elec) / 1206W4F1001T5E | 1206 | electronic_resistor_1206_1000_ohm |
-| [C7250](https://jlcpcb.com/partdetail/7726-0603WAF1005T5E/C7250) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF1005T5E | 0603 | electronic_resistor_0603_10000000_ohm |
-| [C1980](https://jlcpcb.com/partdetail/2332-4D03WGJ0472T5E/C1980) | basic | UNI-ROYAL(Uniroyal Elec) / 4D03WGJ0472T5E | 0603x4 | electronic_resistor_array_4_x_0603_convex_4700_ohm_8_pin |
-| [C2145](https://jlcpcb.com/partdetail/2502-MMBT5551_RANGE_200_300/C2145) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / MMBT5551(RANGE:200-300) | SOT-23 | electronic_transistor_sot_23_bipolar_npn_160_volt_jiangsu_changjing_electronics_technology_co_ltd_mmbt5551_range_200_300 |
-| [C2146](https://jlcpcb.com/partdetail/2503-S8050_J3Y_RANGE_200_350/C2146) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / S8050 J3Y(RANGE:200-350) | SOT-23 | electronic_transistor_sot_23_bipolar_npn_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s8050_j3y_range_200_350 |
-| [C2150](https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / SS8050(RANGE:200-350) | SOT-23 | electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350 |
-| [C6749](https://jlcpcb.com/partdetail/7216-S9013_J3_RANGE_200_350/C6749) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / S9013 J3(RANGE:200-350) | SOT-23 | electronic_transistor_sot_23_bipolar_npn_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9013_j3_range_200_350 |
-| [C7171](https://jlcpcb.com/partdetail/-TAJA106K016RNJ/C7171) | basic | -- / TAJA106K016RNJ | CASE-A-3216-18(mm) | Needs matching / new entry |
+| [C1002](https://jlcpcb.com/partdetail/Sunlord-GZ1608D601TF/C1002) | basic | Sunlord / GZ1608D601TF |  | electronic_ferrite_bead_0603_600_ohm_200_milliamp_sunlord_gz1608d601tf |
+| [C1015](https://jlcpcb.com/partdetail/Sunlord-GZ2012D101TF/C1015) | basic | Sunlord / GZ2012D101TF |  | electronic_ferrite_bead_0805_100_ohm_800_milliamp_sunlord_gz2012d101tf |
+| [C1017](https://jlcpcb.com/partdetail/Sunlord-GZ2012D601TF/C1017) | basic | Sunlord / GZ2012D601TF |  | electronic_ferrite_bead_0805_600_ohm_500_milliamp_sunlord_gz2012d601tf |
+| [C1035](https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035) | basic | Sunlord / SDFL1608S100KTF |  | electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf |
+| [C1046](https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046) | basic | Sunlord / SDFL2012S100KTF |  | electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf |
+| [C1523](https://jlcpcb.com/partdetail/1875-0402B102K500NT/C1523) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402B102K500NT |  | electronic_capacitor_0402_1_nano_farad |
+| [C1525](https://jlcpcb.com/partdetail/1877-CL05B104KO5NNNC/C1525) | basic | Samsung Electro-Mechanics / CL05B104KO5NNNC |  | electronic_capacitor_0402_100_nano_farad |
+| [C1530](https://jlcpcb.com/partdetail/1882-0402B221K500NT/C1530) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402B221K500NT |  | electronic_capacitor_0402_220_pico_farad |
+| [C1532](https://jlcpcb.com/partdetail/1884-0402B223K500NT/C1532) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402B223K500NT |  | electronic_capacitor_0402_22_nano_farad |
+| [C1538](https://jlcpcb.com/partdetail/1890-0402B472K500NT/C1538) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402B472K500NT |  | electronic_capacitor_0402_4_7_nano_farad |
+| [C1546](https://jlcpcb.com/partdetail/1898-0402CG101J500NT/C1546) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG101J500NT |  | electronic_capacitor_0402_100_pico_farad |
+| [C1547](https://jlcpcb.com/partdetail/1899-0402CG120J500NT/C1547) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG120J500NT |  | electronic_capacitor_0402_12_pico_farad |
+| [C1548](https://jlcpcb.com/partdetail/1900-0402CG150J500NT/C1548) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG150J500NT |  | electronic_capacitor_0402_15_pico_farad |
+| [C1549](https://jlcpcb.com/partdetail/1901-0402CG180J500NT/C1549) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG180J500NT |  | electronic_capacitor_0402_18_pico_farad |
+| [C1554](https://jlcpcb.com/partdetail/1906-0402CG200J500NT/C1554) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG200J500NT |  | electronic_capacitor_0402_20_pico_farad |
+| [C1555](https://jlcpcb.com/partdetail/1907-0402CG220J500NT/C1555) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG220J500NT |  | electronic_capacitor_0402_22_pico_farad |
+| [C1562](https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG330J500NT |  | electronic_capacitor_0402_33_pico_farad |
+| [C1567](https://jlcpcb.com/partdetail/1919-0402CG470J500NT/C1567) | basic | FH (Guangdong Fenghua Advanced Tech) / 0402CG470J500NT |  | electronic_capacitor_0402_47_pico_farad |
+| [C1588](https://jlcpcb.com/partdetail/1940-CL10B102KB8NNNC/C1588) | basic | Samsung Electro-Mechanics / CL10B102KB8NNNC |  | electronic_capacitor_0603_1_nano_farad |
+| [C1594](https://jlcpcb.com/partdetail/1946-0603B151K500NT/C1594) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603B151K500NT |  | electronic_capacitor_0603_150_pico_farad |
+| [C1603](https://jlcpcb.com/partdetail/1955-CL10B221KB8NNNC/C1603) | basic | Samsung Electro-Mechanics / CL10B221KB8NNNC |  | electronic_capacitor_0603_220_pico_farad |
+| [C1604](https://jlcpcb.com/partdetail/1956-0603B222K500NT/C1604) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603B222K500NT |  | electronic_capacitor_0603_2_2_nano_farad |
+| [C1613](https://jlcpcb.com/partdetail/1965-CL10B332KB8NNNC/C1613) | basic | Samsung Electro-Mechanics / CL10B332KB8NNNC |  | electronic_capacitor_0603_3_3_nano_farad |
+| [C1620](https://jlcpcb.com/partdetail/1972-0603B471K500NT/C1620) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603B471K500NT |  | electronic_capacitor_0603_470_pico_farad |
+| [C1622](https://jlcpcb.com/partdetail/1974-CL10B473KB8NNNC/C1622) | basic | Samsung Electro-Mechanics / CL10B473KB8NNNC |  | electronic_capacitor_0603_47_nano_farad |
+| [C1623](https://jlcpcb.com/partdetail/1975-CL10B474KA8NNNC/C1623) | basic | Samsung Electro-Mechanics / CL10B474KA8NNNC |  | electronic_capacitor_0603_470_nano_farad |
+| [C1631](https://jlcpcb.com/partdetail/1983-0603B682K500NT/C1631) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603B682K500NT |  | electronic_capacitor_0603_6_8_nano_farad |
+| [C1634](https://jlcpcb.com/partdetail/1986-CL10C100JB8NNNC/C1634) | basic | Samsung Electro-Mechanics / CL10C100JB8NNNC |  | electronic_capacitor_0603_10_pico_farad |
+| [C1644](https://jlcpcb.com/partdetail/1996-CL10C150JB8NNNC/C1644) | basic | Samsung Electro-Mechanics / CL10C150JB8NNNC |  | electronic_capacitor_0603_15_pico_farad |
+| [C1647](https://jlcpcb.com/partdetail/1999-CL10C180JB8NNNC/C1647) | basic | Samsung Electro-Mechanics / CL10C180JB8NNNC |  | electronic_capacitor_0603_18_pico_farad |
+| [C1648](https://jlcpcb.com/partdetail/2000-CL10C200JB8NNNC/C1648) | basic | Samsung Electro-Mechanics / CL10C200JB8NNNC |  | electronic_capacitor_0603_20_pico_farad |
+| [C1653](https://jlcpcb.com/partdetail/2005-CL10C220JB8NNNC/C1653) | basic | Samsung Electro-Mechanics / CL10C220JB8NNNC |  | electronic_capacitor_0603_22_pico_farad |
+| [C1658](https://jlcpcb.com/partdetail/2010-0603CG300J500NT/C1658) | basic | FH (Guangdong Fenghua Advanced Tech) / 0603CG300J500NT |  | electronic_capacitor_0603_30_pico_farad |
+| [C1663](https://jlcpcb.com/partdetail/2015-CL10C330JB8NNNC/C1663) | basic | Samsung Electro-Mechanics / CL10C330JB8NNNC |  | electronic_capacitor_0603_33_pico_farad |
+| [C1664](https://jlcpcb.com/partdetail/2016-CL10C331JB8NNNC/C1664) | basic | Samsung Electro-Mechanics / CL10C331JB8NNNC |  | electronic_capacitor_0603_330_pico_farad |
+| [C1671](https://jlcpcb.com/partdetail/2023-CL10C470JB8NNNC/C1671) | basic | Samsung Electro-Mechanics / CL10C470JB8NNNC |  | electronic_capacitor_0603_47_pico_farad |
+| [C1710](https://jlcpcb.com/partdetail/2062-CL21B103KBANNNC/C1710) | basic | Samsung Electro-Mechanics / CL21B103KBANNNC |  | electronic_capacitor_0805_10_nano_farad |
+| [C1729](https://jlcpcb.com/partdetail/2081-CL21B223KBANNNC/C1729) | basic | Samsung Electro-Mechanics / CL21B223KBANNNC |  | electronic_capacitor_0805_22_nano_farad |
+| [C1739](https://jlcpcb.com/partdetail/2091-0805B333K500NT/C1739) | basic | FH (Guangdong Fenghua Advanced Tech) / 0805B333K500NT |  | electronic_capacitor_0805_33_nano_farad |
+| [C1743](https://jlcpcb.com/partdetail/2095-0805B471K500NT/C1743) | basic | FH (Guangdong Fenghua Advanced Tech) / 0805B471K500NT |  | electronic_capacitor_0805_470_pico_farad |
+| [C1744](https://jlcpcb.com/partdetail/2096-0805B472K500NT/C1744) | basic | FH (Guangdong Fenghua Advanced Tech) / 0805B472K500NT |  | electronic_capacitor_0805_4_7_nano_farad |
+| [C1779](https://jlcpcb.com/partdetail/2131-CL21A475KAQNNNE/C1779) | basic | Samsung Electro-Mechanics / CL21A475KAQNNNE |  | electronic_capacitor_0805_4_7_micro_farad |
+| [C1790](https://jlcpcb.com/partdetail/2142-CL21C101JBANNNC/C1790) | basic | Samsung Electro-Mechanics / CL21C101JBANNNC |  | electronic_capacitor_0805_100_pico_farad |
+| [C1798](https://jlcpcb.com/partdetail/2150-CL21C200JBANNNC/C1798) | basic | Samsung Electro-Mechanics / CL21C200JBANNNC |  | electronic_capacitor_0805_20_pico_farad |
+| [C1804](https://jlcpcb.com/partdetail/2156-CL21C220JBANNNC/C1804) | basic | Samsung Electro-Mechanics / CL21C220JBANNNC |  | electronic_capacitor_0805_22_pico_farad |
+| [C1846](https://jlcpcb.com/partdetail/2198-1206B103K500NT/C1846) | basic | FH (Guangdong Fenghua Advanced Tech) / 1206B103K500NT |  | electronic_capacitor_1206_10_nano_farad |
+| [C1848](https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848) | basic | Samsung Electro-Mechanics / CL31B105KBHNNNE |  | electronic_capacitor_1206_1_micro_farad |
+| [C1980](https://jlcpcb.com/partdetail/2332-4D03WGJ0472T5E/C1980) | basic | UNI-ROYAL(Uniroyal Elec) / 4D03WGJ0472T5E |  | electronic_resistor_array_4_x_0603_convex_4700_ohm_8_pin |
+| [C2128](https://jlcpcb.com/partdetail/2485-1N4148WS/C2128) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / 1N4148WS |  | electronic_diode_switching_sod_323_onsemi_1n4148ws |
+| [C2145](https://jlcpcb.com/partdetail/2502-MMBT5551_RANGE_200_300/C2145) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / MMBT5551(RANGE:200-300) |  | electronic_transistor_sot_23_bipolar_npn_160_volt_jiangsu_changjing_electronics_technology_co_ltd_mmbt5551_range_200_300 |
+| [C2146](https://jlcpcb.com/partdetail/2503-S8050_J3Y_RANGE_200_350/C2146) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / S8050 J3Y(RANGE:200-350) |  | electronic_transistor_sot_23_bipolar_npn_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s8050_j3y_range_200_350 |
+| [C2150](https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / SS8050(RANGE:200-350) |  | electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350 |
+| [C2286](https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286) | basic | Hubei KENTO Elec / KT-0603R |  | electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r |
+| [C2290](https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603W/C2290) | basic | Hubei KENTO Elec / KT-0603W |  | electronic_led_0603_white_tint_hubei_kento_elec_kt_0603_w |
+| [C2296](https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296) | basic | Hubei KENTO Elec / KT-0805Y |  | electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y |
+| [C2297](https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297) | basic | Hubei KENTO Elec / KT-0805G |  | electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g |
+| [C2480](https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS14/C2480) | basic | MDD(Microdiode Semiconductor) / SS14 |  | electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14 |
+| [C2488](https://jlcpcb.com/partdetail/2865-MB10S50MIL/C2488) | basic | MDD(Microdiode Semiconductor) / MB10S-50MIL |  | electronic_diode_bridge_rectifier_mbs_mdd_microdiode_semiconductor_mb10s_50mil |
+| [C2500](https://jlcpcb.com/partdetail/Nexperia-BAV99215/C2500) | basic | Nexperia / BAV99,215 |  | electronic_diode_switching_dual_series_sot_23_nexperia_bav99_215 |
+| [C3113](https://jlcpcb.com/partdetail/3500-CJ431/C3113) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / CJ431 |  | electronic_ic_sot_23_power_management_voltage_reference_jiangsu_changjing_electronics_technology_co_ltd_cj431 |
+| [C4109](https://jlcpcb.com/partdetail/4516-0402WGF2001TCE/C4109) | basic | UNI-ROYAL(Uniroyal Elec) / 0402WGF2001TCE |  | electronic_resistor_0402_2000_ohm |
+| [C4177](https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF1801T5E |  | electronic_resistor_0603_1800_ohm |
+| [C4184](https://jlcpcb.com/partdetail/4591-0603WAF2002T5E/C4184) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF2002T5E |  | electronic_resistor_0603_20000_ohm |
+| [C4190](https://jlcpcb.com/partdetail/4597-0603WAF2201T5E/C4190) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF2201T5E |  | electronic_resistor_0603_2200_ohm |
+| [C4211](https://jlcpcb.com/partdetail/4618-0603WAF3001T5E/C4211) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF3001T5E |  | electronic_resistor_0603_3000_ohm |
+| [C4216](https://jlcpcb.com/partdetail/4623-0603WAF3302T5E/C4216) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF3302T5E |  | electronic_resistor_0603_33000_ohm |
+| [C4260](https://jlcpcb.com/partdetail/4667-0603WAF6201T5E/C4260) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF6201T5E |  | electronic_resistor_0603_6200_ohm |
+| [C4275](https://jlcpcb.com/partdetail/4682-0603WAF750JT5E/C4275) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF750JT5E |  | electronic_resistor_0603_75_ohm |
+| [C4310](https://jlcpcb.com/partdetail/4717-0805W8F1501T5E/C4310) | basic | UNI-ROYAL(Uniroyal Elec) / 0805W8F1501T5E |  | electronic_resistor_0805_1500_ohm |
+| [C4328](https://jlcpcb.com/partdetail/4735-0805W8F2002T5E/C4328) | basic | UNI-ROYAL(Uniroyal Elec) / 0805W8F2002T5E |  | electronic_resistor_0805_20000_ohm |
+| [C4382](https://jlcpcb.com/partdetail/4789-0805W8F5601T5E/C4382) | basic | UNI-ROYAL(Uniroyal Elec) / 0805W8F5601T5E |  | electronic_resistor_0805_5600_ohm |
+| [C4410](https://jlcpcb.com/partdetail/4817-1206W4F1001T5E/C4410) | basic | UNI-ROYAL(Uniroyal Elec) / 1206W4F1001T5E |  | electronic_resistor_1206_1000_ohm |
+| [C5378](https://jlcpcb.com/partdetail/5810-CL21B224KBFNNNE/C5378) | basic | Samsung Electro-Mechanics / CL21B224KBFNNNE |  | electronic_capacitor_0805_220_nano_farad |
+| [C5446](https://jlcpcb.com/partdetail/TorexSemicon-XC6206P332MRG/C5446) | basic | Torex Semicon / XC6206P332MR-G |  | electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_semicon_xc6206p332mr_g |
+| [C5605](https://jlcpcb.com/partdetail/Nexperia-74HC14D653/C5605) | basic | Nexperia / 74HC14D,653 |  | electronic_ic_soic_14_logic_hex_schmitt_trigger_inverter_nexperia_74hc14d_653 |
+| [C5947](https://jlcpcb.com/partdetail/Nexperia-74HC595D118/C5947) | basic | Nexperia / 74HC595D,118 |  | electronic_ic_soic_16_logic_serial_in_parallel_out_shift_register_nexperia_74hc595d_118 |
+| [C6186](https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186) | basic | Advanced Monolithic Systems / AMS1117-3.3 |  | electronic_ic_sot_223_3_power_management_linear_voltage_regulator_3_3_volt_advanced_monolithic_systems_ams1117_3_3 |
+| [C6187](https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187) | basic | Advanced Monolithic Systems / AMS1117-5.0 |  | electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5 |
+| [C6749](https://jlcpcb.com/partdetail/7216-S9013_J3_RANGE_200_350/C6749) | basic | Jiangsu Changjing Electronics Technology Co., Ltd. / S9013 J3(RANGE:200-350) |  | electronic_transistor_sot_23_bipolar_npn_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9013_j3_range_200_350 |
+| [C6855](https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855) | basic | MaxLinear / SP485EEN-L/TR |  | electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr |
+| [C6961](https://jlcpcb.com/partdetail/STMicroelectronics-TL072CDT/C6961) | basic | STMicroelectronics / TL072CDT |  | electronic_ic_soic_8_amplifier_operational_amplifier_dual_jfet_input_stmicroelectronics_tl072cdt |
+| [C7250](https://jlcpcb.com/partdetail/7726-0603WAF1005T5E/C7250) | basic | UNI-ROYAL(Uniroyal Elec) / 0603WAF1005T5E |  | electronic_resistor_0603_10000000_ohm |
+| [C7171](https://jlcpcb.com/partdetail/-TAJA106K016RNJ/C7171) | basic | -- / TAJA106K016RNJ |  | Needs matching / new entry |
+| [C1557](https://jlcpcb.com/partdetail/1909-0402CG270J500NT/C1557) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG270J500NT |  | electronic_capacitor_0402_27_pico_farad |
 | [C1591](https://jlcpcb.com/partdetail/1943-CL10B104KB8NNNC/C1591) | preferred_extended | Samsung Electro-Mechanics / CL10B104KB8NNNC |  | electronic_capacitor_0603_100_nano_farad |
 | [C1592](https://jlcpcb.com/partdetail/1944-CL10A105KO8NNNC/C1592) | preferred_extended | Samsung Electro-Mechanics / CL10A105KO8NNNC |  | electronic_capacitor_0603_1_micro_farad |
 | [C2040](https://jlcpcb.com/partdetail/RaspberryPi-RP2040/C2040) | preferred_extended | Raspberry Pi / RP2040 |  | electronic_ic_qfn_56_7_mm_x_7_mm_microcontroller_dual_core_arm_cortex_m0_plus_raspberry_pi_rp2040 |
@@ -94,14 +99,16 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C4143](https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143) | preferred_extended | RALEC / RTT0282R0FTH |  | electronic_resistor_0402_82_ohm |
 | [C4491](https://jlcpcb.com/partdetail/4898-1206W4F3900T5E/C4491) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 1206W4F3900T5E |  | electronic_resistor_1206_390_ohm |
 | [C5673](https://jlcpcb.com/partdetail/6132-CL10A105KA8NNNC/C5673) | preferred_extended | Samsung Electro-Mechanics / CL10A105KA8NNNC |  | electronic_capacitor_0603_1_micro_farad |
+| [C6568](https://jlcpcb.com/partdetail/SKYWORKS_SILICONLABS-CP2102GMR/C6568) | preferred_extended | SKYWORKS/SILICON LABS / CP2102-GMR |  | electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102_gmr |
 | [C7074](https://jlcpcb.com/partdetail/Littelfuse-SP0503BAHTG/C7074) | preferred_extended | Littelfuse / SP0503BAHTG |  | electronic_diode_tvs_array_sot_143_littelfuse_sp0503bahtg |
-| [C1557](https://jlcpcb.com/partdetail/1909-0402CG270J500NT/C1557) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG270J500NT | 0402 | electronic_capacitor_0402_27_pico_farad |
-| [C5672](https://jlcpcb.com/partdetail/6131-CL31A226KPHNNNE/C5672) | preferred_extended | Samsung Electro-Mechanics / CL31A226KPHNNNE | 1206 | electronic_capacitor_1206_22_micro_farad |
-| [C6568](https://jlcpcb.com/partdetail/SKYWORKS_SILICONLABS-CP2102GMR/C6568) | preferred_extended | SKYWORKS/SILICON LABS / CP2102-GMR | WQFN-28-EP(5x5) | electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102_gmr |
-| [C4172](https://jlcpcb.com/partdetail/4579-0603WAF1504T5E/C4172) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0603WAF1504T5E | 0603 | electronic_resistor_0603_1500000_ohm |
+| [C1034](https://jlcpcb.com/partdetail/Sunlord-SDFL1608Q4R7KTF/C1034) | preferred_extended | Sunlord / SDFL1608Q4R7KTF |  | Needs matching / new entry |
+| [C1042](https://jlcpcb.com/partdetail/Sunlord-SDFL2012Q1R0KTF/C1042) | preferred_extended | Sunlord / SDFL2012Q1R0KTF |  | Needs matching / new entry |
+| [C1043](https://jlcpcb.com/partdetail/1395-CMI201209U2R2KT/C1043) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI201209U2R2KT |  | Needs matching / new entry |
 | [C1045](https://jlcpcb.com/partdetail/1397-CMI201209X5R6KT/C1045) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI201209X5R6KT |  | Needs matching / new entry |
 | [C1048](https://jlcpcb.com/partdetail/1400-CMI321609U2R2KT/C1048) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI321609U2R2KT |  | Needs matching / new entry |
+| [C1049](https://jlcpcb.com/partdetail/1401-CMI321609U4R7KT/C1049) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI321609U4R7KT |  | Needs matching / new entry |
 | [C1050](https://jlcpcb.com/partdetail/1402-CMI321609U5R6KT/C1050) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI321609U5R6KT |  | Needs matching / new entry |
+| [C1051](https://jlcpcb.com/partdetail/1403-CMI321609X100KT/C1051) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI321609X100KT |  | Needs matching / new entry |
 | [C1093](https://jlcpcb.com/partdetail/1445-RC02K360JT/C1093) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / RC-02K360JT |  | Needs matching / new entry |
 | [C1152](https://jlcpcb.com/partdetail/1504-RC02K243JT/C1152) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / RC-02K243JT |  | Needs matching / new entry |
 | [C1160](https://jlcpcb.com/partdetail/1512-RC02K823JT/C1160) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / RC-02K823JT |  | Needs matching / new entry |
@@ -143,32 +150,44 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1512](https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / RS-06K184JT |  | Needs matching / new entry |
 | [C1519](https://jlcpcb.com/partdetail/1871-RS06K564JT/C1519) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / RS-06K564JT |  | Needs matching / new entry |
 | [C1524](https://jlcpcb.com/partdetail/1876-0402B103K500NT/C1524) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B103K500NT |  | Needs matching / new entry |
+| [C1527](https://jlcpcb.com/partdetail/1879-0402B151K500NT/C1527) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B151K500NT |  | Needs matching / new entry |
 | [C1528](https://jlcpcb.com/partdetail/1880-0402B161K500NT/C1528) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B161K500NT |  | Needs matching / new entry |
 | [C1529](https://jlcpcb.com/partdetail/1881-0402B201K500NT/C1529) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B201K500NT |  | Needs matching / new entry |
+| [C1531](https://jlcpcb.com/partdetail/1883-0402B222K500NT/C1531) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B222K500NT |  | Needs matching / new entry |
 | [C1533](https://jlcpcb.com/partdetail/1885-0402B271K500NT/C1533) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B271K500NT |  | Needs matching / new entry |
 | [C1534](https://jlcpcb.com/partdetail/1886-0402B301K500NT/C1534) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B301K500NT |  | Needs matching / new entry |
 | [C1535](https://jlcpcb.com/partdetail/1887-0402B331K500NT/C1535) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B331K500NT |  | Needs matching / new entry |
 | [C1536](https://jlcpcb.com/partdetail/1888-0402B332K500NT/C1536) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B332K500NT |  | Needs matching / new entry |
+| [C1537](https://jlcpcb.com/partdetail/1889-0402B471K500NT/C1537) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B471K500NT |  | Needs matching / new entry |
 | [C1539](https://jlcpcb.com/partdetail/1891-0402B561K500NT/C1539) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B561K500NT |  | Needs matching / new entry |
 | [C1540](https://jlcpcb.com/partdetail/1892-0402B562K500NT/C1540) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B562K500NT |  | Needs matching / new entry |
 | [C1541](https://jlcpcb.com/partdetail/1893-0402B681K500NT/C1541) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B681K500NT |  | Needs matching / new entry |
+| [C1542](https://jlcpcb.com/partdetail/1894-0402B682K500NT/C1542) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B682K500NT |  | Needs matching / new entry |
 | [C1543](https://jlcpcb.com/partdetail/1895-0402B821K500NT/C1543) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B821K500NT |  | Needs matching / new entry |
 | [C1544](https://jlcpcb.com/partdetail/1896-0402CG0R5C500NT/C1544) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG0R5C500NT |  | Needs matching / new entry |
 | [C1545](https://jlcpcb.com/partdetail/1897-0402CG100J500NT/C1545) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG100J500NT |  | Needs matching / new entry |
+| [C1550](https://jlcpcb.com/partdetail/1902-0402CG1R0C500NT/C1550) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG1R0C500NT |  | Needs matching / new entry |
 | [C1551](https://jlcpcb.com/partdetail/1903-0402CG1R2C500NT/C1551) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG1R2C500NT |  | Needs matching / new entry |
+| [C1552](https://jlcpcb.com/partdetail/1904-0402CG1R5C500NT/C1552) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG1R5C500NT |  | Needs matching / new entry |
 | [C1553](https://jlcpcb.com/partdetail/1905-0402CG1R8C500NT/C1553) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG1R8C500NT |  | Needs matching / new entry |
 | [C1556](https://jlcpcb.com/partdetail/1908-0402CG250J500NT/C1556) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG250J500NT |  | Needs matching / new entry |
 | [C1558](https://jlcpcb.com/partdetail/1910-0402CG2R0C500NT/C1558) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG2R0C500NT |  | Needs matching / new entry |
+| [C1559](https://jlcpcb.com/partdetail/1911-0402CG2R2C500NT/C1559) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG2R2C500NT |  | Needs matching / new entry |
 | [C1560](https://jlcpcb.com/partdetail/1912-0402CG2R5C500NT/C1560) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG2R5C500NT |  | Needs matching / new entry |
+| [C1561](https://jlcpcb.com/partdetail/1913-0402CG2R7C500NT/C1561) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG2R7C500NT |  | Needs matching / new entry |
 | [C1563](https://jlcpcb.com/partdetail/1915-0402CG390J500NT/C1563) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG390J500NT |  | Needs matching / new entry |
 | [C1564](https://jlcpcb.com/partdetail/1916-0402CG3R0C500NT/C1564) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG3R0C500NT |  | Needs matching / new entry |
+| [C1565](https://jlcpcb.com/partdetail/1917-0402CG3R3C500NT/C1565) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG3R3C500NT |  | Needs matching / new entry |
 | [C1566](https://jlcpcb.com/partdetail/1918-0402CG3R9C500NT/C1566) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG3R9C500NT |  | Needs matching / new entry |
 | [C1568](https://jlcpcb.com/partdetail/1920-0402CG4R0C500NT/C1568) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG4R0C500NT |  | Needs matching / new entry |
+| [C1569](https://jlcpcb.com/partdetail/1921-0402CG4R7C500NT/C1569) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG4R7C500NT |  | Needs matching / new entry |
+| [C1570](https://jlcpcb.com/partdetail/1922-0402CG300J500NT/C1570) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG300J500NT |  | Needs matching / new entry |
 | [C1571](https://jlcpcb.com/partdetail/1923-0402CG510J500NT/C1571) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG510J500NT |  | Needs matching / new entry |
 | [C1572](https://jlcpcb.com/partdetail/1924-0402CG560J500NT/C1572) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG560J500NT |  | Needs matching / new entry |
 | [C1573](https://jlcpcb.com/partdetail/1925-0402CG5R0C500NT/C1573) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG5R0C500NT |  | Needs matching / new entry |
 | [C1574](https://jlcpcb.com/partdetail/1926-0402CG5R6C500NT/C1574) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG5R6C500NT |  | Needs matching / new entry |
 | [C1575](https://jlcpcb.com/partdetail/1927-0402CG6R0C500NT/C1575) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG6R0C500NT |  | Needs matching / new entry |
+| [C1576](https://jlcpcb.com/partdetail/1928-0402CG6R8C500NT/C1576) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG6R8C500NT |  | Needs matching / new entry |
 | [C1577](https://jlcpcb.com/partdetail/1929-0402CG7R0C500NT/C1577) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG7R0C500NT |  | Needs matching / new entry |
 | [C1578](https://jlcpcb.com/partdetail/1930-0402CG8R0C500NT/C1578) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG8R0C500NT |  | Needs matching / new entry |
 | [C1579](https://jlcpcb.com/partdetail/1931-0402CG8R2C500NT/C1579) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG8R2C500NT |  | Needs matching / new entry |
@@ -180,18 +199,23 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1589](https://jlcpcb.com/partdetail/1941-CL10B103KB8NNNC/C1589) | preferred_extended | Samsung Electro-Mechanics / CL10B103KB8NNNC |  | Needs matching / new entry |
 | [C1590](https://jlcpcb.com/partdetail/1942-CL10B104KA8NNNC/C1590) | preferred_extended | Samsung Electro-Mechanics / CL10B104KA8NNNC |  | Needs matching / new entry |
 | [C1593](https://jlcpcb.com/partdetail/1945-0603B123K500NT/C1593) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B123K500NT |  | Needs matching / new entry |
+| [C1595](https://jlcpcb.com/partdetail/1947-0603B152K500NT/C1595) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B152K500NT |  | Needs matching / new entry |
+| [C1596](https://jlcpcb.com/partdetail/1948-0603B153K500NT/C1596) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B153K500NT |  | Needs matching / new entry |
 | [C1597](https://jlcpcb.com/partdetail/1949-0603B154K500NT/C1597) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B154K500NT |  | Needs matching / new entry |
 | [C1598](https://jlcpcb.com/partdetail/1950-0603B181K500NT/C1598) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B181K500NT |  | Needs matching / new entry |
 | [C1599](https://jlcpcb.com/partdetail/1951-0603B182K500NT/C1599) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B182K500NT |  | Needs matching / new entry |
+| [C1600](https://jlcpcb.com/partdetail/1952-0603B201K500NT/C1600) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B201K500NT |  | Needs matching / new entry |
 | [C1601](https://jlcpcb.com/partdetail/1953-0603B202K500NT/C1601) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B202K500NT |  | Needs matching / new entry |
 | [C1602](https://jlcpcb.com/partdetail/1954-0603B203K500NT/C1602) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B203K500NT |  | Needs matching / new entry |
 | [C1606](https://jlcpcb.com/partdetail/1958-0603B224K250NT/C1606) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B224K250NT |  | Needs matching / new entry |
 | [C1607](https://jlcpcb.com/partdetail/1959-CL10A225KP8NNNC/C1607) | preferred_extended | Samsung Electro-Mechanics / CL10A225KP8NNNC |  | Needs matching / new entry |
 | [C1608](https://jlcpcb.com/partdetail/1960-0603B271K500NT/C1608) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B271K500NT |  | Needs matching / new entry |
+| [C1609](https://jlcpcb.com/partdetail/1961-0603B272K500NT/C1609) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B272K500NT |  | Needs matching / new entry |
 | [C1610](https://jlcpcb.com/partdetail/1962-0603B301K500NT/C1610) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B301K500NT |  | Needs matching / new entry |
 | [C1611](https://jlcpcb.com/partdetail/1963-0603B302K500NT/C1611) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B302K500NT |  | Needs matching / new entry |
 | [C1612](https://jlcpcb.com/partdetail/1964-0603B331K500NT/C1612) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B331K500NT |  | Needs matching / new entry |
 | [C1614](https://jlcpcb.com/partdetail/1966-0603B333K500NT/C1614) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B333K500NT |  | Needs matching / new entry |
+| [C1615](https://jlcpcb.com/partdetail/1967-0603B334K250NT/C1615) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B334K250NT |  | Needs matching / new entry |
 | [C1616](https://jlcpcb.com/partdetail/1968-0603B361K500NT/C1616) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B361K500NT |  | Needs matching / new entry |
 | [C1617](https://jlcpcb.com/partdetail/1969-0603B391K500NT/C1617) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B391K500NT |  | Needs matching / new entry |
 | [C1618](https://jlcpcb.com/partdetail/1970-0603B392K500NT/C1618) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B392K500NT |  | Needs matching / new entry |
@@ -203,6 +227,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1627](https://jlcpcb.com/partdetail/1979-0603B561K500NT/C1627) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B561K500NT |  | Needs matching / new entry |
 | [C1628](https://jlcpcb.com/partdetail/1980-0603B562K500NT/C1628) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B562K500NT |  | Needs matching / new entry |
 | [C1629](https://jlcpcb.com/partdetail/1981-0603B563K500NT/C1629) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B563K500NT |  | Needs matching / new entry |
+| [C1630](https://jlcpcb.com/partdetail/1982-0603B681K500NT/C1630) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B681K500NT |  | Needs matching / new entry |
 | [C1632](https://jlcpcb.com/partdetail/1984-0603B821K500NT/C1632) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B821K500NT |  | Needs matching / new entry |
 | [C1633](https://jlcpcb.com/partdetail/1985-0603CG0R5C500NT/C1633) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG0R5C500NT |  | Needs matching / new entry |
 | [C1635](https://jlcpcb.com/partdetail/1987-0603CG101J500NT/C1635) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG101J500NT |  | Needs matching / new entry |
@@ -221,7 +246,29 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1652](https://jlcpcb.com/partdetail/2004-0603CG2R5C500NT/C1652) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG2R5C500NT |  | Needs matching / new entry |
 | [C1654](https://jlcpcb.com/partdetail/2006-0603CG240J500NT/C1654) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG240J500NT |  | Needs matching / new entry |
 | [C1655](https://jlcpcb.com/partdetail/2007-0603CG250J500NT/C1655) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG250J500NT |  | Needs matching / new entry |
+| [C1656](https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656) | preferred_extended | Samsung Electro-Mechanics / CL10C270JB8NNNC |  | Needs matching / new entry |
+| [C1657](https://jlcpcb.com/partdetail/2009-CL10C271JB8NNNC/C1657) | preferred_extended | Samsung Electro-Mechanics / CL10C271JB8NNNC |  | Needs matching / new entry |
+| [C1660](https://jlcpcb.com/partdetail/2012-0603CG3R3C500NT/C1660) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG3R3C500NT |  | Needs matching / new entry |
+| [C1661](https://jlcpcb.com/partdetail/2013-0603CG3R6C500NT/C1661) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG3R6C500NT |  | Needs matching / new entry |
+| [C1662](https://jlcpcb.com/partdetail/2014-0603CG3R9C500NT/C1662) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG3R9C500NT |  | Needs matching / new entry |
+| [C1665](https://jlcpcb.com/partdetail/2017-0603CG360J500NT/C1665) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG360J500NT |  | Needs matching / new entry |
+| [C1666](https://jlcpcb.com/partdetail/2018-0603CG390J500NT/C1666) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG390J500NT |  | Needs matching / new entry |
+| [C1667](https://jlcpcb.com/partdetail/2019-0603CG391J500NT/C1667) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG391J500NT |  | Needs matching / new entry |
+| [C1668](https://jlcpcb.com/partdetail/2020-0603CG4R0C500NT/C1668) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG4R0C500NT |  | Needs matching / new entry |
+| [C1669](https://jlcpcb.com/partdetail/2021-0603CG4R7C500NT/C1669) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG4R7C500NT |  | Needs matching / new entry |
+| [C1670](https://jlcpcb.com/partdetail/2022-0603CG430J500NT/C1670) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG430J500NT |  | Needs matching / new entry |
+| [C1672](https://jlcpcb.com/partdetail/2024-0603CG500J500NT/C1672) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG500J500NT |  | Needs matching / new entry |
+| [C1673](https://jlcpcb.com/partdetail/2025-0603CG5R0C500NT/C1673) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG5R0C500NT |  | Needs matching / new entry |
+| [C1674](https://jlcpcb.com/partdetail/2026-0603CG5R6C500NT/C1674) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG5R6C500NT |  | Needs matching / new entry |
+| [C1675](https://jlcpcb.com/partdetail/2027-0603CG510J500NT/C1675) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG510J500NT |  | Needs matching / new entry |
+| [C1676](https://jlcpcb.com/partdetail/2028-0603CG560J500NT/C1676) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG560J500NT |  | Needs matching / new entry |
+| [C1678](https://jlcpcb.com/partdetail/2030-0603CG6R2C500NT/C1678) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG6R2C500NT |  | Needs matching / new entry |
+| [C1679](https://jlcpcb.com/partdetail/2031-0603CG6R8C500NT/C1679) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG6R8C500NT |  | Needs matching / new entry |
+| [C1680](https://jlcpcb.com/partdetail/2032-0603CG680J500NT/C1680) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG680J500NT |  | Needs matching / new entry |
+| [C1681](https://jlcpcb.com/partdetail/2033-0603CG750J500NT/C1681) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG750J500NT |  | Needs matching / new entry |
+| [C1682](https://jlcpcb.com/partdetail/2034-0603CG7R0C500NT/C1682) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG7R0C500NT |  | Needs matching / new entry |
 | [C1683](https://jlcpcb.com/partdetail/2035-0603CG820J500NT/C1683) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG820J500NT |  | Needs matching / new entry |
+| [C1685](https://jlcpcb.com/partdetail/2037-0603CG8R2C500NT/C1685) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG8R2C500NT |  | Needs matching / new entry |
 | [C1686](https://jlcpcb.com/partdetail/2038-0603CG910J500NT/C1686) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG910J500NT |  | Needs matching / new entry |
 | [C1688](https://jlcpcb.com/partdetail/2040-CL10F104ZB8NNNC/C1688) | preferred_extended | Samsung Electro-Mechanics / CL10F104ZB8NNNC |  | Needs matching / new entry |
 | [C1691](https://jlcpcb.com/partdetail/2043-CL10A106MQ8NNNC/C1691) | preferred_extended | Samsung Electro-Mechanics / CL10A106MQ8NNNC |  | Needs matching / new entry |
@@ -242,6 +289,8 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1713](https://jlcpcb.com/partdetail/2065-CL21A106KOQNNNE/C1713) | preferred_extended | Samsung Electro-Mechanics / CL21A106KOQNNNE |  | Needs matching / new entry |
 | [C1714](https://jlcpcb.com/partdetail/2066-0805B122K500NT/C1714) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B122K500NT |  | Needs matching / new entry |
 | [C1715](https://jlcpcb.com/partdetail/2067-0805B123K500NT/C1715) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B123K500NT |  | Needs matching / new entry |
+| [C1716](https://jlcpcb.com/partdetail/2068-0805B151K500NT/C1716) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B151K500NT |  | Needs matching / new entry |
+| [C1717](https://jlcpcb.com/partdetail/2069-0805B152K500NT/C1717) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B152K500NT |  | Needs matching / new entry |
 | [C1718](https://jlcpcb.com/partdetail/2070-0805B153K500NT/C1718) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B153K500NT |  | Needs matching / new entry |
 | [C1719](https://jlcpcb.com/partdetail/2071-0805B154K500NT/C1719) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B154K500NT |  | Needs matching / new entry |
 | [C1720](https://jlcpcb.com/partdetail/2072-0805B161K500NT/C1720) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B161K500NT |  | Needs matching / new entry |
@@ -261,6 +310,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1736](https://jlcpcb.com/partdetail/2088-0805B302K500NT/C1736) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B302K500NT |  | Needs matching / new entry |
 | [C1737](https://jlcpcb.com/partdetail/2089-0805B331K500NT/C1737) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B331K500NT |  | Needs matching / new entry |
 | [C1738](https://jlcpcb.com/partdetail/2090-0805B332K500NT/C1738) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B332K500NT |  | Needs matching / new entry |
+| [C1740](https://jlcpcb.com/partdetail/2092-0805B334K500NT/C1740) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B334K500NT |  | Needs matching / new entry |
 | [C1741](https://jlcpcb.com/partdetail/2093-0805B391K500NT/C1741) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B391K500NT |  | Needs matching / new entry |
 | [C1742](https://jlcpcb.com/partdetail/2094-0805B392K500NT/C1742) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B392K500NT |  | Needs matching / new entry |
 | [C1745](https://jlcpcb.com/partdetail/2097-0805B473K500NT/C1745) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B473K500NT |  | Needs matching / new entry |
@@ -272,6 +322,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1751](https://jlcpcb.com/partdetail/2103-0805B561K500NT/C1751) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B561K500NT |  | Needs matching / new entry |
 | [C1753](https://jlcpcb.com/partdetail/2105-0805B563K500NT/C1753) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B563K500NT |  | Needs matching / new entry |
 | [C1754](https://jlcpcb.com/partdetail/2106-0805B681K500NT/C1754) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B681K500NT |  | Needs matching / new entry |
+| [C1755](https://jlcpcb.com/partdetail/2107-0805B682K500NT/C1755) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B682K500NT |  | Needs matching / new entry |
 | [C1756](https://jlcpcb.com/partdetail/2108-0805B683K500NT/C1756) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B683K500NT |  | Needs matching / new entry |
 | [C1757](https://jlcpcb.com/partdetail/2109-0805B821K500NT/C1757) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B821K500NT |  | Needs matching / new entry |
 | [C1758](https://jlcpcb.com/partdetail/2110-0805B822K500NT/C1758) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B822K500NT |  | Needs matching / new entry |
@@ -294,9 +345,11 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1788](https://jlcpcb.com/partdetail/2140-0805CG1R5C500NT/C1788) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG1R5C500NT |  | Needs matching / new entry |
 | [C1789](https://jlcpcb.com/partdetail/2141-0805CG1R8C500NT/C1789) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG1R8C500NT |  | Needs matching / new entry |
 | [C1791](https://jlcpcb.com/partdetail/2143-CL21C102JBCNNNC/C1791) | preferred_extended | Samsung Electro-Mechanics / CL21C102JBCNNNC |  | Needs matching / new entry |
+| [C1792](https://jlcpcb.com/partdetail/2144-0805CG120J500NT/C1792) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG120J500NT |  | Needs matching / new entry |
 | [C1793](https://jlcpcb.com/partdetail/2145-0805CG121J500NT/C1793) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG121J500NT |  | Needs matching / new entry |
 | [C1795](https://jlcpcb.com/partdetail/2147-0805CG151J500NT/C1795) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG151J500NT |  | Needs matching / new entry |
 | [C1796](https://jlcpcb.com/partdetail/2148-0805CG160J500NT/C1796) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG160J500NT |  | Needs matching / new entry |
+| [C1797](https://jlcpcb.com/partdetail/2149-0805CG180J500NT/C1797) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG180J500NT |  | Needs matching / new entry |
 | [C1799](https://jlcpcb.com/partdetail/2151-0805CG201J500NT/C1799) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG201J500NT |  | Needs matching / new entry |
 | [C1800](https://jlcpcb.com/partdetail/2152-0805CG2R0C500NT/C1800) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG2R0C500NT |  | Needs matching / new entry |
 | [C1801](https://jlcpcb.com/partdetail/2153-0805CG2R2C500NT/C1801) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG2R2C500NT |  | Needs matching / new entry |
@@ -346,6 +399,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C1854](https://jlcpcb.com/partdetail/2206-1206B221K500NT/C1854) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 1206B221K500NT |  | Needs matching / new entry |
 | [C1855](https://jlcpcb.com/partdetail/2207-1206B222K500NT/C1855) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 1206B222K500NT |  | Needs matching / new entry |
 | [C1856](https://jlcpcb.com/partdetail/2208-1206B223K500NT/C1856) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 1206B223K500NT |  | Needs matching / new entry |
+| [C1857](https://jlcpcb.com/partdetail/2209-1206B224K500NT/C1857) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 1206B224K500NT |  | Needs matching / new entry |
 | [C1859](https://jlcpcb.com/partdetail/2211-1206X226K100NT/C1859) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 1206X226K100NT |  | Needs matching / new entry |
 | [C1860](https://jlcpcb.com/partdetail/2212-1206B272K500NT/C1860) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 1206B272K500NT |  | Needs matching / new entry |
 | [C1862](https://jlcpcb.com/partdetail/2214-1206B331K500NT/C1862) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 1206B331K500NT |  | Needs matching / new entry |
@@ -502,6 +556,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C2144](https://jlcpcb.com/partdetail/2501-MMBT4401_RANGE_100_300/C2144) | preferred_extended | Jiangsu Changjing Electronics Technology Co., Ltd. / MMBT4401(RANGE:100-300) |  | Needs matching / new entry |
 | [C2147](https://jlcpcb.com/partdetail/2504-S8550_2TY_RANGE_200_350/C2147) | preferred_extended | Jiangsu Changjing Electronics Technology Co., Ltd. / S8550 2TY(RANGE:200-350) |  | Needs matching / new entry |
 | [C2148](https://jlcpcb.com/partdetail/2505-S9014/C2148) | preferred_extended | Jiangsu Changjing Electronics Technology Co., Ltd. / S9014 |  | Needs matching / new entry |
+| [C2149](https://jlcpcb.com/partdetail/2506-S9015_RANGE_300_400/C2149) | preferred_extended | Jiangsu Changjing Electronics Technology Co., Ltd. / S9015(RANGE:300-400) |  | Needs matching / new entry |
 | [C2172](https://jlcpcb.com/partdetail/STMicroelectronics-L7915CVDG/C2172) | preferred_extended | STMicroelectronics / L7915CV-DG |  | Needs matching / new entry |
 | [C2173](https://jlcpcb.com/partdetail/STMicroelectronics-L7815CVDG/C2173) | preferred_extended | STMicroelectronics / L7815CV-DG |  | Needs matching / new entry |
 | [C2195](https://jlcpcb.com/partdetail/2564-X49SD3579545MSD2SC1/C2195) | preferred_extended | YXC Crystal Oscillators / X49SD3579545MSD2SC-1 |  | Needs matching / new entry |
@@ -695,6 +750,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C2688](https://jlcpcb.com/partdetail/InfineonTechnologies-IRFP3710PBF/C2688) | preferred_extended | Infineon Technologies / IRFP3710PBF |  | Needs matching / new entry |
 | [C2689](https://jlcpcb.com/partdetail/InfineonTechnologies-IRFP4110PBF/C2689) | preferred_extended | Infineon Technologies / IRFP4110PBF |  | Needs matching / new entry |
 | [C2690](https://jlcpcb.com/partdetail/InfineonTechnologies-IRFP4227PBF/C2690) | preferred_extended | Infineon Technologies / IRFP4227PBF |  | Needs matching / new entry |
+| [C2711](https://jlcpcb.com/partdetail/onsemi-FQA9N90CF109/C2711) | preferred_extended | onsemi / FQA9N90C-F109 |  | Needs matching / new entry |
 | [C2720](https://jlcpcb.com/partdetail/onsemi-FQA28N50/C2720) | preferred_extended | onsemi / FQA28N50 |  | Needs matching / new entry |
 | [C2722](https://jlcpcb.com/partdetail/onsemi-MBR1545CTG/C2722) | preferred_extended | onsemi / MBR1545CTG |  | Needs matching / new entry |
 | [C2727](https://jlcpcb.com/partdetail/onsemi-MBR20200CTG/C2727) | preferred_extended | onsemi / MBR20200CTG |  | Needs matching / new entry |
@@ -895,12 +951,15 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C4144](https://jlcpcb.com/partdetail/RALEC-RTT028R20FTH/C4144) | preferred_extended | RALEC / RTT028R20FTH |  | Needs matching / new entry |
 | [C4147](https://jlcpcb.com/partdetail/4554-0402WGF9102TCE/C4147) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0402WGF9102TCE |  | Needs matching / new entry |
 | [C4148](https://jlcpcb.com/partdetail/RALEC-RTT029R10FTH/C4148) | preferred_extended | RALEC / RTT029R10FTH |  | Needs matching / new entry |
+| [C4172](https://jlcpcb.com/partdetail/4579-0603WAF1504T5E/C4172) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0603WAF1504T5E |  | Needs matching / new entry |
+| [C4197](https://jlcpcb.com/partdetail/4604-0603WAF2403T5E/C4197) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0603WAF2403T5E |  | Needs matching / new entry |
 | [C4198](https://jlcpcb.com/partdetail/4605-0603WAF240JT5E/C4198) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0603WAF240JT5E |  | Needs matching / new entry |
 | [C4209](https://jlcpcb.com/partdetail/RALEC-RTT032R70FTP/C4209) | preferred_extended | RALEC / RTT032R70FTP |  | Needs matching / new entry |
 | [C4210](https://jlcpcb.com/partdetail/4617-0603WAF1602T5E/C4210) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0603WAF1602T5E |  | Needs matching / new entry |
 | [C4257](https://jlcpcb.com/partdetail/RALEC-RTT0359R0FTP/C4257) | preferred_extended | RALEC / RTT0359R0FTP |  | Needs matching / new entry |
 | [C4321](https://jlcpcb.com/partdetail/RALEC-RTT051R00FTP/C4321) | preferred_extended | RALEC / RTT051R00FTP |  | Needs matching / new entry |
 | [C4346](https://jlcpcb.com/partdetail/RALEC-RTT052704FTP/C4346) | preferred_extended | RALEC / RTT052704FTP |  | Needs matching / new entry |
+| [C4360](https://jlcpcb.com/partdetail/4767-0805W8F3602T5E/C4360) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0805W8F3602T5E |  | Needs matching / new entry |
 | [C4368](https://jlcpcb.com/partdetail/4775-0805W8F430JT5E/C4368) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0805W8F430JT5E |  | Needs matching / new entry |
 | [C4376](https://jlcpcb.com/partdetail/RALEC-RTT054R99FTP/C4376) | preferred_extended | RALEC / RTT054R99FTP |  | Needs matching / new entry |
 | [C4403](https://jlcpcb.com/partdetail/RALEC-RTT058R20FTP/C4403) | preferred_extended | RALEC / RTT058R20FTP |  | Needs matching / new entry |
@@ -1029,6 +1088,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C5353](https://jlcpcb.com/partdetail/EverlightElec-EL817_B_F/C5353) | preferred_extended | Everlight Elec / EL817(B)-F |  | Needs matching / new entry |
 | [C5358](https://jlcpcb.com/partdetail/IntelAltera-EPM1270T144C5N/C5358) | preferred_extended | Intel/Altera / EPM1270T144C5N |  | Needs matching / new entry |
 | [C5363](https://jlcpcb.com/partdetail/MicrochipTech-AT89C205124PU/C5363) | preferred_extended | Microchip Tech / AT89C2051-24PU |  | Needs matching / new entry |
+| [C5377](https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-DB107S/C5377) | preferred_extended | MDD(Microdiode Semiconductor) / DB107S |  | Needs matching / new entry |
 | [C5383](https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-ES2JB/C5383) | preferred_extended | MDD(Microdiode Semiconductor) / ES2JB |  | Needs matching / new entry |
 | [C5385](https://jlcpcb.com/partdetail/5821-NTC_5D7/C5385) | preferred_extended | RUILON(Shenzhen Ruilongyuan Elec) / NTC 5D-7 |  | Needs matching / new entry |
 | [C5386](https://jlcpcb.com/partdetail/onsemi-FQD2N60CTM/C5386) | preferred_extended | onsemi / FQD2N60CTM |  | Needs matching / new entry |
@@ -1077,7 +1137,9 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C5587](https://jlcpcb.com/partdetail/Nexperia-74HC00PW118/C5587) | preferred_extended | Nexperia / 74HC00PW,118 |  | Needs matching / new entry |
 | [C5588](https://jlcpcb.com/partdetail/Nexperia-74HC02D653/C5588) | preferred_extended | Nexperia / 74HC02D,653 |  | Needs matching / new entry |
 | [C5589](https://jlcpcb.com/partdetail/onsemi-MC74HC04ADTR2G/C5589) | preferred_extended | onsemi / MC74HC04ADTR2G |  | Needs matching / new entry |
+| [C5590](https://jlcpcb.com/partdetail/Nexperia-74HC04D653/C5590) | preferred_extended | Nexperia / 74HC04D,653 |  | Needs matching / new entry |
 | [C5592](https://jlcpcb.com/partdetail/Nexperia-74HC05D118/C5592) | preferred_extended | Nexperia / 74HC05D,118 |  | Needs matching / new entry |
+| [C5593](https://jlcpcb.com/partdetail/Nexperia-74HC08D653/C5593) | preferred_extended | Nexperia / 74HC08D,653 |  | Needs matching / new entry |
 | [C5595](https://jlcpcb.com/partdetail/Nexperia-74HC10D653/C5595) | preferred_extended | Nexperia / 74HC10D,653 |  | Needs matching / new entry |
 | [C5597](https://jlcpcb.com/partdetail/Nexperia-74HC123D653/C5597) | preferred_extended | Nexperia / 74HC123D,653 |  | Needs matching / new entry |
 | [C5598](https://jlcpcb.com/partdetail/Nexperia-74HC125D653/C5598) | preferred_extended | Nexperia / 74HC125D,653 |  | Needs matching / new entry |
@@ -1091,6 +1153,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C5609](https://jlcpcb.com/partdetail/Nexperia-74HC157D653/C5609) | preferred_extended | Nexperia / 74HC157D,653 |  | Needs matching / new entry |
 | [C5610](https://jlcpcb.com/partdetail/Nexperia-74HC161D653/C5610) | preferred_extended | Nexperia / 74HC161D,653 |  | Needs matching / new entry |
 | [C5612](https://jlcpcb.com/partdetail/Nexperia-74HC164PW118/C5612) | preferred_extended | Nexperia / 74HC164PW,118 |  | Needs matching / new entry |
+| [C5613](https://jlcpcb.com/partdetail/Nexperia-74HC165D653/C5613) | preferred_extended | Nexperia / 74HC165D,653 |  | Needs matching / new entry |
 | [C5614](https://jlcpcb.com/partdetail/Nexperia-74HC175D653/C5614) | preferred_extended | Nexperia / 74HC175D,653 |  | Needs matching / new entry |
 | [C5617](https://jlcpcb.com/partdetail/Nexperia-74HC21D653/C5617) | preferred_extended | Nexperia / 74HC21D,653 |  | Needs matching / new entry |
 | [C5619](https://jlcpcb.com/partdetail/Nexperia-74HC237D653/C5619) | preferred_extended | Nexperia / 74HC237D,653 |  | Needs matching / new entry |
@@ -1098,6 +1161,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C5622](https://jlcpcb.com/partdetail/Nexperia-74HC244D653/C5622) | preferred_extended | Nexperia / 74HC244D,653 |  | Needs matching / new entry |
 | [C5623](https://jlcpcb.com/partdetail/Nexperia-74HC244PW118/C5623) | preferred_extended | Nexperia / 74HC244PW,118 |  | Needs matching / new entry |
 | [C5624](https://jlcpcb.com/partdetail/onsemi-MM74HC244WMX/C5624) | preferred_extended | onsemi / MM74HC244WMX |  | Needs matching / new entry |
+| [C5625](https://jlcpcb.com/partdetail/Nexperia-74HC245D653/C5625) | preferred_extended | Nexperia / 74HC245D,653 |  | Needs matching / new entry |
 | [C5626](https://jlcpcb.com/partdetail/Nexperia-74HC245PW118/C5626) | preferred_extended | Nexperia / 74HC245PW,118 |  | Needs matching / new entry |
 | [C5627](https://jlcpcb.com/partdetail/Nexperia-74HC257D653/C5627) | preferred_extended | Nexperia / 74HC257D,653 |  | Needs matching / new entry |
 | [C5628](https://jlcpcb.com/partdetail/Nexperia-74HC4066D653/C5628) | preferred_extended | Nexperia / 74HC4066D,653 |  | Needs matching / new entry |
@@ -1127,6 +1191,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C5665](https://jlcpcb.com/partdetail/C5665) | preferred_extended | BOOMELE(Boom Precision Elec) / 2.54-2*5P2.54 mm pitch 2×5 pin IDC box header |  | Needs matching / new entry |
 | [C5670](https://jlcpcb.com/partdetail/BOOMELE_Boom_Precision_Elec-XHT/C5670) | preferred_extended | BOOMELE(Boom Precision Elec) / XH-T |  | Needs matching / new entry |
 | [C5671](https://jlcpcb.com/partdetail/Sunlord-GZ2012D121TF/C5671) | preferred_extended | Sunlord / GZ2012D121TF |  | Needs matching / new entry |
+| [C5672](https://jlcpcb.com/partdetail/6131-CL31A226KPHNNNE/C5672) | preferred_extended | Samsung Electro-Mechanics / CL31A226KPHNNNE |  | Needs matching / new entry |
 | [C5674](https://jlcpcb.com/partdetail/6133-CL21A226MQQNNNE/C5674) | preferred_extended | Samsung Electro-Mechanics / CL21A226MQQNNNE |  | Needs matching / new entry |
 | [C5676](https://jlcpcb.com/partdetail/STMicroelectronics-L7815CV/C5676) | preferred_extended | STMicroelectronics / L7815CV |  | Needs matching / new entry |
 | [C5944](https://jlcpcb.com/partdetail/Nexperia-74HC573PW118/C5944) | preferred_extended | Nexperia / 74HC573PW,118 |  | Needs matching / new entry |
@@ -1207,6 +1272,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C6205](https://jlcpcb.com/partdetail/MicrochipTech-AT24C04C_SSHMT/C6205) | preferred_extended | Microchip Tech / AT24C04C-SSHM-T |  | Needs matching / new entry |
 | [C6478](https://jlcpcb.com/partdetail/MicrochipTech-AT24C128C_SSHMT/C6478) | preferred_extended | Microchip Tech / AT24C128C-SSHM-T |  | Needs matching / new entry |
 | [C6480](https://jlcpcb.com/partdetail/MicrochipTech-AT24C16C_SSHMT/C6480) | preferred_extended | Microchip Tech / AT24C16C-SSHM-T |  | Needs matching / new entry |
+| [C6482](https://jlcpcb.com/partdetail/MicrochipTech-AT24C256C_SSHLT/C6482) | preferred_extended | Microchip Tech / AT24C256C-SSHL-T |  | Needs matching / new entry |
 | [C6487](https://jlcpcb.com/partdetail/MicrochipTech-AT24C64D_SSHMT/C6487) | preferred_extended | Microchip Tech / AT24C64D-SSHM-T |  | Needs matching / new entry |
 | [C6489](https://jlcpcb.com/partdetail/MicrochipTech-AT25160B_SSHLT/C6489) | preferred_extended | Microchip Tech / AT25160B-SSHL-T |  | Needs matching / new entry |
 | [C6490](https://jlcpcb.com/partdetail/RENESAS-AT25DF321A_SHT/C6490) | preferred_extended | RENESAS / AT25DF321A-SH-T |  | Needs matching / new entry |
@@ -1217,6 +1283,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C6514](https://jlcpcb.com/partdetail/TexasInstruments-BQ24070RHLR/C6514) | preferred_extended | Texas Instruments / BQ24070RHLR |  | Needs matching / new entry |
 | [C6517](https://jlcpcb.com/partdetail/TexasInstruments-CC1020RSSR/C6517) | preferred_extended | Texas Instruments / CC1020RSSR |  | Needs matching / new entry |
 | [C6520](https://jlcpcb.com/partdetail/TexasInstruments-CD4016BM96/C6520) | preferred_extended | Texas Instruments / CD4016BM96 |  | Needs matching / new entry |
+| [C6521](https://jlcpcb.com/partdetail/TexasInstruments-CD4052BM96/C6521) | preferred_extended | Texas Instruments / CD4052BM96 |  | Needs matching / new entry |
 | [C6522](https://jlcpcb.com/partdetail/TexasInstruments-CD4052BPWR/C6522) | preferred_extended | Texas Instruments / CD4052BPWR |  | Needs matching / new entry |
 | [C6525](https://jlcpcb.com/partdetail/TexasInstruments-CD4067BM96/C6525) | preferred_extended | Texas Instruments / CD4067BM96 |  | Needs matching / new entry |
 | [C6534](https://jlcpcb.com/partdetail/TexasInstruments-CD74ACT245M96/C6534) | preferred_extended | Texas Instruments / CD74ACT245M96 |  | Needs matching / new entry |
@@ -1354,6 +1421,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C6944](https://jlcpcb.com/partdetail/TOSHIBA-TC7SU04FLF/C6944) | preferred_extended | TOSHIBA / TC7SU04F,LF |  | Needs matching / new entry |
 | [C6950](https://jlcpcb.com/partdetail/NXPSemicon-TJA1020T_CM118/C6950) | preferred_extended | NXP Semicon / TJA1020T/CM,118 |  | Needs matching / new entry |
 | [C6951](https://jlcpcb.com/partdetail/NXPSemicon-TJA1040T_CM118/C6951) | preferred_extended | NXP Semicon / TJA1040T/CM,118 |  | Needs matching / new entry |
+| [C6952](https://jlcpcb.com/partdetail/NXPSemicon-TJA1050T_CM118/C6952) | preferred_extended | NXP Semicon / TJA1050T/CM,118 |  | Needs matching / new entry |
 | [C6955](https://jlcpcb.com/partdetail/STMicroelectronics-TJM4558CDT/C6955) | preferred_extended | STMicroelectronics / TJM4558CDT |  | Needs matching / new entry |
 | [C6956](https://jlcpcb.com/partdetail/STMicroelectronics-TL062CDT/C6956) | preferred_extended | STMicroelectronics / TL062CDT |  | Needs matching / new entry |
 | [C6957](https://jlcpcb.com/partdetail/TexasInstruments-TL062IDR/C6957) | preferred_extended | Texas Instruments / TL062IDR |  | Needs matching / new entry |
@@ -1389,6 +1457,7 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C7043](https://jlcpcb.com/partdetail/TexasInstruments-SN74LVTH162244DGGR/C7043) | preferred_extended | Texas Instruments / SN74LVTH162244DGGR |  | Needs matching / new entry |
 | [C7048](https://jlcpcb.com/partdetail/TexasInstruments-SN74LVTH16245ADLR/C7048) | preferred_extended | Texas Instruments / SN74LVTH16245ADLR |  | Needs matching / new entry |
 | [C7049](https://jlcpcb.com/partdetail/TexasInstruments-SN74LVTH16373DGGR/C7049) | preferred_extended | Texas Instruments / SN74LVTH16373DGGR |  | Needs matching / new entry |
+| [C7063](https://jlcpcb.com/partdetail/TexasInstruments-SN75176BDR/C7063) | preferred_extended | Texas Instruments / SN75176BDR |  | Needs matching / new entry |
 | [C7066](https://jlcpcb.com/partdetail/TexasInstruments-SN75189ADR/C7066) | preferred_extended | Texas Instruments / SN75189ADR |  | Needs matching / new entry |
 | [C7068](https://jlcpcb.com/partdetail/TexasInstruments-SN75451BDR/C7068) | preferred_extended | Texas Instruments / SN75451BDR |  | Needs matching / new entry |
 | [C7070](https://jlcpcb.com/partdetail/TexasInstruments-SN75453BDR/C7070) | preferred_extended | Texas Instruments / SN75453BDR |  | Needs matching / new entry |
@@ -1509,72 +1578,3 @@ Snapshot: 18 September 2026; captured 24 September. Candidates, not approved sub
 | [C7262](https://jlcpcb.com/partdetail/TexasInstruments-MAX660MXNOPB/C7262) | preferred_extended | Texas Instruments / MAX660MX/NOPB |  | Needs matching / new entry |
 | [C7270](https://jlcpcb.com/partdetail/7747-MAX809SEURT/C7270) | preferred_extended | Analog Devices Inc./Maxim Integrated / MAX809SEUR+T |  | Needs matching / new entry |
 | [C7272](https://jlcpcb.com/partdetail/7749-MAX811TEUST/C7272) | preferred_extended | Analog Devices Inc./Maxim Integrated / MAX811TEUS+T |  | Needs matching / new entry |
-| [C7278](https://jlcpcb.com/partdetail/onsemi-MC14011BDR2G/C7278) | preferred_extended | onsemi / MC14011BDR2G |  | Needs matching / new entry |
-| [C7284](https://jlcpcb.com/partdetail/onsemi-MC14051BDR2G/C7284) | preferred_extended | onsemi / MC14051BDR2G |  | Needs matching / new entry |
-| [C7285](https://jlcpcb.com/partdetail/onsemi-MC14052BDR2G/C7285) | preferred_extended | onsemi / MC14052BDR2G |  | Needs matching / new entry |
-| [C7286](https://jlcpcb.com/partdetail/onsemi-MC14053BDR2G/C7286) | preferred_extended | onsemi / MC14053BDR2G |  | Needs matching / new entry |
-| [C7287](https://jlcpcb.com/partdetail/onsemi-MC14071BDR2G/C7287) | preferred_extended | onsemi / MC14071BDR2G |  | Needs matching / new entry |
-| [C7289](https://jlcpcb.com/partdetail/onsemi-MC1413BDR2G/C7289) | preferred_extended | onsemi / MC1413BDR2G |  | Needs matching / new entry |
-| [C7291](https://jlcpcb.com/partdetail/onsemi-MC14504BDR2G/C7291) | preferred_extended | onsemi / MC14504BDR2G |  | Needs matching / new entry |
-| [C7292](https://jlcpcb.com/partdetail/onsemi-MC14541BDR2G/C7292) | preferred_extended | onsemi / MC14541BDR2G |  | Needs matching / new entry |
-| [C7295](https://jlcpcb.com/partdetail/onsemi-MC1496DR2G/C7295) | preferred_extended | onsemi / MC1496DR2G |  | Needs matching / new entry |
-| [C7296](https://jlcpcb.com/partdetail/onsemi-MC33063ADR2G/C7296) | preferred_extended | onsemi / MC33063ADR2G |  | Needs matching / new entry |
-| [C7298](https://jlcpcb.com/partdetail/onsemi-MC33077DR2G/C7298) | preferred_extended | onsemi / MC33077DR2G |  | Needs matching / new entry |
-| [C7299](https://jlcpcb.com/partdetail/onsemi-MC33078DR2G/C7299) | preferred_extended | onsemi / MC33078DR2G |  | Needs matching / new entry |
-| [C7301](https://jlcpcb.com/partdetail/onsemi-MC33269DR2_33G/C7301) | preferred_extended | onsemi / MC33269DR2-3.3G |  | Needs matching / new entry |
-| [C7302](https://jlcpcb.com/partdetail/UTC_Unisonic_Tech-MC3361BPG_S16R/C7302) | preferred_extended | UTC(Unisonic Tech) / MC3361BPG-S16-R |  | Needs matching / new entry |
-| [C7304](https://jlcpcb.com/partdetail/STMicroelectronics-MC34063ACDTR/C7304) | preferred_extended | STMicroelectronics / MC34063ACD-TR |  | Needs matching / new entry |
-| [C7308](https://jlcpcb.com/partdetail/TexasInstruments-MC3486DR/C7308) | preferred_extended | Texas Instruments / MC3486DR |  | Needs matching / new entry |
-| [C7309](https://jlcpcb.com/partdetail/TexasInstruments-MC3487DR/C7309) | preferred_extended | Texas Instruments / MC3487DR |  | Needs matching / new entry |
-| [C7312](https://jlcpcb.com/partdetail/onsemi-MC74AC86DR2G/C7312) | preferred_extended | onsemi / MC74AC86DR2G |  | Needs matching / new entry |
-| [C7313](https://jlcpcb.com/partdetail/onsemi-MC74ACT00DR2G/C7313) | preferred_extended | onsemi / MC74ACT00DR2G |  | Needs matching / new entry |
-| [C7315](https://jlcpcb.com/partdetail/onsemi-MC74ACT138DR2G/C7315) | preferred_extended | onsemi / MC74ACT138DR2G |  | Needs matching / new entry |
-| [C7316](https://jlcpcb.com/partdetail/onsemi-MC74ACT14DR2G/C7316) | preferred_extended | onsemi / MC74ACT14DR2G |  | Needs matching / new entry |
-| [C7319](https://jlcpcb.com/partdetail/onsemi-MC74ACT244DWR2G/C7319) | preferred_extended | onsemi / MC74ACT244DWR2G |  | Needs matching / new entry |
-| [C7325](https://jlcpcb.com/partdetail/onsemi-MC74ACT86DR2G/C7325) | preferred_extended | onsemi / MC74ACT86DR2G |  | Needs matching / new entry |
-| [C7328](https://jlcpcb.com/partdetail/onsemi-MC74HC02ADR2G/C7328) | preferred_extended | onsemi / MC74HC02ADR2G |  | Needs matching / new entry |
-| [C7329](https://jlcpcb.com/partdetail/onsemi-MC74HC03ADR2G/C7329) | preferred_extended | onsemi / MC74HC03ADR2G |  | Needs matching / new entry |
-| [C7330](https://jlcpcb.com/partdetail/onsemi-MC74HC04ADR2G/C7330) | preferred_extended | onsemi / MC74HC04ADR2G |  | Needs matching / new entry |
-| [C1527](https://jlcpcb.com/partdetail/1879-0402B151K500NT/C1527) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B151K500NT | 0402 | Needs matching / new entry |
-| [C1531](https://jlcpcb.com/partdetail/1883-0402B222K500NT/C1531) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B222K500NT | 0402 | Needs matching / new entry |
-| [C1537](https://jlcpcb.com/partdetail/1889-0402B471K500NT/C1537) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B471K500NT | 0402 | Needs matching / new entry |
-| [C1542](https://jlcpcb.com/partdetail/1894-0402B682K500NT/C1542) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402B682K500NT | 0402 | Needs matching / new entry |
-| [C1550](https://jlcpcb.com/partdetail/1902-0402CG1R0C500NT/C1550) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG1R0C500NT | 0402 | Needs matching / new entry |
-| [C1552](https://jlcpcb.com/partdetail/1904-0402CG1R5C500NT/C1552) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG1R5C500NT | 0402 | Needs matching / new entry |
-| [C1559](https://jlcpcb.com/partdetail/1911-0402CG2R2C500NT/C1559) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG2R2C500NT | 0402 | Needs matching / new entry |
-| [C1561](https://jlcpcb.com/partdetail/1913-0402CG2R7C500NT/C1561) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG2R7C500NT | 0402 | Needs matching / new entry |
-| [C1565](https://jlcpcb.com/partdetail/1917-0402CG3R3C500NT/C1565) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG3R3C500NT | 0402 | Needs matching / new entry |
-| [C1569](https://jlcpcb.com/partdetail/1921-0402CG4R7C500NT/C1569) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG4R7C500NT | 0402 | Needs matching / new entry |
-| [C1570](https://jlcpcb.com/partdetail/1922-0402CG300J500NT/C1570) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG300J500NT | 0402 | Needs matching / new entry |
-| [C1576](https://jlcpcb.com/partdetail/1928-0402CG6R8C500NT/C1576) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0402CG6R8C500NT | 0402 | Needs matching / new entry |
-| [C1595](https://jlcpcb.com/partdetail/1947-0603B152K500NT/C1595) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B152K500NT | 0603 | Needs matching / new entry |
-| [C1596](https://jlcpcb.com/partdetail/1948-0603B153K500NT/C1596) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B153K500NT | 0603 | Needs matching / new entry |
-| [C1600](https://jlcpcb.com/partdetail/1952-0603B201K500NT/C1600) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B201K500NT | 0603 | Needs matching / new entry |
-| [C1609](https://jlcpcb.com/partdetail/1961-0603B272K500NT/C1609) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B272K500NT | 0603 | Needs matching / new entry |
-| [C1615](https://jlcpcb.com/partdetail/1967-0603B334K250NT/C1615) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B334K250NT | 0603 | Needs matching / new entry |
-| [C1630](https://jlcpcb.com/partdetail/1982-0603B681K500NT/C1630) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603B681K500NT | 0603 | Needs matching / new entry |
-| [C1685](https://jlcpcb.com/partdetail/2037-0603CG8R2C500NT/C1685) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0603CG8R2C500NT | 0603 | Needs matching / new entry |
-| [C1716](https://jlcpcb.com/partdetail/2068-0805B151K500NT/C1716) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B151K500NT | 0805 | Needs matching / new entry |
-| [C1717](https://jlcpcb.com/partdetail/2069-0805B152K500NT/C1717) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B152K500NT | 0805 | Needs matching / new entry |
-| [C1740](https://jlcpcb.com/partdetail/2092-0805B334K500NT/C1740) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B334K500NT | 0805 | Needs matching / new entry |
-| [C1755](https://jlcpcb.com/partdetail/2107-0805B682K500NT/C1755) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805B682K500NT | 0805 | Needs matching / new entry |
-| [C1792](https://jlcpcb.com/partdetail/2144-0805CG120J500NT/C1792) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG120J500NT | 0805 | Needs matching / new entry |
-| [C1797](https://jlcpcb.com/partdetail/2149-0805CG180J500NT/C1797) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 0805CG180J500NT | 0805 | Needs matching / new entry |
-| [C1857](https://jlcpcb.com/partdetail/2209-1206B224K500NT/C1857) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / 1206B224K500NT | 1206 | Needs matching / new entry |
-| [C5377](https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-DB107S/C5377) | preferred_extended | MDD(Microdiode Semiconductor) / DB107S | DBS | Needs matching / new entry |
-| [C1034](https://jlcpcb.com/partdetail/Sunlord-SDFL1608Q4R7KTF/C1034) | preferred_extended | Sunlord / SDFL1608Q4R7KTF | 0603 | Needs matching / new entry |
-| [C1042](https://jlcpcb.com/partdetail/Sunlord-SDFL2012Q1R0KTF/C1042) | preferred_extended | Sunlord / SDFL2012Q1R0KTF | 0805 | Needs matching / new entry |
-| [C1043](https://jlcpcb.com/partdetail/1395-CMI201209U2R2KT/C1043) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI201209U2R2KT | 0805 | Needs matching / new entry |
-| [C1049](https://jlcpcb.com/partdetail/1401-CMI321609U4R7KT/C1049) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI321609U4R7KT | 1206 | Needs matching / new entry |
-| [C1051](https://jlcpcb.com/partdetail/1403-CMI321609X100KT/C1051) | preferred_extended | FH (Guangdong Fenghua Advanced Tech) / CMI321609X100KT | 1206 | Needs matching / new entry |
-| [C6521](https://jlcpcb.com/partdetail/TexasInstruments-CD4052BM96/C6521) | preferred_extended | Texas Instruments / CD4052BM96 | SOIC-16 | Needs matching / new entry |
-| [C6952](https://jlcpcb.com/partdetail/NXPSemicon-TJA1050T_CM118/C6952) | preferred_extended | NXP Semicon / TJA1050T/CM,118 | SOP-8 | Needs matching / new entry |
-| [C7063](https://jlcpcb.com/partdetail/TexasInstruments-SN75176BDR/C7063) | preferred_extended | Texas Instruments / SN75176BDR | SOIC-8 | Needs matching / new entry |
-| [C5625](https://jlcpcb.com/partdetail/Nexperia-74HC245D653/C5625) | preferred_extended | Nexperia / 74HC245D,653 | SOIC-20-300mil | Needs matching / new entry |
-| [C5590](https://jlcpcb.com/partdetail/Nexperia-74HC04D653/C5590) | preferred_extended | Nexperia / 74HC04D,653 | SOIC-14 | Needs matching / new entry |
-| [C5593](https://jlcpcb.com/partdetail/Nexperia-74HC08D653/C5593) | preferred_extended | Nexperia / 74HC08D,653 | SOIC-14 | Needs matching / new entry |
-| [C5613](https://jlcpcb.com/partdetail/Nexperia-74HC165D653/C5613) | preferred_extended | Nexperia / 74HC165D,653 | SOIC-16 | Needs matching / new entry |
-| [C6482](https://jlcpcb.com/partdetail/MicrochipTech-AT24C256C_SSHLT/C6482) | preferred_extended | Microchip Tech / AT24C256C-SSHL-T | SOIC-8 | Needs matching / new entry |
-| [C4197](https://jlcpcb.com/partdetail/4604-0603WAF2403T5E/C4197) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0603WAF2403T5E | 0603 | Needs matching / new entry |
-| [C4360](https://jlcpcb.com/partdetail/4767-0805W8F3602T5E/C4360) | preferred_extended | UNI-ROYAL(Uniroyal Elec) / 0805W8F3602T5E | 0805 | Needs matching / new entry |
-| [C2149](https://jlcpcb.com/partdetail/2506-S9015_RANGE_300_400/C2149) | preferred_extended | Jiangsu Changjing Electronics Technology Co., Ltd. / S9015(RANGE:300-400) | SOT-23 | Needs matching / new entry |

@@ -45,6 +45,7 @@ Resistor 2000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 04
 | LCSC | [`C4109`](https://www.lcsc.com/product-detail/C4109.html) |
 | LCSC | [`C2909344`](https://www.lcsc.com/product-detail/C2909344.html) |
 | LCSC | [`C137887`](https://www.lcsc.com/product-detail/C137887.html) |
+| JLCPCB | [`C4109`](https://jlcpcb.com/partdetail/4516-0402WGF2001TCE/C4109) |
 
 
 

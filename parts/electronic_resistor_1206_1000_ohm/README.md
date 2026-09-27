@@ -41,8 +41,9 @@ Resistor 1000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2907440`](https://www.lcsc.com/product-detail/C2907440.html) |
+| Manufacturer part number | `1206W4F1001T5E` |
+| LCSC | [`C4410`](https://www.lcsc.com/product-detail/C4410.html) |
+| JLCPCB | [`C4410`](https://jlcpcb.com/partdetail/4817-1206W4F1001T5E/C4410) |
 
 
 

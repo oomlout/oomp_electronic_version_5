@@ -41,10 +41,11 @@ Resistor 220 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `RC0402FR-07220RL` |
+| Manufacturer part number | `0402WGF2200TCE` |
+| LCSC | [`C25091`](https://www.lcsc.com/product-detail/C25091.html) |
 | LCSC | [`C112291`](https://www.lcsc.com/product-detail/C112291.html) |
 | LCSC | [`C2909336`](https://www.lcsc.com/product-detail/C2909336.html) |
-| LCSC | [`C25091`](https://www.lcsc.com/product-detail/C25091.html) |
+| JLCPCB | [`C25091`](https://jlcpcb.com/partdetail/25834-0402WGF2200TCE/C25091) |
 
 
 

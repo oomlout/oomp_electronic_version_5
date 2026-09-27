@@ -43,6 +43,7 @@ Resistor 1000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 | --- | --- |
 | Manufacturer part number | `0805W8F1001T5E` |
 | LCSC | [`C17513`](https://www.lcsc.com/product-detail/C17513.html) |
+| JLCPCB | [`C17513`](https://jlcpcb.com/partdetail/18201-0805W8F1001T5E/C17513) |
 
 
 

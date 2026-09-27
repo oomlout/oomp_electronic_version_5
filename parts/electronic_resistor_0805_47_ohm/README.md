@@ -41,8 +41,9 @@ Resistor 47 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F47R0TS` |
-| LCSC | [`C2907268`](https://www.lcsc.com/product-detail/C2907268.html) |
+| Manufacturer part number | `0805W8F470JT5E` |
+| LCSC | [`C17714`](https://www.lcsc.com/product-detail/C17714.html) |
+| JLCPCB | [`C17714`](https://jlcpcb.com/partdetail/18402-0805W8F470JT5E/C17714) |
 
 
 

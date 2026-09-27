@@ -43,6 +43,7 @@ Resistor 390 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 | --- | --- |
 | Manufacturer part number | `0805W8F3900T5E` |
 | LCSC | [`C17655`](https://www.lcsc.com/product-detail/C17655.html) |
+| JLCPCB | [`C17655`](https://jlcpcb.com/partdetail/18343-0805W8F3900T5E/C17655) |
 
 
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_2_8_tft_shield_v2_pcb_adafruit_tfttouchshield_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-2.8-TFT-Shield-v2-PCB Adafruit tfttouchshield current is a KiCad project containing 68 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
+Project adafruit/Adafruit-2.8-TFT-Shield-v2-PCB Adafruit tfttouchshield current is a KiCad project containing 68 extracted component records. The catalogue matcher linked 15 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-2.8-TFT-Shield-v2-PCB Adafruit tfttouchshield current 
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 68 |
-| Matched OOMP components | 13 |
-| Unmatched physical components | 8 |
+| Matched OOMP components | 15 |
+| Unmatched physical components | 6 |
 | Front-side placements | 21 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -81,8 +81,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C4, C5 | 3 | Capacitor 10 uF 0805 | 10uF | `Adafruit tfttouchshield v2.2-import-fps:C0805K` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C2, C3 | 2 | 0.1uF | 0.1uF | `Adafruit tfttouchshield v2.2-import-fps:C0805K` | unmatched |
-| D1 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit tfttouchshield v2.2-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| C2, C3 | 2 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit tfttouchshield v2.2-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
+| D1 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit tfttouchshield v2.2-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | IC4 | 1 | MIC5225-3.3 | MIC5225-3.3 | `Adafruit tfttouchshield v2.2-import-fps:SOT23-5L` | unmatched |
 | IC5 | 1 | AXP803 | AXP803 | `Adafruit tfttouchshield v2.2-import-fps:SOT23` | unmatched |
 | Q1 | 1 | MMBT2222 | MMBT2222 | `Adafruit tfttouchshield v2.2-import-fps:SOT23-BEC` | unmatched |
@@ -126,7 +126,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 8 physical component records are not yet matched to an OOMP part.
+- 6 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_2_8_tft_shield_v2_pcb_adafruit_tfttouchshield_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_2_8_tft_shield_v2_pcb_adafruit_tfttouchshield_current/data/generated_data/browser_research_queue.md)
@@ -135,7 +135,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_2_8_tft_shield_v2_pcb_adafruit_tfttouchshield_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

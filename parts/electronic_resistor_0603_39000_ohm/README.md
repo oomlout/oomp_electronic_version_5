@@ -41,8 +41,9 @@ Resistor 39000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F3902TS` |
-| LCSC | [`C2930098`](https://www.lcsc.com/product-detail/C2930098.html) |
+| Manufacturer part number | `0603WAF3902T5E` |
+| LCSC | [`C23153`](https://www.lcsc.com/product-detail/C23153.html) |
+| JLCPCB | [`C23153`](https://jlcpcb.com/partdetail/23880-0603WAF3902T5E/C23153) |
 
 
 

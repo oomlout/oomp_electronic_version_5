@@ -41,10 +41,11 @@ Resistor 12000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0402F1202TS` |
+| Manufacturer part number | `0402WGF1202TCE` |
+| LCSC | [`C25752`](https://www.lcsc.com/product-detail/C25752.html) |
 | LCSC | [`C2909316`](https://www.lcsc.com/product-detail/C2909316.html) |
 | LCSC | [`C114760`](https://www.lcsc.com/product-detail/C114760.html) |
-| LCSC | [`C25752`](https://www.lcsc.com/product-detail/C25752.html) |
+| JLCPCB | [`C25752`](https://jlcpcb.com/partdetail/26495-0402WGF1202TCE/C25752) |
 
 
 

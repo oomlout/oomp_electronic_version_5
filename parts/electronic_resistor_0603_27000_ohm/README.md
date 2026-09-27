@@ -41,8 +41,9 @@ Resistor 27000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F2702TS` |
-| LCSC | [`C2930084`](https://www.lcsc.com/product-detail/C2930084.html) |
+| Manufacturer part number | `0603WAF2702T5E` |
+| LCSC | [`C22967`](https://www.lcsc.com/product-detail/C22967.html) |
+| JLCPCB | [`C22967`](https://jlcpcb.com/partdetail/23694-0603WAF2702T5E/C22967) |
 
 
 

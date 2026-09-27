@@ -37,6 +37,15 @@ Resistor 300 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `1206W4F3000T5E` |
+| LCSC | [`C17887`](https://www.lcsc.com/product-detail/C17887.html) |
+| JLCPCB | [`C17887`](https://jlcpcb.com/partdetail/18575-1206W4F3000T5E/C17887) |
+
+
 
 
 

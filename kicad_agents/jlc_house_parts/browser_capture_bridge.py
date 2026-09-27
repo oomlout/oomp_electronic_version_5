@@ -40,8 +40,13 @@ def validate_capture(payload: dict, queue: dict[str, dict]) -> dict:
     ):
         if payload.get(key) != expected:
             raise ValueError(f"Live {key} differs from the queue; review manually")
+    # Queue rows come from the official Basic & Promotional Extended category,
+    # whose non-Basic badge reads plainly "Extended" (tooltip: Promotional
+    # Extended); identity equality with the queued row already proves category
+    # membership, so that badge maps to the house tier as well.
     tier = {"Basic": "basic", "Preferred": "preferred_extended",
-            "Promotional": "preferred_extended"}.get(payload.get("tier_label"))
+            "Promotional": "preferred_extended",
+            "Extended": "preferred_extended"}.get(payload.get("tier_label"))
     if tier != row["tier"]:
         raise ValueError("Live JLC class differs from the queue")
     if not isinstance(payload.get("description"), str) or not payload["description"].strip():

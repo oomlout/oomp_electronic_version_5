@@ -43,6 +43,7 @@ Resistor 0 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0603 
 | --- | --- |
 | Manufacturer part number | `0603WAF0000T5E` |
 | LCSC | [`C21189`](https://www.lcsc.com/product-detail/C21189.html) |
+| JLCPCB | [`C21189`](https://jlcpcb.com/partdetail/21903-0603WAF0000T5E/C21189) |
 
 
 

@@ -47,6 +47,7 @@ Switch TS-1088-AR02016 TACTILE is an OOMP electronic switch definition. It uses 
 | --- | --- |
 | Manufacturer part number | `TS-1088-AR02016` |
 | LCSC | [`C720477`](https://www.lcsc.com/product-detail/C720477.html) |
+| JLCPCB | [`C720477`](https://jlcpcb.com/partdetail/XUNPU-TS_1088AR02016/C720477) |
 
 
 

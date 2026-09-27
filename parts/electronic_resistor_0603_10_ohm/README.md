@@ -43,6 +43,7 @@ Resistor 10 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0603
 | --- | --- |
 | Manufacturer part number | `0603WAF100JT5E` |
 | LCSC | [`C22859`](https://www.lcsc.com/product-detail/C22859.html) |
+| JLCPCB | [`C22859`](https://jlcpcb.com/partdetail/23586-0603WAF100JT5E/C22859) |
 
 
 

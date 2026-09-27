@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_2_8_tft_shield_v2_pcb_adafruit_tftcaptouchshield_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-2.8-TFT-Shield-v2-PCB Adafruit tftcaptouchshield current is a KiCad project containing 81 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
+Project adafruit/Adafruit-2.8-TFT-Shield-v2-PCB Adafruit tftcaptouchshield current is a KiCad project containing 81 extracted component records. The catalogue matcher linked 20 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-2.8-TFT-Shield-v2-PCB Adafruit tftcaptouchshield curre
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 80 |
-| Matched OOMP components | 18 |
-| Unmatched physical components | 6 |
+| Matched OOMP components | 20 |
+| Unmatched physical components | 4 |
 | Front-side placements | 24 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -81,8 +81,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C4, C5 | 3 | Capacitor 10 uF 0805 | 10uF | `Adafruit tftcaptouchshield rev C-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C2, C3 | 2 | 0.1uF | 0.1uF | `Adafruit tftcaptouchshield rev C-import-fps:0805-NO` | unmatched |
-| D1 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit tftcaptouchshield rev C-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| C2, C3 | 2 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit tftcaptouchshield rev C-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
+| D1 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit tftcaptouchshield rev C-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | IC4 | 1 | MIC5225-3.3 | MIC5225-3.3 | `Adafruit tftcaptouchshield rev C-import-fps:SOT23-5L` | unmatched |
 | IC5 | 1 | AXP803 | AXP803 | `Adafruit tftcaptouchshield rev C-import-fps:SOT23` | unmatched |
 | Q2, Q3, Q4 | 3 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `Adafruit tftcaptouchshield rev C-import-fps:SOT23-WIDE` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
@@ -125,7 +125,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 6 physical component records are not yet matched to an OOMP part.
+- 4 physical component records are not yet matched to an OOMP part.
 - The extractor reports 4 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_2_8_tft_shield_v2_pcb_adafruit_tftcaptouchshield_current/data/generated_data/lcsc_review.yaml)
@@ -135,7 +135,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_2_8_tft_shield_v2_pcb_adafruit_tftcaptouchshield_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

@@ -41,8 +41,9 @@ Resistor 47 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0603
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F47R0TS` |
-| LCSC | [`C2907043`](https://www.lcsc.com/product-detail/C2907043.html) |
+| Manufacturer part number | `0603WAF470JT5E` |
+| LCSC | [`C23182`](https://www.lcsc.com/product-detail/C23182.html) |
+| JLCPCB | [`C23182`](https://jlcpcb.com/partdetail/23909-0603WAF470JT5E/C23182) |
 
 
 

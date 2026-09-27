@@ -16,8 +16,8 @@
     "component_count": 47,
     "schematic_symbol_count": 35,
     "pcb_footprint_count": 30,
-    "matched_component_count": 9,
-    "unmatched_physical_component_count": 16,
+    "matched_component_count": 10,
+    "unmatched_physical_component_count": 15,
     "non_physical_symbol_count": 22,
     "mounting_hole_count": 12,
     "dedicated_mounting_hole_count": 12,
@@ -14784,10 +14784,10 @@
         "incomplete_count": 0
       },
       "oomp": {
-        "status": "unmatched",
-        "accepted": false,
-        "oomp_id": null,
-        "confidence": 0.0,
+        "status": "matched",
+        "accepted": true,
+        "oomp_id": "electronic_capacitor_0805_100_nano_farad",
+        "confidence": 1.0,
         "proposed_oomp_id": "electronic_capacitor_0805_100_nano_farad",
         "inferred": {
           "kind": "capacitor",
@@ -14796,55 +14796,12 @@
           "mpn": null
         },
         "reasons": [
-          "The exact normalized component is not present in the OOMP parts directory."
+          "Exact OOMP ID constructed from component type, package size, and normalized value."
         ],
-        "candidates": [
-          {
-            "oomp_id": "electronic_capacitor_0402_100_nano_farad",
-            "score": 0.3245,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0402_10_nano_farad",
-            "score": 0.3238,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0402_22_nano_farad",
-            "score": 0.3212,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0805_10_micro_farad",
-            "score": 0.295,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0805_22_micro_farad",
-            "score": 0.2925,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          }
-        ]
+        "candidates": []
       },
       "category": "capacitor",
-      "category_source": "unmatched_kicad_hint",
+      "category_source": "oomp_populate",
       "category_name": "Capacitor",
       "generated_directory": "components/C3"
     },
@@ -17406,21 +17363,21 @@
             ]
           },
           {
+            "oomp_id": "electronic_capacitor_0805_1_micro_farad",
+            "score": 0.1504,
+            "reasons": [
+              "same component family"
+            ]
+          },
+          {
+            "oomp_id": "electronic_capacitor_1206_1_micro_farad",
+            "score": 0.1504,
+            "reasons": [
+              "same component family"
+            ]
+          },
+          {
             "oomp_id": "electronic_capacitor_0402_10_micro_farad",
-            "score": 0.1485,
-            "reasons": [
-              "same component family"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0603_10_micro_farad",
-            "score": 0.1485,
-            "reasons": [
-              "same component family"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0603_22_micro_farad",
             "score": 0.1485,
             "reasons": [
               "same component family"
@@ -22616,6 +22573,13 @@
             ]
           },
           {
+            "oomp_id": "electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p",
+            "score": 0.0681,
+            "reasons": [
+              "same component family"
+            ]
+          },
+          {
             "oomp_id": "electronic_transistor_sot_23_bipolar_pnp_40_volt_600_milliamp_onsemi_mmbt4403",
             "score": 0.0654,
             "reasons": [
@@ -22625,13 +22589,6 @@
           {
             "oomp_id": "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215",
             "score": 0.0649,
-            "reasons": [
-              "same component family"
-            ]
-          },
-          {
-            "oomp_id": "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138",
-            "score": 0.0616,
             "reasons": [
               "same component family"
             ]

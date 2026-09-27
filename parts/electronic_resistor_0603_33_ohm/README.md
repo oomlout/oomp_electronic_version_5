@@ -45,6 +45,7 @@ Resistor 33 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0603
 | LCSC | [`C23140`](https://www.lcsc.com/product-detail/C23140.html) |
 | LCSC | [`C2909394`](https://www.lcsc.com/product-detail/C2909394.html) |
 | LCSC | [`C25232`](https://www.lcsc.com/product-detail/C25232.html) |
+| JLCPCB | [`C23140`](https://jlcpcb.com/partdetail/23867-0603WAF330JT5E/C23140) |
 
 
 

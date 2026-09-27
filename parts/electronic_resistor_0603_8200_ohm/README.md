@@ -43,6 +43,7 @@ Resistor 8200 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | --- | --- |
 | Manufacturer part number | `0603WAF8201T5E` |
 | LCSC | [`C25981`](https://www.lcsc.com/product-detail/C25981.html) |
+| JLCPCB | [`C25981`](https://jlcpcb.com/partdetail/26724-0603WAF8201T5E/C25981) |
 
 
 

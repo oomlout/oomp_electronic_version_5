@@ -43,6 +43,7 @@ Resistor 2000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 08
 | --- | --- |
 | Manufacturer part number | `0805W8F2001T5E` |
 | LCSC | [`C17604`](https://www.lcsc.com/product-detail/C17604.html) |
+| JLCPCB | [`C17604`](https://jlcpcb.com/partdetail/18292-0805W8F2001T5E/C17604) |
 
 
 

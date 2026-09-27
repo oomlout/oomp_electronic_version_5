@@ -41,10 +41,11 @@ Resistor 100000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `0402WGJ0104TCE` |
-| LCSC | [`C25530`](https://www.lcsc.com/product-detail/C25530.html) |
+| Manufacturer part number | `0402WGF1003TCE` |
 | LCSC | [`C25741`](https://www.lcsc.com/product-detail/C25741.html) |
+| LCSC | [`C25530`](https://www.lcsc.com/product-detail/C25530.html) |
 | LCSC | [`C60491`](https://www.lcsc.com/product-detail/C60491.html) |
+| JLCPCB | [`C25741`](https://jlcpcb.com/partdetail/26484-0402WGF1003TCE/C25741) |
 
 
 

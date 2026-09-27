@@ -45,6 +45,7 @@ Resistor 200 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 | LCSC | [`C25087`](https://www.lcsc.com/product-detail/C25087.html) |
 | LCSC | [`C2909333`](https://www.lcsc.com/product-detail/C2909333.html) |
 | LCSC | [`C54920644`](https://www.lcsc.com/product-detail/C54920644.html) |
+| JLCPCB | [`C25087`](https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087) |
 
 
 

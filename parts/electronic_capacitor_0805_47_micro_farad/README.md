@@ -37,6 +37,15 @@ Capacitor 47 uF 0805 is an OOMP electronic capacitor definition. It uses the 080
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL21A476MQYNNNE` |
+| LCSC | [`C16780`](https://www.lcsc.com/product-detail/C16780.html) |
+| JLCPCB | [`C16780`](https://jlcpcb.com/partdetail/17464-CL21A476MQYNNNE/C16780) |
+
+
 
 
 

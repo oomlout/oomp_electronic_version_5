@@ -43,6 +43,7 @@ Resistor 7500 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | --- | --- |
 | Manufacturer part number | `0603WAF7501T5E` |
 | LCSC | [`C23234`](https://www.lcsc.com/product-detail/C23234.html) |
+| JLCPCB | [`C23234`](https://jlcpcb.com/partdetail/23961-0603WAF7501T5E/C23234) |
 
 
 

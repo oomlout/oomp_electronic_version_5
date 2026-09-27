@@ -41,8 +41,9 @@ Resistor 33000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F3302TS` |
-| LCSC | [`C2933415`](https://www.lcsc.com/product-detail/C2933415.html) |
+| Manufacturer part number | `0805W8F3302T5E` |
+| LCSC | [`C17633`](https://www.lcsc.com/product-detail/C17633.html) |
+| JLCPCB | [`C17633`](https://jlcpcb.com/partdetail/18321-0805W8F3302T5E/C17633) |
 
 
 

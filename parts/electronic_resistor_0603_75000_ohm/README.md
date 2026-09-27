@@ -41,8 +41,9 @@ Resistor 75000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F7502TS` |
-| LCSC | [`C2907067`](https://www.lcsc.com/product-detail/C2907067.html) |
+| Manufacturer part number | `0603WAF7502T5E` |
+| LCSC | [`C23242`](https://www.lcsc.com/product-detail/C23242.html) |
+| JLCPCB | [`C23242`](https://jlcpcb.com/partdetail/23969-0603WAF7502T5E/C23242) |
 
 
 

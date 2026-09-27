@@ -43,6 +43,7 @@ Resistor 3900 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | --- | --- |
 | Manufacturer part number | `0603WAF3901T5E` |
 | LCSC | [`C23018`](https://www.lcsc.com/product-detail/C23018.html) |
+| JLCPCB | [`C23018`](https://jlcpcb.com/partdetail/23745-0603WAF3901T5E/C23018) |
 
 
 

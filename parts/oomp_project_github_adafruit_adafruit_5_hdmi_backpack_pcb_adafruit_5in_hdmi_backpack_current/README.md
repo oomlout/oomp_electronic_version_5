@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_5_hdmi_backpack_pcb_adafruit_5in_hdmi_backpack_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-5-HDMI-Backpack-PCB Adafruit 5in HDMI Backpack current is a KiCad project containing 167 extracted component records. The catalogue matcher linked 41 physical placements to OOMP parts.
+Project adafruit/Adafruit-5-HDMI-Backpack-PCB Adafruit 5in HDMI Backpack current is a KiCad project containing 167 extracted component records. The catalogue matcher linked 60 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-5-HDMI-Backpack-PCB Adafruit 5in HDMI Backpack current
 | Mounting and locating holes | 26 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 227 |
-| Matched OOMP components | 41 |
-| Unmatched physical components | 40 |
+| Matched OOMP components | 60 |
+| Unmatched physical components | 21 |
 | Front-side placements | 76 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -120,16 +120,16 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | BACKLITEPWM0, GND0, JP3, JP4, JP5, JP6, JP7 | 7 | Connector Header ZX-PZ2.54-1-1PZZ |  | `Adafruit 5in HDMI Backpack-import-fps:1X01_SMD_MASKHELD_2X2MM` | [`electronic_connector_header_2_54_mm_pitch_through_hole_1_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_1_pin) |
-| C1, C2, C3, C7, C8, C9, C10, C11, C19, C20, C23 | 11 | 0.1uF | 0.1uF | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | unmatched |
-| C4, C6 | 2 | 0.1uF | 0.1uF | `Adafruit 5in HDMI Backpack-import-fps:_0805MP` | unmatched |
-| C5 | 1 | 0.1u | 0.1u | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | unmatched |
+| C1, C2, C3, C7, C8, C9, C10, C11, C19, C20, C23 | 11 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
+| C4, C6 | 2 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit 5in HDMI Backpack-import-fps:_0805MP` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
+| C5 | 1 | Capacitor 100 nF 0805 | 0.1u | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | C12, C13, C14, C15, C16 | 5 | Capacitor 10 uF 0805 | 10uF | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C17, C18, C25 | 3 | 1uF | 1uF | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | unmatched |
-| C21, C22 | 2 | 0.01uF | 0.01uF | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | unmatched |
+| C17, C18, C25 | 3 | Capacitor 1 uF 0805 | 1uF | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C21, C22 | 2 | Capacitor 10 nF 0805 | 0.01uF | `Adafruit 5in HDMI Backpack-import-fps:0805-NO` | [`electronic_capacitor_0805_10_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_nano_farad) |
 | C24 | 1 | 100uF/6V | 100uF/6V | `Adafruit 5in HDMI Backpack-import-fps:PANASONIC_C` | unmatched |
 | D1 | 1 | MBR0540 | MBR0540 | `Adafruit 5in HDMI Backpack-import-fps:SOD-123` | unmatched |
 | D2 | 1 | MM3Z24VT1G | MM3Z24VT1G | `Adafruit 5in HDMI Backpack-import-fps:SMADIODE` | unmatched |
-| D3 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit 5in HDMI Backpack-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D3 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit 5in HDMI Backpack-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | FB1, FB2, FB3, FB4, FB5, FB6, FB7, FB8 | 8 | Ferrite | Ferrite | `Adafruit 5in HDMI Backpack-import-fps:_0805MP` | unmatched |
 | IC1 | 1 | AR1100 | AR1100 | `Adafruit 5in HDMI Backpack-import-fps:TSSOP20-5.3MMBODY` | unmatched |
 | J1 | 1 | TFTLCD-KD50G21-40NT-A1 | TFTLCD-KD50G21-40NT-A1 | `Adafruit 5in HDMI Backpack-import-fps:TFTLCD-KD50G21-40NT-A1` | unmatched |
@@ -183,7 +183,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 40 physical component records are not yet matched to an OOMP part.
+- 21 physical component records are not yet matched to an OOMP part.
 - The extractor reports 2 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_5_hdmi_backpack_pcb_adafruit_5in_hdmi_backpack_current/data/generated_data/lcsc_review.yaml)
@@ -193,7 +193,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_5_hdmi_backpack_pcb_adafruit_5in_hdmi_backpack_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 12
+- Matched OOMP source parts copied: 15
 
 ## Source files
 

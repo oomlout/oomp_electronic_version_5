@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_tftlcd8bit_current/data/generated_data/src/board_300.png)
 
-Project adafruit/2.8-TFT-Breakout-PCB Adafruit tftlcd8bit current is a KiCad project containing 45 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
+Project adafruit/2.8-TFT-Breakout-PCB Adafruit tftlcd8bit current is a KiCad project containing 45 extracted component records. The catalogue matcher linked 15 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/2.8-TFT-Breakout-PCB Adafruit tftlcd8bit current is a KiCad pro
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 40 |
-| Matched OOMP components | 10 |
-| Unmatched physical components | 11 |
+| Matched OOMP components | 15 |
+| Unmatched physical components | 6 |
 | Front-side placements | 16 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -89,8 +89,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C5 | 2 | 2.2uF+ | 2.2uF+ | `Adafruit_tftlcd8bit-import-fps:C0805K` | unmatched |
-| C2, C3, C4 | 3 | 0.1uF | 0.1uF | `Adafruit_tftlcd8bit-import-fps:C0805K` | unmatched |
+| C1, C5 | 2 | Capacitor 2.2 uF 0805 | 2.2uF+ | `Adafruit_tftlcd8bit-import-fps:C0805K` | [`electronic_capacitor_0805_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_micro_farad) |
+| C2, C3, C4 | 3 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit_tftlcd8bit-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | CN1 | 1 | ILI9325_28TFT | ILI9325_28TFT | `Adafruit_tftlcd8bit-import-fps:ILI9325_28INCH_TS` | unmatched |
 | IC1 | 1 | LP298XS | LP298XS | `Adafruit_tftlcd8bit-import-fps:SOT23-5L` | unmatched |
 | IC2, IC3 | 2 | 74ACT245DW | 74ACT245DW | `Adafruit_tftlcd8bit-import-fps:SO20W` | unmatched |
@@ -132,7 +132,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 11 physical component records are not yet matched to an OOMP part.
+- 6 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_tftlcd8bit_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_tftlcd8bit_current/data/generated_data/browser_research_queue.md)
@@ -141,7 +141,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_2_8_tft_breakout_pcb_adafruit_tftlcd8bit_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

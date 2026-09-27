@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 0.96in 128x64 OLED STEMMA QT current is a KiCad project containing 67 extracted component records. The catalogue matcher linked 24 physical placements to OOMP parts.
+Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 0.96in 128x64 OLED STEMMA QT current is a KiCad project containing 67 extracted component records. The catalogue matcher linked 26 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-128x64-Monochrome-OLED-PCB 0.96in 128x64 OLED STEMMA Q
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 71 |
-| Matched OOMP components | 24 |
-| Unmatched physical components | 4 |
+| Matched OOMP components | 26 |
+| Unmatched physical components | 2 |
 | Front-side placements | 23 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -91,10 +91,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, C17 | 2 | Capacitor 100 nF 0603 | 0.1uF | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C2, C3, C14, C15, C16 | 5 | Capacitor 10 uF 0805 | 10uF | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C12, C13 | 2 | 2.2uF | 2.2uF | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:0805-NO` | unmatched |
+| C12, C13 | 2 | Capacitor 2.2 uF 0805 | 2.2uF | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:0805-NO` | [`electronic_capacitor_0805_2_2_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_micro_farad) |
 | CONN1, CONN4 | 2 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
 | D1 | 1 | LED Green 0603 | GREEN | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_green) |
-| D3, D4, D5 | 3 | Diode Switching SOD-323 | 1N4148 | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D3, D4, D5 | 3 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | IC5 | 1 | APX803 | APX803 | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:SOT23` | unmatched |
 | JP2 | 1 | Connector Header PZ254V-12-8P |  | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:1X08_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
 | Q2 | 1 | Transistor Mosfet N Channel Dual SOT 363 6 | BSS138 | `Adafruit 0.96in 128x64 OLED STEMMA QT-import-fps:SOT363` | [`electronic_transistor_sot_363_6_mosfet_n_channel_dual`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_363_6_mosfet_n_channel_dual) |
@@ -136,7 +136,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 4 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 - The extractor reports 4 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current/data/generated_data/lcsc_review.yaml)
@@ -146,7 +146,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x64_monochrome_oled_pcb_0_96in_128x64_oled_stemma_qt_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 12
 
 ## Source files
 

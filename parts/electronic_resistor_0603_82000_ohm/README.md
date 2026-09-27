@@ -41,8 +41,9 @@ Resistor 82000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0603F8202TS` |
-| LCSC | [`C2907072`](https://www.lcsc.com/product-detail/C2907072.html) |
+| Manufacturer part number | `0603WAF8202T5E` |
+| LCSC | [`C23254`](https://www.lcsc.com/product-detail/C23254.html) |
+| JLCPCB | [`C23254`](https://jlcpcb.com/partdetail/23981-0603WAF8202T5E/C23254) |
 
 
 

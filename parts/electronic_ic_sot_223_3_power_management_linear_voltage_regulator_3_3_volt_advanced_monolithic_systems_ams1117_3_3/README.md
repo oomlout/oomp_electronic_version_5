@@ -47,6 +47,7 @@ Regulator AMS1117-3.3 3.3V SOT-223 is an OOMP electronic ic definition. It uses 
 | --- | --- |
 | Manufacturer part number | `AMS1117-3.3` |
 | LCSC | [`C6186`](https://www.lcsc.com/product-detail/C6186.html) |
+| JLCPCB | [`C6186`](https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_33/C6186) |
 
 
 

@@ -43,6 +43,7 @@ Resistor 470000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 | --- | --- |
 | Manufacturer part number | `0805W8F4703T5E` |
 | LCSC | [`C17709`](https://www.lcsc.com/product-detail/C17709.html) |
+| JLCPCB | [`C17709`](https://jlcpcb.com/partdetail/18397-0805W8F4703T5E/C17709) |
 
 
 

@@ -41,10 +41,12 @@ Resistor 10000 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `RC0603FR-0710KL` |
+| Manufacturer part number | `0603WAF1002T5E` |
+| LCSC | [`C25804`](https://www.lcsc.com/product-detail/C25804.html) |
 | LCSC | [`C98220`](https://www.lcsc.com/product-detail/C98220.html) |
 | LCSC | [`C2906982`](https://www.lcsc.com/product-detail/C2906982.html) |
 | LCSC | [`C99198`](https://www.lcsc.com/product-detail/C99198.html) |
+| JLCPCB | [`C25804`](https://jlcpcb.com/partdetail/26547-0603WAF1002T5E/C25804) |
 
 
 

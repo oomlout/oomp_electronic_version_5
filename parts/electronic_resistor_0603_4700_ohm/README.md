@@ -45,6 +45,7 @@ Resistor 4700 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | LCSC | [`C23162`](https://www.lcsc.com/product-detail/C23162.html) |
 | LCSC | [`C99782`](https://www.lcsc.com/product-detail/C99782.html) |
 | LCSC | [`C2907034`](https://www.lcsc.com/product-detail/C2907034.html) |
+| JLCPCB | [`C23162`](https://jlcpcb.com/partdetail/23889-0603WAF4701T5E/C23162) |
 
 
 

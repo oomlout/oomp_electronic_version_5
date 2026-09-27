@@ -41,8 +41,9 @@ Resistor 0 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2907406`](https://www.lcsc.com/product-detail/C2907406.html) |
+| Manufacturer part number | `1206W4F0000T5E` |
+| LCSC | [`C17888`](https://www.lcsc.com/product-detail/C17888.html) |
+| JLCPCB | [`C17888`](https://jlcpcb.com/partdetail/18576-1206W4F0000T5E/C17888) |
 
 
 

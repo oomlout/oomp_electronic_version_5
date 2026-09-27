@@ -36,25 +36,52 @@ dimensions_mm:
 directory: parts/electronic_resistor_0603_1000_ohm
 distributors:
 - key: lcsc
-  part_number: C2907002
-  product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
-  title: LCSC
-  url: https://www.lcsc.com/product-detail/C2907002.html
-- key: lcsc
   part_number: C21190
   product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C21190.html
+- key: lcsc
+  part_number: C2907002
+  product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C2907002.html
 - key: lcsc
   part_number: C22548
   product_name: 1kΩ 100mW 75V ±1% ±100ppm/℃ Thick Film Resistor 0603 Chip Resistor
     - Surface Mount RoHS
   title: LCSC
   url: https://www.lcsc.com/product-detail/C22548.html
+- key: jlcpcb
+  part_number: C21190
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
 id: electronic_resistor_0603_1000_ohm
 id_no_class: electronic_resistor_0603_1000_ohm
 id_no_size: electronic_resistor_0603_1000_ohm
 id_no_type: electronic_resistor_0603_1000_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0603 1kΩ resistor formerly preferred FOJAN C2907002,
+    while C21190 was already listed as an alternative. Promote verified Basic C21190
+    and retain FOJAN and YAGEO alternatives. Full pass checks derating and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 100mW
+    Resistance: 1kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 75V
+  stock_observed: 23944345
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0603_1608Metric
@@ -63,8 +90,10 @@ lcsc_search: 0603 1kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm
-manufacturer: FOJAN
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF1001T5E
 - manufacturer: FOJAN
   part_number: FRC0603F1001TS
 - manufacturer: UNI-ROYAL
@@ -192,6 +221,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0603_1000_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -204,28 +247,58 @@ oomlout_ai_roboclick_3:
       directory: parts\electronic_resistor_0603_1000_ohm
       distributors:
       - key: lcsc
-        part_number: C2907002
-        product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
-        title: LCSC
-        url: https://www.lcsc.com/product-detail/C2907002.html
-      - key: lcsc
         part_number: C21190
         product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
         title: LCSC
         url: https://www.lcsc.com/product-detail/C21190.html
+      - key: lcsc
+        part_number: C2907002
+        product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C2907002.html
       - key: lcsc
         part_number: C22548
         product_name: 1kΩ 100mW 75V ±1% ±100ppm/℃ Thick Film Resistor 0603 Chip Resistor
           - Surface Mount RoHS
         title: LCSC
         url: https://www.lcsc.com/product-detail/C22548.html
+      - key: jlcpcb
+        part_number: C21190
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
+      jlcpcb_selection:
+        compatibility_notes: Generic 0603 1kΩ resistor formerly preferred FOJAN C2907002,
+          while C21190 was already listed as an alternative. Promote verified Basic
+          C21190 and retain FOJAN and YAGEO alternatives. Full pass checks derating
+          and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 100mW
+          Resistance: 1kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 75V
+        stock_observed: 23944345
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0603_1608Metric
         symbol: Device:R_Small
       lcsc_search: 0603 1kΩ
-      manufacturer: FOJAN
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF1001T5E
       - manufacturer: FOJAN
         part_number: FRC0603F1001TS
       - manufacturer: UNI-ROYAL
@@ -340,18 +413,37 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0603_1000_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       part_id: R1
-      part_number_lcsc: C2907002
-      part_number_manufacturer: FRC0603F1001TS
+      part_number_jlcpcb: C21190
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
+      part_number_lcsc: C21190
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C21190.html
+      part_number_manufacturer: 0603WAF1001T5E
       part_numbers_lcsc:
-      - part_number: C2907002
-        product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
       - part_number: C21190
+        product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
+      - part_number: C2907002
         product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
       - part_number: C22548
         product_name: 1kΩ 100mW 75V ±1% ±100ppm/℃ Thick Film Resistor 0603 Chip Resistor
           - Surface Mount RoHS
       part_numbers_manufacturer:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0603WAF1001T5E
       - manufacturer: FOJAN
         part_number: FRC0603F1001TS
       - manufacturer: UNI-ROYAL
@@ -428,16 +520,19 @@ oomlout_ai_roboclick_3:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: FRC0603F1001TS
-        - title: LCSC
-          url: https://www.lcsc.com/product-detail/C2907002.html
-          value: C2907002
+          value: 0603WAF1001T5E
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C21190.html
           value: C21190
         - title: LCSC
+          url: https://www.lcsc.com/product-detail/C2907002.html
+          value: C2907002
+        - title: LCSC
           url: https://www.lcsc.com/product-detail/C22548.html
           value: C22548
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
+          value: C21190
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -468,7 +563,7 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - level: 4
           value: 1000_ohm
-      product_url: https://www.lcsc.com/product-detail/C2907002.html
+      product_url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock listing first (C2907002, 13,177,800
@@ -2586,7 +2681,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -2601,17 +2696,22 @@ oomlout_ai_roboclick_4:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0603_1000_ohm
 part_id: R1
-part_number_lcsc: C2907002
-part_number_manufacturer: FRC0603F1001TS
+part_number_jlcpcb: C21190
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
+part_number_lcsc: C21190
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C21190.html
+part_number_manufacturer: 0603WAF1001T5E
 part_numbers_lcsc:
-- part_number: C2907002
-  product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
 - part_number: C21190
+  product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
+- part_number: C2907002
   product_name: 1kΩ ±1% 100mW 0603 Thick Film Resistor
 - part_number: C22548
   product_name: 1kΩ 100mW 75V ±1% ±100ppm/℃ Thick Film Resistor 0603 Chip Resistor
     - Surface Mount RoHS
 part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0603WAF1001T5E
 - manufacturer: FOJAN
   part_number: FRC0603F1001TS
 - manufacturer: UNI-ROYAL
@@ -2688,16 +2788,19 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: FRC0603F1001TS
-  - title: LCSC
-    url: https://www.lcsc.com/product-detail/C2907002.html
-    value: C2907002
+    value: 0603WAF1001T5E
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C21190.html
     value: C21190
   - title: LCSC
+    url: https://www.lcsc.com/product-detail/C2907002.html
+    value: C2907002
+  - title: LCSC
     url: https://www.lcsc.com/product-detail/C22548.html
     value: C22548
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
+    value: C21190
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -2727,7 +2830,7 @@ part_page:
     value: '0603'
   - level: 4
     value: 1000_ohm
-product_url: https://www.lcsc.com/product-detail/C2907002.html
+product_url: https://jlcpcb.com/partdetail/21904-0603WAF1001T5E/C21190
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C2907002, 13,177,800

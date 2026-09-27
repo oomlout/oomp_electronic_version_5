@@ -41,10 +41,12 @@ Resistor 330 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0402J331 TS` |
+| Manufacturer part number | `0402WGF3300TCE` |
+| LCSC | [`C25104`](https://www.lcsc.com/product-detail/C25104.html) |
 | LCSC | [`C2906929`](https://www.lcsc.com/product-detail/C2906929.html) |
 | LCSC | [`C2930002`](https://www.lcsc.com/product-detail/C2930002.html) |
 | LCSC | [`C105875`](https://www.lcsc.com/product-detail/C105875.html) |
+| JLCPCB | [`C25104`](https://jlcpcb.com/partdetail/25847-0402WGF3300TCE/C25104) |
 
 
 

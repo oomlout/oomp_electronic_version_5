@@ -43,6 +43,7 @@ Resistor 33 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805
 | --- | --- |
 | Manufacturer part number | `0805W8F330JT5E` |
 | LCSC | [`C17634`](https://www.lcsc.com/product-detail/C17634.html) |
+| JLCPCB | [`C17634`](https://jlcpcb.com/partdetail/18322-0805W8F330JT5E/C17634) |
 
 
 

@@ -37,6 +37,15 @@ Capacitor 22 uF 0805 is an OOMP electronic capacitor definition. It uses the 080
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `CL21A226MAQNNNE` |
+| LCSC | [`C45783`](https://www.lcsc.com/product-detail/C45783.html) |
+| JLCPCB | [`C45783`](https://jlcpcb.com/partdetail/46786-CL21A226MAQNNNE/C45783) |
+
+
 
 
 

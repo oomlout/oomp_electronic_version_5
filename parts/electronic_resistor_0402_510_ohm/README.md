@@ -41,10 +41,11 @@ Resistor 510 Ohm 0402 is an OOMP electronic resistor definition. It uses the 040
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `RC0402FR-07510RL` |
-| LCSC | [`C276273`](https://www.lcsc.com/product-detail/C276273.html) |
+| Manufacturer part number | `0402WGF5100TCE` |
 | LCSC | [`C25123`](https://www.lcsc.com/product-detail/C25123.html) |
+| LCSC | [`C276273`](https://www.lcsc.com/product-detail/C276273.html) |
 | LCSC | [`C2909366`](https://www.lcsc.com/product-detail/C2909366.html) |
+| JLCPCB | [`C25123`](https://jlcpcb.com/partdetail/25866-0402WGF5100TCE/C25123) |
 
 
 

@@ -43,6 +43,7 @@ Resistor 200 Ohm 0805 is an OOMP electronic resistor definition. It uses the 080
 | --- | --- |
 | Manufacturer part number | `0805W8F2000T5E` |
 | LCSC | [`C17540`](https://www.lcsc.com/product-detail/C17540.html) |
+| JLCPCB | [`C17540`](https://jlcpcb.com/partdetail/18228-0805W8F2000T5E/C17540) |
 
 
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_50pin_to_40pin_tft_with_ar1100_adapter_pcb_adafruit_50pin_to_40pin_tft_with_ar1100_adapter_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-50pin-to-40pin-TFT-with-AR1100-Adapter-PCB Adafruit 50pin to 40pin TFT with AR1100 Adapter current is a KiCad project containing 47 extracted component records. The catalogue matcher linked 11 physical placements to OOMP parts.
+Project adafruit/Adafruit-50pin-to-40pin-TFT-with-AR1100-Adapter-PCB Adafruit 50pin to 40pin TFT with AR1100 Adapter current is a KiCad project containing 47 extracted component records. The catalogue matcher linked 14 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-50pin-to-40pin-TFT-with-AR1100-Adapter-PCB Adafruit 50
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 133 |
-| Matched OOMP components | 11 |
-| Unmatched physical components | 12 |
+| Matched OOMP components | 14 |
+| Unmatched physical components | 9 |
 | Front-side placements | 19 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -90,8 +90,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C3 | 2 | Capacitor 10 uF 0805 | 10uF | `_0805MP` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C2 | 1 | 0.1uF | 0.1uF | `_0805MP` | unmatched |
-| C4, C6 | 2 | 0.01uF | 0.01uF | `_0805MP` | unmatched |
+| C2 | 1 | Capacitor 100 nF 0805 | 0.1uF | `_0805MP` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
+| C4, C6 | 2 | Capacitor 10 nF 0805 | 0.01uF | `_0805MP` | [`electronic_capacitor_0805_10_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_nano_farad) |
 | FB1, FB2, FB3, FB4 | 4 | Ferrite | Ferrite | `_0805` | unmatched |
 | IC1 | 1 | AR1100_SSOP | AR1100_SSOP | `TSSOP20-5.3MMBODY` | unmatched |
 | J1 | 1 | XF2-40-RARBT | XF2-40-RARBT | `4-1734839-0` | unmatched |
@@ -135,7 +135,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 12 physical component records are not yet matched to an OOMP part.
+- 9 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_50pin_to_40pin_tft_with_ar1100_adapter_pcb_adafruit_50pin_to_40pin_tft_with_ar1100_adapter_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_50pin_to_40pin_tft_with_ar1100_adapter_pcb_adafruit_50pin_to_40pin_tft_with_ar1100_adapter_current/data/generated_data/browser_research_queue.md)
@@ -144,7 +144,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_50pin_to_40pin_tft_with_ar1100_adapter_pcb_adafruit_50pin_to_40pin_tft_with_ar1100_adapter_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 8
 
 ## Source files
 

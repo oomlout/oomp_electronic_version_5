@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_9_dof_and_10_dof_pcbs_adafuit_9_dof_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-9-DOF-and-10-DOF-PCBs Adafuit 9 DOF current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 18 physical placements to OOMP parts.
+Project adafruit/Adafruit-9-DOF-and-10-DOF-PCBs Adafuit 9 DOF current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 22 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-9-DOF-and-10-DOF-PCBs Adafuit 9 DOF current is a KiCad
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 49 |
-| Matched OOMP components | 18 |
-| Unmatched physical components | 7 |
+| Matched OOMP components | 22 |
+| Unmatched physical components | 3 |
 | Front-side placements | 21 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,12 +82,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 10nF | 10nF | `Adafuit_9DOF-import-fps:_0805MP` | unmatched |
-| C2 | 1 | 470nF | 470nF | `Adafuit_9DOF-import-fps:_0805MP` | unmatched |
-| C3 | 1 | 0.1uF | 0.1uF | `Adafuit_9DOF-import-fps:_0805MP` | unmatched |
+| C1 | 1 | Capacitor 10 nF 0805 | 10nF | `Adafuit_9DOF-import-fps:_0805MP` | [`electronic_capacitor_0805_10_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_nano_farad) |
+| C2 | 1 | Capacitor 470 nF 0805 | 470nF | `Adafuit_9DOF-import-fps:_0805MP` | [`electronic_capacitor_0805_470_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_470_nano_farad) |
+| C3 | 1 | Capacitor 100 nF 0805 | 0.1uF | `Adafuit_9DOF-import-fps:_0805MP` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | C5, C8, C9 | 3 | Capacitor 10 uF 0805 | 10uF | `Adafuit_9DOF-import-fps:_0805MP` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C6 | 1 | Capacitor 4.7 uF 0805 | 4.7uF | `Adafuit_9DOF-import-fps:_0805MP` | [`electronic_capacitor_0805_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_4_7_micro_farad) |
-| C7 | 1 | 0.22µF | 0.22µF | `Adafuit_9DOF-import-fps:_0805MP` | unmatched |
+| C7 | 1 | Capacitor 220 nF 0805 | 0.22µF | `Adafuit_9DOF-import-fps:_0805MP` | [`electronic_capacitor_0805_220_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_220_nano_farad) |
 | JP1 | 1 | Connector Header 2.54-1*10P针 |  | `Adafuit_9DOF-import-fps:1X10_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_10_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_10_pin) |
 | Q1, Q2 | 2 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `Adafuit_9DOF-import-fps:SOT23-WIDE` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
 | R1, R2, R3, R4, R5, R6, R7 | 7 | Resistor 10000 Ohm 0805 | 10K | `Adafuit_9DOF-import-fps:_0805MP` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
@@ -126,7 +126,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 7 physical component records are not yet matched to an OOMP part.
+- 3 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_9_dof_and_10_dof_pcbs_adafuit_9_dof_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_9_dof_and_10_dof_pcbs_adafuit_9_dof_current/data/generated_data/browser_research_queue.md)
@@ -135,7 +135,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_9_dof_and_10_dof_pcbs_adafuit_9_dof_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 10
 
 ## Source files
 

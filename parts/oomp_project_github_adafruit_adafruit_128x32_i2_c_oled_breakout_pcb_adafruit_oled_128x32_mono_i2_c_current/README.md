@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB Adafruit OLED 128x32 Mono I2 C current is a KiCad project containing 39 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
+Project adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB Adafruit OLED 128x32 Mono I2 C current is a KiCad project containing 39 extracted component records. The catalogue matcher linked 21 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-128x32-I2C-OLED-Breakout-PCB Adafruit OLED 128x32 Mono
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 34 |
-| Matched OOMP components | 17 |
-| Unmatched physical components | 6 |
+| Matched OOMP components | 21 |
+| Unmatched physical components | 2 |
 | Front-side placements | 2 |
 | Back-side placements | 17 |
 | Project version | `current` |
@@ -82,9 +82,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C2, C3, C4 | 4 | 1uF | 1uF | `Adafruit OLED 128x32 Mono I2C-import-fps:0805` | unmatched |
+| C1, C2, C3, C4 | 4 | Capacitor 1 uF 0805 | 1uF | `Adafruit OLED 128x32 Mono I2C-import-fps:0805` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C5, C6, C7 | 3 | Capacitor 10 uF 0805 | 10uF | `Adafruit OLED 128x32 Mono I2C-import-fps:0805` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| D1 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit OLED 128x32 Mono I2C-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D1 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit OLED 128x32 Mono I2C-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | JP1 | 1 | Connector Header 2.54-1x6P直针 |  | `Adafruit OLED 128x32 Mono I2C-import-fps:1X06_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | LCD1 | 1 | Adafruit OLED 128x32 Mono I2C-import-fps:UG-2832HSWEG02_WRAPUNDER |  | `Adafruit OLED 128x32 Mono I2C-import-fps:UG-2832HSWEG02_WRAPUNDER` | unmatched |
 | Q1, Q2 | 2 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `Adafruit OLED 128x32 Mono I2C-import-fps:SOT23-WIDE` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
@@ -121,7 +121,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 6 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_current/data/generated_data/browser_research_queue.md)
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_128x32_i2_c_oled_breakout_pcb_adafruit_oled_128x32_mono_i2_c_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 8
 
 ## Source files
 
