@@ -83,7 +83,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1 | 1 | Capacitor 10 uF 0805 | 10uF | `Adafruit 0.54 Alphanumeric v0.1-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| D1 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit 0.54 Alphanumeric v0.1-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D1 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit 0.54 Alphanumeric v0.1-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | JP1 | 1 | Connector Header PH2.54-1X5P-H25 |  | `Adafruit 0.54 Alphanumeric v0.1-import-fps:1X05_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_5_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_5_pin) |
 | LED1, LED2 | 2 | Adafruit 0.54 Alphanumeric v0.1-import-fps:SEGMENT_STARTBUST_DUAL_KWA-541CBB |  | `Adafruit 0.54 Alphanumeric v0.1-import-fps:SEGMENT_STARTBUST_DUAL_KWA-541CBB` | unmatched |
 | R1, R2 | 2 | Resistor 10000 Ohm 0805 | 10K | `Adafruit 0.54 Alphanumeric v0.1-import-fps:0805-NO` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
