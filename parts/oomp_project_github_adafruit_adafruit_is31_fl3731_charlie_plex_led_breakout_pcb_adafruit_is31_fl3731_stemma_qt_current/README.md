@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_is31_fl3731_charlie_plex_led_breakout_pcb_adafruit_is31_fl3731_stemma_qt_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-IS31FL3731-CharliePlex-LED-Breakout-PCB Adafruit IS31 FL3731 STEMMA QT current is a KiCad project containing 85 extracted component records. The catalogue matcher linked 19 physical placements to OOMP parts.
+Project adafruit/Adafruit-IS31FL3731-CharliePlex-LED-Breakout-PCB Adafruit IS31 FL3731 STEMMA QT current is a KiCad project containing 85 extracted component records. The catalogue matcher linked 20 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-IS31FL3731-CharliePlex-LED-Breakout-PCB Adafruit IS31 
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 48 |
-| Matched OOMP components | 19 |
-| Unmatched physical components | 42 |
+| Matched OOMP components | 20 |
+| Unmatched physical components | 41 |
 | Front-side placements | 57 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -84,7 +84,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, C4 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit IS31FL3731 STEMMA QT-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C2, C5 | 2 | Capacitor 100 nF 0603 | 0.1uF | `Adafruit IS31FL3731 STEMMA QT-import-fps:0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
-| C3 | 1 | 0.22uF | 0.22uF | `Adafruit IS31FL3731 STEMMA QT-import-fps:0603-NO` | unmatched |
+| C3 | 1 | Capacitor 220 nF 0603 | 0.22uF | `Adafruit IS31FL3731 STEMMA QT-import-fps:0603-NO` | [`electronic_capacitor_0603_220_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_220_nano_farad) |
 | CONN1, CONN2 | 2 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `Adafruit IS31FL3731 STEMMA QT-import-fps:JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
 | JP2, JP4 | 2 | Connector Header PZ254-1-13-Z-8.5 |  | `Adafruit IS31FL3731 STEMMA QT-import-fps:1X13_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_13_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_13_pin) |
 | JP5 | 1 | Connector Header PH2.54-01-07PZD |  | `Adafruit IS31FL3731 STEMMA QT-import-fps:1X07_ROUND_76` | [`electronic_connector_header_2_54_mm_pitch_through_hole_7_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_7_pin) |
@@ -164,7 +164,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 42 physical component records are not yet matched to an OOMP part.
+- 41 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_is31_fl3731_charlie_plex_led_breakout_pcb_adafruit_is31_fl3731_stemma_qt_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_is31_fl3731_charlie_plex_led_breakout_pcb_adafruit_is31_fl3731_stemma_qt_current/data/generated_data/browser_research_queue.md)
@@ -173,7 +173,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_is31_fl3731_charlie_plex_led_breakout_pcb_adafruit_is31_fl3731_stemma_qt_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 8
 
 ## Source files
 

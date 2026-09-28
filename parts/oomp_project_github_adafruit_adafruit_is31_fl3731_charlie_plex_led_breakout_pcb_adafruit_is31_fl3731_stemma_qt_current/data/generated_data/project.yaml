@@ -12,8 +12,8 @@ summary:
   component_count: 85
   schematic_symbol_count: 48
   pcb_footprint_count: 68
-  matched_component_count: 19
-  unmatched_physical_component_count: 42
+  matched_component_count: 20
+  unmatched_physical_component_count: 41
   non_physical_symbol_count: 24
   mounting_hole_count: 4
   dedicated_mounting_hole_count: 4
@@ -12619,10 +12619,10 @@ components:
     disagree_count: 0
     incomplete_count: 1
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: electronic_capacitor_0603_220_nano_farad
+    confidence: 1.0
     proposed_oomp_id: electronic_capacitor_0603_220_nano_farad
     inferred:
       kind: capacitor
@@ -12630,37 +12630,10 @@ components:
       value: 0.22uF
       mpn: null
     reasons:
-    - The exact normalized component is not present in the OOMP parts directory.
-    candidates:
-    - oomp_id: electronic_capacitor_0603_10_nano_farad
-      score: 0.6915
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0603_100_nano_farad
-      score: 0.6909
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_22_nano_farad
-      score: 0.5634
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_10_nano_farad
-      score: 0.5622
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_100_nano_farad
-      score: 0.5617
-      reasons:
-      - same component family
-      - nearby normalized value
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: capacitor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Capacitor
   generated_directory: components/C3
 - reference: C4

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_is31_fl3741_pcb_adafruit_is31_fl3741_matrix_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-IS31FL3741-PCB Adafruit IS31 FL3741 Matrix current is a KiCad project containing 183 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
+Project adafruit/Adafruit-IS31FL3741-PCB Adafruit IS31 FL3741 Matrix current is a KiCad project containing 183 extracted component records. The catalogue matcher linked 36 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-IS31FL3741-PCB Adafruit IS31 FL3741 Matrix current is 
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 205 |
-| Matched OOMP components | 23 |
-| Unmatched physical components | 131 |
+| Matched OOMP components | 36 |
+| Unmatched physical components | 118 |
 | Front-side placements | 150 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -91,7 +91,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R2, R3, R4, R5, R6, R8 | 6 | Resistor 22 Ohm 0603 | 22 | `Adafruit IS31FL3741 Matrix-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_22_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_22_ohm) |
 | R7 | 1 | Resistor 4700 Ohm 0603 | 4.7K | `Adafruit IS31FL3741 Matrix-import-fps:RESPACK_4X0603` | [`electronic_resistor_0603_4700_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_4700_ohm) |
 | R9, R23 | 2 | Resistor 22 Ohm 0603 | 22 | `Adafruit IS31FL3741 Matrix-import-fps:0603-NO` | [`electronic_resistor_0603_22_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_22_ohm) |
-| R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22 | 13 | 51 | 51 | `Adafruit IS31FL3741 Matrix-import-fps:0603-NO` | unmatched |
+| R10, R11, R12, R13, R14, R15, R16, R17, R18, R19, R20, R21, R22 | 13 | Resistor 51 Ohm 0603 | 51 | `Adafruit IS31FL3741 Matrix-import-fps:0603-NO` | [`electronic_resistor_0603_51_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_51_ohm) |
 | X1 | 1 | IS31FL3741 | IS31FL3741 | `Adafruit IS31FL3741 Matrix-import-fps:QFN60_7MM` | unmatched |
 
 ## Main nets
@@ -126,7 +126,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 131 physical component records are not yet matched to an OOMP part.
+- 118 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_is31_fl3741_pcb_adafruit_is31_fl3741_matrix_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_is31_fl3741_pcb_adafruit_is31_fl3741_matrix_current/data/generated_data/browser_research_queue.md)
@@ -135,7 +135,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_is31_fl3741_pcb_adafruit_is31_fl3741_matrix_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 8
+- Matched OOMP source parts copied: 9
 
 ## Source files
 
