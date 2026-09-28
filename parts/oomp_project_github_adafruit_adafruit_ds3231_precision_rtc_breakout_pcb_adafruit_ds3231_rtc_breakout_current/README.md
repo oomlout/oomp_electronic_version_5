@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_ds3231_precision_rtc_breakout_pcb_adafruit_ds3231_rtc_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-DS3231-Precision-RTC-Breakout-PCB Adafruit DS3231 RTC Breakout current is a KiCad project containing 23 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
+Project adafruit/Adafruit-DS3231-Precision-RTC-Breakout-PCB Adafruit DS3231 RTC Breakout current is a KiCad project containing 23 extracted component records. The catalogue matcher linked 6 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-DS3231-Precision-RTC-Breakout-PCB Adafruit DS3231 RTC 
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 21 |
-| Matched OOMP components | 5 |
-| Unmatched physical components | 3 |
+| Matched OOMP components | 6 |
+| Unmatched physical components | 2 |
 | Front-side placements | 5 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -81,7 +81,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | B1 | 1 | CR1220 | CR1220 | `Adafruit DS3231 RTC Breakout-import-fps:CR1220` | unmatched |
-| C1 | 1 | 1uF | 1uF | `Adafruit DS3231 RTC Breakout-import-fps:0805-NO` | unmatched |
+| C1 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit DS3231 RTC Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | IC1 | 1 | DS3231/SO | DS3231/SO | `Adafruit DS3231 RTC Breakout-import-fps:SO16W` | unmatched |
 | JP1 | 1 | Connector Header PZ254V-12-8P |  | `Adafruit DS3231 RTC Breakout-import-fps:1X08_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
 | R1, R2 | 2 | Resistor 10000 Ohm 0805 | 10K | `Adafruit DS3231 RTC Breakout-import-fps:0805-NO` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
@@ -106,7 +106,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 3 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ds3231_precision_rtc_breakout_pcb_adafruit_ds3231_rtc_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ds3231_precision_rtc_breakout_pcb_adafruit_ds3231_rtc_breakout_current/data/generated_data/browser_research_queue.md)
@@ -115,7 +115,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_ds3231_precision_rtc_breakout_pcb_adafruit_ds3231_rtc_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 4
 
 ## Source files
 

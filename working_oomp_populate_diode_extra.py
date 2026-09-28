@@ -335,6 +335,25 @@ def main(**kwargs):
             "footprints": ["Diode_SMD:D_SOD-323"],
         }
 
+    current = "electronic_diode_switching_sod_123_jiangsu_changjing_electronics_technology_co_ltd_1n4148w"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Jiangsu Changjing Electronics Technology Co., Ltd."
+        part["part_number_manufacturer"] = "1N4148W"
+        part["part_number_lcsc"] = "C2099"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2099.html"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710253822164992-C2099.pdf"
+        part["package_name_manufacturer"] = "SOD-123"
+        part["electrical"] = {
+            "maximum_dc_reverse_voltage": "100 V",
+            "maximum_rectified_current": "150 mA",
+            "maximum_power_dissipation": "500 mW",
+            "forward_voltage_at_test_current": "1.25 V at 150 mA",
+            "reverse_recovery_time": "4 ns",
+            "non_repetitive_peak_forward_surge_current": "2 A",
+            "reverse_leakage_current": "1 uA at 75 V",
+        }
+
     # Apply individually reviewed JLC house choices after other supplier data.
     from working_oomp_populate_jlc import apply_reviewed_jlc_choices
     apply_reviewed_jlc_choices(extras_dict, family="diode")

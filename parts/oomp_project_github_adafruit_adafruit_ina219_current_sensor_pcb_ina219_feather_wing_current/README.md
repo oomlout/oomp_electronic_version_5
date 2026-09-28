@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_ina219_current_sensor_pcb_ina219_feather_wing_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-INA219-Current-Sensor-PCB INA219 Feather Wing current is a KiCad project containing 32 extracted component records. The catalogue matcher linked 4 physical placements to OOMP parts.
+Project adafruit/Adafruit-INA219-Current-Sensor-PCB INA219 Feather Wing current is a KiCad project containing 32 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-INA219-Current-Sensor-PCB INA219 Feather Wing current 
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 30 |
-| Matched OOMP components | 4 |
-| Unmatched physical components | 6 |
+| Matched OOMP components | 5 |
+| Unmatched physical components | 5 |
 | Front-side placements | 10 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -87,7 +87,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 1uF | 1uF | `INA219 FeatherWing-import-fps:0805-NO@1` | unmatched |
+| C1 | 1 | Capacitor 1 uF 0805 | 1uF | `INA219 FeatherWing-import-fps:0805-NO@1` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | J1 | 1 | 3.5mm | 3.5mm | `INA219 FeatherWing-import-fps:TERMBLOCK_1X2-3.5MM` | unmatched |
 | JP1 | 1 | Connector Header PH2.54-01-12PZD |  | `INA219 FeatherWing-import-fps:1X12_ROUND_76MIL` | [`electronic_connector_header_2_54_mm_pitch_through_hole_12_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_12_pin) |
 | JP2 | 1 | Connector Header PZ254V-11-02P |  | `INA219 FeatherWing-import-fps:1X02_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_2_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_2_pin) |
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 6 physical component records are not yet matched to an OOMP part.
+- 5 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ina219_current_sensor_pcb_ina219_feather_wing_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ina219_current_sensor_pcb_ina219_feather_wing_current/data/generated_data/browser_research_queue.md)
@@ -139,7 +139,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_ina219_current_sensor_pcb_ina219_feather_wing_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 5
 
 ## Source files
 

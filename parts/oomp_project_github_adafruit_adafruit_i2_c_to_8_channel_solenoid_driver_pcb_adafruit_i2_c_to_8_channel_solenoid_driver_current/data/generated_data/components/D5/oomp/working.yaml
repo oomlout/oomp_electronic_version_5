@@ -38,20 +38,56 @@ dimensions_mm:
   length: 1.7
   width: 1.25
 directory: parts/electronic_diode_switching_sod_323_onsemi_1n4148ws
-distributors: []
+distributors:
+- key: lcsc
+  part_number: C2128
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C2128.html
+- key: jlcpcb
+  part_number: C2128
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
 id: electronic_diode_switching_sod_323_onsemi_1n4148ws
 id_no_class: electronic_diode_switching_sod_323_onsemi_1n4148ws
 id_no_size: electronic_diode_switching_sod_323_onsemi_1n4148ws
 id_no_type: electronic_diode_switching_sod_323_onsemi_1n4148ws
+jlcpcb_selection:
+  compatibility_notes: Created an exact MDD SM4007PL rectifier identity because no
+    existing OOMP diode entry matches its maker, MPN and SOD-123FL package. Live JLC
+    Basic ratings are 1 A rectified current, 1 kV reverse voltage, 25 A surge, 1.1
+    V at 1 A and 10 uA at 1 kV leakage. Pin geometry remains for the full pass.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Current - Rectified: 150mA
+    Diode Configuration: Standalone
+    Non-Repetitive Peak Forward Surge Current: 2A
+    Pd - Power Dissipation: 200mW
+    Reverse Leakage Current (Ir): 1uA@75V
+    Reverse Recovery Time (trr): 4ns
+    Voltage - DC Reverse(Vr): 100V
+    Voltage - Forward(Vf@If): 1.25V@150mA
+  stock_observed: null
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: Diode_SMD:D_SOD-323
   machine_solder: Diode_SMD:D_SOD-323
   symbol: ''
-lcsc_search: switching sod 323 onsemi 1n4148ws diode
+lcsc_search: 1N4148WS
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws
-manufacturers: []
+manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+manufacturers:
+- manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+  part_number: 1N4148WS
 md5: 60389ee9da14b0adf8894fb733187096
 md5_10: 60389ee9da
 md5_10_upper: 60389EE9DA
@@ -65,9 +101,9 @@ name: Electronic Diode Switching Sod 323 Onsemi 1N4148Ws
 name_no_class: Electronic Diode Switching Sod 323 Onsemi 1N4148Ws
 name_no_size: Electronic Diode Switching Sod 323 Onsemi 1N4148Ws
 name_no_type: Electronic Diode Switching Sod 323 Onsemi 1N4148Ws
-name_proper: Diode Switching SOD-323
-name_readable: Diode Switching SOD-323
-name_short: Diode Switching SOD-323
+name_proper: Diode 1N4148WS SOD-323
+name_readable: Diode 1N4148WS SOD-323
+name_short: Diode 1N4148WS SOD-323
 name_space: electronic diode switching sod 323 onsemi 1n4148ws
 name_upper: ELECTRONIC DIODE SWITCHING SOD 323 ONSEMI 1N4148WS
 oomlout_ai_roboclick_1:
@@ -173,6 +209,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_diode_switching_sod_323_onsemi_1n4148ws
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -187,17 +237,54 @@ oomlout_ai_roboclick_3:
         length: 1.7
         width: 1.25
       directory: parts\electronic_diode_switching_sod_323_onsemi_1n4148ws
-      distributors: []
+      distributors:
+      - key: lcsc
+        part_number: C2128
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C2128.html
+      - key: jlcpcb
+        part_number: C2128
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+      jlcpcb_selection:
+        compatibility_notes: Created an exact MDD SM4007PL rectifier identity because
+          no existing OOMP diode entry matches its maker, MPN and SOD-123FL package.
+          Live JLC Basic ratings are 1 A rectified current, 1 kV reverse voltage,
+          25 A surge, 1.1 V at 1 A and 10 uA at 1 kV leakage. Pin geometry remains
+          for the full pass.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Current - Rectified: 150mA
+          Diode Configuration: Standalone
+          Non-Repetitive Peak Forward Surge Current: 2A
+          Pd - Power Dissipation: 200mW
+          Reverse Leakage Current (Ir): 1uA@75V
+          Reverse Recovery Time (trr): 4ns
+          Voltage - DC Reverse(Vr): 100V
+          Voltage - Forward(Vf@If): 1.25V@150mA
+        stock_observed: null
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: Diode_SMD:D_SOD-323
         machine_solder: Diode_SMD:D_SOD-323
         symbol: ''
-      lcsc_search: switching sod 323 onsemi 1n4148ws diode
-      manufacturers: []
+      lcsc_search: 1N4148WS
+      manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+      manufacturers:
+      - manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+        part_number: 1N4148WS
       name: electronic_diode_switching_sod_323_onsemi_1n4148ws
-      name_proper: Diode Switching SOD-323
-      name_readable: Diode Switching SOD-323
-      name_short: Diode Switching SOD-323
+      name_proper: Diode 1N4148WS SOD-323
+      name_readable: Diode 1N4148WS SOD-323
+      name_short: Diode 1N4148WS SOD-323
       name_space: electronic diode switching sod 323 onsemi 1n4148ws
       name_upper: ELECTRONIC DIODE SWITCHING SOD 323 ONSEMI 1N4148WS
       oomlout_ai_roboclick_1:
@@ -302,6 +389,20 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_diode_switching_sod_323_onsemi_1n4148ws
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       package_drawing:
         body:
         - 1.7
@@ -326,6 +427,16 @@ oomlout_ai_roboclick_3:
           - 0.55
           - 0.55
       part_id: D1
+      part_number_jlcpcb: C2128
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+      part_number_lcsc: C2128
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C2128.html
+      part_number_manufacturer: 1N4148WS
+      part_numbers_lcsc:
+      - part_number: C2128
+      part_numbers_manufacturer:
+      - manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+        part_number: 1N4148WS
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -393,7 +504,16 @@ oomlout_ai_roboclick_3:
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
         has_datasheet: false
-        identifiers: []
+        identifiers:
+        - title: Manufacturer part number
+          url: ''
+          value: 1N4148WS
+        - title: LCSC
+          url: https://www.lcsc.com/product-detail/C2128.html
+          value: C2128
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+          value: C2128
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -420,7 +540,7 @@ oomlout_ai_roboclick_3:
         - title: Documented pins
           value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws
-        summary: Diode Switching SOD-323 is an OOMP electronic diode definition. It
+        summary: Diode 1N4148WS SOD-323 is an OOMP electronic diode definition. It
           uses the sod 323 package or form factor. Its nominal drawing size is 1.7
           × 1.25 mm. The definition includes 2 documented pins.
         taxonomy:
@@ -445,6 +565,7 @@ oomlout_ai_roboclick_3:
           name: A
           number: '2'
           type: signal
+      product_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
       regenerate_pngs: false
       svg_details:
       - filename_extra: assembly
@@ -1534,7 +1655,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -1572,6 +1693,16 @@ package_drawing:
     - 0.55
     - 0.55
 part_id: D1
+part_number_jlcpcb: C2128
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+part_number_lcsc: C2128
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C2128.html
+part_number_manufacturer: 1N4148WS
+part_numbers_lcsc:
+- part_number: C2128
+part_numbers_manufacturer:
+- manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+  part_number: 1N4148WS
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -1639,7 +1770,16 @@ part_page:
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
   has_datasheet: false
-  identifiers: []
+  identifiers:
+  - title: Manufacturer part number
+    url: ''
+    value: 1N4148WS
+  - title: LCSC
+    url: https://www.lcsc.com/product-detail/C2128.html
+    value: C2128
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+    value: C2128
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -1666,7 +1806,7 @@ part_page:
   - title: Documented pins
     value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws
-  summary: Diode Switching SOD-323 is an OOMP electronic diode definition. It uses
+  summary: Diode 1N4148WS SOD-323 is an OOMP electronic diode definition. It uses
     the sod 323 package or form factor. Its nominal drawing size is 1.7 × 1.25 mm.
     The definition includes 2 documented pins.
   taxonomy:
@@ -1691,6 +1831,7 @@ pins:
     name: A
     number: '2'
     type: signal
+product_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
 regenerate_pngs: false
 svg_details:
 - filename_extra: assembly

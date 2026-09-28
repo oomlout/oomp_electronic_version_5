@@ -41,10 +41,11 @@ Capacitor 27 pF 0402 is an OOMP electronic capacitor definition. It uses the 040
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CC0402JRNPO9BN270` |
+| Manufacturer part number | `0402CG270J500NT` |
+| LCSC | [`C1557`](https://www.lcsc.com/product-detail/C1557.html) |
 | LCSC | [`C107002`](https://www.lcsc.com/product-detail/C107002.html) |
 | LCSC | [`C466227`](https://www.lcsc.com/product-detail/C466227.html) |
-| LCSC | [`C1557`](https://www.lcsc.com/product-detail/C1557.html) |
+| JLCPCB | [`C1557`](https://jlcpcb.com/partdetail/1909-0402CG270J500NT/C1557) |
 
 
 

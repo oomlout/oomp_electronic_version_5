@@ -23,12 +23,15 @@ from unittest.mock import patch
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "kicad_agents/jlc_house_parts"
-SOURCE = DATA / "sources/catalogue-browser-official-basic-category-2026-09-26.json"
+SOURCE = DATA / "sources/current.json"
+BASIC_FILTER_SOURCE = DATA / "sources/basic_type_filter_2026-09-27.json"
 CLAIMS = DATA / "claims"
 LOCKS = DATA / "locks"
 STAGING = DATA / "browser_staging"
 HOUSE_TIER_LABELS = ("Basic", "Preferred", "Promotional")
 TIER_LABELS = HOUSE_TIER_LABELS + ("Extended",)
+HOUSE_TIER_BY_BADGE = {"Basic": "basic", "Preferred": "preferred_extended",
+                       "Promotional": "preferred_extended", "Extended": "preferred_extended"}
 
 
 def read_json(path):
@@ -42,6 +45,47 @@ def write_json(path, value):
 
 
 def normalize_capture(capture):
+    """Parse a browser-captured official category listing or the legacy table format."""
+    if isinstance(capture, dict) and isinstance(capture.get("pages"), dict):
+        result, seen = [], set()
+        for page, rows in sorted(capture["pages"].items(), key=lambda item: int(item[0])):
+            for raw in rows:
+                code = raw.get("code", "")
+                if not re.fullmatch(r"C[0-9]+", code):
+                    raise ValueError(f"Invalid catalogue code: {code}")
+                badges = raw.get("badges") or []
+                if len(badges) > 1 or any(x not in ("Basic", "Extended") for x in badges):
+                    raise ValueError(f"Unknown category class badge: {code}: {badges}")
+                if code in seen:
+                    continue  # Site pagination repeats boundary rows; keep first occurrence.
+                seen.add(code)
+                label = badges[0] if badges else "Needs badge verification"
+                result.append(dict(
+                    code=code,
+                    tier={"Basic": "basic", "Extended": "preferred_extended"}.get(label, "unverified"),
+                    tier_label=label,
+                    retired=False,
+                    category="",
+                    manufacturer=raw.get("manufacturer", ""),
+                    mpn=raw.get("mpn", ""),
+                    package="",
+                    description=raw.get("description", ""),
+                    original_description="",
+                    price_snapshot=raw.get("price", ""),
+                    stock_snapshot=int(raw.get("stock") or 0),
+                    purchase_moq=str(raw.get("moq") or ""),
+                    pcba_min_qty="0",
+                    pcba_min_price="",
+                    first_seen=str(capture.get("captured_at_utc", ""))[:10],
+                    last_seen=str(capture.get("captured_at_utc", ""))[:10],
+                    jlcpcb_url=raw.get("product_url", ""),
+                    datasheet_url=raw.get("datasheet_url", ""),
+                    source_page=int(page),
+                ))
+        if not result:
+            raise ValueError("The active browser category capture is empty")
+        return sorted(result, key=lambda x: int(x["code"][1:]))
+
     """Parse saved visible table rows; reject truncation, duplicates and schema drift."""
     result, seen = [], set()
     for raw in capture:
@@ -58,6 +102,7 @@ def normalize_capture(capture):
         product = next(x["url"] for x in links if x["text"] == code)
         result.append(dict(
             code=code, tier="basic" if c[1] == "base" else "preferred_extended",
+            tier_label="Basic" if c[1] == "base" else "Extended",
             retired=c[15] == "1", category=c[2], manufacturer=c[3], mpn=c[4],
             package=c[5], description=c[6], original_description=c[7],
             price_snapshot=c[8], stock_snapshot=int(c[9]), purchase_moq=c[10],
@@ -109,9 +154,39 @@ def code_options(part):
 
 
 def prepare():
-    catalogue = normalize_capture(read_json(SOURCE))
-    if len(catalogue) != 1574 or sum(not x["retired"] for x in catalogue) != 1574:
-        raise ValueError("Captured snapshot count mismatch; check browser truncation or intentionally update the snapshot contract")
+    if not SOURCE.is_file():
+        raise ValueError(
+            f"No active candidate source is configured at {SOURCE}; the prior snapshot is archived. "
+            "Add and verify a better-sourced current snapshot before rebuilding the queue."
+        )
+    source_capture = read_json(SOURCE)
+    catalogue = normalize_capture(source_capture)
+    if not catalogue:
+        raise ValueError("The active candidate source is empty; refusing to build an empty queue")
+    basic_capture = read_json(BASIC_FILTER_SOURCE)
+    basic_pages = basic_capture.get("pages", {})
+    basic_codes = [code for page in sorted(basic_pages, key=int) for code in basic_pages[page]]
+    if len(basic_codes) != basic_capture.get("site_reported_total") or len(set(basic_codes)) != len(basic_codes):
+        raise ValueError("The Basic part-type capture does not match its reported unique result count")
+    basic_set = set(basic_codes)
+    by_catalogue_code = {row["code"]: row for row in catalogue}
+    for row in catalogue:
+        if row["code"] in basic_set:
+            row["tier"] = "basic"
+            row["tier_label"] = "Basic"
+    page_for_code = {code: int(page) for page, codes in basic_pages.items() for code in codes}
+    for code in sorted(basic_set - by_catalogue_code.keys(), key=lambda x: int(x[1:])):
+        catalogue.append(dict(
+            code=code, tier="basic", tier_label="Basic", retired=False,
+            category="", manufacturer="", mpn="", package="", description="",
+            original_description="", price_snapshot="", stock_snapshot=0,
+            purchase_moq="", pcba_min_qty="0", pcba_min_price="",
+            first_seen=str(basic_capture.get("captured_at_utc", ""))[:10],
+            last_seen=str(basic_capture.get("captured_at_utc", ""))[:10],
+            jlcpcb_url=basic_capture.get("source_url", ""), datasheet_url="",
+            source_page=page_for_code[code], basic_filter_only=True,
+        ))
+    catalogue.sort(key=lambda x: int(x["code"][1:]))
     parts, duplicates = population()
     by_code, by_mpn = defaultdict(set), defaultdict(set)
     for part_id, part in parts.items():
@@ -149,20 +224,40 @@ def prepare():
     write_json(DATA / "existing_parts_audit.json", audit)
     summary = dict(source_url="https://jlcpcb.com/parts/basic_parts",
                    csv_url="",
-                   captured_on="2026-09-26", source_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+                   captured_on=str(source_capture.get("captured_at_utc", ""))[:10]
+                       if isinstance(source_capture, dict) else "2026-09-26",
+                   live_page_verified_on="2026-09-27",
+                   source_sha256=hashlib.sha256(SOURCE.read_bytes()).hexdigest(),
+                   basic_filter_source_sha256=hashlib.sha256(BASIC_FILTER_SOURCE.read_bytes()).hexdigest(),
                    total=len(catalogue), active=len(queue), retired=len(catalogue)-len(queue),
                    tiers=dict(Counter(x["tier"] for x in queue)),
                    categories=dict(Counter(x["category"] for x in queue)),
+                   tier_labels=dict(Counter(x["tier_label"] for x in queue)),
+                   site_reported_total=source_capture.get("site_reported_total")
+                       if isinstance(source_capture, dict) else None,
+                   basic_filter_site_reported_total=basic_capture.get("site_reported_total"),
+                   basic_filter_only_records=len(basic_set - by_catalogue_code.keys()),
                    candidates_with_existing_oomp_hints=sum(bool(x["candidates"]) for x in queue),
                    existing_electronic_parts=len(parts),
                    existing_parts_with_lcsc=sum(bool(code_options(x)) for x in parts.values()),
                    duplicate_population_ids=duplicates,
-                   completeness="2026-09-26 corrected re-crawl of the official Basic & Promotional Extended category (https://jlcpcb.com/parts/basic_parts, 64 pages x 25 rows, in-browser DOM capture with per-page content-settle verification). The earlier same-day catalogue-browser-official-2026-09-26.json capture is RETIRED as a bad seed: its pagination dropped the category restriction and swept the wider catalogue (1495 of 1574 queued rows were not house parts). This capture holds the category filter for every page: 1600 raw rows, 20 site-side page-boundary duplicate rows removed by first-occurrence dedupe, 1580 unique codes, and the six non-standard listings without a readable class badge excluded (C3116 C4650 C4662 C4664 C4688 C4689), leaving 1574 standard house parts (83 Basic, 1491 Promotional Extended). The site's own counter reports 1586 items; offset pagination cannot display all of them distinctly, so the verified unique set is authoritative. Raw rows: catalogue-browser-official-basic-category-2026-09-26-raw.json. Category/package columns are empty: the official listing rows do not carry them, so intake reads them from each detail page.")
+                   completeness=(
+                       "The official Basic part-type filter on https://jlcpcb.com/parts/basic_parts was applied and "
+                       "captured in-browser on 2026-09-27: 351 unique codes across 15 pages (25 per page for pages "
+                       "1-14 and one on page 15). These codes define the Basic tier and sort first. The prior complete "
+                       "Basic & Promotional Extended category capture remains available in sources/current.json: "
+                       "1580 unique codes from 1600 rows. The Basic-filter list overlaps that capture by "
+                       f"{len(basic_set & by_catalogue_code.keys())} codes; "
+                       f"{len(basic_set - by_catalogue_code.keys())} filter results absent from it are included as "
+                       "code-only Basic queue entries with the filter page as their source. Other rows retain the "
+                       "captured Extended or badge-verification labels. Per-part category/package details remain "
+                       "for individual intake."
+                   ))
     write_json(DATA / "summary.json", summary)
-    lines = ["# JLC house-part analysis queue", "", "Snapshot: official Basic & Promotional Extended category, captured 26 September 2026 (corrected in-category re-crawl). Candidates, not approved substitutions.", "", "| Code | Class | Manufacturer / MPN | Package | OOMP candidates |", "| --- | --- | --- | --- | --- |"]
+    lines = ["# JLC house-part analysis queue", "", "Source: official JLCPCB Basic part-type filter (351 results, captured 27 September 2026), followed by the prior Basic & Promotional Extended category capture. Candidates, not approved substitutions.", "", "| Code | Class | Manufacturer / MPN | Package | OOMP candidates |", "| --- | --- | --- | --- | --- |"]
     for x in queue:
         clean = lambda value: str(value).replace("|", "/").replace("\n", " ")
-        lines.append(f"| [{x['code']}]({x['jlcpcb_url']}) | {x['tier']} | {clean(x['manufacturer'])} / {clean(x['mpn'])} | {clean(x['package'])} | {', '.join(c['part_id'] for c in x['candidates']) or 'Needs matching / new entry'} |")
+        lines.append(f"| [{x['code']}]({x['jlcpcb_url']}) | {x['tier_label']} | {clean(x['manufacturer'])} / {clean(x['mpn'])} | {clean(x['package'])} | {', '.join(c['part_id'] for c in x['candidates']) or 'Needs matching / new entry'} |")
     (DATA / "BACKLOG.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
     return summary
 
@@ -322,7 +417,9 @@ def build_intake_scaffold(row, observed):
     tier = {"Basic": "basic", "Preferred": "preferred_extended",
             "Promotional": "preferred_extended",
             "Extended": "preferred_extended"}.get(observed["tier_label"])
-    if tier != row["tier"]:
+    if tier is None:
+        raise ValueError("Live JLC page has no recognised house-part class badge")
+    if row["tier"] != "unverified" and tier != row["tier"]:
         raise ValueError("Live JLC class differs from house-part snapshot")
     if not re.fullmatch(r"electronic_[a-z0-9_]+", observed["part_id"]):
         raise ValueError("Choose an explicit OOMP electronic part ID")
@@ -371,6 +468,8 @@ def build_intake_scaffold(row, observed):
                   jlc_selection=dict(verified_on=observed["captured_on"],
                                      official_url=observed["official_url"], tier=tier,
                                      tier_label_observed=observed["tier_label"],
+                                     **({"canonical_manufacturer": observed["canonical_manufacturer"]}
+                                        if observed.get("canonical_manufacturer") else {}),
                                      stock_observed=observed.get("stock_observed"),
                                      purchase_moq_observed=observed.get("purchase_moq_observed"),
                                      pcba_min_qty_observed=observed.get("pcba_min_qty_observed"),
@@ -448,9 +547,16 @@ def check_intake_record(row, path, *, population_required=True):
     part = parts.get(part_id, {})
     if not part or part_id in duplicates:
         errors.append("Expected one populated OOMP component for the chosen part ID")
+    canonical_manufacturer = selection.get("canonical_manufacturer") or row["manufacturer"]
+    if canonical_manufacturer != row["manufacturer"]:
+        lcsc_page = f"https://www.lcsc.com/product-detail/{row['code']}.html"
+        if (lcsc_page not in research.get("browser_sources", []) or
+                not part or part.get("manufacturer") != canonical_manufacturer or
+                part.get("part_number_manufacturer") != row["mpn"]):
+            errors.append("Canonical manufacturer differs from JLC label; same-code LCSC evidence must resolve it to the existing exact OOMP maker")
     if population_required:
         for field, expected in (("part_number_lcsc", row["code"]), ("part_number_jlcpcb", row["code"]),
-                                ("part_number_manufacturer", row["mpn"]), ("manufacturer", row["manufacturer"])):
+                                ("part_number_manufacturer", row["mpn"]), ("manufacturer", canonical_manufacturer)):
             if part.get(field) != expected:
                 errors.append(f"Effective population {field} does not match the verified identity")
         if part.get("jlcpcb_selection") != selection:
@@ -461,7 +567,7 @@ def check_intake_record(row, path, *, population_required=True):
         from working_oomp_populate_jlc import set_preferred_jlc
         try:
             set_preferred_jlc(deepcopy(part), code=row["code"],
-                              manufacturer=row["manufacturer"], mpn=row["mpn"],
+                              manufacturer=canonical_manufacturer, mpn=row["mpn"],
                               selection=selection)
         except ValueError as exception:
             errors.append(f"Purchasing identity cannot be applied: {exception}")
@@ -516,7 +622,7 @@ def check_record(row, path, generated=False):
         if part.get(field) != expected: errors.append(f"Effective population {field} does not match verified choice")
     if part.get("jlcpcb_selection") != selection:
         errors.append("Family populate-extra must retain the exact jlc_selection evidence as jlcpcb_selection")
-    if part.get("manufacturer") != research.get("manufacturer"):
+    if part.get("manufacturer") != (selection.get("canonical_manufacturer") or research.get("manufacturer")):
         errors.append("Effective manufacturer must match the researched purchasing identity")
     if generated:
         generated_path = ROOT / "parts" / record["part_id"] / "working.yaml"
@@ -604,6 +710,7 @@ def main():
                   if progress_for(row["code"])[args.stage]["status"] == "pending"
                   and not staged_capture_fresh(row["code"], args.staged_hours)][:max(1, args.count)]
         print(json.dumps([dict(code=r["code"], category=r["category"], tier=r["tier"],
+                               tier_label=r["tier_label"],
                                manufacturer=r["manufacturer"], mpn=r["mpn"], package=r["package"],
                                url=r["jlcpcb_url"]) for r in picked], indent=2))
         return
@@ -715,7 +822,7 @@ def main():
             registry_path = DATA / "reviewed_choices.json"
             choices = read_json(registry_path)
             choice = dict(code=row["code"], family=record["family"], part_id=record["part_id"],
-                          manufacturer=record["research"]["manufacturer"],
+                          manufacturer=record["jlc_selection"].get("canonical_manufacturer") or record["research"]["manufacturer"],
                           mpn=record["research"]["manufacturer_part_number"],
                           selection=record["jlc_selection"])
             prior = next((x for x in choices if x["code"] == row["code"]), None)
@@ -743,10 +850,11 @@ def main():
     else:
         if args.from_capture:
             capture = load_staged_capture(row["code"], max_age_hours=args.staged_hours)
-            if capture.get("tier_label") in HOUSE_TIER_LABELS:
-                raise SystemExit("Staged capture shows a house class; run the intake flow (intake_from_capture) instead of defer --from-capture")
-            reason = (f"Live JLCPCB product page on {capture['captured_on']} ({capture['official_url']}) shows house class "
-                      f"{capture['tier_label']}, not Basic/Preferred/Promotional, conflicting with the queued {row['tier']} "
+            observed_tier = HOUSE_TIER_BY_BADGE.get(capture.get("tier_label"))
+            if observed_tier == row["tier"]:
+                raise SystemExit("Staged capture class matches the queued house tier; run the intake flow instead of defer --from-capture")
+            reason = (f"Live JLCPCB product page on {capture['captured_on']} ({capture['official_url']}) shows badge "
+                      f"{capture['tier_label']} (mapped tier: {observed_tier or 'non-house'}), conflicting with the queued {row['tier']} "
                       f"snapshot (official category crawl captured 2026-09-26). Identity otherwise verified: {row['manufacturer']} {row['mpn']}, "
                       f"{capture.get('description', '')}, {row['package'] or capture.get('package', '')}, "
                       f"stock {capture.get('stock_observed')}, "

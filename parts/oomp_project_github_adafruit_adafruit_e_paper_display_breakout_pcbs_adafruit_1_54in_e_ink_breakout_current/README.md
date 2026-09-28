@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_1_54in_e_ink_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 1.54in e Ink Breakout current is a KiCad project containing 78 extracted component records. The catalogue matcher linked 14 physical placements to OOMP parts.
+Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 1.54in e Ink Breakout current is a KiCad project containing 78 extracted component records. The catalogue matcher linked 25 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 1.54in e Ink Br
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 77 |
-| Matched OOMP components | 14 |
-| Unmatched physical components | 22 |
+| Matched OOMP components | 25 |
+| Unmatched physical components | 11 |
 | Front-side placements | 1 |
 | Back-side placements | 31 |
 | Project version | `current` |
@@ -82,14 +82,14 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 1uF | 1uF | `Adafruit 1.54in eInk Breakout-import-fps:0805_10MGAP` | unmatched |
-| C2, C6 | 2 | 1uF/10V | 1uF/10V | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | unmatched |
-| C3, C4, C16, C22, C23 | 5 | 1uF/25V | 1uF/25V | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | unmatched |
+| C1 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit 1.54in eInk Breakout-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C2, C6 | 2 | Capacitor 1 uF 0805 | 1uF/10V | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C3, C4, C16, C22, C23 | 5 | Capacitor 1 uF 0805 | 1uF/25V | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C5 | 1 | Capacitor 4.7 uF 0805 | 4.7uF/25V | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_4_7_micro_farad) |
-| C7, C8 | 2 | 1uF | 1uF | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | unmatched |
+| C7, C8 | 2 | Capacitor 1 uF 0805 | 1uF | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C15 | 1 | Capacitor 10 uF 0805 | 10uF/10V+ | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C20, C21 | 2 | Capacitor 10 uF 0805 | 10µF | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C24 | 1 | 1uF/6V | 1uF/6V | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | unmatched |
+| C24 | 1 | Capacitor 1 uF 0805 | 1uF/6V | `Adafruit 1.54in eInk Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | D1, D2, D3 | 3 | MBR0530 | MBR0530 | `Adafruit 1.54in eInk Breakout-import-fps:SOD-123` | unmatched |
 | EINK1 | 1 | EINK_EPD0231EINK_154IN_200X200 | EINK_EPD0231EINK_154IN_200X200 | `Adafruit 1.54in eInk Breakout-import-fps:EINK_154IN` | unmatched |
 | IC1 | 1 | 74LVC245PW | 74LVC245PW | `Adafruit 1.54in eInk Breakout-import-fps:TSSOP20` | unmatched |
@@ -134,7 +134,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 22 physical component records are not yet matched to an OOMP part.
+- 11 physical component records are not yet matched to an OOMP part.
 - The extractor reports 5 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_1_54in_e_ink_breakout_current/data/generated_data/lcsc_review.yaml)
@@ -144,7 +144,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_1_54in_e_ink_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

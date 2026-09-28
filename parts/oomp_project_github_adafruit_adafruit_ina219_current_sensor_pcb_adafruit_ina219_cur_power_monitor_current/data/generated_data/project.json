@@ -16,8 +16,8 @@
     "component_count": 30,
     "schematic_symbol_count": 29,
     "pcb_footprint_count": 18,
-    "matched_component_count": 10,
-    "unmatched_physical_component_count": 3,
+    "matched_component_count": 11,
+    "unmatched_physical_component_count": 2,
     "non_physical_symbol_count": 17,
     "mounting_hole_count": 4,
     "dedicated_mounting_hole_count": 4,
@@ -6494,10 +6494,10 @@
         "incomplete_count": 0
       },
       "oomp": {
-        "status": "unmatched",
-        "accepted": false,
-        "oomp_id": null,
-        "confidence": 0.0,
+        "status": "matched",
+        "accepted": true,
+        "oomp_id": "electronic_capacitor_0805_100_nano_farad",
+        "confidence": 1.0,
         "proposed_oomp_id": "electronic_capacitor_0805_100_nano_farad",
         "inferred": {
           "kind": "capacitor",
@@ -6506,55 +6506,12 @@
           "mpn": null
         },
         "reasons": [
-          "The exact normalized component is not present in the OOMP parts directory."
+          "Exact OOMP ID constructed from component type, package size, and normalized value."
         ],
-        "candidates": [
-          {
-            "oomp_id": "electronic_capacitor_0402_100_nano_farad",
-            "score": 0.3245,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0402_10_nano_farad",
-            "score": 0.3238,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0402_22_nano_farad",
-            "score": 0.3212,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0805_10_micro_farad",
-            "score": 0.295,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0805_22_micro_farad",
-            "score": 0.2925,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          }
-        ]
+        "candidates": []
       },
       "category": "capacitor",
-      "category_source": "unmatched_kicad_hint",
+      "category_source": "oomp_populate",
       "category_name": "Capacitor",
       "generated_directory": "components/C1"
     },
@@ -12804,6 +12761,14 @@
             ]
           },
           {
+            "oomp_id": "electronic_resistor_1206_0_1_ohm",
+            "score": 0.7469,
+            "reasons": [
+              "same component family",
+              "same normalized value"
+            ]
+          },
+          {
             "oomp_id": "electronic_resistor_1210_0_1_ohm",
             "score": 0.7469,
             "reasons": [
@@ -12827,13 +12792,6 @@
               "same component family",
               "same package size",
               "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_resistor_array_4_x_0402_convex_510_ohm_8_pin",
-            "score": 0.2562,
-            "reasons": [
-              "same component family"
             ]
           }
         ]

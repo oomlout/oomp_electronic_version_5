@@ -3,6 +3,14 @@ def main(**kwargs):
 
     inductors = [
         {"size": "0603", "inductance": "10_micro_henry"},
+        {"size": "0603", "inductance": "4_7_micro_henry"},
+        {"size": "0805", "inductance": "1_micro_henry"},
+        {"size": "0805", "inductance": "2_2_micro_henry"},
+        {"size": "0805", "inductance": "5_6_micro_henry"},
+        {"size": "1206", "inductance": "2_2_micro_henry"},
+        {"size": "1206", "inductance": "4_7_micro_henry"},
+        {"size": "1206", "inductance": "5_6_micro_henry"},
+        {"size": "1206", "inductance": "10_micro_henry"},
         {"size": "0603", "inductance": "10_micro_henry", "manufacturer": "taiyo_yuden", "part_number": "lbmf1608t100k"},
         {"size": "0603", "inductance": "10_micro_henry", "manufacturer": "sunlord", "part_number": "sdfl1608s100ktf"},
         {"size": "0805", "inductance": "10_micro_henry", "manufacturer": "sunlord", "part_number": "sdfl2012s100ktf"},

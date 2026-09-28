@@ -52,6 +52,14 @@ Capacitor 220 pF 0805 is an OOMP electronic capacitor definition. It uses the 08
 
 
 
+## Used in projects
+
+| Project | Quantity | References | Explore |
+| --- | ---: | --- | --- |
+| [Project adafruit/Adafruit-I2S-Microphone-Breakout-PCB Adafruit I2 S Mic SPK0415 HM4 H current](https://github.com/adafruit/Adafruit-I2S-Microphone-Breakout-PCB/blob/master/Adafruit%20I2S%20Mic%20SPK0415HM4H.brd) | 1 | C2 | [Board explorer](https://oomlout.github.io/oomp_electronic_version_5/parts/oomp_project_github_adafruit_adafruit_i2_s_microphone_breakout_pcb_adafruit_i2_s_mic_spk0415_hm4_h_current/board_explorer.html) · [OOMP project](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_i2_s_microphone_breakout_pcb_adafruit_i2_s_mic_spk0415_hm4_h_current) |
+
+
+
 ## Files
 
 

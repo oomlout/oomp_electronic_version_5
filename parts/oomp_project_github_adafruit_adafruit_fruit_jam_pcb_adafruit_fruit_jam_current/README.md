@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_fruit_jam_pcb_adafruit_fruit_jam_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-Fruit-Jam-PCB Adafruit Fruit Jam current is a KiCad project containing 278 extracted component records. The catalogue matcher linked 83 physical placements to OOMP parts.
+Project adafruit/Adafruit-Fruit-Jam-PCB Adafruit Fruit Jam current is a KiCad project containing 278 extracted component records. The catalogue matcher linked 85 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-Fruit-Jam-PCB Adafruit Fruit Jam current is a KiCad pr
 | Mounting and locating holes | 12 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 186 |
-| Matched OOMP components | 83 |
-| Unmatched physical components | 90 |
+| Matched OOMP components | 85 |
+| Unmatched physical components | 88 |
 | Front-side placements | 164 |
 | Back-side placements | 5 |
 | Project version | `current` |
@@ -111,11 +111,11 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C3, C5, C9, C18, C19, C20, C23, C29, C31, C38, C41, C44, C45, C48, C50, C53, C54 | 17 | Capacitor 10 uF 0805 | 10uF | `Adafruit Fruit Jam-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C6, C7, C8, C13, C14, C17, C21, C22, C24, C25, C33, C34, C35, C36, C37, C39, C40 | 17 | Capacitor 100 nF 0603 | 0.1uF | `Adafruit Fruit Jam-import-fps:0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C10, C15 | 2 | Capacitor 10 uF 0603 | 10uF_0603 | `Adafruit Fruit Jam-import-fps:0603-NO_WIDE` | [`electronic_capacitor_0603_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_10_micro_farad) |
-| C26, C27 | 2 | 15pF | 15pF | `Adafruit Fruit Jam-import-fps:0603-NO` | unmatched |
+| C26, C27 | 2 | Capacitor 15 pF 0603 | 15pF | `Adafruit Fruit Jam-import-fps:0603-NO` | [`electronic_capacitor_0603_15_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_15_pico_farad) |
 | C32, C42, C43, C46 | 4 | 100uF/6.3V | 100uF/6.3V | `Adafruit Fruit Jam-import-fps:_1206` | unmatched |
 | CONN1 | 1 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `Adafruit Fruit Jam-import-fps:JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
 | D2 | 1 | 3.6V | 3.6V | `Adafruit Fruit Jam-import-fps:SOD-323` | unmatched |
-| D3 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit Fruit Jam-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D3 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit Fruit Jam-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | DEBUG0 | 1 | JST_SH3 | JST_SH3 | `Adafruit Fruit Jam-import-fps:JST_SH3_RA` | unmatched |
 | ESP_BOOT0 | 1 | Connector Header ZX-PZ2.54-1-1PZZ |  | `Adafruit Fruit Jam-import-fps:1X01_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_1_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_1_pin) |
 | IC1 | 1 | 74AHC1G125 | 74AHC1G125 | `Adafruit Fruit Jam-import-fps:SOT23-5L` | unmatched |
@@ -231,7 +231,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 90 physical component records are not yet matched to an OOMP part.
+- 88 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_fruit_jam_pcb_adafruit_fruit_jam_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_fruit_jam_pcb_adafruit_fruit_jam_current/data/generated_data/browser_research_queue.md)
@@ -240,7 +240,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_fruit_jam_pcb_adafruit_fruit_jam_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 20
+- Matched OOMP source parts copied: 21
 
 ## Source files
 

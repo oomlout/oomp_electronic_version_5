@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_can_pal_pcb_adafruit_can_pal_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-CAN-Pal-PCB Adafruit CAN Pal Breakout current is a KiCad project containing 43 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
+Project adafruit/Adafruit-CAN-Pal-PCB Adafruit CAN Pal Breakout current is a KiCad project containing 43 extracted component records. The catalogue matcher linked 7 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-CAN-Pal-PCB Adafruit CAN Pal Breakout current is a KiC
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 27 |
-| Matched OOMP components | 5 |
-| Unmatched physical components | 23 |
+| Matched OOMP components | 7 |
+| Unmatched physical components | 21 |
 | Front-side placements | 23 |
 | Back-side placements | 3 |
 | Project version | `current` |
@@ -87,9 +87,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 4.7nF | 4.7nF | `Adafruit CAN Pal Breakout-import-fps:0603-NO` | unmatched |
+| C1 | 1 | Capacitor 4.7 nF 0603 | 4.7nF | `Adafruit CAN Pal Breakout-import-fps:0603-NO` | [`electronic_capacitor_0603_4_7_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_4_7_nano_farad) |
 | C16, C17 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit CAN Pal Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C18 | 1 | 1uF | 1uF | `Adafruit CAN Pal Breakout-import-fps:0805_10MGAP` | unmatched |
+| C18 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit CAN Pal Breakout-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | IC1 | 1 | TJA1051T/3 | TJA1051T/3 | `Adafruit CAN Pal Breakout-import-fps:SOIC8_150MIL` | unmatched |
 | IC3 | 1 | AP3602 | AP3602 | `Adafruit CAN Pal Breakout-import-fps:SOT23-6` | unmatched |
 | JP2 | 1 | Connector Header PH2.54-01-07PZD |  | `Adafruit CAN Pal Breakout-import-fps:1X07_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_7_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_7_pin) |
@@ -137,7 +137,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 23 physical component records are not yet matched to an OOMP part.
+- 21 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_can_pal_pcb_adafruit_can_pal_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_can_pal_pcb_adafruit_can_pal_breakout_current/data/generated_data/browser_research_queue.md)
@@ -146,7 +146,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_can_pal_pcb_adafruit_can_pal_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 5
 
 ## Source files
 

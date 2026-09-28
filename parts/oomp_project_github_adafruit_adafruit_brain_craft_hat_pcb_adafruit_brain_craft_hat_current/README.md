@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_brain_craft_hat_pcb_adafruit_brain_craft_hat_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-BrainCraft-HAT-PCB Adafruit Brain Craft HAT current is a KiCad project containing 132 extracted component records. The catalogue matcher linked 43 physical placements to OOMP parts.
+Project adafruit/Adafruit-BrainCraft-HAT-PCB Adafruit Brain Craft HAT current is a KiCad project containing 132 extracted component records. The catalogue matcher linked 49 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-BrainCraft-HAT-PCB Adafruit Brain Craft HAT current is
 | Mounting and locating holes | 11 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 81 |
-| Matched OOMP components | 43 |
-| Unmatched physical components | 41 |
+| Matched OOMP components | 49 |
+| Unmatched physical components | 35 |
 | Front-side placements | 21 |
 | Back-side placements | 59 |
 | Project version | `current` |
@@ -108,12 +108,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C3, C7, C8, C12, C14, C16, C18, C25 | 8 | Capacitor 100 nF 0603 | 0.1uF | `Adafruit BrainCraft HAT-import-fps:0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C4, C6 | 2 | 100uF | 100uF | `Adafruit BrainCraft HAT-import-fps:PANASONIC_C` | unmatched |
 | C19, C20, C21, C22 | 4 | Capacitor 33 pF 0603 | 33pF | `Adafruit BrainCraft HAT-import-fps:0603-NO` | [`electronic_capacitor_0603_33_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_33_pico_farad) |
-| C26, C27 | 2 | 220pF | 220pF | `Adafruit BrainCraft HAT-import-fps:0603-NO` | unmatched |
-| C28, C29, C30, C31 | 4 | 100pF | 100pF | `Adafruit BrainCraft HAT-import-fps:0603-NO` | unmatched |
+| C26, C27 | 2 | Capacitor 220 pF 0603 | 220pF | `Adafruit BrainCraft HAT-import-fps:0603-NO` | [`electronic_capacitor_0603_220_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_220_pico_farad) |
+| C28, C29, C30, C31 | 4 | Capacitor 100 pF 0603 | 100pF | `Adafruit BrainCraft HAT-import-fps:0603-NO` | [`electronic_capacitor_0603_100_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_pico_farad) |
 | CONN1 | 1 | Connector Header X6511WR-25H-C60D30R2 | HEADER-1X25 | `Adafruit BrainCraft HAT-import-fps:1X25_ROUND_70MIL` | [`electronic_connector_header_2_54_mm_pitch_through_hole_25_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_25_pin) |
 | CONN3 | 1 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `Adafruit BrainCraft HAT-import-fps:JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
 | D1, D2 | 2 | 3.6V | 3.6V | `Adafruit BrainCraft HAT-import-fps:SOD-323` | unmatched |
-| D3 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit BrainCraft HAT-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D3 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit BrainCraft HAT-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | FB1, FB2 | 2 | Ferrite | Ferrite | `Adafruit BrainCraft HAT-import-fps:0805` | unmatched |
 | FB3, FB7, FB8, FB9, FB10 | 5 | Ferrite | Ferrite | `Adafruit BrainCraft HAT-import-fps:0805-NO` | unmatched |
 | FB4 | 1 | FERRITE | FERRITE | `Adafruit BrainCraft HAT-import-fps:0805-NO` | unmatched |
@@ -171,7 +171,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 41 physical component records are not yet matched to an OOMP part.
+- 35 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_brain_craft_hat_pcb_adafruit_brain_craft_hat_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_brain_craft_hat_pcb_adafruit_brain_craft_hat_current/data/generated_data/browser_research_queue.md)
@@ -180,7 +180,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_brain_craft_hat_pcb_adafruit_brain_craft_hat_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 13
 
 ## Source files
 

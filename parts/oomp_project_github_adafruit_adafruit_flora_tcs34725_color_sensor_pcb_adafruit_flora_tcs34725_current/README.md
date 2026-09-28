@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_flora_tcs34725_color_sensor_pcb_adafruit_flora_tcs34725_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-Flora-TCS34725-Color-Sensor-PCB Adafruit Flora TCS34725 current is a KiCad project containing 26 extracted component records. The catalogue matcher linked 4 physical placements to OOMP parts.
+Project adafruit/Adafruit-Flora-TCS34725-Color-Sensor-PCB Adafruit Flora TCS34725 current is a KiCad project containing 26 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-Flora-TCS34725-Color-Sensor-PCB Adafruit Flora TCS3472
 | Mounting and locating holes | 0 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 25 |
-| Matched OOMP components | 4 |
-| Unmatched physical components | 9 |
+| Matched OOMP components | 5 |
+| Unmatched physical components | 8 |
 | Front-side placements | 13 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -73,7 +73,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 0.1µF | 0.1µF | `Adafruit Flora TCS34725-import-fps:_0805` | unmatched |
+| C1 | 1 | Capacitor 100 nF 0805 | 0.1µF | `Adafruit Flora TCS34725-import-fps:_0805` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | LED1 | 1 | 45-21/LK2C-B38452C4CB2/2T | 45-21/LK2C-B38452C4CB2/2T | `Adafruit Flora TCS34725-import-fps:EVERLIGHT_45-21` | unmatched |
 | Q3 | 1 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `Adafruit Flora TCS34725-import-fps:SOT23-WIDE` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
 | R1, R2, R6 | 3 | Resistor 10000 Ohm 0805 | 10K | `Adafruit Flora TCS34725-import-fps:_0805` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
@@ -98,7 +98,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 9 physical component records are not yet matched to an OOMP part.
+- 8 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_flora_tcs34725_color_sensor_pcb_adafruit_flora_tcs34725_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_flora_tcs34725_color_sensor_pcb_adafruit_flora_tcs34725_current/data/generated_data/browser_research_queue.md)
@@ -107,7 +107,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_flora_tcs34725_color_sensor_pcb_adafruit_flora_tcs34725_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 2
+- Matched OOMP source parts copied: 3
 
 ## Source files
 

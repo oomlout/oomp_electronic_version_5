@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_bq25185_charger_breakout_pcb_adafruit_bq25185_breakout1_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-bq25185-Charger-Breakout-PCB Adafruit bq25185 Breakout1 current is a KiCad project containing 105 extracted component records. The catalogue matcher linked 22 physical placements to OOMP parts.
+Project adafruit/Adafruit-bq25185-Charger-Breakout-PCB Adafruit bq25185 Breakout1 current is a KiCad project containing 105 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-bq25185-Charger-Breakout-PCB Adafruit bq25185 Breakout
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 78 |
-| Matched OOMP components | 22 |
-| Unmatched physical components | 31 |
+| Matched OOMP components | 23 |
+| Unmatched physical components | 30 |
 | Front-side placements | 41 |
 | Back-side placements | 8 |
 | Project version | `current` |
@@ -122,7 +122,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | R1, R2, R3 | 3 | Resistor 1000 Ohm 0603 | 1K | `Adafruit bq25185 Breakout rev B1-import-fps:0603-NO` | [`electronic_resistor_0603_1000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1000_ohm) |
 | R4, R7, R12 | 3 | Resistor 5100 Ohm 0603 | 5.1K | `Adafruit bq25185 Breakout rev B1-import-fps:0603-NO` | [`electronic_resistor_0603_5100_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_5100_ohm) |
 | R5, R6 | 2 | Resistor 10000 Ohm 0603 | 10K | `Adafruit bq25185 Breakout rev B1-import-fps:0603-NO` | [`electronic_resistor_0603_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_10000_ohm) |
-| R8 | 1 | 13K | 13K | `Adafruit bq25185 Breakout rev B1-import-fps:0603-NO` | unmatched |
+| R8 | 1 | Resistor 13000 Ohm 0603 | 13K | `Adafruit bq25185 Breakout rev B1-import-fps:0603-NO` | [`electronic_resistor_0603_13000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_13000_ohm) |
 | R9 | 1 | 600 | 600 | `Adafruit bq25185 Breakout rev B1-import-fps:0603-NO` | unmatched |
 | R10 | 1 | Resistor 300 Ohm 0603 | 300 | `Adafruit bq25185 Breakout rev B1-import-fps:0603-NO` | [`electronic_resistor_0603_300_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_300_ohm) |
 | R11 | 1 | Resistor 1200 Ohm 0603 | 1200 | `Adafruit bq25185 Breakout rev B1-import-fps:0603-NO` | [`electronic_resistor_0603_1200_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1200_ohm) |
@@ -162,7 +162,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 31 physical component records are not yet matched to an OOMP part.
+- 30 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_bq25185_charger_breakout_pcb_adafruit_bq25185_breakout1_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_bq25185_charger_breakout_pcb_adafruit_bq25185_breakout1_current/data/generated_data/browser_research_queue.md)
@@ -171,7 +171,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_bq25185_charger_breakout_pcb_adafruit_bq25185_breakout1_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 12
 
 ## Source files
 

@@ -14,14 +14,15 @@ PCBA; do not generalize it to all assembly services or all assembly charges.
 
 | Snapshot inventory | Count |
 | --- | ---: |
-| Active house-part candidates (2026-09-26 corrected capture) | 1,574 |
-| Basic | 83 |
-| Preferred / Promotional Extended | 1,491 |
-| Active candidates with an existing OOMP hint | 96 |
+| Active house-part candidates | 1,848 queue records |
+| Basic / Extended | 351 / 1,491 |
+| Class badge needs verification | 6 |
+| Archived candidates (2026-09-26 snapshot) | 1,574 standard-badge rows |
+| Active candidates with an existing OOMP hint | 363 |
 | Existing distinct electronic OOMP IDs | 1,362 |
 | Existing electronic IDs with at least one LCSC code | 910 |
 
-The 96 are **candidate matches**, not approved substitutions. Other rows may
+The 363 are **candidate matches**, not approved substitutions. Other rows may
 also match existing OOMP entries after research.
 
 ## Where the list comes from
@@ -41,35 +42,50 @@ also match existing OOMP entries after research.
 4. [CDFER database](https://github.com/CDFER/jlcpcb-parts-database) and
    [jlcparts](https://github.com/yaqwsx/jlcparts) are alternative discovery sources.
    CDFER's stock-filtered products are unsuitable as the sole exhaustive list.
-5. **2026-09-26 corrected re-crawl (current authority):** the official category
+5. **2026-09-26 corrected browser capture, activated 2026-09-27:** the official category
    page was crawled in the browser with the category filter held for all
-   64 pages × 25 rows, saved as
-   `sources/catalogue-browser-official-basic-category-2026-09-26.json` in the
-   16-column DOM contract (raw rows with per-page provenance:
-   `...-raw.json`). The same-day `catalogue-browser-official-2026-09-26.json`
+   64 pages × 25 rows, saved in the 16-column DOM contract (raw rows with
+   per-page provenance). Both are in
+   `archive/queue-2026-09-26/`. The same-day
+   `catalogue-browser-official-2026-09-26.json`
    capture is **retired as a bad seed**: its pagination dropped the category
    restriction and swept the wider catalogue, so 1,495 of its 1,574 queued
    rows were not house parts at all. The corrected capture holds 1,600 raw
    rows, removes 20 site-side page-boundary duplicates by first-occurrence
    dedupe (the listing's offset pagination overlaps consecutive pages),
-   excludes the six non-standard listings without a readable class badge
-   (C3116, C4650, C4662, C4664, C4688, C4689), and yields 1,574 standard
-   house parts — 83 Basic and 1,491 Promotional Extended. The site's own
-   counter reports 1,586 items; offset pagination cannot display all of them
-   distinctly, so the verified unique set is the authority. Category and
-   package columns are empty: the official listing rows do not carry them,
+   retains all 1,580 unique codes, including six listings without a readable
+   class badge (C3116, C4650, C4662, C4664, C4688, C4689), instead of excluding
+   them. The active queue labels those six "Needs badge verification". The
+   site's counter reports 1,586 items;
+   the snapshot has 1,600 raw rows and 20 repeated page-boundary codes. The
+   1,580 unique codes are retained; no class is guessed for the six unbadged
+   entries. A live browser check on 2026-09-27 confirmed the same site count
+   and matching first-page codes/classes.
+6. **2026-09-27 Basic filter capture:** applying the official **Parts Type → Basic**
+   filter reports 351 results across 15 pages. Its 351 unique codes are retained
+   in `sources/basic_type_filter_2026-09-27.json` and define the Basic queue tier.
+   The filter capture overlaps the prior 1,580-code category snapshot by 83
+   codes; the other 268 filtered codes are included as code-only Basic queue
+   entries, sourced to their captured result page. This keeps the live Basic
+   results at the top without discarding the older Extended candidates.
+   Category and package columns are empty: the official listing rows do not carry them,
    and intake must read them from each detail page. On the official category
    the non-Basic badge reads plainly "Extended" (tooltip: Promotional
-   Extended); because queue membership now equals category membership, that
-   badge maps to the `preferred_extended` house tier instead of triggering a
-   class-conflict deferral.
+   Extended); rows outside the Basic filter retain their observed Extended or
+   badge-verification labels. The queue displays the visible label "Extended"
+   while mapping it internally to the `preferred_extended` house tier.
 
-The saved input is a browser DOM capture of the official category listing:
-1,600 raw rows over 64 pages, reduced to 1,574 standard codes after
-page-boundary dedupe and exclusion of the six unbadged listings. All rows
-carry the crawl date **2026-09-26** as `first_seen`/`last_seen`; the raw
-per-page harvest is retained beside it with original cells and links. The
-input SHA-256 is recorded in `summary.json`.
+The former 1,574-row queue remains archived at `archive/queue-2026-09-26`.
+The active queue combines `sources/current.json`, the prior complete combined-
+category browser capture, with `sources/basic_type_filter_2026-09-27.json`, the
+new Basic-filter code list. Filter results sort first; the other captured
+category rows retain their Extended or badge-verification labels.
+
+The combined-category input is a browser capture of the official listing: 1,600
+raw rows over 64 pages, reduced to 1,580 unique codes by first-occurrence
+dedupe on **2026-09-26**. The Basic-filter code list was captured on
+**2026-09-27**. Both source SHA-256 values are recorded in the active
+`summary.json`.
 
 Equal counts do not prove identical membership, and the listing's offset
 pagination overlaps consecutive pages, so a handful of rows shift between
@@ -77,21 +93,21 @@ pages while crawling. Every worker must still recheck its actual official
 product page. Stock, prices, MOQ and class may have changed.
 
 For a refresh, acquire a new browser snapshot or browser-downloaded CSV, retain
-its original bytes, dates, URLs and hash, and compare code sets. The current
-parser accepts the saved 16-column DOM format. A new CSV needs an explicit
-column adapter; never relabel it as a browser capture. Update the source/date
-constants and snapshot-count test intentionally before running `prepare`.
-Keep prior snapshots and progress; audit changed/retired choices rather than
-silently deleting or replacing accepted parts. Do not run supplier HTTP/API
-fetches inside population or generation code.
+its original bytes, dates, URLs and hash, and compare code sets. The intake
+parser accepts the current per-page browser JSON and the legacy 16-column DOM
+format. A new CSV needs an explicit column adapter; never relabel it as a
+browser capture. Keep prior snapshots and progress; audit changed/retired
+choices rather than silently deleting accepted parts. Do not run supplier
+HTTP/API fetches inside population or generation code.
 
 ## Files and commands
 
 | File | Purpose |
 | --- | --- |
-| [BACKLOG.md](BACKLOG.md) | Human-readable list of every active candidate and OOMP hints |
-| [queue.json](queue.json) | Full part facts, URLs, dates, candidates and stable `JLC_C...` work IDs |
-| [catalogue.json](catalogue.json) | Normalized complete snapshot, including retired rows |
+| [BACKLOG.md](BACKLOG.md) | Active analysis queue |
+| [queue.json](queue.json) | Active candidate queue, including Extended labels |
+| [catalogue.json](catalogue.json) | Normalized official browser capture |
+| [sources/basic_type_filter_2026-09-27.json](sources/basic_type_filter_2026-09-27.json) | Exact 351-code Basic-filter capture; these entries sort first |
 | [existing_parts_audit.json](existing_parts_audit.json) | Phase-two JLC-number audit of all existing electronic OOMP IDs |
 | [summary.json](summary.json) | Coverage, categories and duplicate source IDs |
 | [WORKER.md](WORKER.md) | Two-stage dispatch instructions for a smaller AI |
@@ -113,9 +129,10 @@ Run in the repository with its existing Python environment:
 .venv/Scripts/python.exe -m kicad_agents.jlc_house_parts_agent status
 ```
 
-`prepare` rebuilds the comparison in memory from real populate functions,
-without writing generated parts. It does not change progress or purchasing
-choices. Run it after source additions to refresh candidate hints.
+`prepare` rebuilds the comparison in memory from the configured category capture,
+the Basic-filter capture and real populate functions. It refuses to run while
+the category source is absent, so the archived snapshot cannot silently
+recreate the retired queue.
 
 ## Implementation order
 
@@ -203,7 +220,7 @@ targeted generation, rendered diagram/README review and a recorded result.
 The deterministic checks verify structure and consistency; the worker must
 still inspect the evidence. Each stage has its own explicit deferral reason.
 
-The intake sweep ends when all 1,574 snapshot codes are either intake-complete
-or intake-deferred, followed by review of deferrals. Full ecosystem coverage
-requires full completion, the existing-part audit and affected project
-validation. Deferred parts are **not** counted as successfully added.
+The former 1,574-code intake sweep is archived. The active queue contains the
+latest complete browser capture and retains Extended labels. Existing progress
+and full-pass history are retained. Deferred parts are **not** counted as
+successfully added.

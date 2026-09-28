@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_dc_stepper_motor_feather_wing_pcb_adafruit_dc_stepper_wing_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-DC-Stepper-Motor-FeatherWing-PCB Adafruit DC+Stepper Wing current is a KiCad project containing 69 extracted component records. The catalogue matcher linked 9 physical placements to OOMP parts.
+Project adafruit/Adafruit-DC-Stepper-Motor-FeatherWing-PCB Adafruit DC+Stepper Wing current is a KiCad project containing 69 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-DC-Stepper-Motor-FeatherWing-PCB Adafruit DC+Stepper W
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 69 |
-| Matched OOMP components | 9 |
-| Unmatched physical components | 13 |
+| Matched OOMP components | 10 |
+| Unmatched physical components | 12 |
 | Front-side placements | 22 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -87,7 +87,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C2 | 1 | 0.1uF | 0.1uF | `Adafruit DC+Stepper Wing-import-fps:0805-NO` | unmatched |
+| C2 | 1 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit DC+Stepper Wing-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | C4 | 1 | 47uF/16v | 47uF/16v | `Adafruit DC+Stepper Wing-import-fps:PANASONIC_C` | unmatched |
 | C5 | 1 | 47uF+/16v | 47uF+/16v | `Adafruit DC+Stepper Wing-import-fps:PANASONIC_C` | unmatched |
 | C6, C10 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit DC+Stepper Wing-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
@@ -136,7 +136,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 13 physical component records are not yet matched to an OOMP part.
+- 12 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_dc_stepper_motor_feather_wing_pcb_adafruit_dc_stepper_wing_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_dc_stepper_motor_feather_wing_pcb_adafruit_dc_stepper_wing_current/data/generated_data/browser_research_queue.md)
@@ -145,7 +145,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_dc_stepper_motor_feather_wing_pcb_adafruit_dc_stepper_wing_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 8
 
 ## Source files
 

@@ -133,6 +133,13 @@ def main(**kwargs):
             "name_short": "Switching Diode 1N4148W",
         },
         {
+            "diode_type": "switching",
+            "package": "sod_123",
+            "manufacturer": "jiangsu_changjing_electronics_technology_co_ltd",
+            "part_number": "1n4148w",
+            "name_short": "Switching Diode 1N4148W (Jiangsu Changjing)",
+        },
+        {
             "diode_type": "switching_dual_series",
             "package": "sot_23",
             "manufacturer": "nexperia",

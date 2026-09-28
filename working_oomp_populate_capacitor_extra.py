@@ -565,7 +565,7 @@ def main(**kwargs):
         part["part_numbers_lcsc"] = [
             {"part_number": "C14663", "product_name": "100nF ±10% 50V X7R 0603 Ceramic Capacitor"},
             {"part_number": "C30926", "product_name": "100nF ±10% 50V Ceramic Capacitor X7R 0603"},
-            {"part_number": "C1591", "product_name": "100nF ±10% 25V X7R 0603 Ceramic Capacitor"},
+            {"part_number": "C1591", "product_name": "100nF ±10% 50V X7R 0603 Ceramic Capacitor"},
         ]
         part["part_numbers_manufacturer"] = [
             {"manufacturer": "YAGEO", "part_number": "CC0603KRX7R9BB104"},
@@ -574,6 +574,30 @@ def main(**kwargs):
         ]
         part["research_notes"] = [
             "LCSC stock research 2026-09: highest-stock listing first (C14663, 10,855,500 in stock at capture); runners-up follow."
+        ]
+
+    current = "electronic_capacitor_0603_100_nano_farad_samsung_electro_mechanics_cl10b104kb8nnnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_100_nano_farad"
+        part["category"] = "capacitor"
+        part["manufacturer"] = "Samsung Electro-Mechanics"
+        part["part_number_manufacturer"] = "CL10B104KB8NNNC"
+        part["part_number_lcsc"] = "C1591"
+        part["part_number_lcsc_url"] = "https://www.lcsc.com/product-detail/C1591.html"
+        part["part_number_jlcpcb"] = "C1591"
+        part["part_number_jlcpcb_url"] = "https://jlcpcb.com/partdetail/1943-CL10B104KB8NNNC/C1591"
+        part["electrical"] = {
+            "capacitance": "100 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "+/-10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung C1591 / CL10B104KB8NNNC purchasing variant; 0603, 100 nF, 50 V, X7R, +/-10% verified against the live JLC listing and Samsung MLCC catalog page 26.",
+            "Linked to the generic 0603 100 nF definition. The previously reviewed generic preference C14663 remains unchanged.",
+            "The supplier catalogue shows the corresponding CL10B104KB8NNN base family code; the final C suffix is the JLC/LCSC orderable identity.",
         ]
 
     current = "electronic_capacitor_0603_10_micro_farad"
@@ -616,6 +640,29 @@ def main(**kwargs):
         ]
         part["research_notes"] = [
             "LCSC stock research 2026-09: highest-stock listing first (C5673, 4,609,150 in stock at capture); runners-up follow."
+        ]
+
+    current = "electronic_capacitor_0603_1_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_1_micro_farad"
+        part["category"] = "capacitor"
+        part["manufacturer"] = "Samsung Electro-Mechanics"
+        part["part_number_manufacturer"] = "CL10A105KO8NNNC"
+        part["part_number_lcsc"] = "C1592"
+        part["part_number_lcsc_url"] = "https://www.lcsc.com/product-detail/C1592.html"
+        part["part_number_jlcpcb"] = "C1592"
+        part["part_number_jlcpcb_url"] = "https://jlcpcb.com/partdetail/1944-CL10A105KO8NNNC/C1592"
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "X5R",
+            "tolerance": "+/-10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "C1592 is Samsung CL10A105KO8NNNC, 0603 1 uF 16 V X5R +/-10%, verified against the live JLC and LCSC listings and the linked Samsung reference sheet page 1.",
+            "Linked to the generic 0603 1 uF definition as a lower-voltage purchasing variant; the reviewed Basic 50 V C15849 generic preference remains unchanged.",
         ]
 
     current = "electronic_capacitor_0603_22_pico_farad"

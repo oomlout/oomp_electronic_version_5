@@ -217,6 +217,19 @@ def main(**kwargs):
         {
             "taxonomy": [
                 "transistor",
+                "to_126",
+                "bipolar",
+                "npn",
+                "30_volt",
+                "3_amp",
+            ],
+            "manufacturer": "jiangsu_changjing_electronics_technology_co_ltd",
+            "part_number": "d882_range_160_320",
+            "name_short": "NPN Transistor D882 (160-320, TO-126)",
+        },
+        {
+            "taxonomy": [
+                "transistor",
                 "sot_23",
                 "bipolar",
                 "npn",

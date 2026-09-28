@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_ft232_h_breakout_pcb_adafruit_ft232_h_original_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-FT232H-Breakout-PCB Adafruit FT232 H Original current is a KiCad project containing 63 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
+Project adafruit/Adafruit-FT232H-Breakout-PCB Adafruit FT232 H Original current is a KiCad project containing 63 extracted component records. The catalogue matcher linked 21 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-FT232H-Breakout-PCB Adafruit FT232 H Original current 
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 6 |
 | Schematic symbols | 61 |
-| Matched OOMP components | 17 |
-| Unmatched physical components | 10 |
+| Matched OOMP components | 21 |
+| Unmatched physical components | 6 |
 | Front-side placements | 23 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -90,7 +90,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C3, C4, C5 | 4 | Capacitor 10 uF 0805 | 10uF | `Adafruit FT232H Original-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C2, C6, C7, C8 | 4 | 0.1uF | 0.1uF | `Adafruit FT232H Original-import-fps:0805-NO` | unmatched |
+| C2, C6, C7, C8 | 4 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit FT232H Original-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | FB1, FB2 | 2 | Ferrite | Ferrite | `Adafruit FT232H Original-import-fps:_0805` | unmatched |
 | IC1 | 1 | 93LC56B | 93LC56B | `Adafruit FT232H Original-import-fps:SOT23-6` | unmatched |
 | IC2 | 1 | FT232HQ | FT232HQ | `Adafruit FT232H Original-import-fps:QFN48_8MM` | unmatched |
@@ -136,7 +136,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 10 physical component records are not yet matched to an OOMP part.
+- 6 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ft232_h_breakout_pcb_adafruit_ft232_h_original_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ft232_h_breakout_pcb_adafruit_ft232_h_original_current/data/generated_data/browser_research_queue.md)
@@ -145,7 +145,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_ft232_h_breakout_pcb_adafruit_ft232_h_original_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 8
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

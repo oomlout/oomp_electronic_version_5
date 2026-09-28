@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_dc_stepper_motor_hat_pcb_adafruit_motor_hat_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-DC-Stepper-Motor-HAT-PCB Adafruit Motor HAT current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 17 physical placements to OOMP parts.
+Project adafruit/Adafruit-DC-Stepper-Motor-HAT-PCB Adafruit Motor HAT current is a KiCad project containing 52 extracted component records. The catalogue matcher linked 19 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-DC-Stepper-Motor-HAT-PCB Adafruit Motor HAT current is
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 18 |
-| Matched OOMP components | 17 |
-| Unmatched physical components | 10 |
+| Matched OOMP components | 19 |
+| Unmatched physical components | 8 |
 | Front-side placements | 27 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,7 +82,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C3 | 2 | 0.1uF | 0.1uF | `Adafruit Motor HAT rev A-import-fps:0805-NO` | unmatched |
+| C1, C3 | 2 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit Motor HAT rev A-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | C4 | 1 | 47uF/16v | 47uF/16v | `Adafruit Motor HAT rev A-import-fps:PANASONIC_C` | unmatched |
 | C5 | 1 | 47uF+/16v | 47uF+/16v | `Adafruit Motor HAT rev A-import-fps:PANASONIC_C` | unmatched |
 | C6, C10 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit Motor HAT rev A-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
@@ -132,7 +132,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 10 physical component records are not yet matched to an OOMP part.
+- 8 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_dc_stepper_motor_hat_pcb_adafruit_motor_hat_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_dc_stepper_motor_hat_pcb_adafruit_motor_hat_current/data/generated_data/browser_research_queue.md)
@@ -141,7 +141,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_dc_stepper_motor_hat_pcb_adafruit_motor_hat_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 9
+- Matched OOMP source parts copied: 10
 
 ## Source files
 

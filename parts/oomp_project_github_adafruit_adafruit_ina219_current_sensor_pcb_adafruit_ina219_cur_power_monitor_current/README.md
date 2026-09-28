@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_ina219_current_sensor_pcb_adafruit_ina219_cur_power_monitor_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-INA219-Current-Sensor-PCB Adafruit INA219 Cur Power Monitor current is a KiCad project containing 30 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
+Project adafruit/Adafruit-INA219-Current-Sensor-PCB Adafruit INA219 Cur Power Monitor current is a KiCad project containing 30 extracted component records. The catalogue matcher linked 11 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-INA219-Current-Sensor-PCB Adafruit INA219 Cur Power Mo
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 29 |
-| Matched OOMP components | 10 |
-| Unmatched physical components | 3 |
+| Matched OOMP components | 11 |
+| Unmatched physical components | 2 |
 | Front-side placements | 9 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,7 +82,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 0.1µF | 0.1µF | `Adafruit_INA219_CurPowerMonitor-import-fps:0805` | unmatched |
+| C1 | 1 | Capacitor 100 nF 0805 | 0.1µF | `Adafruit_INA219_CurPowerMonitor-import-fps:0805` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | J1 | 1 | Connector Header PZ254V-11-02P | TERMBLOCK_1X2-3.5MM | `Adafruit_INA219_CurPowerMonitor-import-fps:1X2-3.5MM` | [`electronic_connector_header_2_54_mm_pitch_through_hole_2_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_2_pin) |
 | JP1 | 1 | Connector Header 2.54-1x6P直针 |  | `Adafruit_INA219_CurPowerMonitor-import-fps:1X06_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | R1, R2, R3, R4 | 4 | Resistor 10000 Ohm 0805 | 10K | `Adafruit_INA219_CurPowerMonitor-import-fps:0805` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
@@ -109,7 +109,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 3 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ina219_current_sensor_pcb_adafruit_ina219_cur_power_monitor_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ina219_current_sensor_pcb_adafruit_ina219_cur_power_monitor_current/data/generated_data/browser_research_queue.md)
@@ -118,7 +118,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_ina219_current_sensor_pcb_adafruit_ina219_cur_power_monitor_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 5
 
 ## Source files
 

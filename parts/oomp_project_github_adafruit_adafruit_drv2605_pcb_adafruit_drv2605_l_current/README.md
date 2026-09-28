@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_drv2605_pcb_adafruit_drv2605_l_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-DRV2605-PCB Adafruit DRV2605 L current is a KiCad project containing 26 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
+Project adafruit/Adafruit-DRV2605-PCB Adafruit DRV2605 L current is a KiCad project containing 26 extracted component records. The catalogue matcher linked 7 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-DRV2605-PCB Adafruit DRV2605 L current is a KiCad proj
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 22 |
-| Matched OOMP components | 5 |
-| Unmatched physical components | 3 |
+| Matched OOMP components | 7 |
+| Unmatched physical components | 1 |
 | Front-side placements | 6 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -80,7 +80,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C2 | 2 | 1uF | 1uF | `Adafruit DRV2605L-import-fps:0805-NO` | unmatched |
+| C1, C2 | 2 | Capacitor 1 uF 0805 | 1uF | `Adafruit DRV2605L-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | JP1 | 1 | Connector Header PH2.54-1X5P-H25 |  | `Adafruit DRV2605L-import-fps:1X05_ROUND_FULL_76` | [`electronic_connector_header_2_54_mm_pitch_through_hole_5_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_5_pin) |
 | R1, R2 | 2 | Resistor 10000 Ohm 0805 | 10K | `Adafruit DRV2605L-import-fps:0805-NO` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
 | U1 | 1 | DRV2605LDGS | DRV2605LDGS | `Adafruit DRV2605L-import-fps:PSOP10` | unmatched |
@@ -105,7 +105,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 3 physical component records are not yet matched to an OOMP part.
+- 1 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_drv2605_pcb_adafruit_drv2605_l_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_drv2605_pcb_adafruit_drv2605_l_current/data/generated_data/browser_research_queue.md)
@@ -114,7 +114,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_drv2605_pcb_adafruit_drv2605_l_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 4
 
 ## Source files
 

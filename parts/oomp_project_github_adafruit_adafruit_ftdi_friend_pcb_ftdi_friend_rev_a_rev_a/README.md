@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_ftdi_friend_pcb_ftdi_friend_rev_a_rev_a/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit_FTDI-Friend-PCB FTDI Friend Rev A rev_a is a KiCad project containing 33 extracted component records. The catalogue matcher linked 7 physical placements to OOMP parts.
+Project adafruit/Adafruit_FTDI-Friend-PCB FTDI Friend Rev A rev_a is a KiCad project containing 33 extracted component records. The catalogue matcher linked 9 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit_FTDI-Friend-PCB FTDI Friend Rev A rev_a is a KiCad pro
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 33 |
-| Matched OOMP components | 7 |
-| Unmatched physical components | 5 |
+| Matched OOMP components | 9 |
+| Unmatched physical components | 3 |
 | Front-side placements | 12 |
 | Back-side placements | 0 |
 | Project version | `rev_a` |
@@ -81,7 +81,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1 | 1 | 10uF | 10uF | `Adafruit FTDI Friend Rev A-import-fps:A_3216-18R` | unmatched |
-| C2, C3 | 2 | 0.1uF | 0.1uF | `Adafruit FTDI Friend Rev A-import-fps:C0805K` | unmatched |
+| C2, C3 | 2 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit FTDI Friend Rev A-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | CN1 | 1 | MINIB | MINIB | `Adafruit FTDI Friend Rev A-import-fps:USB-MINIB` | unmatched |
 | FTDI0 | 1 | Connector Header 2.54-1x6P直针 |  | `Adafruit FTDI Friend Rev A-import-fps:1X06-CLEANBIG` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | IC1 | 1 | FT232RL | FT232RL | `Adafruit FTDI Friend Rev A-import-fps:SSOP28` | unmatched |
@@ -121,7 +121,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 5 physical component records are not yet matched to an OOMP part.
+- 3 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ftdi_friend_pcb_ftdi_friend_rev_a_rev_a/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_ftdi_friend_pcb_ftdi_friend_rev_a_rev_a/data/generated_data/browser_research_queue.md)
@@ -130,7 +130,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_ftdi_friend_pcb_ftdi_friend_rev_a_rev_a/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

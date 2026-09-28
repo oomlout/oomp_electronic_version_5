@@ -51,10 +51,37 @@ distributors:
     - Surface Mount
   title: LCSC
   url: https://www.lcsc.com/product-detail/C54920644.html
+- key: jlcpcb
+  part_number: C25087
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
 id: electronic_resistor_0402_200_ohm
 id_no_class: electronic_resistor_0402_200_ohm
 id_no_size: electronic_resistor_0402_200_ohm
 id_no_type: electronic_resistor_0402_200_ohm
+jlcpcb_selection:
+  compatibility_notes: Generic 0402 200Ω resistor already prefers exact C25087/0402WGF2000TCE.
+    Confirm verified Basic identity and retain existing alternatives. Full pass checks
+    derating and pad geometry.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 62.5mW
+    Resistance: 200Ω
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±1%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 50V
+  stock_observed: 2674460
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-24'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0402_1005Metric
@@ -63,8 +90,10 @@ lcsc_search: 0402 200Ω
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_200_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_200_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_200_ohm
-manufacturer: UNI-ROYAL
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF2000TCE
 - manufacturer: UNI-ROYAL
   part_number: 0402WGF2000TCE
 - manufacturer: FOJAN
@@ -192,6 +221,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_0402_200_ohm
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -219,13 +262,42 @@ oomlout_ai_roboclick_3:
           Resistor - Surface Mount
         title: LCSC
         url: https://www.lcsc.com/product-detail/C54920644.html
+      - key: jlcpcb
+        part_number: C25087
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
+      jlcpcb_selection:
+        compatibility_notes: Generic 0402 200Ω resistor already prefers exact C25087/0402WGF2000TCE.
+          Confirm verified Basic identity and retain existing alternatives. Full pass
+          checks derating and pad geometry.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: 1
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 62.5mW
+          Resistance: 200Ω
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±1%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 50V
+        stock_observed: 2674460
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-24'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_0402_1005Metric
         symbol: Device:R_Small
       lcsc_search: 0402 200Ω
-      manufacturer: UNI-ROYAL
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
       manufacturers:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0402WGF2000TCE
       - manufacturer: UNI-ROYAL
         part_number: 0402WGF2000TCE
       - manufacturer: FOJAN
@@ -340,8 +412,25 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_0402_200_ohm
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       part_id: R1
+      part_number_jlcpcb: C25087
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
       part_number_lcsc: C25087
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C25087.html
       part_number_manufacturer: 0402WGF2000TCE
       part_numbers_lcsc:
       - part_number: C25087
@@ -352,6 +441,8 @@ oomlout_ai_roboclick_3:
         product_name: 200Ω ±100ppm/℃ ±1% 50V 62.5mW Thick Film Resistor 0402 Chip
           Resistor - Surface Mount
       part_numbers_manufacturer:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 0402WGF2000TCE
       - manufacturer: UNI-ROYAL
         part_number: 0402WGF2000TCE
       - manufacturer: FOJAN
@@ -438,6 +529,9 @@ oomlout_ai_roboclick_3:
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C54920644.html
           value: C54920644
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
+          value: C25087
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -468,7 +562,7 @@ oomlout_ai_roboclick_3:
           value: '0402'
         - level: 4
           value: 200_ohm
-      product_url: https://www.lcsc.com/product-detail/C25087.html
+      product_url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
       regenerate_pngs: false
       research_notes:
       - 'LCSC stock research 2026-09: highest-stock listing first (C25087, 2,584,400
@@ -739,7 +833,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -754,7 +848,10 @@ oomlout_ai_roboclick_4:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0402_200_ohm
 part_id: R1
+part_number_jlcpcb: C25087
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
 part_number_lcsc: C25087
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C25087.html
 part_number_manufacturer: 0402WGF2000TCE
 part_numbers_lcsc:
 - part_number: C25087
@@ -765,6 +862,8 @@ part_numbers_lcsc:
   product_name: 200Ω ±100ppm/℃ ±1% 50V 62.5mW Thick Film Resistor 0402 Chip Resistor
     - Surface Mount
 part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF2000TCE
 - manufacturer: UNI-ROYAL
   part_number: 0402WGF2000TCE
 - manufacturer: FOJAN
@@ -851,6 +950,9 @@ part_page:
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C54920644.html
     value: C54920644
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
+    value: C25087
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -880,7 +982,7 @@ part_page:
     value: '0402'
   - level: 4
     value: 200_ohm
-product_url: https://www.lcsc.com/product-detail/C25087.html
+product_url: https://jlcpcb.com/partdetail/25830-0402WGF2000TCE/C25087
 regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C25087, 2,584,400 in

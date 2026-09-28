@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_feather_m4_can_pcb_adafruit_feather_m4_express_can_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-Feather-M4-CAN-PCB Adafruit Feather M4 Express CAN current is a KiCad project containing 117 extracted component records. The catalogue matcher linked 31 physical placements to OOMP parts.
+Project adafruit/Adafruit-Feather-M4-CAN-PCB Adafruit Feather M4 Express CAN current is a KiCad project containing 117 extracted component records. The catalogue matcher linked 32 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-Feather-M4-CAN-PCB Adafruit Feather M4 Express CAN cur
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 115 |
-| Matched OOMP components | 31 |
-| Unmatched physical components | 21 |
+| Matched OOMP components | 32 |
+| Unmatched physical components | 20 |
 | Front-side placements | 46 |
 | Back-side placements | 2 |
 | Project version | `current` |
@@ -99,7 +99,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C5, C13, C17 | 3 | Capacitor 10 uF 0805 | 10uF | `Adafruit Feather M4 Express CAN-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C7, C10, C11, C12, C14, C15 | 6 | Capacitor 1 uF 0603 | 1uF | `Adafruit Feather M4 Express CAN-import-fps:0603-NO` | [`electronic_capacitor_0603_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_1_micro_farad) |
 | C16 | 1 | Capacitor 10 uF 0805 | 10uF | `Adafruit Feather M4 Express CAN-import-fps:_0805MP` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C18 | 1 | 1uF | 1uF | `Adafruit Feather M4 Express CAN-import-fps:0805_10MGAP` | unmatched |
+| C18 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit Feather M4 Express CAN-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | CHG0 | 1 | LED  0603 | ORANGE | `Adafruit Feather M4 Express CAN-import-fps:CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603) |
 | D4 | 1 | MBR540 | MBR540 | `Adafruit Feather M4 Express CAN-import-fps:SOD-123` | unmatched |
 | D+1, D-1 | 2 | TPB1,27 | TPB1,27 | `Adafruit Feather M4 Express CAN-import-fps:B1,27` | unmatched |
@@ -156,7 +156,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 21 physical component records are not yet matched to an OOMP part.
+- 20 physical component records are not yet matched to an OOMP part.
 - The extractor reports 4 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_feather_m4_can_pcb_adafruit_feather_m4_express_can_current/data/generated_data/lcsc_review.yaml)
@@ -166,7 +166,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_feather_m4_can_pcb_adafruit_feather_m4_express_can_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 11
+- Matched OOMP source parts copied: 12
 
 ## Source files
 

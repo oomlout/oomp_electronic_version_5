@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_i2_s_microphone_breakout_pcb_adafruit_i2_s_mic_spk0415_hm4_h_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-I2S-Microphone-Breakout-PCB Adafruit I2 S Mic SPK0415 HM4 H current is a KiCad project containing 20 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
+Project adafruit/Adafruit-I2S-Microphone-Breakout-PCB Adafruit I2 S Mic SPK0415 HM4 H current is a KiCad project containing 20 extracted component records. The catalogue matcher linked 7 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-I2S-Microphone-Breakout-PCB Adafruit I2 S Mic SPK0415 
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 19 |
-| Matched OOMP components | 5 |
-| Unmatched physical components | 3 |
+| Matched OOMP components | 7 |
+| Unmatched physical components | 1 |
 | Front-side placements | 0 |
 | Back-side placements | 6 |
 | Project version | `current` |
@@ -80,8 +80,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C2 | 1 | 220pF | 220pF | `Adafruit I2S Mic SPK0415HM4H-import-fps:0805-NO` | unmatched |
-| C4 | 1 | 1uF | 1uF | `Adafruit I2S Mic SPK0415HM4H-import-fps:0805-NO` | unmatched |
+| C2 | 1 | Capacitor 220 pF 0805 | 220pF | `Adafruit I2S Mic SPK0415HM4H-import-fps:0805-NO` | [`electronic_capacitor_0805_220_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_220_pico_farad) |
+| C4 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit I2S Mic SPK0415HM4H-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | IC1 | 1 | MIC_I2S_SPH0645 | MIC_I2S_SPH0645 | `Adafruit I2S Mic SPK0415HM4H-import-fps:SPH0645LM4H` | unmatched |
 | JP2 | 1 | Connector Header 2.54-1x6P直针 |  | `Adafruit I2S Mic SPK0415HM4H-import-fps:1X06_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | R1 | 1 | Resistor 68 Ohm 0603 | 68 | `Adafruit I2S Mic SPK0415HM4H-import-fps:0603-NO` | [`electronic_resistor_0603_68_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_68_ohm) |
@@ -106,7 +106,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 3 physical component records are not yet matched to an OOMP part.
+- 1 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_i2_s_microphone_breakout_pcb_adafruit_i2_s_mic_spk0415_hm4_h_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_i2_s_microphone_breakout_pcb_adafruit_i2_s_mic_spk0415_hm4_h_current/data/generated_data/browser_research_queue.md)
@@ -115,7 +115,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_i2_s_microphone_breakout_pcb_adafruit_i2_s_mic_spk0415_hm4_h_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

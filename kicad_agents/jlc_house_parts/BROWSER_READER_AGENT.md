@@ -122,12 +122,11 @@ text, must contain the C-number), `captured_on`, `capture_method`.
 
 ## How the pool consumes staged captures
 
-- `tier_label` Extended (queue class `preferred_extended`) → worker runs
-  `defer --stage intake --code <C> --from-capture`, which composes the
-  documented class-conflict reason from the staged facts and refuses a
-  house-class capture.
-- `tier_label` Basic/Preferred/Promotional matching the queue → worker runs
-  the full intake flow via `intake_from_capture.py` under the family lock.
+- `tier_label` Extended (queue class `preferred_extended`) → worker runs the
+  full intake flow. In the corrected official category snapshot, this badge's
+  tooltip is Promotional Extended, so it maps to the queued house tier.
+- Defer only when the observed class maps differently from the queued tier or
+  the supplier identity conflicts.
 - Workers hand out only fresh captures with
   `next --stage intake --claim --staged-only --worker W1` (freshness window:
   `--staged-hours`, default 24). The `--staged-only` filter also works for a

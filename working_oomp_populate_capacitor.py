@@ -119,6 +119,25 @@ def main(**kwargs):
             option["taxonomy_4"] = capacitance_value
             options.append(option)
 
+    # Keep the generic C14663 preference intact while giving the exact Samsung
+    # C1591 purchasing identity its own linked OOMP record.
+    options.append({
+        "taxonomy_2": "capacitor",
+        "taxonomy_3": "0603",
+        "taxonomy_4": "100_nano_farad",
+        "taxonomy_5": "samsung_electro_mechanics",
+        "taxonomy_6": "cl10b104kb8nnnc",
+    })
+
+    # Keep the reviewed 50 V generic 0603 1 uF choice intact and represent
+    # Samsung C1592's lower 16 V rating as an explicit linked variant.
+    options.append({
+        "taxonomy_2": "capacitor",
+        "taxonomy_3": "0603",
+        "taxonomy_4": "1_micro_farad",
+        "taxonomy_5": "16_volt",
+    })
+
     options.append({
         "taxonomy_2": "capacitor",
         "taxonomy_3": "0603",

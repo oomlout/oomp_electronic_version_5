@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_bmp085_pcb_adafruit_bmp085_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-BMP085-PCB Adafruit BMP085 current is a KiCad project containing 33 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
+Project adafruit/Adafruit-BMP085-PCB Adafruit BMP085 current is a KiCad project containing 33 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-BMP085-PCB Adafruit BMP085 current is a KiCad project 
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 31 |
-| Matched OOMP components | 10 |
-| Unmatched physical components | 4 |
+| Matched OOMP components | 12 |
+| Unmatched physical components | 2 |
 | Front-side placements | 12 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -80,8 +80,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C2 | 2 | 1.0uF | 1.0uF | `Adafruit_BMP085-import-fps:C0805` | unmatched |
-| D1 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit_BMP085-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| C1, C2 | 2 | Capacitor 1 uF 0805 | 1.0uF | `Adafruit_BMP085-import-fps:C0805` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| D1 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit_BMP085-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | JP2 | 1 | Connector Header PH2.54-01-07PZD | Breakout | `Adafruit_BMP085-import-fps:1X07_ROUND_76` | [`electronic_connector_header_2_54_mm_pitch_through_hole_7_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_7_pin) |
 | Q1, Q2 | 2 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `Adafruit_BMP085-import-fps:SOT23` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
 | R1, R2, R3, R4 | 4 | Resistor 10000 Ohm 0805 | 10K | `Adafruit_BMP085-import-fps:R0805` | [`electronic_resistor_0805_10000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_10000_ohm) |
@@ -110,7 +110,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 4 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_bmp085_pcb_adafruit_bmp085_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_bmp085_pcb_adafruit_bmp085_current/data/generated_data/browser_research_queue.md)
@@ -119,7 +119,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_bmp085_pcb_adafruit_bmp085_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

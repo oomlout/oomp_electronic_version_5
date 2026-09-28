@@ -100,7 +100,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C8, C10, C11, C15, C17 | 5 | Capacitor 1 uF 0402 | 1uF | `Adafruit Feather RP2040 RFM-import-fps:_0402NO` | [`electronic_capacitor_0402_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_1_micro_farad) |
 | CHG0 | 1 | LED  0603 | ORANGE | `Adafruit Feather RP2040 RFM-import-fps:CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603) |
 | CONN1 | 1 | STEMMA_I2C_QTRA | STEMMA_I2C_QTRA | `Adafruit Feather RP2040 RFM-import-fps:JST_SH4_RA` | unmatched |
-| D3 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit Feather RP2040 RFM-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D3 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit Feather RP2040 RFM-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | D4 | 1 | PMEG2020AEA | PMEG2020AEA | `Adafruit Feather RP2040 RFM-import-fps:SOD-323F` | unmatched |
 | D+1, D-1 | 2 | TPB1,27 | TPB1,27 | `Adafruit Feather RP2040 RFM-import-fps:B1,27` | unmatched |
 | IC1 | 1 | RP2040_QFN56 | RP2040_QFN56 | `Adafruit Feather RP2040 RFM-import-fps:QFN56_7MM_REDUCEDEPAD` | unmatched |

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_i2_c_spi_lcd_backpack_pcb_i2c_spi_lcd_stemma_backpack_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB I2C SPI LCD STEMMA Backpack current is a KiCad project containing 88 extracted component records. The catalogue matcher linked 15 physical placements to OOMP parts.
+Project adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB I2C SPI LCD STEMMA Backpack current is a KiCad project containing 88 extracted component records. The catalogue matcher linked 16 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB I2C SPI LCD STEMMA Backpack c
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 81 |
-| Matched OOMP components | 15 |
-| Unmatched physical components | 20 |
+| Matched OOMP components | 16 |
+| Unmatched physical components | 19 |
 | Front-side placements | 32 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -82,7 +82,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2 | 2 | Capacitor 100 nF 0603 | 0.1uF | `Adafruit I2C SPI LCD STEMMA backpack-import-fps:0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | C4, C5 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit I2C SPI LCD STEMMA backpack-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C6 | 1 | 1uF | 1uF | `Adafruit I2C SPI LCD STEMMA backpack-import-fps:0805-NO` | unmatched |
+| C6 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit I2C SPI LCD STEMMA backpack-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | CONN3, CONN4 | 2 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `Adafruit I2C SPI LCD STEMMA backpack-import-fps:JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
 | D1 | 1 | LED Green 0603 | GREEN | `Adafruit I2C SPI LCD STEMMA backpack-import-fps:CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_green) |
 | IC1 | 1 | MCP23008/SO | MCP23008/SO | `Adafruit I2C SPI LCD STEMMA backpack-import-fps:SO18W` | unmatched |
@@ -140,7 +140,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 20 physical component records are not yet matched to an OOMP part.
+- 19 physical component records are not yet matched to an OOMP part.
 - The extractor reports 7 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_i2_c_spi_lcd_backpack_pcb_i2c_spi_lcd_stemma_backpack_current/data/generated_data/lcsc_review.yaml)
@@ -150,7 +150,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_i2_c_spi_lcd_backpack_pcb_i2c_spi_lcd_stemma_backpack_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 9
+- Matched OOMP source parts copied: 10
 
 ## Source files
 

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_bno055_breakout_pcb_adafruit_bno055_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-BNO055-Breakout-PCB Adafruit BNO055 current is a KiCad project containing 56 extracted component records. The catalogue matcher linked 19 physical placements to OOMP parts.
+Project adafruit/Adafruit-BNO055-Breakout-PCB Adafruit BNO055 current is a KiCad project containing 56 extracted component records. The catalogue matcher linked 23 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-BNO055-Breakout-PCB Adafruit BNO055 current is a KiCad
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 53 |
-| Matched OOMP components | 19 |
-| Unmatched physical components | 6 |
+| Matched OOMP components | 23 |
+| Unmatched physical components | 2 |
 | Front-side placements | 21 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,12 +82,12 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1, C2 | 2 | 22pF | 22pF | `Adafruit BNO055-import-fps:0805-NO` | unmatched |
-| C3 | 1 | 0.1uF | 0.1uF | `Adafruit BNO055-import-fps:0805-NO` | unmatched |
-| C4 | 1 | 0.1uF | 0.1uF | `Adafruit BNO055-import-fps:0805_10MGAP` | unmatched |
+| C1, C2 | 2 | Capacitor 22 pF 0805 | 22pF | `Adafruit BNO055-import-fps:0805-NO` | [`electronic_capacitor_0805_22_pico_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_22_pico_farad) |
+| C3 | 1 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit BNO055-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
+| C4 | 1 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit BNO055-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | C5 | 1 | Capacitor 10 uF 0805 | 10uF | `Adafruit BNO055-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C6 | 1 | Capacitor 10 uF 0805 | 10uF | `Adafruit BNO055-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| D1 | 1 | Diode Switching SOD-323 | 1n4148 | `Adafruit BNO055-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D1 | 1 | Diode 1N4148WS SOD-323 | 1n4148 | `Adafruit BNO055-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | JP1 | 1 | Connector Header 2.54-1x6P直针 |  | `Adafruit BNO055-import-fps:1X06_ROUND_76` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
 | JP2 | 1 | Connector Header PZ2.54-S04P-A60 |  | `Adafruit BNO055-import-fps:1X04_ROUND_76` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
 | Q1, Q2 | 2 | N-channel MOSFET BSS138 SOT-23 | BSS138 | `Adafruit BNO055-import-fps:SOT23-WIDE` | [`electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138) |
@@ -124,7 +124,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 6 physical component records are not yet matched to an OOMP part.
+- 2 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_bno055_breakout_pcb_adafruit_bno055_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_bno055_breakout_pcb_adafruit_bno055_current/data/generated_data/browser_research_queue.md)
@@ -133,7 +133,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_bno055_breakout_pcb_adafruit_bno055_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

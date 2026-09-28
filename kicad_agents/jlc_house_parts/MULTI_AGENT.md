@@ -40,8 +40,10 @@ part into two roles:
 2. **Pool workers** (subagents, no browser needed): claim only codes that
    already have a fresh staged capture with
    `next --stage intake --claim --staged-only --worker W1`, then either
-   `defer --stage intake --code <C> --from-capture` (non-house class) or the
-   full intake flow (house class). Everything else — populate edits under
+   `defer --stage intake --code <C> --from-capture` for a true class conflict
+   or the full intake flow. A visible `Extended` badge in this corrected
+   category queue maps to Promotional Extended / `preferred_extended`.
+   Everything else — populate edits under
    the family lock, scaffolding, gates, generation — is browser-free.
 
 ## Plan a pool
@@ -68,18 +70,19 @@ categories may claim anything pending and acts as a free helper at the tail.
    `task: null` means no fresh staged capture is waiting; stop and ask the
    reader for another batch. Never work a code you did not claim.
 2. Read the staged capture in `browser_staging/<code>.json`.
-3. `tier_label` is Extended (or otherwise not a house class): defer with the
-   staged facts in one command:
+3. The observed class maps differently from the queued house tier: defer with
+   the staged facts in one command:
 
    ```powershell
    python -m kicad_agents.jlc_house_parts_agent defer --stage intake --code <C> --from-capture
    ```
 
    It refuses to defer a capture that shows a house class.
-4. `tier_label` is Basic/Preferred/Promotional and matches the queue class:
-   full intake per `../JLC_PART_INTAKE_AGENT.md`. Build the observation from
-   the staged capture (`intake_from_capture.py`), hold the family lock around
-   any populate edit:
+4. The observed class maps to the queued tier (Basic to Basic; Preferred,
+   Promotional, or Extended to `preferred_extended`): full intake per
+   `../JLC_PART_INTAKE_AGENT.md`. Build the observation from the staged
+   capture (`intake_from_capture.py`), hold the family lock around any
+   populate edit:
 
    ```powershell
    python -m kicad_agents.jlc_house_parts_agent lock --family diode --worker W1

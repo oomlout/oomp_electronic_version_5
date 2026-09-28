@@ -1639,5 +1639,306 @@ def main(**kwargs):
             "LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified JLCPCB Part Class on the product page); best C54920615 with 512,000 in stock at capture.",
         ]
 
+    current = "electronic_resistor_0402_82000_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0402_82000_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "82 kΩ",
+            "tolerance": "±5%",
+            "power": "62.5 mW",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant. The generic 0402 82 kΩ entry retains its existing FOJAN C2909388 preference at ±1%.",
+            "Use this FH C1160 variant where ±5% is acceptable; confirm voltage and power derating for the application in the full pass.",
+        ]
+
+    current = "electronic_resistor_0402_91000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "91 kΩ",
+            "tolerance": "±5%",
+            "power": "62.5 mW",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Explicit missing generic value/package row added for the verified FH C1161 0402 91 kΩ resistor.",
+            "C1161 is ±5%; confirm voltage and power derating for the application in the full pass.",
+        ]
+
+    current = "electronic_resistor_0402_150000_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0402_150000_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "150 kΩ",
+            "tolerance": "±5%",
+            "power": "62.5 mW",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant. The generic 0402 150 kΩ entry retains its existing YAGEO C93947 preference at ±1%.",
+            "Use this FH C1166 variant where ±5% is acceptable; JLC showed only 5 pieces at capture and LCSC showed unavailable.",
+            "0402 series datasheet specifies 1/16 W normal power and 50 V limiting element voltage; confirm application derating in the full pass.",
+        ]
+
+    current = "electronic_resistor_0603_22_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0603_22_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "22 Ω",
+            "tolerance": "±5%",
+            "power": "100 mW",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "±200 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant. The generic 0603 22 Ω entry retains its reviewed UNI-ROYAL C23345 / 0603WAF220JT5E preference at ±1%.",
+            "Use this UNI-ROYAL C1203 / 0603WAJ0220T5E variant where ±5% is acceptable; verify application power and voltage derating in the full pass.",
+        ]
+
+    current = "electronic_resistor_0603_47_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0603_47_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "47 Ω",
+            "tolerance": "±5%",
+            "power": "100 mW",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant. The generic 0603 47 Ω entry retains its reviewed UNI-ROYAL C23182 / 0603WAF470JT5E preference at ±1%.",
+            "Use this UNI-ROYAL C1211 / 0603WAJ0470T5E variant where ±5% is acceptable; verify application power and voltage derating in the full pass.",
+        ]
+
+    current = "electronic_resistor_0603_220_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0603_220_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "220 Ω",
+            "tolerance": "±5%",
+            "power": "100 mW",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant. The generic 0603 220 Ω entry retains its reviewed UNI-ROYAL C22962 / 0603WAF2200T5E preference at ±1%.",
+            "Use this UNI-ROYAL C1226 / 0603WAJ0221T5E variant where ±5% is acceptable; verify application power and voltage derating in the full pass.",
+        ]
+
+    current = "electronic_resistor_0603_82000_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0603_82000_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "82 kΩ",
+            "tolerance": "±5%",
+            "power": "100 mW",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant. The generic 0603 82 kΩ entry retains its reviewed UNI-ROYAL C23254 / 0603WAF8202T5E preference at ±1%.",
+            "Use this UNI-ROYAL C1275 / 0603WAJ0823T5E variant where ±5% is acceptable; verify application power and voltage derating in the full pass.",
+        ]
+
+    current = "electronic_resistor_0603_2_7_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "2.7 Ω",
+            "tolerance": "±5%",
+            "power": "100 mW",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "±250 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Missing 0603 2.7 Ω generic value added from verified FH C1186 RS-03L2R7JT.",
+            "The FH series datasheet rates 0603 at 1/10 W and 75 V limiting voltage; JLC C1186 lists 50 V and 100 mW, so retain the supplier's 50 V rating.",
+            "The FH series datasheet gives ±200 or ±250 ppm/°C for 0603 values below 10 Ω at ±5% tolerance; C1186's live page specifies ±250 ppm/°C.",
+        ]
+
+    current = "electronic_resistor_0805_1_8_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "1.8 Ω",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±250 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Missing 0805 1.8 Ω generic value added from verified FH C1297 RS-05L1R8JT.",
+            "The JLC and same-code LCSC product pages agree on 0805, 1.8 Ω, ±5%, 125 mW, 150 V, ±250 ppm/°C, and -55 to +155 °C. The FH series datasheet confirms 0805 at 1/8 W and 150 V limiting element voltage, and permits ±250 ppm/°C at ±5% for 1 Ω to below 10 Ω.",
+        ]
+
+    current = "electronic_resistor_0805_3_9_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "3.9 Ω",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±250 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Missing 0805 3.9 Ω generic value added from verified FH C1304 RS-05L3R9JT.",
+            "The JLC and same-code LCSC product pages agree on 0805, 3.9 Ω, ±5%, 125 mW, 150 V, ±250 ppm/°C, and -55 to +155 °C. The FH series datasheet confirms 0805 at 1/8 W and 150 V limiting element voltage, and permits ±250 ppm/°C at ±5% for 1 Ω to below 10 Ω.",
+        ]
+
+    current = "electronic_resistor_0805_39_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "39 Ω",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1324 RS-05K390JT as a preferred extended purchasing choice for the existing generic 0805 39 Ω value.",
+            "JLC and same-code LCSC pages agree on ±5%, 125 mW, 150 V, ±100 ppm/°C and -55 to +155 °C. The FH series datasheet rates 0805 at 1/8 W and 150 V and lists ±100 ppm/°C for 10 Ω to 1 MΩ at ±5%.",
+        ]
+
+    current = "electronic_resistor_0805_110_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "110 Ω",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Added a missing generic 0805 110 Ω value and verified FH C1335 RS-05K111JT as its preferred extended purchasing choice.",
+            "JLC and same-code LCSC pages agree on 110 Ω, ±5%, 125 mW, 150 V, ±100 ppm/°C and -55 to +155 °C. The FH series datasheet rates 0805 at 1/8 W and 150 V and lists ±100 ppm/°C for 10 Ω to 1 MΩ at ±5%.",
+        ]
+
+    current = "electronic_resistor_0805_3600_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "3.6 kΩ",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Added a missing generic 0805 3.6 kΩ value; the existing reviewed 3.6 kΩ resistor is 0603 and remains separate.",
+            "JLC and same-code LCSC pages agree on UNI-ROYAL 0805W8J0362T5E, 3.6 kΩ, ±5%, 125 mW, 150 V, ±100 ppm/°C and -55 to +155 °C. The downloaded 9-page UNI-ROYAL thick-film series datasheet identifies W8 as 1/8 W, J as ±5%, and covers the 0805 size and listed operating/voltage ratings.",
+        ]
+
+    current = "electronic_resistor_0805_180_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0805_180_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "180 Ω",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant for UNI-ROYAL JLC C1339 / 0805W8J0181T5E. The existing generic 0805 180 Ω entry retains its FOJAN C2933344 ±1% assignment.",
+            "The JLC and same-code LCSC pages agree on 0805, 180 Ω, ±5%, 125 mW, 150 V, ±100 ppm/°C and -55 to +155 °C. The clicked UNI-ROYAL thick-film series datasheet maps W8 to 1/8 W and J to ±5%, includes 0805, and confirms the 180 Ω resistance range, 150 V working voltage, temperature range and ±100 ppm/°C above 10 Ω.",
+        ]
+
+    current = "electronic_resistor_0805_1800_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0805_1800_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "1.8 kΩ",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant for RALEC JLC C1358 / RTT05182JTP. The existing generic electronic_resistor_0805_1800_ohm retains its FOJAN C2933345 ±1% purchasing assignment.",
+            "JLC and same-code LCSC product pages agree on 0805, 1.8 kΩ, ±5%, 125 mW, 150 V, ±100 ppm/°C, and -55 to +155 °C. The clicked RALEC RTT-series specification sheet identifies the 0805 RTT05 type, ±5% J code, 1/8 W rating, 150 V rated voltage, the applicable ±100 ppm/°C range, and -55 to +155 °C operating range.",
+        ]
+
+    current = "electronic_resistor_0805_2000_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0805_2000_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "2 kΩ",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant for UNI-ROYAL JLC C1359 / 0805W8J0202T5E. Existing Basic C17604 / 0805W8F2001T5E remains the preferred ±1% SKU on the generic electronic_resistor_0805_2000_ohm ID.",
+            "JLC and same-code LCSC product pages agree on 0805, 2 kΩ, ±5%, 125 mW, 150 V, ±100 ppm/°C and -55 to +155 °C. The LCSC linked UNI-ROYAL thick-film series PDF renders as a 9-page datasheet and its ordering code table maps W8 to 1/8 W and J to ±5%; its browser download did not produce a local PDF, so no datasheet file is imported in intake.",
+        ]
+
+    current = "electronic_resistor_0805_24000_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_0805_24000_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "24 kΩ",
+            "tolerance": "±5%",
+            "power": "125 mW",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant for UNI-ROYAL JLC C1382 / 0805W8J0243T5E. Existing Basic C17575 / 0805W8F2402T5E keeps the base electronic_resistor_0805_24000_ohm preference at ±1%.",
+            "JLC and same-code LCSC pages agree on 0805, 24 kΩ, ±5%, 125 mW, 150 V, ±100 ppm/°C and -55 to +155 °C. The browser-downloaded 9-page UNI-ROYAL thick-film series datasheet maps W8 to 1/8 W and J to ±5%, includes the 0805 5% value range, and confirms 150 V and the operating-temperature range.",
+        ]
+
     from working_oomp_populate_jlc import apply_reviewed_jlc_choices
     apply_reviewed_jlc_choices(extras_dict, family="resistor")

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_e_ink_feather_friend_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit e Ink Feather Friend current is a KiCad project containing 73 extracted component records. The catalogue matcher linked 13 physical placements to OOMP parts.
+Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit e Ink Feather Friend current is a KiCad project containing 73 extracted component records. The catalogue matcher linked 22 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit e Ink Feather F
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 68 |
-| Matched OOMP components | 13 |
-| Unmatched physical components | 22 |
+| Matched OOMP components | 22 |
+| Unmatched physical components | 13 |
 | Front-side placements | 32 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -81,15 +81,15 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | BUSY0 | 1 | TPTP15SQ | TPTP15SQ | `Adafruit eInk Feather Friend-import-fps:TP15SQ` | unmatched |
-| C1 | 1 | 1uF | 1uF | `Adafruit eInk Feather Friend-import-fps:0805_10MGAP` | unmatched |
-| C2, C6 | 2 | 1uF/10V | 1uF/10V | `Adafruit eInk Feather Friend-import-fps:0805-NO` | unmatched |
-| C3, C4, C22, C23 | 4 | 1uF/25V | 1uF/25V | `Adafruit eInk Feather Friend-import-fps:0805-NO` | unmatched |
+| C1 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit eInk Feather Friend-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C2, C6 | 2 | Capacitor 1 uF 0805 | 1uF/10V | `Adafruit eInk Feather Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C3, C4, C22, C23 | 4 | Capacitor 1 uF 0805 | 1uF/25V | `Adafruit eInk Feather Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C5 | 1 | Capacitor 10 uF 0805 | 10uF/25V | `Adafruit eInk Feather Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C15 | 1 | Capacitor 10 uF 0805 | 10uF/10V+ | `Adafruit eInk Feather Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C16, C24 | 2 | 1uF | 1uF | `Adafruit eInk Feather Friend-import-fps:0805-NO` | unmatched |
+| C16, C24 | 2 | Capacitor 1 uF 0805 | 1uF | `Adafruit eInk Feather Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C21 | 1 | Capacitor 10 uF 0805 | 10µF | `Adafruit eInk Feather Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | D1, D2, D3 | 3 | MBR0530 | MBR0530 | `Adafruit eInk Feather Friend-import-fps:SOD-123` | unmatched |
-| D4 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit eInk Feather Friend-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D4 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit eInk Feather Friend-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | EINK1 | 1 | EINK_24PIN_CONNECTOR | EINK_24PIN_CONNECTOR | `Adafruit eInk Feather Friend-import-fps:EINK_24PIN` | unmatched |
 | IC5 | 1 | AXP803 | AXP803 | `Adafruit eInk Feather Friend-import-fps:SOT23` | unmatched |
 | JP1 | 1 | Connector Header ZX-PZ2.54-1-16PZZ |  | `Adafruit eInk Feather Friend-import-fps:1X16_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_16_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_16_pin) |
@@ -136,7 +136,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 22 physical component records are not yet matched to an OOMP part.
+- 13 physical component records are not yet matched to an OOMP part.
 - The extractor reports 5 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_e_ink_feather_friend_current/data/generated_data/lcsc_review.yaml)
@@ -146,7 +146,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_e_ink_feather_friend_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 7
+- Matched OOMP source parts copied: 8
 
 ## Source files
 

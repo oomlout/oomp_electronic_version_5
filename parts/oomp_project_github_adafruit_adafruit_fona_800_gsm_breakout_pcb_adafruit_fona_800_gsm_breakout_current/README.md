@@ -105,7 +105,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | CN2 | 1 | JSTPH | JSTPH | `Adafruit-FONA-800-GSM-Breakout-import-fps:JSTPH2` | unmatched |
 | D1 | 1 | MMSZ5231BT1G | MMSZ5231BT1G | `Adafruit-FONA-800-GSM-Breakout-import-fps:SOD-123` | unmatched |
 | D2 | 1 | SMF05C | SMF05C | `Adafruit-FONA-800-GSM-Breakout-import-fps:SOT363` | unmatched |
-| D3, D4, D5, D6 | 4 | Diode Switching SOD-323 | 1N4148 | `Adafruit-FONA-800-GSM-Breakout-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D3, D4, D5, D6 | 4 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit-FONA-800-GSM-Breakout-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | DONE0, PWRSTAT0 | 2 | LED Green 0805 | GREEN | `Adafruit-FONA-800-GSM-Breakout-import-fps:CHIPLED_0805_NOOUTLINE` | [`electronic_led_0805_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_green) |
 | IC1 | 1 | 74VHCT125PW | 74VHCT125PW | `Adafruit-FONA-800-GSM-Breakout-import-fps:TSSOP14` | unmatched |
 | JP1 | 1 | Connector Header PH2.54-01-12PZD |  | `Adafruit-FONA-800-GSM-Breakout-import-fps:1X12-CB` | [`electronic_connector_header_2_54_mm_pitch_through_hole_12_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_12_pin) |

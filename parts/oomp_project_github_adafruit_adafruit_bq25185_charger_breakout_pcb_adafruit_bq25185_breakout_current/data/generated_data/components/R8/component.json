@@ -1117,10 +1117,10 @@
     "incomplete_count": 1
   },
   "oomp": {
-    "status": "unmatched",
-    "accepted": false,
-    "oomp_id": null,
-    "confidence": 0.0,
+    "status": "matched",
+    "accepted": true,
+    "oomp_id": "electronic_resistor_0603_13000_ohm",
+    "confidence": 1.0,
     "proposed_oomp_id": "electronic_resistor_0603_13000_ohm",
     "inferred": {
       "kind": "resistor",
@@ -1129,53 +1129,12 @@
       "mpn": null
     },
     "reasons": [
-      "The exact normalized component is not present in the OOMP parts directory."
+      "Exact OOMP ID constructed from component type, package size, and normalized value."
     ],
-    "candidates": [
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_12000_ohm",
-        "score": 0.7083,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_15000_ohm",
-        "score": 0.6891,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_10000_ohm",
-        "score": 0.6528,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_18000_ohm",
-        "score": 0.6337,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      },
-      {
-        "oomp_id": "electronic_resistor_quarter_watt_through_hole_20000_ohm",
-        "score": 0.6005,
-        "reasons": [
-          "same component family",
-          "nearby normalized value"
-        ]
-      }
-    ]
+    "candidates": []
   },
   "category": "resistor",
-  "category_source": "unmatched_kicad_hint",
+  "category_source": "oomp_populate",
   "category_name": "Resistor",
   "generated_directory": "components/R8"
 }

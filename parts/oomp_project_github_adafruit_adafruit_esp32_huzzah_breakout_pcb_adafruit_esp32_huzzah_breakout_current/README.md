@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_esp32_huzzah_breakout_pcb_adafruit_esp32_huzzah_breakout_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-ESP32-HUZZAH-Breakout-PCB Adafruit ESP32 Huzzah Breakout current is a KiCad project containing 51 extracted component records. The catalogue matcher linked 14 physical placements to OOMP parts.
+Project adafruit/Adafruit-ESP32-HUZZAH-Breakout-PCB Adafruit ESP32 Huzzah Breakout current is a KiCad project containing 51 extracted component records. The catalogue matcher linked 15 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-ESP32-HUZZAH-Breakout-PCB Adafruit ESP32 Huzzah Breako
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 47 |
-| Matched OOMP components | 14 |
-| Unmatched physical components | 8 |
+| Matched OOMP components | 15 |
+| Unmatched physical components | 7 |
 | Front-side placements | 19 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -81,8 +81,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | C1, C2, C3, C4 | 4 | Capacitor 10 uF 0805 | 10uF | `Adafruit ESP32 Huzzah Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C5 | 1 | 1uF | 1uF | `Adafruit ESP32 Huzzah Breakout-import-fps:0805-NO` | unmatched |
-| D1, D2 | 2 | Diode Switching SOD-323 | 1n4148 | `Adafruit ESP32 Huzzah Breakout-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| C5 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit ESP32 Huzzah Breakout-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| D1, D2 | 2 | Diode 1N4148WS SOD-323 | 1n4148 | `Adafruit ESP32 Huzzah Breakout-import-fps:SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | D3 | 1 | LED Red 0805 | RED | `Adafruit ESP32 Huzzah Breakout-import-fps:CHIPLED_0805_NOOUTLINE` | [`electronic_led_0805_red`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_red) |
 | D5, D6 | 2 | MBR120 | MBR120 | `Adafruit ESP32 Huzzah Breakout-import-fps:SOD-123` | unmatched |
 | JP1 | 1 | Connector Header 2.54-1x6P直针 | FTDI | `Adafruit ESP32 Huzzah Breakout-import-fps:1X06_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) |
@@ -126,7 +126,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 8 physical component records are not yet matched to an OOMP part.
+- 7 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_esp32_huzzah_breakout_pcb_adafruit_esp32_huzzah_breakout_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_esp32_huzzah_breakout_pcb_adafruit_esp32_huzzah_breakout_current/data/generated_data/browser_research_queue.md)
@@ -135,7 +135,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_esp32_huzzah_breakout_pcb_adafruit_esp32_huzzah_breakout_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 8
+- Matched OOMP source parts copied: 9
 
 ## Source files
 

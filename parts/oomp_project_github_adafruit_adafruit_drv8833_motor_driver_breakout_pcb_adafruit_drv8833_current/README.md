@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_drv8833_motor_driver_breakout_pcb_adafruit_drv8833_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-DRV8833-Motor-Driver-Breakout-PCB Adafruit DRV8833 current is a KiCad project containing 34 extracted component records. The catalogue matcher linked 9 physical placements to OOMP parts.
+Project adafruit/Adafruit-DRV8833-Motor-Driver-Breakout-PCB Adafruit DRV8833 current is a KiCad project containing 34 extracted component records. The catalogue matcher linked 10 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-DRV8833-Motor-Driver-Breakout-PCB Adafruit DRV8833 cur
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 31 |
-| Matched OOMP components | 9 |
-| Unmatched physical components | 6 |
+| Matched OOMP components | 10 |
+| Unmatched physical components | 5 |
 | Front-side placements | 13 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -82,7 +82,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | C1, C4 | 2 | Capacitor 10 uF 0805 | 10µF/16V | `Adafruit DRV8833-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C2 | 1 | Capacitor 10 uF 0805 | 10µF | `Adafruit DRV8833-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C3 | 1 | 0.1uF | 0.1uF | `Adafruit DRV8833-import-fps:0805-NO` | unmatched |
+| C3 | 1 | Capacitor 100 nF 0805 | 0.1uF | `Adafruit DRV8833-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | J1 | 1 | VMOTORIN | VMOTORIN | `Adafruit DRV8833-import-fps:TERMBLOCK_1X2-3.5MM` | unmatched |
 | JP2, JP3, JP4 | 3 | Connector Header PZ254V-11-02P |  | `Adafruit DRV8833-import-fps:1X02_ROUND` | [`electronic_connector_header_2_54_mm_pitch_through_hole_2_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_2_pin) |
 | JP5 | 1 | Connector Header PZ254V-12-8P |  | `Adafruit DRV8833-import-fps:1X08_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
@@ -119,7 +119,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 6 physical component records are not yet matched to an OOMP part.
+- 5 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_drv8833_motor_driver_breakout_pcb_adafruit_drv8833_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_drv8833_motor_driver_breakout_pcb_adafruit_drv8833_current/data/generated_data/browser_research_queue.md)
@@ -128,7 +128,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_drv8833_motor_driver_breakout_pcb_adafruit_drv8833_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 5
 
 ## Source files
 

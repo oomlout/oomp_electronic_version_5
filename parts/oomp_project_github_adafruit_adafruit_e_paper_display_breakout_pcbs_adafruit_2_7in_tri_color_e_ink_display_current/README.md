@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_7in_tri_color_e_ink_display_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.7in Tri Color e Ink Display current is a KiCad project containing 74 extracted component records. The catalogue matcher linked 15 physical placements to OOMP parts.
+Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.7in Tri Color e Ink Display current is a KiCad project containing 74 extracted component records. The catalogue matcher linked 25 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.7in Tri Color
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 74 |
-| Matched OOMP components | 15 |
-| Unmatched physical components | 20 |
+| Matched OOMP components | 25 |
+| Unmatched physical components | 10 |
 | Front-side placements | 30 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -82,8 +82,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 1uF | 1uF | `Adafruit 2.7in Tri-Color eInk Display-import-fps:0805_10MGAP` | unmatched |
-| C2, C3, C4, C6, C7, C16, C22, C23, C24 | 9 | 1uF | 1uF | `Adafruit 2.7in Tri-Color eInk Display-import-fps:0805-NO` | unmatched |
+| C1 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit 2.7in Tri-Color eInk Display-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C2, C3, C4, C6, C7, C16, C22, C23, C24 | 9 | Capacitor 1 uF 0805 | 1uF | `Adafruit 2.7in Tri-Color eInk Display-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C5 | 1 | Capacitor 4.7 uF 0805 | 4.7uF/25V | `Adafruit 2.7in Tri-Color eInk Display-import-fps:0805-NO` | [`electronic_capacitor_0805_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_4_7_micro_farad) |
 | C15 | 1 | Capacitor 10 uF 0805 | 10uF/10V+ | `Adafruit 2.7in Tri-Color eInk Display-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C20, C21 | 2 | Capacitor 10 uF 0805 | 10µF | `Adafruit 2.7in Tri-Color eInk Display-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
@@ -131,7 +131,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 20 physical component records are not yet matched to an OOMP part.
+- 10 physical component records are not yet matched to an OOMP part.
 - The extractor reports 7 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_7in_tri_color_e_ink_display_current/data/generated_data/lcsc_review.yaml)
@@ -141,7 +141,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_7in_tri_color_e_ink_display_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 6
+- Matched OOMP source parts copied: 7
 
 ## Source files
 

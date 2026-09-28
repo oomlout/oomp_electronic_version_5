@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_13in_tri_color_e_ink_feather_wing_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.13in Tri Color e Ink Feather Wing current is a KiCad project containing 81 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
+Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.13in Tri Color e Ink Feather Wing current is a KiCad project containing 81 extracted component records. The catalogue matcher linked 21 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.13in Tri Colo
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 79 |
-| Matched OOMP components | 12 |
-| Unmatched physical components | 34 |
+| Matched OOMP components | 21 |
+| Unmatched physical components | 25 |
 | Front-side placements | 41 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -83,15 +83,15 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
 | BUSY0, TP1, TP2, TP3, TP4, TP5, TP6, TP7, TP8, TP9, TP11, TP12, TP13 | 13 | TPTP15SQ | TPTP15SQ | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:TP15SQ` | unmatched |
-| C1 | 1 | 1uF | 1uF | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805_10MGAP` | unmatched |
-| C2, C6 | 2 | 1uF/10V | 1uF/10V | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | unmatched |
-| C3, C4, C22, C23 | 4 | 1uF/25V | 1uF/25V | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | unmatched |
+| C1 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C2, C6 | 2 | Capacitor 1 uF 0805 | 1uF/10V | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C3, C4, C22, C23 | 4 | Capacitor 1 uF 0805 | 1uF/25V | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C5 | 1 | Capacitor 10 uF 0805 | 10uF/25V | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C15 | 1 | Capacitor 10 uF 0805 | 10uF/10V+ | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
-| C16, C24 | 2 | 1uF | 1uF | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | unmatched |
+| C16, C24 | 2 | Capacitor 1 uF 0805 | 1uF | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C21 | 1 | Capacitor 10 uF 0805 | 10µF | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | D1, D2, D3 | 3 | MBR0530 | MBR0530 | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:SOD-123` | unmatched |
-| D4 | 1 | Diode Switching SOD-323 | 1N4148 | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D4 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:SOD-323F` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | EINK1 | 1 | EINK_EPD0231 | EINK_EPD0231 | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:EINK_213IN_104X212` | unmatched |
 | IC5 | 1 | AXP803 | AXP803 | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:SOT23` | unmatched |
 | L1 | 1 | 10uH | 10uH | `Adafruit 2.13in Tri-Color eInk FeatherWing-import-fps:INDUCTOR_4X4MM_NR401` | unmatched |
@@ -135,7 +135,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 34 physical component records are not yet matched to an OOMP part.
+- 25 physical component records are not yet matched to an OOMP part.
 - The extractor reports 5 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_13in_tri_color_e_ink_feather_wing_current/data/generated_data/lcsc_review.yaml)
@@ -145,7 +145,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_13in_tri_color_e_ink_feather_wing_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 4
+- Matched OOMP source parts copied: 5
 
 ## Source files
 

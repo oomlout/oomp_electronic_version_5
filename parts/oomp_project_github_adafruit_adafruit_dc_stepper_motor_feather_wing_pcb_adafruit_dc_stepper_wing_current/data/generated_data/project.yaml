@@ -12,8 +12,8 @@ summary:
   component_count: 69
   schematic_symbol_count: 69
   pcb_footprint_count: 34
-  matched_component_count: 9
-  unmatched_physical_component_count: 13
+  matched_component_count: 10
+  unmatched_physical_component_count: 12
   non_physical_symbol_count: 47
   mounting_hole_count: 4
   dedicated_mounting_hole_count: 0
@@ -25289,10 +25289,10 @@ components:
     disagree_count: 0
     incomplete_count: 0
   oomp:
-    status: unmatched
-    accepted: false
-    oomp_id: null
-    confidence: 0.0
+    status: matched
+    accepted: true
+    oomp_id: electronic_capacitor_0805_100_nano_farad
+    confidence: 1.0
     proposed_oomp_id: electronic_capacitor_0805_100_nano_farad
     inferred:
       kind: capacitor
@@ -25300,37 +25300,10 @@ components:
       value: 0.1uF
       mpn: null
     reasons:
-    - The exact normalized component is not present in the OOMP parts directory.
-    candidates:
-    - oomp_id: electronic_capacitor_0402_100_nano_farad
-      score: 0.3245
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_10_nano_farad
-      score: 0.3238
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0402_22_nano_farad
-      score: 0.3212
-      reasons:
-      - same component family
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0805_10_micro_farad
-      score: 0.295
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
-    - oomp_id: electronic_capacitor_0805_22_micro_farad
-      score: 0.2925
-      reasons:
-      - same component family
-      - same package size
-      - nearby normalized value
+    - Exact OOMP ID constructed from component type, package size, and normalized value.
+    candidates: []
   category: capacitor
-  category_source: unmatched_kicad_hint
+  category_source: oomp_populate
   category_name: Capacitor
   generated_directory: components/C2
 - reference: C4
@@ -47676,6 +47649,14 @@ components:
     reasons:
     - Component family was inferred, but package size was not.
     candidates:
+    - oomp_id: electronic_transistor_sot_23_mosfet_p_channel_enhancement_mode_30_volt_alpha_omega_semicon_ao3401a
+      score: 0.1262
+      reasons:
+      - same component family
+    - oomp_id: electronic_transistor_sot_23_mosfet_p_channel_enhancement_mode_20_volt_vishay_si2301cds_t1_ge3
+      score: 0.1206
+      reasons:
+      - same component family
     - oomp_id: electronic_transistor_sot_523_mosfet_p_channel_enhancement_mode_20_volt_2_8_amp_cbi_bc2301t_2_8a
       score: 0.112
       reasons:
@@ -47686,14 +47667,6 @@ components:
       - same component family
     - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138
       score: 0.1018
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002
-      score: 0.1018
-      reasons:
-      - same component family
-    - oomp_id: electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode
-      score: 0.1015
       reasons:
       - same component family
   category: transistor

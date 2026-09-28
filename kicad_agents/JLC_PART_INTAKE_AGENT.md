@@ -59,7 +59,7 @@ Open exactly the returned `jlcpcb_url`. Check the visible page against the row:
 | Manufacturer | Complete visible name; `--`, blank and unknown are unresolved |
 | MFR.Part # | Full orderable MPN with punctuation and suffixes |
 | Package | Exact listing text, not a guessed equivalent |
-| House class | Raw Basic, Preferred or Promotional wording |
+| House class | Raw visible badge. For this corrected official category queue, `Extended` maps to `preferred_extended` (its tooltip says Promotional Extended). |
 | Function/value | Description AND visible specifications |
 | Purchasing limits | Stock, purchase minimum, full reel, available order quantity; assembly minimum only if shown |
 | Datasheet | Actual linked URL, if shown |
@@ -73,10 +73,13 @@ again; the requested page may already be loaded. If the page has not loaded,
 retry the same known URL once. Record an access blocker if it still fails.
 Do not run guessed URL searches in a loop or bypass browser challenges.
 
-If manufacturer, MPN, package or class differs from the queue, record the
-conflict and defer. The current helpers reject mismatches. Do not edit the
-original browser catalogue or weaken the gate to conceal the disagreement.
-An ordinary Extended listing is outside this house-parts intake.
+If manufacturer or MPN differs from the queue, record the conflict and defer.
+An empty queued package is adopted from the live detail page. For class, use
+the corrected official category membership: Basic maps to `basic`; the live
+detail badge `Extended` maps to `preferred_extended` because its tooltip says
+Promotional Extended and the queue is drawn only from that category. Do not
+defer this badge as ordinary Extended. A genuinely non-house class or a class
+that maps differently from the queued tier must be recorded and deferred.
 
 **Known example:** JLC C7171 and C16133 displayed manufacturer `--` and no
 datasheet link. LCSC's C7171 product page independently identified Kyocera AVX;

@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_e_ink_breakout_friend_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit e Ink Breakout Friend current is a KiCad project containing 67 extracted component records. The catalogue matcher linked 12 physical placements to OOMP parts.
+Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit e Ink Breakout Friend current is a KiCad project containing 67 extracted component records. The catalogue matcher linked 22 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit e Ink Breakout 
 | Mounting and locating holes | 2 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 66 |
-| Matched OOMP components | 12 |
-| Unmatched physical components | 20 |
+| Matched OOMP components | 22 |
+| Unmatched physical components | 10 |
 | Front-side placements | 30 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -80,8 +80,8 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 1uF | 1uF | `Adafruit eInk Breakout Friend-import-fps:0805_10MGAP` | unmatched |
-| C2, C3, C4, C6, C7, C16, C22, C23, C24 | 9 | 1uF | 1uF | `Adafruit eInk Breakout Friend-import-fps:0805-NO` | unmatched |
+| C1 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit eInk Breakout Friend-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C2, C3, C4, C6, C7, C16, C22, C23, C24 | 9 | Capacitor 1 uF 0805 | 1uF | `Adafruit eInk Breakout Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C5, C15 | 2 | Capacitor 10 uF 0805 | 10uF | `Adafruit eInk Breakout Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C20, C21 | 2 | Capacitor 10 uF 0805 | 10µF | `Adafruit eInk Breakout Friend-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | D1, D2, D3 | 3 | MBR0530 | MBR0530 | `Adafruit eInk Breakout Friend-import-fps:SOD-123` | unmatched |
@@ -128,7 +128,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 20 physical component records are not yet matched to an OOMP part.
+- 10 physical component records are not yet matched to an OOMP part.
 - The extractor reports 6 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_e_ink_breakout_friend_current/data/generated_data/lcsc_review.yaml)
@@ -138,7 +138,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_e_ink_breakout_friend_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

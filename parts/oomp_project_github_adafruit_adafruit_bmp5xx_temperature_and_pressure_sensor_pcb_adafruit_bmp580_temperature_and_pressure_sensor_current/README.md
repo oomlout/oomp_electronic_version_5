@@ -84,7 +84,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | C6 | 1 | Capacitor 100 nF 0603 | 0.1uF | `0603-NO` | [`electronic_capacitor_0603_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad) |
 | CONN3, CONN4 | 2 | Connector JST Sh SM04B-SRSS-TB | STEMMA_I2C_QT | `JST_SH4` | [`electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_jst_sh_1_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_srss_tb) |
 | D1 | 1 | LED Green 0603 | GREEN | `CHIPLED_0603_NOOUTLINE` | [`electronic_led_0603_green`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_green) |
-| D2 | 1 | Diode Switching SOD-323 | 1N4148 | `SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
+| D2 | 1 | Diode 1N4148WS SOD-323 | 1N4148 | `SOD-323` | [`electronic_diode_switching_sod_323_onsemi_1n4148ws`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) |
 | IC1 | 1 | BMP580 | BMP580 | `BMP388` | unmatched |
 | JP1 | 1 | Connector Header PZ254V-12-8P |  | `1X08_ROUND_70` | [`electronic_connector_header_2_54_mm_pitch_through_hole_8_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_8_pin) |
 | PLABEL14 | 1 | PLABEL14 |  | `PLABEL14` | unmatched |

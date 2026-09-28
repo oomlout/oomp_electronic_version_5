@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_drv8871_breakout_pcb_adafruit_drv8871_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-DRV8871-Breakout-PCB Adafruit DRV8871 current is a KiCad project containing 26 extracted component records. The catalogue matcher linked 3 physical placements to OOMP parts.
+Project adafruit/Adafruit-DRV8871-Breakout-PCB Adafruit DRV8871 current is a KiCad project containing 26 extracted component records. The catalogue matcher linked 5 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-DRV8871-Breakout-PCB Adafruit DRV8871 current is a KiC
 | Mounting and locating holes | 6 |
 | Matched OOMP mounting-hole items | 2 |
 | Schematic symbols | 23 |
-| Matched OOMP components | 3 |
-| Unmatched physical components | 6 |
+| Matched OOMP components | 5 |
+| Unmatched physical components | 4 |
 | Front-side placements | 7 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -89,10 +89,10 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 0.1uF/50V | 0.1uF/50V | `Adafruit DRV8871-import-fps:0805-NO` | unmatched |
+| C1 | 1 | Capacitor 100 nF 0805 | 0.1uF/50V | `Adafruit DRV8871-import-fps:0805-NO` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | C2 | 1 | 22uF/63V | 22uF/63V | `Adafruit DRV8871-import-fps:PANASONIC_D` | unmatched |
 | JP2 | 1 | Connector Header PZ2.54-S04P-A60 |  | `Adafruit DRV8871-import-fps:1X04_ROUND_76` | [`electronic_connector_header_2_54_mm_pitch_through_hole_4_pin`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_4_pin) |
-| R1 | 1 | 30K | 30K | `Adafruit DRV8871-import-fps:0805-THM` | unmatched |
+| R1 | 1 | Resistor 30000 Ohm 0805 | 30K | `Adafruit DRV8871-import-fps:0805-THM` | [`electronic_resistor_0805_30000_ohm`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_30000_ohm) |
 | U1 | 1 | DRV8871 | DRV8871 | `Adafruit DRV8871-import-fps:HSOP8` | unmatched |
 | X1 | 1 | DCMOTOR | DCMOTOR | `Adafruit DRV8871-import-fps:TERMBLOCK_1X2-3.5MM` | unmatched |
 | X2 | 1 | POWER | POWER | `Adafruit DRV8871-import-fps:TERMBLOCK_1X2-3.5MM` | unmatched |
@@ -116,7 +116,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 6 physical component records are not yet matched to an OOMP part.
+- 4 physical component records are not yet matched to an OOMP part.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_drv8871_breakout_pcb_adafruit_drv8871_current/data/generated_data/lcsc_review.yaml)
 - Browser-only research and datasheet queue: [`browser_research_queue.md`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_drv8871_breakout_pcb_adafruit_drv8871_current/data/generated_data/browser_research_queue.md)
@@ -125,7 +125,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_drv8871_breakout_pcb_adafruit_drv8871_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 2
+- Matched OOMP source parts copied: 4
 
 ## Source files
 

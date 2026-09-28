@@ -16,8 +16,8 @@
     "component_count": 43,
     "schematic_symbol_count": 27,
     "pcb_footprint_count": 30,
-    "matched_component_count": 5,
-    "unmatched_physical_component_count": 23,
+    "matched_component_count": 7,
+    "unmatched_physical_component_count": 21,
     "non_physical_symbol_count": 15,
     "mounting_hole_count": 4,
     "dedicated_mounting_hole_count": 2,
@@ -6642,10 +6642,10 @@
         "incomplete_count": 1
       },
       "oomp": {
-        "status": "unmatched",
-        "accepted": false,
-        "oomp_id": null,
-        "confidence": 0.0,
+        "status": "matched",
+        "accepted": true,
+        "oomp_id": "electronic_capacitor_0603_4_7_nano_farad",
+        "confidence": 1.0,
         "proposed_oomp_id": "electronic_capacitor_0603_4_7_nano_farad",
         "inferred": {
           "kind": "capacitor",
@@ -6654,58 +6654,12 @@
           "mpn": null
         },
         "reasons": [
-          "The exact normalized component is not present in the OOMP parts directory."
+          "Exact OOMP ID constructed from component type, package size, and normalized value."
         ],
-        "candidates": [
-          {
-            "oomp_id": "electronic_capacitor_0603_2_2_nano_farad",
-            "score": 0.7667,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0603_47_pico_farad",
-            "score": 0.3716,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0603_27_pico_farad",
-            "score": 0.3702,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0603_470_pico_farad",
-            "score": 0.3697,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0603_33_pico_farad",
-            "score": 0.369,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          }
-        ]
+        "candidates": []
       },
       "category": "capacitor",
-      "category_source": "unmatched_kicad_hint",
+      "category_source": "oomp_populate",
       "category_name": "Capacitor",
       "generated_directory": "components/C1"
     },
@@ -8785,10 +8739,10 @@
         "incomplete_count": 2
       },
       "oomp": {
-        "status": "unmatched",
-        "accepted": false,
-        "oomp_id": null,
-        "confidence": 0.0,
+        "status": "matched",
+        "accepted": true,
+        "oomp_id": "electronic_capacitor_0805_1_micro_farad",
+        "confidence": 1.0,
         "proposed_oomp_id": "electronic_capacitor_0805_1_micro_farad",
         "inferred": {
           "kind": "capacitor",
@@ -8797,54 +8751,12 @@
           "mpn": null
         },
         "reasons": [
-          "The exact normalized component is not present in the OOMP parts directory."
+          "Exact OOMP ID constructed from component type, package size, and normalized value."
         ],
-        "candidates": [
-          {
-            "oomp_id": "electronic_capacitor_0603_10_nano_farad",
-            "score": 0.5886,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0603_100_nano_farad",
-            "score": 0.588,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0805_4_7_micro_farad",
-            "score": 0.527,
-            "reasons": [
-              "same component family",
-              "same package size",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0402_2_2_micro_farad",
-            "score": 0.5053,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_capacitor_0603_2_2_micro_farad",
-            "score": 0.5053,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          }
-        ]
+        "candidates": []
       },
       "category": "capacitor",
-      "category_source": "unmatched_kicad_hint",
+      "category_source": "oomp_populate",
       "category_name": "Capacitor",
       "generated_directory": "components/C18"
     },
@@ -16763,6 +16675,15 @@
         ],
         "candidates": [
           {
+            "oomp_id": "electronic_resistor_0603_49_9_ohm",
+            "score": 0.9393,
+            "reasons": [
+              "same component family",
+              "same package size",
+              "nearby normalized value"
+            ]
+          },
+          {
             "oomp_id": "electronic_resistor_quarter_watt_through_hole_56_ohm",
             "score": 0.7091,
             "reasons": [
@@ -16779,24 +16700,16 @@
             ]
           },
           {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_75_ohm",
-            "score": 0.6623,
+            "oomp_id": "electronic_resistor_0402_49_9_ohm",
+            "score": 0.6862,
             "reasons": [
               "same component family",
               "nearby normalized value"
             ]
           },
           {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_47_ohm",
-            "score": 0.6559,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_82_ohm",
-            "score": 0.6352,
+            "oomp_id": "electronic_resistor_0805_49_9_ohm",
+            "score": 0.6862,
             "reasons": [
               "same component family",
               "nearby normalized value"
@@ -17403,6 +17316,15 @@
         ],
         "candidates": [
           {
+            "oomp_id": "electronic_resistor_0603_49_9_ohm",
+            "score": 0.9393,
+            "reasons": [
+              "same component family",
+              "same package size",
+              "nearby normalized value"
+            ]
+          },
+          {
             "oomp_id": "electronic_resistor_quarter_watt_through_hole_56_ohm",
             "score": 0.7091,
             "reasons": [
@@ -17419,24 +17341,16 @@
             ]
           },
           {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_75_ohm",
-            "score": 0.6623,
+            "oomp_id": "electronic_resistor_0402_49_9_ohm",
+            "score": 0.6862,
             "reasons": [
               "same component family",
               "nearby normalized value"
             ]
           },
           {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_47_ohm",
-            "score": 0.6559,
-            "reasons": [
-              "same component family",
-              "nearby normalized value"
-            ]
-          },
-          {
-            "oomp_id": "electronic_resistor_quarter_watt_through_hole_82_ohm",
-            "score": 0.6352,
+            "oomp_id": "electronic_resistor_0805_49_9_ohm",
+            "score": 0.6862,
             "reasons": [
               "same component family",
               "nearby normalized value"

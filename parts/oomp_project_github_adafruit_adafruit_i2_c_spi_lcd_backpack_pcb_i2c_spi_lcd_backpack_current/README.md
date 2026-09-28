@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_i2_c_spi_lcd_backpack_pcb_i2c_spi_lcd_backpack_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB I2C SPI LCD Backpack current is a KiCad project containing 45 extracted component records. The catalogue matcher linked 8 physical placements to OOMP parts.
+Project adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB I2C SPI LCD Backpack current is a KiCad project containing 45 extracted component records. The catalogue matcher linked 9 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-I2C-SPI-LCD-Backpack-PCB I2C SPI LCD Backpack current 
 | Mounting and locating holes | 1 |
 | Matched OOMP mounting-hole items | 0 |
 | Schematic symbols | 45 |
-| Matched OOMP components | 8 |
-| Unmatched physical components | 12 |
+| Matched OOMP components | 9 |
+| Unmatched physical components | 11 |
 | Front-side placements | 19 |
 | Back-side placements | 0 |
 | Project version | `current` |
@@ -81,7 +81,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 | --- | ---: | --- | --- | --- | --- |
 | A0, A1, A2, SPI0 | 4 | i2cspilcdbackpack-import-fps:SJ |  | `i2cspilcdbackpack-import-fps:SJ` | unmatched |
 | C1 | 1 | 10uF | 10uF | `i2cspilcdbackpack-import-fps:A_3216-18R` | unmatched |
-| C2 | 1 | 0.1uF | 0.1uF | `i2cspilcdbackpack-import-fps:C0805K` | unmatched |
+| C2 | 1 | Capacitor 100 nF 0805 | 0.1uF | `i2cspilcdbackpack-import-fps:C0805K` | [`electronic_capacitor_0805_100_nano_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) |
 | CONTRAST0 | 1 | 10K | 10K | `i2cspilcdbackpack-import-fps:TC33X` | unmatched |
 | IC1 | 1 | MCP2300X/SO | MCP2300X/SO | `i2cspilcdbackpack-import-fps:SO18W` | unmatched |
 | IC2 | 1 | 74LS595D | 74LS595D | `i2cspilcdbackpack-import-fps:SO16` | unmatched |
@@ -122,7 +122,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 12 physical component records are not yet matched to an OOMP part.
+- 11 physical component records are not yet matched to an OOMP part.
 - The extractor reports 5 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_i2_c_spi_lcd_backpack_pcb_i2c_spi_lcd_backpack_current/data/generated_data/lcsc_review.yaml)
@@ -132,7 +132,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_i2_c_spi_lcd_backpack_pcb_i2c_spi_lcd_backpack_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 3
+- Matched OOMP source parts copied: 4
 
 ## Source files
 

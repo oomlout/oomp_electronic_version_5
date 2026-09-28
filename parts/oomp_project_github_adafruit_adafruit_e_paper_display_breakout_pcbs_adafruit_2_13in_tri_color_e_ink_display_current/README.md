@@ -8,7 +8,7 @@
 
 ![PCB component placement](https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_13in_tri_color_e_ink_display_current/data/generated_data/src/board_300.png)
 
-Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.13in Tri Color e Ink Display current is a KiCad project containing 72 extracted component records. The catalogue matcher linked 14 physical placements to OOMP parts.
+Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.13in Tri Color e Ink Display current is a KiCad project containing 72 extracted component records. The catalogue matcher linked 21 physical placements to OOMP parts.
 
 ## Project snapshot
 
@@ -19,8 +19,8 @@ Project adafruit/Adafruit-E-Paper-Display-Breakout-PCBs Adafruit 2.13in Tri Colo
 | Mounting and locating holes | 4 |
 | Matched OOMP mounting-hole items | 4 |
 | Schematic symbols | 72 |
-| Matched OOMP components | 14 |
-| Unmatched physical components | 20 |
+| Matched OOMP components | 21 |
+| Unmatched physical components | 13 |
 | Front-side placements | 29 |
 | Back-side placements | 1 |
 | Project version | `current` |
@@ -82,9 +82,9 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 | References | Quantity | Description | Value | Footprint | OOMP part |
 | --- | ---: | --- | --- | --- | --- |
-| C1 | 1 | 1uF | 1uF | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805_10MGAP` | unmatched |
-| C2, C6 | 2 | 1uF/10V | 1uF/10V | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805-NO` | unmatched |
-| C3, C4, C22, C23 | 4 | 1uF/25V | 1uF/25V | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805-NO` | unmatched |
+| C1 | 1 | Capacitor 1 uF 0805 | 1uF | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805_10MGAP` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C2, C6 | 2 | Capacitor 1 uF 0805 | 1uF/10V | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
+| C3, C4, C22, C23 | 4 | Capacitor 1 uF 0805 | 1uF/25V | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805-NO` | [`electronic_capacitor_0805_1_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) |
 | C5 | 1 | Capacitor 4.7 uF 0805 | 4.7uF/25V | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805-NO` | [`electronic_capacitor_0805_4_7_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_4_7_micro_farad) |
 | C15 | 1 | Capacitor 10 uF 0805 | 10uF/10V+ | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805-NO` | [`electronic_capacitor_0805_10_micro_farad`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) |
 | C16 | 1 | VSH2 | VSH2 | `Adafruit 2.13in Tri-Color eInk Display-import-fps:0805-NO` | unmatched |
@@ -134,7 +134,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 ## Review notes
 
-- 20 physical component records are not yet matched to an OOMP part.
+- 13 physical component records are not yet matched to an OOMP part.
 - The extractor reports 5 named-net comparisons that differ between schematic and PCB data.
 
 - Part identities needing a manufacturer/LCSC decision: [`lcsc_review.yaml`](https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_13in_tri_color_e_ink_display_current/data/generated_data/lcsc_review.yaml)
@@ -144,7 +144,7 @@ The table uses a board-relative origin at the minimum X/Y point of `Edge.Cuts`. 
 
 - Project image assets: [`data/generated_data/src`](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/oomp_project_github_adafruit_adafruit_e_paper_display_breakout_pcbs_adafruit_2_13in_tri_color_e_ink_display_current/data/generated_data/src)
 - Copied component source manifest: `data/project_source/manifest.yaml` (generated locally and ignored by Git)
-- Matched OOMP source parts copied: 5
+- Matched OOMP source parts copied: 6
 
 ## Source files
 

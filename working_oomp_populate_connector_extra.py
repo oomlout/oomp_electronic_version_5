@@ -1247,9 +1247,39 @@ def main(**kwargs):
         part["product_url"] = "https://www.lcsc.com/product-detail/C2337.html"
         part["part_numbers_lcsc"] = [
             {"part_number": "C2337", "product_name": "40P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2337.html"},
-            {"part_number": "C2334", "product_name": "Pin Header 40 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C2334.html"},
             {"part_number": "C9742", "product_name": "Pin Header 40 Position 2.54mm Pitch Single Row Through Hole -55℃~+105℃", "url": "https://www.lcsc.com/product-detail/C9742.html"},
         ]
         part["research_notes"] = [
             "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 84990 in stock at capture."
         ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_short_pin_40_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "BOOMELE(Boom Precision Elec)"
+        part["part_number_manufacturer"] = "2.54-1*40PStraight Bent Pin"
+        part["part_numbers_manufacturer"] = [
+            {"manufacturer": "BOOMELE(Boom Precision Elec)", "part_number": "2.54-1*40PStraight Bent Pin"}
+        ]
+        part["part_number_lcsc"] = "C2334"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2334.html"
+        part["part_numbers_lcsc"] = [
+            {
+                "part_number": "C2334",
+                "product_name": "BOOMELE 40-position 2.54mm single-row through-hole right-angle header",
+                "url": "https://www.lcsc.com/product-detail/C2334.html",
+            }
+        ]
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887122115760129-C2334.pdf"
+        part["dimension_reference"]["datasheet_url"] = part["datasheet_url"]
+        part["dimension_reference"]["document"] = "JLCPCB C2334 / BOOMELE 2.54-1*40PStraight Bent Pin drawing, PZ2.54-1xNAW-ZW"
+        part["dimension_reference"]["notes"] = (
+            "The JLC drawing shows a 40-position 2.54 mm right-angle header with a 6.00±0.2 mm projecting leg and a 3.0±0.2 mm PCB tail. "
+            "The short PCB leg sits on the plastic-body side, matching the existing short-pin taxonomy. JLC/LCSC also label Length of Mating Pin as 3mm; that listing field is retained verbatim in intake evidence."
+        )
+        part["research_notes"] = [
+            "Verified 2026-09-27 against the live JLCPCB C2334 page and same-code LCSC C2334 listing; both identify the BOOMELE 40-position, 2.54mm-pitch, single-row through-hole right-angle header."
+        ]
+
+    from working_oomp_populate_jlc import apply_reviewed_jlc_choices
+    apply_reviewed_jlc_choices(extras_dict, family="connector")
