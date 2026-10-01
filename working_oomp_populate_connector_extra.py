@@ -253,6 +253,162 @@ def _apply_254_triple_header_references(extras_dict):
         part["research_notes"] = notes
 
 
+def _screw_terminal_package_drawing(pitch, positions, wire_protector):
+    """Top view of a 1xN screw terminal: body, screw circles, bottom pins."""
+    if wire_protector:
+        # 4UCON 1406 / wire-protector bodies stand ~10 mm with a wider skirt.
+        body = [positions * pitch - 0.5, 10.2]
+        overall = [positions * pitch + 0.5, 10.8]
+        pin_y, pin_h, circle_r = -4.6, 0.9, 1.2
+    else:
+        # Matches the built 3-pin exemplar (LCSC C695629 DORABO DB301V style):
+        # 10.4 x 7.4 body, 11.0 x 8.0 overall for three positions.
+        body = [positions * pitch - 0.1, 7.4]
+        overall = [positions * pitch + 0.5, 8.0]
+        pin_y, pin_h, circle_r = -3.55, 0.8, 1.0
+    row_start = -((positions - 1) * pitch) / 2
+    return {
+        "overall": overall,
+        "body": body,
+        "circles": [
+            [row_start + index * pitch, 0.0, circle_r]
+            for index in range(positions)
+        ],
+        "pins": [
+            [str(index + 1), "bottom", row_start + index * pitch, pin_y, 1.2, pin_h]
+            for index in range(positions)
+        ],
+        "pin_one": [row_start, pin_y],
+    }
+
+
+def _wire_screw_terminal_blocks(extras_dict):
+    """Wire every 3.5/5.0 mm through-hole terminal block with pins, a
+    parametric top-view drawing and verified KiCad symbol/footprint masters.
+
+    Sources: LCSC C695629 (DORABO DB301V-3.5-2P-GN-S, green 2P 3.5 mm) and
+    the DORABO/exemplar screw-terminal style for the 3.5 mm generics; 4UCON
+    series 1443 (3.5 mm rising clamp DIP 180, green, H=8.5 mm, items
+    19696-19718 = 2-24P) and 1406 (5.0 mm wire protector, DIP 180, blue
+    H=10 mm blue-family items 19866/20018/17570/19935/17581-17599 = 2-24P);
+    both checked on 4uconnector.com 2026-10-01.  KiCad masters: symbols
+    Connector:Screw_Terminal_01xNN (2-20), footprints
+    TerminalBlock_4Ucon:..._1xNN_P3.50mm_Vertical (2-15) and
+    TerminalBlock_Phoenix:..._PT-1,5-NN-5.0-H_1xNN_P5.00mm_Horizontal (2-16).
+    """
+    for current, part in extras_dict.items():
+        if not isinstance(part, dict):
+            continue
+        taxonomy = part.get("taxonomy", {})
+        if not isinstance(taxonomy, dict):
+            taxonomy = {}
+        if (
+            str(part.get("taxonomy_2", taxonomy.get("taxonomy_2", ""))) != "connector"
+            or str(part.get("taxonomy_3", taxonomy.get("taxonomy_3", ""))) != "terminal_block"
+        ):
+            continue
+        pitch_text = str(part.get("taxonomy_4", taxonomy.get("taxonomy_4", "")))
+        if pitch_text not in ("3_5_mm_pitch", "5_mm_pitch"):
+            continue
+        mounting = str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", "")))
+        if mounting != "through_hole":
+            continue
+        taxonomy_6 = str(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        digits = "".join(character for character in taxonomy_6 if character.isdigit())
+        if not digits:
+            continue
+        positions = int(digits)
+        pitch = 3.5 if pitch_text == "3_5_mm_pitch" else 5.0
+        manufacturer = str(part.get("taxonomy_14", taxonomy.get("taxonomy_14", "")))
+        item_no = str(part.get("taxonomy_15", taxonomy.get("taxonomy_15", "")))
+        is_4ucon = manufacturer == "4ucon_technology"
+        color = ""
+        taxonomy_7 = str(part.get("taxonomy_7", taxonomy.get("taxonomy_7", "")))
+        if taxonomy_7 in ("blue", "green"):
+            color = taxonomy_7
+
+        part["pins"] = {
+            f"pin_{index}": {"number": str(index), "name": str(index), "type": "passive"}
+            for index in range(1, positions + 1)
+        }
+        part["package_drawing"] = _screw_terminal_package_drawing(
+            pitch, positions, wire_protector=(pitch_text == "5_mm_pitch")
+        )
+        part["connector_dimensions_mm"] = {
+            "pitch": pitch,
+            "positions": positions,
+            "rows": 1,
+            "termination": "through_hole",
+            "wire_protector": pitch_text == "5_mm_pitch",
+        }
+        dimension_notes = (
+            "Top view follows the built 3-pin exemplar style: body length "
+            "positions x pitch with chamfered screw circles at every position "
+            "and the pin row on the board side. Nominal drawing dimensions."
+        )
+        if is_4ucon:
+            part["manufacturer"] = "4UCON Technology"
+            part["part_number_manufacturer"] = item_no
+            part["product_url"] = "http://www.4uconnector.com/online/itemagrid.asp"
+
+        # KiCad masters: schematic symbols exist for 2-20 positions;
+        # footprints: 4Ucon 3.5 mm vertical 2-15, Phoenix PT-1,5 5.0 mm
+        # horizontal 2-16.  Beyond those ranges the gap is documented rather
+        # than filled with a mismatched master.
+        symbol = ""
+        machine = ""
+        if 2 <= positions <= 20:
+            symbol = "Connector:Screw_Terminal_01x%02d" % positions
+        if pitch_text == "3_5_mm_pitch" and 2 <= positions <= 15:
+            machine = "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x%02d_P3.50mm_Vertical" % positions
+        if pitch_text == "5_mm_pitch" and 2 <= positions <= 16:
+            machine = "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-%d-5.0-H_1x%02d_P5.00mm_Horizontal" % (positions, positions)
+        # Through-hole terminal blocks are hand-solderable on the same
+        # master; no separate HandSolder variant exists to enlarge.
+        part["kicad"] = {
+            "symbol": symbol,
+            "machine_solder": machine,
+            "hand_solder": machine,
+            "allow_project_fallback": False,
+        }
+
+        if pitch_text == "3_5_mm_pitch":
+            notes = ["3.5 mm screw-terminal style anchored on LCSC C695629 (DORABO DB301V-3.5-2P-GN-S, 2-position green); the generic family covers the stock lengths in this style."]
+        else:
+            notes = ["5.0 mm wire-protector screw-terminal style anchored on the 4UCON 1406 series (DIP 180 degrees, H=10 mm, blue insulator); the generic family covers the standard lengths in this style."]
+        if color:
+            notes.append("Insulator color variant: %s." % color)
+        if is_4ucon:
+            series = "1443" if pitch_text == "3_5_mm_pitch" else "1406"
+            color_word = "green" if pitch_text == "3_5_mm_pitch" else "blue"
+            notes.append(
+                "4UCON series %s item %s = %dP (%s insulator; 4uconnector.com listing checked 2026-10-01)."
+                % (series, item_no, positions, color_word)
+            )
+        if machine == "":
+            gap_note = (
+                "No official KiCad footprint master exists for this position "
+                "count (TerminalBlock_4Ucon covers 2-15 at 3.5 mm; "
+                "TerminalBlock_Phoenix PT-1,5 covers 2-16 at 5.0 mm), so no "
+                "footprint is claimed; the schematic symbol is retained "
+                "where available."
+            )
+            if symbol == "":
+                gap_note += " No schematic symbol exists above 20 positions either."
+            notes.append(gap_note)
+        notes.append(dimension_notes)
+        part["research_notes"] = notes
+        part["dimension_reference"] = {
+            "document": (
+                "4UCON series 1443/1406 drawings and the built 3-pin exemplar "
+                "(LCSC C695629 style)" if is_4ucon else
+                "LCSC C695629 (DORABO DB301V-3.5-2P-GN-S) and the built 3-pin exemplar"
+            ),
+            "pages": [],
+            "notes": dimension_notes,
+        }
+
+
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
 
@@ -262,6 +418,7 @@ def main(**kwargs):
     _fix_254_header_package_drawings(extras_dict)
     _apply_254_straight_header_references(extras_dict)
     _apply_254_triple_header_references(extras_dict)
+    _wire_screw_terminal_blocks(extras_dict)
 
     current = "electronic_connector_header_2_54_mm_pitch_surface_mount_dual_row_6_pin_wurth_electronics_61030621121"
     if current in extras_dict:

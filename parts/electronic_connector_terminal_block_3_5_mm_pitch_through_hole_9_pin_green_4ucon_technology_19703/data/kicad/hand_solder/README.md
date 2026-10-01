@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_connector_terminal_block_3_5_mm_pitch_through_hole_9_pin_green_4ucon_technology_19703](electronic_connector_terminal_block_3_5_mm_pitch_through_hole_9_pin_green_4ucon_technology_19703.kicad_mod)
+
+Source: `TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x09_P3.50mm_Vertical`. [License](../LICENSE.md).

@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_connector_terminal_block_3_5_mm_pitch_through_hole_8_pin_green_screw_terminal_1x08_p3_5_mm_green](electronic_connector_terminal_block_3_5_mm_pitch_through_hole_8_pin_green_screw_terminal_1x08_p3_5_mm_green.kicad_mod)
+
+Source: `TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x08_P3.50mm_Vertical`. [License](../LICENSE.md).

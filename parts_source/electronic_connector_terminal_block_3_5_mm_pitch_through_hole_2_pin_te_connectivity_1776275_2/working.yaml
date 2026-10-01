@@ -6,14 +6,21 @@ connector_dimensions_mm:
   pitch: 3.5
   positions: 2
 datasheet_url: https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=CustomerDrawing%7F1776275%7Fpdf%7FEnglish%7FENG_CD_1776275-2.pdf%7F1776275-2
+dimension_reference:
+  document: LCSC C695629 (DORABO DB301V-3.5-2P-GN-S) and the built 3-pin exemplar
+  notes: 'Top view follows the built 3-pin exemplar style: body length positions x
+    pitch with chamfered screw circles at every position and the pin row on the board
+    side. Nominal drawing dimensions.'
+  pages: []
 dimensions_mm:
   length: 10.0
   width: 5.0
 distributors: []
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical
+  machine_solder: TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical
+  symbol: Connector:Screw_Terminal_01x02
 lcsc_search: 1776275-2
 manufacturer: TE Connectivity
 manufacturers:
@@ -47,6 +54,21 @@ package_drawing:
     - 1.4
 part_id: J1
 part_number_manufacturer: 1776275-2
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+research_notes:
+- 3.5 mm screw-terminal style anchored on LCSC C695629 (DORABO DB301V-3.5-2P-GN-S,
+  2-position green); the generic family covers the stock lengths in this style.
+- 'Top view follows the built 3-pin exemplar style: body length positions x pitch
+  with chamfered screw circles at every position and the pin row on the board side.
+  Nominal drawing dimensions.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

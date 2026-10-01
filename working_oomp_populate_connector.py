@@ -76,6 +76,69 @@ def main(**kwargs):
             "part_number": "screw_terminal_1x03_p3_5_mm",
             "name_short": "3.5 mm 3-Pin Screw Terminal",
         },
+        # 3.5 mm screw-terminal family in the remaining stock lengths (LCSC
+        # C695629 DORABO DB301V-3.5-2P-GN-S style, 2P/3P on LCSC; KiCad
+        # TerminalBlock_4Ucon masters cover 1x02..1x15).
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "2_pin",
+            "part_number": "screw_terminal_1x02_p3_5_mm",
+            "name_short": "3.5 mm 2-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "4_pin",
+            "part_number": "screw_terminal_1x04_p3_5_mm",
+            "name_short": "3.5 mm 4-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "5_pin",
+            "part_number": "screw_terminal_1x05_p3_5_mm",
+            "name_short": "3.5 mm 5-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "6_pin",
+            "part_number": "screw_terminal_1x06_p3_5_mm",
+            "name_short": "3.5 mm 6-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "7_pin",
+            "part_number": "screw_terminal_1x07_p3_5_mm",
+            "name_short": "3.5 mm 7-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "8_pin",
+            "part_number": "screw_terminal_1x08_p3_5_mm",
+            "name_short": "3.5 mm 8-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "9_pin",
+            "part_number": "screw_terminal_1x09_p3_5_mm",
+            "name_short": "3.5 mm 9-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "10_pin",
+            "part_number": "screw_terminal_1x10_p3_5_mm",
+            "name_short": "3.5 mm 10-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "11_pin",
+            "part_number": "screw_terminal_1x11_p3_5_mm",
+            "name_short": "3.5 mm 11-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "12_pin",
+            "part_number": "screw_terminal_1x12_p3_5_mm",
+            "name_short": "3.5 mm 12-Pin Screw Terminal",
+        },
         {
             "type": "gnss_header", "pitch": "2_mm_pitch",
             "mounting": "surface_mount", "pins": "20_pin",
@@ -89,6 +152,27 @@ def main(**kwargs):
             "name_short": "IPX-to-SMA RF Cable Assembly",
         },
     ]
+    # 3.5 mm screw-terminal blue/green color variants (LCSC C695629 DORABO
+    # DB301V style carries green/blue insulator options; generic tokens).
+    for pin_count in range(2, 13):
+        for color, color_name in (("blue", "Blue"), ("green", "Green")):
+            unmatched_connectors.append({
+                "type": "terminal_block", "pitch": "3_5_mm_pitch",
+                "mounting": "through_hole", "pins": f"{pin_count}_pin",
+                "style": color,
+                "part_number": f"screw_terminal_1x{pin_count:02d}_p3_5_mm_{color}",
+                "name_short": f"3.5 mm {pin_count}-Pin Screw Terminal ({color_name})",
+            })
+    # 5.0 mm wire-protector screw terminals (4UCON 1406 series style,
+    # DIP 180 degrees, blue insulator; Phoenix PT-1,5 5.0 mm masters).
+    for pin_count in range(2, 13):
+        unmatched_connectors.append({
+            "type": "terminal_block", "pitch": "5_mm_pitch",
+            "mounting": "through_hole", "pins": f"{pin_count}_pin",
+            "part_number": f"screw_terminal_1x{pin_count:02d}_p5_mm",
+            "name_short": f"5 mm {pin_count}-Pin Screw Terminal",
+        })
+
     for connector in unmatched_connectors:
         option = {
             "taxonomy_2": "connector",
@@ -578,6 +662,49 @@ def main(**kwargs):
                         option["taxonomy_14"] = manufacturer
                         option["taxonomy_15"] = part_number
                         options.append(option)
+
+    # 4UCON 1443 series: 3.5 mm terminal block, rising clamp, DIP 180
+    # degrees (vertical), H=8.5 mm, green.  Item numbers 19696-19718 map to
+    # 2-24 positions (4uconnector.com series listing, checked 2026-10-01).
+    # KiCad TerminalBlock_4Ucon 1xNN_P3.50mm_Vertical masters cover 2-15;
+    # 16P and above keep the row with the footprint gap documented in
+    # working_oomp_populate_connector_extra.py.
+    ucon_1443 = {
+        2: "19696", 3: "19697", 4: "19698", 5: "19699", 6: "19700",
+        7: "19701", 8: "19702", 9: "19703", 10: "19704", 11: "19705",
+        12: "19706", 13: "19707", 14: "19708", 15: "19709", 16: "19710",
+        17: "19711", 18: "19712", 19: "19713", 20: "19714", 21: "19715",
+        22: "19716", 23: "19717", 24: "19718",
+    }
+    for pin_count, item_no in sorted(ucon_1443.items()):
+        options.append({
+            "taxonomy_2": "connector", "taxonomy_3": "terminal_block",
+            "taxonomy_4": "3_5_mm_pitch", "taxonomy_5": "through_hole",
+            "taxonomy_6": f"{pin_count}_pin", "taxonomy_7": "green",
+            "taxonomy_14": "4ucon_technology", "taxonomy_15": item_no,
+            "name_short": f"4UCON 1443 3.5 mm {pin_count}-Pin Terminal Block (Green)",
+        })
+
+    # 4UCON 1406 series: 5.0 mm terminal block, wire protector type, DIP 180
+    # degrees (vertical), H=10 mm, blue insulator.  Item numbers for the
+    # consistent blue 2-24 position family (4uconnector.com series listing,
+    # checked 2026-10-01).  KiCad TerminalBlock_Phoenix PT-1,5 5.0 mm
+    # masters cover 2-16; above that the gap is documented in the extras.
+    ucon_1406 = {
+        2: "19866", 3: "20018", 4: "17570", 5: "19935", 6: "17581",
+        7: "17582", 8: "19936", 9: "17584", 10: "17585", 11: "17586",
+        12: "17587", 13: "17588", 14: "17589", 15: "17590", 16: "17591",
+        17: "17592", 18: "17593", 19: "17594", 20: "17595", 21: "17596",
+        22: "17597", 23: "17598", 24: "17599",
+    }
+    for pin_count, item_no in sorted(ucon_1406.items()):
+        options.append({
+            "taxonomy_2": "connector", "taxonomy_3": "terminal_block",
+            "taxonomy_4": "5_mm_pitch", "taxonomy_5": "through_hole",
+            "taxonomy_6": f"{pin_count}_pin", "taxonomy_7": "blue",
+            "taxonomy_14": "4ucon_technology", "taxonomy_15": item_no,
+            "name_short": f"4UCON 1406 5 mm {pin_count}-Pin Wire Protector Terminal Block (Blue)",
+        })
 
 
 if __name__ == "__main__":
