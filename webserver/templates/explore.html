@@ -24,6 +24,17 @@
           autocomplete="off"
         >
       </div>
+      <fieldset class="search-field-selector" id="tier-filter">
+        <legend class="search-field-selector__legend">JLCPCB library</legend>
+        <input type="hidden" name="tier_filter" value="1">
+        {% for value, label in tier_options %}
+          <label class="search-field-chip">
+            <input type="checkbox" name="tier" value="{{ value }}" {% if value in selected_tiers %}checked{% endif %}>
+            <span class="search-field-chip__label">{{ label }}</span>
+          </label>
+        {% endfor %}
+        <span class="field__help">Extended includes Preferred Extended. Unclassified has no recorded tier.</span>
+      </fieldset>
       <fieldset class="search-field-selector" id="search-field-selector">
         <legend class="search-field-selector__legend">Search in</legend>
         {% for field in search_field_options %}
@@ -110,7 +121,7 @@
 
   <section class="results-shell">
     <div id="explore-empty" class="empty-state{% if parts %} is-hidden{% endif %}">
-      No parts match the current taxonomy path and search query.
+      No parts match the current library filters, taxonomy path and search query.
     </div>
 
     <div class="results-list" id="parts-list">
@@ -134,7 +145,7 @@
                 <img
                   class="result-row__image"
                   src="{{ part_image_url(part.id, part.preview_file, preset='explore_thumb') }}"
-                  srcset="{{ part_image_url(part.id, part.preview_file, width=108, height=108) }} 1x, {{ part_image_url(part.id, part.preview_file, width=216, height=216) }} 2x"
+                  srcset="{{ part_image_url(part.id, part.preview_file, width=108, height=108, fit='contain') }} 1x, {{ part_image_url(part.id, part.preview_file, width=216, height=216, fit='contain') }} 2x"
                   sizes="54px"
                   alt="{{ part.name }}"
                   width="108"
@@ -153,8 +164,15 @@
               <a href="{{ url_for('parts.part_detail', part_id=part.id) }}">{{ part.name }}</a>
             </h3>
             <p class="result-row__id">{{ part.id }}</p>
+            {% if part.component.manufacturer or part.component.mpn %}
+              <p class="result-row__supplier">{{ part.component.manufacturer }} · <strong>{{ part.component.mpn }}</strong></p>
+            {% endif %}
             <p class="result-row__taxonomy">{{ part.taxonomy_breadcrumb or "No taxonomy path yet" }}</p>
             <div class="meta-pill-row result-row__meta">
+              <span class="meta-pill meta-pill--{{ part.component.tier }}">{{ part.component.tier_label }}</span>
+              {% for link in part.component.links if link.label in ['LCSC', 'JLCPCB'] %}
+                <a class="meta-pill" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }} {{ link.value }}</a>
+              {% endfor %}
               <span class="meta-pill meta-pill--images">{{ part.image_count }} images</span>
               <span class="meta-pill meta-pill--files">{{ part.file_count }} files</span>
               <span class="meta-pill">{{ part.source_label }}</span>

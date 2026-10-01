@@ -30,7 +30,18 @@ bip_39_full_space: walnut magic deposit hero fire ginger method erase avoid hors
 bip_39_full_underscore: walnut_magic_deposit_hero_fire_ginger_method_erase_avoid_horse_dentist_equal
 category: inductor
 category_name: Inductor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8755216271270907904-C1046.pdf
+dimension_reference:
+  document: Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue, rev. 2025/5/23
+  notes: 'SDFL2012 [0805] row: L 2.0 (+0.3/-0.1) mm, W 1.25+-0.2 mm, T 0.85+-0.2 mm,
+    terminal width a 0.5+-0.3 mm. SDFL2012 Series table (page 4) lists SDFL2012S100
+    TF: 10 uH, min Q 50 at 2 MHz, min SRF 24 MHz, DCR max 1.15 ohm, rated current
+    max 15 mA.'
+  pages:
+  - 1
+  - 4
 dimensions_mm:
+  height: 0.85
   length: 2.0
   width: 1.25
 directory: parts/electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
@@ -43,6 +54,19 @@ distributors:
   part_number: C1046
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046
+electrical:
+  hazardous_substance_free: true
+  inductance: 10 uH
+  inductance_tolerance: +-10%
+  maximum_dc_resistance: 1.15 ohm
+  maximum_rated_current: 15 mA
+  minimum_q: '50'
+  minimum_self_resonant_frequency: 24 MHz
+  operating_temperature: -40 to +85 C
+  q_test_frequency: 2 MHz
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf/datasheet.pdf
 id: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
 id_no_class: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
 id_no_size: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
@@ -50,12 +74,23 @@ id_no_type: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
 jlcpcb_selection:
   compatibility_notes: 'Exact inductor identity: added one explicit family row electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf.
     Multilayer 0805 10 uH chip inductor, 15 mA rated, DCR 1.15 ohm, Q 50 at 2 MHz,
-    +/-10%; ratings are purchasing-choice facts for this SKU.'
-  datasheet_pages: []
-  footprint_checked: false
+    +/-10%; ratings are purchasing-choice facts for this SKU. Full-pass datasheet
+    evidence confirms the identity and ratings.'
+  datasheet_pages:
+    dimensions:
+    - 1
+    document: Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue, rev.
+      2025/5/23
+    electrical_characteristics:
+    - 4
+    ordering_coverage:
+    - 1
+    pin_connections:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Current Rating: 15mA
@@ -68,12 +103,24 @@ jlcpcb_selection:
   stock_observed: 139159
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-01'
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    data/working_svg_assembly_pins.png and _300 preview: 0805 chip with terminal_1
+    on the left and terminal_2 on the right with drawn end terminations, non-polarized
+    symmetric body, no mirroring, no label overlap, no cropping. working_svg_square_pins.png
+    hero titled Inductor SDFL2012S100KTF 0805 with terminal_1 left and terminal_2
+    right. working_svg_dimensioned.png: 2.0 x 1.25 mm body with end terminations and
+    arrows, matching the Sunlord SDFL2012 nominals. data/kicad manifest complete with
+    Device:L symbol and Inductor_SMD:L_0805_2012Metric machine + Pad1.05x1.20mm_HandSolder
+    hand footprints (same masters verified for the 0805 bead C1015). README.md: SDFL2012S100KTF
+    part number, LCSC/JLC C1046 links, pin table, datasheet link resolving to data/datasheet.pdf
+    (2.9 MB SDFL series catalogue). Limitation: KiCad symbol/footprint checked as
+    rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder
+  machine_solder: Inductor_SMD:L_0805_2012Metric
+  symbol: Device:L
 lcsc_search: 0805 10uH
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
@@ -112,6 +159,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -201,7 +258,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -209,7 +280,19 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: inductor
       category_name: Inductor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8755216271270907904-C1046.pdf
+      dimension_reference:
+        document: Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue,
+          rev. 2025/5/23
+        notes: 'SDFL2012 [0805] row: L 2.0 (+0.3/-0.1) mm, W 1.25+-0.2 mm, T 0.85+-0.2
+          mm, terminal width a 0.5+-0.3 mm. SDFL2012 Series table (page 4) lists SDFL2012S100
+          TF: 10 uH, min Q 50 at 2 MHz, min SRF 24 MHz, DCR max 1.15 ohm, rated current
+          max 15 mA.'
+        pages:
+        - 1
+        - 4
       dimensions_mm:
+        height: 0.85
         length: 2.0
         width: 1.25
       directory: parts\electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
@@ -222,16 +305,40 @@ oomlout_ai_roboclick_3:
         part_number: C1046
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046
+      electrical:
+        hazardous_substance_free: true
+        inductance: 10 uH
+        inductance_tolerance: +-10%
+        maximum_dc_resistance: 1.15 ohm
+        maximum_rated_current: 15 mA
+        minimum_q: '50'
+        minimum_self_resonant_frequency: 24 MHz
+        operating_temperature: -40 to +85 C
+        q_test_frequency: 2 MHz
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact inductor identity: added one explicit family row
           electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf. Multilayer
           0805 10 uH chip inductor, 15 mA rated, DCR 1.15 ohm, Q 50 at 2 MHz, +/-10%;
-          ratings are purchasing-choice facts for this SKU.'
-        datasheet_pages: []
-        footprint_checked: false
+          ratings are purchasing-choice facts for this SKU. Full-pass datasheet evidence
+          confirms the identity and ratings.'
+        datasheet_pages:
+          dimensions:
+          - 1
+          document: Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue,
+            rev. 2025/5/23
+          electrical_characteristics:
+          - 4
+          ordering_coverage:
+          - 1
+          pin_connections:
+          - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Current Rating: 15mA
@@ -244,12 +351,25 @@ oomlout_ai_roboclick_3:
         stock_observed: 139159
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-25'
-        visual_review: pending
+        verified_on: '2026-10-01'
+        visual_review: 'Inspected 2026-10-01 after the build and a forced diagram
+          refresh. data/working_svg_assembly_pins.png and _300 preview: 0805 chip
+          with terminal_1 on the left and terminal_2 on the right with drawn end terminations,
+          non-polarized symmetric body, no mirroring, no label overlap, no cropping.
+          working_svg_square_pins.png hero titled Inductor SDFL2012S100KTF 0805 with
+          terminal_1 left and terminal_2 right. working_svg_dimensioned.png: 2.0 x
+          1.25 mm body with end terminations and arrows, matching the Sunlord SDFL2012
+          nominals. data/kicad manifest complete with Device:L symbol and Inductor_SMD:L_0805_2012Metric
+          machine + Pad1.05x1.20mm_HandSolder hand footprints (same masters verified
+          for the 0805 bead C1015). README.md: SDFL2012S100KTF part number, LCSC/JLC
+          C1046 links, pin table, datasheet link resolving to data/datasheet.pdf (2.9
+          MB SDFL series catalogue). Limitation: KiCad symbol/footprint checked as
+          rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
       kicad:
-        hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        allow_project_fallback: false
+        hand_solder: Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder
+        machine_solder: Inductor_SMD:L_0805_2012Metric
+        symbol: Device:L
       lcsc_search: 0805 10uH
       manufacturer: Sunlord
       manufacturers:
@@ -273,6 +393,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -363,6 +493,22 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
+      package_name_manufacturer: 2012 (0805 imperial), SDFL thin type
       part_id: P1
       part_number_jlcpcb: C1046
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046
@@ -440,7 +586,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -458,7 +604,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/inductor/0805/10_micro_henry/sunlord/README.md
         oomp_id: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
-        pins: []
+        pins:
+        - name: terminal_1
+          number: '1'
+          type: passive
+        - name: terminal_2
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
@@ -468,10 +620,12 @@ oomlout_ai_roboclick_3:
           value: 0805
         - title: Nominal size
           value: 2.0 × 1.25 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
         summary: Inductor SDFL2012S100KTF 0805 is an OOMP electronic inductor definition.
           It uses the 0805 package or form factor. Its nominal drawing size is 2.0
-          × 1.25 mm.
+          × 1.25 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -485,8 +639,27 @@ oomlout_ai_roboclick_3:
           value: sunlord
         - level: 15
           value: sdfl2012s100ktf
+      pins:
+        pin_1:
+          name: terminal_1
+          number: '1'
+          type: passive
+        pin_2:
+          name: terminal_2
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Sunlord SDFL2012S100KTF (C1046): 10 uH
+        +-10%, Q 50 at 2 MHz, SRF 24 MHz, DCR 1.15 ohm, 15 mA; reconfirmed live 2026-10-01.'
+      - 'The Sunlord ordering decode covers the full suffix: SDFL chip ferrite inductor,
+        2012 [0805] 2.0 x 1.25 mm, S material, S100 = 10 uH, K = +-10%, T tape and
+        reel, F hazardous-substance-free.'
+      - Non-polarized two-terminal chip; the standard built-in 0805 chip renderer
+        draws the package from the verified dimensions above.
+      - The 15 mA / 1.15 ohm ratings belong to this exact purchasing choice; the generic
+        0805 10 uH row stays unrated.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -663,7 +836,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -676,7 +849,9 @@ oomlout_ai_roboclick_4:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
 oomp_key: oomp_electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
+package_name_manufacturer: 2012 (0805 imperial), SDFL thin type
 part_id: P1
 part_number_jlcpcb: C1046
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046
@@ -754,7 +929,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -772,7 +947,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/inductor/0805/10_micro_henry/sunlord/README.md
   oomp_id: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
-  pins: []
+  pins:
+  - name: terminal_1
+    number: '1'
+    type: passive
+  - name: terminal_2
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
@@ -782,10 +963,12 @@ part_page:
     value: 0805
   - title: Nominal size
     value: 2.0 × 1.25 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf
   summary: Inductor SDFL2012S100KTF 0805 is an OOMP electronic inductor definition.
     It uses the 0805 package or form factor. Its nominal drawing size is 2.0 × 1.25
-    mm.
+    mm. The definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -799,8 +982,27 @@ part_page:
     value: sunlord
   - level: 15
     value: sdfl2012s100ktf
+pins:
+  pin_1:
+    name: terminal_1
+    number: '1'
+    type: passive
+  pin_2:
+    name: terminal_2
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/Sunlord-SDFL2012S100KTF/C1046
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Sunlord SDFL2012S100KTF (C1046): 10 uH +-10%,
+  Q 50 at 2 MHz, SRF 24 MHz, DCR 1.15 ohm, 15 mA; reconfirmed live 2026-10-01.'
+- 'The Sunlord ordering decode covers the full suffix: SDFL chip ferrite inductor,
+  2012 [0805] 2.0 x 1.25 mm, S material, S100 = 10 uH, K = +-10%, T tape and reel,
+  F hazardous-substance-free.'
+- Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws
+  the package from the verified dimensions above.
+- The 15 mA / 1.15 ohm ratings belong to this exact purchasing choice; the generic
+  0805 10 uH row stays unrated.
 svg_details:
 - filename_extra: assembly
   make_a4: false

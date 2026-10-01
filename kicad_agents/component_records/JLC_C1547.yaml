@@ -23,8 +23,20 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 0402CG120J500NT,
     C1547, 0402, 12pF, 50V, C0G and +/-5% on 2026-09-24.
+  - 'Full pass 2026-10-01: live page reconfirmed (C1547, Fenghua, 0402CG120J500NT,
+    Basic, In Stock 1,984,322); the page datasheet link resolves to the same
+    stable URL recorded at intake. The shared Fenghua General Series MLCC
+    specification (byte-identical across the C0G/X7R siblings; C1547
+    provenance sha256 705023d3... in datasheet_source.yaml, physical PDF kept
+    in the C1546 anchor folder via oomp_datasheet_common_with) covers the
+    full suffix: ordering decode page 4 decodes 0402 / CG = C0G /
+    120 = 12 pF / J = +-5% / 500 = 50 V / N nickel barrier / T 7-inch reel;
+    the C0G 0402 capacitance table page 6 lists 12 pF at 25 V and
+    50 V with the CA thickness code 0.50 +-0.05 mm; dimensions page 5:
+    L 1.00 +-0.05, W 0.50 +-0.05, T 0.50 +-0.05, terminal WB
+    0.25 +-0.05 mm.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/1899-0402CG120J500NT/C1547
   tier: basic
   tier_label_observed: Basic
@@ -33,13 +45,32 @@ jlc_selection:
   pcba_min_qty_observed: null
   compatibility_notes: New generic 0402 12 pF capacitor. The live Basic FH C1547 choice
     is a 50 V C0G +/-5% MLCC matching value and package. The purchase preference carries
-    those ratings; project voltage margin remains for the full pass.
+    those ratings; project voltage margin remains for the full pass. Full-pass
+    datasheet evidence confirms the identity and ratings.
   ratings:
     Voltage Rating: 50V
     Tolerance: ±5%
     Capacitance: 12pF
     Temperature Coefficient: C0G
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared, C1547 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 5
+    - 6
+    electrical_characteristics:
+    - 6
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    data/working_svg_square_pins.png hero titled Capacitor 12 pF 0402 with terminals
+    1 left and 2 right, non-polarized symmetric body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.0 x 0.5 mm body with arrows, matching
+    the Fenghua 0402/1005 CA nominals. data/kicad manifest complete with Device:C_Small
+    symbol and Capacitor_SMD:C_0402_1005Metric machine + Pad0.74x0.62mm_HandSolder hand
+    footprints (same masters verified on the C1523 sibling). README.md: 0402CG120J500NT
+    part number, LCSC/JLC C1547 links, pin table, datasheet link resolving to data/datasheet.pdf
+    (the shared Fenghua General Series MLCC specification, 3.2 MB). Limitation: KiCad
+    symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than
+    in a KiCad GUI.'

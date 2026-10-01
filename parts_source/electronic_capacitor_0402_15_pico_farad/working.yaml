@@ -1,6 +1,17 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987753502846976-C1548.pdf
+dimension_reference:
+  document: Fenghua General Series MLCC specification (C1548)
+  notes: '0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm,
+    terminal WB 0.25+-0.05 mm. C0G 0402 table lists 15 pF at 50 V with the CA thickness
+    code (page 6).'
+  pages:
+  - 4
+  - 5
+  - 6
 dimensions_mm:
+  height: 0.5
   length: 1.0
   width: 0.5
 distributors:
@@ -23,16 +34,36 @@ distributors:
   part_number: C1548
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/1900-0402CG150J500NT/C1548
+electrical:
+  capacitance: 15 pF (150)
+  dielectric: C0G (Class I)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: 0+-30 ppm/C referenced to 25 C (C0G)
+  temperature_range: -55 to +125 C
+  tolerance: +-5% (J)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0402_15_pico_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Existing generic 0402 15 pF capacitor. FH C1548 is 50 V C0G
     +/-5%; prior YAGEO C106997 is recorded as 50 V NP0 +/-5%. C0G/NP0 are the same
     Class I temperature characteristic. Preserve C106997 and other alternatives; project
-    RF/Q requirements need full review.
-  datasheet_pages: []
-  footprint_checked: false
+    RF/Q requirements need full review. Full-pass datasheet evidence confirms the
+    identity and ratings.
+  datasheet_pages:
+    dimensions:
+    - 5
+    - 6
+    document: Fenghua General Series MLCC specification (shared, C1548 provenance)
+    electrical_characteristics:
+    - 6
+    ordering_coverage:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1900-0402CG150J500NT/C1548
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 15 pF
@@ -42,10 +73,20 @@ jlcpcb_selection:
   stock_observed: 1465932
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-01'
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    data/working_svg_square_pins.png hero titled Capacitor 15 pF 0402 with terminals
+    1 left and 2 right, non-polarized symmetric body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.0 x 0.5 mm body with arrows, matching
+    the Fenghua 0402/1005 CA nominals. data/kicad manifest complete with Device:C_Small
+    symbol and Capacitor_SMD:C_0402_1005Metric machine + Pad0.74x0.62mm_HandSolder
+    hand footprints. README.md: 0402CG150J500NT part number, LCSC/JLC C1548 links,
+    pin table, datasheet link resolving to data/datasheet.pdf (the shared Fenghua
+    General Series MLCC specification, 3.2 MB). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
   machine_solder: Capacitor_SMD:C_0402_1005Metric
   symbol: Device:C_Small
 lcsc_search: 0402 15pF
@@ -63,6 +104,7 @@ name_proper: Capacitor 15 pF 0402
 name_readable: Capacitor 15 pF 0402
 name_short: Capacitor 15 pF 0402
 oomp_datasheet_common_with: electronic_capacitor_0402_100_pico_farad
+package_name_manufacturer: 0402 (1005 metric, CA thickness code)
 part_id: C1
 part_number_jlcpcb: C1548
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1900-0402CG150J500NT/C1548
@@ -85,10 +127,25 @@ part_numbers_manufacturer:
   part_number: 0402CG150J500NT
 - manufacturer: YAGEO
   part_number: CC0402FRNPO9BN150
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/1900-0402CG150J500NT/C1548
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C106997, 2,467,600 in
   stock at capture); runners-up follow.'
+- 'The official JLC page lists Basic Fenghua 0402CG150J500NT (C1548): 15 pF, 50 V,
+  C0G, +-5% in 0402; reconfirmed live 2026-10-01.'
+- The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 150 = 15 pF,
+  J = +-5%, 500 = 50 V), and the C0G 0402 table covers 15 pF at 50 V (page 6).
+- Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

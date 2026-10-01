@@ -10,7 +10,7 @@ from typing import Any
 import yaml
 
 from webserver.config_app import TAXONOMY_FIELD_COUNT, taxonomy_key
-from webserver.services import file_actions, file_previews, image_derivatives
+from webserver.services import electronics, file_actions, file_previews, image_derivatives
 
 TRACKED_METADATA_FILES = {"working.yaml", "working_manual.yaml"}
 
@@ -126,6 +126,8 @@ def _build_search_text(record: dict[str, Any]) -> str:
 
 def _search_field_text(field_name: str, record: dict[str, Any]) -> str:
     values: list[str] = []
+    if field_name == "component":
+        return electronics.readable(record.get("component", {})).lower()
     if field_name == "id":
         values.append(record.get("id", ""))
     elif field_name == "name":
@@ -367,6 +369,7 @@ def load_part_record(
         "part_dir": str(part_dir),
         "relative_dir": part_dir.relative_to(parts_dir).as_posix(),
         "data": combined_data,
+        "component": electronics.component_details(combined_data),
         "taxonomy_pairs": taxonomy_pairs,
         "taxonomy_values": {pair["key"]: pair["value"] for pair in taxonomy_pairs},
         "taxonomy_breadcrumb": _build_taxonomy_breadcrumb(taxonomy_pairs),
@@ -418,6 +421,9 @@ def populate_part_assets(
             "preview_file_index": preview_index_by_relative_path.get(preview_file or "", 0),
             "file_count": len(files),
             "image_count": len(image_files),
+            "label_files": [file for file in files if electronics.is_label_svg(file["relative_path"])],
+            "diagrams": electronics.diagram_gallery(part["data"], files),
+            "datasheet_file": next((file["relative_path"] for file in files if file["name"].lower() == "datasheet.pdf"), None),
         }
     )
     return part

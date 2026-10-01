@@ -196,7 +196,7 @@ class WebserverAppTests(unittest.TestCase):
             self.assertIn(b'name="search_fields"', response.data)
             self.assertIn(b'value="id"', response.data)
 
-    def test_explore_search_defaults_to_id_only(self) -> None:
+    def test_explore_search_includes_names_by_default_and_can_limit_to_id(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             parts_dir = root / "parts"
@@ -225,8 +225,10 @@ class WebserverAppTests(unittest.TestCase):
             response = client.get("/explore?q=fancy")
 
             self.assertEqual(response.status_code, 200)
+            self.assertIn(b"Fancy Search Name", response.data)
+            response = client.get("/explore?q=fancy&search_fields=id")
             self.assertNotIn(b"Fancy Search Name", response.data)
-            self.assertIn(b'No parts match the current taxonomy path and search query.', response.data)
+            self.assertIn(b'No parts match the current library filters, taxonomy path and search query.', response.data)
 
     def test_explore_search_can_include_name_field(self) -> None:
         with tempfile.TemporaryDirectory() as temp_dir:
@@ -868,9 +870,9 @@ class WebserverAppTests(unittest.TestCase):
             self.assertIn(b'details class="collapsible-panel"', response.data)
             self.assertIn(b'Collapsed by default', response.data)
             self.assertIn(b'data-selectable-path="true"', response.data)
-            self.assertIn(b'data-selectable-breadcrumb="true"', response.data)
-            self.assertIn(b'detail-breadcrumb__separator', response.data)
-            self.assertNotIn(b'detail-breadcrumb__link', response.data)
+            self.assertIn(b'aria-label="Part taxonomy"', response.data)
+            self.assertIn(b'detail-hero--compact', response.data)
+            self.assertNotIn(b'detail-breadcrumb__separator', response.data)
             self.assertIn(b'/explore?taxonomy_1=warehouse', response.data)
             self.assertIn(b'/explore?taxonomy_1=warehouse&amp;taxonomy_2=storage', response.data)
             self.assertIn(b'<a class="chip chip--depth-1" href="/explore?taxonomy_1=warehouse">warehouse</a>', response.data)

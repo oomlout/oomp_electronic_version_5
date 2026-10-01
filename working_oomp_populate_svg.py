@@ -376,7 +376,15 @@ def add_svg_details(option):
 
     if component_type == "connector" and option.get("taxonomy_3", "") == "header":
         pin_count = _get_number(option.get("taxonomy_6", ""), "pin")
-        if option.get("taxonomy_7", "") == "socket":
+        taxonomy_6_text = str(option.get("taxonomy_6", ""))
+        if "dual_row" in taxonomy_6_text or "triple_row" in taxonomy_6_text:
+            # Multi-row bodies do not follow the Samtec 1xP single-row
+            # insulator: their width spans 2.54 mm rows and their length is
+            # positions-per-row, not total contacts.  The connector extras
+            # carry the verified series geometry (drawings plus
+            # header_dimensions_mm); keep that and add nothing here.
+            pass
+        elif option.get("taxonomy_7", "") == "socket":
             option["dimension_reference"] = {
                 "manufacturer": "kinghelm",
                 "part_number": "kh_2_54fh_1x3p_h8_5",

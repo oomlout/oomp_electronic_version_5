@@ -16,6 +16,14 @@ Part source directories are configurable through `config_part_source.yaml`.
 
 ## Main Behaviors
 
+- component pages display manufacturer names, ordering codes, LCSC/JLCPCB links, datasheets, electrical specifications, dimensions, pins and collected research notes
+- Basic, Extended (including Preferred Extended), and Unclassified checkboxes filter recorded JLCPCB tiers; all are enabled initially, and clearing all shows no parts
+- tier selections survive search, sort, and taxonomy navigation; supplier stock/MOQ values are labelled as observations with the recorded verification date
+- search includes names and collected component details by default, including supplier codes and ratings
+- generated pinout drawings are preferred as thumbnails, with uncropped previews and a clickable diagram gallery on the detail page
+- part identity and component details share a compact header; the larger primary preview has a small horizontal diagram strip underneath, with previous/next controls, thumbnail selection, and arrow-key navigation
+- label SVGs, including part ID and short-code labels, are promoted above other files even when stored in nested folders
+
 - `/` redirects to `/explore`
 - explore view loads from an in-memory cache built at startup
 - explore results are shown as dense horizontal rows for faster scanning

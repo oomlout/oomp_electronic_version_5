@@ -350,6 +350,40 @@ def main(**kwargs):
         "taxonomy_6": "right_angle_dual_row_80_pin",
     })
 
+    # Triple-row 2.54 mm headers, straight (vertical) and right angle.  Row
+    # tokens count total contacts across the three 2.54 mm rows, matching the
+    # dual-row convention (2x40 -> dual_row_80_pin).  Availability follows the
+    # two LCSC series the user anchored (checked 2026-10-01):
+    #   hanxia HX PZ2.54-3xNP ZZ straight: 3x2P C32713289, 3x3P C32713290
+    #   (NRND), 3x4P C32713291, 3x5P C32713292, 3x6P C32713293, 3x7P
+    #   C32713294, 3x8P C32713295;
+    #   HCTL PZ254-3: 3x3P straight C7429377, 3x3P right angle C7429379,
+    #   3x21P straight C53452629.
+    for pin_count in [
+        "triple_row_6_pin",
+        "triple_row_9_pin",
+        "triple_row_12_pin",
+        "triple_row_15_pin",
+        "triple_row_18_pin",
+        "triple_row_21_pin",
+        "triple_row_24_pin",
+        "triple_row_63_pin",
+    ]:
+        options.append({
+            "taxonomy_2": "connector",
+            "taxonomy_3": "header",
+            "taxonomy_4": "2_54_mm_pitch",
+            "taxonomy_5": "through_hole",
+            "taxonomy_6": pin_count,
+        })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "right_angle_triple_row_9_pin",
+    })
+
     # Terminal blocks (Kangnex) and the BOOMELE DC003 power jack from the
     # JLC house-parts queue.  The 5.08 mm pluggable socket body carries the
     # right-angle mounting that distinguishes it from screw blocks.

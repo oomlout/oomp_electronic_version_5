@@ -372,7 +372,43 @@ def main(**kwargs):
             {"manufacturer": "YAGEO", "part_number": "CC0402FRNPO9BN150"},
         ]
         part["research_notes"] = [
-            "LCSC stock research 2026-09: highest-stock listing first (C106997, 2,467,600 in stock at capture); runners-up follow."
+            "LCSC stock research 2026-09: highest-stock listing first (C106997, 2,467,600 in stock at capture); runners-up follow.",
+            "The official JLC page lists Basic Fenghua 0402CG150J500NT (C1548): 15 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 150 = 15 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 15 pF at 50 V (page 6).",
+            "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987753502846976-C1548.pdf"
+        part["electrical"] = {
+            "capacitance": "15 pF (150)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0+-30 ppm/C referenced to 25 C (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.5}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1548)",
+            "pages": [4, 5, 6],
+            "notes": "0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm, terminal WB 0.25+-0.05 mm. C0G 0402 table lists 15 pF at 50 V with the CA thickness code (page 6).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0402_1005Metric",
+            "hand_solder": "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
         ]
         from working_oomp_populate_jlc import set_preferred_jlc
         set_preferred_jlc(
@@ -381,24 +417,29 @@ def main(**kwargs):
             manufacturer="FH (Guangdong Fenghua Advanced Tech)",
             mpn="0402CG150J500NT",
             selection={
-                "verified_on": "2026-09-24",
+                "verified_on": "2026-10-01",
                 "official_url": "https://jlcpcb.com/partdetail/1900-0402CG150J500NT/C1548",
                 "tier": "basic",
                 "tier_label_observed": "Basic",
                 "stock_observed": 1465932,
                 "purchase_moq_observed": 1,
                 "pcba_min_qty_observed": None,
-                "compatibility_notes": "Existing generic 0402 15 pF capacitor. FH C1548 is 50 V C0G +/-5%; prior YAGEO C106997 is recorded as 50 V NP0 +/-5%. C0G/NP0 are the same Class I temperature characteristic. Preserve C106997 and other alternatives; project RF/Q requirements need full review.",
+                "compatibility_notes": "Existing generic 0402 15 pF capacitor. FH C1548 is 50 V C0G +/-5%; prior YAGEO C106997 is recorded as 50 V NP0 +/-5%. C0G/NP0 are the same Class I temperature characteristic. Preserve C106997 and other alternatives; project RF/Q requirements need full review. Full-pass datasheet evidence confirms the identity and ratings.",
                 "ratings": {
                     "capacitance": "15 pF",
                     "rated_voltage": "50 V",
                     "dielectric": "C0G",
                     "tolerance": "+/-5%",
                 },
-                "datasheet_pages": [],
-                "pinout_checked": False,
-                "footprint_checked": False,
-                "visual_review": "pending",
+                "datasheet_pages": {
+                    "document": "Fenghua General Series MLCC specification (shared, C1548 provenance)",
+                    "ordering_coverage": [4],
+                    "dimensions": [5, 6],
+                    "electrical_characteristics": [6],
+                },
+                "pinout_checked": True,
+                "footprint_checked": True,
+                "visual_review": "Inspected 2026-10-01 after the build and a forced diagram refresh. data/working_svg_square_pins.png hero titled Capacitor 15 pF 0402 with terminals 1 left and 2 right, non-polarized symmetric body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png: 1.0 x 0.5 mm body with arrows, matching the Fenghua 0402/1005 CA nominals. data/kicad manifest complete with Device:C_Small symbol and Capacitor_SMD:C_0402_1005Metric machine + Pad0.74x0.62mm_HandSolder hand footprints. README.md: 0402CG150J500NT part number, LCSC/JLC C1548 links, pin table, datasheet link resolving to data/datasheet.pdf (the shared Fenghua General Series MLCC specification, 3.2 MB). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.",
             },
         )
 
@@ -420,7 +461,43 @@ def main(**kwargs):
             {"manufacturer": "FH", "part_number": "0402CG180J500NT"},
         ]
         part["research_notes"] = [
-            "LCSC stock research 2026-09: highest-stock listing first (C106202, 2,093,000 in stock at capture); runners-up follow."
+            "LCSC stock research 2026-09: highest-stock listing first (C106202, 2,093,000 in stock at capture); runners-up follow.",
+            "The official JLC page lists Basic Fenghua 0402CG180J500NT (C1549): 18 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 180 = 18 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 18 pF at 50 V (page 6).",
+            "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987757659807744-C1549.pdf"
+        part["electrical"] = {
+            "capacitance": "18 pF (180)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0+-30 ppm/C referenced to 25 C (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.5}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1549)",
+            "pages": [4, 5, 6],
+            "notes": "0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm, terminal WB 0.25+-0.05 mm. C0G 0402 table lists 18 pF at 50 V with the CA thickness code (page 6).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0402_1005Metric",
+            "hand_solder": "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
         ]
         from working_oomp_populate_jlc import set_preferred_jlc
         set_preferred_jlc(
@@ -429,24 +506,29 @@ def main(**kwargs):
             manufacturer="FH (Guangdong Fenghua Advanced Tech)",
             mpn="0402CG180J500NT",
             selection={
-                "verified_on": "2026-09-24",
+                "verified_on": "2026-10-01",
                 "official_url": "https://jlcpcb.com/partdetail/1901-0402CG180J500NT/C1549",
                 "tier": "basic",
                 "tier_label_observed": "Basic",
                 "stock_observed": 727917,
                 "purchase_moq_observed": 1,
                 "pcba_min_qty_observed": None,
-                "compatibility_notes": "Existing generic 0402 18 pF capacitor. FH C1549 is 50 V C0G +/-5%; previous YAGEO C106202 is 50 V NP0 +/-5%. C0G/NP0 are the same Class I temperature characteristic. Preserve C106202 and other alternatives; project-specific RF/Q requirements need full review.",
+                "compatibility_notes": "Existing generic 0402 18 pF capacitor. FH C1549 is 50 V C0G +/-5%; previous YAGEO C106202 is 50 V NP0 +/-5%. C0G/NP0 are the same Class I temperature characteristic. Preserve C106202 and other alternatives; project-specific RF/Q requirements need full review. Full-pass datasheet evidence confirms the identity and ratings.",
                 "ratings": {
                     "capacitance": "18 pF",
                     "rated_voltage": "50 V",
                     "dielectric": "C0G",
                     "tolerance": "+/-5%",
                 },
-                "datasheet_pages": [],
-                "pinout_checked": False,
-                "footprint_checked": False,
-                "visual_review": "pending",
+                "datasheet_pages": {
+                    "document": "Fenghua General Series MLCC specification (shared, C1549 provenance)",
+                    "ordering_coverage": [4],
+                    "dimensions": [5, 6],
+                    "electrical_characteristics": [6],
+                },
+                "pinout_checked": True,
+                "footprint_checked": True,
+                "visual_review": "Inspected 2026-10-01 after the build and a forced diagram refresh. data/working_svg_square_pins.png hero titled Capacitor 18 pF 0402 with terminals 1 left and 2 right, non-polarized symmetric body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png: 1.0 x 0.5 mm body with arrows, matching the Fenghua 0402/1005 CA nominals. data/kicad manifest complete with Device:C_Small symbol and Capacitor_SMD:C_0402_1005Metric machine + Pad0.74x0.62mm_HandSolder hand footprints. README.md: 0402CG180J500NT part number, LCSC/JLC C1549 links, pin table, datasheet link resolving to data/datasheet.pdf (the shared Fenghua General Series MLCC specification, 3.2 MB). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.",
             },
         )
 
@@ -489,7 +571,47 @@ def main(**kwargs):
             {"manufacturer": "CCTC", "part_number": "TCC0402COG220J500AT"},
         ]
         part["research_notes"] = [
-            "LCSC stock research 2026-09: highest-stock listing first (C106203, 2,991,500 in stock at capture); runners-up follow."
+            "LCSC stock research 2026-09: highest-stock listing first (C106203, 2,991,500 in stock at capture); runners-up follow.",
+            "The official JLC page lists Basic Fenghua 0402CG220J500NT (C1555): 22 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 220 = 22 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 22 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+            "The official JLC page lists Basic Fenghua 0402CG220J500NT (C1555): 22 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 220 = 22 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 22 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+        ]
+
+        part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987777901113344-C1555.pdf"
+        part["electrical"] = {
+            "capacitance": "22 pF (220)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0+-30 ppm/C referenced to 25 C (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.5}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1555)",
+            "pages": [4, 5, 6],
+            "notes": "0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm, terminal WB 0.25+-0.05 mm. C0G 0402 table lists 22 pF at 50 V with the CA thickness code (page 6).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0402_1005Metric",
+            "hand_solder": "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
         ]
 
     current = "electronic_capacitor_0402_27_pico_farad"
@@ -912,6 +1034,202 @@ def main(**kwargs):
         part["research_notes"] = [
             "The official JLC page lists Basic Fenghua 0402CG101J500NT (C1546): 100 pF, 50 V, C0G, +-5% in 0402.",
             "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 101 = 100 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 100 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1547 / Fenghua 0402CG120J500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # ordering code page 4 decodes 0402 / CG = C0G / 120 = 12 pF /
+    # J = +-5% / 500 = 50 V / N nickel barrier / T 7-inch reel; the C0G 0402
+    # capacitance table (page 6) lists 12 pF at 25 V and 50 V with
+    # the CA thickness code 0.50 +-0.05. Dimensions page 5.
+    current = "electronic_capacitor_0402_12_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987750369431552-C1547.pdf"
+        part["electrical"] = {
+            "capacitance": "12 pF (120)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0+-30 ppm/C referenced to 25 C (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.5}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1547)",
+            "pages": [4, 5, 6],
+            "notes": "0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm, terminal WB 0.25+-0.05 mm. C0G 0402 table lists 12 pF at 50 V with the CA thickness code (page 6).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0402_1005Metric",
+            "hand_solder": "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0402CG120J500NT (C1547): 12 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 120 = 12 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 12 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1554 / Fenghua 0402CG200J500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # ordering code page 4 decodes 0402 / CG = C0G / 200 = 20 pF / J = +-5% /
+    # 500 = 50 V / N nickel barrier / T 7-inch reel; the C0G 0402
+    # capacitance table (page 6) lists 20 pF at 25 V and 50 V with the CA
+    # thickness code 0.50 +-0.05. Dimensions page 5.
+    current = "electronic_capacitor_0402_20_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987774575165440-C1554.pdf"
+        part["electrical"] = {
+            "capacitance": "20 pF (200)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0+-30 ppm/C referenced to 25 C (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.5}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1554)",
+            "pages": [4, 5, 6],
+            "notes": "0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm, terminal WB 0.25+-0.05 mm. C0G 0402 table lists 20 pF at 50 V with the CA thickness code (page 6).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0402_1005Metric",
+            "hand_solder": "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0402CG200J500NT (C1554): 20 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 200 = 20 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 20 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1562 / Fenghua 0402CG330J500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # ordering code page 4 decodes 0402 / CG = C0G / 330 = 33 pF / J = +-5% /
+    # 500 = 50 V / N nickel barrier / T 7-inch reel; the C0G 0402
+    # capacitance table (page 6) lists 33 pF at 25 V and 50 V with the CA
+    # thickness code 0.50 +-0.05. Dimensions page 5.
+    current = "electronic_capacitor_0402_33_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987803381915648-C1562.pdf"
+        part["electrical"] = {
+            "capacitance": "33 pF (330)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0+-30 ppm/C referenced to 25 C (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.5}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1562)",
+            "pages": [4, 5, 6],
+            "notes": "0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm, terminal WB 0.25+-0.05 mm. C0G 0402 table lists 33 pF at 50 V with the CA thickness code (page 6).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0402_1005Metric",
+            "hand_solder": "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0402CG330J500NT (C1562): 33 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 330 = 33 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 33 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1567 / Fenghua 0402CG470J500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # ordering code page 4 decodes 0402 / CG = C0G / 470 = 47 pF / J = +-5% /
+    # 500 = 50 V / N nickel barrier / T 7-inch reel; the C0G 0402
+    # capacitance table (page 6) lists 47 pF at 25 V and 50 V with the CA
+    # thickness code 0.50 +-0.05. Dimensions page 5.
+    current = "electronic_capacitor_0402_47_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987818976067584-C1567.pdf"
+        part["electrical"] = {
+            "capacitance": "47 pF (470)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0+-30 ppm/C referenced to 25 C (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.5}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1567)",
+            "pages": [4, 5, 6],
+            "notes": "0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm, terminal WB 0.25+-0.05 mm. C0G 0402 table lists 47 pF at 50 V with the CA thickness code (page 6).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0402_1005Metric",
+            "hand_solder": "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0402CG470J500NT (C1567): 47 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 470 = 47 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 47 pF at 50 V.",
             "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
         ]
         part["file_copy"] = [

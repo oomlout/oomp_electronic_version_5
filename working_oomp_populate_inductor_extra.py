@@ -174,6 +174,63 @@ def main(**kwargs):
             }
         ]
 
+    # JLC C1046 / Sunlord SDFL2012S100KTF full-stage technical data, verified
+    # against the Sunlord Multilayer Chip Ferrite Inductor SDFL series
+    # catalogue (rev. 2025/5/23, 6 pages; byte-identical to the C1035 copy):
+    # product identification page 1 decodes SDFL chip ferrite inductor /
+    # 2012 [0805] 2.0 x 1.25 mm / S material / S100 = 10 uH / K = +-10% / T
+    # tape & reel / F hazardous-substance-free, and states the operating
+    # temperature -40 to +85 C. The SDFL2012 Series table page 4 lists
+    # SDFL2012S100 TF: 10 uH, min Q 50 at the 2 MHz L/Q test frequency, min
+    # SRF 24 MHz, max DCR 1.15 ohm, max rated current 15 mA, thickness 0.85
+    # +-0.2 mm. Dimensions page 1 (SDFL2012 [0805]): L 2.0 (+0.3/-0.1), W
+    # 1.25 +-0.2, T 0.85 +-0.2, terminal width a 0.5 +-0.3 mm. Purchasing
+    # identity fields come from the registry.
+    current = "electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "2012 (0805 imperial), SDFL thin type"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8755216271270907904-C1046.pdf"
+        part["electrical"] = {
+            "inductance": "10 uH",
+            "inductance_tolerance": "+-10%",
+            "minimum_q": "50",
+            "q_test_frequency": "2 MHz",
+            "minimum_self_resonant_frequency": "24 MHz",
+            "maximum_dc_resistance": "1.15 ohm",
+            "maximum_rated_current": "15 mA",
+            "operating_temperature": "-40 to +85 C",
+            "hazardous_substance_free": True,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.85}
+        part["dimension_reference"] = {
+            "document": "Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue, rev. 2025/5/23",
+            "pages": [1, 4],
+            "notes": "SDFL2012 [0805] row: L 2.0 (+0.3/-0.1) mm, W 1.25+-0.2 mm, T 0.85+-0.2 mm, terminal width a 0.5+-0.3 mm. SDFL2012 Series table (page 4) lists SDFL2012S100 TF: 10 uH, min Q 50 at 2 MHz, min SRF 24 MHz, DCR max 1.15 ohm, rated current max 15 mA.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "terminal_1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "terminal_2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_0805_2012Metric",
+            "hand_solder": "Inductor_SMD:L_0805_2012Metric_Pad1.05x1.20mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Sunlord SDFL2012S100KTF (C1046): 10 uH +-10%, Q 50 at 2 MHz, SRF 24 MHz, DCR 1.15 ohm, 15 mA; reconfirmed live 2026-10-01.",
+            "The Sunlord ordering decode covers the full suffix: SDFL chip ferrite inductor, 2012 [0805] 2.0 x 1.25 mm, S material, S100 = 10 uH, K = +-10%, T tape and reel, F hazardous-substance-free.",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions above.",
+            "The 15 mA / 1.15 ohm ratings belong to this exact purchasing choice; the generic 0805 10 uH row stays unrated.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
     # Apply individually reviewed JLC house choices after other supplier data.
     from working_oomp_populate_jlc import apply_reviewed_jlc_choices
     apply_reviewed_jlc_choices(extras_dict, family="inductor")

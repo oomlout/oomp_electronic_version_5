@@ -170,37 +170,23 @@
 {% endmacro %}
 
 {% block content %}
-  <section class="detail-hero">
+  <section class="detail-hero detail-hero--compact">
     <div class="detail-hero__identity">
-      <p class="eyebrow">Part</p>
-      <h1 class="page-title">{{ part.name }}</h1>
-      {% if breadcrumb_links %}
-        <nav class="detail-breadcrumb" aria-label="Part taxonomy" data-selectable-breadcrumb="true">
-          {% for crumb in breadcrumb_links %}
-            {% if not loop.first %}
-              <span class="detail-breadcrumb__separator" aria-hidden="true">_</span>
-            {% endif %}
-            <span class="detail-breadcrumb__text">{{ crumb.breadcrumb_text }}</span>
-          {% endfor %}
-        </nav>
-      {% else %}
-        <p class="detail-hero__breadcrumb">No taxonomy path yet</p>
-      {% endif %}
-      <div class="meta-pill-row detail-hero__meta">
-        <span class="meta-pill meta-pill--images">{{ part.image_count }} images</span>
-        <span class="meta-pill meta-pill--files">{{ part.file_count }} files</span>
-        <span class="meta-pill">{{ part.source_label }}</span>
+      <div class="component-heading">
+        <h1 class="page-title">{{ part.name }}</h1>
+        <span class="meta-pill meta-pill--{{ part.component.tier }}">{{ part.component.tier_label }}</span>
       </div>
-      <div class="chip-row chip-row--dense">
+      <nav class="chip-row chip-row--dense" aria-label="Part taxonomy">
         {% for crumb in breadcrumb_links %}
           <a class="chip chip--depth-{{ crumb.index }}" href="{{ crumb.url }}">{{ crumb.breadcrumb_text }}</a>
         {% endfor %}
-      </div>
+      </nav>
+      {% include "component_details.html" %}
     </div>
   </section>
 
-  <section class="two-column">
-    <article class="panel panel--dense panel--accent">
+  <section class="two-column part-assets">
+    <article class="panel panel--dense panel--accent primary-preview-panel">
       <h2 class="section-title">Primary Preview</h2>
       {% if previewable and previewable.endswith('.stl') %}
         <div class="preview-frame preview-frame--bold stl-viewer-frame">
@@ -226,7 +212,7 @@
               class="detail-preview"
               src="{{ part_image_url(part.id, previewable, preset='detail_preview') }}"
               srcset="{{ part_image_url(part.id, previewable, width=900, height=900) }} 900w, {{ part_image_url(part.id, previewable, width=1400, height=1200) }} 1400w"
-              sizes="(max-width: 980px) 100vw, 60vw"
+              sizes="(max-width: 980px) 100vw, 70vw"
               alt="{{ part.name }}"
               width="{{ preview_image.width or 1200 }}"
               height="{{ preview_image.height or 900 }}"
@@ -239,9 +225,32 @@
       {% else %}
         <p class="empty-state">No previewable image found in this part folder yet.</p>
       {% endif %}
+      {% if part.diagrams %}
+        <div class="diagram-controls">
+          <h2 class="section-title">Diagrams</h2>
+          <span id="diagram-status" class="diagram-status" aria-live="polite"></span>
+          <button type="button" class="button button--small button--ghost" data-diagram-step="-1" aria-label="Previous diagram" aria-controls="diagram-strip" hidden>&larr;</button>
+          <button type="button" class="button button--small button--ghost" data-diagram-step="1" aria-label="Next diagram" aria-controls="diagram-strip" hidden>&rarr;</button>
+        </div>
+        <div class="diagram-gallery" id="diagram-strip" role="region" aria-label="Diagram thumbnails">
+          {% for diagram in part.diagrams %}
+            <figure class="diagram-card">
+              <a href="{{ url_for('parts.part_file', part_id=part.id, relative_path=diagram.relative_path) }}"
+                 data-diagram-thumbnail="true"
+                 data-preview-url="{{ part_image_url(part.id, diagram.relative_path, preset='detail_preview') }}"
+                 data-diagram-title="{{ diagram.title }}"
+                 data-image-index="{{ part.preview_index_by_relative_path.get(diagram.relative_path, 0) }}"
+                 aria-label="Show {{ diagram.title }} in primary preview">
+                <img src="{{ part_image_url(part.id, diagram.preview, preset='explore_thumb') }}" alt="{{ diagram.title }} — {{ part.name }}" loading="lazy" width="112" height="80">
+                <figcaption>{{ diagram.title }}</figcaption>
+              </a>
+            </figure>
+          {% endfor %}
+        </div>
+      {% endif %}
     </article>
 
-    <article class="panel panel--dense">
+    <article class="panel panel--dense part-files-panel">
       <h2 class="section-title">File Inventory</h2>
       <div class="detail-paths" aria-label="Part paths">
         <div class="detail-path">
@@ -253,6 +262,13 @@
         <span class="meta-pill meta-pill--files">{{ part.file_count }} files</span>
         <span class="meta-pill meta-pill--images">{{ part.image_count }} images</span>
       </div>
+      {% if part.label_files %}
+        <h3 class="file-group-title">Label SVGs</h3>
+        <ul class="file-tree file-tree--labels list-reset">
+          {% for file in part.label_files %}{{ render_file_item(file, part) }}{% endfor %}
+        </ul>
+        <h3 class="file-group-title">Other files</h3>
+      {% endif %}
       <ul class="file-tree list-reset">
         {% for file in file_inventory_tree.files %}
           {{ render_file_item(file, part) }}
@@ -374,4 +390,5 @@
 {% block scripts %}
   {{ super() }}
   <script src="{{ url_for('static', filename='file_actions.js') }}"></script>
+  <script src="{{ url_for('static', filename='part_detail.js') }}"></script>
 {% endblock %}

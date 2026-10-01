@@ -83,6 +83,7 @@ def part_image_url(
     preset: str | None = None,
     width: int | None = None,
     height: int | None = None,
+    fit: str | None = None,
 ) -> str:
     params: dict[str, Any] = {}
     if preset:
@@ -91,4 +92,6 @@ def part_image_url(
         params["w"] = width
     if height:
         params["h"] = height
+    if fit:
+        params["fit"] = fit
     return url_for("parts.part_image", part_id=part_id, relative_path=relative_path, **params)

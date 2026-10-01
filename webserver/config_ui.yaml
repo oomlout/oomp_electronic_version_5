@@ -1,4 +1,9 @@
 preview_priority:
+  - working_svg_square_pins.svg
+  - working_svg_square_pins.png
+  - working_svg_square_pins_300.png
+  - working_svg_assembly_pins.svg
+  - working_svg_assembly.svg
   - initial_generated_chibi.png
   - initial_generated_icon.png
   - image.jpg
@@ -30,8 +35,14 @@ search_fields:
       label: Taxonomy
     - name: content
       label: Content
+    - name: name
+      label: Name
+    - name: component
+      label: LCSC / component details
   default_selected:
     - id
+    - name
+    - component
 image_serving:
   enabled: true
   cache_dir: auto
@@ -42,7 +53,7 @@ image_serving:
     explore_thumb:
       width: 108
       height: 108
-      fit: cover
+      fit: contain
       quality: 76
     file_popover:
       width: 480

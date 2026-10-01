@@ -6,6 +6,7 @@ from flask import Blueprint, current_app, redirect, render_template, request, ur
 
 from webserver.presentation import SORT_OPTIONS, selected_search_fields, selected_sort
 from webserver.services import parts_repository
+from webserver.services.electronics import TIER_OPTIONS
 
 explore_blueprint = Blueprint("explore", __name__)
 
@@ -20,6 +21,10 @@ def explore():
     cache = current_app.config["PARTS_CACHE"]
     current_ui_config = current_app.config["CONFIG_UI"]
     all_parts = cache.get_parts()
+    selected_tiers = [tier for tier, _ in TIER_OPTIONS if tier in request.args.getlist("tier")]
+    if "tier_filter" not in request.args and "tier" not in request.args:
+        selected_tiers = [tier for tier, _ in TIER_OPTIONS]
+    tier_parts = [part for part in all_parts if part["component"]["tier"] in selected_tiers]
     taxonomy_filters = {
         key: request.args.get(key, "").strip()
         for key in [field for field in request.args.keys() if field.startswith("taxonomy_")]
@@ -31,14 +36,14 @@ def explore():
     )
     sort_name = selected_sort(request.args.get("sort"))
     filtered_parts = parts_repository.filter_parts(
-        all_parts,
+        tier_parts,
         taxonomy_filters,
         query,
         selected_fields,
         sort_name=sort_name,
     )
-    navigation = parts_repository.build_taxonomy_navigation(all_parts, taxonomy_filters)
-    breadcrumb_params: dict[str, Any] = {}
+    navigation = parts_repository.build_taxonomy_navigation(tier_parts, taxonomy_filters)
+    breadcrumb_params: dict[str, Any] = {"tier_filter": "1", "tier": selected_tiers}
     for pair in navigation["selected"]:
         breadcrumb_params[pair["key"]] = pair["value"]
         pair["params"] = dict(breadcrumb_params)
@@ -52,6 +57,7 @@ def explore():
         pair["url"] = url_for("explore.explore", **pair["params"])
     for option in navigation["options"]:
         params = {key: value for key, value in taxonomy_filters.items() if value}
+        params.update(tier_filter="1", tier=selected_tiers)
         params[option["key"]] = option["value"]
         if query:
             params["q"] = query
@@ -71,6 +77,8 @@ def explore():
         sort_options=SORT_OPTIONS,
         search_field_options=current_ui_config["search_fields"]["available"],
         selected_search_fields=selected_fields,
+        tier_options=TIER_OPTIONS,
+        selected_tiers=selected_tiers,
         navigation=navigation,
         cache_errors=cache.get_errors(),
         image_viewer_enabled=True,

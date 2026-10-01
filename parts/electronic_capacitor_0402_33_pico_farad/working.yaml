@@ -30,7 +30,18 @@ bip_39_full_space: olive maid cruel museum engine grant gaze act evolve choose n
 bip_39_full_underscore: olive_maid_cruel_museum_engine_grant_gaze_act_evolve_choose_narrow_spawn
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987803381915648-C1562.pdf
+dimension_reference:
+  document: Fenghua General Series MLCC specification (C1562)
+  notes: '0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05 mm,
+    terminal WB 0.25+-0.05 mm. C0G 0402 table lists 33 pF at 50 V with the CA thickness
+    code (page 6).'
+  pages:
+  - 4
+  - 5
+  - 6
 dimensions_mm:
+  height: 0.5
   length: 1.0
   width: 0.5
 directory: parts/electronic_capacitor_0402_33_pico_farad
@@ -43,6 +54,17 @@ distributors:
   part_number: C1562
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562
+electrical:
+  capacitance: 33 pF (330)
+  dielectric: C0G (Class I)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: 0+-30 ppm/C referenced to 25 C (C0G)
+  temperature_range: -55 to +125 C
+  tolerance: +-5% (J)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0402_33_pico_farad/datasheet.pdf
 id: electronic_capacitor_0402_33_pico_farad
 id_no_class: electronic_capacitor_0402_33_pico_farad
 id_no_size: electronic_capacitor_0402_33_pico_farad
@@ -51,12 +73,20 @@ jlcpcb_selection:
   compatibility_notes: Existing generic 0402 33 pF capacitor with no previous supplier
     preference. FH C1562 is 50 V C0G +/-5%; this is the purchasing identity for the
     generic value/package, while project-specific RF/Q requirements remain for full
-    review.
-  datasheet_pages: []
-  footprint_checked: false
+    review. Full-pass datasheet evidence confirms the identity and ratings.
+  datasheet_pages:
+    dimensions:
+    - 5
+    - 6
+    document: Fenghua General Series MLCC specification (shared, C1562 provenance)
+    electrical_characteristics:
+    - 6
+    ordering_coverage:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 33 pF
@@ -66,10 +96,21 @@ jlcpcb_selection:
   stock_observed: 1108280
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-01'
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    data/working_svg_square_pins.png hero titled Capacitor 33 pF 0402 with terminals
+    1 left and 2 right, non-polarized symmetric body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.0 x 0.5 mm body with arrows, matching
+    the Fenghua 0402/1005 CA nominals. data/kicad manifest complete with Device:C_Small
+    symbol and Capacitor_SMD:C_0402_1005Metric machine + Pad0.74x0.62mm_HandSolder
+    hand footprints (same masters verified on the C1523 sibling). README.md: 0402CG330J500NT
+    part number, LCSC/JLC C1562 links, pin table, datasheet link resolving to data/datasheet.pdf
+    (the shared Fenghua General Series MLCC specification, 3.2 MB). Limitation: KiCad
+    symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than
+    in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
   machine_solder: Capacitor_SMD:C_0402_1005Metric
   symbol: Device:C_Small
 lcsc_search: 0402 33pF
@@ -110,6 +151,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0402_100_pico_farad/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -199,7 +250,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -213,7 +264,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -221,7 +272,18 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: capacitor
       category_name: Capacitor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987803381915648-C1562.pdf
+      dimension_reference:
+        document: Fenghua General Series MLCC specification (C1562)
+        notes: '0402/1005 metric CA: L 1.00+-0.05 mm, W 0.50+-0.05 mm, T 0.50+-0.05
+          mm, terminal WB 0.25+-0.05 mm. C0G 0402 table lists 33 pF at 50 V with the
+          CA thickness code (page 6).'
+        pages:
+        - 4
+        - 5
+        - 6
       dimensions_mm:
+        height: 0.5
         length: 1.0
         width: 0.5
       directory: parts\electronic_capacitor_0402_33_pico_farad
@@ -234,16 +296,36 @@ oomlout_ai_roboclick_4:
         part_number: C1562
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562
+      electrical:
+        capacitance: 33 pF (330)
+        dielectric: C0G (Class I)
+        polarized: false
+        rated_voltage: 50 V
+        temperature_characteristic: 0+-30 ppm/C referenced to 25 C (C0G)
+        temperature_range: -55 to +125 C
+        tolerance: +-5% (J)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_capacitor_0402_33_pico_farad/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Existing generic 0402 33 pF capacitor with no previous
           supplier preference. FH C1562 is 50 V C0G +/-5%; this is the purchasing
           identity for the generic value/package, while project-specific RF/Q requirements
-          remain for full review.
-        datasheet_pages: []
-        footprint_checked: false
+          remain for full review. Full-pass datasheet evidence confirms the identity
+          and ratings.
+        datasheet_pages:
+          dimensions:
+          - 5
+          - 6
+          document: Fenghua General Series MLCC specification (shared, C1562 provenance)
+          electrical_characteristics:
+          - 6
+          ordering_coverage:
+          - 4
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           capacitance: 33 pF
@@ -253,10 +335,22 @@ oomlout_ai_roboclick_4:
         stock_observed: 1108280
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-24'
-        visual_review: pending
+        verified_on: '2026-10-01'
+        visual_review: 'Inspected 2026-10-01 after the build and a forced diagram
+          refresh. data/working_svg_square_pins.png hero titled Capacitor 33 pF 0402
+          with terminals 1 left and 2 right, non-polarized symmetric body, no mirroring,
+          no label overlap, no cropping. working_svg_dimensioned.png: 1.0 x 0.5 mm
+          body with arrows, matching the Fenghua 0402/1005 CA nominals. data/kicad
+          manifest complete with Device:C_Small symbol and Capacitor_SMD:C_0402_1005Metric
+          machine + Pad0.74x0.62mm_HandSolder hand footprints (same masters verified
+          on the C1523 sibling). README.md: 0402CG330J500NT part number, LCSC/JLC
+          C1562 links, pin table, datasheet link resolving to data/datasheet.pdf (the
+          shared Fenghua General Series MLCC specification, 3.2 MB). Limitation: KiCad
+          symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+          than in a KiCad GUI.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
         machine_solder: Capacitor_SMD:C_0402_1005Metric
         symbol: Device:C_Small
       lcsc_search: 0402 33pF
@@ -282,6 +376,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0402_100_pico_farad/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -372,7 +476,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -386,6 +490,8 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_capacitor_0402_100_pico_farad
+      package_name_manufacturer: 0402 (1005 metric, CA thickness code)
       part_id: C1
       part_number_jlcpcb: C1562
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562
@@ -463,7 +569,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -481,7 +587,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/capacitor/0402/README.md
         oomp_id: electronic_capacitor_0402_33_pico_farad
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_capacitor_0402_33_pico_farad
@@ -491,10 +603,12 @@ oomlout_ai_roboclick_4:
           value: '0402'
         - title: Nominal size
           value: 1.0 × 0.5 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_33_pico_farad
         summary: Capacitor 33 pF 0402 is an OOMP electronic capacitor definition.
           It uses the 0402 package or form factor. Its nominal drawing size is 1.0
-          × 0.5 mm.
+          × 0.5 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -504,8 +618,24 @@ oomlout_ai_roboclick_4:
           value: '0402'
         - level: 4
           value: 33_pico_farad
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Fenghua 0402CG330J500NT (C1562): 33 pF,
+        50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.'
+      - The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 330 =
+        33 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 33 pF at 50 V.
+      - Non-polarized two-terminal chip; the standard built-in 0402 chip renderer
+        draws the package from the verified dimensions.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -719,7 +849,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -732,7 +862,9 @@ oomlout_ai_roboclick_5:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_capacitor_0402_100_pico_farad
 oomp_key: oomp_electronic_capacitor_0402_33_pico_farad
+package_name_manufacturer: 0402 (1005 metric, CA thickness code)
 part_id: C1
 part_number_jlcpcb: C1562
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562
@@ -810,7 +942,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -828,7 +960,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/capacitor/0402/README.md
   oomp_id: electronic_capacitor_0402_33_pico_farad
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_capacitor_0402_33_pico_farad
@@ -838,9 +976,12 @@ part_page:
     value: '0402'
   - title: Nominal size
     value: 1.0 × 0.5 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_33_pico_farad
   summary: Capacitor 33 pF 0402 is an OOMP electronic capacitor definition. It uses
-    the 0402 package or form factor. Its nominal drawing size is 1.0 × 0.5 mm.
+    the 0402 package or form factor. Its nominal drawing size is 1.0 × 0.5 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -850,8 +991,24 @@ part_page:
     value: '0402'
   - level: 4
     value: 33_pico_farad
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/1914-0402CG330J500NT/C1562
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Fenghua 0402CG330J500NT (C1562): 33 pF, 50 V,
+  C0G, +-5% in 0402; reconfirmed live 2026-10-01.'
+- The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 330 = 33 pF,
+  J = +-5%, 500 = 50 V), and the C0G 0402 table covers 33 pF at 50 V.
+- Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

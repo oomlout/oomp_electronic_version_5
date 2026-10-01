@@ -2,7 +2,7 @@
 
 `electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf`
 
-Inductor SDFL2012S100KTF 0805 is an OOMP electronic inductor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
+Inductor SDFL2012S100KTF 0805 is an OOMP electronic inductor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
 
 ![Inductor SDFL2012S100KTF 0805 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Inductor SDFL2012S100KTF 0805 is an OOMP electronic inductor definition. It uses
 | Type | Inductor |
 | Package / style | 0805 |
 | Nominal size | 2.0 &#x00D7; 1.25 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -33,6 +34,7 @@ Inductor SDFL2012S100KTF 0805 is an OOMP electronic inductor definition. It uses
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.85 mm |
 | Length | 2.0 mm |
 | Width | 1.25 mm |
 
@@ -50,6 +52,19 @@ Inductor SDFL2012S100KTF 0805 is an OOMP electronic inductor definition. It uses
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | terminal_1 | passive |
+| 2 | terminal_2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

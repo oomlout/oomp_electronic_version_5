@@ -17850,3 +17850,14 @@ Message: No modern .kicad_sch files found under C:\Users\aaron\AppData\Local\Tem
 Traceback:
 NoneType: None
 
+[2026-10-01T07:36:34.056056+00:00] kicad_render_action
+Error type: FileNotFoundError
+Error message: No KiCad symbol or footprint files found for electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf.
+Traceback:
+Traceback (most recent call last):
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_render_action.py", line 670, in main
+    build(json.loads(arguments.kwargs))
+  File "C:\gh\oomp_electronic_version_5\kicad_agents\kicad_render_action.py", line 650, in build
+    raise FileNotFoundError(f"No KiCad symbol or footprint files found for {part_id}.")
+FileNotFoundError: No KiCad symbol or footprint files found for electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf.
+

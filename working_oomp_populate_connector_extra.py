@@ -44,6 +44,51 @@ def _dual_row_header_drawing(pin_count):
     }
 
 
+def _triple_row_header_drawing(pin_count):
+    """Vertical 3xN triple-row top view: three 2.54 mm pad columns."""
+    columns = 3
+    positions = max(1, pin_count // columns)
+    row_length = positions * 2.54
+    row_start = -((positions - 1) * 2.54) / 2
+    pins = []
+    for row in range(positions):
+        for column in range(columns):
+            number = row * columns + column + 1
+            if number > pin_count:
+                continue
+            pins.append([str(number), "top", -2.54 + column * 2.54, row_start + row * 2.54, 1.7, 1.7])
+    return {
+        "overall": [7.62, row_length],
+        "body": [7.62, row_length],
+        "pins": pins,
+    }
+
+
+def _triple_row_right_angle_header_drawing(pin_count):
+    """Right-angle 3xN top view: pad field beside the moulded carrier."""
+    columns = 3
+    positions = max(1, pin_count // columns)
+    row_length = positions * 2.54
+    row_start = -((positions - 1) * 2.54) / 2
+    pins = []
+    for row in range(positions):
+        for column in range(columns):
+            number = row * columns + column + 1
+            if number > pin_count:
+                continue
+            pins.append([str(number), "top", -2.54 + column * 2.54, row_start + row * 2.54, 1.7, 1.7])
+    return {
+        # The bent-pin pad field sits 2.54 mm pitch across; the 2.54 mm
+        # carrier begins about 1.5 mm behind the outermost pad column, in the
+        # same relationship as the single-row right-angle drawing.
+        "overall": [10.16, row_length],
+        "body": [2.54, row_length],
+        "body_offset": [4.31, 0.0],
+        "pins": pins,
+        "pin_one": [-2.54, row_start],
+    }
+
+
 def _fix_254_header_package_drawings(extras_dict):
     """Normalize package drawings to the KiCad 2.54 mm header masters."""
     for part in extras_dict.values():
@@ -61,6 +106,14 @@ def _fix_254_header_package_drawings(extras_dict):
         pin_count = _header_pin_count(taxonomy_6)
         if "right_angle" in taxonomy_5:
             part["package_drawing"] = _right_angle_header_drawing(pin_count)
+        elif "triple_row" in taxonomy_6:
+            # Right angle lives in taxonomy_6 for the header tokens
+            # (right_angle_triple_row_N_pin), so check it before the plain
+            # triple-row vertical drawing.
+            if "right_angle" in taxonomy_6:
+                part["package_drawing"] = _triple_row_right_angle_header_drawing(pin_count)
+            else:
+                part["package_drawing"] = _triple_row_header_drawing(pin_count)
         elif "dual_row" in taxonomy_6:
             part["package_drawing"] = _dual_row_header_drawing(pin_count)
 
@@ -81,6 +134,11 @@ def _apply_254_straight_header_references(extras_dict):
             or str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", ""))) != "through_hole"
             or str(part.get("taxonomy_7", taxonomy.get("taxonomy_7", ""))) == "socket"
         ):
+            continue
+        taxonomy_6 = str(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        # The C49423294 drawing is a single-row (1xP) series: its plastic
+        # width and per-contact length do not describe multi-row bodies.
+        if "dual_row" in taxonomy_6 or "triple_row" in taxonomy_6:
             continue
         pin_count = _header_pin_count(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
         # LCSC C49423294 / B-210S-1xP-A110, PDF page 2: 0.64 mm square
@@ -120,6 +178,81 @@ def _apply_254_straight_header_references(extras_dict):
         }
 
 
+def _apply_254_triple_header_references(extras_dict):
+    """Apply the LCSC triple-row 2.54 mm series facts to bare triple-row tokens.
+
+    Series checked on LCSC 2026-10-01: hanxia HX PZ2.54-3xNP ZZ straight
+    (3x2P C32713289, 3x3P C32713290 NRND, 3x4P C32713291, 3x5P C32713292,
+    3x6P C32713293, 3x7P C32713294, 3x8P C32713295) and HCTL PZ254-3 (3x3P
+    straight C7429377, 3x3P right angle C7429379, 3x21P straight double-
+    moulded C53452629).  All list 2.54 mm row spacing, 2.5 mm insulation
+    height, 6 mm mating pin, 3 mm tail, square pins, 3 A, -40 to +105 C.
+    """
+    for current, part in extras_dict.items():
+        if not isinstance(part, dict):
+            continue
+        taxonomy = part.get("taxonomy", {})
+        if not isinstance(taxonomy, dict):
+            taxonomy = {}
+        if (
+            str(part.get("taxonomy_2", taxonomy.get("taxonomy_2", ""))) != "connector"
+            or str(part.get("taxonomy_3", taxonomy.get("taxonomy_3", ""))) != "header"
+            or str(part.get("taxonomy_4", taxonomy.get("taxonomy_4", ""))) != "2_54_mm_pitch"
+            or str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", ""))) != "through_hole"
+        ):
+            continue
+        taxonomy_6 = str(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        if "triple_row" not in taxonomy_6:
+            continue
+        right_angle = "right_angle" in taxonomy_6
+        pin_count = _header_pin_count(taxonomy_6)
+        positions = max(1, pin_count // 3)
+        dimensions = dict(part.get("header_dimensions_mm", {}))
+        dimensions.update(
+            {
+                "pin_length_post": 6.0,
+                "pin_length_tail": 3.0,
+                "pin_length_total": 9.0,
+                "pin_pitch": 2.54,
+                "row_spacing": 2.54,
+                "pin_square": 0.64,
+                "plastic_height": 2.5,
+                "plastic_width_across_rows": 7.58,
+                "plastic_length": positions * 2.54,
+                "positions_per_row": positions,
+                "rows": 3,
+                "pcb_hole_diameter": 1.02,
+            }
+        )
+        part["header_dimensions_mm"] = dimensions
+        part["connector_dimensions_mm"] = {
+            "pitch": 2.54,
+            "positions": positions,
+            "rows": 3,
+            "termination": "through_hole_right_angle" if right_angle else "through_hole",
+        }
+        part["dimension_reference"] = {
+            "document": (
+                "LCSC triple-row 2.54 mm header series: hanxia HX PZ2.54-3xNP ZZ "
+                "(C32713289-C32713295) and HCTL PZ254-3 (C7429377/C7429379/C53452629)"
+            ),
+            "datasheet_url": "https://www.lcsc.com/product-detail/C32713291.html",
+            "pages": [1],
+            "notes": (
+                "Series listings checked 2026-10-01: 2.54 mm pitch and row spacing, "
+                "2.5 mm insulation height, 6 mm square mating pin, 3 mm PCB tail, "
+                "3 A, -40 to +105 C. The HCTL C53452629 3x21P variant is a 5.0 mm "
+                "double-moulded body; the generic token keeps the common 2.5 mm "
+                "insulator. plastic_width_across_rows is 2.5 mm + 2 x 2.54 mm."
+            ),
+        }
+        notes = [
+            "Triple-row 2.54 mm header availability (LCSC, checked 2026-10-01): straight 3x2P..3x8P (hanxia PZ2.54-3xNP ZZ, C32713289-C32713295; 3x3P NRND), straight 3x21P (HCTL C53452629, 5.0 mm double-moulded), right angle 3x3P only (HCTL C7429379).",
+            "KiCad 10 official libraries ship PinHeader 1xNN and 2xNN masters only; a 3xNN symbol/footprint custom master (Conn_02x-style numbering extended to three 2.54 mm columns) is a full-pass custom-master task, so no official kicad selection is claimed here.",
+        ]
+        part["research_notes"] = notes
+
+
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
 
@@ -128,6 +261,7 @@ def main(**kwargs):
     # KiCad footprint pad arrangement before source YAML is written.
     _fix_254_header_package_drawings(extras_dict)
     _apply_254_straight_header_references(extras_dict)
+    _apply_254_triple_header_references(extras_dict)
 
     current = "electronic_connector_header_2_54_mm_pitch_surface_mount_dual_row_6_pin_wurth_electronics_61030621121"
     if current in extras_dict:

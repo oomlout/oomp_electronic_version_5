@@ -271,7 +271,10 @@ def part_detail(part_id: str):
     breadcrumb_links = _build_taxonomy_breadcrumb_links(part)
     _attach_file_action_links(part)
     _, action_legend = _annotate_file_actions(part)
-    file_inventory_tree = _build_file_inventory_tree(part.get("files", []))
+    label_paths = {file["relative_path"] for file in part["label_files"]}
+    file_inventory_tree = _build_file_inventory_tree([
+        file for file in part.get("files", []) if file["relative_path"] not in label_paths
+    ])
     manual_fields = current_app.config["CONFIG_UI"]["manual_fields"]
     previewable = part.get("preview_file")
     working_yaml_text = yaml.safe_dump(

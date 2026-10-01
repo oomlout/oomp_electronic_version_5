@@ -7,6 +7,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const taxonomyToggle = document.getElementById("taxonomy-toggle");
   const taxonomyPanel = document.getElementById("taxonomy-panel-body");
   const taxonomyStorageKey = "partsExplorer.taxonomyCollapsed";
+  document.querySelectorAll('input[name="tier"]').forEach((input) => {
+    input.addEventListener("change", () => input.form.requestSubmit());
+  });
 
   if (taxonomyToggle && taxonomyPanel) {
     const collapseTaxonomy = (collapsed) => {
