@@ -35,6 +35,12 @@ def main(**kwargs):
     working_oomp_populate_inductor_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_fuse_extra
     working_oomp_populate_fuse_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_sensor_extra
+    working_oomp_populate_sensor_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_relay_extra
+    working_oomp_populate_relay_extra.main(extras_dict=extras_dict)
+    import working_oomp_populate_heatsink_extra
+    working_oomp_populate_heatsink_extra.main(extras_dict=extras_dict)
     import working_oomp_populate_unmatched_extra
     working_oomp_populate_unmatched_extra.main(extras_dict=extras_dict)
 

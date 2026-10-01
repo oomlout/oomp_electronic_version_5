@@ -30,7 +30,17 @@ bip_39_full_space: indoor wish derive veteran budget mean final broccoli basket 
 bip_39_full_underscore: indoor_wish_derive_veteran_budget_mean_final_broccoli_basket_total_grocery_rescue
 category: inductor
 category_name: Inductor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8755215265330278400-C1035.pdf
+dimension_reference:
+  document: Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue, rev. 2025/5/23
+  notes: 'SDFL1608 [0603] row: L 1.6+-0.15 mm, W 0.8+-0.15 mm, T 0.8+-0.15 mm, terminal
+    width a 0.3+-0.2 mm. SDFL1608 Series table (page 3) lists SDFL1608S100 TF: 10
+    uH, min Q 30 at 2 MHz, min SRF 17 MHz, DCR max 1.85 ohm, rated current max 3 mA.'
+  pages:
+  - 1
+  - 3
 dimensions_mm:
+  height: 0.8
   length: 1.6
   width: 0.8
 directory: parts/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
@@ -43,6 +53,19 @@ distributors:
   part_number: C1035
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035
+electrical:
+  hazardous_substance_free: true
+  inductance: 10 uH
+  inductance_tolerance: +-10%
+  maximum_dc_resistance: 1.85 ohm
+  maximum_rated_current: 3 mA
+  minimum_q: '30'
+  minimum_self_resonant_frequency: 17 MHz
+  operating_temperature: -40 to +85 C
+  q_test_frequency: 2 MHz
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf/datasheet.pdf
 id: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
 id_no_class: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
 id_no_size: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
@@ -53,12 +76,23 @@ jlcpcb_selection:
     The Sunlord part is a low-current (3 mA) RF chip inductor with 1.85 ohm DCR, 17
     MHz self-resonance and Q 30 at 2 MHz; those ratings are purchasing-choice facts,
     not a claim about every generic 10 uH 0603 inductor. Added the reviewed-choices
-    adapter to the inductor family extras.'
-  datasheet_pages: []
-  footprint_checked: false
+    adapter to the inductor family extras. Full-pass datasheet evidence confirms the
+    identity and ratings.'
+  datasheet_pages:
+    dimensions:
+    - 1
+    document: Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue, rev.
+      2025/5/23
+    electrical_characteristics:
+    - 3
+    ordering_coverage:
+    - 1
+    pin_connections:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Current Rating: 3mA
@@ -70,12 +104,29 @@ jlcpcb_selection:
   stock_observed: 813580
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-09-30'
+  visual_review: 'Inspected 2026-09-30 after the build and a forced diagram refresh.
+    data/working_svg_assembly_pins.png and _300 preview: 0603 chip with terminal_1
+    on the left and terminal_2 on the right with drawn end terminations, non-polarized
+    symmetric body, no mirroring, no label overlap, no cropping. working_svg_square_pins.png
+    hero titled Inductor SDFL1608S100KTF 0603 with terminal_1 left and terminal_2
+    right. working_svg_dimensioned.png: 1.6 x 0.8 mm body with end terminations and
+    arrows, matching the Sunlord SDFL1608 nominals. data/kicad manifest complete with
+    Device:L symbol and Inductor_SMD:L_0603_1608Metric machine + Pad1.05x0.95mm_HandSolder
+    hand footprints; kicad_symbol_unit_1.png shows the coil glyph with the OOMP value;
+    the machine footprint render shows both 0603 pads with courtyard and body outline.
+    README.md: SDFL1608S100KTF part number, LCSC/JLC C1035 links, pin table, datasheet
+    link resolving to data/datasheet.pdf (2.9 MB SDFL series catalogue). Shared-renderer
+    note: chip inductors previously drew a plain rounded body without terminations;
+    working_svg.py now routes inductor outlines through the same two-terminal chip
+    drawing as ferrite beads (verified on this part and compile-checked; the whole-repo
+    inductor re-render remains a scheduled regeneration). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+  machine_solder: Inductor_SMD:L_0603_1608Metric
+  symbol: Device:L
 lcsc_search: 0603 10uH
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
@@ -114,6 +165,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -203,7 +264,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -211,7 +286,19 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: inductor
       category_name: Inductor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8755215265330278400-C1035.pdf
+      dimension_reference:
+        document: Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue,
+          rev. 2025/5/23
+        notes: 'SDFL1608 [0603] row: L 1.6+-0.15 mm, W 0.8+-0.15 mm, T 0.8+-0.15 mm,
+          terminal width a 0.3+-0.2 mm. SDFL1608 Series table (page 3) lists SDFL1608S100
+          TF: 10 uH, min Q 30 at 2 MHz, min SRF 17 MHz, DCR max 1.85 ohm, rated current
+          max 3 mA.'
+        pages:
+        - 1
+        - 3
       dimensions_mm:
+        height: 0.8
         length: 1.6
         width: 0.8
       directory: parts\electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
@@ -224,6 +311,19 @@ oomlout_ai_roboclick_3:
         part_number: C1035
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035
+      electrical:
+        hazardous_substance_free: true
+        inductance: 10 uH
+        inductance_tolerance: +-10%
+        maximum_dc_resistance: 1.85 ohm
+        maximum_rated_current: 3 mA
+        minimum_q: '30'
+        minimum_self_resonant_frequency: 17 MHz
+        operating_temperature: -40 to +85 C
+        q_test_frequency: 2 MHz
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact inductor identity: added one explicit family row
           electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf alongside
@@ -231,12 +331,23 @@ oomlout_ai_roboclick_3:
           Sunlord part is a low-current (3 mA) RF chip inductor with 1.85 ohm DCR,
           17 MHz self-resonance and Q 30 at 2 MHz; those ratings are purchasing-choice
           facts, not a claim about every generic 10 uH 0603 inductor. Added the reviewed-choices
-          adapter to the inductor family extras.'
-        datasheet_pages: []
-        footprint_checked: false
+          adapter to the inductor family extras. Full-pass datasheet evidence confirms
+          the identity and ratings.'
+        datasheet_pages:
+          dimensions:
+          - 1
+          document: Sunlord Multilayer Chip Ferrite Inductor SDFL series catalogue,
+            rev. 2025/5/23
+          electrical_characteristics:
+          - 3
+          ordering_coverage:
+          - 1
+          pin_connections:
+          - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Current Rating: 3mA
@@ -248,12 +359,31 @@ oomlout_ai_roboclick_3:
         stock_observed: 813580
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-25'
-        visual_review: pending
+        verified_on: '2026-09-30'
+        visual_review: 'Inspected 2026-09-30 after the build and a forced diagram
+          refresh. data/working_svg_assembly_pins.png and _300 preview: 0603 chip
+          with terminal_1 on the left and terminal_2 on the right with drawn end terminations,
+          non-polarized symmetric body, no mirroring, no label overlap, no cropping.
+          working_svg_square_pins.png hero titled Inductor SDFL1608S100KTF 0603 with
+          terminal_1 left and terminal_2 right. working_svg_dimensioned.png: 1.6 x
+          0.8 mm body with end terminations and arrows, matching the Sunlord SDFL1608
+          nominals. data/kicad manifest complete with Device:L symbol and Inductor_SMD:L_0603_1608Metric
+          machine + Pad1.05x0.95mm_HandSolder hand footprints; kicad_symbol_unit_1.png
+          shows the coil glyph with the OOMP value; the machine footprint render shows
+          both 0603 pads with courtyard and body outline. README.md: SDFL1608S100KTF
+          part number, LCSC/JLC C1035 links, pin table, datasheet link resolving to
+          data/datasheet.pdf (2.9 MB SDFL series catalogue). Shared-renderer note:
+          chip inductors previously drew a plain rounded body without terminations;
+          working_svg.py now routes inductor outlines through the same two-terminal
+          chip drawing as ferrite beads (verified on this part and compile-checked;
+          the whole-repo inductor re-render remains a scheduled regeneration). Limitation:
+          KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text
+          rather than in a KiCad GUI.'
       kicad:
-        hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        allow_project_fallback: false
+        hand_solder: Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+        machine_solder: Inductor_SMD:L_0603_1608Metric
+        symbol: Device:L
       lcsc_search: 0603 10uH
       manufacturer: Sunlord
       manufacturers:
@@ -277,6 +407,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -367,6 +507,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: 1608 (0603 imperial), SDFL thin type
       part_id: P1
       part_number_jlcpcb: C1035
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035
@@ -444,7 +599,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -462,7 +617,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/inductor/0603/10_micro_henry/sunlord/README.md
         oomp_id: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
-        pins: []
+        pins:
+        - name: terminal_1
+          number: '1'
+          type: passive
+        - name: terminal_2
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
@@ -472,10 +633,12 @@ oomlout_ai_roboclick_3:
           value: '0603'
         - title: Nominal size
           value: 1.6 × 0.8 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
         summary: Inductor SDFL1608S100KTF 0603 is an OOMP electronic inductor definition.
           It uses the 0603 package or form factor. Its nominal drawing size is 1.6
-          × 0.8 mm.
+          × 0.8 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -489,8 +652,27 @@ oomlout_ai_roboclick_3:
           value: sunlord
         - level: 15
           value: sdfl1608s100ktf
+      pins:
+        pin_1:
+          name: terminal_1
+          number: '1'
+          type: passive
+        pin_2:
+          name: terminal_2
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Sunlord SDFL1608S100KTF (C1035): 10 uH
+        +-10%, Q 30 at 2 MHz, SRF 17 MHz, DCR 1.85 ohm, 3 mA; reconfirmed live 2026-09-30.'
+      - 'The Sunlord ordering decode covers the full suffix: SDFL chip ferrite inductor,
+        1608 [0603] 1.6 x 0.8 mm, Q material, S100 = 10 uH, K = +-10%, T tape and
+        reel, F hazardous-substance-free.'
+      - Non-polarized two-terminal chip; the standard built-in 0603 chip renderer
+        draws the package from the verified dimensions above.
+      - The 3 mA / 1.85 ohm ratings belong to this exact purchasing choice; the generic
+        0603 10 uH row stays unrated.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -667,7 +849,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -681,6 +863,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
+package_name_manufacturer: 1608 (0603 imperial), SDFL thin type
 part_id: P1
 part_number_jlcpcb: C1035
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035
@@ -758,7 +941,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -776,7 +959,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/inductor/0603/10_micro_henry/sunlord/README.md
   oomp_id: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
-  pins: []
+  pins:
+  - name: terminal_1
+    number: '1'
+    type: passive
+  - name: terminal_2
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
@@ -786,10 +975,12 @@ part_page:
     value: '0603'
   - title: Nominal size
     value: 1.6 × 0.8 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
   summary: Inductor SDFL1608S100KTF 0603 is an OOMP electronic inductor definition.
     It uses the 0603 package or form factor. Its nominal drawing size is 1.6 × 0.8
-    mm.
+    mm. The definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -803,8 +994,27 @@ part_page:
     value: sunlord
   - level: 15
     value: sdfl1608s100ktf
+pins:
+  pin_1:
+    name: terminal_1
+    number: '1'
+    type: passive
+  pin_2:
+    name: terminal_2
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/Sunlord-SDFL1608S100KTF/C1035
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Sunlord SDFL1608S100KTF (C1035): 10 uH +-10%,
+  Q 30 at 2 MHz, SRF 17 MHz, DCR 1.85 ohm, 3 mA; reconfirmed live 2026-09-30.'
+- 'The Sunlord ordering decode covers the full suffix: SDFL chip ferrite inductor,
+  1608 [0603] 1.6 x 0.8 mm, Q material, S100 = 10 uH, K = +-10%, T tape and reel,
+  F hazardous-substance-free.'
+- Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws
+  the package from the verified dimensions above.
+- The 3 mA / 1.85 ohm ratings belong to this exact purchasing choice; the generic
+  0603 10 uH row stays unrated.
 svg_details:
 - filename_extra: assembly
   make_a4: false

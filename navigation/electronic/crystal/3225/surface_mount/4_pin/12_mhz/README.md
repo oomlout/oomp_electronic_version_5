@@ -1,8 +1,11 @@
 # Electronic / Crystal / 3225 / Surface Mount / 4 Pin / 12 Mhz
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 2 parts in total.
 
+## Categories
+
+- [20 Pf](20_pf/README.md)
 
 ## Parts
 

@@ -1,0 +1,66 @@
+format_version: 1
+ledger_id: JLC_C1859
+status: researched
+family: capacitor
+part_id: electronic_capacitor_1206_22_micro_farad_10_volt
+exact_identity: true
+package: '1206'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  manufacturer_part_number: 1206X226K100NT
+  lcsc_part_number: C1859
+  lcsc_decision: 'Second code on the existing generic 1206 22 uF capacitor: the plain
+    generic ID keeps its reviewed preference C12891 (Samsung CL31A226KAHNNNE, 25 V
+    X5R +/-10%). C1859 is the exact FH 10 V rated SKU (1206X226K100NT, X5R +/-10%),
+    so it gets its own rated-variant ID (10_volt suffix) linked via generic_oomp_id,
+    following the established rated-variant taxonomy (as with the C1592 16 V row).
+    Rating comparison from the staged capture: same 22 uF value, package and X5R +/-10%,
+    but 10 V is a lower rating than the 25 V preference - the variant must never silently
+    replace the 25 V part in higher-voltage circuits; it exists so 10 V-class designs
+    can pick the exact SKU explicitly. Two-terminal MLCC (pin_count 2); stock 76,002
+    recorded as observed. Edits made under the capacitor family lock.'
+  product_url: https://jlcpcb.com/partdetail/2211-1206X226K100NT/C1859
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991381764550656-C1859.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/2211-1206X226K100NT/C1859
+  webpage_capture: parts_source/electronic_capacitor_1206_22_micro_farad_10_volt/web_page_distributor_jlc.txt
+  evidence_notes:
+  - 'Staged JLC live-page capture kicad_agents/jlc_house_parts/browser_staging/C1859.json
+    (captured_on 2026-09-28, zcode_inapp_browser_visible_page): JLCPCB Part # C1859,
+    Manufacturer FH (Guangdong Fenghua Advanced Tech), MFR.Part # 1206X226K100NT,
+    Package 1206, visible badge Extended which maps to preferred_extended in this
+    corrected official-category queue (Promotional Extended tooltip). 22 uF 10 V X5R
+    +/-10%; stock 76,002, minimum 1, full reel 2,000, available order qty 75,945,
+    MSL 1. No datasheet PDF imported at intake (solo worker has no download); download
+    is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991381764550656-C1859.pdf).'
+  - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C1859.json.
+jlc_selection:
+  verified_on: '2026-09-28'
+  official_url: https://jlcpcb.com/partdetail/2211-1206X226K100NT/C1859
+  tier: preferred_extended
+  tier_label_observed: Extended
+  stock_observed: 76002
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: 'Second code on the existing generic 1206 22 uF capacitor:
+    the plain generic ID keeps its reviewed preference C12891 (Samsung CL31A226KAHNNNE,
+    25 V X5R +/-10%). C1859 is the exact FH 10 V rated SKU (1206X226K100NT, X5R +/-10%),
+    so it gets its own rated-variant ID (10_volt suffix) linked via generic_oomp_id,
+    following the established rated-variant taxonomy (as with the C1592 16 V row).
+    Rating comparison from the staged capture: same 22 uF value, package and X5R +/-10%,
+    but 10 V is a lower rating than the 25 V preference - the variant must never silently
+    replace the 25 V part in higher-voltage circuits; it exists so 10 V-class designs
+    can pick the exact SKU explicitly. Two-terminal MLCC (pin_count 2); stock 76,002
+    recorded as observed. Edits made under the capacitor family lock.'
+  ratings:
+    Capacitance: 22uF
+    Temperature Coefficient: X5R
+    Tolerance: ±10%
+    Voltage Rating: 10V
+  datasheet_pages: []
+  pinout_checked: false
+  footprint_checked: false
+  visual_review: pending

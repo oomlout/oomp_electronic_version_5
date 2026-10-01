@@ -1,0 +1,13 @@
+# Electronic / Capacitor / 0603 / 10 Micro Farad
+
+[Up one level](../README.md)
+This category contains 2 parts in total.
+
+## Categories
+
+- [25 Volt](25_volt/README.md)
+
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

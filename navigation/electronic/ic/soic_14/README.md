@@ -1,10 +1,12 @@
 # Electronic / IC / Soic 14
 
 [Up one level](../README.md)
-This category contains 2 parts in total.
+This category contains 4 parts in total.
 
 ## Categories
 
+- [Amplifier](amplifier/README.md)
+- [Logic](logic/README.md)
 - [Microcontroller](microcontroller/README.md)
 
 

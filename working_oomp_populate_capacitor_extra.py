@@ -921,5 +921,5253 @@ def main(**kwargs):
             }
         ]
 
+    current = "electronic_capacitor_0402_150_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 pF",
+            "tolerance": "±10%",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1527 / Fenghua 0402B151K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 150 pF value; the populate row was added by this intake.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 150 pF, 50 V, X7R, ±10%, stock 153,090, minimum 1, full reel 10,000, available order qty 107,920, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987679179509760-C1527.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_160_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "160 pF",
+            "tolerance": "±10%",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1528 / Fenghua 0402B161K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 160 pF value; the populate row was added by this intake. The Fenghua ordering code (161 = 16 x 10^1 pF) decodes consistently with the listed 160 pF.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 160 pF, 50 V, X7R, ±10%, stock 9,924, minimum 1, full reel 10,000, available order qty 9,923, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987682262458368-C1528.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_270_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "270 pF",
+            "tolerance": "±10%",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1533 / Fenghua 0402B271K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 270 pF value; the populate row was added by this intake. The Fenghua ordering code (271 = 27 x 10^1 pF) decodes consistently with the listed 270 pF.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 270 pF, 50 V, X7R, ±10%, stock 21,545, minimum 1, full reel 10,000, available order qty 21,487, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987699094200320-C1533.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_560_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "560 pF",
+            "tolerance": "±10%",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1539 / Fenghua 0402B561K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 560 pF value; the populate row was added by this intake. The Fenghua ordering code (561 = 56 x 10^1 pF) decodes consistently with the listed 560 pF.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 560 pF, 50 V, X7R, ±10%, stock 59,757, minimum 1, full reel 10,000, available order qty 59,682, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987721080606720-C1539.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_680_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "680 pF",
+            "tolerance": "±10%",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1541 / Fenghua 0402B681K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 680 pF value; the populate row was added by this intake. The Fenghua ordering code (681 = 68 x 10^1 pF) decodes consistently with the listed 680 pF.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 680 pF, 50 V, X7R, ±10%, stock 188,329, minimum 1, full reel 10,000, available order qty 183,458, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987727242174464-C1541.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_6_8_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6.8 nF",
+            "tolerance": "±10%",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1542 / Fenghua 0402B682K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 6.8 nF value; the populate row was added by this intake. The Fenghua ordering code (682 = 68 x 10^2 pF) decodes consistently with the listed 6.8 nF.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 6.8 nF, 50 V, X7R, ±10%, stock 119,235, minimum 1, full reel 10,000, available order qty 95,575, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987734380879872-C1542.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_0_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "0.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1544 / Fenghua 0402CG0R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 0.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 0R5 = 0.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 0.5 pF, 50 V, C0G, stock 47,649, minimum 1, full reel 10,000, available order qty 47,296, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987740676395008-C1544.pdf).",
+            "A SparkFun Artemis project reference (parts/oomp_project_github_sparkfun_spark_fun_artemis_spark_fun_artemis_current, component C18) already proposed this exact oomp_id as unmatched; this generic row resolves that proposal. Full stage should re-run project matching.",
+        ]
+
+    current = "electronic_capacitor_0402_1_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1550 / Fenghua 0402CG1R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 1 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R0 = 1.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 1 pF, 50 V, C0G, stock 922,332, minimum 1, full reel 10,000, available order qty 878,566, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987761564164096-C1550.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_1_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1551 / Fenghua 0402CG1R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 1.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R2 = 1.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 1.2 pF, 50 V, C0G, stock 159,402, minimum 1, full reel 10,000, available order qty 154,597, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987764881858560-C1551.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_10_nano_farad_fenghua_adv_tech_0402b103k500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0402_10_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "10 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1524 / 0402B103K500NT purchasing variant; 0402, 10 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0402 10 nF definition. The reviewed Basic Samsung preference C15195 / CL05B103KB5NNNC on the generic ID remains unchanged; the registry allows one preferred code per ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987672766554112-C1524.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_10_pico_farad_fenghua_adv_tech_0402cg100j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0402_10_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "10 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1545 / 0402CG100J500NT purchasing variant; 0402, 10 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0402 10 pF definition. The reviewed Basic Samsung preference C32949 / CL05C100JB5NNNC on the generic ID remains unchanged; the registry allows one preferred code per ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987744002883584-C1545.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_1_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1552 / Fenghua 0402CG1R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 1.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R5 = 1.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 1.5 pF, 50 V, C0G, stock 242,999, minimum 1, full reel 10,000, available order qty 209,310, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987768027586560-C1552.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_1_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1553 / Fenghua 0402CG1R8C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 1.8 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R8 = 1.8 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 1.8 pF, 50 V, C0G, stock 132,499, minimum 1, full reel 10,000, available order qty 128,489, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987771446349824-C1553.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1558 / Fenghua 0402CG2R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R0 = 2.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 2 pF, 50 V, C0G, stock 218,871, minimum 1, full reel 10,000, available order qty 215,793, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987787350609920-C1558.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_2_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1559 / Fenghua 0402CG2R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 2.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R2 = 2.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 2.2 pF, 50 V, C0G, stock 196,977, minimum 1, full reel 10,000, available order qty 173,077, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987790685216768-C1559.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_2_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1560 / Fenghua 0402CG2R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 2.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R5 = 2.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 2.5 pF, 50 V, C0G, stock 7,527, minimum 1, full reel 10,000, available order qty 7,477, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987793722163200-C1560.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_2_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1561 / Fenghua 0402CG2R7C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 2.7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R7 = 2.7 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 2.7 pF, 50 V, C0G, stock 77,631, minimum 1, full reel 10,000, available order qty 55,038, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987796775886848-C1561.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_25_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "25 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1556 / Fenghua 0402CG250J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 25 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 250 = 25 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 25 pF, 50 V, C0G, +/-5%, stock 95, minimum 10000 (equal to the 10,000 full reel; listed as Pre-order with estimated unit price $0.0008), MSL 1. Low stock and reel-only purchasing do not change the verified identity. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987780963090432-C1556.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_39_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "39 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1563 / Fenghua 0402CG390J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 39 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 390 = 39 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 39 pF, 50 V, C0G, +/-5%, stock 88,946, minimum 1, full reel 10,000, available order qty 87,267, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987806712193024-C1563.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_56_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "56 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1572 / Fenghua 0402CG560J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 56 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 560 = 56 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 56 pF, 50 V, C0G, +/-5%, stock 15,509, minimum 1, full reel 10,000, available order qty 9,083, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987834956365824-C1572.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_82_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "82 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1708 / Fenghua 0603F823M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 82 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 823 = 82 x 10^3 pF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 82 nF generic is distinct from the separate 0603 820 pF X7R generic supplied by C1632.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 82 nF, 50 V, Y5V, +/-20%, stock 20,949, minimum 1, full reel 4,000, available order qty 20,832, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988203677224960-C1708.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_56_nano_farad_fenghua_adv_tech_0603f563m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_56_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "56 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1706 / 0603F563M500NT purchasing variant; 0603, 56 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 56 nF definition. IMPORTANT dielectric difference: the reviewed preference C1629 / 0603B563K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1706 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988197532569600-C1706.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_4_7_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_4_7_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "X5R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1705 / Samsung CL10A475KP8NNNC as the first reviewed preferred extended purchasing choice for this rated variant; 0603, 4.7 uF, 10 V, X5R, ±10% verified against the staged live JLC capture 2026-09-28. The Samsung ordering code (CL10 = 0603, A = X5R, 475 = 4.7 uF, K = ±10%, P8 = 10 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Linked to the generic 0603 4.7 uF definition as a lower-voltage purchasing variant (following the established 16_volt taxonomy of C78); the 16 V rated variant keeps its ID. Projects needing 16 V margin must not substitute this 10 V SKU.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178155313184768-C1705.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_8_2_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "8.2 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1758 / Fenghua 0805B822K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 8.2 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 822 = 8.2 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 8.2 nF generic supplied by C1634.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 8.2 nF, 50 V, X7R, +/-10%, stock 12,263, minimum 1, full reel 4,000, available order qty 12,173, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988621820649472-C1758.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_820_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "820 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1757 / Fenghua 0805B821K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 820 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 821 = 82 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 820 pF generic supplied by C1632.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 820 pF, 50 V, X7R, +/-10%, stock 6,409, minimum 1, full reel 4,000, available order qty 6,370, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988618456682496-C1757.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_68_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "68 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1756 / Fenghua 0805B683K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 68 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 683 = 68 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 68 nF, 50 V, X7R, +/-10%, stock 10,712, minimum 1, full reel 4,000, available order qty 10,617, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988615230722048-C1756.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_6_8_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6.8 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1755 / Fenghua 0805B682K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 6.8 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 682 = 6.8 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 6.8 nF generic supplied by C1633.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 6.8 nF, 50 V, X7R, +/-10%, stock 56,942, minimum 1, full reel 4,000, available order qty 43,646, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988612143849472-C1755.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_680_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "680 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1754 / Fenghua 0805B681K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 680 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 681 = 68 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 680 pF generic supplied by C1630.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 680 pF, 50 V, X7R, +/-10%, stock 67,133, minimum 1, full reel 4,000, available order qty 59,199, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988607072800768-C1754.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_56_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "56 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1753 / Fenghua 0805B563K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 56 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 563 = 56 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 56 nF generic supplied by C1629.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 56 nF, 50 V, X7R, +/-10%, stock 60, minimum 1, full reel 4,000, available order qty 53, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988603981733888-C1753.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_560_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "560 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1751 / Fenghua 0805B561K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 560 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 561 = 56 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 560 pF generic supplied by C1627.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 560 pF, 50 V, X7R, +/-10%, stock 8,137, minimum 1, full reel 4,000, available order qty 8,091, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988597451337728-C1751.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_5_1_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5.1 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1750 / Fenghua 0805B512K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 5.1 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 512 = 5.1 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 5.1 nF generic supplied by C1587.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 5.1 nF, 50 V, X7R, +/-10%, stock 13,544, minimum 1, full reel 4,000, available order qty 13,499, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988594175315968-C1750.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_510_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "510 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1749 / Fenghua 0805B511K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 510 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 511 = 51 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 510 pF generic supplied by C1626.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 510 pF, 50 V, X7R, +/-10%, stock 470, minimum 1, full reel 4,000, available order qty 441, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988591037976576-C1749.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_5_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1748 / Fenghua 0805B502K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 5 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 502 = 5 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 5 nF generic supplied by C1625.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 5 nF, 50 V, X7R, +/-10%, stock 8,285, minimum 1, full reel 4,000, available order qty 8,241, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988587611770880-C1748.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_500_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "500 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1747 / Fenghua 0805B501K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 500 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 501 = 50 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 500 pF generic supplied by C1624.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 500 pF, 50 V, X7R, +/-10%, stock 4,507, minimum 1, full reel 4,000, available order qty 4,489, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988584302600192-C1747.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_4_7_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_4_7_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "X5R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1746 / Samsung CL21A475KOFNNNE as the first reviewed preferred extended purchasing choice for this rated variant; 0805, 4.7 uF, 16 V, X5R, ±10% verified against the staged live JLC capture 2026-09-28. The Samsung ordering code (CL21 = 0805, A = X5R, 475 = 4.7 uF, K = ±10%, OF = 16 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Linked to the generic 0805 4.7 uF definition as a lower-voltage purchasing variant (following the 0603 16_volt C78 precedent); the reviewed Basic 25 V preference C1779 / CL21A475KAQNNNE on the generic ID remains unchanged. Projects needing 25 V margin must not substitute this 16 V SKU.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178171934400512-C1746.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_47_nano_farad_fenghua_adv_tech_0805b473k500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_47_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "47 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1745 / 0805B473K500NT purchasing variant; 0805, 47 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 47 nF definition. The reviewed Basic preference C53134 / CL21B473KBCNNNC (Samsung, same 47 nF 50 V X7R ±10% spec) keeps the plain generic ID; the registry allows one preferred code per ID, so this equivalent-spec FH SKU is recorded as its own exact variant ID following the established maker/mpn variant taxonomy.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988580967993344-C1745.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_47_nano_farad_fenghua_adv_tech_0603f473m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_47_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "47 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1703 / 0603F473M500NT purchasing variant; 0603, 47 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 47 nF definition. IMPORTANT dielectric difference: the reviewed preference on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1703 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988190515499008-C1703.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_330_nano_farad_fenghua_adv_tech_0603f334m250nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_330_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 nF",
+            "rated_voltage": "25 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1702 / 0603F334M250NT purchasing variant; 0603, 330 nF, 25 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 330 nF definition. IMPORTANT dielectric difference: the reviewed preference C1615 / 0603B334K250NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1702 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988187407654912-C1702.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_39_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "39 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1776 / Fenghua 0805F393M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 39 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 393 = 39 nF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 39 nF, 50 V, Y5V, +/-20%, stock 5, minimum 1, full reel 4,000, available order qty 5, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990665372962816-C1776.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_82_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "82 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1782 / Fenghua 0805F823M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 82 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 823 = 82 x 10^3 pF = 82 nF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0805 820 pF X7R generic supplied by C1757.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 82 nF, 50 V, Y5V, +/-20%, stock 83, minimum 1, full reel 4,000, available order qty 83. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990697418121216-C1782.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_680_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "680 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1783 / Fenghua 0805F684M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 680 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 684 = 68 x 10^4 pF = 680 nF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 680 nF, 50 V, Y5V, +/-20%, stock 5, minimum 1, full reel 4,000, available order qty 4, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990703721889792-C1783.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_0_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "0.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1784 / Fenghua 0805CG0R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 0.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 0R5 = 0.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 0.5 pF generics supplied by C1544 and C1633.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 0.5 pF, 50 V, C0G, stock 7,460, minimum 1, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990710151757824-C1784.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1786 / Fenghua 0805CG1R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 1 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R0 = 1 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 1 pF generic supplied by C1550.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 1 pF, 50 V, C0G, stock 65,574, minimum 1, full reel 4,000, available order qty 65,385, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990716489351168-C1786.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1787 / Fenghua 0805CG1R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 1.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R2 = 1.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 1.2 pF generics supplied by C1551 and C1638.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 1.2 pF, 50 V, C0G, stock 995, minimum 1, full reel 4,000, available order qty 977, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990722822479872-C1787.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1788 / Fenghua 0805CG1R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 1.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R5 = 1.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 1.5 pF generics supplied by C1552 and C1639.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 1.5 pF, 50 V, C0G, stock 3,939, minimum 1, full reel 4,000, available order qty 3,879, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990729428914176-C1788.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1789 / Fenghua 0805CG1R8C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 1.8 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R8 = 1.8 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 1.8 pF generics supplied by C1553 and C1640.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 1.8 pF, 50 V, C0G, stock 1,711, minimum 1, full reel 4,000, available order qty 1,710, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990735971893248-C1789.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_nano_farad_samsung_electro_mechanics_cl21c102jbcnnnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_1_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1791 / CL21C102JBCNNNC purchasing variant; 0805, 1 nF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 113,668, minimum 1, full reel 4,000, available order qty 105,362, MSL 1).",
+            "Linked to the generic 0805 1 nF definition. Dielectric difference: the reviewed Basic preference C46653 / CL21B102KBCNNNC (Samsung, X7R ±10%) on the generic ID keeps the preference slot, while this C1791 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 1 nF/0805 should pick this variant explicitly; the X7R Basic preference is not downgraded. The registry allows one preferred code per ID; C1791 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178187076243456-C1791.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_12_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "12 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1792 / Fenghua 0805CG120J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 12 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 120 = 12 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 12 pF generics supplied by C1547 and C38523.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 12 pF, 50 V, C0G, +/-5%, stock 113,778, minimum 1, full reel 4,000, available order qty 94,617, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990742267813888-C1792.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_120_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "120 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1793 / Fenghua 0805CG121J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 120 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 121 = 120 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the in-grid 0402 120 pF generic and the 0603 120 pF generic supplied by C1643.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 120 pF, 50 V, C0G, +/-5%, stock 5,462, minimum 1, full reel 4,000, available order qty 5,235, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991037391220736-C1793.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_33_nano_farad_fenghua_adv_tech_0805f333m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_33_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "33 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1774 / 0805F333M500NT purchasing variant; 0805, 33 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 33 nF definition. IMPORTANT dielectric difference: the reviewed Basic preference C1739 / 0805B333K500NT (same maker, X7R ±10%) on the generic ID is far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1774 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990647203778560-C1774.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_27_nano_farad_fenghua_adv_tech_0805f273m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_27_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "27 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1773 / 0805F273M500NT purchasing variant; 0805, 27 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 27 nF definition. IMPORTANT dielectric difference: the reviewed preference C1734 / 0805B273K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1773 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990640631304192-C1773.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_220_nano_farad_fenghua_adv_tech_0805f224m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_220_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1770 / 0805F224M500NT purchasing variant; 0805, 220 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 220 nF definition. IMPORTANT dielectric difference: the reviewed Basic preference C5378 / CL21B224KBFNNNE (Samsung, X7R ±10%) on the generic ID is far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1770 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990634163417088-C1770.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_20_nano_farad_fenghua_adv_tech_0805f203m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_20_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "20 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1768 / 0805F203M500NT purchasing variant; 0805, 20 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 20 nF definition. IMPORTANT dielectric difference: the reviewed preference C1726 / 0805B203K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1768 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988644578402304-C1768.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_18_nano_farad_fenghua_adv_tech_0805f183m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_18_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "18 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1767 / 0805F183M500NT purchasing variant; 0805, 18 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 18 nF definition. IMPORTANT dielectric difference: the reviewed preference C1723 / 0805B183K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1767 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988641038274560-C1767.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_120_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "120 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1764 / Fenghua 0805F124M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 120 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 124 = 120 nF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 120 nF, 50 V, Y5V, +/-20%, stock 17, minimum 1, full reel 4,000, available order qty 17, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988627964628992-C1764.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_12_nano_farad_fenghua_adv_tech_0805f123m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_12_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "12 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1763 / 0805F123M500NT purchasing variant; 0805, 12 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 12 nF definition. IMPORTANT dielectric difference: the reviewed preference C1715 / 0805B123K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1763 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988624890339328-C1763.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_micro_farad_samsung_electro_mechanics_cl21f105zafnnne"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_1_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "Y5V",
+            "tolerance": "-20%~+80%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1761 / CL21F105ZAFNNNE purchasing variant; 0805, 1 uF, 25 V, Y5V, -20%~+80% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 1 uF definition. IMPORTANT dielectric difference: the reviewed Basic preference C28323 / CL21B105KBFNNNE (X7R ±10% 50 V) and the X7R 25 V rated variant C1712 on the generic family are far more stable than this Y5V -20/+80% SKU. It must never replace the X7R choices, and projects requiring X7R stability or tight tolerance must not substitute this SKU. The registry allows one preferred code per ID; C1761 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178179509719040-C1761.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_470_nano_farad_fenghua_adv_tech_0805f474m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_470_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "470 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1778 / 0805F474M500NT purchasing variant; 0805, 470 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 3,831, minimum 1, full reel 4,000, available order qty 3,798).",
+            "Linked to the generic 0805 470 nF definition. IMPORTANT dielectric difference: the reviewed Basic preference C13967 / CL21B474KBFNNNE (Samsung, X7R ±10% 50 V) on the generic ID is far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1778 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990678056808448-C1778.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_68_nano_farad_fenghua_adv_tech_0805f683m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_68_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "68 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1781 / 0805F683M500NT purchasing variant; 0805, 68 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 92, minimum 1, full reel 4,000, available order qty 91).",
+            "Linked to the generic 0805 68 nF definition. IMPORTANT dielectric difference: the reviewed preference C1756 / 0805B683K500NT on the generic ID is from the same maker (FH) but X7R ±10%, far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1781 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770990691084181504-C1781.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_33_nano_farad_fenghua_adv_tech_0603f333m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_33_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "33 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1701 / 0603F333M500NT purchasing variant; 0603, 33 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 33 nF definition. IMPORTANT dielectric difference: the reviewed Basic preference C21117 (Samsung, X7R ±10%) and the FH X7R variant C1614 (0603B333K500NT) on the generic family are far more stable than this Y5V ±20% SKU. It must never replace the X7R choices, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1701 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988184316993536-C1701.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_27_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "27 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1700 / Fenghua 0603F273M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 27 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 273 = 27 x 10^3 pF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 27 nF, 50 V, Y5V, +/-20%, stock 8, minimum 1, full reel 4,000, available order qty 7, MSL 1. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988180763877376-C1700.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_220_nano_farad_samsung_electro_mechanics_cl10f224zb8nnnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_220_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "-20%~+80%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1698 / CL10F224ZB8NNNC purchasing variant; 0603, 220 nF, 50 V, Y5V, -20%~+80% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 220 nF definition. IMPORTANT dielectric difference: the reviewed Basic preference C21120 / CL10B224KA8NNNC (Samsung, X7R ±10% 25 V) and the FH X7R variant C1606 on the generic ID are far more stable than this Y5V -20/+80% SKU. It must never replace the X7R preferences, and projects requiring X7R stability or tight tolerance must not substitute this SKU. The registry allows one preferred code per ID; C1698 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178154017280000-C1698.pdf). Stock was 11 at capture (recorded as observed; low stock does not change identity).",
+        ]
+
+    current = "electronic_capacitor_0603_22_nano_farad_fenghua_adv_tech_0603f223m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_22_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "22 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1697 / 0603F223M500NT purchasing variant; 0603, 22 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 22 nF definition. IMPORTANT dielectric difference: the reviewed preference C1532 / 0603B223K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1697 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988177693917184-C1697.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_20_nano_farad_fenghua_adv_tech_0603f203m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_20_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "20 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1696 / 0603F203M500NT purchasing variant; 0603, 20 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 20 nF definition. IMPORTANT dielectric difference: the reviewed preference C1602 / 0603B203K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1696 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988174413971456-C1696.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_150_nano_farad_fenghua_adv_tech_0603f154m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_150_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1694 / 0603F154M500NT purchasing variant; 0603, 150 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 150 nF definition. IMPORTANT dielectric difference: the reviewed preference C1597 / 0603B154K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1694 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988167875186688-C1694.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_12_nano_farad_fenghua_adv_tech_0603f123m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_12_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "12 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1692 / 0603F123M500NT purchasing variant; 0603, 12 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 12 nF definition. IMPORTANT dielectric difference: the reviewed preference C1593 / 0603B123K500NT on the generic ID is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1692 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988161411358720-C1692.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_10_micro_farad_6_3_volt_20_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_10_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "X5R",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1691 / Samsung CL10A106MQ8NNNC as the first reviewed preferred extended purchasing choice for this rated variant; 0603, 10 uF, 6.3 V, X5R, ±20% verified against the staged live JLC capture 2026-09-28. The Samsung ordering code (CL10 = 0603, A = X5R, 106 = 10 uF, M = ±20%, Q8 = 6.3 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Linked to the generic 0603 10 uF definition as a lower-voltage, wider-tolerance purchasing variant (following the established 25_volt_20_percent taxonomy); the reviewed Basic 10 V ±10% preference C19702 and the 25 V ±20% rated variant C96446 remain unchanged. Projects needing 10 V margin or ±10% tolerance must not substitute this SKU.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178152725164032-C1691.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_3_9_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.9 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1742 / Fenghua 0805B392K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 3.9 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 392 = 3.9 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 3.9 nF generic supplied by C1618.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 3.9 nF, 50 V, X7R, +/-10%, stock 8,961, minimum 1, full reel 4,000, available order qty 8,804, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988571316629504-C1742.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_390_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "390 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1741 / Fenghua 0805B391K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 390 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 391 = 39 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 390 pF generic supplied by C1617.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 390 pF, 50 V, X7R, +/-10%, stock 23,500, minimum 1, full reel 4,000, available order qty 22,960, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988568221233152-C1741.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_330_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1740 / Fenghua 0805B334K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 330 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 334 = 330 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 330 nF generic supplied by C1615.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 330 nF, 50 V, X7R, +/-10%, stock 36,393, minimum 1, full reel 4,000, available order qty 19,041, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988564983095296-C1740.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_3_3_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.3 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1738 / Fenghua 0805B332K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 3.3 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 332 = 3.3 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 3.3 nF generic supplied by C1576.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 3.3 nF, 50 V, X7R, +/-10%, stock 53,456, minimum 1, full reel 4,000, available order qty 47,565, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988555491926016-C1738.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_330_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1737 / Fenghua 0805B331K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 330 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 331 = 33 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 330 pF generic supplied by C1612.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 330 pF, 50 V, X7R, +/-10%, stock 76,097, minimum 1, full reel 4,000, available order qty 71,892, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988552186273792-C1737.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_3_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1736 / Fenghua 0805B302K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 3 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 302 = 3 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 3 nF generic supplied by C1611.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 3 nF, 50 V, X7R, +/-10%, stock 21,752, minimum 1, full reel 4,000, available order qty 21,658, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988548852342784-C1736.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_300_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "300 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1735 / Fenghua 0805B301K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 300 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 301 = 30 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 300 pF generic supplied by C1610.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 300 pF, 50 V, X7R, +/-10%, stock 6,787, minimum 1, full reel 4,000, available order qty 6,746, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988543763976192-C1735.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_27_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "27 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1734 / Fenghua 0805B273K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 27 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 273 = 27 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 27 nF generic supplied by C1700.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 27 nF, 50 V, X7R, +/-10%, stock 15, minimum 1, full reel 4,000, available order qty 10, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988540492959744-C1734.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_2_7_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.7 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1733 / Fenghua 0805B272K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 2.7 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 272 = 2.7 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 2.7 nF generic supplied by C1609.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 2.7 nF, 50 V, X7R, +/-10%, stock 10,087, minimum 1, full reel 4,000, available order qty 10,023, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988537414475776-C1733.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_270_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "270 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1732 / Fenghua 0805B271K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 270 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 271 = 27 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 270 pF generic supplied by C1608.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 270 pF, 50 V, X7R, +/-10%, stock 1,985, minimum 1, full reel 4,000, available order qty 1,946, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988534004371456-C1732.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_2_2_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_2_2_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "X5R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1731 / Samsung CL21A225KOFNNNE as the first reviewed preferred extended purchasing choice for this rated variant; 0805, 2.2 uF, 16 V, X5R, ±10% verified against the staged live JLC capture 2026-09-28. The Samsung ordering code (CL21 = 0805, A = X5R, 225 = 2.2 uF, K = ±10%, OF = 16 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Linked to the generic 0805 2.2 uF definition as a lower-voltage purchasing variant; the reviewed Basic 50 V preference C377773 / CL21A225KBQNNNE on the generic ID remains unchanged. Projects needing 50 V margin must not substitute this 16 V SKU.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178168222846976-C1731.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_2_2_nano_farad_samsung_electro_mechanics_cl21b222kbannnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_2_2_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1728 / CL21B222KBANNNC purchasing variant; 0805, 2.2 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 2.2 nF definition. IMPORTANT dielectric difference: the reviewed Basic preference C28260 / CL21C222JBFNNNE (same maker, C0G ±5%) on the generic ID is more stable than this X7R ±10% SKU. Either may be selected deliberately per project stability requirements, but C1728 must not silently replace the C0G preference. The registry allows one preferred code per ID; C1728 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178164071026688-C1728.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_220_pico_farad_fenghua_adv_tech_0805b221k500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_220_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1727 / 0805B221K500NT purchasing variant; 0805, 220 pF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 220 pF definition. The reviewed Basic preference C107145 / CC0805KRX7R9BB221 (YAGEO, same 220 pF 50 V X7R ±10% spec) keeps the plain generic ID; the registry allows one preferred code per ID, so this equivalent-spec FH SKU is recorded as its own exact variant ID following the established maker/mpn variant taxonomy.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988530842001408-C1727.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_20_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "20 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1726 / Fenghua 0805B203K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 20 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 203 = 20 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 20 nF generic supplied by C1602.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 20 nF, 50 V, X7R, +/-10%, stock 3,612, minimum 1, full reel 4,000, available order qty 3,601, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988527448539136-C1726.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_2_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1725 / Fenghua 0805B202K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 2 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 202 = 2 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0402 2 nF generic supplied by C1601.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 2 nF, 50 V, X7R, +/-10%, stock 6,746, minimum 1, full reel 4,000, available order qty 6,662, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988524361801728-C1725.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_200_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "200 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1724 / Fenghua 0805B201K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 200 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 201 = 20 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0402 200 pF generic supplied by C1529 and 0603 200 pF generic supplied by C1600.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 200 pF, 50 V, X7R, +/-10%, stock 3,371, minimum 1, full reel 4,000, available order qty 1,605, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988521140035584-C1724.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_18_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "18 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1723 / Fenghua 0805B183K500NT as the first reviewed preferred extended purchasing choice for this in-grid generic 0805 18 nF value (the generic already exists in the 0805 capacitance_values grid, so no populate row was needed). The Fenghua ordering code (B = X7R, 183 = 18 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 18 nF, 50 V, X7R, +/-10%, stock 3,763, minimum 1, full reel 4,000, available order qty 3,754, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770997455402225664-C1723.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_8_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.8 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1722 / Fenghua 0805B182K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 1.8 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 182 = 1.8 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 1.8 nF generic supplied by C1599.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 1.8 nF, 50 V, X7R, +/-10%, stock 5,862, minimum 1, full reel 4,000, available order qty 5,635, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988239954165760-C1722.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_180_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "180 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1721 / Fenghua 0805B181K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 180 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 181 = 18 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 180 pF generic supplied by C1598.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 180 pF, 50 V, X7R, +/-10%, stock 34,995, minimum 1, full reel 4,000, available order qty 34,747, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988236569092096-C1721.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_160_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "160 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1720 / Fenghua 0805B161K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 160 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 161 = 16 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 160 pF, 50 V, X7R, +/-10%, stock 3,713, minimum 1, full reel 4,000, available order qty 3,713, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988233179959296-C1720.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_150_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1719 / Fenghua 0805B154K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 150 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 154 = 150 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 150 nF generic supplied by C1597.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 150 nF, 50 V, X7R, +/-10%, stock 4,475, minimum 1, full reel 4,000, available order qty 3,872, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988229820321792-C1719.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_15_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "15 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1718 / Fenghua 0805B153K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 15 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 153 = 15 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 15 nF generic supplied by C1596.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 15 nF, 50 V, X7R, +/-10%, stock 866, minimum 1, full reel 4,000, available order qty 784, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988226121621504-C1718.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_5_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.5 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1717 / Fenghua 0805B152K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 1.5 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 152 = 1.5 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0402 1.5 nF generic supplied by C1552 and 0603 1.5 nF generic supplied by C1595.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 1.5 nF, 50 V, X7R, +/-10%, stock 52,913, minimum 1, full reel 4,000, available order qty 40,184, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988222879289344-C1717.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_150_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1716 / Fenghua 0805B151K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 150 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 151 = 15 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 150 pF, 50 V, X7R, +/-10%, stock 83,419, minimum 1, full reel 4,000, available order qty 77,998, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988216164073472-C1716.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_150_pico_farad_fenghua_adv_tech_0805cg151j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_150_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1795 / 0805CG151J500NT purchasing variant; 0805, 150 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 2,917, minimum 1, full reel 4,000, available order qty 2,910, MSL 1).",
+            "Linked to the generic 0805 150 pF definition. Dielectric difference: the reviewed preference C1716 / 0805B151K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1795 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 150 pF/0805 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1795 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991044034863104-C1795.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_16_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "16 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1796 / Fenghua 0805CG160J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 16 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 160 = 16 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 16 pF generic supplied by C1646.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 16 pF, 50 V, C0G, +/-5%, stock 1,412, minimum 1, full reel 4,000, available order qty 1,260, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991047226728448-C1796.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_18_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "18 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1797 / Fenghua 0805CG180J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 18 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 180 = 18 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the in-grid 0402 18 pF generic and the 0603 18 pF generic supplied by C1647.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 18 pF, 50 V, C0G, +/-5%, stock 153,087, minimum 1, full reel 4,000, available order qty 142,930, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991054005264384-C1797.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_200_pico_farad_fenghua_adv_tech_0805cg201j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_200_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "200 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1799 / 0805CG201J500NT purchasing variant; 0805, 200 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 6,903, minimum 1, full reel 4,000, available order qty 6,857, MSL 1).",
+            "Linked to the generic 0805 200 pF definition. Dielectric difference: the reviewed preference C1724 / 0805B201K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1799 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 200 pF/0805 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1799 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991060758093824-C1799.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1800 / Fenghua 0805CG2R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R0 = 2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 2 pF generics supplied by C1558 and C1650.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 2 pF, 50 V, C0G, stock 0, minimum 950, full reel 4,000 (listed as pre-order/reel purchasing with no available order quantity), MSL 1; the live page lists no tolerance row. The zero stock and 950-piece minimum are purchasing conditions recorded as observed and do not change the verified identity. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991067456126976-C1800.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_2_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1801 / Fenghua 0805CG2R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 2.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R2 = 2.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 2.2 pF generics supplied by C1559 and C1651.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 2.2 pF, 50 V, C0G, stock 28,355, minimum 1, full reel 4,000, available order qty 28,245, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991073961627648-C1801.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_2_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1802 / Fenghua 0805CG2R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 2.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R5 = 2.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 2.5 pF generics supplied by C1560 and C1652.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 2.5 pF, 50 V, C0G, stock 3,312, minimum 1, full reel 4,000, available order qty 3,312, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991080474841088-C1802.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_2_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1803 / Fenghua 0805CG2R7C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 2.7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R7 = 2.7 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 2.7 pF generic supplied by C1561.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 2.7 pF, 50 V, C0G, stock 24,381, minimum 1, full reel 4,000, available order qty 24,198, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991087395442688-C1803.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_220_pico_farad_fenghua_adv_tech_0805cg221j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_220_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1805 / 0805CG221J500NT purchasing variant; 0805, 220 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 3,293, minimum 1, full reel 4,000, available order qty 3,249, MSL 1).",
+            "Linked to the generic 0805 220 pF definition. The reviewed preference C107145 / CC0805KRX7R9BB221 (Yageo, X7R ±10%) keeps the generic preference slot and the sibling FH X7R variant C1727 / 0805B221K500NT already exists; this C1805 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the family. Projects needing C0G stability at 220 pF/0805 should pick this variant explicitly; neither X7R choice is downgraded. The registry allows one preferred code per ID; C1805 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991093494501376-C1805.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_24_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "24 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1806 / Fenghua 0805CG240J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 24 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 240 = 24 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 24 pF generic supplied by C1654.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 24 pF, 50 V, C0G, +/-5%, stock 3,683, minimum 1, full reel 4,000, available order qty 3,055, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991099827630080-C1806.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_25_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "25 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1807 / Fenghua 0805CG250J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 25 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 250 = 25 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 25 pF generics supplied by C1556 and C1655.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 25 pF, 50 V, C0G, +/-5%, stock 4,365, minimum 1, full reel 4,000, available order qty 4,320, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991106265616385-C1807.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_27_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "27 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1808 / Fenghua 0805CG270J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 27 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 270 = 27 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the in-grid 0402 27 pF generic and the 0603 27 pF generic supplied by C1656.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 27 pF, 50 V, C0G, +/-5%, stock 64,409, minimum 1, full reel 4,000, available order qty 62,858, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991112624586752-C1808.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_3_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1810 / Fenghua 0805CG3R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 3 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R0 = 3 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 3 pF generic supplied by C1564.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 3 pF, 50 V, C0G, stock 4,129, minimum 1, full reel 4,000, available order qty 4,115, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991119108710400-C1810.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_3_3_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.3 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1811 / Fenghua 0805CG3R3C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 3.3 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R3 = 3.3 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 3.3 pF generics supplied by C1565 and C1660.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 3.3 pF, 50 V, C0G, stock 2,364, minimum 1, full reel 4,000, available order qty 2,328, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991125391777792-C1811.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_3_6_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.6 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1812 / Fenghua 0805CG3R6C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 3.6 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R6 = 3.6 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 3.6 pF generic supplied by C1661.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 3.6 pF, 50 V, C0G, stock 583, minimum 1, full reel 4,000, available order qty 573, MSL 1; the live page lists no tolerance row. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991131838558208-C1812.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_3_9_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.9 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1813 / Fenghua 0805CG3R9C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 3.9 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R9 = 3.9 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 3.9 pF generics supplied by C1566 and C1662.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 3.9 pF, 50 V, C0G, stock 2,903, minimum 1, full reel 4,000, available order qty 2,887, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991135127298048-C1813.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_330_pico_farad_fenghua_adv_tech_0805cg331j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_330_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1815 / 0805CG331J500NT purchasing variant; 0805, 330 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 24,045, minimum 1, full reel 4,000, available order qty 23,803, MSL 1).",
+            "Linked to the generic 0805 330 pF definition. Dielectric difference: the reviewed preference C1737 / 0805B331K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1815 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 330 pF/0805 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1815 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991141460561920-C1815.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_36_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "36 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1816 / Fenghua 0805CG360J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 36 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 360 = 36 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 36 pF generic supplied by C1665.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 36 pF, 50 V, C0G, +/-5%, stock 1,729, minimum 1, full reel 4,000, available order qty 1,709, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991147877711872-C1816.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_39_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "39 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1817 / Fenghua 0805CG390J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 39 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 390 = 39 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 39 pF generics supplied by C1563 and C1666.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 39 pF, 50 V, C0G, +/-5%, stock 16,265, minimum 1, full reel 4,000, available order qty 16,150, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991154160914432-C1817.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_390_pico_farad_fenghua_adv_tech_0805cg391j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_390_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "390 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1818 / 0805CG391J500NT purchasing variant; 0805, 390 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 3,782, minimum 1, full reel 4,000, available order qty 3,782, MSL 1).",
+            "Linked to the generic 0805 390 pF definition. Dielectric difference: the reviewed preference C1741 / 0805B391K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1818 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 390 pF/0805 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1818 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991160514879488-C1818.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_4_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1819 / Fenghua 0805CG4R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 4 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 4R0 = 4 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 4 pF generics supplied by C1568 and C1668.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 4 pF, 50 V, C0G, stock 6,689, minimum 1, full reel 4,000, available order qty 6,667, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991167078830080-C1819.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_4_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1820 / Fenghua 0805CG4R7C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 4.7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 4R7 = 4.7 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 4.7 pF generics supplied by C1569 and C1669.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 4.7 pF, 50 V, C0G, stock 14,023, minimum 1, full reel 4,000, available order qty 13,881, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991173429141504-C1820.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_470_pico_farad_fenghua_adv_tech_0805cg471j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_470_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "470 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1822 / 0805CG471J500NT purchasing variant; 0805, 470 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 39,102, minimum 1, full reel 4,000, available order qty 38,943, MSL 1).",
+            "Linked to the generic 0805 470 pF definition. Dielectric difference: the reviewed preference C1743 / 0805B471K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1822 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 470 pF/0805 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1822 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991179624398848-C1822.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_50_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "50 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1823 / Fenghua 0805CG500J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 50 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 500 = 50 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 50 pF generic supplied by C1672.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 50 pF, 50 V, C0G, +/-5%, stock 20,176, minimum 1, full reel 4,000, available order qty 19,984, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991186151006208-C1823.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1824 / Fenghua 0805CG5R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 5R0 = 5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 5 pF generics supplied by C1573 and C1673.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 5 pF, 50 V, C0G, stock 27,853, minimum 1, full reel 4,000, available order qty 27,686, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991192488329216-C1824.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_5_1_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5.1 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1825 / Fenghua 0805CG5R1C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 5.1 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 5R1 = 5.1 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. No 5.1 pF generic exists in any other package.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 5.1 pF, 50 V, C0G, stock 3,093, minimum 1, full reel 4,000, available order qty 3,055, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991198544633857-C1825.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_5_6_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5.6 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1826 / Fenghua 0805CG5R6C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 5.6 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 5R6 = 5.6 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 5.6 pF generics supplied by C1574 and C1674.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 5.6 pF, 50 V, C0G, stock 7,614, minimum 1, full reel 4,000, available order qty 7,570, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991205939732480-C1826.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_51_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "51 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1827 / Fenghua 0805CG510J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 51 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 510 = 51 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 51 pF generics supplied by C1571 and C1675.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 51 pF, 50 V, C0G, +/-5%, stock 3,481, minimum 1, full reel 4,000, available order qty 3,437, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991212088582144-C1827.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_56_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "56 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1828 / Fenghua 0805CG560J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 56 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 560 = 56 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 56 pF generics supplied by C1572 and C1676.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 56 pF, 50 V, C0G, +/-5%, stock 19,293, minimum 1, full reel 4,000, available order qty 17,657, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991218249609216-C1828.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_560_pico_farad_fenghua_adv_tech_0805cg561j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_560_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "560 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1829 / 0805CG561J500NT purchasing variant; 0805, 560 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 7,544, minimum 1, full reel 4,000, available order qty 7,452, MSL 1).",
+            "Linked to the generic 0805 560 pF definition. Dielectric difference: the reviewed preference C1751 / 0805B561K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1829 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 560 pF/0805 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1829 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991224310378496-C1829.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_6_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1831 / Fenghua 0805CG6R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 6.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 6R2 = 6.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 6.2 pF generic supplied by C1678.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 6.2 pF, 50 V, C0G, stock 3,868, minimum 1, full reel 4,000, available order qty 3,861, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991227598848000-C1831.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_6_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6.8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1832 / Fenghua 0805CG6R8C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 6.8 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 6R8 = 6.8 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 6.8 pF generics supplied by C1576 and C1679.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 6.8 pF, 50 V, C0G, stock 37,969, minimum 1, full reel 4,000, available order qty 37,817, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991234293092352-C1832.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_62_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "62 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1833 / Fenghua 0805CG620J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 62 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 620 = 62 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. No 62 pF generic exists in any other package.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 62 pF, 50 V, C0G, +/-5%, stock 3,370, minimum 1, full reel 4,000, available order qty 3,370, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991240576159744-C1833.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_68_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "68 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1834 / Fenghua 0805CG680J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 68 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 680 = 68 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 68 pF generic supplied by C1680.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 68 pF, 50 V, C0G, +/-5%, stock 19,989, minimum 1, full reel 4,000, available order qty 19,603, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991246896975872-C1834.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_680_pico_farad_fenghua_adv_tech_0805cg681j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_680_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "680 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1835 / 0805CG681J500NT purchasing variant; 0805, 680 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 4,717, minimum 1, full reel 4,000, available order qty 4,685, MSL 1).",
+            "Linked to the generic 0805 680 pF definition. Dielectric difference: the reviewed preference C1754 / 0805B681K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1835 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 680 pF/0805 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1835 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991251875479552-C1835.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1836 / Fenghua 0805CG7R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 7R0 = 7 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 7 pF generics supplied by C1577 and C1682.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 7 pF, 50 V, C0G, stock 3,258, minimum 1, full reel 4,000, available order qty 3,255, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991256681746432-C1836.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_7_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "7.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1837 / Fenghua 0805CG7R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 7.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 7R5 = 7.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. No 7.5 pF generic exists in any other package.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 7.5 pF, 50 V, C0G, stock 496, minimum 1, full reel 4,000, available order qty 481, MSL 1; the live page lists no tolerance row. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991263019339776-C1837.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_75_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "75 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1838 / Fenghua 0805CG750J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 75 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 750 = 75 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 75 pF generic supplied by C1681.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 75 pF, 50 V, C0G, +/-5%, stock 2,426, minimum 1, full reel 4,000, available order qty 2,339, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991269151952896-C1838.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1839 / Fenghua 0805CG8R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 8 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 8R0 = 8 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the in-grid 0402 8 pF generic supplied by C1578.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 8 pF, 50 V, C0G, stock 2,658, minimum 1, full reel 4,000, available order qty 2,594, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991275808313344-C1839.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_8_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "8.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1840 / Fenghua 0805CG8R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 8.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 8R2 = 8.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 8.2 pF generics supplied by C1579 and C1685.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 8.2 pF, 50 V, C0G, stock 34,547, minimum 1, full reel 4,000, available order qty 34,116, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991282019942400-C1840.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_82_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "82 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1841 / Fenghua 0805CG820J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 82 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 820 = 82 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 82 pF generic supplied by C1683.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 82 pF, 50 V, C0G, +/-5%, stock 23,455, minimum 1, full reel 4,000, available order qty 23,228, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991288257142784-C1841.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_820_pico_farad_fenghua_adv_tech_0805cg821j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_820_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "820 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1842 / 0805CG821J500NT purchasing variant; 0805, 820 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 7,198, minimum 1, full reel 4,000, available order qty 6,998, MSL 1).",
+            "Linked to the generic 0805 820 pF definition. Dielectric difference: the reviewed preference C1757 / 0805B821K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1842 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 820 pF/0805 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1842 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991294472560640-C1842.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_91_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "91 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1843 / Fenghua 0805CG910J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 91 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 910 = 91 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 91 pF generic supplied by C1686.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 91 pF, 50 V, C0G, +/-5%, stock 3,648, minimum 1, full reel 4,000, available order qty 3,630, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991301275721728-C1843.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_9_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "9 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1844 / Fenghua 0805CG9R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 9 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 9R0 = 9 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 9 pF generic supplied by C1580.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 9 pF, 50 V, C0G, stock 4,793, minimum 1, full reel 4,000, available order qty 4,731, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991307424436224-C1844.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1845 / Fenghua 1206B102K500NT as the first reviewed preferred extended purchasing choice for this previously absent plain 1206 1 nF generic; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 102 = 1 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 1206 1 nF 2000 V rated variant supplied by C9196.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 1 nF, 50 V, X7R, +/-10%, stock 118,007, minimum 1, full reel 4,000, available order qty 116,350, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991310558257152-C1845.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_10_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_10_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "X5R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1849 / CL31A106KOHNNNE rated purchasing variant; 1206, 10 uF, 16 V, X5R, ±10% verified against the staged live JLC capture 2026-09-28 (stock 235,191, minimum 1, full reel 2,000, available order qty 209,883, MSL 1). The Samsung ordering code (KO = X5R 16 V) decodes consistently with the listed specifications.",
+            "Linked to the generic 1206 10 uF definition. IMPORTANT rating difference: the reviewed preference C13585 / CL31A106KBHNNNE on the generic ID is the 50 V rated part; this C1849 SKU is the 16 V part and must never silently replace it in circuits that need the higher rating. It exists so projects that only need 16 V at 1206/10 uF can pick the cheaper exact SKU explicitly. The registry allows one preferred code per ID; C1849 is recorded as its own exact rated-variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178189756674048-C1849.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_150_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1850 / Fenghua 1206B151K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 150 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 151 = 15 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 150 pF generics supplied by C1552 and C1639.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 150 pF, 50 V, X7R, +/-10%, stock 9, minimum 1, full reel 4,000, available order qty 5, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991323648544768-C1850.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_5_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.5 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1851 / Fenghua 1206B152K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 1.5 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 152 = 1.5 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 1.5 nF generics supplied by C1552 and C1595 and the 0805 1.5 nF generic supplied by C1717.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 1.5 nF, 50 V, X7R, +/-10%, stock 2,091, minimum 1, full reel 4,000, available order qty 2,040, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991330132533248-C1851.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_20_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "20 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1853 / Fenghua 1206B203K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 20 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 203 = 20 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0805 20 nF generic supplied by C1726.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 20 nF, 50 V, X7R, +/-10%, stock 3,853, minimum 1, full reel 4,000, available order qty 3,845, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991343998902272-C1853.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_220_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1854 / Fenghua 1206B221K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 220 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 221 = 22 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 220 pF generics supplied by C1530 and C1603 and the 0805 220 pF generic supplied by C107145.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 220 pF, 50 V, X7R, +/-10%, stock 18,561, minimum 1, full reel 4,000, available order qty 18,503, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991350555140096-C1854.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_2_2_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1855 / Fenghua 1206B222K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 2.2 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 222 = 2.2 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 2.2 nF generics supplied by C1531, C1604 and C28260.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 2.2 nF, 50 V, X7R, +/-10%, stock 66,653, minimum 1, full reel 4,000, available order qty 65,626, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991356603191296-C1855.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_22_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "22 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1856 / Fenghua 1206B223K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 22 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 223 = 22 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 22 nF generics supplied by C1532, C21122 and C1729.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 22 nF, 50 V, X7R, +/-10%, stock 15,398, minimum 1, full reel 4,000, available order qty 15,112, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991362919542784-C1856.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_220_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1857 / Fenghua 1206B224K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 220 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 224 = 220 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 220 nF generics supplied by C16772, C21120 and C5378.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 220 nF, 50 V, X7R, +/-10%, stock 68,569, minimum 1, full reel 4,000, available order qty 36,394, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991369147949056-C1857.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_22_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_22_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "22 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "X5R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1859 / 1206X226K100NT rated purchasing variant; 1206, 22 uF, 10 V, X5R, ±10% verified against the staged live JLC capture 2026-09-28 (stock 76,002, minimum 1, full reel 2,000, available order qty 75,945, MSL 1). The Fenghua ordering code (X = X5R, 226 = 22 uF, K = +/-10%, 100 = 10 V) decodes consistently with the listed specifications.",
+            "Linked to the generic 1206 22 uF definition. IMPORTANT rating difference: the reviewed preference C12891 / CL31A226KAHNNNE on the generic ID is the 25 V rated part; this C1859 SKU is the 10 V part and must never silently replace it in circuits that need the higher rating. It exists so projects that only need 10 V at 1206/22 uF can pick the exact SKU explicitly. The registry allows one preferred code per ID; C1859 is recorded as its own exact rated-variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991381764550656-C1859.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_2_7_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.7 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1860 / Fenghua 1206B272K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 2.7 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 272 = 2.7 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 2.7 nF generics supplied by C1609 and C1733.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 2.7 nF, 50 V, X7R, +/-10%, stock 3,025, minimum 1, full reel 4,000, available order qty 3,015, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991387984568320-C1860.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_330_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1862 / Fenghua 1206B331K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 330 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 331 = 33 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 330 pF generics supplied by C1535, C1664 and C1737.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 330 pF, 50 V, X7R, +/-10%, stock 3,020, minimum 1, full reel 4,000, available order qty 3,006, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991397107585024-C1862.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_3_3_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.3 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1863 / Fenghua 1206B332K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 3.3 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 332 = 3.3 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 3.3 nF generics supplied by C1536, C1613 and C1738.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 3.3 nF, 50 V, X7R, +/-10%, stock 8,477, minimum 1, full reel 4,000, available order qty 8,439, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991403604426752-C1863.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_33_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "33 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1864 / Fenghua 1206B333K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 33 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 333 = 33 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 33 nF generics supplied by C21117 and C1739.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 33 nF, 50 V, X7R, +/-10%, stock 3,294, minimum 1, full reel 4,000, available order qty 3,278, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991410004529152-C1864.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_330_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1865 / Fenghua 1206B334K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 330 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 334 = 330 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 330 nF generics supplied by C1615 and C1740.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 330 nF, 50 V, X7R, +/-10%, stock 8,848, minimum 1, full reel 4,000, available order qty 8,830, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991416459563008-C1865.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_390_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "390 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1866 / Fenghua 1206B391K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 390 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 391 = 39 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 390 pF generics supplied by C1617 and C1741.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 390 pF, 50 V, X7R, +/-10%, stock 995, minimum 1, full reel 4,000, available order qty 935, MSL 1. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991422973452288-C1866.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_3_9_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.9 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1867 / Fenghua 1206B392K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 3.9 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 392 = 3.9 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 3.9 nF generics supplied by C1618 and C1742.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 3.9 nF, 50 V, X7R, +/-10%, stock 2,588, minimum 1, full reel 4,000, available order qty 2,579, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991429361242112-C1867.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_470_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "470 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1868 / Fenghua 1206B471K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 470 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 471 = 47 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 470 pF generics supplied by C1537, C1620 and C1743.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 470 pF, 50 V, X7R, +/-10%, stock 8,757, minimum 1, full reel 4,000, available order qty 8,704, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991436664066048-C1868.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_4_7_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1869 / Fenghua 1206B472K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 4.7 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 472 = 4.7 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 4.7 nF generics supplied by C1538, C53987 and C1744.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 4.7 nF, 50 V, X7R, +/-10%, stock 16,227, minimum 1, full reel 4,000, available order qty 15,933, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991442955522048-C1869.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_47_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "47 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1870 / Fenghua 1206B473K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 47 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 473 = 47 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 47 nF generics supplied by C1622 and C53134.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 47 nF, 50 V, X7R, +/-10%, stock 8,191, minimum 1, full reel 4,000, available order qty 8,148, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991449964204032-C1870.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_470_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "470 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1871 / Fenghua 1206B474K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 470 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 474 = 470 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 470 nF generics supplied by C1623 and C13967.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 470 nF, 50 V, X7R, +/-10%, stock 6,753, minimum 1, full reel 3,000, available order qty 6,664, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991456909701120-C1871.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_4_7_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_4_7_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1872 / CL31B475KAHNNNE rated purchasing variant; 1206, 4.7 uF, 25 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28 (stock 33,006, minimum 1, full reel 2,000, available order qty 22,228, MSL 1). The Samsung ordering code (KA = X7R 25 V) decodes consistently with the listed specifications.",
+            "Linked to the generic 1206 4.7 uF definition. IMPORTANT rating difference: the reviewed preference C29823 / 1206B475K500NT on the generic ID is the 50 V rated part; this C1872 SKU is the 25 V part and must never silently replace it in circuits that need the higher rating. It exists so projects that only need 25 V at 1206/4.7 uF can pick the exact SKU explicitly. The registry allows one preferred code per ID; C1872 is recorded as its own exact rated-variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178191673741312-C1872.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_500_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "500 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1873 / Fenghua 1206B501K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 500 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 501 = 50 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 500 pF generics supplied by C1624 and C1747.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 500 pF, 50 V, X7R, +/-10%, stock 5,984, minimum 1, full reel 4,000, available order qty 5,951, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991463016878080-C1873.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_510_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "510 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1874 / Fenghua 1206B511K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 510 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 511 = 51 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 510 pF generics supplied by C1626 and C1749.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 510 pF, 50 V, X7R, +/-10%, stock 9, minimum 1, full reel 4,000, available order qty 9, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991469576634368-C1874.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_560_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "560 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1875 / Fenghua 1206B561K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 560 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 561 = 56 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 560 pF generics supplied by C1539, C1627 and C1751.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 560 pF, 50 V, X7R, +/-10%, stock 12, minimum 1, full reel 4,000, available order qty 12, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991475960229888-C1875.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_5_6_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5.6 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1876 / Fenghua 1206B562K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 5.6 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 562 = 5.6 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 5.6 nF generics supplied by C1540 and C1628.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 5.6 nF, 50 V, X7R, +/-10%, stock 4, minimum 1, full reel 4,000, available order qty 4, MSL 1. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991479143706624-C1876.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_56_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "56 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1877 / Fenghua 1206B563K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 56 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 563 = 56 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 56 nF generics supplied by C1629 and C1753.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 56 nF, 50 V, X7R, +/-10%, stock 131, minimum 1, full reel 4,000, available order qty 130, MSL 1. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991485325840384-C1877.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_680_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "680 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1878 / Fenghua 1206B681K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 680 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 681 = 68 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 680 pF generics supplied by C1541, C1630 and C1754.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 680 pF, 50 V, X7R, +/-10%, stock 258, minimum 1, full reel 4,000, available order qty 251, MSL 1. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991491504320512-C1878.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_6_8_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6.8 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1879 / Fenghua 1206B682K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 6.8 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 682 = 6.8 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 6.8 nF generics supplied by C1542, C1631 and C1755.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 6.8 nF, 50 V, X7R, +/-10%, stock 3,643, minimum 1, full reel 4,000, available order qty 3,633, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991498026598400-C1879.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_68_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "68 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1880 / Fenghua 1206B683K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 68 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 683 = 68 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0805 68 nF generic supplied by C1756.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 68 nF, 50 V, X7R, +/-10%, stock 3,952, minimum 1, full reel 4,000, available order qty 3,947, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991504871972864-C1880.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_680_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "680 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1881 / Fenghua 1206B684K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 680 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 684 = 680 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0805 680 nF generic supplied by C1783.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 680 nF, 50 V, X7R, +/-10%, stock 32,897, minimum 1, full reel 3,000, available order qty 32,392, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991511678652416-C1881.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_0_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "0.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1882 / Fenghua 1206CG0R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 0.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 0R5 = 0.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 0.5 pF generics supplied by C1544, C1633 and C1784.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 0.5 pF, 50 V, C0G, stock 3,230, minimum 1, full reel 4,000, available order qty 3,230, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991517941018624-C1882.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_10_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "10 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1883 / Fenghua 1206CG100J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 10 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 100 = 10 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 10 pF generics supplied by C32949 and C1634.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 10 pF, 50 V, C0G, +/-5%, stock 8,016, minimum 1, full reel 4,000, available order qty 7,944, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991524199055360-C1883.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_100_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "100 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1884 / Fenghua 1206CG101J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 100 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 101 = 10 x 10^1 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 100 pF generics supplied by C1546, C14858 and C1790.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 100 pF, 50 V, C0G, +/-5%, stock 16,638, minimum 1, full reel 4,000, available order qty 14,143, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991530439909376-C1884.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_nano_farad_fenghua_adv_tech_1206cg102j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_1_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1885 / 1206CG102J500NT purchasing variant; 1206, 1 nF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 5,855, minimum 1, full reel 4,000, available order qty 5,798, MSL 1).",
+            "Linked to the generic 1206 1 nF definition. Dielectric difference: the reviewed preference C1845 / 1206B102K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1885 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 1 nF/1206 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1885 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991537285013504-C1885.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_12_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "12 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1886 / Fenghua 1206CG120J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 12 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 120 = 12 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 12 pF generics supplied by C1547, C38523 and C1792.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 12 pF, 50 V, C0G, +/-5%, stock 36, minimum 1, full reel 4,000, available order qty 25, MSL 1. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991543962615808-C1886.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_15_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "15 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1887 / Fenghua 1206CG150J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 15 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 150 = 15 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the in-grid 0402 15 pF generic and the 0603 15 pF generic supplied by C1644.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 15 pF, 50 V, C0G, +/-5%, stock 17,397, minimum 1, full reel 4,000, available order qty 17,242, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991547238096896-C1887.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_150_pico_farad_fenghua_adv_tech_1206cg151j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_150_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1888 / 1206CG151J500NT purchasing variant; 1206, 150 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 1, minimum 1, full reel 4,000, available order qty 1, MSL 1). Stock is extremely low at capture time; low stock does not change the verified identity and the part is retained as a candidate.",
+            "Linked to the generic 1206 150 pF definition. Dielectric difference: the reviewed preference C1850 / 1206B151K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1888 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 150 pF/1206 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1888 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991553890668544-C1888.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_18_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "18 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1889 / Fenghua 1206CG180J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 18 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 180 = 18 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 18 pF generics supplied by C1647 and C1797.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 18 pF, 50 V, C0G, +/-5%, stock 4,247, minimum 1, full reel 4,000, available order qty 4,231, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991560328790016-C1889.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_180_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "180 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1890 / Fenghua 1206B181K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 180 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 181 = 18 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 180 pF generics supplied by C1598 and C1721.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 180 pF, 50 V, X7R, +/-10%, stock 2, minimum 1, full reel 4,000, available order qty 2, MSL 1. Stock is extremely low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991567106379776-C1890.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1891 / Fenghua 1206CG1R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 1 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R0 = 1 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0805 1 pF generics supplied by C1550 and C1786.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 1 pF, 50 V, C0G, stock 7, minimum 499, full reel 4,000 (reel/pre-order purchasing with no available order quantity), MSL 1; the live page lists no tolerance row. The zero-scale stock and 499-piece minimum are purchasing conditions recorded as observed and do not change the verified identity. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991573511352320-C1891.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1892 / Fenghua 1206CG1R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 1.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R5 = 1.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 1.5 pF generics supplied by C1552, C1639 and C1788.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 1.5 pF, 50 V, C0G, stock 817, minimum 1, full reel 4,000, available order qty 816, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991579887099904-C1892.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1893 / Fenghua 1206CG1R8C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 1.8 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R8 = 1.8 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 1.8 pF generics supplied by C1553, C1640 and C1789.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 1.8 pF, 50 V, C0G, stock 5, minimum 1, full reel 4,000, available order qty 5, MSL 1; the live page lists no tolerance row. Stock is very low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991583216971776-C1893.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_20_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "20 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1894 / Fenghua 1206CG200J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 20 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 200 = 20 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 20 pF generics supplied by C1554, C1648 and C1798.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 20 pF, 50 V, C0G, +/-5%, stock 10,043, minimum 1, full reel 4,000, available order qty 9,855, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991589634121728-C1894.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_200_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "200 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1895 / Fenghua 1206CG201J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 200 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 201 = 20 x 10^1 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 200 pF generics supplied by C1529, C1600 and C1724.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 200 pF, 50 V, C0G, +/-5%, stock 3,042, minimum 1, full reel 4,000, available order qty 3,040, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991596294946816-C1895.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_22_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "22 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1896 / Fenghua 1206CG220J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 22 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 220 = 22 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 22 pF generics supplied by C1555, C1653 and C1804.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 22 pF, 50 V, C0G, +/-5%, stock 5,535, minimum 1, full reel 4,000, available order qty 5,435, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991602510499840-C1896.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_220_pico_farad_fenghua_adv_tech_1206cg221j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_220_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1897 / 1206CG221J500NT purchasing variant; 1206, 220 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 2,110, minimum 1, full reel 4,000, available order qty 2,051, MSL 1).",
+            "Linked to the generic 1206 220 pF definition. Dielectric difference: the reviewed preference C1854 / 1206B221K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1897 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 220 pF/1206 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1897 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991608693579776-C1897.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_25_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "25 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1898 / Fenghua 1206CG250J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 25 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 250 = 25 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 25 pF generics supplied by C1556, C1655 and C1807.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 25 pF, 50 V, C0G, +/-5%, stock 3,267, minimum 1, full reel 4,000, available order qty 3,263, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991615173103616-C1898.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_27_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "27 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1899 / Fenghua 1206CG270J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 27 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 270 = 27 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 27 pF generics supplied by C1557, C1656 and C1808.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 27 pF, 50 V, C0G, +/-5%, stock 1,909, minimum 1, full reel 4,000, available order qty 1,909, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991621809033217-C1899.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_270_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "270 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1900 / Fenghua 1206CG271J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 270 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 271 = 27 x 10^1 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 270 pF generics supplied by C1533, C1608 and C1732.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 270 pF, 50 V, C0G, +/-5%, stock 4,000, minimum 1, full reel 4,000, available order qty 4,000, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991628075188224-C1900.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1901 / Fenghua 1206CG2R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R0 = 2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 2 pF generics supplied by C1558, C1650 and C1800.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 2 pF, 50 V, C0G, stock 532, minimum 1, full reel 4,000, available order qty 521, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991634299129856-C1901.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_2_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1902 / Fenghua 1206CG2R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 2.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R2 = 2.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 2.2 pF generics supplied by C1559, C1651 and C1801.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 2.2 pF, 50 V, C0G, stock 4,584, minimum 1, full reel 4,000, available order qty 4,577, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991640502910976-C1902.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_2_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1903 / Fenghua 1206CG2R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 2.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R5 = 2.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 2.5 pF generics supplied by C1560, C1652 and C1802.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 2.5 pF, 50 V, C0G, stock 2,835, minimum 1, full reel 4,000, available order qty 2,835, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991646664208384-C1903.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_2_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1904 / Fenghua 1206CG2R7C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 2.7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R7 = 2.7 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0805 2.7 pF generics supplied by C1561 and C1803.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 2.7 pF, 50 V, C0G, stock 32, minimum 1, full reel 4,000, available order qty 32, MSL 1; the live page lists no tolerance row. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991652905197568-C1904.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_30_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "30 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1905 / Fenghua 1206CG300J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 30 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 300 = 30 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 30 pF generics supplied by C1570 and C1658.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 30 pF, 50 V, C0G, +/-5%, stock 21, minimum 434, full reel 4,000 (reel/pre-order purchasing with no available order quantity), MSL 1. Stock is low at capture time; low stock and the 434-piece minimum are purchasing conditions recorded as observed and do not change the verified identity. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991656122634240-C1905.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_33_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "33 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1906 / Fenghua 1206CG330J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 33 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 330 = 33 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 33 pF generics supplied by C1562 and C1663.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 33 pF, 50 V, C0G, +/-5%, stock 8,433, minimum 1, full reel 4,000, available order qty 8,377, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991662225211392-C1906.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_330_pico_farad_fenghua_adv_tech_1206cg331j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_330_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1907 / 1206CG331J500NT purchasing variant; 1206, 330 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 4,002, minimum 1, full reel 4,000, available order qty 3,998, MSL 1).",
+            "Linked to the generic 1206 330 pF definition. Dielectric difference: the reviewed preference C1862 / 1206B331K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1907 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 330 pF/1206 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1907 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991668856135680-C1907.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_36_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "36 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1908 / Fenghua 1206CG360J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 36 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 360 = 36 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 36 pF generic supplied by C1665.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 36 pF, 50 V, C0G, +/-5%, stock 4,000, minimum 1, full reel 4,000, available order qty 4,000, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991675181551616-C1908.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_39_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "39 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1909 / Fenghua 1206CG390J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 39 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 390 = 39 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0603 39 pF generics supplied by C1563 and C1666.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 39 pF, 50 V, C0G, +/-5%, stock 16, minimum 1, full reel 4,000, available order qty 5, MSL 1. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991681846030336-C1909.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_3_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1911 / Fenghua 1206CG3R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 3 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R0 = 3 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 and 0805 3 pF generics supplied by C1564 and C1810.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 3 pF, 50 V, C0G, stock 11, minimum 1, full reel 4,000, available order qty 11, MSL 1; the live page lists no tolerance row. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991694592249856-C1911.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_3_3_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.3 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1912 / Fenghua 1206CG3R3C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 3.3 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R3 = 3.3 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 3.3 pF generics supplied by C1565, C1660 and C1811.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 3.3 pF, 50 V, C0G, stock 1,585, minimum 1, full reel 4,000, available order qty 1,580, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991697855418368-C1912.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_3_9_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.9 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1913 / Fenghua 1206CG3R9C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 3.9 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R9 = 3.9 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 3.9 pF generics supplied by C1566, C1662 and C1813.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 3.9 pF, 50 V, C0G, stock 954, minimum 1, full reel 4,000, available order qty 954, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991704046886912-C1913.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_4_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1914 / Fenghua 1206CG4R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 4 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 4R0 = 4 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 4 pF generics supplied by C1568, C1668 and C1819.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 4 pF, 50 V, C0G, stock 2,342, minimum 1, full reel 4,000, available order qty 2,338, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991710631268352-C1914.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_47_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "47 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1916 / Fenghua 1206CG470J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 47 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 470 = 47 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 47 pF generics supplied by C1567, C1671 and C14857.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 47 pF, 50 V, C0G, +/-5%, stock 8,862, minimum 1, full reel 4,000, available order qty 8,815, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991723583414272-C1916.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_470_pico_farad_fenghua_adv_tech_1206cg471j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_470_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "470 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1917 / 1206CG471J500NT purchasing variant; 1206, 470 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 3,932, minimum 1, full reel 4,000, available order qty 3,932, MSL 1).",
+            "Linked to the generic 1206 470 pF definition. Dielectric difference: the reviewed preference C1868 / 1206B471K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1917 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 470 pF/1206 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1917 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991730143305728-C1917.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_51_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "51 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1918 / Fenghua 1206CG510J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 51 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 510 = 51 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 51 pF generics supplied by C1571, C1675 and C1827.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 51 pF, 50 V, C0G, +/-5%, stock 11, minimum 1, full reel 4,000, available order qty 8, MSL 1. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991736313532416-C1918.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_56_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "56 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1919 / Fenghua 1206CG560J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 56 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 560 = 56 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 56 pF generics supplied by C1572, C1676 and C1828.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 56 pF, 50 V, C0G, +/-5%, stock 2,022, minimum 1, full reel 4,000, available order qty 2,017, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991743016030208-C1919.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_6_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1920 / Fenghua 1206CG6R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 6 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 6R0 = 6 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402 6 pF generic supplied by C1575.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 6 pF, 50 V, C0G, stock 472, minimum 1, full reel 4,000, available order qty 440, MSL 1; the live page lists no tolerance row. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991749571862528-C1920.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_62_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "62 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1921 / Fenghua 1206CG620J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 62 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 620 = 62 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0805 62 pF generic supplied by C1833.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 62 pF, 50 V, C0G, +/-5%, stock 438, minimum 1, full reel 4,000, available order qty 432, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991753182887936-C1921.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_68_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "68 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1922 / Fenghua 1206CG680J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 68 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 680 = 68 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 68 pF generics supplied by C1680 and C1834.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 68 pF, 50 V, C0G, +/-5%, stock 2,491, minimum 1, full reel 4,000, available order qty 2,485, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991759348785152-C1922.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_680_pico_farad_fenghua_adv_tech_1206cg681j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_680_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "680 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1923 / 1206CG681J500NT purchasing variant; 1206, 680 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28 (stock 1, minimum 1, full reel 4,000, available order qty 1, MSL 1). Stock is extremely low at capture time; low stock does not change the verified identity and the part is retained as a candidate.",
+            "Linked to the generic 1206 680 pF definition. Dielectric difference: the reviewed preference C1878 / 1206B681K500NT on the generic ID is from the same maker (FH) but X7R ±10%, and it keeps the preference slot; this C1923 SKU is C0G ±5% - the more stable, tighter-tolerance dielectric of the two. Projects needing C0G stability at 680 pF/1206 should pick this variant explicitly; the X7R preference is not downgraded. The registry allows one preferred code per ID; C1923 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991765656342528-C1923.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_82_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "82 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1924 / Fenghua 1206CG820J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 82 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 820 = 82 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 82 pF generics supplied by C1683 and C1841.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 82 pF, 50 V, C0G, +/-5%, stock 798, minimum 1, full reel 4,000, available order qty 791, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991772044943360-C1924.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_micro_farad_fenghua_adv_tech_1206f105m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_1_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1926 / 1206F105M500NT purchasing variant; 1206, 1 uF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 2,919, minimum 1, full reel 4,000, available order qty 2,850, MSL 1).",
+            "Linked to the generic 1206 1 uF definition. IMPORTANT dielectric difference: the reviewed preference C1848 / CL31B105KBHNNNE (Samsung, X7R ±10% 50 V) on the generic ID is far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1926 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991778323275776-C1926.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_15_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "15 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1928 / Fenghua 1206F153M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 15 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 153 = 15 nF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0402, 0603 and 0805 15 nF generics supplied by C1583, C1596 and C1718.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 15 nF, 50 V, Y5V, +/-20%, stock 4, minimum 1, full reel 4,000, available order qty 4, MSL 1. Stock is extremely low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991784136986624-C1928.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_150_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1929 / Fenghua 1206F154M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1206 150 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 154 = 150 nF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 0603 and 0805 150 nF generics supplied by C1597 and C1719.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 150 nF, 50 V, Y5V, +/-20%, stock 1,006, minimum 1, full reel 4,000, available order qty 953, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991789115490304-C1929.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_20_nano_farad_fenghua_adv_tech_1206f203m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_20_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "20 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1930 / 1206F203M500NT purchasing variant; 1206, 20 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 419, minimum 1, full reel 4,000, available order qty 419, MSL 1).",
+            "Linked to the generic 1206 20 nF definition. IMPORTANT dielectric difference: the reviewed preference C1853 / 1206B203K500NT on the generic ID is from the same maker (FH) but X7R ±10%, far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1930 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991795318865920-C1930.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_22_nano_farad_fenghua_adv_tech_1206f223m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_22_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "22 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1931 / 1206F223M500NT purchasing variant; 1206, 22 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 543, minimum 1, full reel 4,000, available order qty 503, MSL 1).",
+            "Linked to the generic 1206 22 nF definition. IMPORTANT dielectric difference: the reviewed preference C1856 / 1206B223K500NT on the generic ID is from the same maker (FH) but X7R ±10%, far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1931 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991801715044352-C1931.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_2_2_micro_farad_fenghua_adv_tech_1206f225m250nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_2_2_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1933 / 1206F225M250NT purchasing variant; 1206, 2.2 uF, 25 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 3,681, minimum 1, full reel 4,000, available order qty 3,665, MSL 1).",
+            "Linked to the generic 1206 2.2 uF definition. IMPORTANT dielectric difference: the reviewed preference C1855 / 1206B222K500NT on the generic ID is from the same maker (FH) but X7R ±10% at 50 V, far more stable (and higher rated) than this Y5V ±20% 25 V SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1933 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991814671249408-C1933.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_33_nano_farad_fenghua_adv_tech_1206f333m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_33_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "33 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1935 / 1206F333M500NT purchasing variant; 1206, 33 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 3, minimum 1, full reel 4,000, available order qty 3, MSL 1). Stock is extremely low at capture time; low stock does not change the verified identity and the part is retained as a candidate.",
+            "Linked to the generic 1206 33 nF definition. IMPORTANT dielectric difference: the reviewed preference C1864 / 1206B333K500NT on the generic ID is from the same maker (FH) but X7R ±10%, far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1935 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991821260771328-C1935.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_4_7_micro_farad_fenghua_adv_tech_1206f475m250nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_4_7_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1939 / 1206F475M250NT purchasing variant; 1206, 4.7 uF, 25 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 2,902, minimum 1, full reel 2,000, available order qty 2,880, MSL 1).",
+            "Linked to the generic 1206 4.7 uF definition. IMPORTANT dielectric difference: the reviewed preference C29823 / 1206B475K500NT on the generic ID is from the same maker (FH) but X7R ±10% at 50 V, far more stable (and higher rated) than this Y5V ±20% 25 V SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1939 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991843310362624-C1939.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_68_nano_farad_fenghua_adv_tech_1206f683m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_68_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "68 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1940 / 1206F683M500NT purchasing variant; 1206, 68 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28 (stock 3, minimum 1, full reel 4,000, available order qty 3, MSL 1). Stock is extremely low at capture time; low stock does not change the verified identity and the part is retained as a candidate.",
+            "Linked to the generic 1206 68 nF definition. IMPORTANT dielectric difference: the reviewed preference C1880 / 1206B683K500NT on the generic ID is from the same maker (FH) but X7R ±10%, far more stable than this Y5V ±20% SKU. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1940 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991849874042880-C1940.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_nano_farad_1000_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_1_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 nF",
+            "rated_voltage": "1 kV",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1941 / 1206B102K102NT rated purchasing variant; 1206, 1 nF, 1 kV, X7R, ±10% verified against the staged live JLC capture 2026-09-28 (stock 238,478, minimum 1, full reel 3,000, available order qty 222,800, MSL 1). The Fenghua ordering code (102 = 1 nF, K = +/-10%, 102 = 10 x 10^2 V = 1 kV) decodes consistently with the listed specifications.",
+            "Linked to the generic 1206 1 nF definition. Rating difference: the reviewed preference C1845 / 1206B102K500NT on the generic ID is the 50 V part; this C1941 SKU is the 1 kV part and must be chosen explicitly for high-voltage circuits. It sits between the plain 50 V generic and the existing 2 kV rated variant C9196. The registry allows one preferred code per ID; C1941 is recorded as its own exact rated-variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991855854985216-C1941.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_1_nano_farad_500_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_1_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 nF",
+            "rated_voltage": "500 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1942 / 1206B102K501NT rated purchasing variant; 1206, 1 nF, 500 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28 (stock 25,395, minimum 1, full reel 4,000, available order qty 24,779, MSL 1). The Fenghua ordering code (102 = 1 nF, K = +/-10%, 501 = 50 x 10^1 V = 500 V) decodes consistently with the listed specifications.",
+            "Linked to the generic 1206 1 nF definition. Rating difference: the reviewed preference C1845 / 1206B102K500NT on the generic ID is the 50 V part; this C1942 SKU is the 500 V part and must be chosen explicitly for high-voltage circuits. It sits between the plain 50 V generic and the 1 kV (C1941) and 2 kV (C9196) rated variants. The registry allows one preferred code per ID; C1942 is recorded as its own exact rated-variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991862843101184-C1942.pdf).",
+        ]
+
+    current = "electronic_capacitor_1206_100_nano_farad_100_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_1206_100_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "100 nF",
+            "rated_voltage": "100 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1945 / CL31B104KCFNNNE rated purchasing variant; 1206, 100 nF, 100 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28 (stock 411,314, minimum 1, full reel 2,000, available order qty 374,557, MSL 1). The Samsung ordering code (KC = X7R 100 V) decodes consistently with the listed specifications.",
+            "Linked to the generic 1206 100 nF definition. Rating difference: the reviewed preference C24497 / CL31B104KBCNNNE on the generic ID is the 50 V part; this C1945 SKU is the 100 V part and must be chosen explicitly for higher-voltage circuits. The registry allows one preferred code per ID; C1945 is recorded as its own exact rated-variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178200505999360-C1945.pdf).",
+        ]
+
+    current = "electronic_capacitor_1210_2_2_micro_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1950 / Fenghua 1210B225K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 1210 2.2 uF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 225 = 2.2 uF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the 1210 68 uF tantal generic already in the grid.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1210, 2.2 uF, 50 V, X7R, +/-10%, stock 762, minimum 1, full reel 2,000, available order qty 676, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991875584856064-C1950.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_82_nano_farad_fenghua_adv_tech_0603b823k500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_82_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "82 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1951 / 0603B823K500NT purchasing variant; 0603, 82 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28 (stock 29, minimum 1, full reel 4,000, available order qty 12, MSL 1). Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate.",
+            "Linked to the generic 0603 82 nF definition. Dielectric difference: the reviewed preference C1708 / 0603F823M500NT on the generic ID is from the same maker (FH) but Y5V ±20%; this C1951 SKU is X7R ±10% - the more stable, tighter-tolerance dielectric of the two. Projects requiring X7R stability at 82 nF/0603 should pick this variant explicitly; the Y5V preference is not downgraded. The registry allows one preferred code per ID; C1951 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991881960738816-C1951.pdf).",
+        ]
+
+    current = "electronic_capacitor_6_3_mm_diameter_11_mm_tall_electrolytic_10_micro_farad_100_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "100 V",
+            "dielectric": "aluminum electrolytic",
+            "tolerance": "±20%",
+            "polarized": True,
+        }
+        part["research_notes"] = [
+            "Verified JLC C2029 / CX (Dongguan Chengxing Elec) KM106M100E11RR0VH2FP0 as the first reviewed preferred extended purchasing choice for this previously absent leaded electrolytic value; the populate row was added by this intake. The KM ordering code (106 = 10 uF, M = +/-20%, 100 = 100 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Leaded (radial through-hole) aluminum electrolytic, D6.3 x L11 mm, 2.5 mm pin spacing, 1000 hrs at 105 C lifetime, ripple current 61 mA at 120 Hz; polarized, observe the marked negative stripe. Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), stock 15,090, minimum 1, full reel 1,000, available order qty 14,627. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8564798012716040192-C2029.pdf).",
+        ]
+
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_470_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "aluminum electrolytic",
+            "tolerance": "±20%",
+            "polarized": True,
+        }
+        part["research_notes"] = [
+            "Verified JLC C2033 / CX (Dongguan Chengxing Elec) GR477M010F12RR0VL4FP0 as the first reviewed preferred extended purchasing choice for this previously absent leaded electrolytic value; the populate row was added by this intake. The GR ordering code (477 = 470 uF, M = +/-20%, 010 = 10 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Leaded (radial through-hole) aluminum electrolytic, D8 x L12 mm, 3.5 mm pin spacing, 3000 hrs at 105 C lifetime, -40 C to +105 C; polarized, observe the marked negative stripe. Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), stock 2, minimum 1, full reel 500, available order qty 2. Stock is extremely low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588901546444926976-C2033.pdf).",
+        ]
+
+    current = "electronic_capacitor_6_3_mm_diameter_11_mm_tall_electrolytic_220_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "aluminum electrolytic",
+            "tolerance": "±20%",
+            "polarized": True,
+        }
+        part["research_notes"] = [
+            "Verified JLC C2036 / CX (Dongguan Chengxing Elec) GR227M010E11RR0VH4FP0 as the first reviewed preferred extended purchasing choice for this previously absent leaded electrolytic value; the populate row was added by this intake. The GR ordering code (227 = 220 uF, M = +/-20%, 010 = 10 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Same can size as the C2029 10 uF 100 V part (D6.3 x L11 mm).",
+            "Leaded (radial through-hole) aluminum electrolytic, D6.3 x L11 mm, 2.5 mm pin spacing, 2000 hrs at 105 C lifetime, -40 C to +105 C; polarized, observe the marked negative stripe. Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), stock 1,738, minimum 1, full reel 1,000, available order qty 1,668. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887000555900928-C2036.pdf).",
+        ]
+
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_330_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "aluminum electrolytic",
+            "tolerance": "±20%",
+            "polarized": True,
+        }
+        part["research_notes"] = [
+            "Verified JLC C2051 / CX (Dongguan Chengxing Elec) KM337M025F12RR0VH2FP0 as the first reviewed preferred extended purchasing choice for this previously absent leaded electrolytic value; the populate row was added by this intake. The KM ordering code (337 = 330 uF, M = +/-20%, 025 = 25 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Same can size as the C2033 470 uF 10 V part (D8 x L12 mm).",
+            "Leaded (radial through-hole) aluminum electrolytic, D8 x L12 mm, 3.5 mm pin spacing, 2000 hrs at 105 C lifetime, ripple current 340 mA at 120 Hz; polarized, observe the marked negative stripe. Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), stock 36,836, minimum 1, full reel 500, available order qty 36,600. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588901580645281792-C2051.pdf).",
+        ]
+
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_220_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "aluminum electrolytic",
+            "tolerance": "±20%",
+            "polarized": True,
+        }
+        part["research_notes"] = [
+            "Verified JLC C2063 / CX (Dongguan Chengxing Elec) KM227M035F12RR0VH2FP0 as the first reviewed preferred extended purchasing choice for this previously absent leaded electrolytic value; the populate row was added by this intake. The KM ordering code (227 = 220 uF, M = +/-20%, 035 = 35 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Same can size as the C2033 470 uF 10 V and C2051 330 uF 25 V parts (D8 x L12 mm).",
+            "Leaded (radial through-hole) aluminum electrolytic, D8 x L12 mm, 3.5 mm pin spacing, 2000 hrs at 105 C lifetime; polarized, observe the marked negative stripe. Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), stock 234,668, minimum 1, full reel 500, available order qty 225,906. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588894275962875904-C2063.pdf).",
+        ]
+
+    current = "electronic_capacitor_10_mm_diameter_17_mm_tall_electrolytic_470_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "aluminum electrolytic",
+            "tolerance": "±20%",
+            "polarized": True,
+        }
+        part["research_notes"] = [
+            "Verified JLC C2064 / CX (Dongguan Chengxing Elec) KM477M035G17RR0VH2FP0 as the first reviewed preferred extended purchasing choice for this previously absent leaded electrolytic value; the populate row was added by this intake. The KM ordering code (477 = 470 uF, M = +/-20%, 035 = 35 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. Distinct from the C2033 470 uF 10 V part (D8 x L12 mm): same capacitance, higher voltage, larger can.",
+            "Leaded (radial through-hole) aluminum electrolytic, D10 x L17 mm, 5 mm pin spacing, 2000 hrs at 105 C lifetime; polarized, observe the marked negative stripe. Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), stock 38,410, minimum 1, full reel 200, available order qty 36,502. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887028632571904-C2064.pdf).",
+        ]
+
+    current = "electronic_capacitor_4_mm_diameter_7_mm_tall_electrolytic_2_2_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "50 V",
+            "dielectric": "aluminum electrolytic",
+            "tolerance": "±20%",
+            "polarized": True,
+        }
+        part["research_notes"] = [
+            "Verified JLC C2065 / CX (Dongguan Chengxing Elec) KS225M050C07RR0VH2FP0 as the first reviewed preferred extended purchasing choice for this previously absent leaded electrolytic value; the populate row was added by this intake. The KS ordering code (225 = 2.2 uF, M = +/-20%, 050 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Leaded (radial through-hole) aluminum electrolytic, D4 x L7 mm, 1.5 mm pin spacing, 1000 hrs at 105 C lifetime, -40 C to +105 C, ripple current 19 mA at 120 Hz; polarized, observe the marked negative stripe. Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), stock 21,917, minimum 1, full reel 1,000, available order qty 21,843. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895826516561920-C2065.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_12_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "12 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1715 / Fenghua 0805B123K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 12 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 123 = 12 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0603 12 nF generic supplied by C1593.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 12 nF, 50 V, X7R, +/-10%, stock 3,447, minimum 1, full reel 4,000, available order qty 3,442, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988213098037248-C1715.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_2_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.2 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1714 / Fenghua 0805B122K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0805 1.2 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 122 = 1.2 nF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0805 generic is distinct from the separate 0402 1.2 nF generic supplied by C1551.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0805, 1.2 nF, 50 V, X7R, +/-10%, stock 17,069, minimum 1, full reel 4,000, available order qty 16,699, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988209931067392-C1714.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_10_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_10_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "X5R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1713 / Samsung CL21A106KOQNNNE as the first reviewed preferred extended purchasing choice for this rated variant; 0805, 10 uF, 16 V, X5R, ±10% verified against the staged live JLC capture 2026-09-28. The Samsung ordering code (CL21 = 0805, A = X5R, 106 = 10 uF, K = ±10%, OQ = 16 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Linked to the generic 0805 10 uF definition as a lower-voltage purchasing variant; the reviewed Basic 25 V preference C15850 / CL21A106KAYNNNE and the 50 V rated variant on the generic ID remain unchanged. Projects needing 25 V margin must not substitute this 16 V SKU.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178161242984448-C1713.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_1_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_1_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1712 / Samsung CL21B105KAFNFNE as the first reviewed preferred extended purchasing choice for this rated variant; 0805, 1 uF, 25 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28. The Samsung ordering code (CL21 = 0805, B = X7R, 105 = 1 uF, K = ±10%, A = 25 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Linked to the generic 0805 1 uF definition as a lower-voltage purchasing variant; the reviewed Basic 50 V preference C28323 / CL21B105KBFNNNE on the generic ID remains unchanged. Projects needing 50 V margin must not substitute this 25 V SKU.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178156810686464-C1712.pdf).",
+        ]
+
+    current = "electronic_capacitor_0805_100_nano_farad_samsung_electro_mechanics_cl21b104kbcnnnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0805_100_nano_farad_50_volt"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "100 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1711 / CL21B104KBCNNNC purchasing variant; 0805, 100 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0805 100 nF 50 V definition. The reviewed Basic preference C49678 / CC0805KRX7R9BB104 (YAGEO, same 100 nF 50 V X7R ±10% spec) keeps the plain 50_volt generic ID; the 100 V C28233 preference on the plain 100 nF generic is also unchanged. The registry allows one preferred code per ID, so this equivalent-spec Samsung SKU is recorded as its own exact variant ID following the established maker/mpn variant taxonomy (as with the Samsung C1591 row on 0603).",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586177282230652928-C1711.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_100_nano_farad_samsung_electro_mechanics_cl10f104zb8nnnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_100_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "100 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "-20%~+80%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1688 / CL10F104ZB8NNNC purchasing variant; 0603, 100 nF, 50 V, Y5V, -20%~+80% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 100 nF definition. IMPORTANT dielectric difference: the reviewed 50 V X7R +/-10% preference C14663 (YAGEO) and the Samsung X7R variant C1591 on the generic ID are far more stable than this Y5V -20/+80% SKU. It must never replace the X7R preferences, and projects requiring X7R stability or tight tolerance must not substitute this SKU. The registry allows one preferred code per ID; C1688 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178151437647872-C1688.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_91_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "91 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1686 / Fenghua 0603CG910J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 91 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 910 = 91 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 91 pF, 50 V, C0G, +/-5%, stock 8,545, minimum 1, full reel 4,000, available order qty 8,536, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988152229892096-C1686.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_8_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "8.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1685 / Fenghua 0603CG8R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 8.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 8R2 = 8.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 8.2 pF generic supplied by C1579.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 8.2 pF, 50 V, C0G, stock 93,998, minimum 1, full reel 4,000, available order qty 68,609, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988148912873472-C1685.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_82_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "82 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1683 / Fenghua 0603CG820J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 82 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 820 = 82 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. The live page reads 82 pF, which is a distinct value from the 0603 820 pF X7R generic supplied by C1632.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 82 pF, 50 V, C0G, +/-5%, stock 67,898, minimum 1, full reel 4,000, available order qty 63,202, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988140737634304-C1683.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1682 / Fenghua 0603CG7R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 7R0 = 7.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 7 pF generic supplied by C1577.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 7 pF, 50 V, C0G, stock 88,449, minimum 1, full reel 4,000, available order qty 84,971, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988137558351872-C1682.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_75_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "75 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1681 / Fenghua 0603CG750J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 75 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 750 = 75 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 75 pF, 50 V, C0G, +/-5%, stock 4,442, minimum 1, full reel 4,000, available order qty 931, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988134228480000-C1681.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_68_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "68 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1680 / Fenghua 0603CG680J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 68 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 680 = 68 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. The live page reads 68 pF, which is a distinct value from the 0603 680 pF X7R generic supplied by C1630.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 68 pF, 50 V, C0G, +/-5%, stock 98,929, minimum 1, full reel 4,000, available order qty 92,459, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988127311532032-C1680.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_6_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6.8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1679 / Fenghua 0603CG6R8C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 6.8 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 6R8 = 6.8 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 6.8 pF C0G generic supplied by C1576.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 6.8 pF, 50 V, C0G, stock 197,695, minimum 1, full reel 4,000, available order qty 172,129, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988127311532032-C1679.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_6_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1678 / Fenghua 0603CG6R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 6.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 6R2 = 6.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 6.2 pF, 50 V, C0G, stock 30,973, minimum 1, full reel 4,000, available order qty 30,739, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988123872473088-C1678.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_56_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "56 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1676 / Fenghua 0603CG560J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 56 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 560 = 56 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 56 pF generic supplied by C1572.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 56 pF, 50 V, C0G, +/-5%, stock 48,310, minimum 1, full reel 4,000, available order qty 41,796, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988120789659648-C1676.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_51_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "51 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1675 / Fenghua 0603CG510J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 51 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 510 = 51 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 51 pF generic supplied by C1571.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 51 pF, 50 V, C0G, +/-5%, stock 5,229, minimum 1, full reel 4,000, available order qty 5,180, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988117706981376-C1675.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_5_6_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5.6 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1674 / Fenghua 0603CG5R6C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 5.6 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 5R6 = 5.6 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 5.6 pF generic supplied by C1574.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 5.6 pF, 50 V, C0G, stock 38,885, minimum 1, full reel 4,000, available order qty 34,656, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988114330836992-C1674.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1673 / Fenghua 0603CG5R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 5R0 = 5.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 5 pF generic supplied by C1573.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 5 pF, 50 V, C0G, stock 161,013, minimum 1, full reel 4,000, available order qty 150,008, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988111109070848-C1673.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_50_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "50 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1672 / Fenghua 0603CG500J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 50 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 500 = 50 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 50 pF, 50 V, C0G, +/-5%, stock 94,413, minimum 1, full reel 4,000, available order qty 86,632, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988107892580352-C1672.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_43_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "43 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1670 / Fenghua 0603CG430J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 43 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 430 = 43 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 43 pF, 50 V, C0G, +/-5%, stock 8,736, minimum 1, full reel 4,000, available order qty 8,661, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988104809361408-C1670.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_4_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1669 / Fenghua 0603CG4R7C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 4.7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 4R7 = 4.7 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 4.7 pF generic supplied by C1569.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 4.7 pF, 50 V, C0G, stock 364,595, minimum 1, full reel 4,000, available order qty 334,310, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988101495590912-C1669.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_4_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1668 / Fenghua 0603CG4R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 4 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 4R0 = 4.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 4 pF generic supplied by C1568.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 4 pF, 50 V, C0G, stock 64,988, minimum 1, full reel 4,000, available order qty 63,456, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988098178572288-C1668.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_390_pico_farad_fenghua_adv_tech_0603cg391j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_390_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "390 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1667 / 0603CG391J500NT purchasing variant; 0603, 390 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 390 pF definition. The X7R ±10% preference C1617 / 0603B391K500NT on the generic ID remains unchanged; the registry allows one preferred code per ID, so this C0G ±5% SKU is recorded as its own exact variant ID. Dielectric differs from the preference (C0G vs X7R): either may be selected deliberately per project stability requirements, never substituted silently.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988095200616448-C1667.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_39_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "39 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1666 / Fenghua 0603CG390J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 39 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 390 = 39 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This is a picoFarad value, distinct from the separate 0603 39 nF generic supplied by C1619.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 39 pF, 50 V, C0G, +/-5%, stock 60,417, minimum 1, full reel 4,000, available order qty 57,650, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988091890634752-C1666.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_36_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "36 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1665 / Fenghua 0603CG360J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 36 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 360 = 36 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 36 pF, 50 V, C0G, +/-5%, stock 8,274, minimum 1, full reel 4,000, available order qty 8,225, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988088736653312-C1665.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_3_9_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.9 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1662 / Fenghua 0603CG3R9C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 3.9 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R9 = 3.9 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This is a picoFarad value, distinct from the separate 0603 3.9 nF generic supplied by C1618 and the 0402 3.9 pF generic supplied by C1566.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 3.9 pF, 50 V, C0G, stock 49,106, minimum 1, full reel 4,000, available order qty 47,582, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988081942286336-C1662.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_3_6_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.6 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1661 / Fenghua 0603CG3R6C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 3.6 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R6 = 3.6 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 3.6 pF, 50 V, C0G, stock 25,232, minimum 1, full reel 4,000, available order qty 25,184, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988078670594048-C1661.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_3_3_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.3 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1660 / Fenghua 0603CG3R3C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 3.3 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R3 = 3.3 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This is a picoFarad value, distinct from the separate 0603 3.3 nF generic supplied by C1576 and the 0402 3.3 pF generic supplied by C1565.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 3.3 pF, 50 V, C0G, stock 80,228, minimum 1, full reel 4,000, available order qty 77,535, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988072437723136-C1660.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_270_pico_farad_samsung_electro_mechanics_cl10c271jb8nnnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_270_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "270 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1657 / CL10C271JB8NNNC purchasing variant; 0603, 270 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 270 pF definition. The X7R ±10% preference C1608 / 0603B271K500NT on the generic ID remains unchanged; the registry allows one preferred code per ID, so this C0G ±5% Samsung SKU is recorded as its own exact variant ID. Dielectric differs from the preference (C0G vs X7R): either may be selected deliberately per project stability requirements, never substituted silently.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178149990612992-C1657.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_27_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "27 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1656 / Samsung CL10C270JB8NNNC as the first reviewed preferred extended purchasing choice for this in-grid generic 0603 27 pF value (the generic already exists in the 0603 capacitance_values grid, so no populate row was needed). The Samsung ordering code (CL10 = 0603, C = C0G, 270 = 27 pF, J = ±5%, B8 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. The pre-existing YAGEO CC0603JRNPO9BN270 (C107045) LCSC-only supply is preserved as a prior alternative.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 27 pF, 50 V, C0G, +/-5%, stock 37,373, minimum 1, full reel 4,000, available order qty 36,016, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707047652622336-C1656.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_25_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "25 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1655 / Fenghua 0603CG250J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 25 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 250 = 25 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 25 pF generic supplied by C1556.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 25 pF, 50 V, C0G, +/-5%, stock 4,249, minimum 1, full reel 4,000, available order qty 4,241, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988066062651392-C1655.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_24_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "24 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1654 / Fenghua 0603CG240J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 24 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 240 = 24 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 24 pF, 50 V, C0G, +/-5%, stock 110,340, minimum 1, full reel 4,000, available order qty 107,235, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988062648082432-C1654.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_2_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1652 / Fenghua 0603CG2R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 2.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R5 = 2.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 2.5 pF generic supplied by C1560.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 2.5 pF, 50 V, C0G, stock 3,129, minimum 1, full reel 4,000, available order qty 3,127, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988059368677376-C1652.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_2_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1651 / Fenghua 0603CG2R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 2.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R2 = 2.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 2.2 pF generic supplied by C1559.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 2.2 pF, 50 V, C0G, stock 77,088, minimum 1, full reel 4,000, available order qty 71,601, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988055891599360-C1651.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1650 / Fenghua 0603CG2R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 2R0 = 2.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 2 pF generic supplied by C1558.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 2 pF, 50 V, C0G, stock 219,138, minimum 1, full reel 4,000, available order qty 213,046, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988052745601024-C1650.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_200_pico_farad_fenghua_adv_tech_0603cg201j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_200_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "200 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1649 / 0603CG201J500NT purchasing variant; 0603, 200 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 200 pF definition. The X7R ±10% preference C1600 / 0603B201K500NT on the generic ID remains unchanged; the registry allows one preferred code per ID, so this C0G ±5% SKU is recorded as its own exact variant ID. Dielectric differs from the preference (C0G vs X7R): either may be selected deliberately per project stability requirements, never substituted silently.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988049352409088-C1649.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_16_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "16 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1646 / Fenghua 0603CG160J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 16 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 160 = 16 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 16 pF, 50 V, C0G, +/-5%, stock 23,036, minimum 1, full reel 4,000, available order qty 22,931, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988046244429824-C1646.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_150_pico_farad_fenghua_adv_tech_0603cg151j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_150_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1645 / 0603CG151J500NT purchasing variant; 0603, 150 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 150 pF definition. The reviewed Basic preference C1594 / 0603B151K500NT (same maker, X7R ±10%) on the generic ID remains unchanged; the registry allows one preferred code per ID, so this C0G ±5% SKU is recorded as its own exact variant ID. Dielectric differs from the preference (C0G vs X7R): either may be selected deliberately per project stability requirements, never substituted silently.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988042943107072-C1645.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_120_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "120 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1643 / Fenghua 0603CG121J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 120 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 121 = 12 x 10^1 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 120 pF, 50 V, C0G, +/-5%, stock 61,632, minimum 1, full reel 4,000, available order qty 61,351, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988039793319936-C1643.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_12_pico_farad_fenghua_adv_tech_0603cg120j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_12_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "12 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1642 / 0603CG120J500NT purchasing variant; 0603, 12 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 12 pF definition. The reviewed Basic preference C38523 / CL10C120JB8NNNC (Samsung, same 12 pF 50 V C0G ±5% spec) on the generic ID remains unchanged; the registry allows one preferred code per ID, so this equivalent-spec FH SKU is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988036518109184-C1642.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_11_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "11 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1641 / Fenghua 0603CG110J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 11 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 110 = 11 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. The live page reads 11 pF, which is a distinct value from the in-grid 10 pF generic.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 11 pF, 50 V, C0G, +/-5%, stock 17,987, minimum 1, full reel 4,000, available order qty 17,805, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988033523376128-C1641.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_1_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1640 / Fenghua 0603CG1R8C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 1.8 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R8 = 1.8 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 1.8 pF generic supplied by C1553.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 1.8 pF, 50 V, C0G, stock 70,251, minimum 1, full reel 4,000, available order qty 62,750, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988030314733568-C1640.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_1_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1639 / Fenghua 0603CG1R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 1.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R5 = 1.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 1.5 pF generic supplied by C1552.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 1.5 pF, 50 V, C0G, stock 48,945, minimum 1, full reel 4,000, available order qty 39,988, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988027022069760-C1639.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_1_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1638 / Fenghua 0603CG1R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 1.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 1R2 = 1.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 1.2 pF generic supplied by C1551.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 1.2 pF, 50 V, C0G, stock 25,094, minimum 1, full reel 4,000, available order qty 25,068, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988022110674944-C1638.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_1_nano_farad_fenghua_adv_tech_0603cg102j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_1_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1636 / 0603CG102J500NT purchasing variant; 0603, 1 nF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 1 nF definition. The reviewed Basic preference C1588 / CL10B102KB8NNNC (Samsung, X7R ±10%) on the generic ID remains unchanged; the registry allows one preferred code per ID, so this C0G ±5% FH SKU is recorded as its own exact variant ID. Dielectric differs from the preference (C0G vs X7R): either may be selected deliberately per project stability requirements, never substituted silently.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988018943569920-C1636.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_100_pico_farad_fenghua_adv_tech_0603cg101j500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_100_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "100 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1635 / 0603CG101J500NT purchasing variant; 0603, 100 pF, 50 V, C0G, ±5% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 100 pF definition. The reviewed Basic preference C14858 / CL10C101JB8NNNC (Samsung, same 100 pF 50 V C0G ±5% spec) on the generic ID remains unchanged; the registry allows one preferred code per ID, so this equivalent-spec FH SKU is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988015856967680-C1635.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_0_5_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "0.5 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1633 / Fenghua 0603CG0R5C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 0.5 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 0R5 = 0.5 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 0.5 pF generic supplied by C1544.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 0.5 pF, 50 V, C0G, stock 100,814, minimum 1, full reel 4,000, available order qty 99,206, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988012631547904-C1633.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_820_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "820 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1632 / Fenghua 0603B821K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 820 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 821 = 82 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 820 pF X7R generic is distinct from the separate 0402 820 pF C0G generic supplied by C1543.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 820 pF, 50 V, X7R, +/-10%, stock 57,615, minimum 1, full reel 4,000, available order qty 57,444, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988009439682560-C1632.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_680_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "680 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1630 / Fenghua 0603B681K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 680 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 681 = 68 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 680 pF X7R generic is distinct from the separate 0402 680 pF C0G generic supplied by C1541.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 680 pF, 50 V, X7R, +/-10%, stock 119,409, minimum 1, full reel 4,000, available order qty 75,483, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987999905488896-C1630.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_56_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "56 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1629 / Fenghua 0603B563K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 56 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 563 = 56 x 10^3 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 56 nF, 50 V, X7R, +/-10%, stock 3,747, minimum 1, full reel 4,000, available order qty 3,714, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987996604436480-C1629.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_5_6_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5.6 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1628 / Fenghua 0603B562K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 5.6 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 562 = 56 x 10^2 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 5.6 nF generic supplied by C1542.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 5.6 nF, 50 V, X7R, +/-10%, stock 63,422, minimum 1, full reel 4,000, available order qty 62,960, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987993475891200-C1628.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_560_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "560 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1627 / Fenghua 0603B561K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 560 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 561 = 56 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 560 pF X7R generic is distinct from the separate 0402 560 pF C0G generic supplied by C1539.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 560 pF, 50 V, X7R, +/-10%, stock 18,966, minimum 1, full reel 4,000, available order qty 18,889, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987990237483008-C1627.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_510_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "510 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1626 / Fenghua 0603B511K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 510 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 511 = 51 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 510 pF, 50 V, X7R, +/-10%, stock 22,770, minimum 1, full reel 4,000, available order qty 21,527, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987987079307264-C1626.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_5_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1625 / Fenghua 0603B502K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 5 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 502 = 50 x 10^2 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 5 nF X7R generic is distinct from the separate 0402 5 pF C0G generic supplied by C1573.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 5 nF, 50 V, X7R, +/-10%, stock 6,489, minimum 1, full reel 4,000, available order qty 6,435, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987983636054016-C1625.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_500_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "500 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1624 / Fenghua 0603B501K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 500 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 501 = 50 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 500 pF, 50 V, X7R, +/-10%, stock 4,195, minimum 1, full reel 4,000, available order qty 4,137, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987980410363904-C1624.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_4_7_nano_farad_samsung_electro_mechanics_cl10b472kb8nnnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_4_7_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1621 / CL10B472KB8NNNC purchasing variant; 0603, 4.7 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 4.7 nF definition. The reviewed Basic preference C53987 / 0603B472K500NT (FH) on the generic ID remains unchanged; the registry allows one preferred code per ID, so this equivalent-spec Samsung SKU is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586177280414924801-C1621.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_39_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "39 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1619 / Fenghua 0603B393K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 39 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 393 = 39 x 10^3 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 39 nF, 50 V, X7R, +/-10%, stock 321, minimum 1, full reel 4,000, available order qty 191, MSL 1. Stock is low at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987973926105088-C1619.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_3_9_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.9 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1618 / Fenghua 0603B392K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 3.9 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 392 = 39 x 10^2 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 3.9 nF X7R generic is distinct from the separate 0402 3.9 pF C0G generic supplied by C1566.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 3.9 nF, 50 V, X7R, +/-10%, stock 20,770, minimum 1, full reel 4,000, available order qty 18,505, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987970684043264-C1618.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_390_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "390 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1617 / Fenghua 0603B391K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 390 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 391 = 39 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 390 pF, 50 V, X7R, +/-10%, stock 63,326, minimum 1, full reel 4,000, available order qty 62,330, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987967303299072-C1617.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_360_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "360 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1616 / Fenghua 0603B361K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 360 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 361 = 36 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 360 pF, 50 V, X7R, +/-10%, stock 7,130, minimum 1, full reel 4,000, available order qty 7,091, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987961104117760-C1616.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_330_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 nF",
+            "rated_voltage": "25 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1615 / Fenghua 0603B334K250NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 330 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 334 = 33 x 10^4 pF, K = +/-10%, 250 = 25 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. The generic ID stays plain because no higher-voltage 0603 330 nF sibling exists yet; if a 50 V sibling is added later it should become an explicit rated variant per the C1590/C1592 precedents.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 330 nF, 25 V, X7R, +/-10%, stock 93,455, minimum 1, full reel 4,000, available order qty 55,710, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987957987479552-C1615.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_33_nano_farad_fenghua_adv_tech_0603b333k500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_33_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "33 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1614 / 0603B333K500NT purchasing variant; 0603, 33 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 33 nF definition. The reviewed Basic preference C21117 / CL10B333KB8NNNC (Samsung, same 33 nF 50 V X7R ±10% spec) on the generic ID remains unchanged; the registry allows one preferred code per ID, so this equivalent-spec FH SKU is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987954732699648-C1614.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_330_pico_farad_fenghua_adv_tech_0603b331k500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_330_pico_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "330 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1612 / 0603B331K500NT purchasing variant; 0603, 330 pF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 330 pF definition. IMPORTANT dielectric difference: the reviewed Basic preference C1664 / CL10C331JB8NNNC (Samsung) on the generic ID is C0G ±5%; this FH SKU is X7R ±10%, a materially broader-tolerance, worse-stability dielectric. It must never replace the C0G preference, and projects requiring C0G stability must not substitute this SKU. The registry allows one preferred code per ID; C1612 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987951558152192-C1612.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_3_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1611 / Fenghua 0603B302K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 3 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 302 = 30 x 10^2 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 X7R generic is distinct from the separate 0402 3 nF generic supplied by C1564.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 3 nF, 50 V, X7R, +/-10%, stock 16,427, minimum 1, full reel 4,000, available order qty 16,342, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987948433125376-C1611.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_300_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "300 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1610 / Fenghua 0603B301K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 300 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 301 = 30 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 300 pF, 50 V, X7R, +/-10%, stock 7,628, minimum 1, full reel 4,000, available order qty 7,133, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987945321086976-C1610.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_2_7_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.7 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1609 / Fenghua 0603B272K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 2.7 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 272 = 27 x 10^2 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 2.7 nF X7R generic is distinct from the separate 0402 2.7 pF C0G generic supplied by C1561.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 2.7 nF, 50 V, X7R, +/-10%, stock 84,028, minimum 1, full reel 4,000, available order qty 69,377, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987942011375616-C1609.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_270_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "270 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1608 / Fenghua 0603B271K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 270 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 271 = 27 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 270 pF, 50 V, X7R, +/-10%, stock 29,378, minimum 1, full reel 4,000, available order qty 26,306, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987935091314688-C1608.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_2_2_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_2_2_micro_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "X5R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1607 / Samsung CL10A225KP8NNNC as the first reviewed preferred extended purchasing choice for this rated variant; 0603, 2.2 uF, 10 V, X5R, ±10% verified against the staged live JLC capture 2026-09-28. The Samsung ordering code (CL10 = 0603, A = X5R, 225 = 2.2 uF, P = ±10%, P8 = 10 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Linked to the generic 0603 2.2 uF definition as a lower-voltage purchasing variant (C1592 16 V and C1590 25 V precedents); the reviewed Basic 16 V C23630 generic preference remains unchanged. Projects needing 16 V margin must not substitute this 10 V SKU.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178148606492672-C1607.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_220_nano_farad_fenghua_adv_tech_0603b224k250nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_220_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "220 nF",
+            "rated_voltage": "25 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1606 / 0603B224K250NT purchasing variant; 0603, 220 nF, 25 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 220 nF definition. The reviewed Basic preference C21120 / CL10B224KA8NNNC (Samsung, same 220 nF 25 V X7R ±10% spec) on the generic ID remains unchanged; the registry allows one preferred code per ID, so this equivalent-spec FH SKU is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987931899449344-C1606.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_20_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "20 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1602 / Fenghua 0603B203K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 20 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 203 = 20 x 10^3 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 20 nF, 50 V, X7R, +/-10%, stock 23,403, minimum 1, full reel 4,000, available order qty 23,011, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987925502595072-C1602.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_2_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "2 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1601 / Fenghua 0603B202K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 2 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 202 = 20 x 10^2 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 2 nF generic is distinct from the separate 0402 2.2 nF generic supplied by C1531.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 2 nF, 50 V, X7R, +/-10%, stock 1,992, minimum 1, full reel 4,000, available order qty 1,907, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987920351989760-C1601.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_200_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "200 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1600 / Fenghua 0603B201K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 200 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 201 = 20 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 generic is distinct from the separate 0402 200 pF generic supplied by C1529.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 200 pF, 50 V, X7R, +/-10%, stock 52,258, minimum 1, full reel 4,000, available order qty 31,886, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987916326133760-C1600.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_1_8_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.8 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1599 / Fenghua 0603B182K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 1.8 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 182 = 18 x 10^2 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 1.8 nF, 50 V, X7R, +/-10%, stock 6,493, minimum 1, full reel 4,000, available order qty 5,970, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987913075142656-C1599.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_180_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "180 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1598 / Fenghua 0603B181K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 180 pF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 181 = 18 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 180 pF, 50 V, X7R, +/-10%, stock 17,754, minimum 1, full reel 4,000, available order qty 17,671, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987910084739072-C1598.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_150_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "150 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1597 / Fenghua 0603B154K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 150 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 154 = 15 x 10^4 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 150 nF, 50 V, X7R, +/-10%, stock 2,148, minimum 1, full reel 4,000, available order qty 2,075, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987906842677248-C1597.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_15_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "15 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1596 / Fenghua 0603B153K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 15 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 153 = 15 x 10^3 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This 0603 X7R generic is distinct from the separate 0402 15 nF Y5V generic supplied by C1583.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 15 nF, 50 V, X7R, +/-10%, stock 46,700, minimum 1, full reel 4,000, available order qty 27,591, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987903747416064-C1596.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_1_5_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "1.5 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1595 / Fenghua 0603B152K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 1.5 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 152 = 15 x 10^2 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 1.5 nF, 50 V, X7R, +/-10%, stock 126,504, minimum 1, full reel 4,000, available order qty 102,328, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987896222429184-C1595.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_12_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "12 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1593 / Fenghua 0603B123K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 12 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 123 = 12 x 10^3 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 12 nF, 50 V, X7R, +/-10%, stock 2,357, minimum 1, full reel 4,000, available order qty 2,341, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987889767395328-C1593.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_100_nano_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_100_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "100 nF",
+            "rated_voltage": "25 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1590 / Samsung CL10B104KA8NNNC as the first reviewed preferred extended purchasing choice for this rated variant; 0603, 100 nF, 25 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28. The Samsung ordering code (CL10 = 0603, B = X7R, 104 = 100 nF, K = ±10%, A8 = 25 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Linked to the generic 0603 100 nF definition as a lower-voltage purchasing variant (C1592 16 V precedent); the reviewed 50 V C14663 generic preference and the Samsung 50 V C1591 maker/MPN variant remain unchanged. Projects needing 50 V margin must not substitute this 25 V SKU.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987890767724672-C1590.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_10_nano_farad_samsung_electro_mechanics_cl10b103kb8nnnc"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0603_10_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "10 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact Samsung Electro-Mechanics C1589 / CL10B103KB8NNNC purchasing variant; 0603, 10 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0603 10 nF definition. The reviewed Basic preference C57112 / 0603B103K500NT (FH) on the generic ID remains unchanged; the registry allows one preferred code per ID, so this equivalent-spec Samsung SKU is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987890357215232-C1589.pdf).",
+        ]
+
+    current = "electronic_capacitor_0603_5_1_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5.1 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R",
+            "tolerance": "±10%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1587 / Fenghua 0603B512K500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0603 5.1 nF value; the populate row was added by this intake. The Fenghua ordering code (B = X7R, 512 = 51 x 10^1 pF, K = +/-10%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0603, 5.1 nF, 50 V, X7R, +/-10%, stock 16,236, minimum 1, full reel 4,000, available order qty 16,078, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987886487719936-C1587.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_22_nano_farad_fenghua_adv_tech_0402f223m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0402_22_nano_farad"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "22 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1584 / 0402F223M500NT purchasing variant; 0402, 22 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0402 22 nF definition. IMPORTANT dielectric difference: the existing verified Basic preference C1532 / 0402B223K500NT on electronic_capacitor_0402_22_nano_farad is X7R ±10% with full-stage evidence (datasheet sha256-verified, pinout and footprint checked); this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The scaffold guard refused an earlier attempt to scaffold C1584 onto the plain generic ID because C1532's page capture already exists there; C1584 is therefore recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987876916047872-C1584.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_15_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "15 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1583 / Fenghua 0402F153M500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 15 nF value; the populate row was added by this intake. The Fenghua ordering code (F = Y5V, 153 = 15 x 10^3 pF, M = +/-20%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 15 nF, 50 V, Y5V, +/-20%, stock 2, minimum 1, full reel 10,000, available order qty 2, MSL 1. Stock is nearly depleted at capture time; low stock does not change the verified identity and the part is retained as a candidate. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987873841893376-C1583.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_100_nano_farad_fenghua_adv_tech_0402f104m500nt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_capacitor_0402_100_nano_farad_50_volt"
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "100 nF",
+            "rated_voltage": "50 V",
+            "dielectric": "Y5V",
+            "tolerance": "±20%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Exact FH (Guangdong Fenghua Advanced Tech) C1581 / 0402F104M500NT purchasing variant; 0402, 100 nF, 50 V, Y5V, ±20% verified against the staged live JLC capture 2026-09-28.",
+            "Linked to the generic 0402 100 nF 50 V definition. IMPORTANT dielectric difference: the reviewed Samsung Basic preference C307331 / CL05B104KB54PNC on electronic_capacitor_0402_100_nano_farad_50_volt is X7R ±10%; this FH SKU is Y5V ±20%, a materially broader-tolerance, worse-stability dielectric. It must never replace the X7R preference, and projects requiring X7R stability must not substitute this SKU. The registry allows one preferred code per ID; C1581 is recorded as its own exact variant ID.",
+            "No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987863876227072-C1581.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_9_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "9 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1580 / Fenghua 0402CG9R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 9 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 9R0 = 9.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 9 pF, 50 V, C0G, stock 127,617, minimum 1, full reel 10,000, available order qty 121,306, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987860482764800-C1580.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_8_2_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "8.2 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1579 / Fenghua 0402CG8R2C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 8.2 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 8R2 = 8.2 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 8.2 pF, 50 V, C0G, stock 309,271, minimum 1, full reel 10,000, available order qty 304,577, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987857396162560-C1579.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1578 / Fenghua 0402CG8R0C500NT as the first reviewed preferred extended purchasing choice for this in-grid generic 0402 8 pF value (the generic already exists in the 0402 capacitance_values grid, so no populate row was needed). The Fenghua ordering code (CG = C0G, 8R0 = 8.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 8 pF, 50 V, C0G, stock 118,321, minimum 1, full reel 10,000, available order qty 110,156, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987854028001280-C1578.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1577 / Fenghua 0402CG7R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 7R0 = 7.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 7 pF, 50 V, C0G, stock 119,166, minimum 1, full reel 10,000, available order qty 119,010, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987838464042496-C1577.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_6_8_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6.8 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1576 / Fenghua 0402CG6R8C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 6.8 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 6R8 = 6.8 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This is a picoFarad value, distinct from the separate 0402 6.8 nF generic supplied by C1542.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 6.8 pF, 50 V, C0G, stock 149,966, minimum 1, full reel 10,000, available order qty 102,998, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987838053537792-C1576.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_6_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "6 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1575 / Fenghua 0402CG6R0C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 6 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 6R0 = 6.0 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 6 pF, 50 V, C0G, stock 381,295, minimum 1, full reel 10,000, available order qty 376,696, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987837643055104-C1575.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_5_6_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "5.6 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1574 / Fenghua 0402CG5R6C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 5.6 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 5R6 = 5.6 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 5.6 pF, 50 V, C0G, stock 113,713, minimum 1, full reel 10,000, available order qty 106,970, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987837230632960-C1574.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_51_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "51 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "tolerance": "±5%",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1571 / Fenghua 0402CG510J500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 51 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 510 = 51 x 10^0 pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 51 pF, 50 V, C0G, +/-5%, stock 14,223, minimum 1, full reel 10,000, available order qty 13,820, MSL 1. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987831437479936-C1571.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_3_3_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.3 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1565 / Fenghua 0402CG3R3C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 3.3 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R3 = 3.3 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence. This is a picoFarad value, distinct from the separate 0402 3.3 nF generic supplied by C1536.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 3.3 pF, 50 V, C0G, stock 157,223, minimum 1, full reel 10,000, available order qty 140,453, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987812642668544-C1565.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_3_9_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "3.9 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1566 / Fenghua 0402CG3R9C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 3.9 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 3R9 = 3.9 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 3.9 pF, 50 V, C0G, stock 95,438, minimum 1, full reel 10,000, available order qty 89,612, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987815750782976-C1566.pdf).",
+        ]
+
+    current = "electronic_capacitor_0402_4_7_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "capacitor"
+        part["electrical"] = {
+            "capacitance": "4.7 pF",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G",
+            "polarized": False,
+        }
+        part["research_notes"] = [
+            "Verified JLC C1569 / Fenghua 0402CG4R7C500NT as the first reviewed preferred extended purchasing choice for this previously absent generic 0402 4.7 pF value; the populate row was added by this intake. The Fenghua ordering code (CG = C0G, 4R7 = 4.7 pF, 500 = 50 V) decodes consistently with the listed specifications; the live page specification table is the primary evidence.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 4.7 pF, 50 V, C0G, stock 627,647, minimum 1, full reel 10,000, available order qty 549,340, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987825213267968-C1569.pdf).",
+        ]
+
     from working_oomp_populate_jlc import apply_reviewed_jlc_choices
     apply_reviewed_jlc_choices(extras_dict, family="capacitor")

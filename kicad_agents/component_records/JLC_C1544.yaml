@@ -1,0 +1,76 @@
+format_version: 1
+ledger_id: JLC_C1544
+status: researched
+family: capacitor
+part_id: electronic_capacitor_0402_0_5_pico_farad
+exact_identity: true
+package: '0402'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  manufacturer_part_number: 0402CG0R5C500NT
+  lcsc_part_number: C1544
+  lcsc_decision: 'No generic electronic_capacitor_0402_0_5_pico_farad existed anywhere
+    in the capacitor family: the 0402 value list in working_oomp_populate_capacitor.py
+    (in-grid 8-220 pF plus the explicit rows added today by C1527-C1543) and the 0603/0805
+    lists have no fractional-pF value, and the reviewed registry has no preference
+    for this ID (checked reviewed_choices.json for C1544 and 0402CG0R5C500NT: no entries).
+    Following the missing-value decision row and the C1527/C1537/C1539/C1541 precedents,
+    one explicit 0402 0_5_pico_farad row was added and C1544 becomes its first reviewed
+    preferred house identity: FH (Guangdong Fenghua Advanced Tech) 0402CG0R5C500NT,
+    0.5 pF, 50 V, C0G, 0402 MLCC. Verified two-terminal non-polarized chip; the Fenghua
+    ordering code 0R5 decodes consistently with the listed 0.5 pF. A SparkFun Artemis
+    project reference (component C18) already proposed this exact oomp_id as unmatched;
+    this row resolves that proposal. Note: the live page lists no tolerance; recorded
+    as not-listed rather than decoded from the MPN. Edits made under the capacitor
+    family lock.'
+  product_url: https://jlcpcb.com/partdetail/1896-0402CG0R5C500NT/C1544
+  datasheet_url: ''
+  browser_sources:
+  - https://jlcpcb.com/partdetail/1896-0402CG0R5C500NT/C1544
+  webpage_capture: parts_source/electronic_capacitor_0402_0_5_pico_farad/web_page_distributor_jlc.txt
+  evidence_notes:
+  - 'Staged live JLC capture kicad_agents/jlc_house_parts/browser_staging/C1544.json
+    (zcode_inapp_browser_visible_page, 2026-09-28): JLCPCB Part # C1544, manufacturer
+    FH (Guangdong Fenghua Advanced Tech), MFR.Part # 0402CG0R5C500NT, Package 0402,
+    badge Extended (Promotional Extended => preferred_extended in this corrected official-category
+    queue), 0.5 pF 50 V C0G (no tolerance row shown), MSL 1, stock 47,649, minimum
+    1, full reel 10,000, available order qty 47,296.'
+  - 'No datasheet PDF imported at intake (no browser in pool worker; staged capture
+    has empty datasheet_url). Handoff to full/integration stage: download and import
+    from the JLC-listed datasheet https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987740676395008-C1544.pdf,
+    extract the tolerance (not shown on the JLC page), and re-run project matching
+    for the SparkFun Artemis reference that proposed this oomp_id.'
+  - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C1544.json.
+jlc_selection:
+  verified_on: '2026-09-28'
+  official_url: https://jlcpcb.com/partdetail/1896-0402CG0R5C500NT/C1544
+  tier: preferred_extended
+  tier_label_observed: Extended
+  stock_observed: 47,649
+  purchase_moq_observed: '1'
+  pcba_min_qty_observed: null
+  compatibility_notes: 'No generic electronic_capacitor_0402_0_5_pico_farad existed
+    anywhere in the capacitor family: the 0402 value list in working_oomp_populate_capacitor.py
+    (in-grid 8-220 pF plus the explicit rows added today by C1527-C1543) and the 0603/0805
+    lists have no fractional-pF value, and the reviewed registry has no preference
+    for this ID (checked reviewed_choices.json for C1544 and 0402CG0R5C500NT: no entries).
+    Following the missing-value decision row and the C1527/C1537/C1539/C1541 precedents,
+    one explicit 0402 0_5_pico_farad row was added and C1544 becomes its first reviewed
+    preferred house identity: FH (Guangdong Fenghua Advanced Tech) 0402CG0R5C500NT,
+    0.5 pF, 50 V, C0G, 0402 MLCC. Verified two-terminal non-polarized chip; the Fenghua
+    ordering code 0R5 decodes consistently with the listed 0.5 pF. A SparkFun Artemis
+    project reference (component C18) already proposed this exact oomp_id as unmatched;
+    this row resolves that proposal. Note: the live page lists no tolerance; recorded
+    as not-listed rather than decoded from the MPN. Edits made under the capacitor
+    family lock.'
+  ratings:
+    Capacitance: 0.5pF
+    Temperature Coefficient: C0G
+    Voltage Rating: 50V
+  datasheet_pages: []
+  pinout_checked: false
+  footprint_checked: false
+  visual_review: pending

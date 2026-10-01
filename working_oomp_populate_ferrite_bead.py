@@ -19,6 +19,15 @@ def main(**kwargs):
             "part_number": "mmz2012r150at000",
             "name_short": "Ferrite Bead 15 Ohm 1.5 A",
         },
+        # C5671: Sunlord GZ-series 0805 bead, 120 ohm @ 100 MHz, 800 mA.
+        {
+            "package": "0805",
+            "impedance": "120_ohm",
+            "current_rating": "800_milliamp",
+            "manufacturer": "sunlord",
+            "part_number": "gz2012d121tf",
+            "name_short": "Ferrite Bead 120 Ohm 800 mA",
+        },
         # Soldered boards fit an unspecified 0603 ferrite bead ("0603L"
         # footprint, value "Ferrite bead"); the generic part keeps it out of
         # the unmatched list until the fitted MPN is confirmed.

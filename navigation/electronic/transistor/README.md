@@ -1,13 +1,14 @@
 # Electronic / Transistor
 
 [Up one level](../README.md)
-This category contains 14 parts in total.
+This category contains 29 parts in total.
 
 ## Categories
 
 - [Sot 23](sot_23/README.md)
 - [Sot 363 6](sot_363_6/README.md)
 - [Sot 523](sot_523/README.md)
+- [Sot 89 3](sot_89_3/README.md)
 
 
 ---

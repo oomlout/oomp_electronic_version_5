@@ -1,8 +1,11 @@
 # Electronic / LED / 0603 / White
 
 [Up one level](../README.md)
-This category contains 3 parts in total.
+This category contains 4 parts in total.
 
+## Categories
+
+- [Tint](tint/README.md)
 
 ## Parts
 

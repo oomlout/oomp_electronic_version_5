@@ -15,6 +15,10 @@ distributors:
   part_number: C6568
   title: LCSC
   url: https://www.lcsc.com/product-detail/C6568.html
+- key: jlcpcb
+  part_number: C6568
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/SKYWORKS_SILICONLABS-CP2102GMR/C6568
 file_copy:
 - file_destination: datasheet.pdf
   file_source: parts_source/electronic_ic_qfn_28_5_mm_x_5_mm_converter_usb_to_serial_converter_silicon_labs_cp2102_gmr/datasheet.pdf
@@ -25,6 +29,37 @@ ic_dimensions_mm:
   pin_length: 0.55
   pin_pitch: 0.5
   pin_width: 0.23
+jlcpcb_selection:
+  canonical_manufacturer: Silicon Labs
+  compatibility_notes: Reuse the existing exact Silicon Labs CP2102-GMR QFN-28-EP
+    5x5 mm OOMP ID; JLC C6568, full MPN and package exactly match its current identity.
+    The matching-code LCSC product page identifies the same C6568/CP2102-GMR/package
+    as SILICON LABS, confirming JLC's combined SKYWORKS/SILICON LABS label resolves
+    to the existing Silicon Labs maker. The JLC badge is Extended; this corrected
+    category queue maps it to preferred_extended.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/SKYWORKS_SILICONLABS-CP2102GMR/C6568
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: 1
+  ratings:
+    Applications Function: Transceiver
+    Assembly Type: SMT Assembly
+    Category: Interface/USB Converters
+    Current - Supply: 20mA
+    Data Rate: 1Mbps
+    Operating Temperature: -40℃~+85℃
+    PCBA Type: Economic and Standard
+    Package: WQFN-28-EP(5x5)
+    Quiescent Supply Current: 80uA
+    USB Protocol: USB 2.0
+    Voltage - Supply: 3V~3.6V
+  stock_observed: 36060
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-27'
+  visual_review: pending
 kicad:
   allow_project_fallback: false
   hand_solder: ''
@@ -224,8 +259,16 @@ package_drawing:
     - 3.15
     - 3.15
 part_id: U1
+part_number_jlcpcb: C6568
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/SKYWORKS_SILICONLABS-CP2102GMR/C6568
 part_number_lcsc: C6568
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C6568.html
 part_number_manufacturer: CP2102-GMR
+part_numbers_lcsc:
+- part_number: C6568
+part_numbers_manufacturer:
+- manufacturer: Silicon Labs
+  part_number: CP2102-GMR
 pins:
   pin_1:
     name: dcd
@@ -343,7 +386,7 @@ pins:
     name: reset_n
     number: '9'
     type: signal
-product_url: https://www.lcsc.com/product-detail/C6568.html
+product_url: https://jlcpcb.com/partdetail/SKYWORKS_SILICONLABS-CP2102GMR/C6568
 research_notes:
 - This is CP2102, not CP2102N. Easyduino U1 has conflicting symbol/value and LCSC
   identity; do not auto-match it.

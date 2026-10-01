@@ -70,3 +70,9 @@ def main(**kwargs):
             "symbols": ["Device:Polyfuse"],
             "footprints": ["Fuse:Fuse_0603_1608Metric", "MF-FSMF"],
         }
+
+    # Apply explicitly promoted browser-reviewed JLC identities (manufacturer,
+    # MPN, LCSC code) to the fuse family, matching the other families'
+    # reviewed-choice enrichment.
+    from working_oomp_populate_jlc import apply_reviewed_jlc_choices
+    apply_reviewed_jlc_choices(extras_dict, family="fuse")

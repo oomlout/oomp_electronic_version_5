@@ -12,6 +12,41 @@ def main(**kwargs):
         "name_short": "Push Button TS-1088-AR02016",
     })
 
+    # First DIP switches: Cixi Tonver slide DIP switches (SPST per position,
+    # 2.54 mm pitch, 24V 25mA) from the JLC house-parts queue.  taxonomy_5
+    # carries circuit + positions, taxonomy_6 the actuator style (the two
+    # 8-position SMD parts differ only by raised vs recessed actuators).
+    options.append({
+        "taxonomy_2": "switch", "taxonomy_3": "dip_switch", "taxonomy_4": "through_hole",
+        "taxonomy_5": "spst_5_position", "taxonomy_6": "raised_actuator",
+        "taxonomy_14": "cixi_tonver", "taxonomy_15": "ham_05hwa_r",
+        "name_short": "DIP Switch HAM-05HWA-R (5-pos SPST slide)",
+    })
+    options.append({
+        "taxonomy_2": "switch", "taxonomy_3": "dip_switch", "taxonomy_4": "through_hole",
+        "taxonomy_5": "spst_9_position", "taxonomy_6": "raised_actuator",
+        "taxonomy_14": "cixi_tonver", "taxonomy_15": "yam_09hwag",
+        "name_short": "DIP Switch YAM-09HWAG (9-pos SPST slide)",
+    })
+    options.append({
+        "taxonomy_2": "switch", "taxonomy_3": "dip_switch", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "spst_8_position", "taxonomy_6": "raised_actuator",
+        "taxonomy_14": "cixi_tonver", "taxonomy_15": "had_08hwag_r",
+        "name_short": "DIP Switch HAD-08HWAG-R (8-pos SPST slide, raised)",
+    })
+    options.append({
+        "taxonomy_2": "switch", "taxonomy_3": "dip_switch", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "spst_8_position", "taxonomy_6": "recessed_actuator",
+        "taxonomy_14": "cixi_tonver", "taxonomy_15": "had_08lwag_2",
+        "name_short": "DIP Switch HAD-08LWAG-2 (8-pos SPST slide, recessed)",
+    })
+    options.append({
+        "taxonomy_2": "switch", "taxonomy_3": "dip_switch", "taxonomy_4": "through_hole",
+        "taxonomy_5": "spst_10_position", "taxonomy_6": "recessed_actuator",
+        "taxonomy_14": "cixi_tonver", "taxonomy_15": "ham_10lwa_r",
+        "name_short": "DIP Switch HAM-10LWA-R (10-pos SPST slide, recessed)",
+    })
+
     # Unmatched-project population records.  These intentionally contain only
     # the identity visible in the project data; manufacturer evidence and
     # project matching are added in the later research/match pass.

@@ -5,35 +5,78 @@ dimensions_mm:
   width: 1.6
 distributors:
 - key: lcsc
-  part_number: C2933760
-  product_name: 8.2kΩ ±1% 250mW 1206 Thick Film Resistor
+  part_number: C1488
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C2933760.html
+  url: https://www.lcsc.com/product-detail/C1488.html
+- key: jlcpcb
+  part_number: C1488
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1840-RS06K822JT/C1488
+electrical:
+  operating_temperature: -55 to +155 °C
+  power: 250 mW
+  rated_voltage: 200 V
+  resistance: 8.2 kΩ
+  temperature_coefficient: ±100 ppm/°C
+  tolerance: ±5%
+jlcpcb_selection:
+  compatibility_notes: 'Reuse the existing E12-grid generic electronic_resistor_1206_8200_ohm
+    (82 ohm x 100 multiplier already in the resistor populate grid); no population
+    row change was needed. No prior reviewed house preference exists for this generic
+    ID, so the first reviewed choice C1488 / FH RS-06K822JT (1206, 8.2 kOhm, +/-5%,
+    250 mW, 200 V, +/-100 ppm/C, thick film) becomes its preferred extended choice.
+    Precedent: C1487 on the same-day 1206 7.5 kOhm generic took the same route.'
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/1840-RS06K822JT/C1488
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: '1'
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 250mW
+    Resistance: 8.2kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±5%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 200V
+  stock_observed: 3,408
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-28'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_1206_3216Metric
   symbol: Device:R_Small
 lcsc_search: 1206 8.2kΩ
-manufacturer: FOJAN
+manufacturer: FH (Guangdong Fenghua Advanced Tech)
 manufacturers:
-- manufacturer: FOJAN
-  part_number: FRC1206F8201TS
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-06K822JT
 name_proper: Resistor 8200 Ohm 1206
 name_readable: Resistor 8200 Ohm 1206
 name_short: Resistor 8200 Ohm 1206
 part_id: R1
-part_number_lcsc: C2933760
-part_number_manufacturer: FRC1206F8201TS
+part_number_jlcpcb: C1488
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1840-RS06K822JT/C1488
+part_number_lcsc: C1488
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1488.html
+part_number_manufacturer: RS-06K822JT
 part_numbers_lcsc:
-- part_number: C2933760
-  product_name: 8.2kΩ ±1% 250mW 1206 Thick Film Resistor
+- part_number: C1488
 part_numbers_manufacturer:
-- manufacturer: FOJAN
-  part_number: FRC1206F8201TS
-product_url: https://www.lcsc.com/product-detail/C2933760.html
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-06K822JT
+product_url: https://jlcpcb.com/partdetail/1840-RS06K822JT/C1488
 research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "1206
-  8200Ω" (248,000 in stock at capture).'
+- Verified JLC C1488 / FH RS-06K822JT as the first reviewed preferred extended purchasing
+  choice for the existing E12-grid generic 1206 8.2 kΩ value; no population row change
+  was needed.
+- Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended),
+  1206, 8.2 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,408, minimum
+  1, full reel 5,000, available order qty 3,371. No datasheet PDF imported at intake;
+  download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756879697902870528-C1488.pdf).
 svg_details:
 - filename_extra: assembly
   make_a4: false

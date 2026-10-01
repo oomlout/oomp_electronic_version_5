@@ -1,0 +1,76 @@
+format_version: 1
+ledger_id: JLC_C1480
+status: researched
+family: resistor
+part_id: electronic_resistor_1206_3600_ohm
+exact_identity: true
+package: '1206'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  manufacturer_part_number: RS-06K362JT
+  lcsc_part_number: C1480
+  lcsc_decision: 'Add one explicit generic row: 1206 3600 ohm was missing from working_oomp_populate_resistor.py
+    (36 ohm is not in this project''s E12 base list [10..75..82], so the grid never
+    made a 3600 ohm value; before this row only 0805 C1365 and 0603 C22980 had explicit
+    3600 ohm rows). No MPN RS-06K362JT, no C1480 and no reviewed preference for 1206
+    3600 ohm exist in reviewed_choices.json; the reviewed 3600 ohm choices are 0805
+    (C1365 UNI-ROYAL) and 0603 (C22980 UNI-ROYAL), which do not cover the 1206 package,
+    so this verified house identity becomes the preferred choice on the plain 1206
+    generic ID electronic_resistor_1206_3600_ohm; no tolerance variant is needed.
+    Ratings: JLC C1480 FH (Guangdong Fenghua Advanced Tech) RS-06K362JT, 1206, 3.6
+    kOhm, +-5%, 250 mW, 200 V, +-100 ppm/degC, -55~+155 degC, thick film, two terminals.'
+  product_url: https://jlcpcb.com/partdetail/1832-RS06K362JT/C1480
+  datasheet_url: ''
+  browser_sources:
+  - https://jlcpcb.com/partdetail/1832-RS06K362JT/C1480
+  webpage_capture: parts_source/electronic_resistor_1206_3600_ohm/web_page_distributor_jlc.txt
+  evidence_notes:
+  - 'Staged visible-page capture kicad_agents/jlc_house_parts/browser_staging/C1480.json
+    (zcode_inapp_browser_visible_page, captured 2026-09-28): JLCPCB Part # C1480,
+    Manufacturer FH (Guangdong Fenghua Advanced Tech), MFR.Part # RS-06K362JT, Package
+    1206, badge Extended (maps to queued tier preferred_extended in this corrected
+    official-category queue), stock 1,111, MOQ 1, full reel 5000, available order
+    qty 1,106. Classification decision: new explicit 1206 3600 ohm generic row added
+    to working_oomp_populate_resistor.py extra_values under the family resistor lock
+    (the first scaffold attempt failed intake-check because the generic did not yet
+    populate; the row was added and the observation corrected before promotion);
+    apply_reviewed_jlc_choices(family=resistor) adapter call already present in working_oomp_populate_resistor_extra.py.
+    PDF missing at intake: pool worker has no browser and no local PDF; capture datasheet_url
+    is empty but the queue row records https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756879646904328192-C1480.pdf
+    and the page shows a RS-06K362JT Datasheet (PDF) link - full/integration stage
+    should download and import it with provenance.'
+  - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C1480.json.
+jlc_selection:
+  verified_on: '2026-09-28'
+  official_url: https://jlcpcb.com/partdetail/1832-RS06K362JT/C1480
+  tier: preferred_extended
+  tier_label_observed: Extended
+  stock_observed: 1,111
+  purchase_moq_observed: '1'
+  pcba_min_qty_observed: null
+  compatibility_notes: 'Add one explicit generic row: 1206 3600 ohm was missing from
+    working_oomp_populate_resistor.py (36 ohm is not in this project''s E12 base
+    list [10..75..82], so the grid never made a 3600 ohm value; before this row only
+    0805 C1365 and 0603 C22980 had explicit 3600 ohm rows). No MPN RS-06K362JT, no
+    C1480 and no reviewed preference for 1206 3600 ohm exist in reviewed_choices.json;
+    the reviewed 3600 ohm choices are 0805 (C1365 UNI-ROYAL) and 0603 (C22980 UNI-ROYAL),
+    which do not cover the 1206 package, so this verified house identity becomes the
+    preferred choice on the plain 1206 generic ID electronic_resistor_1206_3600_ohm;
+    no tolerance variant is needed. Ratings: JLC C1480 FH (Guangdong Fenghua Advanced
+    Tech) RS-06K362JT, 1206, 3.6 kOhm, +-5%, 250 mW, 200 V, +-100 ppm/degC, -55~+155
+    degC, thick film, two terminals.'
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 250mW
+    Resistance: 3.6kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±5%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 200V
+  datasheet_pages: []
+  pinout_checked: false
+  footprint_checked: false
+  visual_review: pending

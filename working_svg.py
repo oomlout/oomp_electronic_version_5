@@ -2243,6 +2243,10 @@ def _add_component_outline(thing, width=22, height=10, pos=None):
         return _add_crystal_outline(thing, width=width, height=height, pos=pos)
     if component_type == "ferrite_bead":
         return _add_resistor_outline(thing, body_width=width, body_height=height, pos=pos, body_style="component.body_dark")
+    if component_type == "inductor":
+        # Chip inductors share the two-terminal SMD body geometry with ferrite
+        # beads; the plain rounded fallback hides the end terminations.
+        return _add_resistor_outline(thing, body_width=width, body_height=height, pos=pos, body_style="component.body")
     if component_type == "connector":
         return _add_connector_outline(thing, width=width, height=height, pos=pos)
     if component_type in ["diode", "ic", "transistor"]:

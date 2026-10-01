@@ -43,6 +43,10 @@ def main(**kwargs):
     working_oomp_populate_ic.main(**kwargs)
     import working_oomp_populate_switch
     working_oomp_populate_switch.main(**kwargs)
+    import working_oomp_populate_relay
+    working_oomp_populate_relay.main(**kwargs)
+    import working_oomp_populate_heatsink
+    working_oomp_populate_heatsink.main(**kwargs)
     import working_oomp_populate_project
     working_oomp_populate_project.main(**kwargs)
     import working_oomp_populate_mounting_hole

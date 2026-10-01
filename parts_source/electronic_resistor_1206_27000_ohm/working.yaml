@@ -5,35 +5,77 @@ dimensions_mm:
   width: 1.6
 distributors:
 - key: lcsc
-  part_number: C2960927
-  product_name: 27kΩ ±1% 250mW 1206 Thick Film Resistor
+  part_number: C1498
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C2960927.html
+  url: https://www.lcsc.com/product-detail/C1498.html
+- key: jlcpcb
+  part_number: C1498
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1850-RS06K273JT/C1498
+electrical:
+  operating_temperature: -55 to +155 °C
+  power: 250 mW
+  rated_voltage: 200 V
+  resistance: 27 kΩ
+  temperature_coefficient: ±100 ppm/°C
+  tolerance: ±5%
+jlcpcb_selection:
+  compatibility_notes: 'Reused the existing E12-grid generic electronic_resistor_1206_27000_ohm:
+    matching value 27 kOhm, package 1206, and compatible ratings (250 mW, 200 V, +/-100ppm/C).
+    No reviewed house preference existed on this ID (reviewed_choices.json checked),
+    so the verified Extended C1498 identity becomes the preferred choice; no tolerance-variant
+    row needed and no existing alternatives displaced.'
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/1850-RS06K273JT/C1498
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: '1'
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 250mW
+    Resistance: 27kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±5%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 200V
+  stock_observed: 5,024
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-28'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_1206_3216Metric
   symbol: Device:R_Small
 lcsc_search: 1206 27kΩ
-manufacturer: FOJAN
+manufacturer: FH (Guangdong Fenghua Advanced Tech)
 manufacturers:
-- manufacturer: FOJAN
-  part_number: FRC1206F2702TS
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-06K273JT
 name_proper: Resistor 27000 Ohm 1206
 name_readable: Resistor 27000 Ohm 1206
 name_short: Resistor 27000 Ohm 1206
 part_id: R1
-part_number_lcsc: C2960927
-part_number_manufacturer: FRC1206F2702TS
+part_number_jlcpcb: C1498
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1850-RS06K273JT/C1498
+part_number_lcsc: C1498
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1498.html
+part_number_manufacturer: RS-06K273JT
 part_numbers_lcsc:
-- part_number: C2960927
-  product_name: 27kΩ ±1% 250mW 1206 Thick Film Resistor
+- part_number: C1498
 part_numbers_manufacturer:
-- manufacturer: FOJAN
-  part_number: FRC1206F2702TS
-product_url: https://www.lcsc.com/product-detail/C2960927.html
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-06K273JT
+product_url: https://jlcpcb.com/partdetail/1850-RS06K273JT/C1498
 research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "1206
-  27KΩ" (292,000 in stock at capture).'
+- Verified JLC C1498 / FH RS-06K273JT as the first reviewed preferred extended purchasing
+  choice for the existing E12-grid generic 1206 27 kΩ value; no population row change
+  was needed.
+- Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended),
+  1206, 27 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 5,024, minimum
+  1, full reel 5,000, available order qty 5,022. No datasheet PDF imported at intake;
+  download is an integration-stage task.
 svg_details:
 - filename_extra: assembly
   make_a4: false

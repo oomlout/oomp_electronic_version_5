@@ -126,6 +126,208 @@ def main(**kwargs):
         "taxonomy_15": "nx3225gd",
     })
 
+    # YXC HC-49S through-hole crystals (2-pin radial, 20 pF load), the first
+    # through-hole HC-49S entries in the grid; ESR varies by frequency.
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "3_579545_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "160_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "3_6864_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "160_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "5_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "80_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "7_3728_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "70_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "10_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "60_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "11_0592_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "50_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "14_31818_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "50_ohm_esr",
+    })
+
+    # More YXC HC-49S through-hole crystals (2-pin radial, 20 pF load).
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "18_432_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "45_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "22_1184_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "45_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "24_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "35_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "24_576_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "35_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "27_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "35_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "30_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "35_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "4_9152_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "120_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "4_096_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "120_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "26_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "35_ohm_esr",
+    })
+    # C2228 page lists no ESR; keep the value/load pair explicit without an
+    # ESR token rather than guessing.
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "19_0699_mhz", "taxonomy_7": "20_pf",
+    })
+
+    # YXC DT-26 through-hole tuning-fork watch crystal (2-pin, 12.5 pF).
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "dt_26",
+        "taxonomy_4": "through_hole", "taxonomy_5": "2_pin",
+        "taxonomy_6": "32_768_khz", "taxonomy_7": "12_5_pf",
+        "taxonomy_8": "50000_ohm_esr",
+    })
+
+    # YXC HC-49S-SMD (surface-mount HC-49S, 2-pin, 20 pF load).
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "3_579545_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "160_ohm_esr",
+    })
+
+    # More YXC HC-49S-SMD crystals (2-pin, 20 pF load).
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "3_6864_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "160_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "5_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "80_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "7_3728_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "70_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "10_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "60_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "11_0592_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "50_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "13_56_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "50_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "18_432_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "45_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "22_1184_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "45_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "24_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "35_ohm_esr",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "hc_49s_smd",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "2_pin",
+        "taxonomy_6": "24_576_mhz", "taxonomy_7": "20_pf",
+        "taxonomy_8": "35_ohm_esr",
+    })
+
+    # YXC SMD5050-8P SAW resonator (C2275) and Murata SIP-3 ceramic
+    # resonator (C2284) land here as well; the crystal family hosts
+    # mechanical resonators generally.
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "smd_5050_8p",
+        "taxonomy_4": "surface_mount", "taxonomy_5": "saw_resonator",
+        "taxonomy_14": "made_in_china", "taxonomy_15": "ndr_420_315_8p",
+    })
+    options.append({
+        "taxonomy_2": "crystal", "taxonomy_3": "sip_3_2_5mm",
+        "taxonomy_4": "through_hole", "taxonomy_5": "ceramic_resonator",
+        "taxonomy_6": "4_mhz", "taxonomy_7": "15_pf",
+        "taxonomy_8": "30_ohm_esr",
+        "taxonomy_14": "murata_electronics", "taxonomy_15": "cstls4m00g53_b0",
+    })
+
 
 if __name__ == "__main__":
     main()

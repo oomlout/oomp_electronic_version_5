@@ -6,7 +6,7 @@ This category contains 1 parts in total.
 
 ## Parts
 
-- [Diode Switching SOD-323](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) — `electronic_diode_switching_sod_323_onsemi_1n4148ws`
+- [Diode 1N4148WS SOD-323](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws) — `electronic_diode_switching_sod_323_onsemi_1n4148ws`
 
 ---
 

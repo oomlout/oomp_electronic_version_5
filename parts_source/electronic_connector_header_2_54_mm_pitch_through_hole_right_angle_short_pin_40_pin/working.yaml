@@ -1,22 +1,28 @@
 category: connector
 category_name: Connector
-datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/b5cb595e0f1fbc2c250246781364a9f5.pdf?productCode=C3012223
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887122115760129-C2334.pdf
 dimension_reference:
-  datasheet_url: https://datasheet.lcsc.com/datasheet/pdf/b5cb595e0f1fbc2c250246781364a9f5.pdf?productCode=C3012223
-  document: KiCad Connector_PinHeader_2.54mm PinHeader_1x40_P2.54mm_Horizontal F.Fab
-    outline
-  notes: '2.54 mm right-angle male header, plastic moulded on the SHORT pin side:
-    the short legs (~3 mm) bend down into the board and the long legs carry the signal
-    row. Drawing extracted from KiCad PinHeader_1x40_P2.54mm_Horizontal. LCSC family
-    mechanical reference: C3012223 / PZ254-1-02-W-8.5. The drawing gives a 2.50 mm
-    carrier, 0.64 mm square pins, a 6.0 mm long leg and a 3.0 mm short leg. The generated
-    pin count remains the OOMP variant identity.'
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887122115760129-C2334.pdf
+  document: JLCPCB C2334 / BOOMELE 2.54-1*40PStraight Bent Pin drawing, PZ2.54-1xNAW-ZW
+  notes: The JLC drawing shows a 40-position 2.54 mm right-angle header with a 6.00±0.2
+    mm projecting leg and a 3.0±0.2 mm PCB tail. The short PCB leg sits on the plastic-body
+    side, matching the existing short-pin taxonomy. JLC/LCSC also label Length of
+    Mating Pin as 3mm; that listing field is retained verbatim in intake evidence.
   pages:
   - 1
 dimensions_mm:
   length: 2.54
   width: 101.6
-distributors: []
+distributors:
+- key: lcsc
+  part_number: C2334
+  product_name: BOOMELE 40-position 2.54mm single-row through-hole right-angle header
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C2334.html
+- key: jlcpcb
+  part_number: C2334
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/2708-2_54_1_40PStraight_BentPin/C2334
 file_copy:
 - file_destination: datasheet.pdf
   file_source: parts_source/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_short_pin_40_pin/datasheet.pdf
@@ -30,18 +36,51 @@ header_dimensions_mm:
   plastic_height: 2.5
   plastic_length: 101.6
   plastic_width: 2.5
+jlcpcb_selection:
+  compatibility_notes: Reuse the existing 2.54 mm 40-pin through-hole right-angle
+    short-pin header ID. JLC and the same-code LCSC C2334 listing both identify a
+    40-position, single-row, 2.54 mm-pitch right-angle BOOMELE header; the downloaded
+    drawing shows a 3.0 mm PCB tail on the short-pin side and a 6.0 mm projecting
+    mating leg, matching the short-pin family definition. Do not use the queued straight-header
+    hint. The old straight-header source incorrectly listed LCSC C2334 as an alternative
+    and will be corrected in its editable connector extras.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/2708-2_54_1_40PStraight_BentPin/C2334
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: '1'
+  ratings:
+    Circluar Pins/Square Pins: Square pin
+    Color: Black
+    Contact Material: Brass
+    Contact Plating: Gold
+    Current Rating: 3A
+    Insulation Height: 2.54mm
+    Length of Mating Pin: 3mm
+    Mounting Type: Right Angle
+    Number of Pins: 40P
+    Number of Rows: '1'
+    Operating Temperature: -55℃~+105℃
+    Pin Structure: 1x40P
+    Pitch: 2.54mm
+  stock_observed: 3652
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-27'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Connector_PinHeader_2.54mm:PinHeader_1x40_P2.54mm_Horizontal
   symbol: Connector_Generic:Conn_01x40
-lcsc_search: 2.54mm header through_hole_right_angle_short pin
-manufacturers: []
-name_proper: Connector Header 2.54 mm pitch through hole right angle short pin 40
-  pin
-name_readable: Connector Header 2.54 mm pitch through hole right angle short pin 40
-  pin
-name_short: Connector Header 2.54 mm pitch through hole right angle short pin 40 pin
-oomp_datasheet_common_with: electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_short_pin_10_pin
+lcsc_search: 2.54-1*40PStraight Bent Pin
+manufacturer: BOOMELE(Boom Precision Elec)
+manufacturers:
+- manufacturer: BOOMELE(Boom Precision Elec)
+  part_number: 2.54-1*40PStraight Bent Pin
+name_proper: Connector Header 2.54-1*40PStraight Bent Pin
+name_readable: Connector Header 2.54-1*40PStraight Bent Pin
+name_short: Connector Header 2.54-1*40PStraight Bent Pin
 package_drawing:
   body:
   - 2.54
@@ -294,7 +333,18 @@ package_drawing:
     - 1.7
     - 1.7
 part_id: J1
-part_numbers_lcsc: []
+part_number_jlcpcb: C2334
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2708-2_54_1_40PStraight_BentPin/C2334
+part_number_lcsc: C2334
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C2334.html
+part_number_manufacturer: 2.54-1*40PStraight Bent Pin
+part_numbers_lcsc:
+- part_number: C2334
+  product_name: BOOMELE 40-position 2.54mm single-row through-hole right-angle header
+  url: https://www.lcsc.com/product-detail/C2334.html
+part_numbers_manufacturer:
+- manufacturer: BOOMELE(Boom Precision Elec)
+  part_number: 2.54-1*40PStraight Bent Pin
 pins:
   pin_1:
     name: pin_1
@@ -456,10 +506,11 @@ pins:
     name: pin_9
     number: '9'
     type: signal
+product_url: https://jlcpcb.com/partdetail/2708-2_54_1_40PStraight_BentPin/C2334
 research_notes:
-- '2.54 mm right-angle male header, plastic moulded on the SHORT pin side: the short
-  legs (~3 mm) bend down into the board and the long legs carry the signal row. Drawing
-  extracted from KiCad PinHeader_1x40_P2.54mm_Horizontal.'
+- Verified 2026-09-27 against the live JLCPCB C2334 page and same-code LCSC C2334
+  listing; both identify the BOOMELE 40-position, 2.54mm-pitch, single-row through-hole
+  right-angle header.
 svg_details:
 - filename_extra: assembly
   make_a4: false

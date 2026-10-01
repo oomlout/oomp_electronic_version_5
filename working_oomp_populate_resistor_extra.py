@@ -1940,5 +1940,211 @@ def main(**kwargs):
             "JLC and same-code LCSC pages agree on 0805, 24 kΩ, ±5%, 125 mW, 150 V, ±100 ppm/°C and -55 to +155 °C. The browser-downloaded 9-page UNI-ROYAL thick-film series datasheet maps W8 to 1/8 W and J to ±5%, includes the 0805 5% value range, and confirms 150 V and the operating-temperature range.",
         ]
 
+    current = "electronic_resistor_1206_1_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_1206_1_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "1 Ω",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±200 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant for UNI-ROYAL JLC C1409 / 1206W4J010JT5E. Existing Basic C17928 / 1206W4F100KT5E keeps the base electronic_resistor_1206_1_ohm preference at ±1%.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 1 Ω, ±5%, 250 mW, 200 V, ±200 ppm/°C, -55 to +155 °C, stock 32,447, minimum 1, full reel 5,000. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
+    current = "electronic_resistor_1206_110_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "110 Ω",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Added a missing generic 1206 110 Ω value and verified FH JLC C1450 / RS-06K111JT as its preferred extended purchasing choice; 110 Ω is outside the project's E12 base list.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 110 Ω, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 4,393, minimum 1, full reel 5,000. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
+    current = "electronic_resistor_1206_1300_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "1.3 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Added a missing generic 1206 1.3 kΩ value and verified FH JLC C1471 / RS-06K132JT as its preferred extended purchasing choice; 1300 Ω is outside the E12 grid and the extra-value list.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 1.3 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 51, minimum 1, full reel 5,000, available order qty 51. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
+    current = "electronic_resistor_1206_7500_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "7.5 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1487 / FH RS-06K752JT as a preferred extended purchasing choice for the existing E12-grid generic 1206 7.5 kΩ value; no population row change was needed.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 7.5 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,969, minimum 1, full reel 5,000. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
+    current = "electronic_resistor_1206_1000_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_oomp_id"] = "electronic_resistor_1206_1000_ohm"
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "1 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Rated/tolerance variant for UNI-ROYAL JLC C1469 / 1206W4J0102T5E. Existing Basic C4410 / 1206W4F1001T5E keeps the base electronic_resistor_1206_1000_ohm preference at ±1%.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 1 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 181,134, minimum 1, full reel 5,000, available order qty 155,788. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
+    current = "electronic_resistor_1206_8200_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "8.2 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1488 / FH RS-06K822JT as the first reviewed preferred extended purchasing choice for the existing E12-grid generic 1206 8.2 kΩ value; no population row change was needed.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 8.2 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,408, minimum 1, full reel 5,000, available order qty 3,371. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756879697902870528-C1488.pdf).",
+        ]
+
+    current = "electronic_resistor_1206_12000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "12 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1491 / UNI-ROYAL 1206W4J0123T5E as the first reviewed preferred extended purchasing choice for the existing E12-grid generic 1206 12 kΩ value; no population row change was needed.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 12 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 2,220, minimum 1, full reel 5,000, available order qty 2,152. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
+    current = "electronic_resistor_1206_15000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "15 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1493 / UNI-ROYAL 1206W4J0153T5E as the first reviewed preferred extended purchasing choice for the existing E12-grid generic 1206 15 kΩ value; no population row change was needed.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 15 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 64,773, minimum 1, full reel 5,000, available order qty 64,289. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586177287557824512-C1493.pdf).",
+        ]
+
+    current = "electronic_resistor_1206_27000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "27 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1498 / FH RS-06K273JT as the first reviewed preferred extended purchasing choice for the existing E12-grid generic 1206 27 kΩ value; no population row change was needed.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 27 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 5,024, minimum 1, full reel 5,000, available order qty 5,022. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
+    current = "electronic_resistor_1206_180000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "180 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1512 / FH RS-06K184JT as the first reviewed preferred extended purchasing choice for the existing E12-grid generic 1206 180 kΩ value; no population row change was needed.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 180 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,845, minimum 1, full reel 5,000, available order qty 3,839. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756879779088089088-C1512.pdf).",
+        ]
+
+    current = "electronic_resistor_1206_68000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "68 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1504 / FH RS-06K683JT as the first reviewed preferred extended purchasing choice for the existing E12-grid generic 1206 68 kΩ value; no population row change was needed.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 68 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,198, minimum 1, full reel 5,000, available order qty 3,131. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756879748985569280-C1504.pdf).",
+        ]
+
+    current = "electronic_resistor_1206_560000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["category"] = "resistor"
+        part["electrical"] = {
+            "resistance": "560 kΩ",
+            "tolerance": "±5%",
+            "power": "250 mW",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "±100 ppm/°C",
+            "operating_temperature": "-55 to +155 °C",
+        }
+        part["research_notes"] = [
+            "Verified JLC C1519 / FH RS-06K564JT as the first reviewed preferred extended purchasing choice for the existing E12-grid generic 1206 560 kΩ value; no population row change was needed. Listed as a pre-order part (minimum 5000 = full reel, stock 3), which does not affect identity.",
+            "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 560 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3, minimum (full reel) 5000, no available-order-qty shown. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
     from working_oomp_populate_jlc import apply_reviewed_jlc_choices
     apply_reviewed_jlc_choices(extras_dict, family="resistor")

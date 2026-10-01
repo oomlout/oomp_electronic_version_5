@@ -5,35 +5,76 @@ dimensions_mm:
   width: 1.25
 distributors:
 - key: lcsc
-  part_number: C17659
-  product_name: 39Ω ±1% 125mW 0805 Thick Film Resistor
+  part_number: C1324
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C17659.html
+  url: https://www.lcsc.com/product-detail/C1324.html
+- key: jlcpcb
+  part_number: C1324
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+electrical:
+  operating_temperature: -55 to +155 °C
+  power: 125 mW
+  rated_voltage: 150 V
+  resistance: 39 Ω
+  temperature_coefficient: ±100 ppm/°C
+  tolerance: ±5%
+jlcpcb_selection:
+  compatibility_notes: 'Use the existing generic 0805 39 ohm resistor ID: the generator
+    includes the E12 value and no reviewed house preference exists. FH datasheet rates
+    0805 at 1/8 W and 150 V; at 39 ohm and ±5% the series table supports ±100 ppm/°C,
+    matching live JLC and same-code LCSC specs (125 mW, 150 V, ±100 ppm/°C, -55 to
+    +155 °C).'
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: '1'
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 125mW
+    Resistance: 39Ω
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±5%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 150V
+  stock_observed: 2,057
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-27'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_0805_2012Metric
   symbol: Device:R_Small
 lcsc_search: 0805 39Ω
-manufacturer: UNI-ROYAL
+manufacturer: FH (Guangdong Fenghua Advanced Tech)
 manufacturers:
-- manufacturer: UNI-ROYAL
-  part_number: 0805W8F390JT5E
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-05K390JT
 name_proper: Resistor 39 Ohm 0805
 name_readable: Resistor 39 Ohm 0805
 name_short: Resistor 39 Ohm 0805
+oomp_datasheet_common_with: electronic_resistor_0402_150000_ohm_5_percent
 part_id: R1
-part_number_lcsc: C17659
-part_number_manufacturer: 0805W8F390JT5E
+part_number_jlcpcb: C1324
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+part_number_lcsc: C1324
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1324.html
+part_number_manufacturer: RS-05K390JT
 part_numbers_lcsc:
-- part_number: C17659
-  product_name: 39Ω ±1% 125mW 0805 Thick Film Resistor
+- part_number: C1324
 part_numbers_manufacturer:
-- manufacturer: UNI-ROYAL
-  part_number: 0805W8F390JT5E
-product_url: https://www.lcsc.com/product-detail/C17659.html
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-05K390JT
+product_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
 research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0805
-  39Ω" (192,500 in stock at capture).'
+- Verified JLC C1324 RS-05K390JT as a preferred extended purchasing choice for the
+  existing generic 0805 39 Ω value.
+- JLC and same-code LCSC pages agree on ±5%, 125 mW, 150 V, ±100 ppm/°C and -55 to
+  +155 °C. The FH series datasheet rates 0805 at 1/8 W and 150 V and lists ±100 ppm/°C
+  for 10 Ω to 1 MΩ at ±5%.
 svg_details:
 - filename_extra: assembly
   make_a4: false

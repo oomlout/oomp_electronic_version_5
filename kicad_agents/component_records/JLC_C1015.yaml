@@ -29,10 +29,22 @@ research:
   - 'Specifications table observed: current rating 800mA, DCR 150mΩ, impedance 100Ω@100MHz,
     1 circuit, tolerance ±25%, operating temperature -55 to +125 deg C.'
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
-    PDF download and provenance import remain a full-pass task for Agent 2.
+    PDF downloaded through the interactive browser on 2026-09-30 and imported
+    with provenance (sha256 in datasheet_source.yaml).
   - Repository search found no existing 100 ohm 0805 bead row or C1015 assignment.
+  - 'Full pass 2026-09-30: live page reconfirmed (C1015, Sunlord, GZ2012D101TF,
+    Basic, In Stock 2,343,664); the page datasheet link resolves to the same
+    stable URL recorded at intake. The document is the Sunlord part
+    specification SPEC No. GZ10190000 Rev. 01 whose scope (page 4) applies to
+    GZ2012D101TF exactly; Section 3 lists 100 +-25% ohm at 100 MHz, max DCR
+    0.15 ohm, max rated current 800 mA, operating temperature -55 to +125 C;
+    Table 4-1 page 5 gives the 2012 [0805] body L 2.0 (+0.3/-0.1), W 1.25
+    +-0.2, T 0.85 +-0.2, terminal width a 0.5 +-0.3 mm and the recommended
+    reflow land (A 0.80-1.20 gap, B 0.80-1.20 length, C 0.90-1.60 width);
+    impedance curve page 4; the page 6 derating rule above +85 C applies only
+    to beads rated over 1000 mA, so not to this 800 mA part.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-09-30'
   official_url: https://jlcpcb.com/partdetail/Sunlord-GZ2012D101TF/C1015
   tier: basic
   tier_label_observed: Basic
@@ -42,7 +54,8 @@ jlc_selection:
   compatibility_notes: 'Exact ferrite bead identity with no prior OOMP entry: added
     one explicit family row electronic_ferrite_bead_0805_100_ohm_800_milliamp_sunlord_gz2012d101tf
     using the established package/impedance/current_rating/maker taxonomy. 100 ohm
-    at 100 MHz, 800 mA rated, single-circuit bead.'
+    at 100 MHz, 800 mA rated, single-circuit bead. Full-pass datasheet evidence
+    confirms the identity and ratings.'
   ratings:
     Current Rating: 800mA
     DC Resistance(DCR): 150mΩ
@@ -50,7 +63,30 @@ jlc_selection:
     Number of Circuits: '1'
     Operating Temperature: -55℃~+125℃
     Tolerance: ±25%
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Sunlord Specifications for Multi-layer Chip Ferrite Bead, SPEC No. GZ10190000 Rev. 01
+    ordering_coverage:
+    - 4
+    pin_connections:
+    - 5
+    dimensions:
+    - 5
+    - 8
+    electrical_characteristics:
+    - 4
+    impedance_curves:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-09-30 after the build. data/working_svg_assembly_pins.png
+    and _300 preview: 0805 chip with terminal_1 on the left and terminal_2 on the
+    right, non-polarized symmetric body, no mirroring, no label overlap, no cropping.
+    working_svg_square_pins.png hero titled Ferrite Bead GZ2012D101TF 0805 with pin
+    1 left and pin 2 right. working_svg_dimensioned.png: 2.0 x 1.25 mm body with arrows,
+    matching the Sunlord Table 4-1 nominals. data/kicad manifest complete with Device:FerriteBead_Small
+    symbol and Inductor_SMD:L_0805_2012Metric machine + Pad1.05x1.20mm_HandSolder hand
+    footprints; machine footprint render shows the two 0805 pads with courtyard and
+    body outline. README.md: GZ2012D101TF part number, LCSC/JLC C1015 links, pin table,
+    datasheet link resolving to data/datasheet.pdf (554 KB Sunlord SPEC GZ10190000).
+    Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+    text rather than in a KiCad GUI.'

@@ -2,7 +2,7 @@
 
 `electronic_ferrite_bead_0603_600_ohm_200_milliamp_sunlord_gz1608d601tf`
 
-Ferrite Bead GZ1608D601TF 0603 is an OOMP electronic ferrite bead definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm.
+Ferrite Bead GZ1608D601TF 0603 is an OOMP electronic ferrite bead definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
 ![Ferrite Bead GZ1608D601TF 0603 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Ferrite Bead GZ1608D601TF 0603 is an OOMP electronic ferrite bead definition. It
 | Type | Ferrite Bead |
 | Package / style | 0603 |
 | Nominal size | 1.6 &#x00D7; 0.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -34,6 +35,7 @@ Ferrite Bead GZ1608D601TF 0603 is an OOMP electronic ferrite bead definition. It
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.8 mm |
 | Length | 1.6 mm |
 | Width | 0.8 mm |
 
@@ -51,6 +53,19 @@ Ferrite Bead GZ1608D601TF 0603 is an OOMP electronic ferrite bead definition. It
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | terminal_1 | passive |
+| 2 | terminal_2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

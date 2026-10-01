@@ -2,7 +2,7 @@
 
 `electronic_ferrite_bead_0805_600_ohm_500_milliamp_sunlord_gz2012d601tf`
 
-Ferrite Bead GZ2012D601TF 0805 is an OOMP electronic ferrite bead definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
+Ferrite Bead GZ2012D601TF 0805 is an OOMP electronic ferrite bead definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
 
 ![Ferrite Bead GZ2012D601TF 0805 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Ferrite Bead GZ2012D601TF 0805 is an OOMP electronic ferrite bead definition. It
 | Type | Ferrite Bead |
 | Package / style | 0805 |
 | Nominal size | 2.0 &#x00D7; 1.25 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -34,6 +35,7 @@ Ferrite Bead GZ2012D601TF 0805 is an OOMP electronic ferrite bead definition. It
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.85 mm |
 | Length | 2.0 mm |
 | Width | 1.25 mm |
 
@@ -51,6 +53,19 @@ Ferrite Bead GZ2012D601TF 0805 is an OOMP electronic ferrite bead definition. It
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | terminal_1 | passive |
+| 2 | terminal_2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

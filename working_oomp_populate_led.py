@@ -15,6 +15,30 @@ def main(**kwargs):
                 option["taxonomy_5"] = lens_style
                 options.append(option)
 
+    # First through-hole IR emitter LEDs: Everlight HIR/IR series from the
+    # JLC house-parts queue.  The wavelength rides in the colour token so
+    # the 850 nm high-radiance and 940 nm parts stay distinct.
+    options.append({
+        "taxonomy_2": "led", "taxonomy_3": "3_mm", "taxonomy_4": "infrared_850nm",
+        "taxonomy_5": "clear", "taxonomy_14": "everlight", "taxonomy_15": "hir204c",
+        "name_short": "IR Emitter LED HIR204C (3mm, 850nm)",
+    })
+    options.append({
+        "taxonomy_2": "led", "taxonomy_3": "3_mm", "taxonomy_4": "infrared_940nm",
+        "taxonomy_5": "clear", "taxonomy_14": "everlight", "taxonomy_15": "ir204_a_l",
+        "name_short": "IR Emitter LED IR204-A-L (3mm, 940nm)",
+    })
+    options.append({
+        "taxonomy_2": "led", "taxonomy_3": "5_mm", "taxonomy_4": "infrared_850nm",
+        "taxonomy_5": "clear", "taxonomy_14": "everlight", "taxonomy_15": "hir333c_a",
+        "name_short": "IR Emitter LED HIR333C-A (5mm, 850nm)",
+    })
+    options.append({
+        "taxonomy_2": "led", "taxonomy_3": "5_mm", "taxonomy_4": "infrared_940nm",
+        "taxonomy_5": "clear", "taxonomy_14": "everlight", "taxonomy_15": "ir333c_a",
+        "name_short": "IR Emitter LED IR333C-A (5mm, 940nm)",
+    })
+
     # Addressable RGB LEDs from the old component set.
     addressable_leds = [
         {
@@ -131,6 +155,62 @@ def main(**kwargs):
             "lens_style": "clear",
             "manufacturer": "foshan_nationstar_optoelectronics",
             "part_number": "ncd0805r1",
+        },
+        {
+            "size": "0603",
+            "color": "yellow",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_y",
+        },
+        {
+            "size": "0603",
+            "color": "blue",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_b",
+        },
+        {
+            "size": "0603",
+            "color": "yellow_green",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_yg",
+        },
+        {
+            "size": "0805",
+            "color": "yellow_green",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_yg",
+        },
+        {
+            "size": "0805",
+            "color": "blue",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_b",
+        },
+        {
+            "size": "0805",
+            "color": "red",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_r",
+        },
+        {
+            "size": "1206",
+            "color": "yellow",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_1206_y",
+        },
+        {
+            "size": "3528",
+            "color": "red",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "3528_r",
         },
     ]
     for indicator_led in exact_indicator_leds:

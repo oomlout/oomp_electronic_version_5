@@ -1,7 +1,7 @@
 # Electronic / Resistor / 0402
 
 [Up one level](../README.md)
-This category contains 93 parts in total.
+This category contains 95 parts in total.
 
 
 ## Parts
@@ -71,9 +71,11 @@ This category contains 93 parts in total.
 - [Resistor 4700 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_4700_ohm) — `electronic_resistor_0402_4700_ohm`
 - [Resistor 47000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_47000_ohm) — `electronic_resistor_0402_47000_ohm`
 - [Resistor 470000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_470000_ohm) — `electronic_resistor_0402_470000_ohm`
+- [Resistor 49.9 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_49_9_ohm) — `electronic_resistor_0402_49_9_ohm`
 - [Resistor 5.6e+06 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_5600000_ohm) — `electronic_resistor_0402_5600000_ohm`
 - [Resistor 510 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_510_ohm) — `electronic_resistor_0402_510_ohm`
 - [Resistor 5100 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_5100_ohm) — `electronic_resistor_0402_5100_ohm`
+- [Resistor 51000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_51000_ohm) — `electronic_resistor_0402_51000_ohm`
 - [Resistor 510000 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_510000_ohm) — `electronic_resistor_0402_510000_ohm`
 - [Resistor 53600 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_53600_ohm) — `electronic_resistor_0402_53600_ohm`
 - [Resistor 56 Ohm 0402](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_56_ohm) — `electronic_resistor_0402_56_ohm`

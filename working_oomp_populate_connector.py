@@ -180,6 +180,274 @@ def main(**kwargs):
                     option["taxonomy_6"] = pin_count
                     options.append(option)
 
+    # Generic XH (2.5 mm) and PH (2.0 mm) wire-to-board housings: the KENTO
+    # XH-A / PH-A parts are XH/PH-compatible, not JST-branded, so the generic
+    # family rows carry the value without a maker token.
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "xh",
+        "taxonomy_4": "2_5_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "3_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "xh",
+        "taxonomy_4": "2_5_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "5_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "ph",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "2_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "ph",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "3_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "ph",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "4_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "ph",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "5_pin",
+    })
+
+    # DIP IC sockets: narrow (7.62 mm) and wide (15.24 mm) row spacing are
+    # distinct footprints, so the spacing rides along as taxonomy_7.
+    for pin_count, row_spacing in [
+        ("14_pin", "7_62_mm_row_spacing"),
+        ("16_pin", "7_62_mm_row_spacing"),
+        ("18_pin", "7_62_mm_row_spacing"),
+        ("20_pin", "7_62_mm_row_spacing"),
+        ("32_pin", "15_24_mm_row_spacing"),
+        ("40_pin", "15_24_mm_row_spacing"),
+    ]:
+        options.append({
+            "taxonomy_2": "connector",
+            "taxonomy_3": "ic_socket",
+            "taxonomy_4": "2_54_mm_pitch",
+            "taxonomy_5": "through_hole",
+            "taxonomy_6": pin_count,
+            "taxonomy_7": row_spacing,
+        })
+
+    # Dual-row 2.54 mm 2x40 pin header (80 contacts).
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_80_pin",
+    })
+
+    # USB 2.0 Type-A receptacles from JING: right-angle (bent-pin) and
+    # vertical through-hole bodies carry the maker token like the existing
+    # Jing Tuo Jin USB-A row.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "8_pin", "taxonomy_6": "right_angle",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "907_111a1012d10200",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "4_pin", "taxonomy_6": "right_angle",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "902_131a1021d10100",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "4_pin", "taxonomy_6": "right_angle",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "901_211a1021d10100",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "4_pin", "taxonomy_6": "right_angle",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "903_232a1011d10100",
+        "name_short": "USB-A 903-232A1011D10100 Right Angle",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "4_pin",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "902_131a1011d10100",
+    })
+
+    # IDC box headers (first idc_box_header rows) and further header values
+    # from the BOOMELE JLC house-parts queue.
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "idc_box_header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_16_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "idc_box_header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_20_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "1_27_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "50_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "1_27_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_100_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "40_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_80_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "right_angle_40_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "right_angle_dual_row_80_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "right_angle_dual_row_80_pin",
+    })
+
+    # Terminal blocks (Kangnex) and the BOOMELE DC003 power jack from the
+    # JLC house-parts queue.  The 5.08 mm pluggable socket body carries the
+    # right-angle mounting that distinguishes it from screw blocks.
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "terminal_block",
+        "taxonomy_4": "5_08_mm_pitch",
+        "taxonomy_5": "right_angle",
+        "taxonomy_6": "2_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "terminal_block",
+        "taxonomy_4": "5_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "2_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "dc_power_jack", "taxonomy_4": "through_hole",
+        "taxonomy_5": "right_angle",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "dc003_with_head_1_0",
+    })
+
+    # 3.81 mm 5P male plug terminal block (Kangnex WJ15EDGK, free-hanging).
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "terminal_block",
+        "taxonomy_4": "3_81_mm_pitch",
+        "taxonomy_5": "free_hanging",
+        "taxonomy_6": "5_pin",
+    })
+
+    # Jumper shunt (shorting cap), open style: the first shunt row.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "jumper_shunt", "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "open_style", "taxonomy_6": "2_pin",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "2_54short_circuit_cap_opening",
+        "name_short": "Jumper Shunt 2.54mm Open Style (BOOMELE)",
+    })
+
+    # Tranche-72 BOOMELE wave: the 2.0 mm shunt follows the maker-stamped
+    # 2.54 mm precedent, the 6-pin XH/PH housings and both 2x5 IDC headers
+    # stay generic (BOOMELE parts are XH/PH-compatible, not JST-branded),
+    # and the XH-T crimp contact opens the housing_contact category.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "jumper_shunt", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "open_style", "taxonomy_6": "2_pin",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "2_0_short_circuitcap",
+        "name_short": "Jumper Shunt 2.0mm Open Style (BOOMELE)",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "ph", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole_right_angle", "taxonomy_6": "6_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "xh", "taxonomy_4": "2_5_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "6_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "idc_box_header", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "dual_row_10_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "idc_box_header", "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "dual_row_10_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "housing_contact", "taxonomy_4": "xh_series",
+        "taxonomy_5": "phosphor_bronze",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "xh_t",
+        "name_short": "XH Series Housing Contact (BOOMELE)",
+    })
+
+    # Tranche-103: the 2.0mm female header pair rides exact BOOMELE rows (the
+    # matching generic headers already carry preferences), and the two
+    # WJ15EDG 3.81mm 4-pin terminal blocks extend the 3.81 mm generic ladder
+    # (free-hanging plug per C3804; right-angle per the C3697 RC naming).
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "header", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "dual_row_80_pin",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "2_0_2_40pfemale",
+        "name_short": "2.0mm 2x40P Female Header (BOOMELE)",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "header", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "40_pin",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "2_0_1_40pfemale",
+        "name_short": "2.0mm 1x40P Female Header (BOOMELE)",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "terminal_block", "taxonomy_4": "3_81_mm_pitch",
+        "taxonomy_5": "free_hanging", "taxonomy_6": "4_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "terminal_block", "taxonomy_4": "3_81_mm_pitch",
+        "taxonomy_5": "right_angle", "taxonomy_6": "4_pin",
+    })
+
     # Exact vertical female socket used as the purchasable match for the
     # Bus Pirate J201 generic 1x3 KiCad socket footprint.
     sockets = [

@@ -1,10 +1,11 @@
 # Electronic / Diode / Schottky
 
 [Up one level](../README.md)
-This category contains 6 parts in total.
+This category contains 12 parts in total.
 
 ## Categories
 
+- [Sma](sma/README.md)
 - [Sod 123](sod_123/README.md)
 - [Sod 323](sod_323/README.md)
 - [Sod 523](sod_523/README.md)

@@ -1,8 +1,11 @@
 # Electronic / Ferrite Bead / 0603 / 600 Ohm
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 2 parts in total.
 
+## Categories
+
+- [200 Milliamp](200_milliamp/README.md)
 
 ## Parts
 

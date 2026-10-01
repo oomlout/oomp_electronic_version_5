@@ -5,35 +5,80 @@ dimensions_mm:
   width: 1.6
 distributors:
 - key: lcsc
-  part_number: C2907529
-  product_name: 68kΩ ±5% 250mW 1206 Thick Film Resistor
+  part_number: C1504
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C2907529.html
+  url: https://www.lcsc.com/product-detail/C1504.html
+- key: jlcpcb
+  part_number: C1504
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1856-RS06K683JT/C1504
+electrical:
+  operating_temperature: -55 to +155 °C
+  power: 250 mW
+  rated_voltage: 200 V
+  resistance: 68 kΩ
+  temperature_coefficient: ±100 ppm/°C
+  tolerance: ±5%
+jlcpcb_selection:
+  compatibility_notes: 'No reviewed house preference exists for the generic electronic_resistor_1206_68000_ohm,
+    and the E12 grid in working_oomp_populate_resistor.py already generates the 1206
+    68000 ohm row (68 x 10000), so C1504 becomes its first reviewed preferred house
+    identity: FH (Guangdong Fenghua Advanced Tech) RS-06K683JT, 68 kOhm, 1206, +/-5%,
+    250 mW, 200 V, +/-100ppm/C thick film. Pure reuse of the existing grid value;
+    no populate row added, only an extras annotation block. The MPN prefix RS-06K
+    might suggest 0603, but the live page package field and specification table both
+    state 1206, matching the queue description.'
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/1856-RS06K683JT/C1504
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: '1'
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 250mW
+    Resistance: 68kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±5%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 200V
+  stock_observed: 3,198
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-28'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_1206_3216Metric
   symbol: Device:R_Small
 lcsc_search: 1206 68kΩ
-manufacturer: FOJAN
+manufacturer: FH (Guangdong Fenghua Advanced Tech)
 manufacturers:
-- manufacturer: FOJAN
-  part_number: TS
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-06K683JT
 name_proper: Resistor 68000 Ohm 1206
 name_readable: Resistor 68000 Ohm 1206
 name_short: Resistor 68000 Ohm 1206
 part_id: R1
-part_number_lcsc: C2907529
-part_number_manufacturer: TS
+part_number_jlcpcb: C1504
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1856-RS06K683JT/C1504
+part_number_lcsc: C1504
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1504.html
+part_number_manufacturer: RS-06K683JT
 part_numbers_lcsc:
-- part_number: C2907529
-  product_name: 68kΩ ±5% 250mW 1206 Thick Film Resistor
+- part_number: C1504
 part_numbers_manufacturer:
-- manufacturer: FOJAN
-  part_number: TS
-product_url: https://www.lcsc.com/product-detail/C2907529.html
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-06K683JT
+product_url: https://jlcpcb.com/partdetail/1856-RS06K683JT/C1504
 research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "1206
-  68KΩ" (311,500 in stock at capture).'
+- Verified JLC C1504 / FH RS-06K683JT as the first reviewed preferred extended purchasing
+  choice for the existing E12-grid generic 1206 68 kΩ value; no population row change
+  was needed.
+- Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended),
+  1206, 68 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,198, minimum
+  1, full reel 5,000, available order qty 3,131. No datasheet PDF imported at intake;
+  download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756879748985569280-C1504.pdf).
 svg_details:
 - filename_extra: assembly
   make_a4: false

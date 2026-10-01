@@ -1,0 +1,71 @@
+format_version: 1
+ledger_id: JLC_C1426
+status: researched
+family: resistor
+part_id: electronic_resistor_1206_11_ohm
+exact_identity: true
+package: '1206'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  manufacturer_part_number: RS-06K110JT
+  lcsc_part_number: C1426
+  lcsc_decision: 'Missing generic value/package: no electronic_resistor_1206_11_ohm
+    existed in working_oomp_populate_resistor.py or reviewed_choices.json (checked
+    RS-06K110JT, C1426 and 11_ohm tokens; 11 ohm is not in the project E12 base list
+    [10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 75, 82], so the grid cannot generate
+    it). Added one explicit low-value row ["1206", "11_ohm"]; base generic ID has
+    no tolerance suffix because no prior 1206 11 ohm preference exists to conflict
+    with (C1426 is the first reviewed 1206 11 ohm value, +-5%). Existing 1206 10 ohm
+    and 12 ohm generics are different values, not substitutes. Ratings from staged
+    capture: 11 ohm, 1206, thick film, 250 mW, 200 V, +-5%, +-100 ppm/degC, -55 to
+    +155 degC; two-terminal chip part (pin_count 2).'
+  product_url: https://jlcpcb.com/partdetail/1778-RS06K110JT/C1426
+  datasheet_url: ''
+  browser_sources:
+  - https://jlcpcb.com/partdetail/1778-RS06K110JT/C1426
+  webpage_capture: parts_source/electronic_resistor_1206_11_ohm/web_page_distributor_jlc.txt
+  evidence_notes:
+  - 'Staged JLC live-page capture kicad_agents/jlc_house_parts/browser_staging/C1426.json
+    (captured_on 2026-09-28, method zcode_inapp_browser_visible_page): JLCPCB Part
+    # C1426, Manufacturer FH (Guangdong Fenghua Advanced Tech), MFR.Part # RS-06K110JT,
+    Package 1206, visible badge Extended which maps to preferred_extended in this
+    corrected official-category queue (Promotional Extended tooltip). Stock 4,985,
+    MOQ 1, full reel 5000, available order qty 4,985, SMT assembly.'
+  - 'Datasheet PDF missing at intake: staged capture datasheet_url is empty and the
+    pool worker has no browser, so no PDF was downloaded or imported; handoff to the
+    full/integration stage to fetch the FH RS-06K110JT datasheet (queue row lists
+    a JLC aliyuncs manual URL) and complete pinout/footprint review.'
+  - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C1426.json.
+jlc_selection:
+  verified_on: '2026-09-28'
+  official_url: https://jlcpcb.com/partdetail/1778-RS06K110JT/C1426
+  tier: preferred_extended
+  tier_label_observed: Extended
+  stock_observed: 4,985
+  purchase_moq_observed: '1'
+  pcba_min_qty_observed: null
+  compatibility_notes: 'Missing generic value/package: no electronic_resistor_1206_11_ohm
+    existed in working_oomp_populate_resistor.py or reviewed_choices.json (checked
+    RS-06K110JT, C1426 and 11_ohm tokens; 11 ohm is not in the project E12 base list
+    [10, 12, 15, 18, 22, 27, 33, 39, 47, 56, 68, 75, 82], so the grid cannot generate
+    it). Added one explicit low-value row ["1206", "11_ohm"]; base generic ID has
+    no tolerance suffix because no prior 1206 11 ohm preference exists to conflict
+    with (C1426 is the first reviewed 1206 11 ohm value, +-5%). Existing 1206 10 ohm
+    and 12 ohm generics are different values, not substitutes. Ratings from staged
+    capture: 11 ohm, 1206, thick film, 250 mW, 200 V, +-5%, +-100 ppm/degC, -55 to
+    +155 degC; two-terminal chip part (pin_count 2).'
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 250mW
+    Resistance: 11Ω
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±5%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 200V
+  datasheet_pages: []
+  pinout_checked: false
+  footprint_checked: false
+  visual_review: pending

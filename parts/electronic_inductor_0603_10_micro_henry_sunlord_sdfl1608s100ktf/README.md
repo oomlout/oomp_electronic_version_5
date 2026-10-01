@@ -2,7 +2,7 @@
 
 `electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf`
 
-Inductor SDFL1608S100KTF 0603 is an OOMP electronic inductor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm.
+Inductor SDFL1608S100KTF 0603 is an OOMP electronic inductor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
 ![Inductor SDFL1608S100KTF 0603 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Inductor SDFL1608S100KTF 0603 is an OOMP electronic inductor definition. It uses
 | Type | Inductor |
 | Package / style | 0603 |
 | Nominal size | 1.6 &#x00D7; 0.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -33,6 +34,7 @@ Inductor SDFL1608S100KTF 0603 is an OOMP electronic inductor definition. It uses
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.8 mm |
 | Length | 1.6 mm |
 | Width | 0.8 mm |
 
@@ -50,6 +52,19 @@ Inductor SDFL1608S100KTF 0603 is an OOMP electronic inductor definition. It uses
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | terminal_1 | passive |
+| 2 | terminal_2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

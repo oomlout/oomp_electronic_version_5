@@ -1,11 +1,12 @@
 # Electronic / Transistor / Sot 23 / Mosfet / N Channel / Enhancement Mode / 60 Volt
 
 [Up one level](../README.md)
-This category contains 3 parts in total.
+This category contains 4 parts in total.
 
 ## Categories
 
 - [300 Milliamp](300_milliamp/README.md)
+- [Jiangsu Changjing Electronics Technology Co Ltd](jiangsu_changjing_electronics_technology_co_ltd/README.md)
 
 ## Parts
 

@@ -1,12 +1,12 @@
 # KiCad assets: electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf
 
-
+- [Symbol](electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf.kicad_sym) — `Device:L`
+- [Machine Solder](machine_solder/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf.kicad_mod) — `Inductor_SMD:L_0603_1608Metric`
+- [Hand Solder](hand_solder/electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf.kicad_mod) — `Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder`
 
 ## Review
 
-- Official symbol master unavailable: not selected
-- Official machine_solder footprint unavailable: not selected
-- Official hand_solder footprint unavailable: not selected
+All three assets are available.
 
 Silkscreen code: `4HPJK`. Source provenance: [manifest](manifest.yaml).
 

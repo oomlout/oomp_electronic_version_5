@@ -1,7 +1,7 @@
 # Electronic / Crystal
 
 [Up one level](../README.md)
-This category contains 6 parts in total.
+This category contains 10 parts in total.
 
 ## Categories
 
@@ -9,6 +9,7 @@ This category contains 6 parts in total.
 - [3215](3215/README.md)
 - [3225](3225/README.md)
 - [5032](5032/README.md)
+- [Hc 49S SMD](hc_49s_smd/README.md)
 
 
 ---

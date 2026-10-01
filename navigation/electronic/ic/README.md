@@ -1,7 +1,7 @@
 # Electronic / IC
 
 [Up one level](../README.md)
-This category contains 68 parts in total.
+This category contains 87 parts in total.
 
 ## Categories
 
@@ -20,10 +20,14 @@ This category contains 68 parts in total.
 - [Qfn 32 5 Mm X 5 Mm](qfn_32_5_mm_x_5_mm/README.md)
 - [Qfn 33 5 Mm X 5 Mm](qfn_33_5_mm_x_5_mm/README.md)
 - [Qfn 56 7 Mm X 7 Mm](qfn_56_7_mm_x_7_mm/README.md)
+- [SMD 4P](smd_4p/README.md)
 - [So 16](so_16/README.md)
 - [Soic 14](soic_14/README.md)
+- [Soic 16](soic_16/README.md)
 - [Soic 8](soic_8/README.md)
+- [Soic 8 Ep](soic_8_ep/README.md)
 - [Sop 16](sop_16/README.md)
+- [Sop 4 175MIL](sop_4_175mil/README.md)
 - [Sop 8 5 28 Mm X 5 23 Mm](sop_8_5_28_mm_x_5_23_mm/README.md)
 - [Sot 223 3](sot_223_3/README.md)
 - [Sot 223 4](sot_223_4/README.md)
@@ -34,6 +38,7 @@ This category contains 68 parts in total.
 - [Sot 23 8](sot_23_8/README.md)
 - [Sot 363 6](sot_363_6/README.md)
 - [Sot 89 3](sot_89_3/README.md)
+- [To 252 2 Dpak](to_252_2_dpak/README.md)
 - [Tqfp 32 7 Mm X 7 Mm](tqfp_32_7_mm_x_7_mm/README.md)
 - [Tsot 23 5](tsot_23_5/README.md)
 - [Tssop 14](tssop_14/README.md)

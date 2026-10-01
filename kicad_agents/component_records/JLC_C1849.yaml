@@ -1,0 +1,67 @@
+format_version: 1
+ledger_id: JLC_C1849
+status: researched
+family: capacitor
+part_id: electronic_capacitor_1206_10_micro_farad_16_volt
+exact_identity: true
+package: '1206'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: Samsung Electro-Mechanics
+  manufacturer_part_number: CL31A106KOHNNNE
+  lcsc_part_number: C1849
+  lcsc_decision: 'Second code on the existing generic 1206 10 uF capacitor: the plain
+    generic ID keeps its reviewed preference C13585 (Samsung CL31A106KBHNNNE, 50 V
+    X5R +/-10%). C1849 is the exact Samsung 16 V rated SKU (CL31A106KOHNNNE, X5R +/-10%),
+    so it gets its own maker/mpn rated-variant ID (16_volt suffix) linked via generic_oomp_id,
+    following the established rated-variant taxonomy (as with the C1592 16 V row).
+    Rating comparison from the staged capture: same 10 uF value, package and X5R +/-10%,
+    but 16 V is a lower rating than the 50 V preference - the variant must never silently
+    replace the 50 V part in higher-voltage circuits; it exists so 16 V-class designs
+    can pick the cheaper exact SKU explicitly. Two-terminal MLCC (pin_count 2); stock
+    235,191 recorded as observed. Edits made under the capacitor family lock.'
+  product_url: https://jlcpcb.com/partdetail/2201-CL31A106KOHNNNE/C1849
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178189756674048-C1849.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/2201-CL31A106KOHNNNE/C1849
+  webpage_capture: parts_source/electronic_capacitor_1206_10_micro_farad_16_volt/web_page_distributor_jlc.txt
+  evidence_notes:
+  - 'Staged JLC live-page capture kicad_agents/jlc_house_parts/browser_staging/C1849.json
+    (captured_on 2026-09-28, zcode_inapp_browser_visible_page): JLCPCB Part # C1849,
+    Manufacturer Samsung Electro-Mechanics, MFR.Part # CL31A106KOHNNNE, Package 1206,
+    visible badge Extended which maps to preferred_extended in this corrected official-category
+    queue (Promotional Extended tooltip). 10 uF 16 V X5R +/-10%; stock 235,191, minimum
+    1, full reel 2,000, available order qty 209,883, MSL 1. No datasheet PDF imported
+    at intake (solo worker has no download); download is an integration-stage task
+    (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178189756674048-C1849.pdf).'
+  - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C1849.json.
+jlc_selection:
+  verified_on: '2026-09-28'
+  official_url: https://jlcpcb.com/partdetail/2201-CL31A106KOHNNNE/C1849
+  tier: preferred_extended
+  tier_label_observed: Extended
+  stock_observed: 235191
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: 'Second code on the existing generic 1206 10 uF capacitor:
+    the plain generic ID keeps its reviewed preference C13585 (Samsung CL31A106KBHNNNE,
+    50 V X5R +/-10%). C1849 is the exact Samsung 16 V rated SKU (CL31A106KOHNNNE,
+    X5R +/-10%), so it gets its own maker/mpn rated-variant ID (16_volt suffix) linked
+    via generic_oomp_id, following the established rated-variant taxonomy (as with
+    the C1592 16 V row). Rating comparison from the staged capture: same 10 uF value,
+    package and X5R +/-10%, but 16 V is a lower rating than the 50 V preference -
+    the variant must never silently replace the 50 V part in higher-voltage circuits;
+    it exists so 16 V-class designs can pick the cheaper exact SKU explicitly. Two-terminal
+    MLCC (pin_count 2); stock 235,191 recorded as observed. Edits made under the capacitor
+    family lock.'
+  ratings:
+    Capacitance: 10uF
+    Temperature Coefficient: X5R
+    Tolerance: ±10%
+    Voltage Rating: 16V
+  datasheet_pages: []
+  pinout_checked: false
+  footprint_checked: false
+  visual_review: pending
