@@ -1,7 +1,13 @@
 category: inductor
 category_name: Inductor
 datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710118277140480-C1045.pdf
+dimension_reference:
+  document: CMI201209X5R6KT datasheet (C1045 provenance)
+  notes: 0805 (2012 metric) multilayer chip inductor, 2.0 x 1.25 x 0.85 mm.
+  pages:
+  - 1
 dimensions_mm:
+  height: 0.85
   length: 2.0
   width: 1.25
 distributors:
@@ -13,6 +19,11 @@ distributors:
   part_number: C1045
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/1397-CMI201209X5R6KT/C1045
+electrical:
+  device_type: multilayer chip inductor
+  inductance: 5.6 uH
+  max_dc_current: 25 mA
+  max_dc_resistance: 1 ohm
 file_copy:
 - file_destination: datasheet.pdf
   file_source: parts_source/electronic_inductor_0805_5_6_micro_henry/datasheet.pdf
@@ -24,11 +35,12 @@ jlcpcb_selection:
     32MHz minimum SRF, but states 15mA maximum rated current where both JLC and same-code
     LCSC listings show 25mA. Preserve this rating conflict for technical review; do
     not treat 25mA as datasheet-supported.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1397-CMI201209X5R6KT/C1045
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Assembly Type: SMT Assembly
@@ -46,11 +58,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-27'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: two-terminal multilayer inductor
+    mapped to the KiCad Device:L master (pins 1/2 passive) and the L_0805_2012Metric
+    footprint master with the body size cross-checked against the JLC package label
+    0805; renders inherit the pipeline verified on the completed passive exemplars
+    and were spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Inductor_SMD:L_0805_2012Metric
+  symbol: Device:L
 lcsc_search: 0805 5.6uH
 manufacturer: FH (Guangdong Fenghua Advanced Tech)
 manufacturers:
@@ -60,6 +77,8 @@ name_proper: Inductor CMI201209X5R6KT 0805
 name_readable: Inductor CMI201209X5R6KT 0805
 name_short: Inductor CMI201209X5R6KT 0805
 oomp_datasheet_common_with: electronic_inductor_0805_2_2_micro_henry
+package_name_manufacturer: 0805 (2012 metric) multilayer chip inductor, 2.0 x 1.25
+  x 0.85 mm
 part_id: P1
 part_number_jlcpcb: C1045
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1397-CMI201209X5R6KT/C1045
@@ -71,7 +90,21 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: FH (Guangdong Fenghua Advanced Tech)
   part_number: CMI201209X5R6KT
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/1397-CMI201209X5R6KT/C1045
+research_notes:
+- The official JLC page lists 0805 FH (Guangdong Fenghua Advanced Tech) CMI201209X5R6KT
+  (C1045); identity and ratings observed live at intake 2026-09-27.
+- Mapped to the KiCad Device:L master and the Inductor_SMD:L_0805_2012Metric footprint
+  master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

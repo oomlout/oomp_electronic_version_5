@@ -1,12 +1,12 @@
 # KiCad assets: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
 
-
+- [Symbol](electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr.kicad_sym) — `Device:Crystal`
+- [Machine Solder](machine_solder/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr.kicad_mod) — `Crystal:Crystal_SMD_HC49-SD`
+- [Hand Solder](hand_solder/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr.kicad_mod) — `Crystal:Crystal_SMD_HC49-SD_HandSoldering`
 
 ## Review
 
-- Official symbol master unavailable: not selected
-- Official machine_solder footprint unavailable: not selected
-- Official hand_solder footprint unavailable: not selected
+All three assets are available.
 
 Silkscreen code: `809W7`. Source provenance: [manifest](manifest.yaml).
 

@@ -30,9 +30,17 @@ bip_39_full_space: panther rigid ankle pencil patient raise track casino still p
 bip_39_full_underscore: panther_rigid_ankle_pencil_patient_raise_track_casino_still_popular_snack_lift
 category: crystal
 category_name: Crystal
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756947223076708352-C2202.pdf
+dimension_reference:
+  document: X49SD10MSD2SC datasheet (C2202 provenance)
+  notes: HC-49S (HC-49/US slim) through-hole can, 11.5 x 4.5 x 3.6 mm, 4.88 mm row
+    spacing.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 3.6
+  length: 11.5
+  width: 4.5
 directory: parts/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
 distributors:
 - key: lcsc
@@ -43,6 +51,14 @@ distributors:
   part_number: C2202
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD10MSD2SC/C2202
+electrical:
+  device_type: quartz crystal
+  frequency: 10 MHz
+  load_capacitance: 20pF
+  operating_temperature: -20 C~+70 C
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr/datasheet.pdf
 id: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
 id_no_class: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
 id_no_size: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
@@ -58,11 +74,12 @@ jlcpcb_selection:
     stability, -20 C to +70 C - matches the live page exactly. Two-pin radial crystal
     (pin_count 2); stock 1891 recorded as observed. Edits made under the crystal family
     lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD10MSD2SC/C2202
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Equivalent Series Resistance(ESR): 60Ω
@@ -76,11 +93,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the KiCad
+    Device:Crystal master (pins parsed from the master: all passive) and the Crystal_HC49-U_Vertical
+    footprint master with the body size cross-checked against the JLC package label
+    HC-49S; renders inherit the pipeline verified on the completed passive exemplars
+    and were spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Crystal:Crystal_HC49-U_Vertical
+  symbol: Device:Crystal
 lcsc_search: hc_49s 10MHz
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
@@ -119,6 +141,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -208,7 +240,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -216,9 +262,17 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: crystal
       category_name: Crystal
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756947223076708352-C2202.pdf
+      dimension_reference:
+        document: X49SD10MSD2SC datasheet (C2202 provenance)
+        notes: HC-49S (HC-49/US slim) through-hole can, 11.5 x 4.5 x 3.6 mm, 4.88
+          mm row spacing.
+        pages:
+        - 1
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 3.6
+        length: 11.5
+        width: 4.5
       directory: parts\electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
       distributors:
       - key: lcsc
@@ -229,6 +283,14 @@ oomlout_ai_roboclick_3:
         part_number: C2202
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD10MSD2SC/C2202
+      electrical:
+        device_type: quartz crystal
+        frequency: 10 MHz
+        load_capacitance: 20pF
+        operating_temperature: -20 C~+70 C
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Missing generic value: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
           did not exist in working_oomp_populate_crystal.py, reviewed_choices.json,
@@ -241,11 +303,12 @@ oomlout_ai_roboclick_3:
           +70 C - matches the live page exactly. Two-pin radial crystal (pin_count
           2); stock 1891 recorded as observed. Edits made under the crystal family
           lock.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD10MSD2SC/C2202
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Equivalent Series Resistance(ESR): 60Ω
@@ -259,11 +322,17 @@ oomlout_ai_roboclick_3:
         tier: preferred_extended
         tier_label_observed: Extended
         verified_on: '2026-09-28'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the
+          KiCad Device:Crystal master (pins parsed from the master: all passive) and
+          the Crystal_HC49-U_Vertical footprint master with the body size cross-checked
+          against the JLC package label HC-49S; renders inherit the pipeline verified
+          on the completed passive exemplars and were spot-checked on the built square_pins
+          renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Crystal:Crystal_HC49-U_Vertical
+        symbol: Device:Crystal
       lcsc_search: hc_49s 10MHz
       manufacturer: YXC Crystal Oscillators
       manufacturers:
@@ -289,6 +358,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -379,6 +458,22 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: HC-49S (HC-49/US slim) through-hole can, 11.5 x 4.5
+        x 3.6 mm, 4.88 mm row spacing
       part_id: Y1
       part_number_jlcpcb: C2202
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD10MSD2SC/C2202
@@ -456,7 +551,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -474,7 +569,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/crystal/hc_49s/through_hole/2_pin/10_mhz/20_pf/README.md
         oomp_id: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
@@ -483,11 +584,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: hc 49s
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 11.5 × 4.5 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
         summary: Crystal 10 MHz 20 pF HC_49S 2-pin is an OOMP electronic crystal definition.
-          It uses the hc 49s package or form factor. Its nominal drawing size is 10.0
-          × 5.0 mm.
+          It uses the hc 49s package or form factor. Its nominal drawing size is 11.5
+          × 4.5 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -505,8 +608,22 @@ oomlout_ai_roboclick_3:
           value: 20_pf
         - level: 8
           value: 60_ohm_esr
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD10MSD2SC/C2202
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists HC-49S YXC Crystal Oscillators X49SD10MSD2SC (C2202);
+        identity and ratings observed live at intake 2026-09-28.
+      - Mapped to the KiCad Device:Crystal master and the Crystal:Crystal_HC49-U_Vertical
+        footprint master in the 2026-10-06 family batch.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -683,7 +800,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -697,6 +814,8 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
+package_name_manufacturer: HC-49S (HC-49/US slim) through-hole can, 11.5 x 4.5 x 3.6
+  mm, 4.88 mm row spacing
 part_id: Y1
 part_number_jlcpcb: C2202
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD10MSD2SC/C2202
@@ -774,7 +893,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -792,7 +911,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/crystal/hc_49s/through_hole/2_pin/10_mhz/20_pf/README.md
   oomp_id: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
@@ -801,11 +926,13 @@ part_page:
   - title: Package / style
     value: hc 49s
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 11.5 × 4.5 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_hc_49s_through_hole_2_pin_10_mhz_20_pf_60_ohm_esr
   summary: Crystal 10 MHz 20 pF HC_49S 2-pin is an OOMP electronic crystal definition.
-    It uses the hc 49s package or form factor. Its nominal drawing size is 10.0 ×
-    5.0 mm.
+    It uses the hc 49s package or form factor. Its nominal drawing size is 11.5 ×
+    4.5 mm. The definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -823,8 +950,22 @@ part_page:
     value: 20_pf
   - level: 8
     value: 60_ohm_esr
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD10MSD2SC/C2202
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists HC-49S YXC Crystal Oscillators X49SD10MSD2SC (C2202);
+  identity and ratings observed live at intake 2026-09-28.
+- Mapped to the KiCad Device:Crystal master and the Crystal:Crystal_HC49-U_Vertical
+  footprint master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

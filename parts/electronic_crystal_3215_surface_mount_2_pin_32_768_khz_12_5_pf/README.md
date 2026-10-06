@@ -62,6 +62,11 @@ Crystal 32.768 kHz 12.5 pF 3215 2-pin is an OOMP electronic crystal definition. 
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

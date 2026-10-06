@@ -240,3 +240,304 @@ def main(**kwargs):
     # Apply individually reviewed JLC house choices after other supplier data.
     from working_oomp_populate_jlc import apply_reviewed_jlc_choices
     apply_reviewed_jlc_choices(extras_dict, family="inductor")
+
+    # === BEGIN generated inductor batch (tmp/inductor_batch.py) — regenerated, do not hand-edit ===
+    # JLC C1034 / Sunlord SDFL1608Q4R7KTF - inductor family batch 2026-10-06
+    current = "electronic_inductor_0603_4_7_micro_henry"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0603 (1608 metric) multilayer chip inductor, 1.6 x 0.8 x 0.8 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8724361421347237888-C1034.pdf"
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "SDFL1608Q4R7KTF datasheet (C1034 provenance)",
+            "pages": [1],
+            "notes": "0603 (1608 metric) multilayer chip inductor, 1.6 x 0.8 x 0.8 mm.",
+        }
+        part["electrical"] = {
+            "inductance": "4.7 uH",
+            "max_dc_current": "15 mA",
+            "max_dc_resistance": "2.1 ohm",
+            "device_type": "multilayer chip inductor"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_0603_1608Metric",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 0603 Sunlord SDFL1608Q4R7KTF (C1034); identity and ratings observed live at intake 2026-09-27.",
+            "Mapped to the KiCad Device:L master and the Inductor_SMD:L_0603_1608Metric footprint master in the 2026-10-06 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C1042 / Sunlord SDFL2012Q1R0KTF - inductor family batch 2026-10-06
+    current = "electronic_inductor_0805_1_micro_henry"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0805 (2012 metric) multilayer chip inductor, 2.0 x 1.25 x 0.85 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8755215269118005248-C1042.pdf"
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.85}
+        part["dimension_reference"] = {
+            "document": "SDFL2012Q1R0KTF datasheet (C1042 provenance)",
+            "pages": [1],
+            "notes": "0805 (2012 metric) multilayer chip inductor, 2.0 x 1.25 x 0.85 mm.",
+        }
+        part["electrical"] = {
+            "inductance": "1 uH",
+            "max_dc_current": "50 mA",
+            "device_type": "multilayer chip inductor"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_0805_2012Metric",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 0805 Sunlord SDFL2012Q1R0KTF (C1042); identity and ratings observed live at intake 2026-09-27.",
+            "Mapped to the KiCad Device:L master and the Inductor_SMD:L_0805_2012Metric footprint master in the 2026-10-06 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C1043 / FH (Guangdong Fenghua Advanced Tech) CMI201209U2R2KT - inductor family batch 2026-10-06
+    current = "electronic_inductor_0805_2_2_micro_henry"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0805 (2012 metric) multilayer chip inductor, 2.0 x 1.25 x 0.85 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579705814512091136-C1043.pdf"
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.85}
+        part["dimension_reference"] = {
+            "document": "CMI201209U2R2KT datasheet (C1043 provenance)",
+            "pages": [1],
+            "notes": "0805 (2012 metric) multilayer chip inductor, 2.0 x 1.25 x 0.85 mm.",
+        }
+        part["electrical"] = {
+            "inductance": "2.2 uH",
+            "max_dc_current": "50 mA",
+            "device_type": "multilayer chip inductor"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_0805_2012Metric",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 0805 FH (Guangdong Fenghua Advanced Tech) CMI201209U2R2KT (C1043); identity and ratings observed live at intake 2026-09-27.",
+            "Mapped to the KiCad Device:L master and the Inductor_SMD:L_0805_2012Metric footprint master in the 2026-10-06 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C1045 / FH (Guangdong Fenghua Advanced Tech) CMI201209X5R6KT - inductor family batch 2026-10-06
+    current = "electronic_inductor_0805_5_6_micro_henry"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0805 (2012 metric) multilayer chip inductor, 2.0 x 1.25 x 0.85 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710118277140480-C1045.pdf"
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.85}
+        part["dimension_reference"] = {
+            "document": "CMI201209X5R6KT datasheet (C1045 provenance)",
+            "pages": [1],
+            "notes": "0805 (2012 metric) multilayer chip inductor, 2.0 x 1.25 x 0.85 mm.",
+        }
+        part["electrical"] = {
+            "inductance": "5.6 uH",
+            "max_dc_current": "25 mA",
+            "max_dc_resistance": "1 ohm",
+            "device_type": "multilayer chip inductor"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_0805_2012Metric",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 0805 FH (Guangdong Fenghua Advanced Tech) CMI201209X5R6KT (C1045); identity and ratings observed live at intake 2026-09-27.",
+            "Mapped to the KiCad Device:L master and the Inductor_SMD:L_0805_2012Metric footprint master in the 2026-10-06 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C1048 / FH (Guangdong Fenghua Advanced Tech) CMI321609U2R2KT - inductor family batch 2026-10-06
+    current = "electronic_inductor_1206_2_2_micro_henry"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "1206 (3216 metric) multilayer chip inductor, 3.2 x 1.6 x 0.9 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710131607048192-C1048.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.9}
+        part["dimension_reference"] = {
+            "document": "CMI321609U2R2KT datasheet (C1048 provenance)",
+            "pages": [1],
+            "notes": "1206 (3216 metric) multilayer chip inductor, 3.2 x 1.6 x 0.9 mm.",
+        }
+        part["electrical"] = {
+            "inductance": "2.2 uH",
+            "max_dc_current": "50 mA",
+            "device_type": "multilayer chip inductor"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_1206_3216Metric",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 1206 FH (Guangdong Fenghua Advanced Tech) CMI321609U2R2KT (C1048); identity and ratings observed live at intake 2026-09-27.",
+            "Mapped to the KiCad Device:L master and the Inductor_SMD:L_1206_3216Metric footprint master in the 2026-10-06 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C1049 / FH (Guangdong Fenghua Advanced Tech) CMI321609U4R7KT - inductor family batch 2026-10-06
+    current = "electronic_inductor_1206_4_7_micro_henry"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "1206 (3216 metric) multilayer chip inductor, 3.2 x 1.6 x 0.9 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579705847531814912-C1049.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.9}
+        part["dimension_reference"] = {
+            "document": "CMI321609U4R7KT datasheet (C1049 provenance)",
+            "pages": [1],
+            "notes": "1206 (3216 metric) multilayer chip inductor, 3.2 x 1.6 x 0.9 mm.",
+        }
+        part["electrical"] = {
+            "inductance": "4.7 uH",
+            "max_dc_current": "25 mA",
+            "device_type": "multilayer chip inductor"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_1206_3216Metric",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 1206 FH (Guangdong Fenghua Advanced Tech) CMI321609U4R7KT (C1049); identity and ratings observed live at intake 2026-09-27.",
+            "Mapped to the KiCad Device:L master and the Inductor_SMD:L_1206_3216Metric footprint master in the 2026-10-06 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C1050 / FH (Guangdong Fenghua Advanced Tech) CMI321609U5R6KT - inductor family batch 2026-10-06
+    current = "electronic_inductor_1206_5_6_micro_henry"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "1206 (3216 metric) multilayer chip inductor, 3.2 x 1.6 x 0.9 mm"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C1050.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.9}
+        part["dimension_reference"] = {
+            "document": "CMI321609U5R6KT datasheet (C1050 provenance)",
+            "pages": [1],
+            "notes": "1206 (3216 metric) multilayer chip inductor, 3.2 x 1.6 x 0.9 mm.",
+        }
+        part["electrical"] = {
+            "inductance": "5.6 uH",
+            "max_dc_current": "25 mA",
+            "device_type": "multilayer chip inductor"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_1206_3216Metric",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 1206 FH (Guangdong Fenghua Advanced Tech) CMI321609U5R6KT (C1050); identity and ratings observed live at intake 2026-09-27.",
+            "Mapped to the KiCad Device:L master and the Inductor_SMD:L_1206_3216Metric footprint master in the 2026-10-06 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C1051 / FH (Guangdong Fenghua Advanced Tech) CMI321609X100KT - inductor family batch 2026-10-06
+    current = "electronic_inductor_1206_10_micro_henry"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "1206 (3216 metric) multilayer chip inductor, 3.2 x 1.6 x 0.9 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579705850359185408-C1051.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.9}
+        part["dimension_reference"] = {
+            "document": "CMI321609X100KT datasheet (C1051 provenance)",
+            "pages": [1],
+            "notes": "1206 (3216 metric) multilayer chip inductor, 3.2 x 1.6 x 0.9 mm.",
+        }
+        part["electrical"] = {
+            "inductance": "10 uH",
+            "max_dc_current": "25 mA",
+            "device_type": "multilayer chip inductor"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:L",
+            "machine_solder": "Inductor_SMD:L_1206_3216Metric",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 1206 FH (Guangdong Fenghua Advanced Tech) CMI321609X100KT (C1051); identity and ratings observed live at intake 2026-09-27.",
+            "Mapped to the KiCad Device:L master and the Inductor_SMD:L_1206_3216Metric footprint master in the 2026-10-06 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # === END generated inductor batch (tmp/inductor_batch.py) ===

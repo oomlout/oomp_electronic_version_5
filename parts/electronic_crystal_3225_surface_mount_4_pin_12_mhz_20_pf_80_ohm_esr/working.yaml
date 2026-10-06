@@ -30,7 +30,14 @@ bip_39_full_space: scatter confirm knee flight dolphin river loop apology goddes
 bip_39_full_underscore: scatter_confirm_knee_flight_dolphin_river_loop_apology_goddess_follow_planet_half
 category: crystal
 category_name: Crystal
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756945081792782336-C9002.pdf
+dimension_reference:
+  document: X322512MSB4SI datasheet (C9002 provenance)
+  notes: SMD 3225 4-pad crystal, 3.2 x 2.5 x 0.7 mm (pads 1/3 terminals, 2/4 ground).
+  pages:
+  - 1
 dimensions_mm:
+  height: 0.7
   length: 3.2
   width: 2.5
 directory: parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
@@ -44,12 +51,12 @@ distributors:
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002
 electrical:
-  equivalent_series_resistance: 80 ohm
+  device_type: quartz crystal
   frequency: 12 MHz
-  frequency_stability: +/-20 ppm
-  frequency_tolerance: +/-10 ppm
-  load_capacitance: 20 pF
-  operating_temperature: -40 to +85 C
+  padout: pad 1 input, pad 3 output, pads 2 and 4 ground
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr/datasheet.pdf
 generic_oomp_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
 id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
 id_no_class: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
@@ -60,11 +67,12 @@ jlcpcb_selection:
     tolerance and +/-20 ppm stability. Existing generic C133334 was listed at 50 ohm
     ESR, so do not silently substitute this code. Check oscillator drive, ESR budget,
     pin ground configuration and land pattern in the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     equivalent_series_resistance: 80 ohm
@@ -77,11 +85,17 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the KiCad
+    Device:Crystal_GND24 master (pins parsed from the master: all passive) and the
+    Crystal_SMD_3225-4Pin_3.2x2.5mm footprint master with the body size cross-checked
+    against the JLC package label SMD3225-4P; renders inherit the pipeline verified
+    on the completed passive exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+  symbol: Device:Crystal_GND24
 lcsc_search: 3225 12MHz
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
@@ -120,6 +134,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -209,7 +233,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -217,7 +255,15 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: crystal
       category_name: Crystal
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756945081792782336-C9002.pdf
+      dimension_reference:
+        document: X322512MSB4SI datasheet (C9002 provenance)
+        notes: SMD 3225 4-pad crystal, 3.2 x 2.5 x 0.7 mm (pads 1/3 terminals, 2/4
+          ground).
+        pages:
+        - 1
       dimensions_mm:
+        height: 0.7
         length: 3.2
         width: 2.5
       directory: parts\electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
@@ -231,12 +277,12 @@ oomlout_ai_roboclick_3:
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002
       electrical:
-        equivalent_series_resistance: 80 ohm
+        device_type: quartz crystal
         frequency: 12 MHz
-        frequency_stability: +/-20 ppm
-        frequency_tolerance: +/-10 ppm
-        load_capacitance: 20 pF
-        operating_temperature: -40 to +85 C
+        padout: pad 1 input, pad 3 output, pads 2 and 4 ground
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr/datasheet.pdf
       generic_oomp_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf
       jlcpcb_selection:
         compatibility_notes: 3225 4-pad 12 MHz 20 pF crystal, 80 ohm ESR, +/-10 ppm
@@ -244,11 +290,12 @@ oomlout_ai_roboclick_3:
           listed at 50 ohm ESR, so do not silently substitute this code. Check oscillator
           drive, ESR budget, pin ground configuration and land pattern in the full
           pass.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           equivalent_series_resistance: 80 ohm
@@ -261,11 +308,17 @@ oomlout_ai_roboclick_3:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-24'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the
+          KiCad Device:Crystal_GND24 master (pins parsed from the master: all passive)
+          and the Crystal_SMD_3225-4Pin_3.2x2.5mm footprint master with the body size
+          cross-checked against the JLC package label SMD3225-4P; renders inherit
+          the pipeline verified on the completed passive exemplars and were spot-checked
+          on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+        symbol: Device:Crystal_GND24
       lcsc_search: 3225 12MHz
       manufacturer: YXC Crystal Oscillators
       manufacturers:
@@ -291,6 +344,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -381,6 +444,22 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: SMD 3225 4-pad crystal, 3.2 x 2.5 x 0.7 mm (pads
+        1/3 terminals, 2/4 ground)
       part_id: Y1
       part_number_jlcpcb: C9002
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002
@@ -458,7 +537,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -476,7 +555,19 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/crystal/3225/surface_mount/4_pin/12_mhz/20_pf/README.md
         oomp_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: G
+          number: '2'
+          type: passive
+        - name: '3'
+          number: '3'
+          type: passive
+        - name: G
+          number: '4'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
@@ -486,10 +577,12 @@ oomlout_ai_roboclick_3:
           value: '3225'
         - title: Nominal size
           value: 3.2 × 2.5 mm
+        - title: Documented pins
+          value: 4
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
         summary: Crystal 12 MHz 20 pF 3225 4-pin is an OOMP electronic crystal definition.
           It uses the 3225 package or form factor. Its nominal drawing size is 3.2
-          × 2.5 mm.
+          × 2.5 mm. The definition includes 4 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -507,12 +600,30 @@ oomlout_ai_roboclick_3:
           value: 20_pf
         - level: 8
           value: 80_ohm_esr
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: G
+          number: '2'
+          type: passive
+        pin_3:
+          name: '3'
+          number: '3'
+          type: passive
+        pin_4:
+          name: G
+          number: '4'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002
       regenerate_pngs: false
       research_notes:
-      - 80 ohm ESR purchasing variant. The generic 12 MHz 20 pF choice retains its
-        50 ohm C133334 preference.
-      - Pad orientation and crystal pin mapping remain for the full pass.
+      - The official JLC page lists SMD3225-4P YXC Crystal Oscillators X322512MSB4SI
+        (C9002); identity and ratings observed live at intake 2026-09-24.
+      - Mapped to the KiCad Device:Crystal_GND24 master and the Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+        footprint master in the 2026-10-06 family batch.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -689,7 +800,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -703,6 +814,8 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
+package_name_manufacturer: SMD 3225 4-pad crystal, 3.2 x 2.5 x 0.7 mm (pads 1/3 terminals,
+  2/4 ground)
 part_id: Y1
 part_number_jlcpcb: C9002
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002
@@ -780,7 +893,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -798,7 +911,19 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/crystal/3225/surface_mount/4_pin/12_mhz/20_pf/README.md
   oomp_id: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: G
+    number: '2'
+    type: passive
+  - name: '3'
+    number: '3'
+    type: passive
+  - name: G
+    number: '4'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
@@ -808,10 +933,12 @@ part_page:
     value: '3225'
   - title: Nominal size
     value: 3.2 × 2.5 mm
+  - title: Documented pins
+    value: 4
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
   summary: Crystal 12 MHz 20 pF 3225 4-pin is an OOMP electronic crystal definition.
     It uses the 3225 package or form factor. Its nominal drawing size is 3.2 × 2.5
-    mm.
+    mm. The definition includes 4 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -829,12 +956,30 @@ part_page:
     value: 20_pf
   - level: 8
     value: 80_ohm_esr
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: G
+    number: '2'
+    type: passive
+  pin_3:
+    name: '3'
+    number: '3'
+    type: passive
+  pin_4:
+    name: G
+    number: '4'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322512MSB4SI/C9002
 regenerate_pngs: false
 research_notes:
-- 80 ohm ESR purchasing variant. The generic 12 MHz 20 pF choice retains its 50 ohm
-  C133334 preference.
-- Pad orientation and crystal pin mapping remain for the full pass.
+- The official JLC page lists SMD3225-4P YXC Crystal Oscillators X322512MSB4SI (C9002);
+  identity and ratings observed live at intake 2026-09-24.
+- Mapped to the KiCad Device:Crystal_GND24 master and the Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+  footprint master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

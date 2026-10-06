@@ -62,6 +62,11 @@ Crystal 8 MHz 20 pF 5032 2-pin is an OOMP electronic crystal definition. It uses
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

@@ -1,8 +1,16 @@
 category: crystal
 category_name: Crystal
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756947215858311168-C2198.pdf
+dimension_reference:
+  document: X49SD5MSD2SC datasheet (C2198 provenance)
+  notes: HC-49S (HC-49/US slim) through-hole can, 11.5 x 4.5 x 3.6 mm, 4.88 mm row
+    spacing.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 3.6
+  length: 11.5
+  width: 4.5
 distributors:
 - key: lcsc
   part_number: C2198
@@ -12,6 +20,14 @@ distributors:
   part_number: C2198
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD5MSD2SC/C2198
+electrical:
+  device_type: quartz crystal
+  frequency: 5 MHz
+  load_capacitance: 20pF
+  operating_temperature: -20 C~+70 C
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_crystal_hc_49s_through_hole_2_pin_5_mhz_20_pf_80_ohm_esr/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: electronic_crystal_hc_49s_through_hole_2_pin_5_mhz_20_pf_80_ohm_esr
     did not exist in working_oomp_populate_crystal.py, reviewed_choices.json, or parts_source
@@ -23,11 +39,12 @@ jlcpcb_selection:
     stability, -20 C to +70 C - matches the live page exactly. Two-pin radial crystal
     (pin_count 2); stock 6178 recorded as observed. Edits made under the crystal family
     lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD5MSD2SC/C2198
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Equivalent Series Resistance(ESR): 80Ω
@@ -41,11 +58,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the KiCad
+    Device:Crystal master (pins parsed from the master: all passive) and the Crystal_HC49-U_Vertical
+    footprint master with the body size cross-checked against the JLC package label
+    HC-49S; renders inherit the pipeline verified on the completed passive exemplars
+    and were spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Crystal:Crystal_HC49-U_Vertical
+  symbol: Device:Crystal
 lcsc_search: hc_49s 5MHz
 manufacturer: YXC Crystal Oscillators
 manufacturers:
@@ -54,6 +76,8 @@ manufacturers:
 name_proper: Crystal 5 MHz 20 pF HC_49S 2-pin
 name_readable: Crystal 5 MHz 20 pF HC_49S 2-pin
 name_short: Crystal 5 MHz 20 pF HC_49S 2-pin
+package_name_manufacturer: HC-49S (HC-49/US slim) through-hole can, 11.5 x 4.5 x 3.6
+  mm, 4.88 mm row spacing
 part_id: Y1
 part_number_jlcpcb: C2198
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD5MSD2SC/C2198
@@ -65,7 +89,21 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: YXC Crystal Oscillators
   part_number: X49SD5MSD2SC
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SD5MSD2SC/C2198
+research_notes:
+- The official JLC page lists HC-49S YXC Crystal Oscillators X49SD5MSD2SC (C2198);
+  identity and ratings observed live at intake 2026-09-28.
+- Mapped to the KiCad Device:Crystal master and the Crystal:Crystal_HC49-U_Vertical
+  footprint master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

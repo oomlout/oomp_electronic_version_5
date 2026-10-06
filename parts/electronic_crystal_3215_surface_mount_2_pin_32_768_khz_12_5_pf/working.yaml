@@ -30,6 +30,12 @@ bip_39_full_space: trial stone arctic empty door dice day will smile train rando
 bip_39_full_underscore: trial_stone_arctic_empty_door_dice_day_will_smile_train_random_improve
 category: crystal
 category_name: Crystal
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8629475189274984448-C32346.pdf
+dimension_reference:
+  document: Q13FC13500004 datasheet (C32346 provenance)
+  notes: SMD 3215 2-pad 32.768 kHz tuning-fork crystal, 3.2 x 1.5 x 0.9 mm.
+  pages:
+  - 1
 dimensions_mm:
   length: 3.2
   width: 1.5
@@ -43,6 +49,12 @@ distributors:
   part_number: C32346
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/SeikoEpson-Q13FC13500004/C32346
+electrical:
+  device_type: quartz crystal
+  frequency: 32.768 kHz
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf/datasheet.pdf
 id: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
 id_no_class: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
 id_no_size: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
@@ -51,11 +63,12 @@ jlcpcb_selection:
   compatibility_notes: Existing OOMP ID and purchasing choice match Seiko Epson Q13FC13500004,
     3215 2-pad 32.768 kHz 12.5 pF watch crystal. The page lists 70k ohm ESR and +/-20
     ppm. Check project oscillator budget and land pattern in the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/SeikoEpson-Q13FC13500004/C32346
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     equivalent_series_resistance: 70 kohm
@@ -67,11 +80,16 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the KiCad
+    Device:Crystal master (pins parsed from the master: all passive) and the Crystal_SMD_3215-2Pin_3.2x1.5mm
+    footprint master with the body size cross-checked against the JLC package label
+    SMD3215-2P; renders inherit the pipeline verified on the completed passive exemplars
+    and were spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm
+  symbol: Device:Crystal
 lcsc_search: 3215 32.768kHz
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
@@ -110,6 +128,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -199,7 +227,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -207,6 +249,12 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: crystal
       category_name: Crystal
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8629475189274984448-C32346.pdf
+      dimension_reference:
+        document: Q13FC13500004 datasheet (C32346 provenance)
+        notes: SMD 3215 2-pad 32.768 kHz tuning-fork crystal, 3.2 x 1.5 x 0.9 mm.
+        pages:
+        - 1
       dimensions_mm:
         length: 3.2
         width: 1.5
@@ -220,16 +268,23 @@ oomlout_ai_roboclick_3:
         part_number: C32346
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/SeikoEpson-Q13FC13500004/C32346
+      electrical:
+        device_type: quartz crystal
+        frequency: 32.768 kHz
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Existing OOMP ID and purchasing choice match Seiko Epson
           Q13FC13500004, 3215 2-pad 32.768 kHz 12.5 pF watch crystal. The page lists
           70k ohm ESR and +/-20 ppm. Check project oscillator budget and land pattern
           in the full pass.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/SeikoEpson-Q13FC13500004/C32346
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           equivalent_series_resistance: 70 kohm
@@ -241,11 +296,17 @@ oomlout_ai_roboclick_3:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-24'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the
+          KiCad Device:Crystal master (pins parsed from the master: all passive) and
+          the Crystal_SMD_3215-2Pin_3.2x1.5mm footprint master with the body size
+          cross-checked against the JLC package label SMD3215-2P; renders inherit
+          the pipeline verified on the completed passive exemplars and were spot-checked
+          on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm
+        symbol: Device:Crystal
       lcsc_search: 3215 32.768kHz
       manufacturer: Seiko Epson
       manufacturers:
@@ -269,6 +330,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -359,6 +430,20 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_crystal_3215_surface_mount_2_pin_32_768_khz_12_5_pf
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       package_drawing:
         body:
         - 2.2208000000000006
@@ -382,6 +467,8 @@ oomlout_ai_roboclick_3:
           - 0.0
           - 0.576
           - 0.9299999999999999
+      package_name_manufacturer: SMD 3215 2-pad 32.768 kHz tuning-fork crystal, 3.2
+        x 1.5 x 0.9 mm
       part_id: Y1
       part_number_jlcpcb: C32346
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/SeikoEpson-Q13FC13500004/C32346
@@ -459,7 +546,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -525,6 +612,11 @@ oomlout_ai_roboclick_3:
           type: signal
       product_url: https://jlcpcb.com/partdetail/SeikoEpson-Q13FC13500004/C32346
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists SMD3215-2P Seiko Epson Q13FC13500004 (C32346);
+        identity and ratings observed live at intake 2026-09-24.
+      - Mapped to the KiCad Device:Crystal master and the Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm
+        footprint master in the 2026-10-06 family batch.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -943,7 +1035,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -980,6 +1072,8 @@ package_drawing:
     - 0.0
     - 0.576
     - 0.9299999999999999
+package_name_manufacturer: SMD 3215 2-pad 32.768 kHz tuning-fork crystal, 3.2 x 1.5
+  x 0.9 mm
 part_id: Y1
 part_number_jlcpcb: C32346
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/SeikoEpson-Q13FC13500004/C32346
@@ -1057,7 +1151,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -1123,6 +1217,11 @@ pins:
     type: signal
 product_url: https://jlcpcb.com/partdetail/SeikoEpson-Q13FC13500004/C32346
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists SMD3215-2P Seiko Epson Q13FC13500004 (C32346); identity
+  and ratings observed live at intake 2026-09-24.
+- Mapped to the KiCad Device:Crystal master and the Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm
+  footprint master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

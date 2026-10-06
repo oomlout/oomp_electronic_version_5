@@ -1,8 +1,15 @@
 category: crystal
 category_name: Crystal
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756947326143746048-C2250.pdf
+dimension_reference:
+  document: X49SM18432MSD2SC datasheet (C2250 provenance)
+  notes: HC-49S SMD (bend leads), 11.4 x 4.8 x 3.8 mm.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 3.8
+  length: 11.4
+  width: 4.8
 distributors:
 - key: lcsc
   part_number: C2250
@@ -12,6 +19,14 @@ distributors:
   part_number: C2250
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2619-X49SM18432MSD2SC/C2250
+electrical:
+  device_type: quartz crystal
+  frequency: 18.432 MHz
+  load_capacitance: 20pF
+  operating_temperature: -20 C~+70 C
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_crystal_hc_49s_smd_surface_mount_2_pin_18_432_mhz_20_pf_45_ohm_esr/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: electronic_crystal_hc_49s_smd_surface_mount_2_pin_18_432_mhz_20_pf_45_ohm_esr
     did not exist in working_oomp_populate_crystal.py, reviewed_choices.json, or parts_source
@@ -23,11 +38,12 @@ jlcpcb_selection:
     45 ohm, +/-20 ppm calibration / +/-30 ppm temperature stability, -20 C to +70
     C - matches the live page exactly. Two-pin crystal (pin_count 2); stock 5937 recorded
     as observed. Edits made under the crystal family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2619-X49SM18432MSD2SC/C2250
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Equivalent Series Resistance(ESR): 45Ω
@@ -41,11 +57,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the KiCad
+    Device:Crystal master (pins parsed from the master: all passive) and the Crystal_SMD_HC49-SD
+    footprint master with the body size cross-checked against the JLC package label
+    HC-49S-SMD; renders inherit the pipeline verified on the completed passive exemplars
+    and were spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Crystal:Crystal_SMD_HC49-SD
+  symbol: Device:Crystal
 lcsc_search: hc_49s_smd 18.432MHz
 manufacturer: YXC Crystal Oscillators
 manufacturers:
@@ -54,6 +75,7 @@ manufacturers:
 name_proper: Crystal 18.432 MHz 20 pF HC_49S_SMD 2-pin
 name_readable: Crystal 18.432 MHz 20 pF HC_49S_SMD 2-pin
 name_short: Crystal 18.432 MHz 20 pF HC_49S_SMD 2-pin
+package_name_manufacturer: HC-49S SMD (bend leads), 11.4 x 4.8 x 3.8 mm
 part_id: Y1
 part_number_jlcpcb: C2250
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2619-X49SM18432MSD2SC/C2250
@@ -65,7 +87,21 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: YXC Crystal Oscillators
   part_number: X49SM18432MSD2SC
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2619-X49SM18432MSD2SC/C2250
+research_notes:
+- The official JLC page lists HC-49S-SMD YXC Crystal Oscillators X49SM18432MSD2SC
+  (C2250); identity and ratings observed live at intake 2026-09-29.
+- Mapped to the KiCad Device:Crystal master and the Crystal:Crystal_SMD_HC49-SD footprint
+  master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -1,12 +1,12 @@
 # KiCad assets: electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr
 
-
+- [Symbol](electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr.kicad_sym) — `Device:Crystal_GND24`
+- [Machine Solder](machine_solder/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr.kicad_mod) — `Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm`
+- [Hand Solder](hand_solder/electronic_crystal_3225_surface_mount_4_pin_12_mhz_20_pf_80_ohm_esr.kicad_mod) — `Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm_HandSoldering`
 
 ## Review
 
-- Official symbol master unavailable: not selected
-- Official machine_solder footprint unavailable: not selected
-- Official hand_solder footprint unavailable: not selected
+All three assets are available.
 
 Silkscreen code: `7I95P`. Source provenance: [manifest](manifest.yaml).
 

@@ -30,9 +30,16 @@ bip_39_full_space: snake spawn walnut rhythm diet reject sock urban hero deer he
 bip_39_full_underscore: snake_spawn_walnut_rhythm_diet_reject_sock_urban_hero_deer_hero_tone
 category: crystal
 category_name: Crystal
+datasheet_url: https://www.lcsc.com/datasheet/C12674.pdf
+dimension_reference:
+  document: X49SM8MSD2SC datasheet (C12674 provenance)
+  notes: HC-49S SMD (bend leads), 11.4 x 4.8 x 3.8 mm.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 3.8
+  length: 11.4
+  width: 4.8
 directory: parts/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
 distributors:
 - key: lcsc
@@ -43,6 +50,14 @@ distributors:
   part_number: C12674
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SM8MSD2SC/C12674
+electrical:
+  device_type: quartz crystal
+  frequency: 8 MHz
+  load_capacitance: 20pF
+  operating_temperature: -20 C~+70 C
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr/datasheet.pdf
 id: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
 id_no_class: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
 id_no_size: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
@@ -52,11 +67,12 @@ jlcpcb_selection:
     8 MHz, 20 pF, 70 ohm ESR, +/-20 ppm tolerance and +/-30 ppm stability. The large
     HC-49S-SMD body and 70 ohm ESR make it incompatible with the existing 5032 8 MHz
     generic preference.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SM8MSD2SC/C12674
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Equivalent Series Resistance(ESR): 70Ω
@@ -70,11 +86,16 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the KiCad
+    Device:Crystal master (pins parsed from the master: all passive) and the Crystal_SMD_HC49-SD
+    footprint master with the body size cross-checked against the JLC package label
+    HC-49S-SMD; renders inherit the pipeline verified on the completed passive exemplars
+    and were spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Crystal:Crystal_SMD_HC49-SD
+  symbol: Device:Crystal
 lcsc_search: hc_49s_smd 8MHz
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
@@ -116,6 +137,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -205,7 +236,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -213,9 +258,16 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: crystal
       category_name: Crystal
+      datasheet_url: https://www.lcsc.com/datasheet/C12674.pdf
+      dimension_reference:
+        document: X49SM8MSD2SC datasheet (C12674 provenance)
+        notes: HC-49S SMD (bend leads), 11.4 x 4.8 x 3.8 mm.
+        pages:
+        - 1
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 3.8
+        length: 11.4
+        width: 4.8
       directory: parts\electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
       distributors:
       - key: lcsc
@@ -226,16 +278,25 @@ oomlout_ai_roboclick_3:
         part_number: C12674
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SM8MSD2SC/C12674
+      electrical:
+        device_type: quartz crystal
+        frequency: 8 MHz
+        load_capacitance: 20pF
+        operating_temperature: -20 C~+70 C
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Created a distinct two-terminal HC-49S-SMD crystal definition:
           8 MHz, 20 pF, 70 ohm ESR, +/-20 ppm tolerance and +/-30 ppm stability. The
           large HC-49S-SMD body and 70 ohm ESR make it incompatible with the existing
           5032 8 MHz generic preference.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SM8MSD2SC/C12674
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: null
         ratings:
           Equivalent Series Resistance(ESR): 70Ω
@@ -249,11 +310,17 @@ oomlout_ai_roboclick_3:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-24'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the
+          KiCad Device:Crystal master (pins parsed from the master: all passive) and
+          the Crystal_SMD_HC49-SD footprint master with the body size cross-checked
+          against the JLC package label HC-49S-SMD; renders inherit the pipeline verified
+          on the completed passive exemplars and were spot-checked on the built square_pins
+          renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Crystal:Crystal_SMD_HC49-SD
+        symbol: Device:Crystal
       lcsc_search: hc_49s_smd 8MHz
       manufacturer: YXC Crystal Oscillators
       manufacturers:
@@ -279,6 +346,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -369,6 +446,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: HC-49S SMD (bend leads), 11.4 x 4.8 x 3.8 mm
       part_id: Y1
       part_number_jlcpcb: C12674
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SM8MSD2SC/C12674
@@ -446,7 +538,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -464,7 +556,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/crystal/hc_49s_smd/surface_mount/2_pin/8_mhz/20_pf/README.md
         oomp_id: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
@@ -473,11 +571,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: hc 49s smd
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 11.4 × 4.8 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
         summary: Crystal 8 MHz 20 pF HC_49S_SMD 2-pin is an OOMP electronic crystal
           definition. It uses the hc 49s smd package or form factor. Its nominal drawing
-          size is 10.0 × 5.0 mm.
+          size is 11.4 × 4.8 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -495,8 +595,22 @@ oomlout_ai_roboclick_3:
           value: 20_pf
         - level: 8
           value: 70_ohm_esr
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SM8MSD2SC/C12674
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists HC-49S-SMD YXC Crystal Oscillators X49SM8MSD2SC
+        (C12674); identity and ratings observed live at intake 2026-09-24.
+      - Mapped to the KiCad Device:Crystal master and the Crystal:Crystal_SMD_HC49-SD
+        footprint master in the 2026-10-06 family batch.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -673,7 +787,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -687,6 +801,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
+package_name_manufacturer: HC-49S SMD (bend leads), 11.4 x 4.8 x 3.8 mm
 part_id: Y1
 part_number_jlcpcb: C12674
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SM8MSD2SC/C12674
@@ -764,7 +879,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -782,7 +897,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/crystal/hc_49s_smd/surface_mount/2_pin/8_mhz/20_pf/README.md
   oomp_id: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
@@ -791,11 +912,13 @@ part_page:
   - title: Package / style
     value: hc 49s smd
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 11.4 × 4.8 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr
   summary: Crystal 8 MHz 20 pF HC_49S_SMD 2-pin is an OOMP electronic crystal definition.
-    It uses the hc 49s smd package or form factor. Its nominal drawing size is 10.0
-    × 5.0 mm.
+    It uses the hc 49s smd package or form factor. Its nominal drawing size is 11.4
+    × 4.8 mm. The definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -813,8 +936,22 @@ part_page:
     value: 20_pf
   - level: 8
     value: 70_ohm_esr
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X49SM8MSD2SC/C12674
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists HC-49S-SMD YXC Crystal Oscillators X49SM8MSD2SC (C12674);
+  identity and ratings observed live at intake 2026-09-24.
+- Mapped to the KiCad Device:Crystal master and the Crystal:Crystal_SMD_HC49-SD footprint
+  master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

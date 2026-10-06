@@ -1,3 +1,5 @@
 # Hand Solder
 
-No verified official master is available. See [../manifest.yaml](../manifest.yaml). No pad geometry has been guessed.
+[electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr](electronic_crystal_hc_49s_smd_surface_mount_2_pin_8_mhz_20_pf_70_ohm_esr.kicad_mod)
+
+Source: `Crystal:Crystal_SMD_HC49-SD_HandSoldering`. [License](../LICENSE.md).

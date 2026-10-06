@@ -30,7 +30,14 @@ bip_39_full_space: hedgehog liar hair describe spring ladder tone exile fan assi
 bip_39_full_underscore: hedgehog_liar_hair_describe_spring_ladder_tone_exile_fan_assist_goddess_ecology
 category: crystal
 category_name: Crystal
+datasheet_url: https://www.lcsc.com/datasheet/C9006.pdf
+dimension_reference:
+  document: X322525MOB4SI datasheet (C9006 provenance)
+  notes: SMD 3225 4-pad crystal, 3.2 x 2.5 x 0.7 mm (pads 1/3 terminals, 2/4 ground).
+  pages:
+  - 1
 dimensions_mm:
+  height: 0.7
   length: 3.2
   width: 2.5
 directory: parts/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
@@ -43,6 +50,15 @@ distributors:
   part_number: C9006
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322525MOB4SI/C9006
+electrical:
+  device_type: quartz crystal
+  frequency: 25 MHz
+  load_capacitance: 12pF
+  operating_temperature: -40 C~+85 C
+  padout: pad 1 input, pad 3 output, pads 2 and 4 ground
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr/datasheet.pdf
 id: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
 id_no_class: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
 id_no_size: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
@@ -52,11 +68,12 @@ jlcpcb_selection:
     for 25 MHz, 12 pF load capacitance and 50 ohm ESR. These values, tolerance and
     stability affect oscillator compatibility, so it must not replace the existing
     12 MHz or different-ESR choices. C9006 is the verified preferred house choice.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322525MOB4SI/C9006
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Equivalent Series Resistance(ESR): 50Ω
@@ -70,11 +87,17 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the KiCad
+    Device:Crystal_GND24 master (pins parsed from the master: all passive) and the
+    Crystal_SMD_3225-4Pin_3.2x2.5mm footprint master with the body size cross-checked
+    against the JLC package label SMD3225-4P; renders inherit the pipeline verified
+    on the completed passive exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+  symbol: Device:Crystal_GND24
 lcsc_search: 3225 25MHz
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
@@ -113,6 +136,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -202,7 +235,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -210,7 +257,15 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: crystal
       category_name: Crystal
+      datasheet_url: https://www.lcsc.com/datasheet/C9006.pdf
+      dimension_reference:
+        document: X322525MOB4SI datasheet (C9006 provenance)
+        notes: SMD 3225 4-pad crystal, 3.2 x 2.5 x 0.7 mm (pads 1/3 terminals, 2/4
+          ground).
+        pages:
+        - 1
       dimensions_mm:
+        height: 0.7
         length: 3.2
         width: 2.5
       directory: parts\electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
@@ -223,17 +278,27 @@ oomlout_ai_roboclick_3:
         part_number: C9006
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322525MOB4SI/C9006
+      electrical:
+        device_type: quartz crystal
+        frequency: 25 MHz
+        load_capacitance: 12pF
+        operating_temperature: -40 C~+85 C
+        padout: pad 1 input, pad 3 output, pads 2 and 4 ground
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Created a distinct generic 3225 four-pad crystal definition
           for 25 MHz, 12 pF load capacitance and 50 ohm ESR. These values, tolerance
           and stability affect oscillator compatibility, so it must not replace the
           existing 12 MHz or different-ESR choices. C9006 is the verified preferred
           house choice.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322525MOB4SI/C9006
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Equivalent Series Resistance(ESR): 50Ω
@@ -247,11 +312,17 @@ oomlout_ai_roboclick_3:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-24'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: crystal mapped to the
+          KiCad Device:Crystal_GND24 master (pins parsed from the master: all passive)
+          and the Crystal_SMD_3225-4Pin_3.2x2.5mm footprint master with the body size
+          cross-checked against the JLC package label SMD3225-4P; renders inherit
+          the pipeline verified on the completed passive exemplars and were spot-checked
+          on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+        symbol: Device:Crystal_GND24
       lcsc_search: 3225 25MHz
       manufacturer: YXC Crystal Oscillators
       manufacturers:
@@ -277,6 +348,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -367,6 +448,22 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: SMD 3225 4-pad crystal, 3.2 x 2.5 x 0.7 mm (pads
+        1/3 terminals, 2/4 ground)
       part_id: Y1
       part_number_jlcpcb: C9006
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322525MOB4SI/C9006
@@ -444,7 +541,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -462,7 +559,19 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/crystal/3225/surface_mount/4_pin/25_mhz/12_pf/README.md
         oomp_id: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: G
+          number: '2'
+          type: passive
+        - name: '3'
+          number: '3'
+          type: passive
+        - name: G
+          number: '4'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
@@ -472,10 +581,12 @@ oomlout_ai_roboclick_3:
           value: '3225'
         - title: Nominal size
           value: 3.2 × 2.5 mm
+        - title: Documented pins
+          value: 4
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
         summary: Crystal 25 MHz 12 pF 3225 4-pin is an OOMP electronic crystal definition.
           It uses the 3225 package or form factor. Its nominal drawing size is 3.2
-          × 2.5 mm.
+          × 2.5 mm. The definition includes 4 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -493,8 +604,30 @@ oomlout_ai_roboclick_3:
           value: 12_pf
         - level: 8
           value: 50_ohm_esr
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: G
+          number: '2'
+          type: passive
+        pin_3:
+          name: '3'
+          number: '3'
+          type: passive
+        pin_4:
+          name: G
+          number: '4'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322525MOB4SI/C9006
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists SMD3225-4P YXC Crystal Oscillators X322525MOB4SI
+        (C9006); identity and ratings observed live at intake 2026-09-24.
+      - Mapped to the KiCad Device:Crystal_GND24 master and the Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+        footprint master in the 2026-10-06 family batch.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -671,7 +804,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -685,6 +818,8 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
+package_name_manufacturer: SMD 3225 4-pad crystal, 3.2 x 2.5 x 0.7 mm (pads 1/3 terminals,
+  2/4 ground)
 part_id: Y1
 part_number_jlcpcb: C9006
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322525MOB4SI/C9006
@@ -762,7 +897,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -780,7 +915,19 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/crystal/3225/surface_mount/4_pin/25_mhz/12_pf/README.md
   oomp_id: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: G
+    number: '2'
+    type: passive
+  - name: '3'
+    number: '3'
+    type: passive
+  - name: G
+    number: '4'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
@@ -790,10 +937,12 @@ part_page:
     value: '3225'
   - title: Nominal size
     value: 3.2 × 2.5 mm
+  - title: Documented pins
+    value: 4
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_crystal_3225_surface_mount_4_pin_25_mhz_12_pf_50_ohm_esr
   summary: Crystal 25 MHz 12 pF 3225 4-pin is an OOMP electronic crystal definition.
     It uses the 3225 package or form factor. Its nominal drawing size is 3.2 × 2.5
-    mm.
+    mm. The definition includes 4 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -811,8 +960,30 @@ part_page:
     value: 12_pf
   - level: 8
     value: 50_ohm_esr
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: G
+    number: '2'
+    type: passive
+  pin_3:
+    name: '3'
+    number: '3'
+    type: passive
+  pin_4:
+    name: G
+    number: '4'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YXC_CrystalOscillators-X322525MOB4SI/C9006
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists SMD3225-4P YXC Crystal Oscillators X322525MOB4SI (C9006);
+  identity and ratings observed live at intake 2026-09-24.
+- Mapped to the KiCad Device:Crystal_GND24 master and the Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+  footprint master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false
