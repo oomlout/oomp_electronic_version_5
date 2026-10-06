@@ -1,8 +1,15 @@
 category: other
 category_name: Other
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588907149631741952-C3128.pdf
+dimension_reference:
+  document: 0.2A 250VACGlass Tube Fuse datasheet (C3128 provenance)
+  notes: 5.2 x 20 mm glass tube fuse (nominal 5x20), clip-mounted span.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 6.5
+  length: 20.0
+  width: 5.2
 distributors:
 - key: lcsc
   part_number: C3128
@@ -12,6 +19,16 @@ distributors:
   part_number: C3128
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/XuchengElec-0_2A_250VACGlass_TubeFuse/C3128
+electrical:
+  current_rating: 200mA
+  device_type: one-shot fuse
+  interrupt_rating: 35A
+  mounting: clip-mounted 5x20 glass tube (companion clips C3130)
+  operating_temperature: -40 to +85 C
+  resettable: false
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_fuse_5_2_x_20_mm_glass_plugin_disposable_xucheng_elec_0_2a_250vacglass_tube_fuse/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact Xucheng row added under the fuse family lock on the
     5_2_x_20_mm_glass_plugin body introduced at C3117''s intake; this current rating
@@ -21,11 +38,12 @@ jlcpcb_selection:
     reviewed preferred house choice; ratings come straight off the page. Rating comparison
     from the staged capture: package below, stock below recorded as observed. Stock
     1818 recorded as observed. Edits made under the fuse family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/XuchengElec-0_2A_250VACGlass_TubeFuse/C3128
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: SMT Assembly
@@ -49,11 +67,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: two-terminal fuse mapped to
+    the KiCad Device:Fuse master (both pins passive, no polarity) and the Fuseholder_Littelfuse_100_series_5x20mm
+    footprint master with the body size cross-checked against the JLC package label;
+    renders inherit the pipeline verified on the completed passive exemplars and were
+    spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Fuse:Fuseholder_Littelfuse_100_series_5x20mm
+  symbol: Device:Fuse
 lcsc_search: 5_2_x_20_mm_glass_plugin disposable xucheng elec 0 2a 250vacglass tube
   fuse fuse
 manufacturer: Xucheng Elec
@@ -63,6 +86,8 @@ manufacturers:
 name_proper: Fuse 0.2A 250VACGlass Tube Fuse 5 2 X 20 MM GLASS PLUGIN
 name_readable: Fuse 0.2A 250VACGlass Tube Fuse 5 2 X 20 MM GLASS PLUGIN
 name_short: Fuse 0.2A 250VACGlass Tube Fuse 5 2 X 20 MM GLASS PLUGIN
+package_name_manufacturer: 5.2 x 20 mm glass tube fuse (nominal 5x20), clip-mounted
+  span
 part_id: P1
 part_number_jlcpcb: C3128
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/XuchengElec-0_2A_250VACGlass_TubeFuse/C3128
@@ -74,7 +99,21 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Xucheng Elec
   part_number: 0.2A 250VACGlass Tube Fuse
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/XuchengElec-0_2A_250VACGlass_TubeFuse/C3128
+research_notes:
+- The official JLC page lists Xucheng Elec 0.2A 250VACGlass Tube Fuse (C3128); identity
+  and ratings observed live at intake.
+- Mapped to the KiCad Device:Fuse master and the Fuse:Fuseholder_Littelfuse_100_series_5x20mm
+  footprint master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

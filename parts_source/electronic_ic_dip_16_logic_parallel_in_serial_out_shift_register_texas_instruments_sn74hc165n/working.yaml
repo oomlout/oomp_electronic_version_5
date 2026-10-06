@@ -1,8 +1,17 @@
 category: logic
 category_name: Logic
+datasheet_url: https://www.ti.com/lit/ds/symlink/sn74hc165.pdf
+dimension_reference:
+  document: SN74HC165N datasheet (C2909)
+  notes: Body outline per the Package_DIP:DIP-16_W7.62mm master geometry; pinning
+    cross-checked against the KiCad 74xx:74HC165 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 3.3
+  length: 21.3
+  width: 6.35
 distributors:
 - key: lcsc
   part_number: C2909
@@ -12,6 +21,15 @@ distributors:
   part_number: C2909
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC165N/C2909
+electrical:
+  device_type: parallel in serial out shift register
+  logic_family: 74HC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 2.0-6.0 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_dip_16_logic_parallel_in_serial_out_shift_register_texas_instruments_sn74hc165n/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact device row appended to the unmatched_ics list in working_oomp_populate_ic.py
     under the ic family lock (second batch of DIP-body logic rows; existing exact-row
@@ -21,11 +39,13 @@ jlcpcb_selection:
     siblings. Rating comparison from the staged capture: package below, stock below
     recorded as observed. Stock 2137 recorded as observed. Edits made under the ic
     family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC165N/C2909
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -57,11 +77,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xx:74HC165 master (numbers and electrical types cross-checked
+    at plan time) and the DIP-16 footprint master; renders inherit the pipeline verified
+    on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_DIP:DIP-16_W7.62mm
+  symbol: 74xx:74HC165
 lcsc_search: SN74HC165N
 manufacturer: Texas Instruments
 manufacturers:
@@ -70,6 +95,7 @@ manufacturers:
 name_proper: IC SN74HC165N DIP 16
 name_readable: IC SN74HC165N DIP 16
 name_short: IC SN74HC165N DIP 16
+package_name_manufacturer: PDIP-16 (7.62 mm row spacing)
 part_id: U1
 part_number_jlcpcb: C2909
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC165N/C2909
@@ -81,7 +107,81 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Texas Instruments
   part_number: SN74HC165N
+pins:
+  pin_1:
+    name: ~{PL}
+    number: '1'
+    type: in
+  pin_10:
+    name: DS
+    number: '10'
+    type: in
+  pin_11:
+    name: D0
+    number: '11'
+    type: in
+  pin_12:
+    name: D1
+    number: '12'
+    type: in
+  pin_13:
+    name: D2
+    number: '13'
+    type: in
+  pin_14:
+    name: D3
+    number: '14'
+    type: in
+  pin_15:
+    name: ~{CE}
+    number: '15'
+    type: in
+  pin_16:
+    name: VCC
+    number: '16'
+    type: pwr
+  pin_2:
+    name: CP
+    number: '2'
+    type: in
+  pin_3:
+    name: D4
+    number: '3'
+    type: in
+  pin_4:
+    name: D5
+    number: '4'
+    type: in
+  pin_5:
+    name: D6
+    number: '5'
+    type: in
+  pin_6:
+    name: D7
+    number: '6'
+    type: in
+  pin_7:
+    name: ~{Q7}
+    number: '7'
+    type: out
+  pin_8:
+    name: GND
+    number: '8'
+    type: pwr
+  pin_9:
+    name: Q7
+    number: '9'
+    type: out
 product_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC165N/C2909
+research_notes:
+- JLC house-parts queue row C2909 (Texas Instruments SN74HC165N, DIP-16, 16 pins)
+  verified at intake; family batch integration C2909.
+- Downloaded the official Texas Instruments 74HC165 data sheet directly from ti.com
+  into this part.
+- Pin table generated from the KiCad 74xx:74HC165 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 16-pin package
+  count.
+- Footprint Package_DIP:DIP-16_W7.62mm verified present in the KiCad 10 library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

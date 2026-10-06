@@ -22,10 +22,21 @@ research:
   - https://jlcpcb.com/partdetail/1955-CL10B221KB8NNNC/C1603
   webpage_capture: parts_source/electronic_capacitor_0603_220_pico_farad/web_page_distributor_jlc.txt
   evidence_notes:
+  - 'Full pass 2026-10-01: live page reconfirmed (C1603, Samsung Electro-
+    Mechanics, CL10B221KB8NNNC, Basic, In Stock 760,036); the page datasheet
+    link resolves to the same stable URL recorded at intake. The shared
+    Samsung MLCC general catalogue (November 2015, C1603 provenance sha256
+    96baebe4... in datasheet_source.yaml, physical PDF kept in the 0402
+    100 nF anchor folder via oomp_datasheet_common_with) covers the exact
+    suffix: part numbering page 4 decodes CL / 10 = 0603 / B = X7R / 221 =
+    220 pF / K = +-10% / B = 50 V / 8 = 0.80 mm / N Ni-barrier / C 7-inch
+    reel; the X7R Product Lineup table page 25 row 53 lists CL10B221KB8NNN +
+    packaging code = 220 pF, 50 V, +-10%, 1.60 x 0.80 mm, T max 0.90 mm;
+    X7R class -55 to +125 C, +-15% (page 5).'
   - Live JLC page displayed Basic, Samsung Electro-Mechanics, CL10B221KB8NNNC, C1603,
     0603, 220pF, 50V, X7R and +/-10% on 2026-09-24.
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/1955-CL10B221KB8NNNC/C1603
   tier: basic
   tier_label_observed: Basic
@@ -35,13 +46,23 @@ jlc_selection:
   compatibility_notes: New generic 0603 220 pF capacitor. The live Basic Samsung C1603
     choice is a 50 V X7R +/-10% MLCC matching value and package. The purchase preference
     carries those ratings; project voltage margin and DC-bias behavior remain for
-    the full pass.
+    the full pass. Full-pass datasheet evidence confirms the identity and ratings.
   ratings:
     Voltage Rating: 50V
     Tolerance: ±10%
     Capacitance: 220pF
     Temperature Coefficient: X7R
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared, C1603 provenance)
+    ordering_coverage:
+    - 25
+    - 4
+    dimensions:
+    - 25
+    - 4
+    electrical_characteristics:
+    - 5
+    - 25
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh. data/working_svg_square_pins.png hero titled Capacitor 220 pF 0603 with terminals 1 left and 2 right, non-polarized symmetric body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png: 1.6 x 0.8 mm body with arrows, matching the Samsung 0603/1608 nominals. data/kicad manifest complete with Device:C_Small symbol and Capacitor_SMD:C_0603_1608Metric machine + Pad1.08x0.95mm_HandSolder hand footprints (same masters verified on the C1588 sibling). README.md: CL10B221KB8NNNC part number, LCSC/JLC C1603 links, pin table, datasheet link resolving to data/datasheet.pdf (the shared Samsung MLCC general catalogue, 84 pages). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

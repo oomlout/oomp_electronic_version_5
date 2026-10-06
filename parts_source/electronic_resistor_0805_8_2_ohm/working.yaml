@@ -1,6 +1,18 @@
 category: resistor
 category_name: Resistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588934353430171648-C4403.pdf
+dimension_reference:
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy, C4403 provenance)
+  notes: 'Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 8.2 Ohm;
+    resistance range page 4 covers the 0805 family; dimension table page 4: 0805 L
+    2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.'
+  pages:
+  - 2
+  - 3
+  - 4
 dimensions_mm:
+  height: 0.55
   length: 2.0
   width: 1.25
 distributors:
@@ -12,6 +24,17 @@ distributors:
   part_number: C4403
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/RALEC-RTT058R20FTP/C4403
+electrical:
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/8 W (125 mW) at 70 C
+  rated_voltage: 150 V
+  resistance: 8.2 Ohm (8.2 Ohm)
+  temperature_coefficient: +-200 ppm/C
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0805_8_2_ohm/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: this size/value combination did not
     exist in the resistor E12 grid (checked against the built ID list before adding);
@@ -21,11 +44,19 @@ jlcpcb_selection:
     off the page. Rating comparison from the staged capture: package below, stock
     below recorded as observed. Stock 17 recorded as observed. Edits made under the
     resistor family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
+    marking:
+    - 3
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/RALEC-RTT058R20FTP/C4403
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: SMT Assembly
@@ -50,9 +81,13 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0805 resistor template (Device:R_Small, Resistor_SMD:R_0805_2012Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder
   machine_solder: Resistor_SMD:R_0805_2012Metric
   symbol: Device:R_Small
 lcsc_search: 0805 8.2Ω
@@ -63,6 +98,8 @@ manufacturers:
 name_proper: Resistor 8.2 Ohm 0805
 name_readable: Resistor 8.2 Ohm 0805
 name_short: Resistor 8.2 Ohm 0805
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
+package_name_manufacturer: 0805 (2012 metric)
 part_id: R1
 part_number_jlcpcb: C4403
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/RALEC-RTT058R20FTP/C4403
@@ -74,7 +111,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: RALEC
   part_number: RTT058R20FTP
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/RALEC-RTT058R20FTP/C4403
+research_notes:
+- 'The official JLC page lists Extended RALEC RTT058R20FTP (C4403): 8.2 Ohm (8.2 Ohm),
+  1/8 W, +-1%, +-200 ppm/C in 0805; identity and ratings observed live at intake 2026-09-30.'
+- 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+  = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 8.2 Ohm; the resistance-range
+  table page 4 covers the 0805 family.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

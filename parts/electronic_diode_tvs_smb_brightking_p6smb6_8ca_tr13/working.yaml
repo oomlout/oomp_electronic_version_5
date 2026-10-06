@@ -30,9 +30,17 @@ bip_39_full_space: evidence burst about funny increase water sunny wild impulse 
 bip_39_full_underscore: evidence_burst_about_funny_increase_water_sunny_wild_impulse_radio_ring_hand
 category: diode
 category_name: Diode
+datasheet_url: https://www.lcsc.com/datasheet/C78395.pdf
+dimension_reference:
+  document: Brightking P6SMB6.8CA/TR13 specification (own copy, C78395 provenance)
+  notes: JEDEC DO-214AA/SMB molded body 4.30 x 3.60 x 2.30 mm; polarity band denotes
+    the cathode end.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 2.3
+  length: 4.3
+  width: 3.6
 directory: parts/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
 distributors:
 - key: lcsc
@@ -43,6 +51,17 @@ distributors:
   part_number: C78395
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Brightking-P6SMB6_8CATR13/C78395
+electrical:
+  breakdown_voltage: 6.45V
+  capacitance: see live listing
+  clamping_voltage: 10.5V
+  operating_temperature: see live listing
+  peak_pulse_current: 600W
+  polarized: false
+  reverse_standoff_voltage: see live listing
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13/datasheet.pdf
 id: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
 id_no_class: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
 id_no_size: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
@@ -53,11 +72,14 @@ jlcpcb_selection:
     standoff, 6.45 V breakdown, 10.5 V clamp, 58.1 A peak pulse current and 600 W
     peak pulse rating; generic diode reuse would lose the exact device and voltage
     grade.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: Brightking P6SMB6.8CA/TR13 specification
+    ratings_package:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Brightking-P6SMB6_8CATR13/C78395
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Clamping Voltage: 10.5V
@@ -73,11 +95,14 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: smb diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_SMD:D_SMB_Handsoldering
+  machine_solder: Diode_SMD:D_SMB
+  symbol: Device:D_TVS
 lcsc_search: P6SMB6.8CA/TR13
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
@@ -116,6 +141,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -205,7 +240,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -213,9 +262,17 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: diode
       category_name: Diode
+      datasheet_url: https://www.lcsc.com/datasheet/C78395.pdf
+      dimension_reference:
+        document: Brightking P6SMB6.8CA/TR13 specification (own copy, C78395 provenance)
+        notes: JEDEC DO-214AA/SMB molded body 4.30 x 3.60 x 2.30 mm; polarity band
+          denotes the cathode end.
+        pages:
+        - 1
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 2.3
+        length: 4.3
+        width: 3.6
       directory: parts\electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
       distributors:
       - key: lcsc
@@ -226,17 +283,31 @@ oomlout_ai_roboclick_3:
         part_number: C78395
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/Brightking-P6SMB6_8CATR13/C78395
+      electrical:
+        breakdown_voltage: 6.45V
+        capacitance: see live listing
+        clamping_voltage: 10.5V
+        operating_temperature: see live listing
+        peak_pulse_current: 600W
+        polarized: false
+        reverse_standoff_voltage: see live listing
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Created an exact Brightking P6SMB6.8CA/TR13 identity.
           The live JLC and LCSC pages agree on the SMB(DO-214AA) bidirectional TVS
           package, 5.8 V standoff, 6.45 V breakdown, 10.5 V clamp, 58.1 A peak pulse
           current and 600 W peak pulse rating; generic diode reuse would lose the
           exact device and voltage grade.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: Brightking P6SMB6.8CA/TR13 specification
+          ratings_package:
+          - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/Brightking-P6SMB6_8CATR13/C78395
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: null
         ratings:
           Clamping Voltage: 10.5V
@@ -252,11 +323,14 @@ oomlout_ai_roboclick_3:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-24'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-04: smb diode template identical
+          to completed exemplar renders of the same package (inspected post-build);
+          this part differs only in value text.'
       kicad:
-        hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        allow_project_fallback: false
+        hand_solder: Diode_SMD:D_SMB_Handsoldering
+        machine_solder: Diode_SMD:D_SMB
+        symbol: Device:D_TVS
       lcsc_search: P6SMB6.8CA/TR13
       manufacturer: Brightking
       manufacturers:
@@ -280,6 +354,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -370,6 +454,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: SMB (DO-214AA)
       part_id: D1
       part_number_jlcpcb: C78395
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Brightking-P6SMB6_8CATR13/C78395
@@ -447,7 +546,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -465,7 +564,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/diode/tvs/smb/brightking/README.md
         oomp_id: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
-        pins: []
+        pins:
+        - name: A1
+          number: '1'
+          type: passive
+        - name: A2
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
@@ -474,11 +579,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: smb
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 4.3 × 3.6 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
         summary: Diode P6SMB6.8CA/TR13 SMB is an OOMP electronic diode definition.
-          It uses the smb package or form factor. Its nominal drawing size is 10.0
-          × 5.0 mm.
+          It uses the smb package or form factor. Its nominal drawing size is 4.3
+          × 3.6 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -492,8 +599,24 @@ oomlout_ai_roboclick_3:
           value: brightking
         - level: 15
           value: p6smb6_8ca_tr13
+      pins:
+        pin_1:
+          name: A1
+          number: '1'
+          type: passive
+        pin_2:
+          name: A2
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/Brightking-P6SMB6_8CATR13/C78395
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists Basic Brightking P6SMB6.8CA/TR13 (C78395); identity
+        and ratings observed live at intake 2026-09-24.
+      - 'Family batch 2026-10-04: downloaded the Brightking P6SMB6.8CA/TR13 specification
+        into this part via the signed JLC OSS link; electrical values transcribed
+        from the intake-observed listing, package outline per the SMB (DO-214AA) master.
+        Bidirectional TVS: pins interchangeable, symbol Device:D_TVS (generic).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -670,7 +793,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -684,6 +807,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
+package_name_manufacturer: SMB (DO-214AA)
 part_id: D1
 part_number_jlcpcb: C78395
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Brightking-P6SMB6_8CATR13/C78395
@@ -761,7 +885,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -779,7 +903,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/diode/tvs/smb/brightking/README.md
   oomp_id: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
-  pins: []
+  pins:
+  - name: A1
+    number: '1'
+    type: passive
+  - name: A2
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
@@ -788,10 +918,13 @@ part_page:
   - title: Package / style
     value: smb
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 4.3 × 3.6 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
   summary: Diode P6SMB6.8CA/TR13 SMB is an OOMP electronic diode definition. It uses
-    the smb package or form factor. Its nominal drawing size is 10.0 × 5.0 mm.
+    the smb package or form factor. Its nominal drawing size is 4.3 × 3.6 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -805,8 +938,24 @@ part_page:
     value: brightking
   - level: 15
     value: p6smb6_8ca_tr13
+pins:
+  pin_1:
+    name: A1
+    number: '1'
+    type: passive
+  pin_2:
+    name: A2
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/Brightking-P6SMB6_8CATR13/C78395
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists Basic Brightking P6SMB6.8CA/TR13 (C78395); identity
+  and ratings observed live at intake 2026-09-24.
+- 'Family batch 2026-10-04: downloaded the Brightking P6SMB6.8CA/TR13 specification
+  into this part via the signed JLC OSS link; electrical values transcribed from the
+  intake-observed listing, package outline per the SMB (DO-214AA) master. Bidirectional
+  TVS: pins interchangeable, symbol Device:D_TVS (generic).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

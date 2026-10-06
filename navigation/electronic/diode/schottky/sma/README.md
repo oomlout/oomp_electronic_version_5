@@ -1,7 +1,7 @@
 # Electronic / Diode / Schottky / Sma
 
 [Up one level](../README.md)
-This category contains 4 parts in total.
+This category contains 7 parts in total.
 
 ## Categories
 

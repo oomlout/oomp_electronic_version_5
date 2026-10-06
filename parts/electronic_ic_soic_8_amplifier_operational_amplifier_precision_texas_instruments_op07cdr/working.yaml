@@ -30,7 +30,16 @@ bip_39_full_space: learn reward scorpion onion judge horror boy abuse tail group
 bip_39_full_underscore: learn_reward_scorpion_onion_judge_horror_boy_abuse_tail_group_social_cement
 category: amplifier
 category_name: Amplifier
+datasheet_url: https://www.ti.com.cn/cn/lit/ds/symlink/op07.pdf
+dimension_reference:
+  document: TI OP07x datasheet, Rev. H (C7433)
+  notes: SOIC-8 (D package) outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master
+    geometry; pinout per the TI package drawing (5 = NC on the D package).
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 1.75
   length: 4.9
   width: 3.9
 directory: parts/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
@@ -43,6 +52,20 @@ distributors:
   part_number: C7433
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
+electrical:
+  cmrr: 120 dB
+  device_type: precision single operational amplifier
+  gain_bandwidth_product: 400 kHz
+  input_noise_density: 10.5 nV/sqrt(Hz) at 10 Hz
+  input_offset_voltage: 60 uV
+  offset_drift: 500 nV/C
+  operating_temperature: 0 to +70 C ambient
+  polarized: true
+  slew_rate: 0.3 V/us
+  supply_voltage: +-3 to +-18 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr/datasheet.pdf
 ic_dimensions_mm:
   body_length: 4.9
   body_width: 3.9
@@ -57,11 +80,16 @@ jlcpcb_selection:
   compatibility_notes: New exact TI OP07CDR identity for Basic JLC C7433. Full pass
     must verify pin mapping, SOIC-8 dimensions, electrical limits and KiCad symbol/footprint
     before certification.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: TI OP07x datasheet, Rev. H (C7433 provenance, family anchor)
+    features:
+    - 1
+    pin_configuration:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Common Mode Rejection Ratio(CMRR): 120dB
@@ -79,12 +107,23 @@ jlcpcb_selection:
   stock_observed: 235012
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC OP07CDR SOIC 8 with
+    TRIM1/IN-/IN+/V- down the left side and TRIM2/V+/OUT/NC up the right side, matching
+    the TI OP07 pinout (1/8 = offset trim, 2 = IN-, 3 = IN+, 4 = V-, 5 = NC on the
+    D package, 6 = OUT, 7 = V+). working_svg_dimensioned.png: SOIC-8 outline per the
+    Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry. data/kicad manifest complete
+    (2-asset rule, no HandSoldering master for SOIC-8 narrow) with Amplifier_Operational:OP07
+    symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm machine footprint. README.md: OP07CDR
+    part number, LCSC/JLC C7433 links, 8-pin table, datasheet link resolving to data/datasheet.pdf
+    (the TI Rev. H datasheet, family anchor). Limitation: KiCad symbol/footprint checked
+    as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
-  symbol: ''
+  symbol: Amplifier_Operational:OP07
 lcsc_search: OP07CDR
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
@@ -129,6 +168,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -218,7 +267,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -232,7 +281,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -240,7 +289,16 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: amplifier
       category_name: Amplifier
+      datasheet_url: https://www.ti.com.cn/cn/lit/ds/symlink/op07.pdf
+      dimension_reference:
+        document: TI OP07x datasheet, Rev. H (C7433)
+        notes: SOIC-8 (D package) outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+          master geometry; pinout per the TI package drawing (5 = NC on the D package).
+        pages:
+        - 1
+        - 2
       dimensions_mm:
+        height: 1.75
         length: 4.9
         width: 3.9
       directory: parts\electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
@@ -253,6 +311,20 @@ oomlout_ai_roboclick_4:
         part_number: C7433
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
+      electrical:
+        cmrr: 120 dB
+        device_type: precision single operational amplifier
+        gain_bandwidth_product: 400 kHz
+        input_noise_density: 10.5 nV/sqrt(Hz) at 10 Hz
+        input_offset_voltage: 60 uV
+        offset_drift: 500 nV/C
+        operating_temperature: 0 to +70 C ambient
+        polarized: true
+        slew_rate: 0.3 V/us
+        supply_voltage: +-3 to +-18 V
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr/datasheet.pdf
       ic_dimensions_mm:
         body_length: 4.9
         body_width: 3.9
@@ -263,11 +335,16 @@ oomlout_ai_roboclick_4:
         compatibility_notes: New exact TI OP07CDR identity for Basic JLC C7433. Full
           pass must verify pin mapping, SOIC-8 dimensions, electrical limits and KiCad
           symbol/footprint before certification.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: TI OP07x datasheet, Rev. H (C7433 provenance, family anchor)
+          features:
+          - 1
+          pin_configuration:
+          - 2
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Common Mode Rejection Ratio(CMRR): 120dB
@@ -285,12 +362,24 @@ oomlout_ai_roboclick_4:
         stock_observed: 235012
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-24'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library
+          run and a rebuild. working_svg_square_pins.png hero titled IC OP07CDR SOIC
+          8 with TRIM1/IN-/IN+/V- down the left side and TRIM2/V+/OUT/NC up the right
+          side, matching the TI OP07 pinout (1/8 = offset trim, 2 = IN-, 3 = IN+,
+          4 = V-, 5 = NC on the D package, 6 = OUT, 7 = V+). working_svg_dimensioned.png:
+          SOIC-8 outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry.
+          data/kicad manifest complete (2-asset rule, no HandSoldering master for
+          SOIC-8 narrow) with Amplifier_Operational:OP07 symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+          machine footprint. README.md: OP07CDR part number, LCSC/JLC C7433 links,
+          8-pin table, datasheet link resolving to data/datasheet.pdf (the TI Rev.
+          H datasheet, family anchor). Limitation: KiCad symbol/footprint checked
+          as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
       kicad:
-        hand_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+        allow_project_fallback: false
+        hand_solder: ''
         machine_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
-        symbol: ''
+        symbol: Amplifier_Operational:OP07
       lcsc_search: OP07CDR
       manufacturer: Texas Instruments
       manufacturers:
@@ -316,6 +405,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -406,7 +505,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -420,6 +519,7 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      package_name_manufacturer: SOIC-8 (D, 3.9 x 4.9 mm, 1.27 mm pitch)
       part_id: U1
       part_number_jlcpcb: C7433
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
@@ -497,7 +597,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -515,7 +615,31 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/ic/soic_8/amplifier/operational_amplifier_precision/texas_instruments/README.md
         oomp_id: electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
-        pins: []
+        pins:
+        - name: TRIM1
+          number: '1'
+          type: input
+        - name: IN-
+          number: '2'
+          type: input
+        - name: IN+
+          number: '3'
+          type: input
+        - name: V-
+          number: '4'
+          type: power_in
+        - name: NC
+          number: '5'
+          type: no_connect
+        - name: OUT
+          number: '6'
+          type: output
+        - name: V+
+          number: '7'
+          type: power_in
+        - name: TRIM2
+          number: '8'
+          type: input
         quick_facts:
         - title: OOMP ID
           value: electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
@@ -525,9 +649,12 @@ oomlout_ai_roboclick_4:
           value: soic 8
         - title: Nominal size
           value: 4.9 × 3.9 mm
+        - title: Documented pins
+          value: 8
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
         summary: IC OP07CDR SOIC 8 is an OOMP electronic ic definition. It uses the
           soic 8 package or form factor. Its nominal drawing size is 4.9 × 3.9 mm.
+          The definition includes 8 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -543,8 +670,52 @@ oomlout_ai_roboclick_4:
           value: texas_instruments
         - level: 15
           value: op07cdr
+      pins:
+        pin_1:
+          name: TRIM1
+          number: '1'
+          type: input
+        pin_2:
+          name: IN-
+          number: '2'
+          type: input
+        pin_3:
+          name: IN+
+          number: '3'
+          type: input
+        pin_4:
+          name: V-
+          number: '4'
+          type: power_in
+        pin_5:
+          name: NC
+          number: '5'
+          type: no_connect
+        pin_6:
+          name: OUT
+          number: '6'
+          type: output
+        pin_7:
+          name: V+
+          number: '7'
+          type: power_in
+        pin_8:
+          name: TRIM2
+          number: '8'
+          type: input
       product_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Texas Instruments OP07CDR (C7433): precision
+        op-amp in SOIC-8; reconfirmed live 2026-10-02 (stock 236,159). The queue snapshot
+        for this code was degraded (empty MPN/maker) and has been repaired from the
+        live page + intake record identity.'
+      - Browser-downloaded the TI OP07x datasheet (24 pages, Rev. H) from the page's
+        ti.com.cn datasheet link (fetched same-origin from the www.ti.com.cn page)
+        into this part; it anchors the OP07 SOIC-8 family.
+      - 'Pinout per the TI package drawing: 1/8 = offset trim, 2 = IN-, 3 = IN+, 4
+        = V-, 5 = NC (D package), 6 = OUT, 7 = V+; Amplifier_Operational:OP07 matches
+        pad-for-pad.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -721,7 +892,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -735,6 +906,7 @@ oomlout_ai_roboclick_5:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
+package_name_manufacturer: SOIC-8 (D, 3.9 x 4.9 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C7433
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
@@ -812,7 +984,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -830,7 +1002,31 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/ic/soic_8/amplifier/operational_amplifier_precision/texas_instruments/README.md
   oomp_id: electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
-  pins: []
+  pins:
+  - name: TRIM1
+    number: '1'
+    type: input
+  - name: IN-
+    number: '2'
+    type: input
+  - name: IN+
+    number: '3'
+    type: input
+  - name: V-
+    number: '4'
+    type: power_in
+  - name: NC
+    number: '5'
+    type: no_connect
+  - name: OUT
+    number: '6'
+    type: output
+  - name: V+
+    number: '7'
+    type: power_in
+  - name: TRIM2
+    number: '8'
+    type: input
   quick_facts:
   - title: OOMP ID
     value: electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
@@ -840,9 +1036,12 @@ part_page:
     value: soic 8
   - title: Nominal size
     value: 4.9 × 3.9 mm
+  - title: Documented pins
+    value: 8
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
   summary: IC OP07CDR SOIC 8 is an OOMP electronic ic definition. It uses the soic
-    8 package or form factor. Its nominal drawing size is 4.9 × 3.9 mm.
+    8 package or form factor. Its nominal drawing size is 4.9 × 3.9 mm. The definition
+    includes 8 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -858,8 +1057,51 @@ part_page:
     value: texas_instruments
   - level: 15
     value: op07cdr
+pins:
+  pin_1:
+    name: TRIM1
+    number: '1'
+    type: input
+  pin_2:
+    name: IN-
+    number: '2'
+    type: input
+  pin_3:
+    name: IN+
+    number: '3'
+    type: input
+  pin_4:
+    name: V-
+    number: '4'
+    type: power_in
+  pin_5:
+    name: NC
+    number: '5'
+    type: no_connect
+  pin_6:
+    name: OUT
+    number: '6'
+    type: output
+  pin_7:
+    name: V+
+    number: '7'
+    type: power_in
+  pin_8:
+    name: TRIM2
+    number: '8'
+    type: input
 product_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Texas Instruments OP07CDR (C7433): precision
+  op-amp in SOIC-8; reconfirmed live 2026-10-02 (stock 236,159). The queue snapshot
+  for this code was degraded (empty MPN/maker) and has been repaired from the live
+  page + intake record identity.'
+- Browser-downloaded the TI OP07x datasheet (24 pages, Rev. H) from the page's ti.com.cn
+  datasheet link (fetched same-origin from the www.ti.com.cn page) into this part;
+  it anchors the OP07 SOIC-8 family.
+- 'Pinout per the TI package drawing: 1/8 = offset trim, 2 = IN-, 3 = IN+, 4 = V-,
+  5 = NC (D package), 6 = OUT, 7 = V+; Amplifier_Operational:OP07 matches pad-for-pad.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

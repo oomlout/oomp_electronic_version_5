@@ -35,8 +35,19 @@ research:
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing KT-0603 row or C2286 assignment; the generic
     0603 red clear LED entry is untouched.
+  - 'Full pass 2026-10-02: live page reconfirmed (C2286, Hubei KENTO Elec, KT-0603R,
+    Basic, In Stock 4,835,213). New family member (first LED integration): browser-downloaded
+    the KENTO 0603-0.6 red-light approval specification (11 pages, 2018-12-06) from
+    the JLC page and imported it as this part and the LED family anchor (sha256 a3bac1cc...).
+    Features page 2: package 1.6 x 0.8 x 0.6 mm EIA STD, red, transparent planar lens;
+    absolute maximum page 3: Pd 40 mW, IFP 60 mA, IF 25 mA DC, VR 5 V, Topr/Tstg -40
+    to +85 C; electrical-optical page 3: luminous 145-300 mcd at IF = 20 mA, viewing
+    angle 120 deg, dominant wavelength 615-630 nm (peak 625-645), VF 1.8-2.4 V at
+    20 mA, IR 5 uA at VR = 5 V; BIN tables page 4. Polarity drawing page 2: green
+    corner = pad 2 (cathode), pad 1 = + (anode) - polarity trap vs the KiCad LED library
+    convention recorded in the extras and research notes.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
   tier: basic
   tier_label_observed: Basic
@@ -62,7 +73,27 @@ jlc_selection:
     Viewing Angle: 120°
     Voltage - Forward(Vf): 1.8V~2.4V
     Wavelength - Dominant: 615nm~630nm
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: KENTO 0603-0.6 red-light approval specification, 2018-12-06 (C2286 provenance,
+      family anchor)
+    features_dimensions:
+    - 2
+    absolute_maximum:
+    - 3
+    electrical_optical:
+    - 3
+    bin_tables:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled LED KT-0603R 0603 with A (anode) left
+    and K (cathode) right, the LED circle-and-bar symbol drawn inside the body, no
+    mirroring, no label overlap, no cropping. working_svg_dimensioned.png: 0603/1608
+    outline 1.6 x 0.8 mm per the KENTO profile drawing (page 2, height 0.6 mm recorded
+    in dimensions_mm). data/kicad manifest complete with Device:LED symbol and LED_SMD:LED_0603_1608Metric
+    machine + Pad1.05x0.95mm_HandSolder hand footprints. README.md: KT-0603R part
+    number, LCSC/JLC C2286 links, 2-pin table (A/K with the vendor polarity-trap note),
+    datasheet link resolving to data/datasheet.pdf (the KENTO approval specification,
+    family anchor). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG
+    plus s-expression text rather than in a KiCad GUI.'

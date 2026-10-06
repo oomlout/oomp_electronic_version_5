@@ -1,8 +1,18 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588902862562185216-C2749.pdf
+dimension_reference:
+  document: KM107M050F12RR0VH2FP0 datasheet (C2749 provenance)
+  notes: Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing;
+    polarity stripe/minus band marks the negative terminal per the datasheet outline
+    drawing.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 12.0
+  length: 8.0
+  width: 8.0
 distributors:
 - key: lcsc
   part_number: C2749
@@ -12,6 +22,18 @@ distributors:
   part_number: C2749
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/3130-KM107M050F12RR0VH2FP0/C2749
+electrical:
+  capacitance: 100 uF
+  dielectric: aluminum electrolytic
+  lifetime: 2000hrs@105 C
+  operating_temperature: -55 to +125 C
+  pin_spacing: 3.5 mm
+  polarized: true
+  rated_voltage: 50 V
+  tolerance: +-20%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_100_micro_farad_50_volt/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: this leaded-electrolytic size/value/voltage
     combination did not exist in working_oomp_populate_capacitor.py, reviewed_choices.json,
@@ -21,11 +43,13 @@ jlcpcb_selection:
     C2749 (KM107M050F12) is its first reviewed preferred house choice. Rating comparison
     from the staged capture: package and ratings below, stock below recorded as observed.
     Stock 168937 recorded as observed. Edits made under the capacitor family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/3130-KM107M050F12RR0VH2FP0/C2749
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -50,11 +74,17 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: two-terminal polarized capacitor
+    mapped to the KiCad Device:C_Polarized master (pin 1 positive, pin 2 negative)
+    and the CP_Radial_D8.0mm_P3.50mm footprint master with the case dimensions cross-checked
+    against the JLC package label Plugin,D8xL12mm; renders inherit the pipeline verified
+    on the completed passive exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Capacitor_THT:CP_Radial_D8.0mm_P3.50mm
+  symbol: Device:C_Polarized
 lcsc_search: 100uF 50V electrolytic
 manufacturer: CX(Dongguan Chengxing Elec)
 manufacturers:
@@ -63,6 +93,8 @@ manufacturers:
 name_proper: Capacitor 100 uF 50 V Electrolytic 8 mm diameter x 12 mm tall
 name_readable: Capacitor 100 uF 50 V Electrolytic 8 mm diameter x 12 mm tall
 name_short: Capacitor 100 uF 50 V Electrolytic 8 mm diameter x 12 mm tall
+package_name_manufacturer: Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5
+  mm pin spacing
 part_id: C1
 part_number_jlcpcb: C2749
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/3130-KM107M050F12RR0VH2FP0/C2749
@@ -74,7 +106,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: CX(Dongguan Chengxing Elec)
   part_number: KM107M050F12RR0VH2FP0
+pins:
+  pin_1:
+    name: positive
+    number: '1'
+    type: passive
+  pin_2:
+    name: negative
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/3130-KM107M050F12RR0VH2FP0/C2749
+research_notes:
+- The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) KM107M050F12RR0VH2FP0
+  (C2749); identity and ratings observed live at intake 2026-09-29.
+- Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized
+  master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05
+  family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

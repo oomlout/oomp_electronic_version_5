@@ -1,12 +1,14 @@
 # Electronic / LED / 3 Mm
 
 [Up one level](../README.md)
-This category contains 18 parts in total.
+This category contains 20 parts in total.
 
 ## Categories
 
 - [Blue](blue/README.md)
 - [Green](green/README.md)
+- [Infrared 850NM](infrared_850nm/README.md)
+- [Infrared 940NM](infrared_940nm/README.md)
 - [Red](red/README.md)
 - [White](white/README.md)
 - [Yellow](yellow/README.md)

@@ -1,8 +1,20 @@
 category: resistor
 category_name: Resistor
+datasheet_url: https://jlcpcb.com/partdetail/4D03WGJ0472T5E/C1980
+dimension_reference:
+  document: Uniroyal Chip Resistor Array Series specification, 2017/06/12 (C1980)
+  notes: '4D03 convex: L 3.20+-0.20 mm, W 1.60+-0.20 mm, T 0.50+-0.10 mm, pad pitch
+    P 0.80+-0.10 mm (page 5 dimensions table); equivalent circuit page 4; ratings
+    page 6.'
+  pages:
+  - 4
+  - 5
+  - 6
+  - 8
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 0.5
+  length: 3.2
+  width: 1.6
 distributors:
 - key: lcsc
   part_number: C1980
@@ -12,6 +24,18 @@ distributors:
   part_number: C1980
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2332-4D03WGJ0472T5E/C1980
+electrical:
+  operating_temperature: -55 to +155 C
+  overload_voltage: 300 V max
+  polarized: false
+  power: 1/16 W (62.5 mW) per element
+  rated_voltage: 50 V max working voltage
+  resistance: 4 x 4.7 kOhm (0472) isolated
+  temperature_coefficient: +-200 ppm/C (>=10 Ohm)
+  tolerance: +-5% (J)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_array_4_x_0603_convex_4700_ohm_8_pin/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Resistor network with no prior OOMP entry: added one explicit
     resistor_array family row electronic_resistor_array_4_x_0603_convex_4700_ohm_8_pin
@@ -19,11 +43,22 @@ jlcpcb_selection:
     new 4_x_0603_convex package token mirroring the existing 4_x_0402_convex convention
     (JLC 0603x4 = four 4.7 kohm elements in an 8-pin convex 0603 array). Created working_oomp_populate_resistor_array_extra.py
     carrying the reviewed-choices adapter and registered it in working_oomp_populate_extra_detail.py.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    dimensions:
+    - 5
+    document: Uniroyal Chip Resistor Array Series specification, 2017/06/12 (C1980
+      provenance, family anchor)
+    electrical_characteristics:
+    - 6
+    ordering_coverage:
+    - 4
+    - 8
+    pinout:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2332-4D03WGJ0472T5E/C1980
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Number of Pins: '8'
@@ -35,12 +70,25 @@ jlcpcb_selection:
   stock_observed: 2062975
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Resistor array 4700 Ohm
+    4 X 0603 Convex with pins R1.1/R2.1/R3.1/R4.1 on the left and R4.2/R3.2/R2.2/R1.2
+    on the right, matching the 4D03 datasheet equivalent circuit (R1 = 1-8, R2 = 2-7,
+    R3 = 3-6, R4 = 4-5). working_svg_dimensioned.png: 3.2 x 1.6 mm body with 4 pads
+    per side at 0.8 mm pitch, matching the Uniroyal convex dimensions table (page
+    5). data/kicad manifest complete with Device:R_Pack04_Split symbol and Resistor_SMD:R_Array_Convex_4x0603
+    machine footprint; no HandSolder variant exists for the array footprint and the
+    part declares hand_solder intentionally empty (agent now treats the 2-asset manifest
+    as complete for such parts). README.md: 4D03WGJ0472T5E part number, LCSC/JLC C1980
+    links, 8-pin table, datasheet link resolving to data/datasheet.pdf (the Uniroyal
+    array series specification, family anchor). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Resistor_SMD:R_Array_Convex_4x0603
+  symbol: Device:R_Pack04_Split
 lcsc_search: 0603 4.7kΩ resistor array
 manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
@@ -49,6 +97,7 @@ manufacturers:
 name_proper: Resistor array 4700 Ohm 4 X 0603 Convex
 name_readable: Resistor array 4700 Ohm 4 X 0603 Convex
 name_short: Resistor array 4700 Ohm 4 X 0603 Convex
+package_name_manufacturer: 4D03 (0603x4 convex, 3.20 x 1.60 mm, T 0.50 mm)
 part_id: P1
 part_number_jlcpcb: C1980
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2332-4D03WGJ0472T5E/C1980
@@ -60,7 +109,48 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: UNI-ROYAL(Uniroyal Elec)
   part_number: 4D03WGJ0472T5E
+pins:
+  pin_1:
+    name: R1.1
+    number: '1'
+    type: passive
+  pin_2:
+    name: R2.1
+    number: '2'
+    type: passive
+  pin_3:
+    name: R3.1
+    number: '3'
+    type: passive
+  pin_4:
+    name: R4.1
+    number: '4'
+    type: passive
+  pin_5:
+    name: R4.2
+    number: '5'
+    type: passive
+  pin_6:
+    name: R3.2
+    number: '6'
+    type: passive
+  pin_7:
+    name: R2.2
+    number: '7'
+    type: passive
+  pin_8:
+    name: R1.2
+    number: '8'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2332-4D03WGJ0472T5E/C1980
+research_notes:
+- 'The official JLC page lists Basic UNI-ROYAL 4D03WGJ0472T5E (C1980): 4 x 4.7 kOhm,
+  1/16 W, +-5%, +-200 ppm/C in 0603x4 convex; reconfirmed live 2026-10-01 (stock 2,009,626).'
+- Browser-downloaded the Uniroyal array series datasheet (14 pages, 2017/06/12) into
+  this part; it anchors the resistor-array family (no shared copy).
+- 'Pin pairing per the datasheet equivalent circuit and the KiCad masters: R1 = 1-8,
+  R2 = 2-7, R3 = 3-6, R4 = 4-5 (Device:R_Pack04_Split matches Resistor_SMD:R_Array_Convex_4x0603
+  pad-for-pad).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

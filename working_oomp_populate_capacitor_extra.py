@@ -156,6 +156,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_220_pico_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
         part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
         part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987688294137856-C1530.pdf"
         part["electrical"] = {
@@ -294,6 +295,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_4_7_nano_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
         part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
         part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987717859651584-C1538.pdf"
         part["electrical"] = {
@@ -357,6 +359,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_15_pico_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
         part["manufacturer"] = "YAGEO"
         part["part_number_manufacturer"] = "CC0402JRNPO9BN150"
         part["part_number_lcsc"] = "C106997"
@@ -446,6 +449,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_18_pico_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
         part["manufacturer"] = "YAGEO"
         part["part_number_manufacturer"] = "CC0402JRNPO9BN180"
         part["part_number_lcsc"] = "C106202"
@@ -535,6 +539,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_1_micro_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["manufacturer"] = "CCTC"
         part["part_number_manufacturer"] = "TCC0402X5R105M6R3AT"
         part["part_number_lcsc"] = "C2887021"
@@ -556,6 +561,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_22_pico_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
         part["manufacturer"] = "YAGEO"
         part["part_number_manufacturer"] = "CC0402JRNPO9BN220"
         part["part_number_lcsc"] = "C106203"
@@ -638,6 +644,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_2_2_micro_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["manufacturer"] = "Samsung Electro-Mechanics"
         part["part_number_manufacturer"] = "CL05A225MQ5NSNC"
         part["part_number_lcsc"] = "C12530"
@@ -701,6 +708,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0603_100_nano_farad_samsung_electro_mechanics_cl10b104kb8nnnc"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["generic_oomp_id"] = "electronic_capacitor_0603_100_nano_farad"
         part["category"] = "capacitor"
         part["manufacturer"] = "Samsung Electro-Mechanics"
@@ -725,6 +733,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0603_10_micro_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["manufacturer"] = "Samsung Electro-Mechanics"
         part["part_number_manufacturer"] = "CL10A106KP8NNNC"
         part["part_number_lcsc"] = "C19702"
@@ -746,6 +755,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0603_1_micro_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["manufacturer"] = "Samsung Electro-Mechanics"
         part["part_number_manufacturer"] = "CL10A105KA8NNNC"
         part["part_number_lcsc"] = "C5673"
@@ -790,6 +800,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0603_22_pico_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["manufacturer"] = "YAGEO"
         part["part_number_manufacturer"] = "CC0603JRNPO9BN220"
         part["part_number_lcsc"] = "C105620"
@@ -811,6 +822,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0603_2_2_micro_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["manufacturer"] = "Samsung Electro-Mechanics"
         part["part_number_manufacturer"] = "CL10A225KO8NNNC"
         part["part_number_lcsc"] = "C23630"
@@ -832,6 +844,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0603_47_pico_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["manufacturer"] = "YAGEO"
         part["part_number_manufacturer"] = "CC0603JRNPO9BN470"
         part["part_number_lcsc"] = "C105622"
@@ -853,6 +866,7 @@ def main(**kwargs):
     current = "electronic_capacitor_1206_47_micro_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["manufacturer"] = "Samsung Electro-Mechanics"
         part["part_number_manufacturer"] = "CL31A476MQHNNNE"
         part["part_number_lcsc"] = "C68361"
@@ -874,6 +888,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_100_nano_farad_50_volt"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["generic_oomp_id"] = "electronic_capacitor_0402_100_nano_farad"
         part["category"] = "capacitor"
         part["electrical"] = {
@@ -890,6 +905,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_4_7_micro_farad_10_volt_20_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["generic_oomp_id"] = "electronic_capacitor_0402_4_7_micro_farad"
         part["category"] = "capacitor"
         part["electrical"] = {
@@ -906,6 +922,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0603_4_7_micro_farad_16_volt"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["generic_oomp_id"] = "electronic_capacitor_0603_4_7_micro_farad"
         part["category"] = "capacitor"
         part["electrical"] = {
@@ -922,6 +939,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0603_10_micro_farad_25_volt_20_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
         part["generic_oomp_id"] = "electronic_capacitor_0603_10_micro_farad"
         part["category"] = "capacitor"
         part["electrical"] = {
@@ -961,6 +979,7 @@ def main(**kwargs):
     current = "electronic_capacitor_0402_1_nano_farad"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
         part["package_name_manufacturer"] = "0402 (1005 metric, CA thickness code)"
         part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987669373767680-C1523.pdf"
         part["electrical"] = {
@@ -1231,6 +1250,1562 @@ def main(**kwargs):
             "The official JLC page lists Basic Fenghua 0402CG470J500NT (C1567): 47 pF, 50 V, C0G, +-5% in 0402; reconfirmed live 2026-10-01.",
             "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 470 = 47 pF, J = +-5%, 500 = 50 V), and the C0G 0402 table covers 47 pF at 50 V.",
             "Non-polarized two-terminal chip; the standard built-in 0402 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1588 / Samsung CL10B102KB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 (1608 metric) / B = X7R /
+    # 102 = 1 nF / K = +-10% / B = 50 V / 8 = 0.80 mm thickness / N
+    # Ni-barrier termination / C = 7-inch reel; the X7R Product Lineup table
+    # page 25 row 51 lists CL10B102KB8NNN + packaging code = 1 nF, 50 V,
+    # +-10%, thickness max 0.90 mm (the page 11 range chart only reaches
+    # 0.1 uF, so the lineup table is the nF-range ordering evidence). X7R
+    # class -55 to +125 C, +-15% (page 5). Purchasing identity fields come
+    # from the registry.
+    current = "electronic_capacitor_0603_1_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706978444034048-C1588.pdf"
+        part["electrical"] = {
+            "capacitance": "1 nF (102)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1588)",
+            "pages": [4, 5, 25],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (lineup table T max 0.90 mm, page 25 row 51 lists CL10B102KB8NNN at 1 nF, 50 V, +-10%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10B102KB8NNNC (C1588): 1 nF, 50 V, X7R, +-10% in 0602..0603; reconfirmed live 2026-10-01.",
+            "The Samsung ordering decode covers the exact suffix, and the X7R Product Lineup table (page 25 row 51) lists CL10B102KB8NNN + packaging code C.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1594 / Fenghua 0603B151K500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # ordering code page 4 decodes 0603 / B = X7R / 151 = 150 pF / K = +-10% /
+    # 500 = 50 V / N nickel barrier / T 7-inch reel; the X7R 0603 table
+    # (page 10) lists 150 pF at 6.3-50 V with the DA thickness code 0.80
+    # +-0.10 mm. X7R temperature characteristic -55 to +125 C, +-15% (page 5).
+    current = "electronic_capacitor_0603_150_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, DA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987892963590144-C1594.pdf"
+        part["electrical"] = {
+            "capacitance": "150 pF (151)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+            "capacitance_measurement": "1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)",
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1594)",
+            "pages": [4, 5, 10],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness DA code 0.80+-0.10 mm. X7R 0603 table lists 150 pF at 50 V (page 10).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0603B151K500NT (C1594): 150 pF, 50 V, X7R, +-10% in 0603; reconfirmed live 2026-10-01.",
+            "The Fenghua ordering code decodes exactly to that suffix (B = X7R, 151 = 150 pF, K = +-10%, 500 = 50 V), and the X7R 0603 table covers 150 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1603 / Samsung CL10B221KB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / B = X7R / 221 = 220 pF /
+    # K = +-10% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C
+    # 7-inch reel; the X7R Product Lineup table page 25 row 53 lists
+    # CL10B221KB8NNN + packaging code = 220 pF, 50 V, +-10%, thickness max
+    # 0.90 mm. X7R class -55 to +125 C, +-15% (page 5). Purchasing identity
+    # fields come from the registry.
+    current = "electronic_capacitor_0603_220_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706990813036544-C1603.pdf"
+        part["electrical"] = {
+            "capacitance": "220 pF (221)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1603)",
+            "pages": [4, 5, 25],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (lineup table T max 0.90 mm, page 25 row 53 lists CL10B221KB8NNN at 220 pF, 50 V, +-10%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10B221KB8NNNC (C1603): 220 pF, 50 V, X7R, +-10% in 0603; reconfirmed live 2026-10-01.",
+            "The Samsung ordering decode covers the exact suffix, and the X7R Product Lineup table (page 25 row 53) lists CL10B221KB8NNN + packaging code C.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1604 / Fenghua 0603B222K500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # How-To-Order page 4 decodes 0603 / B = X7R / 222 = 2.2 nF / K = +-10% /
+    # 500 = 50 V / T 7-inch reel; product dimensions page 5 give the 0603
+    # 1608 metric body 1.60 +-0.10 x 0.80 +-0.10 mm, DA thickness 0.80
+    # +-0.10 mm; the X7R 0603 capacity/voltage table (page 10) lists 2.2 nF
+    # available at 6.3-50 V. Class II tests page 18. Purchasing identity
+    # fields come from the registry.
+    current = "electronic_capacitor_0603_2_2_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, DA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987928631816192-C1604.pdf"
+        part["electrical"] = {
+            "capacitance": "2.2 nF (222)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+            "capacitance_measurement": "1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)",
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1604)",
+            "pages": [4, 5, 10],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness DA code 0.80+-0.10 mm. X7R 0603 table lists 2.2 nF at 50 V (page 10).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0603B222K500NT (C1604): 2.2 nF, 50 V, X7R, +-10% in 0603; reconfirmed live 2026-10-01 (stock 1,147,702).",
+            "The Fenghua ordering code decodes exactly to that suffix (B = X7R, 222 = 2.2 nF, K = +-10%, 500 = 50 V), and the X7R 0603 table covers 2.2 nF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1613 / Samsung CL10B332KB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / B = X7R / 332 = 3.3 nF /
+    # K = +-10% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the X7R Product Lineup table page 26 lists CL10B332KB8NNN at
+    # 3.3 nF, 50 V, +-10%, 1.60 x 0.80 mm. X7R class -55 to +125 C, +-15%
+    # (page 5). Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_3_3_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707001003163648-C1613.pdf"
+        part["electrical"] = {
+            "capacitance": "3.3 nF (332)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1613)",
+            "pages": [4, 5, 26],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (lineup table T max 0.90 mm, page 26 lists CL10B332KB8NNN at 3.3 nF, 50 V, +-10%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10B332KB8NNNC (C1613): 3.3 nF, 50 V, X7R, +-10% in 0603; reconfirmed live 2026-10-01 (stock 222,204).",
+            "The Samsung ordering decode covers the exact suffix, and the X7R Product Lineup table (page 26) lists CL10B332KB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1620 / Fenghua 0603B471K500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # How-To-Order page 4 decodes 0603 / B = X7R / 471 = 470 pF / K = +-10% /
+    # 500 = 50 V / T 7-inch reel; product dimensions page 5 give the 0603
+    # 1608 metric body 1.60 +-0.10 x 0.80 +-0.10 mm, DA thickness 0.80
+    # +-0.10 mm; the X7R 0603 capacity/voltage table (page 10) lists 470 pF
+    # available at 6.3-50 V. Class II tests page 18. Purchasing identity
+    # fields come from the registry.
+    current = "electronic_capacitor_0603_470_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, DA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987977059115008-C1620.pdf"
+        part["electrical"] = {
+            "capacitance": "470 pF (471)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+            "capacitance_measurement": "1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)",
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1620)",
+            "pages": [4, 5, 10],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness DA code 0.80+-0.10 mm. X7R 0603 table lists 470 pF at 50 V (page 10).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0603B471K500NT (C1620): 470 pF, 50 V, X7R, +-10% in 0603; reconfirmed live 2026-10-01 (stock 909,094).",
+            "The Fenghua ordering code decodes exactly to that suffix (B = X7R, 471 = 470 pF, K = +-10%, 500 = 50 V), and the X7R 0603 table covers 470 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1622 / Samsung CL10B473KB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / B = X7R / 473 = 47 nF /
+    # K = +-10% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the X7R Product Lineup table page 26 lists CL10B473KB8NNN at
+    # 47 nF, 50 V, +-10%, 1.60 x 0.80 mm. X7R class -55 to +125 C, +-15%
+    # (page 5). Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_47_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707009119551488-C1622.pdf"
+        part["electrical"] = {
+            "capacitance": "47 nF (473)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1622)",
+            "pages": [4, 5, 26],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (lineup table T max 0.90 mm, page 26 lists CL10B473KB8NNN at 47 nF, 50 V, +-10%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10B473KB8NNNC (C1622): 47 nF, 50 V, X7R, +-10% in 0603; reconfirmed live 2026-10-01 (stock 829,693).",
+            "The Samsung ordering decode covers the exact suffix, and the X7R Product Lineup table (page 26) lists CL10B473KB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1623 / Samsung CL10B474KA8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / B = X7R / 474 = 470 nF /
+    # K = +-10% / A = 25 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the X7R Product Lineup table page 26 lists CL10B474KA8NNN at
+    # 470 nF, 25 V, +-10%, 1.60 x 0.80 mm. X7R class -55 to +125 C, +-15%
+    # (page 5). Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_470_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707013296939008-C1623.pdf"
+        part["electrical"] = {
+            "capacitance": "470 nF (474)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "25 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1623)",
+            "pages": [4, 5, 26],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (lineup table T max 0.90 mm, page 26 lists CL10B474KA8NNN at 470 nF, 25 V, +-10%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10B474KA8NNNC (C1623): 470 nF, 25 V, X7R, +-10% in 0603; reconfirmed live 2026-10-01 (stock 933,612).",
+            "The Samsung ordering decode covers the exact suffix (A = 25 V), and the X7R Product Lineup table (page 26) lists CL10B474KA8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1631 / Fenghua 0603B682K500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # How-To-Order page 4 decodes 0603 / B = X7R / 682 = 6.8 nF / K = +-10% /
+    # 500 = 50 V / T 7-inch reel; product dimensions page 5 give the 0603
+    # 1608 metric body 1.60 +-0.10 x 0.80 +-0.10 mm, DA thickness 0.80
+    # +-0.10 mm; the X7R 0603 capacity/voltage table (page 10) lists 6.8 nF
+    # available at 6.3-50 V. Class II tests page 18. Purchasing identity
+    # fields come from the registry.
+    current = "electronic_capacitor_0603_6_8_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, DA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988003076653056-C1631.pdf"
+        part["electrical"] = {
+            "capacitance": "6.8 nF (682)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+            "capacitance_measurement": "1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)",
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1631)",
+            "pages": [4, 5, 10],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness DA code 0.80+-0.10 mm. X7R 0603 table lists 6.8 nF at 50 V (page 10).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0603B682K500NT (C1631): 6.8 nF, 50 V, X7R, +-10% in 0603; reconfirmed live 2026-10-01 (stock 255,120).",
+            "The Fenghua ordering code decodes exactly to that suffix (B = X7R, 682 = 6.8 nF, K = +-10%, 500 = 50 V), and the X7R 0603 table covers 6.8 nF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1634 / Samsung CL10C100JB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / C = C0G / 100 = 10 pF /
+    # J = +-5% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the C0G Product Lineup table page 15 lists CL10C100JB8NNN at
+    # 10 pF, 50 V, +-5%, 1.60 x 0.80 mm; Class I (C0G) characteristics
+    # pages 5-7. Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_10_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707028643897344-C1634.pdf"
+        part["electrical"] = {
+            "capacitance": "10 pF (100)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1634)",
+            "pages": [4, 5, 15],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G lineup table page 15 lists CL10C100JB8NNN at 10 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10C100JB8NNNC (C1634): 10 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 1,267,842).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the C0G Product Lineup table (page 15) lists CL10C100JB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1644 / Samsung CL10C150JB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / C = C0G / 150 = 15 pF /
+    # J = +-5% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the C0G Product Lineup table page 15 lists CL10C150JB8NNN at
+    # 15 pF, 50 V, +-5%, 1.60 x 0.80 mm; Class I (C0G) characteristics
+    # pages 5-7. Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_15_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707088031322112-C1644.pdf"
+        part["electrical"] = {
+            "capacitance": "15 pF (150)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1644)",
+            "pages": [4, 5, 15],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G lineup table page 15 lists CL10C150JB8NNN at 15 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10C150JB8NNNC (C1644): 15 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 1,044,036).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the C0G Product Lineup table (page 15) lists CL10C150JB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1647 / Samsung CL10C180JB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / C = C0G / 180 = 18 pF /
+    # J = +-5% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the C0G Product Lineup table page 15 lists CL10C180JB8NNN at
+    # 18 pF, 50 V, +-5%, 1.60 x 0.80 mm; Class I (C0G) characteristics
+    # pages 5-7. Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_18_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707035342200832-C1647.pdf"
+        part["electrical"] = {
+            "capacitance": "18 pF (180)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1647)",
+            "pages": [4, 5, 15],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G lineup table page 15 lists CL10C180JB8NNN at 18 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10C180JB8NNNC (C1647): 18 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 422,542).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the C0G Product Lineup table (page 15) lists CL10C180JB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1648 / Samsung CL10C200JB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / C = C0G / 200 = 20 pF /
+    # J = +-5% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the C0G Product Lineup table page 15 lists CL10C200JB8NNN at
+    # 20 pF, 50 V, +-5%, 1.60 x 0.80 mm; Class I (C0G) characteristics
+    # pages 5-7. Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_20_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707039381590016-C1648.pdf"
+        part["electrical"] = {
+            "capacitance": "20 pF (200)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1648)",
+            "pages": [4, 5, 15],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G lineup table page 15 lists CL10C200JB8NNN at 20 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10C200JB8NNNC (C1648): 20 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 2,285,606).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the C0G Product Lineup table (page 15) lists CL10C200JB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1653 / Samsung CL10C220JB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / C = C0G / 220 = 22 pF /
+    # J = +-5% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the C0G Product Lineup table page 15 lists CL10C220JB8NNN at
+    # 22 pF, 50 V, +-5%, 1.60 x 0.80 mm; Class I (C0G) characteristics
+    # pages 5-7. Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_22_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707043273629696-C1653.pdf"
+        part["electrical"] = {
+            "capacitance": "22 pF (220)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1653)",
+            "pages": [4, 5, 15],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G lineup table page 15 lists CL10C220JB8NNN at 22 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10C220JB8NNNC (C1653): 22 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 2,978,606).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the C0G Product Lineup table (page 15) lists CL10C220JB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1658 / Fenghua 0603CG300J500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # How-To-Order page 4 decodes 0603 / CG = C0G / 300 = 30 pF / J = +-5% /
+    # 500 = 50 V / T 7-inch reel; product dimensions page 5 give the 0603
+    # 1608 metric body 1.60 +-0.10 x 0.80 +-0.10 mm; the C0G 0603
+    # capacity/voltage table (page 6) lists 30 pF at 10-50 V. Class I tests
+    # follow the catalogue Class I sections. Purchasing identity fields come
+    # from the registry.
+    current = "electronic_capacitor_0603_30_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988069187543040-C1658.pdf"
+        part["electrical"] = {
+            "capacitance": "30 pF (300)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1658)",
+            "pages": [4, 5, 6],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm. C0G 0603 capacity/voltage table lists 30 pF at 50 V (page 6).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0603CG300J500NT (C1658): 30 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 379,491).",
+            "The Fenghua ordering code decodes exactly to that suffix (CG = C0G, 300 = 30 pF, J = +-5%, 500 = 50 V), and the C0G 0603 table covers 30 pF at 50 V.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1663 / Samsung CL10C330JB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / C = C0G / 330 = 33 pF /
+    # J = +-5% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the C0G Product Lineup table page 15 lists CL10C330JB8NNN at
+    # 33 pF, 50 V, +-5%, 1.60 x 0.80 mm; Class I (C0G) characteristics
+    # pages 5-7. Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_33_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707052081807360-C1663.pdf"
+        part["electrical"] = {
+            "capacitance": "33 pF (330)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1663)",
+            "pages": [4, 5, 15],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G lineup table page 15 lists CL10C330JB8NNN at 33 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10C330JB8NNNC (C1663): 33 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 1,035,691).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the C0G Product Lineup table (page 15) lists CL10C330JB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1664 / Samsung CL10C331JB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / C = C0G / 331 = 330 pF /
+    # J = +-5% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the C0G Product Lineup table page 15 lists CL10C331JB8NNN at
+    # 330 pF, 50 V, +-5%, 1.60 x 0.80 mm; Class I (C0G) characteristics
+    # pages 5-7. Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_330_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707056565379072-C1664.pdf"
+        part["electrical"] = {
+            "capacitance": "330 pF (331)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1664)",
+            "pages": [4, 5, 15],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G lineup table page 15 lists CL10C331JB8NNN at 330 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10C331JB8NNNC (C1664): 330 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 915,152).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the C0G Product Lineup table (page 15) lists CL10C331JB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1671 / Samsung CL10C470JB8NNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 10 = 0603 / C = C0G / 470 = 47 pF /
+    # J = +-5% / B = 50 V / 8 = 0.80 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the C0G Product Lineup table page 15 lists CL10C470JB8NNN at
+    # 47 pF, 50 V, +-5%, 1.60 x 0.80 mm; Class I (C0G) characteristics
+    # pages 5-7. Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0603_47_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0603 (1608 metric, thickness code 8)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707064693805056-C1671.pdf"
+        part["electrical"] = {
+            "capacitance": "47 pF (470)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1671)",
+            "pages": [4, 5, 15],
+            "notes": "0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G lineup table page 15 lists CL10C470JB8NNN at 47 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL10C470JB8NNNC (C1671): 47 pF, 50 V, C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 677,714).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the C0G Product Lineup table (page 15) lists CL10C470JB8NNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1710 / Samsung CL21B103KBANNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 21 = 0805 / B = X7R / 103 = 10 nF /
+    # K = +-10% / B = 50 V / A = 1.25 mm thickness / N Ni-barrier / C 7-inch
+    # reel; the X7R Product Lineup table page 27 lists CL21B103KBANNN at
+    # 10 nF, 50 V, +-10%, 2.00 x 1.25 mm; X7R class -55 to +125 C, +-15%
+    # (page 5). Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_10_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, thickness code A)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706770727755776-C1710.pdf"
+        part["electrical"] = {
+            "capacitance": "10 nF (103)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1710)",
+            "pages": [4, 5, 27],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code A = 1.25 mm (X7R lineup table page 27 lists CL21B103KBANNN at 10 nF, 50 V, +-10%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL21B103KBANNNC (C1710): 10 nF, 50 V, X7R, +-10% in 0805; reconfirmed live 2026-10-01 (stock 2,273,417).",
+            "The Samsung ordering decode covers the exact suffix (21 = 0805, A = 1.25 mm thickness), and the X7R Product Lineup table (page 27) lists CL21B103KBANNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1729 / Samsung CL21B223KBANNNC full-stage technical data. The JLC
+    # datasheet link serves the same Samsung MLCC general catalogue
+    # (November 2015) already captured for the family - the downloaded PDF
+    # is byte-identical (sha256 96baebe4...) and is kept via
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad
+    # after a browser download confirmed it. Ordering decode page 4 covers
+    # the full suffix: CL / 21 = 0805 / B = X7R / 223 = 22 nF / K = +-10% /
+    # B = 50 V / A = 1.25 mm thickness / N Ni-barrier / C 7-inch reel.
+    # Gap recorded honestly: the X7R 0805 lineup table (page 27) lists the
+    # neighbouring KBA rows (10 nF, 12 nF, 15 nF, 33 nF, 39 nF, 47 nF at
+    # 50 V, 2.00 x 1.25 mm) but not 22 nF - this catalogue revision predates
+    # the variant. Identity rests on the suffix decode, the adjacent KBA
+    # 0805 rows, the X7R class spec (page 5), and the live JLC description.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_22_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, thickness code A)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706774496002048-C1729.pdf"
+        part["electrical"] = {
+            "capacitance": "22 nF (223)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1729)",
+            "pages": [4, 5, 27],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code A = 1.25 mm (decode page 4; neighbouring KBA 0805 rows on lineup page 27 share the 2.00 x 1.25 mm body).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL21B223KBANNNC (C1729): 22 nF, 50 V, X7R, +-10% in 0805; reconfirmed live 2026-10-01 (stock 234,075).",
+            "Browser-downloaded the JLC datasheet and verified it is byte-identical to the family catalogue (sha256 96baebe4...); no second copy kept (oomp_datasheet_common_with).",
+            "Known gap: the catalogue's X7R 0805 lineup table does not list 22 nF (this 2015 revision predates the variant); identity rests on the page 4 suffix decode, the adjacent KBA 0805 rows, and the live JLC description.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1739 / Fenghua 0805B333K500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # How-To-Order page 4 decodes 0805 / B = X7R / 333 = 33 nF / K = +-10% /
+    # 500 = 50 V / T 7-inch reel; the X7R 0805 capacity/voltage table
+    # (page 11) lists 33 nF at 6.3-50 V with thickness code EA = 0.80
+    # +-0.20 mm (body 2.00 x 1.25 mm, page 5). Class II tests page 16.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_33_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, EA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988558687850496-C1739.pdf"
+        part["electrical"] = {
+            "capacitance": "33 nF (333)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+            "capacitance_measurement": "1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)",
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1739)",
+            "pages": [4, 5, 11],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code EA = 0.80+-0.20 mm (X7R 0805 table page 11 lists 33 nF at 50 V).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0805B333K500NT (C1739): 33 nF, 50 V, X7R, +-10% in 0805; reconfirmed live 2026-10-01 (stock 61,921).",
+            "The Fenghua ordering code decodes exactly to that suffix (B = X7R, 333 = 33 nF, K = +-10%, 500 = 50 V), and the X7R 0805 table covers 33 nF at 50 V (thickness code EA).",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1743 / Fenghua 0805B471K500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # How-To-Order page 4 decodes 0805 / B = X7R / 471 = 470 pF / K = +-10% /
+    # 500 = 50 V / T 7-inch reel; the X7R 0805 capacity/voltage table
+    # (page 11) lists 470 pF at 6.3-50 V with thickness code EA = 0.80
+    # +-0.20 mm (body 2.00 x 1.25 mm, page 5). Class II tests page 16.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_470_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, EA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988574495776768-C1743.pdf"
+        part["electrical"] = {
+            "capacitance": "470 pF (471)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+            "capacitance_measurement": "1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)",
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1743)",
+            "pages": [4, 5, 11],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code EA = 0.80+-0.20 mm (X7R 0805 table page 11 lists 470 pF at 50 V).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0805B471K500NT (C1743): 470 pF, 50 V, X7R, +-10% in 0805; reconfirmed live 2026-10-01 (stock 296,120).",
+            "The Fenghua ordering code decodes exactly to that suffix (B = X7R, 471 = 470 pF, K = +-10%, 500 = 50 V), and the X7R 0805 table covers 470 pF at 50 V (thickness code EA).",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1744 / Fenghua 0805B472K500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # How-To-Order page 4 decodes 0805 / B = X7R / 472 = 4.7 nF / K = +-10% /
+    # 500 = 50 V / T 7-inch reel; the X7R 0805 capacity/voltage table
+    # (page 11) lists 4.7 nF at 6.3-50 V with thickness code EA = 0.80
+    # +-0.20 mm (body 2.00 x 1.25 mm, page 5). Class II tests page 16.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_4_7_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, EA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988577683853312-C1744.pdf"
+        part["electrical"] = {
+            "capacitance": "4.7 nF (472)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+            "capacitance_measurement": "1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)",
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1744)",
+            "pages": [4, 5, 11],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code EA = 0.80+-0.20 mm (X7R 0805 table page 11 lists 4.7 nF at 50 V).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 0805B472K500NT (C1744): 4.7 nF, 50 V, X7R, +-10% in 0805; reconfirmed live 2026-10-01 (stock 424,648).",
+            "The Fenghua ordering code decodes exactly to that suffix (B = X7R, 472 = 4.7 nF, K = +-10%, 500 = 50 V), and the X7R 0805 table covers 4.7 nF at 50 V (thickness code EA).",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1779 / Samsung CL21A475KAQNNNE full-stage technical data. The JLC
+    # datasheet link serves the same Samsung MLCC general catalogue
+    # (November 2015) already captured for the family - downloaded in the
+    # browser and verified byte-identical (sha256 96baebe4...), kept via
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad.
+    # Ordering decode page 4 covers the full suffix: CL / 21 = 0805 /
+    # A = X5R / 475 = 4.7 uF / K = +-10% / A = 25 V (rated voltage code
+    # table) / Q = 1.25 mm thickness (thickness code table) / N / N /
+    # E embossed 7-inch reel. Gap recorded honestly: the X5R 0805 lineup
+    # (page 20) lists the KB 50 V variant CL21A475KBQNNN with the same Q
+    # body but not the KA 25 V variant - this revision predates it.
+    # Identity rests on the decode, the adjacent KB row, the X5R class spec
+    # (page 5: -55 to +85 C, +-15%), and the live JLC description.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_4_7_micro_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, Q thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8556213325551206400-C1779.pdf"
+        part["electrical"] = {
+            "capacitance": "4.7 uF (475)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "25 V",
+            "dielectric": "X5R (Class II)",
+            "temperature_range": "-55 to +85 C",
+            "temperature_characteristic": "+-15% over the operating range (X5R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1779)",
+            "pages": [4, 5, 20],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code Q = 1.25 mm (page 4 thickness code table). X5R 0805 lineup page 20 lists the KB 50 V variant with the same Q body.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL21A475KAQNNNE (C1779): 4.7 uF, 25 V, X5R, +-10% in 0805; reconfirmed live 2026-10-01 (stock 3,052,932).",
+            "Browser-downloaded the JLC datasheet and verified it is byte-identical to the family catalogue (sha256 96baebe4...); no second copy kept (oomp_datasheet_common_with).",
+            "Known gap: the catalogue's X5R 0805 lineup lists the 50 V KB variant but not the 25 V KA variant (this 2015 revision predates it); identity rests on the page 4 decode (A = 25 V, Q = 1.25 mm), the adjacent KB row, and the live JLC description.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1790 / Samsung CL21C101JBANNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 21 = 0805 / C = C0G / 101 = 100 pF /
+    # J = +-5% / B = 50 V / A = 1.25 mm thickness / N / N / C 7-inch reel;
+    # the C0G Product Lineup table page 17 lists CL21C101JBANNN at 100 pF,
+    # 50 V, +-5%, 2.00 x 1.25 mm; Class I (C0G) characteristics pages 5-7.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_100_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, A thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706805749923840-C1790.pdf"
+        part["electrical"] = {
+            "capacitance": "100 pF (101)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1790)",
+            "pages": [4, 5, 17],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code A = 1.25 mm (C0G lineup table page 17 lists CL21C101JBANNN at 100 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL21C101JBANNNC (C1790): 100 pF, 50 V, C0G, +-5% in 0805; reconfirmed live 2026-10-01 (stock 587,299).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%, A = 1.25 mm thickness), and the C0G Product Lineup table (page 17) lists CL21C101JBANNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1798 / Samsung CL21C200JBANNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 21 = 0805 / C = C0G / 200 = 20 pF /
+    # J = +-5% / B = 50 V / A = 1.25 mm thickness / N / N / C 7-inch reel;
+    # the C0G Product Lineup table page 16 lists CL21C200JBANNN at 20 pF,
+    # 50 V, +-5%, 2.00 x 1.25 mm; Class I (C0G) characteristics pages 5-7.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_20_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, A thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706817288998912-C1798.pdf"
+        part["electrical"] = {
+            "capacitance": "20 pF (200)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1798)",
+            "pages": [4, 5, 16],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code A = 1.25 mm (C0G lineup table page 16 lists CL21C200JBANNN at 20 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL21C200JBANNNC (C1798): 20 pF, 50 V, C0G, +-5% in 0805; reconfirmed live 2026-10-01 (stock 218,875).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%, A = 1.25 mm thickness), and the C0G Product Lineup table (page 16) lists CL21C200JBANNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1804 / Samsung CL21C220JBANNNC full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 21 = 0805 / C = C0G / 220 = 22 pF /
+    # J = +-5% / B = 50 V / A = 1.25 mm thickness / N / N / C 7-inch reel;
+    # the C0G Product Lineup table page 16 lists CL21C220JBANNN at 22 pF,
+    # 50 V, +-5%, 2.00 x 1.25 mm; Class I (C0G) characteristics pages 5-7.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_22_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, A thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706825203105792-C1804.pdf"
+        part["electrical"] = {
+            "capacitance": "22 pF (220)",
+            "tolerance": "+-5% (J)",
+            "rated_voltage": "50 V",
+            "dielectric": "C0G (Class I)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "0 +-30 ppm/C over the operating range (C0G)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1804)",
+            "pages": [4, 5, 16],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code A = 1.25 mm (C0G lineup table page 16 lists CL21C220JBANNN at 22 pF, 50 V, +-5%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL21C220JBANNNC (C1804): 22 pF, 50 V, C0G, +-5% in 0805; reconfirmed live 2026-10-01 (stock 799,152).",
+            "The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%, A = 1.25 mm thickness), and the C0G Product Lineup table (page 16) lists CL21C220JBANNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1846 / Fenghua 1206B103K500NT full-stage technical data, verified
+    # against the shared Fenghua General Series MLCC specification
+    # (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+    # How-To-Order page 4 decodes 1206 / B = X7R / 103 = 10 nF / K = +-10% /
+    # 500 = 50 V / T 7-inch reel; the X7R 1206 capacity/voltage table
+    # (page 12) lists 10 nF at 6.3-50 V with thickness code FA = 0.80
+    # +-0.20 mm (body 3.20 x 1.60 mm, page 5). Class II tests page 16.
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_1206_10_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_pico_farad"
+        part["package_name_manufacturer"] = "1206 (3216 metric, FA thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991316979736576-C1846.pdf"
+        part["electrical"] = {
+            "capacitance": "10 nF (103)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+            "capacitance_measurement": "1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)",
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "Fenghua General Series MLCC specification (C1846)",
+            "pages": [4, 5, 12],
+            "notes": "1206/3216 metric: L 3.20 mm, W 1.60 mm, thickness code FA = 0.80+-0.20 mm (X7R 1206 table page 12 lists 10 nF at 50 V).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_1206_3216Metric",
+            "hand_solder": "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Fenghua 1206B103K500NT (C1846): 10 nF, 50 V, X7R, +-10% in 1206; reconfirmed live 2026-10-01 (stock 230,801).",
+            "The Fenghua ordering code decodes exactly to that suffix (B = X7R, 103 = 10 nF, K = +-10%, 500 = 50 V), and the X7R 1206 table covers 10 nF at 50 V (thickness code FA).",
+            "Non-polarized two-terminal chip; the standard built-in 1206 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1848 / Samsung CL31B105KBHNNNE full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 31 = 1206 / B = X7R / 105 = 1 uF /
+    # K = +-10% / B = 50 V / H = 1.60 mm thickness / N / N / E embossed
+    # 7-inch reel; the X7R Product Lineup table page 28 lists CL31B105KBHNNN
+    # at 1 uF, 50 V, +-10%, 3.20 x 1.60 mm; X7R class -55 to +125 C, +-15%
+    # (page 5). Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_1206_1_micro_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "1206 (3216 metric, H thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707343589855232-C1848.pdf"
+        part["electrical"] = {
+            "capacitance": "1 uF (105)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.6}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1848)",
+            "pages": [4, 5, 28],
+            "notes": "1206/3216 metric: L 3.20 mm, W 1.60 mm, thickness code H = 1.60 mm (X7R lineup table page 28 lists CL31B105KBHNNN at 1 uF, 50 V, +-10%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_1206_3216Metric",
+            "hand_solder": "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL31B105KBHNNNE (C1848): 1 uF, 50 V, X7R, +-10% in 1206; reconfirmed live 2026-10-01 (stock 517,314).",
+            "The Samsung ordering decode covers the exact suffix (31 = 1206, H = 1.60 mm thickness), and the X7R Product Lineup table (page 28) lists CL31B105KBHNNN.",
+            "Non-polarized two-terminal chip; the standard built-in 1206 chip renderer draws the package from the verified dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C5378 / Samsung CL21B224KBFNNNE full-stage technical data, verified
+    # against the shared Samsung MLCC general catalogue (November 2015,
+    # oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad):
+    # part numbering page 4 decodes CL / 21 = 0805 / B = X7R / 224 = 220 nF /
+    # K = +-10% / B = 50 V / F = 1.25 mm thickness / N / N / E embossed
+    # 7-inch reel; the X7R 0805 lineup page 27 lists CL21B224KBFNNN at
+    # 220 nF, 50 V, +-10%; X7R class -55 to +125 C, +-15% (page 5).
+    # Purchasing identity fields come from the registry.
+    current = "electronic_capacitor_0805_220_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0805 (2012 metric, F thickness code)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706836171481088-C5378.pdf"
+        part["electrical"] = {
+            "capacitance": "220 nF (224)",
+            "tolerance": "+-10% (K)",
+            "rated_voltage": "50 V",
+            "dielectric": "X7R (Class II)",
+            "temperature_range": "-55 to +125 C",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C5378)",
+            "pages": [4, 5, 27],
+            "notes": "0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code F = 1.25 mm (X7R lineup page 27 lists CL21B224KBFNNN at 220 nF, 50 V, +-10%).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung CL21B224KBFNNNE (C5378): 220 nF, 50 V, X7R, +-10% in 0805; reconfirmed live 2026-10-02 (stock 611,888).",
+            "The Samsung ordering decode covers the exact suffix (F = 1.25 mm thickness), and the X7R 0805 lineup table (page 27) lists CL21B224KBFNNN.",
+            "Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws the package from the verified dimensions.",
         ]
         part["file_copy"] = [
             {
@@ -6487,5 +8062,4421 @@ def main(**kwargs):
             "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 0402, 4.7 pF, 50 V, C0G, stock 627,647, minimum 1, full reel 10,000, available order qty 549,340, MSL 1. The page lists no tolerance row; full stage should extract the tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987825213267968-C1569.pdf).",
         ]
 
+    # === BEGIN generated family batch (tmp/family_batch.py) — regenerated, do not hand-edit ===
+    # JLC C23733 / 0402 4.7 μF (generated family batch 2026-10-04)
+    current = "electronic_capacitor_0402_4_7_micro_farad_10_volt_20_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0402_100_nano_farad"
+        part["package_name_manufacturer"] = "0402 (1005 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707315710726144-C23733.pdf"
+        part["electrical"] = {
+            "capacitance": "4.7 μF (475)",
+            "dielectric": "X5R",
+            "tolerance": "+-20% (M)",
+            "rated_voltage": "10 V",
+            "temperature_characteristic": "+-15% over the operating range (X5R)",
+            "temperature_range": "0402 to +4 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.5}
+        part["dimension_reference"] = {
+            "document": "Samsung MLCC data sheet, November 2015 (shared family copy) (C23733 provenance)",
+            "pages": {"part_number_system": [4], "class_characteristics": [5], "dimensions": [6]},
+            "notes": "part-numbering page 4 decodes the exact suffix; the class-characteristic page and the size tables cover the 0402 family; package dimensions: 0402 L 1.00+-0.05, W 0.50+-0.05, T 0.5+-0.05 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0402_1005Metric",
+            "hand_solder": "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Samsung Electro-Mechanics CL05A475MP5NRNC (C23733): 4.7 μF 10 V X5R +-20% (M) in 0402; identity and ratings observed live at intake 2026-09-24.",
+            "Family batch 2026-10-04 over the shared Samsung Electro-Mechanics MLCC datasheet (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering code decodes 475 = 4.7 μF.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # === END generated family batch (tmp/family_batch.py) ===
+
+    # === BEGIN generated family batch (tmp/stragglers.py capacitors) — regenerated, do not hand-edit ===
+    # JLC C14663 / YAGEO CC0603KRX7R9BB104 (straggler close-out 2026-10-05)
+    current = "electronic_capacitor_0603_100_nano_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        
+        part["package_name_manufacturer"] = "0603_1608Metric"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf"
+        part["electrical"] = {
+            "capacitance": "100 nF (104)",
+            "dielectric": "X7R",
+            "tolerance": "+-10%",
+            "rated_voltage": "50 V",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "temperature_range": "-55 to +125 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.8}
+        part["dimension_reference"] = {
+            "document": "YAGEO YAGEO CC0603 series MLCC specification (own copy) (C14663 provenance)",
+            "pages": [2, 3],
+            "notes": "{pkg_name} outline per the specification drawing Ordering code CC0603KRX7R9BB104 decodes the 100 nF 50 V X7R +-10% rating.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0603_1608Metric",
+            "hand_solder": "Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists YAGEO CC0603KRX7R9BB104 (C14663): 100 nF 50 V X7R +-10%; identity and ratings observed live at intake 2026-09-24.",
+            "Straggler close-out 2026-10-05: downloaded the YAGEO specification into this part via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size series, so this part anchors its own sub-family).",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C49678 / YAGEO CC0805KRX7R9BB104 (straggler close-out 2026-10-05)
+    current = "electronic_capacitor_0805_100_nano_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_capacitor_0603_100_nano_farad"
+        part["package_name_manufacturer"] = "0805_2012Metric"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8785639247575089152-C49678.pdf"
+        part["electrical"] = {
+            "capacitance": "100 nF (104)",
+            "dielectric": "X7R",
+            "tolerance": "+-10%",
+            "rated_voltage": "50 V",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "temperature_range": "-55 to +125 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "YAGEO CC series MLCC specification (shared with C14663) (C49678 provenance)",
+            "pages": [2, 3],
+            "notes": "{pkg_name} outline per the shared CC-series specification drawing; the CC-series PDF is byte-identical across sizes Ordering code CC0805KRX7R9BB104 decodes the 100 nF 50 V X7R +-10% rating.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists YAGEO CC0805KRX7R9BB104 (C49678): 100 nF 50 V X7R +-10%; identity and ratings observed live at intake 2026-09-24.",
+            "Straggler close-out 2026-10-05: downloaded the YAGEO specification into this part via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size series, so this part anchors its own sub-family).",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C107145 / YAGEO CC0805KRX7R9BB221 (straggler close-out 2026-10-05)
+    current = "electronic_capacitor_0805_220_pico_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        
+        part["package_name_manufacturer"] = "0805_2012Metric"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588898764141056001-C107145.pdf"
+        part["electrical"] = {
+            "capacitance": "220 pF (221)",
+            "dielectric": "X7R",
+            "tolerance": "+-10%",
+            "rated_voltage": "50 V",
+            "temperature_characteristic": "+-15% over the operating range (X7R)",
+            "temperature_range": "-55 to +125 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "YAGEO YAGEO CC0805 series MLCC specification (own copy) (C107145 provenance)",
+            "pages": [2, 3],
+            "notes": "{pkg_name} outline per the specification drawing Ordering code CC0805KRX7R9BB221 decodes the 220 pF 50 V X7R +-10% rating.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists YAGEO CC0805KRX7R9BB221 (C107145): 220 pF 50 V X7R +-10%; identity and ratings observed live at intake 2026-09-24.",
+            "Straggler close-out 2026-10-05: downloaded the YAGEO specification into this part via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size series, so this part anchors its own sub-family).",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C440198 / Murata Electronics GRM21BR61H106KE43L (straggler close-out 2026-10-05)
+    current = "electronic_capacitor_0805_10_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        
+        part["package_name_manufacturer"] = "0805_2012Metric"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588884955174330368-C440198.pdf"
+        part["electrical"] = {
+            "capacitance": "10 uF (106)",
+            "dielectric": "X5R",
+            "tolerance": "+-10%",
+            "rated_voltage": "50 V",
+            "temperature_characteristic": "+-15% over the operating range (X5R)",
+            "temperature_range": "-55 to +125 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.25}
+        part["dimension_reference"] = {
+            "document": "Murata Electronics Murata GRM21 series MLCC specification (own copy) (C440198 provenance)",
+            "pages": [2, 3],
+            "notes": "{pkg_name} outline per the specification drawing Ordering code GRM21BR61H106KE43L decodes the 10 uF 50 V X5R +-10% rating.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_0805_2012Metric",
+            "hand_solder": "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Murata Electronics GRM21BR61H106KE43L (C440198): 10 uF 50 V X5R +-10%; identity and ratings observed live at intake 2026-09-24.",
+            "Straggler close-out 2026-10-05: downloaded the Murata Electronics specification into this part via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size series, so this part anchors its own sub-family).",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # === END generated family batch (tmp/stragglers.py capacitors) ===
+
     from working_oomp_populate_jlc import apply_reviewed_jlc_choices
     apply_reviewed_jlc_choices(extras_dict, family="capacitor")
+
+    # === BEGIN generated polarized cap batch (tmp/cap_batch.py) — regenerated, do not hand-edit ===
+    # JLC C1950 / FH (Guangdong Fenghua Advanced Tech) 1210B225K500NT - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_1210_2_2_micro_farad"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "1210 (3225 metric), 3.2 x 2.5 x 1.6 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991875584856064-C1950.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 2.5, "height": 1.6}
+        part["dimension_reference"] = {
+            "document": "1210B225K500NT datasheet (C1950 provenance)",
+            "pages": [1, 2],
+            "notes": "1210 (3225 metric), 3.2 x 2.5 x 1.6 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "+-10%",
+            "dielectric": "class 2 ceramic (X7R per the Fenghua ordering code)",
+            "polarized": False,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Small",
+            "machine_solder": "Capacitor_SMD:C_1210_3225Metric",
+            "hand_solder": "Capacitor_SMD:C_1210_3225Metric",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists 1210 FH (Guangdong Fenghua Advanced Tech) 1210B225K500NT (C1950); identity and ratings observed live at intake 2026-09-28.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Small master and the Capacitor_SMD:C_1210_3225Metric footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2029 / CX(Dongguan Chengxing Elec) KM106M100E11RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_11_mm_tall_electrolytic_10_micro_farad_100_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D6.3 x 11.0 mm, 2.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8564798012716040192-C2029.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 11.0}
+        part["dimension_reference"] = {
+            "document": "KM106M100E11RR0VH2FP0 datasheet (C2029 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D6.3 x 11.0 mm, 2.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "100 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "1000hrs@105 C",
+            "ripple_current": "61mA@120Hz",
+            "pin_spacing": "2.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D6.3xL11mm CX(Dongguan Chengxing Elec) KM106M100E11RR0VH2FP0 (C2029); identity and ratings observed live at intake 2026-09-28.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D6.3mm_P2.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2033 / CX(Dongguan Chengxing Elec) GR477M010F12RR0VL4FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_470_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588901546444926976-C2033.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 12.0}
+        part["dimension_reference"] = {
+            "document": "GR477M010F12RR0VL4FP0 datasheet (C2033 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "10 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "3000hrs@105 C",
+            "pin_spacing": "3.5 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) GR477M010F12RR0VL4FP0 (C2033); identity and ratings observed live at intake 2026-09-28.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2036 / CX(Dongguan Chengxing Elec) GR227M010E11RR0VH4FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_11_mm_tall_electrolytic_220_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D6.3 x 11.0 mm, 2.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887000555900928-C2036.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 11.0}
+        part["dimension_reference"] = {
+            "document": "GR227M010E11RR0VH4FP0 datasheet (C2036 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D6.3 x 11.0 mm, 2.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "10 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "2.5 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D6.3xL11mm CX(Dongguan Chengxing Elec) GR227M010E11RR0VH4FP0 (C2036); identity and ratings observed live at intake 2026-09-28.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D6.3mm_P2.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2051 / CX(Dongguan Chengxing Elec) KM337M025F12RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_330_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588901580645281792-C2051.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 12.0}
+        part["dimension_reference"] = {
+            "document": "KM337M025F12RR0VH2FP0 datasheet (C2051 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "330 uF",
+            "rated_voltage": "25 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "ripple_current": "340mA@120Hz",
+            "pin_spacing": "3.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) KM337M025F12RR0VH2FP0 (C2051); identity and ratings observed live at intake 2026-09-28.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2063 / CX(Dongguan Chengxing Elec) KM227M035F12RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_220_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588894275962875904-C2063.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 12.0}
+        part["dimension_reference"] = {
+            "document": "KM227M035F12RR0VH2FP0 datasheet (C2063 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "35 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "3.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) KM227M035F12RR0VH2FP0 (C2063); identity and ratings observed live at intake 2026-09-28.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2064 / CX(Dongguan Chengxing Elec) KM477M035G17RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_17_mm_tall_electrolytic_470_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D10.0 x 17.0 mm, 5.0 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887028632571904-C2064.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 17.0}
+        part["dimension_reference"] = {
+            "document": "KM477M035G17RR0VH2FP0 datasheet (C2064 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D10.0 x 17.0 mm, 5.0 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "35 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "5.0 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D10xL17mm CX(Dongguan Chengxing Elec) KM477M035G17RR0VH2FP0 (C2064); identity and ratings observed live at intake 2026-09-28.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D10.0mm_P5.00mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2065 / CX(Dongguan Chengxing Elec) KS225M050C07RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_4_mm_diameter_7_mm_tall_electrolytic_2_2_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D4.0 x 7.0 mm, 1.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895826516561920-C2065.pdf"
+        part["dimensions_mm"] = {"length": 4.0, "width": 4.0, "height": 7.0}
+        part["dimension_reference"] = {
+            "document": "KS225M050C07RR0VH2FP0 datasheet (C2065 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D4.0 x 7.0 mm, 1.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "1000hrs@105 C",
+            "ripple_current": "19mA@120Hz",
+            "pin_spacing": "1.5 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D4xL7mm CX(Dongguan Chengxing Elec) KS225M050C07RR0VH2FP0 (C2065); identity and ratings observed live at intake 2026-09-28.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D4.0mm_P1.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2746 / CX(Dongguan Chengxing Elec) KM476M450K25RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_16_mm_diameter_25_mm_tall_electrolytic_47_micro_farad_450_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D16.0 x 25.0 mm, 7.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588936268264165376-C2746.pdf"
+        part["dimensions_mm"] = {"length": 16.0, "width": 16.0, "height": 25.0}
+        part["dimension_reference"] = {
+            "document": "KM476M450K25RR0VH2FP0 datasheet (C2746 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D16.0 x 25.0 mm, 7.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "450 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "7.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D16xL25mm CX(Dongguan Chengxing Elec) KM476M450K25RR0VH2FP0 (C2746); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D16.0mm_P7.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2749 / CX(Dongguan Chengxing Elec) KM107M050F12RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_100_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588902862562185216-C2749.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 12.0}
+        part["dimension_reference"] = {
+            "document": "KM107M050F12RR0VH2FP0 datasheet (C2749 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "3.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) KM107M050F12RR0VH2FP0 (C2749); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2754 / CX(Dongguan Chengxing Elec) KM688M025L30RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_18_mm_diameter_30_mm_tall_electrolytic_6800_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D18.0 x 30.0 mm, 7.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588935545355440128-C2754.pdf"
+        part["dimensions_mm"] = {"length": 18.0, "width": 18.0, "height": 30.0}
+        part["dimension_reference"] = {
+            "document": "KM688M025L30RR0VH2FP0 datasheet (C2754 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D18.0 x 30.0 mm, 7.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "6800 uF",
+            "rated_voltage": "25 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "7.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D18xL30mm CX(Dongguan Chengxing Elec) KM688M025L30RR0VH2FP0 (C2754); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D18.0mm_P7.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2760 / CX(Dongguan Chengxing Elec) KS105M050C07RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_4_mm_diameter_7_mm_tall_electrolytic_1_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D4.0 x 7.0 mm, 1.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895826541862912-C2760.pdf"
+        part["dimensions_mm"] = {"length": 4.0, "width": 4.0, "height": 7.0}
+        part["dimension_reference"] = {
+            "document": "KS105M050C07RR0VH2FP0 datasheet (C2760 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D4.0 x 7.0 mm, 1.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "1000hrs@105 C",
+            "pin_spacing": "1.5 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D4xL7mm CX(Dongguan Chengxing Elec) KS105M050C07RR0VH2FP0 (C2760); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D4.0mm_P1.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2763 / CX(Dongguan Chengxing Elec) KM228M035K25RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_16_mm_diameter_25_mm_tall_electrolytic_2200_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D16.0 x 25.0 mm, 7.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588936303270907904-C2763.pdf"
+        part["dimensions_mm"] = {"length": 16.0, "width": 16.0, "height": 25.0}
+        part["dimension_reference"] = {
+            "document": "KM228M035K25RR0VH2FP0 datasheet (C2763 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D16.0 x 25.0 mm, 7.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "2200 uF",
+            "rated_voltage": "35 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "7.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D16xL25mm CX(Dongguan Chengxing Elec) KM228M035K25RR0VH2FP0 (C2763); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D16.0mm_P7.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2767 / CX(Dongguan Chengxing Elec) KM107M400L30RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_18_mm_diameter_30_mm_tall_electrolytic_100_micro_farad_400_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D18.0 x 30.0 mm, 7.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588937452328902656-C2767.pdf"
+        part["dimensions_mm"] = {"length": 18.0, "width": 18.0, "height": 30.0}
+        part["dimension_reference"] = {
+            "document": "KM107M400L30RR0VH2FP0 datasheet (C2767 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D18.0 x 30.0 mm, 7.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "400 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "7.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D18.0mm_P7.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D18xL30mm CX(Dongguan Chengxing Elec) KM107M400L30RR0VH2FP0 (C2767); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D18.0mm_P7.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2772 / CX(Dongguan Chengxing Elec) KM107M063F12RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_100_micro_farad_63_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588934582430781440-C2772.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 12.0}
+        part["dimension_reference"] = {
+            "document": "KM107M063F12RR0VH2FP0 datasheet (C2772 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "63 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "3.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) KM107M063F12RR0VH2FP0 (C2772); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C2775 / CX(Dongguan Chengxing Elec) KM475M250F12RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_4_7_micro_farad_250_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588936839927775232-C2775.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 12.0}
+        part["dimension_reference"] = {
+            "document": "KM475M250F12RR0VH2FP0 datasheet (C2775 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "250 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "3.5 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) KM475M250F12RR0VH2FP0 (C2775); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3299 / CX(Dongguan Chengxing Elec) GR108M010F12RR0VL4FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_1000_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588919922475220992-C3299.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 12.0}
+        part["dimension_reference"] = {
+            "document": "GR108M010F12RR0VL4FP0 datasheet (C3299 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1000 uF",
+            "rated_voltage": "10 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "3000hrs@105 C",
+            "ripple_current": "640mA@100kHz",
+            "pin_spacing": "3.5 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) GR108M010F12RR0VL4FP0 (C3299); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3311 / CX(Dongguan Chengxing Elec) GR158M016G20RR0VL4FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_20_mm_tall_electrolytic_1500_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D10.0 x 20.0 mm, 5.0 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887028616605696-C3311.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 20.0}
+        part["dimension_reference"] = {
+            "document": "GR158M016G20RR0VL4FP0 datasheet (C3311 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D10.0 x 20.0 mm, 5.0 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1500 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "3000hrs@105 C",
+            "ripple_current": "1.4A@100kHz",
+            "pin_spacing": "5.0 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D10xL20mm CX(Dongguan Chengxing Elec) GR158M016G20RR0VL4FP0 (C3311); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D10.0mm_P5.00mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3312 / CX(Dongguan Chengxing Elec) GR477V050G20RR0VH4FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_20_mm_tall_electrolytic_470_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D10.0 x 20.0 mm, 5.0 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887029707124736-C3312.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 20.0}
+        part["dimension_reference"] = {
+            "document": "GR477V050G20RR0VH4FP0 datasheet (C3312 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D10.0 x 20.0 mm, 5.0 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "-10%~+20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "1000hrs@105 C",
+            "pin_spacing": "5.0 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D10xL20mm CX(Dongguan Chengxing Elec) GR477V050G20RR0VH4FP0 (C3312); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D10.0mm_P5.00mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3314 / CX(Dongguan Chengxing Elec) KS336M016C07RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_4_mm_diameter_7_mm_tall_electrolytic_33_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D4.0 x 7.0 mm, 1.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895826684874752-C3314.pdf"
+        part["dimensions_mm"] = {"length": 4.0, "width": 4.0, "height": 7.0}
+        part["dimension_reference"] = {
+            "document": "KS336M016C07RR0VH2FP0 datasheet (C3314 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D4.0 x 7.0 mm, 1.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "33 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "1000hrs@105 C",
+            "pin_spacing": "1.5 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D4.0mm_P1.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D4xL7mm CX(Dongguan Chengxing Elec) KS336M016C07RR0VH2FP0 (C3314); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D4.0mm_P1.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3328 / CX(Dongguan Chengxing Elec) KM228M016G20RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_20_mm_tall_electrolytic_2200_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D10.0 x 20.0 mm, 5.0 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887029724172288-C3328.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 20.0}
+        part["dimension_reference"] = {
+            "document": "KM228M016G20RR0VH2FP0 datasheet (C3328 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D10.0 x 20.0 mm, 5.0 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "2200 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "5.0 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D10xL20mm CX(Dongguan Chengxing Elec) KM228M016G20RR0VH2FP0 (C3328); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D10.0mm_P5.00mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3336 / CX(Dongguan Chengxing Elec) KM107M100G17RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_17_mm_tall_electrolytic_100_micro_farad_100_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D10.0 x 17.0 mm, 5.0 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887000619626496-C3336.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 17.0}
+        part["dimension_reference"] = {
+            "document": "KM107M100G17RR0VH2FP0 datasheet (C3336 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D10.0 x 17.0 mm, 5.0 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "100 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "5.0 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D10xL17mm CX(Dongguan Chengxing Elec) KM107M100G17RR0VH2FP0 (C3336); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D10.0mm_P5.00mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3337 / Honor Elec RVT1C470M0505 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_5_mm_diameter_5_4_mm_tall_electrolytic_47_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D5.0 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291419281170432-C3337.pdf"
+        part["dimensions_mm"] = {"length": 5.0, "width": 5.0, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1C470M0505 datasheet (C3337 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D5.0 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_5x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D5xL5.4mm Honor Elec RVT1C470M0505 (C3337); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_5x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3338 / Honor Elec RVT1E101M0607 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_100_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291514529890304-C3338.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 7.7}
+        part["dimension_reference"] = {
+            "document": "RVT1E101M0607 datasheet (C3338 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "25 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_6.3x7.7",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D6.3xL7.7mm Honor Elec RVT1E101M0607 (C3338); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_6.3x7.7 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3339 / Honor Elec RVT1V101M0607 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_100_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757300898349625344-C3339.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 7.7}
+        part["dimension_reference"] = {
+            "document": "RVT1V101M0607 datasheet (C3339 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "35 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_6.3x7.7",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D6.3xL7.7mm Honor Elec RVT1V101M0607 (C3339); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_6.3x7.7 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3340 / Honor Elec RVT1V221M0810 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_10_2_mm_tall_electrolytic_220_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D8.0 x 10.2 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291444862500864-C3340.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 10.2}
+        part["dimension_reference"] = {
+            "document": "RVT1V221M0810 datasheet (C3340 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D8.0 x 10.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "35 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_8x10",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D8xL10.2mm Honor Elec RVT1V221M0810 (C3340); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_8x10 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3341 / Honor Elec RVT1C471M0810 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_10_2_mm_tall_electrolytic_470_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D8.0 x 10.2 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291431684132864-C3341.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 10.2}
+        part["dimension_reference"] = {
+            "document": "RVT1C471M0810 datasheet (C3341 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D8.0 x 10.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_8x10",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D8xL10.2mm Honor Elec RVT1C471M0810 (C3341); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_8x10 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3342 / Honor Elec RVT1C221M0607 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_220_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291454182514688-C3342.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 7.7}
+        part["dimension_reference"] = {
+            "document": "RVT1C221M0607 datasheet (C3342 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_6.3x7.7",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D6.3xL7.7mm Honor Elec RVT1C221M0607 (C3342); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_6.3x7.7 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3343 / Honor Elec RVT1E100M0405 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_4_mm_diameter_5_4_mm_tall_electrolytic_10_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291427606999040-C3343.pdf"
+        part["dimensions_mm"] = {"length": 4.0, "width": 4.0, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1E100M0405 datasheet (C3343 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "25 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_4x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D4xL5.4mm Honor Elec RVT1E100M0405 (C3343); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_4x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3344 / Honor Elec RVT1V470M0605 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_47_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D6.3 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291509765296128-C3344.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1V470M0605 datasheet (C3344 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D6.3 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "35 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_6.3x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D6.3xL5.4mm Honor Elec RVT1V470M0605 (C3344); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_6.3x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3345 / Honor Elec RVT1A221M0605 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D6.3 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291449727623168-C3345.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1A221M0605 datasheet (C3345 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D6.3 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "10 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_6.3x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D6.3xL5.4mm Honor Elec RVT1A221M0605 (C3345); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_6.3x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3347 / Honor Elec RVT1A101M0505 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_5_mm_diameter_5_4_mm_tall_electrolytic_100_micro_farad_10_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D5.0 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291440899018752-C3347.pdf"
+        part["dimensions_mm"] = {"length": 5.0, "width": 5.0, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1A101M0505 datasheet (C3347 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D5.0 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "10 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_5x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D5xL5.4mm Honor Elec RVT1A101M0505 (C3347); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_5x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3348 / Honor Elec RVT1H1R0M0405 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_4_mm_diameter_5_4_mm_tall_electrolytic_1_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8719585583770370048-C3348.pdf"
+        part["dimensions_mm"] = {"length": 4.0, "width": 4.0, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1H1R0M0405 datasheet (C3348 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_4x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D4xL5.4mm Honor Elec RVT1H1R0M0405 (C3348); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_4x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3349 / Honor Elec RVT1H470M0607 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_47_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291499908546560-C3349.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 7.7}
+        part["dimension_reference"] = {
+            "document": "RVT1H470M0607 datasheet (C3349 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_6.3x7.7",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D6.3xL7.7mm Honor Elec RVT1H470M0607 (C3349); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_6.3x7.7 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3350 / Honor Elec RVT1V471M1010 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_10_2_mm_tall_electrolytic_470_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D10.0 x 10.2 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291518375931904-C3350.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 10.2}
+        part["dimension_reference"] = {
+            "document": "RVT1V471M1010 datasheet (C3350 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D10.0 x 10.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "35 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_10x10",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D10xL10.2mm Honor Elec RVT1V471M1010 (C3350); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_10x10 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3351 / Honor Elec RVT1E471M1010 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_10_2_mm_tall_electrolytic_470_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D10.0 x 10.2 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757301218002132992-C3351.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 10.2}
+        part["dimension_reference"] = {
+            "document": "RVT1E471M1010 datasheet (C3351 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D10.0 x 10.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "25 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_10x10",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D10xL10.2mm Honor Elec RVT1E471M1010 (C3351); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_10x10 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3352 / Honor Elec RVT1H101M0810 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_10_2_mm_tall_electrolytic_100_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D8.0 x 10.2 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291464793563136-C3352.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 10.2}
+        part["dimension_reference"] = {
+            "document": "RVT1H101M0810 datasheet (C3352 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D8.0 x 10.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_8x10",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D8xL10.2mm Honor Elec RVT1H101M0810 (C3352); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_8x10 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3353 / Honor Elec RVT1E221M0810 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_10_5_mm_tall_electrolytic_220_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D8.0 x 10.5 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291495722901504-C3353.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 10.5}
+        part["dimension_reference"] = {
+            "document": "RVT1E221M0810 datasheet (C3353 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D8.0 x 10.5 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "25 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_8x10.5",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D8xL10.5mm Honor Elec RVT1E221M0810 (C3353); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_8x10.5 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3354 / Honor Elec RVT0J471M0607 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_470_micro_farad_6_3_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291503796260864-C3354.pdf"
+        part["dimensions_mm"] = {"length": 6.3, "width": 6.3, "height": 7.7}
+        part["dimension_reference"] = {
+            "document": "RVT0J471M0607 datasheet (C3354 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "6.3 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_6.3x7.7",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D6.3xL7.7mm Honor Elec RVT0J471M0607 (C3354); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_6.3x7.7 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3355 / Honor Elec RVT1V4R7M0405 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_4_mm_diameter_5_4_mm_tall_electrolytic_4_7_micro_farad_35_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291555902234624-C3355.pdf"
+        part["dimensions_mm"] = {"length": 4.0, "width": 4.0, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1V4R7M0405 datasheet (C3355 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "35 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_4x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D4xL5.4mm Honor Elec RVT1V4R7M0405 (C3355); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_4x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3356 / Honor Elec RVT1C220M0405 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_4_mm_diameter_5_4_mm_tall_electrolytic_22_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291559756935168-C3356.pdf"
+        part["dimensions_mm"] = {"length": 4.0, "width": 4.0, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1C220M0405 datasheet (C3356 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "22 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_4x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D4xL5.4mm Honor Elec RVT1C220M0405 (C3356); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_4x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3357 / Honor Elec RVT1C100M0405 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_4_mm_diameter_5_4_mm_tall_electrolytic_10_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291564563337216-C3357.pdf"
+        part["dimensions_mm"] = {"length": 4.0, "width": 4.0, "height": 5.4}
+        part["dimension_reference"] = {
+            "document": "RVT1C100M0405 datasheet (C3357 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D4.0 x 5.4 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_4x5.4",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D4xL5.4mm Honor Elec RVT1C100M0405 (C3357); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_4x5.4 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3358 / Honor Elec RVT1H221M1010 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_10_2_mm_tall_electrolytic_220_micro_farad_50_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D10.0 x 10.2 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757302535411372032-C3358.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 10.2}
+        part["dimension_reference"] = {
+            "document": "RVT1H221M1010 datasheet (C3358 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D10.0 x 10.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "50 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_10x10",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D10xL10.2mm Honor Elec RVT1H221M1010 (C3358); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_10x10 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C3359 / Honor Elec RVT1C102M1010 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_10_2_mm_tall_electrolytic_1000_micro_farad_16_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SMD V-chip aluminum electrolytic, D10.0 x 10.2 mm"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291574172487680-C3359.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 10.2}
+        part["dimension_reference"] = {
+            "document": "RVT1C102M1010 datasheet (C3359 provenance)",
+            "pages": [1, 2],
+            "notes": "SMD V-chip aluminum electrolytic, D10.0 x 10.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1000 uF",
+            "rated_voltage": "16 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "ripple_current": "347mA",
+            "polarized": True,
+            "operating_temperature": "-55 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_SMD:CP_Elec_10x10",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists SMD,D10xL10.2mm Honor Elec RVT1C102M1010 (C3359); identity and ratings observed live at intake 2026-09-29.",
+            "Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_SMD:CP_Elec_10x10 footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C5154 / CX(Dongguan Chengxing Elec) GR477M025F14RR0VL4FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_8_mm_diameter_14_mm_tall_electrolytic_470_micro_farad_25_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D8.0 x 14.0 mm, 3.5 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588919191097790464-C5154.pdf"
+        part["dimensions_mm"] = {"length": 8.0, "width": 8.0, "height": 14.0}
+        part["dimension_reference"] = {
+            "document": "GR477M025F14RR0VL4FP0 datasheet (C5154 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D8.0 x 14.0 mm, 3.5 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "25 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "3000hrs@105 C",
+            "pin_spacing": "3.5 mm",
+            "polarized": True,
+            "operating_temperature": "-40 to +105 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D8xL14mm CX(Dongguan Chengxing Elec) GR477M025F14RR0VL4FP0 (C5154); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C5300 / CX(Dongguan Chengxing Elec) KM156M400G17RR0VH2FP0 - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_10_mm_diameter_17_mm_tall_electrolytic_15_micro_farad_400_volt"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Radial leaded aluminum electrolytic, D10.0 x 17.0 mm, 5.0 mm pin spacing"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887030889242625-C5300.pdf"
+        part["dimensions_mm"] = {"length": 10.0, "width": 10.0, "height": 17.0}
+        part["dimension_reference"] = {
+            "document": "KM156M400G17RR0VH2FP0 datasheet (C5300 provenance)",
+            "pages": [1, 2],
+            "notes": "Radial leaded aluminum electrolytic, D10.0 x 17.0 mm, 5.0 mm pin spacing; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "15 uF",
+            "rated_voltage": "400 V",
+            "tolerance": "+-20%",
+            "dielectric": "aluminum electrolytic",
+            "lifetime": "2000hrs@105 C",
+            "pin_spacing": "5.0 mm",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm",
+            "hand_solder": "",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Plugin,D10xL17mm CX(Dongguan Chengxing Elec) KM156M400G17RR0VH2FP0 (C5300); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_THT:CP_Radial_D10.0mm_P5.00mm footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7173 / -- TAJA104K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_100_nano_farad_35_volt_avx_taja104k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7173 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 nF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA104K035RNJ (C7173); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7174 / -- TAJA105K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_1_micro_farad_16_volt_avx_taja105k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7174 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA105K016RNJ (C7174); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7175 / -- TAJA105K025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_1_micro_farad_25_volt_avx_taja105k025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7175 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA105K025RNJ (C7175); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7176 / -- TAJA105K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_1_micro_farad_35_volt_avx_taja105k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7176 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA105K035RNJ (C7176); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7177 / -- TAJA106K010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_10_micro_farad_10_volt_avx_taja106k010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7177 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA106K010RNJ (C7177); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7179 / -- TAJA155K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_1_5_micro_farad_16_volt_avx_taja155k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7179 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1.5 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA155K016RNJ (C7179); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7180 / -- TAJA225K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_2_2_micro_farad_16_volt_avx_taja225k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7180 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA225K016RNJ (C7180); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7181 / -- TAJA225K025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_2_2_micro_farad_25_volt_avx_taja225k025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7181 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "2.2 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA225K025RNJ (C7181); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7182 / -- TAJA226K006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_6_3_volt_avx_taja226k006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7182 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "22 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA226K006RNJ (C7182); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7183 / -- TAJA226M010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_22_micro_farad_10_volt_avx_taja226m010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7183 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "22 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA226M010RNJ (C7183); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7184 / -- TAJA335K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_3_3_micro_farad_16_volt_avx_taja335k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7184 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "3.3 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA335K016RNJ (C7184); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7185 / -- TAJA336K006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_33_micro_farad_6_3_volt_avx_taja336k006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7185 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "33 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA336K006RNJ (C7185); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7186 / -- TAJA336K010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_33_micro_farad_10_volt_avx_taja336k010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7186 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "33 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA336K010RNJ (C7186); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7187 / -- TAJA475K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt_avx_taja475k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7187 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA475K016RNJ (C7187); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7188 / -- TAJA475K020RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_20_volt_avx_taja475k020rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7188 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "20 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA475K020RNJ (C7188); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7189 / -- TAJA475K025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_25_volt_avx_taja475k025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7189 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA475K025RNJ (C7189); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7190 / -- TAJA476K006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_47_micro_farad_6_3_volt_avx_taja476k006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7190 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA476K006RNJ (C7190); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7191 / -- TAJA685K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3216_avx_a_tantalum_6_8_micro_farad_16_volt_avx_taja685k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 1.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7191 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "6.8 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-A-3216-18",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-A-3216-18(mm) -- TAJA685K016RNJ (C7191); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7192 / -- TAJB105K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_1_micro_farad_35_volt_avx_tajb105k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7192 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "1 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB105K035RNJ (C7192); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7193 / -- TAJB106K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_10_micro_farad_16_volt_avx_tajb106k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7193 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB106K016RNJ (C7193); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7194 / -- TAJB106K025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_10_micro_farad_25_volt_avx_tajb106k025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7194 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB106K025RNJ (C7194); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7195 / -- TAJB107M006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_100_micro_farad_6_3_volt_avx_tajb107m006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7195 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB107M006RNJ (C7195); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7196 / -- TAJB107M010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_100_micro_farad_10_volt_avx_tajb107m010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7196 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB107M010RNJ (C7196); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7198 / -- TAJB226K010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_22_micro_farad_10_volt_avx_tajb226k010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7198 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "22 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB226K010RNJ (C7198); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7199 / -- TAJB226K020RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_22_micro_farad_20_volt_avx_tajb226k020rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7199 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "22 uF",
+            "rated_voltage": "20 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB226K020RNJ (C7199); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7200 / -- TAJB227M004RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_220_micro_farad_4_volt_avx_tajb227m004rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7200 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "4 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB227M004RNJ (C7200); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7201 / -- TAJB335K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_3_3_micro_farad_35_volt_avx_tajb335k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7201 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "3.3 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB335K035RNJ (C7201); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7202 / -- TAJB336K010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_33_micro_farad_10_volt_avx_tajb336k010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7202 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "33 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB336K010RNJ (C7202); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7203 / -- TAJB336K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_33_micro_farad_16_volt_avx_tajb336k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7203 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "33 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB336K016RNJ (C7203); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7204 / -- TAJB475K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_4_7_micro_farad_16_volt_avx_tajb475k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7204 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB475K016RNJ (C7204); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7205 / -- TAJB475K025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_4_7_micro_farad_25_volt_avx_tajb475k025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7205 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB475K025RNJ (C7205); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7206 / -- TAJB475K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_4_7_micro_farad_35_volt_avx_tajb475k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7206 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "4.7 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB475K035RNJ (C7206); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7207 / -- TAJB476K006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_47_micro_farad_6_3_volt_avx_tajb476k006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7207 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB476K006RNJ (C7207); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7208 / -- TAJB476M006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_3528_avx_b_tantalum_47_micro_farad_6_3_volt_avx_tajb476m006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 3.5, "width": 2.8, "height": 2.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7208 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-B-3528-21",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-B-3528-21(mm) -- TAJB476M006RNJ (C7208); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-3528-21_Kemet-B footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7209 / -- TAJC106K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6032_avx_c_tantalum_10_micro_farad_16_volt_avx_tajc106k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 6.0, "width": 3.2, "height": 2.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7209 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-C-6032-28",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-C-6032-28(mm) -- TAJC106K016RNJ (C7209); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7210 / -- TAJC106K025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6032_avx_c_tantalum_10_micro_farad_25_volt_avx_tajc106k025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 6.0, "width": 3.2, "height": 2.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7210 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-C-6032-28",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-C-6032-28(mm) -- TAJC106K025RNJ (C7210); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7211 / -- TAJC106K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6032_avx_c_tantalum_10_micro_farad_35_volt_avx_tajc106k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 6.0, "width": 3.2, "height": 2.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7211 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-C-6032-28",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-C-6032-28(mm) -- TAJC106K035RNJ (C7211); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7214 / -- TAJC226K025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6032_avx_c_tantalum_22_micro_farad_25_volt_avx_tajc226k025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 6.0, "width": 3.2, "height": 2.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7214 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "22 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-C-6032-28",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-C-6032-28(mm) -- TAJC226K025RNJ (C7214); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7216 / -- TAJC227K006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6032_avx_c_tantalum_220_micro_farad_6_3_volt_avx_tajc227k006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 6.0, "width": 3.2, "height": 2.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7216 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-C-6032-28",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-C-6032-28(mm) -- TAJC227K006RNJ (C7216); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7217 / -- TAJC336K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6032_avx_c_tantalum_33_micro_farad_16_volt_avx_tajc336k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 6.0, "width": 3.2, "height": 2.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7217 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "33 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-C-6032-28",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-C-6032-28(mm) -- TAJC336K016RNJ (C7217); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7219 / -- TAJC476K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6032_avx_c_tantalum_47_micro_farad_16_volt_avx_tajc476k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 6.0, "width": 3.2, "height": 2.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7219 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-C-6032-28",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-C-6032-28(mm) -- TAJC476K016RNJ (C7219); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7220 / -- TAJC686K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_6032_avx_c_tantalum_68_micro_farad_16_volt_avx_tajc686k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 6.0, "width": 3.2, "height": 2.8}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7220 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "68 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-C-6032-28",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-C-6032-28(mm) -- TAJC686K016RNJ (C7220); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7221 / -- TAJD106K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_10_micro_farad_35_volt_avx_tajd106k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7221 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD106K035RNJ (C7221); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7222 / -- TAJD107K010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_100_micro_farad_10_volt_avx_tajd107k010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7222 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD107K010RNJ (C7222); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7223 / -- TAJD107K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_100_micro_farad_16_volt_avx_tajd107k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7223 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD107K016RNJ (C7223); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7224 / -- TAJD107K020RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_100_micro_farad_20_volt_avx_tajd107k020rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7224 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "20 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD107K020RNJ (C7224); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7225 / -- TAJD226K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_22_micro_farad_35_volt_avx_tajd226k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7225 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "22 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD226K035RNJ (C7225); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7226 / -- TAJD337K010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_330_micro_farad_10_volt_avx_tajd337k010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7226 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "330 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD337K010RNJ (C7226); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7227 / -- TAJD476K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_47_micro_farad_16_volt_avx_tajd476k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7227 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD476K016RNJ (C7227); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7228 / -- TAJD476K025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_47_micro_farad_25_volt_avx_tajd476k025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7228 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD476K025RNJ (C7228); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7229 / -- TAJD477K006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_d_tantalum_470_micro_farad_6_3_volt_avx_tajd477k006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 3.1}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7229 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-D-7343-31",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-D-7343-31(mm) -- TAJD477K006RNJ (C7229); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7230 / -- TAJE107M025RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_e_tantalum_100_micro_farad_25_volt_avx_taje107m025rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 4.3}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7230 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "100 uF",
+            "rated_voltage": "25 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-E-7343-43",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-E-7343-43(mm) -- TAJE107M025RNJ (C7230); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7231 / -- TAJE227K016RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_e_tantalum_220_micro_farad_16_volt_avx_taje227k016rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 4.3}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7231 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "220 uF",
+            "rated_voltage": "16 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-E-7343-43",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-E-7343-43(mm) -- TAJE227K016RNJ (C7231); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7232 / -- TAJE337K010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_e_tantalum_330_micro_farad_10_volt_avx_taje337k010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 4.3}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7232 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "330 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-E-7343-43",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-E-7343-43(mm) -- TAJE337K010RNJ (C7232); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7233 / -- TAJE476K035RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_e_tantalum_47_micro_farad_35_volt_avx_taje476k035rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 4.3}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7233 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "47 uF",
+            "rated_voltage": "35 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-E-7343-43",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-E-7343-43(mm) -- TAJE476K035RNJ (C7233); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7234 / -- TAJE477K010RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_7343_avx_e_tantalum_470_micro_farad_10_volt_avx_taje477k010rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 7.3, "width": 4.3, "height": 4.3}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7234 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "470 uF",
+            "rated_voltage": "10 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-E-7343-43",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-E-7343-43(mm) -- TAJE477K010RNJ (C7234); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-7343-43_Kemet-X footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # JLC C7235 / -- TAJR106M006RNJ - polarized capacitor family batch 2026-10-05
+    current = "electronic_capacitor_2012_avx_r_tantalum_10_micro_farad_6_3_volt_avx_tajr106m006rnej"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "Kyocera AVX TAJ case R (2012-12), 2.0 x 1.25 x 1.2 mm"
+        part["datasheet_url"] = "https://datasheets.kyocera-avx.com/TAJ.pdf"
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 1.2}
+        part["dimension_reference"] = {
+            "document": "KYOCERA AVX TAJ series datasheet (C7235 provenance)",
+            "pages": [1, 2],
+            "notes": "Kyocera AVX TAJ case R (2012-12), 2.0 x 1.25 x 1.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+        }
+        part["electrical"] = {
+            "capacitance": "10 uF",
+            "rated_voltage": "6.3 V",
+            "dielectric": "solid manganese dioxide tantalum",
+            "case_size": "CASE-R-2012-12",
+            "polarized": True,
+            "operating_temperature": "-55 to +125 C"
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "positive", "type": "passive"},
+            "pin_2": {"number": "2", "name": "negative", "type": "passive"}
+        }
+        part["kicad"] = {
+            "symbol": "Device:C_Polarized",
+            "machine_solder": "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R",
+            "hand_solder": "Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists CASE-R-2012-12(mm) -- TAJR106M006RNJ (C7235); identity and ratings observed live at intake 2026-09-30.",
+            "Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized master and the Capacitor_Tantalum_SMD:CP_EIA-2012-12_Kemet-R footprint master in the 2026-10-05 family batch.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # === END generated polarized cap batch (tmp/cap_batch.py) ===

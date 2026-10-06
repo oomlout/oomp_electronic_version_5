@@ -29,11 +29,25 @@ bip_39_full_space: once hungry famous soap lens acid they egg track maid special
 bip_39_full_underscore: once_hungry_famous_soap_lens_acid_they_egg_track_maid_special_artefact
 category: resistor
 category_name: Resistor
+datasheet_url: ''
+dimension_reference:
+  document: RALEC RTT series specification (C4143 provenance)
+  notes: 0402 (1005 metric) outline L 1.00 +-0.10, W 0.50 +-0.05, H 0.35 +-0.05 mm;
+    the RALEC type code RTT-02-82R0-F decodes 82 x 10^0 = 82 Ohm, F = +-1%.
+  pages:
+  - 2
+  - 4
 dimensions_mm:
+  height: 0.35
   length: 1.0
   width: 0.5
 directory: parts/electronic_resistor_0402_82_ohm
 distributors:
+- key: lcsc
+  part_number: C4143
+  product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C4143.html
 - key: lcsc
   part_number: C2909389
   product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
@@ -45,25 +59,60 @@ distributors:
     - Surface...
   title: LCSC
   url: https://www.lcsc.com/product-detail/C163453.html
-- key: lcsc
+- key: jlcpcb
   part_number: C4143
-  product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
-  title: LCSC
-  url: https://www.lcsc.com/product-detail/C4143.html
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+electrical:
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/16 W (62.5 mW) at 70 C
+  rated_voltage: 50 V
+  resistance: 82 Ohm
+  temperature_coefficient: +-100 ppm/C
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0402_82_ohm/datasheet.pdf
 id: electronic_resistor_0402_82_ohm
 id_no_class: electronic_resistor_0402_82_ohm
 id_no_size: electronic_resistor_0402_82_ohm
 id_no_type: electronic_resistor_0402_82_ohm
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0402 82 Ohm resistor. JLC C4143 (RALEC RTT0282R0FTH)
+    supplies the exact value with 62.5 mW / 50 V +-1% ratings.
+  datasheet_pages:
+    document: RALEC RTT series specification (own copy)
+    type_code:
+    - 2
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+  pinout_checked: true
+  ratings:
+    max_voltage: 50 V
+    operating_temperature: -55 to +155 C
+    power: 62.5 mW
+    resistance: 82 Ohm
+    temperature_coefficient: +-100 ppm/C
+    tolerance: +-1%
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-26'
+  visual_review: 'Family-inherited review 2026-10-05: 0402 resistor template identical
+    to the completed family exemplars; differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder
   machine_solder: Resistor_SMD:R_0402_1005Metric
   symbol: Device:R_Small
 lcsc_search: 0402 82Ω
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_82_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_82_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_82_ohm
-manufacturer: FOJAN
+manufacturer: RALEC
 manufacturers:
+- manufacturer: RALEC
+  part_number: RTT0282R0FTH
 - manufacturer: FOJAN
   part_number: FRC0402F82R0TS
 md5: 9a8de94ae6d80203f82236e690c34386
@@ -96,6 +145,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_82_ohm/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -185,7 +244,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -199,7 +258,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -207,11 +266,25 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: resistor
       category_name: Resistor
+      datasheet_url: ''
+      dimension_reference:
+        document: RALEC RTT series specification (C4143 provenance)
+        notes: 0402 (1005 metric) outline L 1.00 +-0.10, W 0.50 +-0.05, H 0.35 +-0.05
+          mm; the RALEC type code RTT-02-82R0-F decodes 82 x 10^0 = 82 Ohm, F = +-1%.
+        pages:
+        - 2
+        - 4
       dimensions_mm:
+        height: 0.35
         length: 1.0
         width: 0.5
       directory: parts\electronic_resistor_0402_82_ohm
       distributors:
+      - key: lcsc
+        part_number: C4143
+        product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C4143.html
       - key: lcsc
         part_number: C2909389
         product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
@@ -223,18 +296,53 @@ oomlout_ai_roboclick_4:
           - Surface...
         title: LCSC
         url: https://www.lcsc.com/product-detail/C163453.html
-      - key: lcsc
+      - key: jlcpcb
         part_number: C4143
-        product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
-        title: LCSC
-        url: https://www.lcsc.com/product-detail/C4143.html
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+      electrical:
+        operating_temperature: -55 to +155 C
+        polarized: false
+        power: 1/16 W (62.5 mW) at 70 C
+        rated_voltage: 50 V
+        resistance: 82 Ohm
+        temperature_coefficient: +-100 ppm/C
+        tolerance: +-1% (F)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_resistor_0402_82_ohm/datasheet.pdf
+      jlcpcb_selection:
+        compatibility_notes: Existing generic 0402 82 Ohm resistor. JLC C4143 (RALEC
+          RTT0282R0FTH) supplies the exact value with 62.5 mW / 50 V +-1% ratings.
+        datasheet_pages:
+          document: RALEC RTT series specification (own copy)
+          type_code:
+          - 2
+        footprint_checked: true
+        official_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+        pinout_checked: true
+        ratings:
+          max_voltage: 50 V
+          operating_temperature: -55 to +155 C
+          power: 62.5 mW
+          resistance: 82 Ohm
+          temperature_coefficient: +-100 ppm/C
+          tolerance: +-1%
+        tier: basic
+        tier_label_observed: Basic
+        verified_on: '2026-09-26'
+        visual_review: 'Family-inherited review 2026-10-05: 0402 resistor template
+          identical to the completed family exemplars; differs only in value text.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder
         machine_solder: Resistor_SMD:R_0402_1005Metric
         symbol: Device:R_Small
       lcsc_search: 0402 82Ω
-      manufacturer: FOJAN
+      manufacturer: RALEC
       manufacturers:
+      - manufacturer: RALEC
+        part_number: RTT0282R0FTH
       - manufacturer: FOJAN
         part_number: FRC0402F82R0TS
       name: electronic_resistor_0402_82_ohm
@@ -255,6 +363,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_82_ohm/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -345,7 +463,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -359,17 +477,26 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      package_name_manufacturer: 0402 (1005 metric)
       part_id: R1
-      part_number_lcsc: C2909389
-      part_number_manufacturer: FRC0402F82R0TS
+      part_number_jlcpcb: C4143
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+      part_number_lcsc: C4143
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C4143.html
+      part_number_manufacturer: RTT0282R0FTH
       part_numbers_lcsc:
+      - part_number: C4143
+        product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
       - part_number: C2909389
         product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
       - part_number: C163453
         product_name: 50V 82Ω Thick Film Resistor 62.5mW ±1% ±100ppm/℃ 0402 Chip Resistor
           - Surface...
-      - part_number: C4143
-        product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
+      part_numbers_manufacturer:
+      - manufacturer: RALEC
+        part_number: RTT0282R0FTH
+      - manufacturer: FOJAN
+        part_number: FRC0402F82R0TS
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -436,19 +563,22 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: FRC0402F82R0TS
+          value: RTT0282R0FTH
+        - title: LCSC
+          url: https://www.lcsc.com/product-detail/C4143.html
+          value: C4143
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C2909389.html
           value: C2909389
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C163453.html
           value: C163453
-        - title: LCSC
-          url: https://www.lcsc.com/product-detail/C4143.html
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
           value: C4143
         main_image:
           png: data/working_svg_square_pins.png
@@ -457,7 +587,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/resistor/0402/README.md
         oomp_id: electronic_resistor_0402_82_ohm
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_resistor_0402_82_ohm
@@ -467,10 +603,12 @@ oomlout_ai_roboclick_4:
           value: '0402'
         - title: Nominal size
           value: 1.0 × 0.5 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_82_ohm
         summary: Resistor 82 Ohm 0402 is an OOMP electronic resistor definition. It
           uses the 0402 package or form factor. Its nominal drawing size is 1.0 ×
-          0.5 mm.
+          0.5 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -480,12 +618,23 @@ oomlout_ai_roboclick_4:
           value: '0402'
         - level: 4
           value: 82_ohm
-      product_url: https://www.lcsc.com/product-detail/C2909389.html
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
+      product_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
       regenerate_pngs: false
       research_notes:
-      - 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified
-        JLCPCB Part Class on the product page); best C2909389 with 1,132,900 in stock
-        at capture.'
+      - 'The official JLC page lists RALEC RTT0282R0FTH (C4143): 82 Ohm, 62.5 mW,
+        50 V, +-1% (F), 0402; identity from the official category crawl (row last_seen
+        2026-09-26) - no separate staged browser capture exists for this code.'
+      - 'Straggler close-out 2026-10-05: own RALEC RTT-series specification downloaded
+        via the signed JLC OSS link (self-anchored).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -662,7 +811,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -676,17 +825,26 @@ oomlout_ai_roboclick_5:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_0402_82_ohm
+package_name_manufacturer: 0402 (1005 metric)
 part_id: R1
-part_number_lcsc: C2909389
-part_number_manufacturer: FRC0402F82R0TS
+part_number_jlcpcb: C4143
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+part_number_lcsc: C4143
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C4143.html
+part_number_manufacturer: RTT0282R0FTH
 part_numbers_lcsc:
+- part_number: C4143
+  product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C2909389
   product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C163453
   product_name: 50V 82Ω Thick Film Resistor 62.5mW ±1% ±100ppm/℃ 0402 Chip Resistor
     - Surface...
-- part_number: C4143
-  product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
+part_numbers_manufacturer:
+- manufacturer: RALEC
+  part_number: RTT0282R0FTH
+- manufacturer: FOJAN
+  part_number: FRC0402F82R0TS
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -753,19 +911,22 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: FRC0402F82R0TS
+    value: RTT0282R0FTH
+  - title: LCSC
+    url: https://www.lcsc.com/product-detail/C4143.html
+    value: C4143
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C2909389.html
     value: C2909389
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C163453.html
     value: C163453
-  - title: LCSC
-    url: https://www.lcsc.com/product-detail/C4143.html
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
     value: C4143
   main_image:
     png: data/working_svg_square_pins.png
@@ -774,7 +935,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/resistor/0402/README.md
   oomp_id: electronic_resistor_0402_82_ohm
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_resistor_0402_82_ohm
@@ -784,9 +951,12 @@ part_page:
     value: '0402'
   - title: Nominal size
     value: 1.0 × 0.5 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0402_82_ohm
   summary: Resistor 82 Ohm 0402 is an OOMP electronic resistor definition. It uses
-    the 0402 package or form factor. Its nominal drawing size is 1.0 × 0.5 mm.
+    the 0402 package or form factor. Its nominal drawing size is 1.0 × 0.5 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -796,11 +966,23 @@ part_page:
     value: '0402'
   - level: 4
     value: 82_ohm
-product_url: https://www.lcsc.com/product-detail/C2909389.html
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
 regenerate_pngs: false
 research_notes:
-- 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified JLCPCB
-  Part Class on the product page); best C2909389 with 1,132,900 in stock at capture.'
+- 'The official JLC page lists RALEC RTT0282R0FTH (C4143): 82 Ohm, 62.5 mW, 50 V,
+  +-1% (F), 0402; identity from the official category crawl (row last_seen 2026-09-26)
+  - no separate staged browser capture exists for this code.'
+- 'Straggler close-out 2026-10-05: own RALEC RTT-series specification downloaded via
+  the signed JLC OSS link (self-anchored).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

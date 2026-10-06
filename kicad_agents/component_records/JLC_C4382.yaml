@@ -4,7 +4,7 @@ status: researched
 family: resistor
 part_id: electronic_resistor_0805_5600_ohm
 exact_identity: true
-package: '0805'
+package: 0805
 pin_count: 2
 datasheet_required: true
 project_references: []
@@ -12,25 +12,43 @@ research:
   manufacturer: UNI-ROYAL(Uniroyal Elec)
   manufacturer_part_number: 0805W8F5601T5E
   lcsc_part_number: C4382
-  lcsc_decision: Official JLCPCB page identifies C4382 as the exact UNI-ROYAL purchasing choice for this 0805 5.6 kohm resistor.
+  lcsc_decision: Official JLCPCB page identifies C4382 as the exact UNI-ROYAL purchasing
+    choice for this 0805 5.6 kohm resistor.
   product_url: https://jlcpcb.com/partdetail/4789-0805W8F5601T5E/C4382
   datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706617556242432-C4382.pdf
   browser_sources:
-    - https://jlcpcb.com/partdetail/4789-0805W8F5601T5E/C4382
+  - https://jlcpcb.com/partdetail/4789-0805W8F5601T5E/C4382
   webpage_capture: parts_source/electronic_resistor_0805_5600_ohm/web_page_distributor_jlc.txt
   evidence_notes:
-    - Official page displayed Basic, UNI-ROYAL(Uniroyal Elec), 0805W8F5601T5E, C4382, 0805, 5.6kohm, 125mW, 150V, +/-1% and +/-100ppm/C on 2026-09-24.
-    - Reuses generic electronic_resistor_0805_5600_ohm. Former FOJAN C2907271 lists the same value, package, 125 mW and +/-1%, but voltage/TCR were not documented. Preserve it as an alternative without claiming complete electrical equivalence.
-    - JLC-linked C4382 PDF was downloaded through the browser and imported with source URL and SHA-256. Series ordering code, derating and land-pattern review remain full-pass tasks.
+  - Official page displayed Basic, UNI-ROYAL(Uniroyal Elec), 0805W8F5601T5E, C4382,
+    0805, 5.6kohm, 125mW, 150V, +/-1% and +/-100ppm/C on 2026-09-24.
+  - Reuses generic electronic_resistor_0805_5600_ohm. Former FOJAN C2907271 lists
+    the same value, package, 125 mW and +/-1%, but voltage/TCR were not documented.
+    Preserve it as an alternative without claiming complete electrical equivalence.
+  - JLC-linked C4382 PDF was downloaded through the browser and imported with source
+    URL and SHA-256. Series ordering code, derating and land-pattern review remain
+    full-pass tasks.
+  - 'Full pass 2026-10-02: live page reconfirmed (C4382, UNI-ROYAL (Uniroyal Elec),
+    0805W8F5601T5E, Basic, In Stock per intake capture). No new download: the already-captured
+    UNI-ROYAL Thick Film Chip Resistors data sheet (9 pages, Feb.12 2019 V.3, shared
+    via oomp_datasheet_common_with = electronic_resistor_0402_0_ohm) covers the exact
+    suffix - part number system page 2 decodes 0805 / W8 = 1/8 W (125 mW) / F = +-1%
+    / 5601 = 560 x 10^1 = 5.6 kOhm / T5E embossed 7-inch reel; resistance range page
+    4 covers the 0805 1% family (5.6 kOhm E96 standard); dimension table page 4: 0805
+    body 2.00 +-0.15 x 1.25 +0.15/-0.10 mm, H 0.55 +-0.10 mm; live description ratings
+    150 V, +-100 ppm/C, -55 to +155 C.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/4789-0805W8F5601T5E/C4382
   tier: basic
   tier_label_observed: Basic
   stock_observed: 649585
   purchase_moq_observed: 1
   pcba_min_qty_observed: null
-  compatibility_notes: Generic 0805 5.6 kohm resistor formerly preferred FOJAN C2907271 at 125 mW and +/-1%. Basic C4382 lists 125 mW, 150 V, +/-1%, +/-100ppm/C. Preserve the FOJAN choice as an alternative; its voltage/TCR remain unverified here. Full pass checks derating and pad geometry.
+  compatibility_notes: Generic 0805 5.6 kohm resistor formerly preferred FOJAN C2907271
+    at 125 mW and +/-1%. Basic C4382 lists 125 mW, 150 V, +/-1%, +/-100ppm/C. Preserve
+    the FOJAN choice as an alternative; its voltage/TCR remain unverified here. Full
+    pass checks derating and pad geometry.
   ratings:
     resistance: 5.6 kohm
     power: 125 mW
@@ -38,7 +56,25 @@ jlc_selection:
     tolerance: +/-1%
     temperature_coefficient: +/-100 ppm/C
     operating_temperature: -55 to +155 C
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy, C4382 provenance)
+    part_number_system:
+    - 2
+    marking:
+    - 3
+    resistance_range_dimensions:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Resistor 5600 Ohm 0805 with terminals
+    1 and 2, symmetric body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png:
+    0805/2012 outline 2.0 x 1.25 mm with arrows, matching the UNI-ROYAL dimension
+    table (page 4, H 0.55 mm recorded in dimensions_mm). data/kicad manifest complete
+    with Device:R_Small symbol and Resistor_SMD:R_0805_2012Metric machine + Pad1.20x1.40mm_HandSolder
+    hand footprints, same as the C4310/C4328 0805 siblings. README.md: 0805W8F5601T5E
+    part number, LCSC/JLC C4382 links, 2-pin table, datasheet link resolving to data/datasheet.pdf
+    via the shared UNI-ROYAL family datasheet (oomp_datasheet_common_with). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'

@@ -25,6 +25,7 @@ def main(**kwargs):
     current = "electronic_inductor_0603_4_7_micro_henry"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf"
         part["name_short"] = "Inductor 4.7µH 0603"
         part["name_readable"] = "Inductor 4.7µH 0603"
         part["manufacturer"] = "Sunlord"
@@ -61,6 +62,7 @@ def main(**kwargs):
     current = "electronic_inductor_0805_5_6_micro_henry"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_inductor_0805_2_2_micro_henry"
         part["name_short"] = "Inductor 5.6µH 0805"
         part["name_readable"] = "Inductor 5.6µH 0805"
         part["manufacturer"] = "FH (Guangdong Fenghua Advanced Tech)"
@@ -73,6 +75,7 @@ def main(**kwargs):
     current = "electronic_inductor_1206_2_2_micro_henry"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_inductor_1206_10_micro_henry"
         part["name_short"] = "Inductor 2.2µH 1206"
         part["name_readable"] = "Inductor 2.2µH 1206"
         part["manufacturer"] = "FH (Guangdong Fenghua Advanced Tech)"
@@ -85,6 +88,7 @@ def main(**kwargs):
     current = "electronic_inductor_1206_4_7_micro_henry"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_inductor_1206_10_micro_henry"
         part["name_short"] = "Inductor 4.7µH 1206"
         part["name_readable"] = "Inductor 4.7µH 1206"
         part["manufacturer"] = "FH (Guangdong Fenghua Advanced Tech)"
@@ -97,6 +101,7 @@ def main(**kwargs):
     current = "electronic_inductor_1206_5_6_micro_henry"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_inductor_1206_10_micro_henry"
         part["name_short"] = "Inductor 5.6µH 1206"
         part["name_readable"] = "Inductor 5.6µH 1206"
         part["manufacturer"] = "FH (Guangdong Fenghua Advanced Tech)"
@@ -189,6 +194,7 @@ def main(**kwargs):
     current = "electronic_inductor_0805_10_micro_henry_sunlord_sdfl2012s100ktf"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_inductor_0603_10_micro_henry_sunlord_sdfl1608s100ktf"
         part["package_name_manufacturer"] = "2012 (0805 imperial), SDFL thin type"
         part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8755216271270907904-C1046.pdf"
         part["electrical"] = {

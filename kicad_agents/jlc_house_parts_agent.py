@@ -113,17 +113,65 @@ def normalize_capture(capture):
     return sorted(result, key=lambda x: int(x["code"][1:]))
 
 
+_POPULATION_CACHE = None
+
+
+def _population_key():
+    """Inputs the in-memory population depends on: populate modules + registry."""
+    entries = []
+    for path in sorted(Path(ROOT).glob("working_oomp_populate*.py")):
+        entries.append((path.name, path.stat().st_mtime_ns))
+    registry = Path(ROOT) / "kicad_agents/jlc_house_parts/reviewed_choices.json"
+    if registry.is_file():
+        entries.append((registry.name, registry.stat().st_mtime_ns))
+    return entries
+
+
 def population():
-    """Evaluate the real population chain without writing generated files."""
+    """Evaluate the real population chain without writing generated files.
+
+    The chain costs ~40s per call and nothing changes between consecutive
+    checks in a batch, so the result is memoised in-process and pickled to
+    kicad_agents/generated/population_cache.pkl (invalidated by mtimes of the
+    populate modules and the reviewed-choices registry).
+    """
+    global _POPULATION_CACHE
+    key = _population_key()
+    if _POPULATION_CACHE and _POPULATION_CACHE[0] == key:
+        return _POPULATION_CACHE[1]
+    cache_path = Path(ROOT) / "kicad_agents/generated/population_cache.pkl"
+    if cache_path.is_file():
+        try:
+            import pickle
+            with open(cache_path, "rb") as fh:
+                cached_key, parts, dups = pickle.load(fh)
+            if cached_key == key:
+                _POPULATION_CACHE = (key, (parts, dups))
+                return parts, dups
+        except (OSError, ValueError, EOFError, pickle.PickleError):
+            pass  # unreadable or torn cache: recompute below
     import working_oomp_populate as populate
     from oomp_populate_helper import build_oomp_id
-    with contextlib.redirect_stdout(io.StringIO()), patch.object(populate, "write_extras") as output:
+    import action_dedupe_datasheets
+    # population must be strictly read-only: the dedupe pass inside main()
+    # deletes duplicate PDFs, which races parallel workers that still need them
+    with contextlib.redirect_stdout(io.StringIO()),             patch.object(populate, "write_extras") as output,             patch.object(action_dedupe_datasheets, "restore_common_with_keys",
+                         lambda *a, **k: None),             patch.object(action_dedupe_datasheets, "deduplicate",
+                         lambda *a, **k: None):
         populate.main()
     records = output.call_args.args[0]
     counts = Counter(build_oomp_id(x) for x in records)
-    return {build_oomp_id(x): x for x in records if x.get("taxonomy_1") == "electronic"}, {
-        key: count for key, count in counts.items() if count > 1
-    }
+    result = ({build_oomp_id(x): x for x in records if x.get("taxonomy_1") == "electronic"},
+              {k: c for k, c in counts.items() if c > 1})
+    _POPULATION_CACHE = (key, result)
+    try:
+        import pickle
+        cache_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(cache_path, "wb") as fh:
+            pickle.dump((key, result[0], result[1]), fh, protocol=4)
+    except OSError:
+        pass  # cache write is best-effort
+    return result
 
 
 def generic_hint(row):

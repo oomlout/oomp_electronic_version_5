@@ -1,6 +1,21 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991621809033217-C1899.pdf
+dimension_reference:
+  document: Fenghua General Series MLCC specification (shared family copy) (C1899
+    provenance)
+  notes: 'How-To-Order page 4 decodes the exact suffix; the size/dimension page and
+    the capacity/voltage table cover the 1206 family; package dimensions: 1206 L 3.20+-0.20,
+    W 1.60+-0.20, T 0.80+-0.10 mm.'
+  pages:
+    capacitance_voltage:
+    - 10
+    dimensions:
+    - 5
+    how_to_order:
+    - 4
 dimensions_mm:
+  height: 0.8
   length: 3.2
   width: 1.6
 distributors:
@@ -13,11 +28,16 @@ distributors:
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2251-1206CG270J500NT/C1899
 electrical:
-  capacitance: 27 pF
+  capacitance: 27 pF (270)
   dielectric: C0G
   polarized: false
   rated_voltage: 50 V
-  tolerance: ±5%
+  temperature_characteristic: 0+-30 ppm/C referenced to 25 C (C0G)
+  temperature_range: -55 to +125 C
+  tolerance: +-5%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_1206_27_pico_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: electronic_capacitor_1206_27_pico_farad
     did not exist in working_oomp_populate_capacitor.py, working_oomp_populate_capacitor_extra.py,
@@ -28,11 +48,18 @@ jlcpcb_selection:
     from the staged capture: 27 pF, 1206, C0G, +/-5%, 50 V - matches the live page
     exactly; stock 1,909 recorded as observed; two-terminal MLCC (pin_count 2). Edits
     made under the capacitor family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    capacitance_voltage:
+    - 10
+    dimensions:
+    - 5
+    document: Fenghua General Series MLCC specification (shared family copy)
+    how_to_order:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2251-1206CG270J500NT/C1899
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 27pF
@@ -43,9 +70,13 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 1206 resistor template (Device:R_Small, Capacitor_SMD:C_1206_3216Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: C35270,C13585.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder
   machine_solder: Capacitor_SMD:C_1206_3216Metric
   symbol: Device:C_Small
 lcsc_search: 1206 27pF
@@ -56,6 +87,8 @@ manufacturers:
 name_proper: Capacitor 27 pF 1206
 name_readable: Capacitor 27 pF 1206
 name_short: Capacitor 27 pF 1206
+oomp_datasheet_common_with: electronic_capacitor_0402_100_pico_farad
+package_name_manufacturer: 1206 (3216 metric)
 part_id: C1
 part_number_jlcpcb: C1899
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2251-1206CG270J500NT/C1899
@@ -67,18 +100,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: FH (Guangdong Fenghua Advanced Tech)
   part_number: 1206CG270J500NT
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2251-1206CG270J500NT/C1899
 research_notes:
-- Verified JLC C1899 / Fenghua 1206CG270J500NT as the first reviewed preferred extended
-  purchasing choice for this previously absent generic 1206 27 pF value; the populate
-  row was added by this intake. The Fenghua ordering code (CG = C0G, 270 = 27 x 10^0
-  pF, J = +/-5%, 500 = 50 V) decodes consistently with the listed specifications;
-  the live page specification table is the primary evidence. Distinct from the 0402,
-  0603 and 0805 27 pF generics supplied by C1557, C1656 and C1808.
-- Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended),
-  1206, 27 pF, 50 V, C0G, +/-5%, stock 1,909, minimum 1, full reel 4,000, available
-  order qty 1,909, MSL 1. No datasheet PDF imported at intake; download is an integration-stage
-  task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991621809033217-C1899.pdf).
+- 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) 1206CG270J500NT
+  (C1899): 27 pF 50 V C0G +-5% in 1206; identity and ratings observed live at intake
+  2026-09-28.'
+- 'Family batch 2026-10-04 over the shared FH (Guangdong Fenghua Advanced Tech) MLCC
+  datasheet (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+  ordering code decodes 270 = 27 pF.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

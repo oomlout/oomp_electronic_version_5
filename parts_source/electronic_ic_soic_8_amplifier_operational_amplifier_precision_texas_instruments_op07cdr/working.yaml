@@ -1,6 +1,15 @@
 category: amplifier
 category_name: Amplifier
+datasheet_url: https://www.ti.com.cn/cn/lit/ds/symlink/op07.pdf
+dimension_reference:
+  document: TI OP07x datasheet, Rev. H (C7433)
+  notes: SOIC-8 (D package) outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master
+    geometry; pinout per the TI package drawing (5 = NC on the D package).
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 1.75
   length: 4.9
   width: 3.9
 distributors:
@@ -12,6 +21,20 @@ distributors:
   part_number: C7433
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
+electrical:
+  cmrr: 120 dB
+  device_type: precision single operational amplifier
+  gain_bandwidth_product: 400 kHz
+  input_noise_density: 10.5 nV/sqrt(Hz) at 10 Hz
+  input_offset_voltage: 60 uV
+  offset_drift: 500 nV/C
+  operating_temperature: 0 to +70 C ambient
+  polarized: true
+  slew_rate: 0.3 V/us
+  supply_voltage: +-3 to +-18 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr/datasheet.pdf
 ic_dimensions_mm:
   body_length: 4.9
   body_width: 3.9
@@ -22,11 +45,16 @@ jlcpcb_selection:
   compatibility_notes: New exact TI OP07CDR identity for Basic JLC C7433. Full pass
     must verify pin mapping, SOIC-8 dimensions, electrical limits and KiCad symbol/footprint
     before certification.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: TI OP07x datasheet, Rev. H (C7433 provenance, family anchor)
+    features:
+    - 1
+    pin_configuration:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Common Mode Rejection Ratio(CMRR): 120dB
@@ -44,12 +72,23 @@ jlcpcb_selection:
   stock_observed: 235012
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC OP07CDR SOIC 8 with
+    TRIM1/IN-/IN+/V- down the left side and TRIM2/V+/OUT/NC up the right side, matching
+    the TI OP07 pinout (1/8 = offset trim, 2 = IN-, 3 = IN+, 4 = V-, 5 = NC on the
+    D package, 6 = OUT, 7 = V+). working_svg_dimensioned.png: SOIC-8 outline per the
+    Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry. data/kicad manifest complete
+    (2-asset rule, no HandSoldering master for SOIC-8 narrow) with Amplifier_Operational:OP07
+    symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm machine footprint. README.md: OP07CDR
+    part number, LCSC/JLC C7433 links, 8-pin table, datasheet link resolving to data/datasheet.pdf
+    (the TI Rev. H datasheet, family anchor). Limitation: KiCad symbol/footprint checked
+    as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
-  symbol: ''
+  symbol: Amplifier_Operational:OP07
 lcsc_search: OP07CDR
 manufacturer: Texas Instruments
 manufacturers:
@@ -58,6 +97,7 @@ manufacturers:
 name_proper: IC OP07CDR SOIC 8
 name_readable: IC OP07CDR SOIC 8
 name_short: IC OP07CDR SOIC 8
+package_name_manufacturer: SOIC-8 (D, 3.9 x 4.9 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C7433
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
@@ -69,7 +109,50 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Texas Instruments
   part_number: OP07CDR
+pins:
+  pin_1:
+    name: TRIM1
+    number: '1'
+    type: input
+  pin_2:
+    name: IN-
+    number: '2'
+    type: input
+  pin_3:
+    name: IN+
+    number: '3'
+    type: input
+  pin_4:
+    name: V-
+    number: '4'
+    type: power_in
+  pin_5:
+    name: NC
+    number: '5'
+    type: no_connect
+  pin_6:
+    name: OUT
+    number: '6'
+    type: output
+  pin_7:
+    name: V+
+    number: '7'
+    type: power_in
+  pin_8:
+    name: TRIM2
+    number: '8'
+    type: input
 product_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
+research_notes:
+- 'The official JLC page lists Basic Texas Instruments OP07CDR (C7433): precision
+  op-amp in SOIC-8; reconfirmed live 2026-10-02 (stock 236,159). The queue snapshot
+  for this code was degraded (empty MPN/maker) and has been repaired from the live
+  page + intake record identity.'
+- Browser-downloaded the TI OP07x datasheet (24 pages, Rev. H) from the page's ti.com.cn
+  datasheet link (fetched same-origin from the www.ti.com.cn page) into this part;
+  it anchors the OP07 SOIC-8 family.
+- 'Pinout per the TI package drawing: 1/8 = offset trim, 2 = IN-, 3 = IN+, 4 = V-,
+  5 = NC (D package), 6 = OUT, 7 = V+; Amplifier_Operational:OP07 matches pad-for-pad.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

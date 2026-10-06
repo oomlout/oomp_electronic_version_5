@@ -2,7 +2,7 @@
 
 `electronic_resistor_0402_680000_ohm`
 
-Resistor 680000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm.
+Resistor 680000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
 
 ![Resistor 680000 Ohm 0402 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 680000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 | Type | Resistor |
 | Package / style | 0402 |
 | Nominal size | 1.0 &#x00D7; 0.5 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 680000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.35 mm |
 | Length | 1.0 mm |
 | Width | 0.5 mm |
 
@@ -41,14 +43,29 @@ Resistor 680000 Ohm 0402 is an OOMP electronic resistor definition. It uses the 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `RC0402FR-07680KL` |
+| Manufacturer part number | `0402WGF6803TCE` |
+| LCSC | [`C4131`](https://www.lcsc.com/product-detail/C4131.html) |
 | LCSC | [`C163456`](https://www.lcsc.com/product-detail/C163456.html) |
 | LCSC | [`C2909377`](https://www.lcsc.com/product-detail/C2909377.html) |
 | LCSC | [`C144741`](https://www.lcsc.com/product-detail/C144741.html) |
+| JLCPCB | [`C4131`](https://jlcpcb.com/partdetail/4538-0402WGF6803TCE/C4131) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

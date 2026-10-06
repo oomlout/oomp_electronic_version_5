@@ -1,7 +1,16 @@
 category: logic
 category_name: Logic
+datasheet_url: https://www.ti.com/lit/ds/symlink/sn74hct74.pdf
+dimension_reference:
+  document: SN74HCT74DRG4 datasheet (C6790)
+  notes: Body outline per the Package_SO:SOIC-14_3.9x8.7mm_P1.27mm master geometry;
+    pinning cross-checked against the KiCad 74xx:74HCT74 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
-  length: 8.69
+  height: 1.75
+  length: 8.7
   width: 3.9
 distributors:
 - key: lcsc
@@ -12,6 +21,15 @@ distributors:
   part_number: C6790
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HCT74DRG4/C6790
+electrical:
+  device_type: dual d type flip flop set reset
+  logic_family: 74HCT
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 4.5-5.5 V (TTL-compatible inputs)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_14_logic_dual_d_type_flip_flop_set_reset_texas_instruments_sn74hct74drg4/datasheet.pdf
 ic_dimensions_mm:
   body_length: 8.69
   body_width: 3.9
@@ -26,11 +44,13 @@ jlcpcb_selection:
     SN74HCT74DRG4 (SOIC-14; dual D-type flip-flop with set and reset (SN74HCT74, TI))
     is its exact first reviewed preferred house choice; the family token and package
     come straight off the page. Edits made under the ic family lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HCT74DRG4/C6790
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Logic/Flip Flops: ''
@@ -42,11 +62,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xx:74HCT74 master (numbers and electrical types cross-checked
+    at plan time) and the SOIC-14 footprint master; renders inherit the pipeline verified
+    on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
-  hand_solder: Package_SO:SOIC-14_3.9x8.7mm_P1.27mm
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_SO:SOIC-14_3.9x8.7mm_P1.27mm
-  symbol: ''
+  symbol: 74xx:74HCT74
 lcsc_search: SN74HCT74DRG4
 manufacturer: Texas Instruments
 manufacturers:
@@ -55,6 +80,7 @@ manufacturers:
 name_proper: IC SN74HCT74DRG4 SOIC 14
 name_readable: IC SN74HCT74DRG4 SOIC 14
 name_short: IC SN74HCT74DRG4 SOIC 14
+package_name_manufacturer: SOIC-14 (SOT108-1, 3.9 x 8.7 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C6790
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HCT74DRG4/C6790
@@ -66,7 +92,74 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Texas Instruments
   part_number: SN74HCT74DRG4
+pins:
+  pin_1:
+    name: ~{R}
+    number: '1'
+    type: in
+  pin_10:
+    name: ~{S}
+    number: '10'
+    type: in
+  pin_11:
+    name: C
+    number: '11'
+    type: in
+  pin_12:
+    name: D
+    number: '12'
+    type: in
+  pin_13:
+    name: ~{R}
+    number: '13'
+    type: in
+  pin_14:
+    name: VCC
+    number: '14'
+    type: pwr
+  pin_2:
+    name: D
+    number: '2'
+    type: in
+  pin_3:
+    name: C
+    number: '3'
+    type: in
+  pin_4:
+    name: ~{S}
+    number: '4'
+    type: in
+  pin_5:
+    name: Q
+    number: '5'
+    type: out
+  pin_6:
+    name: ~{Q}
+    number: '6'
+    type: out
+  pin_7:
+    name: GND
+    number: '7'
+    type: pwr
+  pin_8:
+    name: ~{Q}
+    number: '8'
+    type: out
+  pin_9:
+    name: Q
+    number: '9'
+    type: out
 product_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HCT74DRG4/C6790
+research_notes:
+- JLC house-parts queue row C6790 (Texas Instruments SN74HCT74DRG4, SOIC-14, 14 pins)
+  verified at intake; family batch integration C6790.
+- Downloaded the official Texas Instruments 74HCT74 data sheet directly from ti.com
+  into this part.
+- Pin table generated from the KiCad 74xx:74HCT74 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 14-pin package
+  count.
+- Footprint Package_SO:SOIC-14_3.9x8.7mm_P1.27mm verified present in the KiCad 10
+  library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

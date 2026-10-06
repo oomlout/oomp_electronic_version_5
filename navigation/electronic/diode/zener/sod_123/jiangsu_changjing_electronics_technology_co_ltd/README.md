@@ -1,0 +1,35 @@
+# Electronic / Diode / Zener / Sod 123 / Jiangsu Changjing Electronics Technology Co Ltd
+
+[Up one level](../README.md)
+This category contains 23 parts in total.
+
+
+## Parts
+
+- [Diode BZT52C10 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c10) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c10`
+- [Diode BZT52C15 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c15) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c15`
+- [Diode BZT52C16 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c16) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c16`
+- [Diode BZT52C20 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c20) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c20`
+- [Diode BZT52C22 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c22) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c22`
+- [Diode BZT52C24 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c24) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c24`
+- [Diode BZT52C33 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c33) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c33`
+- [Diode BZT52C39 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c39) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c39`
+- [Diode BZT52C3V3 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c3v3) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c3v3`
+- [Diode BZT52C3V6 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c3v6) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c3v6`
+- [Diode BZT52C3V9 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c3v9) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c3v9`
+- [Diode BZT52C4V3 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c4v3) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c4v3`
+- [Diode BZT52C4V7 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c4v7) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c4v7`
+- [Diode BZT52C5V1 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c5v1) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c5v1`
+- [Diode BZT52C5V6 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c5v6) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c5v6`
+- [Diode BZT52C6V8 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c6v8) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c6v8`
+- [Diode BZT52C7V5 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c7v5) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c7v5`
+- [Diode BZT52C8V2 WD SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c8v2_wd) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c8v2_wd`
+- [Diode BZT52C9V1 SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c9v1) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c9v1`
+- [Diode MMSZ5235B SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5235b) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5235b`
+- [Diode MMSZ5238B SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5238b) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5238b`
+- [Diode MMSZ5245B SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5245b) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5245b`
+- [Diode MMSZ5248B SOD-123](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5248b) — `electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5248b`
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

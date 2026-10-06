@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_16_logic_serial_in_parallel_out_shift_register_nexperia_74hc595d_118`
 
-IC 74HC595D,118 SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 package or form factor. Its nominal drawing size is 9.9 &#x00D7; 3.9 mm.
+IC 74HC595D,118 SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 package or form factor. Its nominal drawing size is 9.9 &#x00D7; 3.9 mm. The definition includes 16 documented pins.
 
 ![IC 74HC595D,118 SOIC 16 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ IC 74HC595D,118 SOIC 16 is an OOMP electronic ic definition. It uses the soic 16
 | Type | Ic |
 | Package / style | soic 16 |
 | Nominal size | 9.9 &#x00D7; 3.9 mm |
+| Documented pins | 16 |
 
 
 ## Classification
@@ -34,6 +35,7 @@ IC 74HC595D,118 SOIC 16 is an OOMP electronic ic definition. It uses the soic 16
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.75 mm |
 | Length | 9.9 mm |
 | Width | 3.9 mm |
 
@@ -51,6 +53,33 @@ IC 74HC595D,118 SOIC 16 is an OOMP electronic ic definition. It uses the soic 16
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | Q1 | output |
+| 2 | Q2 | output |
+| 3 | Q3 | output |
+| 4 | Q4 | output |
+| 5 | Q5 | output |
+| 6 | Q6 | output |
+| 7 | Q7 | output |
+| 8 | GND | power_in |
+| 9 | Q7S | output |
+| 10 | MR | input |
+| 11 | SHCP | input |
+| 12 | STCP | input |
+| 13 | OE | input |
+| 14 | DS | input |
+| 15 | Q0 | output |
+| 16 | VCC | power_in |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

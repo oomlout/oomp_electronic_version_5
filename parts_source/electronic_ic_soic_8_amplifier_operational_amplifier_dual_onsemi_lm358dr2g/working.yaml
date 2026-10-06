@@ -1,6 +1,15 @@
 category: amplifier
 category_name: Amplifier
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579708932857913344-C7950.pdf
+dimension_reference:
+  document: onsemi LM358 datasheet (C7950, captured at intake)
+  notes: SOIC-8 outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry;
+    standard dual op-amp pinout.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 1.75
   length: 4.9
   width: 3.9
 distributors:
@@ -12,6 +21,18 @@ distributors:
   part_number: C7950
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/onsemi-LM358DR2G/C7950
+electrical:
+  cmrr: 70 dB
+  device_type: dual general-purpose operational amplifier
+  input_offset_voltage: 7 mV
+  operating_temperature: 0 to +70 C ambient
+  output_current: 40 mA
+  polarized: true
+  quiescent_current: 700 uA
+  supply_voltage: 3-32 V single or +-16 V dual
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_8_amplifier_operational_amplifier_dual_onsemi_lm358dr2g/datasheet.pdf
 ic_dimensions_mm:
   body_length: 4.9
   body_width: 3.9
@@ -22,11 +43,16 @@ jlcpcb_selection:
   compatibility_notes: New exact onsemi LM358DR2G identity for Basic JLC C7950. Full
     pass must verify pin mapping, SOIC-8 dimensions, electrical limits and KiCad symbol/footprint
     before certification.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: onsemi LM358 datasheet (C7950 provenance, captured at intake)
+    features:
+    - 1
+    pin_configuration:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/onsemi-LM358DR2G/C7950
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Common Mode Rejection Ratio(CMRR): 70dB
@@ -44,12 +70,23 @@ jlcpcb_selection:
   stock_observed: 818519
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC LM358DR2G SOIC 8 with
+    OUT1/IN1-/IN1+/V- down the left side and V+/OUT2/IN2-/IN2+ up the right side,
+    matching the standard dual op-amp pinout. working_svg_dimensioned.png: SOIC-8
+    outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry. data/kicad
+    manifest complete (2-asset rule, no HandSoldering master for SOIC-8 narrow) with
+    Amplifier_Operational:LM358 symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm machine
+    footprint. README.md: LM358DR2G part number, LCSC/JLC C7950 links, 8-pin table,
+    datasheet link resolving to data/datasheet.pdf (the onsemi datasheet captured
+    at intake). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus
+    s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
-  symbol: ''
+  symbol: Amplifier_Operational:LM358
 lcsc_search: LM358DR2G
 manufacturer: onsemi
 manufacturers:
@@ -58,6 +95,7 @@ manufacturers:
 name_proper: IC LM358DR2G SOIC 8
 name_readable: IC LM358DR2G SOIC 8
 name_short: IC LM358DR2G SOIC 8
+package_name_manufacturer: SOIC-8 (3.9 x 4.9 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C7950
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/onsemi-LM358DR2G/C7950
@@ -69,7 +107,50 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: onsemi
   part_number: LM358DR2G
+pins:
+  pin_1:
+    name: OUT1
+    number: '1'
+    type: output
+  pin_2:
+    name: IN1-
+    number: '2'
+    type: input
+  pin_3:
+    name: IN1+
+    number: '3'
+    type: input
+  pin_4:
+    name: V-
+    number: '4'
+    type: power_in
+  pin_5:
+    name: IN2+
+    number: '5'
+    type: input
+  pin_6:
+    name: IN2-
+    number: '6'
+    type: input
+  pin_7:
+    name: OUT2
+    number: '7'
+    type: output
+  pin_8:
+    name: V+
+    number: '8'
+    type: power_in
 product_url: https://jlcpcb.com/partdetail/onsemi-LM358DR2G/C7950
+research_notes:
+- 'The official JLC page lists Basic onsemi LM358DR2G (C7950): dual general-purpose
+  op-amp in SOIC-8; reconfirmed live 2026-10-02 (stock 799,680). The queue snapshot
+  for this code was degraded (empty MPN/maker) and has been repaired from the live
+  page + intake record identity.'
+- Datasheet was already captured at intake (sha256 e66a9193... matches the provenance
+  file); no new download.
+- Pinout is the standard dual op-amp arrangement (1 = OUT1, 2 = IN1-, 3 = IN1+, 4
+  = V-, 5 = IN2+, 6 = IN2-, 7 = OUT2, 8 = V+); Amplifier_Operational:LM358 matches
+  pad-for-pad.
 svg_details:
 - filename_extra: assembly
   make_a4: false

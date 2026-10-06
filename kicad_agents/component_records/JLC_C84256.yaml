@@ -34,6 +34,9 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing NationStar LED row or C84256 assignment.
+  - 'Family batch 2026-10-04: downloaded the NCD0805R1 specification (own copy, signed
+    JLC OSS link) and verified the package outline and polarity drawing; electrical
+    values transcribed from the intake-observed listing (verified_on 2026-09-25).'
 jlc_selection:
   verified_on: '2026-09-25'
   official_url: https://jlcpcb.com/partdetail/85425-NCD0805R1/C84256
@@ -62,7 +65,13 @@ jlc_selection:
     Viewing Angle: 130°
     Voltage - Forward(Vf): 1.6V~2.6V
     Wavelength - Dominant: 615nm~630nm
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: NCD0805R1 specification
+    outline_polarity:
+    - 2
+    - 3
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: LED template identical to the
+    completed C2296 KENTO exemplar renders (Device:LED, LED_SMD assets) inspected
+    post-build; batch members differ only in value/color text.'

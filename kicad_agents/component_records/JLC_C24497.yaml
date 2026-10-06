@@ -25,6 +25,11 @@ research:
   - Live JLC page displayed Basic, Samsung Electro-Mechanics, CL31B104KBCNNNC, C24497,
     1206, 100nF, 50V, X7R and ±10% on 2026-09-24.
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C24497.json.
+  - 'Family batch 2026-10-04: identity, tier and ratings are the intake-time live
+    observations (verified_on 2026-09-24); no fresh page pass was run for this member.
+    The shared Samsung Electro-Mechanics datasheet (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad)
+    covers the exact suffix - 104 = 100 nF; package dimensions: 1206 L 3.20+-0.20,
+    W 1.60+-0.20, T 0.80+-0.10 mm.'
 jlc_selection:
   verified_on: '2026-09-24'
   official_url: https://jlcpcb.com/partdetail/25237-CL31B104KBCNNNC/C24497
@@ -42,7 +47,17 @@ jlc_selection:
     Temperature Coefficient: X7R
     Tolerance: ±10%
     Voltage Rating: 50V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung MLCC data sheet, November 2015 (shared family copy)
+    part_number_system:
+    - 4
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 1206 resistor template (Device:R_Small, Capacitor_SMD:C_1206_3216Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: C35270,C13585.'

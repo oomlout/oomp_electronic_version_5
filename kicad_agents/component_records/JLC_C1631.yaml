@@ -24,8 +24,17 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 0603B682K500NT,
     C1631, 0603, 6.8nF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-10-01: live page reconfirmed (C1631, FH (Guangdong Fenghua Advanced
+    Tech), 0603B682K500NT, Basic, In Stock 255,120); the listed datasheet URL matches
+    the intake snapshot. No new download: the already-captured Fenghua General Series
+    MLCC specification (shared via oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad)
+    covers the exact suffix - How-To-Order page 4 decodes 0603 / B = X7R / 682 = 6.8
+    nF / K = +-10% / 500 = 50 V / T 7-inch reel; product dimensions page 5 give the
+    0603 body 1.60 +-0.10 x 0.80 +-0.10 mm, DA thickness 0.80 +-0.10 mm; the X7R 0603
+    capacity/voltage table page 10 lists 6.8 nF at 6.3-50 V; Class II test methods
+    page 18.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/1983-0603B682K500NT/C1631
   tier: basic
   tier_label_observed: Basic
@@ -41,7 +50,26 @@ jlc_selection:
     Tolerance: ±10%
     Capacitance: 6.8nF
     Temperature Coefficient: X7R
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared, C1631 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 5
+    electrical_characteristics:
+    - 10
+    - 18
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 6.8 nF 0603 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.6 x 0.8 mm body with arrows (same
+    0603 generic renderer verified on C1604/C1613/C1620/C1622/C1623), matching the
+    Fenghua 0603/1608 nominals and DA thickness. data/kicad manifest complete with
+    Device:C_Small symbol and Capacitor_SMD:C_0603_1608Metric machine + Pad1.08x0.95mm_HandSolder
+    hand footprints. README.md: 0603B682K500NT part number, LCSC/JLC C1631 links,
+    pin table, datasheet link resolving to data/datasheet.pdf via the shared Fenghua
+    General Series MLCC specification (oomp_datasheet_common_with). Limitation: KiCad
+    symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than
+    in a KiCad GUI.'

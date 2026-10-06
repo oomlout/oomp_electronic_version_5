@@ -1,7 +1,7 @@
 # Electronic / LED / 1206
 
 [Up one level](../README.md)
-This category contains 18 parts in total.
+This category contains 19 parts in total.
 
 ## Categories
 

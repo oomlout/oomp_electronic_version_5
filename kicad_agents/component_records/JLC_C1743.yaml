@@ -24,8 +24,16 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 0805B471K500NT,
     C1743, 0805, 470pF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-10-02: live page reconfirmed (C1743, FH (Guangdong Fenghua Advanced
+    Tech), 0805B471K500NT, Basic, In Stock 296,120); the listed datasheet URL matches
+    the intake snapshot. No new download: the already-captured Fenghua General Series
+    MLCC specification (shared via oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad)
+    covers the exact suffix - How-To-Order page 4 decodes 0805 / B = X7R / 471 = 470
+    pF / K = +-10% / 500 = 50 V / T 7-inch reel; the X7R 0805 capacity/voltage table
+    page 11 lists 470 pF at 6.3-50 V with thickness code EA = 0.80 +-0.20 mm (body
+    2.00 x 1.25 mm, page 5); Class II tests page 16.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/2095-0805B471K500NT/C1743
   tier: basic
   tier_label_observed: Basic
@@ -41,7 +49,27 @@ jlc_selection:
     Tolerance: ±10%
     Capacitance: 470pF
     Temperature Coefficient: X7R
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared, C1743 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 5
+    - 11
+    electrical_characteristics:
+    - 11
+    - 16
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 470 pF 0805 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: top view 2.0 x 1.25 mm with arrows,
+    matching the Fenghua 0805/2012 nominals; part thickness 0.80 mm (EA code) in dimensions_mm
+    (0805 masters identical to the built 0805 siblings). data/kicad manifest complete
+    with Device:C_Small symbol and Capacitor_SMD:C_0805_2012Metric machine + C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
+    hand footprints. README.md: 0805B471K500NT part number, LCSC/JLC C1743 links,
+    pin table, datasheet link resolving to data/datasheet.pdf via the shared Fenghua
+    General Series MLCC specification (oomp_datasheet_common_with). Limitation: KiCad
+    symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than
+    in a KiCad GUI.'

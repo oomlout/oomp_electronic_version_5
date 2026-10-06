@@ -2,7 +2,7 @@
 
 `electronic_resistor_array_4_x_0603_convex_4700_ohm_8_pin`
 
-Resistor array 4700 Ohm 4 X 0603 Convex is an OOMP electronic resistor array definition. It uses the 4 x 0603 convex package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Resistor array 4700 Ohm 4 X 0603 Convex is an OOMP electronic resistor array definition. It uses the 4 x 0603 convex package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm. The definition includes 8 documented pins.
 
 ![Resistor array 4700 Ohm 4 X 0603 Convex pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Resistor array 4700 Ohm 4 X 0603 Convex is an OOMP electronic resistor array def
 | OOMP ID | `electronic_resistor_array_4_x_0603_convex_4700_ohm_8_pin` |
 | Type | Resistor Array |
 | Package / style | 4 x 0603 convex |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -32,8 +33,9 @@ Resistor array 4700 Ohm 4 X 0603 Convex is an OOMP electronic resistor array def
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 0.5 mm |
+| Length | 3.2 mm |
+| Width | 1.6 mm |
 
 
 
@@ -49,6 +51,25 @@ Resistor array 4700 Ohm 4 X 0603 Convex is an OOMP electronic resistor array def
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | R1.1 | passive |
+| 2 | R2.1 | passive |
+| 3 | R3.1 | passive |
+| 4 | R4.1 | passive |
+| 5 | R4.2 | passive |
+| 6 | R3.2 | passive |
+| 7 | R2.2 | passive |
+| 8 | R1.2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

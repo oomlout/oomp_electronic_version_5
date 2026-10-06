@@ -1,8 +1,18 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588919922475220992-C3299.pdf
+dimension_reference:
+  document: GR108M010F12RR0VL4FP0 datasheet (C3299 provenance)
+  notes: Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5 mm pin spacing;
+    polarity stripe/minus band marks the negative terminal per the datasheet outline
+    drawing.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 12.0
+  length: 8.0
+  width: 8.0
 distributors:
 - key: lcsc
   part_number: C3299
@@ -12,6 +22,19 @@ distributors:
   part_number: C3299
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/3690-GR108M010F12RR0VL4FP0/C3299
+electrical:
+  capacitance: 1000 uF
+  dielectric: aluminum electrolytic
+  lifetime: 3000hrs@105 C
+  operating_temperature: -40 to +105 C
+  pin_spacing: 3.5 mm
+  polarized: true
+  rated_voltage: 10 V
+  ripple_current: 640mA@100kHz
+  tolerance: +-20%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_8_mm_diameter_12_mm_tall_electrolytic_1000_micro_farad_10_volt/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: this leaded-electrolytic size/value/voltage
     combination did not exist in working_oomp_populate_capacitor.py, reviewed_choices.json,
@@ -22,11 +45,13 @@ jlcpcb_selection:
     straight off the page. Rating comparison from the staged capture: package below,
     stock below recorded as observed. Stock 125904 recorded as observed. Edits made
     under the capacitor family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/3690-GR108M010F12RR0VL4FP0/C3299
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -53,11 +78,17 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: two-terminal polarized capacitor
+    mapped to the KiCad Device:C_Polarized master (pin 1 positive, pin 2 negative)
+    and the CP_Radial_D8.0mm_P3.50mm footprint master with the case dimensions cross-checked
+    against the JLC package label Plugin,D8xL12mm; renders inherit the pipeline verified
+    on the completed passive exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Capacitor_THT:CP_Radial_D8.0mm_P3.50mm
+  symbol: Device:C_Polarized
 lcsc_search: 1000uF 10V electrolytic
 manufacturer: CX(Dongguan Chengxing Elec)
 manufacturers:
@@ -66,6 +97,8 @@ manufacturers:
 name_proper: Capacitor 1000 uF 10 V Electrolytic 8 mm diameter x 12 mm tall
 name_readable: Capacitor 1000 uF 10 V Electrolytic 8 mm diameter x 12 mm tall
 name_short: Capacitor 1000 uF 10 V Electrolytic 8 mm diameter x 12 mm tall
+package_name_manufacturer: Radial leaded aluminum electrolytic, D8.0 x 12.0 mm, 3.5
+  mm pin spacing
 part_id: C1
 part_number_jlcpcb: C3299
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/3690-GR108M010F12RR0VL4FP0/C3299
@@ -77,7 +110,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: CX(Dongguan Chengxing Elec)
   part_number: GR108M010F12RR0VL4FP0
+pins:
+  pin_1:
+    name: positive
+    number: '1'
+    type: passive
+  pin_2:
+    name: negative
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/3690-GR108M010F12RR0VL4FP0/C3299
+research_notes:
+- The official JLC page lists Plugin,D8xL12mm CX(Dongguan Chengxing Elec) GR108M010F12RR0VL4FP0
+  (C3299); identity and ratings observed live at intake 2026-09-29.
+- Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized
+  master and the Capacitor_THT:CP_Radial_D8.0mm_P3.50mm footprint master in the 2026-10-05
+  family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

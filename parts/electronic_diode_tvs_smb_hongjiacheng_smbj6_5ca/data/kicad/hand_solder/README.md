@@ -1,3 +1,5 @@
 # Hand Solder
 
-No verified official master is available. See [../manifest.yaml](../manifest.yaml). No pad geometry has been guessed.
+[electronic_diode_tvs_smb_hongjiacheng_smbj6_5ca](electronic_diode_tvs_smb_hongjiacheng_smbj6_5ca.kicad_mod)
+
+Source: `Diode_SMD:D_SMB_Handsoldering`. [License](../LICENSE.md).

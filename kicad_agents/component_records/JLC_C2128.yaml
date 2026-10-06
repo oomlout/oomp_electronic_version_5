@@ -27,8 +27,19 @@ research:
     link was clicked in the browser but no local PDF file appeared; full pass must
     obtain and validate a datasheet through a browser page.
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C64898.json.
+  - 'Full pass 2026-10-02: live page reconfirmed (C2128, Jiangsu Changjing Electronics
+    Technology Co., Ltd., 1N4148WS, Basic, In Stock 2,452,437). New family member
+    (first SOD-323 switching-diode integration): browser-downloaded the Changjing
+    BAV16WS/1N4148WS SOD-323 specification (2 pages, May 2011) from the JLC page and
+    imported it as this part and the SOD-323 family anchor (sha256 59e951bd...). Maximum
+    ratings page 1: VR 100 V (RMS 71 V), IFM 300 mA, IO 150 mA, IFSM 2.0 A @1 us,
+    Pd 200 mW, Tstg -55 to +150 C; electrical ratings page 1: VF 1.25 V at 150 mA,
+    IR 1 uA at 75 V, CT 2 pF, trr 4 ns; marking T6/T4; typical curves page 2. Package
+    SOD-323 (EIA SC-76): body 1.70 x 1.30 mm, H 0.95 mm per the outline used by the
+    KiCad Diode_SMD:D_SOD-323 master (datasheet has no dimension drawing, noted).
+    Pin 1 = K, pin 2 = A.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
   tier: basic
   tier_label_observed: Basic
@@ -48,7 +59,26 @@ jlc_selection:
     Current - Rectified: 150mA
     Pd - Power Dissipation: 200mW
     Reverse Leakage Current (Ir): 1uA@75V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Changjing BAV16WS/1N4148WS SOD-323 specification, May 2011 (C2128 provenance,
+      family anchor)
+    maximum_ratings:
+    - 1
+    electrical_characteristics:
+    - 1
+    typical_characteristics:
+    - 2
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Diode 1N4148WS SOD-323
+    with K (cathode, band side) left and A (anode) right plus the polarity dot, no
+    mirroring, no label overlap, no cropping. working_svg_dimensioned.png: SOD-323
+    outline per the KiCad D_SOD-323 master geometry (datasheet carries no dimension
+    drawing; recorded in dimension_reference). data/kicad manifest complete with Device:D
+    symbol and Diode_SMD:D_SOD-323 machine + hand footprints (SOD-323 has no separate
+    HandSolder master upstream; the part declares the same master for both, matching
+    the intake-era source). README.md: 1N4148WS part number, LCSC/JLC C2128 links,
+    2-pin table (K/A), datasheet link resolving to data/datasheet.pdf (the Changjing
+    SOD-323 specification, family anchor). Limitation: KiCad symbol/footprint checked
+    as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

@@ -1,10 +1,11 @@
 # Electronic / IC / Vssop 10
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 2 parts in total.
 
 ## Categories
 
+- [Power Management](power_management/README.md)
 - [Power Monitor](power_monitor/README.md)
 
 

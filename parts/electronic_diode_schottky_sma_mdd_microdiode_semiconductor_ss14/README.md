@@ -2,7 +2,7 @@
 
 `electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14`
 
-Diode SS14 SMA is an OOMP electronic diode definition. It uses the sma package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Diode SS14 SMA is an OOMP electronic diode definition. It uses the sma package or form factor. Its nominal drawing size is 4.5 &#x00D7; 2.8 mm. The definition includes 2 documented pins.
 
 ![Diode SS14 SMA pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Diode SS14 SMA is an OOMP electronic diode definition. It uses the sma package o
 | OOMP ID | `electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14` |
 | Type | Diode |
 | Package / style | sma |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.5 &#x00D7; 2.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -33,8 +34,9 @@ Diode SS14 SMA is an OOMP electronic diode definition. It uses the sma package o
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 2.3 mm |
+| Length | 4.5 mm |
+| Width | 2.8 mm |
 
 
 
@@ -50,6 +52,19 @@ Diode SS14 SMA is an OOMP electronic diode definition. It uses the sma package o
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | K | signal |
+| 2 | A | signal |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr`
 
-IC OP07CDR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm.
+IC OP07CDR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
 ![IC OP07CDR SOIC 8 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ IC OP07CDR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 packag
 | Type | Ic |
 | Package / style | soic 8 |
 | Nominal size | 4.9 &#x00D7; 3.9 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,6 +35,7 @@ IC OP07CDR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 packag
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.75 mm |
 | Length | 4.9 mm |
 | Width | 3.9 mm |
 
@@ -51,6 +53,25 @@ IC OP07CDR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 packag
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | TRIM1 | input |
+| 2 | IN- | input |
+| 3 | IN+ | input |
+| 4 | V- | power_in |
+| 5 | NC | no_connect |
+| 6 | OUT | output |
+| 7 | V+ | power_in |
+| 8 | TRIM2 | input |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

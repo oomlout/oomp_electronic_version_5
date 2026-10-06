@@ -24,8 +24,16 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, Samsung Electro-Mechanics, CL31B105KBHNNNE, C1848,
     1206, 1uF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-10-02: live page reconfirmed (C1848, Samsung Electro-Mechanics,
+    CL31B105KBHNNNE, Basic, In Stock 517,314); the listed datasheet URL matches the
+    intake snapshot. No new download: the already-captured Samsung MLCC general catalogue,
+    November 2015 (shared via oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad)
+    covers the exact suffix - part numbering page 4 decodes CL / 31 = 1206 / B = X7R
+    / 105 = 1 uF / K = +-10% / B = 50 V / H = 1.60 mm / N / N / E embossed 7-inch
+    reel; the X7R Product Lineup table page 28 lists CL31B105KBHNNN at 1 uF, 50 V,
+    +-10%, 3.20 x 1.60 mm; X7R class -55 to +125 C, +-15% (page 5).'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
   tier: basic
   tier_label_observed: Basic
@@ -41,7 +49,28 @@ jlc_selection:
     Tolerance: ±10%
     Capacitance: 1uF
     Temperature Coefficient: X7R
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared,
+      C1848 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 28
+    - 4
+    electrical_characteristics:
+    - 5
+    - 28
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 1 uF 1206 with terminals 1 left
+    and 2 right, symmetric non-polarized body, no mirroring, no label overlap, no
+    cropping. working_svg_dimensioned.png: top view 3.2 x 1.6 mm with arrows, matching
+    the Samsung 1206/3216 nominals; part thickness 1.60 mm (H code, page 4 thickness
+    table) in dimensions_mm (1206 masters identical to the built 1206 siblings). data/kicad
+    manifest complete with Device:C_Small symbol and Capacitor_SMD:C_1206_3216Metric
+    machine + C_1206_3216Metric_Pad1.33x1.80mm_HandSolder hand footprints. README.md:
+    CL31B105KBHNNNE part number, LCSC/JLC C1848 links, pin table, datasheet link resolving
+    to data/datasheet.pdf via the shared Samsung MLCC general catalogue (oomp_datasheet_common_with).
+    Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+    text rather than in a KiCad GUI.'

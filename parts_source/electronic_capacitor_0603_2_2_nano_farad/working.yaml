@@ -1,6 +1,16 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987928631816192-C1604.pdf
+dimension_reference:
+  document: Fenghua General Series MLCC specification (C1604)
+  notes: '0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness DA code 0.80+-0.10 mm.
+    X7R 0603 table lists 2.2 nF at 50 V (page 10).'
+  pages:
+  - 4
+  - 5
+  - 10
 dimensions_mm:
+  height: 0.8
   length: 1.6
   width: 0.8
 distributors:
@@ -12,16 +22,36 @@ distributors:
   part_number: C1604
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/1956-0603B222K500NT/C1604
+electrical:
+  capacitance: 2.2 nF (222)
+  capacitance_measurement: 1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)
+  dielectric: X7R (Class II)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10% (K)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0603_2_2_nano_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Existing generic 0603 2.2 nF capacitor with no previous supplier
     preference. FH C1604 is 50 V X7R +/-10%; this is the purchasing identity for the
     generic value/package, while DC-bias behavior and project-specific voltage margin
     remain for full review.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    dimensions:
+    - 5
+    document: Fenghua General Series MLCC specification (shared, C1604 provenance)
+    electrical_characteristics:
+    - 10
+    - 18
+    ordering_coverage:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1956-0603B222K500NT/C1604
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 2.2 nF
@@ -31,10 +61,21 @@ jlcpcb_selection:
   stock_observed: 1201310
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-01'
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 2.2 nF 0603 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.6 x 0.8 mm body with arrows, matching
+    the Fenghua 0603/1608 nominals and DA thickness. data/kicad manifest complete
+    with Device:C_Small symbol and Capacitor_SMD:C_0603_1608Metric machine + Pad1.08x0.95mm_HandSolder
+    hand footprints (masters verified on the C1588/C1603 0603 siblings). README.md:
+    0603B222K500NT part number, LCSC/JLC C1604 links, pin table, datasheet link resolving
+    to data/datasheet.pdf via the shared Fenghua General Series MLCC specification
+    (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint checked as rendered
+    SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
   machine_solder: Capacitor_SMD:C_0603_1608Metric
   symbol: Device:C_Small
 lcsc_search: 0603 2.2nF
@@ -45,6 +86,8 @@ manufacturers:
 name_proper: Capacitor 2.2 nF 0603
 name_readable: Capacitor 2.2 nF 0603
 name_short: Capacitor 2.2 nF 0603
+oomp_datasheet_common_with: electronic_capacitor_0402_100_pico_farad
+package_name_manufacturer: 0603 (1608 metric, DA thickness code)
 part_id: C1
 part_number_jlcpcb: C1604
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1956-0603B222K500NT/C1604
@@ -56,7 +99,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: FH (Guangdong Fenghua Advanced Tech)
   part_number: 0603B222K500NT
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/1956-0603B222K500NT/C1604
+research_notes:
+- 'The official JLC page lists Basic Fenghua 0603B222K500NT (C1604): 2.2 nF, 50 V,
+  X7R, +-10% in 0603; reconfirmed live 2026-10-01 (stock 1,147,702).'
+- The Fenghua ordering code decodes exactly to that suffix (B = X7R, 222 = 2.2 nF,
+  K = +-10%, 500 = 50 V), and the X7R 0603 table covers 2.2 nF at 50 V.
+- Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

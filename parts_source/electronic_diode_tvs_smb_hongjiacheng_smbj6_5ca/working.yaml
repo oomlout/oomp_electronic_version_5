@@ -1,8 +1,16 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756514665646174208-C7420377.pdf
+dimension_reference:
+  document: hongjiacheng SMBJ6.5CA specification (own copy, C7420377 provenance)
+  notes: JEDEC DO-214AA/SMB molded body 4.30 x 3.60 x 2.30 mm; polarity band denotes
+    the cathode end.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 2.3
+  length: 4.3
+  width: 3.6
 distributors:
 - key: lcsc
   part_number: C7420377
@@ -12,16 +20,30 @@ distributors:
   part_number: C7420377
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/hongjiacheng-SMBJ65CA/C7420377
+electrical:
+  breakdown_voltage: 7.22V
+  capacitance: see live listing
+  clamping_voltage: 11.2V
+  operating_temperature: -55℃~+150℃
+  peak_pulse_current: 600W@10/1000us
+  polarized: false
+  reverse_standoff_voltage: see live listing
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_tvs_smb_hongjiacheng_smbj6_5ca/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Created an exact hongjiacheng SMBJ6.5CA identity from the live
     JLC Basic listing. It is a bidirectional 600 W SMB TVS with 6.5 V standoff, 7.22
     V breakdown and 11.2 V clamp; do not merge it into a different manufacturer or
     voltage-grade TVS.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: hongjiacheng SMBJ6.5CA specification
+    ratings_package:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/hongjiacheng-SMBJ65CA/C7420377
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Clamping Voltage: 11.2V
@@ -39,11 +61,14 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: smb diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_SMD:D_SMB_Handsoldering
+  machine_solder: Diode_SMD:D_SMB
+  symbol: Device:D_TVS
 lcsc_search: SMBJ6.5CA
 manufacturer: hongjiacheng
 manufacturers:
@@ -52,6 +77,7 @@ manufacturers:
 name_proper: Diode SMBJ6.5CA SMB
 name_readable: Diode SMBJ6.5CA SMB
 name_short: Diode SMBJ6.5CA SMB
+package_name_manufacturer: SMB (DO-214AA)
 part_id: D1
 part_number_jlcpcb: C7420377
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/hongjiacheng-SMBJ65CA/C7420377
@@ -63,7 +89,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: hongjiacheng
   part_number: SMBJ6.5CA
+pins:
+  pin_1:
+    name: A1
+    number: '1'
+    type: passive
+  pin_2:
+    name: A2
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/hongjiacheng-SMBJ65CA/C7420377
+research_notes:
+- The official JLC page lists Basic hongjiacheng SMBJ6.5CA (C7420377); identity and
+  ratings observed live at intake 2026-09-24.
+- 'Family batch 2026-10-04: downloaded the hongjiacheng SMBJ6.5CA specification into
+  this part via the signed JLC OSS link; electrical values transcribed from the intake-observed
+  listing, package outline per the SMB (DO-214AA) master. Bidirectional TVS: pins
+  interchangeable, symbol Device:D_TVS (generic).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

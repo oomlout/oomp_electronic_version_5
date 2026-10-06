@@ -2,7 +2,7 @@
 
 `electronic_resistor_0805_560000_ohm`
 
-Resistor 560000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
+Resistor 560000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
 
 ![Resistor 560000 Ohm 0805 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 560000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 | Type | Resistor |
 | Package / style | 0805 |
 | Nominal size | 2.0 &#x00D7; 1.25 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 560000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.55 mm |
 | Length | 2.0 mm |
 | Width | 1.25 mm |
 
@@ -41,12 +43,26 @@ Resistor 560000 Ohm 0805 is an OOMP electronic resistor definition. It uses the 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2933556`](https://www.lcsc.com/product-detail/C2933556.html) |
+| Manufacturer part number | `RTT05564JTP` |
+| LCSC | [`C1404`](https://www.lcsc.com/product-detail/C1404.html) |
+| JLCPCB | [`C1404`](https://jlcpcb.com/partdetail/RALEC-RTT05564JTP/C1404) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

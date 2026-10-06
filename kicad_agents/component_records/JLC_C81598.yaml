@@ -34,6 +34,9 @@ research:
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing ST(Semtech) row; the onsemi 1N4148W row is
     a different exact maker identity and was left untouched.
+  - 'Family batch 2026-10-04: downloaded the own specification (1N4148W, signed JLC
+    OSS link) and verified the SOD-123 package outline and polarity; electrical values
+    transcribed from the intake-observed listing (verified_on 2026-09-25).'
 jlc_selection:
   verified_on: '2026-09-25'
   official_url: https://jlcpcb.com/partdetail/ST_Semtech-1N4148W/C81598
@@ -56,7 +59,12 @@ jlc_selection:
     Current - Rectified: 150mA
     Pd - Power Dissipation: 400mW
     Reverse Leakage Current (Ir): 1uA@75V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: ST 1N4148W specification
+    ratings_package:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: sod_123 diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'

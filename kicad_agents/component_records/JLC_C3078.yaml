@@ -32,6 +32,9 @@ research:
     Extended tooltip). No datasheet PDF imported at intake (solo worker has no download);
     download is an integration-stage task.'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C3078.json.
+  - 'THT family batch 2026-10-05: shares the series PDF anchored on C2497 (signed
+    JLC OSS link); package outline per the KBL THT bridge KiCad master; electrical
+    values from the intake-observed listing (verified_on 2026-09-29).'
 jlc_selection:
   verified_on: '2026-09-29'
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-KBL406/C3078
@@ -67,7 +70,12 @@ jlc_selection:
     Type: Single-Phase Rectifier
     Voltage - DC Reverse(Vr): 600V
     Voltage - Forward(Vf@If): 1.1V@4A
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: MDD KBL406 series specification
+    ratings:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-05: KBL THT bridge template; THT
+    renders follow the package master like the completed axial/bridge exemplars; differs
+    only in value text.'

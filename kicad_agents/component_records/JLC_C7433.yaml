@@ -25,8 +25,20 @@ research:
     channel and the listed precision amplifier parameters on 2026-09-24.
   - JLC's Download link opened a TI PDF in the browser, but it did not save to Downloads;
     the first-stage datasheet remains URL-only pending a successful browser save.
+  - 'Full pass 2026-10-02: live page reconfirmed (C7433, Texas Instruments, OP07CDR,
+    Basic, In Stock 236,159); the queue snapshot row was degraded (empty MPN/maker)
+    and has been repaired from the live page + intake record identity. New family
+    member (precision op-amp SOIC-8): the page datasheet link goes to ti.com.cn (www.ti.com.cn/cn/lit/ds/symlink/op07.pdf,
+    the stable TI literature URL in the record); browser-navigated there and fetched
+    the PDF same-origin, downloaded it, and imported it as this part and the family
+    anchor (sha256 eec53e89..., 24 pages, Rev. H). Precision single op-amp: 400 kHz
+    GBW, 0.3 V/us slew, 60 uV Vos, 120 dB CMRR, +-3 to +-18 V supplies, 0-70 C (intake
+    ratings). Pinout per the TI package drawing: 1/8 = offset trim, 2 = IN-, 3 = IN+,
+    4 = V-, 5 = NC (D package), 6 = OUT, 7 = V+, matching Amplifier_Operational:OP07
+    pad-for-pad. No HandSoldering master for SOIC-8 narrow - hand_solder empty per
+    the 2-asset rule.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-OP07CDR/C7433
   tier: basic
   tier_label_observed: Basic
@@ -49,7 +61,22 @@ jlc_selection:
     Features: Built-in compensation
     Ib - Input Bias Current: 1.8nA
     Dual Supply: -18V~-3V、3V~18V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: TI OP07x datasheet, Rev. H (C7433 provenance, family anchor)
+    pin_configuration:
+    - 2
+    features:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC OP07CDR SOIC 8 with
+    TRIM1/IN-/IN+/V- down the left side and TRIM2/V+/OUT/NC up the right side, matching
+    the TI OP07 pinout (1/8 = offset trim, 2 = IN-, 3 = IN+, 4 = V-, 5 = NC on the
+    D package, 6 = OUT, 7 = V+). working_svg_dimensioned.png: SOIC-8 outline per the
+    Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry. data/kicad manifest complete
+    (2-asset rule, no HandSoldering master for SOIC-8 narrow) with Amplifier_Operational:OP07
+    symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm machine footprint. README.md: OP07CDR
+    part number, LCSC/JLC C7433 links, 8-pin table, datasheet link resolving to data/datasheet.pdf
+    (the TI Rev. H datasheet, family anchor). Limitation: KiCad symbol/footprint checked
+    as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

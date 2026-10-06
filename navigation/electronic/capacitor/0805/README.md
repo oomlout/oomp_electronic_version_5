@@ -1,37 +1,141 @@
 # Electronic / Capacitor / 0805
 
 [Up one level](../README.md)
-This category contains 24 parts in total.
+This category contains 134 parts in total.
 
 ## Categories
 
+- [1 Micro Farad](1_micro_farad/README.md)
+- [1 Nano Farad](1_nano_farad/README.md)
 - [10 Micro Farad](10_micro_farad/README.md)
 - [100 Nano Farad](100_nano_farad/README.md)
+- [12 Nano Farad](12_nano_farad/README.md)
+- [150 Pico Farad](150_pico_farad/README.md)
+- [18 Nano Farad](18_nano_farad/README.md)
+- [2 2 Micro Farad](2_2_micro_farad/README.md)
+- [2 2 Nano Farad](2_2_nano_farad/README.md)
+- [20 Nano Farad](20_nano_farad/README.md)
+- [200 Pico Farad](200_pico_farad/README.md)
+- [22 Micro Farad](22_micro_farad/README.md)
+- [220 Nano Farad](220_nano_farad/README.md)
+- [220 Pico Farad](220_pico_farad/README.md)
+- [27 Nano Farad](27_nano_farad/README.md)
+- [33 Nano Farad](33_nano_farad/README.md)
+- [330 Pico Farad](330_pico_farad/README.md)
+- [390 Pico Farad](390_pico_farad/README.md)
+- [4 7 Micro Farad](4_7_micro_farad/README.md)
+- [47 Nano Farad](47_nano_farad/README.md)
+- [470 Nano Farad](470_nano_farad/README.md)
+- [470 Pico Farad](470_pico_farad/README.md)
+- [560 Pico Farad](560_pico_farad/README.md)
+- [68 Nano Farad](68_nano_farad/README.md)
+- [680 Pico Farad](680_pico_farad/README.md)
+- [820 Pico Farad](820_pico_farad/README.md)
 
 ## Parts
 
+- [Capacitor 0.5 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_0_5_pico_farad) — `electronic_capacitor_0805_0_5_pico_farad`
 - [Capacitor 1 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_nano_farad) — `electronic_capacitor_0805_1_nano_farad`
+- [Capacitor 1 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_pico_farad) — `electronic_capacitor_0805_1_pico_farad`
 - [Capacitor 1 uF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_micro_farad) — `electronic_capacitor_0805_1_micro_farad`
+- [Capacitor 1.2 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_2_nano_farad) — `electronic_capacitor_0805_1_2_nano_farad`
+- [Capacitor 1.2 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_2_pico_farad) — `electronic_capacitor_0805_1_2_pico_farad`
+- [Capacitor 1.5 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_5_nano_farad) — `electronic_capacitor_0805_1_5_nano_farad`
+- [Capacitor 1.5 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_5_pico_farad) — `electronic_capacitor_0805_1_5_pico_farad`
+- [Capacitor 1.8 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_8_nano_farad) — `electronic_capacitor_0805_1_8_nano_farad`
+- [Capacitor 1.8 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_1_8_pico_farad) — `electronic_capacitor_0805_1_8_pico_farad`
 - [Capacitor 10 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_nano_farad) — `electronic_capacitor_0805_10_nano_farad`
 - [Capacitor 10 uF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_10_micro_farad) — `electronic_capacitor_0805_10_micro_farad`
 - [Capacitor 100 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_nano_farad) — `electronic_capacitor_0805_100_nano_farad`
 - [Capacitor 100 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_100_pico_farad) — `electronic_capacitor_0805_100_pico_farad`
+- [Capacitor 12 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_12_nano_farad) — `electronic_capacitor_0805_12_nano_farad`
+- [Capacitor 12 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_12_pico_farad) — `electronic_capacitor_0805_12_pico_farad`
+- [Capacitor 120 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_120_nano_farad) — `electronic_capacitor_0805_120_nano_farad`
+- [Capacitor 120 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_120_pico_farad) — `electronic_capacitor_0805_120_pico_farad`
+- [Capacitor 15 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_15_nano_farad) — `electronic_capacitor_0805_15_nano_farad`
+- [Capacitor 150 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_150_nano_farad) — `electronic_capacitor_0805_150_nano_farad`
+- [Capacitor 150 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_150_pico_farad) — `electronic_capacitor_0805_150_pico_farad`
+- [Capacitor 16 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_16_pico_farad) — `electronic_capacitor_0805_16_pico_farad`
+- [Capacitor 160 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_160_pico_farad) — `electronic_capacitor_0805_160_pico_farad`
+- [Capacitor 18 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_18_nano_farad) — `electronic_capacitor_0805_18_nano_farad`
+- [Capacitor 18 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_18_pico_farad) — `electronic_capacitor_0805_18_pico_farad`
+- [Capacitor 180 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_180_pico_farad) — `electronic_capacitor_0805_180_pico_farad`
+- [Capacitor 2 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_nano_farad) — `electronic_capacitor_0805_2_nano_farad`
+- [Capacitor 2 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_pico_farad) — `electronic_capacitor_0805_2_pico_farad`
 - [Capacitor 2.2 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_nano_farad) — `electronic_capacitor_0805_2_2_nano_farad`
+- [Capacitor 2.2 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_pico_farad) — `electronic_capacitor_0805_2_2_pico_farad`
 - [Capacitor 2.2 uF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_2_micro_farad) — `electronic_capacitor_0805_2_2_micro_farad`
+- [Capacitor 2.5 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_5_pico_farad) — `electronic_capacitor_0805_2_5_pico_farad`
+- [Capacitor 2.7 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_7_nano_farad) — `electronic_capacitor_0805_2_7_nano_farad`
+- [Capacitor 2.7 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_2_7_pico_farad) — `electronic_capacitor_0805_2_7_pico_farad`
+- [Capacitor 20 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_20_nano_farad) — `electronic_capacitor_0805_20_nano_farad`
 - [Capacitor 20 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_20_pico_farad) — `electronic_capacitor_0805_20_pico_farad`
+- [Capacitor 200 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_200_pico_farad) — `electronic_capacitor_0805_200_pico_farad`
 - [Capacitor 22 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_22_nano_farad) — `electronic_capacitor_0805_22_nano_farad`
 - [Capacitor 22 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_22_pico_farad) — `electronic_capacitor_0805_22_pico_farad`
 - [Capacitor 22 uF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_22_micro_farad) — `electronic_capacitor_0805_22_micro_farad`
 - [Capacitor 220 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_220_nano_farad) — `electronic_capacitor_0805_220_nano_farad`
 - [Capacitor 220 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_220_pico_farad) — `electronic_capacitor_0805_220_pico_farad`
+- [Capacitor 24 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_24_pico_farad) — `electronic_capacitor_0805_24_pico_farad`
+- [Capacitor 25 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_25_pico_farad) — `electronic_capacitor_0805_25_pico_farad`
+- [Capacitor 27 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_27_nano_farad) — `electronic_capacitor_0805_27_nano_farad`
+- [Capacitor 27 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_27_pico_farad) — `electronic_capacitor_0805_27_pico_farad`
+- [Capacitor 270 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_270_pico_farad) — `electronic_capacitor_0805_270_pico_farad`
+- [Capacitor 3 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_3_nano_farad) — `electronic_capacitor_0805_3_nano_farad`
+- [Capacitor 3 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_3_pico_farad) — `electronic_capacitor_0805_3_pico_farad`
+- [Capacitor 3.3 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_3_3_nano_farad) — `electronic_capacitor_0805_3_3_nano_farad`
+- [Capacitor 3.3 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_3_3_pico_farad) — `electronic_capacitor_0805_3_3_pico_farad`
+- [Capacitor 3.6 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_3_6_pico_farad) — `electronic_capacitor_0805_3_6_pico_farad`
+- [Capacitor 3.9 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_3_9_nano_farad) — `electronic_capacitor_0805_3_9_nano_farad`
+- [Capacitor 3.9 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_3_9_pico_farad) — `electronic_capacitor_0805_3_9_pico_farad`
+- [Capacitor 300 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_300_pico_farad) — `electronic_capacitor_0805_300_pico_farad`
 - [Capacitor 33 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_33_nano_farad) — `electronic_capacitor_0805_33_nano_farad`
+- [Capacitor 330 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_330_nano_farad) — `electronic_capacitor_0805_330_nano_farad`
+- [Capacitor 330 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_330_pico_farad) — `electronic_capacitor_0805_330_pico_farad`
+- [Capacitor 36 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_36_pico_farad) — `electronic_capacitor_0805_36_pico_farad`
+- [Capacitor 39 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_39_nano_farad) — `electronic_capacitor_0805_39_nano_farad`
+- [Capacitor 39 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_39_pico_farad) — `electronic_capacitor_0805_39_pico_farad`
+- [Capacitor 390 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_390_pico_farad) — `electronic_capacitor_0805_390_pico_farad`
+- [Capacitor 4 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_4_pico_farad) — `electronic_capacitor_0805_4_pico_farad`
 - [Capacitor 4.7 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_4_7_nano_farad) — `electronic_capacitor_0805_4_7_nano_farad`
+- [Capacitor 4.7 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_4_7_pico_farad) — `electronic_capacitor_0805_4_7_pico_farad`
 - [Capacitor 4.7 uF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_4_7_micro_farad) — `electronic_capacitor_0805_4_7_micro_farad`
 - [Capacitor 47 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_47_nano_farad) — `electronic_capacitor_0805_47_nano_farad`
 - [Capacitor 47 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_47_pico_farad) — `electronic_capacitor_0805_47_pico_farad`
 - [Capacitor 47 uF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_47_micro_farad) — `electronic_capacitor_0805_47_micro_farad`
 - [Capacitor 470 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_470_nano_farad) — `electronic_capacitor_0805_470_nano_farad`
 - [Capacitor 470 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_470_pico_farad) — `electronic_capacitor_0805_470_pico_farad`
+- [Capacitor 5 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_5_nano_farad) — `electronic_capacitor_0805_5_nano_farad`
+- [Capacitor 5 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_5_pico_farad) — `electronic_capacitor_0805_5_pico_farad`
+- [Capacitor 5.1 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_5_1_nano_farad) — `electronic_capacitor_0805_5_1_nano_farad`
+- [Capacitor 5.1 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_5_1_pico_farad) — `electronic_capacitor_0805_5_1_pico_farad`
+- [Capacitor 5.6 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_5_6_pico_farad) — `electronic_capacitor_0805_5_6_pico_farad`
+- [Capacitor 50 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_50_pico_farad) — `electronic_capacitor_0805_50_pico_farad`
+- [Capacitor 500 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_500_pico_farad) — `electronic_capacitor_0805_500_pico_farad`
+- [Capacitor 51 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_51_pico_farad) — `electronic_capacitor_0805_51_pico_farad`
+- [Capacitor 510 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_510_pico_farad) — `electronic_capacitor_0805_510_pico_farad`
+- [Capacitor 56 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_56_nano_farad) — `electronic_capacitor_0805_56_nano_farad`
+- [Capacitor 56 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_56_pico_farad) — `electronic_capacitor_0805_56_pico_farad`
+- [Capacitor 560 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_560_pico_farad) — `electronic_capacitor_0805_560_pico_farad`
+- [Capacitor 6.2 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_6_2_pico_farad) — `electronic_capacitor_0805_6_2_pico_farad`
+- [Capacitor 6.8 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_6_8_nano_farad) — `electronic_capacitor_0805_6_8_nano_farad`
+- [Capacitor 6.8 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_6_8_pico_farad) — `electronic_capacitor_0805_6_8_pico_farad`
+- [Capacitor 62 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_62_pico_farad) — `electronic_capacitor_0805_62_pico_farad`
+- [Capacitor 68 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_68_nano_farad) — `electronic_capacitor_0805_68_nano_farad`
+- [Capacitor 68 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_68_pico_farad) — `electronic_capacitor_0805_68_pico_farad`
+- [Capacitor 680 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_680_nano_farad) — `electronic_capacitor_0805_680_nano_farad`
+- [Capacitor 680 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_680_pico_farad) — `electronic_capacitor_0805_680_pico_farad`
+- [Capacitor 7 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_7_pico_farad) — `electronic_capacitor_0805_7_pico_farad`
+- [Capacitor 7.5 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_7_5_pico_farad) — `electronic_capacitor_0805_7_5_pico_farad`
+- [Capacitor 75 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_75_pico_farad) — `electronic_capacitor_0805_75_pico_farad`
+- [Capacitor 8 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_8_pico_farad) — `electronic_capacitor_0805_8_pico_farad`
+- [Capacitor 8.2 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_8_2_nano_farad) — `electronic_capacitor_0805_8_2_nano_farad`
+- [Capacitor 8.2 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_8_2_pico_farad) — `electronic_capacitor_0805_8_2_pico_farad`
+- [Capacitor 82 nF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_82_nano_farad) — `electronic_capacitor_0805_82_nano_farad`
+- [Capacitor 82 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_82_pico_farad) — `electronic_capacitor_0805_82_pico_farad`
+- [Capacitor 820 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_820_pico_farad) — `electronic_capacitor_0805_820_pico_farad`
+- [Capacitor 9 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_9_pico_farad) — `electronic_capacitor_0805_9_pico_farad`
+- [Capacitor 91 pF 0805](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_91_pico_farad) — `electronic_capacitor_0805_91_pico_farad`
 
 ---
 

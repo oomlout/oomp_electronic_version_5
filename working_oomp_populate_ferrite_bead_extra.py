@@ -203,6 +203,7 @@ def main(**kwargs):
     current = "electronic_ferrite_bead_0805_600_ohm_500_milliamp_sunlord_gz2012d601tf"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_ferrite_bead_0603_600_ohm_200_milliamp_sunlord_gz1608d601tf"
         part["package_name_manufacturer"] = "2012 (0805 imperial)"
         part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8565214663970209792-C1017.pdf"
         part["electrical"] = {

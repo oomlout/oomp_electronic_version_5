@@ -18,6 +18,8 @@ from __future__ import annotations
 
 import argparse
 import contextlib
+import os
+import time
 import hashlib
 import importlib
 import io
@@ -348,7 +350,7 @@ def _action_modes(working):
     return sorted(modes)
 
 
-def _refresh_component_indexes(record):
+def _refresh_component_indexes(record, skip_shared_refresh=False):
     """Refresh ancestor READMEs and the library package without rebuilding boards."""
     import working_oomp
     import oomlout_roboclick
@@ -356,6 +358,11 @@ def _refresh_component_indexes(record):
 
     # Definitions are lightweight; refresh the generated navigation tree via the
     # dedicated action instead of synthesizing navigation parts in parts/.
+    if skip_shared_refresh:
+        # Batch mode: the full-tree navigation sweep and the kicad_libraries
+        # packaging are shared outputs; the batch driver runs them once at the
+        # end instead of once per part.
+        return [], {"status": "deferred to batch shared refresh"}
     import action_generate_navigation
     action_generate_navigation.generate()
     identifiers = navigation_part_ids(_load_populated_definition(record))
@@ -372,7 +379,7 @@ def _refresh_component_indexes(record):
     return identifiers, library_report
 
 
-def build_component(record, regenerate_pngs=False):
+def build_component(record, regenerate_pngs=False, skip_shared_refresh=False, skip_populate=False):
     initial_report = validate_implementation(record, require_generated=False)
     if initial_report["status"] != "pass":
         write_report(initial_report)
@@ -385,7 +392,39 @@ def build_component(record, regenerate_pngs=False):
     import working_oomp
     import oomlout_roboclick
 
-    working_oomp_populate.main()
+    if skip_populate and (PARTS_DIRECTORY.parent / "parts_source" / part_id / "working.yaml").is_file():
+        # single-part fast path: the caller just wrote this part's
+        # parts_source record; skip the whole-tree populate rewrite (and the
+        # cross-worker lock that only guards that rewrite)
+        pass
+    else:
+        # populate.main() rewrites the whole parts_source tree (including the
+        # datasheet dedupe pass); serialize it across parallel batch workers so
+        # concurrent writes cannot collide on Windows or race the dedupe.
+        _populate_lock = PARTS_DIRECTORY.parent / "tmp" / "populate_main.lock"
+        _populate_lock.parent.mkdir(exist_ok=True)
+        import time as _time
+        _lock_start = _time.time()
+        while True:
+            try:
+                _lock_fd = os.open(str(_populate_lock), os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+                break
+            except FileExistsError:
+                # a lock older than 15 minutes belongs to a dead worker
+                try:
+                    if _time.time() - _populate_lock.stat().st_mtime > 900:
+                        _populate_lock.unlink(missing_ok=True)
+                        continue
+                except OSError:
+                    pass  # raced away; just retry
+                if _time.time() - _lock_start > 1800:
+                    raise RuntimeError("populate lock unavailable for 30 minutes")
+                _time.sleep(2)
+        try:
+            working_oomp_populate.main()
+        finally:
+            os.close(_lock_fd)
+            _populate_lock.unlink(missing_ok=True)
     population_output = io.StringIO()
     with contextlib.redirect_stdout(population_output):
         working_oomp.load_parts(filter=part_id, regenerate_pngs=regenerate_pngs)
@@ -399,7 +438,7 @@ def build_component(record, regenerate_pngs=False):
     with contextlib.redirect_stdout(population_output):
         working_oomp.load_parts(filter=part_id, regenerate_pngs=False)
 
-    navigation_ids, library_report = _refresh_component_indexes(record)
+    navigation_ids, library_report = _refresh_component_indexes(record, skip_shared_refresh)
 
     project_state_after = _project_file_state()
     if project_state_before != project_state_after:
@@ -427,6 +466,12 @@ def main():
     parser.add_argument("command", choices=["check", "build"])
     parser.add_argument("record", help="YAML record in kicad_agents/component_records")
     parser.add_argument("--regenerate-pngs", action="store_true")
+    parser.add_argument("--skip-shared-refresh", action="store_true",
+                        help="defer the navigation sweep and kicad_libraries packaging "
+                             "to a batch-end shared refresh")
+    parser.add_argument("--skip-populate", action="store_true",
+                        help="parts_source was just regenerated for this part; "
+                             "skip the whole-tree populate rewrite")
     arguments = parser.parse_args()
 
     record_path = Path(arguments.record).resolve()
@@ -439,7 +484,10 @@ def main():
         if report["status"] != "pass":
             raise SystemExit(1)
     if arguments.command == "build":
-        report, report_path = build_component(record, regenerate_pngs=arguments.regenerate_pngs)
+        report, report_path = build_component(
+            record, regenerate_pngs=arguments.regenerate_pngs,
+            skip_shared_refresh=arguments.skip_shared_refresh,
+            skip_populate=arguments.skip_populate)
         print(json.dumps(report, indent=2))
         print(f"wrote {report_path}")
 

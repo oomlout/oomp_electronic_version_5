@@ -1,8 +1,16 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757912848654061568-C2462.pdf
+dimension_reference:
+  document: MDD 10A10 series specification (C2462 provenance)
+  notes: R-6 / P600 axial molded body 9.5 x 6.5 mm, 12.70 mm pitch horizontal mount
+    per the KiCad master.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 4.0
+  length: 9.5
+  width: 6.5
 distributors:
 - key: lcsc
   part_number: C2462
@@ -12,6 +20,17 @@ distributors:
   part_number: C2462
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-10A10/C2462
+electrical:
+  forward_current: 10A
+  forward_voltage: 1V@10A
+  maximum_dc_reverse_voltage: 1kV
+  operating_temperature: -50℃~+150℃
+  polarized: true
+  reverse_leakage_current: 10uA@1kV
+  reverse_recovery_time: see live listing
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_rectifier_r_6_mdd_microdiode_semiconductor_10a10/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing package tokens: the diode module''s rectifier and
     fast_recovery rows were all surface-mount (sma, sod_123fl); no do_41, do_201ad,
@@ -25,11 +44,14 @@ jlcpcb_selection:
     Edits made under the diode family lock. Rating comparison from the staged capture:
     Diodes/Diodes - General Purpose, package R-6, stock 80879 recorded as observed.
     Edits made under the diode family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: MDD 10A10 series specification
+    ratings:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-10A10/C2462
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -54,11 +76,14 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: R-6 (P600) THT axial template;
+    THT renders follow the package master like the completed axial/bridge exemplars;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_THT:D_P600_R-6_P12.70mm_Horizontal
+  machine_solder: Diode_THT:D_P600_R-6_P12.70mm_Horizontal
+  symbol: Device:D
 lcsc_search: 10A10
 manufacturer: MDD(Microdiode Semiconductor)
 manufacturers:
@@ -67,6 +92,7 @@ manufacturers:
 name_proper: Diode 10A10 R-6
 name_readable: Diode 10A10 R-6
 name_short: Diode 10A10 R-6
+package_name_manufacturer: R-6 (P600) THT axial
 part_id: D1
 part_number_jlcpcb: C2462
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-10A10/C2462
@@ -78,7 +104,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: MDD(Microdiode Semiconductor)
   part_number: 10A10
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: passive
+  pin_2:
+    name: A
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-10A10/C2462
+research_notes:
+- The official JLC page lists MDD(Microdiode Semiconductor) 10A10 (C2462); identity
+  and ratings observed live at intake 2026-09-29.
+- 'THT family batch 2026-10-05: Own downloaded series specification; Package outline
+  and polarity follow the R-6 (P600) THT axial master; axial THT convention pin 1
+  = cathode (banded end), pin 2 = anode.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

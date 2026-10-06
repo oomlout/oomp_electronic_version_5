@@ -2,4 +2,4 @@
 
 [electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_semicon_xc6206p332mr_g](electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_semicon_xc6206p332mr_g.kicad_mod)
 
-Source: `Package_TO_SOT_SMD:SOT-23`. [License](../LICENSE.md).
+Source: `Package_TO_SOT_SMD:SOT-23_Handsoldering`. [License](../LICENSE.md).

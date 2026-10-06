@@ -27,6 +27,9 @@ research:
     link was clicked in the browser but no local PDF file appeared; full pass must
     obtain and validate a datasheet through a browser page.
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C64898.json.
+  - 'Family batch 2026-10-04: downloaded the own specification (B5819W SL, signed
+    JLC OSS link) and verified the SOD-123 package outline and polarity; electrical
+    values transcribed from the intake-observed listing (verified_on 2026-09-24).'
 jlc_selection:
   verified_on: '2026-09-24'
   official_url: https://jlcpcb.com/partdetail/9093-B5819WSL/C8598
@@ -45,7 +48,12 @@ jlc_selection:
     Voltage - DC Reverse(Vr): 40V
     Diode Configuration: Standalone
     Current - Rectified: 1A
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Jiangsu Changjing Electronics Technology Co., Ltd. B5819W SL specification
+    ratings_package:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: sod_123 diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'

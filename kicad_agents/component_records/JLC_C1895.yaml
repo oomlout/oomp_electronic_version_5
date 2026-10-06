@@ -36,6 +36,11 @@ research:
     MSL 1. No datasheet PDF imported at intake (solo worker has no download); download
     is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991596294946816-C1895.pdf).'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C1895.json.
+  - 'Family batch 2026-10-04: identity, tier and ratings are the intake-time live
+    observations (verified_on 2026-09-28); no fresh page pass was run for this member.
+    The shared FH (Guangdong Fenghua Advanced Tech) datasheet (oomp_datasheet_common_with
+    = electronic_capacitor_0402_100_pico_farad) covers the exact suffix - 201 = 200
+    pF; package dimensions: 1206 L 3.20+-0.20, W 1.60+-0.20, T 0.80+-0.10 mm.'
 jlc_selection:
   verified_on: '2026-09-28'
   official_url: https://jlcpcb.com/partdetail/2247-1206CG201J500NT/C1895
@@ -58,7 +63,17 @@ jlc_selection:
     Temperature Coefficient: C0G
     Tolerance: ±5%
     Voltage Rating: 50V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared family copy)
+    how_to_order:
+    - 4
+    dimensions:
+    - 5
+    capacitance_voltage:
+    - 10
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 1206 resistor template (Device:R_Small, Capacitor_SMD:C_1206_3216Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: C35270,C13585.'

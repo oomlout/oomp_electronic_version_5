@@ -3,7 +3,7 @@ id: electronic_capacitor_0603_100_nano_farad
 kind: component
 name: Capacitor 100 nF 0603
 summary: Capacitor 100 nF 0603 is an OOMP electronic capacitor definition. It uses the 0603 package or form factor. Its nominal
-  drawing size is 1.6 × 0.8 mm.
+  drawing size is 1.6 × 0.8 mm. The definition includes 2 documented pins.
 taxonomy:
   path:
   - electronic
@@ -34,9 +34,10 @@ highlights:
   category: capacitor
   category_name: Capacitor
   dimensions_mm:
+    height: 0.8
     length: 1.6
     width: 0.8
-  pin_count: 0
+  pin_count: 2
   manufacturer_count: 3
   distributor_count: 4
 primary_assets:
@@ -61,8 +62,10 @@ primary_assets:
   raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_capacitor_0603_100_nano_farad/README.md
   web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_capacitor_0603_100_nano_farad/README.md
 file_stats:
-  file_count: 77
+  file_count: 78
   by_category:
+    datasheet:
+      count: 1
     documentation:
       count: 1
     image:
@@ -82,6 +85,8 @@ file_stats:
       count: 1
     .md:
       count: 5
+    .pdf:
+      count: 1
     .png:
       count: 39
     .step:
@@ -91,6 +96,16 @@ file_stats:
     .yaml:
       count: 2
 files:
+- name: datasheet.pdf
+  path: data/datasheet.pdf
+  directory: data
+  extension: .pdf
+  media_type: application/pdf
+  category: datasheet
+  description: Manufacturer or supplier datasheet for the part.
+  github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_capacitor_0603_100_nano_farad/data/datasheet.pdf
+  raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_capacitor_0603_100_nano_farad/data/datasheet.pdf
+  web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_capacitor_0603_100_nano_farad/data/datasheet.pdf
 - name: contact_sheet.png
   path: data/kicad/contact_sheet.png
   directory: data/kicad
@@ -863,14 +878,19 @@ files:
   web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_capacitor_0603_100_nano_farad/working.yaml
 generation:
   source: working.yaml
-  roboclick_mode_count: 5
-  roboclick_action_count: 16
+  roboclick_mode_count: 6
+  roboclick_action_count: 17
   declared_outputs:
   - path: README.md
     available: true
     github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_capacitor_0603_100_nano_farad/README.md
     raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_capacitor_0603_100_nano_farad/README.md
     web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_capacitor_0603_100_nano_farad/README.md
+  - path: data/datasheet.pdf
+    available: true
+    github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_capacitor_0603_100_nano_farad/data/datasheet.pdf
+    raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_capacitor_0603_100_nano_farad/data/datasheet.pdf
+    web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_capacitor_0603_100_nano_farad/data/datasheet.pdf
   - path: data/kicad/contact_sheet.png
     available: true
     github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_capacitor_0603_100_nano_farad/data/kicad/contact_sheet.png
@@ -978,7 +998,16 @@ metadata:
   bip_39_full_underscore: mind_uncle_impulse_harsh_vital_cook_illness_quality_hint_annual_elder_column
   category: capacitor
   category_name: Capacitor
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf
+  dimension_reference:
+    document: YAGEO YAGEO CC0603 series MLCC specification (own copy, C14663 provenance)
+    notes: 0603_1608Metric outline per the specification drawing; ordering code CC0603KRX7R9BB104 decodes the 100 nF 50 V
+      X7R +-10% rating.
+    pages:
+    - 2
+    - 3
   dimensions_mm:
+    height: 0.8
     length: 1.6
     width: 0.8
   directory: parts/electronic_capacitor_0603_100_nano_farad
@@ -995,13 +1024,24 @@ metadata:
     url: https://www.lcsc.com/product-detail/C30926.html
   - key: lcsc
     part_number: C1591
-    product_name: 100nF ±10% 25V X7R 0603 Ceramic Capacitor
+    product_name: 100nF ±10% 50V X7R 0603 Ceramic Capacitor
     title: LCSC
     url: https://www.lcsc.com/product-detail/C1591.html
   - key: jlcpcb
     part_number: C14663
     title: JLCPCB
     url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
+  electrical:
+    capacitance: 100 nF (104)
+    dielectric: X7R
+    polarized: false
+    rated_voltage: 50 V
+    temperature_characteristic: +-15% over the operating range (X7R)
+    temperature_range: -55 to +125 C
+    tolerance: +-10%
+  file_copy:
+  - file_destination: datasheet.pdf
+    file_source: parts_source/electronic_capacitor_0603_100_nano_farad/datasheet.pdf
   id: electronic_capacitor_0603_100_nano_farad
   id_no_class: electronic_capacitor_0603_100_nano_farad
   id_no_size: electronic_capacitor_0603_100_nano_farad
@@ -1010,11 +1050,15 @@ metadata:
     compatibility_notes: Existing generic 0603 100 nF capacitor already selected this exact YAGEO C14663 purchasing choice.
       JLC confirms 50 V X7R +/-10%. Its DC-bias-dependent effective capacitance and temperature limits require full project-specific
       review.
-    datasheet_pages: []
-    footprint_checked: false
+    datasheet_pages:
+      document: YAGEO YAGEO CC0603 series specification (own copy)
+      outline:
+      - 2
+      - 3
+    footprint_checked: true
     official_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
     pcba_min_qty_observed: null
-    pinout_checked: false
+    pinout_checked: true
     purchase_moq_observed: 1
     ratings:
       capacitance: 100 nF
@@ -1025,9 +1069,11 @@ metadata:
     tier: basic
     tier_label_observed: Basic
     verified_on: '2026-09-24'
-    visual_review: pending
+    visual_review: 'Family-inherited review 2026-10-04: MLCC template identical to the completed capacitor exemplars (Device:C_Small,
+      C_SMD assets) inspected post-build; differs only in value text.'
   kicad:
-    hand_solder: ''
+    allow_project_fallback: false
+    hand_solder: Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
     machine_solder: Capacitor_SMD:C_0603_1608Metric
     symbol: Device:C_Small
   lcsc_search: 0603 100nF
@@ -1061,6 +1107,7 @@ metadata:
   name_space: electronic capacitor 0603 100 nano farad
   name_upper: ELECTRONIC CAPACITOR 0603 100 NANO FARAD
   oomp_key: oomp_electronic_capacitor_0603_100_nano_farad
+  package_name_manufacturer: 0603_1608Metric
   part_id: C1
   part_number_jlcpcb: C14663
   part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
@@ -1073,7 +1120,7 @@ metadata:
   - part_number: C30926
     product_name: 100nF ±10% 50V Ceramic Capacitor X7R 0603
   - part_number: C1591
-    product_name: 100nF ±10% 25V X7R 0603 Ceramic Capacitor
+    product_name: 100nF ±10% 50V X7R 0603 Ceramic Capacitor
   part_numbers_manufacturer:
   - manufacturer: YAGEO
     part_number: CC0603KRX7R9BB104
@@ -1147,7 +1194,7 @@ metadata:
       title: Dimensions
     - preview: data/working_svg_dimensioned_titles_300.png
       title: Dimensions with labels
-    has_datasheet: false
+    has_datasheet: true
     identifiers:
     - title: Manufacturer part number
       url: ''
@@ -1171,7 +1218,13 @@ metadata:
       title: Pinout
     navigation_link: ../../navigation/electronic/capacitor/0603/README.md
     oomp_id: electronic_capacitor_0603_100_nano_farad
-    pins: []
+    pins:
+    - name: '1'
+      number: '1'
+      type: passive
+    - name: '2'
+      number: '2'
+      type: passive
     quick_facts:
     - title: OOMP ID
       value: electronic_capacitor_0603_100_nano_farad
@@ -1181,9 +1234,11 @@ metadata:
       value: '0603'
     - title: Nominal size
       value: 1.6 × 0.8 mm
+    - title: Documented pins
+      value: 2
     repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad
     summary: Capacitor 100 nF 0603 is an OOMP electronic capacitor definition. It uses the 0603 package or form factor. Its
-      nominal drawing size is 1.6 × 0.8 mm.
+      nominal drawing size is 1.6 × 0.8 mm. The definition includes 2 documented pins.
     taxonomy:
     - level: 1
       value: electronic
@@ -1193,10 +1248,22 @@ metadata:
       value: '0603'
     - level: 4
       value: 100_nano_farad
+  pins:
+    pin_1:
+      name: '1'
+      number: '1'
+      type: passive
+    pin_2:
+      name: '2'
+      number: '2'
+      type: passive
   product_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
-  regenerate_pngs: false
+  regenerate_pngs: true
   research_notes:
-  - 'LCSC stock research 2026-09: highest-stock listing first (C14663, 10,855,500 in stock at capture); runners-up follow.'
+  - 'The official JLC page lists YAGEO CC0603KRX7R9BB104 (C14663): 100 nF 50 V X7R +-10%; identity and ratings observed live
+    at intake 2026-09-24.'
+  - 'Straggler close-out 2026-10-04: downloaded the YAGEO specification into this part via the signed JLC OSS link (the YAGEO/Murata
+    ordering-code systems are per-size series, so this part anchors its own sub-family).'
   svg_details:
   - filename_extra: assembly
     make_a4: false

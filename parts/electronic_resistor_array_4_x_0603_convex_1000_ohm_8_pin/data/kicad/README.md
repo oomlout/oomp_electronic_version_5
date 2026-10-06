@@ -1,11 +1,10 @@
 # KiCad assets: electronic_resistor_array_4_x_0603_convex_1000_ohm_8_pin
 
-
+- [Symbol](electronic_resistor_array_4_x_0603_convex_1000_ohm_8_pin.kicad_sym) — `Device:R_Pack04`
+- [Machine Solder](machine_solder/electronic_resistor_array_4_x_0603_convex_1000_ohm_8_pin.kicad_mod) — `Resistor_SMD:R_Array_Convex_4x0603`
 
 ## Review
 
-- Official symbol master unavailable: not selected
-- Official machine_solder footprint unavailable: not selected
 - Official hand_solder footprint unavailable: not selected
 
 Silkscreen code: `CF7F`. Source provenance: [manifest](manifest.yaml).

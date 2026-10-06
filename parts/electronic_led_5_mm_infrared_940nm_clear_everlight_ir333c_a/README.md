@@ -1,0 +1,113 @@
+# LED IR333C-A 5 MM
+
+`electronic_led_5_mm_infrared_940nm_clear_everlight_ir333c_a`
+
+LED IR333C-A 5 MM is an OOMP electronic led definition. It uses the 5 mm package or form factor. Its nominal drawing size is 5.0 &#x00D7; 5.0 mm. The definition includes 2 documented pins.
+
+![LED IR333C-A 5 MM pinout](data/working_svg_square_pins.svg)
+
+## At a glance
+
+| Detail | Value |
+| --- | --- |
+| OOMP ID | `electronic_led_5_mm_infrared_940nm_clear_everlight_ir333c_a` |
+| Type | Led |
+| Package / style | 5 mm |
+| Nominal size | 5.0 &#x00D7; 5.0 mm |
+| Documented pins | 2 |
+
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+| 1 | `electronic` |
+| 2 | `led` |
+| 3 | `5_mm` |
+| 4 | `infrared_940nm` |
+| 5 | `clear` |
+| 14 | `everlight` |
+| 15 | `ir333c_a` |
+
+
+
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+| Height | 8.0 mm |
+| Length | 5.0 mm |
+| Width | 5.0 mm |
+
+
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `IR333C-A` |
+| LCSC | [`C5130`](https://www.lcsc.com/product-detail/C5130.html) |
+| JLCPCB | [`C5130`](https://jlcpcb.com/partdetail/EverlightElec-IR333CA/C5130) |
+
+
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | K | passive |
+| 2 | A | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
+
+
+## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
+![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
+![Outline](data/working_svg_outline_300.png)
+
+![Part ID](data/working_svg_part_id_300.png)
+
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
+
+![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
+
+![Dimensions](data/working_svg_dimensioned_300.png)
+
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
+
+
+[View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_5_mm_infrared_940nm_clear_everlight_ir333c_a)
+
+
+
+[Browse this category](../../navigation/electronic/led/5_mm/infrared_940nm/clear/everlight/README.md)
+
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

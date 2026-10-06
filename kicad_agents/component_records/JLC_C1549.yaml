@@ -16,22 +16,30 @@ research:
   product_url: https://jlcpcb.com/partdetail/1901-0402CG180J500NT/C1549
   datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987757659807744-C1549.pdf
   browser_sources:
-    - https://jlcpcb.com/partdetail/1901-0402CG180J500NT/C1549
+  - https://jlcpcb.com/partdetail/1901-0402CG180J500NT/C1549
   webpage_capture: parts_source/electronic_capacitor_0402_18_pico_farad/web_page_distributor_jlc.txt
   evidence_notes:
   - 'Full pass 2026-10-01: live page reconfirmed (C1549, Fenghua, 0402CG180J500NT,
-    Basic, In Stock 545,331); the page datasheet link resolves to the same
-    stable URL recorded at intake. The shared Fenghua General Series MLCC
-    specification (C1549 provenance sha256 705023d3... in datasheet_source.yaml,
-    physical PDF kept in the C1546 anchor folder via oomp_datasheet_common_with)
-    covers the full suffix: ordering decode page 4 decodes 0402 / CG = C0G /
-    180 = 18 pF / J = +-5% / 500 = 50 V; the C0G 0402 capacitance table page 6
-    lists 18 pF at 25 V and 50 V with the CA thickness code 0.50 +-0.05 mm;
-    dimensions page 5: L 1.00 +-0.05, W 0.50 +-0.05, T 0.50 +-0.05, terminal
-    WB 0.25 +-0.05 mm.'
-  - Official page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 0402CG180J500NT, C1549, 0402, 18pF, 50V, C0G and +/-5% on 2026-09-24.
-  - Reuses generic electronic_capacitor_0402_18_pico_farad; previous YAGEO C106202 was 50V NP0 +/-5% and remains an alternative.
-  - JLC-linked C1549 PDF was downloaded through the browser and imported with source URL and SHA-256 into the matching parts_source datasheet.pdf. Ordering-code and dimensional review remain full-pass tasks.
+    Basic, In Stock 545,331); the page datasheet link resolves to the same stable
+    URL recorded at intake. The shared Fenghua General Series MLCC specification (C1549
+    provenance sha256 705023d3... in datasheet_source.yaml, physical PDF kept in the
+    C1546 anchor folder via oomp_datasheet_common_with) covers the full suffix: ordering
+    decode page 4 decodes 0402 / CG = C0G / 180 = 18 pF / J = +-5% / 500 = 50 V; the
+    C0G 0402 capacitance table page 6 lists 18 pF at 25 V and 50 V with the CA thickness
+    code 0.50 +-0.05 mm; dimensions page 5: L 1.00 +-0.05, W 0.50 +-0.05, T 0.50 +-0.05,
+    terminal WB 0.25 +-0.05 mm.'
+  - Official page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 0402CG180J500NT,
+    C1549, 0402, 18pF, 50V, C0G and +/-5% on 2026-09-24.
+  - Reuses generic electronic_capacitor_0402_18_pico_farad; previous YAGEO C106202
+    was 50V NP0 +/-5% and remains an alternative.
+  - JLC-linked C1549 PDF was downloaded through the browser and imported with source
+    URL and SHA-256 into the matching parts_source datasheet.pdf. Ordering-code and
+    dimensional review remain full-pass tasks.
+  - 'Family batch 2026-10-04: identity, tier and ratings are the intake-time live
+    observations (verified_on 2026-10-01); no fresh page pass was run for this member.
+    The shared FH (Guangdong Fenghua Advanced Tech) datasheet (oomp_datasheet_common_with
+    = electronic_capacitor_0402_100_pico_farad) covers the exact suffix - 180 = 18
+    pF; package dimensions: 0402 L 1.00+-0.05, W 0.50+-0.05, T 0.5+-0.05 mm.'
 jlc_selection:
   verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/1901-0402CG180J500NT/C1549
@@ -40,21 +48,27 @@ jlc_selection:
   stock_observed: 727917
   purchase_moq_observed: 1
   pcba_min_qty_observed: null
-  compatibility_notes: Existing generic 0402 18 pF capacitor. FH C1549 is 50 V C0G +/-5%; previous YAGEO C106202 is 50 V NP0 +/-5%. C0G/NP0 are the same Class I temperature characteristic. Preserve C106202 and other alternatives; project-specific RF/Q requirements need full review. Full-pass datasheet evidence confirms the identity and ratings.
+  compatibility_notes: Existing generic 0402 18 pF capacitor. FH C1549 is 50 V C0G
+    +/-5%; previous YAGEO C106202 is 50 V NP0 +/-5%. C0G/NP0 are the same Class I
+    temperature characteristic. Preserve C106202 and other alternatives; project-specific
+    RF/Q requirements need full review. Full-pass datasheet evidence confirms the
+    identity and ratings.
   ratings:
     capacitance: 18 pF
     rated_voltage: 50 V
     dielectric: C0G
     tolerance: +/-5%
   datasheet_pages:
-    document: Fenghua General Series MLCC specification (shared, C1549 provenance)
-    ordering_coverage:
+    document: Fenghua General Series MLCC specification (shared family copy)
+    how_to_order:
     - 4
     dimensions:
     - 5
-    - 6
-    electrical_characteristics:
-    - 6
+    capacitance_voltage:
+    - 10
   pinout_checked: true
   footprint_checked: true
-  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh. data/working_svg_square_pins.png hero titled Capacitor 18 pF 0402 with terminals 1 left and 2 right, non-polarized symmetric body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png: 1.0 x 0.5 mm body with arrows, matching the Fenghua 0402/1005 CA nominals. data/kicad manifest complete with Device:C_Small symbol and Capacitor_SMD:C_0402_1005Metric machine + Pad0.74x0.62mm_HandSolder hand footprints. README.md: 0402CG180J500NT part number, LCSC/JLC C1549 links, pin table, datasheet link resolving to data/datasheet.pdf (the shared Fenghua General Series MLCC specification, 3.2 MB). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0402 resistor template (Device:R_Small, Capacitor_SMD:C_0402_1005Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'

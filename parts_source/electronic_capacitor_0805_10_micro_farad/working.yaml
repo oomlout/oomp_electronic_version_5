@@ -1,6 +1,20 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706853607202816-C15850.pdf
+dimension_reference:
+  document: Samsung MLCC data sheet, November 2015 (shared family copy) (C15850 provenance)
+  notes: 'part-numbering page 4 decodes the exact suffix; the class-characteristic
+    page and the size tables cover the 0805 family; package dimensions: 0805 L 2.00+-0.20,
+    W 1.25+-0.20, T 1.25+-0.20 mm.'
+  pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    part_number_system:
+    - 4
 dimensions_mm:
+  height: 1.25
   length: 2.0
   width: 1.25
 distributors:
@@ -12,15 +26,33 @@ distributors:
   part_number: C15850
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/16532-CL21A106KAYNNNE/C15850
+electrical:
+  capacitance: 10 μF (106)
+  dielectric: X5R
+  polarized: false
+  rated_voltage: 25 V
+  temperature_characteristic: +-15% over the operating range (X5R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10% (K)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_10_micro_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Existing generic 0805 10 uF capacitor had no primary purchasing
     number. Samsung C15850 is a non-polar 25 V X5R +/-10% MLCC. Its DC-bias-dependent
     effective capacitance and temperature limits require full project-specific review.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    document: Samsung MLCC data sheet, November 2015 (shared family copy)
+    part_number_system:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/16532-CL21A106KAYNNNE/C15850
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 10 uF
@@ -31,9 +63,13 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0805 resistor template (Device:R_Small, Capacitor_SMD:C_0805_2012Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 10uF
@@ -45,6 +81,7 @@ name_proper: Capacitor 10 uF 0805
 name_readable: Capacitor 10 uF 0805
 name_short: Capacitor 10 uF 0805
 oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+package_name_manufacturer: 0805 (2012 metric)
 part_id: C1
 part_number_jlcpcb: C15850
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/16532-CL21A106KAYNNNE/C15850
@@ -56,7 +93,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Samsung Electro-Mechanics
   part_number: CL21A106KAYNNNE
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/16532-CL21A106KAYNNNE/C15850
+research_notes:
+- 'The official JLC page lists Basic Samsung Electro-Mechanics CL21A106KAYNNNE (C15850):
+  10 μF 25 V X5R +-10% (K) in 0805; identity and ratings observed live at intake 2026-09-24.'
+- 'Family batch 2026-10-04 over the shared Samsung Electro-Mechanics MLCC datasheet
+  (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering
+  code decodes 106 = 10 μF.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

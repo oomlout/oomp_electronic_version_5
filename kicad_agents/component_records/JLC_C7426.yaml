@@ -27,8 +27,21 @@ research:
   - JLC's Download link opened TI's NE5532 PDF in a browser tab, but the PDF did not
     save to Downloads; the first-stage datasheet remains URL-only pending a successful
     browser save.
+  - 'Full pass 2026-10-02: live page reconfirmed (C7426, Texas Instruments, NE5532DR,
+    Basic, In Stock 221,644). The queue snapshot for this code was degraded (empty
+    MPN/maker/description) - the intake record is the identity authority and its official
+    URL was reconfirmed. New family member (dual op-amp SOIC-8): the page datasheet
+    link goes to ti.com (www.ti.com/cn/lit/ds/symlink/ne5532.pdf, the stable TI literature
+    URL already in the record); browser-navigated there and fetched the PDF same-origin
+    from the www.ti.com page, downloaded it, and imported it as this part and the
+    family anchor (sha256 d9ab074b..., 23 pages, Rev. K). Dual low-noise op-amp: 10
+    MHz GBW, 9 V/us slew, 5 nV/sqrt(Hz) @1 kHz, 100 dB CMRR, +-15 V supplies, 38 mA
+    output, 0-70 C (intake ratings). Pinout is the standard dual op-amp arrangement
+    (1 = OUT1, 2 = IN1-, 3 = IN1+, 4 = V-, 5 = IN2+, 6 = IN2-, 7 = OUT2, 8 = V+),
+    matching Amplifier_Operational:NE5532 pad-for-pad. No HandSoldering master for
+    SOIC-8 narrow - hand_solder empty per the 2-asset rule.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-NE5532DR/C7426
   tier: basic
   tier_label_observed: Basic
@@ -54,7 +67,22 @@ jlc_selection:
     Features: Built-in compensation
     Ib - Input Bias Current: 1uA
     Dual Supply: -15V~15V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: TI NE5532x/SA5532x datasheet, Rev. K (C7426 provenance, family anchor)
+    pin_configuration:
+    - 2
+    features:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC NE5532DR SOIC 8 with
+    OUT1/IN1-/IN1+/V- down the left side and V+/OUT2/IN2-/IN2+ up the right side,
+    matching the standard dual op-amp pinout (1 = OUT1, 2 = IN1-, 3 = IN1+, 4 = V-,
+    5 = IN2+, 6 = IN2-, 7 = OUT2, 8 = V+). working_svg_dimensioned.png: SOIC-8 outline
+    per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry. data/kicad manifest
+    complete (2-asset rule, no HandSoldering master for SOIC-8 narrow) with Amplifier_Operational:NE5532
+    symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm machine footprint. README.md: NE5532DR
+    part number, LCSC/JLC C7426 links, 8-pin table, datasheet link resolving to data/datasheet.pdf
+    (the TI Rev. K datasheet, family anchor). Limitation: KiCad symbol/footprint checked
+    as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

@@ -33,8 +33,19 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing Nexperia 74HC595 row or C5947 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C5947, Nexperia, 74HC595D,118, Basic,
+    In Stock 403,667). New family member (SOIC-16 shift register): browser-downloaded
+    the Nexperia 74HC595;74HCT595 product data sheet (21 pages) from the JLC page
+    and imported it as this part and the family anchor (sha256 fa24207e...). 8-bit
+    serial-in/parallel-out shift register with storage and 3-state outputs, SO16 (SOT109-1);
+    pinning section 6.1: 1-7 = Q1-Q7, 8 = GND, 9 = Q7S, 10 = MR, 11 = SHCP, 12 = STCP,
+    13 = OE, 14 = DS, 15 = Q0, 16 = VCC - pad-for-pad with the KiCad 74xx:74HC595
+    symbol (vendor names recorded; KiCad uses QB-QH/SRCLR/SRCLK/RCLK/SER on identical
+    numbers); supply 2.0-6.0 V, shift clock up to 100 MHz (live description), tpd
+    19 ns at 4.5 V / 50 pF; the ,118 suffix is the packing variant. No HandSoldering
+    master for SOIC-16 narrow - hand_solder empty per the 2-asset rule.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/Nexperia-74HC595D118/C5947
   tier: basic
   tier_label_observed: Basic
@@ -61,7 +72,25 @@ jlc_selection:
     Resolution: '8'
     Series: 74HC
     Voltage - Supply: 2V~6V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Nexperia 74HC595;74HCT595 product data sheet (C5947 provenance, family
+      anchor)
+    pinning:
+    - 3
+    features:
+    - 1
+    limiting_values:
+    - 3
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC 74HC595D,118 SOIC 16
+    with all 16 pins labelled: Q1-Q7 and GND down the left side, VCC/Q0/DS/OE/STCP/SHCP/MR/Q7S
+    up the right side, matching the datasheet pinning section 6.1. working_svg_dimensioned.png:
+    SOIC-16 (SOT109-1) outline per the Package_SO:SOIC-16_3.9x9.9mm_P1.27mm master
+    geometry. data/kicad manifest complete (2-asset rule, no HandSoldering master
+    for SOIC-16 narrow) with 74xx:74HC595 symbol and Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+    machine footprint. README.md: 74HC595D,118 part number, LCSC/JLC C5947 links,
+    16-pin table, datasheet link resolving to data/datasheet.pdf (the Nexperia product
+    data sheet, family anchor). Limitation: KiCad symbol/footprint checked as rendered
+    SVG/PNG plus s-expression text rather than in a KiCad GUI.'

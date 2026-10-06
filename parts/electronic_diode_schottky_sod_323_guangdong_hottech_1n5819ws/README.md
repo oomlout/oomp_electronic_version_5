@@ -2,7 +2,7 @@
 
 `electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws`
 
-Diode 1N5819WS SOD-323 is an OOMP electronic diode definition. It uses the sod 323 package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Diode 1N5819WS SOD-323 is an OOMP electronic diode definition. It uses the sod 323 package or form factor. Its nominal drawing size is 1.7 &#x00D7; 1.3 mm. The definition includes 2 documented pins.
 
 ![Diode 1N5819WS SOD-323 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Diode 1N5819WS SOD-323 is an OOMP electronic diode definition. It uses the sod 3
 | OOMP ID | `electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws` |
 | Type | Diode |
 | Package / style | sod 323 |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 1.7 &#x00D7; 1.3 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -33,8 +34,9 @@ Diode 1N5819WS SOD-323 is an OOMP electronic diode definition. It uses the sod 3
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 0.95 mm |
+| Length | 1.7 mm |
+| Width | 1.3 mm |
 
 
 
@@ -50,6 +52,19 @@ Diode 1N5819WS SOD-323 is an OOMP electronic diode definition. It uses the sod 3
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | K | passive |
+| 2 | A | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

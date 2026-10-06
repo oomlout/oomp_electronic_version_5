@@ -1,6 +1,16 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770988577683853312-C1744.pdf
+dimension_reference:
+  document: Fenghua General Series MLCC specification (C1744)
+  notes: '0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code EA = 0.80+-0.20 mm
+    (X7R 0805 table page 11 lists 4.7 nF at 50 V).'
+  pages:
+  - 4
+  - 5
+  - 11
 dimensions_mm:
+  height: 0.8
   length: 2.0
   width: 1.25
 distributors:
@@ -12,16 +22,37 @@ distributors:
   part_number: C1744
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2096-0805B472K500NT/C1744
+electrical:
+  capacitance: 4.7 nF (472)
+  capacitance_measurement: 1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)
+  dielectric: X7R (Class II)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10% (K)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_4_7_nano_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: New generic 0805 4.7 nF capacitor. The live Basic FH C1744
     choice is a 50 V X7R +/-10% MLCC matching value and package. The purchase preference
     carries those ratings; project voltage margin and DC-bias behavior remain for
     the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    dimensions:
+    - 5
+    - 11
+    document: Fenghua General Series MLCC specification (shared, C1744 provenance)
+    electrical_characteristics:
+    - 11
+    - 16
+    ordering_coverage:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2096-0805B472K500NT/C1744
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 4.7nF
@@ -31,10 +62,22 @@ jlcpcb_selection:
   stock_observed: 435870
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-01'
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 4.7 nF 0805 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: top view 2.0 x 1.25 mm with arrows,
+    matching the Fenghua 0805/2012 nominals; part thickness 0.80 mm (EA code) in dimensions_mm
+    (0805 masters identical to the built 0805 siblings). data/kicad manifest complete
+    with Device:C_Small symbol and Capacitor_SMD:C_0805_2012Metric machine + C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
+    hand footprints. README.md: 0805B472K500NT part number, LCSC/JLC C1744 links,
+    pin table, datasheet link resolving to data/datasheet.pdf via the shared Fenghua
+    General Series MLCC specification (oomp_datasheet_common_with). Limitation: KiCad
+    symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than
+    in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 4.7nF
@@ -46,6 +89,7 @@ name_proper: Capacitor 4.7 nF 0805
 name_readable: Capacitor 4.7 nF 0805
 name_short: Capacitor 4.7 nF 0805
 oomp_datasheet_common_with: electronic_capacitor_0402_100_pico_farad
+package_name_manufacturer: 0805 (2012 metric, EA thickness code)
 part_id: C1
 part_number_jlcpcb: C1744
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2096-0805B472K500NT/C1744
@@ -57,7 +101,24 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: FH (Guangdong Fenghua Advanced Tech)
   part_number: 0805B472K500NT
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2096-0805B472K500NT/C1744
+research_notes:
+- 'The official JLC page lists Basic Fenghua 0805B472K500NT (C1744): 4.7 nF, 50 V,
+  X7R, +-10% in 0805; reconfirmed live 2026-10-01 (stock 424,648).'
+- The Fenghua ordering code decodes exactly to that suffix (B = X7R, 472 = 4.7 nF,
+  K = +-10%, 500 = 50 V), and the X7R 0805 table covers 4.7 nF at 50 V (thickness
+  code EA).
+- Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

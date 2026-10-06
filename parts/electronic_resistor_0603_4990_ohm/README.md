@@ -2,7 +2,7 @@
 
 `electronic_resistor_0603_4990_ohm`
 
-Resistor 4990 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm.
+Resistor 4990 Ohm 0603 is an OOMP electronic resistor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
 ![Resistor 4990 Ohm 0603 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 4990 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 | Type | Resistor |
 | Package / style | 0603 |
 | Nominal size | 1.6 &#x00D7; 0.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 4990 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.45 mm |
 | Length | 1.6 mm |
 | Width | 0.8 mm |
 
@@ -48,6 +50,19 @@ Resistor 4990 Ohm 0603 is an OOMP electronic resistor definition. It uses the 06
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

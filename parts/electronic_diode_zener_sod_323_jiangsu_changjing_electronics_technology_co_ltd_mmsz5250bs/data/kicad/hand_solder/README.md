@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_diode_zener_sod_323_jiangsu_changjing_electronics_technology_co_ltd_mmsz5250bs](electronic_diode_zener_sod_323_jiangsu_changjing_electronics_technology_co_ltd_mmsz5250bs.kicad_mod)
+
+Source: `Diode_SMD:D_SOD-323`. [License](../LICENSE.md).

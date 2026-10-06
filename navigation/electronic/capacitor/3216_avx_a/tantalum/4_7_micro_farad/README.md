@@ -1,8 +1,13 @@
 # Electronic / Capacitor / 3216 Avx A / Tantalum / 4 7 Micro Farad
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 4 parts in total.
 
+## Categories
+
+- [16 Volt](16_volt/README.md)
+- [20 Volt](20_volt/README.md)
+- [25 Volt](25_volt/README.md)
 
 ## Parts
 

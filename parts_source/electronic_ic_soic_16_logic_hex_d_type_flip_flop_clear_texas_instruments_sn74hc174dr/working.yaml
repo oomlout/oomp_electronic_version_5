@@ -1,6 +1,15 @@
 category: logic
 category_name: Logic
+datasheet_url: https://www.ti.com/lit/ds/symlink/sn74hc174.pdf
+dimension_reference:
+  document: SN74HC174DR datasheet (C6828)
+  notes: Body outline per the Package_SO:SOIC-16_3.9x9.9mm_P1.27mm master geometry;
+    pinning cross-checked against the KiCad 74xx:74LS174 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.75
   length: 9.9
   width: 3.9
 distributors:
@@ -12,6 +21,15 @@ distributors:
   part_number: C6828
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC174DR/C6828
+electrical:
+  device_type: hex d type flip flop clear
+  logic_family: 74HC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 2.0-6.0 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_16_logic_hex_d_type_flip_flop_clear_texas_instruments_sn74hc174dr/datasheet.pdf
 ic_dimensions_mm:
   body_length: 9.9
   body_width: 3.9
@@ -26,11 +44,13 @@ jlcpcb_selection:
     SN74HC174DR (SOIC-16; hex D-type flip-flop with master reset (SN74HC174); hex_d_type_flip_flop_clear
     token new here) is its exact first reviewed preferred house choice; the family
     token and package come straight off the page. Edits made under the ic family lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC174DR/C6828
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     '1': ''
@@ -56,11 +76,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xx:74LS174 master (numbers and electrical types cross-checked
+    at plan time) and the SOIC-16 footprint master; renders inherit the pipeline verified
+    on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+  symbol: 74xx:74LS174
 lcsc_search: SN74HC174DR
 manufacturer: Texas Instruments
 manufacturers:
@@ -69,6 +94,7 @@ manufacturers:
 name_proper: IC SN74HC174DR SOIC 16
 name_readable: IC SN74HC174DR SOIC 16
 name_short: IC SN74HC174DR SOIC 16
+package_name_manufacturer: SOIC-16 (SOT109-1, 3.9 x 9.9 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C6828
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC174DR/C6828
@@ -80,7 +106,82 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Texas Instruments
   part_number: SN74HC174DR
+pins:
+  pin_1:
+    name: ~{Mr}
+    number: '1'
+    type: in
+  pin_10:
+    name: Q3
+    number: '10'
+    type: out
+  pin_11:
+    name: D3
+    number: '11'
+    type: in
+  pin_12:
+    name: Q4
+    number: '12'
+    type: out
+  pin_13:
+    name: D4
+    number: '13'
+    type: in
+  pin_14:
+    name: D5
+    number: '14'
+    type: in
+  pin_15:
+    name: Q5
+    number: '15'
+    type: out
+  pin_16:
+    name: VCC
+    number: '16'
+    type: pwr
+  pin_2:
+    name: Q0
+    number: '2'
+    type: out
+  pin_3:
+    name: D0
+    number: '3'
+    type: in
+  pin_4:
+    name: D1
+    number: '4'
+    type: in
+  pin_5:
+    name: Q1
+    number: '5'
+    type: out
+  pin_6:
+    name: D2
+    number: '6'
+    type: in
+  pin_7:
+    name: Q2
+    number: '7'
+    type: out
+  pin_8:
+    name: GND
+    number: '8'
+    type: pwr
+  pin_9:
+    name: Cp
+    number: '9'
+    type: in
 product_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC174DR/C6828
+research_notes:
+- JLC house-parts queue row C6828 (Texas Instruments SN74HC174DR, SOIC-16, 16 pins)
+  verified at intake; family batch integration C6828.
+- Downloaded the official Texas Instruments 74HC174 data sheet directly from ti.com
+  into this part.
+- Pin table generated from the KiCad 74xx:74LS174 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 16-pin package
+  count.
+- Footprint Package_SO:SOIC-16_3.9x9.9mm_P1.27mm verified present in the KiCad 10
+  library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

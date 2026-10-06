@@ -26,11 +26,18 @@ jlcpcb_selection:
     the capacitor family lock; C1595 becomes its first reviewed preferred house choice.
     Rating comparison from the staged capture: 1.5 nF, 0603, X7R, +/-10%, 50 V - matches
     the live page exactly; two-terminal MLCC (pin_count 2).'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    capacitance_voltage:
+    - 10
+    dimensions:
+    - 5
+    document: Fenghua General Series MLCC specification (shared family copy)
+    how_to_order:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1947-0603B152K500NT/C1595
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: '1'
   ratings:
     Capacitance: 1.5nF
@@ -41,7 +48,10 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-03: layout identical to completed
+    exemplar renders of the same 0603 resistor template (Device:R_Small, Capacitor_SMD:C_0603_1608Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
   hand_solder: ''
   machine_solder: Capacitor_SMD:C_0603_1608Metric

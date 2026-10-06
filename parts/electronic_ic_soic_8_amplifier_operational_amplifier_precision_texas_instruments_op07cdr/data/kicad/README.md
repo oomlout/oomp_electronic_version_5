@@ -1,11 +1,11 @@
 # KiCad assets: electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr
 
+- [Symbol](electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr.kicad_sym) — `Amplifier_Operational:OP07`
 - [Machine Solder](machine_solder/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr.kicad_mod) — `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm`
-- [Hand Solder](hand_solder/electronic_ic_soic_8_amplifier_operational_amplifier_precision_texas_instruments_op07cdr.kicad_mod) — `Package_SO:SOIC-8_3.9x4.9mm_P1.27mm`
 
 ## Review
 
-- Official symbol master unavailable: not selected
+- Official hand_solder footprint unavailable: not selected
 
 Silkscreen code: `4Y61J`. Source provenance: [manifest](manifest.yaml).
 

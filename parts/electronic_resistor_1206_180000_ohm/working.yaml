@@ -36,14 +36,49 @@ dimensions_mm:
 directory: parts/electronic_resistor_1206_180000_ohm
 distributors:
 - key: lcsc
-  part_number: C2907436
-  product_name: 180kΩ ±5% 250mW 1206 Thick Film Resistor
+  part_number: C1512
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C2907436.html
+  url: https://www.lcsc.com/product-detail/C1512.html
+- key: jlcpcb
+  part_number: C1512
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
+electrical:
+  operating_temperature: -55 to +155 °C
+  power: 250 mW
+  rated_voltage: 200 V
+  resistance: 180 kΩ
+  temperature_coefficient: ±100 ppm/°C
+  tolerance: ±5%
 id: electronic_resistor_1206_180000_ohm
 id_no_class: electronic_resistor_1206_180000_ohm
 id_no_size: electronic_resistor_1206_180000_ohm
 id_no_type: electronic_resistor_1206_180000_ohm
+jlcpcb_selection:
+  compatibility_notes: Reuse the existing E12-grid generic electronic_resistor_1206_180000_ohm
+    (18 ohm x 10000 multiplier already in the resistor populate grid); no population
+    row change was needed. No prior reviewed house preference exists for this generic
+    ID, so the first reviewed choice C1512 / FH RS-06K184JT (1206, 180 kOhm, +/-5%,
+    250 mW, 200 V, +/-100 ppm/C, thick film) becomes its preferred extended choice.
+  datasheet_pages: []
+  footprint_checked: false
+  official_url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
+  pcba_min_qty_observed: null
+  pinout_checked: false
+  purchase_moq_observed: '1'
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 250mW
+    Resistance: 180kΩ
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±5%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 200V
+  stock_observed: 3,845
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-28'
+  visual_review: pending
 kicad:
   hand_solder: ''
   machine_solder: Resistor_SMD:R_1206_3216Metric
@@ -52,10 +87,10 @@ lcsc_search: 1206 180kΩ
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_180000_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_180000_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_180000_ohm
-manufacturer: FOJAN
+manufacturer: FH (Guangdong Fenghua Advanced Tech)
 manufacturers:
-- manufacturer: FOJAN
-  part_number: TS
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-06K184JT
 md5: 578e5e98a015a26c482e4cf44b2a5710
 md5_10: 578e5e98a0
 md5_10_upper: 578E5E98A0
@@ -203,19 +238,55 @@ oomlout_ai_roboclick_4:
       directory: parts\electronic_resistor_1206_180000_ohm
       distributors:
       - key: lcsc
-        part_number: C2907436
-        product_name: 180kΩ ±5% 250mW 1206 Thick Film Resistor
+        part_number: C1512
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C2907436.html
+        url: https://www.lcsc.com/product-detail/C1512.html
+      - key: jlcpcb
+        part_number: C1512
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
+      electrical:
+        operating_temperature: -55 to +155 °C
+        power: 250 mW
+        rated_voltage: 200 V
+        resistance: 180 kΩ
+        temperature_coefficient: ±100 ppm/°C
+        tolerance: ±5%
+      jlcpcb_selection:
+        compatibility_notes: Reuse the existing E12-grid generic electronic_resistor_1206_180000_ohm
+          (18 ohm x 10000 multiplier already in the resistor populate grid); no population
+          row change was needed. No prior reviewed house preference exists for this
+          generic ID, so the first reviewed choice C1512 / FH RS-06K184JT (1206, 180
+          kOhm, +/-5%, 250 mW, 200 V, +/-100 ppm/C, thick film) becomes its preferred
+          extended choice.
+        datasheet_pages: []
+        footprint_checked: false
+        official_url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
+        pcba_min_qty_observed: null
+        pinout_checked: false
+        purchase_moq_observed: '1'
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 250mW
+          Resistance: 180kΩ
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±5%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 200V
+        stock_observed: 3,845
+        tier: preferred_extended
+        tier_label_observed: Extended
+        verified_on: '2026-09-28'
+        visual_review: pending
       kicad:
         hand_solder: ''
         machine_solder: Resistor_SMD:R_1206_3216Metric
         symbol: Device:R_Small
       lcsc_search: 1206 180kΩ
-      manufacturer: FOJAN
+      manufacturer: FH (Guangdong Fenghua Advanced Tech)
       manufacturers:
-      - manufacturer: FOJAN
-        part_number: TS
+      - manufacturer: FH (Guangdong Fenghua Advanced Tech)
+        part_number: RS-06K184JT
       name: electronic_resistor_1206_180000_ohm
       name_proper: Resistor 180000 Ohm 1206
       name_readable: Resistor 180000 Ohm 1206
@@ -339,14 +410,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
       part_id: R1
-      part_number_lcsc: C2907436
-      part_number_manufacturer: TS
+      part_number_jlcpcb: C1512
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
+      part_number_lcsc: C1512
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C1512.html
+      part_number_manufacturer: RS-06K184JT
       part_numbers_lcsc:
-      - part_number: C2907436
-        product_name: 180kΩ ±5% 250mW 1206 Thick Film Resistor
+      - part_number: C1512
       part_numbers_manufacturer:
-      - manufacturer: FOJAN
-        part_number: TS
+      - manufacturer: FH (Guangdong Fenghua Advanced Tech)
+        part_number: RS-06K184JT
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -417,10 +490,13 @@ oomlout_ai_roboclick_4:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: TS
+          value: RS-06K184JT
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C2907436.html
-          value: C2907436
+          url: https://www.lcsc.com/product-detail/C1512.html
+          value: C1512
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
+          value: C1512
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -451,11 +527,16 @@ oomlout_ai_roboclick_4:
           value: '1206'
         - level: 4
           value: 180000_ohm
-      product_url: https://www.lcsc.com/product-detail/C2907436.html
+      product_url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
       regenerate_pngs: false
       research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "1206 180KΩ" (98,200 in stock at capture).'
+      - Verified JLC C1512 / FH RS-06K184JT as the first reviewed preferred extended
+        purchasing choice for the existing E12-grid generic 1206 180 kΩ value; no
+        population row change was needed.
+      - Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional
+        Extended), 1206, 180 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C,
+        stock 3,845, minimum 1, full reel 5,000, available order qty 3,839. No datasheet
+        PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756879779088089088-C1512.pdf).
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -647,14 +728,16 @@ oomlout_ai_roboclick_5:
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_1206_180000_ohm
 part_id: R1
-part_number_lcsc: C2907436
-part_number_manufacturer: TS
+part_number_jlcpcb: C1512
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
+part_number_lcsc: C1512
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1512.html
+part_number_manufacturer: RS-06K184JT
 part_numbers_lcsc:
-- part_number: C2907436
-  product_name: 180kΩ ±5% 250mW 1206 Thick Film Resistor
+- part_number: C1512
 part_numbers_manufacturer:
-- manufacturer: FOJAN
-  part_number: TS
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-06K184JT
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -725,10 +808,13 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: TS
+    value: RS-06K184JT
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C2907436.html
-    value: C2907436
+    url: https://www.lcsc.com/product-detail/C1512.html
+    value: C1512
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
+    value: C1512
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -758,11 +844,16 @@ part_page:
     value: '1206'
   - level: 4
     value: 180000_ohm
-product_url: https://www.lcsc.com/product-detail/C2907436.html
+product_url: https://jlcpcb.com/partdetail/1864-RS06K184JT/C1512
 regenerate_pngs: false
 research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "1206
-  180KΩ" (98,200 in stock at capture).'
+- Verified JLC C1512 / FH RS-06K184JT as the first reviewed preferred extended purchasing
+  choice for the existing E12-grid generic 1206 180 kΩ value; no population row change
+  was needed.
+- Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended),
+  1206, 180 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,845, minimum
+  1, full reel 5,000, available order qty 3,839. No datasheet PDF imported at intake;
+  download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756879779088089088-C1512.pdf).
 svg_details:
 - filename_extra: assembly
   make_a4: false

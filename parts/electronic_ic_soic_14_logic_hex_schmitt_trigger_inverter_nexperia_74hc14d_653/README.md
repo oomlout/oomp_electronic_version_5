@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_14_logic_hex_schmitt_trigger_inverter_nexperia_74hc14d_653`
 
-IC 74HC14D,653 SOIC 14 is an OOMP electronic ic definition. It uses the soic 14 package or form factor. Its nominal drawing size is 8.69 &#x00D7; 3.9 mm.
+IC 74HC14D,653 SOIC 14 is an OOMP electronic ic definition. It uses the soic 14 package or form factor. Its nominal drawing size is 8.7 &#x00D7; 3.9 mm. The definition includes 14 documented pins.
 
 ![IC 74HC14D,653 SOIC 14 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC 74HC14D,653 SOIC 14 is an OOMP electronic ic definition. It uses the soic 14 
 | OOMP ID | `electronic_ic_soic_14_logic_hex_schmitt_trigger_inverter_nexperia_74hc14d_653` |
 | Type | Ic |
 | Package / style | soic 14 |
-| Nominal size | 8.69 &#x00D7; 3.9 mm |
+| Nominal size | 8.7 &#x00D7; 3.9 mm |
+| Documented pins | 14 |
 
 
 ## Classification
@@ -34,7 +35,8 @@ IC 74HC14D,653 SOIC 14 is an OOMP electronic ic definition. It uses the soic 14 
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 8.69 mm |
+| Height | 1.75 mm |
+| Length | 8.7 mm |
 | Width | 3.9 mm |
 
 
@@ -51,6 +53,31 @@ IC 74HC14D,653 SOIC 14 is an OOMP electronic ic definition. It uses the soic 14 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1A | input |
+| 2 | 1Y | output |
+| 3 | 2A | input |
+| 4 | 2Y | output |
+| 5 | 3A | input |
+| 6 | 3Y | output |
+| 7 | GND | power_in |
+| 8 | 4Y | output |
+| 9 | 4A | input |
+| 10 | 5Y | output |
+| 11 | 5A | input |
+| 12 | 6Y | output |
+| 13 | 6A | input |
+| 14 | VCC | power_in |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

@@ -32,8 +32,18 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing KT-0805G row or C2297 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C2297, Hubei KENTO Elec, KT-0805G,
+    Basic, In Stock 3,135,154). New family member (green 0805 LED): browser-downloaded
+    the KENTO 0805 emerald-green approval specification (11 pages) from the JLC page
+    and imported it as this part and the green-LED sub-family anchor (sha256 853e6752...).
+    Features page 2: package 2.0 x 1.25 x 0.85 mm, emerald green, transparent planar
+    lens; absolute maximum page 3: Pd 100 mW, IFP 60 mA, IF 30 mA DC, VR 5 V, Topr/Tstg
+    -40 to +85 C; electrical-optical page 3: luminous 175-430 mcd at IF = 5 mA, viewing
+    angle 120 deg, dominant wavelength 513-528 nm (peak 516-525), VF 2.6-3.1 V at
+    5 mA, IR 5 uA at VR = 5 V; BIN tables page 4. Polarity drawing page 2: green corner
+    = pad 2 (cathode), pad 1 = + (anode) - same family polarity trap recorded.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
   tier: basic
   tier_label_observed: Basic
@@ -57,7 +67,28 @@ jlc_selection:
     Viewing Angle: 120°
     Voltage - Forward(Vf): 2.6V~3.1V
     Wavelength - Dominant: 513nm~528nm
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: KENTO 0805 emerald-green approval specification (C2297 provenance, family
+      anchor)
+    features_dimensions:
+    - 2
+    absolute_maximum:
+    - 3
+    electrical_optical:
+    - 3
+    bin_tables:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled LED KT-0805G 0805 with A (anode) left
+    and K (cathode) right, the LED circle-and-bar symbol drawn inside the body, no
+    mirroring, no label overlap, no cropping. working_svg_dimensioned.png: 0805 outline
+    2.0 x 1.25 mm per the KENTO profile drawing (page 2, height 0.85 mm recorded in
+    dimensions_mm). data/kicad manifest complete with Device:LED symbol and LED_SMD:LED_0805_2012Metric
+    machine + Pad1.15x1.40mm_HandSolder hand footprints, same convention as the other
+    LED siblings. README.md: KT-0805G part number, LCSC/JLC C2297 links, 2-pin table
+    (A/K with the vendor polarity-trap note), datasheet link resolving to data/datasheet.pdf
+    (the KENTO emerald-green approval specification, family anchor). Limitation: KiCad
+    symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than
+    in a KiCad GUI.'

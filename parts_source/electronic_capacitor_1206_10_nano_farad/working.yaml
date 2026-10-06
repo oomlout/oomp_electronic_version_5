@@ -1,6 +1,16 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770991316979736576-C1846.pdf
+dimension_reference:
+  document: Fenghua General Series MLCC specification (C1846)
+  notes: '1206/3216 metric: L 3.20 mm, W 1.60 mm, thickness code FA = 0.80+-0.20 mm
+    (X7R 1206 table page 12 lists 10 nF at 50 V).'
+  pages:
+  - 4
+  - 5
+  - 12
 dimensions_mm:
+  height: 0.8
   length: 3.2
   width: 1.6
 distributors:
@@ -12,16 +22,37 @@ distributors:
   part_number: C1846
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2198-1206B103K500NT/C1846
+electrical:
+  capacitance: 10 nF (103)
+  capacitance_measurement: 1 kHz +-10% at 1.0 +-0.2 Vrms (Class II)
+  dielectric: X7R (Class II)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10% (K)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_1206_10_nano_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: New generic 1206 10 nF capacitor. The live Basic FH C1846 choice
     is a 50 V X7R +/-10% MLCC matching value and package. The purchase preference
     carries those ratings; project voltage margin and DC-bias behavior remain for
     the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    dimensions:
+    - 5
+    - 12
+    document: Fenghua General Series MLCC specification (shared, C1846 provenance)
+    electrical_characteristics:
+    - 12
+    - 16
+    ordering_coverage:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2198-1206B103K500NT/C1846
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 10nF
@@ -31,10 +62,22 @@ jlcpcb_selection:
   stock_observed: 247743
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 10 nF 1206 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: top view 3.2 x 1.6 mm with arrows, matching
+    the Fenghua 1206/3216 nominals; part thickness 0.80 mm (FA code) in dimensions_mm
+    (1206 masters identical to the built 1206 sibling electronic_capacitor_1206_10_nano_farad
+    intake build). data/kicad manifest complete with Device:C_Small symbol and Capacitor_SMD:C_1206_3216Metric
+    machine + C_1206_3216Metric_Pad1.33x1.80mm_HandSolder hand footprints. README.md:
+    1206B103K500NT part number, LCSC/JLC C1846 links, pin table, datasheet link resolving
+    to data/datasheet.pdf via the shared Fenghua General Series MLCC specification
+    (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint checked as rendered
+    SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder
   machine_solder: Capacitor_SMD:C_1206_3216Metric
   symbol: Device:C_Small
 lcsc_search: 1206 10nF
@@ -46,6 +89,7 @@ name_proper: Capacitor 10 nF 1206
 name_readable: Capacitor 10 nF 1206
 name_short: Capacitor 10 nF 1206
 oomp_datasheet_common_with: electronic_capacitor_0402_100_pico_farad
+package_name_manufacturer: 1206 (3216 metric, FA thickness code)
 part_id: C1
 part_number_jlcpcb: C1846
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2198-1206B103K500NT/C1846
@@ -57,7 +101,24 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: FH (Guangdong Fenghua Advanced Tech)
   part_number: 1206B103K500NT
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2198-1206B103K500NT/C1846
+research_notes:
+- 'The official JLC page lists Basic Fenghua 1206B103K500NT (C1846): 10 nF, 50 V,
+  X7R, +-10% in 1206; reconfirmed live 2026-10-01 (stock 230,801).'
+- The Fenghua ordering code decodes exactly to that suffix (B = X7R, 103 = 10 nF,
+  K = +-10%, 500 = 50 V), and the X7R 1206 table covers 10 nF at 50 V (thickness code
+  FA).
+- Non-polarized two-terminal chip; the standard built-in 1206 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

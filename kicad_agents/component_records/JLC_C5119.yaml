@@ -33,6 +33,9 @@ research:
     Extended tooltip). No datasheet PDF imported at intake (solo worker has no download);
     download is an integration-stage task.'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C5119.json.
+  - 'Family batch 2026-10-04: downloaded the HIR333C-A specification (own copy, signed
+    JLC OSS link) and verified the package outline and polarity drawing; electrical
+    values transcribed from the intake-observed listing (verified_on 2026-09-30).'
 jlc_selection:
   verified_on: '2026-09-30'
   official_url: https://jlcpcb.com/partdetail/EverlightElec-HIR333CA/C5119
@@ -70,7 +73,13 @@ jlc_selection:
     Voltage - DC Reverse(Vr): 5V
     Voltage - Forward(Vf): 1.45V、1.8V、4.1V
     Wavelength: 850nm
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: HIR333C-A specification
+    outline_polarity:
+    - 2
+    - 3
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: LED template identical to the
+    completed C2296 KENTO exemplar renders (Device:LED, LED_SMD assets) inspected
+    post-build; batch members differ only in value/color text.'

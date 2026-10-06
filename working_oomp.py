@@ -612,6 +612,11 @@ def create_generic(**kwargs):
             for directory in directories
             if directory.lower() not in skip_source_directories
         ]
+        # Single-component runs pass filter=<part_id>; skip parsing and
+        # enriching the ~2400 unrelated working.yaml files entirely.
+        _pre_filters = kwargs.get("filter", "")
+        if not isinstance(_pre_filters, list):
+            _pre_filters = [_pre_filters] if _pre_filters else []
         for filename in filenames:
             import yaml
             #go through directories and load working.yaml files
@@ -622,6 +627,8 @@ def create_generic(**kwargs):
             if relative_parent in ["", "."]:
                 continue
             directory = relative_parent.replace("\\", "/").split("/")[0]
+            if _pre_filters and not any(f in directory for f in _pre_filters):
+                continue
             with open(file_path, 'r', encoding='utf-8') as file:
                 data = yaml.safe_load(file)
                 if not isinstance(data, dict):

@@ -1,0 +1,1257 @@
+bip_39_2_word_array:
+- host
+- delay
+bip_39_2_word_no_space: hostdelay
+bip_39_2_word_space: host delay
+bip_39_2_word_underscore: host_delay
+bip_39_3_word_array:
+- host
+- delay
+- key
+bip_39_3_word_no_space: hostdelaykey
+bip_39_3_word_space: host delay key
+bip_39_3_word_underscore: host_delay_key
+bip_39_full_array:
+- host
+- delay
+- key
+- differ
+- skate
+- alley
+- battle
+- enable
+- smart
+- venture
+- impact
+- student
+bip_39_full_no_space: hostdelaykeydifferskatealleybattleenablesmartventureimpactstudent
+bip_39_full_space: host delay key differ skate alley battle enable smart venture impact
+  student
+bip_39_full_underscore: host_delay_key_differ_skate_alley_battle_enable_smart_venture_impact_student
+category: diode
+category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756679312927789056-C2479.pdf
+dimension_reference:
+  document: MDD SS12-SS1200 SMA specification Rev 2025A5, mechanical data page 3 (C2479
+    provenance)
+  notes: JEDEC DO-214AC/SMA molded body 4.50 x 2.80 x 2.30 mm, 5.30 mm overall including
+    terminal ends; color band denotes the cathode. Pad geometry follows the KiCad
+    Diode_SMD:D_SMA master.
+  pages:
+  - 3
+dimensions_mm:
+  height: 2.3
+  length: 4.5
+  width: 2.8
+directory: parts/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+distributors:
+- key: lcsc
+  part_number: C2479
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C2479.html
+- key: jlcpcb
+  part_number: C2479
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+electrical:
+  forward_voltage_at_test_current: 0.55 V max at 1.0 A (vendor table column; the live
+    JLC description cites 550mV@1A)
+  maximum_dc_reverse_voltage: 20 V (VRRM)
+  maximum_rectified_current: 1.0 A average forward rectified
+  non_repetitive_peak_forward_surge_current: 25 A (8.3 ms half sine, JEDEC)
+  operating_temperature: -55 to +150 C
+  polarized: true
+  reverse_leakage_current: 0.3 mA max at 25 C at rated voltage (10 mA at 100 C); live
+    JLC lists 300uA@20V
+  terminal_capacitance: 110 pF typical (1 MHz)
+  thermal_resistance: 90 C/W junction to ambient
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12/datasheet.pdf
+id: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+id_no_class: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+id_no_size: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+id_no_type: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+jlcpcb_selection:
+  compatibility_notes: 'Exact MDD (Microdiode Semiconductor) device row: the do_41/do_201ad
+    through-hole rectifier and fast_recovery tokens were introduced at C2456-C2469,
+    the sma schottky and mbs bridge_rectifier tokens already existed (M7/SS14 and
+    MB10S-50MIL precedents), and this row was added under the diode family lock beside
+    its siblings. SS12 (SMA(DO-214AC); 20V 1A Schottky, SMA surface mount) is its
+    exact first reviewed preferred house choice. Rating comparison from the staged
+    capture: package and ratings below, pins per the physical body. Edits made under
+    the diode family lock. Rating comparison from the staged capture: Diodes/Schottky
+    Diodes, package SMA(DO-214AC), stock 122597 recorded as observed. Edits made under
+    the diode family lock.'
+  datasheet_pages:
+    document: MDD SS12-SS1200 SMA schottky specification, Rev 2025A5 (shared family
+      copy, C2480 provenance)
+    mechanical:
+    - 3
+    ratings:
+    - 1
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+  pcba_min_qty_observed: null
+  pinout_checked: true
+  purchase_moq_observed: null
+  ratings:
+    Assembly Type: SMT Assembly
+    Attributes: Value
+    Current - Rectified: 1A
+    Datasheet: Download
+    Description: -55℃~+150℃ 1A 20V 300uA@20V 550mV@1A Independent SMA(DO-214AC) Schottky
+      Diodes ROHS
+    Diode Configuration: Standalone
+    EasyEDA Libraries: PCB Footprint or Symbol
+    'JLCPCB Part #': C2479
+    'MFR.Part #': SS12
+    MSL Level: MSL 3
+    Operating Junction Temperature Range: -55℃~+150℃
+    PCBA Type: Economic and Standard
+    Reverse Leakage Current (Ir): 300uA@20V
+    Source: JLCPCB
+    Voltage - DC Reverse(Vr): 20V
+    Voltage - Forward(Vf@If): 550mV@1A
+  stock_observed: 122597
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-29'
+  visual_review: 'Family-inherited review 2026-10-04: SMA diode template identical
+    to the completed C2480 exemplar renders (D_SMA machine + hand assets) inspected
+    post-build; batch members differ only in value text.'
+kicad:
+  allow_project_fallback: false
+  hand_solder: Diode_SMD:D_SMA_Handsoldering
+  machine_solder: Diode_SMD:D_SMA
+  symbol: Device:D_Schottky
+lcsc_search: SS12
+link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+manufacturer: MDD(Microdiode Semiconductor)
+manufacturers:
+- manufacturer: MDD(Microdiode Semiconductor)
+  part_number: SS12
+md5: 6e073de81eeca00d04d24acc9e49c76b
+md5_10: 6e073de81e
+md5_10_upper: 6E073DE81E
+md5_5: 6e073
+md5_5_upper: 6E073
+md5_6: 6e073d
+md5_6_alpha: 4ajwd
+md5_6_alpha_upper: 4AJWD
+md5_6_upper: 6E073D
+name: Electronic Diode Schottky Sma Mdd Microdiode Semiconductor Ss12
+name_no_class: Electronic Diode Schottky Sma Mdd Microdiode Semiconductor Ss12
+name_no_size: Electronic Diode Schottky Sma Mdd Microdiode Semiconductor Ss12
+name_no_type: Electronic Diode Schottky Sma Mdd Microdiode Semiconductor Ss12
+name_proper: Diode SS12 SMA
+name_readable: Diode SS12 SMA
+name_short: Diode SS12 SMA
+name_space: electronic diode schottky sma mdd microdiode semiconductor ss12
+name_upper: ELECTRONIC DIODE SCHOTTKY SMA MDD MICRODIODE SEMICONDUCTOR SS12
+oomlout_ai_roboclick_1:
+  actions:
+  - command: run_python
+    description: Copy official KiCad masters into per-part OOMP symbols and verified
+      soldering footprint variants.
+    file_output: data/kicad/manifest.yaml
+    file_python: kicad_agents/kicad_library_agent.py
+    timeout: '600'
+  description: Install KiCad master data for this part.
+  file_test: data/kicad/manifest.yaml
+  retries_until_complete: 0
+oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
+  actions:
+  - command: run_python
+    description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
+    file_output: data/working_svg_assembly.svg
+    file_python: kicad_agents/component_svg_action.py
+    part_id: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+    regenerate_pngs: false
+    timeout: '600'
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_square_pins_300.png
+    file_source: data/working_svg_square_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_300.png
+    file_source: data/working_svg_assembly.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_assembly_pins_300.png
+    file_source: data/working_svg_assembly_pins.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_outline_300.png
+    file_source: data/working_svg_outline.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_part_id_300.png
+    file_source: data/working_svg_part_id.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_md5_6_alpha_300.png
+    file_source: data/working_svg_md5_6_alpha.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_bip_39_3_word_300.png
+    file_source: data/working_svg_bip_39_3_word.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_square_300.png
+    file_source: data/working_svg_square.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_square_schematic_300.png
+    file_source: data/working_svg_square_schematic.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_dimensioned_300.png
+    file_source: data/working_svg_dimensioned.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  - allow_upscale: false
+    command: image_resize
+    file_destination: data/working_svg_dimensioned_titles_300.png
+    file_source: data/working_svg_dimensioned_titles.png
+    maximum_dimension: 300
+    regenerate_pngs: false
+    resample: lanczos
+  description: Build component diagrams and proportional 300-pixel README previews
+    with deterministic Python actions.
+  file_test: data/working_svg_square_pins_300.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
+  actions:
+  - command: text_jinja_template
+    convert_to_pdf: false
+    convert_to_png: false
+    dict_data:
+      category: diode
+      category_name: Diode
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756679312927789056-C2479.pdf
+      dimension_reference:
+        document: MDD SS12-SS1200 SMA specification Rev 2025A5, mechanical data page
+          3 (C2479 provenance)
+        notes: JEDEC DO-214AC/SMA molded body 4.50 x 2.80 x 2.30 mm, 5.30 mm overall
+          including terminal ends; color band denotes the cathode. Pad geometry follows
+          the KiCad Diode_SMD:D_SMA master.
+        pages:
+        - 3
+      dimensions_mm:
+        height: 2.3
+        length: 4.5
+        width: 2.8
+      directory: parts\electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+      distributors:
+      - key: lcsc
+        part_number: C2479
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C2479.html
+      - key: jlcpcb
+        part_number: C2479
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+      electrical:
+        forward_voltage_at_test_current: 0.55 V max at 1.0 A (vendor table column;
+          the live JLC description cites 550mV@1A)
+        maximum_dc_reverse_voltage: 20 V (VRRM)
+        maximum_rectified_current: 1.0 A average forward rectified
+        non_repetitive_peak_forward_surge_current: 25 A (8.3 ms half sine, JEDEC)
+        operating_temperature: -55 to +150 C
+        polarized: true
+        reverse_leakage_current: 0.3 mA max at 25 C at rated voltage (10 mA at 100
+          C); live JLC lists 300uA@20V
+        terminal_capacitance: 110 pF typical (1 MHz)
+        thermal_resistance: 90 C/W junction to ambient
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12/datasheet.pdf
+      jlcpcb_selection:
+        compatibility_notes: 'Exact MDD (Microdiode Semiconductor) device row: the
+          do_41/do_201ad through-hole rectifier and fast_recovery tokens were introduced
+          at C2456-C2469, the sma schottky and mbs bridge_rectifier tokens already
+          existed (M7/SS14 and MB10S-50MIL precedents), and this row was added under
+          the diode family lock beside its siblings. SS12 (SMA(DO-214AC); 20V 1A Schottky,
+          SMA surface mount) is its exact first reviewed preferred house choice. Rating
+          comparison from the staged capture: package and ratings below, pins per
+          the physical body. Edits made under the diode family lock. Rating comparison
+          from the staged capture: Diodes/Schottky Diodes, package SMA(DO-214AC),
+          stock 122597 recorded as observed. Edits made under the diode family lock.'
+        datasheet_pages:
+          document: MDD SS12-SS1200 SMA schottky specification, Rev 2025A5 (shared
+            family copy, C2480 provenance)
+          mechanical:
+          - 3
+          ratings:
+          - 1
+        footprint_checked: true
+        official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+        pcba_min_qty_observed: null
+        pinout_checked: true
+        purchase_moq_observed: null
+        ratings:
+          Assembly Type: SMT Assembly
+          Attributes: Value
+          Current - Rectified: 1A
+          Datasheet: Download
+          Description: -55℃~+150℃ 1A 20V 300uA@20V 550mV@1A Independent SMA(DO-214AC)
+            Schottky Diodes ROHS
+          Diode Configuration: Standalone
+          EasyEDA Libraries: PCB Footprint or Symbol
+          'JLCPCB Part #': C2479
+          'MFR.Part #': SS12
+          MSL Level: MSL 3
+          Operating Junction Temperature Range: -55℃~+150℃
+          PCBA Type: Economic and Standard
+          Reverse Leakage Current (Ir): 300uA@20V
+          Source: JLCPCB
+          Voltage - DC Reverse(Vr): 20V
+          Voltage - Forward(Vf@If): 550mV@1A
+        stock_observed: 122597
+        tier: preferred_extended
+        tier_label_observed: Extended
+        verified_on: '2026-09-29'
+        visual_review: 'Family-inherited review 2026-10-04: SMA diode template identical
+          to the completed C2480 exemplar renders (D_SMA machine + hand assets) inspected
+          post-build; batch members differ only in value text.'
+      kicad:
+        allow_project_fallback: false
+        hand_solder: Diode_SMD:D_SMA_Handsoldering
+        machine_solder: Diode_SMD:D_SMA
+        symbol: Device:D_Schottky
+      lcsc_search: SS12
+      manufacturer: MDD(Microdiode Semiconductor)
+      manufacturers:
+      - manufacturer: MDD(Microdiode Semiconductor)
+        part_number: SS12
+      name: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+      name_proper: Diode SS12 SMA
+      name_readable: Diode SS12 SMA
+      name_short: Diode SS12 SMA
+      name_space: electronic diode schottky sma mdd microdiode semiconductor ss12
+      name_upper: ELECTRONIC DIODE SCHOTTKY SMA MDD MICRODIODE SEMICONDUCTOR SS12
+      oomlout_ai_roboclick_1:
+        actions:
+        - command: run_python
+          description: Copy official KiCad masters into per-part OOMP symbols and
+            verified soldering footprint variants.
+          file_output: data/kicad/manifest.yaml
+          file_python: kicad_agents/kicad_library_agent.py
+          timeout: '600'
+        description: Install KiCad master data for this part.
+        file_test: data/kicad/manifest.yaml
+        retries_until_complete: 0
+      oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Generate this component's standard SVG and PNG diagrams with
+            working_svg.py.
+          file_output: data/working_svg_assembly.svg
+          file_python: kicad_agents/component_svg_action.py
+          part_id: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+          regenerate_pngs: false
+          timeout: '600'
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_square_pins_300.png
+          file_source: data/working_svg_square_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_300.png
+          file_source: data/working_svg_assembly.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_assembly_pins_300.png
+          file_source: data/working_svg_assembly_pins.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_outline_300.png
+          file_source: data/working_svg_outline.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_part_id_300.png
+          file_source: data/working_svg_part_id.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_md5_6_alpha_300.png
+          file_source: data/working_svg_md5_6_alpha.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_bip_39_3_word_300.png
+          file_source: data/working_svg_bip_39_3_word.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_square_300.png
+          file_source: data/working_svg_square.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_square_schematic_300.png
+          file_source: data/working_svg_square_schematic.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_dimensioned_300.png
+          file_source: data/working_svg_dimensioned.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        - allow_upscale: false
+          command: image_resize
+          file_destination: data/working_svg_dimensioned_titles_300.png
+          file_source: data/working_svg_dimensioned_titles.png
+          maximum_dimension: 300
+          regenerate_pngs: false
+          resample: lanczos
+        description: Build component diagrams and proportional 300-pixel README previews
+          with deterministic Python actions.
+        file_test: data/working_svg_square_pins_300.png
+        retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14
+      package_name_manufacturer: SMA (DO-214AC)
+      part_id: D1
+      part_number_jlcpcb: C2479
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+      part_number_lcsc: C2479
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C2479.html
+      part_number_manufacturer: SS12
+      part_numbers_lcsc:
+      - part_number: C2479
+      part_numbers_manufacturer:
+      - manufacturer: MDD(Microdiode Semiconductor)
+        part_number: SS12
+      part_page:
+        datasheet_path: data/datasheet.pdf
+        diagrams:
+        - png: data/working_svg_assembly.png
+          preview: data/working_svg_assembly_300.png
+          svg: data/working_svg_assembly.svg
+          title: Assembly
+        - png: data/working_svg_assembly_pins.png
+          preview: data/working_svg_assembly_pins_300.png
+          svg: data/working_svg_assembly_pins.svg
+          title: Assembly pinout
+        - png: data/working_svg_outline.png
+          preview: data/working_svg_outline_300.png
+          svg: data/working_svg_outline.svg
+          title: Outline
+        - png: data/working_svg_part_id.png
+          preview: data/working_svg_part_id_300.png
+          svg: data/working_svg_part_id.svg
+          title: Part ID
+        - png: data/working_svg_md5_6_alpha.png
+          preview: data/working_svg_md5_6_alpha_300.png
+          svg: data/working_svg_md5_6_alpha.svg
+          title: MD5 alpha
+        - png: data/working_svg_bip_39_3_word.png
+          preview: data/working_svg_bip_39_3_word_300.png
+          svg: data/working_svg_bip_39_3_word.svg
+          title: BIP 39 words
+        - png: data/working_svg_square.png
+          preview: data/working_svg_square_300.png
+          svg: data/working_svg_square.svg
+          title: Square summary
+        - png: data/working_svg_square_schematic.png
+          preview: data/working_svg_square_schematic_300.png
+          svg: data/working_svg_square_schematic.svg
+          title: Square schematic
+        - png: data/working_svg_dimensioned.png
+          preview: data/working_svg_dimensioned_300.png
+          svg: data/working_svg_dimensioned.svg
+          title: Dimensions
+        - png: data/working_svg_dimensioned_titles.png
+          preview: data/working_svg_dimensioned_titles_300.png
+          svg: data/working_svg_dimensioned_titles.svg
+          title: Dimensions with labels
+        file_previews:
+        - preview: data/working_svg_square_pins_300.png
+          title: Pinout drawing
+        - preview: data/working_svg_assembly_300.png
+          title: Assembly
+        - preview: data/working_svg_assembly_pins_300.png
+          title: Assembly pinout
+        - preview: data/working_svg_outline_300.png
+          title: Outline
+        - preview: data/working_svg_part_id_300.png
+          title: Part ID
+        - preview: data/working_svg_md5_6_alpha_300.png
+          title: MD5 alpha
+        - preview: data/working_svg_bip_39_3_word_300.png
+          title: BIP 39 words
+        - preview: data/working_svg_square_300.png
+          title: Square summary
+        - preview: data/working_svg_square_schematic_300.png
+          title: Square schematic
+        - preview: data/working_svg_dimensioned_300.png
+          title: Dimensions
+        - preview: data/working_svg_dimensioned_titles_300.png
+          title: Dimensions with labels
+        has_datasheet: true
+        identifiers:
+        - title: Manufacturer part number
+          url: ''
+          value: SS12
+        - title: LCSC
+          url: https://www.lcsc.com/product-detail/C2479.html
+          value: C2479
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+          value: C2479
+        main_image:
+          png: data/working_svg_square_pins.png
+          preview: data/working_svg_square_pins_300.png
+          svg: data/working_svg_square_pins.svg
+          title: Pinout
+        navigation_link: ../../navigation/electronic/diode/schottky/sma/mdd_microdiode_semiconductor/README.md
+        oomp_id: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+        pins:
+        - name: K
+          number: '1'
+          type: signal
+        - name: A
+          number: '2'
+          type: signal
+        quick_facts:
+        - title: OOMP ID
+          value: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+        - title: Type
+          value: Diode
+        - title: Package / style
+          value: sma
+        - title: Nominal size
+          value: 4.5 × 2.8 mm
+        - title: Documented pins
+          value: 2
+        repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+        summary: Diode SS12 SMA is an OOMP electronic diode definition. It uses the
+          sma package or form factor. Its nominal drawing size is 4.5 × 2.8 mm. The
+          definition includes 2 documented pins.
+        taxonomy:
+        - level: 1
+          value: electronic
+        - level: 2
+          value: diode
+        - level: 3
+          value: schottky
+        - level: 4
+          value: sma
+        - level: 14
+          value: mdd_microdiode_semiconductor
+        - level: 15
+          value: ss12
+      pins:
+        pin_1:
+          name: K
+          number: '1'
+          type: signal
+        pin_2:
+          name: A
+          number: '2'
+          type: signal
+      product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+      regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic MDD SS12 (C2479): 20 V 1.0 A schottky rectifier
+        in SMA (DO-214AC); identity and ratings observed live at intake 2026-09-29.'
+      - 'Family batch 2026-10-04 over the shared MDD SS12-SS1200 datasheet (oomp_datasheet_common_with
+        = electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14): the ratings
+        table column block for SS12 gives VF 0.55 V max at 1.0 A and the mechanical
+        page gives the DO-214AC outline. Pin 1 = cathode (banded end), pin 2 = anode.'
+      svg_details:
+      - filename_extra: assembly
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp_assembly
+        svg_name: oomp_component_assembly
+        write_yaml: false
+      - filename_extra: assembly_pins
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp_assembly
+        svg_name: oomp_component_assembly_pins
+        write_yaml: false
+      - filename_extra: outline
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        stylesheet: style_oomp
+        svg_name: oomp_component_outline
+        write_yaml: false
+      - filename_extra: part_id
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        stylesheet: style_oomp
+        svg_name: oomp_component_part_id
+        write_yaml: false
+      - filename_extra: md5_6_alpha
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        stylesheet: style_oomp
+        svg_name: oomp_component_md5_6_alpha
+        write_yaml: false
+      - filename_extra: bip_39_3_word
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        stylesheet: style_oomp
+        svg_name: oomp_component_bip_39_3_word
+        write_yaml: false
+      - filename_extra: square
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        stylesheet: style_oomp
+        svg_name: oomp_component_square
+        write_yaml: false
+      - filename_extra: square_pins
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        stylesheet: style_oomp
+        svg_name: oomp_component_square_pins
+        write_yaml: false
+      - filename_extra: square_schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_square_schematic
+        write_yaml: false
+      - filename_extra: dimensioned
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        stylesheet: style_oomp
+        svg_name: oomp_component_dimensioned
+        write_yaml: false
+      - filename_extra: dimensioned_titles
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        stylesheet: style_oomp
+        svg_name: oomp_component_dimensioned_titles
+        write_yaml: false
+      - filename_extra: schematic
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic
+        write_yaml: false
+      - filename_extra: schematic_pins
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_pins
+        write_yaml: false
+      - filename_extra: schematic_part_id
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_part_id
+        write_yaml: false
+      - filename_extra: schematic_md5_6_alpha
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_md5_6_alpha
+        write_yaml: false
+      - filename_extra: schematic_bip_39_3_word
+        make_a4: false
+        output_formats:
+        - svg
+        - png
+        padding: 0
+        png_minimum_size_px: 600
+        stylesheet: style_oomp
+        svg_name: oomp_component_schematic_bip_39_3_word
+        write_yaml: false
+      taxonomy_1: electronic
+      taxonomy_10: ''
+      taxonomy_11: ''
+      taxonomy_12: ''
+      taxonomy_13: ''
+      taxonomy_14: mdd_microdiode_semiconductor
+      taxonomy_15: ss12
+      taxonomy_2: diode
+      taxonomy_3: schottky
+      taxonomy_4: sma
+      taxonomy_5: ''
+      taxonomy_6: ''
+      taxonomy_7: ''
+      taxonomy_8: ''
+      taxonomy_9: ''
+      url_chat: ''
+    dict_data_files: {}
+    dict_data_files_exists: {}
+    file_output: README.md
+    file_template: C:\gh\oomp_electronic_version_5\source_file\template_jinja\oomp_category\template_jinja_markdown\working.md.j2
+    search_and_replace: []
+  file_test: ''
+  retries_until_complete: 0
+oomlout_ai_roboclick_6:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0
+oomp_datasheet_common_with: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14
+oomp_key: oomp_electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+package_name_manufacturer: SMA (DO-214AC)
+part_id: D1
+part_number_jlcpcb: C2479
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+part_number_lcsc: C2479
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C2479.html
+part_number_manufacturer: SS12
+part_numbers_lcsc:
+- part_number: C2479
+part_numbers_manufacturer:
+- manufacturer: MDD(Microdiode Semiconductor)
+  part_number: SS12
+part_page:
+  datasheet_path: data/datasheet.pdf
+  diagrams:
+  - png: data/working_svg_assembly.png
+    preview: data/working_svg_assembly_300.png
+    svg: data/working_svg_assembly.svg
+    title: Assembly
+  - png: data/working_svg_assembly_pins.png
+    preview: data/working_svg_assembly_pins_300.png
+    svg: data/working_svg_assembly_pins.svg
+    title: Assembly pinout
+  - png: data/working_svg_outline.png
+    preview: data/working_svg_outline_300.png
+    svg: data/working_svg_outline.svg
+    title: Outline
+  - png: data/working_svg_part_id.png
+    preview: data/working_svg_part_id_300.png
+    svg: data/working_svg_part_id.svg
+    title: Part ID
+  - png: data/working_svg_md5_6_alpha.png
+    preview: data/working_svg_md5_6_alpha_300.png
+    svg: data/working_svg_md5_6_alpha.svg
+    title: MD5 alpha
+  - png: data/working_svg_bip_39_3_word.png
+    preview: data/working_svg_bip_39_3_word_300.png
+    svg: data/working_svg_bip_39_3_word.svg
+    title: BIP 39 words
+  - png: data/working_svg_square.png
+    preview: data/working_svg_square_300.png
+    svg: data/working_svg_square.svg
+    title: Square summary
+  - png: data/working_svg_square_schematic.png
+    preview: data/working_svg_square_schematic_300.png
+    svg: data/working_svg_square_schematic.svg
+    title: Square schematic
+  - png: data/working_svg_dimensioned.png
+    preview: data/working_svg_dimensioned_300.png
+    svg: data/working_svg_dimensioned.svg
+    title: Dimensions
+  - png: data/working_svg_dimensioned_titles.png
+    preview: data/working_svg_dimensioned_titles_300.png
+    svg: data/working_svg_dimensioned_titles.svg
+    title: Dimensions with labels
+  file_previews:
+  - preview: data/working_svg_square_pins_300.png
+    title: Pinout drawing
+  - preview: data/working_svg_assembly_300.png
+    title: Assembly
+  - preview: data/working_svg_assembly_pins_300.png
+    title: Assembly pinout
+  - preview: data/working_svg_outline_300.png
+    title: Outline
+  - preview: data/working_svg_part_id_300.png
+    title: Part ID
+  - preview: data/working_svg_md5_6_alpha_300.png
+    title: MD5 alpha
+  - preview: data/working_svg_bip_39_3_word_300.png
+    title: BIP 39 words
+  - preview: data/working_svg_square_300.png
+    title: Square summary
+  - preview: data/working_svg_square_schematic_300.png
+    title: Square schematic
+  - preview: data/working_svg_dimensioned_300.png
+    title: Dimensions
+  - preview: data/working_svg_dimensioned_titles_300.png
+    title: Dimensions with labels
+  has_datasheet: true
+  identifiers:
+  - title: Manufacturer part number
+    url: ''
+    value: SS12
+  - title: LCSC
+    url: https://www.lcsc.com/product-detail/C2479.html
+    value: C2479
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+    value: C2479
+  main_image:
+    png: data/working_svg_square_pins.png
+    preview: data/working_svg_square_pins_300.png
+    svg: data/working_svg_square_pins.svg
+    title: Pinout
+  navigation_link: ../../navigation/electronic/diode/schottky/sma/mdd_microdiode_semiconductor/README.md
+  oomp_id: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+  pins:
+  - name: K
+    number: '1'
+    type: signal
+  - name: A
+    number: '2'
+    type: signal
+  quick_facts:
+  - title: OOMP ID
+    value: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+  - title: Type
+    value: Diode
+  - title: Package / style
+    value: sma
+  - title: Nominal size
+    value: 4.5 × 2.8 mm
+  - title: Documented pins
+    value: 2
+  repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss12
+  summary: Diode SS12 SMA is an OOMP electronic diode definition. It uses the sma
+    package or form factor. Its nominal drawing size is 4.5 × 2.8 mm. The definition
+    includes 2 documented pins.
+  taxonomy:
+  - level: 1
+    value: electronic
+  - level: 2
+    value: diode
+  - level: 3
+    value: schottky
+  - level: 4
+    value: sma
+  - level: 14
+    value: mdd_microdiode_semiconductor
+  - level: 15
+    value: ss12
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: signal
+  pin_2:
+    name: A
+    number: '2'
+    type: signal
+product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS12/C2479
+regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic MDD SS12 (C2479): 20 V 1.0 A schottky rectifier
+  in SMA (DO-214AC); identity and ratings observed live at intake 2026-09-29.'
+- 'Family batch 2026-10-04 over the shared MDD SS12-SS1200 datasheet (oomp_datasheet_common_with
+  = electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14): the ratings
+  table column block for SS12 gives VF 0.55 V max at 1.0 A and the mechanical page
+  gives the DO-214AC outline. Pin 1 = cathode (banded end), pin 2 = anode.'
+svg_details:
+- filename_extra: assembly
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp_assembly
+  svg_name: oomp_component_assembly
+  write_yaml: false
+- filename_extra: assembly_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp_assembly
+  svg_name: oomp_component_assembly_pins
+  write_yaml: false
+- filename_extra: outline
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_outline
+  write_yaml: false
+- filename_extra: part_id
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_part_id
+  write_yaml: false
+- filename_extra: md5_6_alpha
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_md5_6_alpha
+  write_yaml: false
+- filename_extra: bip_39_3_word
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_bip_39_3_word
+  write_yaml: false
+- filename_extra: square
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_square
+  write_yaml: false
+- filename_extra: square_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_pins
+  write_yaml: false
+- filename_extra: square_schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_square_schematic
+  write_yaml: false
+- filename_extra: dimensioned
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_dimensioned
+  write_yaml: false
+- filename_extra: dimensioned_titles
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  stylesheet: style_oomp
+  svg_name: oomp_component_dimensioned_titles
+  write_yaml: false
+- filename_extra: schematic
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic
+  write_yaml: false
+- filename_extra: schematic_pins
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_pins
+  write_yaml: false
+- filename_extra: schematic_part_id
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_part_id
+  write_yaml: false
+- filename_extra: schematic_md5_6_alpha
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_md5_6_alpha
+  write_yaml: false
+- filename_extra: schematic_bip_39_3_word
+  make_a4: false
+  output_formats:
+  - svg
+  - png
+  padding: 0
+  png_minimum_size_px: 600
+  stylesheet: style_oomp
+  svg_name: oomp_component_schematic_bip_39_3_word
+  write_yaml: false
+taxonomy_1: electronic
+taxonomy_10: ''
+taxonomy_11: ''
+taxonomy_12: ''
+taxonomy_13: ''
+taxonomy_14: mdd_microdiode_semiconductor
+taxonomy_14_capital: Mdd Microdiode Semiconductor
+taxonomy_14_first_letter: m
+taxonomy_14_first_letter_upper: M
+taxonomy_14_length_1: m
+taxonomy_14_length_2: md
+taxonomy_14_length_3: mdd
+taxonomy_14_length_4: mdd_
+taxonomy_14_length_5: mdd_m
+taxonomy_14_upper: MDD_MICRODIODE_SEMICONDUCTOR
+taxonomy_14_upper_length_1: M
+taxonomy_14_upper_length_2: MD
+taxonomy_14_upper_length_3: MDD
+taxonomy_14_upper_length_4: MDD_
+taxonomy_14_upper_length_5: MDD_M
+taxonomy_15: ss12
+taxonomy_15_capital: Ss12
+taxonomy_15_first_letter: s
+taxonomy_15_first_letter_upper: S
+taxonomy_15_length_1: s
+taxonomy_15_length_2: ss
+taxonomy_15_length_3: ss1
+taxonomy_15_length_4: ss12
+taxonomy_15_length_5: ss12
+taxonomy_15_upper: SS12
+taxonomy_15_upper_length_1: S
+taxonomy_15_upper_length_2: SS
+taxonomy_15_upper_length_3: SS1
+taxonomy_15_upper_length_4: SS12
+taxonomy_15_upper_length_5: SS12
+taxonomy_1_capital: Electronic
+taxonomy_1_first_letter: e
+taxonomy_1_first_letter_upper: E
+taxonomy_1_length_1: e
+taxonomy_1_length_2: el
+taxonomy_1_length_3: ele
+taxonomy_1_length_4: elec
+taxonomy_1_length_5: elect
+taxonomy_1_upper: ELECTRONIC
+taxonomy_1_upper_length_1: E
+taxonomy_1_upper_length_2: EL
+taxonomy_1_upper_length_3: ELE
+taxonomy_1_upper_length_4: ELEC
+taxonomy_1_upper_length_5: ELECT
+taxonomy_2: diode
+taxonomy_2_capital: Diode
+taxonomy_2_first_letter: d
+taxonomy_2_first_letter_upper: D
+taxonomy_2_length_1: d
+taxonomy_2_length_2: di
+taxonomy_2_length_3: dio
+taxonomy_2_length_4: diod
+taxonomy_2_length_5: diode
+taxonomy_2_upper: DIODE
+taxonomy_2_upper_length_1: D
+taxonomy_2_upper_length_2: DI
+taxonomy_2_upper_length_3: DIO
+taxonomy_2_upper_length_4: DIOD
+taxonomy_2_upper_length_5: DIODE
+taxonomy_3: schottky
+taxonomy_3_capital: Schottky
+taxonomy_3_first_letter: s
+taxonomy_3_first_letter_upper: S
+taxonomy_3_length_1: s
+taxonomy_3_length_2: sc
+taxonomy_3_length_3: sch
+taxonomy_3_length_4: scho
+taxonomy_3_length_5: schot
+taxonomy_3_upper: SCHOTTKY
+taxonomy_3_upper_length_1: S
+taxonomy_3_upper_length_2: SC
+taxonomy_3_upper_length_3: SCH
+taxonomy_3_upper_length_4: SCHO
+taxonomy_3_upper_length_5: SCHOT
+taxonomy_4: sma
+taxonomy_4_capital: Sma
+taxonomy_4_first_letter: s
+taxonomy_4_first_letter_upper: S
+taxonomy_4_length_1: s
+taxonomy_4_length_2: sm
+taxonomy_4_length_3: sma
+taxonomy_4_length_4: sma
+taxonomy_4_length_5: sma
+taxonomy_4_upper: SMA
+taxonomy_4_upper_length_1: S
+taxonomy_4_upper_length_2: SM
+taxonomy_4_upper_length_3: SMA
+taxonomy_4_upper_length_4: SMA
+taxonomy_4_upper_length_5: SMA
+taxonomy_5: ''
+taxonomy_6: ''
+taxonomy_7: ''
+taxonomy_8: ''
+taxonomy_9: ''
+url_chat: ''

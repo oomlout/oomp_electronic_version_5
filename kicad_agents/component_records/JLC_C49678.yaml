@@ -23,6 +23,10 @@ research:
   - Official JLC listing visibly confirms YAGEO CC0805KRX7R9BB104, Basic C49678, 0805,
     100 nF, 50 V, X7R, and plus or minus 10 percent.
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C49678.json.
+  - 'Straggler close-out 2026-10-04: downloaded the YAGEO specification (signed JLC
+    OSS link) into this part - the YAGEO/Murata MLCC datasheets are per-size series,
+    so this part anchors its own sub-family rather than sharing the Fenghua/Samsung
+    anchors used by the 2026-10-03 family batches.'
 jlc_selection:
   verified_on: '2026-09-24'
   official_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB104/C49678
@@ -38,7 +42,13 @@ jlc_selection:
     Temperature Coefficient: X7R
     Tolerance: ±10%
     Voltage Rating: 50V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: YAGEO YAGEO CC0805 series specification (own copy)
+    outline:
+    - 2
+    - 3
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-05: MLCC template identical to the
+    completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected post-build;
+    differs only in value text.'

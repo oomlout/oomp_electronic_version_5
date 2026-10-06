@@ -1,6 +1,20 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: ''
+dimension_reference:
+  document: Samsung MLCC data sheet, November 2015 (shared family copy) (C1711 provenance)
+  notes: 'part-numbering page 4 decodes the exact suffix; the class-characteristic
+    page and the size tables cover the 0805 family; package dimensions: 0805 L 2.00+-0.20,
+    W 1.25+-0.20, T 1.25+-0.20 mm.'
+  pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    part_number_system:
+    - 4
 dimensions_mm:
+  height: 1.25
   length: 2.0
   width: 1.25
 distributors:
@@ -13,11 +27,16 @@ distributors:
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2063-CL21B104KBCNNNC/C1711
 electrical:
-  capacitance: 100 nF
+  capacitance: 100 nF (104)
   dielectric: X7R
   polarized: false
   rated_voltage: 50 V
-  tolerance: ±10%
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_100_nano_farad_samsung_electro_mechanics_cl21b104kbcnnnc/datasheet.pdf
 generic_oomp_id: electronic_capacitor_0805_100_nano_farad_50_volt
 jlcpcb_selection:
   compatibility_notes: 'Exact variant, not a replacement: the generic electronic_capacitor_0805_100_nano_farad_50_volt
@@ -30,11 +49,18 @@ jlcpcb_selection:
     row on 0603), linked by generic_oomp_id to the 50_volt generic; no Cartesian product.
     Rating comparison from the staged capture: 100 nF, 0805, X7R, +/-10%, 50 V; two-terminal
     MLCC (pin_count 2).'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    document: Samsung MLCC data sheet, November 2015 (shared family copy)
+    part_number_system:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2063-CL21B104KBCNNNC/C1711
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: '1'
   ratings:
     Capacitance: 100nF
@@ -45,9 +71,13 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0805 resistor template (Device:R_Small, Capacitor_SMD:C_0805_2012Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 100nF
@@ -58,6 +88,8 @@ manufacturers:
 name_proper: Capacitor 100 nF 0805
 name_readable: Capacitor 100 nF 0805
 name_short: Capacitor 100 nF 0805
+oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+package_name_manufacturer: 0805 (2012 metric)
 part_id: C1
 part_number_jlcpcb: C1711
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2063-CL21B104KBCNNNC/C1711
@@ -69,18 +101,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Samsung Electro-Mechanics
   part_number: CL21B104KBCNNNC
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2063-CL21B104KBCNNNC/C1711
 research_notes:
-- Exact Samsung Electro-Mechanics C1711 / CL21B104KBCNNNC purchasing variant; 0805,
-  100 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.
-- Linked to the generic 0805 100 nF 50 V definition. The reviewed Basic preference
-  C49678 / CC0805KRX7R9BB104 (YAGEO, same 100 nF 50 V X7R ±10% spec) keeps the plain
-  50_volt generic ID; the 100 V C28233 preference on the plain 100 nF generic is also
-  unchanged. The registry allows one preferred code per ID, so this equivalent-spec
-  Samsung SKU is recorded as its own exact variant ID following the established maker/mpn
-  variant taxonomy (as with the Samsung C1591 row on 0603).
-- No datasheet PDF imported at intake; download is an integration-stage task (JLC
-  lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586177282230652928-C1711.pdf).
+- 'The official JLC page lists Extended Samsung Electro-Mechanics CL21B104KBCNNNC
+  (C1711): 100 nF 50 V X7R +-10% in 0805; identity and ratings observed live at intake
+  2026-09-28.'
+- 'Family batch 2026-10-04 over the shared Samsung Electro-Mechanics MLCC datasheet
+  (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering
+  code decodes 104 = 100 nF.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -1,12 +1,13 @@
 # Electronic / IC / Tssop 14
 
 [Up one level](../README.md)
-This category contains 2 parts in total.
+This category contains 30 parts in total.
 
 ## Categories
 
 - [Amplifier](amplifier/README.md)
 - [Converter](converter/README.md)
+- [Logic](logic/README.md)
 
 
 ---

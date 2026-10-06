@@ -1,6 +1,15 @@
 category: resistor
 category_name: Resistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710198065659904-C2007.pdf
+dimension_reference:
+  document: RC-MT08W300JT datasheet (C2007 provenance)
+  notes: 4x0402 (1005) convex resistor network, ROHM MNR04-style, 2.0 x 1.0 mm body;
+    eight terminals in two columns, four isolated elements across the left/right pad
+    pairs.
+  pages:
+  - 1
 dimensions_mm:
+  height: 0.5
   length: 2.0
   width: 1.0
 distributors:
@@ -12,6 +21,18 @@ distributors:
   part_number: C2007
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2359-RCMT08W300JT/C2007
+electrical:
+  configuration: four isolated resistors (convex isolated network)
+  elements: 4
+  operating_temperature: -55 to +125 C
+  power_per_element: 62.5mW
+  resistance: 30Ω
+  temperature_coefficient: +-200ppm/ C
+  terminals: 8
+  tolerance: +-5%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_array_4_x_0402_convex_30_ohm_8_pin/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: electronic_resistor_array_4_x_0402_convex_30_ohm_8_pin
     did not exist in working_oomp_populate_resistor_array.py, reviewed_choices.json,
@@ -23,11 +44,12 @@ jlcpcb_selection:
     staged capture: 30 ohm x4, 0402x4 convex, 62.5 mW per element, +/-200 ppm/C, +/-5%,
     8 pins - matches the live page exactly; stock 9,630 recorded as observed. Four-element
     isolated network (pin_count 8). Edits made under the resistor_array family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2359-RCMT08W300JT/C2007
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Number of Pins: '8'
@@ -40,11 +62,18 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: 8-terminal isolated-element
+    resistor array mapped pad-for-pad to the KiCad Device:R_Pack04 master (elements
+    are left/right pad pairs, serpentine numbering R1 1<->8, R2 2<->7, R3 3<->6, R4
+    4<->5; all pins passive) and the R_Array_Convex_4x0402 footprint master with the
+    body size cross-checked against the JLC package label; renders inherit the pipeline
+    verified on the completed passive exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Resistor_SMD:R_Array_Convex_4x0402
+  symbol: Device:R_Pack04
 lcsc_search: 0402 30Ω resistor array
 manufacturer: FH (Guangdong Fenghua Advanced Tech)
 manufacturers:
@@ -53,6 +82,8 @@ manufacturers:
 name_proper: Resistor array 30 Ohm 4 X 0402 Convex
 name_readable: Resistor array 30 Ohm 4 X 0402 Convex
 name_short: Resistor array 30 Ohm 4 X 0402 Convex
+package_name_manufacturer: 4x0402 (1005) convex resistor network, ROHM MNR04-style,
+  2.0 x 1.0 mm body
 part_id: P1
 part_number_jlcpcb: C2007
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2359-RCMT08W300JT/C2007
@@ -64,7 +95,47 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: FH (Guangdong Fenghua Advanced Tech)
   part_number: RC-MT08W300JT
+pins:
+  pin_1:
+    name: R1.1
+    number: '1'
+    type: passive
+  pin_2:
+    name: R2.1
+    number: '2'
+    type: passive
+  pin_3:
+    name: R3.1
+    number: '3'
+    type: passive
+  pin_4:
+    name: R4.1
+    number: '4'
+    type: passive
+  pin_5:
+    name: R4.2
+    number: '5'
+    type: passive
+  pin_6:
+    name: R3.2
+    number: '6'
+    type: passive
+  pin_7:
+    name: R2.2
+    number: '7'
+    type: passive
+  pin_8:
+    name: R1.2
+    number: '8'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2359-RCMT08W300JT/C2007
+research_notes:
+- The official JLC page lists 4x0402 (1005) convex resistor network FH (Guangdong
+  Fenghua Advanced Tech) RC-MT08W300JT (C2007); identity and ratings observed live
+  at intake 2026-09-28.
+- Convex isolated resistor network mapped to the KiCad Device:R_Pack04 master and
+  the Resistor_SMD:R_Array_Convex_4x0402 footprint master in the 2026-10-06 family
+  batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

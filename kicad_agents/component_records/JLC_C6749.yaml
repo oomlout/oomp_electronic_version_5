@@ -34,8 +34,18 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing S9013 row or C6749 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C6749, Jiangsu Changjing Electronics
+    Technology Co., Ltd., S9013 J3(RANGE:200-350), Basic, In Stock 873,977). New family
+    member (S9013 NPN SOT-23): browser-downloaded the Changjing S9013 specification
+    (2 pages, B.Nov 2011) from the JLC page and imported it as this part and the family
+    anchor (sha256 fee39c20...). Maximum ratings page 1: VCBO 40 V, VCEO 25 V, VEBO
+    5 V, IC 500 mA, PC 300 mW, Tstg -55 to +150 C; electrical characteristics page
+    1: ICBO/ICEO/IEBO 0.1 uA, hFE 120-400 at IC = 50 mA (ranks L 120-200 / H 200-350
+    / J 300-400; the MPN RANGE 200-350 = rank H), VCE(sat) 0.6 V max at IC = 500 mA,
+    VBE(sat) 1.2 V, fT 150 MHz, Cob 8 pF, marking J3. Pinout page 1: SOT-23 1 = BASE,
+    2 = EMITTER, 3 = COLLECTOR, matching Transistor_BJT:Q_NPN_BEC.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/7216-S9013_J3_RANGE_200_350/C6749
   tier: basic
   tier_label_observed: Basic
@@ -60,7 +70,27 @@ jlc_selection:
     Transition frequency(fT): 150MHz
     Vce Saturation(VCE(sat)): 600mV
     type: NPN
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Changjing S9013 SOT-23 specification, B.Nov 2011 (C6749 provenance,
+      family anchor)
+    maximum_ratings:
+    - 1
+    electrical_characteristics:
+    - 1
+    pinout:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Transistor S9013 J3(RANGE:200-350)
+    SOT 23 with the SOT-23 package drawing labelled emitter (pin 2) left, base (pin
+    1) left-lower, collector (pin 3) right, matching the datasheet pinout page 1 (1
+    = BASE, 2 = EMITTER, 3 = COLLECTOR). working_svg_dimensioned.png: SOT-23 (JEDEC
+    TO-236 Var AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry (datasheet
+    carries ratings and pinout but no dimension table; recorded in dimension_reference).
+    data/kicad manifest complete with Transistor_BJT:Q_NPN_BEC symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints, same convention as the C2145/C2146/C2150
+    Changjing siblings. README.md: S9013 J3(RANGE:200-350) part number, LCSC/JLC C6749
+    links, 3-pin table (base/emitter/collector), datasheet link resolving to data/datasheet.pdf
+    (the Changjing S9013 specification, family anchor). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

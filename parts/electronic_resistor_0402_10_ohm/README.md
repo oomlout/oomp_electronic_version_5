@@ -2,7 +2,7 @@
 
 `electronic_resistor_0402_10_ohm`
 
-Resistor 10 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm.
+Resistor 10 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
 
 ![Resistor 10 Ohm 0402 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 10 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 | Type | Resistor |
 | Package / style | 0402 |
 | Nominal size | 1.0 &#x00D7; 0.5 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 10 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.35 mm |
 | Length | 1.0 mm |
 | Width | 0.5 mm |
 
@@ -51,6 +53,19 @@ Resistor 10 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

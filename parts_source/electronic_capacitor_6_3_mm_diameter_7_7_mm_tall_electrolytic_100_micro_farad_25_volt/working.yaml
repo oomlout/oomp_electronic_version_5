@@ -1,6 +1,15 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291514529890304-C3338.pdf
+dimension_reference:
+  document: RVT1E101M0607 datasheet (C3338 provenance)
+  notes: SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm; polarity stripe/minus band
+    marks the negative terminal per the datasheet outline drawing.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 7.7
   length: 6.3
   width: 6.3
 distributors:
@@ -12,6 +21,17 @@ distributors:
   part_number: C3338
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/HonorElec-RVT1E101M0607/C3338
+electrical:
+  capacitance: 100 uF
+  dielectric: aluminum electrolytic
+  lifetime: 2000hrs@105 C
+  operating_temperature: -55 to +105 C
+  polarized: true
+  rated_voltage: 25 V
+  tolerance: +-20%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_6_3_mm_diameter_7_7_mm_tall_electrolytic_100_micro_farad_25_volt/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: this electrolytic size/value/voltage
     combination did not exist in working_oomp_populate_capacitor.py, reviewed_choices.json,
@@ -23,11 +43,13 @@ jlcpcb_selection:
     siblings. Rating comparison from the staged capture: package below, stock below
     recorded as observed. Stock 54856 recorded as observed. Edits made under the capacitor
     family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/HonorElec-RVT1E101M0607/C3338
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: SMT Assembly
@@ -52,11 +74,17 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: two-terminal polarized capacitor
+    mapped to the KiCad Device:C_Polarized master (pin 1 positive, pin 2 negative)
+    and the CP_Elec_6.3x7.7 footprint master with the case dimensions cross-checked
+    against the JLC package label SMD,D6.3xL7.7mm; renders inherit the pipeline verified
+    on the completed passive exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Capacitor_SMD:CP_Elec_6.3x7.7
+  symbol: Device:C_Polarized
 lcsc_search: 100uF 25V electrolytic
 manufacturer: Honor Elec
 manufacturers:
@@ -65,6 +93,7 @@ manufacturers:
 name_proper: Capacitor 100 uF 25 V Electrolytic 6.3 mm diameter x 7.7 mm tall
 name_readable: Capacitor 100 uF 25 V Electrolytic 6.3 mm diameter x 7.7 mm tall
 name_short: Capacitor 100 uF 25 V Electrolytic 6.3 mm diameter x 7.7 mm tall
+package_name_manufacturer: SMD V-chip aluminum electrolytic, D6.3 x 7.7 mm
 part_id: C1
 part_number_jlcpcb: C3338
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/HonorElec-RVT1E101M0607/C3338
@@ -76,7 +105,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Honor Elec
   part_number: RVT1E101M0607
+pins:
+  pin_1:
+    name: positive
+    number: '1'
+    type: passive
+  pin_2:
+    name: negative
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/HonorElec-RVT1E101M0607/C3338
+research_notes:
+- The official JLC page lists SMD,D6.3xL7.7mm Honor Elec RVT1E101M0607 (C3338); identity
+  and ratings observed live at intake 2026-09-29.
+- Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized
+  master and the Capacitor_SMD:CP_Elec_6.3x7.7 footprint master in the 2026-10-05
+  family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

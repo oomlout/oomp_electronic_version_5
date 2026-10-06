@@ -2,7 +2,7 @@
 
 `electronic_capacitor_0603_6_8_nano_farad`
 
-Capacitor 6.8 nF 0603 is an OOMP electronic capacitor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm.
+Capacitor 6.8 nF 0603 is an OOMP electronic capacitor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
 ![Capacitor 6.8 nF 0603 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Capacitor 6.8 nF 0603 is an OOMP electronic capacitor definition. It uses the 06
 | Type | Capacitor |
 | Package / style | 0603 |
 | Nominal size | 1.6 &#x00D7; 0.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Capacitor 6.8 nF 0603 is an OOMP electronic capacitor definition. It uses the 06
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.8 mm |
 | Length | 1.6 mm |
 | Width | 0.8 mm |
 
@@ -48,6 +50,19 @@ Capacitor 6.8 nF 0603 is an OOMP electronic capacitor definition. It uses the 06
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

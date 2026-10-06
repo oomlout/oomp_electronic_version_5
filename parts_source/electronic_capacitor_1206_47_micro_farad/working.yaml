@@ -1,6 +1,20 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178935545868288-C96123.pdf
+dimension_reference:
+  document: Samsung MLCC data sheet, November 2015 (shared family copy) (C96123 provenance)
+  notes: 'part-numbering page 4 decodes the exact suffix; the class-characteristic
+    page and the size tables cover the 1206 family; package dimensions: 1206 L 3.20+-0.20,
+    W 1.60+-0.20, T 0.80+-0.10 mm.'
+  pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    part_number_system:
+    - 4
 dimensions_mm:
+  height: 0.8
   length: 3.2
   width: 1.6
 distributors:
@@ -23,16 +37,34 @@ distributors:
   part_number: C96123
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
+electrical:
+  capacitance: 47 μF (476)
+  dielectric: X5R
+  polarized: false
+  rated_voltage: 10 V
+  temperature_characteristic: +-15% over the operating range (X5R)
+  temperature_range: -55 to +125 C
+  tolerance: +-20% (M)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_1206_47_micro_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Existing generic 1206 47 uF capacitor. Samsung C96123 is 10
     V X5R +/-20%; previous Samsung C68361 was 6.3 V X5R +/-20%. Preserve C68361 and
     other alternatives. Effective capacitance at DC bias needs project-specific full
     review.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    document: Samsung MLCC data sheet, November 2015 (shared family copy)
+    part_number_system:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 47 uF
@@ -43,9 +75,13 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 1206 resistor template (Device:R_Small, Capacitor_SMD:C_1206_3216Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: C35270,C13585.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder
   machine_solder: Capacitor_SMD:C_1206_3216Metric
   symbol: Device:C_Small
 lcsc_search: 1206 47uF
@@ -61,6 +97,7 @@ name_proper: Capacitor 47 uF 1206
 name_readable: Capacitor 47 uF 1206
 name_short: Capacitor 47 uF 1206
 oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+package_name_manufacturer: 1206 (3216 metric)
 part_id: C1
 part_number_jlcpcb: C96123
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
@@ -81,10 +118,22 @@ part_numbers_manufacturer:
   part_number: CL31A476MQHNNNE
 - manufacturer: CCTC
   part_number: TCC1206X5R476M100HT
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/97327-CL31A476MPHNNNE/C96123
 research_notes:
-- 'LCSC stock research 2026-09: highest-stock listing first (C68361, 921,810 in stock
-  at capture); runners-up follow.'
+- 'The official JLC page lists Basic Samsung Electro-Mechanics CL31A476MPHNNNE (C96123):
+  47 μF 10 V X5R +-20% (M) in 1206; identity and ratings observed live at intake 2026-09-24.'
+- 'Family batch 2026-10-04 over the shared Samsung Electro-Mechanics MLCC datasheet
+  (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering
+  code decodes 476 = 47 μF.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

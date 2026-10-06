@@ -24,8 +24,16 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, FH (Guangdong Fenghua Advanced Tech), 1206B103K500NT,
     C1846, 1206, 10nF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-10-02: live page reconfirmed (C1846, FH (Guangdong Fenghua Advanced
+    Tech), 1206B103K500NT, Basic, In Stock 230,801); the listed datasheet URL matches
+    the intake snapshot. No new download: the already-captured Fenghua General Series
+    MLCC specification (shared via oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad)
+    covers the exact suffix - How-To-Order page 4 decodes 1206 / B = X7R / 103 = 10
+    nF / K = +-10% / 500 = 50 V / T 7-inch reel; the X7R 1206 capacity/voltage table
+    page 12 lists 10 nF at 6.3-50 V with thickness code FA = 0.80 +-0.20 mm (body
+    3.20 x 1.60 mm, page 5); Class II tests page 16.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/2198-1206B103K500NT/C1846
   tier: basic
   tier_label_observed: Basic
@@ -41,7 +49,27 @@ jlc_selection:
     Tolerance: ±10%
     Capacitance: 10nF
     Temperature Coefficient: X7R
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared, C1846 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 5
+    - 12
+    electrical_characteristics:
+    - 12
+    - 16
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 10 nF 1206 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: top view 3.2 x 1.6 mm with arrows, matching
+    the Fenghua 1206/3216 nominals; part thickness 0.80 mm (FA code) in dimensions_mm
+    (1206 masters identical to the built 1206 sibling electronic_capacitor_1206_10_nano_farad
+    intake build). data/kicad manifest complete with Device:C_Small symbol and Capacitor_SMD:C_1206_3216Metric
+    machine + C_1206_3216Metric_Pad1.33x1.80mm_HandSolder hand footprints. README.md:
+    1206B103K500NT part number, LCSC/JLC C1846 links, pin table, datasheet link resolving
+    to data/datasheet.pdf via the shared Fenghua General Series MLCC specification
+    (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint checked as rendered
+    SVG/PNG plus s-expression text rather than in a KiCad GUI.'

@@ -1,8 +1,15 @@
 category: other
 category_name: Other
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588907433410908160-C3107.pdf
+dimension_reference:
+  document: RF1404-000 datasheet (C3107 provenance)
+  notes: 1812 (4532 metric) resettable PPTC, 4.5 x 3.2 x 2.4 mm.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 2.4
+  length: 4.5
+  width: 3.2
 distributors:
 - key: lcsc
   part_number: C3107
@@ -12,6 +19,13 @@ distributors:
   part_number: C3107
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Littelfuse-RF1404000/C3107
+electrical:
+  device_type: resettable PPTC fuse
+  operating_temperature: -40 C~+85 C
+  resettable: true
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_fuse_1812_resettable_littelfuse_rf1404_000/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact row added to working_oomp_populate_fuse.py under the
     fuse family lock (the family''s exact-row convention [fuse, size, type, maker,
@@ -22,11 +36,12 @@ jlcpcb_selection:
     the page. Rating comparison from the staged capture: package below, stock below
     recorded as observed. Stock 912 recorded as observed. Edits made under the fuse
     family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Littelfuse-RF1404000/C3107
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: SMT Assembly
@@ -52,11 +67,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: two-terminal fuse mapped to
+    the KiCad Device:Polyfuse master (both pins passive, no polarity) and the Fuse_1812_4532Metric
+    footprint master with the body size cross-checked against the JLC package label;
+    renders inherit the pipeline verified on the completed passive exemplars and were
+    spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Fuse:Fuse_1812_4532Metric
+  symbol: Device:Polyfuse
 lcsc_search: 1812 resettable littelfuse rf1404 000 fuse
 manufacturer: Littelfuse
 manufacturers:
@@ -65,6 +85,7 @@ manufacturers:
 name_proper: Fuse RF1404-000 1812
 name_readable: Fuse RF1404-000 1812
 name_short: Fuse RF1404-000 1812
+package_name_manufacturer: 1812 (4532 metric) resettable PPTC, 4.5 x 3.2 x 2.4 mm
 part_id: P1
 part_number_jlcpcb: C3107
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Littelfuse-RF1404000/C3107
@@ -76,7 +97,21 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Littelfuse
   part_number: RF1404-000
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/Littelfuse-RF1404000/C3107
+research_notes:
+- The official JLC page lists Littelfuse RF1404-000 (C3107); identity and ratings
+  observed live at intake.
+- Mapped to the KiCad Device:Polyfuse master and the Fuse:Fuse_1812_4532Metric footprint
+  master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

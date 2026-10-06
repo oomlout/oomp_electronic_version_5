@@ -1,8 +1,16 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887194442878977-C2478.pdf
+dimension_reference:
+  document: MDD SR360 series specification (C2478 provenance)
+  notes: DO-201AD axial molded body 9.5 x 5.5 mm, 12.70 mm pitch horizontal mount
+    per the KiCad master.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 4.0
+  length: 9.5
+  width: 5.5
 distributors:
 - key: lcsc
   part_number: C2478
@@ -12,6 +20,17 @@ distributors:
   part_number: C2478
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SR360/C2478
+electrical:
+  forward_current: 3A
+  forward_voltage: 700mV@3A
+  maximum_dc_reverse_voltage: 60V
+  operating_temperature: -50℃~+125℃
+  polarized: true
+  reverse_leakage_current: 500uA@60V
+  reverse_recovery_time: see live listing
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_schottky_do_201ad_mdd_microdiode_semiconductor_sr360/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact MDD (Microdiode Semiconductor) device row: the do_41/do_201ad
     through-hole rectifier and fast_recovery tokens were introduced at C2456-C2469,
@@ -22,11 +41,14 @@ jlcpcb_selection:
     pins per the physical body. Edits made under the diode family lock. Rating comparison
     from the staged capture: Diodes/Schottky Diodes, package DO-201AD, stock 14361
     recorded as observed. Edits made under the diode family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: MDD SR360 series specification
+    ratings:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SR360/C2478
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -51,11 +73,14 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: DO-201AD THT axial template;
+    THT renders follow the package master like the completed axial/bridge exemplars;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_THT:D_DO-201AD_P12.70mm_Horizontal
+  machine_solder: Diode_THT:D_DO-201AD_P12.70mm_Horizontal
+  symbol: Device:D_Schottky
 lcsc_search: SR360
 manufacturer: MDD(Microdiode Semiconductor)
 manufacturers:
@@ -64,6 +89,7 @@ manufacturers:
 name_proper: Diode SR360 DO-201AD
 name_readable: Diode SR360 DO-201AD
 name_short: Diode SR360 DO-201AD
+package_name_manufacturer: DO-201AD THT axial
 part_id: D1
 part_number_jlcpcb: C2478
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SR360/C2478
@@ -75,7 +101,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: MDD(Microdiode Semiconductor)
   part_number: SR360
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: passive
+  pin_2:
+    name: A
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SR360/C2478
+research_notes:
+- The official JLC page lists MDD(Microdiode Semiconductor) SR360 (C2478); identity
+  and ratings observed live at intake 2026-09-29.
+- 'THT family batch 2026-10-05: Own downloaded series specification; Package outline
+  and polarity follow the DO-201AD THT axial master; axial THT convention pin 1 =
+  cathode (banded end), pin 2 = anode.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

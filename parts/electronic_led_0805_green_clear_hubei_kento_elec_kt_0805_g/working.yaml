@@ -30,7 +30,17 @@ bip_39_full_space: embark material know chat sponsor proof elder roast usual ivo
 bip_39_full_underscore: embark_material_know_chat_sponsor_proof_elder_roast_usual_ivory_car_child
 category: led
 category_name: LED
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8639582106218377216-C2297.pdf
+dimension_reference:
+  document: KENTO 0805 emerald-green approval specification (C2297)
+  notes: Package 2.0 x 1.25 x 0.85 mm (page 2 profile drawing, tolerance +-0.1 mm);
+    green corner = pad 2 cathode, pad 1 = + anode.
+  pages:
+  - 2
+  - 3
+  - 4
 dimensions_mm:
+  height: 0.85
   length: 2.0
   width: 1.25
 directory: parts/electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
@@ -43,6 +53,19 @@ distributors:
   part_number: C2297
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
+electrical:
+  forward_current: 30 mA DC max (60 mA peak, 1/10 duty, 0.1 ms)
+  forward_voltage: 2.6-3.1 V at IF = 5 mA
+  led_color: emerald green (dominant wavelength 513-528 nm, peak 516-525 nm)
+  luminous_intensity: 175-430 mcd at IF = 5 mA
+  operating_temperature: -40 to +85 C
+  polarized: true
+  power_dissipation: 100 mW
+  reverse_voltage: 5 V max (IR 5 uA max at VR = 5 V)
+  viewing_angle: 120 deg
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g/datasheet.pdf
 id: electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
 id_no_class: electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
 id_no_size: electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
@@ -52,11 +75,21 @@ jlcpcb_selection:
     LED family row electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g using
     the established size/color/lens-style/maker/MPN exact pattern. Emerald green water-clear
     0805, Vf 2.6-3.1 V, 5 mA test current, 430 mcd, 525 nm peak.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    absolute_maximum:
+    - 3
+    bin_tables:
+    - 4
+    document: KENTO 0805 emerald-green approval specification (C2297 provenance, family
+      anchor)
+    electrical_optical:
+    - 3
+    features_dimensions:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Diode Configuration: Discrete Diode
@@ -74,10 +107,22 @@ jlcpcb_selection:
   stock_observed: 1230897
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled LED KT-0805G 0805 with A (anode) left
+    and K (cathode) right, the LED circle-and-bar symbol drawn inside the body, no
+    mirroring, no label overlap, no cropping. working_svg_dimensioned.png: 0805 outline
+    2.0 x 1.25 mm per the KENTO profile drawing (page 2, height 0.85 mm recorded in
+    dimensions_mm). data/kicad manifest complete with Device:LED symbol and LED_SMD:LED_0805_2012Metric
+    machine + Pad1.15x1.40mm_HandSolder hand footprints, same convention as the other
+    LED siblings. README.md: KT-0805G part number, LCSC/JLC C2297 links, 2-pin table
+    (A/K with the vendor polarity-trap note), datasheet link resolving to data/datasheet.pdf
+    (the KENTO emerald-green approval specification, family anchor). Limitation: KiCad
+    symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than
+    in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder
   machine_solder: LED_SMD:LED_0805_2012Metric
   symbol: Device:LED
 lcsc_search: 0805 led
@@ -118,6 +163,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -207,7 +262,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -221,7 +276,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -229,7 +284,17 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: led
       category_name: LED
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8639582106218377216-C2297.pdf
+      dimension_reference:
+        document: KENTO 0805 emerald-green approval specification (C2297)
+        notes: Package 2.0 x 1.25 x 0.85 mm (page 2 profile drawing, tolerance +-0.1
+          mm); green corner = pad 2 cathode, pad 1 = + anode.
+        pages:
+        - 2
+        - 3
+        - 4
       dimensions_mm:
+        height: 0.85
         length: 2.0
         width: 1.25
       directory: parts\electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
@@ -242,17 +307,40 @@ oomlout_ai_roboclick_4:
         part_number: C2297
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
+      electrical:
+        forward_current: 30 mA DC max (60 mA peak, 1/10 duty, 0.1 ms)
+        forward_voltage: 2.6-3.1 V at IF = 5 mA
+        led_color: emerald green (dominant wavelength 513-528 nm, peak 516-525 nm)
+        luminous_intensity: 175-430 mcd at IF = 5 mA
+        operating_temperature: -40 to +85 C
+        polarized: true
+        power_dissipation: 100 mW
+        reverse_voltage: 5 V max (IR 5 uA max at VR = 5 V)
+        viewing_angle: 120 deg
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact discrete indicator LED identity: added one explicit
           LED family row electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
           using the established size/color/lens-style/maker/MPN exact pattern. Emerald
           green water-clear 0805, Vf 2.6-3.1 V, 5 mA test current, 430 mcd, 525 nm
           peak.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          absolute_maximum:
+          - 3
+          bin_tables:
+          - 4
+          document: KENTO 0805 emerald-green approval specification (C2297 provenance,
+            family anchor)
+          electrical_optical:
+          - 3
+          features_dimensions:
+          - 2
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Diode Configuration: Discrete Diode
@@ -270,10 +358,23 @@ oomlout_ai_roboclick_4:
         stock_observed: 1230897
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-25'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build and a forced diagram
+          refresh. working_svg_square_pins.png hero titled LED KT-0805G 0805 with
+          A (anode) left and K (cathode) right, the LED circle-and-bar symbol drawn
+          inside the body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png:
+          0805 outline 2.0 x 1.25 mm per the KENTO profile drawing (page 2, height
+          0.85 mm recorded in dimensions_mm). data/kicad manifest complete with Device:LED
+          symbol and LED_SMD:LED_0805_2012Metric machine + Pad1.15x1.40mm_HandSolder
+          hand footprints, same convention as the other LED siblings. README.md: KT-0805G
+          part number, LCSC/JLC C2297 links, 2-pin table (A/K with the vendor polarity-trap
+          note), datasheet link resolving to data/datasheet.pdf (the KENTO emerald-green
+          approval specification, family anchor). Limitation: KiCad symbol/footprint
+          checked as rendered SVG/PNG plus s-expression text rather than in a KiCad
+          GUI.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder
         machine_solder: LED_SMD:LED_0805_2012Metric
         symbol: Device:LED
       lcsc_search: 0805 led
@@ -299,6 +400,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -389,7 +500,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -403,6 +514,7 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      package_name_manufacturer: 0805 (2012 metric, 0.85 mm height, water clear)
       part_id: D1
       part_number_jlcpcb: C2297
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
@@ -480,7 +592,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -498,7 +610,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/led/0805/green/clear/hubei_kento_elec/README.md
         oomp_id: electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
-        pins: []
+        pins:
+        - name: A
+          number: '1'
+          type: passive
+        - name: K
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
@@ -508,9 +626,12 @@ oomlout_ai_roboclick_4:
           value: 0805
         - title: Nominal size
           value: 2.0 × 1.25 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
         summary: LED KT-0805G 0805 is an OOMP electronic led definition. It uses the
           0805 package or form factor. Its nominal drawing size is 2.0 × 1.25 mm.
+          The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -526,8 +647,28 @@ oomlout_ai_roboclick_4:
           value: hubei_kento_elec
         - level: 7
           value: kt_0805_g
+      pins:
+        pin_1:
+          name: A
+          number: '1'
+          type: passive
+        pin_2:
+          name: K
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Hubei KENTO KT-0805G (C2297): emerald green
+        0805 water-clear LED, 2.6-3.1 V, 5 mA test current, 120 deg, 513-528 nm, up
+        to 430 mcd; reconfirmed live 2026-10-02 (stock 3,135,154).'
+      - Browser-downloaded the KENTO 0805 emerald-green approval specification (11
+        pages) into this part; it anchors the green 0805 LED sub-family (the 0805
+        yellow spec does not cover green).
+      - 'POLARITY TRAP: identical to the other KENTO LEDs - pad 1 = + (anode) and
+        pad 2 = cathode (green corner, page 2 drawing); the KiCad LED_0805_2012Metric
+        library convention numbers pad 1 as cathode - verify polarity against the
+        vendor drawing before assembly.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -704,7 +845,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -718,6 +859,7 @@ oomlout_ai_roboclick_5:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
+package_name_manufacturer: 0805 (2012 metric, 0.85 mm height, water clear)
 part_id: D1
 part_number_jlcpcb: C2297
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
@@ -795,7 +937,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -813,7 +955,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/led/0805/green/clear/hubei_kento_elec/README.md
   oomp_id: electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
-  pins: []
+  pins:
+  - name: A
+    number: '1'
+    type: passive
+  - name: K
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
@@ -823,9 +971,12 @@ part_page:
     value: 0805
   - title: Nominal size
     value: 2.0 × 1.25 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_green_clear_hubei_kento_elec_kt_0805_g
   summary: LED KT-0805G 0805 is an OOMP electronic led definition. It uses the 0805
-    package or form factor. Its nominal drawing size is 2.0 × 1.25 mm.
+    package or form factor. Its nominal drawing size is 2.0 × 1.25 mm. The definition
+    includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -841,8 +992,28 @@ part_page:
     value: hubei_kento_elec
   - level: 7
     value: kt_0805_g
+pins:
+  pin_1:
+    name: A
+    number: '1'
+    type: passive
+  pin_2:
+    name: K
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805G/C2297
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Hubei KENTO KT-0805G (C2297): emerald green 0805
+  water-clear LED, 2.6-3.1 V, 5 mA test current, 120 deg, 513-528 nm, up to 430 mcd;
+  reconfirmed live 2026-10-02 (stock 3,135,154).'
+- Browser-downloaded the KENTO 0805 emerald-green approval specification (11 pages)
+  into this part; it anchors the green 0805 LED sub-family (the 0805 yellow spec does
+  not cover green).
+- 'POLARITY TRAP: identical to the other KENTO LEDs - pad 1 = + (anode) and pad 2
+  = cathode (green corner, page 2 drawing); the KiCad LED_0805_2012Metric library
+  convention numbers pad 1 as cathode - verify polarity against the vendor drawing
+  before assembly.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -27,8 +27,19 @@ research:
     link was clicked in the browser but no local PDF file appeared; full pass must
     obtain and validate a datasheet through a browser page.
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C64898.json.
+  - 'Full pass 2026-10-02: live page reconfirmed (C2480, MDD (Microdiode Semiconductor),
+    SS14, Basic, In Stock 1,170,064). New family member (SMA schottky): browser-downloaded
+    the MDD SS12-SS1200 series specification (3 pages, Rev 2025A5) from the JLC page
+    and imported it as this part and the SMA schottky family anchor (sha256 1c2e8ca3...).
+    Ratings table page 1 (column blocks read from the rendered table): SS14 - VRRM
+    40 V (VRMS 28 V, VDC 40 V), I(AV) 1.0 A, IFSM 25 A, VF max 0.70 V at 1.0 A (the
+    0.70 block spans SS13-SS14), IR 0.3 mA at 25 C / 10 mA at 100 C, CJ 110 pF, RthJA
+    90 C/W, TJ/TSTG -55 to +150 C; mechanical data page 1: JEDEC DO-214AC/SMA, color
+    band = cathode end, body 4.50 x 2.80 x 2.30 mm, 5.30 mm overall with terminal
+    ends. VF discrepancy vs the live description (550 mV = the SS12 column) recorded
+    - the vendor datasheet governs. Pin 1 = K (banded), pin 2 = A.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS14/C2480
   tier: basic
   tier_label_observed: Basic
@@ -47,7 +58,26 @@ jlc_selection:
     Diode Configuration: Standalone
     Current - Rectified: 1A
     Reverse Leakage Current (Ir): 300uA@40V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: MDD SS12-SS1200 SMA series specification, Rev 2025A5 (C2480 provenance,
+      family anchor)
+    maximum_ratings:
+    - 1
+    mechanical_data:
+    - 1
+    typical_characteristics:
+    - 2
+    packing:
+    - 3
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Diode SS14 SMA with K (cathode
+    band) left and A (anode) right plus the bar symbol, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: SMA/DO-214AC outline per the KiCad D_SMA
+    master geometry (body 4.5 x 2.8 x 2.3 mm recorded in dimensions_mm per the mechanical
+    data). data/kicad manifest complete with Device:D_Schottky symbol and Diode_SMD:D_SMA
+    machine + D_SMA_Handsoldering hand footprints. README.md: SS14 part number, LCSC/JLC
+    C2480 links, 2-pin table (K/A), datasheet link resolving to data/datasheet.pdf
+    (the MDD SMA series specification, family anchor). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

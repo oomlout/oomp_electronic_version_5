@@ -36,6 +36,12 @@ connector_dimensions_mm:
   pitch: 3.5
   positions: 2
 datasheet_url: https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=CustomerDrawing%7F1776275%7Fpdf%7FEnglish%7FENG_CD_1776275-2.pdf%7F1776275-2
+dimension_reference:
+  document: LCSC C695629 (DORABO DB301V-3.5-2P-GN-S) and the built 3-pin exemplar
+  notes: 'Top view follows the built 3-pin exemplar style: body length positions x
+    pitch with chamfered screw circles at every position and the pin row on the board
+    side. Nominal drawing dimensions.'
+  pages: []
 dimensions_mm:
   length: 10.0
   width: 5.0
@@ -46,9 +52,10 @@ id_no_class: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin
 id_no_size: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
 id_no_type: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical
+  machine_solder: TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical
+  symbol: Connector:Screw_Terminal_01x02
 lcsc_search: 1776275-2
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
@@ -205,6 +212,20 @@ oomlout_ai_roboclick_2:
   retries_until_complete: 0
 oomlout_ai_roboclick_3:
   actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_4:
+  actions:
   - command: text_jinja_template
     convert_to_pdf: false
     convert_to_png: false
@@ -217,15 +238,22 @@ oomlout_ai_roboclick_3:
         pitch: 3.5
         positions: 2
       datasheet_url: https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=CustomerDrawing%7F1776275%7Fpdf%7FEnglish%7FENG_CD_1776275-2.pdf%7F1776275-2
+      dimension_reference:
+        document: LCSC C695629 (DORABO DB301V-3.5-2P-GN-S) and the built 3-pin exemplar
+        notes: 'Top view follows the built 3-pin exemplar style: body length positions
+          x pitch with chamfered screw circles at every position and the pin row on
+          the board side. Nominal drawing dimensions.'
+        pages: []
       dimensions_mm:
         length: 10.0
         width: 5.0
       directory: parts\electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
       distributors: []
       kicad:
-        hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        allow_project_fallback: false
+        hand_solder: TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical
+        machine_solder: TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical
+        symbol: Connector:Screw_Terminal_01x02
       lcsc_search: 1776275-2
       manufacturer: TE Connectivity
       manufacturers:
@@ -362,6 +390,20 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_3:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
       package_drawing:
         body:
         - 7.0
@@ -483,7 +525,13 @@ oomlout_ai_roboclick_3:
           title: Top view
         navigation_link: ../../navigation/electronic/connector/terminal_block/3_5_mm_pitch/through_hole/2_pin/te_connectivity/README.md
         oomp_id: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
@@ -493,10 +541,12 @@ oomlout_ai_roboclick_3:
           value: terminal block
         - title: Nominal size
           value: 10.0 × 5.0 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
         summary: Connector Terminal Block 1776275-2 is an OOMP electronic connector
           definition. It uses the terminal block package or form factor. Its nominal
-          drawing size is 10.0 × 5.0 mm.
+          drawing size is 10.0 × 5.0 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -514,7 +564,22 @@ oomlout_ai_roboclick_3:
           value: te_connectivity
         - level: 15
           value: '1776275_2'
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       regenerate_pngs: false
+      research_notes:
+      - 3.5 mm screw-terminal style anchored on LCSC C695629 (DORABO DB301V-3.5-2P-GN-S,
+        2-position green); the generic family covers the stock lengths in this style.
+      - 'Top view follows the built 3-pin exemplar style: body length positions x
+        pitch with chamfered screw circles at every position and the pin row on the
+        board side. Nominal drawing dimensions.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -731,7 +796,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -866,7 +931,13 @@ part_page:
     title: Top view
   navigation_link: ../../navigation/electronic/connector/terminal_block/3_5_mm_pitch/through_hole/2_pin/te_connectivity/README.md
   oomp_id: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
@@ -876,10 +947,12 @@ part_page:
     value: terminal block
   - title: Nominal size
     value: 10.0 × 5.0 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2
   summary: Connector Terminal Block 1776275-2 is an OOMP electronic connector definition.
     It uses the terminal block package or form factor. Its nominal drawing size is
-    10.0 × 5.0 mm.
+    10.0 × 5.0 mm. The definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -897,7 +970,22 @@ part_page:
     value: te_connectivity
   - level: 15
     value: '1776275_2'
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 regenerate_pngs: false
+research_notes:
+- 3.5 mm screw-terminal style anchored on LCSC C695629 (DORABO DB301V-3.5-2P-GN-S,
+  2-position green); the generic family covers the stock lengths in this style.
+- 'Top view follows the built 3-pin exemplar style: body length positions x pitch
+  with chamfered screw circles at every position and the pin row on the board side.
+  Nominal drawing dimensions.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

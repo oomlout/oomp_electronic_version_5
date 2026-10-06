@@ -1,7 +1,7 @@
 # Electronic / Connector / Header / 2 54 Mm Pitch / Through Hole
 
 [Up one level](../README.md)
-This category contains 44 parts in total.
+This category contains 55 parts in total.
 
 ## Categories
 
@@ -12,11 +12,22 @@ This category contains 44 parts in total.
 - [Connector Header 2.54 mm pitch through-hole dual row 12 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_12_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_12_pin`
 - [Connector Header 2.54 mm pitch through-hole dual row 14 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_14_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_14_pin`
 - [Connector Header 2.54 mm pitch through-hole dual row 6 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_6_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_6_pin`
+- [Connector Header 2.54 mm pitch through-hole right angle triple row 9 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_triple_row_9_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_triple_row_9_pin`
+- [Connector Header 2.54 mm pitch through-hole triple row 12 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_12_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_12_pin`
+- [Connector Header 2.54 mm pitch through-hole triple row 15 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_15_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_15_pin`
+- [Connector Header 2.54 mm pitch through-hole triple row 18 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_18_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_18_pin`
+- [Connector Header 2.54 mm pitch through-hole triple row 21 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_21_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_21_pin`
+- [Connector Header 2.54 mm pitch through-hole triple row 24 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_24_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_24_pin`
+- [Connector Header 2.54 mm pitch through-hole triple row 6 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_6_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_6_pin`
+- [Connector Header 2.54 mm pitch through-hole triple row 63 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_63_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_63_pin`
+- [Connector Header 2.54 mm pitch through-hole triple row 9 pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_9_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_triple_row_9_pin`
 - [Connector Header 2.54-1*10P针](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_10_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_10_pin`
 - [Connector Header 2.54-1*20P直针](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_20_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_20_pin`
 - [Connector Header 2.54-1*3P针](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_3_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_3_pin`
-- [Connector Header 2.54-1*40P直针](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_40_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_40_pin`
+- [Connector Header 2.54-1*40PStraight pin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_40_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_40_pin`
 - [Connector Header 2.54-1x6P直针](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_6_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_6_pin`
+- [Connector Header 2.54-2*40PBend](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_dual_row_80_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_dual_row_80_pin`
+- [Connector Header 2.54-2*40PPin](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_80_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_dual_row_80_pin`
 - [Connector Header 2011-1X28G00SB](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_28_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_28_pin`
 - [Connector Header 2011-1X31G00SB](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_31_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_31_pin`
 - [Connector Header 54101-T30-00LF](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_through_hole_30_pin) — `electronic_connector_header_2_54_mm_pitch_through_hole_30_pin`

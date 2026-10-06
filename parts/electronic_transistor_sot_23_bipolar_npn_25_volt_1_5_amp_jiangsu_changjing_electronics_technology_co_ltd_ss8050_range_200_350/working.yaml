@@ -30,9 +30,18 @@ bip_39_full_space: recipe reflect trap vintage wasp swarm pencil spend useful gi
 bip_39_full_underscore: recipe_reflect_trap_vintage_wasp_swarm_pencil_spend_useful_giant_tool_permit
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707466581327872-C2150.pdf
+dimension_reference:
+  document: Changjing SS8050 SOT-23 specification, Rev 2.1 (C2150)
+  notes: 'SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1 mm
+    per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries the pinout
+    and ratings but no dimension table.'
+  pages:
+  - 1
 dimensions_mm:
+  height: 1.1
   length: 2.9
-  width: 2.6
+  width: 1.3
 directory: parts/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
 distributors:
 - key: lcsc
@@ -43,6 +52,20 @@ distributors:
   part_number: C2150
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
+electrical:
+  collector_current: 1.5 A continuous
+  collector_cutoff_current: 0.1 uA max (VCB = 40 V)
+  collector_emitter_breakdown_voltage: 25 V (VCEO); VCBO 40 V, VEBO 5 V
+  collector_emitter_saturation_voltage: 0.5 V max at IC = 800 mA, IB = 80 mA
+  dc_current_gain: hFE 120-400 at VCE = 1 V, IC = 100 mA (rank H 200-350)
+  operating_temperature: -55 to +150 C
+  polarized: true
+  power_dissipation: 300 mW (collector, RthJA 417 C/W)
+  transistor_polarity: NPN
+  transition_frequency: 100 MHz (VCE = 10 V, IC = 50 mA)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350/datasheet.pdf
 id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
 id_no_class: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
 id_no_size: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
@@ -53,11 +76,19 @@ jlcpcb_selection:
     The existing jsmsemi SS8050 row is a different maker identity and stays untouched;
     this Changjing graded variant (hFE 200-350) keeps its ordering suffix in the ID
     token and metadata.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: Changjing SS8050 SOT-23 specification, Rev 2.1 (C2150 provenance, family
+      anchor)
+    electrical_characteristics:
+    - 1
+    maximum_ratings:
+    - 1
+    pinout:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Collector - Emitter Voltage VCEO: 25V
@@ -75,12 +106,26 @@ jlcpcb_selection:
   stock_observed: 1775615
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Transistor SS8050(RANGE:200-350)
+    SOT 23 with the SOT-23 package drawing labelled emitter (pin 2) left, base (pin
+    1) left-lower, collector (pin 3) right, matching the datasheet pinout page 1 (1
+    = BASE, 2 = EMITTER, 3 = COLLECTOR). working_svg_dimensioned.png: SOT-23 (JEDEC
+    TO-236 Var AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry (datasheet
+    carries ratings and pinout but no dimension table; recorded in dimension_reference).
+    data/kicad manifest complete with Transistor_BJT:Q_NPN_BEC symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints, same convention as the C2145/C2146
+    Changjing SOT-23 NPN integrations. README.md: SS8050(RANGE:200-350) part number,
+    LCSC/JLC C2150 links, 3-pin table (base/emitter/collector), datasheet link resolving
+    to data/datasheet.pdf (the Changjing SS8050 specification, family anchor). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
+  machine_solder: Package_TO_SOT_SMD:SOT-23
+  symbol: Transistor_BJT:Q_NPN_BEC
 lcsc_search: SS8050(RANGE:200-350)
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
@@ -125,6 +170,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -214,7 +269,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -222,9 +291,18 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: transistor
       category_name: Transistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707466581327872-C2150.pdf
+      dimension_reference:
+        document: Changjing SS8050 SOT-23 specification, Rev 2.1 (C2150)
+        notes: 'SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1
+          mm per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries
+          the pinout and ratings but no dimension table.'
+        pages:
+        - 1
       dimensions_mm:
+        height: 1.1
         length: 2.9
-        width: 2.6
+        width: 1.3
       directory: parts\electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
       distributors:
       - key: lcsc
@@ -235,17 +313,39 @@ oomlout_ai_roboclick_3:
         part_number: C2150
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
+      electrical:
+        collector_current: 1.5 A continuous
+        collector_cutoff_current: 0.1 uA max (VCB = 40 V)
+        collector_emitter_breakdown_voltage: 25 V (VCEO); VCBO 40 V, VEBO 5 V
+        collector_emitter_saturation_voltage: 0.5 V max at IC = 800 mA, IB = 80 mA
+        dc_current_gain: hFE 120-400 at VCE = 1 V, IC = 100 mA (rank H 200-350)
+        operating_temperature: -55 to +150 C
+        polarized: true
+        power_dissipation: 300 mW (collector, RthJA 417 C/W)
+        transistor_polarity: NPN
+        transition_frequency: 100 MHz (VCE = 10 V, IC = 50 mA)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact active device with no prior OOMP entry: added
           one explicit transistor family row electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350.
           The existing jsmsemi SS8050 row is a different maker identity and stays
           untouched; this Changjing graded variant (hFE 200-350) keeps its ordering
           suffix in the ID token and metadata.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: Changjing SS8050 SOT-23 specification, Rev 2.1 (C2150 provenance,
+            family anchor)
+          electrical_characteristics:
+          - 1
+          maximum_ratings:
+          - 1
+          pinout:
+          - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Collector - Emitter Voltage VCEO: 25V
@@ -263,12 +363,27 @@ oomlout_ai_roboclick_3:
         stock_observed: 1775615
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-25'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library
+          run and a rebuild. working_svg_square_pins.png hero titled Transistor SS8050(RANGE:200-350)
+          SOT 23 with the SOT-23 package drawing labelled emitter (pin 2) left, base
+          (pin 1) left-lower, collector (pin 3) right, matching the datasheet pinout
+          page 1 (1 = BASE, 2 = EMITTER, 3 = COLLECTOR). working_svg_dimensioned.png:
+          SOT-23 (JEDEC TO-236 Var AB) outline per the Package_TO_SOT_SMD:SOT-23 master
+          geometry (datasheet carries ratings and pinout but no dimension table; recorded
+          in dimension_reference). data/kicad manifest complete with Transistor_BJT:Q_NPN_BEC
+          symbol and Package_TO_SOT_SMD:SOT-23 machine + SOT-23_Handsoldering hand
+          footprints, same convention as the C2145/C2146 Changjing SOT-23 NPN integrations.
+          README.md: SS8050(RANGE:200-350) part number, LCSC/JLC C2150 links, 3-pin
+          table (base/emitter/collector), datasheet link resolving to data/datasheet.pdf
+          (the Changjing SS8050 specification, family anchor). Limitation: KiCad symbol/footprint
+          checked as rendered SVG/PNG plus s-expression text rather than in a KiCad
+          GUI.'
       kicad:
-        hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        allow_project_fallback: false
+        hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
+        machine_solder: Package_TO_SOT_SMD:SOT-23
+        symbol: Transistor_BJT:Q_NPN_BEC
       lcsc_search: SS8050(RANGE:200-350)
       manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
       manufacturers:
@@ -294,6 +409,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -384,6 +509,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: SOT-23 (JEDEC TO-236 Var AB)
       part_id: Q1
       part_number_jlcpcb: C2150
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
@@ -461,7 +601,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -479,7 +619,16 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/transistor/sot_23/bipolar/npn/25_volt/1_5_amp/jiangsu_changjing_electronics_technology_co_ltd/README.md
         oomp_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
-        pins: []
+        pins:
+        - name: base
+          number: '1'
+          type: input
+        - name: emitter
+          number: '2'
+          type: passive
+        - name: collector
+          number: '3'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
@@ -488,11 +637,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: sot 23
         - title: Nominal size
-          value: 2.9 × 2.6 mm
+          value: 2.9 × 1.3 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
         summary: Transistor SS8050(RANGE:200-350) SOT 23 is an OOMP electronic transistor
           definition. It uses the sot 23 package or form factor. Its nominal drawing
-          size is 2.9 × 2.6 mm.
+          size is 2.9 × 1.3 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -512,8 +663,31 @@ oomlout_ai_roboclick_3:
           value: jiangsu_changjing_electronics_technology_co_ltd
         - level: 15
           value: ss8050_range_200_350
+      pins:
+        pin_1:
+          name: base
+          number: '1'
+          type: input
+        pin_2:
+          name: emitter
+          number: '2'
+          type: passive
+        pin_3:
+          name: collector
+          number: '3'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Jiangsu Changjing SS8050(RANGE:200-350)
+        (C2150): 25 V NPN, 1.5 A, 300 mW, hFE rank 200-350 in SOT-23; reconfirmed
+        live 2026-10-02 (stock 1,853,286).'
+      - Browser-downloaded the Changjing SS8050 datasheet (4 pages, Rev 2.1) into
+        this part; it anchors the Changjing SS8050 SOT-23 family (separate from the
+        jsmsemi SS8050 part, which has its own datasheet and masters).
+      - 'Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:Q_NPN_BEC
+        matches pad-for-pad, same convention as the C2145/C2146 Changjing SOT-23 NPN
+        integrations.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -690,7 +864,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -704,6 +878,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
+package_name_manufacturer: SOT-23 (JEDEC TO-236 Var AB)
 part_id: Q1
 part_number_jlcpcb: C2150
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
@@ -781,7 +956,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -799,7 +974,16 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/transistor/sot_23/bipolar/npn/25_volt/1_5_amp/jiangsu_changjing_electronics_technology_co_ltd/README.md
   oomp_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
-  pins: []
+  pins:
+  - name: base
+    number: '1'
+    type: input
+  - name: emitter
+    number: '2'
+    type: passive
+  - name: collector
+    number: '3'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
@@ -808,11 +992,13 @@ part_page:
   - title: Package / style
     value: sot 23
   - title: Nominal size
-    value: 2.9 × 2.6 mm
+    value: 2.9 × 1.3 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
   summary: Transistor SS8050(RANGE:200-350) SOT 23 is an OOMP electronic transistor
     definition. It uses the sot 23 package or form factor. Its nominal drawing size
-    is 2.9 × 2.6 mm.
+    is 2.9 × 1.3 mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -832,8 +1018,30 @@ part_page:
     value: jiangsu_changjing_electronics_technology_co_ltd
   - level: 15
     value: ss8050_range_200_350
+pins:
+  pin_1:
+    name: base
+    number: '1'
+    type: input
+  pin_2:
+    name: emitter
+    number: '2'
+    type: passive
+  pin_3:
+    name: collector
+    number: '3'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Jiangsu Changjing SS8050(RANGE:200-350) (C2150):
+  25 V NPN, 1.5 A, 300 mW, hFE rank 200-350 in SOT-23; reconfirmed live 2026-10-02
+  (stock 1,853,286).'
+- Browser-downloaded the Changjing SS8050 datasheet (4 pages, Rev 2.1) into this part;
+  it anchors the Changjing SS8050 SOT-23 family (separate from the jsmsemi SS8050
+  part, which has its own datasheet and masters).
+- 'Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:Q_NPN_BEC
+  matches pad-for-pad, same convention as the C2145/C2146 Changjing SOT-23 NPN integrations.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

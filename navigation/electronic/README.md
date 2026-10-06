@@ -1,7 +1,7 @@
 # Electronic
 
 [Up one level](../README.md)
-This category contains 1365 parts in total.
+This category contains 2916 parts in total.
 
 ## Categories
 
@@ -15,11 +15,18 @@ This category contains 1365 parts in total.
 - [Display](display/README.md)
 - [Ferrite Bead](ferrite_bead/README.md)
 - [Fuse](fuse/README.md)
+- [Heatsink](heatsink/README.md)
 - [IC](ic/README.md)
 - [Inductor](inductor/README.md)
+- [Ir Receiver](ir_receiver/README.md)
 - [LED](led/README.md)
+- [Ntc Thermistor](ntc_thermistor/README.md)
+- [Photodiode](photodiode/README.md)
+- [Photointerrupter](photointerrupter/README.md)
+- [Phototransistor](phototransistor/README.md)
 - [Potentiometer](potentiometer/README.md)
 - [Prototyping](prototyping/README.md)
+- [Relay](relay/README.md)
 - [Resistor](resistor/README.md)
 - [Resistor Array](resistor_array/README.md)
 - [Sensor](sensor/README.md)

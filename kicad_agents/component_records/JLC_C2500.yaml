@@ -36,8 +36,19 @@ research:
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search of diode population files and reviewed_choices.json found no
     existing BAV99 entry or C2500 assignment, so a new exact family row was added.
+  - 'Full pass 2026-10-02: live page reconfirmed (C2500, Nexperia, BAV99,215, Basic,
+    In Stock 1,146,158). New family member (SOT-23 dual switching diode): browser-downloaded
+    the Nexperia BAV99 product data sheet (10 pages, 1 July 2022) from the JLC page
+    and imported it as this part and the family anchor (sha256 826c982f...). Pinning
+    table 2: pin 1 = A1, pin 2 = K2, pin 3 = K1/A2 (series common). Limiting values
+    table 4: VR 100 V per diode, IF 215 mA single / 125 mA double diode loaded, IFRM
+    500 mA, IFSM 0.5 A, Ptot 250 mW, Tj 150 C; quick reference page 1: trr 4 ns, Cd
+    1.5 pF, IR 0.5 uA at VR = 80 V; VF 1.25 V at 150 mA per the live description.
+    POLARITY MIRROR vs the KiCad Diode:BAV99 symbol (1 = K / 2 = A / 3 = junction)
+    recorded - designs must compensate before assembly. Pin 1 = A1, pin 2 = K2, pin
+    3 = K1_A2.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/Nexperia-BAV99215/C2500
   tier: basic
   tier_label_observed: Basic
@@ -60,7 +71,25 @@ jlc_selection:
     Current - Rectified: 215mA
     Pd - Power Dissipation: 250mW
     Reverse Leakage Current (Ir): 500nA@80V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Nexperia BAV99 product data sheet, 1 July 2022 (C2500 provenance, family
+      anchor)
+    pinning:
+    - 2
+    limiting_values:
+    - 4
+    characteristics:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Diode BAV99,215 SOT-23
+    with K2 (pin 2) top-left, A1 (pin 1) bottom-left and K1_A2 (pin 3, common) right,
+    matching the Nexperia pinning table 2. working_svg_dimensioned.png: SOT-23 (TO-236AB)
+    outline per the Package_TO_SOT_SMD:SOT-23 master geometry. data/kicad manifest
+    complete with Diode:BAV99 symbol and Package_TO_SOT_SMD:SOT-23 machine + SOT-23_Handsoldering
+    hand footprints. README.md: BAV99,215 part number, LCSC/JLC C2500 links, 3-pin
+    table (A1/K2/K1_A2 with the polarity-mirror note), datasheet link resolving to
+    data/datasheet.pdf (the Nexperia product data sheet, family anchor). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'

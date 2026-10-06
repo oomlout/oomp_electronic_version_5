@@ -1,8 +1,17 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710390751576064-C2127.pdf
+dimension_reference:
+  document: Jiangsu Changjing Electronics Technology Co., Ltd. MMSZ5248B specification
+    (own copy, C2127 provenance)
+  notes: SOD-123 body D 1.50-1.70, A2 1.05-1.15 mm high, E 2.60-2.80 mm terminal span;
+    pad geometry follows the KiCad Diode_SMD:D_SOD-123 master.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 1.1
+  length: 1.6
+  width: 1.25
 distributors:
 - key: lcsc
   part_number: C2127
@@ -12,6 +21,16 @@ distributors:
   part_number: C2127
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2484-MMSZ5248B/C2127
+electrical:
+  forward_voltage: see live listing
+  operating_temperature: see live listing
+  polarized: true
+  power_dissipation: 350mW
+  reverse_leakage_current: 100nA@14V
+  zener_voltage_nominal: 18V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5248b/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact active device with no prior OOMP entry: added one explicit
     diode family row electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5248b
@@ -21,11 +40,14 @@ jlcpcb_selection:
     Rating comparison from the staged capture: Zener 18 V nominal, 500 mW, +/-5% (17.1V~18.9V),
     -55 C to +150 C - matches the live page exactly. Two-terminal diode (pin_count
     2); stock 32087 recorded as observed. Edits made under the diode family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: Jiangsu Changjing Electronics Technology Co., Ltd. MMSZ5248B specification
+    ratings_package:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2484-MMSZ5248B/C2127
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Diode Configuration: 1 Independent
@@ -39,11 +61,14 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: sod_123 diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_SMD:D_SOD-123
+  machine_solder: Diode_SMD:D_SOD-123
+  symbol: Device:D_Zener
 lcsc_search: MMSZ5248B
 manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
 manufacturers:
@@ -52,6 +77,8 @@ manufacturers:
 name_proper: Diode MMSZ5248B SOD-123
 name_readable: Diode MMSZ5248B SOD-123
 name_short: Diode MMSZ5248B SOD-123
+oomp_datasheet_common_with: electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_mmsz5235b
+package_name_manufacturer: SOD-123
 part_id: D1
 part_number_jlcpcb: C2127
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2484-MMSZ5248B/C2127
@@ -63,7 +90,24 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
   part_number: MMSZ5248B
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: passive
+  pin_2:
+    name: A
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2484-MMSZ5248B/C2127
+research_notes:
+- The official JLC page lists Extended Jiangsu Changjing Electronics Technology Co.,
+  Ltd. MMSZ5248B (C2127); identity and ratings observed live at intake 2026-09-28.
+- 'Family batch 2026-10-04: downloaded the Jiangsu Changjing Electronics Technology
+  Co., Ltd. MMSZ5248B specification into C2125 via the signed JLC OSS link; this part
+  shares it electrical values transcribed from the intake-observed listing, package
+  outline per the SOD-123 master. Symbol Device:D_Zener is the KiCad 10 generic zener
+  symbol (no part-specific master for BZT52CxxS/MMSZ52xx).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -1,7 +1,7 @@
 # Electronic / Transistor / Sot 23 / Bipolar / Pnp / 25 Volt
 
 [Up one level](../README.md)
-This category contains 3 parts in total.
+This category contains 4 parts in total.
 
 ## Categories
 

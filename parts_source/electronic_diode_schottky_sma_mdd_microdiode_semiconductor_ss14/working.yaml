@@ -1,8 +1,17 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757911605285789697-C2480.pdf
+dimension_reference:
+  document: MDD SS12-SS1200 SMA series specification, Rev 2025A5 (C2480)
+  notes: 'JEDEC DO-214AC/SMA molded body: 4.50 x 2.80 x 2.30 mm body, 5.30 mm overall
+    including terminal ends (mechanical data page 1); pad geometry per the KiCad Diode_SMD:D_SMA
+    master; color band = cathode.'
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 2.3
+  length: 4.5
+  width: 2.8
 distributors:
 - key: lcsc
   part_number: C2480
@@ -12,16 +21,39 @@ distributors:
   part_number: C2480
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS14/C2480
+electrical:
+  forward_voltage_at_test_current: 0.70 V max at 1.0 A
+  maximum_dc_reverse_voltage: 40 V (VRRM; VRMS 28 V)
+  maximum_rectified_current: 1.0 A average forward rectified
+  non_repetitive_peak_forward_surge_current: 25 A (8.3 ms half sine, JEDEC)
+  operating_temperature: -55 to +150 C
+  polarized: true
+  reverse_leakage_current: 0.3 mA max at 25 C, rated voltage (10 mA at 100 C)
+  terminal_capacitance: 110 pF typical (1 MHz, VR = 4.0 V)
+  thermal_resistance: 90 C/W junction to ambient
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Created an exact MDD SM4007PL rectifier identity because no
     existing OOMP diode entry matches its maker, MPN and SOD-123FL package. Live JLC
     Basic ratings are 1 A rectified current, 1 kV reverse voltage, 25 A surge, 1.1
     V at 1 A and 10 uA at 1 kV leakage. Pin geometry remains for the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: MDD SS12-SS1200 SMA series specification, Rev 2025A5 (C2480 provenance,
+      family anchor)
+    maximum_ratings:
+    - 1
+    mechanical_data:
+    - 1
+    packing:
+    - 3
+    typical_characteristics:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS14/C2480
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Current - Rectified: 1A
@@ -34,12 +66,22 @@ jlcpcb_selection:
   stock_observed: 894173
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Diode SS14 SMA with K (cathode
+    band) left and A (anode) right plus the bar symbol, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: SMA/DO-214AC outline per the KiCad D_SMA
+    master geometry (body 4.5 x 2.8 x 2.3 mm recorded in dimensions_mm per the mechanical
+    data). data/kicad manifest complete with Device:D_Schottky symbol and Diode_SMD:D_SMA
+    machine + D_SMA_Handsoldering hand footprints. README.md: SS14 part number, LCSC/JLC
+    C2480 links, 2-pin table (K/A), datasheet link resolving to data/datasheet.pdf
+    (the MDD SMA series specification, family anchor). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_SMD:D_SMA_Handsoldering
+  machine_solder: Diode_SMD:D_SMA
+  symbol: Device:D_Schottky
 lcsc_search: SS14
 manufacturer: MDD(Microdiode Semiconductor)
 manufacturers:
@@ -48,6 +90,7 @@ manufacturers:
 name_proper: Diode SS14 SMA
 name_readable: Diode SS14 SMA
 name_short: Diode SS14 SMA
+package_name_manufacturer: SMA (JEDEC DO-214AC)
 part_id: D1
 part_number_jlcpcb: C2480
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS14/C2480
@@ -59,7 +102,24 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: MDD(Microdiode Semiconductor)
   part_number: SS14
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: signal
+  pin_2:
+    name: A
+    number: '2'
+    type: signal
 product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS14/C2480
+research_notes:
+- 'The official JLC page lists Basic MDD SS14 (C2480): 40 V 1.0 A schottky rectifier
+  in SMA (DO-214AC); reconfirmed live 2026-10-02 (stock 1,170,064).'
+- Browser-downloaded the MDD SS12-SS1200 series datasheet (3 pages, Rev 2025A5) into
+  this part; it anchors the SMA schottky family (SS12-SS1200 columns).
+- 'VF discrepancy recorded: the live JLC description cites 550 mV @1 A, but the vendor
+  table''s 0.70 V column block spans SS13-SS14 (550 mV is the SS12 column) - the vendor
+  datasheet governs, 0.70 V recorded.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

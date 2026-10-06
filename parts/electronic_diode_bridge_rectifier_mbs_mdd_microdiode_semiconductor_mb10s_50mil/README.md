@@ -2,7 +2,7 @@
 
 `electronic_diode_bridge_rectifier_mbs_mdd_microdiode_semiconductor_mb10s_50mil`
 
-Diode MB10S-50MIL MBS is an OOMP electronic diode definition. It uses the mbs package or form factor. Its nominal drawing size is 10.0 &#x00D7; 5.0 mm.
+Diode MB10S-50MIL MBS is an OOMP electronic diode definition. It uses the mbs package or form factor. Its nominal drawing size is 4.6 &#x00D7; 2.6 mm. The definition includes 4 documented pins.
 
 ![Diode MB10S-50MIL MBS pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Diode MB10S-50MIL MBS is an OOMP electronic diode definition. It uses the mbs pa
 | OOMP ID | `electronic_diode_bridge_rectifier_mbs_mdd_microdiode_semiconductor_mb10s_50mil` |
 | Type | Diode |
 | Package / style | mbs |
-| Nominal size | 10.0 &#x00D7; 5.0 mm |
+| Nominal size | 4.6 &#x00D7; 2.6 mm |
+| Documented pins | 4 |
 
 
 ## Classification
@@ -33,8 +34,9 @@ Diode MB10S-50MIL MBS is an OOMP electronic diode definition. It uses the mbs pa
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 10.0 mm |
-| Width | 5.0 mm |
+| Height | 2.2 mm |
+| Length | 4.6 mm |
+| Width | 2.6 mm |
 
 
 
@@ -50,6 +52,21 @@ Diode MB10S-50MIL MBS is an OOMP electronic diode definition. It uses the mbs pa
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | + | passive |
+| 2 | ~ | passive |
+| 3 | - | passive |
+| 4 | ~ | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

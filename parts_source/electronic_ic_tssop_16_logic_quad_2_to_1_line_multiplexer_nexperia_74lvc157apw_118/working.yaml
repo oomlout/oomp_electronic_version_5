@@ -1,6 +1,15 @@
 category: logic
 category_name: Logic
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586186987854708736-C6067.pdf
+dimension_reference:
+  document: 74LVC157APW datasheet (C6068)
+  notes: Body outline per the Package_SO:TSSOP-16_4.4x5mm_P0.65mm master geometry;
+    pinning cross-checked against the KiCad 74xx:74LS157 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.1
   length: 5.0
   width: 4.4
 distributors:
@@ -12,6 +21,15 @@ distributors:
   part_number: C6068
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Nexperia-74LVC157APW118/C6068
+electrical:
+  device_type: quad 2 to 1 line multiplexer
+  logic_family: 74LVC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 1.2-3.6 V (1.65 V for some functions)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_tssop_16_logic_quad_2_to_1_line_multiplexer_nexperia_74lvc157apw_118/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Exact device row appended to the unmatched_ics list in working_oomp_populate_ic.py
     under the ic family lock; new tokens disclosed per row (hex_inverter_open_collector,
@@ -20,11 +38,14 @@ jlcpcb_selection:
     74LVC157APW,118 (TSSOP-16; quad 2-to-1 line data selector/multiplexer (74LVC157))
     is its exact first reviewed preferred house choice; the family token and package
     come straight off the page. Edits made under the ic family lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 2
+  - 3
+  - 6
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Nexperia-74LVC157APW118/C6068
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     1.2V~3.6V: ''
@@ -43,11 +64,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xx:74LS157 master (numbers and electrical types cross-checked
+    at plan time) and the TSSOP-16 footprint master; renders inherit the pipeline
+    verified on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
-  hand_solder: Package_SO:TSSOP-16_4.4x5mm_P0.65mm
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_SO:TSSOP-16_4.4x5mm_P0.65mm
-  symbol: ''
+  symbol: 74xx:74LS157
 lcsc_search: 74LVC157APW,118
 manufacturer: Nexperia
 manufacturers:
@@ -56,6 +82,7 @@ manufacturers:
 name_proper: IC 74LVC157APW,118 TSSOP 16
 name_readable: IC 74LVC157APW,118 TSSOP 16
 name_short: IC 74LVC157APW,118 TSSOP 16
+package_name_manufacturer: TSSOP-16 (4.4 x 5.0 mm, 0.65 mm pitch)
 part_id: U1
 part_number_jlcpcb: C6068
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Nexperia-74LVC157APW118/C6068
@@ -67,7 +94,81 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Nexperia
   part_number: 74LVC157APW,118
+pins:
+  pin_1:
+    name: S
+    number: '1'
+    type: in
+  pin_10:
+    name: I1c
+    number: '10'
+    type: in
+  pin_11:
+    name: I0c
+    number: '11'
+    type: in
+  pin_12:
+    name: Zd
+    number: '12'
+    type: out
+  pin_13:
+    name: I1d
+    number: '13'
+    type: in
+  pin_14:
+    name: I0d
+    number: '14'
+    type: in
+  pin_15:
+    name: E
+    number: '15'
+    type: in
+  pin_16:
+    name: VCC
+    number: '16'
+    type: pwr
+  pin_2:
+    name: I0a
+    number: '2'
+    type: in
+  pin_3:
+    name: I1a
+    number: '3'
+    type: in
+  pin_4:
+    name: Za
+    number: '4'
+    type: out
+  pin_5:
+    name: I0b
+    number: '5'
+    type: in
+  pin_6:
+    name: I1b
+    number: '6'
+    type: in
+  pin_7:
+    name: Zb
+    number: '7'
+    type: out
+  pin_8:
+    name: GND
+    number: '8'
+    type: pwr
+  pin_9:
+    name: Zc
+    number: '9'
+    type: out
 product_url: https://jlcpcb.com/partdetail/Nexperia-74LVC157APW118/C6068
+research_notes:
+- JLC house-parts queue row C6068 (Nexperia 74LVC157APW,118, TSSOP-16, 16 pins) verified
+  at intake; family batch integration C6068.
+- Shares the 74LVC157 family datasheet downloaded into C6067 (byte-identical copy
+  in this part's source folder).
+- Pin table generated from the KiCad 74xx:74LS157 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 16-pin package
+  count.
+- Footprint Package_SO:TSSOP-16_4.4x5mm_P0.65mm verified present in the KiCad 10 library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

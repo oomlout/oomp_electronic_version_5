@@ -1,7 +1,7 @@
 # Electronic / Transistor / Sot 23 / Mosfet / N Channel
 
 [Up one level](../README.md)
-This category contains 8 parts in total.
+This category contains 11 parts in total.
 
 ## Categories
 

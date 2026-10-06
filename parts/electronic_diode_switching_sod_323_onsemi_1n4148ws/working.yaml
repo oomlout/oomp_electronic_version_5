@@ -47,6 +47,20 @@ distributors:
   part_number: C2128
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+electrical:
+  forward_voltage_at_test_current: 1.25 V at 150 mA
+  maximum_dc_reverse_voltage: 100 V (RMS 71 V)
+  maximum_power_dissipation: 200 mW
+  maximum_rectified_current: 150 mA (continuous forward 300 mA)
+  non_repetitive_peak_forward_surge_current: 2 A (t = 1 us)
+  operating_temperature: -55 to +150 C (storage; Tj 150 C)
+  polarized: true
+  reverse_leakage_current: 1 uA at 75 V
+  reverse_recovery_time: 4 ns
+  terminal_capacitance: 2 pF (VR = 0 V, f = 1 MHz)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_switching_sod_323_onsemi_1n4148ws/datasheet.pdf
 id: electronic_diode_switching_sod_323_onsemi_1n4148ws
 id_no_class: electronic_diode_switching_sod_323_onsemi_1n4148ws
 id_no_size: electronic_diode_switching_sod_323_onsemi_1n4148ws
@@ -56,11 +70,19 @@ jlcpcb_selection:
     existing OOMP diode entry matches its maker, MPN and SOD-123FL package. Live JLC
     Basic ratings are 1 A rectified current, 1 kV reverse voltage, 25 A surge, 1.1
     V at 1 A and 10 uA at 1 kV leakage. Pin geometry remains for the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: Changjing BAV16WS/1N4148WS SOD-323 specification, May 2011 (C2128 provenance,
+      family anchor)
+    electrical_characteristics:
+    - 1
+    maximum_ratings:
+    - 1
+    typical_characteristics:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Current - Rectified: 150mA
@@ -74,12 +96,24 @@ jlcpcb_selection:
   stock_observed: null
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Diode 1N4148WS SOD-323
+    with K (cathode, band side) left and A (anode) right plus the polarity dot, no
+    mirroring, no label overlap, no cropping. working_svg_dimensioned.png: SOD-323
+    outline per the KiCad D_SOD-323 master geometry (datasheet carries no dimension
+    drawing; recorded in dimension_reference). data/kicad manifest complete with Device:D
+    symbol and Diode_SMD:D_SOD-323 machine + hand footprints (SOD-323 has no separate
+    HandSolder master upstream; the part declares the same master for both, matching
+    the intake-era source). README.md: 1N4148WS part number, LCSC/JLC C2128 links,
+    2-pin table (K/A), datasheet link resolving to data/datasheet.pdf (the Changjing
+    SOD-323 specification, family anchor). Limitation: KiCad symbol/footprint checked
+    as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
+  allow_project_fallback: false
   hand_solder: Diode_SMD:D_SOD-323
   machine_solder: Diode_SMD:D_SOD-323
-  symbol: ''
+  symbol: Device:D
 lcsc_search: 1N4148WS
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_switching_sod_323_onsemi_1n4148ws
@@ -118,6 +152,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_diode_switching_sod_323_onsemi_1n4148ws/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -207,7 +251,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -221,7 +265,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -246,17 +290,39 @@ oomlout_ai_roboclick_4:
         part_number: C2128
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
+      electrical:
+        forward_voltage_at_test_current: 1.25 V at 150 mA
+        maximum_dc_reverse_voltage: 100 V (RMS 71 V)
+        maximum_power_dissipation: 200 mW
+        maximum_rectified_current: 150 mA (continuous forward 300 mA)
+        non_repetitive_peak_forward_surge_current: 2 A (t = 1 us)
+        operating_temperature: -55 to +150 C (storage; Tj 150 C)
+        polarized: true
+        reverse_leakage_current: 1 uA at 75 V
+        reverse_recovery_time: 4 ns
+        terminal_capacitance: 2 pF (VR = 0 V, f = 1 MHz)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_diode_switching_sod_323_onsemi_1n4148ws/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Created an exact MDD SM4007PL rectifier identity because
           no existing OOMP diode entry matches its maker, MPN and SOD-123FL package.
           Live JLC Basic ratings are 1 A rectified current, 1 kV reverse voltage,
           25 A surge, 1.1 V at 1 A and 10 uA at 1 kV leakage. Pin geometry remains
           for the full pass.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: Changjing BAV16WS/1N4148WS SOD-323 specification, May 2011 (C2128
+            provenance, family anchor)
+          electrical_characteristics:
+          - 1
+          maximum_ratings:
+          - 1
+          typical_characteristics:
+          - 2
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Current - Rectified: 150mA
@@ -270,12 +336,25 @@ oomlout_ai_roboclick_4:
         stock_observed: null
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-24'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library
+          run and a rebuild. working_svg_square_pins.png hero titled Diode 1N4148WS
+          SOD-323 with K (cathode, band side) left and A (anode) right plus the polarity
+          dot, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png:
+          SOD-323 outline per the KiCad D_SOD-323 master geometry (datasheet carries
+          no dimension drawing; recorded in dimension_reference). data/kicad manifest
+          complete with Device:D symbol and Diode_SMD:D_SOD-323 machine + hand footprints
+          (SOD-323 has no separate HandSolder master upstream; the part declares the
+          same master for both, matching the intake-era source). README.md: 1N4148WS
+          part number, LCSC/JLC C2128 links, 2-pin table (K/A), datasheet link resolving
+          to data/datasheet.pdf (the Changjing SOD-323 specification, family anchor).
+          Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+          text rather than in a KiCad GUI.'
       kicad:
+        allow_project_fallback: false
         hand_solder: Diode_SMD:D_SOD-323
         machine_solder: Diode_SMD:D_SOD-323
-        symbol: ''
+        symbol: Device:D
       lcsc_search: 1N4148WS
       manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
       manufacturers:
@@ -299,6 +378,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_diode_switching_sod_323_onsemi_1n4148ws/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -389,7 +478,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -426,6 +515,7 @@ oomlout_ai_roboclick_4:
           - 0.0
           - 0.55
           - 0.55
+      package_name_manufacturer: SOD-323 (SC-76)
       part_id: D1
       part_number_jlcpcb: C2128
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
@@ -503,7 +593,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -567,6 +657,13 @@ oomlout_ai_roboclick_4:
           type: signal
       product_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Jiangsu Changjing 1N4148WS (C2128): 100
+        V, 150 mA switching diode in SOD-323; reconfirmed live 2026-10-01 (stock 2,452,437).'
+      - Browser-downloaded the Changjing BAV16WS/1N4148WS SOD-323 datasheet (2 pages,
+        May 2011) into this part; it anchors the SOD-323 switching-diode family.
+      - Pin 1 = K (cathode), pin 2 = A (anode); the KiCad Diode_SMD:D_SOD-323 master
+        has pad 1 as cathode, matching.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -1655,7 +1752,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -1692,6 +1789,7 @@ package_drawing:
     - 0.0
     - 0.55
     - 0.55
+package_name_manufacturer: SOD-323 (SC-76)
 part_id: D1
 part_number_jlcpcb: C2128
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
@@ -1769,7 +1867,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -1833,6 +1931,13 @@ pins:
     type: signal
 product_url: https://jlcpcb.com/partdetail/2485-1N4148WS/C2128
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Jiangsu Changjing 1N4148WS (C2128): 100 V, 150
+  mA switching diode in SOD-323; reconfirmed live 2026-10-01 (stock 2,452,437).'
+- Browser-downloaded the Changjing BAV16WS/1N4148WS SOD-323 datasheet (2 pages, May
+  2011) into this part; it anchors the SOD-323 switching-diode family.
+- Pin 1 = K (cathode), pin 2 = A (anode); the KiCad Diode_SMD:D_SOD-323 master has
+  pad 1 as cathode, matching.
 svg_details:
 - filename_extra: assembly
   make_a4: false

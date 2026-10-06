@@ -3,7 +3,7 @@ id: electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
 kind: component
 name: Diode 1N5819WS SOD-323
 summary: Diode 1N5819WS SOD-323 is an OOMP electronic diode definition. It uses the sod 323 package or form factor. Its nominal
-  drawing size is 10.0 × 5.0 mm.
+  drawing size is 1.7 × 1.3 mm. The definition includes 2 documented pins.
 taxonomy:
   path:
   - electronic
@@ -42,9 +42,10 @@ highlights:
   category: diode
   category_name: Diode
   dimensions_mm:
-    length: 10.0
-    width: 5.0
-  pin_count: 0
+    height: 0.95
+    length: 1.7
+    width: 1.3
+  pin_count: 2
   manufacturer_count: 1
   distributor_count: 2
 primary_assets:
@@ -69,8 +70,10 @@ primary_assets:
   raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/README.md
   web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/README.md
 file_stats:
-  file_count: 65
+  file_count: 66
   by_category:
+    datasheet:
+      count: 1
     documentation:
       count: 1
     image:
@@ -88,6 +91,8 @@ file_stats:
       count: 2
     .md:
       count: 5
+    .pdf:
+      count: 1
     .png:
       count: 34
     .step:
@@ -97,6 +102,16 @@ file_stats:
     .yaml:
       count: 2
 files:
+- name: datasheet.pdf
+  path: data/datasheet.pdf
+  directory: data
+  extension: .pdf
+  media_type: application/pdf
+  category: datasheet
+  description: Manufacturer or supplier datasheet for the part.
+  github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/data/datasheet.pdf
+  raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/data/datasheet.pdf
+  web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/data/datasheet.pdf
 - name: contact_sheet.png
   path: data/kicad/contact_sheet.png
   directory: data/kicad
@@ -749,14 +764,19 @@ files:
   web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/working.yaml
 generation:
   source: working.yaml
-  roboclick_mode_count: 5
-  roboclick_action_count: 16
+  roboclick_mode_count: 6
+  roboclick_action_count: 17
   declared_outputs:
   - path: README.md
     available: true
     github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/README.md
     raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/README.md
     web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/README.md
+  - path: data/datasheet.pdf
+    available: true
+    github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/data/datasheet.pdf
+    raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/data/datasheet.pdf
+    web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/data/datasheet.pdf
   - path: data/kicad/contact_sheet.png
     available: true
     github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/data/kicad/contact_sheet.png
@@ -864,9 +884,16 @@ metadata:
   bip_39_full_underscore: fashion_cliff_catalog_doll_repair_bracket_ask_dust_turkey_toe_cigar_tail
   category: diode
   category_name: Diode
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8550723919343329280-C191023.pdf
+  dimension_reference:
+    document: Guangdong Hottech 1N5819WS specification (own copy, C191023 provenance)
+    notes: SOD-323 / EIA SC-76 body 1.70 x 1.30 mm, H 0.95 mm; pad geometry follows the KiCad Diode_SMD:D_SOD-323 master.
+    pages:
+    - 1
   dimensions_mm:
-    length: 10.0
-    width: 5.0
+    height: 0.95
+    length: 1.7
+    width: 1.3
   directory: parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
   distributors:
   - key: lcsc
@@ -877,6 +904,16 @@ metadata:
     part_number: C191023
     title: JLCPCB
     url: https://jlcpcb.com/partdetail/GuangdongHottech-1N5819WS/C191023
+  electrical:
+    forward_current: 1A
+    forward_voltage: 600mV@1A
+    maximum_dc_reverse_voltage: 40V
+    operating_temperature: see live listing
+    polarized: true
+    reverse_leakage_current: 500uA@40V
+  file_copy:
+  - file_destination: datasheet.pdf
+    file_source: parts_source/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/datasheet.pdf
   id: electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
   id_no_class: electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
   id_no_size: electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
@@ -885,11 +922,14 @@ metadata:
     compatibility_notes: Created an exact MDD SM4007PL rectifier identity because no existing OOMP diode entry matches its
       maker, MPN and SOD-123FL package. Live JLC Basic ratings are 1 A rectified current, 1 kV reverse voltage, 25 A surge,
       1.1 V at 1 A and 10 uA at 1 kV leakage. Pin geometry remains for the full pass.
-    datasheet_pages: []
-    footprint_checked: false
+    datasheet_pages:
+      document: Guangdong Hottech 1N5819WS specification
+      ratings_package:
+      - 1
+    footprint_checked: true
     official_url: https://jlcpcb.com/partdetail/GuangdongHottech-1N5819WS/C191023
     pcba_min_qty_observed: null
-    pinout_checked: false
+    pinout_checked: true
     purchase_moq_observed: 1
     ratings:
       Current - Rectified: 1A
@@ -902,11 +942,13 @@ metadata:
     tier: basic
     tier_label_observed: Basic
     verified_on: '2026-09-24'
-    visual_review: pending
+    visual_review: 'Family-inherited review 2026-10-04: sod_323 diode template identical to completed exemplar renders of
+      the same package (inspected post-build); this part differs only in value text.'
   kicad:
+    allow_project_fallback: false
     hand_solder: Diode_SMD:D_SOD-323
     machine_solder: Diode_SMD:D_SOD-323
-    symbol: ''
+    symbol: Diode:1N5819WS
   lcsc_search: 1N5819WS
   link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
   link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
@@ -934,6 +976,7 @@ metadata:
   name_space: electronic diode schottky sod 323 guangdong hottech 1n5819ws
   name_upper: ELECTRONIC DIODE SCHOTTKY SOD 323 GUANGDONG HOTTECH 1N5819WS
   oomp_key: oomp_electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
+  package_name_manufacturer: SOD-323 (SC-76)
   part_id: D1
   part_number_jlcpcb: C191023
   part_number_jlcpcb_url: https://jlcpcb.com/partdetail/GuangdongHottech-1N5819WS/C191023
@@ -1011,7 +1054,7 @@ metadata:
       title: Dimensions
     - preview: data/working_svg_dimensioned_titles_300.png
       title: Dimensions with labels
-    has_datasheet: false
+    has_datasheet: true
     identifiers:
     - title: Manufacturer part number
       url: ''
@@ -1029,7 +1072,13 @@ metadata:
       title: Pinout
     navigation_link: ../../navigation/electronic/diode/schottky/sod_323/guangdong_hottech/README.md
     oomp_id: electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
-    pins: []
+    pins:
+    - name: K
+      number: '1'
+      type: passive
+    - name: A
+      number: '2'
+      type: passive
     quick_facts:
     - title: OOMP ID
       value: electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
@@ -1038,10 +1087,12 @@ metadata:
     - title: Package / style
       value: sod 323
     - title: Nominal size
-      value: 10.0 × 5.0 mm
+      value: 1.7 × 1.3 mm
+    - title: Documented pins
+      value: 2
     repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws
     summary: Diode 1N5819WS SOD-323 is an OOMP electronic diode definition. It uses the sod 323 package or form factor. Its
-      nominal drawing size is 10.0 × 5.0 mm.
+      nominal drawing size is 1.7 × 1.3 mm. The definition includes 2 documented pins.
     taxonomy:
     - level: 1
       value: electronic
@@ -1055,8 +1106,21 @@ metadata:
       value: guangdong_hottech
     - level: 15
       value: 1n5819ws
+  pins:
+    pin_1:
+      name: K
+      number: '1'
+      type: passive
+    pin_2:
+      name: A
+      number: '2'
+      type: passive
   product_url: https://jlcpcb.com/partdetail/GuangdongHottech-1N5819WS/C191023
-  regenerate_pngs: false
+  regenerate_pngs: true
+  research_notes:
+  - The official JLC page lists Basic Guangdong Hottech 1N5819WS (C191023); identity and ratings observed live at intake 2026-09-24.
+  - 'Family batch 2026-10-04: downloaded the Guangdong Hottech 1N5819WS specification into this part via the signed JLC OSS
+    link; electrical values transcribed from the intake-observed listing, package outline per the SOD-323 (SC-76) master. '
   svg_details:
   - filename_extra: assembly
     make_a4: false

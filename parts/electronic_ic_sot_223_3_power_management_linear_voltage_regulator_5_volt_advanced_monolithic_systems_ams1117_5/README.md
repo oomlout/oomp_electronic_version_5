@@ -63,6 +63,11 @@ Regulator AMS1117-5.0 5V SOT-223 is an OOMP electronic ic definition. It uses th
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

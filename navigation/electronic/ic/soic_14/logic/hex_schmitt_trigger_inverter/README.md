@@ -1,11 +1,13 @@
 # Electronic / IC / Soic 14 / Logic / Hex Schmitt Trigger Inverter
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 9 parts in total.
 
 ## Categories
 
 - [Nexperia](nexperia/README.md)
+- [Onsemi](onsemi/README.md)
+- [Texas Instruments](texas_instruments/README.md)
 
 
 ---

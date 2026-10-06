@@ -1,6 +1,569 @@
 def main(**kwargs):
     extras_dict = kwargs.get("extras_dict", {})
 
+    # JLC C4177 / UNI-ROYAL 0603WAF1801T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0603 / WA = 1/10 W (100 mW) / F = +-1% / 1801 = 180 x 10^1 =
+    # 1.8 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L
+    # 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm; no body marking at 0603
+    # for +-1% E96 values below 10 Ohm? - page 3 marking rules; live
+    # description ratings 75 V, +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0603_1800_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706146992537600-C4177.pdf"
+        part["electrical"] = {
+            "resistance": "1.8 kOhm (1801 = 180 x 10^1)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4177 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 1801 = 1.8 kOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF1801T5E (C4177): 1.8 kOhm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4184 / UNI-ROYAL 0603WAF2002T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0603 / WA = 1/10 W (100 mW) / F = +-1% / 2002 = 200 x 10^2 =
+    # 20 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L
+    # 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm; live description ratings
+    # 75 V, +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0603_20000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706075484393472-C4184.pdf"
+        part["electrical"] = {
+            "resistance": "20 kOhm (2002 = 200 x 10^2)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4184 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 2002 = 20 kOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF2002T5E (C4184): 20 kOhm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4211 / UNI-ROYAL 0603WAF3001T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0603 / WA = 1/10 W (100 mW) / F = +-1% / 3001 = 300 x 10^1 =
+    # 3.0 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L
+    # 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm; live description ratings
+    # 75 V, +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0603_3000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706243139112960-C4211.pdf"
+        part["electrical"] = {
+            "resistance": "3.0 kOhm (3001 = 300 x 10^1)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4211 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 3001 = 3.0 kOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF3001T5E (C4211): 3.0 kOhm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4216 / UNI-ROYAL 0603WAF3302T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0603 / WA = 1/10 W (100 mW) / F = +-1% / 3302 = 330 x 10^2 =
+    # 33 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L
+    # 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm; live description ratings
+    # 75 V, +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0603_33000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706078415802368-C4216.pdf"
+        part["electrical"] = {
+            "resistance": "33 kOhm (3302 = 330 x 10^2)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4216 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 3302 = 33 kOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF3302T5E (C4216): 33 kOhm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4260 / UNI-ROYAL 0603WAF6201T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0603 / WA = 1/10 W (100 mW) / F = +-1% / 6201 = 620 x 10^1 =
+    # 6.2 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L
+    # 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm; live description ratings
+    # 75 V, +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0603_6200_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706090029830144-C4260.pdf"
+        part["electrical"] = {
+            "resistance": "6.2 kOhm (6201 = 620 x 10^1)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4260 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 6201 = 6.2 kOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF6201T5E (C4260): 6.2 kOhm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4275 / UNI-ROYAL 0603WAF750JT5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0603 / WA = 1/10 W (100 mW) / F = +-1% / 750 = 75 x 10^0 = 75 Ohm /
+    # T5E embossed 7-inch reel; resistance range page 4 covers 0603 1/10 W
+    # 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10,
+    # W 0.80+-0.10, H 0.45+-0.10 mm; live description ratings 75 V,
+    # +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0603_75_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706081762992128-C4275.pdf"
+        part["electrical"] = {
+            "resistance": "75 Ohm (750 = 75 x 10^0)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4275 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 750 = 75 Ohm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF750JT5E (C4275): 75 Ohm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4310 / UNI-ROYAL 0805W8F1501T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0805 / W8 = 1/8 W (125 mW) / F = +-1% / 1501 = 150 x 10^1 =
+    # 1.5 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # the 0805 1% family; dimension table page 4: 0805 L 2.00+-0.15, W
+    # 1.25+0.15/-0.10, H 0.55+-0.10 mm; live description ratings 150 V,
+    # +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0805_1500_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0805 (2012 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706440681897984-C4310.pdf"
+        part["electrical"] = {
+            "resistance": "1.5 kOhm (1501 = 150 x 10^1)",
+            "tolerance": "+-1% (F)",
+            "power": "1/8 W (125 mW) at 70 C",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4310 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 1501 = 1.5 kOhm; resistance range page 4 covers the 0805 1% family (1.5 kOhm E96 standard); dimension table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0805_2012Metric",
+            "hand_solder": "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0805W8F1501T5E (C4310): 1.5 kOhm, 1/8 W, +-1%, +-100 ppm/C in 0805; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the family tables cover the 0805 1% range and dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4328 / UNI-ROYAL 0805W8F2002T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0805 / W8 = 1/8 W (125 mW) / F = +-1% / 2002 = 200 x 10^2 =
+    # 20 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # the 0805 1% family; dimension table page 4: 0805 L 2.00+-0.15, W
+    # 1.25+0.15/-0.10, H 0.55+-0.10 mm; live description ratings 150 V,
+    # +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0805_20000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0805 (2012 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706522877673472-C4328.pdf"
+        part["electrical"] = {
+            "resistance": "20 kOhm (2002 = 200 x 10^2)",
+            "tolerance": "+-1% (F)",
+            "power": "1/8 W (125 mW) at 70 C",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4328 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 2002 = 20 kOhm; resistance range page 4 covers the 0805 1% family (20 kOhm E96 standard); dimension table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0805_2012Metric",
+            "hand_solder": "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0805W8F2002T5E (C4328): 20 kOhm, 1/8 W, +-1%, +-100 ppm/C in 0805; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the family tables cover the 0805 1% range and dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4382 / UNI-ROYAL 0805W8F5601T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0805 / W8 = 1/8 W (125 mW) / F = +-1% / 5601 = 560 x 10^1 =
+    # 5.6 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # the 0805 1% family; dimension table page 4: 0805 L 2.00+-0.15, W
+    # 1.25+0.15/-0.10, H 0.55+-0.10 mm; live description ratings 150 V,
+    # +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0805_5600_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0805 (2012 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706617556242432-C4382.pdf"
+        part["electrical"] = {
+            "resistance": "5.6 kOhm (5601 = 560 x 10^1)",
+            "tolerance": "+-1% (F)",
+            "power": "1/8 W (125 mW) at 70 C",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4382 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 5601 = 5.6 kOhm; resistance range page 4 covers the 0805 1% family (5.6 kOhm E96 standard); dimension table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0805_2012Metric",
+            "hand_solder": "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0805W8F5601T5E (C4382): 5.6 kOhm, 1/8 W, +-1%, +-100 ppm/C in 0805; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the family tables cover the 0805 1% range and dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C7250 / UNI-ROYAL 0603WAF1005T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0603 / WA = 1/10 W (100 mW) / F = +-1% / 1005 = 100 x 10^5 =
+    # 10 MOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # 0603 1/10 W 1% = 1 Ohm-10 MOhm (10 MOhm is the top of the range);
+    # dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H
+    # 0.45+-0.10 mm; live description ratings 75 V, +-100 ppm/C, -55 to
+    # +155 C.
+    current = "electronic_resistor_0603_10000000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706084476981248-C7250.pdf"
+        part["electrical"] = {
+            "resistance": "10 MOhm (1005 = 100 x 10^5)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C7250 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 1005 = 10 MOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm (top of range); dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF1005T5E (C7250): 10 MOhm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C8218 / UNI-ROYAL 0603WAF2000T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 0603 / WA = 1/10 W (100 mW) / F = +-1% / 2000 = 200 x 10^0 =
+    # 200 Ohm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L
+    # 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm; live description ratings
+    # 75 V, +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_0603_200_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706087290814464-C8218.pdf"
+        part["electrical"] = {
+            "resistance": "200 Ohm (2000 = 200 x 10^0)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C8218 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 2000 = 200 Ohm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF2000T5E (C8218): 200 Ohm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
     current = "electronic_resistor_0402_510000_ohm"
     if current in extras_dict:
         extras_dict[current]["part_number_manufacturer_uni_royal"] = "0402WGF5103TCE"
@@ -88,8 +651,44 @@ def main(**kwargs):
             {"manufacturer": "FOJAN", "part_number": "FRC0402F2001TS"},
             {"manufacturer": "YAGEO", "part_number": "RC0402JR-072KL"},
         ]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0402 (1005 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707948854984704-C4109.pdf"
+        part["electrical"] = {
+            "resistance": "2 kOhm (2001 = 200 x 10^1)",
+            "tolerance": "+-1% (F)",
+            "power": "1/16 W (62.5 mW) at 70 C",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.35}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4109 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0402 / WG = 1/16 W / F = +-1% / 2001 = 200 x 10^1 = 2 kOhm; resistance range page 4 covers 0402 1/16 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body marking at 0402 (page 3).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0402_1005Metric",
+            "hand_solder": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+            "allow_project_fallback": False,
+        }
         part["research_notes"] = [
-            "LCSC stock research 2026-09: highest-stock listing first (C4109, 6,285,400 in stock at capture); runners-up follow."
+            "LCSC stock research 2026-09: highest-stock listing first (C4109, 6,285,400 in stock at capture); runners-up follow.",
+            "The official JLC page lists Basic UNI-ROYAL 0402WGF2001TCE (C4109): 2 kOhm, 1/16 W, +-1%, +-100 ppm/C in 0402; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0402 1/16 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
         ]
 
     current = "electronic_resistor_0402_200_ohm"
@@ -179,6 +778,7 @@ def main(**kwargs):
     current = "electronic_resistor_0603_100000_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["manufacturer"] = "UNI-ROYAL"
         part["part_number_manufacturer"] = "0603WAF1003T5E"
         part["part_number_lcsc"] = "C25803"
@@ -285,8 +885,44 @@ def main(**kwargs):
             {"manufacturer": "FOJAN", "part_number": "FRC0603F2201TS"},
             {"manufacturer": "UNI-ROYAL", "part_number": "0603WAJ0222T5E"},
         ]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0603 (1608 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706158411464704-C4190.pdf"
+        part["electrical"] = {
+            "resistance": "2.2 kOhm (2201 = 220 x 10^1)",
+            "tolerance": "+-1% (F)",
+            "power": "1/10 W (100 mW) at 70 C",
+            "rated_voltage": "75 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.6, "width": 0.8, "height": 0.45}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4190 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 2201 = 2.2 kOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0603_1608Metric",
+            "hand_solder": "Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder",
+            "allow_project_fallback": False,
+        }
         part["research_notes"] = [
-            "LCSC stock research 2026-09: highest-stock listing first (C4190, 5,071,800 in stock at capture); runners-up follow."
+            "LCSC stock research 2026-09: highest-stock listing first (C4190, 5,071,800 in stock at capture); runners-up follow.",
+            "The official JLC page lists Basic UNI-ROYAL 0603WAF2201T5E (C4190): 2.2 kOhm, 1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
         ]
 
     current = "electronic_resistor_0603_33_ohm"
@@ -355,6 +991,7 @@ def main(**kwargs):
     current = "electronic_resistor_0603_5100_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["manufacturer"] = "UNI-ROYAL"
         part["part_number_manufacturer"] = "0603WAF5101T5E"
         part["part_number_lcsc"] = "C23186"
@@ -1642,6 +2279,7 @@ def main(**kwargs):
     current = "electronic_resistor_0402_82000_ohm_5_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_24000_ohm"
         part["generic_oomp_id"] = "electronic_resistor_0402_82000_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
@@ -1660,6 +2298,7 @@ def main(**kwargs):
     current = "electronic_resistor_0402_91000_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_24000_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
             "resistance": "91 kΩ",
@@ -1696,6 +2335,7 @@ def main(**kwargs):
     current = "electronic_resistor_0603_22_ohm_5_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["generic_oomp_id"] = "electronic_resistor_0603_22_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
@@ -1714,6 +2354,7 @@ def main(**kwargs):
     current = "electronic_resistor_0603_47_ohm_5_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["generic_oomp_id"] = "electronic_resistor_0603_47_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
@@ -1732,6 +2373,7 @@ def main(**kwargs):
     current = "electronic_resistor_0603_220_ohm_5_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["generic_oomp_id"] = "electronic_resistor_0603_220_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
@@ -1750,6 +2392,7 @@ def main(**kwargs):
     current = "electronic_resistor_0603_82000_ohm_5_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["generic_oomp_id"] = "electronic_resistor_0603_82000_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
@@ -1768,6 +2411,7 @@ def main(**kwargs):
     current = "electronic_resistor_0603_2_7_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_150000_ohm_5_percent"
         part["category"] = "resistor"
         part["electrical"] = {
             "resistance": "2.7 Ω",
@@ -1786,6 +2430,7 @@ def main(**kwargs):
     current = "electronic_resistor_0805_1_8_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_150000_ohm_5_percent"
         part["category"] = "resistor"
         part["electrical"] = {
             "resistance": "1.8 Ω",
@@ -1803,6 +2448,7 @@ def main(**kwargs):
     current = "electronic_resistor_0805_3_9_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_150000_ohm_5_percent"
         part["category"] = "resistor"
         part["electrical"] = {
             "resistance": "3.9 Ω",
@@ -1820,6 +2466,7 @@ def main(**kwargs):
     current = "electronic_resistor_0805_39_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_150000_ohm_5_percent"
         part["category"] = "resistor"
         part["electrical"] = {
             "resistance": "39 Ω",
@@ -1837,6 +2484,7 @@ def main(**kwargs):
     current = "electronic_resistor_0805_110_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_150000_ohm_5_percent"
         part["category"] = "resistor"
         part["electrical"] = {
             "resistance": "110 Ω",
@@ -1854,6 +2502,7 @@ def main(**kwargs):
     current = "electronic_resistor_0805_3600_ohm"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
             "resistance": "3.6 kΩ",
@@ -1871,6 +2520,7 @@ def main(**kwargs):
     current = "electronic_resistor_0805_180_ohm_5_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["generic_oomp_id"] = "electronic_resistor_0805_180_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
@@ -1925,6 +2575,7 @@ def main(**kwargs):
     current = "electronic_resistor_0805_24000_ohm_5_percent"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
         part["generic_oomp_id"] = "electronic_resistor_0805_24000_ohm"
         part["category"] = "resistor"
         part["electrical"] = {
@@ -2007,6 +2658,57 @@ def main(**kwargs):
         part["research_notes"] = [
             "Verified JLC C1487 / FH RS-06K752JT as a preferred extended purchasing choice for the existing E12-grid generic 1206 7.5 kΩ value; no population row change was needed.",
             "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 7.5 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,969, minimum 1, full reel 5,000. No datasheet PDF imported at intake; download is an integration-stage task.",
+        ]
+
+    # JLC C4410 / UNI-ROYAL 1206W4F1001T5E full-stage technical data,
+    # verified against the shared UNI-ROYAL Thick Film Chip Resistors data
+    # sheet (Feb.12 2019 V.3, oomp_datasheet_common_with =
+    # electronic_resistor_0402_0_ohm): part number system page 2 decodes
+    # 1206 / W4 = 1/4 W (250 mW) / F = +-1% / 1001 = 100 x 10^1 =
+    # 1.0 kOhm / T5E embossed 7-inch reel; resistance range page 4 covers
+    # the 1206 1% family; dimension table page 4: 1206 L 3.10+-0.15, W
+    # 1.55+0.15/-0.10, H 0.55+-0.10 mm; live description ratings 200 V,
+    # +-100 ppm/C, -55 to +155 C.
+    current = "electronic_resistor_1206_1000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756450365921337344-C4410.pdf"
+        part["electrical"] = {
+            "resistance": "1.0 kOhm (1001 = 100 x 10^1)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.1, "width": 1.55, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4410 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / W4 = 1/4 W / F = +-1% / 1001 = 1.0 kOhm; resistance range page 4 covers the 1206 1% family (1.0 kOhm E96 standard); dimension table page 4: 1206 L 3.10+-0.15, W 1.55+0.15/-0.10, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic UNI-ROYAL 1206W4F1001T5E (C4410): 1.0 kOhm, 1/4 W, +-1%, +-100 ppm/C in 1206; reconfirmed live 2026-10-02.",
+            "Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact suffix and the family tables cover the 1206 1% range and dimensions.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
         ]
 
     current = "electronic_resistor_1206_1000_ohm_5_percent"
@@ -2145,6 +2847,870 @@ def main(**kwargs):
             "Verified JLC C1519 / FH RS-06K564JT as the first reviewed preferred extended purchasing choice for the existing E12-grid generic 1206 560 kΩ value; no population row change was needed. Listed as a pre-order part (minimum 5000 = full reel, stock 3), which does not affect identity.",
             "Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended), 1206, 560 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3, minimum (full reel) 5000, no available-order-qty shown. No datasheet PDF imported at intake; download is an integration-stage task.",
         ]
+
+    # === BEGIN generated family batch (tmp/family_batch.py) — regenerated, do not hand-edit ===
+    # JLC C1152 / 0402 24 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_0402_24000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0402 (1005 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588942649785536512-C1152.pdf"
+        part["electrical"] = {
+            "resistance": "24 kOhm (24 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/16 W (62.5 mW) at 70 C",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.35}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1152 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0402 / WG = 1/16 W / F = +-1% / 24 kOhm; resistance range page 4 covers the 0402 family; dimension table page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body marking at 0402 (page 3).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0402_1005Metric",
+            "hand_solder": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RC-02K243JT (C1152): 24 kOhm (24 kOhm), 1/16 W, +-1%, +-100 ppm/C in 0402; identity and ratings observed live at intake 2026-09-27.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 24 kOhm; the resistance-range table page 4 covers the 0402 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1160 / 0402 82 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_0402_82000_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0402 (1005 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588899050926321664-C1160.pdf"
+        part["electrical"] = {
+            "resistance": "82 kOhm (82 kOhm)",
+            "tolerance": "+-5% (J)",
+            "power": "1/16 W (62.5 mW) at 70 C",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.35}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1160 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0402 / WG = 1/16 W / J = +-5% / 82 kOhm; resistance range page 4 covers the 0402 family; dimension table page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body marking at 0402 (page 3).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0402_1005Metric",
+            "hand_solder": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RC-02K823JT (C1160): 82 kOhm (82 kOhm), 1/16 W, +-5%, +-100 ppm/C in 0402; identity and ratings observed live at intake 2026-09-27.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 82 kOhm; the resistance-range table page 4 covers the 0402 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1161 / 0402 91 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_0402_91000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0402 (1005 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588899050775326720-C1161.pdf"
+        part["electrical"] = {
+            "resistance": "91 kOhm (91 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/16 W (62.5 mW) at 70 C",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.35}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1161 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0402 / WG = 1/16 W / F = +-1% / 91 kOhm; resistance range page 4 covers the 0402 family; dimension table page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body marking at 0402 (page 3).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0402_1005Metric",
+            "hand_solder": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RC-02K913JT (C1161): 91 kOhm (91 kOhm), 1/16 W, +-1%, +-100 ppm/C in 0402; identity and ratings observed live at intake 2026-09-27.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 91 kOhm; the resistance-range table page 4 covers the 0402 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1166 / 0402 150 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_0402_150000_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0402 (1005 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756897016209252352-C1166.pdf"
+        part["electrical"] = {
+            "resistance": "150 kOhm (150 kOhm)",
+            "tolerance": "+-5% (J)",
+            "power": "1/16 W (62.5 mW) at 70 C",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.35}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1166 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0402 / WG = 1/16 W / J = +-5% / 150 kOhm; resistance range page 4 covers the 0402 family; dimension table page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body marking at 0402 (page 3).",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0402_1005Metric",
+            "hand_solder": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-02K154JT (C1166): 150 kOhm (150 kOhm), 1/16 W, +-5%, +-100 ppm/C in 0402; identity and ratings observed live at intake 2026-09-27.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 150 kOhm; the resistance-range table page 4 covers the 0402 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1335 / 0805 110 Ohm (generated family batch 2026-10-04)
+    current = "electronic_resistor_0805_110_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0805 (2012 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756897331079712768-C1335.pdf"
+        part["electrical"] = {
+            "resistance": "110 Ohm (110 Ohm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/8 W (125 mW) at 70 C",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1335 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 110 Ohm; resistance range page 4 covers the 0805 family; dimension table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0805_2012Metric",
+            "hand_solder": "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-05K111JT (C1335): 110 Ohm (110 Ohm), 1/8 W, +-1%, +-100 ppm/C in 0805; identity and ratings observed live at intake 2026-09-27.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 110 Ohm; the resistance-range table page 4 covers the 0805 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1358 / 0805 1.8 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_0805_1800_ohm_5_percent"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0805 (2012 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588899519551442944-C1358.pdf"
+        part["electrical"] = {
+            "resistance": "1.8 kOhm (1.8 kOhm)",
+            "tolerance": "+-5% (J)",
+            "power": "1/8 W (125 mW) at 70 C",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1358 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0805 / W8 = 1/8 W / J = +-5% / 1.8 kOhm; resistance range page 4 covers the 0805 family; dimension table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0805_2012Metric",
+            "hand_solder": "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended RALEC RTT05182JTP (C1358): 1.8 kOhm (1.8 kOhm), 1/8 W, +-5%, +-100 ppm/C in 0805; identity and ratings observed live at intake 2026-09-27.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 1.8 kOhm; the resistance-range table page 4 covers the 0805 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1404 / 0805 560 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_0805_560000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0805 (2012 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "560 kOhm (560 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/8 W (125 mW) at 70 C",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1404 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 560 kOhm; resistance range page 4 covers the 0805 family; dimension table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0805_2012Metric",
+            "hand_solder": "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended RALEC RTT05564JTP (C1404): 560 kOhm (560 kOhm), 1/8 W, +-1%, +-100 ppm/C in 0805; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 560 kOhm; the resistance-range table page 4 covers the 0805 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4321 / 0805 1 Ohm (generated family batch 2026-10-04)
+    current = "electronic_resistor_0805_1_ohm_uni_royal_uniroyal_elec_rtt051r00ftp"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0805 (2012 metric)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588934898367676416-C4321.pdf"
+        part["electrical"] = {
+            "resistance": "1 Ohm (1 Ohm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/8 W (125 mW) at 70 C",
+            "rated_voltage": "150 V",
+            "temperature_coefficient": "+-200 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 2.0, "width": 1.25, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C4321 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 1 Ohm; resistance range page 4 covers the 0805 family; dimension table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0805_2012Metric",
+            "hand_solder": "Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended RALEC RTT051R00FTP (C4321): 1 Ohm (1 Ohm), 1/8 W, +-1%, +-200 ppm/C in 0805; identity and ratings observed live at intake 2026-09-30.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 1 Ohm; the resistance-range table page 4 covers the 0805 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1450 / 1206 110 Ohm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_110_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "110 Ohm (110 Ohm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1450 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 110 Ohm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K111JT (C1450): 110 Ohm (110 Ohm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 110 Ohm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1453 / 1206 160 Ohm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_160_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "160 Ohm (160 Ohm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1453 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 160 Ohm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K161JT (C1453): 160 Ohm (160 Ohm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 160 Ohm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1471 / 1206 1.3 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_1300_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "1.3 kOhm (1.3 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1471 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 1.3 kOhm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K132JT (C1471): 1.3 kOhm (1.3 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 1.3 kOhm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1480 / 1206 3.6 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_3600_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "3.6 kOhm (3.6 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1480 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 3.6 kOhm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K362JT (C1480): 3.6 kOhm (3.6 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 3.6 kOhm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1487 / 1206 7.5 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_7500_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "7.5 kOhm (7.5 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1487 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 7.5 kOhm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K752JT (C1487): 7.5 kOhm (7.5 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 7.5 kOhm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1488 / 1206 8.2 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_8200_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "8.2 kOhm (8.2 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1488 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 8.2 kOhm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K822JT (C1488): 8.2 kOhm (8.2 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 8.2 kOhm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1498 / 1206 27 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_27000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "27 kOhm (27 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1498 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 27 kOhm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K273JT (C1498): 27 kOhm (27 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 27 kOhm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1504 / 1206 68 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_68000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "68 kOhm (68 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1504 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 68 kOhm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K683JT (C1504): 68 kOhm (68 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 68 kOhm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1512 / 1206 180 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_180000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "180 kOhm (180 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1512 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 180 kOhm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K184JT (C1512): 180 kOhm (180 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 180 kOhm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C1519 / 1206 560 kOhm (generated family batch 2026-10-04)
+    current = "electronic_resistor_1206_560000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "1206 (3216 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "560 kOhm (560 kOhm)",
+            "tolerance": "+-1% (F)",
+            "power": "1/4 W (250 mW) at 70 C",
+            "rated_voltage": "200 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 3.2, "width": 1.6, "height": 0.55}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy, C1519 provenance)",
+            "pages": [2, 3, 4],
+            "notes": "Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 560 kOhm; resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_1206_3216Metric",
+            "hand_solder": "Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K564JT (C1519): 560 kOhm (560 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings observed live at intake 2026-09-28.",
+            "Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 560 kOhm; the resistance-range table page 4 covers the 1206 family.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # === END generated family batch (tmp/family_batch.py) ===
+
+    # === BEGIN generated family batch (tmp/stragglers.py resistors) — regenerated, do not hand-edit ===
+    # JLC C4142 / UNI-ROYAL(Uniroyal Elec) 0402WGF8202TCE 82 kOhm (straggler close-out 2026-10-05)
+    current = "electronic_resistor_0402_82000_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_resistor_0402_0_ohm"
+        part["package_name_manufacturer"] = "0402 (1005 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "82 kOhm",
+            "tolerance": "+-1% (F)",
+            "power": "1/16 W (62.5 mW) at 70 C",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.35}
+        part["dimension_reference"] = {
+            "document": "UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared family copy) (C4142 provenance)",
+            "pages": [2, 4],
+            "notes": "0402 (1005 metric) outline L 1.00 +-0.10, W 0.50 +-0.05, H 0.35 +-0.05 mm; the ordering code 0402WGF8202TCE decodes 820 x 10^2 = 82 kOhm, F = +-1%, WG = 1/16 W.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0402_1005Metric",
+            "hand_solder": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists UNI-ROYAL(Uniroyal Elec) 0402WGF8202TCE (C4142): 82 kOhm, 62.5 mW, 50 V, +-1% (F), 0402; identity from the official category crawl (row last_seen 2026-09-26) - no separate staged browser capture exists for this code.",
+            "Straggler close-out 2026-10-05: shares the in-tree UNI-ROYAL 0402 thick-film family datasheet (no new download).",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C4143 / RALEC RTT0282R0FTH 82 Ohm (straggler close-out 2026-10-05)
+    current = "electronic_resistor_0402_82_ohm"
+    if current in extras_dict:
+        part = extras_dict[current]
+        
+        part["package_name_manufacturer"] = "0402 (1005 metric)"
+        part["datasheet_url"] = ""
+        part["electrical"] = {
+            "resistance": "82 Ohm",
+            "tolerance": "+-1% (F)",
+            "power": "1/16 W (62.5 mW) at 70 C",
+            "rated_voltage": "50 V",
+            "temperature_coefficient": "+-100 ppm/C",
+            "operating_temperature": "-55 to +155 C",
+            "polarized": False,
+        }
+        part["dimensions_mm"] = {"length": 1.0, "width": 0.5, "height": 0.35}
+        part["dimension_reference"] = {
+            "document": "RALEC RTT series specification (C4143 provenance)",
+            "pages": [2, 4],
+            "notes": "0402 (1005 metric) outline L 1.00 +-0.10, W 0.50 +-0.05, H 0.35 +-0.05 mm; the RALEC type code RTT-02-82R0-F decodes 82 x 10^0 = 82 Ohm, F = +-1%.",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "1", "type": "passive"},
+            "pin_2": {"number": "2", "name": "2", "type": "passive"},
+        }
+        part["kicad"] = {
+            "symbol": "Device:R_Small",
+            "machine_solder": "Resistor_SMD:R_0402_1005Metric",
+            "hand_solder": "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists RALEC RTT0282R0FTH (C4143): 82 Ohm, 62.5 mW, 50 V, +-1% (F), 0402; identity from the official category crawl (row last_seen 2026-09-26) - no separate staged browser capture exists for this code.",
+            "Straggler close-out 2026-10-05: own RALEC RTT-series specification downloaded via the signed JLC OSS link (self-anchored).",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+    # === END generated family batch (tmp/stragglers.py resistors) ===
 
     from working_oomp_populate_jlc import apply_reviewed_jlc_choices
     apply_reviewed_jlc_choices(extras_dict, family="resistor")

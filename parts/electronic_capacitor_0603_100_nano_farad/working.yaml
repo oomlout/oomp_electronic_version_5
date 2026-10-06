@@ -30,7 +30,16 @@ bip_39_full_space: mind uncle impulse harsh vital cook illness quality hint annu
 bip_39_full_underscore: mind_uncle_impulse_harsh_vital_cook_illness_quality_hint_annual_elder_column
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf
+dimension_reference:
+  document: YAGEO YAGEO CC0603 series MLCC specification (own copy, C14663 provenance)
+  notes: 0603_1608Metric outline per the specification drawing; ordering code CC0603KRX7R9BB104
+    decodes the 100 nF 50 V X7R +-10% rating.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 0.8
   length: 1.6
   width: 0.8
 directory: parts/electronic_capacitor_0603_100_nano_farad
@@ -47,13 +56,24 @@ distributors:
   url: https://www.lcsc.com/product-detail/C30926.html
 - key: lcsc
   part_number: C1591
-  product_name: 100nF ±10% 25V X7R 0603 Ceramic Capacitor
+  product_name: 100nF ±10% 50V X7R 0603 Ceramic Capacitor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C1591.html
 - key: jlcpcb
   part_number: C14663
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
+electrical:
+  capacitance: 100 nF (104)
+  dielectric: X7R
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0603_100_nano_farad/datasheet.pdf
 id: electronic_capacitor_0603_100_nano_farad
 id_no_class: electronic_capacitor_0603_100_nano_farad
 id_no_size: electronic_capacitor_0603_100_nano_farad
@@ -62,11 +82,15 @@ jlcpcb_selection:
   compatibility_notes: Existing generic 0603 100 nF capacitor already selected this
     exact YAGEO C14663 purchasing choice. JLC confirms 50 V X7R +/-10%. Its DC-bias-dependent
     effective capacitance and temperature limits require full project-specific review.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: YAGEO YAGEO CC0603 series specification (own copy)
+    outline:
+    - 2
+    - 3
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 100 nF
@@ -77,9 +101,12 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: MLCC template identical to the
+    completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected post-build;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
   machine_solder: Capacitor_SMD:C_0603_1608Metric
   symbol: Device:C_Small
 lcsc_search: 0603 100nF
@@ -124,6 +151,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0603_100_nano_farad/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -213,7 +250,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -227,7 +264,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -235,7 +272,16 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: capacitor
       category_name: Capacitor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf
+      dimension_reference:
+        document: YAGEO YAGEO CC0603 series MLCC specification (own copy, C14663 provenance)
+        notes: 0603_1608Metric outline per the specification drawing; ordering code
+          CC0603KRX7R9BB104 decodes the 100 nF 50 V X7R +-10% rating.
+        pages:
+        - 2
+        - 3
       dimensions_mm:
+        height: 0.8
         length: 1.6
         width: 0.8
       directory: parts\electronic_capacitor_0603_100_nano_farad
@@ -252,23 +298,38 @@ oomlout_ai_roboclick_4:
         url: https://www.lcsc.com/product-detail/C30926.html
       - key: lcsc
         part_number: C1591
-        product_name: 100nF ±10% 25V X7R 0603 Ceramic Capacitor
+        product_name: 100nF ±10% 50V X7R 0603 Ceramic Capacitor
         title: LCSC
         url: https://www.lcsc.com/product-detail/C1591.html
       - key: jlcpcb
         part_number: C14663
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
+      electrical:
+        capacitance: 100 nF (104)
+        dielectric: X7R
+        polarized: false
+        rated_voltage: 50 V
+        temperature_characteristic: +-15% over the operating range (X7R)
+        temperature_range: -55 to +125 C
+        tolerance: +-10%
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_capacitor_0603_100_nano_farad/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Existing generic 0603 100 nF capacitor already selected
           this exact YAGEO C14663 purchasing choice. JLC confirms 50 V X7R +/-10%.
           Its DC-bias-dependent effective capacitance and temperature limits require
           full project-specific review.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: YAGEO YAGEO CC0603 series specification (own copy)
+          outline:
+          - 2
+          - 3
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           capacitance: 100 nF
@@ -279,9 +340,12 @@ oomlout_ai_roboclick_4:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-24'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-04: MLCC template identical
+          to the completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected
+          post-build; differs only in value text.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
         machine_solder: Capacitor_SMD:C_0603_1608Metric
         symbol: Device:C_Small
       lcsc_search: 0603 100nF
@@ -311,6 +375,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0603_100_nano_farad/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -401,7 +475,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -415,6 +489,7 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      package_name_manufacturer: 0603_1608Metric
       part_id: C1
       part_number_jlcpcb: C14663
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
@@ -427,7 +502,7 @@ oomlout_ai_roboclick_4:
       - part_number: C30926
         product_name: 100nF ±10% 50V Ceramic Capacitor X7R 0603
       - part_number: C1591
-        product_name: 100nF ±10% 25V X7R 0603 Ceramic Capacitor
+        product_name: 100nF ±10% 50V X7R 0603 Ceramic Capacitor
       part_numbers_manufacturer:
       - manufacturer: YAGEO
         part_number: CC0603KRX7R9BB104
@@ -501,7 +576,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -525,7 +600,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/capacitor/0603/README.md
         oomp_id: electronic_capacitor_0603_100_nano_farad
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_capacitor_0603_100_nano_farad
@@ -535,10 +616,12 @@ oomlout_ai_roboclick_4:
           value: '0603'
         - title: Nominal size
           value: 1.6 × 0.8 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad
         summary: Capacitor 100 nF 0603 is an OOMP electronic capacitor definition.
           It uses the 0603 package or form factor. Its nominal drawing size is 1.6
-          × 0.8 mm.
+          × 0.8 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -548,11 +631,23 @@ oomlout_ai_roboclick_4:
           value: '0603'
         - level: 4
           value: 100_nano_farad
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
       regenerate_pngs: false
       research_notes:
-      - 'LCSC stock research 2026-09: highest-stock listing first (C14663, 10,855,500
-        in stock at capture); runners-up follow.'
+      - 'The official JLC page lists YAGEO CC0603KRX7R9BB104 (C14663): 100 nF 50 V
+        X7R +-10%; identity and ratings observed live at intake 2026-09-24.'
+      - 'Straggler close-out 2026-10-04: downloaded the YAGEO specification into this
+        part via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are
+        per-size series, so this part anchors its own sub-family).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -5530,7 +5625,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -5544,6 +5639,7 @@ oomlout_ai_roboclick_5:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_capacitor_0603_100_nano_farad
+package_name_manufacturer: 0603_1608Metric
 part_id: C1
 part_number_jlcpcb: C14663
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
@@ -5556,7 +5652,7 @@ part_numbers_lcsc:
 - part_number: C30926
   product_name: 100nF ±10% 50V Ceramic Capacitor X7R 0603
 - part_number: C1591
-  product_name: 100nF ±10% 25V X7R 0603 Ceramic Capacitor
+  product_name: 100nF ±10% 50V X7R 0603 Ceramic Capacitor
 part_numbers_manufacturer:
 - manufacturer: YAGEO
   part_number: CC0603KRX7R9BB104
@@ -5630,7 +5726,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -5654,7 +5750,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/capacitor/0603/README.md
   oomp_id: electronic_capacitor_0603_100_nano_farad
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_capacitor_0603_100_nano_farad
@@ -5664,9 +5766,12 @@ part_page:
     value: '0603'
   - title: Nominal size
     value: 1.6 × 0.8 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_100_nano_farad
   summary: Capacitor 100 nF 0603 is an OOMP electronic capacitor definition. It uses
-    the 0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm.
+    the 0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -5676,11 +5781,23 @@ part_page:
     value: '0603'
   - level: 4
     value: 100_nano_farad
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
 regenerate_pngs: false
 research_notes:
-- 'LCSC stock research 2026-09: highest-stock listing first (C14663, 10,855,500 in
-  stock at capture); runners-up follow.'
+- 'The official JLC page lists YAGEO CC0603KRX7R9BB104 (C14663): 100 nF 50 V X7R +-10%;
+  identity and ratings observed live at intake 2026-09-24.'
+- 'Straggler close-out 2026-10-04: downloaded the YAGEO specification into this part
+  via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size
+  series, so this part anchors its own sub-family).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

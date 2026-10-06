@@ -30,7 +30,16 @@ bip_39_full_space: height eight copy horn behind bacon priority giggle trumpet m
 bip_39_full_underscore: height_eight_copy_horn_behind_bacon_priority_giggle_trumpet_message_what_barely
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588898764141056001-C107145.pdf
+dimension_reference:
+  document: YAGEO YAGEO CC0805 series MLCC specification (own copy, C107145 provenance)
+  notes: 0805_2012Metric outline per the specification drawing; ordering code CC0805KRX7R9BB221
+    decodes the 220 pF 50 V X7R +-10% rating.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.25
   length: 2.0
   width: 1.25
 directory: parts/electronic_capacitor_0805_220_pico_farad
@@ -43,6 +52,17 @@ distributors:
   part_number: C107145
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
+electrical:
+  capacitance: 220 pF (221)
+  dielectric: X7R
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_220_pico_farad/datasheet.pdf
 id: electronic_capacitor_0805_220_pico_farad
 id_no_class: electronic_capacitor_0805_220_pico_farad
 id_no_size: electronic_capacitor_0805_220_pico_farad
@@ -50,11 +70,15 @@ id_no_type: electronic_capacitor_0805_220_pico_farad
 jlcpcb_selection:
   compatibility_notes: Generic ceramic capacitor value and package agree with the
     live Basic JLC listing; this part supplies a previously absent population entry.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: YAGEO YAGEO CC0805 series specification (own copy)
+    outline:
+    - 2
+    - 3
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 220pF
@@ -65,9 +89,12 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: MLCC template identical to the
+    completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected post-build;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 220pF
@@ -108,6 +135,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0805_220_pico_farad/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -197,7 +234,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -211,7 +248,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -219,7 +256,17 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: capacitor
       category_name: Capacitor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588898764141056001-C107145.pdf
+      dimension_reference:
+        document: YAGEO YAGEO CC0805 series MLCC specification (own copy, C107145
+          provenance)
+        notes: 0805_2012Metric outline per the specification drawing; ordering code
+          CC0805KRX7R9BB221 decodes the 220 pF 50 V X7R +-10% rating.
+        pages:
+        - 2
+        - 3
       dimensions_mm:
+        height: 1.25
         length: 2.0
         width: 1.25
       directory: parts\electronic_capacitor_0805_220_pico_farad
@@ -232,15 +279,30 @@ oomlout_ai_roboclick_4:
         part_number: C107145
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
+      electrical:
+        capacitance: 220 pF (221)
+        dielectric: X7R
+        polarized: false
+        rated_voltage: 50 V
+        temperature_characteristic: +-15% over the operating range (X7R)
+        temperature_range: -55 to +125 C
+        tolerance: +-10%
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_capacitor_0805_220_pico_farad/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Generic ceramic capacitor value and package agree with
           the live Basic JLC listing; this part supplies a previously absent population
           entry.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: YAGEO YAGEO CC0805 series specification (own copy)
+          outline:
+          - 2
+          - 3
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Capacitance: 220pF
@@ -251,9 +313,12 @@ oomlout_ai_roboclick_4:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-24'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-04: MLCC template identical
+          to the completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected
+          post-build; differs only in value text.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
         machine_solder: Capacitor_SMD:C_0805_2012Metric
         symbol: Device:C_Small
       lcsc_search: 0805 220pF
@@ -279,6 +344,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0805_220_pico_farad/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -369,7 +444,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -383,6 +458,7 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      package_name_manufacturer: 0805_2012Metric
       part_id: C1
       part_number_jlcpcb: C107145
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
@@ -460,7 +536,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -478,7 +554,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/capacitor/0805/README.md
         oomp_id: electronic_capacitor_0805_220_pico_farad
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_capacitor_0805_220_pico_farad
@@ -488,10 +570,12 @@ oomlout_ai_roboclick_4:
           value: 0805
         - title: Nominal size
           value: 2.0 × 1.25 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_220_pico_farad
         summary: Capacitor 220 pF 0805 is an OOMP electronic capacitor definition.
           It uses the 0805 package or form factor. Its nominal drawing size is 2.0
-          × 1.25 mm.
+          × 1.25 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -501,8 +585,23 @@ oomlout_ai_roboclick_4:
           value: 0805
         - level: 4
           value: 220_pico_farad
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists YAGEO CC0805KRX7R9BB221 (C107145): 220 pF 50
+        V X7R +-10%; identity and ratings observed live at intake 2026-09-24.'
+      - 'Straggler close-out 2026-10-04: downloaded the YAGEO specification into this
+        part via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are
+        per-size series, so this part anchors its own sub-family).'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -691,7 +790,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -705,6 +804,7 @@ oomlout_ai_roboclick_5:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_capacitor_0805_220_pico_farad
+package_name_manufacturer: 0805_2012Metric
 part_id: C1
 part_number_jlcpcb: C107145
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
@@ -782,7 +882,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -800,7 +900,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/capacitor/0805/README.md
   oomp_id: electronic_capacitor_0805_220_pico_farad
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_capacitor_0805_220_pico_farad
@@ -810,9 +916,12 @@ part_page:
     value: 0805
   - title: Nominal size
     value: 2.0 × 1.25 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0805_220_pico_farad
   summary: Capacitor 220 pF 0805 is an OOMP electronic capacitor definition. It uses
-    the 0805 package or form factor. Its nominal drawing size is 2.0 × 1.25 mm.
+    the 0805 package or form factor. Its nominal drawing size is 2.0 × 1.25 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -822,8 +931,23 @@ part_page:
     value: 0805
   - level: 4
     value: 220_pico_farad
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists YAGEO CC0805KRX7R9BB221 (C107145): 220 pF 50 V X7R
+  +-10%; identity and ratings observed live at intake 2026-09-24.'
+- 'Straggler close-out 2026-10-04: downloaded the YAGEO specification into this part
+  via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size
+  series, so this part anchors its own sub-family).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

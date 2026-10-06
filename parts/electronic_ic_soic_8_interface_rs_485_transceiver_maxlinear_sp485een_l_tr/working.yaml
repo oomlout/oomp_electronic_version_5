@@ -30,7 +30,16 @@ bip_39_full_space: coffee jungle immense submit office shield security woman out
 bip_39_full_underscore: coffee_jungle_immense_submit_office_shield_security_woman_output_veteran_close_wrist
 category: ic
 category_name: IC
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709487191474176-C6855.pdf
+dimension_reference:
+  document: MaxLinear SP481E/SP485E datasheet, REV 1.0.5 (C6855)
+  notes: SOIC-8 outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry;
+    pinout page 1 block diagram.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 1.75
   length: 4.9
   width: 3.9
 directory: parts/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
@@ -43,6 +52,17 @@ distributors:
   part_number: C6855
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
+electrical:
+  data_rate: up to 10 Mbps
+  device_type: half-duplex RS-485/RS-422 transceiver
+  esd_protection: +-15 kV HBM and IEC61000-4-2 air discharge
+  operating_temperature: -40 to +85 C
+  polarized: true
+  supply_current: 900 uA (live description)
+  supply_voltage: 5 V only (4.75-5.25 V)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr/datasheet.pdf
 ic_dimensions_mm:
   body_length: 4.9
   body_width: 3.9
@@ -60,11 +80,19 @@ jlcpcb_selection:
     Half-duplex RS-485/RS-422 transceiver, 10 Mbps, 4.75-5.25 V supply, +/-15 kV ESD
     protection. The ordering suffix -L/TR is preserved in research metadata and the
     ID token uses sp485een_l_tr.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: MaxLinear SP481E/SP485E datasheet, REV 1.0.5 (C6855 provenance, family
+      anchor)
+    electrical_characteristics:
+    - 2
+    features:
+    - 1
+    pinout:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Communication Mode: Half-Duplex
@@ -80,12 +108,23 @@ jlcpcb_selection:
   stock_observed: 244067
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC SP485EEN-L/TR SOIC 8
+    with RO/RE/DE/DI down the left side and VCC/B/A/GND up the right side, matching
+    the datasheet pinout page 1 (1 = RO, 2 = RE, 3 = DE, 4 = DI, 5 = GND, 6 = A, 7
+    = B, 8 = VCC). working_svg_dimensioned.png: SOIC-8 outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+    master geometry. data/kicad manifest complete (2-asset rule, no HandSoldering
+    master for SOIC-8 narrow) with Interface_UART:LTC2850xS8 symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+    machine footprint. README.md: SP485EEN-L/TR part number, LCSC/JLC C6855 links,
+    8-pin table (RO/RE/DE/DI/GND/A/B/VCC), datasheet link resolving to data/datasheet.pdf
+    (the MaxLinear datasheet, family anchor). Limitation: KiCad symbol/footprint checked
+    as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
-  symbol: ''
+  symbol: Interface_UART:LTC2850xS8
 lcsc_search: SP485EEN-L/TR
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
@@ -129,6 +168,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -218,7 +267,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -232,7 +281,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -240,7 +289,16 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: ic
       category_name: IC
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709487191474176-C6855.pdf
+      dimension_reference:
+        document: MaxLinear SP481E/SP485E datasheet, REV 1.0.5 (C6855)
+        notes: SOIC-8 outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry;
+          pinout page 1 block diagram.
+        pages:
+        - 1
+        - 2
       dimensions_mm:
+        height: 1.75
         length: 4.9
         width: 3.9
       directory: parts\electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
@@ -253,6 +311,17 @@ oomlout_ai_roboclick_4:
         part_number: C6855
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
+      electrical:
+        data_rate: up to 10 Mbps
+        device_type: half-duplex RS-485/RS-422 transceiver
+        esd_protection: +-15 kV HBM and IEC61000-4-2 air discharge
+        operating_temperature: -40 to +85 C
+        polarized: true
+        supply_current: 900 uA (live description)
+        supply_voltage: 5 V only (4.75-5.25 V)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr/datasheet.pdf
       ic_dimensions_mm:
         body_length: 4.9
         body_width: 3.9
@@ -266,11 +335,19 @@ oomlout_ai_roboclick_4:
           Half-duplex RS-485/RS-422 transceiver, 10 Mbps, 4.75-5.25 V supply, +/-15
           kV ESD protection. The ordering suffix -L/TR is preserved in research metadata
           and the ID token uses sp485een_l_tr.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: MaxLinear SP481E/SP485E datasheet, REV 1.0.5 (C6855 provenance,
+            family anchor)
+          electrical_characteristics:
+          - 2
+          features:
+          - 1
+          pinout:
+          - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Communication Mode: Half-Duplex
@@ -286,12 +363,25 @@ oomlout_ai_roboclick_4:
         stock_observed: 244067
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-25'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library
+          run and a rebuild. working_svg_square_pins.png hero titled IC SP485EEN-L/TR
+          SOIC 8 with RO/RE/DE/DI down the left side and VCC/B/A/GND up the right
+          side, matching the datasheet pinout page 1 (1 = RO, 2 = RE, 3 = DE, 4 =
+          DI, 5 = GND, 6 = A, 7 = B, 8 = VCC). working_svg_dimensioned.png: SOIC-8
+          outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry. data/kicad
+          manifest complete (2-asset rule, no HandSoldering master for SOIC-8 narrow)
+          with Interface_UART:LTC2850xS8 symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+          machine footprint. README.md: SP485EEN-L/TR part number, LCSC/JLC C6855
+          links, 8-pin table (RO/RE/DE/DI/GND/A/B/VCC), datasheet link resolving to
+          data/datasheet.pdf (the MaxLinear datasheet, family anchor). Limitation:
+          KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text
+          rather than in a KiCad GUI.'
       kicad:
-        hand_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+        allow_project_fallback: false
+        hand_solder: ''
         machine_solder: Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
-        symbol: ''
+        symbol: Interface_UART:LTC2850xS8
       lcsc_search: SP485EEN-L/TR
       manufacturer: MaxLinear
       manufacturers:
@@ -317,6 +407,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -407,7 +507,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -421,6 +521,7 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      package_name_manufacturer: SOIC-8 (3.9 x 4.9 mm, 1.27 mm pitch)
       part_id: U1
       part_number_jlcpcb: C6855
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
@@ -498,7 +599,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -516,7 +617,31 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/ic/soic_8/interface/rs_485_transceiver/maxlinear/README.md
         oomp_id: electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
-        pins: []
+        pins:
+        - name: RO
+          number: '1'
+          type: output
+        - name: RE
+          number: '2'
+          type: input
+        - name: DE
+          number: '3'
+          type: input
+        - name: DI
+          number: '4'
+          type: input
+        - name: GND
+          number: '5'
+          type: power_in
+        - name: A
+          number: '6'
+          type: bidirectional
+        - name: B
+          number: '7'
+          type: bidirectional
+        - name: VCC
+          number: '8'
+          type: power_in
         quick_facts:
         - title: OOMP ID
           value: electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
@@ -526,10 +651,12 @@ oomlout_ai_roboclick_4:
           value: soic 8
         - title: Nominal size
           value: 4.9 × 3.9 mm
+        - title: Documented pins
+          value: 8
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
         summary: IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses
           the soic 8 package or form factor. Its nominal drawing size is 4.9 × 3.9
-          mm.
+          mm. The definition includes 8 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -545,8 +672,51 @@ oomlout_ai_roboclick_4:
           value: maxlinear
         - level: 15
           value: sp485een_l_tr
+      pins:
+        pin_1:
+          name: RO
+          number: '1'
+          type: output
+        pin_2:
+          name: RE
+          number: '2'
+          type: input
+        pin_3:
+          name: DE
+          number: '3'
+          type: input
+        pin_4:
+          name: DI
+          number: '4'
+          type: input
+        pin_5:
+          name: GND
+          number: '5'
+          type: power_in
+        pin_6:
+          name: A
+          number: '6'
+          type: bidirectional
+        pin_7:
+          name: B
+          number: '7'
+          type: bidirectional
+        pin_8:
+          name: VCC
+          number: '8'
+          type: power_in
       product_url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic MaxLinear SP485EEN-L/TR (C6855): half-duplex
+        RS-485 transceiver, 10 Mbps, +-15 kV ESD in SOIC-8; reconfirmed live 2026-10-02
+        (stock 245,552).'
+      - Browser-downloaded the MaxLinear SP481E/SP485E datasheet (9 pages, REV 1.0.5)
+        into this part; it anchors the SP485E SOIC-8 family.
+      - 'Pinout page 1: 1 = RO, 2 = RE, 3 = DE, 4 = DI, 5 = GND, 6 = A, 7 = B, 8 =
+        VCC; Interface_UART:LTC2850xS8 matches pad-for-pad (SP3485CN extends the same
+        master). No HandSoldering master for SOIC-8 narrow - hand_solder empty per
+        the 2-asset rule.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -723,7 +893,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -737,6 +907,7 @@ oomlout_ai_roboclick_5:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
+package_name_manufacturer: SOIC-8 (3.9 x 4.9 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C6855
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
@@ -814,7 +985,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -832,7 +1003,31 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/ic/soic_8/interface/rs_485_transceiver/maxlinear/README.md
   oomp_id: electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
-  pins: []
+  pins:
+  - name: RO
+    number: '1'
+    type: output
+  - name: RE
+    number: '2'
+    type: input
+  - name: DE
+    number: '3'
+    type: input
+  - name: DI
+    number: '4'
+    type: input
+  - name: GND
+    number: '5'
+    type: power_in
+  - name: A
+    number: '6'
+    type: bidirectional
+  - name: B
+    number: '7'
+    type: bidirectional
+  - name: VCC
+    number: '8'
+    type: power_in
   quick_facts:
   - title: OOMP ID
     value: electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
@@ -842,9 +1037,12 @@ part_page:
     value: soic 8
   - title: Nominal size
     value: 4.9 × 3.9 mm
+  - title: Documented pins
+    value: 8
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr
   summary: IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the
-    soic 8 package or form factor. Its nominal drawing size is 4.9 × 3.9 mm.
+    soic 8 package or form factor. Its nominal drawing size is 4.9 × 3.9 mm. The definition
+    includes 8 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -860,8 +1058,50 @@ part_page:
     value: maxlinear
   - level: 15
     value: sp485een_l_tr
+pins:
+  pin_1:
+    name: RO
+    number: '1'
+    type: output
+  pin_2:
+    name: RE
+    number: '2'
+    type: input
+  pin_3:
+    name: DE
+    number: '3'
+    type: input
+  pin_4:
+    name: DI
+    number: '4'
+    type: input
+  pin_5:
+    name: GND
+    number: '5'
+    type: power_in
+  pin_6:
+    name: A
+    number: '6'
+    type: bidirectional
+  pin_7:
+    name: B
+    number: '7'
+    type: bidirectional
+  pin_8:
+    name: VCC
+    number: '8'
+    type: power_in
 product_url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic MaxLinear SP485EEN-L/TR (C6855): half-duplex
+  RS-485 transceiver, 10 Mbps, +-15 kV ESD in SOIC-8; reconfirmed live 2026-10-02
+  (stock 245,552).'
+- Browser-downloaded the MaxLinear SP481E/SP485E datasheet (9 pages, REV 1.0.5) into
+  this part; it anchors the SP485E SOIC-8 family.
+- 'Pinout page 1: 1 = RO, 2 = RE, 3 = DE, 4 = DI, 5 = GND, 6 = A, 7 = B, 8 = VCC;
+  Interface_UART:LTC2850xS8 matches pad-for-pad (SP3485CN extends the same master).
+  No HandSoldering master for SOIC-8 narrow - hand_solder empty per the 2-asset rule.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

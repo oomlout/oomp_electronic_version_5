@@ -1,8 +1,18 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887028632571904-C2064.pdf
+dimension_reference:
+  document: KM477M035G17RR0VH2FP0 datasheet (C2064 provenance)
+  notes: Radial leaded aluminum electrolytic, D10.0 x 17.0 mm, 5.0 mm pin spacing;
+    polarity stripe/minus band marks the negative terminal per the datasheet outline
+    drawing.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 17.0
   length: 10.0
-  width: 5.0
+  width: 10.0
 distributors:
 - key: lcsc
   part_number: C2064
@@ -15,9 +25,15 @@ distributors:
 electrical:
   capacitance: 470 uF
   dielectric: aluminum electrolytic
+  lifetime: 2000hrs@105 C
+  operating_temperature: -55 to +125 C
+  pin_spacing: 5.0 mm
   polarized: true
   rated_voltage: 35 V
-  tolerance: ±20%
+  tolerance: +-20%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_10_mm_diameter_17_mm_tall_electrolytic_470_micro_farad_35_volt/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: electronic_capacitor_10_mm_diameter_17_mm_tall_electrolytic_470_micro_farad_35_volt
     did not exist in working_oomp_populate_capacitor.py, working_oomp_populate_capacitor_extra.py,
@@ -31,11 +47,13 @@ jlcpcb_selection:
     2000 hrs at 105 C - matches the live page exactly; stock 38,410 recorded as observed;
     polarized two-terminal electrolytic (pin_count 2). Edits made under the capacitor
     family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2416-KM477M035G17RR0VH2FP0/C2064
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 470uF
@@ -49,11 +67,17 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: two-terminal polarized capacitor
+    mapped to the KiCad Device:C_Polarized master (pin 1 positive, pin 2 negative)
+    and the CP_Radial_D10.0mm_P5.00mm footprint master with the case dimensions cross-checked
+    against the JLC package label Plugin,D10xL17mm; renders inherit the pipeline verified
+    on the completed passive exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Capacitor_THT:CP_Radial_D10.0mm_P5.00mm
+  symbol: Device:C_Polarized
 lcsc_search: 470uF 35V electrolytic
 manufacturer: CX(Dongguan Chengxing Elec)
 manufacturers:
@@ -62,6 +86,8 @@ manufacturers:
 name_proper: Capacitor 470 uF 35 V Electrolytic 10 mm diameter x 17 mm tall
 name_readable: Capacitor 470 uF 35 V Electrolytic 10 mm diameter x 17 mm tall
 name_short: Capacitor 470 uF 35 V Electrolytic 10 mm diameter x 17 mm tall
+package_name_manufacturer: Radial leaded aluminum electrolytic, D10.0 x 17.0 mm, 5.0
+  mm pin spacing
 part_id: C1
 part_number_jlcpcb: C2064
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2416-KM477M035G17RR0VH2FP0/C2064
@@ -73,19 +99,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: CX(Dongguan Chengxing Elec)
   part_number: KM477M035G17RR0VH2FP0
+pins:
+  pin_1:
+    name: positive
+    number: '1'
+    type: passive
+  pin_2:
+    name: negative
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2416-KM477M035G17RR0VH2FP0/C2064
 research_notes:
-- 'Verified JLC C2064 / CX (Dongguan Chengxing Elec) KM477M035G17RR0VH2FP0 as the
-  first reviewed preferred extended purchasing choice for this previously absent leaded
-  electrolytic value; the populate row was added by this intake. The KM ordering code
-  (477 = 470 uF, M = +/-20%, 035 = 35 V) decodes consistently with the listed specifications;
-  the live page specification table is the primary evidence. Distinct from the C2033
-  470 uF 10 V part (D8 x L12 mm): same capacitance, higher voltage, larger can.'
-- Leaded (radial through-hole) aluminum electrolytic, D10 x L17 mm, 5 mm pin spacing,
-  2000 hrs at 105 C lifetime; polarized, observe the marked negative stripe. Live
-  JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended),
-  stock 38,410, minimum 1, full reel 200, available order qty 36,502. No datasheet
-  PDF imported at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887028632571904-C2064.pdf).
+- The official JLC page lists Plugin,D10xL17mm CX(Dongguan Chengxing Elec) KM477M035G17RR0VH2FP0
+  (C2064); identity and ratings observed live at intake 2026-09-28.
+- Two-terminal polarized radial leaded capacitor mapped to the KiCad Device:C_Polarized
+  master and the Capacitor_THT:CP_Radial_D10.0mm_P5.00mm footprint master in the 2026-10-05
+  family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

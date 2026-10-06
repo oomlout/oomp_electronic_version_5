@@ -1,7 +1,7 @@
 # Electronic / Crystal / Hc 49S SMD / Surface Mount
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 12 parts in total.
 
 ## Categories
 

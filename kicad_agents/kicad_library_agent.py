@@ -336,8 +336,11 @@ def build_part(part_directory, masters=None, candidates=None):
         assets.append({'kind': variant, 'source': source_id, 'file': filename,
                        'source_sha256': hashlib.sha256(source_path.read_bytes()).hexdigest(),
                        'mark': mark, 'mark_y_mm': mark_y})
+    # A part may legitimately declare no hand-solder master (e.g. the array
+    # footprints ship machine-only); two assets then already mean complete.
+    expected_assets = 3 if selections.get('hand_solder') else 2
     manifest = {'format_version': 1, 'oomp_id': part_id, 'master_installation': str(masters.root),
-                'status': 'complete' if len(assets) == 3 else 'needs_review',
+                'status': 'complete' if len(assets) == expected_assets else 'needs_review',
                 'assets': assets, 'issues': issues,
                 'license': 'Derived from KiCad official libraries; see https://www.kicad.org/libraries/license/'}
     for asset in assets:

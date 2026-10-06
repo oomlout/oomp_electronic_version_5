@@ -1,11 +1,12 @@
 # Electronic / Connector / USB-A
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 6 parts in total.
 
 ## Categories
 
 - [Surface Mount](surface_mount/README.md)
+- [Through Hole](through_hole/README.md)
 
 
 ---

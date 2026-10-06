@@ -30,32 +30,97 @@ bip_39_full_space: melody sand hurry slot tissue extend umbrella dice betray edi
 bip_39_full_underscore: melody_sand_hurry_slot_tissue_extend_umbrella_dice_betray_edit_weasel_puzzle
 category: capacitor
 category_name: Capacitor
+datasheet_url: ''
+dimension_reference:
+  document: Samsung MLCC data sheet, November 2015 (shared family copy) (C1656 provenance)
+  notes: 'part-numbering page 4 decodes the exact suffix; the class-characteristic
+    page and the size tables cover the 0603 family; package dimensions: 0603 L 1.60+-0.10,
+    W 0.80+-0.10, T 0.80+-0.10 mm.'
+  pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    part_number_system:
+    - 4
 dimensions_mm:
+  height: 0.8
   length: 1.6
   width: 0.8
 directory: parts/electronic_capacitor_0603_27_pico_farad
 distributors:
 - key: lcsc
-  part_number: C107045
-  product_name: 27pF ±5% 50V Ceramic Capacitor NP0 0603
+  part_number: C1656
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C107045.html
+  url: https://www.lcsc.com/product-detail/C1656.html
+- key: jlcpcb
+  part_number: C1656
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
+electrical:
+  capacitance: 27 pF (270)
+  dielectric: C0G
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: 0+-30 ppm/C referenced to 25 C (C0G)
+  temperature_range: -55 to +125 C
+  tolerance: +-5%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0603_27_pico_farad/datasheet.pdf
 id: electronic_capacitor_0603_27_pico_farad
 id_no_class: electronic_capacitor_0603_27_pico_farad
 id_no_size: electronic_capacitor_0603_27_pico_farad
 id_no_type: electronic_capacitor_0603_27_pico_farad
+jlcpcb_selection:
+  compatibility_notes: 'In-grid reuse: electronic_capacitor_0603_27_pico_farad already
+    exists in the 0603 capacitance_values generation grid of working_oomp_populate_capacitor.py
+    (no populate row added) and had no reviewed JLC house preference in reviewed_choices.json
+    or the extras file; the pre-existing YAGEO CC0603JRNPO9BN270 (C107045) population
+    is LCSC-only and is preserved as a prior alternative by apply_reviewed_jlc_choices.
+    C1656 (Samsung CL10C270JB8NNNC) becomes its first reviewed preferred house choice;
+    extras enrichment block added under the capacitor family lock. Rating comparison
+    from the staged capture: 27 pF, 0603, C0G, +/-5%, 50 V - matches the live page
+    exactly; two-terminal MLCC (pin_count 2).'
+  datasheet_pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    document: Samsung MLCC data sheet, November 2015 (shared family copy)
+    part_number_system:
+    - 4
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
+  pcba_min_qty_observed: null
+  pinout_checked: true
+  purchase_moq_observed: '1'
+  ratings:
+    Capacitance: 27pF
+    Temperature Coefficient: C0G
+    Tolerance: ±5%
+    Voltage Rating: 50V
+  stock_observed: 37,373
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-28'
+  visual_review: 'Family-inherited review 2026-10-03: layout identical to completed
+    exemplar renders of the same 0603 resistor template (Device:R_Small, Capacitor_SMD:C_0603_1608Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
   machine_solder: Capacitor_SMD:C_0603_1608Metric
   symbol: Device:C_Small
 lcsc_search: 0603 27pF
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_27_pico_farad
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_27_pico_farad
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_27_pico_farad
-manufacturer: YAGEO
+manufacturer: Samsung Electro-Mechanics
 manufacturers:
-- manufacturer: YAGEO
-  part_number: CC0603JRNPO9BN270
+- manufacturer: Samsung Electro-Mechanics
+  part_number: CL10C270JB8NNNC
 md5: 8a97e5bee60e2ca1fb09eb1568cfe257
 md5_10: 8a97e5bee6
 md5_10_upper: 8A97E5BEE6
@@ -86,6 +151,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0402_100_nano_farad/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -175,7 +250,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -189,7 +264,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -197,25 +272,91 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: capacitor
       category_name: Capacitor
+      datasheet_url: ''
+      dimension_reference:
+        document: Samsung MLCC data sheet, November 2015 (shared family copy) (C1656
+          provenance)
+        notes: 'part-numbering page 4 decodes the exact suffix; the class-characteristic
+          page and the size tables cover the 0603 family; package dimensions: 0603
+          L 1.60+-0.10, W 0.80+-0.10, T 0.80+-0.10 mm.'
+        pages:
+          class_characteristics:
+          - 5
+          dimensions:
+          - 6
+          part_number_system:
+          - 4
       dimensions_mm:
+        height: 0.8
         length: 1.6
         width: 0.8
       directory: parts\electronic_capacitor_0603_27_pico_farad
       distributors:
       - key: lcsc
-        part_number: C107045
-        product_name: 27pF ±5% 50V Ceramic Capacitor NP0 0603
+        part_number: C1656
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C107045.html
+        url: https://www.lcsc.com/product-detail/C1656.html
+      - key: jlcpcb
+        part_number: C1656
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
+      electrical:
+        capacitance: 27 pF (270)
+        dielectric: C0G
+        polarized: false
+        rated_voltage: 50 V
+        temperature_characteristic: 0+-30 ppm/C referenced to 25 C (C0G)
+        temperature_range: -55 to +125 C
+        tolerance: +-5%
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_capacitor_0603_27_pico_farad/datasheet.pdf
+      jlcpcb_selection:
+        compatibility_notes: 'In-grid reuse: electronic_capacitor_0603_27_pico_farad
+          already exists in the 0603 capacitance_values generation grid of working_oomp_populate_capacitor.py
+          (no populate row added) and had no reviewed JLC house preference in reviewed_choices.json
+          or the extras file; the pre-existing YAGEO CC0603JRNPO9BN270 (C107045) population
+          is LCSC-only and is preserved as a prior alternative by apply_reviewed_jlc_choices.
+          C1656 (Samsung CL10C270JB8NNNC) becomes its first reviewed preferred house
+          choice; extras enrichment block added under the capacitor family lock. Rating
+          comparison from the staged capture: 27 pF, 0603, C0G, +/-5%, 50 V - matches
+          the live page exactly; two-terminal MLCC (pin_count 2).'
+        datasheet_pages:
+          class_characteristics:
+          - 5
+          dimensions:
+          - 6
+          document: Samsung MLCC data sheet, November 2015 (shared family copy)
+          part_number_system:
+          - 4
+        footprint_checked: true
+        official_url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
+        pcba_min_qty_observed: null
+        pinout_checked: true
+        purchase_moq_observed: '1'
+        ratings:
+          Capacitance: 27pF
+          Temperature Coefficient: C0G
+          Tolerance: ±5%
+          Voltage Rating: 50V
+        stock_observed: 37,373
+        tier: preferred_extended
+        tier_label_observed: Extended
+        verified_on: '2026-09-28'
+        visual_review: 'Family-inherited review 2026-10-03: layout identical to completed
+          exemplar renders of the same 0603 resistor template (Device:R_Small, Capacitor_SMD:C_0603_1608Metric
+          + hand variant) already inspected this session; this batch member differs
+          only in value text. Post-build spot checks: (see batch report).'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
         machine_solder: Capacitor_SMD:C_0603_1608Metric
         symbol: Device:C_Small
       lcsc_search: 0603 27pF
-      manufacturer: YAGEO
+      manufacturer: Samsung Electro-Mechanics
       manufacturers:
-      - manufacturer: YAGEO
-        part_number: CC0603JRNPO9BN270
+      - manufacturer: Samsung Electro-Mechanics
+        part_number: CL10C270JB8NNNC
       name: electronic_capacitor_0603_27_pico_farad
       name_proper: Capacitor 27 pF 0603
       name_readable: Capacitor 27 pF 0603
@@ -234,6 +375,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0402_100_nano_farad/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -324,7 +475,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -338,15 +489,19 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+      package_name_manufacturer: 0603 (1608 metric)
       part_id: C1
-      part_number_lcsc: C107045
-      part_number_manufacturer: CC0603JRNPO9BN270
+      part_number_jlcpcb: C1656
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
+      part_number_lcsc: C1656
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C1656.html
+      part_number_manufacturer: CL10C270JB8NNNC
       part_numbers_lcsc:
-      - part_number: C107045
-        product_name: 27pF ±5% 50V Ceramic Capacitor NP0 0603
+      - part_number: C1656
       part_numbers_manufacturer:
-      - manufacturer: YAGEO
-        part_number: CC0603JRNPO9BN270
+      - manufacturer: Samsung Electro-Mechanics
+        part_number: CL10C270JB8NNNC
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -413,14 +568,17 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: CC0603JRNPO9BN270
+          value: CL10C270JB8NNNC
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C107045.html
-          value: C107045
+          url: https://www.lcsc.com/product-detail/C1656.html
+          value: C1656
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
+          value: C1656
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -428,7 +586,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/capacitor/0603/README.md
         oomp_id: electronic_capacitor_0603_27_pico_farad
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_capacitor_0603_27_pico_farad
@@ -438,10 +602,12 @@ oomlout_ai_roboclick_4:
           value: '0603'
         - title: Nominal size
           value: 1.6 × 0.8 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_27_pico_farad
         summary: Capacitor 27 pF 0603 is an OOMP electronic capacitor definition.
           It uses the 0603 package or form factor. Its nominal drawing size is 1.6
-          × 0.8 mm.
+          × 0.8 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -451,11 +617,24 @@ oomlout_ai_roboclick_4:
           value: '0603'
         - level: 4
           value: 27_pico_farad
-      product_url: https://www.lcsc.com/product-detail/C107045.html
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
+      product_url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
       regenerate_pngs: false
       research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0603 27pF" (935,700 in stock at capture).'
+      - 'The official JLC page lists Extended Samsung Electro-Mechanics CL10C270JB8NNNC
+        (C1656): 27 pF 50 V C0G +-5% in 0603; identity and ratings observed live at
+        intake 2026-09-28.'
+      - 'Family batch 2026-10-03 over the shared Samsung Electro-Mechanics MLCC datasheet
+        (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering
+        code decodes 270 = 27 pF.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -632,7 +811,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -645,16 +824,20 @@ oomlout_ai_roboclick_5:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
 oomp_key: oomp_electronic_capacitor_0603_27_pico_farad
+package_name_manufacturer: 0603 (1608 metric)
 part_id: C1
-part_number_lcsc: C107045
-part_number_manufacturer: CC0603JRNPO9BN270
+part_number_jlcpcb: C1656
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
+part_number_lcsc: C1656
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1656.html
+part_number_manufacturer: CL10C270JB8NNNC
 part_numbers_lcsc:
-- part_number: C107045
-  product_name: 27pF ±5% 50V Ceramic Capacitor NP0 0603
+- part_number: C1656
 part_numbers_manufacturer:
-- manufacturer: YAGEO
-  part_number: CC0603JRNPO9BN270
+- manufacturer: Samsung Electro-Mechanics
+  part_number: CL10C270JB8NNNC
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -721,14 +904,17 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: CC0603JRNPO9BN270
+    value: CL10C270JB8NNNC
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C107045.html
-    value: C107045
+    url: https://www.lcsc.com/product-detail/C1656.html
+    value: C1656
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
+    value: C1656
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -736,7 +922,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/capacitor/0603/README.md
   oomp_id: electronic_capacitor_0603_27_pico_farad
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_capacitor_0603_27_pico_farad
@@ -746,9 +938,12 @@ part_page:
     value: '0603'
   - title: Nominal size
     value: 1.6 × 0.8 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0603_27_pico_farad
   summary: Capacitor 27 pF 0603 is an OOMP electronic capacitor definition. It uses
-    the 0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm.
+    the 0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -758,11 +953,24 @@ part_page:
     value: '0603'
   - level: 4
     value: 27_pico_farad
-product_url: https://www.lcsc.com/product-detail/C107045.html
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656
 regenerate_pngs: false
 research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0603
-  27pF" (935,700 in stock at capture).'
+- 'The official JLC page lists Extended Samsung Electro-Mechanics CL10C270JB8NNNC
+  (C1656): 27 pF 50 V C0G +-5% in 0603; identity and ratings observed live at intake
+  2026-09-28.'
+- 'Family batch 2026-10-03 over the shared Samsung Electro-Mechanics MLCC datasheet
+  (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering
+  code decodes 270 = 27 pF.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

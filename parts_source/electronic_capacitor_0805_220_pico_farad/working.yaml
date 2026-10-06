@@ -1,6 +1,15 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588898764141056001-C107145.pdf
+dimension_reference:
+  document: YAGEO YAGEO CC0805 series MLCC specification (own copy, C107145 provenance)
+  notes: 0805_2012Metric outline per the specification drawing; ordering code CC0805KRX7R9BB221
+    decodes the 220 pF 50 V X7R +-10% rating.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.25
   length: 2.0
   width: 1.25
 distributors:
@@ -12,14 +21,29 @@ distributors:
   part_number: C107145
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
+electrical:
+  capacitance: 220 pF (221)
+  dielectric: X7R
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_220_pico_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Generic ceramic capacitor value and package agree with the
     live Basic JLC listing; this part supplies a previously absent population entry.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: YAGEO YAGEO CC0805 series specification (own copy)
+    outline:
+    - 2
+    - 3
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 220pF
@@ -30,9 +54,12 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: MLCC template identical to the
+    completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected post-build;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 220pF
@@ -43,6 +70,7 @@ manufacturers:
 name_proper: Capacitor 220 pF 0805
 name_readable: Capacitor 220 pF 0805
 name_short: Capacitor 220 pF 0805
+package_name_manufacturer: 0805_2012Metric
 part_id: C1
 part_number_jlcpcb: C107145
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
@@ -54,7 +82,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: YAGEO
   part_number: CC0805KRX7R9BB221
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB221/C107145
+research_notes:
+- 'The official JLC page lists YAGEO CC0805KRX7R9BB221 (C107145): 220 pF 50 V X7R
+  +-10%; identity and ratings observed live at intake 2026-09-24.'
+- 'Straggler close-out 2026-10-04: downloaded the YAGEO specification into this part
+  via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size
+  series, so this part anchors its own sub-family).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

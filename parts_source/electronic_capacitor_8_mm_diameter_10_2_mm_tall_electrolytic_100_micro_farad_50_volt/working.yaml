@@ -1,8 +1,17 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291464793563136-C3352.pdf
+dimension_reference:
+  document: RVT1H101M0810 datasheet (C3352 provenance)
+  notes: SMD V-chip aluminum electrolytic, D8.0 x 10.2 mm; polarity stripe/minus band
+    marks the negative terminal per the datasheet outline drawing.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 10.2
+  length: 8.0
+  width: 8.0
 distributors:
 - key: lcsc
   part_number: C3352
@@ -12,6 +21,17 @@ distributors:
   part_number: C3352
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/HonorElec-RVT1H101M0810/C3352
+electrical:
+  capacitance: 100 uF
+  dielectric: aluminum electrolytic
+  lifetime: 2000hrs@105 C
+  operating_temperature: -55 to +105 C
+  polarized: true
+  rated_voltage: 50 V
+  tolerance: +-20%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_8_mm_diameter_10_2_mm_tall_electrolytic_100_micro_farad_50_volt/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Missing generic value: this SMD electrolytic size/value/voltage
     combination did not exist in working_oomp_populate_capacitor.py, reviewed_choices.json,
@@ -21,11 +41,13 @@ jlcpcb_selection:
     come straight off the page. Rating comparison from the staged capture: package
     below, stock below recorded as observed. Edits made under the capacitor family
     lock. Stock 2905 recorded as observed.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/HonorElec-RVT1H101M0810/C3352
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: SMT Assembly
@@ -50,11 +72,17 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: two-terminal polarized capacitor
+    mapped to the KiCad Device:C_Polarized master (pin 1 positive, pin 2 negative)
+    and the CP_Elec_8x10 footprint master with the case dimensions cross-checked against
+    the JLC package label SMD,D8xL10.2mm; renders inherit the pipeline verified on
+    the completed passive exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Capacitor_SMD:CP_Elec_8x10
+  symbol: Device:C_Polarized
 lcsc_search: 100uF 50V electrolytic
 manufacturer: Honor Elec
 manufacturers:
@@ -63,6 +91,7 @@ manufacturers:
 name_proper: Capacitor 100 uF 50 V Electrolytic 8 mm diameter x 10.2 mm tall
 name_readable: Capacitor 100 uF 50 V Electrolytic 8 mm diameter x 10.2 mm tall
 name_short: Capacitor 100 uF 50 V Electrolytic 8 mm diameter x 10.2 mm tall
+package_name_manufacturer: SMD V-chip aluminum electrolytic, D8.0 x 10.2 mm
 part_id: C1
 part_number_jlcpcb: C3352
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/HonorElec-RVT1H101M0810/C3352
@@ -74,7 +103,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Honor Elec
   part_number: RVT1H101M0810
+pins:
+  pin_1:
+    name: positive
+    number: '1'
+    type: passive
+  pin_2:
+    name: negative
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/HonorElec-RVT1H101M0810/C3352
+research_notes:
+- The official JLC page lists SMD,D8xL10.2mm Honor Elec RVT1H101M0810 (C3352); identity
+  and ratings observed live at intake 2026-09-29.
+- Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized
+  master and the Capacitor_SMD:CP_Elec_8x10 footprint master in the 2026-10-05 family
+  batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

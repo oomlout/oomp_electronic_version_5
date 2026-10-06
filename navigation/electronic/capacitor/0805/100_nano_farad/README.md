@@ -1,8 +1,11 @@
 # Electronic / Capacitor / 0805 / 100 Nano Farad
 
 [Up one level](../README.md)
-This category contains 2 parts in total.
+This category contains 3 parts in total.
 
+## Categories
+
+- [Samsung Electro Mechanics](samsung_electro_mechanics/README.md)
 
 ## Parts
 

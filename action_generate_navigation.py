@@ -8,6 +8,13 @@ from jinja2 import Environment, FileSystemLoader
 
 import working_oomp_metadata
 
+try:
+    # libyaml's C loader parses the ~3000 working.yaml files several times
+    # faster than the pure-python loader; fall back when unavailable.
+    from yaml import CSafeLoader as _FastSafeLoader
+except ImportError:  # pragma: no cover
+    from yaml import SafeLoader as _FastSafeLoader
+
 REPOSITORY_ROOT = Path(__file__).resolve().parent
 NAVIGATION_ROOT = REPOSITORY_ROOT / "navigation"
 TEMPLATE_DIR = REPOSITORY_ROOT / "source_file" / "template_jinja" / "navigation"
@@ -23,7 +30,7 @@ def _collect_part_rows(parts_directory: Path, filter_text: str = ""):
         working_file = part_directory / "working.yaml"
         if not working_file.is_file():
             continue
-        working = yaml.safe_load(working_file.read_text(encoding="utf-8")) or {}
+        working = yaml.load(working_file.read_text(encoding="utf-8"), Loader=_FastSafeLoader) or {}
         if not isinstance(working, dict):
             continue
         if str(working.get("taxonomy_1", "")) == "navigation":

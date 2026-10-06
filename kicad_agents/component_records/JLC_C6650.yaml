@@ -32,6 +32,9 @@ research:
     Extended tooltip). No datasheet PDF imported at intake (solo worker has no download);
     download is an integration-stage task.'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C6650.json.
+  - 'Family batch 2026-10-04: downloaded the own specification (ESDA6V1-5SC6, signed
+    JLC OSS link) and verified the SOT-23 package outline and polarity; electrical
+    values transcribed from the intake-observed listing (verified_on 2026-09-30).'
 jlc_selection:
   verified_on: '2026-09-30'
   official_url: https://jlcpcb.com/partdetail/STMicroelectronics-ESDA6V15SC6/C6650
@@ -61,7 +64,12 @@ jlc_selection:
     SOT-23-6L: ''
     Unidirectional: ''
     Voltage - Breakdown: 6.1V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: STMicroelectronics ESDA6V1-5SC6 specification
+    ratings_package:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: sot_23 diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'

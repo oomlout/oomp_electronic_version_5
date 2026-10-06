@@ -29,6 +29,9 @@ research:
     integration must resolve that maker conflict before accepting its datasheet as
     exact-device provenance.
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C7420377.json.
+  - 'Family batch 2026-10-04: downloaded the own specification (SMBJ6.5CA, signed
+    JLC OSS link) and verified the SMB (DO-214AA) package outline and polarity; electrical
+    values transcribed from the intake-observed listing (verified_on 2026-09-24).'
 jlc_selection:
   verified_on: '2026-09-24'
   official_url: https://jlcpcb.com/partdetail/hongjiacheng-SMBJ65CA/C7420377
@@ -53,7 +56,12 @@ jlc_selection:
     Peak Pulse Current (Ipp): 53.57A
     Voltage - Breakdown: 7.22V
     Reverse Leakage Current (Ir): 500uA
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: hongjiacheng SMBJ6.5CA specification
+    ratings_package:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: smb diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'

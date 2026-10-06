@@ -1,6 +1,15 @@
 category: logic
 category_name: Logic
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586191863824572416-C5619.pdf
+dimension_reference:
+  document: 74HC237D datasheet (C5619)
+  notes: Body outline per the Package_SO:SOIC-16_3.9x9.9mm_P1.27mm master geometry;
+    pinning cross-checked against the KiCad 74xx:74HC237 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.75
   length: 9.9
   width: 3.9
 distributors:
@@ -12,6 +21,15 @@ distributors:
   part_number: C5619
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Nexperia-74HC237D653/C5619
+electrical:
+  device_type: 3 to 8 line decoder demultiplexer latched
+  logic_family: 74HC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 2.0-6.0 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_16_logic_3_to_8_line_decoder_demultiplexer_latched_nexperia_74hc237d_653/datasheet.pdf
 ic_dimensions_mm:
   body_length: 9.9
   body_width: 3.9
@@ -27,11 +45,14 @@ jlcpcb_selection:
     variant token new here) is its exact first reviewed preferred house choice; the
     family token and package come straight off the page. Edits made under the ic family
     lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 2
+  - 3
+  - 6
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Nexperia-74HC237D653/C5619
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     -40℃~+125℃: ''
@@ -60,11 +81,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xx:74HC237 master (numbers and electrical types cross-checked
+    at plan time) and the SOIC-16 footprint master; renders inherit the pipeline verified
+    on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+  symbol: 74xx:74HC237
 lcsc_search: 74HC237D,653
 manufacturer: Nexperia
 manufacturers:
@@ -73,6 +99,7 @@ manufacturers:
 name_proper: IC 74HC237D,653 SOIC 16
 name_readable: IC 74HC237D,653 SOIC 16
 name_short: IC 74HC237D,653 SOIC 16
+package_name_manufacturer: SOIC-16 (SOT109-1, 3.9 x 9.9 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C5619
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Nexperia-74HC237D653/C5619
@@ -84,7 +111,82 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Nexperia
   part_number: 74HC237D,653
+pins:
+  pin_1:
+    name: A0
+    number: '1'
+    type: in
+  pin_10:
+    name: Y5
+    number: '10'
+    type: out
+  pin_11:
+    name: Y4
+    number: '11'
+    type: out
+  pin_12:
+    name: Y3
+    number: '12'
+    type: out
+  pin_13:
+    name: Y2
+    number: '13'
+    type: out
+  pin_14:
+    name: Y1
+    number: '14'
+    type: out
+  pin_15:
+    name: Y0
+    number: '15'
+    type: out
+  pin_16:
+    name: VCC
+    number: '16'
+    type: pwr
+  pin_2:
+    name: A1
+    number: '2'
+    type: in
+  pin_3:
+    name: A2
+    number: '3'
+    type: in
+  pin_4:
+    name: ~{LE}
+    number: '4'
+    type: in
+  pin_5:
+    name: ~{E1}
+    number: '5'
+    type: in
+  pin_6:
+    name: E2
+    number: '6'
+    type: in
+  pin_7:
+    name: Y7
+    number: '7'
+    type: out
+  pin_8:
+    name: GND
+    number: '8'
+    type: pwr
+  pin_9:
+    name: Y6
+    number: '9'
+    type: out
 product_url: https://jlcpcb.com/partdetail/Nexperia-74HC237D653/C5619
+research_notes:
+- JLC house-parts queue row C5619 (Nexperia 74HC237D,653, SOIC-16, 16 pins) verified
+  at intake; family batch integration C5619.
+- Browser-extracted the signed JLC OSS link and downloaded the Nexperia 74HC237 data
+  sheet into this part.
+- Pin table generated from the KiCad 74xx:74HC237 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 16-pin package
+  count.
+- Footprint Package_SO:SOIC-16_3.9x9.9mm_P1.27mm verified present in the KiCad 10
+  library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

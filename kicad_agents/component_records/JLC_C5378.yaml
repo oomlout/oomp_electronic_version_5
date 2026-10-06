@@ -24,8 +24,16 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, Samsung Electro-Mechanics, CL21B224KBFNNNE, C5378,
     0805, 220nF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-10-02: live page reconfirmed (C5378, Samsung Electro-Mechanics,
+    CL21B224KBFNNNE, Basic, In Stock 611,888); the listed datasheet URL matches the
+    intake snapshot. No new download: the already-captured Samsung MLCC general catalogue,
+    November 2015 (shared via oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad)
+    covers the exact suffix - part numbering page 4 decodes CL / 21 = 0805 / B = X7R
+    / 224 = 220 nF / K = +-10% / B = 50 V / F = 1.25 mm thickness / N / N / E embossed
+    7-inch reel; the X7R 0805 lineup page 27 lists CL21B224KBFNNN at 220 nF, 50 V,
+    +-10%; X7R class -55 to +125 C, +-15% (page 5).'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/5810-CL21B224KBFNNNE/C5378
   tier: basic
   tier_label_observed: Basic
@@ -41,7 +49,27 @@ jlc_selection:
     Tolerance: ±10%
     Capacitance: 220nF
     Temperature Coefficient: X7R
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared,
+      C5378 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 27
+    - 4
+    electrical_characteristics:
+    - 5
+    - 27
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 220 nF 0805 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 0805/2012 outline 2.0 x 1.25 mm with
+    arrows, matching the Samsung nominals and F thickness (page 4 code table). data/kicad
+    manifest complete with Device:C_Small symbol and Capacitor_SMD:C_0805_2012Metric
+    machine + Pad1.18x1.45mm_HandSolder hand footprints, same as the C1710/C1729/C1739
+    0805 siblings. README.md: CL21B224KBFNNNE part number, LCSC/JLC C5378 links, pin
+    table, datasheet link resolving to data/datasheet.pdf via the shared Samsung MLCC
+    general catalogue (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

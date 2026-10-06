@@ -30,9 +30,19 @@ bip_39_full_space: blast soul task first patch amazing burden program layer wasp
 bip_39_full_underscore: blast_soul_task_first_patch_amazing_burden_program_layer_wasp_slide_dynamic
 category: led
 category_name: LED
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709195035607040-C2296.pdf
+dimension_reference:
+  document: KENTO KT-0805Y approval specification, KT-0A revision (C2296)
+  notes: Package 2.0 x 1.2 x 0.8 mm (page 2 outline, tolerance +-0.1 mm); terminal
+    drawing labels Anode/Cathode with a polarity triangle and dot on the cathode end;
+    pads unnumbered - pin table follows the KiCad LED convention 1 = K / 2 = A.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 0.8
   length: 2.0
-  width: 1.25
+  width: 1.2
 directory: parts/electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
 distributors:
 - key: lcsc
@@ -43,6 +53,19 @@ distributors:
   part_number: C2296
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296
+electrical:
+  forward_current: 20 mA DC max (100 mA peak)
+  forward_voltage: 2.0-2.2 V at IF = 20 mA
+  led_color: yellow (dominant wavelength 592-594 nm)
+  luminous_intensity: 95-113 mcd at IF = 20 mA (JLC description cites 175 mcd)
+  operating_temperature: -40 to +85 C
+  polarized: true
+  power_dissipation: 40 mW per the live JLC description (datasheet table omits PD)
+  reverse_voltage: 5 V max (IR 1 uA max at VR = 5 V)
+  viewing_angle: 120 deg
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y/datasheet.pdf
 id: electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
 id_no_class: electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
 id_no_size: electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
@@ -52,11 +75,17 @@ jlcpcb_selection:
     LED family row electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y using
     the established size/color/lens-style/maker/MPN exact pattern. Yellow water-clear
     0805, Vf 1.8-2.4 V, 175 mcd, 596 nm peak.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: KENTO KT-0805Y approval specification, KT-0A revision (C2296 provenance,
+      family anchor)
+    features_dimensions:
+    - 2
+    maximum_photoelectric:
+    - 3
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Diode Configuration: Discrete Diode
@@ -72,10 +101,21 @@ jlcpcb_selection:
   stock_observed: 425702
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled LED KT-0805Y 0805 with K (cathode) left
+    and A (anode) right, the LED circle-and-bar symbol drawn inside the body, no mirroring,
+    no label overlap, no cropping. working_svg_dimensioned.png: 0805/2012 outline
+    2.0 x 1.2 mm per the KENTO outline drawing (page 2, height 0.8 mm recorded in
+    dimensions_mm). data/kicad manifest complete with Device:LED symbol and LED_SMD:LED_0805_2012Metric
+    machine + Pad1.15x1.40mm_HandSolder hand footprints, same convention as the 0603
+    LED siblings. README.md: KT-0805Y part number, LCSC/JLC C2296 links, 2-pin table
+    (K/A), datasheet link resolving to data/datasheet.pdf (the KENTO 0805 approval
+    specification, family anchor). Limitation: KiCad symbol/footprint checked as rendered
+    SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder
   machine_solder: LED_SMD:LED_0805_2012Metric
   symbol: Device:LED
 lcsc_search: 0805 led
@@ -116,6 +156,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -205,7 +255,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -219,7 +269,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -227,9 +277,20 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: led
       category_name: LED
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709195035607040-C2296.pdf
+      dimension_reference:
+        document: KENTO KT-0805Y approval specification, KT-0A revision (C2296)
+        notes: Package 2.0 x 1.2 x 0.8 mm (page 2 outline, tolerance +-0.1 mm); terminal
+          drawing labels Anode/Cathode with a polarity triangle and dot on the cathode
+          end; pads unnumbered - pin table follows the KiCad LED convention 1 = K
+          / 2 = A.
+        pages:
+        - 2
+        - 3
       dimensions_mm:
+        height: 0.8
         length: 2.0
-        width: 1.25
+        width: 1.2
       directory: parts\electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
       distributors:
       - key: lcsc
@@ -240,16 +301,36 @@ oomlout_ai_roboclick_4:
         part_number: C2296
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296
+      electrical:
+        forward_current: 20 mA DC max (100 mA peak)
+        forward_voltage: 2.0-2.2 V at IF = 20 mA
+        led_color: yellow (dominant wavelength 592-594 nm)
+        luminous_intensity: 95-113 mcd at IF = 20 mA (JLC description cites 175 mcd)
+        operating_temperature: -40 to +85 C
+        polarized: true
+        power_dissipation: 40 mW per the live JLC description (datasheet table omits
+          PD)
+        reverse_voltage: 5 V max (IR 1 uA max at VR = 5 V)
+        viewing_angle: 120 deg
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact discrete indicator LED identity: added one explicit
           LED family row electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
           using the established size/color/lens-style/maker/MPN exact pattern. Yellow
           water-clear 0805, Vf 1.8-2.4 V, 175 mcd, 596 nm peak.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: KENTO KT-0805Y approval specification, KT-0A revision (C2296 provenance,
+            family anchor)
+          features_dimensions:
+          - 2
+          maximum_photoelectric:
+          - 3
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Diode Configuration: Discrete Diode
@@ -265,10 +346,22 @@ oomlout_ai_roboclick_4:
         stock_observed: 425702
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-25'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build and a forced diagram
+          refresh. working_svg_square_pins.png hero titled LED KT-0805Y 0805 with
+          K (cathode) left and A (anode) right, the LED circle-and-bar symbol drawn
+          inside the body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png:
+          0805/2012 outline 2.0 x 1.2 mm per the KENTO outline drawing (page 2, height
+          0.8 mm recorded in dimensions_mm). data/kicad manifest complete with Device:LED
+          symbol and LED_SMD:LED_0805_2012Metric machine + Pad1.15x1.40mm_HandSolder
+          hand footprints, same convention as the 0603 LED siblings. README.md: KT-0805Y
+          part number, LCSC/JLC C2296 links, 2-pin table (K/A), datasheet link resolving
+          to data/datasheet.pdf (the KENTO 0805 approval specification, family anchor).
+          Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+          text rather than in a KiCad GUI.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder
         machine_solder: LED_SMD:LED_0805_2012Metric
         symbol: Device:LED
       lcsc_search: 0805 led
@@ -294,6 +387,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -384,7 +487,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -398,6 +501,7 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      package_name_manufacturer: 0805 (2012 metric, 0.8 mm height, water clear)
       part_id: D1
       part_number_jlcpcb: C2296
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296
@@ -475,7 +579,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -493,7 +597,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/led/0805/yellow/clear/hubei_kento_elec/README.md
         oomp_id: electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
-        pins: []
+        pins:
+        - name: K
+          number: '1'
+          type: passive
+        - name: A
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
@@ -502,10 +612,13 @@ oomlout_ai_roboclick_4:
         - title: Package / style
           value: 0805
         - title: Nominal size
-          value: 2.0 × 1.25 mm
+          value: 2.0 × 1.2 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
         summary: LED KT-0805Y 0805 is an OOMP electronic led definition. It uses the
-          0805 package or form factor. Its nominal drawing size is 2.0 × 1.25 mm.
+          0805 package or form factor. Its nominal drawing size is 2.0 × 1.2 mm. The
+          definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -521,8 +634,28 @@ oomlout_ai_roboclick_4:
           value: hubei_kento_elec
         - level: 7
           value: kt_0805_y
+      pins:
+        pin_1:
+          name: K
+          number: '1'
+          type: passive
+        pin_2:
+          name: A
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Hubei KENTO KT-0805Y (C2296): yellow 0805
+        water-clear LED, 2.0-2.2 V, 20 mA, 120 deg, 592-594 nm; reconfirmed live 2026-10-02
+        (stock 390,223).'
+      - Browser-downloaded the KENTO KT-0805Y approval specification (8 pages, KT-0A
+        revision) into this part; it anchors the 0805 LED sub-family (the 0603 red/white
+        specs do not cover 0805).
+      - 'Datasheet polarity: the terminal drawing labels Anode/Cathode with a polarity
+        triangle and dot on the cathode end but does not number pads; the pin table
+        uses the KiCad LED convention (1 = K / 2 = A). The datasheet omits PD - the
+        40 mW value carries the live-description provenance.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -699,7 +832,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -713,6 +846,7 @@ oomlout_ai_roboclick_5:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
+package_name_manufacturer: 0805 (2012 metric, 0.8 mm height, water clear)
 part_id: D1
 part_number_jlcpcb: C2296
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296
@@ -790,7 +924,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -808,7 +942,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/led/0805/yellow/clear/hubei_kento_elec/README.md
   oomp_id: electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
-  pins: []
+  pins:
+  - name: K
+    number: '1'
+    type: passive
+  - name: A
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
@@ -817,10 +957,13 @@ part_page:
   - title: Package / style
     value: 0805
   - title: Nominal size
-    value: 2.0 × 1.25 mm
+    value: 2.0 × 1.2 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y
   summary: LED KT-0805Y 0805 is an OOMP electronic led definition. It uses the 0805
-    package or form factor. Its nominal drawing size is 2.0 × 1.25 mm.
+    package or form factor. Its nominal drawing size is 2.0 × 1.2 mm. The definition
+    includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -836,8 +979,27 @@ part_page:
     value: hubei_kento_elec
   - level: 7
     value: kt_0805_y
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: passive
+  pin_2:
+    name: A
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805Y/C2296
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Hubei KENTO KT-0805Y (C2296): yellow 0805 water-clear
+  LED, 2.0-2.2 V, 20 mA, 120 deg, 592-594 nm; reconfirmed live 2026-10-02 (stock 390,223).'
+- Browser-downloaded the KENTO KT-0805Y approval specification (8 pages, KT-0A revision)
+  into this part; it anchors the 0805 LED sub-family (the 0603 red/white specs do
+  not cover 0805).
+- 'Datasheet polarity: the terminal drawing labels Anode/Cathode with a polarity triangle
+  and dot on the cathode end but does not number pads; the pin table uses the KiCad
+  LED convention (1 = K / 2 = A). The datasheet omits PD - the 40 mW value carries
+  the live-description provenance.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

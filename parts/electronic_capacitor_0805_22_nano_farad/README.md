@@ -2,7 +2,7 @@
 
 `electronic_capacitor_0805_22_nano_farad`
 
-Capacitor 22 nF 0805 is an OOMP electronic capacitor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
+Capacitor 22 nF 0805 is an OOMP electronic capacitor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
 
 ![Capacitor 22 nF 0805 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Capacitor 22 nF 0805 is an OOMP electronic capacitor definition. It uses the 080
 | Type | Capacitor |
 | Package / style | 0805 |
 | Nominal size | 2.0 &#x00D7; 1.25 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Capacitor 22 nF 0805 is an OOMP electronic capacitor definition. It uses the 080
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.25 mm |
 | Length | 2.0 mm |
 | Width | 1.25 mm |
 
@@ -48,6 +50,19 @@ Capacitor 22 nF 0805 is an OOMP electronic capacitor definition. It uses the 080
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

@@ -34,8 +34,17 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing 3 kohm 0603 resistor ID or C4211 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C4211, UNI-ROYAL (Uniroyal Elec),
+    0603WAF3001T5E, Basic, In Stock per intake capture). No new download: the already-captured
+    UNI-ROYAL Thick Film Chip Resistors data sheet (9 pages, Feb.12 2019 V.3, shared
+    via oomp_datasheet_common_with = electronic_resistor_0402_0_ohm) covers the exact
+    suffix - part number system page 2 decodes 0603 / WA = 1/10 W (100 mW) / F = +-1%
+    / 3001 = 300 x 10^1 = 3.0 kOhm / T5E embossed 7-inch reel; resistance range page
+    4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm (3.0 kOhm within range); dimension table
+    page 4: 0603 body 1.60 +-0.10 x 0.80 +-0.10 mm, H 0.45 +-0.10 mm; live description
+    ratings 75 V, +-100 ppm/C, -55 to +155 C.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/4618-0603WAF3001T5E/C4211
   tier: basic
   tier_label_observed: Basic
@@ -56,7 +65,25 @@ jlc_selection:
     Tolerance: ±1%
     Type: Thick Film Resistor
     Voltage-Supply(Max): 75V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy, C4211 provenance)
+    part_number_system:
+    - 2
+    marking:
+    - 3
+    resistance_range_dimensions:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Resistor 3000 Ohm 0603 with terminals
+    1 and 2, symmetric body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png:
+    0603/1608 outline 1.6 x 0.8 mm with arrows, matching the UNI-ROYAL dimension table
+    (page 4, H 0.45 mm recorded in dimensions_mm). data/kicad manifest complete with
+    Device:R_Small symbol and Resistor_SMD:R_0603_1608Metric machine + Pad0.98x0.95mm_HandSolder
+    hand footprints, same as the C4177/C4184/C4190 0603 siblings. README.md: 0603WAF3001T5E
+    part number, LCSC/JLC C4211 links, 2-pin table, datasheet link resolving to data/datasheet.pdf
+    via the shared UNI-ROYAL family datasheet (oomp_datasheet_common_with). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'

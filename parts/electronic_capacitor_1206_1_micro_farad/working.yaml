@@ -30,7 +30,17 @@ bip_39_full_space: minor diagram scale whisper cupboard debris screen special gu
 bip_39_full_underscore: minor_diagram_scale_whisper_cupboard_debris_screen_special_guide_error_mouse_scare
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707343589855232-C1848.pdf
+dimension_reference:
+  document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1848)
+  notes: '1206/3216 metric: L 3.20 mm, W 1.60 mm, thickness code H = 1.60 mm (X7R
+    lineup table page 28 lists CL31B105KBHNNN at 1 uF, 50 V, +-10%).'
+  pages:
+  - 4
+  - 5
+  - 28
 dimensions_mm:
+  height: 1.6
   length: 3.2
   width: 1.6
 directory: parts/electronic_capacitor_1206_1_micro_farad
@@ -43,6 +53,17 @@ distributors:
   part_number: C1848
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
+electrical:
+  capacitance: 1 uF (105)
+  dielectric: X7R (Class II)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10% (K)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_1206_1_micro_farad/datasheet.pdf
 id: electronic_capacitor_1206_1_micro_farad
 id_no_class: electronic_capacitor_1206_1_micro_farad
 id_no_size: electronic_capacitor_1206_1_micro_farad
@@ -52,11 +73,21 @@ jlcpcb_selection:
     choice is a 50 V X7R +/-10% MLCC matching value and package. The purchase preference
     carries those ratings; project voltage margin and DC-bias behavior remain for
     the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    dimensions:
+    - 28
+    - 4
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared,
+      C1848 provenance)
+    electrical_characteristics:
+    - 5
+    - 28
+    ordering_coverage:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 1uF
@@ -66,10 +97,22 @@ jlcpcb_selection:
   stock_observed: 630235
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 1 uF 1206 with terminals 1 left
+    and 2 right, symmetric non-polarized body, no mirroring, no label overlap, no
+    cropping. working_svg_dimensioned.png: top view 3.2 x 1.6 mm with arrows, matching
+    the Samsung 1206/3216 nominals; part thickness 1.60 mm (H code, page 4 thickness
+    table) in dimensions_mm (1206 masters identical to the built 1206 siblings). data/kicad
+    manifest complete with Device:C_Small symbol and Capacitor_SMD:C_1206_3216Metric
+    machine + C_1206_3216Metric_Pad1.33x1.80mm_HandSolder hand footprints. README.md:
+    CL31B105KBHNNNE part number, LCSC/JLC C1848 links, pin table, datasheet link resolving
+    to data/datasheet.pdf via the shared Samsung MLCC general catalogue (oomp_datasheet_common_with).
+    Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+    text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder
   machine_solder: Capacitor_SMD:C_1206_3216Metric
   symbol: Device:C_Small
 lcsc_search: 1206 1uF
@@ -110,6 +153,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0402_100_nano_farad/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -199,7 +252,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -213,7 +266,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -221,7 +274,18 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: capacitor
       category_name: Capacitor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707343589855232-C1848.pdf
+      dimension_reference:
+        document: Samsung Electro-Mechanics MLCC general catalogue, November 2015
+          (C1848)
+        notes: '1206/3216 metric: L 3.20 mm, W 1.60 mm, thickness code H = 1.60 mm
+          (X7R lineup table page 28 lists CL31B105KBHNNN at 1 uF, 50 V, +-10%).'
+        pages:
+        - 4
+        - 5
+        - 28
       dimensions_mm:
+        height: 1.6
         length: 3.2
         width: 1.6
       directory: parts\electronic_capacitor_1206_1_micro_farad
@@ -234,16 +298,37 @@ oomlout_ai_roboclick_4:
         part_number: C1848
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
+      electrical:
+        capacitance: 1 uF (105)
+        dielectric: X7R (Class II)
+        polarized: false
+        rated_voltage: 50 V
+        temperature_characteristic: +-15% over the operating range (X7R)
+        temperature_range: -55 to +125 C
+        tolerance: +-10% (K)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_capacitor_1206_1_micro_farad/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: New generic 1206 1 uF capacitor. The live Basic Samsung
           C1848 choice is a 50 V X7R +/-10% MLCC matching value and package. The purchase
           preference carries those ratings; project voltage margin and DC-bias behavior
           remain for the full pass.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          dimensions:
+          - 28
+          - 4
+          document: Samsung Electro-Mechanics MLCC general catalogue, November 2015
+            (shared, C1848 provenance)
+          electrical_characteristics:
+          - 5
+          - 28
+          ordering_coverage:
+          - 4
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Capacitance: 1uF
@@ -253,10 +338,23 @@ oomlout_ai_roboclick_4:
         stock_observed: 630235
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-24'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build and a forced diagram
+          refresh. working_svg_square_pins.png hero titled Capacitor 1 uF 1206 with
+          terminals 1 left and 2 right, symmetric non-polarized body, no mirroring,
+          no label overlap, no cropping. working_svg_dimensioned.png: top view 3.2
+          x 1.6 mm with arrows, matching the Samsung 1206/3216 nominals; part thickness
+          1.60 mm (H code, page 4 thickness table) in dimensions_mm (1206 masters
+          identical to the built 1206 siblings). data/kicad manifest complete with
+          Device:C_Small symbol and Capacitor_SMD:C_1206_3216Metric machine + C_1206_3216Metric_Pad1.33x1.80mm_HandSolder
+          hand footprints. README.md: CL31B105KBHNNNE part number, LCSC/JLC C1848
+          links, pin table, datasheet link resolving to data/datasheet.pdf via the
+          shared Samsung MLCC general catalogue (oomp_datasheet_common_with). Limitation:
+          KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text
+          rather than in a KiCad GUI.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder
         machine_solder: Capacitor_SMD:C_1206_3216Metric
         symbol: Device:C_Small
       lcsc_search: 1206 1uF
@@ -282,6 +380,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0402_100_nano_farad/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -372,7 +480,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -387,6 +495,7 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
       oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+      package_name_manufacturer: 1206 (3216 metric, H thickness code)
       part_id: C1
       part_number_jlcpcb: C1848
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
@@ -464,7 +573,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -482,7 +591,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/capacitor/1206/README.md
         oomp_id: electronic_capacitor_1206_1_micro_farad
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_capacitor_1206_1_micro_farad
@@ -492,10 +607,12 @@ oomlout_ai_roboclick_4:
           value: '1206'
         - title: Nominal size
           value: 3.2 × 1.6 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_1_micro_farad
         summary: Capacitor 1 uF 1206 is an OOMP electronic capacitor definition. It
           uses the 1206 package or form factor. Its nominal drawing size is 3.2 ×
-          1.6 mm.
+          1.6 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -505,8 +622,24 @@ oomlout_ai_roboclick_4:
           value: '1206'
         - level: 4
           value: 1_micro_farad
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Samsung CL31B105KBHNNNE (C1848): 1 uF,
+        50 V, X7R, +-10% in 1206; reconfirmed live 2026-10-01 (stock 517,314).'
+      - The Samsung ordering decode covers the exact suffix (31 = 1206, H = 1.60 mm
+        thickness), and the X7R Product Lineup table (page 28) lists CL31B105KBHNNN.
+      - Non-polarized two-terminal chip; the standard built-in 1206 chip renderer
+        draws the package from the verified dimensions.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -683,7 +816,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -698,6 +831,7 @@ oomlout_ai_roboclick_5:
   retries_until_complete: 0
 oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
 oomp_key: oomp_electronic_capacitor_1206_1_micro_farad
+package_name_manufacturer: 1206 (3216 metric, H thickness code)
 part_id: C1
 part_number_jlcpcb: C1848
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
@@ -775,7 +909,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -793,7 +927,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/capacitor/1206/README.md
   oomp_id: electronic_capacitor_1206_1_micro_farad
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_capacitor_1206_1_micro_farad
@@ -803,9 +943,12 @@ part_page:
     value: '1206'
   - title: Nominal size
     value: 3.2 × 1.6 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_1206_1_micro_farad
   summary: Capacitor 1 uF 1206 is an OOMP electronic capacitor definition. It uses
-    the 1206 package or form factor. Its nominal drawing size is 3.2 × 1.6 mm.
+    the 1206 package or form factor. Its nominal drawing size is 3.2 × 1.6 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -815,8 +958,24 @@ part_page:
     value: '1206'
   - level: 4
     value: 1_micro_farad
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2200-CL31B105KBHNNNE/C1848
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Samsung CL31B105KBHNNNE (C1848): 1 uF, 50 V,
+  X7R, +-10% in 1206; reconfirmed live 2026-10-01 (stock 517,314).'
+- The Samsung ordering decode covers the exact suffix (31 = 1206, H = 1.60 mm thickness),
+  and the X7R Product Lineup table (page 28) lists CL31B105KBHNNN.
+- Non-polarized two-terminal chip; the standard built-in 1206 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -1,8 +1,20 @@
 # Electronic / Resistor / 1206
 
 [Up one level](../README.md)
-This category contains 96 parts in total.
+This category contains 125 parts in total.
 
+## Categories
+
+- [1 Ohm](1_ohm/README.md)
+- [1000 Ohm](1000_ohm/README.md)
+- [10000 Ohm](10000_ohm/README.md)
+- [11 Ohm](11_ohm/README.md)
+- [1300 Ohm](1300_ohm/README.md)
+- [270 Ohm](270_ohm/README.md)
+- [470 Ohm](470_ohm/README.md)
+- [56000 Ohm](56000_ohm/README.md)
+- [680 Ohm](680_ohm/README.md)
+- [820000 Ohm](820000_ohm/README.md)
 
 ## Parts
 
@@ -18,18 +30,27 @@ This category contains 96 parts in total.
 - [Resistor 10000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_10000_ohm) — `electronic_resistor_1206_10000_ohm`
 - [Resistor 100000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_100000_ohm) — `electronic_resistor_1206_100000_ohm`
 - [Resistor 102000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_102000_ohm) — `electronic_resistor_1206_102000_ohm`
+- [Resistor 11 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_11_ohm) — `electronic_resistor_1206_11_ohm`
+- [Resistor 110 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_110_ohm) — `electronic_resistor_1206_110_ohm`
+- [Resistor 11000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_11000_ohm) — `electronic_resistor_1206_11000_ohm`
 - [Resistor 12 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_12_ohm) — `electronic_resistor_1206_12_ohm`
 - [Resistor 120 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_120_ohm) — `electronic_resistor_1206_120_ohm`
 - [Resistor 1200 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1200_ohm) — `electronic_resistor_1206_1200_ohm`
 - [Resistor 12000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_12000_ohm) — `electronic_resistor_1206_12000_ohm`
 - [Resistor 120000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_120000_ohm) — `electronic_resistor_1206_120000_ohm`
+- [Resistor 1300 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1300_ohm) — `electronic_resistor_1206_1300_ohm`
 - [Resistor 133000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_133000_ohm) — `electronic_resistor_1206_133000_ohm`
+- [Resistor 140 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_140_ohm) — `electronic_resistor_1206_140_ohm`
+- [Resistor 1400 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1400_ohm) — `electronic_resistor_1206_1400_ohm`
 - [Resistor 15 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_15_ohm) — `electronic_resistor_1206_15_ohm`
 - [Resistor 150 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_150_ohm) — `electronic_resistor_1206_150_ohm`
 - [Resistor 1500 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1500_ohm) — `electronic_resistor_1206_1500_ohm`
 - [Resistor 15000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_15000_ohm) — `electronic_resistor_1206_15000_ohm`
 - [Resistor 150000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_150000_ohm) — `electronic_resistor_1206_150000_ohm`
+- [Resistor 160 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_160_ohm) — `electronic_resistor_1206_160_ohm`
 - [Resistor 1600 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1600_ohm) — `electronic_resistor_1206_1600_ohm`
+- [Resistor 16000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_16000_ohm) — `electronic_resistor_1206_16000_ohm`
+- [Resistor 160000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_160000_ohm) — `electronic_resistor_1206_160000_ohm`
 - [Resistor 18 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_18_ohm) — `electronic_resistor_1206_18_ohm`
 - [Resistor 180 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_180_ohm) — `electronic_resistor_1206_180_ohm`
 - [Resistor 1800 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_1800_ohm) — `electronic_resistor_1206_1800_ohm`
@@ -44,18 +65,21 @@ This category contains 96 parts in total.
 - [Resistor 2000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2000_ohm) — `electronic_resistor_1206_2000_ohm`
 - [Resistor 20000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_20000_ohm) — `electronic_resistor_1206_20000_ohm`
 - [Resistor 200000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_200000_ohm) — `electronic_resistor_1206_200000_ohm`
+- [Resistor 21500 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_21500_ohm) — `electronic_resistor_1206_21500_ohm`
 - [Resistor 22 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_22_ohm) — `electronic_resistor_1206_22_ohm`
 - [Resistor 220 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_220_ohm) — `electronic_resistor_1206_220_ohm`
 - [Resistor 2200 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2200_ohm) — `electronic_resistor_1206_2200_ohm`
 - [Resistor 22000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_22000_ohm) — `electronic_resistor_1206_22000_ohm`
 - [Resistor 220000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_220000_ohm) — `electronic_resistor_1206_220000_ohm`
 - [Resistor 2400 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2400_ohm) — `electronic_resistor_1206_2400_ohm`
+- [Resistor 24000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_24000_ohm) — `electronic_resistor_1206_24000_ohm`
 - [Resistor 27 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_27_ohm) — `electronic_resistor_1206_27_ohm`
 - [Resistor 270 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_270_ohm) — `electronic_resistor_1206_270_ohm`
 - [Resistor 2700 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_2700_ohm) — `electronic_resistor_1206_2700_ohm`
 - [Resistor 27000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_27000_ohm) — `electronic_resistor_1206_27000_ohm`
 - [Resistor 270000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_270000_ohm) — `electronic_resistor_1206_270000_ohm`
 - [Resistor 3.3e+06 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_3300000_ohm) — `electronic_resistor_1206_3300000_ohm`
+- [Resistor 3.9 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_3_9_ohm) — `electronic_resistor_1206_3_9_ohm`
 - [Resistor 3.9e+06 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_3900000_ohm) — `electronic_resistor_1206_3900000_ohm`
 - [Resistor 300 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_300_ohm) — `electronic_resistor_1206_300_ohm`
 - [Resistor 33 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_33_ohm) — `electronic_resistor_1206_33_ohm`
@@ -63,17 +87,20 @@ This category contains 96 parts in total.
 - [Resistor 3300 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_3300_ohm) — `electronic_resistor_1206_3300_ohm`
 - [Resistor 33000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_33000_ohm) — `electronic_resistor_1206_33000_ohm`
 - [Resistor 330000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_330000_ohm) — `electronic_resistor_1206_330000_ohm`
+- [Resistor 3600 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_3600_ohm) — `electronic_resistor_1206_3600_ohm`
 - [Resistor 39 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_39_ohm) — `electronic_resistor_1206_39_ohm`
 - [Resistor 390 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_390_ohm) — `electronic_resistor_1206_390_ohm`
 - [Resistor 3900 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_3900_ohm) — `electronic_resistor_1206_3900_ohm`
 - [Resistor 39000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_39000_ohm) — `electronic_resistor_1206_39000_ohm`
 - [Resistor 390000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_390000_ohm) — `electronic_resistor_1206_390000_ohm`
 - [Resistor 4.7e+06 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_4700000_ohm) — `electronic_resistor_1206_4700000_ohm`
+- [Resistor 43 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_43_ohm) — `electronic_resistor_1206_43_ohm`
 - [Resistor 47 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_47_ohm) — `electronic_resistor_1206_47_ohm`
 - [Resistor 470 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_470_ohm) — `electronic_resistor_1206_470_ohm`
 - [Resistor 4700 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_4700_ohm) — `electronic_resistor_1206_4700_ohm`
 - [Resistor 47000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_47000_ohm) — `electronic_resistor_1206_47000_ohm`
 - [Resistor 470000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_470000_ohm) — `electronic_resistor_1206_470000_ohm`
+- [Resistor 5.6 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_5_6_ohm) — `electronic_resistor_1206_5_6_ohm`
 - [Resistor 5.6e+06 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_5600000_ohm) — `electronic_resistor_1206_5600000_ohm`
 - [Resistor 510 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_510_ohm) — `electronic_resistor_1206_510_ohm`
 - [Resistor 5100 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_5100_ohm) — `electronic_resistor_1206_5100_ohm`
@@ -84,6 +111,7 @@ This category contains 96 parts in total.
 - [Resistor 5600 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_5600_ohm) — `electronic_resistor_1206_5600_ohm`
 - [Resistor 56000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_56000_ohm) — `electronic_resistor_1206_56000_ohm`
 - [Resistor 560000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_560000_ohm) — `electronic_resistor_1206_560000_ohm`
+- [Resistor 6.8 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_6_8_ohm) — `electronic_resistor_1206_6_8_ohm`
 - [Resistor 6.8e+06 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_6800000_ohm) — `electronic_resistor_1206_6800000_ohm`
 - [Resistor 68 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_68_ohm) — `electronic_resistor_1206_68_ohm`
 - [Resistor 680 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_680_ohm) — `electronic_resistor_1206_680_ohm`
@@ -96,12 +124,15 @@ This category contains 96 parts in total.
 - [Resistor 7500 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_7500_ohm) — `electronic_resistor_1206_7500_ohm`
 - [Resistor 75000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_75000_ohm) — `electronic_resistor_1206_75000_ohm`
 - [Resistor 750000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_750000_ohm) — `electronic_resistor_1206_750000_ohm`
+- [Resistor 8.2 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_8_2_ohm) — `electronic_resistor_1206_8_2_ohm`
 - [Resistor 8.2e+06 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_8200000_ohm) — `electronic_resistor_1206_8200000_ohm`
 - [Resistor 82 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_82_ohm) — `electronic_resistor_1206_82_ohm`
 - [Resistor 820 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_820_ohm) — `electronic_resistor_1206_820_ohm`
 - [Resistor 8200 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_8200_ohm) — `electronic_resistor_1206_8200_ohm`
 - [Resistor 82000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_82000_ohm) — `electronic_resistor_1206_82000_ohm`
 - [Resistor 820000 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_820000_ohm) — `electronic_resistor_1206_820000_ohm`
+- [Resistor 91 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_91_ohm) — `electronic_resistor_1206_91_ohm`
+- [Resistor 910 Ohm 1206](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_910_ohm) — `electronic_resistor_1206_910_ohm`
 
 ---
 

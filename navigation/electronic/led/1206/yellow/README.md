@@ -1,8 +1,11 @@
 # Electronic / LED / 1206 / Yellow
 
 [Up one level](../README.md)
-This category contains 3 parts in total.
+This category contains 4 parts in total.
 
+## Categories
+
+- [Clear](clear/README.md)
 
 ## Parts
 

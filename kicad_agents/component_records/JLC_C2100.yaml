@@ -34,6 +34,9 @@ research:
     No datasheet PDF imported at intake (solo worker has no download); download is
     an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710260791611392-C2100.pdf).'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C2100.json.
+  - 'Family batch 2026-10-04: downloaded the own specification (1SS404, signed JLC
+    OSS link) and verified the SOD-323 (SC-76) package outline and polarity; electrical
+    values transcribed from the intake-observed listing (verified_on 2026-09-28).'
 jlc_selection:
   verified_on: '2026-09-28'
   official_url: https://jlcpcb.com/partdetail/2457-1SS404/C2100
@@ -56,7 +59,12 @@ jlc_selection:
     Reverse Leakage Current (Ir): 50uA@20V
     Voltage - DC Reverse(Vr): 20V
     Voltage - Forward(Vf@If): 450mV@300mA
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Jiangsu Changjing Electronics Technology Co., Ltd. 1SS404 specification
+    ratings_package:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: sod_323 diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'

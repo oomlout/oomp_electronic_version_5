@@ -1,8 +1,12 @@
 # Electronic / Connector / Terminal Block / 3 5 Mm Pitch / Through Hole / 3 Pin
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 4 parts in total.
 
+## Categories
+
+- [Blue](blue/README.md)
+- [Green](green/README.md)
 
 ## Parts
 

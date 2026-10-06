@@ -34,8 +34,18 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing MMBT5551 row or C2145 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C2145, Jiangsu Changjing Electronics
+    Technology Co., Ltd., MMBT5551(RANGE:200-300), Basic, In Stock 2,259,646). New
+    family member (SOT-23 NPN BJT): browser-downloaded the Changjing MMBT5551 specification
+    (2 pages, March 2013) from the JLC page and imported it as this part and the family
+    anchor (sha256 bcafa615...). Maximum ratings page 1: VCBO 180 V, VCEO 160 V, VEBO
+    6 V, IC 600 mA, PC 300 mW, Tstg -55 to +150 C; electrical characteristics page
+    1: ICBO 50 nA, hFE 100-300 at IC = 10 mA (rank H = 200-300 matches the MPN RANGE
+    suffix), VCE(sat) 0.2 V max, fT 100-300 MHz, Cob 6 pF, marking G1. Pinout page
+    1: SOT-23 1 = BASE, 2 = EMITTER, 3 = COLLECTOR, matching Transistor_BJT:Q_NPN_BEC
+    symbol pins and Package_TO_SOT_SMD:SOT-23 pads.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/2502-MMBT5551_RANGE_200_300/C2145
   tier: basic
   tier_label_observed: Basic
@@ -59,7 +69,27 @@ jlc_selection:
     Transition frequency(fT): 300MHz
     Vce Saturation(VCE(sat)): 200mV
     type: NPN
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Changjing MMBT5551 SOT-23 specification, March 2013 (C2145 provenance,
+      family anchor)
+    maximum_ratings:
+    - 1
+    electrical_characteristics:
+    - 1
+    pinout:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Transistor MMBT5551(RANGE:200-300)
+    SOT 23 with the SOT-23 package drawing labelled emitter (pin 2) left, base (pin
+    1) left-lower, collector (pin 3) right, matching the datasheet pinout page 1 (1
+    = BASE, 2 = EMITTER, 3 = COLLECTOR). working_svg_dimensioned.png: SOT-23 (JEDEC
+    TO-236 Var AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry (datasheet
+    carries ratings and pinout but no dimension table; recorded in dimension_reference).
+    data/kicad manifest complete with Transistor_BJT:Q_NPN_BEC symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints. README.md: MMBT5551(RANGE:200-300)
+    part number, LCSC/JLC C2145 links, 3-pin table (base/emitter/collector), datasheet
+    link resolving to data/datasheet.pdf (the Changjing MMBT5551 specification, family
+    anchor). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+    text rather than in a KiCad GUI.'

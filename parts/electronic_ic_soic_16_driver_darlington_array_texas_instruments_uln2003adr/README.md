@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_16_driver_darlington_array_texas_instruments_uln2003adr`
 
-IC ULN2003ADR SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 package or form factor. Its nominal drawing size is 9.9 &#x00D7; 3.9 mm.
+IC ULN2003ADR SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 package or form factor. Its nominal drawing size is 9.9 &#x00D7; 3.9 mm. The definition includes 16 documented pins.
 
 ![IC ULN2003ADR SOIC 16 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ IC ULN2003ADR SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 p
 | Type | Ic |
 | Package / style | soic 16 |
 | Nominal size | 9.9 &#x00D7; 3.9 mm |
+| Documented pins | 16 |
 
 
 ## Classification
@@ -34,6 +35,7 @@ IC ULN2003ADR SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 p
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.75 mm |
 | Length | 9.9 mm |
 | Width | 3.9 mm |
 
@@ -51,6 +53,33 @@ IC ULN2003ADR SOIC 16 is an OOMP electronic ic definition. It uses the soic 16 p
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | I1 | input |
+| 2 | I2 | input |
+| 3 | I3 | input |
+| 4 | I4 | input |
+| 5 | I5 | input |
+| 6 | I6 | input |
+| 7 | I7 | input |
+| 8 | GND | power_in |
+| 9 | COM | passive |
+| 10 | O7 | output |
+| 11 | O6 | output |
+| 12 | O5 | output |
+| 13 | O4 | output |
+| 14 | O3 | output |
+| 15 | O2 | output |
+| 16 | O1 | output |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

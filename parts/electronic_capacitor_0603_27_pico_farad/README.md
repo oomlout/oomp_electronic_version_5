@@ -2,7 +2,7 @@
 
 `electronic_capacitor_0603_27_pico_farad`
 
-Capacitor 27 pF 0603 is an OOMP electronic capacitor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm.
+Capacitor 27 pF 0603 is an OOMP electronic capacitor definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
 ![Capacitor 27 pF 0603 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Capacitor 27 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 | Type | Capacitor |
 | Package / style | 0603 |
 | Nominal size | 1.6 &#x00D7; 0.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Capacitor 27 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.8 mm |
 | Length | 1.6 mm |
 | Width | 0.8 mm |
 
@@ -41,12 +43,26 @@ Capacitor 27 pF 0603 is an OOMP electronic capacitor definition. It uses the 060
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `CC0603JRNPO9BN270` |
-| LCSC | [`C107045`](https://www.lcsc.com/product-detail/C107045.html) |
+| Manufacturer part number | `CL10C270JB8NNNC` |
+| LCSC | [`C1656`](https://www.lcsc.com/product-detail/C1656.html) |
+| JLCPCB | [`C1656`](https://jlcpcb.com/partdetail/2008-CL10C270JB8NNNC/C1656) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

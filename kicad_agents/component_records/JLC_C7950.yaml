@@ -23,8 +23,18 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, onsemi, LM358DR2G, C7950, SOIC-8, two channels,
     3V~32V single supply and the listed parameters on 2026-09-24.
+  - 'Full pass 2026-10-02: live page reconfirmed (C7950, onsemi, LM358DR2G, Basic,
+    In Stock 799,680); the queue snapshot row was degraded (empty MPN/maker) and has
+    been repaired from the live page + intake record identity. No new download: the
+    datasheet was already captured at intake (sha256 e66a9193... matches the provenance
+    file). Dual general-purpose op-amp: 3-32 V single / +-16 V dual supply, 700 uA
+    quiescent, 40 mA output, 70 dB CMRR, 7 mV Vos, 0-70 C (intake ratings). Pinout
+    is the standard dual op-amp arrangement (1 = OUT1, 2 = IN1-, 3 = IN1+, 4 = V-,
+    5 = IN2+, 6 = IN2-, 7 = OUT2, 8 = V+), matching Amplifier_Operational:LM358 pad-for-pad.
+    No HandSoldering master for SOIC-8 narrow - hand_solder empty per the 2-asset
+    rule.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/onsemi-LM358DR2G/C7950
   tier: basic
   tier_label_observed: Basic
@@ -47,7 +57,22 @@ jlc_selection:
     Features: Built-in compensation、ESD protection
     Ib - Input Bias Current: 45nA
     Dual Supply: -16V~16V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: onsemi LM358 datasheet (C7950 provenance, captured at intake)
+    pin_configuration:
+    - 2
+    features:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC LM358DR2G SOIC 8 with
+    OUT1/IN1-/IN1+/V- down the left side and V+/OUT2/IN2-/IN2+ up the right side,
+    matching the standard dual op-amp pinout. working_svg_dimensioned.png: SOIC-8
+    outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm master geometry. data/kicad
+    manifest complete (2-asset rule, no HandSoldering master for SOIC-8 narrow) with
+    Amplifier_Operational:LM358 symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm machine
+    footprint. README.md: LM358DR2G part number, LCSC/JLC C7950 links, 8-pin table,
+    datasheet link resolving to data/datasheet.pdf (the onsemi datasheet captured
+    at intake). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus
+    s-expression text rather than in a KiCad GUI.'

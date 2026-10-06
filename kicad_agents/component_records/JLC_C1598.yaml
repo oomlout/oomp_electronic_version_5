@@ -34,6 +34,11 @@ research:
     No datasheet PDF imported at intake (capture has no datasheet_url and solo worker
     has no browser); download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987910084739072-C1598.pdf).'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C1598.json.
+  - 'Family batch 2026-10-03: identity, tier and ratings are the intake-time live
+    observations (verified_on 2026-09-28); no fresh page pass was run for this member.
+    The shared FH (Guangdong Fenghua Advanced Tech) datasheet (oomp_datasheet_common_with
+    = electronic_capacitor_0402_100_pico_farad) covers the exact suffix - 181 = 180
+    pF; package dimensions: 0603 L 1.60+-0.10, W 0.80+-0.10, T 0.80+-0.10 mm.'
 jlc_selection:
   verified_on: '2026-09-28'
   official_url: https://jlcpcb.com/partdetail/1950-0603B181K500NT/C1598
@@ -54,7 +59,17 @@ jlc_selection:
     Temperature Coefficient: X7R
     Tolerance: ±10%
     Voltage Rating: 50V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared family copy)
+    how_to_order:
+    - 4
+    dimensions:
+    - 5
+    capacitance_voltage:
+    - 10
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-03: layout identical to completed
+    exemplar renders of the same 0603 resistor template (Device:R_Small, Capacitor_SMD:C_0603_1608Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'

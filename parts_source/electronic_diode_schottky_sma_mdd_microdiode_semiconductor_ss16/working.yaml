@@ -1,8 +1,18 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757911609207734272-C2481.pdf
+dimension_reference:
+  document: MDD SS12-SS1200 SMA specification Rev 2025A5, mechanical data page 3 (C2481
+    provenance)
+  notes: JEDEC DO-214AC/SMA molded body 4.50 x 2.80 x 2.30 mm, 5.30 mm overall including
+    terminal ends; color band denotes the cathode. Pad geometry follows the KiCad
+    Diode_SMD:D_SMA master.
+  pages:
+  - 3
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 2.3
+  length: 4.5
+  width: 2.8
 distributors:
 - key: lcsc
   part_number: C2481
@@ -12,6 +22,21 @@ distributors:
   part_number: C2481
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS16/C2481
+electrical:
+  forward_voltage_at_test_current: 0.70 V max at 1.0 A (vendor table column; the live
+    JLC description cites 700mV@1A)
+  maximum_dc_reverse_voltage: 60 V (VRRM)
+  maximum_rectified_current: 1.0 A average forward rectified
+  non_repetitive_peak_forward_surge_current: 25 A (8.3 ms half sine, JEDEC)
+  operating_temperature: -55 to +150 C
+  polarized: true
+  reverse_leakage_current: 0.3 mA max at 25 C at rated voltage (10 mA at 100 C); live
+    JLC lists 300uA@60V
+  terminal_capacitance: 110 pF typical (1 MHz)
+  thermal_resistance: 90 C/W junction to ambient
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss16/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact MDD (Microdiode Semiconductor) device row: the do_41/do_201ad
     through-hole rectifier and fast_recovery tokens were introduced at C2456-C2469,
@@ -23,11 +48,17 @@ jlcpcb_selection:
     the diode family lock. Rating comparison from the staged capture: Diodes/Schottky
     Diodes, package SMA(DO-214AC), stock 366590 recorded as observed. Edits made under
     the diode family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: MDD SS12-SS1200 SMA schottky specification, Rev 2025A5 (shared family
+      copy, C2480 provenance)
+    mechanical:
+    - 3
+    ratings:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS16/C2481
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: SMT Assembly
@@ -53,11 +84,14 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: SMA diode template identical
+    to the completed C2480 exemplar renders (D_SMA machine + hand assets) inspected
+    post-build; batch members differ only in value text.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_SMD:D_SMA_Handsoldering
+  machine_solder: Diode_SMD:D_SMA
+  symbol: Device:D_Schottky
 lcsc_search: SS16
 manufacturer: MDD(Microdiode Semiconductor)
 manufacturers:
@@ -66,6 +100,8 @@ manufacturers:
 name_proper: Diode SS16 SMA
 name_readable: Diode SS16 SMA
 name_short: Diode SS16 SMA
+oomp_datasheet_common_with: electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14
+package_name_manufacturer: SMA (DO-214AC)
 part_id: D1
 part_number_jlcpcb: C2481
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS16/C2481
@@ -77,7 +113,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: MDD(Microdiode Semiconductor)
   part_number: SS16
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: signal
+  pin_2:
+    name: A
+    number: '2'
+    type: signal
 product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-SS16/C2481
+research_notes:
+- 'The official JLC page lists Basic MDD SS16 (C2481): 60 V 1.0 A schottky rectifier
+  in SMA (DO-214AC); identity and ratings observed live at intake 2026-09-29.'
+- 'Family batch 2026-10-04 over the shared MDD SS12-SS1200 datasheet (oomp_datasheet_common_with
+  = electronic_diode_schottky_sma_mdd_microdiode_semiconductor_ss14): the ratings
+  table column block for SS16 gives VF 0.70 V max at 1.0 A and the mechanical page
+  gives the DO-214AC outline. Pin 1 = cathode (banded end), pin 2 = anode.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

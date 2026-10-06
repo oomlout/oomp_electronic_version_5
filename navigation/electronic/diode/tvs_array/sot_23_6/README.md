@@ -1,11 +1,12 @@
 # Electronic / Diode / Tvs Array / Sot 23 6
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 2 parts in total.
 
 ## Categories
 
 - [Protek](protek/README.md)
+- [Stmicroelectronics](stmicroelectronics/README.md)
 
 
 ---

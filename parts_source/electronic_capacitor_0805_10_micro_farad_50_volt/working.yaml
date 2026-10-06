@@ -1,6 +1,16 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588884955174330368-C440198.pdf
+dimension_reference:
+  document: Murata Electronics Murata GRM21 series MLCC specification (own copy, C440198
+    provenance)
+  notes: 0805_2012Metric outline per the specification drawing; ordering code GRM21BR61H106KE43L
+    decodes the 10 uF 50 V X5R +-10% rating.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.25
   length: 2.0
   width: 1.25
 distributors:
@@ -13,20 +23,30 @@ distributors:
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/439567-GRM21BR61H106KE43L/C440198
 electrical:
-  capacitance: 10 uF
+  capacitance: 10 uF (106)
   dielectric: X5R
+  polarized: false
   rated_voltage: 50 V
-  tolerance: +/-10%
+  temperature_characteristic: +-15% over the operating range (X5R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_10_micro_farad_50_volt/datasheet.pdf
 generic_oomp_id: electronic_capacitor_0805_10_micro_farad
 jlcpcb_selection:
   compatibility_notes: Murata C440198 is a 0805 10 uF 50 V X5R +/-10% MLCC. The generic
     part prefers 25 V Samsung C15850; this higher-rated choice is a separate variant.
     DC-bias performance needs full project-specific review.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: Murata Electronics Murata GRM21 series specification (own copy)
+    outline:
+    - 2
+    - 3
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/439567-GRM21BR61H106KE43L/C440198
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 10 uF
@@ -37,9 +57,12 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: MLCC template identical to the
+    completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected post-build;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 10uF
@@ -50,6 +73,7 @@ manufacturers:
 name_proper: Capacitor 10 uF 50 V 0805
 name_readable: Capacitor 10 uF 50 V 0805
 name_short: Capacitor 10 uF 50 V 0805
+package_name_manufacturer: 0805_2012Metric
 part_id: C1
 part_number_jlcpcb: C440198
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/439567-GRM21BR61H106KE43L/C440198
@@ -61,11 +85,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Murata Electronics
   part_number: GRM21BR61H106KE43L
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/439567-GRM21BR61H106KE43L/C440198
 research_notes:
-- Rated 50 V purchasing variant. The generic 0805 10 uF choice retains its 25 V Samsung
-  C15850 preference.
-- Effective capacitance under DC bias needs project-specific full review.
+- 'The official JLC page lists Murata Electronics GRM21BR61H106KE43L (C440198): 10
+  uF 50 V X5R +-10%; identity and ratings observed live at intake 2026-09-24.'
+- 'Straggler close-out 2026-10-04: downloaded the Murata Electronics specification
+  into this part via the signed JLC OSS link (the YAGEO/Murata ordering-code systems
+  are per-size series, so this part anchors its own sub-family).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

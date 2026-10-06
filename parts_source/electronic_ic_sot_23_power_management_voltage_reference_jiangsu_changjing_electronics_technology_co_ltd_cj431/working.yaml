@@ -1,8 +1,17 @@
 category: power_management
 category_name: Power management
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579708596516814848-C3113.pdf
+dimension_reference:
+  document: Changjing CJ431/CD431 specification, M.Oct 2017 (C3113)
+  notes: 'SOT-23 (TO-236AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry;
+    pin assignment page 1: 1 = REFERENCE, 2 = CATHODE, 3 = ANODE.'
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 1.0
   length: 2.9
-  width: 2.6
+  width: 1.3
 distributors:
 - key: lcsc
   part_number: C3113
@@ -12,17 +21,42 @@ distributors:
   part_number: C3113
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/3500-CJ431/C3113
+electrical:
+  adjustable_output_range: VKA up to 36 V
+  cathode_current_absolute: -100 to +150 mA
+  cathode_current_range: 1-100 mA (regulation from 1.0 mA max)
+  device_type: adjustable shunt voltage reference (TL431 type)
+  dynamic_impedance: 0.15/0.5 Ohm typ/max
+  operating_temperature: -25 to +85 C
+  polarized: true
+  power_dissipation: 300 mW for SOT-23 (RthJA 417 C/W)
+  reference_input_current: 0.05-10 mA (4 uA max at VKA = 10 mA)
+  reference_voltage: 2.475-2.525 V (typ 2.5 V); +-0.5 % rank = 2.487-2.513 V
+  temperature_stability: ~50 ppm/C equivalent full-range factor
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_sot_23_power_management_voltage_reference_jiangsu_changjing_electronics_technology_co_ltd_cj431/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact active device with no prior OOMP entry: added one explicit
     IC family row electronic_ic_sot_23_power_management_voltage_reference_jiangsu_changjing_electronics_technology_co_ltd_cj431
     using the established power_management category with a new voltage_reference function
     token. Adjustable shunt reference (TL431-class) with 2.5-36 V range, +/-0.5 percent
     tolerance, 50 ppm/deg C; three-terminal SOT-23.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    absolute_maximum:
+    - 2
+    document: Changjing CJ431/CD431 specification, M.Oct 2017 (C3113 provenance, family
+      anchor)
+    electrical_characteristics:
+    - 2
+    ordering:
+    - 2
+    pin_assignment:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/3500-CJ431/C3113
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Features: Temperature compensation control
@@ -37,12 +71,23 @@ jlcpcb_selection:
   stock_observed: 419291
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC CJ431 SOT 23 with REF
+    (pin 1) left, K (pin 2) right and A (pin 3) right-lower, matching the datasheet
+    pin assignment page 1 (1 = REFERENCE, 2 = CATHODE, 3 = ANODE). working_svg_dimensioned.png:
+    SOT-23 (TO-236AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry. data/kicad
+    manifest complete with Reference_Voltage:TL431LP symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints. README.md: CJ431 part number,
+    LCSC/JLC C3113 links, 3-pin table (REF/K/A with the symbol-mirror note), datasheet
+    link resolving to data/datasheet.pdf (the Changjing CJ431/CD431 specification,
+    family anchor). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG
+    plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: Package_TO_SOT_SMD:SOT-23
+  allow_project_fallback: false
+  hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
   machine_solder: Package_TO_SOT_SMD:SOT-23
-  symbol: ''
+  symbol: Reference_Voltage:TL431LP
 lcsc_search: CJ431
 manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
 manufacturers:
@@ -51,6 +96,7 @@ manufacturers:
 name_proper: IC CJ431 SOT 23
 name_readable: IC CJ431 SOT 23
 name_short: IC CJ431 SOT 23
+package_name_manufacturer: SOT-23 (TO-236AB)
 part_id: U1
 part_number_jlcpcb: C3113
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/3500-CJ431/C3113
@@ -62,7 +108,30 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
   part_number: CJ431
+pins:
+  pin_1:
+    name: REF
+    number: '1'
+    type: input
+  pin_2:
+    name: K
+    number: '2'
+    type: power_out
+  pin_3:
+    name: A
+    number: '3'
+    type: power_in
 product_url: https://jlcpcb.com/partdetail/3500-CJ431/C3113
+research_notes:
+- 'The official JLC page lists Basic Jiangsu Changjing CJ431 (C3113): adjustable shunt
+  reference 2.5-36 V, +-0.5 %, 100 mA in SOT-23; reconfirmed live 2026-10-02 (stock
+  398,030).'
+- Browser-downloaded the Changjing CJ431/CD431 specification (9 pages, M.Oct 2017)
+  into this part; it anchors the CJ431 SOT-23 family.
+- 'SYMBOL MIRROR: the datasheet pin assignment is 1 = REFERENCE, 2 = CATHODE, 3 =
+  ANODE, while the KiCad Reference_Voltage:TL431LP symbol numbers 1 = REF / 2 = A
+  / 3 = K - pins 2 and 3 swapped; designs must compensate (custom symbol or pin swap)
+  before assembly.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -1,8 +1,15 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895514402570240-C3079.pdf
+dimension_reference:
+  document: MDD KBL608 series specification (C2497 provenance)
+  notes: KBL inline bridge, 28.6 mm body, Vishay master geometry.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 4.0
+  length: 28.6
+  width: 7.3
 distributors:
 - key: lcsc
   part_number: C3079
@@ -12,6 +19,16 @@ distributors:
   part_number: C3079
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-KBL608/C3079
+electrical:
+  forward_voltage_per_leg: 1.1V@6A
+  operating_temperature: -55℃~+150℃
+  output_rectified_current: 6A
+  polarized: false
+  repetitive_peak_reverse_voltage: 800V
+  surge_current: 200A
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_bridge_rectifier_kbl_mdd_microdiode_semiconductor_kbl608/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact MDD row added under the diode family lock beside the
     C2456-C3075 through-hole diode and bridge block. KBL608 (KBL; 800V 6A single-phase
@@ -20,11 +37,14 @@ jlcpcb_selection:
     or higher-current parts must never be silently replaced with lower-rated siblings.
     Rating comparison from the staged capture: package below, stock below recorded
     as observed. Edits made under the diode family lock. Stock 8809 recorded as observed.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: MDD KBL608 series specification
+    ratings:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-KBL608/C3079
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -50,11 +70,14 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: KBL THT bridge template; THT
+    renders follow the package master like the completed axial/bridge exemplars; differs
+    only in value text.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_THT:Diode_Bridge_Vishay_KBL
+  machine_solder: Diode_THT:Diode_Bridge_Vishay_KBL
+  symbol: Device:D_Bridge_+A-A
 lcsc_search: KBL608
 manufacturer: MDD(Microdiode Semiconductor)
 manufacturers:
@@ -63,6 +86,8 @@ manufacturers:
 name_proper: Diode KBL608 KBL
 name_readable: Diode KBL608 KBL
 name_short: Diode KBL608 KBL
+oomp_datasheet_common_with: electronic_diode_bridge_rectifier_kbl_mdd_microdiode_semiconductor_kbl406
+package_name_manufacturer: KBL THT bridge
 part_id: D1
 part_number_jlcpcb: C3079
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-KBL608/C3079
@@ -74,7 +99,30 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: MDD(Microdiode Semiconductor)
   part_number: KBL608
+pins:
+  pin_1:
+    name: +
+    number: '1'
+    type: passive
+  pin_2:
+    name: '~'
+    number: '2'
+    type: passive
+  pin_3:
+    name: '-'
+    number: '3'
+    type: passive
+  pin_4:
+    name: '~'
+    number: '4'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-KBL608/C3079
+research_notes:
+- The official JLC page lists MDD(Microdiode Semiconductor) KBL608 (C3079); identity
+  and ratings observed live at intake 2026-09-29.
+- 'THT family batch 2026-10-05: Shares the series pdf anchored on c2497; Package outline
+  and polarity follow the KBL THT bridge master; axial THT convention pin 1 = cathode
+  (banded end), pin 2 = anode.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

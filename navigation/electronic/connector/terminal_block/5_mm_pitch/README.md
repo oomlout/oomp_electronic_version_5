@@ -1,7 +1,7 @@
 # Electronic / Connector / Terminal Block / 5 Mm Pitch
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 36 parts in total.
 
 ## Categories
 

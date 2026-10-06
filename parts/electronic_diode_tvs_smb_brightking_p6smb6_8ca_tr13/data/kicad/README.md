@@ -1,12 +1,12 @@
 # KiCad assets: electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13
 
-
+- [Symbol](electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13.kicad_sym) — `Device:D_TVS`
+- [Machine Solder](machine_solder/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13.kicad_mod) — `Diode_SMD:D_SMB`
+- [Hand Solder](hand_solder/electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13.kicad_mod) — `Diode_SMD:D_SMB_Handsoldering`
 
 ## Review
 
-- Official symbol master unavailable: not selected
-- Official machine_solder footprint unavailable: not selected
-- Official hand_solder footprint unavailable: not selected
+All three assets are available.
 
 Silkscreen code: `318EW`. Source provenance: [manifest](manifest.yaml).
 

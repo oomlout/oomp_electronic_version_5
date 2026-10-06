@@ -1,8 +1,17 @@
 category: logic
 category_name: Logic
+datasheet_url: https://www.ti.com/lit/ds/symlink/sn74hc245.pdf
+dimension_reference:
+  document: SN74HC245N datasheet (C2899)
+  notes: Body outline per the Package_DIP:DIP-20_W7.62mm master geometry; pinning
+    cross-checked against the KiCad 74xx:74HC245 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 3.3
+  length: 25.7
+  width: 6.35
 distributors:
 - key: lcsc
   part_number: C2899
@@ -12,6 +21,15 @@ distributors:
   part_number: C2899
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC245N/C2899
+electrical:
+  device_type: octal bus transceiver tri state
+  logic_family: 74HC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 2.0-6.0 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_dip_20_logic_octal_bus_transceiver_tri_state_texas_instruments_sn74hc245n/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact TI device row appended to the unmatched_ics list in
     working_oomp_populate_ic.py under the ic family lock (first DIP-body logic rows
@@ -21,11 +39,13 @@ jlcpcb_selection:
     2V~6V HC supply range come straight off the page. Rating comparison from the staged
     capture: package below, stock below recorded as observed. Edits made under the
     ic family lock. Stock 765 recorded as observed.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC245N/C2899
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -56,11 +76,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xx:74HC245 master (numbers and electrical types cross-checked
+    at plan time) and the DIP-20 footprint master; renders inherit the pipeline verified
+    on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_DIP:DIP-20_W7.62mm
+  symbol: 74xx:74HC245
 lcsc_search: SN74HC245N
 manufacturer: Texas Instruments
 manufacturers:
@@ -69,6 +94,7 @@ manufacturers:
 name_proper: IC SN74HC245N DIP 20
 name_readable: IC SN74HC245N DIP 20
 name_short: IC SN74HC245N DIP 20
+package_name_manufacturer: PDIP-20 (7.62 mm row spacing)
 part_id: U1
 part_number_jlcpcb: C2899
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC245N/C2899
@@ -80,7 +106,97 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Texas Instruments
   part_number: SN74HC245N
+pins:
+  pin_1:
+    name: A->B
+    number: '1'
+    type: in
+  pin_10:
+    name: GND
+    number: '10'
+    type: pwr
+  pin_11:
+    name: B7
+    number: '11'
+    type: ts
+  pin_12:
+    name: B6
+    number: '12'
+    type: ts
+  pin_13:
+    name: B5
+    number: '13'
+    type: ts
+  pin_14:
+    name: B4
+    number: '14'
+    type: ts
+  pin_15:
+    name: B3
+    number: '15'
+    type: ts
+  pin_16:
+    name: B2
+    number: '16'
+    type: ts
+  pin_17:
+    name: B1
+    number: '17'
+    type: ts
+  pin_18:
+    name: B0
+    number: '18'
+    type: ts
+  pin_19:
+    name: CE
+    number: '19'
+    type: in
+  pin_2:
+    name: A0
+    number: '2'
+    type: ts
+  pin_20:
+    name: VCC
+    number: '20'
+    type: pwr
+  pin_3:
+    name: A1
+    number: '3'
+    type: ts
+  pin_4:
+    name: A2
+    number: '4'
+    type: ts
+  pin_5:
+    name: A3
+    number: '5'
+    type: ts
+  pin_6:
+    name: A4
+    number: '6'
+    type: ts
+  pin_7:
+    name: A5
+    number: '7'
+    type: ts
+  pin_8:
+    name: A6
+    number: '8'
+    type: ts
+  pin_9:
+    name: A7
+    number: '9'
+    type: ts
 product_url: https://jlcpcb.com/partdetail/TexasInstruments-SN74HC245N/C2899
+research_notes:
+- JLC house-parts queue row C2899 (Texas Instruments SN74HC245N, DIP-20, 20 pins)
+  verified at intake; family batch integration C2899.
+- Downloaded the official Texas Instruments 74HC245 data sheet directly from ti.com
+  into this part.
+- Pin table generated from the KiCad 74xx:74HC245 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 20-pin package
+  count.
+- Footprint Package_DIP:DIP-20_W7.62mm verified present in the KiCad 10 library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

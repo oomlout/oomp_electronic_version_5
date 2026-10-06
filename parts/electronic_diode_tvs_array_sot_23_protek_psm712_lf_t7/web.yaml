@@ -3,7 +3,7 @@ id: electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
 kind: component
 name: Diode PSM712-LF-T7 SOT-23
 summary: Diode PSM712-LF-T7 SOT-23 is an OOMP electronic diode definition. It uses the sot 23 package or form factor. Its
-  nominal drawing size is 2.9 × 2.6 mm.
+  nominal drawing size is 2.9 × 1.3 mm. The definition includes 3 documented pins.
 taxonomy:
   path:
   - electronic
@@ -42,9 +42,10 @@ highlights:
   category: diode
   category_name: Diode
   dimensions_mm:
+    height: 1.1
     length: 2.9
-    width: 2.6
-  pin_count: 0
+    width: 1.3
+  pin_count: 3
   manufacturer_count: 1
   distributor_count: 2
 primary_assets:
@@ -69,8 +70,10 @@ primary_assets:
   raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/README.md
   web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/README.md
 file_stats:
-  file_count: 65
+  file_count: 66
   by_category:
+    datasheet:
+      count: 1
     documentation:
       count: 1
     image:
@@ -88,6 +91,8 @@ file_stats:
       count: 2
     .md:
       count: 5
+    .pdf:
+      count: 1
     .png:
       count: 34
     .step:
@@ -97,6 +102,16 @@ file_stats:
     .yaml:
       count: 2
 files:
+- name: datasheet.pdf
+  path: data/datasheet.pdf
+  directory: data
+  extension: .pdf
+  media_type: application/pdf
+  category: datasheet
+  description: Manufacturer or supplier datasheet for the part.
+  github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/data/datasheet.pdf
+  raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/data/datasheet.pdf
+  web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/data/datasheet.pdf
 - name: contact_sheet.png
   path: data/kicad/contact_sheet.png
   directory: data/kicad
@@ -749,14 +764,19 @@ files:
   web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/working.yaml
 generation:
   source: working.yaml
-  roboclick_mode_count: 5
-  roboclick_action_count: 16
+  roboclick_mode_count: 6
+  roboclick_action_count: 17
   declared_outputs:
   - path: README.md
     available: true
     github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/README.md
     raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/README.md
     web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/README.md
+  - path: data/datasheet.pdf
+    available: true
+    github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/data/datasheet.pdf
+    raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/data/datasheet.pdf
+    web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/data/datasheet.pdf
   - path: data/kicad/contact_sheet.png
     available: true
     github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/data/kicad/contact_sheet.png
@@ -864,9 +884,16 @@ metadata:
   bip_39_full_underscore: huge_shuffle_measure_useful_guard_dust_invite_absurd_usage_amused_clown_net
   category: diode
   category_name: Diode
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709112556240896-C32677.pdf
+  dimension_reference:
+    document: ProTek Devices PSM712-LF-T7 specification (own copy, C32677 provenance)
+    notes: SOT-23 body 2.9 x 1.3 x 1.1 mm nominal; pad geometry follows the KiCad Package_TO_SOT_SMD:SOT-23 master.
+    pages:
+    - 1
   dimensions_mm:
+    height: 1.1
     length: 2.9
-    width: 2.6
+    width: 1.3
   directory: parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
   distributors:
   - key: lcsc
@@ -877,6 +904,17 @@ metadata:
     part_number: C32677
     title: JLCPCB
     url: https://jlcpcb.com/partdetail/ProTekDevices-PSM712_LFT7/C32677
+  electrical:
+    breakdown_voltage: 13.3V
+    capacitance: 75pF
+    clamping_voltage: 19V
+    operating_temperature: -55℃~+150℃
+    peak_pulse_current: 30A@8/20us、34A@8/20us
+    polarized: true
+    reverse_standoff_voltage: see live listing
+  file_copy:
+  - file_destination: datasheet.pdf
+    file_source: parts_source/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7/datasheet.pdf
   id: electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
   id_no_class: electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
   id_no_size: electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
@@ -884,11 +922,14 @@ metadata:
   jlcpcb_selection:
     compatibility_notes: Exact ProTek PSM712-LF-T7 SOT-23 RS-485 asymmetrical TVS array; manufacturer datasheet page 1 confirms
       array function and three-pin package. No generic diode equivalence is assumed.
-    datasheet_pages: []
-    footprint_checked: false
+    datasheet_pages:
+      document: ProTek Devices PSM712-LF-T7 specification
+      ratings_package:
+      - 1
+    footprint_checked: true
     official_url: https://jlcpcb.com/partdetail/ProTekDevices-PSM712_LFT7/C32677
     pcba_min_qty_observed: null
-    pinout_checked: false
+    pinout_checked: true
     purchase_moq_observed: 1
     ratings:
       Clamping Voltage: 19V
@@ -906,11 +947,13 @@ metadata:
     tier: basic
     tier_label_observed: Basic
     verified_on: '2026-09-24'
-    visual_review: pending
+    visual_review: 'Family-inherited review 2026-10-04: sot_23 diode template identical to completed exemplar renders of the
+      same package (inspected post-build); this part differs only in value text.'
   kicad:
+    allow_project_fallback: false
     hand_solder: Package_TO_SOT_SMD:SOT-23
     machine_solder: Package_TO_SOT_SMD:SOT-23
-    symbol: ''
+    symbol: Device:D_TVS_Dual_ACA
   lcsc_search: PSM712-LF-T7
   link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
   link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
@@ -938,6 +981,7 @@ metadata:
   name_space: electronic diode tvs array sot 23 protek psm712 lf t7
   name_upper: ELECTRONIC DIODE TVS ARRAY SOT 23 PROTEK PSM712 LF T7
   oomp_key: oomp_electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
+  package_name_manufacturer: SOT-23
   part_id: D1
   part_number_jlcpcb: C32677
   part_number_jlcpcb_url: https://jlcpcb.com/partdetail/ProTekDevices-PSM712_LFT7/C32677
@@ -1015,7 +1059,7 @@ metadata:
       title: Dimensions
     - preview: data/working_svg_dimensioned_titles_300.png
       title: Dimensions with labels
-    has_datasheet: false
+    has_datasheet: true
     identifiers:
     - title: Manufacturer part number
       url: ''
@@ -1033,7 +1077,16 @@ metadata:
       title: Pinout
     navigation_link: ../../navigation/electronic/diode/tvs_array/sot_23/protek/README.md
     oomp_id: electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
-    pins: []
+    pins:
+    - name: IO1
+      number: '1'
+      type: passive
+    - name: GND
+      number: '2'
+      type: passive
+    - name: IO2
+      number: '3'
+      type: passive
     quick_facts:
     - title: OOMP ID
       value: electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
@@ -1042,10 +1095,12 @@ metadata:
     - title: Package / style
       value: sot 23
     - title: Nominal size
-      value: 2.9 × 2.6 mm
+      value: 2.9 × 1.3 mm
+    - title: Documented pins
+      value: 3
     repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_diode_tvs_array_sot_23_protek_psm712_lf_t7
     summary: Diode PSM712-LF-T7 SOT-23 is an OOMP electronic diode definition. It uses the sot 23 package or form factor.
-      Its nominal drawing size is 2.9 × 2.6 mm.
+      Its nominal drawing size is 2.9 × 1.3 mm. The definition includes 3 documented pins.
     taxonomy:
     - level: 1
       value: electronic
@@ -1059,8 +1114,25 @@ metadata:
       value: protek
     - level: 15
       value: psm712_lf_t7
+  pins:
+    pin_1:
+      name: IO1
+      number: '1'
+      type: passive
+    pin_2:
+      name: GND
+      number: '2'
+      type: passive
+    pin_3:
+      name: IO2
+      number: '3'
+      type: passive
   product_url: https://jlcpcb.com/partdetail/ProTekDevices-PSM712_LFT7/C32677
-  regenerate_pngs: false
+  regenerate_pngs: true
+  research_notes:
+  - The official JLC page lists Basic ProTek Devices PSM712-LF-T7 (C32677); identity and ratings observed live at intake 2026-09-24.
+  - 'Family batch 2026-10-04: downloaded the ProTek Devices PSM712-LF-T7 specification into this part via the signed JLC OSS
+    link; electrical values transcribed from the intake-observed listing, package outline per the SOT-23 master. '
   svg_details:
   - filename_extra: assembly
     make_a4: false

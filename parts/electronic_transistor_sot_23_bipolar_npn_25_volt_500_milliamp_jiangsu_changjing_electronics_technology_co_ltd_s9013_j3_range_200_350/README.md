@@ -2,7 +2,7 @@
 
 `electronic_transistor_sot_23_bipolar_npn_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9013_j3_range_200_350`
 
-Transistor S9013 J3(RANGE:200-350) SOT 23 is an OOMP electronic transistor definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.6 mm.
+Transistor S9013 J3(RANGE:200-350) SOT 23 is an OOMP electronic transistor definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.3 mm. The definition includes 3 documented pins.
 
 ![Transistor S9013 J3(RANGE:200-350) SOT 23 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Transistor S9013 J3(RANGE:200-350) SOT 23 is an OOMP electronic transistor defin
 | OOMP ID | `electronic_transistor_sot_23_bipolar_npn_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9013_j3_range_200_350` |
 | Type | Transistor |
 | Package / style | sot 23 |
-| Nominal size | 2.9 &#x00D7; 2.6 mm |
+| Nominal size | 2.9 &#x00D7; 1.3 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -36,8 +37,9 @@ Transistor S9013 J3(RANGE:200-350) SOT 23 is an OOMP electronic transistor defin
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.1 mm |
 | Length | 2.9 mm |
-| Width | 2.6 mm |
+| Width | 1.3 mm |
 
 
 
@@ -53,6 +55,20 @@ Transistor S9013 J3(RANGE:200-350) SOT 23 is an OOMP electronic transistor defin
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | base | input |
+| 2 | emitter | passive |
+| 3 | collector | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

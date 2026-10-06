@@ -2,7 +2,7 @@
 
 `electronic_ic_sot_23_power_management_voltage_reference_jiangsu_changjing_electronics_technology_co_ltd_cj431`
 
-IC CJ431 SOT 23 is an OOMP electronic ic definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.6 mm.
+IC CJ431 SOT 23 is an OOMP electronic ic definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.3 mm. The definition includes 3 documented pins.
 
 ![IC CJ431 SOT 23 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ IC CJ431 SOT 23 is an OOMP electronic ic definition. It uses the sot 23 package 
 | OOMP ID | `electronic_ic_sot_23_power_management_voltage_reference_jiangsu_changjing_electronics_technology_co_ltd_cj431` |
 | Type | Ic |
 | Package / style | sot 23 |
-| Nominal size | 2.9 &#x00D7; 2.6 mm |
+| Nominal size | 2.9 &#x00D7; 1.3 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -34,8 +35,9 @@ IC CJ431 SOT 23 is an OOMP electronic ic definition. It uses the sot 23 package 
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.0 mm |
 | Length | 2.9 mm |
-| Width | 2.6 mm |
+| Width | 1.3 mm |
 
 
 
@@ -51,6 +53,20 @@ IC CJ431 SOT 23 is an OOMP electronic ic definition. It uses the sot 23 package 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | REF | input |
+| 2 | K | power_out |
+| 3 | A | power_in |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

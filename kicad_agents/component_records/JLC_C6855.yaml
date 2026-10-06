@@ -36,8 +36,17 @@ research:
   - Repository search found no existing SP485 or RS-485 transceiver IC row or C6855
     assignment; a new interface/rs_485_transceiver category pair was introduced following
     the existing taxonomy style.
+  - 'Full pass 2026-10-02: live page reconfirmed (C6855, MaxLinear, SP485EEN-L/TR,
+    Basic, In Stock 245,552). New family member (RS-485 SOIC-8): browser-downloaded
+    the MaxLinear SP481E/SP485E datasheet (9 pages, REV 1.0.5) from the JLC page and
+    imported it as this part and the family anchor (sha256 4a2a1886...). Half-duplex
+    RS-485/RS-422 transceiver: 5 V only (4.75-5.25 V), up to 10 Mbps, +-15 kV ESD,
+    900 uA supply (live description), -40 to +85 C. Pinout page 1 block diagram: 1
+    = RO, 2 = RE, 3 = DE, 4 = DI, 5 = GND, 6 = A, 7 = B, 8 = VCC, matching Interface_UART:LTC2850xS8
+    pad-for-pad (SP3485CN extends the same master). -L = lead free, /TR = tape and
+    reel.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/MaxLinear-SP485EEN_LTR/C6855
   tier: basic
   tier_label_observed: Basic
@@ -61,7 +70,25 @@ jlc_selection:
     Quiescent Supply Current: 900uA
     Type: Transceiver
     Voltage - Supply: 4.75V~5.25V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: MaxLinear SP481E/SP485E datasheet, REV 1.0.5 (C6855 provenance, family
+      anchor)
+    pinout:
+    - 1
+    features:
+    - 1
+    electrical_characteristics:
+    - 2
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC SP485EEN-L/TR SOIC 8
+    with RO/RE/DE/DI down the left side and VCC/B/A/GND up the right side, matching
+    the datasheet pinout page 1 (1 = RO, 2 = RE, 3 = DE, 4 = DI, 5 = GND, 6 = A, 7
+    = B, 8 = VCC). working_svg_dimensioned.png: SOIC-8 outline per the Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+    master geometry. data/kicad manifest complete (2-asset rule, no HandSoldering
+    master for SOIC-8 narrow) with Interface_UART:LTC2850xS8 symbol and Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+    machine footprint. README.md: SP485EEN-L/TR part number, LCSC/JLC C6855 links,
+    8-pin table (RO/RE/DE/DI/GND/A/B/VCC), datasheet link resolving to data/datasheet.pdf
+    (the MaxLinear datasheet, family anchor). Limitation: KiCad symbol/footprint checked
+    as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

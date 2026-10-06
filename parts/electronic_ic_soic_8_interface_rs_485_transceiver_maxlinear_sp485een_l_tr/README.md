@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_8_interface_rs_485_transceiver_maxlinear_sp485een_l_tr`
 
-IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm.
+IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
 ![IC SP485EEN-L/TR SOIC 8 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 
 | Type | Ic |
 | Package / style | soic 8 |
 | Nominal size | 4.9 &#x00D7; 3.9 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,6 +35,7 @@ IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.75 mm |
 | Length | 4.9 mm |
 | Width | 3.9 mm |
 
@@ -51,6 +53,25 @@ IC SP485EEN-L/TR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | RO | output |
+| 2 | RE | input |
+| 3 | DE | input |
+| 4 | DI | input |
+| 5 | GND | power_in |
+| 6 | A | bidirectional |
+| 7 | B | bidirectional |
+| 8 | VCC | power_in |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

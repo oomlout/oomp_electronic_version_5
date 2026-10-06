@@ -61,6 +61,11 @@ Diode 1N4148WS SOD-323 is an OOMP electronic diode definition. It uses the sod 3
 
 
 
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
 
 
 ## Used in projects

@@ -33,8 +33,19 @@ research:
     in this pass; no datasheet URL is recorded and PDF acquisition remains a full-pass
     task for Agent 2.
   - Repository search found no existing ULN2003 row or C7512 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C7512, Texas Instruments, ULN2003ADR,
+    Basic, In Stock 345,414); the queue snapshot row was degraded (empty MPN/maker)
+    and has been repaired from the live page + intake record identity. New family
+    member (Darlington array SOIC-16): the page datasheet link goes to ti.com (www.ti.com/cn/lit/ds/symlink/uln2003a.pdf,
+    the stable TI literature URL); browser-navigated there and fetched the PDF same-origin,
+    downloaded it, and imported it as this part and the family anchor (sha256 8476e23f...,
+    42 pages, Rev. T). Seven NPN Darlington channels with flyback diodes and open-collector
+    outputs: 500 mA per channel, 50 V max output, 30 V clamp, ~50 uA inputs (live
+    description). Pinout per the standard ULN2003A arrangement: 1-7 = I1-I7, 8 = GND,
+    9 = COM, 10-16 = O7-O1, matching Transistor_Array:ULN2003A pad-for-pad. No HandSoldering
+    master for SOIC-16 narrow - hand_solder empty per the 2-asset rule.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-ULN2003ADR/C7512
   tier: basic
   tier_label_observed: Basic
@@ -57,7 +68,22 @@ jlc_selection:
     Voltage - Forward(Vf): 1.7V
     Voltage - Input(Max): 30V
     number of channels: Seven channels
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: TI ULN200x/ULQ200x datasheet, Rev. T (C7512 provenance, family anchor)
+    pin_configuration:
+    - 2
+    features:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC ULN2003ADR SOIC 16 with
+    I1-I7 and GND down the left side and O1-O7/COM up the right side, matching the
+    standard ULN2003A pin arrangement (1-7 = I1-I7, 8 = GND, 9 = COM, 10-16 = O7-O1).
+    working_svg_dimensioned.png: SOIC-16 outline per the Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+    master geometry. data/kicad manifest complete (2-asset rule, no HandSoldering
+    master for SOIC-16 narrow) with Transistor_Array:ULN2003A symbol and Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+    machine footprint. README.md: ULN2003ADR part number, LCSC/JLC C7512 links, 16-pin
+    table, datasheet link resolving to data/datasheet.pdf (the TI Rev. T datasheet,
+    family anchor). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG
+    plus s-expression text rather than in a KiCad GUI.'

@@ -34,8 +34,17 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing XC6206 row or C5446 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C5446, Torex Semicon, XC6206P332MR-G,
+    Basic, In Stock 474,086). New family member (XC6206 SOT-23 LDO): browser-downloaded
+    the Torex XC6206 series datasheet (17 pages, ETR0305_004b) from the JLC page and
+    imported it as this part and the family anchor (sha256 8fda1e40...). Features
+    page 1: output 200 mA, dropout 250 mV @100 mA (3.0 V type), max operating voltage
+    6.0 V, output range 1.2-5.0 V, accuracy +-2 % (VOUT >= 1.5 V), quiescent 1.0 uA,
+    ceramic low-ESR compatible, -40 to +85 C; P332 = 3.3 V fixed (+-2 %). Pin assignment
+    page 2 (SOT-23): 1 = VSS, 2 = VOUT, 3 = VIN, matching Regulator_Linear:XC6206PxxxMR
+    pad-for-pad.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/TorexSemicon-XC6206P332MRG/C5446
   tier: basic
   tier_label_observed: Basic
@@ -57,7 +66,25 @@ jlc_selection:
     Output Voltage: 3.3V
     Voltage - Supply: 6V
     standby current: 1uA
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Torex XC6206 series datasheet, ETR0305_004b (C5446 provenance, family
+      anchor)
+    features:
+    - 1
+    pin_configuration:
+    - 2
+    pin_assignment:
+    - 2
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC XC6206P332MR-G SOT 23
+    with VOUT (pin 2) left, GND (pin 1) left-lower and VIN (pin 3) right, matching
+    the datasheet pin assignment page 2 (1 = VSS, 2 = VOUT, 3 = VIN). working_svg_dimensioned.png:
+    SOT-23 (TO-236AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry. data/kicad
+    manifest complete with Regulator_Linear:XC6206PxxxMR symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints. README.md: XC6206P332MR-G part
+    number, LCSC/JLC C5446 links, 3-pin table (GND/VOUT/VIN), datasheet link resolving
+    to data/datasheet.pdf (the Torex XC6206 series datasheet, family anchor). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'

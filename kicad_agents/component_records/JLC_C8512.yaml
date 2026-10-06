@@ -32,8 +32,20 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing MMBT2222A row or C8512 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C8512, Jiangsu Changjing Electronics
+    Technology Co., Ltd., MMBT2222A 1P, Basic, In Stock 597,781); the queue snapshot
+    row was degraded (empty MPN/maker) and has been repaired from the live page +
+    record identity. New family member (MMBT2222A NPN SOT-23): browser-downloaded
+    the Changjing MMBT2222A specification (2 pages, C.Jan 2014) from the JLC page
+    and imported it as this part and the family anchor (sha256 af383629...). Maximum
+    ratings page 1: VCBO 75 V, VCEO 40 V, VEBO 6 V, IC 600 mA, PC 300 mW, Tstg -55
+    to +150 C; electrical characteristics page 1: ICBO 0.01 uA, hFE 100-300 at IC
+    = 150 mA (ranks L 100-200 / H 200-300), VCE(sat) 1 V max at IC = 500 mA, fT 300
+    MHz, switching times td 10 ns / tr 25 ns / ts 225 ns / tf 60 ns, marking 1P. Pinout
+    page 1: SOT-23 1 = BASE, 2 = EMITTER, 3 = COLLECTOR, matching Transistor_BJT:MMBT2222A
+    (extends Q_NPN_BEC).'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
   tier: basic
   tier_label_observed: Basic
@@ -55,7 +67,27 @@ jlc_selection:
     Pd - Power Dissipation: 300mW
     Transition frequency(fT): 300MHz
     type: NPN
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Changjing MMBT2222A SOT-23 specification, C.Jan 2014 (C8512 provenance,
+      family anchor)
+    maximum_ratings:
+    - 1
+    electrical_characteristics:
+    - 1
+    pinout:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Transistor MMBT2222A 1P
+    SOT 23 with the SOT-23 package drawing labelled emitter (pin 2) left, base (pin
+    1) left-lower, collector (pin 3) right, matching the datasheet pinout page 1 (1
+    = BASE, 2 = EMITTER, 3 = COLLECTOR). working_svg_dimensioned.png: SOT-23 (JEDEC
+    TO-236 Var AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry (datasheet
+    carries ratings and pinout but no dimension table; recorded in dimension_reference).
+    data/kicad manifest complete with Transistor_BJT:MMBT2222A symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints, same convention as the other Changjing
+    siblings. README.md: MMBT2222A 1P part number, LCSC/JLC C8512 links, 3-pin table
+    (base/emitter/collector), datasheet link resolving to data/datasheet.pdf (the
+    Changjing MMBT2222A specification, family anchor). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

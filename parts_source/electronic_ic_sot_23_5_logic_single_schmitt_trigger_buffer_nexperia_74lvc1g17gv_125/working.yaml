@@ -1,6 +1,15 @@
 category: logic
 category_name: Logic
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579712058990399488-C6076.pdf
+dimension_reference:
+  document: 74LVC1G17GV datasheet (C6076)
+  notes: Body outline per the Package_TO_SOT_SMD:SOT-23-5 master geometry; pinning
+    cross-checked against the KiCad 74xGxx:74LVC1G17 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.1
   length: 2.9
   width: 1.6
 distributors:
@@ -12,6 +21,15 @@ distributors:
   part_number: C6076
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Nexperia-74LVC1G17GV125/C6076
+electrical:
+  device_type: single schmitt trigger buffer
+  logic_family: 74LVC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 1.2-3.6 V (1.65 V for some functions)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_sot_23_5_logic_single_schmitt_trigger_buffer_nexperia_74lvc1g17gv_125/datasheet.pdf
 ic_dimensions_mm:
   body_length: 2.92
   body_length_max: 3.02
@@ -34,11 +52,14 @@ jlcpcb_selection:
     SC-74A=SOT-23-5; single_schmitt_trigger_buffer token new here) is its exact first
     reviewed preferred house choice; the family token and package come straight off
     the page. Edits made under the ic family lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 2
+  - 3
+  - 6
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Nexperia-74LVC1G17GV125/C6076
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     -40℃~+125℃: ''
@@ -70,11 +91,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xGxx:74LVC1G17 master (numbers and electrical types cross-checked
+    at plan time) and the SOT-23-5 footprint master; renders inherit the pipeline
+    verified on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
-  hand_solder: Package_TO_SOT_SMD:SOT-23-5
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_TO_SOT_SMD:SOT-23-5
-  symbol: ''
+  symbol: 74xGxx:74LVC1G17
 lcsc_search: 74LVC1G17GV,125
 manufacturer: Nexperia
 manufacturers:
@@ -83,6 +109,7 @@ manufacturers:
 name_proper: IC 74LVC1G17GV,125 SOT 23 5
 name_readable: IC 74LVC1G17GV,125 SOT 23 5
 name_short: IC 74LVC1G17GV,125 SOT 23 5
+package_name_manufacturer: SOT753-1 / SC-74A (2.9 x 1.6 mm; Nexperia GV)
 part_id: U1
 part_number_jlcpcb: C6076
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Nexperia-74LVC1G17GV125/C6076
@@ -94,7 +121,37 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Nexperia
   part_number: 74LVC1G17GV,125
+pins:
+  pin_1:
+    name: NC
+    number: '1'
+    type: nc
+  pin_2:
+    name: A
+    number: '2'
+    type: in
+  pin_3:
+    name: GND
+    number: '3'
+    type: pwr
+  pin_4:
+    name: Y
+    number: '4'
+    type: out
+  pin_5:
+    name: VCC
+    number: '5'
+    type: pwr
 product_url: https://jlcpcb.com/partdetail/Nexperia-74LVC1G17GV125/C6076
+research_notes:
+- JLC house-parts queue row C6076 (Nexperia 74LVC1G17GV,125, SC-74A, 5 pins) verified
+  at intake; family batch integration C6076.
+- Browser-extracted the signed JLC OSS link and downloaded the Nexperia 74LVC1G17
+  data sheet into this part.
+- Pin table generated from the KiCad 74xGxx:74LVC1G17 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 5-pin package
+  count.
+- Footprint Package_TO_SOT_SMD:SOT-23-5 verified present in the KiCad 10 library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

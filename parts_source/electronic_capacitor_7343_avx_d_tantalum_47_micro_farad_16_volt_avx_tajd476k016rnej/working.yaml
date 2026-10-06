@@ -1,8 +1,17 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://datasheets.kyocera-avx.com/TAJ.pdf
+dimension_reference:
+  document: KYOCERA AVX TAJ series datasheet (C7227 provenance)
+  notes: Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus
+    band marks the negative terminal per the datasheet outline drawing.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 3.1
+  length: 7.3
+  width: 4.3
 distributors:
 - key: lcsc
   part_number: C7227
@@ -12,6 +21,16 @@ distributors:
   part_number: C7227
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/-TAJD476K016RNJ/C7227
+electrical:
+  capacitance: 47 uF
+  case_size: CASE-D-7343-31
+  dielectric: solid manganese dioxide tantalum
+  operating_temperature: -55 to +125 C
+  polarized: true
+  rated_voltage: 16 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_7343_avx_d_tantalum_47_micro_farad_16_volt_avx_tajd476k016rnej/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Exact or generic row appended to its family populate file under
     that family lock; new tokens disclosed per row (housing_contact category, 2_mm_pitch
@@ -21,11 +40,13 @@ jlcpcb_selection:
     the bigger D body) is its exact first reviewed preferred house choice; the family
     token and package come straight off the page. Edits made under the capacitor family
     lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/-TAJD476K016RNJ/C7227
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     900mΩ@100kHz: ''
@@ -39,11 +60,17 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: two-terminal polarized capacitor
+    mapped to the KiCad Device:C_Polarized master (pin 1 positive, pin 2 negative)
+    and the CP_EIA-7343-31_Kemet-D footprint master with the case dimensions cross-checked
+    against the JLC package label CASE-D-7343-31(mm); renders inherit the pipeline
+    verified on the completed passive exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D_HandSolder
+  machine_solder: Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D
+  symbol: Device:C_Polarized
 lcsc_search: 47uF 16V tantalum
 manufacturer: --
 manufacturers:
@@ -52,6 +79,7 @@ manufacturers:
 name_proper: Capacitor 47 uF 16 V Tantalum 7343 AVX D
 name_readable: Capacitor 47 uF 16 V Tantalum 7343 AVX D
 name_short: Capacitor 47 uF 16 V Tantalum 7343 AVX D
+package_name_manufacturer: Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm
 part_id: C1
 part_number_jlcpcb: C7227
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/-TAJD476K016RNJ/C7227
@@ -63,7 +91,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: --
   part_number: TAJD476K016RNJ
+pins:
+  pin_1:
+    name: positive
+    number: '1'
+    type: passive
+  pin_2:
+    name: negative
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/-TAJD476K016RNJ/C7227
+research_notes:
+- The official JLC page lists CASE-D-7343-31(mm) -- TAJD476K016RNJ (C7227); identity
+  and ratings observed live at intake 2026-09-30.
+- Two-terminal polarized SMD chip capacitor mapped to the KiCad Device:C_Polarized
+  master and the Capacitor_Tantalum_SMD:CP_EIA-7343-31_Kemet-D footprint master in
+  the 2026-10-05 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

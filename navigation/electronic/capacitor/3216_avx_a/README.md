@@ -1,7 +1,7 @@
 # Electronic / Capacitor / 3216 Avx A
 
 [Up one level](../README.md)
-This category contains 2 parts in total.
+This category contains 20 parts in total.
 
 ## Categories
 

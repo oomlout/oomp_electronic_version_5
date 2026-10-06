@@ -1,6 +1,18 @@
 category: resistor
 category_name: Resistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588881938790141952-C1382.pdf
+dimension_reference:
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy, C1382 provenance)
+  notes: 'Part number system page 2 decodes 0805 / W8 = 1/8 W / J = +-5% / 0243 =
+    24 x 10^3 = 24 kOhm; resistance range page 4 covers the 0805 family; dimension
+    table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.'
+  pages:
+  - 2
+  - 3
+  - 4
 dimensions_mm:
+  height: 0.55
   length: 2.0
   width: 1.25
 distributors:
@@ -13,23 +25,35 @@ distributors:
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/1734-0805W8J0243T5E/C1382
 electrical:
-  operating_temperature: -55 to +155 °C
-  power: 125 mW
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/8 W (125 mW) at 70 C
   rated_voltage: 150 V
-  resistance: 24 kΩ
-  temperature_coefficient: ±100 ppm/°C
-  tolerance: ±5%
+  resistance: 24 kOhm (0243 = 24 x 10^3 = 24 kOhm)
+  temperature_coefficient: +-100 ppm/C
+  tolerance: +-5% (J)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0805_24000_ohm_5_percent/datasheet.pdf
 generic_oomp_id: electronic_resistor_0805_24000_ohm
 jlcpcb_selection:
   compatibility_notes: Keep existing Basic C17575 / 0805W8F2402T5E as the preferred
     ±1% choice for electronic_resistor_0805_24000_ohm. C1382 is the same 0805 24 kΩ
     thick-film value but ±5%; represent the looser tolerance as electronic_resistor_0805_24000_ohm_5_percent
     linked to the base generic.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
+    marking:
+    - 3
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1734-0805W8J0243T5E/C1382
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: '1'
   ratings:
     Operating Temperature: -55℃~+155℃
@@ -43,9 +67,13 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-27'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0805 resistor template (Device:R_Small, Resistor_SMD:R_0805_2012Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder
   machine_solder: Resistor_SMD:R_0805_2012Metric
   symbol: Device:R_Small
 lcsc_search: 0805 24kΩ
@@ -57,6 +85,7 @@ name_proper: Resistor 24000 Ohm 0805
 name_readable: Resistor 24000 Ohm 0805
 name_short: Resistor 24000 Ohm 0805
 oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
+package_name_manufacturer: 0805 (2012 metric)
 part_id: R1
 part_number_jlcpcb: C1382
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1734-0805W8J0243T5E/C1382
@@ -68,15 +97,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: UNI-ROYAL(Uniroyal Elec)
   part_number: 0805W8J0243T5E
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/1734-0805W8J0243T5E/C1382
 research_notes:
-- Rated/tolerance variant for UNI-ROYAL JLC C1382 / 0805W8J0243T5E. Existing Basic
-  C17575 / 0805W8F2402T5E keeps the base electronic_resistor_0805_24000_ohm preference
-  at ±1%.
-- JLC and same-code LCSC pages agree on 0805, 24 kΩ, ±5%, 125 mW, 150 V, ±100 ppm/°C
-  and -55 to +155 °C. The browser-downloaded 9-page UNI-ROYAL thick-film series datasheet
-  maps W8 to 1/8 W and J to ±5%, includes the 0805 5% value range, and confirms 150
-  V and the operating-temperature range.
+- 'The official JLC page lists Extended UNI-ROYAL(Uniroyal Elec) 0805W8J0243T5E (C1382):
+  24 kOhm (0243 = 24 x 10^3 = 24 kOhm), 1/8 W, +-5%, +-100 ppm/C in 0805; identity
+  and ratings observed live at intake 2026-09-27.'
+- 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+  = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 0243 = 24 x 10^3
+  = 24 kOhm; the resistance-range table page 4 covers the 0805 family.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

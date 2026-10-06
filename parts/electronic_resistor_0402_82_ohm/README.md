@@ -2,7 +2,7 @@
 
 `electronic_resistor_0402_82_ohm`
 
-Resistor 82 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm.
+Resistor 82 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
 
 ![Resistor 82 Ohm 0402 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 82 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 | Type | Resistor |
 | Package / style | 0402 |
 | Nominal size | 1.0 &#x00D7; 0.5 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 82 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.35 mm |
 | Length | 1.0 mm |
 | Width | 0.5 mm |
 
@@ -41,14 +43,28 @@ Resistor 82 Ohm 0402 is an OOMP electronic resistor definition. It uses the 0402
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0402F82R0TS` |
+| Manufacturer part number | `RTT0282R0FTH` |
+| LCSC | [`C4143`](https://www.lcsc.com/product-detail/C4143.html) |
 | LCSC | [`C2909389`](https://www.lcsc.com/product-detail/C2909389.html) |
 | LCSC | [`C163453`](https://www.lcsc.com/product-detail/C163453.html) |
-| LCSC | [`C4143`](https://www.lcsc.com/product-detail/C4143.html) |
+| JLCPCB | [`C4143`](https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

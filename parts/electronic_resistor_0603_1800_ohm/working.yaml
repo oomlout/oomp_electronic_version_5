@@ -30,7 +30,19 @@ bip_39_full_space: cave shiver input fatigue system moral shoe cheese dynamic ve
 bip_39_full_underscore: cave_shiver_input_fatigue_system_moral_shoe_cheese_dynamic_vessel_runway_canoe
 category: resistor
 category_name: Resistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706146992537600-C4177.pdf
+dimension_reference:
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy, C4177 provenance)
+  notes: 'Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% / 1801 =
+    1.8 kOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm; dimension
+    table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10 mm.'
+  pages:
+  - 2
+  - 3
+  - 4
 dimensions_mm:
+  height: 0.45
   length: 1.6
   width: 0.8
 directory: parts/electronic_resistor_0603_1800_ohm
@@ -43,6 +55,17 @@ distributors:
   part_number: C4177
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177
+electrical:
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/10 W (100 mW) at 70 C
+  rated_voltage: 75 V
+  resistance: 1.8 kOhm (1801 = 180 x 10^1)
+  temperature_coefficient: +-100 ppm/C
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0603_1800_ohm/datasheet.pdf
 id: electronic_resistor_0603_1800_ohm
 id_no_class: electronic_resistor_0603_1800_ohm
 id_no_size: electronic_resistor_0603_1800_ohm
@@ -51,11 +74,19 @@ jlcpcb_selection:
   compatibility_notes: Existing 0603 1.8 kohm generic choice C185354 lists 100 mW,
     75 V, +/-1% and +/-100ppm/C; C4177 lists the same purchasing ratings. Existing
     alternatives remain. Check series PDF and pad geometry in the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy, C4177 provenance)
+    marking:
+    - 3
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     max_voltage: 75 V
@@ -67,10 +98,20 @@ jlcpcb_selection:
   stock_observed: 422391
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Resistor 1800 Ohm 0603 with terminals
+    1 and 2, symmetric body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png:
+    0603/1608 outline 1.6 x 0.8 mm with arrows, matching the UNI-ROYAL dimension table
+    (page 4, H 0.45 mm recorded in dimensions_mm). data/kicad manifest complete with
+    Device:R_Small symbol and Resistor_SMD:R_0603_1608Metric machine + Pad0.98x0.95mm_HandSolder
+    hand footprints. README.md: 0603WAF1801T5E part number, LCSC/JLC C4177 links,
+    2-pin table, datasheet link resolving to data/datasheet.pdf via the shared UNI-ROYAL
+    family datasheet (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder
   machine_solder: Resistor_SMD:R_0603_1608Metric
   symbol: Device:R_Small
 lcsc_search: 0603 1.8kΩ
@@ -111,6 +152,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_0_ohm/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -200,7 +251,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -214,7 +265,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -222,7 +273,20 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: resistor
       category_name: Resistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706146992537600-C4177.pdf
+      dimension_reference:
+        document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3
+          (shared family copy, C4177 provenance)
+        notes: 'Part number system page 2 decodes 0603 / WA = 1/10 W / F = +-1% /
+          1801 = 1.8 kOhm; resistance range page 4 covers 0603 1/10 W 1% = 1 Ohm-10
+          MOhm; dimension table page 4: 0603 L 1.60+-0.10, W 0.80+-0.10, H 0.45+-0.10
+          mm.'
+        pages:
+        - 2
+        - 3
+        - 4
       dimensions_mm:
+        height: 0.45
         length: 1.6
         width: 0.8
       directory: parts\electronic_resistor_0603_1800_ohm
@@ -235,16 +299,35 @@ oomlout_ai_roboclick_4:
         part_number: C4177
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177
+      electrical:
+        operating_temperature: -55 to +155 C
+        polarized: false
+        power: 1/10 W (100 mW) at 70 C
+        rated_voltage: 75 V
+        resistance: 1.8 kOhm (1801 = 180 x 10^1)
+        temperature_coefficient: +-100 ppm/C
+        tolerance: +-1% (F)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_resistor_0603_1800_ohm/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Existing 0603 1.8 kohm generic choice C185354 lists 100
           mW, 75 V, +/-1% and +/-100ppm/C; C4177 lists the same purchasing ratings.
           Existing alternatives remain. Check series PDF and pad geometry in the full
           pass.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3
+            (shared family copy, C4177 provenance)
+          marking:
+          - 3
+          part_number_system:
+          - 2
+          resistance_range_dimensions:
+          - 4
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           max_voltage: 75 V
@@ -256,10 +339,22 @@ oomlout_ai_roboclick_4:
         stock_observed: 422391
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-24'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build and a forced diagram
+          refresh. working_svg_square_pins.png hero titled Resistor 1800 Ohm 0603
+          with terminals 1 and 2, symmetric body, no mirroring, no label overlap,
+          no cropping. working_svg_dimensioned.png: 0603/1608 outline 1.6 x 0.8 mm
+          with arrows, matching the UNI-ROYAL dimension table (page 4, H 0.45 mm recorded
+          in dimensions_mm). data/kicad manifest complete with Device:R_Small symbol
+          and Resistor_SMD:R_0603_1608Metric machine + Pad0.98x0.95mm_HandSolder hand
+          footprints. README.md: 0603WAF1801T5E part number, LCSC/JLC C4177 links,
+          2-pin table, datasheet link resolving to data/datasheet.pdf via the shared
+          UNI-ROYAL family datasheet (oomp_datasheet_common_with). Limitation: KiCad
+          symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+          than in a KiCad GUI.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder
         machine_solder: Resistor_SMD:R_0603_1608Metric
         symbol: Device:R_Small
       lcsc_search: 0603 1.8kΩ
@@ -285,6 +380,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_0_ohm/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -375,7 +480,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -389,6 +494,8 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
+      package_name_manufacturer: 0603 (1608 metric)
       part_id: R1
       part_number_jlcpcb: C4177
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177
@@ -466,7 +573,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -484,7 +591,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/resistor/0603/README.md
         oomp_id: electronic_resistor_0603_1800_ohm
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_resistor_0603_1800_ohm
@@ -494,10 +607,12 @@ oomlout_ai_roboclick_4:
           value: '0603'
         - title: Nominal size
           value: 1.6 × 0.8 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1800_ohm
         summary: Resistor 1800 Ohm 0603 is an OOMP electronic resistor definition.
           It uses the 0603 package or form factor. Its nominal drawing size is 1.6
-          × 0.8 mm.
+          × 0.8 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -507,8 +622,24 @@ oomlout_ai_roboclick_4:
           value: '0603'
         - level: 4
           value: 1800_ohm
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic UNI-ROYAL 0603WAF1801T5E (C4177): 1.8 kOhm,
+        1/10 W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.'
+      - 'Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with
+        = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes
+        the exact suffix and the resistance-range table page 4 covers 0603 1/10 W
+        1% = 1 Ohm-10 MOhm.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -708,7 +839,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -721,7 +852,9 @@ oomlout_ai_roboclick_5:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0603_1800_ohm
+package_name_manufacturer: 0603 (1608 metric)
 part_id: R1
 part_number_jlcpcb: C4177
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177
@@ -799,7 +932,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -817,7 +950,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/resistor/0603/README.md
   oomp_id: electronic_resistor_0603_1800_ohm
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_resistor_0603_1800_ohm
@@ -827,9 +966,12 @@ part_page:
     value: '0603'
   - title: Nominal size
     value: 1.6 × 0.8 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_1800_ohm
   summary: Resistor 1800 Ohm 0603 is an OOMP electronic resistor definition. It uses
-    the 0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm.
+    the 0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -839,8 +981,23 @@ part_page:
     value: '0603'
   - level: 4
     value: 1800_ohm
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/4584-0603WAF1801T5E/C4177
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic UNI-ROYAL 0603WAF1801T5E (C4177): 1.8 kOhm, 1/10
+  W, +-1%, +-100 ppm/C in 0603; reconfirmed live 2026-10-02.'
+- 'Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with
+  = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact
+  suffix and the resistance-range table page 4 covers 0603 1/10 W 1% = 1 Ohm-10 MOhm.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

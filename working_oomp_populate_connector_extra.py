@@ -908,6 +908,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_1_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "Megastar(兆星)"
         part["part_number_manufacturer"] = "ZX-PZ2.54-1-1PZZ"
         part["part_number_lcsc"] = "C7501259"
@@ -924,6 +925,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_2_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XFCN(兴飞)"
         part["part_number_manufacturer"] = "PZ254V-11-02P"
         part["part_number_lcsc"] = "C492401"
@@ -940,6 +942,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "BOOMELE(博穆精密)"
         part["part_number_manufacturer"] = "2.54-1*3P针"
         part["part_number_lcsc"] = "C49257"
@@ -956,6 +959,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_4_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "JXTCONN(聚兴泰)"
         part["part_number_manufacturer"] = "PZ2.54-S04P-A60"
         part["part_number_lcsc"] = "C42431795"
@@ -972,6 +976,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_5_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "JXTCONN(聚兴泰)"
         part["part_number_manufacturer"] = "PH2.54-1X5P-H25"
         part["part_number_lcsc"] = "C42431835"
@@ -988,6 +993,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_6_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "BOOMELE(博穆精密)"
         part["part_number_manufacturer"] = "2.54-1x6P直针"
         part["part_number_lcsc"] = "C37208"
@@ -1004,6 +1010,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_7_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XUNPU(讯普)"
         part["part_number_manufacturer"] = "PH2.54-01-07PZD"
         part["part_number_lcsc"] = "C7501585"
@@ -1020,6 +1027,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_8_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XFCN(兴飞)"
         part["part_number_manufacturer"] = "PZ254V-12-8P"
         part["part_number_lcsc"] = "C492421"
@@ -1036,6 +1044,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_9_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "kinghelm(金航标)"
         part["part_number_manufacturer"] = "KH-2.54PH180-1X9P-L11.5"
         part["part_number_lcsc"] = "C2932701"
@@ -1068,6 +1077,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_11_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "HCTL(华灿天禄)"
         part["part_number_manufacturer"] = "PZ254-1-11-Z-8.5"
         part["part_number_lcsc"] = "C2894934"
@@ -1084,6 +1094,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_12_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XUNPU(讯普)"
         part["part_number_manufacturer"] = "PH2.54-01-12PZD"
         part["part_number_lcsc"] = "C7501588"
@@ -1100,6 +1111,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_13_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "HCTL(��灿天禄)"
         part["part_number_manufacturer"] = "PZ254-1-13-Z-8.5"
         part["part_number_lcsc"] = "C2894936"
@@ -1116,6 +1128,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_14_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "kinghelm(金航标)"
         part["part_number_manufacturer"] = "KH-2.54PH180-1X14P-L11.5"
         part["part_number_lcsc"] = "C2905490"
@@ -1132,6 +1145,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_15_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XUNPU(讯普)"
         part["part_number_manufacturer"] = "PH2.54-01-15PZD"
         part["part_number_lcsc"] = "C7501589"
@@ -1148,6 +1162,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_16_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "Megastar(兆星)"
         part["part_number_manufacturer"] = "ZX-PZ2.54-1-16PZZ"
         part["part_number_lcsc"] = "C7501270"
@@ -1164,6 +1179,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_17_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "Ckmtw(灿科盟)"
         part["part_number_manufacturer"] = "B-2100S17P-A110"
         part["part_number_lcsc"] = "C49423291"
@@ -1180,6 +1196,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_18_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XFCN(兴飞)"
         part["part_number_manufacturer"] = "PZ254R-11-18P"
         part["part_number_lcsc"] = "C41413627"
@@ -1196,6 +1213,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_19_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "HCTL(华灿天禄)"
         part["part_number_manufacturer"] = "PZ254-1-19-Z-8.5"
         part["part_number_lcsc"] = "C2894942"
@@ -1212,6 +1230,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_20_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "BOOMELE(博穆精密)"
         part["part_number_manufacturer"] = "2.54-1*20P直针"
         part["part_number_lcsc"] = "C50981"
@@ -1228,6 +1247,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_21_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "HDGC(华德共创)"
         part["part_number_manufacturer"] = "HDGCPH-PZ01-21"
         part["part_number_lcsc"] = "C19190987"
@@ -1244,6 +1264,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_22_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "Ckmtw(灿科盟)"
         part["part_number_manufacturer"] = "B-2100S22P-A110"
         part["part_number_lcsc"] = "C49423294"
@@ -1260,6 +1281,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_23_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WR-23H-C60D30R2"
         part["part_number_lcsc"] = "C725915"
@@ -1276,6 +1298,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_24_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WR-24H-C60D30R1"
         part["part_number_lcsc"] = "C2883862"
@@ -1292,6 +1315,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_25_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WR-25H-C60D30R2"
         part["part_number_lcsc"] = "C2883713"
@@ -1308,6 +1332,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_26_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WR-26H-C60D30R2"
         part["part_number_lcsc"] = "C725918"
@@ -1324,6 +1349,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_27_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WR-27H-C60D30R1"
         part["part_number_lcsc"] = "C2883865"
@@ -1340,6 +1366,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_28_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "WingTAT(格林柏)"
         part["part_number_manufacturer"] = "2011-1X28G00SB"
         part["part_number_lcsc"] = "C49569651"
@@ -1356,6 +1383,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_29_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "HDGC(华德共创)"
         part["part_number_manufacturer"] = "HDGCPH-PZ01-29"
         part["part_number_lcsc"] = "C19190995"
@@ -1372,6 +1400,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_30_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "Amphenol"
         part["part_number_manufacturer"] = "54101-T30-00LF"
         part["part_number_lcsc"] = "C5156075"
@@ -1388,6 +1417,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_31_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "WingTAT(格林柏)"
         part["part_number_manufacturer"] = "2011-1X31G00SB"
         part["part_number_lcsc"] = "C49569654"
@@ -1404,6 +1434,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_32_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WV-32H-C60D30"
         part["part_number_lcsc"] = "C2883691"
@@ -1420,6 +1451,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_33_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WR-33H-C60D30R2"
         part["part_number_lcsc"] = "C2883721"
@@ -1436,6 +1468,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_34_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WR-34H-C60D30R2"
         part["part_number_lcsc"] = "C2883722"
@@ -1452,6 +1485,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_35_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WR-35H-C60D30R2"
         part["part_number_lcsc"] = "C2883723"
@@ -1468,6 +1502,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_36_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WV-36H-C60D30"
         part["part_number_lcsc"] = "C2883695"
@@ -1484,6 +1519,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_37_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WV-37H-C60D30"
         part["part_number_lcsc"] = "C2883696"
@@ -1500,6 +1536,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_38_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "XKB Connection(中国星坤)"
         part["part_number_manufacturer"] = "X6511WV-38H-C60D30"
         part["part_number_lcsc"] = "C2883697"
@@ -1516,6 +1553,7 @@ def main(**kwargs):
     current = "electronic_connector_header_2_54_mm_pitch_through_hole_39_pin"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
         part["manufacturer"] = "HDGC(华德共创)"
         part["part_number_manufacturer"] = "HDGCPH-PZ01-39"
         part["part_number_lcsc"] = "C19191005"

@@ -19,30 +19,49 @@ distributors:
   part_number: C6187
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_sot_223_3_power_management_linear_voltage_regulator_5_volt_advanced_monolithic_systems_ams1117_5/datasheet.pdf
 jlcpcb_selection:
-  compatibility_notes: Exact Advanced Monolithic Systems AMS1117-5.0 and C6187 match
-    existing OOMP 5 V SOT-223 regulator. JLC page lists fixed positive 5 V, 1 A, input
-    up to 15 V and 1.3 V dropout. Confirm tab/pinout, output capacitor stability,
-    thermal limits and land pattern in the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  compatibility_notes: Exact AMS1117-5.0 identity; JLC C6187 already matched this
+    OOMP ID. SOT-223 pin 2 and tab are VOUT, same pinout and package as the AMS1117-3.3
+    sibling; datasheet shared via oomp_datasheet_common_with. KiCad SOT-223-3_TabPin2
+    matches pad numbering; the same official footprint serves hand assembly because
+    no dedicated hand-solder variant exists.
+  datasheet_pages:
+  - 1
+  - 2
+  - 3
+  - 7
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Advanced_MonolithicSystems-AMS1117_50/C6187
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
-    max_supply_voltage: 15 V
-    operating_temperature: -40 to +125 C
-    output_current: 1 A
-    output_voltage: 5 V
-    voltage_dropout: 1.3 V
-  stock_observed: 108536
+    dropout_voltage: 1.3 V typical at 0.8 A
+    maximum_input_voltage: 15 V absolute maximum
+    operating_junction_temperature: -40 to +125 deg C
+    output_current: 1 A series rating; SOT-223 dissipation limit 1.2 W
+    output_voltage: 5 V nominal
+  stock_observed: 91295
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Regulator AMS1117-5.0 5V SOT-223 with
+    the VOUT tab on top and GND (1), VOUT (2), VIN (3) labelled on the three lower
+    pins, matching the AMS1117 pinout (tab = VOUT, same as the 3.3 V sibling). working_svg_dimensioned.png:
+    6.5 mm body width, 3.5 mm body height with the tab, matching the SOT-223 outline
+    in dimensions_mm. data/kicad manifest complete with Regulator_Linear:AMS1117-5.0
+    symbol and Package_TO_SOT_SMD:SOT-223-3_TabPin2 machine + hand footprints (no
+    dedicated hand variant; the same official master is justified in the selection
+    notes). README.md: AMS1117-5.0 part number, LCSC/JLC C6187 links, 3-pin table,
+    datasheet link resolving to data/datasheet.pdf via the shared AMS series PDF (oomp_datasheet_common_with).
+    Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+    text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  hand_solder: Package_TO_SOT_SMD:SOT-223-3_TabPin2
   machine_solder: Package_TO_SOT_SMD:SOT-223-3_TabPin2
   symbol: Regulator_Linear:AMS1117-5.0
 lcsc_search: AMS1117-5.0

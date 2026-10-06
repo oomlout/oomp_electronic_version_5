@@ -2,7 +2,7 @@
 
 `electronic_diode_switching_dual_series_sot_23_nexperia_bav99_215`
 
-Diode BAV99,215 SOT-23 is an OOMP electronic diode definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.6 mm.
+Diode BAV99,215 SOT-23 is an OOMP electronic diode definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.3 mm. The definition includes 3 documented pins.
 
 ![Diode BAV99,215 SOT-23 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Diode BAV99,215 SOT-23 is an OOMP electronic diode definition. It uses the sot 2
 | OOMP ID | `electronic_diode_switching_dual_series_sot_23_nexperia_bav99_215` |
 | Type | Diode |
 | Package / style | sot 23 |
-| Nominal size | 2.9 &#x00D7; 2.6 mm |
+| Nominal size | 2.9 &#x00D7; 1.3 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -33,8 +34,9 @@ Diode BAV99,215 SOT-23 is an OOMP electronic diode definition. It uses the sot 2
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.0 mm |
 | Length | 2.9 mm |
-| Width | 2.6 mm |
+| Width | 1.3 mm |
 
 
 
@@ -50,6 +52,20 @@ Diode BAV99,215 SOT-23 is an OOMP electronic diode definition. It uses the sot 2
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | A1 | signal |
+| 2 | K2 | signal |
+| 3 | K1_A2 | signal |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

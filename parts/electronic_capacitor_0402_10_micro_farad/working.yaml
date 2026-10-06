@@ -30,7 +30,21 @@ bip_39_full_space: blood kingdom wedding hire join despair virus maximum left ol
 bip_39_full_underscore: blood_kingdom_wedding_hire_join_despair_virus_maximum_left_olympic_add_argue
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707190007300096-C15525.pdf
+dimension_reference:
+  document: Samsung MLCC data sheet, November 2015 (shared family copy) (C15525 provenance)
+  notes: 'part-numbering page 4 decodes the exact suffix; the class-characteristic
+    page and the size tables cover the 0402 family; package dimensions: 0402 L 1.00+-0.05,
+    W 0.50+-0.05, T 0.5+-0.05 mm.'
+  pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    part_number_system:
+    - 4
 dimensions_mm:
+  height: 0.5
   length: 1.0
   width: 0.5
 directory: parts/electronic_capacitor_0402_10_micro_farad
@@ -54,6 +68,17 @@ distributors:
   part_number: C15525
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/16204-CL05A106MQ5NUNC/C15525
+electrical:
+  capacitance: 10 μF (106)
+  dielectric: X5R
+  polarized: false
+  rated_voltage: 6.3 V
+  temperature_characteristic: +-15% over the operating range (X5R)
+  temperature_range: -55 to +125 C
+  tolerance: +-20% (M)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0402_10_micro_farad/datasheet.pdf
 id: electronic_capacitor_0402_10_micro_farad
 id_no_class: electronic_capacitor_0402_10_micro_farad
 id_no_size: electronic_capacitor_0402_10_micro_farad
@@ -62,11 +87,18 @@ jlcpcb_selection:
   compatibility_notes: Existing generic 0402 10 uF capacitor already selected this
     exact Samsung C15525 purchasing choice. JLC confirms 6.3 V X5R +/-20%. Its DC-bias-dependent
     effective capacitance and temperature limits require full project-specific review.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    document: Samsung MLCC data sheet, November 2015 (shared family copy)
+    part_number_system:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/16204-CL05A106MQ5NUNC/C15525
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 10 uF
@@ -77,9 +109,13 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0402 resistor template (Device:R_Small, Capacitor_SMD:C_0402_1005Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: C1555,C14663.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
   machine_solder: Capacitor_SMD:C_0402_1005Metric
   symbol: Device:C_Small
 lcsc_search: 0402 10uF
@@ -124,6 +160,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0402_10_micro_farad/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -213,7 +259,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -227,7 +273,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -235,7 +281,22 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: capacitor
       category_name: Capacitor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707190007300096-C15525.pdf
+      dimension_reference:
+        document: Samsung MLCC data sheet, November 2015 (shared family copy) (C15525
+          provenance)
+        notes: 'part-numbering page 4 decodes the exact suffix; the class-characteristic
+          page and the size tables cover the 0402 family; package dimensions: 0402
+          L 1.00+-0.05, W 0.50+-0.05, T 0.5+-0.05 mm.'
+        pages:
+          class_characteristics:
+          - 5
+          dimensions:
+          - 6
+          part_number_system:
+          - 4
       dimensions_mm:
+        height: 0.5
         length: 1.0
         width: 0.5
       directory: parts\electronic_capacitor_0402_10_micro_farad
@@ -259,16 +320,34 @@ oomlout_ai_roboclick_4:
         part_number: C15525
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/16204-CL05A106MQ5NUNC/C15525
+      electrical:
+        capacitance: 10 μF (106)
+        dielectric: X5R
+        polarized: false
+        rated_voltage: 6.3 V
+        temperature_characteristic: +-15% over the operating range (X5R)
+        temperature_range: -55 to +125 C
+        tolerance: +-20% (M)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_capacitor_0402_10_micro_farad/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: Existing generic 0402 10 uF capacitor already selected
           this exact Samsung C15525 purchasing choice. JLC confirms 6.3 V X5R +/-20%.
           Its DC-bias-dependent effective capacitance and temperature limits require
           full project-specific review.
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          class_characteristics:
+          - 5
+          dimensions:
+          - 6
+          document: Samsung MLCC data sheet, November 2015 (shared family copy)
+          part_number_system:
+          - 4
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/16204-CL05A106MQ5NUNC/C15525
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           capacitance: 10 uF
@@ -279,9 +358,13 @@ oomlout_ai_roboclick_4:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-24'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+          exemplar renders of the same 0402 resistor template (Device:R_Small, Capacitor_SMD:C_0402_1005Metric
+          + hand variant) already inspected this session; this batch member differs
+          only in value text. Post-build spot checks: C1555,C14663.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
         machine_solder: Capacitor_SMD:C_0402_1005Metric
         symbol: Device:C_Small
       lcsc_search: 0402 10uF
@@ -311,6 +394,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_0402_10_micro_farad/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -401,7 +494,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -415,6 +508,8 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+      package_name_manufacturer: 0402 (1005 metric)
       part_id: C1
       part_number_jlcpcb: C15525
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/16204-CL05A106MQ5NUNC/C15525
@@ -501,7 +596,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -525,7 +620,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/capacitor/0402/README.md
         oomp_id: electronic_capacitor_0402_10_micro_farad
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_capacitor_0402_10_micro_farad
@@ -535,10 +636,12 @@ oomlout_ai_roboclick_4:
           value: '0402'
         - title: Nominal size
           value: 1.0 × 0.5 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_10_micro_farad
         summary: Capacitor 10 uF 0402 is an OOMP electronic capacitor definition.
           It uses the 0402 package or form factor. Its nominal drawing size is 1.0
-          × 0.5 mm.
+          × 0.5 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -548,11 +651,24 @@ oomlout_ai_roboclick_4:
           value: '0402'
         - level: 4
           value: 10_micro_farad
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/16204-CL05A106MQ5NUNC/C15525
       regenerate_pngs: false
       research_notes:
-      - 'LCSC stock research 2026-09: highest-stock listing first (C15525, 6,000,000
-        in stock at capture); runners-up follow.'
+      - 'The official JLC page lists Basic Samsung Electro-Mechanics CL05A106MQ5NUNC
+        (C15525): 10 μF 6.3 V X5R +-20% (M) in 0402; identity and ratings observed
+        live at intake 2026-09-24.'
+      - 'Family batch 2026-10-04 over the shared Samsung Electro-Mechanics MLCC datasheet
+        (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering
+        code decodes 106 = 10 μF.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -940,7 +1056,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -953,7 +1069,9 @@ oomlout_ai_roboclick_5:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
 oomp_key: oomp_electronic_capacitor_0402_10_micro_farad
+package_name_manufacturer: 0402 (1005 metric)
 part_id: C1
 part_number_jlcpcb: C15525
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/16204-CL05A106MQ5NUNC/C15525
@@ -1040,7 +1158,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -1064,7 +1182,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/capacitor/0402/README.md
   oomp_id: electronic_capacitor_0402_10_micro_farad
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_capacitor_0402_10_micro_farad
@@ -1074,9 +1198,12 @@ part_page:
     value: '0402'
   - title: Nominal size
     value: 1.0 × 0.5 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_0402_10_micro_farad
   summary: Capacitor 10 uF 0402 is an OOMP electronic capacitor definition. It uses
-    the 0402 package or form factor. Its nominal drawing size is 1.0 × 0.5 mm.
+    the 0402 package or form factor. Its nominal drawing size is 1.0 × 0.5 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -1086,11 +1213,24 @@ part_page:
     value: '0402'
   - level: 4
     value: 10_micro_farad
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/16204-CL05A106MQ5NUNC/C15525
 regenerate_pngs: false
 research_notes:
-- 'LCSC stock research 2026-09: highest-stock listing first (C15525, 6,000,000 in
-  stock at capture); runners-up follow.'
+- 'The official JLC page lists Basic Samsung Electro-Mechanics CL05A106MQ5NUNC (C15525):
+  10 μF 6.3 V X5R +-20% (M) in 0402; identity and ratings observed live at intake
+  2026-09-24.'
+- 'Family batch 2026-10-04 over the shared Samsung Electro-Mechanics MLCC datasheet
+  (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering
+  code decodes 106 = 10 μF.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

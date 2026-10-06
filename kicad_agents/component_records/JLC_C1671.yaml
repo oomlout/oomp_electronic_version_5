@@ -12,31 +12,68 @@ research:
   manufacturer: Samsung Electro-Mechanics
   manufacturer_part_number: CL10C470JB8NNNC
   lcsc_part_number: C1671
-  lcsc_decision: Official JLCPCB page uses C1671 for this exact Samsung purchasing choice.
+  lcsc_decision: Official JLCPCB page uses C1671 for this exact Samsung purchasing
+    choice.
   product_url: https://jlcpcb.com/partdetail/2023-CL10C470JB8NNNC/C1671
   datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707064693805056-C1671.pdf
   browser_sources:
-    - https://jlcpcb.com/partdetail/2023-CL10C470JB8NNNC/C1671
+  - https://jlcpcb.com/partdetail/2023-CL10C470JB8NNNC/C1671
   webpage_capture: parts_source/electronic_capacitor_0603_47_pico_farad/web_page_distributor_jlc.txt
   evidence_notes:
-    - Official page displayed Basic, Samsung Electro-Mechanics, CL10C470JB8NNNC, C1671, 0603, 47pF, 50V, C0G and +/-5% on 2026-09-24.
-    - Reuses generic electronic_capacitor_0603_47_pico_farad; previous YAGEO C105622 was listed as 50V NP0 +/-5% and remains an alternative. Project-specific RF/Q requirements remain for full review.
-    - JLC-linked C1671 PDF was downloaded through the browser and imported with its source URL and SHA-256 into parts_source/electronic_capacitor_0603_47_pico_farad/datasheet.pdf. Ordering-code and dimensional review remain full-pass tasks.
+  - Official page displayed Basic, Samsung Electro-Mechanics, CL10C470JB8NNNC, C1671,
+    0603, 47pF, 50V, C0G and +/-5% on 2026-09-24.
+  - Reuses generic electronic_capacitor_0603_47_pico_farad; previous YAGEO C105622
+    was listed as 50V NP0 +/-5% and remains an alternative. Project-specific RF/Q
+    requirements remain for full review.
+  - JLC-linked C1671 PDF was downloaded through the browser and imported with its
+    source URL and SHA-256 into parts_source/electronic_capacitor_0603_47_pico_farad/datasheet.pdf.
+    Ordering-code and dimensional review remain full-pass tasks.
+  - 'Full pass 2026-10-01: live page reconfirmed (C1671, Samsung Electro-Mechanics,
+    CL10C470JB8NNNC, Basic, In Stock 677,714); the listed datasheet URL matches the
+    intake snapshot. No new download: the already-captured Samsung MLCC general catalogue,
+    November 2015 (shared via oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad)
+    covers the exact suffix - part numbering page 4 decodes CL / 10 = 0603 / C = C0G
+    / 470 = 47 pF / J = +-5% / B = 50 V / 8 = 0.80 mm / N Ni-barrier / C 7-inch reel;
+    the C0G Product Lineup table page 15 lists CL10C470JB8NNN at 47 pF, 50 V, +-5%,
+    1.60 x 0.80 mm; Class I (C0G) characteristics pages 5-7.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/2023-CL10C470JB8NNNC/C1671
   tier: basic
   tier_label_observed: Basic
   stock_observed: 787247
   purchase_moq_observed: 1
   pcba_min_qty_observed: null
-  compatibility_notes: Existing generic 0603 47 pF capacitor. Samsung C1671 is 50 V C0G +/-5%; previous YAGEO C105622 was 50 V NP0 +/-5%. C0G/NP0 are the same Class I temperature characteristic. Preserve C105622 and other alternatives; project-specific RF/Q requirements need full review.
+  compatibility_notes: Existing generic 0603 47 pF capacitor. Samsung C1671 is 50
+    V C0G +/-5%; previous YAGEO C105622 was 50 V NP0 +/-5%. C0G/NP0 are the same Class
+    I temperature characteristic. Preserve C105622 and other alternatives; project-specific
+    RF/Q requirements need full review.
   ratings:
     capacitance: 47 pF
     rated_voltage: 50 V
     dielectric: C0G
     tolerance: +/-5%
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared,
+      C1671 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 15
+    - 4
+    electrical_characteristics:
+    - 5
+    - 15
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 47 pF 0603 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.6 x 0.8 mm body with arrows (same
+    0603 generic renderer verified on twelve 0603 siblings this session), matching
+    the Samsung 0603/1608 nominals and thickness code 8. data/kicad manifest complete
+    with Device:C_Small symbol and Capacitor_SMD:C_0603_1608Metric machine + Pad1.08x0.95mm_HandSolder
+    hand footprints. README.md: CL10C470JB8NNNC part number, LCSC/JLC C1671 links,
+    pin table, datasheet link resolving to data/datasheet.pdf via the shared Samsung
+    MLCC general catalogue (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

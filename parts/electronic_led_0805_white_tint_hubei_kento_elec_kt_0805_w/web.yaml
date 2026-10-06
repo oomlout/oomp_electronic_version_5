@@ -3,7 +3,7 @@ id: electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
 kind: component
 name: LED KT-0805W 0805
 summary: LED KT-0805W 0805 is an OOMP electronic led definition. It uses the 0805 package or form factor. Its nominal drawing
-  size is 2.0 × 1.25 mm.
+  size is 2.0 × 1.25 mm. The definition includes 2 documented pins.
 taxonomy:
   path:
   - electronic
@@ -46,9 +46,10 @@ highlights:
   category: led
   category_name: LED
   dimensions_mm:
+    height: 0.8
     length: 2.0
     width: 1.25
-  pin_count: 0
+  pin_count: 2
   manufacturer_count: 1
   distributor_count: 2
 primary_assets:
@@ -73,8 +74,10 @@ primary_assets:
   raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/README.md
   web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/README.md
 file_stats:
-  file_count: 78
+  file_count: 79
   by_category:
+    datasheet:
+      count: 1
     documentation:
       count: 1
     image:
@@ -94,6 +97,8 @@ file_stats:
       count: 1
     .md:
       count: 5
+    .pdf:
+      count: 1
     .png:
       count: 40
     .step:
@@ -103,6 +108,16 @@ file_stats:
     .yaml:
       count: 2
 files:
+- name: datasheet.pdf
+  path: data/datasheet.pdf
+  directory: data
+  extension: .pdf
+  media_type: application/pdf
+  category: datasheet
+  description: Manufacturer or supplier datasheet for the part.
+  github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/data/datasheet.pdf
+  raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/data/datasheet.pdf
+  web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/data/datasheet.pdf
 - name: contact_sheet.png
   path: data/kicad/contact_sheet.png
   directory: data/kicad
@@ -885,14 +900,19 @@ files:
   web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/working.yaml
 generation:
   source: working.yaml
-  roboclick_mode_count: 5
-  roboclick_action_count: 16
+  roboclick_mode_count: 6
+  roboclick_action_count: 17
   declared_outputs:
   - path: README.md
     available: true
     github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/README.md
     raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/README.md
     web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/README.md
+  - path: data/datasheet.pdf
+    available: true
+    github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/data/datasheet.pdf
+    raw_url: https://raw.githubusercontent.com/oomlout/oomp_electronic_version_5/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/data/datasheet.pdf
+    web_url: https://oomlout.github.io/oomp_electronic_version_5/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/data/datasheet.pdf
   - path: data/kicad/contact_sheet.png
     available: true
     github_url: https://github.com/oomlout/oomp_electronic_version_5/blob/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/data/kicad/contact_sheet.png
@@ -1000,7 +1020,16 @@ metadata:
   bip_39_full_underscore: arrest_square_aware_pave_rhythm_budget_celery_silly_fashion_jump_ice_raise
   category: led
   category_name: LED
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709217554550784-C34499.pdf
+  dimension_reference:
+    document: KT-0805W specification (own copy, C34499 provenance)
+    notes: Package outline 2.0 x 1.25 x 0.8 mm per the specification drawing; polarity triangle/dot marks the cathode end.
+      Pin convention follows the KiCad LED convention 1 = K / 2 = A as in the completed C2296 KENTO exemplar.
+    pages:
+    - 2
+    - 3
   dimensions_mm:
+    height: 0.8
     length: 2.0
     width: 1.25
   directory: parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
@@ -1013,6 +1042,19 @@ metadata:
     part_number: C34499
     title: JLCPCB
     url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805W/C34499
+  electrical:
+    forward_current: see live listing
+    forward_voltage: 2.6V~3.2V
+    led_color: white
+    luminous_intensity: 350mcd
+    operating_temperature: -30℃~+85℃
+    polarized: true
+    power_dissipation: see live listing
+    reverse_voltage: see live listing
+    viewing_angle: 120°
+  file_copy:
+  - file_destination: datasheet.pdf
+    file_source: parts_source/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w/datasheet.pdf
   id: electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
   id_no_class: electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
   id_no_size: electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
@@ -1021,11 +1063,15 @@ metadata:
     compatibility_notes: 'Exact discrete indicator LED identity: added one explicit LED family row electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
       using the established size/color/lens-style/maker/MPN exact pattern. White 0805 with yellow (tinted) lens, Vf 2.6-3.2
       V, 25 mA test current, 350 mcd.'
-    datasheet_pages: []
-    footprint_checked: false
+    datasheet_pages:
+      document: KT-0805W specification
+      outline_polarity:
+      - 2
+      - 3
+    footprint_checked: true
     official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805W/C34499
     pcba_min_qty_observed: null
-    pinout_checked: false
+    pinout_checked: true
     purchase_moq_observed: 1
     ratings:
       Color Temperature: 13172K~100000K
@@ -1044,9 +1090,11 @@ metadata:
     tier: basic
     tier_label_observed: Basic
     verified_on: '2026-09-25'
-    visual_review: pending
+    visual_review: 'Family-inherited review 2026-10-04: LED template identical to the completed C2296 KENTO exemplar renders
+      (Device:LED, LED_SMD assets) inspected post-build; batch members differ only in value/color text.'
   kicad:
-    hand_solder: ''
+    allow_project_fallback: false
+    hand_solder: LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder
     machine_solder: LED_SMD:LED_0805_2012Metric
     symbol: Device:LED
   lcsc_search: 0805 led
@@ -1076,6 +1124,7 @@ metadata:
   name_space: electronic led 0805 white tint hubei kento elec kt 0805 w
   name_upper: ELECTRONIC LED 0805 WHITE TINT HUBEI KENTO ELEC KT 0805 W
   oomp_key: oomp_electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
+  package_name_manufacturer: 0805 (2012 metric, water clear)
   part_id: D1
   part_number_jlcpcb: C34499
   part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805W/C34499
@@ -1153,7 +1202,7 @@ metadata:
       title: Dimensions
     - preview: data/working_svg_dimensioned_titles_300.png
       title: Dimensions with labels
-    has_datasheet: false
+    has_datasheet: true
     identifiers:
     - title: Manufacturer part number
       url: ''
@@ -1171,7 +1220,13 @@ metadata:
       title: Pinout
     navigation_link: ../../navigation/electronic/led/0805/white/tint/hubei_kento_elec/README.md
     oomp_id: electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
-    pins: []
+    pins:
+    - name: K
+      number: '1'
+      type: passive
+    - name: A
+      number: '2'
+      type: passive
     quick_facts:
     - title: OOMP ID
       value: electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
@@ -1181,9 +1236,11 @@ metadata:
       value: 0805
     - title: Nominal size
       value: 2.0 × 1.25 mm
+    - title: Documented pins
+      value: 2
     repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0805_white_tint_hubei_kento_elec_kt_0805_w
     summary: LED KT-0805W 0805 is an OOMP electronic led definition. It uses the 0805 package or form factor. Its nominal
-      drawing size is 2.0 × 1.25 mm.
+      drawing size is 2.0 × 1.25 mm. The definition includes 2 documented pins.
     taxonomy:
     - level: 1
       value: electronic
@@ -1199,8 +1256,22 @@ metadata:
       value: hubei_kento_elec
     - level: 7
       value: kt_0805_w
+  pins:
+    pin_1:
+      name: K
+      number: '1'
+      type: passive
+    pin_2:
+      name: A
+      number: '2'
+      type: passive
   product_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805W/C34499
-  regenerate_pngs: false
+  regenerate_pngs: true
+  research_notes:
+  - 'The official JLC page lists Basic Hubei KENTO Elec KT-0805W (C34499): white LED; identity and ratings observed live at
+    intake 2026-09-25.'
+  - 'Family batch 2026-10-04: downloaded the KT-0805W specification into this part via the signed JLC OSS link; electrical
+    values transcribed from the intake-observed listing, package outline from the specification drawing pages.'
   svg_details:
   - filename_extra: assembly
     make_a4: false

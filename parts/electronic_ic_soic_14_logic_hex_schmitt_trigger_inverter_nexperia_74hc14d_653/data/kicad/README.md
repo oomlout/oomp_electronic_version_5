@@ -1,11 +1,11 @@
 # KiCad assets: electronic_ic_soic_14_logic_hex_schmitt_trigger_inverter_nexperia_74hc14d_653
 
+- [Symbol](electronic_ic_soic_14_logic_hex_schmitt_trigger_inverter_nexperia_74hc14d_653.kicad_sym) — `74xx:74HC14`
 - [Machine Solder](machine_solder/electronic_ic_soic_14_logic_hex_schmitt_trigger_inverter_nexperia_74hc14d_653.kicad_mod) — `Package_SO:SOIC-14_3.9x8.7mm_P1.27mm`
-- [Hand Solder](hand_solder/electronic_ic_soic_14_logic_hex_schmitt_trigger_inverter_nexperia_74hc14d_653.kicad_mod) — `Package_SO:SOIC-14_3.9x8.7mm_P1.27mm`
 
 ## Review
 
-- Official symbol master unavailable: not selected
+- Official hand_solder footprint unavailable: not selected
 
 Silkscreen code: `1UJ49`. Source provenance: [manifest](manifest.yaml).
 

@@ -1,3 +1,5 @@
 # Hand Solder
 
-No verified official master is available. See [../manifest.yaml](../manifest.yaml). No pad geometry has been guessed.
+[electronic_transistor_sot_23_bipolar_npn_160_volt_jiangsu_changjing_electronics_technology_co_ltd_mmbt5551_range_200_300](electronic_transistor_sot_23_bipolar_npn_160_volt_jiangsu_changjing_electronics_technology_co_ltd_mmbt5551_range_200_300.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23_Handsoldering`. [License](../LICENSE.md).

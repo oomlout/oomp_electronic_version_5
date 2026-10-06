@@ -1,8 +1,16 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8550723919343329280-C191023.pdf
+dimension_reference:
+  document: Guangdong Hottech 1N5819WS specification (own copy, C191023 provenance)
+  notes: SOD-323 / EIA SC-76 body 1.70 x 1.30 mm, H 0.95 mm; pad geometry follows
+    the KiCad Diode_SMD:D_SOD-323 master.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 0.95
+  length: 1.7
+  width: 1.3
 distributors:
 - key: lcsc
   part_number: C191023
@@ -12,16 +20,29 @@ distributors:
   part_number: C191023
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/GuangdongHottech-1N5819WS/C191023
+electrical:
+  forward_current: 1A
+  forward_voltage: 600mV@1A
+  maximum_dc_reverse_voltage: 40V
+  operating_temperature: see live listing
+  polarized: true
+  reverse_leakage_current: 500uA@40V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_schottky_sod_323_guangdong_hottech_1n5819ws/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Created an exact MDD SM4007PL rectifier identity because no
     existing OOMP diode entry matches its maker, MPN and SOD-123FL package. Live JLC
     Basic ratings are 1 A rectified current, 1 kV reverse voltage, 25 A surge, 1.1
     V at 1 A and 10 uA at 1 kV leakage. Pin geometry remains for the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: Guangdong Hottech 1N5819WS specification
+    ratings_package:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/GuangdongHottech-1N5819WS/C191023
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Current - Rectified: 1A
@@ -34,11 +55,14 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: sod_323 diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'
 kicad:
+  allow_project_fallback: false
   hand_solder: Diode_SMD:D_SOD-323
   machine_solder: Diode_SMD:D_SOD-323
-  symbol: ''
+  symbol: Diode:1N5819WS
 lcsc_search: 1N5819WS
 manufacturer: Guangdong Hottech
 manufacturers:
@@ -47,6 +71,7 @@ manufacturers:
 name_proper: Diode 1N5819WS SOD-323
 name_readable: Diode 1N5819WS SOD-323
 name_short: Diode 1N5819WS SOD-323
+package_name_manufacturer: SOD-323 (SC-76)
 part_id: D1
 part_number_jlcpcb: C191023
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/GuangdongHottech-1N5819WS/C191023
@@ -58,7 +83,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Guangdong Hottech
   part_number: 1N5819WS
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: passive
+  pin_2:
+    name: A
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/GuangdongHottech-1N5819WS/C191023
+research_notes:
+- The official JLC page lists Basic Guangdong Hottech 1N5819WS (C191023); identity
+  and ratings observed live at intake 2026-09-24.
+- 'Family batch 2026-10-04: downloaded the Guangdong Hottech 1N5819WS specification
+  into this part via the signed JLC OSS link; electrical values transcribed from the
+  intake-observed listing, package outline per the SOD-323 (SC-76) master. '
 svg_details:
 - filename_extra: assembly
   make_a4: false

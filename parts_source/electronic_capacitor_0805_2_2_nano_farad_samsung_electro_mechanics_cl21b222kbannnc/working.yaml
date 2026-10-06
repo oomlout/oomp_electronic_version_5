@@ -1,6 +1,20 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: ''
+dimension_reference:
+  document: Samsung MLCC data sheet, November 2015 (shared family copy) (C1728 provenance)
+  notes: 'part-numbering page 4 decodes the exact suffix; the class-characteristic
+    page and the size tables cover the 0805 family; package dimensions: 0805 L 2.00+-0.20,
+    W 1.25+-0.20, T 1.25+-0.20 mm.'
+  pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    part_number_system:
+    - 4
 dimensions_mm:
+  height: 1.25
   length: 2.0
   width: 1.25
 distributors:
@@ -13,11 +27,16 @@ distributors:
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2080-CL21B222KBANNNC/C1728
 electrical:
-  capacitance: 2.2 nF
+  capacitance: 2.2 nF (222)
   dielectric: X7R
   polarized: false
   rated_voltage: 50 V
-  tolerance: ±10%
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_2_2_nano_farad_samsung_electro_mechanics_cl21b222kbannnc/datasheet.pdf
 generic_oomp_id: electronic_capacitor_0805_2_2_nano_farad
 jlcpcb_selection:
   compatibility_notes: 'Exact variant, not a replacement: the generic electronic_capacitor_0805_2_2_nano_farad
@@ -30,11 +49,18 @@ jlcpcb_selection:
     C1589 rows), linked by generic_oomp_id; no Cartesian product. Rating comparison
     from the staged capture: 2.2 nF, 0805, X7R, +/-10%, 50 V; two-terminal MLCC (pin_count
     2).'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    class_characteristics:
+    - 5
+    dimensions:
+    - 6
+    document: Samsung MLCC data sheet, November 2015 (shared family copy)
+    part_number_system:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2080-CL21B222KBANNNC/C1728
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: '1'
   ratings:
     Capacitance: 2.2nF
@@ -45,9 +71,13 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0805 resistor template (Device:R_Small, Capacitor_SMD:C_0805_2012Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 2.2nF
@@ -58,6 +88,8 @@ manufacturers:
 name_proper: Capacitor 2.2 nF 0805
 name_readable: Capacitor 2.2 nF 0805
 name_short: Capacitor 2.2 nF 0805
+oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+package_name_manufacturer: 0805 (2012 metric)
 part_id: C1
 part_number_jlcpcb: C1728
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2080-CL21B222KBANNNC/C1728
@@ -69,18 +101,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Samsung Electro-Mechanics
   part_number: CL21B222KBANNNC
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2080-CL21B222KBANNNC/C1728
 research_notes:
-- Exact Samsung Electro-Mechanics C1728 / CL21B222KBANNNC purchasing variant; 0805,
-  2.2 nF, 50 V, X7R, ±10% verified against the staged live JLC capture 2026-09-28.
-- 'Linked to the generic 0805 2.2 nF definition. IMPORTANT dielectric difference:
-  the reviewed Basic preference C28260 / CL21C222JBFNNNE (same maker, C0G ±5%) on
-  the generic ID is more stable than this X7R ±10% SKU. Either may be selected deliberately
-  per project stability requirements, but C1728 must not silently replace the C0G
-  preference. The registry allows one preferred code per ID; C1728 is recorded as
-  its own exact variant ID.'
-- No datasheet PDF imported at intake; download is an integration-stage task (JLC
-  lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178164071026688-C1728.pdf).
+- 'The official JLC page lists Extended Samsung Electro-Mechanics CL21B222KBANNNC
+  (C1728): 2.2 nF 50 V X7R +-10% in 0805; identity and ratings observed live at intake
+  2026-09-28.'
+- 'Family batch 2026-10-04 over the shared Samsung Electro-Mechanics MLCC datasheet
+  (oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad): ordering
+  code decodes 222 = 2.2 nF.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

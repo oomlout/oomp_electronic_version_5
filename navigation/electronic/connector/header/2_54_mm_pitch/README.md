@@ -1,7 +1,7 @@
 # Electronic / Connector / Header / 2 54 Mm Pitch
 
 [Up one level](../README.md)
-This category contains 125 parts in total.
+This category contains 136 parts in total.
 
 ## Categories
 

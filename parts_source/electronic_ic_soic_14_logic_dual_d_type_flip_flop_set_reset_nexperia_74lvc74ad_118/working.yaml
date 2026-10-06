@@ -1,7 +1,16 @@
 category: logic
 category_name: Logic
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586187004136861696-C6099.pdf
+dimension_reference:
+  document: 74LVC74AD datasheet (C6099)
+  notes: Body outline per the Package_SO:SOIC-14_3.9x8.7mm_P1.27mm master geometry;
+    pinning cross-checked against the KiCad 74xx:74HC74 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
-  length: 8.69
+  height: 1.75
+  length: 8.7
   width: 3.9
 distributors:
 - key: lcsc
@@ -12,6 +21,15 @@ distributors:
   part_number: C6099
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Nexperia-74LVC74AD118/C6099
+electrical:
+  device_type: dual d type flip flop set reset
+  logic_family: 74LVC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 1.2-3.6 V (1.65 V for some functions)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_14_logic_dual_d_type_flip_flop_set_reset_nexperia_74lvc74ad_118/datasheet.pdf
 ic_dimensions_mm:
   body_length: 8.69
   body_width: 3.9
@@ -26,11 +44,14 @@ jlcpcb_selection:
     74LVC74AD,118 (SOIC-14; dual D-type flip-flop with set and reset (74LVC74)) is
     its exact first reviewed preferred house choice; the family token and package
     come straight off the page. Edits made under the ic family lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 2
+  - 3
+  - 6
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Nexperia-74LVC74AD118/C6099
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     -40℃~+125℃: ''
@@ -75,11 +96,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xx:74HC74 master (numbers and electrical types cross-checked
+    at plan time) and the SOIC-14 footprint master; renders inherit the pipeline verified
+    on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
-  hand_solder: Package_SO:SOIC-14_3.9x8.7mm_P1.27mm
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_SO:SOIC-14_3.9x8.7mm_P1.27mm
-  symbol: ''
+  symbol: 74xx:74HC74
 lcsc_search: 74LVC74AD,118
 manufacturer: Nexperia
 manufacturers:
@@ -88,6 +114,7 @@ manufacturers:
 name_proper: IC 74LVC74AD,118 SOIC 14
 name_readable: IC 74LVC74AD,118 SOIC 14
 name_short: IC 74LVC74AD,118 SOIC 14
+package_name_manufacturer: SOIC-14 (SOT108-1, 3.9 x 8.7 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C6099
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Nexperia-74LVC74AD118/C6099
@@ -99,7 +126,74 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Nexperia
   part_number: 74LVC74AD,118
+pins:
+  pin_1:
+    name: ~{R}
+    number: '1'
+    type: in
+  pin_10:
+    name: ~{S}
+    number: '10'
+    type: in
+  pin_11:
+    name: C
+    number: '11'
+    type: in
+  pin_12:
+    name: D
+    number: '12'
+    type: in
+  pin_13:
+    name: ~{R}
+    number: '13'
+    type: in
+  pin_14:
+    name: VCC
+    number: '14'
+    type: pwr
+  pin_2:
+    name: D
+    number: '2'
+    type: in
+  pin_3:
+    name: C
+    number: '3'
+    type: in
+  pin_4:
+    name: ~{S}
+    number: '4'
+    type: in
+  pin_5:
+    name: Q
+    number: '5'
+    type: out
+  pin_6:
+    name: ~{Q}
+    number: '6'
+    type: out
+  pin_7:
+    name: GND
+    number: '7'
+    type: pwr
+  pin_8:
+    name: ~{Q}
+    number: '8'
+    type: out
+  pin_9:
+    name: Q
+    number: '9'
+    type: out
 product_url: https://jlcpcb.com/partdetail/Nexperia-74LVC74AD118/C6099
+research_notes:
+- JLC house-parts queue row C6099 (Nexperia 74LVC74AD,118, SOIC-14, 14 pins) verified
+  at intake; family batch integration C6099.
+- Browser-extracted the signed JLC OSS link and downloaded the Nexperia 74LVC74 data
+  sheet into this part.
+- Pin table generated from the KiCad 74xx:74HC74 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 14-pin package
+  count.
+- Footprint Package_SO:SOIC-14_3.9x8.7mm_P1.27mm verified present in the KiCad 10
+  library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

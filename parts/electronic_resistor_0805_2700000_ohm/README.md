@@ -2,7 +2,7 @@
 
 `electronic_resistor_0805_2700000_ohm`
 
-Resistor 2.7e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
+Resistor 2.7e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm. The definition includes 2 documented pins.
 
 ![Resistor 2.7e+06 Ohm 0805 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 2.7e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the
 | Type | Resistor |
 | Package / style | 0805 |
 | Nominal size | 2.0 &#x00D7; 1.25 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 2.7e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.55 mm |
 | Length | 2.0 mm |
 | Width | 1.25 mm |
 
@@ -41,12 +43,26 @@ Resistor 2.7e+06 Ohm 0805 is an OOMP electronic resistor definition. It uses the
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC0805F2704TS` |
-| LCSC | [`C2933390`](https://www.lcsc.com/product-detail/C2933390.html) |
+| Manufacturer part number | `RTT052704FTP` |
+| LCSC | [`C4346`](https://www.lcsc.com/product-detail/C4346.html) |
+| JLCPCB | [`C4346`](https://jlcpcb.com/partdetail/RALEC-RTT052704FTP/C4346) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

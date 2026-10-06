@@ -1,3 +1,5 @@
 # Machine Solder
 
-No verified official master is available. See [../manifest.yaml](../manifest.yaml). No pad geometry has been guessed.
+[electronic_ic_soic_16_logic_serial_in_parallel_out_shift_register_nexperia_74hc595d_118](electronic_ic_soic_16_logic_serial_in_parallel_out_shift_register_nexperia_74hc595d_118.kicad_mod)
+
+Source: `Package_SO:SOIC-16_3.9x9.9mm_P1.27mm`. [License](../LICENSE.md).

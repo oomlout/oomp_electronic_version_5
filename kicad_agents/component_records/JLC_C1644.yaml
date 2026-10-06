@@ -23,8 +23,16 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, Samsung Electro-Mechanics, CL10C150JB8NNNC, C1644,
     0603, 15pF, 50V, C0G and +/-5% on 2026-09-24.
+  - 'Full pass 2026-10-01: live page reconfirmed (C1644, Samsung Electro-Mechanics,
+    CL10C150JB8NNNC, Basic, In Stock 1,044,036); the listed datasheet URL matches
+    the intake snapshot. No new download: the already-captured Samsung MLCC general
+    catalogue, November 2015 (shared via oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad)
+    covers the exact suffix - part numbering page 4 decodes CL / 10 = 0603 / C = C0G
+    / 150 = 15 pF / J = +-5% / B = 50 V / 8 = 0.80 mm / N Ni-barrier / C 7-inch reel;
+    the C0G Product Lineup table page 15 lists CL10C150JB8NNN at 15 pF, 50 V, +-5%,
+    1.60 x 0.80 mm; Class I (C0G) characteristics pages 5-7.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/1996-CL10C150JB8NNNC/C1644
   tier: basic
   tier_label_observed: Basic
@@ -39,7 +47,27 @@ jlc_selection:
     Tolerance: ±5%
     Capacitance: 15pF
     Temperature Coefficient: C0G
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared,
+      C1644 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 15
+    - 4
+    electrical_characteristics:
+    - 5
+    - 15
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 15 pF 0603 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.6 x 0.8 mm body with arrows (same
+    0603 generic renderer verified on six 0603 siblings this session), matching the
+    Samsung 0603/1608 nominals and thickness code 8. data/kicad manifest complete
+    with Device:C_Small symbol and Capacitor_SMD:C_0603_1608Metric machine + Pad1.08x0.95mm_HandSolder
+    hand footprints. README.md: CL10C150JB8NNNC part number, LCSC/JLC C1644 links,
+    pin table, datasheet link resolving to data/datasheet.pdf via the shared Samsung
+    MLCC general catalogue (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

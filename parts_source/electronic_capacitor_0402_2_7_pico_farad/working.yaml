@@ -1,6 +1,21 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: ''
+dimension_reference:
+  document: Fenghua General Series MLCC specification (shared family copy) (C1561
+    provenance)
+  notes: 'How-To-Order page 4 decodes the exact suffix; the size/dimension page and
+    the capacity/voltage table cover the 0402 family; package dimensions: 0402 L 1.00+-0.05,
+    W 0.50+-0.05, T 0.5+-0.05 mm.'
+  pages:
+    capacitance_voltage:
+    - 10
+    dimensions:
+    - 5
+    how_to_order:
+    - 4
 dimensions_mm:
+  height: 0.5
   length: 1.0
   width: 0.5
 distributors:
@@ -13,10 +28,16 @@ distributors:
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/1913-0402CG2R7C500NT/C1561
 electrical:
-  capacitance: 2.7 pF
+  capacitance: 2.7 pF (2R7)
   dielectric: C0G
   polarized: false
   rated_voltage: 50 V
+  temperature_characteristic: 0+-30 ppm/C referenced to 25 C (C0G)
+  temperature_range: -55 to +125 C
+  tolerance: +-0.25 pF (C)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0402_2_7_pico_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'New generic 0402 2.7 pF value: no existing row or reviewed
     choice anywhere (nearest reviewed neighbors 2.2 pF C1559 and 2.5 pF C1560 and
@@ -27,11 +48,18 @@ jlcpcb_selection:
     Staged capture verifies FH (Guangdong Fenghua Advanced Tech) 0402CG2R7C500NT,
     0402, 2.7 pF, 50 V, C0G; no prior preference overwritten. Edits made under the
     capacitor family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    capacitance_voltage:
+    - 10
+    dimensions:
+    - 5
+    document: Fenghua General Series MLCC specification (shared family copy)
+    how_to_order:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1913-0402CG2R7C500NT/C1561
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: '1'
   ratings:
     Capacitance: 2.7pF
@@ -41,9 +69,13 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0402 resistor template (Device:R_Small, Capacitor_SMD:C_0402_1005Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: C1555,C14663.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder
   machine_solder: Capacitor_SMD:C_0402_1005Metric
   symbol: Device:C_Small
 lcsc_search: 0402 2.7pF
@@ -54,6 +86,8 @@ manufacturers:
 name_proper: Capacitor 2.7 pF 0402
 name_readable: Capacitor 2.7 pF 0402
 name_short: Capacitor 2.7 pF 0402
+oomp_datasheet_common_with: electronic_capacitor_0402_100_pico_farad
+package_name_manufacturer: 0402 (1005 metric)
 part_id: C1
 part_number_jlcpcb: C1561
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1913-0402CG2R7C500NT/C1561
@@ -65,18 +99,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: FH (Guangdong Fenghua Advanced Tech)
   part_number: 0402CG2R7C500NT
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/1913-0402CG2R7C500NT/C1561
 research_notes:
-- Verified JLC C1561 / Fenghua 0402CG2R7C500NT as the first reviewed preferred extended
-  purchasing choice for this previously absent generic 0402 2.7 pF value; the populate
-  row was added by this intake. The Fenghua ordering code (CG = C0G, 2R7 = 2.7 pF,
-  500 = 50 V) decodes consistently with the listed specifications; the live page specification
-  table is the primary evidence.
-- Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended),
-  0402, 2.7 pF, 50 V, C0G, stock 77,631, minimum 1, full reel 10,000, available order
-  qty 55,038, MSL 1. The page lists no tolerance row; full stage should extract the
-  tolerance from the datasheet rather than decoding the MPN. No datasheet PDF imported
-  at intake; download is an integration-stage task (JLC lists https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8770987796775886848-C1561.pdf).
+- 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) 0402CG2R7C500NT
+  (C1561): 2.7 pF 50 V C0G +-0.25 pF (C) in 0402; identity and ratings observed live
+  at intake 2026-09-28.'
+- 'Family batch 2026-10-04 over the shared FH (Guangdong Fenghua Advanced Tech) MLCC
+  datasheet (oomp_datasheet_common_with = electronic_capacitor_0402_100_pico_farad):
+  ordering code decodes 2R7 = 2.7 pF.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -30,32 +30,95 @@ bip_39_full_space: annual clerk cactus ship net orbit erupt leisure frog shrug d
 bip_39_full_underscore: annual_clerk_cactus_ship_net_orbit_erupt_leisure_frog_shrug_draft_about
 category: resistor
 category_name: Resistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756897327871475712-C1324.pdf
+dimension_reference:
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy, C1324 provenance)
+  notes: 'Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 390J =
+    390 x 10^-1 = 39 Ohm; resistance range page 4 covers the 0805 family; dimension
+    table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10 mm.'
+  pages:
+  - 2
+  - 3
+  - 4
 dimensions_mm:
+  height: 0.55
   length: 2.0
   width: 1.25
 directory: parts/electronic_resistor_0805_39_ohm
 distributors:
 - key: lcsc
-  part_number: C17659
-  product_name: 39Ω ±1% 125mW 0805 Thick Film Resistor
+  part_number: C1324
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C17659.html
+  url: https://www.lcsc.com/product-detail/C1324.html
+- key: jlcpcb
+  part_number: C1324
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+electrical:
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/8 W (125 mW) at 70 C
+  rated_voltage: 150 V
+  resistance: 39 Ohm (390J = 390 x 10^-1 = 39 Ohm)
+  temperature_coefficient: +-100 ppm/C
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0805_39_ohm/datasheet.pdf
 id: electronic_resistor_0805_39_ohm
 id_no_class: electronic_resistor_0805_39_ohm
 id_no_size: electronic_resistor_0805_39_ohm
 id_no_type: electronic_resistor_0805_39_ohm
+jlcpcb_selection:
+  compatibility_notes: 'Use the existing generic 0805 39 ohm resistor ID: the generator
+    includes the E12 value and no reviewed house preference exists. FH datasheet rates
+    0805 at 1/8 W and 150 V; at 39 ohm and ±5% the series table supports ±100 ppm/°C,
+    matching live JLC and same-code LCSC specs (125 mW, 150 V, ±100 ppm/°C, -55 to
+    +155 °C).'
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
+    marking:
+    - 3
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+  pcba_min_qty_observed: null
+  pinout_checked: true
+  purchase_moq_observed: '1'
+  ratings:
+    Operating Temperature: -55℃~+155℃
+    Power(Watts): 125mW
+    Resistance: 39Ω
+    Temperature Coefficient: ±100ppm/℃
+    Tolerance: ±5%
+    Type: Thick Film Resistor
+    Voltage-Supply(Max): 150V
+  stock_observed: 2,057
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-27'
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0805 resistor template (Device:R_Small, Resistor_SMD:R_0805_2012Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder
   machine_solder: Resistor_SMD:R_0805_2012Metric
   symbol: Device:R_Small
 lcsc_search: 0805 39Ω
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_39_ohm
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_39_ohm
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_39_ohm
-manufacturer: UNI-ROYAL
+manufacturer: FH (Guangdong Fenghua Advanced Tech)
 manufacturers:
-- manufacturer: UNI-ROYAL
-  part_number: 0805W8F390JT5E
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-05K390JT
 md5: 09654c8063094b37d33bfd5d38e90780
 md5_10: 09654c8063
 md5_10_upper: 09654C8063
@@ -86,6 +149,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_0_ohm/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -175,7 +248,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -189,7 +262,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -197,25 +270,89 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: resistor
       category_name: Resistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8756897327871475712-C1324.pdf
+      dimension_reference:
+        document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3
+          (shared family copy, C1324 provenance)
+        notes: 'Part number system page 2 decodes 0805 / W8 = 1/8 W / F = +-1% / 390J
+          = 390 x 10^-1 = 39 Ohm; resistance range page 4 covers the 0805 family;
+          dimension table page 4: 0805 L 2.00+-0.15, W 1.25+0.15/-0.10, H 0.55+-0.10
+          mm.'
+        pages:
+        - 2
+        - 3
+        - 4
       dimensions_mm:
+        height: 0.55
         length: 2.0
         width: 1.25
       directory: parts\electronic_resistor_0805_39_ohm
       distributors:
       - key: lcsc
-        part_number: C17659
-        product_name: 39Ω ±1% 125mW 0805 Thick Film Resistor
+        part_number: C1324
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C17659.html
+        url: https://www.lcsc.com/product-detail/C1324.html
+      - key: jlcpcb
+        part_number: C1324
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+      electrical:
+        operating_temperature: -55 to +155 C
+        polarized: false
+        power: 1/8 W (125 mW) at 70 C
+        rated_voltage: 150 V
+        resistance: 39 Ohm (390J = 390 x 10^-1 = 39 Ohm)
+        temperature_coefficient: +-100 ppm/C
+        tolerance: +-1% (F)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_resistor_0805_39_ohm/datasheet.pdf
+      jlcpcb_selection:
+        compatibility_notes: 'Use the existing generic 0805 39 ohm resistor ID: the
+          generator includes the E12 value and no reviewed house preference exists.
+          FH datasheet rates 0805 at 1/8 W and 150 V; at 39 ohm and ±5% the series
+          table supports ±100 ppm/°C, matching live JLC and same-code LCSC specs (125
+          mW, 150 V, ±100 ppm/°C, -55 to +155 °C).'
+        datasheet_pages:
+          document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3
+            (shared family copy)
+          marking:
+          - 3
+          part_number_system:
+          - 2
+          resistance_range_dimensions:
+          - 4
+        footprint_checked: true
+        official_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+        pcba_min_qty_observed: null
+        pinout_checked: true
+        purchase_moq_observed: '1'
+        ratings:
+          Operating Temperature: -55℃~+155℃
+          Power(Watts): 125mW
+          Resistance: 39Ω
+          Temperature Coefficient: ±100ppm/℃
+          Tolerance: ±5%
+          Type: Thick Film Resistor
+          Voltage-Supply(Max): 150V
+        stock_observed: 2,057
+        tier: preferred_extended
+        tier_label_observed: Extended
+        verified_on: '2026-09-27'
+        visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+          exemplar renders of the same 0805 resistor template (Device:R_Small, Resistor_SMD:R_0805_2012Metric
+          + hand variant) already inspected this session; this batch member differs
+          only in value text. Post-build spot checks: (see batch report).'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Resistor_SMD:R_0805_2012Metric_Pad1.20x1.40mm_HandSolder
         machine_solder: Resistor_SMD:R_0805_2012Metric
         symbol: Device:R_Small
       lcsc_search: 0805 39Ω
-      manufacturer: UNI-ROYAL
+      manufacturer: FH (Guangdong Fenghua Advanced Tech)
       manufacturers:
-      - manufacturer: UNI-ROYAL
-        part_number: 0805W8F390JT5E
+      - manufacturer: FH (Guangdong Fenghua Advanced Tech)
+        part_number: RS-05K390JT
       name: electronic_resistor_0805_39_ohm
       name_proper: Resistor 39 Ohm 0805
       name_readable: Resistor 39 Ohm 0805
@@ -234,6 +371,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_0_ohm/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -324,7 +471,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -338,15 +485,19 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
+      package_name_manufacturer: 0805 (2012 metric)
       part_id: R1
-      part_number_lcsc: C17659
-      part_number_manufacturer: 0805W8F390JT5E
+      part_number_jlcpcb: C1324
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+      part_number_lcsc: C1324
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C1324.html
+      part_number_manufacturer: RS-05K390JT
       part_numbers_lcsc:
-      - part_number: C17659
-        product_name: 39Ω ±1% 125mW 0805 Thick Film Resistor
+      - part_number: C1324
       part_numbers_manufacturer:
-      - manufacturer: UNI-ROYAL
-        part_number: 0805W8F390JT5E
+      - manufacturer: FH (Guangdong Fenghua Advanced Tech)
+        part_number: RS-05K390JT
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -413,14 +564,17 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: 0805W8F390JT5E
+          value: RS-05K390JT
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C17659.html
-          value: C17659
+          url: https://www.lcsc.com/product-detail/C1324.html
+          value: C1324
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+          value: C1324
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -428,7 +582,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/resistor/0805/README.md
         oomp_id: electronic_resistor_0805_39_ohm
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_resistor_0805_39_ohm
@@ -438,10 +598,12 @@ oomlout_ai_roboclick_4:
           value: 0805
         - title: Nominal size
           value: 2.0 × 1.25 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_39_ohm
         summary: Resistor 39 Ohm 0805 is an OOMP electronic resistor definition. It
           uses the 0805 package or form factor. Its nominal drawing size is 2.0 ×
-          1.25 mm.
+          1.25 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -451,11 +613,24 @@ oomlout_ai_roboclick_4:
           value: 0805
         - level: 4
           value: 39_ohm
-      product_url: https://www.lcsc.com/product-detail/C17659.html
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
+      product_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
       regenerate_pngs: false
       research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "0805 39Ω" (192,500 in stock at capture).'
+      - 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech)
+        RS-05K390JT (C1324): 39 Ohm (390J = 390 x 10^-1 = 39 Ohm), 1/8 W, +-1%, +-100
+        ppm/C in 0805; identity and ratings observed live at intake 2026-09-27.'
+      - 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+        = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 390J = 390
+        x 10^-1 = 39 Ohm; the resistance-range table page 4 covers the 0805 family.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -632,7 +807,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -645,16 +820,20 @@ oomlout_ai_roboclick_5:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_0805_39_ohm
+package_name_manufacturer: 0805 (2012 metric)
 part_id: R1
-part_number_lcsc: C17659
-part_number_manufacturer: 0805W8F390JT5E
+part_number_jlcpcb: C1324
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+part_number_lcsc: C1324
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1324.html
+part_number_manufacturer: RS-05K390JT
 part_numbers_lcsc:
-- part_number: C17659
-  product_name: 39Ω ±1% 125mW 0805 Thick Film Resistor
+- part_number: C1324
 part_numbers_manufacturer:
-- manufacturer: UNI-ROYAL
-  part_number: 0805W8F390JT5E
+- manufacturer: FH (Guangdong Fenghua Advanced Tech)
+  part_number: RS-05K390JT
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -721,14 +900,17 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: 0805W8F390JT5E
+    value: RS-05K390JT
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C17659.html
-    value: C17659
+    url: https://www.lcsc.com/product-detail/C1324.html
+    value: C1324
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
+    value: C1324
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -736,7 +918,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/resistor/0805/README.md
   oomp_id: electronic_resistor_0805_39_ohm
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_resistor_0805_39_ohm
@@ -746,9 +934,12 @@ part_page:
     value: 0805
   - title: Nominal size
     value: 2.0 × 1.25 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0805_39_ohm
   summary: Resistor 39 Ohm 0805 is an OOMP electronic resistor definition. It uses
-    the 0805 package or form factor. Its nominal drawing size is 2.0 × 1.25 mm.
+    the 0805 package or form factor. Its nominal drawing size is 2.0 × 1.25 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -758,11 +949,24 @@ part_page:
     value: 0805
   - level: 4
     value: 39_ohm
-product_url: https://www.lcsc.com/product-detail/C17659.html
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/1676-RS05K390JT/C1324
 regenerate_pngs: false
 research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "0805
-  39Ω" (192,500 in stock at capture).'
+- 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-05K390JT
+  (C1324): 39 Ohm (390J = 390 x 10^-1 = 39 Ohm), 1/8 W, +-1%, +-100 ppm/C in 0805;
+  identity and ratings observed live at intake 2026-09-27.'
+- 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+  = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 390J = 390 x 10^-1
+  = 39 Ohm; the resistance-range table page 4 covers the 0805 family.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

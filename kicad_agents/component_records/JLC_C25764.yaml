@@ -24,6 +24,14 @@ research:
     0402, 200kΩ, 62.5mW, 50V, ±1% and ±100ppm/℃ on 2026-09-24.
   - Generic 0402 200kΩ resistor has no established preferred LCSC/MPN. Promote verified
     Basic C25764. Full pass checks derating and pad geometry.
+  - 'Family batch 2026-10-04: identity, tier and ratings are the intake-time live
+    observations (verified_on 2026-09-24); no fresh page pass was run for this member.
+    The already-captured UNI-ROYAL Thick Film Chip Resistors data sheet (shared via
+    oomp_datasheet_common_with = electronic_resistor_0402_0_ohm) covers the exact
+    suffix - part number system page 2 decodes 0402 / WG = 1/16 W / F = +-1% / 2003
+    = 2003 = 200 x 10^3 = 200 kOhm; resistance range page 4 covers the 0402 family;
+    dimension table page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body
+    marking at 0402 (page 3).'
 jlc_selection:
   verified_on: '2026-09-24'
   official_url: https://jlcpcb.com/partdetail/26507-0402WGF2003TCE/C25764
@@ -42,7 +50,18 @@ jlc_selection:
     Voltage-Supply(Max): 50V
     Tolerance: ±1%
     Temperature Coefficient: ±100ppm/℃
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
+    part_number_system:
+    - 2
+    marking:
+    - 3
+    resistance_range_dimensions:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0402 resistor template (Device:R_Small, Resistor_SMD:R_0402_1005Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: C25530,C4109.'

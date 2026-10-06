@@ -1,11 +1,12 @@
 # Electronic / Capacitor / 6 3 Mm Diameter 5 4 Mm Tall / Electrolytic
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 2 parts in total.
 
 ## Categories
 
 - [220 Micro Farad](220_micro_farad/README.md)
+- [47 Micro Farad](47_micro_farad/README.md)
 
 
 ---

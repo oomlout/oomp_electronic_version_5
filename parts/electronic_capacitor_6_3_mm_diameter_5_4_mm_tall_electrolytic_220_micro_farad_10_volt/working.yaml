@@ -30,32 +30,102 @@ bip_39_full_space: skate animal mixed actor hedgehog affair mad dry wagon bamboo
 bip_39_full_underscore: skate_animal_mixed_actor_hedgehog_affair_mad_dry_wagon_bamboo_umbrella_lobster
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291449727623168-C3345.pdf
+dimension_reference:
+  document: RVT1A221M0605 datasheet (C3345 provenance)
+  notes: SMD V-chip aluminum electrolytic, D6.3 x 5.4 mm; polarity stripe/minus band
+    marks the negative terminal per the datasheet outline drawing.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 5.4
   length: 6.3
   width: 6.3
 directory: parts/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
 distributors:
 - key: lcsc
-  part_number: C7469982
-  product_name: 20+ $0.0359 200+ $0.0281 More 10,000+ $0.0189 20,000+ $0.0177
+  part_number: C3345
   title: LCSC
-  url: https://www.lcsc.com/product-detail/C7469982.html
+  url: https://www.lcsc.com/product-detail/C3345.html
+- key: jlcpcb
+  part_number: C3345
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
+electrical:
+  capacitance: 220 uF
+  dielectric: aluminum electrolytic
+  lifetime: 2000hrs@105 C
+  operating_temperature: -55 to +105 C
+  polarized: true
+  rated_voltage: 10 V
+  tolerance: +-20%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt/datasheet.pdf
 id: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
 id_no_class: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
 id_no_size: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
 id_no_type: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
+jlcpcb_selection:
+  compatibility_notes: 'RVT1A221M0605 (SMD,D6.3xL5.4mm; 220uF 10V +/-20% Honor RVT
+    SMD; second reviewed choice on an existing generic (the row is already populated,
+    registry C7469982), so no populate edit was needed - C3345 links into that row
+    via the reviewed-choices registry) is its exact first reviewed preferred house
+    choice; ratings come straight off the page and higher-voltage parts must never
+    be silently replaced with lower-voltage siblings. Rating comparison from the staged
+    capture: package below, stock below recorded as observed. Stock 53172 recorded
+    as observed. Edits made under the capacitor family lock.'
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
+  pcba_min_qty_observed: null
+  pinout_checked: true
+  purchase_moq_observed: null
+  ratings:
+    Assembly Type: SMT Assembly
+    Attributes: Value
+    Capacitance: 220uF
+    Datasheet: Download
+    Description: -55℃~+105℃ 10V 2000hrs@105℃ 220uF 5.4mm 6.3mm ±20% SMD,D6.3xL5.4mm
+      Aluminum Electrolytic Capacitors - SMD ROHS
+    Diameter: 6.3mm
+    EasyEDA Libraries: PCB Footprint or Symbol
+    Height - Seated (Max): 5.4mm
+    'JLCPCB Part #': C3345
+    Lifetime: 2000hrs@105℃
+    'MFR.Part #': RVT1A221M0605
+    MSL Level: MSL 1
+    Operating Temperature: -55℃~+105℃
+    PCBA Type: Economic and Standard
+    Source: JLCPCB
+    Tolerance: ±20%
+    Voltage Rating: 10V
+  stock_observed: 53172
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-29'
+  visual_review: 'Family-inherited review 2026-10-05: two-terminal polarized capacitor
+    mapped to the KiCad Device:C_Polarized master (pin 1 positive, pin 2 negative)
+    and the CP_Elec_6.3x5.4 footprint master with the case dimensions cross-checked
+    against the JLC package label SMD,D6.3xL5.4mm; renders inherit the pipeline verified
+    on the completed passive exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Capacitor_SMD:CP_Elec_6.3x5.4
+  symbol: Device:C_Polarized
 lcsc_search: 220uF 10V electrolytic
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
-manufacturer: FOSAN
+manufacturer: Honor Elec
 manufacturers:
-- manufacturer: FOSAN
-  part_number: FVH010ADA221M0654
+- manufacturer: Honor Elec
+  part_number: RVT1A221M0605
 md5: ca0122388156a808a16a1df64243b0c1
 md5_10: ca01223881
 md5_10_upper: CA01223881
@@ -92,6 +162,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -181,7 +261,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -189,25 +283,96 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: capacitor
       category_name: Capacitor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8757291449727623168-C3345.pdf
+      dimension_reference:
+        document: RVT1A221M0605 datasheet (C3345 provenance)
+        notes: SMD V-chip aluminum electrolytic, D6.3 x 5.4 mm; polarity stripe/minus
+          band marks the negative terminal per the datasheet outline drawing.
+        pages:
+        - 1
+        - 2
       dimensions_mm:
+        height: 5.4
         length: 6.3
         width: 6.3
       directory: parts\electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
       distributors:
       - key: lcsc
-        part_number: C7469982
-        product_name: 20+ $0.0359 200+ $0.0281 More 10,000+ $0.0189 20,000+ $0.0177
+        part_number: C3345
         title: LCSC
-        url: https://www.lcsc.com/product-detail/C7469982.html
+        url: https://www.lcsc.com/product-detail/C3345.html
+      - key: jlcpcb
+        part_number: C3345
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
+      electrical:
+        capacitance: 220 uF
+        dielectric: aluminum electrolytic
+        lifetime: 2000hrs@105 C
+        operating_temperature: -55 to +105 C
+        polarized: true
+        rated_voltage: 10 V
+        tolerance: +-20%
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt/datasheet.pdf
+      jlcpcb_selection:
+        compatibility_notes: 'RVT1A221M0605 (SMD,D6.3xL5.4mm; 220uF 10V +/-20% Honor
+          RVT SMD; second reviewed choice on an existing generic (the row is already
+          populated, registry C7469982), so no populate edit was needed - C3345 links
+          into that row via the reviewed-choices registry) is its exact first reviewed
+          preferred house choice; ratings come straight off the page and higher-voltage
+          parts must never be silently replaced with lower-voltage siblings. Rating
+          comparison from the staged capture: package below, stock below recorded
+          as observed. Stock 53172 recorded as observed. Edits made under the capacitor
+          family lock.'
+        datasheet_pages:
+        - 1
+        - 2
+        footprint_checked: true
+        official_url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
+        pcba_min_qty_observed: null
+        pinout_checked: true
+        purchase_moq_observed: null
+        ratings:
+          Assembly Type: SMT Assembly
+          Attributes: Value
+          Capacitance: 220uF
+          Datasheet: Download
+          Description: -55℃~+105℃ 10V 2000hrs@105℃ 220uF 5.4mm 6.3mm ±20% SMD,D6.3xL5.4mm
+            Aluminum Electrolytic Capacitors - SMD ROHS
+          Diameter: 6.3mm
+          EasyEDA Libraries: PCB Footprint or Symbol
+          Height - Seated (Max): 5.4mm
+          'JLCPCB Part #': C3345
+          Lifetime: 2000hrs@105℃
+          'MFR.Part #': RVT1A221M0605
+          MSL Level: MSL 1
+          Operating Temperature: -55℃~+105℃
+          PCBA Type: Economic and Standard
+          Source: JLCPCB
+          Tolerance: ±20%
+          Voltage Rating: 10V
+        stock_observed: 53172
+        tier: preferred_extended
+        tier_label_observed: Extended
+        verified_on: '2026-09-29'
+        visual_review: 'Family-inherited review 2026-10-05: two-terminal polarized
+          capacitor mapped to the KiCad Device:C_Polarized master (pin 1 positive,
+          pin 2 negative) and the CP_Elec_6.3x5.4 footprint master with the case dimensions
+          cross-checked against the JLC package label SMD,D6.3xL5.4mm; renders inherit
+          the pipeline verified on the completed passive exemplars and were spot-checked
+          on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Capacitor_SMD:CP_Elec_6.3x5.4
+        symbol: Device:C_Polarized
       lcsc_search: 220uF 10V electrolytic
-      manufacturer: FOSAN
+      manufacturer: Honor Elec
       manufacturers:
-      - manufacturer: FOSAN
-        part_number: FVH010ADA221M0654
+      - manufacturer: Honor Elec
+        part_number: RVT1A221M0605
       name: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
       name_proper: Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall
       name_readable: Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall
@@ -228,6 +393,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -318,15 +493,32 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: SMD V-chip aluminum electrolytic, D6.3 x 5.4 mm
       part_id: C1
-      part_number_lcsc: C7469982
-      part_number_manufacturer: FVH010ADA221M0654
+      part_number_jlcpcb: C3345
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
+      part_number_lcsc: C3345
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C3345.html
+      part_number_manufacturer: RVT1A221M0605
       part_numbers_lcsc:
-      - part_number: C7469982
-        product_name: 20+ $0.0359 200+ $0.0281 More 10,000+ $0.0189 20,000+ $0.0177
+      - part_number: C3345
       part_numbers_manufacturer:
-      - manufacturer: FOSAN
-        part_number: FVH010ADA221M0654
+      - manufacturer: Honor Elec
+        part_number: RVT1A221M0605
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -393,14 +585,17 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: FVH010ADA221M0654
+          value: RVT1A221M0605
         - title: LCSC
-          url: https://www.lcsc.com/product-detail/C7469982.html
-          value: C7469982
+          url: https://www.lcsc.com/product-detail/C3345.html
+          value: C3345
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
+          value: C3345
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -408,7 +603,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/capacitor/6_3_mm_diameter_5_4_mm_tall/electrolytic/220_micro_farad/README.md
         oomp_id: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
-        pins: []
+        pins:
+        - name: positive
+          number: '1'
+          type: passive
+        - name: negative
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
@@ -418,11 +619,13 @@ oomlout_ai_roboclick_3:
           value: 6 3 mm diameter 5 4 mm tall
         - title: Nominal size
           value: 6.3 × 6.3 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
         summary: Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall
           is an OOMP electronic capacitor definition. It uses the 6 3 mm diameter
           5 4 mm tall package or form factor. Its nominal drawing size is 6.3 × 6.3
-          mm.
+          mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -436,11 +639,23 @@ oomlout_ai_roboclick_3:
           value: 220_micro_farad
         - level: 6
           value: 10_volt
-      product_url: https://www.lcsc.com/product-detail/C7469982.html
+      pins:
+        pin_1:
+          name: positive
+          number: '1'
+          type: passive
+        pin_2:
+          name: negative
+          number: '2'
+          type: passive
+      product_url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
       regenerate_pngs: false
       research_notes:
-      - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
-        "220uF 10V 6.3x5.4 electrolytic" (12,740 in stock at capture).'
+      - The official JLC page lists SMD,D6.3xL5.4mm Honor Elec RVT1A221M0605 (C3345);
+        identity and ratings observed live at intake 2026-09-29.
+      - Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized
+        master and the Capacitor_SMD:CP_Elec_6.3x5.4 footprint master in the 2026-10-05
+        family batch.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -617,7 +832,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -631,15 +846,18 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
+package_name_manufacturer: SMD V-chip aluminum electrolytic, D6.3 x 5.4 mm
 part_id: C1
-part_number_lcsc: C7469982
-part_number_manufacturer: FVH010ADA221M0654
+part_number_jlcpcb: C3345
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
+part_number_lcsc: C3345
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C3345.html
+part_number_manufacturer: RVT1A221M0605
 part_numbers_lcsc:
-- part_number: C7469982
-  product_name: 20+ $0.0359 200+ $0.0281 More 10,000+ $0.0189 20,000+ $0.0177
+- part_number: C3345
 part_numbers_manufacturer:
-- manufacturer: FOSAN
-  part_number: FVH010ADA221M0654
+- manufacturer: Honor Elec
+  part_number: RVT1A221M0605
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -706,14 +924,17 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: FVH010ADA221M0654
+    value: RVT1A221M0605
   - title: LCSC
-    url: https://www.lcsc.com/product-detail/C7469982.html
-    value: C7469982
+    url: https://www.lcsc.com/product-detail/C3345.html
+    value: C3345
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
+    value: C3345
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -721,7 +942,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/capacitor/6_3_mm_diameter_5_4_mm_tall/electrolytic/220_micro_farad/README.md
   oomp_id: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
-  pins: []
+  pins:
+  - name: positive
+    number: '1'
+    type: passive
+  - name: negative
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
@@ -731,10 +958,13 @@ part_page:
     value: 6 3 mm diameter 5 4 mm tall
   - title: Nominal size
     value: 6.3 × 6.3 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_capacitor_6_3_mm_diameter_5_4_mm_tall_electrolytic_220_micro_farad_10_volt
   summary: Capacitor 220 uF 10 V Electrolytic 6.3 mm diameter x 5.4 mm tall is an
     OOMP electronic capacitor definition. It uses the 6 3 mm diameter 5 4 mm tall
-    package or form factor. Its nominal drawing size is 6.3 × 6.3 mm.
+    package or form factor. Its nominal drawing size is 6.3 × 6.3 mm. The definition
+    includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -748,11 +978,23 @@ part_page:
     value: 220_micro_farad
   - level: 6
     value: 10_volt
-product_url: https://www.lcsc.com/product-detail/C7469982.html
+pins:
+  pin_1:
+    name: positive
+    number: '1'
+    type: passive
+  pin_2:
+    name: negative
+    number: '2'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/HonorElec-RVT1A221M0605/C3345
 regenerate_pngs: false
 research_notes:
-- 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "220uF
-  10V 6.3x5.4 electrolytic" (12,740 in stock at capture).'
+- The official JLC page lists SMD,D6.3xL5.4mm Honor Elec RVT1A221M0605 (C3345); identity
+  and ratings observed live at intake 2026-09-29.
+- Two-terminal polarized V-chip SMD capacitor mapped to the KiCad Device:C_Polarized
+  master and the Capacitor_SMD:CP_Elec_6.3x5.4 footprint master in the 2026-10-05
+  family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

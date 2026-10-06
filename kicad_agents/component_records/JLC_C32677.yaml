@@ -26,6 +26,9 @@ research:
   - Browser-downloaded ProTek PSM712 PDF page 1 calls it a 600 W TVS array for RS-485
     in SOT-23.
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C32677.json.
+  - 'Family batch 2026-10-04: downloaded the own specification (PSM712-LF-T7, signed
+    JLC OSS link) and verified the SOT-23 package outline and polarity; electrical
+    values transcribed from the intake-observed listing (verified_on 2026-09-24).'
 jlc_selection:
   verified_on: '2026-09-24'
   official_url: https://jlcpcb.com/partdetail/ProTekDevices-PSM712_LFT7/C32677
@@ -49,7 +52,12 @@ jlc_selection:
     Type: TVS
     Voltage - Breakdown: 13.3V
     level of protection: IEC 61000-4-2、IEC 61000-4-5、IEC 61000-4-4
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: ProTek Devices PSM712-LF-T7 specification
+    ratings_package:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: sot_23 diode template identical
+    to completed exemplar renders of the same package (inspected post-build); this
+    part differs only in value text.'

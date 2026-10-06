@@ -2,7 +2,7 @@
 
 `electronic_resistor_1206_1000_ohm`
 
-Resistor 1000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Resistor 1000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.1 &#x00D7; 1.55 mm. The definition includes 2 documented pins.
 
 ![Resistor 1000 Ohm 1206 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Resistor 1000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 | OOMP ID | `electronic_resistor_1206_1000_ohm` |
 | Type | Resistor |
 | Package / style | 1206 |
-| Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Nominal size | 3.1 &#x00D7; 1.55 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,8 +32,9 @@ Resistor 1000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 | Measurement | Value |
 | --- | ---: |
-| Length | 3.2 mm |
-| Width | 1.6 mm |
+| Height | 0.55 mm |
+| Length | 3.1 mm |
+| Width | 1.55 mm |
 
 
 
@@ -48,6 +50,19 @@ Resistor 1000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

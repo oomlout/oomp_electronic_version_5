@@ -1,50 +1,127 @@
 category: resistor
 category_name: Resistor
+datasheet_url: ''
+dimension_reference:
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy) (C4142 provenance)
+  notes: 0402 (1005 metric) outline L 1.00 +-0.10, W 0.50 +-0.05, H 0.35 +-0.05 mm;
+    the ordering code 0402WGF8202TCE decodes 820 x 10^2 = 82 kOhm, F = +-1%, WG =
+    1/16 W.
+  pages:
+  - 2
+  - 4
 dimensions_mm:
+  height: 0.35
   length: 1.0
   width: 0.5
 distributors:
-- key: lcsc
-  part_number: C2909388
-  product_name: 82kΩ ±1% 62.5mW 0402 Thick Film Resistor
-  title: LCSC
-  url: https://www.lcsc.com/product-detail/C2909388.html
 - key: lcsc
   part_number: C4142
   product_name: 82kΩ ±1% 62.5mW 0402 Thick Film Resistor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C4142.html
 - key: lcsc
+  part_number: C2909388
+  product_name: 82kΩ ±1% 62.5mW 0402 Thick Film Resistor
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C2909388.html
+- key: lcsc
   part_number: C2906969
   product_name: 82kΩ ±5% 62.5mW 0402 Thick Film Resistor
   title: LCSC
   url: https://www.lcsc.com/product-detail/C2906969.html
+- key: jlcpcb
+  part_number: C4142
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/4549-0402WGF8202TCE/C4142
+electrical:
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/16 W (62.5 mW) at 70 C
+  rated_voltage: 50 V
+  resistance: 82 kOhm
+  temperature_coefficient: +-100 ppm/C
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0402_82000_ohm/datasheet.pdf
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0402 82 kOhm resistor. JLC C4142 (UNI-ROYAL
+    0402WGF8202TCE) supplies the exact value with the family 62.5 mW / 50 V ratings.
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/4549-0402WGF8202TCE/C4142
+  pinout_checked: true
+  ratings:
+    max_voltage: 50 V
+    operating_temperature: -55 to +155 C
+    power: 62.5 mW
+    resistance: 82 kOhm
+    temperature_coefficient: +-100 ppm/C
+    tolerance: +-1%
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-26'
+  visual_review: 'Family-inherited review 2026-10-05: 0402 resistor template identical
+    to the completed family exemplars (Device:R_Small, R_0402 assets) inspected post-build;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder
   machine_solder: Resistor_SMD:R_0402_1005Metric
   symbol: Device:R_Small
 lcsc_search: 0402 82kΩ
-manufacturer: FOJAN
+manufacturer: UNI-ROYAL(Uniroyal Elec)
 manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF8202TCE
 - manufacturer: FOJAN
   part_number: FRC0402F8202TS
 name_proper: Resistor 82000 Ohm 0402
 name_readable: Resistor 82000 Ohm 0402
 name_short: Resistor 82000 Ohm 0402
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
+package_name_manufacturer: 0402 (1005 metric)
 part_id: R1
-part_number_lcsc: C2909388
-part_number_manufacturer: FRC0402F8202TS
+part_number_jlcpcb: C4142
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/4549-0402WGF8202TCE/C4142
+part_number_lcsc: C4142
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C4142.html
+part_number_manufacturer: 0402WGF8202TCE
 part_numbers_lcsc:
-- part_number: C2909388
-  product_name: 82kΩ ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C4142
+  product_name: 82kΩ ±1% 62.5mW 0402 Thick Film Resistor
+- part_number: C2909388
   product_name: 82kΩ ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C2906969
   product_name: 82kΩ ±5% 62.5mW 0402 Thick Film Resistor
-product_url: https://www.lcsc.com/product-detail/C2909388.html
+part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 0402WGF8202TCE
+- manufacturer: FOJAN
+  part_number: FRC0402F8202TS
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/4549-0402WGF8202TCE/C4142
 research_notes:
-- 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified JLCPCB
-  Part Class on the product page); best C2909388 with 533,300 in stock at capture.'
+- 'The official JLC page lists UNI-ROYAL(Uniroyal Elec) 0402WGF8202TCE (C4142): 82
+  kOhm, 62.5 mW, 50 V, +-1% (F), 0402; identity from the official category crawl (row
+  last_seen 2026-09-26) - no separate staged browser capture exists for this code.'
+- 'Straggler close-out 2026-10-05: shares the in-tree UNI-ROYAL 0402 thick-film family
+  datasheet (no new download).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

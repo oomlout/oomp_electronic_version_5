@@ -1,3 +1,5 @@
 # Machine Solder
 
-No verified official master is available. See [../manifest.yaml](../manifest.yaml). No pad geometry has been guessed.
+[electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13](electronic_diode_tvs_smb_brightking_p6smb6_8ca_tr13.kicad_mod)
+
+Source: `Diode_SMD:D_SMB`. [License](../LICENSE.md).

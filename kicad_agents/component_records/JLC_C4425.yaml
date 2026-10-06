@@ -33,6 +33,14 @@ research:
     tooltip). No datasheet PDF imported at intake (solo worker has no download); download
     is an integration-stage task.'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C4425.json.
+  - 'Family batch 2026-10-04: identity, tier and ratings are the intake-time live
+    observations (verified_on 2026-09-30); no fresh page pass was run for this member.
+    The already-captured UNI-ROYAL Thick Film Chip Resistors data sheet (shared via
+    oomp_datasheet_common_with = electronic_resistor_0402_0_ohm) covers the exact
+    suffix - part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / (mpn
+    scheme differs) = 1.3 kOhm (ordering code scheme differs; value from OOMP identity);
+    resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L
+    3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.'
 jlc_selection:
   verified_on: '2026-09-30'
   official_url: https://jlcpcb.com/partdetail/RALEC-RTT061301FTP/C4425
@@ -68,7 +76,18 @@ jlc_selection:
     Tolerance: ±1%
     Type: Thick Film Resistor
     Voltage-Supply(Max): 150V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
+    part_number_system:
+    - 2
+    marking:
+    - 3
+    resistance_range_dimensions:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 1206 resistor template (Device:R_Small, Resistor_SMD:R_1206_3216Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'

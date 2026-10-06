@@ -1,6 +1,19 @@
 category: resistor
 category_name: Resistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707948854984704-C4109.pdf
+dimension_reference:
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy, C4109 provenance)
+  notes: 'Part number system page 2 decodes 0402 / WG = 1/16 W / F = +-1% / 2001 =
+    200 x 10^1 = 2 kOhm; resistance range page 4 covers 0402 1/16 W 1% = 1 Ohm-10
+    MOhm; dimension table page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm;
+    no body marking at 0402 (page 3).'
+  pages:
+  - 2
+  - 3
+  - 4
 dimensions_mm:
+  height: 0.35
   length: 1.0
   width: 0.5
 distributors:
@@ -24,6 +37,17 @@ distributors:
   part_number: C4109
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/4516-0402WGF2001TCE/C4109
+electrical:
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/16 W (62.5 mW) at 70 C
+  rated_voltage: 50 V
+  resistance: 2 kOhm (2001 = 200 x 10^1)
+  temperature_coefficient: +-100 ppm/C
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0402_2000_ohm/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Generic passive with matching value/package: the queue hint
     electronic_resistor_0402_2000_ohm did not yet exist because 2 kohm is outside
@@ -32,11 +56,19 @@ jlcpcb_selection:
     compatibility: 2 kohm, 0402, +/-1%, 62.5 mW, 50 V, +/-100 ppm/deg C thick film;
     these are recorded as the purchasing-choice ratings for the UNI-ROYAL SKU, not
     a universal generic rating.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy, C4109 provenance)
+    marking:
+    - 3
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/4516-0402WGF2001TCE/C4109
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Operating Temperature: -55℃~+155℃
@@ -49,10 +81,20 @@ jlcpcb_selection:
   stock_observed: 8539008
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Resistor 2000 Ohm 0402 with terminals
+    1 and 2, symmetric body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png:
+    0402/1005 outline 1.0 x 0.5 mm with arrows, matching the UNI-ROYAL dimension table
+    (page 4, H 0.35 mm recorded in dimensions_mm). data/kicad manifest complete with
+    Device:R_Small symbol and Resistor_SMD:R_0402_1005Metric machine + Pad0.72x0.64mm_HandSolder
+    hand footprints. README.md: 0402WGF2001TCE part number, LCSC/JLC C4109 links,
+    2-pin table, datasheet link resolving to data/datasheet.pdf via the shared UNI-ROYAL
+    family datasheet (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder
   machine_solder: Resistor_SMD:R_0402_1005Metric
   symbol: Device:R_Small
 lcsc_search: 0402 2kΩ
@@ -69,6 +111,8 @@ manufacturers:
 name_proper: Resistor 2000 Ohm 0402
 name_readable: Resistor 2000 Ohm 0402
 name_short: Resistor 2000 Ohm 0402
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
+package_name_manufacturer: 0402 (1005 metric)
 part_id: R1
 part_number_jlcpcb: C4109
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/4516-0402WGF2001TCE/C4109
@@ -92,10 +136,24 @@ part_numbers_manufacturer:
   part_number: FRC0402F2001TS
 - manufacturer: YAGEO
   part_number: RC0402JR-072KL
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/4516-0402WGF2001TCE/C4109
 research_notes:
 - 'LCSC stock research 2026-09: highest-stock listing first (C4109, 6,285,400 in stock
   at capture); runners-up follow.'
+- 'The official JLC page lists Basic UNI-ROYAL 0402WGF2001TCE (C4109): 2 kOhm, 1/16
+  W, +-1%, +-100 ppm/C in 0402; reconfirmed live 2026-10-02.'
+- 'Fast path over the shared UNI-ROYAL thick-film family datasheet (oomp_datasheet_common_with
+  = electronic_resistor_0402_0_ohm): the ordering-code system page 2 decodes the exact
+  suffix and the resistance-range table page 4 covers 0402 1/16 W 1% = 1 Ohm-10 MOhm.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

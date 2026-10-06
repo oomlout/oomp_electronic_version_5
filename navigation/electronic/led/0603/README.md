@@ -1,7 +1,7 @@
 # Electronic / LED / 0603
 
 [Up one level](../README.md)
-This category contains 20 parts in total.
+This category contains 23 parts in total.
 
 ## Categories
 
@@ -10,6 +10,7 @@ This category contains 20 parts in total.
 - [Red](red/README.md)
 - [White](white/README.md)
 - [Yellow](yellow/README.md)
+- [Yellow Green](yellow_green/README.md)
 
 ## Parts
 

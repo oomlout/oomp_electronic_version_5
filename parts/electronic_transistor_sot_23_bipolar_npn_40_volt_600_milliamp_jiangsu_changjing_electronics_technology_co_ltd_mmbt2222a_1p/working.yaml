@@ -30,9 +30,18 @@ bip_39_full_space: gift lion vapor word urban pencil pride obtain doll moment dr
 bip_39_full_underscore: gift_lion_vapor_word_urban_pencil_pride_obtain_doll_moment_drink_hope
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586172569242648576-C8512.pdf
+dimension_reference:
+  document: Changjing MMBT2222A SOT-23 specification, C.Jan 2014 (C8512)
+  notes: 'SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1 mm
+    per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries the pinout
+    and ratings but no dimension table.'
+  pages:
+  - 1
 dimensions_mm:
+  height: 1.1
   length: 2.9
-  width: 2.6
+  width: 1.3
 directory: parts/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
 distributors:
 - key: lcsc
@@ -43,6 +52,20 @@ distributors:
   part_number: C8512
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
+electrical:
+  collector_current: 600 mA continuous
+  collector_cutoff_current: 0.01 uA max (VCB = 60 V)
+  collector_emitter_breakdown_voltage: 40 V (VCEO); VCBO 75 V, VEBO 6 V
+  collector_emitter_saturation_voltage: 1 V max at IC = 500 mA (0.3 V at 150 mA)
+  dc_current_gain: hFE 100-300 at VCE = 10 V, IC = 150 mA (rank H 200-300)
+  operating_temperature: -55 to +150 C
+  polarized: true
+  power_dissipation: 300 mW (collector, RthJA 417 C/W)
+  transistor_polarity: NPN
+  transition_frequency: 300 MHz (VCE = 20 V, IC = 20 mA)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p/datasheet.pdf
 id: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
 id_no_class: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
 id_no_size: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
@@ -52,11 +75,19 @@ jlcpcb_selection:
     transistor family row electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
     using the established type/package/polarity/voltage/current taxonomy. The 1P grade
     suffix is part of the ordering MPN and is preserved.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: Changjing MMBT2222A SOT-23 specification, C.Jan 2014 (C8512 provenance,
+      family anchor)
+    electrical_characteristics:
+    - 1
+    maximum_ratings:
+    - 1
+    pinout:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Collector - Emitter Voltage VCEO: 40V
@@ -72,12 +103,25 @@ jlcpcb_selection:
   stock_observed: 585095
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Transistor MMBT2222A 1P
+    SOT 23 with the SOT-23 package drawing labelled emitter (pin 2) left, base (pin
+    1) left-lower, collector (pin 3) right, matching the datasheet pinout page 1 (1
+    = BASE, 2 = EMITTER, 3 = COLLECTOR). working_svg_dimensioned.png: SOT-23 (JEDEC
+    TO-236 Var AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry (datasheet
+    carries ratings and pinout but no dimension table; recorded in dimension_reference).
+    data/kicad manifest complete with Transistor_BJT:MMBT2222A symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints, same convention as the other Changjing
+    siblings. README.md: MMBT2222A 1P part number, LCSC/JLC C8512 links, 3-pin table
+    (base/emitter/collector), datasheet link resolving to data/datasheet.pdf (the
+    Changjing MMBT2222A specification, family anchor). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
+  machine_solder: Package_TO_SOT_SMD:SOT-23
+  symbol: Transistor_BJT:MMBT2222A
 lcsc_search: MMBT2222A 1P
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
@@ -122,6 +166,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -211,7 +265,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -219,9 +287,18 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: transistor
       category_name: Transistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586172569242648576-C8512.pdf
+      dimension_reference:
+        document: Changjing MMBT2222A SOT-23 specification, C.Jan 2014 (C8512)
+        notes: 'SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1
+          mm per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries
+          the pinout and ratings but no dimension table.'
+        pages:
+        - 1
       dimensions_mm:
+        height: 1.1
         length: 2.9
-        width: 2.6
+        width: 1.3
       directory: parts\electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
       distributors:
       - key: lcsc
@@ -232,16 +309,39 @@ oomlout_ai_roboclick_3:
         part_number: C8512
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
+      electrical:
+        collector_current: 600 mA continuous
+        collector_cutoff_current: 0.01 uA max (VCB = 60 V)
+        collector_emitter_breakdown_voltage: 40 V (VCEO); VCBO 75 V, VEBO 6 V
+        collector_emitter_saturation_voltage: 1 V max at IC = 500 mA (0.3 V at 150
+          mA)
+        dc_current_gain: hFE 100-300 at VCE = 10 V, IC = 150 mA (rank H 200-300)
+        operating_temperature: -55 to +150 C
+        polarized: true
+        power_dissipation: 300 mW (collector, RthJA 417 C/W)
+        transistor_polarity: NPN
+        transition_frequency: 300 MHz (VCE = 20 V, IC = 20 mA)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact active device with no prior OOMP entry: added
           one explicit transistor family row electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
           using the established type/package/polarity/voltage/current taxonomy. The
           1P grade suffix is part of the ordering MPN and is preserved.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: Changjing MMBT2222A SOT-23 specification, C.Jan 2014 (C8512 provenance,
+            family anchor)
+          electrical_characteristics:
+          - 1
+          maximum_ratings:
+          - 1
+          pinout:
+          - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Collector - Emitter Voltage VCEO: 40V
@@ -257,12 +357,26 @@ oomlout_ai_roboclick_3:
         stock_observed: 585095
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-25'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library
+          run and a rebuild. working_svg_square_pins.png hero titled Transistor MMBT2222A
+          1P SOT 23 with the SOT-23 package drawing labelled emitter (pin 2) left,
+          base (pin 1) left-lower, collector (pin 3) right, matching the datasheet
+          pinout page 1 (1 = BASE, 2 = EMITTER, 3 = COLLECTOR). working_svg_dimensioned.png:
+          SOT-23 (JEDEC TO-236 Var AB) outline per the Package_TO_SOT_SMD:SOT-23 master
+          geometry (datasheet carries ratings and pinout but no dimension table; recorded
+          in dimension_reference). data/kicad manifest complete with Transistor_BJT:MMBT2222A
+          symbol and Package_TO_SOT_SMD:SOT-23 machine + SOT-23_Handsoldering hand
+          footprints, same convention as the other Changjing siblings. README.md:
+          MMBT2222A 1P part number, LCSC/JLC C8512 links, 3-pin table (base/emitter/collector),
+          datasheet link resolving to data/datasheet.pdf (the Changjing MMBT2222A
+          specification, family anchor). Limitation: KiCad symbol/footprint checked
+          as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
       kicad:
-        hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        allow_project_fallback: false
+        hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
+        machine_solder: Package_TO_SOT_SMD:SOT-23
+        symbol: Transistor_BJT:MMBT2222A
       lcsc_search: MMBT2222A 1P
       manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
       manufacturers:
@@ -288,6 +402,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -378,6 +502,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: SOT-23 (JEDEC TO-236 Var AB, 1P)
       part_id: Q1
       part_number_jlcpcb: C8512
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
@@ -455,7 +594,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -473,7 +612,16 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/transistor/sot_23/bipolar/npn/40_volt/600_milliamp/jiangsu_changjing_electronics_technology_co_ltd/README.md
         oomp_id: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
-        pins: []
+        pins:
+        - name: base
+          number: '1'
+          type: input
+        - name: emitter
+          number: '2'
+          type: passive
+        - name: collector
+          number: '3'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
@@ -482,11 +630,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: sot 23
         - title: Nominal size
-          value: 2.9 × 2.6 mm
+          value: 2.9 × 1.3 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
         summary: Transistor MMBT2222A 1P SOT 23 is an OOMP electronic transistor definition.
           It uses the sot 23 package or form factor. Its nominal drawing size is 2.9
-          × 2.6 mm.
+          × 1.3 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -506,8 +656,30 @@ oomlout_ai_roboclick_3:
           value: jiangsu_changjing_electronics_technology_co_ltd
         - level: 15
           value: mmbt2222a_1p
+      pins:
+        pin_1:
+          name: base
+          number: '1'
+          type: input
+        pin_2:
+          name: emitter
+          number: '2'
+          type: passive
+        pin_3:
+          name: collector
+          number: '3'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Jiangsu Changjing MMBT2222A 1P (C8512):
+        40 V NPN, 600 mA, 300 mW, hFE rank 200-300 in SOT-23; reconfirmed live 2026-10-02
+        (stock 597,781).'
+      - Browser-downloaded the Changjing MMBT2222A datasheet (2 pages, C.Jan 2014)
+        into this part; it anchors the MMBT2222A SOT-23 family.
+      - 'Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:MMBT2222A
+        (extends Q_NPN_BEC) matches pad-for-pad, same convention as the other Changjing
+        SOT-23 NPN integrations.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -684,7 +856,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -698,6 +870,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
+package_name_manufacturer: SOT-23 (JEDEC TO-236 Var AB, 1P)
 part_id: Q1
 part_number_jlcpcb: C8512
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
@@ -775,7 +948,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -793,7 +966,16 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/transistor/sot_23/bipolar/npn/40_volt/600_milliamp/jiangsu_changjing_electronics_technology_co_ltd/README.md
   oomp_id: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
-  pins: []
+  pins:
+  - name: base
+    number: '1'
+    type: input
+  - name: emitter
+    number: '2'
+    type: passive
+  - name: collector
+    number: '3'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
@@ -802,11 +984,13 @@ part_page:
   - title: Package / style
     value: sot 23
   - title: Nominal size
-    value: 2.9 × 2.6 mm
+    value: 2.9 × 1.3 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p
   summary: Transistor MMBT2222A 1P SOT 23 is an OOMP electronic transistor definition.
-    It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 × 2.6
-    mm.
+    It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 × 1.3
+    mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -826,8 +1010,30 @@ part_page:
     value: jiangsu_changjing_electronics_technology_co_ltd
   - level: 15
     value: mmbt2222a_1p
+pins:
+  pin_1:
+    name: base
+    number: '1'
+    type: input
+  pin_2:
+    name: emitter
+    number: '2'
+    type: passive
+  pin_3:
+    name: collector
+    number: '3'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/9007-MMBT2222A1P/C8512
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Jiangsu Changjing MMBT2222A 1P (C8512): 40 V
+  NPN, 600 mA, 300 mW, hFE rank 200-300 in SOT-23; reconfirmed live 2026-10-02 (stock
+  597,781).'
+- Browser-downloaded the Changjing MMBT2222A datasheet (2 pages, C.Jan 2014) into
+  this part; it anchors the MMBT2222A SOT-23 family.
+- 'Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:MMBT2222A
+  (extends Q_NPN_BEC) matches pad-for-pad, same convention as the other Changjing
+  SOT-23 NPN integrations.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

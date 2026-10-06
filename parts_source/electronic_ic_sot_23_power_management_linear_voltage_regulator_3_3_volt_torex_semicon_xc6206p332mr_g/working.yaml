@@ -1,8 +1,17 @@
 category: power_management
 category_name: Power management
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707861616033792-C5446.pdf
+dimension_reference:
+  document: Torex XC6206 series datasheet, ETR0305_004b (C5446)
+  notes: 'SOT-23 (TO-236AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry;
+    pin assignment page 2: 1 = VSS, 2 = VOUT, 3 = VIN.'
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 1.0
   length: 2.9
-  width: 2.6
+  width: 1.3
 distributors:
 - key: lcsc
   part_number: C5446
@@ -12,17 +21,38 @@ distributors:
   part_number: C5446
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TorexSemicon-XC6206P332MRG/C5446
+electrical:
+  device_type: 3-terminal positive CMOS LDO voltage regulator
+  dropout_voltage: 250 mV @100 mA (3.0 V type)
+  maximum_input_voltage: 6.0 V
+  maximum_output_current: 200 mA (current limiter with foldback protection)
+  operating_temperature: -40 to +85 C
+  output_capacitor: low-ESR ceramic compatible
+  output_voltage: 3.3 V fixed (+-2 %)
+  polarized: true
+  quiescent_current: 1.0 uA typ
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_semicon_xc6206p332mr_g/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact active device with no prior OOMP entry: added one explicit
     IC family row electronic_ic_sot_23_power_management_linear_voltage_regulator_3_3_volt_torex_semicon_xc6206p332mr_g
     reusing the established linear_voltage_regulator_3_3_volt function token and the
     sot_23 package token used by the existing 3-terminal LDO rows. Fixed 3.3 V positive
     LDO, 200 mA, 1 uA standby.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: Torex XC6206 series datasheet, ETR0305_004b (C5446 provenance, family
+      anchor)
+    features:
+    - 1
+    pin_assignment:
+    - 2
+    pin_configuration:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TorexSemicon-XC6206P332MRG/C5446
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Features: Over Current Protection、Short Circuit Protection
@@ -37,12 +67,23 @@ jlcpcb_selection:
   stock_observed: 460135
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC XC6206P332MR-G SOT 23
+    with VOUT (pin 2) left, GND (pin 1) left-lower and VIN (pin 3) right, matching
+    the datasheet pin assignment page 2 (1 = VSS, 2 = VOUT, 3 = VIN). working_svg_dimensioned.png:
+    SOT-23 (TO-236AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry. data/kicad
+    manifest complete with Regulator_Linear:XC6206PxxxMR symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints. README.md: XC6206P332MR-G part
+    number, LCSC/JLC C5446 links, 3-pin table (GND/VOUT/VIN), datasheet link resolving
+    to data/datasheet.pdf (the Torex XC6206 series datasheet, family anchor). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'
 kicad:
-  hand_solder: Package_TO_SOT_SMD:SOT-23
+  allow_project_fallback: false
+  hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
   machine_solder: Package_TO_SOT_SMD:SOT-23
-  symbol: ''
+  symbol: Regulator_Linear:XC6206PxxxMR
 lcsc_search: XC6206P332MR-G
 manufacturer: Torex Semicon
 manufacturers:
@@ -51,6 +92,7 @@ manufacturers:
 name_proper: IC XC6206P332MR-G SOT 23
 name_readable: IC XC6206P332MR-G SOT 23
 name_short: IC XC6206P332MR-G SOT 23
+package_name_manufacturer: SOT-23 (TO-236AB)
 part_id: U1
 part_number_jlcpcb: C5446
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TorexSemicon-XC6206P332MRG/C5446
@@ -62,7 +104,27 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Torex Semicon
   part_number: XC6206P332MR-G
+pins:
+  pin_1:
+    name: GND
+    number: '1'
+    type: power_in
+  pin_2:
+    name: VOUT
+    number: '2'
+    type: power_out
+  pin_3:
+    name: VIN
+    number: '3'
+    type: power_in
 product_url: https://jlcpcb.com/partdetail/TorexSemicon-XC6206P332MRG/C5446
+research_notes:
+- 'The official JLC page lists Basic Torex Semicon XC6206P332MR-G (C5446): 3.3 V 200
+  mA LDO in SOT-23; reconfirmed live 2026-10-02 (stock 474,086).'
+- Browser-downloaded the Torex XC6206 series datasheet (17 pages, ETR0305_004b) into
+  this part; it anchors the XC6206 SOT-23 LDO family.
+- 'Pin assignment page 2 (SOT-23): 1 = VSS, 2 = VOUT, 3 = VIN; the KiCad Regulator_Linear:XC6206PxxxMR
+  symbol matches pad-for-pad.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

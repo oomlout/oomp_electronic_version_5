@@ -123,6 +123,7 @@ def main(**kwargs):
     current = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_300_milliamp_nexperia_2n7002_215"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_60_volt_2n7002"
         part["manufacturer"] = "Nexperia"
         part["part_number_manufacturer"] = "2N7002,215"
         part["part_number_manufacturer_nexperia"] = "2N7002,215"
@@ -211,6 +212,7 @@ def main(**kwargs):
     current = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_bss138"
     if current in extras_dict:
         part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_50_volt_220_milliamp_onsemi_bss138"
         part["manufacturer"] = "Generic"
         part["part_number"] = "BSS138"
         part["part_number_generic"] = "BSS138"
@@ -759,6 +761,409 @@ def main(**kwargs):
             "The CBI SOT-523 datasheet assigns pin 1 gate, pin 2 source, and pin 3 drain.",
         ]
         extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C2145 / Jiangsu Changjing MMBT5551 full-stage technical data,
+    # verified against the Changjing MMBT5551 SOT-23 specification (March
+    # 2013, browser-downloaded to this part; anchors the high-voltage NPN
+    # SOT-23 family): maximum ratings page 1 - VCBO 180 V, VCEO 160 V,
+    # VEBO 6 V, IC 600 mA, PC 300 mW, RthJA 416 C/W, Tj 150 C, Tstg -55 to
+    # +150 C; electrical characteristics page 1 - ICBO 50 nA (VCB = 120 V),
+    # hFE 100-300 at VCE = 5 V, IC = 10 mA (rank H = 200-300 matches the
+    # MPN RANGE suffix; rank L = 100-200), VCE(sat) 0.2 V max at IC = 50 mA,
+    # VBE(sat) 1 V, fT 100-300 MHz, Cob 6 pF; marking G1. Pinout page 1:
+    # SOT-23 1 = BASE, 2 = EMITTER, 3 = COLLECTOR, matching the KiCad
+    # Transistor_BJT:Q_NPN_BEC symbol (pins 1 B / 2 E / 3 C) and the
+    # Package_TO_SOT_SMD:SOT-23 (JEDEC TO-236 Var AB) pads 1/2/3; the
+    # library also carries MMBT5551L (extends Q_NPN_BEC, rank L binning).
+    current = "electronic_transistor_sot_23_bipolar_npn_160_volt_jiangsu_changjing_electronics_technology_co_ltd_mmbt5551_range_200_300"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SOT-23 (JEDEC TO-236 Var AB)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707456223559680-C2145.pdf"
+        part["dimensions_mm"] = {"length": 2.9, "width": 1.3, "height": 1.1}
+        part["dimension_reference"] = {
+            "document": "Changjing MMBT5551 SOT-23 specification, March 2013 (C2145)",
+            "pages": [1, 2],
+            "notes": "SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1 mm per the Package_TO_SOT_SMD:SOT-23 master geometry; the 2-page datasheet carries the pinout and ratings but no dimension table.",
+        }
+        part["electrical"] = {
+            "transistor_polarity": "NPN",
+            "collector_emitter_breakdown_voltage": "160 V (VCEO); VCBO 180 V, VEBO 6 V",
+            "collector_current": "600 mA continuous",
+            "power_dissipation": "300 mW (collector, RthJA 416 C/W)",
+            "dc_current_gain": "hFE 100-300 at VCE = 5 V, IC = 10 mA (rank H 200-300)",
+            "collector_emitter_saturation_voltage": "0.2 V max at IC = 50 mA, IB = 5 mA",
+            "transition_frequency": "100-300 MHz (VCE = 10 V, IC = 10 mA)",
+            "collector_cutoff_current": "50 nA max (VCB = 120 V)",
+            "operating_temperature": "-55 to +150 C",
+            "polarized": True,
+        }
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "base", "input"],
+            ["2", "emitter", "passive"],
+            ["3", "collector", "passive"],
+        ]
+        for pin_index in range(len(transistor_pins)):
+            pin = transistor_pins[pin_index]
+            part["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        part["kicad"] = {
+            "symbol": "Transistor_BJT:Q_NPN_BEC",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Jiangsu Changjing MMBT5551(RANGE:200-300) (C2145): 160 V NPN, 600 mA, 300 mW, hFE rank 200-300 in SOT-23; reconfirmed live 2026-10-01 (stock 2,259,646).",
+            "Browser-downloaded the Changjing MMBT5551 datasheet (2 pages, March 2013) into this part; it anchors the MMBT5551/high-voltage NPN SOT-23 family.",
+            "Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; the KiCad Transistor_BJT:Q_NPN_BEC symbol numbers its pins B = 1, E = 2, C = 3, matching pad-for-pad.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C2146 / Jiangsu Changjing S8050 J3Y full-stage technical data,
+    # verified against the Changjing S8050 SOT-23 specification (Rev 2.0,
+    # browser-downloaded to this part; anchors the S8050 NPN SOT-23 family):
+    # maximum ratings - VCBO 40 V, VCEO 25 V, VEBO 5 V, IC 500 mA, PC 300 mW,
+    # RthJA 417 C/W, Tj/Tstg -55 to +150 C; electrical characteristics -
+    # V(BR)CBO 40 V, V(BR)CEO 25 V, V(BR)EBO 5 V, ICBO/ICEO/IEBO 0.1 uA,
+    # hFE 120-400 at VCE = 1 V, IC = 50 mA (ranks L 120-200 / H 200-350 /
+    # J 300-400; the MPN RANGE 200-350 = rank H), VCE(sat) 0.6 V max at
+    # IC = 500 mA, VBE(sat) 1.2 V, fT 150 MHz; marking J3Y. Pinout page 1:
+    # SOT-23 1 = BASE, 2 = EMITTER, 3 = COLLECTOR, matching the KiCad
+    # Transistor_BJT:Q_NPN_BEC symbol (pins 1 B / 2 E / 3 C) and the
+    # Package_TO_SOT_SMD:SOT-23 pads. Known library discrepancy recorded:
+    # Transistor_BJT:S8050 extends Q_NPN_EBC (1 E / 2 B / 3 C), a different
+    # vendor's pinout convention; the Changjing datasheet is authoritative
+    # for this part, so Q_NPN_BEC is used.
+    current = "electronic_transistor_sot_23_bipolar_npn_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s8050_j3y_range_200_350"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SOT-23 (JEDEC TO-236 Var AB, J3Y)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710511031631872-C2146.pdf"
+        part["dimensions_mm"] = {"length": 2.9, "width": 1.3, "height": 1.1}
+        part["dimension_reference"] = {
+            "document": "Changjing S8050 SOT-23 specification, Rev 2.0 (C2146)",
+            "pages": [1],
+            "notes": "SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1 mm per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries the pinout and ratings but no dimension table.",
+        }
+        part["electrical"] = {
+            "transistor_polarity": "NPN",
+            "collector_emitter_breakdown_voltage": "25 V (VCEO); VCBO 40 V, VEBO 5 V",
+            "collector_current": "500 mA continuous",
+            "power_dissipation": "300 mW (collector, RthJA 417 C/W)",
+            "dc_current_gain": "hFE 120-400 at VCE = 1 V, IC = 50 mA (rank H 200-350)",
+            "collector_emitter_saturation_voltage": "0.6 V max at IC = 500 mA, IB = 50 mA",
+            "transition_frequency": "150 MHz (VCE = 6 V, IC = 20 mA)",
+            "collector_cutoff_current": "0.1 uA max (VCB = 40 V)",
+            "operating_temperature": "-55 to +150 C",
+            "polarized": True,
+        }
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "base", "input"],
+            ["2", "emitter", "passive"],
+            ["3", "collector", "passive"],
+        ]
+        for pin_index in range(len(transistor_pins)):
+            pin = transistor_pins[pin_index]
+            part["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        part["kicad"] = {
+            "symbol": "Transistor_BJT:Q_NPN_BEC",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Jiangsu Changjing S8050 J3Y(RANGE:200-350) (C2146): 25 V NPN, 500 mA, 300 mW, hFE rank 200-350 in SOT-23; reconfirmed live 2026-10-02 (stock 1,341,936).",
+            "Browser-downloaded the Changjing S8050 datasheet (4 pages, Rev 2.0) into this part; it anchors the Changjing S8050 SOT-23 family.",
+            "Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:Q_NPN_BEC matches pad-for-pad. The library's Transistor_BJT:S8050 symbol extends Q_NPN_EBC (1 E / 2 B / 3 C), another vendor's convention - deliberately not used; the Changjing datasheet is authoritative.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C2150 / Jiangsu Changjing SS8050 full-stage technical data,
+    # verified against the Changjing SS8050 SOT-23 specification (Rev 2.1,
+    # browser-downloaded to this part; anchors the SS8050 NPN SOT-23
+    # family): maximum ratings - VCBO 40 V, VCEO 25 V, VEBO 5 V, IC 1.5 A,
+    # PC 300 mW, RthJA 417 C/W, Tj/Tstg -55 to +150 C; electrical
+    # characteristics - V(BR)CBO 40 V, V(BR)CEO 25 V, V(BR)EBO 5 V,
+    # ICBO/ICEO/IEBO 0.1 uA, hFE 120-400 at VCE = 1 V, IC = 100 mA (ranks
+    # L 120-200 / H 200-350 / J 300-400; the MPN RANGE 200-350 = rank H),
+    # VCE(sat) 0.5 V max at IC = 800 mA, VBE(sat) 1.2 V, fT 100 MHz;
+    # marking Y1. Pinout page 1: SOT-23 1 = BASE, 2 = EMITTER, 3 =
+    # COLLECTOR, matching the KiCad Transistor_BJT:Q_NPN_BEC symbol (pins
+    # 1 B / 2 E / 3 C) and the Package_TO_SOT_SMD:SOT-23 pads. The separate
+    # jsmsemi SS8050 part (different maker, own datasheet) is not this
+    # part's evidence.
+    current = "electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SOT-23 (JEDEC TO-236 Var AB)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707466581327872-C2150.pdf"
+        part["dimensions_mm"] = {"length": 2.9, "width": 1.3, "height": 1.1}
+        part["dimension_reference"] = {
+            "document": "Changjing SS8050 SOT-23 specification, Rev 2.1 (C2150)",
+            "pages": [1],
+            "notes": "SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1 mm per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries the pinout and ratings but no dimension table.",
+        }
+        part["electrical"] = {
+            "transistor_polarity": "NPN",
+            "collector_emitter_breakdown_voltage": "25 V (VCEO); VCBO 40 V, VEBO 5 V",
+            "collector_current": "1.5 A continuous",
+            "power_dissipation": "300 mW (collector, RthJA 417 C/W)",
+            "dc_current_gain": "hFE 120-400 at VCE = 1 V, IC = 100 mA (rank H 200-350)",
+            "collector_emitter_saturation_voltage": "0.5 V max at IC = 800 mA, IB = 80 mA",
+            "transition_frequency": "100 MHz (VCE = 10 V, IC = 50 mA)",
+            "collector_cutoff_current": "0.1 uA max (VCB = 40 V)",
+            "operating_temperature": "-55 to +150 C",
+            "polarized": True,
+        }
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "base", "input"],
+            ["2", "emitter", "passive"],
+            ["3", "collector", "passive"],
+        ]
+        for pin_index in range(len(transistor_pins)):
+            pin = transistor_pins[pin_index]
+            part["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        part["kicad"] = {
+            "symbol": "Transistor_BJT:Q_NPN_BEC",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Jiangsu Changjing SS8050(RANGE:200-350) (C2150): 25 V NPN, 1.5 A, 300 mW, hFE rank 200-350 in SOT-23; reconfirmed live 2026-10-02 (stock 1,853,286).",
+            "Browser-downloaded the Changjing SS8050 datasheet (4 pages, Rev 2.1) into this part; it anchors the Changjing SS8050 SOT-23 family (separate from the jsmsemi SS8050 part, which has its own datasheet and masters).",
+            "Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:Q_NPN_BEC matches pad-for-pad, same convention as the C2145/C2146 Changjing SOT-23 NPN integrations.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C6749 / Jiangsu Changjing S9013 J3 full-stage technical data,
+    # verified against the Changjing S9013 SOT-23 specification (B.Nov 2011,
+    # browser-downloaded to this part; anchors the S9013 NPN SOT-23 family):
+    # maximum ratings - VCBO 40 V, VCEO 25 V, VEBO 5 V, IC 500 mA, PC 300 mW,
+    # RthJA 416 C/W, Tj 150 C, Tstg -55 to +150 C; electrical
+    # characteristics - ICBO/ICEO/IEBO 0.1 uA, hFE 120-400 at VCE = 1 V,
+    # IC = 50 mA (ranks L 120-200 / H 200-350 / J 300-400; the MPN RANGE
+    # 200-350 = rank H), VCE(sat) 0.6 V max at IC = 500 mA, VBE(sat) 1.2 V,
+    # fT 150 MHz, Cob 8 pF; marking J3. Pinout page 1: SOT-23 1 = BASE,
+    # 2 = EMITTER, 3 = COLLECTOR, matching the KiCad
+    # Transistor_BJT:Q_NPN_BEC symbol and the Package_TO_SOT_SMD:SOT-23
+    # pads (same convention as the C2145/C2146/C2150 Changjing integrations).
+    current = "electronic_transistor_sot_23_bipolar_npn_25_volt_500_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9013_j3_range_200_350"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SOT-23 (JEDEC TO-236 Var AB, J3)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579712682339336192-C6749.pdf"
+        part["dimensions_mm"] = {"length": 2.9, "width": 1.3, "height": 1.1}
+        part["dimension_reference"] = {
+            "document": "Changjing S9013 SOT-23 specification, B.Nov 2011 (C6749)",
+            "pages": [1],
+            "notes": "SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1 mm per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries the pinout and ratings but no dimension table.",
+        }
+        part["electrical"] = {
+            "transistor_polarity": "NPN",
+            "collector_emitter_breakdown_voltage": "25 V (VCEO); VCBO 40 V, VEBO 5 V",
+            "collector_current": "500 mA continuous",
+            "power_dissipation": "300 mW (collector, RthJA 416 C/W)",
+            "dc_current_gain": "hFE 120-400 at VCE = 1 V, IC = 50 mA (rank H 200-350)",
+            "collector_emitter_saturation_voltage": "0.6 V max at IC = 500 mA, IB = 50 mA",
+            "transition_frequency": "150 MHz (VCE = 6 V, IC = 20 mA)",
+            "collector_cutoff_current": "0.1 uA max (VCB = 40 V)",
+            "operating_temperature": "-55 to +150 C",
+            "polarized": True,
+        }
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "base", "input"],
+            ["2", "emitter", "passive"],
+            ["3", "collector", "passive"],
+        ]
+        for pin_index in range(len(transistor_pins)):
+            pin = transistor_pins[pin_index]
+            part["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        part["kicad"] = {
+            "symbol": "Transistor_BJT:Q_NPN_BEC",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Jiangsu Changjing S9013 J3(RANGE:200-350) (C6749): 25 V NPN, 500 mA, 300 mW, hFE rank 200-350 in SOT-23; reconfirmed live 2026-10-02 (stock 873,977).",
+            "Browser-downloaded the Changjing S9013 datasheet (2 pages, B.Nov 2011) into this part; it anchors the S9013 SOT-23 family.",
+            "Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:Q_NPN_BEC matches pad-for-pad, same convention as the C2145/C2146/C2150 Changjing SOT-23 NPN integrations.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C8326 / Jiangsu Changjing MMBT5401 full-stage technical data,
+    # verified against the Changjing MMBT5401 SOT-23 specification (C.Nov
+    # 2012, browser-downloaded to this part; anchors the high-voltage PNP
+    # SOT-23 family): complementary PNP to the MMBT5551. Maximum ratings
+    # page 1 - VCBO -160 V, VCEO -150 V, VEBO -5 V, IC -0.6 A, PC 0.3 W,
+    # RthJA 416 C/W, Tj 150 C, Tstg -55 to +150 C; electrical
+    # characteristics page 1 - ICBO/IEBO -0.1 uA, hFE 100-300 at VCE = -5
+    # V, IC = -10 mA (ranks L 100-200 / H 200-300; the MPN RANGE 200-300 =
+    # rank H), VCE(sat) -0.5 V max at IC = -50 mA, VBE(sat) -1 V,
+    # fT 100 MHz, marking 2L. Pinout page 1: SOT-23 1 = BASE, 2 = EMITTER,
+    # 3 = COLLECTOR, matching the KiCad Transistor_BJT:Q_PNP_BEC symbol
+    # (pins 1 B / 2 E / 3 C) and the Package_TO_SOT_SMD:SOT-23 pads (same
+    # numbering convention as the Changjing NPN integrations).
+    current = "electronic_transistor_sot_23_bipolar_pnp_150_volt_jiangsu_changjing_electronics_technology_co_ltd_mmbt5401_range_200_300"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SOT-23 (JEDEC TO-236 Var AB)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707445083758592-C8326.pdf"
+        part["dimensions_mm"] = {"length": 2.9, "width": 1.3, "height": 1.1}
+        part["dimension_reference"] = {
+            "document": "Changjing MMBT5401 SOT-23 specification, C.Nov 2012 (C8326)",
+            "pages": [1],
+            "notes": "SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1 mm per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries the pinout and ratings but no dimension table.",
+        }
+        part["electrical"] = {
+            "transistor_polarity": "PNP",
+            "collector_emitter_breakdown_voltage": "-150 V (VCEO); VCBO -160 V, VEBO -5 V",
+            "collector_current": "-600 mA continuous",
+            "power_dissipation": "300 mW (collector, RthJA 416 C/W)",
+            "dc_current_gain": "hFE 100-300 at VCE = -5 V, IC = -10 mA (rank H 200-300)",
+            "collector_emitter_saturation_voltage": "-0.5 V max at IC = -50 mA, IB = -5 mA",
+            "transition_frequency": "100 MHz (VCE = -5 V, IC = -10 mA)",
+            "collector_cutoff_current": "-0.1 uA max (VCB = -120 V)",
+            "operating_temperature": "-55 to +150 C",
+            "polarized": True,
+        }
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "base", "input"],
+            ["2", "emitter", "passive"],
+            ["3", "collector", "passive"],
+        ]
+        for pin_index in range(len(transistor_pins)):
+            pin = transistor_pins[pin_index]
+            part["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        part["kicad"] = {
+            "symbol": "Transistor_BJT:Q_PNP_BEC",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Jiangsu Changjing MMBT5401(RANGE:200-300) (C8326): -150 V PNP, 600 mA, 300 mW, hFE rank 200-300 in SOT-23; reconfirmed live 2026-10-02 (stock 777,528).",
+            "Browser-downloaded the Changjing MMBT5401 datasheet (2 pages, C.Nov 2012) into this part; it anchors the MMBT5401/high-voltage PNP SOT-23 family.",
+            "Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:Q_PNP_BEC matches pad-for-pad, same numbering as the Changjing NPN integrations.",
+        ]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JLC C8512 / Jiangsu Changjing MMBT2222A 1P full-stage technical data,
+    # verified against the Changjing MMBT2222A SOT-23 specification (C.Jan
+    # 2014, browser-downloaded to this part; anchors the MMBT2222A SOT-23
+    # family): maximum ratings - VCBO 75 V, VCEO 40 V, VEBO 6 V, IC 600 mA,
+    # PC 300 mW, RthJA 417 C/W, Tj 150 C, Tstg -55 to +150 C; electrical
+    # characteristics - ICBO 0.01 uA, hFE 100-300 at VCE = 10 V, IC = 150
+    # mA (ranks L 100-200 / H 200-300), VCE(sat) 1 V max at IC = 500 mA /
+    # 0.3 V at 150 mA, VBE(sat) 2.0/1.2 V, fT 300 MHz, switching times
+    # td 10 ns / tr 25 ns / ts 225 ns / tf 60 ns; marking 1P. Pinout
+    # page 1: SOT-23 1 = BASE, 2 = EMITTER, 3 = COLLECTOR, matching the
+    # KiCad Transistor_BJT:MMBT2222A symbol (extends Q_NPN_BEC, pins
+    # 1 B / 2 E / 3 C) and the Package_TO_SOT_SMD:SOT-23 pads.
+    current = "electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["package_name_manufacturer"] = "SOT-23 (JEDEC TO-236 Var AB, 1P)"
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586172569242648576-C8512.pdf"
+        part["dimensions_mm"] = {"length": 2.9, "width": 1.3, "height": 1.1}
+        part["dimension_reference"] = {
+            "document": "Changjing MMBT2222A SOT-23 specification, C.Jan 2014 (C8512)",
+            "pages": [1],
+            "notes": "SOT-23 (JEDEC TO-236 Var AB) outline: body ~2.9 x 1.3 mm, height ~1.1 mm per the Package_TO_SOT_SMD:SOT-23 master geometry; the datasheet carries the pinout and ratings but no dimension table.",
+        }
+        part["electrical"] = {
+            "transistor_polarity": "NPN",
+            "collector_emitter_breakdown_voltage": "40 V (VCEO); VCBO 75 V, VEBO 6 V",
+            "collector_current": "600 mA continuous",
+            "power_dissipation": "300 mW (collector, RthJA 417 C/W)",
+            "dc_current_gain": "hFE 100-300 at VCE = 10 V, IC = 150 mA (rank H 200-300)",
+            "collector_emitter_saturation_voltage": "1 V max at IC = 500 mA (0.3 V at 150 mA)",
+            "transition_frequency": "300 MHz (VCE = 20 V, IC = 20 mA)",
+            "collector_cutoff_current": "0.01 uA max (VCB = 60 V)",
+            "operating_temperature": "-55 to +150 C",
+            "polarized": True,
+        }
+        part["pins"] = {}
+        transistor_pins = [
+            ["1", "base", "input"],
+            ["2", "emitter", "passive"],
+            ["3", "collector", "passive"],
+        ]
+        for pin_index in range(len(transistor_pins)):
+            pin = transistor_pins[pin_index]
+            part["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        part["kicad"] = {
+            "symbol": "Transistor_BJT:MMBT2222A",
+            "machine_solder": "Package_TO_SOT_SMD:SOT-23",
+            "hand_solder": "Package_TO_SOT_SMD:SOT-23_Handsoldering",
+            "allow_project_fallback": False,
+        }
+        part["research_notes"] = [
+            "The official JLC page lists Basic Jiangsu Changjing MMBT2222A 1P (C8512): 40 V NPN, 600 mA, 300 mW, hFE rank 200-300 in SOT-23; reconfirmed live 2026-10-02 (stock 597,781).",
+            "Browser-downloaded the Changjing MMBT2222A datasheet (2 pages, C.Jan 2014) into this part; it anchors the MMBT2222A SOT-23 family.",
+            "Datasheet pinout page 1: 1 = BASE, 2 = EMITTER, 3 = COLLECTOR; Transistor_BJT:MMBT2222A (extends Q_NPN_BEC) matches pad-for-pad, same convention as the other Changjing SOT-23 NPN integrations.",
+        ]
+        part["file_copy"] = [
             {
                 "file_source": f"parts_source/{current}/datasheet.pdf",
                 "file_destination": "datasheet.pdf",

@@ -34,8 +34,19 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing CJ431 row or C3113 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C3113, Jiangsu Changjing Electronics
+    Technology Co., Ltd., CJ431, Basic, In Stock 398,030). New family member (TL431-type
+    shunt reference, IC family): browser-downloaded the Changjing CJ431/CD431 specification
+    (9 pages, M.Oct 2017) from the JLC page and imported it as this part and the family
+    anchor (sha256 68a40507...). Absolute maximum page 2: VKA 36 V, IKA -100 to +150
+    mA, Iref 0.05-10 mA, PD 300 mW SOT-23, Topr -25 to +85 C, Tj 150 C; electrical
+    characteristics page 2: Vref 2.475-2.525 V (typ 2.5), +-0.5 % rank = 2.487-2.513
+    V (matches the live description), IKA(min) 1.0 mA max, ZKA 0.15/0.5 Ohm, ~50 ppm/C,
+    marking 431. Pin assignment page 1 (CJ431 SOT-23): 1 = REFERENCE, 2 = CATHODE,
+    3 = ANODE - pins 2/3 swapped vs the KiCad Reference_Voltage:TL431LP symbol (1
+    = REF / 2 = A / 3 = K); SYMBOL MIRROR recorded in the extras and research notes.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/3500-CJ431/C3113
   tier: basic
   tier_label_observed: Basic
@@ -57,7 +68,27 @@ jlc_selection:
     Reference Type: Parallel
     Temperature Coefficient: 50ppm/℃
     Tolerance: ±0.5%
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Changjing CJ431/CD431 specification, M.Oct 2017 (C3113 provenance, family
+      anchor)
+    pin_assignment:
+    - 1
+    absolute_maximum:
+    - 2
+    electrical_characteristics:
+    - 2
+    ordering:
+    - 2
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC CJ431 SOT 23 with REF
+    (pin 1) left, K (pin 2) right and A (pin 3) right-lower, matching the datasheet
+    pin assignment page 1 (1 = REFERENCE, 2 = CATHODE, 3 = ANODE). working_svg_dimensioned.png:
+    SOT-23 (TO-236AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry. data/kicad
+    manifest complete with Reference_Voltage:TL431LP symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints. README.md: CJ431 part number,
+    LCSC/JLC C3113 links, 3-pin table (REF/K/A with the symbol-mirror note), datasheet
+    link resolving to data/datasheet.pdf (the Changjing CJ431/CD431 specification,
+    family anchor). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG
+    plus s-expression text rather than in a KiCad GUI.'

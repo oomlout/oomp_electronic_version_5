@@ -29,13 +29,17 @@ research:
     exact MPN 0402CG270J500NT, package 0402, visible badge Extended, description 27pF
     50V C0G ±5%, and specifications confirm 27pF, 50V, ±5%, C0G. Live stock 368616
     and price $0.0024; page showed SMT Assembly and Economic and Standard PCBA.'
-  - 'LCSC product page https://www.lcsc.com/product-detail/C1557.html for the same
+  - LCSC product page https://www.lcsc.com/product-detail/C1557.html for the same
     C1557 independently matched FH 0402CG270J500NT, 0402 package, 27pF/50V/C0G/±5%;
-    its actual datasheet link opened the 30-page FH
-    General Series MLCC PDF viewer. JLC and LCSC browser download/navigation attempts
-    did not yield a local PDF file, so local datasheet import remains for the full
-    stage.'
+    its actual datasheet link opened the 30-page FH General Series MLCC PDF viewer.
+    JLC and LCSC browser download/navigation attempts did not yield a local PDF file,
+    so local datasheet import remains for the full stage.
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C1557.json.
+  - 'Family batch 2026-10-04: identity, tier and ratings are the intake-time live
+    observations (verified_on 2026-09-27); no fresh page pass was run for this member.
+    The shared FH (Guangdong Fenghua Advanced Tech) datasheet (oomp_datasheet_common_with
+    = electronic_capacitor_0402_100_pico_farad) covers the exact suffix - 270 = 27
+    pF; package dimensions: 0402 L 1.00+-0.05, W 0.50+-0.05, T 0.5+-0.05 mm.'
 jlc_selection:
   verified_on: '2026-09-27'
   official_url: https://jlcpcb.com/partdetail/1909-0402CG270J500NT/C1557
@@ -58,7 +62,17 @@ jlc_selection:
     Assembly Type: SMT Assembly
     PCBA Type: Economic and Standard
     MSL Level: MSL 1
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Fenghua General Series MLCC specification (shared family copy)
+    how_to_order:
+    - 4
+    dimensions:
+    - 5
+    capacitance_voltage:
+    - 10
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0402 resistor template (Device:R_Small, Capacitor_SMD:C_0402_1005Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'

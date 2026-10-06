@@ -2,7 +2,7 @@
 
 `electronic_capacitor_1206_1_nano_farad_2000_volt`
 
-Capacitor 1 nF 2000 V 1206 is an OOMP electronic capacitor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Capacitor 1 nF 2000 V 1206 is an OOMP electronic capacitor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm. The definition includes 2 documented pins.
 
 ![Capacitor 1 nF 2000 V 1206 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Capacitor 1 nF 2000 V 1206 is an OOMP electronic capacitor definition. It uses t
 | Type | Capacitor |
 | Package / style | 1206 |
 | Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -32,6 +33,7 @@ Capacitor 1 nF 2000 V 1206 is an OOMP electronic capacitor definition. It uses t
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.8 mm |
 | Length | 3.2 mm |
 | Width | 1.6 mm |
 
@@ -49,6 +51,19 @@ Capacitor 1 nF 2000 V 1206 is an OOMP electronic capacitor definition. It uses t
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

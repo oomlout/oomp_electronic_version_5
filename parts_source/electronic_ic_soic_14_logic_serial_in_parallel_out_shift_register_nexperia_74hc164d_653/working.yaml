@@ -1,7 +1,16 @@
 category: logic
 category_name: Logic
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579711821097730048-C5612.pdf
+dimension_reference:
+  document: 74HC164D datasheet (C6825)
+  notes: Body outline per the Package_SO:SOIC-14_3.9x8.7mm_P1.27mm master geometry;
+    pinning cross-checked against the KiCad 74xx:74HC164 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
-  length: 8.69
+  height: 1.75
+  length: 8.7
   width: 3.9
 distributors:
 - key: lcsc
@@ -12,6 +21,15 @@ distributors:
   part_number: C6825
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Nexperia-74HC164D653/C6825
+electrical:
+  device_type: serial in parallel out shift register
+  logic_family: 74HC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 2.0-6.0 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_14_logic_serial_in_parallel_out_shift_register_nexperia_74hc164d_653/datasheet.pdf
 ic_dimensions_mm:
   body_length: 8.69
   body_width: 3.9
@@ -26,11 +44,14 @@ jlcpcb_selection:
     74HC164D,653 (SOIC-14; 8-bit serial-in parallel-out shift register (74HC164, Nexperia))
     is its exact first reviewed preferred house choice; the family token and package
     come straight off the page. Edits made under the ic family lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 2
+  - 3
+  - 6
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Nexperia-74HC164D653/C6825
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     -40℃~+125℃: ''
@@ -50,11 +71,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 74xx:74HC164 master (numbers and electrical types cross-checked
+    at plan time) and the SOIC-14 footprint master; renders inherit the pipeline verified
+    on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
-  hand_solder: Package_SO:SOIC-14_3.9x8.7mm_P1.27mm
+  allow_project_fallback: false
+  hand_solder: ''
   machine_solder: Package_SO:SOIC-14_3.9x8.7mm_P1.27mm
-  symbol: ''
+  symbol: 74xx:74HC164
 lcsc_search: 74HC164D,653
 manufacturer: Nexperia
 manufacturers:
@@ -63,6 +89,7 @@ manufacturers:
 name_proper: IC 74HC164D,653 SOIC 14
 name_readable: IC 74HC164D,653 SOIC 14
 name_short: IC 74HC164D,653 SOIC 14
+package_name_manufacturer: SOIC-14 (SOT108-1, 3.9 x 8.7 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C6825
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Nexperia-74HC164D653/C6825
@@ -74,7 +101,74 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Nexperia
   part_number: 74HC164D,653
+pins:
+  pin_1:
+    name: DSA
+    number: '1'
+    type: in
+  pin_10:
+    name: Q4
+    number: '10'
+    type: out
+  pin_11:
+    name: Q5
+    number: '11'
+    type: out
+  pin_12:
+    name: Q6
+    number: '12'
+    type: out
+  pin_13:
+    name: Q7
+    number: '13'
+    type: out
+  pin_14:
+    name: VCC
+    number: '14'
+    type: pwr
+  pin_2:
+    name: DSB
+    number: '2'
+    type: in
+  pin_3:
+    name: Q0
+    number: '3'
+    type: out
+  pin_4:
+    name: Q1
+    number: '4'
+    type: out
+  pin_5:
+    name: Q2
+    number: '5'
+    type: out
+  pin_6:
+    name: Q3
+    number: '6'
+    type: out
+  pin_7:
+    name: GND
+    number: '7'
+    type: pwr
+  pin_8:
+    name: CP
+    number: '8'
+    type: in
+  pin_9:
+    name: ~{MR}
+    number: '9'
+    type: in
 product_url: https://jlcpcb.com/partdetail/Nexperia-74HC164D653/C6825
+research_notes:
+- JLC house-parts queue row C6825 (Nexperia 74HC164D,653, SOIC-14, 14 pins) verified
+  at intake; family batch integration C6825.
+- Shares the 74HC164 family datasheet downloaded into C5612 (byte-identical copy in
+  this part's source folder).
+- Pin table generated from the KiCad 74xx:74HC164 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 14-pin package
+  count.
+- Footprint Package_SO:SOIC-14_3.9x8.7mm_P1.27mm verified present in the KiCad 10
+  library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -33,8 +33,18 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing 74HC14 row or C5605 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C5605, Nexperia, 74HC14D,653, Basic,
+    In Stock 206,442). New family member (SOIC-14 logic): browser-downloaded the Nexperia
+    74HC14;74HCT14 product data sheet (16 pages) from the JLC page and imported it
+    as this part and the family anchor (sha256 ab7028cd...). Hex Schmitt-trigger inverter,
+    SO14 (SOT108-1); pinning section 6.1: 1 = 1A, 2 = 1Y, 3 = 2A, 4 = 2Y, 5 = 3A,
+    6 = 3Y, 7 = GND, 8 = 4Y, 9 = 4A, 10 = 5Y, 11 = 5A, 12 = 6Y, 13 = 6A, 14 = VCC,
+    matching the KiCad 74xx:74HC14 multi-unit symbol pad-for-pad; supply 2.0-6.0 V,
+    tpd 21 ns at 6 V / 50 pF, +-5.2 mA output at 6 V (live description); the ,653
+    suffix is the packing variant. No HandSoldering master exists for SOIC-14 - hand_solder
+    intentionally empty per the 2-asset rule.'
 jlc_selection:
-  verified_on: '2026-09-25'
+  verified_on: '2026-10-02'
   official_url: https://jlcpcb.com/partdetail/Nexperia-74HC14D653/C5605
   tier: basic
   tier_label_observed: Basic
@@ -59,7 +69,26 @@ jlc_selection:
     Quiescent Current(Iq): 2uA
     Series: 74HC
     Voltage - Supply: 2V~6V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Nexperia 74HC14;74HCT14 product data sheet (C5605 provenance, family
+      anchor)
+    pinning:
+    - 3
+    features:
+    - 1
+    limiting_values:
+    - 3
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC 74HC14D,653 SOIC 14
+    with all 14 pins labelled: 1A/1Y/2A/2Y/3A/3Y/GND down the left side and VCC/6A/6Y/5A/5Y/4A/4Y
+    up the right side, matching the datasheet pinning section 6.1 and the standard
+    74HC14 arrangement. working_svg_dimensioned.png: SOIC-14 (SOT108-1) outline per
+    the Package_SO:SOIC-14_3.9x8.7mm_P1.27mm master geometry. data/kicad manifest
+    complete (2-asset rule, no HandSoldering master for SOIC-14) with 74xx:74HC14
+    symbol and Package_SO:SOIC-14_3.9x8.7mm_P1.27mm machine footprint. README.md:
+    74HC14D,653 part number, LCSC/JLC C5605 links, 14-pin table, datasheet link resolving
+    to data/datasheet.pdf (the Nexperia product data sheet, family anchor). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'

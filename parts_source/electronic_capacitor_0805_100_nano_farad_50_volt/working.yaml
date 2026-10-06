@@ -1,6 +1,16 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8785639247575089152-C49678.pdf
+dimension_reference:
+  document: YAGEO CC series MLCC specification (shared with C14663) (C49678 provenance)
+  notes: '{pkg_name} outline per the shared CC-series specification drawing; the CC-series
+    PDF is byte-identical across sizes Ordering code CC0805KRX7R9BB104 decodes the
+    100 nF 50 V X7R +-10% rating.'
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.25
   length: 2.0
   width: 1.25
 distributors:
@@ -12,14 +22,29 @@ distributors:
   part_number: C49678
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB104/C49678
+electrical:
+  capacitance: 100 nF (104)
+  dielectric: X7R
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_100_nano_farad_50_volt/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: The new generic 0805 100 nF preference is the 100 V C28233;
     this 50 V Basic YAGEO part is kept as a separately rated variant, not a replacement.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: YAGEO YAGEO CC0805 series specification (own copy)
+    outline:
+    - 2
+    - 3
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB104/C49678
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 100nF
@@ -30,9 +55,12 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: MLCC template identical to the
+    completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected post-build;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 100nF
@@ -44,6 +72,7 @@ name_proper: Capacitor 100 nF 50 V 0805
 name_readable: Capacitor 100 nF 50 V 0805
 name_short: Capacitor 100 nF 50 V 0805
 oomp_datasheet_common_with: electronic_capacitor_0603_100_nano_farad
+package_name_manufacturer: 0805_2012Metric
 part_id: C1
 part_number_jlcpcb: C49678
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB104/C49678
@@ -55,7 +84,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: YAGEO
   part_number: CC0805KRX7R9BB104
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB104/C49678
+research_notes:
+- 'The official JLC page lists YAGEO CC0805KRX7R9BB104 (C49678): 100 nF 50 V X7R +-10%;
+  identity and ratings observed live at intake 2026-09-24.'
+- 'Straggler close-out 2026-10-05: downloaded the YAGEO specification into this part
+  via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size
+  series, so this part anchors its own sub-family).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

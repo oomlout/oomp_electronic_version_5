@@ -1,9 +1,23 @@
 category: resistor
 category_name: Resistor
+datasheet_url: ''
+dimension_reference:
+  document: RALEC RTT series specification (C4143 provenance)
+  notes: 0402 (1005 metric) outline L 1.00 +-0.10, W 0.50 +-0.05, H 0.35 +-0.05 mm;
+    the RALEC type code RTT-02-82R0-F decodes 82 x 10^0 = 82 Ohm, F = +-1%.
+  pages:
+  - 2
+  - 4
 dimensions_mm:
+  height: 0.35
   length: 1.0
   width: 0.5
 distributors:
+- key: lcsc
+  part_number: C4143
+  product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C4143.html
 - key: lcsc
   part_number: C2909389
   product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
@@ -15,38 +29,94 @@ distributors:
     - Surface...
   title: LCSC
   url: https://www.lcsc.com/product-detail/C163453.html
-- key: lcsc
+- key: jlcpcb
   part_number: C4143
-  product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
-  title: LCSC
-  url: https://www.lcsc.com/product-detail/C4143.html
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+electrical:
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/16 W (62.5 mW) at 70 C
+  rated_voltage: 50 V
+  resistance: 82 Ohm
+  temperature_coefficient: +-100 ppm/C
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_0402_82_ohm/datasheet.pdf
+jlcpcb_selection:
+  compatibility_notes: Existing generic 0402 82 Ohm resistor. JLC C4143 (RALEC RTT0282R0FTH)
+    supplies the exact value with 62.5 mW / 50 V +-1% ratings.
+  datasheet_pages:
+    document: RALEC RTT series specification (own copy)
+    type_code:
+    - 2
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+  pinout_checked: true
+  ratings:
+    max_voltage: 50 V
+    operating_temperature: -55 to +155 C
+    power: 62.5 mW
+    resistance: 82 Ohm
+    temperature_coefficient: +-100 ppm/C
+    tolerance: +-1%
+  tier: basic
+  tier_label_observed: Basic
+  verified_on: '2026-09-26'
+  visual_review: 'Family-inherited review 2026-10-05: 0402 resistor template identical
+    to the completed family exemplars; differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder
   machine_solder: Resistor_SMD:R_0402_1005Metric
   symbol: Device:R_Small
 lcsc_search: 0402 82Ω
-manufacturer: FOJAN
+manufacturer: RALEC
 manufacturers:
+- manufacturer: RALEC
+  part_number: RTT0282R0FTH
 - manufacturer: FOJAN
   part_number: FRC0402F82R0TS
 name_proper: Resistor 82 Ohm 0402
 name_readable: Resistor 82 Ohm 0402
 name_short: Resistor 82 Ohm 0402
+package_name_manufacturer: 0402 (1005 metric)
 part_id: R1
-part_number_lcsc: C2909389
-part_number_manufacturer: FRC0402F82R0TS
+part_number_jlcpcb: C4143
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
+part_number_lcsc: C4143
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C4143.html
+part_number_manufacturer: RTT0282R0FTH
 part_numbers_lcsc:
+- part_number: C4143
+  product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C2909389
   product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
 - part_number: C163453
   product_name: 50V 82Ω Thick Film Resistor 62.5mW ±1% ±100ppm/℃ 0402 Chip Resistor
     - Surface...
-- part_number: C4143
-  product_name: 82Ω ±1% 62.5mW 0402 Thick Film Resistor
-product_url: https://www.lcsc.com/product-detail/C2909389.html
+part_numbers_manufacturer:
+- manufacturer: RALEC
+  part_number: RTT0282R0FTH
+- manufacturer: FOJAN
+  part_number: FRC0402F82R0TS
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/RALEC-RTT0282R0FTH/C4143
 research_notes:
-- 'LCSC stock research 2026-09: highest-stock JLC-assembly listing (verified JLCPCB
-  Part Class on the product page); best C2909389 with 1,132,900 in stock at capture.'
+- 'The official JLC page lists RALEC RTT0282R0FTH (C4143): 82 Ohm, 62.5 mW, 50 V,
+  +-1% (F), 0402; identity from the official category crawl (row last_seen 2026-09-26)
+  - no separate staged browser capture exists for this code.'
+- 'Straggler close-out 2026-10-05: own RALEC RTT-series specification downloaded via
+  the signed JLC OSS link (self-anchored).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -30,7 +30,17 @@ bip_39_full_space: resource shift pride sadness stadium flock work loop stool wa
 bip_39_full_underscore: resource_shift_pride_sadness_stadium_flock_work_loop_stool_warrior_ridge_armor
 category: led
 category_name: LED
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8763907065041293312-C2286.pdf
+dimension_reference:
+  document: KENTO 0603-0.6 red-light approval specification, 2018-12-06 (C2286)
+  notes: Package 1.6 x 0.8 x 0.6 mm (page 2 profile drawing, tolerance +-0.1 mm);
+    green corner = pad 2 cathode, pad 1 = + anode.
+  pages:
+  - 2
+  - 3
+  - 4
 dimensions_mm:
+  height: 0.6
   length: 1.6
   width: 0.8
 directory: parts/electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
@@ -43,6 +53,19 @@ distributors:
   part_number: C2286
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
+electrical:
+  forward_current: 25 mA DC max (60 mA peak, 1/10 duty, 0.1 ms)
+  forward_voltage: 1.8-2.4 V at IF = 20 mA
+  led_color: red (dominant wavelength 615-630 nm, peak 625-645 nm)
+  luminous_intensity: 145-300 mcd at IF = 20 mA
+  operating_temperature: -40 to +85 C
+  polarized: true
+  power_dissipation: 40 mW
+  reverse_voltage: 5 V max (IR 5 uA max at VR = 5 V)
+  viewing_angle: 120 deg
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r/datasheet.pdf
 id: electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
 id_no_class: electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
 id_no_size: electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
@@ -54,11 +77,21 @@ jlcpcb_selection:
     and MPN, mirroring how addressable LED rows append controller/maker/MPN. Red water-clear
     0603, Vf 1.8-2.4 V, 20 mA test current, 300 mcd, 645 nm peak. Added the reviewed-choices
     adapter to the LED family extras.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    absolute_maximum:
+    - 3
+    bin_tables:
+    - 4
+    document: KENTO 0603-0.6 red-light approval specification, 2018-12-06 (C2286 provenance,
+      family anchor)
+    electrical_optical:
+    - 3
+    features_dimensions:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Diode Configuration: Discrete Diode
@@ -76,10 +109,21 @@ jlcpcb_selection:
   stock_observed: 4014422
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled LED KT-0603R 0603 with A (anode) left
+    and K (cathode) right, the LED circle-and-bar symbol drawn inside the body, no
+    mirroring, no label overlap, no cropping. working_svg_dimensioned.png: 0603/1608
+    outline 1.6 x 0.8 mm per the KENTO profile drawing (page 2, height 0.6 mm recorded
+    in dimensions_mm). data/kicad manifest complete with Device:LED symbol and LED_SMD:LED_0603_1608Metric
+    machine + Pad1.05x0.95mm_HandSolder hand footprints. README.md: KT-0603R part
+    number, LCSC/JLC C2286 links, 2-pin table (A/K with the vendor polarity-trap note),
+    datasheet link resolving to data/datasheet.pdf (the KENTO approval specification,
+    family anchor). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG
+    plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder
   machine_solder: LED_SMD:LED_0603_1608Metric
   symbol: Device:LED
 lcsc_search: 0603 led
@@ -120,6 +164,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -209,7 +263,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -223,7 +277,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -231,7 +285,17 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: led
       category_name: LED
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8763907065041293312-C2286.pdf
+      dimension_reference:
+        document: KENTO 0603-0.6 red-light approval specification, 2018-12-06 (C2286)
+        notes: Package 1.6 x 0.8 x 0.6 mm (page 2 profile drawing, tolerance +-0.1
+          mm); green corner = pad 2 cathode, pad 1 = + anode.
+        pages:
+        - 2
+        - 3
+        - 4
       dimensions_mm:
+        height: 0.6
         length: 1.6
         width: 0.8
       directory: parts\electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
@@ -244,6 +308,19 @@ oomlout_ai_roboclick_4:
         part_number: C2286
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
+      electrical:
+        forward_current: 25 mA DC max (60 mA peak, 1/10 duty, 0.1 ms)
+        forward_voltage: 1.8-2.4 V at IF = 20 mA
+        led_color: red (dominant wavelength 615-630 nm, peak 625-645 nm)
+        luminous_intensity: 145-300 mcd at IF = 20 mA
+        operating_temperature: -40 to +85 C
+        polarized: true
+        power_dissipation: 40 mW
+        reverse_voltage: 5 V max (IR 5 uA max at VR = 5 V)
+        viewing_angle: 120 deg
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact discrete indicator LED identity: added one explicit
           LED family row electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r.
@@ -251,11 +328,21 @@ oomlout_ai_roboclick_4:
           the maker and MPN, mirroring how addressable LED rows append controller/maker/MPN.
           Red water-clear 0603, Vf 1.8-2.4 V, 20 mA test current, 300 mcd, 645 nm
           peak. Added the reviewed-choices adapter to the LED family extras.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          absolute_maximum:
+          - 3
+          bin_tables:
+          - 4
+          document: KENTO 0603-0.6 red-light approval specification, 2018-12-06 (C2286
+            provenance, family anchor)
+          electrical_optical:
+          - 3
+          features_dimensions:
+          - 2
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Diode Configuration: Discrete Diode
@@ -273,10 +360,22 @@ oomlout_ai_roboclick_4:
         stock_observed: 4014422
         tier: basic
         tier_label_observed: Basic
-        verified_on: '2026-09-25'
-        visual_review: pending
+        verified_on: '2026-10-02'
+        visual_review: 'Inspected 2026-10-02 after the build and a forced diagram
+          refresh. working_svg_square_pins.png hero titled LED KT-0603R 0603 with
+          A (anode) left and K (cathode) right, the LED circle-and-bar symbol drawn
+          inside the body, no mirroring, no label overlap, no cropping. working_svg_dimensioned.png:
+          0603/1608 outline 1.6 x 0.8 mm per the KENTO profile drawing (page 2, height
+          0.6 mm recorded in dimensions_mm). data/kicad manifest complete with Device:LED
+          symbol and LED_SMD:LED_0603_1608Metric machine + Pad1.05x0.95mm_HandSolder
+          hand footprints. README.md: KT-0603R part number, LCSC/JLC C2286 links,
+          2-pin table (A/K with the vendor polarity-trap note), datasheet link resolving
+          to data/datasheet.pdf (the KENTO approval specification, family anchor).
+          Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+          text rather than in a KiCad GUI.'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder
         machine_solder: LED_SMD:LED_0603_1608Metric
         symbol: Device:LED
       lcsc_search: 0603 led
@@ -302,6 +401,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -392,7 +501,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -406,6 +515,7 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      package_name_manufacturer: 0603 (1608 metric, 0.6 mm height, water clear)
       part_id: D1
       part_number_jlcpcb: C2286
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
@@ -483,7 +593,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -501,7 +611,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/led/0603/red/clear/hubei_kento_elec/README.md
         oomp_id: electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
-        pins: []
+        pins:
+        - name: A
+          number: '1'
+          type: passive
+        - name: K
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
@@ -511,9 +627,12 @@ oomlout_ai_roboclick_4:
           value: '0603'
         - title: Nominal size
           value: 1.6 × 0.8 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
         summary: LED KT-0603R 0603 is an OOMP electronic led definition. It uses the
-          0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm.
+          0603 package or form factor. Its nominal drawing size is 1.6 × 0.8 mm. The
+          definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -529,8 +648,27 @@ oomlout_ai_roboclick_4:
           value: hubei_kento_elec
         - level: 7
           value: kt_0603_r
+      pins:
+        pin_1:
+          name: A
+          number: '1'
+          type: passive
+        pin_2:
+          name: K
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
       regenerate_pngs: false
+      research_notes:
+      - 'The official JLC page lists Basic Hubei KENTO KT-0603R (C2286): red 0603
+        water-clear LED, 1.8-2.4 V, 20 mA, 120 deg, up to 300 mcd; reconfirmed live
+        2026-10-01 (stock 4,835,213).'
+      - Browser-downloaded the KENTO 0603-0.6 red approval specification (11 pages,
+        2018-12-06) into this part; it anchors the 0603 LED family.
+      - 'POLARITY TRAP: KENTO numbers pad 1 = + (anode) and pad 2 = cathode (green
+        corner, page 2 drawing); the KiCad LED_0603_1608Metric library convention
+        numbers pad 1 as cathode - verify polarity against the vendor drawing before
+        assembly.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -707,7 +845,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -721,6 +859,7 @@ oomlout_ai_roboclick_5:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
+package_name_manufacturer: 0603 (1608 metric, 0.6 mm height, water clear)
 part_id: D1
 part_number_jlcpcb: C2286
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
@@ -798,7 +937,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -816,7 +955,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/led/0603/red/clear/hubei_kento_elec/README.md
   oomp_id: electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
-  pins: []
+  pins:
+  - name: A
+    number: '1'
+    type: passive
+  - name: K
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
@@ -826,9 +971,12 @@ part_page:
     value: '0603'
   - title: Nominal size
     value: 1.6 × 0.8 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_led_0603_red_clear_hubei_kento_elec_kt_0603_r
   summary: LED KT-0603R 0603 is an OOMP electronic led definition. It uses the 0603
-    package or form factor. Its nominal drawing size is 1.6 × 0.8 mm.
+    package or form factor. Its nominal drawing size is 1.6 × 0.8 mm. The definition
+    includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -844,8 +992,26 @@ part_page:
     value: hubei_kento_elec
   - level: 7
     value: kt_0603_r
+pins:
+  pin_1:
+    name: A
+    number: '1'
+    type: passive
+  pin_2:
+    name: K
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0603R/C2286
 regenerate_pngs: false
+research_notes:
+- 'The official JLC page lists Basic Hubei KENTO KT-0603R (C2286): red 0603 water-clear
+  LED, 1.8-2.4 V, 20 mA, 120 deg, up to 300 mcd; reconfirmed live 2026-10-01 (stock
+  4,835,213).'
+- Browser-downloaded the KENTO 0603-0.6 red approval specification (11 pages, 2018-12-06)
+  into this part; it anchors the 0603 LED family.
+- 'POLARITY TRAP: KENTO numbers pad 1 = + (anode) and pad 2 = cathode (green corner,
+  page 2 drawing); the KiCad LED_0603_1608Metric library convention numbers pad 1
+  as cathode - verify polarity against the vendor drawing before assembly.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

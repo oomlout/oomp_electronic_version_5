@@ -1,8 +1,16 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887200889524224-C3074.pdf
+dimension_reference:
+  document: MDD HER204 series specification (C3074 provenance)
+  notes: DO-15 axial molded body 7.6 x 3.6 mm, 10.16 mm pitch horizontal mount per
+    the KiCad master.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 4.0
+  length: 7.6
+  width: 3.6
 distributors:
 - key: lcsc
   part_number: C3074
@@ -12,6 +20,17 @@ distributors:
   part_number: C3074
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-HER204/C3074
+electrical:
+  forward_current: 2A
+  forward_voltage: 1.3V@3A
+  maximum_dc_reverse_voltage: 1kV
+  operating_temperature: -65℃~+150℃
+  polarized: true
+  reverse_leakage_current: 5uA@1kV
+  reverse_recovery_time: 70ns
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_fast_recovery_do_15_mdd_microdiode_semiconductor_her204/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact row added under the diode family lock beside the C2456-C3069
     through-hole diode block; new package tokens are disclosed per row below. HER204
@@ -21,11 +40,14 @@ jlcpcb_selection:
     ratings come straight off the page. Rating comparison from the staged capture:
     package below, stock below recorded as observed. Stock 626 recorded as observed.
     Edits made under the diode family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: MDD HER204 series specification
+    ratings:
+    - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-HER204/C3074
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -50,11 +72,14 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: DO-15 THT axial template; THT
+    renders follow the package master like the completed axial/bridge exemplars; differs
+    only in value text.'
 kicad:
-  hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  allow_project_fallback: false
+  hand_solder: Diode_THT:D_DO-15_P10.16mm_Horizontal
+  machine_solder: Diode_THT:D_DO-15_P10.16mm_Horizontal
+  symbol: Device:D
 lcsc_search: HER204
 manufacturer: MDD(Microdiode Semiconductor)
 manufacturers:
@@ -63,6 +88,7 @@ manufacturers:
 name_proper: Diode HER204 DO-15
 name_readable: Diode HER204 DO-15
 name_short: Diode HER204 DO-15
+package_name_manufacturer: DO-15 THT axial
 part_id: D1
 part_number_jlcpcb: C3074
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-HER204/C3074
@@ -74,7 +100,22 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: MDD(Microdiode Semiconductor)
   part_number: HER204
+pins:
+  pin_1:
+    name: K
+    number: '1'
+    type: passive
+  pin_2:
+    name: A
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-HER204/C3074
+research_notes:
+- The official JLC page lists MDD(Microdiode Semiconductor) HER204 (C3074); identity
+  and ratings observed live at intake 2026-09-29.
+- 'THT family batch 2026-10-05: Own downloaded series specification; Package outline
+  and polarity follow the DO-15 THT axial master; axial THT convention pin 1 = cathode
+  (banded end), pin 2 = anode.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

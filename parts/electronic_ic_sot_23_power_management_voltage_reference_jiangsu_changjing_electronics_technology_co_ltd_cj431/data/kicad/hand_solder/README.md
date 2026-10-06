@@ -2,4 +2,4 @@
 
 [electronic_ic_sot_23_power_management_voltage_reference_jiangsu_changjing_electronics_technology_co_ltd_cj431](electronic_ic_sot_23_power_management_voltage_reference_jiangsu_changjing_electronics_technology_co_ltd_cj431.kicad_mod)
 
-Source: `Package_TO_SOT_SMD:SOT-23`. [License](../LICENSE.md).
+Source: `Package_TO_SOT_SMD:SOT-23_Handsoldering`. [License](../LICENSE.md).

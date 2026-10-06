@@ -30,24 +30,92 @@ bip_39_full_space: page dawn labor asset trim special faith tower canal warm dar
 bip_39_full_underscore: page_dawn_labor_asset_trim_special_faith_tower_canal_warm_daring_hollow
 category: resistor
 category_name: Resistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710181992947712-C1996.pdf
+dimension_reference:
+  document: 4D03WGJ0104T5E datasheet (C1996 provenance)
+  notes: 4x0603 (1608) convex resistor network, ROHM MNR14-style, 3.2 x 1.6 mm body;
+    eight terminals in two columns, four isolated elements across the left/right pad
+    pairs.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 0.6
+  length: 3.2
+  width: 1.6
 directory: parts/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
-distributors: []
+distributors:
+- key: lcsc
+  part_number: C1996
+  title: LCSC
+  url: https://www.lcsc.com/product-detail/C1996.html
+- key: jlcpcb
+  part_number: C1996
+  title: JLCPCB
+  url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
+electrical:
+  configuration: four isolated resistors (convex isolated network)
+  elements: 4
+  operating_temperature: -55 to +125 C
+  power_per_element: 62.5mW
+  resistance: 100kΩ
+  temperature_coefficient: +-200ppm/ C
+  terminals: 8
+  tolerance: +-5%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin/datasheet.pdf
 id: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
 id_no_class: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
 id_no_size: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
 id_no_type: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
+jlcpcb_selection:
+  compatibility_notes: 'Existing generic: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
+    is already an in-grid row in working_oomp_populate_resistor_array.py (the 0603x4
+    loop covers 100000 ohm), but the reviewed registry has no preference for it (checked
+    reviewed_choices.json for 0603x4 100000_ohm and 4D03WGJ0104T5E: only 1000/4700/10000
+    ohm have reviewed choices). No populate edit needed; C1996 becomes its first reviewed
+    preferred house choice via the registry. Rating comparison from the staged capture:
+    100 kohm x4, 0603x4 convex, 62.5 mW per element, +/-200 ppm/C, +/-5%, 8 pins -
+    matches the live page exactly; stock 26,963 recorded as observed. Four-element
+    isolated network (pin_count 8). No family edits required (no populate row added).'
+  datasheet_pages:
+  - 1
+  footprint_checked: true
+  official_url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
+  pcba_min_qty_observed: null
+  pinout_checked: true
+  purchase_moq_observed: 1
+  ratings:
+    Number of Pins: '8'
+    Number of Resistors: '4'
+    Power(Watts): 62.5mW
+    Resistance: 100kΩ
+    Temperature Coefficient: ±200ppm/℃
+    Tolerance: ±5%
+  stock_observed: 26963
+  tier: preferred_extended
+  tier_label_observed: Extended
+  verified_on: '2026-09-28'
+  visual_review: 'Family-inherited review 2026-10-06: 8-terminal isolated-element
+    resistor array mapped pad-for-pad to the KiCad Device:R_Pack04 master (elements
+    are left/right pad pairs, serpentine numbering R1 1<->8, R2 2<->7, R3 3<->6, R4
+    4<->5; all pins passive) and the R_Array_Convex_4x0603 footprint master with the
+    body size cross-checked against the JLC package label; renders inherit the pipeline
+    verified on the completed passive exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Resistor_SMD:R_Array_Convex_4x0603
+  symbol: Device:R_Pack04
 lcsc_search: 0603 100kΩ resistor array
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
 link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
-manufacturers: []
+manufacturer: UNI-ROYAL(Uniroyal Elec)
+manufacturers:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 4D03WGJ0104T5E
 md5: 9ee6fdf106de8ba1d48731211ee4de36
 md5_10: 9ee6fdf106
 md5_10_upper: 9EE6FDF106
@@ -78,6 +146,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -167,7 +245,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -175,17 +267,86 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: resistor
       category_name: Resistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710181992947712-C1996.pdf
+      dimension_reference:
+        document: 4D03WGJ0104T5E datasheet (C1996 provenance)
+        notes: 4x0603 (1608) convex resistor network, ROHM MNR14-style, 3.2 x 1.6
+          mm body; eight terminals in two columns, four isolated elements across the
+          left/right pad pairs.
+        pages:
+        - 1
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 0.6
+        length: 3.2
+        width: 1.6
       directory: parts\electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
-      distributors: []
+      distributors:
+      - key: lcsc
+        part_number: C1996
+        title: LCSC
+        url: https://www.lcsc.com/product-detail/C1996.html
+      - key: jlcpcb
+        part_number: C1996
+        title: JLCPCB
+        url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
+      electrical:
+        configuration: four isolated resistors (convex isolated network)
+        elements: 4
+        operating_temperature: -55 to +125 C
+        power_per_element: 62.5mW
+        resistance: 100kΩ
+        temperature_coefficient: +-200ppm/ C
+        terminals: 8
+        tolerance: +-5%
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin/datasheet.pdf
+      jlcpcb_selection:
+        compatibility_notes: 'Existing generic: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
+          is already an in-grid row in working_oomp_populate_resistor_array.py (the
+          0603x4 loop covers 100000 ohm), but the reviewed registry has no preference
+          for it (checked reviewed_choices.json for 0603x4 100000_ohm and 4D03WGJ0104T5E:
+          only 1000/4700/10000 ohm have reviewed choices). No populate edit needed;
+          C1996 becomes its first reviewed preferred house choice via the registry.
+          Rating comparison from the staged capture: 100 kohm x4, 0603x4 convex, 62.5
+          mW per element, +/-200 ppm/C, +/-5%, 8 pins - matches the live page exactly;
+          stock 26,963 recorded as observed. Four-element isolated network (pin_count
+          8). No family edits required (no populate row added).'
+        datasheet_pages:
+        - 1
+        footprint_checked: true
+        official_url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
+        pcba_min_qty_observed: null
+        pinout_checked: true
+        purchase_moq_observed: 1
+        ratings:
+          Number of Pins: '8'
+          Number of Resistors: '4'
+          Power(Watts): 62.5mW
+          Resistance: 100kΩ
+          Temperature Coefficient: ±200ppm/℃
+          Tolerance: ±5%
+        stock_observed: 26963
+        tier: preferred_extended
+        tier_label_observed: Extended
+        verified_on: '2026-09-28'
+        visual_review: 'Family-inherited review 2026-10-06: 8-terminal isolated-element
+          resistor array mapped pad-for-pad to the KiCad Device:R_Pack04 master (elements
+          are left/right pad pairs, serpentine numbering R1 1<->8, R2 2<->7, R3 3<->6,
+          R4 4<->5; all pins passive) and the R_Array_Convex_4x0603 footprint master
+          with the body size cross-checked against the JLC package label; renders
+          inherit the pipeline verified on the completed passive exemplars and were
+          spot-checked on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Resistor_SMD:R_Array_Convex_4x0603
+        symbol: Device:R_Pack04
       lcsc_search: 0603 100kΩ resistor array
-      manufacturers: []
+      manufacturer: UNI-ROYAL(Uniroyal Elec)
+      manufacturers:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 4D03WGJ0104T5E
       name: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
       name_proper: Resistor array 100000 Ohm 4 X 0603 Convex
       name_readable: Resistor array 100000 Ohm 4 X 0603 Convex
@@ -204,6 +365,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -294,7 +465,33 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: 4x0603 (1608) convex resistor network, ROHM MNR14-style,
+        3.2 x 1.6 mm body
       part_id: P1
+      part_number_jlcpcb: C1996
+      part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
+      part_number_lcsc: C1996
+      part_number_lcsc_url: https://www.lcsc.com/product-detail/C1996.html
+      part_number_manufacturer: 4D03WGJ0104T5E
+      part_numbers_lcsc:
+      - part_number: C1996
+      part_numbers_manufacturer:
+      - manufacturer: UNI-ROYAL(Uniroyal Elec)
+        part_number: 4D03WGJ0104T5E
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -361,8 +558,17 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
-        identifiers: []
+        has_datasheet: true
+        identifiers:
+        - title: Manufacturer part number
+          url: ''
+          value: 4D03WGJ0104T5E
+        - title: LCSC
+          url: https://www.lcsc.com/product-detail/C1996.html
+          value: C1996
+        - title: JLCPCB
+          url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
+          value: C1996
         main_image:
           png: data/working_svg_square_pins.png
           preview: data/working_svg_square_pins_300.png
@@ -370,7 +576,31 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/resistor_array/4_x_0603_convex/100000_ohm/README.md
         oomp_id: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
-        pins: []
+        pins:
+        - name: R1.1
+          number: '1'
+          type: passive
+        - name: R2.1
+          number: '2'
+          type: passive
+        - name: R3.1
+          number: '3'
+          type: passive
+        - name: R4.1
+          number: '4'
+          type: passive
+        - name: R4.2
+          number: '5'
+          type: passive
+        - name: R3.2
+          number: '6'
+          type: passive
+        - name: R2.2
+          number: '7'
+          type: passive
+        - name: R1.2
+          number: '8'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
@@ -379,11 +609,14 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: 4 x 0603 convex
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 3.2 × 1.6 mm
+        - title: Documented pins
+          value: 8
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
         summary: Resistor array 100000 Ohm 4 X 0603 Convex is an OOMP electronic resistor
           array definition. It uses the 4 x 0603 convex package or form factor. Its
-          nominal drawing size is 10.0 × 5.0 mm.
+          nominal drawing size is 3.2 × 1.6 mm. The definition includes 8 documented
+          pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -395,7 +628,48 @@ oomlout_ai_roboclick_3:
           value: 100000_ohm
         - level: 5
           value: 8_pin
+      pins:
+        pin_1:
+          name: R1.1
+          number: '1'
+          type: passive
+        pin_2:
+          name: R2.1
+          number: '2'
+          type: passive
+        pin_3:
+          name: R3.1
+          number: '3'
+          type: passive
+        pin_4:
+          name: R4.1
+          number: '4'
+          type: passive
+        pin_5:
+          name: R4.2
+          number: '5'
+          type: passive
+        pin_6:
+          name: R3.2
+          number: '6'
+          type: passive
+        pin_7:
+          name: R2.2
+          number: '7'
+          type: passive
+        pin_8:
+          name: R1.2
+          number: '8'
+          type: passive
+      product_url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists 4x0603 (1608) convex resistor network UNI-ROYAL(Uniroyal
+        Elec) 4D03WGJ0104T5E (C1996); identity and ratings observed live at intake
+        2026-09-28.
+      - Convex isolated resistor network mapped to the KiCad Device:R_Pack04 master
+        and the Resistor_SMD:R_Array_Convex_4x0603 footprint master in the 2026-10-06
+        family batch.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -572,7 +846,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -586,7 +860,19 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
+package_name_manufacturer: 4x0603 (1608) convex resistor network, ROHM MNR14-style,
+  3.2 x 1.6 mm body
 part_id: P1
+part_number_jlcpcb: C1996
+part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
+part_number_lcsc: C1996
+part_number_lcsc_url: https://www.lcsc.com/product-detail/C1996.html
+part_number_manufacturer: 4D03WGJ0104T5E
+part_numbers_lcsc:
+- part_number: C1996
+part_numbers_manufacturer:
+- manufacturer: UNI-ROYAL(Uniroyal Elec)
+  part_number: 4D03WGJ0104T5E
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -653,8 +939,17 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
-  identifiers: []
+  has_datasheet: true
+  identifiers:
+  - title: Manufacturer part number
+    url: ''
+    value: 4D03WGJ0104T5E
+  - title: LCSC
+    url: https://www.lcsc.com/product-detail/C1996.html
+    value: C1996
+  - title: JLCPCB
+    url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
+    value: C1996
   main_image:
     png: data/working_svg_square_pins.png
     preview: data/working_svg_square_pins_300.png
@@ -662,7 +957,31 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/resistor_array/4_x_0603_convex/100000_ohm/README.md
   oomp_id: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
-  pins: []
+  pins:
+  - name: R1.1
+    number: '1'
+    type: passive
+  - name: R2.1
+    number: '2'
+    type: passive
+  - name: R3.1
+    number: '3'
+    type: passive
+  - name: R4.1
+    number: '4'
+    type: passive
+  - name: R4.2
+    number: '5'
+    type: passive
+  - name: R3.2
+    number: '6'
+    type: passive
+  - name: R2.2
+    number: '7'
+    type: passive
+  - name: R1.2
+    number: '8'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
@@ -671,11 +990,13 @@ part_page:
   - title: Package / style
     value: 4 x 0603 convex
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 3.2 × 1.6 mm
+  - title: Documented pins
+    value: 8
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0603_convex_100000_ohm_8_pin
   summary: Resistor array 100000 Ohm 4 X 0603 Convex is an OOMP electronic resistor
     array definition. It uses the 4 x 0603 convex package or form factor. Its nominal
-    drawing size is 10.0 × 5.0 mm.
+    drawing size is 3.2 × 1.6 mm. The definition includes 8 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -687,7 +1008,47 @@ part_page:
     value: 100000_ohm
   - level: 5
     value: 8_pin
+pins:
+  pin_1:
+    name: R1.1
+    number: '1'
+    type: passive
+  pin_2:
+    name: R2.1
+    number: '2'
+    type: passive
+  pin_3:
+    name: R3.1
+    number: '3'
+    type: passive
+  pin_4:
+    name: R4.1
+    number: '4'
+    type: passive
+  pin_5:
+    name: R4.2
+    number: '5'
+    type: passive
+  pin_6:
+    name: R3.2
+    number: '6'
+    type: passive
+  pin_7:
+    name: R2.2
+    number: '7'
+    type: passive
+  pin_8:
+    name: R1.2
+    number: '8'
+    type: passive
+product_url: https://jlcpcb.com/partdetail/2348-4D03WGJ0104T5E/C1996
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists 4x0603 (1608) convex resistor network UNI-ROYAL(Uniroyal
+  Elec) 4D03WGJ0104T5E (C1996); identity and ratings observed live at intake 2026-09-28.
+- Convex isolated resistor network mapped to the KiCad Device:R_Pack04 master and
+  the Resistor_SMD:R_Array_Convex_4x0603 footprint master in the 2026-10-06 family
+  batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

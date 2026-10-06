@@ -32,6 +32,9 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing KT-0805W row or C34499 assignment.
+  - 'Family batch 2026-10-04: downloaded the KT-0805W specification (own copy, signed
+    JLC OSS link) and verified the package outline and polarity drawing; electrical
+    values transcribed from the intake-observed listing (verified_on 2026-09-25).'
 jlc_selection:
   verified_on: '2026-09-25'
   official_url: https://jlcpcb.com/partdetail/Hubei_KENTOElec-KT0805W/C34499
@@ -57,7 +60,13 @@ jlc_selection:
     Test Current: 25mA
     Viewing Angle: 120°
     Voltage - Forward(Vf): 2.6V~3.2V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: KT-0805W specification
+    outline_polarity:
+    - 2
+    - 3
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: LED template identical to the
+    completed C2296 KENTO exemplar renders (Device:LED, LED_SMD assets) inspected
+    post-build; batch members differ only in value/color text.'

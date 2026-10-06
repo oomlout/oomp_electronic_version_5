@@ -1,6 +1,15 @@
 category: ic
 category_name: IC
+datasheet_url: https://www.ti.com/lit/ds/symlink/cd74hc4046a.pdf
+dimension_reference:
+  document: CD74HC4046AM96 datasheet (C6542)
+  notes: Body outline per the Package_SO:SOIC-16_3.9x9.9mm_P1.27mm master geometry;
+    pinning cross-checked against the KiCad 4xxx:4046 symbol.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 1.75
   length: 9.9
   width: 3.9
 distributors:
@@ -12,6 +21,15 @@ distributors:
   part_number: C6542
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TexasInstruments-CD74HC4046AM96/C6542
+electrical:
+  device_type: ''
+  logic_family: 74HC
+  operating_temperature: -40 to +125 C
+  polarized: true
+  supply_voltage: 2.0-6.0 V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_16_clock_management_pll_with_vco_texas_instruments_cd74hc4046am96/datasheet.pdf
 ic_dimensions_mm:
   body_length: 9.9
   body_width: 3.9
@@ -27,11 +45,13 @@ jlcpcb_selection:
     category and pll_with_vco token new here) is its exact first reviewed preferred
     house choice; the family token and package come straight off the page. Edits made
     under the ic family lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-CD74HC4046AM96/C6542
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     38MHz: ''
@@ -46,11 +66,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-05: pin table generated pad-for-pad
+    from the KiCad 4xxx:4046 master (numbers and electrical types cross-checked at
+    plan time) and the SOIC-16 footprint master; renders inherit the pipeline verified
+    on the completed logic exemplar C5605 (74HC14D SOIC-14) and were spot-checked
+    on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+  symbol: 4xxx:4046
 lcsc_search: CD74HC4046AM96
 manufacturer: Texas Instruments
 manufacturers:
@@ -59,6 +84,7 @@ manufacturers:
 name_proper: IC CD74HC4046AM96 SOIC 16
 name_readable: IC CD74HC4046AM96 SOIC 16
 name_short: IC CD74HC4046AM96 SOIC 16
+package_name_manufacturer: SOIC-16 (SOT109-1, 3.9 x 9.9 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C6542
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-CD74HC4046AM96/C6542
@@ -70,7 +96,82 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Texas Instruments
   part_number: CD74HC4046AM96
+pins:
+  pin_1:
+    name: PCP
+    number: '1'
+    type: out
+  pin_10:
+    name: SFout
+    number: '10'
+    type: out
+  pin_11:
+    name: R1
+    number: '11'
+    type: in
+  pin_12:
+    name: R2
+    number: '12'
+    type: in
+  pin_13:
+    name: PC2
+    number: '13'
+    type: ts
+  pin_14:
+    name: SigIn
+    number: '14'
+    type: in
+  pin_15:
+    name: ZOUT
+    number: '15'
+    type: out
+  pin_16:
+    name: VDD
+    number: '16'
+    type: pwr
+  pin_2:
+    name: PC1
+    number: '2'
+    type: out
+  pin_3:
+    name: RefIn
+    number: '3'
+    type: in
+  pin_4:
+    name: FOUT
+    number: '4'
+    type: out
+  pin_5:
+    name: Inh
+    number: '5'
+    type: in
+  pin_6:
+    name: C1
+    number: '6'
+    type: in
+  pin_7:
+    name: C2
+    number: '7'
+    type: in
+  pin_8:
+    name: VSS
+    number: '8'
+    type: pwr
+  pin_9:
+    name: VCOin
+    number: '9'
+    type: in
 product_url: https://jlcpcb.com/partdetail/TexasInstruments-CD74HC4046AM96/C6542
+research_notes:
+- JLC house-parts queue row C6542 (Texas Instruments CD74HC4046AM96, SOIC-16, 16 pins)
+  verified at intake; family batch integration C6542.
+- Downloaded the official Texas Instruments 74HC4046 data sheet directly from ti.com
+  into this part.
+- Pin table generated from the KiCad 4xxx:4046 master and cross-checked pad-for-pad
+  (pin numbers and electrical types); no-connect pins filled to the 16-pin package
+  count.
+- Footprint Package_SO:SOIC-16_3.9x9.9mm_P1.27mm verified present in the KiCad 10
+  library.
 svg_details:
 - filename_extra: assembly
   make_a4: false

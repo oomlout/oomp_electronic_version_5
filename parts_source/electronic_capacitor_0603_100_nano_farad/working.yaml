@@ -1,6 +1,15 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8667086713656442880-C14663.pdf
+dimension_reference:
+  document: YAGEO YAGEO CC0603 series MLCC specification (own copy, C14663 provenance)
+  notes: 0603_1608Metric outline per the specification drawing; ordering code CC0603KRX7R9BB104
+    decodes the 100 nF 50 V X7R +-10% rating.
+  pages:
+  - 2
+  - 3
 dimensions_mm:
+  height: 0.8
   length: 1.6
   width: 0.8
 distributors:
@@ -23,15 +32,30 @@ distributors:
   part_number: C14663
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
+electrical:
+  capacitance: 100 nF (104)
+  dielectric: X7R
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: +-15% over the operating range (X7R)
+  temperature_range: -55 to +125 C
+  tolerance: +-10%
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0603_100_nano_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Existing generic 0603 100 nF capacitor already selected this
     exact YAGEO C14663 purchasing choice. JLC confirms 50 V X7R +/-10%. Its DC-bias-dependent
     effective capacitance and temperature limits require full project-specific review.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: YAGEO YAGEO CC0603 series specification (own copy)
+    outline:
+    - 2
+    - 3
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 100 nF
@@ -42,9 +66,12 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-24'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: MLCC template identical to the
+    completed capacitor exemplars (Device:C_Small, C_SMD assets) inspected post-build;
+    differs only in value text.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
   machine_solder: Capacitor_SMD:C_0603_1608Metric
   symbol: Device:C_Small
 lcsc_search: 0603 100nF
@@ -59,6 +86,7 @@ manufacturers:
 name_proper: Capacitor 100 nF 0603
 name_readable: Capacitor 100 nF 0603
 name_short: Capacitor 100 nF 0603
+package_name_manufacturer: 0603_1608Metric
 part_id: C1
 part_number_jlcpcb: C14663
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
@@ -79,10 +107,22 @@ part_numbers_manufacturer:
   part_number: 0603B104K500NT
 - manufacturer: Samsung Electro-Mechanics
   part_number: CL10B104KB8NNNC
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/YAGEO-CC0603KRX7R9BB104/C14663
 research_notes:
-- 'LCSC stock research 2026-09: highest-stock listing first (C14663, 10,855,500 in
-  stock at capture); runners-up follow.'
+- 'The official JLC page lists YAGEO CC0603KRX7R9BB104 (C14663): 100 nF 50 V X7R +-10%;
+  identity and ratings observed live at intake 2026-09-24.'
+- 'Straggler close-out 2026-10-04: downloaded the YAGEO specification into this part
+  via the signed JLC OSS link (the YAGEO/Murata ordering-code systems are per-size
+  series, so this part anchors its own sub-family).'
 svg_details:
 - filename_extra: assembly
   make_a4: false

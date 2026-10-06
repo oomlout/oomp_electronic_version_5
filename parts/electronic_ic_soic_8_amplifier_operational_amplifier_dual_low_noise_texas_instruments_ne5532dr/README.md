@@ -2,7 +2,7 @@
 
 `electronic_ic_soic_8_amplifier_operational_amplifier_dual_low_noise_texas_instruments_ne5532dr`
 
-IC NE5532DR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm.
+IC NE5532DR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm. The definition includes 8 documented pins.
 
 ![IC NE5532DR SOIC 8 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ IC NE5532DR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 packa
 | Type | Ic |
 | Package / style | soic 8 |
 | Nominal size | 4.9 &#x00D7; 3.9 mm |
+| Documented pins | 8 |
 
 
 ## Classification
@@ -34,6 +35,7 @@ IC NE5532DR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 packa
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.75 mm |
 | Length | 4.9 mm |
 | Width | 3.9 mm |
 
@@ -51,6 +53,25 @@ IC NE5532DR SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 packa
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | OUT1 | output |
+| 2 | IN1- | input |
+| 3 | IN1+ | input |
+| 4 | V- | power_in |
+| 5 | IN2+ | input |
+| 6 | IN2- | input |
+| 7 | OUT2 | output |
+| 8 | V+ | power_in |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

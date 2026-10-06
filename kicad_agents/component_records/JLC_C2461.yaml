@@ -37,6 +37,9 @@ research:
     Extended tooltip). No datasheet PDF imported at intake (solo worker has no download);
     download is an integration-stage task.'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C2461.json.
+  - 'THT family batch 2026-10-05: own downloaded series specification (signed JLC
+    OSS link); package outline per the R-6 (P600) THT axial KiCad master; electrical
+    values from the intake-observed listing (verified_on 2026-09-29).'
 jlc_selection:
   verified_on: '2026-09-29'
   official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-6A10/C2461
@@ -77,7 +80,12 @@ jlc_selection:
     Source: JLCPCB
     Voltage - DC Reverse(Vr): 1kV
     Voltage - Forward(Vf@If): 1V@6A
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: MDD 6A10 series specification
+    ratings:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-05: R-6 (P600) THT axial template;
+    THT renders follow the package master like the completed axial/bridge exemplars;
+    differs only in value text.'

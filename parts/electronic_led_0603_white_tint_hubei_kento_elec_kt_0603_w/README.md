@@ -2,7 +2,7 @@
 
 `electronic_led_0603_white_tint_hubei_kento_elec_kt_0603_w`
 
-LED KT-0603W 0603 is an OOMP electronic led definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm.
+LED KT-0603W 0603 is an OOMP electronic led definition. It uses the 0603 package or form factor. Its nominal drawing size is 1.6 &#x00D7; 0.8 mm. The definition includes 2 documented pins.
 
 ![LED KT-0603W 0603 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ LED KT-0603W 0603 is an OOMP electronic led definition. It uses the 0603 package
 | Type | Led |
 | Package / style | 0603 |
 | Nominal size | 1.6 &#x00D7; 0.8 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -34,6 +35,7 @@ LED KT-0603W 0603 is an OOMP electronic led definition. It uses the 0603 package
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.6 mm |
 | Length | 1.6 mm |
 | Width | 0.8 mm |
 
@@ -51,6 +53,19 @@ LED KT-0603W 0603 is an OOMP electronic led definition. It uses the 0603 package
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | A | passive |
+| 2 | K | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

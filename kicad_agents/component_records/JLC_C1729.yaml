@@ -24,8 +24,19 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, Samsung Electro-Mechanics, CL21B223KBANNNC, C1729,
     0805, 22nF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-10-01: live page reconfirmed (C1729, Samsung Electro-Mechanics,
+    CL21B223KBANNNC, Basic, In Stock 234,075). Fast-path coverage check FAILED (the
+    local Samsung catalogue X7R 0805 lineup page 27 does not list 22 nF), so the JLC
+    datasheet was downloaded in the browser and imported: it is byte-identical to
+    the family catalogue (sha256 96baebe4...), kept via oomp_datasheet_common_with
+    = electronic_capacitor_0402_100_nano_farad. Ordering decode page 4 covers the
+    full suffix (CL / 21 = 0805 / B = X7R / 223 = 22 nF / K = +-10% / B = 50 V / A
+    = 1.25 mm / N / C); the lineup table lists the neighbouring KBA 0805 rows (10-47
+    nF at 50 V, 2.00 x 1.25 mm) but not 22 nF - this 2015 revision predates the variant,
+    recorded as a known gap; identity rests on the decode, adjacent rows, X7R class
+    spec page 5, and the live JLC description.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/2081-CL21B223KBANNNC/C1729
   tier: basic
   tier_label_observed: Basic
@@ -41,7 +52,28 @@ jlc_selection:
     Tolerance: ±10%
     Capacitance: 22nF
     Temperature Coefficient: X7R
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1729
+      provenance, byte-identical to family copy)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 27
+    - 4
+    electrical_characteristics:
+    - 5
+    - 27
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 22 nF 0805 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 2.0 x 1.25 mm body with arrows, matching
+    the Samsung 0805/2012 nominals and thickness code A (0805 masters identical to
+    the built siblings electronic_capacitor_0805_100_nano_farad / electronic_capacitor_0805_10_nano_farad).
+    data/kicad manifest complete with Device:C_Small symbol and Capacitor_SMD:C_0805_2012Metric
+    machine + C_0805_2012Metric_Pad1.18x1.45mm_HandSolder hand footprints. README.md:
+    CL21B223KBANNNC part number, LCSC/JLC C1729 links, pin table, datasheet link resolving
+    to data/datasheet.pdf (the browser-downloaded Samsung MLCC general catalogue,
+    byte-identical family copy). Limitation: KiCad symbol/footprint checked as rendered
+    SVG/PNG plus s-expression text rather than in a KiCad GUI.'

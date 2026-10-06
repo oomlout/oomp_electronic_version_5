@@ -1,6 +1,16 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707052081807360-C1663.pdf
+dimension_reference:
+  document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1663)
+  notes: '0603/1608 metric: L 1.60 mm, W 0.80 mm, thickness code 8 = 0.80 mm (C0G
+    lineup table page 15 lists CL10C330JB8NNN at 33 pF, 50 V, +-5%).'
+  pages:
+  - 4
+  - 5
+  - 15
 dimensions_mm:
+  height: 0.8
   length: 1.6
   width: 0.8
 distributors:
@@ -12,16 +22,37 @@ distributors:
   part_number: C1663
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2015-CL10C330JB8NNNC/C1663
+electrical:
+  capacitance: 33 pF (330)
+  dielectric: C0G (Class I)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: 0 +-30 ppm/C over the operating range (C0G)
+  temperature_range: -55 to +125 C
+  tolerance: +-5% (J)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0603_33_pico_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Existing generic 0603 33 pF capacitor. Samsung C1663 is 50
     V C0G +/-5%; previous YAGEO C107047 was 50 V NP0 +/-5%. C0G/NP0 are the same Class
     I temperature characteristic. Preserve C107047 and other alternatives; project-specific
     RF/Q requirements need full review.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    dimensions:
+    - 15
+    - 4
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared,
+      C1663 provenance)
+    electrical_characteristics:
+    - 5
+    - 15
+    ordering_coverage:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2015-CL10C330JB8NNNC/C1663
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     capacitance: 33 pF
@@ -31,10 +62,21 @@ jlcpcb_selection:
   stock_observed: 1040053
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-01'
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 33 pF 0603 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.6 x 0.8 mm body with arrows (same
+    0603 generic renderer verified on ten 0603 siblings this session), matching the
+    Samsung 0603/1608 nominals and thickness code 8. data/kicad manifest complete
+    with Device:C_Small symbol and Capacitor_SMD:C_0603_1608Metric machine + Pad1.08x0.95mm_HandSolder
+    hand footprints. README.md: CL10C330JB8NNNC part number, LCSC/JLC C1663 links,
+    pin table, datasheet link resolving to data/datasheet.pdf via the shared Samsung
+    MLCC general catalogue (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
   machine_solder: Capacitor_SMD:C_0603_1608Metric
   symbol: Device:C_Small
 lcsc_search: 0603 33pF
@@ -46,6 +88,7 @@ name_proper: Capacitor 33 pF 0603
 name_readable: Capacitor 33 pF 0603
 name_short: Capacitor 33 pF 0603
 oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+package_name_manufacturer: 0603 (1608 metric, thickness code 8)
 part_id: C1
 part_number_jlcpcb: C1663
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2015-CL10C330JB8NNNC/C1663
@@ -57,7 +100,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Samsung Electro-Mechanics
   part_number: CL10C330JB8NNNC
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2015-CL10C330JB8NNNC/C1663
+research_notes:
+- 'The official JLC page lists Basic Samsung CL10C330JB8NNNC (C1663): 33 pF, 50 V,
+  C0G, +-5% in 0603; reconfirmed live 2026-10-01 (stock 1,035,691).'
+- The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%), and the
+  C0G Product Lineup table (page 15) lists CL10C330JB8NNN.
+- Non-polarized two-terminal chip; the standard built-in 0603 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

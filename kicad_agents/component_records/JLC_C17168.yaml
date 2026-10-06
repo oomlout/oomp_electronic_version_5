@@ -12,16 +12,32 @@ research:
   manufacturer: UNI-ROYAL(Uniroyal Elec)
   manufacturer_part_number: 0402WGF0000TCE
   lcsc_part_number: C17168
-  lcsc_decision: Official JLCPCB page identifies C17168 as the exact UNI-ROYAL purchasing choice for this 0402 zero-ohm jumper resistor.
+  lcsc_decision: Official JLCPCB page identifies C17168 as the exact UNI-ROYAL purchasing
+    choice for this 0402 zero-ohm jumper resistor.
   product_url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
   datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579705904667033600-C17168.pdf
   browser_sources:
-    - https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
+  - https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
   webpage_capture: parts_source/electronic_resistor_0402_0_ohm/web_page_distributor_jlc.txt
   evidence_notes:
-    - Official page displayed Basic, UNI-ROYAL(Uniroyal Elec), 0402WGF0000TCE, C17168, 0402, 0 ohm, 62.5mW and 50V on 2026-09-24.
-    - C17168 was already an alternative C-number for generic electronic_resistor_0402_0_ohm. Former preferred FOJAN C2906877 lists 0 ohm, 0402, 62.5 mW and 50 V. Preserve it as an alternative. The displayed percentage tolerance and TCR for a nominal zero-ohm jumper are not substitutes for maximum resistance and current ratings; obtain those from the datasheet in the full pass.
-    - JLC-linked C17168 PDF was downloaded through the browser and imported with source URL and SHA-256. Current rating, maximum resistance, series ordering code and land-pattern review remain full-pass tasks.
+  - Official page displayed Basic, UNI-ROYAL(Uniroyal Elec), 0402WGF0000TCE, C17168,
+    0402, 0 ohm, 62.5mW and 50V on 2026-09-24.
+  - C17168 was already an alternative C-number for generic electronic_resistor_0402_0_ohm.
+    Former preferred FOJAN C2906877 lists 0 ohm, 0402, 62.5 mW and 50 V. Preserve
+    it as an alternative. The displayed percentage tolerance and TCR for a nominal
+    zero-ohm jumper are not substitutes for maximum resistance and current ratings;
+    obtain those from the datasheet in the full pass.
+  - JLC-linked C17168 PDF was downloaded through the browser and imported with source
+    URL and SHA-256. Current rating, maximum resistance, series ordering code and
+    land-pattern review remain full-pass tasks.
+  - 'Family batch 2026-10-04: identity, tier and ratings are the intake-time live
+    observations (verified_on 2026-09-24); no fresh page pass was run for this member.
+    The already-captured UNI-ROYAL Thick Film Chip Resistors data sheet (shared via
+    oomp_datasheet_common_with = electronic_resistor_0402_0_ohm) covers the exact
+    suffix - part number system page 2 decodes 0402 / WG = 1/16 W / F = +-1% / 0000
+    = 0000 = 0 x 10^0 = 0 Ohm; resistance range page 4 covers the 0402 family; dimension
+    table page 4: 0402 L 1.00+-0.10, W 0.50+-0.05, H 0.35+-0.05 mm; no body marking
+    at 0402 (page 3).'
 jlc_selection:
   verified_on: '2026-09-24'
   official_url: https://jlcpcb.com/partdetail/17853-0402WGF0000TCE/C17168
@@ -30,7 +46,10 @@ jlc_selection:
   stock_observed: 10286598
   purchase_moq_observed: 1
   pcba_min_qty_observed: null
-  compatibility_notes: Existing generic 0402 zero-ohm jumper already listed C17168 as an alternative. Promote the verified Basic house choice and retain FOJAN C2906877. Maximum resistance and current rating must be checked from the series datasheet before use in current-sensitive circuits; full pass also checks pad geometry.
+  compatibility_notes: Existing generic 0402 zero-ohm jumper already listed C17168
+    as an alternative. Promote the verified Basic house choice and retain FOJAN C2906877.
+    Maximum resistance and current rating must be checked from the series datasheet
+    before use in current-sensitive circuits; full pass also checks pad geometry.
   ratings:
     nominal_resistance: 0 ohm
     power_as_listed: 62.5 mW
@@ -38,7 +57,18 @@ jlc_selection:
     operating_temperature: -55 to +155 C
     maximum_resistance: pending datasheet review
     current_rating: pending datasheet review
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
+    part_number_system:
+    - 2
+    marking:
+    - 3
+    resistance_range_dimensions:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 0402 resistor template (Device:R_Small, Resistor_SMD:R_0402_1005Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: C25530,C4109.'

@@ -2,7 +2,7 @@
 
 `electronic_capacitor_0402_8_pico_farad`
 
-Capacitor 8 pF 0402 is an OOMP electronic capacitor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm.
+Capacitor 8 pF 0402 is an OOMP electronic capacitor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
 
 ![Capacitor 8 pF 0402 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Capacitor 8 pF 0402 is an OOMP electronic capacitor definition. It uses the 0402
 | Type | Capacitor |
 | Package / style | 0402 |
 | Nominal size | 1.0 &#x00D7; 0.5 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,14 +32,37 @@ Capacitor 8 pF 0402 is an OOMP electronic capacitor definition. It uses the 0402
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.5 mm |
 | Length | 1.0 mm |
 | Width | 0.5 mm |
 
 
 
 
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `0402CG8R0C500NT` |
+| LCSC | [`C1578`](https://www.lcsc.com/product-detail/C1578.html) |
+| JLCPCB | [`C1578`](https://jlcpcb.com/partdetail/1930-0402CG8R0C500NT/C1578) |
 
 
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

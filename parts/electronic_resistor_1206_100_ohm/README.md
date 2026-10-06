@@ -2,7 +2,7 @@
 
 `electronic_resistor_1206_100_ohm`
 
-Resistor 100 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Resistor 100 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm. The definition includes 2 documented pins.
 
 ![Resistor 100 Ohm 1206 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 100 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 | Type | Resistor |
 | Package / style | 1206 |
 | Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 100 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.55 mm |
 | Length | 3.2 mm |
 | Width | 1.6 mm |
 
@@ -48,6 +50,19 @@ Resistor 100 Ohm 1206 is an OOMP electronic resistor definition. It uses the 120
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

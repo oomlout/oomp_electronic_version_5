@@ -1,8 +1,17 @@
 category: diode
 category_name: Diode
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707661585616896-C2500.pdf
+dimension_reference:
+  document: Nexperia BAV99 product data sheet, 1 July 2022 (C2500)
+  notes: SOT23 (TO-236AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry;
+    the datasheet package drawing carries the outline and pinning.
+  pages:
+  - 2
+  - 4
 dimensions_mm:
+  height: 1.0
   length: 2.9
-  width: 2.6
+  width: 1.3
 distributors:
 - key: lcsc
   part_number: C2500
@@ -12,6 +21,22 @@ distributors:
   part_number: C2500
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Nexperia-BAV99215/C2500
+electrical:
+  configuration: dual high-speed switching diode, series connection
+  diode_capacitance: 1.5 pF max
+  forward_voltage_at_test_current: 1.25 V at 150 mA (per the live JLC description)
+  maximum_dc_reverse_voltage: 100 V per diode
+  maximum_rectified_current: 215 mA single diode loaded (125 mA double diode loaded)
+  non_repetitive_peak_forward_surge_current: 0.5 A (tp = 1 s); IFRM 500 mA (tp = 1
+    us)
+  operating_temperature: -55 to +150 C (Tj)
+  polarized: true
+  power_dissipation: 250 mW per device (Tamb <= 25 C)
+  reverse_leakage_current: 0.5 uA max at VR = 80 V
+  reverse_recovery_time: 4 ns max (IF = 10 mA, IR = 10 mA)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_diode_switching_dual_series_sot_23_nexperia_bav99_215/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Exact active device with no prior OOMP entry: added one explicit
     diode family row electronic_diode_switching_dual_series_sot_23_nexperia_bav99_215
@@ -20,11 +45,19 @@ jlcpcb_selection:
     parts). BAV99,215 is a dual series-connected switching diode in SOT-23 with 3
     exposed terminals; the ordering suffix ,215 is preserved in research metadata
     while the ID token uses bav99_215.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    characteristics:
+    - 4
+    document: Nexperia BAV99 product data sheet, 1 July 2022 (C2500 provenance, family
+      anchor)
+    limiting_values:
+    - 4
+    pinning:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Nexperia-BAV99215/C2500
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Current - Rectified: 215mA
@@ -38,12 +71,23 @@ jlcpcb_selection:
   stock_observed: 1091906
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Diode BAV99,215 SOT-23
+    with K2 (pin 2) top-left, A1 (pin 1) bottom-left and K1_A2 (pin 3, common) right,
+    matching the Nexperia pinning table 2. working_svg_dimensioned.png: SOT-23 (TO-236AB)
+    outline per the Package_TO_SOT_SMD:SOT-23 master geometry. data/kicad manifest
+    complete with Diode:BAV99 symbol and Package_TO_SOT_SMD:SOT-23 machine + SOT-23_Handsoldering
+    hand footprints. README.md: BAV99,215 part number, LCSC/JLC C2500 links, 3-pin
+    table (A1/K2/K1_A2 with the polarity-mirror note), datasheet link resolving to
+    data/datasheet.pdf (the Nexperia product data sheet, family anchor). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'
 kicad:
-  hand_solder: Package_TO_SOT_SMD:SOT-23
+  allow_project_fallback: false
+  hand_solder: Package_TO_SOT_SMD:SOT-23_Handsoldering
   machine_solder: Package_TO_SOT_SMD:SOT-23
-  symbol: ''
+  symbol: Diode:BAV99
 lcsc_search: BAV99,215
 manufacturer: Nexperia
 manufacturers:
@@ -52,6 +96,7 @@ manufacturers:
 name_proper: Diode BAV99,215 SOT-23
 name_readable: Diode BAV99,215 SOT-23
 name_short: Diode BAV99,215 SOT-23
+package_name_manufacturer: SOT-23 (TO-236AB)
 part_id: D1
 part_number_jlcpcb: C2500
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Nexperia-BAV99215/C2500
@@ -63,7 +108,28 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Nexperia
   part_number: BAV99,215
+pins:
+  pin_1:
+    name: A1
+    number: '1'
+    type: signal
+  pin_2:
+    name: K2
+    number: '2'
+    type: signal
+  pin_3:
+    name: K1_A2
+    number: '3'
+    type: signal
 product_url: https://jlcpcb.com/partdetail/Nexperia-BAV99215/C2500
+research_notes:
+- 'The official JLC page lists Basic Nexperia BAV99,215 (C2500): dual series switching
+  diode, 100 V, 215 mA, 4 ns in SOT-23; reconfirmed live 2026-10-02 (stock 1,146,158).'
+- Browser-downloaded the Nexperia BAV99 product data sheet (10 pages, 1 July 2022)
+  into this part; it anchors the SOT-23 dual switching diode family.
+- 'POLARITY MIRROR: the pinning table gives 1 = A1, 2 = K2, 3 = K1/A2, but the KiCad
+  Diode:BAV99 symbol numbers pins 1 = K / 2 = A / 3 = junction - mirrored vs the vendor;
+  designs must compensate (custom symbol or pin swap) before assembly.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

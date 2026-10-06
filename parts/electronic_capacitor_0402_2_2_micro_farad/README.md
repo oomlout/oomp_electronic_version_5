@@ -2,7 +2,7 @@
 
 `electronic_capacitor_0402_2_2_micro_farad`
 
-Capacitor 2.2 uF 0402 is an OOMP electronic capacitor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm.
+Capacitor 2.2 uF 0402 is an OOMP electronic capacitor definition. It uses the 0402 package or form factor. Its nominal drawing size is 1.0 &#x00D7; 0.5 mm. The definition includes 2 documented pins.
 
 ![Capacitor 2.2 uF 0402 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Capacitor 2.2 uF 0402 is an OOMP electronic capacitor definition. It uses the 04
 | Type | Capacitor |
 | Package / style | 0402 |
 | Nominal size | 1.0 &#x00D7; 0.5 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Capacitor 2.2 uF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.5 mm |
 | Length | 1.0 mm |
 | Width | 0.5 mm |
 
@@ -50,6 +52,19 @@ Capacitor 2.2 uF 0402 is an OOMP electronic capacitor definition. It uses the 04
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

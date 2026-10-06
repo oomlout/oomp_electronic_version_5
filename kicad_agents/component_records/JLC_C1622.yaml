@@ -24,8 +24,16 @@ research:
   evidence_notes:
   - Live JLC page displayed Basic, Samsung Electro-Mechanics, CL10B473KB8NNNC, C1622,
     0603, 47nF, 50V, X7R and +/-10% on 2026-09-24.
+  - 'Full pass 2026-10-01: live page reconfirmed (C1622, Samsung Electro-Mechanics,
+    CL10B473KB8NNNC, Basic, In Stock 829,693); the listed datasheet URL matches the
+    intake snapshot. No new download: the already-captured Samsung MLCC general catalogue,
+    November 2015 (shared via oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad)
+    covers the exact suffix - part numbering page 4 decodes CL / 10 = 0603 / B = X7R
+    / 473 = 47 nF / K = +-10% / B = 50 V / 8 = 0.80 mm / N Ni-barrier / C 7-inch reel;
+    the X7R Product Lineup table page 26 lists CL10B473KB8NNN at 47 nF, 50 V, +-10%,
+    1.60 x 0.80 mm; X7R class -55 to +125 C, +-15% (page 5).'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/1974-CL10B473KB8NNNC/C1622
   tier: basic
   tier_label_observed: Basic
@@ -41,7 +49,27 @@ jlc_selection:
     Tolerance: ±10%
     Capacitance: 47nF
     Temperature Coefficient: X7R
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared,
+      C1622 provenance)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 26
+    - 4
+    electrical_characteristics:
+    - 5
+    - 26
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-01 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 47 nF 0603 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: 1.6 x 0.8 mm body with arrows (same
+    0603 generic renderer verified on C1604/C1613/C1620), matching the Samsung 0603/1608
+    nominals and thickness code 8. data/kicad manifest complete with Device:C_Small
+    symbol and Capacitor_SMD:C_0603_1608Metric machine + Pad1.08x0.95mm_HandSolder
+    hand footprints. README.md: CL10B473KB8NNNC part number, LCSC/JLC C1622 links,
+    pin table, datasheet link resolving to data/datasheet.pdf via the shared Samsung
+    MLCC general catalogue (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'

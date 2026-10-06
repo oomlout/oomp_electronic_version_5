@@ -4,7 +4,7 @@ status: researched
 family: capacitor
 part_id: electronic_capacitor_0805_4_7_micro_farad
 exact_identity: true
-package: '0805'
+package: 0805
 pin_count: 2
 datasheet_required: true
 project_references: []
@@ -12,31 +12,71 @@ research:
   manufacturer: Samsung Electro-Mechanics
   manufacturer_part_number: CL21A475KAQNNNE
   lcsc_part_number: C1779
-  lcsc_decision: Official JLCPCB page uses C1779 for this exact Samsung purchasing choice.
+  lcsc_decision: Official JLCPCB page uses C1779 for this exact Samsung purchasing
+    choice.
   product_url: https://jlcpcb.com/partdetail/2131-CL21A475KAQNNNE/C1779
   datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8556213325551206400-C1779.pdf
   browser_sources:
-    - https://jlcpcb.com/partdetail/2131-CL21A475KAQNNNE/C1779
+  - https://jlcpcb.com/partdetail/2131-CL21A475KAQNNNE/C1779
   webpage_capture: parts_source/electronic_capacitor_0805_4_7_micro_farad/web_page_distributor_jlc.txt
   evidence_notes:
-    - Official page displayed Basic, Samsung Electro-Mechanics, CL21A475KAQNNNE, C1779, 0805, 4.7uF, 25V, X5R and +/-10% on 2026-09-24.
-    - Reuses the existing generic electronic_capacitor_0805_4_7_micro_farad, which had no primary LCSC purchasing number. X5R and DC-bias-dependent effective capacitance need project-specific full review.
-    - JLC-linked C1779 PDF was downloaded through the browser and imported with its source URL and SHA-256 into parts_source/electronic_capacitor_0805_4_7_micro_farad/datasheet.pdf. Ordering-code and dimensional review remain full-pass tasks.
+  - Official page displayed Basic, Samsung Electro-Mechanics, CL21A475KAQNNNE, C1779,
+    0805, 4.7uF, 25V, X5R and +/-10% on 2026-09-24.
+  - Reuses the existing generic electronic_capacitor_0805_4_7_micro_farad, which had
+    no primary LCSC purchasing number. X5R and DC-bias-dependent effective capacitance
+    need project-specific full review.
+  - JLC-linked C1779 PDF was downloaded through the browser and imported with its
+    source URL and SHA-256 into parts_source/electronic_capacitor_0805_4_7_micro_farad/datasheet.pdf.
+    Ordering-code and dimensional review remain full-pass tasks.
+  - 'Full pass 2026-10-02: live page reconfirmed (C1779, Samsung Electro-Mechanics,
+    CL21A475KAQNNNE, Basic, In Stock 3,052,932). Fast-path coverage check FAILED (the
+    local Samsung catalogue X5R 0805 lineup page 20 lists the KB 50 V variant but
+    not the KA 25 V variant), so the JLC datasheet was downloaded in the browser and
+    imported: it is byte-identical to the family catalogue (sha256 96baebe4...), kept
+    via oomp_datasheet_common_with = electronic_capacitor_0402_100_nano_farad. Ordering
+    decode page 4 covers the full suffix (CL / 21 = 0805 / A = X5R / 475 = 4.7 uF
+    / K = +-10% / A = 25 V / Q = 1.25 mm thickness / N / N / E embossed 7-inch reel);
+    X5R class -55 to +85 C, +-15% (page 5); the KB 50 V lineup row shares the same
+    Q body (page 20). Known gap recorded: the 2015 revision predates the KA variant;
+    identity rests on the decode, the adjacent KB row, and the live JLC description.'
 jlc_selection:
-  verified_on: '2026-09-24'
+  verified_on: '2026-10-01'
   official_url: https://jlcpcb.com/partdetail/2131-CL21A475KAQNNNE/C1779
   tier: basic
   tier_label_observed: Basic
   stock_observed: 2944180
   purchase_moq_observed: 1
   pcba_min_qty_observed: null
-  compatibility_notes: Existing generic 0805 4.7 uF capacitor had no primary purchasing number. Samsung C1779 is a non-polar 25 V X5R +/-10% MLCC. Its DC-bias-dependent effective capacitance and temperature limits require full project-specific review.
+  compatibility_notes: Existing generic 0805 4.7 uF capacitor had no primary purchasing
+    number. Samsung C1779 is a non-polar 25 V X5R +/-10% MLCC. Its DC-bias-dependent
+    effective capacitance and temperature limits require full project-specific review.
   ratings:
     capacitance: 4.7 uF
     rated_voltage: 25 V
     dielectric: X5R
     tolerance: +/-10%
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1779
+      provenance, byte-identical to family copy)
+    ordering_coverage:
+    - 4
+    dimensions:
+    - 4
+    - 20
+    electrical_characteristics:
+    - 5
+    - 20
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 4.7 uF 0805 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: top view 2.0 x 1.25 mm with arrows;
+    part thickness 1.25 mm (Q code, page 4 thickness table) in dimensions_mm (0805
+    masters identical to the built 0805 siblings). data/kicad manifest complete with
+    Device:C_Small symbol and Capacitor_SMD:C_0805_2012Metric machine + C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
+    hand footprints. README.md: CL21A475KAQNNNE part number, LCSC/JLC C1779 links,
+    pin table, datasheet link resolving to data/datasheet.pdf (the browser-downloaded
+    Samsung MLCC general catalogue, byte-identical family copy). Limitation: KiCad
+    symbol/footprint checked as rendered SVG/PNG plus s-expression text rather than
+    in a KiCad GUI.'

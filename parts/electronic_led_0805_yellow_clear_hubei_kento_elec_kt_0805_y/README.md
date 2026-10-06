@@ -2,7 +2,7 @@
 
 `electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y`
 
-LED KT-0805Y 0805 is an OOMP electronic led definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
+LED KT-0805Y 0805 is an OOMP electronic led definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.2 mm. The definition includes 2 documented pins.
 
 ![LED KT-0805Y 0805 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ LED KT-0805Y 0805 is an OOMP electronic led definition. It uses the 0805 package
 | OOMP ID | `electronic_led_0805_yellow_clear_hubei_kento_elec_kt_0805_y` |
 | Type | Led |
 | Package / style | 0805 |
-| Nominal size | 2.0 &#x00D7; 1.25 mm |
+| Nominal size | 2.0 &#x00D7; 1.2 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -34,8 +35,9 @@ LED KT-0805Y 0805 is an OOMP electronic led definition. It uses the 0805 package
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.8 mm |
 | Length | 2.0 mm |
-| Width | 1.25 mm |
+| Width | 1.2 mm |
 
 
 
@@ -51,6 +53,19 @@ LED KT-0805Y 0805 is an OOMP electronic led definition. It uses the 0805 package
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | K | passive |
+| 2 | A | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

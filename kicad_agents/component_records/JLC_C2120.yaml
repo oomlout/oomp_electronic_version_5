@@ -32,6 +32,11 @@ research:
     PDF imported at intake (solo worker has no download); download is an integration-stage
     task.'
   - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C2120.json.
+  - 'Family batch 2026-10-04: identity from the intake-time live page (verified_on
+    2026-09-28). The shared Changjing BZT52C2V4-BZT52C43 specification (oomp_datasheet_common_with
+    = electronic_diode_zener_sod_123_jiangsu_changjing_electronics_technology_co_ltd_bzt52c10)
+    covers the exact type - ratings table pages 1-2 (6.8 V row, +-5%, ZZT max), package
+    outline page 4 (SOD-123), marking page 1 (cathode band).'
 jlc_selection:
   verified_on: '2026-09-28'
   official_url: https://jlcpcb.com/partdetail/2477-BZT52C6V8/C2120
@@ -57,7 +62,18 @@ jlc_selection:
     Reverse Leakage Current (Ir): 2uA
     Zener Voltage(Nom): 6.8V
     Zener Voltage(Range): 6.4V~7.2V
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+    document: Changjing BZT52C2V4-BZT52C43 zener diode specification, Rev 2.1 (shared
+      family copy, C2103 provenance)
+    ratings:
+    - 1
+    - 2
+    marking:
+    - 1
+    package_outline:
+    - 4
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-04: SOD-123 zener template identical
+    to the completed exemplar renders of this batch (Device symbol, D_SOD-123 machine
+    + hand assets) inspected post-build; batch members differ only in value text.'

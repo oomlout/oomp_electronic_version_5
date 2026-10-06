@@ -1,11 +1,12 @@
 # Electronic / IC / Soic 16 / Driver
 
 [Up one level](../README.md)
-This category contains 1 parts in total.
+This category contains 5 parts in total.
 
 ## Categories
 
 - [Darlington Array](darlington_array/README.md)
+- [Half Bridge Gate Driver](half_bridge_gate_driver/README.md)
 
 
 ---

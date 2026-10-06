@@ -1,6 +1,16 @@
 category: capacitor
 category_name: Capacitor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579706825203105792-C1804.pdf
+dimension_reference:
+  document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (C1804)
+  notes: '0805/2012 metric: L 2.00 mm, W 1.25 mm, thickness code A = 1.25 mm (C0G
+    lineup table page 16 lists CL21C220JBANNN at 22 pF, 50 V, +-5%).'
+  pages:
+  - 4
+  - 5
+  - 16
 dimensions_mm:
+  height: 1.25
   length: 2.0
   width: 1.25
 distributors:
@@ -12,15 +22,36 @@ distributors:
   part_number: C1804
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2156-CL21C220JBANNNC/C1804
+electrical:
+  capacitance: 22 pF (220)
+  dielectric: C0G (Class I)
+  polarized: false
+  rated_voltage: 50 V
+  temperature_characteristic: 0 +-30 ppm/C over the operating range (C0G)
+  temperature_range: -55 to +125 C
+  tolerance: +-5% (J)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_capacitor_0805_22_pico_farad/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: New generic 0805 22 pF capacitor. The live Basic Samsung C1804
     choice is a 50 V C0G +/-5% MLCC matching value and package. The purchase preference
     carries those ratings; project voltage margin remains for the full pass.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    dimensions:
+    - 16
+    - 4
+    document: Samsung Electro-Mechanics MLCC general catalogue, November 2015 (shared,
+      C1804 provenance)
+    electrical_characteristics:
+    - 5
+    - 16
+    ordering_coverage:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2156-CL21C220JBANNNC/C1804
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Capacitance: 22pF
@@ -30,10 +61,21 @@ jlcpcb_selection:
   stock_observed: 822274
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-24'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build and a forced diagram refresh.
+    working_svg_square_pins.png hero titled Capacitor 22 pF 0805 with terminals 1
+    left and 2 right, symmetric non-polarized body, no mirroring, no label overlap,
+    no cropping. working_svg_dimensioned.png: top view 2.0 x 1.25 mm with arrows,
+    matching the Samsung 0805/2012 nominals and A thickness (0805 masters identical
+    to the built 0805 siblings). data/kicad manifest complete with Device:C_Small
+    symbol and Capacitor_SMD:C_0805_2012Metric machine + C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
+    hand footprints. README.md: CL21C220JBANNNC part number, LCSC/JLC C1804 links,
+    pin table, datasheet link resolving to data/datasheet.pdf via the shared Samsung
+    MLCC general catalogue (oomp_datasheet_common_with). Limitation: KiCad symbol/footprint
+    checked as rendered SVG/PNG plus s-expression text rather than in a KiCad GUI.'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder
   machine_solder: Capacitor_SMD:C_0805_2012Metric
   symbol: Device:C_Small
 lcsc_search: 0805 22pF
@@ -45,6 +87,7 @@ name_proper: Capacitor 22 pF 0805
 name_readable: Capacitor 22 pF 0805
 name_short: Capacitor 22 pF 0805
 oomp_datasheet_common_with: electronic_capacitor_0402_100_nano_farad
+package_name_manufacturer: 0805 (2012 metric, A thickness code)
 part_id: C1
 part_number_jlcpcb: C1804
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2156-CL21C220JBANNNC/C1804
@@ -56,7 +99,23 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Samsung Electro-Mechanics
   part_number: CL21C220JBANNNC
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/2156-CL21C220JBANNNC/C1804
+research_notes:
+- 'The official JLC page lists Basic Samsung CL21C220JBANNNC (C1804): 22 pF, 50 V,
+  C0G, +-5% in 0805; reconfirmed live 2026-10-01 (stock 799,152).'
+- The Samsung ordering decode covers the exact suffix (C = C0G, J = +-5%, A = 1.25
+  mm thickness), and the C0G Product Lineup table (page 16) lists CL21C220JBANNN.
+- Non-polarized two-terminal chip; the standard built-in 0805 chip renderer draws
+  the package from the verified dimensions.
 svg_details:
 - filename_extra: assembly
   make_a4: false

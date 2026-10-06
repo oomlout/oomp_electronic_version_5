@@ -1,6 +1,15 @@
 category: ic
 category_name: IC
+datasheet_url: https://www.ti.com/cn/lit/ds/symlink/uln2003a.pdf
+dimension_reference:
+  document: TI ULN200x/ULQ200x datasheet, Rev. T (C7512)
+  notes: SOIC-16 (D package) outline per the Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+    master geometry; standard ULN2003A pin arrangement.
+  pages:
+  - 1
+  - 2
 dimensions_mm:
+  height: 1.75
   length: 9.9
   width: 3.9
 distributors:
@@ -12,6 +21,16 @@ distributors:
   part_number: C7512
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/TexasInstruments-ULN2003ADR/C7512
+electrical:
+  channels: 7 (inputs I1-I7, open-collector outputs O1-O7)
+  device_type: seven-channel NPN Darlington driver array with flyback diodes
+  input_current: ~50 uA per channel
+  output_current: 500 mA per channel max
+  output_voltage: 50 V max output (30 V clamp on live description)
+  polarized: false
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_ic_soic_16_driver_darlington_array_texas_instruments_uln2003adr/datasheet.pdf
 ic_dimensions_mm:
   body_length: 9.9
   body_width: 3.9
@@ -24,11 +43,16 @@ jlcpcb_selection:
     using the established package/category/function/maker/MPN taxonomy with a new
     driver/darlington_array pair. Seven-channel 500 mA Darlington array, 50 V collector,
     30 V input.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: TI ULN200x/ULQ200x datasheet, Rev. T (C7512 provenance, family anchor)
+    features:
+    - 1
+    pin_configuration:
+    - 2
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/TexasInstruments-ULN2003ADR/C7512
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Collector - Emitter Voltage VCEO: 50V
@@ -44,12 +68,23 @@ jlcpcb_selection:
   stock_observed: 353091
   tier: basic
   tier_label_observed: Basic
-  verified_on: '2026-09-25'
-  visual_review: pending
+  verified_on: '2026-10-02'
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled IC ULN2003ADR SOIC 16 with
+    I1-I7 and GND down the left side and O1-O7/COM up the right side, matching the
+    standard ULN2003A pin arrangement (1-7 = I1-I7, 8 = GND, 9 = COM, 10-16 = O7-O1).
+    working_svg_dimensioned.png: SOIC-16 outline per the Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+    master geometry. data/kicad manifest complete (2-asset rule, no HandSoldering
+    master for SOIC-16 narrow) with Transistor_Array:ULN2003A symbol and Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+    machine footprint. README.md: ULN2003ADR part number, LCSC/JLC C7512 links, 16-pin
+    table, datasheet link resolving to data/datasheet.pdf (the TI Rev. T datasheet,
+    family anchor). Limitation: KiCad symbol/footprint checked as rendered SVG/PNG
+    plus s-expression text rather than in a KiCad GUI.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+  symbol: Transistor_Array:ULN2003A
 lcsc_search: ULN2003ADR
 manufacturer: Texas Instruments
 manufacturers:
@@ -58,6 +93,7 @@ manufacturers:
 name_proper: IC ULN2003ADR SOIC 16
 name_readable: IC ULN2003ADR SOIC 16
 name_short: IC ULN2003ADR SOIC 16
+package_name_manufacturer: SOIC-16 (D, 3.9 x 9.9 mm, 1.27 mm pitch)
 part_id: U1
 part_number_jlcpcb: C7512
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/TexasInstruments-ULN2003ADR/C7512
@@ -69,7 +105,82 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Texas Instruments
   part_number: ULN2003ADR
+pins:
+  pin_1:
+    name: I1
+    number: '1'
+    type: input
+  pin_10:
+    name: O7
+    number: '10'
+    type: output
+  pin_11:
+    name: O6
+    number: '11'
+    type: output
+  pin_12:
+    name: O5
+    number: '12'
+    type: output
+  pin_13:
+    name: O4
+    number: '13'
+    type: output
+  pin_14:
+    name: O3
+    number: '14'
+    type: output
+  pin_15:
+    name: O2
+    number: '15'
+    type: output
+  pin_16:
+    name: O1
+    number: '16'
+    type: output
+  pin_2:
+    name: I2
+    number: '2'
+    type: input
+  pin_3:
+    name: I3
+    number: '3'
+    type: input
+  pin_4:
+    name: I4
+    number: '4'
+    type: input
+  pin_5:
+    name: I5
+    number: '5'
+    type: input
+  pin_6:
+    name: I6
+    number: '6'
+    type: input
+  pin_7:
+    name: I7
+    number: '7'
+    type: input
+  pin_8:
+    name: GND
+    number: '8'
+    type: power_in
+  pin_9:
+    name: COM
+    number: '9'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/TexasInstruments-ULN2003ADR/C7512
+research_notes:
+- 'The official JLC page lists Basic Texas Instruments ULN2003ADR (C7512): seven-channel
+  Darlington array in SOIC-16; reconfirmed live 2026-10-02 (stock 345,414). The queue
+  snapshot for this code was degraded (empty MPN/maker) and has been repaired from
+  the live page + intake record identity.'
+- Browser-downloaded the TI ULN200x/ULQ200x datasheet (42 pages, Rev. T) from the
+  page's ti.com datasheet link (fetched same-origin from the www.ti.com page) into
+  this part; it anchors the ULN2003A SOIC-16 family.
+- 'Pinout per the standard ULN2003A arrangement: 1-7 = I1-I7, 8 = GND, 9 = COM, 10-16
+  = O7-O1 (outputs in reverse order); Transistor_Array:ULN2003A matches pad-for-pad.'
 svg_details:
 - filename_extra: assembly
   make_a4: false
