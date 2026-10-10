@@ -1,0 +1,115 @@
+# Relay JQC-3FF/12-1HS(551) THROUGH HOLE
+
+`electronic_relay_through_hole_12_volt_coil_spst_no_hongfa_jqc_3ff_12_1hs_551`
+
+Relay JQC-3FF/12-1HS(551) THROUGH HOLE is an OOMP electronic relay definition. It uses the through hole package or form factor. Its nominal drawing size is 19.0 &#x00D7; 15.5 mm. The definition includes 4 documented pins.
+
+![Relay JQC-3FF/12-1HS(551) THROUGH HOLE pinout](data/working_svg_square_pins.svg)
+
+## At a glance
+
+| Detail | Value |
+| --- | --- |
+| OOMP ID | `electronic_relay_through_hole_12_volt_coil_spst_no_hongfa_jqc_3ff_12_1hs_551` |
+| Type | Relay |
+| Package / style | through hole |
+| Nominal size | 19.0 &#x00D7; 15.5 mm |
+| Documented pins | 4 |
+
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+| 1 | `electronic` |
+| 2 | `relay` |
+| 3 | `through_hole` |
+| 4 | `12_volt_coil` |
+| 5 | `spst_no` |
+| 14 | `hongfa` |
+| 15 | `jqc_3ff_12_1hs_551` |
+
+
+
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+| Height | 15.5 mm |
+| Length | 19.0 mm |
+| Width | 15.5 mm |
+
+
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `JQC-3FF/12-1HS(551)` |
+| LCSC | [`C3640`](https://www.lcsc.com/product-detail/C3640.html) |
+| JLCPCB | [`C3640`](https://jlcpcb.com/partdetail/4042-JQC_3FF_12_1HS_551/C3640) |
+
+
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 13 | 13 | passive |
+| 14 | 14 | passive |
+| A1 | A1 | passive |
+| A2 | A2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
+
+
+## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
+![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
+![Outline](data/working_svg_outline_300.png)
+
+![Part ID](data/working_svg_part_id_300.png)
+
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
+
+![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
+
+![Dimensions](data/working_svg_dimensioned_300.png)
+
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
+
+
+[View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_relay_through_hole_12_volt_coil_spst_no_hongfa_jqc_3ff_12_1hs_551)
+
+
+
+[Browse this category](../../navigation/electronic/relay/through_hole/12_volt_coil/spst_no/hongfa/README.md)
+
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

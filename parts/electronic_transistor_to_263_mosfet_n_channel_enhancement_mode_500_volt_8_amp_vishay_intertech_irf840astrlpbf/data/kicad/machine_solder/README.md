@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf](electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:TO-263-3_TabPin2`. [License](../LICENSE.md).

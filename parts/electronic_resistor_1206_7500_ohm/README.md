@@ -2,7 +2,7 @@
 
 `electronic_resistor_1206_7500_ohm`
 
-Resistor 7500 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Resistor 7500 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm. The definition includes 2 documented pins.
 
 ![Resistor 7500 Ohm 1206 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 7500 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 | Type | Resistor |
 | Package / style | 1206 |
 | Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 7500 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.55 mm |
 | Length | 3.2 mm |
 | Width | 1.6 mm |
 
@@ -41,12 +43,26 @@ Resistor 7500 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2907531`](https://www.lcsc.com/product-detail/C2907531.html) |
+| Manufacturer part number | `RS-06K752JT` |
+| LCSC | [`C1487`](https://www.lcsc.com/product-detail/C1487.html) |
+| JLCPCB | [`C1487`](https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

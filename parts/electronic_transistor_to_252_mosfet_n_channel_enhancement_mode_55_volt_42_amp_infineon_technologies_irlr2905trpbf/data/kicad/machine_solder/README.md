@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_252_mosfet_n_channel_enhancement_mode_55_volt_42_amp_infineon_technologies_irlr2905trpbf](electronic_transistor_to_252_mosfet_n_channel_enhancement_mode_55_volt_42_amp_infineon_technologies_irlr2905trpbf.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:TO-252-3_TabPin2`. [License](../LICENSE.md).

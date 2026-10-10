@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_switch_dip_switch_surface_mount_spst_8_position_raised_actuator_cixi_tonver_had_08hwag_r](electronic_switch_dip_switch_surface_mount_spst_8_position_raised_actuator_cixi_tonver_had_08hwag_r.kicad_mod)
+
+Source: `Button_Switch_SMD:SW_DIP_SPSTx08_Slide_9.78x22.5mm_W8.61mm_P2.54mm`. [License](../LICENSE.md).

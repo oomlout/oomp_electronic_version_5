@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_100_volt_9_2_amp_vishay_intertech_irf520pbf](electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_100_volt_9_2_amp_vishay_intertech_irf520pbf.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-220-3_Vertical`. [License](../LICENSE.md).

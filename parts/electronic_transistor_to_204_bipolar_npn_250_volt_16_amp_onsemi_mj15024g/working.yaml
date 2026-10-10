@@ -30,9 +30,16 @@ bip_39_full_space: crime tool fly size burger ill athlete toast achieve wish typ
 bip_39_full_underscore: crime_tool_fly_size_burger_ill_athlete_toast_achieve_wish_type_poet
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887629853306880-C2730.pdf
+dimension_reference:
+  document: MJ15024G datasheet (C2730 provenance)
+  notes: TO-3 master geometry; pin order BCE per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 10.5
+  length: 26.0
+  width: 20.0
 directory: parts/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
 distributors:
 - key: lcsc
@@ -43,6 +50,13 @@ distributors:
   part_number: C2730
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/onsemi-MJ15024G/C2730
+electrical:
+  device_type: bipolar junction transistor
+  operating_temperature: -65 C~+200 C
+  polarity: NPN
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g/datasheet.pdf
 id: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
 id_no_class: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
 id_no_size: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
@@ -55,11 +69,12 @@ jlcpcb_selection:
     and voltage/current tokens come straight off the page. Rating comparison from
     the staged capture: package below, stock below recorded as observed. Stock 125
     recorded as observed. Edits made under the transistor family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/onsemi-MJ15024G/C2730
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -88,11 +103,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_BJT:Q_NPN_BCE master (pin order BCE cross-checked against the part
+    datasheet) and the TO-3 footprint master; renders inherit the pipeline verified
+    on the completed discrete exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_THT:TO-3
+  symbol: Transistor_BJT:Q_NPN_BCE
 lcsc_search: MJ15024G
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
@@ -131,6 +151,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -220,7 +250,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -228,9 +272,16 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: transistor
       category_name: Transistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887629853306880-C2730.pdf
+      dimension_reference:
+        document: MJ15024G datasheet (C2730 provenance)
+        notes: TO-3 master geometry; pin order BCE per the part datasheet.
+        pages:
+        - 1
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 10.5
+        length: 26.0
+        width: 20.0
       directory: parts\electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
       distributors:
       - key: lcsc
@@ -241,6 +292,13 @@ oomlout_ai_roboclick_3:
         part_number: C2730
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/onsemi-MJ15024G/C2730
+      electrical:
+        device_type: bipolar junction transistor
+        operating_temperature: -65 C~+200 C
+        polarity: NPN
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Second code on the to_204 block introduced at C2728''s
           intake, NPN complement of the MJ15025G; this exact onsemi row was added
@@ -250,11 +308,12 @@ oomlout_ai_roboclick_3:
           straight off the page. Rating comparison from the staged capture: package
           below, stock below recorded as observed. Stock 125 recorded as observed.
           Edits made under the transistor family lock.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/onsemi-MJ15024G/C2730
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: null
         ratings:
           Assembly Type: Wave Soldering
@@ -283,11 +342,16 @@ oomlout_ai_roboclick_3:
         tier: preferred_extended
         tier_label_observed: Extended
         verified_on: '2026-09-29'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the
+          KiCad Transistor_BJT:Q_NPN_BCE master (pin order BCE cross-checked against
+          the part datasheet) and the TO-3 footprint master; renders inherit the pipeline
+          verified on the completed discrete exemplars and were spot-checked on the
+          built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Package_TO_SOT_THT:TO-3
+        symbol: Transistor_BJT:Q_NPN_BCE
       lcsc_search: MJ15024G
       manufacturer: onsemi
       manufacturers:
@@ -313,6 +377,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -403,6 +477,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: TO-3 (bjt-npn, pins BCE)
       part_id: Q1
       part_number_jlcpcb: C2730
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/onsemi-MJ15024G/C2730
@@ -480,7 +569,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -498,7 +587,16 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/transistor/to_204/bipolar/npn/250_volt/16_amp/onsemi/README.md
         oomp_id: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
-        pins: []
+        pins:
+        - name: B
+          number: '1'
+          type: input
+        - name: C
+          number: '2'
+          type: passive
+        - name: E
+          number: '3'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
@@ -507,11 +605,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: to 204
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 26.0 × 20.0 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
         summary: Transistor MJ15024G TO 204 is an OOMP electronic transistor definition.
-          It uses the to 204 package or form factor. Its nominal drawing size is 10.0
-          × 5.0 mm.
+          It uses the to 204 package or form factor. Its nominal drawing size is 26.0
+          × 20.0 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -531,8 +631,27 @@ oomlout_ai_roboclick_3:
           value: onsemi
         - level: 15
           value: mj15024g
+      pins:
+        pin_1:
+          name: B
+          number: '1'
+          type: input
+        pin_2:
+          name: C
+          number: '2'
+          type: passive
+        pin_3:
+          name: E
+          number: '3'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/onsemi-MJ15024G/C2730
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists onsemi MJ15024G (C2730); identity and ratings
+        observed live at intake 2026-09-29.
+      - Mapped to the KiCad Transistor_BJT:Q_NPN_BCE master and the Package_TO_SOT_THT:TO-3
+        footprint master in the 2026-10-06 family batch; pin order BCE verified against
+        the part datasheet.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -709,7 +828,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -723,6 +842,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
+package_name_manufacturer: TO-3 (bjt-npn, pins BCE)
 part_id: Q1
 part_number_jlcpcb: C2730
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/onsemi-MJ15024G/C2730
@@ -800,7 +920,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -818,7 +938,16 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/transistor/to_204/bipolar/npn/250_volt/16_amp/onsemi/README.md
   oomp_id: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
-  pins: []
+  pins:
+  - name: B
+    number: '1'
+    type: input
+  - name: C
+    number: '2'
+    type: passive
+  - name: E
+    number: '3'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
@@ -827,11 +956,13 @@ part_page:
   - title: Package / style
     value: to 204
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 26.0 × 20.0 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_204_bipolar_npn_250_volt_16_amp_onsemi_mj15024g
   summary: Transistor MJ15024G TO 204 is an OOMP electronic transistor definition.
-    It uses the to 204 package or form factor. Its nominal drawing size is 10.0 ×
-    5.0 mm.
+    It uses the to 204 package or form factor. Its nominal drawing size is 26.0 ×
+    20.0 mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -851,8 +982,27 @@ part_page:
     value: onsemi
   - level: 15
     value: mj15024g
+pins:
+  pin_1:
+    name: B
+    number: '1'
+    type: input
+  pin_2:
+    name: C
+    number: '2'
+    type: passive
+  pin_3:
+    name: E
+    number: '3'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/onsemi-MJ15024G/C2730
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists onsemi MJ15024G (C2730); identity and ratings observed
+  live at intake 2026-09-29.
+- Mapped to the KiCad Transistor_BJT:Q_NPN_BCE master and the Package_TO_SOT_THT:TO-3
+  footprint master in the 2026-10-06 family batch; pin order BCE verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false

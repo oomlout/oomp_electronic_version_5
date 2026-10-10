@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_sot_23_bipolar_pnp_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_bc857_range_420_800](electronic_transistor_sot_23_bipolar_pnp_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_bc857_range_420_800.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23`. [License](../LICENSE.md).

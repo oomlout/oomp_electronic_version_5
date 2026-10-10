@@ -1,8 +1,15 @@
 category: switch
 category_name: Switch
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588896694347419649-C4686.pdf
+dimension_reference:
+  document: HAM-10LWA-R datasheet (C4686 provenance)
+  notes: 10-pos SPST slide DIP switch, THT 2.54 mm, 9.78 x 27.58 mm body.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 5.6
+  length: 9.78
+  width: 27.58
 distributors:
 - key: lcsc
   part_number: C4686
@@ -12,6 +19,18 @@ distributors:
   part_number: C4686
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/Cixi_TonverElec-HAM_10LWAR/C4686
+electrical:
+  actuator: 10 2.54mm 24V 25mA Black SPST Slide, Recessed 插件,P=2.54mm DIP Switches
+    ROHS
+  circuit: SPST
+  current_rating: 25mA
+  device_type: slide DIP switch
+  operating_temperature: -30 to +85 C
+  positions: '10'
+  voltage_rating: 24V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_switch_dip_switch_through_hole_spst_10_position_recessed_actuator_cixi_tonver_ham_10lwa_r/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'First DIP switches in the population: this exact row was added
     to working_oomp_populate_switch.py under the switch family lock, with taxonomy_5
@@ -20,11 +39,12 @@ jlcpcb_selection:
     (HAM-10LWA-R, 10-position SPST slide DIP switch, recessed actuator) is its exact
     first reviewed preferred house choice; ratings come straight off the page. Stock
     recorded as observed. Edits made under the switch family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/Cixi_TonverElec-HAM_10LWAR/C4686
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -48,11 +68,15 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: switch mapped to the KiCad Switch:SW_DIP_x10
+    master (pins parsed from the master; all passive) and the SW_DIP_SPSTx10_Slide_9.78x27.58mm_W7.62mm_P2.54mm
+    footprint master; renders inherit the pipeline verified on the completed passive
+    exemplars and were spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Button_Switch_THT:SW_DIP_SPSTx10_Slide_9.78x27.58mm_W7.62mm_P2.54mm
+  symbol: Switch:SW_DIP_x10
 lcsc_search: HAM-10LWA-R
 manufacturer: Cixi Tonver Elec
 manufacturers:
@@ -61,6 +85,8 @@ manufacturers:
 name_proper: Switch HAM-10LWA-R DIP SWITCH
 name_readable: Switch HAM-10LWA-R DIP SWITCH
 name_short: Switch HAM-10LWA-R DIP SWITCH
+package_name_manufacturer: 10-pos SPST slide DIP switch, THT 2.54 mm, 9.78 x 27.58
+  mm body
 part_id: P1
 part_number_jlcpcb: C4686
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/Cixi_TonverElec-HAM_10LWAR/C4686
@@ -72,7 +98,93 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Cixi Tonver Elec
   part_number: HAM-10LWA-R
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_10:
+    name: '10'
+    number: '10'
+    type: passive
+  pin_11:
+    name: '11'
+    number: '11'
+    type: passive
+  pin_12:
+    name: '12'
+    number: '12'
+    type: passive
+  pin_13:
+    name: '13'
+    number: '13'
+    type: passive
+  pin_14:
+    name: '14'
+    number: '14'
+    type: passive
+  pin_15:
+    name: '15'
+    number: '15'
+    type: passive
+  pin_16:
+    name: '16'
+    number: '16'
+    type: passive
+  pin_17:
+    name: '17'
+    number: '17'
+    type: passive
+  pin_18:
+    name: '18'
+    number: '18'
+    type: passive
+  pin_19:
+    name: '19'
+    number: '19'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
+  pin_20:
+    name: '20'
+    number: '20'
+    type: passive
+  pin_3:
+    name: '3'
+    number: '3'
+    type: passive
+  pin_4:
+    name: '4'
+    number: '4'
+    type: passive
+  pin_5:
+    name: '5'
+    number: '5'
+    type: passive
+  pin_6:
+    name: '6'
+    number: '6'
+    type: passive
+  pin_7:
+    name: '7'
+    number: '7'
+    type: passive
+  pin_8:
+    name: '8'
+    number: '8'
+    type: passive
+  pin_9:
+    name: '9'
+    number: '9'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/Cixi_TonverElec-HAM_10LWAR/C4686
+research_notes:
+- The official JLC page lists Cixi Tonver Elec HAM-10LWA-R (C4686); identity and ratings
+  observed live at intake 2026-09-30.
+- Mapped to the KiCad Switch:SW_DIP_x10 master and the Button_Switch_THT:SW_DIP_SPSTx10_Slide_9.78x27.58mm_W7.62mm_P2.54mm
+  footprint master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

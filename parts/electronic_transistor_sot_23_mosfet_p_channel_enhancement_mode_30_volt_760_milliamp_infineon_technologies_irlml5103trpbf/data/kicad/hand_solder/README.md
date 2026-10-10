@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_transistor_sot_23_mosfet_p_channel_enhancement_mode_30_volt_760_milliamp_infineon_technologies_irlml5103trpbf](electronic_transistor_sot_23_mosfet_p_channel_enhancement_mode_30_volt_760_milliamp_infineon_technologies_irlml5103trpbf.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23_Handsoldering`. [License](../LICENSE.md).

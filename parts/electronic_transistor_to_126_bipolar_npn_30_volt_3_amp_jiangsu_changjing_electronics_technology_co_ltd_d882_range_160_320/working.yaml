@@ -30,9 +30,16 @@ bip_39_full_space: endorse gospel empower kit vintage climb slush wine loud tack
 bip_39_full_underscore: endorse_gospel_empower_kit_vintage_climb_slush_wine_loud_tackle_sting_excuse
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895794468966400-C2152.pdf
+dimension_reference:
+  document: D882(RANGE:160-320) datasheet (C2152 provenance)
+  notes: TO-126-3_Vertical master geometry; pin order ECB per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 8.5
+  length: 9.0
+  width: 4.5
 directory: parts/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
 distributors:
 - key: lcsc
@@ -43,6 +50,13 @@ distributors:
   part_number: C2152
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
+electrical:
+  device_type: bipolar junction transistor
+  operating_temperature: -55 C~+150 C
+  polarity: NPN
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320/datasheet.pdf
 id: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
 id_no_class: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
 id_no_size: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
@@ -54,11 +68,12 @@ jlcpcb_selection:
     C2152 is through-hole TO-126, 1.25W, 90MHz. The manufacturer datasheet classification
     table confirms the 160-320 gain rank, and its package pin legend establishes three
     leads.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: '107'
   ratings:
     Collector - Emitter Voltage VCEO: 30V
@@ -76,11 +91,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-27'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_BJT:Q_NPN_ECB master (pin order ECB cross-checked against the part
+    datasheet) and the TO-126-3_Vertical footprint master; renders inherit the pipeline
+    verified on the completed discrete exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_THT:TO-126-3_Vertical
+  symbol: Transistor_BJT:Q_NPN_ECB
 lcsc_search: D882(RANGE:160-320)
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
@@ -125,6 +145,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -214,7 +244,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -222,9 +266,16 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: transistor
       category_name: Transistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895794468966400-C2152.pdf
+      dimension_reference:
+        document: D882(RANGE:160-320) datasheet (C2152 provenance)
+        notes: TO-126-3_Vertical master geometry; pin order ECB per the part datasheet.
+        pages:
+        - 1
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 8.5
+        length: 9.0
+        width: 4.5
       directory: parts\electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
       distributors:
       - key: lcsc
@@ -235,6 +286,13 @@ oomlout_ai_roboclick_3:
         part_number: C2152
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
+      electrical:
+        device_type: bipolar junction transistor
+        operating_temperature: -55 C~+150 C
+        polarity: NPN
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Added one explicit TO-126 taxonomy row for Jiangsu Changjing
           Electronics Technology Co., Ltd. D882(RANGE:160-320). Preserve the existing
@@ -242,11 +300,12 @@ oomlout_ai_roboclick_3:
           500mW, 50MHz; C2152 is through-hole TO-126, 1.25W, 90MHz. The manufacturer
           datasheet classification table confirms the 160-320 gain rank, and its package
           pin legend establishes three leads.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: '107'
         ratings:
           Collector - Emitter Voltage VCEO: 30V
@@ -264,11 +323,16 @@ oomlout_ai_roboclick_3:
         tier: preferred_extended
         tier_label_observed: Extended
         verified_on: '2026-09-27'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the
+          KiCad Transistor_BJT:Q_NPN_ECB master (pin order ECB cross-checked against
+          the part datasheet) and the TO-126-3_Vertical footprint master; renders
+          inherit the pipeline verified on the completed discrete exemplars and were
+          spot-checked on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Package_TO_SOT_THT:TO-126-3_Vertical
+        symbol: Transistor_BJT:Q_NPN_ECB
       lcsc_search: D882(RANGE:160-320)
       manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
       manufacturers:
@@ -294,6 +358,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -384,6 +458,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: TO-126-3_Vertical (bjt-npn, pins ECB)
       part_id: Q1
       part_number_jlcpcb: C2152
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
@@ -461,7 +550,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -479,7 +568,16 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/transistor/to_126/bipolar/npn/30_volt/3_amp/jiangsu_changjing_electronics_technology_co_ltd/README.md
         oomp_id: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
-        pins: []
+        pins:
+        - name: E
+          number: '1'
+          type: passive
+        - name: C
+          number: '2'
+          type: passive
+        - name: B
+          number: '3'
+          type: input
         quick_facts:
         - title: OOMP ID
           value: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
@@ -488,11 +586,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: to 126
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 9.0 × 4.5 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
         summary: Transistor D882(RANGE:160-320) TO 126 is an OOMP electronic transistor
           definition. It uses the to 126 package or form factor. Its nominal drawing
-          size is 10.0 × 5.0 mm.
+          size is 9.0 × 4.5 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -512,8 +612,28 @@ oomlout_ai_roboclick_3:
           value: jiangsu_changjing_electronics_technology_co_ltd
         - level: 15
           value: d882_range_160_320
+      pins:
+        pin_1:
+          name: E
+          number: '1'
+          type: passive
+        pin_2:
+          name: C
+          number: '2'
+          type: passive
+        pin_3:
+          name: B
+          number: '3'
+          type: input
       product_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists Jiangsu Changjing Electronics Technology Co.,
+        Ltd. D882(RANGE:160-320) (C2152); identity and ratings observed live at intake
+        2026-09-27.
+      - Mapped to the KiCad Transistor_BJT:Q_NPN_ECB master and the Package_TO_SOT_THT:TO-126-3_Vertical
+        footprint master in the 2026-10-06 family batch; pin order ECB verified against
+        the part datasheet.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -690,7 +810,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -704,6 +824,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
+package_name_manufacturer: TO-126-3_Vertical (bjt-npn, pins ECB)
 part_id: Q1
 part_number_jlcpcb: C2152
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
@@ -781,7 +902,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -799,7 +920,16 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/transistor/to_126/bipolar/npn/30_volt/3_amp/jiangsu_changjing_electronics_technology_co_ltd/README.md
   oomp_id: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
-  pins: []
+  pins:
+  - name: E
+    number: '1'
+    type: passive
+  - name: C
+    number: '2'
+    type: passive
+  - name: B
+    number: '3'
+    type: input
   quick_facts:
   - title: OOMP ID
     value: electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
@@ -808,11 +938,13 @@ part_page:
   - title: Package / style
     value: to 126
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 9.0 × 4.5 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320
   summary: Transistor D882(RANGE:160-320) TO 126 is an OOMP electronic transistor
     definition. It uses the to 126 package or form factor. Its nominal drawing size
-    is 10.0 × 5.0 mm.
+    is 9.0 × 4.5 mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -832,8 +964,27 @@ part_page:
     value: jiangsu_changjing_electronics_technology_co_ltd
   - level: 15
     value: d882_range_160_320
+pins:
+  pin_1:
+    name: E
+    number: '1'
+    type: passive
+  pin_2:
+    name: C
+    number: '2'
+    type: passive
+  pin_3:
+    name: B
+    number: '3'
+    type: input
 product_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists Jiangsu Changjing Electronics Technology Co., Ltd. D882(RANGE:160-320)
+  (C2152); identity and ratings observed live at intake 2026-09-27.
+- Mapped to the KiCad Transistor_BJT:Q_NPN_ECB master and the Package_TO_SOT_THT:TO-126-3_Vertical
+  footprint master in the 2026-10-06 family batch; pin order ECB verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false

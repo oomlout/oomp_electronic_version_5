@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_55_volt_49_amp_infineon_technologies_irfz44npbf](electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_55_volt_49_amp_infineon_technologies_irfz44npbf.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-220-3_Vertical`. [License](../LICENSE.md).

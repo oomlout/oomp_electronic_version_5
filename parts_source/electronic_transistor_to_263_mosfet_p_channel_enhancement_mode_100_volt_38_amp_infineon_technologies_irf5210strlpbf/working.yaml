@@ -1,8 +1,15 @@
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579710982522142720-C2622.pdf
+dimension_reference:
+  document: IRF5210STRLPBF datasheet (C2622 provenance)
+  notes: TO-263-3_TabPin2 master geometry; pin order GDS per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
+  height: 4.6
   length: 10.0
-  width: 5.0
+  width: 9.2
 distributors:
 - key: lcsc
   part_number: C2622
@@ -12,6 +19,13 @@ distributors:
   part_number: C2622
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRF5210STRLPBF/C2622
+electrical:
+  device_type: power MOSFET (enhancement mode)
+  operating_temperature: -55 C~+150 C
+  polarity: P-channel
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_to_263_mosfet_p_channel_enhancement_mode_100_volt_38_amp_infineon_technologies_irf5210strlpbf/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Sixth batch on the power-MOSFET block introduced at C2557''s
     intake; this exact row was added in the same transistor-family edit under the
@@ -22,11 +36,12 @@ jlcpcb_selection:
     replaced with lower-voltage siblings. Rating comparison from the staged capture:
     package below, stock below recorded as observed. Edits made under the transistor
     family lock. Stock 15561 recorded as observed.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRF5210STRLPBF/C2622
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: SMT Assembly
@@ -58,11 +73,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_FET:Q_PMOS_GDS master (pin order GDS cross-checked against the part
+    datasheet) and the TO-263-3_TabPin2 footprint master; renders inherit the pipeline
+    verified on the completed discrete exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_SMD:TO-263-3_TabPin2
+  symbol: Transistor_FET:Q_PMOS_GDS
 lcsc_search: IRF5210STRLPBF
 manufacturer: Infineon Technologies
 manufacturers:
@@ -71,6 +91,7 @@ manufacturers:
 name_proper: Transistor IRF5210STRLPBF TO 263
 name_readable: Transistor IRF5210STRLPBF TO 263
 name_short: Transistor IRF5210STRLPBF TO 263
+package_name_manufacturer: TO-263-3_TabPin2 (mosfet-p, pins GDS)
 part_id: Q1
 part_number_jlcpcb: C2622
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRF5210STRLPBF/C2622
@@ -82,7 +103,26 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Infineon Technologies
   part_number: IRF5210STRLPBF
+pins:
+  pin_1:
+    name: G
+    number: '1'
+    type: input
+  pin_2:
+    name: D
+    number: '2'
+    type: passive
+  pin_3:
+    name: S
+    number: '3'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRF5210STRLPBF/C2622
+research_notes:
+- The official JLC page lists Infineon Technologies IRF5210STRLPBF (C2622); identity
+  and ratings observed live at intake 2026-09-29.
+- Mapped to the KiCad Transistor_FET:Q_PMOS_GDS master and the Package_TO_SOT_SMD:TO-263-3_TabPin2
+  footprint master in the 2026-10-06 family batch; pin order GDS verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false

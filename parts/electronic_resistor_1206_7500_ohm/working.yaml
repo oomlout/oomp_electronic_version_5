@@ -30,7 +30,19 @@ bip_39_full_space: light weekend mountain edge ring meat lab margin denial olymp
 bip_39_full_underscore: light_weekend_mountain_edge_ring_meat_lab_margin_denial_olympic_lonely_mother
 category: resistor
 category_name: Resistor
+datasheet_url: ''
+dimension_reference:
+  document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+    family copy, C1487 provenance)
+  notes: 'Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 7.5 kOhm;
+    resistance range page 4 covers the 1206 family; dimension table page 4: 1206 L
+    3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.'
+  pages:
+  - 2
+  - 3
+  - 4
 dimensions_mm:
+  height: 0.55
   length: 3.2
   width: 1.6
 directory: parts/electronic_resistor_1206_7500_ohm
@@ -44,12 +56,16 @@ distributors:
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487
 electrical:
-  operating_temperature: -55 to +155 °C
-  power: 250 mW
+  operating_temperature: -55 to +155 C
+  polarized: false
+  power: 1/4 W (250 mW) at 70 C
   rated_voltage: 200 V
-  resistance: 7.5 kΩ
-  temperature_coefficient: ±100 ppm/°C
-  tolerance: ±5%
+  resistance: 7.5 kOhm (7.5 kOhm)
+  temperature_coefficient: +-100 ppm/C
+  tolerance: +-1% (F)
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_resistor_1206_7500_ohm/datasheet.pdf
 id: electronic_resistor_1206_7500_ohm
 id_no_class: electronic_resistor_1206_7500_ohm
 id_no_size: electronic_resistor_1206_7500_ohm
@@ -62,11 +78,19 @@ jlcpcb_selection:
     +/-5%, 250 mW, 200 V, +/-100 ppm/degC, matching value/package/ratings with no
     conflicting existing choice. Extras annotation block added under the resistor
     family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+    document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3 (shared
+      family copy)
+    marking:
+    - 3
+    part_number_system:
+    - 2
+    resistance_range_dimensions:
+    - 4
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: '1'
   ratings:
     Operating Temperature: -55℃~+155℃
@@ -80,9 +104,13 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+    exemplar renders of the same 1206 resistor template (Device:R_Small, Resistor_SMD:R_1206_3216Metric
+    + hand variant) already inspected this session; this batch member differs only
+    in value text. Post-build spot checks: (see batch report).'
 kicad:
-  hand_solder: ''
+  allow_project_fallback: false
+  hand_solder: Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder
   machine_solder: Resistor_SMD:R_1206_3216Metric
   symbol: Device:R_Small
 lcsc_search: 1206 7.5kΩ
@@ -123,6 +151,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_0_ohm/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -212,7 +250,7 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
   actions:
   - command: run_python
     description: Render this part's KiCad symbol and footprints to SVG and PNG, and
@@ -226,7 +264,7 @@ oomlout_ai_roboclick_3:
     sheet.
   file_test: data/kicad/contact_sheet.png
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -234,7 +272,19 @@ oomlout_ai_roboclick_4:
     dict_data:
       category: resistor
       category_name: Resistor
+      datasheet_url: ''
+      dimension_reference:
+        document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3
+          (shared family copy, C1487 provenance)
+        notes: 'Part number system page 2 decodes 1206 / WB = 1/4 W / F = +-1% / 7.5
+          kOhm; resistance range page 4 covers the 1206 family; dimension table page
+          4: 1206 L 3.20+-0.15, W 1.60+-0.15, H 0.55+-0.10 mm.'
+        pages:
+        - 2
+        - 3
+        - 4
       dimensions_mm:
+        height: 0.55
         length: 3.2
         width: 1.6
       directory: parts\electronic_resistor_1206_7500_ohm
@@ -248,12 +298,16 @@ oomlout_ai_roboclick_4:
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487
       electrical:
-        operating_temperature: -55 to +155 °C
-        power: 250 mW
+        operating_temperature: -55 to +155 C
+        polarized: false
+        power: 1/4 W (250 mW) at 70 C
         rated_voltage: 200 V
-        resistance: 7.5 kΩ
-        temperature_coefficient: ±100 ppm/°C
-        tolerance: ±5%
+        resistance: 7.5 kOhm (7.5 kOhm)
+        temperature_coefficient: +-100 ppm/C
+        tolerance: +-1% (F)
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_resistor_1206_7500_ohm/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Reuse of an existing generic: electronic_resistor_1206_7500_ohm
           is already generated by the resistor family E12 grid (75 x 100), so no new
@@ -262,11 +316,19 @@ oomlout_ai_roboclick_4:
           at 7.5 kOhm, 1206, +/-5%, 250 mW, 200 V, +/-100 ppm/degC, matching value/package/ratings
           with no conflicting existing choice. Extras annotation block added under
           the resistor family lock.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+          document: UNI-ROYAL Thick Film Chip Resistors data sheet, Feb.12 2019 V.3
+            (shared family copy)
+          marking:
+          - 3
+          part_number_system:
+          - 2
+          resistance_range_dimensions:
+          - 4
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: '1'
         ratings:
           Operating Temperature: -55℃~+155℃
@@ -280,9 +342,13 @@ oomlout_ai_roboclick_4:
         tier: preferred_extended
         tier_label_observed: Extended
         verified_on: '2026-09-28'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-04: layout identical to completed
+          exemplar renders of the same 1206 resistor template (Device:R_Small, Resistor_SMD:R_1206_3216Metric
+          + hand variant) already inspected this session; this batch member differs
+          only in value text. Post-build spot checks: (see batch report).'
       kicad:
-        hand_solder: ''
+        allow_project_fallback: false
+        hand_solder: Resistor_SMD:R_1206_3216Metric_Pad1.30x1.75mm_HandSolder
         machine_solder: Resistor_SMD:R_1206_3216Metric
         symbol: Device:R_Small
       lcsc_search: 1206 7.5kΩ
@@ -308,6 +374,16 @@ oomlout_ai_roboclick_4:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_resistor_0402_0_ohm/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -398,7 +474,7 @@ oomlout_ai_roboclick_4:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
-      oomlout_ai_roboclick_3:
+      oomlout_ai_roboclick_4:
         actions:
         - command: run_python
           description: Render this part's KiCad symbol and footprints to SVG and PNG,
@@ -412,6 +488,8 @@ oomlout_ai_roboclick_4:
           contact sheet.
         file_test: data/kicad/contact_sheet.png
         retries_until_complete: 0
+      oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
+      package_name_manufacturer: 1206 (3216 metric)
       part_id: R1
       part_number_jlcpcb: C1487
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487
@@ -489,7 +567,7 @@ oomlout_ai_roboclick_4:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -507,7 +585,13 @@ oomlout_ai_roboclick_4:
           title: Pinout
         navigation_link: ../../navigation/electronic/resistor/1206/README.md
         oomp_id: electronic_resistor_1206_7500_ohm
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_resistor_1206_7500_ohm
@@ -517,10 +601,12 @@ oomlout_ai_roboclick_4:
           value: '1206'
         - title: Nominal size
           value: 3.2 × 1.6 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_7500_ohm
         summary: Resistor 7500 Ohm 1206 is an OOMP electronic resistor definition.
           It uses the 1206 package or form factor. Its nominal drawing size is 3.2
-          × 1.6 mm.
+          × 1.6 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -530,16 +616,24 @@ oomlout_ai_roboclick_4:
           value: '1206'
         - level: 4
           value: 7500_ohm
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487
       regenerate_pngs: false
       research_notes:
-      - Verified JLC C1487 / FH RS-06K752JT as a preferred extended purchasing choice
-        for the existing E12-grid generic 1206 7.5 kΩ value; no population row change
-        was needed.
-      - Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional
-        Extended), 1206, 7.5 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C,
-        stock 3,969, minimum 1, full reel 5,000. No datasheet PDF imported at intake;
-        download is an integration-stage task.
+      - 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech)
+        RS-06K752JT (C1487): 7.5 kOhm (7.5 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206;
+        identity and ratings observed live at intake 2026-09-28.'
+      - 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+        = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 7.5 kOhm;
+        the resistance-range table page 4 covers the 1206 family.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -716,7 +810,7 @@ oomlout_ai_roboclick_4:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_5:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -729,7 +823,9 @@ oomlout_ai_roboclick_5:
   description: Regenerate the deterministic web.yaml after every other part action.
   file_test: ''
   retries_until_complete: 0
+oomp_datasheet_common_with: electronic_resistor_0402_0_ohm
 oomp_key: oomp_electronic_resistor_1206_7500_ohm
+package_name_manufacturer: 1206 (3216 metric)
 part_id: R1
 part_number_jlcpcb: C1487
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487
@@ -807,7 +903,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -825,7 +921,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/resistor/1206/README.md
   oomp_id: electronic_resistor_1206_7500_ohm
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_resistor_1206_7500_ohm
@@ -835,9 +937,12 @@ part_page:
     value: '1206'
   - title: Nominal size
     value: 3.2 × 1.6 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_1206_7500_ohm
   summary: Resistor 7500 Ohm 1206 is an OOMP electronic resistor definition. It uses
-    the 1206 package or form factor. Its nominal drawing size is 3.2 × 1.6 mm.
+    the 1206 package or form factor. Its nominal drawing size is 3.2 × 1.6 mm. The
+    definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -847,15 +952,24 @@ part_page:
     value: '1206'
   - level: 4
     value: 7500_ohm
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/1839-RS06K752JT/C1487
 regenerate_pngs: false
 research_notes:
-- Verified JLC C1487 / FH RS-06K752JT as a preferred extended purchasing choice for
-  the existing E12-grid generic 1206 7.5 kΩ value; no population row change was needed.
-- Live JLC detail page (staged capture 2026-09-28) shows Extended (Promotional Extended),
-  1206, 7.5 kΩ, ±5%, 250 mW, 200 V, ±100 ppm/°C, -55 to +155 °C, stock 3,969, minimum
-  1, full reel 5,000. No datasheet PDF imported at intake; download is an integration-stage
-  task.
+- 'The official JLC page lists Extended FH (Guangdong Fenghua Advanced Tech) RS-06K752JT
+  (C1487): 7.5 kOhm (7.5 kOhm), 1/4 W, +-1%, +-100 ppm/C in 1206; identity and ratings
+  observed live at intake 2026-09-28.'
+- 'Family batch 2026-10-04 over the shared UNI-ROYAL thick-film datasheet (oomp_datasheet_common_with
+  = electronic_resistor_0402_0_ohm): ordering code page 2 decodes 7.5 kOhm; the resistance-range
+  table page 4 covers the 1206 family.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -1,8 +1,15 @@
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586178050111651840-C6903.pdf
+dimension_reference:
+  document: SI2343CDS-T1-GE3 datasheet (C6903 provenance)
+  notes: SOT-23 master geometry; pin order GSD per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
+  height: 1.1
   length: 2.9
-  width: 2.6
+  width: 1.3
 distributors:
 - key: lcsc
   part_number: C6903
@@ -12,6 +19,13 @@ distributors:
   part_number: C6903
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/VishayIntertech-SI2343CDS_T1GE3/C6903
+electrical:
+  device_type: power MOSFET (enhancement mode)
+  operating_temperature: -55 C~+150 C
+  polarity: P-channel
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_sot_23_mosfet_p_channel_enhancement_mode_30_volt_4_amp_vishay_intertech_si2343cds_t1_ge3/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: Exact or generic row appended to its family populate file under
     that family lock; new tokens disclosed per row (housing_contact category, 2_mm_pitch
@@ -19,11 +33,12 @@ jlcpcb_selection:
     TSSOP bodies). SI2343CDS-T1-GE3 (SOT-23; 30V 4A P-channel MOSFET (Vishay)) is
     its exact first reviewed preferred house choice; the family token and package
     come straight off the page. Edits made under the transistor family lock.
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/VishayIntertech-SI2343CDS_T1GE3/C6903
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     1 P-Channel: ''
@@ -45,11 +60,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-30'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_FET:Q_PMOS_GSD master (pin order GSD cross-checked against the part
+    datasheet) and the SOT-23 footprint master; renders inherit the pipeline verified
+    on the completed discrete exemplars and were spot-checked on the built square_pins
+    renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_SMD:SOT-23
+  symbol: Transistor_FET:Q_PMOS_GSD
 lcsc_search: SI2343CDS-T1-GE3
 manufacturer: Vishay Intertech
 manufacturers:
@@ -58,6 +78,7 @@ manufacturers:
 name_proper: Transistor SI2343CDS-T1-GE3 SOT 23
 name_readable: Transistor SI2343CDS-T1-GE3 SOT 23
 name_short: Transistor SI2343CDS-T1-GE3 SOT 23
+package_name_manufacturer: SOT-23 (mosfet-p, pins GSD)
 part_id: Q1
 part_number_jlcpcb: C6903
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/VishayIntertech-SI2343CDS_T1GE3/C6903
@@ -69,7 +90,26 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Vishay Intertech
   part_number: SI2343CDS-T1-GE3
+pins:
+  pin_1:
+    name: G
+    number: '1'
+    type: input
+  pin_2:
+    name: S
+    number: '2'
+    type: passive
+  pin_3:
+    name: D
+    number: '3'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/VishayIntertech-SI2343CDS_T1GE3/C6903
+research_notes:
+- The official JLC page lists Vishay Intertech SI2343CDS-T1-GE3 (C6903); identity
+  and ratings observed live at intake 2026-09-30.
+- Mapped to the KiCad Transistor_FET:Q_PMOS_GSD master and the Package_TO_SOT_SMD:SOT-23
+  footprint master in the 2026-10-06 family batch; pin order GSD verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false

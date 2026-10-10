@@ -2,7 +2,7 @@
 
 `electronic_resistor_1206_8200_ohm`
 
-Resistor 8200 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Resistor 8200 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm. The definition includes 2 documented pins.
 
 ![Resistor 8200 Ohm 1206 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 8200 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 | Type | Resistor |
 | Package / style | 1206 |
 | Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 8200 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.55 mm |
 | Length | 3.2 mm |
 | Width | 1.6 mm |
 
@@ -41,12 +43,26 @@ Resistor 8200 Ohm 1206 is an OOMP electronic resistor definition. It uses the 12
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `FRC1206F8201TS` |
-| LCSC | [`C2933760`](https://www.lcsc.com/product-detail/C2933760.html) |
+| Manufacturer part number | `RS-06K822JT` |
+| LCSC | [`C1488`](https://www.lcsc.com/product-detail/C1488.html) |
+| JLCPCB | [`C1488`](https://jlcpcb.com/partdetail/1840-RS06K822JT/C1488) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

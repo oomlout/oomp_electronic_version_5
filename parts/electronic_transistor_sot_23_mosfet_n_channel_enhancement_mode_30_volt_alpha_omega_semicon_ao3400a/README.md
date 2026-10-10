@@ -2,7 +2,7 @@
 
 `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_30_volt_alpha_omega_semicon_ao3400a`
 
-Transistor AO3400A SOT 23 is an OOMP electronic transistor definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 2.6 mm.
+Transistor AO3400A SOT 23 is an OOMP electronic transistor definition. It uses the sot 23 package or form factor. Its nominal drawing size is 2.9 &#x00D7; 1.3 mm. The definition includes 3 documented pins.
 
 ![Transistor AO3400A SOT 23 pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,8 @@ Transistor AO3400A SOT 23 is an OOMP electronic transistor definition. It uses t
 | OOMP ID | `electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_30_volt_alpha_omega_semicon_ao3400a` |
 | Type | Transistor |
 | Package / style | sot 23 |
-| Nominal size | 2.9 &#x00D7; 2.6 mm |
+| Nominal size | 2.9 &#x00D7; 1.3 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -36,8 +37,9 @@ Transistor AO3400A SOT 23 is an OOMP electronic transistor definition. It uses t
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.1 mm |
 | Length | 2.9 mm |
-| Width | 2.6 mm |
+| Width | 1.3 mm |
 
 
 
@@ -53,6 +55,20 @@ Transistor AO3400A SOT 23 is an OOMP electronic transistor definition. It uses t
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | G | input |
+| 2 | S | passive |
+| 3 | D | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

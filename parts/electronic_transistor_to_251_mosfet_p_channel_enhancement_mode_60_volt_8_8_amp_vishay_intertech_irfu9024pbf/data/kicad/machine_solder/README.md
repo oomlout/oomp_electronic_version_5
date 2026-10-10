@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_251_mosfet_p_channel_enhancement_mode_60_volt_8_8_amp_vishay_intertech_irfu9024pbf](electronic_transistor_to_251_mosfet_p_channel_enhancement_mode_60_volt_8_8_amp_vishay_intertech_irfu9024pbf.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-251-3_Vertical`. [License](../LICENSE.md).

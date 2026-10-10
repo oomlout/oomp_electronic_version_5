@@ -2,7 +2,7 @@
 
 `electronic_resistor_1206_560000_ohm`
 
-Resistor 560000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
+Resistor 560000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 1206 package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm. The definition includes 2 documented pins.
 
 ![Resistor 560000 Ohm 1206 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Resistor 560000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 | Type | Resistor |
 | Package / style | 1206 |
 | Nominal size | 3.2 &#x00D7; 1.6 mm |
+| Documented pins | 2 |
 
 
 ## Classification
@@ -31,6 +32,7 @@ Resistor 560000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 0.55 mm |
 | Length | 3.2 mm |
 | Width | 1.6 mm |
 
@@ -41,12 +43,26 @@ Resistor 560000 Ohm 1206 is an OOMP electronic resistor definition. It uses the 
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `TS` |
-| LCSC | [`C2907518`](https://www.lcsc.com/product-detail/C2907518.html) |
+| Manufacturer part number | `RS-06K564JT` |
+| LCSC | [`C1519`](https://www.lcsc.com/product-detail/C1519.html) |
+| JLCPCB | [`C1519`](https://jlcpcb.com/partdetail/1871-RS06K564JT/C1519) |
 
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

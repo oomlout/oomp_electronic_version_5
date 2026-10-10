@@ -30,9 +30,16 @@ bip_39_full_space: dance amused middle mention physical jelly favorite gospel di
 bip_39_full_underscore: dance_amused_middle_mention_physical_jelly_favorite_gospel_disorder_solution_finger_dress
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887160820391936-C2653.pdf
+dimension_reference:
+  document: IRFB4229PBF datasheet (C2653 provenance)
+  notes: TO-220-3_Vertical master geometry; pin order GDS per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
+  height: 9.2
   length: 10.0
-  width: 5.0
+  width: 4.4
 directory: parts/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
 distributors:
 - key: lcsc
@@ -43,6 +50,13 @@ distributors:
   part_number: C2653
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRFB4229PBF/C2653
+electrical:
+  device_type: power MOSFET (enhancement mode)
+  operating_temperature: -40 C~+175 C
+  polarity: N-channel
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf/datasheet.pdf
 id: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
 id_no_class: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
 id_no_size: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
@@ -58,11 +72,12 @@ jlcpcb_selection:
     Rating comparison from the staged capture: package below, stock below recorded
     as observed. Edits made under the transistor family lock. Stock 7452 recorded
     as observed.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRFB4229PBF/C2653
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -91,11 +106,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_FET:Q_NMOS_GDS master (pin order GDS cross-checked against the part
+    datasheet) and the TO-220-3_Vertical footprint master; renders inherit the pipeline
+    verified on the completed discrete exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_THT:TO-220-3_Vertical
+  symbol: Transistor_FET:Q_NMOS_GDS
 lcsc_search: IRFB4229PBF
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
@@ -140,6 +160,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -229,7 +259,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -237,9 +281,16 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: transistor
       category_name: Transistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887160820391936-C2653.pdf
+      dimension_reference:
+        document: IRFB4229PBF datasheet (C2653 provenance)
+        notes: TO-220-3_Vertical master geometry; pin order GDS per the part datasheet.
+        pages:
+        - 1
       dimensions_mm:
+        height: 9.2
         length: 10.0
-        width: 5.0
+        width: 4.4
       directory: parts\electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
       distributors:
       - key: lcsc
@@ -250,6 +301,13 @@ oomlout_ai_roboclick_3:
         part_number: C2653
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRFB4229PBF/C2653
+      electrical:
+        device_type: power MOSFET (enhancement mode)
+        operating_temperature: -40 C~+175 C
+        polarity: N-channel
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Ninth batch on the power-MOSFET block introduced at
           C2557''s intake; this exact row was added in the same transistor-family
@@ -261,11 +319,12 @@ oomlout_ai_roboclick_3:
           replaced with lower-voltage siblings. Rating comparison from the staged
           capture: package below, stock below recorded as observed. Edits made under
           the transistor family lock. Stock 7452 recorded as observed.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRFB4229PBF/C2653
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: null
         ratings:
           Assembly Type: Wave Soldering
@@ -294,11 +353,16 @@ oomlout_ai_roboclick_3:
         tier: preferred_extended
         tier_label_observed: Extended
         verified_on: '2026-09-29'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the
+          KiCad Transistor_FET:Q_NMOS_GDS master (pin order GDS cross-checked against
+          the part datasheet) and the TO-220-3_Vertical footprint master; renders
+          inherit the pipeline verified on the completed discrete exemplars and were
+          spot-checked on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Package_TO_SOT_THT:TO-220-3_Vertical
+        symbol: Transistor_FET:Q_NMOS_GDS
       lcsc_search: IRFB4229PBF
       manufacturer: Infineon Technologies
       manufacturers:
@@ -324,6 +388,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -414,6 +488,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: TO-220-3_Vertical (mosfet-n, pins GDS)
       part_id: Q1
       part_number_jlcpcb: C2653
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRFB4229PBF/C2653
@@ -491,7 +580,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -509,7 +598,16 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/transistor/to_220ab/mosfet/n_channel/enhancement_mode/250_volt/46_amp/infineon_technologies/README.md
         oomp_id: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
-        pins: []
+        pins:
+        - name: G
+          number: '1'
+          type: input
+        - name: D
+          number: '2'
+          type: passive
+        - name: S
+          number: '3'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
@@ -518,11 +616,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: to 220ab
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 10.0 × 4.4 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
         summary: Transistor IRFB4229PBF TO 220AB is an OOMP electronic transistor
           definition. It uses the to 220ab package or form factor. Its nominal drawing
-          size is 10.0 × 5.0 mm.
+          size is 10.0 × 4.4 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -544,8 +644,27 @@ oomlout_ai_roboclick_3:
           value: infineon_technologies
         - level: 15
           value: irfb4229pbf
+      pins:
+        pin_1:
+          name: G
+          number: '1'
+          type: input
+        pin_2:
+          name: D
+          number: '2'
+          type: passive
+        pin_3:
+          name: S
+          number: '3'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRFB4229PBF/C2653
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists Infineon Technologies IRFB4229PBF (C2653); identity
+        and ratings observed live at intake 2026-09-29.
+      - Mapped to the KiCad Transistor_FET:Q_NMOS_GDS master and the Package_TO_SOT_THT:TO-220-3_Vertical
+        footprint master in the 2026-10-06 family batch; pin order GDS verified against
+        the part datasheet.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -722,7 +841,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -736,6 +855,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
+package_name_manufacturer: TO-220-3_Vertical (mosfet-n, pins GDS)
 part_id: Q1
 part_number_jlcpcb: C2653
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRFB4229PBF/C2653
@@ -813,7 +933,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -831,7 +951,16 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/transistor/to_220ab/mosfet/n_channel/enhancement_mode/250_volt/46_amp/infineon_technologies/README.md
   oomp_id: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
-  pins: []
+  pins:
+  - name: G
+    number: '1'
+    type: input
+  - name: D
+    number: '2'
+    type: passive
+  - name: S
+    number: '3'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
@@ -840,11 +969,13 @@ part_page:
   - title: Package / style
     value: to 220ab
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 10.0 × 4.4 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_250_volt_46_amp_infineon_technologies_irfb4229pbf
   summary: Transistor IRFB4229PBF TO 220AB is an OOMP electronic transistor definition.
     It uses the to 220ab package or form factor. Its nominal drawing size is 10.0
-    × 5.0 mm.
+    × 4.4 mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -866,8 +997,27 @@ part_page:
     value: infineon_technologies
   - level: 15
     value: irfb4229pbf
+pins:
+  pin_1:
+    name: G
+    number: '1'
+    type: input
+  pin_2:
+    name: D
+    number: '2'
+    type: passive
+  pin_3:
+    name: S
+    number: '3'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/InfineonTechnologies-IRFB4229PBF/C2653
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists Infineon Technologies IRFB4229PBF (C2653); identity
+  and ratings observed live at intake 2026-09-29.
+- Mapped to the KiCad Transistor_FET:Q_NMOS_GDS master and the Package_TO_SOT_THT:TO-220-3_Vertical
+  footprint master in the 2026-10-06 family batch; pin order GDS verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false

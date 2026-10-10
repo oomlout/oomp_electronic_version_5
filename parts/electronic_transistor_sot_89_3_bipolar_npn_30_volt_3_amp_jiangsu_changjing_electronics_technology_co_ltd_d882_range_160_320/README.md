@@ -2,7 +2,7 @@
 
 `electronic_transistor_sot_89_3_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320`
 
-Transistor D882(RANGE:160-320) SOT 89 3 is an OOMP electronic transistor definition. It uses the sot 89 3 package or form factor. Its nominal drawing size is 4.5 &#x00D7; 2.5 mm.
+Transistor D882(RANGE:160-320) SOT 89 3 is an OOMP electronic transistor definition. It uses the sot 89 3 package or form factor. Its nominal drawing size is 4.5 &#x00D7; 2.5 mm. The definition includes 3 documented pins.
 
 ![Transistor D882(RANGE:160-320) SOT 89 3 pinout](data/working_svg_square_pins.svg)
 
@@ -14,6 +14,7 @@ Transistor D882(RANGE:160-320) SOT 89 3 is an OOMP electronic transistor definit
 | Type | Transistor |
 | Package / style | sot 89 3 |
 | Nominal size | 4.5 &#x00D7; 2.5 mm |
+| Documented pins | 3 |
 
 
 ## Classification
@@ -36,6 +37,7 @@ Transistor D882(RANGE:160-320) SOT 89 3 is an OOMP electronic transistor definit
 
 | Measurement | Value |
 | --- | ---: |
+| Height | 1.5 mm |
 | Length | 4.5 mm |
 | Width | 2.5 mm |
 
@@ -53,6 +55,20 @@ Transistor D882(RANGE:160-320) SOT 89 3 is an OOMP electronic transistor definit
 
 
 
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | B | input |
+| 2 | E | passive |
+| 3 | C | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
 
 
 

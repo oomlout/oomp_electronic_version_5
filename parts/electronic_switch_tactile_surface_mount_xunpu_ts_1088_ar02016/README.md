@@ -2,7 +2,7 @@
 
 `electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016`
 
-Switch TS-1088-AR02016 TACTILE is an OOMP electronic switch definition. It uses the tactile package or form factor. Its nominal drawing size is 4.8 &#x00D7; 3.0 mm. The definition includes 2 documented pins.
+Switch TS-1088-AR02016 TACTILE is an OOMP electronic switch definition. It uses the tactile package or form factor. Its nominal drawing size is 3.9 &#x00D7; 3.0 mm. The definition includes 2 documented pins.
 
 ![Switch TS-1088-AR02016 TACTILE pinout](data/working_svg_square_pins.svg)
 
@@ -13,7 +13,7 @@ Switch TS-1088-AR02016 TACTILE is an OOMP electronic switch definition. It uses 
 | OOMP ID | `electronic_switch_tactile_surface_mount_xunpu_ts_1088_ar02016` |
 | Type | Switch |
 | Package / style | tactile |
-| Nominal size | 4.8 &#x00D7; 3.0 mm |
+| Nominal size | 3.9 &#x00D7; 3.0 mm |
 | Documented pins | 2 |
 
 
@@ -35,7 +35,7 @@ Switch TS-1088-AR02016 TACTILE is an OOMP electronic switch definition. It uses 
 | Measurement | Value |
 | --- | ---: |
 | Height | 2.0 mm |
-| Length | 4.8 mm |
+| Length | 3.9 mm |
 | Width | 3.0 mm |
 
 
@@ -56,8 +56,8 @@ Switch TS-1088-AR02016 TACTILE is an OOMP electronic switch definition. It uses 
 
 | Pin | Name | Type |
 | ---: | --- | --- |
-| 1 | contact_1 | passive |
-| 2 | contact_2 | passive |
+| 1 | 1 | passive |
+| 2 | 2 | passive |
 
 
 

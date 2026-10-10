@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_92_bipolar_pnp_400_volt_200_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a94_ta](electronic_transistor_to_92_bipolar_pnp_400_volt_200_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a94_ta.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-92_Inline`. [License](../LICENSE.md).

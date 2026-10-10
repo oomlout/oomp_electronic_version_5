@@ -30,9 +30,17 @@ bip_39_full_space: trumpet intact sauce humor fitness beach jazz antenna trust r
 bip_39_full_underscore: trumpet_intact_sauce_humor_fitness_beach_jazz_antenna_trust_response_multiply_valid
 category: switch
 category_name: Switch
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8550724022091735040-C318884.pdf
+dimension_reference:
+  document: TS-1187A-B-A-B datasheet (C318884 provenance)
+  notes: TS-1187A-B-A-B SMD tactile switch, 5.1 x 5.1 x 1.5 mm, 4 bridged pads (1-1
+    / 2-2).
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 1.5
+  length: 6.0
+  width: 5.1
 directory: parts/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
 distributors:
 - key: lcsc
@@ -43,6 +51,18 @@ distributors:
   part_number: C318884
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
+electrical:
+  actuator: Round Button
+  circuit: SPST
+  current_rating: 50mA
+  device_type: tactile push switch
+  operating_force: 1.6N
+  operating_temperature: -30 C~+85 C
+  positions: 1
+  voltage_rating: 12V
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b/datasheet.pdf
 id: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
 id_no_class: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
 id_no_size: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
@@ -52,11 +72,12 @@ jlcpcb_selection:
     one explicit switch family row electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
     using the established style/mounting/maker/MPN taxonomy. SPST 5.1x5.1 mm SMD-4P
     tactile with round gold actuator, 1.6 N, 12 V 50 mA, 100,000 cycles.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Actuator Style: Round Button
@@ -77,11 +98,15 @@ jlcpcb_selection:
   tier: basic
   tier_label_observed: Basic
   verified_on: '2026-09-25'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: switch mapped to the KiCad Switch:SW_Push
+    master (pins parsed from the master; all passive) and the SW_Push_1P1T_XKB_TS-1187A
+    footprint master; renders inherit the pipeline verified on the completed passive
+    exemplars and were spot-checked on the built square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A
+  symbol: Switch:SW_Push
 lcsc_search: TS-1187A-B-A-B
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
@@ -123,6 +148,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -212,7 +247,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -220,9 +269,17 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: switch
       category_name: Switch
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8550724022091735040-C318884.pdf
+      dimension_reference:
+        document: TS-1187A-B-A-B datasheet (C318884 provenance)
+        notes: TS-1187A-B-A-B SMD tactile switch, 5.1 x 5.1 x 1.5 mm, 4 bridged pads
+          (1-1 / 2-2).
+        pages:
+        - 1
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 1.5
+        length: 6.0
+        width: 5.1
       directory: parts\electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
       distributors:
       - key: lcsc
@@ -233,16 +290,29 @@ oomlout_ai_roboclick_3:
         part_number: C318884
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
+      electrical:
+        actuator: Round Button
+        circuit: SPST
+        current_rating: 50mA
+        device_type: tactile push switch
+        operating_force: 1.6N
+        operating_temperature: -30 C~+85 C
+        positions: 1
+        voltage_rating: 12V
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact tactile switch identity with no prior OOMP entry:
           added one explicit switch family row electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
           using the established style/mounting/maker/MPN taxonomy. SPST 5.1x5.1 mm
           SMD-4P tactile with round gold actuator, 1.6 N, 12 V 50 mA, 100,000 cycles.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Actuator Style: Round Button
@@ -263,11 +333,16 @@ oomlout_ai_roboclick_3:
         tier: basic
         tier_label_observed: Basic
         verified_on: '2026-09-25'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: switch mapped to the KiCad
+          Switch:SW_Push master (pins parsed from the master; all passive) and the
+          SW_Push_1P1T_XKB_TS-1187A footprint master; renders inherit the pipeline
+          verified on the completed passive exemplars and were spot-checked on the
+          built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A
+        symbol: Switch:SW_Push
       lcsc_search: TS-1187A-B-A-B
       manufacturer: XKB Connection
       manufacturers:
@@ -293,6 +368,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -383,6 +468,22 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: TS-1187A-B-A-B SMD tactile switch, 5.1 x 5.1 x 1.5
+        mm, 4 bridged pads (1-1 / 2-2)
       part_id: P1
       part_number_jlcpcb: C318884
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
@@ -460,7 +561,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -478,7 +579,13 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/switch/tactile/surface_mount/xkb_connection/README.md
         oomp_id: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
-        pins: []
+        pins:
+        - name: '1'
+          number: '1'
+          type: passive
+        - name: '2'
+          number: '2'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
@@ -487,11 +594,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: tactile
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 6.0 × 5.1 mm
+        - title: Documented pins
+          value: 2
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
         summary: Switch TS-1187A-B-A-B TACTILE is an OOMP electronic switch definition.
           It uses the tactile package or form factor. Its nominal drawing size is
-          10.0 × 5.0 mm.
+          6.0 × 5.1 mm. The definition includes 2 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -505,8 +614,22 @@ oomlout_ai_roboclick_3:
           value: xkb_connection
         - level: 15
           value: ts_1187a_b_a_b
+      pins:
+        pin_1:
+          name: '1'
+          number: '1'
+          type: passive
+        pin_2:
+          name: '2'
+          number: '2'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists XKB Connection TS-1187A-B-A-B (C318884); identity
+        and ratings observed live at intake 2026-09-25.
+      - Mapped to the KiCad Switch:SW_Push master and the Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A
+        footprint master in the 2026-10-06 family batch.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -683,7 +806,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -697,6 +820,8 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
+package_name_manufacturer: TS-1187A-B-A-B SMD tactile switch, 5.1 x 5.1 x 1.5 mm,
+  4 bridged pads (1-1 / 2-2)
 part_id: P1
 part_number_jlcpcb: C318884
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
@@ -774,7 +899,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -792,7 +917,13 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/switch/tactile/surface_mount/xkb_connection/README.md
   oomp_id: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
-  pins: []
+  pins:
+  - name: '1'
+    number: '1'
+    type: passive
+  - name: '2'
+    number: '2'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
@@ -801,11 +932,13 @@ part_page:
   - title: Package / style
     value: tactile
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 6.0 × 5.1 mm
+  - title: Documented pins
+    value: 2
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
   summary: Switch TS-1187A-B-A-B TACTILE is an OOMP electronic switch definition.
-    It uses the tactile package or form factor. Its nominal drawing size is 10.0 ×
-    5.0 mm.
+    It uses the tactile package or form factor. Its nominal drawing size is 6.0 ×
+    5.1 mm. The definition includes 2 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -819,8 +952,22 @@ part_page:
     value: xkb_connection
   - level: 15
     value: ts_1187a_b_a_b
+pins:
+  pin_1:
+    name: '1'
+    number: '1'
+    type: passive
+  pin_2:
+    name: '2'
+    number: '2'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists XKB Connection TS-1187A-B-A-B (C318884); identity and
+  ratings observed live at intake 2026-09-25.
+- Mapped to the KiCad Switch:SW_Push master and the Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A
+  footprint master in the 2026-10-06 family batch.
 svg_details:
 - filename_extra: assembly
   make_a4: false

@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_220_mosfet_p_channel_enhancement_mode_100_volt_23_amp_infineon_technologies_irf9540npbf](electronic_transistor_to_220_mosfet_p_channel_enhancement_mode_100_volt_23_amp_infineon_technologies_irf9540npbf.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-220-3_Vertical`. [License](../LICENSE.md).

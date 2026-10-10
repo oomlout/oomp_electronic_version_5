@@ -1,8 +1,15 @@
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895794468966400-C2152.pdf
+dimension_reference:
+  document: D882(RANGE:160-320) datasheet (C2152 provenance)
+  notes: TO-126-3_Vertical master geometry; pin order ECB per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 8.5
+  length: 9.0
+  width: 4.5
 distributors:
 - key: lcsc
   part_number: C2152
@@ -12,6 +19,13 @@ distributors:
   part_number: C2152
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
+electrical:
+  device_type: bipolar junction transistor
+  operating_temperature: -55 C~+150 C
+  polarity: NPN
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Added one explicit TO-126 taxonomy row for Jiangsu Changjing
     Electronics Technology Co., Ltd. D882(RANGE:160-320). Preserve the existing Basic
@@ -19,11 +33,12 @@ jlcpcb_selection:
     C2152 is through-hole TO-126, 1.25W, 90MHz. The manufacturer datasheet classification
     table confirms the 160-320 gain rank, and its package pin legend establishes three
     leads.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: '107'
   ratings:
     Collector - Emitter Voltage VCEO: 30V
@@ -41,11 +56,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-27'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_BJT:Q_NPN_ECB master (pin order ECB cross-checked against the part
+    datasheet) and the TO-126-3_Vertical footprint master; renders inherit the pipeline
+    verified on the completed discrete exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_THT:TO-126-3_Vertical
+  symbol: Transistor_BJT:Q_NPN_ECB
 lcsc_search: D882(RANGE:160-320)
 manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
 manufacturers:
@@ -54,6 +74,7 @@ manufacturers:
 name_proper: Transistor D882(RANGE:160-320) TO 126
 name_readable: Transistor D882(RANGE:160-320) TO 126
 name_short: Transistor D882(RANGE:160-320) TO 126
+package_name_manufacturer: TO-126-3_Vertical (bjt-npn, pins ECB)
 part_id: Q1
 part_number_jlcpcb: C2152
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
@@ -65,7 +86,26 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
   part_number: D882(RANGE:160-320)
+pins:
+  pin_1:
+    name: E
+    number: '1'
+    type: passive
+  pin_2:
+    name: C
+    number: '2'
+    type: passive
+  pin_3:
+    name: B
+    number: '3'
+    type: input
 product_url: https://jlcpcb.com/partdetail/2509-D882_RANGE_160_320/C2152
+research_notes:
+- The official JLC page lists Jiangsu Changjing Electronics Technology Co., Ltd. D882(RANGE:160-320)
+  (C2152); identity and ratings observed live at intake 2026-09-27.
+- Mapped to the KiCad Transistor_BJT:Q_NPN_ECB master and the Package_TO_SOT_THT:TO-126-3_Vertical
+  footprint master in the 2026-10-06 family batch; pin order ECB verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false

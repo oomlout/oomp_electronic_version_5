@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_252_mosfet_n_channel_enhancement_mode_400_volt_3_1_amp_vishay_intertech_irfr320trpbf](electronic_transistor_to_252_mosfet_n_channel_enhancement_mode_400_volt_3_1_amp_vishay_intertech_irfr320trpbf.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:TO-252-3_TabPin2`. [License](../LICENSE.md).

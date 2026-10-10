@@ -30,9 +30,16 @@ bip_39_full_space: dismiss tail hub apart turn swarm later color survey draw rem
 bip_39_full_underscore: dismiss_tail_hub_apart_turn_swarm_later_color_survey_draw_remove_health
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895097135620096-C2090.pdf
+dimension_reference:
+  document: A733-TA(RANGE:200-400) datasheet (C2090 provenance)
+  notes: TO-92_Inline master geometry; pin order ECB per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 5.2
+  length: 5.2
+  width: 4.2
 directory: parts/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
 distributors:
 - key: lcsc
@@ -43,6 +50,13 @@ distributors:
   part_number: C2090
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/2447-A733_TA_RANGE_200_400/C2090
+electrical:
+  device_type: bipolar junction transistor
+  operating_temperature: -55 C~+150 C
+  polarity: PNP
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400/datasheet.pdf
 id: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
 id_no_class: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
 id_no_size: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
@@ -55,11 +69,12 @@ jlcpcb_selection:
     from the staged capture: PNP BJT, VCEO 50 V, Ic 100 mA, 100 MHz, 250 mW, hFE 200-400
     - matches the live page exactly. Three leads (pin_count 3); stock 2002 recorded
     as observed. Edits made under the transistor family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/2447-A733_TA_RANGE_200_400/C2090
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: 1
   ratings:
     Collector - Emitter Voltage VCEO: 50V
@@ -77,11 +92,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-28'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_BJT:Q_PNP_ECB master (pin order ECB cross-checked against the part
+    datasheet) and the TO-92_Inline footprint master; renders inherit the pipeline
+    verified on the completed discrete exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_THT:TO-92_Inline
+  symbol: Transistor_BJT:Q_PNP_ECB
 lcsc_search: A733-TA(RANGE:200-400)
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
@@ -126,6 +146,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -215,7 +245,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -223,9 +267,16 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: transistor
       category_name: Transistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588895097135620096-C2090.pdf
+      dimension_reference:
+        document: A733-TA(RANGE:200-400) datasheet (C2090 provenance)
+        notes: TO-92_Inline master geometry; pin order ECB per the part datasheet.
+        pages:
+        - 1
       dimensions_mm:
-        length: 10.0
-        width: 5.0
+        height: 5.2
+        length: 5.2
+        width: 4.2
       directory: parts\electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
       distributors:
       - key: lcsc
@@ -236,6 +287,13 @@ oomlout_ai_roboclick_3:
         part_number: C2090
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/2447-A733_TA_RANGE_200_400/C2090
+      electrical:
+        device_type: bipolar junction transistor
+        operating_temperature: -55 C~+150 C
+        polarity: PNP
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Exact active device with no prior OOMP entry: added
           one explicit transistor family row electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
@@ -245,11 +303,12 @@ oomlout_ai_roboclick_3:
           250 mW, hFE 200-400 - matches the live page exactly. Three leads (pin_count
           3); stock 2002 recorded as observed. Edits made under the transistor family
           lock.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/2447-A733_TA_RANGE_200_400/C2090
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: 1
         ratings:
           Collector - Emitter Voltage VCEO: 50V
@@ -267,11 +326,16 @@ oomlout_ai_roboclick_3:
         tier: preferred_extended
         tier_label_observed: Extended
         verified_on: '2026-09-28'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the
+          KiCad Transistor_BJT:Q_PNP_ECB master (pin order ECB cross-checked against
+          the part datasheet) and the TO-92_Inline footprint master; renders inherit
+          the pipeline verified on the completed discrete exemplars and were spot-checked
+          on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Package_TO_SOT_THT:TO-92_Inline
+        symbol: Transistor_BJT:Q_PNP_ECB
       lcsc_search: A733-TA(RANGE:200-400)
       manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
       manufacturers:
@@ -297,6 +361,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -387,6 +461,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: TO-92_Inline (bjt-pnp, pins ECB)
       part_id: Q1
       part_number_jlcpcb: C2090
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2447-A733_TA_RANGE_200_400/C2090
@@ -464,7 +553,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -482,7 +571,16 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/transistor/to_92/bipolar/pnp/50_volt/100_milliamp/jiangsu_changjing_electronics_technology_co_ltd/README.md
         oomp_id: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
-        pins: []
+        pins:
+        - name: E
+          number: '1'
+          type: passive
+        - name: C
+          number: '2'
+          type: passive
+        - name: B
+          number: '3'
+          type: input
         quick_facts:
         - title: OOMP ID
           value: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
@@ -491,11 +589,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: to 92
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 5.2 × 4.2 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
         summary: Transistor A733-TA(RANGE:200-400) TO 92 is an OOMP electronic transistor
           definition. It uses the to 92 package or form factor. Its nominal drawing
-          size is 10.0 × 5.0 mm.
+          size is 5.2 × 4.2 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -515,8 +615,28 @@ oomlout_ai_roboclick_3:
           value: jiangsu_changjing_electronics_technology_co_ltd
         - level: 15
           value: a733_ta_range_200_400
+      pins:
+        pin_1:
+          name: E
+          number: '1'
+          type: passive
+        pin_2:
+          name: C
+          number: '2'
+          type: passive
+        pin_3:
+          name: B
+          number: '3'
+          type: input
       product_url: https://jlcpcb.com/partdetail/2447-A733_TA_RANGE_200_400/C2090
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists Jiangsu Changjing Electronics Technology Co.,
+        Ltd. A733-TA(RANGE:200-400) (C2090); identity and ratings observed live at
+        intake 2026-09-28.
+      - Mapped to the KiCad Transistor_BJT:Q_PNP_ECB master and the Package_TO_SOT_THT:TO-92_Inline
+        footprint master in the 2026-10-06 family batch; pin order ECB verified against
+        the part datasheet.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -693,7 +813,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -707,6 +827,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
+package_name_manufacturer: TO-92_Inline (bjt-pnp, pins ECB)
 part_id: Q1
 part_number_jlcpcb: C2090
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/2447-A733_TA_RANGE_200_400/C2090
@@ -784,7 +905,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -802,7 +923,16 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/transistor/to_92/bipolar/pnp/50_volt/100_milliamp/jiangsu_changjing_electronics_technology_co_ltd/README.md
   oomp_id: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
-  pins: []
+  pins:
+  - name: E
+    number: '1'
+    type: passive
+  - name: C
+    number: '2'
+    type: passive
+  - name: B
+    number: '3'
+    type: input
   quick_facts:
   - title: OOMP ID
     value: electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
@@ -811,11 +941,13 @@ part_page:
   - title: Package / style
     value: to 92
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 5.2 × 4.2 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_92_bipolar_pnp_50_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_a733_ta_range_200_400
   summary: Transistor A733-TA(RANGE:200-400) TO 92 is an OOMP electronic transistor
     definition. It uses the to 92 package or form factor. Its nominal drawing size
-    is 10.0 × 5.0 mm.
+    is 5.2 × 4.2 mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -835,8 +967,27 @@ part_page:
     value: jiangsu_changjing_electronics_technology_co_ltd
   - level: 15
     value: a733_ta_range_200_400
+pins:
+  pin_1:
+    name: E
+    number: '1'
+    type: passive
+  pin_2:
+    name: C
+    number: '2'
+    type: passive
+  pin_3:
+    name: B
+    number: '3'
+    type: input
 product_url: https://jlcpcb.com/partdetail/2447-A733_TA_RANGE_200_400/C2090
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists Jiangsu Changjing Electronics Technology Co., Ltd. A733-TA(RANGE:200-400)
+  (C2090); identity and ratings observed live at intake 2026-09-28.
+- Mapped to the KiCad Transistor_BJT:Q_PNP_ECB master and the Package_TO_SOT_THT:TO-92_Inline
+  footprint master in the 2026-10-06 family batch; pin order ECB verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false

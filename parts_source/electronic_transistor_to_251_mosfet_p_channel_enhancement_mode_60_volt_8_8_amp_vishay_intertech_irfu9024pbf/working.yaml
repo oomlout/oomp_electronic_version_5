@@ -1,8 +1,15 @@
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588891881971863552-C3033.pdf
+dimension_reference:
+  document: IRFU9024PBF datasheet (C3033 provenance)
+  notes: TO-251-3_Vertical master geometry; pin order GDS per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
-  length: 10.0
-  width: 5.0
+  height: 2.5
+  length: 6.6
+  width: 6.2
 distributors:
 - key: lcsc
   part_number: C3033
@@ -12,6 +19,13 @@ distributors:
   part_number: C3033
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/VishayIntertech-IRFU9024PBF/C3033
+electrical:
+  device_type: power MOSFET (enhancement mode)
+  operating_temperature: -55 C~+150 C
+  polarity: P-channel
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_to_251_mosfet_p_channel_enhancement_mode_60_volt_8_8_amp_vishay_intertech_irfu9024pbf/datasheet.pdf
 jlcpcb_selection:
   compatibility_notes: 'Sixteenth batch on the power-MOSFET block introduced at C2557''s
     intake; this exact row was added in the same transistor-family edit under the
@@ -20,11 +34,12 @@ jlcpcb_selection:
     preferred house choice; ratings come straight off the page. Rating comparison
     from the staged capture: package below, stock below recorded as observed. Stock
     9 recorded as observed. Edits made under the transistor family lock.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/VishayIntertech-IRFU9024PBF/C3033
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: Wave Soldering
@@ -55,11 +70,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_FET:Q_PMOS_GDS master (pin order GDS cross-checked against the part
+    datasheet) and the TO-251-3_Vertical footprint master; renders inherit the pipeline
+    verified on the completed discrete exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_THT:TO-251-3_Vertical
+  symbol: Transistor_FET:Q_PMOS_GDS
 lcsc_search: IRFU9024PBF
 manufacturer: Vishay Intertech
 manufacturers:
@@ -68,6 +88,7 @@ manufacturers:
 name_proper: Transistor IRFU9024PBF TO 251
 name_readable: Transistor IRFU9024PBF TO 251
 name_short: Transistor IRFU9024PBF TO 251
+package_name_manufacturer: TO-251-3_Vertical (mosfet-p, pins GDS)
 part_id: Q1
 part_number_jlcpcb: C3033
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/VishayIntertech-IRFU9024PBF/C3033
@@ -79,7 +100,26 @@ part_numbers_lcsc:
 part_numbers_manufacturer:
 - manufacturer: Vishay Intertech
   part_number: IRFU9024PBF
+pins:
+  pin_1:
+    name: G
+    number: '1'
+    type: input
+  pin_2:
+    name: D
+    number: '2'
+    type: passive
+  pin_3:
+    name: S
+    number: '3'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/VishayIntertech-IRFU9024PBF/C3033
+research_notes:
+- The official JLC page lists Vishay Intertech IRFU9024PBF (C3033); identity and ratings
+  observed live at intake 2026-09-29.
+- Mapped to the KiCad Transistor_FET:Q_PMOS_GDS master and the Package_TO_SOT_THT:TO-251-3_Vertical
+  footprint master in the 2026-10-06 family batch; pin order GDS verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false

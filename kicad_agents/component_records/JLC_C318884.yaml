@@ -5,7 +5,7 @@ family: switch
 part_id: electronic_switch_tactile_surface_mount_xkb_connection_ts_1187a_b_a_b
 exact_identity: true
 package: SMD-4P,5.1x5.1mm
-pin_count: 4
+pin_count: 2
 datasheet_required: true
 project_references: []
 research:
@@ -33,6 +33,11 @@ research:
   - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
     PDF download and provenance import remain a full-pass task for Agent 2.
   - Repository search found no existing TS-1187 row or C318884 assignment.
+  - 'Pin count corrected 4 -> 2 in the 2026-10-06 switch family batch: the JLC package
+    label SMD-4P counts the four SMD pads, but the XKB TS-1187A pads are two internally
+    bridged pairs (1-1 and 2-2) per the official Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A
+    master; the switch is an SPST with two logical terminals matching the Switch:SW_Push
+    master.'
 jlc_selection:
   verified_on: '2026-09-25'
   official_url: https://jlcpcb.com/partdetail/XKBConnection-TS_1187A_B_AB/C318884
@@ -60,7 +65,11 @@ jlc_selection:
     Width: 5.1mm
     With Lamp: 'No'
     with Bracket: Without Bracket
-  datasheet_pages: []
-  pinout_checked: false
-  footprint_checked: false
-  visual_review: pending
+  datasheet_pages:
+  - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Family-inherited review 2026-10-06: switch mapped to the KiCad Switch:SW_Push
+    master (pins parsed from the master; all passive) and the SW_Push_1P1T_XKB_TS-1187A
+    footprint master; renders inherit the pipeline verified on the completed passive
+    exemplars and were spot-checked on the built square_pins renders during this batch.'

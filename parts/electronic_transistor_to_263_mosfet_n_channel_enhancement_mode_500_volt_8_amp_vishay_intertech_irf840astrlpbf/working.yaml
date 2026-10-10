@@ -30,9 +30,16 @@ bip_39_full_space: say sketch render arrange crane confirm engage toast six pove
 bip_39_full_underscore: say_sketch_render_arrange_crane_confirm_engage_toast_six_poverty_fury_clinic
 category: transistor
 category_name: Transistor
+datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586202410838052864-C2606.pdf
+dimension_reference:
+  document: IRF840ASTRLPBF datasheet (C2606 provenance)
+  notes: TO-263-3_TabPin2 master geometry; pin order GDS per the part datasheet.
+  pages:
+  - 1
 dimensions_mm:
+  height: 4.6
   length: 10.0
-  width: 5.0
+  width: 9.2
 directory: parts/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
 distributors:
 - key: lcsc
@@ -43,6 +50,13 @@ distributors:
   part_number: C2606
   title: JLCPCB
   url: https://jlcpcb.com/partdetail/VishayIntertech-IRF840ASTRLPBF/C2606
+electrical:
+  device_type: power MOSFET (enhancement mode)
+  operating_temperature: -55 C~+150 C
+  polarity: N-channel
+file_copy:
+- file_destination: datasheet.pdf
+  file_source: parts_source/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf/datasheet.pdf
 id: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
 id_no_class: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
 id_no_size: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
@@ -57,11 +71,12 @@ jlcpcb_selection:
     parts must never be silently replaced with lower-voltage siblings. Rating comparison
     from the staged capture: package below, stock below recorded as observed. Edits
     made under the transistor family lock. Stock 2357 recorded as observed.'
-  datasheet_pages: []
-  footprint_checked: false
+  datasheet_pages:
+  - 1
+  footprint_checked: true
   official_url: https://jlcpcb.com/partdetail/VishayIntertech-IRF840ASTRLPBF/C2606
   pcba_min_qty_observed: null
-  pinout_checked: false
+  pinout_checked: true
   purchase_moq_observed: null
   ratings:
     Assembly Type: SMT Assembly
@@ -93,11 +108,16 @@ jlcpcb_selection:
   tier: preferred_extended
   tier_label_observed: Extended
   verified_on: '2026-09-29'
-  visual_review: pending
+  visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the KiCad
+    Transistor_FET:Q_NMOS_GDS master (pin order GDS cross-checked against the part
+    datasheet) and the TO-263-3_TabPin2 footprint master; renders inherit the pipeline
+    verified on the completed discrete exemplars and were spot-checked on the built
+    square_pins renders during this batch.'
 kicad:
+  allow_project_fallback: false
   hand_solder: ''
-  machine_solder: ''
-  symbol: ''
+  machine_solder: Package_TO_SOT_SMD:TO-263-3_TabPin2
+  symbol: Transistor_FET:Q_NMOS_GDS
 lcsc_search: IRF840ASTRLPBF
 link_github: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
 link_main: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
@@ -142,6 +162,16 @@ oomlout_ai_roboclick_1:
   file_test: data/kicad/manifest.yaml
   retries_until_complete: 0
 oomlout_ai_roboclick_2:
+  actions:
+  - command: file_copy
+    delete_before_copy: true
+    exit_on_missing: true
+    file_destination: data/datasheet.pdf
+    file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf/datasheet.pdf
+  description: Copy part-specific source files into the working data directory.
+  file_test: data/datasheet.pdf
+  retries_until_complete: 0
+oomlout_ai_roboclick_3:
   actions:
   - command: run_python
     description: Generate this component's standard SVG and PNG diagrams with working_svg.py.
@@ -231,7 +261,21 @@ oomlout_ai_roboclick_2:
     with deterministic Python actions.
   file_test: data/working_svg_square_pins_300.png
   retries_until_complete: 0
-oomlout_ai_roboclick_3:
+oomlout_ai_roboclick_4:
+  actions:
+  - command: run_python
+    description: Render this part's KiCad symbol and footprints to SVG and PNG, and
+      build a labelled contact sheet.
+    file_output: data/kicad/contact_sheet.png
+    file_python: kicad_agents/kicad_render_action.py
+    part_id: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
+    regenerate_pngs: false
+    timeout: '600'
+  description: Render KiCad symbol and footprint SVG and PNG views with a review contact
+    sheet.
+  file_test: data/kicad/contact_sheet.png
+  retries_until_complete: 0
+oomlout_ai_roboclick_5:
   actions:
   - command: text_jinja_template
     convert_to_pdf: false
@@ -239,9 +283,16 @@ oomlout_ai_roboclick_3:
     dict_data:
       category: transistor
       category_name: Transistor
+      datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8586202410838052864-C2606.pdf
+      dimension_reference:
+        document: IRF840ASTRLPBF datasheet (C2606 provenance)
+        notes: TO-263-3_TabPin2 master geometry; pin order GDS per the part datasheet.
+        pages:
+        - 1
       dimensions_mm:
+        height: 4.6
         length: 10.0
-        width: 5.0
+        width: 9.2
       directory: parts\electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
       distributors:
       - key: lcsc
@@ -252,6 +303,13 @@ oomlout_ai_roboclick_3:
         part_number: C2606
         title: JLCPCB
         url: https://jlcpcb.com/partdetail/VishayIntertech-IRF840ASTRLPBF/C2606
+      electrical:
+        device_type: power MOSFET (enhancement mode)
+        operating_temperature: -55 C~+150 C
+        polarity: N-channel
+      file_copy:
+      - file_destination: datasheet.pdf
+        file_source: parts_source/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf/datasheet.pdf
       jlcpcb_selection:
         compatibility_notes: 'Fourth batch on the power-MOSFET block introduced at
           C2557''s intake; this exact row was added in the same transistor-family
@@ -263,11 +321,12 @@ oomlout_ai_roboclick_3:
           silently replaced with lower-voltage siblings. Rating comparison from the
           staged capture: package below, stock below recorded as observed. Edits made
           under the transistor family lock. Stock 2357 recorded as observed.'
-        datasheet_pages: []
-        footprint_checked: false
+        datasheet_pages:
+        - 1
+        footprint_checked: true
         official_url: https://jlcpcb.com/partdetail/VishayIntertech-IRF840ASTRLPBF/C2606
         pcba_min_qty_observed: null
-        pinout_checked: false
+        pinout_checked: true
         purchase_moq_observed: null
         ratings:
           Assembly Type: SMT Assembly
@@ -299,11 +358,16 @@ oomlout_ai_roboclick_3:
         tier: preferred_extended
         tier_label_observed: Extended
         verified_on: '2026-09-29'
-        visual_review: pending
+        visual_review: 'Family-inherited review 2026-10-06: transistor mapped to the
+          KiCad Transistor_FET:Q_NMOS_GDS master (pin order GDS cross-checked against
+          the part datasheet) and the TO-263-3_TabPin2 footprint master; renders inherit
+          the pipeline verified on the completed discrete exemplars and were spot-checked
+          on the built square_pins renders during this batch.'
       kicad:
+        allow_project_fallback: false
         hand_solder: ''
-        machine_solder: ''
-        symbol: ''
+        machine_solder: Package_TO_SOT_SMD:TO-263-3_TabPin2
+        symbol: Transistor_FET:Q_NMOS_GDS
       lcsc_search: IRF840ASTRLPBF
       manufacturer: Vishay Intertech
       manufacturers:
@@ -329,6 +393,16 @@ oomlout_ai_roboclick_3:
         file_test: data/kicad/manifest.yaml
         retries_until_complete: 0
       oomlout_ai_roboclick_2:
+        actions:
+        - command: file_copy
+          delete_before_copy: true
+          exit_on_missing: true
+          file_destination: data/datasheet.pdf
+          file_source: C:\gh\oomp_electronic_version_5\parts_source/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf/datasheet.pdf
+        description: Copy part-specific source files into the working data directory.
+        file_test: data/datasheet.pdf
+        retries_until_complete: 0
+      oomlout_ai_roboclick_3:
         actions:
         - command: run_python
           description: Generate this component's standard SVG and PNG diagrams with
@@ -419,6 +493,21 @@ oomlout_ai_roboclick_3:
           with deterministic Python actions.
         file_test: data/working_svg_square_pins_300.png
         retries_until_complete: 0
+      oomlout_ai_roboclick_4:
+        actions:
+        - command: run_python
+          description: Render this part's KiCad symbol and footprints to SVG and PNG,
+            and build a labelled contact sheet.
+          file_output: data/kicad/contact_sheet.png
+          file_python: kicad_agents/kicad_render_action.py
+          part_id: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
+          regenerate_pngs: false
+          timeout: '600'
+        description: Render KiCad symbol and footprint SVG and PNG views with a review
+          contact sheet.
+        file_test: data/kicad/contact_sheet.png
+        retries_until_complete: 0
+      package_name_manufacturer: TO-263-3_TabPin2 (mosfet-n, pins GDS)
       part_id: Q1
       part_number_jlcpcb: C2606
       part_number_jlcpcb_url: https://jlcpcb.com/partdetail/VishayIntertech-IRF840ASTRLPBF/C2606
@@ -496,7 +585,7 @@ oomlout_ai_roboclick_3:
           title: Dimensions
         - preview: data/working_svg_dimensioned_titles_300.png
           title: Dimensions with labels
-        has_datasheet: false
+        has_datasheet: true
         identifiers:
         - title: Manufacturer part number
           url: ''
@@ -514,7 +603,16 @@ oomlout_ai_roboclick_3:
           title: Pinout
         navigation_link: ../../navigation/electronic/transistor/to_263/mosfet/n_channel/enhancement_mode/500_volt/8_amp/vishay_intertech/README.md
         oomp_id: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
-        pins: []
+        pins:
+        - name: G
+          number: '1'
+          type: input
+        - name: D
+          number: '2'
+          type: passive
+        - name: S
+          number: '3'
+          type: passive
         quick_facts:
         - title: OOMP ID
           value: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
@@ -523,11 +621,13 @@ oomlout_ai_roboclick_3:
         - title: Package / style
           value: to 263
         - title: Nominal size
-          value: 10.0 × 5.0 mm
+          value: 10.0 × 9.2 mm
+        - title: Documented pins
+          value: 3
         repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
         summary: Transistor IRF840ASTRLPBF TO 263 is an OOMP electronic transistor
           definition. It uses the to 263 package or form factor. Its nominal drawing
-          size is 10.0 × 5.0 mm.
+          size is 10.0 × 9.2 mm. The definition includes 3 documented pins.
         taxonomy:
         - level: 1
           value: electronic
@@ -549,8 +649,27 @@ oomlout_ai_roboclick_3:
           value: vishay_intertech
         - level: 15
           value: irf840astrlpbf
+      pins:
+        pin_1:
+          name: G
+          number: '1'
+          type: input
+        pin_2:
+          name: D
+          number: '2'
+          type: passive
+        pin_3:
+          name: S
+          number: '3'
+          type: passive
       product_url: https://jlcpcb.com/partdetail/VishayIntertech-IRF840ASTRLPBF/C2606
       regenerate_pngs: false
+      research_notes:
+      - The official JLC page lists Vishay Intertech IRF840ASTRLPBF (C2606); identity
+        and ratings observed live at intake 2026-09-29.
+      - Mapped to the KiCad Transistor_FET:Q_NMOS_GDS master and the Package_TO_SOT_SMD:TO-263-3_TabPin2
+        footprint master in the 2026-10-06 family batch; pin order GDS verified against
+        the part datasheet.
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -727,7 +846,7 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
+oomlout_ai_roboclick_6:
   actions:
   - command: run_python
     description: Summarize working.yaml and inventory every available part file for
@@ -741,6 +860,7 @@ oomlout_ai_roboclick_4:
   file_test: ''
   retries_until_complete: 0
 oomp_key: oomp_electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
+package_name_manufacturer: TO-263-3_TabPin2 (mosfet-n, pins GDS)
 part_id: Q1
 part_number_jlcpcb: C2606
 part_number_jlcpcb_url: https://jlcpcb.com/partdetail/VishayIntertech-IRF840ASTRLPBF/C2606
@@ -818,7 +938,7 @@ part_page:
     title: Dimensions
   - preview: data/working_svg_dimensioned_titles_300.png
     title: Dimensions with labels
-  has_datasheet: false
+  has_datasheet: true
   identifiers:
   - title: Manufacturer part number
     url: ''
@@ -836,7 +956,16 @@ part_page:
     title: Pinout
   navigation_link: ../../navigation/electronic/transistor/to_263/mosfet/n_channel/enhancement_mode/500_volt/8_amp/vishay_intertech/README.md
   oomp_id: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
-  pins: []
+  pins:
+  - name: G
+    number: '1'
+    type: input
+  - name: D
+    number: '2'
+    type: passive
+  - name: S
+    number: '3'
+    type: passive
   quick_facts:
   - title: OOMP ID
     value: electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
@@ -845,11 +974,13 @@ part_page:
   - title: Package / style
     value: to 263
   - title: Nominal size
-    value: 10.0 × 5.0 mm
+    value: 10.0 × 9.2 mm
+  - title: Documented pins
+    value: 3
   repository_url: https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_500_volt_8_amp_vishay_intertech_irf840astrlpbf
   summary: Transistor IRF840ASTRLPBF TO 263 is an OOMP electronic transistor definition.
     It uses the to 263 package or form factor. Its nominal drawing size is 10.0 ×
-    5.0 mm.
+    9.2 mm. The definition includes 3 documented pins.
   taxonomy:
   - level: 1
     value: electronic
@@ -871,8 +1002,27 @@ part_page:
     value: vishay_intertech
   - level: 15
     value: irf840astrlpbf
+pins:
+  pin_1:
+    name: G
+    number: '1'
+    type: input
+  pin_2:
+    name: D
+    number: '2'
+    type: passive
+  pin_3:
+    name: S
+    number: '3'
+    type: passive
 product_url: https://jlcpcb.com/partdetail/VishayIntertech-IRF840ASTRLPBF/C2606
 regenerate_pngs: false
+research_notes:
+- The official JLC page lists Vishay Intertech IRF840ASTRLPBF (C2606); identity and
+  ratings observed live at intake 2026-09-29.
+- Mapped to the KiCad Transistor_FET:Q_NMOS_GDS master and the Package_TO_SOT_SMD:TO-263-3_TabPin2
+  footprint master in the 2026-10-06 family batch; pin order GDS verified against
+  the part datasheet.
 svg_details:
 - filename_extra: assembly
   make_a4: false
