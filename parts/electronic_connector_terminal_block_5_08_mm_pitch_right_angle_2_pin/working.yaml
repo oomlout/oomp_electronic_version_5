@@ -795,19 +795,6 @@ oomlout_ai_roboclick_3:
     search_and_replace: []
   file_test: ''
   retries_until_complete: 0
-oomlout_ai_roboclick_4:
-  actions:
-  - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
-    file_output: web.yaml
-    file_python: kicad_agents/web_manifest_action.py
-    manifest_config: config_web_manifest.yaml
-    timeout: '600'
-  always_run_on_regeneration: true
-  description: Regenerate the deterministic web.yaml after every other part action.
-  file_test: ''
-  retries_until_complete: 0
 oomp_key: oomp_electronic_connector_terminal_block_5_08_mm_pitch_right_angle_2_pin
 part_id: J1
 part_number_jlcpcb: C3697
@@ -1231,3 +1218,42 @@ taxonomy_7: ''
 taxonomy_8: ''
 taxonomy_9: ''
 url_chat: ''
+oomlout_ai_roboclick_4:
+  file_test: ''
+  always_run_on_regeneration: true
+  actions:
+  - command: run_python
+    description: Read current component details and prepare drawer labels; remove
+      stale label PDFs
+    file_python: C:\gh\oomp_electronic_version_5\working_drawer_labels.py
+    file_output: data/label_drawer.yaml
+    timeout: '120'
+  - command: text_jinja_template
+    description: Drawer label 3x2
+    file_template: C:\gh\oomp_electronic_version_5\source_file\template_jinja\label_drawer\3x2.svg.j2
+    file_output: label_drawer_3x2.svg
+    dict_data_yaml_files:
+      label_drawer: data/label_drawer.yaml
+    convert_to_pdf: false
+    convert_to_png: false
+  - command: text_jinja_template
+    description: Drawer label 1_5x1
+    file_template: C:\gh\oomp_electronic_version_5\source_file\template_jinja\label_drawer\1_5x1.svg.j2
+    file_output: label_drawer_1_5x1.svg
+    dict_data_yaml_files:
+      label_drawer: data/label_drawer.yaml
+    convert_to_pdf: false
+    convert_to_png: false
+oomlout_ai_roboclick_5:
+  actions:
+  - command: run_python
+    description: Summarize working.yaml and inventory every available part file for
+      website generators.
+    file_output: web.yaml
+    file_python: kicad_agents/web_manifest_action.py
+    manifest_config: config_web_manifest.yaml
+    timeout: '600'
+  always_run_on_regeneration: true
+  description: Regenerate the deterministic web.yaml after every other part action.
+  file_test: ''
+  retries_until_complete: 0

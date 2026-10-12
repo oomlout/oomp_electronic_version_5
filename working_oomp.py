@@ -7,6 +7,7 @@ import yaml
 from functools import lru_cache
 
 import working_oomp_metadata
+import working_drawer_labels
 
 
 DATA_DIRECTORY = "data"
@@ -879,6 +880,8 @@ def create_generic(**kwargs):
                 count=count,
             )
 
+
+        count = working_drawer_labels.add_actions(part, count=count)
 
         # Keep this immediately before parts.append: web.yaml must see the
         # output of every preceding Roboclick action and must itself run last.
