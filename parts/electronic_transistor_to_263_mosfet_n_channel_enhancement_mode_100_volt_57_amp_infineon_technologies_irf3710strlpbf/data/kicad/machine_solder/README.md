@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_100_volt_57_amp_infineon_technologies_irf3710strlpbf](electronic_transistor_to_263_mosfet_n_channel_enhancement_mode_100_volt_57_amp_infineon_technologies_irf3710strlpbf.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:TO-263-3_TabPin2`. [License](../LICENSE.md).

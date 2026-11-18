@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_200_volt_18_amp_infineon_technologies_irf640npbf](electronic_transistor_to_220ab_mosfet_n_channel_enhancement_mode_200_volt_18_amp_infineon_technologies_irf640npbf.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-220-3_Vertical`. [License](../LICENSE.md).

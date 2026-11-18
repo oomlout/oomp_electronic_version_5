@@ -1,0 +1,88 @@
+format_version: 1
+ledger_id: JLC_C2488
+status: researched
+family: diode
+part_id: electronic_diode_bridge_rectifier_mbs_mdd_microdiode_semiconductor_mb10s_50mil
+exact_identity: true
+package: MBS
+pin_count: 4
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: MDD(Microdiode Semiconductor)
+  manufacturer_part_number: MB10S-50MIL
+  lcsc_part_number: C2488
+  lcsc_decision: Created an exact MDD MB10S-50MIL bridge-rectifier identity because
+    no existing OOMP bridge entry matches its maker, MPN and MBS package. Its live
+    JLC Basic ratings are 1 A rectified current, 1 kV reverse voltage, 35 A surge,
+    1.1 V at 400 mA forward voltage and 5 uA at 1 kV leakage. Pin mapping and mechanical
+    drawing remain for the full pass.
+  product_url: https://jlcpcb.com/partdetail/2865-MB10S50MIL/C2488
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707626420436992-C2488.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/2865-MB10S50MIL/C2488
+  webpage_capture: parts_source/electronic_diode_bridge_rectifier_mbs_mdd_microdiode_semiconductor_mb10s_50mil/web_page_distributor_jlc.txt
+  evidence_notes:
+  - Live JLC page verified Basic class, MDD(Microdiode Semiconductor) MB10S-50MIL,
+    MBS package, single-phase bridge rectifier, 1 A, 1 kV, 35 A surge, 1.1 V at 400
+    mA and 5 uA at 1 kV. The actual JLC datasheet Download link was clicked in the
+    browser but no local PDF file appeared; full pass must obtain and validate a datasheet
+    through a browser page.
+  - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C2488.json.
+  - 'Full pass 2026-10-02: live page reconfirmed (C2488, MDD (Microdiode Semiconductor),
+    MB10S-50MIL, Basic, In Stock 674,978). New family member (MBS bridge rectifier):
+    browser-downloaded the MDD MB1S-MB10S series specification (3 pages, Rev 2024A2)
+    from the JLC page and imported it as this part and the MBS bridge family anchor
+    (sha256 3d5399a6...). Ratings table page 1, MB10S column: VRRM 1000 V (VRMS 700
+    V, VDC 1000 V), I(AV) 1.0 A at TC = 115 C, IFSM 35 A, VF 1.1 V per leg at 1.0
+    A, IR 5.0 uA at 25 C / 40 uA at 125 C, CJ 13 pF per leg, RthJA/RthJC 85/25 C/W,
+    Tj/Tstg -55 to +150 C. Mechanical data page 1: JEDEC MBS, polarity symbol on body;
+    drawing pins (2)(1) top and (3)(4) bottom, + right / - left: physical pinout 1
+    = +, 2 = ~, 3 = -, 4 = ~, matching Device:D_Bridge_+A-A pad-for-pad with Diode_Bridge_Vishay_MBLS.'
+jlc_selection:
+  verified_on: '2026-10-02'
+  official_url: https://jlcpcb.com/partdetail/2865-MB10S50MIL/C2488
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 762427
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: Created an exact MDD MB10S-50MIL bridge-rectifier identity
+    because no existing OOMP bridge entry matches its maker, MPN and MBS package.
+    Its live JLC Basic ratings are 1 A rectified current, 1 kV reverse voltage, 35
+    A surge, 1.1 V at 400 mA forward voltage and 5 uA at 1 kV leakage. Pin mapping
+    and mechanical drawing remain for the full pass.
+  ratings:
+    Voltage - Forward(Vf@If): 1.1V@400mA
+    Type: Single-Phase Rectifier
+    Non-Repetitive Peak Forward Surge Current: 35A
+    Voltage - DC Reverse(Vr): 1kV
+    Operating Junction Temperature Range: -55℃~+150℃
+    Current - Rectified: 1A
+    Reverse Leakage Current (Ir): 5uA@1kV
+  datasheet_pages:
+    document: MDD MB1S-MB10S MBS series specification, Rev 2024A2 (C2488 provenance,
+      family anchor)
+    maximum_ratings:
+    - 1
+    electrical_characteristics:
+    - 1
+    mechanical_data:
+    - 1
+    pinout:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Diode MB10S-50MIL MBS with
+    the four pins labelled + (1) and ~ (2) on the left, ~ (4) and - (3) on the right,
+    matching the datasheet pinout (1 = +, 2 = ~, 3 = -, 4 = ~). working_svg_dimensioned.png:
+    MBS outline per the KiCad Diode_Bridge_Vishay_MBLS master geometry (body ~4.5-4.9
+    x 2.6 mm recorded in dimensions_mm per the mechanical data). data/kicad manifest
+    complete with Device:D_Bridge_+A-A symbol and Diode_SMD:Diode_Bridge_Vishay_MBLS
+    machine footprint (no HandSolder master for this bridge footprint; the part declares
+    hand_solder intentionally empty per the 2-asset rule). README.md: MB10S-50MIL
+    part number, LCSC/JLC C2488 links, 4-pin table (+/~ -/~), datasheet link resolving
+    to data/datasheet.pdf (the MDD MBS series specification, family anchor). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'

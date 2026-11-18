@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_263_mosfet_p_channel_enhancement_mode_200_volt_6_8_amp_vishay_intertech_irf9640strlpbf](electronic_transistor_to_263_mosfet_p_channel_enhancement_mode_200_volt_6_8_amp_vishay_intertech_irf9640strlpbf.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:TO-263-3_TabPin2`. [License](../LICENSE.md).

@@ -1,0 +1,277 @@
+def main(**kwargs):
+    options = kwargs.get("options", [])
+
+    # Standard indicator LEDs. Empty values retain the generic legacy entries.
+    sizes = ["0201", "0402", "0603", "0805", "1206", "3_mm", "5_mm", "10_mm"]
+    colors = ["", "blue", "green", "red", "white", "yellow"]
+    lens_styles = ["", "clear", "tint"]
+    for size in sizes:
+        for color in colors:
+            for lens_style in lens_styles:
+                option = {}
+                option["taxonomy_2"] = "led"
+                option["taxonomy_3"] = size
+                option["taxonomy_4"] = color
+                option["taxonomy_5"] = lens_style
+                options.append(option)
+
+    # First through-hole IR emitter LEDs: Everlight HIR/IR series from the
+    # JLC house-parts queue.  The wavelength rides in the colour token so
+    # the 850 nm high-radiance and 940 nm parts stay distinct.
+    options.append({
+        "taxonomy_2": "led", "taxonomy_3": "3_mm", "taxonomy_4": "infrared_850nm",
+        "taxonomy_5": "clear", "taxonomy_14": "everlight", "taxonomy_15": "hir204c",
+        "name_short": "IR Emitter LED HIR204C (3mm, 850nm)",
+    })
+    options.append({
+        "taxonomy_2": "led", "taxonomy_3": "3_mm", "taxonomy_4": "infrared_940nm",
+        "taxonomy_5": "clear", "taxonomy_14": "everlight", "taxonomy_15": "ir204_a_l",
+        "name_short": "IR Emitter LED IR204-A-L (3mm, 940nm)",
+    })
+    options.append({
+        "taxonomy_2": "led", "taxonomy_3": "5_mm", "taxonomy_4": "infrared_850nm",
+        "taxonomy_5": "clear", "taxonomy_14": "everlight", "taxonomy_15": "hir333c_a",
+        "name_short": "IR Emitter LED HIR333C-A (5mm, 850nm)",
+    })
+    options.append({
+        "taxonomy_2": "led", "taxonomy_3": "5_mm", "taxonomy_4": "infrared_940nm",
+        "taxonomy_5": "clear", "taxonomy_14": "everlight", "taxonomy_15": "ir333c_a",
+        "name_short": "IR Emitter LED IR333C-A (5mm, 940nm)",
+    })
+
+    # Addressable RGB LEDs from the old component set.
+    addressable_leds = [
+        {
+            "size": "1010",
+            "color": "rgb",
+            "controller": "ws2812b",
+            "manufacturer": "xinglight",
+            "part_number": "1010rgbc",
+        },
+        {
+            "size": "5050",
+            "color": "rgb",
+            "controller": "ws2812b",
+            "manufacturer": "worldsemi",
+            "part_number": "ws2812b_b_w",
+        },
+    ]
+    for addressable_led in addressable_leds:
+        option = {}
+        option["taxonomy_2"] = "led"
+        option["taxonomy_3"] = addressable_led["size"]
+        option["taxonomy_4"] = addressable_led["color"]
+        option["taxonomy_5"] = addressable_led["controller"]
+        option["taxonomy_6"] = addressable_led["manufacturer"]
+        option["taxonomy_7"] = addressable_led["part_number"]
+        options.append(option)
+
+    bus_pirate_leds = [
+        {
+            "size": "3535",
+            "color": "rgb",
+            "controller": "sk6812",
+            "manufacturer": "opsco_optoelectronics",
+            "part_number": "sk6812mini_e",
+        },
+        {
+            "size": "4020_side_view",
+            "color": "rgb",
+            "controller": "sk6812",
+            "manufacturer": "opsco_optoelectronics",
+            "part_number": "sk6812side_a",
+        },
+    ]
+    for bus_pirate_led in bus_pirate_leds:
+        option = {}
+        option["taxonomy_2"] = "led"
+        option["taxonomy_3"] = bus_pirate_led["size"]
+        option["taxonomy_4"] = bus_pirate_led["color"]
+        option["taxonomy_5"] = bus_pirate_led["controller"]
+        option["taxonomy_6"] = bus_pirate_led["manufacturer"]
+        option["taxonomy_7"] = bus_pirate_led["part_number"]
+        options.append(option)
+
+    # SparkFun bottom-view 1205 RGB indicator (no addressable controller);
+    # "1205" also needs to be in the matcher's PACKAGE_SIZES for the proposal.
+    option = {}
+    option["taxonomy_2"] = "led"
+    option["taxonomy_3"] = "1205"
+    option["taxonomy_4"] = "rgb"
+    options.append(option)
+
+    # SparkFun's Eagle library also has a board-facing 1206 green indicator
+    # footprint.  Keep this as a single explicit variant: the bottom-view
+    # pad arrangement is not interchangeable with the ordinary 1206 LED
+    # family, and no speculative red/blue variants are being populated.
+    options.append({
+        "taxonomy_2": "led",
+        "taxonomy_3": "1206_bottom",
+        "taxonomy_4": "green",
+        "name_short": "Bottom-view Green LED 1206",
+    })
+
+    # Exact discrete indicator LED purchasing identities.  Size, color and
+    # lens style keep the family axes; the maker and MPN make the row exact.
+    exact_indicator_leds = [
+        {
+            "size": "0603",
+            "color": "red",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_r",
+        },
+        {
+            "size": "0603",
+            "color": "white",
+            "lens_style": "tint",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_w",
+        },
+        {
+            "size": "0805",
+            "color": "yellow",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_y",
+        },
+        {
+            "size": "0805",
+            "color": "green",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_g",
+        },
+        {
+            "size": "0805",
+            "color": "white",
+            "lens_style": "tint",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_w",
+        },
+        {
+            "size": "0805",
+            "color": "red",
+            "lens_style": "clear",
+            "manufacturer": "foshan_nationstar_optoelectronics",
+            "part_number": "ncd0805r1",
+        },
+        {
+            "size": "0603",
+            "color": "yellow",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_y",
+        },
+        {
+            "size": "0603",
+            "color": "blue",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_b",
+        },
+        {
+            "size": "0603",
+            "color": "yellow_green",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0603_yg",
+        },
+        {
+            "size": "0805",
+            "color": "yellow_green",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_yg",
+        },
+        {
+            "size": "0805",
+            "color": "blue",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_b",
+        },
+        {
+            "size": "0805",
+            "color": "red",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_0805_r",
+        },
+        {
+            "size": "1206",
+            "color": "yellow",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "kt_1206_y",
+        },
+        {
+            "size": "3528",
+            "color": "red",
+            "lens_style": "clear",
+            "manufacturer": "hubei_kento_elec",
+            "part_number": "3528_r",
+        },
+    ]
+    for indicator_led in exact_indicator_leds:
+        option = {}
+        option["taxonomy_2"] = "led"
+        option["taxonomy_3"] = indicator_led["size"]
+        option["taxonomy_4"] = indicator_led["color"]
+        option["taxonomy_5"] = indicator_led["lens_style"]
+        option["taxonomy_6"] = indicator_led["manufacturer"]
+        option["taxonomy_7"] = indicator_led["part_number"]
+        options.append(option)
+
+    # LED filaments are intentionally disabled. Keep this simple declaration
+    # commented so the family can be restored later without reconstructing it.
+    # colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]
+    # lengths = [
+    #     "38_mm_length",
+    #     "60_mm_length",
+    #     "80_mm_length",
+    #     "95_mm_length",
+    #     "130_mm_length",
+    #     "145_mm_length",
+    #     "185_mm_length",
+    #     "260_mm_length",
+    #     "300_mm_length",
+    # ]
+    # for color in colors:
+    #     for length in lengths:
+    #         option = {}
+    #         option["taxonomy_2"] = "led"
+    #         option["taxonomy_3"] = "filament_3_volt"
+    #         option["taxonomy_4"] = color
+    #         option["taxonomy_5"] = length
+    #         options.append(option)
+
+    # LED strips are intentionally disabled. The editable arrays and nested
+    # loops remain here in comments so this family can be restored later.
+    # voltages = [5, 12, 24]
+    # widths = [3, 5, 8]
+    # colors = ["blue", "green", "pink", "red", "warm_white", "yellow"]
+    # lengths = [
+    #     "500_mm_length",
+    #     "1000_mm_length",
+    #     "2000_mm_length",
+    #     "3000_mm_length",
+    #     "5000_mm_length",
+    # ]
+    # led_densities = ["", "320_leds_per_meter"]
+    # for voltage in voltages:
+    #     for width in widths:
+    #         for color in colors:
+    #             for length in lengths:
+    #                 for led_density in led_densities:
+    #                     option = {}
+    #                     option["taxonomy_2"] = "led"
+    #                     option["taxonomy_3"] = f"strip_{voltage}_volt_{width}_mm_width"
+    #                     option["taxonomy_4"] = color
+    #                     option["taxonomy_5"] = length
+    #                     option["taxonomy_6"] = led_density
+    #                     options.append(option)
+
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,13 @@
+# Electronic / IC / Microcontroller / 8 Bit Avr 16 Kb Flash / Tqfp 44 / Microchip
+
+[Up one level](../README.md)
+This category contains 1 parts in total.
+
+
+## Parts
+
+- [IC ATMEGA16A-AU TQFP 44](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_microcontroller_8_bit_avr_16_kb_flash_tqfp_44_microchip_atmega16a_au) — `electronic_ic_microcontroller_8_bit_avr_16_kb_flash_tqfp_44_microchip_atmega16a_au`
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

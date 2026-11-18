@@ -1,0 +1,189 @@
+# Header crimp contact 2.54 mm socket 22-30 AWG tin (Harwin M20-1180046)
+
+`electronic_connector_header_2_54_mm_pitch_crimp_1_pin_socket_22_to_30_awg_tin_harwin_m20_1180046`
+
+Header crimp contact 2.54 mm socket 22-30 AWG tin (Harwin M20-1180046) is an OOMP electronic connector definition. It uses the header package or form factor. Its nominal drawing size is 11.7 &#x00D7; 2.3 mm. The definition includes 1 documented pin.
+
+![Header crimp contact 2.54 mm socket 22-30 AWG tin (Harwin M20-1180046) top view](data/working_svg_top.svg)
+
+
+Dimensioned envelope only: contact spring, crimp wings and housing cavities are not detailed. Not a PCB footprint or crimp-tool drawing.
+
+
+
+## At a glance
+
+| Detail | Value |
+| --- | --- |
+| OOMP ID | `electronic_connector_header_2_54_mm_pitch_crimp_1_pin_socket_22_to_30_awg_tin_harwin_m20_1180046` |
+| Type | Connector |
+| Package / style | header |
+| Nominal size | 11.7 &#x00D7; 2.3 mm |
+| Documented pins | 1 |
+
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+| 1 | `electronic` |
+| 2 | `connector` |
+| 3 | `header` |
+| 4 | `2_54_mm_pitch` |
+| 5 | `crimp` |
+| 6 | `1_pin` |
+| 7 | `socket` |
+| 8 | `22_to_30_awg` |
+| 9 | `tin` |
+| 14 | `harwin` |
+| 15 | `m20_1180046` |
+
+
+
+## 3D reference model
+
+![Header crimp contact 2.54 mm socket 22-30 AWG tin (Harwin M20-1180046) 3D reference render](data/model_3d_render.png)
+
+[Download STEP](data/model_3d.step) · [Model source and limitations](data/model_3d_source.yaml)
+
+OOMP model based on the manufacturer drawing, with nominal outer dimensions and simplified internal geometry. Use it for layout and illustration.
+
+
+
+## Connector details
+
+| Detail | Value |
+| --- | --- |
+| Catalogue Length | 11.70 mm, with a separate 12.04 mm reference span in the drawing |
+| Component Role | Loose female crimp contact with one conductive terminal |
+| Contact Finish | 100% tin over nickel |
+| Contact Material | Brass |
+| Mating Pin | 0.64 mm square |
+| Packaging | Loose |
+| Pitch | 2.54 mm (housing pitch) |
+| Series | Harwin M20 |
+| Termination Finish | 100% tin over nickel |
+| Wire Size | 22-30 AWG |
+
+
+
+
+## Compatible components
+
+
+- **Fits housing:** [Header housing 2.54 mm 2-position black (Harwin M20-1060200)](../electronic_connector_header_2_54_mm_pitch_housing_2_pin_black_harwin_m20_1060200/README.md).
+  Order 2 contacts separately to fill this housing. [Manufacturer evidence](https://www.harwin.com/products/M20-1060200).
+
+- **Fits housing:** [Header housing 2.54 mm 1-position black (Harwin M20-1060100)](../electronic_connector_header_2_54_mm_pitch_housing_1_pin_black_harwin_m20_1060100/README.md).
+  Order 1 contacts separately to fill this housing. [Manufacturer evidence](https://www.harwin.com/products/M20-1060100).
+
+- **Fits housing:** [Header housing 2.54 mm 3-position black (Harwin M20-1060300)](../electronic_connector_header_2_54_mm_pitch_housing_3_pin_black_harwin_m20_1060300/README.md).
+  Order 3 contacts separately to fill this housing. [Manufacturer evidence](https://www.harwin.com/products/M20-1060300).
+
+- **Fits housing:** [Header housing 2.54 mm 4-position black (Harwin M20-1060400)](../electronic_connector_header_2_54_mm_pitch_housing_4_pin_black_harwin_m20_1060400/README.md).
+  Order 4 contacts separately to fill this housing. [Manufacturer evidence](https://www.harwin.com/products/M20-1060400).
+
+- **Fits housing:** [Header housing 2.54 mm 5-position black (Harwin M20-1060500)](../electronic_connector_header_2_54_mm_pitch_housing_5_pin_black_harwin_m20_1060500/README.md).
+  Order 5 contacts separately to fill this housing. [Manufacturer evidence](https://www.harwin.com/products/M20-1060500).
+
+- **Fits housing:** [Header housing 2.54 mm 6-position black (Harwin M20-1060600)](../electronic_connector_header_2_54_mm_pitch_housing_6_pin_black_harwin_m20_1060600/README.md).
+  Order 6 contacts separately to fill this housing. [Manufacturer evidence](https://www.harwin.com/products/M20-1060600).
+
+- **Fits housing:** [Header housing 2.54 mm 8-position black (Harwin M20-1060800)](../electronic_connector_header_2_54_mm_pitch_housing_8_pin_black_harwin_m20_1060800/README.md).
+  Order 8 contacts separately to fill this housing. [Manufacturer evidence](https://www.harwin.com/products/M20-1060800).
+
+- **Fits housing:** [Header housing 2.54 mm 10-position black (Harwin M20-1061000)](../electronic_connector_header_2_54_mm_pitch_housing_10_pin_black_harwin_m20_1061000/README.md).
+  Order 10 contacts separately to fill this housing. [Manufacturer evidence](https://www.harwin.com/products/M20-1061000).
+
+
+
+
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+| Height | 2.6 mm |
+| Length | 11.7 mm |
+| Width | 2.3 mm |
+
+
+
+
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+| Manufacturer part number | `M20-1180046` |
+
+
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | contact | passive |
+
+
+
+
+## Datasheet
+
+[View the datasheet](data/datasheet.pdf)
+
+
+
+
+
+## Used in projects
+
+[Browse confirmed project usage](https://oomlout.github.io/oomp_electronic_project_version_5/usage/index.html#electronic_connector_header_2_54_mm_pitch_crimp_1_pin_socket_22_to_30_awg_tin_harwin_m20_1180046)
+
+
+## Files
+
+
+
+[KiCad applicability: cable component, no PCB footprint](data/kicad/README.md) · [Applicability record](data/kicad/manifest.yaml)
+
+
+
+![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
+![Outline](data/working_svg_outline_300.png)
+
+![Part ID](data/working_svg_part_id_300.png)
+
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
+
+![Square summary](data/working_svg_square_300.png)
+
+![Dimensions](data/working_svg_dimensioned_300.png)
+
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+![Top view](data/working_svg_top_300.png)
+
+![Bottom view](data/working_svg_bottom_300.png)
+
+![Side view](data/working_svg_side_300.png)
+
+
+
+
+[View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_connector_header_2_54_mm_pitch_crimp_1_pin_socket_22_to_30_awg_tin_harwin_m20_1180046)
+
+
+
+[Browse this category](../../navigation/electronic/connector/header/2_54_mm_pitch/crimp/1_pin/socket/22_to_30_awg/tin/harwin/README.md)
+
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

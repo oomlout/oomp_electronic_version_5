@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_sot_23_bipolar_pnp_40_volt_200_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt3906_2a_range_100_300](electronic_transistor_sot_23_bipolar_pnp_40_volt_200_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt3906_2a_range_100_300.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23`. [License](../LICENSE.md).

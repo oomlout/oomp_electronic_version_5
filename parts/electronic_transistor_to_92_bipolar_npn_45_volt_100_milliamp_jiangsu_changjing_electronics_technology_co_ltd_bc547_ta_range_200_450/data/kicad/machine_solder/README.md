@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_92_bipolar_npn_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_bc547_ta_range_200_450](electronic_transistor_to_92_bipolar_npn_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_bc547_ta_range_200_450.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-92_Inline`. [License](../LICENSE.md).

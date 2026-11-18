@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_92_bipolar_pnp_150_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_2n5401_ta_range_150_200](electronic_transistor_to_92_bipolar_pnp_150_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_2n5401_ta_range_150_200.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-92_Inline`. [License](../LICENSE.md).

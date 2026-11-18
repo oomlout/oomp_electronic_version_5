@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_diode_switching_dual_common_cathode_sot_23_jiangsu_changjing_electronics_technology_co_ltd_bav70](electronic_diode_switching_dual_common_cathode_sot_23_jiangsu_changjing_electronics_technology_co_ltd_bav70.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23`. [License](../LICENSE.md).

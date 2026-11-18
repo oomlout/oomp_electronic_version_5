@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_92_bipolar_npn_40_volt_200_milliamp_jiangsu_changjing_electronics_technology_co_ltd_2n3904_ta_range_200_300](electronic_transistor_to_92_bipolar_npn_40_volt_200_milliamp_jiangsu_changjing_electronics_technology_co_ltd_2n3904_ta_range_200_300.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-92_Inline`. [License](../LICENSE.md).

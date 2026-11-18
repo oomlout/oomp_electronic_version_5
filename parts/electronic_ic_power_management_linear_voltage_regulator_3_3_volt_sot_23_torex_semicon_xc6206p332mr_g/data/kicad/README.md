@@ -1,0 +1,13 @@
+# KiCad assets: electronic_ic_power_management_linear_voltage_regulator_3_3_volt_sot_23_torex_semicon_xc6206p332mr_g
+
+- [Symbol](electronic_ic_power_management_linear_voltage_regulator_3_3_volt_sot_23_torex_semicon_xc6206p332mr_g.kicad_sym) — `Regulator_Linear:XC6206PxxxMR`
+- [Machine Solder](machine_solder/electronic_ic_power_management_linear_voltage_regulator_3_3_volt_sot_23_torex_semicon_xc6206p332mr_g.kicad_mod) — `Package_TO_SOT_SMD:SOT-23`
+- [Hand Solder](hand_solder/electronic_ic_power_management_linear_voltage_regulator_3_3_volt_sot_23_torex_semicon_xc6206p332mr_g.kicad_mod) — `Package_TO_SOT_SMD:SOT-23_Handsoldering`
+
+## Review
+
+All three assets are available.
+
+Silkscreen code: `6I0T3`. Source provenance: [manifest](manifest.yaml).
+
+Derived from the [official KiCad libraries](https://www.kicad.org/libraries/license/).

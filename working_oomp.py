@@ -1,0 +1,812 @@
+import oomp
+import oomp_helper
+import copy
+import oomlout_roboclick
+import os
+import re
+import yaml
+from functools import lru_cache
+
+import working_oomp_metadata
+import working_drawer_labels
+from component_taxonomy import package_token, validate_ic_taxonomy
+
+
+DATA_DIRECTORY = "data"
+WEB_MANIFEST_CONFIG_FILE = "config_web_manifest.yaml"
+
+
+@lru_cache(maxsize=1)
+def web_manifest_output_filename():
+    """Read the configured output name once while assembling part actions."""
+    config_path = os.path.join(os.path.dirname(__file__), WEB_MANIFEST_CONFIG_FILE)
+    with open(config_path, "r", encoding="utf-8") as config_input:
+        config = yaml.safe_load(config_input) or {}
+    return str(config.get("output_filename", "web.yaml"))
+
+
+def as_boolean(value):
+    if isinstance(value, bool):
+        return value
+    return str(value).strip().lower() in ["1", "true", "yes", "on"]
+
+
+def resolve_datasheet_copy_source(part, file_source):
+    """Point a part's datasheet copy at the shared PDF when deduplicated.
+
+    Parts whose datasheet is byte-identical to another part's keep a single
+    copy under parts_source and name its folder in ``oomp_datasheet_common_with``.
+    """
+    normalized = str(file_source).replace("\\", "/")
+    if normalized != f"parts_source/{part.get('name', '')}/datasheet.pdf":
+        return file_source
+    if os.path.isfile(os.path.join(os.path.dirname(__file__), normalized)):
+        return file_source
+    common_with = str(part.get("oomp_datasheet_common_with", "")).strip()
+    if common_with == "":
+        return file_source
+    shared_source = f"parts_source/{common_with}/datasheet.pdf"
+    if os.path.isfile(os.path.join(os.path.dirname(__file__), shared_source)):
+        return shared_source
+    return file_source
+
+
+def add_part_page_details(part):
+    """Prepare small, explicit arrays used by the part Markdown template."""
+    taxonomy = []
+    for taxonomy_number in range(1, 16):
+        taxonomy_key = f"taxonomy_{taxonomy_number}"
+        taxonomy_value = str(part.get(taxonomy_key, "")).strip()
+        if taxonomy_value != "":
+            taxonomy.append({"level": taxonomy_number, "value": taxonomy_value})
+
+    pins = []
+    pins_dictionary = part.get("pins", {})
+    if isinstance(pins_dictionary, dict):
+        used_pin_keys = []
+        for pin_number in range(0, 100):
+            pin_key = f"pin_{pin_number}"
+            if pin_key in pins_dictionary:
+                pin = pins_dictionary[pin_key]
+                pins.append(
+                    {
+                        "number": str(pin.get("number", pin_number)),
+                        "name": str(pin.get("name", f"pin {pin_number}")),
+                        "type": str(pin.get("type", "")),
+                    }
+                )
+                used_pin_keys.append(pin_key)
+        for pin_key in pins_dictionary:
+            if pin_key not in used_pin_keys:
+                pin = pins_dictionary[pin_key]
+                pins.append(
+                    {
+                        "number": str(pin.get("number", "")),
+                        "name": str(pin.get("name", pin_key)),
+                        "type": str(pin.get("type", "")),
+                    }
+                )
+
+    identifiers = []
+    identifier_fields = [
+        ["Manufacturer part number", "part_number_manufacturer"],
+        ["Generic part number", "part_number_generic"],
+        ["MD5 alpha", "md5_6_alpha_upper"],
+    ]
+    for identifier_field in identifier_fields:
+        identifier_value = str(part.get(identifier_field[1], "")).strip()
+        if identifier_value != "":
+            identifiers.append({"title": identifier_field[0], "value": identifier_value, "url": ""})
+    distributors = part.get("distributors", [])
+    if isinstance(distributors, list):
+        for distributor in distributors:
+            if not isinstance(distributor, dict):
+                continue
+            identifiers.append(
+                {
+                    "title": distributor.get("title", "Distributor"),
+                    "value": distributor.get("part_number", ""),
+                    "url": distributor.get("url", ""),
+                }
+            )
+
+    diagrams = [
+        {"title": "Assembly", "svg": f"{DATA_DIRECTORY}/working_svg_assembly.svg", "png": f"{DATA_DIRECTORY}/working_svg_assembly.png"},
+        {"title": "Assembly pinout", "svg": f"{DATA_DIRECTORY}/working_svg_assembly_pins.svg", "png": f"{DATA_DIRECTORY}/working_svg_assembly_pins.png"},
+        {"title": "Outline", "svg": f"{DATA_DIRECTORY}/working_svg_outline.svg", "png": f"{DATA_DIRECTORY}/working_svg_outline.png"},
+        {"title": "Part ID", "svg": f"{DATA_DIRECTORY}/working_svg_part_id.svg", "png": f"{DATA_DIRECTORY}/working_svg_part_id.png"},
+        {"title": "MD5 alpha", "svg": f"{DATA_DIRECTORY}/working_svg_md5_6_alpha.svg", "png": f"{DATA_DIRECTORY}/working_svg_md5_6_alpha.png"},
+        {"title": "BIP 39 words", "svg": f"{DATA_DIRECTORY}/working_svg_bip_39_3_word.svg", "png": f"{DATA_DIRECTORY}/working_svg_bip_39_3_word.png"},
+        {"title": "Square summary", "svg": f"{DATA_DIRECTORY}/working_svg_square.svg", "png": f"{DATA_DIRECTORY}/working_svg_square.png"},
+        {"title": "Square schematic", "svg": f"{DATA_DIRECTORY}/working_svg_square_schematic.svg", "png": f"{DATA_DIRECTORY}/working_svg_square_schematic.png"},
+        {"title": "Dimensions", "svg": f"{DATA_DIRECTORY}/working_svg_dimensioned.svg", "png": f"{DATA_DIRECTORY}/working_svg_dimensioned.png"},
+        {"title": "Dimensions with labels", "svg": f"{DATA_DIRECTORY}/working_svg_dimensioned_titles.svg", "png": f"{DATA_DIRECTORY}/working_svg_dimensioned_titles.png"},
+    ]
+    is_connector = part.get("taxonomy_2", "") == "connector"
+    if is_connector:
+        connector_view_diagrams = [
+            {"title": "Top view", "svg": f"{DATA_DIRECTORY}/working_svg_top.svg", "png": f"{DATA_DIRECTORY}/working_svg_top.png"},
+            {"title": "Bottom view", "svg": f"{DATA_DIRECTORY}/working_svg_bottom.svg", "png": f"{DATA_DIRECTORY}/working_svg_bottom.png"},
+            {"title": "Side view", "svg": f"{DATA_DIRECTORY}/working_svg_side.svg", "png": f"{DATA_DIRECTORY}/working_svg_side.png"},
+        ]
+        for connector_view_diagram in connector_view_diagrams:
+            diagrams.append(connector_view_diagram)
+
+    for diagram in diagrams:
+        png_filename = diagram.get("png", "")
+        if png_filename != "":
+            diagram["preview"] = png_filename.replace(".png", "_300.png")
+        else:
+            diagram["preview"] = diagram["svg"]
+
+    if part.get('pcb_mountable') is False:
+        diagrams = [diagram for diagram in diagrams if 'schematic' not in diagram['svg']]
+
+    file_previews = [
+        {"title": "Pinout drawing", "preview": f"{DATA_DIRECTORY}/working_svg_square_pins_300.png"},
+    ]
+    for diagram in diagrams:
+        preview_filename = diagram.get("preview", "")
+        if preview_filename.endswith("_300.png"):
+            file_previews.append(
+                {
+                    "title": diagram["title"],
+                    "preview": preview_filename,
+                }
+            )
+
+    component_type = str(part.get("taxonomy_2", "component")).replace("_", " ")
+    package_name = package_token(part).replace("_", " ")
+    if part.get("taxonomy_2", "") == "diode":
+        package_name = str(part.get("taxonomy_4", "")).replace("_", " ")
+    dimensions = part.get("dimensions_mm", {})
+    dimension_text = ""
+    if isinstance(dimensions, dict):
+        length = dimensions.get("length", "")
+        width = dimensions.get("width", "")
+        if length != "" and width != "":
+            dimension_text = f"{length} × {width} mm"
+
+    taxonomy_family = str(part.get("taxonomy_1", "electronic")).replace("_", " ")
+    summary_sentences = [
+        f"{part.get('name_short', part.get('name_proper', 'This part'))} is an OOMP {taxonomy_family} {component_type} definition."
+    ]
+    if package_name != "":
+        summary_sentences.append(f"It uses the {package_name} package or form factor.")
+    if dimension_text != "":
+        summary_sentences.append(f"Its nominal drawing size is {dimension_text}.")
+    if len(pins) > 0:
+        summary_sentences.append(f"The definition includes {len(pins)} documented {'pin' if len(pins) == 1 else 'pins'}.")
+
+    quick_facts = [
+        {"title": "OOMP ID", "value": part.get("name", "")},
+        {"title": "Type", "value": component_type.title()},
+    ]
+    if package_name != "":
+        quick_facts.append({"title": "Package / style", "value": package_name})
+    if dimension_text != "":
+        quick_facts.append({"title": "Nominal size", "value": dimension_text})
+    if len(pins) > 0:
+        quick_facts.append({"title": "Documented pins", "value": len(pins)})
+
+    part_name = part.get("name", "")
+    has_datasheet = os.path.isfile(
+        os.path.join(os.path.dirname(__file__), "parts", part_name, DATA_DIRECTORY, "datasheet.pdf")
+    )
+    file_copies = part.get("file_copy", [])
+    if isinstance(file_copies, list):
+        for file_copy in file_copies:
+            if not isinstance(file_copy, dict):
+                continue
+            file_destination = str(file_copy.get("file_destination", "")).replace("\\", "/")
+            if file_destination.lower().endswith("datasheet.pdf"):
+                source_file = resolve_datasheet_copy_source(part, str(file_copy.get("file_source", "")))
+                if not os.path.isabs(source_file):
+                    source_file = os.path.join(os.path.dirname(__file__), source_file)
+                if os.path.isfile(source_file):
+                    has_datasheet = True
+
+    main_image = {
+        "title": "Pinout",
+        "svg": f"{DATA_DIRECTORY}/working_svg_square_pins.svg",
+        "png": f"{DATA_DIRECTORY}/working_svg_square_pins.png",
+        "preview": f"{DATA_DIRECTORY}/working_svg_square_pins_300.png",
+    }
+    if is_connector:
+        main_image = {
+            "title": "Top view",
+            "svg": f"{DATA_DIRECTORY}/working_svg_top.svg",
+            "png": f"{DATA_DIRECTORY}/working_svg_top.png",
+            "preview": f"{DATA_DIRECTORY}/working_svg_top_300.png",
+        }
+    if part.get("taxonomy_2", "") == "mounting_hole":
+        main_image = {
+            "title": "Mounting hole",
+            "svg": f"{DATA_DIRECTORY}/working_svg_outline.svg",
+            "png": f"{DATA_DIRECTORY}/working_svg_outline.png",
+            "preview": f"{DATA_DIRECTORY}/working_svg_outline_300.png",
+        }
+
+    part["part_page"] = {
+        "oomp_id": part_name,
+        "taxonomy": taxonomy,
+        "pins": pins,
+        "identifiers": identifiers,
+        "diagrams": diagrams,
+        "file_previews": file_previews,
+        "main_image": main_image,
+        "summary": " ".join(summary_sentences),
+        "quick_facts": quick_facts,
+        "has_datasheet": has_datasheet,
+        "repository_url": f"https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/{part_name}",
+        "navigation_link": working_oomp_metadata.navigation_link_for_part(part),
+        "datasheet_path": f"{DATA_DIRECTORY}/datasheet.pdf",
+    }
+    return part
+
+
+def add_part_build_actions(part, count):
+    """Add the deterministic SVG, PNG-preview, and README preparation block."""
+    library_actions = [
+        {
+            "command": "run_python",
+            "file_python": "kicad_agents/kicad_library_agent.py",
+            "file_output": f"{DATA_DIRECTORY}/kicad/manifest.yaml",
+            "description": "Copy official KiCad masters into per-part OOMP symbols and verified soldering footprint variants.",
+            "timeout": "600",
+        }
+    ]
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": library_actions,
+        "description": "Install KiCad master data for this part.",
+        "file_test": f"{DATA_DIRECTORY}/kicad/manifest.yaml",
+        "retries_until_complete": 0,
+    }
+    file_copies = part.get("file_copy", [])
+    if len(file_copies) > 0:
+        copy_actions = []
+        last_copy_destination = ""
+        for file_copy in file_copies:
+            if not isinstance(file_copy, dict):
+                continue
+            file_source = str(file_copy.get("file_source", "")).strip()
+            if file_source == "":
+                continue
+            file_source = resolve_datasheet_copy_source(part, file_source)
+            if not os.path.isabs(file_source):
+                file_source = os.path.join(os.path.dirname(__file__), file_source)
+            if not os.path.isfile(file_source):
+                print(
+                    f"Skipping missing file_copy source for {part.get('name', '<unknown>')}: {file_source}"
+                )
+                continue
+            file_destination = os.path.join(
+                DATA_DIRECTORY,
+                os.path.basename(str(file_copy.get("file_destination", ""))),
+            ).replace("\\", "/")
+            copy_actions.append(
+                {
+                    "command": "file_copy",
+                    "file_source": file_source,
+                    "file_destination": file_destination,
+                    "exit_on_missing": True,
+                    "delete_before_copy": True,
+                }
+            )
+            last_copy_destination = file_destination
+        if len(copy_actions) > 0:
+            count += 1
+            part[f"oomlout_ai_roboclick_{count}"] = {
+                "actions": copy_actions,
+                "description": "Copy part-specific source files into the working data directory.",
+                # A selected component build should pick up regenerated reference models.
+                "file_test": "" if part.get("model_3d") else last_copy_destination,
+                "retries_until_complete": 0,
+            }
+
+    component_actions = [
+        {
+            "command": "run_python",
+            "file_python": "kicad_agents/component_svg_action.py",
+            "file_output": f"{DATA_DIRECTORY}/working_svg_assembly.svg",
+            "description": "Generate this component's standard SVG and PNG diagrams with working_svg.py.",
+            "part_id": part.get("name", ""),
+            "regenerate_pngs": as_boolean(part.get("regenerate_pngs", False)),
+            "timeout": "600",
+        }
+    ]
+    used_destinations = []
+    regenerate_pngs = as_boolean(part.get("regenerate_pngs", False))
+    main_image = part.get("part_page", {}).get("main_image", {})
+    main_png = main_image.get("png", "")
+    main_preview = main_image.get("preview", "")
+    if main_png != "" and main_preview != "":
+        component_actions.append(
+            {
+                "command": "image_resize",
+                "file_source": main_png,
+                "file_destination": main_preview,
+                "maximum_dimension": 300,
+                "allow_upscale": False,
+                "resample": "lanczos",
+                "regenerate_pngs": regenerate_pngs,
+            }
+        )
+        used_destinations.append(main_preview)
+
+    diagrams = list(part.get("part_page", {}).get("diagrams", []))
+    # The pinout is also offered in Files when a connector top view or a
+    # mounting-hole outline is the hero. Always generate that preview too.
+    diagrams.append({
+        "png": f"{DATA_DIRECTORY}/working_svg_square_pins.png",
+        "preview": f"{DATA_DIRECTORY}/working_svg_square_pins_300.png",
+    })
+    for diagram in diagrams:
+        png_filename = diagram.get("png", "")
+        preview_filename = diagram.get("preview", "")
+        if png_filename != "" and preview_filename != "" and preview_filename not in used_destinations:
+            component_actions.append(
+                {
+                    "command": "image_resize",
+                    "file_source": png_filename,
+                    "file_destination": preview_filename,
+                    "maximum_dimension": 300,
+                    "allow_upscale": False,
+                    "resample": "lanczos",
+                    "regenerate_pngs": regenerate_pngs,
+                }
+            )
+            used_destinations.append(preview_filename)
+
+    if len(component_actions) > 0:
+        count += 1
+        part[f"oomlout_ai_roboclick_{count}"] = {
+            "actions": component_actions,
+            "description": "Build component diagrams and proportional 300-pixel README previews with deterministic Python actions.",
+            "file_test": "" if regenerate_pngs else f"{DATA_DIRECTORY}/working_svg_square_pins_300.png",
+            "retries_until_complete": 0,
+        }
+
+    # KiCad renders run after the library install step has laid down the
+    # masters; parts without KiCad selections have nothing to plot.
+    kicad_selections = part.get("kicad", {})
+    if not isinstance(kicad_selections, dict):
+        kicad_selections = {}
+    has_kicad_data = any(
+        str(kicad_selections.get(kicad_field, "")).strip() != ""
+        for kicad_field in ["symbol", "machine_solder", "hand_solder"]
+    )
+    if has_kicad_data:
+        count += 1
+        part[f"oomlout_ai_roboclick_{count}"] = {
+            "actions": [
+                {
+                    "command": "run_python",
+                    "file_python": "kicad_agents/kicad_render_action.py",
+                    "file_output": f"{DATA_DIRECTORY}/kicad/contact_sheet.png",
+                    "description": "Render this part's KiCad symbol and footprints to SVG and PNG, and build a labelled contact sheet.",
+                    "part_id": part.get("name", ""),
+                    "regenerate_pngs": regenerate_pngs,
+                    "timeout": "600",
+                }
+            ],
+            "description": "Render KiCad symbol and footprint SVG and PNG views with a review contact sheet.",
+            "file_test": f"{DATA_DIRECTORY}/kicad/contact_sheet.png",
+            "retries_until_complete": 0,
+        }
+    return count
+
+
+
+
+def add_web_manifest_action(part, count):
+    """Append the website manifest as the final, always-run Roboclick action."""
+    output_filename = web_manifest_output_filename()
+    count += 1
+    part[f"oomlout_ai_roboclick_{count}"] = {
+        "actions": [
+            {
+                "command": "run_python",
+                "file_python": "kicad_agents/web_manifest_action.py",
+                "file_output": output_filename,
+                "manifest_config": WEB_MANIFEST_CONFIG_FILE,
+                "description": "Summarize working.yaml and inventory every available part file for website generators.",
+                "timeout": "600",
+            }
+        ],
+        "always_run_on_regeneration": True,
+        "description": f"Regenerate the deterministic {output_filename} after every other part action.",
+        # Deliberately ungated: the stock Roboclick runner skips a mode when
+        # file_test already exists. run_python still verifies file_output.
+        "file_test": "",
+        "retries_until_complete": 0,
+    }
+    return count
+
+def main(**kwargs):
+    load_parts(**kwargs)
+
+def load_parts(**kwargs):
+    make_files = kwargs.get("make_files", True)
+    #print "loading parts" plus the module name get the module name from the filename using __name__
+    print(f"  loading parts {__name__}")
+    create_generic(**kwargs)
+
+def create_generic(**kwargs):
+    print(f"  loading parts from part_source")
+    make_files = kwargs.get("make_files", True)
+    things = {}    
+    exact_ids = kwargs.get('exact_part_ids')
+    if exact_ids is not None:
+        if isinstance(exact_ids, str):
+            exact_ids = [exact_ids]
+        exact_ids = set(exact_ids)
+        if not exact_ids or any(not isinstance(item, str) or not re.fullmatch(r'[a-z0-9_]+', item)
+                                for item in exact_ids):
+            raise ValueError('exact_part_ids must contain one or more exact component IDs')
+    
+    #load parts from parts_source directory
+    directory_source = "parts_source"
+    import os
+    if not os.path.exists(directory_source):
+        print(f"      directory {directory_source} does not exist, creating it")
+        #create it
+        os.makedirs(directory_source)
+    skip_source_directories = kwargs.get("skip_source_directories", ["components", "data"])
+    if isinstance(skip_source_directories, str):
+        skip_source_directories = [skip_source_directories]
+    skip_source_directories = {
+        str(directory_name).strip().lower()
+        for directory_name in skip_source_directories
+        if str(directory_name).strip() != ""
+    }
+
+    for root, directories, filenames in os.walk(directory_source):
+        directories[:] = [
+            directory
+            for directory in directories
+            if directory.lower() not in skip_source_directories
+        ]
+        # Single-component runs pass filter=<part_id>; skip parsing and
+        # enriching the ~2400 unrelated working.yaml files entirely.
+        _pre_filters = kwargs.get("filter", "")
+        if not isinstance(_pre_filters, list):
+            _pre_filters = [_pre_filters] if _pre_filters else []
+        for filename in filenames:
+            import yaml
+            #go through directories and load working.yaml files
+            if filename != "working.yaml":
+                continue
+            file_path = os.path.join(root, filename)
+            relative_parent = os.path.relpath(os.path.dirname(file_path), directory_source)
+            if relative_parent in ["", "."]:
+                continue
+            directory = relative_parent.replace("\\", "/").split("/")[0]
+            if exact_ids is not None and directory not in exact_ids:
+                continue
+            if exact_ids is None and _pre_filters and not any(f in directory for f in _pre_filters):
+                continue
+            with open(file_path, 'r', encoding='utf-8') as file:
+                data = yaml.safe_load(file)
+                if not isinstance(data, dict):
+                    continue
+                thing_details = {}
+                for deet in data:
+                    thing_details[deet] = data[deet]
+                things[directory] = thing_details
+    
+    
+    parts = []
+
+    for thing in things:
+        current = things[thing]                
+        #name stuff        
+        part = copy.deepcopy(current)
+        part["regenerate_pngs"] = as_boolean(kwargs.get("regenerate_pngs", False))
+        
+        part["name"] = thing
+        part["name_space"] = thing.replace("_", " ")
+        part["name_proper"] = part["name_space"].title()
+        name_proper = part["name_proper"]
+        part["name_upper"] = part["name_space"].upper()
+        working_oomp_metadata.add_readable_metadata([part])
+
+        is_project_part = (
+            part.get("taxonomy_1", "") == "oomp"
+            and part.get("taxonomy_2", "") == "project"
+        )
+        is_navigation_part = part.get("taxonomy_1", "") == "navigation"
+        if is_project_part:
+            continue  # Project definitions and builds belong to the project repository.
+        if not is_project_part and not is_navigation_part:
+            part.pop("used_in_projects", None)
+            from repository_config import project_usage_url
+            part["project_usage_url"] = project_usage_url(thing)
+            import working_oomp_populate_svg
+            working_oomp_populate_svg.add_svg_details(part)
+            import working_oomp_populate_kicad
+            working_oomp_populate_kicad.add_kicad_details(part)
+            add_part_page_details(part)
+        else:
+            part["name_short"] = part.get("name_readable", part.get("name_proper", thing))
+        
+        folder = oomlout_roboclick.get_directory(part)   
+        part["directory"] = folder  
+        url_chat = oomlout_roboclick.get_url(part)   
+        part["url_chat"] = url_chat
+        files_to_trace = []
+        count = 0
+
+        #mode_ai_wait = "fast"
+        mode_ai_wait = "slow"
+
+        #load working_manual and add it to surrent if availabe
+        if True:
+            directory_manual = f"{part['directory']}/working_manual.yaml"
+            if os.path.exists(directory_manual):
+                with open(directory_manual, 'r', encoding='utf-8') as file:
+                    data = yaml.safe_load(file)
+                    for deet in data:
+                        part[deet] = data[deet]
+
+        #working with variables
+        if True:
+            if "content" in part:
+                content_string = ", ".join(part["content"])
+                print(f"      content: {content_string}")
+                part["content_string"] = content_string
+
+        #icon
+        if False:
+            count += 1     
+            icon_detail = f"make {name_proper} cute"
+            oomp_helper.add_icon(part=part, count=count, mode_ai_wait=mode_ai_wait, icon_detail=icon_detail)
+
+        
+        # Optional illustrative artwork is deliberately opt-in.  Core OOMP
+        # records, diagrams, previews, and documentation never require an LLM.
+        test_image_chibi = as_boolean(kwargs.get("enable_ai_assets", False))
+        if test_image_chibi and not is_navigation_part:
+            content_string = part.get("content_string", "")    
+            count += 1
+            chibi_detail = f"make {name_proper} cute"
+            oomp_helper.add_image_chibi(part=part, count=count, mode_ai_wait=mode_ai_wait, chibi_detail=chibi_detail)       
+
+        #image_from_directory
+        if False:
+            count += 1
+            directory_prompt = f"roboclick\\prompt_1"
+            file_name_image = "image_main.png"
+            oomp_helper.add_image_from_prompt_directory(part=part, count=count, prompt_folder=directory_prompt, file_name=file_name_image, generate_prompt="", mode_ai_wait=mode_ai_wait)
+
+
+        # all images
+        test_image_all = False
+        if test_image_all:
+            content_string = part.get("content_string", "")    
+            count += 1
+            image_detail = f"make {name_proper} cute"
+            oomp_helper.add_all_default_prompt_images(part=part, count=count, mode_ai_wait=mode_ai_wait, image_detail=image_detail)
+
+        #folder_project = "helen_personal_chart_bribe_bank"
+
+        #jinja_template replace
+        if not is_project_part and not is_navigation_part:
+            count = add_part_build_actions(part, count)
+            templates = []
+            templates.append(
+                {
+                    "template_folder": part.get("readme_template_folder", "source_file\\template_jinja\\oomp_category\\template_jinja_markdown"),
+                    "template_file": "working.md.j2",
+                    "output_filename": "README.md",
+                    "file_test": "",
+                    "convert_to_pdf": False,
+                    "convert_to_png": False,
+                }
+            )
+            #templates.append({"template_folder": "source_file\\template_jinja\\template_jinja_postcard_image_main_oomlout_152_4_mm_101_6_mm", "output_filename": "postcard_oomp.svg"})
+            convert_to_pdf = False
+            convert_to_png = False
+            count = oomp_helper.add_jinja_template(part=part, templates=templates, mode_ai_wait=mode_ai_wait, count=count, convert_to_pdf=convert_to_pdf, convert_to_png=convert_to_png)
+
+        if is_navigation_part:
+            navigation_templates = [
+                {
+                    "template_folder": "source_file\\template_jinja\\navigation",
+                    "template_file": "part.md.j2",
+                    "output_filename": "README.md",
+                    "file_test": "",
+                    "convert_to_pdf": False,
+                    "convert_to_png": False,
+                },
+                {
+                    "template_folder": "source_file\\template_jinja\\navigation",
+                    "template_file": "canonical.md.j2",
+                    "output_filename": part.get("navigation", {}).get(
+                        "canonical_output_from_part", "../../navigation/README.md"
+                    ),
+                    "file_test": "",
+                    "convert_to_pdf": False,
+                    "convert_to_png": False,
+                },
+            ]
+            count = oomp_helper.add_jinja_template(
+                part=part,
+                templates=navigation_templates,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+                convert_to_pdf=False,
+                convert_to_png=False,
+            )
+
+        #prompt bubble letter        
+        if False:
+            count = oomp_helper.add_image(
+                part=part,
+                folder_project=folder_project,
+                files_to_trace=files_to_trace,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+            )
+
+        #prompt image theme
+        if False:
+            count = oomp_helper.add_prompt_image(
+                part=part,
+                folder_project=folder_project,
+                prompt_folder="prompt_image_main_1",
+                file_name="image_main_1.png",
+                files_to_trace=files_to_trace,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+            )
+        #value
+        if False:
+            count = oomp_helper.add_value_images(
+                part=part,
+                folder_project=folder_project,
+                files_to_trace=files_to_trace,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+            )
+            
+
+        #cover_background
+        #prompt image
+        if False:
+            count = oomp_helper.add_cover_background(
+                part=part,
+                folder_project=folder_project,
+                files_to_trace=files_to_trace,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+            )
+       
+        #internal border
+        #prompt image
+        if False:
+            count = oomp_helper.add_prompt_image(
+                part=part,
+                folder_project=folder_project,
+                prompt_folder="prompt_inside_border_1",
+                file_name="image_inside_border.png",
+                files_to_trace=files_to_trace,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+            )
+
+        #logo back
+        #prompt image
+        if False:
+            count = oomp_helper.add_prompt_image(
+                part=part,
+                folder_project=folder_project,
+                prompt_folder="prompt_logo_back_1",
+                file_name="image_logo_back.png",
+                files_to_trace=files_to_trace,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+            )
+
+        #trace
+        if False:  
+            count = oomp_helper.trace_files(
+                part=part,
+                files_to_trace=files_to_trace,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+            )
+
+        #make_card
+        if False:
+            count = oomp_helper.make_card(part=part, folder_project=folder_project, count=count)
+
+        #research
+        if False:
+            count = oomp_helper.add_research(
+                part=part,
+                folder_project=folder_project,
+                mode_ai_wait=mode_ai_wait,
+                count=count,
+            )
+
+
+        count = working_drawer_labels.add_actions(part, count=count)
+
+        # Keep this immediately before parts.append: web.yaml must see the
+        # output of every preceding Roboclick action and must itself run last.
+        count = add_web_manifest_action(part, count)
+
+        parts.append(part)
+    
+
+
+
+    # Keep filtered population runs small enough for one component family.
+    # The shared OOMP helper reads this simple string before writing files.
+    oomp.add_part_filter = kwargs.get("filter", "")
+    add_parts_kwargs = copy.deepcopy(kwargs)
+    # filter controls which records are written; it is not component data.
+    # Removing it here prevents the shared helper from copying it into YAML.
+    add_parts_kwargs.pop("filter", None)
+    add_parts_kwargs.pop("exact_part_ids", None)
+    # Keep generation linear and deterministic.  The upstream helper starts a
+    # thread per item and returns before all working.yaml files are complete,
+    # which made full-regeneration actions race their own output.
+    for part in parts:
+        part_filters = kwargs.get("filter", "")
+        if not isinstance(part_filters, list):
+            part_filters = [part_filters]
+        include_part = (part['name'] in exact_ids) if exact_ids is not None else False
+        if exact_ids is None:
+            for part_filter in part_filters:
+                if part_filter in part["name"]:
+                    include_part = True
+        if not include_part:
+            continue
+        part_details = copy.deepcopy(part)
+        part_details.update(copy.deepcopy(add_parts_kwargs))
+        validate_ic_taxonomy(part_details)
+        # The shared helper still supplies IDs and hashes, but its repository
+        # links are from v1. Normalize the returned record before writing once.
+        part_details["make_files"] = False
+        oomp.add_part_filter = ""  # Filtering is handled explicitly above.
+        generated_part = oomp.add_part(**part_details)
+        if generated_part is None:
+            continue
+        generated_id = generated_part.get("id", "")
+        if generated_id == "":
+            continue
+        from component_identity import refresh_ic_identity
+        refresh_ic_identity(generated_part)
+        repository_url = (
+            "https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/"
+            + generated_id
+        )
+        generated_part["link_github"] = repository_url
+        generated_part["link_main"] = repository_url
+        generated_part["link_redirect"] = repository_url
+        if make_files:
+            generated_parts_directory = "parts" if make_files is True else str(make_files)
+            generated_working_file = os.path.join(
+                generated_parts_directory, generated_id, "working.yaml"
+            )
+            generated_working = copy.deepcopy(generated_part)
+            generated_working.pop("make_files", None)
+            generated_working.pop("counter", None)
+            os.makedirs(os.path.dirname(generated_working_file), exist_ok=True)
+            with open(generated_working_file, "w", encoding="utf-8") as working_file:
+                yaml.safe_dump(
+                    generated_working,
+                    working_file,
+                    sort_keys=True,
+                    allow_unicode=True,
+                )
+
+
+
+if __name__ == "__main__":
+    # run the function
+    load_parts()    
+    

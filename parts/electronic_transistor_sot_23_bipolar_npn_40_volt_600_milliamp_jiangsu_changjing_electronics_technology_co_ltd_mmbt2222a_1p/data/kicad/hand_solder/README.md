@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p](electronic_transistor_sot_23_bipolar_npn_40_volt_600_milliamp_jiangsu_changjing_electronics_technology_co_ltd_mmbt2222a_1p.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23_Handsoldering`. [License](../LICENSE.md).

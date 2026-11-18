@@ -1,0 +1,164 @@
+# {{ p.name_short | default(p.name_proper, true) }}
+
+`{{ p.part_page.oomp_id }}`
+
+{{ p.part_page.summary }}
+
+{% if p.display_render is defined and p.display_render %}
+![{{ p.name_short }} studio render]({{ p.display_render.image }})
+
+{{ p.display_render.description }}
+
+[Render recipe and provenance]({{ p.display_render.provenance }}) · [KiCad model]({{ p.display_render.model_source }})
+
+Model credit: {{ p.display_render.model_credit }}. {{ p.display_render.license }}.
+{% else %}
+![{{ p.name_short | default(p.name_proper, true) }} {{ p.part_page.main_image.title | lower }}]({{ p.part_page.main_image.svg }})
+{% endif %}
+
+{% if p.drawing_note is defined and p.drawing_note %}
+{{ p.drawing_note }}
+
+{% endif %}
+
+## At a glance
+
+| Detail | Value |
+| --- | --- |
+{% for fact in p.part_page.quick_facts -%}
+| {{ fact.title }} | {% if fact.title == 'OOMP ID' %}`{{ fact.value }}`{% else %}{{ fact.value }}{% endif %} |
+{% endfor %}
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+{% for taxonomy in p.part_page.taxonomy -%}
+| {{ taxonomy.level }} | `{{ taxonomy.value }}` |
+{% endfor %}
+
+{% if p.model_3d is defined and p.model_3d %}
+## 3D reference model
+
+![{{ p.name_short }} 3D reference render]({{ p.model_3d.render }})
+
+[Download STEP]({{ p.model_3d.step }}) · [Model source and limitations]({{ p.model_3d.provenance }})
+
+OOMP model based on the manufacturer drawing, with nominal outer dimensions and simplified internal geometry. Use it for layout and illustration.
+
+{% endif %}
+{% if p.connector_details is defined and p.connector_details %}
+## Connector details
+
+| Detail | Value |
+| --- | --- |
+{% for key, value in p.connector_details.items() -%}
+| {{ key | replace('_', ' ') | title }} | {{ value }} |
+{% endfor %}
+{% endif %}
+
+{% if p.procurement_notes is defined and p.procurement_notes %}
+## Purchasing notes
+
+{{ p.procurement_notes }}
+
+{% endif %}
+{% if p.catalogue_relationships is defined and p.catalogue_relationships %}
+## Related catalogue entries
+
+{% for related in p.catalogue_relationships %}
+- **{{ related.relationship }}:** [{{ related.oomp_id }}](../{{ related.oomp_id }}/README.md).
+  {{ related.notes }}
+{% endfor %}
+{% endif %}
+
+{% if p.related_parts is defined and p.related_parts %}
+## Compatible components
+
+{% for related in p.related_parts %}
+- **{{ related.relationship }}:** [{{ related.name }}](../{{ related.oomp_id }}/README.md){% if related.quantity is defined %} — quantity {{ related.quantity }}{% endif %}.
+  {{ related.notes }} [Manufacturer evidence]({{ related.evidence_url }}).
+{% endfor %}
+{% endif %}
+
+{% if p.dimensions_mm is defined and p.dimensions_mm %}
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+{% for dimension_name, dimension_value in p.dimensions_mm.items() -%}
+| {{ dimension_name | replace('_', ' ') | title }} | {{ dimension_value }} mm |
+{% endfor %}
+{% endif %}
+
+{% if p.part_page.identifiers %}
+## Identifiers
+
+| Identifier | Value |
+| --- | --- |
+{% for identifier in p.part_page.identifiers -%}
+| {{ identifier.title }} | {% if identifier.url %}[`{{ identifier.value }}`]({{ identifier.url }}){% else %}`{{ identifier.value }}`{% endif %} |
+{% endfor %}
+{% endif %}
+
+{% if p.part_page.pins %}
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+{% for pin in p.part_page.pins -%}
+| {{ pin.number }} | {{ pin.name }} | {{ pin.type }} |
+{% endfor %}
+{% endif %}
+
+{% if p.part_page.has_datasheet %}
+## Datasheet
+
+[View the datasheet]({{ p.part_page.datasheet_path }})
+{% if p.datasheet_note is defined and p.datasheet_note %}
+
+{{ p.datasheet_note }}
+{% endif %}
+{% endif %}
+
+{% if not p.part_page.has_datasheet and p.datasheet_url is defined and p.datasheet_url %}
+## Datasheet
+
+[Manufacturer drawing]({{ p.datasheet_url }}){% if p.product_url is defined and p.product_url %} · [Manufacturer product page]({{ p.product_url }}){% endif %}
+
+A local PDF has not been captured. The linked source is not an offline datasheet.
+
+{% endif %}
+{% if p.project_usage_url is defined and p.project_usage_url %}
+## Used in projects
+
+[Browse confirmed project usage]({{ p.project_usage_url }})
+
+{% endif %}
+## Files
+
+{% if p.kicad is defined %}
+{% if p.kicad.applicability is defined and p.kicad.applicability == 'not_applicable' %}
+[KiCad applicability: cable component, no PCB footprint](data/kicad/README.md) · [Applicability record](data/kicad/manifest.yaml)
+
+{% else %}
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+{% endif %}
+{% endif %}
+{% for file_preview in p.part_page.file_previews -%}
+![{{ file_preview.title }}]({{ file_preview.preview }})
+
+{% endfor %}
+
+{% if p.part_page.repository_url %}
+[View this part on GitHub]({{ p.part_page.repository_url }})
+{% endif %}
+
+{% if p.part_page.navigation_link %}
+[Browse this category]({{ p.part_page.navigation_link }})
+{% endif %}
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

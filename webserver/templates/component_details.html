@@ -1,0 +1,49 @@
+{% set component = part.component %}
+{% if component.facts or component.links or component.groups or component.summary %}
+<div class="component-details">
+  <div class="toolbar component-links">
+    {% if part.datasheet_file %}
+      <a class="button button--small" href="{{ url_for('parts.part_file', part_id=part.id, relative_path=part.datasheet_file) }}" target="_blank" rel="noopener noreferrer">Local datasheet PDF</a>
+    {% endif %}
+    {% for link in component.links %}
+      <a class="button button--ghost button--small" href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}{% if link.value %} · {{ link.value }}{% endif %}</a>
+    {% endfor %}
+  </div>
+  <dl class="component-facts">
+    {% for fact in component.facts %}
+      <div><dt>{{ fact.label }}</dt><dd>{{ fact.value }}</dd></div>
+    {% endfor %}
+  </dl>
+  {% if component.groups or component.pins or component.notes or component.summary %}
+    <details class="collapsible-panel">
+      <summary class="collapsible-panel__summary"><span class="section-title">Specifications and collected details</span></summary>
+      {% if component.summary %}<p>{{ component.summary }}</p>{% endif %}
+      <div class="component-specs collapsible-panel__body">
+        {% for group in component.groups %}
+          <section>
+            <h3>{{ group.title }}</h3>
+            <dl class="component-spec-list">
+              {% for row in group.rows %}<div><dt>{{ row.label }}</dt><dd>{{ row.value }}</dd></div>{% endfor %}
+            </dl>
+          </section>
+        {% endfor %}
+        {% if component.pins %}
+          <section>
+            <h3>Pin connections</h3>
+            <table class="component-pins">
+              <thead><tr><th>Pin</th><th>Name</th><th>Type / function</th></tr></thead>
+              <tbody>{% for pin in component.pins %}<tr><td>{{ pin.number }}</td><td>{{ pin.name }}</td><td>{{ pin.type }}{% if pin.description %} · {{ pin.description }}{% endif %}</td></tr>{% endfor %}</tbody>
+            </table>
+          </section>
+        {% endif %}
+      </div>
+      {% if component.notes %}
+        <details class="component-notes">
+          <summary>Research and compatibility notes</summary>
+          <ul>{% for note in component.notes %}<li>{{ note }}</li>{% endfor %}</ul>
+        </details>
+      {% endif %}
+    </details>
+  {% endif %}
+</div>
+{% endif %}

@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320](electronic_transistor_to_126_bipolar_npn_30_volt_3_amp_jiangsu_changjing_electronics_technology_co_ltd_d882_range_160_320.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-126-3_Vertical`. [License](../LICENSE.md).

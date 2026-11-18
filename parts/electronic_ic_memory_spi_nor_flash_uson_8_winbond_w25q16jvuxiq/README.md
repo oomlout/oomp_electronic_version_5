@@ -1,0 +1,109 @@
+# IC Memory SPI Nor Flash Winbond USON_8
+
+`electronic_ic_memory_spi_nor_flash_uson_8_winbond_w25q16jvuxiq`
+
+IC Memory SPI Nor Flash Winbond USON_8 is an OOMP electronic ic definition. It uses the uson 8 package or form factor. Its nominal drawing size is 3.0 &#x00D7; 2.0 mm. The definition includes 8 documented pins.
+
+![IC Memory SPI Nor Flash Winbond USON_8 pinout](data/working_svg_square_pins.svg)
+
+## At a glance
+
+| Detail | Value |
+| --- | --- |
+| OOMP ID | `electronic_ic_memory_spi_nor_flash_uson_8_winbond_w25q16jvuxiq` |
+| Type | Ic |
+| Package / style | uson 8 |
+| Nominal size | 3.0 &#x00D7; 2.0 mm |
+| Documented pins | 8 |
+
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+| 1 | `electronic` |
+| 2 | `ic` |
+| 3 | `memory` |
+| 4 | `spi_nor_flash` |
+| 5 | `uson_8` |
+| 14 | `winbond` |
+| 15 | `w25q16jvuxiq` |
+
+
+
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+| Height | 0.55 mm |
+| Length | 3.0 mm |
+| Width | 2.0 mm |
+
+
+
+
+
+
+## Pins
+
+| Pin | Name | Type |
+| ---: | --- | --- |
+| 1 | CS | signal |
+| 2 | DO_IO1 | signal |
+| 3 | WP_IO2 | signal |
+| 4 | GND | gnd |
+| 5 | DI_IO0 | signal |
+| 6 | CLK | signal |
+| 7 | HOLD_RESET_IO3 | signal |
+| 8 | VCC | power |
+
+
+
+
+
+
+## Used in projects
+
+[Browse confirmed project usage](https://oomlout.github.io/oomp_electronic_project_version_5/usage/index.html#electronic_ic_memory_spi_nor_flash_uson_8_winbond_w25q16jvuxiq)
+
+## Files
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
+![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
+![Outline](data/working_svg_outline_300.png)
+
+![Part ID](data/working_svg_part_id_300.png)
+
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
+
+![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
+
+![Dimensions](data/working_svg_dimensioned_300.png)
+
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
+
+
+[View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_ic_memory_spi_nor_flash_uson_8_winbond_w25q16jvuxiq)
+
+
+
+[Browse this category](../../navigation/electronic/ic/memory/spi_nor_flash/uson_8/winbond/README.md)
+
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

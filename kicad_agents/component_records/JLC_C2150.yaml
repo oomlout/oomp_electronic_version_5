@@ -1,0 +1,97 @@
+format_version: 1
+ledger_id: JLC_C2150
+status: researched
+family: transistor
+part_id: electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350
+exact_identity: true
+package: SOT-23
+pin_count: 3
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: Jiangsu Changjing Electronics Technology Co., Ltd.
+  manufacturer_part_number: SS8050(RANGE:200-350)
+  lcsc_part_number: C2150
+  lcsc_decision: 'Exact active device with no prior OOMP entry: added one explicit
+    transistor family row electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350.
+    The existing jsmsemi SS8050 row is a different maker identity and stays untouched;
+    this Changjing graded variant (hFE 200-350) keeps its ordering suffix in the ID
+    token and metadata.'
+  product_url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579707466581327872-C2150.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
+  webpage_capture: parts_source/electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350/web_page_distributor_jlc.txt
+  evidence_notes:
+  - 'Live JLCPCB product page on 2026-09-25 displayed Basic class, Jiangsu Changjing
+    Electronics Technology Co., Ltd., MFR.Part # SS8050(RANGE:200-350), JLCPCB Part
+    # C2150, Package SOT-23, and the full description.'
+  - Purchasing box showed In Stock 1,775,615; Minimum 1; Full Reel 3000; Available
+    Order Qty 1,586,582.
+  - 'Specifications table observed: NPN, VCEO 25 V, IC 1.5 A, DC current gain 200
+    (200-350 range), fT 100 MHz, 300 mW, VCE sat 500 mV, Vebo 5 V, cutoff 100 nA,
+    -55 to +150 deg C.'
+  - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
+    PDF download and provenance import remain a full-pass task for Agent 2.
+  - Repository search found no existing Changjing SS8050 row or C2150 assignment.
+  - 'Full pass 2026-10-02: live page reconfirmed (C2150, Jiangsu Changjing Electronics
+    Technology Co., Ltd., SS8050(RANGE:200-350), Basic, In Stock 1,853,286). New family
+    member (SS8050 NPN SOT-23): browser-downloaded the Changjing SS8050 specification
+    (4 pages, Rev 2.1) from the JLC page and imported it as this part and the family
+    anchor (sha256 11ad015d...). Maximum ratings page 1: VCBO 40 V, VCEO 25 V, VEBO
+    5 V, IC 1.5 A, PC 300 mW, Tj/Tstg -55 to +150 C; electrical characteristics page
+    1: ICBO/ICEO/IEBO 0.1 uA, hFE 120-400 at IC = 100 mA (ranks L 120-200 / H 200-350
+    / J 300-400; the MPN RANGE 200-350 = rank H), VCE(sat) 0.5 V max at IC = 800 mA,
+    VBE(sat) 1.2 V, fT 100 MHz, marking Y1. Pinout page 1: SOT-23 1 = BASE, 2 = EMITTER,
+    3 = COLLECTOR, matching Transistor_BJT:Q_NPN_BEC.'
+jlc_selection:
+  verified_on: '2026-10-02'
+  official_url: https://jlcpcb.com/partdetail/2507-SS8050_RANGE_200_350/C2150
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 1775615
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: 'Exact active device with no prior OOMP entry: added one explicit
+    transistor family row electronic_transistor_sot_23_bipolar_npn_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8050_range_200_350.
+    The existing jsmsemi SS8050 row is a different maker identity and stays untouched;
+    this Changjing graded variant (hFE 200-350) keeps its ordering suffix in the ID
+    token and metadata.'
+  ratings:
+    Collector - Emitter Voltage VCEO: 25V
+    Configuration: Standalone
+    Current - Collector Cutoff: 100nA
+    Current - Collector(Ic): 1.5A
+    DC Current Gain: '200'
+    Emitter-Base Voltage(Vebo): 5V
+    Number: 1 NPN
+    Operating Temperature: -55℃~+150℃
+    Pd - Power Dissipation: 300mW
+    Transition frequency(fT): 100MHz
+    Vce Saturation(VCE(sat)): 500mV
+    type: NPN
+  datasheet_pages:
+    document: Changjing SS8050 SOT-23 specification, Rev 2.1 (C2150 provenance, family
+      anchor)
+    maximum_ratings:
+    - 1
+    electrical_characteristics:
+    - 1
+    pinout:
+    - 1
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-10-02 after the build, a direct kicad library run
+    and a rebuild. working_svg_square_pins.png hero titled Transistor SS8050(RANGE:200-350)
+    SOT 23 with the SOT-23 package drawing labelled emitter (pin 2) left, base (pin
+    1) left-lower, collector (pin 3) right, matching the datasheet pinout page 1 (1
+    = BASE, 2 = EMITTER, 3 = COLLECTOR). working_svg_dimensioned.png: SOT-23 (JEDEC
+    TO-236 Var AB) outline per the Package_TO_SOT_SMD:SOT-23 master geometry (datasheet
+    carries ratings and pinout but no dimension table; recorded in dimension_reference).
+    data/kicad manifest complete with Transistor_BJT:Q_NPN_BEC symbol and Package_TO_SOT_SMD:SOT-23
+    machine + SOT-23_Handsoldering hand footprints, same convention as the C2145/C2146
+    Changjing SOT-23 NPN integrations. README.md: SS8050(RANGE:200-350) part number,
+    LCSC/JLC C2150 links, 3-pin table (base/emitter/collector), datasheet link resolving
+    to data/datasheet.pdf (the Changjing SS8050 specification, family anchor). Limitation:
+    KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression text rather
+    than in a KiCad GUI.'

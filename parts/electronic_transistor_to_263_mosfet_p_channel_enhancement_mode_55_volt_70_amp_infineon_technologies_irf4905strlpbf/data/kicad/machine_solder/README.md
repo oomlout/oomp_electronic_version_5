@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_263_mosfet_p_channel_enhancement_mode_55_volt_70_amp_infineon_technologies_irf4905strlpbf](electronic_transistor_to_263_mosfet_p_channel_enhancement_mode_55_volt_70_amp_infineon_technologies_irf4905strlpbf.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:TO-263-3_TabPin2`. [License](../LICENSE.md).

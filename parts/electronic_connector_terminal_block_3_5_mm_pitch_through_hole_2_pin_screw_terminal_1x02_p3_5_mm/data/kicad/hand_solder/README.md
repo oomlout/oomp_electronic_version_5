@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_screw_terminal_1x02_p3_5_mm](electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_screw_terminal_1x02_p3_5_mm.kicad_mod)
+
+Source: `TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x02_P3.50mm_Vertical`. [License](../LICENSE.md).

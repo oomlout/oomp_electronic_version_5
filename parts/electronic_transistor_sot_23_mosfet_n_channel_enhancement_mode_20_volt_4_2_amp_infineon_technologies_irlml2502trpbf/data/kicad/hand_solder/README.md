@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_20_volt_4_2_amp_infineon_technologies_irlml2502trpbf](electronic_transistor_sot_23_mosfet_n_channel_enhancement_mode_20_volt_4_2_amp_infineon_technologies_irlml2502trpbf.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23_Handsoldering`. [License](../LICENSE.md).

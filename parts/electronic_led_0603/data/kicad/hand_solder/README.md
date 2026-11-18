@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_led_0603](electronic_led_0603.kicad_mod)
+
+Source: `LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder`. [License](../LICENSE.md).

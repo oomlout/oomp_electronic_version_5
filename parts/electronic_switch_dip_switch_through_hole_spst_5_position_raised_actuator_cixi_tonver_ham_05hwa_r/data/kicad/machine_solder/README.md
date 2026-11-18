@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_switch_dip_switch_through_hole_spst_5_position_raised_actuator_cixi_tonver_ham_05hwa_r](electronic_switch_dip_switch_through_hole_spst_5_position_raised_actuator_cixi_tonver_ham_05hwa_r.kicad_mod)
+
+Source: `Button_Switch_THT:SW_DIP_SPSTx05_Slide_9.78x14.88mm_W7.62mm_P2.54mm`. [License](../LICENSE.md).

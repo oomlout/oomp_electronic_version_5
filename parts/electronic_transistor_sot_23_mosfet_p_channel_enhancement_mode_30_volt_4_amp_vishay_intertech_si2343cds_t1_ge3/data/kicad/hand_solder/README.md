@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_transistor_sot_23_mosfet_p_channel_enhancement_mode_30_volt_4_amp_vishay_intertech_si2343cds_t1_ge3](electronic_transistor_sot_23_mosfet_p_channel_enhancement_mode_30_volt_4_amp_vishay_intertech_si2343cds_t1_ge3.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23_Handsoldering`. [License](../LICENSE.md).

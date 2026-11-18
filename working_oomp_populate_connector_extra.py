@@ -1,0 +1,1663 @@
+def _header_pin_count(value):
+    text = str(value or "")
+    digits = "".join(character for character in text if character.isdigit())
+    return int(digits) if digits else 1
+
+
+def _right_angle_header_drawing(pin_count):
+    """KiCad Horizontal footprint top view: narrow carrier, one pad row."""
+    row_length = max(1, pin_count) * 2.54
+    row_start = -((pin_count - 1) * 2.54) / 2
+    return {
+        "overall": [10.92, row_length],
+        "body": [2.54, row_length],
+        # The LCSC mechanical drawing and KiCad F.Fab outline both put the
+        # moulded carrier behind the bent pin row.  It is not centred on the
+        # plated pad centres: the pad row is at x=0 and the 2.5 mm carrier
+        # begins about 1.5 mm behind it.
+        "body_offset": [1.5, 0.0],
+        "pins": [
+            [str(index + 1), "left", 0.0, row_start + index * 2.54, 1.7, 1.7]
+            for index in range(pin_count)
+        ],
+        # Pin 1 is identified by the square pad, matching the KiCad footprint.
+    }
+
+
+def _dual_row_header_drawing(pin_count):
+    """KiCad Vertical 2xN footprint top view, odd/even columns preserved."""
+    columns = 2
+    rows = max(1, (pin_count + 1) // 2)
+    row_length = rows * 2.54
+    row_start = -((rows - 1) * 2.54) / 2
+    pins = []
+    for row in range(rows):
+        for column in range(columns):
+            number = row * 2 + column + 1
+            if number > pin_count:
+                continue
+            pins.append([str(number), "top", -1.27 + column * 2.54, row_start + row * 2.54, 1.7, 1.7])
+    return {
+        "overall": [5.08, row_length],
+        "body": [5.08, row_length],
+        "pins": pins,
+    }
+
+
+def _triple_row_header_drawing(pin_count):
+    """Vertical 3xN triple-row top view: three 2.54 mm pad columns."""
+    columns = 3
+    positions = max(1, pin_count // columns)
+    row_length = positions * 2.54
+    row_start = -((positions - 1) * 2.54) / 2
+    pins = []
+    for row in range(positions):
+        for column in range(columns):
+            number = row * columns + column + 1
+            if number > pin_count:
+                continue
+            pins.append([str(number), "top", -2.54 + column * 2.54, row_start + row * 2.54, 1.7, 1.7])
+    return {
+        "overall": [7.62, row_length],
+        "body": [7.62, row_length],
+        "pins": pins,
+    }
+
+
+def _triple_row_right_angle_header_drawing(pin_count):
+    """Right-angle 3xN top view: pad field beside the moulded carrier."""
+    columns = 3
+    positions = max(1, pin_count // columns)
+    row_length = positions * 2.54
+    row_start = -((positions - 1) * 2.54) / 2
+    pins = []
+    for row in range(positions):
+        for column in range(columns):
+            number = row * columns + column + 1
+            if number > pin_count:
+                continue
+            pins.append([str(number), "top", -2.54 + column * 2.54, row_start + row * 2.54, 1.7, 1.7])
+    return {
+        # The bent-pin pad field sits 2.54 mm pitch across; the 2.54 mm
+        # carrier begins about 1.5 mm behind the outermost pad column, in the
+        # same relationship as the single-row right-angle drawing.
+        "overall": [10.16, row_length],
+        "body": [2.54, row_length],
+        "body_offset": [4.31, 0.0],
+        "pins": pins,
+        "pin_one": [-2.54, row_start],
+    }
+
+
+def _fix_254_header_package_drawings(extras_dict):
+    """Normalize package drawings to the KiCad 2.54 mm header masters."""
+    for part in extras_dict.values():
+        if not isinstance(part, dict):
+            continue
+        taxonomy = part.get("taxonomy", {})
+        if not isinstance(taxonomy, dict):
+            taxonomy = {}
+        taxonomy_2 = part.get("taxonomy_2", taxonomy.get("taxonomy_2", ""))
+        taxonomy_3 = part.get("taxonomy_3", taxonomy.get("taxonomy_3", ""))
+        if taxonomy_2 != "connector" or taxonomy_3 != "header":
+            continue
+        taxonomy_5 = str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", "")))
+        taxonomy_6 = str(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        pin_count = _header_pin_count(taxonomy_6)
+        if "right_angle" in taxonomy_5:
+            part["package_drawing"] = _right_angle_header_drawing(pin_count)
+        elif "triple_row" in taxonomy_6:
+            # Right angle lives in taxonomy_6 for the header tokens
+            # (right_angle_triple_row_N_pin), so check it before the plain
+            # triple-row vertical drawing.
+            if "right_angle" in taxonomy_6:
+                part["package_drawing"] = _triple_row_right_angle_header_drawing(pin_count)
+            else:
+                part["package_drawing"] = _triple_row_header_drawing(pin_count)
+        elif "dual_row" in taxonomy_6:
+            part["package_drawing"] = _dual_row_header_drawing(pin_count)
+
+
+def _apply_254_straight_header_references(extras_dict):
+    """Apply the LCSC C49423294 1xN mechanical series to bare 2.54 headers."""
+    datasheet_url = "https://datasheet.lcsc.com/datasheet/pdf/fca06906dc282fca8d245c00832715b0.pdf?productCode=C49423294"
+    for current, part in extras_dict.items():
+        if not isinstance(part, dict):
+            continue
+        taxonomy = part.get("taxonomy", {})
+        if not isinstance(taxonomy, dict):
+            taxonomy = {}
+        if (
+            str(part.get("taxonomy_2", taxonomy.get("taxonomy_2", ""))) != "connector"
+            or str(part.get("taxonomy_3", taxonomy.get("taxonomy_3", ""))) != "header"
+            or str(part.get("taxonomy_4", taxonomy.get("taxonomy_4", ""))) != "2_54_mm_pitch"
+            or str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", ""))) != "through_hole"
+            or str(part.get("taxonomy_7", taxonomy.get("taxonomy_7", ""))) == "socket"
+        ):
+            continue
+        taxonomy_6 = str(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        # The C49423294 drawing is a single-row (1xP) series: its plastic
+        # width and per-contact length do not describe multi-row bodies.
+        if "dual_row" in taxonomy_6 or "triple_row" in taxonomy_6:
+            continue
+        pin_count = _header_pin_count(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        # LCSC C49423294 / B-210S-1xP-A110, PDF page 2: 0.64 mm square
+        # pin, 2.50 mm insulator, PA=6.0 mm and PC=3.0 mm (11.6 mm total).
+        dimensions = dict(part.get("header_dimensions_mm", {}))
+        dimensions.update(
+            {
+                "pin_length_post": 6.0,
+                "pin_length_tail": 3.0,
+                "pin_length_total": 11.6,
+                "pin_pitch": 2.54,
+                "pin_square": 0.64,
+                "plastic_height": 2.5,
+                "plastic_width": 2.5,
+                "plastic_length": pin_count * 2.54,
+                "pcb_hole_diameter": 1.02,
+            }
+        )
+        part["header_dimensions_mm"] = dimensions
+        part["datasheet_url"] = datasheet_url
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+        part["dimension_reference"] = {
+            "document": "LCSC C49423294 / Ckmtw B-210S-1xP-A110, 2.54 mm single-row straight header",
+            "datasheet_url": datasheet_url,
+            "pages": [2],
+            "notes": (
+                "LCSC family drawing covers 1 through 40 positions. The physical view uses "
+                "the individual chamfered 2.50 mm insulator cells, 0.64 mm square pins, "
+                "PA=6.0 mm mating length and PC=3.0 mm PCB tail; the bottom view follows "
+                "its 1.02 mm recommended PCB drill pattern."
+            ),
+        }
+
+
+def _apply_254_triple_header_references(extras_dict):
+    """Apply the LCSC triple-row 2.54 mm series facts to bare triple-row tokens.
+
+    Series checked on LCSC 2026-10-01: hanxia HX PZ2.54-3xNP ZZ straight
+    (3x2P C32713289, 3x3P C32713290 NRND, 3x4P C32713291, 3x5P C32713292,
+    3x6P C32713293, 3x7P C32713294, 3x8P C32713295) and HCTL PZ254-3 (3x3P
+    straight C7429377, 3x3P right angle C7429379, 3x21P straight double-
+    moulded C53452629).  All list 2.54 mm row spacing, 2.5 mm insulation
+    height, 6 mm mating pin, 3 mm tail, square pins, 3 A, -40 to +105 C.
+    """
+    for current, part in extras_dict.items():
+        if not isinstance(part, dict):
+            continue
+        taxonomy = part.get("taxonomy", {})
+        if not isinstance(taxonomy, dict):
+            taxonomy = {}
+        if (
+            str(part.get("taxonomy_2", taxonomy.get("taxonomy_2", ""))) != "connector"
+            or str(part.get("taxonomy_3", taxonomy.get("taxonomy_3", ""))) != "header"
+            or str(part.get("taxonomy_4", taxonomy.get("taxonomy_4", ""))) != "2_54_mm_pitch"
+            or str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", ""))) != "through_hole"
+        ):
+            continue
+        taxonomy_6 = str(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        if "triple_row" not in taxonomy_6:
+            continue
+        right_angle = "right_angle" in taxonomy_6
+        pin_count = _header_pin_count(taxonomy_6)
+        positions = max(1, pin_count // 3)
+        dimensions = dict(part.get("header_dimensions_mm", {}))
+        dimensions.update(
+            {
+                "pin_length_post": 6.0,
+                "pin_length_tail": 3.0,
+                "pin_length_total": 9.0,
+                "pin_pitch": 2.54,
+                "row_spacing": 2.54,
+                "pin_square": 0.64,
+                "plastic_height": 2.5,
+                "plastic_width_across_rows": 7.58,
+                "plastic_length": positions * 2.54,
+                "positions_per_row": positions,
+                "rows": 3,
+                "pcb_hole_diameter": 1.02,
+            }
+        )
+        part["header_dimensions_mm"] = dimensions
+        part["connector_dimensions_mm"] = {
+            "pitch": 2.54,
+            "positions": positions,
+            "rows": 3,
+            "termination": "through_hole_right_angle" if right_angle else "through_hole",
+        }
+        part["dimension_reference"] = {
+            "document": (
+                "LCSC triple-row 2.54 mm header series: hanxia HX PZ2.54-3xNP ZZ "
+                "(C32713289-C32713295) and HCTL PZ254-3 (C7429377/C7429379/C53452629)"
+            ),
+            "datasheet_url": "https://www.lcsc.com/product-detail/C32713291.html",
+            "pages": [1],
+            "notes": (
+                "Series listings checked 2026-10-01: 2.54 mm pitch and row spacing, "
+                "2.5 mm insulation height, 6 mm square mating pin, 3 mm PCB tail, "
+                "3 A, -40 to +105 C. The HCTL C53452629 3x21P variant is a 5.0 mm "
+                "double-moulded body; the generic token keeps the common 2.5 mm "
+                "insulator. plastic_width_across_rows is 2.5 mm + 2 x 2.54 mm."
+            ),
+        }
+        notes = [
+            "Triple-row 2.54 mm header availability (LCSC, checked 2026-10-01): straight 3x2P..3x8P (hanxia PZ2.54-3xNP ZZ, C32713289-C32713295; 3x3P NRND), straight 3x21P (HCTL C53452629, 5.0 mm double-moulded), right angle 3x3P only (HCTL C7429379).",
+            "KiCad 10 official libraries ship PinHeader 1xNN and 2xNN masters only; a 3xNN symbol/footprint custom master (Conn_02x-style numbering extended to three 2.54 mm columns) is a full-pass custom-master task, so no official kicad selection is claimed here.",
+        ]
+        part["research_notes"] = notes
+
+
+
+
+def _screw_terminal_package_drawing(pitch, positions, wire_protector):
+    """Top view of a 1xN screw terminal: body, screw circles, bottom pins."""
+    if wire_protector:
+        # 4UCON 1406 / wire-protector bodies stand ~10 mm with a wider skirt.
+        body = [positions * pitch - 0.5, 10.2]
+        overall = [positions * pitch + 0.5, 10.8]
+        pin_y, pin_h, circle_r = -4.6, 0.9, 1.2
+    else:
+        # Matches the built 3-pin exemplar (LCSC C695629 DORABO DB301V style):
+        # 10.4 x 7.4 body, 11.0 x 8.0 overall for three positions.
+        body = [positions * pitch - 0.1, 7.4]
+        overall = [positions * pitch + 0.5, 8.0]
+        pin_y, pin_h, circle_r = -3.55, 0.8, 1.0
+    row_start = -((positions - 1) * pitch) / 2
+    return {
+        "overall": overall,
+        "body": body,
+        "circles": [
+            [row_start + index * pitch, 0.0, circle_r]
+            for index in range(positions)
+        ],
+        "pins": [
+            [str(index + 1), "bottom", row_start + index * pitch, pin_y, 1.2, pin_h]
+            for index in range(positions)
+        ],
+        "pin_one": [row_start, pin_y],
+    }
+
+
+def _wire_screw_terminal_blocks(extras_dict):
+    """Wire every 3.5/5.0 mm through-hole terminal block with pins, a
+    parametric top-view drawing and verified KiCad symbol/footprint masters.
+
+    Sources: LCSC C695629 (DORABO DB301V-3.5-2P-GN-S, green 2P 3.5 mm) and
+    the DORABO/exemplar screw-terminal style for the 3.5 mm generics; 4UCON
+    series 1443 (3.5 mm rising clamp DIP 180, green, H=8.5 mm, items
+    19696-19718 = 2-24P) and 1406 (5.0 mm wire protector, DIP 180, blue
+    H=10 mm blue-family items 19866/20018/17570/19935/17581-17599 = 2-24P);
+    both checked on 4uconnector.com 2026-10-01.  KiCad masters: symbols
+    Connector:Screw_Terminal_01xNN (2-20), footprints
+    TerminalBlock_4Ucon:..._1xNN_P3.50mm_Vertical (2-15) and
+    TerminalBlock_Phoenix:..._PT-1,5-NN-5.0-H_1xNN_P5.00mm_Horizontal (2-16).
+    """
+    for current, part in extras_dict.items():
+        if not isinstance(part, dict):
+            continue
+        taxonomy = part.get("taxonomy", {})
+        if not isinstance(taxonomy, dict):
+            taxonomy = {}
+        if (
+            str(part.get("taxonomy_2", taxonomy.get("taxonomy_2", ""))) != "connector"
+            or str(part.get("taxonomy_3", taxonomy.get("taxonomy_3", ""))) != "terminal_block"
+        ):
+            continue
+        pitch_text = str(part.get("taxonomy_4", taxonomy.get("taxonomy_4", "")))
+        if pitch_text not in ("3_5_mm_pitch", "5_mm_pitch"):
+            continue
+        mounting = str(part.get("taxonomy_5", taxonomy.get("taxonomy_5", "")))
+        if mounting != "through_hole":
+            continue
+        taxonomy_6 = str(part.get("taxonomy_6", taxonomy.get("taxonomy_6", "")))
+        digits = "".join(character for character in taxonomy_6 if character.isdigit())
+        if not digits:
+            continue
+        positions = int(digits)
+        pitch = 3.5 if pitch_text == "3_5_mm_pitch" else 5.0
+        manufacturer = str(part.get("taxonomy_14", taxonomy.get("taxonomy_14", "")))
+        item_no = str(part.get("taxonomy_15", taxonomy.get("taxonomy_15", "")))
+        is_4ucon = manufacturer == "4ucon_technology"
+        color = ""
+        taxonomy_7 = str(part.get("taxonomy_7", taxonomy.get("taxonomy_7", "")))
+        if taxonomy_7 in ("blue", "green"):
+            color = taxonomy_7
+
+        part["pins"] = {
+            f"pin_{index}": {"number": str(index), "name": str(index), "type": "passive"}
+            for index in range(1, positions + 1)
+        }
+        part["package_drawing"] = _screw_terminal_package_drawing(
+            pitch, positions, wire_protector=(pitch_text == "5_mm_pitch")
+        )
+        part["connector_dimensions_mm"] = {
+            "pitch": pitch,
+            "positions": positions,
+            "rows": 1,
+            "termination": "through_hole",
+            "wire_protector": pitch_text == "5_mm_pitch",
+        }
+        dimension_notes = (
+            "Top view follows the built 3-pin exemplar style: body length "
+            "positions x pitch with chamfered screw circles at every position "
+            "and the pin row on the board side. Nominal drawing dimensions."
+        )
+        if is_4ucon:
+            part["manufacturer"] = "4UCON Technology"
+            part["part_number_manufacturer"] = item_no
+            part["product_url"] = "http://www.4uconnector.com/online/itemagrid.asp"
+
+        # KiCad masters: schematic symbols exist for 2-20 positions;
+        # footprints: 4Ucon 3.5 mm vertical 2-15, Phoenix PT-1,5 5.0 mm
+        # horizontal 2-16.  Beyond those ranges the gap is documented rather
+        # than filled with a mismatched master.
+        symbol = ""
+        machine = ""
+        if 2 <= positions <= 20:
+            symbol = "Connector:Screw_Terminal_01x%02d" % positions
+        if pitch_text == "3_5_mm_pitch" and 2 <= positions <= 15:
+            machine = "TerminalBlock_4Ucon:TerminalBlock_4Ucon_1x%02d_P3.50mm_Vertical" % positions
+        if pitch_text == "5_mm_pitch" and 2 <= positions <= 16:
+            machine = "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-%d-5.0-H_1x%02d_P5.00mm_Horizontal" % (positions, positions)
+        # Through-hole terminal blocks are hand-solderable on the same
+        # master; no separate HandSolder variant exists to enlarge.
+        part["kicad"] = {
+            "symbol": symbol,
+            "machine_solder": machine,
+            "hand_solder": machine,
+            "allow_project_fallback": False,
+        }
+
+        if pitch_text == "3_5_mm_pitch":
+            notes = ["3.5 mm screw-terminal style anchored on LCSC C695629 (DORABO DB301V-3.5-2P-GN-S, 2-position green); the generic family covers the stock lengths in this style."]
+        else:
+            notes = ["5.0 mm wire-protector screw-terminal style anchored on the 4UCON 1406 series (DIP 180 degrees, H=10 mm, blue insulator); the generic family covers the standard lengths in this style."]
+        if color:
+            notes.append("Insulator color variant: %s." % color)
+        if is_4ucon:
+            series = "1443" if pitch_text == "3_5_mm_pitch" else "1406"
+            color_word = "green" if pitch_text == "3_5_mm_pitch" else "blue"
+            notes.append(
+                "4UCON series %s item %s = %dP (%s insulator; 4uconnector.com listing checked 2026-10-01)."
+                % (series, item_no, positions, color_word)
+            )
+        if machine == "":
+            gap_note = (
+                "No official KiCad footprint master exists for this position "
+                "count (TerminalBlock_4Ucon covers 2-15 at 3.5 mm; "
+                "TerminalBlock_Phoenix PT-1,5 covers 2-16 at 5.0 mm), so no "
+                "footprint is claimed; the schematic symbol is retained "
+                "where available."
+            )
+            if symbol == "":
+                gap_note += " No schematic symbol exists above 20 positions either."
+            notes.append(gap_note)
+        notes.append(dimension_notes)
+        part["research_notes"] = notes
+        part["dimension_reference"] = {
+            "document": (
+                "4UCON series 1443/1406 drawings and the built 3-pin exemplar "
+                "(LCSC C695629 style)" if is_4ucon else
+                "LCSC C695629 (DORABO DB301V-3.5-2P-GN-S) and the built 3-pin exemplar"
+            ),
+            "pages": [],
+            "notes": dimension_notes,
+        }
+
+
+def main(**kwargs):
+    extras_dict = kwargs.get("extras_dict", {})
+
+    # The family table supplies the identity and KiCad library match. Its
+    # legacy right-angle/dual-row geometry is replaced here with the current
+    # KiCad footprint pad arrangement before source YAML is written.
+    _fix_254_header_package_drawings(extras_dict)
+    _apply_254_straight_header_references(extras_dict)
+    _apply_254_triple_header_references(extras_dict)
+    _wire_screw_terminal_blocks(extras_dict)
+
+    current = "electronic_connector_header_2_54_mm_pitch_surface_mount_dual_row_6_pin_wurth_electronics_61030621121"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "Würth Elektronik"
+        part["part_number_manufacturer"] = "61030621121"
+        part["datasheet_url"] = "https://www.we-online.com/components/products/datasheet/61030621121.pdf"
+        part["connector_dimensions_mm"] = {"pitch": 2.54, "positions": 6, "rows": 2, "termination": "surface_mount", "insulation_height": 2.54}
+        part["package_drawing"] = {
+            "overall": [7.62, 5.08], "body": [7.62, 5.08],
+            "pins": [[str(number), "top", -1.27 + 2.54 * ((number + 1) % 2), -2.54 + 2.54 * ((number - 1) // 2), 1.0, 1.0] for number in range(1, 7)],
+            "pin_one": [-1.27, -2.54],
+        }
+
+    current = "electronic_connector_usb_c_surface_mount_12_pin_generic_usb_c_12_pin_generic"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["dimensions_mm"] = {"length": 8.9, "width": 7.3, "height": 3.2}
+        part["package_drawing"] = {
+            "overall": [8.9, 7.6], "body": [8.9, 7.3],
+            "pins": [[str(index + 1), "top", -2.75 + index * 0.5, 3.75, 0.25, 0.7] for index in range(12)],
+            "boxes": [[-3.8, -1.0, 0.8, 5.2], [3.8, -1.0, 0.8, 5.2]],
+            "pin_one": [-2.75, 3.75],
+        }
+        part["kicad"] = {"symbol": "Connector:USB_C_Receptacle_USB2.0_16P", "machine_solder": "", "hand_solder": ""}
+
+    current = "electronic_connector_micro_usb_surface_mount_9_pin_rocketscream_micro_usb"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "RocketScream Electronics"
+        part["part_number_manufacturer"] = "MICRO-USB"
+        part["dimensions_mm"] = {"length": 9.15, "width": 6.30, "height": 3.0}
+        part["datasheet_url"] = "https://github.com/rocketscream/RocketScreamKicadLibrary/blob/master/RocketScreamKicadLibrary.pretty/MICRO-USB.kicad_mod"
+        part["connector_dimensions_mm"] = {
+            "positions": 5, "shield_pads": 4, "contact_pitch": 0.65,
+            "mounting": "surface_mount_receptacle",
+        }
+        part["pins"] = {
+            "pin_1": {"number": "1", "name": "VBUS", "type": "power_in"},
+            "pin_2": {"number": "2", "name": "D-", "type": "bidirectional"},
+            "pin_3": {"number": "3", "name": "D+", "type": "bidirectional"},
+            "pin_4": {"number": "4", "name": "ID", "type": "passive"},
+            "pin_5": {"number": "5", "name": "GND", "type": "power_in"},
+            "pin_6": {"number": "6", "name": "SHIELD", "type": "passive"},
+            "pin_7": {"number": "7", "name": "SHIELD", "type": "passive"},
+            "pin_8": {"number": "8", "name": "SHIELD", "type": "passive"},
+            "pin_9": {"number": "9", "name": "SHIELD", "type": "passive"},
+        }
+        part["package_drawing"] = {
+            "overall": [9.15, 6.30], "body": [7.75, 5.0],
+            "pins": [
+                [str(index), "bottom", -1.3 + (index - 1) * 0.65, -2.1, 0.4, 1.35]
+                for index in range(1, 6)
+            ] + [
+                [str(index), "side", x, 1.1, 1.3, 1.2]
+                for index, x in ((6, -3.6), (7, 3.6))
+            ] + [
+                ["8", "top", -3.6, 1.1, 1.3, 1.7],
+                ["9", "top", 3.6, 1.1, 1.3, 1.7],
+            ],
+            "pin_one": [-1.3, -2.1],
+        }
+        part["kicad"] = {"symbol": "Connector:USB_B_Micro", "machine_solder": "", "hand_solder": ""}
+
+    current = "electronic_connector_terminal_block_3_5_mm_pitch_through_hole_2_pin_te_connectivity_1776275_2"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "TE Connectivity"
+        part["part_number_manufacturer"] = "1776275-2"
+        part["datasheet_url"] = "https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=CustomerDrawing%7F1776275%7Fpdf%7FEnglish%7FENG_CD_1776275-2.pdf%7F1776275-2"
+        part["connector_dimensions_mm"] = {"pitch": 3.5, "positions": 2, "mounting": "through_hole", "entry": "right_angle"}
+        part["package_drawing"] = {
+            "overall": [8.0, 7.0], "body": [7.0, 6.0],
+            "pins": [["1", "bottom", -1.75, -3.3, 1.0, 1.4], ["2", "bottom", 1.75, -3.3, 1.0, 1.4]],
+            "pin_one": [-1.75, -3.3],
+        }
+
+    # JST GH-compatible easyC side-entry socket.  Keep this as a populate
+    # rule, rather than a generated-file edit, so a full regeneration retains
+    # the pitch, four contacts, and the connector-specific mechanical views.
+    current = "electronic_connector_easyc_1_25_mm_pitch_surface_mount_right_angle_4_pin_jst_sm04b_gh_tf"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["dimensions_mm"] = {"length": 5.4, "width": 4.0, "height": 3.0}
+        part["connector_dimensions_mm"] = {
+            "pitch": 1.25,
+            "positions": 4,
+            "body_length": 5.4,
+            "body_width": 4.0,
+            "height": 3.0,
+            "contact_style": "surface_mount_right_angle",
+        }
+        part["pins"] = {
+            f"pin_{index}": {"number": str(index), "name": f"pin_{index}", "type": "signal"}
+            for index in range(1, 5)
+        }
+        part["package_drawing"] = {
+            "overall": [5.4, 4.0],
+            "body": [5.4, 3.0],
+            "body_offset": [0.0, 0.45],
+            "pins": [
+                [str(index), "top", -1.875 + (index - 1) * 1.25, -1.55, 0.65, 0.6]
+                for index in range(1, 5)
+            ],
+            "pin_one": [-1.875, -1.55],
+        }
+        part["dimension_reference"] = {
+            "document": "JST GH series SM04B-GH-TF mechanical outline",
+            "datasheet_url": "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf",
+            "notes": "Four-position, 1.25 mm pitch, right-angle surface-mount GH-compatible connector; dimensions are nominal body and contact-row dimensions used for the OOMP drawing.",
+        }
+        part["datasheet_url"] = "https://www.jst-mfg.com/product/pdf/eng/eGH.pdf"
+
+    current = "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "SHOU HAN"
+        part["part_number_manufacturer"] = "TYPE-C 16PIN 2MD(073)"
+        part["file_copy"] = [{"file_source": f"parts_source/{current}/datasheet.pdf", "file_destination": "datasheet.pdf"}]
+        part["part_number_lcsc"] = "C2765186"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2765186.html"
+        part["datasheet_url"] = "https://www.lcsc.com/datasheet/C2765186.pdf"
+        part["dimensions_mm"] = {"length": 8.94, "width": 7.35, "height": 3.16}
+        part["dimension_reference"] = {"document": "SHOU HAN TYPE-C 16PIN 2MD(073)", "pages": [6], "notes": "Top view with solder tails visible; shell 8.94x7.35mm, rear tails extend 0.3mm. Not a fabrication land pattern."}
+        contacts = [
+            ["A1", "gnd", -3.325], ["B12", "gnd", -3.075],
+            ["A4", "vbus", -2.525], ["B9", "vbus", -2.275],
+            ["B8", "sbu2", -1.75], ["A5", "cc1", -1.25],
+            ["B7", "usb_d_minus", -.75], ["A6", "usb_d_plus", -.25],
+            ["A7", "usb_d_minus", .25], ["B6", "usb_d_plus", .75],
+            ["A8", "sbu1", 1.25], ["B5", "cc2", 1.75],
+            ["B4", "vbus", 2.275], ["A9", "vbus", 2.525],
+            ["B1", "gnd", 3.075], ["A12", "gnd", 3.325],
+        ]
+        part["pins"] = {}
+        pads = []
+        for number, name, x in contacts:
+            part["pins"]["pin_" + number] = {"number": number, "name": name, "type": "power" if name in ["gnd", "vbus"] else "signal"}
+            pads.append([number, "top", x, 3.825, .25, .3])
+        part["pins"]["pin_S1"] = {"number": "S1", "name": "shield", "type": "passive"}
+        for x in [-4.32, 4.32]:
+            pads.append(["S1", "left" if x < 0 else "right", x, 3.025, .3, 1.1])
+            pads.append(["S1", "left" if x < 0 else "right", x, -1.475, .3, .8])
+        part["package_drawing"] = {
+            "overall": [8.94, 7.95], "body": [8.94, 7.35], "pins": pads,
+            "boxes": [[-1.7, 1.4, 1.0, .5], [1.7, 1.4, 1.0, .5]],
+            "side": {"overall": [7.35, 3.16], "body": [7.35, 3.16], "pins": []},
+        }
+        part["kicad"] = {"symbol": "Connector:USB_C_Receptacle_USB2.0_16P", "machine_solder": "", "hand_solder": "", "allow_project_fallback": False}
+        part["research_notes"] = ["LCSC C2765186 and the upstream USBC.pdf identify SHOU HAN, not G-Switch GT-USB-7010ASV. The original footprint is preserved; exact master/land-pattern equivalence has not been established."]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin_socket_kinghelm_kh_2_54fh_1x3p_h8_5"
+    if current in extras_dict:
+        extras_dict[current]["name_short"] = "Female Socket 3 Pin"
+        extras_dict[current]["part_number_manufacturer"] = "KH-2.54FH-1X3P-H8.5"
+        extras_dict[current]["part_number_manufacturer_kinghelm"] = "KH-2.54FH-1X3P-H8.5"
+        extras_dict[current]["part_number_lcsc"] = "C2932670"
+        extras_dict[current]["product_url"] = "https://www.lcsc.com/product-detail/C2932670.html"
+        extras_dict[current]["datasheet_url"] = "https://www.lcsc.com/datasheet/C2932670.pdf"
+        extras_dict[current]["manufacturer"] = "Kinghelm"
+        extras_dict[current]["connector_dimensions_mm"] = {
+            "body_length": 7.62,
+            "body_width": 2.5,
+            "insulation_height": 8.5,
+            "pin_pitch": 2.54,
+            "pin_width": 0.64,
+            "pin_thickness": 0.4,
+            "recommended_hole_diameter": 1.02,
+        }
+        extras_dict[current]["header_dimensions_mm"] = {
+            "pin_length_post": 0.0,
+            "pin_length_tail": 3.0,
+            "pin_length_total": 11.5,
+            "pin_pitch": 2.54,
+            "pin_square": 0.64,
+            "plastic_height": 8.5,
+            "plastic_width": 2.5,
+            "plastic_length": 7.62,
+            "pcb_hole_diameter": 1.02,
+        }
+        extras_dict[current]["dimension_reference"] = {
+            "document": "LCSC C2932670 / Kinghelm KH-2.54FH-1X3P-H8.5",
+            "datasheet_url": "https://www.lcsc.com/datasheet/C2932670.pdf",
+            "pages": [],
+            "notes": "Exact 1x3 female socket reference; 8.5 mm insulation body and 3.0 mm board tail.",
+        }
+        extras_dict[current]["electrical"] = {
+            "current_rating": "3 A",
+            "withstand_voltage": "1000 V AC",
+            "contact_resistance_maximum": "20 milliohm",
+            "operating_temperature": "-40 to +105 C",
+        }
+        extras_dict[current]["pins"] = {}
+        connector_pins = [
+            ["1", "pin_1"],
+            ["2", "pin_2"],
+            ["3", "pin_3"],
+        ]
+        for pin_index in range(len(connector_pins)):
+            pin = connector_pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": "signal",
+            }
+        extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    current = "electronic_connector_usb_c_surface_mount_16_pin_korean_hroparts_elec_typec31m12"
+    if current in extras_dict:
+        extras_dict[current]["part_number_manufacturer"] = "TYPE-C-31-M-12"
+        extras_dict[current]["part_number_lcsc"] = "C165948"
+        extras_dict[current]["pins"] = {}
+        usb_c_pins = [
+            ["A1", "gnd", "power"],
+            ["B12", "gnd", "power"],
+            ["A4", "vbus", "power"],
+            ["B9", "vbus", "power"],
+            ["A5", "cc1", "signal"],
+            ["B8", "sbu2", "signal"],
+            ["A6", "dp1", "signal"],
+            ["B7", "dn2", "signal"],
+            ["A7", "dn1", "signal"],
+            ["B6", "dp2", "signal"],
+            ["A8", "sbu1", "signal"],
+            ["B5", "cc2", "signal"],
+            ["A9", "vbus", "power"],
+            ["B4", "vbus", "power"],
+            ["A12", "gnd", "power"],
+            ["B1", "gnd", "power"],
+        ]
+        for pin_index in range(len(usb_c_pins)):
+            pin = usb_c_pins[pin_index]
+            extras_dict[current]["pins"][f"pin_{pin_index + 1}"] = {
+                "number": pin[0],
+                "name": pin[1],
+                "type": pin[2],
+            }
+        extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    current = "electronic_connector_usb_a_surface_mount_4_pin_shenzhen_jing_tuo_jin_electronics_912121a2023s10100"
+    if current in extras_dict:
+        extras_dict[current]["part_number_manufacturer"] = "912-121A2023S10100"
+        extras_dict[current]["part_number_lcsc"] = "C42428"
+        extras_dict[current]["pins"] = {}
+        extras_dict[current]["pins"]["pin_1"] = {
+            "name": "vbus",
+            "number": "1",
+            "type": "power",
+        }
+        extras_dict[current]["pins"]["pin_2"] = {
+            "name": "usb_negative",
+            "number": "2",
+            "type": "signal",
+        }
+        extras_dict[current]["pins"]["pin_3"] = {
+            "name": "usb_positive",
+            "number": "3",
+            "type": "signal",
+        }
+        extras_dict[current]["pins"]["pin_4"] = {
+            "name": "gnd",
+            "number": "4",
+            "type": "power",
+        }
+        extras_dict[current]["pins"]["pin_5"] = {
+            "name": "shield",
+            "number": "5",
+            "type": "shield",
+        }
+        extras_dict[current]["pins"]["pin_6"] = {
+            "name": "shield",
+            "number": "6",
+            "type": "shield",
+        }
+        extras_dict[current]["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+
+    # JST header families (SH/PH/XH and the SparkFun black Qwiic connectors):
+    # shared extras come from the editable data table so pin counts, drawings
+    # and KiCad masters stay in one place.
+    import working_oomp_populate
+    import working_oomp_populate_connector_jst_data
+
+    datasheet_urls = {
+        "eSH": "https://www.jst-mfg.com/product/pdf/eng/eSH.pdf",
+        "ePH": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+        "eXH": "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf",
+    }
+    for jst_part in working_oomp_populate_connector_jst_data.JST_HEADERS:
+        current = working_oomp_populate.build_oomp_id(
+            {"taxonomy_1": "electronic", "taxonomy_2": "connector", **jst_part["taxonomy"]}
+        )
+        if current not in extras_dict:
+            continue
+        part = extras_dict[current]
+        part["manufacturer"] = "JST"
+        part["part_number_manufacturer"] = jst_part["part_number_manufacturer"]
+        part["part_numbers_manufacturer"] = jst_part["part_numbers_manufacturer"]
+        part["name_short"] = jst_part["name_short"]
+        part["part_numbers_lcsc"] = jst_part["part_numbers_lcsc"]
+        if jst_part["part_number_lcsc"]:
+            part["part_number_lcsc"] = jst_part["part_number_lcsc"]
+            part["product_url"] = f"https://www.lcsc.com/product-detail/{jst_part['part_number_lcsc']}.html"
+        elif jst_part["product_url"]:
+            part["product_url"] = jst_part["product_url"]
+        part["datasheet_url"] = datasheet_urls[jst_part["datasheet"]]
+        part["file_copy"] = [
+            {
+                "file_source": f"parts_source/{current}/datasheet.pdf",
+                "file_destination": "datasheet.pdf",
+            }
+        ]
+        pins = {}
+        for index in range(1, jst_part["pin_count"] + 1):
+            pins[f"pin_{index}"] = {"number": str(index), "name": f"pin_{index}", "type": "signal"}
+        part["pins"] = pins
+        drawing = jst_part["package_drawing"]
+        part["package_drawing"] = drawing
+        part["dimensions_mm"] = {"length": drawing["body"][0], "width": drawing["body"][1]}
+        footprint_name = jst_part["kicad_footprint"].split(":")[-1] or "BM15B master (BM16B extrapolated)"
+        part["dimension_reference"] = {
+            "document": f"KiCad Connector_JST {footprint_name} F.Fab outline",
+            "pages": [],
+            "notes": jst_part["note"],
+        }
+        part["kicad"] = {
+            "symbol": jst_part["kicad_symbol"],
+            "machine_solder": jst_part["kicad_footprint"],
+            "hand_solder": "",
+        }
+        notes = [jst_part["note"]]
+        if jst_part["part_number_lcsc"]:
+            notes.append(
+                f"LCSC {jst_part['part_number_lcsc']} lists the JST {jst_part['part_number_manufacturer']}(LF)(SN)."
+            )
+        if jst_part["generic_match"]:
+            part["generic_match"] = jst_part["generic_match"]
+            notes.append(
+                "Generic match targets the SparkFun Qwiic symbols and footprints; "
+                "SparkFun's Qwiic connectors are custom black-insulator JST SH headers."
+            )
+        part["research_notes"] = notes
+
+        if jst_part["taxonomy"].get("taxonomy_7") == "black":
+            # The JST design number does not identify SparkFun's custom colour.
+            sparkfun = next(row for row in jst_part["part_numbers_manufacturer"]
+                            if row["manufacturer"] == "SparkFun")
+            part["procurement_variant"] = "sparkfun_custom_black"
+            part["part_number_sparkfun"] = sparkfun["part_number"]
+            part["part_number_sparkfun_url"] = jst_part["product_url"]
+            orientation = "right-angle" if jst_part["entry"] == "side" else "vertical"
+            part["name_readable_override"] = (
+                f"Black Qwiic 4-pin {orientation} connector (SparkFun {sparkfun['part_number']})"
+            )
+            part["procurement_notes"] = (
+                "Purchase the custom black connector using the SparkFun SKU. "
+                "The JST design number alone does not specify this colour."
+            )
+
+    # New connector families (JST PH/XH mountings, 2.54 mm right-angle
+    # headers short/long pin, dual-row ICSP header): shared extras come from
+    # the editable data table beside the JST one.
+    import working_oomp_populate
+    import working_oomp_populate_connector_families_data
+
+    family_datasheet_urls = {
+        "ePH": "https://www.jst-mfg.com/product/pdf/eng/ePH.pdf",
+        "eXH": "https://www.jst-mfg.com/product/pdf/eng/eXH.pdf",
+    }
+    right_angle_short_datasheet = "https://datasheet.lcsc.com/datasheet/pdf/b5cb595e0f1fbc2c250246781364a9f5.pdf?productCode=C3012223"
+    right_angle_long_datasheet = "https://datasheet.lcsc.com/datasheet/pdf/49c4f1422350c0cc1f0b975f3802576a.pdf?productCode=C2905424"
+    for family_part in working_oomp_populate_connector_families_data.CONNECTOR_FAMILIES:
+        current = working_oomp_populate.build_oomp_id(
+            {"taxonomy_1": "electronic", "taxonomy_2": "connector", **family_part["taxonomy"]}
+        )
+        if current not in extras_dict:
+            continue
+        part = extras_dict[current]
+        if family_part["datasheet"]:
+            part["manufacturer"] = "JST"
+            part["part_number_manufacturer"] = family_part["part_number_manufacturer"]
+            part["part_numbers_manufacturer"] = family_part["part_numbers_manufacturer"]
+            part["datasheet_url"] = family_datasheet_urls[family_part["datasheet"]]
+            part["file_copy"] = [
+                {
+                    "file_source": f"parts_source/{current}/datasheet.pdf",
+                    "file_destination": "datasheet.pdf",
+                }
+            ]
+        part["name_short"] = family_part["name_short"]
+        part["part_numbers_lcsc"] = family_part["part_numbers_lcsc"]
+        if family_part["part_number_lcsc"]:
+            part["part_number_lcsc"] = family_part["part_number_lcsc"]
+            part["product_url"] = f"https://www.lcsc.com/product-detail/{family_part['part_number_lcsc']}.html"
+        elif family_part["product_url"]:
+            part["product_url"] = family_part["product_url"]
+        pins = {}
+        for index in range(1, family_part["pin_count"] + 1):
+            pins[f"pin_{index}"] = {"number": str(index), "name": f"pin_{index}", "type": "signal"}
+        part["pins"] = pins
+        # The family table retains the original research record, but its
+        # legacy right-angle/dual-row drawings are not the current KiCad
+        # master geometry.  Apply the same normalized 2.54 mm drawing here,
+        # after the family metadata is copied, so the assignment cannot
+        # reintroduce the old oversized pads or pin-one marker.
+        family_taxonomy = family_part.get("taxonomy", {})
+        family_taxonomy_5 = str(family_taxonomy.get("taxonomy_5", ""))
+        family_taxonomy_6 = str(family_taxonomy.get("taxonomy_6", ""))
+        if "right_angle" in family_taxonomy_5:
+            drawing = _right_angle_header_drawing(family_part["pin_count"])
+        elif "dual_row" in family_taxonomy_6:
+            drawing = _dual_row_header_drawing(family_part["pin_count"])
+        else:
+            drawing = family_part["package_drawing"]
+        part["package_drawing"] = drawing
+        if "right_angle" in family_taxonomy_5:
+            # The LCSC side profiles give PA=6.0 mm and PC=3.0 mm around a
+            # 2.5 mm carrier. The OOMP short/long identity specifies which
+            # one is the board-facing leg, so preserve that distinction.
+            is_long_pin = "long_pin" in family_taxonomy_5
+            dimensions = dict(part.get("header_dimensions_mm", {}))
+            dimensions["pin_length_post"] = 3.0 if is_long_pin else 6.0
+            dimensions["plastic_height"] = 2.5
+            dimensions["plastic_width"] = 2.5
+            dimensions["pin_length_tail"] = 6.0 if is_long_pin else 3.0
+            dimensions["pin_length_total"] = 11.6
+            dimensions["pin_square"] = 0.64
+            dimensions["pcb_hole_diameter"] = 1.02
+            part["header_dimensions_mm"] = dimensions
+        part["dimensions_mm"] = {"length": drawing["body"][0], "width": drawing["body"][1]}
+        footprint_name = family_part["kicad_footprint"].split(":")[-1]
+        part["dimension_reference"] = {
+            "document": f"KiCad {family_part['kicad_footprint'].split(':')[0]} {footprint_name} F.Fab outline",
+            "pages": [],
+            "notes": family_part["note"],
+        }
+        if "right_angle" in family_taxonomy_5:
+            is_long_pin = "long_pin" in family_taxonomy_5
+            datasheet_url = right_angle_long_datasheet if is_long_pin else right_angle_short_datasheet
+            source_part = "C2905424 / KH-2.54PH90-1X2P-L13.8" if is_long_pin else "C3012223 / PZ254-1-02-W-8.5"
+            part["datasheet_url"] = datasheet_url
+            part["file_copy"] = [
+                {
+                    "file_source": f"parts_source/{current}/datasheet.pdf",
+                    "file_destination": "datasheet.pdf",
+                }
+            ]
+            part["dimension_reference"]["datasheet_url"] = datasheet_url
+            part["dimension_reference"]["pages"] = [1]
+            part["dimension_reference"]["notes"] = (
+                f"{family_part['note']} LCSC family mechanical reference: {source_part}. "
+                "The drawing gives a 2.50 mm carrier, 0.64 mm square pins, a 6.0 mm "
+                "long leg and a 3.0 mm short leg. The generated pin count remains the "
+                "OOMP variant identity."
+            )
+        part["kicad"] = {
+            "symbol": family_part["kicad_symbol"],
+            "machine_solder": family_part["kicad_footprint"],
+            "hand_solder": "",
+        }
+        notes = [family_part["note"]]
+        if family_part["generic_match"]:
+            part["generic_match"] = family_part["generic_match"]
+        part["research_notes"] = notes
+
+    # Generic match for USB-C receptacle used in Easyduino projects
+    current = "electronic_connector_usb_c_surface_mount_16_pin_shou_han_type_c_16pin_2md_073"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["generic_match"] = {
+            "values": ["USB_C_Receptacle_USB2.0", "USB_C_Receptacle"],
+            "symbols": [
+                "Connector:USB_C_Receptacle_USB2.0",
+                "Connector:USB_C_Receptacle_USB2.0_16P",
+                "SparkFun-Connector:USB_C_Receptacle",
+            ],
+            "footprints": [
+                "Connector_USB:USB_C_Receptacle_G-Switch_GT-USB-7010ASV",
+                "SparkFun-Connector:USB-C_16",
+            ],
+        }
+
+    # --- LCSC stock research 2026-09: 2.54mm single-row straight pin headers, 1-40P.
+    # Every pick was verified on its LCSC product page as a JLCPCB-assemblable
+    # part ("JLCPCB Part Class: Extended Part") with 2.54mm pitch; preference
+    # order was assembly availability, then stock. Probes and product-page
+    # captures live in temp captures (kicad_agents/lcsc_capture_parser.py).
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_1_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "Megastar(兆星)"
+        part["part_number_manufacturer"] = "ZX-PZ2.54-1-1PZZ"
+        part["part_number_lcsc"] = "C7501259"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C7501259.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C7501259", "product_name": "1P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C7501259.html"},
+            {"part_number": "C54950614", "product_name": "3A 1x1P Black 250V 2.5mm 2.54mm 1 -25℃~+80℃ Gold Square pin 3mm 1P Thr", "url": "https://www.lcsc.com/product-detail/C54950614.html"},
+            {"part_number": "C27985186", "product_name": "50+ $0.0113 $0.0118 500+ $0.0089 $0.0093 More 24,000+ $0.0061 $0.0064", "url": "https://www.lcsc.com/product-detail/C27985186.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 105740 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_2_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XFCN(兴飞)"
+        part["part_number_manufacturer"] = "PZ254V-11-02P"
+        part["part_number_lcsc"] = "C492401"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C492401.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C492401", "product_name": "2P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C492401.html"},
+            {"part_number": "C7429632", "product_name": "50+ $0.0113 $0.0118 500+ $0.0094 $0.0098 More 24,000+ $0.0070 $0.0073", "url": "https://www.lcsc.com/product-detail/C7429632.html"},
+            {"part_number": "C7501273", "product_name": "10+ $0.0302 $0.0317 100+ $0.0276 $0.029 More 4,000+ $0.0246 $0.0258 10", "url": "https://www.lcsc.com/product-detail/C7501273.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 1280400 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_3_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "BOOMELE(博穆精密)"
+        part["part_number_manufacturer"] = "2.54-1*3P针"
+        part["part_number_lcsc"] = "C49257"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C49257.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C49257", "product_name": "3P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C49257.html"},
+            {"part_number": "C7429633", "product_name": "20+ $0.0114 $0.0119 200+ $0.0105 $0.011 More 10,000+ $0.0092 $0.0096 2", "url": "https://www.lcsc.com/product-detail/C7429633.html"},
+            {"part_number": "C7429672", "product_name": "5+ $0.0663 $0.0697 50+ $0.0559 $0.0588 More 2,800+ $0.0419 $0.0441 4,9", "url": "https://www.lcsc.com/product-detail/C7429672.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 323480 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_4_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "JXTCONN(聚兴泰)"
+        part["part_number_manufacturer"] = "PZ2.54-S04P-A60"
+        part["part_number_lcsc"] = "C42431795"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C42431795.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C42431795", "product_name": "4P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C42431795.html"},
+            {"part_number": "C7429634", "product_name": "Connector Header 4 position 2.5mm Pitch 3A Through Hole -25℃~+85℃", "url": "https://www.lcsc.com/product-detail/C7429634.html"},
+            {"part_number": "C7429682", "product_name": "5+ $0.0838 $0.0882 50+ $0.0705 $0.0742 More 2,500+ $0.0539 $0.0567 5,0", "url": "https://www.lcsc.com/product-detail/C7429682.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 50800 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_5_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "JXTCONN(聚兴泰)"
+        part["part_number_manufacturer"] = "PH2.54-1X5P-H25"
+        part["part_number_lcsc"] = "C42431835"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C42431835.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C42431835", "product_name": "5P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C42431835.html"},
+            {"part_number": "C7429635", "product_name": "20+ $0.0241 $0.0253 200+ $0.0201 $0.0211 More 10,000+ $0.0147 $0.0154", "url": "https://www.lcsc.com/product-detail/C7429635.html"},
+            {"part_number": "C42391663", "product_name": "50+ $0.0167 $0.0175 500+ $0.0129 $0.0135 More 25,000+ $0.0086 $0.009 5", "url": "https://www.lcsc.com/product-detail/C42391663.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 18800 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_6_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "BOOMELE(博穆精密)"
+        part["part_number_manufacturer"] = "2.54-1x6P直针"
+        part["part_number_lcsc"] = "C37208"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C37208.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C37208", "product_name": "6P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C37208.html"},
+            {"part_number": "C7429636", "product_name": "20+ $0.0269 $0.0283 200+ $0.0222 $0.0233 More 10,000+ $0.0166 $0.0174", "url": "https://www.lcsc.com/product-detail/C7429636.html"},
+            {"part_number": "C3294461", "product_name": "Pin Header 6 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C3294461.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 319980 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_7_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XUNPU(讯普)"
+        part["part_number_manufacturer"] = "PH2.54-01-07PZD"
+        part["part_number_lcsc"] = "C7501585"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C7501585.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C7501585", "product_name": "7P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C7501585.html"},
+            {"part_number": "C7429676", "product_name": "5+ $0.0976 $0.1027 50+ $0.0819 $0.0862 More 2,800+ $0.0635 $0.0668 4,9", "url": "https://www.lcsc.com/product-detail/C7429676.html"},
+            {"part_number": "C7429637", "product_name": "10+ $0.0311 $0.0327 100+ $0.0262 $0.0275 More 5,000+ $0.0200 $0.021 10", "url": "https://www.lcsc.com/product-detail/C7429637.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 6540 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_8_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XFCN(兴飞)"
+        part["part_number_manufacturer"] = "PZ254V-12-8P"
+        part["part_number_lcsc"] = "C492421"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C492421.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C492421", "product_name": "8P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C492421.html"},
+            {"part_number": "C7429638", "product_name": "10+ $0.0356 $0.0374 100+ $0.0300 $0.0315 More 5,000+ $0.0229 $0.0241 1", "url": "https://www.lcsc.com/product-detail/C7429638.html"},
+            {"part_number": "C54950595", "product_name": "3A 8P 1x8P Black 250V 2.5mm 2.54mm 1 -25℃~+80℃ Gold Square pin Through", "url": "https://www.lcsc.com/product-detail/C54950595.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 141800 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_9_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "kinghelm(金航标)"
+        part["part_number_manufacturer"] = "KH-2.54PH180-1X9P-L11.5"
+        part["part_number_lcsc"] = "C2932701"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2932701.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2932701", "product_name": "9P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2932701.html"},
+            {"part_number": "C7429639", "product_name": "10+ $0.0399 $0.0419 100+ $0.0336 $0.0353 More 5,000+ $0.0257 $0.027 10", "url": "https://www.lcsc.com/product-detail/C7429639.html"},
+            {"part_number": "C7429612", "product_name": "5+ $0.1252 $0.1317 50+ $0.1038 $0.1092 More 2,800+ $0.0780 $0.0821 4,9", "url": "https://www.lcsc.com/product-detail/C7429612.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 0 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "BOOMELE(博穆精密)"
+        part["part_number_manufacturer"] = "2.54-1*10P针"
+        part["part_number_lcsc"] = "C57369"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C57369.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C57369", "product_name": "10P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C57369.html"},
+            {"part_number": "C3294463", "product_name": "Pin Header 10 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C3294463.html"},
+            {"part_number": "C7501596", "product_name": "Pin Header 10 Position 2.54mm Pitch Dual Row Through Hole -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C7501596.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 25400 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_11_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "HCTL(华灿天禄)"
+        part["part_number_manufacturer"] = "PZ254-1-11-Z-8.5"
+        part["part_number_lcsc"] = "C2894934"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2894934.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2894934", "product_name": "11P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2894934.html"},
+            {"part_number": "C18197918", "product_name": "Pin Header 11 Position 2.54mm Pitch Single Row Through Hole -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C18197918.html"},
+            {"part_number": "C2894953", "product_name": "Pin Header 11 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C2894953.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 8925 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_12_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XUNPU(讯普)"
+        part["part_number_manufacturer"] = "PH2.54-01-12PZD"
+        part["part_number_lcsc"] = "C7501588"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C7501588.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C7501588", "product_name": "12P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C7501588.html"},
+            {"part_number": "C725243", "product_name": "Pin Header 12 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C725243.html"},
+            {"part_number": "C7501597", "product_name": "Pin Header 12 Position 2.54mm Pitch Dual Row Through Hole -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C7501597.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 2200 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_13_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "HCTL(��灿天禄)"
+        part["part_number_manufacturer"] = "PZ254-1-13-Z-8.5"
+        part["part_number_lcsc"] = "C2894936"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2894936.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2894936", "product_name": "13P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2894936.html"},
+            {"part_number": "C2894955", "product_name": "Pin Header 13 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C2894955.html"},
+            {"part_number": "C52928", "product_name": "Pin Header 13 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C52928.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 3015 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_14_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "kinghelm(金航标)"
+        part["part_number_manufacturer"] = "KH-2.54PH180-1X14P-L11.5"
+        part["part_number_lcsc"] = "C2905490"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2905490.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2905490", "product_name": "14P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2905490.html"},
+            {"part_number": "C3294465", "product_name": "Pin Header 14 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C3294465.html"},
+            {"part_number": "C54803357", "product_name": "Through Hole 1kV 1 2.54mm Square pin 3A 2.5mm 6mm 3mm Gold 14P -40℃~+1", "url": "https://www.lcsc.com/product-detail/C54803357.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 3970 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_15_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XUNPU(讯普)"
+        part["part_number_manufacturer"] = "PH2.54-01-15PZD"
+        part["part_number_lcsc"] = "C7501589"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C7501589.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C7501589", "product_name": "15P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C7501589.html"},
+            {"part_number": "C42372507", "product_name": "Through Hole 1kV 1 2.54mm Square pin 3A 2.5mm 6mm -40℃~+105℃ 3mm Gold", "url": "https://www.lcsc.com/product-detail/C42372507.html"},
+            {"part_number": "C247916", "product_name": "Pin Header 15 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C247916.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 465 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_16_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "Megastar(兆星)"
+        part["part_number_manufacturer"] = "ZX-PZ2.54-1-16PZZ"
+        part["part_number_lcsc"] = "C7501270"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C7501270.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C7501270", "product_name": "16P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C7501270.html"},
+            {"part_number": "C54950622", "product_name": "16P 3A 1x16P Black 250V 2.5mm 2.54mm 1 -25℃~+80℃ Gold Square pin 3mm T", "url": "https://www.lcsc.com/product-detail/C54950622.html"},
+            {"part_number": "C22465876", "product_name": "6.1mm 1 16P Black 3A Square pin 3mm -40℃~+105℃ Through Hole 1x16P 2.5m", "url": "https://www.lcsc.com/product-detail/C22465876.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 392275 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_17_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "Ckmtw(灿科盟)"
+        part["part_number_manufacturer"] = "B-2100S17P-A110"
+        part["part_number_lcsc"] = "C49423291"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C49423291.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C49423291", "product_name": "17P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C49423291.html"},
+            {"part_number": "C22465877", "product_name": "6.1mm 1 Black 17P 3A Square pin 3mm 1x17P -40℃~+105℃ Through Hole 2.5m", "url": "https://www.lcsc.com/product-detail/C22465877.html"},
+            {"part_number": "C55130795", "product_name": "1x17P 17P 6mm Right Angle 2.5mm 2.54mm 1 Gold Square pin Through Hole,", "url": "https://www.lcsc.com/product-detail/C55130795.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 705 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_18_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XFCN(兴飞)"
+        part["part_number_manufacturer"] = "PZ254R-11-18P"
+        part["part_number_lcsc"] = "C41413627"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C41413627.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C41413627", "product_name": "18P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C41413627.html"},
+            {"part_number": "C3294467", "product_name": "Pin Header 18 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C3294467.html"},
+            {"part_number": "C22465878", "product_name": "6.1mm 1 Black 3A 18P Square pin 3mm -40℃~+105℃ Through Hole 1x18P 2.5m", "url": "https://www.lcsc.com/product-detail/C22465878.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 1390 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_19_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "HCTL(华灿天禄)"
+        part["part_number_manufacturer"] = "PZ254-1-19-Z-8.5"
+        part["part_number_lcsc"] = "C2894942"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2894942.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2894942", "product_name": "19P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2894942.html"},
+            {"part_number": "C247840", "product_name": "Pin Header 19 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C247840.html"},
+            {"part_number": "C55130799", "product_name": "1x19P 6mm Right Angle 2.5mm 2.54mm 1 19P Gold Square pin Through Hole,", "url": "https://www.lcsc.com/product-detail/C55130799.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 520 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_20_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "BOOMELE(博穆精密)"
+        part["part_number_manufacturer"] = "2.54-1*20P直针"
+        part["part_number_lcsc"] = "C50981"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C50981.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C50981", "product_name": "20P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C50981.html"},
+            {"part_number": "C3294468", "product_name": "Pin Header 20 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C3294468.html"},
+            {"part_number": "C7501591", "product_name": "Pin Header 20 Position 2.54mm Pitch Single Row Through Hole -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C7501591.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 50820 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_21_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "HDGC(华德共创)"
+        part["part_number_manufacturer"] = "HDGCPH-PZ01-21"
+        part["part_number_lcsc"] = "C19190987"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C19190987.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C19190987", "product_name": "21P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C19190987.html"},
+            {"part_number": "C2883446", "product_name": "Pin Header 21 Position 2.54mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883446.html"},
+            {"part_number": "C2883859", "product_name": "250V 3A 2.54mm 1x21P Square pin -40℃~+105℃ 2.5mm 2.54mm Gold Black 1 2", "url": "https://www.lcsc.com/product-detail/C2883859.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 1015 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_22_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "Ckmtw(灿科盟)"
+        part["part_number_manufacturer"] = "B-2100S22P-A110"
+        part["part_number_lcsc"] = "C49423294"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C49423294.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C49423294", "product_name": "22P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C49423294.html"},
+            {"part_number": "C725954", "product_name": "Pin Header 22 Position 2.54 mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C725954.html"},
+            {"part_number": "C2883860", "product_name": "Pin Header 22 Position 2.54 mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883860.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 1940 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_23_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WR-23H-C60D30R2"
+        part["part_number_lcsc"] = "C725915"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C725915.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C725915", "product_name": "23P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C725915.html"},
+            {"part_number": "C49423295", "product_name": "1 250V 1x23P 3A 6mm Square pin 3mm -40℃~+105℃ Through Hole 23P 2.5mm 2", "url": "https://www.lcsc.com/product-detail/C49423295.html"},
+            {"part_number": "C19154736", "product_name": "2.54mm 3A Through Hole Tin 23P Black 250V 1x23P 16.46mm 2.54mm 1 -35℃~", "url": "https://www.lcsc.com/product-detail/C19154736.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 952 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_24_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WR-24H-C60D30R1"
+        part["part_number_lcsc"] = "C2883862"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883862.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883862", "product_name": "24P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883862.html"},
+            {"part_number": "C3294470", "product_name": "Pin Header 24 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C3294470.html"},
+            {"part_number": "C725956", "product_name": "Pin Header 24 Position 2.54 mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C725956.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 654 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_25_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WR-25H-C60D30R2"
+        part["part_number_lcsc"] = "C2883713"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883713.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883713", "product_name": "25P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883713.html"},
+            {"part_number": "C725957", "product_name": "Square pin 3A 250V 2.5mm 1x25P -40℃~+105℃ 2.54 mm 2.54 mm Black Gold 1", "url": "https://www.lcsc.com/product-detail/C725957.html"},
+            {"part_number": "C22465883", "product_name": "25P 6.1mm 1 Black 3A Square pin 3mm -40℃~+105℃ Through Hole 2.5mm 1x25", "url": "https://www.lcsc.com/product-detail/C22465883.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 1460 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_26_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WR-26H-C60D30R2"
+        part["part_number_lcsc"] = "C725918"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C725918.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C725918", "product_name": "26P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C725918.html"},
+            {"part_number": "C49569610", "product_name": "1 Black 3A 6mm Square pin Gold 3mm Right Angle -40℃~+105℃ 600V 2.5mm 1", "url": "https://www.lcsc.com/product-detail/C49569610.html"},
+            {"part_number": "C19190992", "product_name": "1 2.54 mm Black 3A 6mm Square pin Gold 3mm -40℃~+105℃ Through Hole 1x2", "url": "https://www.lcsc.com/product-detail/C19190992.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 1930 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_27_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WR-27H-C60D30R1"
+        part["part_number_lcsc"] = "C2883865"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883865.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883865", "product_name": "27P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883865.html"},
+            {"part_number": "C725919", "product_name": "Pin Header 27 Position 2.54mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C725919.html"},
+            {"part_number": "C49569573", "product_name": "1 Black 27P 3A 6mm Square pin Gold 3mm Right Angle -40℃~+105℃ 1x27P 60", "url": "https://www.lcsc.com/product-detail/C49569573.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 1118 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_28_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "WingTAT(格林柏)"
+        part["part_number_manufacturer"] = "2011-1X28G00SB"
+        part["part_number_lcsc"] = "C49569651"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C49569651.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C49569651", "product_name": "28P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C49569651.html"},
+            {"part_number": "C3294472", "product_name": "Pin Header 28 Position 2.54mm Pitch Dual Row Surface Mount -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C3294472.html"},
+            {"part_number": "C49569574", "product_name": "Pin Header 28 Position 2.54 mm Pitch Single Row Through Hole, Right An", "url": "https://www.lcsc.com/product-detail/C49569574.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 740 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_29_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "HDGC(华德共创)"
+        part["part_number_manufacturer"] = "HDGCPH-PZ01-29"
+        part["part_number_lcsc"] = "C19190995"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C19190995.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C19190995", "product_name": "29P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C19190995.html"},
+            {"part_number": "C49569613", "product_name": "Pin Header 29 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C49569613.html"},
+            {"part_number": "C49569575", "product_name": "Pin Header 29 Position 2.54mm Pitch Single Row Through Hole, Right Ang", "url": "https://www.lcsc.com/product-detail/C49569575.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 490 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_30_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "Amphenol"
+        part["part_number_manufacturer"] = "54101-T30-00LF"
+        part["part_number_lcsc"] = "C5156075"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C5156075.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C5156075", "product_name": "30P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C5156075.html"},
+            {"part_number": "C49569576", "product_name": "Pin Header 30 Position 2.54 mm Pitch Single Row Through Hole, Right An", "url": "https://www.lcsc.com/product-detail/C49569576.html"},
+            {"part_number": "C2883718", "product_name": "Pin Header 30 Position 2.54 mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883718.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 112560 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_31_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "WingTAT(格林柏)"
+        part["part_number_manufacturer"] = "2011-1X31G00SB"
+        part["part_number_lcsc"] = "C49569654"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C49569654.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C49569654", "product_name": "31P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C49569654.html"},
+            {"part_number": "C7430387", "product_name": "1 31P -40℃~+105℃ Through Hole Black 1x31P 250V 3A 2.54mm Square pin Go", "url": "https://www.lcsc.com/product-detail/C7430387.html"},
+            {"part_number": "C2883869", "product_name": "Pin Header 31 Position 2.54mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883869.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 195 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_32_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WV-32H-C60D30"
+        part["part_number_lcsc"] = "C2883691"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883691.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883691", "product_name": "32P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883691.html"},
+            {"part_number": "C7501602", "product_name": "Pin Header 32 Position 2.54mm Pitch Dual Row Through Hole -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C7501602.html"},
+            {"part_number": "C49569655", "product_name": "1 Black 32P 3A 6mm Square pin Gold 3mm -40℃~+105℃ Through Hole 600V 2.", "url": "https://www.lcsc.com/product-detail/C49569655.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 976 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_33_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WR-33H-C60D30R2"
+        part["part_number_lcsc"] = "C2883721"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883721.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883721", "product_name": "33P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883721.html"},
+            {"part_number": "C7430389", "product_name": "1x33P 1 -40℃~+105℃ Through Hole Black 250V 33P 3A 2.54mm Square pin Go", "url": "https://www.lcsc.com/product-detail/C7430389.html"},
+            {"part_number": "C2883790", "product_name": "1x33P -40℃~+105℃ 250V 2.5mm 3A 2.54mm 2.54mm Square pin Gold Black 1 3", "url": "https://www.lcsc.com/product-detail/C2883790.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 950 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_34_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WR-34H-C60D30R2"
+        part["part_number_lcsc"] = "C2883722"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883722.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883722", "product_name": "34P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883722.html"},
+            {"part_number": "C2883693", "product_name": "Pin Header 34 Position 2.54 mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883693.html"},
+            {"part_number": "C7430390", "product_name": "1 34P -40℃~+105℃ Through Hole Black 250V 3A 1x34P 2.54 mm Square pin G", "url": "https://www.lcsc.com/product-detail/C7430390.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 956 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_35_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WR-35H-C60D30R2"
+        part["part_number_lcsc"] = "C2883723"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883723.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883723", "product_name": "35P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883723.html"},
+            {"part_number": "C2883694", "product_name": "Pin Header 35 Position 2.54mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883694.html"},
+            {"part_number": "C2883831", "product_name": "Pin Header 35 Position 2.54mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883831.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 774 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_36_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WV-36H-C60D30"
+        part["part_number_lcsc"] = "C2883695"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883695.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883695", "product_name": "36P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883695.html"},
+            {"part_number": "C2883874", "product_name": "Pin Header 36 Position 2.54 mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883874.html"},
+            {"part_number": "C7430392", "product_name": "Pin Header 36 Position 2.54 mm Pitch Single Row Through Hole", "url": "https://www.lcsc.com/product-detail/C7430392.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 1320 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_37_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WV-37H-C60D30"
+        part["part_number_lcsc"] = "C2883696"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883696.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883696", "product_name": "37P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883696.html"},
+            {"part_number": "C7430393", "product_name": "1x37P 1 -40℃~+105℃ Through Hole Black 250V 3A 37P 2.54mm Square pin Go", "url": "https://www.lcsc.com/product-detail/C7430393.html"},
+            {"part_number": "C2883875", "product_name": "Pin Header 37 Position 2.54mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883875.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 928 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_38_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "XKB Connection(中国星坤)"
+        part["part_number_manufacturer"] = "X6511WV-38H-C60D30"
+        part["part_number_lcsc"] = "C2883697"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2883697.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2883697", "product_name": "38P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2883697.html"},
+            {"part_number": "C7430394", "product_name": "1 -40℃~+105℃ Through Hole Black 250V 38P 3A 2.54 mm 1x38P Square pin G", "url": "https://www.lcsc.com/product-detail/C7430394.html"},
+            {"part_number": "C2883876", "product_name": "Pin Header 38 Position 2.54 mm Pitch Single Row -40℃~+105℃", "url": "https://www.lcsc.com/product-detail/C2883876.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 681 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_39_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["oomp_datasheet_common_with"] = "electronic_connector_header_2_54_mm_pitch_through_hole_10_pin"
+        part["manufacturer"] = "HDGC(华德共创)"
+        part["part_number_manufacturer"] = "HDGCPH-PZ01-39"
+        part["part_number_lcsc"] = "C19191005"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C19191005.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C19191005", "product_name": "39P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C19191005.html"},
+            {"part_number": "C2883698", "product_name": "250V 3A 2.54mm Square pin 1x39P -40℃~+105℃ 2.5mm 2.54mm Gold Black 1 3", "url": "https://www.lcsc.com/product-detail/C2883698.html"},
+            {"part_number": "C7430395", "product_name": "1x39P 1 -40℃~+105℃ Through Hole Black 250V 3A 2.54mm Square pin 39P Go", "url": "https://www.lcsc.com/product-detail/C7430395.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 935 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_40_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "BOOMELE(博穆精密)"
+        part["part_number_manufacturer"] = "2.54-1*40P直针"
+        part["part_number_lcsc"] = "C2337"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2337.html"
+        part["part_numbers_lcsc"] = [
+            {"part_number": "C2337", "product_name": "40P 2.54mm single-row straight pin header (JLC assembly verified)", "url": "https://www.lcsc.com/product-detail/C2337.html"},
+            {"part_number": "C9742", "product_name": "Pin Header 40 Position 2.54mm Pitch Single Row Through Hole -55℃~+105℃", "url": "https://www.lcsc.com/product-detail/C9742.html"},
+        ]
+        part["research_notes"] = [
+            "LCSC stock research 2026-09: JLCPCB-assembly verified (Extended Part), 2.54mm single-row straight, 84990 in stock at capture."
+        ]
+
+    current = "electronic_connector_header_2_54_mm_pitch_through_hole_right_angle_short_pin_40_pin"
+    if current in extras_dict:
+        part = extras_dict[current]
+        part["manufacturer"] = "BOOMELE(Boom Precision Elec)"
+        part["part_number_manufacturer"] = "2.54-1*40PStraight Bent Pin"
+        part["part_numbers_manufacturer"] = [
+            {"manufacturer": "BOOMELE(Boom Precision Elec)", "part_number": "2.54-1*40PStraight Bent Pin"}
+        ]
+        part["part_number_lcsc"] = "C2334"
+        part["product_url"] = "https://www.lcsc.com/product-detail/C2334.html"
+        part["part_numbers_lcsc"] = [
+            {
+                "part_number": "C2334",
+                "product_name": "BOOMELE 40-position 2.54mm single-row through-hole right-angle header",
+                "url": "https://www.lcsc.com/product-detail/C2334.html",
+            }
+        ]
+        part["datasheet_url"] = "https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887122115760129-C2334.pdf"
+        part["dimension_reference"]["datasheet_url"] = part["datasheet_url"]
+        part["dimension_reference"]["document"] = "JLCPCB C2334 / BOOMELE 2.54-1*40PStraight Bent Pin drawing, PZ2.54-1xNAW-ZW"
+        part["dimension_reference"]["notes"] = (
+            "The JLC drawing shows a 40-position 2.54 mm right-angle header with a 6.00±0.2 mm projecting leg and a 3.0±0.2 mm PCB tail. "
+            "The short PCB leg sits on the plastic-body side, matching the existing short-pin taxonomy. JLC/LCSC also label Length of Mating Pin as 3mm; that listing field is retained verbatim in intake evidence."
+        )
+        part["research_notes"] = [
+            "Verified 2026-09-27 against the live JLCPCB C2334 page and same-code LCSC C2334 listing; both identify the BOOMELE 40-position, 2.54mm-pitch, single-row through-hole right-angle header."
+        ]
+
+    from working_oomp_populate_jlc import apply_reviewed_jlc_choices
+    apply_reviewed_jlc_choices(extras_dict, family="connector")
+    from working_oomp_populate_connector_ph_data import apply_extras as apply_boomele_ph_extras
+    apply_boomele_ph_extras(extras_dict)
+
+    from working_oomp_populate_connector_crimp_data import apply_extras as apply_cable_extras
+    apply_cable_extras(extras_dict)
+    from working_oomp_populate_connector_jst_cable_data import apply_extras as apply_jst_cable_extras
+    apply_jst_cable_extras(extras_dict)
+
+    # Generic shapes and exact orderable products stay distinct. A catalogue
+    # relationship records the overlap without promising physical substitution.
+    for positions in range(2, 13):
+        prefix = f"electronic_connector_terminal_block_3_5_mm_pitch_through_hole_{positions}_pin_green_"
+        generic_id = prefix + f"screw_terminal_1x{positions:02d}_p3_5_mm_green"
+        exact_id = prefix + f"4ucon_technology_{19694 + positions}"
+        for current, target, role, relationship in (
+            (generic_id, exact_id, "generic", "Named product candidate"),
+            (exact_id, generic_id, "exact", "Generic catalogue entry"),
+        ):
+            if current not in extras_dict:
+                continue
+            part = extras_dict[current]
+            part["catalogue_role"] = role
+            part["catalogue_relationships"] = [{
+                "oomp_id": target,
+                "relationship": relationship,
+                "notes": "Same pitch, position count and colour. Shared nominal drawings and KiCad defaults do not establish interchangeability. Verify the manufacturer dimensions before substitution.",
+                "compatibility_verified": False,
+            }]
+            if role == "generic":
+                part["name_readable_override"] = f"Generic 3.5 mm {positions}-position green terminal block"
+                part["procurement_notes"] = "Generic catalogue definition. No exact manufacturer order code is assigned. Review the linked named product and its dimensions before purchase."

@@ -1,0 +1,83 @@
+format_version: 1
+ledger_id: JLC_C2496
+status: researched
+family: diode
+part_id: electronic_diode_bridge_rectifier_kbp_mdd_microdiode_semiconductor_kbp310
+exact_identity: true
+package: KBP
+pin_count: 4
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: MDD(Microdiode Semiconductor)
+  manufacturer_part_number: KBP310
+  lcsc_part_number: C2496
+  lcsc_decision: 'Missing package tokens: the bridge_rectifier rows in working_oomp_populate_diode.py
+    only covered the mbs body (MB10S/MB6S); no mbf, db, kbp, or kbl rows existed in
+    the module, reviewed_choices.json, or the parts registry. Added exact MDD rows
+    under the diode family lock [connector... bridge_rectifier, kbp, mdd_microdiode_semiconductor,
+    kbp310]. Second code on the kbp body family introduced with C2494''s intake; never
+    silently replace the higher-rated 1kV/3A part with the 600V/2A sibling or vice
+    versa. KBP310 (KBP; 1kV 3A single-phase bridge (higher current/voltage sibling
+    of KBP206)) is its exact first reviewed preferred house choice. Rating comparison
+    from the staged capture: ratings below, pins per the physical body. Edits made
+    under the diode family lock. Rating comparison from the staged capture: Diodes/Bridge
+    Rectifiers, package KBP, stock 57833 recorded as observed. Edits made under the
+    diode family lock.'
+  product_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-KBP310/C2496
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8588887028926308352-C2496.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-KBP310/C2496
+  webpage_capture: parts_source/electronic_diode_bridge_rectifier_kbp_mdd_microdiode_semiconductor_kbp310/web_page_distributor_jlc.txt
+  evidence_notes:
+  - 'Staged JLC live-page capture kicad_agents/jlc_house_parts/browser_staging/C2496.json
+    (captured_on 2026-09-29, zcode_inapp_browser_visible_page): JLCPCB Part # C2496,
+    Manufacturer MDD(Microdiode Semiconductor), MFR.Part # KBP310, visible badge Extended
+    which maps to preferred_extended in this corrected official-category queue (Promotional
+    Extended tooltip). No datasheet PDF imported at intake (solo worker has no download);
+    download is an integration-stage task.'
+  - Full visible product-page text saved from the interactive browser in kicad_agents/jlc_house_parts/browser_staging/C2496.json.
+jlc_selection:
+  verified_on: '2026-09-29'
+  official_url: https://jlcpcb.com/partdetail/MDD_Microdiode_Semiconductor-KBP310/C2496
+  tier: preferred_extended
+  tier_label_observed: Extended
+  stock_observed: 57833
+  purchase_moq_observed: null
+  pcba_min_qty_observed: null
+  compatibility_notes: 'Missing package tokens: the bridge_rectifier rows in working_oomp_populate_diode.py
+    only covered the mbs body (MB10S/MB6S); no mbf, db, kbp, or kbl rows existed in
+    the module, reviewed_choices.json, or the parts registry. Added exact MDD rows
+    under the diode family lock [connector... bridge_rectifier, kbp, mdd_microdiode_semiconductor,
+    kbp310]. Second code on the kbp body family introduced with C2494''s intake; never
+    silently replace the higher-rated 1kV/3A part with the 600V/2A sibling or vice
+    versa. KBP310 (KBP; 1kV 3A single-phase bridge (higher current/voltage sibling
+    of KBP206)) is its exact first reviewed preferred house choice. Rating comparison
+    from the staged capture: ratings below, pins per the physical body. Edits made
+    under the diode family lock. Rating comparison from the staged capture: Diodes/Bridge
+    Rectifiers, package KBP, stock 57833 recorded as observed. Edits made under the
+    diode family lock.'
+  ratings:
+    Assembly Type: Wave Soldering
+    Attributes: Value
+    Current - Rectified: 3A
+    Datasheet: Download
+    Description: -55℃~+150℃ 1.1V@3A 10uA@1kV 1kV 3A 60A Single-Phase Rectifier KBP
+      Bridge Rectifiers ROHS
+    ECCN: EAR99
+    EasyEDA Libraries: PCB Footprint or Symbol
+    'JLCPCB Part #': C2496
+    'MFR.Part #': KBP310
+    MSL Level: MSL 1
+    Non-Repetitive Peak Forward Surge Current: 60A
+    Operating Junction Temperature Range: -55℃~+150℃
+    PCBA Type: Economic and Standard
+    Reverse Leakage Current (Ir): 10uA@1kV
+    Source: JLCPCB
+    Type: Single-Phase Rectifier
+    Voltage - DC Reverse(Vr): 1kV
+    Voltage - Forward(Vf@If): 1.1V@3A
+  datasheet_pages: []
+  pinout_checked: false
+  footprint_checked: false
+  visual_review: pending

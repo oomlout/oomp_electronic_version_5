@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_sot_23_bipolar_npn_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9014](electronic_transistor_sot_23_bipolar_npn_45_volt_100_milliamp_jiangsu_changjing_electronics_technology_co_ltd_s9014.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23`. [License](../LICENSE.md).

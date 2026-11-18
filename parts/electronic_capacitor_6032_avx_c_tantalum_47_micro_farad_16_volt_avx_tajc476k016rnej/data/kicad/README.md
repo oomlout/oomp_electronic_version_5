@@ -1,0 +1,13 @@
+# KiCad assets: electronic_capacitor_6032_avx_c_tantalum_47_micro_farad_16_volt_avx_tajc476k016rnej
+
+- [Symbol](electronic_capacitor_6032_avx_c_tantalum_47_micro_farad_16_volt_avx_tajc476k016rnej.kicad_sym) — `Device:C_Polarized`
+- [Machine Solder](machine_solder/electronic_capacitor_6032_avx_c_tantalum_47_micro_farad_16_volt_avx_tajc476k016rnej.kicad_mod) — `Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C`
+- [Hand Solder](hand_solder/electronic_capacitor_6032_avx_c_tantalum_47_micro_farad_16_volt_avx_tajc476k016rnej.kicad_mod) — `Capacitor_Tantalum_SMD:CP_EIA-6032-28_Kemet-C_HandSolder`
+
+## Review
+
+All three assets are available.
+
+Silkscreen code: `32RK2`. Source provenance: [manifest](manifest.yaml).
+
+Derived from the [official KiCad libraries](https://www.kicad.org/libraries/license/).

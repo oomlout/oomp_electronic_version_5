@@ -1,0 +1,113 @@
+# Resistor array 100000 Ohm 4 X 0402 Convex
+
+`electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin`
+
+Resistor array 100000 Ohm 4 X 0402 Convex is an OOMP electronic resistor array definition. It uses the 4 x 0402 convex package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.0 mm.
+
+
+![Resistor array 100000 Ohm 4 X 0402 Convex studio render](data/display_render/render.png)
+
+Illustrates UNI-ROYAL 4D02WGJ0104TCE, a 5% example; this generic entry has no selected manufacturer or tolerance. KiCad geometry and materials are illustrative. Documented value code; ink, typeface and placement are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_SMD.3dshapes/R_Array_Convex_4x0402.step)
+
+Model credit: 2017 kicad StepUp. GPL-3.0-or-later with exception in source STEP header.
+
+
+
+
+## At a glance
+
+| Detail | Value |
+| --- | --- |
+| OOMP ID | `electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin` |
+| Type | Resistor Array |
+| Package / style | 4 x 0402 convex |
+| Nominal size | 2.0 &#x00D7; 1.0 mm |
+
+
+## Classification
+
+| Level | Value |
+| --- | --- |
+| 1 | `electronic` |
+| 2 | `resistor_array` |
+| 3 | `4_x_0402_convex` |
+| 4 | `100000_ohm` |
+| 5 | `8_pin` |
+
+
+
+
+
+
+
+
+
+
+
+## Nominal dimensions
+
+| Measurement | Value |
+| --- | ---: |
+| Length | 2.0 mm |
+| Width | 1.0 mm |
+
+
+
+
+
+
+
+
+
+
+
+## Used in projects
+
+[Browse confirmed project usage](https://oomlout.github.io/oomp_electronic_project_version_5/usage/index.html#electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin)
+
+
+## Files
+
+
+
+[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+
+
+
+![Pinout drawing](data/working_svg_square_pins_300.png)
+
+![Assembly](data/working_svg_assembly_300.png)
+
+![Assembly pinout](data/working_svg_assembly_pins_300.png)
+
+![Outline](data/working_svg_outline_300.png)
+
+![Part ID](data/working_svg_part_id_300.png)
+
+![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
+
+![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
+
+![Square summary](data/working_svg_square_300.png)
+
+![Square schematic](data/working_svg_square_schematic_300.png)
+
+![Dimensions](data/working_svg_dimensioned_300.png)
+
+![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
+
+
+
+
+[View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_array_4_x_0402_convex_100000_ohm_8_pin)
+
+
+
+[Browse this category](../../navigation/electronic/resistor_array/4_x_0402_convex/100000_ohm/README.md)
+
+
+---
+
+This page is generated from the OOMP part definition by a Roboclick Jinja template. Edit the source taxonomy or template rather than this generated file.

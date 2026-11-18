@@ -1,0 +1,36 @@
+# TEMPLATE ONLY: replace intake identity/capture blanks first; complete remaining
+# technical fields in the full pass. Never treat placeholders as verified facts.
+format_version: 1
+ledger_id: ""
+status: researched
+family: ""
+part_id: ""
+exact_identity: true
+package: ""
+pin_count: 0
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: ""
+  manufacturer_part_number: ""
+  lcsc_part_number: ""
+  lcsc_decision: ""
+  product_url: ""
+  datasheet_url: ""
+  browser_sources: []
+  webpage_capture: "" # parts_source/<id>/web_page_distributor_jlc.txt or saved HTML
+  evidence_notes: []
+jlc_selection:
+  verified_on: "" # YYYY-MM-DD, actual official-page check date
+  official_url: ""
+  tier: "" # basic or preferred_extended; preserve raw wording below
+  tier_label_observed: ""
+  stock_observed: null
+  purchase_moq_observed: null
+  pcba_min_qty_observed: null
+  compatibility_notes: "" # Include generic-vs-exact scope and previous preference decision
+  ratings: {} # Full pass: exact ratings WITH units, not generic-family guarantees
+  datasheet_pages: [] # Full pass: ordering code, pinout, dimensions, land pattern
+  pinout_checked: false # Full pass
+  footprint_checked: false # Full pass
+  visual_review: pending # Full pass: update after inspecting rendered outputs

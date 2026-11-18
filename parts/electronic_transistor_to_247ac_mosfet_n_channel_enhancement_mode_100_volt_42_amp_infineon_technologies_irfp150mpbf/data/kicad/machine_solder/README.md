@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_247ac_mosfet_n_channel_enhancement_mode_100_volt_42_amp_infineon_technologies_irfp150mpbf](electronic_transistor_to_247ac_mosfet_n_channel_enhancement_mode_100_volt_42_amp_infineon_technologies_irfp150mpbf.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-247-3_Vertical`. [License](../LICENSE.md).

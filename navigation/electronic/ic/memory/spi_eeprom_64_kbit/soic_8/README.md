@@ -1,0 +1,13 @@
+# Electronic / IC / Memory / SPI Eeprom 64 Kbit / Soic 8
+
+[Up one level](../README.md)
+This category contains 1 parts in total.
+
+## Categories
+
+- [Microchip](microchip/README.md)
+
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

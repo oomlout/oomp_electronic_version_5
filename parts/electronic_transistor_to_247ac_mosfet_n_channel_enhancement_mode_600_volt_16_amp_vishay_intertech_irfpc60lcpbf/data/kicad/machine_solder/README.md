@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_247ac_mosfet_n_channel_enhancement_mode_600_volt_16_amp_vishay_intertech_irfpc60lcpbf](electronic_transistor_to_247ac_mosfet_n_channel_enhancement_mode_600_volt_16_amp_vishay_intertech_irfpc60lcpbf.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-247-3_Vertical`. [License](../LICENSE.md).

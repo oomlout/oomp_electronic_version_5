@@ -1,0 +1,25 @@
+# {{ p.navigation.title }}
+
+{% if p.navigation.parent_path %}[Up one level]({{ p.navigation.parent_path }}){% endif %}
+
+This category contains {{ p.navigation.descendant_part_count }} parts in total.
+
+{% if p.navigation.child_categories %}
+## Categories
+
+{% for category in p.navigation.child_categories -%}
+- [{{ category.name }}]({{ category.path }})
+{% endfor %}
+{% endif %}
+
+{% if p.navigation.parts %}
+## Parts
+
+{% for part in p.navigation.parts -%}
+- [{{ part.name }}]({{ part.url }}) — `{{ part.id }}`
+{% endfor %}
+{% endif %}
+
+---
+
+Generated from the populated OOMP taxonomy by Roboclick and Jinja.

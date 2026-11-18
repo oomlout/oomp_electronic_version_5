@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_to_251_mosfet_n_channel_enhancement_mode_55_volt_17_amp_infineon_technologies_irlu024npbf](electronic_transistor_to_251_mosfet_n_channel_enhancement_mode_55_volt_17_amp_infineon_technologies_irlu024npbf.kicad_mod)
+
+Source: `Package_TO_SOT_THT:TO-251-3_Vertical`. [License](../LICENSE.md).

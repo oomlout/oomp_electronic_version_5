@@ -1,0 +1,135 @@
+
+import copy
+import itertools
+
+from oomp_populate_helper import build_oomp_id, write_extras
+
+
+def main(**kwargs):
+    
+    options = []
+    
+    kwargs["options"] = options
+
+    import working_oomp_populate_display
+    working_oomp_populate_display.main(**kwargs)
+    import working_oomp_populate_wire
+    working_oomp_populate_wire.main(**kwargs)
+    import working_oomp_populate_prototyping
+    working_oomp_populate_prototyping.main(**kwargs)
+    import working_oomp_populate_led
+    working_oomp_populate_led.main(**kwargs)
+    import working_oomp_populate_resistor
+    working_oomp_populate_resistor.main(**kwargs)
+    import working_oomp_populate_resistor_array
+    working_oomp_populate_resistor_array.main(**kwargs)
+    import working_oomp_populate_capacitor
+    working_oomp_populate_capacitor.main(**kwargs)
+    import working_oomp_populate_crystal
+    working_oomp_populate_crystal.main(**kwargs)
+    import working_oomp_populate_ferrite_bead
+    working_oomp_populate_ferrite_bead.main(**kwargs)
+    import working_oomp_populate_inductor
+    working_oomp_populate_inductor.main(**kwargs)
+    import working_oomp_populate_fuse
+    working_oomp_populate_fuse.main(**kwargs)
+    import working_oomp_populate_connector
+    working_oomp_populate_connector.main(**kwargs)
+    import working_oomp_populate_diode
+    working_oomp_populate_diode.main(**kwargs)
+    import working_oomp_populate_transistor
+    working_oomp_populate_transistor.main(**kwargs)
+    import working_oomp_populate_ic
+    working_oomp_populate_ic.main(**kwargs)
+    import working_oomp_populate_switch
+    working_oomp_populate_switch.main(**kwargs)
+    import working_oomp_populate_relay
+    working_oomp_populate_relay.main(**kwargs)
+    import working_oomp_populate_heatsink
+    working_oomp_populate_heatsink.main(**kwargs)
+    import working_oomp_populate_mounting_hole
+    working_oomp_populate_mounting_hole.main(**kwargs)
+    import working_oomp_populate_sensor
+    working_oomp_populate_sensor.main(**kwargs)
+    import working_oomp_populate_potentiometer
+    working_oomp_populate_potentiometer.main(**kwargs)
+    import working_oomp_populate_battery
+    working_oomp_populate_battery.main(**kwargs)
+    import working_oomp_populate_transformer
+    working_oomp_populate_transformer.main(**kwargs)
+
+
+    ###### populate taxonomy details and oobb details
+    if True:
+        import working_oomp_populate_svg
+        for option in options:       
+            if option.get("taxonomy_1", "") == "":
+                option["taxonomy_1"] = "electronic"
+            if option.get("taxonomy_1", "") == "electronic":
+                working_oomp_populate_svg.add_svg_details(option)
+            #option["taxonomy_2"] = f"electronic"             
+            #value_name = "code"
+            #value = option.get(value_name, None)
+            #option["taxonomy_3"] = f"{value}_{value_name}"
+            #oobb details
+            if False:
+                pass
+                oobb_details = {}
+                #taxonomy_4 hole_cover
+                oobb_details["oobb_name"] = option_type
+                oobb_details["diameter"] = option.get("diameter", None)            
+                oobb_details["depth"] = option.get("depth", None)
+                option["oobb_details"] = oobb_details
+            #svg details
+            if False:
+                pass
+                svg_details = {}
+                svg_details["svg_name"] = option_type
+                svg_details["svg_width"] = option.get("width", None)            
+                svg_details["svg_height"] = option.get("height", None)
+                option["svg_details"] = svg_details
+
+    #load the options into full list
+    extras = []
+    for option in options:
+        extra = {}
+        extra.update(option)
+        extras.append(extra)
+
+    
+    ######### add notes from an id string
+    import working_oomp_populate_extra_detail
+    working_oomp_populate_extra_detail.main(extras=extras)
+
+    import working_oomp_populate_category
+    for extra in extras:
+        working_oomp_populate_category.add_category(extra)
+
+    import working_oomp_populate_kicad
+    for extra in extras:
+        working_oomp_populate_kicad.add_kicad_details(extra)
+
+    # Display names and distributor links are deterministic population data.
+    # Navigation is generated in a dedicated action so it is no longer stored as
+    # synthetic OOMP part folders under parts/ or parts_source/.
+    import working_oomp_metadata
+    working_oomp_metadata.add_readable_metadata(extras)
+
+
+    # write_extras rewrites each working.yaml from scratch, which drops the
+    # oomp_datasheet_common_with pointer recorded by datasheet deduplication.
+    # Snapshot the pointers first, then after writing restore the ones that
+    # were wiped and re-derive all of them from the PDFs on disk so newly
+    # populated parts are folded in too.  This keeps the shared datasheet
+    # location persistent between generations.
+    import action_dedupe_datasheets
+    common_with_snapshot = action_dedupe_datasheets.collect_common_with_keys()
+    write_extras(extras)
+    action_dedupe_datasheets.restore_common_with_keys(common_with_snapshot, verbose=False)
+    action_dedupe_datasheets.deduplicate(dry_run=False, verbose=False)
+
+
+
+# Call main automatically
+if __name__ == "__main__":
+    main()

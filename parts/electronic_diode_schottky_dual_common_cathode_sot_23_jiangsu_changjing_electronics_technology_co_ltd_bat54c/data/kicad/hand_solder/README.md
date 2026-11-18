@@ -1,0 +1,5 @@
+# Hand Solder
+
+[electronic_diode_schottky_dual_common_cathode_sot_23_jiangsu_changjing_electronics_technology_co_ltd_bat54c](electronic_diode_schottky_dual_common_cathode_sot_23_jiangsu_changjing_electronics_technology_co_ltd_bat54c.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23`. [License](../LICENSE.md).

@@ -1,0 +1,5 @@
+# Machine Solder
+
+[electronic_transistor_sot_23_bipolar_pnp_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8550_y2_range_200_350](electronic_transistor_sot_23_bipolar_pnp_25_volt_1_5_amp_jiangsu_changjing_electronics_technology_co_ltd_ss8550_y2_range_200_350.kicad_mod)
+
+Source: `Package_TO_SOT_SMD:SOT-23`. [License](../LICENSE.md).

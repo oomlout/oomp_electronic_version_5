@@ -1,0 +1,98 @@
+format_version: 1
+ledger_id: JLC_C1002
+status: researched
+family: ferrite_bead
+part_id: electronic_ferrite_bead_0603_600_ohm_200_milliamp_sunlord_gz1608d601tf
+exact_identity: true
+package: '0603'
+pin_count: 2
+datasheet_required: true
+project_references: []
+research:
+  manufacturer: Sunlord
+  manufacturer_part_number: GZ1608D601TF
+  lcsc_part_number: C1002
+  lcsc_decision: Exact ferrite bead identity. The existing generic 0603 600 ohm bead
+    is rated 500 milliamp and carries no maker, so it was not replaced; the Sunlord
+    200 milliamp part is a distinct lower-current identity. Added one explicit family
+    row electronic_ferrite_bead_0603_600_ohm_200_milliamp_sunlord_gz1608d601tf using
+    the established package/impedance/current_rating/maker taxonomy, and added the
+    reviewed-choices adapter to the ferrite_bead family extras.
+  product_url: https://jlcpcb.com/partdetail/Sunlord-GZ1608D601TF/C1002
+  datasheet_url: https://jlc-prod-smt.oss-eu-central-1.aliyuncs.com/smtDataManualFile/8579709915062976512-C1002.pdf
+  browser_sources:
+  - https://jlcpcb.com/partdetail/Sunlord-GZ1608D601TF/C1002
+  webpage_capture: parts_source/electronic_ferrite_bead_0603_600_ohm_200_milliamp_sunlord_gz1608d601tf/web_page_distributor_jlc.txt
+  evidence_notes:
+  - 'Live JLCPCB product page on 2026-09-25 displayed Basic class, Sunlord, MFR.Part
+    # GZ1608D601TF, JLCPCB Part # C1002, Package 0603, and the full description.'
+  - Purchasing box showed In Stock 778,420; Minimum 1; Full Reel 4000; Available Order
+    Qty 705,964.
+  - 'Specifications table observed: current rating 200mA, DCR 450mΩ, impedance 600Ω@100MHz,
+    1 circuit, tolerance ±25%, operating temperature -55 to +125 deg C.'
+  - Page linked a datasheet PDF (stable URL recorded without signed query parameters);
+    PDF downloaded through the interactive browser on 2026-09-30 and imported
+    with provenance (sha256 in datasheet_source.yaml).
+  - Repository search found no existing Sunlord bead row or C1002 assignment; the
+    generic 0603 600 ohm 500 milliamp row remains untouched.
+  - 'Full pass 2026-09-30: live page reconfirmed (C1002, Sunlord, GZ1608D601TF,
+    Basic, In Stock 657,869, Minimum 1); the page datasheet link resolves to the
+    same stable URL recorded at intake. Sunlord GZ series catalogue rev.
+    2024/6/19 read in full as page images: ordering decode page 1 covers the
+    full suffix GZ1608D601TF (GZ general bead, 1608 [0603] 1.6 x 0.8 mm, D
+    material, 601 = 600 ohm, T tape & reel, F hazardous-substance-free);
+    GZ1608 TYPE table page 3 lists the exact part: 600 +-25% ohm at 100 MHz,
+    max DCR 0.45 ohm, max rated current 200 mA; dimensions page 1 GZ1608 row L
+    1.6 +-0.15, W 0.8 +-0.15, T 0.8 +-0.15, terminal width a 0.3 +-0.2 mm;
+    per-part impedance curve page 8; the page 5 derating rule above +85 C
+    applies only to beads rated 1000 mA and above, so not to this 200 mA part.'
+jlc_selection:
+  verified_on: '2026-09-30'
+  official_url: https://jlcpcb.com/partdetail/Sunlord-GZ1608D601TF/C1002
+  tier: basic
+  tier_label_observed: Basic
+  stock_observed: 778420
+  purchase_moq_observed: 1
+  pcba_min_qty_observed: null
+  compatibility_notes: Exact ferrite bead identity. The existing generic 0603 600
+    ohm bead is rated 500 milliamp and carries no maker, so it was not replaced; the
+    Sunlord 200 milliamp part is a distinct lower-current identity. Added one explicit
+    family row electronic_ferrite_bead_0603_600_ohm_200_milliamp_sunlord_gz1608d601tf
+    using the established package/impedance/current_rating/maker taxonomy, and added
+    the reviewed-choices adapter to the ferrite_bead family extras. Full-pass
+    datasheet evidence confirms the identity and ratings.
+  ratings:
+    Current Rating: 200mA
+    DC Resistance(DCR): 450mΩ
+    Impedance @ Frequency: 600Ω@100MHz
+    Number of Circuits: '1'
+    Operating Temperature: -55℃~+125℃
+    Tolerance: ±25%
+  datasheet_pages:
+    document: Sunlord Multilayer Chip Ferrite Bead GZ series catalogue, rev. 2024/6/19
+    ordering_coverage:
+    - 1
+    pin_connections:
+    - 1
+    dimensions:
+    - 1
+    electrical_characteristics:
+    - 3
+    impedance_curves:
+    - 5
+    - 8
+  pinout_checked: true
+  footprint_checked: true
+  visual_review: 'Inspected 2026-09-30 after the build. data/working_svg_assembly_pins.png
+    and _300 preview: 0603 chip with terminal_1 on the left and terminal_2 on the
+    right, non-polarized symmetric body, no mirroring, no label overlap, no cropping.
+    working_svg_square_pins.png hero titled Ferrite Bead GZ1608D601TF 0603 with pin
+    1 left and pin 2 right. working_svg_dimensioned.png: 1.6 x 0.8 mm body with arrows,
+    matching the Sunlord GZ1608 nominals. data/kicad manifest complete with Device:FerriteBead_Small
+    symbol and Inductor_SMD:L_0603_1608Metric machine + Pad1.05x0.95mm_HandSolder hand
+    footprints; kicad_symbol_unit_1.png shows the standard bead glyph with the OOMP value;
+    machine and hand footprint renders show two 0603 pads with courtyard and body outline.
+    README.md: GZ1608D601TF part number, LCSC/JLC C1002 links, pin table, datasheet link
+    resolving to data/datasheet.pdf (6.7 MB scan of the Sunlord GZ series catalogue).
+    Limitation: KiCad symbol/footprint checked as rendered SVG/PNG plus s-expression
+    text rather than in a KiCad GUI.'

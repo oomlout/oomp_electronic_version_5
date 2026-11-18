@@ -1,0 +1,689 @@
+def main(**kwargs):
+    options = kwargs.get("options", [])
+    from kicad_agents.header_oobb_3d import VARIANTS, attach_assets, variant_option, stock_id, long_option
+    options.extend(variant_option(kind) for kind in VARIANTS)
+    options.extend(long_option(count) for count in range(1, 41))
+    from working_oomp_populate_connector_crimp_data import PARTS as cable_parts
+    from working_oomp_populate_connector_jst_cable_data import PARTS as jst_cable_parts
+    for cable_part in (*cable_parts, *jst_cable_parts):
+        options.append(dict(cable_part['taxonomy'], name_short=cable_part['name']))
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_c", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "16_pin", "taxonomy_14": "shou_han", "taxonomy_15": "type_c_16pin_2md_073",
+        "name_short": "USB-C TYPE-C 16PIN 2MD(073)",
+    })
+
+    connector_types = ["usb_c"]
+    mounting_types = ["surface_mount"]
+    pin_counts = ["16_pin"]
+    manufacturers = ["korean_hroparts_elec"]
+    part_numbers = ["typec31m12"]
+
+    for connector_type in connector_types:
+        for mounting_type in mounting_types:
+            for pin_count in pin_counts:
+                for manufacturer in manufacturers:
+                    for part_number in part_numbers:
+                        option = {}
+                        option["taxonomy_2"] = "connector"
+                        option["taxonomy_3"] = connector_type
+                        option["taxonomy_4"] = mounting_type
+                        option["taxonomy_5"] = pin_count
+                        option["taxonomy_14"] = manufacturer
+                        option["taxonomy_15"] = part_number
+                        options.append(option)
+
+    # Dual-row 2.54 mm sockets used by the Electrolama TPM modules and the
+    # Tiny Reflow Controller.  Keep the total contact count in the taxonomy so
+    # the matcher can distinguish 2x06 (12 contacts) from 2x07 (14 contacts).
+    for pin_count in ["dual_row_12_pin", "dual_row_14_pin"]:
+        options.append({
+            "taxonomy_2": "connector",
+            "taxonomy_3": "header",
+            "taxonomy_4": "2_54_mm_pitch",
+            "taxonomy_5": "through_hole",
+            "taxonomy_6": pin_count,
+        })
+
+    # Connector footprints found in the expanded unmatched-project report.
+    # These are population identities only; exact drawing and manufacturer
+    # records are deliberately deferred to the connector research pass.
+    unmatched_connectors = [
+        {
+            "type": "header", "pitch": "1_27_mm_pitch",
+            "mounting": "surface_mount", "pins": "10_pin", "style": "socket",
+            "part_number": "header_female_5x2_1_27_mm_smd",
+            "name_short": "1.27 mm 2x5 SMD Female Header",
+        },
+        {
+            "type": "micro_sd", "style": "push_push",
+            "part_number": "micro_sd_external_pin",
+            "name_short": "microSD Push-Push Socket",
+        },
+        {
+            "type": "micro_sd", "style": "friction_fit",
+            "part_number": "micro_sd_friction_fit",
+            "name_short": "microSD Friction-Fit Socket",
+        },
+        {
+            "type": "jst", "pitch": "1_25_mm_pitch", "mounting": "surface_mount",
+            "pins": "6_pin", "style": "locking",
+            "part_number": "jst_smd_1_25_mm_6_locking",
+            "name_short": "JST 1.25 mm 6-Pin Locking Connector",
+        },
+        {
+            "type": "audio_jack", "size": "3_5_mm", "style": "trrs",
+            "mounting": "surface_mount_right_angle",
+            "part_number": "audio_jack_3_5_mm_trrs",
+            "name_short": "3.5 mm TRRS Audio Jack",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "3_pin",
+            "part_number": "screw_terminal_1x03_p3_5_mm",
+            "name_short": "3.5 mm 3-Pin Screw Terminal",
+        },
+        # 3.5 mm screw-terminal family in the remaining stock lengths (LCSC
+        # C695629 DORABO DB301V-3.5-2P-GN-S style, 2P/3P on LCSC; KiCad
+        # TerminalBlock_4Ucon masters cover 1x02..1x15).
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "2_pin",
+            "part_number": "screw_terminal_1x02_p3_5_mm",
+            "name_short": "3.5 mm 2-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "4_pin",
+            "part_number": "screw_terminal_1x04_p3_5_mm",
+            "name_short": "3.5 mm 4-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "5_pin",
+            "part_number": "screw_terminal_1x05_p3_5_mm",
+            "name_short": "3.5 mm 5-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "6_pin",
+            "part_number": "screw_terminal_1x06_p3_5_mm",
+            "name_short": "3.5 mm 6-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "7_pin",
+            "part_number": "screw_terminal_1x07_p3_5_mm",
+            "name_short": "3.5 mm 7-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "8_pin",
+            "part_number": "screw_terminal_1x08_p3_5_mm",
+            "name_short": "3.5 mm 8-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "9_pin",
+            "part_number": "screw_terminal_1x09_p3_5_mm",
+            "name_short": "3.5 mm 9-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "10_pin",
+            "part_number": "screw_terminal_1x10_p3_5_mm",
+            "name_short": "3.5 mm 10-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "11_pin",
+            "part_number": "screw_terminal_1x11_p3_5_mm",
+            "name_short": "3.5 mm 11-Pin Screw Terminal",
+        },
+        {
+            "type": "terminal_block", "pitch": "3_5_mm_pitch",
+            "mounting": "through_hole", "pins": "12_pin",
+            "part_number": "screw_terminal_1x12_p3_5_mm",
+            "name_short": "3.5 mm 12-Pin Screw Terminal",
+        },
+        {
+            "type": "gnss_header", "pitch": "2_mm_pitch",
+            "mounting": "surface_mount", "pins": "20_pin",
+            "style": "plug_in",
+            "part_number": "conn_02x10_gnss_plug_in_header",
+            "name_short": "2x10 2.0 mm GNSS Plug-In Header",
+        },
+        {
+            "type": "rf_cable_assembly", "style": "ipx_to_sma",
+            "part_number": "ipx_connector_with_sma",
+            "name_short": "IPX-to-SMA RF Cable Assembly",
+        },
+    ]
+    # 3.5 mm screw-terminal blue/green color variants (LCSC C695629 DORABO
+    # DB301V style carries green/blue insulator options; generic tokens).
+    for pin_count in range(2, 13):
+        for color, color_name in (("blue", "Blue"), ("green", "Green")):
+            unmatched_connectors.append({
+                "type": "terminal_block", "pitch": "3_5_mm_pitch",
+                "mounting": "through_hole", "pins": f"{pin_count}_pin",
+                "style": color,
+                "part_number": f"screw_terminal_1x{pin_count:02d}_p3_5_mm_{color}",
+                "name_short": f"3.5 mm {pin_count}-Pin Screw Terminal ({color_name})",
+            })
+    # 5.0 mm wire-protector screw terminals (4UCON 1406 series style,
+    # DIP 180 degrees, blue insulator; Phoenix PT-1,5 5.0 mm masters).
+    for pin_count in range(2, 13):
+        unmatched_connectors.append({
+            "type": "terminal_block", "pitch": "5_mm_pitch",
+            "mounting": "through_hole", "pins": f"{pin_count}_pin",
+            "part_number": f"screw_terminal_1x{pin_count:02d}_p5_mm",
+            "name_short": f"5 mm {pin_count}-Pin Screw Terminal",
+        })
+
+    for connector in unmatched_connectors:
+        option = {
+            "taxonomy_2": "connector",
+            "taxonomy_3": connector["type"],
+        }
+        for key, value in connector.items():
+            if key in {"type", "name_short"}:
+                continue
+            option[f"taxonomy_{ {'pitch': 4, 'mounting': 5, 'pins': 6, 'style': 7, 'part_number': 15}.get(key, 8) }"] = value
+        option["name_short"] = connector["name_short"]
+        options.append(option)
+
+    # JST header families (SH 1.0 mm, PH 2.0 mm, XH 2.5 mm): one part per
+    # available pin count, including the SparkFun black Qwiic specials. The
+    # editable table with drawings and KiCad matches lives in
+    # working_oomp_populate_connector_jst_data.py.
+    import working_oomp_populate_connector_jst_data
+
+    for jst_part in working_oomp_populate_connector_jst_data.JST_HEADERS:
+        option = {"taxonomy_2": "connector"}
+        option.update(jst_part["taxonomy"])
+        options.append(option)
+
+    # New connector families (JST PH/XH mountings, 2.54 mm right-angle
+    # headers short/long pin, dual-row ICSP header): editable table in
+    # working_oomp_populate_connector_families_data.py.
+    import working_oomp_populate_connector_families_data
+
+    for family_part in working_oomp_populate_connector_families_data.CONNECTOR_FAMILIES:
+        option = {"taxonomy_2": "connector"}
+        option.update(family_part["taxonomy"])
+        options.append(option)
+
+    connector_types = ["header"]
+    pitches = ["2_54_mm_pitch"]
+    mounting_types = ["through_hole"]
+    pin_counts = [
+        "1_pin",
+        "2_pin",
+        "3_pin",
+        "4_pin",
+        "5_pin",
+        "6_pin",
+        "7_pin",
+        "8_pin",
+        "9_pin",
+        "10_pin",
+        "11_pin",
+        "12_pin",
+        "13_pin",
+        "14_pin",
+        "15_pin",
+        "16_pin",
+        "17_pin",
+        "18_pin",
+        "19_pin",
+        "20_pin",
+        "21_pin",
+        "22_pin",
+        "23_pin",
+        "24_pin",
+        "25_pin",
+        "26_pin",
+        "27_pin",
+        "28_pin",
+        "29_pin",
+        "30_pin",
+        "31_pin",
+        "32_pin",
+        "33_pin",
+        "34_pin",
+        "35_pin",
+        "36_pin",
+        "37_pin",
+        "38_pin",
+        "39_pin",
+        "40_pin",
+    ]
+
+    for connector_type in connector_types:
+        for pitch in pitches:
+            for mounting_type in mounting_types:
+                for pin_count in pin_counts:
+                    option = {}
+                    option["taxonomy_2"] = "connector"
+                    option["taxonomy_3"] = connector_type
+                    option["taxonomy_4"] = pitch
+                    option["taxonomy_5"] = mounting_type
+                    option["taxonomy_6"] = pin_count
+                    attach_assets(option, stock_id(int(pin_count.split("_")[0])))
+                    options.append(option)
+
+    # Generic XH (2.5 mm) and PH (2.0 mm) wire-to-board housings: the KENTO
+    # XH-A / PH-A parts are XH/PH-compatible, not JST-branded, so the generic
+    # family rows carry the value without a maker token.
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "xh",
+        "taxonomy_4": "2_5_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "3_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "xh",
+        "taxonomy_4": "2_5_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "5_pin",
+    })
+    from working_oomp_populate_connector_ph_data import PARTS as boomele_ph_parts
+    options.extend(dict(row["taxonomy"]) for row in boomele_ph_parts)
+
+    # DIP IC sockets: narrow (7.62 mm) and wide (15.24 mm) row spacing are
+    # distinct footprints, so the spacing rides along as taxonomy_7.
+    for pin_count, row_spacing in [
+        ("14_pin", "7_62_mm_row_spacing"),
+        ("16_pin", "7_62_mm_row_spacing"),
+        ("18_pin", "7_62_mm_row_spacing"),
+        ("20_pin", "7_62_mm_row_spacing"),
+        ("32_pin", "15_24_mm_row_spacing"),
+        ("40_pin", "15_24_mm_row_spacing"),
+    ]:
+        options.append({
+            "taxonomy_2": "connector",
+            "taxonomy_3": "ic_socket",
+            "taxonomy_4": "2_54_mm_pitch",
+            "taxonomy_5": "through_hole",
+            "taxonomy_6": pin_count,
+            "taxonomy_7": row_spacing,
+        })
+
+    # Dual-row 2.54 mm 2x40 pin header (80 contacts).
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_80_pin",
+    })
+
+    # USB 2.0 Type-A receptacles from JING: right-angle (bent-pin) and
+    # vertical through-hole bodies carry the maker token like the existing
+    # Jing Tuo Jin USB-A row.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "8_pin", "taxonomy_6": "right_angle",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "907_111a1012d10200",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "4_pin", "taxonomy_6": "right_angle",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "902_131a1021d10100",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "4_pin", "taxonomy_6": "right_angle",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "901_211a1021d10100",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "4_pin", "taxonomy_6": "right_angle",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "903_232a1011d10100",
+        "name_short": "USB-A 903-232A1011D10100 Right Angle",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_a", "taxonomy_4": "through_hole",
+        "taxonomy_5": "4_pin",
+        "taxonomy_14": "jing_extension_of_the_electronic_co", "taxonomy_15": "902_131a1011d10100",
+    })
+
+    # IDC box headers (first idc_box_header rows) and further header values
+    # from the BOOMELE JLC house-parts queue.
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "idc_box_header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_16_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "idc_box_header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_20_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "1_27_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "50_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "1_27_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_100_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "40_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "dual_row_80_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "right_angle_40_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "right_angle_dual_row_80_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "right_angle_dual_row_80_pin",
+    })
+
+    # Triple-row 2.54 mm headers, straight (vertical) and right angle.  Row
+    # tokens count total contacts across the three 2.54 mm rows, matching the
+    # dual-row convention (2x40 -> dual_row_80_pin).  Availability follows the
+    # two LCSC series the user anchored (checked 2026-10-01):
+    #   hanxia HX PZ2.54-3xNP ZZ straight: 3x2P C32713289, 3x3P C32713290
+    #   (NRND), 3x4P C32713291, 3x5P C32713292, 3x6P C32713293, 3x7P
+    #   C32713294, 3x8P C32713295;
+    #   HCTL PZ254-3: 3x3P straight C7429377, 3x3P right angle C7429379,
+    #   3x21P straight C53452629.
+    for pin_count in [
+        "triple_row_6_pin",
+        "triple_row_9_pin",
+        "triple_row_12_pin",
+        "triple_row_15_pin",
+        "triple_row_18_pin",
+        "triple_row_21_pin",
+        "triple_row_24_pin",
+        "triple_row_63_pin",
+    ]:
+        options.append({
+            "taxonomy_2": "connector",
+            "taxonomy_3": "header",
+            "taxonomy_4": "2_54_mm_pitch",
+            "taxonomy_5": "through_hole",
+            "taxonomy_6": pin_count,
+        })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "header",
+        "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "right_angle_triple_row_9_pin",
+    })
+
+    # Terminal blocks (Kangnex) and the BOOMELE DC003 power jack from the
+    # JLC house-parts queue.  The 5.08 mm pluggable socket body carries the
+    # right-angle mounting that distinguishes it from screw blocks.
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "terminal_block",
+        "taxonomy_4": "5_08_mm_pitch",
+        "taxonomy_5": "right_angle",
+        "taxonomy_6": "2_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "terminal_block",
+        "taxonomy_4": "5_mm_pitch",
+        "taxonomy_5": "through_hole",
+        "taxonomy_6": "2_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "dc_power_jack", "taxonomy_4": "through_hole",
+        "taxonomy_5": "right_angle",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "dc003_with_head_1_0",
+    })
+
+    # 3.81 mm 5P male plug terminal block (Kangnex WJ15EDGK, free-hanging).
+    options.append({
+        "taxonomy_2": "connector",
+        "taxonomy_3": "terminal_block",
+        "taxonomy_4": "3_81_mm_pitch",
+        "taxonomy_5": "free_hanging",
+        "taxonomy_6": "5_pin",
+    })
+
+    # Jumper shunt (shorting cap), open style: the first shunt row.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "jumper_shunt", "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "open_style", "taxonomy_6": "2_pin",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "2_54short_circuit_cap_opening",
+        "name_short": "Jumper Shunt 2.54mm Open Style (BOOMELE)",
+    })
+
+    # Tranche-72 BOOMELE wave: the 2.0 mm shunt follows the maker-stamped
+    # 2.54 mm precedent, the 6-pin XH/PH housings and both 2x5 IDC headers
+    # stay generic (BOOMELE parts are XH/PH-compatible, not JST-branded),
+    # and the XH-T crimp contact opens the housing_contact category.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "jumper_shunt", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "open_style", "taxonomy_6": "2_pin",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "2_0_short_circuitcap",
+        "name_short": "Jumper Shunt 2.0mm Open Style (BOOMELE)",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "xh", "taxonomy_4": "2_5_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "6_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "idc_box_header", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "dual_row_10_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "idc_box_header", "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "dual_row_10_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "housing_contact", "taxonomy_4": "xh_series",
+        "taxonomy_5": "phosphor_bronze",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "xh_t",
+        "name_short": "XH Series Housing Contact (BOOMELE)",
+    })
+
+    # Tranche-103: the 2.0mm female header pair rides exact BOOMELE rows (the
+    # matching generic headers already carry preferences), and the two
+    # WJ15EDG 3.81mm 4-pin terminal blocks extend the 3.81 mm generic ladder
+    # (free-hanging plug per C3804; right-angle per the C3697 RC naming).
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "header", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "dual_row_80_pin",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "2_0_2_40pfemale",
+        "name_short": "2.0mm 2x40P Female Header (BOOMELE)",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "header", "taxonomy_4": "2_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "40_pin",
+        "taxonomy_14": "boomele_boom_precision_elec", "taxonomy_15": "2_0_1_40pfemale",
+        "name_short": "2.0mm 1x40P Female Header (BOOMELE)",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "terminal_block", "taxonomy_4": "3_81_mm_pitch",
+        "taxonomy_5": "free_hanging", "taxonomy_6": "4_pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "terminal_block", "taxonomy_4": "3_81_mm_pitch",
+        "taxonomy_5": "right_angle", "taxonomy_6": "4_pin",
+    })
+
+    # Exact vertical female socket used as the purchasable match for the
+    # Bus Pirate J201 generic 1x3 KiCad socket footprint.
+    sockets = [
+        {
+            "type": "header",
+            "pitch": "2_54_mm_pitch",
+            "mounting": "through_hole",
+            "pins": "3_pin",
+            "style": "socket",
+            "manufacturer": "kinghelm",
+            "part_number": "kh_2_54fh_1x3p_h8_5",
+        },
+    ]
+    for socket in sockets:
+        option = {}
+        option["taxonomy_2"] = "connector"
+        option["taxonomy_3"] = socket["type"]
+        option["taxonomy_4"] = socket["pitch"]
+        option["taxonomy_5"] = socket["mounting"]
+        option["taxonomy_6"] = socket["pins"]
+        option["taxonomy_7"] = socket["style"]
+        option["taxonomy_14"] = socket["manufacturer"]
+        option["taxonomy_15"] = socket["part_number"]
+        options.append(option)
+
+    # easyC connector: Soldered's 4-pin 1.25 mm side-entry SMD socket
+    # (JST GH compatible), used by every easyC breakout.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "easyc", "taxonomy_4": "1_25_mm_pitch",
+        "taxonomy_5": "surface_mount_right_angle", "taxonomy_6": "4_pin",
+        "taxonomy_14": "jst", "taxonomy_15": "sm04b_gh_tf",
+        "name_short": "easyC Connector SM04B-GH-TF",
+    })
+    # RF connectors and terminal blocks seen on GNSS and sensor breakouts.
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "u_fl", "taxonomy_4": "surface_mount",
+        "taxonomy_14": "i_pex", "taxonomy_15": "u_fl_r_smt_1",
+        "name_short": "U.FL Receptacle",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "sma", "taxonomy_4": "edge_mount",
+        "name_short": "SMA Edge Connector",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "terminal_block", "taxonomy_4": "5_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "2_pin",
+        "taxonomy_15": "kf235_5_0_2p",
+        "name_short": "Terminal Block KF235-5.0-2P",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "coin_cell_holder", "taxonomy_4": "through_hole",
+        "taxonomy_5": "cr1220",
+        "name_short": "CR1220 Coin Cell Holder",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "usb_c", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "12_pin", "taxonomy_15": "usb_c_12_pin_generic",
+        "name_short": "USB-C 12-Pin Receptacle",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "micro_usb", "taxonomy_4": "surface_mount",
+        "taxonomy_5": "9_pin", "taxonomy_14": "rocketscream", "taxonomy_15": "micro_usb",
+        "name_short": "RocketScream MICRO-USB Receptacle",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "header", "taxonomy_4": "2_54_mm_pitch",
+        "taxonomy_5": "surface_mount", "taxonomy_6": "dual_row_6_pin",
+        "taxonomy_14": "wurth_electronics", "taxonomy_15": "61030621121",
+        "name_short": "WR-PHD 2.54 mm SMT Dual Header 6-Pin",
+    })
+    options.append({
+        "taxonomy_2": "connector", "taxonomy_3": "terminal_block", "taxonomy_4": "3_5_mm_pitch",
+        "taxonomy_5": "through_hole", "taxonomy_6": "2_pin",
+        "taxonomy_14": "te_connectivity", "taxonomy_15": "1776275_2",
+        "name_short": "Buchanan 3.5 mm 2-Pin Terminal Block",
+    })
+
+    connector_types = ["usb_a"]
+    mounting_types = ["surface_mount"]
+    pin_counts = ["4_pin"]
+    manufacturers = ["shenzhen_jing_tuo_jin_electronics"]
+    part_numbers = ["912121a2023s10100"]
+
+    for connector_type in connector_types:
+        for mounting_type in mounting_types:
+            for pin_count in pin_counts:
+                for manufacturer in manufacturers:
+                    for part_number in part_numbers:
+                        option = {}
+                        option["taxonomy_2"] = "connector"
+                        option["taxonomy_3"] = connector_type
+                        option["taxonomy_4"] = mounting_type
+                        option["taxonomy_5"] = pin_count
+                        option["taxonomy_14"] = manufacturer
+                        option["taxonomy_15"] = part_number
+                        options.append(option)
+
+    # 4UCON 1443 series: 3.5 mm terminal block, rising clamp, DIP 180
+    # degrees (vertical), H=8.5 mm, green.  Item numbers 19696-19718 map to
+    # 2-24 positions (4uconnector.com series listing, checked 2026-10-01).
+    # KiCad TerminalBlock_4Ucon 1xNN_P3.50mm_Vertical masters cover 2-15;
+    # 16P and above keep the row with the footprint gap documented in
+    # working_oomp_populate_connector_extra.py.
+    ucon_1443 = {
+        2: "19696", 3: "19697", 4: "19698", 5: "19699", 6: "19700",
+        7: "19701", 8: "19702", 9: "19703", 10: "19704", 11: "19705",
+        12: "19706", 13: "19707", 14: "19708", 15: "19709", 16: "19710",
+        17: "19711", 18: "19712", 19: "19713", 20: "19714", 21: "19715",
+        22: "19716", 23: "19717", 24: "19718",
+    }
+    for pin_count, item_no in sorted(ucon_1443.items()):
+        options.append({
+            "taxonomy_2": "connector", "taxonomy_3": "terminal_block",
+            "taxonomy_4": "3_5_mm_pitch", "taxonomy_5": "through_hole",
+            "taxonomy_6": f"{pin_count}_pin", "taxonomy_7": "green",
+            "taxonomy_14": "4ucon_technology", "taxonomy_15": item_no,
+            "name_short": f"4UCON 1443 3.5 mm {pin_count}-Pin Terminal Block (Green)",
+        })
+
+    # 4UCON 1406 series: 5.0 mm terminal block, wire protector type, DIP 180
+    # degrees (vertical), H=10 mm, blue insulator.  Item numbers for the
+    # consistent blue 2-24 position family (4uconnector.com series listing,
+    # checked 2026-10-01).  KiCad TerminalBlock_Phoenix PT-1,5 5.0 mm
+    # masters cover 2-16; above that the gap is documented in the extras.
+    ucon_1406 = {
+        2: "19866", 3: "20018", 4: "17570", 5: "19935", 6: "17581",
+        7: "17582", 8: "19936", 9: "17584", 10: "17585", 11: "17586",
+        12: "17587", 13: "17588", 14: "17589", 15: "17590", 16: "17591",
+        17: "17592", 18: "17593", 19: "17594", 20: "17595", 21: "17596",
+        22: "17597", 23: "17598", 24: "17599",
+    }
+    for pin_count, item_no in sorted(ucon_1406.items()):
+        options.append({
+            "taxonomy_2": "connector", "taxonomy_3": "terminal_block",
+            "taxonomy_4": "5_mm_pitch", "taxonomy_5": "through_hole",
+            "taxonomy_6": f"{pin_count}_pin", "taxonomy_7": "blue",
+            "taxonomy_14": "4ucon_technology", "taxonomy_15": item_no,
+            "name_short": f"4UCON 1406 5 mm {pin_count}-Pin Wire Protector Terminal Block (Blue)",
+        })
+
+
+if __name__ == "__main__":
+    main()
