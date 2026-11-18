@@ -20,8 +20,7 @@ Preserve original records and cross-references during reconciliation. Neither it
 - 0.2 Ω: [Yageo PT2512FK-7W0R2L](https://www.lcsc.com/de/product-detail/C309535.html), 2512, 1%, 2 W; verify its current-sense construction, dimensions, ratings and manufacturer marking before selecting it. A [1 W RL2512FK-070R2L](https://www.lcsc.com/pt/product-detail/C309648.html) also exists, but its lower power and other ratings require separate review.
 
 Candidates match the nominal values, but have not been verified as fully
-interchangeable with any original intended parts. The current source records
-have not been changed.
+interchangeable with any original intended parts. Both source selections have now been reconciled as described below.
 
 ## Resolution: 0.2 Ω (2026-11-18)
 
@@ -30,4 +29,12 @@ Selected Yageo PT2512FK-7W0R2L / C309535: manufacturer-verified 0.2 Ω,
 part; the original FH 2 Ω record is retained in
 `tmp/display_render/2512_0_2_selection_previous/` and in source research notes.
 The differing current-sense characteristics require application review.
-The 13.3 Ω conflict still requires reconciliation.
+The 13.3 Ω conflict was resolved separately below.
+
+## Resolution: 13.3 Ω (2026-11-18)
+
+Selected Yageo AC2512FK-0713R3L / JLCPCB C3925735: 13.3 Ω, 1%, 1 W,
+2512. Source and generated records now select this part; the original
+Stackpole 133 Ω record is backed up in
+`tmp/display_render/2512_13_3_selection_previous/` and retained in research
+notes. Application-specific electrical and automotive ratings need review.

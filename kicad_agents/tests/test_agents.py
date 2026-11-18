@@ -461,7 +461,7 @@ class ProjectPartTests(unittest.TestCase):
 
 class ElectronicPartReadmeTests(unittest.TestCase):
 
-    def test_part_readme_uses_pinout_hero_and_small_previews(self):
+    def test_part_readme_uses_hero_and_links_preview_rows_to_originals(self):
         part_directory = PARTS_DIRECTORY / 'electronic_resistor_0402_2200_ohm'
         working = yaml.safe_load((part_directory / 'working.yaml').read_text(encoding='utf-8'))
         library_action = working['oomlout_ai_roboclick_1']['actions'][0]
@@ -480,22 +480,20 @@ class ElectronicPartReadmeTests(unittest.TestCase):
         self.assertTrue(all((action['allow_upscale'] is False for action in resize_actions)))
         self.assertTrue(all((action['regenerate_pngs'] is False for action in resize_actions)))
         readme = (part_directory / 'README.md').read_text(encoding='utf-8')
-        self.assertIn('![Resistor 2200 Ohm 0402 pinout](data/working_svg_square_pins.svg)', readme)
+        self.assertIn(f"![Resistor 2200 Ohm 0402 studio render]({working['display_render']['image']})", readme)
         self.assertIn('## At a glance', readme)
         self.assertNotIn('## Diagram gallery', readme)
-        self.assertNotIn('<img', readme)
-        self.assertIn('## Files', readme)
-        self.assertIn('![Pinout drawing](data/working_svg_square_pins_300.png)', readme)
-        self.assertIn('![Assembly](data/working_svg_assembly_300.png)', readme)
-        self.assertIn('![Assembly pinout](data/working_svg_assembly_pins_300.png)', readme)
-        self.assertIn('![Outline](data/working_svg_outline_300.png)', readme)
-        self.assertNotIn('[Outline drawing](data/working_svg_outline.svg)', readme)
-        self.assertNotIn('[View the datasheet](data/datasheet.pdf)', readme)
+        self.assertIn('| Image type | Image | Link |', readme.split('## Files\n', 1)[1])
         from PIL import Image
-        preview_files = sorted((part_directory / 'data').glob('working_svg*_300.png'))
-        self.assertEqual(len(preview_files), 11)
-        for preview_file in preview_files:
-            with Image.open(preview_file) as preview_image:
+        for action in resize_actions:
+            preview = action['file_destination']
+            row = next(line for line in readme.splitlines() if f'src="{preview}"' in line)
+            title, image, links = row.strip('|').split('|')
+            self.assertTrue(title.strip())
+            self.assertIn('<img ', image)
+            self.assertIn(f"[SVG]({preview.replace('_300.png', '.svg')})", links)
+            self.assertIn(f"[PNG]({preview.replace('_300.png', '.png')})", links)
+            with Image.open(part_directory / preview) as preview_image:
                 self.assertLessEqual(max(preview_image.size), 300)
 
     def test_default_generated_pipeline_has_no_llm_actions_or_direct_http_clients(self):

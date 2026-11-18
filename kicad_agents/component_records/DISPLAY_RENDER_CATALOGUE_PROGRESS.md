@@ -979,3 +979,114 @@ mark at 1,400 px / 256 samples, and published the targeted page. The focused
 source guard test passed; source and generated selection, output provenance,
 README and zero non-finite pixels were checked. No local PDF is claimed.
 There are 661 resistor recipes; the 2512 13.3 Ω conflict and other work remain.
+
+# Corrected 2512 13.3 Ω Yageo AC selection (2026-11-18)
+
+Replaced the mismatched Stackpole 133 Ω selection with documented Yageo
+AC2512FK-0713R3L / JLCPCB C3925735, 13.3 Ω 1% 1 W. Preserved the previous
+source and generated metadata in `tmp/display_render/2512_13_3_selection_previous/`
+and source notes; other characteristics require application review. Inspected
+the KiCad 2512 model, rendered and reviewed the `13R3` marking at 1,400 px /
+256 samples, and published the page. The focused source guard test passed;
+source and generated selection, provenance, README and zero non-finite pixels
+were checked. No local PDF is claimed. There are 662 resistor recipes;
+remaining records and later families still need review.
+
+# Generic 1210 and 2512 Yageo RL references (2026-11-18)
+
+Published 1210 0.1 Ω (`R100`) and 2512 0.015 Ω (`R015`) using documented
+Yageo RL 1% examples. Both generic source entries remain unsourced without
+a specified tolerance or power; README descriptions disclose this and the
+limits of interchangeability. Inspected both KiCad models and full-quality
+1,400 px / 256-sample renders, passed two focused guard tests, and verified
+provenance, README disclosures and zero non-finite pixels. Manufacturer
+specifications were reviewed online; no local PDFs are claimed. There are
+664 resistor recipes; remaining records and later families need review.
+
+# UNI-ROYAL MFR0W4 12 kΩ and 82 kΩ (2026-11-18)
+
+Published two selected 1% quarter-watt UNI-ROYAL axial parts with beige
+bodies and manufacturer-documented five-band codes. Their tolerance bands
+are brown because both selected parts are 1%; the model diameter is at the
+manufacturer upper limit. Reviewed both previews, passed two focused tests,
+and validated provenance, manufacturer descriptions and README links.
+The manufacturer specifications were reviewed online; no local PDFs are
+claimed. There are 666 resistor recipes; further work remains.
+
+# CCO MF 18 kΩ and 5.6 kΩ (2026-11-18)
+
+Restored the previously truncated manufacturer numbers for C119352 and C119341
+from their individual LCSC listings, preserving the previous source and generated
+files in `tmp/display_render/cco_mf_identity_03_previous/`. Reviewed the CCO
+manufacturer specification online; no local PDF is claimed. Published both
+beige five-band visualizations with brown 1% tolerance bands using the reviewed
+shared path-traced material passes. Inspected both previews, passed the two CCO
+queue tests and verified the render provenance, README links and source/generated
+supplier identities. The selected supplier calls the packaging suffix `T`;
+another distributor lists `T52`, so do not silently conflate suffixes. There are
+668 resistor recipes; further records and later families remain.
+
+# YAGEO MFR50S miniature 500 mW parts (2026-11-18)
+
+Published the selected 3.9 kΩ, 820 Ω and 3.3 MΩ YAGEO MFR50S 1% parts
+with beige bodies and brown tolerance bands. Their legacy catalogue IDs say
+quarter watt, but the selected parts are half watt; each README states this
+explicitly. The generic 6.3 × 2.5 mm KiCad body approximates the specified
+6.3 × 2.4 mm miniature body. Inspected each preview, passed three focused
+rating-guard tests, and verified provenance and README disclosure. Manufacturer
+specifications were reviewed online; no local PDF is claimed. There are 671
+resistor recipes; the other records and later families still need review.
+
+# UNI-ROYAL MF006 102 kΩ and 56 Ω (2026-11-18)
+
+Published the selected 600 mW, 1% MF006 parts with beige bodies and documented
+five-band markings. Their legacy IDs say quarter watt; both READMEs state the
+actual selected power rating. Inspected both previews, passed two focused rating
+guards, and verified provenance and README links. The manufacturer and supplier
+specifications were reviewed online; no local PDF is claimed. The 2.7 MΩ MF0W4
+candidate was not rendered: the reviewed manufacturer MF sheet lists 1 MΩ as
+the upper standard range for that power and tolerance, so its identity needs
+further evidence. There are 673 resistor recipes; further work remains.
+
+# CCO MF1/2WS 560 Ω and 750 Ω (2026-11-18)
+
+Restored both truncated manufacturer numbers from individually reviewed supplier
+listings, with previous files backed up under `tmp/display_render/cco_mf1_2ws_previous/`.
+Published the selected half-watt 1% compact resistors with beige bodies and
+brown tolerance bands; each README calls out the legacy quarter-watt ID. Both
+previews were inspected, two focused rating guards passed, and render provenance,
+source/generated identities and README disclosures were verified. Manufacturer
+evidence was reviewed online; no local PDF is claimed. There are 675 resistor
+recipes; further records and later families remain.
+
+# VO MO 1.2 MΩ (2026-11-18)
+
+Published the selected VO quarter-watt 5% metal-oxide resistor with a beige
+body and standard brown/red/green/gold four-band representation. Actual band
+count and spacing are unverified, and the manufacturer specifies gray coating;
+these visual limits and the approximate dimensions are disclosed on the page.
+Inspected preview and direct 1,400 px / 256-sample final, passed one focused
+source guard, and verified provenance, README and zero non-finite pixels.
+Manufacturer information was reviewed online; no local PDF is claimed. There
+are 676 resistor recipes; remaining records and later families still need review.
+
+# YAGEO FMP100 15 kΩ (2026-11-18)
+
+Published the selected 15 kΩ 5% FMP100 with its documented brown/green/orange/gold
+marking and a beige illustrative body. Although the legacy ID says quarter watt,
+the selected part is rated 1 W; this is explicit in the README. Inspected the
+preview and direct 1,400 px / 256-sample final, passed the source/rating guard,
+and verified provenance, README disclosure and zero non-finite pixels. The
+manufacturer specification was reviewed online; no local PDF is claimed. There
+are 677 resistor recipes; further records and later families remain.
+
+# Huaxing MF1/8W 68 kΩ small body (2026-11-18)
+
+Published the selected 125 mW 1% Huaxing part using an inspected KiCad DIN0204
+3.6 × 1.6 mm body, approximating its listed 3.2 × 1.8 mm body. Its legacy
+quarter-watt ID and existing larger 0207 footprint/dimensions conflict with the
+selected supplier part; the README and evidence identify these as requiring
+separate catalogue correction. Reviewed preview and direct 1,400 px / 256-sample
+final, passed a source rating guard, and verified provenance, disclosure and
+zero non-finite pixels. Manufacturer information was read online; no local PDF
+is claimed. There are 678 resistor recipes; further records and families remain.

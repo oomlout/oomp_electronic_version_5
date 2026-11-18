@@ -47,4 +47,24 @@ Push out pins **1, 7**. Retain pins **2, 3, 4, 5, 6** and keep the plastic strip
 
 Count from the bottom. Use three identical vertical strips side by side, with the empty bottom and top cells captured by the base and its included top retainer. Mate one three-way socket housing to each active row.
 
+## Files
+
+<!-- oomp-part-file-table -->
+
+| Image type | Image | Link |
+| --- | :---: | --- |
+| **Reference CAD model** | — | [STEP](data/model_3d.step) |
+| **Three-strip assembly model** | — | [STEP](data/model_3d_3_strip.step) |
+| **Three-strip insulator mesh** | — | [STL](data/model_3d_3_strip_body.stl) |
+| **Three-strip contact mesh** | — | [STL](data/model_3d_3_strip_pins.stl) |
+| **Three-strip assembly render** | <img src="data/model_3d_arrangement.png" alt="Three-strip assembly render" width="160"> | [PNG](data/model_3d_arrangement.png) |
+| **Insulator mesh** | — | [STL](data/model_3d_body.stl) |
+| **Contact mesh** | — | [STL](data/model_3d_pins.stl) |
+| **Reference model render** | <img src="data/model_3d_render.png" alt="Reference model render" width="160"> | [PNG](data/model_3d_render.png) |
+| **Reference model sources** | — | [JSON](data/model_3d_source.json) |
+| **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
+| **Part definition and build recipe** | — | [YAML](working.yaml) |
+
+<!-- /oomp-part-file-table -->
+
 Regenerate with `python -m kicad_agents.header_oobb_3d`. Renders are produced by `render_wire_catalogue.py` in the sibling OOBB electronic project. This page is generated from the header reference template.

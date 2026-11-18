@@ -85,35 +85,20 @@ Model credit: 2018 kicad StepUp. CC-BY-SA-4.0 with KiCad library exception; see 
 
 ## Files
 
+<!-- oomp-part-file-table -->
 
+| Image type | Image | Link |
+| --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
+| **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
+| **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
+| **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
+| **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
+| **Part definition and build recipe** | — | [YAML](working.yaml) |
 
-[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
-
-
-
-![Pinout drawing](data/working_svg_square_pins_300.png)
-
-![Assembly](data/working_svg_assembly_300.png)
-
-![Assembly pinout](data/working_svg_assembly_pins_300.png)
-
-![Outline](data/working_svg_outline_300.png)
-
-![Part ID](data/working_svg_part_id_300.png)
-
-![MD5 alpha](data/working_svg_md5_6_alpha_300.png)
-
-![BIP 39 words](data/working_svg_bip_39_3_word_300.png)
-
-![Square summary](data/working_svg_square_300.png)
-
-![Square schematic](data/working_svg_square_schematic_300.png)
-
-![Dimensions](data/working_svg_dimensioned_300.png)
-
-![Dimensions with labels](data/working_svg_dimensioned_titles_300.png)
-
-
+<!-- /oomp-part-file-table -->
 
 
 [View this part on GitHub](https://github.com/oomlout/oomp_electronic_version_5/tree/main/parts/electronic_resistor_0603_2_7_ohm_ralec_rtt032r70ftp)

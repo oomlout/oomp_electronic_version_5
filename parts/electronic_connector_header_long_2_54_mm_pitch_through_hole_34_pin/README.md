@@ -37,4 +37,20 @@ One full plastic strip with every contact populated. Separate material meshes ar
 
 Select the required strip length. For OOBB connectors, use the matching prepared-header definition to determine which pins to remove.
 
+## Files
+
+<!-- oomp-part-file-table -->
+
+| Image type | Image | Link |
+| --- | :---: | --- |
+| **Reference CAD model** | — | [STEP](data/model_3d.step) |
+| **Insulator mesh** | — | [STL](data/model_3d_body.stl) |
+| **Contact mesh** | — | [STL](data/model_3d_pins.stl) |
+| **Reference model render** | <img src="data/model_3d_render.png" alt="Reference model render" width="160"> | [PNG](data/model_3d_render.png) |
+| **Reference model sources** | — | [JSON](data/model_3d_source.json) |
+| **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
+| **Part definition and build recipe** | — | [YAML](working.yaml) |
+
+<!-- /oomp-part-file-table -->
+
 Regenerate with `python -m kicad_agents.header_oobb_3d`. Renders are produced by `render_wire_catalogue.py` in the sibling OOBB electronic project. This page is generated from the header reference template.

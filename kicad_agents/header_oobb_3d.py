@@ -314,6 +314,7 @@ def main(only_vertical=False, metadata_only=False, long_only=False):
     import working_oomp_populate_svg as svg
     import yaml
     from jinja2 import Environment, FileSystemLoader
+    from kicad_agents.part_file_table import file_table, local_files
 
     chdir(ROOT)
     options, identities = [], []
@@ -351,7 +352,8 @@ def main(only_vertical=False, metadata_only=False, long_only=False):
     for identity in identities:
         canonical = ROOT / "parts" / identity
         part = yaml.safe_load((canonical / "working.yaml").read_text(encoding="utf-8"))
-        (canonical / "README.md").write_text(template.render(p=part), encoding="utf-8")
+        (canonical / "README.md").write_text(
+            template.render(p=part, file_table=file_table(local_files(canonical))), encoding="utf-8")
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
 """Build the deterministic, website-facing ``web.yaml`` for one OOMP part.
 
-The action runs last in each part's Roboclick recipe.  It intentionally records
-no timestamps or local absolute paths, so a no-change rebuild produces the same
-file on every machine.
+The action runs last in each part's Roboclick recipe. Its inventory also
+refreshes the component README file table after the drawer labels are written.
+It records no timestamps or local absolute paths.
 """
 
 from __future__ import annotations
@@ -16,6 +16,11 @@ from pathlib import Path
 from urllib.parse import quote
 
 import yaml
+
+if __package__:
+    from .part_file_table import fill_file_table
+else:  # Roboclick runs this file directly.
+    from part_file_table import fill_file_table
 
 
 REPOSITORY_ROOT = Path(__file__).resolve().parents[1]
@@ -346,6 +351,9 @@ def build_web_manifest(details: dict) -> dict:
     temporary_path = output_path.with_name(output_path.name + ".tmp")
     temporary_path.write_text(yaml.safe_dump(manifest, sort_keys=False, allow_unicode=True, width=120), encoding="utf-8")
     temporary_path.replace(output_path)
+    if part_kind == "component":
+        published_paths = [item["path"] for item in files] + [output_filename]
+        fill_file_table(part_directory / "README.md", published_paths)
     print(f"wrote website manifest for {part_id}: {output_path} ({len(files)} files)")
     return manifest
 

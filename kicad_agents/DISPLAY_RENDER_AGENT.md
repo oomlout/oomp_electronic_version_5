@@ -370,6 +370,20 @@ manufacturer suffix is not automatically corrected or rendered.
 
 ### Axial resistor colour bands
 
+`display_render_uniroyal_mfr0w4_queue.py` covers two selected 1% UNI-ROYAL
+MFR0W4 axial parts, using documented five-band coding and brown tolerance.
+The beige finish is illustrative; see `DISPLAY_RENDER_UNIROYAL_MFR0W4_EVIDENCE.md`.
+
+The individually reviewed `display_render_yageo_mfr50s_queue.py`,
+`display_render_uniroyal_mf006_queue.py`, and `display_render_cco_mf1_2ws_queue.py`
+cover compact selected parts rated 500 or 600 mW in legacy quarter-watt IDs.
+Keep the rating discrepancy explicit in each page and do not infer suitability
+from its ID. `display_render_vo_mo_1m2_queue.py` illustrates a selected 5%
+metal-oxide part with a gold tolerance band; its standard band layout and beige
+coating are illustrative. Each queue checks the exact identity and rating and
+links its own evidence record. Inspect the preview and final output, then publish
+only that component.
+
 The zero-ohm Yageo axial jumper recipe uses one centered black band and a
 beige body as an explicitly illustrative convention. The selected part's
 actual marking and coating remain unverified; zero-ohm jumpers have no
@@ -566,6 +580,16 @@ FRP1206F15R0TSN 1% high-power part with `15R0`; the manufacturer-specific
 evidence is in `DISPLAY_RENDER_FOJAN_FRP1206_15R0_EVIDENCE.md`. Its KiCad
 body length is at the manufacturer tolerance limit.
 
+`display_render_yageo_rl_generic_queue.py` prepares the unsourced 1210
+0.1 Ω and 2512 0.015 Ω entries using documented Yageo RL current-sense
+examples. The entries themselves do not specify manufacturer, tolerance or
+power; retain those disclosures. See `DISPLAY_RENDER_YAGEO_RL_GENERIC_REFERENCES.md`.
+
+`display_render_yageo_ac2512_13r3_queue.py` covers the corrected 2512
+13.3 Ω Yageo AC selection and `13R3` marking. The former selected Stackpole
+part was 133 Ω; replacing it does not establish full interchangeability. See
+`DISPLAY_RENDER_YAGEO_AC2512_13R3_EVIDENCE.md`.
+
 `display_render_yageo_pt2512_0r2_queue.py` covers the corrected 2512
 0.2 Ω Yageo PT current-sense selection with its `R200` mark. The prior FH
 selection was 2 Ω, and its replacement is not proof of full electrical
@@ -574,8 +598,8 @@ interchangeability. See `DISPLAY_RENDER_YAGEO_PT2512_0R2_EVIDENCE.md`.
 `display_render_yageo_rt1206_133k_queue.py` prepares the selected Yageo
 RT1206DRE07133KL thin-film 0.5% part using its RT-series `1333` marking.
 The evidence is in `DISPLAY_RENDER_YAGEO_RT1206_133K_EVIDENCE.md`. Check the
-unresolved 2512 selected-value conflicts in `DISPLAY_RENDER_2512_VALUE_CONFLICTS.md`
-before preparing either affected component.
+2512 selected-value reconciliation history in `DISPLAY_RENDER_2512_VALUE_CONFLICTS.md`
+before changing either affected component.
 
 `display_render_fenghua_0603_2r7_queue.py` prepares the selected 5% 2.7 Ω
 Fenghua RS-03L2R7JT with its documented `2R7` marking. The local Fenghua

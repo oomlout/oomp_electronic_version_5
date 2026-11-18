@@ -411,7 +411,7 @@ def add_web_manifest_action(part, count):
                 "file_python": "kicad_agents/web_manifest_action.py",
                 "file_output": output_filename,
                 "manifest_config": WEB_MANIFEST_CONFIG_FILE,
-                "description": "Summarize working.yaml and inventory every available part file for website generators.",
+                "description": "Inventory published files for the web manifest and the part README file table.",
                 "timeout": "600",
             }
         ],

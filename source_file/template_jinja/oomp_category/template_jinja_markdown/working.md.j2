@@ -12,7 +12,7 @@
 [Render recipe and provenance]({{ p.display_render.provenance }}) · [KiCad model]({{ p.display_render.model_source }})
 
 Model credit: {{ p.display_render.model_credit }}. {{ p.display_render.license }}.
-{% else %}
+{% elif p.part_page.main_image.svg %}
 ![{{ p.name_short | default(p.name_proper, true) }} {{ p.part_page.main_image.title | lower }}]({{ p.part_page.main_image.svg }})
 {% endif %}
 
@@ -137,19 +137,11 @@ A local PDF has not been captured. The linked source is not an offline datasheet
 {% endif %}
 ## Files
 
-{% if p.kicad is defined %}
-{% if p.kicad.applicability is defined and p.kicad.applicability == 'not_applicable' %}
-[KiCad applicability: cable component, no PCB footprint](data/kicad/README.md) · [Applicability record](data/kicad/manifest.yaml)
+<!-- oomp-part-file-table -->
 
-{% else %}
-[KiCad symbol, machine-solder and hand-solder footprints](data/kicad/README.md) · [Availability and source masters](data/kicad/manifest.yaml)
+{{ file_table | default('') }}
 
-{% endif %}
-{% endif %}
-{% for file_preview in p.part_page.file_previews -%}
-![{{ file_preview.title }}]({{ file_preview.preview }})
-
-{% endfor %}
+<!-- /oomp-part-file-table -->
 
 {% if p.part_page.repository_url %}
 [View this part on GitHub]({{ p.part_page.repository_url }})

@@ -26,7 +26,9 @@ class WebManifestTests(unittest.TestCase):
                 },
             }
             (part_directory / "working.yaml").write_text(yaml.safe_dump(working), encoding="utf-8")
-            (part_directory / "README.md").write_text("# Test\n", encoding="utf-8")
+            page = part_directory / "README.md"
+            page.write_text("# Test\n\n## Files\n\n<!-- oomp-part-file-table -->\n"
+                            "<!-- /oomp-part-file-table -->\n", encoding="utf-8")
             (part_directory / "data" / "present.svg").write_text("<svg/>", encoding="utf-8")
 
             # Roboclick resolves file_output to an absolute path before it
@@ -40,6 +42,11 @@ class WebManifestTests(unittest.TestCase):
             build_web_manifest(action_details)
 
             self.assertEqual((part_directory / "web.yaml").read_bytes(), first_render)
+            table = page.read_text(encoding="utf-8")
+            self.assertIn('| Image type | Image | Link |', table)
+            self.assertIn('[SVG](data/present.svg)', table)
+            self.assertNotIn('data/missing.svg', table)
+            self.assertIn('[YAML](web.yaml)', table)
             self.assertEqual(manifest["id"], "electronic_test_part")
             self.assertEqual(manifest["highlights"]["pin_count"], 2)
             self.assertEqual(manifest["file_stats"]["file_count"], 3)
