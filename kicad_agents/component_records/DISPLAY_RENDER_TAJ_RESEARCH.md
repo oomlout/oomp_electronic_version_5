@@ -131,6 +131,34 @@ Eight exact supplier listings are recorded in
 `DISPLAY_RENDER_TAJ_D_BATCH01_EVIDENCE.md`, and the corresponding source
 records are checked by `display_render_taj_d_batch01_queue.py`. Eight tests
 passed, including fractional-voltage markings and case, polarity and rating
-guards. The queue is not added or published. The D compositor is prepared and
-archived, but the D pilot requires preview and final visual review, then a new
-shared master and a visual comparison before any batch is published.
+guards. The eight recipes have been added, with prior files backed up under
+`tmp/display_render/taj_d_batch01_previous/`, but are not rendered or published.
+The D pilot preview passed; full render is in progress (exec session 2513).
+The archived D compositor still requires shared passes and comparison to the
+independent pilot before any batch is published.
+
+## C-case batch completion (2026-11-18)
+
+The shared passes were compared with the independent pilot and all seven
+reviewed C-case composites were inspected and published. Earlier notes that
+the C-case master or queue are pending are superseded.
+
+## D-case pilot published (2026-11-18)
+
+The D-case pilot final render was inspected and its page and provenance
+validated. The eight D-case recipes remain unrendered; create shared passes
+using the current renderer and compare against the independent pilot before
+applying them. Earlier notes that the final pilot render was in progress are
+superseded.
+
+D-case shared material pass generation is running in exec session 52983
+using the current archived renderer. Compare the resulting pilot composite
+against the independent D-case final before rendering the eight candidates.
+
+D-case shared body pass completed; ink pass remains active in session 52983.
+Do not publish the eight candidates until the completed master is checked
+against the independent pilot and each resulting marking is inspected.
+
+D-case shared passes have been compared with the independent pilot and all
+eight checked batch images and pages are validated. Earlier in-progress D
+notes are superseded.

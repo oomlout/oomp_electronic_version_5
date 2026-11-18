@@ -55,6 +55,7 @@ from kicad_agents.display_render_fenghua_1206_batch03_queue import reviewed_reci
 from kicad_agents.display_render_fenghua_1206_secondary_full_height_01_queue import reviewed_recipe as fenghua_cap_1206_secondary_full_height_01_recipe, EVIDENCE as FENGHUA_CAP_1206_SECONDARY_FULL_HEIGHT_01_EVIDENCE
 from kicad_agents.display_render_fenghua_1206_secondary_20pf_queue import reviewed_recipe as fenghua_cap_1206_secondary_20pf_recipe, EVIDENCE as FENGHUA_CAP_1206_SECONDARY_20PF_EVIDENCE
 from kicad_agents.display_render_fenghua_1206_secondary_y5v_full_height_queue import reviewed_recipe as fenghua_cap_1206_secondary_y5v_full_height_recipe, EVIDENCE as FENGHUA_CAP_1206_SECONDARY_Y5V_FULL_HEIGHT_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_2u2_25v_secondary_queue import reviewed_recipe as fenghua_cap_1206_2u2_25v_recipe, EVIDENCE as FENGHUA_CAP_1206_2U2_25V_EVIDENCE, PART as FENGHUA_CAP_1206_2U2_25V_PART
 from kicad_agents.display_render_fenghua_1206_secondary_full_height_03_queue import reviewed_recipe as fenghua_cap_1206_secondary_full_height_03_recipe, EVIDENCE as FENGHUA_CAP_1206_SECONDARY_FULL_HEIGHT_03_EVIDENCE
 from kicad_agents.display_render_fenghua_1206_secondary_low_c0g_queue import reviewed_recipe as fenghua_cap_1206_secondary_low_c0g_recipe, EVIDENCE as FENGHUA_CAP_1206_SECONDARY_LOW_C0G_EVIDENCE
 from kicad_agents.display_render_fenghua_1206_secondary_mixed_heights_queue import reviewed_recipe as fenghua_cap_1206_secondary_mixed_heights_recipe, EVIDENCE as FENGHUA_CAP_1206_SECONDARY_MIXED_HEIGHTS_EVIDENCE
@@ -159,7 +160,11 @@ def prepare(part_id, source_id):
         raise ValueError('Target evidence is missing or has changed')
     record_path = ROOT / 'parts_source' / part_id / 'working.yaml'
     record = yaml.safe_load(record_path.read_text(encoding='utf-8')) or {}
-    if evidence.get('file') == MURATA_CAP_0805_10UF_50V_EVIDENCE.as_posix():
+    if evidence.get('file') == FENGHUA_CAP_1206_2U2_25V_EVIDENCE.as_posix():
+        if part_id != FENGHUA_CAP_1206_2U2_25V_PART:
+            raise ValueError('Unexpected part')
+        checked_recipe = fenghua_cap_1206_2u2_25v_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == MURATA_CAP_0805_10UF_50V_EVIDENCE.as_posix():
         checked_recipe = murata_cap_0805_10uf_50v_recipe(part_id, record, recipes, evidence['sha256'])
     elif evidence.get('file') == SAMSUNG_CAP_NEXT_EVIDENCE.as_posix():
         fn = samsung_cap_0402_1n8_recipe if part_id in SAMSUNG_CAP_0402_1N8_PARTS else samsung_cap_0603_06_recipe

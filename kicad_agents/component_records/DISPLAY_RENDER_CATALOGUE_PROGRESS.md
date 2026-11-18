@@ -2587,3 +2587,113 @@ have been researched and added to recipes but are not rendered or published; sev
 Shared C-case master generation is running in exec session 19454; compare
 its composite to the independent pilot before proceeding. No PDF downloaded.
 There are now 423 published capacitor renders. Other capacitors remain.
+
+## TAJ C-case marked batch 01 (2026-11-18)
+
+Published seven individually reviewed C-case TAJ pages after comparing the
+shared composite against the independent pilot and inspecting
+`tmp/display_render/taj_c_batch01_contact.png`. Geometry, finish, actual
+production markings and indirect ink reflections are illustrative and
+disclosed. Seven manifests, artifact hashes, dimensions, markings, provenance
+and README disclosures validated; 34 targeted tests passed. Prior part files
+are in `tmp/display_render/taj_c_batch01_previous/`. No PDF downloaded. There
+are now 430 published capacitor renders; D-case and other capacitors remain.
+
+## TAJ D-case 100 µF / 16 V pilot (2026-11-18)
+
+Published TAJD107K016RNJ after preview/final inspection. The KiCad Kemet
+D-case model is scaled from 3.1 mm maximum to manufacturer nominal 2.9 mm;
+the positive-anode stripe, colour and 107 C marking are illustrative and
+disclosed. Image dimensions, hashes, marking, provenance and page validated.
+Eight reviewed D-case recipes are prepared but not rendered or published;
+`display_render_taj_d_composite.py` requires new shared material passes and
+comparison to the pilot before using them. Prior files are backed up under
+`tmp/display_render/taj_d_pilot_previous/` and `taj_d_batch01_previous/`.
+No PDF downloaded. There are now 431 published capacitor renders.
+
+## Honor RVT 8 mm 100 µF 50 V pilot (2026-11-18)
+
+Published C3352 / RVT1H101M0810 after model, polarity, preview and final
+inspection. Its KiCad polarized metal can is scaled from 10.0 to 10.2 mm
+seated height including its base; the negative sector, finish and numeric
+100 / 50V marking layout are illustrative, as disclosed on the page. Image
+hashes, sizes, marking, provenance and README validated. Existing local PDF
+reference for C3352 is missing; manufacturer series information was viewed
+online and no PDF downloaded. Prior files are in
+`tmp/display_render/rvt_8mm_pilot_previous/`. Two 8 mm and three 10 mm
+reviewed candidates have recipes but no render or page yet. There are now
+432 published capacitor renders; remaining capacitors and other families
+still need work.
+
+## Honor RVT 10 mm 1000 µF 16 V pilot (2026-11-18)
+
+Published C3359 / RVT1C102M1010 after model, polarity and preview/final
+inspection. Its KiCad polarized can is scaled from 10.0 to 10.2 mm seated
+height including its base; the negative sector, finish and numeric 1000 /
+16V marking layout are illustrative, as disclosed. Image sizes and hashes,
+marking, provenance and README validated. Existing local RVT PDF was
+inspected with font substitution limitations; no PDF downloaded. Prior files
+are in `tmp/display_render/rvt_10mm_pilot_previous/`. Three 10 mm candidates
+have recipes but no render or page yet. There are now 433 published capacitor
+renders; remaining capacitors and later families still need work.
+
+## Honor RVT 4 mm 10 µF 25 V pilot (2026-11-18)
+
+Published C3343 / RVT1E100M0405 after model, polarity, preview and final
+inspection. KiCad polarized geometry, negative sector, metal finish and
+`10 / 25V` marking layout are illustrative and disclosed on the page.
+Image sizes and hashes, marking, provenance and README validated. No PDF
+was downloaded. Previous files are under
+`tmp/display_render/rvt_4mm_pilot_previous/`. Four 4 mm candidates have
+recipes but require a reviewed shared master and visual inspection. There
+are now 434 published capacitor renders; remaining capacitors and later
+families still need work.
+
+## TAJ D-case marked batch 01 (2026-11-18)
+
+Published eight individually researched D-case TAJ pages after comparing
+the shared composite with the independent pilot and inspecting
+`tmp/display_render/taj_d_batch01_contact.png`. The shape, colour, markings
+and indirect ink reflections are illustrative and disclosed. Eight image
+manifests, hashes, sizes, markings, provenance and README disclosures
+validated; 35 targeted tests passed. Prior files are under
+`tmp/display_render/taj_d_batch01_previous/`. No PDF downloaded. There are
+now 442 published capacitor renders; other capacitors and later families
+remain.
+
+## Fenghua 1206 2.2 µF 25 V secondary evidence (2026-11-18)
+
+Published 1206F225M250NT / C1933 using the inspected 1.6 mm KiCad image,
+matching a secondary listing. Manufacturer drawing was not independently
+accessed and the listed height may be generic; shape, colour, finish and
+unmarked appearance are illustrative and disclosed. Source image reuse,
+evidence, hashes, dimensions, provenance and README validated; 10 targeted
+tests passed. Prior files are in
+`tmp/display_render/fenghua_1206_2u2_25v_secondary_previous/`. No PDF
+downloaded. There are now 443 published capacitor renders.
+
+## Honor RVT 4 mm marked batch 01 (2026-11-18)
+
+Published four reviewed 4 mm values after comparing the shared composite to
+the independent 10 µF / 25 V pilot and inspecting the batch contact sheet at
+`tmp/display_render/rvt_4mm_batch_contact.png`. Markings, polarity, image
+hashes, README disclosures and current display metadata validated; 28
+targeted tests passed. The composite uses approximate indirect ink reflections,
+as disclosed. There are now 447 published capacitor renders. No PDF was
+downloaded. The specialized radial pilot is in progress; see radial research.
+
+A local Fenghua series datasheet uncovered a potential C0G height conflict;
+see `DISPLAY_RENDER_FENGHUA_LOCAL_DATASHEET_REVIEW.md`. Do not automatically
+replace earlier renders until exact values and part identity are reconciled.
+
+## CX KM radial 8 × 12 mm pilot (2026-11-18)
+
+Published the 100 µF / 50 V pilot after inspecting its 700 px preview and
+1400 px final. The adapted KiCad geometry has an illustrative stretched
+sleeve, black colour, negative stripe and value/series text; precise production
+artwork and colour remain unverified and disclosed. Source and image hashes,
+manifest, dimensions, current metadata and README validated. Seventeen radial
+geometry, renderer-guard and metadata tests passed. Earlier part files are
+in `tmp/display_render/radial_8mm_pilot_previous/`. There are now 448
+published capacitor renders. Other capacitor families, reviewed pending
+RVT cases, the Fenghua height conflict, and later ICs remain. No PDF downloaded.

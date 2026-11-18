@@ -689,3 +689,38 @@ Twenty targeted marking, metadata and population-workflow tests passed. Artifact
 hashes, README attribution and source/generated/web metadata propagation passed.
 Only the selected component was updated, and its only source-data field change
 was `display_render`. No mesh/CAD export or separate-project change was made.
+
+## Aluminium electrolytic SMD pilot
+
+For the reviewed Honor RVT 8 × 10.2 mm pilot, read
+`component_records/DISPLAY_RENDER_ALUMINUM_RESEARCH.md` and its linked evidence
+before rendering. Its polarized KiCad `CP_Elec_8x10.step` has a metallic can,
+black base and a dark top sector on pad 2, which is negative for the reviewed
+`Device:C_Polarized` symbol. This polarity convention differs from the TAJ
+tantalum positive stripe: verify each selected symbol, footprint and model.
+
+The `metal_top_marking` model option isolates exactly one planar metal top
+face for ink; the renderer rejects unexpected top-face geometry. The recipe
+scales the 10.0 mm model to the reported 10.2 mm seated height, including
+the base, so describe that approximation. `illustrative_literal` text uses
+the sourced value and voltage only; do not invent a logo or lot code, and
+state that physical ink layout, shape and finish are illustrative. Preserve
+source and renderer hashes, check model bounds, inspect a preview and the
+full render, validate the manifest and refresh only the selected component.
+The first 8 mm full-quality pilot and page are validated. Do not treat this
+as blanket approval for other cases or manufacturers.
+
+## Radial aluminium capacitor pilot
+
+Read `component_records/DISPLAY_RENDER_RADIAL_RESEARCH.md` and the exact
+part evidence first. The reviewed 8 × 12 mm pilot uses the specialized
+`python -m kicad_agents.display_render_radial PART_ID` renderer. The standard
+renderer deliberately rejects radial aluminium recipes. The adapter stretches
+only the reviewed straight sleeve and preserves the leads and end details;
+verify model bounds, pad polarity, stripe and text projection for each new
+model. Do not assume its KM series marking, colour or geometry applies to
+other parts. Disclose illustrative artwork and dimensional approximations.
+Render a low-sample preview and inspect it, then inspect the full render,
+archive the exact renderer source by SHA-256, validate the manifest and
+refresh only the selected page. Never publish an unchecked scratch render.
+See the research record for the current pilot status.

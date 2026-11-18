@@ -81,6 +81,7 @@ def load_coloured_step(path, model):
         raise ValueError(f'Unexpected package dimensions {actual.tolist()}; check units/model selection before rendering')
     groups = defaultdict(lambda: dict(vertices=[], normals=[], triangles=[]))
     colour_counts = defaultdict(int)
+    top_marking_faces = 0
     for face in shape.Faces():
         colour = Quantity_Color()
         if not colours.GetColor(face.wrapped, XCAFDoc_ColorType.XCAFDoc_ColorSurf, colour):
@@ -90,6 +91,16 @@ def load_coloured_step(path, model):
         if key not in model['role_by_source_colour']:
             raise ValueError(f'Unreviewed source face colour {key}')
         role = model['role_by_source_colour'][key]
+        # The reviewed polarized can has the same STEP colour on its shell and
+        # top. Only the flat, metallic upper face receives the ink projection.
+        if model.get('metal_top_marking'):
+            face_box = face.BoundingBox()
+            if (role == 'termination' and face.geomType() == 'PLANE'
+                    and abs(face_box.zmin - upper[2]) < .001
+                    and abs(face_box.zmax - upper[2]) < .001
+                    and face.Area() > 1):
+                role = 'coating'
+                top_marking_faces += 1
         colour_counts[key] += 1
         vertices, triangles = face.tessellate(0.003, 0.08)
         group = groups[role]
@@ -97,6 +108,8 @@ def load_coloured_step(path, model):
         group['vertices'].extend(v.toTuple() for v in vertices)
         group['normals'].extend(face.normalAt(v).toTuple() for v in vertices)
         group['triangles'].extend(tuple(index + offset for index in t) for t in triangles)
+    if model.get('metal_top_marking') and top_marking_faces != 1:
+        raise ValueError('Expected exactly one reviewed metallic top marking face')
     expected = set(model.get('required_roles', ['coating', 'ceramic', 'termination']))
     supported = {'coating', 'ceramic', 'termination', 'pin_indicator'}
     if not expected or not expected <= supported or set(groups) != expected:
@@ -329,6 +342,14 @@ def render_scene(groups, lower, upper, recipe, studio, scratch, pixels, samples)
                     'alpha': .40, 'int_ior': 1.48}}
         materials['pin_indicator'] = {'type': 'roughplastic',
             'diffuse_reflectance': rgb([.53, .14, .055]), 'alpha': .35, 'int_ior': 1.48}
+    if recipe.get('family') == 'aluminum_capacitor':
+        materials['ceramic'] = {'type': 'roughplastic',
+            'diffuse_reflectance': rgb([.018, .019, .021]), 'alpha': .34, 'int_ior': 1.48}
+        materials['coating'] = {'type': 'blendbsdf', 'weight': bitmap('marking.png'),
+            'body': {'type': 'principled', 'base_color': rgb([.61, .65, .70]),
+                     'metallic': 1., 'roughness': .24, 'anisotropic': .22},
+            'ink': {'type': 'roughplastic', 'diffuse_reflectance': rgb([.018, .019, .021]),
+                    'alpha': .4, 'int_ior': 1.48}}
     scale = write_meshes(groups, lower, upper, scratch)
     height = float((upper[2] - lower[2]) / scale)
     target = np.array([0., 0., height * .48])
@@ -398,6 +419,8 @@ def generate(part_id, *, model_root=None, output=None, pixels=None, samples=None
     if part_id not in recipes:
         raise ValueError('No reviewed display recipe for this exact component. Add evidence before rendering.')
     recipe = recipes[part_id]
+    if recipe.get('family') == 'radial_aluminum_capacitor':
+        raise ValueError('Use kicad_agents.display_render_radial for radial aluminum capacitors')
     studio = json.loads(STUDIO.read_text(encoding='utf-8'))
     model_path = locate_model(recipe['model']['relative_path'], model_root)
     if digest(model_path) != recipe['model']['sha256']:
