@@ -73,7 +73,7 @@ def reviewed_recipe(part_id, record, pilot, evidence_sha256):
         'document': 'YAGEO MFR specification V.0 (reviewed online)', 'page': 14,
         'rule': f'1% five-band code for {value} ohm: ' + ', '.join(colours) + '.',
         'source_record': f'parts_source/{part_id}/working.yaml'},
-        'appearance_status': 'The five-band value code is documented; traditional beige coating, stripe spacing and shades are illustrative.'}
+        'appearance_status': 'The five-band value code is documented; blue coating, stripe spacing and shades are illustrative.'}
     recipe['appearance_status'] = ('Generic KiCad axial package with bent leads at the selected 7.62 mm footprint pitch; '
                                    'body dimensions are within the manufacturer tolerance.')
     return recipe

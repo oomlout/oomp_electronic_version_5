@@ -5,7 +5,13 @@
 Resistor 5.6e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definition. It uses the quarter watt through hole package or form factor. Its nominal drawing size is 6.5 &#x00D7; 2.5 mm.
 
 
-![Resistor 5.6e+06 Ohm QUARTER_WATT_THROUGH_HOLE pinout](data/working_svg_square_pins.svg)
+![Resistor 5.6e+06 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
+
+The 6.3 &#x00D7; 2.5 mm KiCad body approximates the selected 6.5 &#x00D7; 2.4 mm body; formed leads are 7.62 mm apart. Blue coating is illustrative. Its manufacturer coating colour has not been confirmed. Blue body shade is illustrative. Standard 5% four-band code; exact manufacturer band count, placement and shades are unverified.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
+
+Model credit: 2017 kicad StepUp. CC-BY-SA-4.0 with exception in source STEP header.
 
 
 
@@ -53,7 +59,7 @@ Resistor 5.6e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 | Identifier | Value |
 | --- | --- |
-| Manufacturer part number | `A1` |
+| Manufacturer part number | `RD 1/4W 5M6 J T/B A1` |
 | LCSC | [`C433702`](https://www.lcsc.com/product-detail/C433702.html) |
 
 
@@ -75,6 +81,7 @@ Resistor 5.6e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -107,6 +114,7 @@ Resistor 5.6e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_resistor_quarter_watt_through_hole_5600000_ohm.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

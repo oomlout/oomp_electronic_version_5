@@ -5,7 +5,13 @@
 Resistor 39000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definition. It uses the quarter watt through hole package or form factor. Its nominal drawing size is 6.5 &#x00D7; 2.5 mm.
 
 
-![Resistor 39000 Ohm QUARTER_WATT_THROUGH_HOLE pinout](data/working_svg_square_pins.svg)
+![Resistor 39000 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
+
+Illustrates the saved VO C337041 selection; the manufacturer part number is truncated and the supplier page was unavailable during review. The 3.6 &#x00D7; 1.6 mm model approximates the listed 3.7 &#x00D7; 2.3 mm length but is thinner. The selected 125 mW rating and smaller body conflict with the quarter-watt ID and existing footprint. Model leads are 7.62 mm apart. Blue coating is illustrative. Standard value code; exact manufacturer band count, placement and shades are unverified.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal.step)
+
+Model credit: 2017 kicad StepUp. CC-BY-SA-4.0 with exception in source STEP header.
 
 
 
@@ -75,6 +81,7 @@ Resistor 39000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -107,6 +114,7 @@ Resistor 39000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_resistor_quarter_watt_through_hole_39000_ohm.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

@@ -7,7 +7,7 @@ Resistor 0 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definiti
 
 ![Resistor 0 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Beige coating and black jumper band are illustrative; the selected Yageo appearance is unverified. Illustrative centered black jumper band; actual selected Yageo marking is unverified.
+Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Blue coating and black jumper band are illustrative; the selected Yageo appearance is unverified. Blue body shade is illustrative. Illustrative centered black jumper band; actual selected Yageo marking is unverified.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
 

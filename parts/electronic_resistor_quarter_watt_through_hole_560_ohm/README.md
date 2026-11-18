@@ -7,7 +7,7 @@ Resistor 560 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 ![Resistor 560 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-The selected CCO MF1/2WS is rated 500 mW, despite the legacy quarter-watt catalogue ID. Generic KiCad axial body and bent leads at 7.62 mm pitch; beige coating is illustrative and the manufacturer specifies sky blue. Documented 1% five-band code; band spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+The selected CCO MF1/2WS is rated 500 mW, despite the legacy quarter-watt catalogue ID. Generic KiCad axial body and bent leads at 7.62 mm pitch; blue coating is illustrative and the manufacturer specifies sky blue. Blue body shade is illustrative. Documented 1% five-band code; band spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
 

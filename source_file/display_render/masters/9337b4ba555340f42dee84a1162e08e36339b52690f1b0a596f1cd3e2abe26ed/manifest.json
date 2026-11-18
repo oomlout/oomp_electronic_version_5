@@ -1,0 +1,666 @@
+{
+  "inputs": {
+    "schema_version": 1,
+    "model": {
+      "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+      "source_url": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+      "copyright": "2017 kicad StepUp",
+      "license": "CC-BY-SA-4.0 with exception in source STEP header",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "expected_bounds_mm": [
+        21.12,
+        5.0,
+        8.0
+      ],
+      "dimension_tolerance_mm": 0.02,
+      "role_by_source_colour": {
+        "0.883,0.711,0.492": "coating",
+        "0.824,0.820,0.781": "termination"
+      },
+      "sha256": "5d41e37d6dfee8d32447412d8ae01e8d1208a75fcda370392e1b311eb5a8f25b",
+      "required_roles": [
+        "coating",
+        "termination"
+      ]
+    },
+    "family": "axial_resistor",
+    "disable_bump_for": [],
+    "studio": {
+      "schema_version": 1,
+      "reference": "https://github.com/oomlout/oomp_hardware_screw_version_5/blob/main/screw_model_render.py",
+      "renderer": "Mitsuba 3 path tracer",
+      "note": "Electronics adaptation of the screw product studio: three softboxes, orthographic framing, neutral floor and filmic highlights. Does not claim identical Blender AgX colour management.",
+      "camera_direction": [
+        1.3,
+        -2.4,
+        2.4
+      ],
+      "framing_margin": 0.16,
+      "world_radiance": [
+        0.24,
+        0.26,
+        0.29
+      ],
+      "floor_reflectance": [
+        0.72,
+        0.73,
+        0.75
+      ],
+      "exposure": 1.25,
+      "denoise_strength": 3.0,
+      "seed": 7991,
+      "lights": [
+        {
+          "name": "key",
+          "position": [
+            -1.4,
+            -1.8,
+            2.5
+          ],
+          "half_size": [
+            1.0,
+            0.7
+          ],
+          "radiance": [
+            4.0,
+            3.85,
+            3.6
+          ]
+        },
+        {
+          "name": "fill",
+          "position": [
+            2.0,
+            -0.5,
+            1.5
+          ],
+          "half_size": [
+            0.6,
+            0.9
+          ],
+          "radiance": [
+            1.8,
+            2.0,
+            2.3
+          ]
+        },
+        {
+          "name": "rim",
+          "position": [
+            0.3,
+            1.8,
+            2.0
+          ],
+          "half_size": [
+            0.9,
+            0.3
+          ],
+          "radiance": [
+            4.5,
+            4.7,
+            5.0
+          ]
+        }
+      ]
+    },
+    "pixels": 1400,
+    "samples": 256,
+    "renderer_sha256": "fe5c01eeacff85e6105271d566f60ecf4f2f1a14a7a7cbe1cf27bb0ac0420ec6",
+    "builder_sha256": "a84418875ddd4df6db9f7384c671123e5aafb5f70478a31059928f5d89203698",
+    "runtime": {
+      "cadquery": "2.8.0",
+      "cadquery-ocp": "7.9.3.1.1",
+      "mitsuba": "3.7.1",
+      "drjit": "1.2.0",
+      "numpy": "2.5.5",
+      "Pillow": "13.0.0",
+      "opencv-python-headless": "5.0.0.93"
+    },
+    "reference_manifest_sha256": {
+      "black": "d493e1a5c407eb894fa5e8478d63d02b96b26580fee301a3ca29422a1e7014d3",
+      "white": "1df69f0b6b61e572af092ea48f2c4b5e5ceedc9259af419070e9fc6357064412"
+    }
+  },
+  "model": {
+    "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+    "sha256": "5d41e37d6dfee8d32447412d8ae01e8d1208a75fcda370392e1b311eb5a8f25b",
+    "actual_bounds_mm": [
+      21.119999999999997,
+      5.0,
+      8.0
+    ],
+    "source_face_colours": {
+      "0.883,0.711,0.492": 9,
+      "0.824,0.820,0.781": 8
+    },
+    "triangle_count": 54348,
+    "source_header": "ISO-10303-21;\nHEADER;\n/* R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step 3D STEP model for use in ECAD systems\n * Copyright (C) 2017, kicad StepUp\n * \n * This work is licensed under the [Creative Commons CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), \n * with the following exception:\n * To the extent that the creation of electronic designs that use 'Licensed Material' can be considered to be 'Adapted Material', \n * then the copyright holder waives article 3 of the license with respect to these designs and any generated files which use data provided \n * as part of the 'Licensed Material'.\n * You are free to use the library data in your own projects without the obligation to share your project files under this or any other license agreement.\n * However, if you wish to redistribute these libraries, or parts thereof (including in modified form) as a collection then the exception above does not apply. \n * Please refer to https://github.com/KiCad/kicad-packages3D/blob/master/LICENSE.md for further clarification of the exception.\n * Disclaimer of Warranties and Limitation of Liability.\n * These libraries are provided in the hope that they will be useful, but are provided without warranty of any kind, express or implied.\n * *USE 3D CAD DATA AT YOUR OWN RISK*\n * *DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.*\n * \n */\n\n"
+  },
+  "artifacts": {
+    "body.png": {
+      "sha256": "06460e83736a7112a3e7f0658f48982bf1369c3a7e2faeba757f947b6f29fc6f",
+      "bytes": 148544
+    },
+    "ink.png": {
+      "sha256": "e67fb9bffee2c351a4fa224057a8b0235cab5454a5995998697ba72a554a1fd0",
+      "bytes": 132881
+    }
+  },
+  "method": "black and white synthetic 4-band calibration renders",
+  "reference_manifests": {
+    "black": {
+      "schema_version": 1,
+      "part_id": "electronic_resistor_quarter_watt_through_hole_10_ohm",
+      "purpose": "display_only",
+      "recipe": {
+        "schema_version": 1,
+        "family": "axial_resistor",
+        "package": "din0516_horizontal_20_32mm",
+        "model": {
+          "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+          "source_url": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+          "copyright": "2017 kicad StepUp",
+          "license": "CC-BY-SA-4.0 with exception in source STEP header",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "expected_bounds_mm": [
+            21.12,
+            5.0,
+            8.0
+          ],
+          "dimension_tolerance_mm": 0.02,
+          "role_by_source_colour": {
+            "0.883,0.711,0.492": "coating",
+            "0.824,0.820,0.781": "termination"
+          },
+          "sha256": "5d41e37d6dfee8d32447412d8ae01e8d1208a75fcda370392e1b311eb5a8f25b",
+          "required_roles": [
+            "coating",
+            "termination"
+          ]
+        },
+        "represented_manufacturer": "Huaxing Mechanical-Elec.",
+        "represented_mpn": "KNP2W-10\u03a9\u00b15%T",
+        "marking": {
+          "policy": "verified_literal",
+          "text": "black / black / black / black",
+          "bands": [
+            "black",
+            "black",
+            "black",
+            "black"
+          ],
+          "body_span_mm": [
+            2.41,
+            17.91
+          ],
+          "evidence": {
+            "file": "kicad_agents/component_records/DISPLAY_RENDER_HUAXING_KNP2W_10R_EVIDENCE.md",
+            "sha256": "c60d5f8968564e69fabbb2586640a4f7ccfaa729edb7e075346b38f2ade40800",
+            "document": "Huaxing selected supplier listing and standard 5% representation reviewed online",
+            "source_record": "parts_source/electronic_resistor_quarter_watt_through_hole_10_ohm/working.yaml",
+            "rule": "Illustrative standard 5% four-band code for 10 \u03a9: brown, black, black, gold."
+          },
+          "appearance_status": "Standard four-band code; the selected part\u2019s exact band count, order and spacing are unverified.",
+          "band_width_mm": 0.52
+        },
+        "appearance_status": "Selected Huaxing wirewound part is rated 2 W, despite the legacy quarter-watt catalogue ID. The 15.5 \u00d7 5 mm KiCad body matches its listed dimensions; formed leads are 20.32 mm apart. The existing catalogue footprint and dimensions describe a much smaller part and need review. Blue coating is illustrative. Blue body shade is illustrative.",
+        "output": {
+          "pixels": 1400,
+          "samples": 256,
+          "thumbnail_pixels": 512
+        }
+      },
+      "input_fingerprint": "c21cbe8a943d7939a4287203f0f6fa5c89f191bb1e5a4468ef4544d5e74725ac",
+      "runtime": {
+        "cadquery": "2.8.0",
+        "cadquery-ocp": "7.9.3.1.1",
+        "mitsuba": "3.7.1",
+        "drjit": "1.2.0",
+        "numpy": "2.5.5",
+        "Pillow": "13.0.0",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "recipe_sha256": "143c8525d2cf7fe14c812fdcd46b9082af68b8adaf4fbe3c3452be33a5f9b357",
+      "model": {
+        "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+        "sha256": "5d41e37d6dfee8d32447412d8ae01e8d1208a75fcda370392e1b311eb5a8f25b",
+        "actual_bounds_mm": [
+          21.119999999999997,
+          5.0,
+          8.0
+        ],
+        "source_face_colours": {
+          "0.883,0.711,0.492": 9,
+          "0.824,0.820,0.781": 8
+        },
+        "triangle_count": 54348,
+        "source_header": "ISO-10303-21;\nHEADER;\n/* R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step 3D STEP model for use in ECAD systems\n * Copyright (C) 2017, kicad StepUp\n * \n * This work is licensed under the [Creative Commons CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), \n * with the following exception:\n * To the extent that the creation of electronic designs that use 'Licensed Material' can be considered to be 'Adapted Material', \n * then the copyright holder waives article 3 of the license with respect to these designs and any generated files which use data provided \n * as part of the 'Licensed Material'.\n * You are free to use the library data in your own projects without the obligation to share your project files under this or any other license agreement.\n * However, if you wish to redistribute these libraries, or parts thereof (including in modified form) as a collection then the exception above does not apply. \n * Please refer to https://github.com/KiCad/kicad-packages3D/blob/master/LICENSE.md for further clarification of the exception.\n * Disclaimer of Warranties and Limitation of Liability.\n * These libraries are provided in the hope that they will be useful, but are provided without warranty of any kind, express or implied.\n * *USE 3D CAD DATA AT YOUR OWN RISK*\n * *DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.*\n * \n */\n\n"
+      },
+      "marking": {
+        "text": "black / black / black / black",
+        "font": {
+          "file": null,
+          "sha256": null,
+          "bitmap_size": [
+            1024,
+            512
+          ]
+        },
+        "evidence_sha256": "c60d5f8968564e69fabbb2586640a4f7ccfaa729edb7e075346b38f2ade40800"
+      },
+      "studio": {
+        "schema_version": 1,
+        "reference": "https://github.com/oomlout/oomp_hardware_screw_version_5/blob/main/screw_model_render.py",
+        "renderer": "Mitsuba 3 path tracer",
+        "note": "Electronics adaptation of the screw product studio: three softboxes, orthographic framing, neutral floor and filmic highlights. Does not claim identical Blender AgX colour management.",
+        "camera_direction": [
+          1.3,
+          -2.4,
+          2.4
+        ],
+        "framing_margin": 0.16,
+        "world_radiance": [
+          0.24,
+          0.26,
+          0.29
+        ],
+        "floor_reflectance": [
+          0.72,
+          0.73,
+          0.75
+        ],
+        "exposure": 1.25,
+        "denoise_strength": 3.0,
+        "seed": 7991,
+        "lights": [
+          {
+            "name": "key",
+            "position": [
+              -1.4,
+              -1.8,
+              2.5
+            ],
+            "half_size": [
+              1.0,
+              0.7
+            ],
+            "radiance": [
+              4.0,
+              3.85,
+              3.6
+            ]
+          },
+          {
+            "name": "fill",
+            "position": [
+              2.0,
+              -0.5,
+              1.5
+            ],
+            "half_size": [
+              0.6,
+              0.9
+            ],
+            "radiance": [
+              1.8,
+              2.0,
+              2.3
+            ]
+          },
+          {
+            "name": "rim",
+            "position": [
+              0.3,
+              1.8,
+              2.0
+            ],
+            "half_size": [
+              0.9,
+              0.3
+            ],
+            "radiance": [
+              4.5,
+              4.7,
+              5.0
+            ]
+          }
+        ]
+      },
+      "render": {
+        "variant": "llvm_ad_rgb",
+        "seconds": 313.35,
+        "samples": 256,
+        "pixels": 1400,
+        "materials": {
+          "termination": {
+            "type": "principled",
+            "base_color": {
+              "type": "rgb",
+              "value": [
+                0.61,
+                0.65,
+                0.7
+              ]
+            },
+            "metallic": 1.0,
+            "roughness": 0.24,
+            "anisotropic": 0.22
+          },
+          "ceramic": {
+            "type": "roughplastic",
+            "diffuse_reflectance": {
+              "type": "rgb",
+              "value": [
+                0.53,
+                0.5,
+                0.43
+              ]
+            },
+            "alpha": 0.3,
+            "int_ior": 1.52
+          },
+          "pin_indicator": {
+            "type": "roughplastic",
+            "diffuse_reflectance": {
+              "type": "rgb",
+              "value": [
+                0.48,
+                0.47,
+                0.44
+              ]
+            },
+            "alpha": 0.4,
+            "int_ior": 1.48
+          },
+          "coating": {
+            "type": "roughplastic",
+            "diffuse_reflectance": {
+              "type": "bitmap",
+              "filename": "axial_bands.png",
+              "raw": false,
+              "wrap_mode": "clamp"
+            },
+            "alpha": 0.25,
+            "int_ior": 1.52
+          }
+        },
+        "normalized_unit_mm": 21.119999999999997,
+        "tone_mapping": "ACES fitted curve then sRGB; not Blender AgX",
+        "nonfinite_pixels_repaired": 0,
+        "bump_disabled_roles": [],
+        "denoising": {
+          "method": "OpenCV non-local means",
+          "strength": 3.0
+        }
+      },
+      "renderer_source_sha256": "fe5c01eeacff85e6105271d566f60ecf4f2f1a14a7a7cbe1cf27bb0ac0420ec6",
+      "artifacts": {
+        "render.png": {
+          "sha256": "06460e83736a7112a3e7f0658f48982bf1369c3a7e2faeba757f947b6f29fc6f",
+          "bytes": 148544
+        },
+        "preview.webp": {
+          "sha256": "14622e108c393361c19bca1b96dbe2b13b8ddd37fc646ad509aa139839df1c9a",
+          "bytes": 5256
+        }
+      }
+    },
+    "white": {
+      "schema_version": 1,
+      "part_id": "electronic_resistor_quarter_watt_through_hole_10_ohm",
+      "purpose": "display_only",
+      "recipe": {
+        "schema_version": 1,
+        "family": "axial_resistor",
+        "package": "din0516_horizontal_20_32mm",
+        "model": {
+          "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+          "source_url": "https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+          "copyright": "2017 kicad StepUp",
+          "license": "CC-BY-SA-4.0 with exception in source STEP header",
+          "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+          "expected_bounds_mm": [
+            21.12,
+            5.0,
+            8.0
+          ],
+          "dimension_tolerance_mm": 0.02,
+          "role_by_source_colour": {
+            "0.883,0.711,0.492": "coating",
+            "0.824,0.820,0.781": "termination"
+          },
+          "sha256": "5d41e37d6dfee8d32447412d8ae01e8d1208a75fcda370392e1b311eb5a8f25b",
+          "required_roles": [
+            "coating",
+            "termination"
+          ]
+        },
+        "represented_manufacturer": "Huaxing Mechanical-Elec.",
+        "represented_mpn": "KNP2W-10\u03a9\u00b15%T",
+        "marking": {
+          "policy": "verified_literal",
+          "text": "white / white / white / white",
+          "bands": [
+            "white",
+            "white",
+            "white",
+            "white"
+          ],
+          "body_span_mm": [
+            2.41,
+            17.91
+          ],
+          "evidence": {
+            "file": "kicad_agents/component_records/DISPLAY_RENDER_HUAXING_KNP2W_10R_EVIDENCE.md",
+            "sha256": "c60d5f8968564e69fabbb2586640a4f7ccfaa729edb7e075346b38f2ade40800",
+            "document": "Huaxing selected supplier listing and standard 5% representation reviewed online",
+            "source_record": "parts_source/electronic_resistor_quarter_watt_through_hole_10_ohm/working.yaml",
+            "rule": "Illustrative standard 5% four-band code for 10 \u03a9: brown, black, black, gold."
+          },
+          "appearance_status": "Standard four-band code; the selected part\u2019s exact band count, order and spacing are unverified.",
+          "band_width_mm": 0.52
+        },
+        "appearance_status": "Selected Huaxing wirewound part is rated 2 W, despite the legacy quarter-watt catalogue ID. The 15.5 \u00d7 5 mm KiCad body matches its listed dimensions; formed leads are 20.32 mm apart. The existing catalogue footprint and dimensions describe a much smaller part and need review. Blue coating is illustrative. Blue body shade is illustrative.",
+        "output": {
+          "pixels": 1400,
+          "samples": 256,
+          "thumbnail_pixels": 512
+        }
+      },
+      "input_fingerprint": "c44d774ecf94537440327d8724c1a85e98910f9293f258d0b44d6815270da859",
+      "runtime": {
+        "cadquery": "2.8.0",
+        "cadquery-ocp": "7.9.3.1.1",
+        "mitsuba": "3.7.1",
+        "drjit": "1.2.0",
+        "numpy": "2.5.5",
+        "Pillow": "13.0.0",
+        "opencv-python-headless": "5.0.0.93"
+      },
+      "recipe_sha256": "c00bc4a1124ef8a725d640c9bf680eb09d69c3dee9f1d06b2469fb8c48fa0d3b",
+      "model": {
+        "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step",
+        "sha256": "5d41e37d6dfee8d32447412d8ae01e8d1208a75fcda370392e1b311eb5a8f25b",
+        "actual_bounds_mm": [
+          21.119999999999997,
+          5.0,
+          8.0
+        ],
+        "source_face_colours": {
+          "0.883,0.711,0.492": 9,
+          "0.824,0.820,0.781": 8
+        },
+        "triangle_count": 54348,
+        "source_header": "ISO-10303-21;\nHEADER;\n/* R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step 3D STEP model for use in ECAD systems\n * Copyright (C) 2017, kicad StepUp\n * \n * This work is licensed under the [Creative Commons CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), \n * with the following exception:\n * To the extent that the creation of electronic designs that use 'Licensed Material' can be considered to be 'Adapted Material', \n * then the copyright holder waives article 3 of the license with respect to these designs and any generated files which use data provided \n * as part of the 'Licensed Material'.\n * You are free to use the library data in your own projects without the obligation to share your project files under this or any other license agreement.\n * However, if you wish to redistribute these libraries, or parts thereof (including in modified form) as a collection then the exception above does not apply. \n * Please refer to https://github.com/KiCad/kicad-packages3D/blob/master/LICENSE.md for further clarification of the exception.\n * Disclaimer of Warranties and Limitation of Liability.\n * These libraries are provided in the hope that they will be useful, but are provided without warranty of any kind, express or implied.\n * *USE 3D CAD DATA AT YOUR OWN RISK*\n * *DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.*\n * \n */\n\n"
+      },
+      "marking": {
+        "text": "white / white / white / white",
+        "font": {
+          "file": null,
+          "sha256": null,
+          "bitmap_size": [
+            1024,
+            512
+          ]
+        },
+        "evidence_sha256": "c60d5f8968564e69fabbb2586640a4f7ccfaa729edb7e075346b38f2ade40800"
+      },
+      "studio": {
+        "schema_version": 1,
+        "reference": "https://github.com/oomlout/oomp_hardware_screw_version_5/blob/main/screw_model_render.py",
+        "renderer": "Mitsuba 3 path tracer",
+        "note": "Electronics adaptation of the screw product studio: three softboxes, orthographic framing, neutral floor and filmic highlights. Does not claim identical Blender AgX colour management.",
+        "camera_direction": [
+          1.3,
+          -2.4,
+          2.4
+        ],
+        "framing_margin": 0.16,
+        "world_radiance": [
+          0.24,
+          0.26,
+          0.29
+        ],
+        "floor_reflectance": [
+          0.72,
+          0.73,
+          0.75
+        ],
+        "exposure": 1.25,
+        "denoise_strength": 3.0,
+        "seed": 7991,
+        "lights": [
+          {
+            "name": "key",
+            "position": [
+              -1.4,
+              -1.8,
+              2.5
+            ],
+            "half_size": [
+              1.0,
+              0.7
+            ],
+            "radiance": [
+              4.0,
+              3.85,
+              3.6
+            ]
+          },
+          {
+            "name": "fill",
+            "position": [
+              2.0,
+              -0.5,
+              1.5
+            ],
+            "half_size": [
+              0.6,
+              0.9
+            ],
+            "radiance": [
+              1.8,
+              2.0,
+              2.3
+            ]
+          },
+          {
+            "name": "rim",
+            "position": [
+              0.3,
+              1.8,
+              2.0
+            ],
+            "half_size": [
+              0.9,
+              0.3
+            ],
+            "radiance": [
+              4.5,
+              4.7,
+              5.0
+            ]
+          }
+        ]
+      },
+      "render": {
+        "variant": "llvm_ad_rgb",
+        "seconds": 313.23,
+        "samples": 256,
+        "pixels": 1400,
+        "materials": {
+          "termination": {
+            "type": "principled",
+            "base_color": {
+              "type": "rgb",
+              "value": [
+                0.61,
+                0.65,
+                0.7
+              ]
+            },
+            "metallic": 1.0,
+            "roughness": 0.24,
+            "anisotropic": 0.22
+          },
+          "ceramic": {
+            "type": "roughplastic",
+            "diffuse_reflectance": {
+              "type": "rgb",
+              "value": [
+                0.53,
+                0.5,
+                0.43
+              ]
+            },
+            "alpha": 0.3,
+            "int_ior": 1.52
+          },
+          "pin_indicator": {
+            "type": "roughplastic",
+            "diffuse_reflectance": {
+              "type": "rgb",
+              "value": [
+                0.48,
+                0.47,
+                0.44
+              ]
+            },
+            "alpha": 0.4,
+            "int_ior": 1.48
+          },
+          "coating": {
+            "type": "roughplastic",
+            "diffuse_reflectance": {
+              "type": "bitmap",
+              "filename": "axial_bands.png",
+              "raw": false,
+              "wrap_mode": "clamp"
+            },
+            "alpha": 0.25,
+            "int_ior": 1.52
+          }
+        },
+        "normalized_unit_mm": 21.119999999999997,
+        "tone_mapping": "ACES fitted curve then sRGB; not Blender AgX",
+        "nonfinite_pixels_repaired": 0,
+        "bump_disabled_roles": [],
+        "denoising": {
+          "method": "OpenCV non-local means",
+          "strength": 3.0
+        }
+      },
+      "renderer_source_sha256": "fe5c01eeacff85e6105271d566f60ecf4f2f1a14a7a7cbe1cf27bb0ac0420ec6",
+      "artifacts": {
+        "render.png": {
+          "sha256": "e67fb9bffee2c351a4fa224057a8b0235cab5454a5995998697ba72a554a1fd0",
+          "bytes": 132881
+        },
+        "preview.webp": {
+          "sha256": "ed72118da3b2d8e4b39a9adf63fd9b826cf72f78e83f67491fb325316842dffb",
+          "bytes": 4558
+        }
+      }
+    }
+  }
+}

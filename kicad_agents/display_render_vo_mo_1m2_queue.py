@@ -37,7 +37,7 @@ def reviewed_recipe(record, recipes, sha):
                   'source_record': f'parts_source/{PART}/working.yaml', 'rule': 'Standard 5% four-band representation for 1.2 MΩ: brown, red, green, gold.'},
         appearance_status='Standard four-band representation; actual band count, spacing and shades are unverified.')
     r['appearance_status'] = ('Generic KiCad 6.3 × 2.5 mm axial body approximates the supplier-listed 6.2 × 2.7 mm body, with bent leads. '
-        'Beige coating is illustrative; the VO specification describes gray coating.')
+        'Blue coating is illustrative; the VO specification describes gray coating.')
     return r
 
 

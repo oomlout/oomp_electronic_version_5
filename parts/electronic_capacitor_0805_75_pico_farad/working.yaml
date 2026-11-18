@@ -33,6 +33,19 @@ dimensions_mm:
   length: 2.0
   width: 1.25
 directory: parts/electronic_capacitor_0805_75_pico_farad
+display_render:
+  description: Illustrative KiCad 0805 model at 0.8 mm thickness, one of several thicknesses
+    in the Fenghua family specification. Exact part thickness, ceramic colour, termination
+    finish and marking are not verified. Unmarked body is illustrative; the selected
+    part’s no-marking policy has not been verified. Image reused from an identical
+    unmarked package and material setup.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ''
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0805_2012Metric.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C1838
@@ -245,6 +258,19 @@ oomlout_ai_roboclick_4:
         length: 2.0
         width: 1.25
       directory: parts\electronic_capacitor_0805_75_pico_farad
+      display_render:
+        description: Illustrative KiCad 0805 model at 0.8 mm thickness, one of several
+          thicknesses in the Fenghua family specification. Exact part thickness, ceramic
+          colour, termination finish and marking are not verified. Unmarked body is
+          illustrative; the selected part’s no-marking policy has not been verified.
+          Image reused from an identical unmarked package and material setup.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ''
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0805_2012Metric.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C1838
@@ -765,8 +791,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

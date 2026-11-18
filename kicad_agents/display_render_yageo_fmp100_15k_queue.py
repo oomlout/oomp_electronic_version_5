@@ -37,7 +37,7 @@ def reviewed_recipe(record, recipes, sha):
                   'source_record': f'parts_source/{PART}/working.yaml', 'rule': 'Documented 5% four-band code for 15 kΩ: brown, green, orange, gold.'},
         appearance_status='Documented four-band value code; stripe spacing and shades are illustrative.')
     r['appearance_status'] = ('The selected YAGEO FMP100 is rated 1 W, despite the legacy quarter-watt catalogue ID. '
-        'Generic KiCad axial body and bent leads at 7.62 mm pitch; beige coating is illustrative.')
+        'Generic KiCad axial body and bent leads at 7.62 mm pitch; blue coating is illustrative.')
     return r
 
 

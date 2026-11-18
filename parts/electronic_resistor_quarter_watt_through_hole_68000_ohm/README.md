@@ -7,7 +7,7 @@ Resistor 68000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defi
 
 ![Resistor 68000 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-Selected Huaxing part is rated 125 mW, despite the legacy quarter-watt catalogue ID. The 3.6 &#x00D7; 1.6 mm KiCad body approximates the selected 3.2 &#x00D7; 1.8 mm part; the existing catalogue footprint and dimensions depict a larger body. Bent leads at 7.62 mm pitch and beige coating are illustrative; the manufacturer describes blue coating. Standard five-band code; exact stripe spacing and shades are illustrative.
+Selected Huaxing part is rated 125 mW, despite the legacy quarter-watt catalogue ID. The 3.6 &#x00D7; 1.6 mm KiCad body approximates the selected 3.2 &#x00D7; 1.8 mm part; the existing catalogue footprint and dimensions depict a larger body. Bent leads at 7.62 mm pitch and blue coating are illustrative; the manufacturer describes blue coating. Blue body shade is illustrative. Standard five-band code; exact stripe spacing and shades are illustrative.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal.step)
 

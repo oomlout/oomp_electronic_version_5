@@ -10,8 +10,10 @@ ROOT = Path(__file__).resolve().parent
 
 def unmarked_visual_recipe(recipe):
     """Keep every image-affecting field; remove only part identity/evidence."""
-    if recipe.get('family') != 'chip_resistor' or recipe.get('marking', {}).get('policy') != 'none':
-        raise ValueError('Only unmarked chip resistors can share this image')
+    family = recipe.get('family')
+    policy = recipe.get('marking', {}).get('policy')
+    if (family, policy) not in {('chip_resistor', 'none'), ('chip_capacitor', 'unmarked_illustration')}:
+        raise ValueError('Only reviewed unmarked chip illustrations can share this image')
     result = copy.deepcopy(recipe)
     for key in ('represented_manufacturer', 'represented_mpn', 'appearance_status'):
         result.pop(key, None)

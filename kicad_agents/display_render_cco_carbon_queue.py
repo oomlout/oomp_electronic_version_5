@@ -54,7 +54,7 @@ def reviewed_recipe(part, record, recipes, evidence_hash, identities, evidence_p
                   'source_record': f'parts_source/{part}/working.yaml'},
         appearance_status='Documented four-band code; stripe spacing and shades are illustrative.')
     recipe['appearance_status'] = ('Generic KiCad axial geometry with bent leads at 7.62 mm pitch. '
-        'Traditional beige coating and materials are illustrative.')
+        'Blue coating and materials are illustrative.')
     return recipe
 
 

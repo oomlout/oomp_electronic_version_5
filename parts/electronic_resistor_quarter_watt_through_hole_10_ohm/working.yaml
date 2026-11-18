@@ -34,6 +34,22 @@ dimensions_mm:
   length: 6.5
   width: 2.5
 directory: parts/electronic_resistor_quarter_watt_through_hole_10_ohm
+display_render:
+  description: Selected Huaxing wirewound part is rated 2 W, despite the legacy quarter-watt
+    catalogue ID. The 15.5 × 5 mm KiCad body matches its listed dimensions; formed
+    leads are 20.32 mm apart. The existing catalogue footprint and dimensions describe
+    a much smaller part and need review. Blue coating is illustrative. Blue body shade
+    is illustrative. Blue body shade is illustrative. Standard four-band code; the
+    selected part’s exact band count, order and spacing are unverified. Marking composited
+    in linear light from shared path-traced material passes; indirect reflections
+    are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with exception in source STEP header
+  marking: brown / black / black / gold
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C714512
@@ -202,6 +218,22 @@ oomlout_ai_roboclick_4:
         length: 6.5
         width: 2.5
       directory: parts\electronic_resistor_quarter_watt_through_hole_10_ohm
+      display_render:
+        description: Selected Huaxing wirewound part is rated 2 W, despite the legacy
+          quarter-watt catalogue ID. The 15.5 × 5 mm KiCad body matches its listed
+          dimensions; formed leads are 20.32 mm apart. The existing catalogue footprint
+          and dimensions describe a much smaller part and need review. Blue coating
+          is illustrative. Blue body shade is illustrative. Blue body shade is illustrative.
+          Standard four-band code; the selected part’s exact band count, order and
+          spacing are unverified. Marking composited in linear light from shared path-traced
+          material passes; indirect reflections are approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with exception in source STEP header
+        marking: brown / black / black / gold
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C714512
@@ -665,8 +697,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

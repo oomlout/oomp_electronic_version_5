@@ -45,6 +45,26 @@ def test_illustrative_unmarked_appearance_requires_recorded_limitation():
         marking_text({**marking, 'evidence': {}})
 
 
+@pytest.mark.parametrize('voltage,letter', [('2.5', 'e'), ('4', 'G'), ('6.3', 'J'),
+                                           ('10', 'A'), ('16', 'C'), ('20', 'D'),
+                                           ('25', 'E'), ('35', 'V'), ('50', 'T')])
+def test_avx_taj_voltage_codes(voltage, letter):
+    marking = {'policy': 'avx_taj_illustrative', 'case': 'A', 'capacitance_code': '106',
+               'rated_voltage_v': voltage, 'evidence': {'page': 1},
+               'appearance_status': 'Logo and production code are illustrative or omitted.'}
+    assert marking_text(marking) == f'106 {letter}'
+
+
+def test_avx_taj_rejects_missing_evidence_or_unreviewed_values():
+    marking = {'policy': 'avx_taj_illustrative', 'case': 'A', 'capacitance_code': '106',
+               'rated_voltage_v': '10', 'evidence': {'page': 1},
+               'appearance_status': 'Illustrative.'}
+    for changes in ({'evidence': {}}, {'appearance_status': ''}, {'case': 'P'},
+                    {'rated_voltage_v': '12'}, {'capacitance_code': '1.0'}):
+        with pytest.raises(ValueError):
+            marking_text({**marking, **changes})
+
+
 def test_missing_model_does_not_fabricate_geometry(tmp_path):
     with pytest.raises(FileNotFoundError):
         locate_model('Resistor_SMD.3dshapes/missing.step', tmp_path)

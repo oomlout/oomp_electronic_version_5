@@ -35,11 +35,11 @@ dimensions_mm:
   width: 2.5
 directory: parts/electronic_resistor_quarter_watt_through_hole_4700_ohm
 display_render:
-  description: Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Beige
+  description: Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Blue
     coating is the requested illustrative finish; the CCO specification states sky
-    blue. Documented five-band code; stripe spacing and shades are illustrative. Marking
-    composited in linear light from shared path-traced material passes; indirect reflections
-    are approximate.
+    blue. Blue body shade is illustrative. Documented five-band code; stripe spacing
+    and shades are illustrative. Marking composited in linear light from shared path-traced
+    material passes; indirect reflections are approximate.
   image: data/display_render/render.png
   license: CC-BY-SA-4.0 with exception in source STEP header
   marking: yellow / violet / black / brown / brown
@@ -217,10 +217,11 @@ oomlout_ai_roboclick_4:
       directory: parts\electronic_resistor_quarter_watt_through_hole_4700_ohm
       display_render:
         description: Generic KiCad axial geometry with bent leads at 7.62 mm pitch.
-          Beige coating is the requested illustrative finish; the CCO specification
-          states sky blue. Documented five-band code; stripe spacing and shades are
-          illustrative. Marking composited in linear light from shared path-traced
-          material passes; indirect reflections are approximate.
+          Blue coating is the requested illustrative finish; the CCO specification
+          states sky blue. Blue body shade is illustrative. Documented five-band code;
+          stripe spacing and shades are illustrative. Marking composited in linear
+          light from shared path-traced material passes; indirect reflections are
+          approximate.
         image: data/display_render/render.png
         license: CC-BY-SA-4.0 with exception in source STEP header
         marking: yellow / violet / black / brown / brown
@@ -693,8 +694,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

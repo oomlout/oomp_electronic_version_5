@@ -43,7 +43,7 @@ def reviewed_recipe(part, record, recipes, sha):
                   'source_record': f'parts_source/{part}/working.yaml', 'rule': f'1% five-band code for {value} ohm: ' + ', '.join(bands) + '.'},
         appearance_status='Documented 1% five-band code; band spacing and shades are illustrative.')
     r['appearance_status'] = ('The selected CCO MF1/2WS is rated 500 mW, despite the legacy quarter-watt catalogue ID. '
-        'Generic KiCad axial body and bent leads at 7.62 mm pitch; beige coating is illustrative and the manufacturer specifies sky blue.')
+        'Generic KiCad axial body and bent leads at 7.62 mm pitch; blue coating is illustrative and the manufacturer specifies sky blue.')
     return r
 
 

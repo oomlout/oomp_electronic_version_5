@@ -18,7 +18,7 @@ def reviewed_recipe(record,recipes,sha):
  r['marking']={'policy':'verified_literal','text':'black','bands':['black'],'body_span_mm':[.66,6.96],
   'evidence':{'file':EVIDENCE.as_posix(),'sha256':sha,'document':'Yageo selected identity and Vishay cylindrical jumper convention (reviewed online)','source_record':f'parts_source/{PART}/working.yaml','rule':'One centered black band illustrates a zero-ohm jumper; selected Yageo marking is unverified.'},
   'appearance_status':'Illustrative centered black jumper band; actual selected Yageo marking is unverified.'}
- r['appearance_status']='Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Beige coating and black jumper band are illustrative; the selected Yageo appearance is unverified.'
+ r['appearance_status']='Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Blue coating and black jumper band are illustrative; the selected Yageo appearance is unverified.'
  return r
 
 def main():

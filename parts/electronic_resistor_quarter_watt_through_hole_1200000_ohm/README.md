@@ -7,7 +7,7 @@ Resistor 1.2e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 ![Resistor 1.2e+06 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-Generic KiCad 6.3 &#x00D7; 2.5 mm axial body approximates the supplier-listed 6.2 &#x00D7; 2.7 mm body, with bent leads. Beige coating is illustrative; the VO specification describes gray coating. Standard four-band representation; actual band count, spacing and shades are unverified.
+Generic KiCad 6.3 &#x00D7; 2.5 mm axial body approximates the supplier-listed 6.2 &#x00D7; 2.7 mm body, with bent leads. Blue coating is illustrative; the VO specification describes gray coating. Blue body shade is illustrative. Standard four-band representation; actual band count, spacing and shades are unverified. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
 

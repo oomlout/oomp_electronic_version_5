@@ -49,9 +49,9 @@ def reviewed_recipe(part, record, recipes, evidence_hash):
             'document': 'Yageo CFR/MFR specification and exact reference listings (reviewed online)',
             'source_record': f'parts_source/{part}/working.yaml',
             'rule': f'Yageo {tolerance} code for {value} ohm: ' + ', '.join(bands) + '.'},
-        appearance_status='Documented value bands; beige coating, band spacing and shades are illustrative.')
+        appearance_status='Documented value bands; blue coating, band spacing and shades are illustrative.')
     recipe['appearance_status'] = (f'Illustrates Yageo {reference}, a {tolerance} example; this generic entry has no selected manufacturer or tolerance. '
-                                   'Beige KiCad body and bent-lead presentation are illustrative.')
+                                   'Blue KiCad body and bent-lead presentation are illustrative.')
     return recipe
 
 

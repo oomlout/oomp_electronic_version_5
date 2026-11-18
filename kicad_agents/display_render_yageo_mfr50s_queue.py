@@ -46,7 +46,7 @@ def reviewed_recipe(part, record, recipes, sha):
                   'source_record': f'parts_source/{part}/working.yaml', 'rule': f'1% five-band code for {value} ohm: ' + ', '.join(bands) + '.'},
         appearance_status='Documented 1% five-band code; band spacing and shades are illustrative.')
     r['appearance_status'] = ('The selected YAGEO MFR50S is rated 500 mW (half watt), despite the legacy quarter-watt catalogue ID. '
-        'Generic KiCad 6.3 × 2.5 mm body approximates the specified 6.3 × 2.4 mm body, with bent leads at 7.62 mm pitch. Beige finish is illustrative.')
+        'Generic KiCad 6.3 × 2.5 mm body approximates the specified 6.3 × 2.4 mm body, with bent leads at 7.62 mm pitch. Blue finish is illustrative.')
     return r
 
 

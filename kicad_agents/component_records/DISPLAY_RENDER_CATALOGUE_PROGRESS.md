@@ -1,5 +1,764 @@
 # Display-render catalogue work
 
+## Fenghua 0402 and 0603 Y5V secondary evidence (2026-11-18)
+
+Published three Y5V 50 V pages: 0402 22 nF, 0603 12 nF and 0603 150 nF.
+Identity, geometry, dielectric, provenance and image checks passed. Secondary
+listings support dimensions and ratings; original manufacturer drawings were
+not independently accessed, disclosed on pages. Prior files are backed up
+under `tmp/display_render/fenghua_y5v_secondary_previous/`. No PDF was
+downloaded. There are now 231 published capacitor pages; remaining capacitors
+and later families need review.
+
+## Fenghua 0603 25 V X7R (2026-11-18)
+
+Published 220 nF and 330 nF pages. Identity, geometry, 25 V rating,
+provenance and image checks passed. The 220 nF dimensions and ratings come
+from secondary distributor listings, with the original manufacturer drawing
+not independently accessed; Fenghua's catalogue supports the 330 nF part.
+Evidence levels are disclosed on the pages. The older 0603 source manifest
+omits a non-finite pixel count. Prior files are backed up under
+`tmp/display_render/fenghua_0603_25v_previous/`. No PDF was downloaded.
+There are now 228 published capacitor pages; remaining capacitors and later
+families need review.
+
+## Fenghua 0603 X7R secondary evidence batch 07 (2026-11-18)
+
+Published four 0603 X7R pages: 12, 150, 33 and 56 nF. Identity, geometry,
+voltage, provenance and image checks passed. Secondary distributor listings
+support dimensions and ratings; original manufacturer drawings were not
+independently accessed, disclosed on pages. The older 0603 source manifest
+omits a non-finite pixel count. Prior files are backed up under
+`tmp/display_render/fenghua_0603_secondary_batch07_previous/`. No PDF was
+downloaded. There are now 226 published capacitor pages; remaining capacitors
+and later families need review.
+
+## Fenghua 0402 5 pF and 9 pF secondary evidence (2026-11-18)
+
+Published two 0402 C0G pages: 5 and 9 pF. Identity, geometry, voltage,
+provenance and image checks passed. Secondary distributor listings support
+dimensions and ratings; original manufacturer drawings were not independently
+accessed. The 5 pF source omits electrical fields and the 9 pF source omits
+tolerance, disclosed on pages. Prior files are backed up under
+`tmp/display_render/fenghua_0402_cog_secondary_batch04_previous/`. No PDF was
+downloaded. There are now 222 published capacitor pages; remaining capacitors
+and later families need review.
+
+## Fenghua 0402 C0G secondary evidence batch 03 (2026-11-18)
+
+Published five 0402 C0G pages: 0.5, 20, 25, 30 and 51 pF. Identity,
+geometry, voltage, provenance and image checks passed. Secondary distributor
+listings support dimensions and ratings; original manufacturer drawings were
+not independently accessed. The 0.5 pF source omits tolerance and the 30 pF
+source omits electrical fields, disclosed on pages. The 20 pF source refers to
+a missing local datasheet. Prior files are backed up under
+`tmp/display_render/fenghua_0402_cog_secondary_batch03_previous/`. No PDF was
+downloaded. There are now 220 published capacitor pages; remaining capacitors
+and later families need review.
+
+## Fenghua 0402 C0G secondary evidence batch 02 (2026-11-18)
+
+Published three 0402 C0G pages: 1.2, 2.7 and 39 pF. Identity, geometry,
+voltage, provenance and image checks passed. Secondary distributor listings
+support dimensions and ratings; original manufacturer drawings were not
+independently accessed. Two source records omit tolerance, disclosed on their
+pages. Prior files are backed up under
+`tmp/display_render/fenghua_0402_cog_secondary_batch02_previous/`. No PDF was
+downloaded. There are now 215 published capacitor pages; remaining capacitors
+and later families need review.
+
+## Fenghua 0402 small C0G secondary evidence (2026-11-18)
+
+Published three 0402 C0G pages: 3.3, 5.6 and 8.2 pF. Identity, geometry,
+voltage, provenance and image checks passed. Secondary distributor listings
+support dimensions and ±0.25 pF ratings; source records omit tolerance and
+original manufacturer drawings were not independently accessed, disclosed
+on pages. Prior files are backed up under
+`tmp/display_render/fenghua_0402_cog_secondary_previous/`. No PDF was
+downloaded. There are now 212 published capacitor pages; remaining capacitors
+and later families need review.
+
+## Fenghua 0603 8.2 pF and 1206 height discrepancy (2026-11-18)
+
+Published the 0603 8.2 pF page. Identity, geometry, voltage, provenance and
+image checks passed. A secondary supplier supports its dimensions and ratings;
+the manufacturer drawing was not independently accessed, and the source
+record omits tolerance, both disclosed. Prior files are backed up under
+`tmp/display_render/fenghua_0603_8p2_secondary_previous/`. No PDF was downloaded.
+There are now 209 published capacitor pages.
+
+Follow-up: a secondary listing for 1206CG180J500NT reports 1.60 mm height
+(https://m.elecfans.com/article/xc-2500236407.html) while the manufacturer
+catalogue reports 0.80 mm (https://www.fhcomp.com/zh-cn/product_page/?code=010121&page=157).
+The published 18 pF page uses manufacturer-listed 0.80 mm. Similar secondary
+1.60 mm claims for unrendered 1206CG101J500NT and 1206CG120J500NT require
+individual manufacturer verification before selecting a height. Remaining
+capacitors and later families need review.
+
+## Fenghua 0603 1.2 pF secondary evidence (2026-11-18)
+
+Published the 0603 1.2 pF page. Identity, geometry, voltage, provenance and
+image checks passed. Secondary supplier listings support dimensions and
+ratings; original manufacturer drawings were not independently accessed, and
+the source record omits tolerance, both disclosed. Prior files are backed up
+under `tmp/display_render/fenghua_0603_1p2_secondary_previous/`. No PDF was
+downloaded. There are now 208 published capacitor pages; remaining capacitors
+and later families need review.
+
+## Fenghua 0603 1.5 pF and 4.7 pF (2026-11-18)
+
+Published two manufacturer-evidenced 0603 C0G pages. Their source records omit
+tolerance; the pages disclose the manufacturer's ±0.25 pF rating. Identity,
+geometry, voltage, provenance and image checks passed. The older 0603 source
+manifest omits a non-finite pixel count. Prior files are backed up under
+`tmp/display_render/fenghua_0603_1p5_4p7_previous/`. No PDF was downloaded.
+There are now 207 published capacitor pages; remaining capacitors and later
+families need review.
+
+## Fenghua 0603 3.6 pF and 0805 1.5 nF (2026-11-18)
+
+Published both pages using inspected matching nominal-size models. Identity,
+geometry, ratings, provenance and image checks passed. Secondary supplier
+listings support dimensions and ratings; original manufacturer drawings were
+not independently accessed, disclosed on pages. The 0603 record omits
+tolerance, also disclosed. Prior files are backed up under
+`tmp/display_render/fenghua_0603_0805_secondary_next_previous/`. No PDF was
+downloaded. There are now 205 published capacitor pages; remaining capacitors
+and later families need review.
+
+## Fenghua 0805 12 nF secondary evidence (2026-11-18)
+
+Published 0805 12 nF using the inspected 1.25 mm thick model. Two secondary
+suppliers report matching dimensions; the original manufacturer drawing was
+not independently accessed, disclosed on the page. Identity, geometry,
+ratings, provenance and image checks passed. Prior files are backed up under
+`tmp/display_render/fenghua_0805_12nf_secondary_previous/`. No PDF was
+downloaded. There are now 203 published capacitor pages; remaining
+capacitors and later families need review.
+
+## Fenghua 0603 secondary evidence batch 06 (2026-11-18)
+
+Published two 0603 X7R pages: 39 nF and 5.6 nF. Identity, geometry, ratings,
+provenance and image checks passed. Secondary listings support dimensions and
+ratings; original manufacturer drawings were not independently accessed,
+disclosed on pages. The older 0603 source manifest omits a non-finite pixel
+count. Prior files are backed up under
+`tmp/display_render/fenghua_0603_secondary_batch06_previous/`. No PDF was
+downloaded. There are now 202 published capacitor pages; remaining
+capacitors and later families need review.
+
+## Fenghua 0603 secondary evidence batch 05 (2026-11-18)
+
+Published five 0603 X7R pages: 300, 330, 390 and 510 pF, and 2 nF.
+Identity, geometry, ratings, provenance and image checks passed. Secondary
+listings support dimensions and ratings; original manufacturer drawings were
+not independently accessed, disclosed on pages. The older 0603 source manifest
+omits a non-finite pixel count. Prior files are backed up under
+`tmp/display_render/fenghua_0603_secondary_batch05_previous/`. No PDF was
+downloaded. There are now 200 published capacitor pages; remaining
+capacitors and later families need review.
+
+## Fenghua 0603 secondary evidence batch 04 (2026-11-18)
+
+Published six 0603 X7R pages: 150 pF, 15 nF, 180 pF, 1.8 nF, 20 nF and
+270 pF. Identity, geometry, ratings, provenance and image checks passed.
+Secondary listings support dimensions and ratings; original manufacturer
+drawings were not independently accessed, disclosed on pages. The older 0603
+source manifest omits a non-finite pixel count. Prior files are backed up
+under `tmp/display_render/fenghua_0603_secondary_batch04_previous/`.
+No PDF was downloaded. There are now 195 published capacitor pages; remaining
+capacitors and later families need review.
+
+## Fenghua 0603 secondary evidence batch 03 (2026-11-18)
+
+Published five 0603 C0G pages: 1.8, 2, 2.2, 5.6 and 6.8 pF. Identity,
+geometry, voltage and missing-tolerance guards passed, as did provenance,
+image and README checks. Secondary listings report ±0.25 pF tolerance,
+omitted from the source records; both that gap and the secondary evidence
+are disclosed. Original manufacturer drawings were not independently accessed.
+The older 0603 source manifest omits a non-finite pixel count. Prior files are
+backed up under `tmp/display_render/fenghua_0603_secondary_batch03_previous/`.
+No PDF was downloaded. There are now 189 published capacitor pages; remaining
+capacitors and later families need review.
+
+## Fenghua 0603 secondary evidence batch 02 (2026-11-18)
+
+Published six 0603 C0G pages, 24, 43, 50, 51, 82 and 91 pF. Identity,
+geometry, ratings, provenance and image checks passed. Secondary listings
+support dimensions and ratings; original manufacturer drawings were not
+independently accessed, disclosed on pages. The older 0603 source manifest
+omits a non-finite pixel count. Prior files are backed up under
+`tmp/display_render/fenghua_0603_secondary_batch02_previous/`. No PDF was
+downloaded. There are now 184 published capacitor pages; remaining
+capacitors and later families need review.
+
+## Fenghua 0402 and 0603 secondary evidence (2026-11-18)
+
+Published three pages: 0402 330 and 820 pF, and 0603 11 pF. Identity,
+geometry, provenance and image checks passed. Secondary listings support the
+model dimensions and ratings; original drawings were not independently
+accessed, disclosed on each page. The two 0402 records lack electrical fields,
+also disclosed. Prior files are under
+`tmp/display_render/fenghua_secondary_next_previous/`. No PDF was downloaded.
+There are now 178 published capacitor pages; remaining capacitors and later
+families need review.
+
+## Fenghua 0402 150 pF and 220 pF (2026-11-18)
+
+Published two 0402 pages using the inspected matching generic model. Identity,
+geometry, provenance and render checks passed. Secondary product listings
+report matching dimensions and ratings; the original manufacturer drawings
+were not independently accessed, disclosed on each page. Prior files are under
+`tmp/display_render/fenghua_0402_150_220_previous/`. No PDF was downloaded.
+There are now 175 published capacitor pages; remaining capacitors and later
+families need review.
+
+## Fenghua 0402 4.7 nF (2026-11-18)
+
+Published the 4.7 nF 0402 page using the inspected matching generic model.
+Identity, geometry, provenance and render checks passed. The manufacturer
+specification was cited by a secondary review, but the original drawing could
+not be independently accessed; this is explicit in the page and evidence.
+Prior files are under `tmp/display_render/fenghua_0402_4n7_previous/`.
+No PDF was downloaded. There are now 173 published capacitor pages; remaining
+capacitors and later families need review.
+
+## Samsung 0402 and 0603 next batch (2026-11-18)
+
+Published five individually evidenced Samsung pages: one 0402 and four 0603.
+Samsung reference sheets for two were read online from distributor hosts;
+no PDFs were downloaded. Three records omit electrical fields, disclosed on
+pages. Generic geometry, blank marking and finish are illustrative. Identity
+and geometry guards passed for five; provenance, dimensions, image file,
+render settings and README checks passed. The older 0603 source render does
+not report non-finite pixel counts. Prior files are backed up under
+`tmp/display_render/samsung_0402_0603_next_previous/`. There are now 172
+published capacitor pages; remaining capacitors and later families need review.
+
+## Samsung 0402 batch 02 (2026-11-18)
+
+Published six individually manufacturer-evidenced Samsung 0402 pages.
+Four source records omit electrical fields, disclosed on their pages; the
+4.7 µF 20% record had an invalid temperature range, corrected to Samsung's
+−55 to +85 C. Generic geometry, blank marking and finish are illustrative.
+Identity and geometry guards passed for six, and all pages passed provenance,
+quality, dimension and README checks. Prior target files are backed up under
+`tmp/display_render/samsung_0402_batch02_previous/`. No PDF was downloaded.
+There are now 167 published capacitor pages; remaining capacitors and later
+families need review.
+
+## Fenghua 0402 and 1206 680 pF (2026-11-18)
+
+Published two manufacturer-evidenced 680 pF X7R 50 V pages, using the
+matching inspected 0402 and height-scaled 1206 models. Generic shape, blank
+marking and material remain illustrative. Identity and dimension guards
+passed for both; provenance, image quality and README disclosures also
+passed. Prior target directories are backed up under
+`tmp/display_render/fenghua_680pf_previous/`. No PDF was downloaded.
+There are now 161 published capacitor pages; remaining capacitors and later
+families need review.
+
+## Fenghua 0402 batch 05 (2026-11-18)
+
+Published four manufacturer-evidenced 0402 pages: 1.8, 2, 3.9 and 6.8 pF.
+Their source records omit tolerance; the pages disclose that and the checked
+±0.25 pF value. Generic shape, blank marking and material remain illustrative.
+Four focused tests passed and all four pages passed provenance, dimension,
+quality and README checks. Previous target directories are backed up under
+`tmp/display_render/fenghua_0402_batch05_previous/`. No PDF was downloaded.
+There are now 159 published capacitor pages; remaining capacitors and later
+families need review.
+
+## Fenghua 0402 batch 04 (2026-11-18)
+
+Published seven manufacturer-evidenced 0402 pages: 27, 47, 56, 1, 1.5,
+2.2 and 4.7 pF. The 27 pF record omits electrical fields and the latter four
+omit tolerance; their pages disclose the gaps and the ±0.25 pF tolerance.
+Generic shape, blank marking and material remain illustrative. Seven focused
+tests passed and all seven pages passed provenance, dimension, quality and
+README checks. Prior target directories are backed up under
+`tmp/display_render/fenghua_0402_batch04_previous/`. The 47 pF source refers
+to a missing local datasheet PDF; no PDF was downloaded. There are now 155
+published capacitor pages; remaining capacitors and later families need review.
+
+## Fenghua 0402 batch 03 (2026-11-18)
+
+Published four manufacturer-evidenced 0402 pages: 15 pF, 1 nF, 22 pF and
+33 pF. Generic shape, blank marking and material remain illustrative. Four
+focused tests passed and all four pages passed provenance, dimension, quality
+and README checks. Prior target directories are backed up under
+`tmp/display_render/fenghua_0402_batch03_previous/`. The 33 pF source refers
+to a missing local datasheet PDF; no PDF was downloaded. There are now 148
+published capacitor pages; remaining capacitors and later families still need
+review.
+
+## Fenghua 0402 batch 02 (2026-11-18)
+
+Published four manufacturer-evidenced 0402 pages: 12 pF, 18 pF, 22 nF and
+470 pF. The 470 pF source lacks electrical fields, disclosed on the page.
+Generic shape, blank marking and material remain illustrative. Four focused
+tests passed and all four pages passed provenance, dimension, quality and
+README checks. Prior target directories are backed up under
+`tmp/display_render/fenghua_0402_batch02_previous/`. The existing source
+records for 12 pF and 22 nF refer to missing local datasheet PDFs; no PDF was
+downloaded. There are now 144 published capacitor pages; remaining capacitors
+and later families still need review.
+
+## Fenghua and Samsung 0402 capacitors (2026-11-18)
+
+Published nine individually evidenced 0402 capacitor pages: a Fenghua 100 pF
+pilot, four additional Fenghua selections and four Samsung selections. The
+KiCad model is 1.0 × 0.5 × 0.5 mm; the full-quality pilot render was visually
+inspected and reused only for matching geometry. Pages disclose illustrative
+appearance and missing source electrical fields; the Samsung 100 nF page also
+explains its nominal and maximum thickness. The pilot and batch tests passed,
+and all nine pages passed provenance, geometry, quality and README checks.
+Prior files are backed up under `tmp/display_render/fenghua_0402_100pf_previous/`
+and `tmp/display_render/cap_0402_batch01_previous/`. No PDF was captured.
+There are now 140 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Fenghua 0603 batch 05 and 1206 2.2 nF (2026-11-18)
+
+Published four individually evidenced Fenghua X7R parts: 1.5 nF, 2.2 nF and
+4.7 nF 0603, and 2.2 nF 1206. Manufacturer pages list each at 50 V, ±10% and
+the respective inspected model's nominal dimensions. The 4.7 nF source omits
+electrical fields, disclosed on its page. Generic geometry, finish and blank
+marking remain illustrative. Eight focused tests passed across the new work
+and previous 0603 batch; all four pages passed provenance and README checks.
+Earlier source and page files are backed up under
+`tmp/display_render/fenghua_0603_1206_2n2_previous/`. No PDF was captured.
+There are now 131 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Samsung 1206 100 nF 0.85 mm completed (2026-11-18)
+
+Published the selected Samsung CL31B104KBCNNNC 100 nF 50 V page using a
+direct 1,400 px / 256-sample scalar render. The 0.85 mm height matches Samsung
+and was achieved by scaling the KiCad 1206 model; exact shape details, marking
+and finish remain illustrative. The source omits electrical fields, disclosed
+on the page with ratings checked against the manufacturer. The final image
+was visually inspected and provenance, README, geometry and image quality
+passed, with zero repaired pixels. Earlier source and page files are backed up
+under `tmp/display_render/samsung_1206_100nf_previous/`. No PDF was captured.
+There are now 127 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Fenghua 0603 batch 04 (2026-11-18)
+
+Published four separately evidenced Fenghua 0603 X7R selections, 2.7 nF,
+8.2 nF, 470 pF and 680 pF. Manufacturer catalogue rows confirm exact parts,
+ratings and nominal 1.6 × 0.8 × 0.8 mm. The 8.2 nF source omits electrical
+fields, disclosed on its page; generic shape, blank marking and finish are
+illustrative. Eight focused tests passed across the latest two batches; all
+eight pages passed provenance and README checks. Prior files are backed up
+under `tmp/display_render/fenghua_0603_batch04_previous/`. No PDF was captured.
+There are now 126 published capacitor pages. The Samsung 1206 0.85 mm scalar
+render remains active in exec session 66413; inspect and publish on completion.
+Remaining capacitors and later families still need review.
+
+## Fenghua 0603 batch 03 and Samsung 1206 0.85 mm (2026-11-18)
+
+Published four separately evidenced Fenghua 0603 selections, 10 nF, 56 pF,
+68 pF and 6.8 nF, using the inspected generic 0603 image. Manufacturer
+catalogue rows confirm exact parts, ratings and nominal 1.6 × 0.8 × 0.8 mm.
+The 10 nF source lacks electrical fields, disclosed on its page; blank marking
+and finish are illustrative. Five focused tests passed across this batch and
+the next pilot; all four pages passed provenance and README checks. Prior files
+are backed up under `tmp/display_render/fenghua_0603_batch03_previous/`.
+There are now 122 published capacitor pages.
+
+The Samsung 1206 100 nF 0.85 mm pilot has an inspected preview and passing
+identity/geometry tests. Its LLVM full render failed and a full-quality scalar
+retry is active in exec session 66413; poll that exact session before any
+retry. On completion inspect, publish and validate the page. Prior files are
+backed up under `tmp/display_render/samsung_1206_100nf_previous/`. No PDF was
+captured. Remaining capacitors and later families still need review.
+
+## Four more 1206 pages (2026-11-18)
+
+Published the directly rendered Fenghua 470 nF 1.25 mm pilot and two
+manufacturer-evidenced 1.25 mm Fenghua/Samsung selections reusing its image.
+Also published a Fenghua 4.7 µF 1.6 mm selection using the unscaled Samsung
+generic image; its source omits electrical fields, disclosed in its page.
+The direct 1.25 mm image was visually inspected; focused guards passed for all
+four parts, and their pages passed provenance, README, geometry and full-quality
+checks. Shape details, blank markings and finish are illustrative. Backups are
+under `tmp/display_render/fenghua_1206_470nf_previous/`,
+`tmp/display_render/cap_1206_125_batch01_previous/` and
+`tmp/display_render/fenghua_1206_4u7_previous/`. No PDF was captured. There are
+now 118 published capacitor pages; remaining capacitors and later families
+still need review.
+
+## Samsung 1206 1.6 mm pilot and batch 01 completed (2026-11-18)
+
+Published the directly rendered 10 µF 16 V Samsung selection and nine
+individually evidenced selections reusing its inspected image. Samsung lists
+each exact part as nominal 3.2 × 1.6 × 1.6 mm, matching unscaled KiCad
+geometry. Seven source records omit electrical fields; their pages identify
+the manufacturer as the source of checked ratings. Ten focused tests passed;
+all ten pages passed provenance, README, geometry and image-quality checks.
+Source and page backups are under `tmp/display_render/samsung_1206_10uf_previous/`
+and `tmp/display_render/samsung_1206_batch01_previous/`. No PDF was captured.
+There are now 114 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Samsung 1206 1.6 mm setup (historical checkpoint, 2026-11-18)
+
+Prepared direct CL31A106KOHNNNE 10 µF 16 V recipe using the unscaled KiCad
+1206 model, whose nominal 3.2 × 1.6 × 1.6 mm bounds match Samsung. The 700 px
+preview was inspected and focused identity/geometry checks passed. Full
+1,400 px / 256-sample render is running in exec session 63604; poll this exact
+session before any retry. Earlier source and page files were backed up under
+`tmp/display_render/samsung_1206_10uf_previous/`.
+
+Nine other Samsung parts with individually verified dimensions and ratings
+are staged; seven source records omit electrical fields and their recipes
+disclose manufacturer-sourced ratings. Ten pilot/batch tests passed; prior
+files are backed up under `tmp/display_render/samsung_1206_batch01_previous/`.
+After the direct render completes, inspect and publish it, then use guarded
+reuse to publish and validate all nine pages. Geometry details, blank marking
+and finish remain illustrative. No PDF was captured. Remaining capacitors and
+later families still need review.
+
+## Fenghua 1206 batch 03 (2026-11-18)
+
+Published four individually evidenced Fenghua 1206 selections, three X7R and
+one C0G. Each manufacturer catalogue entry specifies 50 V and nominal
+3.2 × 1.6 × 0.8 mm; the source records omit height. The 1 pF record also omits
+tolerance, and its page identifies the manufacturer-specified ±0.25 pF.
+Illustrative scaled shape, blank marking and finish are disclosed. Eleven
+focused tests passed across the latest two batches; the four pages and their
+source passed provenance, README, scale and image-quality checks. Earlier
+sources and pages are backed up under `tmp/display_render/fenghua_1206_batch03_previous/`.
+No PDF was captured. There are now 104 published capacitor pages; remaining
+capacitors and later families still need review.
+
+## Fenghua 1206 batch 02 (2026-11-18)
+
+Published seven individually evidenced 1206 selected parts, six C0G and one
+X7R. Each Fenghua catalogue row specifies 50 V and nominal
+3.2 × 1.6 × 0.8 mm; source records omit height. The inspected KiCad image is
+reused with scaled shape details, blank marking and finish disclosed. Thirteen
+focused guards passed across the first two batches; all 14 1206 pages passed
+provenance, README, scale and image-quality checks. Earlier sources and pages
+are backed up under `tmp/display_render/fenghua_1206_batch02_previous/`. No PDF
+was captured. There are now 100 published capacitor pages; remaining capacitors
+and later families still need review.
+
+## Fenghua 1206 pilot and batch 01 completed (2026-11-18)
+
+Published the direct 10 nF 1206B103K500NT full-quality render and six
+individually evidenced selected parts that reuse it. Fenghua lists each as
+nominal 3.2 × 1.6 × 0.8 mm; the source KiCad 1206 model is scaled vertically
+from 1.6 to 0.8 mm. Detailed shape, blank marking and finish are illustrative.
+The final render was visually inspected; seven pilot/batch guards and seven
+geometry/pilot checks passed. All seven pages passed provenance, README, scale
+and image-quality checks, including zero repaired pixels. Previous pages and
+sources are backed up under `tmp/display_render/fenghua_1206_10nf_previous/`
+and `tmp/display_render/fenghua_1206_batch01_previous/`. No PDF was captured.
+There are now 93 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Fenghua 1206 setup (historical checkpoint, 2026-11-18)
+
+Prepared direct 10 nF 1206B103K500NT display recipe from KiCad's inspected
+3.2 × 1.6 × 1.6 mm model scaled to Fenghua's nominal 0.8 mm height. The
+700 px preview was inspected; seven geometry/pilot checks and seven pilot/batch
+source guards passed. Full 1,400 px / 256-sample render is running in exec
+session 32624; poll it before any retry. The prior source and page files are in
+`tmp/display_render/fenghua_1206_10nf_previous/`. Six additional exact Fenghua
+parts with matching manufacturer-listed dimensions and ratings are staged and
+their previous files backed up under `tmp/display_render/fenghua_1206_batch01_previous/`.
+After the source render completes, inspect it, publish the source and use the
+guarded reuse adapter to publish and validate the six individually. Paginated
+manufacturer catalogue rows may move. Geometry detail, blank marking and finish
+are illustrative. No PDF was captured. Other capacitors and later families
+still need review.
+
+## Fenghua 0805 batch 06 (2026-11-18)
+
+Published separately evidenced 1 pF and 4.7 pF C0G 0805 selections. Fenghua
+lists both as 50 V, ±0.25 pF and nominal 2 × 1.25 × 0.8 mm; source records omit
+height and tolerance. Pages disclose the missing tolerance and manufacturer
+value; scaled shape details, blank marking and finish are illustrative. Five
+focused tests passed across this and the previous batch; both pages and their
+source passed provenance, README, scale and image-quality checks. Earlier
+sources and pages are backed up under `tmp/display_render/fenghua_0805_batch06_previous/`.
+No PDF was captured. There are now 86 published capacitor pages; remaining
+capacitors and later families still need review.
+
+## Fenghua 0805 batch 05 (2026-11-18)
+
+Published three separately evidenced 0805 selections: 56 pF and 68 pF C0G,
+and 2.7 nF X7R. Fenghua lists each exact part as 50 V and nominal
+2 × 1.25 × 0.8 mm; source records omit height. Each reuses the inspected
+Fenghua illustration, with scaled shape details, blank marking and finish
+disclosed. Six focused tests passed across this and the previous batch; all
+three pages and their source passed provenance, README, scale and image-quality
+checks. Earlier sources and pages are backed up under
+`tmp/display_render/fenghua_0805_batch05_previous/`. No PDF was captured.
+There are now 84 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Fenghua 0805 batch 04 (2026-11-18)
+
+Published three separately evidenced 0805 selections: 220 pF and 330 pF C0G,
+and 330 nF X7R. Fenghua lists each exact part as 50 V and nominal
+2 × 1.25 × 0.8 mm; their source records omit height. Each reuses the inspected
+Fenghua illustration, with scaled shape details, blank marking and finish
+disclosed. Eight focused tests passed across this and the previous batch; all
+three pages and their source passed provenance, README, scale and image-quality
+checks. Earlier sources and pages are backed up under
+`tmp/display_render/fenghua_0805_batch04_previous/`. No PDF was captured.
+There are now 81 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Fenghua 0805 batch 03 (2026-11-18)
+
+Published five separately evidenced X7R and C0G 0805 selections: 470 pF in
+both dielectrics, 560 pF C0G, and 680 pF in both dielectrics. Manufacturer
+entries confirm their ratings and nominal 2 × 1.25 × 0.8 mm body. They reuse
+the inspected Fenghua image with illustrative geometry details, blank marking
+and finish disclosed. Twelve focused tests passed across three batches; the
+five pages and direct source passed provenance, README, scale and image-quality
+checks. Prior source and page files are backed up under
+`tmp/display_render/fenghua_0805_batch03_previous/`. No PDF was captured.
+There are now 78 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Fenghua 0805 batch 02 (2026-11-18)
+
+Published four manufacturer-evidenced X7R 0805 selections (3.9, 4.7, 6.8 and
+8.2 nF), all nominal 2 × 1.25 × 0.8 mm. Each reuses the inspected Fenghua 0805
+image and discloses its illustrative shape details, blank marking and finish.
+Eight focused tests passed across the pilot and two batches; all eight pages
+passed provenance, README and image-quality checks. Previous source and page
+files are backed up under `tmp/display_render/fenghua_0805_batch02_previous/`.
+No PDF was captured. There are now 73 published capacitor pages; remaining
+capacitors and later families still need review.
+
+## Fenghua 0805 0.8 mm pilot and batch 01 (2026-11-18)
+
+Published four Fenghua selected-part pages: a direct 120 pF render and three
+individually evidenced 150 pF, 15 nF and 18 pF selections that reuse its
+inspected image. The generic KiCad model is scaled to Fenghua's nominal
+2 × 1.25 × 0.8 mm body; details, finish and blank marking remain illustrative.
+Four focused part guards and the seven geometry/pilot checks passed. All four
+pages passed provenance, README, scale and full-quality image checks; no pixels
+required repair. The original pages and sources are backed up under
+`tmp/display_render/fenghua_0805_120pf_previous/` and
+`tmp/display_render/fenghua_0805_batch01_previous/`. No PDF was captured.
+There are now 69 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Samsung 0805 0.65 mm batches (2026-11-18)
+
+The direct 100 pF render completed at 1,400 px / 256 samples and was visually
+inspected; six separately evidenced selections reuse it. All seven pages were
+published and passed provenance, README, scale, quality and zero repaired-pixel
+checks. Five disclose their source height of 1.25 mm conflicts with Samsung's
+0.65 mm nominal; two disclose that source height is missing. One also notes
+missing electrical fields, checked against Samsung. Seven focused tests passed.
+Images are illustrative: generic KiCad geometry was scaled vertically and
+exact finish and markings remain unverified. Backups are in
+`tmp/display_render/samsung_0805_065_100pf_previous/`,
+`tmp/display_render/samsung_0805_065_batch01_previous/` and
+`tmp/display_render/samsung_0805_065_batch02_previous/`. No PDF was captured.
+There are now 65 published capacitor pages; remaining capacitors and later
+families still need review.
+
+## Samsung 0805 thin display progress (historical checkpoint, 2026-11-18)
+
+The 0.85 mm Samsung 100 nF direct scalar render completed at 1,400 px / 256
+samples and was visually inspected and published. The independently evidenced
+1 nF and 47 nF selections reuse that image and were published. All three pass
+provenance, README, scale and zero repaired-pixel checks; their shape details,
+blank marking and finish remain illustrative. There are now 58 published
+capacitor pages. All 756 earlier resistor/capacitor renders passed provenance.
+
+The separate 0.65 mm Samsung 100 pF preview was visually inspected and its
+focused guard test passed. The full 1,400 px / 256-sample render is running in
+exec session 47976; poll that process before any retry. After completion,
+inspect it, publish only that page, verify its manifest and the README's
+disclosure of the source-height conflict. Its prior files were backed up under
+`tmp/display_render/samsung_0805_065_100pf_previous/`.
+Three additional 0.65 mm Samsung recipes have been guarded and staged; their
+source-height conflicts are disclosed and four focused tests passed across the
+pilot and batch. Backups are under
+`tmp/display_render/samsung_0805_065_batch01_previous/`. Once the source render
+is complete and reviewed, publish it, then use the guarded reuse adapter and
+publish and validate those three individually.
+
+## Samsung 0805 thinner package setup (historical checkpoint, 2026-11-18)
+
+The original renderer was archived by hash and the live renderer gained
+validated nonuniform display-only mesh scaling with inverse-transpose normals;
+the agent guide explains its limitations. The selected CL21B104KBCNNNC source
+recipe scales KiCad's 1.25 mm model to the manufacturer's 0.85 mm nominal
+height. Its 700 px preview was inspected and 23 geometry and batch tests
+passed. The LLVM full render failed; a full 1,400 px / 256-sample scalar retry
+is running in exec session 74099 (process 6760 at the last check). Wait for
+that exact process before restarting. All 756 earlier published resistor and
+capacitor recipes passed provenance validation after the renderer change. An
+earlier audit attempt encountered a concurrent recipe write and was rerun
+successfully after that write. Two more evidenced thin
+recipes have been staged and their previous pages backed up under
+`tmp/display_render/samsung_0805_thin_batch01_previous/`, but must not be
+published until the source image completes and is inspected. Then publish the
+source, use the guarded reuse script for the two targets, publish and validate
+all three. The direct part's previous files are backed up under
+`tmp/display_render/samsung_0805_thin_100nf_previous/`. Research leads for
+0.65 mm parts, including source-height conflicts, are recorded in
+`DISPLAY_RENDER_SAMSUNG_0805_065_RESEARCH.md`. No PDF was captured.
+
+A guarded recipe and passing focused test are also staged for Samsung
+CL21C101JBANNNC, whose 0.65 mm manufacturer height conflicts with the existing
+1.25 mm source height; the recipe explicitly discloses the discrepancy. Its
+previous files are backed up in `tmp/display_render/samsung_0805_065_100pf_previous/`.
+Preview, render, review and publication are still pending.
+
+## Samsung 0805 batch 02 (2026-11-18)
+
+Published twelve selected Samsung X5R, X7R, Y5V and C0G 0805 pages, after
+individually checking the exact selected manufacturer part, ratings and nominal
+2 × 1.25 × 1.25 mm dimensions against Samsung product pages. The inspected
+0805 image is reused; its blank markings, colour and finish are explicitly
+illustrative. Eight source records omit electrical fields and the published
+descriptions identify the manufacturer as the source of checked ratings.
+Seventeen focused tests passed; all 55 capacitor pages passed provenance and
+README checks, and the twelve new manifests record full-quality images with
+zero repaired pixels. Backups are in
+`tmp/display_render/samsung_0805_batch02_previous/`. No PDF was captured.
+Remaining capacitors and later families still require review.
+
+## Samsung 0805 batch 01 (2026-11-18)
+
+Published four manufacturer-identified 0805 X5R capacitor pages using the
+inspected 10 µF 0805 image, after checking each Samsung product page confirms
+the exact selected MPN and matching nominal body dimensions. Their blank
+appearance and finish are disclosed as illustrative; the three records without
+electrical fields disclose that ratings came from the manufacturer. Samsung
+lists CL21A226MAQNNNE as NRND. Five pages including the direct source passed
+provenance, README and image checks; nine focused tests passed across this
+batch and its source. Previous source and page files are backed up in
+`tmp/display_render/samsung_0805_batch01_previous/`. No PDF was captured.
+There are now 43 capacitor recipes; remaining capacitors and later families
+still require review.
+
+## Samsung 0805 10 µF 16 V (2026-11-18)
+
+Published a direct 1,400 px / 256-sample render for the selected Samsung
+CL21A106KOQNNNE, using a KiCad 0805 model whose nominal 2 × 1.25 × 1.25 mm
+dimensions match Samsung's product page. The page states that the ceramic
+finish, metal finish and blank surface are illustrative; exact marking has not
+been verified. The preview and final image were inspected, four focused tests
+passed, and provenance, README and zero repaired pixels were checked. No PDF
+was downloaded. Previous source and page files are backed up in
+`tmp/display_render/samsung_0805_10uf_previous/`. There are now 39 capacitor
+recipes; the rest of the capacitor catalogue and later families remain.
+
+Samsung product pages also list the exact E suffixes and the same nominal
+dimensions for CL21A226MAQNNNE (22 µF 25 V ±20%, NRND), CL21A226MQQNNNE
+(22 µF 6.3 V ±20%), CL21A225KBQNNNE (2.2 µF 50 V ±10%) and CL21A475KAQNNNE
+(4.7 µF 25 V ±10%), all X5R. These are research leads only: source identity,
+ratings, evidence records, guarded recipes and publication still need review.
+
+## Blue axial finish restoration in progress (2026-11-18)
+
+The user withdrew the beige-body preference. Restore original blue `#7ca6ab`
+on all affected axial resistor displays, preserving each actual tolerance band.
+The renderer and future recipe builders now use blue. Fifty-six reviewed DIN0207
+five-band composite renders, the UNI-ROYAL 6.8 MΩ direct render, and the two
+TyoHM four-band direct renders have been published and verified. Their prior
+files are backed up in `tmp/display_render/restore_blue_previous/`. The first
+56 used the previously reviewed blue calibration master and were reviewed in
+`tmp/display_render/restore_blue_staged/contact_1.jpg` and `contact_2.jpg`.
+Fourteen more standard DIN0207 four-band renders were compared with a direct
+render (mean absolute image difference 0.169/255), visually reviewed and
+published. The jumper and 2.4 kΩ small-body part were rendered directly; six
+DIN0516 four-band renders were visually reviewed and compared with a direct
+render (0.113/255). All 89 previously published axial renders are now blue;
+the newly reviewed Huaxing 10 MΩ 1 W 2% part is also rendered and published.
+All 90 axial recipes have matching validated manifests and no stale beige
+recipe descriptions.
+All 701 resistor source records now have recipes and validated render
+provenance. The last 39 Ω and 39 kΩ pages disclose their incomplete saved
+manufacturer numbers; the 39 kΩ model is narrower than its listed part. The
+100 Ω source is a 5 W cement resistor: its full MPN was restored from the
+supplier listing, its 25 × 9 mm KiCad body differs from the 22 × 9.5 mm listing,
+and its value/power print is illustrative because factory printing was not
+verified. Its full-resolution scalar render and both carbon-film renders were
+visually inspected; five focused tests passed. Historical evidence records
+preserve the previous beige request and are not current colour policy.
+
+The next family is capacitors. A source inventory found 537 records and one
+existing capacitor recipe; common footprints are 0805 (134), 0603 (127),
+1206 (96), and 0402 (71). These are inventory counts, not eligible-render
+counts. Verify supplier identity, marking and geometry individually or via
+evidence-backed guarded batches before publication.
+
+The selected YAGEO 0603 100 nF, 50 V generic capacitor now has a reviewed
+direct 1,400 px / 256-sample render and updated page. Its unmarked appearance
+is explicitly illustrative, not a verified manufacturer marking policy.
+The selected-part guard passed, provenance and README were checked, and the
+previous page/source files are backed up under
+`tmp/display_render/yageo_0603_100nf_previous/`. There are now two capacitor
+recipes; further capacitor families and ICs remain.
+
+Three individually documented Samsung 0603 capacitors (100 nF 25 V, 10 nF
+50 V, and 10 pF 50 V) now reuse the visually identical inspected Samsung
+0603 pilot image. Their nominal 0.8 mm thicknesses were checked against
+individual Samsung reference sheets. Each page and manifest identifies image
+reuse and explicitly calls the blank body and finish illustrative. Four
+targeted tests passed; all 701 resistor renders and three new capacitor pages
+passed provenance validation. Five capacitor recipes now exist. Remaining
+capacitors, ICs and other families still need review.
+
+Samsung 0603 batch 02 adds nine separately verified selections (15, 18, 20,
+22, 27, 33, 47, and 330 pF; 1 nF). Samsung product pages confirm 1.6 × 0.8 ×
+0.8 mm nominal bodies and their individual ratings. Reviewed and reused the
+Samsung pilot image with an explicit unverified-blank-body limitation; all
+nine pages and provenance validated and 13 focused tests passed. The original
+1 nF source has a `file_copy` pointer to a missing local datasheet, which was
+preserved and remains unresolved; manufacturer evidence was read online and no
+local PDFs were captured. Fourteen capacitor recipes now exist; the catalogue
+and later families remain incomplete.
+
+Samsung 0603 batch 03 adds eight individually evidenced selections (220 pF,
+3.3 nF, 470 nF, 47 nF, 270 pF, 4.7 nF, 2.2 µF and 4.7 µF). Samsung product
+pages verify each exact part, ratings and nominal 1.6 × 0.8 × 0.8 mm geometry.
+Each page reuses the reviewed pilot with an explicit unverified-blank-body
+limitation. All 17 pages in batches 02 and 03 passed provenance validation;
+21 focused tests passed. No PDFs were captured. Twenty-two capacitor recipes
+now exist; remaining capacitors and later families still need review.
+
+Samsung 0603 batch 04 adds eight individually evidenced selections. Six source
+records omit electrical fields; their exact MPNs, source IDs and supplier
+entries were checked against Samsung product pages, and the display descriptions
+flag that the values come from the manufacturer. Existing fields, if added or
+changed later, must match the reviewed ratings. All eight reuse the inspected
+pilot with an explicit blank-body limitation; pages and provenance validated,
+and 29 focused tests passed. Thirty capacitor recipes now exist; remaining
+capacitors and later families still require review.
+
+Fenghua 0603 batch 01 adds 100, 120 and 150 pF selected C0G parts. Individual
+Fenghua product pages document 1.6 × 0.8 × 0.8 mm nominal geometry and ratings.
+The generic Samsung pilot image is reused only as an illustrative blank 0603
+package; exact Fenghua marking and finish remain unverified. All three pages
+were published with their evidence and limitations; four focused tests passed.
+All 33 current capacitor recipes pass provenance and README validation.
+
+Fenghua 0603 batch 02 adds its manufacturer-verified 1 nF C0G selection;
+Samsung 0603 batch 05 adds 1 µF, 2.2 µF, 4.7 µF and 100 nF selections.
+Each selected manufacturer page or reference specification confirms the
+nominal 1.6 × 0.8 × 0.8 mm body and ratings. Two Samsung source records lack
+electrical fields; their pages identify the manufacturer as the source of the
+checked ratings. All five images reuse the reviewed generic 0603 pilot and
+disclose unverified marking and finish. Seventeen focused tests passed; all
+701 resistor and 38 capacitor render pages passed provenance and README
+validation. No PDFs were captured; further capacitors and later families remain.
+
 User scope: all remaining catalogue parts for which a display model can be
 sourced and labelled. Work in the requested order: resistors, then capacitors,
 then ICs; assess other eligible parts after those families. Preserve unrelated
@@ -1090,3 +1849,741 @@ separate catalogue correction. Reviewed preview and direct 1,400 px / 256-sample
 final, passed a source rating guard, and verified provenance, disclosure and
 zero non-finite pixels. Manufacturer information was read online; no local PDF
 is claimed. There are 678 resistor recipes; further records and families remain.
+
+# CCO MF1/8W 27 Ω and 680 kΩ (2026-11-18)
+
+Restored complete selected manufacturer numbers using the individual supplier
+pages; previous files are backed up in `tmp/display_render/cco_mf1_8w_previous/`.
+Published the two 125 mW 1% parts using the inspected DIN0204 small-body model.
+Each README discloses the legacy quarter-watt ID and the larger existing source
+footprint/dimensions requiring separate catalogue review. Inspected previews and
+1,400 px / 256-sample final images, passed two focused source/rating tests, and
+verified provenance, identity, README and zero non-finite pixels. CCO evidence
+was reviewed online; no local PDF is claimed. There are 680 resistor recipes;
+further records and later families remain.
+
+# UNI-ROYAL 2.7 MΩ and Stackpole 8.2 MΩ (2026-11-18)
+
+Published the selected 1% UNI-ROYAL quarter-watt and 5% Stackpole half-watt
+resistors with illustrative beige bodies and standard value codes. The Stackpole
+page identifies the actual 500 mW rating and the mismatch with the legacy ID and
+smaller footprint. Inspected previews and full 1,400 px / 256-sample images,
+passed two source guards and model checks, and verified README, identity and
+zero non-finite pixels. Manufacturer evidence was reviewed online; no local PDF
+is claimed. There are 695 resistor recipes; further records and later families
+remain. Previous component pages were saved under
+`tmp/display_render/uniroyal_stackpole_previous/`.
+
+# CCO CF1/6W 2.4 kΩ small body (2026-11-18)
+
+Restored the full C119879 manufacturer number from the selected supplier page;
+previous files are backed up under `tmp/display_render/cco_cf1_6w_2k4_previous/`.
+Published a 167 mW 5% small-body carbon-film display with documented red/yellow/
+red/gold bands. The legacy quarter-watt ID and larger existing footprint and
+source dimensions require separate catalogue review and are disclosed on the
+README. Inspected the preview and direct 1,400 px / 256-sample final, passed the
+source guard and verified provenance, restored identity, README and zero
+non-finite pixels. Manufacturer evidence was read online; no local PDF is claimed.
+There are 681 resistor recipes; further records and later families remain.
+
+# Huaxing KNP2W 10 Ω large body (2026-11-18)
+
+Published the selected 2 W wirewound resistor using an inspected 15.5 × 5 mm
+DIN0516 KiCad body. The 20.32 mm formed-lead pitch and 2 W rating conflict with
+the legacy quarter-watt ID and smaller existing footprint; the README calls for
+separate catalogue review. The standard brown/black/black/gold 5% representation
+is illustrative: this exact part's band count and spacing remain unverified.
+Added a validated optional band width for larger bodies, preserving archived
+renderer sources; all 683 earlier recipes passed provenance validation. Inspected
+preview and direct 1,400 px / 256-sample final, passed two focused tests and
+verified README, provenance and zero non-finite pixels. LLVM failed intermittently;
+the full-quality final used the documented scalar fallback. Supplier information
+was reviewed online; no local PDF is claimed. There are 682 resistor recipes;
+further records and later families remain.
+
+# CCO MOF3WS 47 Ω and 150 kΩ (2026-11-18)
+
+Restored the full selected manufacturer numbers from individual LCSC listings;
+previous files are backed up under `tmp/display_render/cco_mof3ws_previous/`.
+Published both 3 W 5% metal-oxide parts with documented four-band gold tolerance
+markings and the inspected 15.5 × 5 mm DIN0516 model. Each README discloses the
+legacy quarter-watt ID and the smaller existing source footprint and dimensions,
+which require separate catalogue review. Inspected previews and direct 1,400 px /
+256-sample final images, passed two rating guards, and verified provenance,
+identity, README and zero non-finite pixels. Manufacturer evidence was reviewed
+online; no local PDF is claimed. There are 684 resistor recipes; further records
+and later families remain.
+
+# VO MF2W 7.5 MΩ (2026-11-18)
+
+Published the selected 2 W 5% VO metal-film part using the inspected DIN0516
+model and a standard violet/green/green/gold representation. The README discloses
+that exact band count and spacing are unverified and that the 2 W part and 20.32
+mm model pitch conflict with the legacy quarter-watt ID and smaller existing
+footprint. Inspected preview and direct 1,400 px / 256-sample final, passed the
+rating guard and verified provenance, README and zero non-finite pixels. Evidence
+was reviewed online; no local PDF is claimed. There are 685 resistor recipes;
+further records and later families remain.
+
+# YAGEO RSF3WS 150 Ω (2026-11-18)
+
+Published the selected 3 W 5% YAGEO RSF metal-oxide part using the inspected
+DIN0516 model and documented brown/green/brown/gold code. The README calls out
+its 3 W rating, 20.32 mm formed model pitch, conflicting legacy quarter-watt
+ID and smaller existing footprint, and the supplier's differing metal-film
+description. Inspected preview and direct 1,400 px / 256-sample final, passed
+the source/rating guard and verified provenance, README and zero non-finite pixels.
+Manufacturer evidence was reviewed online; no local PDF is claimed. There are
+686 resistor recipes; further records and later families remain.
+
+# Half-watt carbon-film 470 Ω and 270 kΩ (2026-11-18)
+
+Published selected 5% VO and Stackpole carbon-film parts using an inspected
+9 × 3.2 mm DIN0309 KiCad body, with gold tolerance bands. The model approximates
+the selected dimensions; each README flags the actual 500 mW rating, 12.70 mm
+formed model pitch and conflicting smaller legacy quarter-watt footprint/ID.
+Inspected previews and direct 1,400 px / 256-sample final images, passed two
+source/rating guards and verified provenance, README and zero non-finite pixels.
+LLVM failed for the final renders, which completed using the full-quality scalar
+fallback. Manufacturer evidence was reviewed online; no local PDFs are claimed.
+There are 688 resistor recipes; further records and later families remain.
+
+# RESI EWWR 12 Ω (2026-11-18)
+
+Published the selected 3 W 5% RESI wirewound part using the inspected DIN0516
+model and a standard brown/red/black/gold representation. The README discloses
+that exact band count and spacing are unverified and that the 3 W part and
+20.32 mm model pitch conflict with the legacy quarter-watt ID and smaller existing
+footprint. Inspected preview and direct 1,400 px / 256-sample final, passed the
+rating guard and verified provenance, README and zero non-finite pixels. Manufacturer
+evidence was reviewed online; no local PDF is claimed. There are 689 resistor
+recipes; further records and later families remain.
+
+# VO MF1W 1.5 kΩ (2026-11-18)
+
+Published the selected 1 W 1% VO metal-film part using the inspected DIN0414
+model and a standard brown/green/black/brown/brown representation. The README
+discloses that exact band count and spacing are unverified and that the 1 W part
+and 15.24 mm model pitch conflict with the legacy quarter-watt ID and smaller
+existing footprint. Inspected preview and direct 1,400 px / 256-sample final,
+passed the rating guard and verified provenance, README and zero non-finite
+pixels. LLVM preview compilation failed; the final used the full-quality scalar
+fallback. Manufacturer evidence was reviewed online; no local PDF is claimed.
+There are 690 resistor recipes; further records and later families remain.
+
+# TyoHM RN1WS 1.8 kΩ (2026-11-18)
+
+Published the selected 1 W 1% TyoHM metal-film part using the inspected DIN0309
+model and brown/grey/black/brown/brown code. The README discloses that the 1 W
+part and 12.70 mm model pitch conflict with the legacy quarter-watt ID and smaller
+existing footprint. Inspected preview and direct 1,400 px / 256-sample final,
+passed the rating guard and verified provenance, README and zero non-finite pixels.
+Manufacturer evidence was reviewed online; no local PDF is claimed. There are
+691 resistor recipes; further records and later families remain.
+
+# TyoHM RD 5.6 MΩ and RT 2.2 MΩ (2026-11-18)
+
+Restored full supplier-verified manufacturer numbers in the two selected source
+records, preserving the previous files under `tmp/display_render/tyohm_rd_rt_previous/`.
+Published both 5% quarter-watt parts using the KiCad DIN0207 model, beige bodies
+and gold tolerance bands. The RT specification calls for light-green coating;
+both pages identify the beige finish and band placement as illustrative. Inspected
+preview and full 1,400 px / 256-sample images, passed two source guards and model
+checks, and verified README, source identity and zero non-finite pixels. Evidence
+was reviewed online; no local PDF is claimed. There are 693 resistor recipes;
+further records and later families remain.
+
+# Fenghua 0603 33 nF Y5V (2026-11-18)
+
+Published C1701 / 0603F333M500NT with the inspected matching generic KiCad
+0603 illustration and part-specific evidence. The manufacturer family specification
+was reviewed on a secondary host, and an exact supplier listing supplies the
+0.8 mm thickness. Colour and the unmarked appearance remain illustrative.
+Verified publication and provenance; five focused reuse and geometry tests passed.
+No local PDF was downloaded. There are now 232 capacitor recipes.
+
+# Murata 0805 10 uF 50 V (2026-11-18)
+
+Published GRM21BR61H106KE43L using the inspected matching 2 × 1.25 × 1.25 mm
+KiCad illustration. Existing local Murata specification GRM21BR61H106KE43-01A
+page 1 confirms dimensions and ratings, including mobile-device application limit.
+The finish and blank marking remain illustrative. Verified provenance and tested
+invalid geometry and voltage guards; six reuse and geometry tests passed.
+There are 233 capacitor recipes. No PDF was downloaded.
+
+# Yageo 0805 220 pF — render in progress (2026-11-18)
+
+The exact-part manufacturer specification confirms 2 × 1.25 × 0.6 mm. The
+source record says 1.25 mm and its attached 01005 datasheet is unrelated;
+these discrepancies are disclosed in the new recipe and evidence record.
+A 700 px preview was inspected; full-size render is running in exec session
+19122. After it finishes inspect the final, publish the exact component, and
+validate display metadata. Prior files are backed up under
+`tmp/display_render/yageo_0805_220pf_previous/`. No PDF was downloaded.
+
+# Fenghua 0603 30 pF (2026-11-18)
+
+Published 0603CG300J500NT / C1658 with a previously inspected matching KiCad
+0603 illustration. Two secondary listings identify the ratings and one specifies
+the 1.6 × 0.8 × 0.8 mm geometry; colour and unmarked appearance are illustrative.
+The source references a missing datasheet; no PDF was downloaded. Metadata and
+README were verified. There are 234 published capacitor renders; the Yageo
+220 pF full-size render is still in progress.
+
+# Yageo 220 pF and Fenghua 16 pF / 36 pF completed (2026-11-18)
+
+The Yageo 0.6 mm render completed at full 1400 px / 256-sample quality;
+inspected it and published the component page with source-height discrepancy
+and unrelated attached datasheet disclosed. Published the two Fenghua parts
+using the inspected 0603 illustration and exact secondary supplier dimensions
+and ratings. All three metadata and README disclosures were checked; 11 reuse
+and geometry tests passed. No PDFs were downloaded. There are 237 capacitor
+recipes and published renders.
+
+# Fenghua 0603 12 pF and 75 pF (2026-11-18)
+
+Published the 0603CG120J500NT and 0603CG750J500NT using the inspected
+matching KiCad illustration. Dimensions are supported respectively by an exact
+supplier listing and the manufacturer family table reproduced on an exact-part
+listing. The pages disclose illustrative colours and blank markings. Validated
+metadata and README disclosures; five focused tests passed. No PDF downloaded.
+There are 239 published capacitor renders.
+
+# Fenghua 0603 25 pF, 39 pF and 560 pF (2026-11-18)
+
+Published three parts with the inspected generic 0603 illustration. The exact
+identities and ratings were checked against individual supplier listings,
+and geometry uses Fenghua's general 0603 specification. Each README explicitly
+flags that exact-part thickness and appearance are unverified. Metadata and
+disclosures passed verification; five focused tests passed. No PDF downloaded.
+There are 242 published capacitor renders.
+
+# Fenghua 0603 X7R five values (2026-11-18)
+
+Published 200 pF, 360 pF, 820 pF, 3.9 nF and 5.1 nF parts with the inspected
+0603 illustration. Individually checked ratings against supplier or manufacturer
+listings. Geometry uses the manufacturer general-series 0603 dimensions; exact
+part thickness and appearance remain unverified, as disclosed on each page.
+Validated five manifests and disclosures; five focused tests passed. No PDF was
+downloaded. There are 247 published capacitor renders.
+
+# Fenghua 0603 Y5V six values (2026-11-18)
+
+Published 20 nF, 22 nF, 27 nF, 47 nF, 56 nF and 82 nF variants using the
+inspected generic 0603 illustration. Manufacturer or exact supplier listings
+confirm Y5V 50 V ±20% ratings. Geometry comes from the manufacturer general
+series; exact part thickness, colour and blank marking are unverified and
+disclosed. Validated all six manifests and disclosures; five focused tests
+passed. No PDF downloaded. There are 253 published capacitor renders.
+
+# Fenghua 0603 mixed five values (2026-11-18)
+
+Published exact C0G 200 pF and 390 pF variants, and X7R 500 pF, 3 nF and
+82 nF parts. Individually checked ratings against LCSC; generic 0603 illustration
+uses Fenghua family dimensions, with exact thickness and appearance unverified
+and disclosed. Validated five manifests and disclosures; five focused tests
+passed. No PDF downloaded. There are 258 published capacitor renders.
+
+# Fenghua 0603 low-value C0G eight values (2026-11-18)
+
+Published 0.5, 2.5, 3.3, 3.9, 4, 5, 6.2 and 7 pF parts. Exact identities,
+capacitances and ratings were checked against supplier listings; Fenghua's
+family ordering table decodes C as ±0.25 pF. Source records omit tolerance,
+and pages disclose that omission and family-based geometry/appearance limits.
+Validated all eight manifests, disclosures and tolerance-change guards; the
+reuse test passed. No PDF downloaded. There are 266 capacitor renders.
+
+# Fenghua 0402 low-value C0G four values (2026-11-18)
+
+Published 2.5, 6, 7 and 8 pF parts. Exact capacitance, 50 V rating and C0G
+were checked against individual supplier listings; the Fenghua family ordering
+table decodes C as ±0.25 pF. Source records omit tolerance and height, and pages
+disclose the missing tolerance and family-based dimensions/appearance. Validated
+four manifests and disclosures; five focused tests passed. No PDF downloaded.
+There are 270 capacitor renders.
+
+# Fenghua 0402 X7R seven values (2026-11-18)
+
+Published 160 pF, 200 pF, 270 pF, 300 pF, 560 pF, 3.3 nF and 5.6 nF parts.
+Exact ratings were checked against individual LCSC listings; four source records
+omit electrical fields and pages disclose that. Generic 0402 geometry comes from
+Fenghua's family dimensions; individual thickness and appearance are unverified.
+Validated seven manifests and disclosures; five focused tests passed. No PDF was
+downloaded. There are 277 published capacitor renders.
+
+# Fenghua 0402 C0G and Y5V four values (2026-11-18)
+
+Published 3 pF and 4 pF C0G parts and 15 nF and 100 nF Y5V parts. Individual
+supplier listings confirm identity and ratings; C0G tolerance code is decoded
+from the manufacturer family table. The C0G source records lack electrical
+fields, as disclosed. All pages note family dimensions and unverified appearance.
+Validated four manifests and disclosures; five focused tests passed. No PDF was
+downloaded. There are 281 published capacitor renders.
+
+# Yageo 0402 120 pF (2026-11-18)
+
+Published CC0402JRNPO9BN121 using the inspected 0402 illustration. The exact
+manufacturer specification confirms 1 × 0.5 × 0.5 mm, 120 pF, 50 V, C0G
+and ±5%. The source record lacks electrical fields and the page discloses this.
+Validated metadata, dimension guard and reuse test. No PDF was downloaded.
+There are 282 capacitor recipes; every current 0402 source directory now has one.
+
+# Fenghua 0603 5 nF and 330 nF 25 V (2026-11-18)
+
+Published 0603B502K500NT and 0603F334M250NT using the inspected 0603 model.
+Exact identity, dimensions and ratings were checked against secondary listings;
+colour and unmarked appearance remain illustrative. Verified both manifests
+and README disclosures; five focused tests passed. No PDF was downloaded.
+There are 284 capacitor renders. The only 0603 source directory without a recipe
+is `electronic_capacitor_0603_2200_pico_farad`, which has no selected maker or
+part number and duplicates the value of `electronic_capacitor_0603_2_2_nano_farad`;
+identity and duplicate-listing review remain pending.
+
+# Yageo 0805 100 nF 50 V (2026-11-18)
+
+Published CC0805KRX7R9BB104 using the inspected 0.85 mm scaled 0805 model,
+matching Yageo's exact-part specification. The source lists 1.25 mm and the
+page flags that discrepancy for catalogue review. Colour and blank appearance
+are illustrative. Metadata, voltage guard and discrepancy disclosure verified;
+seven reuse and scaling tests passed. No PDF downloaded. There are 285 capacitor
+renders.
+
+# Samsung 0805 C0G 1 nF (2026-11-18)
+
+Published CL21C102JBCNNNC using the inspected 0.85 mm scaled 0805 illustration.
+The exact Samsung reference sheet, read on a secondary host, confirms the
+model dimensions and ratings; colour and blank appearance are illustrative.
+Metadata and disclosures verified; twelve focused tests passed. No PDF was
+downloaded. There are 286 capacitor renders.
+
+# Samsung 0805 Y5V 1 µF (2026-11-18)
+
+Published CL21F105ZAFNNNE using the inspected matching 1.25 mm 0805
+illustration. Exact Samsung reference sheet, read via secondary host, confirms
+ratings and dimensions; the document explicitly names the selected E suffix
+despite its URL filename. Appearance remains illustrative. Verified metadata
+and both asymmetric tolerance guards; six focused tests passed. No PDF was
+downloaded. There are 287 capacitor renders.
+
+# Fenghua 0805 X7R four assumed-thickness illustrations (2026-11-18)
+
+Published 150 nF, 150 pF, 180 pF and 18 nF parts using a 0.8 mm generic
+0805 illustration. This is one of several manufacturer family thicknesses;
+exact part thickness and appearance remain unverified, prominently disclosed
+on each page. Some supplier listings claim 1.25 cm, an implausible value that
+was not treated as thickness evidence. Validated four manifests and assumptions;
+four focused tests passed. No PDF was downloaded. There are 291 capacitor renders.
+
+# Fenghua 0805 X7R five assumed-thickness illustrations (2026-11-18)
+
+Published 200 pF, 220 pF, 2 nF, 20 nF and 27 nF parts using the inspected
+0.8 mm generic 0805 illustration. Exact identities and ratings were checked
+against individual supplier listings. The chosen thickness is one of several
+family sizes; individual thickness and appearance are unverified and disclosed.
+Validated five manifests and assumptions; four focused tests passed. No PDF was
+downloaded. There are 296 capacitor renders.
+
+# Fenghua 0805 X7R five assumed-thickness illustrations, batch 3 (2026-11-18)
+
+Published 300, 330, 390, 510 and 560 pF parts using the inspected 0.8 mm
+generic 0805 illustration. Exact identities and ratings were checked against
+individual supplier listings. The chosen thickness is one of several family
+sizes; individual thickness and appearance remain unverified and disclosed.
+Validated five manifests and assumptions; four focused tests passed. No PDF was
+downloaded. There are 301 capacitor renders.
+
+The remaining 0805B501K500NT 500 pF part has a secondary listing specifying
+1.25 mm thickness (https://m.elecfans.com/article/xc-2500236379.html); use
+the matching unscaled model rather than the 0.8 mm illustrative batch.
+
+# Fenghua 0805 X7R 500 pF (2026-11-18)
+
+Published 0805B501K500NT using the inspected unscaled 1.25 mm 0805 model,
+matching an exact secondary supplier listing. Colour and blank appearance are
+illustrative; the original drawing was not independently accessed. Metadata
+and source disclosure validated; four focused tests passed. No PDF downloaded.
+There are 302 capacitor renders.
+
+# Fenghua 0805 X7R 5.1 nF and 3.3 nF (2026-11-18)
+
+Published 0805B512K500NT and 0805B332K500NT using the inspected 1.25 mm
+model. Secondary supplier listings give 1.25 and 1.20 mm heights respectively;
+the second render is a 0.05 mm approximation, disclosed on its page. Colour
+and blank appearance are illustrative. Verified metadata and height disclosures;
+four focused tests passed. No PDF downloaded. There are 304 capacitor renders.
+
+# Fenghua 0805 Y5V four assumed-thickness illustrations (2026-11-18)
+
+Published 18, 27, 33 and 120 nF parts using the inspected 0.8 mm generic
+0805 illustration. Exact identities and ratings were checked against individual
+supplier listings. Thickness is one of several family sizes; individual
+thickness and appearance are unverified and disclosed. Four manifests and
+assumptions validated; four focused tests passed. No PDF was downloaded. There
+are 308 capacitor renders.
+
+# Fenghua 0805 C0G seven assumed-thickness illustrations (2026-11-18)
+
+Published 12, 16, 24, 25, 27, 39 and 50 pF parts using the inspected 0.8 mm
+generic 0805 illustration. Exact identities and ratings were checked against
+individual LCSC listings. Thickness is one of several family sizes; individual
+thickness and appearance are unverified and disclosed. Seven manifests and
+assumptions validated; four focused tests passed. No PDF was downloaded. There
+are 315 capacitor renders.
+
+# Fenghua 0805 C0G four assumed-thickness illustrations, batch 2 (2026-11-18)
+
+Published 51, 62, 75 and 82 pF parts using the inspected 0.8 mm generic
+0805 illustration. Exact identities and ratings were checked against individual
+LCSC listings. Thickness is one of several family sizes; individual thickness
+and appearance are unverified and disclosed. Four manifests and assumptions
+validated; four focused tests passed. No PDF was downloaded. There are 319
+capacitor renders.
+
+# Fenghua 0805 C0G four assumed-thickness illustrations, batch 3 (2026-11-18)
+
+Published 91, 200, 390 and 820 pF parts using the inspected 0.8 mm generic
+0805 illustration. Exact identities and ratings were checked against individual
+supplier listings. Thickness is one of several family sizes; individual
+thickness and appearance are unverified and disclosed. Four manifests and
+assumptions validated; four focused tests passed. No PDF was downloaded. There
+are 323 capacitor renders.
+
+# Fenghua 0805 C0G six low-value illustrations (2026-11-18)
+
+Published 0.5, 1.5, 2, 2.2, 2.5 and 2.7 pF using the inspected 0.8 mm
+generic 0805 illustration. Exact identities and capacitances were checked
+against individual supplier listings; family code C indicates ±0.25 pF, which
+the source records omit. Exact thickness and appearance remain unverified and
+disclosed. Six manifests and assumptions validated; three focused tests passed.
+No PDF was downloaded. There are 329 capacitor renders.
+
+## Fenghua 0805 low C0G illustrative batch 02 (2026-11-18)
+
+Published five pages: 3, 3.3, 3.6, 4 and 5 pF, reusing the inspected
+0805 generic KiCad image. Manufacturer family information permits multiple
+thicknesses; the 0.8 mm representation, colour, finish and blank appearance
+are illustrative, and exact thickness is unverified. The source records omit
+tolerance; those limits are disclosed on each page. Supplier identity and
+ratings were checked, and no PDF was downloaded. All five render manifests
+and README disclosures validated; three targeted tests passed. Original files
+are backed up under `tmp/display_render/fenghua_0805_low_c0g_02_previous/`.
+There are now 334 capacitor renders; remaining capacitors and later families
+need review.
+
+## Fenghua 0805 low C0G illustrative batch 03 (2026-11-18)
+
+Published five pages: 1.8, 5.1, 5.6, 6.2 and 6.8 pF, reusing the inspected
+0805 generic KiCad image. Manufacturer family information permits multiple
+thicknesses; the 0.8 mm representation, colour, finish and blank appearance
+are illustrative, and exact thickness is unverified. The source records omit
+tolerance; those limits are disclosed on each page. Supplier identity and
+ratings were checked, and no PDF was downloaded. All five render manifests
+and README disclosures validated; three targeted tests passed. Original files
+are backed up under `tmp/display_render/fenghua_0805_low_c0g_03_previous/`.
+There are now 339 capacitor renders; remaining capacitors and later families
+need review.
+
+The 1.2 pF 0805CG1R2C500NT remains unrendered: secondary source
+https://m.elecfans.com/article/xc-2500236274.html reports 1.25 mm thickness,
+while the manufacturer family document lists several possible thicknesses.
+Review against the exact manufacturer specification before selecting geometry.
+
+## Fenghua 0805 low C0G illustrative batch 04 (2026-11-18)
+
+Published five pages: 3.9, 7.5, 8, 8.2 and 9 pF, reusing the inspected
+0805 generic KiCad image. Manufacturer family information permits multiple
+thicknesses; the 0.8 mm representation, colour, finish and blank appearance
+are illustrative, and exact thickness is unverified. The source records omit
+tolerance; those limits are disclosed on each page. Manufacturer or supplier
+identity and ratings were checked; no PDF was downloaded. All five render
+manifests and README disclosures validated; three targeted tests passed.
+Original files are backed up under
+`tmp/display_render/fenghua_0805_low_c0g_04_previous/`. There are now 344
+capacitor renders; remaining capacitors and later families need review.
+
+The 7 pF 0805CG7R0C500NT remains unrendered: the Fenghua catalogue confirms
+its ratings (https://www.fhcomp.com/en/product_page/?code=010000&page=2024),
+but secondary source https://m.elecfans.com/article/xc-2500236335.html reports
+1.25 mm thickness; verify its geometry before selecting a representation.
+
+## Fenghua 0805 X7R illustrative batch 04 (2026-11-18)
+
+Published four pages: 160 pF, 1.2 nF, 1.8 nF and 270 pF. The inspected
+0805 KiCad model illustrates one family thickness; exact part thickness,
+colour, finish and markings remain unverified, and this is disclosed on each
+page. Supplier identities and ratings checked; no PDF downloaded. Four
+manifests and README disclosures validated; three targeted tests passed.
+Original files are backed up under
+`tmp/display_render/fenghua_0805_x7r_04_previous/`. There are now 348
+capacitor renders; remaining capacitors and later families need review.
+
+The unrendered inventory includes AVX TAJ tantalum and cylindrical
+electrolytic capacitors. KiCad has a 3216-18 tantalum STEP model at
+https://github.com/KiCad/kicad-packages3D/blob/master/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-3216-18_Kemet-A.step
+and manufacturer specifications and marking diagrams are at
+https://datasheets.kyocera-avx.com/TAJ.pdf. Verify case dimensions and
+marking conventions for each part; Kemet geometry is not proof of an exact
+AVX model. This is a research lead, not a completed or reviewed render.
+
+## Fenghua 0805 X7R illustrative batch 05 (2026-11-18)
+
+Published five pages: 47, 56, 68 and 5 nF, and 820 pF. The inspected
+0805 KiCad model illustrates one family thickness; exact part thickness,
+colour, finish and markings remain unverified, and this is disclosed on each
+page. Manufacturer or supplier identities and ratings checked; no PDF
+downloaded. Five manifests and README disclosures validated; three targeted
+tests passed. Original files are backed up under
+`tmp/display_render/fenghua_0805_x7r_05_previous/`. There are now 353
+capacitor renders; remaining capacitors and later families need review.
+
+The 3 nF 0805B302K500NT remains unrendered: secondary source
+https://m.elecfans.com/article/xc-2500236503.html reports 1.25 mm thickness;
+review exact manufacturer geometry before choosing a representation.
+
+## Fenghua 0805 Y5V full-height batch (2026-11-18)
+
+Published six pages: 12, 39, 68, 82, 220 and 470 nF. Secondary listings
+report 1.25 mm height and the inspected full-height KiCad image was reused;
+manufacturer drawings were not independently accessed, and colour, finish
+and blank appearance are illustrative as disclosed on pages. Six manifests
+and README disclosures validated; three targeted tests passed. No PDF was
+downloaded. Previous files: `tmp/display_render/fenghua_0805_y5v_full_height_previous/`.
+There are now 359 capacitor renders; remaining capacitors and later families
+need review.
+
+Important follow-up: a secondary source reports 1.25 mm for the already
+published 0805CG3R3C500NT (https://m.elecfans.com/article/xc-2500236785.html),
+which currently shows an explicitly illustrative 0.8 mm model. Review and
+replace the geometry with a better-supported model, preserving disclosure of
+the evidence level, and audit other assumed-height entries against exact
+supplier and manufacturer data. 1206B221K500NT and 1206B152K500NT secondary
+listings also report 1.6 mm; exact manufacturer verification remains needed.
+
+## Fenghua 0805 low C0G full-height correction (2026-11-18)
+
+Updated the 3.3 pF 0805CG3R3C500NT from the explicitly illustrative 0.8 mm
+render to a 1.25 mm KiCad image matching a secondary supplier listing. Added
+1.2 pF and 7 pF pages using the same geometry, also supported by individual
+secondary listings. Manufacturer drawings were not independently accessed;
+the pages disclose evidence limits, illustrative finish, and missing source
+tolerance. Three manifests and README disclosures validated; three targeted
+tests passed. No PDF downloaded. Original files and replaced render are in
+`tmp/display_render/fenghua_0805_low_c0g_full_height_previous/`. There are
+now 361 capacitor renders; the earlier note calling 3.3 pF uncorrected is
+superseded. Audit other assumed-height entries against exact sources.
+
+## Fenghua 0805 full-height review 02 (2026-11-18)
+
+Updated 5 pF 0805CG5R0C500NT from an explicitly illustrative 0.8 mm
+representation to 1.25 mm, following an individual secondary listing, and
+added the 3 nF 0805B302K500NT with the same reported height. Manufacturer
+drawings were not independently accessed; each page states that and notes
+illustrative appearance. Both manifests and README disclosures validated;
+three targeted tests passed. No PDF downloaded. Original files and replaced
+render are in `tmp/display_render/fenghua_0805_height_review_02_previous/`.
+There are now 362 capacitor renders. Audit other assumed-height entries
+against exact sources; 1206 entries and other families remain unfinished.
+
+## Fenghua 0805 0.5 pF height correction (2026-11-18)
+
+Updated 0805CG0R5C500NT from explicitly illustrative 0.8 mm geometry to
+1.25 mm, matching two secondary supplier listings. The manufacturer drawing
+was not independently accessed, and the page discloses that, the approximate
+appearance and missing source tolerance. The render manifest and README
+disclosures validated; three targeted tests passed. No PDF downloaded. Prior
+files and render are in `tmp/display_render/fenghua_0805_0p5_height_review_previous/`.
+The capacitor count remains 362. Continue auditing other assumed heights and
+rendering the remaining capacitors, then ICs and later families.
+
+## Fenghua 1206 secondary full-height batch 01 (2026-11-18)
+
+Published six pages: 150, 180, 200 and 220 pF, 1.5 and 20 nF. Individual
+secondary listings report 3.20 × 1.60 × 1.60 mm and selected ratings. The
+inspected unscaled KiCad render matches the reported envelope; manufacturer
+drawings were not independently accessed and supplier dimensions could be
+generic. Each page discloses these limits and illustrative appearance. All
+six manifests and README disclosures validated; seven targeted tests passed.
+No PDF downloaded. Prior files are backed up under
+`tmp/display_render/fenghua_1206_secondary_full_height_01_previous/`. There
+are now 368 capacitor renders; other capacitors and later families remain.
+
+## Fenghua 1206 secondary full-height batch 02 (2026-11-18)
+
+Published four pages: 22, 27, 30 and 51 pF. Individual secondary listings
+report 3.20 × 1.60 × 1.60 mm and the selected ratings. The inspected unscaled
+KiCad render matches the reported envelope; manufacturer drawings were not
+independently accessed and supplier dimensions could be generic. Each page
+discloses these limits and illustrative appearance. Four manifests and README
+disclosures validated; seven targeted tests passed. No PDF downloaded. Prior
+files are backed up under
+`tmp/display_render/fenghua_1206_secondary_full_height_02_previous/`. There
+are now 372 capacitor renders. The 3.3 nF 1206B332K500NT remains unrendered;
+https://www.compel.ru/infosheet/FNR/1206B332K500NT reports 1.25 mm thickness
+and the existing 1.25 mm KiCad render may be suitable after recipe review.
+
+## Fenghua 1206 mixed-height secondary batch (2026-11-18)
+
+Published three pages: 3.3 nF at 1.25 mm, 62 pF at 1.6 mm and 82 pF at
+0.8 mm, matching individual secondary supplier listings. Reused inspected
+KiCad renders of the corresponding heights. Manufacturer drawings were not
+independently accessed; supplier dimensions could be generic. Each page
+discloses these limits and illustrative appearance. Three manifests and README
+disclosures validated; seven targeted tests passed. No PDF downloaded. Prior
+files are backed up under
+`tmp/display_render/fenghua_1206_secondary_mixed_heights_previous/`. There
+are now 375 capacitor renders; other capacitors and later families remain.
+
+## Fenghua 1206 low C0G secondary batch (2026-11-18)
+
+Published five pages: 0.5, 1.5, 2.5, 2.7 and 3.3 pF. Individual secondary
+listings report 3.20 × 1.60 × 1.60 mm and selected ratings. The inspected
+unscaled KiCad render matches the reported envelope; manufacturer drawings
+were not independently accessed and supplier dimensions could be generic.
+The source records omit tolerance; the pages disclose this, the secondary
+±0.25 pF rating and illustrative appearance. Five manifests and README
+disclosures validated; seven targeted tests passed. No PDF downloaded. Prior
+files are backed up under
+`tmp/display_render/fenghua_1206_secondary_low_c0g_previous/`. There are
+now 380 capacitor renders; other capacitors and later families remain.
+
+## Fenghua 1206 secondary full-height batch 03 (2026-11-18)
+
+Published four pages: 6 and 510 pF, and 47 and 68 nF. Individual secondary
+listings report 3.20 × 1.60 × 1.60 mm and selected ratings. The inspected
+unscaled KiCad render matches the reported envelope; manufacturer drawings
+were not independently accessed and supplier dimensions could be generic.
+The 6 pF source record omits tolerance, disclosed on its page. Four manifests
+and README disclosures validated; seven targeted tests passed. No PDF was
+downloaded. Prior files are backed up under
+`tmp/display_render/fenghua_1206_secondary_full_height_03_previous/`. There
+are now 384 capacitor renders; other capacitors and later families remain.
+
+## Fenghua 1206 secondary Y5V full-height batch (2026-11-18)
+
+Published two pages: 20 and 68 nF. Individual secondary listings report
+3.20 × 1.60 × 1.60 mm and the selected ratings. The inspected unscaled KiCad
+render matches the reported envelope; manufacturer drawings were not
+independently accessed and supplier dimensions could be generic. Both pages
+disclose these limits and illustrative appearance. Both manifests and README
+disclosures validated; seven targeted tests passed. No PDF downloaded. Prior
+files are backed up under
+`tmp/display_render/fenghua_1206_secondary_y5v_full_height_previous/`. There
+are now 386 capacitor renders; other capacitors and later families remain.
+
+## Fenghua 1206 20 pF secondary evidence (2026-11-18)
+
+Published 1206CG200J500NT, 20 pF C0G, using the inspected 1.6 mm KiCad
+image, matching a secondary listing. Manufacturer drawing was not
+independently accessed; supplier dimensions could be generic. The page
+discloses these limits and illustrative appearance. Manifest and README
+validated; seven targeted tests passed. No PDF downloaded. Prior files are
+backed up under `tmp/display_render/fenghua_1206_20pf_secondary_previous/`.
+There are now 387 capacitor renders; remaining capacitors and later families
+need review. 1206CG101J500NT and 1206CG120J500NT have secondary 1.6 mm
+height claims; resolve against exact manufacturer data before selecting
+geometry (earlier catalogue evidence suggests 1206 heights may differ).
+
+## TAJ tantalum renderer preparation (2026-11-18)
+
+Reviewed manufacturer marking/case information and inspected installed
+KiCad 3216 tantalum STEP bounds and material regions. Added and tested an
+illustrative TAJ capacitance/voltage marking policy; 19 marking tests passed.
+Research and remaining pilot work are recorded in
+`kicad_agents/component_records/DISPLAY_RENDER_TAJ_RESEARCH.md`. No new
+part render was published; remaining capacitors and other families remain.
+
+## TAJ A-case 10 µF 10 V display pilot and polarity correction (2026-11-18)
+
+Published TAJA106K010RNJ with an inspected 1400 px yellow KiCad tantalum
+render, metal terminations, positive-anode stripe and illustrative `106 A`
+marking. KiCad Kemet A-case geometry is scaled to the manufacturer nominal
+1.6 mm height. The manufacturer permits higher-rated substitutions, so actual
+marking, logo, production code and finishes can differ, disclosed on the page.
+The renderer uses a purpose-specific tantalum material and bounded text offset;
+the previous renderer is archived by hash. Corrected an incorrect negative
+stripe note for this pilot, 56 other TAJ source records and their generated
+metadata, and all 57 corresponding populate definitions. Other capacitor types
+were left untouched. Backups are under `tmp/display_render/taj_a_pilot_previous/`
+and `tmp/display_render/taj_polarity_corrections_previous/`. Validated 56 changed
+parts and 168 YAML files, the pilot manifest, image sizes and README; 27 targeted
+tests and Python compilation passed. No PDF was downloaded. There are now 388
+capacitor renders; other capacitors and later families remain.
+
+## TAJ A-case marked batches 01 and 02 (2026-11-18)
+
+Built reviewed shared 1400 px path-traced body/ink passes, then compared the
+composited 106 A pilot against its independent full render. Published ten
+individually checked A-case TAJ pages and inspected the ten-image contact sheet
+at `tmp/display_render/taj_a_batch_contact.png`. Geometry, body finish,
+production markings and indirect ink reflections remain illustrative and are
+disclosed. Each source record and MPN/value/voltage/case was checked. Ten
+manifests, image hashes, dimensions, markings and page disclosures validated;
+37 targeted tests passed. The shared master and compositor source are retained
+under `source_file/display_render/masters/` and `renderer_versions/`. Prior
+files are backed up under `tmp/display_render/taj_a_batch01_previous/` and
+`tmp/display_render/taj_a_batch02_previous/`. No PDF downloaded. There are
+now 398 capacitor renders; other capacitor cases and later families remain.
+
+## TAJ A-case marked batch 03 (2026-11-18)
+
+Published five individually checked parts: TAJA226K006RNJ, TAJA336K010RNJ,
+TAJA336K006RNJ, TAJA476K006RNJ and TAJA475K020RNJ. Inspected the five-image
+contact sheet at `tmp/display_render/taj_a_batch03_contact.png`. The 6.3 V
+parts use manufacturer voltage code J. Geometry, finish, exact production
+markings and indirect ink reflections remain illustrative and are disclosed.
+Five manifests, image hashes, dimensions, marking codes and page disclosures
+validated; 42 targeted tests passed. Prior files are backed up under
+`tmp/display_render/taj_a_batch03_previous/`. No PDF downloaded. There are
+now 403 capacitor renders; other capacitors and later families remain.
+
+## TAJ A-case marked batch 04 (2026-11-18)
+
+Published three individually checked parts: TAJA226K010RNJ, TAJA226M010RNJ
+and TAJA335K016RNJ. The first generic source omits height and explicit
+polarity; supplier selection and polarized footprint support the representation,
+with the limitation on its page. The supplier lists K tolerance for that part
+while the manufacturer table lists A-case 22 µF / 10 V as M only; the discrepancy
+is disclosed and requires manufacturer confirmation for purchasing. Geometry,
+finish, exact production markings and indirect ink reflections are illustrative.
+Three manifests, image hashes, dimensions, marking codes and page disclosures
+validated; 45 targeted tests passed. Prior files are backed up under
+`tmp/display_render/taj_a_batch04_previous/`. No PDF downloaded. There are now
+406 capacitor renders; remaining capacitors and later families need review.
+
+## TAJ B-case 10 µF / 16 V pilot (2026-11-18)
+
+Published TAJB106K016RNJ after model/stripe analysis and preview/final
+visual inspection. KiCad Kemet B-case geometry is scaled from 2.1 mm maximum
+to the manufacturer nominal 1.9 mm; positive stripe, colour and 106 C marking
+are illustrative, disclosed on its page. Image sizes, manifest hashes, source
+polarity and page were validated; 55 targeted tests passed. Previous part files
+are in `tmp/display_render/taj_b_pilot_previous/`. Three five-part B-case queues
+are researched and prepared; shared B-case master generation is in progress
+(exec session 5936), so no batch composite is yet published. C-case TAJC106K016RNJ
+has a checked source and prepared recipe only; it needs a preview and final
+render. No PDF downloaded. There are now 407 published capacitor renders.
+
+## TAJ B-case marked batches 01–03 (2026-11-18)
+
+Published 15 individually reviewed TAJ B-case capacitor pages after comparing
+the shared composite against the independent pilot and inspecting the contact
+sheet at `tmp/display_render/taj_b_batches_contact.png`. Image geometry, finish,
+production markings and indirect ink reflections remain illustrative and are
+disclosed. Validated 15 manifests, artifact hashes, dimensions, markings,
+provenance and README disclosures; 60 targeted tests passed. Prior files are
+under `tmp/display_render/taj_b_batch01_previous/`, `taj_b_batch02_previous/`
+and `taj_b_batch03_previous/`. No PDF downloaded. There are now 422 published
+capacitor renders. C- and D-case pilots have prepared recipes but still need
+preview, final rendering and publication; other capacitors remain.
+
+## TAJ C-case 10 µF / 16 V pilot (2026-11-18)
+
+Published TAJC106K016RNJ after model analysis and preview/final visual
+inspection. KiCad Kemet C-case geometry is scaled from 2.8 mm maximum to
+the manufacturer nominal 2.6 mm; the positive stripe, finish and 106 C
+marking are illustrative and disclosed. Image dimensions, manifest hashes,
+marking, provenance and README validated. Seven C-case candidate recipes
+have been researched and added to recipes but are not rendered or published; seven queue tests passed.
+Shared C-case master generation is running in exec session 19454; compare
+its composite to the independent pilot before proceeding. No PDF downloaded.
+There are now 423 published capacitor renders. Other capacitors remain.

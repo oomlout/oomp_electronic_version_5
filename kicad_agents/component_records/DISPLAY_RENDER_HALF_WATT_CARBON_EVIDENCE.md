@@ -1,0 +1,6 @@
+# Half-watt carbon-film display evidence
+
+- [VO CR1/2W-470Ω±5%-XT52 / C2894503](https://www.lcsc.com/product-detail/through-hole-resistors_vo-cr1-2w-470-5-xt52_C2894503.html): 470 Ω, 5%, 500 mW, nominal 9 × 3.5 mm. The [VO CR series specification](https://datasheet.lcsc.com/datasheet/pdf/f7f033f43920630443647ff79c60c0bb.pdf?productCode=C2897020) specifies standard colour coding. Yellow/violet/brown/gold is the standard four-band representation; exact band placement is illustrative.
+- [Stackpole CF12JT270K / C2586012](https://www.lcsc.com/product-detail/C2586012.html): 270 kΩ, 5%, 500 mW, nominal 8.5 × 2.7 mm. [Stackpole CF/CFM specification](https://s3.amazonaws.com/snapeda/datasheet/CF12JT10R0_Stackpole_Electronics_Inc.pdf), page 9, specifies four bands for general-purpose tolerance: red/violet/yellow/gold.
+
+The KiCad DIN0309 model has a 9 × 3.2 mm body and formed leads at 12.70 mm. It approximates both selected parts, particularly the Stackpole part whose model body is 0.5 mm longer and 0.5 mm wider. Beige coating and band spacing are illustrative. Both existing quarter-watt IDs and smaller 7.62 mm footprint/dimensions require separate catalogue review. Documents were read online; no local PDFs are claimed.

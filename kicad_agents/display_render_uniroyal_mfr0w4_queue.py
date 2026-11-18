@@ -22,7 +22,7 @@ def reviewed_recipe(part,record,recipes,sha):
  if r.get('family')!='axial_resistor' or len(bands)!=5 or bands[-1]!='brown':raise ValueError('Unexpected template or tolerance')
  r.update(represented_manufacturer='UNI-ROYAL',represented_mpn=mpn)
  r['marking'].update(text=' / '.join(bands),bands=bands,evidence={'file':EVIDENCE.as_posix(),'sha256':sha,'document':'UNI-ROYAL precision metal-film and MFR0W4 specifications (reviewed online)','source_record':f'parts_source/{part}/working.yaml','rule':f'UNI-ROYAL 1% five-band code for {value} Ω: '+', '.join(bands)+'.'},appearance_status='Documented 1% value code with brown tolerance band; stripe spacing and shades are illustrative.')
- r['appearance_status']='Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Beige body is illustrative; its 2.5 mm diameter is at the manufacturer upper limit.'
+ r['appearance_status']='Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Blue body is illustrative; its 2.5 mm diameter is at the manufacturer upper limit.'
  return r
 
 def discover():

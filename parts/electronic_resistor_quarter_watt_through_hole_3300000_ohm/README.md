@@ -7,7 +7,7 @@ Resistor 3.3e+06 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor de
 
 ![Resistor 3.3e+06 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-The selected YAGEO MFR50S is rated 500 mW (half watt), despite the legacy quarter-watt catalogue ID. Generic KiCad 6.3 &#x00D7; 2.5 mm body approximates the specified 6.3 &#x00D7; 2.4 mm body, with bent leads at 7.62 mm pitch. Beige finish is illustrative. Documented 1% five-band code; band spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+The selected YAGEO MFR50S is rated 500 mW (half watt), despite the legacy quarter-watt catalogue ID. Generic KiCad 6.3 &#x00D7; 2.5 mm body approximates the specified 6.3 &#x00D7; 2.4 mm body, with bent leads at 7.62 mm pitch. Blue finish is illustrative. Blue body shade is illustrative. Documented 1% five-band code; band spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
 

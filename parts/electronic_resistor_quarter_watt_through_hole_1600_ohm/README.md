@@ -7,7 +7,7 @@ Resistor 1600 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defin
 
 ![Resistor 1600 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-Illustrates Yageo CFR-25JB-52-1K6, a 5% example; this generic entry has no selected manufacturer or tolerance. Beige KiCad body and bent-lead presentation are illustrative. Documented value bands; beige coating, band spacing and shades are illustrative.
+Illustrates Yageo CFR-25JB-52-1K6, a 5% example; this generic entry has no selected manufacturer or tolerance. Blue KiCad body and bent-lead presentation are illustrative. Blue body shade is illustrative. Documented value bands; blue coating, band spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
 

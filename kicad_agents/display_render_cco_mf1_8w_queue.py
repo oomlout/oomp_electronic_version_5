@@ -44,7 +44,7 @@ def reviewed_recipe(part, record, recipes, sha):
         appearance_status='Standard five-band code; stripe spacing and shades are illustrative.')
     r['appearance_status'] = ('Selected CCO MF1/8W is rated 125 mW despite the legacy quarter-watt catalogue ID. '
         'The 3.6 × 1.6 mm KiCad body approximates the selected 3.2 × 1.8 mm part; the existing catalogue footprint and dimensions depict a larger body. '
-        'Bent leads at 7.62 mm pitch and beige coating are illustrative; CCO specifies sky blue.')
+        'Bent leads at 7.62 mm pitch and blue coating are illustrative; CCO specifies sky blue.')
     return r
 
 

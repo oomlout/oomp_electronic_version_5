@@ -2,6 +2,7 @@
   "schema_version": 1,
   "part_id": "electronic_resistor_quarter_watt_through_hole_15000_ohm",
   "purpose": "display_only",
+  "input_fingerprint": "a9000d68b85696aa0496980e5e8d115ddc60a428d882cfab05a9f4d4ae01e77f",
   "recipe": {
     "schema_version": 1,
     "family": "axial_resistor",
@@ -52,51 +53,14 @@
       },
       "appearance_status": "Documented four-band value code; stripe spacing and shades are illustrative."
     },
-    "appearance_status": "The selected YAGEO FMP100 is rated 1 W, despite the legacy quarter-watt catalogue ID. Generic KiCad axial body and bent leads at 7.62 mm pitch; beige coating is illustrative.",
+    "appearance_status": "The selected YAGEO FMP100 is rated 1 W, despite the legacy quarter-watt catalogue ID. Generic KiCad axial body and bent leads at 7.62 mm pitch; blue coating is illustrative. Blue body shade is illustrative.",
     "output": {
       "pixels": 1400,
       "samples": 256,
       "thumbnail_pixels": 512
     }
   },
-  "input_fingerprint": "f43c4b356a2c9477525ad41b9bab525b77ce4039cb134e5e0cd25d2216964c36",
-  "runtime": {
-    "cadquery": "2.8.0",
-    "cadquery-ocp": "7.9.3.1.1",
-    "mitsuba": "3.7.1",
-    "drjit": "1.2.0",
-    "numpy": "2.5.5",
-    "Pillow": "13.0.0",
-    "opencv-python-headless": "5.0.0.93"
-  },
-  "recipe_sha256": "e7dd04d357e8698e32f137ff1b54c99ad0235bab69371a2d1ab567b7702a777a",
-  "model": {
-    "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step",
-    "sha256": "46710ac36957e4073ef7e80153823ef7db1ea12932074cb71f43bc4b476a74dc",
-    "actual_bounds_mm": [
-      8.2200002,
-      2.5000002,
-      5.500000099999999
-    ],
-    "source_face_colours": {
-      "0.883,0.711,0.492": 9,
-      "0.824,0.820,0.781": 6
-    },
-    "triangle_count": 56420,
-    "source_header": "ISO-10303-21;\nHEADER;\n/* R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step 3D STEP model for use in ECAD systems\n * Copyright (C) 2017, kicad StepUp\n * \n * This work is licensed under the [Creative Commons CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), \n * with the following exception:\n * To the extent that the creation of electronic designs that use 'Licensed Material' can be considered to be 'Adapted Material', \n * then the copyright holder waives article 3 of the license with respect to these designs and any generated files which use data provided \n * as part of the 'Licensed Material'.\n * You are free to use the library data in your own projects without the obligation to share your project files under this or any other license agreement.\n * However, if you wish to redistribute these libraries, or parts thereof (including in modified form) as a collection then the exception above does not apply. \n * Please refer to https://github.com/KiCad/kicad-packages3D/blob/master/LICENSE.md for further clarification of the exception.\n * Disclaimer of Warranties and Limitation of Liability.\n * These libraries are provided in the hope that they will be useful, but are provided without warranty of any kind, express or implied.\n * *USE 3D CAD DATA AT YOUR OWN RISK*\n * *DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.*\n * \n */\n\n"
-  },
-  "marking": {
-    "text": "brown / green / orange / gold",
-    "font": {
-      "file": null,
-      "sha256": null,
-      "bitmap_size": [
-        1024,
-        512
-      ]
-    },
-    "evidence_sha256": "a1c131ac9c3bd5e5eb4993938faa129ad0d08c7b9b03a3445f386498821000b7"
-  },
+  "recipe_sha256": "3403b51ba7b2d2874d6280be3b3f72bb83b19e6932e7244015c69a88790402b9",
   "studio": {
     "schema_version": 1,
     "reference": "https://github.com/oomlout/oomp_hardware_screw_version_5/blob/main/screw_model_render.py",
@@ -175,82 +139,58 @@
       }
     ]
   },
-  "render": {
-    "variant": "llvm_ad_rgb",
-    "seconds": 186.69,
-    "samples": 256,
-    "pixels": 1400,
-    "materials": {
-      "termination": {
-        "type": "principled",
-        "base_color": {
-          "type": "rgb",
-          "value": [
-            0.61,
-            0.65,
-            0.7
-          ]
-        },
-        "metallic": 1.0,
-        "roughness": 0.24,
-        "anisotropic": 0.22
-      },
-      "ceramic": {
-        "type": "roughplastic",
-        "diffuse_reflectance": {
-          "type": "rgb",
-          "value": [
-            0.53,
-            0.5,
-            0.43
-          ]
-        },
-        "alpha": 0.3,
-        "int_ior": 1.52
-      },
-      "pin_indicator": {
-        "type": "roughplastic",
-        "diffuse_reflectance": {
-          "type": "rgb",
-          "value": [
-            0.48,
-            0.47,
-            0.44
-          ]
-        },
-        "alpha": 0.4,
-        "int_ior": 1.48
-      },
-      "coating": {
-        "type": "roughplastic",
-        "diffuse_reflectance": {
-          "type": "bitmap",
-          "filename": "axial_bands.png",
-          "raw": false,
-          "wrap_mode": "clamp"
-        },
-        "alpha": 0.25,
-        "int_ior": 1.52
-      }
-    },
-    "normalized_unit_mm": 8.2200002,
-    "tone_mapping": "ACES fitted curve then sRGB; not Blender AgX",
-    "nonfinite_pixels_repaired": 0,
-    "bump_disabled_roles": [],
-    "denoising": {
-      "method": "OpenCV non-local means",
-      "strength": 3.0
-    }
+  "runtime": {
+    "cadquery": "2.8.0",
+    "cadquery-ocp": "7.9.3.1.1",
+    "mitsuba": "3.7.1",
+    "drjit": "1.2.0",
+    "numpy": "2.5.5",
+    "Pillow": "13.0.0",
+    "opencv-python-headless": "5.0.0.93"
   },
-  "renderer_source_sha256": "55f4d9db52e0b17b6081d09464f228dcf1e4aabc97287bc330271eadd583e00a",
+  "model": {
+    "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step",
+    "sha256": "46710ac36957e4073ef7e80153823ef7db1ea12932074cb71f43bc4b476a74dc",
+    "actual_bounds_mm": [
+      8.2200002,
+      2.5000002,
+      5.500000099999999
+    ],
+    "source_face_colours": {
+      "0.883,0.711,0.492": 9,
+      "0.824,0.820,0.781": 6
+    },
+    "triangle_count": 56420,
+    "source_header": "ISO-10303-21;\nHEADER;\n/* R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step 3D STEP model for use in ECAD systems\n * Copyright (C) 2017, kicad StepUp\n * \n * This work is licensed under the [Creative Commons CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), \n * with the following exception:\n * To the extent that the creation of electronic designs that use 'Licensed Material' can be considered to be 'Adapted Material', \n * then the copyright holder waives article 3 of the license with respect to these designs and any generated files which use data provided \n * as part of the 'Licensed Material'.\n * You are free to use the library data in your own projects without the obligation to share your project files under this or any other license agreement.\n * However, if you wish to redistribute these libraries, or parts thereof (including in modified form) as a collection then the exception above does not apply. \n * Please refer to https://github.com/KiCad/kicad-packages3D/blob/master/LICENSE.md for further clarification of the exception.\n * Disclaimer of Warranties and Limitation of Liability.\n * These libraries are provided in the hope that they will be useful, but are provided without warranty of any kind, express or implied.\n * *USE 3D CAD DATA AT YOUR OWN RISK*\n * *DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.*\n * \n */\n\n"
+  },
+  "marking": {
+    "text": "brown / green / orange / gold",
+    "font": {
+      "file": null,
+      "sha256": null
+    },
+    "evidence_sha256": "a1c131ac9c3bd5e5eb4993938faa129ad0d08c7b9b03a3445f386498821000b7"
+  },
+  "renderer_source_sha256": "fe5c01eeacff85e6105271d566f60ecf4f2f1a14a7a7cbe1cf27bb0ac0420ec6",
+  "composite": {
+    "method": "linear-light interpolation of shared axial band material passes",
+    "limitation": "Approximate indirect reflections and colour interactions; bands not independently path traced.",
+    "compositor_source_sha256": "3be71e6f729e29d2382ffc51769bef614e53b8fee059cd037830f8845af45eeb",
+    "master_manifest": "source_file/display_render/masters/d26a1e2a7e0b3d643e544d9b695c3409cda84750646f45546d7701571b795fa0/manifest.json",
+    "master_manifest_sha256": "2138d25ad085fa8b338ae97c954f86d43393496f78301f9abc7b296678cedf0f"
+  },
+  "render": {
+    "pixels": 1400,
+    "samples_per_master": 256
+  },
   "artifacts": {
     "render.png": {
-      "sha256": "65ea3509f78ef7a0dd984098c1fca69d095351b1fb8acd9b991aedddac488538",
-      "bytes": 139940
+      "sha256": "395c6562317ed70718cb58466a57eb4ea27027ad42015feeccfbdbd2e209258a",
+      "bytes": 173186
     },
     "preview.webp": {
-      "sha256": "ec6784db21f3f25cac977f8eff927a5a7d2a98e2ef84c8d5bed31d625afdc242",
-      "bytes": 5314
+      "sha256": "7219c538ea7bdd23ab7f43a7eda189f170a9272ed0d2dea10872ce872671d168",
+      "bytes": 5900
     }
   }
 }

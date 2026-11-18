@@ -34,6 +34,20 @@ dimensions_mm:
   length: 6.5
   width: 2.5
 directory: parts/electronic_resistor_quarter_watt_through_hole_27_ohm
+display_render:
+  description: Selected CCO MF1/8W is rated 125 mW despite the legacy quarter-watt
+    catalogue ID. The 3.6 × 1.6 mm KiCad body approximates the selected 3.2 × 1.8
+    mm part; the existing catalogue footprint and dimensions depict a larger body.
+    Bent leads at 7.62 mm pitch and blue coating are illustrative; CCO specifies sky
+    blue. Blue body shade is illustrative. Standard five-band code; stripe spacing
+    and shades are illustrative.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with exception in source STEP header
+  marking: red / violet / black / gold / brown
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C119144
@@ -56,7 +70,7 @@ link_redirect: https://github.com/oomlout/oomp_electronic_version_5/tree/main/pa
 manufacturer: CCO(Chian Chia Elec)
 manufacturers:
 - manufacturer: CCO(Chian Chia Elec)
-  part_number: T
+  part_number: MF1/8W-27Ω±1% T
 md5: 984967d33cbd0c2558ce25231e929984
 md5_10: 984967d33c
 md5_10_upper: 984967D33C
@@ -202,6 +216,20 @@ oomlout_ai_roboclick_4:
         length: 6.5
         width: 2.5
       directory: parts\electronic_resistor_quarter_watt_through_hole_27_ohm
+      display_render:
+        description: Selected CCO MF1/8W is rated 125 mW despite the legacy quarter-watt
+          catalogue ID. The 3.6 × 1.6 mm KiCad body approximates the selected 3.2
+          × 1.8 mm part; the existing catalogue footprint and dimensions depict a
+          larger body. Bent leads at 7.62 mm pitch and blue coating are illustrative;
+          CCO specifies sky blue. Blue body shade is illustrative. Standard five-band
+          code; stripe spacing and shades are illustrative.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with exception in source STEP header
+        marking: red / violet / black / gold / brown
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C119144
@@ -217,7 +245,7 @@ oomlout_ai_roboclick_4:
       manufacturer: CCO(Chian Chia Elec)
       manufacturers:
       - manufacturer: CCO(Chian Chia Elec)
-        part_number: T
+        part_number: MF1/8W-27Ω±1% T
       name: electronic_resistor_quarter_watt_through_hole_27_ohm
       name_proper: Resistor 27 Ohm QUARTER_WATT_THROUGH_HOLE
       name_readable: Resistor 27 Ohm QUARTER_WATT_THROUGH_HOLE
@@ -342,14 +370,14 @@ oomlout_ai_roboclick_4:
         retries_until_complete: 0
       part_id: R1
       part_number_lcsc: C119144
-      part_number_manufacturer: T
+      part_number_manufacturer: MF1/8W-27Ω±1% T
       part_numbers_lcsc:
       - part_number: C119144
         product_name: Metal Film Resistor 27Ω 150V 125mW ±100ppm/℃ ±1% Through Hole,D1.8xL3.2mm
           Through Hole Resistors RoHS
       part_numbers_manufacturer:
       - manufacturer: CCO(Chian Chia Elec)
-        part_number: T
+        part_number: MF1/8W-27Ω±1% T
       part_page:
         datasheet_path: data/datasheet.pdf
         diagrams:
@@ -420,7 +448,7 @@ oomlout_ai_roboclick_4:
         identifiers:
         - title: Manufacturer part number
           url: ''
-          value: T
+          value: MF1/8W-27Ω±1% T
         - title: LCSC
           url: https://www.lcsc.com/product-detail/C119144.html
           value: C119144
@@ -460,6 +488,8 @@ oomlout_ai_roboclick_4:
       research_notes:
       - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query
         "27Ω" (9,850 in stock at capture).'
+      - '2026-11-18: restored full manufacturer number from https://item.szlcsc.com/120413.html;
+        previous value T was truncated.'
       svg_details:
       - filename_extra: assembly
         make_a4: false
@@ -665,8 +695,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml
@@ -678,14 +708,14 @@ oomlout_ai_roboclick_6:
 oomp_key: oomp_electronic_resistor_quarter_watt_through_hole_27_ohm
 part_id: R1
 part_number_lcsc: C119144
-part_number_manufacturer: T
+part_number_manufacturer: MF1/8W-27Ω±1% T
 part_numbers_lcsc:
 - part_number: C119144
   product_name: Metal Film Resistor 27Ω 150V 125mW ±100ppm/℃ ±1% Through Hole,D1.8xL3.2mm
     Through Hole Resistors RoHS
 part_numbers_manufacturer:
 - manufacturer: CCO(Chian Chia Elec)
-  part_number: T
+  part_number: MF1/8W-27Ω±1% T
 part_page:
   datasheet_path: data/datasheet.pdf
   diagrams:
@@ -756,7 +786,7 @@ part_page:
   identifiers:
   - title: Manufacturer part number
     url: ''
-    value: T
+    value: MF1/8W-27Ω±1% T
   - title: LCSC
     url: https://www.lcsc.com/product-detail/C119144.html
     value: C119144
@@ -796,6 +826,8 @@ regenerate_pngs: false
 research_notes:
 - 'LCSC stock research 2026-09 (batch): highest-stock in-stock listing for query "27Ω"
   (9,850 in stock at capture).'
+- '2026-11-18: restored full manufacturer number from https://item.szlcsc.com/120413.html;
+  previous value T was truncated.'
 svg_details:
 - filename_extra: assembly
   make_a4: false

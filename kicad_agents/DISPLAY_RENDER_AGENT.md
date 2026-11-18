@@ -1,5 +1,34 @@
 # Display models, package markings and studio renders
 
+The user has withdrawn the earlier beige-body preference. Restore the original
+blue axial-resistor render finish (`#7ca6ab`) across affected displays. Body
+colour remains illustrative when a manufacturer specifies another finish;
+retain that distinction in the page. Keep actual tolerance bands: 1% brown,
+2% red and 5% gold. Earlier evidence records preserve the historical request.
+
+The Samsung 0603 capacitor batch adapter checks individual manufacturer sheets
+and exact source records. Reusing an inspected blank capacitor image is allowed
+only for visually identical recipes and must say that the unmarked appearance
+and finish are illustrative when the exact part's marking policy is unknown.
+
+For the KYOCERA AVX TAJ tantalum pilot and the A-case batch workflow, read
+`component_records/DISPLAY_RENDER_TAJ_RESEARCH.md`. The TAJ polarity band
+marks the positive anode. Validate each exact part and its marking, and disclose
+the approximations in the KiCad model and shared-material composites.
+
+For an evidenced capacitor whose nominal thickness differs from the available
+generic KiCad model, `model.display_scale_xyz` can scale the tessellated
+display mesh. First check the original model hash and bounds, verify the exact
+selected part's dimensions against its manufacturer, and use factors derived
+from those bounds. Inspect a preview and disclose that scaled shape details,
+edge radii, colour and terminal proportions are approximate. The manifest
+records original bounds, display bounds and the factors; this is not CAD for
+manufacturing. Preserve the old renderer by hash before editing it. Example:
+the Samsung 0805 100 nF thin recipe uses `[1, 1, 0.68]` to display a 0.85 mm
+nominal height from the 1.25 mm KiCad model. Reuse a render only when its
+complete visual recipe including scale matches, with separately checked part
+identity and evidence.
+
 For a detailed execution checklist suitable for GPT-6.1 Terra, read
 [DISPLAY_RENDER_TERRA_RUNBOOK.md](DISPLAY_RENDER_TERRA_RUNBOOK.md) after this guide.
 The [ready-to-paste launch prompt](DISPLAY_RENDER_TERRA_PROMPT.md) requests up to
@@ -81,6 +110,12 @@ tmp/display_render_env/Scripts/python.exe -m pip install -r requirements-display
 
 The optional PyMuPDF package is only needed to review PDF evidence. It is not a
 rendering dependency. Install it into the same environment when needed.
+
+If the LLVM backend fails to compile a render, set `OOMP_RENDER_BACKEND=scalar`
+for that process and retain the requested resolution and sample count. Scalar is
+slower; the selected backend is recorded in the render manifest. Axial recipes
+may specify a reviewed `band_width_mm` for a larger body; omitted widths retain
+the original 0.21 mm bands. Inspect band placement and proportions on each model.
 
 ```powershell
 tmp/display_render_env/Scripts/python.exe -X utf8 -m kicad_agents.display_render electronic_resistor_0603_10000_ohm --check
@@ -314,14 +349,12 @@ the existing UNI-ROYAL marking adapters.
 
 `display_render_huaxing_axial_queue.py` validates Huaxing MF1/4W 1% parts
 against the online manufacturer specification, using five documented colour
-bands. The requested beige finish is illustrative: that specification states
-blue. Keep this distinction visible in each recipe and page.
+bands. The specification states blue; disclose illustrative shade and spacing.
 
 `display_render_cco_axial_queue.py` similarly checks the individually verified
 CCO MPNs in the `component_records/DISPLAY_RENDER_CCO_MF_IDENTITIES_*.json`
 ledgers and uses the CCO manufacturer's five-band table. Select a later ledger
-with `--evidence`. Its specified sky-blue coating
-differs from the requested illustrative beige; retain that disclosure. Do not
+with `--evidence`. Its specified coating is sky blue; disclose illustrative shade. Do not
 edit an identity ledger already hashed by published manifests.
 
 `display_render_vo_axial_queue.py` covers VO MF1/4W 1% parts using a
@@ -370,22 +403,29 @@ manufacturer suffix is not automatically corrected or rendered.
 
 ### Axial resistor colour bands
 
+The selected 100 Ω source is a 5 W cement resistor, not a standard axial
+quarter-watt part. `display_render_cco_cement_100r_queue.py` checks that
+identity and uses a white ceramic power-resistor model; the model size and
+footprint discrepancy are disclosed. Its `illustrative_literal` value-and-power
+text is a display convention, not a verified factory marking. This policy must
+always retain evidence and an explicit appearance limitation.
+
 `display_render_uniroyal_mfr0w4_queue.py` covers two selected 1% UNI-ROYAL
 MFR0W4 axial parts, using documented five-band coding and brown tolerance.
-The beige finish is illustrative; see `DISPLAY_RENDER_UNIROYAL_MFR0W4_EVIDENCE.md`.
+The blue finish is illustrative; see `DISPLAY_RENDER_UNIROYAL_MFR0W4_EVIDENCE.md`.
 
 The individually reviewed `display_render_yageo_mfr50s_queue.py`,
 `display_render_uniroyal_mf006_queue.py`, and `display_render_cco_mf1_2ws_queue.py`
 cover compact selected parts rated 500 or 600 mW in legacy quarter-watt IDs.
 Keep the rating discrepancy explicit in each page and do not infer suitability
 from its ID. `display_render_vo_mo_1m2_queue.py` illustrates a selected 5%
-metal-oxide part with a gold tolerance band; its standard band layout and beige
+metal-oxide part with a gold tolerance band; its standard band layout and blue
 coating are illustrative. Each queue checks the exact identity and rating and
 links its own evidence record. Inspect the preview and final output, then publish
 only that component.
 
 The zero-ohm Yageo axial jumper recipe uses one centered black band and a
-beige body as an explicitly illustrative convention. The selected part's
+blue body as an explicitly illustrative convention. The selected part's
 actual marking and coating remain unverified; zero-ohm jumpers have no
 resistance-tolerance band. See `DISPLAY_RENDER_YAGEO_AXIAL_JUMPER_EVIDENCE.md`.
 The direct renderer accepts a single black band only for this jumper form.
@@ -394,7 +434,7 @@ The YAGEO MFR-25 axial recipe uses five documented bands around the KiCad
 DIN0207 model. The first three bands are significant digits, the fourth is the
 multiplier, and the separated brown fifth band is 1% tolerance. The renderer
 maps the stripes along the model's X-axis and keeps them around the cylindrical
-body; the traditional beige coating, band colours and spacing are illustrative.
+body; the blue coating shade, band colours and spacing are illustrative.
 When selecting a representative axial part, prefer an evidenced 5% part with
 a gold tolerance band where it fits the catalogue record. The tolerance band
 must reflect the documented part: gold for 5%, brown for 1%; never recolour a
@@ -429,7 +469,7 @@ EIAJ-96 marking `75X`. The 2.7 Ω RTT03 E24 exception remains unrendered until
 the exact low-value marking and underline placement are independently verified.
 
 For the reviewed five-band YAGEO MFR-25 setup only,
-`kicad_agents.display_render_axial_composite` can reuse its verified beige
+`kicad_agents.display_render_axial_composite` can reuse its verified blue
 black/white material passes at 1,400 px and 256 samples. Run `render` with an
 exact reviewed part ID, the master directory and a new scratch output path;
 inspect every colour combination and validate its manifest before publishing.

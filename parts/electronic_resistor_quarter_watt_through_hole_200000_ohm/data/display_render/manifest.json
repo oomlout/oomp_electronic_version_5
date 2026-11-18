@@ -2,6 +2,7 @@
   "schema_version": 1,
   "part_id": "electronic_resistor_quarter_watt_through_hole_200000_ohm",
   "purpose": "display_only",
+  "input_fingerprint": "9c2d995ff94fe7e1d254792bcbb0c342b7767665a316403cc19f73ae264c7dd8",
   "recipe": {
     "schema_version": 1,
     "family": "axial_resistor",
@@ -50,53 +51,16 @@
         "source_record": "parts_source/electronic_resistor_quarter_watt_through_hole_200000_ohm/working.yaml",
         "rule": "Yageo 5% code for 200000 ohm: red, black, yellow, gold."
       },
-      "appearance_status": "Documented value bands; beige coating, band spacing and shades are illustrative."
+      "appearance_status": "Documented value bands; blue coating, band spacing and shades are illustrative."
     },
-    "appearance_status": "Illustrates Yageo CFR-25JB-52-200K, a 5% example; this generic entry has no selected manufacturer or tolerance. Beige KiCad body and bent-lead presentation are illustrative.",
+    "appearance_status": "Illustrates Yageo CFR-25JB-52-200K, a 5% example; this generic entry has no selected manufacturer or tolerance. Blue KiCad body and bent-lead presentation are illustrative. Blue body shade is illustrative.",
     "output": {
       "pixels": 1400,
       "samples": 256,
       "thumbnail_pixels": 512
     }
   },
-  "input_fingerprint": "74b460e97a0fa7bdba802b951f6a060e0f302bcb9cc2f1983f6ffa961454d7dd",
-  "runtime": {
-    "cadquery": "2.8.0",
-    "cadquery-ocp": "7.9.3.1.1",
-    "mitsuba": "3.7.1",
-    "drjit": "1.2.0",
-    "numpy": "2.5.5",
-    "Pillow": "13.0.0",
-    "opencv-python-headless": "5.0.0.93"
-  },
-  "recipe_sha256": "9b7af0028ff53cc793752498d53acbc3233eb3993e80274c6362ce161fd0d821",
-  "model": {
-    "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step",
-    "sha256": "46710ac36957e4073ef7e80153823ef7db1ea12932074cb71f43bc4b476a74dc",
-    "actual_bounds_mm": [
-      8.2200002,
-      2.5000002,
-      5.500000099999999
-    ],
-    "source_face_colours": {
-      "0.883,0.711,0.492": 9,
-      "0.824,0.820,0.781": 6
-    },
-    "triangle_count": 56420,
-    "source_header": "ISO-10303-21;\nHEADER;\n/* R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step 3D STEP model for use in ECAD systems\n * Copyright (C) 2017, kicad StepUp\n * \n * This work is licensed under the [Creative Commons CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), \n * with the following exception:\n * To the extent that the creation of electronic designs that use 'Licensed Material' can be considered to be 'Adapted Material', \n * then the copyright holder waives article 3 of the license with respect to these designs and any generated files which use data provided \n * as part of the 'Licensed Material'.\n * You are free to use the library data in your own projects without the obligation to share your project files under this or any other license agreement.\n * However, if you wish to redistribute these libraries, or parts thereof (including in modified form) as a collection then the exception above does not apply. \n * Please refer to https://github.com/KiCad/kicad-packages3D/blob/master/LICENSE.md for further clarification of the exception.\n * Disclaimer of Warranties and Limitation of Liability.\n * These libraries are provided in the hope that they will be useful, but are provided without warranty of any kind, express or implied.\n * *USE 3D CAD DATA AT YOUR OWN RISK*\n * *DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.*\n * \n */\n\n"
-  },
-  "marking": {
-    "text": "red / black / yellow / gold",
-    "font": {
-      "file": null,
-      "sha256": null,
-      "bitmap_size": [
-        1024,
-        512
-      ]
-    },
-    "evidence_sha256": "4e2036b200b210cabda9c641f79b899431d3a6c5e681a38d03a22d383c346a96"
-  },
+  "recipe_sha256": "4fcd27a71cf0ac80c0e162d6e3511c6c70c788bf95f72612f7de4a2218f5a81e",
   "studio": {
     "schema_version": 1,
     "reference": "https://github.com/oomlout/oomp_hardware_screw_version_5/blob/main/screw_model_render.py",
@@ -175,82 +139,58 @@
       }
     ]
   },
-  "render": {
-    "variant": "llvm_ad_rgb",
-    "seconds": 204.86,
-    "samples": 256,
-    "pixels": 1400,
-    "materials": {
-      "termination": {
-        "type": "principled",
-        "base_color": {
-          "type": "rgb",
-          "value": [
-            0.61,
-            0.65,
-            0.7
-          ]
-        },
-        "metallic": 1.0,
-        "roughness": 0.24,
-        "anisotropic": 0.22
-      },
-      "ceramic": {
-        "type": "roughplastic",
-        "diffuse_reflectance": {
-          "type": "rgb",
-          "value": [
-            0.53,
-            0.5,
-            0.43
-          ]
-        },
-        "alpha": 0.3,
-        "int_ior": 1.52
-      },
-      "pin_indicator": {
-        "type": "roughplastic",
-        "diffuse_reflectance": {
-          "type": "rgb",
-          "value": [
-            0.48,
-            0.47,
-            0.44
-          ]
-        },
-        "alpha": 0.4,
-        "int_ior": 1.48
-      },
-      "coating": {
-        "type": "roughplastic",
-        "diffuse_reflectance": {
-          "type": "bitmap",
-          "filename": "axial_bands.png",
-          "raw": false,
-          "wrap_mode": "clamp"
-        },
-        "alpha": 0.25,
-        "int_ior": 1.52
-      }
-    },
-    "normalized_unit_mm": 8.2200002,
-    "tone_mapping": "ACES fitted curve then sRGB; not Blender AgX",
-    "nonfinite_pixels_repaired": 0,
-    "bump_disabled_roles": [],
-    "denoising": {
-      "method": "OpenCV non-local means",
-      "strength": 3.0
-    }
+  "runtime": {
+    "cadquery": "2.8.0",
+    "cadquery-ocp": "7.9.3.1.1",
+    "mitsuba": "3.7.1",
+    "drjit": "1.2.0",
+    "numpy": "2.5.5",
+    "Pillow": "13.0.0",
+    "opencv-python-headless": "5.0.0.93"
   },
-  "renderer_source_sha256": "d665b48b3036f5fe37e59ddf31eff72b57a58adb8e2feb7c840c67b56862bd00",
+  "model": {
+    "relative_path": "Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step",
+    "sha256": "46710ac36957e4073ef7e80153823ef7db1ea12932074cb71f43bc4b476a74dc",
+    "actual_bounds_mm": [
+      8.2200002,
+      2.5000002,
+      5.500000099999999
+    ],
+    "source_face_colours": {
+      "0.883,0.711,0.492": 9,
+      "0.824,0.820,0.781": 6
+    },
+    "triangle_count": 56420,
+    "source_header": "ISO-10303-21;\nHEADER;\n/* R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step 3D STEP model for use in ECAD systems\n * Copyright (C) 2017, kicad StepUp\n * \n * This work is licensed under the [Creative Commons CC-BY-SA 4.0 License](https://creativecommons.org/licenses/by-sa/4.0/legalcode), \n * with the following exception:\n * To the extent that the creation of electronic designs that use 'Licensed Material' can be considered to be 'Adapted Material', \n * then the copyright holder waives article 3 of the license with respect to these designs and any generated files which use data provided \n * as part of the 'Licensed Material'.\n * You are free to use the library data in your own projects without the obligation to share your project files under this or any other license agreement.\n * However, if you wish to redistribute these libraries, or parts thereof (including in modified form) as a collection then the exception above does not apply. \n * Please refer to https://github.com/KiCad/kicad-packages3D/blob/master/LICENSE.md for further clarification of the exception.\n * Disclaimer of Warranties and Limitation of Liability.\n * These libraries are provided in the hope that they will be useful, but are provided without warranty of any kind, express or implied.\n * *USE 3D CAD DATA AT YOUR OWN RISK*\n * *DO NOT RELY UPON ANY INFORMATION FOUND HERE WITHOUT INDEPENDENT VERIFICATION.*\n * \n */\n\n"
+  },
+  "marking": {
+    "text": "red / black / yellow / gold",
+    "font": {
+      "file": null,
+      "sha256": null
+    },
+    "evidence_sha256": "4e2036b200b210cabda9c641f79b899431d3a6c5e681a38d03a22d383c346a96"
+  },
+  "renderer_source_sha256": "fe5c01eeacff85e6105271d566f60ecf4f2f1a14a7a7cbe1cf27bb0ac0420ec6",
+  "composite": {
+    "method": "linear-light interpolation of shared axial band material passes",
+    "limitation": "Approximate indirect reflections and colour interactions; bands not independently path traced.",
+    "compositor_source_sha256": "3be71e6f729e29d2382ffc51769bef614e53b8fee059cd037830f8845af45eeb",
+    "master_manifest": "source_file/display_render/masters/d26a1e2a7e0b3d643e544d9b695c3409cda84750646f45546d7701571b795fa0/manifest.json",
+    "master_manifest_sha256": "2138d25ad085fa8b338ae97c954f86d43393496f78301f9abc7b296678cedf0f"
+  },
+  "render": {
+    "pixels": 1400,
+    "samples_per_master": 256
+  },
   "artifacts": {
     "render.png": {
-      "sha256": "5df4f89a055466e238203928d0b445b024fa4e17cdd6b37e855bba2fa70e85b8",
-      "bytes": 141802
+      "sha256": "391f5fa882ee21d7d3a386a28ebc8e537ff3f30484cd94dfeddcc14839e7a982",
+      "bytes": 172603
     },
     "preview.webp": {
-      "sha256": "f4e02cf92f541297be2e2db813e3e6536a525731df51e01568ad6e24380b4947",
-      "bytes": 5240
+      "sha256": "4aa1fabf95e86805bf056b41851c956481d995a57af6dd08d68a9941da1f6f48",
+      "bytes": 5974
     }
   }
 }

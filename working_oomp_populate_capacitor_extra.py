@@ -10209,7 +10209,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7173 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "100 nF",
@@ -10249,7 +10249,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7174 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "1 uF",
@@ -10289,7 +10289,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7175 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "1 uF",
@@ -10329,7 +10329,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7176 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "1 uF",
@@ -10369,7 +10369,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7177 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "10 uF",
@@ -10409,7 +10409,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7179 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "1.5 uF",
@@ -10449,7 +10449,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7180 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "2.2 uF",
@@ -10489,7 +10489,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7181 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "2.2 uF",
@@ -10529,7 +10529,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7182 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "22 uF",
@@ -10569,7 +10569,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7183 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "22 uF",
@@ -10609,7 +10609,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7184 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "3.3 uF",
@@ -10649,7 +10649,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7185 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "33 uF",
@@ -10689,7 +10689,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7186 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "33 uF",
@@ -10729,7 +10729,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7187 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "4.7 uF",
@@ -10769,7 +10769,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7188 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "4.7 uF",
@@ -10809,7 +10809,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7189 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "4.7 uF",
@@ -10849,7 +10849,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7190 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "47 uF",
@@ -10889,7 +10889,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7191 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "6.8 uF",
@@ -10929,7 +10929,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7192 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "1 uF",
@@ -10969,7 +10969,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7193 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "10 uF",
@@ -11009,7 +11009,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7194 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "10 uF",
@@ -11049,7 +11049,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7195 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "100 uF",
@@ -11089,7 +11089,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7196 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "100 uF",
@@ -11129,7 +11129,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7198 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "22 uF",
@@ -11169,7 +11169,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7199 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "22 uF",
@@ -11209,7 +11209,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7200 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "220 uF",
@@ -11249,7 +11249,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7201 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "3.3 uF",
@@ -11289,7 +11289,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7202 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "33 uF",
@@ -11329,7 +11329,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7203 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "33 uF",
@@ -11369,7 +11369,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7204 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "4.7 uF",
@@ -11409,7 +11409,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7205 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "4.7 uF",
@@ -11449,7 +11449,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7206 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "4.7 uF",
@@ -11489,7 +11489,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7207 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "47 uF",
@@ -11529,7 +11529,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7208 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case B (3528-21), 3.5 x 2.8 x 2.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "47 uF",
@@ -11569,7 +11569,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7209 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "10 uF",
@@ -11609,7 +11609,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7210 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "10 uF",
@@ -11649,7 +11649,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7211 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "10 uF",
@@ -11689,7 +11689,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7214 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "22 uF",
@@ -11729,7 +11729,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7216 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "220 uF",
@@ -11769,7 +11769,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7217 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "33 uF",
@@ -11809,7 +11809,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7219 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "47 uF",
@@ -11849,7 +11849,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7220 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case C (6032-28), 6.0 x 3.2 x 2.8 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "68 uF",
@@ -11889,7 +11889,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7221 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "10 uF",
@@ -11929,7 +11929,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7222 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "100 uF",
@@ -11969,7 +11969,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7223 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "100 uF",
@@ -12009,7 +12009,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7224 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "100 uF",
@@ -12049,7 +12049,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7225 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "22 uF",
@@ -12089,7 +12089,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7226 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "330 uF",
@@ -12129,7 +12129,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7227 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "47 uF",
@@ -12169,7 +12169,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7228 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "47 uF",
@@ -12209,7 +12209,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7229 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case D (7343-31), 7.3 x 4.3 x 3.1 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "470 uF",
@@ -12249,7 +12249,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7230 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "100 uF",
@@ -12289,7 +12289,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7231 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "220 uF",
@@ -12329,7 +12329,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7232 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "330 uF",
@@ -12369,7 +12369,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7233 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "47 uF",
@@ -12409,7 +12409,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7234 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "470 uF",
@@ -12449,7 +12449,7 @@ def main(**kwargs):
         part["dimension_reference"] = {
             "document": "KYOCERA AVX TAJ series datasheet (C7235 provenance)",
             "pages": [1, 2],
-            "notes": "Kyocera AVX TAJ case R (2012-12), 2.0 x 1.25 x 1.2 mm; polarity stripe/minus band marks the negative terminal per the datasheet outline drawing.",
+            "notes": "Kyocera AVX TAJ case R (2012-12), 2.0 x 1.25 x 1.2 mm; polarity band marks the positive anode per the manufacturer datasheet.",
         }
         part["electrical"] = {
             "capacitance": "10 uF",

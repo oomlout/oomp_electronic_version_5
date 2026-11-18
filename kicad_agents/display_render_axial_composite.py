@@ -1,6 +1,6 @@
 """Reuse reviewed black/white path-traced passes for axial colour bands.
 
-The five visible stripe masks are derived from the two calibration images.
+The visible stripe masks are derived from the two calibration images.
 Band colours are interpolated in linear light; indirect reflections and colour
 interactions are approximate and are disclosed in every output manifest.
 """
@@ -17,6 +17,10 @@ from working_oomp_populate_display_render import renderer_source_available
 ROOT = renderer.ROOT
 MASTERS = ROOT / 'source_file/display_render/masters'
 MODEL_HASH = '46710ac36957e4073ef7e80153823ef7db1ea12932074cb71f43bc4b476a74dc'
+REVIEWED_LAYOUTS = {
+    'din0207_horizontal_7_62mm': (MODEL_HASH, [.66, 6.96], .21),
+    'din0516_horizontal_20_32mm': ('5d41e37d6dfee8d32447412d8ae01e8d1208a75fcda370392e1b311eb5a8f25b', [2.41, 17.91], .52),
+}
 PALETTE = {'black': '111315', 'brown': '633627', 'red': 'c32827', 'orange': 'ed791d',
            'yellow': 'e9cc35', 'green': '2a7c49', 'blue': '285ba6', 'violet': '814889',
            'grey': '596163', 'white': 'e5e4d9', 'gold': 'b89549', 'silver': 'b5b9bc'}
@@ -26,9 +30,11 @@ def recipe_for(part_id):
     recipes = json.loads(renderer.RECIPES.read_text(encoding='utf-8'))
     recipe = recipes[part_id]
     marking = recipe['marking']
-    if (recipe.get('family') != 'axial_resistor' or recipe.get('package') != 'din0207_horizontal_7_62mm'
-        or recipe['model'].get('sha256') != MODEL_HASH or marking.get('body_span_mm') != [.66, 6.96]
-        or not isinstance(marking.get('bands'), list) or len(marking['bands']) != 5
+    layout = REVIEWED_LAYOUTS.get(recipe.get('package'))
+    if (recipe.get('family') != 'axial_resistor' or not layout
+        or recipe['model'].get('sha256') != layout[0] or marking.get('body_span_mm') != layout[1]
+        or not isinstance(marking.get('bands'), list) or len(marking['bands']) not in (4, 5)
+        or marking.get('band_width_mm', .21) != layout[2]
         or any(band not in PALETTE for band in marking['bands'])
         or marking.get('text') != ' / '.join(marking['bands'])
         or recipe.get('disable_bump_for') or recipe.get('output', {}).get('pixels') != 1400
@@ -60,11 +66,12 @@ def prepare_master(calibration, part_id):
         base = m.get('recipe', {})
         mark = base.get('marking', {})
         if (m.get('part_id') != part_id or m.get('purpose') != 'display_only'
-            or m.get('studio') != studio or m.get('model', {}).get('sha256') != MODEL_HASH
+            or m.get('studio') != studio or m.get('model', {}).get('sha256') != recipe['model']['sha256']
             or m.get('render', {}).get('pixels') != 1400 or m.get('render', {}).get('samples') != 256
             or m.get('render', {}).get('nonfinite_pixels_repaired') != 0
             or not renderer_source_available(m.get('renderer_source_sha256'))
-            or mark.get('bands') != [name] * 5 or mark.get('text') != ' / '.join([name] * 5)
+            or mark.get('bands') != [name] * len(recipe['marking']['bands'])
+            or mark.get('text') != ' / '.join([name] * len(recipe['marking']['bands']))
             or not _check_files(folder, m.get('artifacts', {}), {'render.png', 'preview.webp'})):
             raise ValueError(f'Unverified {name} calibration pass')
         normalized = json.loads(json.dumps(base))
@@ -90,21 +97,21 @@ def prepare_master(calibration, part_id):
     artifacts = {name: {'sha256': _hash(folder/name), 'bytes': (folder/name).stat().st_size}
                  for name in ('body.png', 'ink.png')}
     master = {'inputs': inputs, 'model': references['black']['model'], 'artifacts': artifacts,
-              'method': 'black and white synthetic five-band calibration renders',
+              'method': f'black and white synthetic {len(recipe["marking"]["bands"])}-band calibration renders',
               'reference_manifests': references}
     (folder/'manifest.json').write_text(json.dumps(master, indent=2) + '\n', encoding='utf-8')
     print('Saved verified axial material passes:', folder)
     return folder
 
 
-def band_masks(black, white):
+def band_masks(black, white, expected_count=5):
     import cv2
     import numpy as np
     difference = np.mean(np.abs(white.astype('float32') - black.astype('float32')), axis=2)
     count, labels, stats, centroids = cv2.connectedComponentsWithStats((difference > 10).astype('uint8'), 8)
-    selected = sorted(range(1, count), key=lambda i: stats[i, 4], reverse=True)[:5]
-    if len(selected) != 5 or any(stats[i, 4] < 4000 for i in selected):
-        raise ValueError('Calibration did not produce five substantial band regions')
+    selected = sorted(range(1, count), key=lambda i: stats[i, 4], reverse=True)[:expected_count]
+    if len(selected) != expected_count or any(stats[i, 4] < 4000 for i in selected):
+        raise ValueError('Calibration did not produce the expected substantial band regions')
     selected.sort(key=lambda i: centroids[i, 0])
     if any(centroids[b, 0] - centroids[a, 0] < 30 for a, b in zip(selected, selected[1:])):
         raise ValueError('Band regions are not separated in the reviewed view')
@@ -120,7 +127,7 @@ def compose(black, white, colours):
     def linear(hex_colour):
         values = np.array([int(hex_colour[i:i+2], 16)/255 for i in (0, 2, 4)], dtype='float32')
         return np.where(values <= .04045, values/12.92, ((values+.055)/1.055)**2.4)
-    masks = band_masks(black, white)
+    masks = band_masks(black, white, len(colours))
     lo, hi = linear(PALETTE['black']), linear(PALETTE['white'])
     a, b = inverse_tone(black.astype('float32')/255), inverse_tone(white.astype('float32')/255)
     output = a.copy()
@@ -139,8 +146,13 @@ def render(part_id, master, output=None):
     master_file = (Path(master) / 'manifest.json').resolve()
     master_data = json.loads(master_file.read_text(encoding='utf-8'))
     inputs = master_data['inputs']
+    calibration_mark = master_data.get('reference_manifests', {}).get('black', {}).get('recipe', {}).get('marking', {})
+    calibrated_bands = calibration_mark.get('bands', [])
     if (not master_file.resolve().is_relative_to(MASTERS.resolve()) or inputs['model'] != recipe['model']
         or inputs['family'] != recipe['family'] or inputs['studio'] != studio
+        or calibrated_bands != ['black'] * len(recipe['marking']['bands'])
+        or calibration_mark.get('body_span_mm') != recipe['marking']['body_span_mm']
+        or calibration_mark.get('band_width_mm', .21) != recipe['marking'].get('band_width_mm', .21)
         or inputs['builder_sha256'] != _hash(Path(__file__)) or inputs['pixels'] != 1400 or inputs['samples'] != 256
         or not renderer_source_available(inputs['renderer_sha256'])
         or not _check_files(master_file.parent, master_data['artifacts'], {'body.png', 'ink.png'})):

@@ -3,8 +3,8 @@ category_name: Capacitor
 datasheet_url: https://datasheets.kyocera-avx.com/TAJ.pdf
 dimension_reference:
   document: KYOCERA AVX TAJ series datasheet (C7180 provenance)
-  notes: Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity stripe/minus
-    band marks the negative terminal per the datasheet outline drawing.
+  notes: Kyocera AVX TAJ case A (3216-18), 3.2 x 1.6 x 1.8 mm; polarity band marks
+    the positive anode per the manufacturer datasheet.
   pages:
   - 1
   - 2
@@ -12,6 +12,21 @@ dimensions_mm:
   height: 1.8
   length: 3.2
   width: 1.6
+display_render:
+  description: Generic KiCad Kemet A-case model scaled to the TAJ nominal height;
+    yellow body, polarity stripe, shape and metal finish are illustrative. Stripe
+    indicates the positive anode. Marking is composited from shared material passes;
+    indirect reflections are approximate. Capacitance and voltage marking are illustrative;
+    actual ink, manufacturer logo, lot code and any higher-rated substitute may differ.
+    Marking composited in linear light from shared path-traced material passes; indirect
+    reflections are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: 225 C
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-3216-18_Kemet-A.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C7180

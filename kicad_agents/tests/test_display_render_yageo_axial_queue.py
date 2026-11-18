@@ -45,7 +45,7 @@ def test_texture_bands_span_the_whole_body_circumference(tmp_path):
     image = Image.open(tmp_path / 'axial_bands.png').convert('RGB')
     assert all(image.getpixel((x, 0)) == image.getpixel((x, image.height-1)) for x in range(image.width))
     assert len(image.getcolors(maxcolors=2048 * 32)) >= 4
-    assert image.getpixel((0, 0)) == (213, 194, 154)  # Traditional beige coating.
+    assert image.getpixel((0, 0)) == (124, 166, 171)  # Original blue coating.
     with pytest.raises(ValueError):
         create_axial_band_texture({'bands': ['red'], 'body_span_mm': [.66, 6.96]},
                                   [-.3, -1.25, -3], [7.92, 1.25, 2.5], tmp_path)
@@ -62,4 +62,4 @@ def test_four_band_texture_has_gold_tolerance(tmp_path):
         return image.getpixel((x, 0))
     assert [pixel_at(f) for f in (.18, .33, .48, .78)] == [
         (40, 91, 166), (89, 97, 99), (195, 40, 39), (184, 149, 73)]
-    assert pixel_at(.63) == (213, 194, 154)
+    assert pixel_at(.63) == (124, 166, 171)

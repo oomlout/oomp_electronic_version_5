@@ -104,6 +104,25 @@ def load_coloured_step(path, model):
     return groups, lower, upper, dict(colour_counts)
 
 
+def scale_display_geometry(groups, lower, upper, factors):
+    """Scale display-only mesh about its lower bound; transform normals correctly."""
+    import numpy as np
+    scale = np.asarray(factors, dtype=float)
+    if scale.shape != (3,) or not np.all(np.isfinite(scale)) or np.any(scale <= 0):
+        raise ValueError('Display scale must contain three finite positive factors')
+    lower = np.asarray(lower, dtype=float)
+    upper = np.asarray(upper, dtype=float)
+    for group in groups.values():
+        vertices = np.asarray(group['vertices'], dtype=float)
+        normals = np.asarray(group['normals'], dtype=float) / scale
+        lengths = np.linalg.norm(normals, axis=1)
+        if np.any(~np.isfinite(lengths)) or np.any(lengths <= 0):
+            raise ValueError('Cannot transform invalid mesh normals')
+        group['vertices'] = (lower + (vertices - lower) * scale).tolist()
+        group['normals'] = (normals / lengths[:, None]).tolist()
+    return lower, lower + (upper - lower) * scale
+
+
 def find_font(filename):
     configured = os.environ.get('OOMP_MARKING_FONT')
     candidates = [Path(configured)] if configured else [
@@ -176,7 +195,14 @@ def create_textures(marking, text, bounds_mm, folder):
                 raise ValueError('Marking exceeds the reviewed central coating area')
             scale = min(max_width / glyph.width, max_height / glyph.height)
             glyph = glyph.resize((round(glyph.width * scale), round(glyph.height * scale)), Image.Resampling.LANCZOS)
-        mask.paste(glyph, ((width - glyph.width) // 2, (height - glyph.height) // 2))
+        offset = marking.get('offset_x_mm', 0)
+        if isinstance(offset, bool) or not isinstance(offset, (int, float)) or not math.isfinite(offset):
+            raise ValueError('Marking offset must be a finite number of millimetres')
+        x = (width - glyph.width) // 2 + round(offset * width / bounds_mm[0])
+        y = (height - glyph.height) // 2
+        if x < 0 or x + glyph.width > width or y < 0 or y + glyph.height > height:
+            raise ValueError('Marking offset places text outside the package')
+        mask.paste(glyph, (x, y))
     mask.save(folder / 'marking.png')
     rng = np.random.default_rng(19)
     noise = np.clip(rng.normal(127, 25, (512, 1024)), 0, 255).astype('uint8')
@@ -198,12 +224,15 @@ def create_axial_band_texture(marking, lower, upper, folder):
     body = marking.get('body_span_mm')
     if (not isinstance(body, list) or len(body) != 2 or not lower[0] < body[0] < body[1] < upper[0]):
         raise ValueError('Axial body span is not within reviewed model bounds')
-    image = Image.new('RGB', (2048, 32), '#d5c29a')
+    width = marking.get('band_width_mm', .21)
+    if isinstance(width, bool) or not isinstance(width, (int, float)) or not 0 < width <= (body[1] - body[0]) * .1:
+        raise ValueError('Invalid axial band width')
+    image = Image.new('RGB', (2048, 32), '#7ca6ab')
     draw = ImageDraw.Draw(image)
     centres = {1: (.50,), 4: (.18, .33, .48, .78), 5: (.18, .30, .42, .54, .78)}[len(bands)]
     for colour, position in zip(bands, centres):
         centre = body[0] + position * (body[1] - body[0])
-        half_width = .105
+        half_width = width / 2
         x0 = round((centre - half_width - lower[0]) * image.width / (upper[0] - lower[0]))
         x1 = round((centre + half_width - lower[0]) * image.width / (upper[0] - lower[0]))
         draw.rectangle((x0, 0, x1, image.height - 1), fill=palette[colour])
@@ -260,7 +289,10 @@ def render_scene(groups, lower, upper, recipe, studio, scratch, pixels, samples)
     import mitsuba as mi
     import drjit as dr
     # The scalar backend is a portable multithreaded fallback when LLVM is absent.
-    variant = 'llvm_ad_rgb' if dr.has_backend(dr.JitBackend.LLVM) else 'scalar_rgb'
+    backend = os.environ.get('OOMP_RENDER_BACKEND', 'auto')
+    if backend not in ('auto', 'scalar'):
+        raise ValueError('OOMP_RENDER_BACKEND must be auto or scalar')
+    variant = 'llvm_ad_rgb' if backend == 'auto' and dr.has_backend(dr.JitBackend.LLVM) else 'scalar_rgb'
     mi.set_variant(variant)
     T = mi.ScalarTransform4f
     rgb = lambda value: {'type': 'rgb', 'value': value}
@@ -283,6 +315,20 @@ def render_scene(groups, lower, upper, recipe, studio, scratch, pixels, samples)
             'diffuse_reflectance': {'type': 'bitmap', 'filename': str(scratch / 'axial_bands.png'),
                                     'raw': False, 'wrap_mode': 'clamp'},
             'alpha': .25, 'int_ior': 1.52}
+    if recipe.get('family') == 'cement_power_resistor':
+        materials['coating'] = {'type': 'blendbsdf', 'weight': bitmap('marking.png'),
+            'body': {'type': 'roughplastic', 'diffuse_reflectance': rgb([.72, .71, .67]),
+                     'alpha': .40, 'int_ior': 1.48},
+            'ink': {'type': 'roughplastic', 'diffuse_reflectance': rgb([.025, .025, .022]),
+                    'alpha': .45, 'int_ior': 1.48}}
+    if recipe.get('family') == 'tantalum_capacitor':
+        materials['coating'] = {'type': 'blendbsdf', 'weight': bitmap('marking.png'),
+            'body': {'type': 'roughplastic', 'diffuse_reflectance': rgb([.72, .45, .055]),
+                     'alpha': .30, 'int_ior': 1.48},
+            'ink': {'type': 'roughplastic', 'diffuse_reflectance': rgb([.055, .037, .025]),
+                    'alpha': .40, 'int_ior': 1.48}}
+        materials['pin_indicator'] = {'type': 'roughplastic',
+            'diffuse_reflectance': rgb([.53, .14, .055]), 'alpha': .35, 'int_ior': 1.48}
     scale = write_meshes(groups, lower, upper, scratch)
     height = float((upper[2] - lower[2]) / scale)
     target = np.array([0., 0., height * .48])
@@ -384,6 +430,9 @@ def generate(part_id, *, model_root=None, output=None, pixels=None, samples=None
             print(f'Reused verified render cache: {destination}', flush=True)
             return
     groups, lower, upper, colour_counts = load_coloured_step(model_path, recipe['model'])
+    source_bounds = (upper - lower).tolist()
+    if 'display_scale_xyz' in recipe['model']:
+        lower, upper = scale_display_geometry(groups, lower, upper, recipe['model']['display_scale_xyz'])
     print(f'{part_id}: {text!r}; bounds {(upper-lower).tolist()} mm; {sum(len(g["triangles"]) for g in groups.values())} triangles', flush=True)
     if check:
         return
@@ -414,6 +463,9 @@ def generate(part_id, *, model_root=None, output=None, pixels=None, samples=None
         'artifacts': {name: {'sha256': digest(destination/name), 'bytes': (destination/name).stat().st_size}
                       for name in ['render.png', 'preview.webp']},
     }
+    if 'display_scale_xyz' in recipe['model']:
+        manifest['model']['source_bounds_mm'] = source_bounds
+        manifest['model']['display_scale_xyz'] = recipe['model']['display_scale_xyz']
     (destination / 'manifest.json').write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf-8')
     print(f'Rendered {destination} ({settings["seconds"]} seconds)', flush=True)
 

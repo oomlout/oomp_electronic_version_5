@@ -7,7 +7,7 @@ Resistor 15 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 ![Resistor 15 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Beige coating is the requested illustrative finish; the CCO specification states sky blue. Documented five-band code; stripe spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Blue coating is the requested illustrative finish; the CCO specification states sky blue. Blue body shade is illustrative. Documented five-band code; stripe spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
 

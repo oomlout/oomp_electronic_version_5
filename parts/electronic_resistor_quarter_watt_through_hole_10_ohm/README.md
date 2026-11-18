@@ -5,7 +5,13 @@
 Resistor 10 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definition. It uses the quarter watt through hole package or form factor. Its nominal drawing size is 6.5 &#x00D7; 2.5 mm.
 
 
-![Resistor 10 Ohm QUARTER_WATT_THROUGH_HOLE pinout](data/working_svg_square_pins.svg)
+![Resistor 10 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
+
+Selected Huaxing wirewound part is rated 2 W, despite the legacy quarter-watt catalogue ID. The 15.5 &#x00D7; 5 mm KiCad body matches its listed dimensions; formed leads are 20.32 mm apart. The existing catalogue footprint and dimensions describe a much smaller part and need review. Blue coating is illustrative. Blue body shade is illustrative. Blue body shade is illustrative. Standard four-band code; the selected part&#x2019;s exact band count, order and spacing are unverified. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0516_L15.5mm_D5.0mm_P20.32mm_Horizontal.step)
+
+Model credit: 2017 kicad StepUp. CC-BY-SA-4.0 with exception in source STEP header.
 
 
 
@@ -75,6 +81,7 @@ Resistor 10 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -107,6 +114,7 @@ Resistor 10 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor definit
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_resistor_quarter_watt_through_hole_10_ohm.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

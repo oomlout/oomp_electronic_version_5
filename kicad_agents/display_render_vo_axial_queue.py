@@ -50,7 +50,7 @@ def reviewed_recipe(part, record, recipes, evidence_hash):
                   'source_record': f'parts_source/{part}/working.yaml'},
         appearance_status='Standard five-band representation; the actual VO band count, spacing and shades are not verified.')
     recipe['appearance_status'] = ('Generic KiCad axial geometry with bent leads at 7.62 mm pitch. '
-        'Traditional beige finish and the standard five-band layout are illustrative.')
+        'Blue finish and the standard five-band layout are illustrative.')
     return recipe
 
 

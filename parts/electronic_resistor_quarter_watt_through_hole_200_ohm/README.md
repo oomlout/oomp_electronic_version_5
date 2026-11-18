@@ -7,7 +7,7 @@ Resistor 200 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor defini
 
 ![Resistor 200 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Traditional beige finish and the standard five-band layout are illustrative. Standard five-band representation; the actual VO band count, spacing and shades are not verified. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+Generic KiCad axial geometry with bent leads at 7.62 mm pitch. Blue finish and the standard five-band layout are illustrative. Blue body shade is illustrative. Standard five-band representation; the actual VO band count, spacing and shades are not verified. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
 

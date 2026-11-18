@@ -7,7 +7,7 @@ Resistor 133000 Ohm QUARTER_WATT_THROUGH_HOLE is an OOMP electronic resistor def
 
 ![Resistor 133000 Ohm QUARTER_WATT_THROUGH_HOLE studio render](data/display_render/render.png)
 
-Generic KiCad axial package with bent leads at the selected 7.62 mm footprint pitch; body dimensions are within the manufacturer tolerance. The five-band value code is documented; traditional beige coating, stripe spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+Generic KiCad axial package with bent leads at the selected 7.62 mm footprint pitch; body dimensions are within the manufacturer tolerance. Blue body shade is illustrative. The five-band value code is documented; blue coating, stripe spacing and shades are illustrative. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
 
 [Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.step)
 
