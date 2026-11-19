@@ -1,0 +1,5 @@
+# Nexperia 74HC244D,653 SO20W display pilot evidence
+
+Reviewed 2026-11-19. [Nexperia product table](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/buffers/serie/74hc244-74hct244) lists `74HC244D` marking and SOT163-1 package for exact orderable `74HC244D,653`. The [SOT163-1 package drawing](https://assets.nexperia.com/documents/package-information/SOT163-1.pdf) specifies body 12.6–13.0 × 7.4–7.6 mm, 1.27 mm lead pitch and 2.65 mm maximum seated height. Local record is 12.8 × 7.5 × 2.65 mm.
+
+KiCad SOIC-20W STEP SHA-256 `59a10b341e6972b31d81802a048060326da627d8b92dcf4263064f4f62ec808e` measures 10.3 × 12.8 × 2.75 mm overall, including leads. To avoid exceeding the manufacturer's maximum, display mesh alone is scaled vertically about its seating plane by 2.65/2.75; horizontal geometry remains unchanged. This correction is an approximation, not an exact manufacturer model. Material regions retain KiCad body, lead and pin-one colors. The typeface, position, date/lot codes and logo are illustrative; no full real-world marking pattern is asserted. Source model and correction are disclosed in the recipe and display metadata.

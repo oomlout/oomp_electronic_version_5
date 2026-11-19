@@ -1,0 +1,5 @@
+# TI SN74HC4040DR package conflict
+
+Reviewed 2026-11-19. The local `electronic_ic_logic_12_stage_binary_ripple_counter_soic_16_208mil_texas_instruments_sn74hc4040dr` record identifies `SN74HC4040DR` while specifying `SSOP-16_5.3x6.2mm_P0.65mm` and 6.2 × 5.3 × 1.98 mm. TI [orderable-part addendum](https://www.ti.com/ods/sysadd/oa/symlink/sn74hc4040_oa.pdf) identifies `SN74HC4040DR` as SOIC (D) 16; the SSOP orderable is `SN74HC4040DBR`. No display recipe staged. Reconcile source identity and package before choosing a model; do not silently correct the record.
+
+Further checks 2026-11-19: TI product page https://www.ti.com/product/UC3854/part-details/UC3854DWTR specifies SOIC (DW), while the source record lists 9.9 x 3.9 mm body; investigate the correct DW dimensions before choosing a model. TI https://www.ti.com/lit/ds/symlink/sn65lvds32.pdf lists SN65LVDS32DR as a receiver marked LVDS32, but the local record describes a line driver; reconcile that functional identity before rendering. DS90LV032ATMX/NOPB has a manufacturer-listed two-line marking (DS90LV032A / TM) requiring a reviewed multiline layout, not an invented single-line equivalent.
