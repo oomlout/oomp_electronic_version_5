@@ -1,0 +1,3 @@
+# Nexperia 74HC595PW,118 TSSOP16 pilot evidence
+
+Reviewed 2026-11-19. [Nexperia product table](https://www.nexperia.com/products/analog-logic-ics/logic/flip-flops-latches-registers-counters-dividers/shift-registers/serie/74hc595-74hct595/) lists exact orderable 74HC595PW,118, marking HC595 and TSSOP16 SOT403-1. The [2023 SOT403-1 drawing](https://assets.nexperia.com/documents/package-information/SOT403-1.pdf) gives 4.9–5.1 × 4.3–4.5 mm body, 0.65 mm pitch and 1.2 mm maximum seated height. The source catalogue lists 1.1 mm; the KiCad model measures 1.1 mm, while the current drawing allows up to 1.2 mm. Typeface, placement and variable manufacturing identifiers are illustrative. The KiCad model is a generic display representation, not a verified footprint.

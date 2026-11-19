@@ -1,0 +1,3 @@
+# TI TPS76333DBVR SOT-23-5 pilot
+
+Reviewed 2026-11-19. [TI TPS763 datasheet](https://www.ti.com/lit/gpn/tps763) lists exact orderable TPS76333DBVR with device marking PBEI, SOT-23-5 package DBV. Its DBV0005A drawing gives 2.75–3.05 × 1.45–1.75 mm body, 0.95 mm pitch and 1.45 mm maximum seated height. Source record has 2.9 × 1.6 mm body dimensions but no height. Installed KiCad SOT-23-5 STEP is 2.8 × 2.9 × 1.55 mm including leads; its height exceeds the TI maximum, so the display model is vertically scaled to 1.45 mm as an approximation. This is display-only, not a verified mechanical or PCB model. Typeface, orientation, placement, logo and variable production fields are illustrative or omitted.

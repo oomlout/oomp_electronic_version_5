@@ -1,0 +1,8 @@
+# Additional TI SOT-23-5 display candidates
+
+Research only, 2026-11-19. Do not stage until the TI SOT-23-5 pilot shared-pass comparison has passed. Verify the exact local source record and footprint and reuse the pilot's explicit 1.55-to-1.45 mm display-only correction only where TI DBV0005A applies.
+
+- `electronic_ic_power_management_shunt_regulator_sot_23_5_texas_instruments_tlv431bidbvr`: TI's [TLV431 package addendum](https://www.ti.com/ods/sysadd/oa/symlink/tlv431_oa.pdf) lists exact TLV431BIDBVR as five-pin DBV with alternative marks `Y3FJ` and `Y3FU`. Show one example and explicitly disclose the other. Check [datasheet](https://www.ti.com/lit/ds/slvs139u/slvs139u.pdf) DBV drawing and source dimensions before staging.
+- `electronic_ic_power_management_boost_converter_sot_23_5_texas_instruments_tps613222a`: the local record lacks exact manufacturer/MPN; TI's [package addendum](https://www.ti.com/ods/sysadd/oa/symlink/tps61322_oa.pdf) lists TPS613222ADBVR five-pin DBV, marking `1N5L`. If identity/package checks agree, label the image explicitly as a TI TPS613222ADBVR manufacturer example, not a claim that the unspecified source is that exact orderable. Verify DBV drawing and height in the [datasheet](https://www.ti.com/lit/ds/symlink/tps61322.pdf).
+
+Follow-up verification: both linked individual TI datasheets include DBV0005A with 1.45 mm maximum seated height and 2.75–3.05 × 1.45–1.75 mm body. Local records have SOT-23-5 footprints and 2.9 × 1.6 mm dimensions; shunt record states TI/TLV431BIDBVR, boost record omits manufacturer/MPN. Confirmed 2026-11-19. Typography and variable lot/date details are illustrative.

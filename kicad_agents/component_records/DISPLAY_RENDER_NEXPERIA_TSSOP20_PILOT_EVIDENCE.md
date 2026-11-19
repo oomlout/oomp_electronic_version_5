@@ -1,0 +1,5 @@
+# Nexperia 74HC244PW,118 TSSOP-20 pilot evidence
+
+Reviewed 2026-11-19. [Nexperia orderable product table](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/buffers/serie/74hc244-74hct244) lists the exact `74HC244PW,118`, package SOT360-1 and marking `HC244`. The [2024 SOT360-1 package drawing](https://assets.nexperia.com/documents/package-information/SOT360-1.pdf) gives 6.4–6.6 × 4.3–4.5 mm body, 0.65 mm pitch and 1.2 mm maximum seated height. An [older 2022 SOT360-1 drawing](https://assets.nexperia.com/documents/outline-drawing/SOT360-1.pdf) gives 1.1 mm maximum; local catalogue lists 1.1 mm. These revisions differ; do not describe either value as an exact measured individual part.
+
+Installed KiCad `Package_SO.3dshapes/TSSOP-20_4.4x6.5mm_P0.65mm.step` SHA-256 `97339947f3a7196470ec2f1d9f9b92bb2fc2ab66ad53be0cf105192585ef3c9a` measures 6.4 × 6.5 × 1.2 mm overall including leads, matching the newer maximum height but exceeding the catalogue and older drawing. Display geometry is an illustrative package example; typography, positioning, logo and lot/date information are illustrative.

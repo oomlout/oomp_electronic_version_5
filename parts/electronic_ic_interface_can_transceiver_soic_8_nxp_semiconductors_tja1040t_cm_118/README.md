@@ -5,6 +5,14 @@
 IC TJA1040T/CM,118 SOIC 8 is an OOMP electronic ic definition. It uses the soic 8 package or form factor. Its nominal drawing size is 4.9 &#x00D7; 3.9 mm.
 
 
+![IC TJA1040T/CM,118 SOIC 8 studio render](data/display_render/render.png)
+
+Illustrative KiCad SOIC-8 model; NXP SOT96-1 specifies 1.75 mm maximum height. Catalogue source does not specify height. A1040/C is a representative part-number marking described by NXP support for a reported TJA1040 example. Other manufacturing variants may differ. Logo and variable traceability codes are omitted, and typography and placement are illustrative. NXP lists this orderable end of life. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_SO.3dshapes/SOIC-8_3.9x4.9mm_P1.27mm.step)
+
+Model credit: 2025 KiCAD. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
+
 
 
 
@@ -77,9 +85,12 @@ IC TJA1040T/CM,118 SOIC 8 is an OOMP electronic ic definition. It uses the soic 
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |
 | **Large drawer label** | <img src="label_drawer_3x2.svg" alt="Large drawer label" width="160"> | [SVG](label_drawer_3x2.svg) |
+| **Web catalogue file index** | — | [YAML](web.yaml) |
 | **Part definition and build recipe** | — | [YAML](working.yaml) |
 
 <!-- /oomp-part-file-table -->

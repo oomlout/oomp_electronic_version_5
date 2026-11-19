@@ -1,0 +1,6 @@
+# Additional TSSOP16 research
+
+Reviewed 2026-11-19; not staged. Use only after the independent TSSOP16 pilot has been reviewed and the shared-pass comparison passes.
+
+- `electronic_ic_logic_serial_in_parallel_out_shift_register_latched_tri_state_tssop_16_nexperia_74hc4094pw_118`: [Nexperia product table](https://www.nexperia.com/products/analog-logic-ics/logic/flip-flops-latches-registers-counters-dividers/shift-registers/serie/74hc4094-74hct4094) identifies exact 74HC4094PW,118, code HC4094 and SOT403-1 TSSOP16. Local source omits height; current manufacturer drawing allows 1.2 mm maximum and KiCad model measures 1.1 mm. Source footprint matches.
+- `electronic_ic_converter_analog_to_digital_converter_tssop_16_texas_instruments_ads1219ipw`: [TI ADS1219 datasheet](https://www.ti.com/lit/ds/symlink/ads1219.pdf) lists exact ADS1219IPW, TSSOP-16 PW and marking ADS1219. Catalogue ID names the part but manufacturer and manufacturer MPN fields are absent: treat TI as an explicitly labelled manufacturer example, not a verified populated source identity. Source gives 5.0 × 4.4 × 1.2 mm and matching TSSOP footprint; KiCad model is 1.1 mm high. Check the individual TI PW0016A outline before preparing a recipe and disclose the source/model height difference.
