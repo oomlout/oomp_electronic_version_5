@@ -1,0 +1,5 @@
+# TI SN74HC138N DIP-16 display pilot
+
+Reviewed 2026-11-19. [TI datasheet and package addendum](https://www.ti.com/lit/ds/symlink/sn74hc138.pdf) identify exact SN74HC138N as 16-pin PDIP N, marking `SN74HC138N`, nominal body 19.32 × 6.35 mm. The source catalogue lists 21.3 × 6.35 × 3.3 mm and DIP-16 W7.62 mm footprint; its 21.3 mm length conflicts with TI's nominal 19.32 mm and must be disclosed. Do not alter the source's non-display data.
+
+KiCad `Package_DIP.3dshapes/DIP-16_W7.62mm.step` SHA-256 `17a30b1f0ab3fd5384a1231e3c63c394888d5b952c542a8c189e023ed3467464` measures 7.874 × 19.177 × 6.980 mm overall including the 3.3 mm projecting pins below its reference plane. Face colours are dark moulded body and metallic terminations. It is a generic illustrative package, not a verified mechanical drawing. Pin-one end is indicated by a moulded notch. Typeface, placement, orientation and omitted logo/date/lot details are illustrative. Verify the model fits the manufacturer package and visibly count leads in preview and independent final before publishing.

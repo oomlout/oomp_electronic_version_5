@@ -1,0 +1,6 @@
+# TI comparator and amplifier SOT-23-5 display evidence
+
+Reviewed 2026-11-19. The generic KiCad SOT-23-5 is 1.55 mm high and the published pilot scales it vertically to the TI DBV0005A 1.45 mm maximum for display only; this does not validate a mechanical or PCB model. Exact placement, typography, lot/date fields and original source height are not established.
+
+- `electronic_ic_comparator_single_open_collector_sot_23_5_texas_instruments_lmv331idbvr`: [TI LMV331 package addendum](https://www.ti.com/ods/sysadd/oa/symlink/lmv331_oa.pdf) identifies LMV331IDBVR, five-pin DBV and alternative `R1IF` / `R1IK` markings. Illustrate R1IF, explicitly disclose R1IK. [TI datasheet](https://www.ti.com/lit/ds/symlink/lmv331.pdf) provides DBV0005A outline. Catalogue width 2.8 mm falls within TI lead-span range 2.6–3.0 mm but its width reference is unspecified; do not describe it as verified body width. Catalogue source has no height.
+- `electronic_ic_amplifier_operational_amplifier_sot_23_5_texas_instruments_opa344`: [TI OPA344 datasheet](https://www.ti.com/lit/ds/symlink/opa344.pdf) lists OPA344NA/3K five-pin DBV and `B44`; source manufacturer and exact MPN are absent, so label this a TI OPA344NA/3K manufacturer example. Source dimensions 2.9 × 1.6 mm and no height. The TI DBV package outline establishes 1.45 mm maximum height.

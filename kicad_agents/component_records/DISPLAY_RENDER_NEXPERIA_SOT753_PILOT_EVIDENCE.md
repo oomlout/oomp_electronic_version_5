@@ -1,0 +1,5 @@
+# Nexperia 74LVC1G17GV,125 SOT753 display pilot
+
+Reviewed 2026-11-19. [Nexperia's datasheet](https://assets.nexperia.com/documents/data-sheet/74LVC1G17.pdf) associates 74LVC1G17GV with SOT753 and lists `V17` as its marking. The exact ordering suffix is confirmed by [Nexperia's product content record](https://www.nexperia.com/chemical-content/74LVC1G17GV.html). The [SOT753 drawing](https://assets.nexperia.com/documents/package-information/SOT753.pdf) gives 2.9 × 1.5 mm nominal body, 0.95 mm pitch and 0.9–1.1 mm seated height. The catalogue lists 2.9 × 1.6 × 1.1 mm and SOT-23-5 footprint.
+
+KiCad `Package_TO_SOT_SMD.3dshapes/TSOT-23-5.step`, SHA-256 `5120f0cee43ef7743cc08408d2c12f234fcac7355386e330a3a16f336e23da8d`, measures 2.8 × 2.9 × 0.95 mm overall including leads, within the manufacturer height range but below the catalogue's 1.1 mm. It is a generic illustrative package, not a verified mechanical model. Color regions include moulded body, leads and pin-one indicator. Manufacturer places pin-one indicator below the marking; inspect preview orientation, image and marking, and disclose that placement, typography and lot/date marks are illustrative.

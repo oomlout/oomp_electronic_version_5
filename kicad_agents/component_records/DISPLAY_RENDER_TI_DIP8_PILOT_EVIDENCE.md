@@ -1,0 +1,5 @@
+# TI TL072CP DIP-8 display pilot
+
+Reviewed 2026-11-19. [TI TL07xx datasheet](https://www.ti.com/lit/ds/symlink/tl074.pdf) lists exact TL072CP as PDIP P package and part marking `TL072CP`; [TI's package index](https://edgeworker.ti.com/packaging/docs/searchtipackages.tsp?packageName=DIP) describes P, 8-pin PDIP nominal body 9.81 × 6.35 mm. Catalogue source records 10 × 5 mm and no machine footprint or height; its width reference is unspecified and differs from TI's nominal body width. This discrepancy must remain explicit and no source geometry is silently rewritten.
+
+KiCad `Package_DIP.3dshapes/DIP-8_W7.62mm.step` SHA-256 `4a377a56a8d9e9c0b86c095ef9ecc1869ac19e7f5069a3247b294250bf4f235d` has overall bounds 7.874 × 9.270 × 6.980 mm, including 3.3 mm of projecting pins below the reference plane. It is a generic illustrative DIP-8, not a verified mechanical model or PCB footprint. Body and lead colors match the reviewed DIP-14 model; molded notch indicates pin-one end. Manufacturer/date/lot details and marking typeface, placement and orientation are illustrative.

@@ -34,6 +34,22 @@ dimensions_mm:
   length: 2.9
   width: 1.6
 directory: parts/electronic_ic_power_management_boost_converter_sot_23_5_texas_instruments_tps613222a
+display_render:
+  description: 'Illustrative display-only KiCad SOT-23-5; original 1.55 mm model vertically
+    scaled to the TI DBV0005A 1.45 mm maximum. Catalogue source omits height. Model
+    is not a verified PCB or mechanical footprint. Manufacturer example TPS613222ADBVR:
+    catalogue record omits manufacturer and exact part number. TI lists 1N5L as the
+    package marking. Typeface, orientation, placement and variable lot/date details
+    are illustrative. TI TPS613222ADBVR is an explicitly chosen manufacturer example.
+    Marking composited in linear light from shared path-traced material passes; indirect
+    reflections are approximate.'
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: 1N5L
+  model_credit: 2025 KiCAD
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 ic_dimensions_mm:
   body_length: 2.92
@@ -212,6 +228,22 @@ oomlout_ai_roboclick_4:
         length: 2.9
         width: 1.6
       directory: parts\electronic_ic_power_management_boost_converter_sot_23_5_texas_instruments_tps613222a
+      display_render:
+        description: 'Illustrative display-only KiCad SOT-23-5; original 1.55 mm model
+          vertically scaled to the TI DBV0005A 1.45 mm maximum. Catalogue source omits
+          height. Model is not a verified PCB or mechanical footprint. Manufacturer
+          example TPS613222ADBVR: catalogue record omits manufacturer and exact part
+          number. TI lists 1N5L as the package marking. Typeface, orientation, placement
+          and variable lot/date details are illustrative. TI TPS613222ADBVR is an
+          explicitly chosen manufacturer example. Marking composited in linear light
+          from shared path-traced material passes; indirect reflections are approximate.'
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: 1N5L
+        model_credit: 2025 KiCAD
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Package_TO_SOT_SMD.3dshapes/SOT-23-5.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       ic_dimensions_mm:
         body_length: 2.92
@@ -669,8 +701,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

@@ -1,0 +1,5 @@
+# TI SN74HCT244DBR SSOP-20 pilot evidence
+
+Reviewed 2026-11-19. TI identifies the exact SN74HCT244DBR as SSOP (DB), 20-pin, and its [quality report](https://www.ti.com/quality-reliability-packaging-download/de-de/report?opn=SN74HCT244DBR) lists top marking `HT244`. The [TI DB0020A mechanical drawing](https://www.ti.com/lit/ds/symlink/sn74hc374.pdf) specifies 0.65 mm pitch, 6.9–7.5 mm body length, 5.0–5.6 mm body width, 7.4–8.2 mm lead span and 2.0 mm maximum overall height. Local source specifies 7.2 x 5.3 x 1.98 mm and the matching SSOP footprint.
+
+Installed KiCad SSOP-20 5.3 x 7.2 mm P0.65 STEP SHA-256 `c9a01a276d0b4d9561efd58f2fcee56f52c1b6ab464ea7a0380cab4e87a924e6` measured 7.8 x 7.2 x 2.1 mm overall including leads. The model exceeds TI height maximum, so scale vertically to local 1.98 mm for display only; this is approximate, not a verified mechanical model. Font, orientation, layout, logo, pin-one indicator and manufacturing codes are illustrative. Inspect a low-sample preview before full render and publication. The unrelated NS orderables with the same source footprint need separate package reconciliation (DISPLAY_RENDER_TI_NS20_RESEARCH.md).
