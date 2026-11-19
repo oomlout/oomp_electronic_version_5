@@ -33,7 +33,8 @@ category_name: Capacitor
 datasheet_url: https://datasheets.kyocera-avx.com/TAJ.pdf
 dimension_reference:
   document: KYOCERA AVX TAJ series datasheet (C7233 provenance)
-  notes: Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band marks the positive anode per the manufacturer datasheet.
+  notes: Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band marks
+    the positive anode per the manufacturer datasheet.
   pages:
   - 1
   - 2
@@ -42,6 +43,21 @@ dimensions_mm:
   length: 7.3
   width: 4.3
 directory: parts/electronic_capacitor_7343_avx_e_tantalum_47_micro_farad_35_volt_avx_taje476k035rnej
+display_render:
+  description: Generic KiCad Kemet X-case model scaled in all three dimensions to
+    the TAJ E nominal envelope; yellow body, stripe, shape and metal finish are illustrative.
+    Stripe indicates the positive anode. Marking is composited from shared material
+    passes; indirect reflections are approximate. Capacitance and voltage marking
+    are illustrative; actual ink, manufacturer logo, lot code and any higher-rated
+    substitute may differ. Marking composited in linear light from shared path-traced
+    material passes; indirect reflections are approximate.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: 476 V
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-7343-43_Kemet-X.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors:
 - key: lcsc
   part_number: C7233
@@ -269,7 +285,8 @@ oomlout_ai_roboclick_5:
       datasheet_url: https://datasheets.kyocera-avx.com/TAJ.pdf
       dimension_reference:
         document: KYOCERA AVX TAJ series datasheet (C7233 provenance)
-        notes: Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band marks the positive anode per the manufacturer datasheet.
+        notes: Kyocera AVX TAJ case E (7343-43), 7.3 x 4.3 x 4.3 mm; polarity band
+          marks the positive anode per the manufacturer datasheet.
         pages:
         - 1
         - 2
@@ -278,6 +295,22 @@ oomlout_ai_roboclick_5:
         length: 7.3
         width: 4.3
       directory: parts\electronic_capacitor_7343_avx_e_tantalum_47_micro_farad_35_volt_avx_taje476k035rnej
+      display_render:
+        description: Generic KiCad Kemet X-case model scaled in all three dimensions
+          to the TAJ E nominal envelope; yellow body, stripe, shape and metal finish
+          are illustrative. Stripe indicates the positive anode. Marking is composited
+          from shared material passes; indirect reflections are approximate. Capacitance
+          and voltage marking are illustrative; actual ink, manufacturer logo, lot
+          code and any higher-rated substitute may differ. Marking composited in linear
+          light from shared path-traced material passes; indirect reflections are
+          approximate.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: 476 V
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-7343-43_Kemet-X.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors:
       - key: lcsc
         part_number: C7233
@@ -835,8 +868,8 @@ oomlout_ai_roboclick_6:
 oomlout_ai_roboclick_7:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

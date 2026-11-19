@@ -2697,3 +2697,570 @@ geometry, renderer-guard and metadata tests passed. Earlier part files are
 in `tmp/display_render/radial_8mm_pilot_previous/`. There are now 448
 published capacitor renders. Other capacitor families, reviewed pending
 RVT cases, the Fenghua height conflict, and later ICs remain. No PDF downloaded.
+
+## Fenghua 1206 1 nF 50 V (2026-11-18)
+
+Published exact 1206CG102J500NT / C1885 using the inspected 0.8 mm
+unmarked KiCad image, reused with provenance. Fenghua exact product listing
+and its locally available general C0G table agree on nominal thickness;
+finish and unmarked appearance are illustrative. Evidence, recipe, image
+hashes, metadata and README validated; nine targeted tests passed. Previous
+files are in `tmp/display_render/fenghua_1206_1nf_previous/`. There are
+now 449 published capacitor display renders. No PDF downloaded.
+
+## Fenghua 1206 C0G series table candidates (2026-11-18)
+
+Published 1206CG101J500NT / C1884 and 1206CG471J500NT / C1917 using
+the inspected unmarked 0.8 mm KiCad image with documented image reuse.
+Exact part identity and manufacturer series-table thickness were checked;
+the pages disclose that height is from the series table and that appearance
+is illustrative. Image hashes, provenance, metadata and README validated;
+11 targeted tests passed. Prior files are under
+`tmp/display_render/fenghua_1206_c0g_table_previous/`. There are now 451
+published capacitor renders. No PDF was downloaded.
+
+## Fenghua 1206 C0G series table batch 2 (2026-11-18)
+
+Published 15, 33, 39 and 47 pF / 50 V parts using the inspected unmarked
+0.8 mm KiCad image with explicit image reuse. Exact supplier identities and
+manufacturer series-table thickness were checked; the 33 pF manufacturer
+listing also gives the exact-part thickness. README disclosures, image hashes,
+metadata and provenance validated; 15 targeted tests passed. Prior files are
+in `tmp/display_render/fenghua_1206_c0g_table_02_previous/`. There are now
+455 published capacitor renders. No PDF downloaded.
+
+## Fenghua 1206 X7R table batch and CX KM radial (2026-11-18)
+
+Published seven exact X7R values (330 pF, 560 pF, 3.9 nF, 4.7 nF,
+5.6 nF, 33 nF and 56 nF, all 50 V) with individually checked identities
+and 0.8 mm nominal height from the manufacturer series table. These reuse
+the inspected unmarked KiCad image, with appearance and evidence limits
+disclosed. Twenty-two targeted tests passed. Also published the separately
+rendered 220 µF / 35 V CX KM radial capacitor after preview and final visual
+inspection; the sleeve and ink are illustrative. Image hashes, current
+metadata and README disclosures were validated for all eight. Backups are in
+`tmp/display_render/fenghua_1206_x7r_table_previous/` and
+`tmp/display_render/radial_220uf_35v_previous/`. The radial record has a
+manufacturer-temperature discrepancy documented in its evidence. No PDF
+was downloaded. There are now 463 published capacitor renders.
+
+## Fenghua 1206 low C0G table batch (2026-11-18)
+
+Published the 1.8, 2.2 and 3.9 pF / 50 V C0G parts using the inspected
+unmarked 0.8 mm KiCad image. Exact supplier identities and manufacturer
+series-table thickness were checked. Image reuse, illustrative appearance
+and omitted source tolerance are disclosed; the electrical source records
+were not changed. Hashes, metadata and README validated; 25 targeted tests
+passed. Backups are in `tmp/display_render/fenghua_1206_low_c0g_table_previous/`.
+No PDF was downloaded. There are now 466 published capacitor renders.
+
+## Honor RVT 10 mm marked batch 01 (2026-11-19)
+
+Published three 10 × 10.2 mm values after comparing the shared composite
+against the independently rendered pilot and inspecting
+`tmp/display_render/rvt_10mm_batch_contact.png`. Markings, polarity,
+image hashes, metadata, provenance and README disclosures validated;
+10 compositor, E-case queue and metadata tests passed. Indirect ink
+reflections are approximate, as disclosed. Prior files are under
+`tmp/display_render/rvt_10mm_batch01_previous/`. No PDF downloaded.
+There are now 469 published capacitor renders.
+
+## 0805 33 nF and radial 4.7 µF / 250 V (2026-11-19)
+
+Published the exact Fenghua 0805B333K500NT / C1739 using the inspected
+0.8 mm 0805 image, with manufacturer series-table evidence and reuse
+disclosed. Published the CX KM475M250F12RR0VH2FP0 / C2775 radial
+illustration after preview and full-render inspection; ink and sleeve are
+illustrative and its temperature-source discrepancy is recorded. Both image
+hashes, metadata and README disclosures validated; nine 0805/metadata tests
+passed. Backups are under `tmp/display_render/fenghua_0805_33nf_previous/`
+and `tmp/display_render/radial_4_7uf_250v_previous/`. No PDF downloaded.
+There are now 471 published capacitor renders.
+
+## Fenghua 1210 2.2 µF pilot in progress (2026-11-19)
+
+Prepared 1210B225K500NT / C1950 using exact manufacturer dimensions and
+KiCad `C_1210_3225Metric.step`. Source bounds are 3.2 × 2.5 × 2.5 mm,
+scaled in height to 1.6 mm. Real-model geometry and material check passed;
+two targeted 1210 and TAJ E queue tests passed. The 700 px preview is
+running in session 32667 at `tmp/display_render/fenghua_1210_2u2_preview`.
+Inspect it before starting a final. The TAJ E pilot final remains in session
+51910. Neither pilot is published yet.
+
+The unrendered generic `electronic_capacitor_1210_68_micro_farad` source
+record has a 1210 KiCad footprint (3.2 × 2.5 mm) but source dimensions
+10 × 5 mm, no selected manufacturer or electrical ratings. Reconcile those
+fields before selecting a model or claiming a specific appearance; the
+1210 2.2 µF pilot does not establish this part’s identity.
+
+The 1210 2.2 µF preview was inspected and its full-quality image is now
+running in session 2508 to `tmp/display_render/fenghua_1210_2u2_final`.
+Inspect it, preserve prior part files, then publish and validate.
+
+## KYOCERA AVX TAJ E-case pilot (2026-11-19)
+
+Published TAJE227K016RNJ / C7231 after inspecting preview and final,
+checking the positive stripe against footprint pad 1, and validating hashes,
+marking, metadata and README. The generic KiCad X-case model is scaled in
+three dimensions to the manufacturer nominal E-case envelope; shape, finish
+and marking are illustrative. The E-case batch queue and compositor guard
+passed 14 targeted tests with metadata. Four further exact parts have
+researched recipes but are not rendered or published. The archived shared
+compositor is building its master in session 75804; compare its pilot image
+to the independent published pilot before composing the batch. Previous pilot
+files are in `tmp/display_render/taj_e_220uf_16v_previous/`. No PDF was
+downloaded. There are now 472 published capacitor renders.
+
+## Fenghua 1206 12 pF height discrepancy (2026-11-19)
+
+Published 1206CG120J500NT / C1886 with the inspected unmarked 0.8 mm
+image, reusing it with provenance. The manufacturer series table gives
+0.8 mm and a secondary listing says 1.6 mm; the page explicitly discloses
+the conflict and uncertainty. Image hashes, metadata and README validated;
+nine targeted tests passed. Previous files are in
+`tmp/display_render/fenghua_1206_12pf_height_previous/`. No PDF downloaded.
+There are now 473 published capacitor renders.
+
+## Fenghua 1210 2.2 µF pilot completed (2026-11-19)
+
+Published 1210B225K500NT / C1950 after inspecting the KiCad model preview
+and final image. Exact manufacturer dimensions, geometry, hashes, metadata
+and README were validated. The display height is scaled to 1.6 mm nominal;
+colour and finish are illustrative. Previous files are under
+`tmp/display_render/fenghua_1210_2u2_previous/`. No PDF was downloaded.
+There are now 474 published capacitor renders.
+
+## Fenghua 1206 values absent from series table (2026-11-19)
+
+Published 25 pF, 36 pF, 390 pF and 500 pF / 50 V parts with exact
+supplier identities and the inspected 0.8 mm generic unmarked KiCad image.
+The manufacturer table omits these exact values; their pages explicitly
+disclose that actual thickness is unverified. Reuse, image hashes, metadata
+and README disclosures validated; 12 targeted tests passed. Previous files
+are in `tmp/display_render/fenghua_1206_unlisted_previous/`. No PDF was
+downloaded. There are now 478 published capacitor renders.
+
+## Fenghua 1206 low unlisted values (2026-11-19)
+
+Published 2 pF / C1901 and 3 pF / C1911 using the inspected 0.8 mm
+unmarked image. Supplier identities are checked; the page discloses that
+exact thickness is unverified and that the source record omits tolerance.
+Source electrical fields were preserved. Image hashes, reuse, metadata and
+README validated; 10 targeted tests passed. Backups are in
+`tmp/display_render/fenghua_1206_low_unlisted_previous/`. No PDF downloaded.
+There are now 480 published capacitor renders.
+
+## Fenghua 0805 36 pF illustration (2026-11-19)
+
+Published 0805CG360J500NT / C1816 using the inspected generic 0.8 mm
+0805 image with image reuse documented. Exact supplier identity is checked;
+the page explicitly notes that this part’s thickness is unverified. Hashes,
+metadata and README disclosure validated; two targeted queue tests passed.
+Previous files are in `tmp/display_render/fenghua_0805_36pf_previous/`.
+No PDF downloaded. There are now 481 published capacitor renders.
+
+## Fenghua 0805 Y5V illustrative examples (2026-11-19)
+
+Published 0805F203M500NT / C1768 and 0805F684M500NT / C1783 with the
+inspected unmarked 0.8 mm KiCad image and documented reuse. Exact identities
+are checked, while the pages explicitly state that the source table does not
+cover Y5V and actual thickness is unverified. Hashes, metadata and README
+validated; 10 targeted tests passed. Backups are in
+`tmp/display_render/fenghua_0805_y5v_unverified_previous/`. No PDF downloaded.
+There are now 483 published capacitor renders.
+
+## Generic 0603 2200 pF display example (2026-11-19)
+
+Published a sourced 0603B222K500NT 2.2 nF example using an inspected
+0603 image, with explicit image reuse. The generic source has no supplier
+or voltage selected; comparison with the prior source confirms that only
+display metadata changed. The README states that the example does not select
+procurement or electrical ratings. Hashes and metadata validated; nine
+targeted tests passed. Prior files are under
+`tmp/display_render/generic_0603_2200pf_previous/`. No PDF downloaded.
+There are now 484 published capacitor renders.
+
+## Fenghua 1206 Y5V illustrative examples (2026-11-19)
+
+Published 15 nF, 22 nF, 33 nF and 150 nF / 50 V exact FH parts using
+the inspected generic 0.8 mm unmarked image with reuse documented. Exact
+identities are checked; available manufacturer tables do not cover Y5V, so
+actual thickness is explicitly unverified on each page. Hashes, metadata
+and README validated; 12 targeted tests passed. Previous files are in
+`tmp/display_render/fenghua_1206_y5v_unverified_previous/`. No PDF
+downloaded. There are now 488 published capacitor renders.
+
+## Fenghua 1206 high-value Y5V examples (2026-11-19)
+
+Published 1206F105M500NT / C1926 and 1206F475M250NT / C1939 using
+the inspected 1.6 mm generic 1206 image, with exact supplier identities
+and image reuse recorded. The available table does not cover Y5V and the
+pages explicitly say actual thickness is unverified. Hashes, metadata and
+README validated; 10 targeted tests passed. Previous files are in
+`tmp/display_render/fenghua_1206_y5v_high_previous/`. No PDF downloaded.
+There are now 490 published capacitor renders.
+
+## TAJ E-case marked batch 01 (2026-11-19)
+
+Published four individually sourced TAJ E-case parts after comparing the
+shared composite to the independent pilot and inspecting
+`tmp/display_render/taj_e_batch01_contact.png`. Individual code markings,
+positive polarity, hashes, provenance, metadata and README disclosures were
+validated. Shared ink reflections, generic geometry, shape and finish are
+illustrative as disclosed. Fourteen targeted queue/compositor/metadata tests
+passed. Prior files are under `tmp/display_render/taj_e_batch01_previous/`.
+No PDF downloaded. There are now 494 published capacitor renders.
+
+## Fenghua 1206 22 µF / 10 V X5R (2026-11-19)
+
+Published 1206X226K100NT / C1859 using the inspected 1.6 mm unmarked
+image with explicit reuse. Exact supplier identity and manufacturer series
+table thickness were checked; the page distinguishes the series table from
+an individual drawing. Image hashes, metadata and README validated; nine
+targeted tests passed. Previous files are in
+`tmp/display_render/fenghua_1206_22uf_10v_previous/`. No PDF downloaded.
+There are now 495 published capacitor renders.
+
+## Fenghua 1206 high-voltage 1 nF examples (2026-11-19)
+
+Published 500 V / C1942 and 1 kV / C1941 with the manufacturer-listed
+0.8 mm nominal model, and 2 kV / C9196 with the manufacturer-listed 1.25 mm
+model. All three reuse separately inspected unmarked images. The 2 kV source
+record omits electrical fields; a comparison with its backup confirmed that
+only display metadata changed, and the README notes the omission. Identity,
+hashes, metadata and pages validated; 10 high-voltage and nine 2 kV/metadata
+tests passed. Prior files are under `tmp/display_render/fenghua_1206_hv_1nf_previous/`
+and `tmp/display_render/fenghua_1206_2kv_1nf_previous/`. No PDF downloaded.
+There are now 498 published capacitor renders.
+
+## Fenghua 1206 4 pF illustrative display (2026-11-19)
+
+Published 1206CG4R0C500NT / C1914 using an inspected generic 0.8 mm
+image with documented reuse. Exact thickness is unverified and the source
+record omits tolerance; both are disclosed on the page. Comparison to its
+backup confirmed only display metadata changed. Hashes, metadata and README
+validated; nine targeted tests passed. Previous files are in
+`tmp/display_render/fenghua_1206_4pf_previous/`. No PDF downloaded.
+There are now 499 published capacitor renders.
+
+## Honor RVT 6.3 x 5.4 mm pilot (2026-11-19)
+
+Published 220 uF / 10 V C3345 after visual inspection, with image hashes, marking, display metadata and README disclosure validated. Prior files are under `tmp/display_render/rvt_6_3x5_4_pilot_previous/`. There are now 500 published capacitor renders.
+
+## TAJ R-case pilot (2026-11-19)
+
+Published TAJR106M006RNJ / C7235 after inspecting the final J / 106 marking and positive stripe. Image hashes, marking, source and page metadata, and README disclosure were validated. Previous files are in `tmp/display_render/taj_r_10uf_6v3_previous/`. There are now 501 published capacitor renders.
+
+## Honor RVT 5 mm pilot (2026-11-19)
+
+Published RVT1A101M0505 / C3347 after inspecting the 100 / 10V marking and negative sector. Image hashes, marking, source and page display metadata, and README disclosure were validated. Previous files are in `tmp/display_render/rvt_5mm_pilot_previous/`. There are now 502 published capacitor renders.
+
+## KM and KS radial pilots (2026-11-19)
+
+Published KM107M063F12RR0VH2FP0 / C2772 (100 uF / 63 V) and KS336M016C07RR0VH2FP0 / C3314 (33 uF / 16 V) after inspecting each final, including the KS unvented top and negative stripe. Hashes, text, source/page display metadata and README disclosure were validated. Prior files are in `tmp/display_render/radial_km_100uf_63v_previous/` and `tmp/display_render/radial_ks_33uf_16v_previous/`. The KM temperature discrepancy remains documented. There are now 504 published capacitor renders.
+
+## KM 10 x 17 mm and RVT 5 mm (2026-11-19)
+
+Published the KM C2064 470 uF / 35 V and RVT C3337 47 uF / 16 V after final image inspection, backup and validation of image hashes, markings, metadata and README disclosure. The KM supplier temperature discrepancy remains visible. Prior files are under `tmp/display_render/radial_km_10x17_470uf_35v_previous/` and `tmp/display_render/rvt_5mm_47uf_16v_previous/`. There are now 506 published capacitor renders.
+
+## IC inventory for the next family (2026-11-19)
+
+A source-directory inventory found 600 `electronic_ic_*` records and one existing display manifest. This is a planning count, not a verification of which parts have usable models or supported markings. Continue the capacitor work first; when moving to ICs, recheck the current inventory, package geometry and exact manufacturer marking evidence for each candidate. Do not infer a shared marking solely from a similar package.
+
+## Honor RVT 47 uF / 35 V 6.3 x 5.4 mm (2026-11-19)
+
+Published RVT1V470M0605 / C3344 after final image inspection and validation of image hashes, marking, source/page metadata and README disclosure. Previous files are under `tmp/display_render/rvt_6_3x5_4_47uf_35v_previous/`. There are now 507 published capacitor renders.
+
+## Generic 1210 68 uF illustrative example (2026-11-19)
+
+Published a reviewed TDK C3225X5R0J686M200AC display example after image inspection. Hashes, unmarked appearance, display metadata, and explicit README disclosures of the 1210 versus 10 x 5 mm dimension conflict and example-only voltage were validated. Comparison against `tmp/display_render/tdk_1210_68uf_example_previous/` confirmed the source data was preserved except for display metadata. This does not resolve the catalogue discrepancy. There are now 508 published capacitor renders.
+
+## KM 6.3 x 11 and 10 x 20 mm (2026-11-19)
+
+Published C2029 10 uF / 100 V and C3328 2200 uF / 16 V after final image inspection. Image hashes, markings, display metadata, README disclosures and supplier temperature discrepancies were validated. Prior files are under `tmp/display_render/radial_km_6x11_10uf_100v_previous/` and `tmp/display_render/radial_km_10x20_2200uf_16v_previous/`. There are now 510 published capacitor renders.
+
+## Generic 4.7 uF A-case tantalum example (2026-11-19)
+
+Published an illustrative TAJA475K016RNJ A-case example using reviewed shared material passes. Its image was visually inspected and matched the exact AVX example byte-for-byte; artifact hashes, 475 C marking and source/page metadata were validated. The README explicitly warns that the selected Xiangyee C6387914 is a 47 uF 3528 B-case part and is not interchangeable. Comparing source with `tmp/display_render/taj_a_generic_4u7_example_previous/` confirmed procurement data was preserved except for display metadata. The discrepancy remains unresolved. There are now 511 published capacitor renders.
+
+## Chengx GR green/gold 1000 uF / 10 V (2026-11-19)
+
+Published GR108M010F12RR0VL4FP0 / C3299 after inspecting the green/gold final and validating image hashes, marking, palette, source/page metadata and README disclosure. Manufacturer evidence supports the colours; precise shade and artwork remain illustrative. Prior files are in `tmp/display_render/radial_gr_green_1000uf_10v_previous/`. There are now 512 published capacitor renders.
+
+The read-only IC footprint inventory is running in session 34810. It will report existing source footprint frequencies only; it does not authorize bulk rendering or prove marking evidence. Complete the capacitor sequence first.
+
+The completed read-only IC footprint inventory found 600 records, including 198 without a machine footprint and 31 distinct footprint identifiers among those with one. The most frequent are SOIC-14 (95), SOIC-8 (80), SOIC-16 (41), SOIC-20W (30), SOT-23-5 (25), and TSSOP-20 (23). These are source-record counts only: they do not establish model availability, electrical correctness, or marking evidence. Review each candidate when capacitor work is finished.
+
+## KM 16 x 25 mm 47 uF / 450 V (2026-11-19)
+
+Published C2746 after inspecting the final render and validating artifact hashes, marking, source and generated display metadata, and README disclosures. The supplier temperature discrepancy remains visible. Previous files are under `tmp/display_render/radial_km_16x25_47uf_450v_previous/`. There are now 513 published capacitor renders.
+
+Additional work in progress: final renders in sessions 35489, 75327, 78298 and 72645; 18 x 30 mm and generic 8 x 6.5 mm previews in sessions 22922 and 34618. Inspect and validate each before publication. The generic example still needs negative-pad polarity checked against the KiCad footprint and its missing source data disclosed.
+
+## Generic 8 x 6.5 mm SMD polarity check (2026-11-19)
+
+The installed KiCad 10 `Capacitor_SMD:CP_Elec_8x6.5` footprint has pad 1 at x = -3.05 mm and pad 2 at x = +3.05 mm. The polarity indicator in the KiCad model still needs its spatial position confirmed against pad 2; do not publish the example on the footprint observation alone. Preview session 34618 remains active. Search for an exact 8 x 14.5 mm 680 uF / 16 V manufacturer match did not yield a reliable result; do not assume an 8 x 15 mm product is exact.
+
+For the unsourced 8 x 14.5 mm / 680 uF / 16 V record, Yongming's VKM catalogue (https://www.ymin.cn/chip-miniature-type-aluminum-electrolytic-capacitors-vkm-product/) lists VKMD1251C681MV as 8 x 12.5 mm / 680 uF / 16 V and VKMD1451C821MV as 8 x 14.5 mm / 820 uF / 16 V. Neither is an exact match. This is negative evidence only; do not use either as the represented part without further review.
+
+The 18 x 30 mm 100 uF / 400 V KM 700 px / 8 sample preview completed at `tmp/display_render/radial_km_18x30_100uf_400v_preview`. Visual review confirms value, voltage, series and negative stripe are legible and the proportions are suitable; it is noisy as expected at preview quality. The previously checked 18 mm source model aligns its stripe with pad 2. Start its full-quality final after current memory pressure eases; inspect the final and disclose the supplier temperature mismatch before publication.
+
+A fresh source-directory versus published-manifest check on 2026-11-19 found 24 capacitor records without a published display manifest. Twenty-three have entries in `source_file/display_render/recipes.json`; the only one without a recipe is the unsourced 8 x 14.5 mm / 680 uF / 16 V item. Recipe presence alone does not establish evidence, visual quality, successful rendering or publication; complete each candidate's individual checks.
+
+For all 23 unpublished capacitor recipes, the referenced marking evidence files exist and their SHA-256 hashes match the recipes (checked 2026-11-19). This is an integrity check, not proof that the evidence supports the marking, the candidate is exact, or the render has passed review.
+
+The 23 unpublished prepared capacitor recipes also passed a local KiCad model integrity check: each recorded SHA-256 matches the installed source STEP, across 10 distinct model files. This confirms file identity only; source geometry, package suitability, markings and final image still require each recipe's documented review.
+
+Reviewed the literal value and voltage strings of the 13 unpublished radial capacitor recipes against their catalogue identifiers on 2026-11-19; all 13 agree. This is a text consistency check only; exact manufacturer evidence, palette, polarity and final image still require individual review.
+
+## KS 4 x 7 mm 2.2 uF / 50 V (2026-11-19)
+
+Published C2065 after inspecting the final, including the 2.2 uF marking, negative stripe and unvented top. Image hashes, exact literal marking, source/page display metadata and README illustrative disclosure were validated. Previous files are under `tmp/display_render/radial_ks_2_2uf_50v_previous/`. There are now 514 published capacitor renders. The renderer instructions were corrected to reflect the expanded recipe catalogue and separate curved-sleeve renderer.
+
+## Chengx GR black/gold 220 uF / 10 V (2026-11-19)
+
+Published C2036 after visually inspecting the final and validating artifact hashes, marking, black/gold palette, source/page display metadata and README disclosure. Prior files are under `tmp/display_render/radial_gr_black_6x11_220uf_10v_previous/`. There are now 515 published capacitor renders.
+
+## Honor RVT 8 x 10.2 and 6.3 x 7.7 mm (2026-11-19)
+
+Published C3340 220 uF / 35 V and C3338 100 uF / 25 V after inspecting both final images and validating artifact hashes, markings, source/page display metadata and README disclosures. Prior files are under `tmp/display_render/rvt_8x10_2_220uf_35v_previous/` and `tmp/display_render/rvt_6_3x7_7_100uf_25v_previous/`. There are now 517 published capacitor renders.
+
+The generic Würth 8 x 6.5 mm preview was visually inspected: `221 / 10V` and the dark sector are visible. Its polarity-to-pad geometry check remains active in session 79015 and must finish before publication. The reviewed 18 x 30 mm 100 uF / 400 V KM final is running in session 24986; inspect and validate before publication.
+
+The generic Würth-example 8 x 6.5 mm model polarity was checked against the installed KiCad 10 footprint: pad 2 is at x = +3.05 mm, and the STEP's dark top sector planar face spans x = +1.2 to +3.4667 mm, confirming the indicator is on the pad-2 side. The 221 / 10V preview was inspected; final render is active in session 10938. It remains an illustrative example, not a selected manufacturer part, and its missing source electrical fields and package choice must remain disclosed.
+
+The 1 uF / 50 V KS 4 x 7 mm preview was visually inspected; the value, stripe and unvented top are correct. Full-quality final runs in session 46033; inspect the final and validate the page before publication.
+
+A new RVT 6.3 x 7.7 mm shared-pass master is running in session 6741 using the independently rendered and published C3338 pilot. When both body and ink passes finish, render a pilot composite and compare it against `tmp/display_render/rvt_6_3x7_7_100uf_25v_final/render.png` before rendering the remaining 6.3 x 7.7 mm variants. Inspect each image and preserve the approximate-reflection disclosure. Do not publish on recipe equality alone.
+
+Revalidated the four staged RVT 6.3 x 7.7 mm exact-part recipes against current source identity, ratings, dimensions and footprint, and revalidated the separate generic example against its unchanged source/procurement state. All five regenerated recipe objects match the staged recipes. This does not replace the required visual and master comparison checks.
+
+The read-only Chengx GR extra and 10 x 20 mm recipe checks passed against current source identities, supplier IDs, electrical ratings, dimensions, footprints, evidence and palette choices (five recipes total, including the already-published C2036). The four remaining candidates still require individual previews, final images and publication checks.
+
+Read-only recipe checks passed for the KM 10 x 17 mm, KM 8 x 12 mm, large KM 16 x 25 / 18 x 30 mm, and KS 4 x 7 mm queues: all ten staged or published candidates matched their current source records and reviewed recipe definitions. The seven still unpublished need individual image reviews and publication validation; retain the documented KM supplier temperature discrepancies.
+
+## IC preparation: Nexperia 74HC00 package-specific markings (2026-11-19)
+
+While the capacitor jobs run, identified two existing source records for a future IC pilot. [Nexperia's 74HC00 product page](https://www.nexperia.com/products/analog-logic-ics/logic/gates/nand-gates/serie/74hc00-74hct00) lists `74HC00D,653` in SO14 SOT108-1 with the marking `74HC00D`, and `74HC00PW,118` in TSSOP14 SOT402-1 with the marking `HC00`. The repository records match the manufacturer, orderable numbers and respectively `SOIC-14_3.9x8.7mm_P1.27mm` and `TSSOP-14_4.4x5mm_P0.65mm` footprints. Nexperia links separate package 3D models and dimensions on the same page. These strings must not be interchanged across packages. Exact lettering style, line placement and production date/lot are not established by this table; do not invent them. Source STEP availability, dimensions, material regions and pin-one orientation still need inspection. This is preparation only; finish the capacitor sequence before IC rendering. No PDF or 3D file was downloaded.
+
+For the future Nexperia 74HC00 SOIC-14 and TSSOP-14 pilots, the installed KiCad 10 package models exist at `Package_SO.3dshapes/SOIC-14_3.9x8.7mm_P1.27mm.step` (SHA-256 `3b9a775da256c8afcc28dcddfbc2eb3f266107fe61ce8446d96f2c52b6f44a70`) and `Package_SO.3dshapes/TSSOP-14_4.4x5mm_P0.65mm.step` (SHA-256 `3ee5786aae56190997aa793ba3cfc003fd616782770e29719b4562f012982245`). Presence and hashes do not prove package correctness, face colours, pin-one placement or top marking orientation; inspect those before IC rendering.
+
+Read-only STEP root/bounds/colour inspection for the two future Nexperia 74HC00 IC models is running in session 48845. Capture its results as preparation only; pin-one and marking orientation require a separate explicit check, and capacitor publication remains first.
+
+The IC STEP inspection completed: both models have one root. SOIC-14 total bounds are 6.0 x 8.7 x 1.75 mm; TSSOP-14 total bounds are 6.4 x 5.0 x 1.0 mm. Each has 54 dark-body faces (`0.148,0.145,0.145`), 182 metallic faces (`0.824,0.820,0.781`), and one pin-indicator-coloured face (`0.691,0.664,0.598`). These are raw source bounds including leads and source colours, not validation of manufacturer package suitability or indicator orientation. Earlier session-48845 pending note is superseded; pin-one/marking orientation review is still required before IC rendering.
+
+## KM 18 x 30 mm 100 uF / 400 V (2026-11-19)
+
+Published C2767 after final visual inspection and validation of artifact hashes, marking, source/page display metadata and README temperature-discrepancy disclosure. Previous files are under `tmp/display_render/radial_km_18x30_100uf_400v_previous/`. There are now 518 published capacitor renders.
+
+## KS 4 x 7 mm 1 uF / 50 V (2026-11-19)
+
+Published C2760 after inspecting its final marking, stripe and unvented top, and validating artifact hashes, marking, source/page metadata and README disclosure. Previous files are under `tmp/display_render/radial_ks_1uf_50v_previous/`. There are now 519 published capacitor renders.
+
+For the future IC pilots, raw STEP pin-indicator centres are SOIC (-1.1102, +3.5102) mm and TSSOP (-1.3703, +1.6703) mm. Corresponding KiCad PCB pad 1 positions are (-2.475, -3.81) and (-2.8625, -1.95) mm. KiCad model/PCB coordinate transforms and orientation of projected lettering must still be explicitly verified before publication; these raw values alone are not proof of alignment.
+
+Green/gold GR 8 x 12 mm 470 uF / 10 V preview is running in session 71738 at `tmp/display_render/radial_gr_8x12_470uf_10v_preview`. Inspect its polarity, colour and marking before the final.
+
+For both proposed 74HC00 KiCad footprints the installed model offset and rotation are zero and scale is one. Applying the usual PCB-versus-Cartesian Y inversion places both STEP indicator centres in the same quadrant as PCB pad 1. KiCad's developer documentation describes the PCB Y-axis inversion at https://dev-docs.kicad.org/en/import-formats/pads/ . Treat this as a coordinate-based alignment check, not a substitute for inspecting pin-one and text direction in a rendered image.
+
+Nexperia's [SOT108-1 outline](https://assets.nexperia.com/documents/package-information/SOT108-1.pdf) gives SO14 package length 8.55–8.75 mm, lead span 5.8–6.2 mm and seated height at most 1.75 mm; the KiCad model's overall bounds are 8.7 x 6.0 x 1.75 mm. Its [SOT402-1 outline](https://assets.nexperia.com/documents/package-information/SOT402-1.pdf) gives TSSOP14 length 4.9–5.1 mm, lead span 6.2–6.6 mm and seated height at most 1.2 mm; KiCad bounds are 5.0 x 6.4 x 1.0 mm. These comparisons support the general scale only; body dimensions, marking placement and representative real-world height still need individual review. No PDF was downloaded.
+
+The green/gold 8 x 12 mm 470 uF / 10 V C2033 preview passed visual review for colour, marking and stripe. Full-quality render is running in session 81437; inspect final and validate page before publication.
+
+Future IC preparation: [Nexperia's 74HC14 product table](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/inverters/serie/74hc14-74hct14) specifies `74HC14D` on 74HC14D,653 SO14 and `HC14` on 74HC14PW,118 TSSOP14. Both exact orderable numbers and corresponding KiCad SOIC-14/TSSOP-14 footprints are present in the source records, using the same SOT108-1 and SOT402-1 package families documented for the 74HC00 candidates. Typeface, placement, logos and variable production codes remain unverified; no IC render has been started.
+
+Further IC preparation: current source records name `74HC02D,653`, `74HCT02D,653`, `74HC04D,653`, `74HC08D,653`, `74HCT08D,653`, `74HC32D,653`, and `74HCT32D,653`, each with KiCad SOIC-14 3.9 x 8.7 mm / 1.27 mm footprint. Nexperia's product tables list their respective SO14 package markings as `74HC02D`, `74HCT02D`, `74HC04D`, `74HC08D`, `74HCT08D`, `74HC32D`, and `74HCT32D`: [02](https://www.nexperia.com/products/analog-logic-ics/logic/gates/nor-gates/series/74HC02-74HCT02.html), [04](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/inverters/serie/74hc04-74hct04), [08](https://www.nexperia.com/products/analog-logic-ics/logic/gates/and-gates/serie/74hc08-74hct08/), [32](https://www.nexperia.com/products/analog-logic-ics/logic/gates/or-gates/series/74HC32-74HCT32.html). Individual source identity, package, orientation, exact text and image still need review before any IC publication; typography, date and lot codes are unverified. No IC generation was started.
+
+Further SOIC-14 IC preparation: five source records have Nexperia maker, the same KiCad SOIC-14 footprint and exact orderable numbers verified against manufacturer tables: [74HC86D,653 and 74HCT86D,653](https://www.nexperia.com/products/analog-logic-ics/logic/gates/exclusive-or-gates/serie/74hc86-74hct86) carry `74HC86D` and `74HCT86D`; [74HC10D,653](https://www.nexperia.com/products/analog-logic-ics/logic/gates/nand-gates/serie/74hc10-74hct10) carries `74HC10D`; [74HC27D,653](https://www.nexperia.com/products/analog-logic-ics/logic/gates/nor-gates/serie/74hc27-74hct27) carries `74HC27D`; [74HC30D,653](https://www.nexperia.com/products/analog-logic-ics/logic/gates/nand-gates/series/74HC30-74HCT30.html) carries `74HC30D`. The tables support these strings and SOT108-1 package only; lettering, production codes and final image require individual review. No IC render has been started.
+
+Six more Nexperia SOIC-14 catalogue records match manufacturer product tables: [74HC21D,653](https://www.nexperia.com/products/analog-logic-ics/logic/gates/and-gates/serie/74hc21/) is marked `74HC21D`; [74HC132D,653 and 74HCT132D,653](https://www.nexperia.com/products/analog-logic-ics/logic/gates/nand-gates/series/74HC132-74HCT132.html) are marked `74HC132D` and `74HCT132D`; [74HC125D,653 and 74HCT125D,653](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/buffers/series/74HC125-74HCT125.html) are marked `74HC125D` and `74HCT125D`; [74HC126D,653](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/buffers/series/74HC126-74HCT126.html) is marked `74HC126D`. All six current records name Nexperia and KiCad SOIC-14 3.9 x 8.7 mm / 1.27 mm. Tables substantiate text/package only; typography, variable codes and visual appearance remain unverified and each part still needs individual review. No IC render was started.
+
+Further IC preparation: the current source records match Nexperia and the same SOIC-14 footprint for [74HC393D,653](https://www.nexperia.com/products/analog-logic-ics/logic/flip-flops-latches-registers-counters-dividers/binary-counters-timers/serie/74hc393-74hct393/), [74HC164D,653](https://www.nexperia.com/products/analog-logic-ics/i-o-expansion-logic/shift-registers/series/74HC164-74HCT164.html), [74HC4066D,653 and 74HCT4066D,118](https://www.nexperia.com/products/analog-logic-ics/analog-switches-and-multiplexers/analog-switches/serie/74hc4066-74hct4066), and [74HC05D,118](https://www.nexperia.com/products/analog-logic-ics/logic/buffers-inverters-transceivers/inverters/series/74HC05.html). Manufacturer tables specify markings `74HC393D`, `74HC164D`, `74HC4066D`, `74HCT4066D`, and `74HC05D` respectively. Verify each rendering and source identity independently; typography, logos and variable production codes remain unverified. IC rendering has not started.
+
+Consolidated the researched Nexperia SO14 candidates into `kicad_agents/component_records/DISPLAY_RENDER_NEXPERIA_SO14_PREPARATION.md`. A read-only check matched all 25 table entries to the current manufacturer/orderable number and SOIC-14 footprint records. These are still preparation, not rendered or independently visually reviewed.
+
+## Generic 8 x 6.5 mm 220 uF / 10 V Würth example (2026-11-19)
+
+Published the inspected illustrative Würth 865090249008 image. Verified its negative sector against KiCad pad 2, image hashes, 221 / 10V marking, source/page display metadata, and explicit disclosure of example-only procurement and missing electrical fields. Comparison with `tmp/display_render/wurth_8x6_5_220uf_10v_previous/` confirms the generic source is unchanged except display metadata. The date line and exact artwork remain illustrative and the generic record's missing package/electrical fields remain unresolved. There are now 520 published capacitor renders.
+
+Added six checked LVC/AHC SOIC-14 manufacturer marking rows to `DISPLAY_RENDER_NEXPERIA_SO14_PREPARATION.md`; repeated manufacturer-site extraction text is explicitly not a second marking line. IC work remains preparation until capacitor renders are complete.
+
+Green/gold GR 10 x 20 mm 1500 uF / 16 V preview is running in session 35643; inspect the text, case and negative stripe before starting a final render.
+
+The expanded Nexperia SO14 preparation table now has 31 entries; a read-only check verified every manufacturer, exact orderable number and footprint against current source records. The source links and per-part visual review remain necessary.
+
+## Chengx GR green/gold 470 uF / 10 V (2026-11-19)
+
+Published C2033 after inspecting the final and validating artifact hashes, marking, palette, source/page metadata and README disclosure. Prior files are under `tmp/display_render/radial_gr_8x12_470uf_10v_previous/`. There are now 521 published capacitor renders.
+
+The 1500 uF / 16 V C3311 green/gold preview was inspected for marking and stripe; full-quality final runs in session 13311. Inspect and validate before publication.
+
+The future IC model body-only inspection found SOIC-14 body width 3.9 mm and length 8.7 mm (z 0.1–1.75 mm) and TSSOP-14 body width 4.4 mm and length 5.0 mm (z 0.1–1.0 mm). These body dimensions align with the linked Nexperia package outlines; full marking and pin-one image review still remains.
+
+The green/gold GR 8 x 14 mm 470 uF / 25 V C5154 preview is running in session 27541 at `tmp/display_render/radial_gr_8x14_470uf_25v_preview`. Inspect its text, polarity and colours before a full final render.
+
+The RVT 6.3 x 7.7 mm shared passes finished. The pilot composite was visually compared with the independently rendered C3338 final; mean absolute RGB channel difference was 0.1534/255 (99th percentile 3). Five candidate composites are running sequentially in session 79369 under `tmp/display_render/rvt_6_3x7_7_batch01/`; inspect each before staging and retain the approximate-indirect-reflection disclosure. The GR 8 x 14 mm 470 uF / 25 V C5154 preview was inspected and passed; its full render is ready to start after the LLVM runtime test.
+
+Dr.Jit 1.2.0 reports LLVM initialization failure and uses scalar rendering. An attempt to install LLVM 18.1.6 with explicit user scope returned `No applicable installer found`; the winget LLVM installer with a user-local destination is running in session 47825. Existing render sessions remain undisturbed. Verify installation and `dr.has_backend(LLVM)` in a fresh process; do not claim acceleration until it succeeds, and compare the output with the reviewed scalar pilot before use.
+
+## RVT 6.3 x 7.7 mm batch and GR 10 x 20 mm (2026-11-19)
+
+Published five inspected shared-pass composites: C3339 100 uF / 35 V, C3342 220 uF / 16 V, C3354 470 uF / 6.3 V, C3349 47 uF / 50 V, and the explicitly illustrative generic 220 uF / 10 V example. The shared pilot was compared with the independent render, the contact sheet was reviewed, and all artifact hashes, markings, metadata, README limitations and unchanged non-display source data were validated. Prior files are under `tmp/display_render/rvt_6_3x7_7_batch01_previous/`.
+
+Published C3311 1500 uF / 16 V after inspecting its green/gold final and validating hashes, marking, palette, metadata and README disclosure. Prior files are under `tmp/display_render/radial_gr_10x20_1500uf_16v_previous/`. There are now 527 published capacitor renders.
+
+LLVM installer session 47825 is still live. Its user-local `LLVM-C.dll` has appeared but installation has not yet reported completion. Do not change renderer selection or publish accelerated results until backend and image comparison tests pass.
+
+LLVM 18.1.6 was installed successfully at the user-local `AppData/Local/Programs/LLVM-18.1.6`. A fresh process with its `bin` directory prepended to PATH reports `dr.has_backend(LLVM) == 1` and can select `llvm_ad_rgb`; this has not changed running jobs or permanently altered renderer code. A full-quality LLVM pilot of the already-published C3338 is running in session 82433 at `tmp/display_render/rvt_6_3x7_7_llvm_pilot`. Compare its final image, marking and provenance with `tmp/display_render/rvt_6_3x7_7_100uf_25v_final` before using the backend for publication. The inspected C5154 preview remains ready for final rendering.
+
+A fresh manifest inventory confirms ten remaining capacitor records: nine prepared candidates and the generic 8 x 14.5 mm record with unresolved mounting/package and conflicting placeholder dimensions. The black/gold GR 10 x 20 mm 470 uF / 50 V C3312 scalar preview is running in session 42650 at `tmp/display_render/radial_gr_10x20_470uf_50v_preview`; inspect its text, polarity and palette before final rendering. LLVM comparison pilot session 82433 remains active.
+
+The KM 10 x 17 mm 100 uF / 100 V C3336 preview is running in session 44196 at `tmp/display_render/radial_km_10x17_100uf_100v_preview`. Inspect value, voltage and negative stripe before final rendering; retain the documented KM supplier temperature discrepancy.
+
+The C3312 GR 10 x 20 mm 470 uF / 50 V black/gold preview was visually inspected and passed. Scalar full renders for C3312 and the already-reviewed C5154 8 x 14 mm 470 uF / 25 V green/gold run sequentially in session 33286; inspect and validate each final before publication. LLVM pilot 82433 and C3336 preview 44196 remain active.
+
+The KM 10 x 17 mm 15 uF / 400 V C5300 scalar preview is running in session 25916 at `tmp/display_render/radial_km_10x17_15uf_400v_preview`. Inspect its marking, polarity and proportions before final rendering; retain the documented KM supplier temperature discrepancy.
+
+The C3336 KM 100 uF / 100 V preview finished and was inspected: value, voltage, series text and negative stripe are visible. It is ready for a final render after a slot is available; inspect the final and keep the supplier-temperature discrepancy visible. Preview session 44196 is complete.
+
+The C5300 KM 15 uF / 400 V preview was visually inspected; its value, voltage, series and negative stripe are visible. The already-reviewed C3336 100 uF / 100 V and C5300 finals run sequentially in scalar session 9254. Inspect each final and retain their documented supplier-temperature discrepancy before publication.
+
+Consolidated the two Nexperia TSSOP-14 candidate identities, manufacturer marking links, model bounds and pin-one coordinate check in `kicad_agents/component_records/DISPLAY_RENDER_NEXPERIA_TSSOP14_PREPARATION.md`. Both remain preparation only; preview and individual publication reviews are still required after the capacitor sequence.
+
+The C3353 RVT 8 x 10.5 mm 220 uF / 25 V scalar preview is running in session 75440 at `tmp/display_render/rvt_8x10_5_220uf_25v_preview`. The manufacturer-part table and supplier seated-height field disagree (10.5 versus 10.2 mm); inspect the preview, preserve this discrepancy in the page, and review the final before publishing.
+
+Prepared `kicad_agents/display_render_nexperia_so14_pilot_queue.py` for the later 74HC00D IC pilot. It validates exact manufacturer, MPN, footprint and nominal dimensions, preserves differing existing recipes, and defaults to no changes. A targeted check accepted the current source and rejected three modified identity/package cases. The recipe has not been added or rendered; the preview must establish pin-one and text orientation. The agent instructions point to this preparation and still require completing the capacitor sequence first.
+
+LLVM CPU backend check: the full-quality C3338 6.3 x 7.7 mm SMD pilot completed as `llvm_ad_rgb` at `tmp/display_render/rvt_6_3x7_7_llvm_pilot` (639.12 s). Visual comparison against the independently path-traced scalar final passed; mean absolute RGB channel difference was 0.2402/255 (99th percentile 3), 100 / 25V marking and artifact hashes passed, and no nonfinite pixels required repair. This establishes the backend for this SMD scene only; it does not automatically validate radial scenes or other package adapters.
+
+An LLVM 16 x 25 mm KM 2200 uF / 35 V radial preview runs in session 41274. Inspect it and compare the radial material, polarity and marking behavior with the already-reviewed scalar radial reference before a full accelerated radial render. Running scalar finals in sessions 33286 and 9254 and the scalar surface-mount preview 75440 are unchanged.
+
+Updated the Terra runbook with the optional user-local LLVM discovery path, a fresh-process availability check and the scalar fallback. It explicitly limits the completed visual comparison to the SMD pilot and requires separate preview review for other geometry. Existing render inputs and running jobs were not changed.
+
+## Chengx GR black/gold 470 uF / 50 V (2026-11-19)
+
+Published C3312 after inspecting its final and validating image hashes, marking, black/gold palette, source/page metadata and README disclosure. Prior files are under `tmp/display_render/radial_gr_10x20_470uf_50v_previous/`. There are now 528 published capacitor renders. Session 33286 continues with the next 470 uF / 25 V final.
+
+LLVM radial preview C2763 2200 uF / 35 V completed and passed an initial visual check of marking, stripe and materials. A same-part, same-quality scalar comparison preview is running in session 33351; compare before accepting the LLVM radial backend. The display remains illustrative and the KM supplier temperature discrepancy must remain disclosed. Session 41274 is complete.
+
+## KM 10 x 17 mm 100 uF / 100 V (2026-11-19)
+
+Published C3336 after final visual inspection and validation of artifact hashes, marking, source/page display metadata and the temperature discrepancy disclosure. Prior files are under `tmp/display_render/radial_km_10x17_100uf_100v_previous/`. There are now 529 published capacitor renders. Session 9254 continues with the 15 uF / 400 V final.
+
+The same-part C2763 radial scalar and LLVM 700 px / 8 sample previews were visually compared: both show the expected text, material and negative stripe. Mean absolute RGB difference is 2.8547/255 (99th percentile 29) at intentionally noisy preview quality; both manifests, variants, markings and artifact hashes passed. This is not proof that final outputs are pixel-identical. The C3353 RVT 8 x 10.5 mm 220 uF / 25 V scalar preview also passed visual inspection; its manufacturer/supplier height discrepancy remains explicit.
+
+Full-quality LLVM renders for C2763 2200 uF / 35 V and C3353 220 uF / 25 V run sequentially in session 25324. Inspect each final and check variant, markings, hashes, metadata, and the relevant temperature/height disclosures before publication. Scalar final queues 33286 and 9254 remain live. Earlier pending-preview notes for sessions 33351 and 75440 are superseded.
+
+## Chengx GR 8 x 14 mm 470 uF / 25 V (2026-11-19)
+
+Published C5154 after visually inspecting the green/gold final and validating its display-only manifest, exact illustrative marking, artifact hashes and lengths, source and generated metadata, README disclosure, and unchanged non-display source data. Prior files are under `tmp/display_render/radial_gr_8x14_470uf_25v_previous/`. There are now 530 published capacitor renders. Session 33286 completed successfully.
+
+LLVM preview for C2754 6800 uF / 25 V is running in session 68170 under `tmp/display_render/radial_km_18x30_6800uf_25v_llvm_preview`; inspect before starting its final. Sessions 9254 and 25324 remain active. The unsourced generic 8 x 14.5 mm / 680 uF / 16 V record still has no manufacturer, distributor, KiCad footprint or symbol, and its 10 x 5 mm source dimensions conflict with the name. A mounting style cannot be responsibly inferred; retain it as an evidence gap rather than presenting a guessed model.
+
+## Chengx KM 15 uF / 400 V and 2200 uF / 35 V (2026-11-19)
+
+Published C5300 and C2763 after inspecting both final images and validating the display-only manifests, exact illustrative text, artifact hashes and lengths, source and generated metadata, unchanged non-display source data, and README temperature-discrepancy disclosures. C2763 used `llvm_ad_rgb`; its radial preview comparison is documented above. Backups are under `tmp/display_render/radial_km_10x17_15uf_400v_previous/` and `tmp/display_render/radial_km_16x25_2200uf_35v_llvm_previous/`. There are now 532 published capacitor renders. Session 9254 completed; session 25324 continues with C3353.
+
+C2754 6800 uF / 25 V LLVM preview was inspected: value, voltage, sleeve and negative stripe appear as expected. Full final is running in session 77386 at `tmp/display_render/radial_km_18x30_6800uf_25v_llvm_final`; inspect it and preserve the supplier temperature discrepancy before publishing. Session 68170 completed successfully.
+Remaining prepared 330 uF / 25 V radial and 470 uF / 16 V RVT previews run sequentially in session 61504 under `tmp/display_render/radial_km_8x12_330uf_25v_llvm_preview/` and `tmp/display_render/rvt_8x10_2_470uf_16v_llvm_preview/`; inspect each before finals. Do not treat the preview output as published.
+The 330 uF / 25 V KM radial preview in `tmp/display_render/radial_km_8x12_330uf_25v_llvm_preview/` completed and was visually reviewed: value, sleeve and negative stripe are present. Its final is ready to start when capacity permits. Session 61504 continues with the 470 uF / 16 V RVT preview.
+
+## Chengx KM 6800 uF / 25 V (2026-11-19)
+
+Published C2754 after final visual review and validation of its display-only manifest, illustrative text, LLVM variant, artifact hashes and lengths, source and page metadata, unchanged non-display source data and README temperature discrepancy disclosure. Backup: `tmp/display_render/radial_km_18x30_6800uf_25v_llvm_previous/`. There are now 533 published capacitor renders; session 77386 completed.
+
+The visually reviewed 330 uF / 25 V KM full-quality final is running in session 89972 under `tmp/display_render/radial_km_8x12_330uf_25v_llvm_final/`. Session 25324 continues C3353 and session 61504 continues the RVT 470 uF / 16 V preview.
+
+## Source-directory inventory (2026-11-19)
+
+A read-only `parts_source` directory count found 600 IC records for the next stage. This is a raw count, not a determination of how many can be sourced, labeled or rendered; one IC display render has already been published. The largest later categories include 555 connector, 189 transistor, 168 LED and 145 diode records. Eligibility and existing display manifests must be checked individually before claiming progress or completion.
+
+## Honor RVT 8 x 10.5 mm 220 uF / 25 V (2026-11-19)
+
+Published C3353 after visual inspection and validation of display-only purpose, exact illustrative text, LLVM variant, artifact hashes and lengths, source and generated metadata, unchanged non-display source fields, and README disclosures of the manufacturer 10.5 mm and supplier 10.2 mm heights. Backup: `tmp/display_render/rvt_8x10_5_220uf_25v_llvm_previous/`. There are now 534 published capacitor renders. Session 25324 completed successfully; 89972 and 61504 remain active.
+
+## Chengx KM 8 x 12 mm 330 uF / 25 V (2026-11-19)
+
+Published the 330 uF / 25 V KM part after visual inspection and validation of its display-only purpose, illustrative text, LLVM variant, artifact hashes and lengths, source and generated metadata, unchanged non-display source data and README disclosure. Backup: `tmp/display_render/radial_km_8x12_330uf_25v_llvm_previous/`. There are now 535 published capacitor renders. Session 89972 completed; session 61504 continues the 470 uF / 16 V preview.
+The RVT 470 uF / 16 V preview completed in session 61504 and was visually inspected for value, voltage and negative indicator. Its full-quality LLVM final is running in session 49902 at `tmp/display_render/rvt_8x10_2_470uf_16v_llvm_final/`; inspect and validate before publication.
+For the RVT 470 uF / 16 V preview, independently verified the exact part ID, display-only purpose, illustrative text, LLVM backend and image artifact hashes. The evidence record links supplier C3341 for RVT1C471M0810 and explains the generic series-based appearance; final-image review and publication remain pending.
+A source-to-manifest inventory of all 600 IC directories found one existing display manifest and 599 without one. Taxonomy includes 325 logic, 90 power, 40 amplifier, 27 driver and 25 interface records; these are raw counts, not evidence that models or markings are available. Check existing source identities and individual evidence before generating.
+
+The read-only IC machine-footprint inventory completed: SOIC-14 3.9 x 8.7 mm appears in 95 records, SOIC-8 3.9 x 4.9 mm in 80, SOIC-16 3.9 x 9.9 mm in 41, SOIC-20 wide in 30, and TSSOP-14 in 22. Another 198 records have no machine footprint. These counts are grouping hints only; a footprint does not prove a source model, marking, package compatibility, or entitlement to reuse a render. Check hand-solder footprints and individual documentation where machine footprint is absent.
+Rechecked the manufacturer product table for the upcoming 74HC00D,653 IC pilot: it lists 74HC00D marking and SO14 (SOT108-1). Nexperia also links a manufacturer STEP at https://assets.nexperia.com/documents/design-support/SOT108-1.step; no file was downloaded or compared. The previously reviewed KiCad STEP remains the candidate until model provenance and licensing of any alternative are assessed.
+
+## Honor RVT 8 x 10.2 mm 470 uF / 16 V (2026-11-19)
+
+Published C3341 after visual inspection and validation of display-only purpose, illustrative value and voltage, LLVM variant, artifact hashes and lengths, source and generated metadata, unchanged non-display source fields, and README disclosure. Backup: `tmp/display_render/rvt_8x10_2_470uf_16v_llvm_previous/`. There are now 536 published capacitor renders. Session 49902 completed successfully.
+
+The only remaining capacitor record, 8 x 14.5 mm 680 uF / 16 V, lacks a manufacturer, distributor, KiCad footprint and mounting information, with conflicting placeholder dimensions. No exact manufacturer match was found; leave it explicitly unresolved rather than claiming a sourced model. Continue with the IC stage while this evidence gap remains open.
+The Nexperia 74HC00D,653 SOIC-14 pilot recipe was added after source validation; sequential `--check` and LLVM preview are running in session 46519 at `tmp/display_render/nexperia_74hc00d_so14_llvm_preview/`. Verify check completion and inspect pin-one position, text orientation and materials before final or batch work. Candidate is not published.
+
+## Nexperia SO14 pilot preview (2026-11-19)
+
+Session 46519 completed the candidate `--check` (74HC00D marking and 6 x 8.7 x 1.75 mm model bounds) but the LLVM preview failed with a JIT `Failed to materialize symbols` error and exit code 1. Do not publish or treat that preview as complete. Scalar fallback preview is running in session 72984 at `tmp/display_render/nexperia_74hc00d_so14_scalar_preview/`. Inspect pin-one, marking orientation and material before a final; LLVM was validated for the earlier capacitor cases, not established for this IC. After the failure the drive had ~38.6 GB free and physical available memory was ~3.0 GB; the cause of the JIT failure was not established.
+The SO14 scalar preview completed (session 72984), was visually reviewed for text, visible pin-one dot and package shape, and passed identity, backend and image-hash checks. The exact text is manufacturer-listed; its orientation and typography are illustrative. Full scalar final runs in session 42334 under `tmp/display_render/nexperia_74hc00d_so14_scalar_final/`; inspect and validate before publication.
+
+A guarded batch preparation helper, `kicad_agents/display_render_nexperia_so14_batch.py`, now validates the evidence table against all 31 exact source identities, manufacturer, machine footprint and dimensions; validation-only run in session 11304 passed. It prepares 30 additional individually marked candidates but does not add recipes by default; `--add` requires a matching published pilot and refuses differing existing recipes. A targeted synthetic check passed for candidate text/source mapping, changed-pilot rejection and overwrite rejection. No batch recipes or renders have been generated. Pilot final session 42334 remains active; visual and publication checks still precede batch staging.
+
+Prepared experimental `kicad_agents/display_render_nexperia_so14_composite.py` as an adapter to the existing shared-pass renderer. It rechecks exact source identity, footprint, dimensions, evidence-table marking and pilot recipe; the shared-pass fingerprint includes the adapter hash. A targeted test confirmed it refuses to run before the independent pilot is published. No IC shared passes or composites exist yet; after pilot publication, compare the experimental pilot composite visually and quantitatively to the independent final before any other use, and retain the approximation disclosure. Pilot final session 42334 remains active.
+
+## Nexperia 74HC00D SO14 pilot (2026-11-19)
+
+Published `electronic_ic_logic_quad_2_input_nand_gate_soic_14_nexperia_74hc00d_653` after inspecting the independent scalar final for marking, pin-one indicator and materials. Verified the exact manufacturer-listed `74HC00D` text, KiCad model SHA-256, scalar variant, image hashes and lengths, source and generated metadata, unchanged non-display source data and README illustrative-appearance disclosure. Backup: `tmp/display_render/nexperia_74hc00d_so14_scalar_previous/`. Session 42334 completed; there are now two published IC display manifests.
+
+The guarded Nexperia batch `--add` validation is running in session 95672; it may stage 30 additional recipes, which are not renders or published parts. The Terra runbook documents the pilot gate, comparison requirement and LLVM failure. The batch helper now uses a temporary file and refuses detected concurrent changes before replacing recipes; a test confirmed the unpublished-pilot guard leaves the file unchanged.
+Session 95672 completed successfully and staged 30 additional Nexperia SO14 recipes after validating all 31 source identities. No additional parts are rendered or published. Experimental scalar shared-pass generation is running in session 80009 for the pilot; after completion render a scratch pilot composite and compare it with the independent final before use on any other part.
+
+Prepared `kicad_agents/display_render_nexperia_tssop14_pilot_queue.py` for the exact 74HC00PW,118 TSSOP pilot; read-only source validation passed. It uses the manufacturer-listed `HC00` (different from the SOIC marking), reviewed KiCad model hash, and explicitly discloses model 1.0 mm, catalogue 1.1 mm and manufacturer 1.2 mm maximum heights. Targeted tests confirmed marking/model selection and rejection of changed manufacturer, MPN, dimensions and footprint. No TSSOP recipe has been staged and no TSSOP render generated. Review the geometry, text direction and pin-one in a preview after the active SOIC master session 80009 finishes; do not edit shared recipes during that render.
+Rechecked the Nexperia manufacturer tables for the next TSSOP package: 74HC00PW,118 is marked HC00 and 74HC14PW,118 is marked HC14; both are SOT402-1. The shorter markings must not be copied from the SOIC versions. No TSSOP recipe or render was added during active SOIC master session 80009.
+A read-only SOIC-8 inventory found 80 machine-footprint records, including 22 Texas Instruments; raw group counts do not establish render eligibility. Added `DISPLAY_RENDER_TI_SOIC8_PREPARATION.md` with individual manufacturer evidence for NE5532DR (N5532) and LM358DR (LM358), exact source identities and the LM358 source-height gap. These remain research candidates; no recipe or render was added.
+SOIC-14 shared-pass session 80009 completed its first body pass and continues with the ink pass. Rechecked the installed SOIC-8 STEP hash against the NE555 manifest and recorded TI D0008A outline dimensions for NE5532DR and LM358DR in `DISPLAY_RENDER_TI_SOIC8_PREPARATION.md`; the LM358 source has no explicit height and the TI 1.75 mm figure is a maximum.
+
+Prepared `kicad_agents/display_render_ti_soic8_pilot_queue.py` for the exact NE5532DR pilot, reusing the reviewed NE555 SOIC-8 model only after checking its installed hash. Read-only source validation and targeted marking/model and four identity/geometry rejection tests passed. The manufacturer marking is `N5532`; its typography and placement remain illustrative. No TI recipe or render was staged. SOIC-14 shared-pass session 80009 remains active; do not edit recipes during it.
+Expanded TI SOIC-8 research with manufacturer top-marking reports for exact source records TLC27M2CDR (27M2C), TL072IDR (TL072I), and TL082IDR (TL082I). Each has the matching source manufacturer and machine footprint; individual manufacturer package drawings and model checks remain necessary before recipes. Evidence file was extended while no TI recipe exists, so recompute its hash when staging the TI pilot.
+Checked TI D0008A outlines for TLC27M2CDR, TL072IDR and TL082IDR and recorded exact PDF page references in `DISPLAY_RENDER_TI_SOIC8_PREPARATION.md`. Added TI marking evidence for TLC2272CDR (2272C) and OP07CDR (OP07C); package-drawing checks remain pending. TL062IDR and TLC27L2CDR remain unverified for marking. No TI recipe has been staged.
+Checked manufacturer D0008A outlines for TLC2272CDR and OP07CDR; their nominal model fits the documented dimensions. Corrected the TI OP07 evidence link from an unavailable older symlink to the current `op07.pdf`, which contains the exact OP07CDR marking and package drawing. The TI evidence file changed before any TI recipe was staged; rehash at staging.
+
+## Nexperia SO14 shared-pass pilot and batch 01 (2026-11-19)
+
+Session 80009 produced master `source_file/display_render/masters/559b01f4d11920498103e6cfda65c4e9982e526832224c87ad86715aebdb01ac/`. A scratch pilot composite was visually compared with the independently rendered scalar final: mean absolute RGB channel difference 0.2238/255, 99th percentile 3, maximum 46. Marking, pin-one and material alignment looked correct; this is an approximation, not a claim of pixel identity.
+
+Five individually marked SOIC-14 composites (74HC04D, 74HC14D, 74HC08D, 74HC02D and 74HCT02D) were visually inspected on `tmp/display_render/nexperia_so14_batch01_contact.png`, published and validated for exact text, image hashes, source/page metadata, unchanged non-display source data and README approximate-indirect-reflection disclosure. Backups: `tmp/display_render/nexperia_so14_batch01_previous/`. There are now seven published IC display renders including the earlier NE555 and independent SOIC-14 pilot.
+
+The other 25 staged SOIC-14 candidates are compositing in session 99333 under `tmp/display_render/nexperia_so14_batch02/`. Inspect each marking and pin-one visually, validate evidence and artifacts, and back up existing pages before publication. Do not count scratch renders as published.
+Session 99333 completed all 25 batch02 scratch composites. Contact sheets `tmp/display_render/nexperia_so14_batch02_contact_1.png` through `_5.png` were visually inspected for markings and pin-one; preflight checks matched every recipe to the exact evidence and source record and verified image hashes. Individual page publication is running sequentially in session 25114 with backups under `tmp/display_render/nexperia_so14_batch02_previous/`. Poll this existing session, then validate every completed page, original source comparison and approximation disclosure before updating published counts.
+
+## Nexperia SO14 batch 02 complete (2026-11-19)
+
+Session 25114 published all 25 individually reviewed SOIC-14 composites. Batch-wide validation independently rechecked all source identities, exact manufacturer-evidenced marking, recipes, artifact hashes and lengths, source/page display metadata, unchanged non-display source data and README approximate-indirect-reflection disclosures. Backups: `tmp/display_render/nexperia_so14_batch02_previous/`; contact sheets: `tmp/display_render/nexperia_so14_batch02_contact_1.png` through `_5.png`. Together with the five prior shared composites, independent Nexperia pilot and NE555 example, there are now 32 published IC displays.
+
+Staged the separately researched Nexperia 74HC00PW,118 TSSOP-14 and TI NE5532DR SOIC-8 pilot recipes, after the SOIC master completed. Sequential model `--check` and scalar previews run in sessions 88734 and 26574 respectively; inspect each image and verify model and pin-one before a full final. These candidates are not published. TSSOP height evidence differs by source; the recipe explicitly distinguishes the values. TI source evidence was rehashed after its latest additions.
+
+## IC TSSOP-14 and TI SOIC-8 previews (2026-11-19)
+
+Sessions 88734 and 26574 completed both exact-part model checks and scalar previews. Inspected `tmp/display_render/nexperia_74hc00pw_tssop14_scalar_preview/` (HC00) and `tmp/display_render/ti_ne5532dr_soic8_scalar_preview/` (N5532): both show the expected text, pin-one dot and package style. Preview identities, scalar backend and image hashes/lengths passed. Independent full scalar finals are running in sessions 51443 (TSSOP) and 22343 (TI SOIC-8). Inspect each final and validate exact source, artifact hashes and README disclosures before publishing. The TSSOP source/model/max height distinction must remain explicit.
+Previously unresolved TI markings are now supported by individual TI package addenda: TL062IDR = TL062I; TLC27L2CDR = 27L2C. Added `DISPLAY_RENDER_TI_SOIC8_ADDITIONAL_EVIDENCE.md` with exact source IDs, SOIC-8 footprints, D0008A outline pages and the source-height omissions. This supersedes only the earlier statement that these two markings were unverified; it does not change any active recipe or source-evidence hash.
+Prepared `kicad_agents/display_render_ti_soic8_batch.py`: its read-only run validated eight exact TI source identities, footprints, dimensions and individually documented marking strings. It retains manufacturer/source-height distinctions, refuses differing existing recipes and uses a guarded temporary-file replacement. A targeted test confirmed an unpublished TI pilot blocks `--add` without changing recipes. No TI batch recipes were staged; independent pilot finals in sessions 51443 and 22343 remain active.
+
+Prepared experimental `kicad_agents/display_render_ti_soic8_composite.py` for the individually researched TI SOIC-8 amplifier group. It checks the exact source record, dimensions, footprint, MPN, evidence-file hash and table marking, the reviewed model and a matching published pilot; its source hash is included in shared-pass inputs. A targeted check in session 41352 confirmed that an unpublished pilot is rejected. No TI shared passes were generated. After independent pilot publication, compare a scratch pilot composite visually and quantitatively with that final before any batch use; retain the approximate-indirect-reflection disclosure. Pilot finals 51443 and 22343 remain active.
+Prepared `kicad_agents/display_render_nexperia_tssop14_followup.py` for 74HC14PW,118 with manufacturer-listed HC14 marking. Read-only exact identity/footprint/dimensions/evidence validation passed; a targeted test confirmed `--add` refuses an unpublished HC00 pilot and leaves recipes unchanged. No follow-on recipe or render was staged. Sessions 51443 and 22343 remain active.
+Added separate `DISPLAY_RENDER_TI_SOIC8_DRIVER_EVIDENCE.md` for four exact TI driver/transceiver source records and manufacturer-listed markings: SN75453BDR 75453B, SN75451BDR 75451B, SN75176BDR 75176B, and SN65HVD3082EDR VP3082. All have SOIC-8 footprints and no source height; individual manufacturer package drawings remain to be checked. No recipes or renders were added. Existing evidence files tied to active pilot hashes were not modified.
+Checked the manufacturer D0008A package outlines for the four TI drivers/transceivers and recorded the PDF pages in `DISPLAY_RENDER_TI_SOIC8_DRIVER_EVIDENCE.md`. Extended the guarded TI batch to include those four exact source identities and markings; read-only validation passed for all 12 candidates. The experimental adapter now fingerprints its batch-definition source as well as its own. No TI batch recipes or shared passes have been generated; independent pilots 51443 and 22343 remain active.
+
+## TI NE5532DR SOIC-8 pilot (2026-11-19)
+
+Published the independent TI NE5532DR pilot after inspecting the scalar final and validating `N5532` marking, KiCad model hash, evidence-file hash, artifact hashes/lengths, source and generated metadata, unchanged non-display source data and README illustrative disclosure. Backup: `tmp/display_render/ti_ne5532dr_soic8_scalar_previous/`. Session 22343 completed; there are now 33 published IC displays. The Nexperia TSSOP pilot session 51443 remains active.
+
+Experimental TI SOIC-8 shared-pass generation is running in session 58360. After it completes, render a scratch pilot composite and visually/numerically compare it with the independent final before using this method for candidates. The guarded 12-part TI batch remains unstaged; do not edit shared recipes while render sessions run. Marking, pin-one and individual evidence reviews remain mandatory for each part.
+
+## Nexperia 74HC00PW TSSOP-14 pilot (2026-11-19)
+
+Published the independent HC00 TSSOP pilot after visually inspecting the final and validating exact manufacturer marking, KiCad model hash, evidence hash, scalar variant, artifact hashes/lengths, source and generated metadata, unchanged non-display source data, README illustrative disclosure and explicit 1.0 / 1.1 / 1.2 mm model/source/maximum distinctions. Backup: `tmp/display_render/nexperia_74hc00pw_tssop14_scalar_previous/`. Session 51443 completed; there are now 34 published IC displays. The HC14 follow-on helper is ready, but do not modify shared recipes until active TI shared-pass session 58360 finishes.
+Added separate `DISPLAY_RENDER_TI_SOIC8_POWER_EVIDENCE.md` for exact TI source records TL431AIDR (431AI), TL431CDR (TL431C), and UCC38C40DR (38C40), with individual D0008A outline references and source-height omissions. These are research-only candidates, not yet in the guarded TI batch; do not alter the batch/adapter source while shared-pass session 58360 is active.
+Added `DISPLAY_RENDER_TI_SOIC8_TIMING_EVIDENCE.md` for five exact TI source records and distinct manufacturer markings TY431A, 7705BI, SA555, TL555C and TL555I. All use the source SOIC-8 footprint but omit source height. Individual manufacturer D0008A drawings remain to be checked; no recipe was staged and no evidence tied to active pilot/master was changed.
+Checked individual manufacturer D0008A package outlines for TLV431AIDR, TL7705BIDR, SA555DR, TLC555CDR and TLC555IDR and documented them in `DISPLAY_RENDER_TI_SOIC8_TIMING_EVIDENCE.md`; each fits the nominal reviewed SOIC-8 model while source height remains unspecified. No recipes staged. TI shared-pass session 58360 remains active; do not modify its adapter or batch definition during the run.
+Resolved UCC2802DTR using the current TI UCC2800 datasheet: the SOIC-8 top marking is UCC2802 and D0008A outline matches the reviewed nominal model; source height is absent. Added the exact part and links to the separate TI power evidence file. This remains a research candidate until the active TI shared-pass test completes and the batch is reviewed.
+Added `DISPLAY_RENDER_NEXPERIA_TSSOP14_BATCH_EVIDENCE.md` with individually linked manufacturer markings for 12 additional TSSOP-14 source records, separate from the published pilot evidence. A read-only validation confirmed all 12 exact catalogue identities, manufacturer, footprints and dimensions. None is staged or rendered; the existing HC14 follow-on is also still unstaged. Preserve the published pilot height distinction and inspect every image.
+
+Prepared `kicad_agents/display_render_nexperia_tssop14_batch.py`: read-only validation passed for 13 exact manufacturer-evidenced source identities (including HC14); recipes were not staged. This supersedes the single-follow-on staging helper for this group; avoid adding the same part by both helpers. Prepared experimental `display_render_nexperia_tssop14_composite.py`; a targeted test accepted the matching published pilot and rejected an unknown part. Its shared-pass inputs fingerprint the adapter and batch definition. Experimental scalar TSSOP master session 61997 is running concurrently with TI master session 58360. Compare each scratch pilot composite visually and numerically to its own independent final before batch use. Do not change recipes or either adapter/batch source during the corresponding runs.

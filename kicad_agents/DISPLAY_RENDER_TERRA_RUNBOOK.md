@@ -201,6 +201,25 @@ Do not start another render merely because the first is quiet. Do not edit rende
 inputs while a render is running. An LLVM initialization warning followed by scalar
 rendering is not itself failure. Confirm the exit code and actual output files.
 
+On this Windows machine, LLVM 18.1.6 is installed under the current user's
+`AppData\Local\Programs\LLVM-18.1.6\bin`. To make it discoverable by a new
+render process, prepend that directory to the process `PATH`; use the actual
+local installation path on another machine. Do not alter a running process.
+
+```powershell
+$llvmBin = Join-Path $env:LOCALAPPDATA 'Programs\LLVM-18.1.6\bin'
+if (Test-Path -LiteralPath (Join-Path $llvmBin 'LLVM-C.dll')) {
+    $env:PATH = "$llvmBin;$env:PATH"
+}
+tmp/display_render_env/Scripts/python.exe -X utf8 -c "import drjit as dr; print(dr.has_backend(dr.JitBackend.LLVM))"
+```
+
+The backend check should print `1` when available. A full SMD capacitor pilot
+using LLVM was visually compared with its scalar reference; a new geometry or
+renderer still needs its own preview and image review. The manifest records the
+backend. Use the documented scalar fallback if LLVM is unavailable or fails;
+never reduce the requested quality to speed up a render.
+
 The final folder is `parts/<exact-id>/data/display_render/`. It should contain only
 `render.png`, `preview.webp` and `manifest.json`. Inspect both images. Confirm PNG
 dimensions, thumbnail readability, and the same visual criteria as the preview.
@@ -340,3 +359,9 @@ limitations, and a link to this batch note. If fewer than five parts completed,
 explain the concrete blockers. Do not describe approximate materials or typography
 as exact production appearance. Do not claim changes are on GitHub until synced;
 this task does not authorize a commit or push.
+
+## Nexperia SOIC-14 preparation
+
+The source-specific 74HC00D,653 pilot and the 31-part evidence table are described in `kicad_agents/component_records/DISPLAY_RENDER_NEXPERIA_SO14_PREPARATION.md`. Before a batch, inspect and publish the independently rendered pilot, including pin-one location, exact manufacturer-listed marking, illustrative typography and artifact hashes. Run `python -m kicad_agents.display_render_nexperia_so14_batch` for validation only; `--add` stages 30 further reviewed recipes only after a matching pilot is published. A recipe is not a completed render.
+
+`kicad_agents.display_render_nexperia_so14_composite` is experimental. Its `make-master` and `render` commands require the matching pilot and check each candidate identity, footprint and evidence. Compare a composite of the pilot against its independent final visually and numerically before use on further parts. Reject visible differences or misplaced text; disclose that indirect reflections are approximate, then inspect every candidate before publishing. The LLVM backend failed on the pilot with a JIT symbol error; the scalar backend worked. Do not assume LLVM works for this geometry without a fresh successful test.

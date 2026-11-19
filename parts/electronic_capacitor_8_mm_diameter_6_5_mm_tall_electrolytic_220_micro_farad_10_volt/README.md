@@ -5,7 +5,13 @@
 Capacitor 220 uF 10 V Electrolytic 8 mm diameter x 6.5 mm tall is an OOMP electronic capacitor definition. It uses the 8 mm diameter 6 5 mm tall package or form factor. Its nominal drawing size is 8.0 &#x00D7; 8.0 mm.
 
 
-![Capacitor 220 uF 10 V Electrolytic 8 mm diameter x 6.5 mm tall pinout](data/working_svg_square_pins.svg)
+![Capacitor 220 uF 10 V Electrolytic 8 mm diameter x 6.5 mm tall studio render](data/display_render/render.png)
+
+Illustrative W&#x00FC;rth 865090249008 220 uF / 10 V SMD example, not a selected procurement part. The generic source has no electrical fields, symbol or footprint and omits height from its dimensions; those remain unresolved. KiCad shape, base, polarity sector, ink and finish are illustrative. Simplified illustrative marking omits the variable production date line; exact artwork is not asserted.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/CP_Elec_8x6.5.step)
+
+Model credit: 2018 kicad StepUp. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -74,6 +80,7 @@ Rejected 2026-11-16. The KNSCHA RVT220UF10V67RV0037 manufacturer specification i
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -95,6 +102,7 @@ Rejected 2026-11-16. The KNSCHA RVT220UF10V67RV0037 manufacturer specification i
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

@@ -5,7 +5,13 @@
 Capacitor 4.7 uF 16 V Tantalum 3216 AVX A is an OOMP electronic capacitor definition. It uses the 3216 avx a package or form factor. Its nominal drawing size is 3.2 &#x00D7; 1.6 mm.
 
 
-![Capacitor 4.7 uF 16 V Tantalum 3216 AVX A pinout](data/working_svg_square_pins.svg)
+![Capacitor 4.7 uF 16 V Tantalum 3216 AVX A studio render](data/display_render/render.png)
+
+Illustrative AVX TAJA475K016RNJ 4.7 uF / 16 V A-case example. The currently linked Xiangyee CA45-B016K476T / C6387914 is listed as 47 uF, 16 V, 3528 B-case, conflicting with this item; do not treat it as interchangeable. The source procurement record is unresolved. Shape, marking, stripe and finish are illustrative. AVX example marking is illustrative; it does not depict the incompatible selected Xiangyee supplier part. Marking composited in linear light from shared path-traced material passes; indirect reflections are approximate.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_Tantalum_SMD.3dshapes/CP_EIA-3216-18_Kemet-A.step)
+
+Model credit: 2017 kicad StepUp. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -77,6 +83,7 @@ Capacitor 4.7 uF 16 V Tantalum 3216 AVX A is an OOMP electronic capacitor defini
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -98,6 +105,7 @@ Capacitor 4.7 uF 16 V Tantalum 3216 AVX A is an OOMP electronic capacitor defini
 | **Hand-solder footprint guide** | — | [MD](data/kicad/hand_solder/README.md) |
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
 | **Small drawer label** | <img src="label_drawer_1_5x1.svg" alt="Small drawer label" width="160"> | [SVG](label_drawer_1_5x1.svg) |

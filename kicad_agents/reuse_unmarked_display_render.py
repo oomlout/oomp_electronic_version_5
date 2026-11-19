@@ -135,6 +135,24 @@ from kicad_agents.display_render_fenghua_0603_3p6_secondary_queue import reviewe
 from kicad_agents.display_render_fenghua_0603_1p2_secondary_queue import reviewed_recipe as fenghua_cap_0603_1p2_sec_recipe, EVIDENCE as FENGHUA_CAP_0603_1P2_SEC_EVIDENCE
 from kicad_agents.display_render_fenghua_0603_8p2_secondary_queue import reviewed_recipe as fenghua_cap_0603_8p2_sec_recipe, EVIDENCE as FENGHUA_CAP_0603_8P2_SEC_EVIDENCE
 from kicad_agents.display_render_fenghua_1206_680pf_queue import reviewed_recipe as fenghua_cap_1206_680_recipe, PART as FENGHUA_CAP_1206_680_PART
+from kicad_agents.display_render_fenghua_1206_1nf_queue import reviewed_recipe as fenghua_cap_1206_1nf_recipe, PART as FENGHUA_CAP_1206_1NF_PART, EVIDENCE as FENGHUA_CAP_1206_1NF_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_c0g_table_queue import reviewed_recipe as fenghua_cap_1206_table_recipe, EVIDENCE as FENGHUA_CAP_1206_TABLE_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_c0g_table_02_queue import reviewed_recipe as fenghua_cap_1206_table_02_recipe, EVIDENCE as FENGHUA_CAP_1206_TABLE_02_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_x7r_table_queue import reviewed_recipe as fenghua_cap_1206_x7r_table_recipe, EVIDENCE as FENGHUA_CAP_1206_X7R_TABLE_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_low_c0g_table_queue import reviewed_recipe as fenghua_cap_1206_low_c0g_table_recipe, EVIDENCE as FENGHUA_CAP_1206_LOW_C0G_TABLE_EVIDENCE
+from kicad_agents.display_render_fenghua_0805_33nf_table_queue import reviewed_recipe as fenghua_cap_0805_33nf_table_recipe, PART as FENGHUA_CAP_0805_33NF_TABLE_PART, EVIDENCE as FENGHUA_CAP_0805_33NF_TABLE_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_12pf_height_queue import reviewed_recipe as fenghua_cap_1206_12pf_recipe, PART as FENGHUA_CAP_1206_12PF_PART, EVIDENCE as FENGHUA_CAP_1206_12PF_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_unlisted_values_queue import reviewed_recipe as fenghua_cap_1206_unlisted_recipe, EVIDENCE as FENGHUA_CAP_1206_UNLISTED_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_low_unlisted_queue import reviewed_recipe as fenghua_cap_1206_low_unlisted_recipe, EVIDENCE as FENGHUA_CAP_1206_LOW_UNLISTED_EVIDENCE
+from kicad_agents.display_render_fenghua_0805_36pf_queue import reviewed_recipe as fenghua_cap_0805_36pf_recipe, PART as FENGHUA_CAP_0805_36PF_PART, EVIDENCE as FENGHUA_CAP_0805_36PF_EVIDENCE
+from kicad_agents.display_render_fenghua_0805_y5v_unverified_queue import reviewed_recipe as fenghua_cap_0805_y5v_unverified_recipe, EVIDENCE as FENGHUA_CAP_0805_Y5V_UNVERIFIED_EVIDENCE
+from kicad_agents.display_render_generic_0603_2200pf_queue import reviewed_recipe as generic_cap_0603_2200pf_recipe, PART as GENERIC_CAP_0603_2200PF_PART, EVIDENCE as GENERIC_CAP_0603_2200PF_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_y5v_unverified_queue import reviewed_recipe as fenghua_cap_1206_y5v_unverified_recipe, EVIDENCE as FENGHUA_CAP_1206_Y5V_UNVERIFIED_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_y5v_high_unverified_queue import reviewed_recipe as fenghua_cap_1206_y5v_high_recipe, EVIDENCE as FENGHUA_CAP_1206_Y5V_HIGH_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_22uf_10v_queue import reviewed_recipe as fenghua_cap_1206_22uf_10v_recipe, PART as FENGHUA_CAP_1206_22UF_10V_PART, EVIDENCE as FENGHUA_CAP_1206_22UF_10V_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_hv_1nf_queue import reviewed_recipe as fenghua_cap_1206_hv_1nf_recipe, EVIDENCE as FENGHUA_CAP_1206_HV_1NF_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_2kv_1nf_queue import reviewed_recipe as fenghua_cap_1206_2kv_recipe, PART as FENGHUA_CAP_1206_2KV_PART, EVIDENCE as FENGHUA_CAP_1206_2KV_EVIDENCE
+from kicad_agents.display_render_fenghua_1206_4pf_unverified_queue import reviewed_recipe as fenghua_cap_1206_4pf_recipe, PART as FENGHUA_CAP_1206_4PF_PART, EVIDENCE as FENGHUA_CAP_1206_4PF_EVIDENCE
 from kicad_agents.display_render_samsung_0402_batch01_queue import reviewed_recipe as samsung_cap_0402_recipe, EVIDENCE as SAMSUNG_CAP_0402_EVIDENCE
 from kicad_agents.display_render_samsung_0402_batch02_queue import reviewed_recipe as samsung_cap_0402_02_recipe, EVIDENCE as SAMSUNG_CAP_0402_02_EVIDENCE
 from kicad_agents.display_render_samsung_0402_1n8_queue import reviewed_recipe as samsung_cap_0402_1n8_recipe, PARTS as SAMSUNG_CAP_0402_1N8_PARTS, EVIDENCE as SAMSUNG_CAP_NEXT_EVIDENCE
@@ -160,7 +178,59 @@ def prepare(part_id, source_id):
         raise ValueError('Target evidence is missing or has changed')
     record_path = ROOT / 'parts_source' / part_id / 'working.yaml'
     record = yaml.safe_load(record_path.read_text(encoding='utf-8')) or {}
-    if evidence.get('file') == FENGHUA_CAP_1206_2U2_25V_EVIDENCE.as_posix():
+    if evidence.get('file') == FENGHUA_CAP_1206_4PF_EVIDENCE.as_posix():
+        if part_id != FENGHUA_CAP_1206_4PF_PART:
+            raise ValueError('Unexpected part for 1206 4 pF evidence')
+        checked_recipe = fenghua_cap_1206_4pf_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_2KV_EVIDENCE.as_posix():
+        if part_id != FENGHUA_CAP_1206_2KV_PART:
+            raise ValueError('Unexpected part for 1206 2 kV evidence')
+        checked_recipe = fenghua_cap_1206_2kv_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_HV_1NF_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_hv_1nf_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_22UF_10V_EVIDENCE.as_posix():
+        if part_id != FENGHUA_CAP_1206_22UF_10V_PART:
+            raise ValueError('Unexpected part for 1206 22 µF evidence')
+        checked_recipe = fenghua_cap_1206_22uf_10v_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_Y5V_HIGH_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_y5v_high_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_Y5V_UNVERIFIED_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_y5v_unverified_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == GENERIC_CAP_0603_2200PF_EVIDENCE.as_posix():
+        if part_id != GENERIC_CAP_0603_2200PF_PART:
+            raise ValueError('Unexpected part for generic 0603 evidence')
+        checked_recipe = generic_cap_0603_2200pf_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_0805_Y5V_UNVERIFIED_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_0805_y5v_unverified_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_0805_36PF_EVIDENCE.as_posix():
+        if part_id != FENGHUA_CAP_0805_36PF_PART:
+            raise ValueError('Unexpected part for 0805 36 pF evidence')
+        checked_recipe = fenghua_cap_0805_36pf_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_LOW_UNLISTED_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_low_unlisted_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_UNLISTED_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_unlisted_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_12PF_EVIDENCE.as_posix():
+        if part_id != FENGHUA_CAP_1206_12PF_PART:
+            raise ValueError('Unexpected part for 1206 12 pF evidence')
+        checked_recipe = fenghua_cap_1206_12pf_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_0805_33NF_TABLE_EVIDENCE.as_posix():
+        if part_id != FENGHUA_CAP_0805_33NF_TABLE_PART:
+            raise ValueError('Unexpected part for 0805 33 nF evidence')
+        checked_recipe = fenghua_cap_0805_33nf_table_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_LOW_C0G_TABLE_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_low_c0g_table_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_X7R_TABLE_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_x7r_table_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_TABLE_02_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_table_02_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_TABLE_EVIDENCE.as_posix():
+        checked_recipe = fenghua_cap_1206_table_recipe(part_id, record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_1NF_EVIDENCE.as_posix():
+        if part_id != FENGHUA_CAP_1206_1NF_PART:
+            raise ValueError('Unexpected part for Fenghua 1 nF evidence')
+        checked_recipe = fenghua_cap_1206_1nf_recipe(record, recipes, evidence['sha256'])
+    elif evidence.get('file') == FENGHUA_CAP_1206_2U2_25V_EVIDENCE.as_posix():
         if part_id != FENGHUA_CAP_1206_2U2_25V_PART:
             raise ValueError('Unexpected part')
         checked_recipe = fenghua_cap_1206_2u2_25v_recipe(record, recipes, evidence['sha256'])

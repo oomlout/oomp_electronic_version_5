@@ -5,7 +5,13 @@
 Capacitor 36 pF 0805 is an OOMP electronic capacitor definition. It uses the 0805 package or form factor. Its nominal drawing size is 2.0 &#x00D7; 1.25 mm.
 
 
-![Capacitor 36 pF 0805 pinout](data/working_svg_square_pins.svg)
+![Capacitor 36 pF 0805 studio render](data/display_render/render.png)
+
+Generic KiCad 0805 geometry is shown at 0.8 mm height as an illustration; the available manufacturer table does not list this exact value, so actual thickness is unverified. Ceramic colour, terminations and unmarked appearance are illustrative. Unmarked body is illustrative; the selected part&#x2019;s no-marking policy has not been verified. Image reused from an identical unmarked package and material setup.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_0805_2012Metric.step)
+
+Model credit: 2017 kicad StepUp. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -81,6 +87,7 @@ Capacitor 36 pF 0805 is an OOMP electronic capacitor definition. It uses the 080
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -118,6 +125,7 @@ Capacitor 36 pF 0805 is an OOMP electronic capacitor definition. It uses the 080
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_capacitor_0805_36_pico_farad.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |

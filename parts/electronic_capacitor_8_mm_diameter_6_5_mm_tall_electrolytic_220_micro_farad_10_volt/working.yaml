@@ -34,6 +34,21 @@ dimensions_mm:
   length: 8.0
   width: 8.0
 directory: parts/electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
+display_render:
+  description: Illustrative Würth 865090249008 220 uF / 10 V SMD example, not a selected
+    procurement part. The generic source has no electrical fields, symbol or footprint
+    and omits height from its dimensions; those remain unresolved. KiCad shape, base,
+    polarity sector, ink and finish are illustrative. Simplified illustrative marking
+    omits the variable production date line; exact artwork is not asserted.
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: '221
+
+    10V'
+  model_credit: 2018 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/CP_Elec_8x6.5.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 id: electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
 id_no_class: electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
@@ -186,6 +201,22 @@ oomlout_ai_roboclick_3:
         length: 8.0
         width: 8.0
       directory: parts\electronic_capacitor_8_mm_diameter_6_5_mm_tall_electrolytic_220_micro_farad_10_volt
+      display_render:
+        description: Illustrative Würth 865090249008 220 uF / 10 V SMD example, not
+          a selected procurement part. The generic source has no electrical fields,
+          symbol or footprint and omits height from its dimensions; those remain unresolved.
+          KiCad shape, base, polarity sector, ink and finish are illustrative. Simplified
+          illustrative marking omits the variable production date line; exact artwork
+          is not asserted.
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: '221
+
+          10V'
+        model_credit: 2018 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/CP_Elec_8x6.5.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       kicad:
         hand_solder: ''
@@ -617,8 +648,8 @@ oomlout_ai_roboclick_4:
 oomlout_ai_roboclick_5:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

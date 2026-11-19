@@ -269,3 +269,62 @@ The 10 × 10.2 mm shared RVT master is running in session 29212 using the
 current archived standard renderer. After completion, compare the composite
 pilot to the independent published pilot before rendering the three prepared
 10 mm recipes. Inspect markings and validate each page and manifest.
+
+The 10 mm RVT master completed, was compared to the independent pilot,
+and the three checked candidate pages were published and validated. Earlier
+in-progress notes for this batch are superseded.
+
+The 6.3 × 5.4 mm RVT pilot real-model `--check` is running in session
+51359. Do not start its preview until the geometry and material check
+completes; preserve the output and inspect polarity and markings.
+
+The 6.3 × 5.4 mm model check passed: bounds 7.8 × 6.6 × 5.4 mm and
+316862 triangles. A 700 px / 32 sample preview is running in session 78001
+at `tmp/display_render/rvt_6_3x5_4_pilot_preview`. Inspect the polarity sector
+and marking before any full render.
+
+The 6.3 × 5.4 mm RVT pilot preview was inspected: 220 / 10V and the
+negative sector are visible, with pad-2 polarity verified in evidence.
+The 1400 px final is running in session 43596 to
+`tmp/display_render/rvt_6_3x5_4_pilot_final`. Inspect and validate before
+publishing. The 5 mm pilot preview is running in session 95803.
+
+The 5 mm RVT pilot preview was inspected: 100 / 10V and the negative
+sector are visible, with pad-2 polarity verified in evidence. The 1400 px
+final is running in session 17107 to `tmp/display_render/rvt_5mm_pilot_final`.
+Inspect and validate it before publication. The 6.3 × 5.4 mm final remains
+in session 43596.
+
+The 6.3 x 5.4 mm C3345 pilot final completed and was visually inspected: 220 / 10V and the negative sector are clear. Previous source and page files were backed up to `tmp/display_render/rvt_6_3x5_4_pilot_previous/`; the checked render was staged into the part. Exact-part publisher is live in session 43236. Do not count as published until the session completes and hashes, metadata and README are validated.
+
+The C3345 exact-part publisher completed. Image hashes, 220 / 10V marking, source and page display metadata, and README disclosure were validated. Earlier pending-publication note is superseded.
+
+The 5 mm C3347 final completed, was inspected and published. Image hashes, marking, metadata and README disclosure were validated; the earlier running-session note is superseded.
+
+The 47 uF / 16 V 5 mm candidate preview is running in session 8175 at `tmp/display_render/rvt_5mm_47uf_16v_preview`; inspect the marking and negative sector before full rendering or publication.
+
+The 6.3 x 5.4 mm 47 uF / 35 V candidate preview is running in session 86116 at `tmp/display_render/rvt_6_3x5_4_47uf_35v_preview`. Inspect markings and polarity before full rendering.
+
+The 5 mm C3337 47 uF / 16 V preview was inspected, including its value, voltage and negative sector. The 1400 px final is running in session 29925 at `tmp/display_render/rvt_5mm_47uf_16v_final`; inspect it, back up page files and validate before publication.
+
+The C3344 47 uF / 35 V 6.3 x 5.4 mm preview was inspected: marking and negative sector are visible. Its full render is running in session 23190 at `tmp/display_render/rvt_6_3x5_4_47uf_35v_final`; inspect and validate before publication.
+
+The C3338 6.3 x 7.7 mm RVT pilot's checked model is being rendered as a 700 px preview in session 48034 at `tmp/display_render/rvt_6_3x7_7_100uf_25v_preview`. Inspect the 100 / 25V marking and pad-2 negative sector before its full render. Earlier notes that its preview is pending are superseded once this session completes.
+
+The individually researched 8 x 10.2 mm 220 uF / 35 V C3340 candidate preview is running in session 85319 at `tmp/display_render/rvt_8x10_2_220uf_35v_preview`. Inspect its marking and polarity before deciding on a final render; verify the supplier ID from the recipe before recording publication.
+
+The C3344 47 uF / 35 V final completed and was visually inspected; previous page and source files were saved under `tmp/display_render/rvt_6_3x5_4_47uf_35v_previous/`, and its exact-part publisher is running in session 16542. Validate hashes, marking, metadata and README after it completes before counting this component.
+
+The C3344 47 uF / 35 V page update completed; image hashes, marking, metadata and README were validated. Earlier pending-publisher notes are superseded.
+
+The otherwise unsourced generic 8 x 6.5 mm / 220 uF / 10 V item has a documented Würth example: 865090249008, manufacturer specification `https://www.we-online.com/components/products/datasheet/865090249008.pdf`. The document specifies 221, a variable date line and 10 V; a simplified display may omit the variable line but must be described as illustrative. Exact example evidence and limitations are in `DISPLAY_RENDER_WURTH_8X6_5_220UF_10V_EXAMPLE_EVIDENCE.md`. KiCad has an 8 x 6.5 mm SMD model; its bounds/hash diagnostic is running in session 58638. The generic source has no electrical fields, symbol or footprint; do not silently add them or imply this Würth part was selected. No PDF was downloaded.
+
+The generic 8 x 14.5 mm / 680 uF / 16 V source record has no selected part, electrical fields, symbol or footprint and retains 10 x 5 mm placeholder dimensions. Searches during this pass did not establish a matching manufacturer example or even whether the intended package is radial or SMD. Do not force an 8 x 14.5 illustration or treat the placeholder as verified; continue manufacturer research and preserve the discrepancy.
+
+The generic Würth 8 x 6.5 example recipe is staged by `display_render_wurth_8x6_5_example_queue.py`; two identity/disclosure tests passed. KiCad's candidate STEP hash is `b68f9f996cc3c4594872968aacec31af520043f4093f9409e1d753b44d088d13`, bounds 9.5 x 8.3 x 6.5 mm including leads/base. Real mesh and material check is running in session 60752. Check the dark sector against pad 2, then inspect preview/final before publication. The TDK 1210 example final was inspected and staged, with prior files under `tmp/display_render/tdk_1210_68uf_example_previous/`; its page publisher runs in session 13181. Validate image hashes, display metadata, explicit dimension conflict and example-vs-generic rating disclosure before counting.
+
+The generic 1210 68 uF TDK example was published and validated, including its dimension/rating disclaimers and unchanged non-display source fields. Earlier pending-publication notes are superseded.
+
+The C3299 green/gold final was visually inspected and staged after backing up the existing page/source under `tmp/display_render/radial_gr_green_1000uf_10v_previous/`. Exact-part publisher is live in session 25605; validate hashes, text, palette, metadata and README disclosure before counting. The C3338 6.3 x 7.7 mm 100 uF / 25 V SMD preview and C3340 8 x 10.2 mm 220 uF / 35 V preview were visually inspected; full renders run in sessions 35489 and 75327 at `tmp/display_render/rvt_6_3x7_7_100uf_25v_final` and `tmp/display_render/rvt_8x10_2_220uf_35v_final`, respectively. Inspect and validate before publishing.
+
+C3299 green/gold page publication and validation completed; earlier pending-publisher note is superseded.

@@ -407,6 +407,22 @@ def repair_nonfinite_pixels(linear):
     return repaired, count
 
 
+PALETTES = {
+    'black_white': {'body': [.016, .018, .022], 'ink': [.78, .79, .76],
+                    'stripe': [.56, .57, .55], 'stripe_marks': [.016, .018, .022]},
+    'black_gold': {'body': [.016, .018, .022], 'ink': [.66, .43, .11],
+                   'stripe': [.55, .38, .13], 'stripe_marks': [.016, .018, .022]},
+    'green_gold': {'body': [.012, .095, .035], 'ink': [.66, .43, .11],
+                   'stripe': [.55, .38, .13], 'stripe_marks': [.012, .095, .035]},
+}
+
+
+def radial_palette(name):
+    if name not in PALETTES:
+        raise ValueError('Unreviewed radial display palette')
+    return {key: value[:] for key, value in PALETTES[name].items()}
+
+
 def render_scene(groups, lower, upper, recipe, studio, scratch, pixels, samples):
     import numpy as np
     import mitsuba as mi
@@ -461,15 +477,17 @@ def render_scene(groups, lower, upper, recipe, studio, scratch, pixels, samples)
             'ink': {'type': 'roughplastic', 'diffuse_reflectance': rgb([.018, .019, .021]),
                     'alpha': .4, 'int_ior': 1.48}}
     if recipe.get('family') == 'radial_aluminum_capacitor':
-        black = {'type': 'roughplastic', 'diffuse_reflectance': rgb([.016, .018, .022]),
-                 'alpha': .28, 'int_ior': 1.48}
-        materials['sleeve_background'] = black
-        materials['ceramic'] = black
+        palette = radial_palette(recipe.get('radial_palette', 'black_white'))
+        body = {'type': 'roughplastic', 'diffuse_reflectance': rgb(palette['body']),
+                'alpha': .28, 'int_ior': 1.48}
+        materials['sleeve_background'] = body
+        materials['ceramic'] = {'type': 'roughplastic', 'diffuse_reflectance': rgb(palette['stripe_marks']),
+                                'alpha': .28, 'int_ior': 1.48}
         materials['pin_indicator'] = {'type': 'roughplastic',
-            'diffuse_reflectance': rgb([.56, .57, .55]), 'alpha': .35, 'int_ior': 1.48}
+            'diffuse_reflectance': rgb(palette['stripe']), 'alpha': .35, 'int_ior': 1.48}
         materials['coating'] = {'type': 'blendbsdf', 'weight': bitmap('marking.png'),
-            'body': black, 'ink': {'type': 'roughplastic',
-            'diffuse_reflectance': rgb([.78, .79, .76]), 'alpha': .4, 'int_ior': 1.48}}
+            'body': body, 'ink': {'type': 'roughplastic',
+            'diffuse_reflectance': rgb(palette['ink']), 'alpha': .4, 'int_ior': 1.48}}
     scale = write_meshes(groups, lower, upper, scratch)
     height = float((upper[2] - lower[2]) / scale)
     target = np.array([0., 0., height * .48])
@@ -533,9 +551,54 @@ def render_scene(groups, lower, upper, recipe, studio, scratch, pixels, samples)
         'denoising': {'method': 'OpenCV non-local means', 'strength': studio['denoise_strength']}}
 
 
+def replace_grooved_top(group, *, center_xy, radius, cutoff_z, disk_z, segments=128):
+    """Replace only disconnected, entirely-above-cutoff metal triangles.
+
+    Other metal geometry, including both leads, is preserved. A crossing
+    triangle rejects the operation instead of silently cutting an unknown part.
+    The resulting group keeps unreferenced original vertices, which do not
+    appear in the render and avoid altering preserved triangle indices.
+    """
+    vertices = np.asarray(group['vertices'], dtype=float)
+    normals = np.asarray(group['normals'], dtype=float)
+    triangles = np.asarray(group['triangles'], dtype=int)
+    center = np.asarray(center_xy, dtype=float)
+    if (vertices.ndim != 2 or vertices.shape[1] != 3 or normals.shape != vertices.shape
+        or triangles.ndim != 2 or triangles.shape[1] != 3 or triangles.size == 0
+        or triangles.min() < 0 or triangles.max() >= len(vertices)
+        or center.shape != (2,) or not np.isfinite(vertices).all()
+        or not np.isfinite(normals).all() or not np.isfinite(center).all()
+        or not np.isfinite([radius, cutoff_z, disk_z]).all()
+        or radius <= 0 or disk_z <= cutoff_z or not isinstance(segments, int) or segments < 16):
+        raise ValueError('Invalid reviewed flat top geometry')
+    z = vertices[triangles, 2]
+    below, above = z.min(axis=1), z.max(axis=1)
+    if np.any((below < cutoff_z) & (above >= cutoff_z)):
+        raise ValueError('A metal triangle crosses the top cutoff')
+    removed = below >= cutoff_z
+    if not removed.any() or removed.all():
+        raise ValueError('Expected separate top and lead geometry')
+    top_points = vertices[triangles[removed].ravel()]
+    if np.any(np.linalg.norm(top_points[:, :2] - center, axis=1) > radius + 0.002):
+        raise ValueError('Metal above cutoff exceeds reviewed top radius')
+    angle = np.arange(segments) * (2 * np.pi / segments)
+    ring = np.column_stack((center[0] + radius*np.cos(angle),
+                            center[1] + radius*np.sin(angle),
+                            np.full(segments, disk_z)))
+    start = len(vertices)
+    vertices = np.vstack((vertices, [[center[0], center[1], disk_z]], ring))
+    normals = np.vstack((normals, np.tile([0., 0., 1.], (segments + 1, 1))))
+    fan = np.array([(start, start+1+i, start+1+(i+1)%segments)
+                    for i in range(segments)], dtype=int)
+    return {'vertices': vertices.tolist(), 'normals': normals.tolist(),
+            'triangles': np.vstack((triangles[~removed], fan)).tolist()}
+
+
 def prepare_radial(groups, lower, upper, recipe, studio):
     """Stretch a reviewed sleeve and isolate its cylindrical printing face."""
     params = recipe['model']['radial_stretch']
+    if 'flat_top' in recipe['model']:
+        groups['termination'] = replace_grooved_top(groups['termination'], **recipe['model']['flat_top'])
     center, radius = params['center_xy'], params['radius']
     start, end, extra = params['lower_z'], params['upper_z'], params['extra_height']
     original = groups['coating']

@@ -162,3 +162,46 @@ against the independent pilot and each resulting marking is inspected.
 D-case shared passes have been compared with the independent pilot and all
 eight checked batch images and pages are validated. Earlier in-progress D
 notes are superseded.
+
+## E-case pilot (2026-11-19)
+
+TAJE227K016RNJ / C7231 has an individually checked recipe and evidence
+in `display_render_taj_e_pilot_queue.py` and
+`DISPLAY_RENDER_TAJ_E_220UF_16V_EVIDENCE.md`. The Kemet X model has source
+bounds 7.6 × 4.6 × 4.3 mm and is scaled in all three axes to the TAJ E
+nominal 7.3 × 4.3 × 4.1 mm. The real-model check passed. The 700 px preview
+was visually inspected, and its stripe lies at negative X, matching positive
+footprint pad 1 at x = -3.12 mm. The 1400 px / 256 sample final is running
+in session 51910 to `tmp/display_render/taj_e_220uf_16v_final`. Inspect it,
+back up existing part files, publish, and validate hashes and page only once
+complete. Other E-case parts remain unprepared and require their own checks.
+The 4.7 µF / 250 V radial full render remains active in session 40568.
+
+The TAJ E pilot final is published and validated. Four separately researched
+candidate recipes and an archived E compositor are prepared; 14 queue, guard
+and metadata tests passed. Shared master session 75804 is live. Compare a
+pilot composite against the independent final and inspect every marking
+before publishing any batch. Existing records for the four candidates must
+be backed up before publication.
+
+E-case master session 75804 completed its body pass; the ink pass remains
+live. Compare the finished composite with the independent E pilot before
+using it for the four queued parts.
+
+E-case shared passes were compared with the independent pilot, then all
+four candidate images were inspected, published and validated. Earlier
+in-progress E-case notes are superseded.
+
+## Unresolved procurement mismatch: generic 3216, 4.7 uF, 16 V
+
+The catalogue record `electronic_capacitor_3216_avx_a_tantalum_4_7_micro_farad_16_volt` selects Xiangyee CA45-B016K476T (LCSC C6387914), but the [LCSC listing](https://www.lcsc.com/product-detail/C6387914.html) identifies that part as 47 uF, 16 V, B case (3528). The [CA45 series specification](https://pdf.elecfans.com/p/10899036.html) gives B-case nominal dimensions of 3.50 x 2.80 x 1.90 mm, and the capacitance code 476 denotes 47 uF. These conflict with the catalogue's 4.7 uF and 3216 A-case identity. Do not render this selected supplier part as an example of the catalogue item or silently change procurement data. Reconcile the source record and independently verify the appropriate 4.7 uF A-case part and marking before publishing a display render.
+
+## Current continuation (2026-11-19)
+
+The R-case TAJR106M006RNJ preview was inspected: J over 106 is legible and the stripe lies on negative X, matching positive pad 1. The individual 1400 px / 256 sample render is active in session 59863, output `tmp/display_render/taj_r_10uf_6v3_final`; inspect the completed final, back up affected existing files, publish and validate before counting the part. The 6.3 x 5.4 mm and 5 mm RVT final renders remain live in sessions 43596 and 17107 respectively. Their outputs and publication instructions are in the aluminum research record. Do not restart a render just because polling returns no output.
+
+A possible display reference for the *intended* 4.7 uF / 16 V A-case item is KYOCERA AVX TAJA475K016RNJ: the [manufacturer TAJ datasheet](https://datasheets.kyocera-avx.com/TAJ.pdf) lists TAJA475*016#NJ as A case, 4.7 uF, 16 V, and [DigiKey's exact listing](https://www.digikey.de/en/products/detail/kyocera-avx/TAJA475K016RNJ/1126914) identifies its 3216 footprint. This is an alternate example, not the Xiangyee part currently linked by the catalogue. Any future illustration must clearly identify the example and prominently flag the incompatible supplier link until the procurement record is reconciled; it must never imply they are the same part.
+
+The R-case final completed, was inspected and published as C7235. Image hashes, marking, metadata and README disclosure were validated; the earlier running-session note is superseded.
+
+The generic 4.7 uF / 16 V A-case AVX example was composited from the archived reviewed renderer and material master, visually checked, compared byte-for-byte with the existing exact AVX example, published and validated. Its README explicitly flags the incompatible selected Xiangyee 47 uF B-case supplier part; procurement remains unchanged. Earlier notes requiring an example are superseded, but the source mismatch remains unresolved.

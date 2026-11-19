@@ -34,6 +34,20 @@ dimensions_mm:
   length: 10.0
   width: 5.0
 directory: parts/electronic_capacitor_1210_68_micro_farad
+display_render:
+  description: 'Illustrative TDK 68 uF 1210 example, 3.2 x 2.5 x 2.0 mm. The generic
+    source record instead lists 10 x 5 mm: this dimension conflict needs correction.
+    The example is not a selected procurement part, and its 6.3 V rating is not an
+    asserted rating of the generic item. Colour and terminal finish are illustrative.
+    The unmarked ceramic appearance is illustrative; the generic item has no selected
+    part or confirmed voltage rating.'
+  image: data/display_render/render.png
+  license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+  marking: ''
+  model_credit: 2017 kicad StepUp
+  model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_1210_3225Metric.step
+  preview: data/display_render/preview.webp
+  provenance: data/display_render/manifest.json
 distributors: []
 id: electronic_capacitor_1210_68_micro_farad
 id_no_class: electronic_capacitor_1210_68_micro_farad
@@ -193,6 +207,20 @@ oomlout_ai_roboclick_4:
         length: 10.0
         width: 5.0
       directory: parts\electronic_capacitor_1210_68_micro_farad
+      display_render:
+        description: 'Illustrative TDK 68 uF 1210 example, 3.2 x 2.5 x 2.0 mm. The
+          generic source record instead lists 10 x 5 mm: this dimension conflict needs
+          correction. The example is not a selected procurement part, and its 6.3
+          V rating is not an asserted rating of the generic item. Colour and terminal
+          finish are illustrative. The unmarked ceramic appearance is illustrative;
+          the generic item has no selected part or confirmed voltage rating.'
+        image: data/display_render/render.png
+        license: CC-BY-SA-4.0 with KiCad library exception; see original STEP header
+        marking: ''
+        model_credit: 2017 kicad StepUp
+        model_source: https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/C_1210_3225Metric.step
+        preview: data/display_render/preview.webp
+        provenance: data/display_render/manifest.json
       distributors: []
       kicad:
         hand_solder: ''
@@ -628,8 +656,8 @@ oomlout_ai_roboclick_5:
 oomlout_ai_roboclick_6:
   actions:
   - command: run_python
-    description: Summarize working.yaml and inventory every available part file for
-      website generators.
+    description: Inventory published files for the web manifest and the part README
+      file table.
     file_output: web.yaml
     file_python: kicad_agents/web_manifest_action.py
     manifest_config: config_web_manifest.yaml

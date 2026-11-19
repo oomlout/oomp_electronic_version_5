@@ -173,10 +173,13 @@ files into the repository. The manifest records the font's hash.
 ## Pipeline expansion requirements
 
 The importer handles reviewed single-root, coloured STEP models with explicit
-material-role sets. The current recipes cover one chip resistor, one ceramic
-capacitor and one SOIC-8 IC. It rejects unknown colours, missing models, wrong
-dimensions and unsupported assemblies. It does not yet support all KiCad
-packages, VRML/GLB import, curved markings or automatic model substitution.
+material-role sets. Recipes now cover numerous resistor and capacitor parts,
+plus an SOIC-8 IC example; inspect the current recipe catalogue rather than
+assuming another package or part is supported. The standard importer rejects
+unknown colours, missing models, wrong dimensions and unsupported assemblies.
+It does not support every KiCad package, VRML/GLB import or automatic model
+substitution. The separate radial capacitor renderer supports reviewed curved
+sleeve markings; that does not imply general curved-marking support.
 
 | Family | Geometry/material adaptation | Marking policy |
 | --- | --- | --- |
@@ -196,6 +199,13 @@ The checked recipes now also include a Samsung 0603 MLCC and a TI NE555DR
 SOIC-8. The colour-region importer supports their explicit reviewed material
 role sets, including a separate pin-one indicator. Their source review is in
 [the three-family evidence record](component_records/DISPLAY_RENDER_THREE_FAMILIES_20261117.md).
+For the later IC stage, `display_render_nexperia_so14_pilot_queue.py` prepares
+one source-guarded 74HC00D candidate from the separately reviewed
+[Nexperia SO14 evidence](component_records/DISPLAY_RENDER_NEXPERIA_SO14_PREPARATION.md).
+Run it without `--add` to validate only. Even after adding the recipe, inspect
+the preview's pin-one and text orientation before considering a final image;
+the candidate has not yet passed visual review. Complete the current capacitor
+sequence first.
 The [final three-family contact sheet](../source_file/display_render/examples/three_families.webp)
 compares the current 1,400 px renders.
 An unmarked illustration is distinct from a verified unmarked component: the
@@ -724,3 +734,29 @@ Render a low-sample preview and inspect it, then inspect the full render,
 archive the exact renderer source by SHA-256, validate the manifest and
 refresh only the selected page. Never publish an unchecked scratch render.
 See the research record for the current pilot status.
+
+The radial renderer has explicit `black_white`, `green_gold` and `black_gold`
+palettes. Choose one only after reviewing the exact part or a documented
+manufacturer part-number key. Chengx's reviewed key maps sleeve `H` to black,
+`L` to green, printing `2` to white and `4` to gold; check the positions in
+the manufacturer's key for the specific MPN instead of assuming the whole
+series has one colour. The exact hue, metallic appearance, stripe and text
+layout remain illustrative unless independently established. Inspect each
+palette under the actual studio lighting before any final render.
+
+For the reviewed 4 mm KS can, the manufacturer outline specifies a vent only
+above 6.3 mm diameter. Its `flat_top` adapter replaces the generic KiCad
+cross-vented metal face with a plain disk while retaining the leads. Use it
+only with a pinned source model, documented dimensions and tested geometry;
+do not apply it to other models merely because they are small. A sleeve
+extension must preserve the end geometry and reject triangles crossing its
+reviewed boundaries. Keep the source renderer and its exact SHA-256 archived,
+and do not edit it while a render using that file is still running.
+
+When an unsourced generic entry conflicts with its footprint or source
+dimensions, document the conflict and, if a well-supported example is used,
+make the page identify it as an illustration. Do not imply the example's
+manufacturer, voltage or tolerance are the generic item's selected ratings.
+The 1210 68 µF entry is one such case: see
+`component_records/DISPLAY_RENDER_TDK_1210_68UF_EXAMPLE_EVIDENCE.md` before
+using its recipe. Preserve the source discrepancy until independently resolved.

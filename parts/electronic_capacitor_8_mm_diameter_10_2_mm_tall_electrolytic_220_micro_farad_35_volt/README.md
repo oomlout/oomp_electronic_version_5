@@ -5,7 +5,13 @@
 Capacitor 220 uF 35 V Electrolytic 8 mm diameter x 10.2 mm tall is an OOMP electronic capacitor definition. It uses the 8 mm diameter 10 2 mm tall package or form factor. Its nominal drawing size is 8.0 &#x00D7; 8.0 mm. The definition includes 2 documented pins.
 
 
-![Capacitor 220 uF 35 V Electrolytic 8 mm diameter x 10.2 mm tall pinout](data/working_svg_square_pins.svg)
+![Capacitor 220 uF 35 V Electrolytic 8 mm diameter x 10.2 mm tall studio render](data/display_render/render.png)
+
+Display-only KiCad 8 mm polarized can scaled to 10.2 mm seated height; body finish, black negative-polarity sector and marking layout are illustrative. Value and voltage layout are illustrative; exact ink, maker mark and production code are not verified.
+
+[Render recipe and provenance](data/display_render/manifest.json) · [KiCad model](https://gitlab.com/kicad/libraries/kicad-packages3D/-/blob/master/Capacitor_SMD.3dshapes/CP_Elec_8x10.step)
+
+Model credit: 2018 kicad StepUp. CC-BY-SA-4.0 with KiCad library exception; see original STEP header.
 
 
 
@@ -93,6 +99,7 @@ Capacitor 220 uF 35 V Electrolytic 8 mm diameter x 10.2 mm tall is an OOMP elect
 
 | Image type | Image | Link |
 | --- | :---: | --- |
+| **Studio render** | <img src="data/display_render/preview.webp" alt="Studio render" width="160"> | [PNG](data/display_render/render.png) · [Preview](data/display_render/preview.webp) |
 | **Pinout drawing**<br>Pin names and positions on the part. | <img src="data/working_svg_square_pins_300.png" alt="Pinout drawing" width="160"> | [SVG](data/working_svg_square_pins.svg) · [PNG](data/working_svg_square_pins.png) · [Preview](data/working_svg_square_pins_300.png) |
 | **Assembly**<br>Component placement drawing. | <img src="data/working_svg_assembly_300.png" alt="Assembly" width="160"> | [SVG](data/working_svg_assembly.svg) · [PNG](data/working_svg_assembly.png) · [Preview](data/working_svg_assembly_300.png) |
 | **Assembly pinout**<br>Placement drawing with the pins marked. | <img src="data/working_svg_assembly_pins_300.png" alt="Assembly pinout" width="160"> | [SVG](data/working_svg_assembly_pins.svg) · [PNG](data/working_svg_assembly_pins.png) · [Preview](data/working_svg_assembly_pins_300.png) |
@@ -125,6 +132,7 @@ Capacitor 220 uF 35 V Electrolytic 8 mm diameter x 10.2 mm tall is an OOMP elect
 | **Machine-solder footprint guide** | — | [MD](data/kicad/machine_solder/README.md) |
 | **Machine-solder footprint** | — | [KICAD_MOD](data/kicad/machine_solder/electronic_capacitor_8_mm_diameter_10_2_mm_tall_electrolytic_220_micro_farad_35_volt.kicad_mod) |
 | **KiCad availability and source masters** | — | [JSON](data/kicad/manifest.json) · [YAML](data/kicad/manifest.yaml) |
+| **Studio render sources and recipe** | — | [JSON](data/display_render/manifest.json) |
 | **Manufacturer or supplier datasheet** | — | [PDF](data/datasheet.pdf) |
 | **Drawer label data** | — | [YAML](data/label_drawer.yaml) |
 | **Generator label** | <img src="generator_label.svg" alt="Generator label" width="160"> | [SVG](generator_label.svg) · [JSON](generator_label.json) |
